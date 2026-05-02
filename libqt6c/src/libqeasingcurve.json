@@ -1,0 +1,2174 @@
+{
+    "Filename": "/usr/include/x86_64-linux-gnu/qt6/QtCore/qeasingcurve.h",
+    "Typedefs": [
+        {
+            "Alias": "__int128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__uint128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "unsigned __int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__NSConstantString",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__NSConstantString_tag",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_ms_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "char",
+                "Const": false,
+                "Pointer": true,
+                "PointerCount": 1,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__va_list_tag[1]",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QEasingCurve::QtGadgetHelper",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "void",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QEasingCurve::EasingFunction",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "qreal (*)(qreal)",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": true,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        }
+    ],
+    "Enums": [
+        {
+            "EnumName": "QEasingCurve::Type",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "Linear",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "InQuad",
+                    "EntryValue": "1"
+                },
+                {
+                    "EntryName": "OutQuad",
+                    "EntryValue": "2"
+                },
+                {
+                    "EntryName": "InOutQuad",
+                    "EntryValue": "3"
+                },
+                {
+                    "EntryName": "OutInQuad",
+                    "EntryValue": "4"
+                },
+                {
+                    "EntryName": "InCubic",
+                    "EntryValue": "5"
+                },
+                {
+                    "EntryName": "OutCubic",
+                    "EntryValue": "6"
+                },
+                {
+                    "EntryName": "InOutCubic",
+                    "EntryValue": "7"
+                },
+                {
+                    "EntryName": "OutInCubic",
+                    "EntryValue": "8"
+                },
+                {
+                    "EntryName": "InQuart",
+                    "EntryValue": "9"
+                },
+                {
+                    "EntryName": "OutQuart",
+                    "EntryValue": "10"
+                },
+                {
+                    "EntryName": "InOutQuart",
+                    "EntryValue": "11"
+                },
+                {
+                    "EntryName": "OutInQuart",
+                    "EntryValue": "12"
+                },
+                {
+                    "EntryName": "InQuint",
+                    "EntryValue": "13"
+                },
+                {
+                    "EntryName": "OutQuint",
+                    "EntryValue": "14"
+                },
+                {
+                    "EntryName": "InOutQuint",
+                    "EntryValue": "15"
+                },
+                {
+                    "EntryName": "OutInQuint",
+                    "EntryValue": "16"
+                },
+                {
+                    "EntryName": "InSine",
+                    "EntryValue": "17"
+                },
+                {
+                    "EntryName": "OutSine",
+                    "EntryValue": "18"
+                },
+                {
+                    "EntryName": "InOutSine",
+                    "EntryValue": "19"
+                },
+                {
+                    "EntryName": "OutInSine",
+                    "EntryValue": "20"
+                },
+                {
+                    "EntryName": "InExpo",
+                    "EntryValue": "21"
+                },
+                {
+                    "EntryName": "OutExpo",
+                    "EntryValue": "22"
+                },
+                {
+                    "EntryName": "InOutExpo",
+                    "EntryValue": "23"
+                },
+                {
+                    "EntryName": "OutInExpo",
+                    "EntryValue": "24"
+                },
+                {
+                    "EntryName": "InCirc",
+                    "EntryValue": "25"
+                },
+                {
+                    "EntryName": "OutCirc",
+                    "EntryValue": "26"
+                },
+                {
+                    "EntryName": "InOutCirc",
+                    "EntryValue": "27"
+                },
+                {
+                    "EntryName": "OutInCirc",
+                    "EntryValue": "28"
+                },
+                {
+                    "EntryName": "InElastic",
+                    "EntryValue": "29"
+                },
+                {
+                    "EntryName": "OutElastic",
+                    "EntryValue": "30"
+                },
+                {
+                    "EntryName": "InOutElastic",
+                    "EntryValue": "31"
+                },
+                {
+                    "EntryName": "OutInElastic",
+                    "EntryValue": "32"
+                },
+                {
+                    "EntryName": "InBack",
+                    "EntryValue": "33"
+                },
+                {
+                    "EntryName": "OutBack",
+                    "EntryValue": "34"
+                },
+                {
+                    "EntryName": "InOutBack",
+                    "EntryValue": "35"
+                },
+                {
+                    "EntryName": "OutInBack",
+                    "EntryValue": "36"
+                },
+                {
+                    "EntryName": "InBounce",
+                    "EntryValue": "37"
+                },
+                {
+                    "EntryName": "OutBounce",
+                    "EntryValue": "38"
+                },
+                {
+                    "EntryName": "InOutBounce",
+                    "EntryValue": "39"
+                },
+                {
+                    "EntryName": "OutInBounce",
+                    "EntryValue": "40"
+                },
+                {
+                    "EntryName": "InCurve",
+                    "EntryValue": "41"
+                },
+                {
+                    "EntryName": "OutCurve",
+                    "EntryValue": "42"
+                },
+                {
+                    "EntryName": "SineCurve",
+                    "EntryValue": "43"
+                },
+                {
+                    "EntryName": "CosineCurve",
+                    "EntryValue": "44"
+                },
+                {
+                    "EntryName": "BezierSpline",
+                    "EntryValue": "45"
+                },
+                {
+                    "EntryName": "TCBSpline",
+                    "EntryValue": "46"
+                },
+                {
+                    "EntryName": "Custom",
+                    "EntryValue": "47"
+                },
+                {
+                    "EntryName": "NCurveTypes",
+                    "EntryValue": "48"
+                }
+            ],
+            "IsProtected": false
+        }
+    ],
+    "Classes": [
+        {
+            "ClassName": "QEasingCurve",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QEasingCurve::Type",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QEasingCurve",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QEasingCurve::Type",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": null,
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "operator=",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QEasingCurve",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "swap",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QEasingCurve",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator==",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QEasingCurve",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator!=",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QEasingCurve",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "amplitude",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "double",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "qreal",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "setAmplitude",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "amplitude",
+                            "ParameterType": "double",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "amplitude",
+                                "ParameterType": "qreal",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "period",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "double",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "qreal",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "setPeriod",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "period",
+                            "ParameterType": "double",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "period",
+                                "ParameterType": "qreal",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "overshoot",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "double",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "qreal",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "setOvershoot",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "overshoot",
+                            "ParameterType": "double",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "overshoot",
+                                "ParameterType": "qreal",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "addCubicBezierSegment",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "c1",
+                            "ParameterType": "QPointF",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "c2",
+                            "ParameterType": "QPointF",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "endPoint",
+                            "ParameterType": "QPointF",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "addTCBSegment",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "nextPoint",
+                            "ParameterType": "QPointF",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "t",
+                            "ParameterType": "double",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "t",
+                                "ParameterType": "qreal",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "c",
+                            "ParameterType": "double",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "c",
+                                "ParameterType": "qreal",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "b",
+                            "ParameterType": "double",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "b",
+                                "ParameterType": "qreal",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "toCubicSpline",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QList\u003cQPointF\u003e",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "QList\u003cQPointF\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "type",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QEasingCurve::Type",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "setType",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QEasingCurve::Type",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "setCustomType",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "func",
+                            "ParameterType": "qreal (*)(qreal)",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": true,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": {
+                                "MethodName": "",
+                                "OverrideMethodName": "",
+                                "ReturnType": {
+                                    "ParameterName": "",
+                                    "ParameterType": "double",
+                                    "Const": false,
+                                    "Pointer": false,
+                                    "PointerCount": 0,
+                                    "ByRef": false,
+                                    "Optional": false,
+                                    "UniquePtr": false,
+                                    "IsFunctionPointer": false,
+                                    "IsStdFunction": false,
+                                    "IsStdOptional": false,
+                                    "FunctionPointer": null,
+                                    "QtCppOriginalType": {
+                                        "ParameterName": "",
+                                        "ParameterType": "qreal",
+                                        "Const": false,
+                                        "Pointer": false,
+                                        "PointerCount": 0,
+                                        "ByRef": false,
+                                        "Optional": false,
+                                        "UniquePtr": false,
+                                        "IsFunctionPointer": false,
+                                        "IsStdFunction": false,
+                                        "IsStdOptional": false,
+                                        "FunctionPointer": null,
+                                        "QtCppOriginalType": null,
+                                        "BecomesConstInVersion": null
+                                    },
+                                    "BecomesConstInVersion": null
+                                },
+                                "Parameters": [
+                                    {
+                                        "ParameterName": "funcparam1",
+                                        "ParameterType": "double",
+                                        "Const": false,
+                                        "Pointer": false,
+                                        "PointerCount": 0,
+                                        "ByRef": false,
+                                        "Optional": false,
+                                        "UniquePtr": false,
+                                        "IsFunctionPointer": false,
+                                        "IsStdFunction": false,
+                                        "IsStdOptional": false,
+                                        "FunctionPointer": null,
+                                        "QtCppOriginalType": {
+                                            "ParameterName": "",
+                                            "ParameterType": "qreal",
+                                            "Const": false,
+                                            "Pointer": false,
+                                            "PointerCount": 0,
+                                            "ByRef": false,
+                                            "Optional": false,
+                                            "UniquePtr": false,
+                                            "IsFunctionPointer": false,
+                                            "IsStdFunction": false,
+                                            "IsStdOptional": false,
+                                            "FunctionPointer": null,
+                                            "QtCppOriginalType": null,
+                                            "BecomesConstInVersion": null
+                                        },
+                                        "BecomesConstInVersion": null
+                                    }
+                                ],
+                                "IsStatic": false,
+                                "IsMoveCtor": false,
+                                "IsSignal": false,
+                                "IsConst": false,
+                                "IsVariable": false,
+                                "IsPrivate": false,
+                                "IsVirtual": false,
+                                "IsPureVirtual": false,
+                                "IsProtected": false,
+                                "IsFinal": false,
+                                "HiddenParams": null,
+                                "InheritedFrom": "",
+                                "InheritedInClass": "",
+                                "VariableFieldName": "",
+                                "FossOnly": false,
+                                "LinuxOnly": false,
+                                "BecomesNonConstInVersion": null,
+                                "HasStdFunctionPointerParam": false
+                            },
+                            "QtCppOriginalType": {
+                                "ParameterName": "func",
+                                "ParameterType": "QEasingCurve::EasingFunction",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "customType",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "qreal (*)(qreal)",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": true,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": {
+                            "MethodName": "",
+                            "OverrideMethodName": "",
+                            "ReturnType": {
+                                "ParameterName": "",
+                                "ParameterType": "double",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": {
+                                    "ParameterName": "",
+                                    "ParameterType": "qreal",
+                                    "Const": false,
+                                    "Pointer": false,
+                                    "PointerCount": 0,
+                                    "ByRef": false,
+                                    "Optional": false,
+                                    "UniquePtr": false,
+                                    "IsFunctionPointer": false,
+                                    "IsStdFunction": false,
+                                    "IsStdOptional": false,
+                                    "FunctionPointer": null,
+                                    "QtCppOriginalType": null,
+                                    "BecomesConstInVersion": null
+                                },
+                                "BecomesConstInVersion": null
+                            },
+                            "Parameters": [
+                                {
+                                    "ParameterName": "funcparam1",
+                                    "ParameterType": "double",
+                                    "Const": false,
+                                    "Pointer": false,
+                                    "PointerCount": 0,
+                                    "ByRef": false,
+                                    "Optional": false,
+                                    "UniquePtr": false,
+                                    "IsFunctionPointer": false,
+                                    "IsStdFunction": false,
+                                    "IsStdOptional": false,
+                                    "FunctionPointer": null,
+                                    "QtCppOriginalType": {
+                                        "ParameterName": "",
+                                        "ParameterType": "qreal",
+                                        "Const": false,
+                                        "Pointer": false,
+                                        "PointerCount": 0,
+                                        "ByRef": false,
+                                        "Optional": false,
+                                        "UniquePtr": false,
+                                        "IsFunctionPointer": false,
+                                        "IsStdFunction": false,
+                                        "IsStdOptional": false,
+                                        "FunctionPointer": null,
+                                        "QtCppOriginalType": null,
+                                        "BecomesConstInVersion": null
+                                    },
+                                    "BecomesConstInVersion": null
+                                }
+                            ],
+                            "IsStatic": false,
+                            "IsMoveCtor": false,
+                            "IsSignal": false,
+                            "IsConst": false,
+                            "IsVariable": false,
+                            "IsPrivate": false,
+                            "IsVirtual": false,
+                            "IsPureVirtual": false,
+                            "IsProtected": false,
+                            "IsFinal": false,
+                            "HiddenParams": null,
+                            "InheritedFrom": "",
+                            "InheritedInClass": "",
+                            "VariableFieldName": "",
+                            "FossOnly": false,
+                            "LinuxOnly": false,
+                            "BecomesNonConstInVersion": null,
+                            "HasStdFunctionPointerParam": false
+                        },
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "QEasingCurve::EasingFunction",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "valueForProgress",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "double",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "qreal",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "progress",
+                            "ParameterType": "double",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "progress",
+                                "ParameterType": "qreal",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": [
+                {
+                    "Alias": "QEasingCurve::QtGadgetHelper",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                },
+                {
+                    "Alias": "QEasingCurve::EasingFunction",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "qreal (*)(qreal)",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": true,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                }
+            ],
+            "ChildClassdefs": null,
+            "ChildEnums": [
+                {
+                    "EnumName": "QEasingCurve::Type",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "Linear",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "InQuad",
+                            "EntryValue": "1"
+                        },
+                        {
+                            "EntryName": "OutQuad",
+                            "EntryValue": "2"
+                        },
+                        {
+                            "EntryName": "InOutQuad",
+                            "EntryValue": "3"
+                        },
+                        {
+                            "EntryName": "OutInQuad",
+                            "EntryValue": "4"
+                        },
+                        {
+                            "EntryName": "InCubic",
+                            "EntryValue": "5"
+                        },
+                        {
+                            "EntryName": "OutCubic",
+                            "EntryValue": "6"
+                        },
+                        {
+                            "EntryName": "InOutCubic",
+                            "EntryValue": "7"
+                        },
+                        {
+                            "EntryName": "OutInCubic",
+                            "EntryValue": "8"
+                        },
+                        {
+                            "EntryName": "InQuart",
+                            "EntryValue": "9"
+                        },
+                        {
+                            "EntryName": "OutQuart",
+                            "EntryValue": "10"
+                        },
+                        {
+                            "EntryName": "InOutQuart",
+                            "EntryValue": "11"
+                        },
+                        {
+                            "EntryName": "OutInQuart",
+                            "EntryValue": "12"
+                        },
+                        {
+                            "EntryName": "InQuint",
+                            "EntryValue": "13"
+                        },
+                        {
+                            "EntryName": "OutQuint",
+                            "EntryValue": "14"
+                        },
+                        {
+                            "EntryName": "InOutQuint",
+                            "EntryValue": "15"
+                        },
+                        {
+                            "EntryName": "OutInQuint",
+                            "EntryValue": "16"
+                        },
+                        {
+                            "EntryName": "InSine",
+                            "EntryValue": "17"
+                        },
+                        {
+                            "EntryName": "OutSine",
+                            "EntryValue": "18"
+                        },
+                        {
+                            "EntryName": "InOutSine",
+                            "EntryValue": "19"
+                        },
+                        {
+                            "EntryName": "OutInSine",
+                            "EntryValue": "20"
+                        },
+                        {
+                            "EntryName": "InExpo",
+                            "EntryValue": "21"
+                        },
+                        {
+                            "EntryName": "OutExpo",
+                            "EntryValue": "22"
+                        },
+                        {
+                            "EntryName": "InOutExpo",
+                            "EntryValue": "23"
+                        },
+                        {
+                            "EntryName": "OutInExpo",
+                            "EntryValue": "24"
+                        },
+                        {
+                            "EntryName": "InCirc",
+                            "EntryValue": "25"
+                        },
+                        {
+                            "EntryName": "OutCirc",
+                            "EntryValue": "26"
+                        },
+                        {
+                            "EntryName": "InOutCirc",
+                            "EntryValue": "27"
+                        },
+                        {
+                            "EntryName": "OutInCirc",
+                            "EntryValue": "28"
+                        },
+                        {
+                            "EntryName": "InElastic",
+                            "EntryValue": "29"
+                        },
+                        {
+                            "EntryName": "OutElastic",
+                            "EntryValue": "30"
+                        },
+                        {
+                            "EntryName": "InOutElastic",
+                            "EntryValue": "31"
+                        },
+                        {
+                            "EntryName": "OutInElastic",
+                            "EntryValue": "32"
+                        },
+                        {
+                            "EntryName": "InBack",
+                            "EntryValue": "33"
+                        },
+                        {
+                            "EntryName": "OutBack",
+                            "EntryValue": "34"
+                        },
+                        {
+                            "EntryName": "InOutBack",
+                            "EntryValue": "35"
+                        },
+                        {
+                            "EntryName": "OutInBack",
+                            "EntryValue": "36"
+                        },
+                        {
+                            "EntryName": "InBounce",
+                            "EntryValue": "37"
+                        },
+                        {
+                            "EntryName": "OutBounce",
+                            "EntryValue": "38"
+                        },
+                        {
+                            "EntryName": "InOutBounce",
+                            "EntryValue": "39"
+                        },
+                        {
+                            "EntryName": "OutInBounce",
+                            "EntryValue": "40"
+                        },
+                        {
+                            "EntryName": "InCurve",
+                            "EntryValue": "41"
+                        },
+                        {
+                            "EntryName": "OutCurve",
+                            "EntryValue": "42"
+                        },
+                        {
+                            "EntryName": "SineCurve",
+                            "EntryValue": "43"
+                        },
+                        {
+                            "EntryName": "CosineCurve",
+                            "EntryValue": "44"
+                        },
+                        {
+                            "EntryName": "BezierSpline",
+                            "EntryValue": "45"
+                        },
+                        {
+                            "EntryName": "TCBSpline",
+                            "EntryValue": "46"
+                        },
+                        {
+                            "EntryName": "Custom",
+                            "EntryValue": "47"
+                        },
+                        {
+                            "EntryName": "NCurveTypes",
+                            "EntryValue": "48"
+                        }
+                    ],
+                    "IsProtected": false
+                }
+            ],
+            "PrivateMethods": [
+                "qt_static_metacall"
+            ],
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        }
+    ]
+}

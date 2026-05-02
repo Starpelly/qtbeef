@@ -1,0 +1,1297 @@
+{
+    "Filename": "/usr/include/x86_64-linux-gnu/qt6/QtCore/qstandardpaths.h",
+    "Typedefs": [
+        {
+            "Alias": "__int128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__uint128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "unsigned __int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__NSConstantString",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__NSConstantString_tag",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_ms_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "char",
+                "Const": false,
+                "Pointer": true,
+                "PointerCount": 1,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__va_list_tag[1]",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QStandardPaths::QtGadgetHelper",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "void",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QStandardPaths::LocateOptions",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "QFlags\u003cQStandardPaths::LocateOption\u003e",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        }
+    ],
+    "Enums": [
+        {
+            "EnumName": "QStandardPaths::StandardLocation",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "DesktopLocation",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "DocumentsLocation",
+                    "EntryValue": "1"
+                },
+                {
+                    "EntryName": "FontsLocation",
+                    "EntryValue": "2"
+                },
+                {
+                    "EntryName": "ApplicationsLocation",
+                    "EntryValue": "3"
+                },
+                {
+                    "EntryName": "MusicLocation",
+                    "EntryValue": "4"
+                },
+                {
+                    "EntryName": "MoviesLocation",
+                    "EntryValue": "5"
+                },
+                {
+                    "EntryName": "PicturesLocation",
+                    "EntryValue": "6"
+                },
+                {
+                    "EntryName": "TempLocation",
+                    "EntryValue": "7"
+                },
+                {
+                    "EntryName": "HomeLocation",
+                    "EntryValue": "8"
+                },
+                {
+                    "EntryName": "AppLocalDataLocation",
+                    "EntryValue": "9"
+                },
+                {
+                    "EntryName": "CacheLocation",
+                    "EntryValue": "10"
+                },
+                {
+                    "EntryName": "GenericDataLocation",
+                    "EntryValue": "11"
+                },
+                {
+                    "EntryName": "RuntimeLocation",
+                    "EntryValue": "12"
+                },
+                {
+                    "EntryName": "ConfigLocation",
+                    "EntryValue": "13"
+                },
+                {
+                    "EntryName": "DownloadLocation",
+                    "EntryValue": "14"
+                },
+                {
+                    "EntryName": "GenericCacheLocation",
+                    "EntryValue": "15"
+                },
+                {
+                    "EntryName": "GenericConfigLocation",
+                    "EntryValue": "16"
+                },
+                {
+                    "EntryName": "AppDataLocation",
+                    "EntryValue": "17"
+                },
+                {
+                    "EntryName": "AppConfigLocation",
+                    "EntryValue": "18"
+                },
+                {
+                    "EntryName": "PublicShareLocation",
+                    "EntryValue": "19"
+                },
+                {
+                    "EntryName": "TemplatesLocation",
+                    "EntryValue": "20"
+                }
+            ],
+            "IsProtected": false
+        },
+        {
+            "EnumName": "QStandardPaths::LocateOption",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "LocateFile",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "LocateDirectory",
+                    "EntryValue": "1"
+                }
+            ],
+            "IsProtected": false
+        }
+    ],
+    "Classes": [
+        {
+            "ClassName": "QStandardPaths",
+            "Abstract": false,
+            "Ctors": [],
+            "DirectInherits": null,
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "writableLocation",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QStandardPaths::StandardLocation",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "standardLocations",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QStringList",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QStandardPaths::StandardLocation",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "locate",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QStandardPaths::StandardLocation",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "fileName",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "options",
+                            "ParameterType": "QFlags\u003cQStandardPaths::LocateOption\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "options",
+                                "ParameterType": "QStandardPaths::LocateOptions",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": true,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "locateAll",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QStringList",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QStandardPaths::StandardLocation",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "fileName",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "options",
+                            "ParameterType": "QFlags\u003cQStandardPaths::LocateOption\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "options",
+                                "ParameterType": "QStandardPaths::LocateOptions",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": true,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "displayName",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QStandardPaths::StandardLocation",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "findExecutable",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "executableName",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "paths",
+                            "ParameterType": "QStringList",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "setTestModeEnabled",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "testMode",
+                            "ParameterType": "bool",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isTestModeEnabled",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "locate3",
+                    "OverrideMethodName": "locate",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QStandardPaths::StandardLocation",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "fileName",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "options",
+                            "ParameterType": "QFlags\u003cQStandardPaths::LocateOption\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "options",
+                                "ParameterType": "QStandardPaths::LocateOptions",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": true,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "locateAll3",
+                    "OverrideMethodName": "locateAll",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QStringList",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QStandardPaths::StandardLocation",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "fileName",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "options",
+                            "ParameterType": "QFlags\u003cQStandardPaths::LocateOption\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "options",
+                                "ParameterType": "QStandardPaths::LocateOptions",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": true,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "findExecutable2",
+                    "OverrideMethodName": "findExecutable",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "executableName",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "paths",
+                            "ParameterType": "QStringList",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": false,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": [
+                {
+                    "Alias": "QStandardPaths::QtGadgetHelper",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                },
+                {
+                    "Alias": "QStandardPaths::LocateOptions",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "QFlags\u003cQStandardPaths::LocateOption\u003e",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                }
+            ],
+            "ChildClassdefs": null,
+            "ChildEnums": [
+                {
+                    "EnumName": "QStandardPaths::StandardLocation",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "DesktopLocation",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "DocumentsLocation",
+                            "EntryValue": "1"
+                        },
+                        {
+                            "EntryName": "FontsLocation",
+                            "EntryValue": "2"
+                        },
+                        {
+                            "EntryName": "ApplicationsLocation",
+                            "EntryValue": "3"
+                        },
+                        {
+                            "EntryName": "MusicLocation",
+                            "EntryValue": "4"
+                        },
+                        {
+                            "EntryName": "MoviesLocation",
+                            "EntryValue": "5"
+                        },
+                        {
+                            "EntryName": "PicturesLocation",
+                            "EntryValue": "6"
+                        },
+                        {
+                            "EntryName": "TempLocation",
+                            "EntryValue": "7"
+                        },
+                        {
+                            "EntryName": "HomeLocation",
+                            "EntryValue": "8"
+                        },
+                        {
+                            "EntryName": "AppLocalDataLocation",
+                            "EntryValue": "9"
+                        },
+                        {
+                            "EntryName": "CacheLocation",
+                            "EntryValue": "10"
+                        },
+                        {
+                            "EntryName": "GenericDataLocation",
+                            "EntryValue": "11"
+                        },
+                        {
+                            "EntryName": "RuntimeLocation",
+                            "EntryValue": "12"
+                        },
+                        {
+                            "EntryName": "ConfigLocation",
+                            "EntryValue": "13"
+                        },
+                        {
+                            "EntryName": "DownloadLocation",
+                            "EntryValue": "14"
+                        },
+                        {
+                            "EntryName": "GenericCacheLocation",
+                            "EntryValue": "15"
+                        },
+                        {
+                            "EntryName": "GenericConfigLocation",
+                            "EntryValue": "16"
+                        },
+                        {
+                            "EntryName": "AppDataLocation",
+                            "EntryValue": "17"
+                        },
+                        {
+                            "EntryName": "AppConfigLocation",
+                            "EntryValue": "18"
+                        },
+                        {
+                            "EntryName": "PublicShareLocation",
+                            "EntryValue": "19"
+                        },
+                        {
+                            "EntryName": "TemplatesLocation",
+                            "EntryValue": "20"
+                        }
+                    ],
+                    "IsProtected": false
+                },
+                {
+                    "EnumName": "QStandardPaths::LocateOption",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "LocateFile",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "LocateDirectory",
+                            "EntryValue": "1"
+                        }
+                    ],
+                    "IsProtected": false
+                }
+            ],
+            "PrivateMethods": [
+                "qt_static_metacall"
+            ],
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        }
+    ]
+}

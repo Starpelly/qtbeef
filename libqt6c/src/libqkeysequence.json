@@ -1,0 +1,3548 @@
+{
+    "Filename": "/usr/include/x86_64-linux-gnu/qt6/QtGui/qkeysequence.h",
+    "Typedefs": [
+        {
+            "Alias": "__int128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__uint128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "unsigned __int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__NSConstantString",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__NSConstantString_tag",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_ms_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "char",
+                "Const": false,
+                "Pointer": true,
+                "PointerCount": 1,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__va_list_tag[1]",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QKeySequence::QtGadgetHelper",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "void",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QKeySequence::DataPtr",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "QKeySequencePrivate",
+                "Const": false,
+                "Pointer": true,
+                "PointerCount": 1,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        }
+    ],
+    "Enums": [
+        {
+            "EnumName": "QKeySequence::StandardKey",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "UnknownKey",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "HelpContents",
+                    "EntryValue": "1"
+                },
+                {
+                    "EntryName": "WhatsThis",
+                    "EntryValue": "2"
+                },
+                {
+                    "EntryName": "Open",
+                    "EntryValue": "3"
+                },
+                {
+                    "EntryName": "Close",
+                    "EntryValue": "4"
+                },
+                {
+                    "EntryName": "Save",
+                    "EntryValue": "5"
+                },
+                {
+                    "EntryName": "New",
+                    "EntryValue": "6"
+                },
+                {
+                    "EntryName": "Delete",
+                    "EntryValue": "7"
+                },
+                {
+                    "EntryName": "Cut",
+                    "EntryValue": "8"
+                },
+                {
+                    "EntryName": "Copy",
+                    "EntryValue": "9"
+                },
+                {
+                    "EntryName": "Paste",
+                    "EntryValue": "10"
+                },
+                {
+                    "EntryName": "Undo",
+                    "EntryValue": "11"
+                },
+                {
+                    "EntryName": "Redo",
+                    "EntryValue": "12"
+                },
+                {
+                    "EntryName": "Back",
+                    "EntryValue": "13"
+                },
+                {
+                    "EntryName": "Forward",
+                    "EntryValue": "14"
+                },
+                {
+                    "EntryName": "Refresh",
+                    "EntryValue": "15"
+                },
+                {
+                    "EntryName": "ZoomIn",
+                    "EntryValue": "16"
+                },
+                {
+                    "EntryName": "ZoomOut",
+                    "EntryValue": "17"
+                },
+                {
+                    "EntryName": "Print",
+                    "EntryValue": "18"
+                },
+                {
+                    "EntryName": "AddTab",
+                    "EntryValue": "19"
+                },
+                {
+                    "EntryName": "NextChild",
+                    "EntryValue": "20"
+                },
+                {
+                    "EntryName": "PreviousChild",
+                    "EntryValue": "21"
+                },
+                {
+                    "EntryName": "Find",
+                    "EntryValue": "22"
+                },
+                {
+                    "EntryName": "FindNext",
+                    "EntryValue": "23"
+                },
+                {
+                    "EntryName": "FindPrevious",
+                    "EntryValue": "24"
+                },
+                {
+                    "EntryName": "Replace",
+                    "EntryValue": "25"
+                },
+                {
+                    "EntryName": "SelectAll",
+                    "EntryValue": "26"
+                },
+                {
+                    "EntryName": "Bold",
+                    "EntryValue": "27"
+                },
+                {
+                    "EntryName": "Italic",
+                    "EntryValue": "28"
+                },
+                {
+                    "EntryName": "Underline",
+                    "EntryValue": "29"
+                },
+                {
+                    "EntryName": "MoveToNextChar",
+                    "EntryValue": "30"
+                },
+                {
+                    "EntryName": "MoveToPreviousChar",
+                    "EntryValue": "31"
+                },
+                {
+                    "EntryName": "MoveToNextWord",
+                    "EntryValue": "32"
+                },
+                {
+                    "EntryName": "MoveToPreviousWord",
+                    "EntryValue": "33"
+                },
+                {
+                    "EntryName": "MoveToNextLine",
+                    "EntryValue": "34"
+                },
+                {
+                    "EntryName": "MoveToPreviousLine",
+                    "EntryValue": "35"
+                },
+                {
+                    "EntryName": "MoveToNextPage",
+                    "EntryValue": "36"
+                },
+                {
+                    "EntryName": "MoveToPreviousPage",
+                    "EntryValue": "37"
+                },
+                {
+                    "EntryName": "MoveToStartOfLine",
+                    "EntryValue": "38"
+                },
+                {
+                    "EntryName": "MoveToEndOfLine",
+                    "EntryValue": "39"
+                },
+                {
+                    "EntryName": "MoveToStartOfBlock",
+                    "EntryValue": "40"
+                },
+                {
+                    "EntryName": "MoveToEndOfBlock",
+                    "EntryValue": "41"
+                },
+                {
+                    "EntryName": "MoveToStartOfDocument",
+                    "EntryValue": "42"
+                },
+                {
+                    "EntryName": "MoveToEndOfDocument",
+                    "EntryValue": "43"
+                },
+                {
+                    "EntryName": "SelectNextChar",
+                    "EntryValue": "44"
+                },
+                {
+                    "EntryName": "SelectPreviousChar",
+                    "EntryValue": "45"
+                },
+                {
+                    "EntryName": "SelectNextWord",
+                    "EntryValue": "46"
+                },
+                {
+                    "EntryName": "SelectPreviousWord",
+                    "EntryValue": "47"
+                },
+                {
+                    "EntryName": "SelectNextLine",
+                    "EntryValue": "48"
+                },
+                {
+                    "EntryName": "SelectPreviousLine",
+                    "EntryValue": "49"
+                },
+                {
+                    "EntryName": "SelectNextPage",
+                    "EntryValue": "50"
+                },
+                {
+                    "EntryName": "SelectPreviousPage",
+                    "EntryValue": "51"
+                },
+                {
+                    "EntryName": "SelectStartOfLine",
+                    "EntryValue": "52"
+                },
+                {
+                    "EntryName": "SelectEndOfLine",
+                    "EntryValue": "53"
+                },
+                {
+                    "EntryName": "SelectStartOfBlock",
+                    "EntryValue": "54"
+                },
+                {
+                    "EntryName": "SelectEndOfBlock",
+                    "EntryValue": "55"
+                },
+                {
+                    "EntryName": "SelectStartOfDocument",
+                    "EntryValue": "56"
+                },
+                {
+                    "EntryName": "SelectEndOfDocument",
+                    "EntryValue": "57"
+                },
+                {
+                    "EntryName": "DeleteStartOfWord",
+                    "EntryValue": "58"
+                },
+                {
+                    "EntryName": "DeleteEndOfWord",
+                    "EntryValue": "59"
+                },
+                {
+                    "EntryName": "DeleteEndOfLine",
+                    "EntryValue": "60"
+                },
+                {
+                    "EntryName": "InsertParagraphSeparator",
+                    "EntryValue": "61"
+                },
+                {
+                    "EntryName": "InsertLineSeparator",
+                    "EntryValue": "62"
+                },
+                {
+                    "EntryName": "SaveAs",
+                    "EntryValue": "63"
+                },
+                {
+                    "EntryName": "Preferences",
+                    "EntryValue": "64"
+                },
+                {
+                    "EntryName": "Quit",
+                    "EntryValue": "65"
+                },
+                {
+                    "EntryName": "FullScreen",
+                    "EntryValue": "66"
+                },
+                {
+                    "EntryName": "Deselect",
+                    "EntryValue": "67"
+                },
+                {
+                    "EntryName": "DeleteCompleteLine",
+                    "EntryValue": "68"
+                },
+                {
+                    "EntryName": "Backspace",
+                    "EntryValue": "69"
+                },
+                {
+                    "EntryName": "Cancel",
+                    "EntryValue": "70"
+                }
+            ],
+            "IsProtected": false
+        },
+        {
+            "EnumName": "QKeySequence::SequenceFormat",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "NativeText",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "PortableText",
+                    "EntryValue": "1"
+                }
+            ],
+            "IsProtected": false
+        },
+        {
+            "EnumName": "QKeySequence::SequenceMatch",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "NoMatch",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "PartialMatch",
+                    "EntryValue": "1"
+                },
+                {
+                    "EntryName": "ExactMatch",
+                    "EntryValue": "2"
+                }
+            ],
+            "IsProtected": false
+        }
+    ],
+    "Classes": [
+        {
+            "ClassName": "QKeySequence",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "key",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "ks",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "key",
+                            "ParameterType": "QKeySequence::StandardKey",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "key",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "k1",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k2",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k3",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "k4",
+                            "ParameterType": "QKeyCombination",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": null,
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "count",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isEmpty",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "toString",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "fromString",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QKeySequence",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "str",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "listFromString",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QList\u003cQKeySequence\u003e",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "QList\u003cQKeySequence\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "str",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "listToString",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "list",
+                            "ParameterType": "QList\u003cQKeySequence\u003e",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "list",
+                                "ParameterType": "QList\u003cQKeySequence\u003e",
+                                "Const": true,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": true,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "matches",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QKeySequence::SequenceMatch",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "seq",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "mnemonic",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QKeySequence",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "text",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "keyBindings",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QList\u003cQKeySequence\u003e",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "QList\u003cQKeySequence\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "key",
+                            "ParameterType": "QKeySequence::StandardKey",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator QVariant",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QVariant",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator[]",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QKeyCombination",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "i",
+                            "ParameterType": "unsigned int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "i",
+                                "ParameterType": "uint",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator=",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "swap",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QKeySequence",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator==",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator!=",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator\u003c",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "ks",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator\u003e",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator\u003c=",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "operator\u003e=",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QKeySequence",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isDetached",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "toString1",
+                    "OverrideMethodName": "toString",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "fromString2",
+                    "OverrideMethodName": "fromString",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QKeySequence",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "str",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "listFromString2",
+                    "OverrideMethodName": "listFromString",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QList\u003cQKeySequence\u003e",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": {
+                            "ParameterName": "",
+                            "ParameterType": "QList\u003cQKeySequence\u003e",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "str",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "listToString2",
+                    "OverrideMethodName": "listToString",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "list",
+                            "ParameterType": "QList\u003cQKeySequence\u003e",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "list",
+                                "ParameterType": "QList\u003cQKeySequence\u003e",
+                                "Const": true,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": true,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "format",
+                            "ParameterType": "QKeySequence::SequenceFormat",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": [
+                {
+                    "Alias": "QKeySequence::QtGadgetHelper",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                },
+                {
+                    "Alias": "QKeySequence::DataPtr",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "QKeySequencePrivate",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                }
+            ],
+            "ChildClassdefs": null,
+            "ChildEnums": [
+                {
+                    "EnumName": "QKeySequence::StandardKey",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "UnknownKey",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "HelpContents",
+                            "EntryValue": "1"
+                        },
+                        {
+                            "EntryName": "WhatsThis",
+                            "EntryValue": "2"
+                        },
+                        {
+                            "EntryName": "Open",
+                            "EntryValue": "3"
+                        },
+                        {
+                            "EntryName": "Close",
+                            "EntryValue": "4"
+                        },
+                        {
+                            "EntryName": "Save",
+                            "EntryValue": "5"
+                        },
+                        {
+                            "EntryName": "New",
+                            "EntryValue": "6"
+                        },
+                        {
+                            "EntryName": "Delete",
+                            "EntryValue": "7"
+                        },
+                        {
+                            "EntryName": "Cut",
+                            "EntryValue": "8"
+                        },
+                        {
+                            "EntryName": "Copy",
+                            "EntryValue": "9"
+                        },
+                        {
+                            "EntryName": "Paste",
+                            "EntryValue": "10"
+                        },
+                        {
+                            "EntryName": "Undo",
+                            "EntryValue": "11"
+                        },
+                        {
+                            "EntryName": "Redo",
+                            "EntryValue": "12"
+                        },
+                        {
+                            "EntryName": "Back",
+                            "EntryValue": "13"
+                        },
+                        {
+                            "EntryName": "Forward",
+                            "EntryValue": "14"
+                        },
+                        {
+                            "EntryName": "Refresh",
+                            "EntryValue": "15"
+                        },
+                        {
+                            "EntryName": "ZoomIn",
+                            "EntryValue": "16"
+                        },
+                        {
+                            "EntryName": "ZoomOut",
+                            "EntryValue": "17"
+                        },
+                        {
+                            "EntryName": "Print",
+                            "EntryValue": "18"
+                        },
+                        {
+                            "EntryName": "AddTab",
+                            "EntryValue": "19"
+                        },
+                        {
+                            "EntryName": "NextChild",
+                            "EntryValue": "20"
+                        },
+                        {
+                            "EntryName": "PreviousChild",
+                            "EntryValue": "21"
+                        },
+                        {
+                            "EntryName": "Find",
+                            "EntryValue": "22"
+                        },
+                        {
+                            "EntryName": "FindNext",
+                            "EntryValue": "23"
+                        },
+                        {
+                            "EntryName": "FindPrevious",
+                            "EntryValue": "24"
+                        },
+                        {
+                            "EntryName": "Replace",
+                            "EntryValue": "25"
+                        },
+                        {
+                            "EntryName": "SelectAll",
+                            "EntryValue": "26"
+                        },
+                        {
+                            "EntryName": "Bold",
+                            "EntryValue": "27"
+                        },
+                        {
+                            "EntryName": "Italic",
+                            "EntryValue": "28"
+                        },
+                        {
+                            "EntryName": "Underline",
+                            "EntryValue": "29"
+                        },
+                        {
+                            "EntryName": "MoveToNextChar",
+                            "EntryValue": "30"
+                        },
+                        {
+                            "EntryName": "MoveToPreviousChar",
+                            "EntryValue": "31"
+                        },
+                        {
+                            "EntryName": "MoveToNextWord",
+                            "EntryValue": "32"
+                        },
+                        {
+                            "EntryName": "MoveToPreviousWord",
+                            "EntryValue": "33"
+                        },
+                        {
+                            "EntryName": "MoveToNextLine",
+                            "EntryValue": "34"
+                        },
+                        {
+                            "EntryName": "MoveToPreviousLine",
+                            "EntryValue": "35"
+                        },
+                        {
+                            "EntryName": "MoveToNextPage",
+                            "EntryValue": "36"
+                        },
+                        {
+                            "EntryName": "MoveToPreviousPage",
+                            "EntryValue": "37"
+                        },
+                        {
+                            "EntryName": "MoveToStartOfLine",
+                            "EntryValue": "38"
+                        },
+                        {
+                            "EntryName": "MoveToEndOfLine",
+                            "EntryValue": "39"
+                        },
+                        {
+                            "EntryName": "MoveToStartOfBlock",
+                            "EntryValue": "40"
+                        },
+                        {
+                            "EntryName": "MoveToEndOfBlock",
+                            "EntryValue": "41"
+                        },
+                        {
+                            "EntryName": "MoveToStartOfDocument",
+                            "EntryValue": "42"
+                        },
+                        {
+                            "EntryName": "MoveToEndOfDocument",
+                            "EntryValue": "43"
+                        },
+                        {
+                            "EntryName": "SelectNextChar",
+                            "EntryValue": "44"
+                        },
+                        {
+                            "EntryName": "SelectPreviousChar",
+                            "EntryValue": "45"
+                        },
+                        {
+                            "EntryName": "SelectNextWord",
+                            "EntryValue": "46"
+                        },
+                        {
+                            "EntryName": "SelectPreviousWord",
+                            "EntryValue": "47"
+                        },
+                        {
+                            "EntryName": "SelectNextLine",
+                            "EntryValue": "48"
+                        },
+                        {
+                            "EntryName": "SelectPreviousLine",
+                            "EntryValue": "49"
+                        },
+                        {
+                            "EntryName": "SelectNextPage",
+                            "EntryValue": "50"
+                        },
+                        {
+                            "EntryName": "SelectPreviousPage",
+                            "EntryValue": "51"
+                        },
+                        {
+                            "EntryName": "SelectStartOfLine",
+                            "EntryValue": "52"
+                        },
+                        {
+                            "EntryName": "SelectEndOfLine",
+                            "EntryValue": "53"
+                        },
+                        {
+                            "EntryName": "SelectStartOfBlock",
+                            "EntryValue": "54"
+                        },
+                        {
+                            "EntryName": "SelectEndOfBlock",
+                            "EntryValue": "55"
+                        },
+                        {
+                            "EntryName": "SelectStartOfDocument",
+                            "EntryValue": "56"
+                        },
+                        {
+                            "EntryName": "SelectEndOfDocument",
+                            "EntryValue": "57"
+                        },
+                        {
+                            "EntryName": "DeleteStartOfWord",
+                            "EntryValue": "58"
+                        },
+                        {
+                            "EntryName": "DeleteEndOfWord",
+                            "EntryValue": "59"
+                        },
+                        {
+                            "EntryName": "DeleteEndOfLine",
+                            "EntryValue": "60"
+                        },
+                        {
+                            "EntryName": "InsertParagraphSeparator",
+                            "EntryValue": "61"
+                        },
+                        {
+                            "EntryName": "InsertLineSeparator",
+                            "EntryValue": "62"
+                        },
+                        {
+                            "EntryName": "SaveAs",
+                            "EntryValue": "63"
+                        },
+                        {
+                            "EntryName": "Preferences",
+                            "EntryValue": "64"
+                        },
+                        {
+                            "EntryName": "Quit",
+                            "EntryValue": "65"
+                        },
+                        {
+                            "EntryName": "FullScreen",
+                            "EntryValue": "66"
+                        },
+                        {
+                            "EntryName": "Deselect",
+                            "EntryValue": "67"
+                        },
+                        {
+                            "EntryName": "DeleteCompleteLine",
+                            "EntryValue": "68"
+                        },
+                        {
+                            "EntryName": "Backspace",
+                            "EntryValue": "69"
+                        },
+                        {
+                            "EntryName": "Cancel",
+                            "EntryValue": "70"
+                        }
+                    ],
+                    "IsProtected": false
+                },
+                {
+                    "EnumName": "QKeySequence::SequenceFormat",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "NativeText",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "PortableText",
+                            "EntryValue": "1"
+                        }
+                    ],
+                    "IsProtected": false
+                },
+                {
+                    "EnumName": "QKeySequence::SequenceMatch",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "NoMatch",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "PartialMatch",
+                            "EntryValue": "1"
+                        },
+                        {
+                            "EntryName": "ExactMatch",
+                            "EntryValue": "2"
+                        }
+                    ],
+                    "IsProtected": false
+                }
+            ],
+            "PrivateMethods": [
+                "qt_static_metacall",
+                "decodeString",
+                "encodeString",
+                "assign",
+                "assign",
+                "setKey"
+            ],
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        }
+    ]
+}

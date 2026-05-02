@@ -1,0 +1,2910 @@
+{
+    "Filename": "/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h",
+    "Typedefs": [
+        {
+            "Alias": "__int128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__uint128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "unsigned __int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__NSConstantString",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__NSConstantString_tag",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_ms_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "char",
+                "Const": false,
+                "Pointer": true,
+                "PointerCount": 1,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__va_list_tag[1]",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QEvent::QtGadgetHelper",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "void",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        }
+    ],
+    "Enums": [
+        {
+            "EnumName": "QEvent::Type",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "None",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "Timer",
+                    "EntryValue": "1"
+                },
+                {
+                    "EntryName": "MouseButtonPress",
+                    "EntryValue": "2"
+                },
+                {
+                    "EntryName": "MouseButtonRelease",
+                    "EntryValue": "3"
+                },
+                {
+                    "EntryName": "MouseButtonDblClick",
+                    "EntryValue": "4"
+                },
+                {
+                    "EntryName": "MouseMove",
+                    "EntryValue": "5"
+                },
+                {
+                    "EntryName": "KeyPress",
+                    "EntryValue": "6"
+                },
+                {
+                    "EntryName": "KeyRelease",
+                    "EntryValue": "7"
+                },
+                {
+                    "EntryName": "FocusIn",
+                    "EntryValue": "8"
+                },
+                {
+                    "EntryName": "FocusOut",
+                    "EntryValue": "9"
+                },
+                {
+                    "EntryName": "FocusAboutToChange",
+                    "EntryValue": "23"
+                },
+                {
+                    "EntryName": "Enter",
+                    "EntryValue": "10"
+                },
+                {
+                    "EntryName": "Leave",
+                    "EntryValue": "11"
+                },
+                {
+                    "EntryName": "Paint",
+                    "EntryValue": "12"
+                },
+                {
+                    "EntryName": "Move",
+                    "EntryValue": "13"
+                },
+                {
+                    "EntryName": "Resize",
+                    "EntryValue": "14"
+                },
+                {
+                    "EntryName": "Create",
+                    "EntryValue": "15"
+                },
+                {
+                    "EntryName": "Destroy",
+                    "EntryValue": "16"
+                },
+                {
+                    "EntryName": "Show",
+                    "EntryValue": "17"
+                },
+                {
+                    "EntryName": "Hide",
+                    "EntryValue": "18"
+                },
+                {
+                    "EntryName": "Close",
+                    "EntryValue": "19"
+                },
+                {
+                    "EntryName": "Quit",
+                    "EntryValue": "20"
+                },
+                {
+                    "EntryName": "ParentChange",
+                    "EntryValue": "21"
+                },
+                {
+                    "EntryName": "ParentAboutToChange",
+                    "EntryValue": "131"
+                },
+                {
+                    "EntryName": "ThreadChange",
+                    "EntryValue": "22"
+                },
+                {
+                    "EntryName": "WindowActivate",
+                    "EntryValue": "24"
+                },
+                {
+                    "EntryName": "WindowDeactivate",
+                    "EntryValue": "25"
+                },
+                {
+                    "EntryName": "ShowToParent",
+                    "EntryValue": "26"
+                },
+                {
+                    "EntryName": "HideToParent",
+                    "EntryValue": "27"
+                },
+                {
+                    "EntryName": "Wheel",
+                    "EntryValue": "31"
+                },
+                {
+                    "EntryName": "WindowTitleChange",
+                    "EntryValue": "33"
+                },
+                {
+                    "EntryName": "WindowIconChange",
+                    "EntryValue": "34"
+                },
+                {
+                    "EntryName": "ApplicationWindowIconChange",
+                    "EntryValue": "35"
+                },
+                {
+                    "EntryName": "ApplicationFontChange",
+                    "EntryValue": "36"
+                },
+                {
+                    "EntryName": "ApplicationLayoutDirectionChange",
+                    "EntryValue": "37"
+                },
+                {
+                    "EntryName": "ApplicationPaletteChange",
+                    "EntryValue": "38"
+                },
+                {
+                    "EntryName": "PaletteChange",
+                    "EntryValue": "39"
+                },
+                {
+                    "EntryName": "Clipboard",
+                    "EntryValue": "40"
+                },
+                {
+                    "EntryName": "Speech",
+                    "EntryValue": "42"
+                },
+                {
+                    "EntryName": "MetaCall",
+                    "EntryValue": "43"
+                },
+                {
+                    "EntryName": "SockAct",
+                    "EntryValue": "50"
+                },
+                {
+                    "EntryName": "WinEventAct",
+                    "EntryValue": "132"
+                },
+                {
+                    "EntryName": "DeferredDelete",
+                    "EntryValue": "52"
+                },
+                {
+                    "EntryName": "DragEnter",
+                    "EntryValue": "60"
+                },
+                {
+                    "EntryName": "DragMove",
+                    "EntryValue": "61"
+                },
+                {
+                    "EntryName": "DragLeave",
+                    "EntryValue": "62"
+                },
+                {
+                    "EntryName": "Drop",
+                    "EntryValue": "63"
+                },
+                {
+                    "EntryName": "DragResponse",
+                    "EntryValue": "64"
+                },
+                {
+                    "EntryName": "ChildAdded",
+                    "EntryValue": "68"
+                },
+                {
+                    "EntryName": "ChildPolished",
+                    "EntryValue": "69"
+                },
+                {
+                    "EntryName": "ChildRemoved",
+                    "EntryValue": "71"
+                },
+                {
+                    "EntryName": "ShowWindowRequest",
+                    "EntryValue": "73"
+                },
+                {
+                    "EntryName": "PolishRequest",
+                    "EntryValue": "74"
+                },
+                {
+                    "EntryName": "Polish",
+                    "EntryValue": "75"
+                },
+                {
+                    "EntryName": "LayoutRequest",
+                    "EntryValue": "76"
+                },
+                {
+                    "EntryName": "UpdateRequest",
+                    "EntryValue": "77"
+                },
+                {
+                    "EntryName": "UpdateLater",
+                    "EntryValue": "78"
+                },
+                {
+                    "EntryName": "EmbeddingControl",
+                    "EntryValue": "79"
+                },
+                {
+                    "EntryName": "ActivateControl",
+                    "EntryValue": "80"
+                },
+                {
+                    "EntryName": "DeactivateControl",
+                    "EntryValue": "81"
+                },
+                {
+                    "EntryName": "ContextMenu",
+                    "EntryValue": "82"
+                },
+                {
+                    "EntryName": "InputMethod",
+                    "EntryValue": "83"
+                },
+                {
+                    "EntryName": "TabletMove",
+                    "EntryValue": "87"
+                },
+                {
+                    "EntryName": "LocaleChange",
+                    "EntryValue": "88"
+                },
+                {
+                    "EntryName": "LanguageChange",
+                    "EntryValue": "89"
+                },
+                {
+                    "EntryName": "LayoutDirectionChange",
+                    "EntryValue": "90"
+                },
+                {
+                    "EntryName": "Style",
+                    "EntryValue": "91"
+                },
+                {
+                    "EntryName": "TabletPress",
+                    "EntryValue": "92"
+                },
+                {
+                    "EntryName": "TabletRelease",
+                    "EntryValue": "93"
+                },
+                {
+                    "EntryName": "OkRequest",
+                    "EntryValue": "94"
+                },
+                {
+                    "EntryName": "HelpRequest",
+                    "EntryValue": "95"
+                },
+                {
+                    "EntryName": "IconDrag",
+                    "EntryValue": "96"
+                },
+                {
+                    "EntryName": "FontChange",
+                    "EntryValue": "97"
+                },
+                {
+                    "EntryName": "EnabledChange",
+                    "EntryValue": "98"
+                },
+                {
+                    "EntryName": "ActivationChange",
+                    "EntryValue": "99"
+                },
+                {
+                    "EntryName": "StyleChange",
+                    "EntryValue": "100"
+                },
+                {
+                    "EntryName": "IconTextChange",
+                    "EntryValue": "101"
+                },
+                {
+                    "EntryName": "ModifiedChange",
+                    "EntryValue": "102"
+                },
+                {
+                    "EntryName": "MouseTrackingChange",
+                    "EntryValue": "109"
+                },
+                {
+                    "EntryName": "WindowBlocked",
+                    "EntryValue": "103"
+                },
+                {
+                    "EntryName": "WindowUnblocked",
+                    "EntryValue": "104"
+                },
+                {
+                    "EntryName": "WindowStateChange",
+                    "EntryValue": "105"
+                },
+                {
+                    "EntryName": "ReadOnlyChange",
+                    "EntryValue": "106"
+                },
+                {
+                    "EntryName": "ToolTip",
+                    "EntryValue": "110"
+                },
+                {
+                    "EntryName": "WhatsThis",
+                    "EntryValue": "111"
+                },
+                {
+                    "EntryName": "StatusTip",
+                    "EntryValue": "112"
+                },
+                {
+                    "EntryName": "ActionChanged",
+                    "EntryValue": "113"
+                },
+                {
+                    "EntryName": "ActionAdded",
+                    "EntryValue": "114"
+                },
+                {
+                    "EntryName": "ActionRemoved",
+                    "EntryValue": "115"
+                },
+                {
+                    "EntryName": "FileOpen",
+                    "EntryValue": "116"
+                },
+                {
+                    "EntryName": "Shortcut",
+                    "EntryValue": "117"
+                },
+                {
+                    "EntryName": "ShortcutOverride",
+                    "EntryValue": "51"
+                },
+                {
+                    "EntryName": "WhatsThisClicked",
+                    "EntryValue": "118"
+                },
+                {
+                    "EntryName": "ToolBarChange",
+                    "EntryValue": "120"
+                },
+                {
+                    "EntryName": "ApplicationActivate",
+                    "EntryValue": "121"
+                },
+                {
+                    "EntryName": "ApplicationActivated",
+                    "EntryValue": "121"
+                },
+                {
+                    "EntryName": "ApplicationDeactivate",
+                    "EntryValue": "122"
+                },
+                {
+                    "EntryName": "ApplicationDeactivated",
+                    "EntryValue": "122"
+                },
+                {
+                    "EntryName": "QueryWhatsThis",
+                    "EntryValue": "123"
+                },
+                {
+                    "EntryName": "EnterWhatsThisMode",
+                    "EntryValue": "124"
+                },
+                {
+                    "EntryName": "LeaveWhatsThisMode",
+                    "EntryValue": "125"
+                },
+                {
+                    "EntryName": "ZOrderChange",
+                    "EntryValue": "126"
+                },
+                {
+                    "EntryName": "HoverEnter",
+                    "EntryValue": "127"
+                },
+                {
+                    "EntryName": "HoverLeave",
+                    "EntryValue": "128"
+                },
+                {
+                    "EntryName": "HoverMove",
+                    "EntryValue": "129"
+                },
+                {
+                    "EntryName": "AcceptDropsChange",
+                    "EntryValue": "152"
+                },
+                {
+                    "EntryName": "ZeroTimerEvent",
+                    "EntryValue": "154"
+                },
+                {
+                    "EntryName": "GraphicsSceneMouseMove",
+                    "EntryValue": "155"
+                },
+                {
+                    "EntryName": "GraphicsSceneMousePress",
+                    "EntryValue": "156"
+                },
+                {
+                    "EntryName": "GraphicsSceneMouseRelease",
+                    "EntryValue": "157"
+                },
+                {
+                    "EntryName": "GraphicsSceneMouseDoubleClick",
+                    "EntryValue": "158"
+                },
+                {
+                    "EntryName": "GraphicsSceneContextMenu",
+                    "EntryValue": "159"
+                },
+                {
+                    "EntryName": "GraphicsSceneHoverEnter",
+                    "EntryValue": "160"
+                },
+                {
+                    "EntryName": "GraphicsSceneHoverMove",
+                    "EntryValue": "161"
+                },
+                {
+                    "EntryName": "GraphicsSceneHoverLeave",
+                    "EntryValue": "162"
+                },
+                {
+                    "EntryName": "GraphicsSceneHelp",
+                    "EntryValue": "163"
+                },
+                {
+                    "EntryName": "GraphicsSceneDragEnter",
+                    "EntryValue": "164"
+                },
+                {
+                    "EntryName": "GraphicsSceneDragMove",
+                    "EntryValue": "165"
+                },
+                {
+                    "EntryName": "GraphicsSceneDragLeave",
+                    "EntryValue": "166"
+                },
+                {
+                    "EntryName": "GraphicsSceneDrop",
+                    "EntryValue": "167"
+                },
+                {
+                    "EntryName": "GraphicsSceneWheel",
+                    "EntryValue": "168"
+                },
+                {
+                    "EntryName": "GraphicsSceneLeave",
+                    "EntryValue": "220"
+                },
+                {
+                    "EntryName": "KeyboardLayoutChange",
+                    "EntryValue": "169"
+                },
+                {
+                    "EntryName": "DynamicPropertyChange",
+                    "EntryValue": "170"
+                },
+                {
+                    "EntryName": "TabletEnterProximity",
+                    "EntryValue": "171"
+                },
+                {
+                    "EntryName": "TabletLeaveProximity",
+                    "EntryValue": "172"
+                },
+                {
+                    "EntryName": "NonClientAreaMouseMove",
+                    "EntryValue": "173"
+                },
+                {
+                    "EntryName": "NonClientAreaMouseButtonPress",
+                    "EntryValue": "174"
+                },
+                {
+                    "EntryName": "NonClientAreaMouseButtonRelease",
+                    "EntryValue": "175"
+                },
+                {
+                    "EntryName": "NonClientAreaMouseButtonDblClick",
+                    "EntryValue": "176"
+                },
+                {
+                    "EntryName": "MacSizeChange",
+                    "EntryValue": "177"
+                },
+                {
+                    "EntryName": "ContentsRectChange",
+                    "EntryValue": "178"
+                },
+                {
+                    "EntryName": "MacGLWindowChange",
+                    "EntryValue": "179"
+                },
+                {
+                    "EntryName": "FutureCallOut",
+                    "EntryValue": "180"
+                },
+                {
+                    "EntryName": "GraphicsSceneResize",
+                    "EntryValue": "181"
+                },
+                {
+                    "EntryName": "GraphicsSceneMove",
+                    "EntryValue": "182"
+                },
+                {
+                    "EntryName": "CursorChange",
+                    "EntryValue": "183"
+                },
+                {
+                    "EntryName": "ToolTipChange",
+                    "EntryValue": "184"
+                },
+                {
+                    "EntryName": "NetworkReplyUpdated",
+                    "EntryValue": "185"
+                },
+                {
+                    "EntryName": "GrabMouse",
+                    "EntryValue": "186"
+                },
+                {
+                    "EntryName": "UngrabMouse",
+                    "EntryValue": "187"
+                },
+                {
+                    "EntryName": "GrabKeyboard",
+                    "EntryValue": "188"
+                },
+                {
+                    "EntryName": "UngrabKeyboard",
+                    "EntryValue": "189"
+                },
+                {
+                    "EntryName": "StateMachineSignal",
+                    "EntryValue": "192"
+                },
+                {
+                    "EntryName": "StateMachineWrapped",
+                    "EntryValue": "193"
+                },
+                {
+                    "EntryName": "TouchBegin",
+                    "EntryValue": "194"
+                },
+                {
+                    "EntryName": "TouchUpdate",
+                    "EntryValue": "195"
+                },
+                {
+                    "EntryName": "TouchEnd",
+                    "EntryValue": "196"
+                },
+                {
+                    "EntryName": "NativeGesture",
+                    "EntryValue": "197"
+                },
+                {
+                    "EntryName": "RequestSoftwareInputPanel",
+                    "EntryValue": "199"
+                },
+                {
+                    "EntryName": "CloseSoftwareInputPanel",
+                    "EntryValue": "200"
+                },
+                {
+                    "EntryName": "WinIdChange",
+                    "EntryValue": "203"
+                },
+                {
+                    "EntryName": "Gesture",
+                    "EntryValue": "198"
+                },
+                {
+                    "EntryName": "GestureOverride",
+                    "EntryValue": "202"
+                },
+                {
+                    "EntryName": "ScrollPrepare",
+                    "EntryValue": "204"
+                },
+                {
+                    "EntryName": "Scroll",
+                    "EntryValue": "205"
+                },
+                {
+                    "EntryName": "Expose",
+                    "EntryValue": "206"
+                },
+                {
+                    "EntryName": "InputMethodQuery",
+                    "EntryValue": "207"
+                },
+                {
+                    "EntryName": "OrientationChange",
+                    "EntryValue": "208"
+                },
+                {
+                    "EntryName": "TouchCancel",
+                    "EntryValue": "209"
+                },
+                {
+                    "EntryName": "ThemeChange",
+                    "EntryValue": "210"
+                },
+                {
+                    "EntryName": "SockClose",
+                    "EntryValue": "211"
+                },
+                {
+                    "EntryName": "PlatformPanel",
+                    "EntryValue": "212"
+                },
+                {
+                    "EntryName": "StyleAnimationUpdate",
+                    "EntryValue": "213"
+                },
+                {
+                    "EntryName": "ApplicationStateChange",
+                    "EntryValue": "214"
+                },
+                {
+                    "EntryName": "WindowChangeInternal",
+                    "EntryValue": "215"
+                },
+                {
+                    "EntryName": "ScreenChangeInternal",
+                    "EntryValue": "216"
+                },
+                {
+                    "EntryName": "PlatformSurface",
+                    "EntryValue": "217"
+                },
+                {
+                    "EntryName": "Pointer",
+                    "EntryValue": "218"
+                },
+                {
+                    "EntryName": "TabletTrackingChange",
+                    "EntryValue": "219"
+                },
+                {
+                    "EntryName": "WindowAboutToChangeInternal",
+                    "EntryValue": "221"
+                },
+                {
+                    "EntryName": "User",
+                    "EntryValue": "1000"
+                },
+                {
+                    "EntryName": "MaxUser",
+                    "EntryValue": "65535"
+                }
+            ],
+            "IsProtected": false
+        }
+    ],
+    "Classes": [
+        {
+            "ClassName": "QEvent",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QEvent::Type",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": null,
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "type",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QEvent::Type",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "spontaneous",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "setAccepted",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "accepted",
+                            "ParameterType": "bool",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": true,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isAccepted",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "accept",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "ignore",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isInputEvent",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isPointerEvent",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isSinglePointEvent",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "registerEventType",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [
+                        {
+                            "ParameterName": "hint",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "clone",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QEvent",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": true,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "registerEventType1",
+                    "OverrideMethodName": "registerEventType",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "hint",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": true,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": [],
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": [
+                {
+                    "Alias": "QEvent::QtGadgetHelper",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                }
+            ],
+            "ChildClassdefs": null,
+            "ChildEnums": [
+                {
+                    "EnumName": "QEvent::Type",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "None",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "Timer",
+                            "EntryValue": "1"
+                        },
+                        {
+                            "EntryName": "MouseButtonPress",
+                            "EntryValue": "2"
+                        },
+                        {
+                            "EntryName": "MouseButtonRelease",
+                            "EntryValue": "3"
+                        },
+                        {
+                            "EntryName": "MouseButtonDblClick",
+                            "EntryValue": "4"
+                        },
+                        {
+                            "EntryName": "MouseMove",
+                            "EntryValue": "5"
+                        },
+                        {
+                            "EntryName": "KeyPress",
+                            "EntryValue": "6"
+                        },
+                        {
+                            "EntryName": "KeyRelease",
+                            "EntryValue": "7"
+                        },
+                        {
+                            "EntryName": "FocusIn",
+                            "EntryValue": "8"
+                        },
+                        {
+                            "EntryName": "FocusOut",
+                            "EntryValue": "9"
+                        },
+                        {
+                            "EntryName": "FocusAboutToChange",
+                            "EntryValue": "23"
+                        },
+                        {
+                            "EntryName": "Enter",
+                            "EntryValue": "10"
+                        },
+                        {
+                            "EntryName": "Leave",
+                            "EntryValue": "11"
+                        },
+                        {
+                            "EntryName": "Paint",
+                            "EntryValue": "12"
+                        },
+                        {
+                            "EntryName": "Move",
+                            "EntryValue": "13"
+                        },
+                        {
+                            "EntryName": "Resize",
+                            "EntryValue": "14"
+                        },
+                        {
+                            "EntryName": "Create",
+                            "EntryValue": "15"
+                        },
+                        {
+                            "EntryName": "Destroy",
+                            "EntryValue": "16"
+                        },
+                        {
+                            "EntryName": "Show",
+                            "EntryValue": "17"
+                        },
+                        {
+                            "EntryName": "Hide",
+                            "EntryValue": "18"
+                        },
+                        {
+                            "EntryName": "Close",
+                            "EntryValue": "19"
+                        },
+                        {
+                            "EntryName": "Quit",
+                            "EntryValue": "20"
+                        },
+                        {
+                            "EntryName": "ParentChange",
+                            "EntryValue": "21"
+                        },
+                        {
+                            "EntryName": "ParentAboutToChange",
+                            "EntryValue": "131"
+                        },
+                        {
+                            "EntryName": "ThreadChange",
+                            "EntryValue": "22"
+                        },
+                        {
+                            "EntryName": "WindowActivate",
+                            "EntryValue": "24"
+                        },
+                        {
+                            "EntryName": "WindowDeactivate",
+                            "EntryValue": "25"
+                        },
+                        {
+                            "EntryName": "ShowToParent",
+                            "EntryValue": "26"
+                        },
+                        {
+                            "EntryName": "HideToParent",
+                            "EntryValue": "27"
+                        },
+                        {
+                            "EntryName": "Wheel",
+                            "EntryValue": "31"
+                        },
+                        {
+                            "EntryName": "WindowTitleChange",
+                            "EntryValue": "33"
+                        },
+                        {
+                            "EntryName": "WindowIconChange",
+                            "EntryValue": "34"
+                        },
+                        {
+                            "EntryName": "ApplicationWindowIconChange",
+                            "EntryValue": "35"
+                        },
+                        {
+                            "EntryName": "ApplicationFontChange",
+                            "EntryValue": "36"
+                        },
+                        {
+                            "EntryName": "ApplicationLayoutDirectionChange",
+                            "EntryValue": "37"
+                        },
+                        {
+                            "EntryName": "ApplicationPaletteChange",
+                            "EntryValue": "38"
+                        },
+                        {
+                            "EntryName": "PaletteChange",
+                            "EntryValue": "39"
+                        },
+                        {
+                            "EntryName": "Clipboard",
+                            "EntryValue": "40"
+                        },
+                        {
+                            "EntryName": "Speech",
+                            "EntryValue": "42"
+                        },
+                        {
+                            "EntryName": "MetaCall",
+                            "EntryValue": "43"
+                        },
+                        {
+                            "EntryName": "SockAct",
+                            "EntryValue": "50"
+                        },
+                        {
+                            "EntryName": "WinEventAct",
+                            "EntryValue": "132"
+                        },
+                        {
+                            "EntryName": "DeferredDelete",
+                            "EntryValue": "52"
+                        },
+                        {
+                            "EntryName": "DragEnter",
+                            "EntryValue": "60"
+                        },
+                        {
+                            "EntryName": "DragMove",
+                            "EntryValue": "61"
+                        },
+                        {
+                            "EntryName": "DragLeave",
+                            "EntryValue": "62"
+                        },
+                        {
+                            "EntryName": "Drop",
+                            "EntryValue": "63"
+                        },
+                        {
+                            "EntryName": "DragResponse",
+                            "EntryValue": "64"
+                        },
+                        {
+                            "EntryName": "ChildAdded",
+                            "EntryValue": "68"
+                        },
+                        {
+                            "EntryName": "ChildPolished",
+                            "EntryValue": "69"
+                        },
+                        {
+                            "EntryName": "ChildRemoved",
+                            "EntryValue": "71"
+                        },
+                        {
+                            "EntryName": "ShowWindowRequest",
+                            "EntryValue": "73"
+                        },
+                        {
+                            "EntryName": "PolishRequest",
+                            "EntryValue": "74"
+                        },
+                        {
+                            "EntryName": "Polish",
+                            "EntryValue": "75"
+                        },
+                        {
+                            "EntryName": "LayoutRequest",
+                            "EntryValue": "76"
+                        },
+                        {
+                            "EntryName": "UpdateRequest",
+                            "EntryValue": "77"
+                        },
+                        {
+                            "EntryName": "UpdateLater",
+                            "EntryValue": "78"
+                        },
+                        {
+                            "EntryName": "EmbeddingControl",
+                            "EntryValue": "79"
+                        },
+                        {
+                            "EntryName": "ActivateControl",
+                            "EntryValue": "80"
+                        },
+                        {
+                            "EntryName": "DeactivateControl",
+                            "EntryValue": "81"
+                        },
+                        {
+                            "EntryName": "ContextMenu",
+                            "EntryValue": "82"
+                        },
+                        {
+                            "EntryName": "InputMethod",
+                            "EntryValue": "83"
+                        },
+                        {
+                            "EntryName": "TabletMove",
+                            "EntryValue": "87"
+                        },
+                        {
+                            "EntryName": "LocaleChange",
+                            "EntryValue": "88"
+                        },
+                        {
+                            "EntryName": "LanguageChange",
+                            "EntryValue": "89"
+                        },
+                        {
+                            "EntryName": "LayoutDirectionChange",
+                            "EntryValue": "90"
+                        },
+                        {
+                            "EntryName": "Style",
+                            "EntryValue": "91"
+                        },
+                        {
+                            "EntryName": "TabletPress",
+                            "EntryValue": "92"
+                        },
+                        {
+                            "EntryName": "TabletRelease",
+                            "EntryValue": "93"
+                        },
+                        {
+                            "EntryName": "OkRequest",
+                            "EntryValue": "94"
+                        },
+                        {
+                            "EntryName": "HelpRequest",
+                            "EntryValue": "95"
+                        },
+                        {
+                            "EntryName": "IconDrag",
+                            "EntryValue": "96"
+                        },
+                        {
+                            "EntryName": "FontChange",
+                            "EntryValue": "97"
+                        },
+                        {
+                            "EntryName": "EnabledChange",
+                            "EntryValue": "98"
+                        },
+                        {
+                            "EntryName": "ActivationChange",
+                            "EntryValue": "99"
+                        },
+                        {
+                            "EntryName": "StyleChange",
+                            "EntryValue": "100"
+                        },
+                        {
+                            "EntryName": "IconTextChange",
+                            "EntryValue": "101"
+                        },
+                        {
+                            "EntryName": "ModifiedChange",
+                            "EntryValue": "102"
+                        },
+                        {
+                            "EntryName": "MouseTrackingChange",
+                            "EntryValue": "109"
+                        },
+                        {
+                            "EntryName": "WindowBlocked",
+                            "EntryValue": "103"
+                        },
+                        {
+                            "EntryName": "WindowUnblocked",
+                            "EntryValue": "104"
+                        },
+                        {
+                            "EntryName": "WindowStateChange",
+                            "EntryValue": "105"
+                        },
+                        {
+                            "EntryName": "ReadOnlyChange",
+                            "EntryValue": "106"
+                        },
+                        {
+                            "EntryName": "ToolTip",
+                            "EntryValue": "110"
+                        },
+                        {
+                            "EntryName": "WhatsThis",
+                            "EntryValue": "111"
+                        },
+                        {
+                            "EntryName": "StatusTip",
+                            "EntryValue": "112"
+                        },
+                        {
+                            "EntryName": "ActionChanged",
+                            "EntryValue": "113"
+                        },
+                        {
+                            "EntryName": "ActionAdded",
+                            "EntryValue": "114"
+                        },
+                        {
+                            "EntryName": "ActionRemoved",
+                            "EntryValue": "115"
+                        },
+                        {
+                            "EntryName": "FileOpen",
+                            "EntryValue": "116"
+                        },
+                        {
+                            "EntryName": "Shortcut",
+                            "EntryValue": "117"
+                        },
+                        {
+                            "EntryName": "ShortcutOverride",
+                            "EntryValue": "51"
+                        },
+                        {
+                            "EntryName": "WhatsThisClicked",
+                            "EntryValue": "118"
+                        },
+                        {
+                            "EntryName": "ToolBarChange",
+                            "EntryValue": "120"
+                        },
+                        {
+                            "EntryName": "ApplicationActivate",
+                            "EntryValue": "121"
+                        },
+                        {
+                            "EntryName": "ApplicationActivated",
+                            "EntryValue": "121"
+                        },
+                        {
+                            "EntryName": "ApplicationDeactivate",
+                            "EntryValue": "122"
+                        },
+                        {
+                            "EntryName": "ApplicationDeactivated",
+                            "EntryValue": "122"
+                        },
+                        {
+                            "EntryName": "QueryWhatsThis",
+                            "EntryValue": "123"
+                        },
+                        {
+                            "EntryName": "EnterWhatsThisMode",
+                            "EntryValue": "124"
+                        },
+                        {
+                            "EntryName": "LeaveWhatsThisMode",
+                            "EntryValue": "125"
+                        },
+                        {
+                            "EntryName": "ZOrderChange",
+                            "EntryValue": "126"
+                        },
+                        {
+                            "EntryName": "HoverEnter",
+                            "EntryValue": "127"
+                        },
+                        {
+                            "EntryName": "HoverLeave",
+                            "EntryValue": "128"
+                        },
+                        {
+                            "EntryName": "HoverMove",
+                            "EntryValue": "129"
+                        },
+                        {
+                            "EntryName": "AcceptDropsChange",
+                            "EntryValue": "152"
+                        },
+                        {
+                            "EntryName": "ZeroTimerEvent",
+                            "EntryValue": "154"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneMouseMove",
+                            "EntryValue": "155"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneMousePress",
+                            "EntryValue": "156"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneMouseRelease",
+                            "EntryValue": "157"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneMouseDoubleClick",
+                            "EntryValue": "158"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneContextMenu",
+                            "EntryValue": "159"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneHoverEnter",
+                            "EntryValue": "160"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneHoverMove",
+                            "EntryValue": "161"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneHoverLeave",
+                            "EntryValue": "162"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneHelp",
+                            "EntryValue": "163"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneDragEnter",
+                            "EntryValue": "164"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneDragMove",
+                            "EntryValue": "165"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneDragLeave",
+                            "EntryValue": "166"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneDrop",
+                            "EntryValue": "167"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneWheel",
+                            "EntryValue": "168"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneLeave",
+                            "EntryValue": "220"
+                        },
+                        {
+                            "EntryName": "KeyboardLayoutChange",
+                            "EntryValue": "169"
+                        },
+                        {
+                            "EntryName": "DynamicPropertyChange",
+                            "EntryValue": "170"
+                        },
+                        {
+                            "EntryName": "TabletEnterProximity",
+                            "EntryValue": "171"
+                        },
+                        {
+                            "EntryName": "TabletLeaveProximity",
+                            "EntryValue": "172"
+                        },
+                        {
+                            "EntryName": "NonClientAreaMouseMove",
+                            "EntryValue": "173"
+                        },
+                        {
+                            "EntryName": "NonClientAreaMouseButtonPress",
+                            "EntryValue": "174"
+                        },
+                        {
+                            "EntryName": "NonClientAreaMouseButtonRelease",
+                            "EntryValue": "175"
+                        },
+                        {
+                            "EntryName": "NonClientAreaMouseButtonDblClick",
+                            "EntryValue": "176"
+                        },
+                        {
+                            "EntryName": "MacSizeChange",
+                            "EntryValue": "177"
+                        },
+                        {
+                            "EntryName": "ContentsRectChange",
+                            "EntryValue": "178"
+                        },
+                        {
+                            "EntryName": "MacGLWindowChange",
+                            "EntryValue": "179"
+                        },
+                        {
+                            "EntryName": "FutureCallOut",
+                            "EntryValue": "180"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneResize",
+                            "EntryValue": "181"
+                        },
+                        {
+                            "EntryName": "GraphicsSceneMove",
+                            "EntryValue": "182"
+                        },
+                        {
+                            "EntryName": "CursorChange",
+                            "EntryValue": "183"
+                        },
+                        {
+                            "EntryName": "ToolTipChange",
+                            "EntryValue": "184"
+                        },
+                        {
+                            "EntryName": "NetworkReplyUpdated",
+                            "EntryValue": "185"
+                        },
+                        {
+                            "EntryName": "GrabMouse",
+                            "EntryValue": "186"
+                        },
+                        {
+                            "EntryName": "UngrabMouse",
+                            "EntryValue": "187"
+                        },
+                        {
+                            "EntryName": "GrabKeyboard",
+                            "EntryValue": "188"
+                        },
+                        {
+                            "EntryName": "UngrabKeyboard",
+                            "EntryValue": "189"
+                        },
+                        {
+                            "EntryName": "StateMachineSignal",
+                            "EntryValue": "192"
+                        },
+                        {
+                            "EntryName": "StateMachineWrapped",
+                            "EntryValue": "193"
+                        },
+                        {
+                            "EntryName": "TouchBegin",
+                            "EntryValue": "194"
+                        },
+                        {
+                            "EntryName": "TouchUpdate",
+                            "EntryValue": "195"
+                        },
+                        {
+                            "EntryName": "TouchEnd",
+                            "EntryValue": "196"
+                        },
+                        {
+                            "EntryName": "NativeGesture",
+                            "EntryValue": "197"
+                        },
+                        {
+                            "EntryName": "RequestSoftwareInputPanel",
+                            "EntryValue": "199"
+                        },
+                        {
+                            "EntryName": "CloseSoftwareInputPanel",
+                            "EntryValue": "200"
+                        },
+                        {
+                            "EntryName": "WinIdChange",
+                            "EntryValue": "203"
+                        },
+                        {
+                            "EntryName": "Gesture",
+                            "EntryValue": "198"
+                        },
+                        {
+                            "EntryName": "GestureOverride",
+                            "EntryValue": "202"
+                        },
+                        {
+                            "EntryName": "ScrollPrepare",
+                            "EntryValue": "204"
+                        },
+                        {
+                            "EntryName": "Scroll",
+                            "EntryValue": "205"
+                        },
+                        {
+                            "EntryName": "Expose",
+                            "EntryValue": "206"
+                        },
+                        {
+                            "EntryName": "InputMethodQuery",
+                            "EntryValue": "207"
+                        },
+                        {
+                            "EntryName": "OrientationChange",
+                            "EntryValue": "208"
+                        },
+                        {
+                            "EntryName": "TouchCancel",
+                            "EntryValue": "209"
+                        },
+                        {
+                            "EntryName": "ThemeChange",
+                            "EntryValue": "210"
+                        },
+                        {
+                            "EntryName": "SockClose",
+                            "EntryValue": "211"
+                        },
+                        {
+                            "EntryName": "PlatformPanel",
+                            "EntryValue": "212"
+                        },
+                        {
+                            "EntryName": "StyleAnimationUpdate",
+                            "EntryValue": "213"
+                        },
+                        {
+                            "EntryName": "ApplicationStateChange",
+                            "EntryValue": "214"
+                        },
+                        {
+                            "EntryName": "WindowChangeInternal",
+                            "EntryValue": "215"
+                        },
+                        {
+                            "EntryName": "ScreenChangeInternal",
+                            "EntryValue": "216"
+                        },
+                        {
+                            "EntryName": "PlatformSurface",
+                            "EntryValue": "217"
+                        },
+                        {
+                            "EntryName": "Pointer",
+                            "EntryValue": "218"
+                        },
+                        {
+                            "EntryName": "TabletTrackingChange",
+                            "EntryValue": "219"
+                        },
+                        {
+                            "EntryName": "WindowAboutToChangeInternal",
+                            "EntryValue": "221"
+                        },
+                        {
+                            "EntryName": "User",
+                            "EntryValue": "1000"
+                        },
+                        {
+                            "EntryName": "MaxUser",
+                            "EntryValue": "65535"
+                        }
+                    ],
+                    "IsProtected": false
+                }
+            ],
+            "PrivateMethods": [
+                "qt_static_metacall",
+                "setSpontaneous"
+            ],
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        },
+        {
+            "ClassName": "QTimerEvent",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "timerId",
+                            "ParameterType": "int",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": [
+                "QEvent"
+            ],
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "clone",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QTimerEvent",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": true,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "timerId",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": null,
+            "ChildClassdefs": null,
+            "ChildEnums": null,
+            "PrivateMethods": null,
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        },
+        {
+            "ClassName": "QChildEvent",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "type",
+                            "ParameterType": "QEvent::Type",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        },
+                        {
+                            "ParameterName": "child",
+                            "ParameterType": "QObject",
+                            "Const": false,
+                            "Pointer": true,
+                            "PointerCount": 1,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": [
+                "QEvent"
+            ],
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "clone",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QChildEvent",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": true,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "child",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QObject",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "added",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "polished",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "removed",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": null,
+            "ChildClassdefs": null,
+            "ChildEnums": null,
+            "PrivateMethods": null,
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        },
+        {
+            "ClassName": "QDynamicPropertyChangeEvent",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "name",
+                            "ParameterType": "QByteArray",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": [
+                "QEvent"
+            ],
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "clone",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QDynamicPropertyChangeEvent",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": true,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "propertyName",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QByteArray",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": null,
+            "ChildClassdefs": null,
+            "ChildEnums": null,
+            "PrivateMethods": null,
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        },
+        {
+            "ClassName": "QDeferredDeleteEvent",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "void",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": [
+                "QEvent"
+            ],
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "clone",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QDeferredDeleteEvent",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": true,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "loopLevel",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": null,
+            "ChildClassdefs": null,
+            "ChildEnums": null,
+            "PrivateMethods": null,
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        }
+    ]
+}

@@ -401,8 +401,8 @@ void QFileDialog_FilesSelected(QFileDialog* self, const QStringList* files) {
 void QFileDialog_Connect_FilesSelected(QFileDialog* self, intptr_t slot) {
     void (*slotFunc)(QFileDialog*, const QStringList*) = reinterpret_cast<void (*)(QFileDialog*, const QStringList*)>(slot);
     QFileDialog::connect(self, &QFileDialog::filesSelected, [self, slotFunc](const QStringList& files) {
-        const QStringList& sigval1 = (const QStringList&)files;
-        slotFunc(self, &sigval1);
+        const QStringList* sigval1 = (const QStringList*)files;
+        slotFunc(self, sigval1);
     });
 }
 

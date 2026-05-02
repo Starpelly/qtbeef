@@ -1333,7 +1333,7 @@ func cabiPreventStructDeclaration(className string) bool {
 }
 
 var (
-	ret = strings.Builder{}
+	ret = CodeBuilder{}
 
 	noQtConnect = map[string]struct{}{
 		"Accounts__AccountService":      {},

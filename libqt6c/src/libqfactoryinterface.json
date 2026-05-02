@@ -1,0 +1,161 @@
+{
+    "Filename": "/usr/include/x86_64-linux-gnu/qt6/QtCore/qfactoryinterface.h",
+    "Typedefs": [
+        {
+            "Alias": "__int128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__uint128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "unsigned __int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__NSConstantString",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__NSConstantString_tag",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_ms_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "char",
+                "Const": false,
+                "Pointer": true,
+                "PointerCount": 1,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__va_list_tag[1]",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        }
+    ],
+    "Enums": null,
+    "Classes": [
+        {
+            "ClassName": "QFactoryInterface",
+            "Abstract": true,
+            "Ctors": [],
+            "DirectInherits": null,
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "keys",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QStringList",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": false,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": true,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": true,
+                    "IsPureVirtual": true,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": false,
+            "HasTrivialMoveAssign": false,
+            "ChildTypedefs": null,
+            "ChildClassdefs": null,
+            "ChildEnums": null,
+            "PrivateMethods": null,
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        }
+    ]
+}

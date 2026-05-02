@@ -1,0 +1,740 @@
+{
+    "Filename": "/usr/include/x86_64-linux-gnu/qt6/QtCore/qlibraryinfo.h",
+    "Typedefs": [
+        {
+            "Alias": "__int128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__uint128_t",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "unsigned __int128",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__NSConstantString",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__NSConstantString_tag",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_ms_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "char",
+                "Const": false,
+                "Pointer": true,
+                "PointerCount": 1,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "__builtin_va_list",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "__va_list_tag[1]",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        },
+        {
+            "Alias": "QLibraryInfo::LibraryLocation",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "QLibraryInfo::LibraryPath",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            }
+        }
+    ],
+    "Enums": [
+        {
+            "EnumName": "QLibraryInfo::LibraryPath",
+            "UnderlyingType": {
+                "ParameterName": "",
+                "ParameterType": "int",
+                "Const": false,
+                "Pointer": false,
+                "PointerCount": 0,
+                "ByRef": false,
+                "Optional": false,
+                "UniquePtr": false,
+                "IsFunctionPointer": false,
+                "IsStdFunction": false,
+                "IsStdOptional": false,
+                "FunctionPointer": null,
+                "QtCppOriginalType": null,
+                "BecomesConstInVersion": null
+            },
+            "Entries": [
+                {
+                    "EntryName": "PrefixPath",
+                    "EntryValue": "0"
+                },
+                {
+                    "EntryName": "DocumentationPath",
+                    "EntryValue": "1"
+                },
+                {
+                    "EntryName": "HeadersPath",
+                    "EntryValue": "2"
+                },
+                {
+                    "EntryName": "LibrariesPath",
+                    "EntryValue": "3"
+                },
+                {
+                    "EntryName": "LibraryExecutablesPath",
+                    "EntryValue": "4"
+                },
+                {
+                    "EntryName": "BinariesPath",
+                    "EntryValue": "5"
+                },
+                {
+                    "EntryName": "PluginsPath",
+                    "EntryValue": "6"
+                },
+                {
+                    "EntryName": "QmlImportsPath",
+                    "EntryValue": "7"
+                },
+                {
+                    "EntryName": "Qml2ImportsPath",
+                    "EntryValue": "7"
+                },
+                {
+                    "EntryName": "ArchDataPath",
+                    "EntryValue": "8"
+                },
+                {
+                    "EntryName": "DataPath",
+                    "EntryValue": "9"
+                },
+                {
+                    "EntryName": "TranslationsPath",
+                    "EntryValue": "10"
+                },
+                {
+                    "EntryName": "ExamplesPath",
+                    "EntryValue": "11"
+                },
+                {
+                    "EntryName": "TestsPath",
+                    "EntryValue": "12"
+                },
+                {
+                    "EntryName": "SettingsPath",
+                    "EntryValue": "100"
+                }
+            ],
+            "IsProtected": false
+        }
+    ],
+    "Classes": [
+        {
+            "ClassName": "QLibraryInfo",
+            "Abstract": false,
+            "Ctors": [
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QLibraryInfo",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QLibraryInfo",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QLibraryInfo",
+                        "Const": false,
+                        "Pointer": true,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "other",
+                            "ParameterType": "QLibraryInfo",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": true,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "DirectInherits": null,
+            "IncludedClasses": null,
+            "Methods": [
+                {
+                    "MethodName": "build",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "char",
+                        "Const": true,
+                        "Pointer": true,
+                        "PointerCount": 1,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "isDebugBuild",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "bool",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "version",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QVersionNumber",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "path",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "p",
+                            "ParameterType": "QLibraryInfo::LibraryPath",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "location",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QString",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "location",
+                            "ParameterType": "QLibraryInfo::LibraryPath",
+                            "Const": false,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": false,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": {
+                                "ParameterName": "location",
+                                "ParameterType": "QLibraryInfo::LibraryLocation",
+                                "Const": false,
+                                "Pointer": false,
+                                "PointerCount": 0,
+                                "ByRef": false,
+                                "Optional": false,
+                                "UniquePtr": false,
+                                "IsFunctionPointer": false,
+                                "IsStdFunction": false,
+                                "IsStdOptional": false,
+                                "FunctionPointer": null,
+                                "QtCppOriginalType": null,
+                                "BecomesConstInVersion": null
+                            },
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                },
+                {
+                    "MethodName": "platformPluginArguments",
+                    "OverrideMethodName": "",
+                    "ReturnType": {
+                        "ParameterName": "",
+                        "ParameterType": "QStringList",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Parameters": [
+                        {
+                            "ParameterName": "platformName",
+                            "ParameterType": "QString",
+                            "Const": true,
+                            "Pointer": false,
+                            "PointerCount": 0,
+                            "ByRef": true,
+                            "Optional": false,
+                            "UniquePtr": false,
+                            "IsFunctionPointer": false,
+                            "IsStdFunction": false,
+                            "IsStdOptional": false,
+                            "FunctionPointer": null,
+                            "QtCppOriginalType": null,
+                            "BecomesConstInVersion": null
+                        }
+                    ],
+                    "IsStatic": true,
+                    "IsMoveCtor": false,
+                    "IsSignal": false,
+                    "IsConst": false,
+                    "IsVariable": false,
+                    "IsPrivate": false,
+                    "IsVirtual": false,
+                    "IsPureVirtual": false,
+                    "IsProtected": false,
+                    "IsFinal": false,
+                    "HiddenParams": null,
+                    "InheritedFrom": "",
+                    "InheritedInClass": "",
+                    "VariableFieldName": "",
+                    "FossOnly": false,
+                    "LinuxOnly": false,
+                    "BecomesNonConstInVersion": null,
+                    "HasStdFunctionPointerParam": false
+                }
+            ],
+            "Props": null,
+            "CanDelete": true,
+            "HasTrivialCopyAssign": true,
+            "HasTrivialMoveAssign": true,
+            "ChildTypedefs": [
+                {
+                    "Alias": "QLibraryInfo::LibraryLocation",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "QLibraryInfo::LibraryPath",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    }
+                }
+            ],
+            "ChildClassdefs": null,
+            "ChildEnums": [
+                {
+                    "EnumName": "QLibraryInfo::LibraryPath",
+                    "UnderlyingType": {
+                        "ParameterName": "",
+                        "ParameterType": "int",
+                        "Const": false,
+                        "Pointer": false,
+                        "PointerCount": 0,
+                        "ByRef": false,
+                        "Optional": false,
+                        "UniquePtr": false,
+                        "IsFunctionPointer": false,
+                        "IsStdFunction": false,
+                        "IsStdOptional": false,
+                        "FunctionPointer": null,
+                        "QtCppOriginalType": null,
+                        "BecomesConstInVersion": null
+                    },
+                    "Entries": [
+                        {
+                            "EntryName": "PrefixPath",
+                            "EntryValue": "0"
+                        },
+                        {
+                            "EntryName": "DocumentationPath",
+                            "EntryValue": "1"
+                        },
+                        {
+                            "EntryName": "HeadersPath",
+                            "EntryValue": "2"
+                        },
+                        {
+                            "EntryName": "LibrariesPath",
+                            "EntryValue": "3"
+                        },
+                        {
+                            "EntryName": "LibraryExecutablesPath",
+                            "EntryValue": "4"
+                        },
+                        {
+                            "EntryName": "BinariesPath",
+                            "EntryValue": "5"
+                        },
+                        {
+                            "EntryName": "PluginsPath",
+                            "EntryValue": "6"
+                        },
+                        {
+                            "EntryName": "QmlImportsPath",
+                            "EntryValue": "7"
+                        },
+                        {
+                            "EntryName": "Qml2ImportsPath",
+                            "EntryValue": "7"
+                        },
+                        {
+                            "EntryName": "ArchDataPath",
+                            "EntryValue": "8"
+                        },
+                        {
+                            "EntryName": "DataPath",
+                            "EntryValue": "9"
+                        },
+                        {
+                            "EntryName": "TranslationsPath",
+                            "EntryValue": "10"
+                        },
+                        {
+                            "EntryName": "ExamplesPath",
+                            "EntryValue": "11"
+                        },
+                        {
+                            "EntryName": "TestsPath",
+                            "EntryValue": "12"
+                        },
+                        {
+                            "EntryName": "SettingsPath",
+                            "EntryValue": "100"
+                        }
+                    ],
+                    "IsProtected": false
+                }
+            ],
+            "PrivateMethods": null,
+            "PrivateSignals": null,
+            "IsPolymorphic": false
+        }
+    ]
+}

@@ -482,6 +482,28 @@ func generate(srcName string, srcDirs []string, allowHeaderFn func(string) bool,
 		}
 
 		/*
+			srcBeef, err := emitBeef(parsed, headerName, packageName)
+			if err != nil {
+				panic(err)
+			}
+
+			err = os.WriteFile(outputName+".bf", []byte(srcBeef), 0644)
+			if err != nil {
+				panic(err)
+			}
+		*/
+
+		srcJson, err := emitJson(parsed, headerName, packageName)
+		if err != nil {
+			panic(err)
+		}
+
+		err = os.WriteFile(outputName+".json", []byte(srcJson), 0644)
+		if err != nil {
+			panic(err)
+		}
+
+		/*
 			srcC, err := emitC(parsed, headerName, packageName)
 			if err != nil {
 				panic(err)
