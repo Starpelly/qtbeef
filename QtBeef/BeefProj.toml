@@ -7,5 +7,5 @@ StartupObject = "QtBeef.Program"
 DefaultNamespace = "QtBeef"
 
 [Configs.Debug.Win64]
-LibPaths = ["D:\\qt6ctest\\libqt6c\\build\\Release\\qt6c.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Core.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Widgets.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Gui.lib"]
+LibPaths = ["D:\\qtbeef\\libqt6c\\build\\Release\\qt6c.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Core.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Widgets.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Gui.lib"]
 PostBuildCmds = ["CopyToDependents(\"C:/Qt/6.8.3/msvc2022_64/bin/Qt6Core.dll\")", "CopyToDependents(\"C:/Qt/6.8.3/msvc2022_64/bin/Qt6Gui.dll\")", "CopyToDependents(\"C:/Qt/6.8.3/msvc2022_64/bin/Qt6Widgets.dll\")"]
