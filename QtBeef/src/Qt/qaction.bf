@@ -15,19 +15,19 @@ extension CQt
 	[LinkName("QAction_new")]
 	public static extern QAction_Ptr* QAction_new();
 	[LinkName("QAction_new2")]
-	public static extern QAction_Ptr* QAction_new2(libqt_string* text);
+	public static extern QAction_Ptr* QAction_new2(libqt_string text);
 	[LinkName("QAction_new3")]
-	public static extern QAction_Ptr* QAction_new3(QIcon_Ptr* icon, libqt_string* text);
+	public static extern QAction_Ptr* QAction_new3(QIcon_Ptr* icon, libqt_string text);
 	[LinkName("QAction_new4")]
-	public static extern QAction_Ptr* QAction_new4(QObject_Ptr* parent);
+	public static extern QAction_Ptr* QAction_new4(QObject_Ptr** parent);
 	[LinkName("QAction_new5")]
-	public static extern QAction_Ptr* QAction_new5(libqt_string* text, QObject_Ptr* parent);
+	public static extern QAction_Ptr* QAction_new5(libqt_string text, QObject_Ptr** parent);
 	[LinkName("QAction_new6")]
-	public static extern QAction_Ptr* QAction_new6(QIcon_Ptr* icon, libqt_string* text, QObject_Ptr* parent);
+	public static extern QAction_Ptr* QAction_new6(QIcon_Ptr* icon, libqt_string text, QObject_Ptr** parent);
 	[LinkName("QAction_Delete")]
 	public static extern void QAction_Delete(QAction_Ptr* self);
 	[LinkName("QAction_MetaObject")]
-	public static extern QMetaObject_Ptr* QAction_MetaObject(QAction_Ptr* self);
+	public static extern QMetaObject_Ptr** QAction_MetaObject(QAction_Ptr* self);
 	[LinkName("QAction_Qt_Metacast")]
 	public static extern void* QAction_Qt_Metacast(QAction_Ptr* self, c_char* param1);
 	[LinkName("QAction_Qt_Metacall")]
@@ -37,31 +37,31 @@ extension CQt
 	[LinkName("QAction_AssociatedObjects")]
 	public static extern void* QAction_AssociatedObjects(QAction_Ptr* self);
 	[LinkName("QAction_SetActionGroup")]
-	public static extern void QAction_SetActionGroup(QAction_Ptr* self, QActionGroup_Ptr* group);
+	public static extern void QAction_SetActionGroup(QAction_Ptr* self, QActionGroup_Ptr** group);
 	[LinkName("QAction_ActionGroup")]
-	public static extern QActionGroup_Ptr* QAction_ActionGroup(QAction_Ptr* self);
+	public static extern QActionGroup_Ptr** QAction_ActionGroup(QAction_Ptr* self);
 	[LinkName("QAction_SetIcon")]
 	public static extern void QAction_SetIcon(QAction_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QAction_Icon")]
-	public static extern QIcon_Ptr QAction_Icon(QAction_Ptr* self);
+	public static extern QIcon_Ptr* QAction_Icon(QAction_Ptr* self);
 	[LinkName("QAction_SetText")]
-	public static extern void QAction_SetText(QAction_Ptr* self, libqt_string* text);
+	public static extern void QAction_SetText(QAction_Ptr* self, libqt_string text);
 	[LinkName("QAction_Text")]
 	public static extern libqt_string QAction_Text(QAction_Ptr* self);
 	[LinkName("QAction_SetIconText")]
-	public static extern void QAction_SetIconText(QAction_Ptr* self, libqt_string* text);
+	public static extern void QAction_SetIconText(QAction_Ptr* self, libqt_string text);
 	[LinkName("QAction_IconText")]
 	public static extern libqt_string QAction_IconText(QAction_Ptr* self);
 	[LinkName("QAction_SetToolTip")]
-	public static extern void QAction_SetToolTip(QAction_Ptr* self, libqt_string* tip);
+	public static extern void QAction_SetToolTip(QAction_Ptr* self, libqt_string tip);
 	[LinkName("QAction_ToolTip")]
 	public static extern libqt_string QAction_ToolTip(QAction_Ptr* self);
 	[LinkName("QAction_SetStatusTip")]
-	public static extern void QAction_SetStatusTip(QAction_Ptr* self, libqt_string* statusTip);
+	public static extern void QAction_SetStatusTip(QAction_Ptr* self, libqt_string statusTip);
 	[LinkName("QAction_StatusTip")]
 	public static extern libqt_string QAction_StatusTip(QAction_Ptr* self);
 	[LinkName("QAction_SetWhatsThis")]
-	public static extern void QAction_SetWhatsThis(QAction_Ptr* self, libqt_string* what);
+	public static extern void QAction_SetWhatsThis(QAction_Ptr* self, libqt_string what);
 	[LinkName("QAction_WhatsThis")]
 	public static extern libqt_string QAction_WhatsThis(QAction_Ptr* self);
 	[LinkName("QAction_SetPriority")]
@@ -75,7 +75,7 @@ extension CQt
 	[LinkName("QAction_SetShortcut")]
 	public static extern void QAction_SetShortcut(QAction_Ptr* self, QKeySequence_Ptr* shortcut);
 	[LinkName("QAction_Shortcut")]
-	public static extern QKeySequence_Ptr QAction_Shortcut(QAction_Ptr* self);
+	public static extern QKeySequence_Ptr* QAction_Shortcut(QAction_Ptr* self);
 	[LinkName("QAction_SetShortcuts")]
 	public static extern void QAction_SetShortcuts(QAction_Ptr* self, void** shortcuts);
 	[LinkName("QAction_SetShortcuts2")]
@@ -93,13 +93,13 @@ extension CQt
 	[LinkName("QAction_SetFont")]
 	public static extern void QAction_SetFont(QAction_Ptr* self, QFont_Ptr* font);
 	[LinkName("QAction_Font")]
-	public static extern QFont_Ptr QAction_Font(QAction_Ptr* self);
+	public static extern QFont_Ptr* QAction_Font(QAction_Ptr* self);
 	[LinkName("QAction_SetCheckable")]
 	public static extern void QAction_SetCheckable(QAction_Ptr* self, bool checkable);
 	[LinkName("QAction_IsCheckable")]
 	public static extern bool QAction_IsCheckable(QAction_Ptr* self);
 	[LinkName("QAction_Data")]
-	public static extern QVariant_Ptr QAction_Data(QAction_Ptr* self);
+	public static extern QVariant_Ptr* QAction_Data(QAction_Ptr* self);
 	[LinkName("QAction_SetData")]
 	public static extern void QAction_SetData(QAction_Ptr* self, QVariant_Ptr* varVal);
 	[LinkName("QAction_IsChecked")]
@@ -125,7 +125,7 @@ extension CQt
 	[LinkName("QAction_ShowStatusText")]
 	public static extern bool QAction_ShowStatusText(QAction_Ptr* self);
 	[LinkName("QAction_Event")]
-	public static extern bool QAction_Event(QAction_Ptr* self, QEvent_Ptr* param1);
+	public static extern bool QAction_Event(QAction_Ptr* self, QEvent_Ptr** param1);
 	[LinkName("QAction_Trigger")]
 	public static extern void QAction_Trigger(QAction_Ptr* self);
 	[LinkName("QAction_Hover")]
@@ -161,42 +161,43 @@ extension CQt
 	[LinkName("QAction_Tr3")]
 	public static extern libqt_string QAction_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QAction_ShowStatusText1")]
-	public static extern bool QAction_ShowStatusText1(QAction_Ptr* self, QObject_Ptr* object);
+	public static extern bool QAction_ShowStatusText1(QAction_Ptr* self, QObject_Ptr** object);
 	[LinkName("QAction_Triggered1")]
 	public static extern void QAction_Triggered1(QAction_Ptr* self, bool _checked);
 }
-class QAction
+class QAction : IQAction, IQObject
 {
 	private QAction_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QAction_new();
 	}
-	public this(libqt_string* text)
+	public this(String text)
 	{
-		this.ptr = CQt.QAction_new2(text);
+		this.ptr = CQt.QAction_new2(libqt_string(text));
 	}
-	public this(QIcon_Ptr* icon, libqt_string* text)
+	public this(IQIcon icon, String text)
 	{
-		this.ptr = CQt.QAction_new3(icon, text);
+		this.ptr = CQt.QAction_new3((.)icon?.ObjectPtr, libqt_string(text));
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QAction_new4(parent);
+		this.ptr = CQt.QAction_new4((.)parent?.ObjectPtr);
 	}
-	public this(libqt_string* text, QObject_Ptr* parent)
+	public this(String text, IQObject parent)
 	{
-		this.ptr = CQt.QAction_new5(text, parent);
+		this.ptr = CQt.QAction_new5(libqt_string(text), (.)parent?.ObjectPtr);
 	}
-	public this(QIcon_Ptr* icon, libqt_string* text, QObject_Ptr* parent)
+	public this(IQIcon icon, String text, IQObject parent)
 	{
-		this.ptr = CQt.QAction_new6(icon, text, parent);
+		this.ptr = CQt.QAction_new6((.)icon?.ObjectPtr, libqt_string(text), (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QAction_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QAction_MetaObject((.)this.ptr);
 	}
@@ -216,57 +217,57 @@ class QAction
 	{
 		return CQt.QAction_AssociatedObjects((.)this.ptr);
 	}
-	public void SetActionGroup(QActionGroup_Ptr* group)
+	public void SetActionGroup(IQActionGroup group)
 	{
-		CQt.QAction_SetActionGroup((.)this.ptr, group);
+		CQt.QAction_SetActionGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
-	public QActionGroup_Ptr* ActionGroup()
+	public QActionGroup_Ptr** ActionGroup()
 	{
 		return CQt.QAction_ActionGroup((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr* icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QAction_SetIcon((.)this.ptr, icon);
+		CQt.QAction_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QAction_Icon((.)this.ptr);
 	}
-	public void SetText(libqt_string* text)
+	public void SetText(String text)
 	{
-		CQt.QAction_SetText((.)this.ptr, text);
+		CQt.QAction_SetText((.)this.ptr, libqt_string(text));
 	}
 	public libqt_string Text()
 	{
 		return CQt.QAction_Text((.)this.ptr);
 	}
-	public void SetIconText(libqt_string* text)
+	public void SetIconText(String text)
 	{
-		CQt.QAction_SetIconText((.)this.ptr, text);
+		CQt.QAction_SetIconText((.)this.ptr, libqt_string(text));
 	}
 	public libqt_string IconText()
 	{
 		return CQt.QAction_IconText((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* tip)
+	public void SetToolTip(String tip)
 	{
-		CQt.QAction_SetToolTip((.)this.ptr, tip);
+		CQt.QAction_SetToolTip((.)this.ptr, libqt_string(tip));
 	}
 	public libqt_string ToolTip()
 	{
 		return CQt.QAction_ToolTip((.)this.ptr);
 	}
-	public void SetStatusTip(libqt_string* statusTip)
+	public void SetStatusTip(String statusTip)
 	{
-		CQt.QAction_SetStatusTip((.)this.ptr, statusTip);
+		CQt.QAction_SetStatusTip((.)this.ptr, libqt_string(statusTip));
 	}
 	public libqt_string StatusTip()
 	{
 		return CQt.QAction_StatusTip((.)this.ptr);
 	}
-	public void SetWhatsThis(libqt_string* what)
+	public void SetWhatsThis(String what)
 	{
-		CQt.QAction_SetWhatsThis((.)this.ptr, what);
+		CQt.QAction_SetWhatsThis((.)this.ptr, libqt_string(what));
 	}
 	public libqt_string WhatsThis()
 	{
@@ -288,11 +289,11 @@ class QAction
 	{
 		return CQt.QAction_IsSeparator((.)this.ptr);
 	}
-	public void SetShortcut(QKeySequence_Ptr* shortcut)
+	public void SetShortcut(IQKeySequence shortcut)
 	{
-		CQt.QAction_SetShortcut((.)this.ptr, shortcut);
+		CQt.QAction_SetShortcut((.)this.ptr, (.)shortcut?.ObjectPtr);
 	}
-	public QKeySequence_Ptr Shortcut()
+	public QKeySequence_Ptr* Shortcut()
 	{
 		return CQt.QAction_Shortcut((.)this.ptr);
 	}
@@ -324,11 +325,11 @@ class QAction
 	{
 		return CQt.QAction_AutoRepeat((.)this.ptr);
 	}
-	public void SetFont(QFont_Ptr* font)
+	public void SetFont(IQFont font)
 	{
-		CQt.QAction_SetFont((.)this.ptr, font);
+		CQt.QAction_SetFont((.)this.ptr, (.)font?.ObjectPtr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QAction_Font((.)this.ptr);
 	}
@@ -340,13 +341,13 @@ class QAction
 	{
 		return CQt.QAction_IsCheckable((.)this.ptr);
 	}
-	public QVariant_Ptr Data()
+	public QVariant_Ptr* Data()
 	{
 		return CQt.QAction_Data((.)this.ptr);
 	}
-	public void SetData(QVariant_Ptr* varVal)
+	public void SetData(IQVariant varVal)
 	{
-		CQt.QAction_SetData((.)this.ptr, varVal);
+		CQt.QAction_SetData((.)this.ptr, (.)varVal?.ObjectPtr);
 	}
 	public bool IsChecked()
 	{
@@ -392,9 +393,9 @@ class QAction
 	{
 		return CQt.QAction_ShowStatusText((.)this.ptr);
 	}
-	public bool Event(QEvent_Ptr* param1)
+	public bool Event(IQEvent param1)
 	{
-		return CQt.QAction_Event((.)this.ptr, param1);
+		return CQt.QAction_Event((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public void Trigger()
 	{
@@ -464,25 +465,25 @@ class QAction
 	{
 		return CQt.QAction_Tr3(s, c, n);
 	}
-	public bool ShowStatusText1(QObject_Ptr* object)
+	public bool ShowStatusText1(IQObject object)
 	{
-		return CQt.QAction_ShowStatusText1((.)this.ptr, object);
+		return CQt.QAction_ShowStatusText1((.)this.ptr, (.)object?.ObjectPtr);
 	}
 	public void Triggered1(bool _checked)
 	{
 		CQt.QAction_Triggered1((.)this.ptr, _checked);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -504,13 +505,13 @@ class QAction
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -528,49 +529,49 @@ class QAction
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -580,11 +581,11 @@ class QAction
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -592,11 +593,11 @@ class QAction
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -604,7 +605,7 @@ class QAction
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -616,7 +617,7 @@ class QAction
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -628,29 +629,29 @@ class QAction
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -660,110 +661,41 @@ class QAction
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQAction
+interface IQAction : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void* AssociatedObjects();
-	public void SetActionGroup();
-	public QActionGroup* ActionGroup();
-	public void SetIcon();
-	public QIcon Icon();
-	public void SetText();
-	public libqt_string Text();
-	public void SetIconText();
-	public libqt_string IconText();
-	public void SetToolTip();
-	public libqt_string ToolTip();
-	public void SetStatusTip();
-	public libqt_string StatusTip();
-	public void SetWhatsThis();
-	public libqt_string WhatsThis();
-	public void SetPriority();
-	public QAction_Priority Priority();
-	public void SetSeparator();
-	public bool IsSeparator();
-	public void SetShortcut();
-	public QKeySequence Shortcut();
-	public void SetShortcuts();
-	public void SetShortcuts2();
-	public void* Shortcuts();
-	public void SetShortcutContext();
-	public Qt_ShortcutContext ShortcutContext();
-	public void SetAutoRepeat();
-	public bool AutoRepeat();
-	public void SetFont();
-	public QFont Font();
-	public void SetCheckable();
-	public bool IsCheckable();
-	public QVariant Data();
-	public void SetData();
-	public bool IsChecked();
-	public bool IsEnabled();
-	public bool IsVisible();
-	public void Activate();
-	public void SetMenuRole();
-	public QAction_MenuRole MenuRole();
-	public void SetIconVisibleInMenu();
-	public bool IsIconVisibleInMenu();
-	public void SetShortcutVisibleInContextMenu();
-	public bool IsShortcutVisibleInContextMenu();
-	public bool ShowStatusText();
-	public bool Event();
-	public void Trigger();
-	public void Hover();
-	public void SetChecked();
-	public void Toggle();
-	public void SetEnabled();
-	public void ResetEnabled();
-	public void SetDisabled();
-	public void SetVisible();
-	public void Changed();
-	public void EnabledChanged();
-	public void CheckableChanged();
-	public void VisibleChanged();
-	public void Triggered();
-	public void Hovered();
-	public void Toggled();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public bool ShowStatusText1();
-	public void Triggered1();
 }
 [AllowDuplicates]
 enum QAction_MenuRole

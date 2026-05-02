@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QTextStream_new")]
 	public static extern QTextStream_Ptr* QTextStream_new();
 	[LinkName("QTextStream_new2")]
-	public static extern QTextStream_Ptr* QTextStream_new2(QIODevice_Ptr* device);
+	public static extern QTextStream_Ptr* QTextStream_new2(QIODevice_Ptr** device);
 	[LinkName("QTextStream_new3")]
 	public static extern QTextStream_Ptr* QTextStream_new3(void** array);
 	[LinkName("QTextStream_new4")]
@@ -37,11 +37,11 @@ extension CQt
 	[LinkName("QTextStream_SetLocale")]
 	public static extern void QTextStream_SetLocale(QTextStream_Ptr* self, QLocale_Ptr* locale);
 	[LinkName("QTextStream_Locale")]
-	public static extern QLocale_Ptr QTextStream_Locale(QTextStream_Ptr* self);
+	public static extern QLocale_Ptr* QTextStream_Locale(QTextStream_Ptr* self);
 	[LinkName("QTextStream_SetDevice")]
-	public static extern void QTextStream_SetDevice(QTextStream_Ptr* self, QIODevice_Ptr* device);
+	public static extern void QTextStream_SetDevice(QTextStream_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QTextStream_Device")]
-	public static extern QIODevice_Ptr* QTextStream_Device(QTextStream_Ptr* self);
+	public static extern QIODevice_Ptr** QTextStream_Device(QTextStream_Ptr* self);
 	[LinkName("QTextStream_String")]
 	public static extern libqt_string* QTextStream_String(QTextStream_Ptr* self);
 	[LinkName("QTextStream_Status")]
@@ -73,9 +73,9 @@ extension CQt
 	[LinkName("QTextStream_FieldAlignment")]
 	public static extern QTextStream_FieldAlignment QTextStream_FieldAlignment(QTextStream_Ptr* self);
 	[LinkName("QTextStream_SetPadChar")]
-	public static extern void QTextStream_SetPadChar(QTextStream_Ptr* self, QChar_Ptr ch);
+	public static extern void QTextStream_SetPadChar(QTextStream_Ptr* self, QChar_Ptr* ch);
 	[LinkName("QTextStream_PadChar")]
-	public static extern QChar_Ptr QTextStream_PadChar(QTextStream_Ptr* self);
+	public static extern QChar_Ptr* QTextStream_PadChar(QTextStream_Ptr* self);
 	[LinkName("QTextStream_SetFieldWidth")]
 	public static extern void QTextStream_SetFieldWidth(QTextStream_Ptr* self, c_int width);
 	[LinkName("QTextStream_FieldWidth")]
@@ -121,13 +121,13 @@ extension CQt
 	[LinkName("QTextStream_OperatorShiftRight13")]
 	public static extern QTextStream_Ptr* QTextStream_OperatorShiftRight13(QTextStream_Ptr* self, double* f);
 	[LinkName("QTextStream_OperatorShiftRight14")]
-	public static extern QTextStream_Ptr* QTextStream_OperatorShiftRight14(QTextStream_Ptr* self, libqt_string* s);
+	public static extern QTextStream_Ptr* QTextStream_OperatorShiftRight14(QTextStream_Ptr* self, libqt_string s);
 	[LinkName("QTextStream_OperatorShiftRight15")]
 	public static extern QTextStream_Ptr* QTextStream_OperatorShiftRight15(QTextStream_Ptr* self, void** array);
 	[LinkName("QTextStream_OperatorShiftRight16")]
 	public static extern QTextStream_Ptr* QTextStream_OperatorShiftRight16(QTextStream_Ptr* self, c_char* c);
 	[LinkName("QTextStream_OperatorShiftLeft")]
-	public static extern QTextStream_Ptr* QTextStream_OperatorShiftLeft(QTextStream_Ptr* self, QChar_Ptr ch);
+	public static extern QTextStream_Ptr* QTextStream_OperatorShiftLeft(QTextStream_Ptr* self, QChar_Ptr* ch);
 	[LinkName("QTextStream_OperatorShiftLeft2")]
 	public static extern QTextStream_Ptr* QTextStream_OperatorShiftLeft2(QTextStream_Ptr* self, c_char ch);
 	[LinkName("QTextStream_OperatorShiftLeft4")]
@@ -151,7 +151,7 @@ extension CQt
 	[LinkName("QTextStream_OperatorShiftLeft13")]
 	public static extern QTextStream_Ptr* QTextStream_OperatorShiftLeft13(QTextStream_Ptr* self, double f);
 	[LinkName("QTextStream_OperatorShiftLeft14")]
-	public static extern QTextStream_Ptr* QTextStream_OperatorShiftLeft14(QTextStream_Ptr* self, libqt_string* s);
+	public static extern QTextStream_Ptr* QTextStream_OperatorShiftLeft14(QTextStream_Ptr* self, libqt_string s);
 	[LinkName("QTextStream_OperatorShiftLeft17")]
 	public static extern QTextStream_Ptr* QTextStream_OperatorShiftLeft17(QTextStream_Ptr* self, void** array);
 	[LinkName("QTextStream_OperatorShiftLeft18")]
@@ -161,16 +161,17 @@ extension CQt
 	[LinkName("QTextStream_ReadLine1")]
 	public static extern libqt_string QTextStream_ReadLine1(QTextStream_Ptr* self, c_longlong maxlen);
 }
-class QTextStream
+class QTextStream : IQTextStream, IQIODeviceBase
 {
 	private QTextStream_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTextStream_new();
 	}
-	public this(QIODevice_Ptr* device)
+	public this(IQIODevice device)
 	{
-		this.ptr = CQt.QTextStream_new2(device);
+		this.ptr = CQt.QTextStream_new2((.)device?.ObjectPtr);
 	}
 	public this(void** array)
 	{
@@ -208,19 +209,19 @@ class QTextStream
 	{
 		return CQt.QTextStream_GenerateByteOrderMark((.)this.ptr);
 	}
-	public void SetLocale(QLocale_Ptr* locale)
+	public void SetLocale(IQLocale locale)
 	{
-		CQt.QTextStream_SetLocale((.)this.ptr, locale);
+		CQt.QTextStream_SetLocale((.)this.ptr, (.)locale?.ObjectPtr);
 	}
-	public QLocale_Ptr Locale()
+	public QLocale_Ptr* Locale()
 	{
 		return CQt.QTextStream_Locale((.)this.ptr);
 	}
-	public void SetDevice(QIODevice_Ptr* device)
+	public void SetDevice(IQIODevice device)
 	{
-		CQt.QTextStream_SetDevice((.)this.ptr, device);
+		CQt.QTextStream_SetDevice((.)this.ptr, (.)device?.ObjectPtr);
 	}
-	public QIODevice_Ptr* Device()
+	public QIODevice_Ptr** Device()
 	{
 		return CQt.QTextStream_Device((.)this.ptr);
 	}
@@ -284,11 +285,11 @@ class QTextStream
 	{
 		return CQt.QTextStream_FieldAlignment((.)this.ptr);
 	}
-	public void SetPadChar(QChar_Ptr ch)
+	public void SetPadChar(IQChar ch)
 	{
-		CQt.QTextStream_SetPadChar((.)this.ptr, ch);
+		CQt.QTextStream_SetPadChar((.)this.ptr, (.)ch?.ObjectPtr);
 	}
-	public QChar_Ptr PadChar()
+	public QChar_Ptr* PadChar()
 	{
 		return CQt.QTextStream_PadChar((.)this.ptr);
 	}
@@ -376,9 +377,9 @@ class QTextStream
 	{
 		return CQt.QTextStream_OperatorShiftRight13((.)this.ptr, f);
 	}
-	public QTextStream_Ptr* OperatorShiftRight14(libqt_string* s)
+	public QTextStream_Ptr* OperatorShiftRight14(String s)
 	{
-		return CQt.QTextStream_OperatorShiftRight14((.)this.ptr, s);
+		return CQt.QTextStream_OperatorShiftRight14((.)this.ptr, libqt_string(s));
 	}
 	public QTextStream_Ptr* OperatorShiftRight15(void** array)
 	{
@@ -432,9 +433,9 @@ class QTextStream
 	{
 		return CQt.QTextStream_OperatorShiftLeft13((.)this.ptr, f);
 	}
-	public QTextStream_Ptr* OperatorShiftLeft14(libqt_string* s)
+	public QTextStream_Ptr* OperatorShiftLeft14(String s)
 	{
-		return CQt.QTextStream_OperatorShiftLeft14((.)this.ptr, s);
+		return CQt.QTextStream_OperatorShiftLeft14((.)this.ptr, libqt_string(s));
 	}
 	public QTextStream_Ptr* OperatorShiftLeft17(void** array)
 	{
@@ -453,75 +454,8 @@ class QTextStream
 		return CQt.QTextStream_ReadLine1((.)this.ptr, maxlen);
 	}
 }
-interface IQTextStream
+interface IQTextStream : IQtObjectInterface
 {
-	public void SetEncoding();
-	public QStringConverter_Encoding Encoding();
-	public void SetAutoDetectUnicode();
-	public bool AutoDetectUnicode();
-	public void SetGenerateByteOrderMark();
-	public bool GenerateByteOrderMark();
-	public void SetLocale();
-	public QLocale Locale();
-	public void SetDevice();
-	public QIODevice* Device();
-	public libqt_string* String();
-	public QTextStream_Status Status();
-	public void SetStatus();
-	public void ResetStatus();
-	public bool AtEnd();
-	public void Reset();
-	public void Flush();
-	public bool Seek();
-	public c_longlong Pos();
-	public void SkipWhiteSpace();
-	public libqt_string ReadLine();
-	public libqt_string ReadAll();
-	public libqt_string Read();
-	public void SetFieldAlignment();
-	public QTextStream_FieldAlignment FieldAlignment();
-	public void SetPadChar();
-	public QChar PadChar();
-	public void SetFieldWidth();
-	public c_int FieldWidth();
-	public void SetNumberFlags();
-	public void* NumberFlags();
-	public void SetIntegerBase();
-	public c_int IntegerBase();
-	public void SetRealNumberNotation();
-	public QTextStream_RealNumberNotation RealNumberNotation();
-	public void SetRealNumberPrecision();
-	public c_int RealNumberPrecision();
-	public QTextStream* OperatorShiftRight2();
-	public QTextStream* OperatorShiftRight4();
-	public QTextStream* OperatorShiftRight5();
-	public QTextStream* OperatorShiftRight6();
-	public QTextStream* OperatorShiftRight7();
-	public QTextStream* OperatorShiftRight8();
-	public QTextStream* OperatorShiftRight9();
-	public QTextStream* OperatorShiftRight10();
-	public QTextStream* OperatorShiftRight11();
-	public QTextStream* OperatorShiftRight12();
-	public QTextStream* OperatorShiftRight13();
-	public QTextStream* OperatorShiftRight14();
-	public QTextStream* OperatorShiftRight15();
-	public QTextStream* OperatorShiftRight16();
-	public QTextStream* OperatorShiftLeft2();
-	public QTextStream* OperatorShiftLeft4();
-	public QTextStream* OperatorShiftLeft5();
-	public QTextStream* OperatorShiftLeft6();
-	public QTextStream* OperatorShiftLeft7();
-	public QTextStream* OperatorShiftLeft8();
-	public QTextStream* OperatorShiftLeft9();
-	public QTextStream* OperatorShiftLeft10();
-	public QTextStream* OperatorShiftLeft11();
-	public QTextStream* OperatorShiftLeft12();
-	public QTextStream* OperatorShiftLeft13();
-	public QTextStream* OperatorShiftLeft14();
-	public QTextStream* OperatorShiftLeft17();
-	public QTextStream* OperatorShiftLeft18();
-	public QTextStream* OperatorShiftLeft19();
-	public libqt_string ReadLine1();
 }
 [AllowDuplicates]
 enum QTextStream_RealNumberNotation

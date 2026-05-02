@@ -43,21 +43,21 @@ extension CQt
 	[LinkName("QBrush_Swap")]
 	public static extern void QBrush_Swap(QBrush_Ptr* self, QBrush_Ptr* other);
 	[LinkName("QBrush_ToQvariant")]
-	public static extern QVariant_Ptr QBrush_ToQvariant(QBrush_Ptr* self);
+	public static extern QVariant_Ptr* QBrush_ToQvariant(QBrush_Ptr* self);
 	[LinkName("QBrush_Style")]
 	public static extern Qt_BrushStyle QBrush_Style(QBrush_Ptr* self);
 	[LinkName("QBrush_SetStyle")]
 	public static extern void QBrush_SetStyle(QBrush_Ptr* self, Qt_BrushStyle style);
 	[LinkName("QBrush_Transform")]
-	public static extern QTransform_Ptr QBrush_Transform(QBrush_Ptr* self);
+	public static extern QTransform_Ptr* QBrush_Transform(QBrush_Ptr* self);
 	[LinkName("QBrush_SetTransform")]
 	public static extern void QBrush_SetTransform(QBrush_Ptr* self, QTransform_Ptr* transform);
 	[LinkName("QBrush_Texture")]
-	public static extern QPixmap_Ptr QBrush_Texture(QBrush_Ptr* self);
+	public static extern QPixmap_Ptr* QBrush_Texture(QBrush_Ptr* self);
 	[LinkName("QBrush_SetTexture")]
 	public static extern void QBrush_SetTexture(QBrush_Ptr* self, QPixmap_Ptr* pixmap);
 	[LinkName("QBrush_TextureImage")]
-	public static extern QImage_Ptr QBrush_TextureImage(QBrush_Ptr* self);
+	public static extern QImage_Ptr* QBrush_TextureImage(QBrush_Ptr* self);
 	[LinkName("QBrush_SetTextureImage")]
 	public static extern void QBrush_SetTextureImage(QBrush_Ptr* self, QImage_Ptr* image);
 	[LinkName("QBrush_Color")]
@@ -67,7 +67,7 @@ extension CQt
 	[LinkName("QBrush_SetColor2")]
 	public static extern void QBrush_SetColor2(QBrush_Ptr* self, Qt_GlobalColor color);
 	[LinkName("QBrush_Gradient")]
-	public static extern QGradient_Ptr* QBrush_Gradient(QBrush_Ptr* self);
+	public static extern QGradient_Ptr** QBrush_Gradient(QBrush_Ptr* self);
 	[LinkName("QBrush_IsOpaque")]
 	public static extern bool QBrush_IsOpaque(QBrush_Ptr* self);
 	[LinkName("QBrush_OperatorEqual")]
@@ -77,9 +77,10 @@ extension CQt
 	[LinkName("QBrush_IsDetached")]
 	public static extern bool QBrush_IsDetached(QBrush_Ptr* self);
 }
-class QBrush
+class QBrush : IQBrush
 {
 	private QBrush_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QBrush_new();
@@ -88,41 +89,41 @@ class QBrush
 	{
 		this.ptr = CQt.QBrush_new2(bs);
 	}
-	public this(QColor_Ptr* color)
+	public this(IQColor color)
 	{
-		this.ptr = CQt.QBrush_new3(color);
+		this.ptr = CQt.QBrush_new3((.)color?.ObjectPtr);
 	}
 	public this(Qt_GlobalColor color)
 	{
 		this.ptr = CQt.QBrush_new4(color);
 	}
-	public this(QColor_Ptr* color, QPixmap_Ptr* pixmap)
+	public this(IQColor color, IQPixmap pixmap)
 	{
-		this.ptr = CQt.QBrush_new5(color, pixmap);
+		this.ptr = CQt.QBrush_new5((.)color?.ObjectPtr, (.)pixmap?.ObjectPtr);
 	}
-	public this(Qt_GlobalColor color, QPixmap_Ptr* pixmap)
+	public this(Qt_GlobalColor color, IQPixmap pixmap)
 	{
-		this.ptr = CQt.QBrush_new6(color, pixmap);
+		this.ptr = CQt.QBrush_new6(color, (.)pixmap?.ObjectPtr);
 	}
-	public this(QPixmap_Ptr* pixmap)
+	public this(IQPixmap pixmap)
 	{
-		this.ptr = CQt.QBrush_new7(pixmap);
+		this.ptr = CQt.QBrush_new7((.)pixmap?.ObjectPtr);
 	}
-	public this(QImage_Ptr* image)
+	public this(IQImage image)
 	{
-		this.ptr = CQt.QBrush_new8(image);
+		this.ptr = CQt.QBrush_new8((.)image?.ObjectPtr);
 	}
-	public this(QBrush_Ptr* brush)
+	public this(IQBrush brush)
 	{
-		this.ptr = CQt.QBrush_new9(brush);
+		this.ptr = CQt.QBrush_new9((.)brush?.ObjectPtr);
 	}
-	public this(QGradient_Ptr* gradient)
+	public this(IQGradient gradient)
 	{
-		this.ptr = CQt.QBrush_new10(gradient);
+		this.ptr = CQt.QBrush_new10((.)gradient?.ObjectPtr);
 	}
-	public this(QColor_Ptr* color, Qt_BrushStyle bs)
+	public this(IQColor color, Qt_BrushStyle bs)
 	{
-		this.ptr = CQt.QBrush_new11(color, bs);
+		this.ptr = CQt.QBrush_new11((.)color?.ObjectPtr, bs);
 	}
 	public this(Qt_GlobalColor color, Qt_BrushStyle bs)
 	{
@@ -132,9 +133,9 @@ class QBrush
 	{
 		CQt.QBrush_Delete(this.ptr);
 	}
-	public void Swap(QBrush_Ptr* other)
+	public void Swap(IQBrush other)
 	{
-		CQt.QBrush_Swap((.)this.ptr, other);
+		CQt.QBrush_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public Qt_BrushStyle Style()
 	{
@@ -144,43 +145,43 @@ class QBrush
 	{
 		CQt.QBrush_SetStyle((.)this.ptr, style);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QBrush_Transform((.)this.ptr);
 	}
-	public void SetTransform(QTransform_Ptr* transform)
+	public void SetTransform(IQTransform transform)
 	{
-		CQt.QBrush_SetTransform((.)this.ptr, transform);
+		CQt.QBrush_SetTransform((.)this.ptr, (.)transform?.ObjectPtr);
 	}
-	public QPixmap_Ptr Texture()
+	public QPixmap_Ptr* Texture()
 	{
 		return CQt.QBrush_Texture((.)this.ptr);
 	}
-	public void SetTexture(QPixmap_Ptr* pixmap)
+	public void SetTexture(IQPixmap pixmap)
 	{
-		CQt.QBrush_SetTexture((.)this.ptr, pixmap);
+		CQt.QBrush_SetTexture((.)this.ptr, (.)pixmap?.ObjectPtr);
 	}
-	public QImage_Ptr TextureImage()
+	public QImage_Ptr* TextureImage()
 	{
 		return CQt.QBrush_TextureImage((.)this.ptr);
 	}
-	public void SetTextureImage(QImage_Ptr* image)
+	public void SetTextureImage(IQImage image)
 	{
-		CQt.QBrush_SetTextureImage((.)this.ptr, image);
+		CQt.QBrush_SetTextureImage((.)this.ptr, (.)image?.ObjectPtr);
 	}
 	public QColor_Ptr* Color()
 	{
 		return CQt.QBrush_Color((.)this.ptr);
 	}
-	public void SetColor(QColor_Ptr* color)
+	public void SetColor(IQColor color)
 	{
-		CQt.QBrush_SetColor((.)this.ptr, color);
+		CQt.QBrush_SetColor((.)this.ptr, (.)color?.ObjectPtr);
 	}
 	public void SetColor2(Qt_GlobalColor color)
 	{
 		CQt.QBrush_SetColor2((.)this.ptr, color);
 	}
-	public QGradient_Ptr* Gradient()
+	public QGradient_Ptr** Gradient()
 	{
 		return CQt.QBrush_Gradient((.)this.ptr);
 	}
@@ -193,23 +194,8 @@ class QBrush
 		return CQt.QBrush_IsDetached((.)this.ptr);
 	}
 }
-interface IQBrush
+interface IQBrush : IQtObjectInterface
 {
-	public void Swap();
-	public Qt_BrushStyle Style();
-	public void SetStyle();
-	public QTransform Transform();
-	public void SetTransform();
-	public QPixmap Texture();
-	public void SetTexture();
-	public QImage TextureImage();
-	public void SetTextureImage();
-	public QColor* Color();
-	public void SetColor();
-	public void SetColor2();
-	public QGradient* Gradient();
-	public bool IsOpaque();
-	public bool IsDetached();
 }
 // --------------------------------------------------------------
 // QGradient
@@ -253,9 +239,10 @@ extension CQt
 	[LinkName("QGradient_OperatorNotEqual")]
 	public static extern bool QGradient_OperatorNotEqual(QGradient_Ptr* self, QGradient_Ptr* other);
 }
-class QGradient
+class QGradient : IQGradient
 {
 	private QGradient_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGradient_new();
@@ -264,9 +251,9 @@ class QGradient
 	{
 		this.ptr = CQt.QGradient_new2(param1);
 	}
-	public this(QGradient_Ptr* param1)
+	public this(IQGradient param1)
 	{
-		this.ptr = CQt.QGradient_new3(param1);
+		this.ptr = CQt.QGradient_new3((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -284,9 +271,9 @@ class QGradient
 	{
 		return CQt.QGradient_Spread((.)this.ptr);
 	}
-	public void SetColorAt(double pos, QColor_Ptr* color)
+	public void SetColorAt(double pos, IQColor color)
 	{
-		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, (.)color?.ObjectPtr);
 	}
 	public void SetStops(void** stops)
 	{
@@ -313,18 +300,8 @@ class QGradient
 		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
-interface IQGradient
+interface IQGradient : IQtObjectInterface
 {
-	public QGradient_Type Type();
-	public void SetSpread();
-	public QGradient_Spread Spread();
-	public void SetColorAt();
-	public void SetStops();
-	public void* Stops();
-	public QGradient_CoordinateMode CoordinateMode();
-	public void SetCoordinateMode();
-	public QGradient_InterpolationMode InterpolationMode();
-	public void SetInterpolationMode();
 }
 // --------------------------------------------------------------
 // QLinearGradient
@@ -346,60 +323,61 @@ extension CQt
 	[LinkName("QLinearGradient_Delete")]
 	public static extern void QLinearGradient_Delete(QLinearGradient_Ptr* self);
 	[LinkName("QLinearGradient_Start")]
-	public static extern QPointF_Ptr QLinearGradient_Start(QLinearGradient_Ptr* self);
+	public static extern QPointF_Ptr* QLinearGradient_Start(QLinearGradient_Ptr* self);
 	[LinkName("QLinearGradient_SetStart")]
 	public static extern void QLinearGradient_SetStart(QLinearGradient_Ptr* self, QPointF_Ptr* start);
 	[LinkName("QLinearGradient_SetStart2")]
 	public static extern void QLinearGradient_SetStart2(QLinearGradient_Ptr* self, double x, double y);
 	[LinkName("QLinearGradient_FinalStop")]
-	public static extern QPointF_Ptr QLinearGradient_FinalStop(QLinearGradient_Ptr* self);
+	public static extern QPointF_Ptr* QLinearGradient_FinalStop(QLinearGradient_Ptr* self);
 	[LinkName("QLinearGradient_SetFinalStop")]
 	public static extern void QLinearGradient_SetFinalStop(QLinearGradient_Ptr* self, QPointF_Ptr* stop);
 	[LinkName("QLinearGradient_SetFinalStop2")]
 	public static extern void QLinearGradient_SetFinalStop2(QLinearGradient_Ptr* self, double x, double y);
 }
-class QLinearGradient
+class QLinearGradient : IQLinearGradient, IQGradient
 {
 	private QLinearGradient_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QLinearGradient_new();
 	}
-	public this(QPointF_Ptr* start, QPointF_Ptr* finalStop)
+	public this(IQPointF start, IQPointF finalStop)
 	{
-		this.ptr = CQt.QLinearGradient_new2(start, finalStop);
+		this.ptr = CQt.QLinearGradient_new2((.)start?.ObjectPtr, (.)finalStop?.ObjectPtr);
 	}
 	public this(double xStart, double yStart, double xFinalStop, double yFinalStop)
 	{
 		this.ptr = CQt.QLinearGradient_new3(xStart, yStart, xFinalStop, yFinalStop);
 	}
-	public this(QLinearGradient_Ptr* param1)
+	public this(IQLinearGradient param1)
 	{
-		this.ptr = CQt.QLinearGradient_new4(param1);
+		this.ptr = CQt.QLinearGradient_new4((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QLinearGradient_Delete(this.ptr);
 	}
-	public QPointF_Ptr Start()
+	public QPointF_Ptr* Start()
 	{
 		return CQt.QLinearGradient_Start((.)this.ptr);
 	}
-	public void SetStart(QPointF_Ptr* start)
+	public void SetStart(IQPointF start)
 	{
-		CQt.QLinearGradient_SetStart((.)this.ptr, start);
+		CQt.QLinearGradient_SetStart((.)this.ptr, (.)start?.ObjectPtr);
 	}
 	public void SetStart2(double x, double y)
 	{
 		CQt.QLinearGradient_SetStart2((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr FinalStop()
+	public QPointF_Ptr* FinalStop()
 	{
 		return CQt.QLinearGradient_FinalStop((.)this.ptr);
 	}
-	public void SetFinalStop(QPointF_Ptr* stop)
+	public void SetFinalStop(IQPointF stop)
 	{
-		CQt.QLinearGradient_SetFinalStop((.)this.ptr, stop);
+		CQt.QLinearGradient_SetFinalStop((.)this.ptr, (.)stop?.ObjectPtr);
 	}
 	public void SetFinalStop2(double x, double y)
 	{
@@ -417,9 +395,9 @@ class QLinearGradient
 	{
 		return CQt.QGradient_Spread((.)this.ptr);
 	}
-	public void SetColorAt(double pos, QColor_Ptr* color)
+	public void SetColorAt(double pos, IQColor color)
 	{
-		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, (.)color?.ObjectPtr);
 	}
 	public void SetStops(void** stops)
 	{
@@ -446,14 +424,8 @@ class QLinearGradient
 		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
-interface IQLinearGradient
+interface IQLinearGradient : IQtObjectInterface
 {
-	public QPointF Start();
-	public void SetStart();
-	public void SetStart2();
-	public QPointF FinalStop();
-	public void SetFinalStop();
-	public void SetFinalStop2();
 }
 // --------------------------------------------------------------
 // QRadialGradient
@@ -483,13 +455,13 @@ extension CQt
 	[LinkName("QRadialGradient_Delete")]
 	public static extern void QRadialGradient_Delete(QRadialGradient_Ptr* self);
 	[LinkName("QRadialGradient_Center")]
-	public static extern QPointF_Ptr QRadialGradient_Center(QRadialGradient_Ptr* self);
+	public static extern QPointF_Ptr* QRadialGradient_Center(QRadialGradient_Ptr* self);
 	[LinkName("QRadialGradient_SetCenter")]
 	public static extern void QRadialGradient_SetCenter(QRadialGradient_Ptr* self, QPointF_Ptr* center);
 	[LinkName("QRadialGradient_SetCenter2")]
 	public static extern void QRadialGradient_SetCenter2(QRadialGradient_Ptr* self, double x, double y);
 	[LinkName("QRadialGradient_FocalPoint")]
-	public static extern QPointF_Ptr QRadialGradient_FocalPoint(QRadialGradient_Ptr* self);
+	public static extern QPointF_Ptr* QRadialGradient_FocalPoint(QRadialGradient_Ptr* self);
 	[LinkName("QRadialGradient_SetFocalPoint")]
 	public static extern void QRadialGradient_SetFocalPoint(QRadialGradient_Ptr* self, QPointF_Ptr* focalPoint);
 	[LinkName("QRadialGradient_SetFocalPoint2")]
@@ -507,64 +479,65 @@ extension CQt
 	[LinkName("QRadialGradient_SetFocalRadius")]
 	public static extern void QRadialGradient_SetFocalRadius(QRadialGradient_Ptr* self, double radius);
 }
-class QRadialGradient
+class QRadialGradient : IQRadialGradient, IQGradient
 {
 	private QRadialGradient_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRadialGradient_new();
 	}
-	public this(QPointF_Ptr* center, double radius, QPointF_Ptr* focalPoint)
+	public this(IQPointF center, double radius, IQPointF focalPoint)
 	{
-		this.ptr = CQt.QRadialGradient_new2(center, radius, focalPoint);
+		this.ptr = CQt.QRadialGradient_new2((.)center?.ObjectPtr, radius, (.)focalPoint?.ObjectPtr);
 	}
 	public this(double cx, double cy, double radius, double fx, double fy)
 	{
 		this.ptr = CQt.QRadialGradient_new3(cx, cy, radius, fx, fy);
 	}
-	public this(QPointF_Ptr* center, double radius)
+	public this(IQPointF center, double radius)
 	{
-		this.ptr = CQt.QRadialGradient_new4(center, radius);
+		this.ptr = CQt.QRadialGradient_new4((.)center?.ObjectPtr, radius);
 	}
 	public this(double cx, double cy, double radius)
 	{
 		this.ptr = CQt.QRadialGradient_new5(cx, cy, radius);
 	}
-	public this(QPointF_Ptr* center, double centerRadius, QPointF_Ptr* focalPoint, double focalRadius)
+	public this(IQPointF center, double centerRadius, IQPointF focalPoint, double focalRadius)
 	{
-		this.ptr = CQt.QRadialGradient_new6(center, centerRadius, focalPoint, focalRadius);
+		this.ptr = CQt.QRadialGradient_new6((.)center?.ObjectPtr, centerRadius, (.)focalPoint?.ObjectPtr, focalRadius);
 	}
 	public this(double cx, double cy, double centerRadius, double fx, double fy, double focalRadius)
 	{
 		this.ptr = CQt.QRadialGradient_new7(cx, cy, centerRadius, fx, fy, focalRadius);
 	}
-	public this(QRadialGradient_Ptr* param1)
+	public this(IQRadialGradient param1)
 	{
-		this.ptr = CQt.QRadialGradient_new8(param1);
+		this.ptr = CQt.QRadialGradient_new8((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QRadialGradient_Delete(this.ptr);
 	}
-	public QPointF_Ptr Center()
+	public QPointF_Ptr* Center()
 	{
 		return CQt.QRadialGradient_Center((.)this.ptr);
 	}
-	public void SetCenter(QPointF_Ptr* center)
+	public void SetCenter(IQPointF center)
 	{
-		CQt.QRadialGradient_SetCenter((.)this.ptr, center);
+		CQt.QRadialGradient_SetCenter((.)this.ptr, (.)center?.ObjectPtr);
 	}
 	public void SetCenter2(double x, double y)
 	{
 		CQt.QRadialGradient_SetCenter2((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr FocalPoint()
+	public QPointF_Ptr* FocalPoint()
 	{
 		return CQt.QRadialGradient_FocalPoint((.)this.ptr);
 	}
-	public void SetFocalPoint(QPointF_Ptr* focalPoint)
+	public void SetFocalPoint(IQPointF focalPoint)
 	{
-		CQt.QRadialGradient_SetFocalPoint((.)this.ptr, focalPoint);
+		CQt.QRadialGradient_SetFocalPoint((.)this.ptr, (.)focalPoint?.ObjectPtr);
 	}
 	public void SetFocalPoint2(double x, double y)
 	{
@@ -606,9 +579,9 @@ class QRadialGradient
 	{
 		return CQt.QGradient_Spread((.)this.ptr);
 	}
-	public void SetColorAt(double pos, QColor_Ptr* color)
+	public void SetColorAt(double pos, IQColor color)
 	{
-		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, (.)color?.ObjectPtr);
 	}
 	public void SetStops(void** stops)
 	{
@@ -635,20 +608,8 @@ class QRadialGradient
 		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
-interface IQRadialGradient
+interface IQRadialGradient : IQtObjectInterface
 {
-	public QPointF Center();
-	public void SetCenter();
-	public void SetCenter2();
-	public QPointF FocalPoint();
-	public void SetFocalPoint();
-	public void SetFocalPoint2();
-	public double Radius();
-	public void SetRadius();
-	public double CenterRadius();
-	public void SetCenterRadius();
-	public double FocalRadius();
-	public void SetFocalRadius();
 }
 // --------------------------------------------------------------
 // QConicalGradient
@@ -670,7 +631,7 @@ extension CQt
 	[LinkName("QConicalGradient_Delete")]
 	public static extern void QConicalGradient_Delete(QConicalGradient_Ptr* self);
 	[LinkName("QConicalGradient_Center")]
-	public static extern QPointF_Ptr QConicalGradient_Center(QConicalGradient_Ptr* self);
+	public static extern QPointF_Ptr* QConicalGradient_Center(QConicalGradient_Ptr* self);
 	[LinkName("QConicalGradient_SetCenter")]
 	public static extern void QConicalGradient_SetCenter(QConicalGradient_Ptr* self, QPointF_Ptr* center);
 	[LinkName("QConicalGradient_SetCenter2")]
@@ -680,36 +641,37 @@ extension CQt
 	[LinkName("QConicalGradient_SetAngle")]
 	public static extern void QConicalGradient_SetAngle(QConicalGradient_Ptr* self, double angle);
 }
-class QConicalGradient
+class QConicalGradient : IQConicalGradient, IQGradient
 {
 	private QConicalGradient_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QConicalGradient_new();
 	}
-	public this(QPointF_Ptr* center, double startAngle)
+	public this(IQPointF center, double startAngle)
 	{
-		this.ptr = CQt.QConicalGradient_new2(center, startAngle);
+		this.ptr = CQt.QConicalGradient_new2((.)center?.ObjectPtr, startAngle);
 	}
 	public this(double cx, double cy, double startAngle)
 	{
 		this.ptr = CQt.QConicalGradient_new3(cx, cy, startAngle);
 	}
-	public this(QConicalGradient_Ptr* param1)
+	public this(IQConicalGradient param1)
 	{
-		this.ptr = CQt.QConicalGradient_new4(param1);
+		this.ptr = CQt.QConicalGradient_new4((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QConicalGradient_Delete(this.ptr);
 	}
-	public QPointF_Ptr Center()
+	public QPointF_Ptr* Center()
 	{
 		return CQt.QConicalGradient_Center((.)this.ptr);
 	}
-	public void SetCenter(QPointF_Ptr* center)
+	public void SetCenter(IQPointF center)
 	{
-		CQt.QConicalGradient_SetCenter((.)this.ptr, center);
+		CQt.QConicalGradient_SetCenter((.)this.ptr, (.)center?.ObjectPtr);
 	}
 	public void SetCenter2(double x, double y)
 	{
@@ -735,9 +697,9 @@ class QConicalGradient
 	{
 		return CQt.QGradient_Spread((.)this.ptr);
 	}
-	public void SetColorAt(double pos, QColor_Ptr* color)
+	public void SetColorAt(double pos, IQColor color)
 	{
-		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, (.)color?.ObjectPtr);
 	}
 	public void SetStops(void** stops)
 	{
@@ -764,13 +726,8 @@ class QConicalGradient
 		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
-interface IQConicalGradient
+interface IQConicalGradient : IQtObjectInterface
 {
-	public QPointF Center();
-	public void SetCenter();
-	public void SetCenter2();
-	public double Angle();
-	public void SetAngle();
 }
 // --------------------------------------------------------------
 // QGradient::QGradientData
@@ -782,23 +739,24 @@ struct QGradient_QGradientData_Ptr: void
 extension CQt
 {
 	[LinkName("QGradient_QGradientData_new")]
-	public static extern QGradient_QGradientData_Ptr* QGradient_QGradientData_new(QGradient_QGradientData* param1);
+	public static extern QGradient_QGradientData_Ptr* QGradient_QGradientData_new(QGradient_QGradientData_Ptr* param1);
 	[LinkName("QGradient_QGradientData_Delete")]
 	public static extern void QGradient_QGradientData_Delete(QGradient_QGradientData_Ptr* self);
 }
-class QGradient_QGradientData
+class QGradient_QGradientData : IQGradient_QGradientData
 {
 	private QGradient_QGradientData_Ptr* ptr;
-	public this(QGradient_QGradientData* param1)
+	public void* ObjectPtr => ptr;
+	public this(IQGradient_QGradientData param1)
 	{
-		this.ptr = CQt.QGradient_QGradientData_new(param1);
+		this.ptr = CQt.QGradient_QGradientData_new((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGradient_QGradientData_Delete(this.ptr);
 	}
 }
-interface IQGradient_QGradientData
+interface IQGradient_QGradientData : IQtObjectInterface
 {
 }
 [AllowDuplicates]

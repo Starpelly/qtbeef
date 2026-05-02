@@ -19,7 +19,7 @@ extension CQt
 	[LinkName("QToolTip_Delete")]
 	public static extern void QToolTip_Delete(QToolTip_Ptr* self);
 	[LinkName("QToolTip_ShowText")]
-	public static extern void QToolTip_ShowText(QPoint_Ptr* pos, libqt_string* text);
+	public static extern void QToolTip_ShowText(QPoint_Ptr* pos, libqt_string text);
 	[LinkName("QToolTip_HideText")]
 	public static extern void QToolTip_HideText();
 	[LinkName("QToolTip_IsVisible")]
@@ -27,34 +27,35 @@ extension CQt
 	[LinkName("QToolTip_Text")]
 	public static extern libqt_string QToolTip_Text();
 	[LinkName("QToolTip_Palette")]
-	public static extern QPalette_Ptr QToolTip_Palette();
+	public static extern QPalette_Ptr* QToolTip_Palette();
 	[LinkName("QToolTip_SetPalette")]
 	public static extern void QToolTip_SetPalette(QPalette_Ptr* palette);
 	[LinkName("QToolTip_Font")]
-	public static extern QFont_Ptr QToolTip_Font();
+	public static extern QFont_Ptr* QToolTip_Font();
 	[LinkName("QToolTip_SetFont")]
 	public static extern void QToolTip_SetFont(QFont_Ptr* font);
 	[LinkName("QToolTip_ShowText3")]
-	public static extern void QToolTip_ShowText3(QPoint_Ptr* pos, libqt_string* text, QWidget_Ptr* w);
+	public static extern void QToolTip_ShowText3(QPoint_Ptr* pos, libqt_string text, QWidget_Ptr** w);
 	[LinkName("QToolTip_ShowText4")]
-	public static extern void QToolTip_ShowText4(QPoint_Ptr* pos, libqt_string* text, QWidget_Ptr* w, QRect_Ptr* rect);
+	public static extern void QToolTip_ShowText4(QPoint_Ptr* pos, libqt_string text, QWidget_Ptr** w, QRect_Ptr* rect);
 	[LinkName("QToolTip_ShowText5")]
-	public static extern void QToolTip_ShowText5(QPoint_Ptr* pos, libqt_string* text, QWidget_Ptr* w, QRect_Ptr* rect, c_int msecShowTime);
+	public static extern void QToolTip_ShowText5(QPoint_Ptr* pos, libqt_string text, QWidget_Ptr** w, QRect_Ptr* rect, c_int msecShowTime);
 }
-class QToolTip
+class QToolTip : IQToolTip
 {
 	private QToolTip_Ptr* ptr;
-	public this(QToolTip_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQToolTip other)
 	{
-		this.ptr = CQt.QToolTip_new(other);
+		this.ptr = CQt.QToolTip_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QToolTip_Delete(this.ptr);
 	}
-	public void ShowText(QPoint_Ptr* pos, libqt_string* text)
+	public void ShowText(IQPoint pos, String text)
 	{
-		CQt.QToolTip_ShowText(pos, text);
+		CQt.QToolTip_ShowText((.)pos?.ObjectPtr, libqt_string(text));
 	}
 	public void HideText()
 	{
@@ -68,46 +69,35 @@ class QToolTip
 	{
 		return CQt.QToolTip_Text();
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QToolTip_Palette();
 	}
-	public void SetPalette(QPalette_Ptr* palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QToolTip_SetPalette(palette);
+		CQt.QToolTip_SetPalette((.)palette?.ObjectPtr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QToolTip_Font();
 	}
-	public void SetFont(QFont_Ptr* font)
+	public void SetFont(IQFont font)
 	{
-		CQt.QToolTip_SetFont(font);
+		CQt.QToolTip_SetFont((.)font?.ObjectPtr);
 	}
-	public void ShowText3(QPoint_Ptr* pos, libqt_string* text, QWidget_Ptr* w)
+	public void ShowText3(IQPoint pos, String text, IQWidget w)
 	{
-		CQt.QToolTip_ShowText3(pos, text, w);
+		CQt.QToolTip_ShowText3((.)pos?.ObjectPtr, libqt_string(text), (.)w?.ObjectPtr);
 	}
-	public void ShowText4(QPoint_Ptr* pos, libqt_string* text, QWidget_Ptr* w, QRect_Ptr* rect)
+	public void ShowText4(IQPoint pos, String text, IQWidget w, IQRect rect)
 	{
-		CQt.QToolTip_ShowText4(pos, text, w, rect);
+		CQt.QToolTip_ShowText4((.)pos?.ObjectPtr, libqt_string(text), (.)w?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public void ShowText5(QPoint_Ptr* pos, libqt_string* text, QWidget_Ptr* w, QRect_Ptr* rect, c_int msecShowTime)
+	public void ShowText5(IQPoint pos, String text, IQWidget w, IQRect rect, c_int msecShowTime)
 	{
-		CQt.QToolTip_ShowText5(pos, text, w, rect, msecShowTime);
+		CQt.QToolTip_ShowText5((.)pos?.ObjectPtr, libqt_string(text), (.)w?.ObjectPtr, (.)rect?.ObjectPtr, msecShowTime);
 	}
 }
-interface IQToolTip
+interface IQToolTip : IQtObjectInterface
 {
-	public void ShowText();
-	public void HideText();
-	public bool IsVisible();
-	public libqt_string Text();
-	public QPalette Palette();
-	public void SetPalette();
-	public QFont Font();
-	public void SetFont();
-	public void ShowText3();
-	public void ShowText4();
-	public void ShowText5();
 }

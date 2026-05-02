@@ -27,9 +27,10 @@ extension CQt
 	[LinkName("QStringEncoder_RequiredSpace")]
 	public static extern void* QStringEncoder_RequiredSpace(QStringEncoder_Ptr* self, void* inputLength);
 }
-class QStringEncoder
+class QStringEncoder : IQStringEncoder
 {
 	private QStringEncoder_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStringEncoder_new();
@@ -59,9 +60,8 @@ class QStringEncoder
 		return CQt.QStringEncoder_RequiredSpace((.)this.ptr, inputLength);
 	}
 }
-interface IQStringEncoder
+interface IQStringEncoder : IQtObjectInterface
 {
-	public void* RequiredSpace();
 }
 // --------------------------------------------------------------
 // QStringDecoder
@@ -87,13 +87,14 @@ extension CQt
 	[LinkName("QStringDecoder_RequiredSpace")]
 	public static extern void* QStringDecoder_RequiredSpace(QStringDecoder_Ptr* self, void* inputLength);
 	[LinkName("QStringDecoder_AppendToBuffer")]
-	public static extern QChar_Ptr* QStringDecoder_AppendToBuffer(QStringDecoder_Ptr* self, QChar_Ptr* _out, void* ba);
+	public static extern QChar_Ptr** QStringDecoder_AppendToBuffer(QStringDecoder_Ptr* self, QChar_Ptr** _out, void* ba);
 	[LinkName("QStringDecoder_DecoderForHtml")]
-	public static extern QStringDecoder_Ptr QStringDecoder_DecoderForHtml(void* data);
+	public static extern QStringDecoder_Ptr* QStringDecoder_DecoderForHtml(void* data);
 }
-class QStringDecoder
+class QStringDecoder : IQStringDecoder
 {
 	private QStringDecoder_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(QStringConverter_Encoding encoding)
 	{
 		this.ptr = CQt.QStringDecoder_new(encoding);
@@ -122,18 +123,15 @@ class QStringDecoder
 	{
 		return CQt.QStringDecoder_RequiredSpace((.)this.ptr, inputLength);
 	}
-	public QChar_Ptr* AppendToBuffer(QChar_Ptr* _out, void* ba)
+	public QChar_Ptr** AppendToBuffer(IQChar _out, void* ba)
 	{
-		return CQt.QStringDecoder_AppendToBuffer((.)this.ptr, _out, ba);
+		return CQt.QStringDecoder_AppendToBuffer((.)this.ptr, (.)_out?.ObjectPtr, ba);
 	}
-	public QStringDecoder_Ptr DecoderForHtml(void* data)
+	public QStringDecoder_Ptr* DecoderForHtml(void* data)
 	{
 		return CQt.QStringDecoder_DecoderForHtml(data);
 	}
 }
-interface IQStringDecoder
+interface IQStringDecoder : IQtObjectInterface
 {
-	public void* RequiredSpace();
-	public QChar* AppendToBuffer();
-	public QStringDecoder DecoderForHtml();
 }

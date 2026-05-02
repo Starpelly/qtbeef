@@ -103,12 +103,16 @@ class WriteClass
 
         if (stage == Stage.CApi)
         {
+
+
             if (m_apiState.RegisteredClasses.ContainsKey(outStr))
             {
                 outStr = $"{outStr}_Ptr";
+                if (param.ByRef == false)
+                {
+                    outStr += "*";
+                }
             }
-
-
 
             if (param.ParameterType == "QString") outStr = "libqt_string";
 
@@ -130,8 +134,12 @@ class WriteClass
 
         if (stage == Stage.BfObject)
         {
-            // if (param.ParameterType == "QString") outStr = "String";
-            if (param.ParameterType == "QString") outStr = "libqt_string";
+            if (outStr.StartsWith("QMetaObject"))
+            {
+                var a = 0;
+            }
+
+            if (param.ParameterType == "QString") outStr = "String";
 
             // @TEMP
             if (param.ParameterType.StartsWith("QList")) outStr = "void*";
@@ -150,12 +158,49 @@ class WriteClass
         }
 
         if (param.ByRef)
-            outStr += "*";
+        { 
+            if (stage == Stage.CApi)
+            {
+                if (param.ParameterType != "QString")
+                {
+                    outStr += "*";
+                }
+            }
+            else if (stage == Stage.BfObject)
+            {
+                if (!m_apiState.RegisteredClasses.ContainsKey(outStr))
+                {
+                    if (param.ParameterType != "QString")
+                    {
+                        outStr += "*";
+                    }
+                }
+            }
+        }
         if (param.Pointer)
         {
-            for (var i = 0; i < param.PointerCount; i++)
+            void emitStars()
             {
-                outStr += "*";
+                for (var i = 0; i < param.PointerCount; i++)
+                {
+                    outStr += "*";
+                }
+            }
+
+            if (stage == Stage.BfObject)
+            {
+                if (m_apiState.RegisteredClasses.ContainsKey(outStr))
+                {
+
+                }
+                else
+                {
+                    emitStars();
+                }
+            }
+            else
+            {
+                emitStars();
             }
         }
 
@@ -247,7 +292,22 @@ class WriteClass
 
         foreach (var param in method.Parameters)
         {
-            parameters.Append(getBfTypeName(param, Stage.CApi));
+            var bfTypeName = getBfTypeName(param, stage);
+
+            if (stage == Stage.BfObject)
+            {
+                if (bfTypeName.StartsWith("QMetaObject"))
+                {
+                    var a = 0;
+                }
+
+                if (m_apiState.RegisteredClasses.ContainsKey(bfTypeName))
+                {
+                    parameters.Append("I");
+                }
+            }
+
+            parameters.Append(bfTypeName);
             parameters.Append(' ');
             parameters.Append(cleanBfVarName(param.ParameterName));
             if (param != method.Parameters[^1])
@@ -286,12 +346,40 @@ class WriteClass
             }
         }
 
-        foreach (var param in method.Parameters)
+        foreach (var cppParam in method.Parameters)
         {
             // parameters.Append(getBfTypeName(param, Stage.CApi));
             // parameters.Append(' ');
-            parameters.Append(cleanBfVarName(param.ParameterName));
-            if (param != method.Parameters[^1])
+
+            var paramStr = cleanBfVarName(cppParam.ParameterName);
+
+            if (stage == Stage.BfObject)
+            {
+                var bfTypeName = getBfTypeName(cppParam, stage);
+
+
+                if (cppParam.ByRef)
+                {
+                    if (cppParam.ParameterType == "QString")
+                    {
+                        paramStr = $"libqt_string({paramStr})";
+                    }
+                    /*
+                    else
+                    {
+                        paramStr = $"{paramStr}.[Friend]ptr";
+                    }
+                    */
+                }
+
+                if (m_apiState.RegisteredClasses.ContainsKey(bfTypeName))
+                {
+                    paramStr = $"(.){paramStr}?.ObjectPtr";
+                }
+            }
+            parameters.Append(paramStr);
+
+            if (cppParam != method.Parameters[^1])
                 parameters.Append(", ");
         }
 
@@ -325,7 +413,9 @@ class WriteClass
                             if (impl.StartsWith("QList") || impl.StartsWith("QString"))
                                 continue;
 
-                            var foundClass = m_apiState.RegisteredClasses[impl];
+                            var implStr = impl.Replace("::", "_");
+
+                            var foundClass = m_apiState.RegisteredClasses[implStr];
                             inheritedClasses.Add(foundClass);
 
                             gatherInherited(foundClass);
@@ -404,27 +494,25 @@ class WriteClass
                 code.DecreaseTab();
                 code.AppendLine("}");
 
-                var implements = $"";
+                var implements = $" : I{bfClassName}";
 
-                /*
-                if (cppClass.DirectInherits != null)
+                if (inheritedClasses.Count > 0)
                 {
-                    implements += " : ";
-
-                    foreach (var impl in cppClass.DirectInherits)
+                    implements += ", ";
+                    foreach (var impl in inheritedClasses)
                     {
-                        implements += $"I{cppNameToBf(impl)}";
-                        if (impl != cppClass.DirectInherits[^1])
+                        implements += $"I{cppNameToBf(impl.ClassName)}";
+                        if (impl != inheritedClasses[^1])
                             implements += ", ";
                     }
                 }
-                */
 
                 code.AppendLine($"class {bfClassName}{implements}");
                 code.AppendLine("{");
                 code.IncreaseTab();
                 {
                     code.AppendLine($"private {bfClassName}_Ptr* ptr;");
+                    code.AppendLine("public void* ObjectPtr => ptr;");
 
                     // Constructors
                     if (cppClass.Ctors != null)
@@ -436,8 +524,8 @@ class WriteClass
                             if (cppClass.Ctors[i].IsMoveCtor)
                                 continue;
 
-                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false);
-                            var arguments = buildBfArguments(cppClass, cppClass.Ctors[i], Stage.CApi, false);
+                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.BfObject, false);
+                            var arguments = buildBfArguments(cppClass, cppClass.Ctors[i], Stage.BfObject, false);
 
                             // @HACK
                             // Some class have constructors that have identical types, for some reason?
@@ -446,7 +534,7 @@ class WriteClass
                                 var str = "";
                                 foreach (var param in cppClass.Ctors[i].Parameters)
                                 {
-                                    str += getBfTypeName(param, Stage.CApi);
+                                    str += getBfTypeName(param, Stage.BfObject);
                                 }
 
                                 if (builtParamsTypes.Contains(str))
@@ -540,10 +628,11 @@ class WriteClass
                 code.AppendLine("}");
 
                 // Interface (simulating inheritance)
-                code.AppendLine($"interface I{bfClassName}");
+                code.AppendLine($"interface I{bfClassName} : IQtObjectInterface");
                 code.AppendLine("{");
                 code.IncreaseTab();
                 {
+                    /*
                     foreach (var method in cppClass.Methods)
                     {
                         // Interfaces don't implement operators.
@@ -554,6 +643,7 @@ class WriteClass
 
                         code.AppendLine($"public {getBfTypeName(method.ReturnType, Stage.BfObject)} {bfMethodName}();");
                     }
+                    */
                 }
                 code.DecreaseTab();
                 code.AppendLine("}");

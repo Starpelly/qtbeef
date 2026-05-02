@@ -71,12 +71,13 @@ extension CQt
 	[LinkName("QMetaContainer_DiffConstIterator")]
 	public static extern void* QMetaContainer_DiffConstIterator(QMetaContainer_Ptr* self, void* i, void* j);
 }
-class QMetaContainer
+class QMetaContainer : IQMetaContainer
 {
 	private QMetaContainer_Ptr* ptr;
-	public this(QMetaContainer_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQMetaContainer other)
 	{
-		this.ptr = CQt.QMetaContainer_new(other);
+		this.ptr = CQt.QMetaContainer_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -183,32 +184,8 @@ class QMetaContainer
 		return CQt.QMetaContainer_DiffConstIterator((.)this.ptr, i, j);
 	}
 }
-interface IQMetaContainer
+interface IQMetaContainer : IQtObjectInterface
 {
-	public bool HasInputIterator();
-	public bool HasForwardIterator();
-	public bool HasBidirectionalIterator();
-	public bool HasRandomAccessIterator();
-	public bool HasSize();
-	public void* Size();
-	public bool CanClear();
-	public void Clear();
-	public bool HasIterator();
-	public void* Begin();
-	public void* End();
-	public void DestroyIterator();
-	public bool CompareIterator();
-	public void CopyIterator();
-	public void AdvanceIterator();
-	public void* DiffIterator();
-	public bool HasConstIterator();
-	public void* ConstBegin();
-	public void* ConstEnd();
-	public void DestroyConstIterator();
-	public bool CompareConstIterator();
-	public void CopyConstIterator();
-	public void AdvanceConstIterator();
-	public void* DiffConstIterator();
 }
 // --------------------------------------------------------------
 // QMetaSequence
@@ -228,7 +205,7 @@ extension CQt
 	[LinkName("QMetaSequence_Delete")]
 	public static extern void QMetaSequence_Delete(QMetaSequence_Ptr* self);
 	[LinkName("QMetaSequence_ValueMetaType")]
-	public static extern QMetaType_Ptr QMetaSequence_ValueMetaType(QMetaSequence_Ptr* self);
+	public static extern QMetaType_Ptr* QMetaSequence_ValueMetaType(QMetaSequence_Ptr* self);
 	[LinkName("QMetaSequence_IsSortable")]
 	public static extern bool QMetaSequence_IsSortable(QMetaSequence_Ptr* self);
 	[LinkName("QMetaSequence_CanAddValueAtBegin")]
@@ -288,12 +265,13 @@ extension CQt
 	[LinkName("QMetaSequence_ValueAtConstIterator")]
 	public static extern void QMetaSequence_ValueAtConstIterator(QMetaSequence_Ptr* self, void* iterator, void* result);
 }
-class QMetaSequence
+class QMetaSequence : IQMetaSequence, IQMetaContainer
 {
 	private QMetaSequence_Ptr* ptr;
-	public this(QMetaSequence_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQMetaSequence other)
 	{
-		this.ptr = CQt.QMetaSequence_new(other);
+		this.ptr = CQt.QMetaSequence_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -303,7 +281,7 @@ class QMetaSequence
 	{
 		CQt.QMetaSequence_Delete(this.ptr);
 	}
-	public QMetaType_Ptr ValueMetaType()
+	public QMetaType_Ptr* ValueMetaType()
 	{
 		return CQt.QMetaSequence_ValueMetaType((.)this.ptr);
 	}
@@ -520,38 +498,8 @@ class QMetaSequence
 		return CQt.QMetaContainer_DiffConstIterator((.)this.ptr, i, j);
 	}
 }
-interface IQMetaSequence
+interface IQMetaSequence : IQtObjectInterface
 {
-	public QMetaType ValueMetaType();
-	public bool IsSortable();
-	public bool CanAddValueAtBegin();
-	public void AddValueAtBegin();
-	public bool CanAddValueAtEnd();
-	public void AddValueAtEnd();
-	public bool CanRemoveValueAtBegin();
-	public void RemoveValueAtBegin();
-	public bool CanRemoveValueAtEnd();
-	public void RemoveValueAtEnd();
-	public bool CanGetValueAtIndex();
-	public void ValueAtIndex();
-	public bool CanSetValueAtIndex();
-	public void SetValueAtIndex();
-	public bool CanAddValue();
-	public void AddValue();
-	public bool CanRemoveValue();
-	public void RemoveValue();
-	public bool CanGetValueAtIterator();
-	public void ValueAtIterator();
-	public bool CanSetValueAtIterator();
-	public void SetValueAtIterator();
-	public bool CanInsertValueAtIterator();
-	public void InsertValueAtIterator();
-	public bool CanEraseValueAtIterator();
-	public void EraseValueAtIterator();
-	public bool CanEraseRangeAtIterator();
-	public void EraseRangeAtIterator();
-	public bool CanGetValueAtConstIterator();
-	public void ValueAtConstIterator();
 }
 // --------------------------------------------------------------
 // QMetaAssociation
@@ -571,9 +519,9 @@ extension CQt
 	[LinkName("QMetaAssociation_Delete")]
 	public static extern void QMetaAssociation_Delete(QMetaAssociation_Ptr* self);
 	[LinkName("QMetaAssociation_KeyMetaType")]
-	public static extern QMetaType_Ptr QMetaAssociation_KeyMetaType(QMetaAssociation_Ptr* self);
+	public static extern QMetaType_Ptr* QMetaAssociation_KeyMetaType(QMetaAssociation_Ptr* self);
 	[LinkName("QMetaAssociation_MappedMetaType")]
-	public static extern QMetaType_Ptr QMetaAssociation_MappedMetaType(QMetaAssociation_Ptr* self);
+	public static extern QMetaType_Ptr* QMetaAssociation_MappedMetaType(QMetaAssociation_Ptr* self);
 	[LinkName("QMetaAssociation_CanInsertKey")]
 	public static extern bool QMetaAssociation_CanInsertKey(QMetaAssociation_Ptr* self);
 	[LinkName("QMetaAssociation_InsertKey")]
@@ -623,12 +571,13 @@ extension CQt
 	[LinkName("QMetaAssociation_CreateConstIteratorAtKey")]
 	public static extern void* QMetaAssociation_CreateConstIteratorAtKey(QMetaAssociation_Ptr* self, void* container, void* key);
 }
-class QMetaAssociation
+class QMetaAssociation : IQMetaAssociation, IQMetaContainer
 {
 	private QMetaAssociation_Ptr* ptr;
-	public this(QMetaAssociation_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQMetaAssociation other)
 	{
-		this.ptr = CQt.QMetaAssociation_new(other);
+		this.ptr = CQt.QMetaAssociation_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -638,11 +587,11 @@ class QMetaAssociation
 	{
 		CQt.QMetaAssociation_Delete(this.ptr);
 	}
-	public QMetaType_Ptr KeyMetaType()
+	public QMetaType_Ptr* KeyMetaType()
 	{
 		return CQt.QMetaAssociation_KeyMetaType((.)this.ptr);
 	}
-	public QMetaType_Ptr MappedMetaType()
+	public QMetaType_Ptr* MappedMetaType()
 	{
 		return CQt.QMetaAssociation_MappedMetaType((.)this.ptr);
 	}
@@ -839,34 +788,8 @@ class QMetaAssociation
 		return CQt.QMetaContainer_DiffConstIterator((.)this.ptr, i, j);
 	}
 }
-interface IQMetaAssociation
+interface IQMetaAssociation : IQtObjectInterface
 {
-	public QMetaType KeyMetaType();
-	public QMetaType MappedMetaType();
-	public bool CanInsertKey();
-	public void InsertKey();
-	public bool CanRemoveKey();
-	public void RemoveKey();
-	public bool CanContainsKey();
-	public bool ContainsKey();
-	public bool CanGetMappedAtKey();
-	public void MappedAtKey();
-	public bool CanSetMappedAtKey();
-	public void SetMappedAtKey();
-	public bool CanGetKeyAtIterator();
-	public void KeyAtIterator();
-	public bool CanGetKeyAtConstIterator();
-	public void KeyAtConstIterator();
-	public bool CanGetMappedAtIterator();
-	public void MappedAtIterator();
-	public bool CanGetMappedAtConstIterator();
-	public void MappedAtConstIterator();
-	public bool CanSetMappedAtIterator();
-	public void SetMappedAtIterator();
-	public bool CanCreateIteratorAtKey();
-	public void* CreateIteratorAtKey();
-	public bool CanCreateConstIteratorAtKey();
-	public void* CreateConstIteratorAtKey();
 }
 [AllowDuplicates]
 enum QtMetaContainerPrivate_IteratorCapability

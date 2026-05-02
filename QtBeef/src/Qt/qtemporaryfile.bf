@@ -15,15 +15,15 @@ extension CQt
 	[LinkName("QTemporaryFile_new")]
 	public static extern QTemporaryFile_Ptr* QTemporaryFile_new();
 	[LinkName("QTemporaryFile_new2")]
-	public static extern QTemporaryFile_Ptr* QTemporaryFile_new2(libqt_string* templateName);
+	public static extern QTemporaryFile_Ptr* QTemporaryFile_new2(libqt_string templateName);
 	[LinkName("QTemporaryFile_new3")]
-	public static extern QTemporaryFile_Ptr* QTemporaryFile_new3(QObject_Ptr* parent);
+	public static extern QTemporaryFile_Ptr* QTemporaryFile_new3(QObject_Ptr** parent);
 	[LinkName("QTemporaryFile_new4")]
-	public static extern QTemporaryFile_Ptr* QTemporaryFile_new4(libqt_string* templateName, QObject_Ptr* parent);
+	public static extern QTemporaryFile_Ptr* QTemporaryFile_new4(libqt_string templateName, QObject_Ptr** parent);
 	[LinkName("QTemporaryFile_Delete")]
 	public static extern void QTemporaryFile_Delete(QTemporaryFile_Ptr* self);
 	[LinkName("QTemporaryFile_MetaObject")]
-	public static extern QMetaObject_Ptr* QTemporaryFile_MetaObject(QTemporaryFile_Ptr* self);
+	public static extern QMetaObject_Ptr** QTemporaryFile_MetaObject(QTemporaryFile_Ptr* self);
 	[LinkName("QTemporaryFile_Qt_Metacast")]
 	public static extern void* QTemporaryFile_Qt_Metacast(QTemporaryFile_Ptr* self, c_char* param1);
 	[LinkName("QTemporaryFile_Qt_Metacall")]
@@ -41,13 +41,13 @@ extension CQt
 	[LinkName("QTemporaryFile_FileTemplate")]
 	public static extern libqt_string QTemporaryFile_FileTemplate(QTemporaryFile_Ptr* self);
 	[LinkName("QTemporaryFile_SetFileTemplate")]
-	public static extern void QTemporaryFile_SetFileTemplate(QTemporaryFile_Ptr* self, libqt_string* name);
+	public static extern void QTemporaryFile_SetFileTemplate(QTemporaryFile_Ptr* self, libqt_string name);
 	[LinkName("QTemporaryFile_Rename")]
-	public static extern bool QTemporaryFile_Rename(QTemporaryFile_Ptr* self, libqt_string* newName);
+	public static extern bool QTemporaryFile_Rename(QTemporaryFile_Ptr* self, libqt_string newName);
 	[LinkName("QTemporaryFile_CreateNativeFile")]
-	public static extern QTemporaryFile_Ptr* QTemporaryFile_CreateNativeFile(libqt_string* fileName);
+	public static extern QTemporaryFile_Ptr** QTemporaryFile_CreateNativeFile(libqt_string fileName);
 	[LinkName("QTemporaryFile_CreateNativeFile2")]
-	public static extern QTemporaryFile_Ptr* QTemporaryFile_CreateNativeFile2(QFile_Ptr* file);
+	public static extern QTemporaryFile_Ptr** QTemporaryFile_CreateNativeFile2(QFile_Ptr* file);
 	[LinkName("QTemporaryFile_Open2")]
 	public static extern bool QTemporaryFile_Open2(QTemporaryFile_Ptr* self, void* flags);
 	[LinkName("QTemporaryFile_Tr2")]
@@ -55,30 +55,31 @@ extension CQt
 	[LinkName("QTemporaryFile_Tr3")]
 	public static extern libqt_string QTemporaryFile_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QTemporaryFile
+class QTemporaryFile : IQTemporaryFile, IQFile, IQFileDevice, IQIODevice, IQObject, IQIODeviceBase
 {
 	private QTemporaryFile_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTemporaryFile_new();
 	}
-	public this(libqt_string* templateName)
+	public this(String templateName)
 	{
-		this.ptr = CQt.QTemporaryFile_new2(templateName);
+		this.ptr = CQt.QTemporaryFile_new2(libqt_string(templateName));
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QTemporaryFile_new3(parent);
+		this.ptr = CQt.QTemporaryFile_new3((.)parent?.ObjectPtr);
 	}
-	public this(libqt_string* templateName, QObject_Ptr* parent)
+	public this(String templateName, IQObject parent)
 	{
-		this.ptr = CQt.QTemporaryFile_new4(templateName, parent);
+		this.ptr = CQt.QTemporaryFile_new4(libqt_string(templateName), (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QTemporaryFile_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QTemporaryFile_MetaObject((.)this.ptr);
 	}
@@ -114,21 +115,21 @@ class QTemporaryFile
 	{
 		return CQt.QTemporaryFile_FileTemplate((.)this.ptr);
 	}
-	public void SetFileTemplate(libqt_string* name)
+	public void SetFileTemplate(String name)
 	{
-		CQt.QTemporaryFile_SetFileTemplate((.)this.ptr, name);
+		CQt.QTemporaryFile_SetFileTemplate((.)this.ptr, libqt_string(name));
 	}
-	public bool Rename(libqt_string* newName)
+	public bool Rename(String newName)
 	{
-		return CQt.QTemporaryFile_Rename((.)this.ptr, newName);
+		return CQt.QTemporaryFile_Rename((.)this.ptr, libqt_string(newName));
 	}
-	public QTemporaryFile_Ptr* CreateNativeFile(libqt_string* fileName)
+	public QTemporaryFile_Ptr** CreateNativeFile(String fileName)
 	{
-		return CQt.QTemporaryFile_CreateNativeFile(fileName);
+		return CQt.QTemporaryFile_CreateNativeFile(libqt_string(fileName));
 	}
-	public QTemporaryFile_Ptr* CreateNativeFile2(QFile_Ptr* file)
+	public QTemporaryFile_Ptr** CreateNativeFile2(IQFile file)
 	{
-		return CQt.QTemporaryFile_CreateNativeFile2(file);
+		return CQt.QTemporaryFile_CreateNativeFile2((.)file?.ObjectPtr);
 	}
 	public bool Open2(void* flags)
 	{
@@ -142,13 +143,13 @@ class QTemporaryFile
 	{
 		return CQt.QTemporaryFile_Tr3(s, c, n);
 	}
-	public void SetFileName(libqt_string* name)
+	public void SetFileName(String name)
 	{
-		CQt.QFile_SetFileName((.)this.ptr, name);
+		CQt.QFile_SetFileName((.)this.ptr, libqt_string(name));
 	}
-	public void* EncodeName(libqt_string* fileName)
+	public void* EncodeName(String fileName)
 	{
-		return CQt.QFile_EncodeName(fileName);
+		return CQt.QFile_EncodeName(libqt_string(fileName));
 	}
 	public libqt_string DecodeName(void** localFileName)
 	{
@@ -162,53 +163,53 @@ class QTemporaryFile
 	{
 		return CQt.QFile_Exists((.)this.ptr);
 	}
-	public bool Exists2(libqt_string* fileName)
+	public bool Exists2(String fileName)
 	{
-		return CQt.QFile_Exists2(fileName);
+		return CQt.QFile_Exists2(libqt_string(fileName));
 	}
 	public libqt_string SymLinkTarget()
 	{
 		return CQt.QFile_SymLinkTarget((.)this.ptr);
 	}
-	public libqt_string SymLinkTarget2(libqt_string* fileName)
+	public libqt_string SymLinkTarget2(String fileName)
 	{
-		return CQt.QFile_SymLinkTarget2(fileName);
+		return CQt.QFile_SymLinkTarget2(libqt_string(fileName));
 	}
 	public bool Remove()
 	{
 		return CQt.QFile_Remove((.)this.ptr);
 	}
-	public bool Remove2(libqt_string* fileName)
+	public bool Remove2(String fileName)
 	{
-		return CQt.QFile_Remove2(fileName);
+		return CQt.QFile_Remove2(libqt_string(fileName));
 	}
 	public bool MoveToTrash()
 	{
 		return CQt.QFile_MoveToTrash((.)this.ptr);
 	}
-	public bool MoveToTrash2(libqt_string* fileName)
+	public bool MoveToTrash2(String fileName)
 	{
-		return CQt.QFile_MoveToTrash2(fileName);
+		return CQt.QFile_MoveToTrash2(libqt_string(fileName));
 	}
-	public bool Rename2(libqt_string* oldName, libqt_string* newName)
+	public bool Rename2(String oldName, String newName)
 	{
-		return CQt.QFile_Rename2(oldName, newName);
+		return CQt.QFile_Rename2(libqt_string(oldName), libqt_string(newName));
 	}
-	public bool Link(libqt_string* newName)
+	public bool Link(String newName)
 	{
-		return CQt.QFile_Link((.)this.ptr, newName);
+		return CQt.QFile_Link((.)this.ptr, libqt_string(newName));
 	}
-	public bool Link2(libqt_string* fileName, libqt_string* newName)
+	public bool Link2(String fileName, String newName)
 	{
-		return CQt.QFile_Link2(fileName, newName);
+		return CQt.QFile_Link2(libqt_string(fileName), libqt_string(newName));
 	}
-	public bool Copy(libqt_string* newName)
+	public bool Copy(String newName)
 	{
-		return CQt.QFile_Copy((.)this.ptr, newName);
+		return CQt.QFile_Copy((.)this.ptr, libqt_string(newName));
 	}
-	public bool Copy2(libqt_string* fileName, libqt_string* newName)
+	public bool Copy2(String fileName, String newName)
 	{
-		return CQt.QFile_Copy2(fileName, newName);
+		return CQt.QFile_Copy2(libqt_string(fileName), libqt_string(newName));
 	}
 	public bool Open4(c_int fd, void* ioFlags)
 	{
@@ -222,25 +223,25 @@ class QTemporaryFile
 	{
 		return CQt.QFile_Resize((.)this.ptr, sz);
 	}
-	public bool Resize2(libqt_string* filename, c_longlong sz)
+	public bool Resize2(String filename, c_longlong sz)
 	{
-		return CQt.QFile_Resize2(filename, sz);
+		return CQt.QFile_Resize2(libqt_string(filename), sz);
 	}
 	public void* Permissions()
 	{
 		return CQt.QFile_Permissions((.)this.ptr);
 	}
-	public void* Permissions2(libqt_string* filename)
+	public void* Permissions2(String filename)
 	{
-		return CQt.QFile_Permissions2(filename);
+		return CQt.QFile_Permissions2(libqt_string(filename));
 	}
 	public bool SetPermissions(void* permissionSpec)
 	{
 		return CQt.QFile_SetPermissions((.)this.ptr, permissionSpec);
 	}
-	public bool SetPermissions2(libqt_string* filename, void* permissionSpec)
+	public bool SetPermissions2(String filename, void* permissionSpec)
 	{
-		return CQt.QFile_SetPermissions2(filename, permissionSpec);
+		return CQt.QFile_SetPermissions2(libqt_string(filename), permissionSpec);
 	}
 	public bool Open33(c_int fd, void* ioFlags, void* handleFlags)
 	{
@@ -290,13 +291,13 @@ class QTemporaryFile
 	{
 		return CQt.QFileDevice_Unmap((.)this.ptr, address);
 	}
-	public QDateTime_Ptr FileTime(QFileDevice_FileTime time)
+	public QDateTime_Ptr* FileTime(QFileDevice_FileTime time)
 	{
 		return CQt.QFileDevice_FileTime((.)this.ptr, time);
 	}
-	public bool SetFileTime(QDateTime_Ptr* newDate, QFileDevice_FileTime fileTime)
+	public bool SetFileTime(IQDateTime newDate, QFileDevice_FileTime fileTime)
 	{
-		return CQt.QFileDevice_SetFileTime((.)this.ptr, newDate, fileTime);
+		return CQt.QFileDevice_SetFileTime((.)this.ptr, (.)newDate?.ObjectPtr, fileTime);
 	}
 	public c_longlong ReadData(c_char* data, c_longlong maxlen)
 	{
@@ -494,29 +495,29 @@ class QTemporaryFile
 	{
 		CQt.QIODevice_SetOpenMode((.)this.ptr, openMode);
 	}
-	public void SetErrorString(libqt_string* errorString)
+	public void SetErrorString(String errorString)
 	{
-		CQt.QIODevice_SetErrorString((.)this.ptr, errorString);
+		CQt.QIODevice_SetErrorString((.)this.ptr, libqt_string(errorString));
 	}
 	public void* ReadLine1(c_longlong maxlen)
 	{
 		return CQt.QIODevice_ReadLine1((.)this.ptr, maxlen);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -538,13 +539,13 @@ class QTemporaryFile
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -562,49 +563,49 @@ class QTemporaryFile
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -614,11 +615,11 @@ class QTemporaryFile
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -626,11 +627,11 @@ class QTemporaryFile
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -638,7 +639,7 @@ class QTemporaryFile
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -650,7 +651,7 @@ class QTemporaryFile
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -662,29 +663,29 @@ class QTemporaryFile
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -694,55 +695,39 @@ class QTemporaryFile
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQTemporaryFile
+interface IQTemporaryFile : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public bool AutoRemove();
-	public void SetAutoRemove();
-	public bool Open();
-	public libqt_string FileName();
-	public libqt_string FileTemplate();
-	public void SetFileTemplate();
-	public bool Rename();
-	public QTemporaryFile* CreateNativeFile();
-	public QTemporaryFile* CreateNativeFile2();
-	public bool Open2();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
 }

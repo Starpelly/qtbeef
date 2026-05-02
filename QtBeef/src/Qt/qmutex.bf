@@ -25,9 +25,10 @@ extension CQt
 	[LinkName("QBasicMutex_TryLock2")]
 	public static extern bool QBasicMutex_TryLock2(QBasicMutex_Ptr* self);
 }
-class QBasicMutex
+class QBasicMutex : IQBasicMutex
 {
 	private QBasicMutex_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QBasicMutex_new();
@@ -53,12 +54,8 @@ class QBasicMutex
 		return CQt.QBasicMutex_TryLock2((.)this.ptr);
 	}
 }
-interface IQBasicMutex
+interface IQBasicMutex : IQtObjectInterface
 {
-	public void Lock();
-	public void Unlock();
-	public bool TryLock();
-	public bool TryLock2();
 }
 // --------------------------------------------------------------
 // QMutex
@@ -78,9 +75,10 @@ extension CQt
 	[LinkName("QMutex_TryLock2")]
 	public static extern bool QMutex_TryLock2(QMutex_Ptr* self, c_int timeout);
 }
-class QMutex
+class QMutex : IQMutex, IQBasicMutex
 {
 	private QMutex_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QMutex_new();
@@ -110,10 +108,8 @@ class QMutex
 		return CQt.QBasicMutex_TryLock((.)this.ptr);
 	}
 }
-interface IQMutex
+interface IQMutex : IQtObjectInterface
 {
-	public bool Try_lock();
-	public bool TryLock2();
 }
 // --------------------------------------------------------------
 // QRecursiveMutex
@@ -139,9 +135,10 @@ extension CQt
 	[LinkName("QRecursiveMutex_TryLock1")]
 	public static extern bool QRecursiveMutex_TryLock1(QRecursiveMutex_Ptr* self, c_int timeout);
 }
-class QRecursiveMutex
+class QRecursiveMutex : IQRecursiveMutex
 {
 	private QRecursiveMutex_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRecursiveMutex_new();
@@ -171,11 +168,6 @@ class QRecursiveMutex
 		return CQt.QRecursiveMutex_TryLock1((.)this.ptr, timeout);
 	}
 }
-interface IQRecursiveMutex
+interface IQRecursiveMutex : IQtObjectInterface
 {
-	public void Lock();
-	public bool TryLock();
-	public void Unlock();
-	public bool TryLock2();
-	public bool TryLock1();
 }

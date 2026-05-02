@@ -13,13 +13,13 @@ struct QSyntaxHighlighter_Ptr: void
 extension CQt
 {
 	[LinkName("QSyntaxHighlighter_new")]
-	public static extern QSyntaxHighlighter_Ptr* QSyntaxHighlighter_new(QObject_Ptr* parent);
+	public static extern QSyntaxHighlighter_Ptr* QSyntaxHighlighter_new(QObject_Ptr** parent);
 	[LinkName("QSyntaxHighlighter_new2")]
-	public static extern QSyntaxHighlighter_Ptr* QSyntaxHighlighter_new2(QTextDocument_Ptr* parent);
+	public static extern QSyntaxHighlighter_Ptr* QSyntaxHighlighter_new2(QTextDocument_Ptr** parent);
 	[LinkName("QSyntaxHighlighter_Delete")]
 	public static extern void QSyntaxHighlighter_Delete(QSyntaxHighlighter_Ptr* self);
 	[LinkName("QSyntaxHighlighter_MetaObject")]
-	public static extern QMetaObject_Ptr* QSyntaxHighlighter_MetaObject(QSyntaxHighlighter_Ptr* self);
+	public static extern QMetaObject_Ptr** QSyntaxHighlighter_MetaObject(QSyntaxHighlighter_Ptr* self);
 	[LinkName("QSyntaxHighlighter_Qt_Metacast")]
 	public static extern void* QSyntaxHighlighter_Qt_Metacast(QSyntaxHighlighter_Ptr* self, c_char* param1);
 	[LinkName("QSyntaxHighlighter_Qt_Metacall")]
@@ -27,15 +27,15 @@ extension CQt
 	[LinkName("QSyntaxHighlighter_Tr")]
 	public static extern libqt_string QSyntaxHighlighter_Tr(c_char* s);
 	[LinkName("QSyntaxHighlighter_SetDocument")]
-	public static extern void QSyntaxHighlighter_SetDocument(QSyntaxHighlighter_Ptr* self, QTextDocument_Ptr* doc);
+	public static extern void QSyntaxHighlighter_SetDocument(QSyntaxHighlighter_Ptr* self, QTextDocument_Ptr** doc);
 	[LinkName("QSyntaxHighlighter_Document")]
-	public static extern QTextDocument_Ptr* QSyntaxHighlighter_Document(QSyntaxHighlighter_Ptr* self);
+	public static extern QTextDocument_Ptr** QSyntaxHighlighter_Document(QSyntaxHighlighter_Ptr* self);
 	[LinkName("QSyntaxHighlighter_Rehighlight")]
 	public static extern void QSyntaxHighlighter_Rehighlight(QSyntaxHighlighter_Ptr* self);
 	[LinkName("QSyntaxHighlighter_RehighlightBlock")]
 	public static extern void QSyntaxHighlighter_RehighlightBlock(QSyntaxHighlighter_Ptr* self, QTextBlock_Ptr* block);
 	[LinkName("QSyntaxHighlighter_HighlightBlock")]
-	public static extern void QSyntaxHighlighter_HighlightBlock(QSyntaxHighlighter_Ptr* self, libqt_string* text);
+	public static extern void QSyntaxHighlighter_HighlightBlock(QSyntaxHighlighter_Ptr* self, libqt_string text);
 	[LinkName("QSyntaxHighlighter_SetFormat")]
 	public static extern void QSyntaxHighlighter_SetFormat(QSyntaxHighlighter_Ptr* self, c_int start, c_int count, QTextCharFormat_Ptr* format);
 	[LinkName("QSyntaxHighlighter_SetFormat2")]
@@ -43,7 +43,7 @@ extension CQt
 	[LinkName("QSyntaxHighlighter_SetFormat3")]
 	public static extern void QSyntaxHighlighter_SetFormat3(QSyntaxHighlighter_Ptr* self, c_int start, c_int count, QFont_Ptr* font);
 	[LinkName("QSyntaxHighlighter_Format")]
-	public static extern QTextCharFormat_Ptr QSyntaxHighlighter_Format(QSyntaxHighlighter_Ptr* self, c_int pos);
+	public static extern QTextCharFormat_Ptr* QSyntaxHighlighter_Format(QSyntaxHighlighter_Ptr* self, c_int pos);
 	[LinkName("QSyntaxHighlighter_PreviousBlockState")]
 	public static extern c_int QSyntaxHighlighter_PreviousBlockState(QSyntaxHighlighter_Ptr* self);
 	[LinkName("QSyntaxHighlighter_CurrentBlockState")]
@@ -51,32 +51,33 @@ extension CQt
 	[LinkName("QSyntaxHighlighter_SetCurrentBlockState")]
 	public static extern void QSyntaxHighlighter_SetCurrentBlockState(QSyntaxHighlighter_Ptr* self, c_int newState);
 	[LinkName("QSyntaxHighlighter_SetCurrentBlockUserData")]
-	public static extern void QSyntaxHighlighter_SetCurrentBlockUserData(QSyntaxHighlighter_Ptr* self, QTextBlockUserData_Ptr* data);
+	public static extern void QSyntaxHighlighter_SetCurrentBlockUserData(QSyntaxHighlighter_Ptr* self, QTextBlockUserData_Ptr** data);
 	[LinkName("QSyntaxHighlighter_CurrentBlockUserData")]
-	public static extern QTextBlockUserData_Ptr* QSyntaxHighlighter_CurrentBlockUserData(QSyntaxHighlighter_Ptr* self);
+	public static extern QTextBlockUserData_Ptr** QSyntaxHighlighter_CurrentBlockUserData(QSyntaxHighlighter_Ptr* self);
 	[LinkName("QSyntaxHighlighter_CurrentBlock")]
-	public static extern QTextBlock_Ptr QSyntaxHighlighter_CurrentBlock(QSyntaxHighlighter_Ptr* self);
+	public static extern QTextBlock_Ptr* QSyntaxHighlighter_CurrentBlock(QSyntaxHighlighter_Ptr* self);
 	[LinkName("QSyntaxHighlighter_Tr2")]
 	public static extern libqt_string QSyntaxHighlighter_Tr2(c_char* s, c_char* c);
 	[LinkName("QSyntaxHighlighter_Tr3")]
 	public static extern libqt_string QSyntaxHighlighter_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QSyntaxHighlighter
+class QSyntaxHighlighter : IQSyntaxHighlighter, IQObject
 {
 	private QSyntaxHighlighter_Ptr* ptr;
-	public this(QObject_Ptr* parent)
+	public void* ObjectPtr => ptr;
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QSyntaxHighlighter_new(parent);
+		this.ptr = CQt.QSyntaxHighlighter_new((.)parent?.ObjectPtr);
 	}
-	public this(QTextDocument_Ptr* parent)
+	public this(IQTextDocument parent)
 	{
-		this.ptr = CQt.QSyntaxHighlighter_new2(parent);
+		this.ptr = CQt.QSyntaxHighlighter_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QSyntaxHighlighter_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QSyntaxHighlighter_MetaObject((.)this.ptr);
 	}
@@ -92,11 +93,11 @@ class QSyntaxHighlighter
 	{
 		return CQt.QSyntaxHighlighter_Tr(s);
 	}
-	public void SetDocument(QTextDocument_Ptr* doc)
+	public void SetDocument(IQTextDocument doc)
 	{
-		CQt.QSyntaxHighlighter_SetDocument((.)this.ptr, doc);
+		CQt.QSyntaxHighlighter_SetDocument((.)this.ptr, (.)doc?.ObjectPtr);
 	}
-	public QTextDocument_Ptr* Document()
+	public QTextDocument_Ptr** Document()
 	{
 		return CQt.QSyntaxHighlighter_Document((.)this.ptr);
 	}
@@ -104,27 +105,27 @@ class QSyntaxHighlighter
 	{
 		CQt.QSyntaxHighlighter_Rehighlight((.)this.ptr);
 	}
-	public void RehighlightBlock(QTextBlock_Ptr* block)
+	public void RehighlightBlock(IQTextBlock block)
 	{
-		CQt.QSyntaxHighlighter_RehighlightBlock((.)this.ptr, block);
+		CQt.QSyntaxHighlighter_RehighlightBlock((.)this.ptr, (.)block?.ObjectPtr);
 	}
-	public void HighlightBlock(libqt_string* text)
+	public void HighlightBlock(String text)
 	{
-		CQt.QSyntaxHighlighter_HighlightBlock((.)this.ptr, text);
+		CQt.QSyntaxHighlighter_HighlightBlock((.)this.ptr, libqt_string(text));
 	}
-	public void SetFormat(c_int start, c_int count, QTextCharFormat_Ptr* format)
+	public void SetFormat(c_int start, c_int count, IQTextCharFormat format)
 	{
-		CQt.QSyntaxHighlighter_SetFormat((.)this.ptr, start, count, format);
+		CQt.QSyntaxHighlighter_SetFormat((.)this.ptr, start, count, (.)format?.ObjectPtr);
 	}
-	public void SetFormat2(c_int start, c_int count, QColor_Ptr* color)
+	public void SetFormat2(c_int start, c_int count, IQColor color)
 	{
-		CQt.QSyntaxHighlighter_SetFormat2((.)this.ptr, start, count, color);
+		CQt.QSyntaxHighlighter_SetFormat2((.)this.ptr, start, count, (.)color?.ObjectPtr);
 	}
-	public void SetFormat3(c_int start, c_int count, QFont_Ptr* font)
+	public void SetFormat3(c_int start, c_int count, IQFont font)
 	{
-		CQt.QSyntaxHighlighter_SetFormat3((.)this.ptr, start, count, font);
+		CQt.QSyntaxHighlighter_SetFormat3((.)this.ptr, start, count, (.)font?.ObjectPtr);
 	}
-	public QTextCharFormat_Ptr Format(c_int pos)
+	public QTextCharFormat_Ptr* Format(c_int pos)
 	{
 		return CQt.QSyntaxHighlighter_Format((.)this.ptr, pos);
 	}
@@ -140,15 +141,15 @@ class QSyntaxHighlighter
 	{
 		CQt.QSyntaxHighlighter_SetCurrentBlockState((.)this.ptr, newState);
 	}
-	public void SetCurrentBlockUserData(QTextBlockUserData_Ptr* data)
+	public void SetCurrentBlockUserData(IQTextBlockUserData data)
 	{
-		CQt.QSyntaxHighlighter_SetCurrentBlockUserData((.)this.ptr, data);
+		CQt.QSyntaxHighlighter_SetCurrentBlockUserData((.)this.ptr, (.)data?.ObjectPtr);
 	}
-	public QTextBlockUserData_Ptr* CurrentBlockUserData()
+	public QTextBlockUserData_Ptr** CurrentBlockUserData()
 	{
 		return CQt.QSyntaxHighlighter_CurrentBlockUserData((.)this.ptr);
 	}
-	public QTextBlock_Ptr CurrentBlock()
+	public QTextBlock_Ptr* CurrentBlock()
 	{
 		return CQt.QSyntaxHighlighter_CurrentBlock((.)this.ptr);
 	}
@@ -160,21 +161,21 @@ class QSyntaxHighlighter
 	{
 		return CQt.QSyntaxHighlighter_Tr3(s, c, n);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -196,13 +197,13 @@ class QSyntaxHighlighter
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -220,49 +221,49 @@ class QSyntaxHighlighter
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -272,11 +273,11 @@ class QSyntaxHighlighter
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -284,11 +285,11 @@ class QSyntaxHighlighter
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -296,7 +297,7 @@ class QSyntaxHighlighter
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -308,7 +309,7 @@ class QSyntaxHighlighter
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -320,29 +321,29 @@ class QSyntaxHighlighter
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -352,60 +353,39 @@ class QSyntaxHighlighter
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQSyntaxHighlighter
+interface IQSyntaxHighlighter : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void SetDocument();
-	public QTextDocument* Document();
-	public void Rehighlight();
-	public void RehighlightBlock();
-	public void HighlightBlock();
-	public void SetFormat();
-	public void SetFormat2();
-	public void SetFormat3();
-	public QTextCharFormat Format();
-	public c_int PreviousBlockState();
-	public c_int CurrentBlockState();
-	public void SetCurrentBlockState();
-	public void SetCurrentBlockUserData();
-	public QTextBlockUserData* CurrentBlockUserData();
-	public QTextBlock CurrentBlock();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
 }

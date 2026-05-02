@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QOpenGLExtraFunctions_new")]
 	public static extern QOpenGLExtraFunctions_Ptr* QOpenGLExtraFunctions_new();
 	[LinkName("QOpenGLExtraFunctions_new2")]
-	public static extern QOpenGLExtraFunctions_Ptr* QOpenGLExtraFunctions_new2(QOpenGLContext_Ptr* context);
+	public static extern QOpenGLExtraFunctions_Ptr* QOpenGLExtraFunctions_new2(QOpenGLContext_Ptr** context);
 	[LinkName("QOpenGLExtraFunctions_new3")]
 	public static extern QOpenGLExtraFunctions_Ptr* QOpenGLExtraFunctions_new3(QOpenGLExtraFunctions_Ptr* param1);
 	[LinkName("QOpenGLExtraFunctions_Delete")]
@@ -423,20 +423,21 @@ extension CQt
 	[LinkName("QOpenGLExtraFunctions_GlTexStorage3DMultisample")]
 	public static extern void QOpenGLExtraFunctions_GlTexStorage3DMultisample(QOpenGLExtraFunctions_Ptr* self, c_uint target, c_size samples, c_uint internalformat, c_size width, c_size height, c_size depth, bool fixedsamplelocations);
 }
-class QOpenGLExtraFunctions
+class QOpenGLExtraFunctions : IQOpenGLExtraFunctions, IQOpenGLFunctions
 {
 	private QOpenGLExtraFunctions_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QOpenGLExtraFunctions_new();
 	}
-	public this(QOpenGLContext_Ptr* context)
+	public this(IQOpenGLContext context)
 	{
-		this.ptr = CQt.QOpenGLExtraFunctions_new2(context);
+		this.ptr = CQt.QOpenGLExtraFunctions_new2((.)context?.ObjectPtr);
 	}
-	public this(QOpenGLExtraFunctions_Ptr* param1)
+	public this(IQOpenGLExtraFunctions param1)
 	{
-		this.ptr = CQt.QOpenGLExtraFunctions_new3(param1);
+		this.ptr = CQt.QOpenGLExtraFunctions_new3((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -1811,207 +1812,6 @@ class QOpenGLExtraFunctions
 		CQt.QOpenGLFunctions_GlVertexAttribPointer((.)this.ptr, indx, size, type, normalized, stride, ptr);
 	}
 }
-interface IQOpenGLExtraFunctions
+interface IQOpenGLExtraFunctions : IQtObjectInterface
 {
-	public void GlReadBuffer();
-	public void GlDrawRangeElements();
-	public void GlTexImage3D();
-	public void GlTexSubImage3D();
-	public void GlCopyTexSubImage3D();
-	public void GlCompressedTexImage3D();
-	public void GlCompressedTexSubImage3D();
-	public void GlGenQueries();
-	public void GlDeleteQueries();
-	public bool GlIsQuery();
-	public void GlBeginQuery();
-	public void GlEndQuery();
-	public void GlGetQueryiv();
-	public void GlGetQueryObjectuiv();
-	public bool GlUnmapBuffer();
-	public void GlGetBufferPointerv();
-	public void GlUniformMatrix2x3fv();
-	public void GlUniformMatrix3x2fv();
-	public void GlUniformMatrix2x4fv();
-	public void GlUniformMatrix4x2fv();
-	public void GlUniformMatrix3x4fv();
-	public void GlUniformMatrix4x3fv();
-	public void GlBlitFramebuffer();
-	public void GlRenderbufferStorageMultisample();
-	public void GlFramebufferTextureLayer();
-	public void* GlMapBufferRange();
-	public void GlFlushMappedBufferRange();
-	public void GlBindVertexArray();
-	public void GlDeleteVertexArrays();
-	public void GlGenVertexArrays();
-	public bool GlIsVertexArray();
-	public void GlGetIntegeri_v();
-	public void GlBeginTransformFeedback();
-	public void GlEndTransformFeedback();
-	public void GlBindBufferRange();
-	public void GlBindBufferBase();
-	public void GlTransformFeedbackVaryings();
-	public void GlVertexAttribIPointer();
-	public void GlGetVertexAttribIiv();
-	public void GlGetVertexAttribIuiv();
-	public void GlVertexAttribI4i();
-	public void GlVertexAttribI4ui();
-	public void GlVertexAttribI4iv();
-	public void GlVertexAttribI4uiv();
-	public void GlGetUniformuiv();
-	public c_int GlGetFragDataLocation();
-	public void GlUniform1ui();
-	public void GlUniform2ui();
-	public void GlUniform3ui();
-	public void GlUniform4ui();
-	public void GlUniform1uiv();
-	public void GlUniform2uiv();
-	public void GlUniform3uiv();
-	public void GlUniform4uiv();
-	public void GlClearBufferiv();
-	public void GlClearBufferuiv();
-	public void GlClearBufferfv();
-	public void GlClearBufferfi();
-	public uint8* GlGetStringi();
-	public void GlCopyBufferSubData();
-	public void GlGetUniformIndices();
-	public void GlGetActiveUniformsiv();
-	public c_uint GlGetUniformBlockIndex();
-	public void GlGetActiveUniformBlockiv();
-	public void GlGetActiveUniformBlockName();
-	public void GlUniformBlockBinding();
-	public void GlDrawArraysInstanced();
-	public void GlDrawElementsInstanced();
-	public void GlGetInteger64v();
-	public void GlGetInteger64i_v();
-	public void GlGetBufferParameteri64v();
-	public void GlGenSamplers();
-	public void GlDeleteSamplers();
-	public bool GlIsSampler();
-	public void GlBindSampler();
-	public void GlSamplerParameteri();
-	public void GlSamplerParameteriv();
-	public void GlSamplerParameterf();
-	public void GlSamplerParameterfv();
-	public void GlGetSamplerParameteriv();
-	public void GlGetSamplerParameterfv();
-	public void GlVertexAttribDivisor();
-	public void GlBindTransformFeedback();
-	public void GlDeleteTransformFeedbacks();
-	public void GlGenTransformFeedbacks();
-	public bool GlIsTransformFeedback();
-	public void GlPauseTransformFeedback();
-	public void GlResumeTransformFeedback();
-	public void GlProgramBinary();
-	public void GlProgramParameteri();
-	public void GlTexStorage2D();
-	public void GlTexStorage3D();
-	public void GlGetInternalformativ();
-	public void GlDispatchCompute();
-	public void GlDispatchComputeIndirect();
-	public void GlDrawArraysIndirect();
-	public void GlDrawElementsIndirect();
-	public void GlFramebufferParameteri();
-	public void GlGetFramebufferParameteriv();
-	public void GlGetProgramInterfaceiv();
-	public c_uint GlGetProgramResourceIndex();
-	public void GlGetProgramResourceName();
-	public c_int GlGetProgramResourceLocation();
-	public void GlUseProgramStages();
-	public void GlActiveShaderProgram();
-	public c_uint GlCreateShaderProgramv();
-	public void GlBindProgramPipeline();
-	public void GlDeleteProgramPipelines();
-	public void GlGenProgramPipelines();
-	public bool GlIsProgramPipeline();
-	public void GlGetProgramPipelineiv();
-	public void GlProgramUniform1i();
-	public void GlProgramUniform2i();
-	public void GlProgramUniform3i();
-	public void GlProgramUniform4i();
-	public void GlProgramUniform1ui();
-	public void GlProgramUniform2ui();
-	public void GlProgramUniform3ui();
-	public void GlProgramUniform4ui();
-	public void GlProgramUniform1f();
-	public void GlProgramUniform2f();
-	public void GlProgramUniform3f();
-	public void GlProgramUniform4f();
-	public void GlProgramUniform1iv();
-	public void GlProgramUniform2iv();
-	public void GlProgramUniform3iv();
-	public void GlProgramUniform4iv();
-	public void GlProgramUniform1uiv();
-	public void GlProgramUniform2uiv();
-	public void GlProgramUniform3uiv();
-	public void GlProgramUniform4uiv();
-	public void GlProgramUniform1fv();
-	public void GlProgramUniform2fv();
-	public void GlProgramUniform3fv();
-	public void GlProgramUniform4fv();
-	public void GlProgramUniformMatrix2fv();
-	public void GlProgramUniformMatrix3fv();
-	public void GlProgramUniformMatrix4fv();
-	public void GlProgramUniformMatrix2x3fv();
-	public void GlProgramUniformMatrix3x2fv();
-	public void GlProgramUniformMatrix2x4fv();
-	public void GlProgramUniformMatrix4x2fv();
-	public void GlProgramUniformMatrix3x4fv();
-	public void GlProgramUniformMatrix4x3fv();
-	public void GlValidateProgramPipeline();
-	public void GlGetProgramPipelineInfoLog();
-	public void GlBindImageTexture();
-	public void GlGetBooleani_v();
-	public void GlMemoryBarrier();
-	public void GlMemoryBarrierByRegion();
-	public void GlTexStorage2DMultisample();
-	public void GlGetMultisamplefv();
-	public void GlSampleMaski();
-	public void GlGetTexLevelParameteriv();
-	public void GlGetTexLevelParameterfv();
-	public void GlBindVertexBuffer();
-	public void GlVertexAttribFormat();
-	public void GlVertexAttribIFormat();
-	public void GlVertexAttribBinding();
-	public void GlVertexBindingDivisor();
-	public void GlBlendBarrier();
-	public void GlCopyImageSubData();
-	public void GlDebugMessageControl();
-	public void GlDebugMessageInsert();
-	public void GlPushDebugGroup();
-	public void GlPopDebugGroup();
-	public void GlObjectLabel();
-	public void GlGetObjectLabel();
-	public void GlObjectPtrLabel();
-	public void GlGetObjectPtrLabel();
-	public void GlGetPointerv();
-	public void GlEnablei();
-	public void GlDisablei();
-	public void GlBlendEquationi();
-	public void GlBlendEquationSeparatei();
-	public void GlBlendFunci();
-	public void GlBlendFuncSeparatei();
-	public void GlColorMaski();
-	public bool GlIsEnabledi();
-	public void GlDrawElementsBaseVertex();
-	public void GlDrawRangeElementsBaseVertex();
-	public void GlDrawElementsInstancedBaseVertex();
-	public void GlFramebufferTexture();
-	public void GlPrimitiveBoundingBox();
-	public void GlReadnPixels();
-	public void GlGetnUniformfv();
-	public void GlGetnUniformiv();
-	public void GlGetnUniformuiv();
-	public void GlMinSampleShading();
-	public void GlPatchParameteri();
-	public void GlTexParameterIiv();
-	public void GlTexParameterIuiv();
-	public void GlGetTexParameterIiv();
-	public void GlGetTexParameterIuiv();
-	public void GlSamplerParameterIiv();
-	public void GlSamplerParameterIuiv();
-	public void GlGetSamplerParameterIiv();
-	public void GlGetSamplerParameterIuiv();
-	public void GlTexBuffer();
-	public void GlTexBufferRange();
-	public void GlTexStorage3DMultisample();
 }

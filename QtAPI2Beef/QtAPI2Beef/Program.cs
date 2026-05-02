@@ -29,7 +29,14 @@ namespace QtAPI2Beef
                 {
                     foreach (var _class in header.Classes)
                     {
-                        state.RegisteredClasses.Add(_class.ClassName, _class);
+                        var className = _class.ClassName.Replace("::", "_");
+
+                        if (className.StartsWith("QMetaObject"))
+                        {
+                            var a = 0;
+                        }
+
+                        state.RegisteredClasses.Add(className, _class);
                     }
                 }
             }

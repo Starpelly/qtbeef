@@ -15,9 +15,9 @@ extension CQt
 	[LinkName("QXmlStreamAttribute_new")]
 	public static extern QXmlStreamAttribute_Ptr* QXmlStreamAttribute_new();
 	[LinkName("QXmlStreamAttribute_new2")]
-	public static extern QXmlStreamAttribute_Ptr* QXmlStreamAttribute_new2(libqt_string* qualifiedName, libqt_string* value);
+	public static extern QXmlStreamAttribute_Ptr* QXmlStreamAttribute_new2(libqt_string qualifiedName, libqt_string value);
 	[LinkName("QXmlStreamAttribute_new3")]
-	public static extern QXmlStreamAttribute_Ptr* QXmlStreamAttribute_new3(libqt_string* namespaceUri, libqt_string* name, libqt_string* value);
+	public static extern QXmlStreamAttribute_Ptr* QXmlStreamAttribute_new3(libqt_string namespaceUri, libqt_string name, libqt_string value);
 	[LinkName("QXmlStreamAttribute_new4")]
 	public static extern QXmlStreamAttribute_Ptr* QXmlStreamAttribute_new4(QXmlStreamAttribute_Ptr* param1);
 	[LinkName("QXmlStreamAttribute_Delete")]
@@ -31,24 +31,25 @@ extension CQt
 	[LinkName("QXmlStreamAttribute_OperatorAssign")]
 	public static extern void QXmlStreamAttribute_OperatorAssign(QXmlStreamAttribute_Ptr* self, QXmlStreamAttribute_Ptr* param1);
 }
-class QXmlStreamAttribute
+class QXmlStreamAttribute : IQXmlStreamAttribute
 {
 	private QXmlStreamAttribute_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamAttribute_new();
 	}
-	public this(libqt_string* qualifiedName, libqt_string* value)
+	public this(String qualifiedName, String value)
 	{
-		this.ptr = CQt.QXmlStreamAttribute_new2(qualifiedName, value);
+		this.ptr = CQt.QXmlStreamAttribute_new2(libqt_string(qualifiedName), libqt_string(value));
 	}
-	public this(libqt_string* namespaceUri, libqt_string* name, libqt_string* value)
+	public this(String namespaceUri, String name, String value)
 	{
-		this.ptr = CQt.QXmlStreamAttribute_new3(namespaceUri, name, value);
+		this.ptr = CQt.QXmlStreamAttribute_new3(libqt_string(namespaceUri), libqt_string(name), libqt_string(value));
 	}
-	public this(QXmlStreamAttribute_Ptr* param1)
+	public this(IQXmlStreamAttribute param1)
 	{
-		this.ptr = CQt.QXmlStreamAttribute_new4(param1);
+		this.ptr = CQt.QXmlStreamAttribute_new4((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -59,9 +60,8 @@ class QXmlStreamAttribute
 		return CQt.QXmlStreamAttribute_IsDefault((.)this.ptr);
 	}
 }
-interface IQXmlStreamAttribute
+interface IQXmlStreamAttribute : IQtObjectInterface
 {
-	public bool IsDefault();
 }
 // --------------------------------------------------------------
 // QXmlStreamAttributes
@@ -77,17 +77,18 @@ extension CQt
 	[LinkName("QXmlStreamAttributes_Delete")]
 	public static extern void QXmlStreamAttributes_Delete(QXmlStreamAttributes_Ptr* self);
 	[LinkName("QXmlStreamAttributes_Append")]
-	public static extern void QXmlStreamAttributes_Append(QXmlStreamAttributes_Ptr* self, libqt_string* namespaceUri, libqt_string* name, libqt_string* value);
+	public static extern void QXmlStreamAttributes_Append(QXmlStreamAttributes_Ptr* self, libqt_string namespaceUri, libqt_string name, libqt_string value);
 	[LinkName("QXmlStreamAttributes_Append2")]
-	public static extern void QXmlStreamAttributes_Append2(QXmlStreamAttributes_Ptr* self, libqt_string* qualifiedName, libqt_string* value);
+	public static extern void QXmlStreamAttributes_Append2(QXmlStreamAttributes_Ptr* self, libqt_string qualifiedName, libqt_string value);
 	[LinkName("QXmlStreamAttributes_HasAttribute")]
-	public static extern bool QXmlStreamAttributes_HasAttribute(QXmlStreamAttributes_Ptr* self, libqt_string* qualifiedName);
+	public static extern bool QXmlStreamAttributes_HasAttribute(QXmlStreamAttributes_Ptr* self, libqt_string qualifiedName);
 	[LinkName("QXmlStreamAttributes_HasAttribute3")]
-	public static extern bool QXmlStreamAttributes_HasAttribute3(QXmlStreamAttributes_Ptr* self, libqt_string* namespaceUri, libqt_string* name);
+	public static extern bool QXmlStreamAttributes_HasAttribute3(QXmlStreamAttributes_Ptr* self, libqt_string namespaceUri, libqt_string name);
 }
-class QXmlStreamAttributes
+class QXmlStreamAttributes : IQXmlStreamAttributes
 {
 	private QXmlStreamAttributes_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamAttributes_new();
@@ -96,29 +97,25 @@ class QXmlStreamAttributes
 	{
 		CQt.QXmlStreamAttributes_Delete(this.ptr);
 	}
-	public void Append(libqt_string* namespaceUri, libqt_string* name, libqt_string* value)
+	public void Append(String namespaceUri, String name, String value)
 	{
-		CQt.QXmlStreamAttributes_Append((.)this.ptr, namespaceUri, name, value);
+		CQt.QXmlStreamAttributes_Append((.)this.ptr, libqt_string(namespaceUri), libqt_string(name), libqt_string(value));
 	}
-	public void Append2(libqt_string* qualifiedName, libqt_string* value)
+	public void Append2(String qualifiedName, String value)
 	{
-		CQt.QXmlStreamAttributes_Append2((.)this.ptr, qualifiedName, value);
+		CQt.QXmlStreamAttributes_Append2((.)this.ptr, libqt_string(qualifiedName), libqt_string(value));
 	}
-	public bool HasAttribute(libqt_string* qualifiedName)
+	public bool HasAttribute(String qualifiedName)
 	{
-		return CQt.QXmlStreamAttributes_HasAttribute((.)this.ptr, qualifiedName);
+		return CQt.QXmlStreamAttributes_HasAttribute((.)this.ptr, libqt_string(qualifiedName));
 	}
-	public bool HasAttribute3(libqt_string* namespaceUri, libqt_string* name)
+	public bool HasAttribute3(String namespaceUri, String name)
 	{
-		return CQt.QXmlStreamAttributes_HasAttribute3((.)this.ptr, namespaceUri, name);
+		return CQt.QXmlStreamAttributes_HasAttribute3((.)this.ptr, libqt_string(namespaceUri), libqt_string(name));
 	}
 }
-interface IQXmlStreamAttributes
+interface IQXmlStreamAttributes : IQtObjectInterface
 {
-	public void Append();
-	public void Append2();
-	public bool HasAttribute();
-	public bool HasAttribute3();
 }
 // --------------------------------------------------------------
 // QXmlStreamNamespaceDeclaration
@@ -132,7 +129,7 @@ extension CQt
 	[LinkName("QXmlStreamNamespaceDeclaration_new")]
 	public static extern QXmlStreamNamespaceDeclaration_Ptr* QXmlStreamNamespaceDeclaration_new();
 	[LinkName("QXmlStreamNamespaceDeclaration_new2")]
-	public static extern QXmlStreamNamespaceDeclaration_Ptr* QXmlStreamNamespaceDeclaration_new2(libqt_string* prefix, libqt_string* namespaceUri);
+	public static extern QXmlStreamNamespaceDeclaration_Ptr* QXmlStreamNamespaceDeclaration_new2(libqt_string prefix, libqt_string namespaceUri);
 	[LinkName("QXmlStreamNamespaceDeclaration_Delete")]
 	public static extern void QXmlStreamNamespaceDeclaration_Delete(QXmlStreamNamespaceDeclaration_Ptr* self);
 	[LinkName("QXmlStreamNamespaceDeclaration_OperatorEqual")]
@@ -140,23 +137,24 @@ extension CQt
 	[LinkName("QXmlStreamNamespaceDeclaration_OperatorNotEqual")]
 	public static extern bool QXmlStreamNamespaceDeclaration_OperatorNotEqual(QXmlStreamNamespaceDeclaration_Ptr* self, QXmlStreamNamespaceDeclaration_Ptr* other);
 }
-class QXmlStreamNamespaceDeclaration
+class QXmlStreamNamespaceDeclaration : IQXmlStreamNamespaceDeclaration
 {
 	private QXmlStreamNamespaceDeclaration_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamNamespaceDeclaration_new();
 	}
-	public this(libqt_string* prefix, libqt_string* namespaceUri)
+	public this(String prefix, String namespaceUri)
 	{
-		this.ptr = CQt.QXmlStreamNamespaceDeclaration_new2(prefix, namespaceUri);
+		this.ptr = CQt.QXmlStreamNamespaceDeclaration_new2(libqt_string(prefix), libqt_string(namespaceUri));
 	}
 	public ~this()
 	{
 		CQt.QXmlStreamNamespaceDeclaration_Delete(this.ptr);
 	}
 }
-interface IQXmlStreamNamespaceDeclaration
+interface IQXmlStreamNamespaceDeclaration : IQtObjectInterface
 {
 }
 // --------------------------------------------------------------
@@ -177,9 +175,10 @@ extension CQt
 	[LinkName("QXmlStreamNotationDeclaration_OperatorNotEqual")]
 	public static extern bool QXmlStreamNotationDeclaration_OperatorNotEqual(QXmlStreamNotationDeclaration_Ptr* self, QXmlStreamNotationDeclaration_Ptr* other);
 }
-class QXmlStreamNotationDeclaration
+class QXmlStreamNotationDeclaration : IQXmlStreamNotationDeclaration
 {
 	private QXmlStreamNotationDeclaration_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamNotationDeclaration_new();
@@ -189,7 +188,7 @@ class QXmlStreamNotationDeclaration
 		CQt.QXmlStreamNotationDeclaration_Delete(this.ptr);
 	}
 }
-interface IQXmlStreamNotationDeclaration
+interface IQXmlStreamNotationDeclaration : IQtObjectInterface
 {
 }
 // --------------------------------------------------------------
@@ -210,9 +209,10 @@ extension CQt
 	[LinkName("QXmlStreamEntityDeclaration_OperatorNotEqual")]
 	public static extern bool QXmlStreamEntityDeclaration_OperatorNotEqual(QXmlStreamEntityDeclaration_Ptr* self, QXmlStreamEntityDeclaration_Ptr* other);
 }
-class QXmlStreamEntityDeclaration
+class QXmlStreamEntityDeclaration : IQXmlStreamEntityDeclaration
 {
 	private QXmlStreamEntityDeclaration_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamEntityDeclaration_new();
@@ -222,7 +222,7 @@ class QXmlStreamEntityDeclaration
 		CQt.QXmlStreamEntityDeclaration_Delete(this.ptr);
 	}
 }
-interface IQXmlStreamEntityDeclaration
+interface IQXmlStreamEntityDeclaration : IQtObjectInterface
 {
 }
 // --------------------------------------------------------------
@@ -237,32 +237,31 @@ extension CQt
 	[LinkName("QXmlStreamEntityResolver_Delete")]
 	public static extern void QXmlStreamEntityResolver_Delete(QXmlStreamEntityResolver_Ptr* self);
 	[LinkName("QXmlStreamEntityResolver_ResolveEntity")]
-	public static extern libqt_string QXmlStreamEntityResolver_ResolveEntity(QXmlStreamEntityResolver_Ptr* self, libqt_string* publicId, libqt_string* systemId);
+	public static extern libqt_string QXmlStreamEntityResolver_ResolveEntity(QXmlStreamEntityResolver_Ptr* self, libqt_string publicId, libqt_string systemId);
 	[LinkName("QXmlStreamEntityResolver_ResolveUndeclaredEntity")]
-	public static extern libqt_string QXmlStreamEntityResolver_ResolveUndeclaredEntity(QXmlStreamEntityResolver_Ptr* self, libqt_string* name);
+	public static extern libqt_string QXmlStreamEntityResolver_ResolveUndeclaredEntity(QXmlStreamEntityResolver_Ptr* self, libqt_string name);
 	[LinkName("QXmlStreamEntityResolver_OperatorAssign")]
 	public static extern void QXmlStreamEntityResolver_OperatorAssign(QXmlStreamEntityResolver_Ptr* self, QXmlStreamEntityResolver_Ptr* param1);
 }
-class QXmlStreamEntityResolver
+class QXmlStreamEntityResolver : IQXmlStreamEntityResolver
 {
 	private QXmlStreamEntityResolver_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QXmlStreamEntityResolver_Delete(this.ptr);
 	}
-	public libqt_string ResolveEntity(libqt_string* publicId, libqt_string* systemId)
+	public libqt_string ResolveEntity(String publicId, String systemId)
 	{
-		return CQt.QXmlStreamEntityResolver_ResolveEntity((.)this.ptr, publicId, systemId);
+		return CQt.QXmlStreamEntityResolver_ResolveEntity((.)this.ptr, libqt_string(publicId), libqt_string(systemId));
 	}
-	public libqt_string ResolveUndeclaredEntity(libqt_string* name)
+	public libqt_string ResolveUndeclaredEntity(String name)
 	{
-		return CQt.QXmlStreamEntityResolver_ResolveUndeclaredEntity((.)this.ptr, name);
+		return CQt.QXmlStreamEntityResolver_ResolveUndeclaredEntity((.)this.ptr, libqt_string(name));
 	}
 }
-interface IQXmlStreamEntityResolver
+interface IQXmlStreamEntityResolver : IQtObjectInterface
 {
-	public libqt_string ResolveEntity();
-	public libqt_string ResolveUndeclaredEntity();
 }
 // --------------------------------------------------------------
 // QXmlStreamReader
@@ -276,23 +275,23 @@ extension CQt
 	[LinkName("QXmlStreamReader_new")]
 	public static extern QXmlStreamReader_Ptr* QXmlStreamReader_new();
 	[LinkName("QXmlStreamReader_new2")]
-	public static extern QXmlStreamReader_Ptr* QXmlStreamReader_new2(QIODevice_Ptr* device);
+	public static extern QXmlStreamReader_Ptr* QXmlStreamReader_new2(QIODevice_Ptr** device);
 	[LinkName("QXmlStreamReader_new3")]
 	public static extern QXmlStreamReader_Ptr* QXmlStreamReader_new3(void** data);
 	[LinkName("QXmlStreamReader_new4")]
-	public static extern QXmlStreamReader_Ptr* QXmlStreamReader_new4(libqt_string* data);
+	public static extern QXmlStreamReader_Ptr* QXmlStreamReader_new4(libqt_string data);
 	[LinkName("QXmlStreamReader_new5")]
 	public static extern QXmlStreamReader_Ptr* QXmlStreamReader_new5(c_char* data);
 	[LinkName("QXmlStreamReader_Delete")]
 	public static extern void QXmlStreamReader_Delete(QXmlStreamReader_Ptr* self);
 	[LinkName("QXmlStreamReader_SetDevice")]
-	public static extern void QXmlStreamReader_SetDevice(QXmlStreamReader_Ptr* self, QIODevice_Ptr* device);
+	public static extern void QXmlStreamReader_SetDevice(QXmlStreamReader_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QXmlStreamReader_Device")]
-	public static extern QIODevice_Ptr* QXmlStreamReader_Device(QXmlStreamReader_Ptr* self);
+	public static extern QIODevice_Ptr** QXmlStreamReader_Device(QXmlStreamReader_Ptr* self);
 	[LinkName("QXmlStreamReader_AddData")]
 	public static extern void QXmlStreamReader_AddData(QXmlStreamReader_Ptr* self, void** data);
 	[LinkName("QXmlStreamReader_AddData2")]
-	public static extern void QXmlStreamReader_AddData2(QXmlStreamReader_Ptr* self, libqt_string* data);
+	public static extern void QXmlStreamReader_AddData2(QXmlStreamReader_Ptr* self, libqt_string data);
 	[LinkName("QXmlStreamReader_AddData3")]
 	public static extern void QXmlStreamReader_AddData3(QXmlStreamReader_Ptr* self, c_char* data);
 	[LinkName("QXmlStreamReader_Clear")]
@@ -344,7 +343,7 @@ extension CQt
 	[LinkName("QXmlStreamReader_CharacterOffset")]
 	public static extern c_longlong QXmlStreamReader_CharacterOffset(QXmlStreamReader_Ptr* self);
 	[LinkName("QXmlStreamReader_Attributes")]
-	public static extern QXmlStreamAttributes_Ptr QXmlStreamReader_Attributes(QXmlStreamReader_Ptr* self);
+	public static extern QXmlStreamAttributes_Ptr* QXmlStreamReader_Attributes(QXmlStreamReader_Ptr* self);
 	[LinkName("QXmlStreamReader_ReadElementText")]
 	public static extern libqt_string QXmlStreamReader_ReadElementText(QXmlStreamReader_Ptr* self);
 	[LinkName("QXmlStreamReader_NamespaceDeclarations")]
@@ -370,32 +369,33 @@ extension CQt
 	[LinkName("QXmlStreamReader_HasError")]
 	public static extern bool QXmlStreamReader_HasError(QXmlStreamReader_Ptr* self);
 	[LinkName("QXmlStreamReader_SetEntityResolver")]
-	public static extern void QXmlStreamReader_SetEntityResolver(QXmlStreamReader_Ptr* self, QXmlStreamEntityResolver_Ptr* resolver);
+	public static extern void QXmlStreamReader_SetEntityResolver(QXmlStreamReader_Ptr* self, QXmlStreamEntityResolver_Ptr** resolver);
 	[LinkName("QXmlStreamReader_EntityResolver")]
-	public static extern QXmlStreamEntityResolver_Ptr* QXmlStreamReader_EntityResolver(QXmlStreamReader_Ptr* self);
+	public static extern QXmlStreamEntityResolver_Ptr** QXmlStreamReader_EntityResolver(QXmlStreamReader_Ptr* self);
 	[LinkName("QXmlStreamReader_ReadElementText1")]
 	public static extern libqt_string QXmlStreamReader_ReadElementText1(QXmlStreamReader_Ptr* self, QXmlStreamReader_ReadElementTextBehaviour behaviour);
 	[LinkName("QXmlStreamReader_RaiseError1")]
-	public static extern void QXmlStreamReader_RaiseError1(QXmlStreamReader_Ptr* self, libqt_string* message);
+	public static extern void QXmlStreamReader_RaiseError1(QXmlStreamReader_Ptr* self, libqt_string message);
 }
-class QXmlStreamReader
+class QXmlStreamReader : IQXmlStreamReader
 {
 	private QXmlStreamReader_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamReader_new();
 	}
-	public this(QIODevice_Ptr* device)
+	public this(IQIODevice device)
 	{
-		this.ptr = CQt.QXmlStreamReader_new2(device);
+		this.ptr = CQt.QXmlStreamReader_new2((.)device?.ObjectPtr);
 	}
 	public this(void** data)
 	{
 		this.ptr = CQt.QXmlStreamReader_new3(data);
 	}
-	public this(libqt_string* data)
+	public this(String data)
 	{
-		this.ptr = CQt.QXmlStreamReader_new4(data);
+		this.ptr = CQt.QXmlStreamReader_new4(libqt_string(data));
 	}
 	public this(c_char* data)
 	{
@@ -405,11 +405,11 @@ class QXmlStreamReader
 	{
 		CQt.QXmlStreamReader_Delete(this.ptr);
 	}
-	public void SetDevice(QIODevice_Ptr* device)
+	public void SetDevice(IQIODevice device)
 	{
-		CQt.QXmlStreamReader_SetDevice((.)this.ptr, device);
+		CQt.QXmlStreamReader_SetDevice((.)this.ptr, (.)device?.ObjectPtr);
 	}
-	public QIODevice_Ptr* Device()
+	public QIODevice_Ptr** Device()
 	{
 		return CQt.QXmlStreamReader_Device((.)this.ptr);
 	}
@@ -417,9 +417,9 @@ class QXmlStreamReader
 	{
 		CQt.QXmlStreamReader_AddData((.)this.ptr, data);
 	}
-	public void AddData2(libqt_string* data)
+	public void AddData2(String data)
 	{
-		CQt.QXmlStreamReader_AddData2((.)this.ptr, data);
+		CQt.QXmlStreamReader_AddData2((.)this.ptr, libqt_string(data));
 	}
 	public void AddData3(c_char* data)
 	{
@@ -521,7 +521,7 @@ class QXmlStreamReader
 	{
 		return CQt.QXmlStreamReader_CharacterOffset((.)this.ptr);
 	}
-	public QXmlStreamAttributes_Ptr Attributes()
+	public QXmlStreamAttributes_Ptr* Attributes()
 	{
 		return CQt.QXmlStreamReader_Attributes((.)this.ptr);
 	}
@@ -533,9 +533,9 @@ class QXmlStreamReader
 	{
 		return CQt.QXmlStreamReader_NamespaceDeclarations((.)this.ptr);
 	}
-	public void AddExtraNamespaceDeclaration(QXmlStreamNamespaceDeclaration_Ptr* extraNamespaceDeclaraction)
+	public void AddExtraNamespaceDeclaration(IQXmlStreamNamespaceDeclaration extraNamespaceDeclaraction)
 	{
-		CQt.QXmlStreamReader_AddExtraNamespaceDeclaration((.)this.ptr, extraNamespaceDeclaraction);
+		CQt.QXmlStreamReader_AddExtraNamespaceDeclaration((.)this.ptr, (.)extraNamespaceDeclaraction?.ObjectPtr);
 	}
 	public void AddExtraNamespaceDeclarations(void** extraNamespaceDeclaractions)
 	{
@@ -573,11 +573,11 @@ class QXmlStreamReader
 	{
 		return CQt.QXmlStreamReader_HasError((.)this.ptr);
 	}
-	public void SetEntityResolver(QXmlStreamEntityResolver_Ptr* resolver)
+	public void SetEntityResolver(IQXmlStreamEntityResolver resolver)
 	{
-		CQt.QXmlStreamReader_SetEntityResolver((.)this.ptr, resolver);
+		CQt.QXmlStreamReader_SetEntityResolver((.)this.ptr, (.)resolver?.ObjectPtr);
 	}
-	public QXmlStreamEntityResolver_Ptr* EntityResolver()
+	public QXmlStreamEntityResolver_Ptr** EntityResolver()
 	{
 		return CQt.QXmlStreamReader_EntityResolver((.)this.ptr);
 	}
@@ -585,59 +585,13 @@ class QXmlStreamReader
 	{
 		return CQt.QXmlStreamReader_ReadElementText1((.)this.ptr, behaviour);
 	}
-	public void RaiseError1(libqt_string* message)
+	public void RaiseError1(String message)
 	{
-		CQt.QXmlStreamReader_RaiseError1((.)this.ptr, message);
+		CQt.QXmlStreamReader_RaiseError1((.)this.ptr, libqt_string(message));
 	}
 }
-interface IQXmlStreamReader
+interface IQXmlStreamReader : IQtObjectInterface
 {
-	public void SetDevice();
-	public QIODevice* Device();
-	public void AddData();
-	public void AddData2();
-	public void AddData3();
-	public void Clear();
-	public bool AtEnd();
-	public QXmlStreamReader_TokenType ReadNext();
-	public bool ReadNextStartElement();
-	public void SkipCurrentElement();
-	public QXmlStreamReader_TokenType TokenType();
-	public libqt_string TokenString();
-	public void SetNamespaceProcessing();
-	public bool NamespaceProcessing();
-	public bool IsStartDocument();
-	public bool IsEndDocument();
-	public bool IsStartElement();
-	public bool IsEndElement();
-	public bool IsCharacters();
-	public bool IsWhitespace();
-	public bool IsCDATA();
-	public bool IsComment();
-	public bool IsDTD();
-	public bool IsEntityReference();
-	public bool IsProcessingInstruction();
-	public bool IsStandaloneDocument();
-	public c_longlong LineNumber();
-	public c_longlong ColumnNumber();
-	public c_longlong CharacterOffset();
-	public QXmlStreamAttributes Attributes();
-	public libqt_string ReadElementText();
-	public void* NamespaceDeclarations();
-	public void AddExtraNamespaceDeclaration();
-	public void AddExtraNamespaceDeclarations();
-	public void* NotationDeclarations();
-	public void* EntityDeclarations();
-	public c_int EntityExpansionLimit();
-	public void SetEntityExpansionLimit();
-	public void RaiseError();
-	public libqt_string ErrorString();
-	public QXmlStreamReader_Error Error();
-	public bool HasError();
-	public void SetEntityResolver();
-	public QXmlStreamEntityResolver* EntityResolver();
-	public libqt_string ReadElementText1();
-	public void RaiseError1();
 }
 // --------------------------------------------------------------
 // QXmlStreamWriter
@@ -651,13 +605,13 @@ extension CQt
 	[LinkName("QXmlStreamWriter_new")]
 	public static extern QXmlStreamWriter_Ptr* QXmlStreamWriter_new();
 	[LinkName("QXmlStreamWriter_new2")]
-	public static extern QXmlStreamWriter_Ptr* QXmlStreamWriter_new2(QIODevice_Ptr* device);
+	public static extern QXmlStreamWriter_Ptr* QXmlStreamWriter_new2(QIODevice_Ptr** device);
 	[LinkName("QXmlStreamWriter_Delete")]
 	public static extern void QXmlStreamWriter_Delete(QXmlStreamWriter_Ptr* self);
 	[LinkName("QXmlStreamWriter_SetDevice")]
-	public static extern void QXmlStreamWriter_SetDevice(QXmlStreamWriter_Ptr* self, QIODevice_Ptr* device);
+	public static extern void QXmlStreamWriter_SetDevice(QXmlStreamWriter_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QXmlStreamWriter_Device")]
-	public static extern QIODevice_Ptr* QXmlStreamWriter_Device(QXmlStreamWriter_Ptr* self);
+	public static extern QIODevice_Ptr** QXmlStreamWriter_Device(QXmlStreamWriter_Ptr* self);
 	[LinkName("QXmlStreamWriter_SetAutoFormatting")]
 	public static extern void QXmlStreamWriter_SetAutoFormatting(QXmlStreamWriter_Ptr* self, bool autoFormatting);
 	[LinkName("QXmlStreamWriter_AutoFormatting")]
@@ -667,80 +621,81 @@ extension CQt
 	[LinkName("QXmlStreamWriter_AutoFormattingIndent")]
 	public static extern c_int QXmlStreamWriter_AutoFormattingIndent(QXmlStreamWriter_Ptr* self);
 	[LinkName("QXmlStreamWriter_WriteAttribute")]
-	public static extern void QXmlStreamWriter_WriteAttribute(QXmlStreamWriter_Ptr* self, libqt_string* qualifiedName, libqt_string* value);
+	public static extern void QXmlStreamWriter_WriteAttribute(QXmlStreamWriter_Ptr* self, libqt_string qualifiedName, libqt_string value);
 	[LinkName("QXmlStreamWriter_WriteAttribute2")]
-	public static extern void QXmlStreamWriter_WriteAttribute2(QXmlStreamWriter_Ptr* self, libqt_string* namespaceUri, libqt_string* name, libqt_string* value);
+	public static extern void QXmlStreamWriter_WriteAttribute2(QXmlStreamWriter_Ptr* self, libqt_string namespaceUri, libqt_string name, libqt_string value);
 	[LinkName("QXmlStreamWriter_WriteAttribute3")]
 	public static extern void QXmlStreamWriter_WriteAttribute3(QXmlStreamWriter_Ptr* self, QXmlStreamAttribute_Ptr* attribute);
 	[LinkName("QXmlStreamWriter_WriteAttributes")]
 	public static extern void QXmlStreamWriter_WriteAttributes(QXmlStreamWriter_Ptr* self, QXmlStreamAttributes_Ptr* attributes);
 	[LinkName("QXmlStreamWriter_WriteCDATA")]
-	public static extern void QXmlStreamWriter_WriteCDATA(QXmlStreamWriter_Ptr* self, libqt_string* text);
+	public static extern void QXmlStreamWriter_WriteCDATA(QXmlStreamWriter_Ptr* self, libqt_string text);
 	[LinkName("QXmlStreamWriter_WriteCharacters")]
-	public static extern void QXmlStreamWriter_WriteCharacters(QXmlStreamWriter_Ptr* self, libqt_string* text);
+	public static extern void QXmlStreamWriter_WriteCharacters(QXmlStreamWriter_Ptr* self, libqt_string text);
 	[LinkName("QXmlStreamWriter_WriteComment")]
-	public static extern void QXmlStreamWriter_WriteComment(QXmlStreamWriter_Ptr* self, libqt_string* text);
+	public static extern void QXmlStreamWriter_WriteComment(QXmlStreamWriter_Ptr* self, libqt_string text);
 	[LinkName("QXmlStreamWriter_WriteDTD")]
-	public static extern void QXmlStreamWriter_WriteDTD(QXmlStreamWriter_Ptr* self, libqt_string* dtd);
+	public static extern void QXmlStreamWriter_WriteDTD(QXmlStreamWriter_Ptr* self, libqt_string dtd);
 	[LinkName("QXmlStreamWriter_WriteEmptyElement")]
-	public static extern void QXmlStreamWriter_WriteEmptyElement(QXmlStreamWriter_Ptr* self, libqt_string* qualifiedName);
+	public static extern void QXmlStreamWriter_WriteEmptyElement(QXmlStreamWriter_Ptr* self, libqt_string qualifiedName);
 	[LinkName("QXmlStreamWriter_WriteEmptyElement2")]
-	public static extern void QXmlStreamWriter_WriteEmptyElement2(QXmlStreamWriter_Ptr* self, libqt_string* namespaceUri, libqt_string* name);
+	public static extern void QXmlStreamWriter_WriteEmptyElement2(QXmlStreamWriter_Ptr* self, libqt_string namespaceUri, libqt_string name);
 	[LinkName("QXmlStreamWriter_WriteTextElement")]
-	public static extern void QXmlStreamWriter_WriteTextElement(QXmlStreamWriter_Ptr* self, libqt_string* qualifiedName, libqt_string* text);
+	public static extern void QXmlStreamWriter_WriteTextElement(QXmlStreamWriter_Ptr* self, libqt_string qualifiedName, libqt_string text);
 	[LinkName("QXmlStreamWriter_WriteTextElement2")]
-	public static extern void QXmlStreamWriter_WriteTextElement2(QXmlStreamWriter_Ptr* self, libqt_string* namespaceUri, libqt_string* name, libqt_string* text);
+	public static extern void QXmlStreamWriter_WriteTextElement2(QXmlStreamWriter_Ptr* self, libqt_string namespaceUri, libqt_string name, libqt_string text);
 	[LinkName("QXmlStreamWriter_WriteEndDocument")]
 	public static extern void QXmlStreamWriter_WriteEndDocument(QXmlStreamWriter_Ptr* self);
 	[LinkName("QXmlStreamWriter_WriteEndElement")]
 	public static extern void QXmlStreamWriter_WriteEndElement(QXmlStreamWriter_Ptr* self);
 	[LinkName("QXmlStreamWriter_WriteEntityReference")]
-	public static extern void QXmlStreamWriter_WriteEntityReference(QXmlStreamWriter_Ptr* self, libqt_string* name);
+	public static extern void QXmlStreamWriter_WriteEntityReference(QXmlStreamWriter_Ptr* self, libqt_string name);
 	[LinkName("QXmlStreamWriter_WriteNamespace")]
-	public static extern void QXmlStreamWriter_WriteNamespace(QXmlStreamWriter_Ptr* self, libqt_string* namespaceUri);
+	public static extern void QXmlStreamWriter_WriteNamespace(QXmlStreamWriter_Ptr* self, libqt_string namespaceUri);
 	[LinkName("QXmlStreamWriter_WriteDefaultNamespace")]
-	public static extern void QXmlStreamWriter_WriteDefaultNamespace(QXmlStreamWriter_Ptr* self, libqt_string* namespaceUri);
+	public static extern void QXmlStreamWriter_WriteDefaultNamespace(QXmlStreamWriter_Ptr* self, libqt_string namespaceUri);
 	[LinkName("QXmlStreamWriter_WriteProcessingInstruction")]
-	public static extern void QXmlStreamWriter_WriteProcessingInstruction(QXmlStreamWriter_Ptr* self, libqt_string* target);
+	public static extern void QXmlStreamWriter_WriteProcessingInstruction(QXmlStreamWriter_Ptr* self, libqt_string target);
 	[LinkName("QXmlStreamWriter_WriteStartDocument")]
 	public static extern void QXmlStreamWriter_WriteStartDocument(QXmlStreamWriter_Ptr* self);
 	[LinkName("QXmlStreamWriter_WriteStartDocument2")]
-	public static extern void QXmlStreamWriter_WriteStartDocument2(QXmlStreamWriter_Ptr* self, libqt_string* version);
+	public static extern void QXmlStreamWriter_WriteStartDocument2(QXmlStreamWriter_Ptr* self, libqt_string version);
 	[LinkName("QXmlStreamWriter_WriteStartDocument3")]
-	public static extern void QXmlStreamWriter_WriteStartDocument3(QXmlStreamWriter_Ptr* self, libqt_string* version, bool standalone);
+	public static extern void QXmlStreamWriter_WriteStartDocument3(QXmlStreamWriter_Ptr* self, libqt_string version, bool standalone);
 	[LinkName("QXmlStreamWriter_WriteStartElement")]
-	public static extern void QXmlStreamWriter_WriteStartElement(QXmlStreamWriter_Ptr* self, libqt_string* qualifiedName);
+	public static extern void QXmlStreamWriter_WriteStartElement(QXmlStreamWriter_Ptr* self, libqt_string qualifiedName);
 	[LinkName("QXmlStreamWriter_WriteStartElement2")]
-	public static extern void QXmlStreamWriter_WriteStartElement2(QXmlStreamWriter_Ptr* self, libqt_string* namespaceUri, libqt_string* name);
+	public static extern void QXmlStreamWriter_WriteStartElement2(QXmlStreamWriter_Ptr* self, libqt_string namespaceUri, libqt_string name);
 	[LinkName("QXmlStreamWriter_WriteCurrentToken")]
 	public static extern void QXmlStreamWriter_WriteCurrentToken(QXmlStreamWriter_Ptr* self, QXmlStreamReader_Ptr* reader);
 	[LinkName("QXmlStreamWriter_HasError")]
 	public static extern bool QXmlStreamWriter_HasError(QXmlStreamWriter_Ptr* self);
 	[LinkName("QXmlStreamWriter_WriteNamespace2")]
-	public static extern void QXmlStreamWriter_WriteNamespace2(QXmlStreamWriter_Ptr* self, libqt_string* namespaceUri, libqt_string* prefix);
+	public static extern void QXmlStreamWriter_WriteNamespace2(QXmlStreamWriter_Ptr* self, libqt_string namespaceUri, libqt_string prefix);
 	[LinkName("QXmlStreamWriter_WriteProcessingInstruction2")]
-	public static extern void QXmlStreamWriter_WriteProcessingInstruction2(QXmlStreamWriter_Ptr* self, libqt_string* target, libqt_string* data);
+	public static extern void QXmlStreamWriter_WriteProcessingInstruction2(QXmlStreamWriter_Ptr* self, libqt_string target, libqt_string data);
 }
-class QXmlStreamWriter
+class QXmlStreamWriter : IQXmlStreamWriter
 {
 	private QXmlStreamWriter_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamWriter_new();
 	}
-	public this(QIODevice_Ptr* device)
+	public this(IQIODevice device)
 	{
-		this.ptr = CQt.QXmlStreamWriter_new2(device);
+		this.ptr = CQt.QXmlStreamWriter_new2((.)device?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QXmlStreamWriter_Delete(this.ptr);
 	}
-	public void SetDevice(QIODevice_Ptr* device)
+	public void SetDevice(IQIODevice device)
 	{
-		CQt.QXmlStreamWriter_SetDevice((.)this.ptr, device);
+		CQt.QXmlStreamWriter_SetDevice((.)this.ptr, (.)device?.ObjectPtr);
 	}
-	public QIODevice_Ptr* Device()
+	public QIODevice_Ptr** Device()
 	{
 		return CQt.QXmlStreamWriter_Device((.)this.ptr);
 	}
@@ -760,53 +715,53 @@ class QXmlStreamWriter
 	{
 		return CQt.QXmlStreamWriter_AutoFormattingIndent((.)this.ptr);
 	}
-	public void WriteAttribute(libqt_string* qualifiedName, libqt_string* value)
+	public void WriteAttribute(String qualifiedName, String value)
 	{
-		CQt.QXmlStreamWriter_WriteAttribute((.)this.ptr, qualifiedName, value);
+		CQt.QXmlStreamWriter_WriteAttribute((.)this.ptr, libqt_string(qualifiedName), libqt_string(value));
 	}
-	public void WriteAttribute2(libqt_string* namespaceUri, libqt_string* name, libqt_string* value)
+	public void WriteAttribute2(String namespaceUri, String name, String value)
 	{
-		CQt.QXmlStreamWriter_WriteAttribute2((.)this.ptr, namespaceUri, name, value);
+		CQt.QXmlStreamWriter_WriteAttribute2((.)this.ptr, libqt_string(namespaceUri), libqt_string(name), libqt_string(value));
 	}
-	public void WriteAttribute3(QXmlStreamAttribute_Ptr* attribute)
+	public void WriteAttribute3(IQXmlStreamAttribute attribute)
 	{
-		CQt.QXmlStreamWriter_WriteAttribute3((.)this.ptr, attribute);
+		CQt.QXmlStreamWriter_WriteAttribute3((.)this.ptr, (.)attribute?.ObjectPtr);
 	}
-	public void WriteAttributes(QXmlStreamAttributes_Ptr* attributes)
+	public void WriteAttributes(IQXmlStreamAttributes attributes)
 	{
-		CQt.QXmlStreamWriter_WriteAttributes((.)this.ptr, attributes);
+		CQt.QXmlStreamWriter_WriteAttributes((.)this.ptr, (.)attributes?.ObjectPtr);
 	}
-	public void WriteCDATA(libqt_string* text)
+	public void WriteCDATA(String text)
 	{
-		CQt.QXmlStreamWriter_WriteCDATA((.)this.ptr, text);
+		CQt.QXmlStreamWriter_WriteCDATA((.)this.ptr, libqt_string(text));
 	}
-	public void WriteCharacters(libqt_string* text)
+	public void WriteCharacters(String text)
 	{
-		CQt.QXmlStreamWriter_WriteCharacters((.)this.ptr, text);
+		CQt.QXmlStreamWriter_WriteCharacters((.)this.ptr, libqt_string(text));
 	}
-	public void WriteComment(libqt_string* text)
+	public void WriteComment(String text)
 	{
-		CQt.QXmlStreamWriter_WriteComment((.)this.ptr, text);
+		CQt.QXmlStreamWriter_WriteComment((.)this.ptr, libqt_string(text));
 	}
-	public void WriteDTD(libqt_string* dtd)
+	public void WriteDTD(String dtd)
 	{
-		CQt.QXmlStreamWriter_WriteDTD((.)this.ptr, dtd);
+		CQt.QXmlStreamWriter_WriteDTD((.)this.ptr, libqt_string(dtd));
 	}
-	public void WriteEmptyElement(libqt_string* qualifiedName)
+	public void WriteEmptyElement(String qualifiedName)
 	{
-		CQt.QXmlStreamWriter_WriteEmptyElement((.)this.ptr, qualifiedName);
+		CQt.QXmlStreamWriter_WriteEmptyElement((.)this.ptr, libqt_string(qualifiedName));
 	}
-	public void WriteEmptyElement2(libqt_string* namespaceUri, libqt_string* name)
+	public void WriteEmptyElement2(String namespaceUri, String name)
 	{
-		CQt.QXmlStreamWriter_WriteEmptyElement2((.)this.ptr, namespaceUri, name);
+		CQt.QXmlStreamWriter_WriteEmptyElement2((.)this.ptr, libqt_string(namespaceUri), libqt_string(name));
 	}
-	public void WriteTextElement(libqt_string* qualifiedName, libqt_string* text)
+	public void WriteTextElement(String qualifiedName, String text)
 	{
-		CQt.QXmlStreamWriter_WriteTextElement((.)this.ptr, qualifiedName, text);
+		CQt.QXmlStreamWriter_WriteTextElement((.)this.ptr, libqt_string(qualifiedName), libqt_string(text));
 	}
-	public void WriteTextElement2(libqt_string* namespaceUri, libqt_string* name, libqt_string* text)
+	public void WriteTextElement2(String namespaceUri, String name, String text)
 	{
-		CQt.QXmlStreamWriter_WriteTextElement2((.)this.ptr, namespaceUri, name, text);
+		CQt.QXmlStreamWriter_WriteTextElement2((.)this.ptr, libqt_string(namespaceUri), libqt_string(name), libqt_string(text));
 	}
 	public void WriteEndDocument()
 	{
@@ -816,94 +771,61 @@ class QXmlStreamWriter
 	{
 		CQt.QXmlStreamWriter_WriteEndElement((.)this.ptr);
 	}
-	public void WriteEntityReference(libqt_string* name)
+	public void WriteEntityReference(String name)
 	{
-		CQt.QXmlStreamWriter_WriteEntityReference((.)this.ptr, name);
+		CQt.QXmlStreamWriter_WriteEntityReference((.)this.ptr, libqt_string(name));
 	}
-	public void WriteNamespace(libqt_string* namespaceUri)
+	public void WriteNamespace(String namespaceUri)
 	{
-		CQt.QXmlStreamWriter_WriteNamespace((.)this.ptr, namespaceUri);
+		CQt.QXmlStreamWriter_WriteNamespace((.)this.ptr, libqt_string(namespaceUri));
 	}
-	public void WriteDefaultNamespace(libqt_string* namespaceUri)
+	public void WriteDefaultNamespace(String namespaceUri)
 	{
-		CQt.QXmlStreamWriter_WriteDefaultNamespace((.)this.ptr, namespaceUri);
+		CQt.QXmlStreamWriter_WriteDefaultNamespace((.)this.ptr, libqt_string(namespaceUri));
 	}
-	public void WriteProcessingInstruction(libqt_string* target)
+	public void WriteProcessingInstruction(String target)
 	{
-		CQt.QXmlStreamWriter_WriteProcessingInstruction((.)this.ptr, target);
+		CQt.QXmlStreamWriter_WriteProcessingInstruction((.)this.ptr, libqt_string(target));
 	}
 	public void WriteStartDocument()
 	{
 		CQt.QXmlStreamWriter_WriteStartDocument((.)this.ptr);
 	}
-	public void WriteStartDocument2(libqt_string* version)
+	public void WriteStartDocument2(String version)
 	{
-		CQt.QXmlStreamWriter_WriteStartDocument2((.)this.ptr, version);
+		CQt.QXmlStreamWriter_WriteStartDocument2((.)this.ptr, libqt_string(version));
 	}
-	public void WriteStartDocument3(libqt_string* version, bool standalone)
+	public void WriteStartDocument3(String version, bool standalone)
 	{
-		CQt.QXmlStreamWriter_WriteStartDocument3((.)this.ptr, version, standalone);
+		CQt.QXmlStreamWriter_WriteStartDocument3((.)this.ptr, libqt_string(version), standalone);
 	}
-	public void WriteStartElement(libqt_string* qualifiedName)
+	public void WriteStartElement(String qualifiedName)
 	{
-		CQt.QXmlStreamWriter_WriteStartElement((.)this.ptr, qualifiedName);
+		CQt.QXmlStreamWriter_WriteStartElement((.)this.ptr, libqt_string(qualifiedName));
 	}
-	public void WriteStartElement2(libqt_string* namespaceUri, libqt_string* name)
+	public void WriteStartElement2(String namespaceUri, String name)
 	{
-		CQt.QXmlStreamWriter_WriteStartElement2((.)this.ptr, namespaceUri, name);
+		CQt.QXmlStreamWriter_WriteStartElement2((.)this.ptr, libqt_string(namespaceUri), libqt_string(name));
 	}
-	public void WriteCurrentToken(QXmlStreamReader_Ptr* reader)
+	public void WriteCurrentToken(IQXmlStreamReader reader)
 	{
-		CQt.QXmlStreamWriter_WriteCurrentToken((.)this.ptr, reader);
+		CQt.QXmlStreamWriter_WriteCurrentToken((.)this.ptr, (.)reader?.ObjectPtr);
 	}
 	public bool HasError()
 	{
 		return CQt.QXmlStreamWriter_HasError((.)this.ptr);
 	}
-	public void WriteNamespace2(libqt_string* namespaceUri, libqt_string* prefix)
+	public void WriteNamespace2(String namespaceUri, String prefix)
 	{
-		CQt.QXmlStreamWriter_WriteNamespace2((.)this.ptr, namespaceUri, prefix);
+		CQt.QXmlStreamWriter_WriteNamespace2((.)this.ptr, libqt_string(namespaceUri), libqt_string(prefix));
 	}
-	public void WriteProcessingInstruction2(libqt_string* target, libqt_string* data)
+	public void WriteProcessingInstruction2(String target, String data)
 	{
-		CQt.QXmlStreamWriter_WriteProcessingInstruction2((.)this.ptr, target, data);
+		CQt.QXmlStreamWriter_WriteProcessingInstruction2((.)this.ptr, libqt_string(target), libqt_string(data));
 	}
 }
-interface IQXmlStreamWriter
+interface IQXmlStreamWriter : IQtObjectInterface
 {
-	public void SetDevice();
-	public QIODevice* Device();
-	public void SetAutoFormatting();
-	public bool AutoFormatting();
-	public void SetAutoFormattingIndent();
-	public c_int AutoFormattingIndent();
-	public void WriteAttribute();
-	public void WriteAttribute2();
-	public void WriteAttribute3();
-	public void WriteAttributes();
-	public void WriteCDATA();
-	public void WriteCharacters();
-	public void WriteComment();
-	public void WriteDTD();
-	public void WriteEmptyElement();
-	public void WriteEmptyElement2();
-	public void WriteTextElement();
-	public void WriteTextElement2();
-	public void WriteEndDocument();
-	public void WriteEndElement();
-	public void WriteEntityReference();
-	public void WriteNamespace();
-	public void WriteDefaultNamespace();
-	public void WriteProcessingInstruction();
-	public void WriteStartDocument();
-	public void WriteStartDocument2();
-	public void WriteStartDocument3();
-	public void WriteStartElement();
-	public void WriteStartElement2();
-	public void WriteCurrentToken();
-	public bool HasError();
-	public void WriteNamespace2();
-	public void WriteProcessingInstruction2();
 }
 [AllowDuplicates]
 enum QXmlStreamReader_TokenType

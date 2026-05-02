@@ -17,17 +17,18 @@ extension CQt
 	[LinkName("QGraphicsSceneEvent_Delete")]
 	public static extern void QGraphicsSceneEvent_Delete(QGraphicsSceneEvent_Ptr* self);
 	[LinkName("QGraphicsSceneEvent_Widget")]
-	public static extern QWidget_Ptr* QGraphicsSceneEvent_Widget(QGraphicsSceneEvent_Ptr* self);
+	public static extern QWidget_Ptr** QGraphicsSceneEvent_Widget(QGraphicsSceneEvent_Ptr* self);
 	[LinkName("QGraphicsSceneEvent_SetWidget")]
-	public static extern void QGraphicsSceneEvent_SetWidget(QGraphicsSceneEvent_Ptr* self, QWidget_Ptr* widget);
+	public static extern void QGraphicsSceneEvent_SetWidget(QGraphicsSceneEvent_Ptr* self, QWidget_Ptr** widget);
 	[LinkName("QGraphicsSceneEvent_Timestamp")]
 	public static extern c_ulonglong QGraphicsSceneEvent_Timestamp(QGraphicsSceneEvent_Ptr* self);
 	[LinkName("QGraphicsSceneEvent_SetTimestamp")]
 	public static extern void QGraphicsSceneEvent_SetTimestamp(QGraphicsSceneEvent_Ptr* self, c_ulonglong ts);
 }
-class QGraphicsSceneEvent
+class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QGraphicsSceneEvent_new(type);
@@ -36,13 +37,13 @@ class QGraphicsSceneEvent
 	{
 		CQt.QGraphicsSceneEvent_Delete(this.ptr);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -92,7 +93,7 @@ class QGraphicsSceneEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -101,12 +102,8 @@ class QGraphicsSceneEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneEvent
+interface IQGraphicsSceneEvent : IQtObjectInterface
 {
-	public QWidget* Widget();
-	public void SetWidget();
-	public c_ulonglong Timestamp();
-	public void SetTimestamp();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMouseEvent
@@ -124,39 +121,39 @@ extension CQt
 	[LinkName("QGraphicsSceneMouseEvent_Delete")]
 	public static extern void QGraphicsSceneMouseEvent_Delete(QGraphicsSceneMouseEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMouseEvent_Pos")]
-	public static extern QPointF_Ptr QGraphicsSceneMouseEvent_Pos(QGraphicsSceneMouseEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneMouseEvent_Pos(QGraphicsSceneMouseEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMouseEvent_SetPos")]
 	public static extern void QGraphicsSceneMouseEvent_SetPos(QGraphicsSceneMouseEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_ScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneMouseEvent_ScenePos(QGraphicsSceneMouseEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneMouseEvent_ScenePos(QGraphicsSceneMouseEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMouseEvent_SetScenePos")]
 	public static extern void QGraphicsSceneMouseEvent_SetScenePos(QGraphicsSceneMouseEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_ScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneMouseEvent_ScreenPos(QGraphicsSceneMouseEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneMouseEvent_ScreenPos(QGraphicsSceneMouseEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMouseEvent_SetScreenPos")]
 	public static extern void QGraphicsSceneMouseEvent_SetScreenPos(QGraphicsSceneMouseEvent_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_ButtonDownPos")]
-	public static extern QPointF_Ptr QGraphicsSceneMouseEvent_ButtonDownPos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button);
+	public static extern QPointF_Ptr* QGraphicsSceneMouseEvent_ButtonDownPos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button);
 	[LinkName("QGraphicsSceneMouseEvent_SetButtonDownPos")]
 	public static extern void QGraphicsSceneMouseEvent_SetButtonDownPos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_ButtonDownScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneMouseEvent_ButtonDownScenePos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button);
+	public static extern QPointF_Ptr* QGraphicsSceneMouseEvent_ButtonDownScenePos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button);
 	[LinkName("QGraphicsSceneMouseEvent_SetButtonDownScenePos")]
 	public static extern void QGraphicsSceneMouseEvent_SetButtonDownScenePos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_ButtonDownScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneMouseEvent_ButtonDownScreenPos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button);
+	public static extern QPoint_Ptr* QGraphicsSceneMouseEvent_ButtonDownScreenPos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button);
 	[LinkName("QGraphicsSceneMouseEvent_SetButtonDownScreenPos")]
 	public static extern void QGraphicsSceneMouseEvent_SetButtonDownScreenPos(QGraphicsSceneMouseEvent_Ptr* self, Qt_MouseButton button, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_LastPos")]
-	public static extern QPointF_Ptr QGraphicsSceneMouseEvent_LastPos(QGraphicsSceneMouseEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneMouseEvent_LastPos(QGraphicsSceneMouseEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMouseEvent_SetLastPos")]
 	public static extern void QGraphicsSceneMouseEvent_SetLastPos(QGraphicsSceneMouseEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_LastScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneMouseEvent_LastScenePos(QGraphicsSceneMouseEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneMouseEvent_LastScenePos(QGraphicsSceneMouseEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMouseEvent_SetLastScenePos")]
 	public static extern void QGraphicsSceneMouseEvent_SetLastScenePos(QGraphicsSceneMouseEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_LastScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneMouseEvent_LastScreenPos(QGraphicsSceneMouseEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneMouseEvent_LastScreenPos(QGraphicsSceneMouseEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMouseEvent_SetLastScreenPos")]
 	public static extern void QGraphicsSceneMouseEvent_SetLastScreenPos(QGraphicsSceneMouseEvent_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneMouseEvent_Buttons")]
@@ -180,9 +177,10 @@ extension CQt
 	[LinkName("QGraphicsSceneMouseEvent_SetFlags")]
 	public static extern void QGraphicsSceneMouseEvent_SetFlags(QGraphicsSceneMouseEvent_Ptr* self, void* flags);
 }
-class QGraphicsSceneMouseEvent
+class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneMouseEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneMouseEvent_new();
@@ -195,77 +193,77 @@ class QGraphicsSceneMouseEvent
 	{
 		CQt.QGraphicsSceneMouseEvent_Delete(this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsSceneMouseEvent_Pos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMouseEvent_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsSceneMouseEvent_ScenePos((.)this.ptr);
 	}
-	public void SetScenePos(QPointF_Ptr* pos)
+	public void SetScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMouseEvent_SetScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr ScreenPos()
+	public QPoint_Ptr* ScreenPos()
 	{
 		return CQt.QGraphicsSceneMouseEvent_ScreenPos((.)this.ptr);
 	}
-	public void SetScreenPos(QPoint_Ptr* pos)
+	public void SetScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMouseEvent_SetScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr ButtonDownPos(Qt_MouseButton button)
+	public QPointF_Ptr* ButtonDownPos(Qt_MouseButton button)
 	{
 		return CQt.QGraphicsSceneMouseEvent_ButtonDownPos((.)this.ptr, button);
 	}
-	public void SetButtonDownPos(Qt_MouseButton button, QPointF_Ptr* pos)
+	public void SetButtonDownPos(Qt_MouseButton button, IQPointF pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetButtonDownPos((.)this.ptr, button, pos);
+		CQt.QGraphicsSceneMouseEvent_SetButtonDownPos((.)this.ptr, button, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr ButtonDownScenePos(Qt_MouseButton button)
+	public QPointF_Ptr* ButtonDownScenePos(Qt_MouseButton button)
 	{
 		return CQt.QGraphicsSceneMouseEvent_ButtonDownScenePos((.)this.ptr, button);
 	}
-	public void SetButtonDownScenePos(Qt_MouseButton button, QPointF_Ptr* pos)
+	public void SetButtonDownScenePos(Qt_MouseButton button, IQPointF pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetButtonDownScenePos((.)this.ptr, button, pos);
+		CQt.QGraphicsSceneMouseEvent_SetButtonDownScenePos((.)this.ptr, button, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr ButtonDownScreenPos(Qt_MouseButton button)
+	public QPoint_Ptr* ButtonDownScreenPos(Qt_MouseButton button)
 	{
 		return CQt.QGraphicsSceneMouseEvent_ButtonDownScreenPos((.)this.ptr, button);
 	}
-	public void SetButtonDownScreenPos(Qt_MouseButton button, QPoint_Ptr* pos)
+	public void SetButtonDownScreenPos(Qt_MouseButton button, IQPoint pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetButtonDownScreenPos((.)this.ptr, button, pos);
+		CQt.QGraphicsSceneMouseEvent_SetButtonDownScreenPos((.)this.ptr, button, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr LastPos()
+	public QPointF_Ptr* LastPos()
 	{
 		return CQt.QGraphicsSceneMouseEvent_LastPos((.)this.ptr);
 	}
-	public void SetLastPos(QPointF_Ptr* pos)
+	public void SetLastPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetLastPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMouseEvent_SetLastPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr LastScenePos()
+	public QPointF_Ptr* LastScenePos()
 	{
 		return CQt.QGraphicsSceneMouseEvent_LastScenePos((.)this.ptr);
 	}
-	public void SetLastScenePos(QPointF_Ptr* pos)
+	public void SetLastScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetLastScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMouseEvent_SetLastScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr LastScreenPos()
+	public QPoint_Ptr* LastScreenPos()
 	{
 		return CQt.QGraphicsSceneMouseEvent_LastScreenPos((.)this.ptr);
 	}
-	public void SetLastScreenPos(QPoint_Ptr* pos)
+	public void SetLastScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneMouseEvent_SetLastScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMouseEvent_SetLastScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void* Buttons()
 	{
@@ -307,13 +305,13 @@ class QGraphicsSceneMouseEvent
 	{
 		CQt.QGraphicsSceneMouseEvent_SetFlags((.)this.ptr, flags);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -363,7 +361,7 @@ class QGraphicsSceneMouseEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -372,36 +370,8 @@ class QGraphicsSceneMouseEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneMouseEvent
+interface IQGraphicsSceneMouseEvent : IQtObjectInterface
 {
-	public QPointF Pos();
-	public void SetPos();
-	public QPointF ScenePos();
-	public void SetScenePos();
-	public QPoint ScreenPos();
-	public void SetScreenPos();
-	public QPointF ButtonDownPos();
-	public void SetButtonDownPos();
-	public QPointF ButtonDownScenePos();
-	public void SetButtonDownScenePos();
-	public QPoint ButtonDownScreenPos();
-	public void SetButtonDownScreenPos();
-	public QPointF LastPos();
-	public void SetLastPos();
-	public QPointF LastScenePos();
-	public void SetLastScenePos();
-	public QPoint LastScreenPos();
-	public void SetLastScreenPos();
-	public void* Buttons();
-	public void SetButtons();
-	public Qt_MouseButton Button();
-	public void SetButton();
-	public void* Modifiers();
-	public void SetModifiers();
-	public Qt_MouseEventSource Source();
-	public void SetSource();
-	public void* Flags();
-	public void SetFlags();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneWheelEvent
@@ -419,15 +389,15 @@ extension CQt
 	[LinkName("QGraphicsSceneWheelEvent_Delete")]
 	public static extern void QGraphicsSceneWheelEvent_Delete(QGraphicsSceneWheelEvent_Ptr* self);
 	[LinkName("QGraphicsSceneWheelEvent_Pos")]
-	public static extern QPointF_Ptr QGraphicsSceneWheelEvent_Pos(QGraphicsSceneWheelEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneWheelEvent_Pos(QGraphicsSceneWheelEvent_Ptr* self);
 	[LinkName("QGraphicsSceneWheelEvent_SetPos")]
 	public static extern void QGraphicsSceneWheelEvent_SetPos(QGraphicsSceneWheelEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneWheelEvent_ScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneWheelEvent_ScenePos(QGraphicsSceneWheelEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneWheelEvent_ScenePos(QGraphicsSceneWheelEvent_Ptr* self);
 	[LinkName("QGraphicsSceneWheelEvent_SetScenePos")]
 	public static extern void QGraphicsSceneWheelEvent_SetScenePos(QGraphicsSceneWheelEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneWheelEvent_ScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneWheelEvent_ScreenPos(QGraphicsSceneWheelEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneWheelEvent_ScreenPos(QGraphicsSceneWheelEvent_Ptr* self);
 	[LinkName("QGraphicsSceneWheelEvent_SetScreenPos")]
 	public static extern void QGraphicsSceneWheelEvent_SetScreenPos(QGraphicsSceneWheelEvent_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneWheelEvent_Buttons")]
@@ -451,17 +421,18 @@ extension CQt
 	[LinkName("QGraphicsSceneWheelEvent_SetPhase")]
 	public static extern void QGraphicsSceneWheelEvent_SetPhase(QGraphicsSceneWheelEvent_Ptr* self, Qt_ScrollPhase scrollPhase);
 	[LinkName("QGraphicsSceneWheelEvent_PixelDelta")]
-	public static extern QPoint_Ptr QGraphicsSceneWheelEvent_PixelDelta(QGraphicsSceneWheelEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneWheelEvent_PixelDelta(QGraphicsSceneWheelEvent_Ptr* self);
 	[LinkName("QGraphicsSceneWheelEvent_SetPixelDelta")]
-	public static extern void QGraphicsSceneWheelEvent_SetPixelDelta(QGraphicsSceneWheelEvent_Ptr* self, QPoint_Ptr delta);
+	public static extern void QGraphicsSceneWheelEvent_SetPixelDelta(QGraphicsSceneWheelEvent_Ptr* self, QPoint_Ptr* delta);
 	[LinkName("QGraphicsSceneWheelEvent_IsInverted")]
 	public static extern bool QGraphicsSceneWheelEvent_IsInverted(QGraphicsSceneWheelEvent_Ptr* self);
 	[LinkName("QGraphicsSceneWheelEvent_SetInverted")]
 	public static extern void QGraphicsSceneWheelEvent_SetInverted(QGraphicsSceneWheelEvent_Ptr* self, bool inverted);
 }
-class QGraphicsSceneWheelEvent
+class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneWheelEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneWheelEvent_new();
@@ -474,29 +445,29 @@ class QGraphicsSceneWheelEvent
 	{
 		CQt.QGraphicsSceneWheelEvent_Delete(this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsSceneWheelEvent_Pos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneWheelEvent_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneWheelEvent_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsSceneWheelEvent_ScenePos((.)this.ptr);
 	}
-	public void SetScenePos(QPointF_Ptr* pos)
+	public void SetScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneWheelEvent_SetScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneWheelEvent_SetScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr ScreenPos()
+	public QPoint_Ptr* ScreenPos()
 	{
 		return CQt.QGraphicsSceneWheelEvent_ScreenPos((.)this.ptr);
 	}
-	public void SetScreenPos(QPoint_Ptr* pos)
+	public void SetScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneWheelEvent_SetScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneWheelEvent_SetScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void* Buttons()
 	{
@@ -538,13 +509,13 @@ class QGraphicsSceneWheelEvent
 	{
 		CQt.QGraphicsSceneWheelEvent_SetPhase((.)this.ptr, scrollPhase);
 	}
-	public QPoint_Ptr PixelDelta()
+	public QPoint_Ptr* PixelDelta()
 	{
 		return CQt.QGraphicsSceneWheelEvent_PixelDelta((.)this.ptr);
 	}
-	public void SetPixelDelta(QPoint_Ptr delta)
+	public void SetPixelDelta(IQPoint delta)
 	{
-		CQt.QGraphicsSceneWheelEvent_SetPixelDelta((.)this.ptr, delta);
+		CQt.QGraphicsSceneWheelEvent_SetPixelDelta((.)this.ptr, (.)delta?.ObjectPtr);
 	}
 	public bool IsInverted()
 	{
@@ -554,13 +525,13 @@ class QGraphicsSceneWheelEvent
 	{
 		CQt.QGraphicsSceneWheelEvent_SetInverted((.)this.ptr, inverted);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -610,7 +581,7 @@ class QGraphicsSceneWheelEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -619,28 +590,8 @@ class QGraphicsSceneWheelEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneWheelEvent
+interface IQGraphicsSceneWheelEvent : IQtObjectInterface
 {
-	public QPointF Pos();
-	public void SetPos();
-	public QPointF ScenePos();
-	public void SetScenePos();
-	public QPoint ScreenPos();
-	public void SetScreenPos();
-	public void* Buttons();
-	public void SetButtons();
-	public void* Modifiers();
-	public void SetModifiers();
-	public c_int Delta();
-	public void SetDelta();
-	public Qt_Orientation Orientation();
-	public void SetOrientation();
-	public Qt_ScrollPhase Phase();
-	public void SetPhase();
-	public QPoint PixelDelta();
-	public void SetPixelDelta();
-	public bool IsInverted();
-	public void SetInverted();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneContextMenuEvent
@@ -658,15 +609,15 @@ extension CQt
 	[LinkName("QGraphicsSceneContextMenuEvent_Delete")]
 	public static extern void QGraphicsSceneContextMenuEvent_Delete(QGraphicsSceneContextMenuEvent_Ptr* self);
 	[LinkName("QGraphicsSceneContextMenuEvent_Pos")]
-	public static extern QPointF_Ptr QGraphicsSceneContextMenuEvent_Pos(QGraphicsSceneContextMenuEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneContextMenuEvent_Pos(QGraphicsSceneContextMenuEvent_Ptr* self);
 	[LinkName("QGraphicsSceneContextMenuEvent_SetPos")]
 	public static extern void QGraphicsSceneContextMenuEvent_SetPos(QGraphicsSceneContextMenuEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneContextMenuEvent_ScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneContextMenuEvent_ScenePos(QGraphicsSceneContextMenuEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneContextMenuEvent_ScenePos(QGraphicsSceneContextMenuEvent_Ptr* self);
 	[LinkName("QGraphicsSceneContextMenuEvent_SetScenePos")]
 	public static extern void QGraphicsSceneContextMenuEvent_SetScenePos(QGraphicsSceneContextMenuEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneContextMenuEvent_ScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneContextMenuEvent_ScreenPos(QGraphicsSceneContextMenuEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneContextMenuEvent_ScreenPos(QGraphicsSceneContextMenuEvent_Ptr* self);
 	[LinkName("QGraphicsSceneContextMenuEvent_SetScreenPos")]
 	public static extern void QGraphicsSceneContextMenuEvent_SetScreenPos(QGraphicsSceneContextMenuEvent_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneContextMenuEvent_Modifiers")]
@@ -678,9 +629,10 @@ extension CQt
 	[LinkName("QGraphicsSceneContextMenuEvent_SetReason")]
 	public static extern void QGraphicsSceneContextMenuEvent_SetReason(QGraphicsSceneContextMenuEvent_Ptr* self, QGraphicsSceneContextMenuEvent_Reason reason);
 }
-class QGraphicsSceneContextMenuEvent
+class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneContextMenuEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new();
@@ -693,29 +645,29 @@ class QGraphicsSceneContextMenuEvent
 	{
 		CQt.QGraphicsSceneContextMenuEvent_Delete(this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsSceneContextMenuEvent_Pos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneContextMenuEvent_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneContextMenuEvent_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsSceneContextMenuEvent_ScenePos((.)this.ptr);
 	}
-	public void SetScenePos(QPointF_Ptr* pos)
+	public void SetScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneContextMenuEvent_SetScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneContextMenuEvent_SetScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr ScreenPos()
+	public QPoint_Ptr* ScreenPos()
 	{
 		return CQt.QGraphicsSceneContextMenuEvent_ScreenPos((.)this.ptr);
 	}
-	public void SetScreenPos(QPoint_Ptr* pos)
+	public void SetScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneContextMenuEvent_SetScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneContextMenuEvent_SetScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void* Modifiers()
 	{
@@ -733,13 +685,13 @@ class QGraphicsSceneContextMenuEvent
 	{
 		CQt.QGraphicsSceneContextMenuEvent_SetReason((.)this.ptr, reason);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -789,7 +741,7 @@ class QGraphicsSceneContextMenuEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -798,18 +750,8 @@ class QGraphicsSceneContextMenuEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneContextMenuEvent
+interface IQGraphicsSceneContextMenuEvent : IQtObjectInterface
 {
-	public QPointF Pos();
-	public void SetPos();
-	public QPointF ScenePos();
-	public void SetScenePos();
-	public QPoint ScreenPos();
-	public void SetScreenPos();
-	public void* Modifiers();
-	public void SetModifiers();
-	public QGraphicsSceneContextMenuEvent_Reason Reason();
-	public void SetReason();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneHoverEvent
@@ -827,27 +769,27 @@ extension CQt
 	[LinkName("QGraphicsSceneHoverEvent_Delete")]
 	public static extern void QGraphicsSceneHoverEvent_Delete(QGraphicsSceneHoverEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHoverEvent_Pos")]
-	public static extern QPointF_Ptr QGraphicsSceneHoverEvent_Pos(QGraphicsSceneHoverEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneHoverEvent_Pos(QGraphicsSceneHoverEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHoverEvent_SetPos")]
 	public static extern void QGraphicsSceneHoverEvent_SetPos(QGraphicsSceneHoverEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneHoverEvent_ScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneHoverEvent_ScenePos(QGraphicsSceneHoverEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneHoverEvent_ScenePos(QGraphicsSceneHoverEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHoverEvent_SetScenePos")]
 	public static extern void QGraphicsSceneHoverEvent_SetScenePos(QGraphicsSceneHoverEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneHoverEvent_ScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneHoverEvent_ScreenPos(QGraphicsSceneHoverEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneHoverEvent_ScreenPos(QGraphicsSceneHoverEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHoverEvent_SetScreenPos")]
 	public static extern void QGraphicsSceneHoverEvent_SetScreenPos(QGraphicsSceneHoverEvent_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneHoverEvent_LastPos")]
-	public static extern QPointF_Ptr QGraphicsSceneHoverEvent_LastPos(QGraphicsSceneHoverEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneHoverEvent_LastPos(QGraphicsSceneHoverEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHoverEvent_SetLastPos")]
 	public static extern void QGraphicsSceneHoverEvent_SetLastPos(QGraphicsSceneHoverEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneHoverEvent_LastScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneHoverEvent_LastScenePos(QGraphicsSceneHoverEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneHoverEvent_LastScenePos(QGraphicsSceneHoverEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHoverEvent_SetLastScenePos")]
 	public static extern void QGraphicsSceneHoverEvent_SetLastScenePos(QGraphicsSceneHoverEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneHoverEvent_LastScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneHoverEvent_LastScreenPos(QGraphicsSceneHoverEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneHoverEvent_LastScreenPos(QGraphicsSceneHoverEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHoverEvent_SetLastScreenPos")]
 	public static extern void QGraphicsSceneHoverEvent_SetLastScreenPos(QGraphicsSceneHoverEvent_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneHoverEvent_Modifiers")]
@@ -855,9 +797,10 @@ extension CQt
 	[LinkName("QGraphicsSceneHoverEvent_SetModifiers")]
 	public static extern void QGraphicsSceneHoverEvent_SetModifiers(QGraphicsSceneHoverEvent_Ptr* self, void* modifiers);
 }
-class QGraphicsSceneHoverEvent
+class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneHoverEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneHoverEvent_new();
@@ -870,53 +813,53 @@ class QGraphicsSceneHoverEvent
 	{
 		CQt.QGraphicsSceneHoverEvent_Delete(this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsSceneHoverEvent_Pos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneHoverEvent_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHoverEvent_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsSceneHoverEvent_ScenePos((.)this.ptr);
 	}
-	public void SetScenePos(QPointF_Ptr* pos)
+	public void SetScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneHoverEvent_SetScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHoverEvent_SetScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr ScreenPos()
+	public QPoint_Ptr* ScreenPos()
 	{
 		return CQt.QGraphicsSceneHoverEvent_ScreenPos((.)this.ptr);
 	}
-	public void SetScreenPos(QPoint_Ptr* pos)
+	public void SetScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneHoverEvent_SetScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHoverEvent_SetScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr LastPos()
+	public QPointF_Ptr* LastPos()
 	{
 		return CQt.QGraphicsSceneHoverEvent_LastPos((.)this.ptr);
 	}
-	public void SetLastPos(QPointF_Ptr* pos)
+	public void SetLastPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneHoverEvent_SetLastPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHoverEvent_SetLastPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr LastScenePos()
+	public QPointF_Ptr* LastScenePos()
 	{
 		return CQt.QGraphicsSceneHoverEvent_LastScenePos((.)this.ptr);
 	}
-	public void SetLastScenePos(QPointF_Ptr* pos)
+	public void SetLastScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneHoverEvent_SetLastScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHoverEvent_SetLastScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr LastScreenPos()
+	public QPoint_Ptr* LastScreenPos()
 	{
 		return CQt.QGraphicsSceneHoverEvent_LastScreenPos((.)this.ptr);
 	}
-	public void SetLastScreenPos(QPoint_Ptr* pos)
+	public void SetLastScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneHoverEvent_SetLastScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHoverEvent_SetLastScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void* Modifiers()
 	{
@@ -926,13 +869,13 @@ class QGraphicsSceneHoverEvent
 	{
 		CQt.QGraphicsSceneHoverEvent_SetModifiers((.)this.ptr, modifiers);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -982,7 +925,7 @@ class QGraphicsSceneHoverEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -991,22 +934,8 @@ class QGraphicsSceneHoverEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneHoverEvent
+interface IQGraphicsSceneHoverEvent : IQtObjectInterface
 {
-	public QPointF Pos();
-	public void SetPos();
-	public QPointF ScenePos();
-	public void SetScenePos();
-	public QPoint ScreenPos();
-	public void SetScreenPos();
-	public QPointF LastPos();
-	public void SetLastPos();
-	public QPointF LastScenePos();
-	public void SetLastScenePos();
-	public QPoint LastScreenPos();
-	public void SetLastScreenPos();
-	public void* Modifiers();
-	public void SetModifiers();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneHelpEvent
@@ -1024,17 +953,18 @@ extension CQt
 	[LinkName("QGraphicsSceneHelpEvent_Delete")]
 	public static extern void QGraphicsSceneHelpEvent_Delete(QGraphicsSceneHelpEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHelpEvent_ScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneHelpEvent_ScenePos(QGraphicsSceneHelpEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneHelpEvent_ScenePos(QGraphicsSceneHelpEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHelpEvent_SetScenePos")]
 	public static extern void QGraphicsSceneHelpEvent_SetScenePos(QGraphicsSceneHelpEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneHelpEvent_ScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneHelpEvent_ScreenPos(QGraphicsSceneHelpEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneHelpEvent_ScreenPos(QGraphicsSceneHelpEvent_Ptr* self);
 	[LinkName("QGraphicsSceneHelpEvent_SetScreenPos")]
 	public static extern void QGraphicsSceneHelpEvent_SetScreenPos(QGraphicsSceneHelpEvent_Ptr* self, QPoint_Ptr* pos);
 }
-class QGraphicsSceneHelpEvent
+class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneHelpEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneHelpEvent_new();
@@ -1047,29 +977,29 @@ class QGraphicsSceneHelpEvent
 	{
 		CQt.QGraphicsSceneHelpEvent_Delete(this.ptr);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsSceneHelpEvent_ScenePos((.)this.ptr);
 	}
-	public void SetScenePos(QPointF_Ptr* pos)
+	public void SetScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneHelpEvent_SetScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHelpEvent_SetScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr ScreenPos()
+	public QPoint_Ptr* ScreenPos()
 	{
 		return CQt.QGraphicsSceneHelpEvent_ScreenPos((.)this.ptr);
 	}
-	public void SetScreenPos(QPoint_Ptr* pos)
+	public void SetScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneHelpEvent_SetScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneHelpEvent_SetScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -1119,7 +1049,7 @@ class QGraphicsSceneHelpEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -1128,12 +1058,8 @@ class QGraphicsSceneHelpEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneHelpEvent
+interface IQGraphicsSceneHelpEvent : IQtObjectInterface
 {
-	public QPointF ScenePos();
-	public void SetScenePos();
-	public QPoint ScreenPos();
-	public void SetScreenPos();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneDragDropEvent
@@ -1151,15 +1077,15 @@ extension CQt
 	[LinkName("QGraphicsSceneDragDropEvent_Delete")]
 	public static extern void QGraphicsSceneDragDropEvent_Delete(QGraphicsSceneDragDropEvent_Ptr* self);
 	[LinkName("QGraphicsSceneDragDropEvent_Pos")]
-	public static extern QPointF_Ptr QGraphicsSceneDragDropEvent_Pos(QGraphicsSceneDragDropEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneDragDropEvent_Pos(QGraphicsSceneDragDropEvent_Ptr* self);
 	[LinkName("QGraphicsSceneDragDropEvent_SetPos")]
 	public static extern void QGraphicsSceneDragDropEvent_SetPos(QGraphicsSceneDragDropEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneDragDropEvent_ScenePos")]
-	public static extern QPointF_Ptr QGraphicsSceneDragDropEvent_ScenePos(QGraphicsSceneDragDropEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneDragDropEvent_ScenePos(QGraphicsSceneDragDropEvent_Ptr* self);
 	[LinkName("QGraphicsSceneDragDropEvent_SetScenePos")]
 	public static extern void QGraphicsSceneDragDropEvent_SetScenePos(QGraphicsSceneDragDropEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneDragDropEvent_ScreenPos")]
-	public static extern QPoint_Ptr QGraphicsSceneDragDropEvent_ScreenPos(QGraphicsSceneDragDropEvent_Ptr* self);
+	public static extern QPoint_Ptr* QGraphicsSceneDragDropEvent_ScreenPos(QGraphicsSceneDragDropEvent_Ptr* self);
 	[LinkName("QGraphicsSceneDragDropEvent_SetScreenPos")]
 	public static extern void QGraphicsSceneDragDropEvent_SetScreenPos(QGraphicsSceneDragDropEvent_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QGraphicsSceneDragDropEvent_Buttons")]
@@ -1185,17 +1111,18 @@ extension CQt
 	[LinkName("QGraphicsSceneDragDropEvent_SetDropAction")]
 	public static extern void QGraphicsSceneDragDropEvent_SetDropAction(QGraphicsSceneDragDropEvent_Ptr* self, Qt_DropAction action);
 	[LinkName("QGraphicsSceneDragDropEvent_Source")]
-	public static extern QWidget_Ptr* QGraphicsSceneDragDropEvent_Source(QGraphicsSceneDragDropEvent_Ptr* self);
+	public static extern QWidget_Ptr** QGraphicsSceneDragDropEvent_Source(QGraphicsSceneDragDropEvent_Ptr* self);
 	[LinkName("QGraphicsSceneDragDropEvent_SetSource")]
-	public static extern void QGraphicsSceneDragDropEvent_SetSource(QGraphicsSceneDragDropEvent_Ptr* self, QWidget_Ptr* source);
+	public static extern void QGraphicsSceneDragDropEvent_SetSource(QGraphicsSceneDragDropEvent_Ptr* self, QWidget_Ptr** source);
 	[LinkName("QGraphicsSceneDragDropEvent_MimeData")]
-	public static extern QMimeData_Ptr* QGraphicsSceneDragDropEvent_MimeData(QGraphicsSceneDragDropEvent_Ptr* self);
+	public static extern QMimeData_Ptr** QGraphicsSceneDragDropEvent_MimeData(QGraphicsSceneDragDropEvent_Ptr* self);
 	[LinkName("QGraphicsSceneDragDropEvent_SetMimeData")]
-	public static extern void QGraphicsSceneDragDropEvent_SetMimeData(QGraphicsSceneDragDropEvent_Ptr* self, QMimeData_Ptr* data);
+	public static extern void QGraphicsSceneDragDropEvent_SetMimeData(QGraphicsSceneDragDropEvent_Ptr* self, QMimeData_Ptr** data);
 }
-class QGraphicsSceneDragDropEvent
+class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneDragDropEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneDragDropEvent_new();
@@ -1208,29 +1135,29 @@ class QGraphicsSceneDragDropEvent
 	{
 		CQt.QGraphicsSceneDragDropEvent_Delete(this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsSceneDragDropEvent_Pos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneDragDropEvent_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneDragDropEvent_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsSceneDragDropEvent_ScenePos((.)this.ptr);
 	}
-	public void SetScenePos(QPointF_Ptr* pos)
+	public void SetScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneDragDropEvent_SetScenePos((.)this.ptr, pos);
+		CQt.QGraphicsSceneDragDropEvent_SetScenePos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPoint_Ptr ScreenPos()
+	public QPoint_Ptr* ScreenPos()
 	{
 		return CQt.QGraphicsSceneDragDropEvent_ScreenPos((.)this.ptr);
 	}
-	public void SetScreenPos(QPoint_Ptr* pos)
+	public void SetScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneDragDropEvent_SetScreenPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneDragDropEvent_SetScreenPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void* Buttons()
 	{
@@ -1276,29 +1203,29 @@ class QGraphicsSceneDragDropEvent
 	{
 		CQt.QGraphicsSceneDragDropEvent_SetDropAction((.)this.ptr, action);
 	}
-	public QWidget_Ptr* Source()
+	public QWidget_Ptr** Source()
 	{
 		return CQt.QGraphicsSceneDragDropEvent_Source((.)this.ptr);
 	}
-	public void SetSource(QWidget_Ptr* source)
+	public void SetSource(IQWidget source)
 	{
-		CQt.QGraphicsSceneDragDropEvent_SetSource((.)this.ptr, source);
+		CQt.QGraphicsSceneDragDropEvent_SetSource((.)this.ptr, (.)source?.ObjectPtr);
 	}
-	public QMimeData_Ptr* MimeData()
+	public QMimeData_Ptr** MimeData()
 	{
 		return CQt.QGraphicsSceneDragDropEvent_MimeData((.)this.ptr);
 	}
-	public void SetMimeData(QMimeData_Ptr* data)
+	public void SetMimeData(IQMimeData data)
 	{
-		CQt.QGraphicsSceneDragDropEvent_SetMimeData((.)this.ptr, data);
+		CQt.QGraphicsSceneDragDropEvent_SetMimeData((.)this.ptr, (.)data?.ObjectPtr);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -1348,7 +1275,7 @@ class QGraphicsSceneDragDropEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -1357,29 +1284,8 @@ class QGraphicsSceneDragDropEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneDragDropEvent
+interface IQGraphicsSceneDragDropEvent : IQtObjectInterface
 {
-	public QPointF Pos();
-	public void SetPos();
-	public QPointF ScenePos();
-	public void SetScenePos();
-	public QPoint ScreenPos();
-	public void SetScreenPos();
-	public void* Buttons();
-	public void SetButtons();
-	public void* Modifiers();
-	public void SetModifiers();
-	public void* PossibleActions();
-	public void SetPossibleActions();
-	public Qt_DropAction ProposedAction();
-	public void SetProposedAction();
-	public void AcceptProposedAction();
-	public Qt_DropAction DropAction();
-	public void SetDropAction();
-	public QWidget* Source();
-	public void SetSource();
-	public QMimeData* MimeData();
-	public void SetMimeData();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneResizeEvent
@@ -1395,17 +1301,18 @@ extension CQt
 	[LinkName("QGraphicsSceneResizeEvent_Delete")]
 	public static extern void QGraphicsSceneResizeEvent_Delete(QGraphicsSceneResizeEvent_Ptr* self);
 	[LinkName("QGraphicsSceneResizeEvent_OldSize")]
-	public static extern QSizeF_Ptr QGraphicsSceneResizeEvent_OldSize(QGraphicsSceneResizeEvent_Ptr* self);
+	public static extern QSizeF_Ptr* QGraphicsSceneResizeEvent_OldSize(QGraphicsSceneResizeEvent_Ptr* self);
 	[LinkName("QGraphicsSceneResizeEvent_SetOldSize")]
 	public static extern void QGraphicsSceneResizeEvent_SetOldSize(QGraphicsSceneResizeEvent_Ptr* self, QSizeF_Ptr* size);
 	[LinkName("QGraphicsSceneResizeEvent_NewSize")]
-	public static extern QSizeF_Ptr QGraphicsSceneResizeEvent_NewSize(QGraphicsSceneResizeEvent_Ptr* self);
+	public static extern QSizeF_Ptr* QGraphicsSceneResizeEvent_NewSize(QGraphicsSceneResizeEvent_Ptr* self);
 	[LinkName("QGraphicsSceneResizeEvent_SetNewSize")]
 	public static extern void QGraphicsSceneResizeEvent_SetNewSize(QGraphicsSceneResizeEvent_Ptr* self, QSizeF_Ptr* size);
 }
-class QGraphicsSceneResizeEvent
+class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneResizeEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneResizeEvent_new();
@@ -1414,29 +1321,29 @@ class QGraphicsSceneResizeEvent
 	{
 		CQt.QGraphicsSceneResizeEvent_Delete(this.ptr);
 	}
-	public QSizeF_Ptr OldSize()
+	public QSizeF_Ptr* OldSize()
 	{
 		return CQt.QGraphicsSceneResizeEvent_OldSize((.)this.ptr);
 	}
-	public void SetOldSize(QSizeF_Ptr* size)
+	public void SetOldSize(IQSizeF size)
 	{
-		CQt.QGraphicsSceneResizeEvent_SetOldSize((.)this.ptr, size);
+		CQt.QGraphicsSceneResizeEvent_SetOldSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
-	public QSizeF_Ptr NewSize()
+	public QSizeF_Ptr* NewSize()
 	{
 		return CQt.QGraphicsSceneResizeEvent_NewSize((.)this.ptr);
 	}
-	public void SetNewSize(QSizeF_Ptr* size)
+	public void SetNewSize(IQSizeF size)
 	{
-		CQt.QGraphicsSceneResizeEvent_SetNewSize((.)this.ptr, size);
+		CQt.QGraphicsSceneResizeEvent_SetNewSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -1486,7 +1393,7 @@ class QGraphicsSceneResizeEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -1495,12 +1402,8 @@ class QGraphicsSceneResizeEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneResizeEvent
+interface IQGraphicsSceneResizeEvent : IQtObjectInterface
 {
-	public QSizeF OldSize();
-	public void SetOldSize();
-	public QSizeF NewSize();
-	public void SetNewSize();
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMoveEvent
@@ -1516,17 +1419,18 @@ extension CQt
 	[LinkName("QGraphicsSceneMoveEvent_Delete")]
 	public static extern void QGraphicsSceneMoveEvent_Delete(QGraphicsSceneMoveEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMoveEvent_OldPos")]
-	public static extern QPointF_Ptr QGraphicsSceneMoveEvent_OldPos(QGraphicsSceneMoveEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneMoveEvent_OldPos(QGraphicsSceneMoveEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMoveEvent_SetOldPos")]
 	public static extern void QGraphicsSceneMoveEvent_SetOldPos(QGraphicsSceneMoveEvent_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsSceneMoveEvent_NewPos")]
-	public static extern QPointF_Ptr QGraphicsSceneMoveEvent_NewPos(QGraphicsSceneMoveEvent_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsSceneMoveEvent_NewPos(QGraphicsSceneMoveEvent_Ptr* self);
 	[LinkName("QGraphicsSceneMoveEvent_SetNewPos")]
 	public static extern void QGraphicsSceneMoveEvent_SetNewPos(QGraphicsSceneMoveEvent_Ptr* self, QPointF_Ptr* pos);
 }
-class QGraphicsSceneMoveEvent
+class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, IQEvent
 {
 	private QGraphicsSceneMoveEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSceneMoveEvent_new();
@@ -1535,29 +1439,29 @@ class QGraphicsSceneMoveEvent
 	{
 		CQt.QGraphicsSceneMoveEvent_Delete(this.ptr);
 	}
-	public QPointF_Ptr OldPos()
+	public QPointF_Ptr* OldPos()
 	{
 		return CQt.QGraphicsSceneMoveEvent_OldPos((.)this.ptr);
 	}
-	public void SetOldPos(QPointF_Ptr* pos)
+	public void SetOldPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMoveEvent_SetOldPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMoveEvent_SetOldPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr NewPos()
+	public QPointF_Ptr* NewPos()
 	{
 		return CQt.QGraphicsSceneMoveEvent_NewPos((.)this.ptr);
 	}
-	public void SetNewPos(QPointF_Ptr* pos)
+	public void SetNewPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMoveEvent_SetNewPos((.)this.ptr, pos);
+		CQt.QGraphicsSceneMoveEvent_SetNewPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QGraphicsSceneEvent_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, widget);
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
 	public c_ulonglong Timestamp()
 	{
@@ -1607,7 +1511,7 @@ class QGraphicsSceneMoveEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -1616,12 +1520,8 @@ class QGraphicsSceneMoveEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQGraphicsSceneMoveEvent
+interface IQGraphicsSceneMoveEvent : IQtObjectInterface
 {
-	public QPointF OldPos();
-	public void SetOldPos();
-	public QPointF NewPos();
-	public void SetNewPos();
 }
 [AllowDuplicates]
 enum QGraphicsSceneContextMenuEvent_Reason

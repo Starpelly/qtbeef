@@ -15,15 +15,16 @@ extension CQt
 	[LinkName("QIODeviceBase_new")]
 	public static extern QIODeviceBase_Ptr* QIODeviceBase_new(QIODeviceBase_Ptr* other);
 }
-class QIODeviceBase
+class QIODeviceBase : IQIODeviceBase
 {
 	private QIODeviceBase_Ptr* ptr;
-	public this(QIODeviceBase_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQIODeviceBase other)
 	{
-		this.ptr = CQt.QIODeviceBase_new(other);
+		this.ptr = CQt.QIODeviceBase_new((.)other?.ObjectPtr);
 	}
 }
-interface IQIODeviceBase
+interface IQIODeviceBase : IQtObjectInterface
 {
 }
 [AllowDuplicates]

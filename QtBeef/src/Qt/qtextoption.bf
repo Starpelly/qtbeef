@@ -55,9 +55,10 @@ extension CQt
 	[LinkName("QTextOption_UseDesignMetrics")]
 	public static extern bool QTextOption_UseDesignMetrics(QTextOption_Ptr* self);
 }
-class QTextOption
+class QTextOption : IQTextOption
 {
 	private QTextOption_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTextOption_new();
@@ -66,9 +67,9 @@ class QTextOption
 	{
 		this.ptr = CQt.QTextOption_new2(alignment);
 	}
-	public this(QTextOption_Ptr* o)
+	public this(IQTextOption o)
 	{
-		this.ptr = CQt.QTextOption_new3(o);
+		this.ptr = CQt.QTextOption_new3((.)o?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -139,24 +140,8 @@ class QTextOption
 		return CQt.QTextOption_UseDesignMetrics((.)this.ptr);
 	}
 }
-interface IQTextOption
+interface IQTextOption : IQtObjectInterface
 {
-	public void SetAlignment();
-	public void* Alignment();
-	public void SetTextDirection();
-	public Qt_LayoutDirection TextDirection();
-	public void SetWrapMode();
-	public QTextOption_WrapMode WrapMode();
-	public void SetFlags();
-	public void* Flags();
-	public void SetTabStopDistance();
-	public double TabStopDistance();
-	public void SetTabArray();
-	public void* TabArray();
-	public void SetTabs();
-	public void* Tabs();
-	public void SetUseDesignMetrics();
-	public bool UseDesignMetrics();
 }
 // --------------------------------------------------------------
 // QTextOption::Tab
@@ -168,21 +153,21 @@ struct QTextOption_Tab_Ptr: void
 extension CQt
 {
 	[LinkName("QTextOption_Tab_new")]
-	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new(QTextOption_Tab* other);
+	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new(QTextOption_Tab_Ptr* other);
 	[LinkName("QTextOption_Tab_new2")]
-	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new2(QTextOption_Tab* other);
+	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new2(QTextOption_Tab_Ptr* other);
 	[LinkName("QTextOption_Tab_new3")]
 	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new3();
 	[LinkName("QTextOption_Tab_new4")]
 	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new4(double pos, QTextOption_TabType tabType);
 	[LinkName("QTextOption_Tab_new5")]
-	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new5(double pos, QTextOption_TabType tabType, QChar_Ptr delim);
+	public static extern QTextOption_Tab_Ptr* QTextOption_Tab_new5(double pos, QTextOption_TabType tabType, QChar_Ptr* delim);
 	[LinkName("QTextOption_Tab_Delete")]
 	public static extern void QTextOption_Tab_Delete(QTextOption_Tab_Ptr* self);
 	[LinkName("QTextOption_Tab_OperatorEqual")]
-	public static extern bool QTextOption_Tab_OperatorEqual(QTextOption_Tab_Ptr* self, QTextOption_Tab* other);
+	public static extern bool QTextOption_Tab_OperatorEqual(QTextOption_Tab_Ptr* self, QTextOption_Tab_Ptr* other);
 	[LinkName("QTextOption_Tab_OperatorNotEqual")]
-	public static extern bool QTextOption_Tab_OperatorNotEqual(QTextOption_Tab_Ptr* self, QTextOption_Tab* other);
+	public static extern bool QTextOption_Tab_OperatorNotEqual(QTextOption_Tab_Ptr* self, QTextOption_Tab_Ptr* other);
 	[LinkName("QTextOption_Tab_Position")]
 	public static extern double QTextOption_Tab_Position(QTextOption_Tab_Ptr* self);
 	[LinkName("QTextOption_Tab_SetPosition")]
@@ -192,16 +177,17 @@ extension CQt
 	[LinkName("QTextOption_Tab_SetType")]
 	public static extern void QTextOption_Tab_SetType(QTextOption_Tab_Ptr* self, QTextOption_TabType type);
 	[LinkName("QTextOption_Tab_Delimiter")]
-	public static extern QChar_Ptr QTextOption_Tab_Delimiter(QTextOption_Tab_Ptr* self);
+	public static extern QChar_Ptr* QTextOption_Tab_Delimiter(QTextOption_Tab_Ptr* self);
 	[LinkName("QTextOption_Tab_SetDelimiter")]
-	public static extern void QTextOption_Tab_SetDelimiter(QTextOption_Tab_Ptr* self, QChar_Ptr delimiter);
+	public static extern void QTextOption_Tab_SetDelimiter(QTextOption_Tab_Ptr* self, QChar_Ptr* delimiter);
 }
-class QTextOption_Tab
+class QTextOption_Tab : IQTextOption_Tab
 {
 	private QTextOption_Tab_Ptr* ptr;
-	public this(QTextOption_Tab* other)
+	public void* ObjectPtr => ptr;
+	public this(IQTextOption_Tab other)
 	{
-		this.ptr = CQt.QTextOption_Tab_new(other);
+		this.ptr = CQt.QTextOption_Tab_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -211,9 +197,9 @@ class QTextOption_Tab
 	{
 		this.ptr = CQt.QTextOption_Tab_new4(pos, tabType);
 	}
-	public this(double pos, QTextOption_TabType tabType, QChar_Ptr delim)
+	public this(double pos, QTextOption_TabType tabType, IQChar delim)
 	{
-		this.ptr = CQt.QTextOption_Tab_new5(pos, tabType, delim);
+		this.ptr = CQt.QTextOption_Tab_new5(pos, tabType, (.)delim?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -235,23 +221,17 @@ class QTextOption_Tab
 	{
 		CQt.QTextOption_Tab_SetType((.)this.ptr, type);
 	}
-	public QChar_Ptr Delimiter()
+	public QChar_Ptr* Delimiter()
 	{
 		return CQt.QTextOption_Tab_Delimiter((.)this.ptr);
 	}
-	public void SetDelimiter(QChar_Ptr delimiter)
+	public void SetDelimiter(IQChar delimiter)
 	{
-		CQt.QTextOption_Tab_SetDelimiter((.)this.ptr, delimiter);
+		CQt.QTextOption_Tab_SetDelimiter((.)this.ptr, (.)delimiter?.ObjectPtr);
 	}
 }
-interface IQTextOption_Tab
+interface IQTextOption_Tab : IQtObjectInterface
 {
-	public double Position();
-	public void SetPosition();
-	public QTextOption_TabType Type();
-	public void SetType();
-	public QChar Delimiter();
-	public void SetDelimiter();
 }
 [AllowDuplicates]
 enum QTextOption_TabType

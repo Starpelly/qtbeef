@@ -41,23 +41,23 @@ extension CQt
 	[LinkName("QSize_Transpose")]
 	public static extern void QSize_Transpose(QSize_Ptr* self);
 	[LinkName("QSize_Transposed")]
-	public static extern QSize_Ptr QSize_Transposed(QSize_Ptr* self);
+	public static extern QSize_Ptr* QSize_Transposed(QSize_Ptr* self);
 	[LinkName("QSize_Scale")]
 	public static extern void QSize_Scale(QSize_Ptr* self, c_int w, c_int h, Qt_AspectRatioMode mode);
 	[LinkName("QSize_Scale2")]
 	public static extern void QSize_Scale2(QSize_Ptr* self, QSize_Ptr* s, Qt_AspectRatioMode mode);
 	[LinkName("QSize_Scaled")]
-	public static extern QSize_Ptr QSize_Scaled(QSize_Ptr* self, c_int w, c_int h, Qt_AspectRatioMode mode);
+	public static extern QSize_Ptr* QSize_Scaled(QSize_Ptr* self, c_int w, c_int h, Qt_AspectRatioMode mode);
 	[LinkName("QSize_Scaled2")]
-	public static extern QSize_Ptr QSize_Scaled2(QSize_Ptr* self, QSize_Ptr* s, Qt_AspectRatioMode mode);
+	public static extern QSize_Ptr* QSize_Scaled2(QSize_Ptr* self, QSize_Ptr* s, Qt_AspectRatioMode mode);
 	[LinkName("QSize_ExpandedTo")]
-	public static extern QSize_Ptr QSize_ExpandedTo(QSize_Ptr* self, QSize_Ptr* param1);
+	public static extern QSize_Ptr* QSize_ExpandedTo(QSize_Ptr* self, QSize_Ptr* param1);
 	[LinkName("QSize_BoundedTo")]
-	public static extern QSize_Ptr QSize_BoundedTo(QSize_Ptr* self, QSize_Ptr* param1);
+	public static extern QSize_Ptr* QSize_BoundedTo(QSize_Ptr* self, QSize_Ptr* param1);
 	[LinkName("QSize_GrownBy")]
-	public static extern QSize_Ptr QSize_GrownBy(QSize_Ptr* self, QMargins_Ptr m);
+	public static extern QSize_Ptr* QSize_GrownBy(QSize_Ptr* self, QMargins_Ptr* m);
 	[LinkName("QSize_ShrunkBy")]
-	public static extern QSize_Ptr QSize_ShrunkBy(QSize_Ptr* self, QMargins_Ptr m);
+	public static extern QSize_Ptr* QSize_ShrunkBy(QSize_Ptr* self, QMargins_Ptr* m);
 	[LinkName("QSize_Rwidth")]
 	public static extern c_int* QSize_Rwidth(QSize_Ptr* self);
 	[LinkName("QSize_Rheight")]
@@ -71,14 +71,15 @@ extension CQt
 	[LinkName("QSize_OperatorDivideAssign")]
 	public static extern QSize_Ptr* QSize_OperatorDivideAssign(QSize_Ptr* self, double c);
 	[LinkName("QSize_ToSizeF")]
-	public static extern QSizeF_Ptr QSize_ToSizeF(QSize_Ptr* self);
+	public static extern QSizeF_Ptr* QSize_ToSizeF(QSize_Ptr* self);
 }
-class QSize
+class QSize : IQSize
 {
 	private QSize_Ptr* ptr;
-	public this(QSize_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQSize other)
 	{
-		this.ptr = CQt.QSize_new(other);
+		this.ptr = CQt.QSize_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -124,7 +125,7 @@ class QSize
 	{
 		CQt.QSize_Transpose((.)this.ptr);
 	}
-	public QSize_Ptr Transposed()
+	public QSize_Ptr* Transposed()
 	{
 		return CQt.QSize_Transposed((.)this.ptr);
 	}
@@ -132,33 +133,33 @@ class QSize
 	{
 		CQt.QSize_Scale((.)this.ptr, w, h, mode);
 	}
-	public void Scale2(QSize_Ptr* s, Qt_AspectRatioMode mode)
+	public void Scale2(IQSize s, Qt_AspectRatioMode mode)
 	{
-		CQt.QSize_Scale2((.)this.ptr, s, mode);
+		CQt.QSize_Scale2((.)this.ptr, (.)s?.ObjectPtr, mode);
 	}
-	public QSize_Ptr Scaled(c_int w, c_int h, Qt_AspectRatioMode mode)
+	public QSize_Ptr* Scaled(c_int w, c_int h, Qt_AspectRatioMode mode)
 	{
 		return CQt.QSize_Scaled((.)this.ptr, w, h, mode);
 	}
-	public QSize_Ptr Scaled2(QSize_Ptr* s, Qt_AspectRatioMode mode)
+	public QSize_Ptr* Scaled2(IQSize s, Qt_AspectRatioMode mode)
 	{
-		return CQt.QSize_Scaled2((.)this.ptr, s, mode);
+		return CQt.QSize_Scaled2((.)this.ptr, (.)s?.ObjectPtr, mode);
 	}
-	public QSize_Ptr ExpandedTo(QSize_Ptr* param1)
+	public QSize_Ptr* ExpandedTo(IQSize param1)
 	{
-		return CQt.QSize_ExpandedTo((.)this.ptr, param1);
+		return CQt.QSize_ExpandedTo((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QSize_Ptr BoundedTo(QSize_Ptr* param1)
+	public QSize_Ptr* BoundedTo(IQSize param1)
 	{
-		return CQt.QSize_BoundedTo((.)this.ptr, param1);
+		return CQt.QSize_BoundedTo((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QSize_Ptr GrownBy(QMargins_Ptr m)
+	public QSize_Ptr* GrownBy(IQMargins m)
 	{
-		return CQt.QSize_GrownBy((.)this.ptr, m);
+		return CQt.QSize_GrownBy((.)this.ptr, (.)m?.ObjectPtr);
 	}
-	public QSize_Ptr ShrunkBy(QMargins_Ptr m)
+	public QSize_Ptr* ShrunkBy(IQMargins m)
 	{
-		return CQt.QSize_ShrunkBy((.)this.ptr, m);
+		return CQt.QSize_ShrunkBy((.)this.ptr, (.)m?.ObjectPtr);
 	}
 	public c_int* Rwidth()
 	{
@@ -168,33 +169,13 @@ class QSize
 	{
 		return CQt.QSize_Rheight((.)this.ptr);
 	}
-	public QSizeF_Ptr ToSizeF()
+	public QSizeF_Ptr* ToSizeF()
 	{
 		return CQt.QSize_ToSizeF((.)this.ptr);
 	}
 }
-interface IQSize
+interface IQSize : IQtObjectInterface
 {
-	public bool IsNull();
-	public bool IsEmpty();
-	public bool IsValid();
-	public c_int Width();
-	public c_int Height();
-	public void SetWidth();
-	public void SetHeight();
-	public void Transpose();
-	public QSize Transposed();
-	public void Scale();
-	public void Scale2();
-	public QSize Scaled();
-	public QSize Scaled2();
-	public QSize ExpandedTo();
-	public QSize BoundedTo();
-	public QSize GrownBy();
-	public QSize ShrunkBy();
-	public c_int* Rwidth();
-	public c_int* Rheight();
-	public QSizeF ToSizeF();
 }
 // --------------------------------------------------------------
 // QSizeF
@@ -236,23 +217,23 @@ extension CQt
 	[LinkName("QSizeF_Transpose")]
 	public static extern void QSizeF_Transpose(QSizeF_Ptr* self);
 	[LinkName("QSizeF_Transposed")]
-	public static extern QSizeF_Ptr QSizeF_Transposed(QSizeF_Ptr* self);
+	public static extern QSizeF_Ptr* QSizeF_Transposed(QSizeF_Ptr* self);
 	[LinkName("QSizeF_Scale")]
 	public static extern void QSizeF_Scale(QSizeF_Ptr* self, double w, double h, Qt_AspectRatioMode mode);
 	[LinkName("QSizeF_Scale2")]
 	public static extern void QSizeF_Scale2(QSizeF_Ptr* self, QSizeF_Ptr* s, Qt_AspectRatioMode mode);
 	[LinkName("QSizeF_Scaled")]
-	public static extern QSizeF_Ptr QSizeF_Scaled(QSizeF_Ptr* self, double w, double h, Qt_AspectRatioMode mode);
+	public static extern QSizeF_Ptr* QSizeF_Scaled(QSizeF_Ptr* self, double w, double h, Qt_AspectRatioMode mode);
 	[LinkName("QSizeF_Scaled2")]
-	public static extern QSizeF_Ptr QSizeF_Scaled2(QSizeF_Ptr* self, QSizeF_Ptr* s, Qt_AspectRatioMode mode);
+	public static extern QSizeF_Ptr* QSizeF_Scaled2(QSizeF_Ptr* self, QSizeF_Ptr* s, Qt_AspectRatioMode mode);
 	[LinkName("QSizeF_ExpandedTo")]
-	public static extern QSizeF_Ptr QSizeF_ExpandedTo(QSizeF_Ptr* self, QSizeF_Ptr* param1);
+	public static extern QSizeF_Ptr* QSizeF_ExpandedTo(QSizeF_Ptr* self, QSizeF_Ptr* param1);
 	[LinkName("QSizeF_BoundedTo")]
-	public static extern QSizeF_Ptr QSizeF_BoundedTo(QSizeF_Ptr* self, QSizeF_Ptr* param1);
+	public static extern QSizeF_Ptr* QSizeF_BoundedTo(QSizeF_Ptr* self, QSizeF_Ptr* param1);
 	[LinkName("QSizeF_GrownBy")]
-	public static extern QSizeF_Ptr QSizeF_GrownBy(QSizeF_Ptr* self, QMarginsF_Ptr m);
+	public static extern QSizeF_Ptr* QSizeF_GrownBy(QSizeF_Ptr* self, QMarginsF_Ptr* m);
 	[LinkName("QSizeF_ShrunkBy")]
-	public static extern QSizeF_Ptr QSizeF_ShrunkBy(QSizeF_Ptr* self, QMarginsF_Ptr m);
+	public static extern QSizeF_Ptr* QSizeF_ShrunkBy(QSizeF_Ptr* self, QMarginsF_Ptr* m);
 	[LinkName("QSizeF_Rwidth")]
 	public static extern double* QSizeF_Rwidth(QSizeF_Ptr* self);
 	[LinkName("QSizeF_Rheight")]
@@ -266,22 +247,23 @@ extension CQt
 	[LinkName("QSizeF_OperatorDivideAssign")]
 	public static extern QSizeF_Ptr* QSizeF_OperatorDivideAssign(QSizeF_Ptr* self, double c);
 	[LinkName("QSizeF_ToSize")]
-	public static extern QSize_Ptr QSizeF_ToSize(QSizeF_Ptr* self);
+	public static extern QSize_Ptr* QSizeF_ToSize(QSizeF_Ptr* self);
 }
-class QSizeF
+class QSizeF : IQSizeF
 {
 	private QSizeF_Ptr* ptr;
-	public this(QSizeF_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQSizeF other)
 	{
-		this.ptr = CQt.QSizeF_new(other);
+		this.ptr = CQt.QSizeF_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSizeF_new3();
 	}
-	public this(QSize_Ptr* sz)
+	public this(IQSize sz)
 	{
-		this.ptr = CQt.QSizeF_new4(sz);
+		this.ptr = CQt.QSizeF_new4((.)sz?.ObjectPtr);
 	}
 	public this(double w, double h)
 	{
@@ -323,7 +305,7 @@ class QSizeF
 	{
 		CQt.QSizeF_Transpose((.)this.ptr);
 	}
-	public QSizeF_Ptr Transposed()
+	public QSizeF_Ptr* Transposed()
 	{
 		return CQt.QSizeF_Transposed((.)this.ptr);
 	}
@@ -331,33 +313,33 @@ class QSizeF
 	{
 		CQt.QSizeF_Scale((.)this.ptr, w, h, mode);
 	}
-	public void Scale2(QSizeF_Ptr* s, Qt_AspectRatioMode mode)
+	public void Scale2(IQSizeF s, Qt_AspectRatioMode mode)
 	{
-		CQt.QSizeF_Scale2((.)this.ptr, s, mode);
+		CQt.QSizeF_Scale2((.)this.ptr, (.)s?.ObjectPtr, mode);
 	}
-	public QSizeF_Ptr Scaled(double w, double h, Qt_AspectRatioMode mode)
+	public QSizeF_Ptr* Scaled(double w, double h, Qt_AspectRatioMode mode)
 	{
 		return CQt.QSizeF_Scaled((.)this.ptr, w, h, mode);
 	}
-	public QSizeF_Ptr Scaled2(QSizeF_Ptr* s, Qt_AspectRatioMode mode)
+	public QSizeF_Ptr* Scaled2(IQSizeF s, Qt_AspectRatioMode mode)
 	{
-		return CQt.QSizeF_Scaled2((.)this.ptr, s, mode);
+		return CQt.QSizeF_Scaled2((.)this.ptr, (.)s?.ObjectPtr, mode);
 	}
-	public QSizeF_Ptr ExpandedTo(QSizeF_Ptr* param1)
+	public QSizeF_Ptr* ExpandedTo(IQSizeF param1)
 	{
-		return CQt.QSizeF_ExpandedTo((.)this.ptr, param1);
+		return CQt.QSizeF_ExpandedTo((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QSizeF_Ptr BoundedTo(QSizeF_Ptr* param1)
+	public QSizeF_Ptr* BoundedTo(IQSizeF param1)
 	{
-		return CQt.QSizeF_BoundedTo((.)this.ptr, param1);
+		return CQt.QSizeF_BoundedTo((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QSizeF_Ptr GrownBy(QMarginsF_Ptr m)
+	public QSizeF_Ptr* GrownBy(IQMarginsF m)
 	{
-		return CQt.QSizeF_GrownBy((.)this.ptr, m);
+		return CQt.QSizeF_GrownBy((.)this.ptr, (.)m?.ObjectPtr);
 	}
-	public QSizeF_Ptr ShrunkBy(QMarginsF_Ptr m)
+	public QSizeF_Ptr* ShrunkBy(IQMarginsF m)
 	{
-		return CQt.QSizeF_ShrunkBy((.)this.ptr, m);
+		return CQt.QSizeF_ShrunkBy((.)this.ptr, (.)m?.ObjectPtr);
 	}
 	public double* Rwidth()
 	{
@@ -367,31 +349,11 @@ class QSizeF
 	{
 		return CQt.QSizeF_Rheight((.)this.ptr);
 	}
-	public QSize_Ptr ToSize()
+	public QSize_Ptr* ToSize()
 	{
 		return CQt.QSizeF_ToSize((.)this.ptr);
 	}
 }
-interface IQSizeF
+interface IQSizeF : IQtObjectInterface
 {
-	public bool IsNull();
-	public bool IsEmpty();
-	public bool IsValid();
-	public double Width();
-	public double Height();
-	public void SetWidth();
-	public void SetHeight();
-	public void Transpose();
-	public QSizeF Transposed();
-	public void Scale();
-	public void Scale2();
-	public QSizeF Scaled();
-	public QSizeF Scaled2();
-	public QSizeF ExpandedTo();
-	public QSizeF BoundedTo();
-	public QSizeF GrownBy();
-	public QSizeF ShrunkBy();
-	public double* Rwidth();
-	public double* Rheight();
-	public QSize ToSize();
 }

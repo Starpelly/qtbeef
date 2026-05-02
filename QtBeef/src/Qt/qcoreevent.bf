@@ -37,13 +37,14 @@ extension CQt
 	[LinkName("QEvent_RegisterEventType")]
 	public static extern c_int QEvent_RegisterEventType();
 	[LinkName("QEvent_Clone")]
-	public static extern QEvent_Ptr* QEvent_Clone(QEvent_Ptr* self);
+	public static extern QEvent_Ptr** QEvent_Clone(QEvent_Ptr* self);
 	[LinkName("QEvent_RegisterEventType1")]
 	public static extern c_int QEvent_RegisterEventType1(c_int hint);
 }
-class QEvent
+class QEvent : IQEvent
 {
 	private QEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QEvent_new(type);
@@ -92,7 +93,7 @@ class QEvent
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr* Clone()
+	public QEvent_Ptr** Clone()
 	{
 		return CQt.QEvent_Clone((.)this.ptr);
 	}
@@ -101,20 +102,8 @@ class QEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQEvent
+interface IQEvent : IQtObjectInterface
 {
-	public QEvent_Type Type();
-	public bool Spontaneous();
-	public void SetAccepted();
-	public bool IsAccepted();
-	public void Accept();
-	public void Ignore();
-	public bool IsInputEvent();
-	public bool IsPointerEvent();
-	public bool IsSinglePointEvent();
-	public c_int RegisterEventType();
-	public QEvent* Clone();
-	public c_int RegisterEventType1();
 }
 // --------------------------------------------------------------
 // QTimerEvent
@@ -130,13 +119,14 @@ extension CQt
 	[LinkName("QTimerEvent_Delete")]
 	public static extern void QTimerEvent_Delete(QTimerEvent_Ptr* self);
 	[LinkName("QTimerEvent_Clone")]
-	public static extern QTimerEvent_Ptr* QTimerEvent_Clone(QTimerEvent_Ptr* self);
+	public static extern QTimerEvent_Ptr** QTimerEvent_Clone(QTimerEvent_Ptr* self);
 	[LinkName("QTimerEvent_TimerId")]
 	public static extern c_int QTimerEvent_TimerId(QTimerEvent_Ptr* self);
 }
-class QTimerEvent
+class QTimerEvent : IQTimerEvent, IQEvent
 {
 	private QTimerEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(c_int timerId)
 	{
 		this.ptr = CQt.QTimerEvent_new(timerId);
@@ -145,7 +135,7 @@ class QTimerEvent
 	{
 		CQt.QTimerEvent_Delete(this.ptr);
 	}
-	public QTimerEvent_Ptr* Clone()
+	public QTimerEvent_Ptr** Clone()
 	{
 		return CQt.QTimerEvent_Clone((.)this.ptr);
 	}
@@ -198,10 +188,8 @@ class QTimerEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQTimerEvent
+interface IQTimerEvent : IQtObjectInterface
 {
-	public QTimerEvent* Clone();
-	public c_int TimerId();
 }
 // --------------------------------------------------------------
 // QChildEvent
@@ -213,13 +201,13 @@ struct QChildEvent_Ptr: void
 extension CQt
 {
 	[LinkName("QChildEvent_new")]
-	public static extern QChildEvent_Ptr* QChildEvent_new(QEvent_Type type, QObject_Ptr* child);
+	public static extern QChildEvent_Ptr* QChildEvent_new(QEvent_Type type, QObject_Ptr** child);
 	[LinkName("QChildEvent_Delete")]
 	public static extern void QChildEvent_Delete(QChildEvent_Ptr* self);
 	[LinkName("QChildEvent_Clone")]
-	public static extern QChildEvent_Ptr* QChildEvent_Clone(QChildEvent_Ptr* self);
+	public static extern QChildEvent_Ptr** QChildEvent_Clone(QChildEvent_Ptr* self);
 	[LinkName("QChildEvent_Child")]
-	public static extern QObject_Ptr* QChildEvent_Child(QChildEvent_Ptr* self);
+	public static extern QObject_Ptr** QChildEvent_Child(QChildEvent_Ptr* self);
 	[LinkName("QChildEvent_Added")]
 	public static extern bool QChildEvent_Added(QChildEvent_Ptr* self);
 	[LinkName("QChildEvent_Polished")]
@@ -227,22 +215,23 @@ extension CQt
 	[LinkName("QChildEvent_Removed")]
 	public static extern bool QChildEvent_Removed(QChildEvent_Ptr* self);
 }
-class QChildEvent
+class QChildEvent : IQChildEvent, IQEvent
 {
 	private QChildEvent_Ptr* ptr;
-	public this(QEvent_Type type, QObject_Ptr* child)
+	public void* ObjectPtr => ptr;
+	public this(QEvent_Type type, IQObject child)
 	{
-		this.ptr = CQt.QChildEvent_new(type, child);
+		this.ptr = CQt.QChildEvent_new(type, (.)child?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QChildEvent_Delete(this.ptr);
 	}
-	public QChildEvent_Ptr* Clone()
+	public QChildEvent_Ptr** Clone()
 	{
 		return CQt.QChildEvent_Clone((.)this.ptr);
 	}
-	public QObject_Ptr* Child()
+	public QObject_Ptr** Child()
 	{
 		return CQt.QChildEvent_Child((.)this.ptr);
 	}
@@ -303,13 +292,8 @@ class QChildEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQChildEvent
+interface IQChildEvent : IQtObjectInterface
 {
-	public QChildEvent* Clone();
-	public QObject* Child();
-	public bool Added();
-	public bool Polished();
-	public bool Removed();
 }
 // --------------------------------------------------------------
 // QDynamicPropertyChangeEvent
@@ -325,13 +309,14 @@ extension CQt
 	[LinkName("QDynamicPropertyChangeEvent_Delete")]
 	public static extern void QDynamicPropertyChangeEvent_Delete(QDynamicPropertyChangeEvent_Ptr* self);
 	[LinkName("QDynamicPropertyChangeEvent_Clone")]
-	public static extern QDynamicPropertyChangeEvent_Ptr* QDynamicPropertyChangeEvent_Clone(QDynamicPropertyChangeEvent_Ptr* self);
+	public static extern QDynamicPropertyChangeEvent_Ptr** QDynamicPropertyChangeEvent_Clone(QDynamicPropertyChangeEvent_Ptr* self);
 	[LinkName("QDynamicPropertyChangeEvent_PropertyName")]
 	public static extern void* QDynamicPropertyChangeEvent_PropertyName(QDynamicPropertyChangeEvent_Ptr* self);
 }
-class QDynamicPropertyChangeEvent
+class QDynamicPropertyChangeEvent : IQDynamicPropertyChangeEvent, IQEvent
 {
 	private QDynamicPropertyChangeEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(void** name)
 	{
 		this.ptr = CQt.QDynamicPropertyChangeEvent_new(name);
@@ -340,7 +325,7 @@ class QDynamicPropertyChangeEvent
 	{
 		CQt.QDynamicPropertyChangeEvent_Delete(this.ptr);
 	}
-	public QDynamicPropertyChangeEvent_Ptr* Clone()
+	public QDynamicPropertyChangeEvent_Ptr** Clone()
 	{
 		return CQt.QDynamicPropertyChangeEvent_Clone((.)this.ptr);
 	}
@@ -393,10 +378,8 @@ class QDynamicPropertyChangeEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQDynamicPropertyChangeEvent
+interface IQDynamicPropertyChangeEvent : IQtObjectInterface
 {
-	public QDynamicPropertyChangeEvent* Clone();
-	public void* PropertyName();
 }
 // --------------------------------------------------------------
 // QDeferredDeleteEvent
@@ -412,13 +395,14 @@ extension CQt
 	[LinkName("QDeferredDeleteEvent_Delete")]
 	public static extern void QDeferredDeleteEvent_Delete(QDeferredDeleteEvent_Ptr* self);
 	[LinkName("QDeferredDeleteEvent_Clone")]
-	public static extern QDeferredDeleteEvent_Ptr* QDeferredDeleteEvent_Clone(QDeferredDeleteEvent_Ptr* self);
+	public static extern QDeferredDeleteEvent_Ptr** QDeferredDeleteEvent_Clone(QDeferredDeleteEvent_Ptr* self);
 	[LinkName("QDeferredDeleteEvent_LoopLevel")]
 	public static extern c_int QDeferredDeleteEvent_LoopLevel(QDeferredDeleteEvent_Ptr* self);
 }
-class QDeferredDeleteEvent
+class QDeferredDeleteEvent : IQDeferredDeleteEvent, IQEvent
 {
 	private QDeferredDeleteEvent_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QDeferredDeleteEvent_new();
@@ -427,7 +411,7 @@ class QDeferredDeleteEvent
 	{
 		CQt.QDeferredDeleteEvent_Delete(this.ptr);
 	}
-	public QDeferredDeleteEvent_Ptr* Clone()
+	public QDeferredDeleteEvent_Ptr** Clone()
 	{
 		return CQt.QDeferredDeleteEvent_Clone((.)this.ptr);
 	}
@@ -480,10 +464,8 @@ class QDeferredDeleteEvent
 		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
-interface IQDeferredDeleteEvent
+interface IQDeferredDeleteEvent : IQtObjectInterface
 {
-	public QDeferredDeleteEvent* Clone();
-	public c_int LoopLevel();
 }
 [AllowDuplicates]
 enum QEvent_Type

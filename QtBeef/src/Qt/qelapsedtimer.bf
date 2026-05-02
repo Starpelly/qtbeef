@@ -45,12 +45,13 @@ extension CQt
 	[LinkName("QElapsedTimer_SecsTo")]
 	public static extern c_longlong QElapsedTimer_SecsTo(QElapsedTimer_Ptr* self, QElapsedTimer_Ptr* other);
 }
-class QElapsedTimer
+class QElapsedTimer : IQElapsedTimer
 {
 	private QElapsedTimer_Ptr* ptr;
-	public this(QElapsedTimer_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQElapsedTimer other)
 	{
-		this.ptr = CQt.QElapsedTimer_new(other);
+		this.ptr = CQt.QElapsedTimer_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -100,29 +101,17 @@ class QElapsedTimer
 	{
 		return CQt.QElapsedTimer_MsecsSinceReference((.)this.ptr);
 	}
-	public c_longlong MsecsTo(QElapsedTimer_Ptr* other)
+	public c_longlong MsecsTo(IQElapsedTimer other)
 	{
-		return CQt.QElapsedTimer_MsecsTo((.)this.ptr, other);
+		return CQt.QElapsedTimer_MsecsTo((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public c_longlong SecsTo(QElapsedTimer_Ptr* other)
+	public c_longlong SecsTo(IQElapsedTimer other)
 	{
-		return CQt.QElapsedTimer_SecsTo((.)this.ptr, other);
+		return CQt.QElapsedTimer_SecsTo((.)this.ptr, (.)other?.ObjectPtr);
 	}
 }
-interface IQElapsedTimer
+interface IQElapsedTimer : IQtObjectInterface
 {
-	public QElapsedTimer_ClockType ClockType();
-	public bool IsMonotonic();
-	public void Start();
-	public c_longlong Restart();
-	public void Invalidate();
-	public bool IsValid();
-	public c_longlong NsecsElapsed();
-	public c_longlong Elapsed();
-	public bool HasExpired();
-	public c_longlong MsecsSinceReference();
-	public c_longlong MsecsTo();
-	public c_longlong SecsTo();
 }
 [AllowDuplicates]
 enum QElapsedTimer_ClockType

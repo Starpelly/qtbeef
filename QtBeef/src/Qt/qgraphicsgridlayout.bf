@@ -15,13 +15,13 @@ extension CQt
 	[LinkName("QGraphicsGridLayout_new")]
 	public static extern QGraphicsGridLayout_Ptr* QGraphicsGridLayout_new();
 	[LinkName("QGraphicsGridLayout_new2")]
-	public static extern QGraphicsGridLayout_Ptr* QGraphicsGridLayout_new2(QGraphicsLayoutItem_Ptr* parent);
+	public static extern QGraphicsGridLayout_Ptr* QGraphicsGridLayout_new2(QGraphicsLayoutItem_Ptr** parent);
 	[LinkName("QGraphicsGridLayout_Delete")]
 	public static extern void QGraphicsGridLayout_Delete(QGraphicsGridLayout_Ptr* self);
 	[LinkName("QGraphicsGridLayout_AddItem")]
-	public static extern void QGraphicsGridLayout_AddItem(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, c_int rowSpan, c_int columnSpan);
+	public static extern void QGraphicsGridLayout_AddItem(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr** item, c_int row, c_int column, c_int rowSpan, c_int columnSpan);
 	[LinkName("QGraphicsGridLayout_AddItem2")]
-	public static extern void QGraphicsGridLayout_AddItem2(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr* item, c_int row, c_int column);
+	public static extern void QGraphicsGridLayout_AddItem2(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr** item, c_int row, c_int column);
 	[LinkName("QGraphicsGridLayout_SetHorizontalSpacing")]
 	public static extern void QGraphicsGridLayout_SetHorizontalSpacing(QGraphicsGridLayout_Ptr* self, double spacing);
 	[LinkName("QGraphicsGridLayout_HorizontalSpacing")]
@@ -85,56 +85,57 @@ extension CQt
 	[LinkName("QGraphicsGridLayout_ColumnAlignment")]
 	public static extern void* QGraphicsGridLayout_ColumnAlignment(QGraphicsGridLayout_Ptr* self, c_int column);
 	[LinkName("QGraphicsGridLayout_SetAlignment")]
-	public static extern void QGraphicsGridLayout_SetAlignment(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr* item, void* alignment);
+	public static extern void QGraphicsGridLayout_SetAlignment(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr** item, void* alignment);
 	[LinkName("QGraphicsGridLayout_Alignment")]
-	public static extern void* QGraphicsGridLayout_Alignment(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr* item);
+	public static extern void* QGraphicsGridLayout_Alignment(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr** item);
 	[LinkName("QGraphicsGridLayout_RowCount")]
 	public static extern c_int QGraphicsGridLayout_RowCount(QGraphicsGridLayout_Ptr* self);
 	[LinkName("QGraphicsGridLayout_ColumnCount")]
 	public static extern c_int QGraphicsGridLayout_ColumnCount(QGraphicsGridLayout_Ptr* self);
 	[LinkName("QGraphicsGridLayout_ItemAt")]
-	public static extern QGraphicsLayoutItem_Ptr* QGraphicsGridLayout_ItemAt(QGraphicsGridLayout_Ptr* self, c_int row, c_int column);
+	public static extern QGraphicsLayoutItem_Ptr** QGraphicsGridLayout_ItemAt(QGraphicsGridLayout_Ptr* self, c_int row, c_int column);
 	[LinkName("QGraphicsGridLayout_Count")]
 	public static extern c_int QGraphicsGridLayout_Count(QGraphicsGridLayout_Ptr* self);
 	[LinkName("QGraphicsGridLayout_ItemAt2")]
-	public static extern QGraphicsLayoutItem_Ptr* QGraphicsGridLayout_ItemAt2(QGraphicsGridLayout_Ptr* self, c_int index);
+	public static extern QGraphicsLayoutItem_Ptr** QGraphicsGridLayout_ItemAt2(QGraphicsGridLayout_Ptr* self, c_int index);
 	[LinkName("QGraphicsGridLayout_RemoveAt")]
 	public static extern void QGraphicsGridLayout_RemoveAt(QGraphicsGridLayout_Ptr* self, c_int index);
 	[LinkName("QGraphicsGridLayout_RemoveItem")]
-	public static extern void QGraphicsGridLayout_RemoveItem(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr* item);
+	public static extern void QGraphicsGridLayout_RemoveItem(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr** item);
 	[LinkName("QGraphicsGridLayout_Invalidate")]
 	public static extern void QGraphicsGridLayout_Invalidate(QGraphicsGridLayout_Ptr* self);
 	[LinkName("QGraphicsGridLayout_SetGeometry")]
 	public static extern void QGraphicsGridLayout_SetGeometry(QGraphicsGridLayout_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QGraphicsGridLayout_SizeHint")]
-	public static extern QSizeF_Ptr QGraphicsGridLayout_SizeHint(QGraphicsGridLayout_Ptr* self, Qt_SizeHint which, QSizeF_Ptr* constraint);
+	public static extern QSizeF_Ptr* QGraphicsGridLayout_SizeHint(QGraphicsGridLayout_Ptr* self, Qt_SizeHint which, QSizeF_Ptr* constraint);
 	[LinkName("QGraphicsGridLayout_AddItem6")]
-	public static extern void QGraphicsGridLayout_AddItem6(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, c_int rowSpan, c_int columnSpan, void* alignment);
+	public static extern void QGraphicsGridLayout_AddItem6(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr** item, c_int row, c_int column, c_int rowSpan, c_int columnSpan, void* alignment);
 	[LinkName("QGraphicsGridLayout_AddItem4")]
-	public static extern void QGraphicsGridLayout_AddItem4(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, void* alignment);
+	public static extern void QGraphicsGridLayout_AddItem4(QGraphicsGridLayout_Ptr* self, QGraphicsLayoutItem_Ptr** item, c_int row, c_int column, void* alignment);
 }
-class QGraphicsGridLayout
+class QGraphicsGridLayout : IQGraphicsGridLayout, IQGraphicsLayout, IQGraphicsLayoutItem
 {
 	private QGraphicsGridLayout_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsGridLayout_new();
 	}
-	public this(QGraphicsLayoutItem_Ptr* parent)
+	public this(IQGraphicsLayoutItem parent)
 	{
-		this.ptr = CQt.QGraphicsGridLayout_new2(parent);
+		this.ptr = CQt.QGraphicsGridLayout_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsGridLayout_Delete(this.ptr);
 	}
-	public void AddItem(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, c_int rowSpan, c_int columnSpan)
+	public void AddItem(IQGraphicsLayoutItem item, c_int row, c_int column, c_int rowSpan, c_int columnSpan)
 	{
-		CQt.QGraphicsGridLayout_AddItem((.)this.ptr, item, row, column, rowSpan, columnSpan);
+		CQt.QGraphicsGridLayout_AddItem((.)this.ptr, (.)item?.ObjectPtr, row, column, rowSpan, columnSpan);
 	}
-	public void AddItem2(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column)
+	public void AddItem2(IQGraphicsLayoutItem item, c_int row, c_int column)
 	{
-		CQt.QGraphicsGridLayout_AddItem2((.)this.ptr, item, row, column);
+		CQt.QGraphicsGridLayout_AddItem2((.)this.ptr, (.)item?.ObjectPtr, row, column);
 	}
 	public void SetHorizontalSpacing(double spacing)
 	{
@@ -260,13 +261,13 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsGridLayout_ColumnAlignment((.)this.ptr, column);
 	}
-	public void SetAlignment(QGraphicsLayoutItem_Ptr* item, void* alignment)
+	public void SetAlignment(IQGraphicsLayoutItem item, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_SetAlignment((.)this.ptr, item, alignment);
+		CQt.QGraphicsGridLayout_SetAlignment((.)this.ptr, (.)item?.ObjectPtr, alignment);
 	}
-	public void* Alignment(QGraphicsLayoutItem_Ptr* item)
+	public void* Alignment(IQGraphicsLayoutItem item)
 	{
-		return CQt.QGraphicsGridLayout_Alignment((.)this.ptr, item);
+		return CQt.QGraphicsGridLayout_Alignment((.)this.ptr, (.)item?.ObjectPtr);
 	}
 	public c_int RowCount()
 	{
@@ -276,7 +277,7 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsGridLayout_ColumnCount((.)this.ptr);
 	}
-	public QGraphicsLayoutItem_Ptr* ItemAt(c_int row, c_int column)
+	public QGraphicsLayoutItem_Ptr** ItemAt(c_int row, c_int column)
 	{
 		return CQt.QGraphicsGridLayout_ItemAt((.)this.ptr, row, column);
 	}
@@ -284,7 +285,7 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsGridLayout_Count((.)this.ptr);
 	}
-	public QGraphicsLayoutItem_Ptr* ItemAt2(c_int index)
+	public QGraphicsLayoutItem_Ptr** ItemAt2(c_int index)
 	{
 		return CQt.QGraphicsGridLayout_ItemAt2((.)this.ptr, index);
 	}
@@ -292,29 +293,29 @@ class QGraphicsGridLayout
 	{
 		CQt.QGraphicsGridLayout_RemoveAt((.)this.ptr, index);
 	}
-	public void RemoveItem(QGraphicsLayoutItem_Ptr* item)
+	public void RemoveItem(IQGraphicsLayoutItem item)
 	{
-		CQt.QGraphicsGridLayout_RemoveItem((.)this.ptr, item);
+		CQt.QGraphicsGridLayout_RemoveItem((.)this.ptr, (.)item?.ObjectPtr);
 	}
 	public void Invalidate()
 	{
 		CQt.QGraphicsGridLayout_Invalidate((.)this.ptr);
 	}
-	public void SetGeometry(QRectF_Ptr* rect)
+	public void SetGeometry(IQRectF rect)
 	{
-		CQt.QGraphicsGridLayout_SetGeometry((.)this.ptr, rect);
+		CQt.QGraphicsGridLayout_SetGeometry((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QSizeF_Ptr SizeHint(Qt_SizeHint which, QSizeF_Ptr* constraint)
+	public QSizeF_Ptr* SizeHint(Qt_SizeHint which, IQSizeF constraint)
 	{
-		return CQt.QGraphicsGridLayout_SizeHint((.)this.ptr, which, constraint);
+		return CQt.QGraphicsGridLayout_SizeHint((.)this.ptr, which, (.)constraint?.ObjectPtr);
 	}
-	public void AddItem6(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, c_int rowSpan, c_int columnSpan, void* alignment)
+	public void AddItem6(IQGraphicsLayoutItem item, c_int row, c_int column, c_int rowSpan, c_int columnSpan, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_AddItem6((.)this.ptr, item, row, column, rowSpan, columnSpan, alignment);
+		CQt.QGraphicsGridLayout_AddItem6((.)this.ptr, (.)item?.ObjectPtr, row, column, rowSpan, columnSpan, alignment);
 	}
-	public void AddItem4(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, void* alignment)
+	public void AddItem4(IQGraphicsLayoutItem item, c_int row, c_int column, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_AddItem4((.)this.ptr, item, row, column, alignment);
+		CQt.QGraphicsGridLayout_AddItem4((.)this.ptr, (.)item?.ObjectPtr, row, column, alignment);
 	}
 	public void SetContentsMargins(double left, double top, double right, double bottom)
 	{
@@ -336,9 +337,9 @@ class QGraphicsGridLayout
 	{
 		CQt.QGraphicsLayout_UpdateGeometry((.)this.ptr);
 	}
-	public void WidgetEvent(QEvent_Ptr* e)
+	public void WidgetEvent(IQEvent e)
 	{
-		CQt.QGraphicsLayout_WidgetEvent((.)this.ptr, e);
+		CQt.QGraphicsLayout_WidgetEvent((.)this.ptr, (.)e?.ObjectPtr);
 	}
 	public void SetInstantInvalidatePropagation(bool enable)
 	{
@@ -348,31 +349,31 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsLayout_InstantInvalidatePropagation();
 	}
-	public void AddChildLayoutItem(QGraphicsLayoutItem_Ptr* layoutItem)
+	public void AddChildLayoutItem(IQGraphicsLayoutItem layoutItem)
 	{
-		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.ptr, layoutItem);
+		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.ptr, (.)layoutItem?.ObjectPtr);
 	}
-	public void SetSizePolicy(QSizePolicy_Ptr* policy)
+	public void SetSizePolicy(IQSizePolicy policy)
 	{
-		CQt.QGraphicsLayoutItem_SetSizePolicy((.)this.ptr, policy);
+		CQt.QGraphicsLayoutItem_SetSizePolicy((.)this.ptr, (.)policy?.ObjectPtr);
 	}
 	public void SetSizePolicy2(QSizePolicy_Policy hPolicy, QSizePolicy_Policy vPolicy)
 	{
 		CQt.QGraphicsLayoutItem_SetSizePolicy2((.)this.ptr, hPolicy, vPolicy);
 	}
-	public QSizePolicy_Ptr SizePolicy()
+	public QSizePolicy_Ptr* SizePolicy()
 	{
 		return CQt.QGraphicsLayoutItem_SizePolicy((.)this.ptr);
 	}
-	public void SetMinimumSize(QSizeF_Ptr* size)
+	public void SetMinimumSize(IQSizeF size)
 	{
-		CQt.QGraphicsLayoutItem_SetMinimumSize((.)this.ptr, size);
+		CQt.QGraphicsLayoutItem_SetMinimumSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public void SetMinimumSize2(double w, double h)
 	{
 		CQt.QGraphicsLayoutItem_SetMinimumSize2((.)this.ptr, w, h);
 	}
-	public QSizeF_Ptr MinimumSize()
+	public QSizeF_Ptr* MinimumSize()
 	{
 		return CQt.QGraphicsLayoutItem_MinimumSize((.)this.ptr);
 	}
@@ -392,15 +393,15 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsLayoutItem_MinimumHeight((.)this.ptr);
 	}
-	public void SetPreferredSize(QSizeF_Ptr* size)
+	public void SetPreferredSize(IQSizeF size)
 	{
-		CQt.QGraphicsLayoutItem_SetPreferredSize((.)this.ptr, size);
+		CQt.QGraphicsLayoutItem_SetPreferredSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public void SetPreferredSize2(double w, double h)
 	{
 		CQt.QGraphicsLayoutItem_SetPreferredSize2((.)this.ptr, w, h);
 	}
-	public QSizeF_Ptr PreferredSize()
+	public QSizeF_Ptr* PreferredSize()
 	{
 		return CQt.QGraphicsLayoutItem_PreferredSize((.)this.ptr);
 	}
@@ -420,15 +421,15 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsLayoutItem_PreferredHeight((.)this.ptr);
 	}
-	public void SetMaximumSize(QSizeF_Ptr* size)
+	public void SetMaximumSize(IQSizeF size)
 	{
-		CQt.QGraphicsLayoutItem_SetMaximumSize((.)this.ptr, size);
+		CQt.QGraphicsLayoutItem_SetMaximumSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public void SetMaximumSize2(double w, double h)
 	{
 		CQt.QGraphicsLayoutItem_SetMaximumSize2((.)this.ptr, w, h);
 	}
-	public QSizeF_Ptr MaximumSize()
+	public QSizeF_Ptr* MaximumSize()
 	{
 		return CQt.QGraphicsLayoutItem_MaximumSize((.)this.ptr);
 	}
@@ -448,15 +449,15 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsLayoutItem_MaximumHeight((.)this.ptr);
 	}
-	public QRectF_Ptr Geometry()
+	public QRectF_Ptr* Geometry()
 	{
 		return CQt.QGraphicsLayoutItem_Geometry((.)this.ptr);
 	}
-	public QRectF_Ptr ContentsRect()
+	public QRectF_Ptr* ContentsRect()
 	{
 		return CQt.QGraphicsLayoutItem_ContentsRect((.)this.ptr);
 	}
-	public QSizeF_Ptr EffectiveSizeHint(Qt_SizeHint which)
+	public QSizeF_Ptr* EffectiveSizeHint(Qt_SizeHint which)
 	{
 		return CQt.QGraphicsLayoutItem_EffectiveSizeHint((.)this.ptr, which);
 	}
@@ -464,19 +465,19 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsLayoutItem_IsEmpty((.)this.ptr);
 	}
-	public QGraphicsLayoutItem_Ptr* ParentLayoutItem()
+	public QGraphicsLayoutItem_Ptr** ParentLayoutItem()
 	{
 		return CQt.QGraphicsLayoutItem_ParentLayoutItem((.)this.ptr);
 	}
-	public void SetParentLayoutItem(QGraphicsLayoutItem_Ptr* parent)
+	public void SetParentLayoutItem(IQGraphicsLayoutItem parent)
 	{
-		CQt.QGraphicsLayoutItem_SetParentLayoutItem((.)this.ptr, parent);
+		CQt.QGraphicsLayoutItem_SetParentLayoutItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public bool IsLayout()
 	{
 		return CQt.QGraphicsLayoutItem_IsLayout((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* GraphicsItem()
+	public QGraphicsItem_Ptr** GraphicsItem()
 	{
 		return CQt.QGraphicsLayoutItem_GraphicsItem((.)this.ptr);
 	}
@@ -484,9 +485,9 @@ class QGraphicsGridLayout
 	{
 		return CQt.QGraphicsLayoutItem_OwnedByLayout((.)this.ptr);
 	}
-	public void SetGraphicsItem(QGraphicsItem_Ptr* item)
+	public void SetGraphicsItem(IQGraphicsItem item)
 	{
-		CQt.QGraphicsLayoutItem_SetGraphicsItem((.)this.ptr, item);
+		CQt.QGraphicsLayoutItem_SetGraphicsItem((.)this.ptr, (.)item?.ObjectPtr);
 	}
 	public void SetOwnedByLayout(bool ownedByLayout)
 	{
@@ -496,58 +497,11 @@ class QGraphicsGridLayout
 	{
 		CQt.QGraphicsLayoutItem_SetSizePolicy3((.)this.ptr, hPolicy, vPolicy, controlType);
 	}
-	public QSizeF_Ptr EffectiveSizeHint2(Qt_SizeHint which, QSizeF_Ptr* constraint)
+	public QSizeF_Ptr* EffectiveSizeHint2(Qt_SizeHint which, IQSizeF constraint)
 	{
-		return CQt.QGraphicsLayoutItem_EffectiveSizeHint2((.)this.ptr, which, constraint);
+		return CQt.QGraphicsLayoutItem_EffectiveSizeHint2((.)this.ptr, which, (.)constraint?.ObjectPtr);
 	}
 }
-interface IQGraphicsGridLayout
+interface IQGraphicsGridLayout : IQtObjectInterface
 {
-	public void AddItem();
-	public void AddItem2();
-	public void SetHorizontalSpacing();
-	public double HorizontalSpacing();
-	public void SetVerticalSpacing();
-	public double VerticalSpacing();
-	public void SetSpacing();
-	public void SetRowSpacing();
-	public double RowSpacing();
-	public void SetColumnSpacing();
-	public double ColumnSpacing();
-	public void SetRowStretchFactor();
-	public c_int RowStretchFactor();
-	public void SetColumnStretchFactor();
-	public c_int ColumnStretchFactor();
-	public void SetRowMinimumHeight();
-	public double RowMinimumHeight();
-	public void SetRowPreferredHeight();
-	public double RowPreferredHeight();
-	public void SetRowMaximumHeight();
-	public double RowMaximumHeight();
-	public void SetRowFixedHeight();
-	public void SetColumnMinimumWidth();
-	public double ColumnMinimumWidth();
-	public void SetColumnPreferredWidth();
-	public double ColumnPreferredWidth();
-	public void SetColumnMaximumWidth();
-	public double ColumnMaximumWidth();
-	public void SetColumnFixedWidth();
-	public void SetRowAlignment();
-	public void* RowAlignment();
-	public void SetColumnAlignment();
-	public void* ColumnAlignment();
-	public void SetAlignment();
-	public void* Alignment();
-	public c_int RowCount();
-	public c_int ColumnCount();
-	public QGraphicsLayoutItem* ItemAt();
-	public c_int Count();
-	public QGraphicsLayoutItem* ItemAt2();
-	public void RemoveAt();
-	public void RemoveItem();
-	public void Invalidate();
-	public void SetGeometry();
-	public QSizeF SizeHint();
-	public void AddItem6();
-	public void AddItem4();
 }

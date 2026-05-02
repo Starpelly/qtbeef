@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QTextDocumentFragment_new")]
 	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new();
 	[LinkName("QTextDocumentFragment_new2")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new2(QTextDocument_Ptr* document);
+	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new2(QTextDocument_Ptr** document);
 	[LinkName("QTextDocumentFragment_new3")]
 	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new3(QTextCursor_Ptr* range);
 	[LinkName("QTextDocumentFragment_new4")]
@@ -35,36 +35,37 @@ extension CQt
 	[LinkName("QTextDocumentFragment_ToMarkdown")]
 	public static extern libqt_string QTextDocumentFragment_ToMarkdown(QTextDocumentFragment_Ptr* self);
 	[LinkName("QTextDocumentFragment_FromPlainText")]
-	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_FromPlainText(libqt_string* plainText);
+	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromPlainText(libqt_string plainText);
 	[LinkName("QTextDocumentFragment_FromHtml")]
-	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_FromHtml(libqt_string* html);
+	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromHtml(libqt_string html);
 	[LinkName("QTextDocumentFragment_FromMarkdown")]
-	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_FromMarkdown(libqt_string* markdown);
+	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromMarkdown(libqt_string markdown);
 	[LinkName("QTextDocumentFragment_ToMarkdown1")]
 	public static extern libqt_string QTextDocumentFragment_ToMarkdown1(QTextDocumentFragment_Ptr* self, void* features);
 	[LinkName("QTextDocumentFragment_FromHtml2")]
-	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_FromHtml2(libqt_string* html, QTextDocument_Ptr* resourceProvider);
+	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromHtml2(libqt_string html, QTextDocument_Ptr** resourceProvider);
 	[LinkName("QTextDocumentFragment_FromMarkdown2")]
-	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_FromMarkdown2(libqt_string* markdown, void* features);
+	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromMarkdown2(libqt_string markdown, void* features);
 }
-class QTextDocumentFragment
+class QTextDocumentFragment : IQTextDocumentFragment
 {
 	private QTextDocumentFragment_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTextDocumentFragment_new();
 	}
-	public this(QTextDocument_Ptr* document)
+	public this(IQTextDocument document)
 	{
-		this.ptr = CQt.QTextDocumentFragment_new2(document);
+		this.ptr = CQt.QTextDocumentFragment_new2((.)document?.ObjectPtr);
 	}
-	public this(QTextCursor_Ptr* range)
+	public this(IQTextCursor range)
 	{
-		this.ptr = CQt.QTextDocumentFragment_new3(range);
+		this.ptr = CQt.QTextDocumentFragment_new3((.)range?.ObjectPtr);
 	}
-	public this(QTextDocumentFragment_Ptr* rhs)
+	public this(IQTextDocumentFragment rhs)
 	{
-		this.ptr = CQt.QTextDocumentFragment_new4(rhs);
+		this.ptr = CQt.QTextDocumentFragment_new4((.)rhs?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -90,42 +91,31 @@ class QTextDocumentFragment
 	{
 		return CQt.QTextDocumentFragment_ToMarkdown((.)this.ptr);
 	}
-	public QTextDocumentFragment_Ptr FromPlainText(libqt_string* plainText)
+	public QTextDocumentFragment_Ptr* FromPlainText(String plainText)
 	{
-		return CQt.QTextDocumentFragment_FromPlainText(plainText);
+		return CQt.QTextDocumentFragment_FromPlainText(libqt_string(plainText));
 	}
-	public QTextDocumentFragment_Ptr FromHtml(libqt_string* html)
+	public QTextDocumentFragment_Ptr* FromHtml(String html)
 	{
-		return CQt.QTextDocumentFragment_FromHtml(html);
+		return CQt.QTextDocumentFragment_FromHtml(libqt_string(html));
 	}
-	public QTextDocumentFragment_Ptr FromMarkdown(libqt_string* markdown)
+	public QTextDocumentFragment_Ptr* FromMarkdown(String markdown)
 	{
-		return CQt.QTextDocumentFragment_FromMarkdown(markdown);
+		return CQt.QTextDocumentFragment_FromMarkdown(libqt_string(markdown));
 	}
 	public libqt_string ToMarkdown1(void* features)
 	{
 		return CQt.QTextDocumentFragment_ToMarkdown1((.)this.ptr, features);
 	}
-	public QTextDocumentFragment_Ptr FromHtml2(libqt_string* html, QTextDocument_Ptr* resourceProvider)
+	public QTextDocumentFragment_Ptr* FromHtml2(String html, IQTextDocument resourceProvider)
 	{
-		return CQt.QTextDocumentFragment_FromHtml2(html, resourceProvider);
+		return CQt.QTextDocumentFragment_FromHtml2(libqt_string(html), (.)resourceProvider?.ObjectPtr);
 	}
-	public QTextDocumentFragment_Ptr FromMarkdown2(libqt_string* markdown, void* features)
+	public QTextDocumentFragment_Ptr* FromMarkdown2(String markdown, void* features)
 	{
-		return CQt.QTextDocumentFragment_FromMarkdown2(markdown, features);
+		return CQt.QTextDocumentFragment_FromMarkdown2(libqt_string(markdown), features);
 	}
 }
-interface IQTextDocumentFragment
+interface IQTextDocumentFragment : IQtObjectInterface
 {
-	public bool IsEmpty();
-	public libqt_string ToPlainText();
-	public libqt_string ToRawText();
-	public libqt_string ToHtml();
-	public libqt_string ToMarkdown();
-	public QTextDocumentFragment FromPlainText();
-	public QTextDocumentFragment FromHtml();
-	public QTextDocumentFragment FromMarkdown();
-	public libqt_string ToMarkdown1();
-	public QTextDocumentFragment FromHtml2();
-	public QTextDocumentFragment FromMarkdown2();
 }

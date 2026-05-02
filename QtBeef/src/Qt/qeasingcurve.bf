@@ -57,16 +57,17 @@ extension CQt
 	[LinkName("QEasingCurve_ValueForProgress")]
 	public static extern double QEasingCurve_ValueForProgress(QEasingCurve_Ptr* self, double progress);
 }
-class QEasingCurve
+class QEasingCurve : IQEasingCurve
 {
 	private QEasingCurve_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QEasingCurve_new();
 	}
-	public this(QEasingCurve_Ptr* other)
+	public this(IQEasingCurve other)
 	{
-		this.ptr = CQt.QEasingCurve_new2(other);
+		this.ptr = CQt.QEasingCurve_new2((.)other?.ObjectPtr);
 	}
 	public this(QEasingCurve_Type type)
 	{
@@ -76,9 +77,9 @@ class QEasingCurve
 	{
 		CQt.QEasingCurve_Delete(this.ptr);
 	}
-	public void Swap(QEasingCurve_Ptr* other)
+	public void Swap(IQEasingCurve other)
 	{
-		CQt.QEasingCurve_Swap((.)this.ptr, other);
+		CQt.QEasingCurve_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public double Amplitude()
 	{
@@ -104,13 +105,13 @@ class QEasingCurve
 	{
 		CQt.QEasingCurve_SetOvershoot((.)this.ptr, overshoot);
 	}
-	public void AddCubicBezierSegment(QPointF_Ptr* c1, QPointF_Ptr* c2, QPointF_Ptr* endPoint)
+	public void AddCubicBezierSegment(IQPointF c1, IQPointF c2, IQPointF endPoint)
 	{
-		CQt.QEasingCurve_AddCubicBezierSegment((.)this.ptr, c1, c2, endPoint);
+		CQt.QEasingCurve_AddCubicBezierSegment((.)this.ptr, (.)c1?.ObjectPtr, (.)c2?.ObjectPtr, (.)endPoint?.ObjectPtr);
 	}
-	public void AddTCBSegment(QPointF_Ptr* nextPoint, double t, double c, double b)
+	public void AddTCBSegment(IQPointF nextPoint, double t, double c, double b)
 	{
-		CQt.QEasingCurve_AddTCBSegment((.)this.ptr, nextPoint, t, c, b);
+		CQt.QEasingCurve_AddTCBSegment((.)this.ptr, (.)nextPoint?.ObjectPtr, t, c, b);
 	}
 	public void* ToCubicSpline()
 	{
@@ -137,23 +138,8 @@ class QEasingCurve
 		return CQt.QEasingCurve_ValueForProgress((.)this.ptr, progress);
 	}
 }
-interface IQEasingCurve
+interface IQEasingCurve : IQtObjectInterface
 {
-	public void Swap();
-	public double Amplitude();
-	public void SetAmplitude();
-	public double Period();
-	public void SetPeriod();
-	public double Overshoot();
-	public void SetOvershoot();
-	public void AddCubicBezierSegment();
-	public void AddTCBSegment();
-	public void* ToCubicSpline();
-	public QEasingCurve_Type Type();
-	public void SetType();
-	public void SetCustomType();
-	public c_intptr CustomType();
-	public double ValueForProgress();
 }
 [AllowDuplicates]
 enum QEasingCurve_Type

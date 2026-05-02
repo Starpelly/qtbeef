@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QTemporaryDir_new")]
 	public static extern QTemporaryDir_Ptr* QTemporaryDir_new();
 	[LinkName("QTemporaryDir_new2")]
-	public static extern QTemporaryDir_Ptr* QTemporaryDir_new2(libqt_string* templateName);
+	public static extern QTemporaryDir_Ptr* QTemporaryDir_new2(libqt_string templateName);
 	[LinkName("QTemporaryDir_Delete")]
 	public static extern void QTemporaryDir_Delete(QTemporaryDir_Ptr* self);
 	[LinkName("QTemporaryDir_Swap")]
@@ -33,26 +33,27 @@ extension CQt
 	[LinkName("QTemporaryDir_Path")]
 	public static extern libqt_string QTemporaryDir_Path(QTemporaryDir_Ptr* self);
 	[LinkName("QTemporaryDir_FilePath")]
-	public static extern libqt_string QTemporaryDir_FilePath(QTemporaryDir_Ptr* self, libqt_string* fileName);
+	public static extern libqt_string QTemporaryDir_FilePath(QTemporaryDir_Ptr* self, libqt_string fileName);
 }
-class QTemporaryDir
+class QTemporaryDir : IQTemporaryDir
 {
 	private QTemporaryDir_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTemporaryDir_new();
 	}
-	public this(libqt_string* templateName)
+	public this(String templateName)
 	{
-		this.ptr = CQt.QTemporaryDir_new2(templateName);
+		this.ptr = CQt.QTemporaryDir_new2(libqt_string(templateName));
 	}
 	public ~this()
 	{
 		CQt.QTemporaryDir_Delete(this.ptr);
 	}
-	public void Swap(QTemporaryDir_Ptr* other)
+	public void Swap(IQTemporaryDir other)
 	{
-		CQt.QTemporaryDir_Swap((.)this.ptr, other);
+		CQt.QTemporaryDir_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
@@ -78,19 +79,11 @@ class QTemporaryDir
 	{
 		return CQt.QTemporaryDir_Path((.)this.ptr);
 	}
-	public libqt_string FilePath(libqt_string* fileName)
+	public libqt_string FilePath(String fileName)
 	{
-		return CQt.QTemporaryDir_FilePath((.)this.ptr, fileName);
+		return CQt.QTemporaryDir_FilePath((.)this.ptr, libqt_string(fileName));
 	}
 }
-interface IQTemporaryDir
+interface IQTemporaryDir : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsValid();
-	public libqt_string ErrorString();
-	public bool AutoRemove();
-	public void SetAutoRemove();
-	public bool Remove();
-	public libqt_string Path();
-	public libqt_string FilePath();
 }

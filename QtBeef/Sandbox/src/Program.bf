@@ -7,15 +7,38 @@ class Program
 {
 	class TestWindow : QMainWindow
 	{
+		QMenuBar m_menubar ~ delete _;
 		QPushButton button ~ delete _;
 
-		public this(QWidget_Ptr* parent) : base(parent)
+		public this(IQWidget parent) : base(parent)
 		{
 			Resize(1280, 720);
 
-			button = new QPushButton((QWidget_Ptr*)this.[Friend]ptr);
-			let str = libqt_string("Hello!");
-			button.SetText(&str);
+			// Menubar
+			{
+				m_menubar = new QMenuBar(this);
+
+				{
+				}
+
+				m_menubar.AddMenu2("Edit");
+				m_menubar.AddMenu2("View");
+				m_menubar.AddMenu2("Build");
+				m_menubar.AddMenu2("Debug");
+				m_menubar.AddMenu2("Test");
+				m_menubar.AddMenu2("Window");
+
+				// Help
+				{
+					// QMenuPtr(m_menubar.AddMenuWithTitle("Help"));
+				}
+
+				SetMenuBar(m_menubar);
+			}
+
+			button = new QPushButton(this);
+			button.SetText("Hello");
+			button.Move(32, 32);
 		}
 	}
 
@@ -25,24 +48,6 @@ class Program
 		char8** argv = scope .();
 
 		CQt.QApplication_new(&argc, argv);
-
-		/*
-		CQt.QMainWindow_new(null);
-
-		var str = libqt_string("Hello world!");
-		var str2 = libqt_string("bruh moment");
-
-		// QPushButton_new5("Hello world!", widget);
-		// let btn = CQt.QPushButton_new5(&str, null);
-
-		let btn = scope QPushButton(&str);
-		btn.SetText(&str2);
-		btn.Show();
-
-		// CQt.QWidget_Show((Qt6.QWidget_Ptr*)btn);
-
-		// CQt.QWidget_Resize((Qt6.QWidget_Ptr*)btn, 1280, 720);
-		*/
 
 		let mainwindow = scope TestWindow(null);
 		mainwindow.Show();

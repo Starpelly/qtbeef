@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QVariant_new")]
 	public static extern QVariant_Ptr* QVariant_new();
 	[LinkName("QVariant_new2")]
-	public static extern QVariant_Ptr* QVariant_new2(QMetaType_Ptr type);
+	public static extern QVariant_Ptr* QVariant_new2(QMetaType_Ptr* type);
 	[LinkName("QVariant_new3")]
 	public static extern QVariant_Ptr* QVariant_new3(QVariant_Ptr* other);
 	[LinkName("QVariant_new4")]
@@ -39,15 +39,15 @@ extension CQt
 	[LinkName("QVariant_new13")]
 	public static extern QVariant_Ptr* QVariant_new13(QBitArray_Ptr* bitarray);
 	[LinkName("QVariant_new14")]
-	public static extern QVariant_Ptr* QVariant_new14(libqt_string* stringVal);
+	public static extern QVariant_Ptr* QVariant_new14(libqt_string stringVal);
 	[LinkName("QVariant_new15")]
 	public static extern QVariant_Ptr* QVariant_new15(void** stringlist);
 	[LinkName("QVariant_new16")]
-	public static extern QVariant_Ptr* QVariant_new16(QChar_Ptr qchar);
+	public static extern QVariant_Ptr* QVariant_new16(QChar_Ptr* qchar);
 	[LinkName("QVariant_new17")]
-	public static extern QVariant_Ptr* QVariant_new17(QDate_Ptr date);
+	public static extern QVariant_Ptr* QVariant_new17(QDate_Ptr* date);
 	[LinkName("QVariant_new18")]
-	public static extern QVariant_Ptr* QVariant_new18(QTime_Ptr time);
+	public static extern QVariant_Ptr* QVariant_new18(QTime_Ptr* time);
 	[LinkName("QVariant_new19")]
 	public static extern QVariant_Ptr* QVariant_new19(QDateTime_Ptr* datetime);
 	[LinkName("QVariant_new20")]
@@ -97,7 +97,7 @@ extension CQt
 	[LinkName("QVariant_new42")]
 	public static extern QVariant_Ptr* QVariant_new42(QVariant_Type type);
 	[LinkName("QVariant_new43")]
-	public static extern QVariant_Ptr* QVariant_new43(QMetaType_Ptr type, void* copyVal);
+	public static extern QVariant_Ptr* QVariant_new43(QMetaType_Ptr* type, void* copyVal);
 	[LinkName("QVariant_Delete")]
 	public static extern void QVariant_Delete(QVariant_Ptr* self);
 	[LinkName("QVariant_OperatorAssign")]
@@ -111,13 +111,13 @@ extension CQt
 	[LinkName("QVariant_TypeName")]
 	public static extern c_char* QVariant_TypeName(QVariant_Ptr* self);
 	[LinkName("QVariant_MetaType")]
-	public static extern QMetaType_Ptr QVariant_MetaType(QVariant_Ptr* self);
+	public static extern QMetaType_Ptr* QVariant_MetaType(QVariant_Ptr* self);
 	[LinkName("QVariant_CanConvert")]
-	public static extern bool QVariant_CanConvert(QVariant_Ptr* self, QMetaType_Ptr targetType);
+	public static extern bool QVariant_CanConvert(QVariant_Ptr* self, QMetaType_Ptr* targetType);
 	[LinkName("QVariant_Convert")]
-	public static extern bool QVariant_Convert(QVariant_Ptr* self, QMetaType_Ptr type);
+	public static extern bool QVariant_Convert(QVariant_Ptr* self, QMetaType_Ptr* type);
 	[LinkName("QVariant_CanView")]
-	public static extern bool QVariant_CanView(QVariant_Ptr* self, QMetaType_Ptr targetType);
+	public static extern bool QVariant_CanView(QVariant_Ptr* self, QMetaType_Ptr* targetType);
 	[LinkName("QVariant_CanConvert2")]
 	public static extern bool QVariant_CanConvert2(QVariant_Ptr* self, c_int targetTypeId);
 	[LinkName("QVariant_Convert2")]
@@ -151,19 +151,19 @@ extension CQt
 	[LinkName("QVariant_ToByteArray")]
 	public static extern void* QVariant_ToByteArray(QVariant_Ptr* self);
 	[LinkName("QVariant_ToBitArray")]
-	public static extern QBitArray_Ptr QVariant_ToBitArray(QVariant_Ptr* self);
+	public static extern QBitArray_Ptr* QVariant_ToBitArray(QVariant_Ptr* self);
 	[LinkName("QVariant_ToString")]
 	public static extern libqt_string QVariant_ToString(QVariant_Ptr* self);
 	[LinkName("QVariant_ToStringList")]
 	public static extern void* QVariant_ToStringList(QVariant_Ptr* self);
 	[LinkName("QVariant_ToChar")]
-	public static extern QChar_Ptr QVariant_ToChar(QVariant_Ptr* self);
+	public static extern QChar_Ptr* QVariant_ToChar(QVariant_Ptr* self);
 	[LinkName("QVariant_ToDate")]
-	public static extern QDate_Ptr QVariant_ToDate(QVariant_Ptr* self);
+	public static extern QDate_Ptr* QVariant_ToDate(QVariant_Ptr* self);
 	[LinkName("QVariant_ToTime")]
-	public static extern QTime_Ptr QVariant_ToTime(QVariant_Ptr* self);
+	public static extern QTime_Ptr* QVariant_ToTime(QVariant_Ptr* self);
 	[LinkName("QVariant_ToDateTime")]
-	public static extern QDateTime_Ptr QVariant_ToDateTime(QVariant_Ptr* self);
+	public static extern QDateTime_Ptr* QVariant_ToDateTime(QVariant_Ptr* self);
 	[LinkName("QVariant_ToList")]
 	public static extern void* QVariant_ToList(QVariant_Ptr* self);
 	[LinkName("QVariant_ToMap")]
@@ -171,43 +171,43 @@ extension CQt
 	[LinkName("QVariant_ToHash")]
 	public static extern void* QVariant_ToHash(QVariant_Ptr* self);
 	[LinkName("QVariant_ToPoint")]
-	public static extern QPoint_Ptr QVariant_ToPoint(QVariant_Ptr* self);
+	public static extern QPoint_Ptr* QVariant_ToPoint(QVariant_Ptr* self);
 	[LinkName("QVariant_ToPointF")]
-	public static extern QPointF_Ptr QVariant_ToPointF(QVariant_Ptr* self);
+	public static extern QPointF_Ptr* QVariant_ToPointF(QVariant_Ptr* self);
 	[LinkName("QVariant_ToRect")]
-	public static extern QRect_Ptr QVariant_ToRect(QVariant_Ptr* self);
+	public static extern QRect_Ptr* QVariant_ToRect(QVariant_Ptr* self);
 	[LinkName("QVariant_ToSize")]
-	public static extern QSize_Ptr QVariant_ToSize(QVariant_Ptr* self);
+	public static extern QSize_Ptr* QVariant_ToSize(QVariant_Ptr* self);
 	[LinkName("QVariant_ToSizeF")]
-	public static extern QSizeF_Ptr QVariant_ToSizeF(QVariant_Ptr* self);
+	public static extern QSizeF_Ptr* QVariant_ToSizeF(QVariant_Ptr* self);
 	[LinkName("QVariant_ToLine")]
-	public static extern QLine_Ptr QVariant_ToLine(QVariant_Ptr* self);
+	public static extern QLine_Ptr* QVariant_ToLine(QVariant_Ptr* self);
 	[LinkName("QVariant_ToLineF")]
-	public static extern QLineF_Ptr QVariant_ToLineF(QVariant_Ptr* self);
+	public static extern QLineF_Ptr* QVariant_ToLineF(QVariant_Ptr* self);
 	[LinkName("QVariant_ToRectF")]
-	public static extern QRectF_Ptr QVariant_ToRectF(QVariant_Ptr* self);
+	public static extern QRectF_Ptr* QVariant_ToRectF(QVariant_Ptr* self);
 	[LinkName("QVariant_ToLocale")]
-	public static extern QLocale_Ptr QVariant_ToLocale(QVariant_Ptr* self);
+	public static extern QLocale_Ptr* QVariant_ToLocale(QVariant_Ptr* self);
 	[LinkName("QVariant_ToRegularExpression")]
-	public static extern QRegularExpression_Ptr QVariant_ToRegularExpression(QVariant_Ptr* self);
+	public static extern QRegularExpression_Ptr* QVariant_ToRegularExpression(QVariant_Ptr* self);
 	[LinkName("QVariant_ToEasingCurve")]
-	public static extern QEasingCurve_Ptr QVariant_ToEasingCurve(QVariant_Ptr* self);
+	public static extern QEasingCurve_Ptr* QVariant_ToEasingCurve(QVariant_Ptr* self);
 	[LinkName("QVariant_ToUuid")]
-	public static extern QUuid_Ptr QVariant_ToUuid(QVariant_Ptr* self);
+	public static extern QUuid_Ptr* QVariant_ToUuid(QVariant_Ptr* self);
 	[LinkName("QVariant_ToUrl")]
-	public static extern QUrl_Ptr QVariant_ToUrl(QVariant_Ptr* self);
+	public static extern QUrl_Ptr* QVariant_ToUrl(QVariant_Ptr* self);
 	[LinkName("QVariant_ToJsonValue")]
-	public static extern QJsonValue_Ptr QVariant_ToJsonValue(QVariant_Ptr* self);
+	public static extern QJsonValue_Ptr* QVariant_ToJsonValue(QVariant_Ptr* self);
 	[LinkName("QVariant_ToJsonObject")]
-	public static extern QJsonObject_Ptr QVariant_ToJsonObject(QVariant_Ptr* self);
+	public static extern QJsonObject_Ptr* QVariant_ToJsonObject(QVariant_Ptr* self);
 	[LinkName("QVariant_ToJsonArray")]
-	public static extern QJsonArray_Ptr QVariant_ToJsonArray(QVariant_Ptr* self);
+	public static extern QJsonArray_Ptr* QVariant_ToJsonArray(QVariant_Ptr* self);
 	[LinkName("QVariant_ToJsonDocument")]
-	public static extern QJsonDocument_Ptr QVariant_ToJsonDocument(QVariant_Ptr* self);
+	public static extern QJsonDocument_Ptr* QVariant_ToJsonDocument(QVariant_Ptr* self);
 	[LinkName("QVariant_ToModelIndex")]
-	public static extern QModelIndex_Ptr QVariant_ToModelIndex(QVariant_Ptr* self);
+	public static extern QModelIndex_Ptr* QVariant_ToModelIndex(QVariant_Ptr* self);
 	[LinkName("QVariant_ToPersistentModelIndex")]
-	public static extern QPersistentModelIndex_Ptr QVariant_ToPersistentModelIndex(QVariant_Ptr* self);
+	public static extern QPersistentModelIndex_Ptr* QVariant_ToPersistentModelIndex(QVariant_Ptr* self);
 	[LinkName("QVariant_Load")]
 	public static extern void QVariant_Load(QVariant_Ptr* self, QDataStream_Ptr* ds);
 	[LinkName("QVariant_Save")]
@@ -227,7 +227,7 @@ extension CQt
 	[LinkName("QVariant_SetValue")]
 	public static extern void QVariant_SetValue(QVariant_Ptr* self, QVariant_Ptr* avalue);
 	[LinkName("QVariant_Compare")]
-	public static extern QPartialOrdering_Ptr QVariant_Compare(QVariant_Ptr* lhs, QVariant_Ptr* rhs);
+	public static extern QPartialOrdering_Ptr* QVariant_Compare(QVariant_Ptr* lhs, QVariant_Ptr* rhs);
 	[LinkName("QVariant_ToInt1")]
 	public static extern c_int QVariant_ToInt1(QVariant_Ptr* self, bool* ok);
 	[LinkName("QVariant_ToUInt1")]
@@ -243,20 +243,21 @@ extension CQt
 	[LinkName("QVariant_ToReal1")]
 	public static extern double QVariant_ToReal1(QVariant_Ptr* self, bool* ok);
 }
-class QVariant
+class QVariant : IQVariant
 {
 	private QVariant_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QVariant_new();
 	}
-	public this(QMetaType_Ptr type)
+	public this(IQMetaType type)
 	{
-		this.ptr = CQt.QVariant_new2(type);
+		this.ptr = CQt.QVariant_new2((.)type?.ObjectPtr);
 	}
-	public this(QVariant_Ptr* other)
+	public this(IQVariant other)
 	{
-		this.ptr = CQt.QVariant_new3(other);
+		this.ptr = CQt.QVariant_new3((.)other?.ObjectPtr);
 	}
 	public this(c_int i)
 	{
@@ -294,121 +295,121 @@ class QVariant
 	{
 		this.ptr = CQt.QVariant_new12(bytearray);
 	}
-	public this(QBitArray_Ptr* bitarray)
+	public this(IQBitArray bitarray)
 	{
-		this.ptr = CQt.QVariant_new13(bitarray);
+		this.ptr = CQt.QVariant_new13((.)bitarray?.ObjectPtr);
 	}
-	public this(libqt_string* stringVal)
+	public this(String stringVal)
 	{
-		this.ptr = CQt.QVariant_new14(stringVal);
+		this.ptr = CQt.QVariant_new14(libqt_string(stringVal));
 	}
-	public this(QChar_Ptr qchar)
+	public this(IQChar qchar)
 	{
-		this.ptr = CQt.QVariant_new16(qchar);
+		this.ptr = CQt.QVariant_new16((.)qchar?.ObjectPtr);
 	}
-	public this(QDate_Ptr date)
+	public this(IQDate date)
 	{
-		this.ptr = CQt.QVariant_new17(date);
+		this.ptr = CQt.QVariant_new17((.)date?.ObjectPtr);
 	}
-	public this(QTime_Ptr time)
+	public this(IQTime time)
 	{
-		this.ptr = CQt.QVariant_new18(time);
+		this.ptr = CQt.QVariant_new18((.)time?.ObjectPtr);
 	}
-	public this(QDateTime_Ptr* datetime)
+	public this(IQDateTime datetime)
 	{
-		this.ptr = CQt.QVariant_new19(datetime);
+		this.ptr = CQt.QVariant_new19((.)datetime?.ObjectPtr);
 	}
-	public this(QSize_Ptr* size)
+	public this(IQSize size)
 	{
-		this.ptr = CQt.QVariant_new23(size);
+		this.ptr = CQt.QVariant_new23((.)size?.ObjectPtr);
 	}
-	public this(QSizeF_Ptr* size)
+	public this(IQSizeF size)
 	{
-		this.ptr = CQt.QVariant_new24(size);
+		this.ptr = CQt.QVariant_new24((.)size?.ObjectPtr);
 	}
-	public this(QPoint_Ptr* pt)
+	public this(IQPoint pt)
 	{
-		this.ptr = CQt.QVariant_new25(pt);
+		this.ptr = CQt.QVariant_new25((.)pt?.ObjectPtr);
 	}
-	public this(QPointF_Ptr* pt)
+	public this(IQPointF pt)
 	{
-		this.ptr = CQt.QVariant_new26(pt);
+		this.ptr = CQt.QVariant_new26((.)pt?.ObjectPtr);
 	}
-	public this(QLine_Ptr* line)
+	public this(IQLine line)
 	{
-		this.ptr = CQt.QVariant_new27(line);
+		this.ptr = CQt.QVariant_new27((.)line?.ObjectPtr);
 	}
-	public this(QLineF_Ptr* line)
+	public this(IQLineF line)
 	{
-		this.ptr = CQt.QVariant_new28(line);
+		this.ptr = CQt.QVariant_new28((.)line?.ObjectPtr);
 	}
-	public this(QRect_Ptr* rect)
+	public this(IQRect rect)
 	{
-		this.ptr = CQt.QVariant_new29(rect);
+		this.ptr = CQt.QVariant_new29((.)rect?.ObjectPtr);
 	}
-	public this(QRectF_Ptr* rect)
+	public this(IQRectF rect)
 	{
-		this.ptr = CQt.QVariant_new30(rect);
+		this.ptr = CQt.QVariant_new30((.)rect?.ObjectPtr);
 	}
-	public this(QLocale_Ptr* locale)
+	public this(IQLocale locale)
 	{
-		this.ptr = CQt.QVariant_new31(locale);
+		this.ptr = CQt.QVariant_new31((.)locale?.ObjectPtr);
 	}
-	public this(QRegularExpression_Ptr* re)
+	public this(IQRegularExpression re)
 	{
-		this.ptr = CQt.QVariant_new32(re);
+		this.ptr = CQt.QVariant_new32((.)re?.ObjectPtr);
 	}
-	public this(QEasingCurve_Ptr* easing)
+	public this(IQEasingCurve easing)
 	{
-		this.ptr = CQt.QVariant_new33(easing);
+		this.ptr = CQt.QVariant_new33((.)easing?.ObjectPtr);
 	}
-	public this(QUuid_Ptr* uuid)
+	public this(IQUuid uuid)
 	{
-		this.ptr = CQt.QVariant_new34(uuid);
+		this.ptr = CQt.QVariant_new34((.)uuid?.ObjectPtr);
 	}
-	public this(QUrl_Ptr* url)
+	public this(IQUrl url)
 	{
-		this.ptr = CQt.QVariant_new35(url);
+		this.ptr = CQt.QVariant_new35((.)url?.ObjectPtr);
 	}
-	public this(QJsonValue_Ptr* jsonValue)
+	public this(IQJsonValue jsonValue)
 	{
-		this.ptr = CQt.QVariant_new36(jsonValue);
+		this.ptr = CQt.QVariant_new36((.)jsonValue?.ObjectPtr);
 	}
-	public this(QJsonObject_Ptr* jsonObject)
+	public this(IQJsonObject jsonObject)
 	{
-		this.ptr = CQt.QVariant_new37(jsonObject);
+		this.ptr = CQt.QVariant_new37((.)jsonObject?.ObjectPtr);
 	}
-	public this(QJsonArray_Ptr* jsonArray)
+	public this(IQJsonArray jsonArray)
 	{
-		this.ptr = CQt.QVariant_new38(jsonArray);
+		this.ptr = CQt.QVariant_new38((.)jsonArray?.ObjectPtr);
 	}
-	public this(QJsonDocument_Ptr* jsonDocument)
+	public this(IQJsonDocument jsonDocument)
 	{
-		this.ptr = CQt.QVariant_new39(jsonDocument);
+		this.ptr = CQt.QVariant_new39((.)jsonDocument?.ObjectPtr);
 	}
-	public this(QModelIndex_Ptr* modelIndex)
+	public this(IQModelIndex modelIndex)
 	{
-		this.ptr = CQt.QVariant_new40(modelIndex);
+		this.ptr = CQt.QVariant_new40((.)modelIndex?.ObjectPtr);
 	}
-	public this(QPersistentModelIndex_Ptr* modelIndex)
+	public this(IQPersistentModelIndex modelIndex)
 	{
-		this.ptr = CQt.QVariant_new41(modelIndex);
+		this.ptr = CQt.QVariant_new41((.)modelIndex?.ObjectPtr);
 	}
 	public this(QVariant_Type type)
 	{
 		this.ptr = CQt.QVariant_new42(type);
 	}
-	public this(QMetaType_Ptr type, void* copyVal)
+	public this(IQMetaType type, void* copyVal)
 	{
-		this.ptr = CQt.QVariant_new43(type, copyVal);
+		this.ptr = CQt.QVariant_new43((.)type?.ObjectPtr, copyVal);
 	}
 	public ~this()
 	{
 		CQt.QVariant_Delete(this.ptr);
 	}
-	public void Swap(QVariant_Ptr* other)
+	public void Swap(IQVariant other)
 	{
-		CQt.QVariant_Swap((.)this.ptr, other);
+		CQt.QVariant_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public c_int UserType()
 	{
@@ -422,21 +423,21 @@ class QVariant
 	{
 		return CQt.QVariant_TypeName((.)this.ptr);
 	}
-	public QMetaType_Ptr MetaType()
+	public QMetaType_Ptr* MetaType()
 	{
 		return CQt.QVariant_MetaType((.)this.ptr);
 	}
-	public bool CanConvert(QMetaType_Ptr targetType)
+	public bool CanConvert(IQMetaType targetType)
 	{
-		return CQt.QVariant_CanConvert((.)this.ptr, targetType);
+		return CQt.QVariant_CanConvert((.)this.ptr, (.)targetType?.ObjectPtr);
 	}
-	public bool Convert(QMetaType_Ptr type)
+	public bool Convert(IQMetaType type)
 	{
-		return CQt.QVariant_Convert((.)this.ptr, type);
+		return CQt.QVariant_Convert((.)this.ptr, (.)type?.ObjectPtr);
 	}
-	public bool CanView(QMetaType_Ptr targetType)
+	public bool CanView(IQMetaType targetType)
 	{
-		return CQt.QVariant_CanView((.)this.ptr, targetType);
+		return CQt.QVariant_CanView((.)this.ptr, (.)targetType?.ObjectPtr);
 	}
 	public bool CanConvert2(c_int targetTypeId)
 	{
@@ -502,7 +503,7 @@ class QVariant
 	{
 		return CQt.QVariant_ToByteArray((.)this.ptr);
 	}
-	public QBitArray_Ptr ToBitArray()
+	public QBitArray_Ptr* ToBitArray()
 	{
 		return CQt.QVariant_ToBitArray((.)this.ptr);
 	}
@@ -514,19 +515,19 @@ class QVariant
 	{
 		return CQt.QVariant_ToStringList((.)this.ptr);
 	}
-	public QChar_Ptr ToChar()
+	public QChar_Ptr* ToChar()
 	{
 		return CQt.QVariant_ToChar((.)this.ptr);
 	}
-	public QDate_Ptr ToDate()
+	public QDate_Ptr* ToDate()
 	{
 		return CQt.QVariant_ToDate((.)this.ptr);
 	}
-	public QTime_Ptr ToTime()
+	public QTime_Ptr* ToTime()
 	{
 		return CQt.QVariant_ToTime((.)this.ptr);
 	}
-	public QDateTime_Ptr ToDateTime()
+	public QDateTime_Ptr* ToDateTime()
 	{
 		return CQt.QVariant_ToDateTime((.)this.ptr);
 	}
@@ -542,89 +543,89 @@ class QVariant
 	{
 		return CQt.QVariant_ToHash((.)this.ptr);
 	}
-	public QPoint_Ptr ToPoint()
+	public QPoint_Ptr* ToPoint()
 	{
 		return CQt.QVariant_ToPoint((.)this.ptr);
 	}
-	public QPointF_Ptr ToPointF()
+	public QPointF_Ptr* ToPointF()
 	{
 		return CQt.QVariant_ToPointF((.)this.ptr);
 	}
-	public QRect_Ptr ToRect()
+	public QRect_Ptr* ToRect()
 	{
 		return CQt.QVariant_ToRect((.)this.ptr);
 	}
-	public QSize_Ptr ToSize()
+	public QSize_Ptr* ToSize()
 	{
 		return CQt.QVariant_ToSize((.)this.ptr);
 	}
-	public QSizeF_Ptr ToSizeF()
+	public QSizeF_Ptr* ToSizeF()
 	{
 		return CQt.QVariant_ToSizeF((.)this.ptr);
 	}
-	public QLine_Ptr ToLine()
+	public QLine_Ptr* ToLine()
 	{
 		return CQt.QVariant_ToLine((.)this.ptr);
 	}
-	public QLineF_Ptr ToLineF()
+	public QLineF_Ptr* ToLineF()
 	{
 		return CQt.QVariant_ToLineF((.)this.ptr);
 	}
-	public QRectF_Ptr ToRectF()
+	public QRectF_Ptr* ToRectF()
 	{
 		return CQt.QVariant_ToRectF((.)this.ptr);
 	}
-	public QLocale_Ptr ToLocale()
+	public QLocale_Ptr* ToLocale()
 	{
 		return CQt.QVariant_ToLocale((.)this.ptr);
 	}
-	public QRegularExpression_Ptr ToRegularExpression()
+	public QRegularExpression_Ptr* ToRegularExpression()
 	{
 		return CQt.QVariant_ToRegularExpression((.)this.ptr);
 	}
-	public QEasingCurve_Ptr ToEasingCurve()
+	public QEasingCurve_Ptr* ToEasingCurve()
 	{
 		return CQt.QVariant_ToEasingCurve((.)this.ptr);
 	}
-	public QUuid_Ptr ToUuid()
+	public QUuid_Ptr* ToUuid()
 	{
 		return CQt.QVariant_ToUuid((.)this.ptr);
 	}
-	public QUrl_Ptr ToUrl()
+	public QUrl_Ptr* ToUrl()
 	{
 		return CQt.QVariant_ToUrl((.)this.ptr);
 	}
-	public QJsonValue_Ptr ToJsonValue()
+	public QJsonValue_Ptr* ToJsonValue()
 	{
 		return CQt.QVariant_ToJsonValue((.)this.ptr);
 	}
-	public QJsonObject_Ptr ToJsonObject()
+	public QJsonObject_Ptr* ToJsonObject()
 	{
 		return CQt.QVariant_ToJsonObject((.)this.ptr);
 	}
-	public QJsonArray_Ptr ToJsonArray()
+	public QJsonArray_Ptr* ToJsonArray()
 	{
 		return CQt.QVariant_ToJsonArray((.)this.ptr);
 	}
-	public QJsonDocument_Ptr ToJsonDocument()
+	public QJsonDocument_Ptr* ToJsonDocument()
 	{
 		return CQt.QVariant_ToJsonDocument((.)this.ptr);
 	}
-	public QModelIndex_Ptr ToModelIndex()
+	public QModelIndex_Ptr* ToModelIndex()
 	{
 		return CQt.QVariant_ToModelIndex((.)this.ptr);
 	}
-	public QPersistentModelIndex_Ptr ToPersistentModelIndex()
+	public QPersistentModelIndex_Ptr* ToPersistentModelIndex()
 	{
 		return CQt.QVariant_ToPersistentModelIndex((.)this.ptr);
 	}
-	public void Load(QDataStream_Ptr* ds)
+	public void Load(IQDataStream ds)
 	{
-		CQt.QVariant_Load((.)this.ptr, ds);
+		CQt.QVariant_Load((.)this.ptr, (.)ds?.ObjectPtr);
 	}
-	public void Save(QDataStream_Ptr* ds)
+	public void Save(IQDataStream ds)
 	{
-		CQt.QVariant_Save((.)this.ptr, ds);
+		CQt.QVariant_Save((.)this.ptr, (.)ds?.ObjectPtr);
 	}
 	public QVariant_Type Type()
 	{
@@ -650,13 +651,13 @@ class QVariant
 	{
 		return CQt.QVariant_Data2((.)this.ptr);
 	}
-	public void SetValue(QVariant_Ptr* avalue)
+	public void SetValue(IQVariant avalue)
 	{
-		CQt.QVariant_SetValue((.)this.ptr, avalue);
+		CQt.QVariant_SetValue((.)this.ptr, (.)avalue?.ObjectPtr);
 	}
-	public QPartialOrdering_Ptr Compare(QVariant_Ptr* lhs, QVariant_Ptr* rhs)
+	public QPartialOrdering_Ptr* Compare(IQVariant lhs, IQVariant rhs)
 	{
-		return CQt.QVariant_Compare(lhs, rhs);
+		return CQt.QVariant_Compare((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
 	}
 	public c_int ToInt1(bool* ok)
 	{
@@ -687,78 +688,8 @@ class QVariant
 		return CQt.QVariant_ToReal1((.)this.ptr, ok);
 	}
 }
-interface IQVariant
+interface IQVariant : IQtObjectInterface
 {
-	public void Swap();
-	public c_int UserType();
-	public c_int TypeId();
-	public c_char* TypeName();
-	public QMetaType MetaType();
-	public bool CanConvert();
-	public bool Convert();
-	public bool CanView();
-	public bool CanConvert2();
-	public bool Convert2();
-	public bool IsValid();
-	public bool IsNull();
-	public void Clear();
-	public void Detach();
-	public bool IsDetached();
-	public c_int ToInt();
-	public c_uint ToUInt();
-	public c_longlong ToLongLong();
-	public c_ulonglong ToULongLong();
-	public bool ToBool();
-	public double ToDouble();
-	public float ToFloat();
-	public double ToReal();
-	public void* ToByteArray();
-	public QBitArray ToBitArray();
-	public libqt_string ToString();
-	public void* ToStringList();
-	public QChar ToChar();
-	public QDate ToDate();
-	public QTime ToTime();
-	public QDateTime ToDateTime();
-	public void* ToList();
-	public void* ToMap();
-	public void* ToHash();
-	public QPoint ToPoint();
-	public QPointF ToPointF();
-	public QRect ToRect();
-	public QSize ToSize();
-	public QSizeF ToSizeF();
-	public QLine ToLine();
-	public QLineF ToLineF();
-	public QRectF ToRectF();
-	public QLocale ToLocale();
-	public QRegularExpression ToRegularExpression();
-	public QEasingCurve ToEasingCurve();
-	public QUuid ToUuid();
-	public QUrl ToUrl();
-	public QJsonValue ToJsonValue();
-	public QJsonObject ToJsonObject();
-	public QJsonArray ToJsonArray();
-	public QJsonDocument ToJsonDocument();
-	public QModelIndex ToModelIndex();
-	public QPersistentModelIndex ToPersistentModelIndex();
-	public void Load();
-	public void Save();
-	public QVariant_Type Type();
-	public c_char* TypeToName();
-	public QVariant_Type NameToType();
-	public void* Data();
-	public void* ConstData();
-	public void* Data2();
-	public void SetValue();
-	public QPartialOrdering Compare();
-	public c_int ToInt1();
-	public c_uint ToUInt1();
-	public c_longlong ToLongLong1();
-	public c_ulonglong ToULongLong1();
-	public double ToDouble1();
-	public float ToFloat1();
-	public double ToReal1();
 }
 [AllowDuplicates]
 enum QVariant_Type

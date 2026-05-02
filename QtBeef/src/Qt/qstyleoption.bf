@@ -39,36 +39,37 @@ extension CQt
 	[LinkName("QStyleOption_SetDirection")]
 	public static extern void QStyleOption_SetDirection(QStyleOption_Ptr* self, Qt_LayoutDirection direction);
 	[LinkName("QStyleOption_Rect")]
-	public static extern QRect_Ptr QStyleOption_Rect(QStyleOption_Ptr* self);
+	public static extern QRect_Ptr* QStyleOption_Rect(QStyleOption_Ptr* self);
 	[LinkName("QStyleOption_SetRect")]
-	public static extern void QStyleOption_SetRect(QStyleOption_Ptr* self, QRect_Ptr rect);
+	public static extern void QStyleOption_SetRect(QStyleOption_Ptr* self, QRect_Ptr* rect);
 	[LinkName("QStyleOption_FontMetrics")]
-	public static extern QFontMetrics_Ptr QStyleOption_FontMetrics(QStyleOption_Ptr* self);
+	public static extern QFontMetrics_Ptr* QStyleOption_FontMetrics(QStyleOption_Ptr* self);
 	[LinkName("QStyleOption_SetFontMetrics")]
-	public static extern void QStyleOption_SetFontMetrics(QStyleOption_Ptr* self, QFontMetrics_Ptr fontMetrics);
+	public static extern void QStyleOption_SetFontMetrics(QStyleOption_Ptr* self, QFontMetrics_Ptr* fontMetrics);
 	[LinkName("QStyleOption_Palette")]
-	public static extern QPalette_Ptr QStyleOption_Palette(QStyleOption_Ptr* self);
+	public static extern QPalette_Ptr* QStyleOption_Palette(QStyleOption_Ptr* self);
 	[LinkName("QStyleOption_SetPalette")]
-	public static extern void QStyleOption_SetPalette(QStyleOption_Ptr* self, QPalette_Ptr palette);
+	public static extern void QStyleOption_SetPalette(QStyleOption_Ptr* self, QPalette_Ptr* palette);
 	[LinkName("QStyleOption_StyleObject")]
-	public static extern QObject_Ptr* QStyleOption_StyleObject(QStyleOption_Ptr* self);
+	public static extern QObject_Ptr** QStyleOption_StyleObject(QStyleOption_Ptr* self);
 	[LinkName("QStyleOption_SetStyleObject")]
-	public static extern void QStyleOption_SetStyleObject(QStyleOption_Ptr* self, QObject_Ptr* styleObject);
+	public static extern void QStyleOption_SetStyleObject(QStyleOption_Ptr* self, QObject_Ptr** styleObject);
 	[LinkName("QStyleOption_InitFrom")]
-	public static extern void QStyleOption_InitFrom(QStyleOption_Ptr* self, QWidget_Ptr* w);
+	public static extern void QStyleOption_InitFrom(QStyleOption_Ptr* self, QWidget_Ptr** w);
 	[LinkName("QStyleOption_OperatorAssign")]
 	public static extern void QStyleOption_OperatorAssign(QStyleOption_Ptr* self, QStyleOption_Ptr* other);
 }
-class QStyleOption
+class QStyleOption : IQStyleOption
 {
 	private QStyleOption_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOption_new();
 	}
-	public this(QStyleOption_Ptr* other)
+	public this(IQStyleOption other)
 	{
-		this.ptr = CQt.QStyleOption_new2(other);
+		this.ptr = CQt.QStyleOption_new2((.)other?.ObjectPtr);
 	}
 	public this(c_int version)
 	{
@@ -114,62 +115,45 @@ class QStyleOption
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOption
+interface IQStyleOption : IQtObjectInterface
 {
-	public c_int Version();
-	public void SetVersion();
-	public c_int Type();
-	public void SetType();
-	public void* State();
-	public void SetState();
-	public Qt_LayoutDirection Direction();
-	public void SetDirection();
-	public QRect Rect();
-	public void SetRect();
-	public QFontMetrics FontMetrics();
-	public void SetFontMetrics();
-	public QPalette Palette();
-	public void SetPalette();
-	public QObject* StyleObject();
-	public void SetStyleObject();
-	public void InitFrom();
 }
 // --------------------------------------------------------------
 // QStyleOptionFocusRect
@@ -187,34 +171,35 @@ extension CQt
 	[LinkName("QStyleOptionFocusRect_Delete")]
 	public static extern void QStyleOptionFocusRect_Delete(QStyleOptionFocusRect_Ptr* self);
 	[LinkName("QStyleOptionFocusRect_BackgroundColor")]
-	public static extern QColor_Ptr QStyleOptionFocusRect_BackgroundColor(QStyleOptionFocusRect_Ptr* self);
+	public static extern QColor_Ptr* QStyleOptionFocusRect_BackgroundColor(QStyleOptionFocusRect_Ptr* self);
 	[LinkName("QStyleOptionFocusRect_SetBackgroundColor")]
-	public static extern void QStyleOptionFocusRect_SetBackgroundColor(QStyleOptionFocusRect_Ptr* self, QColor_Ptr backgroundColor);
+	public static extern void QStyleOptionFocusRect_SetBackgroundColor(QStyleOptionFocusRect_Ptr* self, QColor_Ptr* backgroundColor);
 	[LinkName("QStyleOptionFocusRect_OperatorAssign")]
 	public static extern void QStyleOptionFocusRect_OperatorAssign(QStyleOptionFocusRect_Ptr* self, QStyleOptionFocusRect_Ptr* param1);
 }
-class QStyleOptionFocusRect
+class QStyleOptionFocusRect : IQStyleOptionFocusRect, IQStyleOption
 {
 	private QStyleOptionFocusRect_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionFocusRect_new();
 	}
-	public this(QStyleOptionFocusRect_Ptr* other)
+	public this(IQStyleOptionFocusRect other)
 	{
-		this.ptr = CQt.QStyleOptionFocusRect_new2(other);
+		this.ptr = CQt.QStyleOptionFocusRect_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QStyleOptionFocusRect_Delete(this.ptr);
 	}
-	public QColor_Ptr BackgroundColor()
+	public QColor_Ptr* BackgroundColor()
 	{
 		return CQt.QStyleOptionFocusRect_BackgroundColor((.)this.ptr);
 	}
-	public void SetBackgroundColor(QColor_Ptr backgroundColor)
+	public void SetBackgroundColor(IQColor backgroundColor)
 	{
-		CQt.QStyleOptionFocusRect_SetBackgroundColor((.)this.ptr, backgroundColor);
+		CQt.QStyleOptionFocusRect_SetBackgroundColor((.)this.ptr, (.)backgroundColor?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -248,47 +233,45 @@ class QStyleOptionFocusRect
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionFocusRect
+interface IQStyleOptionFocusRect : IQtObjectInterface
 {
-	public QColor BackgroundColor();
-	public void SetBackgroundColor();
 }
 // --------------------------------------------------------------
 // QStyleOptionFrame
@@ -324,16 +307,17 @@ extension CQt
 	[LinkName("QStyleOptionFrame_OperatorAssign")]
 	public static extern void QStyleOptionFrame_OperatorAssign(QStyleOptionFrame_Ptr* self, QStyleOptionFrame_Ptr* param1);
 }
-class QStyleOptionFrame
+class QStyleOptionFrame : IQStyleOptionFrame, IQStyleOption
 {
 	private QStyleOptionFrame_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionFrame_new();
 	}
-	public this(QStyleOptionFrame_Ptr* other)
+	public this(IQStyleOptionFrame other)
 	{
-		this.ptr = CQt.QStyleOptionFrame_new2(other);
+		this.ptr = CQt.QStyleOptionFrame_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -403,53 +387,45 @@ class QStyleOptionFrame
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionFrame
+interface IQStyleOptionFrame : IQtObjectInterface
 {
-	public c_int LineWidth();
-	public void SetLineWidth();
-	public c_int MidLineWidth();
-	public void SetMidLineWidth();
-	public void* Features();
-	public void SetFeatures();
-	public QFrame_Shape FrameShape();
-	public void SetFrameShape();
 }
 // --------------------------------------------------------------
 // QStyleOptionTabWidgetFrame
@@ -479,38 +455,39 @@ extension CQt
 	[LinkName("QStyleOptionTabWidgetFrame_SetShape")]
 	public static extern void QStyleOptionTabWidgetFrame_SetShape(QStyleOptionTabWidgetFrame_Ptr* self, QTabBar_Shape shape);
 	[LinkName("QStyleOptionTabWidgetFrame_TabBarSize")]
-	public static extern QSize_Ptr QStyleOptionTabWidgetFrame_TabBarSize(QStyleOptionTabWidgetFrame_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionTabWidgetFrame_TabBarSize(QStyleOptionTabWidgetFrame_Ptr* self);
 	[LinkName("QStyleOptionTabWidgetFrame_SetTabBarSize")]
-	public static extern void QStyleOptionTabWidgetFrame_SetTabBarSize(QStyleOptionTabWidgetFrame_Ptr* self, QSize_Ptr tabBarSize);
+	public static extern void QStyleOptionTabWidgetFrame_SetTabBarSize(QStyleOptionTabWidgetFrame_Ptr* self, QSize_Ptr* tabBarSize);
 	[LinkName("QStyleOptionTabWidgetFrame_RightCornerWidgetSize")]
-	public static extern QSize_Ptr QStyleOptionTabWidgetFrame_RightCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionTabWidgetFrame_RightCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self);
 	[LinkName("QStyleOptionTabWidgetFrame_SetRightCornerWidgetSize")]
-	public static extern void QStyleOptionTabWidgetFrame_SetRightCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self, QSize_Ptr rightCornerWidgetSize);
+	public static extern void QStyleOptionTabWidgetFrame_SetRightCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self, QSize_Ptr* rightCornerWidgetSize);
 	[LinkName("QStyleOptionTabWidgetFrame_LeftCornerWidgetSize")]
-	public static extern QSize_Ptr QStyleOptionTabWidgetFrame_LeftCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionTabWidgetFrame_LeftCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self);
 	[LinkName("QStyleOptionTabWidgetFrame_SetLeftCornerWidgetSize")]
-	public static extern void QStyleOptionTabWidgetFrame_SetLeftCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self, QSize_Ptr leftCornerWidgetSize);
+	public static extern void QStyleOptionTabWidgetFrame_SetLeftCornerWidgetSize(QStyleOptionTabWidgetFrame_Ptr* self, QSize_Ptr* leftCornerWidgetSize);
 	[LinkName("QStyleOptionTabWidgetFrame_TabBarRect")]
-	public static extern QRect_Ptr QStyleOptionTabWidgetFrame_TabBarRect(QStyleOptionTabWidgetFrame_Ptr* self);
+	public static extern QRect_Ptr* QStyleOptionTabWidgetFrame_TabBarRect(QStyleOptionTabWidgetFrame_Ptr* self);
 	[LinkName("QStyleOptionTabWidgetFrame_SetTabBarRect")]
-	public static extern void QStyleOptionTabWidgetFrame_SetTabBarRect(QStyleOptionTabWidgetFrame_Ptr* self, QRect_Ptr tabBarRect);
+	public static extern void QStyleOptionTabWidgetFrame_SetTabBarRect(QStyleOptionTabWidgetFrame_Ptr* self, QRect_Ptr* tabBarRect);
 	[LinkName("QStyleOptionTabWidgetFrame_SelectedTabRect")]
-	public static extern QRect_Ptr QStyleOptionTabWidgetFrame_SelectedTabRect(QStyleOptionTabWidgetFrame_Ptr* self);
+	public static extern QRect_Ptr* QStyleOptionTabWidgetFrame_SelectedTabRect(QStyleOptionTabWidgetFrame_Ptr* self);
 	[LinkName("QStyleOptionTabWidgetFrame_SetSelectedTabRect")]
-	public static extern void QStyleOptionTabWidgetFrame_SetSelectedTabRect(QStyleOptionTabWidgetFrame_Ptr* self, QRect_Ptr selectedTabRect);
+	public static extern void QStyleOptionTabWidgetFrame_SetSelectedTabRect(QStyleOptionTabWidgetFrame_Ptr* self, QRect_Ptr* selectedTabRect);
 	[LinkName("QStyleOptionTabWidgetFrame_OperatorAssign")]
 	public static extern void QStyleOptionTabWidgetFrame_OperatorAssign(QStyleOptionTabWidgetFrame_Ptr* self, QStyleOptionTabWidgetFrame_Ptr* param1);
 }
-class QStyleOptionTabWidgetFrame
+class QStyleOptionTabWidgetFrame : IQStyleOptionTabWidgetFrame, IQStyleOption
 {
 	private QStyleOptionTabWidgetFrame_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTabWidgetFrame_new();
 	}
-	public this(QStyleOptionTabWidgetFrame_Ptr* other)
+	public this(IQStyleOptionTabWidgetFrame other)
 	{
-		this.ptr = CQt.QStyleOptionTabWidgetFrame_new2(other);
+		this.ptr = CQt.QStyleOptionTabWidgetFrame_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -540,45 +517,45 @@ class QStyleOptionTabWidgetFrame
 	{
 		CQt.QStyleOptionTabWidgetFrame_SetShape((.)this.ptr, shape);
 	}
-	public QSize_Ptr TabBarSize()
+	public QSize_Ptr* TabBarSize()
 	{
 		return CQt.QStyleOptionTabWidgetFrame_TabBarSize((.)this.ptr);
 	}
-	public void SetTabBarSize(QSize_Ptr tabBarSize)
+	public void SetTabBarSize(IQSize tabBarSize)
 	{
-		CQt.QStyleOptionTabWidgetFrame_SetTabBarSize((.)this.ptr, tabBarSize);
+		CQt.QStyleOptionTabWidgetFrame_SetTabBarSize((.)this.ptr, (.)tabBarSize?.ObjectPtr);
 	}
-	public QSize_Ptr RightCornerWidgetSize()
+	public QSize_Ptr* RightCornerWidgetSize()
 	{
 		return CQt.QStyleOptionTabWidgetFrame_RightCornerWidgetSize((.)this.ptr);
 	}
-	public void SetRightCornerWidgetSize(QSize_Ptr rightCornerWidgetSize)
+	public void SetRightCornerWidgetSize(IQSize rightCornerWidgetSize)
 	{
-		CQt.QStyleOptionTabWidgetFrame_SetRightCornerWidgetSize((.)this.ptr, rightCornerWidgetSize);
+		CQt.QStyleOptionTabWidgetFrame_SetRightCornerWidgetSize((.)this.ptr, (.)rightCornerWidgetSize?.ObjectPtr);
 	}
-	public QSize_Ptr LeftCornerWidgetSize()
+	public QSize_Ptr* LeftCornerWidgetSize()
 	{
 		return CQt.QStyleOptionTabWidgetFrame_LeftCornerWidgetSize((.)this.ptr);
 	}
-	public void SetLeftCornerWidgetSize(QSize_Ptr leftCornerWidgetSize)
+	public void SetLeftCornerWidgetSize(IQSize leftCornerWidgetSize)
 	{
-		CQt.QStyleOptionTabWidgetFrame_SetLeftCornerWidgetSize((.)this.ptr, leftCornerWidgetSize);
+		CQt.QStyleOptionTabWidgetFrame_SetLeftCornerWidgetSize((.)this.ptr, (.)leftCornerWidgetSize?.ObjectPtr);
 	}
-	public QRect_Ptr TabBarRect()
+	public QRect_Ptr* TabBarRect()
 	{
 		return CQt.QStyleOptionTabWidgetFrame_TabBarRect((.)this.ptr);
 	}
-	public void SetTabBarRect(QRect_Ptr tabBarRect)
+	public void SetTabBarRect(IQRect tabBarRect)
 	{
-		CQt.QStyleOptionTabWidgetFrame_SetTabBarRect((.)this.ptr, tabBarRect);
+		CQt.QStyleOptionTabWidgetFrame_SetTabBarRect((.)this.ptr, (.)tabBarRect?.ObjectPtr);
 	}
-	public QRect_Ptr SelectedTabRect()
+	public QRect_Ptr* SelectedTabRect()
 	{
 		return CQt.QStyleOptionTabWidgetFrame_SelectedTabRect((.)this.ptr);
 	}
-	public void SetSelectedTabRect(QRect_Ptr selectedTabRect)
+	public void SetSelectedTabRect(IQRect selectedTabRect)
 	{
-		CQt.QStyleOptionTabWidgetFrame_SetSelectedTabRect((.)this.ptr, selectedTabRect);
+		CQt.QStyleOptionTabWidgetFrame_SetSelectedTabRect((.)this.ptr, (.)selectedTabRect?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -612,61 +589,45 @@ class QStyleOptionTabWidgetFrame
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionTabWidgetFrame
+interface IQStyleOptionTabWidgetFrame : IQtObjectInterface
 {
-	public c_int LineWidth();
-	public void SetLineWidth();
-	public c_int MidLineWidth();
-	public void SetMidLineWidth();
-	public QTabBar_Shape Shape();
-	public void SetShape();
-	public QSize TabBarSize();
-	public void SetTabBarSize();
-	public QSize RightCornerWidgetSize();
-	public void SetRightCornerWidgetSize();
-	public QSize LeftCornerWidgetSize();
-	public void SetLeftCornerWidgetSize();
-	public QRect TabBarRect();
-	public void SetTabBarRect();
-	public QRect SelectedTabRect();
-	public void SetSelectedTabRect();
 }
 // --------------------------------------------------------------
 // QStyleOptionTabBarBase
@@ -688,13 +649,13 @@ extension CQt
 	[LinkName("QStyleOptionTabBarBase_SetShape")]
 	public static extern void QStyleOptionTabBarBase_SetShape(QStyleOptionTabBarBase_Ptr* self, QTabBar_Shape shape);
 	[LinkName("QStyleOptionTabBarBase_TabBarRect")]
-	public static extern QRect_Ptr QStyleOptionTabBarBase_TabBarRect(QStyleOptionTabBarBase_Ptr* self);
+	public static extern QRect_Ptr* QStyleOptionTabBarBase_TabBarRect(QStyleOptionTabBarBase_Ptr* self);
 	[LinkName("QStyleOptionTabBarBase_SetTabBarRect")]
-	public static extern void QStyleOptionTabBarBase_SetTabBarRect(QStyleOptionTabBarBase_Ptr* self, QRect_Ptr tabBarRect);
+	public static extern void QStyleOptionTabBarBase_SetTabBarRect(QStyleOptionTabBarBase_Ptr* self, QRect_Ptr* tabBarRect);
 	[LinkName("QStyleOptionTabBarBase_SelectedTabRect")]
-	public static extern QRect_Ptr QStyleOptionTabBarBase_SelectedTabRect(QStyleOptionTabBarBase_Ptr* self);
+	public static extern QRect_Ptr* QStyleOptionTabBarBase_SelectedTabRect(QStyleOptionTabBarBase_Ptr* self);
 	[LinkName("QStyleOptionTabBarBase_SetSelectedTabRect")]
-	public static extern void QStyleOptionTabBarBase_SetSelectedTabRect(QStyleOptionTabBarBase_Ptr* self, QRect_Ptr selectedTabRect);
+	public static extern void QStyleOptionTabBarBase_SetSelectedTabRect(QStyleOptionTabBarBase_Ptr* self, QRect_Ptr* selectedTabRect);
 	[LinkName("QStyleOptionTabBarBase_DocumentMode")]
 	public static extern bool QStyleOptionTabBarBase_DocumentMode(QStyleOptionTabBarBase_Ptr* self);
 	[LinkName("QStyleOptionTabBarBase_SetDocumentMode")]
@@ -702,16 +663,17 @@ extension CQt
 	[LinkName("QStyleOptionTabBarBase_OperatorAssign")]
 	public static extern void QStyleOptionTabBarBase_OperatorAssign(QStyleOptionTabBarBase_Ptr* self, QStyleOptionTabBarBase_Ptr* param1);
 }
-class QStyleOptionTabBarBase
+class QStyleOptionTabBarBase : IQStyleOptionTabBarBase, IQStyleOption
 {
 	private QStyleOptionTabBarBase_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTabBarBase_new();
 	}
-	public this(QStyleOptionTabBarBase_Ptr* other)
+	public this(IQStyleOptionTabBarBase other)
 	{
-		this.ptr = CQt.QStyleOptionTabBarBase_new2(other);
+		this.ptr = CQt.QStyleOptionTabBarBase_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -725,21 +687,21 @@ class QStyleOptionTabBarBase
 	{
 		CQt.QStyleOptionTabBarBase_SetShape((.)this.ptr, shape);
 	}
-	public QRect_Ptr TabBarRect()
+	public QRect_Ptr* TabBarRect()
 	{
 		return CQt.QStyleOptionTabBarBase_TabBarRect((.)this.ptr);
 	}
-	public void SetTabBarRect(QRect_Ptr tabBarRect)
+	public void SetTabBarRect(IQRect tabBarRect)
 	{
-		CQt.QStyleOptionTabBarBase_SetTabBarRect((.)this.ptr, tabBarRect);
+		CQt.QStyleOptionTabBarBase_SetTabBarRect((.)this.ptr, (.)tabBarRect?.ObjectPtr);
 	}
-	public QRect_Ptr SelectedTabRect()
+	public QRect_Ptr* SelectedTabRect()
 	{
 		return CQt.QStyleOptionTabBarBase_SelectedTabRect((.)this.ptr);
 	}
-	public void SetSelectedTabRect(QRect_Ptr selectedTabRect)
+	public void SetSelectedTabRect(IQRect selectedTabRect)
 	{
-		CQt.QStyleOptionTabBarBase_SetSelectedTabRect((.)this.ptr, selectedTabRect);
+		CQt.QStyleOptionTabBarBase_SetSelectedTabRect((.)this.ptr, (.)selectedTabRect?.ObjectPtr);
 	}
 	public bool DocumentMode()
 	{
@@ -781,53 +743,45 @@ class QStyleOptionTabBarBase
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionTabBarBase
+interface IQStyleOptionTabBarBase : IQtObjectInterface
 {
-	public QTabBar_Shape Shape();
-	public void SetShape();
-	public QRect TabBarRect();
-	public void SetTabBarRect();
-	public QRect SelectedTabRect();
-	public void SetSelectedTabRect();
-	public bool DocumentMode();
-	public void SetDocumentMode();
 }
 // --------------------------------------------------------------
 // QStyleOptionHeader
@@ -857,9 +811,9 @@ extension CQt
 	[LinkName("QStyleOptionHeader_SetTextAlignment")]
 	public static extern void QStyleOptionHeader_SetTextAlignment(QStyleOptionHeader_Ptr* self, void* textAlignment);
 	[LinkName("QStyleOptionHeader_Icon")]
-	public static extern QIcon_Ptr QStyleOptionHeader_Icon(QStyleOptionHeader_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionHeader_Icon(QStyleOptionHeader_Ptr* self);
 	[LinkName("QStyleOptionHeader_SetIcon")]
-	public static extern void QStyleOptionHeader_SetIcon(QStyleOptionHeader_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionHeader_SetIcon(QStyleOptionHeader_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionHeader_IconAlignment")]
 	public static extern void* QStyleOptionHeader_IconAlignment(QStyleOptionHeader_Ptr* self);
 	[LinkName("QStyleOptionHeader_SetIconAlignment")]
@@ -883,16 +837,17 @@ extension CQt
 	[LinkName("QStyleOptionHeader_OperatorAssign")]
 	public static extern void QStyleOptionHeader_OperatorAssign(QStyleOptionHeader_Ptr* self, QStyleOptionHeader_Ptr* param1);
 }
-class QStyleOptionHeader
+class QStyleOptionHeader : IQStyleOptionHeader, IQStyleOption
 {
 	private QStyleOptionHeader_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionHeader_new();
 	}
-	public this(QStyleOptionHeader_Ptr* other)
+	public this(IQStyleOptionHeader other)
 	{
-		this.ptr = CQt.QStyleOptionHeader_new2(other);
+		this.ptr = CQt.QStyleOptionHeader_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -910,7 +865,7 @@ class QStyleOptionHeader
 	{
 		return CQt.QStyleOptionHeader_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionHeader_SetText((.)this.ptr, text);
 	}
@@ -922,13 +877,13 @@ class QStyleOptionHeader
 	{
 		CQt.QStyleOptionHeader_SetTextAlignment((.)this.ptr, textAlignment);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionHeader_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionHeader_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionHeader_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
 	public void* IconAlignment()
 	{
@@ -1002,63 +957,45 @@ class QStyleOptionHeader
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionHeader
+interface IQStyleOptionHeader : IQtObjectInterface
 {
-	public c_int Section();
-	public void SetSection();
-	public libqt_string Text();
-	public void SetText();
-	public void* TextAlignment();
-	public void SetTextAlignment();
-	public QIcon Icon();
-	public void SetIcon();
-	public void* IconAlignment();
-	public void SetIconAlignment();
-	public QStyleOptionHeader_SectionPosition Position();
-	public void SetPosition();
-	public QStyleOptionHeader_SelectedPosition SelectedPosition();
-	public void SetSelectedPosition();
-	public QStyleOptionHeader_SortIndicator SortIndicator();
-	public void SetSortIndicator();
-	public Qt_Orientation Orientation();
-	public void SetOrientation();
 }
 // --------------------------------------------------------------
 // QStyleOptionHeaderV2
@@ -1090,16 +1027,17 @@ extension CQt
 	[LinkName("QStyleOptionHeaderV2_SetUnused")]
 	public static extern void QStyleOptionHeaderV2_SetUnused(QStyleOptionHeaderV2_Ptr* self, c_int unused);
 }
-class QStyleOptionHeaderV2
+class QStyleOptionHeaderV2 : IQStyleOptionHeaderV2, IQStyleOptionHeader, IQStyleOption
 {
 	private QStyleOptionHeaderV2_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionHeaderV2_new();
 	}
-	public this(QStyleOptionHeaderV2_Ptr* other)
+	public this(IQStyleOptionHeaderV2 other)
 	{
-		this.ptr = CQt.QStyleOptionHeaderV2_new2(other);
+		this.ptr = CQt.QStyleOptionHeaderV2_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -1141,7 +1079,7 @@ class QStyleOptionHeaderV2
 	{
 		return CQt.QStyleOptionHeader_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionHeader_SetText((.)this.ptr, text);
 	}
@@ -1153,13 +1091,13 @@ class QStyleOptionHeaderV2
 	{
 		CQt.QStyleOptionHeader_SetTextAlignment((.)this.ptr, textAlignment);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionHeader_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionHeader_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionHeader_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
 	public void* IconAlignment()
 	{
@@ -1233,51 +1171,45 @@ class QStyleOptionHeaderV2
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionHeaderV2
+interface IQStyleOptionHeaderV2 : IQtObjectInterface
 {
-	public Qt_TextElideMode TextElideMode();
-	public void SetTextElideMode();
-	public bool IsSectionDragTarget();
-	public void SetIsSectionDragTarget();
-	public c_int Unused();
-	public void SetUnused();
 }
 // --------------------------------------------------------------
 // QStyleOptionButton
@@ -1303,26 +1235,27 @@ extension CQt
 	[LinkName("QStyleOptionButton_SetText")]
 	public static extern void QStyleOptionButton_SetText(QStyleOptionButton_Ptr* self, libqt_string text);
 	[LinkName("QStyleOptionButton_Icon")]
-	public static extern QIcon_Ptr QStyleOptionButton_Icon(QStyleOptionButton_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionButton_Icon(QStyleOptionButton_Ptr* self);
 	[LinkName("QStyleOptionButton_SetIcon")]
-	public static extern void QStyleOptionButton_SetIcon(QStyleOptionButton_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionButton_SetIcon(QStyleOptionButton_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionButton_IconSize")]
-	public static extern QSize_Ptr QStyleOptionButton_IconSize(QStyleOptionButton_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionButton_IconSize(QStyleOptionButton_Ptr* self);
 	[LinkName("QStyleOptionButton_SetIconSize")]
-	public static extern void QStyleOptionButton_SetIconSize(QStyleOptionButton_Ptr* self, QSize_Ptr iconSize);
+	public static extern void QStyleOptionButton_SetIconSize(QStyleOptionButton_Ptr* self, QSize_Ptr* iconSize);
 	[LinkName("QStyleOptionButton_OperatorAssign")]
 	public static extern void QStyleOptionButton_OperatorAssign(QStyleOptionButton_Ptr* self, QStyleOptionButton_Ptr* param1);
 }
-class QStyleOptionButton
+class QStyleOptionButton : IQStyleOptionButton, IQStyleOption
 {
 	private QStyleOptionButton_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionButton_new();
 	}
-	public this(QStyleOptionButton_Ptr* other)
+	public this(IQStyleOptionButton other)
 	{
-		this.ptr = CQt.QStyleOptionButton_new2(other);
+		this.ptr = CQt.QStyleOptionButton_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -1340,25 +1273,25 @@ class QStyleOptionButton
 	{
 		return CQt.QStyleOptionButton_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionButton_SetText((.)this.ptr, text);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionButton_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionButton_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionButton_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
-	public QSize_Ptr IconSize()
+	public QSize_Ptr* IconSize()
 	{
 		return CQt.QStyleOptionButton_IconSize((.)this.ptr);
 	}
-	public void SetIconSize(QSize_Ptr iconSize)
+	public void SetIconSize(IQSize iconSize)
 	{
-		CQt.QStyleOptionButton_SetIconSize((.)this.ptr, iconSize);
+		CQt.QStyleOptionButton_SetIconSize((.)this.ptr, (.)iconSize?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -1392,53 +1325,45 @@ class QStyleOptionButton
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionButton
+interface IQStyleOptionButton : IQtObjectInterface
 {
-	public void* Features();
-	public void SetFeatures();
-	public libqt_string Text();
-	public void SetText();
-	public QIcon Icon();
-	public void SetIcon();
-	public QSize IconSize();
-	public void SetIconSize();
 }
 // --------------------------------------------------------------
 // QStyleOptionTab
@@ -1464,9 +1389,9 @@ extension CQt
 	[LinkName("QStyleOptionTab_SetText")]
 	public static extern void QStyleOptionTab_SetText(QStyleOptionTab_Ptr* self, libqt_string text);
 	[LinkName("QStyleOptionTab_Icon")]
-	public static extern QIcon_Ptr QStyleOptionTab_Icon(QStyleOptionTab_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionTab_Icon(QStyleOptionTab_Ptr* self);
 	[LinkName("QStyleOptionTab_SetIcon")]
-	public static extern void QStyleOptionTab_SetIcon(QStyleOptionTab_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionTab_SetIcon(QStyleOptionTab_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionTab_Row")]
 	public static extern c_int QStyleOptionTab_Row(QStyleOptionTab_Ptr* self);
 	[LinkName("QStyleOptionTab_SetRow")]
@@ -1484,21 +1409,21 @@ extension CQt
 	[LinkName("QStyleOptionTab_SetCornerWidgets")]
 	public static extern void QStyleOptionTab_SetCornerWidgets(QStyleOptionTab_Ptr* self, void* cornerWidgets);
 	[LinkName("QStyleOptionTab_IconSize")]
-	public static extern QSize_Ptr QStyleOptionTab_IconSize(QStyleOptionTab_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionTab_IconSize(QStyleOptionTab_Ptr* self);
 	[LinkName("QStyleOptionTab_SetIconSize")]
-	public static extern void QStyleOptionTab_SetIconSize(QStyleOptionTab_Ptr* self, QSize_Ptr iconSize);
+	public static extern void QStyleOptionTab_SetIconSize(QStyleOptionTab_Ptr* self, QSize_Ptr* iconSize);
 	[LinkName("QStyleOptionTab_DocumentMode")]
 	public static extern bool QStyleOptionTab_DocumentMode(QStyleOptionTab_Ptr* self);
 	[LinkName("QStyleOptionTab_SetDocumentMode")]
 	public static extern void QStyleOptionTab_SetDocumentMode(QStyleOptionTab_Ptr* self, bool documentMode);
 	[LinkName("QStyleOptionTab_LeftButtonSize")]
-	public static extern QSize_Ptr QStyleOptionTab_LeftButtonSize(QStyleOptionTab_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionTab_LeftButtonSize(QStyleOptionTab_Ptr* self);
 	[LinkName("QStyleOptionTab_SetLeftButtonSize")]
-	public static extern void QStyleOptionTab_SetLeftButtonSize(QStyleOptionTab_Ptr* self, QSize_Ptr leftButtonSize);
+	public static extern void QStyleOptionTab_SetLeftButtonSize(QStyleOptionTab_Ptr* self, QSize_Ptr* leftButtonSize);
 	[LinkName("QStyleOptionTab_RightButtonSize")]
-	public static extern QSize_Ptr QStyleOptionTab_RightButtonSize(QStyleOptionTab_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionTab_RightButtonSize(QStyleOptionTab_Ptr* self);
 	[LinkName("QStyleOptionTab_SetRightButtonSize")]
-	public static extern void QStyleOptionTab_SetRightButtonSize(QStyleOptionTab_Ptr* self, QSize_Ptr rightButtonSize);
+	public static extern void QStyleOptionTab_SetRightButtonSize(QStyleOptionTab_Ptr* self, QSize_Ptr* rightButtonSize);
 	[LinkName("QStyleOptionTab_Features")]
 	public static extern void* QStyleOptionTab_Features(QStyleOptionTab_Ptr* self);
 	[LinkName("QStyleOptionTab_SetFeatures")]
@@ -1510,16 +1435,17 @@ extension CQt
 	[LinkName("QStyleOptionTab_OperatorAssign")]
 	public static extern void QStyleOptionTab_OperatorAssign(QStyleOptionTab_Ptr* self, QStyleOptionTab_Ptr* param1);
 }
-class QStyleOptionTab
+class QStyleOptionTab : IQStyleOptionTab, IQStyleOption
 {
 	private QStyleOptionTab_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTab_new();
 	}
-	public this(QStyleOptionTab_Ptr* other)
+	public this(IQStyleOptionTab other)
 	{
-		this.ptr = CQt.QStyleOptionTab_new2(other);
+		this.ptr = CQt.QStyleOptionTab_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -1537,17 +1463,17 @@ class QStyleOptionTab
 	{
 		return CQt.QStyleOptionTab_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionTab_SetText((.)this.ptr, text);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionTab_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionTab_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionTab_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
 	public c_int Row()
 	{
@@ -1581,13 +1507,13 @@ class QStyleOptionTab
 	{
 		CQt.QStyleOptionTab_SetCornerWidgets((.)this.ptr, cornerWidgets);
 	}
-	public QSize_Ptr IconSize()
+	public QSize_Ptr* IconSize()
 	{
 		return CQt.QStyleOptionTab_IconSize((.)this.ptr);
 	}
-	public void SetIconSize(QSize_Ptr iconSize)
+	public void SetIconSize(IQSize iconSize)
 	{
-		CQt.QStyleOptionTab_SetIconSize((.)this.ptr, iconSize);
+		CQt.QStyleOptionTab_SetIconSize((.)this.ptr, (.)iconSize?.ObjectPtr);
 	}
 	public bool DocumentMode()
 	{
@@ -1597,21 +1523,21 @@ class QStyleOptionTab
 	{
 		CQt.QStyleOptionTab_SetDocumentMode((.)this.ptr, documentMode);
 	}
-	public QSize_Ptr LeftButtonSize()
+	public QSize_Ptr* LeftButtonSize()
 	{
 		return CQt.QStyleOptionTab_LeftButtonSize((.)this.ptr);
 	}
-	public void SetLeftButtonSize(QSize_Ptr leftButtonSize)
+	public void SetLeftButtonSize(IQSize leftButtonSize)
 	{
-		CQt.QStyleOptionTab_SetLeftButtonSize((.)this.ptr, leftButtonSize);
+		CQt.QStyleOptionTab_SetLeftButtonSize((.)this.ptr, (.)leftButtonSize?.ObjectPtr);
 	}
-	public QSize_Ptr RightButtonSize()
+	public QSize_Ptr* RightButtonSize()
 	{
 		return CQt.QStyleOptionTab_RightButtonSize((.)this.ptr);
 	}
-	public void SetRightButtonSize(QSize_Ptr rightButtonSize)
+	public void SetRightButtonSize(IQSize rightButtonSize)
 	{
-		CQt.QStyleOptionTab_SetRightButtonSize((.)this.ptr, rightButtonSize);
+		CQt.QStyleOptionTab_SetRightButtonSize((.)this.ptr, (.)rightButtonSize?.ObjectPtr);
 	}
 	public void* Features()
 	{
@@ -1661,71 +1587,45 @@ class QStyleOptionTab
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionTab
+interface IQStyleOptionTab : IQtObjectInterface
 {
-	public QTabBar_Shape Shape();
-	public void SetShape();
-	public libqt_string Text();
-	public void SetText();
-	public QIcon Icon();
-	public void SetIcon();
-	public c_int Row();
-	public void SetRow();
-	public QStyleOptionTab_TabPosition Position();
-	public void SetPosition();
-	public QStyleOptionTab_SelectedPosition SelectedPosition();
-	public void SetSelectedPosition();
-	public void* CornerWidgets();
-	public void SetCornerWidgets();
-	public QSize IconSize();
-	public void SetIconSize();
-	public bool DocumentMode();
-	public void SetDocumentMode();
-	public QSize LeftButtonSize();
-	public void SetLeftButtonSize();
-	public QSize RightButtonSize();
-	public void SetRightButtonSize();
-	public void* Features();
-	public void SetFeatures();
-	public c_int TabIndex();
-	public void SetTabIndex();
 }
 // --------------------------------------------------------------
 // QStyleOptionToolBar
@@ -1769,16 +1669,17 @@ extension CQt
 	[LinkName("QStyleOptionToolBar_OperatorAssign")]
 	public static extern void QStyleOptionToolBar_OperatorAssign(QStyleOptionToolBar_Ptr* self, QStyleOptionToolBar_Ptr* param1);
 }
-class QStyleOptionToolBar
+class QStyleOptionToolBar : IQStyleOptionToolBar, IQStyleOption
 {
 	private QStyleOptionToolBar_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolBar_new();
 	}
-	public this(QStyleOptionToolBar_Ptr* other)
+	public this(IQStyleOptionToolBar other)
 	{
-		this.ptr = CQt.QStyleOptionToolBar_new2(other);
+		this.ptr = CQt.QStyleOptionToolBar_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -1864,57 +1765,45 @@ class QStyleOptionToolBar
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionToolBar
+interface IQStyleOptionToolBar : IQtObjectInterface
 {
-	public QStyleOptionToolBar_ToolBarPosition PositionOfLine();
-	public void SetPositionOfLine();
-	public QStyleOptionToolBar_ToolBarPosition PositionWithinLine();
-	public void SetPositionWithinLine();
-	public Qt_ToolBarArea ToolBarArea();
-	public void SetToolBarArea();
-	public void* Features();
-	public void SetFeatures();
-	public c_int LineWidth();
-	public void SetLineWidth();
-	public c_int MidLineWidth();
-	public void SetMidLineWidth();
 }
 // --------------------------------------------------------------
 // QStyleOptionProgressBar
@@ -1966,16 +1855,17 @@ extension CQt
 	[LinkName("QStyleOptionProgressBar_OperatorAssign")]
 	public static extern void QStyleOptionProgressBar_OperatorAssign(QStyleOptionProgressBar_Ptr* self, QStyleOptionProgressBar_Ptr* param1);
 }
-class QStyleOptionProgressBar
+class QStyleOptionProgressBar : IQStyleOptionProgressBar, IQStyleOption
 {
 	private QStyleOptionProgressBar_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionProgressBar_new();
 	}
-	public this(QStyleOptionProgressBar_Ptr* other)
+	public this(IQStyleOptionProgressBar other)
 	{
-		this.ptr = CQt.QStyleOptionProgressBar_new2(other);
+		this.ptr = CQt.QStyleOptionProgressBar_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -2009,7 +1899,7 @@ class QStyleOptionProgressBar
 	{
 		return CQt.QStyleOptionProgressBar_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionProgressBar_SetText((.)this.ptr, text);
 	}
@@ -2077,61 +1967,45 @@ class QStyleOptionProgressBar
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionProgressBar
+interface IQStyleOptionProgressBar : IQtObjectInterface
 {
-	public c_int Minimum();
-	public void SetMinimum();
-	public c_int Maximum();
-	public void SetMaximum();
-	public c_int Progress();
-	public void SetProgress();
-	public libqt_string Text();
-	public void SetText();
-	public void* TextAlignment();
-	public void SetTextAlignment();
-	public bool TextVisible();
-	public void SetTextVisible();
-	public bool InvertedAppearance();
-	public void SetInvertedAppearance();
-	public bool BottomToTop();
-	public void SetBottomToTop();
 }
 // --------------------------------------------------------------
 // QStyleOptionMenuItem
@@ -2165,17 +2039,17 @@ extension CQt
 	[LinkName("QStyleOptionMenuItem_SetMenuHasCheckableItems")]
 	public static extern void QStyleOptionMenuItem_SetMenuHasCheckableItems(QStyleOptionMenuItem_Ptr* self, bool menuHasCheckableItems);
 	[LinkName("QStyleOptionMenuItem_MenuRect")]
-	public static extern QRect_Ptr QStyleOptionMenuItem_MenuRect(QStyleOptionMenuItem_Ptr* self);
+	public static extern QRect_Ptr* QStyleOptionMenuItem_MenuRect(QStyleOptionMenuItem_Ptr* self);
 	[LinkName("QStyleOptionMenuItem_SetMenuRect")]
-	public static extern void QStyleOptionMenuItem_SetMenuRect(QStyleOptionMenuItem_Ptr* self, QRect_Ptr menuRect);
+	public static extern void QStyleOptionMenuItem_SetMenuRect(QStyleOptionMenuItem_Ptr* self, QRect_Ptr* menuRect);
 	[LinkName("QStyleOptionMenuItem_Text")]
 	public static extern libqt_string QStyleOptionMenuItem_Text(QStyleOptionMenuItem_Ptr* self);
 	[LinkName("QStyleOptionMenuItem_SetText")]
 	public static extern void QStyleOptionMenuItem_SetText(QStyleOptionMenuItem_Ptr* self, libqt_string text);
 	[LinkName("QStyleOptionMenuItem_Icon")]
-	public static extern QIcon_Ptr QStyleOptionMenuItem_Icon(QStyleOptionMenuItem_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionMenuItem_Icon(QStyleOptionMenuItem_Ptr* self);
 	[LinkName("QStyleOptionMenuItem_SetIcon")]
-	public static extern void QStyleOptionMenuItem_SetIcon(QStyleOptionMenuItem_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionMenuItem_SetIcon(QStyleOptionMenuItem_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionMenuItem_MaxIconWidth")]
 	public static extern c_int QStyleOptionMenuItem_MaxIconWidth(QStyleOptionMenuItem_Ptr* self);
 	[LinkName("QStyleOptionMenuItem_SetMaxIconWidth")]
@@ -2185,22 +2059,23 @@ extension CQt
 	[LinkName("QStyleOptionMenuItem_SetReservedShortcutWidth")]
 	public static extern void QStyleOptionMenuItem_SetReservedShortcutWidth(QStyleOptionMenuItem_Ptr* self, c_int reservedShortcutWidth);
 	[LinkName("QStyleOptionMenuItem_Font")]
-	public static extern QFont_Ptr QStyleOptionMenuItem_Font(QStyleOptionMenuItem_Ptr* self);
+	public static extern QFont_Ptr* QStyleOptionMenuItem_Font(QStyleOptionMenuItem_Ptr* self);
 	[LinkName("QStyleOptionMenuItem_SetFont")]
-	public static extern void QStyleOptionMenuItem_SetFont(QStyleOptionMenuItem_Ptr* self, QFont_Ptr font);
+	public static extern void QStyleOptionMenuItem_SetFont(QStyleOptionMenuItem_Ptr* self, QFont_Ptr* font);
 	[LinkName("QStyleOptionMenuItem_OperatorAssign")]
 	public static extern void QStyleOptionMenuItem_OperatorAssign(QStyleOptionMenuItem_Ptr* self, QStyleOptionMenuItem_Ptr* param1);
 }
-class QStyleOptionMenuItem
+class QStyleOptionMenuItem : IQStyleOptionMenuItem, IQStyleOption
 {
 	private QStyleOptionMenuItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionMenuItem_new();
 	}
-	public this(QStyleOptionMenuItem_Ptr* other)
+	public this(IQStyleOptionMenuItem other)
 	{
-		this.ptr = CQt.QStyleOptionMenuItem_new2(other);
+		this.ptr = CQt.QStyleOptionMenuItem_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -2238,29 +2113,29 @@ class QStyleOptionMenuItem
 	{
 		CQt.QStyleOptionMenuItem_SetMenuHasCheckableItems((.)this.ptr, menuHasCheckableItems);
 	}
-	public QRect_Ptr MenuRect()
+	public QRect_Ptr* MenuRect()
 	{
 		return CQt.QStyleOptionMenuItem_MenuRect((.)this.ptr);
 	}
-	public void SetMenuRect(QRect_Ptr menuRect)
+	public void SetMenuRect(IQRect menuRect)
 	{
-		CQt.QStyleOptionMenuItem_SetMenuRect((.)this.ptr, menuRect);
+		CQt.QStyleOptionMenuItem_SetMenuRect((.)this.ptr, (.)menuRect?.ObjectPtr);
 	}
 	public libqt_string Text()
 	{
 		return CQt.QStyleOptionMenuItem_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionMenuItem_SetText((.)this.ptr, text);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionMenuItem_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionMenuItem_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionMenuItem_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
 	public c_int MaxIconWidth()
 	{
@@ -2278,13 +2153,13 @@ class QStyleOptionMenuItem
 	{
 		CQt.QStyleOptionMenuItem_SetReservedShortcutWidth((.)this.ptr, reservedShortcutWidth);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QStyleOptionMenuItem_Font((.)this.ptr);
 	}
-	public void SetFont(QFont_Ptr font)
+	public void SetFont(IQFont font)
 	{
-		CQt.QStyleOptionMenuItem_SetFont((.)this.ptr, font);
+		CQt.QStyleOptionMenuItem_SetFont((.)this.ptr, (.)font?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -2318,65 +2193,45 @@ class QStyleOptionMenuItem
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionMenuItem
+interface IQStyleOptionMenuItem : IQtObjectInterface
 {
-	public QStyleOptionMenuItem_MenuItemType MenuItemType();
-	public void SetMenuItemType();
-	public QStyleOptionMenuItem_CheckType CheckType();
-	public void SetCheckType();
-	public bool Checked();
-	public void SetChecked();
-	public bool MenuHasCheckableItems();
-	public void SetMenuHasCheckableItems();
-	public QRect MenuRect();
-	public void SetMenuRect();
-	public libqt_string Text();
-	public void SetText();
-	public QIcon Icon();
-	public void SetIcon();
-	public c_int MaxIconWidth();
-	public void SetMaxIconWidth();
-	public c_int ReservedShortcutWidth();
-	public void SetReservedShortcutWidth();
-	public QFont Font();
-	public void SetFont();
 }
 // --------------------------------------------------------------
 // QStyleOptionDockWidget
@@ -2416,16 +2271,17 @@ extension CQt
 	[LinkName("QStyleOptionDockWidget_OperatorAssign")]
 	public static extern void QStyleOptionDockWidget_OperatorAssign(QStyleOptionDockWidget_Ptr* self, QStyleOptionDockWidget_Ptr* param1);
 }
-class QStyleOptionDockWidget
+class QStyleOptionDockWidget : IQStyleOptionDockWidget, IQStyleOption
 {
 	private QStyleOptionDockWidget_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionDockWidget_new();
 	}
-	public this(QStyleOptionDockWidget_Ptr* other)
+	public this(IQStyleOptionDockWidget other)
 	{
-		this.ptr = CQt.QStyleOptionDockWidget_new2(other);
+		this.ptr = CQt.QStyleOptionDockWidget_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -2435,7 +2291,7 @@ class QStyleOptionDockWidget
 	{
 		return CQt.QStyleOptionDockWidget_Title((.)this.ptr);
 	}
-	public void SetTitle(libqt_string title)
+	public void SetTitle(String title)
 	{
 		CQt.QStyleOptionDockWidget_SetTitle((.)this.ptr, title);
 	}
@@ -2503,55 +2359,45 @@ class QStyleOptionDockWidget
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionDockWidget
+interface IQStyleOptionDockWidget : IQtObjectInterface
 {
-	public libqt_string Title();
-	public void SetTitle();
-	public bool Closable();
-	public void SetClosable();
-	public bool Movable();
-	public void SetMovable();
-	public bool Floatable();
-	public void SetFloatable();
-	public bool VerticalTitleBar();
-	public void SetVerticalTitleBar();
 }
 // --------------------------------------------------------------
 // QStyleOptionViewItem
@@ -2585,13 +2431,13 @@ extension CQt
 	[LinkName("QStyleOptionViewItem_SetDecorationPosition")]
 	public static extern void QStyleOptionViewItem_SetDecorationPosition(QStyleOptionViewItem_Ptr* self, QStyleOptionViewItem_Position decorationPosition);
 	[LinkName("QStyleOptionViewItem_DecorationSize")]
-	public static extern QSize_Ptr QStyleOptionViewItem_DecorationSize(QStyleOptionViewItem_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionViewItem_DecorationSize(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetDecorationSize")]
-	public static extern void QStyleOptionViewItem_SetDecorationSize(QStyleOptionViewItem_Ptr* self, QSize_Ptr decorationSize);
+	public static extern void QStyleOptionViewItem_SetDecorationSize(QStyleOptionViewItem_Ptr* self, QSize_Ptr* decorationSize);
 	[LinkName("QStyleOptionViewItem_Font")]
-	public static extern QFont_Ptr QStyleOptionViewItem_Font(QStyleOptionViewItem_Ptr* self);
+	public static extern QFont_Ptr* QStyleOptionViewItem_Font(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetFont")]
-	public static extern void QStyleOptionViewItem_SetFont(QStyleOptionViewItem_Ptr* self, QFont_Ptr font);
+	public static extern void QStyleOptionViewItem_SetFont(QStyleOptionViewItem_Ptr* self, QFont_Ptr* font);
 	[LinkName("QStyleOptionViewItem_ShowDecorationSelected")]
 	public static extern bool QStyleOptionViewItem_ShowDecorationSelected(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetShowDecorationSelected")]
@@ -2601,25 +2447,25 @@ extension CQt
 	[LinkName("QStyleOptionViewItem_SetFeatures")]
 	public static extern void QStyleOptionViewItem_SetFeatures(QStyleOptionViewItem_Ptr* self, void* features);
 	[LinkName("QStyleOptionViewItem_Locale")]
-	public static extern QLocale_Ptr QStyleOptionViewItem_Locale(QStyleOptionViewItem_Ptr* self);
+	public static extern QLocale_Ptr* QStyleOptionViewItem_Locale(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetLocale")]
-	public static extern void QStyleOptionViewItem_SetLocale(QStyleOptionViewItem_Ptr* self, QLocale_Ptr locale);
+	public static extern void QStyleOptionViewItem_SetLocale(QStyleOptionViewItem_Ptr* self, QLocale_Ptr* locale);
 	[LinkName("QStyleOptionViewItem_Widget")]
-	public static extern QWidget_Ptr* QStyleOptionViewItem_Widget(QStyleOptionViewItem_Ptr* self);
+	public static extern QWidget_Ptr** QStyleOptionViewItem_Widget(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetWidget")]
-	public static extern void QStyleOptionViewItem_SetWidget(QStyleOptionViewItem_Ptr* self, QWidget_Ptr* widget);
+	public static extern void QStyleOptionViewItem_SetWidget(QStyleOptionViewItem_Ptr* self, QWidget_Ptr** widget);
 	[LinkName("QStyleOptionViewItem_Index")]
-	public static extern QModelIndex_Ptr QStyleOptionViewItem_Index(QStyleOptionViewItem_Ptr* self);
+	public static extern QModelIndex_Ptr* QStyleOptionViewItem_Index(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetIndex")]
-	public static extern void QStyleOptionViewItem_SetIndex(QStyleOptionViewItem_Ptr* self, QModelIndex_Ptr index);
+	public static extern void QStyleOptionViewItem_SetIndex(QStyleOptionViewItem_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QStyleOptionViewItem_CheckState")]
 	public static extern Qt_CheckState QStyleOptionViewItem_CheckState(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetCheckState")]
 	public static extern void QStyleOptionViewItem_SetCheckState(QStyleOptionViewItem_Ptr* self, Qt_CheckState checkState);
 	[LinkName("QStyleOptionViewItem_Icon")]
-	public static extern QIcon_Ptr QStyleOptionViewItem_Icon(QStyleOptionViewItem_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionViewItem_Icon(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetIcon")]
-	public static extern void QStyleOptionViewItem_SetIcon(QStyleOptionViewItem_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionViewItem_SetIcon(QStyleOptionViewItem_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionViewItem_Text")]
 	public static extern libqt_string QStyleOptionViewItem_Text(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetText")]
@@ -2629,22 +2475,23 @@ extension CQt
 	[LinkName("QStyleOptionViewItem_SetViewItemPosition")]
 	public static extern void QStyleOptionViewItem_SetViewItemPosition(QStyleOptionViewItem_Ptr* self, QStyleOptionViewItem_ViewItemPosition viewItemPosition);
 	[LinkName("QStyleOptionViewItem_BackgroundBrush")]
-	public static extern QBrush_Ptr QStyleOptionViewItem_BackgroundBrush(QStyleOptionViewItem_Ptr* self);
+	public static extern QBrush_Ptr* QStyleOptionViewItem_BackgroundBrush(QStyleOptionViewItem_Ptr* self);
 	[LinkName("QStyleOptionViewItem_SetBackgroundBrush")]
-	public static extern void QStyleOptionViewItem_SetBackgroundBrush(QStyleOptionViewItem_Ptr* self, QBrush_Ptr backgroundBrush);
+	public static extern void QStyleOptionViewItem_SetBackgroundBrush(QStyleOptionViewItem_Ptr* self, QBrush_Ptr* backgroundBrush);
 	[LinkName("QStyleOptionViewItem_OperatorAssign")]
 	public static extern void QStyleOptionViewItem_OperatorAssign(QStyleOptionViewItem_Ptr* self, QStyleOptionViewItem_Ptr* param1);
 }
-class QStyleOptionViewItem
+class QStyleOptionViewItem : IQStyleOptionViewItem, IQStyleOption
 {
 	private QStyleOptionViewItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionViewItem_new();
 	}
-	public this(QStyleOptionViewItem_Ptr* other)
+	public this(IQStyleOptionViewItem other)
 	{
-		this.ptr = CQt.QStyleOptionViewItem_new2(other);
+		this.ptr = CQt.QStyleOptionViewItem_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -2682,21 +2529,21 @@ class QStyleOptionViewItem
 	{
 		CQt.QStyleOptionViewItem_SetDecorationPosition((.)this.ptr, decorationPosition);
 	}
-	public QSize_Ptr DecorationSize()
+	public QSize_Ptr* DecorationSize()
 	{
 		return CQt.QStyleOptionViewItem_DecorationSize((.)this.ptr);
 	}
-	public void SetDecorationSize(QSize_Ptr decorationSize)
+	public void SetDecorationSize(IQSize decorationSize)
 	{
-		CQt.QStyleOptionViewItem_SetDecorationSize((.)this.ptr, decorationSize);
+		CQt.QStyleOptionViewItem_SetDecorationSize((.)this.ptr, (.)decorationSize?.ObjectPtr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QStyleOptionViewItem_Font((.)this.ptr);
 	}
-	public void SetFont(QFont_Ptr font)
+	public void SetFont(IQFont font)
 	{
-		CQt.QStyleOptionViewItem_SetFont((.)this.ptr, font);
+		CQt.QStyleOptionViewItem_SetFont((.)this.ptr, (.)font?.ObjectPtr);
 	}
 	public bool ShowDecorationSelected()
 	{
@@ -2714,29 +2561,29 @@ class QStyleOptionViewItem
 	{
 		CQt.QStyleOptionViewItem_SetFeatures((.)this.ptr, features);
 	}
-	public QLocale_Ptr Locale()
+	public QLocale_Ptr* Locale()
 	{
 		return CQt.QStyleOptionViewItem_Locale((.)this.ptr);
 	}
-	public void SetLocale(QLocale_Ptr locale)
+	public void SetLocale(IQLocale locale)
 	{
-		CQt.QStyleOptionViewItem_SetLocale((.)this.ptr, locale);
+		CQt.QStyleOptionViewItem_SetLocale((.)this.ptr, (.)locale?.ObjectPtr);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QStyleOptionViewItem_Widget((.)this.ptr);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QStyleOptionViewItem_SetWidget((.)this.ptr, widget);
+		CQt.QStyleOptionViewItem_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
-	public QModelIndex_Ptr Index()
+	public QModelIndex_Ptr* Index()
 	{
 		return CQt.QStyleOptionViewItem_Index((.)this.ptr);
 	}
-	public void SetIndex(QModelIndex_Ptr index)
+	public void SetIndex(IQModelIndex index)
 	{
-		CQt.QStyleOptionViewItem_SetIndex((.)this.ptr, index);
+		CQt.QStyleOptionViewItem_SetIndex((.)this.ptr, (.)index?.ObjectPtr);
 	}
 	public Qt_CheckState CheckState()
 	{
@@ -2746,19 +2593,19 @@ class QStyleOptionViewItem
 	{
 		CQt.QStyleOptionViewItem_SetCheckState((.)this.ptr, checkState);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionViewItem_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionViewItem_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionViewItem_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
 	public libqt_string Text()
 	{
 		return CQt.QStyleOptionViewItem_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionViewItem_SetText((.)this.ptr, text);
 	}
@@ -2770,13 +2617,13 @@ class QStyleOptionViewItem
 	{
 		CQt.QStyleOptionViewItem_SetViewItemPosition((.)this.ptr, viewItemPosition);
 	}
-	public QBrush_Ptr BackgroundBrush()
+	public QBrush_Ptr* BackgroundBrush()
 	{
 		return CQt.QStyleOptionViewItem_BackgroundBrush((.)this.ptr);
 	}
-	public void SetBackgroundBrush(QBrush_Ptr backgroundBrush)
+	public void SetBackgroundBrush(IQBrush backgroundBrush)
 	{
-		CQt.QStyleOptionViewItem_SetBackgroundBrush((.)this.ptr, backgroundBrush);
+		CQt.QStyleOptionViewItem_SetBackgroundBrush((.)this.ptr, (.)backgroundBrush?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -2810,77 +2657,45 @@ class QStyleOptionViewItem
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionViewItem
+interface IQStyleOptionViewItem : IQtObjectInterface
 {
-	public void* DisplayAlignment();
-	public void SetDisplayAlignment();
-	public void* DecorationAlignment();
-	public void SetDecorationAlignment();
-	public Qt_TextElideMode TextElideMode();
-	public void SetTextElideMode();
-	public QStyleOptionViewItem_Position DecorationPosition();
-	public void SetDecorationPosition();
-	public QSize DecorationSize();
-	public void SetDecorationSize();
-	public QFont Font();
-	public void SetFont();
-	public bool ShowDecorationSelected();
-	public void SetShowDecorationSelected();
-	public void* Features();
-	public void SetFeatures();
-	public QLocale Locale();
-	public void SetLocale();
-	public QWidget* Widget();
-	public void SetWidget();
-	public QModelIndex Index();
-	public void SetIndex();
-	public Qt_CheckState CheckState();
-	public void SetCheckState();
-	public QIcon Icon();
-	public void SetIcon();
-	public libqt_string Text();
-	public void SetText();
-	public QStyleOptionViewItem_ViewItemPosition ViewItemPosition();
-	public void SetViewItemPosition();
-	public QBrush BackgroundBrush();
-	public void SetBackgroundBrush();
 }
 // --------------------------------------------------------------
 // QStyleOptionToolBox
@@ -2902,9 +2717,9 @@ extension CQt
 	[LinkName("QStyleOptionToolBox_SetText")]
 	public static extern void QStyleOptionToolBox_SetText(QStyleOptionToolBox_Ptr* self, libqt_string text);
 	[LinkName("QStyleOptionToolBox_Icon")]
-	public static extern QIcon_Ptr QStyleOptionToolBox_Icon(QStyleOptionToolBox_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionToolBox_Icon(QStyleOptionToolBox_Ptr* self);
 	[LinkName("QStyleOptionToolBox_SetIcon")]
-	public static extern void QStyleOptionToolBox_SetIcon(QStyleOptionToolBox_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionToolBox_SetIcon(QStyleOptionToolBox_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionToolBox_Position")]
 	public static extern QStyleOptionToolBox_TabPosition QStyleOptionToolBox_Position(QStyleOptionToolBox_Ptr* self);
 	[LinkName("QStyleOptionToolBox_SetPosition")]
@@ -2916,16 +2731,17 @@ extension CQt
 	[LinkName("QStyleOptionToolBox_OperatorAssign")]
 	public static extern void QStyleOptionToolBox_OperatorAssign(QStyleOptionToolBox_Ptr* self, QStyleOptionToolBox_Ptr* param1);
 }
-class QStyleOptionToolBox
+class QStyleOptionToolBox : IQStyleOptionToolBox, IQStyleOption
 {
 	private QStyleOptionToolBox_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolBox_new();
 	}
-	public this(QStyleOptionToolBox_Ptr* other)
+	public this(IQStyleOptionToolBox other)
 	{
-		this.ptr = CQt.QStyleOptionToolBox_new2(other);
+		this.ptr = CQt.QStyleOptionToolBox_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -2935,17 +2751,17 @@ class QStyleOptionToolBox
 	{
 		return CQt.QStyleOptionToolBox_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionToolBox_SetText((.)this.ptr, text);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionToolBox_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionToolBox_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionToolBox_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
 	public QStyleOptionToolBox_TabPosition Position()
 	{
@@ -2995,53 +2811,45 @@ class QStyleOptionToolBox
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionToolBox
+interface IQStyleOptionToolBox : IQtObjectInterface
 {
-	public libqt_string Text();
-	public void SetText();
-	public QIcon Icon();
-	public void SetIcon();
-	public QStyleOptionToolBox_TabPosition Position();
-	public void SetPosition();
-	public QStyleOptionToolBox_SelectedPosition SelectedPosition();
-	public void SetSelectedPosition();
 }
 // --------------------------------------------------------------
 // QStyleOptionRubberBand
@@ -3069,16 +2877,17 @@ extension CQt
 	[LinkName("QStyleOptionRubberBand_OperatorAssign")]
 	public static extern void QStyleOptionRubberBand_OperatorAssign(QStyleOptionRubberBand_Ptr* self, QStyleOptionRubberBand_Ptr* param1);
 }
-class QStyleOptionRubberBand
+class QStyleOptionRubberBand : IQStyleOptionRubberBand, IQStyleOption
 {
 	private QStyleOptionRubberBand_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionRubberBand_new();
 	}
-	public this(QStyleOptionRubberBand_Ptr* other)
+	public this(IQStyleOptionRubberBand other)
 	{
-		this.ptr = CQt.QStyleOptionRubberBand_new2(other);
+		this.ptr = CQt.QStyleOptionRubberBand_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -3132,49 +2941,45 @@ class QStyleOptionRubberBand
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionRubberBand
+interface IQStyleOptionRubberBand : IQtObjectInterface
 {
-	public QRubberBand_Shape Shape();
-	public void SetShape();
-	public bool Opaque();
-	public void SetOpaque();
 }
 // --------------------------------------------------------------
 // QStyleOptionComplex
@@ -3206,16 +3011,17 @@ extension CQt
 	[LinkName("QStyleOptionComplex_OperatorAssign")]
 	public static extern void QStyleOptionComplex_OperatorAssign(QStyleOptionComplex_Ptr* self, QStyleOptionComplex_Ptr* param1);
 }
-class QStyleOptionComplex
+class QStyleOptionComplex : IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionComplex_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionComplex_new();
 	}
-	public this(QStyleOptionComplex_Ptr* other)
+	public this(IQStyleOptionComplex other)
 	{
-		this.ptr = CQt.QStyleOptionComplex_new2(other);
+		this.ptr = CQt.QStyleOptionComplex_new2((.)other?.ObjectPtr);
 	}
 	public this(c_int version)
 	{
@@ -3277,49 +3083,45 @@ class QStyleOptionComplex
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionComplex
+interface IQStyleOptionComplex : IQtObjectInterface
 {
-	public void* SubControls();
-	public void SetSubControls();
-	public void* ActiveSubControls();
-	public void SetActiveSubControls();
 }
 // --------------------------------------------------------------
 // QStyleOptionSlider
@@ -3391,16 +3193,17 @@ extension CQt
 	[LinkName("QStyleOptionSlider_OperatorAssign")]
 	public static extern void QStyleOptionSlider_OperatorAssign(QStyleOptionSlider_Ptr* self, QStyleOptionSlider_Ptr* param1);
 }
-class QStyleOptionSlider
+class QStyleOptionSlider : IQStyleOptionSlider, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionSlider_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSlider_new();
 	}
-	public this(QStyleOptionSlider_Ptr* other)
+	public this(IQStyleOptionSlider other)
 	{
-		this.ptr = CQt.QStyleOptionSlider_new2(other);
+		this.ptr = CQt.QStyleOptionSlider_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -3558,71 +3361,45 @@ class QStyleOptionSlider
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionSlider
+interface IQStyleOptionSlider : IQtObjectInterface
 {
-	public Qt_Orientation Orientation();
-	public void SetOrientation();
-	public c_int Minimum();
-	public void SetMinimum();
-	public c_int Maximum();
-	public void SetMaximum();
-	public QSlider_TickPosition TickPosition();
-	public void SetTickPosition();
-	public c_int TickInterval();
-	public void SetTickInterval();
-	public bool UpsideDown();
-	public void SetUpsideDown();
-	public c_int SliderPosition();
-	public void SetSliderPosition();
-	public c_int SliderValue();
-	public void SetSliderValue();
-	public c_int SingleStep();
-	public void SetSingleStep();
-	public c_int PageStep();
-	public void SetPageStep();
-	public double NotchTarget();
-	public void SetNotchTarget();
-	public bool DialWrapping();
-	public void SetDialWrapping();
-	public void* KeyboardModifiers();
-	public void SetKeyboardModifiers();
 }
 // --------------------------------------------------------------
 // QStyleOptionSpinBox
@@ -3654,16 +3431,17 @@ extension CQt
 	[LinkName("QStyleOptionSpinBox_OperatorAssign")]
 	public static extern void QStyleOptionSpinBox_OperatorAssign(QStyleOptionSpinBox_Ptr* self, QStyleOptionSpinBox_Ptr* param1);
 }
-class QStyleOptionSpinBox
+class QStyleOptionSpinBox : IQStyleOptionSpinBox, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionSpinBox_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSpinBox_new();
 	}
-	public this(QStyleOptionSpinBox_Ptr* other)
+	public this(IQStyleOptionSpinBox other)
 	{
-		this.ptr = CQt.QStyleOptionSpinBox_new2(other);
+		this.ptr = CQt.QStyleOptionSpinBox_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -3741,51 +3519,45 @@ class QStyleOptionSpinBox
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionSpinBox
+interface IQStyleOptionSpinBox : IQtObjectInterface
 {
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols();
-	public void SetButtonSymbols();
-	public void* StepEnabled();
-	public void SetStepEnabled();
-	public bool Frame();
-	public void SetFrame();
 }
 // --------------------------------------------------------------
 // QStyleOptionToolButton
@@ -3807,13 +3579,13 @@ extension CQt
 	[LinkName("QStyleOptionToolButton_SetFeatures")]
 	public static extern void QStyleOptionToolButton_SetFeatures(QStyleOptionToolButton_Ptr* self, void* features);
 	[LinkName("QStyleOptionToolButton_Icon")]
-	public static extern QIcon_Ptr QStyleOptionToolButton_Icon(QStyleOptionToolButton_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionToolButton_Icon(QStyleOptionToolButton_Ptr* self);
 	[LinkName("QStyleOptionToolButton_SetIcon")]
-	public static extern void QStyleOptionToolButton_SetIcon(QStyleOptionToolButton_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionToolButton_SetIcon(QStyleOptionToolButton_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionToolButton_IconSize")]
-	public static extern QSize_Ptr QStyleOptionToolButton_IconSize(QStyleOptionToolButton_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionToolButton_IconSize(QStyleOptionToolButton_Ptr* self);
 	[LinkName("QStyleOptionToolButton_SetIconSize")]
-	public static extern void QStyleOptionToolButton_SetIconSize(QStyleOptionToolButton_Ptr* self, QSize_Ptr iconSize);
+	public static extern void QStyleOptionToolButton_SetIconSize(QStyleOptionToolButton_Ptr* self, QSize_Ptr* iconSize);
 	[LinkName("QStyleOptionToolButton_Text")]
 	public static extern libqt_string QStyleOptionToolButton_Text(QStyleOptionToolButton_Ptr* self);
 	[LinkName("QStyleOptionToolButton_SetText")]
@@ -3827,26 +3599,27 @@ extension CQt
 	[LinkName("QStyleOptionToolButton_SetToolButtonStyle")]
 	public static extern void QStyleOptionToolButton_SetToolButtonStyle(QStyleOptionToolButton_Ptr* self, Qt_ToolButtonStyle toolButtonStyle);
 	[LinkName("QStyleOptionToolButton_Pos")]
-	public static extern QPoint_Ptr QStyleOptionToolButton_Pos(QStyleOptionToolButton_Ptr* self);
+	public static extern QPoint_Ptr* QStyleOptionToolButton_Pos(QStyleOptionToolButton_Ptr* self);
 	[LinkName("QStyleOptionToolButton_SetPos")]
-	public static extern void QStyleOptionToolButton_SetPos(QStyleOptionToolButton_Ptr* self, QPoint_Ptr pos);
+	public static extern void QStyleOptionToolButton_SetPos(QStyleOptionToolButton_Ptr* self, QPoint_Ptr* pos);
 	[LinkName("QStyleOptionToolButton_Font")]
-	public static extern QFont_Ptr QStyleOptionToolButton_Font(QStyleOptionToolButton_Ptr* self);
+	public static extern QFont_Ptr* QStyleOptionToolButton_Font(QStyleOptionToolButton_Ptr* self);
 	[LinkName("QStyleOptionToolButton_SetFont")]
-	public static extern void QStyleOptionToolButton_SetFont(QStyleOptionToolButton_Ptr* self, QFont_Ptr font);
+	public static extern void QStyleOptionToolButton_SetFont(QStyleOptionToolButton_Ptr* self, QFont_Ptr* font);
 	[LinkName("QStyleOptionToolButton_OperatorAssign")]
 	public static extern void QStyleOptionToolButton_OperatorAssign(QStyleOptionToolButton_Ptr* self, QStyleOptionToolButton_Ptr* param1);
 }
-class QStyleOptionToolButton
+class QStyleOptionToolButton : IQStyleOptionToolButton, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionToolButton_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolButton_new();
 	}
-	public this(QStyleOptionToolButton_Ptr* other)
+	public this(IQStyleOptionToolButton other)
 	{
-		this.ptr = CQt.QStyleOptionToolButton_new2(other);
+		this.ptr = CQt.QStyleOptionToolButton_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -3860,27 +3633,27 @@ class QStyleOptionToolButton
 	{
 		CQt.QStyleOptionToolButton_SetFeatures((.)this.ptr, features);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionToolButton_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionToolButton_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionToolButton_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
-	public QSize_Ptr IconSize()
+	public QSize_Ptr* IconSize()
 	{
 		return CQt.QStyleOptionToolButton_IconSize((.)this.ptr);
 	}
-	public void SetIconSize(QSize_Ptr iconSize)
+	public void SetIconSize(IQSize iconSize)
 	{
-		CQt.QStyleOptionToolButton_SetIconSize((.)this.ptr, iconSize);
+		CQt.QStyleOptionToolButton_SetIconSize((.)this.ptr, (.)iconSize?.ObjectPtr);
 	}
 	public libqt_string Text()
 	{
 		return CQt.QStyleOptionToolButton_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionToolButton_SetText((.)this.ptr, text);
 	}
@@ -3900,21 +3673,21 @@ class QStyleOptionToolButton
 	{
 		CQt.QStyleOptionToolButton_SetToolButtonStyle((.)this.ptr, toolButtonStyle);
 	}
-	public QPoint_Ptr Pos()
+	public QPoint_Ptr* Pos()
 	{
 		return CQt.QStyleOptionToolButton_Pos((.)this.ptr);
 	}
-	public void SetPos(QPoint_Ptr pos)
+	public void SetPos(IQPoint pos)
 	{
-		CQt.QStyleOptionToolButton_SetPos((.)this.ptr, pos);
+		CQt.QStyleOptionToolButton_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QStyleOptionToolButton_Font((.)this.ptr);
 	}
-	public void SetFont(QFont_Ptr font)
+	public void SetFont(IQFont font)
 	{
-		CQt.QStyleOptionToolButton_SetFont((.)this.ptr, font);
+		CQt.QStyleOptionToolButton_SetFont((.)this.ptr, (.)font?.ObjectPtr);
 	}
 	public void* SubControls()
 	{
@@ -3964,61 +3737,45 @@ class QStyleOptionToolButton
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionToolButton
+interface IQStyleOptionToolButton : IQtObjectInterface
 {
-	public void* Features();
-	public void SetFeatures();
-	public QIcon Icon();
-	public void SetIcon();
-	public QSize IconSize();
-	public void SetIconSize();
-	public libqt_string Text();
-	public void SetText();
-	public Qt_ArrowType ArrowType();
-	public void SetArrowType();
-	public Qt_ToolButtonStyle ToolButtonStyle();
-	public void SetToolButtonStyle();
-	public QPoint Pos();
-	public void SetPos();
-	public QFont Font();
-	public void SetFont();
 }
 // --------------------------------------------------------------
 // QStyleOptionComboBox
@@ -4040,9 +3797,9 @@ extension CQt
 	[LinkName("QStyleOptionComboBox_SetEditable")]
 	public static extern void QStyleOptionComboBox_SetEditable(QStyleOptionComboBox_Ptr* self, bool editable);
 	[LinkName("QStyleOptionComboBox_PopupRect")]
-	public static extern QRect_Ptr QStyleOptionComboBox_PopupRect(QStyleOptionComboBox_Ptr* self);
+	public static extern QRect_Ptr* QStyleOptionComboBox_PopupRect(QStyleOptionComboBox_Ptr* self);
 	[LinkName("QStyleOptionComboBox_SetPopupRect")]
-	public static extern void QStyleOptionComboBox_SetPopupRect(QStyleOptionComboBox_Ptr* self, QRect_Ptr popupRect);
+	public static extern void QStyleOptionComboBox_SetPopupRect(QStyleOptionComboBox_Ptr* self, QRect_Ptr* popupRect);
 	[LinkName("QStyleOptionComboBox_Frame")]
 	public static extern bool QStyleOptionComboBox_Frame(QStyleOptionComboBox_Ptr* self);
 	[LinkName("QStyleOptionComboBox_SetFrame")]
@@ -4052,13 +3809,13 @@ extension CQt
 	[LinkName("QStyleOptionComboBox_SetCurrentText")]
 	public static extern void QStyleOptionComboBox_SetCurrentText(QStyleOptionComboBox_Ptr* self, libqt_string currentText);
 	[LinkName("QStyleOptionComboBox_CurrentIcon")]
-	public static extern QIcon_Ptr QStyleOptionComboBox_CurrentIcon(QStyleOptionComboBox_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionComboBox_CurrentIcon(QStyleOptionComboBox_Ptr* self);
 	[LinkName("QStyleOptionComboBox_SetCurrentIcon")]
-	public static extern void QStyleOptionComboBox_SetCurrentIcon(QStyleOptionComboBox_Ptr* self, QIcon_Ptr currentIcon);
+	public static extern void QStyleOptionComboBox_SetCurrentIcon(QStyleOptionComboBox_Ptr* self, QIcon_Ptr* currentIcon);
 	[LinkName("QStyleOptionComboBox_IconSize")]
-	public static extern QSize_Ptr QStyleOptionComboBox_IconSize(QStyleOptionComboBox_Ptr* self);
+	public static extern QSize_Ptr* QStyleOptionComboBox_IconSize(QStyleOptionComboBox_Ptr* self);
 	[LinkName("QStyleOptionComboBox_SetIconSize")]
-	public static extern void QStyleOptionComboBox_SetIconSize(QStyleOptionComboBox_Ptr* self, QSize_Ptr iconSize);
+	public static extern void QStyleOptionComboBox_SetIconSize(QStyleOptionComboBox_Ptr* self, QSize_Ptr* iconSize);
 	[LinkName("QStyleOptionComboBox_TextAlignment")]
 	public static extern void* QStyleOptionComboBox_TextAlignment(QStyleOptionComboBox_Ptr* self);
 	[LinkName("QStyleOptionComboBox_SetTextAlignment")]
@@ -4066,16 +3823,17 @@ extension CQt
 	[LinkName("QStyleOptionComboBox_OperatorAssign")]
 	public static extern void QStyleOptionComboBox_OperatorAssign(QStyleOptionComboBox_Ptr* self, QStyleOptionComboBox_Ptr* param1);
 }
-class QStyleOptionComboBox
+class QStyleOptionComboBox : IQStyleOptionComboBox, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionComboBox_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionComboBox_new();
 	}
-	public this(QStyleOptionComboBox_Ptr* other)
+	public this(IQStyleOptionComboBox other)
 	{
-		this.ptr = CQt.QStyleOptionComboBox_new2(other);
+		this.ptr = CQt.QStyleOptionComboBox_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -4089,13 +3847,13 @@ class QStyleOptionComboBox
 	{
 		CQt.QStyleOptionComboBox_SetEditable((.)this.ptr, editable);
 	}
-	public QRect_Ptr PopupRect()
+	public QRect_Ptr* PopupRect()
 	{
 		return CQt.QStyleOptionComboBox_PopupRect((.)this.ptr);
 	}
-	public void SetPopupRect(QRect_Ptr popupRect)
+	public void SetPopupRect(IQRect popupRect)
 	{
-		CQt.QStyleOptionComboBox_SetPopupRect((.)this.ptr, popupRect);
+		CQt.QStyleOptionComboBox_SetPopupRect((.)this.ptr, (.)popupRect?.ObjectPtr);
 	}
 	public bool Frame()
 	{
@@ -4109,25 +3867,25 @@ class QStyleOptionComboBox
 	{
 		return CQt.QStyleOptionComboBox_CurrentText((.)this.ptr);
 	}
-	public void SetCurrentText(libqt_string currentText)
+	public void SetCurrentText(String currentText)
 	{
 		CQt.QStyleOptionComboBox_SetCurrentText((.)this.ptr, currentText);
 	}
-	public QIcon_Ptr CurrentIcon()
+	public QIcon_Ptr* CurrentIcon()
 	{
 		return CQt.QStyleOptionComboBox_CurrentIcon((.)this.ptr);
 	}
-	public void SetCurrentIcon(QIcon_Ptr currentIcon)
+	public void SetCurrentIcon(IQIcon currentIcon)
 	{
-		CQt.QStyleOptionComboBox_SetCurrentIcon((.)this.ptr, currentIcon);
+		CQt.QStyleOptionComboBox_SetCurrentIcon((.)this.ptr, (.)currentIcon?.ObjectPtr);
 	}
-	public QSize_Ptr IconSize()
+	public QSize_Ptr* IconSize()
 	{
 		return CQt.QStyleOptionComboBox_IconSize((.)this.ptr);
 	}
-	public void SetIconSize(QSize_Ptr iconSize)
+	public void SetIconSize(IQSize iconSize)
 	{
-		CQt.QStyleOptionComboBox_SetIconSize((.)this.ptr, iconSize);
+		CQt.QStyleOptionComboBox_SetIconSize((.)this.ptr, (.)iconSize?.ObjectPtr);
 	}
 	public void* TextAlignment()
 	{
@@ -4185,59 +3943,45 @@ class QStyleOptionComboBox
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionComboBox
+interface IQStyleOptionComboBox : IQtObjectInterface
 {
-	public bool Editable();
-	public void SetEditable();
-	public QRect PopupRect();
-	public void SetPopupRect();
-	public bool Frame();
-	public void SetFrame();
-	public libqt_string CurrentText();
-	public void SetCurrentText();
-	public QIcon CurrentIcon();
-	public void SetCurrentIcon();
-	public QSize IconSize();
-	public void SetIconSize();
-	public void* TextAlignment();
-	public void SetTextAlignment();
 }
 // --------------------------------------------------------------
 // QStyleOptionTitleBar
@@ -4259,9 +4003,9 @@ extension CQt
 	[LinkName("QStyleOptionTitleBar_SetText")]
 	public static extern void QStyleOptionTitleBar_SetText(QStyleOptionTitleBar_Ptr* self, libqt_string text);
 	[LinkName("QStyleOptionTitleBar_Icon")]
-	public static extern QIcon_Ptr QStyleOptionTitleBar_Icon(QStyleOptionTitleBar_Ptr* self);
+	public static extern QIcon_Ptr* QStyleOptionTitleBar_Icon(QStyleOptionTitleBar_Ptr* self);
 	[LinkName("QStyleOptionTitleBar_SetIcon")]
-	public static extern void QStyleOptionTitleBar_SetIcon(QStyleOptionTitleBar_Ptr* self, QIcon_Ptr icon);
+	public static extern void QStyleOptionTitleBar_SetIcon(QStyleOptionTitleBar_Ptr* self, QIcon_Ptr* icon);
 	[LinkName("QStyleOptionTitleBar_TitleBarState")]
 	public static extern c_int QStyleOptionTitleBar_TitleBarState(QStyleOptionTitleBar_Ptr* self);
 	[LinkName("QStyleOptionTitleBar_SetTitleBarState")]
@@ -4273,16 +4017,17 @@ extension CQt
 	[LinkName("QStyleOptionTitleBar_OperatorAssign")]
 	public static extern void QStyleOptionTitleBar_OperatorAssign(QStyleOptionTitleBar_Ptr* self, QStyleOptionTitleBar_Ptr* param1);
 }
-class QStyleOptionTitleBar
+class QStyleOptionTitleBar : IQStyleOptionTitleBar, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionTitleBar_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTitleBar_new();
 	}
-	public this(QStyleOptionTitleBar_Ptr* other)
+	public this(IQStyleOptionTitleBar other)
 	{
-		this.ptr = CQt.QStyleOptionTitleBar_new2(other);
+		this.ptr = CQt.QStyleOptionTitleBar_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -4292,17 +4037,17 @@ class QStyleOptionTitleBar
 	{
 		return CQt.QStyleOptionTitleBar_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionTitleBar_SetText((.)this.ptr, text);
 	}
-	public QIcon_Ptr Icon()
+	public QIcon_Ptr* Icon()
 	{
 		return CQt.QStyleOptionTitleBar_Icon((.)this.ptr);
 	}
-	public void SetIcon(QIcon_Ptr icon)
+	public void SetIcon(IQIcon icon)
 	{
-		CQt.QStyleOptionTitleBar_SetIcon((.)this.ptr, icon);
+		CQt.QStyleOptionTitleBar_SetIcon((.)this.ptr, (.)icon?.ObjectPtr);
 	}
 	public c_int TitleBarState()
 	{
@@ -4368,53 +4113,45 @@ class QStyleOptionTitleBar
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionTitleBar
+interface IQStyleOptionTitleBar : IQtObjectInterface
 {
-	public libqt_string Text();
-	public void SetText();
-	public QIcon Icon();
-	public void SetIcon();
-	public c_int TitleBarState();
-	public void SetTitleBarState();
-	public void* TitleBarFlags();
-	public void SetTitleBarFlags();
 }
 // --------------------------------------------------------------
 // QStyleOptionGroupBox
@@ -4444,9 +4181,9 @@ extension CQt
 	[LinkName("QStyleOptionGroupBox_SetTextAlignment")]
 	public static extern void QStyleOptionGroupBox_SetTextAlignment(QStyleOptionGroupBox_Ptr* self, void* textAlignment);
 	[LinkName("QStyleOptionGroupBox_TextColor")]
-	public static extern QColor_Ptr QStyleOptionGroupBox_TextColor(QStyleOptionGroupBox_Ptr* self);
+	public static extern QColor_Ptr* QStyleOptionGroupBox_TextColor(QStyleOptionGroupBox_Ptr* self);
 	[LinkName("QStyleOptionGroupBox_SetTextColor")]
-	public static extern void QStyleOptionGroupBox_SetTextColor(QStyleOptionGroupBox_Ptr* self, QColor_Ptr textColor);
+	public static extern void QStyleOptionGroupBox_SetTextColor(QStyleOptionGroupBox_Ptr* self, QColor_Ptr* textColor);
 	[LinkName("QStyleOptionGroupBox_LineWidth")]
 	public static extern c_int QStyleOptionGroupBox_LineWidth(QStyleOptionGroupBox_Ptr* self);
 	[LinkName("QStyleOptionGroupBox_SetLineWidth")]
@@ -4458,16 +4195,17 @@ extension CQt
 	[LinkName("QStyleOptionGroupBox_OperatorAssign")]
 	public static extern void QStyleOptionGroupBox_OperatorAssign(QStyleOptionGroupBox_Ptr* self, QStyleOptionGroupBox_Ptr* param1);
 }
-class QStyleOptionGroupBox
+class QStyleOptionGroupBox : IQStyleOptionGroupBox, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionGroupBox_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionGroupBox_new();
 	}
-	public this(QStyleOptionGroupBox_Ptr* other)
+	public this(IQStyleOptionGroupBox other)
 	{
-		this.ptr = CQt.QStyleOptionGroupBox_new2(other);
+		this.ptr = CQt.QStyleOptionGroupBox_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -4485,7 +4223,7 @@ class QStyleOptionGroupBox
 	{
 		return CQt.QStyleOptionGroupBox_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string text)
+	public void SetText(String text)
 	{
 		CQt.QStyleOptionGroupBox_SetText((.)this.ptr, text);
 	}
@@ -4497,13 +4235,13 @@ class QStyleOptionGroupBox
 	{
 		CQt.QStyleOptionGroupBox_SetTextAlignment((.)this.ptr, textAlignment);
 	}
-	public QColor_Ptr TextColor()
+	public QColor_Ptr* TextColor()
 	{
 		return CQt.QStyleOptionGroupBox_TextColor((.)this.ptr);
 	}
-	public void SetTextColor(QColor_Ptr textColor)
+	public void SetTextColor(IQColor textColor)
 	{
-		CQt.QStyleOptionGroupBox_SetTextColor((.)this.ptr, textColor);
+		CQt.QStyleOptionGroupBox_SetTextColor((.)this.ptr, (.)textColor?.ObjectPtr);
 	}
 	public c_int LineWidth()
 	{
@@ -4569,57 +4307,45 @@ class QStyleOptionGroupBox
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionGroupBox
+interface IQStyleOptionGroupBox : IQtObjectInterface
 {
-	public void* Features();
-	public void SetFeatures();
-	public libqt_string Text();
-	public void SetText();
-	public void* TextAlignment();
-	public void SetTextAlignment();
-	public QColor TextColor();
-	public void SetTextColor();
-	public c_int LineWidth();
-	public void SetLineWidth();
-	public c_int MidLineWidth();
-	public void SetMidLineWidth();
 }
 // --------------------------------------------------------------
 // QStyleOptionSizeGrip
@@ -4643,16 +4369,17 @@ extension CQt
 	[LinkName("QStyleOptionSizeGrip_OperatorAssign")]
 	public static extern void QStyleOptionSizeGrip_OperatorAssign(QStyleOptionSizeGrip_Ptr* self, QStyleOptionSizeGrip_Ptr* param1);
 }
-class QStyleOptionSizeGrip
+class QStyleOptionSizeGrip : IQStyleOptionSizeGrip, IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionSizeGrip_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSizeGrip_new();
 	}
-	public this(QStyleOptionSizeGrip_Ptr* other)
+	public this(IQStyleOptionSizeGrip other)
 	{
-		this.ptr = CQt.QStyleOptionSizeGrip_new2(other);
+		this.ptr = CQt.QStyleOptionSizeGrip_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -4714,47 +4441,45 @@ class QStyleOptionSizeGrip
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionSizeGrip
+interface IQStyleOptionSizeGrip : IQtObjectInterface
 {
-	public Qt_Corner Corner();
-	public void SetCorner();
 }
 // --------------------------------------------------------------
 // QStyleOptionGraphicsItem
@@ -4772,40 +4497,41 @@ extension CQt
 	[LinkName("QStyleOptionGraphicsItem_Delete")]
 	public static extern void QStyleOptionGraphicsItem_Delete(QStyleOptionGraphicsItem_Ptr* self);
 	[LinkName("QStyleOptionGraphicsItem_ExposedRect")]
-	public static extern QRectF_Ptr QStyleOptionGraphicsItem_ExposedRect(QStyleOptionGraphicsItem_Ptr* self);
+	public static extern QRectF_Ptr* QStyleOptionGraphicsItem_ExposedRect(QStyleOptionGraphicsItem_Ptr* self);
 	[LinkName("QStyleOptionGraphicsItem_SetExposedRect")]
-	public static extern void QStyleOptionGraphicsItem_SetExposedRect(QStyleOptionGraphicsItem_Ptr* self, QRectF_Ptr exposedRect);
+	public static extern void QStyleOptionGraphicsItem_SetExposedRect(QStyleOptionGraphicsItem_Ptr* self, QRectF_Ptr* exposedRect);
 	[LinkName("QStyleOptionGraphicsItem_OperatorAssign")]
 	public static extern void QStyleOptionGraphicsItem_OperatorAssign(QStyleOptionGraphicsItem_Ptr* self, QStyleOptionGraphicsItem_Ptr* param1);
 	[LinkName("QStyleOptionGraphicsItem_LevelOfDetailFromTransform")]
 	public static extern double QStyleOptionGraphicsItem_LevelOfDetailFromTransform(QTransform_Ptr* worldTransform);
 }
-class QStyleOptionGraphicsItem
+class QStyleOptionGraphicsItem : IQStyleOptionGraphicsItem, IQStyleOption
 {
 	private QStyleOptionGraphicsItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionGraphicsItem_new();
 	}
-	public this(QStyleOptionGraphicsItem_Ptr* other)
+	public this(IQStyleOptionGraphicsItem other)
 	{
-		this.ptr = CQt.QStyleOptionGraphicsItem_new2(other);
+		this.ptr = CQt.QStyleOptionGraphicsItem_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QStyleOptionGraphicsItem_Delete(this.ptr);
 	}
-	public QRectF_Ptr ExposedRect()
+	public QRectF_Ptr* ExposedRect()
 	{
 		return CQt.QStyleOptionGraphicsItem_ExposedRect((.)this.ptr);
 	}
-	public void SetExposedRect(QRectF_Ptr exposedRect)
+	public void SetExposedRect(IQRectF exposedRect)
 	{
-		CQt.QStyleOptionGraphicsItem_SetExposedRect((.)this.ptr, exposedRect);
+		CQt.QStyleOptionGraphicsItem_SetExposedRect((.)this.ptr, (.)exposedRect?.ObjectPtr);
 	}
-	public double LevelOfDetailFromTransform(QTransform_Ptr* worldTransform)
+	public double LevelOfDetailFromTransform(IQTransform worldTransform)
 	{
-		return CQt.QStyleOptionGraphicsItem_LevelOfDetailFromTransform(worldTransform);
+		return CQt.QStyleOptionGraphicsItem_LevelOfDetailFromTransform((.)worldTransform?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -4839,48 +4565,45 @@ class QStyleOptionGraphicsItem
 	{
 		CQt.QStyleOption_SetDirection((.)this.ptr, direction);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QStyleOption_Rect((.)this.ptr);
 	}
-	public void SetRect(QRect_Ptr rect)
+	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr, rect);
+		CQt.QStyleOption_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QStyleOption_FontMetrics((.)this.ptr);
 	}
-	public void SetFontMetrics(QFontMetrics_Ptr fontMetrics)
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr, fontMetrics);
+		CQt.QStyleOption_SetFontMetrics((.)this.ptr, (.)fontMetrics?.ObjectPtr);
 	}
-	public QPalette_Ptr Palette()
+	public QPalette_Ptr* Palette()
 	{
 		return CQt.QStyleOption_Palette((.)this.ptr);
 	}
-	public void SetPalette(QPalette_Ptr palette)
+	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr, palette);
+		CQt.QStyleOption_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
 	}
-	public QObject_Ptr* StyleObject()
+	public QObject_Ptr** StyleObject()
 	{
 		return CQt.QStyleOption_StyleObject((.)this.ptr);
 	}
-	public void SetStyleObject(QObject_Ptr* styleObject)
+	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr, styleObject);
+		CQt.QStyleOption_SetStyleObject((.)this.ptr, (.)styleObject?.ObjectPtr);
 	}
-	public void InitFrom(QWidget_Ptr* w)
+	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr, w);
+		CQt.QStyleOption_InitFrom((.)this.ptr, (.)w?.ObjectPtr);
 	}
 }
-interface IQStyleOptionGraphicsItem
+interface IQStyleOptionGraphicsItem : IQtObjectInterface
 {
-	public QRectF ExposedRect();
-	public void SetExposedRect();
-	public double LevelOfDetailFromTransform();
 }
 // --------------------------------------------------------------
 // QStyleHintReturn
@@ -4912,16 +4635,17 @@ extension CQt
 	[LinkName("QStyleHintReturn_OperatorAssign")]
 	public static extern void QStyleHintReturn_OperatorAssign(QStyleHintReturn_Ptr* self, QStyleHintReturn_Ptr* param1);
 }
-class QStyleHintReturn
+class QStyleHintReturn : IQStyleHintReturn
 {
 	private QStyleHintReturn_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturn_new();
 	}
-	public this(QStyleHintReturn_Ptr* param1)
+	public this(IQStyleHintReturn param1)
 	{
-		this.ptr = CQt.QStyleHintReturn_new2(param1);
+		this.ptr = CQt.QStyleHintReturn_new2((.)param1?.ObjectPtr);
 	}
 	public this(c_int version)
 	{
@@ -4952,12 +4676,8 @@ class QStyleHintReturn
 		CQt.QStyleHintReturn_SetType((.)this.ptr, type);
 	}
 }
-interface IQStyleHintReturn
+interface IQStyleHintReturn : IQtObjectInterface
 {
-	public c_int Version();
-	public void SetVersion();
-	public c_int Type();
-	public void SetType();
 }
 // --------------------------------------------------------------
 // QStyleHintReturnMask
@@ -4975,34 +4695,35 @@ extension CQt
 	[LinkName("QStyleHintReturnMask_Delete")]
 	public static extern void QStyleHintReturnMask_Delete(QStyleHintReturnMask_Ptr* self);
 	[LinkName("QStyleHintReturnMask_Region")]
-	public static extern QRegion_Ptr QStyleHintReturnMask_Region(QStyleHintReturnMask_Ptr* self);
+	public static extern QRegion_Ptr* QStyleHintReturnMask_Region(QStyleHintReturnMask_Ptr* self);
 	[LinkName("QStyleHintReturnMask_SetRegion")]
-	public static extern void QStyleHintReturnMask_SetRegion(QStyleHintReturnMask_Ptr* self, QRegion_Ptr region);
+	public static extern void QStyleHintReturnMask_SetRegion(QStyleHintReturnMask_Ptr* self, QRegion_Ptr* region);
 	[LinkName("QStyleHintReturnMask_OperatorAssign")]
 	public static extern void QStyleHintReturnMask_OperatorAssign(QStyleHintReturnMask_Ptr* self, QStyleHintReturnMask_Ptr* param1);
 }
-class QStyleHintReturnMask
+class QStyleHintReturnMask : IQStyleHintReturnMask, IQStyleHintReturn
 {
 	private QStyleHintReturnMask_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturnMask_new();
 	}
-	public this(QStyleHintReturnMask_Ptr* param1)
+	public this(IQStyleHintReturnMask param1)
 	{
-		this.ptr = CQt.QStyleHintReturnMask_new2(param1);
+		this.ptr = CQt.QStyleHintReturnMask_new2((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QStyleHintReturnMask_Delete(this.ptr);
 	}
-	public QRegion_Ptr Region()
+	public QRegion_Ptr* Region()
 	{
 		return CQt.QStyleHintReturnMask_Region((.)this.ptr);
 	}
-	public void SetRegion(QRegion_Ptr region)
+	public void SetRegion(IQRegion region)
 	{
-		CQt.QStyleHintReturnMask_SetRegion((.)this.ptr, region);
+		CQt.QStyleHintReturnMask_SetRegion((.)this.ptr, (.)region?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -5021,10 +4742,8 @@ class QStyleHintReturnMask
 		CQt.QStyleHintReturn_SetType((.)this.ptr, type);
 	}
 }
-interface IQStyleHintReturnMask
+interface IQStyleHintReturnMask : IQtObjectInterface
 {
-	public QRegion Region();
-	public void SetRegion();
 }
 // --------------------------------------------------------------
 // QStyleHintReturnVariant
@@ -5042,34 +4761,35 @@ extension CQt
 	[LinkName("QStyleHintReturnVariant_Delete")]
 	public static extern void QStyleHintReturnVariant_Delete(QStyleHintReturnVariant_Ptr* self);
 	[LinkName("QStyleHintReturnVariant_Variant")]
-	public static extern QVariant_Ptr QStyleHintReturnVariant_Variant(QStyleHintReturnVariant_Ptr* self);
+	public static extern QVariant_Ptr* QStyleHintReturnVariant_Variant(QStyleHintReturnVariant_Ptr* self);
 	[LinkName("QStyleHintReturnVariant_SetVariant")]
-	public static extern void QStyleHintReturnVariant_SetVariant(QStyleHintReturnVariant_Ptr* self, QVariant_Ptr variant);
+	public static extern void QStyleHintReturnVariant_SetVariant(QStyleHintReturnVariant_Ptr* self, QVariant_Ptr* variant);
 	[LinkName("QStyleHintReturnVariant_OperatorAssign")]
 	public static extern void QStyleHintReturnVariant_OperatorAssign(QStyleHintReturnVariant_Ptr* self, QStyleHintReturnVariant_Ptr* param1);
 }
-class QStyleHintReturnVariant
+class QStyleHintReturnVariant : IQStyleHintReturnVariant, IQStyleHintReturn
 {
 	private QStyleHintReturnVariant_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturnVariant_new();
 	}
-	public this(QStyleHintReturnVariant_Ptr* param1)
+	public this(IQStyleHintReturnVariant param1)
 	{
-		this.ptr = CQt.QStyleHintReturnVariant_new2(param1);
+		this.ptr = CQt.QStyleHintReturnVariant_new2((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QStyleHintReturnVariant_Delete(this.ptr);
 	}
-	public QVariant_Ptr Variant()
+	public QVariant_Ptr* Variant()
 	{
 		return CQt.QStyleHintReturnVariant_Variant((.)this.ptr);
 	}
-	public void SetVariant(QVariant_Ptr variant)
+	public void SetVariant(IQVariant variant)
 	{
-		CQt.QStyleHintReturnVariant_SetVariant((.)this.ptr, variant);
+		CQt.QStyleHintReturnVariant_SetVariant((.)this.ptr, (.)variant?.ObjectPtr);
 	}
 	public c_int Version()
 	{
@@ -5088,10 +4808,8 @@ class QStyleHintReturnVariant
 		CQt.QStyleHintReturn_SetType((.)this.ptr, type);
 	}
 }
-interface IQStyleHintReturnVariant
+interface IQStyleHintReturnVariant : IQtObjectInterface
 {
-	public QVariant Variant();
-	public void SetVariant();
 }
 [AllowDuplicates]
 enum QStyleOption_OptionType

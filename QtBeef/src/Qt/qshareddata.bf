@@ -19,23 +19,24 @@ extension CQt
 	[LinkName("QSharedData_Delete")]
 	public static extern void QSharedData_Delete(QSharedData_Ptr* self);
 }
-class QSharedData
+class QSharedData : IQSharedData
 {
 	private QSharedData_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QSharedData_new();
 	}
-	public this(QSharedData_Ptr* param1)
+	public this(IQSharedData param1)
 	{
-		this.ptr = CQt.QSharedData_new2(param1);
+		this.ptr = CQt.QSharedData_new2((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QSharedData_Delete(this.ptr);
 	}
 }
-interface IQSharedData
+interface IQSharedData : IQtObjectInterface
 {
 }
 // --------------------------------------------------------------
@@ -56,12 +57,13 @@ extension CQt
 	[LinkName("QAdoptSharedDataTag_Delete")]
 	public static extern void QAdoptSharedDataTag_Delete(QAdoptSharedDataTag_Ptr* self);
 }
-class QAdoptSharedDataTag
+class QAdoptSharedDataTag : IQAdoptSharedDataTag
 {
 	private QAdoptSharedDataTag_Ptr* ptr;
-	public this(QAdoptSharedDataTag_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQAdoptSharedDataTag other)
 	{
-		this.ptr = CQt.QAdoptSharedDataTag_new(other);
+		this.ptr = CQt.QAdoptSharedDataTag_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -72,6 +74,6 @@ class QAdoptSharedDataTag
 		CQt.QAdoptSharedDataTag_Delete(this.ptr);
 	}
 }
-interface IQAdoptSharedDataTag
+interface IQAdoptSharedDataTag : IQtObjectInterface
 {
 }

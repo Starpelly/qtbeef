@@ -19,7 +19,7 @@ extension CQt
 	[LinkName("QPaintDevice_PaintingActive")]
 	public static extern bool QPaintDevice_PaintingActive(QPaintDevice_Ptr* self);
 	[LinkName("QPaintDevice_PaintEngine")]
-	public static extern QPaintEngine_Ptr* QPaintDevice_PaintEngine(QPaintDevice_Ptr* self);
+	public static extern QPaintEngine_Ptr** QPaintDevice_PaintEngine(QPaintDevice_Ptr* self);
 	[LinkName("QPaintDevice_Width")]
 	public static extern c_int QPaintDevice_Width(QPaintDevice_Ptr* self);
 	[LinkName("QPaintDevice_Height")]
@@ -49,15 +49,16 @@ extension CQt
 	[LinkName("QPaintDevice_Metric")]
 	public static extern c_int QPaintDevice_Metric(QPaintDevice_Ptr* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QPaintDevice_InitPainter")]
-	public static extern void QPaintDevice_InitPainter(QPaintDevice_Ptr* self, QPainter_Ptr* painter);
+	public static extern void QPaintDevice_InitPainter(QPaintDevice_Ptr* self, QPainter_Ptr** painter);
 	[LinkName("QPaintDevice_Redirected")]
-	public static extern QPaintDevice_Ptr* QPaintDevice_Redirected(QPaintDevice_Ptr* self, QPoint_Ptr* offset);
+	public static extern QPaintDevice_Ptr** QPaintDevice_Redirected(QPaintDevice_Ptr* self, QPoint_Ptr** offset);
 	[LinkName("QPaintDevice_SharedPainter")]
-	public static extern QPainter_Ptr* QPaintDevice_SharedPainter(QPaintDevice_Ptr* self);
+	public static extern QPainter_Ptr** QPaintDevice_SharedPainter(QPaintDevice_Ptr* self);
 }
-class QPaintDevice
+class QPaintDevice : IQPaintDevice
 {
 	private QPaintDevice_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QPaintDevice_Delete(this.ptr);
@@ -70,7 +71,7 @@ class QPaintDevice
 	{
 		return CQt.QPaintDevice_PaintingActive((.)this.ptr);
 	}
-	public QPaintEngine_Ptr* PaintEngine()
+	public QPaintEngine_Ptr** PaintEngine()
 	{
 		return CQt.QPaintDevice_PaintEngine((.)this.ptr);
 	}
@@ -130,41 +131,21 @@ class QPaintDevice
 	{
 		return CQt.QPaintDevice_Metric((.)this.ptr, metric);
 	}
-	public void InitPainter(QPainter_Ptr* painter)
+	public void InitPainter(IQPainter painter)
 	{
-		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
+		CQt.QPaintDevice_InitPainter((.)this.ptr, (.)painter?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
+	public QPaintDevice_Ptr** Redirected(IQPoint offset)
 	{
-		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
+		return CQt.QPaintDevice_Redirected((.)this.ptr, (.)offset?.ObjectPtr);
 	}
-	public QPainter_Ptr* SharedPainter()
+	public QPainter_Ptr** SharedPainter()
 	{
 		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
-interface IQPaintDevice
+interface IQPaintDevice : IQtObjectInterface
 {
-	public c_int DevType();
-	public bool PaintingActive();
-	public QPaintEngine* PaintEngine();
-	public c_int Width();
-	public c_int Height();
-	public c_int WidthMM();
-	public c_int HeightMM();
-	public c_int LogicalDpiX();
-	public c_int LogicalDpiY();
-	public c_int PhysicalDpiX();
-	public c_int PhysicalDpiY();
-	public double DevicePixelRatio();
-	public double DevicePixelRatioF();
-	public c_int ColorCount();
-	public c_int Depth();
-	public double DevicePixelRatioFScale();
-	public c_int Metric();
-	public void InitPainter();
-	public QPaintDevice* Redirected();
-	public QPainter* SharedPainter();
 }
 [AllowDuplicates]
 enum QPaintDevice_PaintDeviceMetric

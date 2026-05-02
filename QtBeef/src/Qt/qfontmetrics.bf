@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QFontMetrics_new")]
 	public static extern QFontMetrics_Ptr* QFontMetrics_new(QFont_Ptr* param1);
 	[LinkName("QFontMetrics_new2")]
-	public static extern QFontMetrics_Ptr* QFontMetrics_new2(QFont_Ptr* font, QPaintDevice_Ptr* pd);
+	public static extern QFontMetrics_Ptr* QFontMetrics_new2(QFont_Ptr* font, QPaintDevice_Ptr** pd);
 	[LinkName("QFontMetrics_new3")]
 	public static extern QFontMetrics_Ptr* QFontMetrics_new3(QFontMetrics_Ptr* param1);
 	[LinkName("QFontMetrics_Delete")]
@@ -47,37 +47,37 @@ extension CQt
 	[LinkName("QFontMetrics_AverageCharWidth")]
 	public static extern c_int QFontMetrics_AverageCharWidth(QFontMetrics_Ptr* self);
 	[LinkName("QFontMetrics_InFont")]
-	public static extern bool QFontMetrics_InFont(QFontMetrics_Ptr* self, QChar_Ptr param1);
+	public static extern bool QFontMetrics_InFont(QFontMetrics_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetrics_InFontUcs4")]
 	public static extern bool QFontMetrics_InFontUcs4(QFontMetrics_Ptr* self, c_uint ucs4);
 	[LinkName("QFontMetrics_LeftBearing")]
-	public static extern c_int QFontMetrics_LeftBearing(QFontMetrics_Ptr* self, QChar_Ptr param1);
+	public static extern c_int QFontMetrics_LeftBearing(QFontMetrics_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetrics_RightBearing")]
-	public static extern c_int QFontMetrics_RightBearing(QFontMetrics_Ptr* self, QChar_Ptr param1);
+	public static extern c_int QFontMetrics_RightBearing(QFontMetrics_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetrics_HorizontalAdvance")]
-	public static extern c_int QFontMetrics_HorizontalAdvance(QFontMetrics_Ptr* self, libqt_string* param1);
+	public static extern c_int QFontMetrics_HorizontalAdvance(QFontMetrics_Ptr* self, libqt_string param1);
 	[LinkName("QFontMetrics_HorizontalAdvance2")]
-	public static extern c_int QFontMetrics_HorizontalAdvance2(QFontMetrics_Ptr* self, libqt_string* param1, QTextOption_Ptr* textOption);
+	public static extern c_int QFontMetrics_HorizontalAdvance2(QFontMetrics_Ptr* self, libqt_string param1, QTextOption_Ptr* textOption);
 	[LinkName("QFontMetrics_HorizontalAdvance3")]
-	public static extern c_int QFontMetrics_HorizontalAdvance3(QFontMetrics_Ptr* self, QChar_Ptr param1);
+	public static extern c_int QFontMetrics_HorizontalAdvance3(QFontMetrics_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetrics_BoundingRect")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect(QFontMetrics_Ptr* self, QChar_Ptr param1);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect(QFontMetrics_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetrics_BoundingRect2")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect2(QFontMetrics_Ptr* self, libqt_string* text);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect2(QFontMetrics_Ptr* self, libqt_string text);
 	[LinkName("QFontMetrics_BoundingRect3")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect3(QFontMetrics_Ptr* self, libqt_string* text, QTextOption_Ptr* textOption);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect3(QFontMetrics_Ptr* self, libqt_string text, QTextOption_Ptr* textOption);
 	[LinkName("QFontMetrics_BoundingRect4")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect4(QFontMetrics_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string* text);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect4(QFontMetrics_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string text);
 	[LinkName("QFontMetrics_BoundingRect5")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect5(QFontMetrics_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect5(QFontMetrics_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string text);
 	[LinkName("QFontMetrics_Size")]
-	public static extern QSize_Ptr QFontMetrics_Size(QFontMetrics_Ptr* self, c_int flags, libqt_string* str);
+	public static extern QSize_Ptr* QFontMetrics_Size(QFontMetrics_Ptr* self, c_int flags, libqt_string str);
 	[LinkName("QFontMetrics_TightBoundingRect")]
-	public static extern QRect_Ptr QFontMetrics_TightBoundingRect(QFontMetrics_Ptr* self, libqt_string* text);
+	public static extern QRect_Ptr* QFontMetrics_TightBoundingRect(QFontMetrics_Ptr* self, libqt_string text);
 	[LinkName("QFontMetrics_TightBoundingRect2")]
-	public static extern QRect_Ptr QFontMetrics_TightBoundingRect2(QFontMetrics_Ptr* self, libqt_string* text, QTextOption_Ptr* textOption);
+	public static extern QRect_Ptr* QFontMetrics_TightBoundingRect2(QFontMetrics_Ptr* self, libqt_string text, QTextOption_Ptr* textOption);
 	[LinkName("QFontMetrics_ElidedText")]
-	public static extern libqt_string QFontMetrics_ElidedText(QFontMetrics_Ptr* self, libqt_string* text, Qt_TextElideMode mode, c_int width);
+	public static extern libqt_string QFontMetrics_ElidedText(QFontMetrics_Ptr* self, libqt_string text, Qt_TextElideMode mode, c_int width);
 	[LinkName("QFontMetrics_UnderlinePos")]
 	public static extern c_int QFontMetrics_UnderlinePos(QFontMetrics_Ptr* self);
 	[LinkName("QFontMetrics_OverlinePos")]
@@ -93,44 +93,45 @@ extension CQt
 	[LinkName("QFontMetrics_OperatorNotEqual")]
 	public static extern bool QFontMetrics_OperatorNotEqual(QFontMetrics_Ptr* self, QFontMetrics_Ptr* other);
 	[LinkName("QFontMetrics_HorizontalAdvance22")]
-	public static extern c_int QFontMetrics_HorizontalAdvance22(QFontMetrics_Ptr* self, libqt_string* param1, c_int lenVal);
+	public static extern c_int QFontMetrics_HorizontalAdvance22(QFontMetrics_Ptr* self, libqt_string param1, c_int lenVal);
 	[LinkName("QFontMetrics_BoundingRect42")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect42(QFontMetrics_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string* text, c_int tabstops);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect42(QFontMetrics_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string text, c_int tabstops);
 	[LinkName("QFontMetrics_BoundingRect52")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect52(QFontMetrics_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string* text, c_int tabstops, c_int* tabarray);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect52(QFontMetrics_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string text, c_int tabstops, c_int* tabarray);
 	[LinkName("QFontMetrics_BoundingRect7")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect7(QFontMetrics_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text, c_int tabstops);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect7(QFontMetrics_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string text, c_int tabstops);
 	[LinkName("QFontMetrics_BoundingRect8")]
-	public static extern QRect_Ptr QFontMetrics_BoundingRect8(QFontMetrics_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text, c_int tabstops, c_int* tabarray);
+	public static extern QRect_Ptr* QFontMetrics_BoundingRect8(QFontMetrics_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string text, c_int tabstops, c_int* tabarray);
 	[LinkName("QFontMetrics_Size3")]
-	public static extern QSize_Ptr QFontMetrics_Size3(QFontMetrics_Ptr* self, c_int flags, libqt_string* str, c_int tabstops);
+	public static extern QSize_Ptr* QFontMetrics_Size3(QFontMetrics_Ptr* self, c_int flags, libqt_string str, c_int tabstops);
 	[LinkName("QFontMetrics_Size4")]
-	public static extern QSize_Ptr QFontMetrics_Size4(QFontMetrics_Ptr* self, c_int flags, libqt_string* str, c_int tabstops, c_int* tabarray);
+	public static extern QSize_Ptr* QFontMetrics_Size4(QFontMetrics_Ptr* self, c_int flags, libqt_string str, c_int tabstops, c_int* tabarray);
 	[LinkName("QFontMetrics_ElidedText4")]
-	public static extern libqt_string QFontMetrics_ElidedText4(QFontMetrics_Ptr* self, libqt_string* text, Qt_TextElideMode mode, c_int width, c_int flags);
+	public static extern libqt_string QFontMetrics_ElidedText4(QFontMetrics_Ptr* self, libqt_string text, Qt_TextElideMode mode, c_int width, c_int flags);
 }
-class QFontMetrics
+class QFontMetrics : IQFontMetrics
 {
 	private QFontMetrics_Ptr* ptr;
-	public this(QFont_Ptr* param1)
+	public void* ObjectPtr => ptr;
+	public this(IQFont param1)
 	{
-		this.ptr = CQt.QFontMetrics_new(param1);
+		this.ptr = CQt.QFontMetrics_new((.)param1?.ObjectPtr);
 	}
-	public this(QFont_Ptr* font, QPaintDevice_Ptr* pd)
+	public this(IQFont font, IQPaintDevice pd)
 	{
-		this.ptr = CQt.QFontMetrics_new2(font, pd);
+		this.ptr = CQt.QFontMetrics_new2((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
 	}
-	public this(QFontMetrics_Ptr* param1)
+	public this(IQFontMetrics param1)
 	{
-		this.ptr = CQt.QFontMetrics_new3(param1);
+		this.ptr = CQt.QFontMetrics_new3((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QFontMetrics_Delete(this.ptr);
 	}
-	public void Swap(QFontMetrics_Ptr* other)
+	public void Swap(IQFontMetrics other)
 	{
-		CQt.QFontMetrics_Swap((.)this.ptr, other);
+		CQt.QFontMetrics_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public c_int Ascent()
 	{
@@ -176,69 +177,69 @@ class QFontMetrics
 	{
 		return CQt.QFontMetrics_AverageCharWidth((.)this.ptr);
 	}
-	public bool InFont(QChar_Ptr param1)
+	public bool InFont(IQChar param1)
 	{
-		return CQt.QFontMetrics_InFont((.)this.ptr, param1);
+		return CQt.QFontMetrics_InFont((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public bool InFontUcs4(c_uint ucs4)
 	{
 		return CQt.QFontMetrics_InFontUcs4((.)this.ptr, ucs4);
 	}
-	public c_int LeftBearing(QChar_Ptr param1)
+	public c_int LeftBearing(IQChar param1)
 	{
-		return CQt.QFontMetrics_LeftBearing((.)this.ptr, param1);
+		return CQt.QFontMetrics_LeftBearing((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public c_int RightBearing(QChar_Ptr param1)
+	public c_int RightBearing(IQChar param1)
 	{
-		return CQt.QFontMetrics_RightBearing((.)this.ptr, param1);
+		return CQt.QFontMetrics_RightBearing((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public c_int HorizontalAdvance(libqt_string* param1)
+	public c_int HorizontalAdvance(String param1)
 	{
-		return CQt.QFontMetrics_HorizontalAdvance((.)this.ptr, param1);
+		return CQt.QFontMetrics_HorizontalAdvance((.)this.ptr, libqt_string(param1));
 	}
-	public c_int HorizontalAdvance2(libqt_string* param1, QTextOption_Ptr* textOption)
+	public c_int HorizontalAdvance2(String param1, IQTextOption textOption)
 	{
-		return CQt.QFontMetrics_HorizontalAdvance2((.)this.ptr, param1, textOption);
+		return CQt.QFontMetrics_HorizontalAdvance2((.)this.ptr, libqt_string(param1), (.)textOption?.ObjectPtr);
 	}
-	public c_int HorizontalAdvance3(QChar_Ptr param1)
+	public c_int HorizontalAdvance3(IQChar param1)
 	{
-		return CQt.QFontMetrics_HorizontalAdvance3((.)this.ptr, param1);
+		return CQt.QFontMetrics_HorizontalAdvance3((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QRect_Ptr BoundingRect(QChar_Ptr param1)
+	public QRect_Ptr* BoundingRect(IQChar param1)
 	{
-		return CQt.QFontMetrics_BoundingRect((.)this.ptr, param1);
+		return CQt.QFontMetrics_BoundingRect((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QRect_Ptr BoundingRect2(libqt_string* text)
+	public QRect_Ptr* BoundingRect2(String text)
 	{
-		return CQt.QFontMetrics_BoundingRect2((.)this.ptr, text);
+		return CQt.QFontMetrics_BoundingRect2((.)this.ptr, libqt_string(text));
 	}
-	public QRect_Ptr BoundingRect3(libqt_string* text, QTextOption_Ptr* textOption)
+	public QRect_Ptr* BoundingRect3(String text, IQTextOption textOption)
 	{
-		return CQt.QFontMetrics_BoundingRect3((.)this.ptr, text, textOption);
+		return CQt.QFontMetrics_BoundingRect3((.)this.ptr, libqt_string(text), (.)textOption?.ObjectPtr);
 	}
-	public QRect_Ptr BoundingRect4(QRect_Ptr* r, c_int flags, libqt_string* text)
+	public QRect_Ptr* BoundingRect4(IQRect r, c_int flags, String text)
 	{
-		return CQt.QFontMetrics_BoundingRect4((.)this.ptr, r, flags, text);
+		return CQt.QFontMetrics_BoundingRect4((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(text));
 	}
-	public QRect_Ptr BoundingRect5(c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text)
+	public QRect_Ptr* BoundingRect5(c_int x, c_int y, c_int w, c_int h, c_int flags, String text)
 	{
-		return CQt.QFontMetrics_BoundingRect5((.)this.ptr, x, y, w, h, flags, text);
+		return CQt.QFontMetrics_BoundingRect5((.)this.ptr, x, y, w, h, flags, libqt_string(text));
 	}
-	public QSize_Ptr Size(c_int flags, libqt_string* str)
+	public QSize_Ptr* Size(c_int flags, String str)
 	{
-		return CQt.QFontMetrics_Size((.)this.ptr, flags, str);
+		return CQt.QFontMetrics_Size((.)this.ptr, flags, libqt_string(str));
 	}
-	public QRect_Ptr TightBoundingRect(libqt_string* text)
+	public QRect_Ptr* TightBoundingRect(String text)
 	{
-		return CQt.QFontMetrics_TightBoundingRect((.)this.ptr, text);
+		return CQt.QFontMetrics_TightBoundingRect((.)this.ptr, libqt_string(text));
 	}
-	public QRect_Ptr TightBoundingRect2(libqt_string* text, QTextOption_Ptr* textOption)
+	public QRect_Ptr* TightBoundingRect2(String text, IQTextOption textOption)
 	{
-		return CQt.QFontMetrics_TightBoundingRect2((.)this.ptr, text, textOption);
+		return CQt.QFontMetrics_TightBoundingRect2((.)this.ptr, libqt_string(text), (.)textOption?.ObjectPtr);
 	}
-	public libqt_string ElidedText(libqt_string* text, Qt_TextElideMode mode, c_int width)
+	public libqt_string ElidedText(String text, Qt_TextElideMode mode, c_int width)
 	{
-		return CQt.QFontMetrics_ElidedText((.)this.ptr, text, mode, width);
+		return CQt.QFontMetrics_ElidedText((.)this.ptr, libqt_string(text), mode, width);
 	}
 	public c_int UnderlinePos()
 	{
@@ -260,82 +261,41 @@ class QFontMetrics
 	{
 		return CQt.QFontMetrics_FontDpi((.)this.ptr);
 	}
-	public c_int HorizontalAdvance22(libqt_string* param1, c_int lenVal)
+	public c_int HorizontalAdvance22(String param1, c_int lenVal)
 	{
-		return CQt.QFontMetrics_HorizontalAdvance22((.)this.ptr, param1, lenVal);
+		return CQt.QFontMetrics_HorizontalAdvance22((.)this.ptr, libqt_string(param1), lenVal);
 	}
-	public QRect_Ptr BoundingRect42(QRect_Ptr* r, c_int flags, libqt_string* text, c_int tabstops)
+	public QRect_Ptr* BoundingRect42(IQRect r, c_int flags, String text, c_int tabstops)
 	{
-		return CQt.QFontMetrics_BoundingRect42((.)this.ptr, r, flags, text, tabstops);
+		return CQt.QFontMetrics_BoundingRect42((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(text), tabstops);
 	}
-	public QRect_Ptr BoundingRect52(QRect_Ptr* r, c_int flags, libqt_string* text, c_int tabstops, c_int* tabarray)
+	public QRect_Ptr* BoundingRect52(IQRect r, c_int flags, String text, c_int tabstops, c_int* tabarray)
 	{
-		return CQt.QFontMetrics_BoundingRect52((.)this.ptr, r, flags, text, tabstops, tabarray);
+		return CQt.QFontMetrics_BoundingRect52((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(text), tabstops, tabarray);
 	}
-	public QRect_Ptr BoundingRect7(c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text, c_int tabstops)
+	public QRect_Ptr* BoundingRect7(c_int x, c_int y, c_int w, c_int h, c_int flags, String text, c_int tabstops)
 	{
-		return CQt.QFontMetrics_BoundingRect7((.)this.ptr, x, y, w, h, flags, text, tabstops);
+		return CQt.QFontMetrics_BoundingRect7((.)this.ptr, x, y, w, h, flags, libqt_string(text), tabstops);
 	}
-	public QRect_Ptr BoundingRect8(c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text, c_int tabstops, c_int* tabarray)
+	public QRect_Ptr* BoundingRect8(c_int x, c_int y, c_int w, c_int h, c_int flags, String text, c_int tabstops, c_int* tabarray)
 	{
-		return CQt.QFontMetrics_BoundingRect8((.)this.ptr, x, y, w, h, flags, text, tabstops, tabarray);
+		return CQt.QFontMetrics_BoundingRect8((.)this.ptr, x, y, w, h, flags, libqt_string(text), tabstops, tabarray);
 	}
-	public QSize_Ptr Size3(c_int flags, libqt_string* str, c_int tabstops)
+	public QSize_Ptr* Size3(c_int flags, String str, c_int tabstops)
 	{
-		return CQt.QFontMetrics_Size3((.)this.ptr, flags, str, tabstops);
+		return CQt.QFontMetrics_Size3((.)this.ptr, flags, libqt_string(str), tabstops);
 	}
-	public QSize_Ptr Size4(c_int flags, libqt_string* str, c_int tabstops, c_int* tabarray)
+	public QSize_Ptr* Size4(c_int flags, String str, c_int tabstops, c_int* tabarray)
 	{
-		return CQt.QFontMetrics_Size4((.)this.ptr, flags, str, tabstops, tabarray);
+		return CQt.QFontMetrics_Size4((.)this.ptr, flags, libqt_string(str), tabstops, tabarray);
 	}
-	public libqt_string ElidedText4(libqt_string* text, Qt_TextElideMode mode, c_int width, c_int flags)
+	public libqt_string ElidedText4(String text, Qt_TextElideMode mode, c_int width, c_int flags)
 	{
-		return CQt.QFontMetrics_ElidedText4((.)this.ptr, text, mode, width, flags);
+		return CQt.QFontMetrics_ElidedText4((.)this.ptr, libqt_string(text), mode, width, flags);
 	}
 }
-interface IQFontMetrics
+interface IQFontMetrics : IQtObjectInterface
 {
-	public void Swap();
-	public c_int Ascent();
-	public c_int CapHeight();
-	public c_int Descent();
-	public c_int Height();
-	public c_int Leading();
-	public c_int LineSpacing();
-	public c_int MinLeftBearing();
-	public c_int MinRightBearing();
-	public c_int MaxWidth();
-	public c_int XHeight();
-	public c_int AverageCharWidth();
-	public bool InFont();
-	public bool InFontUcs4();
-	public c_int LeftBearing();
-	public c_int RightBearing();
-	public c_int HorizontalAdvance();
-	public c_int HorizontalAdvance2();
-	public c_int HorizontalAdvance3();
-	public QRect BoundingRect();
-	public QRect BoundingRect2();
-	public QRect BoundingRect3();
-	public QRect BoundingRect4();
-	public QRect BoundingRect5();
-	public QSize Size();
-	public QRect TightBoundingRect();
-	public QRect TightBoundingRect2();
-	public libqt_string ElidedText();
-	public c_int UnderlinePos();
-	public c_int OverlinePos();
-	public c_int StrikeOutPos();
-	public c_int LineWidth();
-	public double FontDpi();
-	public c_int HorizontalAdvance22();
-	public QRect BoundingRect42();
-	public QRect BoundingRect52();
-	public QRect BoundingRect7();
-	public QRect BoundingRect8();
-	public QSize Size3();
-	public QSize Size4();
-	public libqt_string ElidedText4();
 }
 // --------------------------------------------------------------
 // QFontMetricsF
@@ -349,7 +309,7 @@ extension CQt
 	[LinkName("QFontMetricsF_new")]
 	public static extern QFontMetricsF_Ptr* QFontMetricsF_new(QFont_Ptr* font);
 	[LinkName("QFontMetricsF_new2")]
-	public static extern QFontMetricsF_Ptr* QFontMetricsF_new2(QFont_Ptr* font, QPaintDevice_Ptr* pd);
+	public static extern QFontMetricsF_Ptr* QFontMetricsF_new2(QFont_Ptr* font, QPaintDevice_Ptr** pd);
 	[LinkName("QFontMetricsF_new3")]
 	public static extern QFontMetricsF_Ptr* QFontMetricsF_new3(QFontMetrics_Ptr* param1);
 	[LinkName("QFontMetricsF_new4")]
@@ -385,35 +345,35 @@ extension CQt
 	[LinkName("QFontMetricsF_AverageCharWidth")]
 	public static extern double QFontMetricsF_AverageCharWidth(QFontMetricsF_Ptr* self);
 	[LinkName("QFontMetricsF_InFont")]
-	public static extern bool QFontMetricsF_InFont(QFontMetricsF_Ptr* self, QChar_Ptr param1);
+	public static extern bool QFontMetricsF_InFont(QFontMetricsF_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetricsF_InFontUcs4")]
 	public static extern bool QFontMetricsF_InFontUcs4(QFontMetricsF_Ptr* self, c_uint ucs4);
 	[LinkName("QFontMetricsF_LeftBearing")]
-	public static extern double QFontMetricsF_LeftBearing(QFontMetricsF_Ptr* self, QChar_Ptr param1);
+	public static extern double QFontMetricsF_LeftBearing(QFontMetricsF_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetricsF_RightBearing")]
-	public static extern double QFontMetricsF_RightBearing(QFontMetricsF_Ptr* self, QChar_Ptr param1);
+	public static extern double QFontMetricsF_RightBearing(QFontMetricsF_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetricsF_HorizontalAdvance")]
-	public static extern double QFontMetricsF_HorizontalAdvance(QFontMetricsF_Ptr* self, libqt_string* stringVal);
+	public static extern double QFontMetricsF_HorizontalAdvance(QFontMetricsF_Ptr* self, libqt_string stringVal);
 	[LinkName("QFontMetricsF_HorizontalAdvance2")]
-	public static extern double QFontMetricsF_HorizontalAdvance2(QFontMetricsF_Ptr* self, QChar_Ptr param1);
+	public static extern double QFontMetricsF_HorizontalAdvance2(QFontMetricsF_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetricsF_HorizontalAdvance3")]
-	public static extern double QFontMetricsF_HorizontalAdvance3(QFontMetricsF_Ptr* self, libqt_string* stringVal, QTextOption_Ptr* textOption);
+	public static extern double QFontMetricsF_HorizontalAdvance3(QFontMetricsF_Ptr* self, libqt_string stringVal, QTextOption_Ptr* textOption);
 	[LinkName("QFontMetricsF_BoundingRect")]
-	public static extern QRectF_Ptr QFontMetricsF_BoundingRect(QFontMetricsF_Ptr* self, libqt_string* stringVal);
+	public static extern QRectF_Ptr* QFontMetricsF_BoundingRect(QFontMetricsF_Ptr* self, libqt_string stringVal);
 	[LinkName("QFontMetricsF_BoundingRect2")]
-	public static extern QRectF_Ptr QFontMetricsF_BoundingRect2(QFontMetricsF_Ptr* self, libqt_string* text, QTextOption_Ptr* textOption);
+	public static extern QRectF_Ptr* QFontMetricsF_BoundingRect2(QFontMetricsF_Ptr* self, libqt_string text, QTextOption_Ptr* textOption);
 	[LinkName("QFontMetricsF_BoundingRect3")]
-	public static extern QRectF_Ptr QFontMetricsF_BoundingRect3(QFontMetricsF_Ptr* self, QChar_Ptr param1);
+	public static extern QRectF_Ptr* QFontMetricsF_BoundingRect3(QFontMetricsF_Ptr* self, QChar_Ptr* param1);
 	[LinkName("QFontMetricsF_BoundingRect4")]
-	public static extern QRectF_Ptr QFontMetricsF_BoundingRect4(QFontMetricsF_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string* stringVal);
+	public static extern QRectF_Ptr* QFontMetricsF_BoundingRect4(QFontMetricsF_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string stringVal);
 	[LinkName("QFontMetricsF_Size")]
-	public static extern QSizeF_Ptr QFontMetricsF_Size(QFontMetricsF_Ptr* self, c_int flags, libqt_string* str);
+	public static extern QSizeF_Ptr* QFontMetricsF_Size(QFontMetricsF_Ptr* self, c_int flags, libqt_string str);
 	[LinkName("QFontMetricsF_TightBoundingRect")]
-	public static extern QRectF_Ptr QFontMetricsF_TightBoundingRect(QFontMetricsF_Ptr* self, libqt_string* text);
+	public static extern QRectF_Ptr* QFontMetricsF_TightBoundingRect(QFontMetricsF_Ptr* self, libqt_string text);
 	[LinkName("QFontMetricsF_TightBoundingRect2")]
-	public static extern QRectF_Ptr QFontMetricsF_TightBoundingRect2(QFontMetricsF_Ptr* self, libqt_string* text, QTextOption_Ptr* textOption);
+	public static extern QRectF_Ptr* QFontMetricsF_TightBoundingRect2(QFontMetricsF_Ptr* self, libqt_string text, QTextOption_Ptr* textOption);
 	[LinkName("QFontMetricsF_ElidedText")]
-	public static extern libqt_string QFontMetricsF_ElidedText(QFontMetricsF_Ptr* self, libqt_string* text, Qt_TextElideMode mode, double width);
+	public static extern libqt_string QFontMetricsF_ElidedText(QFontMetricsF_Ptr* self, libqt_string text, Qt_TextElideMode mode, double width);
 	[LinkName("QFontMetricsF_UnderlinePos")]
 	public static extern double QFontMetricsF_UnderlinePos(QFontMetricsF_Ptr* self);
 	[LinkName("QFontMetricsF_OverlinePos")]
@@ -429,48 +389,49 @@ extension CQt
 	[LinkName("QFontMetricsF_OperatorNotEqual")]
 	public static extern bool QFontMetricsF_OperatorNotEqual(QFontMetricsF_Ptr* self, QFontMetricsF_Ptr* other);
 	[LinkName("QFontMetricsF_HorizontalAdvance22")]
-	public static extern double QFontMetricsF_HorizontalAdvance22(QFontMetricsF_Ptr* self, libqt_string* stringVal, c_int length);
+	public static extern double QFontMetricsF_HorizontalAdvance22(QFontMetricsF_Ptr* self, libqt_string stringVal, c_int length);
 	[LinkName("QFontMetricsF_BoundingRect42")]
-	public static extern QRectF_Ptr QFontMetricsF_BoundingRect42(QFontMetricsF_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string* stringVal, c_int tabstops);
+	public static extern QRectF_Ptr* QFontMetricsF_BoundingRect42(QFontMetricsF_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string stringVal, c_int tabstops);
 	[LinkName("QFontMetricsF_BoundingRect5")]
-	public static extern QRectF_Ptr QFontMetricsF_BoundingRect5(QFontMetricsF_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string* stringVal, c_int tabstops, c_int* tabarray);
+	public static extern QRectF_Ptr* QFontMetricsF_BoundingRect5(QFontMetricsF_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string stringVal, c_int tabstops, c_int* tabarray);
 	[LinkName("QFontMetricsF_Size3")]
-	public static extern QSizeF_Ptr QFontMetricsF_Size3(QFontMetricsF_Ptr* self, c_int flags, libqt_string* str, c_int tabstops);
+	public static extern QSizeF_Ptr* QFontMetricsF_Size3(QFontMetricsF_Ptr* self, c_int flags, libqt_string str, c_int tabstops);
 	[LinkName("QFontMetricsF_Size4")]
-	public static extern QSizeF_Ptr QFontMetricsF_Size4(QFontMetricsF_Ptr* self, c_int flags, libqt_string* str, c_int tabstops, c_int* tabarray);
+	public static extern QSizeF_Ptr* QFontMetricsF_Size4(QFontMetricsF_Ptr* self, c_int flags, libqt_string str, c_int tabstops, c_int* tabarray);
 	[LinkName("QFontMetricsF_ElidedText4")]
-	public static extern libqt_string QFontMetricsF_ElidedText4(QFontMetricsF_Ptr* self, libqt_string* text, Qt_TextElideMode mode, double width, c_int flags);
+	public static extern libqt_string QFontMetricsF_ElidedText4(QFontMetricsF_Ptr* self, libqt_string text, Qt_TextElideMode mode, double width, c_int flags);
 }
-class QFontMetricsF
+class QFontMetricsF : IQFontMetricsF
 {
 	private QFontMetricsF_Ptr* ptr;
-	public this(QFont_Ptr* font)
+	public void* ObjectPtr => ptr;
+	public this(IQFont font)
 	{
-		this.ptr = CQt.QFontMetricsF_new(font);
+		this.ptr = CQt.QFontMetricsF_new((.)font?.ObjectPtr);
 	}
-	public this(QFont_Ptr* font, QPaintDevice_Ptr* pd)
+	public this(IQFont font, IQPaintDevice pd)
 	{
-		this.ptr = CQt.QFontMetricsF_new2(font, pd);
+		this.ptr = CQt.QFontMetricsF_new2((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
 	}
-	public this(QFontMetrics_Ptr* param1)
+	public this(IQFontMetrics param1)
 	{
-		this.ptr = CQt.QFontMetricsF_new3(param1);
+		this.ptr = CQt.QFontMetricsF_new3((.)param1?.ObjectPtr);
 	}
-	public this(QFontMetricsF_Ptr* param1)
+	public this(IQFontMetricsF param1)
 	{
-		this.ptr = CQt.QFontMetricsF_new4(param1);
+		this.ptr = CQt.QFontMetricsF_new4((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QFontMetricsF_Delete(this.ptr);
 	}
-	public void OperatorAssign2(QFontMetrics_Ptr* param1)
+	public void OperatorAssign2(IQFontMetrics param1)
 	{
-		CQt.QFontMetricsF_OperatorAssign2((.)this.ptr, param1);
+		CQt.QFontMetricsF_OperatorAssign2((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public void Swap(QFontMetricsF_Ptr* other)
+	public void Swap(IQFontMetricsF other)
 	{
-		CQt.QFontMetricsF_Swap((.)this.ptr, other);
+		CQt.QFontMetricsF_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public double Ascent()
 	{
@@ -516,65 +477,65 @@ class QFontMetricsF
 	{
 		return CQt.QFontMetricsF_AverageCharWidth((.)this.ptr);
 	}
-	public bool InFont(QChar_Ptr param1)
+	public bool InFont(IQChar param1)
 	{
-		return CQt.QFontMetricsF_InFont((.)this.ptr, param1);
+		return CQt.QFontMetricsF_InFont((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public bool InFontUcs4(c_uint ucs4)
 	{
 		return CQt.QFontMetricsF_InFontUcs4((.)this.ptr, ucs4);
 	}
-	public double LeftBearing(QChar_Ptr param1)
+	public double LeftBearing(IQChar param1)
 	{
-		return CQt.QFontMetricsF_LeftBearing((.)this.ptr, param1);
+		return CQt.QFontMetricsF_LeftBearing((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public double RightBearing(QChar_Ptr param1)
+	public double RightBearing(IQChar param1)
 	{
-		return CQt.QFontMetricsF_RightBearing((.)this.ptr, param1);
+		return CQt.QFontMetricsF_RightBearing((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public double HorizontalAdvance(libqt_string* stringVal)
+	public double HorizontalAdvance(String stringVal)
 	{
-		return CQt.QFontMetricsF_HorizontalAdvance((.)this.ptr, stringVal);
+		return CQt.QFontMetricsF_HorizontalAdvance((.)this.ptr, libqt_string(stringVal));
 	}
-	public double HorizontalAdvance2(QChar_Ptr param1)
+	public double HorizontalAdvance2(IQChar param1)
 	{
-		return CQt.QFontMetricsF_HorizontalAdvance2((.)this.ptr, param1);
+		return CQt.QFontMetricsF_HorizontalAdvance2((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public double HorizontalAdvance3(libqt_string* stringVal, QTextOption_Ptr* textOption)
+	public double HorizontalAdvance3(String stringVal, IQTextOption textOption)
 	{
-		return CQt.QFontMetricsF_HorizontalAdvance3((.)this.ptr, stringVal, textOption);
+		return CQt.QFontMetricsF_HorizontalAdvance3((.)this.ptr, libqt_string(stringVal), (.)textOption?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect(libqt_string* stringVal)
+	public QRectF_Ptr* BoundingRect(String stringVal)
 	{
-		return CQt.QFontMetricsF_BoundingRect((.)this.ptr, stringVal);
+		return CQt.QFontMetricsF_BoundingRect((.)this.ptr, libqt_string(stringVal));
 	}
-	public QRectF_Ptr BoundingRect2(libqt_string* text, QTextOption_Ptr* textOption)
+	public QRectF_Ptr* BoundingRect2(String text, IQTextOption textOption)
 	{
-		return CQt.QFontMetricsF_BoundingRect2((.)this.ptr, text, textOption);
+		return CQt.QFontMetricsF_BoundingRect2((.)this.ptr, libqt_string(text), (.)textOption?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect3(QChar_Ptr param1)
+	public QRectF_Ptr* BoundingRect3(IQChar param1)
 	{
-		return CQt.QFontMetricsF_BoundingRect3((.)this.ptr, param1);
+		return CQt.QFontMetricsF_BoundingRect3((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect4(QRectF_Ptr* r, c_int flags, libqt_string* stringVal)
+	public QRectF_Ptr* BoundingRect4(IQRectF r, c_int flags, String stringVal)
 	{
-		return CQt.QFontMetricsF_BoundingRect4((.)this.ptr, r, flags, stringVal);
+		return CQt.QFontMetricsF_BoundingRect4((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(stringVal));
 	}
-	public QSizeF_Ptr Size(c_int flags, libqt_string* str)
+	public QSizeF_Ptr* Size(c_int flags, String str)
 	{
-		return CQt.QFontMetricsF_Size((.)this.ptr, flags, str);
+		return CQt.QFontMetricsF_Size((.)this.ptr, flags, libqt_string(str));
 	}
-	public QRectF_Ptr TightBoundingRect(libqt_string* text)
+	public QRectF_Ptr* TightBoundingRect(String text)
 	{
-		return CQt.QFontMetricsF_TightBoundingRect((.)this.ptr, text);
+		return CQt.QFontMetricsF_TightBoundingRect((.)this.ptr, libqt_string(text));
 	}
-	public QRectF_Ptr TightBoundingRect2(libqt_string* text, QTextOption_Ptr* textOption)
+	public QRectF_Ptr* TightBoundingRect2(String text, IQTextOption textOption)
 	{
-		return CQt.QFontMetricsF_TightBoundingRect2((.)this.ptr, text, textOption);
+		return CQt.QFontMetricsF_TightBoundingRect2((.)this.ptr, libqt_string(text), (.)textOption?.ObjectPtr);
 	}
-	public libqt_string ElidedText(libqt_string* text, Qt_TextElideMode mode, double width)
+	public libqt_string ElidedText(String text, Qt_TextElideMode mode, double width)
 	{
-		return CQt.QFontMetricsF_ElidedText((.)this.ptr, text, mode, width);
+		return CQt.QFontMetricsF_ElidedText((.)this.ptr, libqt_string(text), mode, width);
 	}
 	public double UnderlinePos()
 	{
@@ -596,70 +557,31 @@ class QFontMetricsF
 	{
 		return CQt.QFontMetricsF_FontDpi((.)this.ptr);
 	}
-	public double HorizontalAdvance22(libqt_string* stringVal, c_int length)
+	public double HorizontalAdvance22(String stringVal, c_int length)
 	{
-		return CQt.QFontMetricsF_HorizontalAdvance22((.)this.ptr, stringVal, length);
+		return CQt.QFontMetricsF_HorizontalAdvance22((.)this.ptr, libqt_string(stringVal), length);
 	}
-	public QRectF_Ptr BoundingRect42(QRectF_Ptr* r, c_int flags, libqt_string* stringVal, c_int tabstops)
+	public QRectF_Ptr* BoundingRect42(IQRectF r, c_int flags, String stringVal, c_int tabstops)
 	{
-		return CQt.QFontMetricsF_BoundingRect42((.)this.ptr, r, flags, stringVal, tabstops);
+		return CQt.QFontMetricsF_BoundingRect42((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(stringVal), tabstops);
 	}
-	public QRectF_Ptr BoundingRect5(QRectF_Ptr* r, c_int flags, libqt_string* stringVal, c_int tabstops, c_int* tabarray)
+	public QRectF_Ptr* BoundingRect5(IQRectF r, c_int flags, String stringVal, c_int tabstops, c_int* tabarray)
 	{
-		return CQt.QFontMetricsF_BoundingRect5((.)this.ptr, r, flags, stringVal, tabstops, tabarray);
+		return CQt.QFontMetricsF_BoundingRect5((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(stringVal), tabstops, tabarray);
 	}
-	public QSizeF_Ptr Size3(c_int flags, libqt_string* str, c_int tabstops)
+	public QSizeF_Ptr* Size3(c_int flags, String str, c_int tabstops)
 	{
-		return CQt.QFontMetricsF_Size3((.)this.ptr, flags, str, tabstops);
+		return CQt.QFontMetricsF_Size3((.)this.ptr, flags, libqt_string(str), tabstops);
 	}
-	public QSizeF_Ptr Size4(c_int flags, libqt_string* str, c_int tabstops, c_int* tabarray)
+	public QSizeF_Ptr* Size4(c_int flags, String str, c_int tabstops, c_int* tabarray)
 	{
-		return CQt.QFontMetricsF_Size4((.)this.ptr, flags, str, tabstops, tabarray);
+		return CQt.QFontMetricsF_Size4((.)this.ptr, flags, libqt_string(str), tabstops, tabarray);
 	}
-	public libqt_string ElidedText4(libqt_string* text, Qt_TextElideMode mode, double width, c_int flags)
+	public libqt_string ElidedText4(String text, Qt_TextElideMode mode, double width, c_int flags)
 	{
-		return CQt.QFontMetricsF_ElidedText4((.)this.ptr, text, mode, width, flags);
+		return CQt.QFontMetricsF_ElidedText4((.)this.ptr, libqt_string(text), mode, width, flags);
 	}
 }
-interface IQFontMetricsF
+interface IQFontMetricsF : IQtObjectInterface
 {
-	public void OperatorAssign2();
-	public void Swap();
-	public double Ascent();
-	public double CapHeight();
-	public double Descent();
-	public double Height();
-	public double Leading();
-	public double LineSpacing();
-	public double MinLeftBearing();
-	public double MinRightBearing();
-	public double MaxWidth();
-	public double XHeight();
-	public double AverageCharWidth();
-	public bool InFont();
-	public bool InFontUcs4();
-	public double LeftBearing();
-	public double RightBearing();
-	public double HorizontalAdvance();
-	public double HorizontalAdvance2();
-	public double HorizontalAdvance3();
-	public QRectF BoundingRect();
-	public QRectF BoundingRect2();
-	public QRectF BoundingRect3();
-	public QRectF BoundingRect4();
-	public QSizeF Size();
-	public QRectF TightBoundingRect();
-	public QRectF TightBoundingRect2();
-	public libqt_string ElidedText();
-	public double UnderlinePos();
-	public double OverlinePos();
-	public double StrikeOutPos();
-	public double LineWidth();
-	public double FontDpi();
-	public double HorizontalAdvance22();
-	public QRectF BoundingRect42();
-	public QRectF BoundingRect5();
-	public QSizeF Size3();
-	public QSizeF Size4();
-	public libqt_string ElidedText4();
 }

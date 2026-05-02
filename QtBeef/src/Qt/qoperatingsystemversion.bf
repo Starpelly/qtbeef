@@ -23,13 +23,13 @@ extension CQt
 	[LinkName("QOperatingSystemVersionBase_Delete")]
 	public static extern void QOperatingSystemVersionBase_Delete(QOperatingSystemVersionBase_Ptr* self);
 	[LinkName("QOperatingSystemVersionBase_Current")]
-	public static extern QOperatingSystemVersionBase_Ptr QOperatingSystemVersionBase_Current();
+	public static extern QOperatingSystemVersionBase_Ptr* QOperatingSystemVersionBase_Current();
 	[LinkName("QOperatingSystemVersionBase_Name")]
-	public static extern libqt_string QOperatingSystemVersionBase_Name(QOperatingSystemVersionBase_Ptr osversion);
+	public static extern libqt_string QOperatingSystemVersionBase_Name(QOperatingSystemVersionBase_Ptr* osversion);
 	[LinkName("QOperatingSystemVersionBase_CurrentType")]
 	public static extern QOperatingSystemVersionBase_OSType QOperatingSystemVersionBase_CurrentType();
 	[LinkName("QOperatingSystemVersionBase_Version")]
-	public static extern QVersionNumber_Ptr QOperatingSystemVersionBase_Version(QOperatingSystemVersionBase_Ptr* self);
+	public static extern QVersionNumber_Ptr* QOperatingSystemVersionBase_Version(QOperatingSystemVersionBase_Ptr* self);
 	[LinkName("QOperatingSystemVersionBase_MajorVersion")]
 	public static extern c_int QOperatingSystemVersionBase_MajorVersion(QOperatingSystemVersionBase_Ptr* self);
 	[LinkName("QOperatingSystemVersionBase_MinorVersion")]
@@ -43,16 +43,17 @@ extension CQt
 	[LinkName("QOperatingSystemVersionBase_Name2")]
 	public static extern libqt_string QOperatingSystemVersionBase_Name2(QOperatingSystemVersionBase_Ptr* self);
 }
-class QOperatingSystemVersionBase
+class QOperatingSystemVersionBase : IQOperatingSystemVersionBase
 {
 	private QOperatingSystemVersionBase_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(QOperatingSystemVersionBase_OSType osType, c_int vmajor)
 	{
 		this.ptr = CQt.QOperatingSystemVersionBase_new(osType, vmajor);
 	}
-	public this(QOperatingSystemVersionBase_Ptr* param1)
+	public this(IQOperatingSystemVersionBase param1)
 	{
-		this.ptr = CQt.QOperatingSystemVersionBase_new2(param1);
+		this.ptr = CQt.QOperatingSystemVersionBase_new2((.)param1?.ObjectPtr);
 	}
 	public this(QOperatingSystemVersionBase_OSType osType, c_int vmajor, c_int vminor)
 	{
@@ -66,19 +67,19 @@ class QOperatingSystemVersionBase
 	{
 		CQt.QOperatingSystemVersionBase_Delete(this.ptr);
 	}
-	public QOperatingSystemVersionBase_Ptr Current()
+	public QOperatingSystemVersionBase_Ptr* Current()
 	{
 		return CQt.QOperatingSystemVersionBase_Current();
 	}
-	public libqt_string Name(QOperatingSystemVersionBase_Ptr osversion)
+	public libqt_string Name(IQOperatingSystemVersionBase osversion)
 	{
-		return CQt.QOperatingSystemVersionBase_Name(osversion);
+		return CQt.QOperatingSystemVersionBase_Name((.)osversion?.ObjectPtr);
 	}
 	public QOperatingSystemVersionBase_OSType CurrentType()
 	{
 		return CQt.QOperatingSystemVersionBase_CurrentType();
 	}
-	public QVersionNumber_Ptr Version()
+	public QVersionNumber_Ptr* Version()
 	{
 		return CQt.QOperatingSystemVersionBase_Version((.)this.ptr);
 	}
@@ -107,18 +108,8 @@ class QOperatingSystemVersionBase
 		return CQt.QOperatingSystemVersionBase_Name2((.)this.ptr);
 	}
 }
-interface IQOperatingSystemVersionBase
+interface IQOperatingSystemVersionBase : IQtObjectInterface
 {
-	public QOperatingSystemVersionBase Current();
-	public libqt_string Name();
-	public QOperatingSystemVersionBase_OSType CurrentType();
-	public QVersionNumber Version();
-	public c_int MajorVersion();
-	public c_int MinorVersion();
-	public c_int MicroVersion();
-	public c_int SegmentCount();
-	public QOperatingSystemVersionBase_OSType Type();
-	public libqt_string Name2();
 }
 // --------------------------------------------------------------
 // QOperatingSystemVersion
@@ -142,11 +133,11 @@ extension CQt
 	[LinkName("QOperatingSystemVersion_Delete")]
 	public static extern void QOperatingSystemVersion_Delete(QOperatingSystemVersion_Ptr* self);
 	[LinkName("QOperatingSystemVersion_Current")]
-	public static extern QOperatingSystemVersion_Ptr QOperatingSystemVersion_Current();
+	public static extern QOperatingSystemVersion_Ptr* QOperatingSystemVersion_Current();
 	[LinkName("QOperatingSystemVersion_CurrentType")]
 	public static extern QOperatingSystemVersion_OSType QOperatingSystemVersion_CurrentType();
 	[LinkName("QOperatingSystemVersion_Version")]
-	public static extern QVersionNumber_Ptr QOperatingSystemVersion_Version(QOperatingSystemVersion_Ptr* self);
+	public static extern QVersionNumber_Ptr* QOperatingSystemVersion_Version(QOperatingSystemVersion_Ptr* self);
 	[LinkName("QOperatingSystemVersion_MajorVersion")]
 	public static extern c_int QOperatingSystemVersion_MajorVersion(QOperatingSystemVersion_Ptr* self);
 	[LinkName("QOperatingSystemVersion_MinorVersion")]
@@ -160,20 +151,21 @@ extension CQt
 	[LinkName("QOperatingSystemVersion_Name")]
 	public static extern libqt_string QOperatingSystemVersion_Name(QOperatingSystemVersion_Ptr* self);
 }
-class QOperatingSystemVersion
+class QOperatingSystemVersion : IQOperatingSystemVersion, IQOperatingSystemVersionBase
 {
 	private QOperatingSystemVersion_Ptr* ptr;
-	public this(QOperatingSystemVersionBase_Ptr* osversion)
+	public void* ObjectPtr => ptr;
+	public this(IQOperatingSystemVersionBase osversion)
 	{
-		this.ptr = CQt.QOperatingSystemVersion_new(osversion);
+		this.ptr = CQt.QOperatingSystemVersion_new((.)osversion?.ObjectPtr);
 	}
 	public this(QOperatingSystemVersion_OSType osType, c_int vmajor)
 	{
 		this.ptr = CQt.QOperatingSystemVersion_new2(osType, vmajor);
 	}
-	public this(QOperatingSystemVersion_Ptr* param1)
+	public this(IQOperatingSystemVersion param1)
 	{
-		this.ptr = CQt.QOperatingSystemVersion_new3(param1);
+		this.ptr = CQt.QOperatingSystemVersion_new3((.)param1?.ObjectPtr);
 	}
 	public this(QOperatingSystemVersion_OSType osType, c_int vmajor, c_int vminor)
 	{
@@ -187,7 +179,7 @@ class QOperatingSystemVersion
 	{
 		CQt.QOperatingSystemVersion_Delete(this.ptr);
 	}
-	public QOperatingSystemVersion_Ptr Current()
+	public QOperatingSystemVersion_Ptr* Current()
 	{
 		return CQt.QOperatingSystemVersion_Current();
 	}
@@ -195,7 +187,7 @@ class QOperatingSystemVersion
 	{
 		return CQt.QOperatingSystemVersion_CurrentType();
 	}
-	public QVersionNumber_Ptr Version()
+	public QVersionNumber_Ptr* Version()
 	{
 		return CQt.QOperatingSystemVersion_Version((.)this.ptr);
 	}
@@ -228,17 +220,8 @@ class QOperatingSystemVersion
 		return CQt.QOperatingSystemVersionBase_Name2((.)this.ptr);
 	}
 }
-interface IQOperatingSystemVersion
+interface IQOperatingSystemVersion : IQtObjectInterface
 {
-	public QOperatingSystemVersion Current();
-	public QOperatingSystemVersion_OSType CurrentType();
-	public QVersionNumber Version();
-	public c_int MajorVersion();
-	public c_int MinorVersion();
-	public c_int MicroVersion();
-	public c_int SegmentCount();
-	public QOperatingSystemVersion_OSType Type();
-	public libqt_string Name();
 }
 [AllowDuplicates]
 enum QOperatingSystemVersionBase_OSType

@@ -21,9 +21,9 @@ extension CQt
 	[LinkName("QCalendar_new4")]
 	public static extern QCalendar_Ptr* QCalendar_new4(QCalendar_System system);
 	[LinkName("QCalendar_new5")]
-	public static extern QCalendar_Ptr* QCalendar_new5(QAnyStringView_Ptr name);
+	public static extern QCalendar_Ptr* QCalendar_new5(QAnyStringView_Ptr* name);
 	[LinkName("QCalendar_new6")]
-	public static extern QCalendar_Ptr* QCalendar_new6(QCalendar_SystemId id);
+	public static extern QCalendar_Ptr* QCalendar_new6(QCalendar_SystemId_Ptr* id);
 	[LinkName("QCalendar_Delete")]
 	public static extern void QCalendar_Delete(QCalendar_Ptr* self);
 	[LinkName("QCalendar_IsValid")]
@@ -59,13 +59,13 @@ extension CQt
 	[LinkName("QCalendar_Name")]
 	public static extern libqt_string QCalendar_Name(QCalendar_Ptr* self);
 	[LinkName("QCalendar_DateFromParts")]
-	public static extern QDate_Ptr QCalendar_DateFromParts(QCalendar_Ptr* self, c_int year, c_int month, c_int day);
+	public static extern QDate_Ptr* QCalendar_DateFromParts(QCalendar_Ptr* self, c_int year, c_int month, c_int day);
 	[LinkName("QCalendar_DateFromParts2")]
-	public static extern QDate_Ptr QCalendar_DateFromParts2(QCalendar_Ptr* self, QCalendar_YearMonthDay* parts);
+	public static extern QDate_Ptr* QCalendar_DateFromParts2(QCalendar_Ptr* self, QCalendar_YearMonthDay_Ptr* parts);
 	[LinkName("QCalendar_PartsFromDate")]
-	public static extern QCalendar_YearMonthDay QCalendar_PartsFromDate(QCalendar_Ptr* self, QDate_Ptr date);
+	public static extern QCalendar_YearMonthDay_Ptr* QCalendar_PartsFromDate(QCalendar_Ptr* self, QDate_Ptr* date);
 	[LinkName("QCalendar_DayOfWeek")]
-	public static extern c_int QCalendar_DayOfWeek(QCalendar_Ptr* self, QDate_Ptr date);
+	public static extern c_int QCalendar_DayOfWeek(QCalendar_Ptr* self, QDate_Ptr* date);
 	[LinkName("QCalendar_MonthName")]
 	public static extern libqt_string QCalendar_MonthName(QCalendar_Ptr* self, QLocale_Ptr* locale, c_int month);
 	[LinkName("QCalendar_StandaloneMonthName")]
@@ -91,12 +91,13 @@ extension CQt
 	[LinkName("QCalendar_StandaloneWeekDayName3")]
 	public static extern libqt_string QCalendar_StandaloneWeekDayName3(QCalendar_Ptr* self, QLocale_Ptr* locale, c_int day, QLocale_FormatType format);
 }
-class QCalendar
+class QCalendar : IQCalendar
 {
 	private QCalendar_Ptr* ptr;
-	public this(QCalendar_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQCalendar other)
 	{
-		this.ptr = CQt.QCalendar_new(other);
+		this.ptr = CQt.QCalendar_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -106,13 +107,13 @@ class QCalendar
 	{
 		this.ptr = CQt.QCalendar_new4(system);
 	}
-	public this(QAnyStringView_Ptr name)
+	public this(IQAnyStringView name)
 	{
-		this.ptr = CQt.QCalendar_new5(name);
+		this.ptr = CQt.QCalendar_new5((.)name?.ObjectPtr);
 	}
-	public this(QCalendar_SystemId id)
+	public this(IQCalendar_SystemId id)
 	{
-		this.ptr = CQt.QCalendar_new6(id);
+		this.ptr = CQt.QCalendar_new6((.)id?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -182,37 +183,37 @@ class QCalendar
 	{
 		return CQt.QCalendar_Name((.)this.ptr);
 	}
-	public QDate_Ptr DateFromParts(c_int year, c_int month, c_int day)
+	public QDate_Ptr* DateFromParts(c_int year, c_int month, c_int day)
 	{
 		return CQt.QCalendar_DateFromParts((.)this.ptr, year, month, day);
 	}
-	public QDate_Ptr DateFromParts2(QCalendar_YearMonthDay* parts)
+	public QDate_Ptr* DateFromParts2(IQCalendar_YearMonthDay parts)
 	{
-		return CQt.QCalendar_DateFromParts2((.)this.ptr, parts);
+		return CQt.QCalendar_DateFromParts2((.)this.ptr, (.)parts?.ObjectPtr);
 	}
-	public QCalendar_YearMonthDay PartsFromDate(QDate_Ptr date)
+	public QCalendar_YearMonthDay_Ptr* PartsFromDate(IQDate date)
 	{
-		return CQt.QCalendar_PartsFromDate((.)this.ptr, date);
+		return CQt.QCalendar_PartsFromDate((.)this.ptr, (.)date?.ObjectPtr);
 	}
-	public c_int DayOfWeek(QDate_Ptr date)
+	public c_int DayOfWeek(IQDate date)
 	{
-		return CQt.QCalendar_DayOfWeek((.)this.ptr, date);
+		return CQt.QCalendar_DayOfWeek((.)this.ptr, (.)date?.ObjectPtr);
 	}
-	public libqt_string MonthName(QLocale_Ptr* locale, c_int month)
+	public libqt_string MonthName(IQLocale locale, c_int month)
 	{
-		return CQt.QCalendar_MonthName((.)this.ptr, locale, month);
+		return CQt.QCalendar_MonthName((.)this.ptr, (.)locale?.ObjectPtr, month);
 	}
-	public libqt_string StandaloneMonthName(QLocale_Ptr* locale, c_int month)
+	public libqt_string StandaloneMonthName(IQLocale locale, c_int month)
 	{
-		return CQt.QCalendar_StandaloneMonthName((.)this.ptr, locale, month);
+		return CQt.QCalendar_StandaloneMonthName((.)this.ptr, (.)locale?.ObjectPtr, month);
 	}
-	public libqt_string WeekDayName(QLocale_Ptr* locale, c_int day)
+	public libqt_string WeekDayName(IQLocale locale, c_int day)
 	{
-		return CQt.QCalendar_WeekDayName((.)this.ptr, locale, day);
+		return CQt.QCalendar_WeekDayName((.)this.ptr, (.)locale?.ObjectPtr, day);
 	}
-	public libqt_string StandaloneWeekDayName(QLocale_Ptr* locale, c_int day)
+	public libqt_string StandaloneWeekDayName(IQLocale locale, c_int day)
 	{
-		return CQt.QCalendar_StandaloneWeekDayName((.)this.ptr, locale, day);
+		return CQt.QCalendar_StandaloneWeekDayName((.)this.ptr, (.)locale?.ObjectPtr, day);
 	}
 	public void* AvailableCalendars()
 	{
@@ -222,65 +223,33 @@ class QCalendar
 	{
 		return CQt.QCalendar_DaysInMonth2((.)this.ptr, month, year);
 	}
-	public libqt_string MonthName3(QLocale_Ptr* locale, c_int month, c_int year)
+	public libqt_string MonthName3(IQLocale locale, c_int month, c_int year)
 	{
-		return CQt.QCalendar_MonthName3((.)this.ptr, locale, month, year);
+		return CQt.QCalendar_MonthName3((.)this.ptr, (.)locale?.ObjectPtr, month, year);
 	}
-	public libqt_string MonthName4(QLocale_Ptr* locale, c_int month, c_int year, QLocale_FormatType format)
+	public libqt_string MonthName4(IQLocale locale, c_int month, c_int year, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_MonthName4((.)this.ptr, locale, month, year, format);
+		return CQt.QCalendar_MonthName4((.)this.ptr, (.)locale?.ObjectPtr, month, year, format);
 	}
-	public libqt_string StandaloneMonthName3(QLocale_Ptr* locale, c_int month, c_int year)
+	public libqt_string StandaloneMonthName3(IQLocale locale, c_int month, c_int year)
 	{
-		return CQt.QCalendar_StandaloneMonthName3((.)this.ptr, locale, month, year);
+		return CQt.QCalendar_StandaloneMonthName3((.)this.ptr, (.)locale?.ObjectPtr, month, year);
 	}
-	public libqt_string StandaloneMonthName4(QLocale_Ptr* locale, c_int month, c_int year, QLocale_FormatType format)
+	public libqt_string StandaloneMonthName4(IQLocale locale, c_int month, c_int year, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_StandaloneMonthName4((.)this.ptr, locale, month, year, format);
+		return CQt.QCalendar_StandaloneMonthName4((.)this.ptr, (.)locale?.ObjectPtr, month, year, format);
 	}
-	public libqt_string WeekDayName3(QLocale_Ptr* locale, c_int day, QLocale_FormatType format)
+	public libqt_string WeekDayName3(IQLocale locale, c_int day, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_WeekDayName3((.)this.ptr, locale, day, format);
+		return CQt.QCalendar_WeekDayName3((.)this.ptr, (.)locale?.ObjectPtr, day, format);
 	}
-	public libqt_string StandaloneWeekDayName3(QLocale_Ptr* locale, c_int day, QLocale_FormatType format)
+	public libqt_string StandaloneWeekDayName3(IQLocale locale, c_int day, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_StandaloneWeekDayName3((.)this.ptr, locale, day, format);
+		return CQt.QCalendar_StandaloneWeekDayName3((.)this.ptr, (.)locale?.ObjectPtr, day, format);
 	}
 }
-interface IQCalendar
+interface IQCalendar : IQtObjectInterface
 {
-	public bool IsValid();
-	public c_int DaysInMonth();
-	public c_int DaysInYear();
-	public c_int MonthsInYear();
-	public bool IsDateValid();
-	public bool IsLeapYear();
-	public bool IsGregorian();
-	public bool IsLunar();
-	public bool IsLuniSolar();
-	public bool IsSolar();
-	public bool IsProleptic();
-	public bool HasYearZero();
-	public c_int MaximumDaysInMonth();
-	public c_int MinimumDaysInMonth();
-	public c_int MaximumMonthsInYear();
-	public libqt_string Name();
-	public QDate DateFromParts();
-	public QDate DateFromParts2();
-	public QCalendar_YearMonthDay PartsFromDate();
-	public c_int DayOfWeek();
-	public libqt_string MonthName();
-	public libqt_string StandaloneMonthName();
-	public libqt_string WeekDayName();
-	public libqt_string StandaloneWeekDayName();
-	public void* AvailableCalendars();
-	public c_int DaysInMonth2();
-	public libqt_string MonthName3();
-	public libqt_string MonthName4();
-	public libqt_string StandaloneMonthName3();
-	public libqt_string StandaloneMonthName4();
-	public libqt_string WeekDayName3();
-	public libqt_string StandaloneWeekDayName3();
 }
 // --------------------------------------------------------------
 // QCalendar::YearMonthDay
@@ -292,9 +261,9 @@ struct QCalendar_YearMonthDay_Ptr: void
 extension CQt
 {
 	[LinkName("QCalendar_YearMonthDay_new")]
-	public static extern QCalendar_YearMonthDay_Ptr* QCalendar_YearMonthDay_new(QCalendar_YearMonthDay* other);
+	public static extern QCalendar_YearMonthDay_Ptr* QCalendar_YearMonthDay_new(QCalendar_YearMonthDay_Ptr* other);
 	[LinkName("QCalendar_YearMonthDay_new2")]
-	public static extern QCalendar_YearMonthDay_Ptr* QCalendar_YearMonthDay_new2(QCalendar_YearMonthDay* other);
+	public static extern QCalendar_YearMonthDay_Ptr* QCalendar_YearMonthDay_new2(QCalendar_YearMonthDay_Ptr* other);
 	[LinkName("QCalendar_YearMonthDay_new3")]
 	public static extern QCalendar_YearMonthDay_Ptr* QCalendar_YearMonthDay_new3();
 	[LinkName("QCalendar_YearMonthDay_new4")]
@@ -320,12 +289,13 @@ extension CQt
 	[LinkName("QCalendar_YearMonthDay_SetDay")]
 	public static extern void QCalendar_YearMonthDay_SetDay(QCalendar_YearMonthDay_Ptr* self, c_int day);
 }
-class QCalendar_YearMonthDay
+class QCalendar_YearMonthDay : IQCalendar_YearMonthDay
 {
 	private QCalendar_YearMonthDay_Ptr* ptr;
-	public this(QCalendar_YearMonthDay* other)
+	public void* ObjectPtr => ptr;
+	public this(IQCalendar_YearMonthDay other)
 	{
-		this.ptr = CQt.QCalendar_YearMonthDay_new(other);
+		this.ptr = CQt.QCalendar_YearMonthDay_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -376,15 +346,8 @@ class QCalendar_YearMonthDay
 		CQt.QCalendar_YearMonthDay_SetDay((.)this.ptr, day);
 	}
 }
-interface IQCalendar_YearMonthDay
+interface IQCalendar_YearMonthDay : IQtObjectInterface
 {
-	public bool IsValid();
-	public c_int Year();
-	public void SetYear();
-	public c_int Month();
-	public void SetMonth();
-	public c_int Day();
-	public void SetDay();
 }
 // --------------------------------------------------------------
 // QCalendar::SystemId
@@ -396,9 +359,9 @@ struct QCalendar_SystemId_Ptr: void
 extension CQt
 {
 	[LinkName("QCalendar_SystemId_new")]
-	public static extern QCalendar_SystemId_Ptr* QCalendar_SystemId_new(QCalendar_SystemId* other);
+	public static extern QCalendar_SystemId_Ptr* QCalendar_SystemId_new(QCalendar_SystemId_Ptr* other);
 	[LinkName("QCalendar_SystemId_new2")]
-	public static extern QCalendar_SystemId_Ptr* QCalendar_SystemId_new2(QCalendar_SystemId* other);
+	public static extern QCalendar_SystemId_Ptr* QCalendar_SystemId_new2(QCalendar_SystemId_Ptr* other);
 	[LinkName("QCalendar_SystemId_new3")]
 	public static extern QCalendar_SystemId_Ptr* QCalendar_SystemId_new3();
 	[LinkName("QCalendar_SystemId_Delete")]
@@ -408,12 +371,13 @@ extension CQt
 	[LinkName("QCalendar_SystemId_IsValid")]
 	public static extern bool QCalendar_SystemId_IsValid(QCalendar_SystemId_Ptr* self);
 }
-class QCalendar_SystemId
+class QCalendar_SystemId : IQCalendar_SystemId
 {
 	private QCalendar_SystemId_Ptr* ptr;
-	public this(QCalendar_SystemId* other)
+	public void* ObjectPtr => ptr;
+	public this(IQCalendar_SystemId other)
 	{
-		this.ptr = CQt.QCalendar_SystemId_new(other);
+		this.ptr = CQt.QCalendar_SystemId_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -432,10 +396,8 @@ class QCalendar_SystemId
 		return CQt.QCalendar_SystemId_IsValid((.)this.ptr);
 	}
 }
-interface IQCalendar_SystemId
+interface IQCalendar_SystemId : IQtObjectInterface
 {
-	public c_size Index();
-	public bool IsValid();
 }
 [AllowDuplicates]
 enum QCalendar_

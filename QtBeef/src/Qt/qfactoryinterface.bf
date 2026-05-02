@@ -17,9 +17,10 @@ extension CQt
 	[LinkName("QFactoryInterface_Keys")]
 	public static extern void* QFactoryInterface_Keys(QFactoryInterface_Ptr* self);
 }
-class QFactoryInterface
+class QFactoryInterface : IQFactoryInterface
 {
 	private QFactoryInterface_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QFactoryInterface_Delete(this.ptr);
@@ -29,7 +30,6 @@ class QFactoryInterface
 		return CQt.QFactoryInterface_Keys((.)this.ptr);
 	}
 }
-interface IQFactoryInterface
+interface IQFactoryInterface : IQtObjectInterface
 {
-	public void* Keys();
 }

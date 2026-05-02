@@ -23,14 +23,15 @@ extension CQt
 	[LinkName("QStaticPlugin_SetInstance")]
 	public static extern void QStaticPlugin_SetInstance(QStaticPlugin_Ptr* self, c_intptr* instance);
 	[LinkName("QStaticPlugin_MetaData")]
-	public static extern QJsonObject_Ptr QStaticPlugin_MetaData(QStaticPlugin_Ptr* self);
+	public static extern QJsonObject_Ptr* QStaticPlugin_MetaData(QStaticPlugin_Ptr* self);
 }
-class QStaticPlugin
+class QStaticPlugin : IQStaticPlugin
 {
 	private QStaticPlugin_Ptr* ptr;
-	public this(QStaticPlugin_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQStaticPlugin other)
 	{
-		this.ptr = CQt.QStaticPlugin_new(other);
+		this.ptr = CQt.QStaticPlugin_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -44,14 +45,11 @@ class QStaticPlugin
 	{
 		CQt.QStaticPlugin_SetInstance((.)this.ptr, instance);
 	}
-	public QJsonObject_Ptr MetaData()
+	public QJsonObject_Ptr* MetaData()
 	{
 		return CQt.QStaticPlugin_MetaData((.)this.ptr);
 	}
 }
-interface IQStaticPlugin
+interface IQStaticPlugin : IQtObjectInterface
 {
-	public c_intptr* Instance();
-	public void SetInstance();
-	public QJsonObject MetaData();
 }

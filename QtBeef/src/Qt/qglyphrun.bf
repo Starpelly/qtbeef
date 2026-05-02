@@ -23,11 +23,11 @@ extension CQt
 	[LinkName("QGlyphRun_Swap")]
 	public static extern void QGlyphRun_Swap(QGlyphRun_Ptr* self, QGlyphRun_Ptr* other);
 	[LinkName("QGlyphRun_RawFont")]
-	public static extern QRawFont_Ptr QGlyphRun_RawFont(QGlyphRun_Ptr* self);
+	public static extern QRawFont_Ptr* QGlyphRun_RawFont(QGlyphRun_Ptr* self);
 	[LinkName("QGlyphRun_SetRawFont")]
 	public static extern void QGlyphRun_SetRawFont(QGlyphRun_Ptr* self, QRawFont_Ptr* rawFont);
 	[LinkName("QGlyphRun_SetRawData")]
-	public static extern void QGlyphRun_SetRawData(QGlyphRun_Ptr* self, c_uint* glyphIndexArray, QPointF_Ptr* glyphPositionArray, c_int size);
+	public static extern void QGlyphRun_SetRawData(QGlyphRun_Ptr* self, c_uint* glyphIndexArray, QPointF_Ptr** glyphPositionArray, c_int size);
 	[LinkName("QGlyphRun_GlyphIndexes")]
 	public static extern void* QGlyphRun_GlyphIndexes(QGlyphRun_Ptr* self);
 	[LinkName("QGlyphRun_SetGlyphIndexes")]
@@ -67,42 +67,43 @@ extension CQt
 	[LinkName("QGlyphRun_SetBoundingRect")]
 	public static extern void QGlyphRun_SetBoundingRect(QGlyphRun_Ptr* self, QRectF_Ptr* boundingRect);
 	[LinkName("QGlyphRun_BoundingRect")]
-	public static extern QRectF_Ptr QGlyphRun_BoundingRect(QGlyphRun_Ptr* self);
+	public static extern QRectF_Ptr* QGlyphRun_BoundingRect(QGlyphRun_Ptr* self);
 	[LinkName("QGlyphRun_IsEmpty")]
 	public static extern bool QGlyphRun_IsEmpty(QGlyphRun_Ptr* self);
 	[LinkName("QGlyphRun_SetFlag2")]
 	public static extern void QGlyphRun_SetFlag2(QGlyphRun_Ptr* self, QGlyphRun_GlyphRunFlag flag, bool enabled);
 }
-class QGlyphRun
+class QGlyphRun : IQGlyphRun
 {
 	private QGlyphRun_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGlyphRun_new();
 	}
-	public this(QGlyphRun_Ptr* other)
+	public this(IQGlyphRun other)
 	{
-		this.ptr = CQt.QGlyphRun_new2(other);
+		this.ptr = CQt.QGlyphRun_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGlyphRun_Delete(this.ptr);
 	}
-	public void Swap(QGlyphRun_Ptr* other)
+	public void Swap(IQGlyphRun other)
 	{
-		CQt.QGlyphRun_Swap((.)this.ptr, other);
+		CQt.QGlyphRun_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public QRawFont_Ptr RawFont()
+	public QRawFont_Ptr* RawFont()
 	{
 		return CQt.QGlyphRun_RawFont((.)this.ptr);
 	}
-	public void SetRawFont(QRawFont_Ptr* rawFont)
+	public void SetRawFont(IQRawFont rawFont)
 	{
-		CQt.QGlyphRun_SetRawFont((.)this.ptr, rawFont);
+		CQt.QGlyphRun_SetRawFont((.)this.ptr, (.)rawFont?.ObjectPtr);
 	}
-	public void SetRawData(c_uint* glyphIndexArray, QPointF_Ptr* glyphPositionArray, c_int size)
+	public void SetRawData(c_uint* glyphIndexArray, IQPointF glyphPositionArray, c_int size)
 	{
-		CQt.QGlyphRun_SetRawData((.)this.ptr, glyphIndexArray, glyphPositionArray, size);
+		CQt.QGlyphRun_SetRawData((.)this.ptr, glyphIndexArray, (.)glyphPositionArray?.ObjectPtr, size);
 	}
 	public void* GlyphIndexes()
 	{
@@ -168,11 +169,11 @@ class QGlyphRun
 	{
 		return CQt.QGlyphRun_Flags((.)this.ptr);
 	}
-	public void SetBoundingRect(QRectF_Ptr* boundingRect)
+	public void SetBoundingRect(IQRectF boundingRect)
 	{
-		CQt.QGlyphRun_SetBoundingRect((.)this.ptr, boundingRect);
+		CQt.QGlyphRun_SetBoundingRect((.)this.ptr, (.)boundingRect?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGlyphRun_BoundingRect((.)this.ptr);
 	}
@@ -185,32 +186,8 @@ class QGlyphRun
 		CQt.QGlyphRun_SetFlag2((.)this.ptr, flag, enabled);
 	}
 }
-interface IQGlyphRun
+interface IQGlyphRun : IQtObjectInterface
 {
-	public void Swap();
-	public QRawFont RawFont();
-	public void SetRawFont();
-	public void SetRawData();
-	public void* GlyphIndexes();
-	public void SetGlyphIndexes();
-	public void* Positions();
-	public void SetPositions();
-	public void Clear();
-	public void SetOverline();
-	public bool Overline();
-	public void SetUnderline();
-	public bool Underline();
-	public void SetStrikeOut();
-	public bool StrikeOut();
-	public void SetRightToLeft();
-	public bool IsRightToLeft();
-	public void SetFlag();
-	public void SetFlags();
-	public void* Flags();
-	public void SetBoundingRect();
-	public QRectF BoundingRect();
-	public bool IsEmpty();
-	public void SetFlag2();
 }
 [AllowDuplicates]
 enum QGlyphRun_GlyphRunFlag

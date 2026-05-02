@@ -57,7 +57,7 @@ extension CQt
 	[LinkName("QBitArray_At")]
 	public static extern bool QBitArray_At(QBitArray_Ptr* self, void* i);
 	[LinkName("QBitArray_OperatorSubscript")]
-	public static extern QBitRef_Ptr QBitArray_OperatorSubscript(QBitArray_Ptr* self, void* i);
+	public static extern QBitRef_Ptr* QBitArray_OperatorSubscript(QBitArray_Ptr* self, void* i);
 	[LinkName("QBitArray_OperatorSubscript2")]
 	public static extern bool QBitArray_OperatorSubscript2(QBitArray_Ptr* self, void* i);
 	[LinkName("QBitArray_OperatorBitwiseAndAssign")]
@@ -67,7 +67,7 @@ extension CQt
 	[LinkName("QBitArray_OperatorBitwiseNotAssign")]
 	public static extern void QBitArray_OperatorBitwiseNotAssign(QBitArray_Ptr* self, QBitArray_Ptr* param1);
 	[LinkName("QBitArray_OperatorBitwiseXor")]
-	public static extern QBitArray_Ptr QBitArray_OperatorBitwiseXor(QBitArray_Ptr* self);
+	public static extern QBitArray_Ptr* QBitArray_OperatorBitwiseXor(QBitArray_Ptr* self);
 	[LinkName("QBitArray_OperatorEqual")]
 	public static extern bool QBitArray_OperatorEqual(QBitArray_Ptr* self, QBitArray_Ptr* other);
 	[LinkName("QBitArray_OperatorNotEqual")]
@@ -81,7 +81,7 @@ extension CQt
 	[LinkName("QBitArray_Bits")]
 	public static extern c_char* QBitArray_Bits(QBitArray_Ptr* self);
 	[LinkName("QBitArray_FromBits")]
-	public static extern QBitArray_Ptr QBitArray_FromBits(c_char* data, void* lenVal);
+	public static extern QBitArray_Ptr* QBitArray_FromBits(c_char* data, void* lenVal);
 	[LinkName("QBitArray_ToUInt32")]
 	public static extern c_uint QBitArray_ToUInt32(QBitArray_Ptr* self, void* endianness);
 	[LinkName("QBitArray_Fill22")]
@@ -89,9 +89,10 @@ extension CQt
 	[LinkName("QBitArray_ToUInt322")]
 	public static extern c_uint QBitArray_ToUInt322(QBitArray_Ptr* self, void* endianness, bool* ok);
 }
-class QBitArray
+class QBitArray : IQBitArray
 {
 	private QBitArray_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QBitArray_new();
@@ -100,9 +101,9 @@ class QBitArray
 	{
 		this.ptr = CQt.QBitArray_new2(size);
 	}
-	public this(QBitArray_Ptr* other)
+	public this(IQBitArray other)
 	{
-		this.ptr = CQt.QBitArray_new3(other);
+		this.ptr = CQt.QBitArray_new3((.)other?.ObjectPtr);
 	}
 	public this(void* size, bool val)
 	{
@@ -112,9 +113,9 @@ class QBitArray
 	{
 		CQt.QBitArray_Delete(this.ptr);
 	}
-	public void Swap(QBitArray_Ptr* other)
+	public void Swap(IQBitArray other)
 	{
-		CQt.QBitArray_Swap((.)this.ptr, other);
+		CQt.QBitArray_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public void* Size()
 	{
@@ -196,7 +197,7 @@ class QBitArray
 	{
 		return CQt.QBitArray_Bits((.)this.ptr);
 	}
-	public QBitArray_Ptr FromBits(c_char* data, void* lenVal)
+	public QBitArray_Ptr* FromBits(c_char* data, void* lenVal)
 	{
 		return CQt.QBitArray_FromBits(data, lenVal);
 	}
@@ -213,33 +214,8 @@ class QBitArray
 		return CQt.QBitArray_ToUInt322((.)this.ptr, endianness, ok);
 	}
 }
-interface IQBitArray
+interface IQBitArray : IQtObjectInterface
 {
-	public void Swap();
-	public void* Size();
-	public void* Count();
-	public void* Count2();
-	public bool IsEmpty();
-	public bool IsNull();
-	public void Resize();
-	public void Detach();
-	public bool IsDetached();
-	public void Clear();
-	public bool TestBit();
-	public void SetBit();
-	public void SetBit2();
-	public void ClearBit();
-	public bool ToggleBit();
-	public bool At();
-	public bool OperatorSubscript2();
-	public bool Fill();
-	public void Fill2();
-	public void Truncate();
-	public c_char* Bits();
-	public QBitArray FromBits();
-	public c_uint ToUInt32();
-	public bool Fill22();
-	public c_uint ToUInt322();
 }
 // --------------------------------------------------------------
 // QBitRef
@@ -265,12 +241,13 @@ extension CQt
 	[LinkName("QBitRef_OperatorAssign2")]
 	public static extern void QBitRef_OperatorAssign2(QBitRef_Ptr* self, bool val);
 }
-class QBitRef
+class QBitRef : IQBitRef
 {
 	private QBitRef_Ptr* ptr;
-	public this(QBitRef_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQBitRef other)
 	{
-		this.ptr = CQt.QBitRef_new(other);
+		this.ptr = CQt.QBitRef_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -281,7 +258,6 @@ class QBitRef
 		CQt.QBitRef_OperatorAssign2((.)this.ptr, val);
 	}
 }
-interface IQBitRef
+interface IQBitRef : IQtObjectInterface
 {
-	public void OperatorAssign2();
 }

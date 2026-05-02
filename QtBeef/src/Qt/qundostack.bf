@@ -15,11 +15,11 @@ extension CQt
 	[LinkName("QUndoCommand_new")]
 	public static extern QUndoCommand_Ptr* QUndoCommand_new();
 	[LinkName("QUndoCommand_new2")]
-	public static extern QUndoCommand_Ptr* QUndoCommand_new2(libqt_string* text);
+	public static extern QUndoCommand_Ptr* QUndoCommand_new2(libqt_string text);
 	[LinkName("QUndoCommand_new3")]
-	public static extern QUndoCommand_Ptr* QUndoCommand_new3(QUndoCommand_Ptr* parent);
+	public static extern QUndoCommand_Ptr* QUndoCommand_new3(QUndoCommand_Ptr** parent);
 	[LinkName("QUndoCommand_new4")]
-	public static extern QUndoCommand_Ptr* QUndoCommand_new4(libqt_string* text, QUndoCommand_Ptr* parent);
+	public static extern QUndoCommand_Ptr* QUndoCommand_new4(libqt_string text, QUndoCommand_Ptr** parent);
 	[LinkName("QUndoCommand_Delete")]
 	public static extern void QUndoCommand_Delete(QUndoCommand_Ptr* self);
 	[LinkName("QUndoCommand_Undo")]
@@ -31,7 +31,7 @@ extension CQt
 	[LinkName("QUndoCommand_ActionText")]
 	public static extern libqt_string QUndoCommand_ActionText(QUndoCommand_Ptr* self);
 	[LinkName("QUndoCommand_SetText")]
-	public static extern void QUndoCommand_SetText(QUndoCommand_Ptr* self, libqt_string* text);
+	public static extern void QUndoCommand_SetText(QUndoCommand_Ptr* self, libqt_string text);
 	[LinkName("QUndoCommand_IsObsolete")]
 	public static extern bool QUndoCommand_IsObsolete(QUndoCommand_Ptr* self);
 	[LinkName("QUndoCommand_SetObsolete")]
@@ -39,30 +39,31 @@ extension CQt
 	[LinkName("QUndoCommand_Id")]
 	public static extern c_int QUndoCommand_Id(QUndoCommand_Ptr* self);
 	[LinkName("QUndoCommand_MergeWith")]
-	public static extern bool QUndoCommand_MergeWith(QUndoCommand_Ptr* self, QUndoCommand_Ptr* other);
+	public static extern bool QUndoCommand_MergeWith(QUndoCommand_Ptr* self, QUndoCommand_Ptr** other);
 	[LinkName("QUndoCommand_ChildCount")]
 	public static extern c_int QUndoCommand_ChildCount(QUndoCommand_Ptr* self);
 	[LinkName("QUndoCommand_Child")]
-	public static extern QUndoCommand_Ptr* QUndoCommand_Child(QUndoCommand_Ptr* self, c_int index);
+	public static extern QUndoCommand_Ptr** QUndoCommand_Child(QUndoCommand_Ptr* self, c_int index);
 }
-class QUndoCommand
+class QUndoCommand : IQUndoCommand
 {
 	private QUndoCommand_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QUndoCommand_new();
 	}
-	public this(libqt_string* text)
+	public this(String text)
 	{
-		this.ptr = CQt.QUndoCommand_new2(text);
+		this.ptr = CQt.QUndoCommand_new2(libqt_string(text));
 	}
-	public this(QUndoCommand_Ptr* parent)
+	public this(IQUndoCommand parent)
 	{
-		this.ptr = CQt.QUndoCommand_new3(parent);
+		this.ptr = CQt.QUndoCommand_new3((.)parent?.ObjectPtr);
 	}
-	public this(libqt_string* text, QUndoCommand_Ptr* parent)
+	public this(String text, IQUndoCommand parent)
 	{
-		this.ptr = CQt.QUndoCommand_new4(text, parent);
+		this.ptr = CQt.QUndoCommand_new4(libqt_string(text), (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -84,9 +85,9 @@ class QUndoCommand
 	{
 		return CQt.QUndoCommand_ActionText((.)this.ptr);
 	}
-	public void SetText(libqt_string* text)
+	public void SetText(String text)
 	{
-		CQt.QUndoCommand_SetText((.)this.ptr, text);
+		CQt.QUndoCommand_SetText((.)this.ptr, libqt_string(text));
 	}
 	public bool IsObsolete()
 	{
@@ -100,32 +101,21 @@ class QUndoCommand
 	{
 		return CQt.QUndoCommand_Id((.)this.ptr);
 	}
-	public bool MergeWith(QUndoCommand_Ptr* other)
+	public bool MergeWith(IQUndoCommand other)
 	{
-		return CQt.QUndoCommand_MergeWith((.)this.ptr, other);
+		return CQt.QUndoCommand_MergeWith((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public c_int ChildCount()
 	{
 		return CQt.QUndoCommand_ChildCount((.)this.ptr);
 	}
-	public QUndoCommand_Ptr* Child(c_int index)
+	public QUndoCommand_Ptr** Child(c_int index)
 	{
 		return CQt.QUndoCommand_Child((.)this.ptr, index);
 	}
 }
-interface IQUndoCommand
+interface IQUndoCommand : IQtObjectInterface
 {
-	public void Undo();
-	public void Redo();
-	public libqt_string Text();
-	public libqt_string ActionText();
-	public void SetText();
-	public bool IsObsolete();
-	public void SetObsolete();
-	public c_int Id();
-	public bool MergeWith();
-	public c_int ChildCount();
-	public QUndoCommand* Child();
 }
 // --------------------------------------------------------------
 // QUndoStack
@@ -139,11 +129,11 @@ extension CQt
 	[LinkName("QUndoStack_new")]
 	public static extern QUndoStack_Ptr* QUndoStack_new();
 	[LinkName("QUndoStack_new2")]
-	public static extern QUndoStack_Ptr* QUndoStack_new2(QObject_Ptr* parent);
+	public static extern QUndoStack_Ptr* QUndoStack_new2(QObject_Ptr** parent);
 	[LinkName("QUndoStack_Delete")]
 	public static extern void QUndoStack_Delete(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_MetaObject")]
-	public static extern QMetaObject_Ptr* QUndoStack_MetaObject(QUndoStack_Ptr* self);
+	public static extern QMetaObject_Ptr** QUndoStack_MetaObject(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_Qt_Metacast")]
 	public static extern void* QUndoStack_Qt_Metacast(QUndoStack_Ptr* self, c_char* param1);
 	[LinkName("QUndoStack_Qt_Metacall")]
@@ -153,7 +143,7 @@ extension CQt
 	[LinkName("QUndoStack_Clear")]
 	public static extern void QUndoStack_Clear(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_Push")]
-	public static extern void QUndoStack_Push(QUndoStack_Ptr* self, QUndoCommand_Ptr* cmd);
+	public static extern void QUndoStack_Push(QUndoStack_Ptr* self, QUndoCommand_Ptr** cmd);
 	[LinkName("QUndoStack_CanUndo")]
 	public static extern bool QUndoStack_CanUndo(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_CanRedo")]
@@ -169,9 +159,9 @@ extension CQt
 	[LinkName("QUndoStack_Text")]
 	public static extern libqt_string QUndoStack_Text(QUndoStack_Ptr* self, c_int idx);
 	[LinkName("QUndoStack_CreateUndoAction")]
-	public static extern QAction_Ptr* QUndoStack_CreateUndoAction(QUndoStack_Ptr* self, QObject_Ptr* parent);
+	public static extern QAction_Ptr** QUndoStack_CreateUndoAction(QUndoStack_Ptr* self, QObject_Ptr** parent);
 	[LinkName("QUndoStack_CreateRedoAction")]
-	public static extern QAction_Ptr* QUndoStack_CreateRedoAction(QUndoStack_Ptr* self, QObject_Ptr* parent);
+	public static extern QAction_Ptr** QUndoStack_CreateRedoAction(QUndoStack_Ptr* self, QObject_Ptr** parent);
 	[LinkName("QUndoStack_IsActive")]
 	public static extern bool QUndoStack_IsActive(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_IsClean")]
@@ -179,7 +169,7 @@ extension CQt
 	[LinkName("QUndoStack_CleanIndex")]
 	public static extern c_int QUndoStack_CleanIndex(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_BeginMacro")]
-	public static extern void QUndoStack_BeginMacro(QUndoStack_Ptr* self, libqt_string* text);
+	public static extern void QUndoStack_BeginMacro(QUndoStack_Ptr* self, libqt_string text);
 	[LinkName("QUndoStack_EndMacro")]
 	public static extern void QUndoStack_EndMacro(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_SetUndoLimit")]
@@ -187,7 +177,7 @@ extension CQt
 	[LinkName("QUndoStack_UndoLimit")]
 	public static extern c_int QUndoStack_UndoLimit(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_Command")]
-	public static extern QUndoCommand_Ptr* QUndoStack_Command(QUndoStack_Ptr* self, c_int index);
+	public static extern QUndoCommand_Ptr** QUndoStack_Command(QUndoStack_Ptr* self, c_int index);
 	[LinkName("QUndoStack_SetClean")]
 	public static extern void QUndoStack_SetClean(QUndoStack_Ptr* self);
 	[LinkName("QUndoStack_ResetClean")]
@@ -209,36 +199,37 @@ extension CQt
 	[LinkName("QUndoStack_CanRedoChanged")]
 	public static extern void QUndoStack_CanRedoChanged(QUndoStack_Ptr* self, bool canRedo);
 	[LinkName("QUndoStack_UndoTextChanged")]
-	public static extern void QUndoStack_UndoTextChanged(QUndoStack_Ptr* self, libqt_string* undoText);
+	public static extern void QUndoStack_UndoTextChanged(QUndoStack_Ptr* self, libqt_string undoText);
 	[LinkName("QUndoStack_RedoTextChanged")]
-	public static extern void QUndoStack_RedoTextChanged(QUndoStack_Ptr* self, libqt_string* redoText);
+	public static extern void QUndoStack_RedoTextChanged(QUndoStack_Ptr* self, libqt_string redoText);
 	[LinkName("QUndoStack_Tr2")]
 	public static extern libqt_string QUndoStack_Tr2(c_char* s, c_char* c);
 	[LinkName("QUndoStack_Tr3")]
 	public static extern libqt_string QUndoStack_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QUndoStack_CreateUndoAction2")]
-	public static extern QAction_Ptr* QUndoStack_CreateUndoAction2(QUndoStack_Ptr* self, QObject_Ptr* parent, libqt_string* prefix);
+	public static extern QAction_Ptr** QUndoStack_CreateUndoAction2(QUndoStack_Ptr* self, QObject_Ptr** parent, libqt_string prefix);
 	[LinkName("QUndoStack_CreateRedoAction2")]
-	public static extern QAction_Ptr* QUndoStack_CreateRedoAction2(QUndoStack_Ptr* self, QObject_Ptr* parent, libqt_string* prefix);
+	public static extern QAction_Ptr** QUndoStack_CreateRedoAction2(QUndoStack_Ptr* self, QObject_Ptr** parent, libqt_string prefix);
 	[LinkName("QUndoStack_SetActive1")]
 	public static extern void QUndoStack_SetActive1(QUndoStack_Ptr* self, bool active);
 }
-class QUndoStack
+class QUndoStack : IQUndoStack, IQObject
 {
 	private QUndoStack_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QUndoStack_new();
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QUndoStack_new2(parent);
+		this.ptr = CQt.QUndoStack_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QUndoStack_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QUndoStack_MetaObject((.)this.ptr);
 	}
@@ -258,9 +249,9 @@ class QUndoStack
 	{
 		CQt.QUndoStack_Clear((.)this.ptr);
 	}
-	public void Push(QUndoCommand_Ptr* cmd)
+	public void Push(IQUndoCommand cmd)
 	{
-		CQt.QUndoStack_Push((.)this.ptr, cmd);
+		CQt.QUndoStack_Push((.)this.ptr, (.)cmd?.ObjectPtr);
 	}
 	public bool CanUndo()
 	{
@@ -290,13 +281,13 @@ class QUndoStack
 	{
 		return CQt.QUndoStack_Text((.)this.ptr, idx);
 	}
-	public QAction_Ptr* CreateUndoAction(QObject_Ptr* parent)
+	public QAction_Ptr** CreateUndoAction(IQObject parent)
 	{
-		return CQt.QUndoStack_CreateUndoAction((.)this.ptr, parent);
+		return CQt.QUndoStack_CreateUndoAction((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public QAction_Ptr* CreateRedoAction(QObject_Ptr* parent)
+	public QAction_Ptr** CreateRedoAction(IQObject parent)
 	{
-		return CQt.QUndoStack_CreateRedoAction((.)this.ptr, parent);
+		return CQt.QUndoStack_CreateRedoAction((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public bool IsActive()
 	{
@@ -310,9 +301,9 @@ class QUndoStack
 	{
 		return CQt.QUndoStack_CleanIndex((.)this.ptr);
 	}
-	public void BeginMacro(libqt_string* text)
+	public void BeginMacro(String text)
 	{
-		CQt.QUndoStack_BeginMacro((.)this.ptr, text);
+		CQt.QUndoStack_BeginMacro((.)this.ptr, libqt_string(text));
 	}
 	public void EndMacro()
 	{
@@ -326,7 +317,7 @@ class QUndoStack
 	{
 		return CQt.QUndoStack_UndoLimit((.)this.ptr);
 	}
-	public QUndoCommand_Ptr* Command(c_int index)
+	public QUndoCommand_Ptr** Command(c_int index)
 	{
 		return CQt.QUndoStack_Command((.)this.ptr, index);
 	}
@@ -370,13 +361,13 @@ class QUndoStack
 	{
 		CQt.QUndoStack_CanRedoChanged((.)this.ptr, canRedo);
 	}
-	public void UndoTextChanged(libqt_string* undoText)
+	public void UndoTextChanged(String undoText)
 	{
-		CQt.QUndoStack_UndoTextChanged((.)this.ptr, undoText);
+		CQt.QUndoStack_UndoTextChanged((.)this.ptr, libqt_string(undoText));
 	}
-	public void RedoTextChanged(libqt_string* redoText)
+	public void RedoTextChanged(String redoText)
 	{
-		CQt.QUndoStack_RedoTextChanged((.)this.ptr, redoText);
+		CQt.QUndoStack_RedoTextChanged((.)this.ptr, libqt_string(redoText));
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -386,33 +377,33 @@ class QUndoStack
 	{
 		return CQt.QUndoStack_Tr3(s, c, n);
 	}
-	public QAction_Ptr* CreateUndoAction2(QObject_Ptr* parent, libqt_string* prefix)
+	public QAction_Ptr** CreateUndoAction2(IQObject parent, String prefix)
 	{
-		return CQt.QUndoStack_CreateUndoAction2((.)this.ptr, parent, prefix);
+		return CQt.QUndoStack_CreateUndoAction2((.)this.ptr, (.)parent?.ObjectPtr, libqt_string(prefix));
 	}
-	public QAction_Ptr* CreateRedoAction2(QObject_Ptr* parent, libqt_string* prefix)
+	public QAction_Ptr** CreateRedoAction2(IQObject parent, String prefix)
 	{
-		return CQt.QUndoStack_CreateRedoAction2((.)this.ptr, parent, prefix);
+		return CQt.QUndoStack_CreateRedoAction2((.)this.ptr, (.)parent?.ObjectPtr, libqt_string(prefix));
 	}
 	public void SetActive1(bool active)
 	{
 		CQt.QUndoStack_SetActive1((.)this.ptr, active);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -434,13 +425,13 @@ class QUndoStack
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -458,49 +449,49 @@ class QUndoStack
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -510,11 +501,11 @@ class QUndoStack
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -522,11 +513,11 @@ class QUndoStack
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -534,7 +525,7 @@ class QUndoStack
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -546,7 +537,7 @@ class QUndoStack
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -558,29 +549,29 @@ class QUndoStack
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -590,79 +581,39 @@ class QUndoStack
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQUndoStack
+interface IQUndoStack : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void Clear();
-	public void Push();
-	public bool CanUndo();
-	public bool CanRedo();
-	public libqt_string UndoText();
-	public libqt_string RedoText();
-	public c_int Count();
-	public c_int Index();
-	public libqt_string Text();
-	public QAction* CreateUndoAction();
-	public QAction* CreateRedoAction();
-	public bool IsActive();
-	public bool IsClean();
-	public c_int CleanIndex();
-	public void BeginMacro();
-	public void EndMacro();
-	public void SetUndoLimit();
-	public c_int UndoLimit();
-	public QUndoCommand* Command();
-	public void SetClean();
-	public void ResetClean();
-	public void SetIndex();
-	public void Undo();
-	public void Redo();
-	public void SetActive();
-	public void IndexChanged();
-	public void CleanChanged();
-	public void CanUndoChanged();
-	public void CanRedoChanged();
-	public void UndoTextChanged();
-	public void RedoTextChanged();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public QAction* CreateUndoAction2();
-	public QAction* CreateRedoAction2();
-	public void SetActive1();
 }

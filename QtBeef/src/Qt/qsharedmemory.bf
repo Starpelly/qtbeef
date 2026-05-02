@@ -15,15 +15,15 @@ extension CQt
 	[LinkName("QSharedMemory_new")]
 	public static extern QSharedMemory_Ptr* QSharedMemory_new();
 	[LinkName("QSharedMemory_new2")]
-	public static extern QSharedMemory_Ptr* QSharedMemory_new2(libqt_string* key);
+	public static extern QSharedMemory_Ptr* QSharedMemory_new2(libqt_string key);
 	[LinkName("QSharedMemory_new3")]
-	public static extern QSharedMemory_Ptr* QSharedMemory_new3(QObject_Ptr* parent);
+	public static extern QSharedMemory_Ptr* QSharedMemory_new3(QObject_Ptr** parent);
 	[LinkName("QSharedMemory_new4")]
-	public static extern QSharedMemory_Ptr* QSharedMemory_new4(libqt_string* key, QObject_Ptr* parent);
+	public static extern QSharedMemory_Ptr* QSharedMemory_new4(libqt_string key, QObject_Ptr** parent);
 	[LinkName("QSharedMemory_Delete")]
 	public static extern void QSharedMemory_Delete(QSharedMemory_Ptr* self);
 	[LinkName("QSharedMemory_MetaObject")]
-	public static extern QMetaObject_Ptr* QSharedMemory_MetaObject(QSharedMemory_Ptr* self);
+	public static extern QMetaObject_Ptr** QSharedMemory_MetaObject(QSharedMemory_Ptr* self);
 	[LinkName("QSharedMemory_Qt_Metacast")]
 	public static extern void* QSharedMemory_Qt_Metacast(QSharedMemory_Ptr* self, c_char* param1);
 	[LinkName("QSharedMemory_Qt_Metacall")]
@@ -31,11 +31,11 @@ extension CQt
 	[LinkName("QSharedMemory_Tr")]
 	public static extern libqt_string QSharedMemory_Tr(c_char* s);
 	[LinkName("QSharedMemory_SetKey")]
-	public static extern void QSharedMemory_SetKey(QSharedMemory_Ptr* self, libqt_string* key);
+	public static extern void QSharedMemory_SetKey(QSharedMemory_Ptr* self, libqt_string key);
 	[LinkName("QSharedMemory_Key")]
 	public static extern libqt_string QSharedMemory_Key(QSharedMemory_Ptr* self);
 	[LinkName("QSharedMemory_SetNativeKey")]
-	public static extern void QSharedMemory_SetNativeKey(QSharedMemory_Ptr* self, libqt_string* key);
+	public static extern void QSharedMemory_SetNativeKey(QSharedMemory_Ptr* self, libqt_string key);
 	[LinkName("QSharedMemory_NativeKey")]
 	public static extern libqt_string QSharedMemory_NativeKey(QSharedMemory_Ptr* self);
 	[LinkName("QSharedMemory_Create")]
@@ -71,30 +71,31 @@ extension CQt
 	[LinkName("QSharedMemory_Attach1")]
 	public static extern bool QSharedMemory_Attach1(QSharedMemory_Ptr* self, QSharedMemory_AccessMode mode);
 }
-class QSharedMemory
+class QSharedMemory : IQSharedMemory, IQObject
 {
 	private QSharedMemory_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QSharedMemory_new();
 	}
-	public this(libqt_string* key)
+	public this(String key)
 	{
-		this.ptr = CQt.QSharedMemory_new2(key);
+		this.ptr = CQt.QSharedMemory_new2(libqt_string(key));
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QSharedMemory_new3(parent);
+		this.ptr = CQt.QSharedMemory_new3((.)parent?.ObjectPtr);
 	}
-	public this(libqt_string* key, QObject_Ptr* parent)
+	public this(String key, IQObject parent)
 	{
-		this.ptr = CQt.QSharedMemory_new4(key, parent);
+		this.ptr = CQt.QSharedMemory_new4(libqt_string(key), (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QSharedMemory_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QSharedMemory_MetaObject((.)this.ptr);
 	}
@@ -110,17 +111,17 @@ class QSharedMemory
 	{
 		return CQt.QSharedMemory_Tr(s);
 	}
-	public void SetKey(libqt_string* key)
+	public void SetKey(String key)
 	{
-		CQt.QSharedMemory_SetKey((.)this.ptr, key);
+		CQt.QSharedMemory_SetKey((.)this.ptr, libqt_string(key));
 	}
 	public libqt_string Key()
 	{
 		return CQt.QSharedMemory_Key((.)this.ptr);
 	}
-	public void SetNativeKey(libqt_string* key)
+	public void SetNativeKey(String key)
 	{
-		CQt.QSharedMemory_SetNativeKey((.)this.ptr, key);
+		CQt.QSharedMemory_SetNativeKey((.)this.ptr, libqt_string(key));
 	}
 	public libqt_string NativeKey()
 	{
@@ -190,21 +191,21 @@ class QSharedMemory
 	{
 		return CQt.QSharedMemory_Attach1((.)this.ptr, mode);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -226,13 +227,13 @@ class QSharedMemory
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -250,49 +251,49 @@ class QSharedMemory
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -302,11 +303,11 @@ class QSharedMemory
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -314,11 +315,11 @@ class QSharedMemory
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -326,7 +327,7 @@ class QSharedMemory
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -338,7 +339,7 @@ class QSharedMemory
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -350,29 +351,29 @@ class QSharedMemory
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -382,65 +383,41 @@ class QSharedMemory
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQSharedMemory
+interface IQSharedMemory : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void SetKey();
-	public libqt_string Key();
-	public void SetNativeKey();
-	public libqt_string NativeKey();
-	public bool Create();
-	public void* Size();
-	public bool Attach();
-	public bool IsAttached();
-	public bool Detach();
-	public void* Data();
-	public void* ConstData();
-	public void* Data2();
-	public bool Lock();
-	public bool Unlock();
-	public QSharedMemory_SharedMemoryError Error();
-	public libqt_string ErrorString();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public bool Create2();
-	public bool Attach1();
 }
 [AllowDuplicates]
 enum QSharedMemory_AccessMode

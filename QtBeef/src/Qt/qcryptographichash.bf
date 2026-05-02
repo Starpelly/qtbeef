@@ -23,7 +23,7 @@ extension CQt
 	[LinkName("QCryptographicHash_AddData2")]
 	public static extern void QCryptographicHash_AddData2(QCryptographicHash_Ptr* self, void* data);
 	[LinkName("QCryptographicHash_AddData3")]
-	public static extern bool QCryptographicHash_AddData3(QCryptographicHash_Ptr* self, QIODevice_Ptr* device);
+	public static extern bool QCryptographicHash_AddData3(QCryptographicHash_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QCryptographicHash_Result")]
 	public static extern void* QCryptographicHash_Result(QCryptographicHash_Ptr* self);
 	[LinkName("QCryptographicHash_ResultView")]
@@ -33,9 +33,10 @@ extension CQt
 	[LinkName("QCryptographicHash_HashLength")]
 	public static extern c_int QCryptographicHash_HashLength(QCryptographicHash_Algorithm method);
 }
-class QCryptographicHash
+class QCryptographicHash : IQCryptographicHash
 {
 	private QCryptographicHash_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(QCryptographicHash_Algorithm method)
 	{
 		this.ptr = CQt.QCryptographicHash_new(method);
@@ -56,9 +57,9 @@ class QCryptographicHash
 	{
 		CQt.QCryptographicHash_AddData2((.)this.ptr, data);
 	}
-	public bool AddData3(QIODevice_Ptr* device)
+	public bool AddData3(IQIODevice device)
 	{
-		return CQt.QCryptographicHash_AddData3((.)this.ptr, device);
+		return CQt.QCryptographicHash_AddData3((.)this.ptr, (.)device?.ObjectPtr);
 	}
 	public void* Result()
 	{
@@ -77,16 +78,8 @@ class QCryptographicHash
 		return CQt.QCryptographicHash_HashLength(method);
 	}
 }
-interface IQCryptographicHash
+interface IQCryptographicHash : IQtObjectInterface
 {
-	public void Reset();
-	public void AddData();
-	public void AddData2();
-	public bool AddData3();
-	public void* Result();
-	public void* ResultView();
-	public void* Hash();
-	public c_int HashLength();
 }
 [AllowDuplicates]
 enum QCryptographicHash_Algorithm

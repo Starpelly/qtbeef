@@ -19,18 +19,19 @@ extension CQt
 	[LinkName("QAbstractConcatenable_Delete")]
 	public static extern void QAbstractConcatenable_Delete(QAbstractConcatenable_Ptr* self);
 }
-class QAbstractConcatenable
+class QAbstractConcatenable : IQAbstractConcatenable
 {
 	private QAbstractConcatenable_Ptr* ptr;
-	public this(QAbstractConcatenable_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQAbstractConcatenable other)
 	{
-		this.ptr = CQt.QAbstractConcatenable_new(other);
+		this.ptr = CQt.QAbstractConcatenable_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QAbstractConcatenable_Delete(this.ptr);
 	}
 }
-interface IQAbstractConcatenable
+interface IQAbstractConcatenable : IQtObjectInterface
 {
 }

@@ -21,19 +21,20 @@ extension CQt
 	[LinkName("QPartialOrdering_Delete")]
 	public static extern void QPartialOrdering_Delete(QPartialOrdering_Ptr* self);
 }
-class QPartialOrdering
+class QPartialOrdering : IQPartialOrdering
 {
 	private QPartialOrdering_Ptr* ptr;
-	public this(QPartialOrdering_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQPartialOrdering other)
 	{
-		this.ptr = CQt.QPartialOrdering_new(other);
+		this.ptr = CQt.QPartialOrdering_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QPartialOrdering_Delete(this.ptr);
 	}
 }
-interface IQPartialOrdering
+interface IQPartialOrdering : IQtObjectInterface
 {
 }
 [AllowDuplicates]

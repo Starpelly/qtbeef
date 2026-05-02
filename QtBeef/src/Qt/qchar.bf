@@ -25,12 +25,13 @@ extension CQt
 	[LinkName("QLatin1Char_ToLatin1")]
 	public static extern c_char QLatin1Char_ToLatin1(QLatin1Char_Ptr* self);
 }
-class QLatin1Char
+class QLatin1Char : IQLatin1Char
 {
 	private QLatin1Char_Ptr* ptr;
-	public this(QLatin1Char_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQLatin1Char other)
 	{
-		this.ptr = CQt.QLatin1Char_new(other);
+		this.ptr = CQt.QLatin1Char_new((.)other?.ObjectPtr);
 	}
 	public this(c_char c)
 	{
@@ -45,9 +46,8 @@ class QLatin1Char
 		return CQt.QLatin1Char_ToLatin1((.)this.ptr);
 	}
 }
-interface IQLatin1Char
+interface IQLatin1Char : IQtObjectInterface
 {
-	public c_char ToLatin1();
 }
 // --------------------------------------------------------------
 // QChar
@@ -77,7 +77,7 @@ extension CQt
 	[LinkName("QChar_new9")]
 	public static extern QChar_Ptr* QChar_new9(QChar_SpecialCharacter s);
 	[LinkName("QChar_new10")]
-	public static extern QChar_Ptr* QChar_new10(QLatin1Char_Ptr ch);
+	public static extern QChar_Ptr* QChar_new10(QLatin1Char_Ptr* ch);
 	[LinkName("QChar_new11")]
 	public static extern QChar_Ptr* QChar_new11(c_char c);
 	[LinkName("QChar_new12")]
@@ -95,7 +95,7 @@ extension CQt
 	[LinkName("QChar_CombiningClass")]
 	public static extern c_uchar QChar_CombiningClass(QChar_Ptr* self);
 	[LinkName("QChar_MirroredChar")]
-	public static extern QChar_Ptr QChar_MirroredChar(QChar_Ptr* self);
+	public static extern QChar_Ptr* QChar_MirroredChar(QChar_Ptr* self);
 	[LinkName("QChar_HasMirrored")]
 	public static extern bool QChar_HasMirrored(QChar_Ptr* self);
 	[LinkName("QChar_Decomposition")]
@@ -105,13 +105,13 @@ extension CQt
 	[LinkName("QChar_DigitValue")]
 	public static extern c_int QChar_DigitValue(QChar_Ptr* self);
 	[LinkName("QChar_ToLower")]
-	public static extern QChar_Ptr QChar_ToLower(QChar_Ptr* self);
+	public static extern QChar_Ptr* QChar_ToLower(QChar_Ptr* self);
 	[LinkName("QChar_ToUpper")]
-	public static extern QChar_Ptr QChar_ToUpper(QChar_Ptr* self);
+	public static extern QChar_Ptr* QChar_ToUpper(QChar_Ptr* self);
 	[LinkName("QChar_ToTitleCase")]
-	public static extern QChar_Ptr QChar_ToTitleCase(QChar_Ptr* self);
+	public static extern QChar_Ptr* QChar_ToTitleCase(QChar_Ptr* self);
 	[LinkName("QChar_ToCaseFolded")]
-	public static extern QChar_Ptr QChar_ToCaseFolded(QChar_Ptr* self);
+	public static extern QChar_Ptr* QChar_ToCaseFolded(QChar_Ptr* self);
 	[LinkName("QChar_Script")]
 	public static extern QChar_Script QChar_Script(QChar_Ptr* self);
 	[LinkName("QChar_UnicodeVersion")]
@@ -119,7 +119,7 @@ extension CQt
 	[LinkName("QChar_ToLatin1")]
 	public static extern c_char QChar_ToLatin1(QChar_Ptr* self);
 	[LinkName("QChar_FromLatin1")]
-	public static extern QChar_Ptr QChar_FromLatin1(c_char c);
+	public static extern QChar_Ptr* QChar_FromLatin1(c_char c);
 	[LinkName("QChar_IsNull")]
 	public static extern bool QChar_IsNull(QChar_Ptr* self);
 	[LinkName("QChar_IsPrint")]
@@ -165,12 +165,13 @@ extension CQt
 	[LinkName("QChar_CurrentUnicodeVersion")]
 	public static extern QChar_UnicodeVersion QChar_CurrentUnicodeVersion();
 }
-class QChar
+class QChar : IQChar
 {
 	private QChar_Ptr* ptr;
-	public this(QChar_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQChar other)
 	{
-		this.ptr = CQt.QChar_new(other);
+		this.ptr = CQt.QChar_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -196,9 +197,9 @@ class QChar
 	{
 		this.ptr = CQt.QChar_new9(s);
 	}
-	public this(QLatin1Char_Ptr ch)
+	public this(IQLatin1Char ch)
 	{
-		this.ptr = CQt.QChar_new10(ch);
+		this.ptr = CQt.QChar_new10((.)ch?.ObjectPtr);
 	}
 	public this(c_char c)
 	{
@@ -228,7 +229,7 @@ class QChar
 	{
 		return CQt.QChar_CombiningClass((.)this.ptr);
 	}
-	public QChar_Ptr MirroredChar()
+	public QChar_Ptr* MirroredChar()
 	{
 		return CQt.QChar_MirroredChar((.)this.ptr);
 	}
@@ -248,19 +249,19 @@ class QChar
 	{
 		return CQt.QChar_DigitValue((.)this.ptr);
 	}
-	public QChar_Ptr ToLower()
+	public QChar_Ptr* ToLower()
 	{
 		return CQt.QChar_ToLower((.)this.ptr);
 	}
-	public QChar_Ptr ToUpper()
+	public QChar_Ptr* ToUpper()
 	{
 		return CQt.QChar_ToUpper((.)this.ptr);
 	}
-	public QChar_Ptr ToTitleCase()
+	public QChar_Ptr* ToTitleCase()
 	{
 		return CQt.QChar_ToTitleCase((.)this.ptr);
 	}
-	public QChar_Ptr ToCaseFolded()
+	public QChar_Ptr* ToCaseFolded()
 	{
 		return CQt.QChar_ToCaseFolded((.)this.ptr);
 	}
@@ -276,7 +277,7 @@ class QChar
 	{
 		return CQt.QChar_ToLatin1((.)this.ptr);
 	}
-	public QChar_Ptr FromLatin1(c_char c)
+	public QChar_Ptr* FromLatin1(c_char c)
 	{
 		return CQt.QChar_FromLatin1(c);
 	}
@@ -369,47 +370,8 @@ class QChar
 		return CQt.QChar_CurrentUnicodeVersion();
 	}
 }
-interface IQChar
+interface IQChar : IQtObjectInterface
 {
-	public QChar_Category Category();
-	public QChar_Direction Direction();
-	public QChar_JoiningType JoiningType();
-	public c_uchar CombiningClass();
-	public QChar MirroredChar();
-	public bool HasMirrored();
-	public libqt_string Decomposition();
-	public QChar_Decomposition DecompositionTag();
-	public c_int DigitValue();
-	public QChar ToLower();
-	public QChar ToUpper();
-	public QChar ToTitleCase();
-	public QChar ToCaseFolded();
-	public QChar_Script Script();
-	public QChar_UnicodeVersion UnicodeVersion();
-	public c_char ToLatin1();
-	public QChar FromLatin1();
-	public bool IsNull();
-	public bool IsPrint();
-	public bool IsSpace();
-	public bool IsMark();
-	public bool IsPunct();
-	public bool IsSymbol();
-	public bool IsLetter();
-	public bool IsNumber();
-	public bool IsLetterOrNumber();
-	public bool IsDigit();
-	public bool IsLower();
-	public bool IsUpper();
-	public bool IsTitleCase();
-	public bool IsNonCharacter();
-	public bool IsHighSurrogate();
-	public bool IsLowSurrogate();
-	public bool IsSurrogate();
-	public c_uchar Cell();
-	public c_uchar Row();
-	public void SetCell();
-	public void SetRow();
-	public QChar_UnicodeVersion CurrentUnicodeVersion();
 }
 [AllowDuplicates]
 enum QChar_SpecialCharacter

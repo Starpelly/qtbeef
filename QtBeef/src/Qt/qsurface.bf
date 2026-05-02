@@ -17,19 +17,20 @@ extension CQt
 	[LinkName("QSurface_SurfaceClass")]
 	public static extern QSurface_SurfaceClass QSurface_SurfaceClass(QSurface_Ptr* self);
 	[LinkName("QSurface_Format")]
-	public static extern QSurfaceFormat_Ptr QSurface_Format(QSurface_Ptr* self);
+	public static extern QSurfaceFormat_Ptr* QSurface_Format(QSurface_Ptr* self);
 	[LinkName("QSurface_SurfaceType")]
 	public static extern QSurface_SurfaceType QSurface_SurfaceType(QSurface_Ptr* self);
 	[LinkName("QSurface_SupportsOpenGL")]
 	public static extern bool QSurface_SupportsOpenGL(QSurface_Ptr* self);
 	[LinkName("QSurface_Size")]
-	public static extern QSize_Ptr QSurface_Size(QSurface_Ptr* self);
+	public static extern QSize_Ptr* QSurface_Size(QSurface_Ptr* self);
 	[LinkName("QSurface_OperatorAssign")]
 	public static extern void QSurface_OperatorAssign(QSurface_Ptr* self, QSurface_Ptr* param1);
 }
-class QSurface
+class QSurface : IQSurface
 {
 	private QSurface_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QSurface_Delete(this.ptr);
@@ -38,7 +39,7 @@ class QSurface
 	{
 		return CQt.QSurface_SurfaceClass((.)this.ptr);
 	}
-	public QSurfaceFormat_Ptr Format()
+	public QSurfaceFormat_Ptr* Format()
 	{
 		return CQt.QSurface_Format((.)this.ptr);
 	}
@@ -50,18 +51,13 @@ class QSurface
 	{
 		return CQt.QSurface_SupportsOpenGL((.)this.ptr);
 	}
-	public QSize_Ptr Size()
+	public QSize_Ptr* Size()
 	{
 		return CQt.QSurface_Size((.)this.ptr);
 	}
 }
-interface IQSurface
+interface IQSurface : IQtObjectInterface
 {
-	public QSurface_SurfaceClass SurfaceClass();
-	public QSurfaceFormat Format();
-	public QSurface_SurfaceType SurfaceType();
-	public bool SupportsOpenGL();
-	public QSize Size();
 }
 [AllowDuplicates]
 enum QSurface_SurfaceClass

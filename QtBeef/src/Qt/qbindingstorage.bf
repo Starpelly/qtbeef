@@ -19,19 +19,20 @@ extension CQt
 	[LinkName("QBindingStatus_Delete")]
 	public static extern void QBindingStatus_Delete(QBindingStatus_Ptr* self);
 }
-class QBindingStatus
+class QBindingStatus : IQBindingStatus
 {
 	private QBindingStatus_Ptr* ptr;
-	public this(QBindingStatus_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQBindingStatus other)
 	{
-		this.ptr = CQt.QBindingStatus_new(other);
+		this.ptr = CQt.QBindingStatus_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QBindingStatus_Delete(this.ptr);
 	}
 }
-interface IQBindingStatus
+interface IQBindingStatus : IQtObjectInterface
 {
 }
 // --------------------------------------------------------------
@@ -52,11 +53,12 @@ extension CQt
 	[LinkName("QBindingStorage_IsValid")]
 	public static extern bool QBindingStorage_IsValid(QBindingStorage_Ptr* self);
 	[LinkName("QBindingStorage_RegisterDependency")]
-	public static extern void QBindingStorage_RegisterDependency(QBindingStorage_Ptr* self, QUntypedPropertyData_Ptr* data);
+	public static extern void QBindingStorage_RegisterDependency(QBindingStorage_Ptr* self, QUntypedPropertyData_Ptr** data);
 }
-class QBindingStorage
+class QBindingStorage : IQBindingStorage
 {
 	private QBindingStorage_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QBindingStorage_new();
@@ -73,14 +75,11 @@ class QBindingStorage
 	{
 		return CQt.QBindingStorage_IsValid((.)this.ptr);
 	}
-	public void RegisterDependency(QUntypedPropertyData_Ptr* data)
+	public void RegisterDependency(IQUntypedPropertyData data)
 	{
-		CQt.QBindingStorage_RegisterDependency((.)this.ptr, data);
+		CQt.QBindingStorage_RegisterDependency((.)this.ptr, (.)data?.ObjectPtr);
 	}
 }
-interface IQBindingStorage
+interface IQBindingStorage : IQtObjectInterface
 {
-	public bool IsEmpty();
-	public bool IsValid();
-	public void RegisterDependency();
 }

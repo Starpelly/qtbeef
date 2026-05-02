@@ -106,8 +106,8 @@ class CppClass
     public bool HasTrivialCopyAssign { get; set; }
     public bool HasTrivialMoveAssign { get; set; }
 
-    public CppTypedef[] ChildTypedefs { get; set; }
-    public CppClass[] ChildClassdefs { get; set;  }
+    public CppTypedef[]? ChildTypedefs { get; set; }
+    public CppClass[]? ChildClassdefs { get; set;  }
     public CppEnum[] ChildEnums { get; set; }
     public string[] PrivateMethods { get; set; }
     public CppMethod[] PrivateSignals { get; set;  }

@@ -53,7 +53,7 @@ extension CQt
 	[LinkName("QSizePolicy_OperatorNotEqual")]
 	public static extern bool QSizePolicy_OperatorNotEqual(QSizePolicy_Ptr* self, QSizePolicy_Ptr* s);
 	[LinkName("QSizePolicy_ToQvariant")]
-	public static extern QVariant_Ptr QSizePolicy_ToQvariant(QSizePolicy_Ptr* self);
+	public static extern QVariant_Ptr* QSizePolicy_ToQvariant(QSizePolicy_Ptr* self);
 	[LinkName("QSizePolicy_HorizontalStretch")]
 	public static extern c_int QSizePolicy_HorizontalStretch(QSizePolicy_Ptr* self);
 	[LinkName("QSizePolicy_VerticalStretch")]
@@ -69,14 +69,15 @@ extension CQt
 	[LinkName("QSizePolicy_Transpose")]
 	public static extern void QSizePolicy_Transpose(QSizePolicy_Ptr* self);
 	[LinkName("QSizePolicy_Transposed")]
-	public static extern QSizePolicy_Ptr QSizePolicy_Transposed(QSizePolicy_Ptr* self);
+	public static extern QSizePolicy_Ptr* QSizePolicy_Transposed(QSizePolicy_Ptr* self);
 }
-class QSizePolicy
+class QSizePolicy : IQSizePolicy
 {
 	private QSizePolicy_Ptr* ptr;
-	public this(QSizePolicy_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQSizePolicy other)
 	{
-		this.ptr = CQt.QSizePolicy_new(other);
+		this.ptr = CQt.QSizePolicy_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -166,32 +167,13 @@ class QSizePolicy
 	{
 		CQt.QSizePolicy_Transpose((.)this.ptr);
 	}
-	public QSizePolicy_Ptr Transposed()
+	public QSizePolicy_Ptr* Transposed()
 	{
 		return CQt.QSizePolicy_Transposed((.)this.ptr);
 	}
 }
-interface IQSizePolicy
+interface IQSizePolicy : IQtObjectInterface
 {
-	public QSizePolicy_Policy HorizontalPolicy();
-	public QSizePolicy_Policy VerticalPolicy();
-	public QSizePolicy_ControlType ControlType();
-	public void SetHorizontalPolicy();
-	public void SetVerticalPolicy();
-	public void SetControlType();
-	public void* ExpandingDirections();
-	public void SetHeightForWidth();
-	public bool HasHeightForWidth();
-	public void SetWidthForHeight();
-	public bool HasWidthForHeight();
-	public c_int HorizontalStretch();
-	public c_int VerticalStretch();
-	public void SetHorizontalStretch();
-	public void SetVerticalStretch();
-	public bool RetainSizeWhenHidden();
-	public void SetRetainSizeWhenHidden();
-	public void Transpose();
-	public QSizePolicy Transposed();
 }
 [AllowDuplicates]
 enum QSizePolicy_PolicyFlag

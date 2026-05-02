@@ -31,15 +31,16 @@ extension CQt
 	[LinkName("QLoggingCategory_OperatorCall2")]
 	public static extern QLoggingCategory_Ptr* QLoggingCategory_OperatorCall2(QLoggingCategory_Ptr* self);
 	[LinkName("QLoggingCategory_DefaultCategory")]
-	public static extern QLoggingCategory_Ptr* QLoggingCategory_DefaultCategory();
+	public static extern QLoggingCategory_Ptr** QLoggingCategory_DefaultCategory();
 	[LinkName("QLoggingCategory_InstallFilter")]
 	public static extern c_intptr QLoggingCategory_InstallFilter(c_intptr param1);
 	[LinkName("QLoggingCategory_SetFilterRules")]
-	public static extern void QLoggingCategory_SetFilterRules(libqt_string* rules);
+	public static extern void QLoggingCategory_SetFilterRules(libqt_string rules);
 }
-class QLoggingCategory
+class QLoggingCategory : IQLoggingCategory
 {
 	private QLoggingCategory_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(c_char* category)
 	{
 		this.ptr = CQt.QLoggingCategory_new(category);
@@ -72,7 +73,7 @@ class QLoggingCategory
 	{
 		return CQt.QLoggingCategory_OperatorCall2((.)this.ptr);
 	}
-	public QLoggingCategory_Ptr* DefaultCategory()
+	public QLoggingCategory_Ptr** DefaultCategory()
 	{
 		return CQt.QLoggingCategory_DefaultCategory();
 	}
@@ -80,20 +81,11 @@ class QLoggingCategory
 	{
 		return CQt.QLoggingCategory_InstallFilter(param1);
 	}
-	public void SetFilterRules(libqt_string* rules)
+	public void SetFilterRules(String rules)
 	{
-		CQt.QLoggingCategory_SetFilterRules(rules);
+		CQt.QLoggingCategory_SetFilterRules(libqt_string(rules));
 	}
 }
-interface IQLoggingCategory
+interface IQLoggingCategory : IQtObjectInterface
 {
-	public bool IsDebugEnabled();
-	public bool IsInfoEnabled();
-	public bool IsWarningEnabled();
-	public bool IsCriticalEnabled();
-	public c_char* CategoryName();
-	public QLoggingCategory* OperatorCall2();
-	public QLoggingCategory* DefaultCategory();
-	public c_intptr InstallFilter();
-	public void SetFilterRules();
 }

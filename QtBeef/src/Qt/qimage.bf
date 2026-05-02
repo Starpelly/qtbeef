@@ -29,7 +29,7 @@ extension CQt
 	[LinkName("QImage_new8")]
 	public static extern QImage_Ptr* QImage_new8(c_char** xpm);
 	[LinkName("QImage_new9")]
-	public static extern QImage_Ptr* QImage_new9(libqt_string* fileName);
+	public static extern QImage_Ptr* QImage_new9(libqt_string fileName);
 	[LinkName("QImage_new10")]
 	public static extern QImage_Ptr* QImage_new10(QImage_Ptr* param1);
 	[LinkName("QImage_new11")]
@@ -49,7 +49,7 @@ extension CQt
 	[LinkName("QImage_new18")]
 	public static extern QImage_Ptr* QImage_new18(c_uchar* data, c_int width, c_int height, void* bytesPerLine, QImage_Format format, c_intptr cleanupFunction, void* cleanupInfo);
 	[LinkName("QImage_new19")]
-	public static extern QImage_Ptr* QImage_new19(libqt_string* fileName, c_char* format);
+	public static extern QImage_Ptr* QImage_new19(libqt_string fileName, c_char* format);
 	[LinkName("QImage_Delete")]
 	public static extern void QImage_Delete(QImage_Ptr* self);
 	[LinkName("QImage_OperatorAssign")]
@@ -65,25 +65,25 @@ extension CQt
 	[LinkName("QImage_OperatorNotEqual")]
 	public static extern bool QImage_OperatorNotEqual(QImage_Ptr* self, QImage_Ptr* param1);
 	[LinkName("QImage_ToQvariant")]
-	public static extern QVariant_Ptr QImage_ToQvariant(QImage_Ptr* self);
+	public static extern QVariant_Ptr* QImage_ToQvariant(QImage_Ptr* self);
 	[LinkName("QImage_Detach")]
 	public static extern void QImage_Detach(QImage_Ptr* self);
 	[LinkName("QImage_IsDetached")]
 	public static extern bool QImage_IsDetached(QImage_Ptr* self);
 	[LinkName("QImage_Copy")]
-	public static extern QImage_Ptr QImage_Copy(QImage_Ptr* self);
+	public static extern QImage_Ptr* QImage_Copy(QImage_Ptr* self);
 	[LinkName("QImage_Copy2")]
-	public static extern QImage_Ptr QImage_Copy2(QImage_Ptr* self, c_int x, c_int y, c_int w, c_int h);
+	public static extern QImage_Ptr* QImage_Copy2(QImage_Ptr* self, c_int x, c_int y, c_int w, c_int h);
 	[LinkName("QImage_Format")]
 	public static extern QImage_Format QImage_Format(QImage_Ptr* self);
 	[LinkName("QImage_ConvertToFormat")]
-	public static extern QImage_Ptr QImage_ConvertToFormat(QImage_Ptr* self, QImage_Format f);
+	public static extern QImage_Ptr* QImage_ConvertToFormat(QImage_Ptr* self, QImage_Format f);
 	[LinkName("QImage_ConvertToFormat2")]
-	public static extern QImage_Ptr QImage_ConvertToFormat2(QImage_Ptr* self, QImage_Format f, void** colorTable);
+	public static extern QImage_Ptr* QImage_ConvertToFormat2(QImage_Ptr* self, QImage_Format f, void** colorTable);
 	[LinkName("QImage_ReinterpretAsFormat")]
 	public static extern bool QImage_ReinterpretAsFormat(QImage_Ptr* self, QImage_Format f);
 	[LinkName("QImage_ConvertedTo")]
-	public static extern QImage_Ptr QImage_ConvertedTo(QImage_Ptr* self, QImage_Format f);
+	public static extern QImage_Ptr* QImage_ConvertedTo(QImage_Ptr* self, QImage_Format f);
 	[LinkName("QImage_ConvertTo")]
 	public static extern void QImage_ConvertTo(QImage_Ptr* self, QImage_Format f);
 	[LinkName("QImage_Width")]
@@ -91,9 +91,9 @@ extension CQt
 	[LinkName("QImage_Height")]
 	public static extern c_int QImage_Height(QImage_Ptr* self);
 	[LinkName("QImage_Size")]
-	public static extern QSize_Ptr QImage_Size(QImage_Ptr* self);
+	public static extern QSize_Ptr* QImage_Size(QImage_Ptr* self);
 	[LinkName("QImage_Rect")]
-	public static extern QRect_Ptr QImage_Rect(QImage_Ptr* self);
+	public static extern QRect_Ptr* QImage_Rect(QImage_Ptr* self);
 	[LinkName("QImage_Depth")]
 	public static extern c_int QImage_Depth(QImage_Ptr* self);
 	[LinkName("QImage_ColorCount")]
@@ -143,9 +143,9 @@ extension CQt
 	[LinkName("QImage_SetPixel2")]
 	public static extern void QImage_SetPixel2(QImage_Ptr* self, QPoint_Ptr* pt, c_uint index_or_rgb);
 	[LinkName("QImage_PixelColor")]
-	public static extern QColor_Ptr QImage_PixelColor(QImage_Ptr* self, c_int x, c_int y);
+	public static extern QColor_Ptr* QImage_PixelColor(QImage_Ptr* self, c_int x, c_int y);
 	[LinkName("QImage_PixelColor2")]
-	public static extern QColor_Ptr QImage_PixelColor2(QImage_Ptr* self, QPoint_Ptr* pt);
+	public static extern QColor_Ptr* QImage_PixelColor2(QImage_Ptr* self, QPoint_Ptr* pt);
 	[LinkName("QImage_SetPixelColor")]
 	public static extern void QImage_SetPixelColor(QImage_Ptr* self, c_int x, c_int y, QColor_Ptr* c);
 	[LinkName("QImage_SetPixelColor2")]
@@ -159,7 +159,7 @@ extension CQt
 	[LinkName("QImage_SetDevicePixelRatio")]
 	public static extern void QImage_SetDevicePixelRatio(QImage_Ptr* self, double scaleFactor);
 	[LinkName("QImage_DeviceIndependentSize")]
-	public static extern QSizeF_Ptr QImage_DeviceIndependentSize(QImage_Ptr* self);
+	public static extern QSizeF_Ptr* QImage_DeviceIndependentSize(QImage_Ptr* self);
 	[LinkName("QImage_Fill")]
 	public static extern void QImage_Fill(QImage_Ptr* self, c_uint pixel);
 	[LinkName("QImage_Fill2")]
@@ -171,27 +171,27 @@ extension CQt
 	[LinkName("QImage_SetAlphaChannel")]
 	public static extern void QImage_SetAlphaChannel(QImage_Ptr* self, QImage_Ptr* alphaChannel);
 	[LinkName("QImage_CreateAlphaMask")]
-	public static extern QImage_Ptr QImage_CreateAlphaMask(QImage_Ptr* self);
+	public static extern QImage_Ptr* QImage_CreateAlphaMask(QImage_Ptr* self);
 	[LinkName("QImage_CreateHeuristicMask")]
-	public static extern QImage_Ptr QImage_CreateHeuristicMask(QImage_Ptr* self);
+	public static extern QImage_Ptr* QImage_CreateHeuristicMask(QImage_Ptr* self);
 	[LinkName("QImage_CreateMaskFromColor")]
-	public static extern QImage_Ptr QImage_CreateMaskFromColor(QImage_Ptr* self, c_uint color);
+	public static extern QImage_Ptr* QImage_CreateMaskFromColor(QImage_Ptr* self, c_uint color);
 	[LinkName("QImage_Scaled")]
-	public static extern QImage_Ptr QImage_Scaled(QImage_Ptr* self, c_int w, c_int h);
+	public static extern QImage_Ptr* QImage_Scaled(QImage_Ptr* self, c_int w, c_int h);
 	[LinkName("QImage_Scaled2")]
-	public static extern QImage_Ptr QImage_Scaled2(QImage_Ptr* self, QSize_Ptr* s);
+	public static extern QImage_Ptr* QImage_Scaled2(QImage_Ptr* self, QSize_Ptr* s);
 	[LinkName("QImage_ScaledToWidth")]
-	public static extern QImage_Ptr QImage_ScaledToWidth(QImage_Ptr* self, c_int w);
+	public static extern QImage_Ptr* QImage_ScaledToWidth(QImage_Ptr* self, c_int w);
 	[LinkName("QImage_ScaledToHeight")]
-	public static extern QImage_Ptr QImage_ScaledToHeight(QImage_Ptr* self, c_int h);
+	public static extern QImage_Ptr* QImage_ScaledToHeight(QImage_Ptr* self, c_int h);
 	[LinkName("QImage_Transformed")]
-	public static extern QImage_Ptr QImage_Transformed(QImage_Ptr* self, QTransform_Ptr* matrix);
+	public static extern QImage_Ptr* QImage_Transformed(QImage_Ptr* self, QTransform_Ptr* matrix);
 	[LinkName("QImage_TrueMatrix")]
-	public static extern QTransform_Ptr QImage_TrueMatrix(QTransform_Ptr* param1, c_int w, c_int h);
+	public static extern QTransform_Ptr* QImage_TrueMatrix(QTransform_Ptr* param1, c_int w, c_int h);
 	[LinkName("QImage_Mirrored")]
-	public static extern QImage_Ptr QImage_Mirrored(QImage_Ptr* self);
+	public static extern QImage_Ptr* QImage_Mirrored(QImage_Ptr* self);
 	[LinkName("QImage_RgbSwapped")]
-	public static extern QImage_Ptr QImage_RgbSwapped(QImage_Ptr* self);
+	public static extern QImage_Ptr* QImage_RgbSwapped(QImage_Ptr* self);
 	[LinkName("QImage_Mirror")]
 	public static extern void QImage_Mirror(QImage_Ptr* self);
 	[LinkName("QImage_RgbSwap")]
@@ -199,21 +199,21 @@ extension CQt
 	[LinkName("QImage_InvertPixels")]
 	public static extern void QImage_InvertPixels(QImage_Ptr* self);
 	[LinkName("QImage_ColorSpace")]
-	public static extern QColorSpace_Ptr QImage_ColorSpace(QImage_Ptr* self);
+	public static extern QColorSpace_Ptr* QImage_ColorSpace(QImage_Ptr* self);
 	[LinkName("QImage_ConvertedToColorSpace")]
-	public static extern QImage_Ptr QImage_ConvertedToColorSpace(QImage_Ptr* self, QColorSpace_Ptr* param1);
+	public static extern QImage_Ptr* QImage_ConvertedToColorSpace(QImage_Ptr* self, QColorSpace_Ptr* param1);
 	[LinkName("QImage_ConvertToColorSpace")]
 	public static extern void QImage_ConvertToColorSpace(QImage_Ptr* self, QColorSpace_Ptr* param1);
 	[LinkName("QImage_SetColorSpace")]
 	public static extern void QImage_SetColorSpace(QImage_Ptr* self, QColorSpace_Ptr* colorSpace);
 	[LinkName("QImage_ColorTransformed")]
-	public static extern QImage_Ptr QImage_ColorTransformed(QImage_Ptr* self, QColorTransform_Ptr* transform);
+	public static extern QImage_Ptr* QImage_ColorTransformed(QImage_Ptr* self, QColorTransform_Ptr* transform);
 	[LinkName("QImage_ApplyColorTransform")]
 	public static extern void QImage_ApplyColorTransform(QImage_Ptr* self, QColorTransform_Ptr* transform);
 	[LinkName("QImage_Load")]
-	public static extern bool QImage_Load(QImage_Ptr* self, QIODevice_Ptr* device, c_char* format);
+	public static extern bool QImage_Load(QImage_Ptr* self, QIODevice_Ptr** device, c_char* format);
 	[LinkName("QImage_Load2")]
-	public static extern bool QImage_Load2(QImage_Ptr* self, libqt_string* fileName);
+	public static extern bool QImage_Load2(QImage_Ptr* self, libqt_string fileName);
 	[LinkName("QImage_LoadFromData")]
 	public static extern bool QImage_LoadFromData(QImage_Ptr* self, void* data);
 	[LinkName("QImage_LoadFromData2")]
@@ -221,19 +221,19 @@ extension CQt
 	[LinkName("QImage_LoadFromData3")]
 	public static extern bool QImage_LoadFromData3(QImage_Ptr* self, void** data);
 	[LinkName("QImage_Save")]
-	public static extern bool QImage_Save(QImage_Ptr* self, libqt_string* fileName);
+	public static extern bool QImage_Save(QImage_Ptr* self, libqt_string fileName);
 	[LinkName("QImage_Save2")]
-	public static extern bool QImage_Save2(QImage_Ptr* self, QIODevice_Ptr* device);
+	public static extern bool QImage_Save2(QImage_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QImage_FromData")]
-	public static extern QImage_Ptr QImage_FromData(void* data);
+	public static extern QImage_Ptr* QImage_FromData(void* data);
 	[LinkName("QImage_FromData2")]
-	public static extern QImage_Ptr QImage_FromData2(c_uchar* data, c_int size);
+	public static extern QImage_Ptr* QImage_FromData2(c_uchar* data, c_int size);
 	[LinkName("QImage_FromData3")]
-	public static extern QImage_Ptr QImage_FromData3(void** data);
+	public static extern QImage_Ptr* QImage_FromData3(void** data);
 	[LinkName("QImage_CacheKey")]
 	public static extern c_longlong QImage_CacheKey(QImage_Ptr* self);
 	[LinkName("QImage_PaintEngine")]
-	public static extern QPaintEngine_Ptr* QImage_PaintEngine(QImage_Ptr* self);
+	public static extern QPaintEngine_Ptr** QImage_PaintEngine(QImage_Ptr* self);
 	[LinkName("QImage_DotsPerMeterX")]
 	public static extern c_int QImage_DotsPerMeterX(QImage_Ptr* self);
 	[LinkName("QImage_DotsPerMeterY")]
@@ -243,7 +243,7 @@ extension CQt
 	[LinkName("QImage_SetDotsPerMeterY")]
 	public static extern void QImage_SetDotsPerMeterY(QImage_Ptr* self, c_int dotsPerMeterY);
 	[LinkName("QImage_Offset")]
-	public static extern QPoint_Ptr QImage_Offset(QImage_Ptr* self);
+	public static extern QPoint_Ptr* QImage_Offset(QImage_Ptr* self);
 	[LinkName("QImage_SetOffset")]
 	public static extern void QImage_SetOffset(QImage_Ptr* self, QPoint_Ptr* offset);
 	[LinkName("QImage_TextKeys")]
@@ -251,65 +251,65 @@ extension CQt
 	[LinkName("QImage_Text")]
 	public static extern libqt_string QImage_Text(QImage_Ptr* self);
 	[LinkName("QImage_SetText")]
-	public static extern void QImage_SetText(QImage_Ptr* self, libqt_string* key, libqt_string* value);
+	public static extern void QImage_SetText(QImage_Ptr* self, libqt_string key, libqt_string value);
 	[LinkName("QImage_PixelFormat")]
-	public static extern QPixelFormat_Ptr QImage_PixelFormat(QImage_Ptr* self);
+	public static extern QPixelFormat_Ptr* QImage_PixelFormat(QImage_Ptr* self);
 	[LinkName("QImage_ToPixelFormat")]
-	public static extern QPixelFormat_Ptr QImage_ToPixelFormat(QImage_Format format);
+	public static extern QPixelFormat_Ptr* QImage_ToPixelFormat(QImage_Format format);
 	[LinkName("QImage_ToImageFormat")]
-	public static extern QImage_Format QImage_ToImageFormat(QPixelFormat_Ptr format);
+	public static extern QImage_Format QImage_ToImageFormat(QPixelFormat_Ptr* format);
 	[LinkName("QImage_Metric")]
 	public static extern c_int QImage_Metric(QImage_Ptr* self, QPaintDevice_PaintDeviceMetric metric);
 	[LinkName("QImage_Mirrored_Helper")]
-	public static extern QImage_Ptr QImage_Mirrored_Helper(QImage_Ptr* self, bool horizontal, bool vertical);
+	public static extern QImage_Ptr* QImage_Mirrored_Helper(QImage_Ptr* self, bool horizontal, bool vertical);
 	[LinkName("QImage_RgbSwapped_Helper")]
-	public static extern QImage_Ptr QImage_RgbSwapped_Helper(QImage_Ptr* self);
+	public static extern QImage_Ptr* QImage_RgbSwapped_Helper(QImage_Ptr* self);
 	[LinkName("QImage_Mirrored_Inplace")]
 	public static extern void QImage_Mirrored_Inplace(QImage_Ptr* self, bool horizontal, bool vertical);
 	[LinkName("QImage_RgbSwapped_Inplace")]
 	public static extern void QImage_RgbSwapped_Inplace(QImage_Ptr* self);
 	[LinkName("QImage_ConvertToFormat_Helper")]
-	public static extern QImage_Ptr QImage_ConvertToFormat_Helper(QImage_Ptr* self, QImage_Format format, void* flags);
+	public static extern QImage_Ptr* QImage_ConvertToFormat_Helper(QImage_Ptr* self, QImage_Format format, void* flags);
 	[LinkName("QImage_ConvertToFormat_Inplace")]
 	public static extern bool QImage_ConvertToFormat_Inplace(QImage_Ptr* self, QImage_Format format, void* flags);
 	[LinkName("QImage_SmoothScaled")]
-	public static extern QImage_Ptr QImage_SmoothScaled(QImage_Ptr* self, c_int w, c_int h);
+	public static extern QImage_Ptr* QImage_SmoothScaled(QImage_Ptr* self, c_int w, c_int h);
 	[LinkName("QImage_DetachMetadata")]
 	public static extern void QImage_DetachMetadata(QImage_Ptr* self);
 	[LinkName("QImage_Copy1")]
-	public static extern QImage_Ptr QImage_Copy1(QImage_Ptr* self, QRect_Ptr* rect);
+	public static extern QImage_Ptr* QImage_Copy1(QImage_Ptr* self, QRect_Ptr* rect);
 	[LinkName("QImage_ConvertToFormat22")]
-	public static extern QImage_Ptr QImage_ConvertToFormat22(QImage_Ptr* self, QImage_Format f, void* flags);
+	public static extern QImage_Ptr* QImage_ConvertToFormat22(QImage_Ptr* self, QImage_Format f, void* flags);
 	[LinkName("QImage_ConvertToFormat3")]
-	public static extern QImage_Ptr QImage_ConvertToFormat3(QImage_Ptr* self, QImage_Format f, void** colorTable, void* flags);
+	public static extern QImage_Ptr* QImage_ConvertToFormat3(QImage_Ptr* self, QImage_Format f, void** colorTable, void* flags);
 	[LinkName("QImage_ConvertedTo2")]
-	public static extern QImage_Ptr QImage_ConvertedTo2(QImage_Ptr* self, QImage_Format f, void* flags);
+	public static extern QImage_Ptr* QImage_ConvertedTo2(QImage_Ptr* self, QImage_Format f, void* flags);
 	[LinkName("QImage_ConvertTo2")]
 	public static extern void QImage_ConvertTo2(QImage_Ptr* self, QImage_Format f, void* flags);
 	[LinkName("QImage_CreateAlphaMask1")]
-	public static extern QImage_Ptr QImage_CreateAlphaMask1(QImage_Ptr* self, void* flags);
+	public static extern QImage_Ptr* QImage_CreateAlphaMask1(QImage_Ptr* self, void* flags);
 	[LinkName("QImage_CreateHeuristicMask1")]
-	public static extern QImage_Ptr QImage_CreateHeuristicMask1(QImage_Ptr* self, bool clipTight);
+	public static extern QImage_Ptr* QImage_CreateHeuristicMask1(QImage_Ptr* self, bool clipTight);
 	[LinkName("QImage_CreateMaskFromColor2")]
-	public static extern QImage_Ptr QImage_CreateMaskFromColor2(QImage_Ptr* self, c_uint color, Qt_MaskMode mode);
+	public static extern QImage_Ptr* QImage_CreateMaskFromColor2(QImage_Ptr* self, c_uint color, Qt_MaskMode mode);
 	[LinkName("QImage_Scaled3")]
-	public static extern QImage_Ptr QImage_Scaled3(QImage_Ptr* self, c_int w, c_int h, Qt_AspectRatioMode aspectMode);
+	public static extern QImage_Ptr* QImage_Scaled3(QImage_Ptr* self, c_int w, c_int h, Qt_AspectRatioMode aspectMode);
 	[LinkName("QImage_Scaled4")]
-	public static extern QImage_Ptr QImage_Scaled4(QImage_Ptr* self, c_int w, c_int h, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode);
+	public static extern QImage_Ptr* QImage_Scaled4(QImage_Ptr* self, c_int w, c_int h, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode);
 	[LinkName("QImage_Scaled22")]
-	public static extern QImage_Ptr QImage_Scaled22(QImage_Ptr* self, QSize_Ptr* s, Qt_AspectRatioMode aspectMode);
+	public static extern QImage_Ptr* QImage_Scaled22(QImage_Ptr* self, QSize_Ptr* s, Qt_AspectRatioMode aspectMode);
 	[LinkName("QImage_Scaled32")]
-	public static extern QImage_Ptr QImage_Scaled32(QImage_Ptr* self, QSize_Ptr* s, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode);
+	public static extern QImage_Ptr* QImage_Scaled32(QImage_Ptr* self, QSize_Ptr* s, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode);
 	[LinkName("QImage_ScaledToWidth2")]
-	public static extern QImage_Ptr QImage_ScaledToWidth2(QImage_Ptr* self, c_int w, Qt_TransformationMode mode);
+	public static extern QImage_Ptr* QImage_ScaledToWidth2(QImage_Ptr* self, c_int w, Qt_TransformationMode mode);
 	[LinkName("QImage_ScaledToHeight2")]
-	public static extern QImage_Ptr QImage_ScaledToHeight2(QImage_Ptr* self, c_int h, Qt_TransformationMode mode);
+	public static extern QImage_Ptr* QImage_ScaledToHeight2(QImage_Ptr* self, c_int h, Qt_TransformationMode mode);
 	[LinkName("QImage_Transformed2")]
-	public static extern QImage_Ptr QImage_Transformed2(QImage_Ptr* self, QTransform_Ptr* matrix, Qt_TransformationMode mode);
+	public static extern QImage_Ptr* QImage_Transformed2(QImage_Ptr* self, QTransform_Ptr* matrix, Qt_TransformationMode mode);
 	[LinkName("QImage_Mirrored1")]
-	public static extern QImage_Ptr QImage_Mirrored1(QImage_Ptr* self, bool horizontally);
+	public static extern QImage_Ptr* QImage_Mirrored1(QImage_Ptr* self, bool horizontally);
 	[LinkName("QImage_Mirrored2")]
-	public static extern QImage_Ptr QImage_Mirrored2(QImage_Ptr* self, bool horizontally, bool vertically);
+	public static extern QImage_Ptr* QImage_Mirrored2(QImage_Ptr* self, bool horizontally, bool vertically);
 	[LinkName("QImage_Mirror1")]
 	public static extern void QImage_Mirror1(QImage_Ptr* self, bool horizontally);
 	[LinkName("QImage_Mirror2")]
@@ -317,7 +317,7 @@ extension CQt
 	[LinkName("QImage_InvertPixels1")]
 	public static extern void QImage_InvertPixels1(QImage_Ptr* self, QImage_InvertMode param1);
 	[LinkName("QImage_Load22")]
-	public static extern bool QImage_Load22(QImage_Ptr* self, libqt_string* fileName, c_char* format);
+	public static extern bool QImage_Load22(QImage_Ptr* self, libqt_string fileName, c_char* format);
 	[LinkName("QImage_LoadFromData22")]
 	public static extern bool QImage_LoadFromData22(QImage_Ptr* self, void* data, c_char* format);
 	[LinkName("QImage_LoadFromData32")]
@@ -325,34 +325,35 @@ extension CQt
 	[LinkName("QImage_LoadFromData23")]
 	public static extern bool QImage_LoadFromData23(QImage_Ptr* self, void** data, c_char* format);
 	[LinkName("QImage_Save22")]
-	public static extern bool QImage_Save22(QImage_Ptr* self, libqt_string* fileName, c_char* format);
+	public static extern bool QImage_Save22(QImage_Ptr* self, libqt_string fileName, c_char* format);
 	[LinkName("QImage_Save3")]
-	public static extern bool QImage_Save3(QImage_Ptr* self, libqt_string* fileName, c_char* format, c_int quality);
+	public static extern bool QImage_Save3(QImage_Ptr* self, libqt_string fileName, c_char* format, c_int quality);
 	[LinkName("QImage_Save23")]
-	public static extern bool QImage_Save23(QImage_Ptr* self, QIODevice_Ptr* device, c_char* format);
+	public static extern bool QImage_Save23(QImage_Ptr* self, QIODevice_Ptr** device, c_char* format);
 	[LinkName("QImage_Save32")]
-	public static extern bool QImage_Save32(QImage_Ptr* self, QIODevice_Ptr* device, c_char* format, c_int quality);
+	public static extern bool QImage_Save32(QImage_Ptr* self, QIODevice_Ptr** device, c_char* format, c_int quality);
 	[LinkName("QImage_FromData22")]
-	public static extern QImage_Ptr QImage_FromData22(void* data, c_char* format);
+	public static extern QImage_Ptr* QImage_FromData22(void* data, c_char* format);
 	[LinkName("QImage_FromData32")]
-	public static extern QImage_Ptr QImage_FromData32(c_uchar* data, c_int size, c_char* format);
+	public static extern QImage_Ptr* QImage_FromData32(c_uchar* data, c_int size, c_char* format);
 	[LinkName("QImage_FromData23")]
-	public static extern QImage_Ptr QImage_FromData23(void** data, c_char* format);
+	public static extern QImage_Ptr* QImage_FromData23(void** data, c_char* format);
 	[LinkName("QImage_Text1")]
-	public static extern libqt_string QImage_Text1(QImage_Ptr* self, libqt_string* key);
+	public static extern libqt_string QImage_Text1(QImage_Ptr* self, libqt_string key);
 	[LinkName("QImage_DetachMetadata1")]
 	public static extern void QImage_DetachMetadata1(QImage_Ptr* self, bool invalidateCache);
 }
-class QImage
+class QImage : IQImage, IQPaintDevice
 {
 	private QImage_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QImage_new();
 	}
-	public this(QSize_Ptr* size, QImage_Format format)
+	public this(IQSize size, QImage_Format format)
 	{
-		this.ptr = CQt.QImage_new2(size, format);
+		this.ptr = CQt.QImage_new2((.)size?.ObjectPtr, format);
 	}
 	public this(c_int width, c_int height, QImage_Format format)
 	{
@@ -370,13 +371,13 @@ class QImage
 	{
 		this.ptr = CQt.QImage_new8(xpm);
 	}
-	public this(libqt_string* fileName)
+	public this(String fileName)
 	{
-		this.ptr = CQt.QImage_new9(fileName);
+		this.ptr = CQt.QImage_new9(libqt_string(fileName));
 	}
-	public this(QImage_Ptr* param1)
+	public this(IQImage param1)
 	{
-		this.ptr = CQt.QImage_new10(param1);
+		this.ptr = CQt.QImage_new10((.)param1?.ObjectPtr);
 	}
 	public this(c_uchar* data, c_int width, c_int height, QImage_Format format, c_intptr cleanupFunction)
 	{
@@ -394,17 +395,17 @@ class QImage
 	{
 		this.ptr = CQt.QImage_new16(data, width, height, bytesPerLine, format, cleanupFunction, cleanupInfo);
 	}
-	public this(libqt_string* fileName, c_char* format)
+	public this(String fileName, c_char* format)
 	{
-		this.ptr = CQt.QImage_new19(fileName, format);
+		this.ptr = CQt.QImage_new19(libqt_string(fileName), format);
 	}
 	public ~this()
 	{
 		CQt.QImage_Delete(this.ptr);
 	}
-	public void Swap(QImage_Ptr* other)
+	public void Swap(IQImage other)
 	{
-		CQt.QImage_Swap((.)this.ptr, other);
+		CQt.QImage_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsNull()
 	{
@@ -422,11 +423,11 @@ class QImage
 	{
 		return CQt.QImage_IsDetached((.)this.ptr);
 	}
-	public QImage_Ptr Copy()
+	public QImage_Ptr* Copy()
 	{
 		return CQt.QImage_Copy((.)this.ptr);
 	}
-	public QImage_Ptr Copy2(c_int x, c_int y, c_int w, c_int h)
+	public QImage_Ptr* Copy2(c_int x, c_int y, c_int w, c_int h)
 	{
 		return CQt.QImage_Copy2((.)this.ptr, x, y, w, h);
 	}
@@ -434,11 +435,11 @@ class QImage
 	{
 		return CQt.QImage_Format((.)this.ptr);
 	}
-	public QImage_Ptr ConvertToFormat(QImage_Format f)
+	public QImage_Ptr* ConvertToFormat(QImage_Format f)
 	{
 		return CQt.QImage_ConvertToFormat((.)this.ptr, f);
 	}
-	public QImage_Ptr ConvertToFormat2(QImage_Format f, void** colorTable)
+	public QImage_Ptr* ConvertToFormat2(QImage_Format f, void** colorTable)
 	{
 		return CQt.QImage_ConvertToFormat2((.)this.ptr, f, colorTable);
 	}
@@ -446,7 +447,7 @@ class QImage
 	{
 		return CQt.QImage_ReinterpretAsFormat((.)this.ptr, f);
 	}
-	public QImage_Ptr ConvertedTo(QImage_Format f)
+	public QImage_Ptr* ConvertedTo(QImage_Format f)
 	{
 		return CQt.QImage_ConvertedTo((.)this.ptr, f);
 	}
@@ -462,11 +463,11 @@ class QImage
 	{
 		return CQt.QImage_Height((.)this.ptr);
 	}
-	public QSize_Ptr Size()
+	public QSize_Ptr* Size()
 	{
 		return CQt.QImage_Size((.)this.ptr);
 	}
-	public QRect_Ptr Rect()
+	public QRect_Ptr* Rect()
 	{
 		return CQt.QImage_Rect((.)this.ptr);
 	}
@@ -538,49 +539,49 @@ class QImage
 	{
 		return CQt.QImage_Valid((.)this.ptr, x, y);
 	}
-	public bool Valid2(QPoint_Ptr* pt)
+	public bool Valid2(IQPoint pt)
 	{
-		return CQt.QImage_Valid2((.)this.ptr, pt);
+		return CQt.QImage_Valid2((.)this.ptr, (.)pt?.ObjectPtr);
 	}
 	public c_int PixelIndex(c_int x, c_int y)
 	{
 		return CQt.QImage_PixelIndex((.)this.ptr, x, y);
 	}
-	public c_int PixelIndex2(QPoint_Ptr* pt)
+	public c_int PixelIndex2(IQPoint pt)
 	{
-		return CQt.QImage_PixelIndex2((.)this.ptr, pt);
+		return CQt.QImage_PixelIndex2((.)this.ptr, (.)pt?.ObjectPtr);
 	}
 	public c_uint Pixel(c_int x, c_int y)
 	{
 		return CQt.QImage_Pixel((.)this.ptr, x, y);
 	}
-	public c_uint Pixel2(QPoint_Ptr* pt)
+	public c_uint Pixel2(IQPoint pt)
 	{
-		return CQt.QImage_Pixel2((.)this.ptr, pt);
+		return CQt.QImage_Pixel2((.)this.ptr, (.)pt?.ObjectPtr);
 	}
 	public void SetPixel(c_int x, c_int y, c_uint index_or_rgb)
 	{
 		CQt.QImage_SetPixel((.)this.ptr, x, y, index_or_rgb);
 	}
-	public void SetPixel2(QPoint_Ptr* pt, c_uint index_or_rgb)
+	public void SetPixel2(IQPoint pt, c_uint index_or_rgb)
 	{
-		CQt.QImage_SetPixel2((.)this.ptr, pt, index_or_rgb);
+		CQt.QImage_SetPixel2((.)this.ptr, (.)pt?.ObjectPtr, index_or_rgb);
 	}
-	public QColor_Ptr PixelColor(c_int x, c_int y)
+	public QColor_Ptr* PixelColor(c_int x, c_int y)
 	{
 		return CQt.QImage_PixelColor((.)this.ptr, x, y);
 	}
-	public QColor_Ptr PixelColor2(QPoint_Ptr* pt)
+	public QColor_Ptr* PixelColor2(IQPoint pt)
 	{
-		return CQt.QImage_PixelColor2((.)this.ptr, pt);
+		return CQt.QImage_PixelColor2((.)this.ptr, (.)pt?.ObjectPtr);
 	}
-	public void SetPixelColor(c_int x, c_int y, QColor_Ptr* c)
+	public void SetPixelColor(c_int x, c_int y, IQColor c)
 	{
-		CQt.QImage_SetPixelColor((.)this.ptr, x, y, c);
+		CQt.QImage_SetPixelColor((.)this.ptr, x, y, (.)c?.ObjectPtr);
 	}
-	public void SetPixelColor2(QPoint_Ptr* pt, QColor_Ptr* c)
+	public void SetPixelColor2(IQPoint pt, IQColor c)
 	{
-		CQt.QImage_SetPixelColor2((.)this.ptr, pt, c);
+		CQt.QImage_SetPixelColor2((.)this.ptr, (.)pt?.ObjectPtr, (.)c?.ObjectPtr);
 	}
 	public void* ColorTable()
 	{
@@ -598,7 +599,7 @@ class QImage
 	{
 		CQt.QImage_SetDevicePixelRatio((.)this.ptr, scaleFactor);
 	}
-	public QSizeF_Ptr DeviceIndependentSize()
+	public QSizeF_Ptr* DeviceIndependentSize()
 	{
 		return CQt.QImage_DeviceIndependentSize((.)this.ptr);
 	}
@@ -606,9 +607,9 @@ class QImage
 	{
 		CQt.QImage_Fill((.)this.ptr, pixel);
 	}
-	public void Fill2(QColor_Ptr* color)
+	public void Fill2(IQColor color)
 	{
-		CQt.QImage_Fill2((.)this.ptr, color);
+		CQt.QImage_Fill2((.)this.ptr, (.)color?.ObjectPtr);
 	}
 	public void Fill3(Qt_GlobalColor color)
 	{
@@ -618,51 +619,51 @@ class QImage
 	{
 		return CQt.QImage_HasAlphaChannel((.)this.ptr);
 	}
-	public void SetAlphaChannel(QImage_Ptr* alphaChannel)
+	public void SetAlphaChannel(IQImage alphaChannel)
 	{
-		CQt.QImage_SetAlphaChannel((.)this.ptr, alphaChannel);
+		CQt.QImage_SetAlphaChannel((.)this.ptr, (.)alphaChannel?.ObjectPtr);
 	}
-	public QImage_Ptr CreateAlphaMask()
+	public QImage_Ptr* CreateAlphaMask()
 	{
 		return CQt.QImage_CreateAlphaMask((.)this.ptr);
 	}
-	public QImage_Ptr CreateHeuristicMask()
+	public QImage_Ptr* CreateHeuristicMask()
 	{
 		return CQt.QImage_CreateHeuristicMask((.)this.ptr);
 	}
-	public QImage_Ptr CreateMaskFromColor(c_uint color)
+	public QImage_Ptr* CreateMaskFromColor(c_uint color)
 	{
 		return CQt.QImage_CreateMaskFromColor((.)this.ptr, color);
 	}
-	public QImage_Ptr Scaled(c_int w, c_int h)
+	public QImage_Ptr* Scaled(c_int w, c_int h)
 	{
 		return CQt.QImage_Scaled((.)this.ptr, w, h);
 	}
-	public QImage_Ptr Scaled2(QSize_Ptr* s)
+	public QImage_Ptr* Scaled2(IQSize s)
 	{
-		return CQt.QImage_Scaled2((.)this.ptr, s);
+		return CQt.QImage_Scaled2((.)this.ptr, (.)s?.ObjectPtr);
 	}
-	public QImage_Ptr ScaledToWidth(c_int w)
+	public QImage_Ptr* ScaledToWidth(c_int w)
 	{
 		return CQt.QImage_ScaledToWidth((.)this.ptr, w);
 	}
-	public QImage_Ptr ScaledToHeight(c_int h)
+	public QImage_Ptr* ScaledToHeight(c_int h)
 	{
 		return CQt.QImage_ScaledToHeight((.)this.ptr, h);
 	}
-	public QImage_Ptr Transformed(QTransform_Ptr* matrix)
+	public QImage_Ptr* Transformed(IQTransform matrix)
 	{
-		return CQt.QImage_Transformed((.)this.ptr, matrix);
+		return CQt.QImage_Transformed((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
-	public QTransform_Ptr TrueMatrix(QTransform_Ptr* param1, c_int w, c_int h)
+	public QTransform_Ptr* TrueMatrix(IQTransform param1, c_int w, c_int h)
 	{
-		return CQt.QImage_TrueMatrix(param1, w, h);
+		return CQt.QImage_TrueMatrix((.)param1?.ObjectPtr, w, h);
 	}
-	public QImage_Ptr Mirrored()
+	public QImage_Ptr* Mirrored()
 	{
 		return CQt.QImage_Mirrored((.)this.ptr);
 	}
-	public QImage_Ptr RgbSwapped()
+	public QImage_Ptr* RgbSwapped()
 	{
 		return CQt.QImage_RgbSwapped((.)this.ptr);
 	}
@@ -678,37 +679,37 @@ class QImage
 	{
 		CQt.QImage_InvertPixels((.)this.ptr);
 	}
-	public QColorSpace_Ptr ColorSpace()
+	public QColorSpace_Ptr* ColorSpace()
 	{
 		return CQt.QImage_ColorSpace((.)this.ptr);
 	}
-	public QImage_Ptr ConvertedToColorSpace(QColorSpace_Ptr* param1)
+	public QImage_Ptr* ConvertedToColorSpace(IQColorSpace param1)
 	{
-		return CQt.QImage_ConvertedToColorSpace((.)this.ptr, param1);
+		return CQt.QImage_ConvertedToColorSpace((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public void ConvertToColorSpace(QColorSpace_Ptr* param1)
+	public void ConvertToColorSpace(IQColorSpace param1)
 	{
-		CQt.QImage_ConvertToColorSpace((.)this.ptr, param1);
+		CQt.QImage_ConvertToColorSpace((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public void SetColorSpace(QColorSpace_Ptr* colorSpace)
+	public void SetColorSpace(IQColorSpace colorSpace)
 	{
-		CQt.QImage_SetColorSpace((.)this.ptr, colorSpace);
+		CQt.QImage_SetColorSpace((.)this.ptr, (.)colorSpace?.ObjectPtr);
 	}
-	public QImage_Ptr ColorTransformed(QColorTransform_Ptr* transform)
+	public QImage_Ptr* ColorTransformed(IQColorTransform transform)
 	{
-		return CQt.QImage_ColorTransformed((.)this.ptr, transform);
+		return CQt.QImage_ColorTransformed((.)this.ptr, (.)transform?.ObjectPtr);
 	}
-	public void ApplyColorTransform(QColorTransform_Ptr* transform)
+	public void ApplyColorTransform(IQColorTransform transform)
 	{
-		CQt.QImage_ApplyColorTransform((.)this.ptr, transform);
+		CQt.QImage_ApplyColorTransform((.)this.ptr, (.)transform?.ObjectPtr);
 	}
-	public bool Load(QIODevice_Ptr* device, c_char* format)
+	public bool Load(IQIODevice device, c_char* format)
 	{
-		return CQt.QImage_Load((.)this.ptr, device, format);
+		return CQt.QImage_Load((.)this.ptr, (.)device?.ObjectPtr, format);
 	}
-	public bool Load2(libqt_string* fileName)
+	public bool Load2(String fileName)
 	{
-		return CQt.QImage_Load2((.)this.ptr, fileName);
+		return CQt.QImage_Load2((.)this.ptr, libqt_string(fileName));
 	}
 	public bool LoadFromData(void* data)
 	{
@@ -722,23 +723,23 @@ class QImage
 	{
 		return CQt.QImage_LoadFromData3((.)this.ptr, data);
 	}
-	public bool Save(libqt_string* fileName)
+	public bool Save(String fileName)
 	{
-		return CQt.QImage_Save((.)this.ptr, fileName);
+		return CQt.QImage_Save((.)this.ptr, libqt_string(fileName));
 	}
-	public bool Save2(QIODevice_Ptr* device)
+	public bool Save2(IQIODevice device)
 	{
-		return CQt.QImage_Save2((.)this.ptr, device);
+		return CQt.QImage_Save2((.)this.ptr, (.)device?.ObjectPtr);
 	}
-	public QImage_Ptr FromData(void* data)
+	public QImage_Ptr* FromData(void* data)
 	{
 		return CQt.QImage_FromData(data);
 	}
-	public QImage_Ptr FromData2(c_uchar* data, c_int size)
+	public QImage_Ptr* FromData2(c_uchar* data, c_int size)
 	{
 		return CQt.QImage_FromData2(data, size);
 	}
-	public QImage_Ptr FromData3(void** data)
+	public QImage_Ptr* FromData3(void** data)
 	{
 		return CQt.QImage_FromData3(data);
 	}
@@ -746,7 +747,7 @@ class QImage
 	{
 		return CQt.QImage_CacheKey((.)this.ptr);
 	}
-	public QPaintEngine_Ptr* PaintEngine()
+	public QPaintEngine_Ptr** PaintEngine()
 	{
 		return CQt.QImage_PaintEngine((.)this.ptr);
 	}
@@ -766,13 +767,13 @@ class QImage
 	{
 		CQt.QImage_SetDotsPerMeterY((.)this.ptr, dotsPerMeterY);
 	}
-	public QPoint_Ptr Offset()
+	public QPoint_Ptr* Offset()
 	{
 		return CQt.QImage_Offset((.)this.ptr);
 	}
-	public void SetOffset(QPoint_Ptr* offset)
+	public void SetOffset(IQPoint offset)
 	{
-		CQt.QImage_SetOffset((.)this.ptr, offset);
+		CQt.QImage_SetOffset((.)this.ptr, (.)offset?.ObjectPtr);
 	}
 	public void* TextKeys()
 	{
@@ -782,31 +783,31 @@ class QImage
 	{
 		return CQt.QImage_Text((.)this.ptr);
 	}
-	public void SetText(libqt_string* key, libqt_string* value)
+	public void SetText(String key, String value)
 	{
-		CQt.QImage_SetText((.)this.ptr, key, value);
+		CQt.QImage_SetText((.)this.ptr, libqt_string(key), libqt_string(value));
 	}
-	public QPixelFormat_Ptr PixelFormat()
+	public QPixelFormat_Ptr* PixelFormat()
 	{
 		return CQt.QImage_PixelFormat((.)this.ptr);
 	}
-	public QPixelFormat_Ptr ToPixelFormat(QImage_Format format)
+	public QPixelFormat_Ptr* ToPixelFormat(QImage_Format format)
 	{
 		return CQt.QImage_ToPixelFormat(format);
 	}
-	public QImage_Format ToImageFormat(QPixelFormat_Ptr format)
+	public QImage_Format ToImageFormat(IQPixelFormat format)
 	{
-		return CQt.QImage_ToImageFormat(format);
+		return CQt.QImage_ToImageFormat((.)format?.ObjectPtr);
 	}
 	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
 	{
 		return CQt.QImage_Metric((.)this.ptr, metric);
 	}
-	public QImage_Ptr Mirrored_helper(bool horizontal, bool vertical)
+	public QImage_Ptr* Mirrored_helper(bool horizontal, bool vertical)
 	{
 		return CQt.QImage_Mirrored_Helper((.)this.ptr, horizontal, vertical);
 	}
-	public QImage_Ptr RgbSwapped_helper()
+	public QImage_Ptr* RgbSwapped_helper()
 	{
 		return CQt.QImage_RgbSwapped_Helper((.)this.ptr);
 	}
@@ -818,7 +819,7 @@ class QImage
 	{
 		CQt.QImage_RgbSwapped_Inplace((.)this.ptr);
 	}
-	public QImage_Ptr ConvertToFormat_helper(QImage_Format format, void* flags)
+	public QImage_Ptr* ConvertToFormat_helper(QImage_Format format, void* flags)
 	{
 		return CQt.QImage_ConvertToFormat_Helper((.)this.ptr, format, flags);
 	}
@@ -826,7 +827,7 @@ class QImage
 	{
 		return CQt.QImage_ConvertToFormat_Inplace((.)this.ptr, format, flags);
 	}
-	public QImage_Ptr SmoothScaled(c_int w, c_int h)
+	public QImage_Ptr* SmoothScaled(c_int w, c_int h)
 	{
 		return CQt.QImage_SmoothScaled((.)this.ptr, w, h);
 	}
@@ -834,19 +835,19 @@ class QImage
 	{
 		CQt.QImage_DetachMetadata((.)this.ptr);
 	}
-	public QImage_Ptr Copy1(QRect_Ptr* rect)
+	public QImage_Ptr* Copy1(IQRect rect)
 	{
-		return CQt.QImage_Copy1((.)this.ptr, rect);
+		return CQt.QImage_Copy1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QImage_Ptr ConvertToFormat22(QImage_Format f, void* flags)
+	public QImage_Ptr* ConvertToFormat22(QImage_Format f, void* flags)
 	{
 		return CQt.QImage_ConvertToFormat22((.)this.ptr, f, flags);
 	}
-	public QImage_Ptr ConvertToFormat3(QImage_Format f, void** colorTable, void* flags)
+	public QImage_Ptr* ConvertToFormat3(QImage_Format f, void** colorTable, void* flags)
 	{
 		return CQt.QImage_ConvertToFormat3((.)this.ptr, f, colorTable, flags);
 	}
-	public QImage_Ptr ConvertedTo2(QImage_Format f, void* flags)
+	public QImage_Ptr* ConvertedTo2(QImage_Format f, void* flags)
 	{
 		return CQt.QImage_ConvertedTo2((.)this.ptr, f, flags);
 	}
@@ -854,51 +855,51 @@ class QImage
 	{
 		CQt.QImage_ConvertTo2((.)this.ptr, f, flags);
 	}
-	public QImage_Ptr CreateAlphaMask1(void* flags)
+	public QImage_Ptr* CreateAlphaMask1(void* flags)
 	{
 		return CQt.QImage_CreateAlphaMask1((.)this.ptr, flags);
 	}
-	public QImage_Ptr CreateHeuristicMask1(bool clipTight)
+	public QImage_Ptr* CreateHeuristicMask1(bool clipTight)
 	{
 		return CQt.QImage_CreateHeuristicMask1((.)this.ptr, clipTight);
 	}
-	public QImage_Ptr CreateMaskFromColor2(c_uint color, Qt_MaskMode mode)
+	public QImage_Ptr* CreateMaskFromColor2(c_uint color, Qt_MaskMode mode)
 	{
 		return CQt.QImage_CreateMaskFromColor2((.)this.ptr, color, mode);
 	}
-	public QImage_Ptr Scaled3(c_int w, c_int h, Qt_AspectRatioMode aspectMode)
+	public QImage_Ptr* Scaled3(c_int w, c_int h, Qt_AspectRatioMode aspectMode)
 	{
 		return CQt.QImage_Scaled3((.)this.ptr, w, h, aspectMode);
 	}
-	public QImage_Ptr Scaled4(c_int w, c_int h, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode)
+	public QImage_Ptr* Scaled4(c_int w, c_int h, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode)
 	{
 		return CQt.QImage_Scaled4((.)this.ptr, w, h, aspectMode, mode);
 	}
-	public QImage_Ptr Scaled22(QSize_Ptr* s, Qt_AspectRatioMode aspectMode)
+	public QImage_Ptr* Scaled22(IQSize s, Qt_AspectRatioMode aspectMode)
 	{
-		return CQt.QImage_Scaled22((.)this.ptr, s, aspectMode);
+		return CQt.QImage_Scaled22((.)this.ptr, (.)s?.ObjectPtr, aspectMode);
 	}
-	public QImage_Ptr Scaled32(QSize_Ptr* s, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode)
+	public QImage_Ptr* Scaled32(IQSize s, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode)
 	{
-		return CQt.QImage_Scaled32((.)this.ptr, s, aspectMode, mode);
+		return CQt.QImage_Scaled32((.)this.ptr, (.)s?.ObjectPtr, aspectMode, mode);
 	}
-	public QImage_Ptr ScaledToWidth2(c_int w, Qt_TransformationMode mode)
+	public QImage_Ptr* ScaledToWidth2(c_int w, Qt_TransformationMode mode)
 	{
 		return CQt.QImage_ScaledToWidth2((.)this.ptr, w, mode);
 	}
-	public QImage_Ptr ScaledToHeight2(c_int h, Qt_TransformationMode mode)
+	public QImage_Ptr* ScaledToHeight2(c_int h, Qt_TransformationMode mode)
 	{
 		return CQt.QImage_ScaledToHeight2((.)this.ptr, h, mode);
 	}
-	public QImage_Ptr Transformed2(QTransform_Ptr* matrix, Qt_TransformationMode mode)
+	public QImage_Ptr* Transformed2(IQTransform matrix, Qt_TransformationMode mode)
 	{
-		return CQt.QImage_Transformed2((.)this.ptr, matrix, mode);
+		return CQt.QImage_Transformed2((.)this.ptr, (.)matrix?.ObjectPtr, mode);
 	}
-	public QImage_Ptr Mirrored1(bool horizontally)
+	public QImage_Ptr* Mirrored1(bool horizontally)
 	{
 		return CQt.QImage_Mirrored1((.)this.ptr, horizontally);
 	}
-	public QImage_Ptr Mirrored2(bool horizontally, bool vertically)
+	public QImage_Ptr* Mirrored2(bool horizontally, bool vertically)
 	{
 		return CQt.QImage_Mirrored2((.)this.ptr, horizontally, vertically);
 	}
@@ -914,9 +915,9 @@ class QImage
 	{
 		CQt.QImage_InvertPixels1((.)this.ptr, param1);
 	}
-	public bool Load22(libqt_string* fileName, c_char* format)
+	public bool Load22(String fileName, c_char* format)
 	{
-		return CQt.QImage_Load22((.)this.ptr, fileName, format);
+		return CQt.QImage_Load22((.)this.ptr, libqt_string(fileName), format);
 	}
 	public bool LoadFromData22(void* data, c_char* format)
 	{
@@ -930,37 +931,37 @@ class QImage
 	{
 		return CQt.QImage_LoadFromData23((.)this.ptr, data, format);
 	}
-	public bool Save22(libqt_string* fileName, c_char* format)
+	public bool Save22(String fileName, c_char* format)
 	{
-		return CQt.QImage_Save22((.)this.ptr, fileName, format);
+		return CQt.QImage_Save22((.)this.ptr, libqt_string(fileName), format);
 	}
-	public bool Save3(libqt_string* fileName, c_char* format, c_int quality)
+	public bool Save3(String fileName, c_char* format, c_int quality)
 	{
-		return CQt.QImage_Save3((.)this.ptr, fileName, format, quality);
+		return CQt.QImage_Save3((.)this.ptr, libqt_string(fileName), format, quality);
 	}
-	public bool Save23(QIODevice_Ptr* device, c_char* format)
+	public bool Save23(IQIODevice device, c_char* format)
 	{
-		return CQt.QImage_Save23((.)this.ptr, device, format);
+		return CQt.QImage_Save23((.)this.ptr, (.)device?.ObjectPtr, format);
 	}
-	public bool Save32(QIODevice_Ptr* device, c_char* format, c_int quality)
+	public bool Save32(IQIODevice device, c_char* format, c_int quality)
 	{
-		return CQt.QImage_Save32((.)this.ptr, device, format, quality);
+		return CQt.QImage_Save32((.)this.ptr, (.)device?.ObjectPtr, format, quality);
 	}
-	public QImage_Ptr FromData22(void* data, c_char* format)
+	public QImage_Ptr* FromData22(void* data, c_char* format)
 	{
 		return CQt.QImage_FromData22(data, format);
 	}
-	public QImage_Ptr FromData32(c_uchar* data, c_int size, c_char* format)
+	public QImage_Ptr* FromData32(c_uchar* data, c_int size, c_char* format)
 	{
 		return CQt.QImage_FromData32(data, size, format);
 	}
-	public QImage_Ptr FromData23(void** data, c_char* format)
+	public QImage_Ptr* FromData23(void** data, c_char* format)
 	{
 		return CQt.QImage_FromData23(data, format);
 	}
-	public libqt_string Text1(libqt_string* key)
+	public libqt_string Text1(String key)
 	{
-		return CQt.QImage_Text1((.)this.ptr, key);
+		return CQt.QImage_Text1((.)this.ptr, libqt_string(key));
 	}
 	public void DetachMetadata1(bool invalidateCache)
 	{
@@ -1002,162 +1003,21 @@ class QImage
 	{
 		return CQt.QPaintDevice_DevicePixelRatioFScale();
 	}
-	public void InitPainter(QPainter_Ptr* painter)
+	public void InitPainter(IQPainter painter)
 	{
-		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
+		CQt.QPaintDevice_InitPainter((.)this.ptr, (.)painter?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
+	public QPaintDevice_Ptr** Redirected(IQPoint offset)
 	{
-		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
+		return CQt.QPaintDevice_Redirected((.)this.ptr, (.)offset?.ObjectPtr);
 	}
-	public QPainter_Ptr* SharedPainter()
+	public QPainter_Ptr** SharedPainter()
 	{
 		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
-interface IQImage
+interface IQImage : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsNull();
-	public c_int DevType();
-	public void Detach();
-	public bool IsDetached();
-	public QImage Copy();
-	public QImage Copy2();
-	public QImage_Format Format();
-	public QImage ConvertToFormat();
-	public QImage ConvertToFormat2();
-	public bool ReinterpretAsFormat();
-	public QImage ConvertedTo();
-	public void ConvertTo();
-	public c_int Width();
-	public c_int Height();
-	public QSize Size();
-	public QRect Rect();
-	public c_int Depth();
-	public c_int ColorCount();
-	public c_int BitPlaneCount();
-	public c_uint Color();
-	public void SetColor();
-	public void SetColorCount();
-	public bool AllGray();
-	public bool IsGrayscale();
-	public c_uchar* Bits();
-	public c_uchar* Bits2();
-	public c_uchar* ConstBits();
-	public void* SizeInBytes();
-	public c_uchar* ScanLine();
-	public c_uchar* ScanLine2();
-	public c_uchar* ConstScanLine();
-	public void* BytesPerLine();
-	public bool Valid();
-	public bool Valid2();
-	public c_int PixelIndex();
-	public c_int PixelIndex2();
-	public c_uint Pixel();
-	public c_uint Pixel2();
-	public void SetPixel();
-	public void SetPixel2();
-	public QColor PixelColor();
-	public QColor PixelColor2();
-	public void SetPixelColor();
-	public void SetPixelColor2();
-	public void* ColorTable();
-	public void SetColorTable();
-	public double DevicePixelRatio();
-	public void SetDevicePixelRatio();
-	public QSizeF DeviceIndependentSize();
-	public void Fill();
-	public void Fill2();
-	public void Fill3();
-	public bool HasAlphaChannel();
-	public void SetAlphaChannel();
-	public QImage CreateAlphaMask();
-	public QImage CreateHeuristicMask();
-	public QImage CreateMaskFromColor();
-	public QImage Scaled();
-	public QImage Scaled2();
-	public QImage ScaledToWidth();
-	public QImage ScaledToHeight();
-	public QImage Transformed();
-	public QTransform TrueMatrix();
-	public QImage Mirrored();
-	public QImage RgbSwapped();
-	public void Mirror();
-	public void RgbSwap();
-	public void InvertPixels();
-	public QColorSpace ColorSpace();
-	public QImage ConvertedToColorSpace();
-	public void ConvertToColorSpace();
-	public void SetColorSpace();
-	public QImage ColorTransformed();
-	public void ApplyColorTransform();
-	public bool Load();
-	public bool Load2();
-	public bool LoadFromData();
-	public bool LoadFromData2();
-	public bool LoadFromData3();
-	public bool Save();
-	public bool Save2();
-	public QImage FromData();
-	public QImage FromData2();
-	public QImage FromData3();
-	public c_longlong CacheKey();
-	public QPaintEngine* PaintEngine();
-	public c_int DotsPerMeterX();
-	public c_int DotsPerMeterY();
-	public void SetDotsPerMeterX();
-	public void SetDotsPerMeterY();
-	public QPoint Offset();
-	public void SetOffset();
-	public void* TextKeys();
-	public libqt_string Text();
-	public void SetText();
-	public QPixelFormat PixelFormat();
-	public QPixelFormat ToPixelFormat();
-	public QImage_Format ToImageFormat();
-	public c_int Metric();
-	public QImage Mirrored_helper();
-	public QImage RgbSwapped_helper();
-	public void Mirrored_inplace();
-	public void RgbSwapped_inplace();
-	public QImage ConvertToFormat_helper();
-	public bool ConvertToFormat_inplace();
-	public QImage SmoothScaled();
-	public void DetachMetadata();
-	public QImage Copy1();
-	public QImage ConvertToFormat22();
-	public QImage ConvertToFormat3();
-	public QImage ConvertedTo2();
-	public void ConvertTo2();
-	public QImage CreateAlphaMask1();
-	public QImage CreateHeuristicMask1();
-	public QImage CreateMaskFromColor2();
-	public QImage Scaled3();
-	public QImage Scaled4();
-	public QImage Scaled22();
-	public QImage Scaled32();
-	public QImage ScaledToWidth2();
-	public QImage ScaledToHeight2();
-	public QImage Transformed2();
-	public QImage Mirrored1();
-	public QImage Mirrored2();
-	public void Mirror1();
-	public void Mirror2();
-	public void InvertPixels1();
-	public bool Load22();
-	public bool LoadFromData22();
-	public bool LoadFromData32();
-	public bool LoadFromData23();
-	public bool Save22();
-	public bool Save3();
-	public bool Save23();
-	public bool Save32();
-	public QImage FromData22();
-	public QImage FromData32();
-	public QImage FromData23();
-	public libqt_string Text1();
-	public void DetachMetadata1();
 }
 [AllowDuplicates]
 enum QImage_InvertMode

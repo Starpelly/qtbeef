@@ -17,13 +17,13 @@ extension CQt
 	[LinkName("QTextBoundaryFinder_new2")]
 	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new2(QTextBoundaryFinder_Ptr* other);
 	[LinkName("QTextBoundaryFinder_new3")]
-	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new3(QTextBoundaryFinder_BoundaryType type, libqt_string* stringVal);
+	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new3(QTextBoundaryFinder_BoundaryType type, libqt_string stringVal);
 	[LinkName("QTextBoundaryFinder_new4")]
-	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new4(QTextBoundaryFinder_BoundaryType type, QChar_Ptr* chars, void* length);
+	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new4(QTextBoundaryFinder_BoundaryType type, QChar_Ptr** chars, void* length);
 	[LinkName("QTextBoundaryFinder_new5")]
-	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new5(QTextBoundaryFinder_BoundaryType type, QChar_Ptr* chars, void* length, c_uchar* buffer);
+	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new5(QTextBoundaryFinder_BoundaryType type, QChar_Ptr** chars, void* length, c_uchar* buffer);
 	[LinkName("QTextBoundaryFinder_new6")]
-	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new6(QTextBoundaryFinder_BoundaryType type, QChar_Ptr* chars, void* length, c_uchar* buffer, void* bufferSize);
+	public static extern QTextBoundaryFinder_Ptr* QTextBoundaryFinder_new6(QTextBoundaryFinder_BoundaryType type, QChar_Ptr** chars, void* length, c_uchar* buffer, void* bufferSize);
 	[LinkName("QTextBoundaryFinder_Delete")]
 	public static extern void QTextBoundaryFinder_Delete(QTextBoundaryFinder_Ptr* self);
 	[LinkName("QTextBoundaryFinder_OperatorAssign")]
@@ -51,32 +51,33 @@ extension CQt
 	[LinkName("QTextBoundaryFinder_BoundaryReasons")]
 	public static extern void* QTextBoundaryFinder_BoundaryReasons(QTextBoundaryFinder_Ptr* self);
 }
-class QTextBoundaryFinder
+class QTextBoundaryFinder : IQTextBoundaryFinder
 {
 	private QTextBoundaryFinder_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTextBoundaryFinder_new();
 	}
-	public this(QTextBoundaryFinder_Ptr* other)
+	public this(IQTextBoundaryFinder other)
 	{
-		this.ptr = CQt.QTextBoundaryFinder_new2(other);
+		this.ptr = CQt.QTextBoundaryFinder_new2((.)other?.ObjectPtr);
 	}
-	public this(QTextBoundaryFinder_BoundaryType type, libqt_string* stringVal)
+	public this(QTextBoundaryFinder_BoundaryType type, String stringVal)
 	{
-		this.ptr = CQt.QTextBoundaryFinder_new3(type, stringVal);
+		this.ptr = CQt.QTextBoundaryFinder_new3(type, libqt_string(stringVal));
 	}
-	public this(QTextBoundaryFinder_BoundaryType type, QChar_Ptr* chars, void* length)
+	public this(QTextBoundaryFinder_BoundaryType type, IQChar chars, void* length)
 	{
-		this.ptr = CQt.QTextBoundaryFinder_new4(type, chars, length);
+		this.ptr = CQt.QTextBoundaryFinder_new4(type, (.)chars?.ObjectPtr, length);
 	}
-	public this(QTextBoundaryFinder_BoundaryType type, QChar_Ptr* chars, void* length, c_uchar* buffer)
+	public this(QTextBoundaryFinder_BoundaryType type, IQChar chars, void* length, c_uchar* buffer)
 	{
-		this.ptr = CQt.QTextBoundaryFinder_new5(type, chars, length, buffer);
+		this.ptr = CQt.QTextBoundaryFinder_new5(type, (.)chars?.ObjectPtr, length, buffer);
 	}
-	public this(QTextBoundaryFinder_BoundaryType type, QChar_Ptr* chars, void* length, c_uchar* buffer, void* bufferSize)
+	public this(QTextBoundaryFinder_BoundaryType type, IQChar chars, void* length, c_uchar* buffer, void* bufferSize)
 	{
-		this.ptr = CQt.QTextBoundaryFinder_new6(type, chars, length, buffer, bufferSize);
+		this.ptr = CQt.QTextBoundaryFinder_new6(type, (.)chars?.ObjectPtr, length, buffer, bufferSize);
 	}
 	public ~this()
 	{
@@ -127,19 +128,8 @@ class QTextBoundaryFinder
 		return CQt.QTextBoundaryFinder_BoundaryReasons((.)this.ptr);
 	}
 }
-interface IQTextBoundaryFinder
+interface IQTextBoundaryFinder : IQtObjectInterface
 {
-	public bool IsValid();
-	public QTextBoundaryFinder_BoundaryType Type();
-	public libqt_string String();
-	public void ToStart();
-	public void ToEnd();
-	public void* Position();
-	public void SetPosition();
-	public void* ToNextBoundary();
-	public void* ToPreviousBoundary();
-	public bool IsAtBoundary();
-	public void* BoundaryReasons();
 }
 [AllowDuplicates]
 enum QTextBoundaryFinder_BoundaryType

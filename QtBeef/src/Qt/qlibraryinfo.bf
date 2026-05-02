@@ -23,20 +23,21 @@ extension CQt
 	[LinkName("QLibraryInfo_IsDebugBuild")]
 	public static extern bool QLibraryInfo_IsDebugBuild();
 	[LinkName("QLibraryInfo_Version")]
-	public static extern QVersionNumber_Ptr QLibraryInfo_Version();
+	public static extern QVersionNumber_Ptr* QLibraryInfo_Version();
 	[LinkName("QLibraryInfo_Path")]
 	public static extern libqt_string QLibraryInfo_Path(QLibraryInfo_LibraryPath p);
 	[LinkName("QLibraryInfo_Location")]
 	public static extern libqt_string QLibraryInfo_Location(QLibraryInfo_LibraryPath location);
 	[LinkName("QLibraryInfo_PlatformPluginArguments")]
-	public static extern void* QLibraryInfo_PlatformPluginArguments(libqt_string* platformName);
+	public static extern void* QLibraryInfo_PlatformPluginArguments(libqt_string platformName);
 }
-class QLibraryInfo
+class QLibraryInfo : IQLibraryInfo
 {
 	private QLibraryInfo_Ptr* ptr;
-	public this(QLibraryInfo_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQLibraryInfo other)
 	{
-		this.ptr = CQt.QLibraryInfo_new(other);
+		this.ptr = CQt.QLibraryInfo_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -50,7 +51,7 @@ class QLibraryInfo
 	{
 		return CQt.QLibraryInfo_IsDebugBuild();
 	}
-	public QVersionNumber_Ptr Version()
+	public QVersionNumber_Ptr* Version()
 	{
 		return CQt.QLibraryInfo_Version();
 	}
@@ -62,19 +63,13 @@ class QLibraryInfo
 	{
 		return CQt.QLibraryInfo_Location(location);
 	}
-	public void* PlatformPluginArguments(libqt_string* platformName)
+	public void* PlatformPluginArguments(String platformName)
 	{
-		return CQt.QLibraryInfo_PlatformPluginArguments(platformName);
+		return CQt.QLibraryInfo_PlatformPluginArguments(libqt_string(platformName));
 	}
 }
-interface IQLibraryInfo
+interface IQLibraryInfo : IQtObjectInterface
 {
-	public c_char* Build();
-	public bool IsDebugBuild();
-	public QVersionNumber Version();
-	public libqt_string Path();
-	public libqt_string Location();
-	public void* PlatformPluginArguments();
 }
 [AllowDuplicates]
 enum QLibraryInfo_LibraryPath

@@ -41,9 +41,9 @@ extension CQt
 	[LinkName("QItemSelectionRange_BottomRight")]
 	public static extern QPersistentModelIndex_Ptr* QItemSelectionRange_BottomRight(QItemSelectionRange_Ptr* self);
 	[LinkName("QItemSelectionRange_Parent")]
-	public static extern QModelIndex_Ptr QItemSelectionRange_Parent(QItemSelectionRange_Ptr* self);
+	public static extern QModelIndex_Ptr* QItemSelectionRange_Parent(QItemSelectionRange_Ptr* self);
 	[LinkName("QItemSelectionRange_Model")]
-	public static extern QAbstractItemModel_Ptr* QItemSelectionRange_Model(QItemSelectionRange_Ptr* self);
+	public static extern QAbstractItemModel_Ptr** QItemSelectionRange_Model(QItemSelectionRange_Ptr* self);
 	[LinkName("QItemSelectionRange_Contains")]
 	public static extern bool QItemSelectionRange_Contains(QItemSelectionRange_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QItemSelectionRange_Contains2")]
@@ -51,7 +51,7 @@ extension CQt
 	[LinkName("QItemSelectionRange_Intersects")]
 	public static extern bool QItemSelectionRange_Intersects(QItemSelectionRange_Ptr* self, QItemSelectionRange_Ptr* other);
 	[LinkName("QItemSelectionRange_Intersected")]
-	public static extern QItemSelectionRange_Ptr QItemSelectionRange_Intersected(QItemSelectionRange_Ptr* self, QItemSelectionRange_Ptr* other);
+	public static extern QItemSelectionRange_Ptr* QItemSelectionRange_Intersected(QItemSelectionRange_Ptr* self, QItemSelectionRange_Ptr* other);
 	[LinkName("QItemSelectionRange_OperatorEqual")]
 	public static extern bool QItemSelectionRange_OperatorEqual(QItemSelectionRange_Ptr* self, QItemSelectionRange_Ptr* other);
 	[LinkName("QItemSelectionRange_OperatorNotEqual")]
@@ -63,32 +63,33 @@ extension CQt
 	[LinkName("QItemSelectionRange_Indexes")]
 	public static extern void* QItemSelectionRange_Indexes(QItemSelectionRange_Ptr* self);
 }
-class QItemSelectionRange
+class QItemSelectionRange : IQItemSelectionRange
 {
 	private QItemSelectionRange_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QItemSelectionRange_new();
 	}
-	public this(QModelIndex_Ptr* topL, QModelIndex_Ptr* bottomR)
+	public this(IQModelIndex topL, IQModelIndex bottomR)
 	{
-		this.ptr = CQt.QItemSelectionRange_new2(topL, bottomR);
+		this.ptr = CQt.QItemSelectionRange_new2((.)topL?.ObjectPtr, (.)bottomR?.ObjectPtr);
 	}
-	public this(QModelIndex_Ptr* index)
+	public this(IQModelIndex index)
 	{
-		this.ptr = CQt.QItemSelectionRange_new3(index);
+		this.ptr = CQt.QItemSelectionRange_new3((.)index?.ObjectPtr);
 	}
-	public this(QItemSelectionRange_Ptr* param1)
+	public this(IQItemSelectionRange param1)
 	{
-		this.ptr = CQt.QItemSelectionRange_new4(param1);
+		this.ptr = CQt.QItemSelectionRange_new4((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QItemSelectionRange_Delete(this.ptr);
 	}
-	public void Swap(QItemSelectionRange_Ptr* other)
+	public void Swap(IQItemSelectionRange other)
 	{
-		CQt.QItemSelectionRange_Swap((.)this.ptr, other);
+		CQt.QItemSelectionRange_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public c_int Top()
 	{
@@ -122,29 +123,29 @@ class QItemSelectionRange
 	{
 		return CQt.QItemSelectionRange_BottomRight((.)this.ptr);
 	}
-	public QModelIndex_Ptr Parent()
+	public QModelIndex_Ptr* Parent()
 	{
 		return CQt.QItemSelectionRange_Parent((.)this.ptr);
 	}
-	public QAbstractItemModel_Ptr* Model()
+	public QAbstractItemModel_Ptr** Model()
 	{
 		return CQt.QItemSelectionRange_Model((.)this.ptr);
 	}
-	public bool Contains(QModelIndex_Ptr* index)
+	public bool Contains(IQModelIndex index)
 	{
-		return CQt.QItemSelectionRange_Contains((.)this.ptr, index);
+		return CQt.QItemSelectionRange_Contains((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public bool Contains2(c_int row, c_int column, QModelIndex_Ptr* parentIndex)
+	public bool Contains2(c_int row, c_int column, IQModelIndex parentIndex)
 	{
-		return CQt.QItemSelectionRange_Contains2((.)this.ptr, row, column, parentIndex);
+		return CQt.QItemSelectionRange_Contains2((.)this.ptr, row, column, (.)parentIndex?.ObjectPtr);
 	}
-	public bool Intersects(QItemSelectionRange_Ptr* other)
+	public bool Intersects(IQItemSelectionRange other)
 	{
-		return CQt.QItemSelectionRange_Intersects((.)this.ptr, other);
+		return CQt.QItemSelectionRange_Intersects((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public QItemSelectionRange_Ptr Intersected(QItemSelectionRange_Ptr* other)
+	public QItemSelectionRange_Ptr* Intersected(IQItemSelectionRange other)
 	{
-		return CQt.QItemSelectionRange_Intersected((.)this.ptr, other);
+		return CQt.QItemSelectionRange_Intersected((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
@@ -159,26 +160,8 @@ class QItemSelectionRange
 		return CQt.QItemSelectionRange_Indexes((.)this.ptr);
 	}
 }
-interface IQItemSelectionRange
+interface IQItemSelectionRange : IQtObjectInterface
 {
-	public void Swap();
-	public c_int Top();
-	public c_int Left();
-	public c_int Bottom();
-	public c_int Right();
-	public c_int Width();
-	public c_int Height();
-	public QPersistentModelIndex* TopLeft();
-	public QPersistentModelIndex* BottomRight();
-	public QModelIndex Parent();
-	public QAbstractItemModel* Model();
-	public bool Contains();
-	public bool Contains2();
-	public bool Intersects();
-	public QItemSelectionRange Intersected();
-	public bool IsValid();
-	public bool IsEmpty();
-	public void* Indexes();
 }
 // --------------------------------------------------------------
 // QItemSelectionModel
@@ -192,13 +175,13 @@ extension CQt
 	[LinkName("QItemSelectionModel_new")]
 	public static extern QItemSelectionModel_Ptr* QItemSelectionModel_new();
 	[LinkName("QItemSelectionModel_new2")]
-	public static extern QItemSelectionModel_Ptr* QItemSelectionModel_new2(QAbstractItemModel_Ptr* model, QObject_Ptr* parent);
+	public static extern QItemSelectionModel_Ptr* QItemSelectionModel_new2(QAbstractItemModel_Ptr** model, QObject_Ptr** parent);
 	[LinkName("QItemSelectionModel_new3")]
-	public static extern QItemSelectionModel_Ptr* QItemSelectionModel_new3(QAbstractItemModel_Ptr* model);
+	public static extern QItemSelectionModel_Ptr* QItemSelectionModel_new3(QAbstractItemModel_Ptr** model);
 	[LinkName("QItemSelectionModel_Delete")]
 	public static extern void QItemSelectionModel_Delete(QItemSelectionModel_Ptr* self);
 	[LinkName("QItemSelectionModel_MetaObject")]
-	public static extern QMetaObject_Ptr* QItemSelectionModel_MetaObject(QItemSelectionModel_Ptr* self);
+	public static extern QMetaObject_Ptr** QItemSelectionModel_MetaObject(QItemSelectionModel_Ptr* self);
 	[LinkName("QItemSelectionModel_Qt_Metacast")]
 	public static extern void* QItemSelectionModel_Qt_Metacast(QItemSelectionModel_Ptr* self, c_char* param1);
 	[LinkName("QItemSelectionModel_Qt_Metacall")]
@@ -206,7 +189,7 @@ extension CQt
 	[LinkName("QItemSelectionModel_Tr")]
 	public static extern libqt_string QItemSelectionModel_Tr(c_char* s);
 	[LinkName("QItemSelectionModel_CurrentIndex")]
-	public static extern QModelIndex_Ptr QItemSelectionModel_CurrentIndex(QItemSelectionModel_Ptr* self);
+	public static extern QModelIndex_Ptr* QItemSelectionModel_CurrentIndex(QItemSelectionModel_Ptr* self);
 	[LinkName("QItemSelectionModel_IsSelected")]
 	public static extern bool QItemSelectionModel_IsSelected(QItemSelectionModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QItemSelectionModel_IsRowSelected")]
@@ -226,13 +209,13 @@ extension CQt
 	[LinkName("QItemSelectionModel_SelectedColumns")]
 	public static extern void* QItemSelectionModel_SelectedColumns(QItemSelectionModel_Ptr* self);
 	[LinkName("QItemSelectionModel_Selection")]
-	public static extern QItemSelection_Ptr QItemSelectionModel_Selection(QItemSelectionModel_Ptr* self);
+	public static extern QItemSelection_Ptr* QItemSelectionModel_Selection(QItemSelectionModel_Ptr* self);
 	[LinkName("QItemSelectionModel_Model")]
-	public static extern QAbstractItemModel_Ptr* QItemSelectionModel_Model(QItemSelectionModel_Ptr* self);
+	public static extern QAbstractItemModel_Ptr** QItemSelectionModel_Model(QItemSelectionModel_Ptr* self);
 	[LinkName("QItemSelectionModel_Model2")]
-	public static extern QAbstractItemModel_Ptr* QItemSelectionModel_Model2(QItemSelectionModel_Ptr* self);
+	public static extern QAbstractItemModel_Ptr** QItemSelectionModel_Model2(QItemSelectionModel_Ptr* self);
 	[LinkName("QItemSelectionModel_SetModel")]
-	public static extern void QItemSelectionModel_SetModel(QItemSelectionModel_Ptr* self, QAbstractItemModel_Ptr* model);
+	public static extern void QItemSelectionModel_SetModel(QItemSelectionModel_Ptr* self, QAbstractItemModel_Ptr** model);
 	[LinkName("QItemSelectionModel_SetCurrentIndex")]
 	public static extern void QItemSelectionModel_SetCurrentIndex(QItemSelectionModel_Ptr* self, QModelIndex_Ptr* index, void* command);
 	[LinkName("QItemSelectionModel_Select")]
@@ -256,7 +239,7 @@ extension CQt
 	[LinkName("QItemSelectionModel_CurrentColumnChanged")]
 	public static extern void QItemSelectionModel_CurrentColumnChanged(QItemSelectionModel_Ptr* self, QModelIndex_Ptr* current, QModelIndex_Ptr* previous);
 	[LinkName("QItemSelectionModel_ModelChanged")]
-	public static extern void QItemSelectionModel_ModelChanged(QItemSelectionModel_Ptr* self, QAbstractItemModel_Ptr* model);
+	public static extern void QItemSelectionModel_ModelChanged(QItemSelectionModel_Ptr* self, QAbstractItemModel_Ptr** model);
 	[LinkName("QItemSelectionModel_EmitSelectionChanged")]
 	public static extern void QItemSelectionModel_EmitSelectionChanged(QItemSelectionModel_Ptr* self, QItemSelection_Ptr* newSelection, QItemSelection_Ptr* oldSelection);
 	[LinkName("QItemSelectionModel_Tr2")]
@@ -276,26 +259,27 @@ extension CQt
 	[LinkName("QItemSelectionModel_SelectedColumns1")]
 	public static extern void* QItemSelectionModel_SelectedColumns1(QItemSelectionModel_Ptr* self, c_int row);
 }
-class QItemSelectionModel
+class QItemSelectionModel : IQItemSelectionModel, IQObject
 {
 	private QItemSelectionModel_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QItemSelectionModel_new();
 	}
-	public this(QAbstractItemModel_Ptr* model, QObject_Ptr* parent)
+	public this(IQAbstractItemModel model, IQObject parent)
 	{
-		this.ptr = CQt.QItemSelectionModel_new2(model, parent);
+		this.ptr = CQt.QItemSelectionModel_new2((.)model?.ObjectPtr, (.)parent?.ObjectPtr);
 	}
-	public this(QAbstractItemModel_Ptr* model)
+	public this(IQAbstractItemModel model)
 	{
-		this.ptr = CQt.QItemSelectionModel_new3(model);
+		this.ptr = CQt.QItemSelectionModel_new3((.)model?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QItemSelectionModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QItemSelectionModel_MetaObject((.)this.ptr);
 	}
@@ -311,13 +295,13 @@ class QItemSelectionModel
 	{
 		return CQt.QItemSelectionModel_Tr(s);
 	}
-	public QModelIndex_Ptr CurrentIndex()
+	public QModelIndex_Ptr* CurrentIndex()
 	{
 		return CQt.QItemSelectionModel_CurrentIndex((.)this.ptr);
 	}
-	public bool IsSelected(QModelIndex_Ptr* index)
+	public bool IsSelected(IQModelIndex index)
 	{
-		return CQt.QItemSelectionModel_IsSelected((.)this.ptr, index);
+		return CQt.QItemSelectionModel_IsSelected((.)this.ptr, (.)index?.ObjectPtr);
 	}
 	public bool IsRowSelected(c_int row)
 	{
@@ -351,33 +335,33 @@ class QItemSelectionModel
 	{
 		return CQt.QItemSelectionModel_SelectedColumns((.)this.ptr);
 	}
-	public QItemSelection_Ptr Selection()
+	public QItemSelection_Ptr* Selection()
 	{
 		return CQt.QItemSelectionModel_Selection((.)this.ptr);
 	}
-	public QAbstractItemModel_Ptr* Model()
+	public QAbstractItemModel_Ptr** Model()
 	{
 		return CQt.QItemSelectionModel_Model((.)this.ptr);
 	}
-	public QAbstractItemModel_Ptr* Model2()
+	public QAbstractItemModel_Ptr** Model2()
 	{
 		return CQt.QItemSelectionModel_Model2((.)this.ptr);
 	}
-	public void SetModel(QAbstractItemModel_Ptr* model)
+	public void SetModel(IQAbstractItemModel model)
 	{
-		CQt.QItemSelectionModel_SetModel((.)this.ptr, model);
+		CQt.QItemSelectionModel_SetModel((.)this.ptr, (.)model?.ObjectPtr);
 	}
-	public void SetCurrentIndex(QModelIndex_Ptr* index, void* command)
+	public void SetCurrentIndex(IQModelIndex index, void* command)
 	{
-		CQt.QItemSelectionModel_SetCurrentIndex((.)this.ptr, index, command);
+		CQt.QItemSelectionModel_SetCurrentIndex((.)this.ptr, (.)index?.ObjectPtr, command);
 	}
-	public void Select(QModelIndex_Ptr* index, void* command)
+	public void Select(IQModelIndex index, void* command)
 	{
-		CQt.QItemSelectionModel_Select((.)this.ptr, index, command);
+		CQt.QItemSelectionModel_Select((.)this.ptr, (.)index?.ObjectPtr, command);
 	}
-	public void Select2(QItemSelection_Ptr* selection, void* command)
+	public void Select2(IQItemSelection selection, void* command)
 	{
-		CQt.QItemSelectionModel_Select2((.)this.ptr, selection, command);
+		CQt.QItemSelectionModel_Select2((.)this.ptr, (.)selection?.ObjectPtr, command);
 	}
 	public void Clear()
 	{
@@ -395,29 +379,29 @@ class QItemSelectionModel
 	{
 		CQt.QItemSelectionModel_ClearCurrentIndex((.)this.ptr);
 	}
-	public void SelectionChanged(QItemSelection_Ptr* selected, QItemSelection_Ptr* deselected)
+	public void SelectionChanged(IQItemSelection selected, IQItemSelection deselected)
 	{
-		CQt.QItemSelectionModel_SelectionChanged((.)this.ptr, selected, deselected);
+		CQt.QItemSelectionModel_SelectionChanged((.)this.ptr, (.)selected?.ObjectPtr, (.)deselected?.ObjectPtr);
 	}
-	public void CurrentChanged(QModelIndex_Ptr* current, QModelIndex_Ptr* previous)
+	public void CurrentChanged(IQModelIndex current, IQModelIndex previous)
 	{
-		CQt.QItemSelectionModel_CurrentChanged((.)this.ptr, current, previous);
+		CQt.QItemSelectionModel_CurrentChanged((.)this.ptr, (.)current?.ObjectPtr, (.)previous?.ObjectPtr);
 	}
-	public void CurrentRowChanged(QModelIndex_Ptr* current, QModelIndex_Ptr* previous)
+	public void CurrentRowChanged(IQModelIndex current, IQModelIndex previous)
 	{
-		CQt.QItemSelectionModel_CurrentRowChanged((.)this.ptr, current, previous);
+		CQt.QItemSelectionModel_CurrentRowChanged((.)this.ptr, (.)current?.ObjectPtr, (.)previous?.ObjectPtr);
 	}
-	public void CurrentColumnChanged(QModelIndex_Ptr* current, QModelIndex_Ptr* previous)
+	public void CurrentColumnChanged(IQModelIndex current, IQModelIndex previous)
 	{
-		CQt.QItemSelectionModel_CurrentColumnChanged((.)this.ptr, current, previous);
+		CQt.QItemSelectionModel_CurrentColumnChanged((.)this.ptr, (.)current?.ObjectPtr, (.)previous?.ObjectPtr);
 	}
-	public void ModelChanged(QAbstractItemModel_Ptr* model)
+	public void ModelChanged(IQAbstractItemModel model)
 	{
-		CQt.QItemSelectionModel_ModelChanged((.)this.ptr, model);
+		CQt.QItemSelectionModel_ModelChanged((.)this.ptr, (.)model?.ObjectPtr);
 	}
-	public void EmitSelectionChanged(QItemSelection_Ptr* newSelection, QItemSelection_Ptr* oldSelection)
+	public void EmitSelectionChanged(IQItemSelection newSelection, IQItemSelection oldSelection)
 	{
-		CQt.QItemSelectionModel_EmitSelectionChanged((.)this.ptr, newSelection, oldSelection);
+		CQt.QItemSelectionModel_EmitSelectionChanged((.)this.ptr, (.)newSelection?.ObjectPtr, (.)oldSelection?.ObjectPtr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -427,21 +411,21 @@ class QItemSelectionModel
 	{
 		return CQt.QItemSelectionModel_Tr3(s, c, n);
 	}
-	public bool IsRowSelected2(c_int row, QModelIndex_Ptr* parent)
+	public bool IsRowSelected2(c_int row, IQModelIndex parent)
 	{
-		return CQt.QItemSelectionModel_IsRowSelected2((.)this.ptr, row, parent);
+		return CQt.QItemSelectionModel_IsRowSelected2((.)this.ptr, row, (.)parent?.ObjectPtr);
 	}
-	public bool IsColumnSelected2(c_int column, QModelIndex_Ptr* parent)
+	public bool IsColumnSelected2(c_int column, IQModelIndex parent)
 	{
-		return CQt.QItemSelectionModel_IsColumnSelected2((.)this.ptr, column, parent);
+		return CQt.QItemSelectionModel_IsColumnSelected2((.)this.ptr, column, (.)parent?.ObjectPtr);
 	}
-	public bool RowIntersectsSelection2(c_int row, QModelIndex_Ptr* parent)
+	public bool RowIntersectsSelection2(c_int row, IQModelIndex parent)
 	{
-		return CQt.QItemSelectionModel_RowIntersectsSelection2((.)this.ptr, row, parent);
+		return CQt.QItemSelectionModel_RowIntersectsSelection2((.)this.ptr, row, (.)parent?.ObjectPtr);
 	}
-	public bool ColumnIntersectsSelection2(c_int column, QModelIndex_Ptr* parent)
+	public bool ColumnIntersectsSelection2(c_int column, IQModelIndex parent)
 	{
-		return CQt.QItemSelectionModel_ColumnIntersectsSelection2((.)this.ptr, column, parent);
+		return CQt.QItemSelectionModel_ColumnIntersectsSelection2((.)this.ptr, column, (.)parent?.ObjectPtr);
 	}
 	public void* SelectedRows1(c_int column)
 	{
@@ -451,21 +435,21 @@ class QItemSelectionModel
 	{
 		return CQt.QItemSelectionModel_SelectedColumns1((.)this.ptr, row);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -487,13 +471,13 @@ class QItemSelectionModel
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -511,49 +495,49 @@ class QItemSelectionModel
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -563,11 +547,11 @@ class QItemSelectionModel
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -575,11 +559,11 @@ class QItemSelectionModel
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -587,7 +571,7 @@ class QItemSelectionModel
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -599,7 +583,7 @@ class QItemSelectionModel
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -611,29 +595,29 @@ class QItemSelectionModel
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -643,80 +627,41 @@ class QItemSelectionModel
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQItemSelectionModel
+interface IQItemSelectionModel : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public QModelIndex CurrentIndex();
-	public bool IsSelected();
-	public bool IsRowSelected();
-	public bool IsColumnSelected();
-	public bool RowIntersectsSelection();
-	public bool ColumnIntersectsSelection();
-	public bool HasSelection();
-	public void* SelectedIndexes();
-	public void* SelectedRows();
-	public void* SelectedColumns();
-	public QItemSelection Selection();
-	public QAbstractItemModel* Model();
-	public QAbstractItemModel* Model2();
-	public void SetModel();
-	public void SetCurrentIndex();
-	public void Select();
-	public void Select2();
-	public void Clear();
-	public void Reset();
-	public void ClearSelection();
-	public void ClearCurrentIndex();
-	public void SelectionChanged();
-	public void CurrentChanged();
-	public void CurrentRowChanged();
-	public void CurrentColumnChanged();
-	public void ModelChanged();
-	public void EmitSelectionChanged();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public bool IsRowSelected2();
-	public bool IsColumnSelected2();
-	public bool RowIntersectsSelection2();
-	public bool ColumnIntersectsSelection2();
-	public void* SelectedRows1();
-	public void* SelectedColumns1();
 }
 // --------------------------------------------------------------
 // QItemSelection
@@ -744,55 +689,51 @@ extension CQt
 	[LinkName("QItemSelection_Merge")]
 	public static extern void QItemSelection_Merge(QItemSelection_Ptr* self, QItemSelection_Ptr* other, void* command);
 	[LinkName("QItemSelection_Split")]
-	public static extern void QItemSelection_Split(QItemSelectionRange_Ptr* range, QItemSelectionRange_Ptr* other, QItemSelection_Ptr* result);
+	public static extern void QItemSelection_Split(QItemSelectionRange_Ptr* range, QItemSelectionRange_Ptr* other, QItemSelection_Ptr** result);
 }
-class QItemSelection
+class QItemSelection : IQItemSelection
 {
 	private QItemSelection_Ptr* ptr;
-	public this(QModelIndex_Ptr* topLeft, QModelIndex_Ptr* bottomRight)
+	public void* ObjectPtr => ptr;
+	public this(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
-		this.ptr = CQt.QItemSelection_new(topLeft, bottomRight);
+		this.ptr = CQt.QItemSelection_new((.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemSelection_new2();
 	}
-	public this(QItemSelection_Ptr* param1)
+	public this(IQItemSelection param1)
 	{
-		this.ptr = CQt.QItemSelection_new3(param1);
+		this.ptr = CQt.QItemSelection_new3((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QItemSelection_Delete(this.ptr);
 	}
-	public void Select(QModelIndex_Ptr* topLeft, QModelIndex_Ptr* bottomRight)
+	public void Select(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
-		CQt.QItemSelection_Select((.)this.ptr, topLeft, bottomRight);
+		CQt.QItemSelection_Select((.)this.ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
 	}
-	public bool Contains(QModelIndex_Ptr* index)
+	public bool Contains(IQModelIndex index)
 	{
-		return CQt.QItemSelection_Contains((.)this.ptr, index);
+		return CQt.QItemSelection_Contains((.)this.ptr, (.)index?.ObjectPtr);
 	}
 	public void* Indexes()
 	{
 		return CQt.QItemSelection_Indexes((.)this.ptr);
 	}
-	public void Merge(QItemSelection_Ptr* other, void* command)
+	public void Merge(IQItemSelection other, void* command)
 	{
-		CQt.QItemSelection_Merge((.)this.ptr, other, command);
+		CQt.QItemSelection_Merge((.)this.ptr, (.)other?.ObjectPtr, command);
 	}
-	public void Split(QItemSelectionRange_Ptr* range, QItemSelectionRange_Ptr* other, QItemSelection_Ptr* result)
+	public void Split(IQItemSelectionRange range, IQItemSelectionRange other, IQItemSelection result)
 	{
-		CQt.QItemSelection_Split(range, other, result);
+		CQt.QItemSelection_Split((.)range?.ObjectPtr, (.)other?.ObjectPtr, (.)result?.ObjectPtr);
 	}
 }
-interface IQItemSelection
+interface IQItemSelection : IQtObjectInterface
 {
-	public void Select();
-	public bool Contains();
-	public void* Indexes();
-	public void Merge();
-	public void Split();
 }
 [AllowDuplicates]
 enum QItemSelectionModel_SelectionFlag

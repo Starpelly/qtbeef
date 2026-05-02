@@ -15,19 +15,19 @@ extension CQt
 	[LinkName("QCompleter_new")]
 	public static extern QCompleter_Ptr* QCompleter_new();
 	[LinkName("QCompleter_new2")]
-	public static extern QCompleter_Ptr* QCompleter_new2(QAbstractItemModel_Ptr* model);
+	public static extern QCompleter_Ptr* QCompleter_new2(QAbstractItemModel_Ptr** model);
 	[LinkName("QCompleter_new3")]
 	public static extern QCompleter_Ptr* QCompleter_new3(void** completions);
 	[LinkName("QCompleter_new4")]
-	public static extern QCompleter_Ptr* QCompleter_new4(QObject_Ptr* parent);
+	public static extern QCompleter_Ptr* QCompleter_new4(QObject_Ptr** parent);
 	[LinkName("QCompleter_new5")]
-	public static extern QCompleter_Ptr* QCompleter_new5(QAbstractItemModel_Ptr* model, QObject_Ptr* parent);
+	public static extern QCompleter_Ptr* QCompleter_new5(QAbstractItemModel_Ptr** model, QObject_Ptr** parent);
 	[LinkName("QCompleter_new6")]
-	public static extern QCompleter_Ptr* QCompleter_new6(void** completions, QObject_Ptr* parent);
+	public static extern QCompleter_Ptr* QCompleter_new6(void** completions, QObject_Ptr** parent);
 	[LinkName("QCompleter_Delete")]
 	public static extern void QCompleter_Delete(QCompleter_Ptr* self);
 	[LinkName("QCompleter_MetaObject")]
-	public static extern QMetaObject_Ptr* QCompleter_MetaObject(QCompleter_Ptr* self);
+	public static extern QMetaObject_Ptr** QCompleter_MetaObject(QCompleter_Ptr* self);
 	[LinkName("QCompleter_Qt_Metacast")]
 	public static extern void* QCompleter_Qt_Metacast(QCompleter_Ptr* self, c_char* param1);
 	[LinkName("QCompleter_Qt_Metacall")]
@@ -35,13 +35,13 @@ extension CQt
 	[LinkName("QCompleter_Tr")]
 	public static extern libqt_string QCompleter_Tr(c_char* s);
 	[LinkName("QCompleter_SetWidget")]
-	public static extern void QCompleter_SetWidget(QCompleter_Ptr* self, QWidget_Ptr* widget);
+	public static extern void QCompleter_SetWidget(QCompleter_Ptr* self, QWidget_Ptr** widget);
 	[LinkName("QCompleter_Widget")]
-	public static extern QWidget_Ptr* QCompleter_Widget(QCompleter_Ptr* self);
+	public static extern QWidget_Ptr** QCompleter_Widget(QCompleter_Ptr* self);
 	[LinkName("QCompleter_SetModel")]
-	public static extern void QCompleter_SetModel(QCompleter_Ptr* self, QAbstractItemModel_Ptr* c);
+	public static extern void QCompleter_SetModel(QCompleter_Ptr* self, QAbstractItemModel_Ptr** c);
 	[LinkName("QCompleter_Model")]
-	public static extern QAbstractItemModel_Ptr* QCompleter_Model(QCompleter_Ptr* self);
+	public static extern QAbstractItemModel_Ptr** QCompleter_Model(QCompleter_Ptr* self);
 	[LinkName("QCompleter_SetCompletionMode")]
 	public static extern void QCompleter_SetCompletionMode(QCompleter_Ptr* self, QCompleter_CompletionMode mode);
 	[LinkName("QCompleter_CompletionMode")]
@@ -51,9 +51,9 @@ extension CQt
 	[LinkName("QCompleter_FilterMode")]
 	public static extern void* QCompleter_FilterMode(QCompleter_Ptr* self);
 	[LinkName("QCompleter_Popup")]
-	public static extern QAbstractItemView_Ptr* QCompleter_Popup(QCompleter_Ptr* self);
+	public static extern QAbstractItemView_Ptr** QCompleter_Popup(QCompleter_Ptr* self);
 	[LinkName("QCompleter_SetPopup")]
-	public static extern void QCompleter_SetPopup(QCompleter_Ptr* self, QAbstractItemView_Ptr* popup);
+	public static extern void QCompleter_SetPopup(QCompleter_Ptr* self, QAbstractItemView_Ptr** popup);
 	[LinkName("QCompleter_SetCaseSensitivity")]
 	public static extern void QCompleter_SetCaseSensitivity(QCompleter_Ptr* self, Qt_CaseSensitivity caseSensitivity);
 	[LinkName("QCompleter_CaseSensitivity")]
@@ -83,15 +83,15 @@ extension CQt
 	[LinkName("QCompleter_CurrentRow")]
 	public static extern c_int QCompleter_CurrentRow(QCompleter_Ptr* self);
 	[LinkName("QCompleter_CurrentIndex")]
-	public static extern QModelIndex_Ptr QCompleter_CurrentIndex(QCompleter_Ptr* self);
+	public static extern QModelIndex_Ptr* QCompleter_CurrentIndex(QCompleter_Ptr* self);
 	[LinkName("QCompleter_CurrentCompletion")]
 	public static extern libqt_string QCompleter_CurrentCompletion(QCompleter_Ptr* self);
 	[LinkName("QCompleter_CompletionModel")]
-	public static extern QAbstractItemModel_Ptr* QCompleter_CompletionModel(QCompleter_Ptr* self);
+	public static extern QAbstractItemModel_Ptr** QCompleter_CompletionModel(QCompleter_Ptr* self);
 	[LinkName("QCompleter_CompletionPrefix")]
 	public static extern libqt_string QCompleter_CompletionPrefix(QCompleter_Ptr* self);
 	[LinkName("QCompleter_SetCompletionPrefix")]
-	public static extern void QCompleter_SetCompletionPrefix(QCompleter_Ptr* self, libqt_string* prefix);
+	public static extern void QCompleter_SetCompletionPrefix(QCompleter_Ptr* self, libqt_string prefix);
 	[LinkName("QCompleter_Complete")]
 	public static extern void QCompleter_Complete(QCompleter_Ptr* self);
 	[LinkName("QCompleter_SetWrapAround")]
@@ -99,17 +99,17 @@ extension CQt
 	[LinkName("QCompleter_PathFromIndex")]
 	public static extern libqt_string QCompleter_PathFromIndex(QCompleter_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QCompleter_SplitPath")]
-	public static extern void* QCompleter_SplitPath(QCompleter_Ptr* self, libqt_string* path);
+	public static extern void* QCompleter_SplitPath(QCompleter_Ptr* self, libqt_string path);
 	[LinkName("QCompleter_EventFilter")]
-	public static extern bool QCompleter_EventFilter(QCompleter_Ptr* self, QObject_Ptr* o, QEvent_Ptr* e);
+	public static extern bool QCompleter_EventFilter(QCompleter_Ptr* self, QObject_Ptr** o, QEvent_Ptr** e);
 	[LinkName("QCompleter_Event")]
-	public static extern bool QCompleter_Event(QCompleter_Ptr* self, QEvent_Ptr* param1);
+	public static extern bool QCompleter_Event(QCompleter_Ptr* self, QEvent_Ptr** param1);
 	[LinkName("QCompleter_Activated")]
-	public static extern void QCompleter_Activated(QCompleter_Ptr* self, libqt_string* text);
+	public static extern void QCompleter_Activated(QCompleter_Ptr* self, libqt_string text);
 	[LinkName("QCompleter_Activated2")]
 	public static extern void QCompleter_Activated2(QCompleter_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QCompleter_Highlighted")]
-	public static extern void QCompleter_Highlighted(QCompleter_Ptr* self, libqt_string* text);
+	public static extern void QCompleter_Highlighted(QCompleter_Ptr* self, libqt_string text);
 	[LinkName("QCompleter_Highlighted2")]
 	public static extern void QCompleter_Highlighted2(QCompleter_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QCompleter_Tr2")]
@@ -119,38 +119,39 @@ extension CQt
 	[LinkName("QCompleter_Complete1")]
 	public static extern void QCompleter_Complete1(QCompleter_Ptr* self, QRect_Ptr* rect);
 }
-class QCompleter
+class QCompleter : IQCompleter, IQObject
 {
 	private QCompleter_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QCompleter_new();
 	}
-	public this(QAbstractItemModel_Ptr* model)
+	public this(IQAbstractItemModel model)
 	{
-		this.ptr = CQt.QCompleter_new2(model);
+		this.ptr = CQt.QCompleter_new2((.)model?.ObjectPtr);
 	}
 	public this(void** completions)
 	{
 		this.ptr = CQt.QCompleter_new3(completions);
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QCompleter_new4(parent);
+		this.ptr = CQt.QCompleter_new4((.)parent?.ObjectPtr);
 	}
-	public this(QAbstractItemModel_Ptr* model, QObject_Ptr* parent)
+	public this(IQAbstractItemModel model, IQObject parent)
 	{
-		this.ptr = CQt.QCompleter_new5(model, parent);
+		this.ptr = CQt.QCompleter_new5((.)model?.ObjectPtr, (.)parent?.ObjectPtr);
 	}
-	public this(void** completions, QObject_Ptr* parent)
+	public this(void** completions, IQObject parent)
 	{
-		this.ptr = CQt.QCompleter_new6(completions, parent);
+		this.ptr = CQt.QCompleter_new6(completions, (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QCompleter_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QCompleter_MetaObject((.)this.ptr);
 	}
@@ -166,19 +167,19 @@ class QCompleter
 	{
 		return CQt.QCompleter_Tr(s);
 	}
-	public void SetWidget(QWidget_Ptr* widget)
+	public void SetWidget(IQWidget widget)
 	{
-		CQt.QCompleter_SetWidget((.)this.ptr, widget);
+		CQt.QCompleter_SetWidget((.)this.ptr, (.)widget?.ObjectPtr);
 	}
-	public QWidget_Ptr* Widget()
+	public QWidget_Ptr** Widget()
 	{
 		return CQt.QCompleter_Widget((.)this.ptr);
 	}
-	public void SetModel(QAbstractItemModel_Ptr* c)
+	public void SetModel(IQAbstractItemModel c)
 	{
-		CQt.QCompleter_SetModel((.)this.ptr, c);
+		CQt.QCompleter_SetModel((.)this.ptr, (.)c?.ObjectPtr);
 	}
-	public QAbstractItemModel_Ptr* Model()
+	public QAbstractItemModel_Ptr** Model()
 	{
 		return CQt.QCompleter_Model((.)this.ptr);
 	}
@@ -198,13 +199,13 @@ class QCompleter
 	{
 		return CQt.QCompleter_FilterMode((.)this.ptr);
 	}
-	public QAbstractItemView_Ptr* Popup()
+	public QAbstractItemView_Ptr** Popup()
 	{
 		return CQt.QCompleter_Popup((.)this.ptr);
 	}
-	public void SetPopup(QAbstractItemView_Ptr* popup)
+	public void SetPopup(IQAbstractItemView popup)
 	{
-		CQt.QCompleter_SetPopup((.)this.ptr, popup);
+		CQt.QCompleter_SetPopup((.)this.ptr, (.)popup?.ObjectPtr);
 	}
 	public void SetCaseSensitivity(Qt_CaseSensitivity caseSensitivity)
 	{
@@ -262,7 +263,7 @@ class QCompleter
 	{
 		return CQt.QCompleter_CurrentRow((.)this.ptr);
 	}
-	public QModelIndex_Ptr CurrentIndex()
+	public QModelIndex_Ptr* CurrentIndex()
 	{
 		return CQt.QCompleter_CurrentIndex((.)this.ptr);
 	}
@@ -270,7 +271,7 @@ class QCompleter
 	{
 		return CQt.QCompleter_CurrentCompletion((.)this.ptr);
 	}
-	public QAbstractItemModel_Ptr* CompletionModel()
+	public QAbstractItemModel_Ptr** CompletionModel()
 	{
 		return CQt.QCompleter_CompletionModel((.)this.ptr);
 	}
@@ -278,9 +279,9 @@ class QCompleter
 	{
 		return CQt.QCompleter_CompletionPrefix((.)this.ptr);
 	}
-	public void SetCompletionPrefix(libqt_string* prefix)
+	public void SetCompletionPrefix(String prefix)
 	{
-		CQt.QCompleter_SetCompletionPrefix((.)this.ptr, prefix);
+		CQt.QCompleter_SetCompletionPrefix((.)this.ptr, libqt_string(prefix));
 	}
 	public void Complete()
 	{
@@ -290,37 +291,37 @@ class QCompleter
 	{
 		CQt.QCompleter_SetWrapAround((.)this.ptr, wrap);
 	}
-	public libqt_string PathFromIndex(QModelIndex_Ptr* index)
+	public libqt_string PathFromIndex(IQModelIndex index)
 	{
-		return CQt.QCompleter_PathFromIndex((.)this.ptr, index);
+		return CQt.QCompleter_PathFromIndex((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void* SplitPath(libqt_string* path)
+	public void* SplitPath(String path)
 	{
-		return CQt.QCompleter_SplitPath((.)this.ptr, path);
+		return CQt.QCompleter_SplitPath((.)this.ptr, libqt_string(path));
 	}
-	public bool EventFilter(QObject_Ptr* o, QEvent_Ptr* e)
+	public bool EventFilter(IQObject o, IQEvent e)
 	{
-		return CQt.QCompleter_EventFilter((.)this.ptr, o, e);
+		return CQt.QCompleter_EventFilter((.)this.ptr, (.)o?.ObjectPtr, (.)e?.ObjectPtr);
 	}
-	public bool Event(QEvent_Ptr* param1)
+	public bool Event(IQEvent param1)
 	{
-		return CQt.QCompleter_Event((.)this.ptr, param1);
+		return CQt.QCompleter_Event((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public void Activated(libqt_string* text)
+	public void Activated(String text)
 	{
-		CQt.QCompleter_Activated((.)this.ptr, text);
+		CQt.QCompleter_Activated((.)this.ptr, libqt_string(text));
 	}
-	public void Activated2(QModelIndex_Ptr* index)
+	public void Activated2(IQModelIndex index)
 	{
-		CQt.QCompleter_Activated2((.)this.ptr, index);
+		CQt.QCompleter_Activated2((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void Highlighted(libqt_string* text)
+	public void Highlighted(String text)
 	{
-		CQt.QCompleter_Highlighted((.)this.ptr, text);
+		CQt.QCompleter_Highlighted((.)this.ptr, libqt_string(text));
 	}
-	public void Highlighted2(QModelIndex_Ptr* index)
+	public void Highlighted2(IQModelIndex index)
 	{
-		CQt.QCompleter_Highlighted2((.)this.ptr, index);
+		CQt.QCompleter_Highlighted2((.)this.ptr, (.)index?.ObjectPtr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -330,17 +331,17 @@ class QCompleter
 	{
 		return CQt.QCompleter_Tr3(s, c, n);
 	}
-	public void Complete1(QRect_Ptr* rect)
+	public void Complete1(IQRect rect)
 	{
-		CQt.QCompleter_Complete1((.)this.ptr, rect);
+		CQt.QCompleter_Complete1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -362,13 +363,13 @@ class QCompleter
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -386,49 +387,49 @@ class QCompleter
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -438,11 +439,11 @@ class QCompleter
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -450,11 +451,11 @@ class QCompleter
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -462,7 +463,7 @@ class QCompleter
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -474,7 +475,7 @@ class QCompleter
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -486,29 +487,29 @@ class QCompleter
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -518,87 +519,41 @@ class QCompleter
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQCompleter
+interface IQCompleter : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void SetWidget();
-	public QWidget* Widget();
-	public void SetModel();
-	public QAbstractItemModel* Model();
-	public void SetCompletionMode();
-	public QCompleter_CompletionMode CompletionMode();
-	public void SetFilterMode();
-	public void* FilterMode();
-	public QAbstractItemView* Popup();
-	public void SetPopup();
-	public void SetCaseSensitivity();
-	public Qt_CaseSensitivity CaseSensitivity();
-	public void SetModelSorting();
-	public QCompleter_ModelSorting ModelSorting();
-	public void SetCompletionColumn();
-	public c_int CompletionColumn();
-	public void SetCompletionRole();
-	public c_int CompletionRole();
-	public bool WrapAround();
-	public c_int MaxVisibleItems();
-	public void SetMaxVisibleItems();
-	public c_int CompletionCount();
-	public bool SetCurrentRow();
-	public c_int CurrentRow();
-	public QModelIndex CurrentIndex();
-	public libqt_string CurrentCompletion();
-	public QAbstractItemModel* CompletionModel();
-	public libqt_string CompletionPrefix();
-	public void SetCompletionPrefix();
-	public void Complete();
-	public void SetWrapAround();
-	public libqt_string PathFromIndex();
-	public void* SplitPath();
-	public bool EventFilter();
-	public bool Event();
-	public void Activated();
-	public void Activated2();
-	public void Highlighted();
-	public void Highlighted2();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public void Complete1();
 }
 [AllowDuplicates]
 enum QCompleter_CompletionMode

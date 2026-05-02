@@ -59,9 +59,9 @@ extension CQt
 	[LinkName("QDeadlineTimer_SetPreciseDeadline")]
 	public static extern void QDeadlineTimer_SetPreciseDeadline(QDeadlineTimer_Ptr* self, c_longlong secs);
 	[LinkName("QDeadlineTimer_AddNSecs")]
-	public static extern QDeadlineTimer_Ptr QDeadlineTimer_AddNSecs(QDeadlineTimer_Ptr dt, c_longlong nsecs);
+	public static extern QDeadlineTimer_Ptr* QDeadlineTimer_AddNSecs(QDeadlineTimer_Ptr* dt, c_longlong nsecs);
 	[LinkName("QDeadlineTimer_Current")]
-	public static extern QDeadlineTimer_Ptr QDeadlineTimer_Current();
+	public static extern QDeadlineTimer_Ptr* QDeadlineTimer_Current();
 	[LinkName("QDeadlineTimer_OperatorPlusAssign")]
 	public static extern QDeadlineTimer_Ptr* QDeadlineTimer_OperatorPlusAssign(QDeadlineTimer_Ptr* self, c_longlong msecs);
 	[LinkName("QDeadlineTimer_OperatorMinusAssign")]
@@ -85,14 +85,15 @@ extension CQt
 	[LinkName("QDeadlineTimer_SetPreciseDeadline3")]
 	public static extern void QDeadlineTimer_SetPreciseDeadline3(QDeadlineTimer_Ptr* self, c_longlong secs, c_longlong nsecs, Qt_TimerType type);
 	[LinkName("QDeadlineTimer_Current1")]
-	public static extern QDeadlineTimer_Ptr QDeadlineTimer_Current1(Qt_TimerType timerType);
+	public static extern QDeadlineTimer_Ptr* QDeadlineTimer_Current1(Qt_TimerType timerType);
 }
-class QDeadlineTimer
+class QDeadlineTimer : IQDeadlineTimer
 {
 	private QDeadlineTimer_Ptr* ptr;
-	public this(QDeadlineTimer_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQDeadlineTimer other)
 	{
-		this.ptr = CQt.QDeadlineTimer_new(other);
+		this.ptr = CQt.QDeadlineTimer_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -122,9 +123,9 @@ class QDeadlineTimer
 	{
 		CQt.QDeadlineTimer_Delete(this.ptr);
 	}
-	public void Swap(QDeadlineTimer_Ptr* other)
+	public void Swap(IQDeadlineTimer other)
 	{
-		CQt.QDeadlineTimer_Swap((.)this.ptr, other);
+		CQt.QDeadlineTimer_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsForever()
 	{
@@ -174,11 +175,11 @@ class QDeadlineTimer
 	{
 		CQt.QDeadlineTimer_SetPreciseDeadline((.)this.ptr, secs);
 	}
-	public QDeadlineTimer_Ptr AddNSecs(QDeadlineTimer_Ptr dt, c_longlong nsecs)
+	public QDeadlineTimer_Ptr* AddNSecs(IQDeadlineTimer dt, c_longlong nsecs)
 	{
-		return CQt.QDeadlineTimer_AddNSecs(dt, nsecs);
+		return CQt.QDeadlineTimer_AddNSecs((.)dt?.ObjectPtr, nsecs);
 	}
-	public QDeadlineTimer_Ptr Current()
+	public QDeadlineTimer_Ptr* Current()
 	{
 		return CQt.QDeadlineTimer_Current();
 	}
@@ -214,37 +215,13 @@ class QDeadlineTimer
 	{
 		CQt.QDeadlineTimer_SetPreciseDeadline3((.)this.ptr, secs, nsecs, type);
 	}
-	public QDeadlineTimer_Ptr Current1(Qt_TimerType timerType)
+	public QDeadlineTimer_Ptr* Current1(Qt_TimerType timerType)
 	{
 		return CQt.QDeadlineTimer_Current1(timerType);
 	}
 }
-interface IQDeadlineTimer
+interface IQDeadlineTimer : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsForever();
-	public bool HasExpired();
-	public Qt_TimerType TimerType();
-	public void SetTimerType();
-	public c_longlong RemainingTime();
-	public c_longlong RemainingTimeNSecs();
-	public void SetRemainingTime();
-	public void SetPreciseRemainingTime();
-	public c_longlong Deadline();
-	public c_longlong DeadlineNSecs();
-	public void SetDeadline();
-	public void SetPreciseDeadline();
-	public QDeadlineTimer AddNSecs();
-	public QDeadlineTimer Current();
-	public void* RemainingTimeAsDuration();
-	public void* _q_data();
-	public void SetRemainingTime2();
-	public void SetPreciseRemainingTime2();
-	public void SetPreciseRemainingTime3();
-	public void SetDeadline2();
-	public void SetPreciseDeadline2();
-	public void SetPreciseDeadline3();
-	public QDeadlineTimer Current1();
 }
 [AllowDuplicates]
 enum QDeadlineTimer_ForeverConstant

@@ -29,12 +29,13 @@ extension CQt
 	[LinkName("QJsonParseError_SetError")]
 	public static extern void QJsonParseError_SetError(QJsonParseError_Ptr* self, QJsonParseError_ParseError error);
 }
-class QJsonParseError
+class QJsonParseError : IQJsonParseError
 {
 	private QJsonParseError_Ptr* ptr;
-	public this(QJsonParseError_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQJsonParseError other)
 	{
-		this.ptr = CQt.QJsonParseError_new(other);
+		this.ptr = CQt.QJsonParseError_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -61,13 +62,8 @@ class QJsonParseError
 		CQt.QJsonParseError_SetError((.)this.ptr, error);
 	}
 }
-interface IQJsonParseError
+interface IQJsonParseError : IQtObjectInterface
 {
-	public libqt_string ErrorString();
-	public c_int Offset();
-	public void SetOffset();
-	public QJsonParseError_ParseError Error();
-	public void SetError();
 }
 // --------------------------------------------------------------
 // QJsonDocument
@@ -93,11 +89,11 @@ extension CQt
 	[LinkName("QJsonDocument_Swap")]
 	public static extern void QJsonDocument_Swap(QJsonDocument_Ptr* self, QJsonDocument_Ptr* other);
 	[LinkName("QJsonDocument_FromVariant")]
-	public static extern QJsonDocument_Ptr QJsonDocument_FromVariant(QVariant_Ptr* variant);
+	public static extern QJsonDocument_Ptr* QJsonDocument_FromVariant(QVariant_Ptr* variant);
 	[LinkName("QJsonDocument_ToVariant")]
-	public static extern QVariant_Ptr QJsonDocument_ToVariant(QJsonDocument_Ptr* self);
+	public static extern QVariant_Ptr* QJsonDocument_ToVariant(QJsonDocument_Ptr* self);
 	[LinkName("QJsonDocument_FromJson")]
-	public static extern QJsonDocument_Ptr QJsonDocument_FromJson(void** json);
+	public static extern QJsonDocument_Ptr* QJsonDocument_FromJson(void** json);
 	[LinkName("QJsonDocument_ToJson")]
 	public static extern void* QJsonDocument_ToJson(QJsonDocument_Ptr* self);
 	[LinkName("QJsonDocument_IsEmpty")]
@@ -107,17 +103,17 @@ extension CQt
 	[LinkName("QJsonDocument_IsObject")]
 	public static extern bool QJsonDocument_IsObject(QJsonDocument_Ptr* self);
 	[LinkName("QJsonDocument_Object")]
-	public static extern QJsonObject_Ptr QJsonDocument_Object(QJsonDocument_Ptr* self);
+	public static extern QJsonObject_Ptr* QJsonDocument_Object(QJsonDocument_Ptr* self);
 	[LinkName("QJsonDocument_Array")]
-	public static extern QJsonArray_Ptr QJsonDocument_Array(QJsonDocument_Ptr* self);
+	public static extern QJsonArray_Ptr* QJsonDocument_Array(QJsonDocument_Ptr* self);
 	[LinkName("QJsonDocument_SetObject")]
 	public static extern void QJsonDocument_SetObject(QJsonDocument_Ptr* self, QJsonObject_Ptr* object);
 	[LinkName("QJsonDocument_SetArray")]
 	public static extern void QJsonDocument_SetArray(QJsonDocument_Ptr* self, QJsonArray_Ptr* array);
 	[LinkName("QJsonDocument_OperatorSubscript")]
-	public static extern QJsonValue_Ptr QJsonDocument_OperatorSubscript(QJsonDocument_Ptr* self, libqt_string* key);
+	public static extern QJsonValue_Ptr* QJsonDocument_OperatorSubscript(QJsonDocument_Ptr* self, libqt_string key);
 	[LinkName("QJsonDocument_OperatorSubscript4")]
-	public static extern QJsonValue_Ptr QJsonDocument_OperatorSubscript4(QJsonDocument_Ptr* self, void* i);
+	public static extern QJsonValue_Ptr* QJsonDocument_OperatorSubscript4(QJsonDocument_Ptr* self, void* i);
 	[LinkName("QJsonDocument_OperatorEqual")]
 	public static extern bool QJsonDocument_OperatorEqual(QJsonDocument_Ptr* self, QJsonDocument_Ptr* other);
 	[LinkName("QJsonDocument_OperatorNotEqual")]
@@ -125,46 +121,47 @@ extension CQt
 	[LinkName("QJsonDocument_IsNull")]
 	public static extern bool QJsonDocument_IsNull(QJsonDocument_Ptr* self);
 	[LinkName("QJsonDocument_FromJson2")]
-	public static extern QJsonDocument_Ptr QJsonDocument_FromJson2(void** json, QJsonParseError_Ptr* error);
+	public static extern QJsonDocument_Ptr* QJsonDocument_FromJson2(void** json, QJsonParseError_Ptr** error);
 	[LinkName("QJsonDocument_ToJson1")]
 	public static extern void* QJsonDocument_ToJson1(QJsonDocument_Ptr* self, QJsonDocument_JsonFormat format);
 }
-class QJsonDocument
+class QJsonDocument : IQJsonDocument
 {
 	private QJsonDocument_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QJsonDocument_new();
 	}
-	public this(QJsonObject_Ptr* object)
+	public this(IQJsonObject object)
 	{
-		this.ptr = CQt.QJsonDocument_new2(object);
+		this.ptr = CQt.QJsonDocument_new2((.)object?.ObjectPtr);
 	}
-	public this(QJsonArray_Ptr* array)
+	public this(IQJsonArray array)
 	{
-		this.ptr = CQt.QJsonDocument_new3(array);
+		this.ptr = CQt.QJsonDocument_new3((.)array?.ObjectPtr);
 	}
-	public this(QJsonDocument_Ptr* other)
+	public this(IQJsonDocument other)
 	{
-		this.ptr = CQt.QJsonDocument_new4(other);
+		this.ptr = CQt.QJsonDocument_new4((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QJsonDocument_Delete(this.ptr);
 	}
-	public void Swap(QJsonDocument_Ptr* other)
+	public void Swap(IQJsonDocument other)
 	{
-		CQt.QJsonDocument_Swap((.)this.ptr, other);
+		CQt.QJsonDocument_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public QJsonDocument_Ptr FromVariant(QVariant_Ptr* variant)
+	public QJsonDocument_Ptr* FromVariant(IQVariant variant)
 	{
-		return CQt.QJsonDocument_FromVariant(variant);
+		return CQt.QJsonDocument_FromVariant((.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr ToVariant()
+	public QVariant_Ptr* ToVariant()
 	{
 		return CQt.QJsonDocument_ToVariant((.)this.ptr);
 	}
-	public QJsonDocument_Ptr FromJson(void** json)
+	public QJsonDocument_Ptr* FromJson(void** json)
 	{
 		return CQt.QJsonDocument_FromJson(json);
 	}
@@ -184,23 +181,23 @@ class QJsonDocument
 	{
 		return CQt.QJsonDocument_IsObject((.)this.ptr);
 	}
-	public QJsonObject_Ptr Object()
+	public QJsonObject_Ptr* Object()
 	{
 		return CQt.QJsonDocument_Object((.)this.ptr);
 	}
-	public QJsonArray_Ptr Array()
+	public QJsonArray_Ptr* Array()
 	{
 		return CQt.QJsonDocument_Array((.)this.ptr);
 	}
-	public void SetObject(QJsonObject_Ptr* object)
+	public void SetObject(IQJsonObject object)
 	{
-		CQt.QJsonDocument_SetObject((.)this.ptr, object);
+		CQt.QJsonDocument_SetObject((.)this.ptr, (.)object?.ObjectPtr);
 	}
-	public void SetArray(QJsonArray_Ptr* array)
+	public void SetArray(IQJsonArray array)
 	{
-		CQt.QJsonDocument_SetArray((.)this.ptr, array);
+		CQt.QJsonDocument_SetArray((.)this.ptr, (.)array?.ObjectPtr);
 	}
-	public QJsonValue_Ptr OperatorSubscript4(void* i)
+	public QJsonValue_Ptr* OperatorSubscript4(void* i)
 	{
 		return CQt.QJsonDocument_OperatorSubscript4((.)this.ptr, i);
 	}
@@ -208,33 +205,17 @@ class QJsonDocument
 	{
 		return CQt.QJsonDocument_IsNull((.)this.ptr);
 	}
-	public QJsonDocument_Ptr FromJson2(void** json, QJsonParseError_Ptr* error)
+	public QJsonDocument_Ptr* FromJson2(void** json, IQJsonParseError error)
 	{
-		return CQt.QJsonDocument_FromJson2(json, error);
+		return CQt.QJsonDocument_FromJson2(json, (.)error?.ObjectPtr);
 	}
 	public void* ToJson1(QJsonDocument_JsonFormat format)
 	{
 		return CQt.QJsonDocument_ToJson1((.)this.ptr, format);
 	}
 }
-interface IQJsonDocument
+interface IQJsonDocument : IQtObjectInterface
 {
-	public void Swap();
-	public QJsonDocument FromVariant();
-	public QVariant ToVariant();
-	public QJsonDocument FromJson();
-	public void* ToJson();
-	public bool IsEmpty();
-	public bool IsArray();
-	public bool IsObject();
-	public QJsonObject Object();
-	public QJsonArray Array();
-	public void SetObject();
-	public void SetArray();
-	public QJsonValue OperatorSubscript4();
-	public bool IsNull();
-	public QJsonDocument FromJson2();
-	public void* ToJson1();
 }
 [AllowDuplicates]
 enum QJsonParseError_ParseError

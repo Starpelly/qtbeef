@@ -33,9 +33,10 @@ extension CQt
 	[LinkName("qfloat16_IsNormal")]
 	public static extern bool qfloat16_IsNormal(qfloat16_Ptr* self);
 }
-class qfloat16
+class qfloat16 : Iqfloat16
 {
 	private qfloat16_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.qfloat16_new();
@@ -73,11 +74,6 @@ class qfloat16
 		return CQt.qfloat16_IsNormal((.)this.ptr);
 	}
 }
-interface Iqfloat16
+interface Iqfloat16 : IQtObjectInterface
 {
-	public bool IsInf();
-	public bool IsNaN();
-	public bool IsFinite();
-	public c_int FpClassify();
-	public bool IsNormal();
 }

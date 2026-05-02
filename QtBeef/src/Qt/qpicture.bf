@@ -31,17 +31,17 @@ extension CQt
 	[LinkName("QPicture_SetData")]
 	public static extern void QPicture_SetData(QPicture_Ptr* self, c_char* data, c_uint size);
 	[LinkName("QPicture_Play")]
-	public static extern bool QPicture_Play(QPicture_Ptr* self, QPainter_Ptr* p);
+	public static extern bool QPicture_Play(QPicture_Ptr* self, QPainter_Ptr** p);
 	[LinkName("QPicture_Load")]
-	public static extern bool QPicture_Load(QPicture_Ptr* self, QIODevice_Ptr* dev);
+	public static extern bool QPicture_Load(QPicture_Ptr* self, QIODevice_Ptr** dev);
 	[LinkName("QPicture_Load2")]
-	public static extern bool QPicture_Load2(QPicture_Ptr* self, libqt_string* fileName);
+	public static extern bool QPicture_Load2(QPicture_Ptr* self, libqt_string fileName);
 	[LinkName("QPicture_Save")]
-	public static extern bool QPicture_Save(QPicture_Ptr* self, QIODevice_Ptr* dev);
+	public static extern bool QPicture_Save(QPicture_Ptr* self, QIODevice_Ptr** dev);
 	[LinkName("QPicture_Save2")]
-	public static extern bool QPicture_Save2(QPicture_Ptr* self, libqt_string* fileName);
+	public static extern bool QPicture_Save2(QPicture_Ptr* self, libqt_string fileName);
 	[LinkName("QPicture_BoundingRect")]
-	public static extern QRect_Ptr QPicture_BoundingRect(QPicture_Ptr* self);
+	public static extern QRect_Ptr* QPicture_BoundingRect(QPicture_Ptr* self);
 	[LinkName("QPicture_SetBoundingRect")]
 	public static extern void QPicture_SetBoundingRect(QPicture_Ptr* self, QRect_Ptr* r);
 	[LinkName("QPicture_OperatorAssign")]
@@ -53,20 +53,21 @@ extension CQt
 	[LinkName("QPicture_IsDetached")]
 	public static extern bool QPicture_IsDetached(QPicture_Ptr* self);
 	[LinkName("QPicture_PaintEngine")]
-	public static extern QPaintEngine_Ptr* QPicture_PaintEngine(QPicture_Ptr* self);
+	public static extern QPaintEngine_Ptr** QPicture_PaintEngine(QPicture_Ptr* self);
 	[LinkName("QPicture_Metric")]
 	public static extern c_int QPicture_Metric(QPicture_Ptr* self, QPaintDevice_PaintDeviceMetric m);
 }
-class QPicture
+class QPicture : IQPicture, IQPaintDevice
 {
 	private QPicture_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QPicture_new();
 	}
-	public this(QPicture_Ptr* param1)
+	public this(IQPicture param1)
 	{
-		this.ptr = CQt.QPicture_new2(param1);
+		this.ptr = CQt.QPicture_new2((.)param1?.ObjectPtr);
 	}
 	public this(c_int formatVersion)
 	{
@@ -96,37 +97,37 @@ class QPicture
 	{
 		CQt.QPicture_SetData((.)this.ptr, data, size);
 	}
-	public bool Play(QPainter_Ptr* p)
+	public bool Play(IQPainter p)
 	{
-		return CQt.QPicture_Play((.)this.ptr, p);
+		return CQt.QPicture_Play((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public bool Load(QIODevice_Ptr* dev)
+	public bool Load(IQIODevice dev)
 	{
-		return CQt.QPicture_Load((.)this.ptr, dev);
+		return CQt.QPicture_Load((.)this.ptr, (.)dev?.ObjectPtr);
 	}
-	public bool Load2(libqt_string* fileName)
+	public bool Load2(String fileName)
 	{
-		return CQt.QPicture_Load2((.)this.ptr, fileName);
+		return CQt.QPicture_Load2((.)this.ptr, libqt_string(fileName));
 	}
-	public bool Save(QIODevice_Ptr* dev)
+	public bool Save(IQIODevice dev)
 	{
-		return CQt.QPicture_Save((.)this.ptr, dev);
+		return CQt.QPicture_Save((.)this.ptr, (.)dev?.ObjectPtr);
 	}
-	public bool Save2(libqt_string* fileName)
+	public bool Save2(String fileName)
 	{
-		return CQt.QPicture_Save2((.)this.ptr, fileName);
+		return CQt.QPicture_Save2((.)this.ptr, libqt_string(fileName));
 	}
-	public QRect_Ptr BoundingRect()
+	public QRect_Ptr* BoundingRect()
 	{
 		return CQt.QPicture_BoundingRect((.)this.ptr);
 	}
-	public void SetBoundingRect(QRect_Ptr* r)
+	public void SetBoundingRect(IQRect r)
 	{
-		CQt.QPicture_SetBoundingRect((.)this.ptr, r);
+		CQt.QPicture_SetBoundingRect((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public void Swap(QPicture_Ptr* other)
+	public void Swap(IQPicture other)
 	{
-		CQt.QPicture_Swap((.)this.ptr, other);
+		CQt.QPicture_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public void Detach()
 	{
@@ -136,7 +137,7 @@ class QPicture
 	{
 		return CQt.QPicture_IsDetached((.)this.ptr);
 	}
-	public QPaintEngine_Ptr* PaintEngine()
+	public QPaintEngine_Ptr** PaintEngine()
 	{
 		return CQt.QPicture_PaintEngine((.)this.ptr);
 	}
@@ -200,36 +201,19 @@ class QPicture
 	{
 		return CQt.QPaintDevice_DevicePixelRatioFScale();
 	}
-	public void InitPainter(QPainter_Ptr* painter)
+	public void InitPainter(IQPainter painter)
 	{
-		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
+		CQt.QPaintDevice_InitPainter((.)this.ptr, (.)painter?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
+	public QPaintDevice_Ptr** Redirected(IQPoint offset)
 	{
-		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
+		return CQt.QPaintDevice_Redirected((.)this.ptr, (.)offset?.ObjectPtr);
 	}
-	public QPainter_Ptr* SharedPainter()
+	public QPainter_Ptr** SharedPainter()
 	{
 		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
-interface IQPicture
+interface IQPicture : IQtObjectInterface
 {
-	public bool IsNull();
-	public c_int DevType();
-	public c_uint Size();
-	public c_char* Data();
-	public void SetData();
-	public bool Play();
-	public bool Load();
-	public bool Load2();
-	public bool Save();
-	public bool Save2();
-	public QRect BoundingRect();
-	public void SetBoundingRect();
-	public void Swap();
-	public void Detach();
-	public bool IsDetached();
-	public QPaintEngine* PaintEngine();
-	public c_int Metric();
 }

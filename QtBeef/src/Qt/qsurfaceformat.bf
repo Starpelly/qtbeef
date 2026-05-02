@@ -101,13 +101,14 @@ extension CQt
 	[LinkName("QSurfaceFormat_SetDefaultFormat")]
 	public static extern void QSurfaceFormat_SetDefaultFormat(QSurfaceFormat_Ptr* format);
 	[LinkName("QSurfaceFormat_DefaultFormat")]
-	public static extern QSurfaceFormat_Ptr QSurfaceFormat_DefaultFormat();
+	public static extern QSurfaceFormat_Ptr* QSurfaceFormat_DefaultFormat();
 	[LinkName("QSurfaceFormat_SetOption2")]
 	public static extern void QSurfaceFormat_SetOption2(QSurfaceFormat_Ptr* self, QSurfaceFormat_FormatOption option, bool on);
 }
-class QSurfaceFormat
+class QSurfaceFormat : IQSurfaceFormat
 {
 	private QSurfaceFormat_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QSurfaceFormat_new();
@@ -116,9 +117,9 @@ class QSurfaceFormat
 	{
 		this.ptr = CQt.QSurfaceFormat_new2(options);
 	}
-	public this(QSurfaceFormat_Ptr* other)
+	public this(IQSurfaceFormat other)
 	{
-		this.ptr = CQt.QSurfaceFormat_new3(other);
+		this.ptr = CQt.QSurfaceFormat_new3((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -268,19 +269,19 @@ class QSurfaceFormat
 	{
 		return CQt.QSurfaceFormat_ColorSpace((.)this.ptr);
 	}
-	public void SetColorSpace(QColorSpace_Ptr* colorSpace)
+	public void SetColorSpace(IQColorSpace colorSpace)
 	{
-		CQt.QSurfaceFormat_SetColorSpace((.)this.ptr, colorSpace);
+		CQt.QSurfaceFormat_SetColorSpace((.)this.ptr, (.)colorSpace?.ObjectPtr);
 	}
 	public void SetColorSpace2(QSurfaceFormat_ColorSpace colorSpace)
 	{
 		CQt.QSurfaceFormat_SetColorSpace2((.)this.ptr, colorSpace);
 	}
-	public void SetDefaultFormat(QSurfaceFormat_Ptr* format)
+	public void SetDefaultFormat(IQSurfaceFormat format)
 	{
-		CQt.QSurfaceFormat_SetDefaultFormat(format);
+		CQt.QSurfaceFormat_SetDefaultFormat((.)format?.ObjectPtr);
 	}
-	public QSurfaceFormat_Ptr DefaultFormat()
+	public QSurfaceFormat_Ptr* DefaultFormat()
 	{
 		return CQt.QSurfaceFormat_DefaultFormat();
 	}
@@ -289,49 +290,8 @@ class QSurfaceFormat
 		CQt.QSurfaceFormat_SetOption2((.)this.ptr, option, on);
 	}
 }
-interface IQSurfaceFormat
+interface IQSurfaceFormat : IQtObjectInterface
 {
-	public void SetDepthBufferSize();
-	public c_int DepthBufferSize();
-	public void SetStencilBufferSize();
-	public c_int StencilBufferSize();
-	public void SetRedBufferSize();
-	public c_int RedBufferSize();
-	public void SetGreenBufferSize();
-	public c_int GreenBufferSize();
-	public void SetBlueBufferSize();
-	public c_int BlueBufferSize();
-	public void SetAlphaBufferSize();
-	public c_int AlphaBufferSize();
-	public void SetSamples();
-	public c_int Samples();
-	public void SetSwapBehavior();
-	public QSurfaceFormat_SwapBehavior SwapBehavior();
-	public bool HasAlpha();
-	public void SetProfile();
-	public QSurfaceFormat_OpenGLContextProfile Profile();
-	public void SetRenderableType();
-	public QSurfaceFormat_RenderableType RenderableType();
-	public void SetMajorVersion();
-	public c_int MajorVersion();
-	public void SetMinorVersion();
-	public c_int MinorVersion();
-	public void* Version();
-	public void SetVersion();
-	public bool Stereo();
-	public void SetStereo();
-	public void SetOptions();
-	public void SetOption();
-	public bool TestOption();
-	public void* Options();
-	public c_int SwapInterval();
-	public void SetSwapInterval();
-	public QColorSpace* ColorSpace();
-	public void SetColorSpace();
-	public void SetColorSpace2();
-	public void SetDefaultFormat();
-	public QSurfaceFormat DefaultFormat();
-	public void SetOption2();
 }
 [AllowDuplicates]
 enum QSurfaceFormat_FormatOption

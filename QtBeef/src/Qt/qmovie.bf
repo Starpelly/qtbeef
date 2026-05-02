@@ -15,23 +15,23 @@ extension CQt
 	[LinkName("QMovie_new")]
 	public static extern QMovie_Ptr* QMovie_new();
 	[LinkName("QMovie_new2")]
-	public static extern QMovie_Ptr* QMovie_new2(QIODevice_Ptr* device);
+	public static extern QMovie_Ptr* QMovie_new2(QIODevice_Ptr** device);
 	[LinkName("QMovie_new3")]
-	public static extern QMovie_Ptr* QMovie_new3(libqt_string* fileName);
+	public static extern QMovie_Ptr* QMovie_new3(libqt_string fileName);
 	[LinkName("QMovie_new4")]
-	public static extern QMovie_Ptr* QMovie_new4(QObject_Ptr* parent);
+	public static extern QMovie_Ptr* QMovie_new4(QObject_Ptr** parent);
 	[LinkName("QMovie_new5")]
-	public static extern QMovie_Ptr* QMovie_new5(QIODevice_Ptr* device, void** format);
+	public static extern QMovie_Ptr* QMovie_new5(QIODevice_Ptr** device, void** format);
 	[LinkName("QMovie_new6")]
-	public static extern QMovie_Ptr* QMovie_new6(QIODevice_Ptr* device, void** format, QObject_Ptr* parent);
+	public static extern QMovie_Ptr* QMovie_new6(QIODevice_Ptr** device, void** format, QObject_Ptr** parent);
 	[LinkName("QMovie_new7")]
-	public static extern QMovie_Ptr* QMovie_new7(libqt_string* fileName, void** format);
+	public static extern QMovie_Ptr* QMovie_new7(libqt_string fileName, void** format);
 	[LinkName("QMovie_new8")]
-	public static extern QMovie_Ptr* QMovie_new8(libqt_string* fileName, void** format, QObject_Ptr* parent);
+	public static extern QMovie_Ptr* QMovie_new8(libqt_string fileName, void** format, QObject_Ptr** parent);
 	[LinkName("QMovie_Delete")]
 	public static extern void QMovie_Delete(QMovie_Ptr* self);
 	[LinkName("QMovie_MetaObject")]
-	public static extern QMetaObject_Ptr* QMovie_MetaObject(QMovie_Ptr* self);
+	public static extern QMetaObject_Ptr** QMovie_MetaObject(QMovie_Ptr* self);
 	[LinkName("QMovie_Qt_Metacast")]
 	public static extern void* QMovie_Qt_Metacast(QMovie_Ptr* self, c_char* param1);
 	[LinkName("QMovie_Qt_Metacall")]
@@ -41,11 +41,11 @@ extension CQt
 	[LinkName("QMovie_SupportedFormats")]
 	public static extern void* QMovie_SupportedFormats();
 	[LinkName("QMovie_SetDevice")]
-	public static extern void QMovie_SetDevice(QMovie_Ptr* self, QIODevice_Ptr* device);
+	public static extern void QMovie_SetDevice(QMovie_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QMovie_Device")]
-	public static extern QIODevice_Ptr* QMovie_Device(QMovie_Ptr* self);
+	public static extern QIODevice_Ptr** QMovie_Device(QMovie_Ptr* self);
 	[LinkName("QMovie_SetFileName")]
-	public static extern void QMovie_SetFileName(QMovie_Ptr* self, libqt_string* fileName);
+	public static extern void QMovie_SetFileName(QMovie_Ptr* self, libqt_string fileName);
 	[LinkName("QMovie_FileName")]
 	public static extern libqt_string QMovie_FileName(QMovie_Ptr* self);
 	[LinkName("QMovie_SetFormat")]
@@ -55,15 +55,15 @@ extension CQt
 	[LinkName("QMovie_SetBackgroundColor")]
 	public static extern void QMovie_SetBackgroundColor(QMovie_Ptr* self, QColor_Ptr* color);
 	[LinkName("QMovie_BackgroundColor")]
-	public static extern QColor_Ptr QMovie_BackgroundColor(QMovie_Ptr* self);
+	public static extern QColor_Ptr* QMovie_BackgroundColor(QMovie_Ptr* self);
 	[LinkName("QMovie_State")]
 	public static extern QMovie_MovieState QMovie_State(QMovie_Ptr* self);
 	[LinkName("QMovie_FrameRect")]
-	public static extern QRect_Ptr QMovie_FrameRect(QMovie_Ptr* self);
+	public static extern QRect_Ptr* QMovie_FrameRect(QMovie_Ptr* self);
 	[LinkName("QMovie_CurrentImage")]
-	public static extern QImage_Ptr QMovie_CurrentImage(QMovie_Ptr* self);
+	public static extern QImage_Ptr* QMovie_CurrentImage(QMovie_Ptr* self);
 	[LinkName("QMovie_CurrentPixmap")]
-	public static extern QPixmap_Ptr QMovie_CurrentPixmap(QMovie_Ptr* self);
+	public static extern QPixmap_Ptr* QMovie_CurrentPixmap(QMovie_Ptr* self);
 	[LinkName("QMovie_IsValid")]
 	public static extern bool QMovie_IsValid(QMovie_Ptr* self);
 	[LinkName("QMovie_LastError")]
@@ -83,7 +83,7 @@ extension CQt
 	[LinkName("QMovie_Speed")]
 	public static extern c_int QMovie_Speed(QMovie_Ptr* self);
 	[LinkName("QMovie_ScaledSize")]
-	public static extern QSize_Ptr QMovie_ScaledSize(QMovie_Ptr* self);
+	public static extern QSize_Ptr* QMovie_ScaledSize(QMovie_Ptr* self);
 	[LinkName("QMovie_SetScaledSize")]
 	public static extern void QMovie_SetScaledSize(QMovie_Ptr* self, QSize_Ptr* size);
 	[LinkName("QMovie_CacheMode")]
@@ -119,46 +119,47 @@ extension CQt
 	[LinkName("QMovie_Tr3")]
 	public static extern libqt_string QMovie_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QMovie
+class QMovie : IQMovie, IQObject
 {
 	private QMovie_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QMovie_new();
 	}
-	public this(QIODevice_Ptr* device)
+	public this(IQIODevice device)
 	{
-		this.ptr = CQt.QMovie_new2(device);
+		this.ptr = CQt.QMovie_new2((.)device?.ObjectPtr);
 	}
-	public this(libqt_string* fileName)
+	public this(String fileName)
 	{
-		this.ptr = CQt.QMovie_new3(fileName);
+		this.ptr = CQt.QMovie_new3(libqt_string(fileName));
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QMovie_new4(parent);
+		this.ptr = CQt.QMovie_new4((.)parent?.ObjectPtr);
 	}
-	public this(QIODevice_Ptr* device, void** format)
+	public this(IQIODevice device, void** format)
 	{
-		this.ptr = CQt.QMovie_new5(device, format);
+		this.ptr = CQt.QMovie_new5((.)device?.ObjectPtr, format);
 	}
-	public this(QIODevice_Ptr* device, void** format, QObject_Ptr* parent)
+	public this(IQIODevice device, void** format, IQObject parent)
 	{
-		this.ptr = CQt.QMovie_new6(device, format, parent);
+		this.ptr = CQt.QMovie_new6((.)device?.ObjectPtr, format, (.)parent?.ObjectPtr);
 	}
-	public this(libqt_string* fileName, void** format)
+	public this(String fileName, void** format)
 	{
-		this.ptr = CQt.QMovie_new7(fileName, format);
+		this.ptr = CQt.QMovie_new7(libqt_string(fileName), format);
 	}
-	public this(libqt_string* fileName, void** format, QObject_Ptr* parent)
+	public this(String fileName, void** format, IQObject parent)
 	{
-		this.ptr = CQt.QMovie_new8(fileName, format, parent);
+		this.ptr = CQt.QMovie_new8(libqt_string(fileName), format, (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QMovie_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QMovie_MetaObject((.)this.ptr);
 	}
@@ -178,17 +179,17 @@ class QMovie
 	{
 		return CQt.QMovie_SupportedFormats();
 	}
-	public void SetDevice(QIODevice_Ptr* device)
+	public void SetDevice(IQIODevice device)
 	{
-		CQt.QMovie_SetDevice((.)this.ptr, device);
+		CQt.QMovie_SetDevice((.)this.ptr, (.)device?.ObjectPtr);
 	}
-	public QIODevice_Ptr* Device()
+	public QIODevice_Ptr** Device()
 	{
 		return CQt.QMovie_Device((.)this.ptr);
 	}
-	public void SetFileName(libqt_string* fileName)
+	public void SetFileName(String fileName)
 	{
-		CQt.QMovie_SetFileName((.)this.ptr, fileName);
+		CQt.QMovie_SetFileName((.)this.ptr, libqt_string(fileName));
 	}
 	public libqt_string FileName()
 	{
@@ -202,11 +203,11 @@ class QMovie
 	{
 		return CQt.QMovie_Format((.)this.ptr);
 	}
-	public void SetBackgroundColor(QColor_Ptr* color)
+	public void SetBackgroundColor(IQColor color)
 	{
-		CQt.QMovie_SetBackgroundColor((.)this.ptr, color);
+		CQt.QMovie_SetBackgroundColor((.)this.ptr, (.)color?.ObjectPtr);
 	}
-	public QColor_Ptr BackgroundColor()
+	public QColor_Ptr* BackgroundColor()
 	{
 		return CQt.QMovie_BackgroundColor((.)this.ptr);
 	}
@@ -214,15 +215,15 @@ class QMovie
 	{
 		return CQt.QMovie_State((.)this.ptr);
 	}
-	public QRect_Ptr FrameRect()
+	public QRect_Ptr* FrameRect()
 	{
 		return CQt.QMovie_FrameRect((.)this.ptr);
 	}
-	public QImage_Ptr CurrentImage()
+	public QImage_Ptr* CurrentImage()
 	{
 		return CQt.QMovie_CurrentImage((.)this.ptr);
 	}
-	public QPixmap_Ptr CurrentPixmap()
+	public QPixmap_Ptr* CurrentPixmap()
 	{
 		return CQt.QMovie_CurrentPixmap((.)this.ptr);
 	}
@@ -262,13 +263,13 @@ class QMovie
 	{
 		return CQt.QMovie_Speed((.)this.ptr);
 	}
-	public QSize_Ptr ScaledSize()
+	public QSize_Ptr* ScaledSize()
 	{
 		return CQt.QMovie_ScaledSize((.)this.ptr);
 	}
-	public void SetScaledSize(QSize_Ptr* size)
+	public void SetScaledSize(IQSize size)
 	{
-		CQt.QMovie_SetScaledSize((.)this.ptr, size);
+		CQt.QMovie_SetScaledSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public QMovie_CacheMode CacheMode()
 	{
@@ -282,13 +283,13 @@ class QMovie
 	{
 		CQt.QMovie_Started((.)this.ptr);
 	}
-	public void Resized(QSize_Ptr* size)
+	public void Resized(IQSize size)
 	{
-		CQt.QMovie_Resized((.)this.ptr, size);
+		CQt.QMovie_Resized((.)this.ptr, (.)size?.ObjectPtr);
 	}
-	public void Updated(QRect_Ptr* rect)
+	public void Updated(IQRect rect)
 	{
-		CQt.QMovie_Updated((.)this.ptr, rect);
+		CQt.QMovie_Updated((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public void StateChanged(QMovie_MovieState state)
 	{
@@ -334,21 +335,21 @@ class QMovie
 	{
 		return CQt.QMovie_Tr3(s, c, n);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -370,13 +371,13 @@ class QMovie
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -394,49 +395,49 @@ class QMovie
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -446,11 +447,11 @@ class QMovie
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -458,11 +459,11 @@ class QMovie
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -470,7 +471,7 @@ class QMovie
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -482,7 +483,7 @@ class QMovie
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -494,29 +495,29 @@ class QMovie
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -526,85 +527,41 @@ class QMovie
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQMovie
+interface IQMovie : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void* SupportedFormats();
-	public void SetDevice();
-	public QIODevice* Device();
-	public void SetFileName();
-	public libqt_string FileName();
-	public void SetFormat();
-	public void* Format();
-	public void SetBackgroundColor();
-	public QColor BackgroundColor();
-	public QMovie_MovieState State();
-	public QRect FrameRect();
-	public QImage CurrentImage();
-	public QPixmap CurrentPixmap();
-	public bool IsValid();
-	public QImageReader_ImageReaderError LastError();
-	public libqt_string LastErrorString();
-	public bool JumpToFrame();
-	public c_int LoopCount();
-	public c_int FrameCount();
-	public c_int NextFrameDelay();
-	public c_int CurrentFrameNumber();
-	public c_int Speed();
-	public QSize ScaledSize();
-	public void SetScaledSize();
-	public QMovie_CacheMode CacheMode();
-	public void SetCacheMode();
-	public void Started();
-	public void Resized();
-	public void Updated();
-	public void StateChanged();
-	public void Error();
-	public void Finished();
-	public void FrameChanged();
-	public void Start();
-	public bool JumpToNextFrame();
-	public void SetPaused();
-	public void Stop();
-	public void SetSpeed();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
 }
 [AllowDuplicates]
 enum QMovie_MovieState

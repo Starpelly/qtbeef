@@ -13,7 +13,7 @@ struct QDebug_Ptr: void
 extension CQt
 {
 	[LinkName("QDebug_new")]
-	public static extern QDebug_Ptr* QDebug_new(QIODevice_Ptr* device);
+	public static extern QDebug_Ptr* QDebug_new(QIODevice_Ptr** device);
 	[LinkName("QDebug_new2")]
 	public static extern QDebug_Ptr* QDebug_new2(QDebug_Ptr* o);
 	[LinkName("QDebug_Delete")]
@@ -47,7 +47,7 @@ extension CQt
 	[LinkName("QDebug_MaybeQuote")]
 	public static extern QDebug_Ptr* QDebug_MaybeQuote(QDebug_Ptr* self);
 	[LinkName("QDebug_OperatorShiftLeft")]
-	public static extern QDebug_Ptr* QDebug_OperatorShiftLeft(QDebug_Ptr* self, QChar_Ptr t);
+	public static extern QDebug_Ptr* QDebug_OperatorShiftLeft(QDebug_Ptr* self, QChar_Ptr* t);
 	[LinkName("QDebug_OperatorShiftLeft2")]
 	public static extern QDebug_Ptr* QDebug_OperatorShiftLeft2(QDebug_Ptr* self, bool t);
 	[LinkName("QDebug_OperatorShiftLeft3")]
@@ -75,7 +75,7 @@ extension CQt
 	[LinkName("QDebug_OperatorShiftLeft16")]
 	public static extern QDebug_Ptr* QDebug_OperatorShiftLeft16(QDebug_Ptr* self, c_char* t);
 	[LinkName("QDebug_OperatorShiftLeft18")]
-	public static extern QDebug_Ptr* QDebug_OperatorShiftLeft18(QDebug_Ptr* self, libqt_string* t);
+	public static extern QDebug_Ptr* QDebug_OperatorShiftLeft18(QDebug_Ptr* self, libqt_string t);
 	[LinkName("QDebug_OperatorShiftLeft22")]
 	public static extern QDebug_Ptr* QDebug_OperatorShiftLeft22(QDebug_Ptr* self, void** t);
 	[LinkName("QDebug_OperatorShiftLeft23")]
@@ -87,24 +87,25 @@ extension CQt
 	[LinkName("QDebug_MaybeQuote1")]
 	public static extern QDebug_Ptr* QDebug_MaybeQuote1(QDebug_Ptr* self, c_char c);
 }
-class QDebug
+class QDebug : IQDebug, IQIODeviceBase
 {
 	private QDebug_Ptr* ptr;
-	public this(QIODevice_Ptr* device)
+	public void* ObjectPtr => ptr;
+	public this(IQIODevice device)
 	{
-		this.ptr = CQt.QDebug_new(device);
+		this.ptr = CQt.QDebug_new((.)device?.ObjectPtr);
 	}
-	public this(QDebug_Ptr* o)
+	public this(IQDebug o)
 	{
-		this.ptr = CQt.QDebug_new2(o);
+		this.ptr = CQt.QDebug_new2((.)o?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QDebug_Delete(this.ptr);
 	}
-	public void Swap(QDebug_Ptr* other)
+	public void Swap(IQDebug other)
 	{
-		CQt.QDebug_Swap((.)this.ptr, other);
+		CQt.QDebug_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public QDebug_Ptr* ResetFormat()
 	{
@@ -206,9 +207,9 @@ class QDebug
 	{
 		return CQt.QDebug_OperatorShiftLeft16((.)this.ptr, t);
 	}
-	public QDebug_Ptr* OperatorShiftLeft18(libqt_string* t)
+	public QDebug_Ptr* OperatorShiftLeft18(String t)
 	{
-		return CQt.QDebug_OperatorShiftLeft18((.)this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft18((.)this.ptr, libqt_string(t));
 	}
 	public QDebug_Ptr* OperatorShiftLeft22(void** t)
 	{
@@ -231,40 +232,8 @@ class QDebug
 		return CQt.QDebug_MaybeQuote1((.)this.ptr, c);
 	}
 }
-interface IQDebug
+interface IQDebug : IQtObjectInterface
 {
-	public void Swap();
-	public QDebug* ResetFormat();
-	public QDebug* Space();
-	public QDebug* Nospace();
-	public QDebug* MaybeSpace();
-	public QDebug* Verbosity();
-	public c_int Verbosity2();
-	public void SetVerbosity();
-	public bool AutoInsertSpaces();
-	public void SetAutoInsertSpaces();
-	public QDebug* Quote();
-	public QDebug* Noquote();
-	public QDebug* MaybeQuote();
-	public QDebug* OperatorShiftLeft2();
-	public QDebug* OperatorShiftLeft3();
-	public QDebug* OperatorShiftLeft4();
-	public QDebug* OperatorShiftLeft5();
-	public QDebug* OperatorShiftLeft8();
-	public QDebug* OperatorShiftLeft9();
-	public QDebug* OperatorShiftLeft10();
-	public QDebug* OperatorShiftLeft11();
-	public QDebug* OperatorShiftLeft12();
-	public QDebug* OperatorShiftLeft13();
-	public QDebug* OperatorShiftLeft14();
-	public QDebug* OperatorShiftLeft15();
-	public QDebug* OperatorShiftLeft16();
-	public QDebug* OperatorShiftLeft18();
-	public QDebug* OperatorShiftLeft22();
-	public QDebug* OperatorShiftLeft23();
-	public QDebug* OperatorShiftLeft24();
-	public QDebug* OperatorShiftLeft26();
-	public QDebug* MaybeQuote1();
 }
 // --------------------------------------------------------------
 // QDebugStateSaver
@@ -280,19 +249,20 @@ extension CQt
 	[LinkName("QDebugStateSaver_Delete")]
 	public static extern void QDebugStateSaver_Delete(QDebugStateSaver_Ptr* self);
 }
-class QDebugStateSaver
+class QDebugStateSaver : IQDebugStateSaver
 {
 	private QDebugStateSaver_Ptr* ptr;
-	public this(QDebug_Ptr* dbg)
+	public void* ObjectPtr => ptr;
+	public this(IQDebug dbg)
 	{
-		this.ptr = CQt.QDebugStateSaver_new(dbg);
+		this.ptr = CQt.QDebugStateSaver_new((.)dbg?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QDebugStateSaver_Delete(this.ptr);
 	}
 }
-interface IQDebugStateSaver
+interface IQDebugStateSaver : IQtObjectInterface
 {
 }
 // --------------------------------------------------------------
@@ -329,12 +299,13 @@ extension CQt
 	[LinkName("QNoDebug_MaybeQuote1")]
 	public static extern QNoDebug_Ptr* QNoDebug_MaybeQuote1(QNoDebug_Ptr* self, c_char param1);
 }
-class QNoDebug
+class QNoDebug : IQNoDebug
 {
 	private QNoDebug_Ptr* ptr;
-	public this(QNoDebug_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQNoDebug other)
 	{
-		this.ptr = CQt.QNoDebug_new(other);
+		this.ptr = CQt.QNoDebug_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -373,16 +344,8 @@ class QNoDebug
 		return CQt.QNoDebug_MaybeQuote1((.)this.ptr, param1);
 	}
 }
-interface IQNoDebug
+interface IQNoDebug : IQtObjectInterface
 {
-	public QNoDebug* Space();
-	public QNoDebug* Nospace();
-	public QNoDebug* MaybeSpace();
-	public QNoDebug* Quote();
-	public QNoDebug* Noquote();
-	public QNoDebug* MaybeQuote();
-	public QNoDebug* Verbosity();
-	public QNoDebug* MaybeQuote1();
 }
 [AllowDuplicates]
 enum QDebug_VerbosityLevel

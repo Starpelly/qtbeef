@@ -35,12 +35,13 @@ extension CQt
 	[LinkName("QTileRules_SetVertical")]
 	public static extern void QTileRules_SetVertical(QTileRules_Ptr* self, Qt_TileRule vertical);
 }
-class QTileRules
+class QTileRules : IQTileRules
 {
 	private QTileRules_Ptr* ptr;
-	public this(QTileRules_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQTileRules other)
 	{
-		this.ptr = CQt.QTileRules_new(other);
+		this.ptr = CQt.QTileRules_new((.)other?.ObjectPtr);
 	}
 	public this(Qt_TileRule horizontalRule, Qt_TileRule verticalRule)
 	{
@@ -75,12 +76,8 @@ class QTileRules
 		CQt.QTileRules_SetVertical((.)this.ptr, vertical);
 	}
 }
-interface IQTileRules
+interface IQTileRules : IQtObjectInterface
 {
-	public Qt_TileRule Horizontal();
-	public void SetHorizontal();
-	public Qt_TileRule Vertical();
-	public void SetVertical();
 }
 [AllowDuplicates]
 enum QDrawBorderPixmap_DrawingHint

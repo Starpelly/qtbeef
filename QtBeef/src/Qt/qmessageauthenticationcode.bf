@@ -27,15 +27,16 @@ extension CQt
 	[LinkName("QMessageAuthenticationCode_AddData2")]
 	public static extern void QMessageAuthenticationCode_AddData2(QMessageAuthenticationCode_Ptr* self, void** data);
 	[LinkName("QMessageAuthenticationCode_AddData3")]
-	public static extern bool QMessageAuthenticationCode_AddData3(QMessageAuthenticationCode_Ptr* self, QIODevice_Ptr* device);
+	public static extern bool QMessageAuthenticationCode_AddData3(QMessageAuthenticationCode_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QMessageAuthenticationCode_Result")]
 	public static extern void* QMessageAuthenticationCode_Result(QMessageAuthenticationCode_Ptr* self);
 	[LinkName("QMessageAuthenticationCode_Hash")]
 	public static extern void* QMessageAuthenticationCode_Hash(void** message, void** key, QCryptographicHash_Algorithm method);
 }
-class QMessageAuthenticationCode
+class QMessageAuthenticationCode : IQMessageAuthenticationCode
 {
 	private QMessageAuthenticationCode_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(QCryptographicHash_Algorithm method)
 	{
 		this.ptr = CQt.QMessageAuthenticationCode_new(method);
@@ -64,9 +65,9 @@ class QMessageAuthenticationCode
 	{
 		CQt.QMessageAuthenticationCode_AddData2((.)this.ptr, data);
 	}
-	public bool AddData3(QIODevice_Ptr* device)
+	public bool AddData3(IQIODevice device)
 	{
-		return CQt.QMessageAuthenticationCode_AddData3((.)this.ptr, device);
+		return CQt.QMessageAuthenticationCode_AddData3((.)this.ptr, (.)device?.ObjectPtr);
 	}
 	public void* Result()
 	{
@@ -77,13 +78,6 @@ class QMessageAuthenticationCode
 		return CQt.QMessageAuthenticationCode_Hash(message, key, method);
 	}
 }
-interface IQMessageAuthenticationCode
+interface IQMessageAuthenticationCode : IQtObjectInterface
 {
-	public void Reset();
-	public void SetKey();
-	public void AddData();
-	public void AddData2();
-	public bool AddData3();
-	public void* Result();
-	public void* Hash();
 }

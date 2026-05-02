@@ -25,15 +25,16 @@ extension CQt
 	[LinkName("QPagedPaintDevice_SetPageMargins")]
 	public static extern bool QPagedPaintDevice_SetPageMargins(QPagedPaintDevice_Ptr* self, QMarginsF_Ptr* margins, QPageLayout_Unit units);
 	[LinkName("QPagedPaintDevice_PageLayout")]
-	public static extern QPageLayout_Ptr QPagedPaintDevice_PageLayout(QPagedPaintDevice_Ptr* self);
+	public static extern QPageLayout_Ptr* QPagedPaintDevice_PageLayout(QPagedPaintDevice_Ptr* self);
 	[LinkName("QPagedPaintDevice_SetPageRanges")]
 	public static extern void QPagedPaintDevice_SetPageRanges(QPagedPaintDevice_Ptr* self, QPageRanges_Ptr* ranges);
 	[LinkName("QPagedPaintDevice_PageRanges")]
-	public static extern QPageRanges_Ptr QPagedPaintDevice_PageRanges(QPagedPaintDevice_Ptr* self);
+	public static extern QPageRanges_Ptr* QPagedPaintDevice_PageRanges(QPagedPaintDevice_Ptr* self);
 }
-class QPagedPaintDevice
+class QPagedPaintDevice : IQPagedPaintDevice, IQPaintDevice
 {
 	private QPagedPaintDevice_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QPagedPaintDevice_Delete(this.ptr);
@@ -42,31 +43,31 @@ class QPagedPaintDevice
 	{
 		return CQt.QPagedPaintDevice_NewPage((.)this.ptr);
 	}
-	public bool SetPageLayout(QPageLayout_Ptr* pageLayout)
+	public bool SetPageLayout(IQPageLayout pageLayout)
 	{
-		return CQt.QPagedPaintDevice_SetPageLayout((.)this.ptr, pageLayout);
+		return CQt.QPagedPaintDevice_SetPageLayout((.)this.ptr, (.)pageLayout?.ObjectPtr);
 	}
-	public bool SetPageSize(QPageSize_Ptr* pageSize)
+	public bool SetPageSize(IQPageSize pageSize)
 	{
-		return CQt.QPagedPaintDevice_SetPageSize((.)this.ptr, pageSize);
+		return CQt.QPagedPaintDevice_SetPageSize((.)this.ptr, (.)pageSize?.ObjectPtr);
 	}
 	public bool SetPageOrientation(QPageLayout_Orientation orientation)
 	{
 		return CQt.QPagedPaintDevice_SetPageOrientation((.)this.ptr, orientation);
 	}
-	public bool SetPageMargins(QMarginsF_Ptr* margins, QPageLayout_Unit units)
+	public bool SetPageMargins(IQMarginsF margins, QPageLayout_Unit units)
 	{
-		return CQt.QPagedPaintDevice_SetPageMargins((.)this.ptr, margins, units);
+		return CQt.QPagedPaintDevice_SetPageMargins((.)this.ptr, (.)margins?.ObjectPtr, units);
 	}
-	public QPageLayout_Ptr PageLayout()
+	public QPageLayout_Ptr* PageLayout()
 	{
 		return CQt.QPagedPaintDevice_PageLayout((.)this.ptr);
 	}
-	public void SetPageRanges(QPageRanges_Ptr* ranges)
+	public void SetPageRanges(IQPageRanges ranges)
 	{
-		CQt.QPagedPaintDevice_SetPageRanges((.)this.ptr, ranges);
+		CQt.QPagedPaintDevice_SetPageRanges((.)this.ptr, (.)ranges?.ObjectPtr);
 	}
-	public QPageRanges_Ptr PageRanges()
+	public QPageRanges_Ptr* PageRanges()
 	{
 		return CQt.QPagedPaintDevice_PageRanges((.)this.ptr);
 	}
@@ -78,7 +79,7 @@ class QPagedPaintDevice
 	{
 		return CQt.QPaintDevice_PaintingActive((.)this.ptr);
 	}
-	public QPaintEngine_Ptr* PaintEngine()
+	public QPaintEngine_Ptr** PaintEngine()
 	{
 		return CQt.QPaintDevice_PaintEngine((.)this.ptr);
 	}
@@ -138,29 +139,21 @@ class QPagedPaintDevice
 	{
 		return CQt.QPaintDevice_Metric((.)this.ptr, metric);
 	}
-	public void InitPainter(QPainter_Ptr* painter)
+	public void InitPainter(IQPainter painter)
 	{
-		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
+		CQt.QPaintDevice_InitPainter((.)this.ptr, (.)painter?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
+	public QPaintDevice_Ptr** Redirected(IQPoint offset)
 	{
-		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
+		return CQt.QPaintDevice_Redirected((.)this.ptr, (.)offset?.ObjectPtr);
 	}
-	public QPainter_Ptr* SharedPainter()
+	public QPainter_Ptr** SharedPainter()
 	{
 		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
-interface IQPagedPaintDevice
+interface IQPagedPaintDevice : IQtObjectInterface
 {
-	public bool NewPage();
-	public bool SetPageLayout();
-	public bool SetPageSize();
-	public bool SetPageOrientation();
-	public bool SetPageMargins();
-	public QPageLayout PageLayout();
-	public void SetPageRanges();
-	public QPageRanges PageRanges();
 }
 [AllowDuplicates]
 enum QPagedPaintDevice_PdfVersion

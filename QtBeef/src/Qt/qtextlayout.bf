@@ -23,7 +23,7 @@ extension CQt
 	[LinkName("QTextInlineObject_IsValid")]
 	public static extern bool QTextInlineObject_IsValid(QTextInlineObject_Ptr* self);
 	[LinkName("QTextInlineObject_Rect")]
-	public static extern QRectF_Ptr QTextInlineObject_Rect(QTextInlineObject_Ptr* self);
+	public static extern QRectF_Ptr* QTextInlineObject_Rect(QTextInlineObject_Ptr* self);
 	[LinkName("QTextInlineObject_Width")]
 	public static extern double QTextInlineObject_Width(QTextInlineObject_Ptr* self);
 	[LinkName("QTextInlineObject_Ascent")]
@@ -45,14 +45,15 @@ extension CQt
 	[LinkName("QTextInlineObject_FormatIndex")]
 	public static extern c_int QTextInlineObject_FormatIndex(QTextInlineObject_Ptr* self);
 	[LinkName("QTextInlineObject_Format")]
-	public static extern QTextFormat_Ptr QTextInlineObject_Format(QTextInlineObject_Ptr* self);
+	public static extern QTextFormat_Ptr* QTextInlineObject_Format(QTextInlineObject_Ptr* self);
 }
-class QTextInlineObject
+class QTextInlineObject : IQTextInlineObject
 {
 	private QTextInlineObject_Ptr* ptr;
-	public this(QTextInlineObject_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQTextInlineObject other)
 	{
-		this.ptr = CQt.QTextInlineObject_new(other);
+		this.ptr = CQt.QTextInlineObject_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -66,7 +67,7 @@ class QTextInlineObject
 	{
 		return CQt.QTextInlineObject_IsValid((.)this.ptr);
 	}
-	public QRectF_Ptr Rect()
+	public QRectF_Ptr* Rect()
 	{
 		return CQt.QTextInlineObject_Rect((.)this.ptr);
 	}
@@ -110,26 +111,13 @@ class QTextInlineObject
 	{
 		return CQt.QTextInlineObject_FormatIndex((.)this.ptr);
 	}
-	public QTextFormat_Ptr Format()
+	public QTextFormat_Ptr* Format()
 	{
 		return CQt.QTextInlineObject_Format((.)this.ptr);
 	}
 }
-interface IQTextInlineObject
+interface IQTextInlineObject : IQtObjectInterface
 {
-	public bool IsValid();
-	public QRectF Rect();
-	public double Width();
-	public double Ascent();
-	public double Descent();
-	public double Height();
-	public Qt_LayoutDirection TextDirection();
-	public void SetWidth();
-	public void SetAscent();
-	public void SetDescent();
-	public c_int TextPosition();
-	public c_int FormatIndex();
-	public QTextFormat Format();
 }
 // --------------------------------------------------------------
 // QTextLayout
@@ -143,23 +131,23 @@ extension CQt
 	[LinkName("QTextLayout_new")]
 	public static extern QTextLayout_Ptr* QTextLayout_new();
 	[LinkName("QTextLayout_new2")]
-	public static extern QTextLayout_Ptr* QTextLayout_new2(libqt_string* text);
+	public static extern QTextLayout_Ptr* QTextLayout_new2(libqt_string text);
 	[LinkName("QTextLayout_new3")]
-	public static extern QTextLayout_Ptr* QTextLayout_new3(libqt_string* text, QFont_Ptr* font);
+	public static extern QTextLayout_Ptr* QTextLayout_new3(libqt_string text, QFont_Ptr* font);
 	[LinkName("QTextLayout_new4")]
 	public static extern QTextLayout_Ptr* QTextLayout_new4(QTextBlock_Ptr* b);
 	[LinkName("QTextLayout_new5")]
-	public static extern QTextLayout_Ptr* QTextLayout_new5(libqt_string* text, QFont_Ptr* font, QPaintDevice_Ptr* paintdevice);
+	public static extern QTextLayout_Ptr* QTextLayout_new5(libqt_string text, QFont_Ptr* font, QPaintDevice_Ptr** paintdevice);
 	[LinkName("QTextLayout_Delete")]
 	public static extern void QTextLayout_Delete(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_SetFont")]
 	public static extern void QTextLayout_SetFont(QTextLayout_Ptr* self, QFont_Ptr* f);
 	[LinkName("QTextLayout_Font")]
-	public static extern QFont_Ptr QTextLayout_Font(QTextLayout_Ptr* self);
+	public static extern QFont_Ptr* QTextLayout_Font(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_SetRawFont")]
 	public static extern void QTextLayout_SetRawFont(QTextLayout_Ptr* self, QRawFont_Ptr* rawFont);
 	[LinkName("QTextLayout_SetText")]
-	public static extern void QTextLayout_SetText(QTextLayout_Ptr* self, libqt_string* stringVal);
+	public static extern void QTextLayout_SetText(QTextLayout_Ptr* self, libqt_string stringVal);
 	[LinkName("QTextLayout_Text")]
 	public static extern libqt_string QTextLayout_Text(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_SetTextOption")]
@@ -167,7 +155,7 @@ extension CQt
 	[LinkName("QTextLayout_TextOption")]
 	public static extern QTextOption_Ptr* QTextLayout_TextOption(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_SetPreeditArea")]
-	public static extern void QTextLayout_SetPreeditArea(QTextLayout_Ptr* self, c_int position, libqt_string* text);
+	public static extern void QTextLayout_SetPreeditArea(QTextLayout_Ptr* self, c_int position, libqt_string text);
 	[LinkName("QTextLayout_PreeditAreaPosition")]
 	public static extern c_int QTextLayout_PreeditAreaPosition(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_PreeditAreaText")]
@@ -193,13 +181,13 @@ extension CQt
 	[LinkName("QTextLayout_ClearLayout")]
 	public static extern void QTextLayout_ClearLayout(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_CreateLine")]
-	public static extern QTextLine_Ptr QTextLayout_CreateLine(QTextLayout_Ptr* self);
+	public static extern QTextLine_Ptr* QTextLayout_CreateLine(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_LineCount")]
 	public static extern c_int QTextLayout_LineCount(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_LineAt")]
-	public static extern QTextLine_Ptr QTextLayout_LineAt(QTextLayout_Ptr* self, c_int i);
+	public static extern QTextLine_Ptr* QTextLayout_LineAt(QTextLayout_Ptr* self, c_int i);
 	[LinkName("QTextLayout_LineForTextPosition")]
-	public static extern QTextLine_Ptr QTextLayout_LineForTextPosition(QTextLayout_Ptr* self, c_int pos);
+	public static extern QTextLine_Ptr* QTextLayout_LineForTextPosition(QTextLayout_Ptr* self, c_int pos);
 	[LinkName("QTextLayout_IsValidCursorPosition")]
 	public static extern bool QTextLayout_IsValidCursorPosition(QTextLayout_Ptr* self, c_int pos);
 	[LinkName("QTextLayout_NextCursorPosition")]
@@ -211,17 +199,17 @@ extension CQt
 	[LinkName("QTextLayout_RightCursorPosition")]
 	public static extern c_int QTextLayout_RightCursorPosition(QTextLayout_Ptr* self, c_int oldPos);
 	[LinkName("QTextLayout_Draw")]
-	public static extern void QTextLayout_Draw(QTextLayout_Ptr* self, QPainter_Ptr* p, QPointF_Ptr* pos);
+	public static extern void QTextLayout_Draw(QTextLayout_Ptr* self, QPainter_Ptr** p, QPointF_Ptr* pos);
 	[LinkName("QTextLayout_DrawCursor")]
-	public static extern void QTextLayout_DrawCursor(QTextLayout_Ptr* self, QPainter_Ptr* p, QPointF_Ptr* pos, c_int cursorPosition);
+	public static extern void QTextLayout_DrawCursor(QTextLayout_Ptr* self, QPainter_Ptr** p, QPointF_Ptr* pos, c_int cursorPosition);
 	[LinkName("QTextLayout_DrawCursor2")]
-	public static extern void QTextLayout_DrawCursor2(QTextLayout_Ptr* self, QPainter_Ptr* p, QPointF_Ptr* pos, c_int cursorPosition, c_int width);
+	public static extern void QTextLayout_DrawCursor2(QTextLayout_Ptr* self, QPainter_Ptr** p, QPointF_Ptr* pos, c_int cursorPosition, c_int width);
 	[LinkName("QTextLayout_Position")]
-	public static extern QPointF_Ptr QTextLayout_Position(QTextLayout_Ptr* self);
+	public static extern QPointF_Ptr* QTextLayout_Position(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_SetPosition")]
 	public static extern void QTextLayout_SetPosition(QTextLayout_Ptr* self, QPointF_Ptr* p);
 	[LinkName("QTextLayout_BoundingRect")]
-	public static extern QRectF_Ptr QTextLayout_BoundingRect(QTextLayout_Ptr* self);
+	public static extern QRectF_Ptr* QTextLayout_BoundingRect(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_MinimumWidth")]
 	public static extern double QTextLayout_MinimumWidth(QTextLayout_Ptr* self);
 	[LinkName("QTextLayout_MaximumWidth")]
@@ -235,72 +223,73 @@ extension CQt
 	[LinkName("QTextLayout_PreviousCursorPosition2")]
 	public static extern c_int QTextLayout_PreviousCursorPosition2(QTextLayout_Ptr* self, c_int oldPos, QTextLayout_CursorMode mode);
 	[LinkName("QTextLayout_Draw3")]
-	public static extern void QTextLayout_Draw3(QTextLayout_Ptr* self, QPainter_Ptr* p, QPointF_Ptr* pos, void** selections);
+	public static extern void QTextLayout_Draw3(QTextLayout_Ptr* self, QPainter_Ptr** p, QPointF_Ptr* pos, void** selections);
 	[LinkName("QTextLayout_Draw4")]
-	public static extern void QTextLayout_Draw4(QTextLayout_Ptr* self, QPainter_Ptr* p, QPointF_Ptr* pos, void** selections, QRectF_Ptr* clip);
+	public static extern void QTextLayout_Draw4(QTextLayout_Ptr* self, QPainter_Ptr** p, QPointF_Ptr* pos, void** selections, QRectF_Ptr* clip);
 	[LinkName("QTextLayout_GlyphRuns1")]
 	public static extern void* QTextLayout_GlyphRuns1(QTextLayout_Ptr* self, c_int from);
 	[LinkName("QTextLayout_GlyphRuns2")]
 	public static extern void* QTextLayout_GlyphRuns2(QTextLayout_Ptr* self, c_int from, c_int length);
 }
-class QTextLayout
+class QTextLayout : IQTextLayout
 {
 	private QTextLayout_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTextLayout_new();
 	}
-	public this(libqt_string* text)
+	public this(String text)
 	{
-		this.ptr = CQt.QTextLayout_new2(text);
+		this.ptr = CQt.QTextLayout_new2(libqt_string(text));
 	}
-	public this(libqt_string* text, QFont_Ptr* font)
+	public this(String text, IQFont font)
 	{
-		this.ptr = CQt.QTextLayout_new3(text, font);
+		this.ptr = CQt.QTextLayout_new3(libqt_string(text), (.)font?.ObjectPtr);
 	}
-	public this(QTextBlock_Ptr* b)
+	public this(IQTextBlock b)
 	{
-		this.ptr = CQt.QTextLayout_new4(b);
+		this.ptr = CQt.QTextLayout_new4((.)b?.ObjectPtr);
 	}
-	public this(libqt_string* text, QFont_Ptr* font, QPaintDevice_Ptr* paintdevice)
+	public this(String text, IQFont font, IQPaintDevice paintdevice)
 	{
-		this.ptr = CQt.QTextLayout_new5(text, font, paintdevice);
+		this.ptr = CQt.QTextLayout_new5(libqt_string(text), (.)font?.ObjectPtr, (.)paintdevice?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QTextLayout_Delete(this.ptr);
 	}
-	public void SetFont(QFont_Ptr* f)
+	public void SetFont(IQFont f)
 	{
-		CQt.QTextLayout_SetFont((.)this.ptr, f);
+		CQt.QTextLayout_SetFont((.)this.ptr, (.)f?.ObjectPtr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QTextLayout_Font((.)this.ptr);
 	}
-	public void SetRawFont(QRawFont_Ptr* rawFont)
+	public void SetRawFont(IQRawFont rawFont)
 	{
-		CQt.QTextLayout_SetRawFont((.)this.ptr, rawFont);
+		CQt.QTextLayout_SetRawFont((.)this.ptr, (.)rawFont?.ObjectPtr);
 	}
-	public void SetText(libqt_string* stringVal)
+	public void SetText(String stringVal)
 	{
-		CQt.QTextLayout_SetText((.)this.ptr, stringVal);
+		CQt.QTextLayout_SetText((.)this.ptr, libqt_string(stringVal));
 	}
 	public libqt_string Text()
 	{
 		return CQt.QTextLayout_Text((.)this.ptr);
 	}
-	public void SetTextOption(QTextOption_Ptr* option)
+	public void SetTextOption(IQTextOption option)
 	{
-		CQt.QTextLayout_SetTextOption((.)this.ptr, option);
+		CQt.QTextLayout_SetTextOption((.)this.ptr, (.)option?.ObjectPtr);
 	}
 	public QTextOption_Ptr* TextOption()
 	{
 		return CQt.QTextLayout_TextOption((.)this.ptr);
 	}
-	public void SetPreeditArea(c_int position, libqt_string* text)
+	public void SetPreeditArea(c_int position, String text)
 	{
-		CQt.QTextLayout_SetPreeditArea((.)this.ptr, position, text);
+		CQt.QTextLayout_SetPreeditArea((.)this.ptr, position, libqt_string(text));
 	}
 	public c_int PreeditAreaPosition()
 	{
@@ -350,7 +339,7 @@ class QTextLayout
 	{
 		CQt.QTextLayout_ClearLayout((.)this.ptr);
 	}
-	public QTextLine_Ptr CreateLine()
+	public QTextLine_Ptr* CreateLine()
 	{
 		return CQt.QTextLayout_CreateLine((.)this.ptr);
 	}
@@ -358,11 +347,11 @@ class QTextLayout
 	{
 		return CQt.QTextLayout_LineCount((.)this.ptr);
 	}
-	public QTextLine_Ptr LineAt(c_int i)
+	public QTextLine_Ptr* LineAt(c_int i)
 	{
 		return CQt.QTextLayout_LineAt((.)this.ptr, i);
 	}
-	public QTextLine_Ptr LineForTextPosition(c_int pos)
+	public QTextLine_Ptr* LineForTextPosition(c_int pos)
 	{
 		return CQt.QTextLayout_LineForTextPosition((.)this.ptr, pos);
 	}
@@ -386,27 +375,27 @@ class QTextLayout
 	{
 		return CQt.QTextLayout_RightCursorPosition((.)this.ptr, oldPos);
 	}
-	public void Draw(QPainter_Ptr* p, QPointF_Ptr* pos)
+	public void Draw(IQPainter p, IQPointF pos)
 	{
-		CQt.QTextLayout_Draw((.)this.ptr, p, pos);
+		CQt.QTextLayout_Draw((.)this.ptr, (.)p?.ObjectPtr, (.)pos?.ObjectPtr);
 	}
-	public void DrawCursor(QPainter_Ptr* p, QPointF_Ptr* pos, c_int cursorPosition)
+	public void DrawCursor(IQPainter p, IQPointF pos, c_int cursorPosition)
 	{
-		CQt.QTextLayout_DrawCursor((.)this.ptr, p, pos, cursorPosition);
+		CQt.QTextLayout_DrawCursor((.)this.ptr, (.)p?.ObjectPtr, (.)pos?.ObjectPtr, cursorPosition);
 	}
-	public void DrawCursor2(QPainter_Ptr* p, QPointF_Ptr* pos, c_int cursorPosition, c_int width)
+	public void DrawCursor2(IQPainter p, IQPointF pos, c_int cursorPosition, c_int width)
 	{
-		CQt.QTextLayout_DrawCursor2((.)this.ptr, p, pos, cursorPosition, width);
+		CQt.QTextLayout_DrawCursor2((.)this.ptr, (.)p?.ObjectPtr, (.)pos?.ObjectPtr, cursorPosition, width);
 	}
-	public QPointF_Ptr Position()
+	public QPointF_Ptr* Position()
 	{
 		return CQt.QTextLayout_Position((.)this.ptr);
 	}
-	public void SetPosition(QPointF_Ptr* p)
+	public void SetPosition(IQPointF p)
 	{
-		CQt.QTextLayout_SetPosition((.)this.ptr, p);
+		CQt.QTextLayout_SetPosition((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QTextLayout_BoundingRect((.)this.ptr);
 	}
@@ -434,13 +423,13 @@ class QTextLayout
 	{
 		return CQt.QTextLayout_PreviousCursorPosition2((.)this.ptr, oldPos, mode);
 	}
-	public void Draw3(QPainter_Ptr* p, QPointF_Ptr* pos, void** selections)
+	public void Draw3(IQPainter p, IQPointF pos, void** selections)
 	{
-		CQt.QTextLayout_Draw3((.)this.ptr, p, pos, selections);
+		CQt.QTextLayout_Draw3((.)this.ptr, (.)p?.ObjectPtr, (.)pos?.ObjectPtr, selections);
 	}
-	public void Draw4(QPainter_Ptr* p, QPointF_Ptr* pos, void** selections, QRectF_Ptr* clip)
+	public void Draw4(IQPainter p, IQPointF pos, void** selections, IQRectF clip)
 	{
-		CQt.QTextLayout_Draw4((.)this.ptr, p, pos, selections, clip);
+		CQt.QTextLayout_Draw4((.)this.ptr, (.)p?.ObjectPtr, (.)pos?.ObjectPtr, selections, (.)clip?.ObjectPtr);
 	}
 	public void* GlyphRuns1(c_int from)
 	{
@@ -451,53 +440,8 @@ class QTextLayout
 		return CQt.QTextLayout_GlyphRuns2((.)this.ptr, from, length);
 	}
 }
-interface IQTextLayout
+interface IQTextLayout : IQtObjectInterface
 {
-	public void SetFont();
-	public QFont Font();
-	public void SetRawFont();
-	public void SetText();
-	public libqt_string Text();
-	public void SetTextOption();
-	public QTextOption* TextOption();
-	public void SetPreeditArea();
-	public c_int PreeditAreaPosition();
-	public libqt_string PreeditAreaText();
-	public void SetFormats();
-	public void* Formats();
-	public void ClearFormats();
-	public void SetCacheEnabled();
-	public bool CacheEnabled();
-	public void SetCursorMoveStyle();
-	public Qt_CursorMoveStyle CursorMoveStyle();
-	public void BeginLayout();
-	public void EndLayout();
-	public void ClearLayout();
-	public QTextLine CreateLine();
-	public c_int LineCount();
-	public QTextLine LineAt();
-	public QTextLine LineForTextPosition();
-	public bool IsValidCursorPosition();
-	public c_int NextCursorPosition();
-	public c_int PreviousCursorPosition();
-	public c_int LeftCursorPosition();
-	public c_int RightCursorPosition();
-	public void Draw();
-	public void DrawCursor();
-	public void DrawCursor2();
-	public QPointF Position();
-	public void SetPosition();
-	public QRectF BoundingRect();
-	public double MinimumWidth();
-	public double MaximumWidth();
-	public void* GlyphRuns();
-	public void SetFlags();
-	public c_int NextCursorPosition2();
-	public c_int PreviousCursorPosition2();
-	public void Draw3();
-	public void Draw4();
-	public void* GlyphRuns1();
-	public void* GlyphRuns2();
 }
 // --------------------------------------------------------------
 // QTextLine
@@ -519,7 +463,7 @@ extension CQt
 	[LinkName("QTextLine_IsValid")]
 	public static extern bool QTextLine_IsValid(QTextLine_Ptr* self);
 	[LinkName("QTextLine_Rect")]
-	public static extern QRectF_Ptr QTextLine_Rect(QTextLine_Ptr* self);
+	public static extern QRectF_Ptr* QTextLine_Rect(QTextLine_Ptr* self);
 	[LinkName("QTextLine_X")]
 	public static extern double QTextLine_X(QTextLine_Ptr* self);
 	[LinkName("QTextLine_Y")]
@@ -543,7 +487,7 @@ extension CQt
 	[LinkName("QTextLine_HorizontalAdvance")]
 	public static extern double QTextLine_HorizontalAdvance(QTextLine_Ptr* self);
 	[LinkName("QTextLine_NaturalTextRect")]
-	public static extern QRectF_Ptr QTextLine_NaturalTextRect(QTextLine_Ptr* self);
+	public static extern QRectF_Ptr* QTextLine_NaturalTextRect(QTextLine_Ptr* self);
 	[LinkName("QTextLine_CursorToX")]
 	public static extern double QTextLine_CursorToX(QTextLine_Ptr* self, c_int* cursorPos);
 	[LinkName("QTextLine_CursorToX2")]
@@ -559,7 +503,7 @@ extension CQt
 	[LinkName("QTextLine_SetPosition")]
 	public static extern void QTextLine_SetPosition(QTextLine_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QTextLine_Position")]
-	public static extern QPointF_Ptr QTextLine_Position(QTextLine_Ptr* self);
+	public static extern QPointF_Ptr* QTextLine_Position(QTextLine_Ptr* self);
 	[LinkName("QTextLine_TextStart")]
 	public static extern c_int QTextLine_TextStart(QTextLine_Ptr* self);
 	[LinkName("QTextLine_TextLength")]
@@ -567,7 +511,7 @@ extension CQt
 	[LinkName("QTextLine_LineNumber")]
 	public static extern c_int QTextLine_LineNumber(QTextLine_Ptr* self);
 	[LinkName("QTextLine_Draw")]
-	public static extern void QTextLine_Draw(QTextLine_Ptr* self, QPainter_Ptr* painter, QPointF_Ptr* position);
+	public static extern void QTextLine_Draw(QTextLine_Ptr* self, QPainter_Ptr** painter, QPointF_Ptr* position);
 	[LinkName("QTextLine_GlyphRuns")]
 	public static extern void* QTextLine_GlyphRuns(QTextLine_Ptr* self);
 	[LinkName("QTextLine_CursorToX22")]
@@ -581,12 +525,13 @@ extension CQt
 	[LinkName("QTextLine_GlyphRuns2")]
 	public static extern void* QTextLine_GlyphRuns2(QTextLine_Ptr* self, c_int from, c_int length);
 }
-class QTextLine
+class QTextLine : IQTextLine
 {
 	private QTextLine_Ptr* ptr;
-	public this(QTextLine_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQTextLine other)
 	{
-		this.ptr = CQt.QTextLine_new(other);
+		this.ptr = CQt.QTextLine_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -600,7 +545,7 @@ class QTextLine
 	{
 		return CQt.QTextLine_IsValid((.)this.ptr);
 	}
-	public QRectF_Ptr Rect()
+	public QRectF_Ptr* Rect()
 	{
 		return CQt.QTextLine_Rect((.)this.ptr);
 	}
@@ -648,7 +593,7 @@ class QTextLine
 	{
 		return CQt.QTextLine_HorizontalAdvance((.)this.ptr);
 	}
-	public QRectF_Ptr NaturalTextRect()
+	public QRectF_Ptr* NaturalTextRect()
 	{
 		return CQt.QTextLine_NaturalTextRect((.)this.ptr);
 	}
@@ -676,11 +621,11 @@ class QTextLine
 	{
 		CQt.QTextLine_SetNumColumns2((.)this.ptr, columns, alignmentWidth);
 	}
-	public void SetPosition(QPointF_Ptr* pos)
+	public void SetPosition(IQPointF pos)
 	{
-		CQt.QTextLine_SetPosition((.)this.ptr, pos);
+		CQt.QTextLine_SetPosition((.)this.ptr, (.)pos?.ObjectPtr);
 	}
-	public QPointF_Ptr Position()
+	public QPointF_Ptr* Position()
 	{
 		return CQt.QTextLine_Position((.)this.ptr);
 	}
@@ -696,9 +641,9 @@ class QTextLine
 	{
 		return CQt.QTextLine_LineNumber((.)this.ptr);
 	}
-	public void Draw(QPainter_Ptr* painter, QPointF_Ptr* position)
+	public void Draw(IQPainter painter, IQPointF position)
 	{
-		CQt.QTextLine_Draw((.)this.ptr, painter, position);
+		CQt.QTextLine_Draw((.)this.ptr, (.)painter?.ObjectPtr, (.)position?.ObjectPtr);
 	}
 	public void* GlyphRuns()
 	{
@@ -725,40 +670,8 @@ class QTextLine
 		return CQt.QTextLine_GlyphRuns2((.)this.ptr, from, length);
 	}
 }
-interface IQTextLine
+interface IQTextLine : IQtObjectInterface
 {
-	public bool IsValid();
-	public QRectF Rect();
-	public double X();
-	public double Y();
-	public double Width();
-	public double Ascent();
-	public double Descent();
-	public double Height();
-	public double Leading();
-	public void SetLeadingIncluded();
-	public bool LeadingIncluded();
-	public double NaturalTextWidth();
-	public double HorizontalAdvance();
-	public QRectF NaturalTextRect();
-	public double CursorToX();
-	public double CursorToX2();
-	public c_int XToCursor();
-	public void SetLineWidth();
-	public void SetNumColumns();
-	public void SetNumColumns2();
-	public void SetPosition();
-	public QPointF Position();
-	public c_int TextStart();
-	public c_int TextLength();
-	public c_int LineNumber();
-	public void Draw();
-	public void* GlyphRuns();
-	public double CursorToX22();
-	public double CursorToX23();
-	public c_int XToCursor2();
-	public void* GlyphRuns1();
-	public void* GlyphRuns2();
 }
 // --------------------------------------------------------------
 // QTextLayout::FormatRange
@@ -770,7 +683,7 @@ struct QTextLayout_FormatRange_Ptr: void
 extension CQt
 {
 	[LinkName("QTextLayout_FormatRange_new")]
-	public static extern QTextLayout_FormatRange_Ptr* QTextLayout_FormatRange_new(QTextLayout_FormatRange* param1);
+	public static extern QTextLayout_FormatRange_Ptr* QTextLayout_FormatRange_new(QTextLayout_FormatRange_Ptr* param1);
 	[LinkName("QTextLayout_FormatRange_Delete")]
 	public static extern void QTextLayout_FormatRange_Delete(QTextLayout_FormatRange_Ptr* self);
 	[LinkName("QTextLayout_FormatRange_Start")]
@@ -782,18 +695,19 @@ extension CQt
 	[LinkName("QTextLayout_FormatRange_SetLength")]
 	public static extern void QTextLayout_FormatRange_SetLength(QTextLayout_FormatRange_Ptr* self, c_int length);
 	[LinkName("QTextLayout_FormatRange_Format")]
-	public static extern QTextCharFormat_Ptr QTextLayout_FormatRange_Format(QTextLayout_FormatRange_Ptr* self);
+	public static extern QTextCharFormat_Ptr* QTextLayout_FormatRange_Format(QTextLayout_FormatRange_Ptr* self);
 	[LinkName("QTextLayout_FormatRange_SetFormat")]
-	public static extern void QTextLayout_FormatRange_SetFormat(QTextLayout_FormatRange_Ptr* self, QTextCharFormat_Ptr format);
+	public static extern void QTextLayout_FormatRange_SetFormat(QTextLayout_FormatRange_Ptr* self, QTextCharFormat_Ptr* format);
 	[LinkName("QTextLayout_FormatRange_OperatorAssign")]
-	public static extern void QTextLayout_FormatRange_OperatorAssign(QTextLayout_FormatRange_Ptr* self, QTextLayout_FormatRange* param1);
+	public static extern void QTextLayout_FormatRange_OperatorAssign(QTextLayout_FormatRange_Ptr* self, QTextLayout_FormatRange_Ptr* param1);
 }
-class QTextLayout_FormatRange
+class QTextLayout_FormatRange : IQTextLayout_FormatRange
 {
 	private QTextLayout_FormatRange_Ptr* ptr;
-	public this(QTextLayout_FormatRange* param1)
+	public void* ObjectPtr => ptr;
+	public this(IQTextLayout_FormatRange param1)
 	{
-		this.ptr = CQt.QTextLayout_FormatRange_new(param1);
+		this.ptr = CQt.QTextLayout_FormatRange_new((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -815,23 +729,17 @@ class QTextLayout_FormatRange
 	{
 		CQt.QTextLayout_FormatRange_SetLength((.)this.ptr, length);
 	}
-	public QTextCharFormat_Ptr Format()
+	public QTextCharFormat_Ptr* Format()
 	{
 		return CQt.QTextLayout_FormatRange_Format((.)this.ptr);
 	}
-	public void SetFormat(QTextCharFormat_Ptr format)
+	public void SetFormat(IQTextCharFormat format)
 	{
-		CQt.QTextLayout_FormatRange_SetFormat((.)this.ptr, format);
+		CQt.QTextLayout_FormatRange_SetFormat((.)this.ptr, (.)format?.ObjectPtr);
 	}
 }
-interface IQTextLayout_FormatRange
+interface IQTextLayout_FormatRange : IQtObjectInterface
 {
-	public c_int Start();
-	public void SetStart();
-	public c_int Length();
-	public void SetLength();
-	public QTextCharFormat Format();
-	public void SetFormat();
 }
 [AllowDuplicates]
 enum QTextLayout_CursorMode

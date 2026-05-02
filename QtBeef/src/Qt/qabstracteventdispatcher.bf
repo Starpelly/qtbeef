@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QAbstractEventDispatcher_Delete")]
 	public static extern void QAbstractEventDispatcher_Delete(QAbstractEventDispatcher_Ptr* self);
 	[LinkName("QAbstractEventDispatcher_MetaObject")]
-	public static extern QMetaObject_Ptr* QAbstractEventDispatcher_MetaObject(QAbstractEventDispatcher_Ptr* self);
+	public static extern QMetaObject_Ptr** QAbstractEventDispatcher_MetaObject(QAbstractEventDispatcher_Ptr* self);
 	[LinkName("QAbstractEventDispatcher_Qt_Metacast")]
 	public static extern void* QAbstractEventDispatcher_Qt_Metacast(QAbstractEventDispatcher_Ptr* self, c_char* param1);
 	[LinkName("QAbstractEventDispatcher_Qt_Metacall")]
@@ -23,23 +23,23 @@ extension CQt
 	[LinkName("QAbstractEventDispatcher_Tr")]
 	public static extern libqt_string QAbstractEventDispatcher_Tr(c_char* s);
 	[LinkName("QAbstractEventDispatcher_Instance")]
-	public static extern QAbstractEventDispatcher_Ptr* QAbstractEventDispatcher_Instance();
+	public static extern QAbstractEventDispatcher_Ptr** QAbstractEventDispatcher_Instance();
 	[LinkName("QAbstractEventDispatcher_ProcessEvents")]
 	public static extern bool QAbstractEventDispatcher_ProcessEvents(QAbstractEventDispatcher_Ptr* self, void* flags);
 	[LinkName("QAbstractEventDispatcher_RegisterSocketNotifier")]
-	public static extern void QAbstractEventDispatcher_RegisterSocketNotifier(QAbstractEventDispatcher_Ptr* self, QSocketNotifier_Ptr* notifier);
+	public static extern void QAbstractEventDispatcher_RegisterSocketNotifier(QAbstractEventDispatcher_Ptr* self, QSocketNotifier_Ptr** notifier);
 	[LinkName("QAbstractEventDispatcher_UnregisterSocketNotifier")]
-	public static extern void QAbstractEventDispatcher_UnregisterSocketNotifier(QAbstractEventDispatcher_Ptr* self, QSocketNotifier_Ptr* notifier);
+	public static extern void QAbstractEventDispatcher_UnregisterSocketNotifier(QAbstractEventDispatcher_Ptr* self, QSocketNotifier_Ptr** notifier);
 	[LinkName("QAbstractEventDispatcher_RegisterTimer")]
-	public static extern c_int QAbstractEventDispatcher_RegisterTimer(QAbstractEventDispatcher_Ptr* self, c_longlong interval, Qt_TimerType timerType, QObject_Ptr* object);
+	public static extern c_int QAbstractEventDispatcher_RegisterTimer(QAbstractEventDispatcher_Ptr* self, c_longlong interval, Qt_TimerType timerType, QObject_Ptr** object);
 	[LinkName("QAbstractEventDispatcher_RegisterTimer2")]
-	public static extern void QAbstractEventDispatcher_RegisterTimer2(QAbstractEventDispatcher_Ptr* self, c_int timerId, c_longlong interval, Qt_TimerType timerType, QObject_Ptr* object);
+	public static extern void QAbstractEventDispatcher_RegisterTimer2(QAbstractEventDispatcher_Ptr* self, c_int timerId, c_longlong interval, Qt_TimerType timerType, QObject_Ptr** object);
 	[LinkName("QAbstractEventDispatcher_UnregisterTimer")]
 	public static extern bool QAbstractEventDispatcher_UnregisterTimer(QAbstractEventDispatcher_Ptr* self, c_int timerId);
 	[LinkName("QAbstractEventDispatcher_UnregisterTimers")]
-	public static extern bool QAbstractEventDispatcher_UnregisterTimers(QAbstractEventDispatcher_Ptr* self, QObject_Ptr* object);
+	public static extern bool QAbstractEventDispatcher_UnregisterTimers(QAbstractEventDispatcher_Ptr* self, QObject_Ptr** object);
 	[LinkName("QAbstractEventDispatcher_RegisteredTimers")]
-	public static extern void* QAbstractEventDispatcher_RegisteredTimers(QAbstractEventDispatcher_Ptr* self, QObject_Ptr* object);
+	public static extern void* QAbstractEventDispatcher_RegisteredTimers(QAbstractEventDispatcher_Ptr* self, QObject_Ptr** object);
 	[LinkName("QAbstractEventDispatcher_RemainingTime")]
 	public static extern c_int QAbstractEventDispatcher_RemainingTime(QAbstractEventDispatcher_Ptr* self, c_int timerId);
 	[LinkName("QAbstractEventDispatcher_WakeUp")]
@@ -51,9 +51,9 @@ extension CQt
 	[LinkName("QAbstractEventDispatcher_ClosingDown")]
 	public static extern void QAbstractEventDispatcher_ClosingDown(QAbstractEventDispatcher_Ptr* self);
 	[LinkName("QAbstractEventDispatcher_InstallNativeEventFilter")]
-	public static extern void QAbstractEventDispatcher_InstallNativeEventFilter(QAbstractEventDispatcher_Ptr* self, QAbstractNativeEventFilter_Ptr* filterObj);
+	public static extern void QAbstractEventDispatcher_InstallNativeEventFilter(QAbstractEventDispatcher_Ptr* self, QAbstractNativeEventFilter_Ptr** filterObj);
 	[LinkName("QAbstractEventDispatcher_RemoveNativeEventFilter")]
-	public static extern void QAbstractEventDispatcher_RemoveNativeEventFilter(QAbstractEventDispatcher_Ptr* self, QAbstractNativeEventFilter_Ptr* filterObj);
+	public static extern void QAbstractEventDispatcher_RemoveNativeEventFilter(QAbstractEventDispatcher_Ptr* self, QAbstractNativeEventFilter_Ptr** filterObj);
 	[LinkName("QAbstractEventDispatcher_FilterNativeEvent")]
 	public static extern bool QAbstractEventDispatcher_FilterNativeEvent(QAbstractEventDispatcher_Ptr* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractEventDispatcher_AboutToBlock")]
@@ -65,16 +65,17 @@ extension CQt
 	[LinkName("QAbstractEventDispatcher_Tr3")]
 	public static extern libqt_string QAbstractEventDispatcher_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QAbstractEventDispatcher_Instance1")]
-	public static extern QAbstractEventDispatcher_Ptr* QAbstractEventDispatcher_Instance1(QThread_Ptr* thread);
+	public static extern QAbstractEventDispatcher_Ptr** QAbstractEventDispatcher_Instance1(QThread_Ptr** thread);
 }
-class QAbstractEventDispatcher
+class QAbstractEventDispatcher : IQAbstractEventDispatcher, IQObject
 {
 	private QAbstractEventDispatcher_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QAbstractEventDispatcher_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QAbstractEventDispatcher_MetaObject((.)this.ptr);
 	}
@@ -90,7 +91,7 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QAbstractEventDispatcher_Tr(s);
 	}
-	public QAbstractEventDispatcher_Ptr* Instance()
+	public QAbstractEventDispatcher_Ptr** Instance()
 	{
 		return CQt.QAbstractEventDispatcher_Instance();
 	}
@@ -98,33 +99,33 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QAbstractEventDispatcher_ProcessEvents((.)this.ptr, flags);
 	}
-	public void RegisterSocketNotifier(QSocketNotifier_Ptr* notifier)
+	public void RegisterSocketNotifier(IQSocketNotifier notifier)
 	{
-		CQt.QAbstractEventDispatcher_RegisterSocketNotifier((.)this.ptr, notifier);
+		CQt.QAbstractEventDispatcher_RegisterSocketNotifier((.)this.ptr, (.)notifier?.ObjectPtr);
 	}
-	public void UnregisterSocketNotifier(QSocketNotifier_Ptr* notifier)
+	public void UnregisterSocketNotifier(IQSocketNotifier notifier)
 	{
-		CQt.QAbstractEventDispatcher_UnregisterSocketNotifier((.)this.ptr, notifier);
+		CQt.QAbstractEventDispatcher_UnregisterSocketNotifier((.)this.ptr, (.)notifier?.ObjectPtr);
 	}
-	public c_int RegisterTimer(c_longlong interval, Qt_TimerType timerType, QObject_Ptr* object)
+	public c_int RegisterTimer(c_longlong interval, Qt_TimerType timerType, IQObject object)
 	{
-		return CQt.QAbstractEventDispatcher_RegisterTimer((.)this.ptr, interval, timerType, object);
+		return CQt.QAbstractEventDispatcher_RegisterTimer((.)this.ptr, interval, timerType, (.)object?.ObjectPtr);
 	}
-	public void RegisterTimer2(c_int timerId, c_longlong interval, Qt_TimerType timerType, QObject_Ptr* object)
+	public void RegisterTimer2(c_int timerId, c_longlong interval, Qt_TimerType timerType, IQObject object)
 	{
-		CQt.QAbstractEventDispatcher_RegisterTimer2((.)this.ptr, timerId, interval, timerType, object);
+		CQt.QAbstractEventDispatcher_RegisterTimer2((.)this.ptr, timerId, interval, timerType, (.)object?.ObjectPtr);
 	}
 	public bool UnregisterTimer(c_int timerId)
 	{
 		return CQt.QAbstractEventDispatcher_UnregisterTimer((.)this.ptr, timerId);
 	}
-	public bool UnregisterTimers(QObject_Ptr* object)
+	public bool UnregisterTimers(IQObject object)
 	{
-		return CQt.QAbstractEventDispatcher_UnregisterTimers((.)this.ptr, object);
+		return CQt.QAbstractEventDispatcher_UnregisterTimers((.)this.ptr, (.)object?.ObjectPtr);
 	}
-	public void* RegisteredTimers(QObject_Ptr* object)
+	public void* RegisteredTimers(IQObject object)
 	{
-		return CQt.QAbstractEventDispatcher_RegisteredTimers((.)this.ptr, object);
+		return CQt.QAbstractEventDispatcher_RegisteredTimers((.)this.ptr, (.)object?.ObjectPtr);
 	}
 	public c_int RemainingTime(c_int timerId)
 	{
@@ -146,13 +147,13 @@ class QAbstractEventDispatcher
 	{
 		CQt.QAbstractEventDispatcher_ClosingDown((.)this.ptr);
 	}
-	public void InstallNativeEventFilter(QAbstractNativeEventFilter_Ptr* filterObj)
+	public void InstallNativeEventFilter(IQAbstractNativeEventFilter filterObj)
 	{
-		CQt.QAbstractEventDispatcher_InstallNativeEventFilter((.)this.ptr, filterObj);
+		CQt.QAbstractEventDispatcher_InstallNativeEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveNativeEventFilter(QAbstractNativeEventFilter_Ptr* filterObj)
+	public void RemoveNativeEventFilter(IQAbstractNativeEventFilter filterObj)
 	{
-		CQt.QAbstractEventDispatcher_RemoveNativeEventFilter((.)this.ptr, filterObj);
+		CQt.QAbstractEventDispatcher_RemoveNativeEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
 	public bool FilterNativeEvent(void** eventType, void* message, void** result)
 	{
@@ -174,25 +175,25 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QAbstractEventDispatcher_Tr3(s, c, n);
 	}
-	public QAbstractEventDispatcher_Ptr* Instance1(QThread_Ptr* thread)
+	public QAbstractEventDispatcher_Ptr** Instance1(IQThread thread)
 	{
-		return CQt.QAbstractEventDispatcher_Instance1(thread);
+		return CQt.QAbstractEventDispatcher_Instance1((.)thread?.ObjectPtr);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -214,13 +215,13 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -238,49 +239,49 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -290,11 +291,11 @@ class QAbstractEventDispatcher
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -302,11 +303,11 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -314,7 +315,7 @@ class QAbstractEventDispatcher
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -326,7 +327,7 @@ class QAbstractEventDispatcher
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -338,29 +339,29 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -370,67 +371,41 @@ class QAbstractEventDispatcher
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQAbstractEventDispatcher
+interface IQAbstractEventDispatcher : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public QAbstractEventDispatcher* Instance();
-	public bool ProcessEvents();
-	public void RegisterSocketNotifier();
-	public void UnregisterSocketNotifier();
-	public c_int RegisterTimer();
-	public void RegisterTimer2();
-	public bool UnregisterTimer();
-	public bool UnregisterTimers();
-	public void* RegisteredTimers();
-	public c_int RemainingTime();
-	public void WakeUp();
-	public void Interrupt();
-	public void StartingUp();
-	public void ClosingDown();
-	public void InstallNativeEventFilter();
-	public void RemoveNativeEventFilter();
-	public bool FilterNativeEvent();
-	public void AboutToBlock();
-	public void Awake();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public QAbstractEventDispatcher* Instance1();
 }
 // --------------------------------------------------------------
 // QAbstractEventDispatcher::TimerInfo
@@ -442,9 +417,9 @@ struct QAbstractEventDispatcher_TimerInfo_Ptr: void
 extension CQt
 {
 	[LinkName("QAbstractEventDispatcher_TimerInfo_new")]
-	public static extern QAbstractEventDispatcher_TimerInfo_Ptr* QAbstractEventDispatcher_TimerInfo_new(QAbstractEventDispatcher_TimerInfo* other);
+	public static extern QAbstractEventDispatcher_TimerInfo_Ptr* QAbstractEventDispatcher_TimerInfo_new(QAbstractEventDispatcher_TimerInfo_Ptr* other);
 	[LinkName("QAbstractEventDispatcher_TimerInfo_new2")]
-	public static extern QAbstractEventDispatcher_TimerInfo_Ptr* QAbstractEventDispatcher_TimerInfo_new2(QAbstractEventDispatcher_TimerInfo* other);
+	public static extern QAbstractEventDispatcher_TimerInfo_Ptr* QAbstractEventDispatcher_TimerInfo_new2(QAbstractEventDispatcher_TimerInfo_Ptr* other);
 	[LinkName("QAbstractEventDispatcher_TimerInfo_new3")]
 	public static extern QAbstractEventDispatcher_TimerInfo_Ptr* QAbstractEventDispatcher_TimerInfo_new3(c_int id, c_int i, Qt_TimerType t);
 	[LinkName("QAbstractEventDispatcher_TimerInfo_Delete")]
@@ -462,12 +437,13 @@ extension CQt
 	[LinkName("QAbstractEventDispatcher_TimerInfo_SetTimerType")]
 	public static extern void QAbstractEventDispatcher_TimerInfo_SetTimerType(QAbstractEventDispatcher_TimerInfo_Ptr* self, Qt_TimerType timerType);
 }
-class QAbstractEventDispatcher_TimerInfo
+class QAbstractEventDispatcher_TimerInfo : IQAbstractEventDispatcher_TimerInfo
 {
 	private QAbstractEventDispatcher_TimerInfo_Ptr* ptr;
-	public this(QAbstractEventDispatcher_TimerInfo* other)
+	public void* ObjectPtr => ptr;
+	public this(IQAbstractEventDispatcher_TimerInfo other)
 	{
-		this.ptr = CQt.QAbstractEventDispatcher_TimerInfo_new(other);
+		this.ptr = CQt.QAbstractEventDispatcher_TimerInfo_new((.)other?.ObjectPtr);
 	}
 	public this(c_int id, c_int i, Qt_TimerType t)
 	{
@@ -502,12 +478,6 @@ class QAbstractEventDispatcher_TimerInfo
 		CQt.QAbstractEventDispatcher_TimerInfo_SetTimerType((.)this.ptr, timerType);
 	}
 }
-interface IQAbstractEventDispatcher_TimerInfo
+interface IQAbstractEventDispatcher_TimerInfo : IQtObjectInterface
 {
-	public c_int TimerId();
-	public void SetTimerId();
-	public c_int Interval();
-	public void SetInterval();
-	public Qt_TimerType TimerType();
-	public void SetTimerType();
 }

@@ -29,48 +29,45 @@ extension CQt
 	[LinkName("QScrollerProperties_UnsetDefaultScrollerProperties")]
 	public static extern void QScrollerProperties_UnsetDefaultScrollerProperties();
 	[LinkName("QScrollerProperties_ScrollMetric")]
-	public static extern QVariant_Ptr QScrollerProperties_ScrollMetric(QScrollerProperties_Ptr* self, QScrollerProperties_ScrollMetric metric);
+	public static extern QVariant_Ptr* QScrollerProperties_ScrollMetric(QScrollerProperties_Ptr* self, QScrollerProperties_ScrollMetric metric);
 	[LinkName("QScrollerProperties_SetScrollMetric")]
 	public static extern void QScrollerProperties_SetScrollMetric(QScrollerProperties_Ptr* self, QScrollerProperties_ScrollMetric metric, QVariant_Ptr* value);
 }
-class QScrollerProperties
+class QScrollerProperties : IQScrollerProperties
 {
 	private QScrollerProperties_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QScrollerProperties_new();
 	}
-	public this(QScrollerProperties_Ptr* sp)
+	public this(IQScrollerProperties sp)
 	{
-		this.ptr = CQt.QScrollerProperties_new2(sp);
+		this.ptr = CQt.QScrollerProperties_new2((.)sp?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QScrollerProperties_Delete(this.ptr);
 	}
-	public void SetDefaultScrollerProperties(QScrollerProperties_Ptr* sp)
+	public void SetDefaultScrollerProperties(IQScrollerProperties sp)
 	{
-		CQt.QScrollerProperties_SetDefaultScrollerProperties(sp);
+		CQt.QScrollerProperties_SetDefaultScrollerProperties((.)sp?.ObjectPtr);
 	}
 	public void UnsetDefaultScrollerProperties()
 	{
 		CQt.QScrollerProperties_UnsetDefaultScrollerProperties();
 	}
-	public QVariant_Ptr ScrollMetric(QScrollerProperties_ScrollMetric metric)
+	public QVariant_Ptr* ScrollMetric(QScrollerProperties_ScrollMetric metric)
 	{
 		return CQt.QScrollerProperties_ScrollMetric((.)this.ptr, metric);
 	}
-	public void SetScrollMetric(QScrollerProperties_ScrollMetric metric, QVariant_Ptr* value)
+	public void SetScrollMetric(QScrollerProperties_ScrollMetric metric, IQVariant value)
 	{
-		CQt.QScrollerProperties_SetScrollMetric((.)this.ptr, metric, value);
+		CQt.QScrollerProperties_SetScrollMetric((.)this.ptr, metric, (.)value?.ObjectPtr);
 	}
 }
-interface IQScrollerProperties
+interface IQScrollerProperties : IQtObjectInterface
 {
-	public void SetDefaultScrollerProperties();
-	public void UnsetDefaultScrollerProperties();
-	public QVariant ScrollMetric();
-	public void SetScrollMetric();
 }
 [AllowDuplicates]
 enum QScrollerProperties_OvershootPolicy

@@ -37,11 +37,11 @@ extension CQt
 	[LinkName("QMatrix4x4_OperatorCall2")]
 	public static extern float* QMatrix4x4_OperatorCall2(QMatrix4x4_Ptr* self, c_int row, c_int column);
 	[LinkName("QMatrix4x4_Column")]
-	public static extern QVector4D_Ptr QMatrix4x4_Column(QMatrix4x4_Ptr* self, c_int index);
+	public static extern QVector4D_Ptr* QMatrix4x4_Column(QMatrix4x4_Ptr* self, c_int index);
 	[LinkName("QMatrix4x4_SetColumn")]
 	public static extern void QMatrix4x4_SetColumn(QMatrix4x4_Ptr* self, c_int index, QVector4D_Ptr* value);
 	[LinkName("QMatrix4x4_Row")]
-	public static extern QVector4D_Ptr QMatrix4x4_Row(QMatrix4x4_Ptr* self, c_int index);
+	public static extern QVector4D_Ptr* QMatrix4x4_Row(QMatrix4x4_Ptr* self, c_int index);
 	[LinkName("QMatrix4x4_SetRow")]
 	public static extern void QMatrix4x4_SetRow(QMatrix4x4_Ptr* self, c_int index, QVector4D_Ptr* value);
 	[LinkName("QMatrix4x4_IsAffine")]
@@ -55,9 +55,9 @@ extension CQt
 	[LinkName("QMatrix4x4_Determinant")]
 	public static extern double QMatrix4x4_Determinant(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_Inverted")]
-	public static extern QMatrix4x4_Ptr QMatrix4x4_Inverted(QMatrix4x4_Ptr* self);
+	public static extern QMatrix4x4_Ptr* QMatrix4x4_Inverted(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_Transposed")]
-	public static extern QMatrix4x4_Ptr QMatrix4x4_Transposed(QMatrix4x4_Ptr* self);
+	public static extern QMatrix4x4_Ptr* QMatrix4x4_Transposed(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_OperatorPlusAssign")]
 	public static extern QMatrix4x4_Ptr* QMatrix4x4_OperatorPlusAssign(QMatrix4x4_Ptr* self, QMatrix4x4_Ptr* other);
 	[LinkName("QMatrix4x4_OperatorMinusAssign")]
@@ -113,23 +113,23 @@ extension CQt
 	[LinkName("QMatrix4x4_CopyDataTo")]
 	public static extern void QMatrix4x4_CopyDataTo(QMatrix4x4_Ptr* self, float* values);
 	[LinkName("QMatrix4x4_ToTransform")]
-	public static extern QTransform_Ptr QMatrix4x4_ToTransform(QMatrix4x4_Ptr* self);
+	public static extern QTransform_Ptr* QMatrix4x4_ToTransform(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_ToTransform2")]
-	public static extern QTransform_Ptr QMatrix4x4_ToTransform2(QMatrix4x4_Ptr* self, float distanceToPlane);
+	public static extern QTransform_Ptr* QMatrix4x4_ToTransform2(QMatrix4x4_Ptr* self, float distanceToPlane);
 	[LinkName("QMatrix4x4_Map")]
-	public static extern QPoint_Ptr QMatrix4x4_Map(QMatrix4x4_Ptr* self, QPoint_Ptr* point);
+	public static extern QPoint_Ptr* QMatrix4x4_Map(QMatrix4x4_Ptr* self, QPoint_Ptr* point);
 	[LinkName("QMatrix4x4_Map2")]
-	public static extern QPointF_Ptr QMatrix4x4_Map2(QMatrix4x4_Ptr* self, QPointF_Ptr* point);
+	public static extern QPointF_Ptr* QMatrix4x4_Map2(QMatrix4x4_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QMatrix4x4_Map3")]
-	public static extern QVector3D_Ptr QMatrix4x4_Map3(QMatrix4x4_Ptr* self, QVector3D_Ptr* point);
+	public static extern QVector3D_Ptr* QMatrix4x4_Map3(QMatrix4x4_Ptr* self, QVector3D_Ptr* point);
 	[LinkName("QMatrix4x4_MapVector")]
-	public static extern QVector3D_Ptr QMatrix4x4_MapVector(QMatrix4x4_Ptr* self, QVector3D_Ptr* vector);
+	public static extern QVector3D_Ptr* QMatrix4x4_MapVector(QMatrix4x4_Ptr* self, QVector3D_Ptr* vector);
 	[LinkName("QMatrix4x4_Map4")]
-	public static extern QVector4D_Ptr QMatrix4x4_Map4(QMatrix4x4_Ptr* self, QVector4D_Ptr* point);
+	public static extern QVector4D_Ptr* QMatrix4x4_Map4(QMatrix4x4_Ptr* self, QVector4D_Ptr* point);
 	[LinkName("QMatrix4x4_MapRect")]
-	public static extern QRect_Ptr QMatrix4x4_MapRect(QMatrix4x4_Ptr* self, QRect_Ptr* rect);
+	public static extern QRect_Ptr* QMatrix4x4_MapRect(QMatrix4x4_Ptr* self, QRect_Ptr* rect);
 	[LinkName("QMatrix4x4_MapRect2")]
-	public static extern QRectF_Ptr QMatrix4x4_MapRect2(QMatrix4x4_Ptr* self, QRectF_Ptr* rect);
+	public static extern QRectF_Ptr* QMatrix4x4_MapRect2(QMatrix4x4_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QMatrix4x4_Data")]
 	public static extern float* QMatrix4x4_Data(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_Data2")]
@@ -139,13 +139,13 @@ extension CQt
 	[LinkName("QMatrix4x4_Optimize")]
 	public static extern void QMatrix4x4_Optimize(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_ToQvariant")]
-	public static extern QVariant_Ptr QMatrix4x4_ToQvariant(QMatrix4x4_Ptr* self);
+	public static extern QVariant_Ptr* QMatrix4x4_ToQvariant(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_ProjectedRotate")]
 	public static extern void QMatrix4x4_ProjectedRotate(QMatrix4x4_Ptr* self, float angle, float x, float y, float z);
 	[LinkName("QMatrix4x4_Flags")]
 	public static extern void* QMatrix4x4_Flags(QMatrix4x4_Ptr* self);
 	[LinkName("QMatrix4x4_Inverted1")]
-	public static extern QMatrix4x4_Ptr QMatrix4x4_Inverted1(QMatrix4x4_Ptr* self, bool* invertible);
+	public static extern QMatrix4x4_Ptr* QMatrix4x4_Inverted1(QMatrix4x4_Ptr* self, bool* invertible);
 	[LinkName("QMatrix4x4_Rotate4")]
 	public static extern void QMatrix4x4_Rotate4(QMatrix4x4_Ptr* self, float angle, float x, float y, float z);
 	[LinkName("QMatrix4x4_Viewport5")]
@@ -153,12 +153,13 @@ extension CQt
 	[LinkName("QMatrix4x4_Viewport6")]
 	public static extern void QMatrix4x4_Viewport6(QMatrix4x4_Ptr* self, float left, float bottom, float width, float height, float nearPlane, float farPlane);
 }
-class QMatrix4x4
+class QMatrix4x4 : IQMatrix4x4
 {
 	private QMatrix4x4_Ptr* ptr;
-	public this(QMatrix4x4_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQMatrix4x4 other)
 	{
-		this.ptr = CQt.QMatrix4x4_new(other);
+		this.ptr = CQt.QMatrix4x4_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -180,9 +181,9 @@ class QMatrix4x4
 	{
 		this.ptr = CQt.QMatrix4x4_new7(values, cols, rows);
 	}
-	public this(QTransform_Ptr* transform)
+	public this(IQTransform transform)
 	{
-		this.ptr = CQt.QMatrix4x4_new8(transform);
+		this.ptr = CQt.QMatrix4x4_new8((.)transform?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -192,21 +193,21 @@ class QMatrix4x4
 	{
 		return CQt.QMatrix4x4_OperatorCall2((.)this.ptr, row, column);
 	}
-	public QVector4D_Ptr Column(c_int index)
+	public QVector4D_Ptr* Column(c_int index)
 	{
 		return CQt.QMatrix4x4_Column((.)this.ptr, index);
 	}
-	public void SetColumn(c_int index, QVector4D_Ptr* value)
+	public void SetColumn(c_int index, IQVector4D value)
 	{
-		CQt.QMatrix4x4_SetColumn((.)this.ptr, index, value);
+		CQt.QMatrix4x4_SetColumn((.)this.ptr, index, (.)value?.ObjectPtr);
 	}
-	public QVector4D_Ptr Row(c_int index)
+	public QVector4D_Ptr* Row(c_int index)
 	{
 		return CQt.QMatrix4x4_Row((.)this.ptr, index);
 	}
-	public void SetRow(c_int index, QVector4D_Ptr* value)
+	public void SetRow(c_int index, IQVector4D value)
 	{
-		CQt.QMatrix4x4_SetRow((.)this.ptr, index, value);
+		CQt.QMatrix4x4_SetRow((.)this.ptr, index, (.)value?.ObjectPtr);
 	}
 	public bool IsAffine()
 	{
@@ -228,11 +229,11 @@ class QMatrix4x4
 	{
 		return CQt.QMatrix4x4_Determinant((.)this.ptr);
 	}
-	public QMatrix4x4_Ptr Inverted()
+	public QMatrix4x4_Ptr* Inverted()
 	{
 		return CQt.QMatrix4x4_Inverted((.)this.ptr);
 	}
-	public QMatrix4x4_Ptr Transposed()
+	public QMatrix4x4_Ptr* Transposed()
 	{
 		return CQt.QMatrix4x4_Transposed((.)this.ptr);
 	}
@@ -240,17 +241,17 @@ class QMatrix4x4
 	{
 		return CQt.QMatrix4x4_OperatorMultiplyAssign2((.)this.ptr, factor);
 	}
-	public void Scale(QVector3D_Ptr* vector)
+	public void Scale(IQVector3D vector)
 	{
-		CQt.QMatrix4x4_Scale((.)this.ptr, vector);
+		CQt.QMatrix4x4_Scale((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public void Translate(QVector3D_Ptr* vector)
+	public void Translate(IQVector3D vector)
 	{
-		CQt.QMatrix4x4_Translate((.)this.ptr, vector);
+		CQt.QMatrix4x4_Translate((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public void Rotate(float angle, QVector3D_Ptr* vector)
+	public void Rotate(float angle, IQVector3D vector)
 	{
-		CQt.QMatrix4x4_Rotate((.)this.ptr, angle, vector);
+		CQt.QMatrix4x4_Rotate((.)this.ptr, angle, (.)vector?.ObjectPtr);
 	}
 	public void Scale2(float x, float y)
 	{
@@ -276,17 +277,17 @@ class QMatrix4x4
 	{
 		CQt.QMatrix4x4_Rotate2((.)this.ptr, angle, x, y);
 	}
-	public void Rotate3(QQuaternion_Ptr* quaternion)
+	public void Rotate3(IQQuaternion quaternion)
 	{
-		CQt.QMatrix4x4_Rotate3((.)this.ptr, quaternion);
+		CQt.QMatrix4x4_Rotate3((.)this.ptr, (.)quaternion?.ObjectPtr);
 	}
-	public void Ortho(QRect_Ptr* rect)
+	public void Ortho(IQRect rect)
 	{
-		CQt.QMatrix4x4_Ortho((.)this.ptr, rect);
+		CQt.QMatrix4x4_Ortho((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Ortho2(QRectF_Ptr* rect)
+	public void Ortho2(IQRectF rect)
 	{
-		CQt.QMatrix4x4_Ortho2((.)this.ptr, rect);
+		CQt.QMatrix4x4_Ortho2((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public void Ortho3(float left, float right, float bottom, float top, float nearPlane, float farPlane)
 	{
@@ -300,13 +301,13 @@ class QMatrix4x4
 	{
 		CQt.QMatrix4x4_Perspective((.)this.ptr, verticalAngle, aspectRatio, nearPlane, farPlane);
 	}
-	public void LookAt(QVector3D_Ptr* eye, QVector3D_Ptr* center, QVector3D_Ptr* up)
+	public void LookAt(IQVector3D eye, IQVector3D center, IQVector3D up)
 	{
-		CQt.QMatrix4x4_LookAt((.)this.ptr, eye, center, up);
+		CQt.QMatrix4x4_LookAt((.)this.ptr, (.)eye?.ObjectPtr, (.)center?.ObjectPtr, (.)up?.ObjectPtr);
 	}
-	public void Viewport(QRectF_Ptr* rect)
+	public void Viewport(IQRectF rect)
 	{
-		CQt.QMatrix4x4_Viewport((.)this.ptr, rect);
+		CQt.QMatrix4x4_Viewport((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public void Viewport2(float left, float bottom, float width, float height)
 	{
@@ -320,41 +321,41 @@ class QMatrix4x4
 	{
 		CQt.QMatrix4x4_CopyDataTo((.)this.ptr, values);
 	}
-	public QTransform_Ptr ToTransform()
+	public QTransform_Ptr* ToTransform()
 	{
 		return CQt.QMatrix4x4_ToTransform((.)this.ptr);
 	}
-	public QTransform_Ptr ToTransform2(float distanceToPlane)
+	public QTransform_Ptr* ToTransform2(float distanceToPlane)
 	{
 		return CQt.QMatrix4x4_ToTransform2((.)this.ptr, distanceToPlane);
 	}
-	public QPoint_Ptr Map(QPoint_Ptr* point)
+	public QPoint_Ptr* Map(IQPoint point)
 	{
-		return CQt.QMatrix4x4_Map((.)this.ptr, point);
+		return CQt.QMatrix4x4_Map((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr Map2(QPointF_Ptr* point)
+	public QPointF_Ptr* Map2(IQPointF point)
 	{
-		return CQt.QMatrix4x4_Map2((.)this.ptr, point);
+		return CQt.QMatrix4x4_Map2((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QVector3D_Ptr Map3(QVector3D_Ptr* point)
+	public QVector3D_Ptr* Map3(IQVector3D point)
 	{
-		return CQt.QMatrix4x4_Map3((.)this.ptr, point);
+		return CQt.QMatrix4x4_Map3((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QVector3D_Ptr MapVector(QVector3D_Ptr* vector)
+	public QVector3D_Ptr* MapVector(IQVector3D vector)
 	{
-		return CQt.QMatrix4x4_MapVector((.)this.ptr, vector);
+		return CQt.QMatrix4x4_MapVector((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public QVector4D_Ptr Map4(QVector4D_Ptr* point)
+	public QVector4D_Ptr* Map4(IQVector4D point)
 	{
-		return CQt.QMatrix4x4_Map4((.)this.ptr, point);
+		return CQt.QMatrix4x4_Map4((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRect_Ptr MapRect(QRect_Ptr* rect)
+	public QRect_Ptr* MapRect(IQRect rect)
 	{
-		return CQt.QMatrix4x4_MapRect((.)this.ptr, rect);
+		return CQt.QMatrix4x4_MapRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRect2(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRect2(IQRectF rect)
 	{
-		return CQt.QMatrix4x4_MapRect2((.)this.ptr, rect);
+		return CQt.QMatrix4x4_MapRect2((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public float* Data()
 	{
@@ -380,7 +381,7 @@ class QMatrix4x4
 	{
 		return CQt.QMatrix4x4_Flags((.)this.ptr);
 	}
-	public QMatrix4x4_Ptr Inverted1(bool* invertible)
+	public QMatrix4x4_Ptr* Inverted1(bool* invertible)
 	{
 		return CQt.QMatrix4x4_Inverted1((.)this.ptr, invertible);
 	}
@@ -397,60 +398,8 @@ class QMatrix4x4
 		CQt.QMatrix4x4_Viewport6((.)this.ptr, left, bottom, width, height, nearPlane, farPlane);
 	}
 }
-interface IQMatrix4x4
+interface IQMatrix4x4 : IQtObjectInterface
 {
-	public float* OperatorCall2();
-	public QVector4D Column();
-	public void SetColumn();
-	public QVector4D Row();
-	public void SetRow();
-	public bool IsAffine();
-	public bool IsIdentity();
-	public void SetToIdentity();
-	public void Fill();
-	public double Determinant();
-	public QMatrix4x4 Inverted();
-	public QMatrix4x4 Transposed();
-	public QMatrix4x4* OperatorMultiplyAssign2();
-	public void Scale();
-	public void Translate();
-	public void Rotate();
-	public void Scale2();
-	public void Scale3();
-	public void Scale4();
-	public void Translate2();
-	public void Translate3();
-	public void Rotate2();
-	public void Rotate3();
-	public void Ortho();
-	public void Ortho2();
-	public void Ortho3();
-	public void Frustum();
-	public void Perspective();
-	public void LookAt();
-	public void Viewport();
-	public void Viewport2();
-	public void FlipCoordinates();
-	public void CopyDataTo();
-	public QTransform ToTransform();
-	public QTransform ToTransform2();
-	public QPoint Map();
-	public QPointF Map2();
-	public QVector3D Map3();
-	public QVector3D MapVector();
-	public QVector4D Map4();
-	public QRect MapRect();
-	public QRectF MapRect2();
-	public float* Data();
-	public float* Data2();
-	public float* ConstData();
-	public void Optimize();
-	public void ProjectedRotate();
-	public void* Flags();
-	public QMatrix4x4 Inverted1();
-	public void Rotate4();
-	public void Viewport5();
-	public void Viewport6();
 }
 [AllowDuplicates]
 enum QMatrix4x4_Flag

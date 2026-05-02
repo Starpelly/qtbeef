@@ -31,9 +31,10 @@ extension CQt
 	[LinkName("QHashSeed_ResetRandomGlobalSeed")]
 	public static extern void QHashSeed_ResetRandomGlobalSeed();
 }
-class QHashSeed
+class QHashSeed : IQHashSeed
 {
 	private QHashSeed_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(void** other)
 	{
 		this.ptr = CQt.QHashSeed_new(other);
@@ -63,9 +64,6 @@ class QHashSeed
 		CQt.QHashSeed_ResetRandomGlobalSeed();
 	}
 }
-interface IQHashSeed
+interface IQHashSeed : IQtObjectInterface
 {
-	public void* GlobalSeed();
-	public void SetDeterministicGlobalSeed();
-	public void ResetRandomGlobalSeed();
 }

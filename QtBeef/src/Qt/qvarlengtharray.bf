@@ -19,9 +19,10 @@ extension CQt
 	[LinkName("QVLABaseBase_Empty")]
 	public static extern bool QVLABaseBase_Empty(QVLABaseBase_Ptr* self);
 }
-class QVLABaseBase
+class QVLABaseBase : IQVLABaseBase
 {
 	private QVLABaseBase_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public void* Capacity()
 	{
 		return CQt.QVLABaseBase_Capacity((.)this.ptr);
@@ -35,9 +36,6 @@ class QVLABaseBase
 		return CQt.QVLABaseBase_Empty((.)this.ptr);
 	}
 }
-interface IQVLABaseBase
+interface IQVLABaseBase : IQtObjectInterface
 {
-	public void* Capacity();
-	public void* Size();
-	public bool Empty();
 }

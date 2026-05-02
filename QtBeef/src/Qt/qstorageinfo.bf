@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QStorageInfo_new")]
 	public static extern QStorageInfo_Ptr* QStorageInfo_new();
 	[LinkName("QStorageInfo_new2")]
-	public static extern QStorageInfo_Ptr* QStorageInfo_new2(libqt_string* path);
+	public static extern QStorageInfo_Ptr* QStorageInfo_new2(libqt_string path);
 	[LinkName("QStorageInfo_new3")]
 	public static extern QStorageInfo_Ptr* QStorageInfo_new3(QDir_Ptr* dir);
 	[LinkName("QStorageInfo_new4")]
@@ -27,7 +27,7 @@ extension CQt
 	[LinkName("QStorageInfo_Swap")]
 	public static extern void QStorageInfo_Swap(QStorageInfo_Ptr* self, QStorageInfo_Ptr* other);
 	[LinkName("QStorageInfo_SetPath")]
-	public static extern void QStorageInfo_SetPath(QStorageInfo_Ptr* self, libqt_string* path);
+	public static extern void QStorageInfo_SetPath(QStorageInfo_Ptr* self, libqt_string path);
 	[LinkName("QStorageInfo_RootPath")]
 	public static extern libqt_string QStorageInfo_RootPath(QStorageInfo_Ptr* self);
 	[LinkName("QStorageInfo_Device")]
@@ -61,38 +61,39 @@ extension CQt
 	[LinkName("QStorageInfo_MountedVolumes")]
 	public static extern void* QStorageInfo_MountedVolumes();
 	[LinkName("QStorageInfo_Root")]
-	public static extern QStorageInfo_Ptr QStorageInfo_Root();
+	public static extern QStorageInfo_Ptr* QStorageInfo_Root();
 }
-class QStorageInfo
+class QStorageInfo : IQStorageInfo
 {
 	private QStorageInfo_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QStorageInfo_new();
 	}
-	public this(libqt_string* path)
+	public this(String path)
 	{
-		this.ptr = CQt.QStorageInfo_new2(path);
+		this.ptr = CQt.QStorageInfo_new2(libqt_string(path));
 	}
-	public this(QDir_Ptr* dir)
+	public this(IQDir dir)
 	{
-		this.ptr = CQt.QStorageInfo_new3(dir);
+		this.ptr = CQt.QStorageInfo_new3((.)dir?.ObjectPtr);
 	}
-	public this(QStorageInfo_Ptr* other)
+	public this(IQStorageInfo other)
 	{
-		this.ptr = CQt.QStorageInfo_new4(other);
+		this.ptr = CQt.QStorageInfo_new4((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QStorageInfo_Delete(this.ptr);
 	}
-	public void Swap(QStorageInfo_Ptr* other)
+	public void Swap(IQStorageInfo other)
 	{
-		CQt.QStorageInfo_Swap((.)this.ptr, other);
+		CQt.QStorageInfo_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetPath(libqt_string* path)
+	public void SetPath(String path)
 	{
-		CQt.QStorageInfo_SetPath((.)this.ptr, path);
+		CQt.QStorageInfo_SetPath((.)this.ptr, libqt_string(path));
 	}
 	public libqt_string RootPath()
 	{
@@ -158,30 +159,11 @@ class QStorageInfo
 	{
 		return CQt.QStorageInfo_MountedVolumes();
 	}
-	public QStorageInfo_Ptr Root()
+	public QStorageInfo_Ptr* Root()
 	{
 		return CQt.QStorageInfo_Root();
 	}
 }
-interface IQStorageInfo
+interface IQStorageInfo : IQtObjectInterface
 {
-	public void Swap();
-	public void SetPath();
-	public libqt_string RootPath();
-	public void* Device();
-	public void* Subvolume();
-	public void* FileSystemType();
-	public libqt_string Name();
-	public libqt_string DisplayName();
-	public c_longlong BytesTotal();
-	public c_longlong BytesFree();
-	public c_longlong BytesAvailable();
-	public c_int BlockSize();
-	public bool IsRoot();
-	public bool IsReadOnly();
-	public bool IsReady();
-	public bool IsValid();
-	public void Refresh();
-	public void* MountedVolumes();
-	public QStorageInfo Root();
 }

@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QOpenGLFunctions_new")]
 	public static extern QOpenGLFunctions_Ptr* QOpenGLFunctions_new();
 	[LinkName("QOpenGLFunctions_new2")]
-	public static extern QOpenGLFunctions_Ptr* QOpenGLFunctions_new2(QOpenGLContext_Ptr* context);
+	public static extern QOpenGLFunctions_Ptr* QOpenGLFunctions_new2(QOpenGLContext_Ptr** context);
 	[LinkName("QOpenGLFunctions_Delete")]
 	public static extern void QOpenGLFunctions_Delete(QOpenGLFunctions_Ptr* self);
 	[LinkName("QOpenGLFunctions_OpenGLFeatures")]
@@ -301,16 +301,17 @@ extension CQt
 	[LinkName("QOpenGLFunctions_GlVertexAttribPointer")]
 	public static extern void QOpenGLFunctions_GlVertexAttribPointer(QOpenGLFunctions_Ptr* self, c_uint indx, c_int size, c_uint type, bool normalized, c_size stride, void* ptr);
 }
-class QOpenGLFunctions
+class QOpenGLFunctions : IQOpenGLFunctions
 {
 	private QOpenGLFunctions_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QOpenGLFunctions_new();
 	}
-	public this(QOpenGLContext_Ptr* context)
+	public this(IQOpenGLContext context)
 	{
-		this.ptr = CQt.QOpenGLFunctions_new2(context);
+		this.ptr = CQt.QOpenGLFunctions_new2((.)context?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -881,149 +882,8 @@ class QOpenGLFunctions
 		CQt.QOpenGLFunctions_GlVertexAttribPointer((.)this.ptr, indx, size, type, normalized, stride, ptr);
 	}
 }
-interface IQOpenGLFunctions
+interface IQOpenGLFunctions : IQtObjectInterface
 {
-	public void* OpenGLFeatures();
-	public bool HasOpenGLFeature();
-	public void InitializeOpenGLFunctions();
-	public void GlBindTexture();
-	public void GlBlendFunc();
-	public void GlClear();
-	public void GlClearColor();
-	public void GlClearStencil();
-	public void GlColorMask();
-	public void GlCopyTexImage2D();
-	public void GlCopyTexSubImage2D();
-	public void GlCullFace();
-	public void GlDeleteTextures();
-	public void GlDepthFunc();
-	public void GlDepthMask();
-	public void GlDisable();
-	public void GlDrawArrays();
-	public void GlDrawElements();
-	public void GlEnable();
-	public void GlFinish();
-	public void GlFlush();
-	public void GlFrontFace();
-	public void GlGenTextures();
-	public void GlGetBooleanv();
-	public void GlGetFloatv();
-	public void GlGetIntegerv();
-	public uint8* GlGetString();
-	public void GlGetTexParameterfv();
-	public void GlGetTexParameteriv();
-	public void GlHint();
-	public bool GlIsEnabled();
-	public bool GlIsTexture();
-	public void GlLineWidth();
-	public void GlPixelStorei();
-	public void GlPolygonOffset();
-	public void GlReadPixels();
-	public void GlScissor();
-	public void GlStencilFunc();
-	public void GlStencilMask();
-	public void GlStencilOp();
-	public void GlTexImage2D();
-	public void GlTexParameterf();
-	public void GlTexParameterfv();
-	public void GlTexParameteri();
-	public void GlTexParameteriv();
-	public void GlTexSubImage2D();
-	public void GlViewport();
-	public void GlActiveTexture();
-	public void GlAttachShader();
-	public void GlBindAttribLocation();
-	public void GlBindBuffer();
-	public void GlBindFramebuffer();
-	public void GlBindRenderbuffer();
-	public void GlBlendColor();
-	public void GlBlendEquation();
-	public void GlBlendEquationSeparate();
-	public void GlBlendFuncSeparate();
-	public void GlBufferData();
-	public void GlBufferSubData();
-	public void GlClearDepthf();
-	public void GlCompileShader();
-	public void GlCompressedTexImage2D();
-	public void GlCompressedTexSubImage2D();
-	public c_uint GlCreateProgram();
-	public c_uint GlCreateShader();
-	public void GlDeleteBuffers();
-	public void GlDeleteFramebuffers();
-	public void GlDeleteProgram();
-	public void GlDeleteRenderbuffers();
-	public void GlDeleteShader();
-	public void GlDepthRangef();
-	public void GlDetachShader();
-	public void GlDisableVertexAttribArray();
-	public void GlEnableVertexAttribArray();
-	public void GlFramebufferRenderbuffer();
-	public void GlFramebufferTexture2D();
-	public void GlGenBuffers();
-	public void GlGenerateMipmap();
-	public void GlGenFramebuffers();
-	public void GlGenRenderbuffers();
-	public void GlGetAttachedShaders();
-	public c_int GlGetAttribLocation();
-	public void GlGetBufferParameteriv();
-	public void GlGetFramebufferAttachmentParameteriv();
-	public void GlGetProgramiv();
-	public void GlGetProgramInfoLog();
-	public void GlGetRenderbufferParameteriv();
-	public void GlGetShaderiv();
-	public void GlGetShaderInfoLog();
-	public void GlGetShaderPrecisionFormat();
-	public void GlGetShaderSource();
-	public void GlGetUniformfv();
-	public void GlGetUniformiv();
-	public c_int GlGetUniformLocation();
-	public void GlGetVertexAttribfv();
-	public void GlGetVertexAttribiv();
-	public void GlGetVertexAttribPointerv();
-	public bool GlIsBuffer();
-	public bool GlIsFramebuffer();
-	public bool GlIsProgram();
-	public bool GlIsRenderbuffer();
-	public bool GlIsShader();
-	public void GlLinkProgram();
-	public void GlReleaseShaderCompiler();
-	public void GlRenderbufferStorage();
-	public void GlSampleCoverage();
-	public void GlShaderBinary();
-	public void GlShaderSource();
-	public void GlStencilFuncSeparate();
-	public void GlStencilMaskSeparate();
-	public void GlStencilOpSeparate();
-	public void GlUniform1f();
-	public void GlUniform1fv();
-	public void GlUniform1i();
-	public void GlUniform1iv();
-	public void GlUniform2f();
-	public void GlUniform2fv();
-	public void GlUniform2i();
-	public void GlUniform2iv();
-	public void GlUniform3f();
-	public void GlUniform3fv();
-	public void GlUniform3i();
-	public void GlUniform3iv();
-	public void GlUniform4f();
-	public void GlUniform4fv();
-	public void GlUniform4i();
-	public void GlUniform4iv();
-	public void GlUniformMatrix2fv();
-	public void GlUniformMatrix3fv();
-	public void GlUniformMatrix4fv();
-	public void GlUseProgram();
-	public void GlValidateProgram();
-	public void GlVertexAttrib1f();
-	public void GlVertexAttrib1fv();
-	public void GlVertexAttrib2f();
-	public void GlVertexAttrib2fv();
-	public void GlVertexAttrib3f();
-	public void GlVertexAttrib3fv();
-	public void GlVertexAttrib4f();
-	public void GlVertexAttrib4fv();
-	public void GlVertexAttribPointer();
 }
 [AllowDuplicates]
 enum QOpenGLFunctions_OpenGLFeature

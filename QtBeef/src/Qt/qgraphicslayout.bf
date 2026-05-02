@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QGraphicsLayout_new")]
 	public static extern QGraphicsLayout_Ptr* QGraphicsLayout_new();
 	[LinkName("QGraphicsLayout_new2")]
-	public static extern QGraphicsLayout_Ptr* QGraphicsLayout_new2(QGraphicsLayoutItem_Ptr* parent);
+	public static extern QGraphicsLayout_Ptr* QGraphicsLayout_new2(QGraphicsLayoutItem_Ptr** parent);
 	[LinkName("QGraphicsLayout_Delete")]
 	public static extern void QGraphicsLayout_Delete(QGraphicsLayout_Ptr* self);
 	[LinkName("QGraphicsLayout_SetContentsMargins")]
@@ -31,11 +31,11 @@ extension CQt
 	[LinkName("QGraphicsLayout_UpdateGeometry")]
 	public static extern void QGraphicsLayout_UpdateGeometry(QGraphicsLayout_Ptr* self);
 	[LinkName("QGraphicsLayout_WidgetEvent")]
-	public static extern void QGraphicsLayout_WidgetEvent(QGraphicsLayout_Ptr* self, QEvent_Ptr* e);
+	public static extern void QGraphicsLayout_WidgetEvent(QGraphicsLayout_Ptr* self, QEvent_Ptr** e);
 	[LinkName("QGraphicsLayout_Count")]
 	public static extern c_int QGraphicsLayout_Count(QGraphicsLayout_Ptr* self);
 	[LinkName("QGraphicsLayout_ItemAt")]
-	public static extern QGraphicsLayoutItem_Ptr* QGraphicsLayout_ItemAt(QGraphicsLayout_Ptr* self, c_int i);
+	public static extern QGraphicsLayoutItem_Ptr** QGraphicsLayout_ItemAt(QGraphicsLayout_Ptr* self, c_int i);
 	[LinkName("QGraphicsLayout_RemoveAt")]
 	public static extern void QGraphicsLayout_RemoveAt(QGraphicsLayout_Ptr* self, c_int index);
 	[LinkName("QGraphicsLayout_SetInstantInvalidatePropagation")]
@@ -43,18 +43,19 @@ extension CQt
 	[LinkName("QGraphicsLayout_InstantInvalidatePropagation")]
 	public static extern bool QGraphicsLayout_InstantInvalidatePropagation();
 	[LinkName("QGraphicsLayout_AddChildLayoutItem")]
-	public static extern void QGraphicsLayout_AddChildLayoutItem(QGraphicsLayout_Ptr* self, QGraphicsLayoutItem_Ptr* layoutItem);
+	public static extern void QGraphicsLayout_AddChildLayoutItem(QGraphicsLayout_Ptr* self, QGraphicsLayoutItem_Ptr** layoutItem);
 }
-class QGraphicsLayout
+class QGraphicsLayout : IQGraphicsLayout, IQGraphicsLayoutItem
 {
 	private QGraphicsLayout_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsLayout_new();
 	}
-	public this(QGraphicsLayoutItem_Ptr* parent)
+	public this(IQGraphicsLayoutItem parent)
 	{
-		this.ptr = CQt.QGraphicsLayout_new2(parent);
+		this.ptr = CQt.QGraphicsLayout_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -84,15 +85,15 @@ class QGraphicsLayout
 	{
 		CQt.QGraphicsLayout_UpdateGeometry((.)this.ptr);
 	}
-	public void WidgetEvent(QEvent_Ptr* e)
+	public void WidgetEvent(IQEvent e)
 	{
-		CQt.QGraphicsLayout_WidgetEvent((.)this.ptr, e);
+		CQt.QGraphicsLayout_WidgetEvent((.)this.ptr, (.)e?.ObjectPtr);
 	}
 	public c_int Count()
 	{
 		return CQt.QGraphicsLayout_Count((.)this.ptr);
 	}
-	public QGraphicsLayoutItem_Ptr* ItemAt(c_int i)
+	public QGraphicsLayoutItem_Ptr** ItemAt(c_int i)
 	{
 		return CQt.QGraphicsLayout_ItemAt((.)this.ptr, i);
 	}
@@ -108,31 +109,31 @@ class QGraphicsLayout
 	{
 		return CQt.QGraphicsLayout_InstantInvalidatePropagation();
 	}
-	public void AddChildLayoutItem(QGraphicsLayoutItem_Ptr* layoutItem)
+	public void AddChildLayoutItem(IQGraphicsLayoutItem layoutItem)
 	{
-		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.ptr, layoutItem);
+		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.ptr, (.)layoutItem?.ObjectPtr);
 	}
-	public void SetSizePolicy(QSizePolicy_Ptr* policy)
+	public void SetSizePolicy(IQSizePolicy policy)
 	{
-		CQt.QGraphicsLayoutItem_SetSizePolicy((.)this.ptr, policy);
+		CQt.QGraphicsLayoutItem_SetSizePolicy((.)this.ptr, (.)policy?.ObjectPtr);
 	}
 	public void SetSizePolicy2(QSizePolicy_Policy hPolicy, QSizePolicy_Policy vPolicy)
 	{
 		CQt.QGraphicsLayoutItem_SetSizePolicy2((.)this.ptr, hPolicy, vPolicy);
 	}
-	public QSizePolicy_Ptr SizePolicy()
+	public QSizePolicy_Ptr* SizePolicy()
 	{
 		return CQt.QGraphicsLayoutItem_SizePolicy((.)this.ptr);
 	}
-	public void SetMinimumSize(QSizeF_Ptr* size)
+	public void SetMinimumSize(IQSizeF size)
 	{
-		CQt.QGraphicsLayoutItem_SetMinimumSize((.)this.ptr, size);
+		CQt.QGraphicsLayoutItem_SetMinimumSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public void SetMinimumSize2(double w, double h)
 	{
 		CQt.QGraphicsLayoutItem_SetMinimumSize2((.)this.ptr, w, h);
 	}
-	public QSizeF_Ptr MinimumSize()
+	public QSizeF_Ptr* MinimumSize()
 	{
 		return CQt.QGraphicsLayoutItem_MinimumSize((.)this.ptr);
 	}
@@ -152,15 +153,15 @@ class QGraphicsLayout
 	{
 		return CQt.QGraphicsLayoutItem_MinimumHeight((.)this.ptr);
 	}
-	public void SetPreferredSize(QSizeF_Ptr* size)
+	public void SetPreferredSize(IQSizeF size)
 	{
-		CQt.QGraphicsLayoutItem_SetPreferredSize((.)this.ptr, size);
+		CQt.QGraphicsLayoutItem_SetPreferredSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public void SetPreferredSize2(double w, double h)
 	{
 		CQt.QGraphicsLayoutItem_SetPreferredSize2((.)this.ptr, w, h);
 	}
-	public QSizeF_Ptr PreferredSize()
+	public QSizeF_Ptr* PreferredSize()
 	{
 		return CQt.QGraphicsLayoutItem_PreferredSize((.)this.ptr);
 	}
@@ -180,15 +181,15 @@ class QGraphicsLayout
 	{
 		return CQt.QGraphicsLayoutItem_PreferredHeight((.)this.ptr);
 	}
-	public void SetMaximumSize(QSizeF_Ptr* size)
+	public void SetMaximumSize(IQSizeF size)
 	{
-		CQt.QGraphicsLayoutItem_SetMaximumSize((.)this.ptr, size);
+		CQt.QGraphicsLayoutItem_SetMaximumSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public void SetMaximumSize2(double w, double h)
 	{
 		CQt.QGraphicsLayoutItem_SetMaximumSize2((.)this.ptr, w, h);
 	}
-	public QSizeF_Ptr MaximumSize()
+	public QSizeF_Ptr* MaximumSize()
 	{
 		return CQt.QGraphicsLayoutItem_MaximumSize((.)this.ptr);
 	}
@@ -208,19 +209,19 @@ class QGraphicsLayout
 	{
 		return CQt.QGraphicsLayoutItem_MaximumHeight((.)this.ptr);
 	}
-	public void SetGeometry(QRectF_Ptr* rect)
+	public void SetGeometry(IQRectF rect)
 	{
-		CQt.QGraphicsLayoutItem_SetGeometry((.)this.ptr, rect);
+		CQt.QGraphicsLayoutItem_SetGeometry((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr Geometry()
+	public QRectF_Ptr* Geometry()
 	{
 		return CQt.QGraphicsLayoutItem_Geometry((.)this.ptr);
 	}
-	public QRectF_Ptr ContentsRect()
+	public QRectF_Ptr* ContentsRect()
 	{
 		return CQt.QGraphicsLayoutItem_ContentsRect((.)this.ptr);
 	}
-	public QSizeF_Ptr EffectiveSizeHint(Qt_SizeHint which)
+	public QSizeF_Ptr* EffectiveSizeHint(Qt_SizeHint which)
 	{
 		return CQt.QGraphicsLayoutItem_EffectiveSizeHint((.)this.ptr, which);
 	}
@@ -228,19 +229,19 @@ class QGraphicsLayout
 	{
 		return CQt.QGraphicsLayoutItem_IsEmpty((.)this.ptr);
 	}
-	public QGraphicsLayoutItem_Ptr* ParentLayoutItem()
+	public QGraphicsLayoutItem_Ptr** ParentLayoutItem()
 	{
 		return CQt.QGraphicsLayoutItem_ParentLayoutItem((.)this.ptr);
 	}
-	public void SetParentLayoutItem(QGraphicsLayoutItem_Ptr* parent)
+	public void SetParentLayoutItem(IQGraphicsLayoutItem parent)
 	{
-		CQt.QGraphicsLayoutItem_SetParentLayoutItem((.)this.ptr, parent);
+		CQt.QGraphicsLayoutItem_SetParentLayoutItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public bool IsLayout()
 	{
 		return CQt.QGraphicsLayoutItem_IsLayout((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* GraphicsItem()
+	public QGraphicsItem_Ptr** GraphicsItem()
 	{
 		return CQt.QGraphicsLayoutItem_GraphicsItem((.)this.ptr);
 	}
@@ -248,40 +249,27 @@ class QGraphicsLayout
 	{
 		return CQt.QGraphicsLayoutItem_OwnedByLayout((.)this.ptr);
 	}
-	public void SetGraphicsItem(QGraphicsItem_Ptr* item)
+	public void SetGraphicsItem(IQGraphicsItem item)
 	{
-		CQt.QGraphicsLayoutItem_SetGraphicsItem((.)this.ptr, item);
+		CQt.QGraphicsLayoutItem_SetGraphicsItem((.)this.ptr, (.)item?.ObjectPtr);
 	}
 	public void SetOwnedByLayout(bool ownedByLayout)
 	{
 		CQt.QGraphicsLayoutItem_SetOwnedByLayout((.)this.ptr, ownedByLayout);
 	}
-	public QSizeF_Ptr SizeHint(Qt_SizeHint which, QSizeF_Ptr* constraint)
+	public QSizeF_Ptr* SizeHint(Qt_SizeHint which, IQSizeF constraint)
 	{
-		return CQt.QGraphicsLayoutItem_SizeHint((.)this.ptr, which, constraint);
+		return CQt.QGraphicsLayoutItem_SizeHint((.)this.ptr, which, (.)constraint?.ObjectPtr);
 	}
 	public void SetSizePolicy3(QSizePolicy_Policy hPolicy, QSizePolicy_Policy vPolicy, QSizePolicy_ControlType controlType)
 	{
 		CQt.QGraphicsLayoutItem_SetSizePolicy3((.)this.ptr, hPolicy, vPolicy, controlType);
 	}
-	public QSizeF_Ptr EffectiveSizeHint2(Qt_SizeHint which, QSizeF_Ptr* constraint)
+	public QSizeF_Ptr* EffectiveSizeHint2(Qt_SizeHint which, IQSizeF constraint)
 	{
-		return CQt.QGraphicsLayoutItem_EffectiveSizeHint2((.)this.ptr, which, constraint);
+		return CQt.QGraphicsLayoutItem_EffectiveSizeHint2((.)this.ptr, which, (.)constraint?.ObjectPtr);
 	}
 }
-interface IQGraphicsLayout
+interface IQGraphicsLayout : IQtObjectInterface
 {
-	public void SetContentsMargins();
-	public void GetContentsMargins();
-	public void Activate();
-	public bool IsActivated();
-	public void Invalidate();
-	public void UpdateGeometry();
-	public void WidgetEvent();
-	public c_int Count();
-	public QGraphicsLayoutItem* ItemAt();
-	public void RemoveAt();
-	public void SetInstantInvalidatePropagation();
-	public bool InstantInvalidatePropagation();
-	public void AddChildLayoutItem();
 }

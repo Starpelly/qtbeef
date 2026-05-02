@@ -41,9 +41,10 @@ extension CQt
 	[LinkName("QByteArrayMatcher_IndexIn22")]
 	public static extern void* QByteArrayMatcher_IndexIn22(QByteArrayMatcher_Ptr* self, void* data, void* from);
 }
-class QByteArrayMatcher
+class QByteArrayMatcher : IQByteArrayMatcher
 {
 	private QByteArrayMatcher_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QByteArrayMatcher_new();
@@ -93,14 +94,8 @@ class QByteArrayMatcher
 		return CQt.QByteArrayMatcher_IndexIn22((.)this.ptr, data, from);
 	}
 }
-interface IQByteArrayMatcher
+interface IQByteArrayMatcher : IQtObjectInterface
 {
-	public void SetPattern();
-	public void* IndexIn();
-	public void* IndexIn2();
-	public void* Pattern();
-	public void* IndexIn3();
-	public void* IndexIn22();
 }
 // --------------------------------------------------------------
 // QStaticByteArrayMatcherBase
@@ -114,14 +109,15 @@ extension CQt
 	[LinkName("QStaticByteArrayMatcherBase_new")]
 	public static extern QStaticByteArrayMatcherBase_Ptr* QStaticByteArrayMatcherBase_new(QStaticByteArrayMatcherBase_Ptr* other);
 }
-class QStaticByteArrayMatcherBase
+class QStaticByteArrayMatcherBase : IQStaticByteArrayMatcherBase
 {
 	private QStaticByteArrayMatcherBase_Ptr* ptr;
-	public this(QStaticByteArrayMatcherBase_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQStaticByteArrayMatcherBase other)
 	{
-		this.ptr = CQt.QStaticByteArrayMatcherBase_new(other);
+		this.ptr = CQt.QStaticByteArrayMatcherBase_new((.)other?.ObjectPtr);
 	}
 }
-interface IQStaticByteArrayMatcherBase
+interface IQStaticByteArrayMatcherBase : IQtObjectInterface
 {
 }

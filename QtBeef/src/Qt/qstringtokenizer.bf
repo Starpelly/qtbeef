@@ -17,14 +17,15 @@ extension CQt
 	[LinkName("QStringTokenizerBaseBase_new2")]
 	public static extern QStringTokenizerBaseBase_Ptr* QStringTokenizerBaseBase_new2(QStringTokenizerBaseBase_Ptr* param1);
 }
-class QStringTokenizerBaseBase
+class QStringTokenizerBaseBase : IQStringTokenizerBaseBase
 {
 	private QStringTokenizerBaseBase_Ptr* ptr;
-	public this(QStringTokenizerBaseBase_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQStringTokenizerBaseBase other)
 	{
-		this.ptr = CQt.QStringTokenizerBaseBase_new(other);
+		this.ptr = CQt.QStringTokenizerBaseBase_new((.)other?.ObjectPtr);
 	}
 }
-interface IQStringTokenizerBaseBase
+interface IQStringTokenizerBaseBase : IQtObjectInterface
 {
 }

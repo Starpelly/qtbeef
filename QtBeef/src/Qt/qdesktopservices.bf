@@ -21,37 +21,35 @@ extension CQt
 	[LinkName("QDesktopServices_OpenUrl")]
 	public static extern bool QDesktopServices_OpenUrl(QUrl_Ptr* url);
 	[LinkName("QDesktopServices_SetUrlHandler")]
-	public static extern void QDesktopServices_SetUrlHandler(libqt_string* scheme, QObject_Ptr* receiver, c_char* method);
+	public static extern void QDesktopServices_SetUrlHandler(libqt_string scheme, QObject_Ptr** receiver, c_char* method);
 	[LinkName("QDesktopServices_UnsetUrlHandler")]
-	public static extern void QDesktopServices_UnsetUrlHandler(libqt_string* scheme);
+	public static extern void QDesktopServices_UnsetUrlHandler(libqt_string scheme);
 }
-class QDesktopServices
+class QDesktopServices : IQDesktopServices
 {
 	private QDesktopServices_Ptr* ptr;
-	public this(QDesktopServices_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQDesktopServices other)
 	{
-		this.ptr = CQt.QDesktopServices_new(other);
+		this.ptr = CQt.QDesktopServices_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QDesktopServices_Delete(this.ptr);
 	}
-	public bool OpenUrl(QUrl_Ptr* url)
+	public bool OpenUrl(IQUrl url)
 	{
-		return CQt.QDesktopServices_OpenUrl(url);
+		return CQt.QDesktopServices_OpenUrl((.)url?.ObjectPtr);
 	}
-	public void SetUrlHandler(libqt_string* scheme, QObject_Ptr* receiver, c_char* method)
+	public void SetUrlHandler(String scheme, IQObject receiver, c_char* method)
 	{
-		CQt.QDesktopServices_SetUrlHandler(scheme, receiver, method);
+		CQt.QDesktopServices_SetUrlHandler(libqt_string(scheme), (.)receiver?.ObjectPtr, method);
 	}
-	public void UnsetUrlHandler(libqt_string* scheme)
+	public void UnsetUrlHandler(String scheme)
 	{
-		CQt.QDesktopServices_UnsetUrlHandler(scheme);
+		CQt.QDesktopServices_UnsetUrlHandler(libqt_string(scheme));
 	}
 }
-interface IQDesktopServices
+interface IQDesktopServices : IQtObjectInterface
 {
-	public bool OpenUrl();
-	public void SetUrlHandler();
-	public void UnsetUrlHandler();
 }

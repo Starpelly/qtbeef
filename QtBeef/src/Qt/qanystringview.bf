@@ -21,7 +21,7 @@ extension CQt
 	[LinkName("QAnyStringView_new4")]
 	public static extern QAnyStringView_Ptr* QAnyStringView_new4(void** str);
 	[LinkName("QAnyStringView_new5")]
-	public static extern QAnyStringView_Ptr* QAnyStringView_new5(libqt_string* str);
+	public static extern QAnyStringView_Ptr* QAnyStringView_new5(libqt_string str);
 	[LinkName("QAnyStringView_new6")]
 	public static extern QAnyStringView_Ptr* QAnyStringView_new6(QChar_Ptr* c);
 	[LinkName("QAnyStringView_new7")]
@@ -35,13 +35,13 @@ extension CQt
 	[LinkName("QAnyStringView_Data")]
 	public static extern void* QAnyStringView_Data(QAnyStringView_Ptr* self);
 	[LinkName("QAnyStringView_Compare")]
-	public static extern c_int QAnyStringView_Compare(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs);
+	public static extern c_int QAnyStringView_Compare(QAnyStringView_Ptr* lhs, QAnyStringView_Ptr* rhs);
 	[LinkName("QAnyStringView_Equal")]
-	public static extern bool QAnyStringView_Equal(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs);
+	public static extern bool QAnyStringView_Equal(QAnyStringView_Ptr* lhs, QAnyStringView_Ptr* rhs);
 	[LinkName("QAnyStringView_Front")]
-	public static extern QChar_Ptr QAnyStringView_Front(QAnyStringView_Ptr* self);
+	public static extern QChar_Ptr* QAnyStringView_Front(QAnyStringView_Ptr* self);
 	[LinkName("QAnyStringView_Back")]
-	public static extern QChar_Ptr QAnyStringView_Back(QAnyStringView_Ptr* self);
+	public static extern QChar_Ptr* QAnyStringView_Back(QAnyStringView_Ptr* self);
 	[LinkName("QAnyStringView_Empty")]
 	public static extern bool QAnyStringView_Empty(QAnyStringView_Ptr* self);
 	[LinkName("QAnyStringView_Size_Bytes")]
@@ -53,14 +53,15 @@ extension CQt
 	[LinkName("QAnyStringView_Length")]
 	public static extern void* QAnyStringView_Length(QAnyStringView_Ptr* self);
 	[LinkName("QAnyStringView_Compare3")]
-	public static extern c_int QAnyStringView_Compare3(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs, Qt_CaseSensitivity cs);
+	public static extern c_int QAnyStringView_Compare3(QAnyStringView_Ptr* lhs, QAnyStringView_Ptr* rhs, Qt_CaseSensitivity cs);
 }
-class QAnyStringView
+class QAnyStringView : IQAnyStringView
 {
 	private QAnyStringView_Ptr* ptr;
-	public this(QAnyStringView_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQAnyStringView other)
 	{
-		this.ptr = CQt.QAnyStringView_new(other);
+		this.ptr = CQt.QAnyStringView_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -70,13 +71,13 @@ class QAnyStringView
 	{
 		this.ptr = CQt.QAnyStringView_new4(str);
 	}
-	public this(libqt_string* str)
+	public this(String str)
 	{
-		this.ptr = CQt.QAnyStringView_new5(str);
+		this.ptr = CQt.QAnyStringView_new5(libqt_string(str));
 	}
-	public this(QChar_Ptr* c)
+	public this(IQChar c)
 	{
-		this.ptr = CQt.QAnyStringView_new6(c);
+		this.ptr = CQt.QAnyStringView_new6((.)c?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -94,19 +95,19 @@ class QAnyStringView
 	{
 		return CQt.QAnyStringView_Data((.)this.ptr);
 	}
-	public c_int Compare(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs)
+	public c_int Compare(IQAnyStringView lhs, IQAnyStringView rhs)
 	{
-		return CQt.QAnyStringView_Compare(lhs, rhs);
+		return CQt.QAnyStringView_Compare((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
 	}
-	public bool Equal(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs)
+	public bool Equal(IQAnyStringView lhs, IQAnyStringView rhs)
 	{
-		return CQt.QAnyStringView_Equal(lhs, rhs);
+		return CQt.QAnyStringView_Equal((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
 	}
-	public QChar_Ptr Front()
+	public QChar_Ptr* Front()
 	{
 		return CQt.QAnyStringView_Front((.)this.ptr);
 	}
-	public QChar_Ptr Back()
+	public QChar_Ptr* Back()
 	{
 		return CQt.QAnyStringView_Back((.)this.ptr);
 	}
@@ -130,24 +131,11 @@ class QAnyStringView
 	{
 		return CQt.QAnyStringView_Length((.)this.ptr);
 	}
-	public c_int Compare3(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs, Qt_CaseSensitivity cs)
+	public c_int Compare3(IQAnyStringView lhs, IQAnyStringView rhs, Qt_CaseSensitivity cs)
 	{
-		return CQt.QAnyStringView_Compare3(lhs, rhs, cs);
+		return CQt.QAnyStringView_Compare3((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr, cs);
 	}
 }
-interface IQAnyStringView
+interface IQAnyStringView : IQtObjectInterface
 {
-	public libqt_string ToString();
-	public void* Size();
-	public void* Data();
-	public c_int Compare();
-	public bool Equal();
-	public QChar Front();
-	public QChar Back();
-	public bool Empty();
-	public void* Size_bytes();
-	public bool IsNull();
-	public bool IsEmpty();
-	public void* Length();
-	public c_int Compare3();
 }

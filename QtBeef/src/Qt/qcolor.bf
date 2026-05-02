@@ -25,9 +25,9 @@ extension CQt
 	[LinkName("QColor_new6")]
 	public static extern QColor_Ptr* QColor_new6(c_uint rgb);
 	[LinkName("QColor_new7")]
-	public static extern QColor_Ptr* QColor_new7(QRgba64_Ptr rgba64);
+	public static extern QColor_Ptr* QColor_new7(QRgba64_Ptr* rgba64);
 	[LinkName("QColor_new8")]
-	public static extern QColor_Ptr* QColor_new8(libqt_string* name);
+	public static extern QColor_Ptr* QColor_new8(libqt_string name);
 	[LinkName("QColor_new9")]
 	public static extern QColor_Ptr* QColor_new9(c_char* aname);
 	[LinkName("QColor_new10")]
@@ -43,7 +43,7 @@ extension CQt
 	[LinkName("QColor_Delete")]
 	public static extern void QColor_Delete(QColor_Ptr* self);
 	[LinkName("QColor_FromString")]
-	public static extern QColor_Ptr QColor_FromString(QAnyStringView_Ptr name);
+	public static extern QColor_Ptr* QColor_FromString(QAnyStringView_Ptr* name);
 	[LinkName("QColor_OperatorAssign")]
 	public static extern void QColor_OperatorAssign(QColor_Ptr* self, Qt_GlobalColor color);
 	[LinkName("QColor_IsValid")]
@@ -51,7 +51,7 @@ extension CQt
 	[LinkName("QColor_Name")]
 	public static extern libqt_string QColor_Name(QColor_Ptr* self);
 	[LinkName("QColor_SetNamedColor")]
-	public static extern void QColor_SetNamedColor(QColor_Ptr* self, libqt_string* name);
+	public static extern void QColor_SetNamedColor(QColor_Ptr* self, libqt_string name);
 	[LinkName("QColor_ColorNames")]
 	public static extern void* QColor_ColorNames();
 	[LinkName("QColor_Spec")]
@@ -97,9 +97,9 @@ extension CQt
 	[LinkName("QColor_SetRgbF")]
 	public static extern void QColor_SetRgbF(QColor_Ptr* self, float r, float g, float b);
 	[LinkName("QColor_Rgba64")]
-	public static extern QRgba64_Ptr QColor_Rgba64(QColor_Ptr* self);
+	public static extern QRgba64_Ptr* QColor_Rgba64(QColor_Ptr* self);
 	[LinkName("QColor_SetRgba64")]
-	public static extern void QColor_SetRgba64(QColor_Ptr* self, QRgba64_Ptr rgba);
+	public static extern void QColor_SetRgba64(QColor_Ptr* self, QRgba64_Ptr* rgba);
 	[LinkName("QColor_Rgba")]
 	public static extern c_uint QColor_Rgba(QColor_Ptr* self);
 	[LinkName("QColor_SetRgba")]
@@ -181,55 +181,55 @@ extension CQt
 	[LinkName("QColor_SetHslF")]
 	public static extern void QColor_SetHslF(QColor_Ptr* self, float h, float s, float l);
 	[LinkName("QColor_ToRgb")]
-	public static extern QColor_Ptr QColor_ToRgb(QColor_Ptr* self);
+	public static extern QColor_Ptr* QColor_ToRgb(QColor_Ptr* self);
 	[LinkName("QColor_ToHsv")]
-	public static extern QColor_Ptr QColor_ToHsv(QColor_Ptr* self);
+	public static extern QColor_Ptr* QColor_ToHsv(QColor_Ptr* self);
 	[LinkName("QColor_ToCmyk")]
-	public static extern QColor_Ptr QColor_ToCmyk(QColor_Ptr* self);
+	public static extern QColor_Ptr* QColor_ToCmyk(QColor_Ptr* self);
 	[LinkName("QColor_ToHsl")]
-	public static extern QColor_Ptr QColor_ToHsl(QColor_Ptr* self);
+	public static extern QColor_Ptr* QColor_ToHsl(QColor_Ptr* self);
 	[LinkName("QColor_ToExtendedRgb")]
-	public static extern QColor_Ptr QColor_ToExtendedRgb(QColor_Ptr* self);
+	public static extern QColor_Ptr* QColor_ToExtendedRgb(QColor_Ptr* self);
 	[LinkName("QColor_ConvertTo")]
-	public static extern QColor_Ptr QColor_ConvertTo(QColor_Ptr* self, QColor_Spec colorSpec);
+	public static extern QColor_Ptr* QColor_ConvertTo(QColor_Ptr* self, QColor_Spec colorSpec);
 	[LinkName("QColor_FromRgb")]
-	public static extern QColor_Ptr QColor_FromRgb(c_uint rgb);
+	public static extern QColor_Ptr* QColor_FromRgb(c_uint rgb);
 	[LinkName("QColor_FromRgba")]
-	public static extern QColor_Ptr QColor_FromRgba(c_uint rgba);
+	public static extern QColor_Ptr* QColor_FromRgba(c_uint rgba);
 	[LinkName("QColor_FromRgb2")]
-	public static extern QColor_Ptr QColor_FromRgb2(c_int r, c_int g, c_int b);
+	public static extern QColor_Ptr* QColor_FromRgb2(c_int r, c_int g, c_int b);
 	[LinkName("QColor_FromRgbF")]
-	public static extern QColor_Ptr QColor_FromRgbF(float r, float g, float b);
+	public static extern QColor_Ptr* QColor_FromRgbF(float r, float g, float b);
 	[LinkName("QColor_FromRgba64")]
-	public static extern QColor_Ptr QColor_FromRgba64(c_ushort r, c_ushort g, c_ushort b);
+	public static extern QColor_Ptr* QColor_FromRgba64(c_ushort r, c_ushort g, c_ushort b);
 	[LinkName("QColor_FromRgba642")]
-	public static extern QColor_Ptr QColor_FromRgba642(QRgba64_Ptr rgba);
+	public static extern QColor_Ptr* QColor_FromRgba642(QRgba64_Ptr* rgba);
 	[LinkName("QColor_FromHsv")]
-	public static extern QColor_Ptr QColor_FromHsv(c_int h, c_int s, c_int v);
+	public static extern QColor_Ptr* QColor_FromHsv(c_int h, c_int s, c_int v);
 	[LinkName("QColor_FromHsvF")]
-	public static extern QColor_Ptr QColor_FromHsvF(float h, float s, float v);
+	public static extern QColor_Ptr* QColor_FromHsvF(float h, float s, float v);
 	[LinkName("QColor_FromCmyk")]
-	public static extern QColor_Ptr QColor_FromCmyk(c_int c, c_int m, c_int y, c_int k);
+	public static extern QColor_Ptr* QColor_FromCmyk(c_int c, c_int m, c_int y, c_int k);
 	[LinkName("QColor_FromCmykF")]
-	public static extern QColor_Ptr QColor_FromCmykF(float c, float m, float y, float k);
+	public static extern QColor_Ptr* QColor_FromCmykF(float c, float m, float y, float k);
 	[LinkName("QColor_FromHsl")]
-	public static extern QColor_Ptr QColor_FromHsl(c_int h, c_int s, c_int l);
+	public static extern QColor_Ptr* QColor_FromHsl(c_int h, c_int s, c_int l);
 	[LinkName("QColor_FromHslF")]
-	public static extern QColor_Ptr QColor_FromHslF(float h, float s, float l);
+	public static extern QColor_Ptr* QColor_FromHslF(float h, float s, float l);
 	[LinkName("QColor_Lighter")]
-	public static extern QColor_Ptr QColor_Lighter(QColor_Ptr* self);
+	public static extern QColor_Ptr* QColor_Lighter(QColor_Ptr* self);
 	[LinkName("QColor_Darker")]
-	public static extern QColor_Ptr QColor_Darker(QColor_Ptr* self);
+	public static extern QColor_Ptr* QColor_Darker(QColor_Ptr* self);
 	[LinkName("QColor_OperatorEqual")]
 	public static extern bool QColor_OperatorEqual(QColor_Ptr* self, QColor_Ptr* c);
 	[LinkName("QColor_OperatorNotEqual")]
 	public static extern bool QColor_OperatorNotEqual(QColor_Ptr* self, QColor_Ptr* c);
 	[LinkName("QColor_ToQvariant")]
-	public static extern QVariant_Ptr QColor_ToQvariant(QColor_Ptr* self);
+	public static extern QVariant_Ptr* QColor_ToQvariant(QColor_Ptr* self);
 	[LinkName("QColor_IsValidColor")]
-	public static extern bool QColor_IsValidColor(libqt_string* name);
+	public static extern bool QColor_IsValidColor(libqt_string name);
 	[LinkName("QColor_IsValidColorName")]
-	public static extern bool QColor_IsValidColorName(QAnyStringView_Ptr param1);
+	public static extern bool QColor_IsValidColorName(QAnyStringView_Ptr* param1);
 	[LinkName("QColor_Name1")]
 	public static extern libqt_string QColor_Name1(QColor_Ptr* self, QColor_NameFormat format);
 	[LinkName("QColor_GetRgb4")]
@@ -265,34 +265,35 @@ extension CQt
 	[LinkName("QColor_SetHslF4")]
 	public static extern void QColor_SetHslF4(QColor_Ptr* self, float h, float s, float l, float a);
 	[LinkName("QColor_FromRgb4")]
-	public static extern QColor_Ptr QColor_FromRgb4(c_int r, c_int g, c_int b, c_int a);
+	public static extern QColor_Ptr* QColor_FromRgb4(c_int r, c_int g, c_int b, c_int a);
 	[LinkName("QColor_FromRgbF4")]
-	public static extern QColor_Ptr QColor_FromRgbF4(float r, float g, float b, float a);
+	public static extern QColor_Ptr* QColor_FromRgbF4(float r, float g, float b, float a);
 	[LinkName("QColor_FromRgba644")]
-	public static extern QColor_Ptr QColor_FromRgba644(c_ushort r, c_ushort g, c_ushort b, c_ushort a);
+	public static extern QColor_Ptr* QColor_FromRgba644(c_ushort r, c_ushort g, c_ushort b, c_ushort a);
 	[LinkName("QColor_FromHsv4")]
-	public static extern QColor_Ptr QColor_FromHsv4(c_int h, c_int s, c_int v, c_int a);
+	public static extern QColor_Ptr* QColor_FromHsv4(c_int h, c_int s, c_int v, c_int a);
 	[LinkName("QColor_FromHsvF4")]
-	public static extern QColor_Ptr QColor_FromHsvF4(float h, float s, float v, float a);
+	public static extern QColor_Ptr* QColor_FromHsvF4(float h, float s, float v, float a);
 	[LinkName("QColor_FromCmyk5")]
-	public static extern QColor_Ptr QColor_FromCmyk5(c_int c, c_int m, c_int y, c_int k, c_int a);
+	public static extern QColor_Ptr* QColor_FromCmyk5(c_int c, c_int m, c_int y, c_int k, c_int a);
 	[LinkName("QColor_FromCmykF5")]
-	public static extern QColor_Ptr QColor_FromCmykF5(float c, float m, float y, float k, float a);
+	public static extern QColor_Ptr* QColor_FromCmykF5(float c, float m, float y, float k, float a);
 	[LinkName("QColor_FromHsl4")]
-	public static extern QColor_Ptr QColor_FromHsl4(c_int h, c_int s, c_int l, c_int a);
+	public static extern QColor_Ptr* QColor_FromHsl4(c_int h, c_int s, c_int l, c_int a);
 	[LinkName("QColor_FromHslF4")]
-	public static extern QColor_Ptr QColor_FromHslF4(float h, float s, float l, float a);
+	public static extern QColor_Ptr* QColor_FromHslF4(float h, float s, float l, float a);
 	[LinkName("QColor_Lighter1")]
-	public static extern QColor_Ptr QColor_Lighter1(QColor_Ptr* self, c_int f);
+	public static extern QColor_Ptr* QColor_Lighter1(QColor_Ptr* self, c_int f);
 	[LinkName("QColor_Darker1")]
-	public static extern QColor_Ptr QColor_Darker1(QColor_Ptr* self, c_int f);
+	public static extern QColor_Ptr* QColor_Darker1(QColor_Ptr* self, c_int f);
 }
-class QColor
+class QColor : IQColor
 {
 	private QColor_Ptr* ptr;
-	public this(QColor_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQColor other)
 	{
-		this.ptr = CQt.QColor_new(other);
+		this.ptr = CQt.QColor_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -310,13 +311,13 @@ class QColor
 	{
 		this.ptr = CQt.QColor_new6(rgb);
 	}
-	public this(QRgba64_Ptr rgba64)
+	public this(IQRgba64 rgba64)
 	{
-		this.ptr = CQt.QColor_new7(rgba64);
+		this.ptr = CQt.QColor_new7((.)rgba64?.ObjectPtr);
 	}
-	public this(libqt_string* name)
+	public this(String name)
 	{
-		this.ptr = CQt.QColor_new8(name);
+		this.ptr = CQt.QColor_new8(libqt_string(name));
 	}
 	public this(c_char* aname)
 	{
@@ -342,9 +343,9 @@ class QColor
 	{
 		CQt.QColor_Delete(this.ptr);
 	}
-	public QColor_Ptr FromString(QAnyStringView_Ptr name)
+	public QColor_Ptr* FromString(IQAnyStringView name)
 	{
-		return CQt.QColor_FromString(name);
+		return CQt.QColor_FromString((.)name?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
@@ -354,9 +355,9 @@ class QColor
 	{
 		return CQt.QColor_Name((.)this.ptr);
 	}
-	public void SetNamedColor(libqt_string* name)
+	public void SetNamedColor(String name)
 	{
-		CQt.QColor_SetNamedColor((.)this.ptr, name);
+		CQt.QColor_SetNamedColor((.)this.ptr, libqt_string(name));
 	}
 	public void* ColorNames()
 	{
@@ -446,13 +447,13 @@ class QColor
 	{
 		CQt.QColor_SetRgbF((.)this.ptr, r, g, b);
 	}
-	public QRgba64_Ptr Rgba64()
+	public QRgba64_Ptr* Rgba64()
 	{
 		return CQt.QColor_Rgba64((.)this.ptr);
 	}
-	public void SetRgba64(QRgba64_Ptr rgba)
+	public void SetRgba64(IQRgba64 rgba)
 	{
-		CQt.QColor_SetRgba64((.)this.ptr, rgba);
+		CQt.QColor_SetRgba64((.)this.ptr, (.)rgba?.ObjectPtr);
 	}
 	public c_uint Rgba()
 	{
@@ -614,93 +615,93 @@ class QColor
 	{
 		CQt.QColor_SetHslF((.)this.ptr, h, s, l);
 	}
-	public QColor_Ptr ToRgb()
+	public QColor_Ptr* ToRgb()
 	{
 		return CQt.QColor_ToRgb((.)this.ptr);
 	}
-	public QColor_Ptr ToHsv()
+	public QColor_Ptr* ToHsv()
 	{
 		return CQt.QColor_ToHsv((.)this.ptr);
 	}
-	public QColor_Ptr ToCmyk()
+	public QColor_Ptr* ToCmyk()
 	{
 		return CQt.QColor_ToCmyk((.)this.ptr);
 	}
-	public QColor_Ptr ToHsl()
+	public QColor_Ptr* ToHsl()
 	{
 		return CQt.QColor_ToHsl((.)this.ptr);
 	}
-	public QColor_Ptr ToExtendedRgb()
+	public QColor_Ptr* ToExtendedRgb()
 	{
 		return CQt.QColor_ToExtendedRgb((.)this.ptr);
 	}
-	public QColor_Ptr ConvertTo(QColor_Spec colorSpec)
+	public QColor_Ptr* ConvertTo(QColor_Spec colorSpec)
 	{
 		return CQt.QColor_ConvertTo((.)this.ptr, colorSpec);
 	}
-	public QColor_Ptr FromRgb(c_uint rgb)
+	public QColor_Ptr* FromRgb(c_uint rgb)
 	{
 		return CQt.QColor_FromRgb(rgb);
 	}
-	public QColor_Ptr FromRgba(c_uint rgba)
+	public QColor_Ptr* FromRgba(c_uint rgba)
 	{
 		return CQt.QColor_FromRgba(rgba);
 	}
-	public QColor_Ptr FromRgb2(c_int r, c_int g, c_int b)
+	public QColor_Ptr* FromRgb2(c_int r, c_int g, c_int b)
 	{
 		return CQt.QColor_FromRgb2(r, g, b);
 	}
-	public QColor_Ptr FromRgbF(float r, float g, float b)
+	public QColor_Ptr* FromRgbF(float r, float g, float b)
 	{
 		return CQt.QColor_FromRgbF(r, g, b);
 	}
-	public QColor_Ptr FromRgba64(c_ushort r, c_ushort g, c_ushort b)
+	public QColor_Ptr* FromRgba64(c_ushort r, c_ushort g, c_ushort b)
 	{
 		return CQt.QColor_FromRgba64(r, g, b);
 	}
-	public QColor_Ptr FromRgba642(QRgba64_Ptr rgba)
+	public QColor_Ptr* FromRgba642(IQRgba64 rgba)
 	{
-		return CQt.QColor_FromRgba642(rgba);
+		return CQt.QColor_FromRgba642((.)rgba?.ObjectPtr);
 	}
-	public QColor_Ptr FromHsv(c_int h, c_int s, c_int v)
+	public QColor_Ptr* FromHsv(c_int h, c_int s, c_int v)
 	{
 		return CQt.QColor_FromHsv(h, s, v);
 	}
-	public QColor_Ptr FromHsvF(float h, float s, float v)
+	public QColor_Ptr* FromHsvF(float h, float s, float v)
 	{
 		return CQt.QColor_FromHsvF(h, s, v);
 	}
-	public QColor_Ptr FromCmyk(c_int c, c_int m, c_int y, c_int k)
+	public QColor_Ptr* FromCmyk(c_int c, c_int m, c_int y, c_int k)
 	{
 		return CQt.QColor_FromCmyk(c, m, y, k);
 	}
-	public QColor_Ptr FromCmykF(float c, float m, float y, float k)
+	public QColor_Ptr* FromCmykF(float c, float m, float y, float k)
 	{
 		return CQt.QColor_FromCmykF(c, m, y, k);
 	}
-	public QColor_Ptr FromHsl(c_int h, c_int s, c_int l)
+	public QColor_Ptr* FromHsl(c_int h, c_int s, c_int l)
 	{
 		return CQt.QColor_FromHsl(h, s, l);
 	}
-	public QColor_Ptr FromHslF(float h, float s, float l)
+	public QColor_Ptr* FromHslF(float h, float s, float l)
 	{
 		return CQt.QColor_FromHslF(h, s, l);
 	}
-	public QColor_Ptr Lighter()
+	public QColor_Ptr* Lighter()
 	{
 		return CQt.QColor_Lighter((.)this.ptr);
 	}
-	public QColor_Ptr Darker()
+	public QColor_Ptr* Darker()
 	{
 		return CQt.QColor_Darker((.)this.ptr);
 	}
-	public bool IsValidColor(libqt_string* name)
+	public bool IsValidColor(String name)
 	{
-		return CQt.QColor_IsValidColor(name);
+		return CQt.QColor_IsValidColor(libqt_string(name));
 	}
-	public bool IsValidColorName(QAnyStringView_Ptr param1)
+	public bool IsValidColorName(IQAnyStringView param1)
 	{
-		return CQt.QColor_IsValidColorName(param1);
+		return CQt.QColor_IsValidColorName((.)param1?.ObjectPtr);
 	}
 	public libqt_string Name1(QColor_NameFormat format)
 	{
@@ -770,171 +771,53 @@ class QColor
 	{
 		CQt.QColor_SetHslF4((.)this.ptr, h, s, l, a);
 	}
-	public QColor_Ptr FromRgb4(c_int r, c_int g, c_int b, c_int a)
+	public QColor_Ptr* FromRgb4(c_int r, c_int g, c_int b, c_int a)
 	{
 		return CQt.QColor_FromRgb4(r, g, b, a);
 	}
-	public QColor_Ptr FromRgbF4(float r, float g, float b, float a)
+	public QColor_Ptr* FromRgbF4(float r, float g, float b, float a)
 	{
 		return CQt.QColor_FromRgbF4(r, g, b, a);
 	}
-	public QColor_Ptr FromRgba644(c_ushort r, c_ushort g, c_ushort b, c_ushort a)
+	public QColor_Ptr* FromRgba644(c_ushort r, c_ushort g, c_ushort b, c_ushort a)
 	{
 		return CQt.QColor_FromRgba644(r, g, b, a);
 	}
-	public QColor_Ptr FromHsv4(c_int h, c_int s, c_int v, c_int a)
+	public QColor_Ptr* FromHsv4(c_int h, c_int s, c_int v, c_int a)
 	{
 		return CQt.QColor_FromHsv4(h, s, v, a);
 	}
-	public QColor_Ptr FromHsvF4(float h, float s, float v, float a)
+	public QColor_Ptr* FromHsvF4(float h, float s, float v, float a)
 	{
 		return CQt.QColor_FromHsvF4(h, s, v, a);
 	}
-	public QColor_Ptr FromCmyk5(c_int c, c_int m, c_int y, c_int k, c_int a)
+	public QColor_Ptr* FromCmyk5(c_int c, c_int m, c_int y, c_int k, c_int a)
 	{
 		return CQt.QColor_FromCmyk5(c, m, y, k, a);
 	}
-	public QColor_Ptr FromCmykF5(float c, float m, float y, float k, float a)
+	public QColor_Ptr* FromCmykF5(float c, float m, float y, float k, float a)
 	{
 		return CQt.QColor_FromCmykF5(c, m, y, k, a);
 	}
-	public QColor_Ptr FromHsl4(c_int h, c_int s, c_int l, c_int a)
+	public QColor_Ptr* FromHsl4(c_int h, c_int s, c_int l, c_int a)
 	{
 		return CQt.QColor_FromHsl4(h, s, l, a);
 	}
-	public QColor_Ptr FromHslF4(float h, float s, float l, float a)
+	public QColor_Ptr* FromHslF4(float h, float s, float l, float a)
 	{
 		return CQt.QColor_FromHslF4(h, s, l, a);
 	}
-	public QColor_Ptr Lighter1(c_int f)
+	public QColor_Ptr* Lighter1(c_int f)
 	{
 		return CQt.QColor_Lighter1((.)this.ptr, f);
 	}
-	public QColor_Ptr Darker1(c_int f)
+	public QColor_Ptr* Darker1(c_int f)
 	{
 		return CQt.QColor_Darker1((.)this.ptr, f);
 	}
 }
-interface IQColor
+interface IQColor : IQtObjectInterface
 {
-	public QColor FromString();
-	public bool IsValid();
-	public libqt_string Name();
-	public void SetNamedColor();
-	public void* ColorNames();
-	public QColor_Spec Spec();
-	public c_int Alpha();
-	public void SetAlpha();
-	public float AlphaF();
-	public void SetAlphaF();
-	public c_int Red();
-	public c_int Green();
-	public c_int Blue();
-	public void SetRed();
-	public void SetGreen();
-	public void SetBlue();
-	public float RedF();
-	public float GreenF();
-	public float BlueF();
-	public void SetRedF();
-	public void SetGreenF();
-	public void SetBlueF();
-	public void GetRgb();
-	public void SetRgb();
-	public void GetRgbF();
-	public void SetRgbF();
-	public QRgba64 Rgba64();
-	public void SetRgba64();
-	public c_uint Rgba();
-	public void SetRgba();
-	public c_uint Rgb();
-	public void SetRgb2();
-	public c_int Hue();
-	public c_int Saturation();
-	public c_int HsvHue();
-	public c_int HsvSaturation();
-	public c_int Value();
-	public float HueF();
-	public float SaturationF();
-	public float HsvHueF();
-	public float HsvSaturationF();
-	public float ValueF();
-	public void GetHsv();
-	public void SetHsv();
-	public void GetHsvF();
-	public void SetHsvF();
-	public c_int Cyan();
-	public c_int Magenta();
-	public c_int Yellow();
-	public c_int Black();
-	public float CyanF();
-	public float MagentaF();
-	public float YellowF();
-	public float BlackF();
-	public void GetCmyk();
-	public void SetCmyk();
-	public void GetCmykF();
-	public void SetCmykF();
-	public c_int HslHue();
-	public c_int HslSaturation();
-	public c_int Lightness();
-	public float HslHueF();
-	public float HslSaturationF();
-	public float LightnessF();
-	public void GetHsl();
-	public void SetHsl();
-	public void GetHslF();
-	public void SetHslF();
-	public QColor ToRgb();
-	public QColor ToHsv();
-	public QColor ToCmyk();
-	public QColor ToHsl();
-	public QColor ToExtendedRgb();
-	public QColor ConvertTo();
-	public QColor FromRgb();
-	public QColor FromRgba();
-	public QColor FromRgb2();
-	public QColor FromRgbF();
-	public QColor FromRgba64();
-	public QColor FromRgba642();
-	public QColor FromHsv();
-	public QColor FromHsvF();
-	public QColor FromCmyk();
-	public QColor FromCmykF();
-	public QColor FromHsl();
-	public QColor FromHslF();
-	public QColor Lighter();
-	public QColor Darker();
-	public bool IsValidColor();
-	public bool IsValidColorName();
-	public libqt_string Name1();
-	public void GetRgb4();
-	public void SetRgb4();
-	public void GetRgbF4();
-	public void SetRgbF4();
-	public void GetHsv4();
-	public void SetHsv4();
-	public void GetHsvF4();
-	public void SetHsvF4();
-	public void GetCmyk5();
-	public void SetCmyk5();
-	public void GetCmykF5();
-	public void SetCmykF5();
-	public void GetHsl4();
-	public void SetHsl4();
-	public void GetHslF4();
-	public void SetHslF4();
-	public QColor FromRgb4();
-	public QColor FromRgbF4();
-	public QColor FromRgba644();
-	public QColor FromHsv4();
-	public QColor FromHsvF4();
-	public QColor FromCmyk5();
-	public QColor FromCmykF5();
-	public QColor FromHsl4();
-	public QColor FromHslF4();
-	public QColor Lighter1();
-	public QColor Darker1();
 }
 [AllowDuplicates]
 enum QColor_Spec

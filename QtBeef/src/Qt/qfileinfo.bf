@@ -15,11 +15,11 @@ extension CQt
 	[LinkName("QFileInfo_new")]
 	public static extern QFileInfo_Ptr* QFileInfo_new();
 	[LinkName("QFileInfo_new2")]
-	public static extern QFileInfo_Ptr* QFileInfo_new2(libqt_string* file);
+	public static extern QFileInfo_Ptr* QFileInfo_new2(libqt_string file);
 	[LinkName("QFileInfo_new3")]
 	public static extern QFileInfo_Ptr* QFileInfo_new3(QFileDevice_Ptr* file);
 	[LinkName("QFileInfo_new4")]
-	public static extern QFileInfo_Ptr* QFileInfo_new4(QDir_Ptr* dir, libqt_string* file);
+	public static extern QFileInfo_Ptr* QFileInfo_new4(QDir_Ptr* dir, libqt_string file);
 	[LinkName("QFileInfo_new5")]
 	public static extern QFileInfo_Ptr* QFileInfo_new5(QFileInfo_Ptr* fileinfo);
 	[LinkName("QFileInfo_Delete")]
@@ -33,15 +33,15 @@ extension CQt
 	[LinkName("QFileInfo_OperatorNotEqual")]
 	public static extern bool QFileInfo_OperatorNotEqual(QFileInfo_Ptr* self, QFileInfo_Ptr* fileinfo);
 	[LinkName("QFileInfo_SetFile")]
-	public static extern void QFileInfo_SetFile(QFileInfo_Ptr* self, libqt_string* file);
+	public static extern void QFileInfo_SetFile(QFileInfo_Ptr* self, libqt_string file);
 	[LinkName("QFileInfo_SetFile2")]
 	public static extern void QFileInfo_SetFile2(QFileInfo_Ptr* self, QFileDevice_Ptr* file);
 	[LinkName("QFileInfo_SetFile3")]
-	public static extern void QFileInfo_SetFile3(QFileInfo_Ptr* self, QDir_Ptr* dir, libqt_string* file);
+	public static extern void QFileInfo_SetFile3(QFileInfo_Ptr* self, QDir_Ptr* dir, libqt_string file);
 	[LinkName("QFileInfo_Exists")]
 	public static extern bool QFileInfo_Exists(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_Exists2")]
-	public static extern bool QFileInfo_Exists2(libqt_string* file);
+	public static extern bool QFileInfo_Exists2(libqt_string file);
 	[LinkName("QFileInfo_Refresh")]
 	public static extern void QFileInfo_Refresh(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_FilePath")]
@@ -69,9 +69,9 @@ extension CQt
 	[LinkName("QFileInfo_CanonicalPath")]
 	public static extern libqt_string QFileInfo_CanonicalPath(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_Dir")]
-	public static extern QDir_Ptr QFileInfo_Dir(QFileInfo_Ptr* self);
+	public static extern QDir_Ptr* QFileInfo_Dir(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_AbsoluteDir")]
-	public static extern QDir_Ptr QFileInfo_AbsoluteDir(QFileInfo_Ptr* self);
+	public static extern QDir_Ptr* QFileInfo_AbsoluteDir(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_IsReadable")]
 	public static extern bool QFileInfo_IsReadable(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_IsWritable")]
@@ -125,15 +125,15 @@ extension CQt
 	[LinkName("QFileInfo_Size")]
 	public static extern c_longlong QFileInfo_Size(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_BirthTime")]
-	public static extern QDateTime_Ptr QFileInfo_BirthTime(QFileInfo_Ptr* self);
+	public static extern QDateTime_Ptr* QFileInfo_BirthTime(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_MetadataChangeTime")]
-	public static extern QDateTime_Ptr QFileInfo_MetadataChangeTime(QFileInfo_Ptr* self);
+	public static extern QDateTime_Ptr* QFileInfo_MetadataChangeTime(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_LastModified")]
-	public static extern QDateTime_Ptr QFileInfo_LastModified(QFileInfo_Ptr* self);
+	public static extern QDateTime_Ptr* QFileInfo_LastModified(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_LastRead")]
-	public static extern QDateTime_Ptr QFileInfo_LastRead(QFileInfo_Ptr* self);
+	public static extern QDateTime_Ptr* QFileInfo_LastRead(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_FileTime")]
-	public static extern QDateTime_Ptr QFileInfo_FileTime(QFileInfo_Ptr* self, QFileDevice_FileTime time);
+	public static extern QDateTime_Ptr* QFileInfo_FileTime(QFileInfo_Ptr* self, QFileDevice_FileTime time);
 	[LinkName("QFileInfo_Caching")]
 	public static extern bool QFileInfo_Caching(QFileInfo_Ptr* self);
 	[LinkName("QFileInfo_SetCaching")]
@@ -141,56 +141,57 @@ extension CQt
 	[LinkName("QFileInfo_Stat")]
 	public static extern void QFileInfo_Stat(QFileInfo_Ptr* self);
 }
-class QFileInfo
+class QFileInfo : IQFileInfo
 {
 	private QFileInfo_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QFileInfo_new();
 	}
-	public this(libqt_string* file)
+	public this(String file)
 	{
-		this.ptr = CQt.QFileInfo_new2(file);
+		this.ptr = CQt.QFileInfo_new2(libqt_string(file));
 	}
-	public this(QFileDevice_Ptr* file)
+	public this(IQFileDevice file)
 	{
-		this.ptr = CQt.QFileInfo_new3(file);
+		this.ptr = CQt.QFileInfo_new3((.)file?.ObjectPtr);
 	}
-	public this(QDir_Ptr* dir, libqt_string* file)
+	public this(IQDir dir, String file)
 	{
-		this.ptr = CQt.QFileInfo_new4(dir, file);
+		this.ptr = CQt.QFileInfo_new4((.)dir?.ObjectPtr, libqt_string(file));
 	}
-	public this(QFileInfo_Ptr* fileinfo)
+	public this(IQFileInfo fileinfo)
 	{
-		this.ptr = CQt.QFileInfo_new5(fileinfo);
+		this.ptr = CQt.QFileInfo_new5((.)fileinfo?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QFileInfo_Delete(this.ptr);
 	}
-	public void Swap(QFileInfo_Ptr* other)
+	public void Swap(IQFileInfo other)
 	{
-		CQt.QFileInfo_Swap((.)this.ptr, other);
+		CQt.QFileInfo_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetFile(libqt_string* file)
+	public void SetFile(String file)
 	{
-		CQt.QFileInfo_SetFile((.)this.ptr, file);
+		CQt.QFileInfo_SetFile((.)this.ptr, libqt_string(file));
 	}
-	public void SetFile2(QFileDevice_Ptr* file)
+	public void SetFile2(IQFileDevice file)
 	{
-		CQt.QFileInfo_SetFile2((.)this.ptr, file);
+		CQt.QFileInfo_SetFile2((.)this.ptr, (.)file?.ObjectPtr);
 	}
-	public void SetFile3(QDir_Ptr* dir, libqt_string* file)
+	public void SetFile3(IQDir dir, String file)
 	{
-		CQt.QFileInfo_SetFile3((.)this.ptr, dir, file);
+		CQt.QFileInfo_SetFile3((.)this.ptr, (.)dir?.ObjectPtr, libqt_string(file));
 	}
 	public bool Exists()
 	{
 		return CQt.QFileInfo_Exists((.)this.ptr);
 	}
-	public bool Exists2(libqt_string* file)
+	public bool Exists2(String file)
 	{
-		return CQt.QFileInfo_Exists2(file);
+		return CQt.QFileInfo_Exists2(libqt_string(file));
 	}
 	public void Refresh()
 	{
@@ -244,11 +245,11 @@ class QFileInfo
 	{
 		return CQt.QFileInfo_CanonicalPath((.)this.ptr);
 	}
-	public QDir_Ptr Dir()
+	public QDir_Ptr* Dir()
 	{
 		return CQt.QFileInfo_Dir((.)this.ptr);
 	}
-	public QDir_Ptr AbsoluteDir()
+	public QDir_Ptr* AbsoluteDir()
 	{
 		return CQt.QFileInfo_AbsoluteDir((.)this.ptr);
 	}
@@ -356,23 +357,23 @@ class QFileInfo
 	{
 		return CQt.QFileInfo_Size((.)this.ptr);
 	}
-	public QDateTime_Ptr BirthTime()
+	public QDateTime_Ptr* BirthTime()
 	{
 		return CQt.QFileInfo_BirthTime((.)this.ptr);
 	}
-	public QDateTime_Ptr MetadataChangeTime()
+	public QDateTime_Ptr* MetadataChangeTime()
 	{
 		return CQt.QFileInfo_MetadataChangeTime((.)this.ptr);
 	}
-	public QDateTime_Ptr LastModified()
+	public QDateTime_Ptr* LastModified()
 	{
 		return CQt.QFileInfo_LastModified((.)this.ptr);
 	}
-	public QDateTime_Ptr LastRead()
+	public QDateTime_Ptr* LastRead()
 	{
 		return CQt.QFileInfo_LastRead((.)this.ptr);
 	}
-	public QDateTime_Ptr FileTime(QFileDevice_FileTime time)
+	public QDateTime_Ptr* FileTime(QFileDevice_FileTime time)
 	{
 		return CQt.QFileInfo_FileTime((.)this.ptr, time);
 	}
@@ -389,61 +390,6 @@ class QFileInfo
 		CQt.QFileInfo_Stat((.)this.ptr);
 	}
 }
-interface IQFileInfo
+interface IQFileInfo : IQtObjectInterface
 {
-	public void Swap();
-	public void SetFile();
-	public void SetFile2();
-	public void SetFile3();
-	public bool Exists();
-	public bool Exists2();
-	public void Refresh();
-	public libqt_string FilePath();
-	public libqt_string AbsoluteFilePath();
-	public libqt_string CanonicalFilePath();
-	public libqt_string FileName();
-	public libqt_string BaseName();
-	public libqt_string CompleteBaseName();
-	public libqt_string Suffix();
-	public libqt_string BundleName();
-	public libqt_string CompleteSuffix();
-	public libqt_string Path();
-	public libqt_string AbsolutePath();
-	public libqt_string CanonicalPath();
-	public QDir Dir();
-	public QDir AbsoluteDir();
-	public bool IsReadable();
-	public bool IsWritable();
-	public bool IsExecutable();
-	public bool IsHidden();
-	public bool IsNativePath();
-	public bool IsRelative();
-	public bool IsAbsolute();
-	public bool MakeAbsolute();
-	public bool IsFile();
-	public bool IsDir();
-	public bool IsSymLink();
-	public bool IsSymbolicLink();
-	public bool IsShortcut();
-	public bool IsAlias();
-	public bool IsJunction();
-	public bool IsRoot();
-	public bool IsBundle();
-	public libqt_string SymLinkTarget();
-	public libqt_string JunctionTarget();
-	public libqt_string Owner();
-	public c_uint OwnerId();
-	public libqt_string Group();
-	public c_uint GroupId();
-	public bool Permission();
-	public void* Permissions();
-	public c_longlong Size();
-	public QDateTime BirthTime();
-	public QDateTime MetadataChangeTime();
-	public QDateTime LastModified();
-	public QDateTime LastRead();
-	public QDateTime FileTime();
-	public bool Caching();
-	public void SetCaching();
-	public void Stat();
 }

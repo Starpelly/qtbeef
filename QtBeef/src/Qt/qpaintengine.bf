@@ -29,14 +29,15 @@ extension CQt
 	[LinkName("QTextItem_Text")]
 	public static extern libqt_string QTextItem_Text(QTextItem_Ptr* self);
 	[LinkName("QTextItem_Font")]
-	public static extern QFont_Ptr QTextItem_Font(QTextItem_Ptr* self);
+	public static extern QFont_Ptr* QTextItem_Font(QTextItem_Ptr* self);
 }
-class QTextItem
+class QTextItem : IQTextItem
 {
 	private QTextItem_Ptr* ptr;
-	public this(QTextItem_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQTextItem other)
 	{
-		this.ptr = CQt.QTextItem_new(other);
+		this.ptr = CQt.QTextItem_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -62,19 +63,13 @@ class QTextItem
 	{
 		return CQt.QTextItem_Text((.)this.ptr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QTextItem_Font((.)this.ptr);
 	}
 }
-interface IQTextItem
+interface IQTextItem : IQtObjectInterface
 {
-	public double Descent();
-	public double Ascent();
-	public double Width();
-	public void* RenderFlags();
-	public libqt_string Text();
-	public QFont Font();
 }
 // --------------------------------------------------------------
 // QPaintEngine
@@ -96,19 +91,19 @@ extension CQt
 	[LinkName("QPaintEngine_SetActive")]
 	public static extern void QPaintEngine_SetActive(QPaintEngine_Ptr* self, bool newState);
 	[LinkName("QPaintEngine_Begin")]
-	public static extern bool QPaintEngine_Begin(QPaintEngine_Ptr* self, QPaintDevice_Ptr* pdev);
+	public static extern bool QPaintEngine_Begin(QPaintEngine_Ptr* self, QPaintDevice_Ptr** pdev);
 	[LinkName("QPaintEngine_End")]
 	public static extern bool QPaintEngine_End(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_UpdateState")]
 	public static extern void QPaintEngine_UpdateState(QPaintEngine_Ptr* self, QPaintEngineState_Ptr* state);
 	[LinkName("QPaintEngine_DrawRects")]
-	public static extern void QPaintEngine_DrawRects(QPaintEngine_Ptr* self, QRect_Ptr* rects, c_int rectCount);
+	public static extern void QPaintEngine_DrawRects(QPaintEngine_Ptr* self, QRect_Ptr** rects, c_int rectCount);
 	[LinkName("QPaintEngine_DrawRects2")]
-	public static extern void QPaintEngine_DrawRects2(QPaintEngine_Ptr* self, QRectF_Ptr* rects, c_int rectCount);
+	public static extern void QPaintEngine_DrawRects2(QPaintEngine_Ptr* self, QRectF_Ptr** rects, c_int rectCount);
 	[LinkName("QPaintEngine_DrawLines")]
-	public static extern void QPaintEngine_DrawLines(QPaintEngine_Ptr* self, QLine_Ptr* lines, c_int lineCount);
+	public static extern void QPaintEngine_DrawLines(QPaintEngine_Ptr* self, QLine_Ptr** lines, c_int lineCount);
 	[LinkName("QPaintEngine_DrawLines2")]
-	public static extern void QPaintEngine_DrawLines2(QPaintEngine_Ptr* self, QLineF_Ptr* lines, c_int lineCount);
+	public static extern void QPaintEngine_DrawLines2(QPaintEngine_Ptr* self, QLineF_Ptr** lines, c_int lineCount);
 	[LinkName("QPaintEngine_DrawEllipse")]
 	public static extern void QPaintEngine_DrawEllipse(QPaintEngine_Ptr* self, QRectF_Ptr* r);
 	[LinkName("QPaintEngine_DrawEllipse2")]
@@ -116,13 +111,13 @@ extension CQt
 	[LinkName("QPaintEngine_DrawPath")]
 	public static extern void QPaintEngine_DrawPath(QPaintEngine_Ptr* self, QPainterPath_Ptr* path);
 	[LinkName("QPaintEngine_DrawPoints")]
-	public static extern void QPaintEngine_DrawPoints(QPaintEngine_Ptr* self, QPointF_Ptr* points, c_int pointCount);
+	public static extern void QPaintEngine_DrawPoints(QPaintEngine_Ptr* self, QPointF_Ptr** points, c_int pointCount);
 	[LinkName("QPaintEngine_DrawPoints2")]
-	public static extern void QPaintEngine_DrawPoints2(QPaintEngine_Ptr* self, QPoint_Ptr* points, c_int pointCount);
+	public static extern void QPaintEngine_DrawPoints2(QPaintEngine_Ptr* self, QPoint_Ptr** points, c_int pointCount);
 	[LinkName("QPaintEngine_DrawPolygon")]
-	public static extern void QPaintEngine_DrawPolygon(QPaintEngine_Ptr* self, QPointF_Ptr* points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
+	public static extern void QPaintEngine_DrawPolygon(QPaintEngine_Ptr* self, QPointF_Ptr** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
 	[LinkName("QPaintEngine_DrawPolygon2")]
-	public static extern void QPaintEngine_DrawPolygon2(QPaintEngine_Ptr* self, QPoint_Ptr* points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
+	public static extern void QPaintEngine_DrawPolygon2(QPaintEngine_Ptr* self, QPoint_Ptr** points, c_int pointCount, QPaintEngine_PolygonDrawMode mode);
 	[LinkName("QPaintEngine_DrawPixmap")]
 	public static extern void QPaintEngine_DrawPixmap(QPaintEngine_Ptr* self, QRectF_Ptr* r, QPixmap_Ptr* pm, QRectF_Ptr* sr);
 	[LinkName("QPaintEngine_DrawTextItem")]
@@ -132,19 +127,19 @@ extension CQt
 	[LinkName("QPaintEngine_DrawImage")]
 	public static extern void QPaintEngine_DrawImage(QPaintEngine_Ptr* self, QRectF_Ptr* r, QImage_Ptr* pm, QRectF_Ptr* sr, void* flags);
 	[LinkName("QPaintEngine_SetPaintDevice")]
-	public static extern void QPaintEngine_SetPaintDevice(QPaintEngine_Ptr* self, QPaintDevice_Ptr* device);
+	public static extern void QPaintEngine_SetPaintDevice(QPaintEngine_Ptr* self, QPaintDevice_Ptr** device);
 	[LinkName("QPaintEngine_PaintDevice")]
-	public static extern QPaintDevice_Ptr* QPaintEngine_PaintDevice(QPaintEngine_Ptr* self);
+	public static extern QPaintDevice_Ptr** QPaintEngine_PaintDevice(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_SetSystemClip")]
 	public static extern void QPaintEngine_SetSystemClip(QPaintEngine_Ptr* self, QRegion_Ptr* baseClip);
 	[LinkName("QPaintEngine_SystemClip")]
-	public static extern QRegion_Ptr QPaintEngine_SystemClip(QPaintEngine_Ptr* self);
+	public static extern QRegion_Ptr* QPaintEngine_SystemClip(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_SetSystemRect")]
 	public static extern void QPaintEngine_SetSystemRect(QPaintEngine_Ptr* self, QRect_Ptr* rect);
 	[LinkName("QPaintEngine_SystemRect")]
-	public static extern QRect_Ptr QPaintEngine_SystemRect(QPaintEngine_Ptr* self);
+	public static extern QRect_Ptr* QPaintEngine_SystemRect(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_CoordinateOffset")]
-	public static extern QPoint_Ptr QPaintEngine_CoordinateOffset(QPaintEngine_Ptr* self);
+	public static extern QPoint_Ptr* QPaintEngine_CoordinateOffset(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_Type")]
 	public static extern QPaintEngine_Type QPaintEngine_Type(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_Fix_Neg_Rect")]
@@ -158,19 +153,20 @@ extension CQt
 	[LinkName("QPaintEngine_HasFeature")]
 	public static extern bool QPaintEngine_HasFeature(QPaintEngine_Ptr* self, void* feature);
 	[LinkName("QPaintEngine_Painter")]
-	public static extern QPainter_Ptr* QPaintEngine_Painter(QPaintEngine_Ptr* self);
+	public static extern QPainter_Ptr** QPaintEngine_Painter(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_SyncState")]
 	public static extern void QPaintEngine_SyncState(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_IsExtended")]
 	public static extern bool QPaintEngine_IsExtended(QPaintEngine_Ptr* self);
 	[LinkName("QPaintEngine_CreatePixmap")]
-	public static extern QPixmap_Ptr QPaintEngine_CreatePixmap(QPaintEngine_Ptr* self, QSize_Ptr size);
+	public static extern QPixmap_Ptr* QPaintEngine_CreatePixmap(QPaintEngine_Ptr* self, QSize_Ptr* size);
 	[LinkName("QPaintEngine_CreatePixmapFromImage")]
-	public static extern QPixmap_Ptr QPaintEngine_CreatePixmapFromImage(QPaintEngine_Ptr* self, QImage_Ptr image, void* flags);
+	public static extern QPixmap_Ptr* QPaintEngine_CreatePixmapFromImage(QPaintEngine_Ptr* self, QImage_Ptr* image, void* flags);
 }
-class QPaintEngine
+class QPaintEngine : IQPaintEngine
 {
 	private QPaintEngine_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QPaintEngine_new();
@@ -191,103 +187,103 @@ class QPaintEngine
 	{
 		CQt.QPaintEngine_SetActive((.)this.ptr, newState);
 	}
-	public bool Begin(QPaintDevice_Ptr* pdev)
+	public bool Begin(IQPaintDevice pdev)
 	{
-		return CQt.QPaintEngine_Begin((.)this.ptr, pdev);
+		return CQt.QPaintEngine_Begin((.)this.ptr, (.)pdev?.ObjectPtr);
 	}
 	public bool End()
 	{
 		return CQt.QPaintEngine_End((.)this.ptr);
 	}
-	public void UpdateState(QPaintEngineState_Ptr* state)
+	public void UpdateState(IQPaintEngineState state)
 	{
-		CQt.QPaintEngine_UpdateState((.)this.ptr, state);
+		CQt.QPaintEngine_UpdateState((.)this.ptr, (.)state?.ObjectPtr);
 	}
-	public void DrawRects(QRect_Ptr* rects, c_int rectCount)
+	public void DrawRects(IQRect rects, c_int rectCount)
 	{
-		CQt.QPaintEngine_DrawRects((.)this.ptr, rects, rectCount);
+		CQt.QPaintEngine_DrawRects((.)this.ptr, (.)rects?.ObjectPtr, rectCount);
 	}
-	public void DrawRects2(QRectF_Ptr* rects, c_int rectCount)
+	public void DrawRects2(IQRectF rects, c_int rectCount)
 	{
-		CQt.QPaintEngine_DrawRects2((.)this.ptr, rects, rectCount);
+		CQt.QPaintEngine_DrawRects2((.)this.ptr, (.)rects?.ObjectPtr, rectCount);
 	}
-	public void DrawLines(QLine_Ptr* lines, c_int lineCount)
+	public void DrawLines(IQLine lines, c_int lineCount)
 	{
-		CQt.QPaintEngine_DrawLines((.)this.ptr, lines, lineCount);
+		CQt.QPaintEngine_DrawLines((.)this.ptr, (.)lines?.ObjectPtr, lineCount);
 	}
-	public void DrawLines2(QLineF_Ptr* lines, c_int lineCount)
+	public void DrawLines2(IQLineF lines, c_int lineCount)
 	{
-		CQt.QPaintEngine_DrawLines2((.)this.ptr, lines, lineCount);
+		CQt.QPaintEngine_DrawLines2((.)this.ptr, (.)lines?.ObjectPtr, lineCount);
 	}
-	public void DrawEllipse(QRectF_Ptr* r)
+	public void DrawEllipse(IQRectF r)
 	{
-		CQt.QPaintEngine_DrawEllipse((.)this.ptr, r);
+		CQt.QPaintEngine_DrawEllipse((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public void DrawEllipse2(QRect_Ptr* r)
+	public void DrawEllipse2(IQRect r)
 	{
-		CQt.QPaintEngine_DrawEllipse2((.)this.ptr, r);
+		CQt.QPaintEngine_DrawEllipse2((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public void DrawPath(QPainterPath_Ptr* path)
+	public void DrawPath(IQPainterPath path)
 	{
-		CQt.QPaintEngine_DrawPath((.)this.ptr, path);
+		CQt.QPaintEngine_DrawPath((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public void DrawPoints(QPointF_Ptr* points, c_int pointCount)
+	public void DrawPoints(IQPointF points, c_int pointCount)
 	{
-		CQt.QPaintEngine_DrawPoints((.)this.ptr, points, pointCount);
+		CQt.QPaintEngine_DrawPoints((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawPoints2(QPoint_Ptr* points, c_int pointCount)
+	public void DrawPoints2(IQPoint points, c_int pointCount)
 	{
-		CQt.QPaintEngine_DrawPoints2((.)this.ptr, points, pointCount);
+		CQt.QPaintEngine_DrawPoints2((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawPolygon(QPointF_Ptr* points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
+	public void DrawPolygon(IQPointF points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
 	{
-		CQt.QPaintEngine_DrawPolygon((.)this.ptr, points, pointCount, mode);
+		CQt.QPaintEngine_DrawPolygon((.)this.ptr, (.)points?.ObjectPtr, pointCount, mode);
 	}
-	public void DrawPolygon2(QPoint_Ptr* points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
+	public void DrawPolygon2(IQPoint points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
 	{
-		CQt.QPaintEngine_DrawPolygon2((.)this.ptr, points, pointCount, mode);
+		CQt.QPaintEngine_DrawPolygon2((.)this.ptr, (.)points?.ObjectPtr, pointCount, mode);
 	}
-	public void DrawPixmap(QRectF_Ptr* r, QPixmap_Ptr* pm, QRectF_Ptr* sr)
+	public void DrawPixmap(IQRectF r, IQPixmap pm, IQRectF sr)
 	{
-		CQt.QPaintEngine_DrawPixmap((.)this.ptr, r, pm, sr);
+		CQt.QPaintEngine_DrawPixmap((.)this.ptr, (.)r?.ObjectPtr, (.)pm?.ObjectPtr, (.)sr?.ObjectPtr);
 	}
-	public void DrawTextItem(QPointF_Ptr* p, QTextItem_Ptr* textItem)
+	public void DrawTextItem(IQPointF p, IQTextItem textItem)
 	{
-		CQt.QPaintEngine_DrawTextItem((.)this.ptr, p, textItem);
+		CQt.QPaintEngine_DrawTextItem((.)this.ptr, (.)p?.ObjectPtr, (.)textItem?.ObjectPtr);
 	}
-	public void DrawTiledPixmap(QRectF_Ptr* r, QPixmap_Ptr* pixmap, QPointF_Ptr* s)
+	public void DrawTiledPixmap(IQRectF r, IQPixmap pixmap, IQPointF s)
 	{
-		CQt.QPaintEngine_DrawTiledPixmap((.)this.ptr, r, pixmap, s);
+		CQt.QPaintEngine_DrawTiledPixmap((.)this.ptr, (.)r?.ObjectPtr, (.)pixmap?.ObjectPtr, (.)s?.ObjectPtr);
 	}
-	public void DrawImage(QRectF_Ptr* r, QImage_Ptr* pm, QRectF_Ptr* sr, void* flags)
+	public void DrawImage(IQRectF r, IQImage pm, IQRectF sr, void* flags)
 	{
-		CQt.QPaintEngine_DrawImage((.)this.ptr, r, pm, sr, flags);
+		CQt.QPaintEngine_DrawImage((.)this.ptr, (.)r?.ObjectPtr, (.)pm?.ObjectPtr, (.)sr?.ObjectPtr, flags);
 	}
-	public void SetPaintDevice(QPaintDevice_Ptr* device)
+	public void SetPaintDevice(IQPaintDevice device)
 	{
-		CQt.QPaintEngine_SetPaintDevice((.)this.ptr, device);
+		CQt.QPaintEngine_SetPaintDevice((.)this.ptr, (.)device?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr* PaintDevice()
+	public QPaintDevice_Ptr** PaintDevice()
 	{
 		return CQt.QPaintEngine_PaintDevice((.)this.ptr);
 	}
-	public void SetSystemClip(QRegion_Ptr* baseClip)
+	public void SetSystemClip(IQRegion baseClip)
 	{
-		CQt.QPaintEngine_SetSystemClip((.)this.ptr, baseClip);
+		CQt.QPaintEngine_SetSystemClip((.)this.ptr, (.)baseClip?.ObjectPtr);
 	}
-	public QRegion_Ptr SystemClip()
+	public QRegion_Ptr* SystemClip()
 	{
 		return CQt.QPaintEngine_SystemClip((.)this.ptr);
 	}
-	public void SetSystemRect(QRect_Ptr* rect)
+	public void SetSystemRect(IQRect rect)
 	{
-		CQt.QPaintEngine_SetSystemRect((.)this.ptr, rect);
+		CQt.QPaintEngine_SetSystemRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRect_Ptr SystemRect()
+	public QRect_Ptr* SystemRect()
 	{
 		return CQt.QPaintEngine_SystemRect((.)this.ptr);
 	}
-	public QPoint_Ptr CoordinateOffset()
+	public QPoint_Ptr* CoordinateOffset()
 	{
 		return CQt.QPaintEngine_CoordinateOffset((.)this.ptr);
 	}
@@ -315,7 +311,7 @@ class QPaintEngine
 	{
 		return CQt.QPaintEngine_HasFeature((.)this.ptr, feature);
 	}
-	public QPainter_Ptr* Painter()
+	public QPainter_Ptr** Painter()
 	{
 		return CQt.QPaintEngine_Painter((.)this.ptr);
 	}
@@ -327,55 +323,17 @@ class QPaintEngine
 	{
 		return CQt.QPaintEngine_IsExtended((.)this.ptr);
 	}
-	public QPixmap_Ptr CreatePixmap(QSize_Ptr size)
+	public QPixmap_Ptr* CreatePixmap(IQSize size)
 	{
-		return CQt.QPaintEngine_CreatePixmap((.)this.ptr, size);
+		return CQt.QPaintEngine_CreatePixmap((.)this.ptr, (.)size?.ObjectPtr);
 	}
-	public QPixmap_Ptr CreatePixmapFromImage(QImage_Ptr image, void* flags)
+	public QPixmap_Ptr* CreatePixmapFromImage(IQImage image, void* flags)
 	{
-		return CQt.QPaintEngine_CreatePixmapFromImage((.)this.ptr, image, flags);
+		return CQt.QPaintEngine_CreatePixmapFromImage((.)this.ptr, (.)image?.ObjectPtr, flags);
 	}
 }
-interface IQPaintEngine
+interface IQPaintEngine : IQtObjectInterface
 {
-	public bool IsActive();
-	public void SetActive();
-	public bool Begin();
-	public bool End();
-	public void UpdateState();
-	public void DrawRects();
-	public void DrawRects2();
-	public void DrawLines();
-	public void DrawLines2();
-	public void DrawEllipse();
-	public void DrawEllipse2();
-	public void DrawPath();
-	public void DrawPoints();
-	public void DrawPoints2();
-	public void DrawPolygon();
-	public void DrawPolygon2();
-	public void DrawPixmap();
-	public void DrawTextItem();
-	public void DrawTiledPixmap();
-	public void DrawImage();
-	public void SetPaintDevice();
-	public QPaintDevice* PaintDevice();
-	public void SetSystemClip();
-	public QRegion SystemClip();
-	public void SetSystemRect();
-	public QRect SystemRect();
-	public QPoint CoordinateOffset();
-	public QPaintEngine_Type Type();
-	public void Fix_neg_rect();
-	public bool TestDirty();
-	public void SetDirty();
-	public void ClearDirty();
-	public bool HasFeature();
-	public QPainter* Painter();
-	public void SyncState();
-	public bool IsExtended();
-	public QPixmap CreatePixmap();
-	public QPixmap CreatePixmapFromImage();
 }
 // --------------------------------------------------------------
 // QPaintEngineState
@@ -395,25 +353,25 @@ extension CQt
 	[LinkName("QPaintEngineState_State")]
 	public static extern void* QPaintEngineState_State(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_Pen")]
-	public static extern QPen_Ptr QPaintEngineState_Pen(QPaintEngineState_Ptr* self);
+	public static extern QPen_Ptr* QPaintEngineState_Pen(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_Brush")]
-	public static extern QBrush_Ptr QPaintEngineState_Brush(QPaintEngineState_Ptr* self);
+	public static extern QBrush_Ptr* QPaintEngineState_Brush(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_BrushOrigin")]
-	public static extern QPointF_Ptr QPaintEngineState_BrushOrigin(QPaintEngineState_Ptr* self);
+	public static extern QPointF_Ptr* QPaintEngineState_BrushOrigin(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_BackgroundBrush")]
-	public static extern QBrush_Ptr QPaintEngineState_BackgroundBrush(QPaintEngineState_Ptr* self);
+	public static extern QBrush_Ptr* QPaintEngineState_BackgroundBrush(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_BackgroundMode")]
 	public static extern Qt_BGMode QPaintEngineState_BackgroundMode(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_Font")]
-	public static extern QFont_Ptr QPaintEngineState_Font(QPaintEngineState_Ptr* self);
+	public static extern QFont_Ptr* QPaintEngineState_Font(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_Transform")]
-	public static extern QTransform_Ptr QPaintEngineState_Transform(QPaintEngineState_Ptr* self);
+	public static extern QTransform_Ptr* QPaintEngineState_Transform(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_ClipOperation")]
 	public static extern Qt_ClipOperation QPaintEngineState_ClipOperation(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_ClipRegion")]
-	public static extern QRegion_Ptr QPaintEngineState_ClipRegion(QPaintEngineState_Ptr* self);
+	public static extern QRegion_Ptr* QPaintEngineState_ClipRegion(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_ClipPath")]
-	public static extern QPainterPath_Ptr QPaintEngineState_ClipPath(QPaintEngineState_Ptr* self);
+	public static extern QPainterPath_Ptr* QPaintEngineState_ClipPath(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_IsClipEnabled")]
 	public static extern bool QPaintEngineState_IsClipEnabled(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_RenderHints")]
@@ -423,18 +381,19 @@ extension CQt
 	[LinkName("QPaintEngineState_Opacity")]
 	public static extern double QPaintEngineState_Opacity(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_Painter")]
-	public static extern QPainter_Ptr* QPaintEngineState_Painter(QPaintEngineState_Ptr* self);
+	public static extern QPainter_Ptr** QPaintEngineState_Painter(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_BrushNeedsResolving")]
 	public static extern bool QPaintEngineState_BrushNeedsResolving(QPaintEngineState_Ptr* self);
 	[LinkName("QPaintEngineState_PenNeedsResolving")]
 	public static extern bool QPaintEngineState_PenNeedsResolving(QPaintEngineState_Ptr* self);
 }
-class QPaintEngineState
+class QPaintEngineState : IQPaintEngineState
 {
 	private QPaintEngineState_Ptr* ptr;
-	public this(QPaintEngineState_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQPaintEngineState other)
 	{
-		this.ptr = CQt.QPaintEngineState_new(other);
+		this.ptr = CQt.QPaintEngineState_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -444,19 +403,19 @@ class QPaintEngineState
 	{
 		return CQt.QPaintEngineState_State((.)this.ptr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QPaintEngineState_Pen((.)this.ptr);
 	}
-	public QBrush_Ptr Brush()
+	public QBrush_Ptr* Brush()
 	{
 		return CQt.QPaintEngineState_Brush((.)this.ptr);
 	}
-	public QPointF_Ptr BrushOrigin()
+	public QPointF_Ptr* BrushOrigin()
 	{
 		return CQt.QPaintEngineState_BrushOrigin((.)this.ptr);
 	}
-	public QBrush_Ptr BackgroundBrush()
+	public QBrush_Ptr* BackgroundBrush()
 	{
 		return CQt.QPaintEngineState_BackgroundBrush((.)this.ptr);
 	}
@@ -464,11 +423,11 @@ class QPaintEngineState
 	{
 		return CQt.QPaintEngineState_BackgroundMode((.)this.ptr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QPaintEngineState_Font((.)this.ptr);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QPaintEngineState_Transform((.)this.ptr);
 	}
@@ -476,11 +435,11 @@ class QPaintEngineState
 	{
 		return CQt.QPaintEngineState_ClipOperation((.)this.ptr);
 	}
-	public QRegion_Ptr ClipRegion()
+	public QRegion_Ptr* ClipRegion()
 	{
 		return CQt.QPaintEngineState_ClipRegion((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QPaintEngineState_ClipPath((.)this.ptr);
 	}
@@ -500,7 +459,7 @@ class QPaintEngineState
 	{
 		return CQt.QPaintEngineState_Opacity((.)this.ptr);
 	}
-	public QPainter_Ptr* Painter()
+	public QPainter_Ptr** Painter()
 	{
 		return CQt.QPaintEngineState_Painter((.)this.ptr);
 	}
@@ -513,26 +472,8 @@ class QPaintEngineState
 		return CQt.QPaintEngineState_PenNeedsResolving((.)this.ptr);
 	}
 }
-interface IQPaintEngineState
+interface IQPaintEngineState : IQtObjectInterface
 {
-	public void* State();
-	public QPen Pen();
-	public QBrush Brush();
-	public QPointF BrushOrigin();
-	public QBrush BackgroundBrush();
-	public Qt_BGMode BackgroundMode();
-	public QFont Font();
-	public QTransform Transform();
-	public Qt_ClipOperation ClipOperation();
-	public QRegion ClipRegion();
-	public QPainterPath ClipPath();
-	public bool IsClipEnabled();
-	public void* RenderHints();
-	public QPainter_CompositionMode CompositionMode();
-	public double Opacity();
-	public QPainter* Painter();
-	public bool BrushNeedsResolving();
-	public bool PenNeedsResolving();
 }
 [AllowDuplicates]
 enum QTextItem_RenderFlag

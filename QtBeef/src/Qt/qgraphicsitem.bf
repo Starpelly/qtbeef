@@ -15,27 +15,27 @@ extension CQt
 	[LinkName("QGraphicsItem_new")]
 	public static extern QGraphicsItem_Ptr* QGraphicsItem_new();
 	[LinkName("QGraphicsItem_new2")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_new2(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsItem_Ptr* QGraphicsItem_new2(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsItem_Delete")]
 	public static extern void QGraphicsItem_Delete(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Scene")]
-	public static extern QGraphicsScene_Ptr* QGraphicsItem_Scene(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsScene_Ptr** QGraphicsItem_Scene(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_ParentItem")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_ParentItem(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsItem_Ptr** QGraphicsItem_ParentItem(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_TopLevelItem")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_TopLevelItem(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsItem_Ptr** QGraphicsItem_TopLevelItem(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_ParentObject")]
-	public static extern QGraphicsObject_Ptr* QGraphicsItem_ParentObject(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsObject_Ptr** QGraphicsItem_ParentObject(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_ParentWidget")]
-	public static extern QGraphicsWidget_Ptr* QGraphicsItem_ParentWidget(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsWidget_Ptr** QGraphicsItem_ParentWidget(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_TopLevelWidget")]
-	public static extern QGraphicsWidget_Ptr* QGraphicsItem_TopLevelWidget(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsWidget_Ptr** QGraphicsItem_TopLevelWidget(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Window")]
-	public static extern QGraphicsWidget_Ptr* QGraphicsItem_Window(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsWidget_Ptr** QGraphicsItem_Window(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Panel")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_Panel(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsItem_Ptr** QGraphicsItem_Panel(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetParentItem")]
-	public static extern void QGraphicsItem_SetParentItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* parent);
+	public static extern void QGraphicsItem_SetParentItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsItem_ChildItems")]
 	public static extern void* QGraphicsItem_ChildItems(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_IsWidget")]
@@ -45,13 +45,13 @@ extension CQt
 	[LinkName("QGraphicsItem_IsPanel")]
 	public static extern bool QGraphicsItem_IsPanel(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_ToGraphicsObject")]
-	public static extern QGraphicsObject_Ptr* QGraphicsItem_ToGraphicsObject(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsObject_Ptr** QGraphicsItem_ToGraphicsObject(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_ToGraphicsObject2")]
-	public static extern QGraphicsObject_Ptr* QGraphicsItem_ToGraphicsObject2(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsObject_Ptr** QGraphicsItem_ToGraphicsObject2(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Group")]
-	public static extern QGraphicsItemGroup_Ptr* QGraphicsItem_Group(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsItemGroup_Ptr** QGraphicsItem_Group(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetGroup")]
-	public static extern void QGraphicsItem_SetGroup(QGraphicsItem_Ptr* self, QGraphicsItemGroup_Ptr* group);
+	public static extern void QGraphicsItem_SetGroup(QGraphicsItem_Ptr* self, QGraphicsItemGroup_Ptr** group);
 	[LinkName("QGraphicsItem_Flags")]
 	public static extern void* QGraphicsItem_Flags(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetFlag")]
@@ -71,9 +71,9 @@ extension CQt
 	[LinkName("QGraphicsItem_ToolTip")]
 	public static extern libqt_string QGraphicsItem_ToolTip(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetToolTip")]
-	public static extern void QGraphicsItem_SetToolTip(QGraphicsItem_Ptr* self, libqt_string* toolTip);
+	public static extern void QGraphicsItem_SetToolTip(QGraphicsItem_Ptr* self, libqt_string toolTip);
 	[LinkName("QGraphicsItem_Cursor")]
-	public static extern QCursor_Ptr QGraphicsItem_Cursor(QGraphicsItem_Ptr* self);
+	public static extern QCursor_Ptr* QGraphicsItem_Cursor(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetCursor")]
 	public static extern void QGraphicsItem_SetCursor(QGraphicsItem_Ptr* self, QCursor_Ptr* cursor);
 	[LinkName("QGraphicsItem_HasCursor")]
@@ -83,7 +83,7 @@ extension CQt
 	[LinkName("QGraphicsItem_IsVisible")]
 	public static extern bool QGraphicsItem_IsVisible(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_IsVisibleTo")]
-	public static extern bool QGraphicsItem_IsVisibleTo(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* parent);
+	public static extern bool QGraphicsItem_IsVisibleTo(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsItem_SetVisible")]
 	public static extern void QGraphicsItem_SetVisible(QGraphicsItem_Ptr* self, bool visible);
 	[LinkName("QGraphicsItem_Hide")]
@@ -109,9 +109,9 @@ extension CQt
 	[LinkName("QGraphicsItem_SetOpacity")]
 	public static extern void QGraphicsItem_SetOpacity(QGraphicsItem_Ptr* self, double opacity);
 	[LinkName("QGraphicsItem_GraphicsEffect")]
-	public static extern QGraphicsEffect_Ptr* QGraphicsItem_GraphicsEffect(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsEffect_Ptr** QGraphicsItem_GraphicsEffect(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetGraphicsEffect")]
-	public static extern void QGraphicsItem_SetGraphicsEffect(QGraphicsItem_Ptr* self, QGraphicsEffect_Ptr* effect);
+	public static extern void QGraphicsItem_SetGraphicsEffect(QGraphicsItem_Ptr* self, QGraphicsEffect_Ptr** effect);
 	[LinkName("QGraphicsItem_AcceptedMouseButtons")]
 	public static extern void* QGraphicsItem_AcceptedMouseButtons(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetAcceptedMouseButtons")]
@@ -143,13 +143,13 @@ extension CQt
 	[LinkName("QGraphicsItem_ClearFocus")]
 	public static extern void QGraphicsItem_ClearFocus(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_FocusProxy")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_FocusProxy(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsItem_Ptr** QGraphicsItem_FocusProxy(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetFocusProxy")]
-	public static extern void QGraphicsItem_SetFocusProxy(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern void QGraphicsItem_SetFocusProxy(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsItem_FocusItem")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_FocusItem(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsItem_Ptr** QGraphicsItem_FocusItem(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_FocusScopeItem")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_FocusScopeItem(QGraphicsItem_Ptr* self);
+	public static extern QGraphicsItem_Ptr** QGraphicsItem_FocusScopeItem(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_GrabMouse")]
 	public static extern void QGraphicsItem_GrabMouse(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_UngrabMouse")]
@@ -159,7 +159,7 @@ extension CQt
 	[LinkName("QGraphicsItem_UngrabKeyboard")]
 	public static extern void QGraphicsItem_UngrabKeyboard(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Pos")]
-	public static extern QPointF_Ptr QGraphicsItem_Pos(QGraphicsItem_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsItem_Pos(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_X")]
 	public static extern double QGraphicsItem_X(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetX")]
@@ -169,7 +169,7 @@ extension CQt
 	[LinkName("QGraphicsItem_SetY")]
 	public static extern void QGraphicsItem_SetY(QGraphicsItem_Ptr* self, double y);
 	[LinkName("QGraphicsItem_ScenePos")]
-	public static extern QPointF_Ptr QGraphicsItem_ScenePos(QGraphicsItem_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsItem_ScenePos(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetPos")]
 	public static extern void QGraphicsItem_SetPos(QGraphicsItem_Ptr* self, QPointF_Ptr* pos);
 	[LinkName("QGraphicsItem_SetPos2")]
@@ -181,13 +181,13 @@ extension CQt
 	[LinkName("QGraphicsItem_EnsureVisible2")]
 	public static extern void QGraphicsItem_EnsureVisible2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_Transform")]
-	public static extern QTransform_Ptr QGraphicsItem_Transform(QGraphicsItem_Ptr* self);
+	public static extern QTransform_Ptr* QGraphicsItem_Transform(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SceneTransform")]
-	public static extern QTransform_Ptr QGraphicsItem_SceneTransform(QGraphicsItem_Ptr* self);
+	public static extern QTransform_Ptr* QGraphicsItem_SceneTransform(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_DeviceTransform")]
-	public static extern QTransform_Ptr QGraphicsItem_DeviceTransform(QGraphicsItem_Ptr* self, QTransform_Ptr* viewportTransform);
+	public static extern QTransform_Ptr* QGraphicsItem_DeviceTransform(QGraphicsItem_Ptr* self, QTransform_Ptr* viewportTransform);
 	[LinkName("QGraphicsItem_ItemTransform")]
-	public static extern QTransform_Ptr QGraphicsItem_ItemTransform(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* other);
+	public static extern QTransform_Ptr* QGraphicsItem_ItemTransform(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** other);
 	[LinkName("QGraphicsItem_SetTransform")]
 	public static extern void QGraphicsItem_SetTransform(QGraphicsItem_Ptr* self, QTransform_Ptr* matrix);
 	[LinkName("QGraphicsItem_ResetTransform")]
@@ -205,7 +205,7 @@ extension CQt
 	[LinkName("QGraphicsItem_SetTransformations")]
 	public static extern void QGraphicsItem_SetTransformations(QGraphicsItem_Ptr* self, void** transformations);
 	[LinkName("QGraphicsItem_TransformOriginPoint")]
-	public static extern QPointF_Ptr QGraphicsItem_TransformOriginPoint(QGraphicsItem_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsItem_TransformOriginPoint(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetTransformOriginPoint")]
 	public static extern void QGraphicsItem_SetTransformOriginPoint(QGraphicsItem_Ptr* self, QPointF_Ptr* origin);
 	[LinkName("QGraphicsItem_SetTransformOriginPoint2")]
@@ -217,23 +217,23 @@ extension CQt
 	[LinkName("QGraphicsItem_SetZValue")]
 	public static extern void QGraphicsItem_SetZValue(QGraphicsItem_Ptr* self, double z);
 	[LinkName("QGraphicsItem_StackBefore")]
-	public static extern void QGraphicsItem_StackBefore(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* sibling);
+	public static extern void QGraphicsItem_StackBefore(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** sibling);
 	[LinkName("QGraphicsItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsItem_BoundingRect(QGraphicsItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsItem_BoundingRect(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_ChildrenBoundingRect")]
-	public static extern QRectF_Ptr QGraphicsItem_ChildrenBoundingRect(QGraphicsItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsItem_ChildrenBoundingRect(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SceneBoundingRect")]
-	public static extern QRectF_Ptr QGraphicsItem_SceneBoundingRect(QGraphicsItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsItem_SceneBoundingRect(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsItem_Shape(QGraphicsItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsItem_Shape(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_IsClipped")]
 	public static extern bool QGraphicsItem_IsClipped(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_ClipPath")]
-	public static extern QPainterPath_Ptr QGraphicsItem_ClipPath(QGraphicsItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsItem_ClipPath(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Contains")]
 	public static extern bool QGraphicsItem_Contains(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsItem_CollidesWithItem")]
-	public static extern bool QGraphicsItem_CollidesWithItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode);
+	public static extern bool QGraphicsItem_CollidesWithItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** other, Qt_ItemSelectionMode mode);
 	[LinkName("QGraphicsItem_CollidesWithPath")]
 	public static extern bool QGraphicsItem_CollidesWithPath(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path, Qt_ItemSelectionMode mode);
 	[LinkName("QGraphicsItem_CollidingItems")]
@@ -243,17 +243,17 @@ extension CQt
 	[LinkName("QGraphicsItem_IsObscured2")]
 	public static extern bool QGraphicsItem_IsObscured2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_IsObscuredBy")]
-	public static extern bool QGraphicsItem_IsObscuredBy(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsItem_IsObscuredBy(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsItem_OpaqueArea(QGraphicsItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsItem_OpaqueArea(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_BoundingRegion")]
-	public static extern QRegion_Ptr QGraphicsItem_BoundingRegion(QGraphicsItem_Ptr* self, QTransform_Ptr* itemToDeviceTransform);
+	public static extern QRegion_Ptr* QGraphicsItem_BoundingRegion(QGraphicsItem_Ptr* self, QTransform_Ptr* itemToDeviceTransform);
 	[LinkName("QGraphicsItem_BoundingRegionGranularity")]
 	public static extern double QGraphicsItem_BoundingRegionGranularity(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SetBoundingRegionGranularity")]
 	public static extern void QGraphicsItem_SetBoundingRegionGranularity(QGraphicsItem_Ptr* self, double granularity);
 	[LinkName("QGraphicsItem_Paint")]
-	public static extern void QGraphicsItem_Paint(QGraphicsItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsItem_Paint(QGraphicsItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsItem_Update")]
 	public static extern void QGraphicsItem_Update(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Update2")]
@@ -261,73 +261,73 @@ extension CQt
 	[LinkName("QGraphicsItem_Scroll")]
 	public static extern void QGraphicsItem_Scroll(QGraphicsItem_Ptr* self, double dx, double dy);
 	[LinkName("QGraphicsItem_MapToItem")]
-	public static extern QPointF_Ptr QGraphicsItem_MapToItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, QPointF_Ptr* point);
+	public static extern QPointF_Ptr* QGraphicsItem_MapToItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, QPointF_Ptr* point);
 	[LinkName("QGraphicsItem_MapToParent")]
-	public static extern QPointF_Ptr QGraphicsItem_MapToParent(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
+	public static extern QPointF_Ptr* QGraphicsItem_MapToParent(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsItem_MapToScene")]
-	public static extern QPointF_Ptr QGraphicsItem_MapToScene(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
+	public static extern QPointF_Ptr* QGraphicsItem_MapToScene(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsItem_MapRectToItem")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectToItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, QRectF_Ptr* rect);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectToItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, QRectF_Ptr* rect);
 	[LinkName("QGraphicsItem_MapRectToParent")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectToParent(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectToParent(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QGraphicsItem_MapRectToScene")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectToScene(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectToScene(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QGraphicsItem_MapToItem4")]
-	public static extern QPainterPath_Ptr QGraphicsItem_MapToItem4(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, QPainterPath_Ptr* path);
+	public static extern QPainterPath_Ptr* QGraphicsItem_MapToItem4(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, QPainterPath_Ptr* path);
 	[LinkName("QGraphicsItem_MapToParent4")]
-	public static extern QPainterPath_Ptr QGraphicsItem_MapToParent4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
+	public static extern QPainterPath_Ptr* QGraphicsItem_MapToParent4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
 	[LinkName("QGraphicsItem_MapToScene4")]
-	public static extern QPainterPath_Ptr QGraphicsItem_MapToScene4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
+	public static extern QPainterPath_Ptr* QGraphicsItem_MapToScene4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
 	[LinkName("QGraphicsItem_MapFromItem")]
-	public static extern QPointF_Ptr QGraphicsItem_MapFromItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, QPointF_Ptr* point);
+	public static extern QPointF_Ptr* QGraphicsItem_MapFromItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, QPointF_Ptr* point);
 	[LinkName("QGraphicsItem_MapFromParent")]
-	public static extern QPointF_Ptr QGraphicsItem_MapFromParent(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
+	public static extern QPointF_Ptr* QGraphicsItem_MapFromParent(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsItem_MapFromScene")]
-	public static extern QPointF_Ptr QGraphicsItem_MapFromScene(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
+	public static extern QPointF_Ptr* QGraphicsItem_MapFromScene(QGraphicsItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsItem_MapRectFromItem")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectFromItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, QRectF_Ptr* rect);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectFromItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, QRectF_Ptr* rect);
 	[LinkName("QGraphicsItem_MapRectFromParent")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectFromParent(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectFromParent(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QGraphicsItem_MapRectFromScene")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectFromScene(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectFromScene(QGraphicsItem_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QGraphicsItem_MapFromItem4")]
-	public static extern QPainterPath_Ptr QGraphicsItem_MapFromItem4(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, QPainterPath_Ptr* path);
+	public static extern QPainterPath_Ptr* QGraphicsItem_MapFromItem4(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, QPainterPath_Ptr* path);
 	[LinkName("QGraphicsItem_MapFromParent4")]
-	public static extern QPainterPath_Ptr QGraphicsItem_MapFromParent4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
+	public static extern QPainterPath_Ptr* QGraphicsItem_MapFromParent4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
 	[LinkName("QGraphicsItem_MapFromScene4")]
-	public static extern QPainterPath_Ptr QGraphicsItem_MapFromScene4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
+	public static extern QPainterPath_Ptr* QGraphicsItem_MapFromScene4(QGraphicsItem_Ptr* self, QPainterPath_Ptr* path);
 	[LinkName("QGraphicsItem_MapToItem5")]
-	public static extern QPointF_Ptr QGraphicsItem_MapToItem5(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, double x, double y);
+	public static extern QPointF_Ptr* QGraphicsItem_MapToItem5(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, double x, double y);
 	[LinkName("QGraphicsItem_MapToParent5")]
-	public static extern QPointF_Ptr QGraphicsItem_MapToParent5(QGraphicsItem_Ptr* self, double x, double y);
+	public static extern QPointF_Ptr* QGraphicsItem_MapToParent5(QGraphicsItem_Ptr* self, double x, double y);
 	[LinkName("QGraphicsItem_MapToScene5")]
-	public static extern QPointF_Ptr QGraphicsItem_MapToScene5(QGraphicsItem_Ptr* self, double x, double y);
+	public static extern QPointF_Ptr* QGraphicsItem_MapToScene5(QGraphicsItem_Ptr* self, double x, double y);
 	[LinkName("QGraphicsItem_MapRectToItem2")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectToItem2(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, double x, double y, double w, double h);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectToItem2(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_MapRectToParent2")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectToParent2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectToParent2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_MapRectToScene2")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectToScene2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectToScene2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_MapFromItem5")]
-	public static extern QPointF_Ptr QGraphicsItem_MapFromItem5(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, double x, double y);
+	public static extern QPointF_Ptr* QGraphicsItem_MapFromItem5(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, double x, double y);
 	[LinkName("QGraphicsItem_MapFromParent5")]
-	public static extern QPointF_Ptr QGraphicsItem_MapFromParent5(QGraphicsItem_Ptr* self, double x, double y);
+	public static extern QPointF_Ptr* QGraphicsItem_MapFromParent5(QGraphicsItem_Ptr* self, double x, double y);
 	[LinkName("QGraphicsItem_MapFromScene5")]
-	public static extern QPointF_Ptr QGraphicsItem_MapFromScene5(QGraphicsItem_Ptr* self, double x, double y);
+	public static extern QPointF_Ptr* QGraphicsItem_MapFromScene5(QGraphicsItem_Ptr* self, double x, double y);
 	[LinkName("QGraphicsItem_MapRectFromItem2")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectFromItem2(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* item, double x, double y, double w, double h);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectFromItem2(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** item, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_MapRectFromParent2")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectFromParent2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectFromParent2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_MapRectFromScene2")]
-	public static extern QRectF_Ptr QGraphicsItem_MapRectFromScene2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
+	public static extern QRectF_Ptr* QGraphicsItem_MapRectFromScene2(QGraphicsItem_Ptr* self, double x, double y, double w, double h);
 	[LinkName("QGraphicsItem_IsAncestorOf")]
-	public static extern bool QGraphicsItem_IsAncestorOf(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* child);
+	public static extern bool QGraphicsItem_IsAncestorOf(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** child);
 	[LinkName("QGraphicsItem_CommonAncestorItem")]
-	public static extern QGraphicsItem_Ptr* QGraphicsItem_CommonAncestorItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* other);
+	public static extern QGraphicsItem_Ptr** QGraphicsItem_CommonAncestorItem(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** other);
 	[LinkName("QGraphicsItem_IsUnderMouse")]
 	public static extern bool QGraphicsItem_IsUnderMouse(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_Data")]
-	public static extern QVariant_Ptr QGraphicsItem_Data(QGraphicsItem_Ptr* self, c_int key);
+	public static extern QVariant_Ptr* QGraphicsItem_Data(QGraphicsItem_Ptr* self, c_int key);
 	[LinkName("QGraphicsItem_SetData")]
 	public static extern void QGraphicsItem_SetData(QGraphicsItem_Ptr* self, c_int key, QVariant_Ptr* value);
 	[LinkName("QGraphicsItem_InputMethodHints")]
@@ -337,61 +337,61 @@ extension CQt
 	[LinkName("QGraphicsItem_Type")]
 	public static extern c_int QGraphicsItem_Type(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_InstallSceneEventFilter")]
-	public static extern void QGraphicsItem_InstallSceneEventFilter(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* filterItem);
+	public static extern void QGraphicsItem_InstallSceneEventFilter(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** filterItem);
 	[LinkName("QGraphicsItem_RemoveSceneEventFilter")]
-	public static extern void QGraphicsItem_RemoveSceneEventFilter(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* filterItem);
+	public static extern void QGraphicsItem_RemoveSceneEventFilter(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** filterItem);
 	[LinkName("QGraphicsItem_UpdateMicroFocus")]
 	public static extern void QGraphicsItem_UpdateMicroFocus(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_SceneEventFilter")]
-	public static extern bool QGraphicsItem_SceneEventFilter(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* watched, QEvent_Ptr* event);
+	public static extern bool QGraphicsItem_SceneEventFilter(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** watched, QEvent_Ptr** event);
 	[LinkName("QGraphicsItem_SceneEvent")]
-	public static extern bool QGraphicsItem_SceneEvent(QGraphicsItem_Ptr* self, QEvent_Ptr* event);
+	public static extern bool QGraphicsItem_SceneEvent(QGraphicsItem_Ptr* self, QEvent_Ptr** event);
 	[LinkName("QGraphicsItem_ContextMenuEvent")]
-	public static extern void QGraphicsItem_ContextMenuEvent(QGraphicsItem_Ptr* self, QGraphicsSceneContextMenuEvent_Ptr* event);
+	public static extern void QGraphicsItem_ContextMenuEvent(QGraphicsItem_Ptr* self, QGraphicsSceneContextMenuEvent_Ptr** event);
 	[LinkName("QGraphicsItem_DragEnterEvent")]
-	public static extern void QGraphicsItem_DragEnterEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsItem_DragEnterEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsItem_DragLeaveEvent")]
-	public static extern void QGraphicsItem_DragLeaveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsItem_DragLeaveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsItem_DragMoveEvent")]
-	public static extern void QGraphicsItem_DragMoveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsItem_DragMoveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsItem_DropEvent")]
-	public static extern void QGraphicsItem_DropEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsItem_DropEvent(QGraphicsItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsItem_FocusInEvent")]
-	public static extern void QGraphicsItem_FocusInEvent(QGraphicsItem_Ptr* self, QFocusEvent_Ptr* event);
+	public static extern void QGraphicsItem_FocusInEvent(QGraphicsItem_Ptr* self, QFocusEvent_Ptr** event);
 	[LinkName("QGraphicsItem_FocusOutEvent")]
-	public static extern void QGraphicsItem_FocusOutEvent(QGraphicsItem_Ptr* self, QFocusEvent_Ptr* event);
+	public static extern void QGraphicsItem_FocusOutEvent(QGraphicsItem_Ptr* self, QFocusEvent_Ptr** event);
 	[LinkName("QGraphicsItem_HoverEnterEvent")]
-	public static extern void QGraphicsItem_HoverEnterEvent(QGraphicsItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr* event);
+	public static extern void QGraphicsItem_HoverEnterEvent(QGraphicsItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr** event);
 	[LinkName("QGraphicsItem_HoverMoveEvent")]
-	public static extern void QGraphicsItem_HoverMoveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr* event);
+	public static extern void QGraphicsItem_HoverMoveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr** event);
 	[LinkName("QGraphicsItem_HoverLeaveEvent")]
-	public static extern void QGraphicsItem_HoverLeaveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr* event);
+	public static extern void QGraphicsItem_HoverLeaveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr** event);
 	[LinkName("QGraphicsItem_KeyPressEvent")]
-	public static extern void QGraphicsItem_KeyPressEvent(QGraphicsItem_Ptr* self, QKeyEvent_Ptr* event);
+	public static extern void QGraphicsItem_KeyPressEvent(QGraphicsItem_Ptr* self, QKeyEvent_Ptr** event);
 	[LinkName("QGraphicsItem_KeyReleaseEvent")]
-	public static extern void QGraphicsItem_KeyReleaseEvent(QGraphicsItem_Ptr* self, QKeyEvent_Ptr* event);
+	public static extern void QGraphicsItem_KeyReleaseEvent(QGraphicsItem_Ptr* self, QKeyEvent_Ptr** event);
 	[LinkName("QGraphicsItem_MousePressEvent")]
-	public static extern void QGraphicsItem_MousePressEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsItem_MousePressEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsItem_MouseMoveEvent")]
-	public static extern void QGraphicsItem_MouseMoveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsItem_MouseMoveEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsItem_MouseReleaseEvent")]
-	public static extern void QGraphicsItem_MouseReleaseEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsItem_MouseReleaseEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsItem_MouseDoubleClickEvent")]
-	public static extern void QGraphicsItem_MouseDoubleClickEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsItem_MouseDoubleClickEvent(QGraphicsItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsItem_WheelEvent")]
-	public static extern void QGraphicsItem_WheelEvent(QGraphicsItem_Ptr* self, QGraphicsSceneWheelEvent_Ptr* event);
+	public static extern void QGraphicsItem_WheelEvent(QGraphicsItem_Ptr* self, QGraphicsSceneWheelEvent_Ptr** event);
 	[LinkName("QGraphicsItem_InputMethodEvent")]
-	public static extern void QGraphicsItem_InputMethodEvent(QGraphicsItem_Ptr* self, QInputMethodEvent_Ptr* event);
+	public static extern void QGraphicsItem_InputMethodEvent(QGraphicsItem_Ptr* self, QInputMethodEvent_Ptr** event);
 	[LinkName("QGraphicsItem_InputMethodQuery")]
-	public static extern QVariant_Ptr QGraphicsItem_InputMethodQuery(QGraphicsItem_Ptr* self, Qt_InputMethodQuery query);
+	public static extern QVariant_Ptr* QGraphicsItem_InputMethodQuery(QGraphicsItem_Ptr* self, Qt_InputMethodQuery query);
 	[LinkName("QGraphicsItem_ItemChange")]
-	public static extern QVariant_Ptr QGraphicsItem_ItemChange(QGraphicsItem_Ptr* self, QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value);
+	public static extern QVariant_Ptr* QGraphicsItem_ItemChange(QGraphicsItem_Ptr* self, QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value);
 	[LinkName("QGraphicsItem_SupportsExtension")]
 	public static extern bool QGraphicsItem_SupportsExtension(QGraphicsItem_Ptr* self, QGraphicsItem_Extension _extension);
 	[LinkName("QGraphicsItem_SetExtension")]
 	public static extern void QGraphicsItem_SetExtension(QGraphicsItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsItem_Extension(QGraphicsItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsItem_Extension(QGraphicsItem_Ptr* self, QVariant_Ptr* variant);
 	[LinkName("QGraphicsItem_AddToIndex")]
 	public static extern void QGraphicsItem_AddToIndex(QGraphicsItem_Ptr* self);
 	[LinkName("QGraphicsItem_RemoveFromIndex")]
@@ -403,7 +403,7 @@ extension CQt
 	[LinkName("QGraphicsItem_SetCacheMode2")]
 	public static extern void QGraphicsItem_SetCacheMode2(QGraphicsItem_Ptr* self, QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize);
 	[LinkName("QGraphicsItem_IsBlockedByModalPanel1")]
-	public static extern bool QGraphicsItem_IsBlockedByModalPanel1(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** blockingPanel);
+	public static extern bool QGraphicsItem_IsBlockedByModalPanel1(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr*** blockingPanel);
 	[LinkName("QGraphicsItem_SetFocus1")]
 	public static extern void QGraphicsItem_SetFocus1(QGraphicsItem_Ptr* self, Qt_FocusReason focusReason);
 	[LinkName("QGraphicsItem_EnsureVisible1")]
@@ -417,7 +417,7 @@ extension CQt
 	[LinkName("QGraphicsItem_EnsureVisible6")]
 	public static extern void QGraphicsItem_EnsureVisible6(QGraphicsItem_Ptr* self, double x, double y, double w, double h, c_int xmargin, c_int ymargin);
 	[LinkName("QGraphicsItem_ItemTransform2")]
-	public static extern QTransform_Ptr QGraphicsItem_ItemTransform2(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr* other, bool* ok);
+	public static extern QTransform_Ptr* QGraphicsItem_ItemTransform2(QGraphicsItem_Ptr* self, QGraphicsItem_Ptr** other, bool* ok);
 	[LinkName("QGraphicsItem_SetTransform2")]
 	public static extern void QGraphicsItem_SetTransform2(QGraphicsItem_Ptr* self, QTransform_Ptr* matrix, bool combine);
 	[LinkName("QGraphicsItem_CollidingItems1")]
@@ -429,56 +429,57 @@ extension CQt
 	[LinkName("QGraphicsItem_Scroll3")]
 	public static extern void QGraphicsItem_Scroll3(QGraphicsItem_Ptr* self, double dx, double dy, QRectF_Ptr* rect);
 }
-class QGraphicsItem
+class QGraphicsItem : IQGraphicsItem
 {
 	private QGraphicsItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsItem_new();
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsItem_new2(parent);
+		this.ptr = CQt.QGraphicsItem_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsItem_Delete(this.ptr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -496,21 +497,21 @@ class QGraphicsItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -548,17 +549,17 @@ class QGraphicsItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -572,9 +573,9 @@ class QGraphicsItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -624,13 +625,13 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -692,19 +693,19 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -724,7 +725,7 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -744,13 +745,13 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -768,25 +769,25 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -816,13 +817,13 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -840,23 +841,23 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsItem_BoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsItem_Shape((.)this.ptr);
 	}
@@ -864,21 +865,21 @@ class QGraphicsItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -892,17 +893,17 @@ class QGraphicsItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsItem_OpaqueArea((.)this.ptr);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -912,9 +913,9 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_SetBoundingRegionGranularity((.)this.ptr, granularity);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
 	public void Update()
 	{
@@ -928,145 +929,145 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -1080,117 +1081,117 @@ class QGraphicsItem
 	{
 		return CQt.QGraphicsItem_Type((.)this.ptr);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public bool SupportsExtension(QGraphicsItem_Extension _extension)
 	{
 		return CQt.QGraphicsItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -1208,29 +1209,29 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -1240,238 +1241,33 @@ class QGraphicsItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsItem
+interface IQGraphicsItem : IQtObjectInterface
 {
-	public QGraphicsScene* Scene();
-	public QGraphicsItem* ParentItem();
-	public QGraphicsItem* TopLevelItem();
-	public QGraphicsObject* ParentObject();
-	public QGraphicsWidget* ParentWidget();
-	public QGraphicsWidget* TopLevelWidget();
-	public QGraphicsWidget* Window();
-	public QGraphicsItem* Panel();
-	public void SetParentItem();
-	public void* ChildItems();
-	public bool IsWidget();
-	public bool IsWindow();
-	public bool IsPanel();
-	public QGraphicsObject* ToGraphicsObject();
-	public QGraphicsObject* ToGraphicsObject2();
-	public QGraphicsItemGroup* Group();
-	public void SetGroup();
-	public void* Flags();
-	public void SetFlag();
-	public void SetFlags();
-	public QGraphicsItem_CacheMode CacheMode();
-	public void SetCacheMode();
-	public QGraphicsItem_PanelModality PanelModality();
-	public void SetPanelModality();
-	public bool IsBlockedByModalPanel();
-	public libqt_string ToolTip();
-	public void SetToolTip();
-	public QCursor Cursor();
-	public void SetCursor();
-	public bool HasCursor();
-	public void UnsetCursor();
-	public bool IsVisible();
-	public bool IsVisibleTo();
-	public void SetVisible();
-	public void Hide();
-	public void Show();
-	public bool IsEnabled();
-	public void SetEnabled();
-	public bool IsSelected();
-	public void SetSelected();
-	public bool AcceptDrops();
-	public void SetAcceptDrops();
-	public double Opacity();
-	public double EffectiveOpacity();
-	public void SetOpacity();
-	public QGraphicsEffect* GraphicsEffect();
-	public void SetGraphicsEffect();
-	public void* AcceptedMouseButtons();
-	public void SetAcceptedMouseButtons();
-	public bool AcceptHoverEvents();
-	public void SetAcceptHoverEvents();
-	public bool AcceptTouchEvents();
-	public void SetAcceptTouchEvents();
-	public bool FiltersChildEvents();
-	public void SetFiltersChildEvents();
-	public bool HandlesChildEvents();
-	public void SetHandlesChildEvents();
-	public bool IsActive();
-	public void SetActive();
-	public bool HasFocus();
-	public void SetFocus();
-	public void ClearFocus();
-	public QGraphicsItem* FocusProxy();
-	public void SetFocusProxy();
-	public QGraphicsItem* FocusItem();
-	public QGraphicsItem* FocusScopeItem();
-	public void GrabMouse();
-	public void UngrabMouse();
-	public void GrabKeyboard();
-	public void UngrabKeyboard();
-	public QPointF Pos();
-	public double X();
-	public void SetX();
-	public double Y();
-	public void SetY();
-	public QPointF ScenePos();
-	public void SetPos();
-	public void SetPos2();
-	public void MoveBy();
-	public void EnsureVisible();
-	public void EnsureVisible2();
-	public QTransform Transform();
-	public QTransform SceneTransform();
-	public QTransform DeviceTransform();
-	public QTransform ItemTransform();
-	public void SetTransform();
-	public void ResetTransform();
-	public void SetRotation();
-	public double Rotation();
-	public void SetScale();
-	public double Scale();
-	public void* Transformations();
-	public void SetTransformations();
-	public QPointF TransformOriginPoint();
-	public void SetTransformOriginPoint();
-	public void SetTransformOriginPoint2();
-	public void Advance();
-	public double ZValue();
-	public void SetZValue();
-	public void StackBefore();
-	public QRectF BoundingRect();
-	public QRectF ChildrenBoundingRect();
-	public QRectF SceneBoundingRect();
-	public QPainterPath Shape();
-	public bool IsClipped();
-	public QPainterPath ClipPath();
-	public bool Contains();
-	public bool CollidesWithItem();
-	public bool CollidesWithPath();
-	public void* CollidingItems();
-	public bool IsObscured();
-	public bool IsObscured2();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public QRegion BoundingRegion();
-	public double BoundingRegionGranularity();
-	public void SetBoundingRegionGranularity();
-	public void Paint();
-	public void Update();
-	public void Update2();
-	public void Scroll();
-	public QPointF MapToItem();
-	public QPointF MapToParent();
-	public QPointF MapToScene();
-	public QRectF MapRectToItem();
-	public QRectF MapRectToParent();
-	public QRectF MapRectToScene();
-	public QPainterPath MapToItem4();
-	public QPainterPath MapToParent4();
-	public QPainterPath MapToScene4();
-	public QPointF MapFromItem();
-	public QPointF MapFromParent();
-	public QPointF MapFromScene();
-	public QRectF MapRectFromItem();
-	public QRectF MapRectFromParent();
-	public QRectF MapRectFromScene();
-	public QPainterPath MapFromItem4();
-	public QPainterPath MapFromParent4();
-	public QPainterPath MapFromScene4();
-	public QPointF MapToItem5();
-	public QPointF MapToParent5();
-	public QPointF MapToScene5();
-	public QRectF MapRectToItem2();
-	public QRectF MapRectToParent2();
-	public QRectF MapRectToScene2();
-	public QPointF MapFromItem5();
-	public QPointF MapFromParent5();
-	public QPointF MapFromScene5();
-	public QRectF MapRectFromItem2();
-	public QRectF MapRectFromParent2();
-	public QRectF MapRectFromScene2();
-	public bool IsAncestorOf();
-	public QGraphicsItem* CommonAncestorItem();
-	public bool IsUnderMouse();
-	public QVariant Data();
-	public void SetData();
-	public void* InputMethodHints();
-	public void SetInputMethodHints();
-	public c_int Type();
-	public void InstallSceneEventFilter();
-	public void RemoveSceneEventFilter();
-	public void UpdateMicroFocus();
-	public bool SceneEventFilter();
-	public bool SceneEvent();
-	public void ContextMenuEvent();
-	public void DragEnterEvent();
-	public void DragLeaveEvent();
-	public void DragMoveEvent();
-	public void DropEvent();
-	public void FocusInEvent();
-	public void FocusOutEvent();
-	public void HoverEnterEvent();
-	public void HoverMoveEvent();
-	public void HoverLeaveEvent();
-	public void KeyPressEvent();
-	public void KeyReleaseEvent();
-	public void MousePressEvent();
-	public void MouseMoveEvent();
-	public void MouseReleaseEvent();
-	public void MouseDoubleClickEvent();
-	public void WheelEvent();
-	public void InputMethodEvent();
-	public QVariant InputMethodQuery();
-	public QVariant ItemChange();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
-	public void AddToIndex();
-	public void RemoveFromIndex();
-	public void PrepareGeometryChange();
-	public void SetFlag2();
-	public void SetCacheMode2();
-	public bool IsBlockedByModalPanel1();
-	public void SetFocus1();
-	public void EnsureVisible1();
-	public void EnsureVisible22();
-	public void EnsureVisible3();
-	public void EnsureVisible5();
-	public void EnsureVisible6();
-	public QTransform ItemTransform2();
-	public void SetTransform2();
-	public void* CollidingItems1();
-	public bool IsObscured1();
-	public void Update1();
-	public void Scroll3();
 }
 // --------------------------------------------------------------
 // QGraphicsObject
@@ -1485,11 +1281,11 @@ extension CQt
 	[LinkName("QGraphicsObject_new")]
 	public static extern QGraphicsObject_Ptr* QGraphicsObject_new();
 	[LinkName("QGraphicsObject_new2")]
-	public static extern QGraphicsObject_Ptr* QGraphicsObject_new2(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsObject_Ptr* QGraphicsObject_new2(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsObject_Delete")]
 	public static extern void QGraphicsObject_Delete(QGraphicsObject_Ptr* self);
 	[LinkName("QGraphicsObject_MetaObject")]
-	public static extern QMetaObject_Ptr* QGraphicsObject_MetaObject(QGraphicsObject_Ptr* self);
+	public static extern QMetaObject_Ptr** QGraphicsObject_MetaObject(QGraphicsObject_Ptr* self);
 	[LinkName("QGraphicsObject_Qt_Metacast")]
 	public static extern void* QGraphicsObject_Qt_Metacast(QGraphicsObject_Ptr* self, c_char* param1);
 	[LinkName("QGraphicsObject_Qt_Metacall")]
@@ -1527,7 +1323,7 @@ extension CQt
 	[LinkName("QGraphicsObject_HeightChanged")]
 	public static extern void QGraphicsObject_HeightChanged(QGraphicsObject_Ptr* self);
 	[LinkName("QGraphicsObject_Event")]
-	public static extern bool QGraphicsObject_Event(QGraphicsObject_Ptr* self, QEvent_Ptr* ev);
+	public static extern bool QGraphicsObject_Event(QGraphicsObject_Ptr* self, QEvent_Ptr** ev);
 	[LinkName("QGraphicsObject_Tr2")]
 	public static extern libqt_string QGraphicsObject_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsObject_Tr3")]
@@ -1535,22 +1331,23 @@ extension CQt
 	[LinkName("QGraphicsObject_GrabGesture2")]
 	public static extern void QGraphicsObject_GrabGesture2(QGraphicsObject_Ptr* self, Qt_GestureType type, void* flags);
 }
-class QGraphicsObject
+class QGraphicsObject : IQGraphicsObject, IQObject, IQGraphicsItem
 {
 	private QGraphicsObject_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsObject_new();
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsObject_new2(parent);
+		this.ptr = CQt.QGraphicsObject_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsObject_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QGraphicsObject_MetaObject((.)this.ptr);
 	}
@@ -1626,9 +1423,9 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsObject_HeightChanged((.)this.ptr);
 	}
-	public bool Event(QEvent_Ptr* ev)
+	public bool Event(IQEvent ev)
 	{
-		return CQt.QGraphicsObject_Event((.)this.ptr, ev);
+		return CQt.QGraphicsObject_Event((.)this.ptr, (.)ev?.ObjectPtr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -1642,17 +1439,17 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsObject_GrabGesture2((.)this.ptr, type, flags);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -1674,13 +1471,13 @@ class QGraphicsObject
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -1698,49 +1495,49 @@ class QGraphicsObject
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -1750,11 +1547,11 @@ class QGraphicsObject
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -1762,11 +1559,11 @@ class QGraphicsObject
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -1774,7 +1571,7 @@ class QGraphicsObject
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -1786,7 +1583,7 @@ class QGraphicsObject
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -1798,29 +1595,29 @@ class QGraphicsObject
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -1830,73 +1627,73 @@ class QGraphicsObject
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -1914,21 +1711,21 @@ class QGraphicsObject
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -1966,17 +1763,17 @@ class QGraphicsObject
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -1990,9 +1787,9 @@ class QGraphicsObject
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -2042,13 +1839,13 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -2110,19 +1907,19 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -2142,7 +1939,7 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -2162,13 +1959,13 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -2186,25 +1983,25 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -2234,13 +2031,13 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -2258,23 +2055,23 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsItem_BoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsItem_Shape((.)this.ptr);
 	}
@@ -2282,21 +2079,21 @@ class QGraphicsObject
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -2310,17 +2107,17 @@ class QGraphicsObject
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsItem_OpaqueArea((.)this.ptr);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -2330,9 +2127,9 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_SetBoundingRegionGranularity((.)this.ptr, granularity);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
 	public void Update()
 	{
@@ -2346,145 +2143,145 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -2498,113 +2295,113 @@ class QGraphicsObject
 	{
 		return CQt.QGraphicsItem_Type((.)this.ptr);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public bool SupportsExtension(QGraphicsItem_Extension _extension)
 	{
 		return CQt.QGraphicsItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -2622,29 +2419,29 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -2654,56 +2451,33 @@ class QGraphicsObject
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsObject
+interface IQGraphicsObject : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void GrabGesture();
-	public void UngrabGesture();
-	public void UpdateMicroFocus();
-	public void ParentChanged();
-	public void OpacityChanged();
-	public void VisibleChanged();
-	public void EnabledChanged();
-	public void XChanged();
-	public void YChanged();
-	public void ZChanged();
-	public void RotationChanged();
-	public void ScaleChanged();
-	public void ChildrenChanged();
-	public void WidthChanged();
-	public void HeightChanged();
-	public bool Event();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public void GrabGesture2();
 }
 // --------------------------------------------------------------
 // QAbstractGraphicsShapeItem
@@ -2717,96 +2491,97 @@ extension CQt
 	[LinkName("QAbstractGraphicsShapeItem_new")]
 	public static extern QAbstractGraphicsShapeItem_Ptr* QAbstractGraphicsShapeItem_new();
 	[LinkName("QAbstractGraphicsShapeItem_new2")]
-	public static extern QAbstractGraphicsShapeItem_Ptr* QAbstractGraphicsShapeItem_new2(QGraphicsItem_Ptr* parent);
+	public static extern QAbstractGraphicsShapeItem_Ptr* QAbstractGraphicsShapeItem_new2(QGraphicsItem_Ptr** parent);
 	[LinkName("QAbstractGraphicsShapeItem_Delete")]
 	public static extern void QAbstractGraphicsShapeItem_Delete(QAbstractGraphicsShapeItem_Ptr* self);
 	[LinkName("QAbstractGraphicsShapeItem_Pen")]
-	public static extern QPen_Ptr QAbstractGraphicsShapeItem_Pen(QAbstractGraphicsShapeItem_Ptr* self);
+	public static extern QPen_Ptr* QAbstractGraphicsShapeItem_Pen(QAbstractGraphicsShapeItem_Ptr* self);
 	[LinkName("QAbstractGraphicsShapeItem_SetPen")]
 	public static extern void QAbstractGraphicsShapeItem_SetPen(QAbstractGraphicsShapeItem_Ptr* self, QPen_Ptr* pen);
 	[LinkName("QAbstractGraphicsShapeItem_Brush")]
-	public static extern QBrush_Ptr QAbstractGraphicsShapeItem_Brush(QAbstractGraphicsShapeItem_Ptr* self);
+	public static extern QBrush_Ptr* QAbstractGraphicsShapeItem_Brush(QAbstractGraphicsShapeItem_Ptr* self);
 	[LinkName("QAbstractGraphicsShapeItem_SetBrush")]
 	public static extern void QAbstractGraphicsShapeItem_SetBrush(QAbstractGraphicsShapeItem_Ptr* self, QBrush_Ptr* brush);
 	[LinkName("QAbstractGraphicsShapeItem_IsObscuredBy")]
-	public static extern bool QAbstractGraphicsShapeItem_IsObscuredBy(QAbstractGraphicsShapeItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QAbstractGraphicsShapeItem_IsObscuredBy(QAbstractGraphicsShapeItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QAbstractGraphicsShapeItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QAbstractGraphicsShapeItem_OpaqueArea(QAbstractGraphicsShapeItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QAbstractGraphicsShapeItem_OpaqueArea(QAbstractGraphicsShapeItem_Ptr* self);
 }
-class QAbstractGraphicsShapeItem
+class QAbstractGraphicsShapeItem : IQAbstractGraphicsShapeItem, IQGraphicsItem
 {
 	private QAbstractGraphicsShapeItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QAbstractGraphicsShapeItem_new();
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QAbstractGraphicsShapeItem_new2(parent);
+		this.ptr = CQt.QAbstractGraphicsShapeItem_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QAbstractGraphicsShapeItem_Delete(this.ptr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Pen((.)this.ptr);
 	}
-	public void SetPen(QPen_Ptr* pen)
+	public void SetPen(IQPen pen)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, pen);
+		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, (.)pen?.ObjectPtr);
 	}
-	public QBrush_Ptr Brush()
+	public QBrush_Ptr* Brush()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Brush((.)this.ptr);
 	}
-	public void SetBrush(QBrush_Ptr* brush)
+	public void SetBrush(IQBrush brush)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, brush);
+		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, (.)brush?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QAbstractGraphicsShapeItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QAbstractGraphicsShapeItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QAbstractGraphicsShapeItem_OpaqueArea((.)this.ptr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -2824,21 +2599,21 @@ class QAbstractGraphicsShapeItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -2876,17 +2651,17 @@ class QAbstractGraphicsShapeItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -2900,9 +2675,9 @@ class QAbstractGraphicsShapeItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -2952,13 +2727,13 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -3020,19 +2795,19 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -3052,7 +2827,7 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -3072,13 +2847,13 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -3096,25 +2871,25 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -3144,13 +2919,13 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -3168,23 +2943,23 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsItem_BoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsItem_Shape((.)this.ptr);
 	}
@@ -3192,21 +2967,21 @@ class QAbstractGraphicsShapeItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -3220,9 +2995,9 @@ class QAbstractGraphicsShapeItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -3232,9 +3007,9 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_SetBoundingRegionGranularity((.)this.ptr, granularity);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
 	public void Update()
 	{
@@ -3248,145 +3023,145 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -3400,117 +3175,117 @@ class QAbstractGraphicsShapeItem
 	{
 		return CQt.QGraphicsItem_Type((.)this.ptr);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public bool SupportsExtension(QGraphicsItem_Extension _extension)
 	{
 		return CQt.QGraphicsItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -3528,29 +3303,29 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -3560,39 +3335,33 @@ class QAbstractGraphicsShapeItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQAbstractGraphicsShapeItem
+interface IQAbstractGraphicsShapeItem : IQtObjectInterface
 {
-	public QPen Pen();
-	public void SetPen();
-	public QBrush Brush();
-	public void SetBrush();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
 }
 // --------------------------------------------------------------
 // QGraphicsPathItem
@@ -3608,27 +3377,27 @@ extension CQt
 	[LinkName("QGraphicsPathItem_new2")]
 	public static extern QGraphicsPathItem_Ptr* QGraphicsPathItem_new2(QPainterPath_Ptr* path);
 	[LinkName("QGraphicsPathItem_new3")]
-	public static extern QGraphicsPathItem_Ptr* QGraphicsPathItem_new3(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsPathItem_Ptr* QGraphicsPathItem_new3(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsPathItem_new4")]
-	public static extern QGraphicsPathItem_Ptr* QGraphicsPathItem_new4(QPainterPath_Ptr* path, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsPathItem_Ptr* QGraphicsPathItem_new4(QPainterPath_Ptr* path, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsPathItem_Delete")]
 	public static extern void QGraphicsPathItem_Delete(QGraphicsPathItem_Ptr* self);
 	[LinkName("QGraphicsPathItem_Path")]
-	public static extern QPainterPath_Ptr QGraphicsPathItem_Path(QGraphicsPathItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsPathItem_Path(QGraphicsPathItem_Ptr* self);
 	[LinkName("QGraphicsPathItem_SetPath")]
 	public static extern void QGraphicsPathItem_SetPath(QGraphicsPathItem_Ptr* self, QPainterPath_Ptr* path);
 	[LinkName("QGraphicsPathItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsPathItem_BoundingRect(QGraphicsPathItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsPathItem_BoundingRect(QGraphicsPathItem_Ptr* self);
 	[LinkName("QGraphicsPathItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsPathItem_Shape(QGraphicsPathItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsPathItem_Shape(QGraphicsPathItem_Ptr* self);
 	[LinkName("QGraphicsPathItem_Contains")]
 	public static extern bool QGraphicsPathItem_Contains(QGraphicsPathItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsPathItem_Paint")]
-	public static extern void QGraphicsPathItem_Paint(QGraphicsPathItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsPathItem_Paint(QGraphicsPathItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsPathItem_IsObscuredBy")]
-	public static extern bool QGraphicsPathItem_IsObscuredBy(QGraphicsPathItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsPathItem_IsObscuredBy(QGraphicsPathItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsPathItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsPathItem_OpaqueArea(QGraphicsPathItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsPathItem_OpaqueArea(QGraphicsPathItem_Ptr* self);
 	[LinkName("QGraphicsPathItem_Type")]
 	public static extern c_int QGraphicsPathItem_Type(QGraphicsPathItem_Ptr* self);
 	[LinkName("QGraphicsPathItem_SupportsExtension")]
@@ -3636,60 +3405,61 @@ extension CQt
 	[LinkName("QGraphicsPathItem_SetExtension")]
 	public static extern void QGraphicsPathItem_SetExtension(QGraphicsPathItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsPathItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsPathItem_Extension(QGraphicsPathItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsPathItem_Extension(QGraphicsPathItem_Ptr* self, QVariant_Ptr* variant);
 }
-class QGraphicsPathItem
+class QGraphicsPathItem : IQGraphicsPathItem, IQAbstractGraphicsShapeItem, IQGraphicsItem
 {
 	private QGraphicsPathItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsPathItem_new();
 	}
-	public this(QPainterPath_Ptr* path)
+	public this(IQPainterPath path)
 	{
-		this.ptr = CQt.QGraphicsPathItem_new2(path);
+		this.ptr = CQt.QGraphicsPathItem_new2((.)path?.ObjectPtr);
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsPathItem_new3(parent);
+		this.ptr = CQt.QGraphicsPathItem_new3((.)parent?.ObjectPtr);
 	}
-	public this(QPainterPath_Ptr* path, QGraphicsItem_Ptr* parent)
+	public this(IQPainterPath path, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsPathItem_new4(path, parent);
+		this.ptr = CQt.QGraphicsPathItem_new4((.)path?.ObjectPtr, (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsPathItem_Delete(this.ptr);
 	}
-	public QPainterPath_Ptr Path()
+	public QPainterPath_Ptr* Path()
 	{
 		return CQt.QGraphicsPathItem_Path((.)this.ptr);
 	}
-	public void SetPath(QPainterPath_Ptr* path)
+	public void SetPath(IQPainterPath path)
 	{
-		CQt.QGraphicsPathItem_SetPath((.)this.ptr, path);
+		CQt.QGraphicsPathItem_SetPath((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsPathItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsPathItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsPathItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsPathItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsPathItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsPathItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsPathItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsPathItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsPathItem_OpaqueArea((.)this.ptr);
 	}
@@ -3701,65 +3471,65 @@ class QGraphicsPathItem
 	{
 		return CQt.QGraphicsPathItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsPathItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsPathItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsPathItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsPathItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Pen((.)this.ptr);
 	}
-	public void SetPen(QPen_Ptr* pen)
+	public void SetPen(IQPen pen)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, pen);
+		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, (.)pen?.ObjectPtr);
 	}
-	public QBrush_Ptr Brush()
+	public QBrush_Ptr* Brush()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Brush((.)this.ptr);
 	}
-	public void SetBrush(QBrush_Ptr* brush)
+	public void SetBrush(IQBrush brush)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, brush);
+		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, (.)brush?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -3777,21 +3547,21 @@ class QGraphicsPathItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -3829,17 +3599,17 @@ class QGraphicsPathItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -3853,9 +3623,9 @@ class QGraphicsPathItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -3905,13 +3675,13 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -3973,19 +3743,19 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -4005,7 +3775,7 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -4025,13 +3795,13 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -4049,25 +3819,25 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -4097,13 +3867,13 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -4121,15 +3891,15 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -4137,17 +3907,17 @@ class QGraphicsPathItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -4161,9 +3931,9 @@ class QGraphicsPathItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -4185,145 +3955,145 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -4333,105 +4103,105 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -4449,29 +4219,29 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -4481,45 +4251,33 @@ class QGraphicsPathItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsPathItem
+interface IQGraphicsPathItem : IQtObjectInterface
 {
-	public QPainterPath Path();
-	public void SetPath();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
 }
 // --------------------------------------------------------------
 // QGraphicsRectItem
@@ -4537,31 +4295,31 @@ extension CQt
 	[LinkName("QGraphicsRectItem_new3")]
 	public static extern QGraphicsRectItem_Ptr* QGraphicsRectItem_new3(double x, double y, double w, double h);
 	[LinkName("QGraphicsRectItem_new4")]
-	public static extern QGraphicsRectItem_Ptr* QGraphicsRectItem_new4(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsRectItem_Ptr* QGraphicsRectItem_new4(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsRectItem_new5")]
-	public static extern QGraphicsRectItem_Ptr* QGraphicsRectItem_new5(QRectF_Ptr* rect, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsRectItem_Ptr* QGraphicsRectItem_new5(QRectF_Ptr* rect, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsRectItem_new6")]
-	public static extern QGraphicsRectItem_Ptr* QGraphicsRectItem_new6(double x, double y, double w, double h, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsRectItem_Ptr* QGraphicsRectItem_new6(double x, double y, double w, double h, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsRectItem_Delete")]
 	public static extern void QGraphicsRectItem_Delete(QGraphicsRectItem_Ptr* self);
 	[LinkName("QGraphicsRectItem_Rect")]
-	public static extern QRectF_Ptr QGraphicsRectItem_Rect(QGraphicsRectItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsRectItem_Rect(QGraphicsRectItem_Ptr* self);
 	[LinkName("QGraphicsRectItem_SetRect")]
 	public static extern void QGraphicsRectItem_SetRect(QGraphicsRectItem_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QGraphicsRectItem_SetRect2")]
 	public static extern void QGraphicsRectItem_SetRect2(QGraphicsRectItem_Ptr* self, double x, double y, double w, double h);
 	[LinkName("QGraphicsRectItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsRectItem_BoundingRect(QGraphicsRectItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsRectItem_BoundingRect(QGraphicsRectItem_Ptr* self);
 	[LinkName("QGraphicsRectItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsRectItem_Shape(QGraphicsRectItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsRectItem_Shape(QGraphicsRectItem_Ptr* self);
 	[LinkName("QGraphicsRectItem_Contains")]
 	public static extern bool QGraphicsRectItem_Contains(QGraphicsRectItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsRectItem_Paint")]
-	public static extern void QGraphicsRectItem_Paint(QGraphicsRectItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsRectItem_Paint(QGraphicsRectItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsRectItem_IsObscuredBy")]
-	public static extern bool QGraphicsRectItem_IsObscuredBy(QGraphicsRectItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsRectItem_IsObscuredBy(QGraphicsRectItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsRectItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsRectItem_OpaqueArea(QGraphicsRectItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsRectItem_OpaqueArea(QGraphicsRectItem_Ptr* self);
 	[LinkName("QGraphicsRectItem_Type")]
 	public static extern c_int QGraphicsRectItem_Type(QGraphicsRectItem_Ptr* self);
 	[LinkName("QGraphicsRectItem_SupportsExtension")]
@@ -4569,72 +4327,73 @@ extension CQt
 	[LinkName("QGraphicsRectItem_SetExtension")]
 	public static extern void QGraphicsRectItem_SetExtension(QGraphicsRectItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsRectItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsRectItem_Extension(QGraphicsRectItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsRectItem_Extension(QGraphicsRectItem_Ptr* self, QVariant_Ptr* variant);
 }
-class QGraphicsRectItem
+class QGraphicsRectItem : IQGraphicsRectItem, IQAbstractGraphicsShapeItem, IQGraphicsItem
 {
 	private QGraphicsRectItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsRectItem_new();
 	}
-	public this(QRectF_Ptr* rect)
+	public this(IQRectF rect)
 	{
-		this.ptr = CQt.QGraphicsRectItem_new2(rect);
+		this.ptr = CQt.QGraphicsRectItem_new2((.)rect?.ObjectPtr);
 	}
 	public this(double x, double y, double w, double h)
 	{
 		this.ptr = CQt.QGraphicsRectItem_new3(x, y, w, h);
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsRectItem_new4(parent);
+		this.ptr = CQt.QGraphicsRectItem_new4((.)parent?.ObjectPtr);
 	}
-	public this(QRectF_Ptr* rect, QGraphicsItem_Ptr* parent)
+	public this(IQRectF rect, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsRectItem_new5(rect, parent);
+		this.ptr = CQt.QGraphicsRectItem_new5((.)rect?.ObjectPtr, (.)parent?.ObjectPtr);
 	}
-	public this(double x, double y, double w, double h, QGraphicsItem_Ptr* parent)
+	public this(double x, double y, double w, double h, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsRectItem_new6(x, y, w, h, parent);
+		this.ptr = CQt.QGraphicsRectItem_new6(x, y, w, h, (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsRectItem_Delete(this.ptr);
 	}
-	public QRectF_Ptr Rect()
+	public QRectF_Ptr* Rect()
 	{
 		return CQt.QGraphicsRectItem_Rect((.)this.ptr);
 	}
-	public void SetRect(QRectF_Ptr* rect)
+	public void SetRect(IQRectF rect)
 	{
-		CQt.QGraphicsRectItem_SetRect((.)this.ptr, rect);
+		CQt.QGraphicsRectItem_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public void SetRect2(double x, double y, double w, double h)
 	{
 		CQt.QGraphicsRectItem_SetRect2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsRectItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsRectItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsRectItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsRectItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsRectItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsRectItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsRectItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsRectItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsRectItem_OpaqueArea((.)this.ptr);
 	}
@@ -4646,65 +4405,65 @@ class QGraphicsRectItem
 	{
 		return CQt.QGraphicsRectItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsRectItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsRectItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsRectItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsRectItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Pen((.)this.ptr);
 	}
-	public void SetPen(QPen_Ptr* pen)
+	public void SetPen(IQPen pen)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, pen);
+		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, (.)pen?.ObjectPtr);
 	}
-	public QBrush_Ptr Brush()
+	public QBrush_Ptr* Brush()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Brush((.)this.ptr);
 	}
-	public void SetBrush(QBrush_Ptr* brush)
+	public void SetBrush(IQBrush brush)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, brush);
+		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, (.)brush?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -4722,21 +4481,21 @@ class QGraphicsRectItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -4774,17 +4533,17 @@ class QGraphicsRectItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -4798,9 +4557,9 @@ class QGraphicsRectItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -4850,13 +4609,13 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -4918,19 +4677,19 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -4950,7 +4709,7 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -4970,13 +4729,13 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -4994,25 +4753,25 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -5042,13 +4801,13 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -5066,15 +4825,15 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -5082,17 +4841,17 @@ class QGraphicsRectItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -5106,9 +4865,9 @@ class QGraphicsRectItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -5130,145 +4889,145 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -5278,105 +5037,105 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -5394,29 +5153,29 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -5426,46 +5185,33 @@ class QGraphicsRectItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsRectItem
+interface IQGraphicsRectItem : IQtObjectInterface
 {
-	public QRectF Rect();
-	public void SetRect();
-	public void SetRect2();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
 }
 // --------------------------------------------------------------
 // QGraphicsEllipseItem
@@ -5483,15 +5229,15 @@ extension CQt
 	[LinkName("QGraphicsEllipseItem_new3")]
 	public static extern QGraphicsEllipseItem_Ptr* QGraphicsEllipseItem_new3(double x, double y, double w, double h);
 	[LinkName("QGraphicsEllipseItem_new4")]
-	public static extern QGraphicsEllipseItem_Ptr* QGraphicsEllipseItem_new4(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsEllipseItem_Ptr* QGraphicsEllipseItem_new4(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsEllipseItem_new5")]
-	public static extern QGraphicsEllipseItem_Ptr* QGraphicsEllipseItem_new5(QRectF_Ptr* rect, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsEllipseItem_Ptr* QGraphicsEllipseItem_new5(QRectF_Ptr* rect, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsEllipseItem_new6")]
-	public static extern QGraphicsEllipseItem_Ptr* QGraphicsEllipseItem_new6(double x, double y, double w, double h, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsEllipseItem_Ptr* QGraphicsEllipseItem_new6(double x, double y, double w, double h, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsEllipseItem_Delete")]
 	public static extern void QGraphicsEllipseItem_Delete(QGraphicsEllipseItem_Ptr* self);
 	[LinkName("QGraphicsEllipseItem_Rect")]
-	public static extern QRectF_Ptr QGraphicsEllipseItem_Rect(QGraphicsEllipseItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsEllipseItem_Rect(QGraphicsEllipseItem_Ptr* self);
 	[LinkName("QGraphicsEllipseItem_SetRect")]
 	public static extern void QGraphicsEllipseItem_SetRect(QGraphicsEllipseItem_Ptr* self, QRectF_Ptr* rect);
 	[LinkName("QGraphicsEllipseItem_SetRect2")]
@@ -5505,17 +5251,17 @@ extension CQt
 	[LinkName("QGraphicsEllipseItem_SetSpanAngle")]
 	public static extern void QGraphicsEllipseItem_SetSpanAngle(QGraphicsEllipseItem_Ptr* self, c_int angle);
 	[LinkName("QGraphicsEllipseItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsEllipseItem_BoundingRect(QGraphicsEllipseItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsEllipseItem_BoundingRect(QGraphicsEllipseItem_Ptr* self);
 	[LinkName("QGraphicsEllipseItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsEllipseItem_Shape(QGraphicsEllipseItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsEllipseItem_Shape(QGraphicsEllipseItem_Ptr* self);
 	[LinkName("QGraphicsEllipseItem_Contains")]
 	public static extern bool QGraphicsEllipseItem_Contains(QGraphicsEllipseItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsEllipseItem_Paint")]
-	public static extern void QGraphicsEllipseItem_Paint(QGraphicsEllipseItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsEllipseItem_Paint(QGraphicsEllipseItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsEllipseItem_IsObscuredBy")]
-	public static extern bool QGraphicsEllipseItem_IsObscuredBy(QGraphicsEllipseItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsEllipseItem_IsObscuredBy(QGraphicsEllipseItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsEllipseItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsEllipseItem_OpaqueArea(QGraphicsEllipseItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsEllipseItem_OpaqueArea(QGraphicsEllipseItem_Ptr* self);
 	[LinkName("QGraphicsEllipseItem_Type")]
 	public static extern c_int QGraphicsEllipseItem_Type(QGraphicsEllipseItem_Ptr* self);
 	[LinkName("QGraphicsEllipseItem_SupportsExtension")]
@@ -5523,46 +5269,47 @@ extension CQt
 	[LinkName("QGraphicsEllipseItem_SetExtension")]
 	public static extern void QGraphicsEllipseItem_SetExtension(QGraphicsEllipseItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsEllipseItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsEllipseItem_Extension(QGraphicsEllipseItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsEllipseItem_Extension(QGraphicsEllipseItem_Ptr* self, QVariant_Ptr* variant);
 }
-class QGraphicsEllipseItem
+class QGraphicsEllipseItem : IQGraphicsEllipseItem, IQAbstractGraphicsShapeItem, IQGraphicsItem
 {
 	private QGraphicsEllipseItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new();
 	}
-	public this(QRectF_Ptr* rect)
+	public this(IQRectF rect)
 	{
-		this.ptr = CQt.QGraphicsEllipseItem_new2(rect);
+		this.ptr = CQt.QGraphicsEllipseItem_new2((.)rect?.ObjectPtr);
 	}
 	public this(double x, double y, double w, double h)
 	{
 		this.ptr = CQt.QGraphicsEllipseItem_new3(x, y, w, h);
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsEllipseItem_new4(parent);
+		this.ptr = CQt.QGraphicsEllipseItem_new4((.)parent?.ObjectPtr);
 	}
-	public this(QRectF_Ptr* rect, QGraphicsItem_Ptr* parent)
+	public this(IQRectF rect, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsEllipseItem_new5(rect, parent);
+		this.ptr = CQt.QGraphicsEllipseItem_new5((.)rect?.ObjectPtr, (.)parent?.ObjectPtr);
 	}
-	public this(double x, double y, double w, double h, QGraphicsItem_Ptr* parent)
+	public this(double x, double y, double w, double h, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsEllipseItem_new6(x, y, w, h, parent);
+		this.ptr = CQt.QGraphicsEllipseItem_new6(x, y, w, h, (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsEllipseItem_Delete(this.ptr);
 	}
-	public QRectF_Ptr Rect()
+	public QRectF_Ptr* Rect()
 	{
 		return CQt.QGraphicsEllipseItem_Rect((.)this.ptr);
 	}
-	public void SetRect(QRectF_Ptr* rect)
+	public void SetRect(IQRectF rect)
 	{
-		CQt.QGraphicsEllipseItem_SetRect((.)this.ptr, rect);
+		CQt.QGraphicsEllipseItem_SetRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public void SetRect2(double x, double y, double w, double h)
 	{
@@ -5584,27 +5331,27 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsEllipseItem_SetSpanAngle((.)this.ptr, angle);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsEllipseItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsEllipseItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsEllipseItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsEllipseItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsEllipseItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsEllipseItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsEllipseItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsEllipseItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsEllipseItem_OpaqueArea((.)this.ptr);
 	}
@@ -5616,65 +5363,65 @@ class QGraphicsEllipseItem
 	{
 		return CQt.QGraphicsEllipseItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsEllipseItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsEllipseItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsEllipseItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsEllipseItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Pen((.)this.ptr);
 	}
-	public void SetPen(QPen_Ptr* pen)
+	public void SetPen(IQPen pen)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, pen);
+		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, (.)pen?.ObjectPtr);
 	}
-	public QBrush_Ptr Brush()
+	public QBrush_Ptr* Brush()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Brush((.)this.ptr);
 	}
-	public void SetBrush(QBrush_Ptr* brush)
+	public void SetBrush(IQBrush brush)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, brush);
+		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, (.)brush?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -5692,21 +5439,21 @@ class QGraphicsEllipseItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -5744,17 +5491,17 @@ class QGraphicsEllipseItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -5768,9 +5515,9 @@ class QGraphicsEllipseItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -5820,13 +5567,13 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -5888,19 +5635,19 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -5920,7 +5667,7 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -5940,13 +5687,13 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -5964,25 +5711,25 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -6012,13 +5759,13 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -6036,15 +5783,15 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -6052,17 +5799,17 @@ class QGraphicsEllipseItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -6076,9 +5823,9 @@ class QGraphicsEllipseItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -6100,145 +5847,145 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -6248,105 +5995,105 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -6364,29 +6111,29 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -6396,50 +6143,33 @@ class QGraphicsEllipseItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsEllipseItem
+interface IQGraphicsEllipseItem : IQtObjectInterface
 {
-	public QRectF Rect();
-	public void SetRect();
-	public void SetRect2();
-	public c_int StartAngle();
-	public void SetStartAngle();
-	public c_int SpanAngle();
-	public void SetSpanAngle();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
 }
 // --------------------------------------------------------------
 // QGraphicsPolygonItem
@@ -6453,7 +6183,7 @@ extension CQt
 	[LinkName("QGraphicsPolygonItem_new")]
 	public static extern QGraphicsPolygonItem_Ptr* QGraphicsPolygonItem_new();
 	[LinkName("QGraphicsPolygonItem_new2")]
-	public static extern QGraphicsPolygonItem_Ptr* QGraphicsPolygonItem_new2(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsPolygonItem_Ptr* QGraphicsPolygonItem_new2(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsPolygonItem_Delete")]
 	public static extern void QGraphicsPolygonItem_Delete(QGraphicsPolygonItem_Ptr* self);
 	[LinkName("QGraphicsPolygonItem_FillRule")]
@@ -6461,17 +6191,17 @@ extension CQt
 	[LinkName("QGraphicsPolygonItem_SetFillRule")]
 	public static extern void QGraphicsPolygonItem_SetFillRule(QGraphicsPolygonItem_Ptr* self, Qt_FillRule rule);
 	[LinkName("QGraphicsPolygonItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsPolygonItem_BoundingRect(QGraphicsPolygonItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsPolygonItem_BoundingRect(QGraphicsPolygonItem_Ptr* self);
 	[LinkName("QGraphicsPolygonItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsPolygonItem_Shape(QGraphicsPolygonItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsPolygonItem_Shape(QGraphicsPolygonItem_Ptr* self);
 	[LinkName("QGraphicsPolygonItem_Contains")]
 	public static extern bool QGraphicsPolygonItem_Contains(QGraphicsPolygonItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsPolygonItem_Paint")]
-	public static extern void QGraphicsPolygonItem_Paint(QGraphicsPolygonItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsPolygonItem_Paint(QGraphicsPolygonItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsPolygonItem_IsObscuredBy")]
-	public static extern bool QGraphicsPolygonItem_IsObscuredBy(QGraphicsPolygonItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsPolygonItem_IsObscuredBy(QGraphicsPolygonItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsPolygonItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsPolygonItem_OpaqueArea(QGraphicsPolygonItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsPolygonItem_OpaqueArea(QGraphicsPolygonItem_Ptr* self);
 	[LinkName("QGraphicsPolygonItem_Type")]
 	public static extern c_int QGraphicsPolygonItem_Type(QGraphicsPolygonItem_Ptr* self);
 	[LinkName("QGraphicsPolygonItem_SupportsExtension")]
@@ -6479,18 +6209,19 @@ extension CQt
 	[LinkName("QGraphicsPolygonItem_SetExtension")]
 	public static extern void QGraphicsPolygonItem_SetExtension(QGraphicsPolygonItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsPolygonItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsPolygonItem_Extension(QGraphicsPolygonItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsPolygonItem_Extension(QGraphicsPolygonItem_Ptr* self, QVariant_Ptr* variant);
 }
-class QGraphicsPolygonItem
+class QGraphicsPolygonItem : IQGraphicsPolygonItem, IQAbstractGraphicsShapeItem, IQGraphicsItem
 {
 	private QGraphicsPolygonItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsPolygonItem_new();
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsPolygonItem_new2(parent);
+		this.ptr = CQt.QGraphicsPolygonItem_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -6504,27 +6235,27 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsPolygonItem_SetFillRule((.)this.ptr, rule);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsPolygonItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsPolygonItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsPolygonItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsPolygonItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsPolygonItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsPolygonItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsPolygonItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsPolygonItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsPolygonItem_OpaqueArea((.)this.ptr);
 	}
@@ -6536,65 +6267,65 @@ class QGraphicsPolygonItem
 	{
 		return CQt.QGraphicsPolygonItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsPolygonItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsPolygonItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsPolygonItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsPolygonItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Pen((.)this.ptr);
 	}
-	public void SetPen(QPen_Ptr* pen)
+	public void SetPen(IQPen pen)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, pen);
+		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, (.)pen?.ObjectPtr);
 	}
-	public QBrush_Ptr Brush()
+	public QBrush_Ptr* Brush()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Brush((.)this.ptr);
 	}
-	public void SetBrush(QBrush_Ptr* brush)
+	public void SetBrush(IQBrush brush)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, brush);
+		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, (.)brush?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -6612,21 +6343,21 @@ class QGraphicsPolygonItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -6664,17 +6395,17 @@ class QGraphicsPolygonItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -6688,9 +6419,9 @@ class QGraphicsPolygonItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -6740,13 +6471,13 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -6808,19 +6539,19 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -6840,7 +6571,7 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -6860,13 +6591,13 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -6884,25 +6615,25 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -6932,13 +6663,13 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -6956,15 +6687,15 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -6972,17 +6703,17 @@ class QGraphicsPolygonItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -6996,9 +6727,9 @@ class QGraphicsPolygonItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -7020,145 +6751,145 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -7168,105 +6899,105 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -7284,29 +7015,29 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -7316,45 +7047,33 @@ class QGraphicsPolygonItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsPolygonItem
+interface IQGraphicsPolygonItem : IQtObjectInterface
 {
-	public Qt_FillRule FillRule();
-	public void SetFillRule();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
 }
 // --------------------------------------------------------------
 // QGraphicsLineItem
@@ -7372,35 +7091,35 @@ extension CQt
 	[LinkName("QGraphicsLineItem_new3")]
 	public static extern QGraphicsLineItem_Ptr* QGraphicsLineItem_new3(double x1, double y1, double x2, double y2);
 	[LinkName("QGraphicsLineItem_new4")]
-	public static extern QGraphicsLineItem_Ptr* QGraphicsLineItem_new4(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsLineItem_Ptr* QGraphicsLineItem_new4(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsLineItem_new5")]
-	public static extern QGraphicsLineItem_Ptr* QGraphicsLineItem_new5(QLineF_Ptr* line, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsLineItem_Ptr* QGraphicsLineItem_new5(QLineF_Ptr* line, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsLineItem_new6")]
-	public static extern QGraphicsLineItem_Ptr* QGraphicsLineItem_new6(double x1, double y1, double x2, double y2, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsLineItem_Ptr* QGraphicsLineItem_new6(double x1, double y1, double x2, double y2, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsLineItem_Delete")]
 	public static extern void QGraphicsLineItem_Delete(QGraphicsLineItem_Ptr* self);
 	[LinkName("QGraphicsLineItem_Pen")]
-	public static extern QPen_Ptr QGraphicsLineItem_Pen(QGraphicsLineItem_Ptr* self);
+	public static extern QPen_Ptr* QGraphicsLineItem_Pen(QGraphicsLineItem_Ptr* self);
 	[LinkName("QGraphicsLineItem_SetPen")]
 	public static extern void QGraphicsLineItem_SetPen(QGraphicsLineItem_Ptr* self, QPen_Ptr* pen);
 	[LinkName("QGraphicsLineItem_Line")]
-	public static extern QLineF_Ptr QGraphicsLineItem_Line(QGraphicsLineItem_Ptr* self);
+	public static extern QLineF_Ptr* QGraphicsLineItem_Line(QGraphicsLineItem_Ptr* self);
 	[LinkName("QGraphicsLineItem_SetLine")]
 	public static extern void QGraphicsLineItem_SetLine(QGraphicsLineItem_Ptr* self, QLineF_Ptr* line);
 	[LinkName("QGraphicsLineItem_SetLine2")]
 	public static extern void QGraphicsLineItem_SetLine2(QGraphicsLineItem_Ptr* self, double x1, double y1, double x2, double y2);
 	[LinkName("QGraphicsLineItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsLineItem_BoundingRect(QGraphicsLineItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsLineItem_BoundingRect(QGraphicsLineItem_Ptr* self);
 	[LinkName("QGraphicsLineItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsLineItem_Shape(QGraphicsLineItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsLineItem_Shape(QGraphicsLineItem_Ptr* self);
 	[LinkName("QGraphicsLineItem_Contains")]
 	public static extern bool QGraphicsLineItem_Contains(QGraphicsLineItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsLineItem_Paint")]
-	public static extern void QGraphicsLineItem_Paint(QGraphicsLineItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsLineItem_Paint(QGraphicsLineItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsLineItem_IsObscuredBy")]
-	public static extern bool QGraphicsLineItem_IsObscuredBy(QGraphicsLineItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsLineItem_IsObscuredBy(QGraphicsLineItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsLineItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsLineItem_OpaqueArea(QGraphicsLineItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsLineItem_OpaqueArea(QGraphicsLineItem_Ptr* self);
 	[LinkName("QGraphicsLineItem_Type")]
 	public static extern c_int QGraphicsLineItem_Type(QGraphicsLineItem_Ptr* self);
 	[LinkName("QGraphicsLineItem_SupportsExtension")]
@@ -7408,80 +7127,81 @@ extension CQt
 	[LinkName("QGraphicsLineItem_SetExtension")]
 	public static extern void QGraphicsLineItem_SetExtension(QGraphicsLineItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsLineItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsLineItem_Extension(QGraphicsLineItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsLineItem_Extension(QGraphicsLineItem_Ptr* self, QVariant_Ptr* variant);
 }
-class QGraphicsLineItem
+class QGraphicsLineItem : IQGraphicsLineItem, IQGraphicsItem
 {
 	private QGraphicsLineItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsLineItem_new();
 	}
-	public this(QLineF_Ptr* line)
+	public this(IQLineF line)
 	{
-		this.ptr = CQt.QGraphicsLineItem_new2(line);
+		this.ptr = CQt.QGraphicsLineItem_new2((.)line?.ObjectPtr);
 	}
 	public this(double x1, double y1, double x2, double y2)
 	{
 		this.ptr = CQt.QGraphicsLineItem_new3(x1, y1, x2, y2);
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsLineItem_new4(parent);
+		this.ptr = CQt.QGraphicsLineItem_new4((.)parent?.ObjectPtr);
 	}
-	public this(QLineF_Ptr* line, QGraphicsItem_Ptr* parent)
+	public this(IQLineF line, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsLineItem_new5(line, parent);
+		this.ptr = CQt.QGraphicsLineItem_new5((.)line?.ObjectPtr, (.)parent?.ObjectPtr);
 	}
-	public this(double x1, double y1, double x2, double y2, QGraphicsItem_Ptr* parent)
+	public this(double x1, double y1, double x2, double y2, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsLineItem_new6(x1, y1, x2, y2, parent);
+		this.ptr = CQt.QGraphicsLineItem_new6(x1, y1, x2, y2, (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsLineItem_Delete(this.ptr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QGraphicsLineItem_Pen((.)this.ptr);
 	}
-	public void SetPen(QPen_Ptr* pen)
+	public void SetPen(IQPen pen)
 	{
-		CQt.QGraphicsLineItem_SetPen((.)this.ptr, pen);
+		CQt.QGraphicsLineItem_SetPen((.)this.ptr, (.)pen?.ObjectPtr);
 	}
-	public QLineF_Ptr Line()
+	public QLineF_Ptr* Line()
 	{
 		return CQt.QGraphicsLineItem_Line((.)this.ptr);
 	}
-	public void SetLine(QLineF_Ptr* line)
+	public void SetLine(IQLineF line)
 	{
-		CQt.QGraphicsLineItem_SetLine((.)this.ptr, line);
+		CQt.QGraphicsLineItem_SetLine((.)this.ptr, (.)line?.ObjectPtr);
 	}
 	public void SetLine2(double x1, double y1, double x2, double y2)
 	{
 		CQt.QGraphicsLineItem_SetLine2((.)this.ptr, x1, y1, x2, y2);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsLineItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsLineItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsLineItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsLineItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsLineItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsLineItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsLineItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsLineItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsLineItem_OpaqueArea((.)this.ptr);
 	}
@@ -7493,49 +7213,49 @@ class QGraphicsLineItem
 	{
 		return CQt.QGraphicsLineItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsLineItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsLineItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsLineItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsLineItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -7553,21 +7273,21 @@ class QGraphicsLineItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -7605,17 +7325,17 @@ class QGraphicsLineItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -7629,9 +7349,9 @@ class QGraphicsLineItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -7681,13 +7401,13 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -7749,19 +7469,19 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -7781,7 +7501,7 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -7801,13 +7521,13 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -7825,25 +7545,25 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -7873,13 +7593,13 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -7897,15 +7617,15 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -7913,17 +7633,17 @@ class QGraphicsLineItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -7937,9 +7657,9 @@ class QGraphicsLineItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -7961,145 +7681,145 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -8109,105 +7829,105 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -8225,29 +7945,29 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -8257,48 +7977,33 @@ class QGraphicsLineItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsLineItem
+interface IQGraphicsLineItem : IQtObjectInterface
 {
-	public QPen Pen();
-	public void SetPen();
-	public QLineF Line();
-	public void SetLine();
-	public void SetLine2();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
 }
 // --------------------------------------------------------------
 // QGraphicsPixmapItem
@@ -8314,13 +8019,13 @@ extension CQt
 	[LinkName("QGraphicsPixmapItem_new2")]
 	public static extern QGraphicsPixmapItem_Ptr* QGraphicsPixmapItem_new2(QPixmap_Ptr* pixmap);
 	[LinkName("QGraphicsPixmapItem_new3")]
-	public static extern QGraphicsPixmapItem_Ptr* QGraphicsPixmapItem_new3(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsPixmapItem_Ptr* QGraphicsPixmapItem_new3(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsPixmapItem_new4")]
-	public static extern QGraphicsPixmapItem_Ptr* QGraphicsPixmapItem_new4(QPixmap_Ptr* pixmap, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsPixmapItem_Ptr* QGraphicsPixmapItem_new4(QPixmap_Ptr* pixmap, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsPixmapItem_Delete")]
 	public static extern void QGraphicsPixmapItem_Delete(QGraphicsPixmapItem_Ptr* self);
 	[LinkName("QGraphicsPixmapItem_Pixmap")]
-	public static extern QPixmap_Ptr QGraphicsPixmapItem_Pixmap(QGraphicsPixmapItem_Ptr* self);
+	public static extern QPixmap_Ptr* QGraphicsPixmapItem_Pixmap(QGraphicsPixmapItem_Ptr* self);
 	[LinkName("QGraphicsPixmapItem_SetPixmap")]
 	public static extern void QGraphicsPixmapItem_SetPixmap(QGraphicsPixmapItem_Ptr* self, QPixmap_Ptr* pixmap);
 	[LinkName("QGraphicsPixmapItem_TransformationMode")]
@@ -8328,23 +8033,23 @@ extension CQt
 	[LinkName("QGraphicsPixmapItem_SetTransformationMode")]
 	public static extern void QGraphicsPixmapItem_SetTransformationMode(QGraphicsPixmapItem_Ptr* self, Qt_TransformationMode mode);
 	[LinkName("QGraphicsPixmapItem_Offset")]
-	public static extern QPointF_Ptr QGraphicsPixmapItem_Offset(QGraphicsPixmapItem_Ptr* self);
+	public static extern QPointF_Ptr* QGraphicsPixmapItem_Offset(QGraphicsPixmapItem_Ptr* self);
 	[LinkName("QGraphicsPixmapItem_SetOffset")]
 	public static extern void QGraphicsPixmapItem_SetOffset(QGraphicsPixmapItem_Ptr* self, QPointF_Ptr* offset);
 	[LinkName("QGraphicsPixmapItem_SetOffset2")]
 	public static extern void QGraphicsPixmapItem_SetOffset2(QGraphicsPixmapItem_Ptr* self, double x, double y);
 	[LinkName("QGraphicsPixmapItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsPixmapItem_BoundingRect(QGraphicsPixmapItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsPixmapItem_BoundingRect(QGraphicsPixmapItem_Ptr* self);
 	[LinkName("QGraphicsPixmapItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsPixmapItem_Shape(QGraphicsPixmapItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsPixmapItem_Shape(QGraphicsPixmapItem_Ptr* self);
 	[LinkName("QGraphicsPixmapItem_Contains")]
 	public static extern bool QGraphicsPixmapItem_Contains(QGraphicsPixmapItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsPixmapItem_Paint")]
-	public static extern void QGraphicsPixmapItem_Paint(QGraphicsPixmapItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsPixmapItem_Paint(QGraphicsPixmapItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsPixmapItem_IsObscuredBy")]
-	public static extern bool QGraphicsPixmapItem_IsObscuredBy(QGraphicsPixmapItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsPixmapItem_IsObscuredBy(QGraphicsPixmapItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsPixmapItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsPixmapItem_OpaqueArea(QGraphicsPixmapItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsPixmapItem_OpaqueArea(QGraphicsPixmapItem_Ptr* self);
 	[LinkName("QGraphicsPixmapItem_Type")]
 	public static extern c_int QGraphicsPixmapItem_Type(QGraphicsPixmapItem_Ptr* self);
 	[LinkName("QGraphicsPixmapItem_ShapeMode")]
@@ -8356,38 +8061,39 @@ extension CQt
 	[LinkName("QGraphicsPixmapItem_SetExtension")]
 	public static extern void QGraphicsPixmapItem_SetExtension(QGraphicsPixmapItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsPixmapItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsPixmapItem_Extension(QGraphicsPixmapItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsPixmapItem_Extension(QGraphicsPixmapItem_Ptr* self, QVariant_Ptr* variant);
 }
-class QGraphicsPixmapItem
+class QGraphicsPixmapItem : IQGraphicsPixmapItem, IQGraphicsItem
 {
 	private QGraphicsPixmapItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsPixmapItem_new();
 	}
-	public this(QPixmap_Ptr* pixmap)
+	public this(IQPixmap pixmap)
 	{
-		this.ptr = CQt.QGraphicsPixmapItem_new2(pixmap);
+		this.ptr = CQt.QGraphicsPixmapItem_new2((.)pixmap?.ObjectPtr);
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsPixmapItem_new3(parent);
+		this.ptr = CQt.QGraphicsPixmapItem_new3((.)parent?.ObjectPtr);
 	}
-	public this(QPixmap_Ptr* pixmap, QGraphicsItem_Ptr* parent)
+	public this(IQPixmap pixmap, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsPixmapItem_new4(pixmap, parent);
+		this.ptr = CQt.QGraphicsPixmapItem_new4((.)pixmap?.ObjectPtr, (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsPixmapItem_Delete(this.ptr);
 	}
-	public QPixmap_Ptr Pixmap()
+	public QPixmap_Ptr* Pixmap()
 	{
 		return CQt.QGraphicsPixmapItem_Pixmap((.)this.ptr);
 	}
-	public void SetPixmap(QPixmap_Ptr* pixmap)
+	public void SetPixmap(IQPixmap pixmap)
 	{
-		CQt.QGraphicsPixmapItem_SetPixmap((.)this.ptr, pixmap);
+		CQt.QGraphicsPixmapItem_SetPixmap((.)this.ptr, (.)pixmap?.ObjectPtr);
 	}
 	public Qt_TransformationMode TransformationMode()
 	{
@@ -8397,39 +8103,39 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsPixmapItem_SetTransformationMode((.)this.ptr, mode);
 	}
-	public QPointF_Ptr Offset()
+	public QPointF_Ptr* Offset()
 	{
 		return CQt.QGraphicsPixmapItem_Offset((.)this.ptr);
 	}
-	public void SetOffset(QPointF_Ptr* offset)
+	public void SetOffset(IQPointF offset)
 	{
-		CQt.QGraphicsPixmapItem_SetOffset((.)this.ptr, offset);
+		CQt.QGraphicsPixmapItem_SetOffset((.)this.ptr, (.)offset?.ObjectPtr);
 	}
 	public void SetOffset2(double x, double y)
 	{
 		CQt.QGraphicsPixmapItem_SetOffset2((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsPixmapItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsPixmapItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsPixmapItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsPixmapItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsPixmapItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsPixmapItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsPixmapItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsPixmapItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsPixmapItem_OpaqueArea((.)this.ptr);
 	}
@@ -8449,49 +8155,49 @@ class QGraphicsPixmapItem
 	{
 		return CQt.QGraphicsPixmapItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsPixmapItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsPixmapItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsPixmapItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsPixmapItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -8509,21 +8215,21 @@ class QGraphicsPixmapItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -8561,17 +8267,17 @@ class QGraphicsPixmapItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -8585,9 +8291,9 @@ class QGraphicsPixmapItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -8637,13 +8343,13 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -8705,19 +8411,19 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -8737,7 +8443,7 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -8757,13 +8463,13 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -8781,25 +8487,25 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -8829,13 +8535,13 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -8853,15 +8559,15 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -8869,17 +8575,17 @@ class QGraphicsPixmapItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -8893,9 +8599,9 @@ class QGraphicsPixmapItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -8917,145 +8623,145 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -9065,105 +8771,105 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -9181,29 +8887,29 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -9213,52 +8919,33 @@ class QGraphicsPixmapItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsPixmapItem
+interface IQGraphicsPixmapItem : IQtObjectInterface
 {
-	public QPixmap Pixmap();
-	public void SetPixmap();
-	public Qt_TransformationMode TransformationMode();
-	public void SetTransformationMode();
-	public QPointF Offset();
-	public void SetOffset();
-	public void SetOffset2();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public QGraphicsPixmapItem_ShapeMode ShapeMode();
-	public void SetShapeMode();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
 }
 // --------------------------------------------------------------
 // QGraphicsTextItem
@@ -9272,15 +8959,15 @@ extension CQt
 	[LinkName("QGraphicsTextItem_new")]
 	public static extern QGraphicsTextItem_Ptr* QGraphicsTextItem_new();
 	[LinkName("QGraphicsTextItem_new2")]
-	public static extern QGraphicsTextItem_Ptr* QGraphicsTextItem_new2(libqt_string* text);
+	public static extern QGraphicsTextItem_Ptr* QGraphicsTextItem_new2(libqt_string text);
 	[LinkName("QGraphicsTextItem_new3")]
-	public static extern QGraphicsTextItem_Ptr* QGraphicsTextItem_new3(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsTextItem_Ptr* QGraphicsTextItem_new3(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsTextItem_new4")]
-	public static extern QGraphicsTextItem_Ptr* QGraphicsTextItem_new4(libqt_string* text, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsTextItem_Ptr* QGraphicsTextItem_new4(libqt_string text, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsTextItem_Delete")]
 	public static extern void QGraphicsTextItem_Delete(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_MetaObject")]
-	public static extern QMetaObject_Ptr* QGraphicsTextItem_MetaObject(QGraphicsTextItem_Ptr* self);
+	public static extern QMetaObject_Ptr** QGraphicsTextItem_MetaObject(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_Qt_Metacast")]
 	public static extern void* QGraphicsTextItem_Qt_Metacast(QGraphicsTextItem_Ptr* self, c_char* param1);
 	[LinkName("QGraphicsTextItem_Qt_Metacall")]
@@ -9290,31 +8977,31 @@ extension CQt
 	[LinkName("QGraphicsTextItem_ToHtml")]
 	public static extern libqt_string QGraphicsTextItem_ToHtml(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_SetHtml")]
-	public static extern void QGraphicsTextItem_SetHtml(QGraphicsTextItem_Ptr* self, libqt_string* html);
+	public static extern void QGraphicsTextItem_SetHtml(QGraphicsTextItem_Ptr* self, libqt_string html);
 	[LinkName("QGraphicsTextItem_ToPlainText")]
 	public static extern libqt_string QGraphicsTextItem_ToPlainText(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_SetPlainText")]
-	public static extern void QGraphicsTextItem_SetPlainText(QGraphicsTextItem_Ptr* self, libqt_string* text);
+	public static extern void QGraphicsTextItem_SetPlainText(QGraphicsTextItem_Ptr* self, libqt_string text);
 	[LinkName("QGraphicsTextItem_Font")]
-	public static extern QFont_Ptr QGraphicsTextItem_Font(QGraphicsTextItem_Ptr* self);
+	public static extern QFont_Ptr* QGraphicsTextItem_Font(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_SetFont")]
 	public static extern void QGraphicsTextItem_SetFont(QGraphicsTextItem_Ptr* self, QFont_Ptr* font);
 	[LinkName("QGraphicsTextItem_SetDefaultTextColor")]
 	public static extern void QGraphicsTextItem_SetDefaultTextColor(QGraphicsTextItem_Ptr* self, QColor_Ptr* c);
 	[LinkName("QGraphicsTextItem_DefaultTextColor")]
-	public static extern QColor_Ptr QGraphicsTextItem_DefaultTextColor(QGraphicsTextItem_Ptr* self);
+	public static extern QColor_Ptr* QGraphicsTextItem_DefaultTextColor(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsTextItem_BoundingRect(QGraphicsTextItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsTextItem_BoundingRect(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsTextItem_Shape(QGraphicsTextItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsTextItem_Shape(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_Contains")]
 	public static extern bool QGraphicsTextItem_Contains(QGraphicsTextItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsTextItem_Paint")]
-	public static extern void QGraphicsTextItem_Paint(QGraphicsTextItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsTextItem_Paint(QGraphicsTextItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsTextItem_IsObscuredBy")]
-	public static extern bool QGraphicsTextItem_IsObscuredBy(QGraphicsTextItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsTextItem_IsObscuredBy(QGraphicsTextItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsTextItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsTextItem_OpaqueArea(QGraphicsTextItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsTextItem_OpaqueArea(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_Type")]
 	public static extern c_int QGraphicsTextItem_Type(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_SetTextWidth")]
@@ -9324,9 +9011,9 @@ extension CQt
 	[LinkName("QGraphicsTextItem_AdjustSize")]
 	public static extern void QGraphicsTextItem_AdjustSize(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_SetDocument")]
-	public static extern void QGraphicsTextItem_SetDocument(QGraphicsTextItem_Ptr* self, QTextDocument_Ptr* document);
+	public static extern void QGraphicsTextItem_SetDocument(QGraphicsTextItem_Ptr* self, QTextDocument_Ptr** document);
 	[LinkName("QGraphicsTextItem_Document")]
-	public static extern QTextDocument_Ptr* QGraphicsTextItem_Document(QGraphicsTextItem_Ptr* self);
+	public static extern QTextDocument_Ptr** QGraphicsTextItem_Document(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_SetTextInteractionFlags")]
 	public static extern void QGraphicsTextItem_SetTextInteractionFlags(QGraphicsTextItem_Ptr* self, void* flags);
 	[LinkName("QGraphicsTextItem_TextInteractionFlags")]
@@ -9342,84 +9029,85 @@ extension CQt
 	[LinkName("QGraphicsTextItem_SetTextCursor")]
 	public static extern void QGraphicsTextItem_SetTextCursor(QGraphicsTextItem_Ptr* self, QTextCursor_Ptr* cursor);
 	[LinkName("QGraphicsTextItem_TextCursor")]
-	public static extern QTextCursor_Ptr QGraphicsTextItem_TextCursor(QGraphicsTextItem_Ptr* self);
+	public static extern QTextCursor_Ptr* QGraphicsTextItem_TextCursor(QGraphicsTextItem_Ptr* self);
 	[LinkName("QGraphicsTextItem_LinkActivated")]
-	public static extern void QGraphicsTextItem_LinkActivated(QGraphicsTextItem_Ptr* self, libqt_string* param1);
+	public static extern void QGraphicsTextItem_LinkActivated(QGraphicsTextItem_Ptr* self, libqt_string param1);
 	[LinkName("QGraphicsTextItem_LinkHovered")]
-	public static extern void QGraphicsTextItem_LinkHovered(QGraphicsTextItem_Ptr* self, libqt_string* param1);
+	public static extern void QGraphicsTextItem_LinkHovered(QGraphicsTextItem_Ptr* self, libqt_string param1);
 	[LinkName("QGraphicsTextItem_SceneEvent")]
-	public static extern bool QGraphicsTextItem_SceneEvent(QGraphicsTextItem_Ptr* self, QEvent_Ptr* event);
+	public static extern bool QGraphicsTextItem_SceneEvent(QGraphicsTextItem_Ptr* self, QEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_MousePressEvent")]
-	public static extern void QGraphicsTextItem_MousePressEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_MousePressEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_MouseMoveEvent")]
-	public static extern void QGraphicsTextItem_MouseMoveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_MouseMoveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_MouseReleaseEvent")]
-	public static extern void QGraphicsTextItem_MouseReleaseEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_MouseReleaseEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_MouseDoubleClickEvent")]
-	public static extern void QGraphicsTextItem_MouseDoubleClickEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_MouseDoubleClickEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneMouseEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_ContextMenuEvent")]
-	public static extern void QGraphicsTextItem_ContextMenuEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneContextMenuEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_ContextMenuEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneContextMenuEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_KeyPressEvent")]
-	public static extern void QGraphicsTextItem_KeyPressEvent(QGraphicsTextItem_Ptr* self, QKeyEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_KeyPressEvent(QGraphicsTextItem_Ptr* self, QKeyEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_KeyReleaseEvent")]
-	public static extern void QGraphicsTextItem_KeyReleaseEvent(QGraphicsTextItem_Ptr* self, QKeyEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_KeyReleaseEvent(QGraphicsTextItem_Ptr* self, QKeyEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_FocusInEvent")]
-	public static extern void QGraphicsTextItem_FocusInEvent(QGraphicsTextItem_Ptr* self, QFocusEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_FocusInEvent(QGraphicsTextItem_Ptr* self, QFocusEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_FocusOutEvent")]
-	public static extern void QGraphicsTextItem_FocusOutEvent(QGraphicsTextItem_Ptr* self, QFocusEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_FocusOutEvent(QGraphicsTextItem_Ptr* self, QFocusEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_DragEnterEvent")]
-	public static extern void QGraphicsTextItem_DragEnterEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_DragEnterEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_DragLeaveEvent")]
-	public static extern void QGraphicsTextItem_DragLeaveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_DragLeaveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_DragMoveEvent")]
-	public static extern void QGraphicsTextItem_DragMoveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_DragMoveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_DropEvent")]
-	public static extern void QGraphicsTextItem_DropEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_DropEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneDragDropEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_InputMethodEvent")]
-	public static extern void QGraphicsTextItem_InputMethodEvent(QGraphicsTextItem_Ptr* self, QInputMethodEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_InputMethodEvent(QGraphicsTextItem_Ptr* self, QInputMethodEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_HoverEnterEvent")]
-	public static extern void QGraphicsTextItem_HoverEnterEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_HoverEnterEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_HoverMoveEvent")]
-	public static extern void QGraphicsTextItem_HoverMoveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_HoverMoveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_HoverLeaveEvent")]
-	public static extern void QGraphicsTextItem_HoverLeaveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr* event);
+	public static extern void QGraphicsTextItem_HoverLeaveEvent(QGraphicsTextItem_Ptr* self, QGraphicsSceneHoverEvent_Ptr** event);
 	[LinkName("QGraphicsTextItem_InputMethodQuery")]
-	public static extern QVariant_Ptr QGraphicsTextItem_InputMethodQuery(QGraphicsTextItem_Ptr* self, Qt_InputMethodQuery query);
+	public static extern QVariant_Ptr* QGraphicsTextItem_InputMethodQuery(QGraphicsTextItem_Ptr* self, Qt_InputMethodQuery query);
 	[LinkName("QGraphicsTextItem_SupportsExtension")]
 	public static extern bool QGraphicsTextItem_SupportsExtension(QGraphicsTextItem_Ptr* self, QGraphicsItem_Extension _extension);
 	[LinkName("QGraphicsTextItem_SetExtension")]
 	public static extern void QGraphicsTextItem_SetExtension(QGraphicsTextItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsTextItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsTextItem_Extension(QGraphicsTextItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsTextItem_Extension(QGraphicsTextItem_Ptr* self, QVariant_Ptr* variant);
 	[LinkName("QGraphicsTextItem_Tr2")]
 	public static extern libqt_string QGraphicsTextItem_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsTextItem_Tr3")]
 	public static extern libqt_string QGraphicsTextItem_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QGraphicsTextItem
+class QGraphicsTextItem : IQGraphicsTextItem, IQGraphicsObject, IQObject, IQGraphicsItem
 {
 	private QGraphicsTextItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsTextItem_new();
 	}
-	public this(libqt_string* text)
+	public this(String text)
 	{
-		this.ptr = CQt.QGraphicsTextItem_new2(text);
+		this.ptr = CQt.QGraphicsTextItem_new2(libqt_string(text));
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsTextItem_new3(parent);
+		this.ptr = CQt.QGraphicsTextItem_new3((.)parent?.ObjectPtr);
 	}
-	public this(libqt_string* text, QGraphicsItem_Ptr* parent)
+	public this(String text, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsTextItem_new4(text, parent);
+		this.ptr = CQt.QGraphicsTextItem_new4(libqt_string(text), (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsTextItem_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QGraphicsTextItem_MetaObject((.)this.ptr);
 	}
@@ -9439,55 +9127,55 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsTextItem_ToHtml((.)this.ptr);
 	}
-	public void SetHtml(libqt_string* html)
+	public void SetHtml(String html)
 	{
-		CQt.QGraphicsTextItem_SetHtml((.)this.ptr, html);
+		CQt.QGraphicsTextItem_SetHtml((.)this.ptr, libqt_string(html));
 	}
 	public libqt_string ToPlainText()
 	{
 		return CQt.QGraphicsTextItem_ToPlainText((.)this.ptr);
 	}
-	public void SetPlainText(libqt_string* text)
+	public void SetPlainText(String text)
 	{
-		CQt.QGraphicsTextItem_SetPlainText((.)this.ptr, text);
+		CQt.QGraphicsTextItem_SetPlainText((.)this.ptr, libqt_string(text));
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QGraphicsTextItem_Font((.)this.ptr);
 	}
-	public void SetFont(QFont_Ptr* font)
+	public void SetFont(IQFont font)
 	{
-		CQt.QGraphicsTextItem_SetFont((.)this.ptr, font);
+		CQt.QGraphicsTextItem_SetFont((.)this.ptr, (.)font?.ObjectPtr);
 	}
-	public void SetDefaultTextColor(QColor_Ptr* c)
+	public void SetDefaultTextColor(IQColor c)
 	{
-		CQt.QGraphicsTextItem_SetDefaultTextColor((.)this.ptr, c);
+		CQt.QGraphicsTextItem_SetDefaultTextColor((.)this.ptr, (.)c?.ObjectPtr);
 	}
-	public QColor_Ptr DefaultTextColor()
+	public QColor_Ptr* DefaultTextColor()
 	{
 		return CQt.QGraphicsTextItem_DefaultTextColor((.)this.ptr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsTextItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsTextItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsTextItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsTextItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsTextItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsTextItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsTextItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsTextItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsTextItem_OpaqueArea((.)this.ptr);
 	}
@@ -9507,11 +9195,11 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsTextItem_AdjustSize((.)this.ptr);
 	}
-	public void SetDocument(QTextDocument_Ptr* document)
+	public void SetDocument(IQTextDocument document)
 	{
-		CQt.QGraphicsTextItem_SetDocument((.)this.ptr, document);
+		CQt.QGraphicsTextItem_SetDocument((.)this.ptr, (.)document?.ObjectPtr);
 	}
-	public QTextDocument_Ptr* Document()
+	public QTextDocument_Ptr** Document()
 	{
 		return CQt.QGraphicsTextItem_Document((.)this.ptr);
 	}
@@ -9539,95 +9227,95 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsTextItem_OpenExternalLinks((.)this.ptr);
 	}
-	public void SetTextCursor(QTextCursor_Ptr* cursor)
+	public void SetTextCursor(IQTextCursor cursor)
 	{
-		CQt.QGraphicsTextItem_SetTextCursor((.)this.ptr, cursor);
+		CQt.QGraphicsTextItem_SetTextCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
-	public QTextCursor_Ptr TextCursor()
+	public QTextCursor_Ptr* TextCursor()
 	{
 		return CQt.QGraphicsTextItem_TextCursor((.)this.ptr);
 	}
-	public void LinkActivated(libqt_string* param1)
+	public void LinkActivated(String param1)
 	{
-		CQt.QGraphicsTextItem_LinkActivated((.)this.ptr, param1);
+		CQt.QGraphicsTextItem_LinkActivated((.)this.ptr, libqt_string(param1));
 	}
-	public void LinkHovered(libqt_string* param1)
+	public void LinkHovered(String param1)
 	{
-		CQt.QGraphicsTextItem_LinkHovered((.)this.ptr, param1);
+		CQt.QGraphicsTextItem_LinkHovered((.)this.ptr, libqt_string(param1));
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsTextItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsTextItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsTextItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsTextItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsTextItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsTextItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsTextItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsTextItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsTextItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsTextItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsTextItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsTextItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsTextItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsTextItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsTextItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsTextItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsTextItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsTextItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsTextItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsTextItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsTextItem_InputMethodQuery((.)this.ptr, query);
 	}
@@ -9635,13 +9323,13 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsTextItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsTextItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsTextItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsTextItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsTextItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -9711,25 +9399,25 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsObject_HeightChanged((.)this.ptr);
 	}
-	public bool Event(QEvent_Ptr* ev)
+	public bool Event(IQEvent ev)
 	{
-		return CQt.QGraphicsObject_Event((.)this.ptr, ev);
+		return CQt.QGraphicsObject_Event((.)this.ptr, (.)ev?.ObjectPtr);
 	}
 	public void GrabGesture2(Qt_GestureType type, void* flags)
 	{
 		CQt.QGraphicsObject_GrabGesture2((.)this.ptr, type, flags);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -9751,13 +9439,13 @@ class QGraphicsTextItem
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -9775,49 +9463,49 @@ class QGraphicsTextItem
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -9827,11 +9515,11 @@ class QGraphicsTextItem
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -9839,11 +9527,11 @@ class QGraphicsTextItem
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -9851,7 +9539,7 @@ class QGraphicsTextItem
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -9863,7 +9551,7 @@ class QGraphicsTextItem
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -9875,29 +9563,29 @@ class QGraphicsTextItem
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -9907,73 +9595,73 @@ class QGraphicsTextItem
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -9991,21 +9679,21 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -10043,17 +9731,17 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -10067,9 +9755,9 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -10119,13 +9807,13 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -10187,19 +9875,19 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -10219,7 +9907,7 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -10239,13 +9927,13 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -10263,25 +9951,25 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -10311,13 +9999,13 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -10335,15 +10023,15 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -10351,17 +10039,17 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -10375,9 +10063,9 @@ class QGraphicsTextItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -10399,145 +10087,145 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -10547,25 +10235,25 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -10583,29 +10271,29 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -10615,91 +10303,33 @@ class QGraphicsTextItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsTextItem
+interface IQGraphicsTextItem : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public libqt_string ToHtml();
-	public void SetHtml();
-	public libqt_string ToPlainText();
-	public void SetPlainText();
-	public QFont Font();
-	public void SetFont();
-	public void SetDefaultTextColor();
-	public QColor DefaultTextColor();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public void SetTextWidth();
-	public double TextWidth();
-	public void AdjustSize();
-	public void SetDocument();
-	public QTextDocument* Document();
-	public void SetTextInteractionFlags();
-	public void* TextInteractionFlags();
-	public void SetTabChangesFocus();
-	public bool TabChangesFocus();
-	public void SetOpenExternalLinks();
-	public bool OpenExternalLinks();
-	public void SetTextCursor();
-	public QTextCursor TextCursor();
-	public void LinkActivated();
-	public void LinkHovered();
-	public bool SceneEvent();
-	public void MousePressEvent();
-	public void MouseMoveEvent();
-	public void MouseReleaseEvent();
-	public void MouseDoubleClickEvent();
-	public void ContextMenuEvent();
-	public void KeyPressEvent();
-	public void KeyReleaseEvent();
-	public void FocusInEvent();
-	public void FocusOutEvent();
-	public void DragEnterEvent();
-	public void DragLeaveEvent();
-	public void DragMoveEvent();
-	public void DropEvent();
-	public void InputMethodEvent();
-	public void HoverEnterEvent();
-	public void HoverMoveEvent();
-	public void HoverLeaveEvent();
-	public QVariant InputMethodQuery();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
 }
 // --------------------------------------------------------------
 // QGraphicsSimpleTextItem
@@ -10713,33 +10343,33 @@ extension CQt
 	[LinkName("QGraphicsSimpleTextItem_new")]
 	public static extern QGraphicsSimpleTextItem_Ptr* QGraphicsSimpleTextItem_new();
 	[LinkName("QGraphicsSimpleTextItem_new2")]
-	public static extern QGraphicsSimpleTextItem_Ptr* QGraphicsSimpleTextItem_new2(libqt_string* text);
+	public static extern QGraphicsSimpleTextItem_Ptr* QGraphicsSimpleTextItem_new2(libqt_string text);
 	[LinkName("QGraphicsSimpleTextItem_new3")]
-	public static extern QGraphicsSimpleTextItem_Ptr* QGraphicsSimpleTextItem_new3(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsSimpleTextItem_Ptr* QGraphicsSimpleTextItem_new3(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsSimpleTextItem_new4")]
-	public static extern QGraphicsSimpleTextItem_Ptr* QGraphicsSimpleTextItem_new4(libqt_string* text, QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsSimpleTextItem_Ptr* QGraphicsSimpleTextItem_new4(libqt_string text, QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsSimpleTextItem_Delete")]
 	public static extern void QGraphicsSimpleTextItem_Delete(QGraphicsSimpleTextItem_Ptr* self);
 	[LinkName("QGraphicsSimpleTextItem_SetText")]
-	public static extern void QGraphicsSimpleTextItem_SetText(QGraphicsSimpleTextItem_Ptr* self, libqt_string* text);
+	public static extern void QGraphicsSimpleTextItem_SetText(QGraphicsSimpleTextItem_Ptr* self, libqt_string text);
 	[LinkName("QGraphicsSimpleTextItem_Text")]
 	public static extern libqt_string QGraphicsSimpleTextItem_Text(QGraphicsSimpleTextItem_Ptr* self);
 	[LinkName("QGraphicsSimpleTextItem_SetFont")]
 	public static extern void QGraphicsSimpleTextItem_SetFont(QGraphicsSimpleTextItem_Ptr* self, QFont_Ptr* font);
 	[LinkName("QGraphicsSimpleTextItem_Font")]
-	public static extern QFont_Ptr QGraphicsSimpleTextItem_Font(QGraphicsSimpleTextItem_Ptr* self);
+	public static extern QFont_Ptr* QGraphicsSimpleTextItem_Font(QGraphicsSimpleTextItem_Ptr* self);
 	[LinkName("QGraphicsSimpleTextItem_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsSimpleTextItem_BoundingRect(QGraphicsSimpleTextItem_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsSimpleTextItem_BoundingRect(QGraphicsSimpleTextItem_Ptr* self);
 	[LinkName("QGraphicsSimpleTextItem_Shape")]
-	public static extern QPainterPath_Ptr QGraphicsSimpleTextItem_Shape(QGraphicsSimpleTextItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsSimpleTextItem_Shape(QGraphicsSimpleTextItem_Ptr* self);
 	[LinkName("QGraphicsSimpleTextItem_Contains")]
 	public static extern bool QGraphicsSimpleTextItem_Contains(QGraphicsSimpleTextItem_Ptr* self, QPointF_Ptr* point);
 	[LinkName("QGraphicsSimpleTextItem_Paint")]
-	public static extern void QGraphicsSimpleTextItem_Paint(QGraphicsSimpleTextItem_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsSimpleTextItem_Paint(QGraphicsSimpleTextItem_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsSimpleTextItem_IsObscuredBy")]
-	public static extern bool QGraphicsSimpleTextItem_IsObscuredBy(QGraphicsSimpleTextItem_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsSimpleTextItem_IsObscuredBy(QGraphicsSimpleTextItem_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsSimpleTextItem_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsSimpleTextItem_OpaqueArea(QGraphicsSimpleTextItem_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsSimpleTextItem_OpaqueArea(QGraphicsSimpleTextItem_Ptr* self);
 	[LinkName("QGraphicsSimpleTextItem_Type")]
 	public static extern c_int QGraphicsSimpleTextItem_Type(QGraphicsSimpleTextItem_Ptr* self);
 	[LinkName("QGraphicsSimpleTextItem_SupportsExtension")]
@@ -10747,68 +10377,69 @@ extension CQt
 	[LinkName("QGraphicsSimpleTextItem_SetExtension")]
 	public static extern void QGraphicsSimpleTextItem_SetExtension(QGraphicsSimpleTextItem_Ptr* self, QGraphicsItem_Extension _extension, QVariant_Ptr* variant);
 	[LinkName("QGraphicsSimpleTextItem_Extension")]
-	public static extern QVariant_Ptr QGraphicsSimpleTextItem_Extension(QGraphicsSimpleTextItem_Ptr* self, QVariant_Ptr* variant);
+	public static extern QVariant_Ptr* QGraphicsSimpleTextItem_Extension(QGraphicsSimpleTextItem_Ptr* self, QVariant_Ptr* variant);
 }
-class QGraphicsSimpleTextItem
+class QGraphicsSimpleTextItem : IQGraphicsSimpleTextItem, IQAbstractGraphicsShapeItem, IQGraphicsItem
 {
 	private QGraphicsSimpleTextItem_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsSimpleTextItem_new();
 	}
-	public this(libqt_string* text)
+	public this(String text)
 	{
-		this.ptr = CQt.QGraphicsSimpleTextItem_new2(text);
+		this.ptr = CQt.QGraphicsSimpleTextItem_new2(libqt_string(text));
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsSimpleTextItem_new3(parent);
+		this.ptr = CQt.QGraphicsSimpleTextItem_new3((.)parent?.ObjectPtr);
 	}
-	public this(libqt_string* text, QGraphicsItem_Ptr* parent)
+	public this(String text, IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsSimpleTextItem_new4(text, parent);
+		this.ptr = CQt.QGraphicsSimpleTextItem_new4(libqt_string(text), (.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsSimpleTextItem_Delete(this.ptr);
 	}
-	public void SetText(libqt_string* text)
+	public void SetText(String text)
 	{
-		CQt.QGraphicsSimpleTextItem_SetText((.)this.ptr, text);
+		CQt.QGraphicsSimpleTextItem_SetText((.)this.ptr, libqt_string(text));
 	}
 	public libqt_string Text()
 	{
 		return CQt.QGraphicsSimpleTextItem_Text((.)this.ptr);
 	}
-	public void SetFont(QFont_Ptr* font)
+	public void SetFont(IQFont font)
 	{
-		CQt.QGraphicsSimpleTextItem_SetFont((.)this.ptr, font);
+		CQt.QGraphicsSimpleTextItem_SetFont((.)this.ptr, (.)font?.ObjectPtr);
 	}
-	public QFont_Ptr Font()
+	public QFont_Ptr* Font()
 	{
 		return CQt.QGraphicsSimpleTextItem_Font((.)this.ptr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsSimpleTextItem_BoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsSimpleTextItem_Shape((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsSimpleTextItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsSimpleTextItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsSimpleTextItem_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsSimpleTextItem_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsSimpleTextItem_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsSimpleTextItem_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsSimpleTextItem_OpaqueArea((.)this.ptr);
 	}
@@ -10820,65 +10451,65 @@ class QGraphicsSimpleTextItem
 	{
 		return CQt.QGraphicsSimpleTextItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsSimpleTextItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsSimpleTextItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsSimpleTextItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsSimpleTextItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
-	public QPen_Ptr Pen()
+	public QPen_Ptr* Pen()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Pen((.)this.ptr);
 	}
-	public void SetPen(QPen_Ptr* pen)
+	public void SetPen(IQPen pen)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, pen);
+		CQt.QAbstractGraphicsShapeItem_SetPen((.)this.ptr, (.)pen?.ObjectPtr);
 	}
-	public QBrush_Ptr Brush()
+	public QBrush_Ptr* Brush()
 	{
 		return CQt.QAbstractGraphicsShapeItem_Brush((.)this.ptr);
 	}
-	public void SetBrush(QBrush_Ptr* brush)
+	public void SetBrush(IQBrush brush)
 	{
-		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, brush);
+		CQt.QAbstractGraphicsShapeItem_SetBrush((.)this.ptr, (.)brush?.ObjectPtr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -10896,21 +10527,21 @@ class QGraphicsSimpleTextItem
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -10948,17 +10579,17 @@ class QGraphicsSimpleTextItem
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -10972,9 +10603,9 @@ class QGraphicsSimpleTextItem
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -11024,13 +10655,13 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -11092,19 +10723,19 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -11124,7 +10755,7 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -11144,13 +10775,13 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -11168,25 +10799,25 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -11216,13 +10847,13 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -11240,15 +10871,15 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
@@ -11256,17 +10887,17 @@ class QGraphicsSimpleTextItem
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -11280,9 +10911,9 @@ class QGraphicsSimpleTextItem
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -11304,145 +10935,145 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -11452,105 +11083,105 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -11568,29 +11199,29 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -11600,47 +11231,33 @@ class QGraphicsSimpleTextItem
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsSimpleTextItem
+interface IQGraphicsSimpleTextItem : IQtObjectInterface
 {
-	public void SetText();
-	public libqt_string Text();
-	public void SetFont();
-	public QFont Font();
-	public QRectF BoundingRect();
-	public QPainterPath Shape();
-	public bool Contains();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
-	public bool SupportsExtension();
-	public void SetExtension();
-	public QVariant Extension();
 }
 // --------------------------------------------------------------
 // QGraphicsItemGroup
@@ -11654,60 +11271,61 @@ extension CQt
 	[LinkName("QGraphicsItemGroup_new")]
 	public static extern QGraphicsItemGroup_Ptr* QGraphicsItemGroup_new();
 	[LinkName("QGraphicsItemGroup_new2")]
-	public static extern QGraphicsItemGroup_Ptr* QGraphicsItemGroup_new2(QGraphicsItem_Ptr* parent);
+	public static extern QGraphicsItemGroup_Ptr* QGraphicsItemGroup_new2(QGraphicsItem_Ptr** parent);
 	[LinkName("QGraphicsItemGroup_Delete")]
 	public static extern void QGraphicsItemGroup_Delete(QGraphicsItemGroup_Ptr* self);
 	[LinkName("QGraphicsItemGroup_AddToGroup")]
-	public static extern void QGraphicsItemGroup_AddToGroup(QGraphicsItemGroup_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern void QGraphicsItemGroup_AddToGroup(QGraphicsItemGroup_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsItemGroup_RemoveFromGroup")]
-	public static extern void QGraphicsItemGroup_RemoveFromGroup(QGraphicsItemGroup_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern void QGraphicsItemGroup_RemoveFromGroup(QGraphicsItemGroup_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsItemGroup_BoundingRect")]
-	public static extern QRectF_Ptr QGraphicsItemGroup_BoundingRect(QGraphicsItemGroup_Ptr* self);
+	public static extern QRectF_Ptr* QGraphicsItemGroup_BoundingRect(QGraphicsItemGroup_Ptr* self);
 	[LinkName("QGraphicsItemGroup_Paint")]
-	public static extern void QGraphicsItemGroup_Paint(QGraphicsItemGroup_Ptr* self, QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget);
+	public static extern void QGraphicsItemGroup_Paint(QGraphicsItemGroup_Ptr* self, QPainter_Ptr** painter, QStyleOptionGraphicsItem_Ptr** option, QWidget_Ptr** widget);
 	[LinkName("QGraphicsItemGroup_IsObscuredBy")]
-	public static extern bool QGraphicsItemGroup_IsObscuredBy(QGraphicsItemGroup_Ptr* self, QGraphicsItem_Ptr* item);
+	public static extern bool QGraphicsItemGroup_IsObscuredBy(QGraphicsItemGroup_Ptr* self, QGraphicsItem_Ptr** item);
 	[LinkName("QGraphicsItemGroup_OpaqueArea")]
-	public static extern QPainterPath_Ptr QGraphicsItemGroup_OpaqueArea(QGraphicsItemGroup_Ptr* self);
+	public static extern QPainterPath_Ptr* QGraphicsItemGroup_OpaqueArea(QGraphicsItemGroup_Ptr* self);
 	[LinkName("QGraphicsItemGroup_Type")]
 	public static extern c_int QGraphicsItemGroup_Type(QGraphicsItemGroup_Ptr* self);
 }
-class QGraphicsItemGroup
+class QGraphicsItemGroup : IQGraphicsItemGroup, IQGraphicsItem
 {
 	private QGraphicsItemGroup_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QGraphicsItemGroup_new();
 	}
-	public this(QGraphicsItem_Ptr* parent)
+	public this(IQGraphicsItem parent)
 	{
-		this.ptr = CQt.QGraphicsItemGroup_new2(parent);
+		this.ptr = CQt.QGraphicsItemGroup_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QGraphicsItemGroup_Delete(this.ptr);
 	}
-	public void AddToGroup(QGraphicsItem_Ptr* item)
+	public void AddToGroup(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItemGroup_AddToGroup((.)this.ptr, item);
+		CQt.QGraphicsItemGroup_AddToGroup((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public void RemoveFromGroup(QGraphicsItem_Ptr* item)
+	public void RemoveFromGroup(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItemGroup_RemoveFromGroup((.)this.ptr, item);
+		CQt.QGraphicsItemGroup_RemoveFromGroup((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect()
+	public QRectF_Ptr* BoundingRect()
 	{
 		return CQt.QGraphicsItemGroup_BoundingRect((.)this.ptr);
 	}
-	public void Paint(QPainter_Ptr* painter, QStyleOptionGraphicsItem_Ptr* option, QWidget_Ptr* widget)
+	public void Paint(IQPainter painter, IQStyleOptionGraphicsItem option, IQWidget widget)
 	{
-		CQt.QGraphicsItemGroup_Paint((.)this.ptr, painter, option, widget);
+		CQt.QGraphicsItemGroup_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)option?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public bool IsObscuredBy(QGraphicsItem_Ptr* item)
+	public bool IsObscuredBy(IQGraphicsItem item)
 	{
-		return CQt.QGraphicsItemGroup_IsObscuredBy((.)this.ptr, item);
+		return CQt.QGraphicsItemGroup_IsObscuredBy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QPainterPath_Ptr OpaqueArea()
+	public QPainterPath_Ptr* OpaqueArea()
 	{
 		return CQt.QGraphicsItemGroup_OpaqueArea((.)this.ptr);
 	}
@@ -11715,41 +11333,41 @@ class QGraphicsItemGroup
 	{
 		return CQt.QGraphicsItemGroup_Type((.)this.ptr);
 	}
-	public QGraphicsScene_Ptr* Scene()
+	public QGraphicsScene_Ptr** Scene()
 	{
 		return CQt.QGraphicsItem_Scene((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* ParentItem()
+	public QGraphicsItem_Ptr** ParentItem()
 	{
 		return CQt.QGraphicsItem_ParentItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* TopLevelItem()
+	public QGraphicsItem_Ptr** TopLevelItem()
 	{
 		return CQt.QGraphicsItem_TopLevelItem((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ParentObject()
+	public QGraphicsObject_Ptr** ParentObject()
 	{
 		return CQt.QGraphicsItem_ParentObject((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* ParentWidget()
+	public QGraphicsWidget_Ptr** ParentWidget()
 	{
 		return CQt.QGraphicsItem_ParentWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* TopLevelWidget()
+	public QGraphicsWidget_Ptr** TopLevelWidget()
 	{
 		return CQt.QGraphicsItem_TopLevelWidget((.)this.ptr);
 	}
-	public QGraphicsWidget_Ptr* Window()
+	public QGraphicsWidget_Ptr** Window()
 	{
 		return CQt.QGraphicsItem_Window((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* Panel()
+	public QGraphicsItem_Ptr** Panel()
 	{
 		return CQt.QGraphicsItem_Panel((.)this.ptr);
 	}
-	public void SetParentItem(QGraphicsItem_Ptr* parent)
+	public void SetParentItem(IQGraphicsItem parent)
 	{
-		CQt.QGraphicsItem_SetParentItem((.)this.ptr, parent);
+		CQt.QGraphicsItem_SetParentItem((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* ChildItems()
 	{
@@ -11767,21 +11385,21 @@ class QGraphicsItemGroup
 	{
 		return CQt.QGraphicsItem_IsPanel((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject()
+	public QGraphicsObject_Ptr** ToGraphicsObject()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject((.)this.ptr);
 	}
-	public QGraphicsObject_Ptr* ToGraphicsObject2()
+	public QGraphicsObject_Ptr** ToGraphicsObject2()
 	{
 		return CQt.QGraphicsItem_ToGraphicsObject2((.)this.ptr);
 	}
-	public QGraphicsItemGroup_Ptr* Group()
+	public QGraphicsItemGroup_Ptr** Group()
 	{
 		return CQt.QGraphicsItem_Group((.)this.ptr);
 	}
-	public void SetGroup(QGraphicsItemGroup_Ptr* group)
+	public void SetGroup(IQGraphicsItemGroup group)
 	{
-		CQt.QGraphicsItem_SetGroup((.)this.ptr, group);
+		CQt.QGraphicsItem_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
 	}
 	public void* Flags()
 	{
@@ -11819,17 +11437,17 @@ class QGraphicsItemGroup
 	{
 		return CQt.QGraphicsItem_ToolTip((.)this.ptr);
 	}
-	public void SetToolTip(libqt_string* toolTip)
+	public void SetToolTip(String toolTip)
 	{
-		CQt.QGraphicsItem_SetToolTip((.)this.ptr, toolTip);
+		CQt.QGraphicsItem_SetToolTip((.)this.ptr, libqt_string(toolTip));
 	}
-	public QCursor_Ptr Cursor()
+	public QCursor_Ptr* Cursor()
 	{
 		return CQt.QGraphicsItem_Cursor((.)this.ptr);
 	}
-	public void SetCursor(QCursor_Ptr* cursor)
+	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QGraphicsItem_SetCursor((.)this.ptr, cursor);
+		CQt.QGraphicsItem_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public bool HasCursor()
 	{
@@ -11843,9 +11461,9 @@ class QGraphicsItemGroup
 	{
 		return CQt.QGraphicsItem_IsVisible((.)this.ptr);
 	}
-	public bool IsVisibleTo(QGraphicsItem_Ptr* parent)
+	public bool IsVisibleTo(IQGraphicsItem parent)
 	{
-		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, parent);
+		return CQt.QGraphicsItem_IsVisibleTo((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
@@ -11895,13 +11513,13 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_SetOpacity((.)this.ptr, opacity);
 	}
-	public QGraphicsEffect_Ptr* GraphicsEffect()
+	public QGraphicsEffect_Ptr** GraphicsEffect()
 	{
 		return CQt.QGraphicsItem_GraphicsEffect((.)this.ptr);
 	}
-	public void SetGraphicsEffect(QGraphicsEffect_Ptr* effect)
+	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, effect);
+		CQt.QGraphicsItem_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
 	}
 	public void* AcceptedMouseButtons()
 	{
@@ -11963,19 +11581,19 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_ClearFocus((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusProxy()
+	public QGraphicsItem_Ptr** FocusProxy()
 	{
 		return CQt.QGraphicsItem_FocusProxy((.)this.ptr);
 	}
-	public void SetFocusProxy(QGraphicsItem_Ptr* item)
+	public void SetFocusProxy(IQGraphicsItem item)
 	{
-		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, item);
+		CQt.QGraphicsItem_SetFocusProxy((.)this.ptr, (.)item?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* FocusItem()
+	public QGraphicsItem_Ptr** FocusItem()
 	{
 		return CQt.QGraphicsItem_FocusItem((.)this.ptr);
 	}
-	public QGraphicsItem_Ptr* FocusScopeItem()
+	public QGraphicsItem_Ptr** FocusScopeItem()
 	{
 		return CQt.QGraphicsItem_FocusScopeItem((.)this.ptr);
 	}
@@ -11995,7 +11613,7 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_UngrabKeyboard((.)this.ptr);
 	}
-	public QPointF_Ptr Pos()
+	public QPointF_Ptr* Pos()
 	{
 		return CQt.QGraphicsItem_Pos((.)this.ptr);
 	}
@@ -12015,13 +11633,13 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr ScenePos()
+	public QPointF_Ptr* ScenePos()
 	{
 		return CQt.QGraphicsItem_ScenePos((.)this.ptr);
 	}
-	public void SetPos(QPointF_Ptr* pos)
+	public void SetPos(IQPointF pos)
 	{
-		CQt.QGraphicsItem_SetPos((.)this.ptr, pos);
+		CQt.QGraphicsItem_SetPos((.)this.ptr, (.)pos?.ObjectPtr);
 	}
 	public void SetPos2(double x, double y)
 	{
@@ -12039,25 +11657,25 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_EnsureVisible2((.)this.ptr, x, y, w, h);
 	}
-	public QTransform_Ptr Transform()
+	public QTransform_Ptr* Transform()
 	{
 		return CQt.QGraphicsItem_Transform((.)this.ptr);
 	}
-	public QTransform_Ptr SceneTransform()
+	public QTransform_Ptr* SceneTransform()
 	{
 		return CQt.QGraphicsItem_SceneTransform((.)this.ptr);
 	}
-	public QTransform_Ptr DeviceTransform(QTransform_Ptr* viewportTransform)
+	public QTransform_Ptr* DeviceTransform(IQTransform viewportTransform)
 	{
-		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, viewportTransform);
+		return CQt.QGraphicsItem_DeviceTransform((.)this.ptr, (.)viewportTransform?.ObjectPtr);
 	}
-	public QTransform_Ptr ItemTransform(QGraphicsItem_Ptr* other)
+	public QTransform_Ptr* ItemTransform(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, other);
+		return CQt.QGraphicsItem_ItemTransform((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetTransform(QTransform_Ptr* matrix)
+	public void SetTransform(IQTransform matrix)
 	{
-		CQt.QGraphicsItem_SetTransform((.)this.ptr, matrix);
+		CQt.QGraphicsItem_SetTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public void ResetTransform()
 	{
@@ -12087,13 +11705,13 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_SetTransformations((.)this.ptr, transformations);
 	}
-	public QPointF_Ptr TransformOriginPoint()
+	public QPointF_Ptr* TransformOriginPoint()
 	{
 		return CQt.QGraphicsItem_TransformOriginPoint((.)this.ptr);
 	}
-	public void SetTransformOriginPoint(QPointF_Ptr* origin)
+	public void SetTransformOriginPoint(IQPointF origin)
 	{
-		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, origin);
+		CQt.QGraphicsItem_SetTransformOriginPoint((.)this.ptr, (.)origin?.ObjectPtr);
 	}
 	public void SetTransformOriginPoint2(double ax, double ay)
 	{
@@ -12111,19 +11729,19 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_SetZValue((.)this.ptr, z);
 	}
-	public void StackBefore(QGraphicsItem_Ptr* sibling)
+	public void StackBefore(IQGraphicsItem sibling)
 	{
-		CQt.QGraphicsItem_StackBefore((.)this.ptr, sibling);
+		CQt.QGraphicsItem_StackBefore((.)this.ptr, (.)sibling?.ObjectPtr);
 	}
-	public QRectF_Ptr ChildrenBoundingRect()
+	public QRectF_Ptr* ChildrenBoundingRect()
 	{
 		return CQt.QGraphicsItem_ChildrenBoundingRect((.)this.ptr);
 	}
-	public QRectF_Ptr SceneBoundingRect()
+	public QRectF_Ptr* SceneBoundingRect()
 	{
 		return CQt.QGraphicsItem_SceneBoundingRect((.)this.ptr);
 	}
-	public QPainterPath_Ptr Shape()
+	public QPainterPath_Ptr* Shape()
 	{
 		return CQt.QGraphicsItem_Shape((.)this.ptr);
 	}
@@ -12131,21 +11749,21 @@ class QGraphicsItemGroup
 	{
 		return CQt.QGraphicsItem_IsClipped((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QGraphicsItem_ClipPath((.)this.ptr);
 	}
-	public bool Contains(QPointF_Ptr* point)
+	public bool Contains(IQPointF point)
 	{
-		return CQt.QGraphicsItem_Contains((.)this.ptr, point);
+		return CQt.QGraphicsItem_Contains((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public bool CollidesWithItem(QGraphicsItem_Ptr* other, Qt_ItemSelectionMode mode)
+	public bool CollidesWithItem(IQGraphicsItem other, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, other, mode);
+		return CQt.QGraphicsItem_CollidesWithItem((.)this.ptr, (.)other?.ObjectPtr, mode);
 	}
-	public bool CollidesWithPath(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
+	public bool CollidesWithPath(IQPainterPath path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, path, mode);
+		return CQt.QGraphicsItem_CollidesWithPath((.)this.ptr, (.)path?.ObjectPtr, mode);
 	}
 	public void* CollidingItems()
 	{
@@ -12159,9 +11777,9 @@ class QGraphicsItemGroup
 	{
 		return CQt.QGraphicsItem_IsObscured2((.)this.ptr, x, y, w, h);
 	}
-	public QRegion_Ptr BoundingRegion(QTransform_Ptr* itemToDeviceTransform)
+	public QRegion_Ptr* BoundingRegion(IQTransform itemToDeviceTransform)
 	{
-		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, itemToDeviceTransform);
+		return CQt.QGraphicsItem_BoundingRegion((.)this.ptr, (.)itemToDeviceTransform?.ObjectPtr);
 	}
 	public double BoundingRegionGranularity()
 	{
@@ -12183,145 +11801,145 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_Scroll((.)this.ptr, dx, dy);
 	}
-	public QPointF_Ptr MapToItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapToItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapToItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapToScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapToScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapToScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectToItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectToScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectToScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectToScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapToItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapToScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapToScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapToScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromItem(QGraphicsItem_Ptr* item, QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromItem(IQGraphicsItem item, IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, item, point);
+		return CQt.QGraphicsItem_MapFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromParent(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromParent(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromParent((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QPointF_Ptr MapFromScene(QPointF_Ptr* point)
+	public QPointF_Ptr* MapFromScene(IQPointF point)
 	{
-		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, point);
+		return CQt.QGraphicsItem_MapFromScene((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromItem(QGraphicsItem_Ptr* item, QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromItem(IQGraphicsItem item, IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, item, rect);
+		return CQt.QGraphicsItem_MapRectFromItem((.)this.ptr, (.)item?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromParent(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromParent(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromParent((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRectF_Ptr MapRectFromScene(QRectF_Ptr* rect)
+	public QRectF_Ptr* MapRectFromScene(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, rect);
+		return CQt.QGraphicsItem_MapRectFromScene((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromItem4(QGraphicsItem_Ptr* item, QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromItem4(IQGraphicsItem item, IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, item, path);
+		return CQt.QGraphicsItem_MapFromItem4((.)this.ptr, (.)item?.ObjectPtr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromParent4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromParent4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromParent4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPainterPath_Ptr MapFromScene4(QPainterPath_Ptr* path)
+	public QPainterPath_Ptr* MapFromScene4(IQPainterPath path)
 	{
-		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, path);
+		return CQt.QGraphicsItem_MapFromScene4((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public QPointF_Ptr MapToItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapToItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapToItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapToParent5(double x, double y)
+	public QPointF_Ptr* MapToParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapToScene5(double x, double y)
+	public QPointF_Ptr* MapToScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapToScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectToItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectToItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectToScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectToScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectToScene2((.)this.ptr, x, y, w, h);
 	}
-	public QPointF_Ptr MapFromItem5(QGraphicsItem_Ptr* item, double x, double y)
+	public QPointF_Ptr* MapFromItem5(IQGraphicsItem item, double x, double y)
 	{
-		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, item, x, y);
+		return CQt.QGraphicsItem_MapFromItem5((.)this.ptr, (.)item?.ObjectPtr, x, y);
 	}
-	public QPointF_Ptr MapFromParent5(double x, double y)
+	public QPointF_Ptr* MapFromParent5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromParent5((.)this.ptr, x, y);
 	}
-	public QPointF_Ptr MapFromScene5(double x, double y)
+	public QPointF_Ptr* MapFromScene5(double x, double y)
 	{
 		return CQt.QGraphicsItem_MapFromScene5((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr MapRectFromItem2(QGraphicsItem_Ptr* item, double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromItem2(IQGraphicsItem item, double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, item, x, y, w, h);
+		return CQt.QGraphicsItem_MapRectFromItem2((.)this.ptr, (.)item?.ObjectPtr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromParent2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromParent2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromParent2((.)this.ptr, x, y, w, h);
 	}
-	public QRectF_Ptr MapRectFromScene2(double x, double y, double w, double h)
+	public QRectF_Ptr* MapRectFromScene2(double x, double y, double w, double h)
 	{
 		return CQt.QGraphicsItem_MapRectFromScene2((.)this.ptr, x, y, w, h);
 	}
-	public bool IsAncestorOf(QGraphicsItem_Ptr* child)
+	public bool IsAncestorOf(IQGraphicsItem child)
 	{
-		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, child);
+		return CQt.QGraphicsItem_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QGraphicsItem_Ptr* CommonAncestorItem(QGraphicsItem_Ptr* other)
+	public QGraphicsItem_Ptr** CommonAncestorItem(IQGraphicsItem other)
 	{
-		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, other);
+		return CQt.QGraphicsItem_CommonAncestorItem((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsUnderMouse()
 	{
 		return CQt.QGraphicsItem_IsUnderMouse((.)this.ptr);
 	}
-	public QVariant_Ptr Data(c_int key)
+	public QVariant_Ptr* Data(c_int key)
 	{
 		return CQt.QGraphicsItem_Data((.)this.ptr, key);
 	}
-	public void SetData(c_int key, QVariant_Ptr* value)
+	public void SetData(c_int key, IQVariant value)
 	{
-		CQt.QGraphicsItem_SetData((.)this.ptr, key, value);
+		CQt.QGraphicsItem_SetData((.)this.ptr, key, (.)value?.ObjectPtr);
 	}
 	public void* InputMethodHints()
 	{
@@ -12331,117 +11949,117 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_SetInputMethodHints((.)this.ptr, hints);
 	}
-	public void InstallSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void InstallSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_InstallSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
-	public void RemoveSceneEventFilter(QGraphicsItem_Ptr* filterItem)
+	public void RemoveSceneEventFilter(IQGraphicsItem filterItem)
 	{
-		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, filterItem);
+		CQt.QGraphicsItem_RemoveSceneEventFilter((.)this.ptr, (.)filterItem?.ObjectPtr);
 	}
 	public void UpdateMicroFocus()
 	{
 		CQt.QGraphicsItem_UpdateMicroFocus((.)this.ptr);
 	}
-	public bool SceneEventFilter(QGraphicsItem_Ptr* watched, QEvent_Ptr* event)
+	public bool SceneEventFilter(IQGraphicsItem watched, IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, watched, event);
+		return CQt.QGraphicsItem_SceneEventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public bool SceneEvent(QEvent_Ptr* event)
+	public bool SceneEvent(IQEvent event)
 	{
-		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, event);
+		return CQt.QGraphicsItem_SceneEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
+	public void ContextMenuEvent(IQGraphicsSceneContextMenuEvent event)
 	{
-		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragEnterEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragLeaveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DragMoveEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
+	public void DropEvent(IQGraphicsSceneDragDropEvent event)
 	{
-		CQt.QGraphicsItem_DropEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusInEvent(QFocusEvent_Ptr* event)
+	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void FocusOutEvent(QFocusEvent_Ptr* event)
+	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverEnterEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverEnterEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverMoveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverMoveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void HoverLeaveEvent(QGraphicsSceneHoverEvent_Ptr* event)
+	public void HoverLeaveEvent(IQGraphicsSceneHoverEvent event)
 	{
-		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_HoverLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyPressEvent(QKeyEvent_Ptr* event)
+	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
+	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MousePressEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseMoveEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseReleaseEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
+	public void MouseDoubleClickEvent(IQGraphicsSceneMouseEvent event)
 	{
-		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
+	public void WheelEvent(IQGraphicsSceneWheelEvent event)
 	{
-		CQt.QGraphicsItem_WheelEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
+	public void InputMethodEvent(IQInputMethodEvent event)
 	{
-		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, event);
+		CQt.QGraphicsItem_InputMethodEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
+	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery query)
 	{
 		return CQt.QGraphicsItem_InputMethodQuery((.)this.ptr, query);
 	}
-	public QVariant_Ptr ItemChange(QGraphicsItem_GraphicsItemChange change, QVariant_Ptr* value)
+	public QVariant_Ptr* ItemChange(QGraphicsItem_GraphicsItemChange change, IQVariant value)
 	{
-		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, value);
+		return CQt.QGraphicsItem_ItemChange((.)this.ptr, change, (.)value?.ObjectPtr);
 	}
 	public bool SupportsExtension(QGraphicsItem_Extension _extension)
 	{
 		return CQt.QGraphicsItem_SupportsExtension((.)this.ptr, _extension);
 	}
-	public void SetExtension(QGraphicsItem_Extension _extension, QVariant_Ptr* variant)
+	public void SetExtension(QGraphicsItem_Extension _extension, IQVariant variant)
 	{
-		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, variant);
+		CQt.QGraphicsItem_SetExtension((.)this.ptr, _extension, (.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr Extension(QVariant_Ptr* variant)
+	public QVariant_Ptr* Extension(IQVariant variant)
 	{
-		return CQt.QGraphicsItem_Extension((.)this.ptr, variant);
+		return CQt.QGraphicsItem_Extension((.)this.ptr, (.)variant?.ObjectPtr);
 	}
 	public void AddToIndex()
 	{
@@ -12459,29 +12077,29 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_SetFlag2((.)this.ptr, flag, enabled);
 	}
-	public void SetCacheMode2(QGraphicsItem_CacheMode mode, QSize_Ptr* cacheSize)
+	public void SetCacheMode2(QGraphicsItem_CacheMode mode, IQSize cacheSize)
 	{
-		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, cacheSize);
+		CQt.QGraphicsItem_SetCacheMode2((.)this.ptr, mode, (.)cacheSize?.ObjectPtr);
 	}
-	public bool IsBlockedByModalPanel1(QGraphicsItem_Ptr** blockingPanel)
+	public bool IsBlockedByModalPanel1(IQGraphicsItem blockingPanel)
 	{
-		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, blockingPanel);
+		return CQt.QGraphicsItem_IsBlockedByModalPanel1((.)this.ptr, (.)blockingPanel?.ObjectPtr);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
 		CQt.QGraphicsItem_SetFocus1((.)this.ptr, focusReason);
 	}
-	public void EnsureVisible1(QRectF_Ptr* rect)
+	public void EnsureVisible1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, rect);
+		CQt.QGraphicsItem_EnsureVisible1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void EnsureVisible22(QRectF_Ptr* rect, c_int xmargin)
+	public void EnsureVisible22(IQRectF rect, c_int xmargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, rect, xmargin);
+		CQt.QGraphicsItem_EnsureVisible22((.)this.ptr, (.)rect?.ObjectPtr, xmargin);
 	}
-	public void EnsureVisible3(QRectF_Ptr* rect, c_int xmargin, c_int ymargin)
+	public void EnsureVisible3(IQRectF rect, c_int xmargin, c_int ymargin)
 	{
-		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, rect, xmargin, ymargin);
+		CQt.QGraphicsItem_EnsureVisible3((.)this.ptr, (.)rect?.ObjectPtr, xmargin, ymargin);
 	}
 	public void EnsureVisible5(double x, double y, double w, double h, c_int xmargin)
 	{
@@ -12491,40 +12109,33 @@ class QGraphicsItemGroup
 	{
 		CQt.QGraphicsItem_EnsureVisible6((.)this.ptr, x, y, w, h, xmargin, ymargin);
 	}
-	public QTransform_Ptr ItemTransform2(QGraphicsItem_Ptr* other, bool* ok)
+	public QTransform_Ptr* ItemTransform2(IQGraphicsItem other, bool* ok)
 	{
-		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, other, ok);
+		return CQt.QGraphicsItem_ItemTransform2((.)this.ptr, (.)other?.ObjectPtr, ok);
 	}
-	public void SetTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QGraphicsItem_SetTransform2((.)this.ptr, matrix, combine);
+		CQt.QGraphicsItem_SetTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
 	public void* CollidingItems1(Qt_ItemSelectionMode mode)
 	{
 		return CQt.QGraphicsItem_CollidingItems1((.)this.ptr, mode);
 	}
-	public bool IsObscured1(QRectF_Ptr* rect)
+	public bool IsObscured1(IQRectF rect)
 	{
-		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, rect);
+		return CQt.QGraphicsItem_IsObscured1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Update1(QRectF_Ptr* rect)
+	public void Update1(IQRectF rect)
 	{
-		CQt.QGraphicsItem_Update1((.)this.ptr, rect);
+		CQt.QGraphicsItem_Update1((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void Scroll3(double dx, double dy, QRectF_Ptr* rect)
+	public void Scroll3(double dx, double dy, IQRectF rect)
 	{
-		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, rect);
+		CQt.QGraphicsItem_Scroll3((.)this.ptr, dx, dy, (.)rect?.ObjectPtr);
 	}
 }
-interface IQGraphicsItemGroup
+interface IQGraphicsItemGroup : IQtObjectInterface
 {
-	public void AddToGroup();
-	public void RemoveFromGroup();
-	public QRectF BoundingRect();
-	public void Paint();
-	public bool IsObscuredBy();
-	public QPainterPath OpaqueArea();
-	public c_int Type();
 }
 [AllowDuplicates]
 enum QGraphicsItem_GraphicsItemFlag

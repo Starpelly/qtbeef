@@ -15,13 +15,13 @@ extension CQt
 	[LinkName("QRawFont_new")]
 	public static extern QRawFont_Ptr* QRawFont_new();
 	[LinkName("QRawFont_new2")]
-	public static extern QRawFont_Ptr* QRawFont_new2(libqt_string* fileName, double pixelSize);
+	public static extern QRawFont_Ptr* QRawFont_new2(libqt_string fileName, double pixelSize);
 	[LinkName("QRawFont_new3")]
 	public static extern QRawFont_Ptr* QRawFont_new3(void** fontData, double pixelSize);
 	[LinkName("QRawFont_new4")]
 	public static extern QRawFont_Ptr* QRawFont_new4(QRawFont_Ptr* other);
 	[LinkName("QRawFont_new5")]
-	public static extern QRawFont_Ptr* QRawFont_new5(libqt_string* fileName, double pixelSize, QFont_HintingPreference hintingPreference);
+	public static extern QRawFont_Ptr* QRawFont_new5(libqt_string fileName, double pixelSize, QFont_HintingPreference hintingPreference);
 	[LinkName("QRawFont_new6")]
 	public static extern QRawFont_Ptr* QRawFont_new6(void** fontData, double pixelSize, QFont_HintingPreference hintingPreference);
 	[LinkName("QRawFont_Delete")]
@@ -45,23 +45,23 @@ extension CQt
 	[LinkName("QRawFont_Weight")]
 	public static extern c_int QRawFont_Weight(QRawFont_Ptr* self);
 	[LinkName("QRawFont_GlyphIndexesForString")]
-	public static extern void* QRawFont_GlyphIndexesForString(QRawFont_Ptr* self, libqt_string* text);
+	public static extern void* QRawFont_GlyphIndexesForString(QRawFont_Ptr* self, libqt_string text);
 	[LinkName("QRawFont_AdvancesForGlyphIndexes")]
 	public static extern void* QRawFont_AdvancesForGlyphIndexes(QRawFont_Ptr* self, void** glyphIndexes);
 	[LinkName("QRawFont_AdvancesForGlyphIndexes2")]
 	public static extern void* QRawFont_AdvancesForGlyphIndexes2(QRawFont_Ptr* self, void** glyphIndexes, void* layoutFlags);
 	[LinkName("QRawFont_GlyphIndexesForChars")]
-	public static extern bool QRawFont_GlyphIndexesForChars(QRawFont_Ptr* self, QChar_Ptr* chars, c_int numChars, c_uint* glyphIndexes, c_int* numGlyphs);
+	public static extern bool QRawFont_GlyphIndexesForChars(QRawFont_Ptr* self, QChar_Ptr** chars, c_int numChars, c_uint* glyphIndexes, c_int* numGlyphs);
 	[LinkName("QRawFont_AdvancesForGlyphIndexes3")]
-	public static extern bool QRawFont_AdvancesForGlyphIndexes3(QRawFont_Ptr* self, c_uint* glyphIndexes, QPointF_Ptr* advances, c_int numGlyphs);
+	public static extern bool QRawFont_AdvancesForGlyphIndexes3(QRawFont_Ptr* self, c_uint* glyphIndexes, QPointF_Ptr** advances, c_int numGlyphs);
 	[LinkName("QRawFont_AdvancesForGlyphIndexes4")]
-	public static extern bool QRawFont_AdvancesForGlyphIndexes4(QRawFont_Ptr* self, c_uint* glyphIndexes, QPointF_Ptr* advances, c_int numGlyphs, void* layoutFlags);
+	public static extern bool QRawFont_AdvancesForGlyphIndexes4(QRawFont_Ptr* self, c_uint* glyphIndexes, QPointF_Ptr** advances, c_int numGlyphs, void* layoutFlags);
 	[LinkName("QRawFont_AlphaMapForGlyph")]
-	public static extern QImage_Ptr QRawFont_AlphaMapForGlyph(QRawFont_Ptr* self, c_uint glyphIndex);
+	public static extern QImage_Ptr* QRawFont_AlphaMapForGlyph(QRawFont_Ptr* self, c_uint glyphIndex);
 	[LinkName("QRawFont_PathForGlyph")]
-	public static extern QPainterPath_Ptr QRawFont_PathForGlyph(QRawFont_Ptr* self, c_uint glyphIndex);
+	public static extern QPainterPath_Ptr* QRawFont_PathForGlyph(QRawFont_Ptr* self, c_uint glyphIndex);
 	[LinkName("QRawFont_BoundingRect")]
-	public static extern QRectF_Ptr QRawFont_BoundingRect(QRawFont_Ptr* self, c_uint glyphIndex);
+	public static extern QRectF_Ptr* QRawFont_BoundingRect(QRawFont_Ptr* self, c_uint glyphIndex);
 	[LinkName("QRawFont_SetPixelSize")]
 	public static extern void QRawFont_SetPixelSize(QRawFont_Ptr* self, double pixelSize);
 	[LinkName("QRawFont_PixelSize")]
@@ -89,48 +89,49 @@ extension CQt
 	[LinkName("QRawFont_UnitsPerEm")]
 	public static extern double QRawFont_UnitsPerEm(QRawFont_Ptr* self);
 	[LinkName("QRawFont_LoadFromFile")]
-	public static extern void QRawFont_LoadFromFile(QRawFont_Ptr* self, libqt_string* fileName, double pixelSize, QFont_HintingPreference hintingPreference);
+	public static extern void QRawFont_LoadFromFile(QRawFont_Ptr* self, libqt_string fileName, double pixelSize, QFont_HintingPreference hintingPreference);
 	[LinkName("QRawFont_LoadFromData")]
 	public static extern void QRawFont_LoadFromData(QRawFont_Ptr* self, void** fontData, double pixelSize, QFont_HintingPreference hintingPreference);
 	[LinkName("QRawFont_SupportsCharacter")]
 	public static extern bool QRawFont_SupportsCharacter(QRawFont_Ptr* self, c_uint ucs4);
 	[LinkName("QRawFont_SupportsCharacter2")]
-	public static extern bool QRawFont_SupportsCharacter2(QRawFont_Ptr* self, QChar_Ptr character);
+	public static extern bool QRawFont_SupportsCharacter2(QRawFont_Ptr* self, QChar_Ptr* character);
 	[LinkName("QRawFont_SupportedWritingSystems")]
 	public static extern void* QRawFont_SupportedWritingSystems(QRawFont_Ptr* self);
 	[LinkName("QRawFont_FontTable")]
 	public static extern void* QRawFont_FontTable(QRawFont_Ptr* self, c_char* tagName);
 	[LinkName("QRawFont_FromFont")]
-	public static extern QRawFont_Ptr QRawFont_FromFont(QFont_Ptr* font);
+	public static extern QRawFont_Ptr* QRawFont_FromFont(QFont_Ptr* font);
 	[LinkName("QRawFont_AlphaMapForGlyph2")]
-	public static extern QImage_Ptr QRawFont_AlphaMapForGlyph2(QRawFont_Ptr* self, c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType);
+	public static extern QImage_Ptr* QRawFont_AlphaMapForGlyph2(QRawFont_Ptr* self, c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType);
 	[LinkName("QRawFont_AlphaMapForGlyph3")]
-	public static extern QImage_Ptr QRawFont_AlphaMapForGlyph3(QRawFont_Ptr* self, c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType, QTransform_Ptr* transform);
+	public static extern QImage_Ptr* QRawFont_AlphaMapForGlyph3(QRawFont_Ptr* self, c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType, QTransform_Ptr* transform);
 	[LinkName("QRawFont_FromFont2")]
-	public static extern QRawFont_Ptr QRawFont_FromFont2(QFont_Ptr* font, QFontDatabase_WritingSystem writingSystem);
+	public static extern QRawFont_Ptr* QRawFont_FromFont2(QFont_Ptr* font, QFontDatabase_WritingSystem writingSystem);
 }
-class QRawFont
+class QRawFont : IQRawFont
 {
 	private QRawFont_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRawFont_new();
 	}
-	public this(libqt_string* fileName, double pixelSize)
+	public this(String fileName, double pixelSize)
 	{
-		this.ptr = CQt.QRawFont_new2(fileName, pixelSize);
+		this.ptr = CQt.QRawFont_new2(libqt_string(fileName), pixelSize);
 	}
 	public this(void** fontData, double pixelSize)
 	{
 		this.ptr = CQt.QRawFont_new3(fontData, pixelSize);
 	}
-	public this(QRawFont_Ptr* other)
+	public this(IQRawFont other)
 	{
-		this.ptr = CQt.QRawFont_new4(other);
+		this.ptr = CQt.QRawFont_new4((.)other?.ObjectPtr);
 	}
-	public this(libqt_string* fileName, double pixelSize, QFont_HintingPreference hintingPreference)
+	public this(String fileName, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
-		this.ptr = CQt.QRawFont_new5(fileName, pixelSize, hintingPreference);
+		this.ptr = CQt.QRawFont_new5(libqt_string(fileName), pixelSize, hintingPreference);
 	}
 	public this(void** fontData, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
@@ -140,9 +141,9 @@ class QRawFont
 	{
 		CQt.QRawFont_Delete(this.ptr);
 	}
-	public void Swap(QRawFont_Ptr* other)
+	public void Swap(IQRawFont other)
 	{
-		CQt.QRawFont_Swap((.)this.ptr, other);
+		CQt.QRawFont_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
@@ -164,9 +165,9 @@ class QRawFont
 	{
 		return CQt.QRawFont_Weight((.)this.ptr);
 	}
-	public void* GlyphIndexesForString(libqt_string* text)
+	public void* GlyphIndexesForString(String text)
 	{
-		return CQt.QRawFont_GlyphIndexesForString((.)this.ptr, text);
+		return CQt.QRawFont_GlyphIndexesForString((.)this.ptr, libqt_string(text));
 	}
 	public void* AdvancesForGlyphIndexes(void** glyphIndexes)
 	{
@@ -176,27 +177,27 @@ class QRawFont
 	{
 		return CQt.QRawFont_AdvancesForGlyphIndexes2((.)this.ptr, glyphIndexes, layoutFlags);
 	}
-	public bool GlyphIndexesForChars(QChar_Ptr* chars, c_int numChars, c_uint* glyphIndexes, c_int* numGlyphs)
+	public bool GlyphIndexesForChars(IQChar chars, c_int numChars, c_uint* glyphIndexes, c_int* numGlyphs)
 	{
-		return CQt.QRawFont_GlyphIndexesForChars((.)this.ptr, chars, numChars, glyphIndexes, numGlyphs);
+		return CQt.QRawFont_GlyphIndexesForChars((.)this.ptr, (.)chars?.ObjectPtr, numChars, glyphIndexes, numGlyphs);
 	}
-	public bool AdvancesForGlyphIndexes3(c_uint* glyphIndexes, QPointF_Ptr* advances, c_int numGlyphs)
+	public bool AdvancesForGlyphIndexes3(c_uint* glyphIndexes, IQPointF advances, c_int numGlyphs)
 	{
-		return CQt.QRawFont_AdvancesForGlyphIndexes3((.)this.ptr, glyphIndexes, advances, numGlyphs);
+		return CQt.QRawFont_AdvancesForGlyphIndexes3((.)this.ptr, glyphIndexes, (.)advances?.ObjectPtr, numGlyphs);
 	}
-	public bool AdvancesForGlyphIndexes4(c_uint* glyphIndexes, QPointF_Ptr* advances, c_int numGlyphs, void* layoutFlags)
+	public bool AdvancesForGlyphIndexes4(c_uint* glyphIndexes, IQPointF advances, c_int numGlyphs, void* layoutFlags)
 	{
-		return CQt.QRawFont_AdvancesForGlyphIndexes4((.)this.ptr, glyphIndexes, advances, numGlyphs, layoutFlags);
+		return CQt.QRawFont_AdvancesForGlyphIndexes4((.)this.ptr, glyphIndexes, (.)advances?.ObjectPtr, numGlyphs, layoutFlags);
 	}
-	public QImage_Ptr AlphaMapForGlyph(c_uint glyphIndex)
+	public QImage_Ptr* AlphaMapForGlyph(c_uint glyphIndex)
 	{
 		return CQt.QRawFont_AlphaMapForGlyph((.)this.ptr, glyphIndex);
 	}
-	public QPainterPath_Ptr PathForGlyph(c_uint glyphIndex)
+	public QPainterPath_Ptr* PathForGlyph(c_uint glyphIndex)
 	{
 		return CQt.QRawFont_PathForGlyph((.)this.ptr, glyphIndex);
 	}
-	public QRectF_Ptr BoundingRect(c_uint glyphIndex)
+	public QRectF_Ptr* BoundingRect(c_uint glyphIndex)
 	{
 		return CQt.QRawFont_BoundingRect((.)this.ptr, glyphIndex);
 	}
@@ -252,9 +253,9 @@ class QRawFont
 	{
 		return CQt.QRawFont_UnitsPerEm((.)this.ptr);
 	}
-	public void LoadFromFile(libqt_string* fileName, double pixelSize, QFont_HintingPreference hintingPreference)
+	public void LoadFromFile(String fileName, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
-		CQt.QRawFont_LoadFromFile((.)this.ptr, fileName, pixelSize, hintingPreference);
+		CQt.QRawFont_LoadFromFile((.)this.ptr, libqt_string(fileName), pixelSize, hintingPreference);
 	}
 	public void LoadFromData(void** fontData, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
@@ -264,9 +265,9 @@ class QRawFont
 	{
 		return CQt.QRawFont_SupportsCharacter((.)this.ptr, ucs4);
 	}
-	public bool SupportsCharacter2(QChar_Ptr character)
+	public bool SupportsCharacter2(IQChar character)
 	{
-		return CQt.QRawFont_SupportsCharacter2((.)this.ptr, character);
+		return CQt.QRawFont_SupportsCharacter2((.)this.ptr, (.)character?.ObjectPtr);
 	}
 	public void* SupportedWritingSystems()
 	{
@@ -276,63 +277,25 @@ class QRawFont
 	{
 		return CQt.QRawFont_FontTable((.)this.ptr, tagName);
 	}
-	public QRawFont_Ptr FromFont(QFont_Ptr* font)
+	public QRawFont_Ptr* FromFont(IQFont font)
 	{
-		return CQt.QRawFont_FromFont(font);
+		return CQt.QRawFont_FromFont((.)font?.ObjectPtr);
 	}
-	public QImage_Ptr AlphaMapForGlyph2(c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType)
+	public QImage_Ptr* AlphaMapForGlyph2(c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType)
 	{
 		return CQt.QRawFont_AlphaMapForGlyph2((.)this.ptr, glyphIndex, antialiasingType);
 	}
-	public QImage_Ptr AlphaMapForGlyph3(c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType, QTransform_Ptr* transform)
+	public QImage_Ptr* AlphaMapForGlyph3(c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType, IQTransform transform)
 	{
-		return CQt.QRawFont_AlphaMapForGlyph3((.)this.ptr, glyphIndex, antialiasingType, transform);
+		return CQt.QRawFont_AlphaMapForGlyph3((.)this.ptr, glyphIndex, antialiasingType, (.)transform?.ObjectPtr);
 	}
-	public QRawFont_Ptr FromFont2(QFont_Ptr* font, QFontDatabase_WritingSystem writingSystem)
+	public QRawFont_Ptr* FromFont2(IQFont font, QFontDatabase_WritingSystem writingSystem)
 	{
-		return CQt.QRawFont_FromFont2(font, writingSystem);
+		return CQt.QRawFont_FromFont2((.)font?.ObjectPtr, writingSystem);
 	}
 }
-interface IQRawFont
+interface IQRawFont : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsValid();
-	public libqt_string FamilyName();
-	public libqt_string StyleName();
-	public QFont_Style Style();
-	public c_int Weight();
-	public void* GlyphIndexesForString();
-	public void* AdvancesForGlyphIndexes();
-	public void* AdvancesForGlyphIndexes2();
-	public bool GlyphIndexesForChars();
-	public bool AdvancesForGlyphIndexes3();
-	public bool AdvancesForGlyphIndexes4();
-	public QImage AlphaMapForGlyph();
-	public QPainterPath PathForGlyph();
-	public QRectF BoundingRect();
-	public void SetPixelSize();
-	public double PixelSize();
-	public QFont_HintingPreference HintingPreference();
-	public double Ascent();
-	public double CapHeight();
-	public double Descent();
-	public double Leading();
-	public double XHeight();
-	public double AverageCharWidth();
-	public double MaxCharWidth();
-	public double LineThickness();
-	public double UnderlinePosition();
-	public double UnitsPerEm();
-	public void LoadFromFile();
-	public void LoadFromData();
-	public bool SupportsCharacter();
-	public bool SupportsCharacter2();
-	public void* SupportedWritingSystems();
-	public void* FontTable();
-	public QRawFont FromFont();
-	public QImage AlphaMapForGlyph2();
-	public QImage AlphaMapForGlyph3();
-	public QRawFont FromFont2();
 }
 [AllowDuplicates]
 enum QRawFont_AntialiasingType

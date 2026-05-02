@@ -31,11 +31,11 @@ extension CQt
 	[LinkName("QFutureInterfaceBase_ReportResultsReady")]
 	public static extern void QFutureInterfaceBase_ReportResultsReady(QFutureInterfaceBase_Ptr* self, c_int beginIndex, c_int endIndex);
 	[LinkName("QFutureInterfaceBase_SetRunnable")]
-	public static extern void QFutureInterfaceBase_SetRunnable(QFutureInterfaceBase_Ptr* self, QRunnable_Ptr* runnable);
+	public static extern void QFutureInterfaceBase_SetRunnable(QFutureInterfaceBase_Ptr* self, QRunnable_Ptr** runnable);
 	[LinkName("QFutureInterfaceBase_SetThreadPool")]
-	public static extern void QFutureInterfaceBase_SetThreadPool(QFutureInterfaceBase_Ptr* self, QThreadPool_Ptr* pool);
+	public static extern void QFutureInterfaceBase_SetThreadPool(QFutureInterfaceBase_Ptr* self, QThreadPool_Ptr** pool);
 	[LinkName("QFutureInterfaceBase_ThreadPool")]
-	public static extern QThreadPool_Ptr* QFutureInterfaceBase_ThreadPool(QFutureInterfaceBase_Ptr* self);
+	public static extern QThreadPool_Ptr** QFutureInterfaceBase_ThreadPool(QFutureInterfaceBase_Ptr* self);
 	[LinkName("QFutureInterfaceBase_SetFilterMode")]
 	public static extern void QFutureInterfaceBase_SetFilterMode(QFutureInterfaceBase_Ptr* self, bool enable);
 	[LinkName("QFutureInterfaceBase_SetProgressRange")]
@@ -51,7 +51,7 @@ extension CQt
 	[LinkName("QFutureInterfaceBase_ProgressValue")]
 	public static extern c_int QFutureInterfaceBase_ProgressValue(QFutureInterfaceBase_Ptr* self);
 	[LinkName("QFutureInterfaceBase_SetProgressValueAndText")]
-	public static extern void QFutureInterfaceBase_SetProgressValueAndText(QFutureInterfaceBase_Ptr* self, c_int progressValue, libqt_string* progressText);
+	public static extern void QFutureInterfaceBase_SetProgressValueAndText(QFutureInterfaceBase_Ptr* self, c_int progressValue, libqt_string progressText);
 	[LinkName("QFutureInterfaceBase_ProgressText")]
 	public static extern libqt_string QFutureInterfaceBase_ProgressText(QFutureInterfaceBase_Ptr* self);
 	[LinkName("QFutureInterfaceBase_SetExpectedResultCount")]
@@ -123,16 +123,17 @@ extension CQt
 	[LinkName("QFutureInterfaceBase_IsChainCanceled")]
 	public static extern bool QFutureInterfaceBase_IsChainCanceled(QFutureInterfaceBase_Ptr* self);
 }
-class QFutureInterfaceBase
+class QFutureInterfaceBase : IQFutureInterfaceBase
 {
 	private QFutureInterfaceBase_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QFutureInterfaceBase_new();
 	}
-	public this(QFutureInterfaceBase_Ptr* other)
+	public this(IQFutureInterfaceBase other)
 	{
-		this.ptr = CQt.QFutureInterfaceBase_new2(other);
+		this.ptr = CQt.QFutureInterfaceBase_new2((.)other?.ObjectPtr);
 	}
 	public this(QFutureInterfaceBase_State initialState)
 	{
@@ -158,15 +159,15 @@ class QFutureInterfaceBase
 	{
 		CQt.QFutureInterfaceBase_ReportResultsReady((.)this.ptr, beginIndex, endIndex);
 	}
-	public void SetRunnable(QRunnable_Ptr* runnable)
+	public void SetRunnable(IQRunnable runnable)
 	{
-		CQt.QFutureInterfaceBase_SetRunnable((.)this.ptr, runnable);
+		CQt.QFutureInterfaceBase_SetRunnable((.)this.ptr, (.)runnable?.ObjectPtr);
 	}
-	public void SetThreadPool(QThreadPool_Ptr* pool)
+	public void SetThreadPool(IQThreadPool pool)
 	{
-		CQt.QFutureInterfaceBase_SetThreadPool((.)this.ptr, pool);
+		CQt.QFutureInterfaceBase_SetThreadPool((.)this.ptr, (.)pool?.ObjectPtr);
 	}
-	public QThreadPool_Ptr* ThreadPool()
+	public QThreadPool_Ptr** ThreadPool()
 	{
 		return CQt.QFutureInterfaceBase_ThreadPool((.)this.ptr);
 	}
@@ -198,9 +199,9 @@ class QFutureInterfaceBase
 	{
 		return CQt.QFutureInterfaceBase_ProgressValue((.)this.ptr);
 	}
-	public void SetProgressValueAndText(c_int progressValue, libqt_string* progressText)
+	public void SetProgressValueAndText(c_int progressValue, String progressText)
 	{
-		CQt.QFutureInterfaceBase_SetProgressValueAndText((.)this.ptr, progressValue, progressText);
+		CQt.QFutureInterfaceBase_SetProgressValueAndText((.)this.ptr, progressValue, libqt_string(progressText));
 	}
 	public libqt_string ProgressText()
 	{
@@ -326,65 +327,17 @@ class QFutureInterfaceBase
 	{
 		return CQt.QFutureInterfaceBase_HasException((.)this.ptr);
 	}
-	public void Swap(QFutureInterfaceBase_Ptr* other)
+	public void Swap(IQFutureInterfaceBase other)
 	{
-		CQt.QFutureInterfaceBase_Swap((.)this.ptr, other);
+		CQt.QFutureInterfaceBase_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsChainCanceled()
 	{
 		return CQt.QFutureInterfaceBase_IsChainCanceled((.)this.ptr);
 	}
 }
-interface IQFutureInterfaceBase
+interface IQFutureInterfaceBase : IQtObjectInterface
 {
-	public void ReportStarted();
-	public void ReportFinished();
-	public void ReportCanceled();
-	public void ReportResultsReady();
-	public void SetRunnable();
-	public void SetThreadPool();
-	public QThreadPool* ThreadPool();
-	public void SetFilterMode();
-	public void SetProgressRange();
-	public c_int ProgressMinimum();
-	public c_int ProgressMaximum();
-	public bool IsProgressUpdateNeeded();
-	public void SetProgressValue();
-	public c_int ProgressValue();
-	public void SetProgressValueAndText();
-	public libqt_string ProgressText();
-	public void SetExpectedResultCount();
-	public c_int ExpectedResultCount();
-	public c_int ResultCount();
-	public bool QueryState();
-	public bool IsRunning();
-	public bool IsStarted();
-	public bool IsCanceled();
-	public bool IsFinished();
-	public bool IsPaused();
-	public void SetPaused();
-	public void TogglePaused();
-	public bool IsSuspending();
-	public bool IsSuspended();
-	public bool IsThrottled();
-	public bool IsResultReadyAt();
-	public bool IsValid();
-	public c_int LoadState();
-	public void Cancel();
-	public void CancelAndFinish();
-	public void SetSuspended();
-	public void ToggleSuspended();
-	public void ReportSuspended();
-	public void SetThrottled();
-	public void WaitForFinished();
-	public bool WaitForNextResult();
-	public void WaitForResult();
-	public void WaitForResume();
-	public void SuspendIfRequested();
-	public QMutex* Mutex();
-	public bool HasException();
-	public void Swap();
-	public bool IsChainCanceled();
 }
 [AllowDuplicates]
 enum QFutureInterfaceBase_State

@@ -15,13 +15,13 @@ extension CQt
 	[LinkName("QPainter_new")]
 	public static extern QPainter_Ptr* QPainter_new();
 	[LinkName("QPainter_new2")]
-	public static extern QPainter_Ptr* QPainter_new2(QPaintDevice_Ptr* param1);
+	public static extern QPainter_Ptr* QPainter_new2(QPaintDevice_Ptr** param1);
 	[LinkName("QPainter_Delete")]
 	public static extern void QPainter_Delete(QPainter_Ptr* self);
 	[LinkName("QPainter_Device")]
-	public static extern QPaintDevice_Ptr* QPainter_Device(QPainter_Ptr* self);
+	public static extern QPaintDevice_Ptr** QPainter_Device(QPainter_Ptr* self);
 	[LinkName("QPainter_Begin")]
-	public static extern bool QPainter_Begin(QPainter_Ptr* self, QPaintDevice_Ptr* param1);
+	public static extern bool QPainter_Begin(QPainter_Ptr* self, QPaintDevice_Ptr** param1);
 	[LinkName("QPainter_End")]
 	public static extern bool QPainter_End(QPainter_Ptr* self);
 	[LinkName("QPainter_IsActive")]
@@ -35,9 +35,9 @@ extension CQt
 	[LinkName("QPainter_SetFont")]
 	public static extern void QPainter_SetFont(QPainter_Ptr* self, QFont_Ptr* f);
 	[LinkName("QPainter_FontMetrics")]
-	public static extern QFontMetrics_Ptr QPainter_FontMetrics(QPainter_Ptr* self);
+	public static extern QFontMetrics_Ptr* QPainter_FontMetrics(QPainter_Ptr* self);
 	[LinkName("QPainter_FontInfo")]
-	public static extern QFontInfo_Ptr QPainter_FontInfo(QPainter_Ptr* self);
+	public static extern QFontInfo_Ptr* QPainter_FontInfo(QPainter_Ptr* self);
 	[LinkName("QPainter_SetPen")]
 	public static extern void QPainter_SetPen(QPainter_Ptr* self, QColor_Ptr* color);
 	[LinkName("QPainter_SetPen2")]
@@ -57,7 +57,7 @@ extension CQt
 	[LinkName("QPainter_BackgroundMode")]
 	public static extern Qt_BGMode QPainter_BackgroundMode(QPainter_Ptr* self);
 	[LinkName("QPainter_BrushOrigin")]
-	public static extern QPoint_Ptr QPainter_BrushOrigin(QPainter_Ptr* self);
+	public static extern QPoint_Ptr* QPainter_BrushOrigin(QPainter_Ptr* self);
 	[LinkName("QPainter_SetBrushOrigin")]
 	public static extern void QPainter_SetBrushOrigin(QPainter_Ptr* self, c_int x, c_int y);
 	[LinkName("QPainter_SetBrushOrigin2")]
@@ -73,9 +73,9 @@ extension CQt
 	[LinkName("QPainter_SetOpacity")]
 	public static extern void QPainter_SetOpacity(QPainter_Ptr* self, double opacity);
 	[LinkName("QPainter_ClipRegion")]
-	public static extern QRegion_Ptr QPainter_ClipRegion(QPainter_Ptr* self);
+	public static extern QRegion_Ptr* QPainter_ClipRegion(QPainter_Ptr* self);
 	[LinkName("QPainter_ClipPath")]
-	public static extern QPainterPath_Ptr QPainter_ClipPath(QPainter_Ptr* self);
+	public static extern QPainterPath_Ptr* QPainter_ClipPath(QPainter_Ptr* self);
 	[LinkName("QPainter_SetClipRect")]
 	public static extern void QPainter_SetClipRect(QPainter_Ptr* self, QRectF_Ptr* param1);
 	[LinkName("QPainter_SetClipRect2")]
@@ -91,7 +91,7 @@ extension CQt
 	[LinkName("QPainter_HasClipping")]
 	public static extern bool QPainter_HasClipping(QPainter_Ptr* self);
 	[LinkName("QPainter_ClipBoundingRect")]
-	public static extern QRectF_Ptr QPainter_ClipBoundingRect(QPainter_Ptr* self);
+	public static extern QRectF_Ptr* QPainter_ClipBoundingRect(QPainter_Ptr* self);
 	[LinkName("QPainter_Save")]
 	public static extern void QPainter_Save(QPainter_Ptr* self);
 	[LinkName("QPainter_Restore")]
@@ -109,7 +109,7 @@ extension CQt
 	[LinkName("QPainter_WorldTransform")]
 	public static extern QTransform_Ptr* QPainter_WorldTransform(QPainter_Ptr* self);
 	[LinkName("QPainter_CombinedTransform")]
-	public static extern QTransform_Ptr QPainter_CombinedTransform(QPainter_Ptr* self);
+	public static extern QTransform_Ptr* QPainter_CombinedTransform(QPainter_Ptr* self);
 	[LinkName("QPainter_SetWorldMatrixEnabled")]
 	public static extern void QPainter_SetWorldMatrixEnabled(QPainter_Ptr* self, bool enabled);
 	[LinkName("QPainter_WorldMatrixEnabled")]
@@ -127,13 +127,13 @@ extension CQt
 	[LinkName("QPainter_Translate3")]
 	public static extern void QPainter_Translate3(QPainter_Ptr* self, double dx, double dy);
 	[LinkName("QPainter_Window")]
-	public static extern QRect_Ptr QPainter_Window(QPainter_Ptr* self);
+	public static extern QRect_Ptr* QPainter_Window(QPainter_Ptr* self);
 	[LinkName("QPainter_SetWindow")]
 	public static extern void QPainter_SetWindow(QPainter_Ptr* self, QRect_Ptr* window);
 	[LinkName("QPainter_SetWindow2")]
 	public static extern void QPainter_SetWindow2(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h);
 	[LinkName("QPainter_Viewport")]
-	public static extern QRect_Ptr QPainter_Viewport(QPainter_Ptr* self);
+	public static extern QRect_Ptr* QPainter_Viewport(QPainter_Ptr* self);
 	[LinkName("QPainter_SetViewport")]
 	public static extern void QPainter_SetViewport(QPainter_Ptr* self, QRect_Ptr* viewport);
 	[LinkName("QPainter_SetViewport2")]
@@ -155,9 +155,9 @@ extension CQt
 	[LinkName("QPainter_DrawPoint3")]
 	public static extern void QPainter_DrawPoint3(QPainter_Ptr* self, c_int x, c_int y);
 	[LinkName("QPainter_DrawPoints")]
-	public static extern void QPainter_DrawPoints(QPainter_Ptr* self, QPointF_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawPoints(QPainter_Ptr* self, QPointF_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawPoints3")]
-	public static extern void QPainter_DrawPoints3(QPainter_Ptr* self, QPoint_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawPoints3(QPainter_Ptr* self, QPoint_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawLine")]
 	public static extern void QPainter_DrawLine(QPainter_Ptr* self, QLineF_Ptr* line);
 	[LinkName("QPainter_DrawLine2")]
@@ -169,19 +169,19 @@ extension CQt
 	[LinkName("QPainter_DrawLine5")]
 	public static extern void QPainter_DrawLine5(QPainter_Ptr* self, QPointF_Ptr* p1, QPointF_Ptr* p2);
 	[LinkName("QPainter_DrawLines")]
-	public static extern void QPainter_DrawLines(QPainter_Ptr* self, QLineF_Ptr* lines, c_int lineCount);
+	public static extern void QPainter_DrawLines(QPainter_Ptr* self, QLineF_Ptr** lines, c_int lineCount);
 	[LinkName("QPainter_DrawLines2")]
 	public static extern void QPainter_DrawLines2(QPainter_Ptr* self, void** lines);
 	[LinkName("QPainter_DrawLines3")]
-	public static extern void QPainter_DrawLines3(QPainter_Ptr* self, QPointF_Ptr* pointPairs, c_int lineCount);
+	public static extern void QPainter_DrawLines3(QPainter_Ptr* self, QPointF_Ptr** pointPairs, c_int lineCount);
 	[LinkName("QPainter_DrawLines4")]
 	public static extern void QPainter_DrawLines4(QPainter_Ptr* self, void** pointPairs);
 	[LinkName("QPainter_DrawLines5")]
-	public static extern void QPainter_DrawLines5(QPainter_Ptr* self, QLine_Ptr* lines, c_int lineCount);
+	public static extern void QPainter_DrawLines5(QPainter_Ptr* self, QLine_Ptr** lines, c_int lineCount);
 	[LinkName("QPainter_DrawLines6")]
 	public static extern void QPainter_DrawLines6(QPainter_Ptr* self, void** lines);
 	[LinkName("QPainter_DrawLines7")]
-	public static extern void QPainter_DrawLines7(QPainter_Ptr* self, QPoint_Ptr* pointPairs, c_int lineCount);
+	public static extern void QPainter_DrawLines7(QPainter_Ptr* self, QPoint_Ptr** pointPairs, c_int lineCount);
 	[LinkName("QPainter_DrawLines8")]
 	public static extern void QPainter_DrawLines8(QPainter_Ptr* self, void** pointPairs);
 	[LinkName("QPainter_DrawRect")]
@@ -191,11 +191,11 @@ extension CQt
 	[LinkName("QPainter_DrawRect3")]
 	public static extern void QPainter_DrawRect3(QPainter_Ptr* self, QRect_Ptr* rect);
 	[LinkName("QPainter_DrawRects")]
-	public static extern void QPainter_DrawRects(QPainter_Ptr* self, QRectF_Ptr* rects, c_int rectCount);
+	public static extern void QPainter_DrawRects(QPainter_Ptr* self, QRectF_Ptr** rects, c_int rectCount);
 	[LinkName("QPainter_DrawRects2")]
 	public static extern void QPainter_DrawRects2(QPainter_Ptr* self, void** rectangles);
 	[LinkName("QPainter_DrawRects3")]
-	public static extern void QPainter_DrawRects3(QPainter_Ptr* self, QRect_Ptr* rects, c_int rectCount);
+	public static extern void QPainter_DrawRects3(QPainter_Ptr* self, QRect_Ptr** rects, c_int rectCount);
 	[LinkName("QPainter_DrawRects4")]
 	public static extern void QPainter_DrawRects4(QPainter_Ptr* self, void** rectangles);
 	[LinkName("QPainter_DrawEllipse")]
@@ -209,17 +209,17 @@ extension CQt
 	[LinkName("QPainter_DrawEllipse5")]
 	public static extern void QPainter_DrawEllipse5(QPainter_Ptr* self, QPoint_Ptr* center, c_int rx, c_int ry);
 	[LinkName("QPainter_DrawPolyline")]
-	public static extern void QPainter_DrawPolyline(QPainter_Ptr* self, QPointF_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawPolyline(QPainter_Ptr* self, QPointF_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawPolyline3")]
-	public static extern void QPainter_DrawPolyline3(QPainter_Ptr* self, QPoint_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawPolyline3(QPainter_Ptr* self, QPoint_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawPolygon")]
-	public static extern void QPainter_DrawPolygon(QPainter_Ptr* self, QPointF_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawPolygon(QPainter_Ptr* self, QPointF_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawPolygon3")]
-	public static extern void QPainter_DrawPolygon3(QPainter_Ptr* self, QPoint_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawPolygon3(QPainter_Ptr* self, QPoint_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawConvexPolygon")]
-	public static extern void QPainter_DrawConvexPolygon(QPainter_Ptr* self, QPointF_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawConvexPolygon(QPainter_Ptr* self, QPointF_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawConvexPolygon3")]
-	public static extern void QPainter_DrawConvexPolygon3(QPainter_Ptr* self, QPoint_Ptr* points, c_int pointCount);
+	public static extern void QPainter_DrawConvexPolygon3(QPainter_Ptr* self, QPoint_Ptr** points, c_int pointCount);
 	[LinkName("QPainter_DrawArc")]
 	public static extern void QPainter_DrawArc(QPainter_Ptr* self, QRectF_Ptr* rect, c_int a, c_int alen);
 	[LinkName("QPainter_DrawArc2")]
@@ -279,7 +279,7 @@ extension CQt
 	[LinkName("QPainter_DrawPixmap11")]
 	public static extern void QPainter_DrawPixmap11(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h, QPixmap_Ptr* pm);
 	[LinkName("QPainter_DrawPixmapFragments")]
-	public static extern void QPainter_DrawPixmapFragments(QPainter_Ptr* self, QPainter_PixmapFragment* fragments, c_int fragmentCount, QPixmap_Ptr* pixmap);
+	public static extern void QPainter_DrawPixmapFragments(QPainter_Ptr* self, QPainter_PixmapFragment_Ptr** fragments, c_int fragmentCount, QPixmap_Ptr* pixmap);
 	[LinkName("QPainter_DrawImage")]
 	public static extern void QPainter_DrawImage(QPainter_Ptr* self, QRectF_Ptr* targetRect, QImage_Ptr* image, QRectF_Ptr* sourceRect);
 	[LinkName("QPainter_DrawImage2")]
@@ -311,29 +311,29 @@ extension CQt
 	[LinkName("QPainter_DrawStaticText3")]
 	public static extern void QPainter_DrawStaticText3(QPainter_Ptr* self, c_int left, c_int top, QStaticText_Ptr* staticText);
 	[LinkName("QPainter_DrawText")]
-	public static extern void QPainter_DrawText(QPainter_Ptr* self, QPointF_Ptr* p, libqt_string* s);
+	public static extern void QPainter_DrawText(QPainter_Ptr* self, QPointF_Ptr* p, libqt_string s);
 	[LinkName("QPainter_DrawText2")]
-	public static extern void QPainter_DrawText2(QPainter_Ptr* self, QPoint_Ptr* p, libqt_string* s);
+	public static extern void QPainter_DrawText2(QPainter_Ptr* self, QPoint_Ptr* p, libqt_string s);
 	[LinkName("QPainter_DrawText3")]
-	public static extern void QPainter_DrawText3(QPainter_Ptr* self, c_int x, c_int y, libqt_string* s);
+	public static extern void QPainter_DrawText3(QPainter_Ptr* self, c_int x, c_int y, libqt_string s);
 	[LinkName("QPainter_DrawText4")]
-	public static extern void QPainter_DrawText4(QPainter_Ptr* self, QPointF_Ptr* p, libqt_string* str, c_int tf, c_int justificationPadding);
+	public static extern void QPainter_DrawText4(QPainter_Ptr* self, QPointF_Ptr* p, libqt_string str, c_int tf, c_int justificationPadding);
 	[LinkName("QPainter_DrawText5")]
-	public static extern void QPainter_DrawText5(QPainter_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string* text);
+	public static extern void QPainter_DrawText5(QPainter_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string text);
 	[LinkName("QPainter_DrawText6")]
-	public static extern void QPainter_DrawText6(QPainter_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string* text);
+	public static extern void QPainter_DrawText6(QPainter_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string text);
 	[LinkName("QPainter_DrawText7")]
-	public static extern void QPainter_DrawText7(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text);
+	public static extern void QPainter_DrawText7(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string text);
 	[LinkName("QPainter_DrawText8")]
-	public static extern void QPainter_DrawText8(QPainter_Ptr* self, QRectF_Ptr* r, libqt_string* text);
+	public static extern void QPainter_DrawText8(QPainter_Ptr* self, QRectF_Ptr* r, libqt_string text);
 	[LinkName("QPainter_BoundingRect")]
-	public static extern QRectF_Ptr QPainter_BoundingRect(QPainter_Ptr* self, QRectF_Ptr* rect, c_int flags, libqt_string* text);
+	public static extern QRectF_Ptr* QPainter_BoundingRect(QPainter_Ptr* self, QRectF_Ptr* rect, c_int flags, libqt_string text);
 	[LinkName("QPainter_BoundingRect2")]
-	public static extern QRect_Ptr QPainter_BoundingRect2(QPainter_Ptr* self, QRect_Ptr* rect, c_int flags, libqt_string* text);
+	public static extern QRect_Ptr* QPainter_BoundingRect2(QPainter_Ptr* self, QRect_Ptr* rect, c_int flags, libqt_string text);
 	[LinkName("QPainter_BoundingRect3")]
-	public static extern QRect_Ptr QPainter_BoundingRect3(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text);
+	public static extern QRect_Ptr* QPainter_BoundingRect3(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string text);
 	[LinkName("QPainter_BoundingRect4")]
-	public static extern QRectF_Ptr QPainter_BoundingRect4(QPainter_Ptr* self, QRectF_Ptr* rect, libqt_string* text);
+	public static extern QRectF_Ptr* QPainter_BoundingRect4(QPainter_Ptr* self, QRectF_Ptr* rect, libqt_string text);
 	[LinkName("QPainter_DrawTextItem")]
 	public static extern void QPainter_DrawTextItem(QPainter_Ptr* self, QPointF_Ptr* p, QTextItem_Ptr* ti);
 	[LinkName("QPainter_DrawTextItem2")]
@@ -385,7 +385,7 @@ extension CQt
 	[LinkName("QPainter_TestRenderHint")]
 	public static extern bool QPainter_TestRenderHint(QPainter_Ptr* self, QPainter_RenderHint hint);
 	[LinkName("QPainter_PaintEngine")]
-	public static extern QPaintEngine_Ptr* QPainter_PaintEngine(QPainter_Ptr* self);
+	public static extern QPaintEngine_Ptr** QPainter_PaintEngine(QPainter_Ptr* self);
 	[LinkName("QPainter_BeginNativePainting")]
 	public static extern void QPainter_BeginNativePainting(QPainter_Ptr* self);
 	[LinkName("QPainter_EndNativePainting")]
@@ -405,9 +405,9 @@ extension CQt
 	[LinkName("QPainter_SetWorldTransform2")]
 	public static extern void QPainter_SetWorldTransform2(QPainter_Ptr* self, QTransform_Ptr* matrix, bool combine);
 	[LinkName("QPainter_DrawPolygon32")]
-	public static extern void QPainter_DrawPolygon32(QPainter_Ptr* self, QPointF_Ptr* points, c_int pointCount, Qt_FillRule fillRule);
+	public static extern void QPainter_DrawPolygon32(QPainter_Ptr* self, QPointF_Ptr** points, c_int pointCount, Qt_FillRule fillRule);
 	[LinkName("QPainter_DrawPolygon33")]
-	public static extern void QPainter_DrawPolygon33(QPainter_Ptr* self, QPoint_Ptr* points, c_int pointCount, Qt_FillRule fillRule);
+	public static extern void QPainter_DrawPolygon33(QPainter_Ptr* self, QPoint_Ptr** points, c_int pointCount, Qt_FillRule fillRule);
 	[LinkName("QPainter_DrawRoundedRect4")]
 	public static extern void QPainter_DrawRoundedRect4(QPainter_Ptr* self, QRectF_Ptr* rect, double xRadius, double yRadius, Qt_SizeMode mode);
 	[LinkName("QPainter_DrawRoundedRect7")]
@@ -423,7 +423,7 @@ extension CQt
 	[LinkName("QPainter_DrawTiledPixmap33")]
 	public static extern void QPainter_DrawTiledPixmap33(QPainter_Ptr* self, QRect_Ptr* param1, QPixmap_Ptr* param2, QPoint_Ptr* param3);
 	[LinkName("QPainter_DrawPixmapFragments4")]
-	public static extern void QPainter_DrawPixmapFragments4(QPainter_Ptr* self, QPainter_PixmapFragment* fragments, c_int fragmentCount, QPixmap_Ptr* pixmap, void* hints);
+	public static extern void QPainter_DrawPixmapFragments4(QPainter_Ptr* self, QPainter_PixmapFragment_Ptr** fragments, c_int fragmentCount, QPixmap_Ptr* pixmap, void* hints);
 	[LinkName("QPainter_DrawImage42")]
 	public static extern void QPainter_DrawImage42(QPainter_Ptr* self, QRectF_Ptr* targetRect, QImage_Ptr* image, QRectF_Ptr* sourceRect, void* flags);
 	[LinkName("QPainter_DrawImage43")]
@@ -443,42 +443,43 @@ extension CQt
 	[LinkName("QPainter_DrawImage82")]
 	public static extern void QPainter_DrawImage82(QPainter_Ptr* self, c_int x, c_int y, QImage_Ptr* image, c_int sx, c_int sy, c_int sw, c_int sh, void* flags);
 	[LinkName("QPainter_DrawText42")]
-	public static extern void QPainter_DrawText42(QPainter_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string* text, QRectF_Ptr* br);
+	public static extern void QPainter_DrawText42(QPainter_Ptr* self, QRectF_Ptr* r, c_int flags, libqt_string text, QRectF_Ptr** br);
 	[LinkName("QPainter_DrawText43")]
-	public static extern void QPainter_DrawText43(QPainter_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string* text, QRect_Ptr* br);
+	public static extern void QPainter_DrawText43(QPainter_Ptr* self, QRect_Ptr* r, c_int flags, libqt_string text, QRect_Ptr** br);
 	[LinkName("QPainter_DrawText72")]
-	public static extern void QPainter_DrawText72(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text, QRect_Ptr* br);
+	public static extern void QPainter_DrawText72(QPainter_Ptr* self, c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string text, QRect_Ptr** br);
 	[LinkName("QPainter_DrawText32")]
-	public static extern void QPainter_DrawText32(QPainter_Ptr* self, QRectF_Ptr* r, libqt_string* text, QTextOption_Ptr* o);
+	public static extern void QPainter_DrawText32(QPainter_Ptr* self, QRectF_Ptr* r, libqt_string text, QTextOption_Ptr* o);
 	[LinkName("QPainter_BoundingRect32")]
-	public static extern QRectF_Ptr QPainter_BoundingRect32(QPainter_Ptr* self, QRectF_Ptr* rect, libqt_string* text, QTextOption_Ptr* o);
+	public static extern QRectF_Ptr* QPainter_BoundingRect32(QPainter_Ptr* self, QRectF_Ptr* rect, libqt_string text, QTextOption_Ptr* o);
 	[LinkName("QPainter_SetRenderHint2")]
 	public static extern void QPainter_SetRenderHint2(QPainter_Ptr* self, QPainter_RenderHint hint, bool on);
 	[LinkName("QPainter_SetRenderHints2")]
 	public static extern void QPainter_SetRenderHints2(QPainter_Ptr* self, void* hints, bool on);
 }
-class QPainter
+class QPainter : IQPainter
 {
 	private QPainter_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QPainter_new();
 	}
-	public this(QPaintDevice_Ptr* param1)
+	public this(IQPaintDevice param1)
 	{
-		this.ptr = CQt.QPainter_new2(param1);
+		this.ptr = CQt.QPainter_new2((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QPainter_Delete(this.ptr);
 	}
-	public QPaintDevice_Ptr* Device()
+	public QPaintDevice_Ptr** Device()
 	{
 		return CQt.QPainter_Device((.)this.ptr);
 	}
-	public bool Begin(QPaintDevice_Ptr* param1)
+	public bool Begin(IQPaintDevice param1)
 	{
-		return CQt.QPainter_Begin((.)this.ptr, param1);
+		return CQt.QPainter_Begin((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public bool End()
 	{
@@ -500,25 +501,25 @@ class QPainter
 	{
 		return CQt.QPainter_Font((.)this.ptr);
 	}
-	public void SetFont(QFont_Ptr* f)
+	public void SetFont(IQFont f)
 	{
-		CQt.QPainter_SetFont((.)this.ptr, f);
+		CQt.QPainter_SetFont((.)this.ptr, (.)f?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr FontMetrics()
+	public QFontMetrics_Ptr* FontMetrics()
 	{
 		return CQt.QPainter_FontMetrics((.)this.ptr);
 	}
-	public QFontInfo_Ptr FontInfo()
+	public QFontInfo_Ptr* FontInfo()
 	{
 		return CQt.QPainter_FontInfo((.)this.ptr);
 	}
-	public void SetPen(QColor_Ptr* color)
+	public void SetPen(IQColor color)
 	{
-		CQt.QPainter_SetPen((.)this.ptr, color);
+		CQt.QPainter_SetPen((.)this.ptr, (.)color?.ObjectPtr);
 	}
-	public void SetPen2(QPen_Ptr* pen)
+	public void SetPen2(IQPen pen)
 	{
-		CQt.QPainter_SetPen2((.)this.ptr, pen);
+		CQt.QPainter_SetPen2((.)this.ptr, (.)pen?.ObjectPtr);
 	}
 	public void SetPen3(Qt_PenStyle style)
 	{
@@ -528,9 +529,9 @@ class QPainter
 	{
 		return CQt.QPainter_Pen((.)this.ptr);
 	}
-	public void SetBrush(QBrush_Ptr* brush)
+	public void SetBrush(IQBrush brush)
 	{
-		CQt.QPainter_SetBrush((.)this.ptr, brush);
+		CQt.QPainter_SetBrush((.)this.ptr, (.)brush?.ObjectPtr);
 	}
 	public void SetBrush2(Qt_BrushStyle style)
 	{
@@ -548,7 +549,7 @@ class QPainter
 	{
 		return CQt.QPainter_BackgroundMode((.)this.ptr);
 	}
-	public QPoint_Ptr BrushOrigin()
+	public QPoint_Ptr* BrushOrigin()
 	{
 		return CQt.QPainter_BrushOrigin((.)this.ptr);
 	}
@@ -556,17 +557,17 @@ class QPainter
 	{
 		CQt.QPainter_SetBrushOrigin((.)this.ptr, x, y);
 	}
-	public void SetBrushOrigin2(QPoint_Ptr* brushOrigin)
+	public void SetBrushOrigin2(IQPoint brushOrigin)
 	{
-		CQt.QPainter_SetBrushOrigin2((.)this.ptr, brushOrigin);
+		CQt.QPainter_SetBrushOrigin2((.)this.ptr, (.)brushOrigin?.ObjectPtr);
 	}
-	public void SetBrushOrigin3(QPointF_Ptr* brushOrigin)
+	public void SetBrushOrigin3(IQPointF brushOrigin)
 	{
-		CQt.QPainter_SetBrushOrigin3((.)this.ptr, brushOrigin);
+		CQt.QPainter_SetBrushOrigin3((.)this.ptr, (.)brushOrigin?.ObjectPtr);
 	}
-	public void SetBackground(QBrush_Ptr* bg)
+	public void SetBackground(IQBrush bg)
 	{
-		CQt.QPainter_SetBackground((.)this.ptr, bg);
+		CQt.QPainter_SetBackground((.)this.ptr, (.)bg?.ObjectPtr);
 	}
 	public QBrush_Ptr* Background()
 	{
@@ -580,33 +581,33 @@ class QPainter
 	{
 		CQt.QPainter_SetOpacity((.)this.ptr, opacity);
 	}
-	public QRegion_Ptr ClipRegion()
+	public QRegion_Ptr* ClipRegion()
 	{
 		return CQt.QPainter_ClipRegion((.)this.ptr);
 	}
-	public QPainterPath_Ptr ClipPath()
+	public QPainterPath_Ptr* ClipPath()
 	{
 		return CQt.QPainter_ClipPath((.)this.ptr);
 	}
-	public void SetClipRect(QRectF_Ptr* param1)
+	public void SetClipRect(IQRectF param1)
 	{
-		CQt.QPainter_SetClipRect((.)this.ptr, param1);
+		CQt.QPainter_SetClipRect((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public void SetClipRect2(QRect_Ptr* param1)
+	public void SetClipRect2(IQRect param1)
 	{
-		CQt.QPainter_SetClipRect2((.)this.ptr, param1);
+		CQt.QPainter_SetClipRect2((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public void SetClipRect3(c_int x, c_int y, c_int w, c_int h)
 	{
 		CQt.QPainter_SetClipRect3((.)this.ptr, x, y, w, h);
 	}
-	public void SetClipRegion(QRegion_Ptr* param1)
+	public void SetClipRegion(IQRegion param1)
 	{
-		CQt.QPainter_SetClipRegion((.)this.ptr, param1);
+		CQt.QPainter_SetClipRegion((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public void SetClipPath(QPainterPath_Ptr* path)
+	public void SetClipPath(IQPainterPath path)
 	{
-		CQt.QPainter_SetClipPath((.)this.ptr, path);
+		CQt.QPainter_SetClipPath((.)this.ptr, (.)path?.ObjectPtr);
 	}
 	public void SetClipping(bool enable)
 	{
@@ -616,7 +617,7 @@ class QPainter
 	{
 		return CQt.QPainter_HasClipping((.)this.ptr);
 	}
-	public QRectF_Ptr ClipBoundingRect()
+	public QRectF_Ptr* ClipBoundingRect()
 	{
 		return CQt.QPainter_ClipBoundingRect((.)this.ptr);
 	}
@@ -628,9 +629,9 @@ class QPainter
 	{
 		CQt.QPainter_Restore((.)this.ptr);
 	}
-	public void SetTransform(QTransform_Ptr* transform)
+	public void SetTransform(IQTransform transform)
 	{
-		CQt.QPainter_SetTransform((.)this.ptr, transform);
+		CQt.QPainter_SetTransform((.)this.ptr, (.)transform?.ObjectPtr);
 	}
 	public QTransform_Ptr* Transform()
 	{
@@ -644,15 +645,15 @@ class QPainter
 	{
 		CQt.QPainter_ResetTransform((.)this.ptr);
 	}
-	public void SetWorldTransform(QTransform_Ptr* matrix)
+	public void SetWorldTransform(IQTransform matrix)
 	{
-		CQt.QPainter_SetWorldTransform((.)this.ptr, matrix);
+		CQt.QPainter_SetWorldTransform((.)this.ptr, (.)matrix?.ObjectPtr);
 	}
 	public QTransform_Ptr* WorldTransform()
 	{
 		return CQt.QPainter_WorldTransform((.)this.ptr);
 	}
-	public QTransform_Ptr CombinedTransform()
+	public QTransform_Ptr* CombinedTransform()
 	{
 		return CQt.QPainter_CombinedTransform((.)this.ptr);
 	}
@@ -676,37 +677,37 @@ class QPainter
 	{
 		CQt.QPainter_Rotate((.)this.ptr, a);
 	}
-	public void Translate(QPointF_Ptr* offset)
+	public void Translate(IQPointF offset)
 	{
-		CQt.QPainter_Translate((.)this.ptr, offset);
+		CQt.QPainter_Translate((.)this.ptr, (.)offset?.ObjectPtr);
 	}
-	public void Translate2(QPoint_Ptr* offset)
+	public void Translate2(IQPoint offset)
 	{
-		CQt.QPainter_Translate2((.)this.ptr, offset);
+		CQt.QPainter_Translate2((.)this.ptr, (.)offset?.ObjectPtr);
 	}
 	public void Translate3(double dx, double dy)
 	{
 		CQt.QPainter_Translate3((.)this.ptr, dx, dy);
 	}
-	public QRect_Ptr Window()
+	public QRect_Ptr* Window()
 	{
 		return CQt.QPainter_Window((.)this.ptr);
 	}
-	public void SetWindow(QRect_Ptr* window)
+	public void SetWindow(IQRect window)
 	{
-		CQt.QPainter_SetWindow((.)this.ptr, window);
+		CQt.QPainter_SetWindow((.)this.ptr, (.)window?.ObjectPtr);
 	}
 	public void SetWindow2(c_int x, c_int y, c_int w, c_int h)
 	{
 		CQt.QPainter_SetWindow2((.)this.ptr, x, y, w, h);
 	}
-	public QRect_Ptr Viewport()
+	public QRect_Ptr* Viewport()
 	{
 		return CQt.QPainter_Viewport((.)this.ptr);
 	}
-	public void SetViewport(QRect_Ptr* viewport)
+	public void SetViewport(IQRect viewport)
 	{
-		CQt.QPainter_SetViewport((.)this.ptr, viewport);
+		CQt.QPainter_SetViewport((.)this.ptr, (.)viewport?.ObjectPtr);
 	}
 	public void SetViewport2(c_int x, c_int y, c_int w, c_int h)
 	{
@@ -720,317 +721,317 @@ class QPainter
 	{
 		return CQt.QPainter_ViewTransformEnabled((.)this.ptr);
 	}
-	public void StrokePath(QPainterPath_Ptr* path, QPen_Ptr* pen)
+	public void StrokePath(IQPainterPath path, IQPen pen)
 	{
-		CQt.QPainter_StrokePath((.)this.ptr, path, pen);
+		CQt.QPainter_StrokePath((.)this.ptr, (.)path?.ObjectPtr, (.)pen?.ObjectPtr);
 	}
-	public void FillPath(QPainterPath_Ptr* path, QBrush_Ptr* brush)
+	public void FillPath(IQPainterPath path, IQBrush brush)
 	{
-		CQt.QPainter_FillPath((.)this.ptr, path, brush);
+		CQt.QPainter_FillPath((.)this.ptr, (.)path?.ObjectPtr, (.)brush?.ObjectPtr);
 	}
-	public void DrawPath(QPainterPath_Ptr* path)
+	public void DrawPath(IQPainterPath path)
 	{
-		CQt.QPainter_DrawPath((.)this.ptr, path);
+		CQt.QPainter_DrawPath((.)this.ptr, (.)path?.ObjectPtr);
 	}
-	public void DrawPoint(QPointF_Ptr* pt)
+	public void DrawPoint(IQPointF pt)
 	{
-		CQt.QPainter_DrawPoint((.)this.ptr, pt);
+		CQt.QPainter_DrawPoint((.)this.ptr, (.)pt?.ObjectPtr);
 	}
-	public void DrawPoint2(QPoint_Ptr* p)
+	public void DrawPoint2(IQPoint p)
 	{
-		CQt.QPainter_DrawPoint2((.)this.ptr, p);
+		CQt.QPainter_DrawPoint2((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public void DrawPoint3(c_int x, c_int y)
 	{
 		CQt.QPainter_DrawPoint3((.)this.ptr, x, y);
 	}
-	public void DrawPoints(QPointF_Ptr* points, c_int pointCount)
+	public void DrawPoints(IQPointF points, c_int pointCount)
 	{
-		CQt.QPainter_DrawPoints((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawPoints((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawPoints3(QPoint_Ptr* points, c_int pointCount)
+	public void DrawPoints3(IQPoint points, c_int pointCount)
 	{
-		CQt.QPainter_DrawPoints3((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawPoints3((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawLine(QLineF_Ptr* line)
+	public void DrawLine(IQLineF line)
 	{
-		CQt.QPainter_DrawLine((.)this.ptr, line);
+		CQt.QPainter_DrawLine((.)this.ptr, (.)line?.ObjectPtr);
 	}
-	public void DrawLine2(QLine_Ptr* line)
+	public void DrawLine2(IQLine line)
 	{
-		CQt.QPainter_DrawLine2((.)this.ptr, line);
+		CQt.QPainter_DrawLine2((.)this.ptr, (.)line?.ObjectPtr);
 	}
 	public void DrawLine3(c_int x1, c_int y1, c_int x2, c_int y2)
 	{
 		CQt.QPainter_DrawLine3((.)this.ptr, x1, y1, x2, y2);
 	}
-	public void DrawLine4(QPoint_Ptr* p1, QPoint_Ptr* p2)
+	public void DrawLine4(IQPoint p1, IQPoint p2)
 	{
-		CQt.QPainter_DrawLine4((.)this.ptr, p1, p2);
+		CQt.QPainter_DrawLine4((.)this.ptr, (.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
 	}
-	public void DrawLine5(QPointF_Ptr* p1, QPointF_Ptr* p2)
+	public void DrawLine5(IQPointF p1, IQPointF p2)
 	{
-		CQt.QPainter_DrawLine5((.)this.ptr, p1, p2);
+		CQt.QPainter_DrawLine5((.)this.ptr, (.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
 	}
-	public void DrawLines(QLineF_Ptr* lines, c_int lineCount)
+	public void DrawLines(IQLineF lines, c_int lineCount)
 	{
-		CQt.QPainter_DrawLines((.)this.ptr, lines, lineCount);
+		CQt.QPainter_DrawLines((.)this.ptr, (.)lines?.ObjectPtr, lineCount);
 	}
 	public void DrawLines2(void** lines)
 	{
 		CQt.QPainter_DrawLines2((.)this.ptr, lines);
 	}
-	public void DrawLines3(QPointF_Ptr* pointPairs, c_int lineCount)
+	public void DrawLines3(IQPointF pointPairs, c_int lineCount)
 	{
-		CQt.QPainter_DrawLines3((.)this.ptr, pointPairs, lineCount);
+		CQt.QPainter_DrawLines3((.)this.ptr, (.)pointPairs?.ObjectPtr, lineCount);
 	}
 	public void DrawLines4(void** pointPairs)
 	{
 		CQt.QPainter_DrawLines4((.)this.ptr, pointPairs);
 	}
-	public void DrawLines5(QLine_Ptr* lines, c_int lineCount)
+	public void DrawLines5(IQLine lines, c_int lineCount)
 	{
-		CQt.QPainter_DrawLines5((.)this.ptr, lines, lineCount);
+		CQt.QPainter_DrawLines5((.)this.ptr, (.)lines?.ObjectPtr, lineCount);
 	}
 	public void DrawLines6(void** lines)
 	{
 		CQt.QPainter_DrawLines6((.)this.ptr, lines);
 	}
-	public void DrawLines7(QPoint_Ptr* pointPairs, c_int lineCount)
+	public void DrawLines7(IQPoint pointPairs, c_int lineCount)
 	{
-		CQt.QPainter_DrawLines7((.)this.ptr, pointPairs, lineCount);
+		CQt.QPainter_DrawLines7((.)this.ptr, (.)pointPairs?.ObjectPtr, lineCount);
 	}
 	public void DrawLines8(void** pointPairs)
 	{
 		CQt.QPainter_DrawLines8((.)this.ptr, pointPairs);
 	}
-	public void DrawRect(QRectF_Ptr* rect)
+	public void DrawRect(IQRectF rect)
 	{
-		CQt.QPainter_DrawRect((.)this.ptr, rect);
+		CQt.QPainter_DrawRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public void DrawRect2(c_int x1, c_int y1, c_int w, c_int h)
 	{
 		CQt.QPainter_DrawRect2((.)this.ptr, x1, y1, w, h);
 	}
-	public void DrawRect3(QRect_Ptr* rect)
+	public void DrawRect3(IQRect rect)
 	{
-		CQt.QPainter_DrawRect3((.)this.ptr, rect);
+		CQt.QPainter_DrawRect3((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public void DrawRects(QRectF_Ptr* rects, c_int rectCount)
+	public void DrawRects(IQRectF rects, c_int rectCount)
 	{
-		CQt.QPainter_DrawRects((.)this.ptr, rects, rectCount);
+		CQt.QPainter_DrawRects((.)this.ptr, (.)rects?.ObjectPtr, rectCount);
 	}
 	public void DrawRects2(void** rectangles)
 	{
 		CQt.QPainter_DrawRects2((.)this.ptr, rectangles);
 	}
-	public void DrawRects3(QRect_Ptr* rects, c_int rectCount)
+	public void DrawRects3(IQRect rects, c_int rectCount)
 	{
-		CQt.QPainter_DrawRects3((.)this.ptr, rects, rectCount);
+		CQt.QPainter_DrawRects3((.)this.ptr, (.)rects?.ObjectPtr, rectCount);
 	}
 	public void DrawRects4(void** rectangles)
 	{
 		CQt.QPainter_DrawRects4((.)this.ptr, rectangles);
 	}
-	public void DrawEllipse(QRectF_Ptr* r)
+	public void DrawEllipse(IQRectF r)
 	{
-		CQt.QPainter_DrawEllipse((.)this.ptr, r);
+		CQt.QPainter_DrawEllipse((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public void DrawEllipse2(QRect_Ptr* r)
+	public void DrawEllipse2(IQRect r)
 	{
-		CQt.QPainter_DrawEllipse2((.)this.ptr, r);
+		CQt.QPainter_DrawEllipse2((.)this.ptr, (.)r?.ObjectPtr);
 	}
 	public void DrawEllipse3(c_int x, c_int y, c_int w, c_int h)
 	{
 		CQt.QPainter_DrawEllipse3((.)this.ptr, x, y, w, h);
 	}
-	public void DrawEllipse4(QPointF_Ptr* center, double rx, double ry)
+	public void DrawEllipse4(IQPointF center, double rx, double ry)
 	{
-		CQt.QPainter_DrawEllipse4((.)this.ptr, center, rx, ry);
+		CQt.QPainter_DrawEllipse4((.)this.ptr, (.)center?.ObjectPtr, rx, ry);
 	}
-	public void DrawEllipse5(QPoint_Ptr* center, c_int rx, c_int ry)
+	public void DrawEllipse5(IQPoint center, c_int rx, c_int ry)
 	{
-		CQt.QPainter_DrawEllipse5((.)this.ptr, center, rx, ry);
+		CQt.QPainter_DrawEllipse5((.)this.ptr, (.)center?.ObjectPtr, rx, ry);
 	}
-	public void DrawPolyline(QPointF_Ptr* points, c_int pointCount)
+	public void DrawPolyline(IQPointF points, c_int pointCount)
 	{
-		CQt.QPainter_DrawPolyline((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawPolyline((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawPolyline3(QPoint_Ptr* points, c_int pointCount)
+	public void DrawPolyline3(IQPoint points, c_int pointCount)
 	{
-		CQt.QPainter_DrawPolyline3((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawPolyline3((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawPolygon(QPointF_Ptr* points, c_int pointCount)
+	public void DrawPolygon(IQPointF points, c_int pointCount)
 	{
-		CQt.QPainter_DrawPolygon((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawPolygon((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawPolygon3(QPoint_Ptr* points, c_int pointCount)
+	public void DrawPolygon3(IQPoint points, c_int pointCount)
 	{
-		CQt.QPainter_DrawPolygon3((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawPolygon3((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawConvexPolygon(QPointF_Ptr* points, c_int pointCount)
+	public void DrawConvexPolygon(IQPointF points, c_int pointCount)
 	{
-		CQt.QPainter_DrawConvexPolygon((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawConvexPolygon((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawConvexPolygon3(QPoint_Ptr* points, c_int pointCount)
+	public void DrawConvexPolygon3(IQPoint points, c_int pointCount)
 	{
-		CQt.QPainter_DrawConvexPolygon3((.)this.ptr, points, pointCount);
+		CQt.QPainter_DrawConvexPolygon3((.)this.ptr, (.)points?.ObjectPtr, pointCount);
 	}
-	public void DrawArc(QRectF_Ptr* rect, c_int a, c_int alen)
+	public void DrawArc(IQRectF rect, c_int a, c_int alen)
 	{
-		CQt.QPainter_DrawArc((.)this.ptr, rect, a, alen);
+		CQt.QPainter_DrawArc((.)this.ptr, (.)rect?.ObjectPtr, a, alen);
 	}
-	public void DrawArc2(QRect_Ptr* param1, c_int a, c_int alen)
+	public void DrawArc2(IQRect param1, c_int a, c_int alen)
 	{
-		CQt.QPainter_DrawArc2((.)this.ptr, param1, a, alen);
+		CQt.QPainter_DrawArc2((.)this.ptr, (.)param1?.ObjectPtr, a, alen);
 	}
 	public void DrawArc3(c_int x, c_int y, c_int w, c_int h, c_int a, c_int alen)
 	{
 		CQt.QPainter_DrawArc3((.)this.ptr, x, y, w, h, a, alen);
 	}
-	public void DrawPie(QRectF_Ptr* rect, c_int a, c_int alen)
+	public void DrawPie(IQRectF rect, c_int a, c_int alen)
 	{
-		CQt.QPainter_DrawPie((.)this.ptr, rect, a, alen);
+		CQt.QPainter_DrawPie((.)this.ptr, (.)rect?.ObjectPtr, a, alen);
 	}
 	public void DrawPie2(c_int x, c_int y, c_int w, c_int h, c_int a, c_int alen)
 	{
 		CQt.QPainter_DrawPie2((.)this.ptr, x, y, w, h, a, alen);
 	}
-	public void DrawPie3(QRect_Ptr* param1, c_int a, c_int alen)
+	public void DrawPie3(IQRect param1, c_int a, c_int alen)
 	{
-		CQt.QPainter_DrawPie3((.)this.ptr, param1, a, alen);
+		CQt.QPainter_DrawPie3((.)this.ptr, (.)param1?.ObjectPtr, a, alen);
 	}
-	public void DrawChord(QRectF_Ptr* rect, c_int a, c_int alen)
+	public void DrawChord(IQRectF rect, c_int a, c_int alen)
 	{
-		CQt.QPainter_DrawChord((.)this.ptr, rect, a, alen);
+		CQt.QPainter_DrawChord((.)this.ptr, (.)rect?.ObjectPtr, a, alen);
 	}
 	public void DrawChord2(c_int x, c_int y, c_int w, c_int h, c_int a, c_int alen)
 	{
 		CQt.QPainter_DrawChord2((.)this.ptr, x, y, w, h, a, alen);
 	}
-	public void DrawChord3(QRect_Ptr* param1, c_int a, c_int alen)
+	public void DrawChord3(IQRect param1, c_int a, c_int alen)
 	{
-		CQt.QPainter_DrawChord3((.)this.ptr, param1, a, alen);
+		CQt.QPainter_DrawChord3((.)this.ptr, (.)param1?.ObjectPtr, a, alen);
 	}
-	public void DrawRoundedRect(QRectF_Ptr* rect, double xRadius, double yRadius)
+	public void DrawRoundedRect(IQRectF rect, double xRadius, double yRadius)
 	{
-		CQt.QPainter_DrawRoundedRect((.)this.ptr, rect, xRadius, yRadius);
+		CQt.QPainter_DrawRoundedRect((.)this.ptr, (.)rect?.ObjectPtr, xRadius, yRadius);
 	}
 	public void DrawRoundedRect2(c_int x, c_int y, c_int w, c_int h, double xRadius, double yRadius)
 	{
 		CQt.QPainter_DrawRoundedRect2((.)this.ptr, x, y, w, h, xRadius, yRadius);
 	}
-	public void DrawRoundedRect3(QRect_Ptr* rect, double xRadius, double yRadius)
+	public void DrawRoundedRect3(IQRect rect, double xRadius, double yRadius)
 	{
-		CQt.QPainter_DrawRoundedRect3((.)this.ptr, rect, xRadius, yRadius);
+		CQt.QPainter_DrawRoundedRect3((.)this.ptr, (.)rect?.ObjectPtr, xRadius, yRadius);
 	}
-	public void DrawTiledPixmap(QRectF_Ptr* rect, QPixmap_Ptr* pm)
+	public void DrawTiledPixmap(IQRectF rect, IQPixmap pm)
 	{
-		CQt.QPainter_DrawTiledPixmap((.)this.ptr, rect, pm);
+		CQt.QPainter_DrawTiledPixmap((.)this.ptr, (.)rect?.ObjectPtr, (.)pm?.ObjectPtr);
 	}
-	public void DrawTiledPixmap2(c_int x, c_int y, c_int w, c_int h, QPixmap_Ptr* param5)
+	public void DrawTiledPixmap2(c_int x, c_int y, c_int w, c_int h, IQPixmap param5)
 	{
-		CQt.QPainter_DrawTiledPixmap2((.)this.ptr, x, y, w, h, param5);
+		CQt.QPainter_DrawTiledPixmap2((.)this.ptr, x, y, w, h, (.)param5?.ObjectPtr);
 	}
-	public void DrawTiledPixmap3(QRect_Ptr* param1, QPixmap_Ptr* param2)
+	public void DrawTiledPixmap3(IQRect param1, IQPixmap param2)
 	{
-		CQt.QPainter_DrawTiledPixmap3((.)this.ptr, param1, param2);
+		CQt.QPainter_DrawTiledPixmap3((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
 	}
-	public void DrawPicture(QPointF_Ptr* p, QPicture_Ptr* picture)
+	public void DrawPicture(IQPointF p, IQPicture picture)
 	{
-		CQt.QPainter_DrawPicture((.)this.ptr, p, picture);
+		CQt.QPainter_DrawPicture((.)this.ptr, (.)p?.ObjectPtr, (.)picture?.ObjectPtr);
 	}
-	public void DrawPicture2(c_int x, c_int y, QPicture_Ptr* picture)
+	public void DrawPicture2(c_int x, c_int y, IQPicture picture)
 	{
-		CQt.QPainter_DrawPicture2((.)this.ptr, x, y, picture);
+		CQt.QPainter_DrawPicture2((.)this.ptr, x, y, (.)picture?.ObjectPtr);
 	}
-	public void DrawPicture3(QPoint_Ptr* p, QPicture_Ptr* picture)
+	public void DrawPicture3(IQPoint p, IQPicture picture)
 	{
-		CQt.QPainter_DrawPicture3((.)this.ptr, p, picture);
+		CQt.QPainter_DrawPicture3((.)this.ptr, (.)p?.ObjectPtr, (.)picture?.ObjectPtr);
 	}
-	public void DrawPixmap(QRectF_Ptr* targetRect, QPixmap_Ptr* pixmap, QRectF_Ptr* sourceRect)
+	public void DrawPixmap(IQRectF targetRect, IQPixmap pixmap, IQRectF sourceRect)
 	{
-		CQt.QPainter_DrawPixmap((.)this.ptr, targetRect, pixmap, sourceRect);
+		CQt.QPainter_DrawPixmap((.)this.ptr, (.)targetRect?.ObjectPtr, (.)pixmap?.ObjectPtr, (.)sourceRect?.ObjectPtr);
 	}
-	public void DrawPixmap2(QRect_Ptr* targetRect, QPixmap_Ptr* pixmap, QRect_Ptr* sourceRect)
+	public void DrawPixmap2(IQRect targetRect, IQPixmap pixmap, IQRect sourceRect)
 	{
-		CQt.QPainter_DrawPixmap2((.)this.ptr, targetRect, pixmap, sourceRect);
+		CQt.QPainter_DrawPixmap2((.)this.ptr, (.)targetRect?.ObjectPtr, (.)pixmap?.ObjectPtr, (.)sourceRect?.ObjectPtr);
 	}
-	public void DrawPixmap3(c_int x, c_int y, c_int w, c_int h, QPixmap_Ptr* pm, c_int sx, c_int sy, c_int sw, c_int sh)
+	public void DrawPixmap3(c_int x, c_int y, c_int w, c_int h, IQPixmap pm, c_int sx, c_int sy, c_int sw, c_int sh)
 	{
-		CQt.QPainter_DrawPixmap3((.)this.ptr, x, y, w, h, pm, sx, sy, sw, sh);
+		CQt.QPainter_DrawPixmap3((.)this.ptr, x, y, w, h, (.)pm?.ObjectPtr, sx, sy, sw, sh);
 	}
-	public void DrawPixmap4(c_int x, c_int y, QPixmap_Ptr* pm, c_int sx, c_int sy, c_int sw, c_int sh)
+	public void DrawPixmap4(c_int x, c_int y, IQPixmap pm, c_int sx, c_int sy, c_int sw, c_int sh)
 	{
-		CQt.QPainter_DrawPixmap4((.)this.ptr, x, y, pm, sx, sy, sw, sh);
+		CQt.QPainter_DrawPixmap4((.)this.ptr, x, y, (.)pm?.ObjectPtr, sx, sy, sw, sh);
 	}
-	public void DrawPixmap5(QPointF_Ptr* p, QPixmap_Ptr* pm, QRectF_Ptr* sr)
+	public void DrawPixmap5(IQPointF p, IQPixmap pm, IQRectF sr)
 	{
-		CQt.QPainter_DrawPixmap5((.)this.ptr, p, pm, sr);
+		CQt.QPainter_DrawPixmap5((.)this.ptr, (.)p?.ObjectPtr, (.)pm?.ObjectPtr, (.)sr?.ObjectPtr);
 	}
-	public void DrawPixmap6(QPoint_Ptr* p, QPixmap_Ptr* pm, QRect_Ptr* sr)
+	public void DrawPixmap6(IQPoint p, IQPixmap pm, IQRect sr)
 	{
-		CQt.QPainter_DrawPixmap6((.)this.ptr, p, pm, sr);
+		CQt.QPainter_DrawPixmap6((.)this.ptr, (.)p?.ObjectPtr, (.)pm?.ObjectPtr, (.)sr?.ObjectPtr);
 	}
-	public void DrawPixmap7(QPointF_Ptr* p, QPixmap_Ptr* pm)
+	public void DrawPixmap7(IQPointF p, IQPixmap pm)
 	{
-		CQt.QPainter_DrawPixmap7((.)this.ptr, p, pm);
+		CQt.QPainter_DrawPixmap7((.)this.ptr, (.)p?.ObjectPtr, (.)pm?.ObjectPtr);
 	}
-	public void DrawPixmap8(QPoint_Ptr* p, QPixmap_Ptr* pm)
+	public void DrawPixmap8(IQPoint p, IQPixmap pm)
 	{
-		CQt.QPainter_DrawPixmap8((.)this.ptr, p, pm);
+		CQt.QPainter_DrawPixmap8((.)this.ptr, (.)p?.ObjectPtr, (.)pm?.ObjectPtr);
 	}
-	public void DrawPixmap9(c_int x, c_int y, QPixmap_Ptr* pm)
+	public void DrawPixmap9(c_int x, c_int y, IQPixmap pm)
 	{
-		CQt.QPainter_DrawPixmap9((.)this.ptr, x, y, pm);
+		CQt.QPainter_DrawPixmap9((.)this.ptr, x, y, (.)pm?.ObjectPtr);
 	}
-	public void DrawPixmap10(QRect_Ptr* r, QPixmap_Ptr* pm)
+	public void DrawPixmap10(IQRect r, IQPixmap pm)
 	{
-		CQt.QPainter_DrawPixmap10((.)this.ptr, r, pm);
+		CQt.QPainter_DrawPixmap10((.)this.ptr, (.)r?.ObjectPtr, (.)pm?.ObjectPtr);
 	}
-	public void DrawPixmap11(c_int x, c_int y, c_int w, c_int h, QPixmap_Ptr* pm)
+	public void DrawPixmap11(c_int x, c_int y, c_int w, c_int h, IQPixmap pm)
 	{
-		CQt.QPainter_DrawPixmap11((.)this.ptr, x, y, w, h, pm);
+		CQt.QPainter_DrawPixmap11((.)this.ptr, x, y, w, h, (.)pm?.ObjectPtr);
 	}
-	public void DrawPixmapFragments(QPainter_PixmapFragment* fragments, c_int fragmentCount, QPixmap_Ptr* pixmap)
+	public void DrawPixmapFragments(IQPainter_PixmapFragment fragments, c_int fragmentCount, IQPixmap pixmap)
 	{
-		CQt.QPainter_DrawPixmapFragments((.)this.ptr, fragments, fragmentCount, pixmap);
+		CQt.QPainter_DrawPixmapFragments((.)this.ptr, (.)fragments?.ObjectPtr, fragmentCount, (.)pixmap?.ObjectPtr);
 	}
-	public void DrawImage(QRectF_Ptr* targetRect, QImage_Ptr* image, QRectF_Ptr* sourceRect)
+	public void DrawImage(IQRectF targetRect, IQImage image, IQRectF sourceRect)
 	{
-		CQt.QPainter_DrawImage((.)this.ptr, targetRect, image, sourceRect);
+		CQt.QPainter_DrawImage((.)this.ptr, (.)targetRect?.ObjectPtr, (.)image?.ObjectPtr, (.)sourceRect?.ObjectPtr);
 	}
-	public void DrawImage2(QRect_Ptr* targetRect, QImage_Ptr* image, QRect_Ptr* sourceRect)
+	public void DrawImage2(IQRect targetRect, IQImage image, IQRect sourceRect)
 	{
-		CQt.QPainter_DrawImage2((.)this.ptr, targetRect, image, sourceRect);
+		CQt.QPainter_DrawImage2((.)this.ptr, (.)targetRect?.ObjectPtr, (.)image?.ObjectPtr, (.)sourceRect?.ObjectPtr);
 	}
-	public void DrawImage3(QPointF_Ptr* p, QImage_Ptr* image, QRectF_Ptr* sr)
+	public void DrawImage3(IQPointF p, IQImage image, IQRectF sr)
 	{
-		CQt.QPainter_DrawImage3((.)this.ptr, p, image, sr);
+		CQt.QPainter_DrawImage3((.)this.ptr, (.)p?.ObjectPtr, (.)image?.ObjectPtr, (.)sr?.ObjectPtr);
 	}
-	public void DrawImage4(QPoint_Ptr* p, QImage_Ptr* image, QRect_Ptr* sr)
+	public void DrawImage4(IQPoint p, IQImage image, IQRect sr)
 	{
-		CQt.QPainter_DrawImage4((.)this.ptr, p, image, sr);
+		CQt.QPainter_DrawImage4((.)this.ptr, (.)p?.ObjectPtr, (.)image?.ObjectPtr, (.)sr?.ObjectPtr);
 	}
-	public void DrawImage5(QRectF_Ptr* r, QImage_Ptr* image)
+	public void DrawImage5(IQRectF r, IQImage image)
 	{
-		CQt.QPainter_DrawImage5((.)this.ptr, r, image);
+		CQt.QPainter_DrawImage5((.)this.ptr, (.)r?.ObjectPtr, (.)image?.ObjectPtr);
 	}
-	public void DrawImage6(QRect_Ptr* r, QImage_Ptr* image)
+	public void DrawImage6(IQRect r, IQImage image)
 	{
-		CQt.QPainter_DrawImage6((.)this.ptr, r, image);
+		CQt.QPainter_DrawImage6((.)this.ptr, (.)r?.ObjectPtr, (.)image?.ObjectPtr);
 	}
-	public void DrawImage7(QPointF_Ptr* p, QImage_Ptr* image)
+	public void DrawImage7(IQPointF p, IQImage image)
 	{
-		CQt.QPainter_DrawImage7((.)this.ptr, p, image);
+		CQt.QPainter_DrawImage7((.)this.ptr, (.)p?.ObjectPtr, (.)image?.ObjectPtr);
 	}
-	public void DrawImage8(QPoint_Ptr* p, QImage_Ptr* image)
+	public void DrawImage8(IQPoint p, IQImage image)
 	{
-		CQt.QPainter_DrawImage8((.)this.ptr, p, image);
+		CQt.QPainter_DrawImage8((.)this.ptr, (.)p?.ObjectPtr, (.)image?.ObjectPtr);
 	}
-	public void DrawImage9(c_int x, c_int y, QImage_Ptr* image)
+	public void DrawImage9(c_int x, c_int y, IQImage image)
 	{
-		CQt.QPainter_DrawImage9((.)this.ptr, x, y, image);
+		CQt.QPainter_DrawImage9((.)this.ptr, x, y, (.)image?.ObjectPtr);
 	}
 	public void SetLayoutDirection(Qt_LayoutDirection direction)
 	{
@@ -1040,153 +1041,153 @@ class QPainter
 	{
 		return CQt.QPainter_LayoutDirection((.)this.ptr);
 	}
-	public void DrawGlyphRun(QPointF_Ptr* position, QGlyphRun_Ptr* glyphRun)
+	public void DrawGlyphRun(IQPointF position, IQGlyphRun glyphRun)
 	{
-		CQt.QPainter_DrawGlyphRun((.)this.ptr, position, glyphRun);
+		CQt.QPainter_DrawGlyphRun((.)this.ptr, (.)position?.ObjectPtr, (.)glyphRun?.ObjectPtr);
 	}
-	public void DrawStaticText(QPointF_Ptr* topLeftPosition, QStaticText_Ptr* staticText)
+	public void DrawStaticText(IQPointF topLeftPosition, IQStaticText staticText)
 	{
-		CQt.QPainter_DrawStaticText((.)this.ptr, topLeftPosition, staticText);
+		CQt.QPainter_DrawStaticText((.)this.ptr, (.)topLeftPosition?.ObjectPtr, (.)staticText?.ObjectPtr);
 	}
-	public void DrawStaticText2(QPoint_Ptr* topLeftPosition, QStaticText_Ptr* staticText)
+	public void DrawStaticText2(IQPoint topLeftPosition, IQStaticText staticText)
 	{
-		CQt.QPainter_DrawStaticText2((.)this.ptr, topLeftPosition, staticText);
+		CQt.QPainter_DrawStaticText2((.)this.ptr, (.)topLeftPosition?.ObjectPtr, (.)staticText?.ObjectPtr);
 	}
-	public void DrawStaticText3(c_int left, c_int top, QStaticText_Ptr* staticText)
+	public void DrawStaticText3(c_int left, c_int top, IQStaticText staticText)
 	{
-		CQt.QPainter_DrawStaticText3((.)this.ptr, left, top, staticText);
+		CQt.QPainter_DrawStaticText3((.)this.ptr, left, top, (.)staticText?.ObjectPtr);
 	}
-	public void DrawText(QPointF_Ptr* p, libqt_string* s)
+	public void DrawText(IQPointF p, String s)
 	{
-		CQt.QPainter_DrawText((.)this.ptr, p, s);
+		CQt.QPainter_DrawText((.)this.ptr, (.)p?.ObjectPtr, libqt_string(s));
 	}
-	public void DrawText2(QPoint_Ptr* p, libqt_string* s)
+	public void DrawText2(IQPoint p, String s)
 	{
-		CQt.QPainter_DrawText2((.)this.ptr, p, s);
+		CQt.QPainter_DrawText2((.)this.ptr, (.)p?.ObjectPtr, libqt_string(s));
 	}
-	public void DrawText3(c_int x, c_int y, libqt_string* s)
+	public void DrawText3(c_int x, c_int y, String s)
 	{
-		CQt.QPainter_DrawText3((.)this.ptr, x, y, s);
+		CQt.QPainter_DrawText3((.)this.ptr, x, y, libqt_string(s));
 	}
-	public void DrawText4(QPointF_Ptr* p, libqt_string* str, c_int tf, c_int justificationPadding)
+	public void DrawText4(IQPointF p, String str, c_int tf, c_int justificationPadding)
 	{
-		CQt.QPainter_DrawText4((.)this.ptr, p, str, tf, justificationPadding);
+		CQt.QPainter_DrawText4((.)this.ptr, (.)p?.ObjectPtr, libqt_string(str), tf, justificationPadding);
 	}
-	public void DrawText5(QRectF_Ptr* r, c_int flags, libqt_string* text)
+	public void DrawText5(IQRectF r, c_int flags, String text)
 	{
-		CQt.QPainter_DrawText5((.)this.ptr, r, flags, text);
+		CQt.QPainter_DrawText5((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(text));
 	}
-	public void DrawText6(QRect_Ptr* r, c_int flags, libqt_string* text)
+	public void DrawText6(IQRect r, c_int flags, String text)
 	{
-		CQt.QPainter_DrawText6((.)this.ptr, r, flags, text);
+		CQt.QPainter_DrawText6((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(text));
 	}
-	public void DrawText7(c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text)
+	public void DrawText7(c_int x, c_int y, c_int w, c_int h, c_int flags, String text)
 	{
-		CQt.QPainter_DrawText7((.)this.ptr, x, y, w, h, flags, text);
+		CQt.QPainter_DrawText7((.)this.ptr, x, y, w, h, flags, libqt_string(text));
 	}
-	public void DrawText8(QRectF_Ptr* r, libqt_string* text)
+	public void DrawText8(IQRectF r, String text)
 	{
-		CQt.QPainter_DrawText8((.)this.ptr, r, text);
+		CQt.QPainter_DrawText8((.)this.ptr, (.)r?.ObjectPtr, libqt_string(text));
 	}
-	public QRectF_Ptr BoundingRect(QRectF_Ptr* rect, c_int flags, libqt_string* text)
+	public QRectF_Ptr* BoundingRect(IQRectF rect, c_int flags, String text)
 	{
-		return CQt.QPainter_BoundingRect((.)this.ptr, rect, flags, text);
+		return CQt.QPainter_BoundingRect((.)this.ptr, (.)rect?.ObjectPtr, flags, libqt_string(text));
 	}
-	public QRect_Ptr BoundingRect2(QRect_Ptr* rect, c_int flags, libqt_string* text)
+	public QRect_Ptr* BoundingRect2(IQRect rect, c_int flags, String text)
 	{
-		return CQt.QPainter_BoundingRect2((.)this.ptr, rect, flags, text);
+		return CQt.QPainter_BoundingRect2((.)this.ptr, (.)rect?.ObjectPtr, flags, libqt_string(text));
 	}
-	public QRect_Ptr BoundingRect3(c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text)
+	public QRect_Ptr* BoundingRect3(c_int x, c_int y, c_int w, c_int h, c_int flags, String text)
 	{
-		return CQt.QPainter_BoundingRect3((.)this.ptr, x, y, w, h, flags, text);
+		return CQt.QPainter_BoundingRect3((.)this.ptr, x, y, w, h, flags, libqt_string(text));
 	}
-	public QRectF_Ptr BoundingRect4(QRectF_Ptr* rect, libqt_string* text)
+	public QRectF_Ptr* BoundingRect4(IQRectF rect, String text)
 	{
-		return CQt.QPainter_BoundingRect4((.)this.ptr, rect, text);
+		return CQt.QPainter_BoundingRect4((.)this.ptr, (.)rect?.ObjectPtr, libqt_string(text));
 	}
-	public void DrawTextItem(QPointF_Ptr* p, QTextItem_Ptr* ti)
+	public void DrawTextItem(IQPointF p, IQTextItem ti)
 	{
-		CQt.QPainter_DrawTextItem((.)this.ptr, p, ti);
+		CQt.QPainter_DrawTextItem((.)this.ptr, (.)p?.ObjectPtr, (.)ti?.ObjectPtr);
 	}
-	public void DrawTextItem2(c_int x, c_int y, QTextItem_Ptr* ti)
+	public void DrawTextItem2(c_int x, c_int y, IQTextItem ti)
 	{
-		CQt.QPainter_DrawTextItem2((.)this.ptr, x, y, ti);
+		CQt.QPainter_DrawTextItem2((.)this.ptr, x, y, (.)ti?.ObjectPtr);
 	}
-	public void DrawTextItem3(QPoint_Ptr* p, QTextItem_Ptr* ti)
+	public void DrawTextItem3(IQPoint p, IQTextItem ti)
 	{
-		CQt.QPainter_DrawTextItem3((.)this.ptr, p, ti);
+		CQt.QPainter_DrawTextItem3((.)this.ptr, (.)p?.ObjectPtr, (.)ti?.ObjectPtr);
 	}
-	public void FillRect(QRectF_Ptr* param1, QBrush_Ptr* param2)
+	public void FillRect(IQRectF param1, IQBrush param2)
 	{
-		CQt.QPainter_FillRect((.)this.ptr, param1, param2);
+		CQt.QPainter_FillRect((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
 	}
-	public void FillRect2(c_int x, c_int y, c_int w, c_int h, QBrush_Ptr* param5)
+	public void FillRect2(c_int x, c_int y, c_int w, c_int h, IQBrush param5)
 	{
-		CQt.QPainter_FillRect2((.)this.ptr, x, y, w, h, param5);
+		CQt.QPainter_FillRect2((.)this.ptr, x, y, w, h, (.)param5?.ObjectPtr);
 	}
-	public void FillRect3(QRect_Ptr* param1, QBrush_Ptr* param2)
+	public void FillRect3(IQRect param1, IQBrush param2)
 	{
-		CQt.QPainter_FillRect3((.)this.ptr, param1, param2);
+		CQt.QPainter_FillRect3((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
 	}
-	public void FillRect4(QRectF_Ptr* param1, QColor_Ptr* color)
+	public void FillRect4(IQRectF param1, IQColor color)
 	{
-		CQt.QPainter_FillRect4((.)this.ptr, param1, color);
+		CQt.QPainter_FillRect4((.)this.ptr, (.)param1?.ObjectPtr, (.)color?.ObjectPtr);
 	}
-	public void FillRect5(c_int x, c_int y, c_int w, c_int h, QColor_Ptr* color)
+	public void FillRect5(c_int x, c_int y, c_int w, c_int h, IQColor color)
 	{
-		CQt.QPainter_FillRect5((.)this.ptr, x, y, w, h, color);
+		CQt.QPainter_FillRect5((.)this.ptr, x, y, w, h, (.)color?.ObjectPtr);
 	}
-	public void FillRect6(QRect_Ptr* param1, QColor_Ptr* color)
+	public void FillRect6(IQRect param1, IQColor color)
 	{
-		CQt.QPainter_FillRect6((.)this.ptr, param1, color);
+		CQt.QPainter_FillRect6((.)this.ptr, (.)param1?.ObjectPtr, (.)color?.ObjectPtr);
 	}
 	public void FillRect7(c_int x, c_int y, c_int w, c_int h, Qt_GlobalColor c)
 	{
 		CQt.QPainter_FillRect7((.)this.ptr, x, y, w, h, c);
 	}
-	public void FillRect8(QRect_Ptr* r, Qt_GlobalColor c)
+	public void FillRect8(IQRect r, Qt_GlobalColor c)
 	{
-		CQt.QPainter_FillRect8((.)this.ptr, r, c);
+		CQt.QPainter_FillRect8((.)this.ptr, (.)r?.ObjectPtr, c);
 	}
-	public void FillRect9(QRectF_Ptr* r, Qt_GlobalColor c)
+	public void FillRect9(IQRectF r, Qt_GlobalColor c)
 	{
-		CQt.QPainter_FillRect9((.)this.ptr, r, c);
+		CQt.QPainter_FillRect9((.)this.ptr, (.)r?.ObjectPtr, c);
 	}
 	public void FillRect10(c_int x, c_int y, c_int w, c_int h, Qt_BrushStyle style)
 	{
 		CQt.QPainter_FillRect10((.)this.ptr, x, y, w, h, style);
 	}
-	public void FillRect11(QRect_Ptr* r, Qt_BrushStyle style)
+	public void FillRect11(IQRect r, Qt_BrushStyle style)
 	{
-		CQt.QPainter_FillRect11((.)this.ptr, r, style);
+		CQt.QPainter_FillRect11((.)this.ptr, (.)r?.ObjectPtr, style);
 	}
-	public void FillRect12(QRectF_Ptr* r, Qt_BrushStyle style)
+	public void FillRect12(IQRectF r, Qt_BrushStyle style)
 	{
-		CQt.QPainter_FillRect12((.)this.ptr, r, style);
+		CQt.QPainter_FillRect12((.)this.ptr, (.)r?.ObjectPtr, style);
 	}
 	public void FillRect13(c_int x, c_int y, c_int w, c_int h, QGradient_Preset preset)
 	{
 		CQt.QPainter_FillRect13((.)this.ptr, x, y, w, h, preset);
 	}
-	public void FillRect14(QRect_Ptr* r, QGradient_Preset preset)
+	public void FillRect14(IQRect r, QGradient_Preset preset)
 	{
-		CQt.QPainter_FillRect14((.)this.ptr, r, preset);
+		CQt.QPainter_FillRect14((.)this.ptr, (.)r?.ObjectPtr, preset);
 	}
-	public void FillRect15(QRectF_Ptr* r, QGradient_Preset preset)
+	public void FillRect15(IQRectF r, QGradient_Preset preset)
 	{
-		CQt.QPainter_FillRect15((.)this.ptr, r, preset);
+		CQt.QPainter_FillRect15((.)this.ptr, (.)r?.ObjectPtr, preset);
 	}
-	public void EraseRect(QRectF_Ptr* param1)
+	public void EraseRect(IQRectF param1)
 	{
-		CQt.QPainter_EraseRect((.)this.ptr, param1);
+		CQt.QPainter_EraseRect((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public void EraseRect2(c_int x, c_int y, c_int w, c_int h)
 	{
 		CQt.QPainter_EraseRect2((.)this.ptr, x, y, w, h);
 	}
-	public void EraseRect3(QRect_Ptr* param1)
+	public void EraseRect3(IQRect param1)
 	{
-		CQt.QPainter_EraseRect3((.)this.ptr, param1);
+		CQt.QPainter_EraseRect3((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public void SetRenderHint(QPainter_RenderHint hint)
 	{
@@ -1204,7 +1205,7 @@ class QPainter
 	{
 		return CQt.QPainter_TestRenderHint((.)this.ptr, hint);
 	}
-	public QPaintEngine_Ptr* PaintEngine()
+	public QPaintEngine_Ptr** PaintEngine()
 	{
 		return CQt.QPainter_PaintEngine((.)this.ptr);
 	}
@@ -1216,129 +1217,129 @@ class QPainter
 	{
 		CQt.QPainter_EndNativePainting((.)this.ptr);
 	}
-	public void SetClipRect22(QRectF_Ptr* param1, Qt_ClipOperation op)
+	public void SetClipRect22(IQRectF param1, Qt_ClipOperation op)
 	{
-		CQt.QPainter_SetClipRect22((.)this.ptr, param1, op);
+		CQt.QPainter_SetClipRect22((.)this.ptr, (.)param1?.ObjectPtr, op);
 	}
-	public void SetClipRect23(QRect_Ptr* param1, Qt_ClipOperation op)
+	public void SetClipRect23(IQRect param1, Qt_ClipOperation op)
 	{
-		CQt.QPainter_SetClipRect23((.)this.ptr, param1, op);
+		CQt.QPainter_SetClipRect23((.)this.ptr, (.)param1?.ObjectPtr, op);
 	}
 	public void SetClipRect5(c_int x, c_int y, c_int w, c_int h, Qt_ClipOperation op)
 	{
 		CQt.QPainter_SetClipRect5((.)this.ptr, x, y, w, h, op);
 	}
-	public void SetClipRegion2(QRegion_Ptr* param1, Qt_ClipOperation op)
+	public void SetClipRegion2(IQRegion param1, Qt_ClipOperation op)
 	{
-		CQt.QPainter_SetClipRegion2((.)this.ptr, param1, op);
+		CQt.QPainter_SetClipRegion2((.)this.ptr, (.)param1?.ObjectPtr, op);
 	}
-	public void SetClipPath2(QPainterPath_Ptr* path, Qt_ClipOperation op)
+	public void SetClipPath2(IQPainterPath path, Qt_ClipOperation op)
 	{
-		CQt.QPainter_SetClipPath2((.)this.ptr, path, op);
+		CQt.QPainter_SetClipPath2((.)this.ptr, (.)path?.ObjectPtr, op);
 	}
-	public void SetTransform2(QTransform_Ptr* transform, bool combine)
+	public void SetTransform2(IQTransform transform, bool combine)
 	{
-		CQt.QPainter_SetTransform2((.)this.ptr, transform, combine);
+		CQt.QPainter_SetTransform2((.)this.ptr, (.)transform?.ObjectPtr, combine);
 	}
-	public void SetWorldTransform2(QTransform_Ptr* matrix, bool combine)
+	public void SetWorldTransform2(IQTransform matrix, bool combine)
 	{
-		CQt.QPainter_SetWorldTransform2((.)this.ptr, matrix, combine);
+		CQt.QPainter_SetWorldTransform2((.)this.ptr, (.)matrix?.ObjectPtr, combine);
 	}
-	public void DrawPolygon32(QPointF_Ptr* points, c_int pointCount, Qt_FillRule fillRule)
+	public void DrawPolygon32(IQPointF points, c_int pointCount, Qt_FillRule fillRule)
 	{
-		CQt.QPainter_DrawPolygon32((.)this.ptr, points, pointCount, fillRule);
+		CQt.QPainter_DrawPolygon32((.)this.ptr, (.)points?.ObjectPtr, pointCount, fillRule);
 	}
-	public void DrawPolygon33(QPoint_Ptr* points, c_int pointCount, Qt_FillRule fillRule)
+	public void DrawPolygon33(IQPoint points, c_int pointCount, Qt_FillRule fillRule)
 	{
-		CQt.QPainter_DrawPolygon33((.)this.ptr, points, pointCount, fillRule);
+		CQt.QPainter_DrawPolygon33((.)this.ptr, (.)points?.ObjectPtr, pointCount, fillRule);
 	}
-	public void DrawRoundedRect4(QRectF_Ptr* rect, double xRadius, double yRadius, Qt_SizeMode mode)
+	public void DrawRoundedRect4(IQRectF rect, double xRadius, double yRadius, Qt_SizeMode mode)
 	{
-		CQt.QPainter_DrawRoundedRect4((.)this.ptr, rect, xRadius, yRadius, mode);
+		CQt.QPainter_DrawRoundedRect4((.)this.ptr, (.)rect?.ObjectPtr, xRadius, yRadius, mode);
 	}
 	public void DrawRoundedRect7(c_int x, c_int y, c_int w, c_int h, double xRadius, double yRadius, Qt_SizeMode mode)
 	{
 		CQt.QPainter_DrawRoundedRect7((.)this.ptr, x, y, w, h, xRadius, yRadius, mode);
 	}
-	public void DrawRoundedRect42(QRect_Ptr* rect, double xRadius, double yRadius, Qt_SizeMode mode)
+	public void DrawRoundedRect42(IQRect rect, double xRadius, double yRadius, Qt_SizeMode mode)
 	{
-		CQt.QPainter_DrawRoundedRect42((.)this.ptr, rect, xRadius, yRadius, mode);
+		CQt.QPainter_DrawRoundedRect42((.)this.ptr, (.)rect?.ObjectPtr, xRadius, yRadius, mode);
 	}
-	public void DrawTiledPixmap32(QRectF_Ptr* rect, QPixmap_Ptr* pm, QPointF_Ptr* offset)
+	public void DrawTiledPixmap32(IQRectF rect, IQPixmap pm, IQPointF offset)
 	{
-		CQt.QPainter_DrawTiledPixmap32((.)this.ptr, rect, pm, offset);
+		CQt.QPainter_DrawTiledPixmap32((.)this.ptr, (.)rect?.ObjectPtr, (.)pm?.ObjectPtr, (.)offset?.ObjectPtr);
 	}
-	public void DrawTiledPixmap6(c_int x, c_int y, c_int w, c_int h, QPixmap_Ptr* param5, c_int sx)
+	public void DrawTiledPixmap6(c_int x, c_int y, c_int w, c_int h, IQPixmap param5, c_int sx)
 	{
-		CQt.QPainter_DrawTiledPixmap6((.)this.ptr, x, y, w, h, param5, sx);
+		CQt.QPainter_DrawTiledPixmap6((.)this.ptr, x, y, w, h, (.)param5?.ObjectPtr, sx);
 	}
-	public void DrawTiledPixmap7(c_int x, c_int y, c_int w, c_int h, QPixmap_Ptr* param5, c_int sx, c_int sy)
+	public void DrawTiledPixmap7(c_int x, c_int y, c_int w, c_int h, IQPixmap param5, c_int sx, c_int sy)
 	{
-		CQt.QPainter_DrawTiledPixmap7((.)this.ptr, x, y, w, h, param5, sx, sy);
+		CQt.QPainter_DrawTiledPixmap7((.)this.ptr, x, y, w, h, (.)param5?.ObjectPtr, sx, sy);
 	}
-	public void DrawTiledPixmap33(QRect_Ptr* param1, QPixmap_Ptr* param2, QPoint_Ptr* param3)
+	public void DrawTiledPixmap33(IQRect param1, IQPixmap param2, IQPoint param3)
 	{
-		CQt.QPainter_DrawTiledPixmap33((.)this.ptr, param1, param2, param3);
+		CQt.QPainter_DrawTiledPixmap33((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr, (.)param3?.ObjectPtr);
 	}
-	public void DrawPixmapFragments4(QPainter_PixmapFragment* fragments, c_int fragmentCount, QPixmap_Ptr* pixmap, void* hints)
+	public void DrawPixmapFragments4(IQPainter_PixmapFragment fragments, c_int fragmentCount, IQPixmap pixmap, void* hints)
 	{
-		CQt.QPainter_DrawPixmapFragments4((.)this.ptr, fragments, fragmentCount, pixmap, hints);
+		CQt.QPainter_DrawPixmapFragments4((.)this.ptr, (.)fragments?.ObjectPtr, fragmentCount, (.)pixmap?.ObjectPtr, hints);
 	}
-	public void DrawImage42(QRectF_Ptr* targetRect, QImage_Ptr* image, QRectF_Ptr* sourceRect, void* flags)
+	public void DrawImage42(IQRectF targetRect, IQImage image, IQRectF sourceRect, void* flags)
 	{
-		CQt.QPainter_DrawImage42((.)this.ptr, targetRect, image, sourceRect, flags);
+		CQt.QPainter_DrawImage42((.)this.ptr, (.)targetRect?.ObjectPtr, (.)image?.ObjectPtr, (.)sourceRect?.ObjectPtr, flags);
 	}
-	public void DrawImage43(QRect_Ptr* targetRect, QImage_Ptr* image, QRect_Ptr* sourceRect, void* flags)
+	public void DrawImage43(IQRect targetRect, IQImage image, IQRect sourceRect, void* flags)
 	{
-		CQt.QPainter_DrawImage43((.)this.ptr, targetRect, image, sourceRect, flags);
+		CQt.QPainter_DrawImage43((.)this.ptr, (.)targetRect?.ObjectPtr, (.)image?.ObjectPtr, (.)sourceRect?.ObjectPtr, flags);
 	}
-	public void DrawImage44(QPointF_Ptr* p, QImage_Ptr* image, QRectF_Ptr* sr, void* flags)
+	public void DrawImage44(IQPointF p, IQImage image, IQRectF sr, void* flags)
 	{
-		CQt.QPainter_DrawImage44((.)this.ptr, p, image, sr, flags);
+		CQt.QPainter_DrawImage44((.)this.ptr, (.)p?.ObjectPtr, (.)image?.ObjectPtr, (.)sr?.ObjectPtr, flags);
 	}
-	public void DrawImage45(QPoint_Ptr* p, QImage_Ptr* image, QRect_Ptr* sr, void* flags)
+	public void DrawImage45(IQPoint p, IQImage image, IQRect sr, void* flags)
 	{
-		CQt.QPainter_DrawImage45((.)this.ptr, p, image, sr, flags);
+		CQt.QPainter_DrawImage45((.)this.ptr, (.)p?.ObjectPtr, (.)image?.ObjectPtr, (.)sr?.ObjectPtr, flags);
 	}
-	public void DrawImage46(c_int x, c_int y, QImage_Ptr* image, c_int sx)
+	public void DrawImage46(c_int x, c_int y, IQImage image, c_int sx)
 	{
-		CQt.QPainter_DrawImage46((.)this.ptr, x, y, image, sx);
+		CQt.QPainter_DrawImage46((.)this.ptr, x, y, (.)image?.ObjectPtr, sx);
 	}
-	public void DrawImage52(c_int x, c_int y, QImage_Ptr* image, c_int sx, c_int sy)
+	public void DrawImage52(c_int x, c_int y, IQImage image, c_int sx, c_int sy)
 	{
-		CQt.QPainter_DrawImage52((.)this.ptr, x, y, image, sx, sy);
+		CQt.QPainter_DrawImage52((.)this.ptr, x, y, (.)image?.ObjectPtr, sx, sy);
 	}
-	public void DrawImage62(c_int x, c_int y, QImage_Ptr* image, c_int sx, c_int sy, c_int sw)
+	public void DrawImage62(c_int x, c_int y, IQImage image, c_int sx, c_int sy, c_int sw)
 	{
-		CQt.QPainter_DrawImage62((.)this.ptr, x, y, image, sx, sy, sw);
+		CQt.QPainter_DrawImage62((.)this.ptr, x, y, (.)image?.ObjectPtr, sx, sy, sw);
 	}
-	public void DrawImage72(c_int x, c_int y, QImage_Ptr* image, c_int sx, c_int sy, c_int sw, c_int sh)
+	public void DrawImage72(c_int x, c_int y, IQImage image, c_int sx, c_int sy, c_int sw, c_int sh)
 	{
-		CQt.QPainter_DrawImage72((.)this.ptr, x, y, image, sx, sy, sw, sh);
+		CQt.QPainter_DrawImage72((.)this.ptr, x, y, (.)image?.ObjectPtr, sx, sy, sw, sh);
 	}
-	public void DrawImage82(c_int x, c_int y, QImage_Ptr* image, c_int sx, c_int sy, c_int sw, c_int sh, void* flags)
+	public void DrawImage82(c_int x, c_int y, IQImage image, c_int sx, c_int sy, c_int sw, c_int sh, void* flags)
 	{
-		CQt.QPainter_DrawImage82((.)this.ptr, x, y, image, sx, sy, sw, sh, flags);
+		CQt.QPainter_DrawImage82((.)this.ptr, x, y, (.)image?.ObjectPtr, sx, sy, sw, sh, flags);
 	}
-	public void DrawText42(QRectF_Ptr* r, c_int flags, libqt_string* text, QRectF_Ptr* br)
+	public void DrawText42(IQRectF r, c_int flags, String text, IQRectF br)
 	{
-		CQt.QPainter_DrawText42((.)this.ptr, r, flags, text, br);
+		CQt.QPainter_DrawText42((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(text), (.)br?.ObjectPtr);
 	}
-	public void DrawText43(QRect_Ptr* r, c_int flags, libqt_string* text, QRect_Ptr* br)
+	public void DrawText43(IQRect r, c_int flags, String text, IQRect br)
 	{
-		CQt.QPainter_DrawText43((.)this.ptr, r, flags, text, br);
+		CQt.QPainter_DrawText43((.)this.ptr, (.)r?.ObjectPtr, flags, libqt_string(text), (.)br?.ObjectPtr);
 	}
-	public void DrawText72(c_int x, c_int y, c_int w, c_int h, c_int flags, libqt_string* text, QRect_Ptr* br)
+	public void DrawText72(c_int x, c_int y, c_int w, c_int h, c_int flags, String text, IQRect br)
 	{
-		CQt.QPainter_DrawText72((.)this.ptr, x, y, w, h, flags, text, br);
+		CQt.QPainter_DrawText72((.)this.ptr, x, y, w, h, flags, libqt_string(text), (.)br?.ObjectPtr);
 	}
-	public void DrawText32(QRectF_Ptr* r, libqt_string* text, QTextOption_Ptr* o)
+	public void DrawText32(IQRectF r, String text, IQTextOption o)
 	{
-		CQt.QPainter_DrawText32((.)this.ptr, r, text, o);
+		CQt.QPainter_DrawText32((.)this.ptr, (.)r?.ObjectPtr, libqt_string(text), (.)o?.ObjectPtr);
 	}
-	public QRectF_Ptr BoundingRect32(QRectF_Ptr* rect, libqt_string* text, QTextOption_Ptr* o)
+	public QRectF_Ptr* BoundingRect32(IQRectF rect, String text, IQTextOption o)
 	{
-		return CQt.QPainter_BoundingRect32((.)this.ptr, rect, text, o);
+		return CQt.QPainter_BoundingRect32((.)this.ptr, (.)rect?.ObjectPtr, libqt_string(text), (.)o?.ObjectPtr);
 	}
 	public void SetRenderHint2(QPainter_RenderHint hint, bool on)
 	{
@@ -1349,227 +1350,8 @@ class QPainter
 		CQt.QPainter_SetRenderHints2((.)this.ptr, hints, on);
 	}
 }
-interface IQPainter
+interface IQPainter : IQtObjectInterface
 {
-	public QPaintDevice* Device();
-	public bool Begin();
-	public bool End();
-	public bool IsActive();
-	public void SetCompositionMode();
-	public QPainter_CompositionMode CompositionMode();
-	public QFont* Font();
-	public void SetFont();
-	public QFontMetrics FontMetrics();
-	public QFontInfo FontInfo();
-	public void SetPen();
-	public void SetPen2();
-	public void SetPen3();
-	public QPen* Pen();
-	public void SetBrush();
-	public void SetBrush2();
-	public QBrush* Brush();
-	public void SetBackgroundMode();
-	public Qt_BGMode BackgroundMode();
-	public QPoint BrushOrigin();
-	public void SetBrushOrigin();
-	public void SetBrushOrigin2();
-	public void SetBrushOrigin3();
-	public void SetBackground();
-	public QBrush* Background();
-	public double Opacity();
-	public void SetOpacity();
-	public QRegion ClipRegion();
-	public QPainterPath ClipPath();
-	public void SetClipRect();
-	public void SetClipRect2();
-	public void SetClipRect3();
-	public void SetClipRegion();
-	public void SetClipPath();
-	public void SetClipping();
-	public bool HasClipping();
-	public QRectF ClipBoundingRect();
-	public void Save();
-	public void Restore();
-	public void SetTransform();
-	public QTransform* Transform();
-	public QTransform* DeviceTransform();
-	public void ResetTransform();
-	public void SetWorldTransform();
-	public QTransform* WorldTransform();
-	public QTransform CombinedTransform();
-	public void SetWorldMatrixEnabled();
-	public bool WorldMatrixEnabled();
-	public void Scale();
-	public void Shear();
-	public void Rotate();
-	public void Translate();
-	public void Translate2();
-	public void Translate3();
-	public QRect Window();
-	public void SetWindow();
-	public void SetWindow2();
-	public QRect Viewport();
-	public void SetViewport();
-	public void SetViewport2();
-	public void SetViewTransformEnabled();
-	public bool ViewTransformEnabled();
-	public void StrokePath();
-	public void FillPath();
-	public void DrawPath();
-	public void DrawPoint();
-	public void DrawPoint2();
-	public void DrawPoint3();
-	public void DrawPoints();
-	public void DrawPoints3();
-	public void DrawLine();
-	public void DrawLine2();
-	public void DrawLine3();
-	public void DrawLine4();
-	public void DrawLine5();
-	public void DrawLines();
-	public void DrawLines2();
-	public void DrawLines3();
-	public void DrawLines4();
-	public void DrawLines5();
-	public void DrawLines6();
-	public void DrawLines7();
-	public void DrawLines8();
-	public void DrawRect();
-	public void DrawRect2();
-	public void DrawRect3();
-	public void DrawRects();
-	public void DrawRects2();
-	public void DrawRects3();
-	public void DrawRects4();
-	public void DrawEllipse();
-	public void DrawEllipse2();
-	public void DrawEllipse3();
-	public void DrawEllipse4();
-	public void DrawEllipse5();
-	public void DrawPolyline();
-	public void DrawPolyline3();
-	public void DrawPolygon();
-	public void DrawPolygon3();
-	public void DrawConvexPolygon();
-	public void DrawConvexPolygon3();
-	public void DrawArc();
-	public void DrawArc2();
-	public void DrawArc3();
-	public void DrawPie();
-	public void DrawPie2();
-	public void DrawPie3();
-	public void DrawChord();
-	public void DrawChord2();
-	public void DrawChord3();
-	public void DrawRoundedRect();
-	public void DrawRoundedRect2();
-	public void DrawRoundedRect3();
-	public void DrawTiledPixmap();
-	public void DrawTiledPixmap2();
-	public void DrawTiledPixmap3();
-	public void DrawPicture();
-	public void DrawPicture2();
-	public void DrawPicture3();
-	public void DrawPixmap();
-	public void DrawPixmap2();
-	public void DrawPixmap3();
-	public void DrawPixmap4();
-	public void DrawPixmap5();
-	public void DrawPixmap6();
-	public void DrawPixmap7();
-	public void DrawPixmap8();
-	public void DrawPixmap9();
-	public void DrawPixmap10();
-	public void DrawPixmap11();
-	public void DrawPixmapFragments();
-	public void DrawImage();
-	public void DrawImage2();
-	public void DrawImage3();
-	public void DrawImage4();
-	public void DrawImage5();
-	public void DrawImage6();
-	public void DrawImage7();
-	public void DrawImage8();
-	public void DrawImage9();
-	public void SetLayoutDirection();
-	public Qt_LayoutDirection LayoutDirection();
-	public void DrawGlyphRun();
-	public void DrawStaticText();
-	public void DrawStaticText2();
-	public void DrawStaticText3();
-	public void DrawText();
-	public void DrawText2();
-	public void DrawText3();
-	public void DrawText4();
-	public void DrawText5();
-	public void DrawText6();
-	public void DrawText7();
-	public void DrawText8();
-	public QRectF BoundingRect();
-	public QRect BoundingRect2();
-	public QRect BoundingRect3();
-	public QRectF BoundingRect4();
-	public void DrawTextItem();
-	public void DrawTextItem2();
-	public void DrawTextItem3();
-	public void FillRect();
-	public void FillRect2();
-	public void FillRect3();
-	public void FillRect4();
-	public void FillRect5();
-	public void FillRect6();
-	public void FillRect7();
-	public void FillRect8();
-	public void FillRect9();
-	public void FillRect10();
-	public void FillRect11();
-	public void FillRect12();
-	public void FillRect13();
-	public void FillRect14();
-	public void FillRect15();
-	public void EraseRect();
-	public void EraseRect2();
-	public void EraseRect3();
-	public void SetRenderHint();
-	public void SetRenderHints();
-	public void* RenderHints();
-	public bool TestRenderHint();
-	public QPaintEngine* PaintEngine();
-	public void BeginNativePainting();
-	public void EndNativePainting();
-	public void SetClipRect22();
-	public void SetClipRect23();
-	public void SetClipRect5();
-	public void SetClipRegion2();
-	public void SetClipPath2();
-	public void SetTransform2();
-	public void SetWorldTransform2();
-	public void DrawPolygon32();
-	public void DrawPolygon33();
-	public void DrawRoundedRect4();
-	public void DrawRoundedRect7();
-	public void DrawRoundedRect42();
-	public void DrawTiledPixmap32();
-	public void DrawTiledPixmap6();
-	public void DrawTiledPixmap7();
-	public void DrawTiledPixmap33();
-	public void DrawPixmapFragments4();
-	public void DrawImage42();
-	public void DrawImage43();
-	public void DrawImage44();
-	public void DrawImage45();
-	public void DrawImage46();
-	public void DrawImage52();
-	public void DrawImage62();
-	public void DrawImage72();
-	public void DrawImage82();
-	public void DrawText42();
-	public void DrawText43();
-	public void DrawText72();
-	public void DrawText32();
-	public QRectF BoundingRect32();
-	public void SetRenderHint2();
-	public void SetRenderHints2();
 }
 // --------------------------------------------------------------
 // QPainter::PixmapFragment
@@ -1623,19 +1405,20 @@ extension CQt
 	[LinkName("QPainter_PixmapFragment_SetOpacity")]
 	public static extern void QPainter_PixmapFragment_SetOpacity(QPainter_PixmapFragment_Ptr* self, double opacity);
 	[LinkName("QPainter_PixmapFragment_Create")]
-	public static extern QPainter_PixmapFragment QPainter_PixmapFragment_Create(QPointF_Ptr* pos, QRectF_Ptr* sourceRect);
+	public static extern QPainter_PixmapFragment_Ptr* QPainter_PixmapFragment_Create(QPointF_Ptr* pos, QRectF_Ptr* sourceRect);
 	[LinkName("QPainter_PixmapFragment_Create3")]
-	public static extern QPainter_PixmapFragment QPainter_PixmapFragment_Create3(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX);
+	public static extern QPainter_PixmapFragment_Ptr* QPainter_PixmapFragment_Create3(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX);
 	[LinkName("QPainter_PixmapFragment_Create4")]
-	public static extern QPainter_PixmapFragment QPainter_PixmapFragment_Create4(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY);
+	public static extern QPainter_PixmapFragment_Ptr* QPainter_PixmapFragment_Create4(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY);
 	[LinkName("QPainter_PixmapFragment_Create5")]
-	public static extern QPainter_PixmapFragment QPainter_PixmapFragment_Create5(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY, double rotation);
+	public static extern QPainter_PixmapFragment_Ptr* QPainter_PixmapFragment_Create5(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY, double rotation);
 	[LinkName("QPainter_PixmapFragment_Create6")]
-	public static extern QPainter_PixmapFragment QPainter_PixmapFragment_Create6(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY, double rotation, double opacity);
+	public static extern QPainter_PixmapFragment_Ptr* QPainter_PixmapFragment_Create6(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY, double rotation, double opacity);
 }
-class QPainter_PixmapFragment
+class QPainter_PixmapFragment : IQPainter_PixmapFragment
 {
 	private QPainter_PixmapFragment_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QPainter_PixmapFragment_Delete(this.ptr);
@@ -1720,54 +1503,29 @@ class QPainter_PixmapFragment
 	{
 		CQt.QPainter_PixmapFragment_SetOpacity((.)this.ptr, opacity);
 	}
-	public QPainter_PixmapFragment Create(QPointF_Ptr* pos, QRectF_Ptr* sourceRect)
+	public QPainter_PixmapFragment_Ptr* Create(IQPointF pos, IQRectF sourceRect)
 	{
-		return CQt.QPainter_PixmapFragment_Create(pos, sourceRect);
+		return CQt.QPainter_PixmapFragment_Create((.)pos?.ObjectPtr, (.)sourceRect?.ObjectPtr);
 	}
-	public QPainter_PixmapFragment Create3(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX)
+	public QPainter_PixmapFragment_Ptr* Create3(IQPointF pos, IQRectF sourceRect, double scaleX)
 	{
-		return CQt.QPainter_PixmapFragment_Create3(pos, sourceRect, scaleX);
+		return CQt.QPainter_PixmapFragment_Create3((.)pos?.ObjectPtr, (.)sourceRect?.ObjectPtr, scaleX);
 	}
-	public QPainter_PixmapFragment Create4(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY)
+	public QPainter_PixmapFragment_Ptr* Create4(IQPointF pos, IQRectF sourceRect, double scaleX, double scaleY)
 	{
-		return CQt.QPainter_PixmapFragment_Create4(pos, sourceRect, scaleX, scaleY);
+		return CQt.QPainter_PixmapFragment_Create4((.)pos?.ObjectPtr, (.)sourceRect?.ObjectPtr, scaleX, scaleY);
 	}
-	public QPainter_PixmapFragment Create5(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY, double rotation)
+	public QPainter_PixmapFragment_Ptr* Create5(IQPointF pos, IQRectF sourceRect, double scaleX, double scaleY, double rotation)
 	{
-		return CQt.QPainter_PixmapFragment_Create5(pos, sourceRect, scaleX, scaleY, rotation);
+		return CQt.QPainter_PixmapFragment_Create5((.)pos?.ObjectPtr, (.)sourceRect?.ObjectPtr, scaleX, scaleY, rotation);
 	}
-	public QPainter_PixmapFragment Create6(QPointF_Ptr* pos, QRectF_Ptr* sourceRect, double scaleX, double scaleY, double rotation, double opacity)
+	public QPainter_PixmapFragment_Ptr* Create6(IQPointF pos, IQRectF sourceRect, double scaleX, double scaleY, double rotation, double opacity)
 	{
-		return CQt.QPainter_PixmapFragment_Create6(pos, sourceRect, scaleX, scaleY, rotation, opacity);
+		return CQt.QPainter_PixmapFragment_Create6((.)pos?.ObjectPtr, (.)sourceRect?.ObjectPtr, scaleX, scaleY, rotation, opacity);
 	}
 }
-interface IQPainter_PixmapFragment
+interface IQPainter_PixmapFragment : IQtObjectInterface
 {
-	public double X();
-	public void SetX();
-	public double Y();
-	public void SetY();
-	public double SourceLeft();
-	public void SetSourceLeft();
-	public double SourceTop();
-	public void SetSourceTop();
-	public double Width();
-	public void SetWidth();
-	public double Height();
-	public void SetHeight();
-	public double ScaleX();
-	public void SetScaleX();
-	public double ScaleY();
-	public void SetScaleY();
-	public double Rotation();
-	public void SetRotation();
-	public double Opacity();
-	public void SetOpacity();
-	public QPainter_PixmapFragment Create();
-	public QPainter_PixmapFragment Create3();
-	public QPainter_PixmapFragment Create4();
-	public QPainter_PixmapFragment Create5();
-	public QPainter_PixmapFragment Create6();
 }
 [AllowDuplicates]
 enum QPainter_RenderHint

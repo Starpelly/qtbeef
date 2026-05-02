@@ -15,13 +15,13 @@ extension CQt
 	[LinkName("QImageReader_new")]
 	public static extern QImageReader_Ptr* QImageReader_new();
 	[LinkName("QImageReader_new2")]
-	public static extern QImageReader_Ptr* QImageReader_new2(QIODevice_Ptr* device);
+	public static extern QImageReader_Ptr* QImageReader_new2(QIODevice_Ptr** device);
 	[LinkName("QImageReader_new3")]
-	public static extern QImageReader_Ptr* QImageReader_new3(libqt_string* fileName);
+	public static extern QImageReader_Ptr* QImageReader_new3(libqt_string fileName);
 	[LinkName("QImageReader_new4")]
-	public static extern QImageReader_Ptr* QImageReader_new4(QIODevice_Ptr* device, void** format);
+	public static extern QImageReader_Ptr* QImageReader_new4(QIODevice_Ptr** device, void** format);
 	[LinkName("QImageReader_new5")]
-	public static extern QImageReader_Ptr* QImageReader_new5(libqt_string* fileName, void** format);
+	public static extern QImageReader_Ptr* QImageReader_new5(libqt_string fileName, void** format);
 	[LinkName("QImageReader_Delete")]
 	public static extern void QImageReader_Delete(QImageReader_Ptr* self);
 	[LinkName("QImageReader_Tr")]
@@ -39,29 +39,29 @@ extension CQt
 	[LinkName("QImageReader_DecideFormatFromContent")]
 	public static extern bool QImageReader_DecideFormatFromContent(QImageReader_Ptr* self);
 	[LinkName("QImageReader_SetDevice")]
-	public static extern void QImageReader_SetDevice(QImageReader_Ptr* self, QIODevice_Ptr* device);
+	public static extern void QImageReader_SetDevice(QImageReader_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QImageReader_Device")]
-	public static extern QIODevice_Ptr* QImageReader_Device(QImageReader_Ptr* self);
+	public static extern QIODevice_Ptr** QImageReader_Device(QImageReader_Ptr* self);
 	[LinkName("QImageReader_SetFileName")]
-	public static extern void QImageReader_SetFileName(QImageReader_Ptr* self, libqt_string* fileName);
+	public static extern void QImageReader_SetFileName(QImageReader_Ptr* self, libqt_string fileName);
 	[LinkName("QImageReader_FileName")]
 	public static extern libqt_string QImageReader_FileName(QImageReader_Ptr* self);
 	[LinkName("QImageReader_Size")]
-	public static extern QSize_Ptr QImageReader_Size(QImageReader_Ptr* self);
+	public static extern QSize_Ptr* QImageReader_Size(QImageReader_Ptr* self);
 	[LinkName("QImageReader_ImageFormat")]
 	public static extern QImage_Format QImageReader_ImageFormat(QImageReader_Ptr* self);
 	[LinkName("QImageReader_TextKeys")]
 	public static extern void* QImageReader_TextKeys(QImageReader_Ptr* self);
 	[LinkName("QImageReader_Text")]
-	public static extern libqt_string QImageReader_Text(QImageReader_Ptr* self, libqt_string* key);
+	public static extern libqt_string QImageReader_Text(QImageReader_Ptr* self, libqt_string key);
 	[LinkName("QImageReader_SetClipRect")]
 	public static extern void QImageReader_SetClipRect(QImageReader_Ptr* self, QRect_Ptr* rect);
 	[LinkName("QImageReader_ClipRect")]
-	public static extern QRect_Ptr QImageReader_ClipRect(QImageReader_Ptr* self);
+	public static extern QRect_Ptr* QImageReader_ClipRect(QImageReader_Ptr* self);
 	[LinkName("QImageReader_SetScaledSize")]
 	public static extern void QImageReader_SetScaledSize(QImageReader_Ptr* self, QSize_Ptr* size);
 	[LinkName("QImageReader_ScaledSize")]
-	public static extern QSize_Ptr QImageReader_ScaledSize(QImageReader_Ptr* self);
+	public static extern QSize_Ptr* QImageReader_ScaledSize(QImageReader_Ptr* self);
 	[LinkName("QImageReader_SetQuality")]
 	public static extern void QImageReader_SetQuality(QImageReader_Ptr* self, c_int quality);
 	[LinkName("QImageReader_Quality")]
@@ -69,11 +69,11 @@ extension CQt
 	[LinkName("QImageReader_SetScaledClipRect")]
 	public static extern void QImageReader_SetScaledClipRect(QImageReader_Ptr* self, QRect_Ptr* rect);
 	[LinkName("QImageReader_ScaledClipRect")]
-	public static extern QRect_Ptr QImageReader_ScaledClipRect(QImageReader_Ptr* self);
+	public static extern QRect_Ptr* QImageReader_ScaledClipRect(QImageReader_Ptr* self);
 	[LinkName("QImageReader_SetBackgroundColor")]
 	public static extern void QImageReader_SetBackgroundColor(QImageReader_Ptr* self, QColor_Ptr* color);
 	[LinkName("QImageReader_BackgroundColor")]
-	public static extern QColor_Ptr QImageReader_BackgroundColor(QImageReader_Ptr* self);
+	public static extern QColor_Ptr* QImageReader_BackgroundColor(QImageReader_Ptr* self);
 	[LinkName("QImageReader_SupportsAnimation")]
 	public static extern bool QImageReader_SupportsAnimation(QImageReader_Ptr* self);
 	[LinkName("QImageReader_Transformation")]
@@ -89,9 +89,9 @@ extension CQt
 	[LinkName("QImageReader_CanRead")]
 	public static extern bool QImageReader_CanRead(QImageReader_Ptr* self);
 	[LinkName("QImageReader_Read")]
-	public static extern QImage_Ptr QImageReader_Read(QImageReader_Ptr* self);
+	public static extern QImage_Ptr* QImageReader_Read(QImageReader_Ptr* self);
 	[LinkName("QImageReader_Read2")]
-	public static extern bool QImageReader_Read2(QImageReader_Ptr* self, QImage_Ptr* image);
+	public static extern bool QImageReader_Read2(QImageReader_Ptr* self, QImage_Ptr** image);
 	[LinkName("QImageReader_JumpToNextImage")]
 	public static extern bool QImageReader_JumpToNextImage(QImageReader_Ptr* self);
 	[LinkName("QImageReader_JumpToImage")]
@@ -105,7 +105,7 @@ extension CQt
 	[LinkName("QImageReader_CurrentImageNumber")]
 	public static extern c_int QImageReader_CurrentImageNumber(QImageReader_Ptr* self);
 	[LinkName("QImageReader_CurrentImageRect")]
-	public static extern QRect_Ptr QImageReader_CurrentImageRect(QImageReader_Ptr* self);
+	public static extern QRect_Ptr* QImageReader_CurrentImageRect(QImageReader_Ptr* self);
 	[LinkName("QImageReader_Error")]
 	public static extern QImageReader_ImageReaderError QImageReader_Error(QImageReader_Ptr* self);
 	[LinkName("QImageReader_ErrorString")]
@@ -113,9 +113,9 @@ extension CQt
 	[LinkName("QImageReader_SupportsOption")]
 	public static extern bool QImageReader_SupportsOption(QImageReader_Ptr* self, QImageIOHandler_ImageOption option);
 	[LinkName("QImageReader_ImageFormat2")]
-	public static extern void* QImageReader_ImageFormat2(libqt_string* fileName);
+	public static extern void* QImageReader_ImageFormat2(libqt_string fileName);
 	[LinkName("QImageReader_ImageFormat3")]
-	public static extern void* QImageReader_ImageFormat3(QIODevice_Ptr* device);
+	public static extern void* QImageReader_ImageFormat3(QIODevice_Ptr** device);
 	[LinkName("QImageReader_SupportedImageFormats")]
 	public static extern void* QImageReader_SupportedImageFormats();
 	[LinkName("QImageReader_SupportedMimeTypes")]
@@ -131,28 +131,29 @@ extension CQt
 	[LinkName("QImageReader_Tr3")]
 	public static extern libqt_string QImageReader_Tr3(c_char* sourceText, c_char* disambiguation, c_int n);
 }
-class QImageReader
+class QImageReader : IQImageReader
 {
 	private QImageReader_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QImageReader_new();
 	}
-	public this(QIODevice_Ptr* device)
+	public this(IQIODevice device)
 	{
-		this.ptr = CQt.QImageReader_new2(device);
+		this.ptr = CQt.QImageReader_new2((.)device?.ObjectPtr);
 	}
-	public this(libqt_string* fileName)
+	public this(String fileName)
 	{
-		this.ptr = CQt.QImageReader_new3(fileName);
+		this.ptr = CQt.QImageReader_new3(libqt_string(fileName));
 	}
-	public this(QIODevice_Ptr* device, void** format)
+	public this(IQIODevice device, void** format)
 	{
-		this.ptr = CQt.QImageReader_new4(device, format);
+		this.ptr = CQt.QImageReader_new4((.)device?.ObjectPtr, format);
 	}
-	public this(libqt_string* fileName, void** format)
+	public this(String fileName, void** format)
 	{
-		this.ptr = CQt.QImageReader_new5(fileName, format);
+		this.ptr = CQt.QImageReader_new5(libqt_string(fileName), format);
 	}
 	public ~this()
 	{
@@ -186,23 +187,23 @@ class QImageReader
 	{
 		return CQt.QImageReader_DecideFormatFromContent((.)this.ptr);
 	}
-	public void SetDevice(QIODevice_Ptr* device)
+	public void SetDevice(IQIODevice device)
 	{
-		CQt.QImageReader_SetDevice((.)this.ptr, device);
+		CQt.QImageReader_SetDevice((.)this.ptr, (.)device?.ObjectPtr);
 	}
-	public QIODevice_Ptr* Device()
+	public QIODevice_Ptr** Device()
 	{
 		return CQt.QImageReader_Device((.)this.ptr);
 	}
-	public void SetFileName(libqt_string* fileName)
+	public void SetFileName(String fileName)
 	{
-		CQt.QImageReader_SetFileName((.)this.ptr, fileName);
+		CQt.QImageReader_SetFileName((.)this.ptr, libqt_string(fileName));
 	}
 	public libqt_string FileName()
 	{
 		return CQt.QImageReader_FileName((.)this.ptr);
 	}
-	public QSize_Ptr Size()
+	public QSize_Ptr* Size()
 	{
 		return CQt.QImageReader_Size((.)this.ptr);
 	}
@@ -214,23 +215,23 @@ class QImageReader
 	{
 		return CQt.QImageReader_TextKeys((.)this.ptr);
 	}
-	public libqt_string Text(libqt_string* key)
+	public libqt_string Text(String key)
 	{
-		return CQt.QImageReader_Text((.)this.ptr, key);
+		return CQt.QImageReader_Text((.)this.ptr, libqt_string(key));
 	}
-	public void SetClipRect(QRect_Ptr* rect)
+	public void SetClipRect(IQRect rect)
 	{
-		CQt.QImageReader_SetClipRect((.)this.ptr, rect);
+		CQt.QImageReader_SetClipRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRect_Ptr ClipRect()
+	public QRect_Ptr* ClipRect()
 	{
 		return CQt.QImageReader_ClipRect((.)this.ptr);
 	}
-	public void SetScaledSize(QSize_Ptr* size)
+	public void SetScaledSize(IQSize size)
 	{
-		CQt.QImageReader_SetScaledSize((.)this.ptr, size);
+		CQt.QImageReader_SetScaledSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
-	public QSize_Ptr ScaledSize()
+	public QSize_Ptr* ScaledSize()
 	{
 		return CQt.QImageReader_ScaledSize((.)this.ptr);
 	}
@@ -242,19 +243,19 @@ class QImageReader
 	{
 		return CQt.QImageReader_Quality((.)this.ptr);
 	}
-	public void SetScaledClipRect(QRect_Ptr* rect)
+	public void SetScaledClipRect(IQRect rect)
 	{
-		CQt.QImageReader_SetScaledClipRect((.)this.ptr, rect);
+		CQt.QImageReader_SetScaledClipRect((.)this.ptr, (.)rect?.ObjectPtr);
 	}
-	public QRect_Ptr ScaledClipRect()
+	public QRect_Ptr* ScaledClipRect()
 	{
 		return CQt.QImageReader_ScaledClipRect((.)this.ptr);
 	}
-	public void SetBackgroundColor(QColor_Ptr* color)
+	public void SetBackgroundColor(IQColor color)
 	{
-		CQt.QImageReader_SetBackgroundColor((.)this.ptr, color);
+		CQt.QImageReader_SetBackgroundColor((.)this.ptr, (.)color?.ObjectPtr);
 	}
-	public QColor_Ptr BackgroundColor()
+	public QColor_Ptr* BackgroundColor()
 	{
 		return CQt.QImageReader_BackgroundColor((.)this.ptr);
 	}
@@ -286,13 +287,13 @@ class QImageReader
 	{
 		return CQt.QImageReader_CanRead((.)this.ptr);
 	}
-	public QImage_Ptr Read()
+	public QImage_Ptr* Read()
 	{
 		return CQt.QImageReader_Read((.)this.ptr);
 	}
-	public bool Read2(QImage_Ptr* image)
+	public bool Read2(IQImage image)
 	{
-		return CQt.QImageReader_Read2((.)this.ptr, image);
+		return CQt.QImageReader_Read2((.)this.ptr, (.)image?.ObjectPtr);
 	}
 	public bool JumpToNextImage()
 	{
@@ -318,7 +319,7 @@ class QImageReader
 	{
 		return CQt.QImageReader_CurrentImageNumber((.)this.ptr);
 	}
-	public QRect_Ptr CurrentImageRect()
+	public QRect_Ptr* CurrentImageRect()
 	{
 		return CQt.QImageReader_CurrentImageRect((.)this.ptr);
 	}
@@ -334,13 +335,13 @@ class QImageReader
 	{
 		return CQt.QImageReader_SupportsOption((.)this.ptr, option);
 	}
-	public void* ImageFormat2(libqt_string* fileName)
+	public void* ImageFormat2(String fileName)
 	{
-		return CQt.QImageReader_ImageFormat2(fileName);
+		return CQt.QImageReader_ImageFormat2(libqt_string(fileName));
 	}
-	public void* ImageFormat3(QIODevice_Ptr* device)
+	public void* ImageFormat3(IQIODevice device)
 	{
-		return CQt.QImageReader_ImageFormat3(device);
+		return CQt.QImageReader_ImageFormat3((.)device?.ObjectPtr);
 	}
 	public void* SupportedImageFormats()
 	{
@@ -371,61 +372,8 @@ class QImageReader
 		return CQt.QImageReader_Tr3(sourceText, disambiguation, n);
 	}
 }
-interface IQImageReader
+interface IQImageReader : IQtObjectInterface
 {
-	public libqt_string Tr();
-	public void SetFormat();
-	public void* Format();
-	public void SetAutoDetectImageFormat();
-	public bool AutoDetectImageFormat();
-	public void SetDecideFormatFromContent();
-	public bool DecideFormatFromContent();
-	public void SetDevice();
-	public QIODevice* Device();
-	public void SetFileName();
-	public libqt_string FileName();
-	public QSize Size();
-	public QImage_Format ImageFormat();
-	public void* TextKeys();
-	public libqt_string Text();
-	public void SetClipRect();
-	public QRect ClipRect();
-	public void SetScaledSize();
-	public QSize ScaledSize();
-	public void SetQuality();
-	public c_int Quality();
-	public void SetScaledClipRect();
-	public QRect ScaledClipRect();
-	public void SetBackgroundColor();
-	public QColor BackgroundColor();
-	public bool SupportsAnimation();
-	public void* Transformation();
-	public void SetAutoTransform();
-	public bool AutoTransform();
-	public void* SubType();
-	public void* SupportedSubTypes();
-	public bool CanRead();
-	public QImage Read();
-	public bool Read2();
-	public bool JumpToNextImage();
-	public bool JumpToImage();
-	public c_int LoopCount();
-	public c_int ImageCount();
-	public c_int NextImageDelay();
-	public c_int CurrentImageNumber();
-	public QRect CurrentImageRect();
-	public QImageReader_ImageReaderError Error();
-	public libqt_string ErrorString();
-	public bool SupportsOption();
-	public void* ImageFormat2();
-	public void* ImageFormat3();
-	public void* SupportedImageFormats();
-	public void* SupportedMimeTypes();
-	public void* ImageFormatsForMimeType();
-	public c_int AllocationLimit();
-	public void SetAllocationLimit();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
 }
 [AllowDuplicates]
 enum QImageReader_ImageReaderError

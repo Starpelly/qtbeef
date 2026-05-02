@@ -23,7 +23,7 @@ extension CQt
 	[LinkName("QTextTableCell_SetFormat")]
 	public static extern void QTextTableCell_SetFormat(QTextTableCell_Ptr* self, QTextCharFormat_Ptr* format);
 	[LinkName("QTextTableCell_Format")]
-	public static extern QTextCharFormat_Ptr QTextTableCell_Format(QTextTableCell_Ptr* self);
+	public static extern QTextCharFormat_Ptr* QTextTableCell_Format(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_Row")]
 	public static extern c_int QTextTableCell_Row(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_Column")]
@@ -35,9 +35,9 @@ extension CQt
 	[LinkName("QTextTableCell_IsValid")]
 	public static extern bool QTextTableCell_IsValid(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_FirstCursorPosition")]
-	public static extern QTextCursor_Ptr QTextTableCell_FirstCursorPosition(QTextTableCell_Ptr* self);
+	public static extern QTextCursor_Ptr* QTextTableCell_FirstCursorPosition(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_LastCursorPosition")]
-	public static extern QTextCursor_Ptr QTextTableCell_LastCursorPosition(QTextTableCell_Ptr* self);
+	public static extern QTextCursor_Ptr* QTextTableCell_LastCursorPosition(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_FirstPosition")]
 	public static extern c_int QTextTableCell_FirstPosition(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_LastPosition")]
@@ -47,32 +47,33 @@ extension CQt
 	[LinkName("QTextTableCell_OperatorNotEqual")]
 	public static extern bool QTextTableCell_OperatorNotEqual(QTextTableCell_Ptr* self, QTextTableCell_Ptr* other);
 	[LinkName("QTextTableCell_Begin")]
-	public static extern QTextFrame_iterator QTextTableCell_Begin(QTextTableCell_Ptr* self);
+	public static extern QTextFrame_iterator_Ptr* QTextTableCell_Begin(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_End")]
-	public static extern QTextFrame_iterator QTextTableCell_End(QTextTableCell_Ptr* self);
+	public static extern QTextFrame_iterator_Ptr* QTextTableCell_End(QTextTableCell_Ptr* self);
 	[LinkName("QTextTableCell_TableCellFormatIndex")]
 	public static extern c_int QTextTableCell_TableCellFormatIndex(QTextTableCell_Ptr* self);
 }
-class QTextTableCell
+class QTextTableCell : IQTextTableCell
 {
 	private QTextTableCell_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTextTableCell_new();
 	}
-	public this(QTextTableCell_Ptr* o)
+	public this(IQTextTableCell o)
 	{
-		this.ptr = CQt.QTextTableCell_new2(o);
+		this.ptr = CQt.QTextTableCell_new2((.)o?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QTextTableCell_Delete(this.ptr);
 	}
-	public void SetFormat(QTextCharFormat_Ptr* format)
+	public void SetFormat(IQTextCharFormat format)
 	{
-		CQt.QTextTableCell_SetFormat((.)this.ptr, format);
+		CQt.QTextTableCell_SetFormat((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public QTextCharFormat_Ptr Format()
+	public QTextCharFormat_Ptr* Format()
 	{
 		return CQt.QTextTableCell_Format((.)this.ptr);
 	}
@@ -96,11 +97,11 @@ class QTextTableCell
 	{
 		return CQt.QTextTableCell_IsValid((.)this.ptr);
 	}
-	public QTextCursor_Ptr FirstCursorPosition()
+	public QTextCursor_Ptr* FirstCursorPosition()
 	{
 		return CQt.QTextTableCell_FirstCursorPosition((.)this.ptr);
 	}
-	public QTextCursor_Ptr LastCursorPosition()
+	public QTextCursor_Ptr* LastCursorPosition()
 	{
 		return CQt.QTextTableCell_LastCursorPosition((.)this.ptr);
 	}
@@ -112,11 +113,11 @@ class QTextTableCell
 	{
 		return CQt.QTextTableCell_LastPosition((.)this.ptr);
 	}
-	public QTextFrame_iterator Begin()
+	public QTextFrame_iterator_Ptr* Begin()
 	{
 		return CQt.QTextTableCell_Begin((.)this.ptr);
 	}
-	public QTextFrame_iterator End()
+	public QTextFrame_iterator_Ptr* End()
 	{
 		return CQt.QTextTableCell_End((.)this.ptr);
 	}
@@ -125,22 +126,8 @@ class QTextTableCell
 		return CQt.QTextTableCell_TableCellFormatIndex((.)this.ptr);
 	}
 }
-interface IQTextTableCell
+interface IQTextTableCell : IQtObjectInterface
 {
-	public void SetFormat();
-	public QTextCharFormat Format();
-	public c_int Row();
-	public c_int Column();
-	public c_int RowSpan();
-	public c_int ColumnSpan();
-	public bool IsValid();
-	public QTextCursor FirstCursorPosition();
-	public QTextCursor LastCursorPosition();
-	public c_int FirstPosition();
-	public c_int LastPosition();
-	public QTextFrame_iterator Begin();
-	public QTextFrame_iterator End();
-	public c_int TableCellFormatIndex();
 }
 // --------------------------------------------------------------
 // QTextTable
@@ -152,11 +139,11 @@ struct QTextTable_Ptr: void
 extension CQt
 {
 	[LinkName("QTextTable_new")]
-	public static extern QTextTable_Ptr* QTextTable_new(QTextDocument_Ptr* doc);
+	public static extern QTextTable_Ptr* QTextTable_new(QTextDocument_Ptr** doc);
 	[LinkName("QTextTable_Delete")]
 	public static extern void QTextTable_Delete(QTextTable_Ptr* self);
 	[LinkName("QTextTable_MetaObject")]
-	public static extern QMetaObject_Ptr* QTextTable_MetaObject(QTextTable_Ptr* self);
+	public static extern QMetaObject_Ptr** QTextTable_MetaObject(QTextTable_Ptr* self);
 	[LinkName("QTextTable_Qt_Metacast")]
 	public static extern void* QTextTable_Qt_Metacast(QTextTable_Ptr* self, c_char* param1);
 	[LinkName("QTextTable_Qt_Metacall")]
@@ -188,36 +175,37 @@ extension CQt
 	[LinkName("QTextTable_Columns")]
 	public static extern c_int QTextTable_Columns(QTextTable_Ptr* self);
 	[LinkName("QTextTable_CellAt")]
-	public static extern QTextTableCell_Ptr QTextTable_CellAt(QTextTable_Ptr* self, c_int row, c_int col);
+	public static extern QTextTableCell_Ptr* QTextTable_CellAt(QTextTable_Ptr* self, c_int row, c_int col);
 	[LinkName("QTextTable_CellAt2")]
-	public static extern QTextTableCell_Ptr QTextTable_CellAt2(QTextTable_Ptr* self, c_int position);
+	public static extern QTextTableCell_Ptr* QTextTable_CellAt2(QTextTable_Ptr* self, c_int position);
 	[LinkName("QTextTable_CellAt3")]
-	public static extern QTextTableCell_Ptr QTextTable_CellAt3(QTextTable_Ptr* self, QTextCursor_Ptr* c);
+	public static extern QTextTableCell_Ptr* QTextTable_CellAt3(QTextTable_Ptr* self, QTextCursor_Ptr* c);
 	[LinkName("QTextTable_RowStart")]
-	public static extern QTextCursor_Ptr QTextTable_RowStart(QTextTable_Ptr* self, QTextCursor_Ptr* c);
+	public static extern QTextCursor_Ptr* QTextTable_RowStart(QTextTable_Ptr* self, QTextCursor_Ptr* c);
 	[LinkName("QTextTable_RowEnd")]
-	public static extern QTextCursor_Ptr QTextTable_RowEnd(QTextTable_Ptr* self, QTextCursor_Ptr* c);
+	public static extern QTextCursor_Ptr* QTextTable_RowEnd(QTextTable_Ptr* self, QTextCursor_Ptr* c);
 	[LinkName("QTextTable_SetFormat")]
 	public static extern void QTextTable_SetFormat(QTextTable_Ptr* self, QTextTableFormat_Ptr* format);
 	[LinkName("QTextTable_Format")]
-	public static extern QTextTableFormat_Ptr QTextTable_Format(QTextTable_Ptr* self);
+	public static extern QTextTableFormat_Ptr* QTextTable_Format(QTextTable_Ptr* self);
 	[LinkName("QTextTable_Tr2")]
 	public static extern libqt_string QTextTable_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextTable_Tr3")]
 	public static extern libqt_string QTextTable_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QTextTable
+class QTextTable : IQTextTable, IQTextFrame, IQTextObject, IQObject
 {
 	private QTextTable_Ptr* ptr;
-	public this(QTextDocument_Ptr* doc)
+	public void* ObjectPtr => ptr;
+	public this(IQTextDocument doc)
 	{
-		this.ptr = CQt.QTextTable_new(doc);
+		this.ptr = CQt.QTextTable_new((.)doc?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QTextTable_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QTextTable_MetaObject((.)this.ptr);
 	}
@@ -265,9 +253,9 @@ class QTextTable
 	{
 		CQt.QTextTable_MergeCells((.)this.ptr, row, col, numRows, numCols);
 	}
-	public void MergeCells2(QTextCursor_Ptr* cursor)
+	public void MergeCells2(IQTextCursor cursor)
 	{
-		CQt.QTextTable_MergeCells2((.)this.ptr, cursor);
+		CQt.QTextTable_MergeCells2((.)this.ptr, (.)cursor?.ObjectPtr);
 	}
 	public void SplitCell(c_int row, c_int col, c_int numRows, c_int numCols)
 	{
@@ -281,31 +269,31 @@ class QTextTable
 	{
 		return CQt.QTextTable_Columns((.)this.ptr);
 	}
-	public QTextTableCell_Ptr CellAt(c_int row, c_int col)
+	public QTextTableCell_Ptr* CellAt(c_int row, c_int col)
 	{
 		return CQt.QTextTable_CellAt((.)this.ptr, row, col);
 	}
-	public QTextTableCell_Ptr CellAt2(c_int position)
+	public QTextTableCell_Ptr* CellAt2(c_int position)
 	{
 		return CQt.QTextTable_CellAt2((.)this.ptr, position);
 	}
-	public QTextTableCell_Ptr CellAt3(QTextCursor_Ptr* c)
+	public QTextTableCell_Ptr* CellAt3(IQTextCursor c)
 	{
-		return CQt.QTextTable_CellAt3((.)this.ptr, c);
+		return CQt.QTextTable_CellAt3((.)this.ptr, (.)c?.ObjectPtr);
 	}
-	public QTextCursor_Ptr RowStart(QTextCursor_Ptr* c)
+	public QTextCursor_Ptr* RowStart(IQTextCursor c)
 	{
-		return CQt.QTextTable_RowStart((.)this.ptr, c);
+		return CQt.QTextTable_RowStart((.)this.ptr, (.)c?.ObjectPtr);
 	}
-	public QTextCursor_Ptr RowEnd(QTextCursor_Ptr* c)
+	public QTextCursor_Ptr* RowEnd(IQTextCursor c)
 	{
-		return CQt.QTextTable_RowEnd((.)this.ptr, c);
+		return CQt.QTextTable_RowEnd((.)this.ptr, (.)c?.ObjectPtr);
 	}
-	public void SetFormat(QTextTableFormat_Ptr* format)
+	public void SetFormat(IQTextTableFormat format)
 	{
-		CQt.QTextTable_SetFormat((.)this.ptr, format);
+		CQt.QTextTable_SetFormat((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public QTextTableFormat_Ptr Format()
+	public QTextTableFormat_Ptr* Format()
 	{
 		return CQt.QTextTable_Format((.)this.ptr);
 	}
@@ -317,19 +305,19 @@ class QTextTable
 	{
 		return CQt.QTextTable_Tr3(s, c, n);
 	}
-	public void SetFrameFormat(QTextFrameFormat_Ptr* format)
+	public void SetFrameFormat(IQTextFrameFormat format)
 	{
-		CQt.QTextFrame_SetFrameFormat((.)this.ptr, format);
+		CQt.QTextFrame_SetFrameFormat((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public QTextFrameFormat_Ptr FrameFormat()
+	public QTextFrameFormat_Ptr* FrameFormat()
 	{
 		return CQt.QTextFrame_FrameFormat((.)this.ptr);
 	}
-	public QTextCursor_Ptr FirstCursorPosition()
+	public QTextCursor_Ptr* FirstCursorPosition()
 	{
 		return CQt.QTextFrame_FirstCursorPosition((.)this.ptr);
 	}
-	public QTextCursor_Ptr LastCursorPosition()
+	public QTextCursor_Ptr* LastCursorPosition()
 	{
 		return CQt.QTextFrame_LastCursorPosition((.)this.ptr);
 	}
@@ -345,15 +333,15 @@ class QTextTable
 	{
 		return CQt.QTextFrame_ChildFrames((.)this.ptr);
 	}
-	public QTextFrame_Ptr* ParentFrame()
+	public QTextFrame_Ptr** ParentFrame()
 	{
 		return CQt.QTextFrame_ParentFrame((.)this.ptr);
 	}
-	public QTextFrame_iterator Begin()
+	public QTextFrame_iterator_Ptr* Begin()
 	{
 		return CQt.QTextFrame_Begin((.)this.ptr);
 	}
-	public QTextFrame_iterator End()
+	public QTextFrame_iterator_Ptr* End()
 	{
 		return CQt.QTextFrame_End((.)this.ptr);
 	}
@@ -361,7 +349,7 @@ class QTextTable
 	{
 		return CQt.QTextObject_FormatIndex((.)this.ptr);
 	}
-	public QTextDocument_Ptr* Document()
+	public QTextDocument_Ptr** Document()
 	{
 		return CQt.QTextObject_Document((.)this.ptr);
 	}
@@ -369,21 +357,21 @@ class QTextTable
 	{
 		return CQt.QTextObject_ObjectIndex((.)this.ptr);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -405,13 +393,13 @@ class QTextTable
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -429,49 +417,49 @@ class QTextTable
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -481,11 +469,11 @@ class QTextTable
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -493,11 +481,11 @@ class QTextTable
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -505,7 +493,7 @@ class QTextTable
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -517,7 +505,7 @@ class QTextTable
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -529,29 +517,29 @@ class QTextTable
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -561,64 +549,39 @@ class QTextTable
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQTextTable
+interface IQTextTable : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void Resize();
-	public void InsertRows();
-	public void InsertColumns();
-	public void AppendRows();
-	public void AppendColumns();
-	public void RemoveRows();
-	public void RemoveColumns();
-	public void MergeCells();
-	public void MergeCells2();
-	public void SplitCell();
-	public c_int Rows();
-	public c_int Columns();
-	public QTextTableCell CellAt();
-	public QTextTableCell CellAt2();
-	public QTextTableCell CellAt3();
-	public QTextCursor RowStart();
-	public QTextCursor RowEnd();
-	public void SetFormat();
-	public QTextTableFormat Format();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
 }

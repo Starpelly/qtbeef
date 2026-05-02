@@ -23,30 +23,29 @@ extension CQt
 	[LinkName("QCollatorSortKey_Compare")]
 	public static extern c_int QCollatorSortKey_Compare(QCollatorSortKey_Ptr* self, QCollatorSortKey_Ptr* key);
 }
-class QCollatorSortKey
+class QCollatorSortKey : IQCollatorSortKey
 {
 	private QCollatorSortKey_Ptr* ptr;
-	public this(QCollatorSortKey_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQCollatorSortKey other)
 	{
-		this.ptr = CQt.QCollatorSortKey_new(other);
+		this.ptr = CQt.QCollatorSortKey_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QCollatorSortKey_Delete(this.ptr);
 	}
-	public void Swap(QCollatorSortKey_Ptr* other)
+	public void Swap(IQCollatorSortKey other)
 	{
-		CQt.QCollatorSortKey_Swap((.)this.ptr, other);
+		CQt.QCollatorSortKey_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public c_int Compare(QCollatorSortKey_Ptr* key)
+	public c_int Compare(IQCollatorSortKey key)
 	{
-		return CQt.QCollatorSortKey_Compare((.)this.ptr, key);
+		return CQt.QCollatorSortKey_Compare((.)this.ptr, (.)key?.ObjectPtr);
 	}
 }
-interface IQCollatorSortKey
+interface IQCollatorSortKey : IQtObjectInterface
 {
-	public void Swap();
-	public c_int Compare();
 }
 // --------------------------------------------------------------
 // QCollator
@@ -72,7 +71,7 @@ extension CQt
 	[LinkName("QCollator_SetLocale")]
 	public static extern void QCollator_SetLocale(QCollator_Ptr* self, QLocale_Ptr* locale);
 	[LinkName("QCollator_Locale")]
-	public static extern QLocale_Ptr QCollator_Locale(QCollator_Ptr* self);
+	public static extern QLocale_Ptr* QCollator_Locale(QCollator_Ptr* self);
 	[LinkName("QCollator_CaseSensitivity")]
 	public static extern Qt_CaseSensitivity QCollator_CaseSensitivity(QCollator_Ptr* self);
 	[LinkName("QCollator_SetCaseSensitivity")]
@@ -86,42 +85,43 @@ extension CQt
 	[LinkName("QCollator_IgnorePunctuation")]
 	public static extern bool QCollator_IgnorePunctuation(QCollator_Ptr* self);
 	[LinkName("QCollator_Compare")]
-	public static extern c_int QCollator_Compare(QCollator_Ptr* self, libqt_string* s1, libqt_string* s2);
+	public static extern c_int QCollator_Compare(QCollator_Ptr* self, libqt_string s1, libqt_string s2);
 	[LinkName("QCollator_Compare2")]
-	public static extern c_int QCollator_Compare2(QCollator_Ptr* self, QChar_Ptr* s1, void* len1, QChar_Ptr* s2, void* len2);
+	public static extern c_int QCollator_Compare2(QCollator_Ptr* self, QChar_Ptr** s1, void* len1, QChar_Ptr** s2, void* len2);
 	[LinkName("QCollator_OperatorCall")]
-	public static extern bool QCollator_OperatorCall(QCollator_Ptr* self, libqt_string* s1, libqt_string* s2);
+	public static extern bool QCollator_OperatorCall(QCollator_Ptr* self, libqt_string s1, libqt_string s2);
 	[LinkName("QCollator_SortKey")]
-	public static extern QCollatorSortKey_Ptr QCollator_SortKey(QCollator_Ptr* self, libqt_string* stringVal);
+	public static extern QCollatorSortKey_Ptr* QCollator_SortKey(QCollator_Ptr* self, libqt_string stringVal);
 }
-class QCollator
+class QCollator : IQCollator
 {
 	private QCollator_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QCollator_new();
 	}
-	public this(QLocale_Ptr* locale)
+	public this(IQLocale locale)
 	{
-		this.ptr = CQt.QCollator_new2(locale);
+		this.ptr = CQt.QCollator_new2((.)locale?.ObjectPtr);
 	}
-	public this(QCollator_Ptr* param1)
+	public this(IQCollator param1)
 	{
-		this.ptr = CQt.QCollator_new3(param1);
+		this.ptr = CQt.QCollator_new3((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QCollator_Delete(this.ptr);
 	}
-	public void Swap(QCollator_Ptr* other)
+	public void Swap(IQCollator other)
 	{
-		CQt.QCollator_Swap((.)this.ptr, other);
+		CQt.QCollator_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public void SetLocale(QLocale_Ptr* locale)
+	public void SetLocale(IQLocale locale)
 	{
-		CQt.QCollator_SetLocale((.)this.ptr, locale);
+		CQt.QCollator_SetLocale((.)this.ptr, (.)locale?.ObjectPtr);
 	}
-	public QLocale_Ptr Locale()
+	public QLocale_Ptr* Locale()
 	{
 		return CQt.QCollator_Locale((.)this.ptr);
 	}
@@ -149,31 +149,19 @@ class QCollator
 	{
 		return CQt.QCollator_IgnorePunctuation((.)this.ptr);
 	}
-	public c_int Compare(libqt_string* s1, libqt_string* s2)
+	public c_int Compare(String s1, String s2)
 	{
-		return CQt.QCollator_Compare((.)this.ptr, s1, s2);
+		return CQt.QCollator_Compare((.)this.ptr, libqt_string(s1), libqt_string(s2));
 	}
-	public c_int Compare2(QChar_Ptr* s1, void* len1, QChar_Ptr* s2, void* len2)
+	public c_int Compare2(IQChar s1, void* len1, IQChar s2, void* len2)
 	{
-		return CQt.QCollator_Compare2((.)this.ptr, s1, len1, s2, len2);
+		return CQt.QCollator_Compare2((.)this.ptr, (.)s1?.ObjectPtr, len1, (.)s2?.ObjectPtr, len2);
 	}
-	public QCollatorSortKey_Ptr SortKey(libqt_string* stringVal)
+	public QCollatorSortKey_Ptr* SortKey(String stringVal)
 	{
-		return CQt.QCollator_SortKey((.)this.ptr, stringVal);
+		return CQt.QCollator_SortKey((.)this.ptr, libqt_string(stringVal));
 	}
 }
-interface IQCollator
+interface IQCollator : IQtObjectInterface
 {
-	public void Swap();
-	public void SetLocale();
-	public QLocale Locale();
-	public Qt_CaseSensitivity CaseSensitivity();
-	public void SetCaseSensitivity();
-	public void SetNumericMode();
-	public bool NumericMode();
-	public void SetIgnorePunctuation();
-	public bool IgnorePunctuation();
-	public c_int Compare();
-	public c_int Compare2();
-	public QCollatorSortKey SortKey();
 }

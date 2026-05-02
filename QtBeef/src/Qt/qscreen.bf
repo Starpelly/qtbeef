@@ -15,7 +15,7 @@ extension CQt
 	[LinkName("QScreen_Delete")]
 	public static extern void QScreen_Delete(QScreen_Ptr* self);
 	[LinkName("QScreen_MetaObject")]
-	public static extern QMetaObject_Ptr* QScreen_MetaObject(QScreen_Ptr* self);
+	public static extern QMetaObject_Ptr** QScreen_MetaObject(QScreen_Ptr* self);
 	[LinkName("QScreen_Qt_Metacast")]
 	public static extern void* QScreen_Qt_Metacast(QScreen_Ptr* self, c_char* param1);
 	[LinkName("QScreen_Qt_Metacall")]
@@ -33,11 +33,11 @@ extension CQt
 	[LinkName("QScreen_Depth")]
 	public static extern c_int QScreen_Depth(QScreen_Ptr* self);
 	[LinkName("QScreen_Size")]
-	public static extern QSize_Ptr QScreen_Size(QScreen_Ptr* self);
+	public static extern QSize_Ptr* QScreen_Size(QScreen_Ptr* self);
 	[LinkName("QScreen_Geometry")]
-	public static extern QRect_Ptr QScreen_Geometry(QScreen_Ptr* self);
+	public static extern QRect_Ptr* QScreen_Geometry(QScreen_Ptr* self);
 	[LinkName("QScreen_PhysicalSize")]
-	public static extern QSizeF_Ptr QScreen_PhysicalSize(QScreen_Ptr* self);
+	public static extern QSizeF_Ptr* QScreen_PhysicalSize(QScreen_Ptr* self);
 	[LinkName("QScreen_PhysicalDotsPerInchX")]
 	public static extern double QScreen_PhysicalDotsPerInchX(QScreen_Ptr* self);
 	[LinkName("QScreen_PhysicalDotsPerInchY")]
@@ -53,21 +53,21 @@ extension CQt
 	[LinkName("QScreen_DevicePixelRatio")]
 	public static extern double QScreen_DevicePixelRatio(QScreen_Ptr* self);
 	[LinkName("QScreen_AvailableSize")]
-	public static extern QSize_Ptr QScreen_AvailableSize(QScreen_Ptr* self);
+	public static extern QSize_Ptr* QScreen_AvailableSize(QScreen_Ptr* self);
 	[LinkName("QScreen_AvailableGeometry")]
-	public static extern QRect_Ptr QScreen_AvailableGeometry(QScreen_Ptr* self);
+	public static extern QRect_Ptr* QScreen_AvailableGeometry(QScreen_Ptr* self);
 	[LinkName("QScreen_VirtualSiblings")]
 	public static extern void* QScreen_VirtualSiblings(QScreen_Ptr* self);
 	[LinkName("QScreen_VirtualSiblingAt")]
-	public static extern QScreen_Ptr* QScreen_VirtualSiblingAt(QScreen_Ptr* self, QPoint_Ptr point);
+	public static extern QScreen_Ptr** QScreen_VirtualSiblingAt(QScreen_Ptr* self, QPoint_Ptr* point);
 	[LinkName("QScreen_VirtualSize")]
-	public static extern QSize_Ptr QScreen_VirtualSize(QScreen_Ptr* self);
+	public static extern QSize_Ptr* QScreen_VirtualSize(QScreen_Ptr* self);
 	[LinkName("QScreen_VirtualGeometry")]
-	public static extern QRect_Ptr QScreen_VirtualGeometry(QScreen_Ptr* self);
+	public static extern QRect_Ptr* QScreen_VirtualGeometry(QScreen_Ptr* self);
 	[LinkName("QScreen_AvailableVirtualSize")]
-	public static extern QSize_Ptr QScreen_AvailableVirtualSize(QScreen_Ptr* self);
+	public static extern QSize_Ptr* QScreen_AvailableVirtualSize(QScreen_Ptr* self);
 	[LinkName("QScreen_AvailableVirtualGeometry")]
-	public static extern QRect_Ptr QScreen_AvailableVirtualGeometry(QScreen_Ptr* self);
+	public static extern QRect_Ptr* QScreen_AvailableVirtualGeometry(QScreen_Ptr* self);
 	[LinkName("QScreen_PrimaryOrientation")]
 	public static extern Qt_ScreenOrientation QScreen_PrimaryOrientation(QScreen_Ptr* self);
 	[LinkName("QScreen_Orientation")]
@@ -77,15 +77,15 @@ extension CQt
 	[LinkName("QScreen_AngleBetween")]
 	public static extern c_int QScreen_AngleBetween(QScreen_Ptr* self, Qt_ScreenOrientation a, Qt_ScreenOrientation b);
 	[LinkName("QScreen_TransformBetween")]
-	public static extern QTransform_Ptr QScreen_TransformBetween(QScreen_Ptr* self, Qt_ScreenOrientation a, Qt_ScreenOrientation b, QRect_Ptr* target);
+	public static extern QTransform_Ptr* QScreen_TransformBetween(QScreen_Ptr* self, Qt_ScreenOrientation a, Qt_ScreenOrientation b, QRect_Ptr* target);
 	[LinkName("QScreen_MapBetween")]
-	public static extern QRect_Ptr QScreen_MapBetween(QScreen_Ptr* self, Qt_ScreenOrientation a, Qt_ScreenOrientation b, QRect_Ptr* rect);
+	public static extern QRect_Ptr* QScreen_MapBetween(QScreen_Ptr* self, Qt_ScreenOrientation a, Qt_ScreenOrientation b, QRect_Ptr* rect);
 	[LinkName("QScreen_IsPortrait")]
 	public static extern bool QScreen_IsPortrait(QScreen_Ptr* self, Qt_ScreenOrientation orientation);
 	[LinkName("QScreen_IsLandscape")]
 	public static extern bool QScreen_IsLandscape(QScreen_Ptr* self, Qt_ScreenOrientation orientation);
 	[LinkName("QScreen_GrabWindow")]
-	public static extern QPixmap_Ptr QScreen_GrabWindow(QScreen_Ptr* self);
+	public static extern QPixmap_Ptr* QScreen_GrabWindow(QScreen_Ptr* self);
 	[LinkName("QScreen_RefreshRate")]
 	public static extern double QScreen_RefreshRate(QScreen_Ptr* self);
 	[LinkName("QScreen_ResolveInterface")]
@@ -113,24 +113,25 @@ extension CQt
 	[LinkName("QScreen_Tr3")]
 	public static extern libqt_string QScreen_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QScreen_GrabWindow1")]
-	public static extern QPixmap_Ptr QScreen_GrabWindow1(QScreen_Ptr* self, void* window);
+	public static extern QPixmap_Ptr* QScreen_GrabWindow1(QScreen_Ptr* self, void* window);
 	[LinkName("QScreen_GrabWindow2")]
-	public static extern QPixmap_Ptr QScreen_GrabWindow2(QScreen_Ptr* self, void* window, c_int x);
+	public static extern QPixmap_Ptr* QScreen_GrabWindow2(QScreen_Ptr* self, void* window, c_int x);
 	[LinkName("QScreen_GrabWindow3")]
-	public static extern QPixmap_Ptr QScreen_GrabWindow3(QScreen_Ptr* self, void* window, c_int x, c_int y);
+	public static extern QPixmap_Ptr* QScreen_GrabWindow3(QScreen_Ptr* self, void* window, c_int x, c_int y);
 	[LinkName("QScreen_GrabWindow4")]
-	public static extern QPixmap_Ptr QScreen_GrabWindow4(QScreen_Ptr* self, void* window, c_int x, c_int y, c_int w);
+	public static extern QPixmap_Ptr* QScreen_GrabWindow4(QScreen_Ptr* self, void* window, c_int x, c_int y, c_int w);
 	[LinkName("QScreen_GrabWindow5")]
-	public static extern QPixmap_Ptr QScreen_GrabWindow5(QScreen_Ptr* self, void* window, c_int x, c_int y, c_int w, c_int h);
+	public static extern QPixmap_Ptr* QScreen_GrabWindow5(QScreen_Ptr* self, void* window, c_int x, c_int y, c_int w, c_int h);
 }
-class QScreen
+class QScreen : IQScreen, IQObject
 {
 	private QScreen_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public ~this()
 	{
 		CQt.QScreen_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QScreen_MetaObject((.)this.ptr);
 	}
@@ -166,15 +167,15 @@ class QScreen
 	{
 		return CQt.QScreen_Depth((.)this.ptr);
 	}
-	public QSize_Ptr Size()
+	public QSize_Ptr* Size()
 	{
 		return CQt.QScreen_Size((.)this.ptr);
 	}
-	public QRect_Ptr Geometry()
+	public QRect_Ptr* Geometry()
 	{
 		return CQt.QScreen_Geometry((.)this.ptr);
 	}
-	public QSizeF_Ptr PhysicalSize()
+	public QSizeF_Ptr* PhysicalSize()
 	{
 		return CQt.QScreen_PhysicalSize((.)this.ptr);
 	}
@@ -206,11 +207,11 @@ class QScreen
 	{
 		return CQt.QScreen_DevicePixelRatio((.)this.ptr);
 	}
-	public QSize_Ptr AvailableSize()
+	public QSize_Ptr* AvailableSize()
 	{
 		return CQt.QScreen_AvailableSize((.)this.ptr);
 	}
-	public QRect_Ptr AvailableGeometry()
+	public QRect_Ptr* AvailableGeometry()
 	{
 		return CQt.QScreen_AvailableGeometry((.)this.ptr);
 	}
@@ -218,23 +219,23 @@ class QScreen
 	{
 		return CQt.QScreen_VirtualSiblings((.)this.ptr);
 	}
-	public QScreen_Ptr* VirtualSiblingAt(QPoint_Ptr point)
+	public QScreen_Ptr** VirtualSiblingAt(IQPoint point)
 	{
-		return CQt.QScreen_VirtualSiblingAt((.)this.ptr, point);
+		return CQt.QScreen_VirtualSiblingAt((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public QSize_Ptr VirtualSize()
+	public QSize_Ptr* VirtualSize()
 	{
 		return CQt.QScreen_VirtualSize((.)this.ptr);
 	}
-	public QRect_Ptr VirtualGeometry()
+	public QRect_Ptr* VirtualGeometry()
 	{
 		return CQt.QScreen_VirtualGeometry((.)this.ptr);
 	}
-	public QSize_Ptr AvailableVirtualSize()
+	public QSize_Ptr* AvailableVirtualSize()
 	{
 		return CQt.QScreen_AvailableVirtualSize((.)this.ptr);
 	}
-	public QRect_Ptr AvailableVirtualGeometry()
+	public QRect_Ptr* AvailableVirtualGeometry()
 	{
 		return CQt.QScreen_AvailableVirtualGeometry((.)this.ptr);
 	}
@@ -254,13 +255,13 @@ class QScreen
 	{
 		return CQt.QScreen_AngleBetween((.)this.ptr, a, b);
 	}
-	public QTransform_Ptr TransformBetween(Qt_ScreenOrientation a, Qt_ScreenOrientation b, QRect_Ptr* target)
+	public QTransform_Ptr* TransformBetween(Qt_ScreenOrientation a, Qt_ScreenOrientation b, IQRect target)
 	{
-		return CQt.QScreen_TransformBetween((.)this.ptr, a, b, target);
+		return CQt.QScreen_TransformBetween((.)this.ptr, a, b, (.)target?.ObjectPtr);
 	}
-	public QRect_Ptr MapBetween(Qt_ScreenOrientation a, Qt_ScreenOrientation b, QRect_Ptr* rect)
+	public QRect_Ptr* MapBetween(Qt_ScreenOrientation a, Qt_ScreenOrientation b, IQRect rect)
 	{
-		return CQt.QScreen_MapBetween((.)this.ptr, a, b, rect);
+		return CQt.QScreen_MapBetween((.)this.ptr, a, b, (.)rect?.ObjectPtr);
 	}
 	public bool IsPortrait(Qt_ScreenOrientation orientation)
 	{
@@ -270,7 +271,7 @@ class QScreen
 	{
 		return CQt.QScreen_IsLandscape((.)this.ptr, orientation);
 	}
-	public QPixmap_Ptr GrabWindow()
+	public QPixmap_Ptr* GrabWindow()
 	{
 		return CQt.QScreen_GrabWindow((.)this.ptr);
 	}
@@ -282,17 +283,17 @@ class QScreen
 	{
 		return CQt.QScreen_ResolveInterface((.)this.ptr, name, revision);
 	}
-	public void GeometryChanged(QRect_Ptr* geometry)
+	public void GeometryChanged(IQRect geometry)
 	{
-		CQt.QScreen_GeometryChanged((.)this.ptr, geometry);
+		CQt.QScreen_GeometryChanged((.)this.ptr, (.)geometry?.ObjectPtr);
 	}
-	public void AvailableGeometryChanged(QRect_Ptr* geometry)
+	public void AvailableGeometryChanged(IQRect geometry)
 	{
-		CQt.QScreen_AvailableGeometryChanged((.)this.ptr, geometry);
+		CQt.QScreen_AvailableGeometryChanged((.)this.ptr, (.)geometry?.ObjectPtr);
 	}
-	public void PhysicalSizeChanged(QSizeF_Ptr* size)
+	public void PhysicalSizeChanged(IQSizeF size)
 	{
-		CQt.QScreen_PhysicalSizeChanged((.)this.ptr, size);
+		CQt.QScreen_PhysicalSizeChanged((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public void PhysicalDotsPerInchChanged(double dpi)
 	{
@@ -302,9 +303,9 @@ class QScreen
 	{
 		CQt.QScreen_LogicalDotsPerInchChanged((.)this.ptr, dpi);
 	}
-	public void VirtualGeometryChanged(QRect_Ptr* rect)
+	public void VirtualGeometryChanged(IQRect rect)
 	{
-		CQt.QScreen_VirtualGeometryChanged((.)this.ptr, rect);
+		CQt.QScreen_VirtualGeometryChanged((.)this.ptr, (.)rect?.ObjectPtr);
 	}
 	public void PrimaryOrientationChanged(Qt_ScreenOrientation orientation)
 	{
@@ -326,41 +327,41 @@ class QScreen
 	{
 		return CQt.QScreen_Tr3(s, c, n);
 	}
-	public QPixmap_Ptr GrabWindow1(void* window)
+	public QPixmap_Ptr* GrabWindow1(void* window)
 	{
 		return CQt.QScreen_GrabWindow1((.)this.ptr, window);
 	}
-	public QPixmap_Ptr GrabWindow2(void* window, c_int x)
+	public QPixmap_Ptr* GrabWindow2(void* window, c_int x)
 	{
 		return CQt.QScreen_GrabWindow2((.)this.ptr, window, x);
 	}
-	public QPixmap_Ptr GrabWindow3(void* window, c_int x, c_int y)
+	public QPixmap_Ptr* GrabWindow3(void* window, c_int x, c_int y)
 	{
 		return CQt.QScreen_GrabWindow3((.)this.ptr, window, x, y);
 	}
-	public QPixmap_Ptr GrabWindow4(void* window, c_int x, c_int y, c_int w)
+	public QPixmap_Ptr* GrabWindow4(void* window, c_int x, c_int y, c_int w)
 	{
 		return CQt.QScreen_GrabWindow4((.)this.ptr, window, x, y, w);
 	}
-	public QPixmap_Ptr GrabWindow5(void* window, c_int x, c_int y, c_int w, c_int h)
+	public QPixmap_Ptr* GrabWindow5(void* window, c_int x, c_int y, c_int w, c_int h)
 	{
 		return CQt.QScreen_GrabWindow5((.)this.ptr, window, x, y, w, h);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -382,13 +383,13 @@ class QScreen
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -406,49 +407,49 @@ class QScreen
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -458,11 +459,11 @@ class QScreen
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -470,11 +471,11 @@ class QScreen
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -482,7 +483,7 @@ class QScreen
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -494,7 +495,7 @@ class QScreen
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -506,29 +507,29 @@ class QScreen
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -538,93 +539,39 @@ class QScreen
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQScreen
+interface IQScreen : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public libqt_string Name();
-	public libqt_string Manufacturer();
-	public libqt_string Model();
-	public libqt_string SerialNumber();
-	public c_int Depth();
-	public QSize Size();
-	public QRect Geometry();
-	public QSizeF PhysicalSize();
-	public double PhysicalDotsPerInchX();
-	public double PhysicalDotsPerInchY();
-	public double PhysicalDotsPerInch();
-	public double LogicalDotsPerInchX();
-	public double LogicalDotsPerInchY();
-	public double LogicalDotsPerInch();
-	public double DevicePixelRatio();
-	public QSize AvailableSize();
-	public QRect AvailableGeometry();
-	public void* VirtualSiblings();
-	public QScreen* VirtualSiblingAt();
-	public QSize VirtualSize();
-	public QRect VirtualGeometry();
-	public QSize AvailableVirtualSize();
-	public QRect AvailableVirtualGeometry();
-	public Qt_ScreenOrientation PrimaryOrientation();
-	public Qt_ScreenOrientation Orientation();
-	public Qt_ScreenOrientation NativeOrientation();
-	public c_int AngleBetween();
-	public QTransform TransformBetween();
-	public QRect MapBetween();
-	public bool IsPortrait();
-	public bool IsLandscape();
-	public QPixmap GrabWindow();
-	public double RefreshRate();
-	public void* ResolveInterface();
-	public void GeometryChanged();
-	public void AvailableGeometryChanged();
-	public void PhysicalSizeChanged();
-	public void PhysicalDotsPerInchChanged();
-	public void LogicalDotsPerInchChanged();
-	public void VirtualGeometryChanged();
-	public void PrimaryOrientationChanged();
-	public void OrientationChanged();
-	public void RefreshRateChanged();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public QPixmap GrabWindow1();
-	public QPixmap GrabWindow2();
-	public QPixmap GrabWindow3();
-	public QPixmap GrabWindow4();
-	public QPixmap GrabWindow5();
 }

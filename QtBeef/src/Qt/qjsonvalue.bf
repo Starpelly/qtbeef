@@ -23,7 +23,7 @@ extension CQt
 	[LinkName("QJsonValue_new5")]
 	public static extern QJsonValue_Ptr* QJsonValue_new5(c_longlong v);
 	[LinkName("QJsonValue_new6")]
-	public static extern QJsonValue_Ptr* QJsonValue_new6(libqt_string* s);
+	public static extern QJsonValue_Ptr* QJsonValue_new6(libqt_string s);
 	[LinkName("QJsonValue_new7")]
 	public static extern QJsonValue_Ptr* QJsonValue_new7(c_char* s);
 	[LinkName("QJsonValue_new8")]
@@ -41,9 +41,9 @@ extension CQt
 	[LinkName("QJsonValue_Swap")]
 	public static extern void QJsonValue_Swap(QJsonValue_Ptr* self, QJsonValue_Ptr* other);
 	[LinkName("QJsonValue_FromVariant")]
-	public static extern QJsonValue_Ptr QJsonValue_FromVariant(QVariant_Ptr* variant);
+	public static extern QJsonValue_Ptr* QJsonValue_FromVariant(QVariant_Ptr* variant);
 	[LinkName("QJsonValue_ToVariant")]
-	public static extern QVariant_Ptr QJsonValue_ToVariant(QJsonValue_Ptr* self);
+	public static extern QVariant_Ptr* QJsonValue_ToVariant(QJsonValue_Ptr* self);
 	[LinkName("QJsonValue_Type")]
 	public static extern QJsonValue_Type QJsonValue_Type(QJsonValue_Ptr* self);
 	[LinkName("QJsonValue_IsNull")]
@@ -71,19 +71,19 @@ extension CQt
 	[LinkName("QJsonValue_ToString")]
 	public static extern libqt_string QJsonValue_ToString(QJsonValue_Ptr* self);
 	[LinkName("QJsonValue_ToString2")]
-	public static extern libqt_string QJsonValue_ToString2(QJsonValue_Ptr* self, libqt_string* defaultValue);
+	public static extern libqt_string QJsonValue_ToString2(QJsonValue_Ptr* self, libqt_string defaultValue);
 	[LinkName("QJsonValue_ToArray")]
-	public static extern QJsonArray_Ptr QJsonValue_ToArray(QJsonValue_Ptr* self);
+	public static extern QJsonArray_Ptr* QJsonValue_ToArray(QJsonValue_Ptr* self);
 	[LinkName("QJsonValue_ToArray2")]
-	public static extern QJsonArray_Ptr QJsonValue_ToArray2(QJsonValue_Ptr* self, QJsonArray_Ptr* defaultValue);
+	public static extern QJsonArray_Ptr* QJsonValue_ToArray2(QJsonValue_Ptr* self, QJsonArray_Ptr* defaultValue);
 	[LinkName("QJsonValue_ToObject")]
-	public static extern QJsonObject_Ptr QJsonValue_ToObject(QJsonValue_Ptr* self);
+	public static extern QJsonObject_Ptr* QJsonValue_ToObject(QJsonValue_Ptr* self);
 	[LinkName("QJsonValue_ToObject2")]
-	public static extern QJsonObject_Ptr QJsonValue_ToObject2(QJsonValue_Ptr* self, QJsonObject_Ptr* defaultValue);
+	public static extern QJsonObject_Ptr* QJsonValue_ToObject2(QJsonValue_Ptr* self, QJsonObject_Ptr* defaultValue);
 	[LinkName("QJsonValue_OperatorSubscript")]
-	public static extern QJsonValue_Ptr QJsonValue_OperatorSubscript(QJsonValue_Ptr* self, libqt_string* key);
+	public static extern QJsonValue_Ptr* QJsonValue_OperatorSubscript(QJsonValue_Ptr* self, libqt_string key);
 	[LinkName("QJsonValue_OperatorSubscript4")]
-	public static extern QJsonValue_Ptr QJsonValue_OperatorSubscript4(QJsonValue_Ptr* self, void* i);
+	public static extern QJsonValue_Ptr* QJsonValue_OperatorSubscript4(QJsonValue_Ptr* self, void* i);
 	[LinkName("QJsonValue_OperatorEqual")]
 	public static extern bool QJsonValue_OperatorEqual(QJsonValue_Ptr* self, QJsonValue_Ptr* other);
 	[LinkName("QJsonValue_OperatorNotEqual")]
@@ -97,9 +97,10 @@ extension CQt
 	[LinkName("QJsonValue_ToDouble1")]
 	public static extern double QJsonValue_ToDouble1(QJsonValue_Ptr* self, double defaultValue);
 }
-class QJsonValue
+class QJsonValue : IQJsonValue
 {
 	private QJsonValue_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QJsonValue_new();
@@ -120,25 +121,25 @@ class QJsonValue
 	{
 		this.ptr = CQt.QJsonValue_new5(v);
 	}
-	public this(libqt_string* s)
+	public this(String s)
 	{
-		this.ptr = CQt.QJsonValue_new6(s);
+		this.ptr = CQt.QJsonValue_new6(libqt_string(s));
 	}
 	public this(c_char* s)
 	{
 		this.ptr = CQt.QJsonValue_new7(s);
 	}
-	public this(QJsonArray_Ptr* a)
+	public this(IQJsonArray a)
 	{
-		this.ptr = CQt.QJsonValue_new8(a);
+		this.ptr = CQt.QJsonValue_new8((.)a?.ObjectPtr);
 	}
-	public this(QJsonObject_Ptr* o)
+	public this(IQJsonObject o)
 	{
-		this.ptr = CQt.QJsonValue_new9(o);
+		this.ptr = CQt.QJsonValue_new9((.)o?.ObjectPtr);
 	}
-	public this(QJsonValue_Ptr* other)
+	public this(IQJsonValue other)
 	{
-		this.ptr = CQt.QJsonValue_new10(other);
+		this.ptr = CQt.QJsonValue_new10((.)other?.ObjectPtr);
 	}
 	public this(QJsonValue_Type param1)
 	{
@@ -148,15 +149,15 @@ class QJsonValue
 	{
 		CQt.QJsonValue_Delete(this.ptr);
 	}
-	public void Swap(QJsonValue_Ptr* other)
+	public void Swap(IQJsonValue other)
 	{
-		CQt.QJsonValue_Swap((.)this.ptr, other);
+		CQt.QJsonValue_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public QJsonValue_Ptr FromVariant(QVariant_Ptr* variant)
+	public QJsonValue_Ptr* FromVariant(IQVariant variant)
 	{
-		return CQt.QJsonValue_FromVariant(variant);
+		return CQt.QJsonValue_FromVariant((.)variant?.ObjectPtr);
 	}
-	public QVariant_Ptr ToVariant()
+	public QVariant_Ptr* ToVariant()
 	{
 		return CQt.QJsonValue_ToVariant((.)this.ptr);
 	}
@@ -212,27 +213,27 @@ class QJsonValue
 	{
 		return CQt.QJsonValue_ToString((.)this.ptr);
 	}
-	public libqt_string ToString2(libqt_string* defaultValue)
+	public libqt_string ToString2(String defaultValue)
 	{
-		return CQt.QJsonValue_ToString2((.)this.ptr, defaultValue);
+		return CQt.QJsonValue_ToString2((.)this.ptr, libqt_string(defaultValue));
 	}
-	public QJsonArray_Ptr ToArray()
+	public QJsonArray_Ptr* ToArray()
 	{
 		return CQt.QJsonValue_ToArray((.)this.ptr);
 	}
-	public QJsonArray_Ptr ToArray2(QJsonArray_Ptr* defaultValue)
+	public QJsonArray_Ptr* ToArray2(IQJsonArray defaultValue)
 	{
-		return CQt.QJsonValue_ToArray2((.)this.ptr, defaultValue);
+		return CQt.QJsonValue_ToArray2((.)this.ptr, (.)defaultValue?.ObjectPtr);
 	}
-	public QJsonObject_Ptr ToObject()
+	public QJsonObject_Ptr* ToObject()
 	{
 		return CQt.QJsonValue_ToObject((.)this.ptr);
 	}
-	public QJsonObject_Ptr ToObject2(QJsonObject_Ptr* defaultValue)
+	public QJsonObject_Ptr* ToObject2(IQJsonObject defaultValue)
 	{
-		return CQt.QJsonValue_ToObject2((.)this.ptr, defaultValue);
+		return CQt.QJsonValue_ToObject2((.)this.ptr, (.)defaultValue?.ObjectPtr);
 	}
-	public QJsonValue_Ptr OperatorSubscript4(void* i)
+	public QJsonValue_Ptr* OperatorSubscript4(void* i)
 	{
 		return CQt.QJsonValue_OperatorSubscript4((.)this.ptr, i);
 	}
@@ -253,34 +254,8 @@ class QJsonValue
 		return CQt.QJsonValue_ToDouble1((.)this.ptr, defaultValue);
 	}
 }
-interface IQJsonValue
+interface IQJsonValue : IQtObjectInterface
 {
-	public void Swap();
-	public QJsonValue FromVariant();
-	public QVariant ToVariant();
-	public QJsonValue_Type Type();
-	public bool IsNull();
-	public bool IsBool();
-	public bool IsDouble();
-	public bool IsString();
-	public bool IsArray();
-	public bool IsObject();
-	public bool IsUndefined();
-	public bool ToBool();
-	public c_int ToInt();
-	public c_longlong ToInteger();
-	public double ToDouble();
-	public libqt_string ToString();
-	public libqt_string ToString2();
-	public QJsonArray ToArray();
-	public QJsonArray ToArray2();
-	public QJsonObject ToObject();
-	public QJsonObject ToObject2();
-	public QJsonValue OperatorSubscript4();
-	public bool ToBool1();
-	public c_int ToInt1();
-	public c_longlong ToInteger1();
-	public double ToDouble1();
 }
 // --------------------------------------------------------------
 // QJsonValueConstRef
@@ -298,9 +273,9 @@ extension CQt
 	[LinkName("QJsonValueConstRef_Delete")]
 	public static extern void QJsonValueConstRef_Delete(QJsonValueConstRef_Ptr* self);
 	[LinkName("QJsonValueConstRef_ToQjsonvalue")]
-	public static extern QJsonValue_Ptr QJsonValueConstRef_ToQjsonvalue(QJsonValueConstRef_Ptr* self);
+	public static extern QJsonValue_Ptr* QJsonValueConstRef_ToQjsonvalue(QJsonValueConstRef_Ptr* self);
 	[LinkName("QJsonValueConstRef_ToVariant")]
-	public static extern QVariant_Ptr QJsonValueConstRef_ToVariant(QJsonValueConstRef_Ptr* self);
+	public static extern QVariant_Ptr* QJsonValueConstRef_ToVariant(QJsonValueConstRef_Ptr* self);
 	[LinkName("QJsonValueConstRef_Type")]
 	public static extern QJsonValue_Type QJsonValueConstRef_Type(QJsonValueConstRef_Ptr* self);
 	[LinkName("QJsonValueConstRef_IsNull")]
@@ -328,11 +303,11 @@ extension CQt
 	[LinkName("QJsonValueConstRef_ToString")]
 	public static extern libqt_string QJsonValueConstRef_ToString(QJsonValueConstRef_Ptr* self);
 	[LinkName("QJsonValueConstRef_ToArray")]
-	public static extern QJsonArray_Ptr QJsonValueConstRef_ToArray(QJsonValueConstRef_Ptr* self);
+	public static extern QJsonArray_Ptr* QJsonValueConstRef_ToArray(QJsonValueConstRef_Ptr* self);
 	[LinkName("QJsonValueConstRef_ToObject")]
-	public static extern QJsonObject_Ptr QJsonValueConstRef_ToObject(QJsonValueConstRef_Ptr* self);
+	public static extern QJsonObject_Ptr* QJsonValueConstRef_ToObject(QJsonValueConstRef_Ptr* self);
 	[LinkName("QJsonValueConstRef_OperatorSubscript3")]
-	public static extern QJsonValue_Ptr QJsonValueConstRef_OperatorSubscript3(QJsonValueConstRef_Ptr* self, void* i);
+	public static extern QJsonValue_Ptr* QJsonValueConstRef_OperatorSubscript3(QJsonValueConstRef_Ptr* self, void* i);
 	[LinkName("QJsonValueConstRef_OperatorEqual")]
 	public static extern bool QJsonValueConstRef_OperatorEqual(QJsonValueConstRef_Ptr* self, QJsonValue_Ptr* other);
 	[LinkName("QJsonValueConstRef_OperatorNotEqual")]
@@ -346,20 +321,21 @@ extension CQt
 	[LinkName("QJsonValueConstRef_ToDouble1")]
 	public static extern double QJsonValueConstRef_ToDouble1(QJsonValueConstRef_Ptr* self, double defaultValue);
 	[LinkName("QJsonValueConstRef_ToString1")]
-	public static extern libqt_string QJsonValueConstRef_ToString1(QJsonValueConstRef_Ptr* self, libqt_string* defaultValue);
+	public static extern libqt_string QJsonValueConstRef_ToString1(QJsonValueConstRef_Ptr* self, libqt_string defaultValue);
 }
-class QJsonValueConstRef
+class QJsonValueConstRef : IQJsonValueConstRef
 {
 	private QJsonValueConstRef_Ptr* ptr;
-	public this(QJsonValueConstRef_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQJsonValueConstRef other)
 	{
-		this.ptr = CQt.QJsonValueConstRef_new(other);
+		this.ptr = CQt.QJsonValueConstRef_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QJsonValueConstRef_Delete(this.ptr);
 	}
-	public QVariant_Ptr ToVariant()
+	public QVariant_Ptr* ToVariant()
 	{
 		return CQt.QJsonValueConstRef_ToVariant((.)this.ptr);
 	}
@@ -415,15 +391,15 @@ class QJsonValueConstRef
 	{
 		return CQt.QJsonValueConstRef_ToString((.)this.ptr);
 	}
-	public QJsonArray_Ptr ToArray()
+	public QJsonArray_Ptr* ToArray()
 	{
 		return CQt.QJsonValueConstRef_ToArray((.)this.ptr);
 	}
-	public QJsonObject_Ptr ToObject()
+	public QJsonObject_Ptr* ToObject()
 	{
 		return CQt.QJsonValueConstRef_ToObject((.)this.ptr);
 	}
-	public QJsonValue_Ptr OperatorSubscript3(void* i)
+	public QJsonValue_Ptr* OperatorSubscript3(void* i)
 	{
 		return CQt.QJsonValueConstRef_OperatorSubscript3((.)this.ptr, i);
 	}
@@ -443,35 +419,13 @@ class QJsonValueConstRef
 	{
 		return CQt.QJsonValueConstRef_ToDouble1((.)this.ptr, defaultValue);
 	}
-	public libqt_string ToString1(libqt_string* defaultValue)
+	public libqt_string ToString1(String defaultValue)
 	{
-		return CQt.QJsonValueConstRef_ToString1((.)this.ptr, defaultValue);
+		return CQt.QJsonValueConstRef_ToString1((.)this.ptr, libqt_string(defaultValue));
 	}
 }
-interface IQJsonValueConstRef
+interface IQJsonValueConstRef : IQtObjectInterface
 {
-	public QVariant ToVariant();
-	public QJsonValue_Type Type();
-	public bool IsNull();
-	public bool IsBool();
-	public bool IsDouble();
-	public bool IsString();
-	public bool IsArray();
-	public bool IsObject();
-	public bool IsUndefined();
-	public bool ToBool();
-	public c_int ToInt();
-	public c_longlong ToInteger();
-	public double ToDouble();
-	public libqt_string ToString();
-	public QJsonArray ToArray();
-	public QJsonObject ToObject();
-	public QJsonValue OperatorSubscript3();
-	public bool ToBool1();
-	public c_int ToInt1();
-	public c_longlong ToInteger1();
-	public double ToDouble1();
-	public libqt_string ToString1();
 }
 // --------------------------------------------------------------
 // QJsonValueRef
@@ -487,9 +441,9 @@ extension CQt
 	[LinkName("QJsonValueRef_new2")]
 	public static extern QJsonValueRef_Ptr* QJsonValueRef_new2(QJsonValueRef_Ptr* param1);
 	[LinkName("QJsonValueRef_new3")]
-	public static extern QJsonValueRef_Ptr* QJsonValueRef_new3(QJsonArray_Ptr* array, void* idx);
+	public static extern QJsonValueRef_Ptr* QJsonValueRef_new3(QJsonArray_Ptr** array, void* idx);
 	[LinkName("QJsonValueRef_new4")]
-	public static extern QJsonValueRef_Ptr* QJsonValueRef_new4(QJsonObject_Ptr* object, void* idx);
+	public static extern QJsonValueRef_Ptr* QJsonValueRef_new4(QJsonObject_Ptr** object, void* idx);
 	[LinkName("QJsonValueRef_Delete")]
 	public static extern void QJsonValueRef_Delete(QJsonValueRef_Ptr* self);
 	[LinkName("QJsonValueRef_OperatorAssign")]
@@ -497,9 +451,9 @@ extension CQt
 	[LinkName("QJsonValueRef_OperatorAssign2")]
 	public static extern void QJsonValueRef_OperatorAssign2(QJsonValueRef_Ptr* self, QJsonValueRef_Ptr* val);
 	[LinkName("QJsonValueRef_ToQjsonvalue")]
-	public static extern QJsonValue_Ptr QJsonValueRef_ToQjsonvalue(QJsonValueRef_Ptr* self);
+	public static extern QJsonValue_Ptr* QJsonValueRef_ToQjsonvalue(QJsonValueRef_Ptr* self);
 	[LinkName("QJsonValueRef_ToVariant")]
-	public static extern QVariant_Ptr QJsonValueRef_ToVariant(QJsonValueRef_Ptr* self);
+	public static extern QVariant_Ptr* QJsonValueRef_ToVariant(QJsonValueRef_Ptr* self);
 	[LinkName("QJsonValueRef_Type")]
 	public static extern QJsonValue_Type QJsonValueRef_Type(QJsonValueRef_Ptr* self);
 	[LinkName("QJsonValueRef_IsNull")]
@@ -527,11 +481,11 @@ extension CQt
 	[LinkName("QJsonValueRef_ToString")]
 	public static extern libqt_string QJsonValueRef_ToString(QJsonValueRef_Ptr* self);
 	[LinkName("QJsonValueRef_ToArray")]
-	public static extern QJsonArray_Ptr QJsonValueRef_ToArray(QJsonValueRef_Ptr* self);
+	public static extern QJsonArray_Ptr* QJsonValueRef_ToArray(QJsonValueRef_Ptr* self);
 	[LinkName("QJsonValueRef_ToObject")]
-	public static extern QJsonObject_Ptr QJsonValueRef_ToObject(QJsonValueRef_Ptr* self);
+	public static extern QJsonObject_Ptr* QJsonValueRef_ToObject(QJsonValueRef_Ptr* self);
 	[LinkName("QJsonValueRef_OperatorSubscript3")]
-	public static extern QJsonValue_Ptr QJsonValueRef_OperatorSubscript3(QJsonValueRef_Ptr* self, void* i);
+	public static extern QJsonValue_Ptr* QJsonValueRef_OperatorSubscript3(QJsonValueRef_Ptr* self, void* i);
 	[LinkName("QJsonValueRef_OperatorEqual")]
 	public static extern bool QJsonValueRef_OperatorEqual(QJsonValueRef_Ptr* self, QJsonValue_Ptr* other);
 	[LinkName("QJsonValueRef_OperatorNotEqual")]
@@ -545,32 +499,33 @@ extension CQt
 	[LinkName("QJsonValueRef_ToDouble1")]
 	public static extern double QJsonValueRef_ToDouble1(QJsonValueRef_Ptr* self, double defaultValue);
 	[LinkName("QJsonValueRef_ToString1")]
-	public static extern libqt_string QJsonValueRef_ToString1(QJsonValueRef_Ptr* self, libqt_string* defaultValue);
+	public static extern libqt_string QJsonValueRef_ToString1(QJsonValueRef_Ptr* self, libqt_string defaultValue);
 }
-class QJsonValueRef
+class QJsonValueRef : IQJsonValueRef, IQJsonValueConstRef
 {
 	private QJsonValueRef_Ptr* ptr;
-	public this(QJsonValueRef_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQJsonValueRef other)
 	{
-		this.ptr = CQt.QJsonValueRef_new(other);
+		this.ptr = CQt.QJsonValueRef_new((.)other?.ObjectPtr);
 	}
-	public this(QJsonArray_Ptr* array, void* idx)
+	public this(IQJsonArray array, void* idx)
 	{
-		this.ptr = CQt.QJsonValueRef_new3(array, idx);
+		this.ptr = CQt.QJsonValueRef_new3((.)array?.ObjectPtr, idx);
 	}
-	public this(QJsonObject_Ptr* object, void* idx)
+	public this(IQJsonObject object, void* idx)
 	{
-		this.ptr = CQt.QJsonValueRef_new4(object, idx);
+		this.ptr = CQt.QJsonValueRef_new4((.)object?.ObjectPtr, idx);
 	}
 	public ~this()
 	{
 		CQt.QJsonValueRef_Delete(this.ptr);
 	}
-	public void OperatorAssign2(QJsonValueRef_Ptr* val)
+	public void OperatorAssign2(IQJsonValueRef val)
 	{
-		CQt.QJsonValueRef_OperatorAssign2((.)this.ptr, val);
+		CQt.QJsonValueRef_OperatorAssign2((.)this.ptr, (.)val?.ObjectPtr);
 	}
-	public QVariant_Ptr ToVariant()
+	public QVariant_Ptr* ToVariant()
 	{
 		return CQt.QJsonValueRef_ToVariant((.)this.ptr);
 	}
@@ -626,15 +581,15 @@ class QJsonValueRef
 	{
 		return CQt.QJsonValueRef_ToString((.)this.ptr);
 	}
-	public QJsonArray_Ptr ToArray()
+	public QJsonArray_Ptr* ToArray()
 	{
 		return CQt.QJsonValueRef_ToArray((.)this.ptr);
 	}
-	public QJsonObject_Ptr ToObject()
+	public QJsonObject_Ptr* ToObject()
 	{
 		return CQt.QJsonValueRef_ToObject((.)this.ptr);
 	}
-	public QJsonValue_Ptr OperatorSubscript3(void* i)
+	public QJsonValue_Ptr* OperatorSubscript3(void* i)
 	{
 		return CQt.QJsonValueRef_OperatorSubscript3((.)this.ptr, i);
 	}
@@ -654,36 +609,13 @@ class QJsonValueRef
 	{
 		return CQt.QJsonValueRef_ToDouble1((.)this.ptr, defaultValue);
 	}
-	public libqt_string ToString1(libqt_string* defaultValue)
+	public libqt_string ToString1(String defaultValue)
 	{
-		return CQt.QJsonValueRef_ToString1((.)this.ptr, defaultValue);
+		return CQt.QJsonValueRef_ToString1((.)this.ptr, libqt_string(defaultValue));
 	}
 }
-interface IQJsonValueRef
+interface IQJsonValueRef : IQtObjectInterface
 {
-	public void OperatorAssign2();
-	public QVariant ToVariant();
-	public QJsonValue_Type Type();
-	public bool IsNull();
-	public bool IsBool();
-	public bool IsDouble();
-	public bool IsString();
-	public bool IsArray();
-	public bool IsObject();
-	public bool IsUndefined();
-	public bool ToBool();
-	public c_int ToInt();
-	public c_longlong ToInteger();
-	public double ToDouble();
-	public libqt_string ToString();
-	public QJsonArray ToArray();
-	public QJsonObject ToObject();
-	public QJsonValue OperatorSubscript3();
-	public bool ToBool1();
-	public c_int ToInt1();
-	public c_longlong ToInteger1();
-	public double ToDouble1();
-	public libqt_string ToString1();
 }
 [AllowDuplicates]
 enum QJsonValue_Type

@@ -43,7 +43,7 @@ extension CQt
 	[LinkName("QRect_Bottom")]
 	public static extern c_int QRect_Bottom(QRect_Ptr* self);
 	[LinkName("QRect_Normalized")]
-	public static extern QRect_Ptr QRect_Normalized(QRect_Ptr* self);
+	public static extern QRect_Ptr* QRect_Normalized(QRect_Ptr* self);
 	[LinkName("QRect_X")]
 	public static extern c_int QRect_X(QRect_Ptr* self);
 	[LinkName("QRect_Y")]
@@ -69,15 +69,15 @@ extension CQt
 	[LinkName("QRect_SetBottomLeft")]
 	public static extern void QRect_SetBottomLeft(QRect_Ptr* self, QPoint_Ptr* p);
 	[LinkName("QRect_TopLeft")]
-	public static extern QPoint_Ptr QRect_TopLeft(QRect_Ptr* self);
+	public static extern QPoint_Ptr* QRect_TopLeft(QRect_Ptr* self);
 	[LinkName("QRect_BottomRight")]
-	public static extern QPoint_Ptr QRect_BottomRight(QRect_Ptr* self);
+	public static extern QPoint_Ptr* QRect_BottomRight(QRect_Ptr* self);
 	[LinkName("QRect_TopRight")]
-	public static extern QPoint_Ptr QRect_TopRight(QRect_Ptr* self);
+	public static extern QPoint_Ptr* QRect_TopRight(QRect_Ptr* self);
 	[LinkName("QRect_BottomLeft")]
-	public static extern QPoint_Ptr QRect_BottomLeft(QRect_Ptr* self);
+	public static extern QPoint_Ptr* QRect_BottomLeft(QRect_Ptr* self);
 	[LinkName("QRect_Center")]
-	public static extern QPoint_Ptr QRect_Center(QRect_Ptr* self);
+	public static extern QPoint_Ptr* QRect_Center(QRect_Ptr* self);
 	[LinkName("QRect_MoveLeft")]
 	public static extern void QRect_MoveLeft(QRect_Ptr* self, c_int pos);
 	[LinkName("QRect_MoveTop")]
@@ -101,11 +101,11 @@ extension CQt
 	[LinkName("QRect_Translate2")]
 	public static extern void QRect_Translate2(QRect_Ptr* self, QPoint_Ptr* p);
 	[LinkName("QRect_Translated")]
-	public static extern QRect_Ptr QRect_Translated(QRect_Ptr* self, c_int dx, c_int dy);
+	public static extern QRect_Ptr* QRect_Translated(QRect_Ptr* self, c_int dx, c_int dy);
 	[LinkName("QRect_Translated2")]
-	public static extern QRect_Ptr QRect_Translated2(QRect_Ptr* self, QPoint_Ptr* p);
+	public static extern QRect_Ptr* QRect_Translated2(QRect_Ptr* self, QPoint_Ptr* p);
 	[LinkName("QRect_Transposed")]
-	public static extern QRect_Ptr QRect_Transposed(QRect_Ptr* self);
+	public static extern QRect_Ptr* QRect_Transposed(QRect_Ptr* self);
 	[LinkName("QRect_MoveTo")]
 	public static extern void QRect_MoveTo(QRect_Ptr* self, c_int x, c_int t);
 	[LinkName("QRect_MoveTo2")]
@@ -121,9 +121,9 @@ extension CQt
 	[LinkName("QRect_Adjust")]
 	public static extern void QRect_Adjust(QRect_Ptr* self, c_int x1, c_int y1, c_int x2, c_int y2);
 	[LinkName("QRect_Adjusted")]
-	public static extern QRect_Ptr QRect_Adjusted(QRect_Ptr* self, c_int x1, c_int y1, c_int x2, c_int y2);
+	public static extern QRect_Ptr* QRect_Adjusted(QRect_Ptr* self, c_int x1, c_int y1, c_int x2, c_int y2);
 	[LinkName("QRect_Size")]
-	public static extern QSize_Ptr QRect_Size(QRect_Ptr* self);
+	public static extern QSize_Ptr* QRect_Size(QRect_Ptr* self);
 	[LinkName("QRect_Width")]
 	public static extern c_int QRect_Width(QRect_Ptr* self);
 	[LinkName("QRect_Height")]
@@ -135,9 +135,9 @@ extension CQt
 	[LinkName("QRect_SetSize")]
 	public static extern void QRect_SetSize(QRect_Ptr* self, QSize_Ptr* s);
 	[LinkName("QRect_OperatorBitwiseOr")]
-	public static extern QRect_Ptr QRect_OperatorBitwiseOr(QRect_Ptr* self, QRect_Ptr* r);
+	public static extern QRect_Ptr* QRect_OperatorBitwiseOr(QRect_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRect_OperatorBitwiseAnd")]
-	public static extern QRect_Ptr QRect_OperatorBitwiseAnd(QRect_Ptr* self, QRect_Ptr* r);
+	public static extern QRect_Ptr* QRect_OperatorBitwiseAnd(QRect_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRect_OperatorBitwiseOrAssign")]
 	public static extern void QRect_OperatorBitwiseOrAssign(QRect_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRect_OperatorBitwiseAndAssign")]
@@ -151,46 +151,47 @@ extension CQt
 	[LinkName("QRect_Contains4")]
 	public static extern bool QRect_Contains4(QRect_Ptr* self, c_int x, c_int y, bool proper);
 	[LinkName("QRect_United")]
-	public static extern QRect_Ptr QRect_United(QRect_Ptr* self, QRect_Ptr* other);
+	public static extern QRect_Ptr* QRect_United(QRect_Ptr* self, QRect_Ptr* other);
 	[LinkName("QRect_Intersected")]
-	public static extern QRect_Ptr QRect_Intersected(QRect_Ptr* self, QRect_Ptr* other);
+	public static extern QRect_Ptr* QRect_Intersected(QRect_Ptr* self, QRect_Ptr* other);
 	[LinkName("QRect_Intersects")]
 	public static extern bool QRect_Intersects(QRect_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRect_MarginsAdded")]
-	public static extern QRect_Ptr QRect_MarginsAdded(QRect_Ptr* self, QMargins_Ptr* margins);
+	public static extern QRect_Ptr* QRect_MarginsAdded(QRect_Ptr* self, QMargins_Ptr* margins);
 	[LinkName("QRect_MarginsRemoved")]
-	public static extern QRect_Ptr QRect_MarginsRemoved(QRect_Ptr* self, QMargins_Ptr* margins);
+	public static extern QRect_Ptr* QRect_MarginsRemoved(QRect_Ptr* self, QMargins_Ptr* margins);
 	[LinkName("QRect_OperatorPlusAssign")]
 	public static extern QRect_Ptr* QRect_OperatorPlusAssign(QRect_Ptr* self, QMargins_Ptr* margins);
 	[LinkName("QRect_OperatorMinusAssign")]
 	public static extern QRect_Ptr* QRect_OperatorMinusAssign(QRect_Ptr* self, QMargins_Ptr* margins);
 	[LinkName("QRect_Span")]
-	public static extern QRect_Ptr QRect_Span(QPoint_Ptr* p1, QPoint_Ptr* p2);
+	public static extern QRect_Ptr* QRect_Span(QPoint_Ptr* p1, QPoint_Ptr* p2);
 	[LinkName("QRect_ToRectF")]
-	public static extern QRectF_Ptr QRect_ToRectF(QRect_Ptr* self);
+	public static extern QRectF_Ptr* QRect_ToRectF(QRect_Ptr* self);
 	[LinkName("QRect_Contains22")]
 	public static extern bool QRect_Contains22(QRect_Ptr* self, QRect_Ptr* r, bool proper);
 	[LinkName("QRect_Contains23")]
 	public static extern bool QRect_Contains23(QRect_Ptr* self, QPoint_Ptr* p, bool proper);
 }
-class QRect
+class QRect : IQRect
 {
 	private QRect_Ptr* ptr;
-	public this(QRect_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQRect other)
 	{
-		this.ptr = CQt.QRect_new(other);
+		this.ptr = CQt.QRect_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRect_new3();
 	}
-	public this(QPoint_Ptr* topleft, QPoint_Ptr* bottomright)
+	public this(IQPoint topleft, IQPoint bottomright)
 	{
-		this.ptr = CQt.QRect_new4(topleft, bottomright);
+		this.ptr = CQt.QRect_new4((.)topleft?.ObjectPtr, (.)bottomright?.ObjectPtr);
 	}
-	public this(QPoint_Ptr* topleft, QSize_Ptr* size)
+	public this(IQPoint topleft, IQSize size)
 	{
-		this.ptr = CQt.QRect_new5(topleft, size);
+		this.ptr = CQt.QRect_new5((.)topleft?.ObjectPtr, (.)size?.ObjectPtr);
 	}
 	public this(c_int left, c_int top, c_int width, c_int height)
 	{
@@ -228,7 +229,7 @@ class QRect
 	{
 		return CQt.QRect_Bottom((.)this.ptr);
 	}
-	public QRect_Ptr Normalized()
+	public QRect_Ptr* Normalized()
 	{
 		return CQt.QRect_Normalized((.)this.ptr);
 	}
@@ -264,39 +265,39 @@ class QRect
 	{
 		CQt.QRect_SetY((.)this.ptr, y);
 	}
-	public void SetTopLeft(QPoint_Ptr* p)
+	public void SetTopLeft(IQPoint p)
 	{
-		CQt.QRect_SetTopLeft((.)this.ptr, p);
+		CQt.QRect_SetTopLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void SetBottomRight(QPoint_Ptr* p)
+	public void SetBottomRight(IQPoint p)
 	{
-		CQt.QRect_SetBottomRight((.)this.ptr, p);
+		CQt.QRect_SetBottomRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void SetTopRight(QPoint_Ptr* p)
+	public void SetTopRight(IQPoint p)
 	{
-		CQt.QRect_SetTopRight((.)this.ptr, p);
+		CQt.QRect_SetTopRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void SetBottomLeft(QPoint_Ptr* p)
+	public void SetBottomLeft(IQPoint p)
 	{
-		CQt.QRect_SetBottomLeft((.)this.ptr, p);
+		CQt.QRect_SetBottomLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QPoint_Ptr TopLeft()
+	public QPoint_Ptr* TopLeft()
 	{
 		return CQt.QRect_TopLeft((.)this.ptr);
 	}
-	public QPoint_Ptr BottomRight()
+	public QPoint_Ptr* BottomRight()
 	{
 		return CQt.QRect_BottomRight((.)this.ptr);
 	}
-	public QPoint_Ptr TopRight()
+	public QPoint_Ptr* TopRight()
 	{
 		return CQt.QRect_TopRight((.)this.ptr);
 	}
-	public QPoint_Ptr BottomLeft()
+	public QPoint_Ptr* BottomLeft()
 	{
 		return CQt.QRect_BottomLeft((.)this.ptr);
 	}
-	public QPoint_Ptr Center()
+	public QPoint_Ptr* Center()
 	{
 		return CQt.QRect_Center((.)this.ptr);
 	}
@@ -316,43 +317,43 @@ class QRect
 	{
 		CQt.QRect_MoveBottom((.)this.ptr, pos);
 	}
-	public void MoveTopLeft(QPoint_Ptr* p)
+	public void MoveTopLeft(IQPoint p)
 	{
-		CQt.QRect_MoveTopLeft((.)this.ptr, p);
+		CQt.QRect_MoveTopLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveBottomRight(QPoint_Ptr* p)
+	public void MoveBottomRight(IQPoint p)
 	{
-		CQt.QRect_MoveBottomRight((.)this.ptr, p);
+		CQt.QRect_MoveBottomRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveTopRight(QPoint_Ptr* p)
+	public void MoveTopRight(IQPoint p)
 	{
-		CQt.QRect_MoveTopRight((.)this.ptr, p);
+		CQt.QRect_MoveTopRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveBottomLeft(QPoint_Ptr* p)
+	public void MoveBottomLeft(IQPoint p)
 	{
-		CQt.QRect_MoveBottomLeft((.)this.ptr, p);
+		CQt.QRect_MoveBottomLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveCenter(QPoint_Ptr* p)
+	public void MoveCenter(IQPoint p)
 	{
-		CQt.QRect_MoveCenter((.)this.ptr, p);
+		CQt.QRect_MoveCenter((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public void Translate(c_int dx, c_int dy)
 	{
 		CQt.QRect_Translate((.)this.ptr, dx, dy);
 	}
-	public void Translate2(QPoint_Ptr* p)
+	public void Translate2(IQPoint p)
 	{
-		CQt.QRect_Translate2((.)this.ptr, p);
+		CQt.QRect_Translate2((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QRect_Ptr Translated(c_int dx, c_int dy)
+	public QRect_Ptr* Translated(c_int dx, c_int dy)
 	{
 		return CQt.QRect_Translated((.)this.ptr, dx, dy);
 	}
-	public QRect_Ptr Translated2(QPoint_Ptr* p)
+	public QRect_Ptr* Translated2(IQPoint p)
 	{
-		return CQt.QRect_Translated2((.)this.ptr, p);
+		return CQt.QRect_Translated2((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QRect_Ptr Transposed()
+	public QRect_Ptr* Transposed()
 	{
 		return CQt.QRect_Transposed((.)this.ptr);
 	}
@@ -360,9 +361,9 @@ class QRect
 	{
 		CQt.QRect_MoveTo((.)this.ptr, x, t);
 	}
-	public void MoveTo2(QPoint_Ptr* p)
+	public void MoveTo2(IQPoint p)
 	{
-		CQt.QRect_MoveTo2((.)this.ptr, p);
+		CQt.QRect_MoveTo2((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public void SetRect(c_int x, c_int y, c_int w, c_int h)
 	{
@@ -384,11 +385,11 @@ class QRect
 	{
 		CQt.QRect_Adjust((.)this.ptr, x1, y1, x2, y2);
 	}
-	public QRect_Ptr Adjusted(c_int x1, c_int y1, c_int x2, c_int y2)
+	public QRect_Ptr* Adjusted(c_int x1, c_int y1, c_int x2, c_int y2)
 	{
 		return CQt.QRect_Adjusted((.)this.ptr, x1, y1, x2, y2);
 	}
-	public QSize_Ptr Size()
+	public QSize_Ptr* Size()
 	{
 		return CQt.QRect_Size((.)this.ptr);
 	}
@@ -408,17 +409,17 @@ class QRect
 	{
 		CQt.QRect_SetHeight((.)this.ptr, h);
 	}
-	public void SetSize(QSize_Ptr* s)
+	public void SetSize(IQSize s)
 	{
-		CQt.QRect_SetSize((.)this.ptr, s);
+		CQt.QRect_SetSize((.)this.ptr, (.)s?.ObjectPtr);
 	}
-	public bool Contains(QRect_Ptr* r)
+	public bool Contains(IQRect r)
 	{
-		return CQt.QRect_Contains((.)this.ptr, r);
+		return CQt.QRect_Contains((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public bool Contains2(QPoint_Ptr* p)
+	public bool Contains2(IQPoint p)
 	{
-		return CQt.QRect_Contains2((.)this.ptr, p);
+		return CQt.QRect_Contains2((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public bool Contains3(c_int x, c_int y)
 	{
@@ -428,111 +429,45 @@ class QRect
 	{
 		return CQt.QRect_Contains4((.)this.ptr, x, y, proper);
 	}
-	public QRect_Ptr United(QRect_Ptr* other)
+	public QRect_Ptr* United(IQRect other)
 	{
-		return CQt.QRect_United((.)this.ptr, other);
+		return CQt.QRect_United((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public QRect_Ptr Intersected(QRect_Ptr* other)
+	public QRect_Ptr* Intersected(IQRect other)
 	{
-		return CQt.QRect_Intersected((.)this.ptr, other);
+		return CQt.QRect_Intersected((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public bool Intersects(QRect_Ptr* r)
+	public bool Intersects(IQRect r)
 	{
-		return CQt.QRect_Intersects((.)this.ptr, r);
+		return CQt.QRect_Intersects((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRect_Ptr MarginsAdded(QMargins_Ptr* margins)
+	public QRect_Ptr* MarginsAdded(IQMargins margins)
 	{
-		return CQt.QRect_MarginsAdded((.)this.ptr, margins);
+		return CQt.QRect_MarginsAdded((.)this.ptr, (.)margins?.ObjectPtr);
 	}
-	public QRect_Ptr MarginsRemoved(QMargins_Ptr* margins)
+	public QRect_Ptr* MarginsRemoved(IQMargins margins)
 	{
-		return CQt.QRect_MarginsRemoved((.)this.ptr, margins);
+		return CQt.QRect_MarginsRemoved((.)this.ptr, (.)margins?.ObjectPtr);
 	}
-	public QRect_Ptr Span(QPoint_Ptr* p1, QPoint_Ptr* p2)
+	public QRect_Ptr* Span(IQPoint p1, IQPoint p2)
 	{
-		return CQt.QRect_Span(p1, p2);
+		return CQt.QRect_Span((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
 	}
-	public QRectF_Ptr ToRectF()
+	public QRectF_Ptr* ToRectF()
 	{
 		return CQt.QRect_ToRectF((.)this.ptr);
 	}
-	public bool Contains22(QRect_Ptr* r, bool proper)
+	public bool Contains22(IQRect r, bool proper)
 	{
-		return CQt.QRect_Contains22((.)this.ptr, r, proper);
+		return CQt.QRect_Contains22((.)this.ptr, (.)r?.ObjectPtr, proper);
 	}
-	public bool Contains23(QPoint_Ptr* p, bool proper)
+	public bool Contains23(IQPoint p, bool proper)
 	{
-		return CQt.QRect_Contains23((.)this.ptr, p, proper);
+		return CQt.QRect_Contains23((.)this.ptr, (.)p?.ObjectPtr, proper);
 	}
 }
-interface IQRect
+interface IQRect : IQtObjectInterface
 {
-	public bool IsNull();
-	public bool IsEmpty();
-	public bool IsValid();
-	public c_int Left();
-	public c_int Top();
-	public c_int Right();
-	public c_int Bottom();
-	public QRect Normalized();
-	public c_int X();
-	public c_int Y();
-	public void SetLeft();
-	public void SetTop();
-	public void SetRight();
-	public void SetBottom();
-	public void SetX();
-	public void SetY();
-	public void SetTopLeft();
-	public void SetBottomRight();
-	public void SetTopRight();
-	public void SetBottomLeft();
-	public QPoint TopLeft();
-	public QPoint BottomRight();
-	public QPoint TopRight();
-	public QPoint BottomLeft();
-	public QPoint Center();
-	public void MoveLeft();
-	public void MoveTop();
-	public void MoveRight();
-	public void MoveBottom();
-	public void MoveTopLeft();
-	public void MoveBottomRight();
-	public void MoveTopRight();
-	public void MoveBottomLeft();
-	public void MoveCenter();
-	public void Translate();
-	public void Translate2();
-	public QRect Translated();
-	public QRect Translated2();
-	public QRect Transposed();
-	public void MoveTo();
-	public void MoveTo2();
-	public void SetRect();
-	public void GetRect();
-	public void SetCoords();
-	public void GetCoords();
-	public void Adjust();
-	public QRect Adjusted();
-	public QSize Size();
-	public c_int Width();
-	public c_int Height();
-	public void SetWidth();
-	public void SetHeight();
-	public void SetSize();
-	public bool Contains();
-	public bool Contains2();
-	public bool Contains3();
-	public bool Contains4();
-	public QRect United();
-	public QRect Intersected();
-	public bool Intersects();
-	public QRect MarginsAdded();
-	public QRect MarginsRemoved();
-	public QRect Span();
-	public QRectF ToRectF();
-	public bool Contains22();
-	public bool Contains23();
 }
 // --------------------------------------------------------------
 // QRectF
@@ -568,7 +503,7 @@ extension CQt
 	[LinkName("QRectF_IsValid")]
 	public static extern bool QRectF_IsValid(QRectF_Ptr* self);
 	[LinkName("QRectF_Normalized")]
-	public static extern QRectF_Ptr QRectF_Normalized(QRectF_Ptr* self);
+	public static extern QRectF_Ptr* QRectF_Normalized(QRectF_Ptr* self);
 	[LinkName("QRectF_Left")]
 	public static extern double QRectF_Left(QRectF_Ptr* self);
 	[LinkName("QRectF_Top")]
@@ -594,15 +529,15 @@ extension CQt
 	[LinkName("QRectF_SetY")]
 	public static extern void QRectF_SetY(QRectF_Ptr* self, double pos);
 	[LinkName("QRectF_TopLeft")]
-	public static extern QPointF_Ptr QRectF_TopLeft(QRectF_Ptr* self);
+	public static extern QPointF_Ptr* QRectF_TopLeft(QRectF_Ptr* self);
 	[LinkName("QRectF_BottomRight")]
-	public static extern QPointF_Ptr QRectF_BottomRight(QRectF_Ptr* self);
+	public static extern QPointF_Ptr* QRectF_BottomRight(QRectF_Ptr* self);
 	[LinkName("QRectF_TopRight")]
-	public static extern QPointF_Ptr QRectF_TopRight(QRectF_Ptr* self);
+	public static extern QPointF_Ptr* QRectF_TopRight(QRectF_Ptr* self);
 	[LinkName("QRectF_BottomLeft")]
-	public static extern QPointF_Ptr QRectF_BottomLeft(QRectF_Ptr* self);
+	public static extern QPointF_Ptr* QRectF_BottomLeft(QRectF_Ptr* self);
 	[LinkName("QRectF_Center")]
-	public static extern QPointF_Ptr QRectF_Center(QRectF_Ptr* self);
+	public static extern QPointF_Ptr* QRectF_Center(QRectF_Ptr* self);
 	[LinkName("QRectF_SetTopLeft")]
 	public static extern void QRectF_SetTopLeft(QRectF_Ptr* self, QPointF_Ptr* p);
 	[LinkName("QRectF_SetBottomRight")]
@@ -634,11 +569,11 @@ extension CQt
 	[LinkName("QRectF_Translate2")]
 	public static extern void QRectF_Translate2(QRectF_Ptr* self, QPointF_Ptr* p);
 	[LinkName("QRectF_Translated")]
-	public static extern QRectF_Ptr QRectF_Translated(QRectF_Ptr* self, double dx, double dy);
+	public static extern QRectF_Ptr* QRectF_Translated(QRectF_Ptr* self, double dx, double dy);
 	[LinkName("QRectF_Translated2")]
-	public static extern QRectF_Ptr QRectF_Translated2(QRectF_Ptr* self, QPointF_Ptr* p);
+	public static extern QRectF_Ptr* QRectF_Translated2(QRectF_Ptr* self, QPointF_Ptr* p);
 	[LinkName("QRectF_Transposed")]
-	public static extern QRectF_Ptr QRectF_Transposed(QRectF_Ptr* self);
+	public static extern QRectF_Ptr* QRectF_Transposed(QRectF_Ptr* self);
 	[LinkName("QRectF_MoveTo")]
 	public static extern void QRectF_MoveTo(QRectF_Ptr* self, double x, double y);
 	[LinkName("QRectF_MoveTo2")]
@@ -654,9 +589,9 @@ extension CQt
 	[LinkName("QRectF_Adjust")]
 	public static extern void QRectF_Adjust(QRectF_Ptr* self, double x1, double y1, double x2, double y2);
 	[LinkName("QRectF_Adjusted")]
-	public static extern QRectF_Ptr QRectF_Adjusted(QRectF_Ptr* self, double x1, double y1, double x2, double y2);
+	public static extern QRectF_Ptr* QRectF_Adjusted(QRectF_Ptr* self, double x1, double y1, double x2, double y2);
 	[LinkName("QRectF_Size")]
-	public static extern QSizeF_Ptr QRectF_Size(QRectF_Ptr* self);
+	public static extern QSizeF_Ptr* QRectF_Size(QRectF_Ptr* self);
 	[LinkName("QRectF_Width")]
 	public static extern double QRectF_Width(QRectF_Ptr* self);
 	[LinkName("QRectF_Height")]
@@ -668,9 +603,9 @@ extension CQt
 	[LinkName("QRectF_SetSize")]
 	public static extern void QRectF_SetSize(QRectF_Ptr* self, QSizeF_Ptr* s);
 	[LinkName("QRectF_OperatorBitwiseOr")]
-	public static extern QRectF_Ptr QRectF_OperatorBitwiseOr(QRectF_Ptr* self, QRectF_Ptr* r);
+	public static extern QRectF_Ptr* QRectF_OperatorBitwiseOr(QRectF_Ptr* self, QRectF_Ptr* r);
 	[LinkName("QRectF_OperatorBitwiseAnd")]
-	public static extern QRectF_Ptr QRectF_OperatorBitwiseAnd(QRectF_Ptr* self, QRectF_Ptr* r);
+	public static extern QRectF_Ptr* QRectF_OperatorBitwiseAnd(QRectF_Ptr* self, QRectF_Ptr* r);
 	[LinkName("QRectF_OperatorBitwiseOrAssign")]
 	public static extern void QRectF_OperatorBitwiseOrAssign(QRectF_Ptr* self, QRectF_Ptr* r);
 	[LinkName("QRectF_OperatorBitwiseAndAssign")]
@@ -682,50 +617,51 @@ extension CQt
 	[LinkName("QRectF_Contains3")]
 	public static extern bool QRectF_Contains3(QRectF_Ptr* self, double x, double y);
 	[LinkName("QRectF_United")]
-	public static extern QRectF_Ptr QRectF_United(QRectF_Ptr* self, QRectF_Ptr* other);
+	public static extern QRectF_Ptr* QRectF_United(QRectF_Ptr* self, QRectF_Ptr* other);
 	[LinkName("QRectF_Intersected")]
-	public static extern QRectF_Ptr QRectF_Intersected(QRectF_Ptr* self, QRectF_Ptr* other);
+	public static extern QRectF_Ptr* QRectF_Intersected(QRectF_Ptr* self, QRectF_Ptr* other);
 	[LinkName("QRectF_Intersects")]
 	public static extern bool QRectF_Intersects(QRectF_Ptr* self, QRectF_Ptr* r);
 	[LinkName("QRectF_MarginsAdded")]
-	public static extern QRectF_Ptr QRectF_MarginsAdded(QRectF_Ptr* self, QMarginsF_Ptr* margins);
+	public static extern QRectF_Ptr* QRectF_MarginsAdded(QRectF_Ptr* self, QMarginsF_Ptr* margins);
 	[LinkName("QRectF_MarginsRemoved")]
-	public static extern QRectF_Ptr QRectF_MarginsRemoved(QRectF_Ptr* self, QMarginsF_Ptr* margins);
+	public static extern QRectF_Ptr* QRectF_MarginsRemoved(QRectF_Ptr* self, QMarginsF_Ptr* margins);
 	[LinkName("QRectF_OperatorPlusAssign")]
 	public static extern QRectF_Ptr* QRectF_OperatorPlusAssign(QRectF_Ptr* self, QMarginsF_Ptr* margins);
 	[LinkName("QRectF_OperatorMinusAssign")]
 	public static extern QRectF_Ptr* QRectF_OperatorMinusAssign(QRectF_Ptr* self, QMarginsF_Ptr* margins);
 	[LinkName("QRectF_ToRect")]
-	public static extern QRect_Ptr QRectF_ToRect(QRectF_Ptr* self);
+	public static extern QRect_Ptr* QRectF_ToRect(QRectF_Ptr* self);
 	[LinkName("QRectF_ToAlignedRect")]
-	public static extern QRect_Ptr QRectF_ToAlignedRect(QRectF_Ptr* self);
+	public static extern QRect_Ptr* QRectF_ToAlignedRect(QRectF_Ptr* self);
 }
-class QRectF
+class QRectF : IQRectF
 {
 	private QRectF_Ptr* ptr;
-	public this(QRectF_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQRectF other)
 	{
-		this.ptr = CQt.QRectF_new(other);
+		this.ptr = CQt.QRectF_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRectF_new3();
 	}
-	public this(QPointF_Ptr* topleft, QSizeF_Ptr* size)
+	public this(IQPointF topleft, IQSizeF size)
 	{
-		this.ptr = CQt.QRectF_new4(topleft, size);
+		this.ptr = CQt.QRectF_new4((.)topleft?.ObjectPtr, (.)size?.ObjectPtr);
 	}
-	public this(QPointF_Ptr* topleft, QPointF_Ptr* bottomRight)
+	public this(IQPointF topleft, IQPointF bottomRight)
 	{
-		this.ptr = CQt.QRectF_new5(topleft, bottomRight);
+		this.ptr = CQt.QRectF_new5((.)topleft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
 	}
 	public this(double left, double top, double width, double height)
 	{
 		this.ptr = CQt.QRectF_new6(left, top, width, height);
 	}
-	public this(QRect_Ptr* rect)
+	public this(IQRect rect)
 	{
-		this.ptr = CQt.QRectF_new7(rect);
+		this.ptr = CQt.QRectF_new7((.)rect?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -743,7 +679,7 @@ class QRectF
 	{
 		return CQt.QRectF_IsValid((.)this.ptr);
 	}
-	public QRectF_Ptr Normalized()
+	public QRectF_Ptr* Normalized()
 	{
 		return CQt.QRectF_Normalized((.)this.ptr);
 	}
@@ -795,41 +731,41 @@ class QRectF
 	{
 		CQt.QRectF_SetY((.)this.ptr, pos);
 	}
-	public QPointF_Ptr TopLeft()
+	public QPointF_Ptr* TopLeft()
 	{
 		return CQt.QRectF_TopLeft((.)this.ptr);
 	}
-	public QPointF_Ptr BottomRight()
+	public QPointF_Ptr* BottomRight()
 	{
 		return CQt.QRectF_BottomRight((.)this.ptr);
 	}
-	public QPointF_Ptr TopRight()
+	public QPointF_Ptr* TopRight()
 	{
 		return CQt.QRectF_TopRight((.)this.ptr);
 	}
-	public QPointF_Ptr BottomLeft()
+	public QPointF_Ptr* BottomLeft()
 	{
 		return CQt.QRectF_BottomLeft((.)this.ptr);
 	}
-	public QPointF_Ptr Center()
+	public QPointF_Ptr* Center()
 	{
 		return CQt.QRectF_Center((.)this.ptr);
 	}
-	public void SetTopLeft(QPointF_Ptr* p)
+	public void SetTopLeft(IQPointF p)
 	{
-		CQt.QRectF_SetTopLeft((.)this.ptr, p);
+		CQt.QRectF_SetTopLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void SetBottomRight(QPointF_Ptr* p)
+	public void SetBottomRight(IQPointF p)
 	{
-		CQt.QRectF_SetBottomRight((.)this.ptr, p);
+		CQt.QRectF_SetBottomRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void SetTopRight(QPointF_Ptr* p)
+	public void SetTopRight(IQPointF p)
 	{
-		CQt.QRectF_SetTopRight((.)this.ptr, p);
+		CQt.QRectF_SetTopRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void SetBottomLeft(QPointF_Ptr* p)
+	public void SetBottomLeft(IQPointF p)
 	{
-		CQt.QRectF_SetBottomLeft((.)this.ptr, p);
+		CQt.QRectF_SetBottomLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public void MoveLeft(double pos)
 	{
@@ -847,43 +783,43 @@ class QRectF
 	{
 		CQt.QRectF_MoveBottom((.)this.ptr, pos);
 	}
-	public void MoveTopLeft(QPointF_Ptr* p)
+	public void MoveTopLeft(IQPointF p)
 	{
-		CQt.QRectF_MoveTopLeft((.)this.ptr, p);
+		CQt.QRectF_MoveTopLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveBottomRight(QPointF_Ptr* p)
+	public void MoveBottomRight(IQPointF p)
 	{
-		CQt.QRectF_MoveBottomRight((.)this.ptr, p);
+		CQt.QRectF_MoveBottomRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveTopRight(QPointF_Ptr* p)
+	public void MoveTopRight(IQPointF p)
 	{
-		CQt.QRectF_MoveTopRight((.)this.ptr, p);
+		CQt.QRectF_MoveTopRight((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveBottomLeft(QPointF_Ptr* p)
+	public void MoveBottomLeft(IQPointF p)
 	{
-		CQt.QRectF_MoveBottomLeft((.)this.ptr, p);
+		CQt.QRectF_MoveBottomLeft((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public void MoveCenter(QPointF_Ptr* p)
+	public void MoveCenter(IQPointF p)
 	{
-		CQt.QRectF_MoveCenter((.)this.ptr, p);
+		CQt.QRectF_MoveCenter((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public void Translate(double dx, double dy)
 	{
 		CQt.QRectF_Translate((.)this.ptr, dx, dy);
 	}
-	public void Translate2(QPointF_Ptr* p)
+	public void Translate2(IQPointF p)
 	{
-		CQt.QRectF_Translate2((.)this.ptr, p);
+		CQt.QRectF_Translate2((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QRectF_Ptr Translated(double dx, double dy)
+	public QRectF_Ptr* Translated(double dx, double dy)
 	{
 		return CQt.QRectF_Translated((.)this.ptr, dx, dy);
 	}
-	public QRectF_Ptr Translated2(QPointF_Ptr* p)
+	public QRectF_Ptr* Translated2(IQPointF p)
 	{
-		return CQt.QRectF_Translated2((.)this.ptr, p);
+		return CQt.QRectF_Translated2((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QRectF_Ptr Transposed()
+	public QRectF_Ptr* Transposed()
 	{
 		return CQt.QRectF_Transposed((.)this.ptr);
 	}
@@ -891,9 +827,9 @@ class QRectF
 	{
 		CQt.QRectF_MoveTo((.)this.ptr, x, y);
 	}
-	public void MoveTo2(QPointF_Ptr* p)
+	public void MoveTo2(IQPointF p)
 	{
-		CQt.QRectF_MoveTo2((.)this.ptr, p);
+		CQt.QRectF_MoveTo2((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public void SetRect(double x, double y, double w, double h)
 	{
@@ -915,11 +851,11 @@ class QRectF
 	{
 		CQt.QRectF_Adjust((.)this.ptr, x1, y1, x2, y2);
 	}
-	public QRectF_Ptr Adjusted(double x1, double y1, double x2, double y2)
+	public QRectF_Ptr* Adjusted(double x1, double y1, double x2, double y2)
 	{
 		return CQt.QRectF_Adjusted((.)this.ptr, x1, y1, x2, y2);
 	}
-	public QSizeF_Ptr Size()
+	public QSizeF_Ptr* Size()
 	{
 		return CQt.QRectF_Size((.)this.ptr);
 	}
@@ -939,114 +875,51 @@ class QRectF
 	{
 		CQt.QRectF_SetHeight((.)this.ptr, h);
 	}
-	public void SetSize(QSizeF_Ptr* s)
+	public void SetSize(IQSizeF s)
 	{
-		CQt.QRectF_SetSize((.)this.ptr, s);
+		CQt.QRectF_SetSize((.)this.ptr, (.)s?.ObjectPtr);
 	}
-	public bool Contains(QRectF_Ptr* r)
+	public bool Contains(IQRectF r)
 	{
-		return CQt.QRectF_Contains((.)this.ptr, r);
+		return CQt.QRectF_Contains((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public bool Contains2(QPointF_Ptr* p)
+	public bool Contains2(IQPointF p)
 	{
-		return CQt.QRectF_Contains2((.)this.ptr, p);
+		return CQt.QRectF_Contains2((.)this.ptr, (.)p?.ObjectPtr);
 	}
 	public bool Contains3(double x, double y)
 	{
 		return CQt.QRectF_Contains3((.)this.ptr, x, y);
 	}
-	public QRectF_Ptr United(QRectF_Ptr* other)
+	public QRectF_Ptr* United(IQRectF other)
 	{
-		return CQt.QRectF_United((.)this.ptr, other);
+		return CQt.QRectF_United((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public QRectF_Ptr Intersected(QRectF_Ptr* other)
+	public QRectF_Ptr* Intersected(IQRectF other)
 	{
-		return CQt.QRectF_Intersected((.)this.ptr, other);
+		return CQt.QRectF_Intersected((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public bool Intersects(QRectF_Ptr* r)
+	public bool Intersects(IQRectF r)
 	{
-		return CQt.QRectF_Intersects((.)this.ptr, r);
+		return CQt.QRectF_Intersects((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRectF_Ptr MarginsAdded(QMarginsF_Ptr* margins)
+	public QRectF_Ptr* MarginsAdded(IQMarginsF margins)
 	{
-		return CQt.QRectF_MarginsAdded((.)this.ptr, margins);
+		return CQt.QRectF_MarginsAdded((.)this.ptr, (.)margins?.ObjectPtr);
 	}
-	public QRectF_Ptr MarginsRemoved(QMarginsF_Ptr* margins)
+	public QRectF_Ptr* MarginsRemoved(IQMarginsF margins)
 	{
-		return CQt.QRectF_MarginsRemoved((.)this.ptr, margins);
+		return CQt.QRectF_MarginsRemoved((.)this.ptr, (.)margins?.ObjectPtr);
 	}
-	public QRect_Ptr ToRect()
+	public QRect_Ptr* ToRect()
 	{
 		return CQt.QRectF_ToRect((.)this.ptr);
 	}
-	public QRect_Ptr ToAlignedRect()
+	public QRect_Ptr* ToAlignedRect()
 	{
 		return CQt.QRectF_ToAlignedRect((.)this.ptr);
 	}
 }
-interface IQRectF
+interface IQRectF : IQtObjectInterface
 {
-	public bool IsNull();
-	public bool IsEmpty();
-	public bool IsValid();
-	public QRectF Normalized();
-	public double Left();
-	public double Top();
-	public double Right();
-	public double Bottom();
-	public double X();
-	public double Y();
-	public void SetLeft();
-	public void SetTop();
-	public void SetRight();
-	public void SetBottom();
-	public void SetX();
-	public void SetY();
-	public QPointF TopLeft();
-	public QPointF BottomRight();
-	public QPointF TopRight();
-	public QPointF BottomLeft();
-	public QPointF Center();
-	public void SetTopLeft();
-	public void SetBottomRight();
-	public void SetTopRight();
-	public void SetBottomLeft();
-	public void MoveLeft();
-	public void MoveTop();
-	public void MoveRight();
-	public void MoveBottom();
-	public void MoveTopLeft();
-	public void MoveBottomRight();
-	public void MoveTopRight();
-	public void MoveBottomLeft();
-	public void MoveCenter();
-	public void Translate();
-	public void Translate2();
-	public QRectF Translated();
-	public QRectF Translated2();
-	public QRectF Transposed();
-	public void MoveTo();
-	public void MoveTo2();
-	public void SetRect();
-	public void GetRect();
-	public void SetCoords();
-	public void GetCoords();
-	public void Adjust();
-	public QRectF Adjusted();
-	public QSizeF Size();
-	public double Width();
-	public double Height();
-	public void SetWidth();
-	public void SetHeight();
-	public void SetSize();
-	public bool Contains();
-	public bool Contains2();
-	public bool Contains3();
-	public QRectF United();
-	public QRectF Intersected();
-	public bool Intersects();
-	public QRectF MarginsAdded();
-	public QRectF MarginsRemoved();
-	public QRect ToRect();
-	public QRect ToAlignedRect();
 }

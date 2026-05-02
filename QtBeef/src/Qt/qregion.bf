@@ -37,13 +37,13 @@ extension CQt
 	[LinkName("QRegion_IsNull")]
 	public static extern bool QRegion_IsNull(QRegion_Ptr* self);
 	[LinkName("QRegion_Begin")]
-	public static extern QRect_Ptr* QRegion_Begin(QRegion_Ptr* self);
+	public static extern QRect_Ptr** QRegion_Begin(QRegion_Ptr* self);
 	[LinkName("QRegion_Cbegin")]
-	public static extern QRect_Ptr* QRegion_Cbegin(QRegion_Ptr* self);
+	public static extern QRect_Ptr** QRegion_Cbegin(QRegion_Ptr* self);
 	[LinkName("QRegion_End")]
-	public static extern QRect_Ptr* QRegion_End(QRegion_Ptr* self);
+	public static extern QRect_Ptr** QRegion_End(QRegion_Ptr* self);
 	[LinkName("QRegion_Cend")]
-	public static extern QRect_Ptr* QRegion_Cend(QRegion_Ptr* self);
+	public static extern QRect_Ptr** QRegion_Cend(QRegion_Ptr* self);
 	[LinkName("QRegion_Contains")]
 	public static extern bool QRegion_Contains(QRegion_Ptr* self, QPoint_Ptr* p);
 	[LinkName("QRegion_Contains2")]
@@ -53,45 +53,45 @@ extension CQt
 	[LinkName("QRegion_Translate2")]
 	public static extern void QRegion_Translate2(QRegion_Ptr* self, QPoint_Ptr* p);
 	[LinkName("QRegion_Translated")]
-	public static extern QRegion_Ptr QRegion_Translated(QRegion_Ptr* self, c_int dx, c_int dy);
+	public static extern QRegion_Ptr* QRegion_Translated(QRegion_Ptr* self, c_int dx, c_int dy);
 	[LinkName("QRegion_Translated2")]
-	public static extern QRegion_Ptr QRegion_Translated2(QRegion_Ptr* self, QPoint_Ptr* p);
+	public static extern QRegion_Ptr* QRegion_Translated2(QRegion_Ptr* self, QPoint_Ptr* p);
 	[LinkName("QRegion_United")]
-	public static extern QRegion_Ptr QRegion_United(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_United(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_United2")]
-	public static extern QRegion_Ptr QRegion_United2(QRegion_Ptr* self, QRect_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_United2(QRegion_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRegion_Intersected")]
-	public static extern QRegion_Ptr QRegion_Intersected(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_Intersected(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_Intersected2")]
-	public static extern QRegion_Ptr QRegion_Intersected2(QRegion_Ptr* self, QRect_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_Intersected2(QRegion_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRegion_Subtracted")]
-	public static extern QRegion_Ptr QRegion_Subtracted(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_Subtracted(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_Xored")]
-	public static extern QRegion_Ptr QRegion_Xored(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_Xored(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_Intersects")]
 	public static extern bool QRegion_Intersects(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_Intersects2")]
 	public static extern bool QRegion_Intersects2(QRegion_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRegion_BoundingRect")]
-	public static extern QRect_Ptr QRegion_BoundingRect(QRegion_Ptr* self);
+	public static extern QRect_Ptr* QRegion_BoundingRect(QRegion_Ptr* self);
 	[LinkName("QRegion_SetRects")]
-	public static extern void QRegion_SetRects(QRegion_Ptr* self, QRect_Ptr* rect, c_int num);
+	public static extern void QRegion_SetRects(QRegion_Ptr* self, QRect_Ptr** rect, c_int num);
 	[LinkName("QRegion_RectCount")]
 	public static extern c_int QRegion_RectCount(QRegion_Ptr* self);
 	[LinkName("QRegion_OperatorBitwiseOr")]
-	public static extern QRegion_Ptr QRegion_OperatorBitwiseOr(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_OperatorBitwiseOr(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_OperatorPlus")]
-	public static extern QRegion_Ptr QRegion_OperatorPlus(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_OperatorPlus(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_OperatorPlus2")]
-	public static extern QRegion_Ptr QRegion_OperatorPlus2(QRegion_Ptr* self, QRect_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_OperatorPlus2(QRegion_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRegion_OperatorBitwiseAnd")]
-	public static extern QRegion_Ptr QRegion_OperatorBitwiseAnd(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_OperatorBitwiseAnd(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_OperatorBitwiseAnd2")]
-	public static extern QRegion_Ptr QRegion_OperatorBitwiseAnd2(QRegion_Ptr* self, QRect_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_OperatorBitwiseAnd2(QRegion_Ptr* self, QRect_Ptr* r);
 	[LinkName("QRegion_OperatorMinus")]
-	public static extern QRegion_Ptr QRegion_OperatorMinus(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_OperatorMinus(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_OperatorBitwiseNot")]
-	public static extern QRegion_Ptr QRegion_OperatorBitwiseNot(QRegion_Ptr* self, QRegion_Ptr* r);
+	public static extern QRegion_Ptr* QRegion_OperatorBitwiseNot(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_OperatorBitwiseOrAssign")]
 	public static extern void QRegion_OperatorBitwiseOrAssign(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_OperatorPlusAssign")]
@@ -111,11 +111,12 @@ extension CQt
 	[LinkName("QRegion_OperatorNotEqual")]
 	public static extern bool QRegion_OperatorNotEqual(QRegion_Ptr* self, QRegion_Ptr* r);
 	[LinkName("QRegion_ToQvariant")]
-	public static extern QVariant_Ptr QRegion_ToQvariant(QRegion_Ptr* self);
+	public static extern QVariant_Ptr* QRegion_ToQvariant(QRegion_Ptr* self);
 }
-class QRegion
+class QRegion : IQRegion
 {
 	private QRegion_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRegion_new();
@@ -124,33 +125,33 @@ class QRegion
 	{
 		this.ptr = CQt.QRegion_new2(x, y, w, h);
 	}
-	public this(QRect_Ptr* r)
+	public this(IQRect r)
 	{
-		this.ptr = CQt.QRegion_new3(r);
+		this.ptr = CQt.QRegion_new3((.)r?.ObjectPtr);
 	}
-	public this(QRegion_Ptr* region)
+	public this(IQRegion region)
 	{
-		this.ptr = CQt.QRegion_new4(region);
+		this.ptr = CQt.QRegion_new4((.)region?.ObjectPtr);
 	}
-	public this(QBitmap_Ptr* bitmap)
+	public this(IQBitmap bitmap)
 	{
-		this.ptr = CQt.QRegion_new5(bitmap);
+		this.ptr = CQt.QRegion_new5((.)bitmap?.ObjectPtr);
 	}
 	public this(c_int x, c_int y, c_int w, c_int h, QRegion_RegionType t)
 	{
 		this.ptr = CQt.QRegion_new6(x, y, w, h, t);
 	}
-	public this(QRect_Ptr* r, QRegion_RegionType t)
+	public this(IQRect r, QRegion_RegionType t)
 	{
-		this.ptr = CQt.QRegion_new7(r, t);
+		this.ptr = CQt.QRegion_new7((.)r?.ObjectPtr, t);
 	}
 	public ~this()
 	{
 		CQt.QRegion_Delete(this.ptr);
 	}
-	public void Swap(QRegion_Ptr* other)
+	public void Swap(IQRegion other)
 	{
-		CQt.QRegion_Swap((.)this.ptr, other);
+		CQt.QRegion_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsEmpty()
 	{
@@ -160,137 +161,109 @@ class QRegion
 	{
 		return CQt.QRegion_IsNull((.)this.ptr);
 	}
-	public QRect_Ptr* Begin()
+	public QRect_Ptr** Begin()
 	{
 		return CQt.QRegion_Begin((.)this.ptr);
 	}
-	public QRect_Ptr* Cbegin()
+	public QRect_Ptr** Cbegin()
 	{
 		return CQt.QRegion_Cbegin((.)this.ptr);
 	}
-	public QRect_Ptr* End()
+	public QRect_Ptr** End()
 	{
 		return CQt.QRegion_End((.)this.ptr);
 	}
-	public QRect_Ptr* Cend()
+	public QRect_Ptr** Cend()
 	{
 		return CQt.QRegion_Cend((.)this.ptr);
 	}
-	public bool Contains(QPoint_Ptr* p)
+	public bool Contains(IQPoint p)
 	{
-		return CQt.QRegion_Contains((.)this.ptr, p);
+		return CQt.QRegion_Contains((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public bool Contains2(QRect_Ptr* r)
+	public bool Contains2(IQRect r)
 	{
-		return CQt.QRegion_Contains2((.)this.ptr, r);
+		return CQt.QRegion_Contains2((.)this.ptr, (.)r?.ObjectPtr);
 	}
 	public void Translate(c_int dx, c_int dy)
 	{
 		CQt.QRegion_Translate((.)this.ptr, dx, dy);
 	}
-	public void Translate2(QPoint_Ptr* p)
+	public void Translate2(IQPoint p)
 	{
-		CQt.QRegion_Translate2((.)this.ptr, p);
+		CQt.QRegion_Translate2((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QRegion_Ptr Translated(c_int dx, c_int dy)
+	public QRegion_Ptr* Translated(c_int dx, c_int dy)
 	{
 		return CQt.QRegion_Translated((.)this.ptr, dx, dy);
 	}
-	public QRegion_Ptr Translated2(QPoint_Ptr* p)
+	public QRegion_Ptr* Translated2(IQPoint p)
 	{
-		return CQt.QRegion_Translated2((.)this.ptr, p);
+		return CQt.QRegion_Translated2((.)this.ptr, (.)p?.ObjectPtr);
 	}
-	public QRegion_Ptr United(QRegion_Ptr* r)
+	public QRegion_Ptr* United(IQRegion r)
 	{
-		return CQt.QRegion_United((.)this.ptr, r);
+		return CQt.QRegion_United((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRegion_Ptr United2(QRect_Ptr* r)
+	public QRegion_Ptr* United2(IQRect r)
 	{
-		return CQt.QRegion_United2((.)this.ptr, r);
+		return CQt.QRegion_United2((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRegion_Ptr Intersected(QRegion_Ptr* r)
+	public QRegion_Ptr* Intersected(IQRegion r)
 	{
-		return CQt.QRegion_Intersected((.)this.ptr, r);
+		return CQt.QRegion_Intersected((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRegion_Ptr Intersected2(QRect_Ptr* r)
+	public QRegion_Ptr* Intersected2(IQRect r)
 	{
-		return CQt.QRegion_Intersected2((.)this.ptr, r);
+		return CQt.QRegion_Intersected2((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRegion_Ptr Subtracted(QRegion_Ptr* r)
+	public QRegion_Ptr* Subtracted(IQRegion r)
 	{
-		return CQt.QRegion_Subtracted((.)this.ptr, r);
+		return CQt.QRegion_Subtracted((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRegion_Ptr Xored(QRegion_Ptr* r)
+	public QRegion_Ptr* Xored(IQRegion r)
 	{
-		return CQt.QRegion_Xored((.)this.ptr, r);
+		return CQt.QRegion_Xored((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public bool Intersects(QRegion_Ptr* r)
+	public bool Intersects(IQRegion r)
 	{
-		return CQt.QRegion_Intersects((.)this.ptr, r);
+		return CQt.QRegion_Intersects((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public bool Intersects2(QRect_Ptr* r)
+	public bool Intersects2(IQRect r)
 	{
-		return CQt.QRegion_Intersects2((.)this.ptr, r);
+		return CQt.QRegion_Intersects2((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRect_Ptr BoundingRect()
+	public QRect_Ptr* BoundingRect()
 	{
 		return CQt.QRegion_BoundingRect((.)this.ptr);
 	}
-	public void SetRects(QRect_Ptr* rect, c_int num)
+	public void SetRects(IQRect rect, c_int num)
 	{
-		CQt.QRegion_SetRects((.)this.ptr, rect, num);
+		CQt.QRegion_SetRects((.)this.ptr, (.)rect?.ObjectPtr, num);
 	}
 	public c_int RectCount()
 	{
 		return CQt.QRegion_RectCount((.)this.ptr);
 	}
-	public QRegion_Ptr OperatorPlus2(QRect_Ptr* r)
+	public QRegion_Ptr* OperatorPlus2(IQRect r)
 	{
-		return CQt.QRegion_OperatorPlus2((.)this.ptr, r);
+		return CQt.QRegion_OperatorPlus2((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRegion_Ptr OperatorBitwiseAnd2(QRect_Ptr* r)
+	public QRegion_Ptr* OperatorBitwiseAnd2(IQRect r)
 	{
-		return CQt.QRegion_OperatorBitwiseAnd2((.)this.ptr, r);
+		return CQt.QRegion_OperatorBitwiseAnd2((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public QRegion_Ptr* OperatorPlusAssign2(QRect_Ptr* r)
+	public QRegion_Ptr* OperatorPlusAssign2(IQRect r)
 	{
-		return CQt.QRegion_OperatorPlusAssign2((.)this.ptr, r);
+		return CQt.QRegion_OperatorPlusAssign2((.)this.ptr, (.)r?.ObjectPtr);
 	}
-	public void OperatorBitwiseAndAssign2(QRect_Ptr* r)
+	public void OperatorBitwiseAndAssign2(IQRect r)
 	{
-		CQt.QRegion_OperatorBitwiseAndAssign2((.)this.ptr, r);
+		CQt.QRegion_OperatorBitwiseAndAssign2((.)this.ptr, (.)r?.ObjectPtr);
 	}
 }
-interface IQRegion
+interface IQRegion : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsEmpty();
-	public bool IsNull();
-	public QRect* Begin();
-	public QRect* Cbegin();
-	public QRect* End();
-	public QRect* Cend();
-	public bool Contains();
-	public bool Contains2();
-	public void Translate();
-	public void Translate2();
-	public QRegion Translated();
-	public QRegion Translated2();
-	public QRegion United();
-	public QRegion United2();
-	public QRegion Intersected();
-	public QRegion Intersected2();
-	public QRegion Subtracted();
-	public QRegion Xored();
-	public bool Intersects();
-	public bool Intersects2();
-	public QRect BoundingRect();
-	public void SetRects();
-	public c_int RectCount();
-	public QRegion OperatorPlus2();
-	public QRegion OperatorBitwiseAnd2();
-	public QRegion* OperatorPlusAssign2();
-	public void OperatorBitwiseAndAssign2();
 }
 [AllowDuplicates]
 enum QRegion_RegionType

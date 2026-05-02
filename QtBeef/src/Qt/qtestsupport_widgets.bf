@@ -13,50 +13,51 @@ struct QTest_QTouchEventWidgetSequence_Ptr: void
 extension CQt
 {
 	[LinkName("QTest_QTouchEventWidgetSequence_new")]
-	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_new(QTest_QTouchEventWidgetSequence* param1);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_new(QTest_QTouchEventWidgetSequence_Ptr* param1);
 	[LinkName("QTest_QTouchEventWidgetSequence_Delete")]
 	public static extern void QTest_QTouchEventWidgetSequence_Delete(QTest_QTouchEventWidgetSequence_Ptr* self);
 	[LinkName("QTest_QTouchEventWidgetSequence_Press")]
-	public static extern QTest_QTouchEventWidgetSequence* QTest_QTouchEventWidgetSequence_Press(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_Press(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt);
 	[LinkName("QTest_QTouchEventWidgetSequence_Move")]
-	public static extern QTest_QTouchEventWidgetSequence* QTest_QTouchEventWidgetSequence_Move(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_Move(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt);
 	[LinkName("QTest_QTouchEventWidgetSequence_Release")]
-	public static extern QTest_QTouchEventWidgetSequence* QTest_QTouchEventWidgetSequence_Release(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_Release(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt);
 	[LinkName("QTest_QTouchEventWidgetSequence_Stationary")]
-	public static extern QTest_QTouchEventWidgetSequence* QTest_QTouchEventWidgetSequence_Stationary(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_Stationary(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId);
 	[LinkName("QTest_QTouchEventWidgetSequence_Commit")]
 	public static extern bool QTest_QTouchEventWidgetSequence_Commit(QTest_QTouchEventWidgetSequence_Ptr* self, bool processEvents);
 	[LinkName("QTest_QTouchEventWidgetSequence_Press3")]
-	public static extern QTest_QTouchEventWidgetSequence* QTest_QTouchEventWidgetSequence_Press3(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_Press3(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt, QWidget_Ptr** widget);
 	[LinkName("QTest_QTouchEventWidgetSequence_Move3")]
-	public static extern QTest_QTouchEventWidgetSequence* QTest_QTouchEventWidgetSequence_Move3(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_Move3(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt, QWidget_Ptr** widget);
 	[LinkName("QTest_QTouchEventWidgetSequence_Release3")]
-	public static extern QTest_QTouchEventWidgetSequence* QTest_QTouchEventWidgetSequence_Release3(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget);
+	public static extern QTest_QTouchEventWidgetSequence_Ptr* QTest_QTouchEventWidgetSequence_Release3(QTest_QTouchEventWidgetSequence_Ptr* self, c_int touchId, QPoint_Ptr* pt, QWidget_Ptr** widget);
 }
-class QTest_QTouchEventWidgetSequence
+class QTest_QTouchEventWidgetSequence : IQTest_QTouchEventWidgetSequence, IQTest_QTouchEventSequence
 {
 	private QTest_QTouchEventWidgetSequence_Ptr* ptr;
-	public this(QTest_QTouchEventWidgetSequence* param1)
+	public void* ObjectPtr => ptr;
+	public this(IQTest_QTouchEventWidgetSequence param1)
 	{
-		this.ptr = CQt.QTest_QTouchEventWidgetSequence_new(param1);
+		this.ptr = CQt.QTest_QTouchEventWidgetSequence_new((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QTest_QTouchEventWidgetSequence_Delete(this.ptr);
 	}
-	public QTest_QTouchEventWidgetSequence* Press(c_int touchId, QPoint_Ptr* pt)
+	public QTest_QTouchEventWidgetSequence_Ptr* Press(c_int touchId, IQPoint pt)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Press((.)this.ptr, touchId, pt);
+		return CQt.QTest_QTouchEventWidgetSequence_Press((.)this.ptr, touchId, (.)pt?.ObjectPtr);
 	}
-	public QTest_QTouchEventWidgetSequence* Move(c_int touchId, QPoint_Ptr* pt)
+	public QTest_QTouchEventWidgetSequence_Ptr* Move(c_int touchId, IQPoint pt)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Move((.)this.ptr, touchId, pt);
+		return CQt.QTest_QTouchEventWidgetSequence_Move((.)this.ptr, touchId, (.)pt?.ObjectPtr);
 	}
-	public QTest_QTouchEventWidgetSequence* Release(c_int touchId, QPoint_Ptr* pt)
+	public QTest_QTouchEventWidgetSequence_Ptr* Release(c_int touchId, IQPoint pt)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Release((.)this.ptr, touchId, pt);
+		return CQt.QTest_QTouchEventWidgetSequence_Release((.)this.ptr, touchId, (.)pt?.ObjectPtr);
 	}
-	public QTest_QTouchEventWidgetSequence* Stationary(c_int touchId)
+	public QTest_QTouchEventWidgetSequence_Ptr* Stationary(c_int touchId)
 	{
 		return CQt.QTest_QTouchEventWidgetSequence_Stationary((.)this.ptr, touchId);
 	}
@@ -64,21 +65,21 @@ class QTest_QTouchEventWidgetSequence
 	{
 		return CQt.QTest_QTouchEventWidgetSequence_Commit((.)this.ptr, processEvents);
 	}
-	public QTest_QTouchEventWidgetSequence* Press3(c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget)
+	public QTest_QTouchEventWidgetSequence_Ptr* Press3(c_int touchId, IQPoint pt, IQWidget widget)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Press3((.)this.ptr, touchId, pt, widget);
+		return CQt.QTest_QTouchEventWidgetSequence_Press3((.)this.ptr, touchId, (.)pt?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public QTest_QTouchEventWidgetSequence* Move3(c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget)
+	public QTest_QTouchEventWidgetSequence_Ptr* Move3(c_int touchId, IQPoint pt, IQWidget widget)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Move3((.)this.ptr, touchId, pt, widget);
+		return CQt.QTest_QTouchEventWidgetSequence_Move3((.)this.ptr, touchId, (.)pt?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public QTest_QTouchEventWidgetSequence* Release3(c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget)
+	public QTest_QTouchEventWidgetSequence_Ptr* Release3(c_int touchId, IQPoint pt, IQWidget widget)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Release3((.)this.ptr, touchId, pt, widget);
+		return CQt.QTest_QTouchEventWidgetSequence_Release3((.)this.ptr, touchId, (.)pt?.ObjectPtr, (.)widget?.ObjectPtr);
 	}
-	public QPoint_Ptr MapToScreen(QWindow_Ptr* window, QPoint_Ptr* pt)
+	public QPoint_Ptr* MapToScreen(IQWindow window, IQPoint pt)
 	{
-		return CQt.QTest_QTouchEventSequence_MapToScreen((.)this.ptr, window, pt);
+		return CQt.QTest_QTouchEventSequence_MapToScreen((.)this.ptr, (.)window?.ObjectPtr, (.)pt?.ObjectPtr);
 	}
 	public QEventPoint_Ptr* Point(c_int touchId)
 	{
@@ -89,14 +90,6 @@ class QTest_QTouchEventWidgetSequence
 		return CQt.QTest_QTouchEventSequence_PointOrPreviousPoint((.)this.ptr, touchId);
 	}
 }
-interface IQTest_QTouchEventWidgetSequence
+interface IQTest_QTouchEventWidgetSequence : IQtObjectInterface
 {
-	public QTest_QTouchEventWidgetSequence* Press();
-	public QTest_QTouchEventWidgetSequence* Move();
-	public QTest_QTouchEventWidgetSequence* Release();
-	public QTest_QTouchEventWidgetSequence* Stationary();
-	public bool Commit();
-	public QTest_QTouchEventWidgetSequence* Press3();
-	public QTest_QTouchEventWidgetSequence* Move3();
-	public QTest_QTouchEventWidgetSequence* Release3();
 }

@@ -17,19 +17,19 @@ extension CQt
 	[LinkName("QIconEngine_Delete")]
 	public static extern void QIconEngine_Delete(QIconEngine_Ptr* self);
 	[LinkName("QIconEngine_Paint")]
-	public static extern void QIconEngine_Paint(QIconEngine_Ptr* self, QPainter_Ptr* painter, QRect_Ptr* rect, QIcon_Mode mode, QIcon_State state);
+	public static extern void QIconEngine_Paint(QIconEngine_Ptr* self, QPainter_Ptr** painter, QRect_Ptr* rect, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIconEngine_ActualSize")]
-	public static extern QSize_Ptr QIconEngine_ActualSize(QIconEngine_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern QSize_Ptr* QIconEngine_ActualSize(QIconEngine_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIconEngine_Pixmap")]
-	public static extern QPixmap_Ptr QIconEngine_Pixmap(QIconEngine_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern QPixmap_Ptr* QIconEngine_Pixmap(QIconEngine_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIconEngine_AddPixmap")]
 	public static extern void QIconEngine_AddPixmap(QIconEngine_Ptr* self, QPixmap_Ptr* pixmap, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIconEngine_AddFile")]
-	public static extern void QIconEngine_AddFile(QIconEngine_Ptr* self, libqt_string* fileName, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern void QIconEngine_AddFile(QIconEngine_Ptr* self, libqt_string fileName, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIconEngine_Key")]
 	public static extern libqt_string QIconEngine_Key(QIconEngine_Ptr* self);
 	[LinkName("QIconEngine_Clone")]
-	public static extern QIconEngine_Ptr* QIconEngine_Clone(QIconEngine_Ptr* self);
+	public static extern QIconEngine_Ptr** QIconEngine_Clone(QIconEngine_Ptr* self);
 	[LinkName("QIconEngine_Read")]
 	public static extern bool QIconEngine_Read(QIconEngine_Ptr* self, QDataStream_Ptr* _in);
 	[LinkName("QIconEngine_Write")]
@@ -41,13 +41,14 @@ extension CQt
 	[LinkName("QIconEngine_IsNull")]
 	public static extern bool QIconEngine_IsNull(QIconEngine_Ptr* self);
 	[LinkName("QIconEngine_ScaledPixmap")]
-	public static extern QPixmap_Ptr QIconEngine_ScaledPixmap(QIconEngine_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state, double scale);
+	public static extern QPixmap_Ptr* QIconEngine_ScaledPixmap(QIconEngine_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state, double scale);
 	[LinkName("QIconEngine_Virtual_Hook")]
 	public static extern void QIconEngine_Virtual_Hook(QIconEngine_Ptr* self, c_int id, void* data);
 }
-class QIconEngine
+class QIconEngine : IQIconEngine
 {
 	private QIconEngine_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QIconEngine_new();
@@ -56,41 +57,41 @@ class QIconEngine
 	{
 		CQt.QIconEngine_Delete(this.ptr);
 	}
-	public void Paint(QPainter_Ptr* painter, QRect_Ptr* rect, QIcon_Mode mode, QIcon_State state)
+	public void Paint(IQPainter painter, IQRect rect, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIconEngine_Paint((.)this.ptr, painter, rect, mode, state);
+		CQt.QIconEngine_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, mode, state);
 	}
-	public QSize_Ptr ActualSize(QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
+	public QSize_Ptr* ActualSize(IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIconEngine_ActualSize((.)this.ptr, size, mode, state);
+		return CQt.QIconEngine_ActualSize((.)this.ptr, (.)size?.ObjectPtr, mode, state);
 	}
-	public QPixmap_Ptr Pixmap(QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
+	public QPixmap_Ptr* Pixmap(IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIconEngine_Pixmap((.)this.ptr, size, mode, state);
+		return CQt.QIconEngine_Pixmap((.)this.ptr, (.)size?.ObjectPtr, mode, state);
 	}
-	public void AddPixmap(QPixmap_Ptr* pixmap, QIcon_Mode mode, QIcon_State state)
+	public void AddPixmap(IQPixmap pixmap, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIconEngine_AddPixmap((.)this.ptr, pixmap, mode, state);
+		CQt.QIconEngine_AddPixmap((.)this.ptr, (.)pixmap?.ObjectPtr, mode, state);
 	}
-	public void AddFile(libqt_string* fileName, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
+	public void AddFile(String fileName, IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIconEngine_AddFile((.)this.ptr, fileName, size, mode, state);
+		CQt.QIconEngine_AddFile((.)this.ptr, libqt_string(fileName), (.)size?.ObjectPtr, mode, state);
 	}
 	public libqt_string Key()
 	{
 		return CQt.QIconEngine_Key((.)this.ptr);
 	}
-	public QIconEngine_Ptr* Clone()
+	public QIconEngine_Ptr** Clone()
 	{
 		return CQt.QIconEngine_Clone((.)this.ptr);
 	}
-	public bool Read(QDataStream_Ptr* _in)
+	public bool Read(IQDataStream _in)
 	{
-		return CQt.QIconEngine_Read((.)this.ptr, _in);
+		return CQt.QIconEngine_Read((.)this.ptr, (.)_in?.ObjectPtr);
 	}
-	public bool Write(QDataStream_Ptr* _out)
+	public bool Write(IQDataStream _out)
 	{
-		return CQt.QIconEngine_Write((.)this.ptr, _out);
+		return CQt.QIconEngine_Write((.)this.ptr, (.)_out?.ObjectPtr);
 	}
 	public void* AvailableSizes(QIcon_Mode mode, QIcon_State state)
 	{
@@ -104,31 +105,17 @@ class QIconEngine
 	{
 		return CQt.QIconEngine_IsNull((.)this.ptr);
 	}
-	public QPixmap_Ptr ScaledPixmap(QSize_Ptr* size, QIcon_Mode mode, QIcon_State state, double scale)
+	public QPixmap_Ptr* ScaledPixmap(IQSize size, QIcon_Mode mode, QIcon_State state, double scale)
 	{
-		return CQt.QIconEngine_ScaledPixmap((.)this.ptr, size, mode, state, scale);
+		return CQt.QIconEngine_ScaledPixmap((.)this.ptr, (.)size?.ObjectPtr, mode, state, scale);
 	}
 	public void Virtual_hook(c_int id, void* data)
 	{
 		CQt.QIconEngine_Virtual_Hook((.)this.ptr, id, data);
 	}
 }
-interface IQIconEngine
+interface IQIconEngine : IQtObjectInterface
 {
-	public void Paint();
-	public QSize ActualSize();
-	public QPixmap Pixmap();
-	public void AddPixmap();
-	public void AddFile();
-	public libqt_string Key();
-	public QIconEngine* Clone();
-	public bool Read();
-	public bool Write();
-	public void* AvailableSizes();
-	public libqt_string IconName();
-	public bool IsNull();
-	public QPixmap ScaledPixmap();
-	public void Virtual_hook();
 }
 // --------------------------------------------------------------
 // QIconEngine::ScaledPixmapArgument
@@ -140,13 +127,13 @@ struct QIconEngine_ScaledPixmapArgument_Ptr: void
 extension CQt
 {
 	[LinkName("QIconEngine_ScaledPixmapArgument_new")]
-	public static extern QIconEngine_ScaledPixmapArgument_Ptr* QIconEngine_ScaledPixmapArgument_new(QIconEngine_ScaledPixmapArgument* param1);
+	public static extern QIconEngine_ScaledPixmapArgument_Ptr* QIconEngine_ScaledPixmapArgument_new(QIconEngine_ScaledPixmapArgument_Ptr* param1);
 	[LinkName("QIconEngine_ScaledPixmapArgument_Delete")]
 	public static extern void QIconEngine_ScaledPixmapArgument_Delete(QIconEngine_ScaledPixmapArgument_Ptr* self);
 	[LinkName("QIconEngine_ScaledPixmapArgument_Size")]
-	public static extern QSize_Ptr QIconEngine_ScaledPixmapArgument_Size(QIconEngine_ScaledPixmapArgument_Ptr* self);
+	public static extern QSize_Ptr* QIconEngine_ScaledPixmapArgument_Size(QIconEngine_ScaledPixmapArgument_Ptr* self);
 	[LinkName("QIconEngine_ScaledPixmapArgument_SetSize")]
-	public static extern void QIconEngine_ScaledPixmapArgument_SetSize(QIconEngine_ScaledPixmapArgument_Ptr* self, QSize_Ptr size);
+	public static extern void QIconEngine_ScaledPixmapArgument_SetSize(QIconEngine_ScaledPixmapArgument_Ptr* self, QSize_Ptr* size);
 	[LinkName("QIconEngine_ScaledPixmapArgument_Mode")]
 	public static extern QIcon_Mode QIconEngine_ScaledPixmapArgument_Mode(QIconEngine_ScaledPixmapArgument_Ptr* self);
 	[LinkName("QIconEngine_ScaledPixmapArgument_SetMode")]
@@ -160,30 +147,31 @@ extension CQt
 	[LinkName("QIconEngine_ScaledPixmapArgument_SetScale")]
 	public static extern void QIconEngine_ScaledPixmapArgument_SetScale(QIconEngine_ScaledPixmapArgument_Ptr* self, double scale);
 	[LinkName("QIconEngine_ScaledPixmapArgument_Pixmap")]
-	public static extern QPixmap_Ptr QIconEngine_ScaledPixmapArgument_Pixmap(QIconEngine_ScaledPixmapArgument_Ptr* self);
+	public static extern QPixmap_Ptr* QIconEngine_ScaledPixmapArgument_Pixmap(QIconEngine_ScaledPixmapArgument_Ptr* self);
 	[LinkName("QIconEngine_ScaledPixmapArgument_SetPixmap")]
-	public static extern void QIconEngine_ScaledPixmapArgument_SetPixmap(QIconEngine_ScaledPixmapArgument_Ptr* self, QPixmap_Ptr pixmap);
+	public static extern void QIconEngine_ScaledPixmapArgument_SetPixmap(QIconEngine_ScaledPixmapArgument_Ptr* self, QPixmap_Ptr* pixmap);
 	[LinkName("QIconEngine_ScaledPixmapArgument_OperatorAssign")]
-	public static extern void QIconEngine_ScaledPixmapArgument_OperatorAssign(QIconEngine_ScaledPixmapArgument_Ptr* self, QIconEngine_ScaledPixmapArgument* param1);
+	public static extern void QIconEngine_ScaledPixmapArgument_OperatorAssign(QIconEngine_ScaledPixmapArgument_Ptr* self, QIconEngine_ScaledPixmapArgument_Ptr* param1);
 }
-class QIconEngine_ScaledPixmapArgument
+class QIconEngine_ScaledPixmapArgument : IQIconEngine_ScaledPixmapArgument
 {
 	private QIconEngine_ScaledPixmapArgument_Ptr* ptr;
-	public this(QIconEngine_ScaledPixmapArgument* param1)
+	public void* ObjectPtr => ptr;
+	public this(IQIconEngine_ScaledPixmapArgument param1)
 	{
-		this.ptr = CQt.QIconEngine_ScaledPixmapArgument_new(param1);
+		this.ptr = CQt.QIconEngine_ScaledPixmapArgument_new((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QIconEngine_ScaledPixmapArgument_Delete(this.ptr);
 	}
-	public QSize_Ptr Size()
+	public QSize_Ptr* Size()
 	{
 		return CQt.QIconEngine_ScaledPixmapArgument_Size((.)this.ptr);
 	}
-	public void SetSize(QSize_Ptr size)
+	public void SetSize(IQSize size)
 	{
-		CQt.QIconEngine_ScaledPixmapArgument_SetSize((.)this.ptr, size);
+		CQt.QIconEngine_ScaledPixmapArgument_SetSize((.)this.ptr, (.)size?.ObjectPtr);
 	}
 	public QIcon_Mode Mode()
 	{
@@ -209,27 +197,17 @@ class QIconEngine_ScaledPixmapArgument
 	{
 		CQt.QIconEngine_ScaledPixmapArgument_SetScale((.)this.ptr, scale);
 	}
-	public QPixmap_Ptr Pixmap()
+	public QPixmap_Ptr* Pixmap()
 	{
 		return CQt.QIconEngine_ScaledPixmapArgument_Pixmap((.)this.ptr);
 	}
-	public void SetPixmap(QPixmap_Ptr pixmap)
+	public void SetPixmap(IQPixmap pixmap)
 	{
-		CQt.QIconEngine_ScaledPixmapArgument_SetPixmap((.)this.ptr, pixmap);
+		CQt.QIconEngine_ScaledPixmapArgument_SetPixmap((.)this.ptr, (.)pixmap?.ObjectPtr);
 	}
 }
-interface IQIconEngine_ScaledPixmapArgument
+interface IQIconEngine_ScaledPixmapArgument : IQtObjectInterface
 {
-	public QSize Size();
-	public void SetSize();
-	public QIcon_Mode Mode();
-	public void SetMode();
-	public QIcon_State State();
-	public void SetState();
-	public double Scale();
-	public void SetScale();
-	public QPixmap Pixmap();
-	public void SetPixmap();
 }
 [AllowDuplicates]
 enum QIconEngine_IconEngineHook

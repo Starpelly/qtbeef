@@ -35,13 +35,13 @@ extension CQt
 	[LinkName("QProcessEnvironment_Clear")]
 	public static extern void QProcessEnvironment_Clear(QProcessEnvironment_Ptr* self);
 	[LinkName("QProcessEnvironment_Contains")]
-	public static extern bool QProcessEnvironment_Contains(QProcessEnvironment_Ptr* self, libqt_string* name);
+	public static extern bool QProcessEnvironment_Contains(QProcessEnvironment_Ptr* self, libqt_string name);
 	[LinkName("QProcessEnvironment_Insert")]
-	public static extern void QProcessEnvironment_Insert(QProcessEnvironment_Ptr* self, libqt_string* name, libqt_string* value);
+	public static extern void QProcessEnvironment_Insert(QProcessEnvironment_Ptr* self, libqt_string name, libqt_string value);
 	[LinkName("QProcessEnvironment_Remove")]
-	public static extern void QProcessEnvironment_Remove(QProcessEnvironment_Ptr* self, libqt_string* name);
+	public static extern void QProcessEnvironment_Remove(QProcessEnvironment_Ptr* self, libqt_string name);
 	[LinkName("QProcessEnvironment_Value")]
-	public static extern libqt_string QProcessEnvironment_Value(QProcessEnvironment_Ptr* self, libqt_string* name);
+	public static extern libqt_string QProcessEnvironment_Value(QProcessEnvironment_Ptr* self, libqt_string name);
 	[LinkName("QProcessEnvironment_ToStringList")]
 	public static extern void* QProcessEnvironment_ToStringList(QProcessEnvironment_Ptr* self);
 	[LinkName("QProcessEnvironment_Keys")]
@@ -49,13 +49,14 @@ extension CQt
 	[LinkName("QProcessEnvironment_Insert2")]
 	public static extern void QProcessEnvironment_Insert2(QProcessEnvironment_Ptr* self, QProcessEnvironment_Ptr* e);
 	[LinkName("QProcessEnvironment_SystemEnvironment")]
-	public static extern QProcessEnvironment_Ptr QProcessEnvironment_SystemEnvironment();
+	public static extern QProcessEnvironment_Ptr* QProcessEnvironment_SystemEnvironment();
 	[LinkName("QProcessEnvironment_Value2")]
-	public static extern libqt_string QProcessEnvironment_Value2(QProcessEnvironment_Ptr* self, libqt_string* name, libqt_string* defaultValue);
+	public static extern libqt_string QProcessEnvironment_Value2(QProcessEnvironment_Ptr* self, libqt_string name, libqt_string defaultValue);
 }
-class QProcessEnvironment
+class QProcessEnvironment : IQProcessEnvironment
 {
 	private QProcessEnvironment_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QProcessEnvironment_new();
@@ -64,17 +65,17 @@ class QProcessEnvironment
 	{
 		this.ptr = CQt.QProcessEnvironment_new2(param1);
 	}
-	public this(QProcessEnvironment_Ptr* other)
+	public this(IQProcessEnvironment other)
 	{
-		this.ptr = CQt.QProcessEnvironment_new3(other);
+		this.ptr = CQt.QProcessEnvironment_new3((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QProcessEnvironment_Delete(this.ptr);
 	}
-	public void Swap(QProcessEnvironment_Ptr* other)
+	public void Swap(IQProcessEnvironment other)
 	{
-		CQt.QProcessEnvironment_Swap((.)this.ptr, other);
+		CQt.QProcessEnvironment_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsEmpty()
 	{
@@ -88,21 +89,21 @@ class QProcessEnvironment
 	{
 		CQt.QProcessEnvironment_Clear((.)this.ptr);
 	}
-	public bool Contains(libqt_string* name)
+	public bool Contains(String name)
 	{
-		return CQt.QProcessEnvironment_Contains((.)this.ptr, name);
+		return CQt.QProcessEnvironment_Contains((.)this.ptr, libqt_string(name));
 	}
-	public void Insert(libqt_string* name, libqt_string* value)
+	public void Insert(String name, String value)
 	{
-		CQt.QProcessEnvironment_Insert((.)this.ptr, name, value);
+		CQt.QProcessEnvironment_Insert((.)this.ptr, libqt_string(name), libqt_string(value));
 	}
-	public void Remove(libqt_string* name)
+	public void Remove(String name)
 	{
-		CQt.QProcessEnvironment_Remove((.)this.ptr, name);
+		CQt.QProcessEnvironment_Remove((.)this.ptr, libqt_string(name));
 	}
-	public libqt_string Value(libqt_string* name)
+	public libqt_string Value(String name)
 	{
-		return CQt.QProcessEnvironment_Value((.)this.ptr, name);
+		return CQt.QProcessEnvironment_Value((.)this.ptr, libqt_string(name));
 	}
 	public void* ToStringList()
 	{
@@ -112,34 +113,21 @@ class QProcessEnvironment
 	{
 		return CQt.QProcessEnvironment_Keys((.)this.ptr);
 	}
-	public void Insert2(QProcessEnvironment_Ptr* e)
+	public void Insert2(IQProcessEnvironment e)
 	{
-		CQt.QProcessEnvironment_Insert2((.)this.ptr, e);
+		CQt.QProcessEnvironment_Insert2((.)this.ptr, (.)e?.ObjectPtr);
 	}
-	public QProcessEnvironment_Ptr SystemEnvironment()
+	public QProcessEnvironment_Ptr* SystemEnvironment()
 	{
 		return CQt.QProcessEnvironment_SystemEnvironment();
 	}
-	public libqt_string Value2(libqt_string* name, libqt_string* defaultValue)
+	public libqt_string Value2(String name, String defaultValue)
 	{
-		return CQt.QProcessEnvironment_Value2((.)this.ptr, name, defaultValue);
+		return CQt.QProcessEnvironment_Value2((.)this.ptr, libqt_string(name), libqt_string(defaultValue));
 	}
 }
-interface IQProcessEnvironment
+interface IQProcessEnvironment : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsEmpty();
-	public bool InheritsFromParent();
-	public void Clear();
-	public bool Contains();
-	public void Insert();
-	public void Remove();
-	public libqt_string Value();
-	public void* ToStringList();
-	public void* Keys();
-	public void Insert2();
-	public QProcessEnvironment SystemEnvironment();
-	public libqt_string Value2();
 }
 // --------------------------------------------------------------
 // QProcess
@@ -153,11 +141,11 @@ extension CQt
 	[LinkName("QProcess_new")]
 	public static extern QProcess_Ptr* QProcess_new();
 	[LinkName("QProcess_new2")]
-	public static extern QProcess_Ptr* QProcess_new2(QObject_Ptr* parent);
+	public static extern QProcess_Ptr* QProcess_new2(QObject_Ptr** parent);
 	[LinkName("QProcess_Delete")]
 	public static extern void QProcess_Delete(QProcess_Ptr* self);
 	[LinkName("QProcess_MetaObject")]
-	public static extern QMetaObject_Ptr* QProcess_MetaObject(QProcess_Ptr* self);
+	public static extern QMetaObject_Ptr** QProcess_MetaObject(QProcess_Ptr* self);
 	[LinkName("QProcess_Qt_Metacast")]
 	public static extern void* QProcess_Qt_Metacast(QProcess_Ptr* self, c_char* param1);
 	[LinkName("QProcess_Qt_Metacall")]
@@ -165,11 +153,11 @@ extension CQt
 	[LinkName("QProcess_Tr")]
 	public static extern libqt_string QProcess_Tr(c_char* s);
 	[LinkName("QProcess_Start")]
-	public static extern void QProcess_Start(QProcess_Ptr* self, libqt_string* program);
+	public static extern void QProcess_Start(QProcess_Ptr* self, libqt_string program);
 	[LinkName("QProcess_Start2")]
 	public static extern void QProcess_Start2(QProcess_Ptr* self);
 	[LinkName("QProcess_StartCommand")]
-	public static extern void QProcess_StartCommand(QProcess_Ptr* self, libqt_string* command);
+	public static extern void QProcess_StartCommand(QProcess_Ptr* self, libqt_string command);
 	[LinkName("QProcess_StartDetached")]
 	public static extern bool QProcess_StartDetached(QProcess_Ptr* self);
 	[LinkName("QProcess_Open")]
@@ -177,7 +165,7 @@ extension CQt
 	[LinkName("QProcess_Program")]
 	public static extern libqt_string QProcess_Program(QProcess_Ptr* self);
 	[LinkName("QProcess_SetProgram")]
-	public static extern void QProcess_SetProgram(QProcess_Ptr* self, libqt_string* program);
+	public static extern void QProcess_SetProgram(QProcess_Ptr* self, libqt_string program);
 	[LinkName("QProcess_Arguments")]
 	public static extern void* QProcess_Arguments(QProcess_Ptr* self);
 	[LinkName("QProcess_SetArguments")]
@@ -199,19 +187,19 @@ extension CQt
 	[LinkName("QProcess_CloseWriteChannel")]
 	public static extern void QProcess_CloseWriteChannel(QProcess_Ptr* self);
 	[LinkName("QProcess_SetStandardInputFile")]
-	public static extern void QProcess_SetStandardInputFile(QProcess_Ptr* self, libqt_string* fileName);
+	public static extern void QProcess_SetStandardInputFile(QProcess_Ptr* self, libqt_string fileName);
 	[LinkName("QProcess_SetStandardOutputFile")]
-	public static extern void QProcess_SetStandardOutputFile(QProcess_Ptr* self, libqt_string* fileName);
+	public static extern void QProcess_SetStandardOutputFile(QProcess_Ptr* self, libqt_string fileName);
 	[LinkName("QProcess_SetStandardErrorFile")]
-	public static extern void QProcess_SetStandardErrorFile(QProcess_Ptr* self, libqt_string* fileName);
+	public static extern void QProcess_SetStandardErrorFile(QProcess_Ptr* self, libqt_string fileName);
 	[LinkName("QProcess_SetStandardOutputProcess")]
-	public static extern void QProcess_SetStandardOutputProcess(QProcess_Ptr* self, QProcess_Ptr* destination);
+	public static extern void QProcess_SetStandardOutputProcess(QProcess_Ptr* self, QProcess_Ptr** destination);
 	[LinkName("QProcess_SetChildProcessModifier")]
 	public static extern void QProcess_SetChildProcessModifier(QProcess_Ptr* self, void** modifier);
 	[LinkName("QProcess_WorkingDirectory")]
 	public static extern libqt_string QProcess_WorkingDirectory(QProcess_Ptr* self);
 	[LinkName("QProcess_SetWorkingDirectory")]
-	public static extern void QProcess_SetWorkingDirectory(QProcess_Ptr* self, libqt_string* dir);
+	public static extern void QProcess_SetWorkingDirectory(QProcess_Ptr* self, libqt_string dir);
 	[LinkName("QProcess_SetEnvironment")]
 	public static extern void QProcess_SetEnvironment(QProcess_Ptr* self, void** environment);
 	[LinkName("QProcess_Environment")]
@@ -219,7 +207,7 @@ extension CQt
 	[LinkName("QProcess_SetProcessEnvironment")]
 	public static extern void QProcess_SetProcessEnvironment(QProcess_Ptr* self, QProcessEnvironment_Ptr* environment);
 	[LinkName("QProcess_ProcessEnvironment")]
-	public static extern QProcessEnvironment_Ptr QProcess_ProcessEnvironment(QProcess_Ptr* self);
+	public static extern QProcessEnvironment_Ptr* QProcess_ProcessEnvironment(QProcess_Ptr* self);
 	[LinkName("QProcess_Error")]
 	public static extern QProcess_ProcessError QProcess_Error(QProcess_Ptr* self);
 	[LinkName("QProcess_State")]
@@ -249,9 +237,9 @@ extension CQt
 	[LinkName("QProcess_Close")]
 	public static extern void QProcess_Close(QProcess_Ptr* self);
 	[LinkName("QProcess_Execute")]
-	public static extern c_int QProcess_Execute(libqt_string* program);
+	public static extern c_int QProcess_Execute(libqt_string program);
 	[LinkName("QProcess_StartDetached2")]
-	public static extern bool QProcess_StartDetached2(libqt_string* program);
+	public static extern bool QProcess_StartDetached2(libqt_string program);
 	[LinkName("QProcess_SystemEnvironment")]
 	public static extern void* QProcess_SystemEnvironment();
 	[LinkName("QProcess_NullDevice")]
@@ -275,50 +263,51 @@ extension CQt
 	[LinkName("QProcess_Tr3")]
 	public static extern libqt_string QProcess_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QProcess_Start22")]
-	public static extern void QProcess_Start22(QProcess_Ptr* self, libqt_string* program, void** arguments);
+	public static extern void QProcess_Start22(QProcess_Ptr* self, libqt_string program, void** arguments);
 	[LinkName("QProcess_Start3")]
-	public static extern void QProcess_Start3(QProcess_Ptr* self, libqt_string* program, void** arguments, void* mode);
+	public static extern void QProcess_Start3(QProcess_Ptr* self, libqt_string program, void** arguments, void* mode);
 	[LinkName("QProcess_Start1")]
 	public static extern void QProcess_Start1(QProcess_Ptr* self, void* mode);
 	[LinkName("QProcess_StartCommand2")]
-	public static extern void QProcess_StartCommand2(QProcess_Ptr* self, libqt_string* command, void* mode);
+	public static extern void QProcess_StartCommand2(QProcess_Ptr* self, libqt_string command, void* mode);
 	[LinkName("QProcess_StartDetached1")]
 	public static extern bool QProcess_StartDetached1(QProcess_Ptr* self, c_longlong* pid);
 	[LinkName("QProcess_SetStandardOutputFile2")]
-	public static extern void QProcess_SetStandardOutputFile2(QProcess_Ptr* self, libqt_string* fileName, void* mode);
+	public static extern void QProcess_SetStandardOutputFile2(QProcess_Ptr* self, libqt_string fileName, void* mode);
 	[LinkName("QProcess_SetStandardErrorFile2")]
-	public static extern void QProcess_SetStandardErrorFile2(QProcess_Ptr* self, libqt_string* fileName, void* mode);
+	public static extern void QProcess_SetStandardErrorFile2(QProcess_Ptr* self, libqt_string fileName, void* mode);
 	[LinkName("QProcess_WaitForStarted1")]
 	public static extern bool QProcess_WaitForStarted1(QProcess_Ptr* self, c_int msecs);
 	[LinkName("QProcess_WaitForFinished1")]
 	public static extern bool QProcess_WaitForFinished1(QProcess_Ptr* self, c_int msecs);
 	[LinkName("QProcess_Execute2")]
-	public static extern c_int QProcess_Execute2(libqt_string* program, void** arguments);
+	public static extern c_int QProcess_Execute2(libqt_string program, void** arguments);
 	[LinkName("QProcess_StartDetached22")]
-	public static extern bool QProcess_StartDetached22(libqt_string* program, void** arguments);
+	public static extern bool QProcess_StartDetached22(libqt_string program, void** arguments);
 	[LinkName("QProcess_StartDetached3")]
-	public static extern bool QProcess_StartDetached3(libqt_string* program, void** arguments, libqt_string* workingDirectory);
+	public static extern bool QProcess_StartDetached3(libqt_string program, void** arguments, libqt_string workingDirectory);
 	[LinkName("QProcess_StartDetached4")]
-	public static extern bool QProcess_StartDetached4(libqt_string* program, void** arguments, libqt_string* workingDirectory, c_longlong* pid);
+	public static extern bool QProcess_StartDetached4(libqt_string program, void** arguments, libqt_string workingDirectory, c_longlong* pid);
 	[LinkName("QProcess_Finished2")]
 	public static extern void QProcess_Finished2(QProcess_Ptr* self, c_int exitCode, QProcess_ExitStatus exitStatus);
 }
-class QProcess
+class QProcess : IQProcess, IQIODevice, IQObject, IQIODeviceBase
 {
 	private QProcess_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QProcess_new();
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QProcess_new2(parent);
+		this.ptr = CQt.QProcess_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QProcess_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QProcess_MetaObject((.)this.ptr);
 	}
@@ -334,17 +323,17 @@ class QProcess
 	{
 		return CQt.QProcess_Tr(s);
 	}
-	public void Start(libqt_string* program)
+	public void Start(String program)
 	{
-		CQt.QProcess_Start((.)this.ptr, program);
+		CQt.QProcess_Start((.)this.ptr, libqt_string(program));
 	}
 	public void Start2()
 	{
 		CQt.QProcess_Start2((.)this.ptr);
 	}
-	public void StartCommand(libqt_string* command)
+	public void StartCommand(String command)
 	{
-		CQt.QProcess_StartCommand((.)this.ptr, command);
+		CQt.QProcess_StartCommand((.)this.ptr, libqt_string(command));
 	}
 	public bool StartDetached()
 	{
@@ -358,9 +347,9 @@ class QProcess
 	{
 		return CQt.QProcess_Program((.)this.ptr);
 	}
-	public void SetProgram(libqt_string* program)
+	public void SetProgram(String program)
 	{
-		CQt.QProcess_SetProgram((.)this.ptr, program);
+		CQt.QProcess_SetProgram((.)this.ptr, libqt_string(program));
 	}
 	public void* Arguments()
 	{
@@ -402,21 +391,21 @@ class QProcess
 	{
 		CQt.QProcess_CloseWriteChannel((.)this.ptr);
 	}
-	public void SetStandardInputFile(libqt_string* fileName)
+	public void SetStandardInputFile(String fileName)
 	{
-		CQt.QProcess_SetStandardInputFile((.)this.ptr, fileName);
+		CQt.QProcess_SetStandardInputFile((.)this.ptr, libqt_string(fileName));
 	}
-	public void SetStandardOutputFile(libqt_string* fileName)
+	public void SetStandardOutputFile(String fileName)
 	{
-		CQt.QProcess_SetStandardOutputFile((.)this.ptr, fileName);
+		CQt.QProcess_SetStandardOutputFile((.)this.ptr, libqt_string(fileName));
 	}
-	public void SetStandardErrorFile(libqt_string* fileName)
+	public void SetStandardErrorFile(String fileName)
 	{
-		CQt.QProcess_SetStandardErrorFile((.)this.ptr, fileName);
+		CQt.QProcess_SetStandardErrorFile((.)this.ptr, libqt_string(fileName));
 	}
-	public void SetStandardOutputProcess(QProcess_Ptr* destination)
+	public void SetStandardOutputProcess(IQProcess destination)
 	{
-		CQt.QProcess_SetStandardOutputProcess((.)this.ptr, destination);
+		CQt.QProcess_SetStandardOutputProcess((.)this.ptr, (.)destination?.ObjectPtr);
 	}
 	public void SetChildProcessModifier(void** modifier)
 	{
@@ -426,9 +415,9 @@ class QProcess
 	{
 		return CQt.QProcess_WorkingDirectory((.)this.ptr);
 	}
-	public void SetWorkingDirectory(libqt_string* dir)
+	public void SetWorkingDirectory(String dir)
 	{
-		CQt.QProcess_SetWorkingDirectory((.)this.ptr, dir);
+		CQt.QProcess_SetWorkingDirectory((.)this.ptr, libqt_string(dir));
 	}
 	public void SetEnvironment(void** environment)
 	{
@@ -438,11 +427,11 @@ class QProcess
 	{
 		return CQt.QProcess_Environment((.)this.ptr);
 	}
-	public void SetProcessEnvironment(QProcessEnvironment_Ptr* environment)
+	public void SetProcessEnvironment(IQProcessEnvironment environment)
 	{
-		CQt.QProcess_SetProcessEnvironment((.)this.ptr, environment);
+		CQt.QProcess_SetProcessEnvironment((.)this.ptr, (.)environment?.ObjectPtr);
 	}
-	public QProcessEnvironment_Ptr ProcessEnvironment()
+	public QProcessEnvironment_Ptr* ProcessEnvironment()
 	{
 		return CQt.QProcess_ProcessEnvironment((.)this.ptr);
 	}
@@ -502,13 +491,13 @@ class QProcess
 	{
 		CQt.QProcess_Close((.)this.ptr);
 	}
-	public c_int Execute(libqt_string* program)
+	public c_int Execute(String program)
 	{
-		return CQt.QProcess_Execute(program);
+		return CQt.QProcess_Execute(libqt_string(program));
 	}
-	public bool StartDetached2(libqt_string* program)
+	public bool StartDetached2(String program)
 	{
-		return CQt.QProcess_StartDetached2(program);
+		return CQt.QProcess_StartDetached2(libqt_string(program));
 	}
 	public void* SystemEnvironment()
 	{
@@ -554,33 +543,33 @@ class QProcess
 	{
 		return CQt.QProcess_Tr3(s, c, n);
 	}
-	public void Start22(libqt_string* program, void** arguments)
+	public void Start22(String program, void** arguments)
 	{
-		CQt.QProcess_Start22((.)this.ptr, program, arguments);
+		CQt.QProcess_Start22((.)this.ptr, libqt_string(program), arguments);
 	}
-	public void Start3(libqt_string* program, void** arguments, void* mode)
+	public void Start3(String program, void** arguments, void* mode)
 	{
-		CQt.QProcess_Start3((.)this.ptr, program, arguments, mode);
+		CQt.QProcess_Start3((.)this.ptr, libqt_string(program), arguments, mode);
 	}
 	public void Start1(void* mode)
 	{
 		CQt.QProcess_Start1((.)this.ptr, mode);
 	}
-	public void StartCommand2(libqt_string* command, void* mode)
+	public void StartCommand2(String command, void* mode)
 	{
-		CQt.QProcess_StartCommand2((.)this.ptr, command, mode);
+		CQt.QProcess_StartCommand2((.)this.ptr, libqt_string(command), mode);
 	}
 	public bool StartDetached1(c_longlong* pid)
 	{
 		return CQt.QProcess_StartDetached1((.)this.ptr, pid);
 	}
-	public void SetStandardOutputFile2(libqt_string* fileName, void* mode)
+	public void SetStandardOutputFile2(String fileName, void* mode)
 	{
-		CQt.QProcess_SetStandardOutputFile2((.)this.ptr, fileName, mode);
+		CQt.QProcess_SetStandardOutputFile2((.)this.ptr, libqt_string(fileName), mode);
 	}
-	public void SetStandardErrorFile2(libqt_string* fileName, void* mode)
+	public void SetStandardErrorFile2(String fileName, void* mode)
 	{
-		CQt.QProcess_SetStandardErrorFile2((.)this.ptr, fileName, mode);
+		CQt.QProcess_SetStandardErrorFile2((.)this.ptr, libqt_string(fileName), mode);
 	}
 	public bool WaitForStarted1(c_int msecs)
 	{
@@ -590,21 +579,21 @@ class QProcess
 	{
 		return CQt.QProcess_WaitForFinished1((.)this.ptr, msecs);
 	}
-	public c_int Execute2(libqt_string* program, void** arguments)
+	public c_int Execute2(String program, void** arguments)
 	{
-		return CQt.QProcess_Execute2(program, arguments);
+		return CQt.QProcess_Execute2(libqt_string(program), arguments);
 	}
-	public bool StartDetached22(libqt_string* program, void** arguments)
+	public bool StartDetached22(String program, void** arguments)
 	{
-		return CQt.QProcess_StartDetached22(program, arguments);
+		return CQt.QProcess_StartDetached22(libqt_string(program), arguments);
 	}
-	public bool StartDetached3(libqt_string* program, void** arguments, libqt_string* workingDirectory)
+	public bool StartDetached3(String program, void** arguments, String workingDirectory)
 	{
-		return CQt.QProcess_StartDetached3(program, arguments, workingDirectory);
+		return CQt.QProcess_StartDetached3(libqt_string(program), arguments, libqt_string(workingDirectory));
 	}
-	public bool StartDetached4(libqt_string* program, void** arguments, libqt_string* workingDirectory, c_longlong* pid)
+	public bool StartDetached4(String program, void** arguments, String workingDirectory, c_longlong* pid)
 	{
-		return CQt.QProcess_StartDetached4(program, arguments, workingDirectory, pid);
+		return CQt.QProcess_StartDetached4(libqt_string(program), arguments, libqt_string(workingDirectory), pid);
 	}
 	public void Finished2(c_int exitCode, QProcess_ExitStatus exitStatus)
 	{
@@ -798,29 +787,29 @@ class QProcess
 	{
 		CQt.QIODevice_SetOpenMode((.)this.ptr, openMode);
 	}
-	public void SetErrorString(libqt_string* errorString)
+	public void SetErrorString(String errorString)
 	{
-		CQt.QIODevice_SetErrorString((.)this.ptr, errorString);
+		CQt.QIODevice_SetErrorString((.)this.ptr, libqt_string(errorString));
 	}
 	public void* ReadLine1(c_longlong maxlen)
 	{
 		return CQt.QIODevice_ReadLine1((.)this.ptr, maxlen);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -842,13 +831,13 @@ class QProcess
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -866,49 +855,49 @@ class QProcess
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -918,11 +907,11 @@ class QProcess
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -930,11 +919,11 @@ class QProcess
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -942,7 +931,7 @@ class QProcess
 	{
 		CQt.QObject_Destroyed((.)this.ptr);
 	}
-	public QObject_Ptr* Parent()
+	public QObject_Ptr** Parent()
 	{
 		return CQt.QObject_Parent((.)this.ptr);
 	}
@@ -954,7 +943,7 @@ class QProcess
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -966,29 +955,29 @@ class QProcess
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -998,114 +987,41 @@ class QProcess
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQProcess
+interface IQProcess : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void Start();
-	public void Start2();
-	public void StartCommand();
-	public bool StartDetached();
-	public bool Open();
-	public libqt_string Program();
-	public void SetProgram();
-	public void* Arguments();
-	public void SetArguments();
-	public QProcess_ProcessChannelMode ProcessChannelMode();
-	public void SetProcessChannelMode();
-	public QProcess_InputChannelMode InputChannelMode();
-	public void SetInputChannelMode();
-	public QProcess_ProcessChannel ReadChannel();
-	public void SetReadChannel();
-	public void CloseReadChannel();
-	public void CloseWriteChannel();
-	public void SetStandardInputFile();
-	public void SetStandardOutputFile();
-	public void SetStandardErrorFile();
-	public void SetStandardOutputProcess();
-	public void SetChildProcessModifier();
-	public libqt_string WorkingDirectory();
-	public void SetWorkingDirectory();
-	public void SetEnvironment();
-	public void* Environment();
-	public void SetProcessEnvironment();
-	public QProcessEnvironment ProcessEnvironment();
-	public QProcess_ProcessError Error();
-	public QProcess_ProcessState State();
-	public c_longlong ProcessId();
-	public bool WaitForStarted();
-	public bool WaitForReadyRead();
-	public bool WaitForBytesWritten();
-	public bool WaitForFinished();
-	public void* ReadAllStandardOutput();
-	public void* ReadAllStandardError();
-	public c_int ExitCode();
-	public QProcess_ExitStatus ExitStatus();
-	public c_longlong BytesToWrite();
-	public bool IsSequential();
-	public void Close();
-	public c_int Execute();
-	public bool StartDetached2();
-	public void* SystemEnvironment();
-	public libqt_string NullDevice();
-	public void Terminate();
-	public void Kill();
-	public void Finished();
-	public void ErrorOccurred();
-	public void SetProcessState();
-	public c_longlong ReadData();
-	public c_longlong WriteData();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public void Start22();
-	public void Start3();
-	public void Start1();
-	public void StartCommand2();
-	public bool StartDetached1();
-	public void SetStandardOutputFile2();
-	public void SetStandardErrorFile2();
-	public bool WaitForStarted1();
-	public bool WaitForFinished1();
-	public c_int Execute2();
-	public bool StartDetached22();
-	public bool StartDetached3();
-	public bool StartDetached4();
-	public void Finished2();
 }
 [AllowDuplicates]
 enum QProcessEnvironment_Initialization

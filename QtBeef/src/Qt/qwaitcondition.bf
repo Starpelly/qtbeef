@@ -17,13 +17,13 @@ extension CQt
 	[LinkName("QWaitCondition_Delete")]
 	public static extern void QWaitCondition_Delete(QWaitCondition_Ptr* self);
 	[LinkName("QWaitCondition_Wait")]
-	public static extern bool QWaitCondition_Wait(QWaitCondition_Ptr* self, QMutex_Ptr* lockedMutex);
+	public static extern bool QWaitCondition_Wait(QWaitCondition_Ptr* self, QMutex_Ptr** lockedMutex);
 	[LinkName("QWaitCondition_Wait2")]
-	public static extern bool QWaitCondition_Wait2(QWaitCondition_Ptr* self, QMutex_Ptr* lockedMutex, c_ulong time);
+	public static extern bool QWaitCondition_Wait2(QWaitCondition_Ptr* self, QMutex_Ptr** lockedMutex, c_ulong time);
 	[LinkName("QWaitCondition_Wait3")]
-	public static extern bool QWaitCondition_Wait3(QWaitCondition_Ptr* self, QReadWriteLock_Ptr* lockedReadWriteLock);
+	public static extern bool QWaitCondition_Wait3(QWaitCondition_Ptr* self, QReadWriteLock_Ptr** lockedReadWriteLock);
 	[LinkName("QWaitCondition_Wait4")]
-	public static extern bool QWaitCondition_Wait4(QWaitCondition_Ptr* self, QReadWriteLock_Ptr* lockedReadWriteLock, c_ulong time);
+	public static extern bool QWaitCondition_Wait4(QWaitCondition_Ptr* self, QReadWriteLock_Ptr** lockedReadWriteLock, c_ulong time);
 	[LinkName("QWaitCondition_WakeOne")]
 	public static extern void QWaitCondition_WakeOne(QWaitCondition_Ptr* self);
 	[LinkName("QWaitCondition_WakeAll")]
@@ -33,13 +33,14 @@ extension CQt
 	[LinkName("QWaitCondition_Notify_All")]
 	public static extern void QWaitCondition_Notify_All(QWaitCondition_Ptr* self);
 	[LinkName("QWaitCondition_Wait22")]
-	public static extern bool QWaitCondition_Wait22(QWaitCondition_Ptr* self, QMutex_Ptr* lockedMutex, QDeadlineTimer_Ptr deadline);
+	public static extern bool QWaitCondition_Wait22(QWaitCondition_Ptr* self, QMutex_Ptr** lockedMutex, QDeadlineTimer_Ptr* deadline);
 	[LinkName("QWaitCondition_Wait23")]
-	public static extern bool QWaitCondition_Wait23(QWaitCondition_Ptr* self, QReadWriteLock_Ptr* lockedReadWriteLock, QDeadlineTimer_Ptr deadline);
+	public static extern bool QWaitCondition_Wait23(QWaitCondition_Ptr* self, QReadWriteLock_Ptr** lockedReadWriteLock, QDeadlineTimer_Ptr* deadline);
 }
-class QWaitCondition
+class QWaitCondition : IQWaitCondition
 {
 	private QWaitCondition_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QWaitCondition_new();
@@ -48,21 +49,21 @@ class QWaitCondition
 	{
 		CQt.QWaitCondition_Delete(this.ptr);
 	}
-	public bool Wait(QMutex_Ptr* lockedMutex)
+	public bool Wait(IQMutex lockedMutex)
 	{
-		return CQt.QWaitCondition_Wait((.)this.ptr, lockedMutex);
+		return CQt.QWaitCondition_Wait((.)this.ptr, (.)lockedMutex?.ObjectPtr);
 	}
-	public bool Wait2(QMutex_Ptr* lockedMutex, c_ulong time)
+	public bool Wait2(IQMutex lockedMutex, c_ulong time)
 	{
-		return CQt.QWaitCondition_Wait2((.)this.ptr, lockedMutex, time);
+		return CQt.QWaitCondition_Wait2((.)this.ptr, (.)lockedMutex?.ObjectPtr, time);
 	}
-	public bool Wait3(QReadWriteLock_Ptr* lockedReadWriteLock)
+	public bool Wait3(IQReadWriteLock lockedReadWriteLock)
 	{
-		return CQt.QWaitCondition_Wait3((.)this.ptr, lockedReadWriteLock);
+		return CQt.QWaitCondition_Wait3((.)this.ptr, (.)lockedReadWriteLock?.ObjectPtr);
 	}
-	public bool Wait4(QReadWriteLock_Ptr* lockedReadWriteLock, c_ulong time)
+	public bool Wait4(IQReadWriteLock lockedReadWriteLock, c_ulong time)
 	{
-		return CQt.QWaitCondition_Wait4((.)this.ptr, lockedReadWriteLock, time);
+		return CQt.QWaitCondition_Wait4((.)this.ptr, (.)lockedReadWriteLock?.ObjectPtr, time);
 	}
 	public void WakeOne()
 	{
@@ -80,25 +81,15 @@ class QWaitCondition
 	{
 		CQt.QWaitCondition_Notify_All((.)this.ptr);
 	}
-	public bool Wait22(QMutex_Ptr* lockedMutex, QDeadlineTimer_Ptr deadline)
+	public bool Wait22(IQMutex lockedMutex, IQDeadlineTimer deadline)
 	{
-		return CQt.QWaitCondition_Wait22((.)this.ptr, lockedMutex, deadline);
+		return CQt.QWaitCondition_Wait22((.)this.ptr, (.)lockedMutex?.ObjectPtr, (.)deadline?.ObjectPtr);
 	}
-	public bool Wait23(QReadWriteLock_Ptr* lockedReadWriteLock, QDeadlineTimer_Ptr deadline)
+	public bool Wait23(IQReadWriteLock lockedReadWriteLock, IQDeadlineTimer deadline)
 	{
-		return CQt.QWaitCondition_Wait23((.)this.ptr, lockedReadWriteLock, deadline);
+		return CQt.QWaitCondition_Wait23((.)this.ptr, (.)lockedReadWriteLock?.ObjectPtr, (.)deadline?.ObjectPtr);
 	}
 }
-interface IQWaitCondition
+interface IQWaitCondition : IQtObjectInterface
 {
-	public bool Wait();
-	public bool Wait2();
-	public bool Wait3();
-	public bool Wait4();
-	public void WakeOne();
-	public void WakeAll();
-	public void Notify_one();
-	public void Notify_all();
-	public bool Wait22();
-	public bool Wait23();
 }

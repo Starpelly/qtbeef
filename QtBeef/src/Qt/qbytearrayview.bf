@@ -169,9 +169,10 @@ extension CQt
 	[LinkName("QByteArrayView_Compare2")]
 	public static extern c_int QByteArrayView_Compare2(QByteArrayView_Ptr* self, void* a, Qt_CaseSensitivity cs);
 }
-class QByteArrayView
+class QByteArrayView : IQByteArrayView
 {
 	private QByteArrayView_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this(void** other)
 	{
 		this.ptr = CQt.QByteArrayView_new(other);
@@ -473,78 +474,6 @@ class QByteArrayView
 		return CQt.QByteArrayView_Compare2((.)this.ptr, a, cs);
 	}
 }
-interface IQByteArrayView
+interface IQByteArrayView : IQtObjectInterface
 {
-	public void* ToByteArray();
-	public void* Size();
-	public c_char* Data();
-	public c_char* ConstData();
-	public c_char At();
-	public void* First();
-	public void* Last();
-	public void* Sliced();
-	public void* Sliced2();
-	public void* Chopped();
-	public void Truncate();
-	public void Chop();
-	public void* Trimmed();
-	public c_ushort ToShort();
-	public c_ushort ToUShort();
-	public c_int ToInt();
-	public c_uint ToUInt();
-	public c_long ToLong();
-	public c_ulong ToULong();
-	public c_longlong ToLongLong();
-	public c_ulonglong ToULongLong();
-	public float ToFloat();
-	public double ToDouble();
-	public bool StartsWith();
-	public bool StartsWith2();
-	public bool EndsWith();
-	public bool EndsWith2();
-	public void* IndexOf();
-	public void* IndexOf2();
-	public bool Contains();
-	public bool Contains2();
-	public void* LastIndexOf();
-	public void* LastIndexOf2();
-	public void* LastIndexOf3();
-	public void* Count();
-	public void* Count2();
-	public c_int Compare();
-	public bool IsValidUtf8();
-	public c_char* Begin();
-	public c_char* End();
-	public c_char* Cbegin();
-	public c_char* Cend();
-	public bool Empty();
-	public c_char Front();
-	public c_char Back();
-	public bool IsNull();
-	public bool IsEmpty();
-	public void* Length();
-	public c_char First2();
-	public c_char Last2();
-	public c_ushort ToShort1();
-	public c_ushort ToShort2();
-	public c_ushort ToUShort1();
-	public c_ushort ToUShort2();
-	public c_int ToInt1();
-	public c_int ToInt2();
-	public c_uint ToUInt1();
-	public c_uint ToUInt2();
-	public c_long ToLong1();
-	public c_long ToLong2();
-	public c_ulong ToULong1();
-	public c_ulong ToULong2();
-	public c_longlong ToLongLong1();
-	public c_longlong ToLongLong2();
-	public c_ulonglong ToULongLong1();
-	public c_ulonglong ToULongLong2();
-	public float ToFloat1();
-	public double ToDouble1();
-	public void* IndexOf22();
-	public void* IndexOf23();
-	public void* LastIndexOf22();
-	public c_int Compare2();
 }

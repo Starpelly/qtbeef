@@ -51,28 +51,29 @@ extension CQt
 	[LinkName("QMimeType_PreferredSuffix")]
 	public static extern libqt_string QMimeType_PreferredSuffix(QMimeType_Ptr* self);
 	[LinkName("QMimeType_Inherits")]
-	public static extern bool QMimeType_Inherits(QMimeType_Ptr* self, libqt_string* mimeTypeName);
+	public static extern bool QMimeType_Inherits(QMimeType_Ptr* self, libqt_string mimeTypeName);
 	[LinkName("QMimeType_FilterString")]
 	public static extern libqt_string QMimeType_FilterString(QMimeType_Ptr* self);
 }
-class QMimeType
+class QMimeType : IQMimeType
 {
 	private QMimeType_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QMimeType_new();
 	}
-	public this(QMimeType_Ptr* other)
+	public this(IQMimeType other)
 	{
-		this.ptr = CQt.QMimeType_new2(other);
+		this.ptr = CQt.QMimeType_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QMimeType_Delete(this.ptr);
 	}
-	public void Swap(QMimeType_Ptr* other)
+	public void Swap(IQMimeType other)
 	{
-		CQt.QMimeType_Swap((.)this.ptr, other);
+		CQt.QMimeType_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
@@ -122,30 +123,15 @@ class QMimeType
 	{
 		return CQt.QMimeType_PreferredSuffix((.)this.ptr);
 	}
-	public bool Inherits(libqt_string* mimeTypeName)
+	public bool Inherits(String mimeTypeName)
 	{
-		return CQt.QMimeType_Inherits((.)this.ptr, mimeTypeName);
+		return CQt.QMimeType_Inherits((.)this.ptr, libqt_string(mimeTypeName));
 	}
 	public libqt_string FilterString()
 	{
 		return CQt.QMimeType_FilterString((.)this.ptr);
 	}
 }
-interface IQMimeType
+interface IQMimeType : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsValid();
-	public bool IsDefault();
-	public libqt_string Name();
-	public libqt_string Comment();
-	public libqt_string GenericIconName();
-	public libqt_string IconName();
-	public void* GlobPatterns();
-	public void* ParentMimeTypes();
-	public void* AllAncestors();
-	public void* Aliases();
-	public void* Suffixes();
-	public libqt_string PreferredSuffix();
-	public bool Inherits();
-	public libqt_string FilterString();
 }

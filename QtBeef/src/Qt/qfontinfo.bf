@@ -55,24 +55,25 @@ extension CQt
 	[LinkName("QFontInfo_ExactMatch")]
 	public static extern bool QFontInfo_ExactMatch(QFontInfo_Ptr* self);
 }
-class QFontInfo
+class QFontInfo : IQFontInfo
 {
 	private QFontInfo_Ptr* ptr;
-	public this(QFont_Ptr* param1)
+	public void* ObjectPtr => ptr;
+	public this(IQFont param1)
 	{
-		this.ptr = CQt.QFontInfo_new(param1);
+		this.ptr = CQt.QFontInfo_new((.)param1?.ObjectPtr);
 	}
-	public this(QFontInfo_Ptr* param1)
+	public this(IQFontInfo param1)
 	{
-		this.ptr = CQt.QFontInfo_new2(param1);
+		this.ptr = CQt.QFontInfo_new2((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QFontInfo_Delete(this.ptr);
 	}
-	public void Swap(QFontInfo_Ptr* other)
+	public void Swap(IQFontInfo other)
 	{
-		CQt.QFontInfo_Swap((.)this.ptr, other);
+		CQt.QFontInfo_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public libqt_string Family()
 	{
@@ -139,23 +140,6 @@ class QFontInfo
 		return CQt.QFontInfo_ExactMatch((.)this.ptr);
 	}
 }
-interface IQFontInfo
+interface IQFontInfo : IQtObjectInterface
 {
-	public void Swap();
-	public libqt_string Family();
-	public libqt_string StyleName();
-	public c_int PixelSize();
-	public c_int PointSize();
-	public double PointSizeF();
-	public bool Italic();
-	public QFont_Style Style();
-	public c_int Weight();
-	public bool Bold();
-	public bool Underline();
-	public bool Overline();
-	public bool StrikeOut();
-	public bool FixedPitch();
-	public QFont_StyleHint StyleHint();
-	public c_int LegacyWeight();
-	public bool ExactMatch();
 }

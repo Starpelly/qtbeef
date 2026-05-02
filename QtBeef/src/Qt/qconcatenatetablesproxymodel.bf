@@ -15,11 +15,11 @@ extension CQt
 	[LinkName("QConcatenateTablesProxyModel_new")]
 	public static extern QConcatenateTablesProxyModel_Ptr* QConcatenateTablesProxyModel_new();
 	[LinkName("QConcatenateTablesProxyModel_new2")]
-	public static extern QConcatenateTablesProxyModel_Ptr* QConcatenateTablesProxyModel_new2(QObject_Ptr* parent);
+	public static extern QConcatenateTablesProxyModel_Ptr* QConcatenateTablesProxyModel_new2(QObject_Ptr** parent);
 	[LinkName("QConcatenateTablesProxyModel_Delete")]
 	public static extern void QConcatenateTablesProxyModel_Delete(QConcatenateTablesProxyModel_Ptr* self);
 	[LinkName("QConcatenateTablesProxyModel_MetaObject")]
-	public static extern QMetaObject_Ptr* QConcatenateTablesProxyModel_MetaObject(QConcatenateTablesProxyModel_Ptr* self);
+	public static extern QMetaObject_Ptr** QConcatenateTablesProxyModel_MetaObject(QConcatenateTablesProxyModel_Ptr* self);
 	[LinkName("QConcatenateTablesProxyModel_Qt_Metacast")]
 	public static extern void* QConcatenateTablesProxyModel_Qt_Metacast(QConcatenateTablesProxyModel_Ptr* self, c_char* param1);
 	[LinkName("QConcatenateTablesProxyModel_Qt_Metacall")]
@@ -29,15 +29,15 @@ extension CQt
 	[LinkName("QConcatenateTablesProxyModel_SourceModels")]
 	public static extern void* QConcatenateTablesProxyModel_SourceModels(QConcatenateTablesProxyModel_Ptr* self);
 	[LinkName("QConcatenateTablesProxyModel_AddSourceModel")]
-	public static extern void QConcatenateTablesProxyModel_AddSourceModel(QConcatenateTablesProxyModel_Ptr* self, QAbstractItemModel_Ptr* sourceModel);
+	public static extern void QConcatenateTablesProxyModel_AddSourceModel(QConcatenateTablesProxyModel_Ptr* self, QAbstractItemModel_Ptr** sourceModel);
 	[LinkName("QConcatenateTablesProxyModel_RemoveSourceModel")]
-	public static extern void QConcatenateTablesProxyModel_RemoveSourceModel(QConcatenateTablesProxyModel_Ptr* self, QAbstractItemModel_Ptr* sourceModel);
+	public static extern void QConcatenateTablesProxyModel_RemoveSourceModel(QConcatenateTablesProxyModel_Ptr* self, QAbstractItemModel_Ptr** sourceModel);
 	[LinkName("QConcatenateTablesProxyModel_MapFromSource")]
-	public static extern QModelIndex_Ptr QConcatenateTablesProxyModel_MapFromSource(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* sourceIndex);
+	public static extern QModelIndex_Ptr* QConcatenateTablesProxyModel_MapFromSource(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* sourceIndex);
 	[LinkName("QConcatenateTablesProxyModel_MapToSource")]
-	public static extern QModelIndex_Ptr QConcatenateTablesProxyModel_MapToSource(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* proxyIndex);
+	public static extern QModelIndex_Ptr* QConcatenateTablesProxyModel_MapToSource(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* proxyIndex);
 	[LinkName("QConcatenateTablesProxyModel_Data")]
-	public static extern QVariant_Ptr QConcatenateTablesProxyModel_Data(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index, c_int role);
+	public static extern QVariant_Ptr* QConcatenateTablesProxyModel_Data(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_SetData")]
 	public static extern bool QConcatenateTablesProxyModel_SetData(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index, QVariant_Ptr* value, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_ItemData")]
@@ -47,46 +47,47 @@ extension CQt
 	[LinkName("QConcatenateTablesProxyModel_Flags")]
 	public static extern void* QConcatenateTablesProxyModel_Flags(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QConcatenateTablesProxyModel_Index")]
-	public static extern QModelIndex_Ptr QConcatenateTablesProxyModel_Index(QConcatenateTablesProxyModel_Ptr* self, c_int row, c_int column, QModelIndex_Ptr* parent);
+	public static extern QModelIndex_Ptr* QConcatenateTablesProxyModel_Index(QConcatenateTablesProxyModel_Ptr* self, c_int row, c_int column, QModelIndex_Ptr* parent);
 	[LinkName("QConcatenateTablesProxyModel_Parent")]
-	public static extern QModelIndex_Ptr QConcatenateTablesProxyModel_Parent(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index);
+	public static extern QModelIndex_Ptr* QConcatenateTablesProxyModel_Parent(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QConcatenateTablesProxyModel_RowCount")]
 	public static extern c_int QConcatenateTablesProxyModel_RowCount(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* parent);
 	[LinkName("QConcatenateTablesProxyModel_HeaderData")]
-	public static extern QVariant_Ptr QConcatenateTablesProxyModel_HeaderData(QConcatenateTablesProxyModel_Ptr* self, c_int section, Qt_Orientation orientation, c_int role);
+	public static extern QVariant_Ptr* QConcatenateTablesProxyModel_HeaderData(QConcatenateTablesProxyModel_Ptr* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QConcatenateTablesProxyModel_ColumnCount")]
 	public static extern c_int QConcatenateTablesProxyModel_ColumnCount(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* parent);
 	[LinkName("QConcatenateTablesProxyModel_MimeTypes")]
 	public static extern void* QConcatenateTablesProxyModel_MimeTypes(QConcatenateTablesProxyModel_Ptr* self);
 	[LinkName("QConcatenateTablesProxyModel_MimeData")]
-	public static extern QMimeData_Ptr* QConcatenateTablesProxyModel_MimeData(QConcatenateTablesProxyModel_Ptr* self, void** indexes);
+	public static extern QMimeData_Ptr** QConcatenateTablesProxyModel_MimeData(QConcatenateTablesProxyModel_Ptr* self, void** indexes);
 	[LinkName("QConcatenateTablesProxyModel_CanDropMimeData")]
-	public static extern bool QConcatenateTablesProxyModel_CanDropMimeData(QConcatenateTablesProxyModel_Ptr* self, QMimeData_Ptr* data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent);
+	public static extern bool QConcatenateTablesProxyModel_CanDropMimeData(QConcatenateTablesProxyModel_Ptr* self, QMimeData_Ptr** data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent);
 	[LinkName("QConcatenateTablesProxyModel_DropMimeData")]
-	public static extern bool QConcatenateTablesProxyModel_DropMimeData(QConcatenateTablesProxyModel_Ptr* self, QMimeData_Ptr* data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent);
+	public static extern bool QConcatenateTablesProxyModel_DropMimeData(QConcatenateTablesProxyModel_Ptr* self, QMimeData_Ptr** data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent);
 	[LinkName("QConcatenateTablesProxyModel_Span")]
-	public static extern QSize_Ptr QConcatenateTablesProxyModel_Span(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index);
+	public static extern QSize_Ptr* QConcatenateTablesProxyModel_Span(QConcatenateTablesProxyModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QConcatenateTablesProxyModel_Tr2")]
 	public static extern libqt_string QConcatenateTablesProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QConcatenateTablesProxyModel_Tr3")]
 	public static extern libqt_string QConcatenateTablesProxyModel_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QConcatenateTablesProxyModel
+class QConcatenateTablesProxyModel : IQConcatenateTablesProxyModel, IQAbstractItemModel, IQObject
 {
 	private QConcatenateTablesProxyModel_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QConcatenateTablesProxyModel_new();
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QConcatenateTablesProxyModel_new2(parent);
+		this.ptr = CQt.QConcatenateTablesProxyModel_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QConcatenateTablesProxyModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QConcatenateTablesProxyModel_MetaObject((.)this.ptr);
 	}
@@ -106,81 +107,81 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QConcatenateTablesProxyModel_SourceModels((.)this.ptr);
 	}
-	public void AddSourceModel(QAbstractItemModel_Ptr* sourceModel)
+	public void AddSourceModel(IQAbstractItemModel sourceModel)
 	{
-		CQt.QConcatenateTablesProxyModel_AddSourceModel((.)this.ptr, sourceModel);
+		CQt.QConcatenateTablesProxyModel_AddSourceModel((.)this.ptr, (.)sourceModel?.ObjectPtr);
 	}
-	public void RemoveSourceModel(QAbstractItemModel_Ptr* sourceModel)
+	public void RemoveSourceModel(IQAbstractItemModel sourceModel)
 	{
-		CQt.QConcatenateTablesProxyModel_RemoveSourceModel((.)this.ptr, sourceModel);
+		CQt.QConcatenateTablesProxyModel_RemoveSourceModel((.)this.ptr, (.)sourceModel?.ObjectPtr);
 	}
-	public QModelIndex_Ptr MapFromSource(QModelIndex_Ptr* sourceIndex)
+	public QModelIndex_Ptr* MapFromSource(IQModelIndex sourceIndex)
 	{
-		return CQt.QConcatenateTablesProxyModel_MapFromSource((.)this.ptr, sourceIndex);
+		return CQt.QConcatenateTablesProxyModel_MapFromSource((.)this.ptr, (.)sourceIndex?.ObjectPtr);
 	}
-	public QModelIndex_Ptr MapToSource(QModelIndex_Ptr* proxyIndex)
+	public QModelIndex_Ptr* MapToSource(IQModelIndex proxyIndex)
 	{
-		return CQt.QConcatenateTablesProxyModel_MapToSource((.)this.ptr, proxyIndex);
+		return CQt.QConcatenateTablesProxyModel_MapToSource((.)this.ptr, (.)proxyIndex?.ObjectPtr);
 	}
-	public QVariant_Ptr Data(QModelIndex_Ptr* index, c_int role)
+	public QVariant_Ptr* Data(IQModelIndex index, c_int role)
 	{
-		return CQt.QConcatenateTablesProxyModel_Data((.)this.ptr, index, role);
+		return CQt.QConcatenateTablesProxyModel_Data((.)this.ptr, (.)index?.ObjectPtr, role);
 	}
-	public bool SetData(QModelIndex_Ptr* index, QVariant_Ptr* value, c_int role)
+	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
 	{
-		return CQt.QConcatenateTablesProxyModel_SetData((.)this.ptr, index, value, role);
+		return CQt.QConcatenateTablesProxyModel_SetData((.)this.ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
 	}
-	public void* ItemData(QModelIndex_Ptr* proxyIndex)
+	public void* ItemData(IQModelIndex proxyIndex)
 	{
-		return CQt.QConcatenateTablesProxyModel_ItemData((.)this.ptr, proxyIndex);
+		return CQt.QConcatenateTablesProxyModel_ItemData((.)this.ptr, (.)proxyIndex?.ObjectPtr);
 	}
-	public bool SetItemData(QModelIndex_Ptr* index, void** roles)
+	public bool SetItemData(IQModelIndex index, void** roles)
 	{
-		return CQt.QConcatenateTablesProxyModel_SetItemData((.)this.ptr, index, roles);
+		return CQt.QConcatenateTablesProxyModel_SetItemData((.)this.ptr, (.)index?.ObjectPtr, roles);
 	}
-	public void* Flags(QModelIndex_Ptr* index)
+	public void* Flags(IQModelIndex index)
 	{
-		return CQt.QConcatenateTablesProxyModel_Flags((.)this.ptr, index);
+		return CQt.QConcatenateTablesProxyModel_Flags((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public QModelIndex_Ptr Index(c_int row, c_int column, QModelIndex_Ptr* parent)
+	public QModelIndex_Ptr* Index(c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QConcatenateTablesProxyModel_Index((.)this.ptr, row, column, parent);
+		return CQt.QConcatenateTablesProxyModel_Index((.)this.ptr, row, column, (.)parent?.ObjectPtr);
 	}
-	public QModelIndex_Ptr Parent(QModelIndex_Ptr* index)
+	public QModelIndex_Ptr* Parent(IQModelIndex index)
 	{
-		return CQt.QConcatenateTablesProxyModel_Parent((.)this.ptr, index);
+		return CQt.QConcatenateTablesProxyModel_Parent((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public c_int RowCount(QModelIndex_Ptr* parent)
+	public c_int RowCount(IQModelIndex parent)
 	{
-		return CQt.QConcatenateTablesProxyModel_RowCount((.)this.ptr, parent);
+		return CQt.QConcatenateTablesProxyModel_RowCount((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
+	public QVariant_Ptr* HeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
 		return CQt.QConcatenateTablesProxyModel_HeaderData((.)this.ptr, section, orientation, role);
 	}
-	public c_int ColumnCount(QModelIndex_Ptr* parent)
+	public c_int ColumnCount(IQModelIndex parent)
 	{
-		return CQt.QConcatenateTablesProxyModel_ColumnCount((.)this.ptr, parent);
+		return CQt.QConcatenateTablesProxyModel_ColumnCount((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void* MimeTypes()
 	{
 		return CQt.QConcatenateTablesProxyModel_MimeTypes((.)this.ptr);
 	}
-	public QMimeData_Ptr* MimeData(void** indexes)
+	public QMimeData_Ptr** MimeData(void** indexes)
 	{
 		return CQt.QConcatenateTablesProxyModel_MimeData((.)this.ptr, indexes);
 	}
-	public bool CanDropMimeData(QMimeData_Ptr* data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent)
+	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QConcatenateTablesProxyModel_CanDropMimeData((.)this.ptr, data, action, row, column, parent);
+		return CQt.QConcatenateTablesProxyModel_CanDropMimeData((.)this.ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
 	}
-	public bool DropMimeData(QMimeData_Ptr* data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent)
+	public bool DropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QConcatenateTablesProxyModel_DropMimeData((.)this.ptr, data, action, row, column, parent);
+		return CQt.QConcatenateTablesProxyModel_DropMimeData((.)this.ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
 	}
-	public QSize_Ptr Span(QModelIndex_Ptr* index)
+	public QSize_Ptr* Span(IQModelIndex index)
 	{
-		return CQt.QConcatenateTablesProxyModel_Span((.)this.ptr, index);
+		return CQt.QConcatenateTablesProxyModel_Span((.)this.ptr, (.)index?.ObjectPtr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -194,21 +195,21 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QAbstractItemModel_HasIndex((.)this.ptr, row, column);
 	}
-	public QModelIndex_Ptr Sibling(c_int row, c_int column, QModelIndex_Ptr* idx)
+	public QModelIndex_Ptr* Sibling(c_int row, c_int column, IQModelIndex idx)
 	{
-		return CQt.QAbstractItemModel_Sibling((.)this.ptr, row, column, idx);
+		return CQt.QAbstractItemModel_Sibling((.)this.ptr, row, column, (.)idx?.ObjectPtr);
 	}
-	public bool HasChildren(QModelIndex_Ptr* parent)
+	public bool HasChildren(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_HasChildren((.)this.ptr, parent);
+		return CQt.QAbstractItemModel_HasChildren((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, QVariant_Ptr* value, c_int role)
+	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
 	{
-		return CQt.QAbstractItemModel_SetHeaderData((.)this.ptr, section, orientation, value, role);
+		return CQt.QAbstractItemModel_SetHeaderData((.)this.ptr, section, orientation, (.)value?.ObjectPtr, role);
 	}
-	public bool ClearItemData(QModelIndex_Ptr* index)
+	public bool ClearItemData(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_ClearItemData((.)this.ptr, index);
+		return CQt.QAbstractItemModel_ClearItemData((.)this.ptr, (.)index?.ObjectPtr);
 	}
 	public void* SupportedDropActions()
 	{
@@ -218,29 +219,29 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QAbstractItemModel_SupportedDragActions((.)this.ptr);
 	}
-	public bool InsertRows(c_int row, c_int count, QModelIndex_Ptr* parent)
+	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertRows((.)this.ptr, row, count, parent);
+		return CQt.QAbstractItemModel_InsertRows((.)this.ptr, row, count, (.)parent?.ObjectPtr);
 	}
-	public bool InsertColumns(c_int column, c_int count, QModelIndex_Ptr* parent)
+	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertColumns((.)this.ptr, column, count, parent);
+		return CQt.QAbstractItemModel_InsertColumns((.)this.ptr, column, count, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveRows(c_int row, c_int count, QModelIndex_Ptr* parent)
+	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveRows((.)this.ptr, row, count, parent);
+		return CQt.QAbstractItemModel_RemoveRows((.)this.ptr, row, count, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveColumns(c_int column, c_int count, QModelIndex_Ptr* parent)
+	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveColumns((.)this.ptr, column, count, parent);
+		return CQt.QAbstractItemModel_RemoveColumns((.)this.ptr, column, count, (.)parent?.ObjectPtr);
 	}
-	public bool MoveRows(QModelIndex_Ptr* sourceParent, c_int sourceRow, c_int count, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveRows((.)this.ptr, sourceParent, sourceRow, count, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveRows((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
-	public bool MoveColumns(QModelIndex_Ptr* sourceParent, c_int sourceColumn, c_int count, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveColumns((.)this.ptr, sourceParent, sourceColumn, count, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveColumns((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
 	public bool InsertRow(c_int row)
 	{
@@ -258,49 +259,49 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QAbstractItemModel_RemoveColumn((.)this.ptr, column);
 	}
-	public bool MoveRow(QModelIndex_Ptr* sourceParent, c_int sourceRow, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveRow((.)this.ptr, sourceParent, sourceRow, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveRow((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceRow, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
-	public bool MoveColumn(QModelIndex_Ptr* sourceParent, c_int sourceColumn, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveColumn((.)this.ptr, sourceParent, sourceColumn, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveColumn((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceColumn, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
-	public void FetchMore(QModelIndex_Ptr* parent)
+	public void FetchMore(IQModelIndex parent)
 	{
-		CQt.QAbstractItemModel_FetchMore((.)this.ptr, parent);
+		CQt.QAbstractItemModel_FetchMore((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public bool CanFetchMore(QModelIndex_Ptr* parent)
+	public bool CanFetchMore(IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_CanFetchMore((.)this.ptr, parent);
+		return CQt.QAbstractItemModel_CanFetchMore((.)this.ptr, (.)parent?.ObjectPtr);
 	}
 	public void Sort(c_int column, Qt_SortOrder order)
 	{
 		CQt.QAbstractItemModel_Sort((.)this.ptr, column, order);
 	}
-	public QModelIndex_Ptr Buddy(QModelIndex_Ptr* index)
+	public QModelIndex_Ptr* Buddy(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_Buddy((.)this.ptr, index);
+		return CQt.QAbstractItemModel_Buddy((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void* Match(QModelIndex_Ptr* start, c_int role, QVariant_Ptr* value, c_int hits, void* flags)
+	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
 	{
-		return CQt.QAbstractItemModel_Match((.)this.ptr, start, role, value, hits, flags);
+		return CQt.QAbstractItemModel_Match((.)this.ptr, (.)start?.ObjectPtr, role, (.)value?.ObjectPtr, hits, flags);
 	}
 	public void* RoleNames()
 	{
 		return CQt.QAbstractItemModel_RoleNames((.)this.ptr);
 	}
-	public bool CheckIndex(QModelIndex_Ptr* index)
+	public bool CheckIndex(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_CheckIndex((.)this.ptr, index);
+		return CQt.QAbstractItemModel_CheckIndex((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void MultiData(QModelIndex_Ptr* index, QModelRoleDataSpan_Ptr roleDataSpan)
+	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
 	{
-		CQt.QAbstractItemModel_MultiData((.)this.ptr, index, roleDataSpan);
+		CQt.QAbstractItemModel_MultiData((.)this.ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
 	}
-	public void DataChanged(QModelIndex_Ptr* topLeft, QModelIndex_Ptr* bottomRight)
+	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
-		CQt.QAbstractItemModel_DataChanged((.)this.ptr, topLeft, bottomRight);
+		CQt.QAbstractItemModel_DataChanged((.)this.ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
 	}
 	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
 	{
@@ -326,65 +327,65 @@ class QConcatenateTablesProxyModel
 	{
 		CQt.QAbstractItemModel_ResetInternalData((.)this.ptr);
 	}
-	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
+	public QModelIndex_Ptr* CreateIndex(c_int row, c_int column)
 	{
 		return CQt.QAbstractItemModel_CreateIndex((.)this.ptr, row, column);
 	}
-	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
+	public QModelIndex_Ptr* CreateIndex2(c_int row, c_int column, void* id)
 	{
 		return CQt.QAbstractItemModel_CreateIndex2((.)this.ptr, row, column, id);
 	}
-	public void EncodeData(void** indexes, QDataStream_Ptr* stream)
+	public void EncodeData(void** indexes, IQDataStream stream)
 	{
-		CQt.QAbstractItemModel_EncodeData((.)this.ptr, indexes, stream);
+		CQt.QAbstractItemModel_EncodeData((.)this.ptr, indexes, (.)stream?.ObjectPtr);
 	}
-	public bool DecodeData(c_int row, c_int column, QModelIndex_Ptr* parent, QDataStream_Ptr* stream)
+	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
 	{
-		return CQt.QAbstractItemModel_DecodeData((.)this.ptr, row, column, parent, stream);
+		return CQt.QAbstractItemModel_DecodeData((.)this.ptr, row, column, (.)parent?.ObjectPtr, (.)stream?.ObjectPtr);
 	}
-	public void BeginInsertRows(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginInsertRows((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginInsertRows((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndInsertRows()
 	{
 		CQt.QAbstractItemModel_EndInsertRows((.)this.ptr);
 	}
-	public void BeginRemoveRows(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginRemoveRows((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginRemoveRows((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndRemoveRows()
 	{
 		CQt.QAbstractItemModel_EndRemoveRows((.)this.ptr);
 	}
-	public bool BeginMoveRows(QModelIndex_Ptr* sourceParent, c_int sourceFirst, c_int sourceLast, QModelIndex_Ptr* destinationParent, c_int destinationRow)
+	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
 	{
-		return CQt.QAbstractItemModel_BeginMoveRows((.)this.ptr, sourceParent, sourceFirst, sourceLast, destinationParent, destinationRow);
+		return CQt.QAbstractItemModel_BeginMoveRows((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationRow);
 	}
 	public void EndMoveRows()
 	{
 		CQt.QAbstractItemModel_EndMoveRows((.)this.ptr);
 	}
-	public void BeginInsertColumns(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginInsertColumns((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginInsertColumns((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndInsertColumns()
 	{
 		CQt.QAbstractItemModel_EndInsertColumns((.)this.ptr);
 	}
-	public void BeginRemoveColumns(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndRemoveColumns()
 	{
 		CQt.QAbstractItemModel_EndRemoveColumns((.)this.ptr);
 	}
-	public bool BeginMoveColumns(QModelIndex_Ptr* sourceParent, c_int sourceFirst, c_int sourceLast, QModelIndex_Ptr* destinationParent, c_int destinationColumn)
+	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
 	{
-		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.ptr, sourceParent, sourceFirst, sourceLast, destinationParent, destinationColumn);
+		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationColumn);
 	}
 	public void EndMoveColumns()
 	{
@@ -398,9 +399,9 @@ class QConcatenateTablesProxyModel
 	{
 		CQt.QAbstractItemModel_EndResetModel((.)this.ptr);
 	}
-	public void ChangePersistentIndex(QModelIndex_Ptr* from, QModelIndex_Ptr* to)
+	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
 	{
-		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.ptr, from, to);
+		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
 	}
 	public void ChangePersistentIndexList(void** from, void** to)
 	{
@@ -410,33 +411,33 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QAbstractItemModel_PersistentIndexList((.)this.ptr);
 	}
-	public bool HasIndex3(c_int row, c_int column, QModelIndex_Ptr* parent)
+	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_HasIndex3((.)this.ptr, row, column, parent);
+		return CQt.QAbstractItemModel_HasIndex3((.)this.ptr, row, column, (.)parent?.ObjectPtr);
 	}
-	public bool InsertRow2(c_int row, QModelIndex_Ptr* parent)
+	public bool InsertRow2(c_int row, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertRow2((.)this.ptr, row, parent);
+		return CQt.QAbstractItemModel_InsertRow2((.)this.ptr, row, (.)parent?.ObjectPtr);
 	}
-	public bool InsertColumn2(c_int column, QModelIndex_Ptr* parent)
+	public bool InsertColumn2(c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertColumn2((.)this.ptr, column, parent);
+		return CQt.QAbstractItemModel_InsertColumn2((.)this.ptr, column, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveRow2(c_int row, QModelIndex_Ptr* parent)
+	public bool RemoveRow2(c_int row, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveRow2((.)this.ptr, row, parent);
+		return CQt.QAbstractItemModel_RemoveRow2((.)this.ptr, row, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveColumn2(c_int column, QModelIndex_Ptr* parent)
+	public bool RemoveColumn2(c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveColumn2((.)this.ptr, column, parent);
+		return CQt.QAbstractItemModel_RemoveColumn2((.)this.ptr, column, (.)parent?.ObjectPtr);
 	}
-	public bool CheckIndex2(QModelIndex_Ptr* index, void* options)
+	public bool CheckIndex2(IQModelIndex index, void* options)
 	{
-		return CQt.QAbstractItemModel_CheckIndex2((.)this.ptr, index, options);
+		return CQt.QAbstractItemModel_CheckIndex2((.)this.ptr, (.)index?.ObjectPtr, options);
 	}
-	public void DataChanged3(QModelIndex_Ptr* topLeft, QModelIndex_Ptr* bottomRight, void** roles)
+	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
 	{
-		CQt.QAbstractItemModel_DataChanged3((.)this.ptr, topLeft, bottomRight, roles);
+		CQt.QAbstractItemModel_DataChanged3((.)this.ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr, roles);
 	}
 	public void LayoutChanged1(void** parents)
 	{
@@ -454,25 +455,25 @@ class QConcatenateTablesProxyModel
 	{
 		CQt.QAbstractItemModel_LayoutAboutToBeChanged2((.)this.ptr, parents, hint);
 	}
-	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
+	public QModelIndex_Ptr* CreateIndex3(c_int row, c_int column, void* data)
 	{
 		return CQt.QAbstractItemModel_CreateIndex3((.)this.ptr, row, column, data);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, event);
+		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -494,13 +495,13 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -518,49 +519,49 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -570,11 +571,11 @@ class QConcatenateTablesProxyModel
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -582,11 +583,11 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -602,7 +603,7 @@ class QConcatenateTablesProxyModel
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -614,29 +615,29 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, event);
+		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -646,65 +647,39 @@ class QConcatenateTablesProxyModel
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQConcatenateTablesProxyModel
+interface IQConcatenateTablesProxyModel : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void* SourceModels();
-	public void AddSourceModel();
-	public void RemoveSourceModel();
-	public QModelIndex MapFromSource();
-	public QModelIndex MapToSource();
-	public QVariant Data();
-	public bool SetData();
-	public void* ItemData();
-	public bool SetItemData();
-	public void* Flags();
-	public QModelIndex Index();
-	public QModelIndex Parent();
-	public c_int RowCount();
-	public QVariant HeaderData();
-	public c_int ColumnCount();
-	public void* MimeTypes();
-	public QMimeData* MimeData();
-	public bool CanDropMimeData();
-	public bool DropMimeData();
-	public QSize Span();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
 }

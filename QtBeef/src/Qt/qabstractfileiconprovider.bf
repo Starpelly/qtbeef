@@ -17,9 +17,9 @@ extension CQt
 	[LinkName("QAbstractFileIconProvider_Delete")]
 	public static extern void QAbstractFileIconProvider_Delete(QAbstractFileIconProvider_Ptr* self);
 	[LinkName("QAbstractFileIconProvider_Icon")]
-	public static extern QIcon_Ptr QAbstractFileIconProvider_Icon(QAbstractFileIconProvider_Ptr* self, QAbstractFileIconProvider_IconType param1);
+	public static extern QIcon_Ptr* QAbstractFileIconProvider_Icon(QAbstractFileIconProvider_Ptr* self, QAbstractFileIconProvider_IconType param1);
 	[LinkName("QAbstractFileIconProvider_Icon2")]
-	public static extern QIcon_Ptr QAbstractFileIconProvider_Icon2(QAbstractFileIconProvider_Ptr* self, QFileInfo_Ptr* param1);
+	public static extern QIcon_Ptr* QAbstractFileIconProvider_Icon2(QAbstractFileIconProvider_Ptr* self, QFileInfo_Ptr* param1);
 	[LinkName("QAbstractFileIconProvider_Type")]
 	public static extern libqt_string QAbstractFileIconProvider_Type(QAbstractFileIconProvider_Ptr* self, QFileInfo_Ptr* param1);
 	[LinkName("QAbstractFileIconProvider_SetOptions")]
@@ -27,9 +27,10 @@ extension CQt
 	[LinkName("QAbstractFileIconProvider_Options")]
 	public static extern void* QAbstractFileIconProvider_Options(QAbstractFileIconProvider_Ptr* self);
 }
-class QAbstractFileIconProvider
+class QAbstractFileIconProvider : IQAbstractFileIconProvider
 {
 	private QAbstractFileIconProvider_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QAbstractFileIconProvider_new();
@@ -38,17 +39,17 @@ class QAbstractFileIconProvider
 	{
 		CQt.QAbstractFileIconProvider_Delete(this.ptr);
 	}
-	public QIcon_Ptr Icon(QAbstractFileIconProvider_IconType param1)
+	public QIcon_Ptr* Icon(QAbstractFileIconProvider_IconType param1)
 	{
 		return CQt.QAbstractFileIconProvider_Icon((.)this.ptr, param1);
 	}
-	public QIcon_Ptr Icon2(QFileInfo_Ptr* param1)
+	public QIcon_Ptr* Icon2(IQFileInfo param1)
 	{
-		return CQt.QAbstractFileIconProvider_Icon2((.)this.ptr, param1);
+		return CQt.QAbstractFileIconProvider_Icon2((.)this.ptr, (.)param1?.ObjectPtr);
 	}
-	public libqt_string Type(QFileInfo_Ptr* param1)
+	public libqt_string Type(IQFileInfo param1)
 	{
-		return CQt.QAbstractFileIconProvider_Type((.)this.ptr, param1);
+		return CQt.QAbstractFileIconProvider_Type((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public void SetOptions(void* options)
 	{
@@ -59,13 +60,8 @@ class QAbstractFileIconProvider
 		return CQt.QAbstractFileIconProvider_Options((.)this.ptr);
 	}
 }
-interface IQAbstractFileIconProvider
+interface IQAbstractFileIconProvider : IQtObjectInterface
 {
-	public QIcon Icon();
-	public QIcon Icon2();
-	public libqt_string Type();
-	public void SetOptions();
-	public void* Options();
 }
 [AllowDuplicates]
 enum QAbstractFileIconProvider_IconType

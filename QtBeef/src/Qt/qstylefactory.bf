@@ -21,14 +21,15 @@ extension CQt
 	[LinkName("QStyleFactory_Keys")]
 	public static extern void* QStyleFactory_Keys();
 	[LinkName("QStyleFactory_Create")]
-	public static extern QStyle_Ptr* QStyleFactory_Create(libqt_string* param1);
+	public static extern QStyle_Ptr** QStyleFactory_Create(libqt_string param1);
 }
-class QStyleFactory
+class QStyleFactory : IQStyleFactory
 {
 	private QStyleFactory_Ptr* ptr;
-	public this(QStyleFactory_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQStyleFactory other)
 	{
-		this.ptr = CQt.QStyleFactory_new(other);
+		this.ptr = CQt.QStyleFactory_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -38,13 +39,11 @@ class QStyleFactory
 	{
 		return CQt.QStyleFactory_Keys();
 	}
-	public QStyle_Ptr* Create(libqt_string* param1)
+	public QStyle_Ptr** Create(String param1)
 	{
-		return CQt.QStyleFactory_Create(param1);
+		return CQt.QStyleFactory_Create(libqt_string(param1));
 	}
 }
-interface IQStyleFactory
+interface IQStyleFactory : IQtObjectInterface
 {
-	public void* Keys();
-	public QStyle* Create();
 }

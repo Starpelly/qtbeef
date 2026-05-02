@@ -19,13 +19,13 @@ extension CQt
 	[LinkName("QTimeZone_new3")]
 	public static extern QTimeZone_Ptr* QTimeZone_new3(c_int offsetSeconds);
 	[LinkName("QTimeZone_new4")]
-	public static extern QTimeZone_Ptr* QTimeZone_new4(void** zoneId, c_int offsetSeconds, libqt_string* name, libqt_string* abbreviation);
+	public static extern QTimeZone_Ptr* QTimeZone_new4(void** zoneId, c_int offsetSeconds, libqt_string name, libqt_string abbreviation);
 	[LinkName("QTimeZone_new5")]
 	public static extern QTimeZone_Ptr* QTimeZone_new5(QTimeZone_Ptr* other);
 	[LinkName("QTimeZone_new6")]
-	public static extern QTimeZone_Ptr* QTimeZone_new6(void** zoneId, c_int offsetSeconds, libqt_string* name, libqt_string* abbreviation, QLocale_Country territory);
+	public static extern QTimeZone_Ptr* QTimeZone_new6(void** zoneId, c_int offsetSeconds, libqt_string name, libqt_string abbreviation, QLocale_Country territory);
 	[LinkName("QTimeZone_new7")]
-	public static extern QTimeZone_Ptr* QTimeZone_new7(void** zoneId, c_int offsetSeconds, libqt_string* name, libqt_string* abbreviation, QLocale_Country territory, libqt_string* comment);
+	public static extern QTimeZone_Ptr* QTimeZone_new7(void** zoneId, c_int offsetSeconds, libqt_string name, libqt_string abbreviation, QLocale_Country territory, libqt_string comment);
 	[LinkName("QTimeZone_Delete")]
 	public static extern void QTimeZone_Delete(QTimeZone_Ptr* self);
 	[LinkName("QTimeZone_OperatorAssign")]
@@ -63,21 +63,21 @@ extension CQt
 	[LinkName("QTimeZone_IsDaylightTime")]
 	public static extern bool QTimeZone_IsDaylightTime(QTimeZone_Ptr* self, QDateTime_Ptr* atDateTime);
 	[LinkName("QTimeZone_OffsetData")]
-	public static extern QTimeZone_OffsetData QTimeZone_OffsetData(QTimeZone_Ptr* self, QDateTime_Ptr* forDateTime);
+	public static extern QTimeZone_OffsetData_Ptr* QTimeZone_OffsetData(QTimeZone_Ptr* self, QDateTime_Ptr* forDateTime);
 	[LinkName("QTimeZone_HasTransitions")]
 	public static extern bool QTimeZone_HasTransitions(QTimeZone_Ptr* self);
 	[LinkName("QTimeZone_NextTransition")]
-	public static extern QTimeZone_OffsetData QTimeZone_NextTransition(QTimeZone_Ptr* self, QDateTime_Ptr* afterDateTime);
+	public static extern QTimeZone_OffsetData_Ptr* QTimeZone_NextTransition(QTimeZone_Ptr* self, QDateTime_Ptr* afterDateTime);
 	[LinkName("QTimeZone_PreviousTransition")]
-	public static extern QTimeZone_OffsetData QTimeZone_PreviousTransition(QTimeZone_Ptr* self, QDateTime_Ptr* beforeDateTime);
+	public static extern QTimeZone_OffsetData_Ptr* QTimeZone_PreviousTransition(QTimeZone_Ptr* self, QDateTime_Ptr* beforeDateTime);
 	[LinkName("QTimeZone_Transitions")]
 	public static extern void* QTimeZone_Transitions(QTimeZone_Ptr* self, QDateTime_Ptr* fromDateTime, QDateTime_Ptr* toDateTime);
 	[LinkName("QTimeZone_SystemTimeZoneId")]
 	public static extern void* QTimeZone_SystemTimeZoneId();
 	[LinkName("QTimeZone_SystemTimeZone")]
-	public static extern QTimeZone_Ptr QTimeZone_SystemTimeZone();
+	public static extern QTimeZone_Ptr* QTimeZone_SystemTimeZone();
 	[LinkName("QTimeZone_Utc")]
-	public static extern QTimeZone_Ptr QTimeZone_Utc();
+	public static extern QTimeZone_Ptr* QTimeZone_Utc();
 	[LinkName("QTimeZone_IsTimeZoneIdAvailable")]
 	public static extern bool QTimeZone_IsTimeZoneIdAvailable(void** ianaId);
 	[LinkName("QTimeZone_AvailableTimeZoneIds")]
@@ -105,9 +105,10 @@ extension CQt
 	[LinkName("QTimeZone_DisplayName32")]
 	public static extern libqt_string QTimeZone_DisplayName32(QTimeZone_Ptr* self, QTimeZone_TimeType timeType, QTimeZone_NameType nameType, QLocale_Ptr* locale);
 }
-class QTimeZone
+class QTimeZone : IQTimeZone
 {
 	private QTimeZone_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTimeZone_new();
@@ -120,29 +121,29 @@ class QTimeZone
 	{
 		this.ptr = CQt.QTimeZone_new3(offsetSeconds);
 	}
-	public this(void** zoneId, c_int offsetSeconds, libqt_string* name, libqt_string* abbreviation)
+	public this(void** zoneId, c_int offsetSeconds, String name, String abbreviation)
 	{
-		this.ptr = CQt.QTimeZone_new4(zoneId, offsetSeconds, name, abbreviation);
+		this.ptr = CQt.QTimeZone_new4(zoneId, offsetSeconds, libqt_string(name), libqt_string(abbreviation));
 	}
-	public this(QTimeZone_Ptr* other)
+	public this(IQTimeZone other)
 	{
-		this.ptr = CQt.QTimeZone_new5(other);
+		this.ptr = CQt.QTimeZone_new5((.)other?.ObjectPtr);
 	}
-	public this(void** zoneId, c_int offsetSeconds, libqt_string* name, libqt_string* abbreviation, QLocale_Country territory)
+	public this(void** zoneId, c_int offsetSeconds, String name, String abbreviation, QLocale_Country territory)
 	{
-		this.ptr = CQt.QTimeZone_new6(zoneId, offsetSeconds, name, abbreviation, territory);
+		this.ptr = CQt.QTimeZone_new6(zoneId, offsetSeconds, libqt_string(name), libqt_string(abbreviation), territory);
 	}
-	public this(void** zoneId, c_int offsetSeconds, libqt_string* name, libqt_string* abbreviation, QLocale_Country territory, libqt_string* comment)
+	public this(void** zoneId, c_int offsetSeconds, String name, String abbreviation, QLocale_Country territory, String comment)
 	{
-		this.ptr = CQt.QTimeZone_new7(zoneId, offsetSeconds, name, abbreviation, territory, comment);
+		this.ptr = CQt.QTimeZone_new7(zoneId, offsetSeconds, libqt_string(name), libqt_string(abbreviation), territory, libqt_string(comment));
 	}
 	public ~this()
 	{
 		CQt.QTimeZone_Delete(this.ptr);
 	}
-	public void Swap(QTimeZone_Ptr* other)
+	public void Swap(IQTimeZone other)
 	{
-		CQt.QTimeZone_Swap((.)this.ptr, other);
+		CQt.QTimeZone_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
@@ -164,67 +165,67 @@ class QTimeZone
 	{
 		return CQt.QTimeZone_Comment((.)this.ptr);
 	}
-	public libqt_string DisplayName(QDateTime_Ptr* atDateTime)
+	public libqt_string DisplayName(IQDateTime atDateTime)
 	{
-		return CQt.QTimeZone_DisplayName((.)this.ptr, atDateTime);
+		return CQt.QTimeZone_DisplayName((.)this.ptr, (.)atDateTime?.ObjectPtr);
 	}
 	public libqt_string DisplayName2(QTimeZone_TimeType timeType)
 	{
 		return CQt.QTimeZone_DisplayName2((.)this.ptr, timeType);
 	}
-	public libqt_string Abbreviation(QDateTime_Ptr* atDateTime)
+	public libqt_string Abbreviation(IQDateTime atDateTime)
 	{
-		return CQt.QTimeZone_Abbreviation((.)this.ptr, atDateTime);
+		return CQt.QTimeZone_Abbreviation((.)this.ptr, (.)atDateTime?.ObjectPtr);
 	}
-	public c_int OffsetFromUtc(QDateTime_Ptr* atDateTime)
+	public c_int OffsetFromUtc(IQDateTime atDateTime)
 	{
-		return CQt.QTimeZone_OffsetFromUtc((.)this.ptr, atDateTime);
+		return CQt.QTimeZone_OffsetFromUtc((.)this.ptr, (.)atDateTime?.ObjectPtr);
 	}
-	public c_int StandardTimeOffset(QDateTime_Ptr* atDateTime)
+	public c_int StandardTimeOffset(IQDateTime atDateTime)
 	{
-		return CQt.QTimeZone_StandardTimeOffset((.)this.ptr, atDateTime);
+		return CQt.QTimeZone_StandardTimeOffset((.)this.ptr, (.)atDateTime?.ObjectPtr);
 	}
-	public c_int DaylightTimeOffset(QDateTime_Ptr* atDateTime)
+	public c_int DaylightTimeOffset(IQDateTime atDateTime)
 	{
-		return CQt.QTimeZone_DaylightTimeOffset((.)this.ptr, atDateTime);
+		return CQt.QTimeZone_DaylightTimeOffset((.)this.ptr, (.)atDateTime?.ObjectPtr);
 	}
 	public bool HasDaylightTime()
 	{
 		return CQt.QTimeZone_HasDaylightTime((.)this.ptr);
 	}
-	public bool IsDaylightTime(QDateTime_Ptr* atDateTime)
+	public bool IsDaylightTime(IQDateTime atDateTime)
 	{
-		return CQt.QTimeZone_IsDaylightTime((.)this.ptr, atDateTime);
+		return CQt.QTimeZone_IsDaylightTime((.)this.ptr, (.)atDateTime?.ObjectPtr);
 	}
-	public QTimeZone_OffsetData OffsetData(QDateTime_Ptr* forDateTime)
+	public QTimeZone_OffsetData_Ptr* OffsetData(IQDateTime forDateTime)
 	{
-		return CQt.QTimeZone_OffsetData((.)this.ptr, forDateTime);
+		return CQt.QTimeZone_OffsetData((.)this.ptr, (.)forDateTime?.ObjectPtr);
 	}
 	public bool HasTransitions()
 	{
 		return CQt.QTimeZone_HasTransitions((.)this.ptr);
 	}
-	public QTimeZone_OffsetData NextTransition(QDateTime_Ptr* afterDateTime)
+	public QTimeZone_OffsetData_Ptr* NextTransition(IQDateTime afterDateTime)
 	{
-		return CQt.QTimeZone_NextTransition((.)this.ptr, afterDateTime);
+		return CQt.QTimeZone_NextTransition((.)this.ptr, (.)afterDateTime?.ObjectPtr);
 	}
-	public QTimeZone_OffsetData PreviousTransition(QDateTime_Ptr* beforeDateTime)
+	public QTimeZone_OffsetData_Ptr* PreviousTransition(IQDateTime beforeDateTime)
 	{
-		return CQt.QTimeZone_PreviousTransition((.)this.ptr, beforeDateTime);
+		return CQt.QTimeZone_PreviousTransition((.)this.ptr, (.)beforeDateTime?.ObjectPtr);
 	}
-	public void* Transitions(QDateTime_Ptr* fromDateTime, QDateTime_Ptr* toDateTime)
+	public void* Transitions(IQDateTime fromDateTime, IQDateTime toDateTime)
 	{
-		return CQt.QTimeZone_Transitions((.)this.ptr, fromDateTime, toDateTime);
+		return CQt.QTimeZone_Transitions((.)this.ptr, (.)fromDateTime?.ObjectPtr, (.)toDateTime?.ObjectPtr);
 	}
 	public void* SystemTimeZoneId()
 	{
 		return CQt.QTimeZone_SystemTimeZoneId();
 	}
-	public QTimeZone_Ptr SystemTimeZone()
+	public QTimeZone_Ptr* SystemTimeZone()
 	{
 		return CQt.QTimeZone_SystemTimeZone();
 	}
-	public QTimeZone_Ptr Utc()
+	public QTimeZone_Ptr* Utc()
 	{
 		return CQt.QTimeZone_Utc();
 	}
@@ -264,60 +265,25 @@ class QTimeZone
 	{
 		return CQt.QTimeZone_WindowsIdToIanaIds2(windowsId, territory);
 	}
-	public libqt_string DisplayName22(QDateTime_Ptr* atDateTime, QTimeZone_NameType nameType)
+	public libqt_string DisplayName22(IQDateTime atDateTime, QTimeZone_NameType nameType)
 	{
-		return CQt.QTimeZone_DisplayName22((.)this.ptr, atDateTime, nameType);
+		return CQt.QTimeZone_DisplayName22((.)this.ptr, (.)atDateTime?.ObjectPtr, nameType);
 	}
-	public libqt_string DisplayName3(QDateTime_Ptr* atDateTime, QTimeZone_NameType nameType, QLocale_Ptr* locale)
+	public libqt_string DisplayName3(IQDateTime atDateTime, QTimeZone_NameType nameType, IQLocale locale)
 	{
-		return CQt.QTimeZone_DisplayName3((.)this.ptr, atDateTime, nameType, locale);
+		return CQt.QTimeZone_DisplayName3((.)this.ptr, (.)atDateTime?.ObjectPtr, nameType, (.)locale?.ObjectPtr);
 	}
 	public libqt_string DisplayName23(QTimeZone_TimeType timeType, QTimeZone_NameType nameType)
 	{
 		return CQt.QTimeZone_DisplayName23((.)this.ptr, timeType, nameType);
 	}
-	public libqt_string DisplayName32(QTimeZone_TimeType timeType, QTimeZone_NameType nameType, QLocale_Ptr* locale)
+	public libqt_string DisplayName32(QTimeZone_TimeType timeType, QTimeZone_NameType nameType, IQLocale locale)
 	{
-		return CQt.QTimeZone_DisplayName32((.)this.ptr, timeType, nameType, locale);
+		return CQt.QTimeZone_DisplayName32((.)this.ptr, timeType, nameType, (.)locale?.ObjectPtr);
 	}
 }
-interface IQTimeZone
+interface IQTimeZone : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsValid();
-	public void* Id();
-	public QLocale_Country Territory();
-	public QLocale_Country Country();
-	public libqt_string Comment();
-	public libqt_string DisplayName();
-	public libqt_string DisplayName2();
-	public libqt_string Abbreviation();
-	public c_int OffsetFromUtc();
-	public c_int StandardTimeOffset();
-	public c_int DaylightTimeOffset();
-	public bool HasDaylightTime();
-	public bool IsDaylightTime();
-	public QTimeZone_OffsetData OffsetData();
-	public bool HasTransitions();
-	public QTimeZone_OffsetData NextTransition();
-	public QTimeZone_OffsetData PreviousTransition();
-	public void* Transitions();
-	public void* SystemTimeZoneId();
-	public QTimeZone SystemTimeZone();
-	public QTimeZone Utc();
-	public bool IsTimeZoneIdAvailable();
-	public void* AvailableTimeZoneIds();
-	public void* AvailableTimeZoneIds2();
-	public void* AvailableTimeZoneIds3();
-	public void* IanaIdToWindowsId();
-	public void* WindowsIdToDefaultIanaId();
-	public void* WindowsIdToDefaultIanaId2();
-	public void* WindowsIdToIanaIds();
-	public void* WindowsIdToIanaIds2();
-	public libqt_string DisplayName22();
-	public libqt_string DisplayName3();
-	public libqt_string DisplayName23();
-	public libqt_string DisplayName32();
 }
 // --------------------------------------------------------------
 // QTimeZone::OffsetData
@@ -329,7 +295,7 @@ struct QTimeZone_OffsetData_Ptr: void
 extension CQt
 {
 	[LinkName("QTimeZone_OffsetData_new")]
-	public static extern QTimeZone_OffsetData_Ptr* QTimeZone_OffsetData_new(QTimeZone_OffsetData* param1);
+	public static extern QTimeZone_OffsetData_Ptr* QTimeZone_OffsetData_new(QTimeZone_OffsetData_Ptr* param1);
 	[LinkName("QTimeZone_OffsetData_Delete")]
 	public static extern void QTimeZone_OffsetData_Delete(QTimeZone_OffsetData_Ptr* self);
 	[LinkName("QTimeZone_OffsetData_Abbreviation")]
@@ -337,9 +303,9 @@ extension CQt
 	[LinkName("QTimeZone_OffsetData_SetAbbreviation")]
 	public static extern void QTimeZone_OffsetData_SetAbbreviation(QTimeZone_OffsetData_Ptr* self, libqt_string abbreviation);
 	[LinkName("QTimeZone_OffsetData_AtUtc")]
-	public static extern QDateTime_Ptr QTimeZone_OffsetData_AtUtc(QTimeZone_OffsetData_Ptr* self);
+	public static extern QDateTime_Ptr* QTimeZone_OffsetData_AtUtc(QTimeZone_OffsetData_Ptr* self);
 	[LinkName("QTimeZone_OffsetData_SetAtUtc")]
-	public static extern void QTimeZone_OffsetData_SetAtUtc(QTimeZone_OffsetData_Ptr* self, QDateTime_Ptr atUtc);
+	public static extern void QTimeZone_OffsetData_SetAtUtc(QTimeZone_OffsetData_Ptr* self, QDateTime_Ptr* atUtc);
 	[LinkName("QTimeZone_OffsetData_OffsetFromUtc")]
 	public static extern c_int QTimeZone_OffsetData_OffsetFromUtc(QTimeZone_OffsetData_Ptr* self);
 	[LinkName("QTimeZone_OffsetData_SetOffsetFromUtc")]
@@ -353,14 +319,15 @@ extension CQt
 	[LinkName("QTimeZone_OffsetData_SetDaylightTimeOffset")]
 	public static extern void QTimeZone_OffsetData_SetDaylightTimeOffset(QTimeZone_OffsetData_Ptr* self, c_int daylightTimeOffset);
 	[LinkName("QTimeZone_OffsetData_OperatorAssign")]
-	public static extern void QTimeZone_OffsetData_OperatorAssign(QTimeZone_OffsetData_Ptr* self, QTimeZone_OffsetData* param1);
+	public static extern void QTimeZone_OffsetData_OperatorAssign(QTimeZone_OffsetData_Ptr* self, QTimeZone_OffsetData_Ptr* param1);
 }
-class QTimeZone_OffsetData
+class QTimeZone_OffsetData : IQTimeZone_OffsetData
 {
 	private QTimeZone_OffsetData_Ptr* ptr;
-	public this(QTimeZone_OffsetData* param1)
+	public void* ObjectPtr => ptr;
+	public this(IQTimeZone_OffsetData param1)
 	{
-		this.ptr = CQt.QTimeZone_OffsetData_new(param1);
+		this.ptr = CQt.QTimeZone_OffsetData_new((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -370,17 +337,17 @@ class QTimeZone_OffsetData
 	{
 		return CQt.QTimeZone_OffsetData_Abbreviation((.)this.ptr);
 	}
-	public void SetAbbreviation(libqt_string abbreviation)
+	public void SetAbbreviation(String abbreviation)
 	{
 		CQt.QTimeZone_OffsetData_SetAbbreviation((.)this.ptr, abbreviation);
 	}
-	public QDateTime_Ptr AtUtc()
+	public QDateTime_Ptr* AtUtc()
 	{
 		return CQt.QTimeZone_OffsetData_AtUtc((.)this.ptr);
 	}
-	public void SetAtUtc(QDateTime_Ptr atUtc)
+	public void SetAtUtc(IQDateTime atUtc)
 	{
-		CQt.QTimeZone_OffsetData_SetAtUtc((.)this.ptr, atUtc);
+		CQt.QTimeZone_OffsetData_SetAtUtc((.)this.ptr, (.)atUtc?.ObjectPtr);
 	}
 	public c_int OffsetFromUtc()
 	{
@@ -407,18 +374,8 @@ class QTimeZone_OffsetData
 		CQt.QTimeZone_OffsetData_SetDaylightTimeOffset((.)this.ptr, daylightTimeOffset);
 	}
 }
-interface IQTimeZone_OffsetData
+interface IQTimeZone_OffsetData : IQtObjectInterface
 {
-	public libqt_string Abbreviation();
-	public void SetAbbreviation();
-	public QDateTime AtUtc();
-	public void SetAtUtc();
-	public c_int OffsetFromUtc();
-	public void SetOffsetFromUtc();
-	public c_int StandardTimeOffset();
-	public void SetStandardTimeOffset();
-	public c_int DaylightTimeOffset();
-	public void SetDaylightTimeOffset();
 }
 [AllowDuplicates]
 enum QTimeZone_

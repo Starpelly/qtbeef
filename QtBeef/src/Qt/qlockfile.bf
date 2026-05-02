@@ -13,7 +13,7 @@ struct QLockFile_Ptr: void
 extension CQt
 {
 	[LinkName("QLockFile_new")]
-	public static extern QLockFile_Ptr* QLockFile_new(libqt_string* fileName);
+	public static extern QLockFile_Ptr* QLockFile_new(libqt_string fileName);
 	[LinkName("QLockFile_Delete")]
 	public static extern void QLockFile_Delete(QLockFile_Ptr* self);
 	[LinkName("QLockFile_FileName")]
@@ -43,12 +43,13 @@ extension CQt
 	[LinkName("QLockFile_TryLock1")]
 	public static extern bool QLockFile_TryLock1(QLockFile_Ptr* self, c_int timeout);
 }
-class QLockFile
+class QLockFile : IQLockFile
 {
 	private QLockFile_Ptr* ptr;
-	public this(libqt_string* fileName)
+	public void* ObjectPtr => ptr;
+	public this(String fileName)
 	{
-		this.ptr = CQt.QLockFile_new(fileName);
+		this.ptr = CQt.QLockFile_new(libqt_string(fileName));
 	}
 	public ~this()
 	{
@@ -107,21 +108,8 @@ class QLockFile
 		return CQt.QLockFile_TryLock1((.)this.ptr, timeout);
 	}
 }
-interface IQLockFile
+interface IQLockFile : IQtObjectInterface
 {
-	public libqt_string FileName();
-	public bool Lock();
-	public bool TryLock();
-	public void Unlock();
-	public void SetStaleLockTime();
-	public c_int StaleLockTime();
-	public bool TryLock2();
-	public void SetStaleLockTime2();
-	public void* StaleLockTimeAsDuration();
-	public bool IsLocked();
-	public bool RemoveStaleLockFile();
-	public QLockFile_LockError Error();
-	public bool TryLock1();
 }
 [AllowDuplicates]
 enum QLockFile_LockError

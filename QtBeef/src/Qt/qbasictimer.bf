@@ -23,15 +23,16 @@ extension CQt
 	[LinkName("QBasicTimer_TimerId")]
 	public static extern c_int QBasicTimer_TimerId(QBasicTimer_Ptr* self);
 	[LinkName("QBasicTimer_Start")]
-	public static extern void QBasicTimer_Start(QBasicTimer_Ptr* self, c_int msec, QObject_Ptr* obj);
+	public static extern void QBasicTimer_Start(QBasicTimer_Ptr* self, c_int msec, QObject_Ptr** obj);
 	[LinkName("QBasicTimer_Start2")]
-	public static extern void QBasicTimer_Start2(QBasicTimer_Ptr* self, c_int msec, Qt_TimerType timerType, QObject_Ptr* obj);
+	public static extern void QBasicTimer_Start2(QBasicTimer_Ptr* self, c_int msec, Qt_TimerType timerType, QObject_Ptr** obj);
 	[LinkName("QBasicTimer_Stop")]
 	public static extern void QBasicTimer_Stop(QBasicTimer_Ptr* self);
 }
-class QBasicTimer
+class QBasicTimer : IQBasicTimer
 {
 	private QBasicTimer_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QBasicTimer_new();
@@ -40,9 +41,9 @@ class QBasicTimer
 	{
 		CQt.QBasicTimer_Delete(this.ptr);
 	}
-	public void Swap(QBasicTimer_Ptr* other)
+	public void Swap(IQBasicTimer other)
 	{
-		CQt.QBasicTimer_Swap((.)this.ptr, other);
+		CQt.QBasicTimer_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsActive()
 	{
@@ -52,25 +53,19 @@ class QBasicTimer
 	{
 		return CQt.QBasicTimer_TimerId((.)this.ptr);
 	}
-	public void Start(c_int msec, QObject_Ptr* obj)
+	public void Start(c_int msec, IQObject obj)
 	{
-		CQt.QBasicTimer_Start((.)this.ptr, msec, obj);
+		CQt.QBasicTimer_Start((.)this.ptr, msec, (.)obj?.ObjectPtr);
 	}
-	public void Start2(c_int msec, Qt_TimerType timerType, QObject_Ptr* obj)
+	public void Start2(c_int msec, Qt_TimerType timerType, IQObject obj)
 	{
-		CQt.QBasicTimer_Start2((.)this.ptr, msec, timerType, obj);
+		CQt.QBasicTimer_Start2((.)this.ptr, msec, timerType, (.)obj?.ObjectPtr);
 	}
 	public void Stop()
 	{
 		CQt.QBasicTimer_Stop((.)this.ptr);
 	}
 }
-interface IQBasicTimer
+interface IQBasicTimer : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsActive();
-	public c_int TimerId();
-	public void Start();
-	public void Start2();
-	public void Stop();
 }

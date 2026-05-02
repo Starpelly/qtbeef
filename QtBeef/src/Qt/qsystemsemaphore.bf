@@ -13,17 +13,17 @@ struct QSystemSemaphore_Ptr: void
 extension CQt
 {
 	[LinkName("QSystemSemaphore_new")]
-	public static extern QSystemSemaphore_Ptr* QSystemSemaphore_new(libqt_string* key);
+	public static extern QSystemSemaphore_Ptr* QSystemSemaphore_new(libqt_string key);
 	[LinkName("QSystemSemaphore_new2")]
-	public static extern QSystemSemaphore_Ptr* QSystemSemaphore_new2(libqt_string* key, c_int initialValue);
+	public static extern QSystemSemaphore_Ptr* QSystemSemaphore_new2(libqt_string key, c_int initialValue);
 	[LinkName("QSystemSemaphore_new3")]
-	public static extern QSystemSemaphore_Ptr* QSystemSemaphore_new3(libqt_string* key, c_int initialValue, QSystemSemaphore_AccessMode mode);
+	public static extern QSystemSemaphore_Ptr* QSystemSemaphore_new3(libqt_string key, c_int initialValue, QSystemSemaphore_AccessMode mode);
 	[LinkName("QSystemSemaphore_Delete")]
 	public static extern void QSystemSemaphore_Delete(QSystemSemaphore_Ptr* self);
 	[LinkName("QSystemSemaphore_Tr")]
 	public static extern libqt_string QSystemSemaphore_Tr(c_char* sourceText);
 	[LinkName("QSystemSemaphore_SetKey")]
-	public static extern void QSystemSemaphore_SetKey(QSystemSemaphore_Ptr* self, libqt_string* key);
+	public static extern void QSystemSemaphore_SetKey(QSystemSemaphore_Ptr* self, libqt_string key);
 	[LinkName("QSystemSemaphore_Key")]
 	public static extern libqt_string QSystemSemaphore_Key(QSystemSemaphore_Ptr* self);
 	[LinkName("QSystemSemaphore_Acquire")]
@@ -39,26 +39,27 @@ extension CQt
 	[LinkName("QSystemSemaphore_Tr3")]
 	public static extern libqt_string QSystemSemaphore_Tr3(c_char* sourceText, c_char* disambiguation, c_int n);
 	[LinkName("QSystemSemaphore_SetKey2")]
-	public static extern void QSystemSemaphore_SetKey2(QSystemSemaphore_Ptr* self, libqt_string* key, c_int initialValue);
+	public static extern void QSystemSemaphore_SetKey2(QSystemSemaphore_Ptr* self, libqt_string key, c_int initialValue);
 	[LinkName("QSystemSemaphore_SetKey3")]
-	public static extern void QSystemSemaphore_SetKey3(QSystemSemaphore_Ptr* self, libqt_string* key, c_int initialValue, QSystemSemaphore_AccessMode mode);
+	public static extern void QSystemSemaphore_SetKey3(QSystemSemaphore_Ptr* self, libqt_string key, c_int initialValue, QSystemSemaphore_AccessMode mode);
 	[LinkName("QSystemSemaphore_Release1")]
 	public static extern bool QSystemSemaphore_Release1(QSystemSemaphore_Ptr* self, c_int n);
 }
-class QSystemSemaphore
+class QSystemSemaphore : IQSystemSemaphore
 {
 	private QSystemSemaphore_Ptr* ptr;
-	public this(libqt_string* key)
+	public void* ObjectPtr => ptr;
+	public this(String key)
 	{
-		this.ptr = CQt.QSystemSemaphore_new(key);
+		this.ptr = CQt.QSystemSemaphore_new(libqt_string(key));
 	}
-	public this(libqt_string* key, c_int initialValue)
+	public this(String key, c_int initialValue)
 	{
-		this.ptr = CQt.QSystemSemaphore_new2(key, initialValue);
+		this.ptr = CQt.QSystemSemaphore_new2(libqt_string(key), initialValue);
 	}
-	public this(libqt_string* key, c_int initialValue, QSystemSemaphore_AccessMode mode)
+	public this(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
 	{
-		this.ptr = CQt.QSystemSemaphore_new3(key, initialValue, mode);
+		this.ptr = CQt.QSystemSemaphore_new3(libqt_string(key), initialValue, mode);
 	}
 	public ~this()
 	{
@@ -68,9 +69,9 @@ class QSystemSemaphore
 	{
 		return CQt.QSystemSemaphore_Tr(sourceText);
 	}
-	public void SetKey(libqt_string* key)
+	public void SetKey(String key)
 	{
-		CQt.QSystemSemaphore_SetKey((.)this.ptr, key);
+		CQt.QSystemSemaphore_SetKey((.)this.ptr, libqt_string(key));
 	}
 	public libqt_string Key()
 	{
@@ -100,33 +101,21 @@ class QSystemSemaphore
 	{
 		return CQt.QSystemSemaphore_Tr3(sourceText, disambiguation, n);
 	}
-	public void SetKey2(libqt_string* key, c_int initialValue)
+	public void SetKey2(String key, c_int initialValue)
 	{
-		CQt.QSystemSemaphore_SetKey2((.)this.ptr, key, initialValue);
+		CQt.QSystemSemaphore_SetKey2((.)this.ptr, libqt_string(key), initialValue);
 	}
-	public void SetKey3(libqt_string* key, c_int initialValue, QSystemSemaphore_AccessMode mode)
+	public void SetKey3(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
 	{
-		CQt.QSystemSemaphore_SetKey3((.)this.ptr, key, initialValue, mode);
+		CQt.QSystemSemaphore_SetKey3((.)this.ptr, libqt_string(key), initialValue, mode);
 	}
 	public bool Release1(c_int n)
 	{
 		return CQt.QSystemSemaphore_Release1((.)this.ptr, n);
 	}
 }
-interface IQSystemSemaphore
+interface IQSystemSemaphore : IQtObjectInterface
 {
-	public libqt_string Tr();
-	public void SetKey();
-	public libqt_string Key();
-	public bool Acquire();
-	public bool Release();
-	public QSystemSemaphore_SystemSemaphoreError Error();
-	public libqt_string ErrorString();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public void SetKey2();
-	public void SetKey3();
-	public bool Release1();
 }
 [AllowDuplicates]
 enum QSystemSemaphore_AccessMode

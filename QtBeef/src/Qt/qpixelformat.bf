@@ -73,12 +73,13 @@ extension CQt
 	[LinkName("QPixelFormat_SubEnum")]
 	public static extern c_uchar QPixelFormat_SubEnum(QPixelFormat_Ptr* self);
 }
-class QPixelFormat
+class QPixelFormat : IQPixelFormat
 {
 	private QPixelFormat_Ptr* ptr;
-	public this(QPixelFormat_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQPixelFormat other)
 	{
-		this.ptr = CQt.QPixelFormat_new(other);
+		this.ptr = CQt.QPixelFormat_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -189,30 +190,8 @@ class QPixelFormat
 		return CQt.QPixelFormat_SubEnum((.)this.ptr);
 	}
 }
-interface IQPixelFormat
+interface IQPixelFormat : IQtObjectInterface
 {
-	public QPixelFormat_ColorModel ColorModel();
-	public c_uchar ChannelCount();
-	public c_uchar RedSize();
-	public c_uchar GreenSize();
-	public c_uchar BlueSize();
-	public c_uchar CyanSize();
-	public c_uchar MagentaSize();
-	public c_uchar YellowSize();
-	public c_uchar BlackSize();
-	public c_uchar HueSize();
-	public c_uchar SaturationSize();
-	public c_uchar LightnessSize();
-	public c_uchar BrightnessSize();
-	public c_uchar AlphaSize();
-	public c_uchar BitsPerPixel();
-	public QPixelFormat_AlphaUsage AlphaUsage();
-	public QPixelFormat_AlphaPosition AlphaPosition();
-	public QPixelFormat_AlphaPremultiplied Premultiplied();
-	public QPixelFormat_TypeInterpretation TypeInterpretation();
-	public QPixelFormat_ByteOrder ByteOrder();
-	public QPixelFormat_YUVLayout YuvLayout();
-	public c_uchar SubEnum();
 }
 [AllowDuplicates]
 enum QPixelFormat_ColorModel

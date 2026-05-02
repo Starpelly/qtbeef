@@ -59,14 +59,15 @@ extension CQt
 	[LinkName("QMargins_OperatorDivideAssign2")]
 	public static extern QMargins_Ptr* QMargins_OperatorDivideAssign2(QMargins_Ptr* self, double param1);
 	[LinkName("QMargins_ToMarginsF")]
-	public static extern QMarginsF_Ptr QMargins_ToMarginsF(QMargins_Ptr* self);
+	public static extern QMarginsF_Ptr* QMargins_ToMarginsF(QMargins_Ptr* self);
 }
-class QMargins
+class QMargins : IQMargins
 {
 	private QMargins_Ptr* ptr;
-	public this(QMargins_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQMargins other)
 	{
-		this.ptr = CQt.QMargins_new(other);
+		this.ptr = CQt.QMargins_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -132,27 +133,13 @@ class QMargins
 	{
 		return CQt.QMargins_OperatorDivideAssign2((.)this.ptr, param1);
 	}
-	public QMarginsF_Ptr ToMarginsF()
+	public QMarginsF_Ptr* ToMarginsF()
 	{
 		return CQt.QMargins_ToMarginsF((.)this.ptr);
 	}
 }
-interface IQMargins
+interface IQMargins : IQtObjectInterface
 {
-	public bool IsNull();
-	public c_int Left();
-	public c_int Top();
-	public c_int Right();
-	public c_int Bottom();
-	public void SetLeft();
-	public void SetTop();
-	public void SetRight();
-	public void SetBottom();
-	public QMargins* OperatorPlusAssign2();
-	public QMargins* OperatorMinusAssign2();
-	public QMargins* OperatorMultiplyAssign2();
-	public QMargins* OperatorDivideAssign2();
-	public QMarginsF ToMarginsF();
 }
 // --------------------------------------------------------------
 // QMarginsF
@@ -208,14 +195,15 @@ extension CQt
 	[LinkName("QMarginsF_OperatorDivideAssign")]
 	public static extern QMarginsF_Ptr* QMarginsF_OperatorDivideAssign(QMarginsF_Ptr* self, double divisor);
 	[LinkName("QMarginsF_ToMargins")]
-	public static extern QMargins_Ptr QMarginsF_ToMargins(QMarginsF_Ptr* self);
+	public static extern QMargins_Ptr* QMarginsF_ToMargins(QMarginsF_Ptr* self);
 }
-class QMarginsF
+class QMarginsF : IQMarginsF
 {
 	private QMarginsF_Ptr* ptr;
-	public this(QMarginsF_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQMarginsF other)
 	{
-		this.ptr = CQt.QMarginsF_new(other);
+		this.ptr = CQt.QMarginsF_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -225,9 +213,9 @@ class QMarginsF
 	{
 		this.ptr = CQt.QMarginsF_new4(left, top, right, bottom);
 	}
-	public this(QMargins_Ptr* margins)
+	public this(IQMargins margins)
 	{
-		this.ptr = CQt.QMarginsF_new5(margins);
+		this.ptr = CQt.QMarginsF_new5((.)margins?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -277,23 +265,11 @@ class QMarginsF
 	{
 		return CQt.QMarginsF_OperatorMinusAssign2((.)this.ptr, subtrahend);
 	}
-	public QMargins_Ptr ToMargins()
+	public QMargins_Ptr* ToMargins()
 	{
 		return CQt.QMarginsF_ToMargins((.)this.ptr);
 	}
 }
-interface IQMarginsF
+interface IQMarginsF : IQtObjectInterface
 {
-	public bool IsNull();
-	public double Left();
-	public double Top();
-	public double Right();
-	public double Bottom();
-	public void SetLeft();
-	public void SetTop();
-	public void SetRight();
-	public void SetBottom();
-	public QMarginsF* OperatorPlusAssign2();
-	public QMarginsF* OperatorMinusAssign2();
-	public QMargins ToMargins();
 }

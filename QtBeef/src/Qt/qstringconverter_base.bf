@@ -29,9 +29,10 @@ extension CQt
 	[LinkName("QStringConverter_EncodingForHtml")]
 	public static extern QStringConverter_Encoding QStringConverter_EncodingForHtml(void* data);
 }
-class QStringConverter
+class QStringConverter : IQStringConverter
 {
 	private QStringConverter_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public bool IsValid()
 	{
 		return CQt.QStringConverter_IsValid((.)this.ptr);
@@ -65,16 +66,8 @@ class QStringConverter
 		return CQt.QStringConverter_EncodingForHtml(data);
 	}
 }
-interface IQStringConverter
+interface IQStringConverter : IQtObjectInterface
 {
-	public bool IsValid();
-	public void ResetState();
-	public bool HasError();
-	public c_char* Name();
-	public QStringConverter_Encoding EncodingForName();
-	public c_char* NameForEncoding();
-	public QStringConverter_Encoding EncodingForData();
-	public QStringConverter_Encoding EncodingForHtml();
 }
 [AllowDuplicates]
 enum QStringConverterBase_Flag

@@ -15,19 +15,19 @@ extension CQt
 	[LinkName("QFont_new")]
 	public static extern QFont_Ptr* QFont_new();
 	[LinkName("QFont_new2")]
-	public static extern QFont_Ptr* QFont_new2(libqt_string* family);
+	public static extern QFont_Ptr* QFont_new2(libqt_string family);
 	[LinkName("QFont_new3")]
 	public static extern QFont_Ptr* QFont_new3(void** families);
 	[LinkName("QFont_new4")]
-	public static extern QFont_Ptr* QFont_new4(QFont_Ptr* font, QPaintDevice_Ptr* pd);
+	public static extern QFont_Ptr* QFont_new4(QFont_Ptr* font, QPaintDevice_Ptr** pd);
 	[LinkName("QFont_new5")]
 	public static extern QFont_Ptr* QFont_new5(QFont_Ptr* font);
 	[LinkName("QFont_new6")]
-	public static extern QFont_Ptr* QFont_new6(libqt_string* family, c_int pointSize);
+	public static extern QFont_Ptr* QFont_new6(libqt_string family, c_int pointSize);
 	[LinkName("QFont_new7")]
-	public static extern QFont_Ptr* QFont_new7(libqt_string* family, c_int pointSize, c_int weight);
+	public static extern QFont_Ptr* QFont_new7(libqt_string family, c_int pointSize, c_int weight);
 	[LinkName("QFont_new8")]
-	public static extern QFont_Ptr* QFont_new8(libqt_string* family, c_int pointSize, c_int weight, bool italic);
+	public static extern QFont_Ptr* QFont_new8(libqt_string family, c_int pointSize, c_int weight, bool italic);
 	[LinkName("QFont_new9")]
 	public static extern QFont_Ptr* QFont_new9(void** families, c_int pointSize);
 	[LinkName("QFont_new10")]
@@ -41,7 +41,7 @@ extension CQt
 	[LinkName("QFont_Family")]
 	public static extern libqt_string QFont_Family(QFont_Ptr* self);
 	[LinkName("QFont_SetFamily")]
-	public static extern void QFont_SetFamily(QFont_Ptr* self, libqt_string* family);
+	public static extern void QFont_SetFamily(QFont_Ptr* self, libqt_string family);
 	[LinkName("QFont_Families")]
 	public static extern void* QFont_Families(QFont_Ptr* self);
 	[LinkName("QFont_SetFamilies")]
@@ -49,7 +49,7 @@ extension CQt
 	[LinkName("QFont_StyleName")]
 	public static extern libqt_string QFont_StyleName(QFont_Ptr* self);
 	[LinkName("QFont_SetStyleName")]
-	public static extern void QFont_SetStyleName(QFont_Ptr* self, libqt_string* styleName);
+	public static extern void QFont_SetStyleName(QFont_Ptr* self, libqt_string styleName);
 	[LinkName("QFont_PointSize")]
 	public static extern c_int QFont_PointSize(QFont_Ptr* self);
 	[LinkName("QFont_SetPointSize")]
@@ -139,7 +139,7 @@ extension CQt
 	[LinkName("QFont_OperatorLesser")]
 	public static extern bool QFont_OperatorLesser(QFont_Ptr* self, QFont_Ptr* param1);
 	[LinkName("QFont_ToQvariant")]
-	public static extern QVariant_Ptr QFont_ToQvariant(QFont_Ptr* self);
+	public static extern QVariant_Ptr* QFont_ToQvariant(QFont_Ptr* self);
 	[LinkName("QFont_IsCopyOf")]
 	public static extern bool QFont_IsCopyOf(QFont_Ptr* self, QFont_Ptr* param1);
 	[LinkName("QFont_Key")]
@@ -147,19 +147,19 @@ extension CQt
 	[LinkName("QFont_ToString")]
 	public static extern libqt_string QFont_ToString(QFont_Ptr* self);
 	[LinkName("QFont_FromString")]
-	public static extern bool QFont_FromString(QFont_Ptr* self, libqt_string* param1);
+	public static extern bool QFont_FromString(QFont_Ptr* self, libqt_string param1);
 	[LinkName("QFont_Substitute")]
-	public static extern libqt_string QFont_Substitute(libqt_string* param1);
+	public static extern libqt_string QFont_Substitute(libqt_string param1);
 	[LinkName("QFont_Substitutes")]
-	public static extern void* QFont_Substitutes(libqt_string* param1);
+	public static extern void* QFont_Substitutes(libqt_string param1);
 	[LinkName("QFont_Substitutions")]
 	public static extern void* QFont_Substitutions();
 	[LinkName("QFont_InsertSubstitution")]
-	public static extern void QFont_InsertSubstitution(libqt_string* param1, libqt_string* param2);
+	public static extern void QFont_InsertSubstitution(libqt_string param1, libqt_string param2);
 	[LinkName("QFont_InsertSubstitutions")]
-	public static extern void QFont_InsertSubstitutions(libqt_string* param1, void** param2);
+	public static extern void QFont_InsertSubstitutions(libqt_string param1, void** param2);
 	[LinkName("QFont_RemoveSubstitutions")]
-	public static extern void QFont_RemoveSubstitutions(libqt_string* param1);
+	public static extern void QFont_RemoveSubstitutions(libqt_string param1);
 	[LinkName("QFont_Initialize")]
 	public static extern void QFont_Initialize();
 	[LinkName("QFont_Cleanup")]
@@ -169,7 +169,7 @@ extension CQt
 	[LinkName("QFont_DefaultFamily")]
 	public static extern libqt_string QFont_DefaultFamily(QFont_Ptr* self);
 	[LinkName("QFont_Resolve")]
-	public static extern QFont_Ptr QFont_Resolve(QFont_Ptr* self, QFont_Ptr* param1);
+	public static extern QFont_Ptr* QFont_Resolve(QFont_Ptr* self, QFont_Ptr* param1);
 	[LinkName("QFont_ResolveMask")]
 	public static extern c_uint QFont_ResolveMask(QFont_Ptr* self);
 	[LinkName("QFont_SetResolveMask")]
@@ -181,40 +181,41 @@ extension CQt
 	[LinkName("QFont_SetStyleHint2")]
 	public static extern void QFont_SetStyleHint2(QFont_Ptr* self, QFont_StyleHint param1, QFont_StyleStrategy param2);
 }
-class QFont
+class QFont : IQFont
 {
 	private QFont_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QFont_new();
 	}
-	public this(libqt_string* family)
+	public this(String family)
 	{
-		this.ptr = CQt.QFont_new2(family);
+		this.ptr = CQt.QFont_new2(libqt_string(family));
 	}
 	public this(void** families)
 	{
 		this.ptr = CQt.QFont_new3(families);
 	}
-	public this(QFont_Ptr* font, QPaintDevice_Ptr* pd)
+	public this(IQFont font, IQPaintDevice pd)
 	{
-		this.ptr = CQt.QFont_new4(font, pd);
+		this.ptr = CQt.QFont_new4((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
 	}
-	public this(QFont_Ptr* font)
+	public this(IQFont font)
 	{
-		this.ptr = CQt.QFont_new5(font);
+		this.ptr = CQt.QFont_new5((.)font?.ObjectPtr);
 	}
-	public this(libqt_string* family, c_int pointSize)
+	public this(String family, c_int pointSize)
 	{
-		this.ptr = CQt.QFont_new6(family, pointSize);
+		this.ptr = CQt.QFont_new6(libqt_string(family), pointSize);
 	}
-	public this(libqt_string* family, c_int pointSize, c_int weight)
+	public this(String family, c_int pointSize, c_int weight)
 	{
-		this.ptr = CQt.QFont_new7(family, pointSize, weight);
+		this.ptr = CQt.QFont_new7(libqt_string(family), pointSize, weight);
 	}
-	public this(libqt_string* family, c_int pointSize, c_int weight, bool italic)
+	public this(String family, c_int pointSize, c_int weight, bool italic)
 	{
-		this.ptr = CQt.QFont_new8(family, pointSize, weight, italic);
+		this.ptr = CQt.QFont_new8(libqt_string(family), pointSize, weight, italic);
 	}
 	public this(void** families, c_int pointSize)
 	{
@@ -232,17 +233,17 @@ class QFont
 	{
 		CQt.QFont_Delete(this.ptr);
 	}
-	public void Swap(QFont_Ptr* other)
+	public void Swap(IQFont other)
 	{
-		CQt.QFont_Swap((.)this.ptr, other);
+		CQt.QFont_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public libqt_string Family()
 	{
 		return CQt.QFont_Family((.)this.ptr);
 	}
-	public void SetFamily(libqt_string* family)
+	public void SetFamily(String family)
 	{
-		CQt.QFont_SetFamily((.)this.ptr, family);
+		CQt.QFont_SetFamily((.)this.ptr, libqt_string(family));
 	}
 	public void* Families()
 	{
@@ -256,9 +257,9 @@ class QFont
 	{
 		return CQt.QFont_StyleName((.)this.ptr);
 	}
-	public void SetStyleName(libqt_string* styleName)
+	public void SetStyleName(String styleName)
 	{
-		CQt.QFont_SetStyleName((.)this.ptr, styleName);
+		CQt.QFont_SetStyleName((.)this.ptr, libqt_string(styleName));
 	}
 	public c_int PointSize()
 	{
@@ -420,9 +421,9 @@ class QFont
 	{
 		return CQt.QFont_ExactMatch((.)this.ptr);
 	}
-	public bool IsCopyOf(QFont_Ptr* param1)
+	public bool IsCopyOf(IQFont param1)
 	{
-		return CQt.QFont_IsCopyOf((.)this.ptr, param1);
+		return CQt.QFont_IsCopyOf((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public libqt_string Key()
 	{
@@ -432,33 +433,33 @@ class QFont
 	{
 		return CQt.QFont_ToString((.)this.ptr);
 	}
-	public bool FromString(libqt_string* param1)
+	public bool FromString(String param1)
 	{
-		return CQt.QFont_FromString((.)this.ptr, param1);
+		return CQt.QFont_FromString((.)this.ptr, libqt_string(param1));
 	}
-	public libqt_string Substitute(libqt_string* param1)
+	public libqt_string Substitute(String param1)
 	{
-		return CQt.QFont_Substitute(param1);
+		return CQt.QFont_Substitute(libqt_string(param1));
 	}
-	public void* Substitutes(libqt_string* param1)
+	public void* Substitutes(String param1)
 	{
-		return CQt.QFont_Substitutes(param1);
+		return CQt.QFont_Substitutes(libqt_string(param1));
 	}
 	public void* Substitutions()
 	{
 		return CQt.QFont_Substitutions();
 	}
-	public void InsertSubstitution(libqt_string* param1, libqt_string* param2)
+	public void InsertSubstitution(String param1, String param2)
 	{
-		CQt.QFont_InsertSubstitution(param1, param2);
+		CQt.QFont_InsertSubstitution(libqt_string(param1), libqt_string(param2));
 	}
-	public void InsertSubstitutions(libqt_string* param1, void** param2)
+	public void InsertSubstitutions(String param1, void** param2)
 	{
-		CQt.QFont_InsertSubstitutions(param1, param2);
+		CQt.QFont_InsertSubstitutions(libqt_string(param1), param2);
 	}
-	public void RemoveSubstitutions(libqt_string* param1)
+	public void RemoveSubstitutions(String param1)
 	{
-		CQt.QFont_RemoveSubstitutions(param1);
+		CQt.QFont_RemoveSubstitutions(libqt_string(param1));
 	}
 	public void Initialize()
 	{
@@ -476,9 +477,9 @@ class QFont
 	{
 		return CQt.QFont_DefaultFamily((.)this.ptr);
 	}
-	public QFont_Ptr Resolve(QFont_Ptr* param1)
+	public QFont_Ptr* Resolve(IQFont param1)
 	{
-		return CQt.QFont_Resolve((.)this.ptr, param1);
+		return CQt.QFont_Resolve((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 	public c_uint ResolveMask()
 	{
@@ -501,75 +502,8 @@ class QFont
 		CQt.QFont_SetStyleHint2((.)this.ptr, param1, param2);
 	}
 }
-interface IQFont
+interface IQFont : IQtObjectInterface
 {
-	public void Swap();
-	public libqt_string Family();
-	public void SetFamily();
-	public void* Families();
-	public void SetFamilies();
-	public libqt_string StyleName();
-	public void SetStyleName();
-	public c_int PointSize();
-	public void SetPointSize();
-	public double PointSizeF();
-	public void SetPointSizeF();
-	public c_int PixelSize();
-	public void SetPixelSize();
-	public QFont_Weight Weight();
-	public void SetWeight();
-	public bool Bold();
-	public void SetBold();
-	public void SetStyle();
-	public QFont_Style Style();
-	public bool Italic();
-	public void SetItalic();
-	public bool Underline();
-	public void SetUnderline();
-	public bool Overline();
-	public void SetOverline();
-	public bool StrikeOut();
-	public void SetStrikeOut();
-	public bool FixedPitch();
-	public void SetFixedPitch();
-	public bool Kerning();
-	public void SetKerning();
-	public QFont_StyleHint StyleHint();
-	public QFont_StyleStrategy StyleStrategy();
-	public void SetStyleHint();
-	public void SetStyleStrategy();
-	public c_int Stretch();
-	public void SetStretch();
-	public double LetterSpacing();
-	public QFont_SpacingType LetterSpacingType();
-	public void SetLetterSpacing();
-	public double WordSpacing();
-	public void SetWordSpacing();
-	public void SetCapitalization();
-	public QFont_Capitalization Capitalization();
-	public void SetHintingPreference();
-	public QFont_HintingPreference HintingPreference();
-	public bool ExactMatch();
-	public bool IsCopyOf();
-	public libqt_string Key();
-	public libqt_string ToString();
-	public bool FromString();
-	public libqt_string Substitute();
-	public void* Substitutes();
-	public void* Substitutions();
-	public void InsertSubstitution();
-	public void InsertSubstitutions();
-	public void RemoveSubstitutions();
-	public void Initialize();
-	public void Cleanup();
-	public void CacheStatistics();
-	public libqt_string DefaultFamily();
-	public QFont Resolve();
-	public c_uint ResolveMask();
-	public void SetResolveMask();
-	public void SetLegacyWeight();
-	public c_int LegacyWeight();
-	public void SetStyleHint2();
 }
 [AllowDuplicates]
 enum QFont_StyleHint

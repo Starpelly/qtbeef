@@ -15,11 +15,11 @@ extension CQt
 	[LinkName("QFileSystemModel_new")]
 	public static extern QFileSystemModel_Ptr* QFileSystemModel_new();
 	[LinkName("QFileSystemModel_new2")]
-	public static extern QFileSystemModel_Ptr* QFileSystemModel_new2(QObject_Ptr* parent);
+	public static extern QFileSystemModel_Ptr* QFileSystemModel_new2(QObject_Ptr** parent);
 	[LinkName("QFileSystemModel_Delete")]
 	public static extern void QFileSystemModel_Delete(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_MetaObject")]
-	public static extern QMetaObject_Ptr* QFileSystemModel_MetaObject(QFileSystemModel_Ptr* self);
+	public static extern QMetaObject_Ptr** QFileSystemModel_MetaObject(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_Qt_Metacast")]
 	public static extern void* QFileSystemModel_Qt_Metacast(QFileSystemModel_Ptr* self, c_char* param1);
 	[LinkName("QFileSystemModel_Qt_Metacall")]
@@ -27,19 +27,19 @@ extension CQt
 	[LinkName("QFileSystemModel_Tr")]
 	public static extern libqt_string QFileSystemModel_Tr(c_char* s);
 	[LinkName("QFileSystemModel_RootPathChanged")]
-	public static extern void QFileSystemModel_RootPathChanged(QFileSystemModel_Ptr* self, libqt_string* newPath);
+	public static extern void QFileSystemModel_RootPathChanged(QFileSystemModel_Ptr* self, libqt_string newPath);
 	[LinkName("QFileSystemModel_FileRenamed")]
-	public static extern void QFileSystemModel_FileRenamed(QFileSystemModel_Ptr* self, libqt_string* path, libqt_string* oldName, libqt_string* newName);
+	public static extern void QFileSystemModel_FileRenamed(QFileSystemModel_Ptr* self, libqt_string path, libqt_string oldName, libqt_string newName);
 	[LinkName("QFileSystemModel_DirectoryLoaded")]
-	public static extern void QFileSystemModel_DirectoryLoaded(QFileSystemModel_Ptr* self, libqt_string* path);
+	public static extern void QFileSystemModel_DirectoryLoaded(QFileSystemModel_Ptr* self, libqt_string path);
 	[LinkName("QFileSystemModel_Index")]
-	public static extern QModelIndex_Ptr QFileSystemModel_Index(QFileSystemModel_Ptr* self, c_int row, c_int column, QModelIndex_Ptr* parent);
+	public static extern QModelIndex_Ptr* QFileSystemModel_Index(QFileSystemModel_Ptr* self, c_int row, c_int column, QModelIndex_Ptr* parent);
 	[LinkName("QFileSystemModel_Index2")]
-	public static extern QModelIndex_Ptr QFileSystemModel_Index2(QFileSystemModel_Ptr* self, libqt_string* path);
+	public static extern QModelIndex_Ptr* QFileSystemModel_Index2(QFileSystemModel_Ptr* self, libqt_string path);
 	[LinkName("QFileSystemModel_Parent")]
-	public static extern QModelIndex_Ptr QFileSystemModel_Parent(QFileSystemModel_Ptr* self, QModelIndex_Ptr* child);
+	public static extern QModelIndex_Ptr* QFileSystemModel_Parent(QFileSystemModel_Ptr* self, QModelIndex_Ptr* child);
 	[LinkName("QFileSystemModel_Sibling")]
-	public static extern QModelIndex_Ptr QFileSystemModel_Sibling(QFileSystemModel_Ptr* self, c_int row, c_int column, QModelIndex_Ptr* idx);
+	public static extern QModelIndex_Ptr* QFileSystemModel_Sibling(QFileSystemModel_Ptr* self, c_int row, c_int column, QModelIndex_Ptr* idx);
 	[LinkName("QFileSystemModel_HasChildren")]
 	public static extern bool QFileSystemModel_HasChildren(QFileSystemModel_Ptr* self, QModelIndex_Ptr* parent);
 	[LinkName("QFileSystemModel_CanFetchMore")]
@@ -51,13 +51,13 @@ extension CQt
 	[LinkName("QFileSystemModel_ColumnCount")]
 	public static extern c_int QFileSystemModel_ColumnCount(QFileSystemModel_Ptr* self, QModelIndex_Ptr* parent);
 	[LinkName("QFileSystemModel_MyComputer")]
-	public static extern QVariant_Ptr QFileSystemModel_MyComputer(QFileSystemModel_Ptr* self);
+	public static extern QVariant_Ptr* QFileSystemModel_MyComputer(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_Data")]
-	public static extern QVariant_Ptr QFileSystemModel_Data(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index, c_int role);
+	public static extern QVariant_Ptr* QFileSystemModel_Data(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index, c_int role);
 	[LinkName("QFileSystemModel_SetData")]
 	public static extern bool QFileSystemModel_SetData(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index, QVariant_Ptr* value, c_int role);
 	[LinkName("QFileSystemModel_HeaderData")]
-	public static extern QVariant_Ptr QFileSystemModel_HeaderData(QFileSystemModel_Ptr* self, c_int section, Qt_Orientation orientation, c_int role);
+	public static extern QVariant_Ptr* QFileSystemModel_HeaderData(QFileSystemModel_Ptr* self, c_int section, Qt_Orientation orientation, c_int role);
 	[LinkName("QFileSystemModel_Flags")]
 	public static extern void* QFileSystemModel_Flags(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_Sort")]
@@ -65,23 +65,23 @@ extension CQt
 	[LinkName("QFileSystemModel_MimeTypes")]
 	public static extern void* QFileSystemModel_MimeTypes(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_MimeData")]
-	public static extern QMimeData_Ptr* QFileSystemModel_MimeData(QFileSystemModel_Ptr* self, void** indexes);
+	public static extern QMimeData_Ptr** QFileSystemModel_MimeData(QFileSystemModel_Ptr* self, void** indexes);
 	[LinkName("QFileSystemModel_DropMimeData")]
-	public static extern bool QFileSystemModel_DropMimeData(QFileSystemModel_Ptr* self, QMimeData_Ptr* data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent);
+	public static extern bool QFileSystemModel_DropMimeData(QFileSystemModel_Ptr* self, QMimeData_Ptr** data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent);
 	[LinkName("QFileSystemModel_SupportedDropActions")]
 	public static extern void* QFileSystemModel_SupportedDropActions(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_RoleNames")]
 	public static extern void* QFileSystemModel_RoleNames(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_SetRootPath")]
-	public static extern QModelIndex_Ptr QFileSystemModel_SetRootPath(QFileSystemModel_Ptr* self, libqt_string* path);
+	public static extern QModelIndex_Ptr* QFileSystemModel_SetRootPath(QFileSystemModel_Ptr* self, libqt_string path);
 	[LinkName("QFileSystemModel_RootPath")]
 	public static extern libqt_string QFileSystemModel_RootPath(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_RootDirectory")]
-	public static extern QDir_Ptr QFileSystemModel_RootDirectory(QFileSystemModel_Ptr* self);
+	public static extern QDir_Ptr* QFileSystemModel_RootDirectory(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_SetIconProvider")]
-	public static extern void QFileSystemModel_SetIconProvider(QFileSystemModel_Ptr* self, QAbstractFileIconProvider_Ptr* provider);
+	public static extern void QFileSystemModel_SetIconProvider(QFileSystemModel_Ptr* self, QAbstractFileIconProvider_Ptr** provider);
 	[LinkName("QFileSystemModel_IconProvider")]
-	public static extern QAbstractFileIconProvider_Ptr* QFileSystemModel_IconProvider(QFileSystemModel_Ptr* self);
+	public static extern QAbstractFileIconProvider_Ptr** QFileSystemModel_IconProvider(QFileSystemModel_Ptr* self);
 	[LinkName("QFileSystemModel_SetFilter")]
 	public static extern void QFileSystemModel_SetFilter(QFileSystemModel_Ptr* self, void* filters);
 	[LinkName("QFileSystemModel_Filter")]
@@ -119,52 +119,53 @@ extension CQt
 	[LinkName("QFileSystemModel_Type")]
 	public static extern libqt_string QFileSystemModel_Type(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_LastModified")]
-	public static extern QDateTime_Ptr QFileSystemModel_LastModified(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
+	public static extern QDateTime_Ptr* QFileSystemModel_LastModified(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_Mkdir")]
-	public static extern QModelIndex_Ptr QFileSystemModel_Mkdir(QFileSystemModel_Ptr* self, QModelIndex_Ptr* parent, libqt_string* name);
+	public static extern QModelIndex_Ptr* QFileSystemModel_Mkdir(QFileSystemModel_Ptr* self, QModelIndex_Ptr* parent, libqt_string name);
 	[LinkName("QFileSystemModel_Rmdir")]
 	public static extern bool QFileSystemModel_Rmdir(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_FileName")]
 	public static extern libqt_string QFileSystemModel_FileName(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_FileIcon")]
-	public static extern QIcon_Ptr QFileSystemModel_FileIcon(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
+	public static extern QIcon_Ptr* QFileSystemModel_FileIcon(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_Permissions")]
 	public static extern void* QFileSystemModel_Permissions(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_FileInfo")]
-	public static extern QFileInfo_Ptr QFileSystemModel_FileInfo(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
+	public static extern QFileInfo_Ptr* QFileSystemModel_FileInfo(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_Remove")]
 	public static extern bool QFileSystemModel_Remove(QFileSystemModel_Ptr* self, QModelIndex_Ptr* index);
 	[LinkName("QFileSystemModel_TimerEvent")]
-	public static extern void QFileSystemModel_TimerEvent(QFileSystemModel_Ptr* self, QTimerEvent_Ptr* event);
+	public static extern void QFileSystemModel_TimerEvent(QFileSystemModel_Ptr* self, QTimerEvent_Ptr** event);
 	[LinkName("QFileSystemModel_Event")]
-	public static extern bool QFileSystemModel_Event(QFileSystemModel_Ptr* self, QEvent_Ptr* event);
+	public static extern bool QFileSystemModel_Event(QFileSystemModel_Ptr* self, QEvent_Ptr** event);
 	[LinkName("QFileSystemModel_Tr2")]
 	public static extern libqt_string QFileSystemModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QFileSystemModel_Tr3")]
 	public static extern libqt_string QFileSystemModel_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QFileSystemModel_Index22")]
-	public static extern QModelIndex_Ptr QFileSystemModel_Index22(QFileSystemModel_Ptr* self, libqt_string* path, c_int column);
+	public static extern QModelIndex_Ptr* QFileSystemModel_Index22(QFileSystemModel_Ptr* self, libqt_string path, c_int column);
 	[LinkName("QFileSystemModel_MyComputer1")]
-	public static extern QVariant_Ptr QFileSystemModel_MyComputer1(QFileSystemModel_Ptr* self, c_int role);
+	public static extern QVariant_Ptr* QFileSystemModel_MyComputer1(QFileSystemModel_Ptr* self, c_int role);
 	[LinkName("QFileSystemModel_SetOption2")]
 	public static extern void QFileSystemModel_SetOption2(QFileSystemModel_Ptr* self, QFileSystemModel_Option option, bool on);
 }
-class QFileSystemModel
+class QFileSystemModel : IQFileSystemModel, IQAbstractItemModel, IQObject
 {
 	private QFileSystemModel_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QFileSystemModel_new();
 	}
-	public this(QObject_Ptr* parent)
+	public this(IQObject parent)
 	{
-		this.ptr = CQt.QFileSystemModel_new2(parent);
+		this.ptr = CQt.QFileSystemModel_new2((.)parent?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QFileSystemModel_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr* MetaObject()
+	public QMetaObject_Ptr** MetaObject()
 	{
 		return CQt.QFileSystemModel_MetaObject((.)this.ptr);
 	}
@@ -180,73 +181,73 @@ class QFileSystemModel
 	{
 		return CQt.QFileSystemModel_Tr(s);
 	}
-	public void RootPathChanged(libqt_string* newPath)
+	public void RootPathChanged(String newPath)
 	{
-		CQt.QFileSystemModel_RootPathChanged((.)this.ptr, newPath);
+		CQt.QFileSystemModel_RootPathChanged((.)this.ptr, libqt_string(newPath));
 	}
-	public void FileRenamed(libqt_string* path, libqt_string* oldName, libqt_string* newName)
+	public void FileRenamed(String path, String oldName, String newName)
 	{
-		CQt.QFileSystemModel_FileRenamed((.)this.ptr, path, oldName, newName);
+		CQt.QFileSystemModel_FileRenamed((.)this.ptr, libqt_string(path), libqt_string(oldName), libqt_string(newName));
 	}
-	public void DirectoryLoaded(libqt_string* path)
+	public void DirectoryLoaded(String path)
 	{
-		CQt.QFileSystemModel_DirectoryLoaded((.)this.ptr, path);
+		CQt.QFileSystemModel_DirectoryLoaded((.)this.ptr, libqt_string(path));
 	}
-	public QModelIndex_Ptr Index(c_int row, c_int column, QModelIndex_Ptr* parent)
+	public QModelIndex_Ptr* Index(c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QFileSystemModel_Index((.)this.ptr, row, column, parent);
+		return CQt.QFileSystemModel_Index((.)this.ptr, row, column, (.)parent?.ObjectPtr);
 	}
-	public QModelIndex_Ptr Index2(libqt_string* path)
+	public QModelIndex_Ptr* Index2(String path)
 	{
-		return CQt.QFileSystemModel_Index2((.)this.ptr, path);
+		return CQt.QFileSystemModel_Index2((.)this.ptr, libqt_string(path));
 	}
-	public QModelIndex_Ptr Parent(QModelIndex_Ptr* child)
+	public QModelIndex_Ptr* Parent(IQModelIndex child)
 	{
-		return CQt.QFileSystemModel_Parent((.)this.ptr, child);
+		return CQt.QFileSystemModel_Parent((.)this.ptr, (.)child?.ObjectPtr);
 	}
-	public QModelIndex_Ptr Sibling(c_int row, c_int column, QModelIndex_Ptr* idx)
+	public QModelIndex_Ptr* Sibling(c_int row, c_int column, IQModelIndex idx)
 	{
-		return CQt.QFileSystemModel_Sibling((.)this.ptr, row, column, idx);
+		return CQt.QFileSystemModel_Sibling((.)this.ptr, row, column, (.)idx?.ObjectPtr);
 	}
-	public bool HasChildren(QModelIndex_Ptr* parent)
+	public bool HasChildren(IQModelIndex parent)
 	{
-		return CQt.QFileSystemModel_HasChildren((.)this.ptr, parent);
+		return CQt.QFileSystemModel_HasChildren((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public bool CanFetchMore(QModelIndex_Ptr* parent)
+	public bool CanFetchMore(IQModelIndex parent)
 	{
-		return CQt.QFileSystemModel_CanFetchMore((.)this.ptr, parent);
+		return CQt.QFileSystemModel_CanFetchMore((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void FetchMore(QModelIndex_Ptr* parent)
+	public void FetchMore(IQModelIndex parent)
 	{
-		CQt.QFileSystemModel_FetchMore((.)this.ptr, parent);
+		CQt.QFileSystemModel_FetchMore((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public c_int RowCount(QModelIndex_Ptr* parent)
+	public c_int RowCount(IQModelIndex parent)
 	{
-		return CQt.QFileSystemModel_RowCount((.)this.ptr, parent);
+		return CQt.QFileSystemModel_RowCount((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public c_int ColumnCount(QModelIndex_Ptr* parent)
+	public c_int ColumnCount(IQModelIndex parent)
 	{
-		return CQt.QFileSystemModel_ColumnCount((.)this.ptr, parent);
+		return CQt.QFileSystemModel_ColumnCount((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public QVariant_Ptr MyComputer()
+	public QVariant_Ptr* MyComputer()
 	{
 		return CQt.QFileSystemModel_MyComputer((.)this.ptr);
 	}
-	public QVariant_Ptr Data(QModelIndex_Ptr* index, c_int role)
+	public QVariant_Ptr* Data(IQModelIndex index, c_int role)
 	{
-		return CQt.QFileSystemModel_Data((.)this.ptr, index, role);
+		return CQt.QFileSystemModel_Data((.)this.ptr, (.)index?.ObjectPtr, role);
 	}
-	public bool SetData(QModelIndex_Ptr* index, QVariant_Ptr* value, c_int role)
+	public bool SetData(IQModelIndex index, IQVariant value, c_int role)
 	{
-		return CQt.QFileSystemModel_SetData((.)this.ptr, index, value, role);
+		return CQt.QFileSystemModel_SetData((.)this.ptr, (.)index?.ObjectPtr, (.)value?.ObjectPtr, role);
 	}
-	public QVariant_Ptr HeaderData(c_int section, Qt_Orientation orientation, c_int role)
+	public QVariant_Ptr* HeaderData(c_int section, Qt_Orientation orientation, c_int role)
 	{
 		return CQt.QFileSystemModel_HeaderData((.)this.ptr, section, orientation, role);
 	}
-	public void* Flags(QModelIndex_Ptr* index)
+	public void* Flags(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_Flags((.)this.ptr, index);
+		return CQt.QFileSystemModel_Flags((.)this.ptr, (.)index?.ObjectPtr);
 	}
 	public void Sort(c_int column, Qt_SortOrder order)
 	{
@@ -256,13 +257,13 @@ class QFileSystemModel
 	{
 		return CQt.QFileSystemModel_MimeTypes((.)this.ptr);
 	}
-	public QMimeData_Ptr* MimeData(void** indexes)
+	public QMimeData_Ptr** MimeData(void** indexes)
 	{
 		return CQt.QFileSystemModel_MimeData((.)this.ptr, indexes);
 	}
-	public bool DropMimeData(QMimeData_Ptr* data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent)
+	public bool DropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QFileSystemModel_DropMimeData((.)this.ptr, data, action, row, column, parent);
+		return CQt.QFileSystemModel_DropMimeData((.)this.ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
 	}
 	public void* SupportedDropActions()
 	{
@@ -272,23 +273,23 @@ class QFileSystemModel
 	{
 		return CQt.QFileSystemModel_RoleNames((.)this.ptr);
 	}
-	public QModelIndex_Ptr SetRootPath(libqt_string* path)
+	public QModelIndex_Ptr* SetRootPath(String path)
 	{
-		return CQt.QFileSystemModel_SetRootPath((.)this.ptr, path);
+		return CQt.QFileSystemModel_SetRootPath((.)this.ptr, libqt_string(path));
 	}
 	public libqt_string RootPath()
 	{
 		return CQt.QFileSystemModel_RootPath((.)this.ptr);
 	}
-	public QDir_Ptr RootDirectory()
+	public QDir_Ptr* RootDirectory()
 	{
 		return CQt.QFileSystemModel_RootDirectory((.)this.ptr);
 	}
-	public void SetIconProvider(QAbstractFileIconProvider_Ptr* provider)
+	public void SetIconProvider(IQAbstractFileIconProvider provider)
 	{
-		CQt.QFileSystemModel_SetIconProvider((.)this.ptr, provider);
+		CQt.QFileSystemModel_SetIconProvider((.)this.ptr, (.)provider?.ObjectPtr);
 	}
-	public QAbstractFileIconProvider_Ptr* IconProvider()
+	public QAbstractFileIconProvider_Ptr** IconProvider()
 	{
 		return CQt.QFileSystemModel_IconProvider((.)this.ptr);
 	}
@@ -348,61 +349,61 @@ class QFileSystemModel
 	{
 		return CQt.QFileSystemModel_Options((.)this.ptr);
 	}
-	public libqt_string FilePath(QModelIndex_Ptr* index)
+	public libqt_string FilePath(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_FilePath((.)this.ptr, index);
+		return CQt.QFileSystemModel_FilePath((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public bool IsDir(QModelIndex_Ptr* index)
+	public bool IsDir(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_IsDir((.)this.ptr, index);
+		return CQt.QFileSystemModel_IsDir((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public c_longlong Size(QModelIndex_Ptr* index)
+	public c_longlong Size(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_Size((.)this.ptr, index);
+		return CQt.QFileSystemModel_Size((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public libqt_string Type(QModelIndex_Ptr* index)
+	public libqt_string Type(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_Type((.)this.ptr, index);
+		return CQt.QFileSystemModel_Type((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public QDateTime_Ptr LastModified(QModelIndex_Ptr* index)
+	public QDateTime_Ptr* LastModified(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_LastModified((.)this.ptr, index);
+		return CQt.QFileSystemModel_LastModified((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public QModelIndex_Ptr Mkdir(QModelIndex_Ptr* parent, libqt_string* name)
+	public QModelIndex_Ptr* Mkdir(IQModelIndex parent, String name)
 	{
-		return CQt.QFileSystemModel_Mkdir((.)this.ptr, parent, name);
+		return CQt.QFileSystemModel_Mkdir((.)this.ptr, (.)parent?.ObjectPtr, libqt_string(name));
 	}
-	public bool Rmdir(QModelIndex_Ptr* index)
+	public bool Rmdir(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_Rmdir((.)this.ptr, index);
+		return CQt.QFileSystemModel_Rmdir((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public libqt_string FileName(QModelIndex_Ptr* index)
+	public libqt_string FileName(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_FileName((.)this.ptr, index);
+		return CQt.QFileSystemModel_FileName((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public QIcon_Ptr FileIcon(QModelIndex_Ptr* index)
+	public QIcon_Ptr* FileIcon(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_FileIcon((.)this.ptr, index);
+		return CQt.QFileSystemModel_FileIcon((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void* Permissions(QModelIndex_Ptr* index)
+	public void* Permissions(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_Permissions((.)this.ptr, index);
+		return CQt.QFileSystemModel_Permissions((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public QFileInfo_Ptr FileInfo(QModelIndex_Ptr* index)
+	public QFileInfo_Ptr* FileInfo(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_FileInfo((.)this.ptr, index);
+		return CQt.QFileSystemModel_FileInfo((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public bool Remove(QModelIndex_Ptr* index)
+	public bool Remove(IQModelIndex index)
 	{
-		return CQt.QFileSystemModel_Remove((.)this.ptr, index);
+		return CQt.QFileSystemModel_Remove((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void TimerEvent(QTimerEvent_Ptr* event)
+	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QFileSystemModel_TimerEvent((.)this.ptr, event);
+		CQt.QFileSystemModel_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public bool Event(QEvent_Ptr* event)
+	public bool Event(IQEvent event)
 	{
-		return CQt.QFileSystemModel_Event((.)this.ptr, event);
+		return CQt.QFileSystemModel_Event((.)this.ptr, (.)event?.ObjectPtr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -412,11 +413,11 @@ class QFileSystemModel
 	{
 		return CQt.QFileSystemModel_Tr3(s, c, n);
 	}
-	public QModelIndex_Ptr Index22(libqt_string* path, c_int column)
+	public QModelIndex_Ptr* Index22(String path, c_int column)
 	{
-		return CQt.QFileSystemModel_Index22((.)this.ptr, path, column);
+		return CQt.QFileSystemModel_Index22((.)this.ptr, libqt_string(path), column);
 	}
-	public QVariant_Ptr MyComputer1(c_int role)
+	public QVariant_Ptr* MyComputer1(c_int role)
 	{
 		return CQt.QFileSystemModel_MyComputer1((.)this.ptr, role);
 	}
@@ -428,53 +429,53 @@ class QFileSystemModel
 	{
 		return CQt.QAbstractItemModel_HasIndex((.)this.ptr, row, column);
 	}
-	public bool SetHeaderData(c_int section, Qt_Orientation orientation, QVariant_Ptr* value, c_int role)
+	public bool SetHeaderData(c_int section, Qt_Orientation orientation, IQVariant value, c_int role)
 	{
-		return CQt.QAbstractItemModel_SetHeaderData((.)this.ptr, section, orientation, value, role);
+		return CQt.QAbstractItemModel_SetHeaderData((.)this.ptr, section, orientation, (.)value?.ObjectPtr, role);
 	}
-	public void* ItemData(QModelIndex_Ptr* index)
+	public void* ItemData(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_ItemData((.)this.ptr, index);
+		return CQt.QAbstractItemModel_ItemData((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public bool SetItemData(QModelIndex_Ptr* index, void** roles)
+	public bool SetItemData(IQModelIndex index, void** roles)
 	{
-		return CQt.QAbstractItemModel_SetItemData((.)this.ptr, index, roles);
+		return CQt.QAbstractItemModel_SetItemData((.)this.ptr, (.)index?.ObjectPtr, roles);
 	}
-	public bool ClearItemData(QModelIndex_Ptr* index)
+	public bool ClearItemData(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_ClearItemData((.)this.ptr, index);
+		return CQt.QAbstractItemModel_ClearItemData((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public bool CanDropMimeData(QMimeData_Ptr* data, Qt_DropAction action, c_int row, c_int column, QModelIndex_Ptr* parent)
+	public bool CanDropMimeData(IQMimeData data, Qt_DropAction action, c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_CanDropMimeData((.)this.ptr, data, action, row, column, parent);
+		return CQt.QAbstractItemModel_CanDropMimeData((.)this.ptr, (.)data?.ObjectPtr, action, row, column, (.)parent?.ObjectPtr);
 	}
 	public void* SupportedDragActions()
 	{
 		return CQt.QAbstractItemModel_SupportedDragActions((.)this.ptr);
 	}
-	public bool InsertRows(c_int row, c_int count, QModelIndex_Ptr* parent)
+	public bool InsertRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertRows((.)this.ptr, row, count, parent);
+		return CQt.QAbstractItemModel_InsertRows((.)this.ptr, row, count, (.)parent?.ObjectPtr);
 	}
-	public bool InsertColumns(c_int column, c_int count, QModelIndex_Ptr* parent)
+	public bool InsertColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertColumns((.)this.ptr, column, count, parent);
+		return CQt.QAbstractItemModel_InsertColumns((.)this.ptr, column, count, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveRows(c_int row, c_int count, QModelIndex_Ptr* parent)
+	public bool RemoveRows(c_int row, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveRows((.)this.ptr, row, count, parent);
+		return CQt.QAbstractItemModel_RemoveRows((.)this.ptr, row, count, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveColumns(c_int column, c_int count, QModelIndex_Ptr* parent)
+	public bool RemoveColumns(c_int column, c_int count, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveColumns((.)this.ptr, column, count, parent);
+		return CQt.QAbstractItemModel_RemoveColumns((.)this.ptr, column, count, (.)parent?.ObjectPtr);
 	}
-	public bool MoveRows(QModelIndex_Ptr* sourceParent, c_int sourceRow, c_int count, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveRows(IQModelIndex sourceParent, c_int sourceRow, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveRows((.)this.ptr, sourceParent, sourceRow, count, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveRows((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceRow, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
-	public bool MoveColumns(QModelIndex_Ptr* sourceParent, c_int sourceColumn, c_int count, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveColumns(IQModelIndex sourceParent, c_int sourceColumn, c_int count, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveColumns((.)this.ptr, sourceParent, sourceColumn, count, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveColumns((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceColumn, count, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
 	public bool InsertRow(c_int row)
 	{
@@ -492,37 +493,37 @@ class QFileSystemModel
 	{
 		return CQt.QAbstractItemModel_RemoveColumn((.)this.ptr, column);
 	}
-	public bool MoveRow(QModelIndex_Ptr* sourceParent, c_int sourceRow, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveRow(IQModelIndex sourceParent, c_int sourceRow, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveRow((.)this.ptr, sourceParent, sourceRow, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveRow((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceRow, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
-	public bool MoveColumn(QModelIndex_Ptr* sourceParent, c_int sourceColumn, QModelIndex_Ptr* destinationParent, c_int destinationChild)
+	public bool MoveColumn(IQModelIndex sourceParent, c_int sourceColumn, IQModelIndex destinationParent, c_int destinationChild)
 	{
-		return CQt.QAbstractItemModel_MoveColumn((.)this.ptr, sourceParent, sourceColumn, destinationParent, destinationChild);
+		return CQt.QAbstractItemModel_MoveColumn((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceColumn, (.)destinationParent?.ObjectPtr, destinationChild);
 	}
-	public QModelIndex_Ptr Buddy(QModelIndex_Ptr* index)
+	public QModelIndex_Ptr* Buddy(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_Buddy((.)this.ptr, index);
+		return CQt.QAbstractItemModel_Buddy((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void* Match(QModelIndex_Ptr* start, c_int role, QVariant_Ptr* value, c_int hits, void* flags)
+	public void* Match(IQModelIndex start, c_int role, IQVariant value, c_int hits, void* flags)
 	{
-		return CQt.QAbstractItemModel_Match((.)this.ptr, start, role, value, hits, flags);
+		return CQt.QAbstractItemModel_Match((.)this.ptr, (.)start?.ObjectPtr, role, (.)value?.ObjectPtr, hits, flags);
 	}
-	public QSize_Ptr Span(QModelIndex_Ptr* index)
+	public QSize_Ptr* Span(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_Span((.)this.ptr, index);
+		return CQt.QAbstractItemModel_Span((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public bool CheckIndex(QModelIndex_Ptr* index)
+	public bool CheckIndex(IQModelIndex index)
 	{
-		return CQt.QAbstractItemModel_CheckIndex((.)this.ptr, index);
+		return CQt.QAbstractItemModel_CheckIndex((.)this.ptr, (.)index?.ObjectPtr);
 	}
-	public void MultiData(QModelIndex_Ptr* index, QModelRoleDataSpan_Ptr roleDataSpan)
+	public void MultiData(IQModelIndex index, IQModelRoleDataSpan roleDataSpan)
 	{
-		CQt.QAbstractItemModel_MultiData((.)this.ptr, index, roleDataSpan);
+		CQt.QAbstractItemModel_MultiData((.)this.ptr, (.)index?.ObjectPtr, (.)roleDataSpan?.ObjectPtr);
 	}
-	public void DataChanged(QModelIndex_Ptr* topLeft, QModelIndex_Ptr* bottomRight)
+	public void DataChanged(IQModelIndex topLeft, IQModelIndex bottomRight)
 	{
-		CQt.QAbstractItemModel_DataChanged((.)this.ptr, topLeft, bottomRight);
+		CQt.QAbstractItemModel_DataChanged((.)this.ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
 	}
 	public void HeaderDataChanged(Qt_Orientation orientation, c_int first, c_int last)
 	{
@@ -548,65 +549,65 @@ class QFileSystemModel
 	{
 		CQt.QAbstractItemModel_ResetInternalData((.)this.ptr);
 	}
-	public QModelIndex_Ptr CreateIndex(c_int row, c_int column)
+	public QModelIndex_Ptr* CreateIndex(c_int row, c_int column)
 	{
 		return CQt.QAbstractItemModel_CreateIndex((.)this.ptr, row, column);
 	}
-	public QModelIndex_Ptr CreateIndex2(c_int row, c_int column, void* id)
+	public QModelIndex_Ptr* CreateIndex2(c_int row, c_int column, void* id)
 	{
 		return CQt.QAbstractItemModel_CreateIndex2((.)this.ptr, row, column, id);
 	}
-	public void EncodeData(void** indexes, QDataStream_Ptr* stream)
+	public void EncodeData(void** indexes, IQDataStream stream)
 	{
-		CQt.QAbstractItemModel_EncodeData((.)this.ptr, indexes, stream);
+		CQt.QAbstractItemModel_EncodeData((.)this.ptr, indexes, (.)stream?.ObjectPtr);
 	}
-	public bool DecodeData(c_int row, c_int column, QModelIndex_Ptr* parent, QDataStream_Ptr* stream)
+	public bool DecodeData(c_int row, c_int column, IQModelIndex parent, IQDataStream stream)
 	{
-		return CQt.QAbstractItemModel_DecodeData((.)this.ptr, row, column, parent, stream);
+		return CQt.QAbstractItemModel_DecodeData((.)this.ptr, row, column, (.)parent?.ObjectPtr, (.)stream?.ObjectPtr);
 	}
-	public void BeginInsertRows(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginInsertRows(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginInsertRows((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginInsertRows((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndInsertRows()
 	{
 		CQt.QAbstractItemModel_EndInsertRows((.)this.ptr);
 	}
-	public void BeginRemoveRows(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginRemoveRows(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginRemoveRows((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginRemoveRows((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndRemoveRows()
 	{
 		CQt.QAbstractItemModel_EndRemoveRows((.)this.ptr);
 	}
-	public bool BeginMoveRows(QModelIndex_Ptr* sourceParent, c_int sourceFirst, c_int sourceLast, QModelIndex_Ptr* destinationParent, c_int destinationRow)
+	public bool BeginMoveRows(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationRow)
 	{
-		return CQt.QAbstractItemModel_BeginMoveRows((.)this.ptr, sourceParent, sourceFirst, sourceLast, destinationParent, destinationRow);
+		return CQt.QAbstractItemModel_BeginMoveRows((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationRow);
 	}
 	public void EndMoveRows()
 	{
 		CQt.QAbstractItemModel_EndMoveRows((.)this.ptr);
 	}
-	public void BeginInsertColumns(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginInsertColumns(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginInsertColumns((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginInsertColumns((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndInsertColumns()
 	{
 		CQt.QAbstractItemModel_EndInsertColumns((.)this.ptr);
 	}
-	public void BeginRemoveColumns(QModelIndex_Ptr* parent, c_int first, c_int last)
+	public void BeginRemoveColumns(IQModelIndex parent, c_int first, c_int last)
 	{
-		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.ptr, parent, first, last);
+		CQt.QAbstractItemModel_BeginRemoveColumns((.)this.ptr, (.)parent?.ObjectPtr, first, last);
 	}
 	public void EndRemoveColumns()
 	{
 		CQt.QAbstractItemModel_EndRemoveColumns((.)this.ptr);
 	}
-	public bool BeginMoveColumns(QModelIndex_Ptr* sourceParent, c_int sourceFirst, c_int sourceLast, QModelIndex_Ptr* destinationParent, c_int destinationColumn)
+	public bool BeginMoveColumns(IQModelIndex sourceParent, c_int sourceFirst, c_int sourceLast, IQModelIndex destinationParent, c_int destinationColumn)
 	{
-		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.ptr, sourceParent, sourceFirst, sourceLast, destinationParent, destinationColumn);
+		return CQt.QAbstractItemModel_BeginMoveColumns((.)this.ptr, (.)sourceParent?.ObjectPtr, sourceFirst, sourceLast, (.)destinationParent?.ObjectPtr, destinationColumn);
 	}
 	public void EndMoveColumns()
 	{
@@ -620,9 +621,9 @@ class QFileSystemModel
 	{
 		CQt.QAbstractItemModel_EndResetModel((.)this.ptr);
 	}
-	public void ChangePersistentIndex(QModelIndex_Ptr* from, QModelIndex_Ptr* to)
+	public void ChangePersistentIndex(IQModelIndex from, IQModelIndex to)
 	{
-		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.ptr, from, to);
+		CQt.QAbstractItemModel_ChangePersistentIndex((.)this.ptr, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
 	}
 	public void ChangePersistentIndexList(void** from, void** to)
 	{
@@ -632,33 +633,33 @@ class QFileSystemModel
 	{
 		return CQt.QAbstractItemModel_PersistentIndexList((.)this.ptr);
 	}
-	public bool HasIndex3(c_int row, c_int column, QModelIndex_Ptr* parent)
+	public bool HasIndex3(c_int row, c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_HasIndex3((.)this.ptr, row, column, parent);
+		return CQt.QAbstractItemModel_HasIndex3((.)this.ptr, row, column, (.)parent?.ObjectPtr);
 	}
-	public bool InsertRow2(c_int row, QModelIndex_Ptr* parent)
+	public bool InsertRow2(c_int row, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertRow2((.)this.ptr, row, parent);
+		return CQt.QAbstractItemModel_InsertRow2((.)this.ptr, row, (.)parent?.ObjectPtr);
 	}
-	public bool InsertColumn2(c_int column, QModelIndex_Ptr* parent)
+	public bool InsertColumn2(c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_InsertColumn2((.)this.ptr, column, parent);
+		return CQt.QAbstractItemModel_InsertColumn2((.)this.ptr, column, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveRow2(c_int row, QModelIndex_Ptr* parent)
+	public bool RemoveRow2(c_int row, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveRow2((.)this.ptr, row, parent);
+		return CQt.QAbstractItemModel_RemoveRow2((.)this.ptr, row, (.)parent?.ObjectPtr);
 	}
-	public bool RemoveColumn2(c_int column, QModelIndex_Ptr* parent)
+	public bool RemoveColumn2(c_int column, IQModelIndex parent)
 	{
-		return CQt.QAbstractItemModel_RemoveColumn2((.)this.ptr, column, parent);
+		return CQt.QAbstractItemModel_RemoveColumn2((.)this.ptr, column, (.)parent?.ObjectPtr);
 	}
-	public bool CheckIndex2(QModelIndex_Ptr* index, void* options)
+	public bool CheckIndex2(IQModelIndex index, void* options)
 	{
-		return CQt.QAbstractItemModel_CheckIndex2((.)this.ptr, index, options);
+		return CQt.QAbstractItemModel_CheckIndex2((.)this.ptr, (.)index?.ObjectPtr, options);
 	}
-	public void DataChanged3(QModelIndex_Ptr* topLeft, QModelIndex_Ptr* bottomRight, void** roles)
+	public void DataChanged3(IQModelIndex topLeft, IQModelIndex bottomRight, void** roles)
 	{
-		CQt.QAbstractItemModel_DataChanged3((.)this.ptr, topLeft, bottomRight, roles);
+		CQt.QAbstractItemModel_DataChanged3((.)this.ptr, (.)topLeft?.ObjectPtr, (.)bottomRight?.ObjectPtr, roles);
 	}
 	public void LayoutChanged1(void** parents)
 	{
@@ -676,21 +677,21 @@ class QFileSystemModel
 	{
 		CQt.QAbstractItemModel_LayoutAboutToBeChanged2((.)this.ptr, parents, hint);
 	}
-	public QModelIndex_Ptr CreateIndex3(c_int row, c_int column, void* data)
+	public QModelIndex_Ptr* CreateIndex3(c_int row, c_int column, void* data)
 	{
 		return CQt.QAbstractItemModel_CreateIndex3((.)this.ptr, row, column, data);
 	}
-	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public libqt_string ObjectName()
 	{
 		return CQt.QObject_ObjectName((.)this.ptr);
 	}
-	public void SetObjectName(QAnyStringView_Ptr name)
+	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, name);
+		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
@@ -712,13 +713,13 @@ class QFileSystemModel
 	{
 		return CQt.QObject_BlockSignals((.)this.ptr, b);
 	}
-	public QThread_Ptr* Thread()
+	public QThread_Ptr** Thread()
 	{
 		return CQt.QObject_Thread((.)this.ptr);
 	}
-	public void MoveToThread(QThread_Ptr* thread)
+	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, thread);
+		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
@@ -736,49 +737,49 @@ class QFileSystemModel
 	{
 		return CQt.QObject_Children((.)this.ptr);
 	}
-	public void SetParent(QObject_Ptr* parent)
+	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, parent);
+		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
 	}
-	public void InstallEventFilter(QObject_Ptr* filterObj)
+	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
 	}
-	public void RemoveEventFilter(QObject_Ptr* obj)
+	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect(sender, signal, receiver, member);
+		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2(sender, signal, receiver, method);
+		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
 	}
-	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
 	}
-	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
 	{
-		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
 	}
 	public bool Disconnect3()
 	{
 		return CQt.QObject_Disconnect3((.)this.ptr);
 	}
-	public bool Disconnect4(QObject_Ptr* receiver)
+	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect5(QMetaObject_Connection* param1)
+	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
-		return CQt.QObject_Disconnect5(param1);
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
 	}
 	public void DumpObjectTree()
 	{
@@ -788,11 +789,11 @@ class QFileSystemModel
 	{
 		CQt.QObject_DumpObjectInfo((.)this.ptr);
 	}
-	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr Property(c_char* name)
+	public QVariant_Ptr* Property(c_char* name)
 	{
 		return CQt.QObject_Property((.)this.ptr, name);
 	}
@@ -800,11 +801,11 @@ class QFileSystemModel
 	{
 		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage()
+	public QBindingStorage_Ptr** BindingStorage()
 	{
 		return CQt.QObject_BindingStorage((.)this.ptr);
 	}
-	public QBindingStorage_Ptr* BindingStorage2()
+	public QBindingStorage_Ptr** BindingStorage2()
 	{
 		return CQt.QObject_BindingStorage2((.)this.ptr);
 	}
@@ -820,7 +821,7 @@ class QFileSystemModel
 	{
 		CQt.QObject_DeleteLater((.)this.ptr);
 	}
-	public QObject_Ptr* Sender()
+	public QObject_Ptr** Sender()
 	{
 		return CQt.QObject_Sender((.)this.ptr);
 	}
@@ -832,25 +833,25 @@ class QFileSystemModel
 	{
 		return CQt.QObject_Receivers((.)this.ptr, signal);
 	}
-	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void ChildEvent(QChildEvent_Ptr* event)
+	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, event);
+		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void CustomEvent(QEvent_Ptr* event)
+	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, event);
+		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
 	}
-	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
-	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
@@ -860,106 +861,41 @@ class QFileSystemModel
 	{
 		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
 	}
-	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
 	}
-	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
 	}
-	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
 	}
 	public bool Disconnect1(c_char* signal)
 	{
 		return CQt.QObject_Disconnect1((.)this.ptr, signal);
 	}
-	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
 	}
-	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
-	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
 	}
-	public void Destroyed1(QObject_Ptr* param1)
+	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, param1);
+		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
 	}
 }
-interface IQFileSystemModel
+interface IQFileSystemModel : IQtObjectInterface
 {
-	public QMetaObject* MetaObject();
-	public void* Qt_metacast();
-	public c_int Qt_metacall();
-	public libqt_string Tr();
-	public void RootPathChanged();
-	public void FileRenamed();
-	public void DirectoryLoaded();
-	public QModelIndex Index();
-	public QModelIndex Index2();
-	public QModelIndex Parent();
-	public QModelIndex Sibling();
-	public bool HasChildren();
-	public bool CanFetchMore();
-	public void FetchMore();
-	public c_int RowCount();
-	public c_int ColumnCount();
-	public QVariant MyComputer();
-	public QVariant Data();
-	public bool SetData();
-	public QVariant HeaderData();
-	public void* Flags();
-	public void Sort();
-	public void* MimeTypes();
-	public QMimeData* MimeData();
-	public bool DropMimeData();
-	public void* SupportedDropActions();
-	public void* RoleNames();
-	public QModelIndex SetRootPath();
-	public libqt_string RootPath();
-	public QDir RootDirectory();
-	public void SetIconProvider();
-	public QAbstractFileIconProvider* IconProvider();
-	public void SetFilter();
-	public void* Filter();
-	public void SetResolveSymlinks();
-	public bool ResolveSymlinks();
-	public void SetReadOnly();
-	public bool IsReadOnly();
-	public void SetNameFilterDisables();
-	public bool NameFilterDisables();
-	public void SetNameFilters();
-	public void* NameFilters();
-	public void SetOption();
-	public bool TestOption();
-	public void SetOptions();
-	public void* Options();
-	public libqt_string FilePath();
-	public bool IsDir();
-	public c_longlong Size();
-	public libqt_string Type();
-	public QDateTime LastModified();
-	public QModelIndex Mkdir();
-	public bool Rmdir();
-	public libqt_string FileName();
-	public QIcon FileIcon();
-	public void* Permissions();
-	public QFileInfo FileInfo();
-	public bool Remove();
-	public void TimerEvent();
-	public bool Event();
-	public libqt_string Tr2();
-	public libqt_string Tr3();
-	public QModelIndex Index22();
-	public QVariant MyComputer1();
-	public void SetOption2();
 }
 [AllowDuplicates]
 enum QFileSystemModel_Roles

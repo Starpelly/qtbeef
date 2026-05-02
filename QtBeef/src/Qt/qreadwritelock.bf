@@ -33,9 +33,10 @@ extension CQt
 	[LinkName("QReadWriteLock_Unlock")]
 	public static extern void QReadWriteLock_Unlock(QReadWriteLock_Ptr* self);
 }
-class QReadWriteLock
+class QReadWriteLock : IQReadWriteLock
 {
 	private QReadWriteLock_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QReadWriteLock_new();
@@ -77,15 +78,8 @@ class QReadWriteLock
 		CQt.QReadWriteLock_Unlock((.)this.ptr);
 	}
 }
-interface IQReadWriteLock
+interface IQReadWriteLock : IQtObjectInterface
 {
-	public void LockForRead();
-	public bool TryLockForRead();
-	public bool TryLockForRead2();
-	public void LockForWrite();
-	public bool TryLockForWrite();
-	public bool TryLockForWrite2();
-	public void Unlock();
 }
 // --------------------------------------------------------------
 // QReadLocker
@@ -97,7 +91,7 @@ struct QReadLocker_Ptr: void
 extension CQt
 {
 	[LinkName("QReadLocker_new")]
-	public static extern QReadLocker_Ptr* QReadLocker_new(QReadWriteLock_Ptr* readWriteLock);
+	public static extern QReadLocker_Ptr* QReadLocker_new(QReadWriteLock_Ptr** readWriteLock);
 	[LinkName("QReadLocker_Delete")]
 	public static extern void QReadLocker_Delete(QReadLocker_Ptr* self);
 	[LinkName("QReadLocker_Unlock")]
@@ -105,14 +99,15 @@ extension CQt
 	[LinkName("QReadLocker_Relock")]
 	public static extern void QReadLocker_Relock(QReadLocker_Ptr* self);
 	[LinkName("QReadLocker_ReadWriteLock")]
-	public static extern QReadWriteLock_Ptr* QReadLocker_ReadWriteLock(QReadLocker_Ptr* self);
+	public static extern QReadWriteLock_Ptr** QReadLocker_ReadWriteLock(QReadLocker_Ptr* self);
 }
-class QReadLocker
+class QReadLocker : IQReadLocker
 {
 	private QReadLocker_Ptr* ptr;
-	public this(QReadWriteLock_Ptr* readWriteLock)
+	public void* ObjectPtr => ptr;
+	public this(IQReadWriteLock readWriteLock)
 	{
-		this.ptr = CQt.QReadLocker_new(readWriteLock);
+		this.ptr = CQt.QReadLocker_new((.)readWriteLock?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -126,16 +121,13 @@ class QReadLocker
 	{
 		CQt.QReadLocker_Relock((.)this.ptr);
 	}
-	public QReadWriteLock_Ptr* ReadWriteLock()
+	public QReadWriteLock_Ptr** ReadWriteLock()
 	{
 		return CQt.QReadLocker_ReadWriteLock((.)this.ptr);
 	}
 }
-interface IQReadLocker
+interface IQReadLocker : IQtObjectInterface
 {
-	public void Unlock();
-	public void Relock();
-	public QReadWriteLock* ReadWriteLock();
 }
 // --------------------------------------------------------------
 // QWriteLocker
@@ -147,7 +139,7 @@ struct QWriteLocker_Ptr: void
 extension CQt
 {
 	[LinkName("QWriteLocker_new")]
-	public static extern QWriteLocker_Ptr* QWriteLocker_new(QReadWriteLock_Ptr* readWriteLock);
+	public static extern QWriteLocker_Ptr* QWriteLocker_new(QReadWriteLock_Ptr** readWriteLock);
 	[LinkName("QWriteLocker_Delete")]
 	public static extern void QWriteLocker_Delete(QWriteLocker_Ptr* self);
 	[LinkName("QWriteLocker_Unlock")]
@@ -155,14 +147,15 @@ extension CQt
 	[LinkName("QWriteLocker_Relock")]
 	public static extern void QWriteLocker_Relock(QWriteLocker_Ptr* self);
 	[LinkName("QWriteLocker_ReadWriteLock")]
-	public static extern QReadWriteLock_Ptr* QWriteLocker_ReadWriteLock(QWriteLocker_Ptr* self);
+	public static extern QReadWriteLock_Ptr** QWriteLocker_ReadWriteLock(QWriteLocker_Ptr* self);
 }
-class QWriteLocker
+class QWriteLocker : IQWriteLocker
 {
 	private QWriteLocker_Ptr* ptr;
-	public this(QReadWriteLock_Ptr* readWriteLock)
+	public void* ObjectPtr => ptr;
+	public this(IQReadWriteLock readWriteLock)
 	{
-		this.ptr = CQt.QWriteLocker_new(readWriteLock);
+		this.ptr = CQt.QWriteLocker_new((.)readWriteLock?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -176,16 +169,13 @@ class QWriteLocker
 	{
 		CQt.QWriteLocker_Relock((.)this.ptr);
 	}
-	public QReadWriteLock_Ptr* ReadWriteLock()
+	public QReadWriteLock_Ptr** ReadWriteLock()
 	{
 		return CQt.QWriteLocker_ReadWriteLock((.)this.ptr);
 	}
 }
-interface IQWriteLocker
+interface IQWriteLocker : IQtObjectInterface
 {
-	public void Unlock();
-	public void Relock();
-	public QReadWriteLock* ReadWriteLock();
 }
 [AllowDuplicates]
 enum QReadWriteLock_RecursionMode

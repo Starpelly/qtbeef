@@ -37,18 +37,19 @@ extension CQt
 	[LinkName("QKeyCombination_Key")]
 	public static extern Qt_Key QKeyCombination_Key(QKeyCombination_Ptr* self);
 	[LinkName("QKeyCombination_FromCombined")]
-	public static extern QKeyCombination_Ptr QKeyCombination_FromCombined(c_int combined);
+	public static extern QKeyCombination_Ptr* QKeyCombination_FromCombined(c_int combined);
 	[LinkName("QKeyCombination_ToCombined")]
 	public static extern c_int QKeyCombination_ToCombined(QKeyCombination_Ptr* self);
 	[LinkName("QKeyCombination_ToInt")]
 	public static extern c_int QKeyCombination_ToInt(QKeyCombination_Ptr* self);
 }
-class QKeyCombination
+class QKeyCombination : IQKeyCombination
 {
 	private QKeyCombination_Ptr* ptr;
-	public this(QKeyCombination_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQKeyCombination other)
 	{
-		this.ptr = CQt.QKeyCombination_new(other);
+		this.ptr = CQt.QKeyCombination_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -78,7 +79,7 @@ class QKeyCombination
 	{
 		return CQt.QKeyCombination_Key((.)this.ptr);
 	}
-	public QKeyCombination_Ptr FromCombined(c_int combined)
+	public QKeyCombination_Ptr* FromCombined(c_int combined)
 	{
 		return CQt.QKeyCombination_FromCombined(combined);
 	}
@@ -87,12 +88,8 @@ class QKeyCombination
 		return CQt.QKeyCombination_ToCombined((.)this.ptr);
 	}
 }
-interface IQKeyCombination
+interface IQKeyCombination : IQtObjectInterface
 {
-	public void* KeyboardModifiers();
-	public Qt_Key Key();
-	public QKeyCombination FromCombined();
-	public c_int ToCombined();
 }
 [AllowDuplicates]
 enum Qt_GlobalColor

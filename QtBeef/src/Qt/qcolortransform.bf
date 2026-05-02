@@ -27,28 +27,29 @@ extension CQt
 	[LinkName("QColorTransform_Map")]
 	public static extern c_uint QColorTransform_Map(QColorTransform_Ptr* self, c_uint argb);
 	[LinkName("QColorTransform_Map2")]
-	public static extern QRgba64_Ptr QColorTransform_Map2(QColorTransform_Ptr* self, QRgba64_Ptr rgba64);
+	public static extern QRgba64_Ptr* QColorTransform_Map2(QColorTransform_Ptr* self, QRgba64_Ptr* rgba64);
 	[LinkName("QColorTransform_Map5")]
-	public static extern QColor_Ptr QColorTransform_Map5(QColorTransform_Ptr* self, QColor_Ptr* color);
+	public static extern QColor_Ptr* QColorTransform_Map5(QColorTransform_Ptr* self, QColor_Ptr* color);
 }
-class QColorTransform
+class QColorTransform : IQColorTransform
 {
 	private QColorTransform_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QColorTransform_new();
 	}
-	public this(QColorTransform_Ptr* colorTransform)
+	public this(IQColorTransform colorTransform)
 	{
-		this.ptr = CQt.QColorTransform_new2(colorTransform);
+		this.ptr = CQt.QColorTransform_new2((.)colorTransform?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QColorTransform_Delete(this.ptr);
 	}
-	public void Swap(QColorTransform_Ptr* other)
+	public void Swap(IQColorTransform other)
 	{
-		CQt.QColorTransform_Swap((.)this.ptr, other);
+		CQt.QColorTransform_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsIdentity()
 	{
@@ -58,20 +59,15 @@ class QColorTransform
 	{
 		return CQt.QColorTransform_Map((.)this.ptr, argb);
 	}
-	public QRgba64_Ptr Map2(QRgba64_Ptr rgba64)
+	public QRgba64_Ptr* Map2(IQRgba64 rgba64)
 	{
-		return CQt.QColorTransform_Map2((.)this.ptr, rgba64);
+		return CQt.QColorTransform_Map2((.)this.ptr, (.)rgba64?.ObjectPtr);
 	}
-	public QColor_Ptr Map5(QColor_Ptr* color)
+	public QColor_Ptr* Map5(IQColor color)
 	{
-		return CQt.QColorTransform_Map5((.)this.ptr, color);
+		return CQt.QColorTransform_Map5((.)this.ptr, (.)color?.ObjectPtr);
 	}
 }
-interface IQColorTransform
+interface IQColorTransform : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsIdentity();
-	public c_uint Map();
-	public QRgba64 Map2();
-	public QColor Map5();
 }

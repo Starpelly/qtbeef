@@ -15,15 +15,15 @@ extension CQt
 	[LinkName("QDataStream_new")]
 	public static extern QDataStream_Ptr* QDataStream_new();
 	[LinkName("QDataStream_new2")]
-	public static extern QDataStream_Ptr* QDataStream_new2(QIODevice_Ptr* param1);
+	public static extern QDataStream_Ptr* QDataStream_new2(QIODevice_Ptr** param1);
 	[LinkName("QDataStream_new3")]
 	public static extern QDataStream_Ptr* QDataStream_new3(void** param1);
 	[LinkName("QDataStream_Delete")]
 	public static extern void QDataStream_Delete(QDataStream_Ptr* self);
 	[LinkName("QDataStream_Device")]
-	public static extern QIODevice_Ptr* QDataStream_Device(QDataStream_Ptr* self);
+	public static extern QIODevice_Ptr** QDataStream_Device(QDataStream_Ptr* self);
 	[LinkName("QDataStream_SetDevice")]
-	public static extern void QDataStream_SetDevice(QDataStream_Ptr* self, QIODevice_Ptr* device);
+	public static extern void QDataStream_SetDevice(QDataStream_Ptr* self, QIODevice_Ptr** device);
 	[LinkName("QDataStream_AtEnd")]
 	public static extern bool QDataStream_AtEnd(QDataStream_Ptr* self);
 	[LinkName("QDataStream_Status")]
@@ -117,16 +117,17 @@ extension CQt
 	[LinkName("QDataStream_IsDeviceTransactionStarted")]
 	public static extern bool QDataStream_IsDeviceTransactionStarted(QDataStream_Ptr* self);
 }
-class QDataStream
+class QDataStream : IQDataStream, IQIODeviceBase
 {
 	private QDataStream_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QDataStream_new();
 	}
-	public this(QIODevice_Ptr* param1)
+	public this(IQIODevice param1)
 	{
-		this.ptr = CQt.QDataStream_new2(param1);
+		this.ptr = CQt.QDataStream_new2((.)param1?.ObjectPtr);
 	}
 	public this(void** param1)
 	{
@@ -136,13 +137,13 @@ class QDataStream
 	{
 		CQt.QDataStream_Delete(this.ptr);
 	}
-	public QIODevice_Ptr* Device()
+	public QIODevice_Ptr** Device()
 	{
 		return CQt.QDataStream_Device((.)this.ptr);
 	}
-	public void SetDevice(QIODevice_Ptr* device)
+	public void SetDevice(IQIODevice device)
 	{
-		CQt.QDataStream_SetDevice((.)this.ptr, device);
+		CQt.QDataStream_SetDevice((.)this.ptr, (.)device?.ObjectPtr);
 	}
 	public bool AtEnd()
 	{
@@ -321,54 +322,8 @@ class QDataStream
 		return CQt.QDataStream_IsDeviceTransactionStarted((.)this.ptr);
 	}
 }
-interface IQDataStream
+interface IQDataStream : IQtObjectInterface
 {
-	public QIODevice* Device();
-	public void SetDevice();
-	public bool AtEnd();
-	public QDataStream_Status Status();
-	public void SetStatus();
-	public void ResetStatus();
-	public QDataStream_FloatingPointPrecision FloatingPointPrecision();
-	public void SetFloatingPointPrecision();
-	public QDataStream_ByteOrder ByteOrder();
-	public void SetByteOrder();
-	public c_int Version();
-	public void SetVersion();
-	public void OperatorShiftRight2();
-	public void OperatorShiftRight3();
-	public void OperatorShiftRight4();
-	public void OperatorShiftRight5();
-	public void OperatorShiftRight6();
-	public void OperatorShiftRight7();
-	public void OperatorShiftRight8();
-	public void OperatorShiftRight9();
-	public void OperatorShiftRight11();
-	public void OperatorShiftRight12();
-	public void OperatorShiftRight13();
-	public void OperatorShiftRight14();
-	public void OperatorShiftLeft2();
-	public void OperatorShiftLeft3();
-	public void OperatorShiftLeft4();
-	public void OperatorShiftLeft5();
-	public void OperatorShiftLeft6();
-	public void OperatorShiftLeft7();
-	public void OperatorShiftLeft8();
-	public void OperatorShiftLeft9();
-	public void OperatorShiftLeft11();
-	public void OperatorShiftLeft12();
-	public void OperatorShiftLeft13();
-	public void OperatorShiftLeft14();
-	public QDataStream* ReadBytes();
-	public c_int ReadRawData();
-	public void WriteBytes();
-	public c_int WriteRawData();
-	public c_int SkipRawData();
-	public void StartTransaction();
-	public bool CommitTransaction();
-	public void RollbackTransaction();
-	public void AbortTransaction();
-	public bool IsDeviceTransactionStarted();
 }
 [AllowDuplicates]
 enum QDataStream_Version

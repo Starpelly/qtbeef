@@ -19,15 +19,16 @@ extension CQt
 	[LinkName("QRunnable_Run")]
 	public static extern void QRunnable_Run(QRunnable_Ptr* self);
 	[LinkName("QRunnable_Create")]
-	public static extern QRunnable_Ptr* QRunnable_Create(void* functionToRun);
+	public static extern QRunnable_Ptr** QRunnable_Create(void* functionToRun);
 	[LinkName("QRunnable_AutoDelete")]
 	public static extern bool QRunnable_AutoDelete(QRunnable_Ptr* self);
 	[LinkName("QRunnable_SetAutoDelete")]
 	public static extern void QRunnable_SetAutoDelete(QRunnable_Ptr* self, bool autoDelete);
 }
-class QRunnable
+class QRunnable : IQRunnable
 {
 	private QRunnable_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRunnable_new();
@@ -40,7 +41,7 @@ class QRunnable
 	{
 		CQt.QRunnable_Run((.)this.ptr);
 	}
-	public QRunnable_Ptr* Create(void* functionToRun)
+	public QRunnable_Ptr** Create(void* functionToRun)
 	{
 		return CQt.QRunnable_Create(functionToRun);
 	}
@@ -53,10 +54,6 @@ class QRunnable
 		CQt.QRunnable_SetAutoDelete((.)this.ptr, autoDelete);
 	}
 }
-interface IQRunnable
+interface IQRunnable : IQtObjectInterface
 {
-	public void Run();
-	public QRunnable* Create();
-	public bool AutoDelete();
-	public void SetAutoDelete();
 }

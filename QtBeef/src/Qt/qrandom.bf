@@ -71,17 +71,18 @@ extension CQt
 	[LinkName("QRandomGenerator_Max")]
 	public static extern c_uint QRandomGenerator_Max();
 	[LinkName("QRandomGenerator_System")]
-	public static extern QRandomGenerator_Ptr* QRandomGenerator_System();
+	public static extern QRandomGenerator_Ptr** QRandomGenerator_System();
 	[LinkName("QRandomGenerator_Global")]
-	public static extern QRandomGenerator_Ptr* QRandomGenerator_Global();
+	public static extern QRandomGenerator_Ptr** QRandomGenerator_Global();
 	[LinkName("QRandomGenerator_SecurelySeeded")]
-	public static extern QRandomGenerator_Ptr QRandomGenerator_SecurelySeeded();
+	public static extern QRandomGenerator_Ptr* QRandomGenerator_SecurelySeeded();
 	[LinkName("QRandomGenerator_Seed1")]
 	public static extern void QRandomGenerator_Seed1(QRandomGenerator_Ptr* self, c_uint s);
 }
-class QRandomGenerator
+class QRandomGenerator : IQRandomGenerator
 {
 	private QRandomGenerator_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRandomGenerator_new();
@@ -94,9 +95,9 @@ class QRandomGenerator
 	{
 		this.ptr = CQt.QRandomGenerator_new3(begin, end);
 	}
-	public this(QRandomGenerator_Ptr* other)
+	public this(IQRandomGenerator other)
 	{
-		this.ptr = CQt.QRandomGenerator_new4(other);
+		this.ptr = CQt.QRandomGenerator_new4((.)other?.ObjectPtr);
 	}
 	public this(c_uint seedValue)
 	{
@@ -190,15 +191,15 @@ class QRandomGenerator
 	{
 		return CQt.QRandomGenerator_Max();
 	}
-	public QRandomGenerator_Ptr* System()
+	public QRandomGenerator_Ptr** System()
 	{
 		return CQt.QRandomGenerator_System();
 	}
-	public QRandomGenerator_Ptr* Global()
+	public QRandomGenerator_Ptr** Global()
 	{
 		return CQt.QRandomGenerator_Global();
 	}
-	public QRandomGenerator_Ptr SecurelySeeded()
+	public QRandomGenerator_Ptr* SecurelySeeded()
 	{
 		return CQt.QRandomGenerator_SecurelySeeded();
 	}
@@ -207,33 +208,8 @@ class QRandomGenerator
 		CQt.QRandomGenerator_Seed1((.)this.ptr, s);
 	}
 }
-interface IQRandomGenerator
+interface IQRandomGenerator : IQtObjectInterface
 {
-	public c_uint Generate();
-	public c_ulonglong Generate64();
-	public double GenerateDouble();
-	public double Bounded();
-	public c_uint Bounded2();
-	public c_uint Bounded3();
-	public c_int Bounded4();
-	public c_int Bounded5();
-	public c_ulonglong Bounded6();
-	public c_ulonglong Bounded7();
-	public c_longlong Bounded8();
-	public c_longlong Bounded9();
-	public c_longlong Bounded10();
-	public c_longlong Bounded11();
-	public c_ulonglong Bounded12();
-	public c_ulonglong Bounded13();
-	public void Generate2();
-	public void Seed();
-	public void Discard();
-	public c_uint Min();
-	public c_uint Max();
-	public QRandomGenerator* System();
-	public QRandomGenerator* Global();
-	public QRandomGenerator SecurelySeeded();
-	public void Seed1();
 }
 // --------------------------------------------------------------
 // QRandomGenerator64
@@ -269,17 +245,18 @@ extension CQt
 	[LinkName("QRandomGenerator64_Max")]
 	public static extern c_ulonglong QRandomGenerator64_Max();
 	[LinkName("QRandomGenerator64_System")]
-	public static extern QRandomGenerator64_Ptr* QRandomGenerator64_System();
+	public static extern QRandomGenerator64_Ptr** QRandomGenerator64_System();
 	[LinkName("QRandomGenerator64_Global")]
-	public static extern QRandomGenerator64_Ptr* QRandomGenerator64_Global();
+	public static extern QRandomGenerator64_Ptr** QRandomGenerator64_Global();
 	[LinkName("QRandomGenerator64_SecurelySeeded")]
-	public static extern QRandomGenerator64_Ptr QRandomGenerator64_SecurelySeeded();
+	public static extern QRandomGenerator64_Ptr* QRandomGenerator64_SecurelySeeded();
 	[LinkName("QRandomGenerator64_OperatorAssign")]
 	public static extern void QRandomGenerator64_OperatorAssign(QRandomGenerator64_Ptr* self, QRandomGenerator64_Ptr* param1);
 }
-class QRandomGenerator64
+class QRandomGenerator64 : IQRandomGenerator64, IQRandomGenerator
 {
 	private QRandomGenerator64_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRandomGenerator64_new();
@@ -292,13 +269,13 @@ class QRandomGenerator64
 	{
 		this.ptr = CQt.QRandomGenerator64_new3(begin, end);
 	}
-	public this(QRandomGenerator_Ptr* other)
+	public this(IQRandomGenerator other)
 	{
-		this.ptr = CQt.QRandomGenerator64_new4(other);
+		this.ptr = CQt.QRandomGenerator64_new4((.)other?.ObjectPtr);
 	}
-	public this(QRandomGenerator64_Ptr* param1)
+	public this(IQRandomGenerator64 param1)
 	{
-		this.ptr = CQt.QRandomGenerator64_new5(param1);
+		this.ptr = CQt.QRandomGenerator64_new5((.)param1?.ObjectPtr);
 	}
 	public this(c_uint seedValue)
 	{
@@ -324,15 +301,15 @@ class QRandomGenerator64
 	{
 		return CQt.QRandomGenerator64_Max();
 	}
-	public QRandomGenerator64_Ptr* System()
+	public QRandomGenerator64_Ptr** System()
 	{
 		return CQt.QRandomGenerator64_System();
 	}
-	public QRandomGenerator64_Ptr* Global()
+	public QRandomGenerator64_Ptr** Global()
 	{
 		return CQt.QRandomGenerator64_Global();
 	}
-	public QRandomGenerator64_Ptr SecurelySeeded()
+	public QRandomGenerator64_Ptr* SecurelySeeded()
 	{
 		return CQt.QRandomGenerator64_SecurelySeeded();
 	}
@@ -409,13 +386,6 @@ class QRandomGenerator64
 		CQt.QRandomGenerator_Seed1((.)this.ptr, s);
 	}
 }
-interface IQRandomGenerator64
+interface IQRandomGenerator64 : IQtObjectInterface
 {
-	public c_ulonglong Generate();
-	public void Discard();
-	public c_ulonglong Min();
-	public c_ulonglong Max();
-	public QRandomGenerator64* System();
-	public QRandomGenerator64* Global();
-	public QRandomGenerator64 SecurelySeeded();
 }

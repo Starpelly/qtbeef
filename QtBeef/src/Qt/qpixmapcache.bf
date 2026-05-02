@@ -23,28 +23,29 @@ extension CQt
 	[LinkName("QPixmapCache_SetCacheLimit")]
 	public static extern void QPixmapCache_SetCacheLimit(c_int cacheLimit);
 	[LinkName("QPixmapCache_Find")]
-	public static extern bool QPixmapCache_Find(libqt_string* key, QPixmap_Ptr* pixmap);
+	public static extern bool QPixmapCache_Find(libqt_string key, QPixmap_Ptr** pixmap);
 	[LinkName("QPixmapCache_Find2")]
-	public static extern bool QPixmapCache_Find2(QPixmapCache_Key* key, QPixmap_Ptr* pixmap);
+	public static extern bool QPixmapCache_Find2(QPixmapCache_Key_Ptr* key, QPixmap_Ptr** pixmap);
 	[LinkName("QPixmapCache_Insert")]
-	public static extern bool QPixmapCache_Insert(libqt_string* key, QPixmap_Ptr* pixmap);
+	public static extern bool QPixmapCache_Insert(libqt_string key, QPixmap_Ptr* pixmap);
 	[LinkName("QPixmapCache_Insert2")]
-	public static extern QPixmapCache_Key QPixmapCache_Insert2(QPixmap_Ptr* pixmap);
+	public static extern QPixmapCache_Key_Ptr* QPixmapCache_Insert2(QPixmap_Ptr* pixmap);
 	[LinkName("QPixmapCache_Replace")]
-	public static extern bool QPixmapCache_Replace(QPixmapCache_Key* key, QPixmap_Ptr* pixmap);
+	public static extern bool QPixmapCache_Replace(QPixmapCache_Key_Ptr* key, QPixmap_Ptr* pixmap);
 	[LinkName("QPixmapCache_Remove")]
-	public static extern void QPixmapCache_Remove(libqt_string* key);
+	public static extern void QPixmapCache_Remove(libqt_string key);
 	[LinkName("QPixmapCache_Remove2")]
-	public static extern void QPixmapCache_Remove2(QPixmapCache_Key* key);
+	public static extern void QPixmapCache_Remove2(QPixmapCache_Key_Ptr* key);
 	[LinkName("QPixmapCache_Clear")]
 	public static extern void QPixmapCache_Clear();
 }
-class QPixmapCache
+class QPixmapCache : IQPixmapCache
 {
 	private QPixmapCache_Ptr* ptr;
-	public this(QPixmapCache_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQPixmapCache other)
 	{
-		this.ptr = CQt.QPixmapCache_new(other);
+		this.ptr = CQt.QPixmapCache_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -58,51 +59,41 @@ class QPixmapCache
 	{
 		CQt.QPixmapCache_SetCacheLimit(cacheLimit);
 	}
-	public bool Find(libqt_string* key, QPixmap_Ptr* pixmap)
+	public bool Find(String key, IQPixmap pixmap)
 	{
-		return CQt.QPixmapCache_Find(key, pixmap);
+		return CQt.QPixmapCache_Find(libqt_string(key), (.)pixmap?.ObjectPtr);
 	}
-	public bool Find2(QPixmapCache_Key* key, QPixmap_Ptr* pixmap)
+	public bool Find2(IQPixmapCache_Key key, IQPixmap pixmap)
 	{
-		return CQt.QPixmapCache_Find2(key, pixmap);
+		return CQt.QPixmapCache_Find2((.)key?.ObjectPtr, (.)pixmap?.ObjectPtr);
 	}
-	public bool Insert(libqt_string* key, QPixmap_Ptr* pixmap)
+	public bool Insert(String key, IQPixmap pixmap)
 	{
-		return CQt.QPixmapCache_Insert(key, pixmap);
+		return CQt.QPixmapCache_Insert(libqt_string(key), (.)pixmap?.ObjectPtr);
 	}
-	public QPixmapCache_Key Insert2(QPixmap_Ptr* pixmap)
+	public QPixmapCache_Key_Ptr* Insert2(IQPixmap pixmap)
 	{
-		return CQt.QPixmapCache_Insert2(pixmap);
+		return CQt.QPixmapCache_Insert2((.)pixmap?.ObjectPtr);
 	}
-	public bool Replace(QPixmapCache_Key* key, QPixmap_Ptr* pixmap)
+	public bool Replace(IQPixmapCache_Key key, IQPixmap pixmap)
 	{
-		return CQt.QPixmapCache_Replace(key, pixmap);
+		return CQt.QPixmapCache_Replace((.)key?.ObjectPtr, (.)pixmap?.ObjectPtr);
 	}
-	public void Remove(libqt_string* key)
+	public void Remove(String key)
 	{
-		CQt.QPixmapCache_Remove(key);
+		CQt.QPixmapCache_Remove(libqt_string(key));
 	}
-	public void Remove2(QPixmapCache_Key* key)
+	public void Remove2(IQPixmapCache_Key key)
 	{
-		CQt.QPixmapCache_Remove2(key);
+		CQt.QPixmapCache_Remove2((.)key?.ObjectPtr);
 	}
 	public void Clear()
 	{
 		CQt.QPixmapCache_Clear();
 	}
 }
-interface IQPixmapCache
+interface IQPixmapCache : IQtObjectInterface
 {
-	public c_int CacheLimit();
-	public void SetCacheLimit();
-	public bool Find();
-	public bool Find2();
-	public bool Insert();
-	public QPixmapCache_Key Insert2();
-	public bool Replace();
-	public void Remove();
-	public void Remove2();
-	public void Clear();
 }
 // --------------------------------------------------------------
 // QPixmapCache::Key
@@ -116,46 +107,45 @@ extension CQt
 	[LinkName("QPixmapCache_Key_new")]
 	public static extern QPixmapCache_Key_Ptr* QPixmapCache_Key_new();
 	[LinkName("QPixmapCache_Key_new2")]
-	public static extern QPixmapCache_Key_Ptr* QPixmapCache_Key_new2(QPixmapCache_Key* other);
+	public static extern QPixmapCache_Key_Ptr* QPixmapCache_Key_new2(QPixmapCache_Key_Ptr* other);
 	[LinkName("QPixmapCache_Key_Delete")]
 	public static extern void QPixmapCache_Key_Delete(QPixmapCache_Key_Ptr* self);
 	[LinkName("QPixmapCache_Key_OperatorEqual")]
-	public static extern bool QPixmapCache_Key_OperatorEqual(QPixmapCache_Key_Ptr* self, QPixmapCache_Key* key);
+	public static extern bool QPixmapCache_Key_OperatorEqual(QPixmapCache_Key_Ptr* self, QPixmapCache_Key_Ptr* key);
 	[LinkName("QPixmapCache_Key_OperatorNotEqual")]
-	public static extern bool QPixmapCache_Key_OperatorNotEqual(QPixmapCache_Key_Ptr* self, QPixmapCache_Key* key);
+	public static extern bool QPixmapCache_Key_OperatorNotEqual(QPixmapCache_Key_Ptr* self, QPixmapCache_Key_Ptr* key);
 	[LinkName("QPixmapCache_Key_OperatorAssign")]
-	public static extern void QPixmapCache_Key_OperatorAssign(QPixmapCache_Key_Ptr* self, QPixmapCache_Key* other);
+	public static extern void QPixmapCache_Key_OperatorAssign(QPixmapCache_Key_Ptr* self, QPixmapCache_Key_Ptr* other);
 	[LinkName("QPixmapCache_Key_Swap")]
-	public static extern void QPixmapCache_Key_Swap(QPixmapCache_Key_Ptr* self, QPixmapCache_Key* other);
+	public static extern void QPixmapCache_Key_Swap(QPixmapCache_Key_Ptr* self, QPixmapCache_Key_Ptr* other);
 	[LinkName("QPixmapCache_Key_IsValid")]
 	public static extern bool QPixmapCache_Key_IsValid(QPixmapCache_Key_Ptr* self);
 }
-class QPixmapCache_Key
+class QPixmapCache_Key : IQPixmapCache_Key
 {
 	private QPixmapCache_Key_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QPixmapCache_Key_new();
 	}
-	public this(QPixmapCache_Key* other)
+	public this(IQPixmapCache_Key other)
 	{
-		this.ptr = CQt.QPixmapCache_Key_new2(other);
+		this.ptr = CQt.QPixmapCache_Key_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QPixmapCache_Key_Delete(this.ptr);
 	}
-	public void Swap(QPixmapCache_Key* other)
+	public void Swap(IQPixmapCache_Key other)
 	{
-		CQt.QPixmapCache_Key_Swap((.)this.ptr, other);
+		CQt.QPixmapCache_Key_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
 		return CQt.QPixmapCache_Key_IsValid((.)this.ptr);
 	}
 }
-interface IQPixmapCache_Key
+interface IQPixmapCache_Key : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsValid();
 }

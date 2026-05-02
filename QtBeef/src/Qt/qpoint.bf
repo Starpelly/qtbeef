@@ -37,7 +37,7 @@ extension CQt
 	[LinkName("QPoint_ManhattanLength")]
 	public static extern c_int QPoint_ManhattanLength(QPoint_Ptr* self);
 	[LinkName("QPoint_Transposed")]
-	public static extern QPoint_Ptr QPoint_Transposed(QPoint_Ptr* self);
+	public static extern QPoint_Ptr* QPoint_Transposed(QPoint_Ptr* self);
 	[LinkName("QPoint_Rx")]
 	public static extern c_int* QPoint_Rx(QPoint_Ptr* self);
 	[LinkName("QPoint_Ry")]
@@ -57,14 +57,15 @@ extension CQt
 	[LinkName("QPoint_DotProduct")]
 	public static extern c_int QPoint_DotProduct(QPoint_Ptr* p1, QPoint_Ptr* p2);
 	[LinkName("QPoint_ToPointF")]
-	public static extern QPointF_Ptr QPoint_ToPointF(QPoint_Ptr* self);
+	public static extern QPointF_Ptr* QPoint_ToPointF(QPoint_Ptr* self);
 }
-class QPoint
+class QPoint : IQPoint
 {
 	private QPoint_Ptr* ptr;
-	public this(QPoint_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQPoint other)
 	{
-		this.ptr = CQt.QPoint_new(other);
+		this.ptr = CQt.QPoint_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -102,7 +103,7 @@ class QPoint
 	{
 		return CQt.QPoint_ManhattanLength((.)this.ptr);
 	}
-	public QPoint_Ptr Transposed()
+	public QPoint_Ptr* Transposed()
 	{
 		return CQt.QPoint_Transposed((.)this.ptr);
 	}
@@ -122,30 +123,17 @@ class QPoint
 	{
 		return CQt.QPoint_OperatorMultiplyAssign3((.)this.ptr, factor);
 	}
-	public c_int DotProduct(QPoint_Ptr* p1, QPoint_Ptr* p2)
+	public c_int DotProduct(IQPoint p1, IQPoint p2)
 	{
-		return CQt.QPoint_DotProduct(p1, p2);
+		return CQt.QPoint_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
 	}
-	public QPointF_Ptr ToPointF()
+	public QPointF_Ptr* ToPointF()
 	{
 		return CQt.QPoint_ToPointF((.)this.ptr);
 	}
 }
-interface IQPoint
+interface IQPoint : IQtObjectInterface
 {
-	public bool IsNull();
-	public c_int X();
-	public c_int Y();
-	public void SetX();
-	public void SetY();
-	public c_int ManhattanLength();
-	public QPoint Transposed();
-	public c_int* Rx();
-	public c_int* Ry();
-	public QPoint* OperatorMultiplyAssign2();
-	public QPoint* OperatorMultiplyAssign3();
-	public c_int DotProduct();
-	public QPointF ToPointF();
 }
 // --------------------------------------------------------------
 // QPointF
@@ -183,7 +171,7 @@ extension CQt
 	[LinkName("QPointF_SetY")]
 	public static extern void QPointF_SetY(QPointF_Ptr* self, double y);
 	[LinkName("QPointF_Transposed")]
-	public static extern QPointF_Ptr QPointF_Transposed(QPointF_Ptr* self);
+	public static extern QPointF_Ptr* QPointF_Transposed(QPointF_Ptr* self);
 	[LinkName("QPointF_Rx")]
 	public static extern double* QPointF_Rx(QPointF_Ptr* self);
 	[LinkName("QPointF_Ry")]
@@ -199,22 +187,23 @@ extension CQt
 	[LinkName("QPointF_DotProduct")]
 	public static extern double QPointF_DotProduct(QPointF_Ptr* p1, QPointF_Ptr* p2);
 	[LinkName("QPointF_ToPoint")]
-	public static extern QPoint_Ptr QPointF_ToPoint(QPointF_Ptr* self);
+	public static extern QPoint_Ptr* QPointF_ToPoint(QPointF_Ptr* self);
 }
-class QPointF
+class QPointF : IQPointF
 {
 	private QPointF_Ptr* ptr;
-	public this(QPointF_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQPointF other)
 	{
-		this.ptr = CQt.QPointF_new(other);
+		this.ptr = CQt.QPointF_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPointF_new3();
 	}
-	public this(QPoint_Ptr* p)
+	public this(IQPoint p)
 	{
-		this.ptr = CQt.QPointF_new4(p);
+		this.ptr = CQt.QPointF_new4((.)p?.ObjectPtr);
 	}
 	public this(double xpos, double ypos)
 	{
@@ -248,7 +237,7 @@ class QPointF
 	{
 		CQt.QPointF_SetY((.)this.ptr, y);
 	}
-	public QPointF_Ptr Transposed()
+	public QPointF_Ptr* Transposed()
 	{
 		return CQt.QPointF_Transposed((.)this.ptr);
 	}
@@ -260,26 +249,15 @@ class QPointF
 	{
 		return CQt.QPointF_Ry((.)this.ptr);
 	}
-	public double DotProduct(QPointF_Ptr* p1, QPointF_Ptr* p2)
+	public double DotProduct(IQPointF p1, IQPointF p2)
 	{
-		return CQt.QPointF_DotProduct(p1, p2);
+		return CQt.QPointF_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
 	}
-	public QPoint_Ptr ToPoint()
+	public QPoint_Ptr* ToPoint()
 	{
 		return CQt.QPointF_ToPoint((.)this.ptr);
 	}
 }
-interface IQPointF
+interface IQPointF : IQtObjectInterface
 {
-	public double ManhattanLength();
-	public bool IsNull();
-	public double X();
-	public double Y();
-	public void SetX();
-	public void SetY();
-	public QPointF Transposed();
-	public double* Rx();
-	public double* Ry();
-	public double DotProduct();
-	public QPoint ToPoint();
 }

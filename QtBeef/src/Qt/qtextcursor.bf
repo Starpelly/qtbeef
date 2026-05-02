@@ -15,9 +15,9 @@ extension CQt
 	[LinkName("QTextCursor_new")]
 	public static extern QTextCursor_Ptr* QTextCursor_new();
 	[LinkName("QTextCursor_new2")]
-	public static extern QTextCursor_Ptr* QTextCursor_new2(QTextDocument_Ptr* document);
+	public static extern QTextCursor_Ptr* QTextCursor_new2(QTextDocument_Ptr** document);
 	[LinkName("QTextCursor_new3")]
-	public static extern QTextCursor_Ptr* QTextCursor_new3(QTextFrame_Ptr* frame);
+	public static extern QTextCursor_Ptr* QTextCursor_new3(QTextFrame_Ptr** frame);
 	[LinkName("QTextCursor_new4")]
 	public static extern QTextCursor_Ptr* QTextCursor_new4(QTextBlock_Ptr* block);
 	[LinkName("QTextCursor_new5")]
@@ -39,9 +39,9 @@ extension CQt
 	[LinkName("QTextCursor_Anchor")]
 	public static extern c_int QTextCursor_Anchor(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_InsertText")]
-	public static extern void QTextCursor_InsertText(QTextCursor_Ptr* self, libqt_string* text);
+	public static extern void QTextCursor_InsertText(QTextCursor_Ptr* self, libqt_string text);
 	[LinkName("QTextCursor_InsertText2")]
-	public static extern void QTextCursor_InsertText2(QTextCursor_Ptr* self, libqt_string* text, QTextCharFormat_Ptr* format);
+	public static extern void QTextCursor_InsertText2(QTextCursor_Ptr* self, libqt_string text, QTextCharFormat_Ptr* format);
 	[LinkName("QTextCursor_MovePosition")]
 	public static extern bool QTextCursor_MovePosition(QTextCursor_Ptr* self, QTextCursor_MoveOperation op);
 	[LinkName("QTextCursor_VisualNavigation")]
@@ -77,25 +77,25 @@ extension CQt
 	[LinkName("QTextCursor_SelectedText")]
 	public static extern libqt_string QTextCursor_SelectedText(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_Selection")]
-	public static extern QTextDocumentFragment_Ptr QTextCursor_Selection(QTextCursor_Ptr* self);
+	public static extern QTextDocumentFragment_Ptr* QTextCursor_Selection(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_SelectedTableCells")]
 	public static extern void QTextCursor_SelectedTableCells(QTextCursor_Ptr* self, c_int* firstRow, c_int* numRows, c_int* firstColumn, c_int* numColumns);
 	[LinkName("QTextCursor_Block")]
-	public static extern QTextBlock_Ptr QTextCursor_Block(QTextCursor_Ptr* self);
+	public static extern QTextBlock_Ptr* QTextCursor_Block(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_CharFormat")]
-	public static extern QTextCharFormat_Ptr QTextCursor_CharFormat(QTextCursor_Ptr* self);
+	public static extern QTextCharFormat_Ptr* QTextCursor_CharFormat(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_SetCharFormat")]
 	public static extern void QTextCursor_SetCharFormat(QTextCursor_Ptr* self, QTextCharFormat_Ptr* format);
 	[LinkName("QTextCursor_MergeCharFormat")]
 	public static extern void QTextCursor_MergeCharFormat(QTextCursor_Ptr* self, QTextCharFormat_Ptr* modifier);
 	[LinkName("QTextCursor_BlockFormat")]
-	public static extern QTextBlockFormat_Ptr QTextCursor_BlockFormat(QTextCursor_Ptr* self);
+	public static extern QTextBlockFormat_Ptr* QTextCursor_BlockFormat(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_SetBlockFormat")]
 	public static extern void QTextCursor_SetBlockFormat(QTextCursor_Ptr* self, QTextBlockFormat_Ptr* format);
 	[LinkName("QTextCursor_MergeBlockFormat")]
 	public static extern void QTextCursor_MergeBlockFormat(QTextCursor_Ptr* self, QTextBlockFormat_Ptr* modifier);
 	[LinkName("QTextCursor_BlockCharFormat")]
-	public static extern QTextCharFormat_Ptr QTextCursor_BlockCharFormat(QTextCursor_Ptr* self);
+	public static extern QTextCharFormat_Ptr* QTextCursor_BlockCharFormat(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_SetBlockCharFormat")]
 	public static extern void QTextCursor_SetBlockCharFormat(QTextCursor_Ptr* self, QTextCharFormat_Ptr* format);
 	[LinkName("QTextCursor_MergeBlockCharFormat")]
@@ -115,37 +115,37 @@ extension CQt
 	[LinkName("QTextCursor_InsertBlock3")]
 	public static extern void QTextCursor_InsertBlock3(QTextCursor_Ptr* self, QTextBlockFormat_Ptr* format, QTextCharFormat_Ptr* charFormat);
 	[LinkName("QTextCursor_InsertList")]
-	public static extern QTextList_Ptr* QTextCursor_InsertList(QTextCursor_Ptr* self, QTextListFormat_Ptr* format);
+	public static extern QTextList_Ptr** QTextCursor_InsertList(QTextCursor_Ptr* self, QTextListFormat_Ptr* format);
 	[LinkName("QTextCursor_InsertList2")]
-	public static extern QTextList_Ptr* QTextCursor_InsertList2(QTextCursor_Ptr* self, QTextListFormat_Style style);
+	public static extern QTextList_Ptr** QTextCursor_InsertList2(QTextCursor_Ptr* self, QTextListFormat_Style style);
 	[LinkName("QTextCursor_CreateList")]
-	public static extern QTextList_Ptr* QTextCursor_CreateList(QTextCursor_Ptr* self, QTextListFormat_Ptr* format);
+	public static extern QTextList_Ptr** QTextCursor_CreateList(QTextCursor_Ptr* self, QTextListFormat_Ptr* format);
 	[LinkName("QTextCursor_CreateList2")]
-	public static extern QTextList_Ptr* QTextCursor_CreateList2(QTextCursor_Ptr* self, QTextListFormat_Style style);
+	public static extern QTextList_Ptr** QTextCursor_CreateList2(QTextCursor_Ptr* self, QTextListFormat_Style style);
 	[LinkName("QTextCursor_CurrentList")]
-	public static extern QTextList_Ptr* QTextCursor_CurrentList(QTextCursor_Ptr* self);
+	public static extern QTextList_Ptr** QTextCursor_CurrentList(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_InsertTable")]
-	public static extern QTextTable_Ptr* QTextCursor_InsertTable(QTextCursor_Ptr* self, c_int rows, c_int cols, QTextTableFormat_Ptr* format);
+	public static extern QTextTable_Ptr** QTextCursor_InsertTable(QTextCursor_Ptr* self, c_int rows, c_int cols, QTextTableFormat_Ptr* format);
 	[LinkName("QTextCursor_InsertTable2")]
-	public static extern QTextTable_Ptr* QTextCursor_InsertTable2(QTextCursor_Ptr* self, c_int rows, c_int cols);
+	public static extern QTextTable_Ptr** QTextCursor_InsertTable2(QTextCursor_Ptr* self, c_int rows, c_int cols);
 	[LinkName("QTextCursor_CurrentTable")]
-	public static extern QTextTable_Ptr* QTextCursor_CurrentTable(QTextCursor_Ptr* self);
+	public static extern QTextTable_Ptr** QTextCursor_CurrentTable(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_InsertFrame")]
-	public static extern QTextFrame_Ptr* QTextCursor_InsertFrame(QTextCursor_Ptr* self, QTextFrameFormat_Ptr* format);
+	public static extern QTextFrame_Ptr** QTextCursor_InsertFrame(QTextCursor_Ptr* self, QTextFrameFormat_Ptr* format);
 	[LinkName("QTextCursor_CurrentFrame")]
-	public static extern QTextFrame_Ptr* QTextCursor_CurrentFrame(QTextCursor_Ptr* self);
+	public static extern QTextFrame_Ptr** QTextCursor_CurrentFrame(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_InsertFragment")]
 	public static extern void QTextCursor_InsertFragment(QTextCursor_Ptr* self, QTextDocumentFragment_Ptr* fragment);
 	[LinkName("QTextCursor_InsertHtml")]
-	public static extern void QTextCursor_InsertHtml(QTextCursor_Ptr* self, libqt_string* html);
+	public static extern void QTextCursor_InsertHtml(QTextCursor_Ptr* self, libqt_string html);
 	[LinkName("QTextCursor_InsertMarkdown")]
-	public static extern void QTextCursor_InsertMarkdown(QTextCursor_Ptr* self, libqt_string* markdown);
+	public static extern void QTextCursor_InsertMarkdown(QTextCursor_Ptr* self, libqt_string markdown);
 	[LinkName("QTextCursor_InsertImage")]
 	public static extern void QTextCursor_InsertImage(QTextCursor_Ptr* self, QTextImageFormat_Ptr* format, QTextFrameFormat_Position alignment);
 	[LinkName("QTextCursor_InsertImage2")]
 	public static extern void QTextCursor_InsertImage2(QTextCursor_Ptr* self, QTextImageFormat_Ptr* format);
 	[LinkName("QTextCursor_InsertImage3")]
-	public static extern void QTextCursor_InsertImage3(QTextCursor_Ptr* self, libqt_string* name);
+	public static extern void QTextCursor_InsertImage3(QTextCursor_Ptr* self, libqt_string name);
 	[LinkName("QTextCursor_InsertImage4")]
 	public static extern void QTextCursor_InsertImage4(QTextCursor_Ptr* self, QImage_Ptr* image);
 	[LinkName("QTextCursor_BeginEditBlock")]
@@ -173,7 +173,7 @@ extension CQt
 	[LinkName("QTextCursor_ColumnNumber")]
 	public static extern c_int QTextCursor_ColumnNumber(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_Document")]
-	public static extern QTextDocument_Ptr* QTextCursor_Document(QTextCursor_Ptr* self);
+	public static extern QTextDocument_Ptr** QTextCursor_Document(QTextCursor_Ptr* self);
 	[LinkName("QTextCursor_SetPosition2")]
 	public static extern void QTextCursor_SetPosition2(QTextCursor_Ptr* self, c_int pos, QTextCursor_MoveMode mode);
 	[LinkName("QTextCursor_MovePosition2")]
@@ -181,40 +181,41 @@ extension CQt
 	[LinkName("QTextCursor_MovePosition3")]
 	public static extern bool QTextCursor_MovePosition3(QTextCursor_Ptr* self, QTextCursor_MoveOperation op, QTextCursor_MoveMode param2, c_int n);
 	[LinkName("QTextCursor_InsertMarkdown2")]
-	public static extern void QTextCursor_InsertMarkdown2(QTextCursor_Ptr* self, libqt_string* markdown, void* features);
+	public static extern void QTextCursor_InsertMarkdown2(QTextCursor_Ptr* self, libqt_string markdown, void* features);
 	[LinkName("QTextCursor_InsertImage22")]
-	public static extern void QTextCursor_InsertImage22(QTextCursor_Ptr* self, QImage_Ptr* image, libqt_string* name);
+	public static extern void QTextCursor_InsertImage22(QTextCursor_Ptr* self, QImage_Ptr* image, libqt_string name);
 }
-class QTextCursor
+class QTextCursor : IQTextCursor
 {
 	private QTextCursor_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QTextCursor_new();
 	}
-	public this(QTextDocument_Ptr* document)
+	public this(IQTextDocument document)
 	{
-		this.ptr = CQt.QTextCursor_new2(document);
+		this.ptr = CQt.QTextCursor_new2((.)document?.ObjectPtr);
 	}
-	public this(QTextFrame_Ptr* frame)
+	public this(IQTextFrame frame)
 	{
-		this.ptr = CQt.QTextCursor_new3(frame);
+		this.ptr = CQt.QTextCursor_new3((.)frame?.ObjectPtr);
 	}
-	public this(QTextBlock_Ptr* block)
+	public this(IQTextBlock block)
 	{
-		this.ptr = CQt.QTextCursor_new4(block);
+		this.ptr = CQt.QTextCursor_new4((.)block?.ObjectPtr);
 	}
-	public this(QTextCursor_Ptr* cursor)
+	public this(IQTextCursor cursor)
 	{
-		this.ptr = CQt.QTextCursor_new5(cursor);
+		this.ptr = CQt.QTextCursor_new5((.)cursor?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QTextCursor_Delete(this.ptr);
 	}
-	public void Swap(QTextCursor_Ptr* other)
+	public void Swap(IQTextCursor other)
 	{
-		CQt.QTextCursor_Swap((.)this.ptr, other);
+		CQt.QTextCursor_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsNull()
 	{
@@ -236,13 +237,13 @@ class QTextCursor
 	{
 		return CQt.QTextCursor_Anchor((.)this.ptr);
 	}
-	public void InsertText(libqt_string* text)
+	public void InsertText(String text)
 	{
-		CQt.QTextCursor_InsertText((.)this.ptr, text);
+		CQt.QTextCursor_InsertText((.)this.ptr, libqt_string(text));
 	}
-	public void InsertText2(libqt_string* text, QTextCharFormat_Ptr* format)
+	public void InsertText2(String text, IQTextCharFormat format)
 	{
-		CQt.QTextCursor_InsertText2((.)this.ptr, text, format);
+		CQt.QTextCursor_InsertText2((.)this.ptr, libqt_string(text), (.)format?.ObjectPtr);
 	}
 	public bool MovePosition(QTextCursor_MoveOperation op)
 	{
@@ -312,7 +313,7 @@ class QTextCursor
 	{
 		return CQt.QTextCursor_SelectedText((.)this.ptr);
 	}
-	public QTextDocumentFragment_Ptr Selection()
+	public QTextDocumentFragment_Ptr* Selection()
 	{
 		return CQt.QTextCursor_Selection((.)this.ptr);
 	}
@@ -320,45 +321,45 @@ class QTextCursor
 	{
 		CQt.QTextCursor_SelectedTableCells((.)this.ptr, firstRow, numRows, firstColumn, numColumns);
 	}
-	public QTextBlock_Ptr Block()
+	public QTextBlock_Ptr* Block()
 	{
 		return CQt.QTextCursor_Block((.)this.ptr);
 	}
-	public QTextCharFormat_Ptr CharFormat()
+	public QTextCharFormat_Ptr* CharFormat()
 	{
 		return CQt.QTextCursor_CharFormat((.)this.ptr);
 	}
-	public void SetCharFormat(QTextCharFormat_Ptr* format)
+	public void SetCharFormat(IQTextCharFormat format)
 	{
-		CQt.QTextCursor_SetCharFormat((.)this.ptr, format);
+		CQt.QTextCursor_SetCharFormat((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public void MergeCharFormat(QTextCharFormat_Ptr* modifier)
+	public void MergeCharFormat(IQTextCharFormat modifier)
 	{
-		CQt.QTextCursor_MergeCharFormat((.)this.ptr, modifier);
+		CQt.QTextCursor_MergeCharFormat((.)this.ptr, (.)modifier?.ObjectPtr);
 	}
-	public QTextBlockFormat_Ptr BlockFormat()
+	public QTextBlockFormat_Ptr* BlockFormat()
 	{
 		return CQt.QTextCursor_BlockFormat((.)this.ptr);
 	}
-	public void SetBlockFormat(QTextBlockFormat_Ptr* format)
+	public void SetBlockFormat(IQTextBlockFormat format)
 	{
-		CQt.QTextCursor_SetBlockFormat((.)this.ptr, format);
+		CQt.QTextCursor_SetBlockFormat((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public void MergeBlockFormat(QTextBlockFormat_Ptr* modifier)
+	public void MergeBlockFormat(IQTextBlockFormat modifier)
 	{
-		CQt.QTextCursor_MergeBlockFormat((.)this.ptr, modifier);
+		CQt.QTextCursor_MergeBlockFormat((.)this.ptr, (.)modifier?.ObjectPtr);
 	}
-	public QTextCharFormat_Ptr BlockCharFormat()
+	public QTextCharFormat_Ptr* BlockCharFormat()
 	{
 		return CQt.QTextCursor_BlockCharFormat((.)this.ptr);
 	}
-	public void SetBlockCharFormat(QTextCharFormat_Ptr* format)
+	public void SetBlockCharFormat(IQTextCharFormat format)
 	{
-		CQt.QTextCursor_SetBlockCharFormat((.)this.ptr, format);
+		CQt.QTextCursor_SetBlockCharFormat((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public void MergeBlockCharFormat(QTextCharFormat_Ptr* modifier)
+	public void MergeBlockCharFormat(IQTextCharFormat modifier)
 	{
-		CQt.QTextCursor_MergeBlockCharFormat((.)this.ptr, modifier);
+		CQt.QTextCursor_MergeBlockCharFormat((.)this.ptr, (.)modifier?.ObjectPtr);
 	}
 	public bool AtBlockStart()
 	{
@@ -380,81 +381,81 @@ class QTextCursor
 	{
 		CQt.QTextCursor_InsertBlock((.)this.ptr);
 	}
-	public void InsertBlock2(QTextBlockFormat_Ptr* format)
+	public void InsertBlock2(IQTextBlockFormat format)
 	{
-		CQt.QTextCursor_InsertBlock2((.)this.ptr, format);
+		CQt.QTextCursor_InsertBlock2((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public void InsertBlock3(QTextBlockFormat_Ptr* format, QTextCharFormat_Ptr* charFormat)
+	public void InsertBlock3(IQTextBlockFormat format, IQTextCharFormat charFormat)
 	{
-		CQt.QTextCursor_InsertBlock3((.)this.ptr, format, charFormat);
+		CQt.QTextCursor_InsertBlock3((.)this.ptr, (.)format?.ObjectPtr, (.)charFormat?.ObjectPtr);
 	}
-	public QTextList_Ptr* InsertList(QTextListFormat_Ptr* format)
+	public QTextList_Ptr** InsertList(IQTextListFormat format)
 	{
-		return CQt.QTextCursor_InsertList((.)this.ptr, format);
+		return CQt.QTextCursor_InsertList((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public QTextList_Ptr* InsertList2(QTextListFormat_Style style)
+	public QTextList_Ptr** InsertList2(QTextListFormat_Style style)
 	{
 		return CQt.QTextCursor_InsertList2((.)this.ptr, style);
 	}
-	public QTextList_Ptr* CreateList(QTextListFormat_Ptr* format)
+	public QTextList_Ptr** CreateList(IQTextListFormat format)
 	{
-		return CQt.QTextCursor_CreateList((.)this.ptr, format);
+		return CQt.QTextCursor_CreateList((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public QTextList_Ptr* CreateList2(QTextListFormat_Style style)
+	public QTextList_Ptr** CreateList2(QTextListFormat_Style style)
 	{
 		return CQt.QTextCursor_CreateList2((.)this.ptr, style);
 	}
-	public QTextList_Ptr* CurrentList()
+	public QTextList_Ptr** CurrentList()
 	{
 		return CQt.QTextCursor_CurrentList((.)this.ptr);
 	}
-	public QTextTable_Ptr* InsertTable(c_int rows, c_int cols, QTextTableFormat_Ptr* format)
+	public QTextTable_Ptr** InsertTable(c_int rows, c_int cols, IQTextTableFormat format)
 	{
-		return CQt.QTextCursor_InsertTable((.)this.ptr, rows, cols, format);
+		return CQt.QTextCursor_InsertTable((.)this.ptr, rows, cols, (.)format?.ObjectPtr);
 	}
-	public QTextTable_Ptr* InsertTable2(c_int rows, c_int cols)
+	public QTextTable_Ptr** InsertTable2(c_int rows, c_int cols)
 	{
 		return CQt.QTextCursor_InsertTable2((.)this.ptr, rows, cols);
 	}
-	public QTextTable_Ptr* CurrentTable()
+	public QTextTable_Ptr** CurrentTable()
 	{
 		return CQt.QTextCursor_CurrentTable((.)this.ptr);
 	}
-	public QTextFrame_Ptr* InsertFrame(QTextFrameFormat_Ptr* format)
+	public QTextFrame_Ptr** InsertFrame(IQTextFrameFormat format)
 	{
-		return CQt.QTextCursor_InsertFrame((.)this.ptr, format);
+		return CQt.QTextCursor_InsertFrame((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public QTextFrame_Ptr* CurrentFrame()
+	public QTextFrame_Ptr** CurrentFrame()
 	{
 		return CQt.QTextCursor_CurrentFrame((.)this.ptr);
 	}
-	public void InsertFragment(QTextDocumentFragment_Ptr* fragment)
+	public void InsertFragment(IQTextDocumentFragment fragment)
 	{
-		CQt.QTextCursor_InsertFragment((.)this.ptr, fragment);
+		CQt.QTextCursor_InsertFragment((.)this.ptr, (.)fragment?.ObjectPtr);
 	}
-	public void InsertHtml(libqt_string* html)
+	public void InsertHtml(String html)
 	{
-		CQt.QTextCursor_InsertHtml((.)this.ptr, html);
+		CQt.QTextCursor_InsertHtml((.)this.ptr, libqt_string(html));
 	}
-	public void InsertMarkdown(libqt_string* markdown)
+	public void InsertMarkdown(String markdown)
 	{
-		CQt.QTextCursor_InsertMarkdown((.)this.ptr, markdown);
+		CQt.QTextCursor_InsertMarkdown((.)this.ptr, libqt_string(markdown));
 	}
-	public void InsertImage(QTextImageFormat_Ptr* format, QTextFrameFormat_Position alignment)
+	public void InsertImage(IQTextImageFormat format, QTextFrameFormat_Position alignment)
 	{
-		CQt.QTextCursor_InsertImage((.)this.ptr, format, alignment);
+		CQt.QTextCursor_InsertImage((.)this.ptr, (.)format?.ObjectPtr, alignment);
 	}
-	public void InsertImage2(QTextImageFormat_Ptr* format)
+	public void InsertImage2(IQTextImageFormat format)
 	{
-		CQt.QTextCursor_InsertImage2((.)this.ptr, format);
+		CQt.QTextCursor_InsertImage2((.)this.ptr, (.)format?.ObjectPtr);
 	}
-	public void InsertImage3(libqt_string* name)
+	public void InsertImage3(String name)
 	{
-		CQt.QTextCursor_InsertImage3((.)this.ptr, name);
+		CQt.QTextCursor_InsertImage3((.)this.ptr, libqt_string(name));
 	}
-	public void InsertImage4(QImage_Ptr* image)
+	public void InsertImage4(IQImage image)
 	{
-		CQt.QTextCursor_InsertImage4((.)this.ptr, image);
+		CQt.QTextCursor_InsertImage4((.)this.ptr, (.)image?.ObjectPtr);
 	}
 	public void BeginEditBlock()
 	{
@@ -468,9 +469,9 @@ class QTextCursor
 	{
 		CQt.QTextCursor_EndEditBlock((.)this.ptr);
 	}
-	public bool IsCopyOf(QTextCursor_Ptr* other)
+	public bool IsCopyOf(IQTextCursor other)
 	{
-		return CQt.QTextCursor_IsCopyOf((.)this.ptr, other);
+		return CQt.QTextCursor_IsCopyOf((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public c_int BlockNumber()
 	{
@@ -480,7 +481,7 @@ class QTextCursor
 	{
 		return CQt.QTextCursor_ColumnNumber((.)this.ptr);
 	}
-	public QTextDocument_Ptr* Document()
+	public QTextDocument_Ptr** Document()
 	{
 		return CQt.QTextCursor_Document((.)this.ptr);
 	}
@@ -496,90 +497,17 @@ class QTextCursor
 	{
 		return CQt.QTextCursor_MovePosition3((.)this.ptr, op, param2, n);
 	}
-	public void InsertMarkdown2(libqt_string* markdown, void* features)
+	public void InsertMarkdown2(String markdown, void* features)
 	{
-		CQt.QTextCursor_InsertMarkdown2((.)this.ptr, markdown, features);
+		CQt.QTextCursor_InsertMarkdown2((.)this.ptr, libqt_string(markdown), features);
 	}
-	public void InsertImage22(QImage_Ptr* image, libqt_string* name)
+	public void InsertImage22(IQImage image, String name)
 	{
-		CQt.QTextCursor_InsertImage22((.)this.ptr, image, name);
+		CQt.QTextCursor_InsertImage22((.)this.ptr, (.)image?.ObjectPtr, libqt_string(name));
 	}
 }
-interface IQTextCursor
+interface IQTextCursor : IQtObjectInterface
 {
-	public void Swap();
-	public bool IsNull();
-	public void SetPosition();
-	public c_int Position();
-	public c_int PositionInBlock();
-	public c_int Anchor();
-	public void InsertText();
-	public void InsertText2();
-	public bool MovePosition();
-	public bool VisualNavigation();
-	public void SetVisualNavigation();
-	public void SetVerticalMovementX();
-	public c_int VerticalMovementX();
-	public void SetKeepPositionOnInsert();
-	public bool KeepPositionOnInsert();
-	public void DeleteChar();
-	public void DeletePreviousChar();
-	public void Select();
-	public bool HasSelection();
-	public bool HasComplexSelection();
-	public void RemoveSelectedText();
-	public void ClearSelection();
-	public c_int SelectionStart();
-	public c_int SelectionEnd();
-	public libqt_string SelectedText();
-	public QTextDocumentFragment Selection();
-	public void SelectedTableCells();
-	public QTextBlock Block();
-	public QTextCharFormat CharFormat();
-	public void SetCharFormat();
-	public void MergeCharFormat();
-	public QTextBlockFormat BlockFormat();
-	public void SetBlockFormat();
-	public void MergeBlockFormat();
-	public QTextCharFormat BlockCharFormat();
-	public void SetBlockCharFormat();
-	public void MergeBlockCharFormat();
-	public bool AtBlockStart();
-	public bool AtBlockEnd();
-	public bool AtStart();
-	public bool AtEnd();
-	public void InsertBlock();
-	public void InsertBlock2();
-	public void InsertBlock3();
-	public QTextList* InsertList();
-	public QTextList* InsertList2();
-	public QTextList* CreateList();
-	public QTextList* CreateList2();
-	public QTextList* CurrentList();
-	public QTextTable* InsertTable();
-	public QTextTable* InsertTable2();
-	public QTextTable* CurrentTable();
-	public QTextFrame* InsertFrame();
-	public QTextFrame* CurrentFrame();
-	public void InsertFragment();
-	public void InsertHtml();
-	public void InsertMarkdown();
-	public void InsertImage();
-	public void InsertImage2();
-	public void InsertImage3();
-	public void InsertImage4();
-	public void BeginEditBlock();
-	public void JoinPreviousEditBlock();
-	public void EndEditBlock();
-	public bool IsCopyOf();
-	public c_int BlockNumber();
-	public c_int ColumnNumber();
-	public QTextDocument* Document();
-	public void SetPosition2();
-	public bool MovePosition2();
-	public bool MovePosition3();
-	public void InsertMarkdown2();
-	public void InsertImage22();
 }
 [AllowDuplicates]
 enum QTextCursor_MoveMode

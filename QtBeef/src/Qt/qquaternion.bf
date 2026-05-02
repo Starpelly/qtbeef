@@ -35,7 +35,7 @@ extension CQt
 	[LinkName("QQuaternion_IsIdentity")]
 	public static extern bool QQuaternion_IsIdentity(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_Vector")]
-	public static extern QVector3D_Ptr QQuaternion_Vector(QQuaternion_Ptr* self);
+	public static extern QVector3D_Ptr* QQuaternion_Vector(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_SetVector")]
 	public static extern void QQuaternion_SetVector(QQuaternion_Ptr* self, QVector3D_Ptr* vector);
 	[LinkName("QQuaternion_SetVector2")]
@@ -63,15 +63,15 @@ extension CQt
 	[LinkName("QQuaternion_LengthSquared")]
 	public static extern float QQuaternion_LengthSquared(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_Normalized")]
-	public static extern QQuaternion_Ptr QQuaternion_Normalized(QQuaternion_Ptr* self);
+	public static extern QQuaternion_Ptr* QQuaternion_Normalized(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_Normalize")]
 	public static extern void QQuaternion_Normalize(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_Inverted")]
-	public static extern QQuaternion_Ptr QQuaternion_Inverted(QQuaternion_Ptr* self);
+	public static extern QQuaternion_Ptr* QQuaternion_Inverted(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_Conjugated")]
-	public static extern QQuaternion_Ptr QQuaternion_Conjugated(QQuaternion_Ptr* self);
+	public static extern QQuaternion_Ptr* QQuaternion_Conjugated(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_RotatedVector")]
-	public static extern QVector3D_Ptr QQuaternion_RotatedVector(QQuaternion_Ptr* self, QVector3D_Ptr* vector);
+	public static extern QVector3D_Ptr* QQuaternion_RotatedVector(QQuaternion_Ptr* self, QVector3D_Ptr* vector);
 	[LinkName("QQuaternion_OperatorPlusAssign")]
 	public static extern QQuaternion_Ptr* QQuaternion_OperatorPlusAssign(QQuaternion_Ptr* self, QQuaternion_Ptr* quaternion);
 	[LinkName("QQuaternion_OperatorMinusAssign")]
@@ -83,44 +83,45 @@ extension CQt
 	[LinkName("QQuaternion_OperatorDivideAssign")]
 	public static extern QQuaternion_Ptr* QQuaternion_OperatorDivideAssign(QQuaternion_Ptr* self, float divisor);
 	[LinkName("QQuaternion_ToVector4D")]
-	public static extern QVector4D_Ptr QQuaternion_ToVector4D(QQuaternion_Ptr* self);
+	public static extern QVector4D_Ptr* QQuaternion_ToVector4D(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_ToQvariant")]
-	public static extern QVariant_Ptr QQuaternion_ToQvariant(QQuaternion_Ptr* self);
+	public static extern QVariant_Ptr* QQuaternion_ToQvariant(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_GetAxisAndAngle")]
-	public static extern void QQuaternion_GetAxisAndAngle(QQuaternion_Ptr* self, QVector3D_Ptr* axis, float* angle);
+	public static extern void QQuaternion_GetAxisAndAngle(QQuaternion_Ptr* self, QVector3D_Ptr** axis, float* angle);
 	[LinkName("QQuaternion_FromAxisAndAngle")]
-	public static extern QQuaternion_Ptr QQuaternion_FromAxisAndAngle(QVector3D_Ptr* axis, float angle);
+	public static extern QQuaternion_Ptr* QQuaternion_FromAxisAndAngle(QVector3D_Ptr* axis, float angle);
 	[LinkName("QQuaternion_GetAxisAndAngle2")]
 	public static extern void QQuaternion_GetAxisAndAngle2(QQuaternion_Ptr* self, float* x, float* y, float* z, float* angle);
 	[LinkName("QQuaternion_FromAxisAndAngle2")]
-	public static extern QQuaternion_Ptr QQuaternion_FromAxisAndAngle2(float x, float y, float z, float angle);
+	public static extern QQuaternion_Ptr* QQuaternion_FromAxisAndAngle2(float x, float y, float z, float angle);
 	[LinkName("QQuaternion_ToEulerAngles")]
-	public static extern QVector3D_Ptr QQuaternion_ToEulerAngles(QQuaternion_Ptr* self);
+	public static extern QVector3D_Ptr* QQuaternion_ToEulerAngles(QQuaternion_Ptr* self);
 	[LinkName("QQuaternion_FromEulerAngles")]
-	public static extern QQuaternion_Ptr QQuaternion_FromEulerAngles(QVector3D_Ptr* eulerAngles);
+	public static extern QQuaternion_Ptr* QQuaternion_FromEulerAngles(QVector3D_Ptr* eulerAngles);
 	[LinkName("QQuaternion_GetEulerAngles")]
 	public static extern void QQuaternion_GetEulerAngles(QQuaternion_Ptr* self, float* pitch, float* yaw, float* roll);
 	[LinkName("QQuaternion_FromEulerAngles2")]
-	public static extern QQuaternion_Ptr QQuaternion_FromEulerAngles2(float pitch, float yaw, float roll);
+	public static extern QQuaternion_Ptr* QQuaternion_FromEulerAngles2(float pitch, float yaw, float roll);
 	[LinkName("QQuaternion_GetAxes")]
-	public static extern void QQuaternion_GetAxes(QQuaternion_Ptr* self, QVector3D_Ptr* xAxis, QVector3D_Ptr* yAxis, QVector3D_Ptr* zAxis);
+	public static extern void QQuaternion_GetAxes(QQuaternion_Ptr* self, QVector3D_Ptr** xAxis, QVector3D_Ptr** yAxis, QVector3D_Ptr** zAxis);
 	[LinkName("QQuaternion_FromAxes")]
-	public static extern QQuaternion_Ptr QQuaternion_FromAxes(QVector3D_Ptr* xAxis, QVector3D_Ptr* yAxis, QVector3D_Ptr* zAxis);
+	public static extern QQuaternion_Ptr* QQuaternion_FromAxes(QVector3D_Ptr* xAxis, QVector3D_Ptr* yAxis, QVector3D_Ptr* zAxis);
 	[LinkName("QQuaternion_FromDirection")]
-	public static extern QQuaternion_Ptr QQuaternion_FromDirection(QVector3D_Ptr* direction, QVector3D_Ptr* up);
+	public static extern QQuaternion_Ptr* QQuaternion_FromDirection(QVector3D_Ptr* direction, QVector3D_Ptr* up);
 	[LinkName("QQuaternion_RotationTo")]
-	public static extern QQuaternion_Ptr QQuaternion_RotationTo(QVector3D_Ptr* from, QVector3D_Ptr* to);
+	public static extern QQuaternion_Ptr* QQuaternion_RotationTo(QVector3D_Ptr* from, QVector3D_Ptr* to);
 	[LinkName("QQuaternion_Slerp")]
-	public static extern QQuaternion_Ptr QQuaternion_Slerp(QQuaternion_Ptr* q1, QQuaternion_Ptr* q2, float t);
+	public static extern QQuaternion_Ptr* QQuaternion_Slerp(QQuaternion_Ptr* q1, QQuaternion_Ptr* q2, float t);
 	[LinkName("QQuaternion_Nlerp")]
-	public static extern QQuaternion_Ptr QQuaternion_Nlerp(QQuaternion_Ptr* q1, QQuaternion_Ptr* q2, float t);
+	public static extern QQuaternion_Ptr* QQuaternion_Nlerp(QQuaternion_Ptr* q1, QQuaternion_Ptr* q2, float t);
 }
-class QQuaternion
+class QQuaternion : IQQuaternion
 {
 	private QQuaternion_Ptr* ptr;
-	public this(QQuaternion_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQQuaternion other)
 	{
-		this.ptr = CQt.QQuaternion_new(other);
+		this.ptr = CQt.QQuaternion_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -134,13 +135,13 @@ class QQuaternion
 	{
 		this.ptr = CQt.QQuaternion_new5(scalar, xpos, ypos, zpos);
 	}
-	public this(float scalar, QVector3D_Ptr* vector)
+	public this(float scalar, IQVector3D vector)
 	{
-		this.ptr = CQt.QQuaternion_new6(scalar, vector);
+		this.ptr = CQt.QQuaternion_new6(scalar, (.)vector?.ObjectPtr);
 	}
-	public this(QVector4D_Ptr* vector)
+	public this(IQVector4D vector)
 	{
-		this.ptr = CQt.QQuaternion_new7(vector);
+		this.ptr = CQt.QQuaternion_new7((.)vector?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -154,13 +155,13 @@ class QQuaternion
 	{
 		return CQt.QQuaternion_IsIdentity((.)this.ptr);
 	}
-	public QVector3D_Ptr Vector()
+	public QVector3D_Ptr* Vector()
 	{
 		return CQt.QQuaternion_Vector((.)this.ptr);
 	}
-	public void SetVector(QVector3D_Ptr* vector)
+	public void SetVector(IQVector3D vector)
 	{
-		CQt.QQuaternion_SetVector((.)this.ptr, vector);
+		CQt.QQuaternion_SetVector((.)this.ptr, (.)vector?.ObjectPtr);
 	}
 	public void SetVector2(float x, float y, float z)
 	{
@@ -198,9 +199,9 @@ class QQuaternion
 	{
 		CQt.QQuaternion_SetScalar((.)this.ptr, scalar);
 	}
-	public float DotProduct(QQuaternion_Ptr* q1, QQuaternion_Ptr* q2)
+	public float DotProduct(IQQuaternion q1, IQQuaternion q2)
 	{
-		return CQt.QQuaternion_DotProduct(q1, q2);
+		return CQt.QQuaternion_DotProduct((.)q1?.ObjectPtr, (.)q2?.ObjectPtr);
 	}
 	public float Length()
 	{
@@ -210,7 +211,7 @@ class QQuaternion
 	{
 		return CQt.QQuaternion_LengthSquared((.)this.ptr);
 	}
-	public QQuaternion_Ptr Normalized()
+	public QQuaternion_Ptr* Normalized()
 	{
 		return CQt.QQuaternion_Normalized((.)this.ptr);
 	}
@@ -218,120 +219,83 @@ class QQuaternion
 	{
 		CQt.QQuaternion_Normalize((.)this.ptr);
 	}
-	public QQuaternion_Ptr Inverted()
+	public QQuaternion_Ptr* Inverted()
 	{
 		return CQt.QQuaternion_Inverted((.)this.ptr);
 	}
-	public QQuaternion_Ptr Conjugated()
+	public QQuaternion_Ptr* Conjugated()
 	{
 		return CQt.QQuaternion_Conjugated((.)this.ptr);
 	}
-	public QVector3D_Ptr RotatedVector(QVector3D_Ptr* vector)
+	public QVector3D_Ptr* RotatedVector(IQVector3D vector)
 	{
-		return CQt.QQuaternion_RotatedVector((.)this.ptr, vector);
+		return CQt.QQuaternion_RotatedVector((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public QQuaternion_Ptr* OperatorMultiplyAssign2(QQuaternion_Ptr* quaternion)
+	public QQuaternion_Ptr* OperatorMultiplyAssign2(IQQuaternion quaternion)
 	{
-		return CQt.QQuaternion_OperatorMultiplyAssign2((.)this.ptr, quaternion);
+		return CQt.QQuaternion_OperatorMultiplyAssign2((.)this.ptr, (.)quaternion?.ObjectPtr);
 	}
-	public QVector4D_Ptr ToVector4D()
+	public QVector4D_Ptr* ToVector4D()
 	{
 		return CQt.QQuaternion_ToVector4D((.)this.ptr);
 	}
-	public void GetAxisAndAngle(QVector3D_Ptr* axis, float* angle)
+	public void GetAxisAndAngle(IQVector3D axis, float* angle)
 	{
-		CQt.QQuaternion_GetAxisAndAngle((.)this.ptr, axis, angle);
+		CQt.QQuaternion_GetAxisAndAngle((.)this.ptr, (.)axis?.ObjectPtr, angle);
 	}
-	public QQuaternion_Ptr FromAxisAndAngle(QVector3D_Ptr* axis, float angle)
+	public QQuaternion_Ptr* FromAxisAndAngle(IQVector3D axis, float angle)
 	{
-		return CQt.QQuaternion_FromAxisAndAngle(axis, angle);
+		return CQt.QQuaternion_FromAxisAndAngle((.)axis?.ObjectPtr, angle);
 	}
 	public void GetAxisAndAngle2(float* x, float* y, float* z, float* angle)
 	{
 		CQt.QQuaternion_GetAxisAndAngle2((.)this.ptr, x, y, z, angle);
 	}
-	public QQuaternion_Ptr FromAxisAndAngle2(float x, float y, float z, float angle)
+	public QQuaternion_Ptr* FromAxisAndAngle2(float x, float y, float z, float angle)
 	{
 		return CQt.QQuaternion_FromAxisAndAngle2(x, y, z, angle);
 	}
-	public QVector3D_Ptr ToEulerAngles()
+	public QVector3D_Ptr* ToEulerAngles()
 	{
 		return CQt.QQuaternion_ToEulerAngles((.)this.ptr);
 	}
-	public QQuaternion_Ptr FromEulerAngles(QVector3D_Ptr* eulerAngles)
+	public QQuaternion_Ptr* FromEulerAngles(IQVector3D eulerAngles)
 	{
-		return CQt.QQuaternion_FromEulerAngles(eulerAngles);
+		return CQt.QQuaternion_FromEulerAngles((.)eulerAngles?.ObjectPtr);
 	}
 	public void GetEulerAngles(float* pitch, float* yaw, float* roll)
 	{
 		CQt.QQuaternion_GetEulerAngles((.)this.ptr, pitch, yaw, roll);
 	}
-	public QQuaternion_Ptr FromEulerAngles2(float pitch, float yaw, float roll)
+	public QQuaternion_Ptr* FromEulerAngles2(float pitch, float yaw, float roll)
 	{
 		return CQt.QQuaternion_FromEulerAngles2(pitch, yaw, roll);
 	}
-	public void GetAxes(QVector3D_Ptr* xAxis, QVector3D_Ptr* yAxis, QVector3D_Ptr* zAxis)
+	public void GetAxes(IQVector3D xAxis, IQVector3D yAxis, IQVector3D zAxis)
 	{
-		CQt.QQuaternion_GetAxes((.)this.ptr, xAxis, yAxis, zAxis);
+		CQt.QQuaternion_GetAxes((.)this.ptr, (.)xAxis?.ObjectPtr, (.)yAxis?.ObjectPtr, (.)zAxis?.ObjectPtr);
 	}
-	public QQuaternion_Ptr FromAxes(QVector3D_Ptr* xAxis, QVector3D_Ptr* yAxis, QVector3D_Ptr* zAxis)
+	public QQuaternion_Ptr* FromAxes(IQVector3D xAxis, IQVector3D yAxis, IQVector3D zAxis)
 	{
-		return CQt.QQuaternion_FromAxes(xAxis, yAxis, zAxis);
+		return CQt.QQuaternion_FromAxes((.)xAxis?.ObjectPtr, (.)yAxis?.ObjectPtr, (.)zAxis?.ObjectPtr);
 	}
-	public QQuaternion_Ptr FromDirection(QVector3D_Ptr* direction, QVector3D_Ptr* up)
+	public QQuaternion_Ptr* FromDirection(IQVector3D direction, IQVector3D up)
 	{
-		return CQt.QQuaternion_FromDirection(direction, up);
+		return CQt.QQuaternion_FromDirection((.)direction?.ObjectPtr, (.)up?.ObjectPtr);
 	}
-	public QQuaternion_Ptr RotationTo(QVector3D_Ptr* from, QVector3D_Ptr* to)
+	public QQuaternion_Ptr* RotationTo(IQVector3D from, IQVector3D to)
 	{
-		return CQt.QQuaternion_RotationTo(from, to);
+		return CQt.QQuaternion_RotationTo((.)from?.ObjectPtr, (.)to?.ObjectPtr);
 	}
-	public QQuaternion_Ptr Slerp(QQuaternion_Ptr* q1, QQuaternion_Ptr* q2, float t)
+	public QQuaternion_Ptr* Slerp(IQQuaternion q1, IQQuaternion q2, float t)
 	{
-		return CQt.QQuaternion_Slerp(q1, q2, t);
+		return CQt.QQuaternion_Slerp((.)q1?.ObjectPtr, (.)q2?.ObjectPtr, t);
 	}
-	public QQuaternion_Ptr Nlerp(QQuaternion_Ptr* q1, QQuaternion_Ptr* q2, float t)
+	public QQuaternion_Ptr* Nlerp(IQQuaternion q1, IQQuaternion q2, float t)
 	{
-		return CQt.QQuaternion_Nlerp(q1, q2, t);
+		return CQt.QQuaternion_Nlerp((.)q1?.ObjectPtr, (.)q2?.ObjectPtr, t);
 	}
 }
-interface IQQuaternion
+interface IQQuaternion : IQtObjectInterface
 {
-	public bool IsNull();
-	public bool IsIdentity();
-	public QVector3D Vector();
-	public void SetVector();
-	public void SetVector2();
-	public float X();
-	public float Y();
-	public float Z();
-	public float Scalar();
-	public void SetX();
-	public void SetY();
-	public void SetZ();
-	public void SetScalar();
-	public float DotProduct();
-	public float Length();
-	public float LengthSquared();
-	public QQuaternion Normalized();
-	public void Normalize();
-	public QQuaternion Inverted();
-	public QQuaternion Conjugated();
-	public QVector3D RotatedVector();
-	public QQuaternion* OperatorMultiplyAssign2();
-	public QVector4D ToVector4D();
-	public void GetAxisAndAngle();
-	public QQuaternion FromAxisAndAngle();
-	public void GetAxisAndAngle2();
-	public QQuaternion FromAxisAndAngle2();
-	public QVector3D ToEulerAngles();
-	public QQuaternion FromEulerAngles();
-	public void GetEulerAngles();
-	public QQuaternion FromEulerAngles2();
-	public void GetAxes();
-	public QQuaternion FromAxes();
-	public QQuaternion FromDirection();
-	public QQuaternion RotationTo();
-	public QQuaternion Slerp();
-	public QQuaternion Nlerp();
 }

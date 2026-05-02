@@ -19,13 +19,13 @@ extension CQt
 	[LinkName("QRgba64_Delete")]
 	public static extern void QRgba64_Delete(QRgba64_Ptr* self);
 	[LinkName("QRgba64_FromRgba64")]
-	public static extern QRgba64_Ptr QRgba64_FromRgba64(c_ulonglong c);
+	public static extern QRgba64_Ptr* QRgba64_FromRgba64(c_ulonglong c);
 	[LinkName("QRgba64_FromRgba642")]
-	public static extern QRgba64_Ptr QRgba64_FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha);
+	public static extern QRgba64_Ptr* QRgba64_FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha);
 	[LinkName("QRgba64_FromRgba")]
-	public static extern QRgba64_Ptr QRgba64_FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha);
+	public static extern QRgba64_Ptr* QRgba64_FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha);
 	[LinkName("QRgba64_FromArgb32")]
-	public static extern QRgba64_Ptr QRgba64_FromArgb32(c_uint rgb);
+	public static extern QRgba64_Ptr* QRgba64_FromArgb32(c_uint rgb);
 	[LinkName("QRgba64_IsOpaque")]
 	public static extern bool QRgba64_IsOpaque(QRgba64_Ptr* self);
 	[LinkName("QRgba64_IsTransparent")]
@@ -59,42 +59,43 @@ extension CQt
 	[LinkName("QRgba64_ToRgb16")]
 	public static extern c_ushort QRgba64_ToRgb16(QRgba64_Ptr* self);
 	[LinkName("QRgba64_Premultiplied")]
-	public static extern QRgba64_Ptr QRgba64_Premultiplied(QRgba64_Ptr* self);
+	public static extern QRgba64_Ptr* QRgba64_Premultiplied(QRgba64_Ptr* self);
 	[LinkName("QRgba64_Unpremultiplied")]
-	public static extern QRgba64_Ptr QRgba64_Unpremultiplied(QRgba64_Ptr* self);
+	public static extern QRgba64_Ptr* QRgba64_Unpremultiplied(QRgba64_Ptr* self);
 	[LinkName("QRgba64_ToUnsignedLongLong")]
 	public static extern c_ulonglong QRgba64_ToUnsignedLongLong(QRgba64_Ptr* self);
 	[LinkName("QRgba64_OperatorAssign")]
 	public static extern void QRgba64_OperatorAssign(QRgba64_Ptr* self, c_ulonglong _rgba);
 }
-class QRgba64
+class QRgba64 : IQRgba64
 {
 	private QRgba64_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QRgba64_new();
 	}
-	public this(QRgba64_Ptr* param1)
+	public this(IQRgba64 param1)
 	{
-		this.ptr = CQt.QRgba64_new2(param1);
+		this.ptr = CQt.QRgba64_new2((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QRgba64_Delete(this.ptr);
 	}
-	public QRgba64_Ptr FromRgba64(c_ulonglong c)
+	public QRgba64_Ptr* FromRgba64(c_ulonglong c)
 	{
 		return CQt.QRgba64_FromRgba64(c);
 	}
-	public QRgba64_Ptr FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha)
+	public QRgba64_Ptr* FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha)
 	{
 		return CQt.QRgba64_FromRgba642(red, green, blue, alpha);
 	}
-	public QRgba64_Ptr FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha)
+	public QRgba64_Ptr* FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha)
 	{
 		return CQt.QRgba64_FromRgba(red, green, blue, alpha);
 	}
-	public QRgba64_Ptr FromArgb32(c_uint rgb)
+	public QRgba64_Ptr* FromArgb32(c_uint rgb)
 	{
 		return CQt.QRgba64_FromArgb32(rgb);
 	}
@@ -162,37 +163,15 @@ class QRgba64
 	{
 		return CQt.QRgba64_ToRgb16((.)this.ptr);
 	}
-	public QRgba64_Ptr Premultiplied()
+	public QRgba64_Ptr* Premultiplied()
 	{
 		return CQt.QRgba64_Premultiplied((.)this.ptr);
 	}
-	public QRgba64_Ptr Unpremultiplied()
+	public QRgba64_Ptr* Unpremultiplied()
 	{
 		return CQt.QRgba64_Unpremultiplied((.)this.ptr);
 	}
 }
-interface IQRgba64
+interface IQRgba64 : IQtObjectInterface
 {
-	public QRgba64 FromRgba64();
-	public QRgba64 FromRgba642();
-	public QRgba64 FromRgba();
-	public QRgba64 FromArgb32();
-	public bool IsOpaque();
-	public bool IsTransparent();
-	public c_ushort Red();
-	public c_ushort Green();
-	public c_ushort Blue();
-	public c_ushort Alpha();
-	public void SetRed();
-	public void SetGreen();
-	public void SetBlue();
-	public void SetAlpha();
-	public c_uchar Red8();
-	public c_uchar Green8();
-	public c_uchar Blue8();
-	public c_uchar Alpha8();
-	public c_uint ToArgb32();
-	public c_ushort ToRgb16();
-	public QRgba64 Premultiplied();
-	public QRgba64 Unpremultiplied();
 }

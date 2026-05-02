@@ -19,9 +19,10 @@ extension CQt
 	[LinkName("QAbstractNativeEventFilter_NativeEventFilter")]
 	public static extern bool QAbstractNativeEventFilter_NativeEventFilter(QAbstractNativeEventFilter_Ptr* self, void** eventType, void* message, void** result);
 }
-class QAbstractNativeEventFilter
+class QAbstractNativeEventFilter : IQAbstractNativeEventFilter
 {
 	private QAbstractNativeEventFilter_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QAbstractNativeEventFilter_new();
@@ -35,7 +36,6 @@ class QAbstractNativeEventFilter
 		return CQt.QAbstractNativeEventFilter_NativeEventFilter((.)this.ptr, eventType, message, result);
 	}
 }
-interface IQAbstractNativeEventFilter
+interface IQAbstractNativeEventFilter : IQtObjectInterface
 {
-	public bool NativeEventFilter();
 }

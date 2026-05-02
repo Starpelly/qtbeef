@@ -37,7 +37,7 @@ extension CQt
 	[LinkName("QVersionNumber_MicroVersion")]
 	public static extern c_int QVersionNumber_MicroVersion(QVersionNumber_Ptr* self);
 	[LinkName("QVersionNumber_Normalized")]
-	public static extern QVersionNumber_Ptr QVersionNumber_Normalized(QVersionNumber_Ptr* self);
+	public static extern QVersionNumber_Ptr* QVersionNumber_Normalized(QVersionNumber_Ptr* self);
 	[LinkName("QVersionNumber_Segments")]
 	public static extern void* QVersionNumber_Segments(QVersionNumber_Ptr* self);
 	[LinkName("QVersionNumber_SegmentAt")]
@@ -49,17 +49,18 @@ extension CQt
 	[LinkName("QVersionNumber_Compare")]
 	public static extern c_int QVersionNumber_Compare(QVersionNumber_Ptr* v1, QVersionNumber_Ptr* v2);
 	[LinkName("QVersionNumber_CommonPrefix")]
-	public static extern QVersionNumber_Ptr QVersionNumber_CommonPrefix(QVersionNumber_Ptr* v1, QVersionNumber_Ptr* v2);
+	public static extern QVersionNumber_Ptr* QVersionNumber_CommonPrefix(QVersionNumber_Ptr* v1, QVersionNumber_Ptr* v2);
 	[LinkName("QVersionNumber_ToString")]
 	public static extern libqt_string QVersionNumber_ToString(QVersionNumber_Ptr* self);
 	[LinkName("QVersionNumber_FromString")]
-	public static extern QVersionNumber_Ptr QVersionNumber_FromString(QAnyStringView_Ptr stringVal);
+	public static extern QVersionNumber_Ptr* QVersionNumber_FromString(QAnyStringView_Ptr* stringVal);
 	[LinkName("QVersionNumber_FromString2")]
-	public static extern QVersionNumber_Ptr QVersionNumber_FromString2(QAnyStringView_Ptr stringVal, void** suffixIndex);
+	public static extern QVersionNumber_Ptr* QVersionNumber_FromString2(QAnyStringView_Ptr* stringVal, void** suffixIndex);
 }
-class QVersionNumber
+class QVersionNumber : IQVersionNumber
 {
 	private QVersionNumber_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QVersionNumber_new();
@@ -80,9 +81,9 @@ class QVersionNumber
 	{
 		this.ptr = CQt.QVersionNumber_new5(maj, min, mic);
 	}
-	public this(QVersionNumber_Ptr* param1)
+	public this(IQVersionNumber param1)
 	{
-		this.ptr = CQt.QVersionNumber_new6(param1);
+		this.ptr = CQt.QVersionNumber_new6((.)param1?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -108,7 +109,7 @@ class QVersionNumber
 	{
 		return CQt.QVersionNumber_MicroVersion((.)this.ptr);
 	}
-	public QVersionNumber_Ptr Normalized()
+	public QVersionNumber_Ptr* Normalized()
 	{
 		return CQt.QVersionNumber_Normalized((.)this.ptr);
 	}
@@ -124,48 +125,33 @@ class QVersionNumber
 	{
 		return CQt.QVersionNumber_SegmentCount((.)this.ptr);
 	}
-	public bool IsPrefixOf(QVersionNumber_Ptr* other)
+	public bool IsPrefixOf(IQVersionNumber other)
 	{
-		return CQt.QVersionNumber_IsPrefixOf((.)this.ptr, other);
+		return CQt.QVersionNumber_IsPrefixOf((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public c_int Compare(QVersionNumber_Ptr* v1, QVersionNumber_Ptr* v2)
+	public c_int Compare(IQVersionNumber v1, IQVersionNumber v2)
 	{
-		return CQt.QVersionNumber_Compare(v1, v2);
+		return CQt.QVersionNumber_Compare((.)v1?.ObjectPtr, (.)v2?.ObjectPtr);
 	}
-	public QVersionNumber_Ptr CommonPrefix(QVersionNumber_Ptr* v1, QVersionNumber_Ptr* v2)
+	public QVersionNumber_Ptr* CommonPrefix(IQVersionNumber v1, IQVersionNumber v2)
 	{
-		return CQt.QVersionNumber_CommonPrefix(v1, v2);
+		return CQt.QVersionNumber_CommonPrefix((.)v1?.ObjectPtr, (.)v2?.ObjectPtr);
 	}
 	public libqt_string ToString()
 	{
 		return CQt.QVersionNumber_ToString((.)this.ptr);
 	}
-	public QVersionNumber_Ptr FromString(QAnyStringView_Ptr stringVal)
+	public QVersionNumber_Ptr* FromString(IQAnyStringView stringVal)
 	{
-		return CQt.QVersionNumber_FromString(stringVal);
+		return CQt.QVersionNumber_FromString((.)stringVal?.ObjectPtr);
 	}
-	public QVersionNumber_Ptr FromString2(QAnyStringView_Ptr stringVal, void** suffixIndex)
+	public QVersionNumber_Ptr* FromString2(IQAnyStringView stringVal, void** suffixIndex)
 	{
-		return CQt.QVersionNumber_FromString2(stringVal, suffixIndex);
+		return CQt.QVersionNumber_FromString2((.)stringVal?.ObjectPtr, suffixIndex);
 	}
 }
-interface IQVersionNumber
+interface IQVersionNumber : IQtObjectInterface
 {
-	public bool IsNull();
-	public bool IsNormalized();
-	public c_int MajorVersion();
-	public c_int MinorVersion();
-	public c_int MicroVersion();
-	public QVersionNumber Normalized();
-	public void* Segments();
-	public c_int SegmentAt();
-	public void* SegmentCount();
-	public bool IsPrefixOf();
-	public c_int Compare();
-	public QVersionNumber CommonPrefix();
-	public libqt_string ToString();
-	public QVersionNumber FromString();
-	public QVersionNumber FromString2();
 }
 // --------------------------------------------------------------
 // QTypeRevision
@@ -187,7 +173,7 @@ extension CQt
 	[LinkName("QTypeRevision_Delete")]
 	public static extern void QTypeRevision_Delete(QTypeRevision_Ptr* self);
 	[LinkName("QTypeRevision_Zero")]
-	public static extern QTypeRevision_Ptr QTypeRevision_Zero();
+	public static extern QTypeRevision_Ptr* QTypeRevision_Zero();
 	[LinkName("QTypeRevision_HasMajorVersion")]
 	public static extern bool QTypeRevision_HasMajorVersion(QTypeRevision_Ptr* self);
 	[LinkName("QTypeRevision_MajorVersion")]
@@ -199,12 +185,13 @@ extension CQt
 	[LinkName("QTypeRevision_IsValid")]
 	public static extern bool QTypeRevision_IsValid(QTypeRevision_Ptr* self);
 }
-class QTypeRevision
+class QTypeRevision : IQTypeRevision
 {
 	private QTypeRevision_Ptr* ptr;
-	public this(QTypeRevision_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQTypeRevision other)
 	{
-		this.ptr = CQt.QTypeRevision_new(other);
+		this.ptr = CQt.QTypeRevision_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -214,7 +201,7 @@ class QTypeRevision
 	{
 		CQt.QTypeRevision_Delete(this.ptr);
 	}
-	public QTypeRevision_Ptr Zero()
+	public QTypeRevision_Ptr* Zero()
 	{
 		return CQt.QTypeRevision_Zero();
 	}
@@ -239,12 +226,6 @@ class QTypeRevision
 		return CQt.QTypeRevision_IsValid((.)this.ptr);
 	}
 }
-interface IQTypeRevision
+interface IQTypeRevision : IQtObjectInterface
 {
-	public QTypeRevision Zero();
-	public bool HasMajorVersion();
-	public c_uchar MajorVersion();
-	public bool HasMinorVersion();
-	public c_uchar MinorVersion();
-	public bool IsValid();
 }

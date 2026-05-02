@@ -23,12 +23,13 @@ extension CQt
 	[LinkName("QScopedPointerPodDeleter_OperatorCall")]
 	public static extern void QScopedPointerPodDeleter_OperatorCall(QScopedPointerPodDeleter_Ptr* self, void* pointer);
 }
-class QScopedPointerPodDeleter
+class QScopedPointerPodDeleter : IQScopedPointerPodDeleter
 {
 	private QScopedPointerPodDeleter_Ptr* ptr;
-	public this(QScopedPointerPodDeleter_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQScopedPointerPodDeleter other)
 	{
-		this.ptr = CQt.QScopedPointerPodDeleter_new(other);
+		this.ptr = CQt.QScopedPointerPodDeleter_new((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -39,7 +40,6 @@ class QScopedPointerPodDeleter
 		CQt.QScopedPointerPodDeleter_Cleanup(pointer);
 	}
 }
-interface IQScopedPointerPodDeleter
+interface IQScopedPointerPodDeleter : IQtObjectInterface
 {
-	public void Cleanup();
 }

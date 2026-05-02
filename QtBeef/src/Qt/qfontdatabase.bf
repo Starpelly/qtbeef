@@ -25,45 +25,45 @@ extension CQt
 	[LinkName("QFontDatabase_WritingSystems")]
 	public static extern void* QFontDatabase_WritingSystems();
 	[LinkName("QFontDatabase_WritingSystems2")]
-	public static extern void* QFontDatabase_WritingSystems2(libqt_string* family);
+	public static extern void* QFontDatabase_WritingSystems2(libqt_string family);
 	[LinkName("QFontDatabase_Families")]
 	public static extern void* QFontDatabase_Families();
 	[LinkName("QFontDatabase_Styles")]
-	public static extern void* QFontDatabase_Styles(libqt_string* family);
+	public static extern void* QFontDatabase_Styles(libqt_string family);
 	[LinkName("QFontDatabase_PointSizes")]
-	public static extern void* QFontDatabase_PointSizes(libqt_string* family);
+	public static extern void* QFontDatabase_PointSizes(libqt_string family);
 	[LinkName("QFontDatabase_SmoothSizes")]
-	public static extern void* QFontDatabase_SmoothSizes(libqt_string* family, libqt_string* style);
+	public static extern void* QFontDatabase_SmoothSizes(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_StyleString")]
 	public static extern libqt_string QFontDatabase_StyleString(QFont_Ptr* font);
 	[LinkName("QFontDatabase_StyleString2")]
 	public static extern libqt_string QFontDatabase_StyleString2(QFontInfo_Ptr* fontInfo);
 	[LinkName("QFontDatabase_Font")]
-	public static extern QFont_Ptr QFontDatabase_Font(libqt_string* family, libqt_string* style, c_int pointSize);
+	public static extern QFont_Ptr* QFontDatabase_Font(libqt_string family, libqt_string style, c_int pointSize);
 	[LinkName("QFontDatabase_IsBitmapScalable")]
-	public static extern bool QFontDatabase_IsBitmapScalable(libqt_string* family);
+	public static extern bool QFontDatabase_IsBitmapScalable(libqt_string family);
 	[LinkName("QFontDatabase_IsSmoothlyScalable")]
-	public static extern bool QFontDatabase_IsSmoothlyScalable(libqt_string* family);
+	public static extern bool QFontDatabase_IsSmoothlyScalable(libqt_string family);
 	[LinkName("QFontDatabase_IsScalable")]
-	public static extern bool QFontDatabase_IsScalable(libqt_string* family);
+	public static extern bool QFontDatabase_IsScalable(libqt_string family);
 	[LinkName("QFontDatabase_IsFixedPitch")]
-	public static extern bool QFontDatabase_IsFixedPitch(libqt_string* family);
+	public static extern bool QFontDatabase_IsFixedPitch(libqt_string family);
 	[LinkName("QFontDatabase_Italic")]
-	public static extern bool QFontDatabase_Italic(libqt_string* family, libqt_string* style);
+	public static extern bool QFontDatabase_Italic(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_Bold")]
-	public static extern bool QFontDatabase_Bold(libqt_string* family, libqt_string* style);
+	public static extern bool QFontDatabase_Bold(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_Weight")]
-	public static extern c_int QFontDatabase_Weight(libqt_string* family, libqt_string* style);
+	public static extern c_int QFontDatabase_Weight(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_HasFamily")]
-	public static extern bool QFontDatabase_HasFamily(libqt_string* family);
+	public static extern bool QFontDatabase_HasFamily(libqt_string family);
 	[LinkName("QFontDatabase_IsPrivateFamily")]
-	public static extern bool QFontDatabase_IsPrivateFamily(libqt_string* family);
+	public static extern bool QFontDatabase_IsPrivateFamily(libqt_string family);
 	[LinkName("QFontDatabase_WritingSystemName")]
 	public static extern libqt_string QFontDatabase_WritingSystemName(QFontDatabase_WritingSystem writingSystem);
 	[LinkName("QFontDatabase_WritingSystemSample")]
 	public static extern libqt_string QFontDatabase_WritingSystemSample(QFontDatabase_WritingSystem writingSystem);
 	[LinkName("QFontDatabase_AddApplicationFont")]
-	public static extern c_int QFontDatabase_AddApplicationFont(libqt_string* fileName);
+	public static extern c_int QFontDatabase_AddApplicationFont(libqt_string fileName);
 	[LinkName("QFontDatabase_AddApplicationFontFromData")]
 	public static extern c_int QFontDatabase_AddApplicationFontFromData(void** fontData);
 	[LinkName("QFontDatabase_ApplicationFontFamilies")]
@@ -73,26 +73,27 @@ extension CQt
 	[LinkName("QFontDatabase_RemoveAllApplicationFonts")]
 	public static extern bool QFontDatabase_RemoveAllApplicationFonts();
 	[LinkName("QFontDatabase_SystemFont")]
-	public static extern QFont_Ptr QFontDatabase_SystemFont(QFontDatabase_SystemFont type);
+	public static extern QFont_Ptr* QFontDatabase_SystemFont(QFontDatabase_SystemFont type);
 	[LinkName("QFontDatabase_Families1")]
 	public static extern void* QFontDatabase_Families1(QFontDatabase_WritingSystem writingSystem);
 	[LinkName("QFontDatabase_PointSizes2")]
-	public static extern void* QFontDatabase_PointSizes2(libqt_string* family, libqt_string* style);
+	public static extern void* QFontDatabase_PointSizes2(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_IsBitmapScalable2")]
-	public static extern bool QFontDatabase_IsBitmapScalable2(libqt_string* family, libqt_string* style);
+	public static extern bool QFontDatabase_IsBitmapScalable2(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_IsSmoothlyScalable2")]
-	public static extern bool QFontDatabase_IsSmoothlyScalable2(libqt_string* family, libqt_string* style);
+	public static extern bool QFontDatabase_IsSmoothlyScalable2(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_IsScalable2")]
-	public static extern bool QFontDatabase_IsScalable2(libqt_string* family, libqt_string* style);
+	public static extern bool QFontDatabase_IsScalable2(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_IsFixedPitch2")]
-	public static extern bool QFontDatabase_IsFixedPitch2(libqt_string* family, libqt_string* style);
+	public static extern bool QFontDatabase_IsFixedPitch2(libqt_string family, libqt_string style);
 }
-class QFontDatabase
+class QFontDatabase : IQFontDatabase
 {
 	private QFontDatabase_Ptr* ptr;
-	public this(QFontDatabase_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQFontDatabase other)
 	{
-		this.ptr = CQt.QFontDatabase_new(other);
+		this.ptr = CQt.QFontDatabase_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -110,73 +111,73 @@ class QFontDatabase
 	{
 		return CQt.QFontDatabase_WritingSystems();
 	}
-	public void* WritingSystems2(libqt_string* family)
+	public void* WritingSystems2(String family)
 	{
-		return CQt.QFontDatabase_WritingSystems2(family);
+		return CQt.QFontDatabase_WritingSystems2(libqt_string(family));
 	}
 	public void* Families()
 	{
 		return CQt.QFontDatabase_Families();
 	}
-	public void* Styles(libqt_string* family)
+	public void* Styles(String family)
 	{
-		return CQt.QFontDatabase_Styles(family);
+		return CQt.QFontDatabase_Styles(libqt_string(family));
 	}
-	public void* PointSizes(libqt_string* family)
+	public void* PointSizes(String family)
 	{
-		return CQt.QFontDatabase_PointSizes(family);
+		return CQt.QFontDatabase_PointSizes(libqt_string(family));
 	}
-	public void* SmoothSizes(libqt_string* family, libqt_string* style)
+	public void* SmoothSizes(String family, String style)
 	{
-		return CQt.QFontDatabase_SmoothSizes(family, style);
+		return CQt.QFontDatabase_SmoothSizes(libqt_string(family), libqt_string(style));
 	}
-	public libqt_string StyleString(QFont_Ptr* font)
+	public libqt_string StyleString(IQFont font)
 	{
-		return CQt.QFontDatabase_StyleString(font);
+		return CQt.QFontDatabase_StyleString((.)font?.ObjectPtr);
 	}
-	public libqt_string StyleString2(QFontInfo_Ptr* fontInfo)
+	public libqt_string StyleString2(IQFontInfo fontInfo)
 	{
-		return CQt.QFontDatabase_StyleString2(fontInfo);
+		return CQt.QFontDatabase_StyleString2((.)fontInfo?.ObjectPtr);
 	}
-	public QFont_Ptr Font(libqt_string* family, libqt_string* style, c_int pointSize)
+	public QFont_Ptr* Font(String family, String style, c_int pointSize)
 	{
-		return CQt.QFontDatabase_Font(family, style, pointSize);
+		return CQt.QFontDatabase_Font(libqt_string(family), libqt_string(style), pointSize);
 	}
-	public bool IsBitmapScalable(libqt_string* family)
+	public bool IsBitmapScalable(String family)
 	{
-		return CQt.QFontDatabase_IsBitmapScalable(family);
+		return CQt.QFontDatabase_IsBitmapScalable(libqt_string(family));
 	}
-	public bool IsSmoothlyScalable(libqt_string* family)
+	public bool IsSmoothlyScalable(String family)
 	{
-		return CQt.QFontDatabase_IsSmoothlyScalable(family);
+		return CQt.QFontDatabase_IsSmoothlyScalable(libqt_string(family));
 	}
-	public bool IsScalable(libqt_string* family)
+	public bool IsScalable(String family)
 	{
-		return CQt.QFontDatabase_IsScalable(family);
+		return CQt.QFontDatabase_IsScalable(libqt_string(family));
 	}
-	public bool IsFixedPitch(libqt_string* family)
+	public bool IsFixedPitch(String family)
 	{
-		return CQt.QFontDatabase_IsFixedPitch(family);
+		return CQt.QFontDatabase_IsFixedPitch(libqt_string(family));
 	}
-	public bool Italic(libqt_string* family, libqt_string* style)
+	public bool Italic(String family, String style)
 	{
-		return CQt.QFontDatabase_Italic(family, style);
+		return CQt.QFontDatabase_Italic(libqt_string(family), libqt_string(style));
 	}
-	public bool Bold(libqt_string* family, libqt_string* style)
+	public bool Bold(String family, String style)
 	{
-		return CQt.QFontDatabase_Bold(family, style);
+		return CQt.QFontDatabase_Bold(libqt_string(family), libqt_string(style));
 	}
-	public c_int Weight(libqt_string* family, libqt_string* style)
+	public c_int Weight(String family, String style)
 	{
-		return CQt.QFontDatabase_Weight(family, style);
+		return CQt.QFontDatabase_Weight(libqt_string(family), libqt_string(style));
 	}
-	public bool HasFamily(libqt_string* family)
+	public bool HasFamily(String family)
 	{
-		return CQt.QFontDatabase_HasFamily(family);
+		return CQt.QFontDatabase_HasFamily(libqt_string(family));
 	}
-	public bool IsPrivateFamily(libqt_string* family)
+	public bool IsPrivateFamily(String family)
 	{
-		return CQt.QFontDatabase_IsPrivateFamily(family);
+		return CQt.QFontDatabase_IsPrivateFamily(libqt_string(family));
 	}
 	public libqt_string WritingSystemName(QFontDatabase_WritingSystem writingSystem)
 	{
@@ -186,9 +187,9 @@ class QFontDatabase
 	{
 		return CQt.QFontDatabase_WritingSystemSample(writingSystem);
 	}
-	public c_int AddApplicationFont(libqt_string* fileName)
+	public c_int AddApplicationFont(String fileName)
 	{
-		return CQt.QFontDatabase_AddApplicationFont(fileName);
+		return CQt.QFontDatabase_AddApplicationFont(libqt_string(fileName));
 	}
 	public c_int AddApplicationFontFromData(void** fontData)
 	{
@@ -206,7 +207,7 @@ class QFontDatabase
 	{
 		return CQt.QFontDatabase_RemoveAllApplicationFonts();
 	}
-	public QFont_Ptr SystemFont(QFontDatabase_SystemFont type)
+	public QFont_Ptr* SystemFont(QFontDatabase_SystemFont type)
 	{
 		return CQt.QFontDatabase_SystemFont(type);
 	}
@@ -214,62 +215,29 @@ class QFontDatabase
 	{
 		return CQt.QFontDatabase_Families1(writingSystem);
 	}
-	public void* PointSizes2(libqt_string* family, libqt_string* style)
+	public void* PointSizes2(String family, String style)
 	{
-		return CQt.QFontDatabase_PointSizes2(family, style);
+		return CQt.QFontDatabase_PointSizes2(libqt_string(family), libqt_string(style));
 	}
-	public bool IsBitmapScalable2(libqt_string* family, libqt_string* style)
+	public bool IsBitmapScalable2(String family, String style)
 	{
-		return CQt.QFontDatabase_IsBitmapScalable2(family, style);
+		return CQt.QFontDatabase_IsBitmapScalable2(libqt_string(family), libqt_string(style));
 	}
-	public bool IsSmoothlyScalable2(libqt_string* family, libqt_string* style)
+	public bool IsSmoothlyScalable2(String family, String style)
 	{
-		return CQt.QFontDatabase_IsSmoothlyScalable2(family, style);
+		return CQt.QFontDatabase_IsSmoothlyScalable2(libqt_string(family), libqt_string(style));
 	}
-	public bool IsScalable2(libqt_string* family, libqt_string* style)
+	public bool IsScalable2(String family, String style)
 	{
-		return CQt.QFontDatabase_IsScalable2(family, style);
+		return CQt.QFontDatabase_IsScalable2(libqt_string(family), libqt_string(style));
 	}
-	public bool IsFixedPitch2(libqt_string* family, libqt_string* style)
+	public bool IsFixedPitch2(String family, String style)
 	{
-		return CQt.QFontDatabase_IsFixedPitch2(family, style);
+		return CQt.QFontDatabase_IsFixedPitch2(libqt_string(family), libqt_string(style));
 	}
 }
-interface IQFontDatabase
+interface IQFontDatabase : IQtObjectInterface
 {
-	public void* StandardSizes();
-	public void* WritingSystems();
-	public void* WritingSystems2();
-	public void* Families();
-	public void* Styles();
-	public void* PointSizes();
-	public void* SmoothSizes();
-	public libqt_string StyleString();
-	public libqt_string StyleString2();
-	public QFont Font();
-	public bool IsBitmapScalable();
-	public bool IsSmoothlyScalable();
-	public bool IsScalable();
-	public bool IsFixedPitch();
-	public bool Italic();
-	public bool Bold();
-	public c_int Weight();
-	public bool HasFamily();
-	public bool IsPrivateFamily();
-	public libqt_string WritingSystemName();
-	public libqt_string WritingSystemSample();
-	public c_int AddApplicationFont();
-	public c_int AddApplicationFontFromData();
-	public void* ApplicationFontFamilies();
-	public bool RemoveApplicationFont();
-	public bool RemoveAllApplicationFonts();
-	public QFont SystemFont();
-	public void* Families1();
-	public void* PointSizes2();
-	public bool IsBitmapScalable2();
-	public bool IsSmoothlyScalable2();
-	public bool IsScalable2();
-	public bool IsFixedPitch2();
 }
 [AllowDuplicates]
 enum QFontDatabase_WritingSystem

@@ -37,9 +37,10 @@ extension CQt
 	[LinkName("QSemaphore_Release1")]
 	public static extern void QSemaphore_Release1(QSemaphore_Ptr* self, c_int n);
 }
-class QSemaphore
+class QSemaphore : IQSemaphore
 {
 	private QSemaphore_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QSemaphore_new();
@@ -89,17 +90,8 @@ class QSemaphore
 		CQt.QSemaphore_Release1((.)this.ptr, n);
 	}
 }
-interface IQSemaphore
+interface IQSemaphore : IQtObjectInterface
 {
-	public void Acquire();
-	public bool TryAcquire();
-	public bool TryAcquire2();
-	public void Release();
-	public c_int Available();
-	public bool TryAcquire3();
-	public void Acquire1();
-	public bool TryAcquire1();
-	public void Release1();
 }
 // --------------------------------------------------------------
 // QSemaphoreReleaser
@@ -115,55 +107,53 @@ extension CQt
 	[LinkName("QSemaphoreReleaser_new2")]
 	public static extern QSemaphoreReleaser_Ptr* QSemaphoreReleaser_new2(QSemaphore_Ptr* sem);
 	[LinkName("QSemaphoreReleaser_new3")]
-	public static extern QSemaphoreReleaser_Ptr* QSemaphoreReleaser_new3(QSemaphore_Ptr* sem);
+	public static extern QSemaphoreReleaser_Ptr* QSemaphoreReleaser_new3(QSemaphore_Ptr** sem);
 	[LinkName("QSemaphoreReleaser_new4")]
 	public static extern QSemaphoreReleaser_Ptr* QSemaphoreReleaser_new4(QSemaphore_Ptr* sem, c_int n);
 	[LinkName("QSemaphoreReleaser_new5")]
-	public static extern QSemaphoreReleaser_Ptr* QSemaphoreReleaser_new5(QSemaphore_Ptr* sem, c_int n);
+	public static extern QSemaphoreReleaser_Ptr* QSemaphoreReleaser_new5(QSemaphore_Ptr** sem, c_int n);
 	[LinkName("QSemaphoreReleaser_Delete")]
 	public static extern void QSemaphoreReleaser_Delete(QSemaphoreReleaser_Ptr* self);
 	[LinkName("QSemaphoreReleaser_Swap")]
 	public static extern void QSemaphoreReleaser_Swap(QSemaphoreReleaser_Ptr* self, QSemaphoreReleaser_Ptr* other);
 	[LinkName("QSemaphoreReleaser_Semaphore")]
-	public static extern QSemaphore_Ptr* QSemaphoreReleaser_Semaphore(QSemaphoreReleaser_Ptr* self);
+	public static extern QSemaphore_Ptr** QSemaphoreReleaser_Semaphore(QSemaphoreReleaser_Ptr* self);
 	[LinkName("QSemaphoreReleaser_Cancel")]
-	public static extern QSemaphore_Ptr* QSemaphoreReleaser_Cancel(QSemaphoreReleaser_Ptr* self);
+	public static extern QSemaphore_Ptr** QSemaphoreReleaser_Cancel(QSemaphoreReleaser_Ptr* self);
 }
-class QSemaphoreReleaser
+class QSemaphoreReleaser : IQSemaphoreReleaser
 {
 	private QSemaphoreReleaser_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QSemaphoreReleaser_new();
 	}
-	public this(QSemaphore_Ptr* sem)
+	public this(IQSemaphore sem)
 	{
-		this.ptr = CQt.QSemaphoreReleaser_new2(sem);
+		this.ptr = CQt.QSemaphoreReleaser_new2((.)sem?.ObjectPtr);
 	}
-	public this(QSemaphore_Ptr* sem, c_int n)
+	public this(IQSemaphore sem, c_int n)
 	{
-		this.ptr = CQt.QSemaphoreReleaser_new4(sem, n);
+		this.ptr = CQt.QSemaphoreReleaser_new4((.)sem?.ObjectPtr, n);
 	}
 	public ~this()
 	{
 		CQt.QSemaphoreReleaser_Delete(this.ptr);
 	}
-	public void Swap(QSemaphoreReleaser_Ptr* other)
+	public void Swap(IQSemaphoreReleaser other)
 	{
-		CQt.QSemaphoreReleaser_Swap((.)this.ptr, other);
+		CQt.QSemaphoreReleaser_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
-	public QSemaphore_Ptr* Semaphore()
+	public QSemaphore_Ptr** Semaphore()
 	{
 		return CQt.QSemaphoreReleaser_Semaphore((.)this.ptr);
 	}
-	public QSemaphore_Ptr* Cancel()
+	public QSemaphore_Ptr** Cancel()
 	{
 		return CQt.QSemaphoreReleaser_Cancel((.)this.ptr);
 	}
 }
-interface IQSemaphoreReleaser
+interface IQSemaphoreReleaser : IQtObjectInterface
 {
-	public void Swap();
-	public QSemaphore* Semaphore();
-	public QSemaphore* Cancel();
 }

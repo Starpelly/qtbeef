@@ -23,13 +23,13 @@ extension CQt
 	[LinkName("QVector2D_new5")]
 	public static extern QVector2D_Ptr* QVector2D_new5(float xpos, float ypos);
 	[LinkName("QVector2D_new6")]
-	public static extern QVector2D_Ptr* QVector2D_new6(QPoint_Ptr point);
+	public static extern QVector2D_Ptr* QVector2D_new6(QPoint_Ptr* point);
 	[LinkName("QVector2D_new7")]
-	public static extern QVector2D_Ptr* QVector2D_new7(QPointF_Ptr point);
+	public static extern QVector2D_Ptr* QVector2D_new7(QPointF_Ptr* point);
 	[LinkName("QVector2D_new8")]
-	public static extern QVector2D_Ptr* QVector2D_new8(QVector3D_Ptr vector);
+	public static extern QVector2D_Ptr* QVector2D_new8(QVector3D_Ptr* vector);
 	[LinkName("QVector2D_new9")]
-	public static extern QVector2D_Ptr* QVector2D_new9(QVector4D_Ptr vector);
+	public static extern QVector2D_Ptr* QVector2D_new9(QVector4D_Ptr* vector);
 	[LinkName("QVector2D_new10")]
 	public static extern QVector2D_Ptr* QVector2D_new10(QVector2D_Ptr* param1);
 	[LinkName("QVector2D_Delete")]
@@ -53,44 +53,45 @@ extension CQt
 	[LinkName("QVector2D_LengthSquared")]
 	public static extern float QVector2D_LengthSquared(QVector2D_Ptr* self);
 	[LinkName("QVector2D_Normalized")]
-	public static extern QVector2D_Ptr QVector2D_Normalized(QVector2D_Ptr* self);
+	public static extern QVector2D_Ptr* QVector2D_Normalized(QVector2D_Ptr* self);
 	[LinkName("QVector2D_Normalize")]
 	public static extern void QVector2D_Normalize(QVector2D_Ptr* self);
 	[LinkName("QVector2D_DistanceToPoint")]
-	public static extern float QVector2D_DistanceToPoint(QVector2D_Ptr* self, QVector2D_Ptr point);
+	public static extern float QVector2D_DistanceToPoint(QVector2D_Ptr* self, QVector2D_Ptr* point);
 	[LinkName("QVector2D_DistanceToLine")]
-	public static extern float QVector2D_DistanceToLine(QVector2D_Ptr* self, QVector2D_Ptr point, QVector2D_Ptr direction);
+	public static extern float QVector2D_DistanceToLine(QVector2D_Ptr* self, QVector2D_Ptr* point, QVector2D_Ptr* direction);
 	[LinkName("QVector2D_OperatorPlusAssign")]
-	public static extern QVector2D_Ptr* QVector2D_OperatorPlusAssign(QVector2D_Ptr* self, QVector2D_Ptr vector);
+	public static extern QVector2D_Ptr* QVector2D_OperatorPlusAssign(QVector2D_Ptr* self, QVector2D_Ptr* vector);
 	[LinkName("QVector2D_OperatorMinusAssign")]
-	public static extern QVector2D_Ptr* QVector2D_OperatorMinusAssign(QVector2D_Ptr* self, QVector2D_Ptr vector);
+	public static extern QVector2D_Ptr* QVector2D_OperatorMinusAssign(QVector2D_Ptr* self, QVector2D_Ptr* vector);
 	[LinkName("QVector2D_OperatorMultiplyAssign")]
 	public static extern QVector2D_Ptr* QVector2D_OperatorMultiplyAssign(QVector2D_Ptr* self, float factor);
 	[LinkName("QVector2D_OperatorMultiplyAssign2")]
-	public static extern QVector2D_Ptr* QVector2D_OperatorMultiplyAssign2(QVector2D_Ptr* self, QVector2D_Ptr vector);
+	public static extern QVector2D_Ptr* QVector2D_OperatorMultiplyAssign2(QVector2D_Ptr* self, QVector2D_Ptr* vector);
 	[LinkName("QVector2D_OperatorDivideAssign")]
 	public static extern QVector2D_Ptr* QVector2D_OperatorDivideAssign(QVector2D_Ptr* self, float divisor);
 	[LinkName("QVector2D_OperatorDivideAssign2")]
-	public static extern QVector2D_Ptr* QVector2D_OperatorDivideAssign2(QVector2D_Ptr* self, QVector2D_Ptr vector);
+	public static extern QVector2D_Ptr* QVector2D_OperatorDivideAssign2(QVector2D_Ptr* self, QVector2D_Ptr* vector);
 	[LinkName("QVector2D_DotProduct")]
-	public static extern float QVector2D_DotProduct(QVector2D_Ptr v1, QVector2D_Ptr v2);
+	public static extern float QVector2D_DotProduct(QVector2D_Ptr* v1, QVector2D_Ptr* v2);
 	[LinkName("QVector2D_ToVector3D")]
-	public static extern QVector3D_Ptr QVector2D_ToVector3D(QVector2D_Ptr* self);
+	public static extern QVector3D_Ptr* QVector2D_ToVector3D(QVector2D_Ptr* self);
 	[LinkName("QVector2D_ToVector4D")]
-	public static extern QVector4D_Ptr QVector2D_ToVector4D(QVector2D_Ptr* self);
+	public static extern QVector4D_Ptr* QVector2D_ToVector4D(QVector2D_Ptr* self);
 	[LinkName("QVector2D_ToPoint")]
-	public static extern QPoint_Ptr QVector2D_ToPoint(QVector2D_Ptr* self);
+	public static extern QPoint_Ptr* QVector2D_ToPoint(QVector2D_Ptr* self);
 	[LinkName("QVector2D_ToPointF")]
-	public static extern QPointF_Ptr QVector2D_ToPointF(QVector2D_Ptr* self);
+	public static extern QPointF_Ptr* QVector2D_ToPointF(QVector2D_Ptr* self);
 	[LinkName("QVector2D_ToQvariant")]
-	public static extern QVariant_Ptr QVector2D_ToQvariant(QVector2D_Ptr* self);
+	public static extern QVariant_Ptr* QVector2D_ToQvariant(QVector2D_Ptr* self);
 }
-class QVector2D
+class QVector2D : IQVector2D
 {
 	private QVector2D_Ptr* ptr;
-	public this(QVector2D_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQVector2D other)
 	{
-		this.ptr = CQt.QVector2D_new(other);
+		this.ptr = CQt.QVector2D_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -104,21 +105,21 @@ class QVector2D
 	{
 		this.ptr = CQt.QVector2D_new5(xpos, ypos);
 	}
-	public this(QPoint_Ptr point)
+	public this(IQPoint point)
 	{
-		this.ptr = CQt.QVector2D_new6(point);
+		this.ptr = CQt.QVector2D_new6((.)point?.ObjectPtr);
 	}
-	public this(QPointF_Ptr point)
+	public this(IQPointF point)
 	{
-		this.ptr = CQt.QVector2D_new7(point);
+		this.ptr = CQt.QVector2D_new7((.)point?.ObjectPtr);
 	}
-	public this(QVector3D_Ptr vector)
+	public this(IQVector3D vector)
 	{
-		this.ptr = CQt.QVector2D_new8(vector);
+		this.ptr = CQt.QVector2D_new8((.)vector?.ObjectPtr);
 	}
-	public this(QVector4D_Ptr vector)
+	public this(IQVector4D vector)
 	{
-		this.ptr = CQt.QVector2D_new9(vector);
+		this.ptr = CQt.QVector2D_new9((.)vector?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -156,7 +157,7 @@ class QVector2D
 	{
 		return CQt.QVector2D_LengthSquared((.)this.ptr);
 	}
-	public QVector2D_Ptr Normalized()
+	public QVector2D_Ptr* Normalized()
 	{
 		return CQt.QVector2D_Normalized((.)this.ptr);
 	}
@@ -164,64 +165,45 @@ class QVector2D
 	{
 		CQt.QVector2D_Normalize((.)this.ptr);
 	}
-	public float DistanceToPoint(QVector2D_Ptr point)
+	public float DistanceToPoint(IQVector2D point)
 	{
-		return CQt.QVector2D_DistanceToPoint((.)this.ptr, point);
+		return CQt.QVector2D_DistanceToPoint((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public float DistanceToLine(QVector2D_Ptr point, QVector2D_Ptr direction)
+	public float DistanceToLine(IQVector2D point, IQVector2D direction)
 	{
-		return CQt.QVector2D_DistanceToLine((.)this.ptr, point, direction);
+		return CQt.QVector2D_DistanceToLine((.)this.ptr, (.)point?.ObjectPtr, (.)direction?.ObjectPtr);
 	}
-	public QVector2D_Ptr* OperatorMultiplyAssign2(QVector2D_Ptr vector)
+	public QVector2D_Ptr* OperatorMultiplyAssign2(IQVector2D vector)
 	{
-		return CQt.QVector2D_OperatorMultiplyAssign2((.)this.ptr, vector);
+		return CQt.QVector2D_OperatorMultiplyAssign2((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public QVector2D_Ptr* OperatorDivideAssign2(QVector2D_Ptr vector)
+	public QVector2D_Ptr* OperatorDivideAssign2(IQVector2D vector)
 	{
-		return CQt.QVector2D_OperatorDivideAssign2((.)this.ptr, vector);
+		return CQt.QVector2D_OperatorDivideAssign2((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public float DotProduct(QVector2D_Ptr v1, QVector2D_Ptr v2)
+	public float DotProduct(IQVector2D v1, IQVector2D v2)
 	{
-		return CQt.QVector2D_DotProduct(v1, v2);
+		return CQt.QVector2D_DotProduct((.)v1?.ObjectPtr, (.)v2?.ObjectPtr);
 	}
-	public QVector3D_Ptr ToVector3D()
+	public QVector3D_Ptr* ToVector3D()
 	{
 		return CQt.QVector2D_ToVector3D((.)this.ptr);
 	}
-	public QVector4D_Ptr ToVector4D()
+	public QVector4D_Ptr* ToVector4D()
 	{
 		return CQt.QVector2D_ToVector4D((.)this.ptr);
 	}
-	public QPoint_Ptr ToPoint()
+	public QPoint_Ptr* ToPoint()
 	{
 		return CQt.QVector2D_ToPoint((.)this.ptr);
 	}
-	public QPointF_Ptr ToPointF()
+	public QPointF_Ptr* ToPointF()
 	{
 		return CQt.QVector2D_ToPointF((.)this.ptr);
 	}
 }
-interface IQVector2D
+interface IQVector2D : IQtObjectInterface
 {
-	public bool IsNull();
-	public float X();
-	public float Y();
-	public void SetX();
-	public void SetY();
-	public float OperatorSubscript2();
-	public float Length();
-	public float LengthSquared();
-	public QVector2D Normalized();
-	public void Normalize();
-	public float DistanceToPoint();
-	public float DistanceToLine();
-	public QVector2D* OperatorMultiplyAssign2();
-	public QVector2D* OperatorDivideAssign2();
-	public float DotProduct();
-	public QVector3D ToVector3D();
-	public QVector4D ToVector4D();
-	public QPoint ToPoint();
-	public QPointF ToPointF();
 }
 // --------------------------------------------------------------
 // QVector3D
@@ -243,15 +225,15 @@ extension CQt
 	[LinkName("QVector3D_new5")]
 	public static extern QVector3D_Ptr* QVector3D_new5(float xpos, float ypos, float zpos);
 	[LinkName("QVector3D_new6")]
-	public static extern QVector3D_Ptr* QVector3D_new6(QPoint_Ptr point);
+	public static extern QVector3D_Ptr* QVector3D_new6(QPoint_Ptr* point);
 	[LinkName("QVector3D_new7")]
-	public static extern QVector3D_Ptr* QVector3D_new7(QPointF_Ptr point);
+	public static extern QVector3D_Ptr* QVector3D_new7(QPointF_Ptr* point);
 	[LinkName("QVector3D_new8")]
-	public static extern QVector3D_Ptr* QVector3D_new8(QVector2D_Ptr vector);
+	public static extern QVector3D_Ptr* QVector3D_new8(QVector2D_Ptr* vector);
 	[LinkName("QVector3D_new9")]
-	public static extern QVector3D_Ptr* QVector3D_new9(QVector2D_Ptr vector, float zpos);
+	public static extern QVector3D_Ptr* QVector3D_new9(QVector2D_Ptr* vector, float zpos);
 	[LinkName("QVector3D_new10")]
-	public static extern QVector3D_Ptr* QVector3D_new10(QVector4D_Ptr vector);
+	public static extern QVector3D_Ptr* QVector3D_new10(QVector4D_Ptr* vector);
 	[LinkName("QVector3D_new11")]
 	public static extern QVector3D_Ptr* QVector3D_new11(QVector3D_Ptr* param1);
 	[LinkName("QVector3D_Delete")]
@@ -279,58 +261,59 @@ extension CQt
 	[LinkName("QVector3D_LengthSquared")]
 	public static extern float QVector3D_LengthSquared(QVector3D_Ptr* self);
 	[LinkName("QVector3D_Normalized")]
-	public static extern QVector3D_Ptr QVector3D_Normalized(QVector3D_Ptr* self);
+	public static extern QVector3D_Ptr* QVector3D_Normalized(QVector3D_Ptr* self);
 	[LinkName("QVector3D_Normalize")]
 	public static extern void QVector3D_Normalize(QVector3D_Ptr* self);
 	[LinkName("QVector3D_OperatorPlusAssign")]
-	public static extern QVector3D_Ptr* QVector3D_OperatorPlusAssign(QVector3D_Ptr* self, QVector3D_Ptr vector);
+	public static extern QVector3D_Ptr* QVector3D_OperatorPlusAssign(QVector3D_Ptr* self, QVector3D_Ptr* vector);
 	[LinkName("QVector3D_OperatorMinusAssign")]
-	public static extern QVector3D_Ptr* QVector3D_OperatorMinusAssign(QVector3D_Ptr* self, QVector3D_Ptr vector);
+	public static extern QVector3D_Ptr* QVector3D_OperatorMinusAssign(QVector3D_Ptr* self, QVector3D_Ptr* vector);
 	[LinkName("QVector3D_OperatorMultiplyAssign")]
 	public static extern QVector3D_Ptr* QVector3D_OperatorMultiplyAssign(QVector3D_Ptr* self, float factor);
 	[LinkName("QVector3D_OperatorMultiplyAssign2")]
-	public static extern QVector3D_Ptr* QVector3D_OperatorMultiplyAssign2(QVector3D_Ptr* self, QVector3D_Ptr vector);
+	public static extern QVector3D_Ptr* QVector3D_OperatorMultiplyAssign2(QVector3D_Ptr* self, QVector3D_Ptr* vector);
 	[LinkName("QVector3D_OperatorDivideAssign")]
 	public static extern QVector3D_Ptr* QVector3D_OperatorDivideAssign(QVector3D_Ptr* self, float divisor);
 	[LinkName("QVector3D_OperatorDivideAssign2")]
-	public static extern QVector3D_Ptr* QVector3D_OperatorDivideAssign2(QVector3D_Ptr* self, QVector3D_Ptr vector);
+	public static extern QVector3D_Ptr* QVector3D_OperatorDivideAssign2(QVector3D_Ptr* self, QVector3D_Ptr* vector);
 	[LinkName("QVector3D_DotProduct")]
-	public static extern float QVector3D_DotProduct(QVector3D_Ptr v1, QVector3D_Ptr v2);
+	public static extern float QVector3D_DotProduct(QVector3D_Ptr* v1, QVector3D_Ptr* v2);
 	[LinkName("QVector3D_CrossProduct")]
-	public static extern QVector3D_Ptr QVector3D_CrossProduct(QVector3D_Ptr v1, QVector3D_Ptr v2);
+	public static extern QVector3D_Ptr* QVector3D_CrossProduct(QVector3D_Ptr* v1, QVector3D_Ptr* v2);
 	[LinkName("QVector3D_Normal")]
-	public static extern QVector3D_Ptr QVector3D_Normal(QVector3D_Ptr v1, QVector3D_Ptr v2);
+	public static extern QVector3D_Ptr* QVector3D_Normal(QVector3D_Ptr* v1, QVector3D_Ptr* v2);
 	[LinkName("QVector3D_Normal2")]
-	public static extern QVector3D_Ptr QVector3D_Normal2(QVector3D_Ptr v1, QVector3D_Ptr v2, QVector3D_Ptr v3);
+	public static extern QVector3D_Ptr* QVector3D_Normal2(QVector3D_Ptr* v1, QVector3D_Ptr* v2, QVector3D_Ptr* v3);
 	[LinkName("QVector3D_Project")]
-	public static extern QVector3D_Ptr QVector3D_Project(QVector3D_Ptr* self, QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport);
+	public static extern QVector3D_Ptr* QVector3D_Project(QVector3D_Ptr* self, QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport);
 	[LinkName("QVector3D_Unproject")]
-	public static extern QVector3D_Ptr QVector3D_Unproject(QVector3D_Ptr* self, QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport);
+	public static extern QVector3D_Ptr* QVector3D_Unproject(QVector3D_Ptr* self, QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport);
 	[LinkName("QVector3D_DistanceToPoint")]
-	public static extern float QVector3D_DistanceToPoint(QVector3D_Ptr* self, QVector3D_Ptr point);
+	public static extern float QVector3D_DistanceToPoint(QVector3D_Ptr* self, QVector3D_Ptr* point);
 	[LinkName("QVector3D_DistanceToPlane")]
-	public static extern float QVector3D_DistanceToPlane(QVector3D_Ptr* self, QVector3D_Ptr plane, QVector3D_Ptr normal);
+	public static extern float QVector3D_DistanceToPlane(QVector3D_Ptr* self, QVector3D_Ptr* plane, QVector3D_Ptr* normal);
 	[LinkName("QVector3D_DistanceToPlane2")]
-	public static extern float QVector3D_DistanceToPlane2(QVector3D_Ptr* self, QVector3D_Ptr plane1, QVector3D_Ptr plane2, QVector3D_Ptr plane3);
+	public static extern float QVector3D_DistanceToPlane2(QVector3D_Ptr* self, QVector3D_Ptr* plane1, QVector3D_Ptr* plane2, QVector3D_Ptr* plane3);
 	[LinkName("QVector3D_DistanceToLine")]
-	public static extern float QVector3D_DistanceToLine(QVector3D_Ptr* self, QVector3D_Ptr point, QVector3D_Ptr direction);
+	public static extern float QVector3D_DistanceToLine(QVector3D_Ptr* self, QVector3D_Ptr* point, QVector3D_Ptr* direction);
 	[LinkName("QVector3D_ToVector2D")]
-	public static extern QVector2D_Ptr QVector3D_ToVector2D(QVector3D_Ptr* self);
+	public static extern QVector2D_Ptr* QVector3D_ToVector2D(QVector3D_Ptr* self);
 	[LinkName("QVector3D_ToVector4D")]
-	public static extern QVector4D_Ptr QVector3D_ToVector4D(QVector3D_Ptr* self);
+	public static extern QVector4D_Ptr* QVector3D_ToVector4D(QVector3D_Ptr* self);
 	[LinkName("QVector3D_ToPoint")]
-	public static extern QPoint_Ptr QVector3D_ToPoint(QVector3D_Ptr* self);
+	public static extern QPoint_Ptr* QVector3D_ToPoint(QVector3D_Ptr* self);
 	[LinkName("QVector3D_ToPointF")]
-	public static extern QPointF_Ptr QVector3D_ToPointF(QVector3D_Ptr* self);
+	public static extern QPointF_Ptr* QVector3D_ToPointF(QVector3D_Ptr* self);
 	[LinkName("QVector3D_ToQvariant")]
-	public static extern QVariant_Ptr QVector3D_ToQvariant(QVector3D_Ptr* self);
+	public static extern QVariant_Ptr* QVector3D_ToQvariant(QVector3D_Ptr* self);
 }
-class QVector3D
+class QVector3D : IQVector3D
 {
 	private QVector3D_Ptr* ptr;
-	public this(QVector3D_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQVector3D other)
 	{
-		this.ptr = CQt.QVector3D_new(other);
+		this.ptr = CQt.QVector3D_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -344,25 +327,25 @@ class QVector3D
 	{
 		this.ptr = CQt.QVector3D_new5(xpos, ypos, zpos);
 	}
-	public this(QPoint_Ptr point)
+	public this(IQPoint point)
 	{
-		this.ptr = CQt.QVector3D_new6(point);
+		this.ptr = CQt.QVector3D_new6((.)point?.ObjectPtr);
 	}
-	public this(QPointF_Ptr point)
+	public this(IQPointF point)
 	{
-		this.ptr = CQt.QVector3D_new7(point);
+		this.ptr = CQt.QVector3D_new7((.)point?.ObjectPtr);
 	}
-	public this(QVector2D_Ptr vector)
+	public this(IQVector2D vector)
 	{
-		this.ptr = CQt.QVector3D_new8(vector);
+		this.ptr = CQt.QVector3D_new8((.)vector?.ObjectPtr);
 	}
-	public this(QVector2D_Ptr vector, float zpos)
+	public this(IQVector2D vector, float zpos)
 	{
-		this.ptr = CQt.QVector3D_new9(vector, zpos);
+		this.ptr = CQt.QVector3D_new9((.)vector?.ObjectPtr, zpos);
 	}
-	public this(QVector4D_Ptr vector)
+	public this(IQVector4D vector)
 	{
-		this.ptr = CQt.QVector3D_new10(vector);
+		this.ptr = CQt.QVector3D_new10((.)vector?.ObjectPtr);
 	}
 	public ~this()
 	{
@@ -408,7 +391,7 @@ class QVector3D
 	{
 		return CQt.QVector3D_LengthSquared((.)this.ptr);
 	}
-	public QVector3D_Ptr Normalized()
+	public QVector3D_Ptr* Normalized()
 	{
 		return CQt.QVector3D_Normalized((.)this.ptr);
 	}
@@ -416,101 +399,73 @@ class QVector3D
 	{
 		CQt.QVector3D_Normalize((.)this.ptr);
 	}
-	public QVector3D_Ptr* OperatorMultiplyAssign2(QVector3D_Ptr vector)
+	public QVector3D_Ptr* OperatorMultiplyAssign2(IQVector3D vector)
 	{
-		return CQt.QVector3D_OperatorMultiplyAssign2((.)this.ptr, vector);
+		return CQt.QVector3D_OperatorMultiplyAssign2((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public QVector3D_Ptr* OperatorDivideAssign2(QVector3D_Ptr vector)
+	public QVector3D_Ptr* OperatorDivideAssign2(IQVector3D vector)
 	{
-		return CQt.QVector3D_OperatorDivideAssign2((.)this.ptr, vector);
+		return CQt.QVector3D_OperatorDivideAssign2((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public float DotProduct(QVector3D_Ptr v1, QVector3D_Ptr v2)
+	public float DotProduct(IQVector3D v1, IQVector3D v2)
 	{
-		return CQt.QVector3D_DotProduct(v1, v2);
+		return CQt.QVector3D_DotProduct((.)v1?.ObjectPtr, (.)v2?.ObjectPtr);
 	}
-	public QVector3D_Ptr CrossProduct(QVector3D_Ptr v1, QVector3D_Ptr v2)
+	public QVector3D_Ptr* CrossProduct(IQVector3D v1, IQVector3D v2)
 	{
-		return CQt.QVector3D_CrossProduct(v1, v2);
+		return CQt.QVector3D_CrossProduct((.)v1?.ObjectPtr, (.)v2?.ObjectPtr);
 	}
-	public QVector3D_Ptr Normal(QVector3D_Ptr v1, QVector3D_Ptr v2)
+	public QVector3D_Ptr* Normal(IQVector3D v1, IQVector3D v2)
 	{
-		return CQt.QVector3D_Normal(v1, v2);
+		return CQt.QVector3D_Normal((.)v1?.ObjectPtr, (.)v2?.ObjectPtr);
 	}
-	public QVector3D_Ptr Normal2(QVector3D_Ptr v1, QVector3D_Ptr v2, QVector3D_Ptr v3)
+	public QVector3D_Ptr* Normal2(IQVector3D v1, IQVector3D v2, IQVector3D v3)
 	{
-		return CQt.QVector3D_Normal2(v1, v2, v3);
+		return CQt.QVector3D_Normal2((.)v1?.ObjectPtr, (.)v2?.ObjectPtr, (.)v3?.ObjectPtr);
 	}
-	public QVector3D_Ptr Project(QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport)
+	public QVector3D_Ptr* Project(IQMatrix4x4 modelView, IQMatrix4x4 projection, IQRect viewport)
 	{
-		return CQt.QVector3D_Project((.)this.ptr, modelView, projection, viewport);
+		return CQt.QVector3D_Project((.)this.ptr, (.)modelView?.ObjectPtr, (.)projection?.ObjectPtr, (.)viewport?.ObjectPtr);
 	}
-	public QVector3D_Ptr Unproject(QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport)
+	public QVector3D_Ptr* Unproject(IQMatrix4x4 modelView, IQMatrix4x4 projection, IQRect viewport)
 	{
-		return CQt.QVector3D_Unproject((.)this.ptr, modelView, projection, viewport);
+		return CQt.QVector3D_Unproject((.)this.ptr, (.)modelView?.ObjectPtr, (.)projection?.ObjectPtr, (.)viewport?.ObjectPtr);
 	}
-	public float DistanceToPoint(QVector3D_Ptr point)
+	public float DistanceToPoint(IQVector3D point)
 	{
-		return CQt.QVector3D_DistanceToPoint((.)this.ptr, point);
+		return CQt.QVector3D_DistanceToPoint((.)this.ptr, (.)point?.ObjectPtr);
 	}
-	public float DistanceToPlane(QVector3D_Ptr plane, QVector3D_Ptr normal)
+	public float DistanceToPlane(IQVector3D plane, IQVector3D normal)
 	{
-		return CQt.QVector3D_DistanceToPlane((.)this.ptr, plane, normal);
+		return CQt.QVector3D_DistanceToPlane((.)this.ptr, (.)plane?.ObjectPtr, (.)normal?.ObjectPtr);
 	}
-	public float DistanceToPlane2(QVector3D_Ptr plane1, QVector3D_Ptr plane2, QVector3D_Ptr plane3)
+	public float DistanceToPlane2(IQVector3D plane1, IQVector3D plane2, IQVector3D plane3)
 	{
-		return CQt.QVector3D_DistanceToPlane2((.)this.ptr, plane1, plane2, plane3);
+		return CQt.QVector3D_DistanceToPlane2((.)this.ptr, (.)plane1?.ObjectPtr, (.)plane2?.ObjectPtr, (.)plane3?.ObjectPtr);
 	}
-	public float DistanceToLine(QVector3D_Ptr point, QVector3D_Ptr direction)
+	public float DistanceToLine(IQVector3D point, IQVector3D direction)
 	{
-		return CQt.QVector3D_DistanceToLine((.)this.ptr, point, direction);
+		return CQt.QVector3D_DistanceToLine((.)this.ptr, (.)point?.ObjectPtr, (.)direction?.ObjectPtr);
 	}
-	public QVector2D_Ptr ToVector2D()
+	public QVector2D_Ptr* ToVector2D()
 	{
 		return CQt.QVector3D_ToVector2D((.)this.ptr);
 	}
-	public QVector4D_Ptr ToVector4D()
+	public QVector4D_Ptr* ToVector4D()
 	{
 		return CQt.QVector3D_ToVector4D((.)this.ptr);
 	}
-	public QPoint_Ptr ToPoint()
+	public QPoint_Ptr* ToPoint()
 	{
 		return CQt.QVector3D_ToPoint((.)this.ptr);
 	}
-	public QPointF_Ptr ToPointF()
+	public QPointF_Ptr* ToPointF()
 	{
 		return CQt.QVector3D_ToPointF((.)this.ptr);
 	}
 }
-interface IQVector3D
+interface IQVector3D : IQtObjectInterface
 {
-	public bool IsNull();
-	public float X();
-	public float Y();
-	public float Z();
-	public void SetX();
-	public void SetY();
-	public void SetZ();
-	public float OperatorSubscript2();
-	public float Length();
-	public float LengthSquared();
-	public QVector3D Normalized();
-	public void Normalize();
-	public QVector3D* OperatorMultiplyAssign2();
-	public QVector3D* OperatorDivideAssign2();
-	public float DotProduct();
-	public QVector3D CrossProduct();
-	public QVector3D Normal();
-	public QVector3D Normal2();
-	public QVector3D Project();
-	public QVector3D Unproject();
-	public float DistanceToPoint();
-	public float DistanceToPlane();
-	public float DistanceToPlane2();
-	public float DistanceToLine();
-	public QVector2D ToVector2D();
-	public QVector4D ToVector4D();
-	public QPoint ToPoint();
-	public QPointF ToPointF();
 }
 // --------------------------------------------------------------
 // QVector4D
@@ -532,17 +487,17 @@ extension CQt
 	[LinkName("QVector4D_new5")]
 	public static extern QVector4D_Ptr* QVector4D_new5(float xpos, float ypos, float zpos, float wpos);
 	[LinkName("QVector4D_new6")]
-	public static extern QVector4D_Ptr* QVector4D_new6(QPoint_Ptr point);
+	public static extern QVector4D_Ptr* QVector4D_new6(QPoint_Ptr* point);
 	[LinkName("QVector4D_new7")]
-	public static extern QVector4D_Ptr* QVector4D_new7(QPointF_Ptr point);
+	public static extern QVector4D_Ptr* QVector4D_new7(QPointF_Ptr* point);
 	[LinkName("QVector4D_new8")]
-	public static extern QVector4D_Ptr* QVector4D_new8(QVector2D_Ptr vector);
+	public static extern QVector4D_Ptr* QVector4D_new8(QVector2D_Ptr* vector);
 	[LinkName("QVector4D_new9")]
-	public static extern QVector4D_Ptr* QVector4D_new9(QVector2D_Ptr vector, float zpos, float wpos);
+	public static extern QVector4D_Ptr* QVector4D_new9(QVector2D_Ptr* vector, float zpos, float wpos);
 	[LinkName("QVector4D_new10")]
-	public static extern QVector4D_Ptr* QVector4D_new10(QVector3D_Ptr vector);
+	public static extern QVector4D_Ptr* QVector4D_new10(QVector3D_Ptr* vector);
 	[LinkName("QVector4D_new11")]
-	public static extern QVector4D_Ptr* QVector4D_new11(QVector3D_Ptr vector, float wpos);
+	public static extern QVector4D_Ptr* QVector4D_new11(QVector3D_Ptr* vector, float wpos);
 	[LinkName("QVector4D_new12")]
 	public static extern QVector4D_Ptr* QVector4D_new12(QVector4D_Ptr* param1);
 	[LinkName("QVector4D_Delete")]
@@ -574,44 +529,45 @@ extension CQt
 	[LinkName("QVector4D_LengthSquared")]
 	public static extern float QVector4D_LengthSquared(QVector4D_Ptr* self);
 	[LinkName("QVector4D_Normalized")]
-	public static extern QVector4D_Ptr QVector4D_Normalized(QVector4D_Ptr* self);
+	public static extern QVector4D_Ptr* QVector4D_Normalized(QVector4D_Ptr* self);
 	[LinkName("QVector4D_Normalize")]
 	public static extern void QVector4D_Normalize(QVector4D_Ptr* self);
 	[LinkName("QVector4D_OperatorPlusAssign")]
-	public static extern QVector4D_Ptr* QVector4D_OperatorPlusAssign(QVector4D_Ptr* self, QVector4D_Ptr vector);
+	public static extern QVector4D_Ptr* QVector4D_OperatorPlusAssign(QVector4D_Ptr* self, QVector4D_Ptr* vector);
 	[LinkName("QVector4D_OperatorMinusAssign")]
-	public static extern QVector4D_Ptr* QVector4D_OperatorMinusAssign(QVector4D_Ptr* self, QVector4D_Ptr vector);
+	public static extern QVector4D_Ptr* QVector4D_OperatorMinusAssign(QVector4D_Ptr* self, QVector4D_Ptr* vector);
 	[LinkName("QVector4D_OperatorMultiplyAssign")]
 	public static extern QVector4D_Ptr* QVector4D_OperatorMultiplyAssign(QVector4D_Ptr* self, float factor);
 	[LinkName("QVector4D_OperatorMultiplyAssign2")]
-	public static extern QVector4D_Ptr* QVector4D_OperatorMultiplyAssign2(QVector4D_Ptr* self, QVector4D_Ptr vector);
+	public static extern QVector4D_Ptr* QVector4D_OperatorMultiplyAssign2(QVector4D_Ptr* self, QVector4D_Ptr* vector);
 	[LinkName("QVector4D_OperatorDivideAssign")]
 	public static extern QVector4D_Ptr* QVector4D_OperatorDivideAssign(QVector4D_Ptr* self, float divisor);
 	[LinkName("QVector4D_OperatorDivideAssign2")]
-	public static extern QVector4D_Ptr* QVector4D_OperatorDivideAssign2(QVector4D_Ptr* self, QVector4D_Ptr vector);
+	public static extern QVector4D_Ptr* QVector4D_OperatorDivideAssign2(QVector4D_Ptr* self, QVector4D_Ptr* vector);
 	[LinkName("QVector4D_DotProduct")]
-	public static extern float QVector4D_DotProduct(QVector4D_Ptr v1, QVector4D_Ptr v2);
+	public static extern float QVector4D_DotProduct(QVector4D_Ptr* v1, QVector4D_Ptr* v2);
 	[LinkName("QVector4D_ToVector2D")]
-	public static extern QVector2D_Ptr QVector4D_ToVector2D(QVector4D_Ptr* self);
+	public static extern QVector2D_Ptr* QVector4D_ToVector2D(QVector4D_Ptr* self);
 	[LinkName("QVector4D_ToVector2DAffine")]
-	public static extern QVector2D_Ptr QVector4D_ToVector2DAffine(QVector4D_Ptr* self);
+	public static extern QVector2D_Ptr* QVector4D_ToVector2DAffine(QVector4D_Ptr* self);
 	[LinkName("QVector4D_ToVector3D")]
-	public static extern QVector3D_Ptr QVector4D_ToVector3D(QVector4D_Ptr* self);
+	public static extern QVector3D_Ptr* QVector4D_ToVector3D(QVector4D_Ptr* self);
 	[LinkName("QVector4D_ToVector3DAffine")]
-	public static extern QVector3D_Ptr QVector4D_ToVector3DAffine(QVector4D_Ptr* self);
+	public static extern QVector3D_Ptr* QVector4D_ToVector3DAffine(QVector4D_Ptr* self);
 	[LinkName("QVector4D_ToPoint")]
-	public static extern QPoint_Ptr QVector4D_ToPoint(QVector4D_Ptr* self);
+	public static extern QPoint_Ptr* QVector4D_ToPoint(QVector4D_Ptr* self);
 	[LinkName("QVector4D_ToPointF")]
-	public static extern QPointF_Ptr QVector4D_ToPointF(QVector4D_Ptr* self);
+	public static extern QPointF_Ptr* QVector4D_ToPointF(QVector4D_Ptr* self);
 	[LinkName("QVector4D_ToQvariant")]
-	public static extern QVariant_Ptr QVector4D_ToQvariant(QVector4D_Ptr* self);
+	public static extern QVariant_Ptr* QVector4D_ToQvariant(QVector4D_Ptr* self);
 }
-class QVector4D
+class QVector4D : IQVector4D
 {
 	private QVector4D_Ptr* ptr;
-	public this(QVector4D_Ptr* other)
+	public void* ObjectPtr => ptr;
+	public this(IQVector4D other)
 	{
-		this.ptr = CQt.QVector4D_new(other);
+		this.ptr = CQt.QVector4D_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -625,29 +581,29 @@ class QVector4D
 	{
 		this.ptr = CQt.QVector4D_new5(xpos, ypos, zpos, wpos);
 	}
-	public this(QPoint_Ptr point)
+	public this(IQPoint point)
 	{
-		this.ptr = CQt.QVector4D_new6(point);
+		this.ptr = CQt.QVector4D_new6((.)point?.ObjectPtr);
 	}
-	public this(QPointF_Ptr point)
+	public this(IQPointF point)
 	{
-		this.ptr = CQt.QVector4D_new7(point);
+		this.ptr = CQt.QVector4D_new7((.)point?.ObjectPtr);
 	}
-	public this(QVector2D_Ptr vector)
+	public this(IQVector2D vector)
 	{
-		this.ptr = CQt.QVector4D_new8(vector);
+		this.ptr = CQt.QVector4D_new8((.)vector?.ObjectPtr);
 	}
-	public this(QVector2D_Ptr vector, float zpos, float wpos)
+	public this(IQVector2D vector, float zpos, float wpos)
 	{
-		this.ptr = CQt.QVector4D_new9(vector, zpos, wpos);
+		this.ptr = CQt.QVector4D_new9((.)vector?.ObjectPtr, zpos, wpos);
 	}
-	public this(QVector3D_Ptr vector)
+	public this(IQVector3D vector)
 	{
-		this.ptr = CQt.QVector4D_new10(vector);
+		this.ptr = CQt.QVector4D_new10((.)vector?.ObjectPtr);
 	}
-	public this(QVector3D_Ptr vector, float wpos)
+	public this(IQVector3D vector, float wpos)
 	{
-		this.ptr = CQt.QVector4D_new11(vector, wpos);
+		this.ptr = CQt.QVector4D_new11((.)vector?.ObjectPtr, wpos);
 	}
 	public ~this()
 	{
@@ -701,7 +657,7 @@ class QVector4D
 	{
 		return CQt.QVector4D_LengthSquared((.)this.ptr);
 	}
-	public QVector4D_Ptr Normalized()
+	public QVector4D_Ptr* Normalized()
 	{
 		return CQt.QVector4D_Normalized((.)this.ptr);
 	}
@@ -709,66 +665,43 @@ class QVector4D
 	{
 		CQt.QVector4D_Normalize((.)this.ptr);
 	}
-	public QVector4D_Ptr* OperatorMultiplyAssign2(QVector4D_Ptr vector)
+	public QVector4D_Ptr* OperatorMultiplyAssign2(IQVector4D vector)
 	{
-		return CQt.QVector4D_OperatorMultiplyAssign2((.)this.ptr, vector);
+		return CQt.QVector4D_OperatorMultiplyAssign2((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public QVector4D_Ptr* OperatorDivideAssign2(QVector4D_Ptr vector)
+	public QVector4D_Ptr* OperatorDivideAssign2(IQVector4D vector)
 	{
-		return CQt.QVector4D_OperatorDivideAssign2((.)this.ptr, vector);
+		return CQt.QVector4D_OperatorDivideAssign2((.)this.ptr, (.)vector?.ObjectPtr);
 	}
-	public float DotProduct(QVector4D_Ptr v1, QVector4D_Ptr v2)
+	public float DotProduct(IQVector4D v1, IQVector4D v2)
 	{
-		return CQt.QVector4D_DotProduct(v1, v2);
+		return CQt.QVector4D_DotProduct((.)v1?.ObjectPtr, (.)v2?.ObjectPtr);
 	}
-	public QVector2D_Ptr ToVector2D()
+	public QVector2D_Ptr* ToVector2D()
 	{
 		return CQt.QVector4D_ToVector2D((.)this.ptr);
 	}
-	public QVector2D_Ptr ToVector2DAffine()
+	public QVector2D_Ptr* ToVector2DAffine()
 	{
 		return CQt.QVector4D_ToVector2DAffine((.)this.ptr);
 	}
-	public QVector3D_Ptr ToVector3D()
+	public QVector3D_Ptr* ToVector3D()
 	{
 		return CQt.QVector4D_ToVector3D((.)this.ptr);
 	}
-	public QVector3D_Ptr ToVector3DAffine()
+	public QVector3D_Ptr* ToVector3DAffine()
 	{
 		return CQt.QVector4D_ToVector3DAffine((.)this.ptr);
 	}
-	public QPoint_Ptr ToPoint()
+	public QPoint_Ptr* ToPoint()
 	{
 		return CQt.QVector4D_ToPoint((.)this.ptr);
 	}
-	public QPointF_Ptr ToPointF()
+	public QPointF_Ptr* ToPointF()
 	{
 		return CQt.QVector4D_ToPointF((.)this.ptr);
 	}
 }
-interface IQVector4D
+interface IQVector4D : IQtObjectInterface
 {
-	public bool IsNull();
-	public float X();
-	public float Y();
-	public float Z();
-	public float W();
-	public void SetX();
-	public void SetY();
-	public void SetZ();
-	public void SetW();
-	public float OperatorSubscript2();
-	public float Length();
-	public float LengthSquared();
-	public QVector4D Normalized();
-	public void Normalize();
-	public QVector4D* OperatorMultiplyAssign2();
-	public QVector4D* OperatorDivideAssign2();
-	public float DotProduct();
-	public QVector2D ToVector2D();
-	public QVector2D ToVector2DAffine();
-	public QVector3D ToVector3D();
-	public QVector3D ToVector3DAffine();
-	public QPoint ToPoint();
-	public QPointF ToPointF();
 }

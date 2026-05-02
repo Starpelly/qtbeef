@@ -33,7 +33,7 @@ extension CQt
 	[LinkName("QPageRanges_ToString")]
 	public static extern libqt_string QPageRanges_ToString(QPageRanges_Ptr* self);
 	[LinkName("QPageRanges_FromString")]
-	public static extern QPageRanges_Ptr QPageRanges_FromString(libqt_string* ranges);
+	public static extern QPageRanges_Ptr* QPageRanges_FromString(libqt_string ranges);
 	[LinkName("QPageRanges_Contains")]
 	public static extern bool QPageRanges_Contains(QPageRanges_Ptr* self, c_int pageNumber);
 	[LinkName("QPageRanges_IsEmpty")]
@@ -45,24 +45,25 @@ extension CQt
 	[LinkName("QPageRanges_Detach")]
 	public static extern void QPageRanges_Detach(QPageRanges_Ptr* self);
 }
-class QPageRanges
+class QPageRanges : IQPageRanges
 {
 	private QPageRanges_Ptr* ptr;
+	public void* ObjectPtr => ptr;
 	public this()
 	{
 		this.ptr = CQt.QPageRanges_new();
 	}
-	public this(QPageRanges_Ptr* other)
+	public this(IQPageRanges other)
 	{
-		this.ptr = CQt.QPageRanges_new2(other);
+		this.ptr = CQt.QPageRanges_new2((.)other?.ObjectPtr);
 	}
 	public ~this()
 	{
 		CQt.QPageRanges_Delete(this.ptr);
 	}
-	public void Swap(QPageRanges_Ptr* other)
+	public void Swap(IQPageRanges other)
 	{
-		CQt.QPageRanges_Swap((.)this.ptr, other);
+		CQt.QPageRanges_Swap((.)this.ptr, (.)other?.ObjectPtr);
 	}
 	public void AddPage(c_int pageNumber)
 	{
@@ -84,9 +85,9 @@ class QPageRanges
 	{
 		return CQt.QPageRanges_ToString((.)this.ptr);
 	}
-	public QPageRanges_Ptr FromString(libqt_string* ranges)
+	public QPageRanges_Ptr* FromString(String ranges)
 	{
-		return CQt.QPageRanges_FromString(ranges);
+		return CQt.QPageRanges_FromString(libqt_string(ranges));
 	}
 	public bool Contains(c_int pageNumber)
 	{
@@ -109,20 +110,8 @@ class QPageRanges
 		CQt.QPageRanges_Detach((.)this.ptr);
 	}
 }
-interface IQPageRanges
+interface IQPageRanges : IQtObjectInterface
 {
-	public void Swap();
-	public void AddPage();
-	public void AddRange();
-	public void* ToRangeList();
-	public void Clear();
-	public libqt_string ToString();
-	public QPageRanges FromString();
-	public bool Contains();
-	public bool IsEmpty();
-	public c_int FirstPage();
-	public c_int LastPage();
-	public void Detach();
 }
 // --------------------------------------------------------------
 // QPageRanges::Range
@@ -134,13 +123,13 @@ struct QPageRanges_Range_Ptr: void
 extension CQt
 {
 	[LinkName("QPageRanges_Range_new")]
-	public static extern QPageRanges_Range_Ptr* QPageRanges_Range_new(QPageRanges_Range* other);
+	public static extern QPageRanges_Range_Ptr* QPageRanges_Range_new(QPageRanges_Range_Ptr* other);
 	[LinkName("QPageRanges_Range_new2")]
-	public static extern QPageRanges_Range_Ptr* QPageRanges_Range_new2(QPageRanges_Range* other);
+	public static extern QPageRanges_Range_Ptr* QPageRanges_Range_new2(QPageRanges_Range_Ptr* other);
 	[LinkName("QPageRanges_Range_new3")]
 	public static extern QPageRanges_Range_Ptr* QPageRanges_Range_new3();
 	[LinkName("QPageRanges_Range_new4")]
-	public static extern QPageRanges_Range_Ptr* QPageRanges_Range_new4(QPageRanges_Range* param1);
+	public static extern QPageRanges_Range_Ptr* QPageRanges_Range_new4(QPageRanges_Range_Ptr* param1);
 	[LinkName("QPageRanges_Range_Delete")]
 	public static extern void QPageRanges_Range_Delete(QPageRanges_Range_Ptr* self);
 	[LinkName("QPageRanges_Range_From")]
@@ -154,12 +143,13 @@ extension CQt
 	[LinkName("QPageRanges_Range_Contains")]
 	public static extern bool QPageRanges_Range_Contains(QPageRanges_Range_Ptr* self, c_int pageNumber);
 }
-class QPageRanges_Range
+class QPageRanges_Range : IQPageRanges_Range
 {
 	private QPageRanges_Range_Ptr* ptr;
-	public this(QPageRanges_Range* other)
+	public void* ObjectPtr => ptr;
+	public this(IQPageRanges_Range other)
 	{
-		this.ptr = CQt.QPageRanges_Range_new(other);
+		this.ptr = CQt.QPageRanges_Range_new((.)other?.ObjectPtr);
 	}
 	public this()
 	{
@@ -190,11 +180,6 @@ class QPageRanges_Range
 		return CQt.QPageRanges_Range_Contains((.)this.ptr, pageNumber);
 	}
 }
-interface IQPageRanges_Range
+interface IQPageRanges_Range : IQtObjectInterface
 {
-	public c_int From();
-	public void SetFrom();
-	public c_int To();
-	public void SetTo();
-	public bool Contains();
 }
