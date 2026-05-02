@@ -19,7 +19,7 @@ class Program
 				m_menubar = new QMenuBar(this);
 
 				{
-					let file = scope QMenu(m_menubar.AddMenu2("File"));
+					let file = m_menubar.AddMenu2("File");
 					file.AddMenu2("Quit");
 				}
 
@@ -47,6 +47,8 @@ class Program
 		char8** argv = scope .();
 
 		CQt.QApplication_new(&argc, argv);
+
+		CQt.QApplication_SetStyle(CQt.QStyleFactory_Create("Fusion"));
 
 		let mainwindow = scope TestWindow(null);
 		mainwindow.Show();

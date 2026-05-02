@@ -14,21 +14,18 @@ struct QStaticPlugin_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStaticPlugin_new")]
-	public static extern QStaticPlugin_Ptr QStaticPlugin_new(void** other);
-	[LinkName("QStaticPlugin_new2")]
-	public static extern QStaticPlugin_Ptr QStaticPlugin_new2(void** other);
-	[LinkName("QStaticPlugin_Delete")]
-	public static extern void QStaticPlugin_Delete(QStaticPlugin_Ptr self);
-	[LinkName("QStaticPlugin_Instance")]
-	public static extern c_intptr* QStaticPlugin_Instance(void* self);
-	[LinkName("QStaticPlugin_SetInstance")]
-	public static extern void QStaticPlugin_SetInstance(void* self, c_intptr* instance);
-	[LinkName("QStaticPlugin_MetaData")]
-	public static extern void* QStaticPlugin_MetaData(void* self);
+	public c_intptr* Instance()
+	{
+		return CQt.QStaticPlugin_Instance((.)this.Ptr);
+	}
+	public void SetInstance(c_intptr* instance)
+	{
+		CQt.QStaticPlugin_SetInstance((.)this.Ptr, instance);
+	}
+	public QJsonObject_Ptr MetaData()
+	{
+		return QJsonObject_Ptr(CQt.QStaticPlugin_MetaData((.)this.Ptr));
+	}
 }
 class QStaticPlugin : IQStaticPlugin
 {
@@ -48,17 +45,32 @@ class QStaticPlugin : IQStaticPlugin
 	}
 	public c_intptr* Instance()
 	{
-		return CQt.QStaticPlugin_Instance((.)this.ptr.Ptr);
+		return this.ptr.Instance();
 	}
 	public void SetInstance(c_intptr* instance)
 	{
-		CQt.QStaticPlugin_SetInstance((.)this.ptr.Ptr, instance);
+		this.ptr.SetInstance(instance);
 	}
 	public QJsonObject_Ptr MetaData()
 	{
-		return QJsonObject_Ptr(CQt.QStaticPlugin_MetaData((.)this.ptr.Ptr));
+		return this.ptr.MetaData();
 	}
 }
 interface IQStaticPlugin : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStaticPlugin_new")]
+	public static extern QStaticPlugin_Ptr QStaticPlugin_new(void** other);
+	[LinkName("QStaticPlugin_new2")]
+	public static extern QStaticPlugin_Ptr QStaticPlugin_new2(void** other);
+	[LinkName("QStaticPlugin_Delete")]
+	public static extern void QStaticPlugin_Delete(QStaticPlugin_Ptr self);
+	[LinkName("QStaticPlugin_Instance")]
+	public static extern c_intptr* QStaticPlugin_Instance(void* self);
+	[LinkName("QStaticPlugin_SetInstance")]
+	public static extern void QStaticPlugin_SetInstance(void* self, c_intptr* instance);
+	[LinkName("QStaticPlugin_MetaData")]
+	public static extern void* QStaticPlugin_MetaData(void* self);
 }

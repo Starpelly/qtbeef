@@ -14,6 +14,138 @@ struct QPoint_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsNull()
+	{
+		return CQt.QPoint_IsNull((.)this.Ptr);
+	}
+	public c_int X()
+	{
+		return CQt.QPoint_X((.)this.Ptr);
+	}
+	public c_int Y()
+	{
+		return CQt.QPoint_Y((.)this.Ptr);
+	}
+	public void SetX(c_int x)
+	{
+		CQt.QPoint_SetX((.)this.Ptr, x);
+	}
+	public void SetY(c_int y)
+	{
+		CQt.QPoint_SetY((.)this.Ptr, y);
+	}
+	public c_int ManhattanLength()
+	{
+		return CQt.QPoint_ManhattanLength((.)this.Ptr);
+	}
+	public QPoint_Ptr Transposed()
+	{
+		return QPoint_Ptr(CQt.QPoint_Transposed((.)this.Ptr));
+	}
+	public c_int* Rx()
+	{
+		return CQt.QPoint_Rx((.)this.Ptr);
+	}
+	public c_int* Ry()
+	{
+		return CQt.QPoint_Ry((.)this.Ptr);
+	}
+	public QPoint_Ptr OperatorMultiplyAssign2(double factor)
+	{
+		return QPoint_Ptr(CQt.QPoint_OperatorMultiplyAssign2((.)this.Ptr, factor));
+	}
+	public QPoint_Ptr OperatorMultiplyAssign3(c_int factor)
+	{
+		return QPoint_Ptr(CQt.QPoint_OperatorMultiplyAssign3((.)this.Ptr, factor));
+	}
+	public c_int DotProduct(IQPoint p1, IQPoint p2)
+	{
+		return CQt.QPoint_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
+	}
+	public QPointF_Ptr ToPointF()
+	{
+		return QPointF_Ptr(CQt.QPoint_ToPointF((.)this.Ptr));
+	}
+}
+class QPoint : IQPoint
+{
+	private QPoint_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPoint_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQPoint other)
+	{
+		this.ptr = CQt.QPoint_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QPoint_new3();
+	}
+	public this(c_int xpos, c_int ypos)
+	{
+		this.ptr = CQt.QPoint_new4(xpos, ypos);
+	}
+	public ~this()
+	{
+		CQt.QPoint_Delete(this.ptr);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public c_int X()
+	{
+		return this.ptr.X();
+	}
+	public c_int Y()
+	{
+		return this.ptr.Y();
+	}
+	public void SetX(c_int x)
+	{
+		this.ptr.SetX(x);
+	}
+	public void SetY(c_int y)
+	{
+		this.ptr.SetY(y);
+	}
+	public c_int ManhattanLength()
+	{
+		return this.ptr.ManhattanLength();
+	}
+	public QPoint_Ptr Transposed()
+	{
+		return this.ptr.Transposed();
+	}
+	public c_int* Rx()
+	{
+		return this.ptr.Rx();
+	}
+	public c_int* Ry()
+	{
+		return this.ptr.Ry();
+	}
+	public QPoint_Ptr OperatorMultiplyAssign2(double factor)
+	{
+		return this.ptr.OperatorMultiplyAssign2(factor);
+	}
+	public QPoint_Ptr OperatorMultiplyAssign3(c_int factor)
+	{
+		return this.ptr.OperatorMultiplyAssign3(factor);
+	}
+	public c_int DotProduct(IQPoint p1, IQPoint p2)
+	{
+		return this.ptr.DotProduct(p1, p2);
+	}
+	public QPointF_Ptr ToPointF()
+	{
+		return this.ptr.ToPointF();
+	}
+}
+interface IQPoint : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -64,86 +196,6 @@ extension CQt
 	[LinkName("QPoint_ToPointF")]
 	public static extern void* QPoint_ToPointF(void* self);
 }
-class QPoint : IQPoint
-{
-	private QPoint_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QPoint_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQPoint other)
-	{
-		this.ptr = CQt.QPoint_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QPoint_new3();
-	}
-	public this(c_int xpos, c_int ypos)
-	{
-		this.ptr = CQt.QPoint_new4(xpos, ypos);
-	}
-	public ~this()
-	{
-		CQt.QPoint_Delete(this.ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QPoint_IsNull((.)this.ptr.Ptr);
-	}
-	public c_int X()
-	{
-		return CQt.QPoint_X((.)this.ptr.Ptr);
-	}
-	public c_int Y()
-	{
-		return CQt.QPoint_Y((.)this.ptr.Ptr);
-	}
-	public void SetX(c_int x)
-	{
-		CQt.QPoint_SetX((.)this.ptr.Ptr, x);
-	}
-	public void SetY(c_int y)
-	{
-		CQt.QPoint_SetY((.)this.ptr.Ptr, y);
-	}
-	public c_int ManhattanLength()
-	{
-		return CQt.QPoint_ManhattanLength((.)this.ptr.Ptr);
-	}
-	public QPoint_Ptr Transposed()
-	{
-		return QPoint_Ptr(CQt.QPoint_Transposed((.)this.ptr.Ptr));
-	}
-	public c_int* Rx()
-	{
-		return CQt.QPoint_Rx((.)this.ptr.Ptr);
-	}
-	public c_int* Ry()
-	{
-		return CQt.QPoint_Ry((.)this.ptr.Ptr);
-	}
-	public QPoint_Ptr OperatorMultiplyAssign2(double factor)
-	{
-		return QPoint_Ptr(CQt.QPoint_OperatorMultiplyAssign2((.)this.ptr.Ptr, factor));
-	}
-	public QPoint_Ptr OperatorMultiplyAssign3(c_int factor)
-	{
-		return QPoint_Ptr(CQt.QPoint_OperatorMultiplyAssign3((.)this.ptr.Ptr, factor));
-	}
-	public c_int DotProduct(IQPoint p1, IQPoint p2)
-	{
-		return CQt.QPoint_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
-	}
-	public QPointF_Ptr ToPointF()
-	{
-		return QPointF_Ptr(CQt.QPoint_ToPointF((.)this.ptr.Ptr));
-	}
-}
-interface IQPoint : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QPointF
 // --------------------------------------------------------------
@@ -155,6 +207,126 @@ struct QPointF_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public double ManhattanLength()
+	{
+		return CQt.QPointF_ManhattanLength((.)this.Ptr);
+	}
+	public bool IsNull()
+	{
+		return CQt.QPointF_IsNull((.)this.Ptr);
+	}
+	public double X()
+	{
+		return CQt.QPointF_X((.)this.Ptr);
+	}
+	public double Y()
+	{
+		return CQt.QPointF_Y((.)this.Ptr);
+	}
+	public void SetX(double x)
+	{
+		CQt.QPointF_SetX((.)this.Ptr, x);
+	}
+	public void SetY(double y)
+	{
+		CQt.QPointF_SetY((.)this.Ptr, y);
+	}
+	public QPointF_Ptr Transposed()
+	{
+		return QPointF_Ptr(CQt.QPointF_Transposed((.)this.Ptr));
+	}
+	public double* Rx()
+	{
+		return CQt.QPointF_Rx((.)this.Ptr);
+	}
+	public double* Ry()
+	{
+		return CQt.QPointF_Ry((.)this.Ptr);
+	}
+	public double DotProduct(IQPointF p1, IQPointF p2)
+	{
+		return CQt.QPointF_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
+	}
+	public QPoint_Ptr ToPoint()
+	{
+		return QPoint_Ptr(CQt.QPointF_ToPoint((.)this.Ptr));
+	}
+}
+class QPointF : IQPointF
+{
+	private QPointF_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPointF_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQPointF other)
+	{
+		this.ptr = CQt.QPointF_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QPointF_new3();
+	}
+	public this(IQPoint p)
+	{
+		this.ptr = CQt.QPointF_new4((.)p?.ObjectPtr);
+	}
+	public this(double xpos, double ypos)
+	{
+		this.ptr = CQt.QPointF_new5(xpos, ypos);
+	}
+	public ~this()
+	{
+		CQt.QPointF_Delete(this.ptr);
+	}
+	public double ManhattanLength()
+	{
+		return this.ptr.ManhattanLength();
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public double X()
+	{
+		return this.ptr.X();
+	}
+	public double Y()
+	{
+		return this.ptr.Y();
+	}
+	public void SetX(double x)
+	{
+		this.ptr.SetX(x);
+	}
+	public void SetY(double y)
+	{
+		this.ptr.SetY(y);
+	}
+	public QPointF_Ptr Transposed()
+	{
+		return this.ptr.Transposed();
+	}
+	public double* Rx()
+	{
+		return this.ptr.Rx();
+	}
+	public double* Ry()
+	{
+		return this.ptr.Ry();
+	}
+	public double DotProduct(IQPointF p1, IQPointF p2)
+	{
+		return this.ptr.DotProduct(p1, p2);
+	}
+	public QPoint_Ptr ToPoint()
+	{
+		return this.ptr.ToPoint();
+	}
+}
+interface IQPointF : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -202,80 +374,4 @@ extension CQt
 	public static extern double QPointF_DotProduct(void** p1, void** p2);
 	[LinkName("QPointF_ToPoint")]
 	public static extern void* QPointF_ToPoint(void* self);
-}
-class QPointF : IQPointF
-{
-	private QPointF_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QPointF_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQPointF other)
-	{
-		this.ptr = CQt.QPointF_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QPointF_new3();
-	}
-	public this(IQPoint p)
-	{
-		this.ptr = CQt.QPointF_new4((.)p?.ObjectPtr);
-	}
-	public this(double xpos, double ypos)
-	{
-		this.ptr = CQt.QPointF_new5(xpos, ypos);
-	}
-	public ~this()
-	{
-		CQt.QPointF_Delete(this.ptr);
-	}
-	public double ManhattanLength()
-	{
-		return CQt.QPointF_ManhattanLength((.)this.ptr.Ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QPointF_IsNull((.)this.ptr.Ptr);
-	}
-	public double X()
-	{
-		return CQt.QPointF_X((.)this.ptr.Ptr);
-	}
-	public double Y()
-	{
-		return CQt.QPointF_Y((.)this.ptr.Ptr);
-	}
-	public void SetX(double x)
-	{
-		CQt.QPointF_SetX((.)this.ptr.Ptr, x);
-	}
-	public void SetY(double y)
-	{
-		CQt.QPointF_SetY((.)this.ptr.Ptr, y);
-	}
-	public QPointF_Ptr Transposed()
-	{
-		return QPointF_Ptr(CQt.QPointF_Transposed((.)this.ptr.Ptr));
-	}
-	public double* Rx()
-	{
-		return CQt.QPointF_Rx((.)this.ptr.Ptr);
-	}
-	public double* Ry()
-	{
-		return CQt.QPointF_Ry((.)this.ptr.Ptr);
-	}
-	public double DotProduct(IQPointF p1, IQPointF p2)
-	{
-		return CQt.QPointF_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
-	}
-	public QPoint_Ptr ToPoint()
-	{
-		return QPoint_Ptr(CQt.QPointF_ToPoint((.)this.ptr.Ptr));
-	}
-}
-interface IQPointF : IQtObjectInterface
-{
 }

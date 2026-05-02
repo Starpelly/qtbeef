@@ -14,44 +14,6 @@ struct QLibraryInfo_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QLibraryInfo_new")]
-	public static extern QLibraryInfo_Ptr QLibraryInfo_new(void** other);
-	[LinkName("QLibraryInfo_new2")]
-	public static extern QLibraryInfo_Ptr QLibraryInfo_new2(void** other);
-	[LinkName("QLibraryInfo_Delete")]
-	public static extern void QLibraryInfo_Delete(QLibraryInfo_Ptr self);
-	[LinkName("QLibraryInfo_Build")]
-	public static extern c_char* QLibraryInfo_Build();
-	[LinkName("QLibraryInfo_IsDebugBuild")]
-	public static extern bool QLibraryInfo_IsDebugBuild();
-	[LinkName("QLibraryInfo_Version")]
-	public static extern void* QLibraryInfo_Version();
-	[LinkName("QLibraryInfo_Path")]
-	public static extern libqt_string QLibraryInfo_Path(QLibraryInfo_LibraryPath p);
-	[LinkName("QLibraryInfo_Location")]
-	public static extern libqt_string QLibraryInfo_Location(QLibraryInfo_LibraryPath location);
-	[LinkName("QLibraryInfo_PlatformPluginArguments")]
-	public static extern void* QLibraryInfo_PlatformPluginArguments(libqt_string platformName);
-}
-class QLibraryInfo : IQLibraryInfo
-{
-	private QLibraryInfo_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QLibraryInfo_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQLibraryInfo other)
-	{
-		this.ptr = CQt.QLibraryInfo_new((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QLibraryInfo_Delete(this.ptr);
-	}
 	public c_char* Build()
 	{
 		return CQt.QLibraryInfo_Build();
@@ -77,8 +39,70 @@ class QLibraryInfo : IQLibraryInfo
 		return CQt.QLibraryInfo_PlatformPluginArguments(libqt_string(platformName));
 	}
 }
+class QLibraryInfo : IQLibraryInfo
+{
+	private QLibraryInfo_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLibraryInfo_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQLibraryInfo other)
+	{
+		this.ptr = CQt.QLibraryInfo_new((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QLibraryInfo_Delete(this.ptr);
+	}
+	public c_char* Build()
+	{
+		return this.ptr.Build();
+	}
+	public bool IsDebugBuild()
+	{
+		return this.ptr.IsDebugBuild();
+	}
+	public QVersionNumber_Ptr Version()
+	{
+		return this.ptr.Version();
+	}
+	public void Path(String outStr, QLibraryInfo_LibraryPath p)
+	{
+		this.ptr.Path(outStr, p);
+	}
+	public void Location(String outStr, QLibraryInfo_LibraryPath location)
+	{
+		this.ptr.Location(outStr, location);
+	}
+	public void* PlatformPluginArguments(String platformName)
+	{
+		return this.ptr.PlatformPluginArguments(platformName);
+	}
+}
 interface IQLibraryInfo : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QLibraryInfo_new")]
+	public static extern QLibraryInfo_Ptr QLibraryInfo_new(void** other);
+	[LinkName("QLibraryInfo_new2")]
+	public static extern QLibraryInfo_Ptr QLibraryInfo_new2(void** other);
+	[LinkName("QLibraryInfo_Delete")]
+	public static extern void QLibraryInfo_Delete(QLibraryInfo_Ptr self);
+	[LinkName("QLibraryInfo_Build")]
+	public static extern c_char* QLibraryInfo_Build();
+	[LinkName("QLibraryInfo_IsDebugBuild")]
+	public static extern bool QLibraryInfo_IsDebugBuild();
+	[LinkName("QLibraryInfo_Version")]
+	public static extern void* QLibraryInfo_Version();
+	[LinkName("QLibraryInfo_Path")]
+	public static extern libqt_string QLibraryInfo_Path(QLibraryInfo_LibraryPath p);
+	[LinkName("QLibraryInfo_Location")]
+	public static extern libqt_string QLibraryInfo_Location(QLibraryInfo_LibraryPath location);
+	[LinkName("QLibraryInfo_PlatformPluginArguments")]
+	public static extern void* QLibraryInfo_PlatformPluginArguments(libqt_string platformName);
 }
 [AllowDuplicates]
 enum QLibraryInfo_LibraryPath

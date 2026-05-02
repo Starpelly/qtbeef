@@ -14,6 +14,662 @@ struct QGraphicsEffect_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QGraphicsEffect_MetaObject((.)this.Ptr));
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QGraphicsEffect_Qt_Metacast((.)this.Ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QGraphicsEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		CQt.QGraphicsEffect_Tr(s);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.Ptr, (.)sourceRect?.ObjectPtr));
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void Draw(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_Draw((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		CQt.QGraphicsEffect_Tr2(s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		CQt.QGraphicsEffect_Tr3(s, c, n);
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
+	public bool Event(IQEvent event)
+	{
+		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+}
+class QGraphicsEffect : IQGraphicsEffect, IQObject
+{
+	private QGraphicsEffect_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsEffect_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsEffect_new();
+	}
+	public this(IQObject parent)
+	{
+		this.ptr = CQt.QGraphicsEffect_new2((.)parent?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsEffect_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return this.ptr.Qt_metacast(param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return this.ptr.Qt_metacall(param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		this.ptr.Tr(outStr, s);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return this.ptr.BoundingRectFor(sourceRect);
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public void Draw(IQPainter painter)
+	{
+		this.ptr.Draw(painter);
+	}
+	public void SourceChanged(void* flags)
+	{
+		this.ptr.SourceChanged(flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		this.ptr.Tr2(outStr, s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		this.ptr.Tr3(outStr, s, c, n);
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
+	public bool Event(IQEvent event)
+	{
+		return this.ptr.Event(event);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return this.ptr.EventFilter(watched, event);
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		this.ptr.TimerEvent(event);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		this.ptr.ChildEvent(event);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		this.ptr.CustomEvent(event);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.ConnectNotify(signal);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.DisconnectNotify(signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+}
+interface IQGraphicsEffect : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -70,346 +726,6 @@ extension CQt
 	[LinkName("QGraphicsEffect_SourcePixmap3")]
 	public static extern void* QGraphicsEffect_SourcePixmap3(void* self, Qt_CoordinateSystem system, void** offset, QGraphicsEffect_PixmapPadMode mode);
 }
-class QGraphicsEffect : IQGraphicsEffect, IQObject
-{
-	private QGraphicsEffect_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsEffect_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsEffect_new();
-	}
-	public this(IQObject parent)
-	{
-		this.ptr = CQt.QGraphicsEffect_new2((.)parent?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsEffect_Delete(this.ptr);
-	}
-	public QMetaObject_Ptr MetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QGraphicsEffect_MetaObject((.)this.ptr.Ptr));
-	}
-	public void* Qt_metacast(c_char* param1)
-	{
-		return CQt.QGraphicsEffect_Qt_Metacast((.)this.ptr.Ptr, param1);
-	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
-	{
-		return CQt.QGraphicsEffect_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
-	}
-	public void Tr(String outStr, c_char* s)
-	{
-		CQt.QGraphicsEffect_Tr(s);
-	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.ptr.Ptr, (.)sourceRect?.ObjectPtr));
-	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.ptr.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.ptr.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.ptr.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.ptr.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.ptr.Ptr, enabled);
-	}
-	public void Draw(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_Draw((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.ptr.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.ptr.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.ptr.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.ptr.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.ptr.Ptr));
-	}
-	public void Tr2(String outStr, c_char* s, c_char* c)
-	{
-		CQt.QGraphicsEffect_Tr2(s, c);
-	}
-	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
-	{
-		CQt.QGraphicsEffect_Tr3(s, c, n);
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QObject_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.ptr.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.ptr.Ptr);
-	}
-	public void SetParent(IQObject parent)
-	{
-		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
-	}
-}
-interface IQGraphicsEffect : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsColorizeEffect
 // --------------------------------------------------------------
@@ -421,6 +737,710 @@ struct QGraphicsColorizeEffect_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QGraphicsColorizeEffect_MetaObject((.)this.Ptr));
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QGraphicsColorizeEffect_Qt_Metacast((.)this.Ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QGraphicsColorizeEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		CQt.QGraphicsColorizeEffect_Tr(s);
+	}
+	public QColor_Ptr Color()
+	{
+		return QColor_Ptr(CQt.QGraphicsColorizeEffect_Color((.)this.Ptr));
+	}
+	public double Strength()
+	{
+		return CQt.QGraphicsColorizeEffect_Strength((.)this.Ptr);
+	}
+	public void SetColor(IQColor c)
+	{
+		CQt.QGraphicsColorizeEffect_SetColor((.)this.Ptr, (.)c?.ObjectPtr);
+	}
+	public void SetStrength(double strength)
+	{
+		CQt.QGraphicsColorizeEffect_SetStrength((.)this.Ptr, strength);
+	}
+	public void ColorChanged(IQColor color)
+	{
+		CQt.QGraphicsColorizeEffect_ColorChanged((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public void StrengthChanged(double strength)
+	{
+		CQt.QGraphicsColorizeEffect_StrengthChanged((.)this.Ptr, strength);
+	}
+	public void Draw(IQPainter painter)
+	{
+		CQt.QGraphicsColorizeEffect_Draw((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		CQt.QGraphicsColorizeEffect_Tr2(s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		CQt.QGraphicsColorizeEffect_Tr3(s, c, n);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.Ptr, (.)sourceRect?.ObjectPtr));
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
+	public bool Event(IQEvent event)
+	{
+		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+}
+class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQObject
+{
+	private QGraphicsColorizeEffect_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsColorizeEffect_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsColorizeEffect_new();
+	}
+	public this(IQObject parent)
+	{
+		this.ptr = CQt.QGraphicsColorizeEffect_new2((.)parent?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsColorizeEffect_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return this.ptr.Qt_metacast(param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return this.ptr.Qt_metacall(param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		this.ptr.Tr(outStr, s);
+	}
+	public QColor_Ptr Color()
+	{
+		return this.ptr.Color();
+	}
+	public double Strength()
+	{
+		return this.ptr.Strength();
+	}
+	public void SetColor(IQColor c)
+	{
+		this.ptr.SetColor(c);
+	}
+	public void SetStrength(double strength)
+	{
+		this.ptr.SetStrength(strength);
+	}
+	public void ColorChanged(IQColor color)
+	{
+		this.ptr.ColorChanged(color);
+	}
+	public void StrengthChanged(double strength)
+	{
+		this.ptr.StrengthChanged(strength);
+	}
+	public void Draw(IQPainter painter)
+	{
+		this.ptr.Draw(painter);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		this.ptr.Tr2(outStr, s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		this.ptr.Tr3(outStr, s, c, n);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return this.ptr.BoundingRectFor(sourceRect);
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		this.ptr.SourceChanged(flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
+	public bool Event(IQEvent event)
+	{
+		return this.ptr.Event(event);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return this.ptr.EventFilter(watched, event);
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		this.ptr.TimerEvent(event);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		this.ptr.ChildEvent(event);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		this.ptr.CustomEvent(event);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.ConnectNotify(signal);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.DisconnectNotify(signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+}
+interface IQGraphicsColorizeEffect : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -457,370 +1477,6 @@ extension CQt
 	[LinkName("QGraphicsColorizeEffect_Tr3")]
 	public static extern libqt_string QGraphicsColorizeEffect_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQObject
-{
-	private QGraphicsColorizeEffect_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsColorizeEffect_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsColorizeEffect_new();
-	}
-	public this(IQObject parent)
-	{
-		this.ptr = CQt.QGraphicsColorizeEffect_new2((.)parent?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsColorizeEffect_Delete(this.ptr);
-	}
-	public QMetaObject_Ptr MetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QGraphicsColorizeEffect_MetaObject((.)this.ptr.Ptr));
-	}
-	public void* Qt_metacast(c_char* param1)
-	{
-		return CQt.QGraphicsColorizeEffect_Qt_Metacast((.)this.ptr.Ptr, param1);
-	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
-	{
-		return CQt.QGraphicsColorizeEffect_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
-	}
-	public void Tr(String outStr, c_char* s)
-	{
-		CQt.QGraphicsColorizeEffect_Tr(s);
-	}
-	public QColor_Ptr Color()
-	{
-		return QColor_Ptr(CQt.QGraphicsColorizeEffect_Color((.)this.ptr.Ptr));
-	}
-	public double Strength()
-	{
-		return CQt.QGraphicsColorizeEffect_Strength((.)this.ptr.Ptr);
-	}
-	public void SetColor(IQColor c)
-	{
-		CQt.QGraphicsColorizeEffect_SetColor((.)this.ptr.Ptr, (.)c?.ObjectPtr);
-	}
-	public void SetStrength(double strength)
-	{
-		CQt.QGraphicsColorizeEffect_SetStrength((.)this.ptr.Ptr, strength);
-	}
-	public void ColorChanged(IQColor color)
-	{
-		CQt.QGraphicsColorizeEffect_ColorChanged((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public void StrengthChanged(double strength)
-	{
-		CQt.QGraphicsColorizeEffect_StrengthChanged((.)this.ptr.Ptr, strength);
-	}
-	public void Draw(IQPainter painter)
-	{
-		CQt.QGraphicsColorizeEffect_Draw((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public void Tr2(String outStr, c_char* s, c_char* c)
-	{
-		CQt.QGraphicsColorizeEffect_Tr2(s, c);
-	}
-	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
-	{
-		CQt.QGraphicsColorizeEffect_Tr3(s, c, n);
-	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.ptr.Ptr, (.)sourceRect?.ObjectPtr));
-	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.ptr.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.ptr.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.ptr.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.ptr.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.ptr.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.ptr.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.ptr.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.ptr.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.ptr.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.ptr.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QObject_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.ptr.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.ptr.Ptr);
-	}
-	public void SetParent(IQObject parent)
-	{
-		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
-	}
-}
-interface IQGraphicsColorizeEffect : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsBlurEffect
 // --------------------------------------------------------------
@@ -832,6 +1488,710 @@ struct QGraphicsBlurEffect_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QGraphicsBlurEffect_MetaObject((.)this.Ptr));
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QGraphicsBlurEffect_Qt_Metacast((.)this.Ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QGraphicsBlurEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		CQt.QGraphicsBlurEffect_Tr(s);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF rect)
+	{
+		return QRectF_Ptr(CQt.QGraphicsBlurEffect_BoundingRectFor((.)this.Ptr, (.)rect?.ObjectPtr));
+	}
+	public double BlurRadius()
+	{
+		return CQt.QGraphicsBlurEffect_BlurRadius((.)this.Ptr);
+	}
+	public void* BlurHints()
+	{
+		return CQt.QGraphicsBlurEffect_BlurHints((.)this.Ptr);
+	}
+	public void SetBlurRadius(double blurRadius)
+	{
+		CQt.QGraphicsBlurEffect_SetBlurRadius((.)this.Ptr, blurRadius);
+	}
+	public void SetBlurHints(void* hints)
+	{
+		CQt.QGraphicsBlurEffect_SetBlurHints((.)this.Ptr, hints);
+	}
+	public void BlurRadiusChanged(double blurRadius)
+	{
+		CQt.QGraphicsBlurEffect_BlurRadiusChanged((.)this.Ptr, blurRadius);
+	}
+	public void BlurHintsChanged(void* hints)
+	{
+		CQt.QGraphicsBlurEffect_BlurHintsChanged((.)this.Ptr, hints);
+	}
+	public void Draw(IQPainter painter)
+	{
+		CQt.QGraphicsBlurEffect_Draw((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		CQt.QGraphicsBlurEffect_Tr2(s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		CQt.QGraphicsBlurEffect_Tr3(s, c, n);
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
+	public bool Event(IQEvent event)
+	{
+		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+}
+class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
+{
+	private QGraphicsBlurEffect_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsBlurEffect_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsBlurEffect_new();
+	}
+	public this(IQObject parent)
+	{
+		this.ptr = CQt.QGraphicsBlurEffect_new2((.)parent?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsBlurEffect_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return this.ptr.Qt_metacast(param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return this.ptr.Qt_metacall(param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		this.ptr.Tr(outStr, s);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF rect)
+	{
+		return this.ptr.BoundingRectFor(rect);
+	}
+	public double BlurRadius()
+	{
+		return this.ptr.BlurRadius();
+	}
+	public void* BlurHints()
+	{
+		return this.ptr.BlurHints();
+	}
+	public void SetBlurRadius(double blurRadius)
+	{
+		this.ptr.SetBlurRadius(blurRadius);
+	}
+	public void SetBlurHints(void* hints)
+	{
+		this.ptr.SetBlurHints(hints);
+	}
+	public void BlurRadiusChanged(double blurRadius)
+	{
+		this.ptr.BlurRadiusChanged(blurRadius);
+	}
+	public void BlurHintsChanged(void* hints)
+	{
+		this.ptr.BlurHintsChanged(hints);
+	}
+	public void Draw(IQPainter painter)
+	{
+		this.ptr.Draw(painter);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		this.ptr.Tr2(outStr, s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		this.ptr.Tr3(outStr, s, c, n);
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		this.ptr.SourceChanged(flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
+	public bool Event(IQEvent event)
+	{
+		return this.ptr.Event(event);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return this.ptr.EventFilter(watched, event);
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		this.ptr.TimerEvent(event);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		this.ptr.ChildEvent(event);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		this.ptr.CustomEvent(event);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.ConnectNotify(signal);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.DisconnectNotify(signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+}
+interface IQGraphicsBlurEffect : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -870,370 +2230,6 @@ extension CQt
 	[LinkName("QGraphicsBlurEffect_Tr3")]
 	public static extern libqt_string QGraphicsBlurEffect_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
-{
-	private QGraphicsBlurEffect_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsBlurEffect_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsBlurEffect_new();
-	}
-	public this(IQObject parent)
-	{
-		this.ptr = CQt.QGraphicsBlurEffect_new2((.)parent?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsBlurEffect_Delete(this.ptr);
-	}
-	public QMetaObject_Ptr MetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QGraphicsBlurEffect_MetaObject((.)this.ptr.Ptr));
-	}
-	public void* Qt_metacast(c_char* param1)
-	{
-		return CQt.QGraphicsBlurEffect_Qt_Metacast((.)this.ptr.Ptr, param1);
-	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
-	{
-		return CQt.QGraphicsBlurEffect_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
-	}
-	public void Tr(String outStr, c_char* s)
-	{
-		CQt.QGraphicsBlurEffect_Tr(s);
-	}
-	public QRectF_Ptr BoundingRectFor(IQRectF rect)
-	{
-		return QRectF_Ptr(CQt.QGraphicsBlurEffect_BoundingRectFor((.)this.ptr.Ptr, (.)rect?.ObjectPtr));
-	}
-	public double BlurRadius()
-	{
-		return CQt.QGraphicsBlurEffect_BlurRadius((.)this.ptr.Ptr);
-	}
-	public void* BlurHints()
-	{
-		return CQt.QGraphicsBlurEffect_BlurHints((.)this.ptr.Ptr);
-	}
-	public void SetBlurRadius(double blurRadius)
-	{
-		CQt.QGraphicsBlurEffect_SetBlurRadius((.)this.ptr.Ptr, blurRadius);
-	}
-	public void SetBlurHints(void* hints)
-	{
-		CQt.QGraphicsBlurEffect_SetBlurHints((.)this.ptr.Ptr, hints);
-	}
-	public void BlurRadiusChanged(double blurRadius)
-	{
-		CQt.QGraphicsBlurEffect_BlurRadiusChanged((.)this.ptr.Ptr, blurRadius);
-	}
-	public void BlurHintsChanged(void* hints)
-	{
-		CQt.QGraphicsBlurEffect_BlurHintsChanged((.)this.ptr.Ptr, hints);
-	}
-	public void Draw(IQPainter painter)
-	{
-		CQt.QGraphicsBlurEffect_Draw((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public void Tr2(String outStr, c_char* s, c_char* c)
-	{
-		CQt.QGraphicsBlurEffect_Tr2(s, c);
-	}
-	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
-	{
-		CQt.QGraphicsBlurEffect_Tr3(s, c, n);
-	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.ptr.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.ptr.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.ptr.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.ptr.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.ptr.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.ptr.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.ptr.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.ptr.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.ptr.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.ptr.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QObject_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.ptr.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.ptr.Ptr);
-	}
-	public void SetParent(IQObject parent)
-	{
-		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
-	}
-}
-interface IQGraphicsBlurEffect : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsDropShadowEffect
 // --------------------------------------------------------------
@@ -1245,6 +2241,782 @@ struct QGraphicsDropShadowEffect_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QGraphicsDropShadowEffect_MetaObject((.)this.Ptr));
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QGraphicsDropShadowEffect_Qt_Metacast((.)this.Ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QGraphicsDropShadowEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		CQt.QGraphicsDropShadowEffect_Tr(s);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF rect)
+	{
+		return QRectF_Ptr(CQt.QGraphicsDropShadowEffect_BoundingRectFor((.)this.Ptr, (.)rect?.ObjectPtr));
+	}
+	public QPointF_Ptr Offset()
+	{
+		return QPointF_Ptr(CQt.QGraphicsDropShadowEffect_Offset((.)this.Ptr));
+	}
+	public double XOffset()
+	{
+		return CQt.QGraphicsDropShadowEffect_XOffset((.)this.Ptr);
+	}
+	public double YOffset()
+	{
+		return CQt.QGraphicsDropShadowEffect_YOffset((.)this.Ptr);
+	}
+	public double BlurRadius()
+	{
+		return CQt.QGraphicsDropShadowEffect_BlurRadius((.)this.Ptr);
+	}
+	public QColor_Ptr Color()
+	{
+		return QColor_Ptr(CQt.QGraphicsDropShadowEffect_Color((.)this.Ptr));
+	}
+	public void SetOffset(IQPointF ofs)
+	{
+		CQt.QGraphicsDropShadowEffect_SetOffset((.)this.Ptr, (.)ofs?.ObjectPtr);
+	}
+	public void SetOffset2(double dx, double dy)
+	{
+		CQt.QGraphicsDropShadowEffect_SetOffset2((.)this.Ptr, dx, dy);
+	}
+	public void SetOffset3(double d)
+	{
+		CQt.QGraphicsDropShadowEffect_SetOffset3((.)this.Ptr, d);
+	}
+	public void SetXOffset(double dx)
+	{
+		CQt.QGraphicsDropShadowEffect_SetXOffset((.)this.Ptr, dx);
+	}
+	public void SetYOffset(double dy)
+	{
+		CQt.QGraphicsDropShadowEffect_SetYOffset((.)this.Ptr, dy);
+	}
+	public void SetBlurRadius(double blurRadius)
+	{
+		CQt.QGraphicsDropShadowEffect_SetBlurRadius((.)this.Ptr, blurRadius);
+	}
+	public void SetColor(IQColor color)
+	{
+		CQt.QGraphicsDropShadowEffect_SetColor((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public void OffsetChanged(IQPointF offset)
+	{
+		CQt.QGraphicsDropShadowEffect_OffsetChanged((.)this.Ptr, (.)offset?.ObjectPtr);
+	}
+	public void BlurRadiusChanged(double blurRadius)
+	{
+		CQt.QGraphicsDropShadowEffect_BlurRadiusChanged((.)this.Ptr, blurRadius);
+	}
+	public void ColorChanged(IQColor color)
+	{
+		CQt.QGraphicsDropShadowEffect_ColorChanged((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public void Draw(IQPainter painter)
+	{
+		CQt.QGraphicsDropShadowEffect_Draw((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		CQt.QGraphicsDropShadowEffect_Tr2(s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		CQt.QGraphicsDropShadowEffect_Tr3(s, c, n);
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
+	public bool Event(IQEvent event)
+	{
+		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+}
+class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, IQObject
+{
+	private QGraphicsDropShadowEffect_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsDropShadowEffect_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsDropShadowEffect_new();
+	}
+	public this(IQObject parent)
+	{
+		this.ptr = CQt.QGraphicsDropShadowEffect_new2((.)parent?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsDropShadowEffect_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return this.ptr.Qt_metacast(param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return this.ptr.Qt_metacall(param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		this.ptr.Tr(outStr, s);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF rect)
+	{
+		return this.ptr.BoundingRectFor(rect);
+	}
+	public QPointF_Ptr Offset()
+	{
+		return this.ptr.Offset();
+	}
+	public double XOffset()
+	{
+		return this.ptr.XOffset();
+	}
+	public double YOffset()
+	{
+		return this.ptr.YOffset();
+	}
+	public double BlurRadius()
+	{
+		return this.ptr.BlurRadius();
+	}
+	public QColor_Ptr Color()
+	{
+		return this.ptr.Color();
+	}
+	public void SetOffset(IQPointF ofs)
+	{
+		this.ptr.SetOffset(ofs);
+	}
+	public void SetOffset2(double dx, double dy)
+	{
+		this.ptr.SetOffset2(dx, dy);
+	}
+	public void SetOffset3(double d)
+	{
+		this.ptr.SetOffset3(d);
+	}
+	public void SetXOffset(double dx)
+	{
+		this.ptr.SetXOffset(dx);
+	}
+	public void SetYOffset(double dy)
+	{
+		this.ptr.SetYOffset(dy);
+	}
+	public void SetBlurRadius(double blurRadius)
+	{
+		this.ptr.SetBlurRadius(blurRadius);
+	}
+	public void SetColor(IQColor color)
+	{
+		this.ptr.SetColor(color);
+	}
+	public void OffsetChanged(IQPointF offset)
+	{
+		this.ptr.OffsetChanged(offset);
+	}
+	public void BlurRadiusChanged(double blurRadius)
+	{
+		this.ptr.BlurRadiusChanged(blurRadius);
+	}
+	public void ColorChanged(IQColor color)
+	{
+		this.ptr.ColorChanged(color);
+	}
+	public void Draw(IQPainter painter)
+	{
+		this.ptr.Draw(painter);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		this.ptr.Tr2(outStr, s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		this.ptr.Tr3(outStr, s, c, n);
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		this.ptr.SourceChanged(flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
+	public bool Event(IQEvent event)
+	{
+		return this.ptr.Event(event);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return this.ptr.EventFilter(watched, event);
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		this.ptr.TimerEvent(event);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		this.ptr.ChildEvent(event);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		this.ptr.CustomEvent(event);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.ConnectNotify(signal);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.DisconnectNotify(signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+}
+interface IQGraphicsDropShadowEffect : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1301,406 +3073,6 @@ extension CQt
 	[LinkName("QGraphicsDropShadowEffect_Tr3")]
 	public static extern libqt_string QGraphicsDropShadowEffect_Tr3(c_char* s, c_char* c, c_int n);
 }
-class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, IQObject
-{
-	private QGraphicsDropShadowEffect_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsDropShadowEffect_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsDropShadowEffect_new();
-	}
-	public this(IQObject parent)
-	{
-		this.ptr = CQt.QGraphicsDropShadowEffect_new2((.)parent?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsDropShadowEffect_Delete(this.ptr);
-	}
-	public QMetaObject_Ptr MetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QGraphicsDropShadowEffect_MetaObject((.)this.ptr.Ptr));
-	}
-	public void* Qt_metacast(c_char* param1)
-	{
-		return CQt.QGraphicsDropShadowEffect_Qt_Metacast((.)this.ptr.Ptr, param1);
-	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
-	{
-		return CQt.QGraphicsDropShadowEffect_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
-	}
-	public void Tr(String outStr, c_char* s)
-	{
-		CQt.QGraphicsDropShadowEffect_Tr(s);
-	}
-	public QRectF_Ptr BoundingRectFor(IQRectF rect)
-	{
-		return QRectF_Ptr(CQt.QGraphicsDropShadowEffect_BoundingRectFor((.)this.ptr.Ptr, (.)rect?.ObjectPtr));
-	}
-	public QPointF_Ptr Offset()
-	{
-		return QPointF_Ptr(CQt.QGraphicsDropShadowEffect_Offset((.)this.ptr.Ptr));
-	}
-	public double XOffset()
-	{
-		return CQt.QGraphicsDropShadowEffect_XOffset((.)this.ptr.Ptr);
-	}
-	public double YOffset()
-	{
-		return CQt.QGraphicsDropShadowEffect_YOffset((.)this.ptr.Ptr);
-	}
-	public double BlurRadius()
-	{
-		return CQt.QGraphicsDropShadowEffect_BlurRadius((.)this.ptr.Ptr);
-	}
-	public QColor_Ptr Color()
-	{
-		return QColor_Ptr(CQt.QGraphicsDropShadowEffect_Color((.)this.ptr.Ptr));
-	}
-	public void SetOffset(IQPointF ofs)
-	{
-		CQt.QGraphicsDropShadowEffect_SetOffset((.)this.ptr.Ptr, (.)ofs?.ObjectPtr);
-	}
-	public void SetOffset2(double dx, double dy)
-	{
-		CQt.QGraphicsDropShadowEffect_SetOffset2((.)this.ptr.Ptr, dx, dy);
-	}
-	public void SetOffset3(double d)
-	{
-		CQt.QGraphicsDropShadowEffect_SetOffset3((.)this.ptr.Ptr, d);
-	}
-	public void SetXOffset(double dx)
-	{
-		CQt.QGraphicsDropShadowEffect_SetXOffset((.)this.ptr.Ptr, dx);
-	}
-	public void SetYOffset(double dy)
-	{
-		CQt.QGraphicsDropShadowEffect_SetYOffset((.)this.ptr.Ptr, dy);
-	}
-	public void SetBlurRadius(double blurRadius)
-	{
-		CQt.QGraphicsDropShadowEffect_SetBlurRadius((.)this.ptr.Ptr, blurRadius);
-	}
-	public void SetColor(IQColor color)
-	{
-		CQt.QGraphicsDropShadowEffect_SetColor((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public void OffsetChanged(IQPointF offset)
-	{
-		CQt.QGraphicsDropShadowEffect_OffsetChanged((.)this.ptr.Ptr, (.)offset?.ObjectPtr);
-	}
-	public void BlurRadiusChanged(double blurRadius)
-	{
-		CQt.QGraphicsDropShadowEffect_BlurRadiusChanged((.)this.ptr.Ptr, blurRadius);
-	}
-	public void ColorChanged(IQColor color)
-	{
-		CQt.QGraphicsDropShadowEffect_ColorChanged((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public void Draw(IQPainter painter)
-	{
-		CQt.QGraphicsDropShadowEffect_Draw((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public void Tr2(String outStr, c_char* s, c_char* c)
-	{
-		CQt.QGraphicsDropShadowEffect_Tr2(s, c);
-	}
-	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
-	{
-		CQt.QGraphicsDropShadowEffect_Tr3(s, c, n);
-	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.ptr.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.ptr.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.ptr.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.ptr.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.ptr.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.ptr.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.ptr.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.ptr.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.ptr.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.ptr.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QObject_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.ptr.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.ptr.Ptr);
-	}
-	public void SetParent(IQObject parent)
-	{
-		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
-	}
-}
-interface IQGraphicsDropShadowEffect : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsOpacityEffect
 // --------------------------------------------------------------
@@ -1712,6 +3084,710 @@ struct QGraphicsOpacityEffect_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QGraphicsOpacityEffect_MetaObject((.)this.Ptr));
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QGraphicsOpacityEffect_Qt_Metacast((.)this.Ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QGraphicsOpacityEffect_Qt_Metacall((.)this.Ptr, param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		CQt.QGraphicsOpacityEffect_Tr(s);
+	}
+	public double Opacity()
+	{
+		return CQt.QGraphicsOpacityEffect_Opacity((.)this.Ptr);
+	}
+	public QBrush_Ptr OpacityMask()
+	{
+		return QBrush_Ptr(CQt.QGraphicsOpacityEffect_OpacityMask((.)this.Ptr));
+	}
+	public void SetOpacity(double opacity)
+	{
+		CQt.QGraphicsOpacityEffect_SetOpacity((.)this.Ptr, opacity);
+	}
+	public void SetOpacityMask(IQBrush mask)
+	{
+		CQt.QGraphicsOpacityEffect_SetOpacityMask((.)this.Ptr, (.)mask?.ObjectPtr);
+	}
+	public void OpacityChanged(double opacity)
+	{
+		CQt.QGraphicsOpacityEffect_OpacityChanged((.)this.Ptr, opacity);
+	}
+	public void OpacityMaskChanged(IQBrush mask)
+	{
+		CQt.QGraphicsOpacityEffect_OpacityMaskChanged((.)this.Ptr, (.)mask?.ObjectPtr);
+	}
+	public void Draw(IQPainter painter)
+	{
+		CQt.QGraphicsOpacityEffect_Draw((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		CQt.QGraphicsOpacityEffect_Tr2(s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		CQt.QGraphicsOpacityEffect_Tr3(s, c, n);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.Ptr, (.)sourceRect?.ObjectPtr));
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.Ptr));
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QGraphicsEffect_IsEnabled((.)this.Ptr);
+	}
+	public void SetEnabled(bool enable)
+	{
+		CQt.QGraphicsEffect_SetEnabled((.)this.Ptr, enable);
+	}
+	public void Update()
+	{
+		CQt.QGraphicsEffect_Update((.)this.Ptr);
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		CQt.QGraphicsEffect_EnabledChanged((.)this.Ptr, enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		CQt.QGraphicsEffect_SourceChanged((.)this.Ptr, flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.Ptr);
+	}
+	public bool SourceIsPixmap()
+	{
+		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.Ptr);
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.Ptr));
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		CQt.QGraphicsEffect_DrawSource((.)this.Ptr, (.)painter?.ObjectPtr);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.Ptr));
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.Ptr, system));
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.Ptr, system, (.)offset?.ObjectPtr));
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.Ptr, system, (.)offset?.ObjectPtr, mode));
+	}
+	public bool Event(IQEvent event)
+	{
+		return CQt.QObject_Event((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void ObjectName(String outStr)
+	{
+		CQt.QObject_ObjectName((.)this.Ptr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.Ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.Ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.Ptr);
+	}
+	public void SetParent(IQObject parent)
+	{
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.Ptr);
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.Ptr);
+	}
+	public QObject_Ptr Parent()
+	{
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.Ptr);
+	}
+	public QObject_Ptr Sender()
+	{
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+}
+class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObject
+{
+	private QGraphicsOpacityEffect_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsOpacityEffect_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsOpacityEffect_new();
+	}
+	public this(IQObject parent)
+	{
+		this.ptr = CQt.QGraphicsOpacityEffect_new2((.)parent?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsOpacityEffect_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return this.ptr.Qt_metacast(param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return this.ptr.Qt_metacall(param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		this.ptr.Tr(outStr, s);
+	}
+	public double Opacity()
+	{
+		return this.ptr.Opacity();
+	}
+	public QBrush_Ptr OpacityMask()
+	{
+		return this.ptr.OpacityMask();
+	}
+	public void SetOpacity(double opacity)
+	{
+		this.ptr.SetOpacity(opacity);
+	}
+	public void SetOpacityMask(IQBrush mask)
+	{
+		this.ptr.SetOpacityMask(mask);
+	}
+	public void OpacityChanged(double opacity)
+	{
+		this.ptr.OpacityChanged(opacity);
+	}
+	public void OpacityMaskChanged(IQBrush mask)
+	{
+		this.ptr.OpacityMaskChanged(mask);
+	}
+	public void Draw(IQPainter painter)
+	{
+		this.ptr.Draw(painter);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		this.ptr.Tr2(outStr, s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		this.ptr.Tr3(outStr, s, c, n);
+	}
+	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
+	{
+		return this.ptr.BoundingRectFor(sourceRect);
+	}
+	public QRectF_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public bool IsEnabled()
+	{
+		return this.ptr.IsEnabled();
+	}
+	public void SetEnabled(bool enable)
+	{
+		this.ptr.SetEnabled(enable);
+	}
+	public void Update()
+	{
+		this.ptr.Update();
+	}
+	public void EnabledChanged(bool enabled)
+	{
+		this.ptr.EnabledChanged(enabled);
+	}
+	public void SourceChanged(void* flags)
+	{
+		this.ptr.SourceChanged(flags);
+	}
+	public void UpdateBoundingRect()
+	{
+		this.ptr.UpdateBoundingRect();
+	}
+	public bool SourceIsPixmap()
+	{
+		return this.ptr.SourceIsPixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect()
+	{
+		return this.ptr.SourceBoundingRect();
+	}
+	public void DrawSource(IQPainter painter)
+	{
+		this.ptr.DrawSource(painter);
+	}
+	public QPixmap_Ptr SourcePixmap()
+	{
+		return this.ptr.SourcePixmap();
+	}
+	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourceBoundingRect1(system);
+	}
+	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
+	{
+		return this.ptr.SourcePixmap1(system);
+	}
+	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
+	{
+		return this.ptr.SourcePixmap2(system, offset);
+	}
+	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
+	{
+		return this.ptr.SourcePixmap3(system, offset, mode);
+	}
+	public bool Event(IQEvent event)
+	{
+		return this.ptr.Event(event);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return this.ptr.EventFilter(watched, event);
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		this.ptr.TimerEvent(event);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		this.ptr.ChildEvent(event);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		this.ptr.CustomEvent(event);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.ConnectNotify(signal);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.DisconnectNotify(signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
+	}
+}
+interface IQGraphicsOpacityEffect : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1747,370 +3823,6 @@ extension CQt
 	public static extern libqt_string QGraphicsOpacityEffect_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsOpacityEffect_Tr3")]
 	public static extern libqt_string QGraphicsOpacityEffect_Tr3(c_char* s, c_char* c, c_int n);
-}
-class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObject
-{
-	private QGraphicsOpacityEffect_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsOpacityEffect_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsOpacityEffect_new();
-	}
-	public this(IQObject parent)
-	{
-		this.ptr = CQt.QGraphicsOpacityEffect_new2((.)parent?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsOpacityEffect_Delete(this.ptr);
-	}
-	public QMetaObject_Ptr MetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QGraphicsOpacityEffect_MetaObject((.)this.ptr.Ptr));
-	}
-	public void* Qt_metacast(c_char* param1)
-	{
-		return CQt.QGraphicsOpacityEffect_Qt_Metacast((.)this.ptr.Ptr, param1);
-	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
-	{
-		return CQt.QGraphicsOpacityEffect_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
-	}
-	public void Tr(String outStr, c_char* s)
-	{
-		CQt.QGraphicsOpacityEffect_Tr(s);
-	}
-	public double Opacity()
-	{
-		return CQt.QGraphicsOpacityEffect_Opacity((.)this.ptr.Ptr);
-	}
-	public QBrush_Ptr OpacityMask()
-	{
-		return QBrush_Ptr(CQt.QGraphicsOpacityEffect_OpacityMask((.)this.ptr.Ptr));
-	}
-	public void SetOpacity(double opacity)
-	{
-		CQt.QGraphicsOpacityEffect_SetOpacity((.)this.ptr.Ptr, opacity);
-	}
-	public void SetOpacityMask(IQBrush mask)
-	{
-		CQt.QGraphicsOpacityEffect_SetOpacityMask((.)this.ptr.Ptr, (.)mask?.ObjectPtr);
-	}
-	public void OpacityChanged(double opacity)
-	{
-		CQt.QGraphicsOpacityEffect_OpacityChanged((.)this.ptr.Ptr, opacity);
-	}
-	public void OpacityMaskChanged(IQBrush mask)
-	{
-		CQt.QGraphicsOpacityEffect_OpacityMaskChanged((.)this.ptr.Ptr, (.)mask?.ObjectPtr);
-	}
-	public void Draw(IQPainter painter)
-	{
-		CQt.QGraphicsOpacityEffect_Draw((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public void Tr2(String outStr, c_char* s, c_char* c)
-	{
-		CQt.QGraphicsOpacityEffect_Tr2(s, c);
-	}
-	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
-	{
-		CQt.QGraphicsOpacityEffect_Tr3(s, c, n);
-	}
-	public QRectF_Ptr BoundingRectFor(IQRectF sourceRect)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRectFor((.)this.ptr.Ptr, (.)sourceRect?.ObjectPtr));
-	}
-	public QRectF_Ptr BoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_BoundingRect((.)this.ptr.Ptr));
-	}
-	public bool IsEnabled()
-	{
-		return CQt.QGraphicsEffect_IsEnabled((.)this.ptr.Ptr);
-	}
-	public void SetEnabled(bool enable)
-	{
-		CQt.QGraphicsEffect_SetEnabled((.)this.ptr.Ptr, enable);
-	}
-	public void Update()
-	{
-		CQt.QGraphicsEffect_Update((.)this.ptr.Ptr);
-	}
-	public void EnabledChanged(bool enabled)
-	{
-		CQt.QGraphicsEffect_EnabledChanged((.)this.ptr.Ptr, enabled);
-	}
-	public void SourceChanged(void* flags)
-	{
-		CQt.QGraphicsEffect_SourceChanged((.)this.ptr.Ptr, flags);
-	}
-	public void UpdateBoundingRect()
-	{
-		CQt.QGraphicsEffect_UpdateBoundingRect((.)this.ptr.Ptr);
-	}
-	public bool SourceIsPixmap()
-	{
-		return CQt.QGraphicsEffect_SourceIsPixmap((.)this.ptr.Ptr);
-	}
-	public QRectF_Ptr SourceBoundingRect()
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect((.)this.ptr.Ptr));
-	}
-	public void DrawSource(IQPainter painter)
-	{
-		CQt.QGraphicsEffect_DrawSource((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
-	}
-	public QPixmap_Ptr SourcePixmap()
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap((.)this.ptr.Ptr));
-	}
-	public QRectF_Ptr SourceBoundingRect1(Qt_CoordinateSystem system)
-	{
-		return QRectF_Ptr(CQt.QGraphicsEffect_SourceBoundingRect1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap1(Qt_CoordinateSystem system)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap1((.)this.ptr.Ptr, system));
-	}
-	public QPixmap_Ptr SourcePixmap2(Qt_CoordinateSystem system, IQPoint offset)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap2((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr));
-	}
-	public QPixmap_Ptr SourcePixmap3(Qt_CoordinateSystem system, IQPoint offset, QGraphicsEffect_PixmapPadMode mode)
-	{
-		return QPixmap_Ptr(CQt.QGraphicsEffect_SourcePixmap3((.)this.ptr.Ptr, system, (.)offset?.ObjectPtr, mode));
-	}
-	public bool Event(IQEvent event)
-	{
-		return CQt.QObject_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public bool EventFilter(IQObject watched, IQEvent event)
-	{
-		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
-	}
-	public void ObjectName(String outStr)
-	{
-		CQt.QObject_ObjectName((.)this.ptr.Ptr);
-	}
-	public void SetObjectName(IQAnyStringView name)
-	{
-		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
-	}
-	public bool IsWidgetType()
-	{
-		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
-	}
-	public bool IsWindowType()
-	{
-		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
-	}
-	public bool IsQuickItemType()
-	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
-	}
-	public bool SignalsBlocked()
-	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
-	}
-	public bool BlockSignals(bool b)
-	{
-		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
-	}
-	public QThread_Ptr Thread()
-	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
-	}
-	public void MoveToThread(IQThread thread)
-	{
-		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
-	}
-	public c_int StartTimer(c_int interval)
-	{
-		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
-	}
-	public c_int StartTimer2(void* time)
-	{
-		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
-	}
-	public void KillTimer(c_int id)
-	{
-		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
-	}
-	public void** Children()
-	{
-		return CQt.QObject_Children((.)this.ptr.Ptr);
-	}
-	public void SetParent(IQObject parent)
-	{
-		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
-	}
-	public void InstallEventFilter(IQObject filterObj)
-	{
-		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
-	}
-	public void RemoveEventFilter(IQObject obj)
-	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
-	}
-	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
-	}
-	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
-	}
-	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
-	{
-		return CQt.QObject_Disconnect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)member?.ObjectPtr);
-	}
-	public bool Disconnect3()
-	{
-		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
-	}
-	public bool Disconnect4(IQObject receiver)
-	{
-		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect5(IQMetaObject_Connection param1)
-	{
-		return CQt.QObject_Disconnect5((.)param1?.ObjectPtr);
-	}
-	public void DumpObjectTree()
-	{
-		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
-	}
-	public void DumpObjectInfo()
-	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
-	}
-	public bool SetProperty(c_char* name, IQVariant value)
-	{
-		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
-	}
-	public QVariant_Ptr Property(c_char* name)
-	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
-	}
-	public void* DynamicPropertyNames()
-	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
-	}
-	public QBindingStorage_Ptr BindingStorage()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
-	}
-	public QBindingStorage_Ptr BindingStorage2()
-	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
-	}
-	public void Destroyed()
-	{
-		CQt.QObject_Destroyed((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Parent()
-	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
-	}
-	public bool Inherits(c_char* classname)
-	{
-		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
-	}
-	public void DeleteLater()
-	{
-		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
-	}
-	public QObject_Ptr Sender()
-	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
-	}
-	public c_int SenderSignalIndex()
-	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
-	}
-	public c_int Receivers(c_char* signal)
-	{
-		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
-	}
-	public bool IsSignalConnected(IQMetaMethod signal)
-	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void TimerEvent(IQTimerEvent event)
-	{
-		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ChildEvent(IQChildEvent event)
-	{
-		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void CustomEvent(IQEvent event)
-	{
-		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
-	}
-	public void ConnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public void DisconnectNotify(IQMetaMethod signal)
-	{
-		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
-	}
-	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
-	}
-	public c_int StartTimer23(void* time, Qt_TimerType timerType)
-	{
-		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
-	}
-	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
-	}
-	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
-	}
-	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
-	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
-	}
-	public bool Disconnect1(c_char* signal)
-	{
-		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
-	}
-	public bool Disconnect22(c_char* signal, IQObject receiver)
-	{
-		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
-	}
-	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
-	}
-	public bool Disconnect23(IQObject receiver, c_char* member)
-	{
-		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
-	}
-	public void Destroyed1(IQObject param1)
-	{
-		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
-	}
-}
-interface IQGraphicsOpacityEffect : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QGraphicsEffect_ChangeFlag

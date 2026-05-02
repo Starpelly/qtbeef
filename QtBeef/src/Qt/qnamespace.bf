@@ -14,39 +14,22 @@ struct QKeyCombination_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QKeyCombination_new")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new(void** other);
-	[LinkName("QKeyCombination_new2")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new2(void** other);
-	[LinkName("QKeyCombination_new3")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new3();
-	[LinkName("QKeyCombination_new4")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new4(void* modifiers);
-	[LinkName("QKeyCombination_new5")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new5(void* modifiers);
-	[LinkName("QKeyCombination_new6")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new6(void** param1);
-	[LinkName("QKeyCombination_new7")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new7(Qt_Key key);
-	[LinkName("QKeyCombination_new8")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new8(void* modifiers, Qt_Key key);
-	[LinkName("QKeyCombination_new9")]
-	public static extern QKeyCombination_Ptr QKeyCombination_new9(void* modifiers, Qt_Key key);
-	[LinkName("QKeyCombination_Delete")]
-	public static extern void QKeyCombination_Delete(QKeyCombination_Ptr self);
-	[LinkName("QKeyCombination_KeyboardModifiers")]
-	public static extern void* QKeyCombination_KeyboardModifiers(void* self);
-	[LinkName("QKeyCombination_Key")]
-	public static extern Qt_Key QKeyCombination_Key(void* self);
-	[LinkName("QKeyCombination_FromCombined")]
-	public static extern void* QKeyCombination_FromCombined(c_int combined);
-	[LinkName("QKeyCombination_ToCombined")]
-	public static extern c_int QKeyCombination_ToCombined(void* self);
-	[LinkName("QKeyCombination_ToInt")]
-	public static extern c_int QKeyCombination_ToInt(void* self);
+	public void* KeyboardModifiers()
+	{
+		return CQt.QKeyCombination_KeyboardModifiers((.)this.Ptr);
+	}
+	public Qt_Key Key()
+	{
+		return CQt.QKeyCombination_Key((.)this.Ptr);
+	}
+	public QKeyCombination_Ptr FromCombined(c_int combined)
+	{
+		return QKeyCombination_Ptr(CQt.QKeyCombination_FromCombined(combined));
+	}
+	public c_int ToCombined()
+	{
+		return CQt.QKeyCombination_ToCombined((.)this.Ptr);
+	}
 }
 class QKeyCombination : IQKeyCombination
 {
@@ -82,23 +65,56 @@ class QKeyCombination : IQKeyCombination
 	}
 	public void* KeyboardModifiers()
 	{
-		return CQt.QKeyCombination_KeyboardModifiers((.)this.ptr.Ptr);
+		return this.ptr.KeyboardModifiers();
 	}
 	public Qt_Key Key()
 	{
-		return CQt.QKeyCombination_Key((.)this.ptr.Ptr);
+		return this.ptr.Key();
 	}
 	public QKeyCombination_Ptr FromCombined(c_int combined)
 	{
-		return QKeyCombination_Ptr(CQt.QKeyCombination_FromCombined(combined));
+		return this.ptr.FromCombined(combined);
 	}
 	public c_int ToCombined()
 	{
-		return CQt.QKeyCombination_ToCombined((.)this.ptr.Ptr);
+		return this.ptr.ToCombined();
 	}
 }
 interface IQKeyCombination : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QKeyCombination_new")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new(void** other);
+	[LinkName("QKeyCombination_new2")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new2(void** other);
+	[LinkName("QKeyCombination_new3")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new3();
+	[LinkName("QKeyCombination_new4")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new4(void* modifiers);
+	[LinkName("QKeyCombination_new5")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new5(void* modifiers);
+	[LinkName("QKeyCombination_new6")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new6(void** param1);
+	[LinkName("QKeyCombination_new7")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new7(Qt_Key key);
+	[LinkName("QKeyCombination_new8")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new8(void* modifiers, Qt_Key key);
+	[LinkName("QKeyCombination_new9")]
+	public static extern QKeyCombination_Ptr QKeyCombination_new9(void* modifiers, Qt_Key key);
+	[LinkName("QKeyCombination_Delete")]
+	public static extern void QKeyCombination_Delete(QKeyCombination_Ptr self);
+	[LinkName("QKeyCombination_KeyboardModifiers")]
+	public static extern void* QKeyCombination_KeyboardModifiers(void* self);
+	[LinkName("QKeyCombination_Key")]
+	public static extern Qt_Key QKeyCombination_Key(void* self);
+	[LinkName("QKeyCombination_FromCombined")]
+	public static extern void* QKeyCombination_FromCombined(c_int combined);
+	[LinkName("QKeyCombination_ToCombined")]
+	public static extern c_int QKeyCombination_ToCombined(void* self);
+	[LinkName("QKeyCombination_ToInt")]
+	public static extern c_int QKeyCombination_ToInt(void* self);
 }
 [AllowDuplicates]
 enum Qt_GlobalColor

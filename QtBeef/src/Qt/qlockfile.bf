@@ -14,6 +14,130 @@ struct QLockFile_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void FileName(String outStr)
+	{
+		CQt.QLockFile_FileName((.)this.Ptr);
+	}
+	public bool Lock()
+	{
+		return CQt.QLockFile_Lock((.)this.Ptr);
+	}
+	public bool TryLock()
+	{
+		return CQt.QLockFile_TryLock((.)this.Ptr);
+	}
+	public void Unlock()
+	{
+		CQt.QLockFile_Unlock((.)this.Ptr);
+	}
+	public void SetStaleLockTime(c_int staleLockTime)
+	{
+		CQt.QLockFile_SetStaleLockTime((.)this.Ptr, staleLockTime);
+	}
+	public c_int StaleLockTime()
+	{
+		return CQt.QLockFile_StaleLockTime((.)this.Ptr);
+	}
+	public bool TryLock2(void* timeout)
+	{
+		return CQt.QLockFile_TryLock2((.)this.Ptr, timeout);
+	}
+	public void SetStaleLockTime2(void* value)
+	{
+		CQt.QLockFile_SetStaleLockTime2((.)this.Ptr, value);
+	}
+	public void* StaleLockTimeAsDuration()
+	{
+		return CQt.QLockFile_StaleLockTimeAsDuration((.)this.Ptr);
+	}
+	public bool IsLocked()
+	{
+		return CQt.QLockFile_IsLocked((.)this.Ptr);
+	}
+	public bool RemoveStaleLockFile()
+	{
+		return CQt.QLockFile_RemoveStaleLockFile((.)this.Ptr);
+	}
+	public QLockFile_LockError Error()
+	{
+		return CQt.QLockFile_Error((.)this.Ptr);
+	}
+	public bool TryLock1(c_int timeout)
+	{
+		return CQt.QLockFile_TryLock1((.)this.Ptr, timeout);
+	}
+}
+class QLockFile : IQLockFile
+{
+	private QLockFile_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLockFile_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(String fileName)
+	{
+		this.ptr = CQt.QLockFile_new(libqt_string(fileName));
+	}
+	public ~this()
+	{
+		CQt.QLockFile_Delete(this.ptr);
+	}
+	public void FileName(String outStr)
+	{
+		this.ptr.FileName(outStr);
+	}
+	public bool Lock()
+	{
+		return this.ptr.Lock();
+	}
+	public bool TryLock()
+	{
+		return this.ptr.TryLock();
+	}
+	public void Unlock()
+	{
+		this.ptr.Unlock();
+	}
+	public void SetStaleLockTime(c_int staleLockTime)
+	{
+		this.ptr.SetStaleLockTime(staleLockTime);
+	}
+	public c_int StaleLockTime()
+	{
+		return this.ptr.StaleLockTime();
+	}
+	public bool TryLock2(void* timeout)
+	{
+		return this.ptr.TryLock2(timeout);
+	}
+	public void SetStaleLockTime2(void* value)
+	{
+		this.ptr.SetStaleLockTime2(value);
+	}
+	public void* StaleLockTimeAsDuration()
+	{
+		return this.ptr.StaleLockTimeAsDuration();
+	}
+	public bool IsLocked()
+	{
+		return this.ptr.IsLocked();
+	}
+	public bool RemoveStaleLockFile()
+	{
+		return this.ptr.RemoveStaleLockFile();
+	}
+	public QLockFile_LockError Error()
+	{
+		return this.ptr.Error();
+	}
+	public bool TryLock1(c_int timeout)
+	{
+		return this.ptr.TryLock1(timeout);
+	}
+}
+interface IQLockFile : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -47,78 +171,6 @@ extension CQt
 	public static extern QLockFile_LockError QLockFile_Error(void* self);
 	[LinkName("QLockFile_TryLock1")]
 	public static extern bool QLockFile_TryLock1(void* self, c_int timeout);
-}
-class QLockFile : IQLockFile
-{
-	private QLockFile_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QLockFile_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(String fileName)
-	{
-		this.ptr = CQt.QLockFile_new(libqt_string(fileName));
-	}
-	public ~this()
-	{
-		CQt.QLockFile_Delete(this.ptr);
-	}
-	public void FileName(String outStr)
-	{
-		CQt.QLockFile_FileName((.)this.ptr.Ptr);
-	}
-	public bool Lock()
-	{
-		return CQt.QLockFile_Lock((.)this.ptr.Ptr);
-	}
-	public bool TryLock()
-	{
-		return CQt.QLockFile_TryLock((.)this.ptr.Ptr);
-	}
-	public void Unlock()
-	{
-		CQt.QLockFile_Unlock((.)this.ptr.Ptr);
-	}
-	public void SetStaleLockTime(c_int staleLockTime)
-	{
-		CQt.QLockFile_SetStaleLockTime((.)this.ptr.Ptr, staleLockTime);
-	}
-	public c_int StaleLockTime()
-	{
-		return CQt.QLockFile_StaleLockTime((.)this.ptr.Ptr);
-	}
-	public bool TryLock2(void* timeout)
-	{
-		return CQt.QLockFile_TryLock2((.)this.ptr.Ptr, timeout);
-	}
-	public void SetStaleLockTime2(void* value)
-	{
-		CQt.QLockFile_SetStaleLockTime2((.)this.ptr.Ptr, value);
-	}
-	public void* StaleLockTimeAsDuration()
-	{
-		return CQt.QLockFile_StaleLockTimeAsDuration((.)this.ptr.Ptr);
-	}
-	public bool IsLocked()
-	{
-		return CQt.QLockFile_IsLocked((.)this.ptr.Ptr);
-	}
-	public bool RemoveStaleLockFile()
-	{
-		return CQt.QLockFile_RemoveStaleLockFile((.)this.ptr.Ptr);
-	}
-	public QLockFile_LockError Error()
-	{
-		return CQt.QLockFile_Error((.)this.ptr.Ptr);
-	}
-	public bool TryLock1(c_int timeout)
-	{
-		return CQt.QLockFile_TryLock1((.)this.ptr.Ptr, timeout);
-	}
-}
-interface IQLockFile : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QLockFile_LockError

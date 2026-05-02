@@ -14,31 +14,22 @@ struct QTileRules_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QTileRules_new")]
-	public static extern QTileRules_Ptr QTileRules_new(void** other);
-	[LinkName("QTileRules_new2")]
-	public static extern QTileRules_Ptr QTileRules_new2(void** other);
-	[LinkName("QTileRules_new3")]
-	public static extern QTileRules_Ptr QTileRules_new3(Qt_TileRule horizontalRule, Qt_TileRule verticalRule);
-	[LinkName("QTileRules_new4")]
-	public static extern QTileRules_Ptr QTileRules_new4();
-	[LinkName("QTileRules_new5")]
-	public static extern QTileRules_Ptr QTileRules_new5(void** param1);
-	[LinkName("QTileRules_new6")]
-	public static extern QTileRules_Ptr QTileRules_new6(Qt_TileRule rule);
-	[LinkName("QTileRules_Delete")]
-	public static extern void QTileRules_Delete(QTileRules_Ptr self);
-	[LinkName("QTileRules_Horizontal")]
-	public static extern Qt_TileRule QTileRules_Horizontal(void* self);
-	[LinkName("QTileRules_SetHorizontal")]
-	public static extern void QTileRules_SetHorizontal(void* self, Qt_TileRule horizontal);
-	[LinkName("QTileRules_Vertical")]
-	public static extern Qt_TileRule QTileRules_Vertical(void* self);
-	[LinkName("QTileRules_SetVertical")]
-	public static extern void QTileRules_SetVertical(void* self, Qt_TileRule vertical);
+	public Qt_TileRule Horizontal()
+	{
+		return CQt.QTileRules_Horizontal((.)this.Ptr);
+	}
+	public void SetHorizontal(Qt_TileRule horizontal)
+	{
+		CQt.QTileRules_SetHorizontal((.)this.Ptr, horizontal);
+	}
+	public Qt_TileRule Vertical()
+	{
+		return CQt.QTileRules_Vertical((.)this.Ptr);
+	}
+	public void SetVertical(Qt_TileRule vertical)
+	{
+		CQt.QTileRules_SetVertical((.)this.Ptr, vertical);
+	}
 }
 class QTileRules : IQTileRules
 {
@@ -70,23 +61,48 @@ class QTileRules : IQTileRules
 	}
 	public Qt_TileRule Horizontal()
 	{
-		return CQt.QTileRules_Horizontal((.)this.ptr.Ptr);
+		return this.ptr.Horizontal();
 	}
 	public void SetHorizontal(Qt_TileRule horizontal)
 	{
-		CQt.QTileRules_SetHorizontal((.)this.ptr.Ptr, horizontal);
+		this.ptr.SetHorizontal(horizontal);
 	}
 	public Qt_TileRule Vertical()
 	{
-		return CQt.QTileRules_Vertical((.)this.ptr.Ptr);
+		return this.ptr.Vertical();
 	}
 	public void SetVertical(Qt_TileRule vertical)
 	{
-		CQt.QTileRules_SetVertical((.)this.ptr.Ptr, vertical);
+		this.ptr.SetVertical(vertical);
 	}
 }
 interface IQTileRules : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QTileRules_new")]
+	public static extern QTileRules_Ptr QTileRules_new(void** other);
+	[LinkName("QTileRules_new2")]
+	public static extern QTileRules_Ptr QTileRules_new2(void** other);
+	[LinkName("QTileRules_new3")]
+	public static extern QTileRules_Ptr QTileRules_new3(Qt_TileRule horizontalRule, Qt_TileRule verticalRule);
+	[LinkName("QTileRules_new4")]
+	public static extern QTileRules_Ptr QTileRules_new4();
+	[LinkName("QTileRules_new5")]
+	public static extern QTileRules_Ptr QTileRules_new5(void** param1);
+	[LinkName("QTileRules_new6")]
+	public static extern QTileRules_Ptr QTileRules_new6(Qt_TileRule rule);
+	[LinkName("QTileRules_Delete")]
+	public static extern void QTileRules_Delete(QTileRules_Ptr self);
+	[LinkName("QTileRules_Horizontal")]
+	public static extern Qt_TileRule QTileRules_Horizontal(void* self);
+	[LinkName("QTileRules_SetHorizontal")]
+	public static extern void QTileRules_SetHorizontal(void* self, Qt_TileRule horizontal);
+	[LinkName("QTileRules_Vertical")]
+	public static extern Qt_TileRule QTileRules_Vertical(void* self);
+	[LinkName("QTileRules_SetVertical")]
+	public static extern void QTileRules_SetVertical(void* self, Qt_TileRule vertical);
 }
 [AllowDuplicates]
 enum QDrawBorderPixmap_DrawingHint

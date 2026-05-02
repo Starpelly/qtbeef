@@ -14,6 +14,86 @@ struct QReadWriteLock_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void LockForRead()
+	{
+		CQt.QReadWriteLock_LockForRead((.)this.Ptr);
+	}
+	public bool TryLockForRead()
+	{
+		return CQt.QReadWriteLock_TryLockForRead((.)this.Ptr);
+	}
+	public bool TryLockForRead2(c_int timeout)
+	{
+		return CQt.QReadWriteLock_TryLockForRead2((.)this.Ptr, timeout);
+	}
+	public void LockForWrite()
+	{
+		CQt.QReadWriteLock_LockForWrite((.)this.Ptr);
+	}
+	public bool TryLockForWrite()
+	{
+		return CQt.QReadWriteLock_TryLockForWrite((.)this.Ptr);
+	}
+	public bool TryLockForWrite2(c_int timeout)
+	{
+		return CQt.QReadWriteLock_TryLockForWrite2((.)this.Ptr, timeout);
+	}
+	public void Unlock()
+	{
+		CQt.QReadWriteLock_Unlock((.)this.Ptr);
+	}
+}
+class QReadWriteLock : IQReadWriteLock
+{
+	private QReadWriteLock_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QReadWriteLock_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QReadWriteLock_new();
+	}
+	public this(QReadWriteLock_RecursionMode recursionMode)
+	{
+		this.ptr = CQt.QReadWriteLock_new2(recursionMode);
+	}
+	public ~this()
+	{
+		CQt.QReadWriteLock_Delete(this.ptr);
+	}
+	public void LockForRead()
+	{
+		this.ptr.LockForRead();
+	}
+	public bool TryLockForRead()
+	{
+		return this.ptr.TryLockForRead();
+	}
+	public bool TryLockForRead2(c_int timeout)
+	{
+		return this.ptr.TryLockForRead2(timeout);
+	}
+	public void LockForWrite()
+	{
+		this.ptr.LockForWrite();
+	}
+	public bool TryLockForWrite()
+	{
+		return this.ptr.TryLockForWrite();
+	}
+	public bool TryLockForWrite2(c_int timeout)
+	{
+		return this.ptr.TryLockForWrite2(timeout);
+	}
+	public void Unlock()
+	{
+		this.ptr.Unlock();
+	}
+}
+interface IQReadWriteLock : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -38,58 +118,6 @@ extension CQt
 	[LinkName("QReadWriteLock_Unlock")]
 	public static extern void QReadWriteLock_Unlock(void* self);
 }
-class QReadWriteLock : IQReadWriteLock
-{
-	private QReadWriteLock_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QReadWriteLock_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QReadWriteLock_new();
-	}
-	public this(QReadWriteLock_RecursionMode recursionMode)
-	{
-		this.ptr = CQt.QReadWriteLock_new2(recursionMode);
-	}
-	public ~this()
-	{
-		CQt.QReadWriteLock_Delete(this.ptr);
-	}
-	public void LockForRead()
-	{
-		CQt.QReadWriteLock_LockForRead((.)this.ptr.Ptr);
-	}
-	public bool TryLockForRead()
-	{
-		return CQt.QReadWriteLock_TryLockForRead((.)this.ptr.Ptr);
-	}
-	public bool TryLockForRead2(c_int timeout)
-	{
-		return CQt.QReadWriteLock_TryLockForRead2((.)this.ptr.Ptr, timeout);
-	}
-	public void LockForWrite()
-	{
-		CQt.QReadWriteLock_LockForWrite((.)this.ptr.Ptr);
-	}
-	public bool TryLockForWrite()
-	{
-		return CQt.QReadWriteLock_TryLockForWrite((.)this.ptr.Ptr);
-	}
-	public bool TryLockForWrite2(c_int timeout)
-	{
-		return CQt.QReadWriteLock_TryLockForWrite2((.)this.ptr.Ptr, timeout);
-	}
-	public void Unlock()
-	{
-		CQt.QReadWriteLock_Unlock((.)this.ptr.Ptr);
-	}
-}
-interface IQReadWriteLock : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QReadLocker
 // --------------------------------------------------------------
@@ -101,19 +129,18 @@ struct QReadLocker_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QReadLocker_new")]
-	public static extern QReadLocker_Ptr QReadLocker_new(void** readWriteLock);
-	[LinkName("QReadLocker_Delete")]
-	public static extern void QReadLocker_Delete(QReadLocker_Ptr self);
-	[LinkName("QReadLocker_Unlock")]
-	public static extern void QReadLocker_Unlock(void* self);
-	[LinkName("QReadLocker_Relock")]
-	public static extern void QReadLocker_Relock(void* self);
-	[LinkName("QReadLocker_ReadWriteLock")]
-	public static extern void** QReadLocker_ReadWriteLock(void* self);
+	public void Unlock()
+	{
+		CQt.QReadLocker_Unlock((.)this.Ptr);
+	}
+	public void Relock()
+	{
+		CQt.QReadLocker_Relock((.)this.Ptr);
+	}
+	public QReadWriteLock_Ptr ReadWriteLock()
+	{
+		return QReadWriteLock_Ptr(CQt.QReadLocker_ReadWriteLock((.)this.Ptr));
+	}
 }
 class QReadLocker : IQReadLocker
 {
@@ -133,19 +160,32 @@ class QReadLocker : IQReadLocker
 	}
 	public void Unlock()
 	{
-		CQt.QReadLocker_Unlock((.)this.ptr.Ptr);
+		this.ptr.Unlock();
 	}
 	public void Relock()
 	{
-		CQt.QReadLocker_Relock((.)this.ptr.Ptr);
+		this.ptr.Relock();
 	}
 	public QReadWriteLock_Ptr ReadWriteLock()
 	{
-		return QReadWriteLock_Ptr(CQt.QReadLocker_ReadWriteLock((.)this.ptr.Ptr));
+		return this.ptr.ReadWriteLock();
 	}
 }
 interface IQReadLocker : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QReadLocker_new")]
+	public static extern QReadLocker_Ptr QReadLocker_new(void** readWriteLock);
+	[LinkName("QReadLocker_Delete")]
+	public static extern void QReadLocker_Delete(QReadLocker_Ptr self);
+	[LinkName("QReadLocker_Unlock")]
+	public static extern void QReadLocker_Unlock(void* self);
+	[LinkName("QReadLocker_Relock")]
+	public static extern void QReadLocker_Relock(void* self);
+	[LinkName("QReadLocker_ReadWriteLock")]
+	public static extern void** QReadLocker_ReadWriteLock(void* self);
 }
 // --------------------------------------------------------------
 // QWriteLocker
@@ -158,19 +198,18 @@ struct QWriteLocker_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QWriteLocker_new")]
-	public static extern QWriteLocker_Ptr QWriteLocker_new(void** readWriteLock);
-	[LinkName("QWriteLocker_Delete")]
-	public static extern void QWriteLocker_Delete(QWriteLocker_Ptr self);
-	[LinkName("QWriteLocker_Unlock")]
-	public static extern void QWriteLocker_Unlock(void* self);
-	[LinkName("QWriteLocker_Relock")]
-	public static extern void QWriteLocker_Relock(void* self);
-	[LinkName("QWriteLocker_ReadWriteLock")]
-	public static extern void** QWriteLocker_ReadWriteLock(void* self);
+	public void Unlock()
+	{
+		CQt.QWriteLocker_Unlock((.)this.Ptr);
+	}
+	public void Relock()
+	{
+		CQt.QWriteLocker_Relock((.)this.Ptr);
+	}
+	public QReadWriteLock_Ptr ReadWriteLock()
+	{
+		return QReadWriteLock_Ptr(CQt.QWriteLocker_ReadWriteLock((.)this.Ptr));
+	}
 }
 class QWriteLocker : IQWriteLocker
 {
@@ -190,19 +229,32 @@ class QWriteLocker : IQWriteLocker
 	}
 	public void Unlock()
 	{
-		CQt.QWriteLocker_Unlock((.)this.ptr.Ptr);
+		this.ptr.Unlock();
 	}
 	public void Relock()
 	{
-		CQt.QWriteLocker_Relock((.)this.ptr.Ptr);
+		this.ptr.Relock();
 	}
 	public QReadWriteLock_Ptr ReadWriteLock()
 	{
-		return QReadWriteLock_Ptr(CQt.QWriteLocker_ReadWriteLock((.)this.ptr.Ptr));
+		return this.ptr.ReadWriteLock();
 	}
 }
 interface IQWriteLocker : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QWriteLocker_new")]
+	public static extern QWriteLocker_Ptr QWriteLocker_new(void** readWriteLock);
+	[LinkName("QWriteLocker_Delete")]
+	public static extern void QWriteLocker_Delete(QWriteLocker_Ptr self);
+	[LinkName("QWriteLocker_Unlock")]
+	public static extern void QWriteLocker_Unlock(void* self);
+	[LinkName("QWriteLocker_Relock")]
+	public static extern void QWriteLocker_Relock(void* self);
+	[LinkName("QWriteLocker_ReadWriteLock")]
+	public static extern void** QWriteLocker_ReadWriteLock(void* self);
 }
 [AllowDuplicates]
 enum QReadWriteLock_RecursionMode

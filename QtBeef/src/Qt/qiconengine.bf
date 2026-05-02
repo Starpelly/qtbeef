@@ -14,6 +14,138 @@ struct QIconEngine_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Paint(IQPainter painter, IQRect rect, QIcon_Mode mode, QIcon_State state)
+	{
+		CQt.QIconEngine_Paint((.)this.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, mode, state);
+	}
+	public QSize_Ptr ActualSize(IQSize size, QIcon_Mode mode, QIcon_State state)
+	{
+		return QSize_Ptr(CQt.QIconEngine_ActualSize((.)this.Ptr, (.)size?.ObjectPtr, mode, state));
+	}
+	public QPixmap_Ptr Pixmap(IQSize size, QIcon_Mode mode, QIcon_State state)
+	{
+		return QPixmap_Ptr(CQt.QIconEngine_Pixmap((.)this.Ptr, (.)size?.ObjectPtr, mode, state));
+	}
+	public void AddPixmap(IQPixmap pixmap, QIcon_Mode mode, QIcon_State state)
+	{
+		CQt.QIconEngine_AddPixmap((.)this.Ptr, (.)pixmap?.ObjectPtr, mode, state);
+	}
+	public void AddFile(String fileName, IQSize size, QIcon_Mode mode, QIcon_State state)
+	{
+		CQt.QIconEngine_AddFile((.)this.Ptr, libqt_string(fileName), (.)size?.ObjectPtr, mode, state);
+	}
+	public void Key(String outStr)
+	{
+		CQt.QIconEngine_Key((.)this.Ptr);
+	}
+	public QIconEngine_Ptr Clone()
+	{
+		return QIconEngine_Ptr(CQt.QIconEngine_Clone((.)this.Ptr));
+	}
+	public bool Read(IQDataStream _in)
+	{
+		return CQt.QIconEngine_Read((.)this.Ptr, (.)_in?.ObjectPtr);
+	}
+	public bool Write(IQDataStream _out)
+	{
+		return CQt.QIconEngine_Write((.)this.Ptr, (.)_out?.ObjectPtr);
+	}
+	public void* AvailableSizes(QIcon_Mode mode, QIcon_State state)
+	{
+		return CQt.QIconEngine_AvailableSizes((.)this.Ptr, mode, state);
+	}
+	public void IconName(String outStr)
+	{
+		CQt.QIconEngine_IconName((.)this.Ptr);
+	}
+	public bool IsNull()
+	{
+		return CQt.QIconEngine_IsNull((.)this.Ptr);
+	}
+	public QPixmap_Ptr ScaledPixmap(IQSize size, QIcon_Mode mode, QIcon_State state, double scale)
+	{
+		return QPixmap_Ptr(CQt.QIconEngine_ScaledPixmap((.)this.Ptr, (.)size?.ObjectPtr, mode, state, scale));
+	}
+	public void Virtual_hook(c_int id, void* data)
+	{
+		CQt.QIconEngine_Virtual_Hook((.)this.Ptr, id, data);
+	}
+}
+class QIconEngine : IQIconEngine
+{
+	private QIconEngine_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QIconEngine_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QIconEngine_new();
+	}
+	public ~this()
+	{
+		CQt.QIconEngine_Delete(this.ptr);
+	}
+	public void Paint(IQPainter painter, IQRect rect, QIcon_Mode mode, QIcon_State state)
+	{
+		this.ptr.Paint(painter, rect, mode, state);
+	}
+	public QSize_Ptr ActualSize(IQSize size, QIcon_Mode mode, QIcon_State state)
+	{
+		return this.ptr.ActualSize(size, mode, state);
+	}
+	public QPixmap_Ptr Pixmap(IQSize size, QIcon_Mode mode, QIcon_State state)
+	{
+		return this.ptr.Pixmap(size, mode, state);
+	}
+	public void AddPixmap(IQPixmap pixmap, QIcon_Mode mode, QIcon_State state)
+	{
+		this.ptr.AddPixmap(pixmap, mode, state);
+	}
+	public void AddFile(String fileName, IQSize size, QIcon_Mode mode, QIcon_State state)
+	{
+		this.ptr.AddFile(fileName, size, mode, state);
+	}
+	public void Key(String outStr)
+	{
+		this.ptr.Key(outStr);
+	}
+	public QIconEngine_Ptr Clone()
+	{
+		return this.ptr.Clone();
+	}
+	public bool Read(IQDataStream _in)
+	{
+		return this.ptr.Read(_in);
+	}
+	public bool Write(IQDataStream _out)
+	{
+		return this.ptr.Write(_out);
+	}
+	public void* AvailableSizes(QIcon_Mode mode, QIcon_State state)
+	{
+		return this.ptr.AvailableSizes(mode, state);
+	}
+	public void IconName(String outStr)
+	{
+		this.ptr.IconName(outStr);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public QPixmap_Ptr ScaledPixmap(IQSize size, QIcon_Mode mode, QIcon_State state, double scale)
+	{
+		return this.ptr.ScaledPixmap(size, mode, state, scale);
+	}
+	public void Virtual_hook(c_int id, void* data)
+	{
+		this.ptr.Virtual_hook(id, data);
+	}
+}
+interface IQIconEngine : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -50,82 +182,6 @@ extension CQt
 	[LinkName("QIconEngine_Virtual_Hook")]
 	public static extern void QIconEngine_Virtual_Hook(void* self, c_int id, void* data);
 }
-class QIconEngine : IQIconEngine
-{
-	private QIconEngine_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QIconEngine_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QIconEngine_new();
-	}
-	public ~this()
-	{
-		CQt.QIconEngine_Delete(this.ptr);
-	}
-	public void Paint(IQPainter painter, IQRect rect, QIcon_Mode mode, QIcon_State state)
-	{
-		CQt.QIconEngine_Paint((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, mode, state);
-	}
-	public QSize_Ptr ActualSize(IQSize size, QIcon_Mode mode, QIcon_State state)
-	{
-		return QSize_Ptr(CQt.QIconEngine_ActualSize((.)this.ptr.Ptr, (.)size?.ObjectPtr, mode, state));
-	}
-	public QPixmap_Ptr Pixmap(IQSize size, QIcon_Mode mode, QIcon_State state)
-	{
-		return QPixmap_Ptr(CQt.QIconEngine_Pixmap((.)this.ptr.Ptr, (.)size?.ObjectPtr, mode, state));
-	}
-	public void AddPixmap(IQPixmap pixmap, QIcon_Mode mode, QIcon_State state)
-	{
-		CQt.QIconEngine_AddPixmap((.)this.ptr.Ptr, (.)pixmap?.ObjectPtr, mode, state);
-	}
-	public void AddFile(String fileName, IQSize size, QIcon_Mode mode, QIcon_State state)
-	{
-		CQt.QIconEngine_AddFile((.)this.ptr.Ptr, libqt_string(fileName), (.)size?.ObjectPtr, mode, state);
-	}
-	public void Key(String outStr)
-	{
-		CQt.QIconEngine_Key((.)this.ptr.Ptr);
-	}
-	public QIconEngine_Ptr Clone()
-	{
-		return QIconEngine_Ptr(CQt.QIconEngine_Clone((.)this.ptr.Ptr));
-	}
-	public bool Read(IQDataStream _in)
-	{
-		return CQt.QIconEngine_Read((.)this.ptr.Ptr, (.)_in?.ObjectPtr);
-	}
-	public bool Write(IQDataStream _out)
-	{
-		return CQt.QIconEngine_Write((.)this.ptr.Ptr, (.)_out?.ObjectPtr);
-	}
-	public void* AvailableSizes(QIcon_Mode mode, QIcon_State state)
-	{
-		return CQt.QIconEngine_AvailableSizes((.)this.ptr.Ptr, mode, state);
-	}
-	public void IconName(String outStr)
-	{
-		CQt.QIconEngine_IconName((.)this.ptr.Ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QIconEngine_IsNull((.)this.ptr.Ptr);
-	}
-	public QPixmap_Ptr ScaledPixmap(IQSize size, QIcon_Mode mode, QIcon_State state, double scale)
-	{
-		return QPixmap_Ptr(CQt.QIconEngine_ScaledPixmap((.)this.ptr.Ptr, (.)size?.ObjectPtr, mode, state, scale));
-	}
-	public void Virtual_hook(c_int id, void* data)
-	{
-		CQt.QIconEngine_Virtual_Hook((.)this.ptr.Ptr, id, data);
-	}
-}
-interface IQIconEngine : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QIconEngine::ScaledPixmapArgument
 // --------------------------------------------------------------
@@ -137,6 +193,106 @@ struct QIconEngine_ScaledPixmapArgument_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QSize_Ptr Size()
+	{
+		return QSize_Ptr(CQt.QIconEngine_ScaledPixmapArgument_Size((.)this.Ptr));
+	}
+	public void SetSize(IQSize size)
+	{
+		CQt.QIconEngine_ScaledPixmapArgument_SetSize((.)this.Ptr, (.)size?.ObjectPtr);
+	}
+	public QIcon_Mode Mode()
+	{
+		return CQt.QIconEngine_ScaledPixmapArgument_Mode((.)this.Ptr);
+	}
+	public void SetMode(QIcon_Mode mode)
+	{
+		CQt.QIconEngine_ScaledPixmapArgument_SetMode((.)this.Ptr, mode);
+	}
+	public QIcon_State State()
+	{
+		return CQt.QIconEngine_ScaledPixmapArgument_State((.)this.Ptr);
+	}
+	public void SetState(QIcon_State state)
+	{
+		CQt.QIconEngine_ScaledPixmapArgument_SetState((.)this.Ptr, state);
+	}
+	public double Scale()
+	{
+		return CQt.QIconEngine_ScaledPixmapArgument_Scale((.)this.Ptr);
+	}
+	public void SetScale(double scale)
+	{
+		CQt.QIconEngine_ScaledPixmapArgument_SetScale((.)this.Ptr, scale);
+	}
+	public QPixmap_Ptr Pixmap()
+	{
+		return QPixmap_Ptr(CQt.QIconEngine_ScaledPixmapArgument_Pixmap((.)this.Ptr));
+	}
+	public void SetPixmap(IQPixmap pixmap)
+	{
+		CQt.QIconEngine_ScaledPixmapArgument_SetPixmap((.)this.Ptr, (.)pixmap?.ObjectPtr);
+	}
+}
+class QIconEngine_ScaledPixmapArgument : IQIconEngine_ScaledPixmapArgument
+{
+	private QIconEngine_ScaledPixmapArgument_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QIconEngine_ScaledPixmapArgument_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQIconEngine_ScaledPixmapArgument param1)
+	{
+		this.ptr = CQt.QIconEngine_ScaledPixmapArgument_new((.)param1?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QIconEngine_ScaledPixmapArgument_Delete(this.ptr);
+	}
+	public QSize_Ptr Size()
+	{
+		return this.ptr.Size();
+	}
+	public void SetSize(IQSize size)
+	{
+		this.ptr.SetSize(size);
+	}
+	public QIcon_Mode Mode()
+	{
+		return this.ptr.Mode();
+	}
+	public void SetMode(QIcon_Mode mode)
+	{
+		this.ptr.SetMode(mode);
+	}
+	public QIcon_State State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(QIcon_State state)
+	{
+		this.ptr.SetState(state);
+	}
+	public double Scale()
+	{
+		return this.ptr.Scale();
+	}
+	public void SetScale(double scale)
+	{
+		this.ptr.SetScale(scale);
+	}
+	public QPixmap_Ptr Pixmap()
+	{
+		return this.ptr.Pixmap();
+	}
+	public void SetPixmap(IQPixmap pixmap)
+	{
+		this.ptr.SetPixmap(pixmap);
+	}
+}
+interface IQIconEngine_ScaledPixmapArgument : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -166,66 +322,6 @@ extension CQt
 	public static extern void QIconEngine_ScaledPixmapArgument_SetPixmap(void* self, void* pixmap);
 	[LinkName("QIconEngine_ScaledPixmapArgument_OperatorAssign")]
 	public static extern void QIconEngine_ScaledPixmapArgument_OperatorAssign(void* self, void** param1);
-}
-class QIconEngine_ScaledPixmapArgument : IQIconEngine_ScaledPixmapArgument
-{
-	private QIconEngine_ScaledPixmapArgument_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QIconEngine_ScaledPixmapArgument_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQIconEngine_ScaledPixmapArgument param1)
-	{
-		this.ptr = CQt.QIconEngine_ScaledPixmapArgument_new((.)param1?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QIconEngine_ScaledPixmapArgument_Delete(this.ptr);
-	}
-	public QSize_Ptr Size()
-	{
-		return QSize_Ptr(CQt.QIconEngine_ScaledPixmapArgument_Size((.)this.ptr.Ptr));
-	}
-	public void SetSize(IQSize size)
-	{
-		CQt.QIconEngine_ScaledPixmapArgument_SetSize((.)this.ptr.Ptr, (.)size?.ObjectPtr);
-	}
-	public QIcon_Mode Mode()
-	{
-		return CQt.QIconEngine_ScaledPixmapArgument_Mode((.)this.ptr.Ptr);
-	}
-	public void SetMode(QIcon_Mode mode)
-	{
-		CQt.QIconEngine_ScaledPixmapArgument_SetMode((.)this.ptr.Ptr, mode);
-	}
-	public QIcon_State State()
-	{
-		return CQt.QIconEngine_ScaledPixmapArgument_State((.)this.ptr.Ptr);
-	}
-	public void SetState(QIcon_State state)
-	{
-		CQt.QIconEngine_ScaledPixmapArgument_SetState((.)this.ptr.Ptr, state);
-	}
-	public double Scale()
-	{
-		return CQt.QIconEngine_ScaledPixmapArgument_Scale((.)this.ptr.Ptr);
-	}
-	public void SetScale(double scale)
-	{
-		CQt.QIconEngine_ScaledPixmapArgument_SetScale((.)this.ptr.Ptr, scale);
-	}
-	public QPixmap_Ptr Pixmap()
-	{
-		return QPixmap_Ptr(CQt.QIconEngine_ScaledPixmapArgument_Pixmap((.)this.ptr.Ptr));
-	}
-	public void SetPixmap(IQPixmap pixmap)
-	{
-		CQt.QIconEngine_ScaledPixmapArgument_SetPixmap((.)this.ptr.Ptr, (.)pixmap?.ObjectPtr);
-	}
-}
-interface IQIconEngine_ScaledPixmapArgument : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QIconEngine_IconEngineHook

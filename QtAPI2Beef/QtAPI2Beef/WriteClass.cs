@@ -343,7 +343,7 @@ class WriteClass
         {
             if (isMethod && !method.IsStatic)
             {
-                parameters.Append("(.)this.ptr.Ptr");
+                parameters.Append("(.)this.Ptr");
                 if (method.Parameters.Length > 0)
                     parameters.Append(", ");
             }
@@ -422,6 +422,92 @@ class WriteClass
 
                 gatherInherited(cppClass);
 
+                void genMethod(CppClass cppClass, CppMethod method, bool isHandle)
+                {
+                    // @TODO - maybe(?)
+                    if (method.MethodName.StartsWith("operator"))
+                        return;
+
+                    var bfMethodName = Regex.Replace(method.MethodName, @"\b\p{Ll}", match => match.Value.ToUpper());
+
+                    var bfParameters = buildBfParameters(cppClass, method, Stage.BfObject, true);
+                    var bfArguments = string.Empty;
+                    if (isHandle)
+                    {
+                        bfArguments = buildBfArguments(cppClass, method, Stage.BfObject, true);
+                    }
+                    else
+                    {
+                        foreach (var arg in method.Parameters)
+                        {
+                            bfArguments += cleanBfVarName(arg.ParameterName);
+                            if (arg != method.Parameters[^1])
+                                bfArguments += ", ";
+                        }
+                    }
+                    var returnType = getBfTypeName(method.ReturnType, Stage.BfObject);
+
+                    if (returnType == "String" || returnType == "String*")
+                    {
+                        returnType = "void";
+
+                        if (bfParameters != string.Empty)
+                        {
+                            bfParameters = $"String outStr, {bfParameters}";
+                            if (!isHandle)
+                                bfArguments = $"outStr, {bfArguments}";
+                        }
+                        else
+                        {
+                            bfParameters = "String outStr";
+                            if (!isHandle)
+                                bfArguments = "outStr";
+                        }
+                    }
+
+                    bool isQtObjectReturnType = false;
+                    if (m_apiState.RegisteredClasses.ContainsKey(returnType))
+                    {
+                        returnType = $"{returnType}_Ptr";
+                        isQtObjectReturnType = true;
+                    }
+
+                    code.AppendLine($"public {returnType} {bfMethodName}({bfParameters})");
+                    code.AppendLine("{");
+                    code.IncreaseTab();
+                    {
+                        var call = string.Empty;
+
+                        if (isHandle)
+                        {
+                            var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi);
+                            call = $"CQt.{linkName}({bfArguments})";
+                        }
+                        else
+                        {
+                            call = $"this.ptr.{bfMethodName}({bfArguments})";
+                        }
+
+                        if (returnType != "void")
+                        {
+                            if (isQtObjectReturnType && isHandle)
+                            {
+                                code.AppendLine($"return {returnType}({call});");
+                            }
+                            else
+                            {
+                                code.AppendLine($"return {call};");
+                            }
+                        }
+                        else
+                        {
+                            code.AppendLine($"{call};");
+                        }
+                    }
+                    code.DecreaseTab();
+                    code.AppendLine("}");
+                }
+
                 var bfClassName = cppNameToBf(cppClass.ClassName);
                 var bfClassPtrName = bfClassName + "_Ptr";
 
@@ -445,60 +531,35 @@ class WriteClass
                     }
                     code.DecreaseTab();
                     code.AppendLine("}");
-                }
-                code.DecreaseTab();
-                code.AppendLine("}");
 
-
-                // CQt
-                code.AppendLine("extension CQt");
-                code.AppendLine("{");
-                code.IncreaseTab();
-                {
-                    // Constructors
-                    if (cppClass.Ctors != null)
-                    {
-                        for (var i = 0; i < cppClass.Ctors.Length; i++)
-                        {
-                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false);
-
-                            code.AppendLine($"[LinkName(\"{methodPrefix}_new{maybeSuffix(i)}\")]");
-                            code.AppendLine($"public static extern {bfClassName}_Ptr {methodPrefix}_new{maybeSuffix(i)}({parameters});");
-                        }
-                    }
-
-                    // Delete method
-                    if (cppClass.CanDelete)
-                    {
-                        var linkName = $"{methodPrefix}_Delete";
-
-                        code.AppendLine($"[LinkName(\"{linkName}\")]");
-                        code.AppendLine($"public static extern void {linkName}({bfClassName}_Ptr self);");
-                    }
+                    var toCheck = new List<CppMethod>();
 
                     // Normal methods
                     foreach (var method in cppClass.Methods)
                     {
-                        /*
-                        if (cppClass.ClassName == "QWidget")
+                        genMethod(cppClass, method, true);
+                    }
+                    toCheck.AddRange(cppClass.Methods);
+
+                    foreach (var inheritedClass in inheritedClasses)
+                    {
+                        foreach (var method in inheritedClass.Methods)
                         {
-                            if (method.MethodName == "show")
-                            {
-                                var a = 0;
-                            }
+                            if (toCheck.Any(c => c.MethodName == method.MethodName))
+                                continue;
+
+                            genMethod(inheritedClass, method, true);
                         }
-                        */
 
-                        var parameters = buildBfParameters(cppClass, method, Stage.CApi, true);
-
-                        var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi);
-
-                        code.AppendLine($"[LinkName(\"{linkName}\")]");
-                        code.AppendLine($"public static extern {getBfTypeName(method.ReturnType, Stage.CApi)} {linkName}({parameters});");
+                        toCheck.AddRange(inheritedClass.Methods);
                     }
                 }
                 code.DecreaseTab();
                 code.AppendLine("}");
+
+                // ----------------------
+                // Class
+                // ----------------------
 
                 var implements = $" : I{bfClassName}";
 
@@ -586,78 +647,14 @@ class WriteClass
                         code.AppendLine("}");
                     }
 
-                    void genMethod(CppClass cppClass, CppMethod method)
-                    {
-                        // @TODO - maybe(?)
-                        if (method.MethodName.StartsWith("operator"))
-                            return;
-
-                        if (method.MethodName == "AddMenu2")
-                        {
-                            var a = 0;
-                        }
-
-                        var bfMethodName = Regex.Replace(method.MethodName, @"\b\p{Ll}", match => match.Value.ToUpper());
-
-                        var bfParameters = buildBfParameters(cppClass, method, Stage.BfObject, true);
-                        var bfArguments = buildBfArguments(cppClass, method, Stage.BfObject, true);
-                        var returnType = getBfTypeName(method.ReturnType, Stage.BfObject);
-
-                        if (returnType == "String" || returnType == "String*")
-                        {
-                            returnType = "void";
-
-                            if (bfParameters != string.Empty)
-                            {
-                                bfParameters = $"String outStr, {bfParameters}";
-                            }
-                            else
-                            {
-                                bfParameters = "String outStr";
-                            }
-                        }
-
-                        bool isQtObjectReturnType = false;
-                        if (m_apiState.RegisteredClasses.ContainsKey(returnType))
-                        {
-                            returnType = $"{returnType}_Ptr";
-                            isQtObjectReturnType = true;
-                        }
-
-                        code.AppendLine($"public {returnType} {bfMethodName}({bfParameters})");
-                        code.AppendLine("{");
-                        code.IncreaseTab();
-                        {
-                            var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi);
-
-                            var call = $"CQt.{linkName}({bfArguments})";
-
-                            if (returnType != "void")
-                            {
-                                if (isQtObjectReturnType)
-                                {
-                                    code.AppendLine($"return {returnType}({call});");
-                                }
-                                else
-                                {
-                                    code.AppendLine($"return {call};");
-                                }
-                            }
-                            else
-                            {
-                                code.AppendLine($"{call};");
-                            }
-                        }
-                        code.DecreaseTab();
-                        code.AppendLine("}");
-                    }
+                    
 
                     var toCheck = new List<CppMethod>();
 
                     // Normal methods
                     foreach (var method in cppClass.Methods)
                     {
-                        genMethod(cppClass, method);
+                        genMethod(cppClass, method, false);
                     }
                     toCheck.AddRange(cppClass.Methods);
 
@@ -668,7 +665,7 @@ class WriteClass
                             if (toCheck.Any(c => c.MethodName == method.MethodName))
                                 continue;
 
-                            genMethod(inheritedClass, method);
+                            genMethod(inheritedClass, method, false);
                         }
 
                         toCheck.AddRange(inheritedClass.Methods);
@@ -677,7 +674,7 @@ class WriteClass
                 code.DecreaseTab();
                 code.AppendLine("}");
 
-                // Interface (simulating inheritance)
+                // Interface (simulating multiple inheritance)
                 code.AppendLine($"interface I{bfClassName} : IQtObjectInterface");
                 code.AppendLine("{");
                 code.IncreaseTab();
@@ -694,6 +691,59 @@ class WriteClass
                         code.AppendLine($"public {getBfTypeName(method.ReturnType, Stage.BfObject)} {bfMethodName}();");
                     }
                     */
+                }
+                code.DecreaseTab();
+                code.AppendLine("}");
+
+                // ---------------------------
+                // CAPI
+                // ---------------------------
+
+                code.AppendLine("extension CQt");
+                code.AppendLine("{");
+                code.IncreaseTab();
+                {
+                    // Constructors
+                    if (cppClass.Ctors != null)
+                    {
+                        for (var i = 0; i < cppClass.Ctors.Length; i++)
+                        {
+                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false);
+
+                            code.AppendLine($"[LinkName(\"{methodPrefix}_new{maybeSuffix(i)}\")]");
+                            code.AppendLine($"public static extern {bfClassName}_Ptr {methodPrefix}_new{maybeSuffix(i)}({parameters});");
+                        }
+                    }
+
+                    // Delete method
+                    if (cppClass.CanDelete)
+                    {
+                        var linkName = $"{methodPrefix}_Delete";
+
+                        code.AppendLine($"[LinkName(\"{linkName}\")]");
+                        code.AppendLine($"public static extern void {linkName}({bfClassName}_Ptr self);");
+                    }
+
+                    // Normal methods
+                    foreach (var method in cppClass.Methods)
+                    {
+                        /*
+                        if (cppClass.ClassName == "QWidget")
+                        {
+                            if (method.MethodName == "show")
+                            {
+                                var a = 0;
+                            }
+                        }
+                        */
+
+                        var parameters = buildBfParameters(cppClass, method, Stage.CApi, true);
+
+                        var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi);
+
+                        code.AppendLine($"[LinkName(\"{linkName}\")]");
+                        code.AppendLine($"public static extern {getBfTypeName(method.ReturnType, Stage.CApi)} {linkName}({parameters});");
+                    }
                 }
                 code.DecreaseTab();
                 code.AppendLine("}");

@@ -15,15 +15,6 @@ struct QUntypedPropertyData_Ptr
 		this.Ptr = ptr;
 	}
 }
-extension CQt
-{
-	[LinkName("QUntypedPropertyData_new")]
-	public static extern QUntypedPropertyData_Ptr QUntypedPropertyData_new(void** other);
-	[LinkName("QUntypedPropertyData_new2")]
-	public static extern QUntypedPropertyData_Ptr QUntypedPropertyData_new2(void** other);
-	[LinkName("QUntypedPropertyData_Delete")]
-	public static extern void QUntypedPropertyData_Delete(QUntypedPropertyData_Ptr self);
-}
 class QUntypedPropertyData : IQUntypedPropertyData
 {
 	private QUntypedPropertyData_Ptr ptr;
@@ -44,6 +35,15 @@ class QUntypedPropertyData : IQUntypedPropertyData
 interface IQUntypedPropertyData : IQtObjectInterface
 {
 }
+extension CQt
+{
+	[LinkName("QUntypedPropertyData_new")]
+	public static extern QUntypedPropertyData_Ptr QUntypedPropertyData_new(void** other);
+	[LinkName("QUntypedPropertyData_new2")]
+	public static extern QUntypedPropertyData_Ptr QUntypedPropertyData_new2(void** other);
+	[LinkName("QUntypedPropertyData_Delete")]
+	public static extern void QUntypedPropertyData_Delete(QUntypedPropertyData_Ptr self);
+}
 // --------------------------------------------------------------
 // QUntypedPropertyData::InheritsQUntypedPropertyData
 // --------------------------------------------------------------
@@ -55,15 +55,6 @@ struct QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QUntypedPropertyData_InheritsQUntypedPropertyData_new")]
-	public static extern QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr QUntypedPropertyData_InheritsQUntypedPropertyData_new(void** other);
-	[LinkName("QUntypedPropertyData_InheritsQUntypedPropertyData_new2")]
-	public static extern QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr QUntypedPropertyData_InheritsQUntypedPropertyData_new2(void** other);
-	[LinkName("QUntypedPropertyData_InheritsQUntypedPropertyData_Delete")]
-	public static extern void QUntypedPropertyData_InheritsQUntypedPropertyData_Delete(QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr self);
 }
 class QUntypedPropertyData_InheritsQUntypedPropertyData : IQUntypedPropertyData_InheritsQUntypedPropertyData
 {
@@ -84,4 +75,13 @@ class QUntypedPropertyData_InheritsQUntypedPropertyData : IQUntypedPropertyData_
 }
 interface IQUntypedPropertyData_InheritsQUntypedPropertyData : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QUntypedPropertyData_InheritsQUntypedPropertyData_new")]
+	public static extern QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr QUntypedPropertyData_InheritsQUntypedPropertyData_new(void** other);
+	[LinkName("QUntypedPropertyData_InheritsQUntypedPropertyData_new2")]
+	public static extern QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr QUntypedPropertyData_InheritsQUntypedPropertyData_new2(void** other);
+	[LinkName("QUntypedPropertyData_InheritsQUntypedPropertyData_Delete")]
+	public static extern void QUntypedPropertyData_InheritsQUntypedPropertyData_Delete(QUntypedPropertyData_InheritsQUntypedPropertyData_Ptr self);
 }

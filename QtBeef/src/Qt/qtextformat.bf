@@ -14,6 +14,58 @@ struct QTextLength_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QTextLength_Type Type()
+	{
+		return CQt.QTextLength_Type((.)this.Ptr);
+	}
+	public double Value(double maximumLength)
+	{
+		return CQt.QTextLength_Value((.)this.Ptr, maximumLength);
+	}
+	public double RawValue()
+	{
+		return CQt.QTextLength_RawValue((.)this.Ptr);
+	}
+}
+class QTextLength : IQTextLength
+{
+	private QTextLength_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextLength_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQTextLength other)
+	{
+		this.ptr = CQt.QTextLength_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextLength_new3();
+	}
+	public this(QTextLength_Type type, double value)
+	{
+		this.ptr = CQt.QTextLength_new4(type, value);
+	}
+	public ~this()
+	{
+		CQt.QTextLength_Delete(this.ptr);
+	}
+	public QTextLength_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public double Value(double maximumLength)
+	{
+		return this.ptr.Value(maximumLength);
+	}
+	public double RawValue()
+	{
+		return this.ptr.RawValue();
+	}
+}
+interface IQTextLength : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -42,46 +94,6 @@ extension CQt
 	[LinkName("QTextLength_ToQvariant")]
 	public static extern void* QTextLength_ToQvariant(void* self);
 }
-class QTextLength : IQTextLength
-{
-	private QTextLength_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextLength_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQTextLength other)
-	{
-		this.ptr = CQt.QTextLength_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextLength_new3();
-	}
-	public this(QTextLength_Type type, double value)
-	{
-		this.ptr = CQt.QTextLength_new4(type, value);
-	}
-	public ~this()
-	{
-		CQt.QTextLength_Delete(this.ptr);
-	}
-	public QTextLength_Type Type()
-	{
-		return CQt.QTextLength_Type((.)this.ptr.Ptr);
-	}
-	public double Value(double maximumLength)
-	{
-		return CQt.QTextLength_Value((.)this.ptr.Ptr, maximumLength);
-	}
-	public double RawValue()
-	{
-		return CQt.QTextLength_RawValue((.)this.ptr.Ptr);
-	}
-}
-interface IQTextLength : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextFormat
 // --------------------------------------------------------------
@@ -93,6 +105,410 @@ struct QTextFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QTextFormat_IsValid((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextFormat : IQTextFormat
+{
+	private QTextFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextFormat_new();
+	}
+	public this(c_int type)
+	{
+		this.ptr = CQt.QTextFormat_new2(type);
+	}
+	public this(IQTextFormat rhs)
+	{
+		this.ptr = CQt.QTextFormat_new3((.)rhs?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QTextFormat_Delete(this.ptr);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -207,222 +623,6 @@ extension CQt
 	[LinkName("QTextFormat_ClearForeground")]
 	public static extern void QTextFormat_ClearForeground(void* self);
 }
-class QTextFormat : IQTextFormat
-{
-	private QTextFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextFormat_new();
-	}
-	public this(c_int type)
-	{
-		this.ptr = CQt.QTextFormat_new2(type);
-	}
-	public this(IQTextFormat rhs)
-	{
-		this.ptr = CQt.QTextFormat_new3((.)rhs?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QTextFormat_Delete(this.ptr);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextFormat : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextCharFormat
 // --------------------------------------------------------------
@@ -434,6 +634,950 @@ struct QTextCharFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QTextCharFormat_IsValid((.)this.Ptr);
+	}
+	public void SetFont(IQFont font)
+	{
+		CQt.QTextCharFormat_SetFont((.)this.Ptr, (.)font?.ObjectPtr);
+	}
+	public QFont_Ptr Font()
+	{
+		return QFont_Ptr(CQt.QTextCharFormat_Font((.)this.Ptr));
+	}
+	public void SetFontFamily(String family)
+	{
+		CQt.QTextCharFormat_SetFontFamily((.)this.Ptr, libqt_string(family));
+	}
+	public void FontFamily(String outStr)
+	{
+		CQt.QTextCharFormat_FontFamily((.)this.Ptr);
+	}
+	public void SetFontFamilies(void** families)
+	{
+		CQt.QTextCharFormat_SetFontFamilies((.)this.Ptr, families);
+	}
+	public QVariant_Ptr FontFamilies()
+	{
+		return QVariant_Ptr(CQt.QTextCharFormat_FontFamilies((.)this.Ptr));
+	}
+	public void SetFontStyleName(String styleName)
+	{
+		CQt.QTextCharFormat_SetFontStyleName((.)this.Ptr, libqt_string(styleName));
+	}
+	public QVariant_Ptr FontStyleName()
+	{
+		return QVariant_Ptr(CQt.QTextCharFormat_FontStyleName((.)this.Ptr));
+	}
+	public void SetFontPointSize(double size)
+	{
+		CQt.QTextCharFormat_SetFontPointSize((.)this.Ptr, size);
+	}
+	public double FontPointSize()
+	{
+		return CQt.QTextCharFormat_FontPointSize((.)this.Ptr);
+	}
+	public void SetFontWeight(c_int weight)
+	{
+		CQt.QTextCharFormat_SetFontWeight((.)this.Ptr, weight);
+	}
+	public c_int FontWeight()
+	{
+		return CQt.QTextCharFormat_FontWeight((.)this.Ptr);
+	}
+	public void SetFontItalic(bool italic)
+	{
+		CQt.QTextCharFormat_SetFontItalic((.)this.Ptr, italic);
+	}
+	public bool FontItalic()
+	{
+		return CQt.QTextCharFormat_FontItalic((.)this.Ptr);
+	}
+	public void SetFontCapitalization(QFont_Capitalization capitalization)
+	{
+		CQt.QTextCharFormat_SetFontCapitalization((.)this.Ptr, capitalization);
+	}
+	public QFont_Capitalization FontCapitalization()
+	{
+		return CQt.QTextCharFormat_FontCapitalization((.)this.Ptr);
+	}
+	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
+	{
+		CQt.QTextCharFormat_SetFontLetterSpacingType((.)this.Ptr, letterSpacingType);
+	}
+	public QFont_SpacingType FontLetterSpacingType()
+	{
+		return CQt.QTextCharFormat_FontLetterSpacingType((.)this.Ptr);
+	}
+	public void SetFontLetterSpacing(double spacing)
+	{
+		CQt.QTextCharFormat_SetFontLetterSpacing((.)this.Ptr, spacing);
+	}
+	public double FontLetterSpacing()
+	{
+		return CQt.QTextCharFormat_FontLetterSpacing((.)this.Ptr);
+	}
+	public void SetFontWordSpacing(double spacing)
+	{
+		CQt.QTextCharFormat_SetFontWordSpacing((.)this.Ptr, spacing);
+	}
+	public double FontWordSpacing()
+	{
+		return CQt.QTextCharFormat_FontWordSpacing((.)this.Ptr);
+	}
+	public void SetFontUnderline(bool underline)
+	{
+		CQt.QTextCharFormat_SetFontUnderline((.)this.Ptr, underline);
+	}
+	public bool FontUnderline()
+	{
+		return CQt.QTextCharFormat_FontUnderline((.)this.Ptr);
+	}
+	public void SetFontOverline(bool overline)
+	{
+		CQt.QTextCharFormat_SetFontOverline((.)this.Ptr, overline);
+	}
+	public bool FontOverline()
+	{
+		return CQt.QTextCharFormat_FontOverline((.)this.Ptr);
+	}
+	public void SetFontStrikeOut(bool strikeOut)
+	{
+		CQt.QTextCharFormat_SetFontStrikeOut((.)this.Ptr, strikeOut);
+	}
+	public bool FontStrikeOut()
+	{
+		return CQt.QTextCharFormat_FontStrikeOut((.)this.Ptr);
+	}
+	public void SetUnderlineColor(IQColor color)
+	{
+		CQt.QTextCharFormat_SetUnderlineColor((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public QColor_Ptr UnderlineColor()
+	{
+		return QColor_Ptr(CQt.QTextCharFormat_UnderlineColor((.)this.Ptr));
+	}
+	public void SetFontFixedPitch(bool fixedPitch)
+	{
+		CQt.QTextCharFormat_SetFontFixedPitch((.)this.Ptr, fixedPitch);
+	}
+	public bool FontFixedPitch()
+	{
+		return CQt.QTextCharFormat_FontFixedPitch((.)this.Ptr);
+	}
+	public void SetFontStretch(c_int factor)
+	{
+		CQt.QTextCharFormat_SetFontStretch((.)this.Ptr, factor);
+	}
+	public c_int FontStretch()
+	{
+		return CQt.QTextCharFormat_FontStretch((.)this.Ptr);
+	}
+	public void SetFontStyleHint(QFont_StyleHint hint)
+	{
+		CQt.QTextCharFormat_SetFontStyleHint((.)this.Ptr, hint);
+	}
+	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
+	{
+		CQt.QTextCharFormat_SetFontStyleStrategy((.)this.Ptr, strategy);
+	}
+	public QFont_StyleHint FontStyleHint()
+	{
+		return CQt.QTextCharFormat_FontStyleHint((.)this.Ptr);
+	}
+	public QFont_StyleStrategy FontStyleStrategy()
+	{
+		return CQt.QTextCharFormat_FontStyleStrategy((.)this.Ptr);
+	}
+	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		CQt.QTextCharFormat_SetFontHintingPreference((.)this.Ptr, hintingPreference);
+	}
+	public QFont_HintingPreference FontHintingPreference()
+	{
+		return CQt.QTextCharFormat_FontHintingPreference((.)this.Ptr);
+	}
+	public void SetFontKerning(bool enable)
+	{
+		CQt.QTextCharFormat_SetFontKerning((.)this.Ptr, enable);
+	}
+	public bool FontKerning()
+	{
+		return CQt.QTextCharFormat_FontKerning((.)this.Ptr);
+	}
+	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
+	{
+		CQt.QTextCharFormat_SetUnderlineStyle((.)this.Ptr, style);
+	}
+	public QTextCharFormat_UnderlineStyle UnderlineStyle()
+	{
+		return CQt.QTextCharFormat_UnderlineStyle((.)this.Ptr);
+	}
+	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
+	{
+		CQt.QTextCharFormat_SetVerticalAlignment((.)this.Ptr, alignment);
+	}
+	public QTextCharFormat_VerticalAlignment VerticalAlignment()
+	{
+		return CQt.QTextCharFormat_VerticalAlignment((.)this.Ptr);
+	}
+	public void SetTextOutline(IQPen pen)
+	{
+		CQt.QTextCharFormat_SetTextOutline((.)this.Ptr, (.)pen?.ObjectPtr);
+	}
+	public QPen_Ptr TextOutline()
+	{
+		return QPen_Ptr(CQt.QTextCharFormat_TextOutline((.)this.Ptr));
+	}
+	public void SetToolTip(String tip)
+	{
+		CQt.QTextCharFormat_SetToolTip((.)this.Ptr, libqt_string(tip));
+	}
+	public void ToolTip(String outStr)
+	{
+		CQt.QTextCharFormat_ToolTip((.)this.Ptr);
+	}
+	public void SetSuperScriptBaseline(double baseline)
+	{
+		CQt.QTextCharFormat_SetSuperScriptBaseline((.)this.Ptr, baseline);
+	}
+	public double SuperScriptBaseline()
+	{
+		return CQt.QTextCharFormat_SuperScriptBaseline((.)this.Ptr);
+	}
+	public void SetSubScriptBaseline(double baseline)
+	{
+		CQt.QTextCharFormat_SetSubScriptBaseline((.)this.Ptr, baseline);
+	}
+	public double SubScriptBaseline()
+	{
+		return CQt.QTextCharFormat_SubScriptBaseline((.)this.Ptr);
+	}
+	public void SetBaselineOffset(double baseline)
+	{
+		CQt.QTextCharFormat_SetBaselineOffset((.)this.Ptr, baseline);
+	}
+	public double BaselineOffset()
+	{
+		return CQt.QTextCharFormat_BaselineOffset((.)this.Ptr);
+	}
+	public void SetAnchor(bool anchor)
+	{
+		CQt.QTextCharFormat_SetAnchor((.)this.Ptr, anchor);
+	}
+	public bool IsAnchor()
+	{
+		return CQt.QTextCharFormat_IsAnchor((.)this.Ptr);
+	}
+	public void SetAnchorHref(String value)
+	{
+		CQt.QTextCharFormat_SetAnchorHref((.)this.Ptr, libqt_string(value));
+	}
+	public void AnchorHref(String outStr)
+	{
+		CQt.QTextCharFormat_AnchorHref((.)this.Ptr);
+	}
+	public void SetAnchorNames(void** names)
+	{
+		CQt.QTextCharFormat_SetAnchorNames((.)this.Ptr, names);
+	}
+	public void* AnchorNames()
+	{
+		return CQt.QTextCharFormat_AnchorNames((.)this.Ptr);
+	}
+	public void SetTableCellRowSpan(c_int tableCellRowSpan)
+	{
+		CQt.QTextCharFormat_SetTableCellRowSpan((.)this.Ptr, tableCellRowSpan);
+	}
+	public c_int TableCellRowSpan()
+	{
+		return CQt.QTextCharFormat_TableCellRowSpan((.)this.Ptr);
+	}
+	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
+	{
+		CQt.QTextCharFormat_SetTableCellColumnSpan((.)this.Ptr, tableCellColumnSpan);
+	}
+	public c_int TableCellColumnSpan()
+	{
+		return CQt.QTextCharFormat_TableCellColumnSpan((.)this.Ptr);
+	}
+	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
+	{
+		CQt.QTextCharFormat_SetFont2((.)this.Ptr, (.)font?.ObjectPtr, behavior);
+	}
+	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
+	{
+		CQt.QTextCharFormat_SetFontStyleHint2((.)this.Ptr, hint, strategy);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextCharFormat : IQTextCharFormat, IQTextFormat
+{
+	private QTextCharFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextCharFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextCharFormat_new();
+	}
+	public this(IQTextCharFormat param1)
+	{
+		this.ptr = CQt.QTextCharFormat_new2((.)param1?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QTextCharFormat_Delete(this.ptr);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void SetFont(IQFont font)
+	{
+		this.ptr.SetFont(font);
+	}
+	public QFont_Ptr Font()
+	{
+		return this.ptr.Font();
+	}
+	public void SetFontFamily(String family)
+	{
+		this.ptr.SetFontFamily(family);
+	}
+	public void FontFamily(String outStr)
+	{
+		this.ptr.FontFamily(outStr);
+	}
+	public void SetFontFamilies(void** families)
+	{
+		this.ptr.SetFontFamilies(families);
+	}
+	public QVariant_Ptr FontFamilies()
+	{
+		return this.ptr.FontFamilies();
+	}
+	public void SetFontStyleName(String styleName)
+	{
+		this.ptr.SetFontStyleName(styleName);
+	}
+	public QVariant_Ptr FontStyleName()
+	{
+		return this.ptr.FontStyleName();
+	}
+	public void SetFontPointSize(double size)
+	{
+		this.ptr.SetFontPointSize(size);
+	}
+	public double FontPointSize()
+	{
+		return this.ptr.FontPointSize();
+	}
+	public void SetFontWeight(c_int weight)
+	{
+		this.ptr.SetFontWeight(weight);
+	}
+	public c_int FontWeight()
+	{
+		return this.ptr.FontWeight();
+	}
+	public void SetFontItalic(bool italic)
+	{
+		this.ptr.SetFontItalic(italic);
+	}
+	public bool FontItalic()
+	{
+		return this.ptr.FontItalic();
+	}
+	public void SetFontCapitalization(QFont_Capitalization capitalization)
+	{
+		this.ptr.SetFontCapitalization(capitalization);
+	}
+	public QFont_Capitalization FontCapitalization()
+	{
+		return this.ptr.FontCapitalization();
+	}
+	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
+	{
+		this.ptr.SetFontLetterSpacingType(letterSpacingType);
+	}
+	public QFont_SpacingType FontLetterSpacingType()
+	{
+		return this.ptr.FontLetterSpacingType();
+	}
+	public void SetFontLetterSpacing(double spacing)
+	{
+		this.ptr.SetFontLetterSpacing(spacing);
+	}
+	public double FontLetterSpacing()
+	{
+		return this.ptr.FontLetterSpacing();
+	}
+	public void SetFontWordSpacing(double spacing)
+	{
+		this.ptr.SetFontWordSpacing(spacing);
+	}
+	public double FontWordSpacing()
+	{
+		return this.ptr.FontWordSpacing();
+	}
+	public void SetFontUnderline(bool underline)
+	{
+		this.ptr.SetFontUnderline(underline);
+	}
+	public bool FontUnderline()
+	{
+		return this.ptr.FontUnderline();
+	}
+	public void SetFontOverline(bool overline)
+	{
+		this.ptr.SetFontOverline(overline);
+	}
+	public bool FontOverline()
+	{
+		return this.ptr.FontOverline();
+	}
+	public void SetFontStrikeOut(bool strikeOut)
+	{
+		this.ptr.SetFontStrikeOut(strikeOut);
+	}
+	public bool FontStrikeOut()
+	{
+		return this.ptr.FontStrikeOut();
+	}
+	public void SetUnderlineColor(IQColor color)
+	{
+		this.ptr.SetUnderlineColor(color);
+	}
+	public QColor_Ptr UnderlineColor()
+	{
+		return this.ptr.UnderlineColor();
+	}
+	public void SetFontFixedPitch(bool fixedPitch)
+	{
+		this.ptr.SetFontFixedPitch(fixedPitch);
+	}
+	public bool FontFixedPitch()
+	{
+		return this.ptr.FontFixedPitch();
+	}
+	public void SetFontStretch(c_int factor)
+	{
+		this.ptr.SetFontStretch(factor);
+	}
+	public c_int FontStretch()
+	{
+		return this.ptr.FontStretch();
+	}
+	public void SetFontStyleHint(QFont_StyleHint hint)
+	{
+		this.ptr.SetFontStyleHint(hint);
+	}
+	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
+	{
+		this.ptr.SetFontStyleStrategy(strategy);
+	}
+	public QFont_StyleHint FontStyleHint()
+	{
+		return this.ptr.FontStyleHint();
+	}
+	public QFont_StyleStrategy FontStyleStrategy()
+	{
+		return this.ptr.FontStyleStrategy();
+	}
+	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		this.ptr.SetFontHintingPreference(hintingPreference);
+	}
+	public QFont_HintingPreference FontHintingPreference()
+	{
+		return this.ptr.FontHintingPreference();
+	}
+	public void SetFontKerning(bool enable)
+	{
+		this.ptr.SetFontKerning(enable);
+	}
+	public bool FontKerning()
+	{
+		return this.ptr.FontKerning();
+	}
+	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
+	{
+		this.ptr.SetUnderlineStyle(style);
+	}
+	public QTextCharFormat_UnderlineStyle UnderlineStyle()
+	{
+		return this.ptr.UnderlineStyle();
+	}
+	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
+	{
+		this.ptr.SetVerticalAlignment(alignment);
+	}
+	public QTextCharFormat_VerticalAlignment VerticalAlignment()
+	{
+		return this.ptr.VerticalAlignment();
+	}
+	public void SetTextOutline(IQPen pen)
+	{
+		this.ptr.SetTextOutline(pen);
+	}
+	public QPen_Ptr TextOutline()
+	{
+		return this.ptr.TextOutline();
+	}
+	public void SetToolTip(String tip)
+	{
+		this.ptr.SetToolTip(tip);
+	}
+	public void ToolTip(String outStr)
+	{
+		this.ptr.ToolTip(outStr);
+	}
+	public void SetSuperScriptBaseline(double baseline)
+	{
+		this.ptr.SetSuperScriptBaseline(baseline);
+	}
+	public double SuperScriptBaseline()
+	{
+		return this.ptr.SuperScriptBaseline();
+	}
+	public void SetSubScriptBaseline(double baseline)
+	{
+		this.ptr.SetSubScriptBaseline(baseline);
+	}
+	public double SubScriptBaseline()
+	{
+		return this.ptr.SubScriptBaseline();
+	}
+	public void SetBaselineOffset(double baseline)
+	{
+		this.ptr.SetBaselineOffset(baseline);
+	}
+	public double BaselineOffset()
+	{
+		return this.ptr.BaselineOffset();
+	}
+	public void SetAnchor(bool anchor)
+	{
+		this.ptr.SetAnchor(anchor);
+	}
+	public bool IsAnchor()
+	{
+		return this.ptr.IsAnchor();
+	}
+	public void SetAnchorHref(String value)
+	{
+		this.ptr.SetAnchorHref(value);
+	}
+	public void AnchorHref(String outStr)
+	{
+		this.ptr.AnchorHref(outStr);
+	}
+	public void SetAnchorNames(void** names)
+	{
+		this.ptr.SetAnchorNames(names);
+	}
+	public void* AnchorNames()
+	{
+		return this.ptr.AnchorNames();
+	}
+	public void SetTableCellRowSpan(c_int tableCellRowSpan)
+	{
+		this.ptr.SetTableCellRowSpan(tableCellRowSpan);
+	}
+	public c_int TableCellRowSpan()
+	{
+		return this.ptr.TableCellRowSpan();
+	}
+	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
+	{
+		this.ptr.SetTableCellColumnSpan(tableCellColumnSpan);
+	}
+	public c_int TableCellColumnSpan()
+	{
+		return this.ptr.TableCellColumnSpan();
+	}
+	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
+	{
+		this.ptr.SetFont2(font, behavior);
+	}
+	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
+	{
+		this.ptr.SetFontStyleHint2(hint, strategy);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextCharFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -582,490 +1726,6 @@ extension CQt
 	[LinkName("QTextCharFormat_SetFontStyleHint2")]
 	public static extern void QTextCharFormat_SetFontStyleHint2(void* self, QFont_StyleHint hint, QFont_StyleStrategy strategy);
 }
-class QTextCharFormat : IQTextCharFormat, IQTextFormat
-{
-	private QTextCharFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextCharFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextCharFormat_new();
-	}
-	public this(IQTextCharFormat param1)
-	{
-		this.ptr = CQt.QTextCharFormat_new2((.)param1?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QTextCharFormat_Delete(this.ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextCharFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public void SetFont(IQFont font)
-	{
-		CQt.QTextCharFormat_SetFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
-	}
-	public QFont_Ptr Font()
-	{
-		return QFont_Ptr(CQt.QTextCharFormat_Font((.)this.ptr.Ptr));
-	}
-	public void SetFontFamily(String family)
-	{
-		CQt.QTextCharFormat_SetFontFamily((.)this.ptr.Ptr, libqt_string(family));
-	}
-	public void FontFamily(String outStr)
-	{
-		CQt.QTextCharFormat_FontFamily((.)this.ptr.Ptr);
-	}
-	public void SetFontFamilies(void** families)
-	{
-		CQt.QTextCharFormat_SetFontFamilies((.)this.ptr.Ptr, families);
-	}
-	public QVariant_Ptr FontFamilies()
-	{
-		return QVariant_Ptr(CQt.QTextCharFormat_FontFamilies((.)this.ptr.Ptr));
-	}
-	public void SetFontStyleName(String styleName)
-	{
-		CQt.QTextCharFormat_SetFontStyleName((.)this.ptr.Ptr, libqt_string(styleName));
-	}
-	public QVariant_Ptr FontStyleName()
-	{
-		return QVariant_Ptr(CQt.QTextCharFormat_FontStyleName((.)this.ptr.Ptr));
-	}
-	public void SetFontPointSize(double size)
-	{
-		CQt.QTextCharFormat_SetFontPointSize((.)this.ptr.Ptr, size);
-	}
-	public double FontPointSize()
-	{
-		return CQt.QTextCharFormat_FontPointSize((.)this.ptr.Ptr);
-	}
-	public void SetFontWeight(c_int weight)
-	{
-		CQt.QTextCharFormat_SetFontWeight((.)this.ptr.Ptr, weight);
-	}
-	public c_int FontWeight()
-	{
-		return CQt.QTextCharFormat_FontWeight((.)this.ptr.Ptr);
-	}
-	public void SetFontItalic(bool italic)
-	{
-		CQt.QTextCharFormat_SetFontItalic((.)this.ptr.Ptr, italic);
-	}
-	public bool FontItalic()
-	{
-		return CQt.QTextCharFormat_FontItalic((.)this.ptr.Ptr);
-	}
-	public void SetFontCapitalization(QFont_Capitalization capitalization)
-	{
-		CQt.QTextCharFormat_SetFontCapitalization((.)this.ptr.Ptr, capitalization);
-	}
-	public QFont_Capitalization FontCapitalization()
-	{
-		return CQt.QTextCharFormat_FontCapitalization((.)this.ptr.Ptr);
-	}
-	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
-	{
-		CQt.QTextCharFormat_SetFontLetterSpacingType((.)this.ptr.Ptr, letterSpacingType);
-	}
-	public QFont_SpacingType FontLetterSpacingType()
-	{
-		return CQt.QTextCharFormat_FontLetterSpacingType((.)this.ptr.Ptr);
-	}
-	public void SetFontLetterSpacing(double spacing)
-	{
-		CQt.QTextCharFormat_SetFontLetterSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public double FontLetterSpacing()
-	{
-		return CQt.QTextCharFormat_FontLetterSpacing((.)this.ptr.Ptr);
-	}
-	public void SetFontWordSpacing(double spacing)
-	{
-		CQt.QTextCharFormat_SetFontWordSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public double FontWordSpacing()
-	{
-		return CQt.QTextCharFormat_FontWordSpacing((.)this.ptr.Ptr);
-	}
-	public void SetFontUnderline(bool underline)
-	{
-		CQt.QTextCharFormat_SetFontUnderline((.)this.ptr.Ptr, underline);
-	}
-	public bool FontUnderline()
-	{
-		return CQt.QTextCharFormat_FontUnderline((.)this.ptr.Ptr);
-	}
-	public void SetFontOverline(bool overline)
-	{
-		CQt.QTextCharFormat_SetFontOverline((.)this.ptr.Ptr, overline);
-	}
-	public bool FontOverline()
-	{
-		return CQt.QTextCharFormat_FontOverline((.)this.ptr.Ptr);
-	}
-	public void SetFontStrikeOut(bool strikeOut)
-	{
-		CQt.QTextCharFormat_SetFontStrikeOut((.)this.ptr.Ptr, strikeOut);
-	}
-	public bool FontStrikeOut()
-	{
-		return CQt.QTextCharFormat_FontStrikeOut((.)this.ptr.Ptr);
-	}
-	public void SetUnderlineColor(IQColor color)
-	{
-		CQt.QTextCharFormat_SetUnderlineColor((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public QColor_Ptr UnderlineColor()
-	{
-		return QColor_Ptr(CQt.QTextCharFormat_UnderlineColor((.)this.ptr.Ptr));
-	}
-	public void SetFontFixedPitch(bool fixedPitch)
-	{
-		CQt.QTextCharFormat_SetFontFixedPitch((.)this.ptr.Ptr, fixedPitch);
-	}
-	public bool FontFixedPitch()
-	{
-		return CQt.QTextCharFormat_FontFixedPitch((.)this.ptr.Ptr);
-	}
-	public void SetFontStretch(c_int factor)
-	{
-		CQt.QTextCharFormat_SetFontStretch((.)this.ptr.Ptr, factor);
-	}
-	public c_int FontStretch()
-	{
-		return CQt.QTextCharFormat_FontStretch((.)this.ptr.Ptr);
-	}
-	public void SetFontStyleHint(QFont_StyleHint hint)
-	{
-		CQt.QTextCharFormat_SetFontStyleHint((.)this.ptr.Ptr, hint);
-	}
-	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
-	{
-		CQt.QTextCharFormat_SetFontStyleStrategy((.)this.ptr.Ptr, strategy);
-	}
-	public QFont_StyleHint FontStyleHint()
-	{
-		return CQt.QTextCharFormat_FontStyleHint((.)this.ptr.Ptr);
-	}
-	public QFont_StyleStrategy FontStyleStrategy()
-	{
-		return CQt.QTextCharFormat_FontStyleStrategy((.)this.ptr.Ptr);
-	}
-	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
-	{
-		CQt.QTextCharFormat_SetFontHintingPreference((.)this.ptr.Ptr, hintingPreference);
-	}
-	public QFont_HintingPreference FontHintingPreference()
-	{
-		return CQt.QTextCharFormat_FontHintingPreference((.)this.ptr.Ptr);
-	}
-	public void SetFontKerning(bool enable)
-	{
-		CQt.QTextCharFormat_SetFontKerning((.)this.ptr.Ptr, enable);
-	}
-	public bool FontKerning()
-	{
-		return CQt.QTextCharFormat_FontKerning((.)this.ptr.Ptr);
-	}
-	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
-	{
-		CQt.QTextCharFormat_SetUnderlineStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextCharFormat_UnderlineStyle UnderlineStyle()
-	{
-		return CQt.QTextCharFormat_UnderlineStyle((.)this.ptr.Ptr);
-	}
-	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
-	{
-		CQt.QTextCharFormat_SetVerticalAlignment((.)this.ptr.Ptr, alignment);
-	}
-	public QTextCharFormat_VerticalAlignment VerticalAlignment()
-	{
-		return CQt.QTextCharFormat_VerticalAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextOutline(IQPen pen)
-	{
-		CQt.QTextCharFormat_SetTextOutline((.)this.ptr.Ptr, (.)pen?.ObjectPtr);
-	}
-	public QPen_Ptr TextOutline()
-	{
-		return QPen_Ptr(CQt.QTextCharFormat_TextOutline((.)this.ptr.Ptr));
-	}
-	public void SetToolTip(String tip)
-	{
-		CQt.QTextCharFormat_SetToolTip((.)this.ptr.Ptr, libqt_string(tip));
-	}
-	public void ToolTip(String outStr)
-	{
-		CQt.QTextCharFormat_ToolTip((.)this.ptr.Ptr);
-	}
-	public void SetSuperScriptBaseline(double baseline)
-	{
-		CQt.QTextCharFormat_SetSuperScriptBaseline((.)this.ptr.Ptr, baseline);
-	}
-	public double SuperScriptBaseline()
-	{
-		return CQt.QTextCharFormat_SuperScriptBaseline((.)this.ptr.Ptr);
-	}
-	public void SetSubScriptBaseline(double baseline)
-	{
-		CQt.QTextCharFormat_SetSubScriptBaseline((.)this.ptr.Ptr, baseline);
-	}
-	public double SubScriptBaseline()
-	{
-		return CQt.QTextCharFormat_SubScriptBaseline((.)this.ptr.Ptr);
-	}
-	public void SetBaselineOffset(double baseline)
-	{
-		CQt.QTextCharFormat_SetBaselineOffset((.)this.ptr.Ptr, baseline);
-	}
-	public double BaselineOffset()
-	{
-		return CQt.QTextCharFormat_BaselineOffset((.)this.ptr.Ptr);
-	}
-	public void SetAnchor(bool anchor)
-	{
-		CQt.QTextCharFormat_SetAnchor((.)this.ptr.Ptr, anchor);
-	}
-	public bool IsAnchor()
-	{
-		return CQt.QTextCharFormat_IsAnchor((.)this.ptr.Ptr);
-	}
-	public void SetAnchorHref(String value)
-	{
-		CQt.QTextCharFormat_SetAnchorHref((.)this.ptr.Ptr, libqt_string(value));
-	}
-	public void AnchorHref(String outStr)
-	{
-		CQt.QTextCharFormat_AnchorHref((.)this.ptr.Ptr);
-	}
-	public void SetAnchorNames(void** names)
-	{
-		CQt.QTextCharFormat_SetAnchorNames((.)this.ptr.Ptr, names);
-	}
-	public void* AnchorNames()
-	{
-		return CQt.QTextCharFormat_AnchorNames((.)this.ptr.Ptr);
-	}
-	public void SetTableCellRowSpan(c_int tableCellRowSpan)
-	{
-		CQt.QTextCharFormat_SetTableCellRowSpan((.)this.ptr.Ptr, tableCellRowSpan);
-	}
-	public c_int TableCellRowSpan()
-	{
-		return CQt.QTextCharFormat_TableCellRowSpan((.)this.ptr.Ptr);
-	}
-	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
-	{
-		CQt.QTextCharFormat_SetTableCellColumnSpan((.)this.ptr.Ptr, tableCellColumnSpan);
-	}
-	public c_int TableCellColumnSpan()
-	{
-		return CQt.QTextCharFormat_TableCellColumnSpan((.)this.ptr.Ptr);
-	}
-	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
-	{
-		CQt.QTextCharFormat_SetFont2((.)this.ptr.Ptr, (.)font?.ObjectPtr, behavior);
-	}
-	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
-	{
-		CQt.QTextCharFormat_SetFontStyleHint2((.)this.ptr.Ptr, hint, strategy);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextCharFormat : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextBlockFormat
 // --------------------------------------------------------------
@@ -1077,6 +1737,630 @@ struct QTextBlockFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QTextBlockFormat_IsValid((.)this.Ptr);
+	}
+	public void SetAlignment(void* alignment)
+	{
+		CQt.QTextBlockFormat_SetAlignment((.)this.Ptr, alignment);
+	}
+	public void* Alignment()
+	{
+		return CQt.QTextBlockFormat_Alignment((.)this.Ptr);
+	}
+	public void SetTopMargin(double margin)
+	{
+		CQt.QTextBlockFormat_SetTopMargin((.)this.Ptr, margin);
+	}
+	public double TopMargin()
+	{
+		return CQt.QTextBlockFormat_TopMargin((.)this.Ptr);
+	}
+	public void SetBottomMargin(double margin)
+	{
+		CQt.QTextBlockFormat_SetBottomMargin((.)this.Ptr, margin);
+	}
+	public double BottomMargin()
+	{
+		return CQt.QTextBlockFormat_BottomMargin((.)this.Ptr);
+	}
+	public void SetLeftMargin(double margin)
+	{
+		CQt.QTextBlockFormat_SetLeftMargin((.)this.Ptr, margin);
+	}
+	public double LeftMargin()
+	{
+		return CQt.QTextBlockFormat_LeftMargin((.)this.Ptr);
+	}
+	public void SetRightMargin(double margin)
+	{
+		CQt.QTextBlockFormat_SetRightMargin((.)this.Ptr, margin);
+	}
+	public double RightMargin()
+	{
+		return CQt.QTextBlockFormat_RightMargin((.)this.Ptr);
+	}
+	public void SetTextIndent(double aindent)
+	{
+		CQt.QTextBlockFormat_SetTextIndent((.)this.Ptr, aindent);
+	}
+	public double TextIndent()
+	{
+		return CQt.QTextBlockFormat_TextIndent((.)this.Ptr);
+	}
+	public void SetIndent(c_int indent)
+	{
+		CQt.QTextBlockFormat_SetIndent((.)this.Ptr, indent);
+	}
+	public c_int Indent()
+	{
+		return CQt.QTextBlockFormat_Indent((.)this.Ptr);
+	}
+	public void SetHeadingLevel(c_int alevel)
+	{
+		CQt.QTextBlockFormat_SetHeadingLevel((.)this.Ptr, alevel);
+	}
+	public c_int HeadingLevel()
+	{
+		return CQt.QTextBlockFormat_HeadingLevel((.)this.Ptr);
+	}
+	public void SetLineHeight(double height, c_int heightType)
+	{
+		CQt.QTextBlockFormat_SetLineHeight((.)this.Ptr, height, heightType);
+	}
+	public double LineHeight(double scriptLineHeight, double scaling)
+	{
+		return CQt.QTextBlockFormat_LineHeight((.)this.Ptr, scriptLineHeight, scaling);
+	}
+	public double LineHeight2()
+	{
+		return CQt.QTextBlockFormat_LineHeight2((.)this.Ptr);
+	}
+	public c_int LineHeightType()
+	{
+		return CQt.QTextBlockFormat_LineHeightType((.)this.Ptr);
+	}
+	public void SetNonBreakableLines(bool b)
+	{
+		CQt.QTextBlockFormat_SetNonBreakableLines((.)this.Ptr, b);
+	}
+	public bool NonBreakableLines()
+	{
+		return CQt.QTextBlockFormat_NonBreakableLines((.)this.Ptr);
+	}
+	public void SetPageBreakPolicy(void* flags)
+	{
+		CQt.QTextBlockFormat_SetPageBreakPolicy((.)this.Ptr, flags);
+	}
+	public void* PageBreakPolicy()
+	{
+		return CQt.QTextBlockFormat_PageBreakPolicy((.)this.Ptr);
+	}
+	public void SetTabPositions(void** tabs)
+	{
+		CQt.QTextBlockFormat_SetTabPositions((.)this.Ptr, tabs);
+	}
+	public void* TabPositions()
+	{
+		return CQt.QTextBlockFormat_TabPositions((.)this.Ptr);
+	}
+	public void SetMarker(QTextBlockFormat_MarkerType marker)
+	{
+		CQt.QTextBlockFormat_SetMarker((.)this.Ptr, marker);
+	}
+	public QTextBlockFormat_MarkerType Marker()
+	{
+		return CQt.QTextBlockFormat_Marker((.)this.Ptr);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextBlockFormat : IQTextBlockFormat, IQTextFormat
+{
+	private QTextBlockFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextBlockFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextBlockFormat_new();
+	}
+	public this(IQTextBlockFormat param1)
+	{
+		this.ptr = CQt.QTextBlockFormat_new2((.)param1?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QTextBlockFormat_Delete(this.ptr);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void SetAlignment(void* alignment)
+	{
+		this.ptr.SetAlignment(alignment);
+	}
+	public void* Alignment()
+	{
+		return this.ptr.Alignment();
+	}
+	public void SetTopMargin(double margin)
+	{
+		this.ptr.SetTopMargin(margin);
+	}
+	public double TopMargin()
+	{
+		return this.ptr.TopMargin();
+	}
+	public void SetBottomMargin(double margin)
+	{
+		this.ptr.SetBottomMargin(margin);
+	}
+	public double BottomMargin()
+	{
+		return this.ptr.BottomMargin();
+	}
+	public void SetLeftMargin(double margin)
+	{
+		this.ptr.SetLeftMargin(margin);
+	}
+	public double LeftMargin()
+	{
+		return this.ptr.LeftMargin();
+	}
+	public void SetRightMargin(double margin)
+	{
+		this.ptr.SetRightMargin(margin);
+	}
+	public double RightMargin()
+	{
+		return this.ptr.RightMargin();
+	}
+	public void SetTextIndent(double aindent)
+	{
+		this.ptr.SetTextIndent(aindent);
+	}
+	public double TextIndent()
+	{
+		return this.ptr.TextIndent();
+	}
+	public void SetIndent(c_int indent)
+	{
+		this.ptr.SetIndent(indent);
+	}
+	public c_int Indent()
+	{
+		return this.ptr.Indent();
+	}
+	public void SetHeadingLevel(c_int alevel)
+	{
+		this.ptr.SetHeadingLevel(alevel);
+	}
+	public c_int HeadingLevel()
+	{
+		return this.ptr.HeadingLevel();
+	}
+	public void SetLineHeight(double height, c_int heightType)
+	{
+		this.ptr.SetLineHeight(height, heightType);
+	}
+	public double LineHeight(double scriptLineHeight, double scaling)
+	{
+		return this.ptr.LineHeight(scriptLineHeight, scaling);
+	}
+	public double LineHeight2()
+	{
+		return this.ptr.LineHeight2();
+	}
+	public c_int LineHeightType()
+	{
+		return this.ptr.LineHeightType();
+	}
+	public void SetNonBreakableLines(bool b)
+	{
+		this.ptr.SetNonBreakableLines(b);
+	}
+	public bool NonBreakableLines()
+	{
+		return this.ptr.NonBreakableLines();
+	}
+	public void SetPageBreakPolicy(void* flags)
+	{
+		this.ptr.SetPageBreakPolicy(flags);
+	}
+	public void* PageBreakPolicy()
+	{
+		return this.ptr.PageBreakPolicy();
+	}
+	public void SetTabPositions(void** tabs)
+	{
+		this.ptr.SetTabPositions(tabs);
+	}
+	public void* TabPositions()
+	{
+		return this.ptr.TabPositions();
+	}
+	public void SetMarker(QTextBlockFormat_MarkerType marker)
+	{
+		this.ptr.SetMarker(marker);
+	}
+	public QTextBlockFormat_MarkerType Marker()
+	{
+		return this.ptr.Marker();
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextBlockFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1145,330 +2429,6 @@ extension CQt
 	[LinkName("QTextBlockFormat_Marker")]
 	public static extern QTextBlockFormat_MarkerType QTextBlockFormat_Marker(void* self);
 }
-class QTextBlockFormat : IQTextBlockFormat, IQTextFormat
-{
-	private QTextBlockFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextBlockFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextBlockFormat_new();
-	}
-	public this(IQTextBlockFormat param1)
-	{
-		this.ptr = CQt.QTextBlockFormat_new2((.)param1?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QTextBlockFormat_Delete(this.ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextBlockFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public void SetAlignment(void* alignment)
-	{
-		CQt.QTextBlockFormat_SetAlignment((.)this.ptr.Ptr, alignment);
-	}
-	public void* Alignment()
-	{
-		return CQt.QTextBlockFormat_Alignment((.)this.ptr.Ptr);
-	}
-	public void SetTopMargin(double margin)
-	{
-		CQt.QTextBlockFormat_SetTopMargin((.)this.ptr.Ptr, margin);
-	}
-	public double TopMargin()
-	{
-		return CQt.QTextBlockFormat_TopMargin((.)this.ptr.Ptr);
-	}
-	public void SetBottomMargin(double margin)
-	{
-		CQt.QTextBlockFormat_SetBottomMargin((.)this.ptr.Ptr, margin);
-	}
-	public double BottomMargin()
-	{
-		return CQt.QTextBlockFormat_BottomMargin((.)this.ptr.Ptr);
-	}
-	public void SetLeftMargin(double margin)
-	{
-		CQt.QTextBlockFormat_SetLeftMargin((.)this.ptr.Ptr, margin);
-	}
-	public double LeftMargin()
-	{
-		return CQt.QTextBlockFormat_LeftMargin((.)this.ptr.Ptr);
-	}
-	public void SetRightMargin(double margin)
-	{
-		CQt.QTextBlockFormat_SetRightMargin((.)this.ptr.Ptr, margin);
-	}
-	public double RightMargin()
-	{
-		return CQt.QTextBlockFormat_RightMargin((.)this.ptr.Ptr);
-	}
-	public void SetTextIndent(double aindent)
-	{
-		CQt.QTextBlockFormat_SetTextIndent((.)this.ptr.Ptr, aindent);
-	}
-	public double TextIndent()
-	{
-		return CQt.QTextBlockFormat_TextIndent((.)this.ptr.Ptr);
-	}
-	public void SetIndent(c_int indent)
-	{
-		CQt.QTextBlockFormat_SetIndent((.)this.ptr.Ptr, indent);
-	}
-	public c_int Indent()
-	{
-		return CQt.QTextBlockFormat_Indent((.)this.ptr.Ptr);
-	}
-	public void SetHeadingLevel(c_int alevel)
-	{
-		CQt.QTextBlockFormat_SetHeadingLevel((.)this.ptr.Ptr, alevel);
-	}
-	public c_int HeadingLevel()
-	{
-		return CQt.QTextBlockFormat_HeadingLevel((.)this.ptr.Ptr);
-	}
-	public void SetLineHeight(double height, c_int heightType)
-	{
-		CQt.QTextBlockFormat_SetLineHeight((.)this.ptr.Ptr, height, heightType);
-	}
-	public double LineHeight(double scriptLineHeight, double scaling)
-	{
-		return CQt.QTextBlockFormat_LineHeight((.)this.ptr.Ptr, scriptLineHeight, scaling);
-	}
-	public double LineHeight2()
-	{
-		return CQt.QTextBlockFormat_LineHeight2((.)this.ptr.Ptr);
-	}
-	public c_int LineHeightType()
-	{
-		return CQt.QTextBlockFormat_LineHeightType((.)this.ptr.Ptr);
-	}
-	public void SetNonBreakableLines(bool b)
-	{
-		CQt.QTextBlockFormat_SetNonBreakableLines((.)this.ptr.Ptr, b);
-	}
-	public bool NonBreakableLines()
-	{
-		return CQt.QTextBlockFormat_NonBreakableLines((.)this.ptr.Ptr);
-	}
-	public void SetPageBreakPolicy(void* flags)
-	{
-		CQt.QTextBlockFormat_SetPageBreakPolicy((.)this.ptr.Ptr, flags);
-	}
-	public void* PageBreakPolicy()
-	{
-		return CQt.QTextBlockFormat_PageBreakPolicy((.)this.ptr.Ptr);
-	}
-	public void SetTabPositions(void** tabs)
-	{
-		CQt.QTextBlockFormat_SetTabPositions((.)this.ptr.Ptr, tabs);
-	}
-	public void* TabPositions()
-	{
-		return CQt.QTextBlockFormat_TabPositions((.)this.ptr.Ptr);
-	}
-	public void SetMarker(QTextBlockFormat_MarkerType marker)
-	{
-		CQt.QTextBlockFormat_SetMarker((.)this.ptr.Ptr, marker);
-	}
-	public QTextBlockFormat_MarkerType Marker()
-	{
-		return CQt.QTextBlockFormat_Marker((.)this.ptr.Ptr);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextBlockFormat : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextListFormat
 // --------------------------------------------------------------
@@ -1480,6 +2440,470 @@ struct QTextListFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QTextListFormat_IsValid((.)this.Ptr);
+	}
+	public void SetStyle(QTextListFormat_Style style)
+	{
+		CQt.QTextListFormat_SetStyle((.)this.Ptr, style);
+	}
+	public QTextListFormat_Style Style()
+	{
+		return CQt.QTextListFormat_Style((.)this.Ptr);
+	}
+	public void SetIndent(c_int indent)
+	{
+		CQt.QTextListFormat_SetIndent((.)this.Ptr, indent);
+	}
+	public c_int Indent()
+	{
+		return CQt.QTextListFormat_Indent((.)this.Ptr);
+	}
+	public void SetNumberPrefix(String numberPrefix)
+	{
+		CQt.QTextListFormat_SetNumberPrefix((.)this.Ptr, libqt_string(numberPrefix));
+	}
+	public void NumberPrefix(String outStr)
+	{
+		CQt.QTextListFormat_NumberPrefix((.)this.Ptr);
+	}
+	public void SetNumberSuffix(String numberSuffix)
+	{
+		CQt.QTextListFormat_SetNumberSuffix((.)this.Ptr, libqt_string(numberSuffix));
+	}
+	public void NumberSuffix(String outStr)
+	{
+		CQt.QTextListFormat_NumberSuffix((.)this.Ptr);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextListFormat : IQTextListFormat, IQTextFormat
+{
+	private QTextListFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextListFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextListFormat_new();
+	}
+	public this(IQTextListFormat param1)
+	{
+		this.ptr = CQt.QTextListFormat_new2((.)param1?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QTextListFormat_Delete(this.ptr);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void SetStyle(QTextListFormat_Style style)
+	{
+		this.ptr.SetStyle(style);
+	}
+	public QTextListFormat_Style Style()
+	{
+		return this.ptr.Style();
+	}
+	public void SetIndent(c_int indent)
+	{
+		this.ptr.SetIndent(indent);
+	}
+	public c_int Indent()
+	{
+		return this.ptr.Indent();
+	}
+	public void SetNumberPrefix(String numberPrefix)
+	{
+		this.ptr.SetNumberPrefix(numberPrefix);
+	}
+	public void NumberPrefix(String outStr)
+	{
+		this.ptr.NumberPrefix(outStr);
+	}
+	public void SetNumberSuffix(String numberSuffix)
+	{
+		this.ptr.SetNumberSuffix(numberSuffix);
+	}
+	public void NumberSuffix(String outStr)
+	{
+		this.ptr.NumberSuffix(outStr);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextListFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1508,250 +2932,6 @@ extension CQt
 	[LinkName("QTextListFormat_NumberSuffix")]
 	public static extern libqt_string QTextListFormat_NumberSuffix(void* self);
 }
-class QTextListFormat : IQTextListFormat, IQTextFormat
-{
-	private QTextListFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextListFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextListFormat_new();
-	}
-	public this(IQTextListFormat param1)
-	{
-		this.ptr = CQt.QTextListFormat_new2((.)param1?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QTextListFormat_Delete(this.ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextListFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public void SetStyle(QTextListFormat_Style style)
-	{
-		CQt.QTextListFormat_SetStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextListFormat_Style Style()
-	{
-		return CQt.QTextListFormat_Style((.)this.ptr.Ptr);
-	}
-	public void SetIndent(c_int indent)
-	{
-		CQt.QTextListFormat_SetIndent((.)this.ptr.Ptr, indent);
-	}
-	public c_int Indent()
-	{
-		return CQt.QTextListFormat_Indent((.)this.ptr.Ptr);
-	}
-	public void SetNumberPrefix(String numberPrefix)
-	{
-		CQt.QTextListFormat_SetNumberPrefix((.)this.ptr.Ptr, libqt_string(numberPrefix));
-	}
-	public void NumberPrefix(String outStr)
-	{
-		CQt.QTextListFormat_NumberPrefix((.)this.ptr.Ptr);
-	}
-	public void SetNumberSuffix(String numberSuffix)
-	{
-		CQt.QTextListFormat_SetNumberSuffix((.)this.ptr.Ptr, libqt_string(numberSuffix));
-	}
-	public void NumberSuffix(String outStr)
-	{
-		CQt.QTextListFormat_NumberSuffix((.)this.ptr.Ptr);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextListFormat : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextImageFormat
 // --------------------------------------------------------------
@@ -1763,6 +2943,1018 @@ struct QTextImageFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QTextImageFormat_IsValid((.)this.Ptr);
+	}
+	public void SetName(String name)
+	{
+		CQt.QTextImageFormat_SetName((.)this.Ptr, libqt_string(name));
+	}
+	public void Name(String outStr)
+	{
+		CQt.QTextImageFormat_Name((.)this.Ptr);
+	}
+	public void SetWidth(double width)
+	{
+		CQt.QTextImageFormat_SetWidth((.)this.Ptr, width);
+	}
+	public double Width()
+	{
+		return CQt.QTextImageFormat_Width((.)this.Ptr);
+	}
+	public void SetHeight(double height)
+	{
+		CQt.QTextImageFormat_SetHeight((.)this.Ptr, height);
+	}
+	public double Height()
+	{
+		return CQt.QTextImageFormat_Height((.)this.Ptr);
+	}
+	public void SetQuality(c_int quality)
+	{
+		CQt.QTextImageFormat_SetQuality((.)this.Ptr, quality);
+	}
+	public void SetQuality2()
+	{
+		CQt.QTextImageFormat_SetQuality2((.)this.Ptr);
+	}
+	public c_int Quality()
+	{
+		return CQt.QTextImageFormat_Quality((.)this.Ptr);
+	}
+	public void SetFont(IQFont font)
+	{
+		CQt.QTextCharFormat_SetFont((.)this.Ptr, (.)font?.ObjectPtr);
+	}
+	public QFont_Ptr Font()
+	{
+		return QFont_Ptr(CQt.QTextCharFormat_Font((.)this.Ptr));
+	}
+	public void SetFontFamily(String family)
+	{
+		CQt.QTextCharFormat_SetFontFamily((.)this.Ptr, libqt_string(family));
+	}
+	public void FontFamily(String outStr)
+	{
+		CQt.QTextCharFormat_FontFamily((.)this.Ptr);
+	}
+	public void SetFontFamilies(void** families)
+	{
+		CQt.QTextCharFormat_SetFontFamilies((.)this.Ptr, families);
+	}
+	public QVariant_Ptr FontFamilies()
+	{
+		return QVariant_Ptr(CQt.QTextCharFormat_FontFamilies((.)this.Ptr));
+	}
+	public void SetFontStyleName(String styleName)
+	{
+		CQt.QTextCharFormat_SetFontStyleName((.)this.Ptr, libqt_string(styleName));
+	}
+	public QVariant_Ptr FontStyleName()
+	{
+		return QVariant_Ptr(CQt.QTextCharFormat_FontStyleName((.)this.Ptr));
+	}
+	public void SetFontPointSize(double size)
+	{
+		CQt.QTextCharFormat_SetFontPointSize((.)this.Ptr, size);
+	}
+	public double FontPointSize()
+	{
+		return CQt.QTextCharFormat_FontPointSize((.)this.Ptr);
+	}
+	public void SetFontWeight(c_int weight)
+	{
+		CQt.QTextCharFormat_SetFontWeight((.)this.Ptr, weight);
+	}
+	public c_int FontWeight()
+	{
+		return CQt.QTextCharFormat_FontWeight((.)this.Ptr);
+	}
+	public void SetFontItalic(bool italic)
+	{
+		CQt.QTextCharFormat_SetFontItalic((.)this.Ptr, italic);
+	}
+	public bool FontItalic()
+	{
+		return CQt.QTextCharFormat_FontItalic((.)this.Ptr);
+	}
+	public void SetFontCapitalization(QFont_Capitalization capitalization)
+	{
+		CQt.QTextCharFormat_SetFontCapitalization((.)this.Ptr, capitalization);
+	}
+	public QFont_Capitalization FontCapitalization()
+	{
+		return CQt.QTextCharFormat_FontCapitalization((.)this.Ptr);
+	}
+	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
+	{
+		CQt.QTextCharFormat_SetFontLetterSpacingType((.)this.Ptr, letterSpacingType);
+	}
+	public QFont_SpacingType FontLetterSpacingType()
+	{
+		return CQt.QTextCharFormat_FontLetterSpacingType((.)this.Ptr);
+	}
+	public void SetFontLetterSpacing(double spacing)
+	{
+		CQt.QTextCharFormat_SetFontLetterSpacing((.)this.Ptr, spacing);
+	}
+	public double FontLetterSpacing()
+	{
+		return CQt.QTextCharFormat_FontLetterSpacing((.)this.Ptr);
+	}
+	public void SetFontWordSpacing(double spacing)
+	{
+		CQt.QTextCharFormat_SetFontWordSpacing((.)this.Ptr, spacing);
+	}
+	public double FontWordSpacing()
+	{
+		return CQt.QTextCharFormat_FontWordSpacing((.)this.Ptr);
+	}
+	public void SetFontUnderline(bool underline)
+	{
+		CQt.QTextCharFormat_SetFontUnderline((.)this.Ptr, underline);
+	}
+	public bool FontUnderline()
+	{
+		return CQt.QTextCharFormat_FontUnderline((.)this.Ptr);
+	}
+	public void SetFontOverline(bool overline)
+	{
+		CQt.QTextCharFormat_SetFontOverline((.)this.Ptr, overline);
+	}
+	public bool FontOverline()
+	{
+		return CQt.QTextCharFormat_FontOverline((.)this.Ptr);
+	}
+	public void SetFontStrikeOut(bool strikeOut)
+	{
+		CQt.QTextCharFormat_SetFontStrikeOut((.)this.Ptr, strikeOut);
+	}
+	public bool FontStrikeOut()
+	{
+		return CQt.QTextCharFormat_FontStrikeOut((.)this.Ptr);
+	}
+	public void SetUnderlineColor(IQColor color)
+	{
+		CQt.QTextCharFormat_SetUnderlineColor((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public QColor_Ptr UnderlineColor()
+	{
+		return QColor_Ptr(CQt.QTextCharFormat_UnderlineColor((.)this.Ptr));
+	}
+	public void SetFontFixedPitch(bool fixedPitch)
+	{
+		CQt.QTextCharFormat_SetFontFixedPitch((.)this.Ptr, fixedPitch);
+	}
+	public bool FontFixedPitch()
+	{
+		return CQt.QTextCharFormat_FontFixedPitch((.)this.Ptr);
+	}
+	public void SetFontStretch(c_int factor)
+	{
+		CQt.QTextCharFormat_SetFontStretch((.)this.Ptr, factor);
+	}
+	public c_int FontStretch()
+	{
+		return CQt.QTextCharFormat_FontStretch((.)this.Ptr);
+	}
+	public void SetFontStyleHint(QFont_StyleHint hint)
+	{
+		CQt.QTextCharFormat_SetFontStyleHint((.)this.Ptr, hint);
+	}
+	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
+	{
+		CQt.QTextCharFormat_SetFontStyleStrategy((.)this.Ptr, strategy);
+	}
+	public QFont_StyleHint FontStyleHint()
+	{
+		return CQt.QTextCharFormat_FontStyleHint((.)this.Ptr);
+	}
+	public QFont_StyleStrategy FontStyleStrategy()
+	{
+		return CQt.QTextCharFormat_FontStyleStrategy((.)this.Ptr);
+	}
+	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		CQt.QTextCharFormat_SetFontHintingPreference((.)this.Ptr, hintingPreference);
+	}
+	public QFont_HintingPreference FontHintingPreference()
+	{
+		return CQt.QTextCharFormat_FontHintingPreference((.)this.Ptr);
+	}
+	public void SetFontKerning(bool enable)
+	{
+		CQt.QTextCharFormat_SetFontKerning((.)this.Ptr, enable);
+	}
+	public bool FontKerning()
+	{
+		return CQt.QTextCharFormat_FontKerning((.)this.Ptr);
+	}
+	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
+	{
+		CQt.QTextCharFormat_SetUnderlineStyle((.)this.Ptr, style);
+	}
+	public QTextCharFormat_UnderlineStyle UnderlineStyle()
+	{
+		return CQt.QTextCharFormat_UnderlineStyle((.)this.Ptr);
+	}
+	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
+	{
+		CQt.QTextCharFormat_SetVerticalAlignment((.)this.Ptr, alignment);
+	}
+	public QTextCharFormat_VerticalAlignment VerticalAlignment()
+	{
+		return CQt.QTextCharFormat_VerticalAlignment((.)this.Ptr);
+	}
+	public void SetTextOutline(IQPen pen)
+	{
+		CQt.QTextCharFormat_SetTextOutline((.)this.Ptr, (.)pen?.ObjectPtr);
+	}
+	public QPen_Ptr TextOutline()
+	{
+		return QPen_Ptr(CQt.QTextCharFormat_TextOutline((.)this.Ptr));
+	}
+	public void SetToolTip(String tip)
+	{
+		CQt.QTextCharFormat_SetToolTip((.)this.Ptr, libqt_string(tip));
+	}
+	public void ToolTip(String outStr)
+	{
+		CQt.QTextCharFormat_ToolTip((.)this.Ptr);
+	}
+	public void SetSuperScriptBaseline(double baseline)
+	{
+		CQt.QTextCharFormat_SetSuperScriptBaseline((.)this.Ptr, baseline);
+	}
+	public double SuperScriptBaseline()
+	{
+		return CQt.QTextCharFormat_SuperScriptBaseline((.)this.Ptr);
+	}
+	public void SetSubScriptBaseline(double baseline)
+	{
+		CQt.QTextCharFormat_SetSubScriptBaseline((.)this.Ptr, baseline);
+	}
+	public double SubScriptBaseline()
+	{
+		return CQt.QTextCharFormat_SubScriptBaseline((.)this.Ptr);
+	}
+	public void SetBaselineOffset(double baseline)
+	{
+		CQt.QTextCharFormat_SetBaselineOffset((.)this.Ptr, baseline);
+	}
+	public double BaselineOffset()
+	{
+		return CQt.QTextCharFormat_BaselineOffset((.)this.Ptr);
+	}
+	public void SetAnchor(bool anchor)
+	{
+		CQt.QTextCharFormat_SetAnchor((.)this.Ptr, anchor);
+	}
+	public bool IsAnchor()
+	{
+		return CQt.QTextCharFormat_IsAnchor((.)this.Ptr);
+	}
+	public void SetAnchorHref(String value)
+	{
+		CQt.QTextCharFormat_SetAnchorHref((.)this.Ptr, libqt_string(value));
+	}
+	public void AnchorHref(String outStr)
+	{
+		CQt.QTextCharFormat_AnchorHref((.)this.Ptr);
+	}
+	public void SetAnchorNames(void** names)
+	{
+		CQt.QTextCharFormat_SetAnchorNames((.)this.Ptr, names);
+	}
+	public void* AnchorNames()
+	{
+		return CQt.QTextCharFormat_AnchorNames((.)this.Ptr);
+	}
+	public void SetTableCellRowSpan(c_int tableCellRowSpan)
+	{
+		CQt.QTextCharFormat_SetTableCellRowSpan((.)this.Ptr, tableCellRowSpan);
+	}
+	public c_int TableCellRowSpan()
+	{
+		return CQt.QTextCharFormat_TableCellRowSpan((.)this.Ptr);
+	}
+	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
+	{
+		CQt.QTextCharFormat_SetTableCellColumnSpan((.)this.Ptr, tableCellColumnSpan);
+	}
+	public c_int TableCellColumnSpan()
+	{
+		return CQt.QTextCharFormat_TableCellColumnSpan((.)this.Ptr);
+	}
+	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
+	{
+		CQt.QTextCharFormat_SetFont2((.)this.Ptr, (.)font?.ObjectPtr, behavior);
+	}
+	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
+	{
+		CQt.QTextCharFormat_SetFontStyleHint2((.)this.Ptr, hint, strategy);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextImageFormat : IQTextImageFormat, IQTextCharFormat, IQTextFormat
+{
+	private QTextImageFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextImageFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextImageFormat_new();
+	}
+	public ~this()
+	{
+		CQt.QTextImageFormat_Delete(this.ptr);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void SetName(String name)
+	{
+		this.ptr.SetName(name);
+	}
+	public void Name(String outStr)
+	{
+		this.ptr.Name(outStr);
+	}
+	public void SetWidth(double width)
+	{
+		this.ptr.SetWidth(width);
+	}
+	public double Width()
+	{
+		return this.ptr.Width();
+	}
+	public void SetHeight(double height)
+	{
+		this.ptr.SetHeight(height);
+	}
+	public double Height()
+	{
+		return this.ptr.Height();
+	}
+	public void SetQuality(c_int quality)
+	{
+		this.ptr.SetQuality(quality);
+	}
+	public void SetQuality2()
+	{
+		this.ptr.SetQuality2();
+	}
+	public c_int Quality()
+	{
+		return this.ptr.Quality();
+	}
+	public void SetFont(IQFont font)
+	{
+		this.ptr.SetFont(font);
+	}
+	public QFont_Ptr Font()
+	{
+		return this.ptr.Font();
+	}
+	public void SetFontFamily(String family)
+	{
+		this.ptr.SetFontFamily(family);
+	}
+	public void FontFamily(String outStr)
+	{
+		this.ptr.FontFamily(outStr);
+	}
+	public void SetFontFamilies(void** families)
+	{
+		this.ptr.SetFontFamilies(families);
+	}
+	public QVariant_Ptr FontFamilies()
+	{
+		return this.ptr.FontFamilies();
+	}
+	public void SetFontStyleName(String styleName)
+	{
+		this.ptr.SetFontStyleName(styleName);
+	}
+	public QVariant_Ptr FontStyleName()
+	{
+		return this.ptr.FontStyleName();
+	}
+	public void SetFontPointSize(double size)
+	{
+		this.ptr.SetFontPointSize(size);
+	}
+	public double FontPointSize()
+	{
+		return this.ptr.FontPointSize();
+	}
+	public void SetFontWeight(c_int weight)
+	{
+		this.ptr.SetFontWeight(weight);
+	}
+	public c_int FontWeight()
+	{
+		return this.ptr.FontWeight();
+	}
+	public void SetFontItalic(bool italic)
+	{
+		this.ptr.SetFontItalic(italic);
+	}
+	public bool FontItalic()
+	{
+		return this.ptr.FontItalic();
+	}
+	public void SetFontCapitalization(QFont_Capitalization capitalization)
+	{
+		this.ptr.SetFontCapitalization(capitalization);
+	}
+	public QFont_Capitalization FontCapitalization()
+	{
+		return this.ptr.FontCapitalization();
+	}
+	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
+	{
+		this.ptr.SetFontLetterSpacingType(letterSpacingType);
+	}
+	public QFont_SpacingType FontLetterSpacingType()
+	{
+		return this.ptr.FontLetterSpacingType();
+	}
+	public void SetFontLetterSpacing(double spacing)
+	{
+		this.ptr.SetFontLetterSpacing(spacing);
+	}
+	public double FontLetterSpacing()
+	{
+		return this.ptr.FontLetterSpacing();
+	}
+	public void SetFontWordSpacing(double spacing)
+	{
+		this.ptr.SetFontWordSpacing(spacing);
+	}
+	public double FontWordSpacing()
+	{
+		return this.ptr.FontWordSpacing();
+	}
+	public void SetFontUnderline(bool underline)
+	{
+		this.ptr.SetFontUnderline(underline);
+	}
+	public bool FontUnderline()
+	{
+		return this.ptr.FontUnderline();
+	}
+	public void SetFontOverline(bool overline)
+	{
+		this.ptr.SetFontOverline(overline);
+	}
+	public bool FontOverline()
+	{
+		return this.ptr.FontOverline();
+	}
+	public void SetFontStrikeOut(bool strikeOut)
+	{
+		this.ptr.SetFontStrikeOut(strikeOut);
+	}
+	public bool FontStrikeOut()
+	{
+		return this.ptr.FontStrikeOut();
+	}
+	public void SetUnderlineColor(IQColor color)
+	{
+		this.ptr.SetUnderlineColor(color);
+	}
+	public QColor_Ptr UnderlineColor()
+	{
+		return this.ptr.UnderlineColor();
+	}
+	public void SetFontFixedPitch(bool fixedPitch)
+	{
+		this.ptr.SetFontFixedPitch(fixedPitch);
+	}
+	public bool FontFixedPitch()
+	{
+		return this.ptr.FontFixedPitch();
+	}
+	public void SetFontStretch(c_int factor)
+	{
+		this.ptr.SetFontStretch(factor);
+	}
+	public c_int FontStretch()
+	{
+		return this.ptr.FontStretch();
+	}
+	public void SetFontStyleHint(QFont_StyleHint hint)
+	{
+		this.ptr.SetFontStyleHint(hint);
+	}
+	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
+	{
+		this.ptr.SetFontStyleStrategy(strategy);
+	}
+	public QFont_StyleHint FontStyleHint()
+	{
+		return this.ptr.FontStyleHint();
+	}
+	public QFont_StyleStrategy FontStyleStrategy()
+	{
+		return this.ptr.FontStyleStrategy();
+	}
+	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		this.ptr.SetFontHintingPreference(hintingPreference);
+	}
+	public QFont_HintingPreference FontHintingPreference()
+	{
+		return this.ptr.FontHintingPreference();
+	}
+	public void SetFontKerning(bool enable)
+	{
+		this.ptr.SetFontKerning(enable);
+	}
+	public bool FontKerning()
+	{
+		return this.ptr.FontKerning();
+	}
+	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
+	{
+		this.ptr.SetUnderlineStyle(style);
+	}
+	public QTextCharFormat_UnderlineStyle UnderlineStyle()
+	{
+		return this.ptr.UnderlineStyle();
+	}
+	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
+	{
+		this.ptr.SetVerticalAlignment(alignment);
+	}
+	public QTextCharFormat_VerticalAlignment VerticalAlignment()
+	{
+		return this.ptr.VerticalAlignment();
+	}
+	public void SetTextOutline(IQPen pen)
+	{
+		this.ptr.SetTextOutline(pen);
+	}
+	public QPen_Ptr TextOutline()
+	{
+		return this.ptr.TextOutline();
+	}
+	public void SetToolTip(String tip)
+	{
+		this.ptr.SetToolTip(tip);
+	}
+	public void ToolTip(String outStr)
+	{
+		this.ptr.ToolTip(outStr);
+	}
+	public void SetSuperScriptBaseline(double baseline)
+	{
+		this.ptr.SetSuperScriptBaseline(baseline);
+	}
+	public double SuperScriptBaseline()
+	{
+		return this.ptr.SuperScriptBaseline();
+	}
+	public void SetSubScriptBaseline(double baseline)
+	{
+		this.ptr.SetSubScriptBaseline(baseline);
+	}
+	public double SubScriptBaseline()
+	{
+		return this.ptr.SubScriptBaseline();
+	}
+	public void SetBaselineOffset(double baseline)
+	{
+		this.ptr.SetBaselineOffset(baseline);
+	}
+	public double BaselineOffset()
+	{
+		return this.ptr.BaselineOffset();
+	}
+	public void SetAnchor(bool anchor)
+	{
+		this.ptr.SetAnchor(anchor);
+	}
+	public bool IsAnchor()
+	{
+		return this.ptr.IsAnchor();
+	}
+	public void SetAnchorHref(String value)
+	{
+		this.ptr.SetAnchorHref(value);
+	}
+	public void AnchorHref(String outStr)
+	{
+		this.ptr.AnchorHref(outStr);
+	}
+	public void SetAnchorNames(void** names)
+	{
+		this.ptr.SetAnchorNames(names);
+	}
+	public void* AnchorNames()
+	{
+		return this.ptr.AnchorNames();
+	}
+	public void SetTableCellRowSpan(c_int tableCellRowSpan)
+	{
+		this.ptr.SetTableCellRowSpan(tableCellRowSpan);
+	}
+	public c_int TableCellRowSpan()
+	{
+		return this.ptr.TableCellRowSpan();
+	}
+	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
+	{
+		this.ptr.SetTableCellColumnSpan(tableCellColumnSpan);
+	}
+	public c_int TableCellColumnSpan()
+	{
+		return this.ptr.TableCellColumnSpan();
+	}
+	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
+	{
+		this.ptr.SetFont2(font, behavior);
+	}
+	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
+	{
+		this.ptr.SetFontStyleHint2(hint, strategy);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextImageFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1791,522 +3983,6 @@ extension CQt
 	[LinkName("QTextImageFormat_Quality")]
 	public static extern c_int QTextImageFormat_Quality(void* self);
 }
-class QTextImageFormat : IQTextImageFormat, IQTextCharFormat, IQTextFormat
-{
-	private QTextImageFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextImageFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextImageFormat_new();
-	}
-	public ~this()
-	{
-		CQt.QTextImageFormat_Delete(this.ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextImageFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public void SetName(String name)
-	{
-		CQt.QTextImageFormat_SetName((.)this.ptr.Ptr, libqt_string(name));
-	}
-	public void Name(String outStr)
-	{
-		CQt.QTextImageFormat_Name((.)this.ptr.Ptr);
-	}
-	public void SetWidth(double width)
-	{
-		CQt.QTextImageFormat_SetWidth((.)this.ptr.Ptr, width);
-	}
-	public double Width()
-	{
-		return CQt.QTextImageFormat_Width((.)this.ptr.Ptr);
-	}
-	public void SetHeight(double height)
-	{
-		CQt.QTextImageFormat_SetHeight((.)this.ptr.Ptr, height);
-	}
-	public double Height()
-	{
-		return CQt.QTextImageFormat_Height((.)this.ptr.Ptr);
-	}
-	public void SetQuality(c_int quality)
-	{
-		CQt.QTextImageFormat_SetQuality((.)this.ptr.Ptr, quality);
-	}
-	public void SetQuality2()
-	{
-		CQt.QTextImageFormat_SetQuality2((.)this.ptr.Ptr);
-	}
-	public c_int Quality()
-	{
-		return CQt.QTextImageFormat_Quality((.)this.ptr.Ptr);
-	}
-	public void SetFont(IQFont font)
-	{
-		CQt.QTextCharFormat_SetFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
-	}
-	public QFont_Ptr Font()
-	{
-		return QFont_Ptr(CQt.QTextCharFormat_Font((.)this.ptr.Ptr));
-	}
-	public void SetFontFamily(String family)
-	{
-		CQt.QTextCharFormat_SetFontFamily((.)this.ptr.Ptr, libqt_string(family));
-	}
-	public void FontFamily(String outStr)
-	{
-		CQt.QTextCharFormat_FontFamily((.)this.ptr.Ptr);
-	}
-	public void SetFontFamilies(void** families)
-	{
-		CQt.QTextCharFormat_SetFontFamilies((.)this.ptr.Ptr, families);
-	}
-	public QVariant_Ptr FontFamilies()
-	{
-		return QVariant_Ptr(CQt.QTextCharFormat_FontFamilies((.)this.ptr.Ptr));
-	}
-	public void SetFontStyleName(String styleName)
-	{
-		CQt.QTextCharFormat_SetFontStyleName((.)this.ptr.Ptr, libqt_string(styleName));
-	}
-	public QVariant_Ptr FontStyleName()
-	{
-		return QVariant_Ptr(CQt.QTextCharFormat_FontStyleName((.)this.ptr.Ptr));
-	}
-	public void SetFontPointSize(double size)
-	{
-		CQt.QTextCharFormat_SetFontPointSize((.)this.ptr.Ptr, size);
-	}
-	public double FontPointSize()
-	{
-		return CQt.QTextCharFormat_FontPointSize((.)this.ptr.Ptr);
-	}
-	public void SetFontWeight(c_int weight)
-	{
-		CQt.QTextCharFormat_SetFontWeight((.)this.ptr.Ptr, weight);
-	}
-	public c_int FontWeight()
-	{
-		return CQt.QTextCharFormat_FontWeight((.)this.ptr.Ptr);
-	}
-	public void SetFontItalic(bool italic)
-	{
-		CQt.QTextCharFormat_SetFontItalic((.)this.ptr.Ptr, italic);
-	}
-	public bool FontItalic()
-	{
-		return CQt.QTextCharFormat_FontItalic((.)this.ptr.Ptr);
-	}
-	public void SetFontCapitalization(QFont_Capitalization capitalization)
-	{
-		CQt.QTextCharFormat_SetFontCapitalization((.)this.ptr.Ptr, capitalization);
-	}
-	public QFont_Capitalization FontCapitalization()
-	{
-		return CQt.QTextCharFormat_FontCapitalization((.)this.ptr.Ptr);
-	}
-	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
-	{
-		CQt.QTextCharFormat_SetFontLetterSpacingType((.)this.ptr.Ptr, letterSpacingType);
-	}
-	public QFont_SpacingType FontLetterSpacingType()
-	{
-		return CQt.QTextCharFormat_FontLetterSpacingType((.)this.ptr.Ptr);
-	}
-	public void SetFontLetterSpacing(double spacing)
-	{
-		CQt.QTextCharFormat_SetFontLetterSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public double FontLetterSpacing()
-	{
-		return CQt.QTextCharFormat_FontLetterSpacing((.)this.ptr.Ptr);
-	}
-	public void SetFontWordSpacing(double spacing)
-	{
-		CQt.QTextCharFormat_SetFontWordSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public double FontWordSpacing()
-	{
-		return CQt.QTextCharFormat_FontWordSpacing((.)this.ptr.Ptr);
-	}
-	public void SetFontUnderline(bool underline)
-	{
-		CQt.QTextCharFormat_SetFontUnderline((.)this.ptr.Ptr, underline);
-	}
-	public bool FontUnderline()
-	{
-		return CQt.QTextCharFormat_FontUnderline((.)this.ptr.Ptr);
-	}
-	public void SetFontOverline(bool overline)
-	{
-		CQt.QTextCharFormat_SetFontOverline((.)this.ptr.Ptr, overline);
-	}
-	public bool FontOverline()
-	{
-		return CQt.QTextCharFormat_FontOverline((.)this.ptr.Ptr);
-	}
-	public void SetFontStrikeOut(bool strikeOut)
-	{
-		CQt.QTextCharFormat_SetFontStrikeOut((.)this.ptr.Ptr, strikeOut);
-	}
-	public bool FontStrikeOut()
-	{
-		return CQt.QTextCharFormat_FontStrikeOut((.)this.ptr.Ptr);
-	}
-	public void SetUnderlineColor(IQColor color)
-	{
-		CQt.QTextCharFormat_SetUnderlineColor((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public QColor_Ptr UnderlineColor()
-	{
-		return QColor_Ptr(CQt.QTextCharFormat_UnderlineColor((.)this.ptr.Ptr));
-	}
-	public void SetFontFixedPitch(bool fixedPitch)
-	{
-		CQt.QTextCharFormat_SetFontFixedPitch((.)this.ptr.Ptr, fixedPitch);
-	}
-	public bool FontFixedPitch()
-	{
-		return CQt.QTextCharFormat_FontFixedPitch((.)this.ptr.Ptr);
-	}
-	public void SetFontStretch(c_int factor)
-	{
-		CQt.QTextCharFormat_SetFontStretch((.)this.ptr.Ptr, factor);
-	}
-	public c_int FontStretch()
-	{
-		return CQt.QTextCharFormat_FontStretch((.)this.ptr.Ptr);
-	}
-	public void SetFontStyleHint(QFont_StyleHint hint)
-	{
-		CQt.QTextCharFormat_SetFontStyleHint((.)this.ptr.Ptr, hint);
-	}
-	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
-	{
-		CQt.QTextCharFormat_SetFontStyleStrategy((.)this.ptr.Ptr, strategy);
-	}
-	public QFont_StyleHint FontStyleHint()
-	{
-		return CQt.QTextCharFormat_FontStyleHint((.)this.ptr.Ptr);
-	}
-	public QFont_StyleStrategy FontStyleStrategy()
-	{
-		return CQt.QTextCharFormat_FontStyleStrategy((.)this.ptr.Ptr);
-	}
-	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
-	{
-		CQt.QTextCharFormat_SetFontHintingPreference((.)this.ptr.Ptr, hintingPreference);
-	}
-	public QFont_HintingPreference FontHintingPreference()
-	{
-		return CQt.QTextCharFormat_FontHintingPreference((.)this.ptr.Ptr);
-	}
-	public void SetFontKerning(bool enable)
-	{
-		CQt.QTextCharFormat_SetFontKerning((.)this.ptr.Ptr, enable);
-	}
-	public bool FontKerning()
-	{
-		return CQt.QTextCharFormat_FontKerning((.)this.ptr.Ptr);
-	}
-	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
-	{
-		CQt.QTextCharFormat_SetUnderlineStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextCharFormat_UnderlineStyle UnderlineStyle()
-	{
-		return CQt.QTextCharFormat_UnderlineStyle((.)this.ptr.Ptr);
-	}
-	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
-	{
-		CQt.QTextCharFormat_SetVerticalAlignment((.)this.ptr.Ptr, alignment);
-	}
-	public QTextCharFormat_VerticalAlignment VerticalAlignment()
-	{
-		return CQt.QTextCharFormat_VerticalAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextOutline(IQPen pen)
-	{
-		CQt.QTextCharFormat_SetTextOutline((.)this.ptr.Ptr, (.)pen?.ObjectPtr);
-	}
-	public QPen_Ptr TextOutline()
-	{
-		return QPen_Ptr(CQt.QTextCharFormat_TextOutline((.)this.ptr.Ptr));
-	}
-	public void SetToolTip(String tip)
-	{
-		CQt.QTextCharFormat_SetToolTip((.)this.ptr.Ptr, libqt_string(tip));
-	}
-	public void ToolTip(String outStr)
-	{
-		CQt.QTextCharFormat_ToolTip((.)this.ptr.Ptr);
-	}
-	public void SetSuperScriptBaseline(double baseline)
-	{
-		CQt.QTextCharFormat_SetSuperScriptBaseline((.)this.ptr.Ptr, baseline);
-	}
-	public double SuperScriptBaseline()
-	{
-		return CQt.QTextCharFormat_SuperScriptBaseline((.)this.ptr.Ptr);
-	}
-	public void SetSubScriptBaseline(double baseline)
-	{
-		CQt.QTextCharFormat_SetSubScriptBaseline((.)this.ptr.Ptr, baseline);
-	}
-	public double SubScriptBaseline()
-	{
-		return CQt.QTextCharFormat_SubScriptBaseline((.)this.ptr.Ptr);
-	}
-	public void SetBaselineOffset(double baseline)
-	{
-		CQt.QTextCharFormat_SetBaselineOffset((.)this.ptr.Ptr, baseline);
-	}
-	public double BaselineOffset()
-	{
-		return CQt.QTextCharFormat_BaselineOffset((.)this.ptr.Ptr);
-	}
-	public void SetAnchor(bool anchor)
-	{
-		CQt.QTextCharFormat_SetAnchor((.)this.ptr.Ptr, anchor);
-	}
-	public bool IsAnchor()
-	{
-		return CQt.QTextCharFormat_IsAnchor((.)this.ptr.Ptr);
-	}
-	public void SetAnchorHref(String value)
-	{
-		CQt.QTextCharFormat_SetAnchorHref((.)this.ptr.Ptr, libqt_string(value));
-	}
-	public void AnchorHref(String outStr)
-	{
-		CQt.QTextCharFormat_AnchorHref((.)this.ptr.Ptr);
-	}
-	public void SetAnchorNames(void** names)
-	{
-		CQt.QTextCharFormat_SetAnchorNames((.)this.ptr.Ptr, names);
-	}
-	public void* AnchorNames()
-	{
-		return CQt.QTextCharFormat_AnchorNames((.)this.ptr.Ptr);
-	}
-	public void SetTableCellRowSpan(c_int tableCellRowSpan)
-	{
-		CQt.QTextCharFormat_SetTableCellRowSpan((.)this.ptr.Ptr, tableCellRowSpan);
-	}
-	public c_int TableCellRowSpan()
-	{
-		return CQt.QTextCharFormat_TableCellRowSpan((.)this.ptr.Ptr);
-	}
-	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
-	{
-		CQt.QTextCharFormat_SetTableCellColumnSpan((.)this.ptr.Ptr, tableCellColumnSpan);
-	}
-	public c_int TableCellColumnSpan()
-	{
-		return CQt.QTextCharFormat_TableCellColumnSpan((.)this.ptr.Ptr);
-	}
-	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
-	{
-		CQt.QTextCharFormat_SetFont2((.)this.ptr.Ptr, (.)font?.ObjectPtr, behavior);
-	}
-	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
-	{
-		CQt.QTextCharFormat_SetFontStyleHint2((.)this.ptr.Ptr, hint, strategy);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextImageFormat : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextFrameFormat
 // --------------------------------------------------------------
@@ -2318,6 +3994,630 @@ struct QTextFrameFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QTextFrameFormat_IsValid((.)this.Ptr);
+	}
+	public void SetPosition(QTextFrameFormat_Position f)
+	{
+		CQt.QTextFrameFormat_SetPosition((.)this.Ptr, f);
+	}
+	public QTextFrameFormat_Position Position()
+	{
+		return CQt.QTextFrameFormat_Position((.)this.Ptr);
+	}
+	public void SetBorder(double border)
+	{
+		CQt.QTextFrameFormat_SetBorder((.)this.Ptr, border);
+	}
+	public double Border()
+	{
+		return CQt.QTextFrameFormat_Border((.)this.Ptr);
+	}
+	public void SetBorderBrush(IQBrush brush)
+	{
+		CQt.QTextFrameFormat_SetBorderBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr BorderBrush()
+	{
+		return QBrush_Ptr(CQt.QTextFrameFormat_BorderBrush((.)this.Ptr));
+	}
+	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		CQt.QTextFrameFormat_SetBorderStyle((.)this.Ptr, style);
+	}
+	public QTextFrameFormat_BorderStyle BorderStyle()
+	{
+		return CQt.QTextFrameFormat_BorderStyle((.)this.Ptr);
+	}
+	public void SetMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetMargin((.)this.Ptr, margin);
+	}
+	public double Margin()
+	{
+		return CQt.QTextFrameFormat_Margin((.)this.Ptr);
+	}
+	public void SetTopMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetTopMargin((.)this.Ptr, margin);
+	}
+	public double TopMargin()
+	{
+		return CQt.QTextFrameFormat_TopMargin((.)this.Ptr);
+	}
+	public void SetBottomMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetBottomMargin((.)this.Ptr, margin);
+	}
+	public double BottomMargin()
+	{
+		return CQt.QTextFrameFormat_BottomMargin((.)this.Ptr);
+	}
+	public void SetLeftMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetLeftMargin((.)this.Ptr, margin);
+	}
+	public double LeftMargin()
+	{
+		return CQt.QTextFrameFormat_LeftMargin((.)this.Ptr);
+	}
+	public void SetRightMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetRightMargin((.)this.Ptr, margin);
+	}
+	public double RightMargin()
+	{
+		return CQt.QTextFrameFormat_RightMargin((.)this.Ptr);
+	}
+	public void SetPadding(double padding)
+	{
+		CQt.QTextFrameFormat_SetPadding((.)this.Ptr, padding);
+	}
+	public double Padding()
+	{
+		return CQt.QTextFrameFormat_Padding((.)this.Ptr);
+	}
+	public void SetWidth(double width)
+	{
+		CQt.QTextFrameFormat_SetWidth((.)this.Ptr, width);
+	}
+	public void SetWidth2(IQTextLength length)
+	{
+		CQt.QTextFrameFormat_SetWidth2((.)this.Ptr, (.)length?.ObjectPtr);
+	}
+	public QTextLength_Ptr Width()
+	{
+		return QTextLength_Ptr(CQt.QTextFrameFormat_Width((.)this.Ptr));
+	}
+	public void SetHeight(double height)
+	{
+		CQt.QTextFrameFormat_SetHeight((.)this.Ptr, height);
+	}
+	public void SetHeight2(IQTextLength height)
+	{
+		CQt.QTextFrameFormat_SetHeight2((.)this.Ptr, (.)height?.ObjectPtr);
+	}
+	public QTextLength_Ptr Height()
+	{
+		return QTextLength_Ptr(CQt.QTextFrameFormat_Height((.)this.Ptr));
+	}
+	public void SetPageBreakPolicy(void* flags)
+	{
+		CQt.QTextFrameFormat_SetPageBreakPolicy((.)this.Ptr, flags);
+	}
+	public void* PageBreakPolicy()
+	{
+		return CQt.QTextFrameFormat_PageBreakPolicy((.)this.Ptr);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextFrameFormat : IQTextFrameFormat, IQTextFormat
+{
+	private QTextFrameFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextFrameFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextFrameFormat_new();
+	}
+	public this(IQTextFrameFormat param1)
+	{
+		this.ptr = CQt.QTextFrameFormat_new2((.)param1?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QTextFrameFormat_Delete(this.ptr);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void SetPosition(QTextFrameFormat_Position f)
+	{
+		this.ptr.SetPosition(f);
+	}
+	public QTextFrameFormat_Position Position()
+	{
+		return this.ptr.Position();
+	}
+	public void SetBorder(double border)
+	{
+		this.ptr.SetBorder(border);
+	}
+	public double Border()
+	{
+		return this.ptr.Border();
+	}
+	public void SetBorderBrush(IQBrush brush)
+	{
+		this.ptr.SetBorderBrush(brush);
+	}
+	public QBrush_Ptr BorderBrush()
+	{
+		return this.ptr.BorderBrush();
+	}
+	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		this.ptr.SetBorderStyle(style);
+	}
+	public QTextFrameFormat_BorderStyle BorderStyle()
+	{
+		return this.ptr.BorderStyle();
+	}
+	public void SetMargin(double margin)
+	{
+		this.ptr.SetMargin(margin);
+	}
+	public double Margin()
+	{
+		return this.ptr.Margin();
+	}
+	public void SetTopMargin(double margin)
+	{
+		this.ptr.SetTopMargin(margin);
+	}
+	public double TopMargin()
+	{
+		return this.ptr.TopMargin();
+	}
+	public void SetBottomMargin(double margin)
+	{
+		this.ptr.SetBottomMargin(margin);
+	}
+	public double BottomMargin()
+	{
+		return this.ptr.BottomMargin();
+	}
+	public void SetLeftMargin(double margin)
+	{
+		this.ptr.SetLeftMargin(margin);
+	}
+	public double LeftMargin()
+	{
+		return this.ptr.LeftMargin();
+	}
+	public void SetRightMargin(double margin)
+	{
+		this.ptr.SetRightMargin(margin);
+	}
+	public double RightMargin()
+	{
+		return this.ptr.RightMargin();
+	}
+	public void SetPadding(double padding)
+	{
+		this.ptr.SetPadding(padding);
+	}
+	public double Padding()
+	{
+		return this.ptr.Padding();
+	}
+	public void SetWidth(double width)
+	{
+		this.ptr.SetWidth(width);
+	}
+	public void SetWidth2(IQTextLength length)
+	{
+		this.ptr.SetWidth2(length);
+	}
+	public QTextLength_Ptr Width()
+	{
+		return this.ptr.Width();
+	}
+	public void SetHeight(double height)
+	{
+		this.ptr.SetHeight(height);
+	}
+	public void SetHeight2(IQTextLength height)
+	{
+		this.ptr.SetHeight2(height);
+	}
+	public QTextLength_Ptr Height()
+	{
+		return this.ptr.Height();
+	}
+	public void SetPageBreakPolicy(void* flags)
+	{
+		this.ptr.SetPageBreakPolicy(flags);
+	}
+	public void* PageBreakPolicy()
+	{
+		return this.ptr.PageBreakPolicy();
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextFrameFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -2386,330 +4686,6 @@ extension CQt
 	[LinkName("QTextFrameFormat_PageBreakPolicy")]
 	public static extern void* QTextFrameFormat_PageBreakPolicy(void* self);
 }
-class QTextFrameFormat : IQTextFrameFormat, IQTextFormat
-{
-	private QTextFrameFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextFrameFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextFrameFormat_new();
-	}
-	public this(IQTextFrameFormat param1)
-	{
-		this.ptr = CQt.QTextFrameFormat_new2((.)param1?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QTextFrameFormat_Delete(this.ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextFrameFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public void SetPosition(QTextFrameFormat_Position f)
-	{
-		CQt.QTextFrameFormat_SetPosition((.)this.ptr.Ptr, f);
-	}
-	public QTextFrameFormat_Position Position()
-	{
-		return CQt.QTextFrameFormat_Position((.)this.ptr.Ptr);
-	}
-	public void SetBorder(double border)
-	{
-		CQt.QTextFrameFormat_SetBorder((.)this.ptr.Ptr, border);
-	}
-	public double Border()
-	{
-		return CQt.QTextFrameFormat_Border((.)this.ptr.Ptr);
-	}
-	public void SetBorderBrush(IQBrush brush)
-	{
-		CQt.QTextFrameFormat_SetBorderBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr BorderBrush()
-	{
-		return QBrush_Ptr(CQt.QTextFrameFormat_BorderBrush((.)this.ptr.Ptr));
-	}
-	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
-	{
-		CQt.QTextFrameFormat_SetBorderStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextFrameFormat_BorderStyle BorderStyle()
-	{
-		return CQt.QTextFrameFormat_BorderStyle((.)this.ptr.Ptr);
-	}
-	public void SetMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetMargin((.)this.ptr.Ptr, margin);
-	}
-	public double Margin()
-	{
-		return CQt.QTextFrameFormat_Margin((.)this.ptr.Ptr);
-	}
-	public void SetTopMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetTopMargin((.)this.ptr.Ptr, margin);
-	}
-	public double TopMargin()
-	{
-		return CQt.QTextFrameFormat_TopMargin((.)this.ptr.Ptr);
-	}
-	public void SetBottomMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetBottomMargin((.)this.ptr.Ptr, margin);
-	}
-	public double BottomMargin()
-	{
-		return CQt.QTextFrameFormat_BottomMargin((.)this.ptr.Ptr);
-	}
-	public void SetLeftMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetLeftMargin((.)this.ptr.Ptr, margin);
-	}
-	public double LeftMargin()
-	{
-		return CQt.QTextFrameFormat_LeftMargin((.)this.ptr.Ptr);
-	}
-	public void SetRightMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetRightMargin((.)this.ptr.Ptr, margin);
-	}
-	public double RightMargin()
-	{
-		return CQt.QTextFrameFormat_RightMargin((.)this.ptr.Ptr);
-	}
-	public void SetPadding(double padding)
-	{
-		CQt.QTextFrameFormat_SetPadding((.)this.ptr.Ptr, padding);
-	}
-	public double Padding()
-	{
-		return CQt.QTextFrameFormat_Padding((.)this.ptr.Ptr);
-	}
-	public void SetWidth(double width)
-	{
-		CQt.QTextFrameFormat_SetWidth((.)this.ptr.Ptr, width);
-	}
-	public void SetWidth2(IQTextLength length)
-	{
-		CQt.QTextFrameFormat_SetWidth2((.)this.ptr.Ptr, (.)length?.ObjectPtr);
-	}
-	public QTextLength_Ptr Width()
-	{
-		return QTextLength_Ptr(CQt.QTextFrameFormat_Width((.)this.ptr.Ptr));
-	}
-	public void SetHeight(double height)
-	{
-		CQt.QTextFrameFormat_SetHeight((.)this.ptr.Ptr, height);
-	}
-	public void SetHeight2(IQTextLength height)
-	{
-		CQt.QTextFrameFormat_SetHeight2((.)this.ptr.Ptr, (.)height?.ObjectPtr);
-	}
-	public QTextLength_Ptr Height()
-	{
-		return QTextLength_Ptr(CQt.QTextFrameFormat_Height((.)this.ptr.Ptr));
-	}
-	public void SetPageBreakPolicy(void* flags)
-	{
-		CQt.QTextFrameFormat_SetPageBreakPolicy((.)this.ptr.Ptr, flags);
-	}
-	public void* PageBreakPolicy()
-	{
-		return CQt.QTextFrameFormat_PageBreakPolicy((.)this.ptr.Ptr);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextFrameFormat : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextTableFormat
 // --------------------------------------------------------------
@@ -2721,6 +4697,746 @@ struct QTextTableFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QTextTableFormat_IsValid((.)this.Ptr);
+	}
+	public c_int Columns()
+	{
+		return CQt.QTextTableFormat_Columns((.)this.Ptr);
+	}
+	public void SetColumns(c_int columns)
+	{
+		CQt.QTextTableFormat_SetColumns((.)this.Ptr, columns);
+	}
+	public void SetColumnWidthConstraints(void** constraints)
+	{
+		CQt.QTextTableFormat_SetColumnWidthConstraints((.)this.Ptr, constraints);
+	}
+	public void* ColumnWidthConstraints()
+	{
+		return CQt.QTextTableFormat_ColumnWidthConstraints((.)this.Ptr);
+	}
+	public void ClearColumnWidthConstraints()
+	{
+		CQt.QTextTableFormat_ClearColumnWidthConstraints((.)this.Ptr);
+	}
+	public double CellSpacing()
+	{
+		return CQt.QTextTableFormat_CellSpacing((.)this.Ptr);
+	}
+	public void SetCellSpacing(double spacing)
+	{
+		CQt.QTextTableFormat_SetCellSpacing((.)this.Ptr, spacing);
+	}
+	public double CellPadding()
+	{
+		return CQt.QTextTableFormat_CellPadding((.)this.Ptr);
+	}
+	public void SetCellPadding(double padding)
+	{
+		CQt.QTextTableFormat_SetCellPadding((.)this.Ptr, padding);
+	}
+	public void SetAlignment(void* alignment)
+	{
+		CQt.QTextTableFormat_SetAlignment((.)this.Ptr, alignment);
+	}
+	public void* Alignment()
+	{
+		return CQt.QTextTableFormat_Alignment((.)this.Ptr);
+	}
+	public void SetHeaderRowCount(c_int count)
+	{
+		CQt.QTextTableFormat_SetHeaderRowCount((.)this.Ptr, count);
+	}
+	public c_int HeaderRowCount()
+	{
+		return CQt.QTextTableFormat_HeaderRowCount((.)this.Ptr);
+	}
+	public void SetBorderCollapse(bool borderCollapse)
+	{
+		CQt.QTextTableFormat_SetBorderCollapse((.)this.Ptr, borderCollapse);
+	}
+	public bool BorderCollapse()
+	{
+		return CQt.QTextTableFormat_BorderCollapse((.)this.Ptr);
+	}
+	public void SetPosition(QTextFrameFormat_Position f)
+	{
+		CQt.QTextFrameFormat_SetPosition((.)this.Ptr, f);
+	}
+	public QTextFrameFormat_Position Position()
+	{
+		return CQt.QTextFrameFormat_Position((.)this.Ptr);
+	}
+	public void SetBorder(double border)
+	{
+		CQt.QTextFrameFormat_SetBorder((.)this.Ptr, border);
+	}
+	public double Border()
+	{
+		return CQt.QTextFrameFormat_Border((.)this.Ptr);
+	}
+	public void SetBorderBrush(IQBrush brush)
+	{
+		CQt.QTextFrameFormat_SetBorderBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr BorderBrush()
+	{
+		return QBrush_Ptr(CQt.QTextFrameFormat_BorderBrush((.)this.Ptr));
+	}
+	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		CQt.QTextFrameFormat_SetBorderStyle((.)this.Ptr, style);
+	}
+	public QTextFrameFormat_BorderStyle BorderStyle()
+	{
+		return CQt.QTextFrameFormat_BorderStyle((.)this.Ptr);
+	}
+	public void SetMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetMargin((.)this.Ptr, margin);
+	}
+	public double Margin()
+	{
+		return CQt.QTextFrameFormat_Margin((.)this.Ptr);
+	}
+	public void SetTopMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetTopMargin((.)this.Ptr, margin);
+	}
+	public double TopMargin()
+	{
+		return CQt.QTextFrameFormat_TopMargin((.)this.Ptr);
+	}
+	public void SetBottomMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetBottomMargin((.)this.Ptr, margin);
+	}
+	public double BottomMargin()
+	{
+		return CQt.QTextFrameFormat_BottomMargin((.)this.Ptr);
+	}
+	public void SetLeftMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetLeftMargin((.)this.Ptr, margin);
+	}
+	public double LeftMargin()
+	{
+		return CQt.QTextFrameFormat_LeftMargin((.)this.Ptr);
+	}
+	public void SetRightMargin(double margin)
+	{
+		CQt.QTextFrameFormat_SetRightMargin((.)this.Ptr, margin);
+	}
+	public double RightMargin()
+	{
+		return CQt.QTextFrameFormat_RightMargin((.)this.Ptr);
+	}
+	public void SetPadding(double padding)
+	{
+		CQt.QTextFrameFormat_SetPadding((.)this.Ptr, padding);
+	}
+	public double Padding()
+	{
+		return CQt.QTextFrameFormat_Padding((.)this.Ptr);
+	}
+	public void SetWidth(double width)
+	{
+		CQt.QTextFrameFormat_SetWidth((.)this.Ptr, width);
+	}
+	public void SetWidth2(IQTextLength length)
+	{
+		CQt.QTextFrameFormat_SetWidth2((.)this.Ptr, (.)length?.ObjectPtr);
+	}
+	public QTextLength_Ptr Width()
+	{
+		return QTextLength_Ptr(CQt.QTextFrameFormat_Width((.)this.Ptr));
+	}
+	public void SetHeight(double height)
+	{
+		CQt.QTextFrameFormat_SetHeight((.)this.Ptr, height);
+	}
+	public void SetHeight2(IQTextLength height)
+	{
+		CQt.QTextFrameFormat_SetHeight2((.)this.Ptr, (.)height?.ObjectPtr);
+	}
+	public QTextLength_Ptr Height()
+	{
+		return QTextLength_Ptr(CQt.QTextFrameFormat_Height((.)this.Ptr));
+	}
+	public void SetPageBreakPolicy(void* flags)
+	{
+		CQt.QTextFrameFormat_SetPageBreakPolicy((.)this.Ptr, flags);
+	}
+	public void* PageBreakPolicy()
+	{
+		return CQt.QTextFrameFormat_PageBreakPolicy((.)this.Ptr);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextTableFormat : IQTextTableFormat, IQTextFrameFormat, IQTextFormat
+{
+	private QTextTableFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextTableFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextTableFormat_new();
+	}
+	public ~this()
+	{
+		CQt.QTextTableFormat_Delete(this.ptr);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public c_int Columns()
+	{
+		return this.ptr.Columns();
+	}
+	public void SetColumns(c_int columns)
+	{
+		this.ptr.SetColumns(columns);
+	}
+	public void SetColumnWidthConstraints(void** constraints)
+	{
+		this.ptr.SetColumnWidthConstraints(constraints);
+	}
+	public void* ColumnWidthConstraints()
+	{
+		return this.ptr.ColumnWidthConstraints();
+	}
+	public void ClearColumnWidthConstraints()
+	{
+		this.ptr.ClearColumnWidthConstraints();
+	}
+	public double CellSpacing()
+	{
+		return this.ptr.CellSpacing();
+	}
+	public void SetCellSpacing(double spacing)
+	{
+		this.ptr.SetCellSpacing(spacing);
+	}
+	public double CellPadding()
+	{
+		return this.ptr.CellPadding();
+	}
+	public void SetCellPadding(double padding)
+	{
+		this.ptr.SetCellPadding(padding);
+	}
+	public void SetAlignment(void* alignment)
+	{
+		this.ptr.SetAlignment(alignment);
+	}
+	public void* Alignment()
+	{
+		return this.ptr.Alignment();
+	}
+	public void SetHeaderRowCount(c_int count)
+	{
+		this.ptr.SetHeaderRowCount(count);
+	}
+	public c_int HeaderRowCount()
+	{
+		return this.ptr.HeaderRowCount();
+	}
+	public void SetBorderCollapse(bool borderCollapse)
+	{
+		this.ptr.SetBorderCollapse(borderCollapse);
+	}
+	public bool BorderCollapse()
+	{
+		return this.ptr.BorderCollapse();
+	}
+	public void SetPosition(QTextFrameFormat_Position f)
+	{
+		this.ptr.SetPosition(f);
+	}
+	public QTextFrameFormat_Position Position()
+	{
+		return this.ptr.Position();
+	}
+	public void SetBorder(double border)
+	{
+		this.ptr.SetBorder(border);
+	}
+	public double Border()
+	{
+		return this.ptr.Border();
+	}
+	public void SetBorderBrush(IQBrush brush)
+	{
+		this.ptr.SetBorderBrush(brush);
+	}
+	public QBrush_Ptr BorderBrush()
+	{
+		return this.ptr.BorderBrush();
+	}
+	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		this.ptr.SetBorderStyle(style);
+	}
+	public QTextFrameFormat_BorderStyle BorderStyle()
+	{
+		return this.ptr.BorderStyle();
+	}
+	public void SetMargin(double margin)
+	{
+		this.ptr.SetMargin(margin);
+	}
+	public double Margin()
+	{
+		return this.ptr.Margin();
+	}
+	public void SetTopMargin(double margin)
+	{
+		this.ptr.SetTopMargin(margin);
+	}
+	public double TopMargin()
+	{
+		return this.ptr.TopMargin();
+	}
+	public void SetBottomMargin(double margin)
+	{
+		this.ptr.SetBottomMargin(margin);
+	}
+	public double BottomMargin()
+	{
+		return this.ptr.BottomMargin();
+	}
+	public void SetLeftMargin(double margin)
+	{
+		this.ptr.SetLeftMargin(margin);
+	}
+	public double LeftMargin()
+	{
+		return this.ptr.LeftMargin();
+	}
+	public void SetRightMargin(double margin)
+	{
+		this.ptr.SetRightMargin(margin);
+	}
+	public double RightMargin()
+	{
+		return this.ptr.RightMargin();
+	}
+	public void SetPadding(double padding)
+	{
+		this.ptr.SetPadding(padding);
+	}
+	public double Padding()
+	{
+		return this.ptr.Padding();
+	}
+	public void SetWidth(double width)
+	{
+		this.ptr.SetWidth(width);
+	}
+	public void SetWidth2(IQTextLength length)
+	{
+		this.ptr.SetWidth2(length);
+	}
+	public QTextLength_Ptr Width()
+	{
+		return this.ptr.Width();
+	}
+	public void SetHeight(double height)
+	{
+		this.ptr.SetHeight(height);
+	}
+	public void SetHeight2(IQTextLength height)
+	{
+		this.ptr.SetHeight2(height);
+	}
+	public QTextLength_Ptr Height()
+	{
+		return this.ptr.Height();
+	}
+	public void SetPageBreakPolicy(void* flags)
+	{
+		this.ptr.SetPageBreakPolicy(flags);
+	}
+	public void* PageBreakPolicy()
+	{
+		return this.ptr.PageBreakPolicy();
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextTableFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -2761,386 +5477,6 @@ extension CQt
 	[LinkName("QTextTableFormat_BorderCollapse")]
 	public static extern bool QTextTableFormat_BorderCollapse(void* self);
 }
-class QTextTableFormat : IQTextTableFormat, IQTextFrameFormat, IQTextFormat
-{
-	private QTextTableFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextTableFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextTableFormat_new();
-	}
-	public ~this()
-	{
-		CQt.QTextTableFormat_Delete(this.ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextTableFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public c_int Columns()
-	{
-		return CQt.QTextTableFormat_Columns((.)this.ptr.Ptr);
-	}
-	public void SetColumns(c_int columns)
-	{
-		CQt.QTextTableFormat_SetColumns((.)this.ptr.Ptr, columns);
-	}
-	public void SetColumnWidthConstraints(void** constraints)
-	{
-		CQt.QTextTableFormat_SetColumnWidthConstraints((.)this.ptr.Ptr, constraints);
-	}
-	public void* ColumnWidthConstraints()
-	{
-		return CQt.QTextTableFormat_ColumnWidthConstraints((.)this.ptr.Ptr);
-	}
-	public void ClearColumnWidthConstraints()
-	{
-		CQt.QTextTableFormat_ClearColumnWidthConstraints((.)this.ptr.Ptr);
-	}
-	public double CellSpacing()
-	{
-		return CQt.QTextTableFormat_CellSpacing((.)this.ptr.Ptr);
-	}
-	public void SetCellSpacing(double spacing)
-	{
-		CQt.QTextTableFormat_SetCellSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public double CellPadding()
-	{
-		return CQt.QTextTableFormat_CellPadding((.)this.ptr.Ptr);
-	}
-	public void SetCellPadding(double padding)
-	{
-		CQt.QTextTableFormat_SetCellPadding((.)this.ptr.Ptr, padding);
-	}
-	public void SetAlignment(void* alignment)
-	{
-		CQt.QTextTableFormat_SetAlignment((.)this.ptr.Ptr, alignment);
-	}
-	public void* Alignment()
-	{
-		return CQt.QTextTableFormat_Alignment((.)this.ptr.Ptr);
-	}
-	public void SetHeaderRowCount(c_int count)
-	{
-		CQt.QTextTableFormat_SetHeaderRowCount((.)this.ptr.Ptr, count);
-	}
-	public c_int HeaderRowCount()
-	{
-		return CQt.QTextTableFormat_HeaderRowCount((.)this.ptr.Ptr);
-	}
-	public void SetBorderCollapse(bool borderCollapse)
-	{
-		CQt.QTextTableFormat_SetBorderCollapse((.)this.ptr.Ptr, borderCollapse);
-	}
-	public bool BorderCollapse()
-	{
-		return CQt.QTextTableFormat_BorderCollapse((.)this.ptr.Ptr);
-	}
-	public void SetPosition(QTextFrameFormat_Position f)
-	{
-		CQt.QTextFrameFormat_SetPosition((.)this.ptr.Ptr, f);
-	}
-	public QTextFrameFormat_Position Position()
-	{
-		return CQt.QTextFrameFormat_Position((.)this.ptr.Ptr);
-	}
-	public void SetBorder(double border)
-	{
-		CQt.QTextFrameFormat_SetBorder((.)this.ptr.Ptr, border);
-	}
-	public double Border()
-	{
-		return CQt.QTextFrameFormat_Border((.)this.ptr.Ptr);
-	}
-	public void SetBorderBrush(IQBrush brush)
-	{
-		CQt.QTextFrameFormat_SetBorderBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr BorderBrush()
-	{
-		return QBrush_Ptr(CQt.QTextFrameFormat_BorderBrush((.)this.ptr.Ptr));
-	}
-	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
-	{
-		CQt.QTextFrameFormat_SetBorderStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextFrameFormat_BorderStyle BorderStyle()
-	{
-		return CQt.QTextFrameFormat_BorderStyle((.)this.ptr.Ptr);
-	}
-	public void SetMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetMargin((.)this.ptr.Ptr, margin);
-	}
-	public double Margin()
-	{
-		return CQt.QTextFrameFormat_Margin((.)this.ptr.Ptr);
-	}
-	public void SetTopMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetTopMargin((.)this.ptr.Ptr, margin);
-	}
-	public double TopMargin()
-	{
-		return CQt.QTextFrameFormat_TopMargin((.)this.ptr.Ptr);
-	}
-	public void SetBottomMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetBottomMargin((.)this.ptr.Ptr, margin);
-	}
-	public double BottomMargin()
-	{
-		return CQt.QTextFrameFormat_BottomMargin((.)this.ptr.Ptr);
-	}
-	public void SetLeftMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetLeftMargin((.)this.ptr.Ptr, margin);
-	}
-	public double LeftMargin()
-	{
-		return CQt.QTextFrameFormat_LeftMargin((.)this.ptr.Ptr);
-	}
-	public void SetRightMargin(double margin)
-	{
-		CQt.QTextFrameFormat_SetRightMargin((.)this.ptr.Ptr, margin);
-	}
-	public double RightMargin()
-	{
-		return CQt.QTextFrameFormat_RightMargin((.)this.ptr.Ptr);
-	}
-	public void SetPadding(double padding)
-	{
-		CQt.QTextFrameFormat_SetPadding((.)this.ptr.Ptr, padding);
-	}
-	public double Padding()
-	{
-		return CQt.QTextFrameFormat_Padding((.)this.ptr.Ptr);
-	}
-	public void SetWidth(double width)
-	{
-		CQt.QTextFrameFormat_SetWidth((.)this.ptr.Ptr, width);
-	}
-	public void SetWidth2(IQTextLength length)
-	{
-		CQt.QTextFrameFormat_SetWidth2((.)this.ptr.Ptr, (.)length?.ObjectPtr);
-	}
-	public QTextLength_Ptr Width()
-	{
-		return QTextLength_Ptr(CQt.QTextFrameFormat_Width((.)this.ptr.Ptr));
-	}
-	public void SetHeight(double height)
-	{
-		CQt.QTextFrameFormat_SetHeight((.)this.ptr.Ptr, height);
-	}
-	public void SetHeight2(IQTextLength height)
-	{
-		CQt.QTextFrameFormat_SetHeight2((.)this.ptr.Ptr, (.)height?.ObjectPtr);
-	}
-	public QTextLength_Ptr Height()
-	{
-		return QTextLength_Ptr(CQt.QTextFrameFormat_Height((.)this.ptr.Ptr));
-	}
-	public void SetPageBreakPolicy(void* flags)
-	{
-		CQt.QTextFrameFormat_SetPageBreakPolicy((.)this.ptr.Ptr, flags);
-	}
-	public void* PageBreakPolicy()
-	{
-		return CQt.QTextFrameFormat_PageBreakPolicy((.)this.ptr.Ptr);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextTableFormat : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QTextTableCellFormat
 // --------------------------------------------------------------
@@ -3152,6 +5488,1234 @@ struct QTextTableCellFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QTextTableCellFormat_IsValid((.)this.Ptr);
+	}
+	public void SetTopPadding(double padding)
+	{
+		CQt.QTextTableCellFormat_SetTopPadding((.)this.Ptr, padding);
+	}
+	public double TopPadding()
+	{
+		return CQt.QTextTableCellFormat_TopPadding((.)this.Ptr);
+	}
+	public void SetBottomPadding(double padding)
+	{
+		CQt.QTextTableCellFormat_SetBottomPadding((.)this.Ptr, padding);
+	}
+	public double BottomPadding()
+	{
+		return CQt.QTextTableCellFormat_BottomPadding((.)this.Ptr);
+	}
+	public void SetLeftPadding(double padding)
+	{
+		CQt.QTextTableCellFormat_SetLeftPadding((.)this.Ptr, padding);
+	}
+	public double LeftPadding()
+	{
+		return CQt.QTextTableCellFormat_LeftPadding((.)this.Ptr);
+	}
+	public void SetRightPadding(double padding)
+	{
+		CQt.QTextTableCellFormat_SetRightPadding((.)this.Ptr, padding);
+	}
+	public double RightPadding()
+	{
+		return CQt.QTextTableCellFormat_RightPadding((.)this.Ptr);
+	}
+	public void SetPadding(double padding)
+	{
+		CQt.QTextTableCellFormat_SetPadding((.)this.Ptr, padding);
+	}
+	public void SetTopBorder(double width)
+	{
+		CQt.QTextTableCellFormat_SetTopBorder((.)this.Ptr, width);
+	}
+	public double TopBorder()
+	{
+		return CQt.QTextTableCellFormat_TopBorder((.)this.Ptr);
+	}
+	public void SetBottomBorder(double width)
+	{
+		CQt.QTextTableCellFormat_SetBottomBorder((.)this.Ptr, width);
+	}
+	public double BottomBorder()
+	{
+		return CQt.QTextTableCellFormat_BottomBorder((.)this.Ptr);
+	}
+	public void SetLeftBorder(double width)
+	{
+		CQt.QTextTableCellFormat_SetLeftBorder((.)this.Ptr, width);
+	}
+	public double LeftBorder()
+	{
+		return CQt.QTextTableCellFormat_LeftBorder((.)this.Ptr);
+	}
+	public void SetRightBorder(double width)
+	{
+		CQt.QTextTableCellFormat_SetRightBorder((.)this.Ptr, width);
+	}
+	public double RightBorder()
+	{
+		return CQt.QTextTableCellFormat_RightBorder((.)this.Ptr);
+	}
+	public void SetBorder(double width)
+	{
+		CQt.QTextTableCellFormat_SetBorder((.)this.Ptr, width);
+	}
+	public void SetTopBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		CQt.QTextTableCellFormat_SetTopBorderStyle((.)this.Ptr, style);
+	}
+	public QTextFrameFormat_BorderStyle TopBorderStyle()
+	{
+		return CQt.QTextTableCellFormat_TopBorderStyle((.)this.Ptr);
+	}
+	public void SetBottomBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		CQt.QTextTableCellFormat_SetBottomBorderStyle((.)this.Ptr, style);
+	}
+	public QTextFrameFormat_BorderStyle BottomBorderStyle()
+	{
+		return CQt.QTextTableCellFormat_BottomBorderStyle((.)this.Ptr);
+	}
+	public void SetLeftBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		CQt.QTextTableCellFormat_SetLeftBorderStyle((.)this.Ptr, style);
+	}
+	public QTextFrameFormat_BorderStyle LeftBorderStyle()
+	{
+		return CQt.QTextTableCellFormat_LeftBorderStyle((.)this.Ptr);
+	}
+	public void SetRightBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		CQt.QTextTableCellFormat_SetRightBorderStyle((.)this.Ptr, style);
+	}
+	public QTextFrameFormat_BorderStyle RightBorderStyle()
+	{
+		return CQt.QTextTableCellFormat_RightBorderStyle((.)this.Ptr);
+	}
+	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		CQt.QTextTableCellFormat_SetBorderStyle((.)this.Ptr, style);
+	}
+	public void SetTopBorderBrush(IQBrush brush)
+	{
+		CQt.QTextTableCellFormat_SetTopBorderBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr TopBorderBrush()
+	{
+		return QBrush_Ptr(CQt.QTextTableCellFormat_TopBorderBrush((.)this.Ptr));
+	}
+	public void SetBottomBorderBrush(IQBrush brush)
+	{
+		CQt.QTextTableCellFormat_SetBottomBorderBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr BottomBorderBrush()
+	{
+		return QBrush_Ptr(CQt.QTextTableCellFormat_BottomBorderBrush((.)this.Ptr));
+	}
+	public void SetLeftBorderBrush(IQBrush brush)
+	{
+		CQt.QTextTableCellFormat_SetLeftBorderBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr LeftBorderBrush()
+	{
+		return QBrush_Ptr(CQt.QTextTableCellFormat_LeftBorderBrush((.)this.Ptr));
+	}
+	public void SetRightBorderBrush(IQBrush brush)
+	{
+		CQt.QTextTableCellFormat_SetRightBorderBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr RightBorderBrush()
+	{
+		return QBrush_Ptr(CQt.QTextTableCellFormat_RightBorderBrush((.)this.Ptr));
+	}
+	public void SetBorderBrush(IQBrush brush)
+	{
+		CQt.QTextTableCellFormat_SetBorderBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public void SetFont(IQFont font)
+	{
+		CQt.QTextCharFormat_SetFont((.)this.Ptr, (.)font?.ObjectPtr);
+	}
+	public QFont_Ptr Font()
+	{
+		return QFont_Ptr(CQt.QTextCharFormat_Font((.)this.Ptr));
+	}
+	public void SetFontFamily(String family)
+	{
+		CQt.QTextCharFormat_SetFontFamily((.)this.Ptr, libqt_string(family));
+	}
+	public void FontFamily(String outStr)
+	{
+		CQt.QTextCharFormat_FontFamily((.)this.Ptr);
+	}
+	public void SetFontFamilies(void** families)
+	{
+		CQt.QTextCharFormat_SetFontFamilies((.)this.Ptr, families);
+	}
+	public QVariant_Ptr FontFamilies()
+	{
+		return QVariant_Ptr(CQt.QTextCharFormat_FontFamilies((.)this.Ptr));
+	}
+	public void SetFontStyleName(String styleName)
+	{
+		CQt.QTextCharFormat_SetFontStyleName((.)this.Ptr, libqt_string(styleName));
+	}
+	public QVariant_Ptr FontStyleName()
+	{
+		return QVariant_Ptr(CQt.QTextCharFormat_FontStyleName((.)this.Ptr));
+	}
+	public void SetFontPointSize(double size)
+	{
+		CQt.QTextCharFormat_SetFontPointSize((.)this.Ptr, size);
+	}
+	public double FontPointSize()
+	{
+		return CQt.QTextCharFormat_FontPointSize((.)this.Ptr);
+	}
+	public void SetFontWeight(c_int weight)
+	{
+		CQt.QTextCharFormat_SetFontWeight((.)this.Ptr, weight);
+	}
+	public c_int FontWeight()
+	{
+		return CQt.QTextCharFormat_FontWeight((.)this.Ptr);
+	}
+	public void SetFontItalic(bool italic)
+	{
+		CQt.QTextCharFormat_SetFontItalic((.)this.Ptr, italic);
+	}
+	public bool FontItalic()
+	{
+		return CQt.QTextCharFormat_FontItalic((.)this.Ptr);
+	}
+	public void SetFontCapitalization(QFont_Capitalization capitalization)
+	{
+		CQt.QTextCharFormat_SetFontCapitalization((.)this.Ptr, capitalization);
+	}
+	public QFont_Capitalization FontCapitalization()
+	{
+		return CQt.QTextCharFormat_FontCapitalization((.)this.Ptr);
+	}
+	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
+	{
+		CQt.QTextCharFormat_SetFontLetterSpacingType((.)this.Ptr, letterSpacingType);
+	}
+	public QFont_SpacingType FontLetterSpacingType()
+	{
+		return CQt.QTextCharFormat_FontLetterSpacingType((.)this.Ptr);
+	}
+	public void SetFontLetterSpacing(double spacing)
+	{
+		CQt.QTextCharFormat_SetFontLetterSpacing((.)this.Ptr, spacing);
+	}
+	public double FontLetterSpacing()
+	{
+		return CQt.QTextCharFormat_FontLetterSpacing((.)this.Ptr);
+	}
+	public void SetFontWordSpacing(double spacing)
+	{
+		CQt.QTextCharFormat_SetFontWordSpacing((.)this.Ptr, spacing);
+	}
+	public double FontWordSpacing()
+	{
+		return CQt.QTextCharFormat_FontWordSpacing((.)this.Ptr);
+	}
+	public void SetFontUnderline(bool underline)
+	{
+		CQt.QTextCharFormat_SetFontUnderline((.)this.Ptr, underline);
+	}
+	public bool FontUnderline()
+	{
+		return CQt.QTextCharFormat_FontUnderline((.)this.Ptr);
+	}
+	public void SetFontOverline(bool overline)
+	{
+		CQt.QTextCharFormat_SetFontOverline((.)this.Ptr, overline);
+	}
+	public bool FontOverline()
+	{
+		return CQt.QTextCharFormat_FontOverline((.)this.Ptr);
+	}
+	public void SetFontStrikeOut(bool strikeOut)
+	{
+		CQt.QTextCharFormat_SetFontStrikeOut((.)this.Ptr, strikeOut);
+	}
+	public bool FontStrikeOut()
+	{
+		return CQt.QTextCharFormat_FontStrikeOut((.)this.Ptr);
+	}
+	public void SetUnderlineColor(IQColor color)
+	{
+		CQt.QTextCharFormat_SetUnderlineColor((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public QColor_Ptr UnderlineColor()
+	{
+		return QColor_Ptr(CQt.QTextCharFormat_UnderlineColor((.)this.Ptr));
+	}
+	public void SetFontFixedPitch(bool fixedPitch)
+	{
+		CQt.QTextCharFormat_SetFontFixedPitch((.)this.Ptr, fixedPitch);
+	}
+	public bool FontFixedPitch()
+	{
+		return CQt.QTextCharFormat_FontFixedPitch((.)this.Ptr);
+	}
+	public void SetFontStretch(c_int factor)
+	{
+		CQt.QTextCharFormat_SetFontStretch((.)this.Ptr, factor);
+	}
+	public c_int FontStretch()
+	{
+		return CQt.QTextCharFormat_FontStretch((.)this.Ptr);
+	}
+	public void SetFontStyleHint(QFont_StyleHint hint)
+	{
+		CQt.QTextCharFormat_SetFontStyleHint((.)this.Ptr, hint);
+	}
+	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
+	{
+		CQt.QTextCharFormat_SetFontStyleStrategy((.)this.Ptr, strategy);
+	}
+	public QFont_StyleHint FontStyleHint()
+	{
+		return CQt.QTextCharFormat_FontStyleHint((.)this.Ptr);
+	}
+	public QFont_StyleStrategy FontStyleStrategy()
+	{
+		return CQt.QTextCharFormat_FontStyleStrategy((.)this.Ptr);
+	}
+	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		CQt.QTextCharFormat_SetFontHintingPreference((.)this.Ptr, hintingPreference);
+	}
+	public QFont_HintingPreference FontHintingPreference()
+	{
+		return CQt.QTextCharFormat_FontHintingPreference((.)this.Ptr);
+	}
+	public void SetFontKerning(bool enable)
+	{
+		CQt.QTextCharFormat_SetFontKerning((.)this.Ptr, enable);
+	}
+	public bool FontKerning()
+	{
+		return CQt.QTextCharFormat_FontKerning((.)this.Ptr);
+	}
+	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
+	{
+		CQt.QTextCharFormat_SetUnderlineStyle((.)this.Ptr, style);
+	}
+	public QTextCharFormat_UnderlineStyle UnderlineStyle()
+	{
+		return CQt.QTextCharFormat_UnderlineStyle((.)this.Ptr);
+	}
+	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
+	{
+		CQt.QTextCharFormat_SetVerticalAlignment((.)this.Ptr, alignment);
+	}
+	public QTextCharFormat_VerticalAlignment VerticalAlignment()
+	{
+		return CQt.QTextCharFormat_VerticalAlignment((.)this.Ptr);
+	}
+	public void SetTextOutline(IQPen pen)
+	{
+		CQt.QTextCharFormat_SetTextOutline((.)this.Ptr, (.)pen?.ObjectPtr);
+	}
+	public QPen_Ptr TextOutline()
+	{
+		return QPen_Ptr(CQt.QTextCharFormat_TextOutline((.)this.Ptr));
+	}
+	public void SetToolTip(String tip)
+	{
+		CQt.QTextCharFormat_SetToolTip((.)this.Ptr, libqt_string(tip));
+	}
+	public void ToolTip(String outStr)
+	{
+		CQt.QTextCharFormat_ToolTip((.)this.Ptr);
+	}
+	public void SetSuperScriptBaseline(double baseline)
+	{
+		CQt.QTextCharFormat_SetSuperScriptBaseline((.)this.Ptr, baseline);
+	}
+	public double SuperScriptBaseline()
+	{
+		return CQt.QTextCharFormat_SuperScriptBaseline((.)this.Ptr);
+	}
+	public void SetSubScriptBaseline(double baseline)
+	{
+		CQt.QTextCharFormat_SetSubScriptBaseline((.)this.Ptr, baseline);
+	}
+	public double SubScriptBaseline()
+	{
+		return CQt.QTextCharFormat_SubScriptBaseline((.)this.Ptr);
+	}
+	public void SetBaselineOffset(double baseline)
+	{
+		CQt.QTextCharFormat_SetBaselineOffset((.)this.Ptr, baseline);
+	}
+	public double BaselineOffset()
+	{
+		return CQt.QTextCharFormat_BaselineOffset((.)this.Ptr);
+	}
+	public void SetAnchor(bool anchor)
+	{
+		CQt.QTextCharFormat_SetAnchor((.)this.Ptr, anchor);
+	}
+	public bool IsAnchor()
+	{
+		return CQt.QTextCharFormat_IsAnchor((.)this.Ptr);
+	}
+	public void SetAnchorHref(String value)
+	{
+		CQt.QTextCharFormat_SetAnchorHref((.)this.Ptr, libqt_string(value));
+	}
+	public void AnchorHref(String outStr)
+	{
+		CQt.QTextCharFormat_AnchorHref((.)this.Ptr);
+	}
+	public void SetAnchorNames(void** names)
+	{
+		CQt.QTextCharFormat_SetAnchorNames((.)this.Ptr, names);
+	}
+	public void* AnchorNames()
+	{
+		return CQt.QTextCharFormat_AnchorNames((.)this.Ptr);
+	}
+	public void SetTableCellRowSpan(c_int tableCellRowSpan)
+	{
+		CQt.QTextCharFormat_SetTableCellRowSpan((.)this.Ptr, tableCellRowSpan);
+	}
+	public c_int TableCellRowSpan()
+	{
+		return CQt.QTextCharFormat_TableCellRowSpan((.)this.Ptr);
+	}
+	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
+	{
+		CQt.QTextCharFormat_SetTableCellColumnSpan((.)this.Ptr, tableCellColumnSpan);
+	}
+	public c_int TableCellColumnSpan()
+	{
+		return CQt.QTextCharFormat_TableCellColumnSpan((.)this.Ptr);
+	}
+	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
+	{
+		CQt.QTextCharFormat_SetFont2((.)this.Ptr, (.)font?.ObjectPtr, behavior);
+	}
+	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
+	{
+		CQt.QTextCharFormat_SetFontStyleHint2((.)this.Ptr, hint, strategy);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		CQt.QTextFormat_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		CQt.QTextFormat_Merge((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QTextFormat_IsEmpty((.)this.Ptr);
+	}
+	public c_int Type()
+	{
+		return CQt.QTextFormat_Type((.)this.Ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextFormat_ObjectIndex((.)this.Ptr);
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		CQt.QTextFormat_SetObjectIndex((.)this.Ptr, object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.Ptr, propertyId));
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		CQt.QTextFormat_SetProperty((.)this.Ptr, propertyId, (.)value?.ObjectPtr);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		CQt.QTextFormat_ClearProperty((.)this.Ptr, propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_HasProperty((.)this.Ptr, propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_BoolProperty((.)this.Ptr, propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_IntProperty((.)this.Ptr, propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_DoubleProperty((.)this.Ptr, propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		CQt.QTextFormat_StringProperty((.)this.Ptr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.Ptr, propertyId));
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.Ptr, propertyId));
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.Ptr, propertyId));
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.Ptr, propertyId));
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return CQt.QTextFormat_LengthVectorProperty((.)this.Ptr, propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		CQt.QTextFormat_SetProperty2((.)this.Ptr, propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return CQt.QTextFormat_Properties((.)this.Ptr);
+	}
+	public c_int PropertyCount()
+	{
+		return CQt.QTextFormat_PropertyCount((.)this.Ptr);
+	}
+	public void SetObjectType(c_int type)
+	{
+		CQt.QTextFormat_SetObjectType((.)this.Ptr, type);
+	}
+	public c_int ObjectType()
+	{
+		return CQt.QTextFormat_ObjectType((.)this.Ptr);
+	}
+	public bool IsCharFormat()
+	{
+		return CQt.QTextFormat_IsCharFormat((.)this.Ptr);
+	}
+	public bool IsBlockFormat()
+	{
+		return CQt.QTextFormat_IsBlockFormat((.)this.Ptr);
+	}
+	public bool IsListFormat()
+	{
+		return CQt.QTextFormat_IsListFormat((.)this.Ptr);
+	}
+	public bool IsFrameFormat()
+	{
+		return CQt.QTextFormat_IsFrameFormat((.)this.Ptr);
+	}
+	public bool IsImageFormat()
+	{
+		return CQt.QTextFormat_IsImageFormat((.)this.Ptr);
+	}
+	public bool IsTableFormat()
+	{
+		return CQt.QTextFormat_IsTableFormat((.)this.Ptr);
+	}
+	public bool IsTableCellFormat()
+	{
+		return CQt.QTextFormat_IsTableCellFormat((.)this.Ptr);
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.Ptr));
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.Ptr));
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.Ptr));
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.Ptr));
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.Ptr));
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.Ptr));
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.Ptr));
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QTextFormat_SetLayoutDirection((.)this.Ptr, direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return CQt.QTextFormat_LayoutDirection((.)this.Ptr);
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetBackground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Background()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.Ptr));
+	}
+	public void ClearBackground()
+	{
+		CQt.QTextFormat_ClearBackground((.)this.Ptr);
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		CQt.QTextFormat_SetForeground((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.Ptr));
+	}
+	public void ClearForeground()
+	{
+		CQt.QTextFormat_ClearForeground((.)this.Ptr);
+	}
+}
+class QTextTableCellFormat : IQTextTableCellFormat, IQTextCharFormat, IQTextFormat
+{
+	private QTextTableCellFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextTableCellFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QTextTableCellFormat_new();
+	}
+	public ~this()
+	{
+		CQt.QTextTableCellFormat_Delete(this.ptr);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void SetTopPadding(double padding)
+	{
+		this.ptr.SetTopPadding(padding);
+	}
+	public double TopPadding()
+	{
+		return this.ptr.TopPadding();
+	}
+	public void SetBottomPadding(double padding)
+	{
+		this.ptr.SetBottomPadding(padding);
+	}
+	public double BottomPadding()
+	{
+		return this.ptr.BottomPadding();
+	}
+	public void SetLeftPadding(double padding)
+	{
+		this.ptr.SetLeftPadding(padding);
+	}
+	public double LeftPadding()
+	{
+		return this.ptr.LeftPadding();
+	}
+	public void SetRightPadding(double padding)
+	{
+		this.ptr.SetRightPadding(padding);
+	}
+	public double RightPadding()
+	{
+		return this.ptr.RightPadding();
+	}
+	public void SetPadding(double padding)
+	{
+		this.ptr.SetPadding(padding);
+	}
+	public void SetTopBorder(double width)
+	{
+		this.ptr.SetTopBorder(width);
+	}
+	public double TopBorder()
+	{
+		return this.ptr.TopBorder();
+	}
+	public void SetBottomBorder(double width)
+	{
+		this.ptr.SetBottomBorder(width);
+	}
+	public double BottomBorder()
+	{
+		return this.ptr.BottomBorder();
+	}
+	public void SetLeftBorder(double width)
+	{
+		this.ptr.SetLeftBorder(width);
+	}
+	public double LeftBorder()
+	{
+		return this.ptr.LeftBorder();
+	}
+	public void SetRightBorder(double width)
+	{
+		this.ptr.SetRightBorder(width);
+	}
+	public double RightBorder()
+	{
+		return this.ptr.RightBorder();
+	}
+	public void SetBorder(double width)
+	{
+		this.ptr.SetBorder(width);
+	}
+	public void SetTopBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		this.ptr.SetTopBorderStyle(style);
+	}
+	public QTextFrameFormat_BorderStyle TopBorderStyle()
+	{
+		return this.ptr.TopBorderStyle();
+	}
+	public void SetBottomBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		this.ptr.SetBottomBorderStyle(style);
+	}
+	public QTextFrameFormat_BorderStyle BottomBorderStyle()
+	{
+		return this.ptr.BottomBorderStyle();
+	}
+	public void SetLeftBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		this.ptr.SetLeftBorderStyle(style);
+	}
+	public QTextFrameFormat_BorderStyle LeftBorderStyle()
+	{
+		return this.ptr.LeftBorderStyle();
+	}
+	public void SetRightBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		this.ptr.SetRightBorderStyle(style);
+	}
+	public QTextFrameFormat_BorderStyle RightBorderStyle()
+	{
+		return this.ptr.RightBorderStyle();
+	}
+	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
+	{
+		this.ptr.SetBorderStyle(style);
+	}
+	public void SetTopBorderBrush(IQBrush brush)
+	{
+		this.ptr.SetTopBorderBrush(brush);
+	}
+	public QBrush_Ptr TopBorderBrush()
+	{
+		return this.ptr.TopBorderBrush();
+	}
+	public void SetBottomBorderBrush(IQBrush brush)
+	{
+		this.ptr.SetBottomBorderBrush(brush);
+	}
+	public QBrush_Ptr BottomBorderBrush()
+	{
+		return this.ptr.BottomBorderBrush();
+	}
+	public void SetLeftBorderBrush(IQBrush brush)
+	{
+		this.ptr.SetLeftBorderBrush(brush);
+	}
+	public QBrush_Ptr LeftBorderBrush()
+	{
+		return this.ptr.LeftBorderBrush();
+	}
+	public void SetRightBorderBrush(IQBrush brush)
+	{
+		this.ptr.SetRightBorderBrush(brush);
+	}
+	public QBrush_Ptr RightBorderBrush()
+	{
+		return this.ptr.RightBorderBrush();
+	}
+	public void SetBorderBrush(IQBrush brush)
+	{
+		this.ptr.SetBorderBrush(brush);
+	}
+	public void SetFont(IQFont font)
+	{
+		this.ptr.SetFont(font);
+	}
+	public QFont_Ptr Font()
+	{
+		return this.ptr.Font();
+	}
+	public void SetFontFamily(String family)
+	{
+		this.ptr.SetFontFamily(family);
+	}
+	public void FontFamily(String outStr)
+	{
+		this.ptr.FontFamily(outStr);
+	}
+	public void SetFontFamilies(void** families)
+	{
+		this.ptr.SetFontFamilies(families);
+	}
+	public QVariant_Ptr FontFamilies()
+	{
+		return this.ptr.FontFamilies();
+	}
+	public void SetFontStyleName(String styleName)
+	{
+		this.ptr.SetFontStyleName(styleName);
+	}
+	public QVariant_Ptr FontStyleName()
+	{
+		return this.ptr.FontStyleName();
+	}
+	public void SetFontPointSize(double size)
+	{
+		this.ptr.SetFontPointSize(size);
+	}
+	public double FontPointSize()
+	{
+		return this.ptr.FontPointSize();
+	}
+	public void SetFontWeight(c_int weight)
+	{
+		this.ptr.SetFontWeight(weight);
+	}
+	public c_int FontWeight()
+	{
+		return this.ptr.FontWeight();
+	}
+	public void SetFontItalic(bool italic)
+	{
+		this.ptr.SetFontItalic(italic);
+	}
+	public bool FontItalic()
+	{
+		return this.ptr.FontItalic();
+	}
+	public void SetFontCapitalization(QFont_Capitalization capitalization)
+	{
+		this.ptr.SetFontCapitalization(capitalization);
+	}
+	public QFont_Capitalization FontCapitalization()
+	{
+		return this.ptr.FontCapitalization();
+	}
+	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
+	{
+		this.ptr.SetFontLetterSpacingType(letterSpacingType);
+	}
+	public QFont_SpacingType FontLetterSpacingType()
+	{
+		return this.ptr.FontLetterSpacingType();
+	}
+	public void SetFontLetterSpacing(double spacing)
+	{
+		this.ptr.SetFontLetterSpacing(spacing);
+	}
+	public double FontLetterSpacing()
+	{
+		return this.ptr.FontLetterSpacing();
+	}
+	public void SetFontWordSpacing(double spacing)
+	{
+		this.ptr.SetFontWordSpacing(spacing);
+	}
+	public double FontWordSpacing()
+	{
+		return this.ptr.FontWordSpacing();
+	}
+	public void SetFontUnderline(bool underline)
+	{
+		this.ptr.SetFontUnderline(underline);
+	}
+	public bool FontUnderline()
+	{
+		return this.ptr.FontUnderline();
+	}
+	public void SetFontOverline(bool overline)
+	{
+		this.ptr.SetFontOverline(overline);
+	}
+	public bool FontOverline()
+	{
+		return this.ptr.FontOverline();
+	}
+	public void SetFontStrikeOut(bool strikeOut)
+	{
+		this.ptr.SetFontStrikeOut(strikeOut);
+	}
+	public bool FontStrikeOut()
+	{
+		return this.ptr.FontStrikeOut();
+	}
+	public void SetUnderlineColor(IQColor color)
+	{
+		this.ptr.SetUnderlineColor(color);
+	}
+	public QColor_Ptr UnderlineColor()
+	{
+		return this.ptr.UnderlineColor();
+	}
+	public void SetFontFixedPitch(bool fixedPitch)
+	{
+		this.ptr.SetFontFixedPitch(fixedPitch);
+	}
+	public bool FontFixedPitch()
+	{
+		return this.ptr.FontFixedPitch();
+	}
+	public void SetFontStretch(c_int factor)
+	{
+		this.ptr.SetFontStretch(factor);
+	}
+	public c_int FontStretch()
+	{
+		return this.ptr.FontStretch();
+	}
+	public void SetFontStyleHint(QFont_StyleHint hint)
+	{
+		this.ptr.SetFontStyleHint(hint);
+	}
+	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
+	{
+		this.ptr.SetFontStyleStrategy(strategy);
+	}
+	public QFont_StyleHint FontStyleHint()
+	{
+		return this.ptr.FontStyleHint();
+	}
+	public QFont_StyleStrategy FontStyleStrategy()
+	{
+		return this.ptr.FontStyleStrategy();
+	}
+	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		this.ptr.SetFontHintingPreference(hintingPreference);
+	}
+	public QFont_HintingPreference FontHintingPreference()
+	{
+		return this.ptr.FontHintingPreference();
+	}
+	public void SetFontKerning(bool enable)
+	{
+		this.ptr.SetFontKerning(enable);
+	}
+	public bool FontKerning()
+	{
+		return this.ptr.FontKerning();
+	}
+	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
+	{
+		this.ptr.SetUnderlineStyle(style);
+	}
+	public QTextCharFormat_UnderlineStyle UnderlineStyle()
+	{
+		return this.ptr.UnderlineStyle();
+	}
+	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
+	{
+		this.ptr.SetVerticalAlignment(alignment);
+	}
+	public QTextCharFormat_VerticalAlignment VerticalAlignment()
+	{
+		return this.ptr.VerticalAlignment();
+	}
+	public void SetTextOutline(IQPen pen)
+	{
+		this.ptr.SetTextOutline(pen);
+	}
+	public QPen_Ptr TextOutline()
+	{
+		return this.ptr.TextOutline();
+	}
+	public void SetToolTip(String tip)
+	{
+		this.ptr.SetToolTip(tip);
+	}
+	public void ToolTip(String outStr)
+	{
+		this.ptr.ToolTip(outStr);
+	}
+	public void SetSuperScriptBaseline(double baseline)
+	{
+		this.ptr.SetSuperScriptBaseline(baseline);
+	}
+	public double SuperScriptBaseline()
+	{
+		return this.ptr.SuperScriptBaseline();
+	}
+	public void SetSubScriptBaseline(double baseline)
+	{
+		this.ptr.SetSubScriptBaseline(baseline);
+	}
+	public double SubScriptBaseline()
+	{
+		return this.ptr.SubScriptBaseline();
+	}
+	public void SetBaselineOffset(double baseline)
+	{
+		this.ptr.SetBaselineOffset(baseline);
+	}
+	public double BaselineOffset()
+	{
+		return this.ptr.BaselineOffset();
+	}
+	public void SetAnchor(bool anchor)
+	{
+		this.ptr.SetAnchor(anchor);
+	}
+	public bool IsAnchor()
+	{
+		return this.ptr.IsAnchor();
+	}
+	public void SetAnchorHref(String value)
+	{
+		this.ptr.SetAnchorHref(value);
+	}
+	public void AnchorHref(String outStr)
+	{
+		this.ptr.AnchorHref(outStr);
+	}
+	public void SetAnchorNames(void** names)
+	{
+		this.ptr.SetAnchorNames(names);
+	}
+	public void* AnchorNames()
+	{
+		return this.ptr.AnchorNames();
+	}
+	public void SetTableCellRowSpan(c_int tableCellRowSpan)
+	{
+		this.ptr.SetTableCellRowSpan(tableCellRowSpan);
+	}
+	public c_int TableCellRowSpan()
+	{
+		return this.ptr.TableCellRowSpan();
+	}
+	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
+	{
+		this.ptr.SetTableCellColumnSpan(tableCellColumnSpan);
+	}
+	public c_int TableCellColumnSpan()
+	{
+		return this.ptr.TableCellColumnSpan();
+	}
+	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
+	{
+		this.ptr.SetFont2(font, behavior);
+	}
+	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
+	{
+		this.ptr.SetFontStyleHint2(hint, strategy);
+	}
+	public void Swap(IQTextFormat other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Merge(IQTextFormat other)
+	{
+		this.ptr.Merge(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int ObjectIndex()
+	{
+		return this.ptr.ObjectIndex();
+	}
+	public void SetObjectIndex(c_int object)
+	{
+		this.ptr.SetObjectIndex(object);
+	}
+	public QVariant_Ptr Property(c_int propertyId)
+	{
+		return this.ptr.Property(propertyId);
+	}
+	public void SetProperty(c_int propertyId, IQVariant value)
+	{
+		this.ptr.SetProperty(propertyId, value);
+	}
+	public void ClearProperty(c_int propertyId)
+	{
+		this.ptr.ClearProperty(propertyId);
+	}
+	public bool HasProperty(c_int propertyId)
+	{
+		return this.ptr.HasProperty(propertyId);
+	}
+	public bool BoolProperty(c_int propertyId)
+	{
+		return this.ptr.BoolProperty(propertyId);
+	}
+	public c_int IntProperty(c_int propertyId)
+	{
+		return this.ptr.IntProperty(propertyId);
+	}
+	public double DoubleProperty(c_int propertyId)
+	{
+		return this.ptr.DoubleProperty(propertyId);
+	}
+	public void StringProperty(String outStr, c_int propertyId)
+	{
+		this.ptr.StringProperty(outStr, propertyId);
+	}
+	public QColor_Ptr ColorProperty(c_int propertyId)
+	{
+		return this.ptr.ColorProperty(propertyId);
+	}
+	public QPen_Ptr PenProperty(c_int propertyId)
+	{
+		return this.ptr.PenProperty(propertyId);
+	}
+	public QBrush_Ptr BrushProperty(c_int propertyId)
+	{
+		return this.ptr.BrushProperty(propertyId);
+	}
+	public QTextLength_Ptr LengthProperty(c_int propertyId)
+	{
+		return this.ptr.LengthProperty(propertyId);
+	}
+	public void* LengthVectorProperty(c_int propertyId)
+	{
+		return this.ptr.LengthVectorProperty(propertyId);
+	}
+	public void SetProperty2(c_int propertyId, void** lengths)
+	{
+		this.ptr.SetProperty2(propertyId, lengths);
+	}
+	public void* Properties()
+	{
+		return this.ptr.Properties();
+	}
+	public c_int PropertyCount()
+	{
+		return this.ptr.PropertyCount();
+	}
+	public void SetObjectType(c_int type)
+	{
+		this.ptr.SetObjectType(type);
+	}
+	public c_int ObjectType()
+	{
+		return this.ptr.ObjectType();
+	}
+	public bool IsCharFormat()
+	{
+		return this.ptr.IsCharFormat();
+	}
+	public bool IsBlockFormat()
+	{
+		return this.ptr.IsBlockFormat();
+	}
+	public bool IsListFormat()
+	{
+		return this.ptr.IsListFormat();
+	}
+	public bool IsFrameFormat()
+	{
+		return this.ptr.IsFrameFormat();
+	}
+	public bool IsImageFormat()
+	{
+		return this.ptr.IsImageFormat();
+	}
+	public bool IsTableFormat()
+	{
+		return this.ptr.IsTableFormat();
+	}
+	public bool IsTableCellFormat()
+	{
+		return this.ptr.IsTableCellFormat();
+	}
+	public QTextBlockFormat_Ptr ToBlockFormat()
+	{
+		return this.ptr.ToBlockFormat();
+	}
+	public QTextCharFormat_Ptr ToCharFormat()
+	{
+		return this.ptr.ToCharFormat();
+	}
+	public QTextListFormat_Ptr ToListFormat()
+	{
+		return this.ptr.ToListFormat();
+	}
+	public QTextTableFormat_Ptr ToTableFormat()
+	{
+		return this.ptr.ToTableFormat();
+	}
+	public QTextFrameFormat_Ptr ToFrameFormat()
+	{
+		return this.ptr.ToFrameFormat();
+	}
+	public QTextImageFormat_Ptr ToImageFormat()
+	{
+		return this.ptr.ToImageFormat();
+	}
+	public QTextTableCellFormat_Ptr ToTableCellFormat()
+	{
+		return this.ptr.ToTableCellFormat();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public void SetBackground(IQBrush brush)
+	{
+		this.ptr.SetBackground(brush);
+	}
+	public QBrush_Ptr Background()
+	{
+		return this.ptr.Background();
+	}
+	public void ClearBackground()
+	{
+		this.ptr.ClearBackground();
+	}
+	public void SetForeground(IQBrush brush)
+	{
+		this.ptr.SetForeground(brush);
+	}
+	public QBrush_Ptr Foreground()
+	{
+		return this.ptr.Foreground();
+	}
+	public void ClearForeground()
+	{
+		this.ptr.ClearForeground();
+	}
+}
+interface IQTextTableCellFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -3233,630 +6797,6 @@ extension CQt
 	public static extern void* QTextTableCellFormat_RightBorderBrush(void* self);
 	[LinkName("QTextTableCellFormat_SetBorderBrush")]
 	public static extern void QTextTableCellFormat_SetBorderBrush(void* self, void** brush);
-}
-class QTextTableCellFormat : IQTextTableCellFormat, IQTextCharFormat, IQTextFormat
-{
-	private QTextTableCellFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QTextTableCellFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QTextTableCellFormat_new();
-	}
-	public ~this()
-	{
-		CQt.QTextTableCellFormat_Delete(this.ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QTextTableCellFormat_IsValid((.)this.ptr.Ptr);
-	}
-	public void SetTopPadding(double padding)
-	{
-		CQt.QTextTableCellFormat_SetTopPadding((.)this.ptr.Ptr, padding);
-	}
-	public double TopPadding()
-	{
-		return CQt.QTextTableCellFormat_TopPadding((.)this.ptr.Ptr);
-	}
-	public void SetBottomPadding(double padding)
-	{
-		CQt.QTextTableCellFormat_SetBottomPadding((.)this.ptr.Ptr, padding);
-	}
-	public double BottomPadding()
-	{
-		return CQt.QTextTableCellFormat_BottomPadding((.)this.ptr.Ptr);
-	}
-	public void SetLeftPadding(double padding)
-	{
-		CQt.QTextTableCellFormat_SetLeftPadding((.)this.ptr.Ptr, padding);
-	}
-	public double LeftPadding()
-	{
-		return CQt.QTextTableCellFormat_LeftPadding((.)this.ptr.Ptr);
-	}
-	public void SetRightPadding(double padding)
-	{
-		CQt.QTextTableCellFormat_SetRightPadding((.)this.ptr.Ptr, padding);
-	}
-	public double RightPadding()
-	{
-		return CQt.QTextTableCellFormat_RightPadding((.)this.ptr.Ptr);
-	}
-	public void SetPadding(double padding)
-	{
-		CQt.QTextTableCellFormat_SetPadding((.)this.ptr.Ptr, padding);
-	}
-	public void SetTopBorder(double width)
-	{
-		CQt.QTextTableCellFormat_SetTopBorder((.)this.ptr.Ptr, width);
-	}
-	public double TopBorder()
-	{
-		return CQt.QTextTableCellFormat_TopBorder((.)this.ptr.Ptr);
-	}
-	public void SetBottomBorder(double width)
-	{
-		CQt.QTextTableCellFormat_SetBottomBorder((.)this.ptr.Ptr, width);
-	}
-	public double BottomBorder()
-	{
-		return CQt.QTextTableCellFormat_BottomBorder((.)this.ptr.Ptr);
-	}
-	public void SetLeftBorder(double width)
-	{
-		CQt.QTextTableCellFormat_SetLeftBorder((.)this.ptr.Ptr, width);
-	}
-	public double LeftBorder()
-	{
-		return CQt.QTextTableCellFormat_LeftBorder((.)this.ptr.Ptr);
-	}
-	public void SetRightBorder(double width)
-	{
-		CQt.QTextTableCellFormat_SetRightBorder((.)this.ptr.Ptr, width);
-	}
-	public double RightBorder()
-	{
-		return CQt.QTextTableCellFormat_RightBorder((.)this.ptr.Ptr);
-	}
-	public void SetBorder(double width)
-	{
-		CQt.QTextTableCellFormat_SetBorder((.)this.ptr.Ptr, width);
-	}
-	public void SetTopBorderStyle(QTextFrameFormat_BorderStyle style)
-	{
-		CQt.QTextTableCellFormat_SetTopBorderStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextFrameFormat_BorderStyle TopBorderStyle()
-	{
-		return CQt.QTextTableCellFormat_TopBorderStyle((.)this.ptr.Ptr);
-	}
-	public void SetBottomBorderStyle(QTextFrameFormat_BorderStyle style)
-	{
-		CQt.QTextTableCellFormat_SetBottomBorderStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextFrameFormat_BorderStyle BottomBorderStyle()
-	{
-		return CQt.QTextTableCellFormat_BottomBorderStyle((.)this.ptr.Ptr);
-	}
-	public void SetLeftBorderStyle(QTextFrameFormat_BorderStyle style)
-	{
-		CQt.QTextTableCellFormat_SetLeftBorderStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextFrameFormat_BorderStyle LeftBorderStyle()
-	{
-		return CQt.QTextTableCellFormat_LeftBorderStyle((.)this.ptr.Ptr);
-	}
-	public void SetRightBorderStyle(QTextFrameFormat_BorderStyle style)
-	{
-		CQt.QTextTableCellFormat_SetRightBorderStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextFrameFormat_BorderStyle RightBorderStyle()
-	{
-		return CQt.QTextTableCellFormat_RightBorderStyle((.)this.ptr.Ptr);
-	}
-	public void SetBorderStyle(QTextFrameFormat_BorderStyle style)
-	{
-		CQt.QTextTableCellFormat_SetBorderStyle((.)this.ptr.Ptr, style);
-	}
-	public void SetTopBorderBrush(IQBrush brush)
-	{
-		CQt.QTextTableCellFormat_SetTopBorderBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr TopBorderBrush()
-	{
-		return QBrush_Ptr(CQt.QTextTableCellFormat_TopBorderBrush((.)this.ptr.Ptr));
-	}
-	public void SetBottomBorderBrush(IQBrush brush)
-	{
-		CQt.QTextTableCellFormat_SetBottomBorderBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr BottomBorderBrush()
-	{
-		return QBrush_Ptr(CQt.QTextTableCellFormat_BottomBorderBrush((.)this.ptr.Ptr));
-	}
-	public void SetLeftBorderBrush(IQBrush brush)
-	{
-		CQt.QTextTableCellFormat_SetLeftBorderBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr LeftBorderBrush()
-	{
-		return QBrush_Ptr(CQt.QTextTableCellFormat_LeftBorderBrush((.)this.ptr.Ptr));
-	}
-	public void SetRightBorderBrush(IQBrush brush)
-	{
-		CQt.QTextTableCellFormat_SetRightBorderBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr RightBorderBrush()
-	{
-		return QBrush_Ptr(CQt.QTextTableCellFormat_RightBorderBrush((.)this.ptr.Ptr));
-	}
-	public void SetBorderBrush(IQBrush brush)
-	{
-		CQt.QTextTableCellFormat_SetBorderBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public void SetFont(IQFont font)
-	{
-		CQt.QTextCharFormat_SetFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
-	}
-	public QFont_Ptr Font()
-	{
-		return QFont_Ptr(CQt.QTextCharFormat_Font((.)this.ptr.Ptr));
-	}
-	public void SetFontFamily(String family)
-	{
-		CQt.QTextCharFormat_SetFontFamily((.)this.ptr.Ptr, libqt_string(family));
-	}
-	public void FontFamily(String outStr)
-	{
-		CQt.QTextCharFormat_FontFamily((.)this.ptr.Ptr);
-	}
-	public void SetFontFamilies(void** families)
-	{
-		CQt.QTextCharFormat_SetFontFamilies((.)this.ptr.Ptr, families);
-	}
-	public QVariant_Ptr FontFamilies()
-	{
-		return QVariant_Ptr(CQt.QTextCharFormat_FontFamilies((.)this.ptr.Ptr));
-	}
-	public void SetFontStyleName(String styleName)
-	{
-		CQt.QTextCharFormat_SetFontStyleName((.)this.ptr.Ptr, libqt_string(styleName));
-	}
-	public QVariant_Ptr FontStyleName()
-	{
-		return QVariant_Ptr(CQt.QTextCharFormat_FontStyleName((.)this.ptr.Ptr));
-	}
-	public void SetFontPointSize(double size)
-	{
-		CQt.QTextCharFormat_SetFontPointSize((.)this.ptr.Ptr, size);
-	}
-	public double FontPointSize()
-	{
-		return CQt.QTextCharFormat_FontPointSize((.)this.ptr.Ptr);
-	}
-	public void SetFontWeight(c_int weight)
-	{
-		CQt.QTextCharFormat_SetFontWeight((.)this.ptr.Ptr, weight);
-	}
-	public c_int FontWeight()
-	{
-		return CQt.QTextCharFormat_FontWeight((.)this.ptr.Ptr);
-	}
-	public void SetFontItalic(bool italic)
-	{
-		CQt.QTextCharFormat_SetFontItalic((.)this.ptr.Ptr, italic);
-	}
-	public bool FontItalic()
-	{
-		return CQt.QTextCharFormat_FontItalic((.)this.ptr.Ptr);
-	}
-	public void SetFontCapitalization(QFont_Capitalization capitalization)
-	{
-		CQt.QTextCharFormat_SetFontCapitalization((.)this.ptr.Ptr, capitalization);
-	}
-	public QFont_Capitalization FontCapitalization()
-	{
-		return CQt.QTextCharFormat_FontCapitalization((.)this.ptr.Ptr);
-	}
-	public void SetFontLetterSpacingType(QFont_SpacingType letterSpacingType)
-	{
-		CQt.QTextCharFormat_SetFontLetterSpacingType((.)this.ptr.Ptr, letterSpacingType);
-	}
-	public QFont_SpacingType FontLetterSpacingType()
-	{
-		return CQt.QTextCharFormat_FontLetterSpacingType((.)this.ptr.Ptr);
-	}
-	public void SetFontLetterSpacing(double spacing)
-	{
-		CQt.QTextCharFormat_SetFontLetterSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public double FontLetterSpacing()
-	{
-		return CQt.QTextCharFormat_FontLetterSpacing((.)this.ptr.Ptr);
-	}
-	public void SetFontWordSpacing(double spacing)
-	{
-		CQt.QTextCharFormat_SetFontWordSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public double FontWordSpacing()
-	{
-		return CQt.QTextCharFormat_FontWordSpacing((.)this.ptr.Ptr);
-	}
-	public void SetFontUnderline(bool underline)
-	{
-		CQt.QTextCharFormat_SetFontUnderline((.)this.ptr.Ptr, underline);
-	}
-	public bool FontUnderline()
-	{
-		return CQt.QTextCharFormat_FontUnderline((.)this.ptr.Ptr);
-	}
-	public void SetFontOverline(bool overline)
-	{
-		CQt.QTextCharFormat_SetFontOverline((.)this.ptr.Ptr, overline);
-	}
-	public bool FontOverline()
-	{
-		return CQt.QTextCharFormat_FontOverline((.)this.ptr.Ptr);
-	}
-	public void SetFontStrikeOut(bool strikeOut)
-	{
-		CQt.QTextCharFormat_SetFontStrikeOut((.)this.ptr.Ptr, strikeOut);
-	}
-	public bool FontStrikeOut()
-	{
-		return CQt.QTextCharFormat_FontStrikeOut((.)this.ptr.Ptr);
-	}
-	public void SetUnderlineColor(IQColor color)
-	{
-		CQt.QTextCharFormat_SetUnderlineColor((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public QColor_Ptr UnderlineColor()
-	{
-		return QColor_Ptr(CQt.QTextCharFormat_UnderlineColor((.)this.ptr.Ptr));
-	}
-	public void SetFontFixedPitch(bool fixedPitch)
-	{
-		CQt.QTextCharFormat_SetFontFixedPitch((.)this.ptr.Ptr, fixedPitch);
-	}
-	public bool FontFixedPitch()
-	{
-		return CQt.QTextCharFormat_FontFixedPitch((.)this.ptr.Ptr);
-	}
-	public void SetFontStretch(c_int factor)
-	{
-		CQt.QTextCharFormat_SetFontStretch((.)this.ptr.Ptr, factor);
-	}
-	public c_int FontStretch()
-	{
-		return CQt.QTextCharFormat_FontStretch((.)this.ptr.Ptr);
-	}
-	public void SetFontStyleHint(QFont_StyleHint hint)
-	{
-		CQt.QTextCharFormat_SetFontStyleHint((.)this.ptr.Ptr, hint);
-	}
-	public void SetFontStyleStrategy(QFont_StyleStrategy strategy)
-	{
-		CQt.QTextCharFormat_SetFontStyleStrategy((.)this.ptr.Ptr, strategy);
-	}
-	public QFont_StyleHint FontStyleHint()
-	{
-		return CQt.QTextCharFormat_FontStyleHint((.)this.ptr.Ptr);
-	}
-	public QFont_StyleStrategy FontStyleStrategy()
-	{
-		return CQt.QTextCharFormat_FontStyleStrategy((.)this.ptr.Ptr);
-	}
-	public void SetFontHintingPreference(QFont_HintingPreference hintingPreference)
-	{
-		CQt.QTextCharFormat_SetFontHintingPreference((.)this.ptr.Ptr, hintingPreference);
-	}
-	public QFont_HintingPreference FontHintingPreference()
-	{
-		return CQt.QTextCharFormat_FontHintingPreference((.)this.ptr.Ptr);
-	}
-	public void SetFontKerning(bool enable)
-	{
-		CQt.QTextCharFormat_SetFontKerning((.)this.ptr.Ptr, enable);
-	}
-	public bool FontKerning()
-	{
-		return CQt.QTextCharFormat_FontKerning((.)this.ptr.Ptr);
-	}
-	public void SetUnderlineStyle(QTextCharFormat_UnderlineStyle style)
-	{
-		CQt.QTextCharFormat_SetUnderlineStyle((.)this.ptr.Ptr, style);
-	}
-	public QTextCharFormat_UnderlineStyle UnderlineStyle()
-	{
-		return CQt.QTextCharFormat_UnderlineStyle((.)this.ptr.Ptr);
-	}
-	public void SetVerticalAlignment(QTextCharFormat_VerticalAlignment alignment)
-	{
-		CQt.QTextCharFormat_SetVerticalAlignment((.)this.ptr.Ptr, alignment);
-	}
-	public QTextCharFormat_VerticalAlignment VerticalAlignment()
-	{
-		return CQt.QTextCharFormat_VerticalAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextOutline(IQPen pen)
-	{
-		CQt.QTextCharFormat_SetTextOutline((.)this.ptr.Ptr, (.)pen?.ObjectPtr);
-	}
-	public QPen_Ptr TextOutline()
-	{
-		return QPen_Ptr(CQt.QTextCharFormat_TextOutline((.)this.ptr.Ptr));
-	}
-	public void SetToolTip(String tip)
-	{
-		CQt.QTextCharFormat_SetToolTip((.)this.ptr.Ptr, libqt_string(tip));
-	}
-	public void ToolTip(String outStr)
-	{
-		CQt.QTextCharFormat_ToolTip((.)this.ptr.Ptr);
-	}
-	public void SetSuperScriptBaseline(double baseline)
-	{
-		CQt.QTextCharFormat_SetSuperScriptBaseline((.)this.ptr.Ptr, baseline);
-	}
-	public double SuperScriptBaseline()
-	{
-		return CQt.QTextCharFormat_SuperScriptBaseline((.)this.ptr.Ptr);
-	}
-	public void SetSubScriptBaseline(double baseline)
-	{
-		CQt.QTextCharFormat_SetSubScriptBaseline((.)this.ptr.Ptr, baseline);
-	}
-	public double SubScriptBaseline()
-	{
-		return CQt.QTextCharFormat_SubScriptBaseline((.)this.ptr.Ptr);
-	}
-	public void SetBaselineOffset(double baseline)
-	{
-		CQt.QTextCharFormat_SetBaselineOffset((.)this.ptr.Ptr, baseline);
-	}
-	public double BaselineOffset()
-	{
-		return CQt.QTextCharFormat_BaselineOffset((.)this.ptr.Ptr);
-	}
-	public void SetAnchor(bool anchor)
-	{
-		CQt.QTextCharFormat_SetAnchor((.)this.ptr.Ptr, anchor);
-	}
-	public bool IsAnchor()
-	{
-		return CQt.QTextCharFormat_IsAnchor((.)this.ptr.Ptr);
-	}
-	public void SetAnchorHref(String value)
-	{
-		CQt.QTextCharFormat_SetAnchorHref((.)this.ptr.Ptr, libqt_string(value));
-	}
-	public void AnchorHref(String outStr)
-	{
-		CQt.QTextCharFormat_AnchorHref((.)this.ptr.Ptr);
-	}
-	public void SetAnchorNames(void** names)
-	{
-		CQt.QTextCharFormat_SetAnchorNames((.)this.ptr.Ptr, names);
-	}
-	public void* AnchorNames()
-	{
-		return CQt.QTextCharFormat_AnchorNames((.)this.ptr.Ptr);
-	}
-	public void SetTableCellRowSpan(c_int tableCellRowSpan)
-	{
-		CQt.QTextCharFormat_SetTableCellRowSpan((.)this.ptr.Ptr, tableCellRowSpan);
-	}
-	public c_int TableCellRowSpan()
-	{
-		return CQt.QTextCharFormat_TableCellRowSpan((.)this.ptr.Ptr);
-	}
-	public void SetTableCellColumnSpan(c_int tableCellColumnSpan)
-	{
-		CQt.QTextCharFormat_SetTableCellColumnSpan((.)this.ptr.Ptr, tableCellColumnSpan);
-	}
-	public c_int TableCellColumnSpan()
-	{
-		return CQt.QTextCharFormat_TableCellColumnSpan((.)this.ptr.Ptr);
-	}
-	public void SetFont2(IQFont font, QTextCharFormat_FontPropertiesInheritanceBehavior behavior)
-	{
-		CQt.QTextCharFormat_SetFont2((.)this.ptr.Ptr, (.)font?.ObjectPtr, behavior);
-	}
-	public void SetFontStyleHint2(QFont_StyleHint hint, QFont_StyleStrategy strategy)
-	{
-		CQt.QTextCharFormat_SetFontStyleHint2((.)this.ptr.Ptr, hint, strategy);
-	}
-	public void Swap(IQTextFormat other)
-	{
-		CQt.QTextFormat_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Merge(IQTextFormat other)
-	{
-		CQt.QTextFormat_Merge((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QTextFormat_IsEmpty((.)this.ptr.Ptr);
-	}
-	public c_int Type()
-	{
-		return CQt.QTextFormat_Type((.)this.ptr.Ptr);
-	}
-	public c_int ObjectIndex()
-	{
-		return CQt.QTextFormat_ObjectIndex((.)this.ptr.Ptr);
-	}
-	public void SetObjectIndex(c_int object)
-	{
-		CQt.QTextFormat_SetObjectIndex((.)this.ptr.Ptr, object);
-	}
-	public QVariant_Ptr Property(c_int propertyId)
-	{
-		return QVariant_Ptr(CQt.QTextFormat_Property((.)this.ptr.Ptr, propertyId));
-	}
-	public void SetProperty(c_int propertyId, IQVariant value)
-	{
-		CQt.QTextFormat_SetProperty((.)this.ptr.Ptr, propertyId, (.)value?.ObjectPtr);
-	}
-	public void ClearProperty(c_int propertyId)
-	{
-		CQt.QTextFormat_ClearProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool HasProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_HasProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public bool BoolProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_BoolProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public c_int IntProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_IntProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public double DoubleProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_DoubleProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void StringProperty(String outStr, c_int propertyId)
-	{
-		CQt.QTextFormat_StringProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public QColor_Ptr ColorProperty(c_int propertyId)
-	{
-		return QColor_Ptr(CQt.QTextFormat_ColorProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QPen_Ptr PenProperty(c_int propertyId)
-	{
-		return QPen_Ptr(CQt.QTextFormat_PenProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QBrush_Ptr BrushProperty(c_int propertyId)
-	{
-		return QBrush_Ptr(CQt.QTextFormat_BrushProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public QTextLength_Ptr LengthProperty(c_int propertyId)
-	{
-		return QTextLength_Ptr(CQt.QTextFormat_LengthProperty((.)this.ptr.Ptr, propertyId));
-	}
-	public void* LengthVectorProperty(c_int propertyId)
-	{
-		return CQt.QTextFormat_LengthVectorProperty((.)this.ptr.Ptr, propertyId);
-	}
-	public void SetProperty2(c_int propertyId, void** lengths)
-	{
-		CQt.QTextFormat_SetProperty2((.)this.ptr.Ptr, propertyId, lengths);
-	}
-	public void* Properties()
-	{
-		return CQt.QTextFormat_Properties((.)this.ptr.Ptr);
-	}
-	public c_int PropertyCount()
-	{
-		return CQt.QTextFormat_PropertyCount((.)this.ptr.Ptr);
-	}
-	public void SetObjectType(c_int type)
-	{
-		CQt.QTextFormat_SetObjectType((.)this.ptr.Ptr, type);
-	}
-	public c_int ObjectType()
-	{
-		return CQt.QTextFormat_ObjectType((.)this.ptr.Ptr);
-	}
-	public bool IsCharFormat()
-	{
-		return CQt.QTextFormat_IsCharFormat((.)this.ptr.Ptr);
-	}
-	public bool IsBlockFormat()
-	{
-		return CQt.QTextFormat_IsBlockFormat((.)this.ptr.Ptr);
-	}
-	public bool IsListFormat()
-	{
-		return CQt.QTextFormat_IsListFormat((.)this.ptr.Ptr);
-	}
-	public bool IsFrameFormat()
-	{
-		return CQt.QTextFormat_IsFrameFormat((.)this.ptr.Ptr);
-	}
-	public bool IsImageFormat()
-	{
-		return CQt.QTextFormat_IsImageFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableFormat()
-	{
-		return CQt.QTextFormat_IsTableFormat((.)this.ptr.Ptr);
-	}
-	public bool IsTableCellFormat()
-	{
-		return CQt.QTextFormat_IsTableCellFormat((.)this.ptr.Ptr);
-	}
-	public QTextBlockFormat_Ptr ToBlockFormat()
-	{
-		return QTextBlockFormat_Ptr(CQt.QTextFormat_ToBlockFormat((.)this.ptr.Ptr));
-	}
-	public QTextCharFormat_Ptr ToCharFormat()
-	{
-		return QTextCharFormat_Ptr(CQt.QTextFormat_ToCharFormat((.)this.ptr.Ptr));
-	}
-	public QTextListFormat_Ptr ToListFormat()
-	{
-		return QTextListFormat_Ptr(CQt.QTextFormat_ToListFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableFormat_Ptr ToTableFormat()
-	{
-		return QTextTableFormat_Ptr(CQt.QTextFormat_ToTableFormat((.)this.ptr.Ptr));
-	}
-	public QTextFrameFormat_Ptr ToFrameFormat()
-	{
-		return QTextFrameFormat_Ptr(CQt.QTextFormat_ToFrameFormat((.)this.ptr.Ptr));
-	}
-	public QTextImageFormat_Ptr ToImageFormat()
-	{
-		return QTextImageFormat_Ptr(CQt.QTextFormat_ToImageFormat((.)this.ptr.Ptr));
-	}
-	public QTextTableCellFormat_Ptr ToTableCellFormat()
-	{
-		return QTextTableCellFormat_Ptr(CQt.QTextFormat_ToTableCellFormat((.)this.ptr.Ptr));
-	}
-	public void SetLayoutDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QTextFormat_SetLayoutDirection((.)this.ptr.Ptr, direction);
-	}
-	public Qt_LayoutDirection LayoutDirection()
-	{
-		return CQt.QTextFormat_LayoutDirection((.)this.ptr.Ptr);
-	}
-	public void SetBackground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetBackground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Background()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Background((.)this.ptr.Ptr));
-	}
-	public void ClearBackground()
-	{
-		CQt.QTextFormat_ClearBackground((.)this.ptr.Ptr);
-	}
-	public void SetForeground(IQBrush brush)
-	{
-		CQt.QTextFormat_SetForeground((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public QBrush_Ptr Foreground()
-	{
-		return QBrush_Ptr(CQt.QTextFormat_Foreground((.)this.ptr.Ptr));
-	}
-	public void ClearForeground()
-	{
-		CQt.QTextFormat_ClearForeground((.)this.ptr.Ptr);
-	}
-}
-interface IQTextTableCellFormat : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QTextLength_Type

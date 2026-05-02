@@ -14,6 +14,82 @@ struct QStringConverter_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsValid()
+	{
+		return CQt.QStringConverter_IsValid((.)this.Ptr);
+	}
+	public void ResetState()
+	{
+		CQt.QStringConverter_ResetState((.)this.Ptr);
+	}
+	public bool HasError()
+	{
+		return CQt.QStringConverter_HasError((.)this.Ptr);
+	}
+	public c_char* Name()
+	{
+		return CQt.QStringConverter_Name((.)this.Ptr);
+	}
+	public QStringConverter_Encoding EncodingForName(c_char* name)
+	{
+		return CQt.QStringConverter_EncodingForName(name);
+	}
+	public c_char* NameForEncoding(QStringConverter_Encoding e)
+	{
+		return CQt.QStringConverter_NameForEncoding(e);
+	}
+	public QStringConverter_Encoding EncodingForData(void* data)
+	{
+		return CQt.QStringConverter_EncodingForData(data);
+	}
+	public QStringConverter_Encoding EncodingForHtml(void* data)
+	{
+		return CQt.QStringConverter_EncodingForHtml(data);
+	}
+}
+class QStringConverter : IQStringConverter
+{
+	private QStringConverter_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStringConverter_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void ResetState()
+	{
+		this.ptr.ResetState();
+	}
+	public bool HasError()
+	{
+		return this.ptr.HasError();
+	}
+	public c_char* Name()
+	{
+		return this.ptr.Name();
+	}
+	public QStringConverter_Encoding EncodingForName(c_char* name)
+	{
+		return this.ptr.EncodingForName(name);
+	}
+	public c_char* NameForEncoding(QStringConverter_Encoding e)
+	{
+		return this.ptr.NameForEncoding(e);
+	}
+	public QStringConverter_Encoding EncodingForData(void* data)
+	{
+		return this.ptr.EncodingForData(data);
+	}
+	public QStringConverter_Encoding EncodingForHtml(void* data)
+	{
+		return this.ptr.EncodingForHtml(data);
+	}
+}
+interface IQStringConverter : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -33,50 +109,6 @@ extension CQt
 	public static extern QStringConverter_Encoding QStringConverter_EncodingForData(void* data);
 	[LinkName("QStringConverter_EncodingForHtml")]
 	public static extern QStringConverter_Encoding QStringConverter_EncodingForHtml(void* data);
-}
-class QStringConverter : IQStringConverter
-{
-	private QStringConverter_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStringConverter_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public bool IsValid()
-	{
-		return CQt.QStringConverter_IsValid((.)this.ptr.Ptr);
-	}
-	public void ResetState()
-	{
-		CQt.QStringConverter_ResetState((.)this.ptr.Ptr);
-	}
-	public bool HasError()
-	{
-		return CQt.QStringConverter_HasError((.)this.ptr.Ptr);
-	}
-	public c_char* Name()
-	{
-		return CQt.QStringConverter_Name((.)this.ptr.Ptr);
-	}
-	public QStringConverter_Encoding EncodingForName(c_char* name)
-	{
-		return CQt.QStringConverter_EncodingForName(name);
-	}
-	public c_char* NameForEncoding(QStringConverter_Encoding e)
-	{
-		return CQt.QStringConverter_NameForEncoding(e);
-	}
-	public QStringConverter_Encoding EncodingForData(void* data)
-	{
-		return CQt.QStringConverter_EncodingForData(data);
-	}
-	public QStringConverter_Encoding EncodingForHtml(void* data)
-	{
-		return CQt.QStringConverter_EncodingForHtml(data);
-	}
-}
-interface IQStringConverter : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QStringConverterBase_Flag

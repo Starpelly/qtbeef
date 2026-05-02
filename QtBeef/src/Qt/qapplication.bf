@@ -14,165 +14,17 @@ struct QApplication_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QApplication_new")]
-	public static extern QApplication_Ptr QApplication_new(c_int* argc, c_char** argv);
-	[LinkName("QApplication_new2")]
-	public static extern QApplication_Ptr QApplication_new2(c_int* argc, c_char** argv, c_int param3);
-	[LinkName("QApplication_Delete")]
-	public static extern void QApplication_Delete(QApplication_Ptr self);
-	[LinkName("QApplication_MetaObject")]
-	public static extern void** QApplication_MetaObject(void* self);
-	[LinkName("QApplication_Qt_Metacast")]
-	public static extern void* QApplication_Qt_Metacast(void* self, c_char* param1);
-	[LinkName("QApplication_Qt_Metacall")]
-	public static extern c_int QApplication_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
-	[LinkName("QApplication_Tr")]
-	public static extern libqt_string QApplication_Tr(c_char* s);
-	[LinkName("QApplication_Style")]
-	public static extern void** QApplication_Style();
-	[LinkName("QApplication_SetStyle")]
-	public static extern void QApplication_SetStyle(void** style);
-	[LinkName("QApplication_SetStyle2")]
-	public static extern void** QApplication_SetStyle2(libqt_string style);
-	[LinkName("QApplication_Palette")]
-	public static extern void* QApplication_Palette(void** param1);
-	[LinkName("QApplication_Palette2")]
-	public static extern void* QApplication_Palette2(c_char* className);
-	[LinkName("QApplication_SetPalette")]
-	public static extern void QApplication_SetPalette(void** param1);
-	[LinkName("QApplication_Font")]
-	public static extern void* QApplication_Font();
-	[LinkName("QApplication_Font2")]
-	public static extern void* QApplication_Font2(void** param1);
-	[LinkName("QApplication_Font3")]
-	public static extern void* QApplication_Font3(c_char* className);
-	[LinkName("QApplication_SetFont")]
-	public static extern void QApplication_SetFont(void** param1);
-	[LinkName("QApplication_FontMetrics")]
-	public static extern void* QApplication_FontMetrics();
-	[LinkName("QApplication_AllWidgets")]
-	public static extern void* QApplication_AllWidgets();
-	[LinkName("QApplication_TopLevelWidgets")]
-	public static extern void* QApplication_TopLevelWidgets();
-	[LinkName("QApplication_ActivePopupWidget")]
-	public static extern void** QApplication_ActivePopupWidget();
-	[LinkName("QApplication_ActiveModalWidget")]
-	public static extern void** QApplication_ActiveModalWidget();
-	[LinkName("QApplication_FocusWidget")]
-	public static extern void** QApplication_FocusWidget();
-	[LinkName("QApplication_ActiveWindow")]
-	public static extern void** QApplication_ActiveWindow();
-	[LinkName("QApplication_SetActiveWindow")]
-	public static extern void QApplication_SetActiveWindow(void** act);
-	[LinkName("QApplication_WidgetAt")]
-	public static extern void** QApplication_WidgetAt(void** p);
-	[LinkName("QApplication_WidgetAt2")]
-	public static extern void** QApplication_WidgetAt2(c_int x, c_int y);
-	[LinkName("QApplication_TopLevelAt")]
-	public static extern void** QApplication_TopLevelAt(void** p);
-	[LinkName("QApplication_TopLevelAt2")]
-	public static extern void** QApplication_TopLevelAt2(c_int x, c_int y);
-	[LinkName("QApplication_Beep")]
-	public static extern void QApplication_Beep();
-	[LinkName("QApplication_Alert")]
-	public static extern void QApplication_Alert(void** widget);
-	[LinkName("QApplication_SetCursorFlashTime")]
-	public static extern void QApplication_SetCursorFlashTime(c_int cursorFlashTime);
-	[LinkName("QApplication_CursorFlashTime")]
-	public static extern c_int QApplication_CursorFlashTime();
-	[LinkName("QApplication_SetDoubleClickInterval")]
-	public static extern void QApplication_SetDoubleClickInterval(c_int doubleClickInterval);
-	[LinkName("QApplication_DoubleClickInterval")]
-	public static extern c_int QApplication_DoubleClickInterval();
-	[LinkName("QApplication_SetKeyboardInputInterval")]
-	public static extern void QApplication_SetKeyboardInputInterval(c_int keyboardInputInterval);
-	[LinkName("QApplication_KeyboardInputInterval")]
-	public static extern c_int QApplication_KeyboardInputInterval();
-	[LinkName("QApplication_SetWheelScrollLines")]
-	public static extern void QApplication_SetWheelScrollLines(c_int wheelScrollLines);
-	[LinkName("QApplication_WheelScrollLines")]
-	public static extern c_int QApplication_WheelScrollLines();
-	[LinkName("QApplication_SetStartDragTime")]
-	public static extern void QApplication_SetStartDragTime(c_int ms);
-	[LinkName("QApplication_StartDragTime")]
-	public static extern c_int QApplication_StartDragTime();
-	[LinkName("QApplication_SetStartDragDistance")]
-	public static extern void QApplication_SetStartDragDistance(c_int l);
-	[LinkName("QApplication_StartDragDistance")]
-	public static extern c_int QApplication_StartDragDistance();
-	[LinkName("QApplication_IsEffectEnabled")]
-	public static extern bool QApplication_IsEffectEnabled(Qt_UIEffect param1);
-	[LinkName("QApplication_SetEffectEnabled")]
-	public static extern void QApplication_SetEffectEnabled(Qt_UIEffect param1);
-	[LinkName("QApplication_Exec")]
-	public static extern c_int QApplication_Exec();
-	[LinkName("QApplication_Notify")]
-	public static extern bool QApplication_Notify(void* self, void** param1, void** param2);
-	[LinkName("QApplication_ResolveInterface")]
-	public static extern void* QApplication_ResolveInterface(void* self, c_char* name, c_int revision);
-	[LinkName("QApplication_FocusChanged")]
-	public static extern void QApplication_FocusChanged(void* self, void** old, void** now);
-	[LinkName("QApplication_StyleSheet")]
-	public static extern libqt_string QApplication_StyleSheet(void* self);
-	[LinkName("QApplication_SetStyleSheet")]
-	public static extern void QApplication_SetStyleSheet(void* self, libqt_string sheet);
-	[LinkName("QApplication_SetAutoSipEnabled")]
-	public static extern void QApplication_SetAutoSipEnabled(void* self, bool enabled);
-	[LinkName("QApplication_AutoSipEnabled")]
-	public static extern bool QApplication_AutoSipEnabled(void* self);
-	[LinkName("QApplication_CloseAllWindows")]
-	public static extern void QApplication_CloseAllWindows();
-	[LinkName("QApplication_AboutQt")]
-	public static extern void QApplication_AboutQt();
-	[LinkName("QApplication_Event")]
-	public static extern bool QApplication_Event(void* self, void** param1);
-	[LinkName("QApplication_Tr2")]
-	public static extern libqt_string QApplication_Tr2(c_char* s, c_char* c);
-	[LinkName("QApplication_Tr3")]
-	public static extern libqt_string QApplication_Tr3(c_char* s, c_char* c, c_int n);
-	[LinkName("QApplication_SetPalette2")]
-	public static extern void QApplication_SetPalette2(void** param1, c_char* className);
-	[LinkName("QApplication_SetFont2")]
-	public static extern void QApplication_SetFont2(void** param1, c_char* className);
-	[LinkName("QApplication_Alert2")]
-	public static extern void QApplication_Alert2(void** widget, c_int duration);
-	[LinkName("QApplication_SetEffectEnabled2")]
-	public static extern void QApplication_SetEffectEnabled2(Qt_UIEffect param1, bool enable);
-}
-class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObject
-{
-	private QApplication_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QApplication_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(c_int* argc, c_char** argv)
-	{
-		this.ptr = CQt.QApplication_new(argc, argv);
-	}
-	public this(c_int* argc, c_char** argv, c_int param3)
-	{
-		this.ptr = CQt.QApplication_new2(argc, argv, param3);
-	}
-	public ~this()
-	{
-		CQt.QApplication_Delete(this.ptr);
-	}
 	public QMetaObject_Ptr MetaObject()
 	{
-		return QMetaObject_Ptr(CQt.QApplication_MetaObject((.)this.ptr.Ptr));
+		return QMetaObject_Ptr(CQt.QApplication_MetaObject((.)this.Ptr));
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QApplication_Qt_Metacast((.)this.ptr.Ptr, param1);
+		return CQt.QApplication_Qt_Metacast((.)this.Ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QApplication_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
+		return CQt.QApplication_Qt_Metacall((.)this.Ptr, param1, param2, param3);
 	}
 	public void Tr(String outStr, c_char* s)
 	{
@@ -336,31 +188,31 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public bool Notify(IQObject param1, IQEvent param2)
 	{
-		return CQt.QApplication_Notify((.)this.ptr.Ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
+		return CQt.QApplication_Notify((.)this.Ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
 	}
 	public void* ResolveInterface(c_char* name, c_int revision)
 	{
-		return CQt.QApplication_ResolveInterface((.)this.ptr.Ptr, name, revision);
+		return CQt.QApplication_ResolveInterface((.)this.Ptr, name, revision);
 	}
 	public void FocusChanged(IQWidget old, IQWidget now)
 	{
-		CQt.QApplication_FocusChanged((.)this.ptr.Ptr, (.)old?.ObjectPtr, (.)now?.ObjectPtr);
+		CQt.QApplication_FocusChanged((.)this.Ptr, (.)old?.ObjectPtr, (.)now?.ObjectPtr);
 	}
 	public void StyleSheet(String outStr)
 	{
-		CQt.QApplication_StyleSheet((.)this.ptr.Ptr);
+		CQt.QApplication_StyleSheet((.)this.Ptr);
 	}
 	public void SetStyleSheet(String sheet)
 	{
-		CQt.QApplication_SetStyleSheet((.)this.ptr.Ptr, libqt_string(sheet));
+		CQt.QApplication_SetStyleSheet((.)this.Ptr, libqt_string(sheet));
 	}
 	public void SetAutoSipEnabled(bool enabled)
 	{
-		CQt.QApplication_SetAutoSipEnabled((.)this.ptr.Ptr, enabled);
+		CQt.QApplication_SetAutoSipEnabled((.)this.Ptr, enabled);
 	}
 	public bool AutoSipEnabled()
 	{
-		return CQt.QApplication_AutoSipEnabled((.)this.ptr.Ptr);
+		return CQt.QApplication_AutoSipEnabled((.)this.Ptr);
 	}
 	public void CloseAllWindows()
 	{
@@ -372,7 +224,7 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public bool Event(IQEvent param1)
 	{
-		return CQt.QApplication_Event((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
+		return CQt.QApplication_Event((.)this.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
@@ -460,7 +312,7 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public double DevicePixelRatio()
 	{
-		return CQt.QGuiApplication_DevicePixelRatio((.)this.ptr.Ptr);
+		return CQt.QGuiApplication_DevicePixelRatio((.)this.Ptr);
 	}
 	public QCursor_Ptr OverrideCursor()
 	{
@@ -552,19 +404,19 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public bool IsSessionRestored()
 	{
-		return CQt.QGuiApplication_IsSessionRestored((.)this.ptr.Ptr);
+		return CQt.QGuiApplication_IsSessionRestored((.)this.Ptr);
 	}
 	public void SessionId(String outStr)
 	{
-		CQt.QGuiApplication_SessionId((.)this.ptr.Ptr);
+		CQt.QGuiApplication_SessionId((.)this.Ptr);
 	}
 	public void SessionKey(String outStr)
 	{
-		CQt.QGuiApplication_SessionKey((.)this.ptr.Ptr);
+		CQt.QGuiApplication_SessionKey((.)this.Ptr);
 	}
 	public bool IsSavingSession()
 	{
-		return CQt.QGuiApplication_IsSavingSession((.)this.ptr.Ptr);
+		return CQt.QGuiApplication_IsSavingSession((.)this.Ptr);
 	}
 	public void Sync()
 	{
@@ -572,59 +424,59 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public void FontDatabaseChanged()
 	{
-		CQt.QGuiApplication_FontDatabaseChanged((.)this.ptr.Ptr);
+		CQt.QGuiApplication_FontDatabaseChanged((.)this.Ptr);
 	}
 	public void ScreenAdded(IQScreen screen)
 	{
-		CQt.QGuiApplication_ScreenAdded((.)this.ptr.Ptr, (.)screen?.ObjectPtr);
+		CQt.QGuiApplication_ScreenAdded((.)this.Ptr, (.)screen?.ObjectPtr);
 	}
 	public void ScreenRemoved(IQScreen screen)
 	{
-		CQt.QGuiApplication_ScreenRemoved((.)this.ptr.Ptr, (.)screen?.ObjectPtr);
+		CQt.QGuiApplication_ScreenRemoved((.)this.Ptr, (.)screen?.ObjectPtr);
 	}
 	public void PrimaryScreenChanged(IQScreen screen)
 	{
-		CQt.QGuiApplication_PrimaryScreenChanged((.)this.ptr.Ptr, (.)screen?.ObjectPtr);
+		CQt.QGuiApplication_PrimaryScreenChanged((.)this.Ptr, (.)screen?.ObjectPtr);
 	}
 	public void LastWindowClosed()
 	{
-		CQt.QGuiApplication_LastWindowClosed((.)this.ptr.Ptr);
+		CQt.QGuiApplication_LastWindowClosed((.)this.Ptr);
 	}
 	public void FocusObjectChanged(IQObject focusObject)
 	{
-		CQt.QGuiApplication_FocusObjectChanged((.)this.ptr.Ptr, (.)focusObject?.ObjectPtr);
+		CQt.QGuiApplication_FocusObjectChanged((.)this.Ptr, (.)focusObject?.ObjectPtr);
 	}
 	public void FocusWindowChanged(IQWindow focusWindow)
 	{
-		CQt.QGuiApplication_FocusWindowChanged((.)this.ptr.Ptr, (.)focusWindow?.ObjectPtr);
+		CQt.QGuiApplication_FocusWindowChanged((.)this.Ptr, (.)focusWindow?.ObjectPtr);
 	}
 	public void ApplicationStateChanged(Qt_ApplicationState state)
 	{
-		CQt.QGuiApplication_ApplicationStateChanged((.)this.ptr.Ptr, state);
+		CQt.QGuiApplication_ApplicationStateChanged((.)this.Ptr, state);
 	}
 	public void LayoutDirectionChanged(Qt_LayoutDirection direction)
 	{
-		CQt.QGuiApplication_LayoutDirectionChanged((.)this.ptr.Ptr, direction);
+		CQt.QGuiApplication_LayoutDirectionChanged((.)this.Ptr, direction);
 	}
 	public void CommitDataRequest(IQSessionManager sessionManager)
 	{
-		CQt.QGuiApplication_CommitDataRequest((.)this.ptr.Ptr, (.)sessionManager?.ObjectPtr);
+		CQt.QGuiApplication_CommitDataRequest((.)this.Ptr, (.)sessionManager?.ObjectPtr);
 	}
 	public void SaveStateRequest(IQSessionManager sessionManager)
 	{
-		CQt.QGuiApplication_SaveStateRequest((.)this.ptr.Ptr, (.)sessionManager?.ObjectPtr);
+		CQt.QGuiApplication_SaveStateRequest((.)this.Ptr, (.)sessionManager?.ObjectPtr);
 	}
 	public void ApplicationDisplayNameChanged()
 	{
-		CQt.QGuiApplication_ApplicationDisplayNameChanged((.)this.ptr.Ptr);
+		CQt.QGuiApplication_ApplicationDisplayNameChanged((.)this.Ptr);
 	}
 	public void PaletteChanged(IQPalette pal)
 	{
-		CQt.QGuiApplication_PaletteChanged((.)this.ptr.Ptr, (.)pal?.ObjectPtr);
+		CQt.QGuiApplication_PaletteChanged((.)this.Ptr, (.)pal?.ObjectPtr);
 	}
 	public void FontChanged(IQFont font)
 	{
-		CQt.QGuiApplication_FontChanged((.)this.ptr.Ptr, (.)font?.ObjectPtr);
+		CQt.QGuiApplication_FontChanged((.)this.Ptr, (.)font?.ObjectPtr);
 	}
 	public void* Arguments()
 	{
@@ -764,11 +616,11 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public void InstallNativeEventFilter(IQAbstractNativeEventFilter filterObj)
 	{
-		CQt.QCoreApplication_InstallNativeEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QCoreApplication_InstallNativeEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
 	public void RemoveNativeEventFilter(IQAbstractNativeEventFilter filterObj)
 	{
-		CQt.QCoreApplication_RemoveNativeEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QCoreApplication_RemoveNativeEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
 	public bool IsQuitLockEnabled()
 	{
@@ -788,19 +640,19 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public void OrganizationNameChanged()
 	{
-		CQt.QCoreApplication_OrganizationNameChanged((.)this.ptr.Ptr);
+		CQt.QCoreApplication_OrganizationNameChanged((.)this.Ptr);
 	}
 	public void OrganizationDomainChanged()
 	{
-		CQt.QCoreApplication_OrganizationDomainChanged((.)this.ptr.Ptr);
+		CQt.QCoreApplication_OrganizationDomainChanged((.)this.Ptr);
 	}
 	public void ApplicationNameChanged()
 	{
-		CQt.QCoreApplication_ApplicationNameChanged((.)this.ptr.Ptr);
+		CQt.QCoreApplication_ApplicationNameChanged((.)this.Ptr);
 	}
 	public void ApplicationVersionChanged()
 	{
-		CQt.QCoreApplication_ApplicationVersionChanged((.)this.ptr.Ptr);
+		CQt.QCoreApplication_ApplicationVersionChanged((.)this.Ptr);
 	}
 	public void SetAttribute2(Qt_ApplicationAttribute attribute, bool on)
 	{
@@ -840,71 +692,71 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QObject_EventFilter((.)this.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
 	public void ObjectName(String outStr)
 	{
-		CQt.QObject_ObjectName((.)this.ptr.Ptr);
+		CQt.QObject_ObjectName((.)this.Ptr);
 	}
 	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
+		CQt.QObject_SetObjectName((.)this.Ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
-		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
+		return CQt.QObject_IsWidgetType((.)this.Ptr);
 	}
 	public bool IsWindowType()
 	{
-		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
+		return CQt.QObject_IsWindowType((.)this.Ptr);
 	}
 	public bool IsQuickItemType()
 	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
+		return CQt.QObject_IsQuickItemType((.)this.Ptr);
 	}
 	public bool SignalsBlocked()
 	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
+		return CQt.QObject_SignalsBlocked((.)this.Ptr);
 	}
 	public bool BlockSignals(bool b)
 	{
-		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
+		return CQt.QObject_BlockSignals((.)this.Ptr, b);
 	}
 	public QThread_Ptr Thread()
 	{
-		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
+		return QThread_Ptr(CQt.QObject_Thread((.)this.Ptr));
 	}
 	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
+		CQt.QObject_MoveToThread((.)this.Ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
+		return CQt.QObject_StartTimer((.)this.Ptr, interval);
 	}
 	public c_int StartTimer2(void* time)
 	{
-		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
+		return CQt.QObject_StartTimer2((.)this.Ptr, time);
 	}
 	public void KillTimer(c_int id)
 	{
-		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
+		CQt.QObject_KillTimer((.)this.Ptr, id);
 	}
 	public void** Children()
 	{
-		return CQt.QObject_Children((.)this.ptr.Ptr);
+		return CQt.QObject_Children((.)this.Ptr);
 	}
 	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
+		CQt.QObject_SetParent((.)this.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.Ptr, (.)filterObj?.ObjectPtr);
 	}
 	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.Ptr, (.)obj?.ObjectPtr);
 	}
 	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
@@ -916,7 +768,7 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
 	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
@@ -928,11 +780,11 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public bool Disconnect3()
 	{
-		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
+		return CQt.QObject_Disconnect3((.)this.Ptr);
 	}
 	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect4((.)this.Ptr, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
@@ -940,91 +792,91 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public void DumpObjectTree()
 	{
-		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
+		CQt.QObject_DumpObjectTree((.)this.Ptr);
 	}
 	public void DumpObjectInfo()
 	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
+		CQt.QObject_DumpObjectInfo((.)this.Ptr);
 	}
 	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
+		return CQt.QObject_SetProperty((.)this.Ptr, name, (.)value?.ObjectPtr);
 	}
 	public QVariant_Ptr Property(c_char* name)
 	{
-		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
+		return QVariant_Ptr(CQt.QObject_Property((.)this.Ptr, name));
 	}
 	public void* DynamicPropertyNames()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
+		return CQt.QObject_DynamicPropertyNames((.)this.Ptr);
 	}
 	public QBindingStorage_Ptr BindingStorage()
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.Ptr));
 	}
 	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.Ptr));
 	}
 	public void Destroyed()
 	{
-		CQt.QObject_Destroyed((.)this.ptr.Ptr);
+		CQt.QObject_Destroyed((.)this.Ptr);
 	}
 	public QObject_Ptr Parent()
 	{
-		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
+		return QObject_Ptr(CQt.QObject_Parent((.)this.Ptr));
 	}
 	public bool Inherits(c_char* classname)
 	{
-		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
+		return CQt.QObject_Inherits((.)this.Ptr, classname);
 	}
 	public void DeleteLater()
 	{
-		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
+		CQt.QObject_DeleteLater((.)this.Ptr);
 	}
 	public QObject_Ptr Sender()
 	{
-		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
+		return QObject_Ptr(CQt.QObject_Sender((.)this.Ptr));
 	}
 	public c_int SenderSignalIndex()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.Ptr);
 	}
 	public c_int Receivers(c_char* signal)
 	{
-		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
+		return CQt.QObject_Receivers((.)this.Ptr, signal);
 	}
 	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_TimerEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_ChildEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
+		CQt.QObject_CustomEvent((.)this.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_ConnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_DisconnectNotify((.)this.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
+		return CQt.QObject_StartTimer22((.)this.Ptr, interval, timerType);
 	}
 	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
+		return CQt.QObject_StartTimer23((.)this.Ptr, time, timerType);
 	}
 	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
@@ -1036,29 +888,1073 @@ class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObjec
 	}
 	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.Ptr, (.)sender?.ObjectPtr, signal, member, type));
 	}
 	public bool Disconnect1(c_char* signal)
 	{
-		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
+		return CQt.QObject_Disconnect1((.)this.Ptr, signal);
 	}
 	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect22((.)this.Ptr, signal, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect32((.)this.Ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
 	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect23((.)this.Ptr, (.)receiver?.ObjectPtr, member);
 	}
 	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_Destroyed1((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+}
+class QApplication : IQApplication, IQGuiApplication, IQCoreApplication, IQObject
+{
+	private QApplication_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QApplication_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(c_int* argc, c_char** argv)
+	{
+		this.ptr = CQt.QApplication_new(argc, argv);
+	}
+	public this(c_int* argc, c_char** argv, c_int param3)
+	{
+		this.ptr = CQt.QApplication_new2(argc, argv, param3);
+	}
+	public ~this()
+	{
+		CQt.QApplication_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return this.ptr.Qt_metacast(param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return this.ptr.Qt_metacall(param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		this.ptr.Tr(outStr, s);
+	}
+	public QStyle_Ptr Style()
+	{
+		return this.ptr.Style();
+	}
+	public void SetStyle(IQStyle style)
+	{
+		this.ptr.SetStyle(style);
+	}
+	public QStyle_Ptr SetStyle2(String style)
+	{
+		return this.ptr.SetStyle2(style);
+	}
+	public QPalette_Ptr Palette(IQWidget param1)
+	{
+		return this.ptr.Palette(param1);
+	}
+	public QPalette_Ptr Palette2(c_char* className)
+	{
+		return this.ptr.Palette2(className);
+	}
+	public void SetPalette(IQPalette param1)
+	{
+		this.ptr.SetPalette(param1);
+	}
+	public QFont_Ptr Font()
+	{
+		return this.ptr.Font();
+	}
+	public QFont_Ptr Font2(IQWidget param1)
+	{
+		return this.ptr.Font2(param1);
+	}
+	public QFont_Ptr Font3(c_char* className)
+	{
+		return this.ptr.Font3(className);
+	}
+	public void SetFont(IQFont param1)
+	{
+		this.ptr.SetFont(param1);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void* AllWidgets()
+	{
+		return this.ptr.AllWidgets();
+	}
+	public void* TopLevelWidgets()
+	{
+		return this.ptr.TopLevelWidgets();
+	}
+	public QWidget_Ptr ActivePopupWidget()
+	{
+		return this.ptr.ActivePopupWidget();
+	}
+	public QWidget_Ptr ActiveModalWidget()
+	{
+		return this.ptr.ActiveModalWidget();
+	}
+	public QWidget_Ptr FocusWidget()
+	{
+		return this.ptr.FocusWidget();
+	}
+	public QWidget_Ptr ActiveWindow()
+	{
+		return this.ptr.ActiveWindow();
+	}
+	public void SetActiveWindow(IQWidget act)
+	{
+		this.ptr.SetActiveWindow(act);
+	}
+	public QWidget_Ptr WidgetAt(IQPoint p)
+	{
+		return this.ptr.WidgetAt(p);
+	}
+	public QWidget_Ptr WidgetAt2(c_int x, c_int y)
+	{
+		return this.ptr.WidgetAt2(x, y);
+	}
+	public QWidget_Ptr TopLevelAt(IQPoint p)
+	{
+		return this.ptr.TopLevelAt(p);
+	}
+	public QWidget_Ptr TopLevelAt2(c_int x, c_int y)
+	{
+		return this.ptr.TopLevelAt2(x, y);
+	}
+	public void Beep()
+	{
+		this.ptr.Beep();
+	}
+	public void Alert(IQWidget widget)
+	{
+		this.ptr.Alert(widget);
+	}
+	public void SetCursorFlashTime(c_int cursorFlashTime)
+	{
+		this.ptr.SetCursorFlashTime(cursorFlashTime);
+	}
+	public c_int CursorFlashTime()
+	{
+		return this.ptr.CursorFlashTime();
+	}
+	public void SetDoubleClickInterval(c_int doubleClickInterval)
+	{
+		this.ptr.SetDoubleClickInterval(doubleClickInterval);
+	}
+	public c_int DoubleClickInterval()
+	{
+		return this.ptr.DoubleClickInterval();
+	}
+	public void SetKeyboardInputInterval(c_int keyboardInputInterval)
+	{
+		this.ptr.SetKeyboardInputInterval(keyboardInputInterval);
+	}
+	public c_int KeyboardInputInterval()
+	{
+		return this.ptr.KeyboardInputInterval();
+	}
+	public void SetWheelScrollLines(c_int wheelScrollLines)
+	{
+		this.ptr.SetWheelScrollLines(wheelScrollLines);
+	}
+	public c_int WheelScrollLines()
+	{
+		return this.ptr.WheelScrollLines();
+	}
+	public void SetStartDragTime(c_int ms)
+	{
+		this.ptr.SetStartDragTime(ms);
+	}
+	public c_int StartDragTime()
+	{
+		return this.ptr.StartDragTime();
+	}
+	public void SetStartDragDistance(c_int l)
+	{
+		this.ptr.SetStartDragDistance(l);
+	}
+	public c_int StartDragDistance()
+	{
+		return this.ptr.StartDragDistance();
+	}
+	public bool IsEffectEnabled(Qt_UIEffect param1)
+	{
+		return this.ptr.IsEffectEnabled(param1);
+	}
+	public void SetEffectEnabled(Qt_UIEffect param1)
+	{
+		this.ptr.SetEffectEnabled(param1);
+	}
+	public c_int Exec()
+	{
+		return this.ptr.Exec();
+	}
+	public bool Notify(IQObject param1, IQEvent param2)
+	{
+		return this.ptr.Notify(param1, param2);
+	}
+	public void* ResolveInterface(c_char* name, c_int revision)
+	{
+		return this.ptr.ResolveInterface(name, revision);
+	}
+	public void FocusChanged(IQWidget old, IQWidget now)
+	{
+		this.ptr.FocusChanged(old, now);
+	}
+	public void StyleSheet(String outStr)
+	{
+		this.ptr.StyleSheet(outStr);
+	}
+	public void SetStyleSheet(String sheet)
+	{
+		this.ptr.SetStyleSheet(sheet);
+	}
+	public void SetAutoSipEnabled(bool enabled)
+	{
+		this.ptr.SetAutoSipEnabled(enabled);
+	}
+	public bool AutoSipEnabled()
+	{
+		return this.ptr.AutoSipEnabled();
+	}
+	public void CloseAllWindows()
+	{
+		this.ptr.CloseAllWindows();
+	}
+	public void AboutQt()
+	{
+		this.ptr.AboutQt();
+	}
+	public bool Event(IQEvent param1)
+	{
+		return this.ptr.Event(param1);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		this.ptr.Tr2(outStr, s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		this.ptr.Tr3(outStr, s, c, n);
+	}
+	public void SetPalette2(IQPalette param1, c_char* className)
+	{
+		this.ptr.SetPalette2(param1, className);
+	}
+	public void SetFont2(IQFont param1, c_char* className)
+	{
+		this.ptr.SetFont2(param1, className);
+	}
+	public void Alert2(IQWidget widget, c_int duration)
+	{
+		this.ptr.Alert2(widget, duration);
+	}
+	public void SetEffectEnabled2(Qt_UIEffect param1, bool enable)
+	{
+		this.ptr.SetEffectEnabled2(param1, enable);
+	}
+	public void SetApplicationDisplayName(String name)
+	{
+		this.ptr.SetApplicationDisplayName(name);
+	}
+	public void ApplicationDisplayName(String outStr)
+	{
+		this.ptr.ApplicationDisplayName(outStr);
+	}
+	public void SetDesktopFileName(String name)
+	{
+		this.ptr.SetDesktopFileName(name);
+	}
+	public void DesktopFileName(String outStr)
+	{
+		this.ptr.DesktopFileName(outStr);
+	}
+	public void* AllWindows()
+	{
+		return this.ptr.AllWindows();
+	}
+	public void* TopLevelWindows()
+	{
+		return this.ptr.TopLevelWindows();
+	}
+	public void SetWindowIcon(IQIcon icon)
+	{
+		this.ptr.SetWindowIcon(icon);
+	}
+	public QIcon_Ptr WindowIcon()
+	{
+		return this.ptr.WindowIcon();
+	}
+	public void PlatformName(String outStr)
+	{
+		this.ptr.PlatformName(outStr);
+	}
+	public QWindow_Ptr ModalWindow()
+	{
+		return this.ptr.ModalWindow();
+	}
+	public QWindow_Ptr FocusWindow()
+	{
+		return this.ptr.FocusWindow();
+	}
+	public QObject_Ptr FocusObject()
+	{
+		return this.ptr.FocusObject();
+	}
+	public QScreen_Ptr PrimaryScreen()
+	{
+		return this.ptr.PrimaryScreen();
+	}
+	public void* Screens()
+	{
+		return this.ptr.Screens();
+	}
+	public QScreen_Ptr ScreenAt(IQPoint point)
+	{
+		return this.ptr.ScreenAt(point);
+	}
+	public double DevicePixelRatio()
+	{
+		return this.ptr.DevicePixelRatio();
+	}
+	public QCursor_Ptr OverrideCursor()
+	{
+		return this.ptr.OverrideCursor();
+	}
+	public void SetOverrideCursor(IQCursor overrideCursor)
+	{
+		this.ptr.SetOverrideCursor(overrideCursor);
+	}
+	public void ChangeOverrideCursor(IQCursor param1)
+	{
+		this.ptr.ChangeOverrideCursor(param1);
+	}
+	public void RestoreOverrideCursor()
+	{
+		this.ptr.RestoreOverrideCursor();
+	}
+	public QClipboard_Ptr Clipboard()
+	{
+		return this.ptr.Clipboard();
+	}
+	public void* KeyboardModifiers()
+	{
+		return this.ptr.KeyboardModifiers();
+	}
+	public void* QueryKeyboardModifiers()
+	{
+		return this.ptr.QueryKeyboardModifiers();
+	}
+	public void* MouseButtons()
+	{
+		return this.ptr.MouseButtons();
+	}
+	public void SetLayoutDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetLayoutDirection(direction);
+	}
+	public Qt_LayoutDirection LayoutDirection()
+	{
+		return this.ptr.LayoutDirection();
+	}
+	public bool IsRightToLeft()
+	{
+		return this.ptr.IsRightToLeft();
+	}
+	public bool IsLeftToRight()
+	{
+		return this.ptr.IsLeftToRight();
+	}
+	public QStyleHints_Ptr StyleHints()
+	{
+		return this.ptr.StyleHints();
+	}
+	public void SetDesktopSettingsAware(bool on)
+	{
+		this.ptr.SetDesktopSettingsAware(on);
+	}
+	public bool DesktopSettingsAware()
+	{
+		return this.ptr.DesktopSettingsAware();
+	}
+	public QInputMethod_Ptr InputMethod()
+	{
+		return this.ptr.InputMethod();
+	}
+	public c_intptr PlatformFunction(void** _function)
+	{
+		return this.ptr.PlatformFunction(_function);
+	}
+	public void SetQuitOnLastWindowClosed(bool quit)
+	{
+		this.ptr.SetQuitOnLastWindowClosed(quit);
+	}
+	public bool QuitOnLastWindowClosed()
+	{
+		return this.ptr.QuitOnLastWindowClosed();
+	}
+	public Qt_ApplicationState ApplicationState()
+	{
+		return this.ptr.ApplicationState();
+	}
+	public void SetHighDpiScaleFactorRoundingPolicy(Qt_HighDpiScaleFactorRoundingPolicy policy)
+	{
+		this.ptr.SetHighDpiScaleFactorRoundingPolicy(policy);
+	}
+	public Qt_HighDpiScaleFactorRoundingPolicy HighDpiScaleFactorRoundingPolicy()
+	{
+		return this.ptr.HighDpiScaleFactorRoundingPolicy();
+	}
+	public bool IsSessionRestored()
+	{
+		return this.ptr.IsSessionRestored();
+	}
+	public void SessionId(String outStr)
+	{
+		this.ptr.SessionId(outStr);
+	}
+	public void SessionKey(String outStr)
+	{
+		this.ptr.SessionKey(outStr);
+	}
+	public bool IsSavingSession()
+	{
+		return this.ptr.IsSavingSession();
+	}
+	public void Sync()
+	{
+		this.ptr.Sync();
+	}
+	public void FontDatabaseChanged()
+	{
+		this.ptr.FontDatabaseChanged();
+	}
+	public void ScreenAdded(IQScreen screen)
+	{
+		this.ptr.ScreenAdded(screen);
+	}
+	public void ScreenRemoved(IQScreen screen)
+	{
+		this.ptr.ScreenRemoved(screen);
+	}
+	public void PrimaryScreenChanged(IQScreen screen)
+	{
+		this.ptr.PrimaryScreenChanged(screen);
+	}
+	public void LastWindowClosed()
+	{
+		this.ptr.LastWindowClosed();
+	}
+	public void FocusObjectChanged(IQObject focusObject)
+	{
+		this.ptr.FocusObjectChanged(focusObject);
+	}
+	public void FocusWindowChanged(IQWindow focusWindow)
+	{
+		this.ptr.FocusWindowChanged(focusWindow);
+	}
+	public void ApplicationStateChanged(Qt_ApplicationState state)
+	{
+		this.ptr.ApplicationStateChanged(state);
+	}
+	public void LayoutDirectionChanged(Qt_LayoutDirection direction)
+	{
+		this.ptr.LayoutDirectionChanged(direction);
+	}
+	public void CommitDataRequest(IQSessionManager sessionManager)
+	{
+		this.ptr.CommitDataRequest(sessionManager);
+	}
+	public void SaveStateRequest(IQSessionManager sessionManager)
+	{
+		this.ptr.SaveStateRequest(sessionManager);
+	}
+	public void ApplicationDisplayNameChanged()
+	{
+		this.ptr.ApplicationDisplayNameChanged();
+	}
+	public void PaletteChanged(IQPalette pal)
+	{
+		this.ptr.PaletteChanged(pal);
+	}
+	public void FontChanged(IQFont font)
+	{
+		this.ptr.FontChanged(font);
+	}
+	public void* Arguments()
+	{
+		return this.ptr.Arguments();
+	}
+	public void SetAttribute(Qt_ApplicationAttribute attribute)
+	{
+		this.ptr.SetAttribute(attribute);
+	}
+	public bool TestAttribute(Qt_ApplicationAttribute attribute)
+	{
+		return this.ptr.TestAttribute(attribute);
+	}
+	public void SetOrganizationDomain(String orgDomain)
+	{
+		this.ptr.SetOrganizationDomain(orgDomain);
+	}
+	public void OrganizationDomain(String outStr)
+	{
+		this.ptr.OrganizationDomain(outStr);
+	}
+	public void SetOrganizationName(String orgName)
+	{
+		this.ptr.SetOrganizationName(orgName);
+	}
+	public void OrganizationName(String outStr)
+	{
+		this.ptr.OrganizationName(outStr);
+	}
+	public void SetApplicationName(String application)
+	{
+		this.ptr.SetApplicationName(application);
+	}
+	public void ApplicationName(String outStr)
+	{
+		this.ptr.ApplicationName(outStr);
+	}
+	public void SetApplicationVersion(String version)
+	{
+		this.ptr.SetApplicationVersion(version);
+	}
+	public void ApplicationVersion(String outStr)
+	{
+		this.ptr.ApplicationVersion(outStr);
+	}
+	public void SetSetuidAllowed(bool allow)
+	{
+		this.ptr.SetSetuidAllowed(allow);
+	}
+	public bool IsSetuidAllowed()
+	{
+		return this.ptr.IsSetuidAllowed();
+	}
+	public QCoreApplication_Ptr Instance()
+	{
+		return this.ptr.Instance();
+	}
+	public void ProcessEvents()
+	{
+		this.ptr.ProcessEvents();
+	}
+	public void ProcessEvents2(void* flags, c_int maxtime)
+	{
+		this.ptr.ProcessEvents2(flags, maxtime);
+	}
+	public bool SendEvent(IQObject receiver, IQEvent event)
+	{
+		return this.ptr.SendEvent(receiver, event);
+	}
+	public void PostEvent(IQObject receiver, IQEvent event)
+	{
+		this.ptr.PostEvent(receiver, event);
+	}
+	public void SendPostedEvents()
+	{
+		this.ptr.SendPostedEvents();
+	}
+	public void RemovePostedEvents(IQObject receiver)
+	{
+		this.ptr.RemovePostedEvents(receiver);
+	}
+	public QAbstractEventDispatcher_Ptr EventDispatcher()
+	{
+		return this.ptr.EventDispatcher();
+	}
+	public void SetEventDispatcher(IQAbstractEventDispatcher eventDispatcher)
+	{
+		this.ptr.SetEventDispatcher(eventDispatcher);
+	}
+	public bool StartingUp()
+	{
+		return this.ptr.StartingUp();
+	}
+	public bool ClosingDown()
+	{
+		return this.ptr.ClosingDown();
+	}
+	public void ApplicationDirPath(String outStr)
+	{
+		this.ptr.ApplicationDirPath(outStr);
+	}
+	public void ApplicationFilePath(String outStr)
+	{
+		this.ptr.ApplicationFilePath(outStr);
+	}
+	public c_longlong ApplicationPid()
+	{
+		return this.ptr.ApplicationPid();
+	}
+	public void SetLibraryPaths(void** libraryPaths)
+	{
+		this.ptr.SetLibraryPaths(libraryPaths);
+	}
+	public void* LibraryPaths()
+	{
+		return this.ptr.LibraryPaths();
+	}
+	public void AddLibraryPath(String param1)
+	{
+		this.ptr.AddLibraryPath(param1);
+	}
+	public void RemoveLibraryPath(String param1)
+	{
+		this.ptr.RemoveLibraryPath(param1);
+	}
+	public bool InstallTranslator(IQTranslator messageFile)
+	{
+		return this.ptr.InstallTranslator(messageFile);
+	}
+	public bool RemoveTranslator(IQTranslator messageFile)
+	{
+		return this.ptr.RemoveTranslator(messageFile);
+	}
+	public void Translate(String outStr, c_char* context, c_char* key)
+	{
+		this.ptr.Translate(outStr, context, key);
+	}
+	public void InstallNativeEventFilter(IQAbstractNativeEventFilter filterObj)
+	{
+		this.ptr.InstallNativeEventFilter(filterObj);
+	}
+	public void RemoveNativeEventFilter(IQAbstractNativeEventFilter filterObj)
+	{
+		this.ptr.RemoveNativeEventFilter(filterObj);
+	}
+	public bool IsQuitLockEnabled()
+	{
+		return this.ptr.IsQuitLockEnabled();
+	}
+	public void SetQuitLockEnabled(bool enabled)
+	{
+		this.ptr.SetQuitLockEnabled(enabled);
+	}
+	public void Quit()
+	{
+		this.ptr.Quit();
+	}
+	public void Exit()
+	{
+		this.ptr.Exit();
+	}
+	public void OrganizationNameChanged()
+	{
+		this.ptr.OrganizationNameChanged();
+	}
+	public void OrganizationDomainChanged()
+	{
+		this.ptr.OrganizationDomainChanged();
+	}
+	public void ApplicationNameChanged()
+	{
+		this.ptr.ApplicationNameChanged();
+	}
+	public void ApplicationVersionChanged()
+	{
+		this.ptr.ApplicationVersionChanged();
+	}
+	public void SetAttribute2(Qt_ApplicationAttribute attribute, bool on)
+	{
+		this.ptr.SetAttribute2(attribute, on);
+	}
+	public void ProcessEvents1(void* flags)
+	{
+		this.ptr.ProcessEvents1(flags);
+	}
+	public void PostEvent3(IQObject receiver, IQEvent event, c_int priority)
+	{
+		this.ptr.PostEvent3(receiver, event, priority);
+	}
+	public void SendPostedEvents1(IQObject receiver)
+	{
+		this.ptr.SendPostedEvents1(receiver);
+	}
+	public void SendPostedEvents2(IQObject receiver, c_int event_type)
+	{
+		this.ptr.SendPostedEvents2(receiver, event_type);
+	}
+	public void RemovePostedEvents2(IQObject receiver, c_int eventType)
+	{
+		this.ptr.RemovePostedEvents2(receiver, eventType);
+	}
+	public void Translate3(String outStr, c_char* context, c_char* key, c_char* disambiguation)
+	{
+		this.ptr.Translate3(outStr, context, key, disambiguation);
+	}
+	public void Translate4(String outStr, c_char* context, c_char* key, c_char* disambiguation, c_int n)
+	{
+		this.ptr.Translate4(outStr, context, key, disambiguation, n);
+	}
+	public void Exit1(c_int retcode)
+	{
+		this.ptr.Exit1(retcode);
+	}
+	public bool EventFilter(IQObject watched, IQEvent event)
+	{
+		return this.ptr.EventFilter(watched, event);
+	}
+	public void ObjectName(String outStr)
+	{
+		this.ptr.ObjectName(outStr);
+	}
+	public void SetObjectName(IQAnyStringView name)
+	{
+		this.ptr.SetObjectName(name);
+	}
+	public bool IsWidgetType()
+	{
+		return this.ptr.IsWidgetType();
+	}
+	public bool IsWindowType()
+	{
+		return this.ptr.IsWindowType();
+	}
+	public bool IsQuickItemType()
+	{
+		return this.ptr.IsQuickItemType();
+	}
+	public bool SignalsBlocked()
+	{
+		return this.ptr.SignalsBlocked();
+	}
+	public bool BlockSignals(bool b)
+	{
+		return this.ptr.BlockSignals(b);
+	}
+	public QThread_Ptr Thread()
+	{
+		return this.ptr.Thread();
+	}
+	public void MoveToThread(IQThread thread)
+	{
+		this.ptr.MoveToThread(thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return this.ptr.StartTimer(interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return this.ptr.StartTimer2(time);
+	}
+	public void KillTimer(c_int id)
+	{
+		this.ptr.KillTimer(id);
+	}
+	public void** Children()
+	{
+		return this.ptr.Children();
+	}
+	public void SetParent(IQObject parent)
+	{
+		this.ptr.SetParent(parent);
+	}
+	public void InstallEventFilter(IQObject filterObj)
+	{
+		this.ptr.InstallEventFilter(filterObj);
+	}
+	public void RemoveEventFilter(IQObject obj)
+	{
+		this.ptr.RemoveEventFilter(obj);
+	}
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	{
+		return this.ptr.Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
+	{
+		return this.ptr.Connect3(sender, signal, member);
+	}
+	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod member)
+	{
+		return this.ptr.Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return this.ptr.Disconnect3();
+	}
+	public bool Disconnect4(IQObject receiver)
+	{
+		return this.ptr.Disconnect4(receiver);
+	}
+	public bool Disconnect5(IQMetaObject_Connection param1)
+	{
+		return this.ptr.Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		this.ptr.DumpObjectTree();
+	}
+	public void DumpObjectInfo()
+	{
+		this.ptr.DumpObjectInfo();
+	}
+	public bool SetProperty(c_char* name, IQVariant value)
+	{
+		return this.ptr.SetProperty(name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return this.ptr.Property(name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return this.ptr.DynamicPropertyNames();
+	}
+	public QBindingStorage_Ptr BindingStorage()
+	{
+		return this.ptr.BindingStorage();
+	}
+	public QBindingStorage_Ptr BindingStorage2()
+	{
+		return this.ptr.BindingStorage2();
+	}
+	public void Destroyed()
+	{
+		this.ptr.Destroyed();
+	}
+	public QObject_Ptr Parent()
+	{
+		return this.ptr.Parent();
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return this.ptr.Inherits(classname);
+	}
+	public void DeleteLater()
+	{
+		this.ptr.DeleteLater();
+	}
+	public QObject_Ptr Sender()
+	{
+		return this.ptr.Sender();
+	}
+	public c_int SenderSignalIndex()
+	{
+		return this.ptr.SenderSignalIndex();
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return this.ptr.Receivers(signal);
+	}
+	public bool IsSignalConnected(IQMetaMethod signal)
+	{
+		return this.ptr.IsSignalConnected(signal);
+	}
+	public void TimerEvent(IQTimerEvent event)
+	{
+		this.ptr.TimerEvent(event);
+	}
+	public void ChildEvent(IQChildEvent event)
+	{
+		this.ptr.ChildEvent(event);
+	}
+	public void CustomEvent(IQEvent event)
+	{
+		this.ptr.CustomEvent(event);
+	}
+	public void ConnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.ConnectNotify(signal);
+	}
+	public void DisconnectNotify(IQMetaMethod signal)
+	{
+		this.ptr.DisconnectNotify(signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer22(interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return this.ptr.StartTimer23(time, timerType);
+	}
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return this.ptr.Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return this.ptr.Connect4(sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return this.ptr.Disconnect1(signal);
+	}
+	public bool Disconnect22(c_char* signal, IQObject receiver)
+	{
+		return this.ptr.Disconnect22(signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect32(signal, receiver, member);
+	}
+	public bool Disconnect23(IQObject receiver, c_char* member)
+	{
+		return this.ptr.Disconnect23(receiver, member);
+	}
+	public void Destroyed1(IQObject param1)
+	{
+		this.ptr.Destroyed1(param1);
 	}
 }
 interface IQApplication : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QApplication_new")]
+	public static extern QApplication_Ptr QApplication_new(c_int* argc, c_char** argv);
+	[LinkName("QApplication_new2")]
+	public static extern QApplication_Ptr QApplication_new2(c_int* argc, c_char** argv, c_int param3);
+	[LinkName("QApplication_Delete")]
+	public static extern void QApplication_Delete(QApplication_Ptr self);
+	[LinkName("QApplication_MetaObject")]
+	public static extern void** QApplication_MetaObject(void* self);
+	[LinkName("QApplication_Qt_Metacast")]
+	public static extern void* QApplication_Qt_Metacast(void* self, c_char* param1);
+	[LinkName("QApplication_Qt_Metacall")]
+	public static extern c_int QApplication_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QApplication_Tr")]
+	public static extern libqt_string QApplication_Tr(c_char* s);
+	[LinkName("QApplication_Style")]
+	public static extern void** QApplication_Style();
+	[LinkName("QApplication_SetStyle")]
+	public static extern void QApplication_SetStyle(void** style);
+	[LinkName("QApplication_SetStyle2")]
+	public static extern void** QApplication_SetStyle2(libqt_string style);
+	[LinkName("QApplication_Palette")]
+	public static extern void* QApplication_Palette(void** param1);
+	[LinkName("QApplication_Palette2")]
+	public static extern void* QApplication_Palette2(c_char* className);
+	[LinkName("QApplication_SetPalette")]
+	public static extern void QApplication_SetPalette(void** param1);
+	[LinkName("QApplication_Font")]
+	public static extern void* QApplication_Font();
+	[LinkName("QApplication_Font2")]
+	public static extern void* QApplication_Font2(void** param1);
+	[LinkName("QApplication_Font3")]
+	public static extern void* QApplication_Font3(c_char* className);
+	[LinkName("QApplication_SetFont")]
+	public static extern void QApplication_SetFont(void** param1);
+	[LinkName("QApplication_FontMetrics")]
+	public static extern void* QApplication_FontMetrics();
+	[LinkName("QApplication_AllWidgets")]
+	public static extern void* QApplication_AllWidgets();
+	[LinkName("QApplication_TopLevelWidgets")]
+	public static extern void* QApplication_TopLevelWidgets();
+	[LinkName("QApplication_ActivePopupWidget")]
+	public static extern void** QApplication_ActivePopupWidget();
+	[LinkName("QApplication_ActiveModalWidget")]
+	public static extern void** QApplication_ActiveModalWidget();
+	[LinkName("QApplication_FocusWidget")]
+	public static extern void** QApplication_FocusWidget();
+	[LinkName("QApplication_ActiveWindow")]
+	public static extern void** QApplication_ActiveWindow();
+	[LinkName("QApplication_SetActiveWindow")]
+	public static extern void QApplication_SetActiveWindow(void** act);
+	[LinkName("QApplication_WidgetAt")]
+	public static extern void** QApplication_WidgetAt(void** p);
+	[LinkName("QApplication_WidgetAt2")]
+	public static extern void** QApplication_WidgetAt2(c_int x, c_int y);
+	[LinkName("QApplication_TopLevelAt")]
+	public static extern void** QApplication_TopLevelAt(void** p);
+	[LinkName("QApplication_TopLevelAt2")]
+	public static extern void** QApplication_TopLevelAt2(c_int x, c_int y);
+	[LinkName("QApplication_Beep")]
+	public static extern void QApplication_Beep();
+	[LinkName("QApplication_Alert")]
+	public static extern void QApplication_Alert(void** widget);
+	[LinkName("QApplication_SetCursorFlashTime")]
+	public static extern void QApplication_SetCursorFlashTime(c_int cursorFlashTime);
+	[LinkName("QApplication_CursorFlashTime")]
+	public static extern c_int QApplication_CursorFlashTime();
+	[LinkName("QApplication_SetDoubleClickInterval")]
+	public static extern void QApplication_SetDoubleClickInterval(c_int doubleClickInterval);
+	[LinkName("QApplication_DoubleClickInterval")]
+	public static extern c_int QApplication_DoubleClickInterval();
+	[LinkName("QApplication_SetKeyboardInputInterval")]
+	public static extern void QApplication_SetKeyboardInputInterval(c_int keyboardInputInterval);
+	[LinkName("QApplication_KeyboardInputInterval")]
+	public static extern c_int QApplication_KeyboardInputInterval();
+	[LinkName("QApplication_SetWheelScrollLines")]
+	public static extern void QApplication_SetWheelScrollLines(c_int wheelScrollLines);
+	[LinkName("QApplication_WheelScrollLines")]
+	public static extern c_int QApplication_WheelScrollLines();
+	[LinkName("QApplication_SetStartDragTime")]
+	public static extern void QApplication_SetStartDragTime(c_int ms);
+	[LinkName("QApplication_StartDragTime")]
+	public static extern c_int QApplication_StartDragTime();
+	[LinkName("QApplication_SetStartDragDistance")]
+	public static extern void QApplication_SetStartDragDistance(c_int l);
+	[LinkName("QApplication_StartDragDistance")]
+	public static extern c_int QApplication_StartDragDistance();
+	[LinkName("QApplication_IsEffectEnabled")]
+	public static extern bool QApplication_IsEffectEnabled(Qt_UIEffect param1);
+	[LinkName("QApplication_SetEffectEnabled")]
+	public static extern void QApplication_SetEffectEnabled(Qt_UIEffect param1);
+	[LinkName("QApplication_Exec")]
+	public static extern c_int QApplication_Exec();
+	[LinkName("QApplication_Notify")]
+	public static extern bool QApplication_Notify(void* self, void** param1, void** param2);
+	[LinkName("QApplication_ResolveInterface")]
+	public static extern void* QApplication_ResolveInterface(void* self, c_char* name, c_int revision);
+	[LinkName("QApplication_FocusChanged")]
+	public static extern void QApplication_FocusChanged(void* self, void** old, void** now);
+	[LinkName("QApplication_StyleSheet")]
+	public static extern libqt_string QApplication_StyleSheet(void* self);
+	[LinkName("QApplication_SetStyleSheet")]
+	public static extern void QApplication_SetStyleSheet(void* self, libqt_string sheet);
+	[LinkName("QApplication_SetAutoSipEnabled")]
+	public static extern void QApplication_SetAutoSipEnabled(void* self, bool enabled);
+	[LinkName("QApplication_AutoSipEnabled")]
+	public static extern bool QApplication_AutoSipEnabled(void* self);
+	[LinkName("QApplication_CloseAllWindows")]
+	public static extern void QApplication_CloseAllWindows();
+	[LinkName("QApplication_AboutQt")]
+	public static extern void QApplication_AboutQt();
+	[LinkName("QApplication_Event")]
+	public static extern bool QApplication_Event(void* self, void** param1);
+	[LinkName("QApplication_Tr2")]
+	public static extern libqt_string QApplication_Tr2(c_char* s, c_char* c);
+	[LinkName("QApplication_Tr3")]
+	public static extern libqt_string QApplication_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QApplication_SetPalette2")]
+	public static extern void QApplication_SetPalette2(void** param1, c_char* className);
+	[LinkName("QApplication_SetFont2")]
+	public static extern void QApplication_SetFont2(void** param1, c_char* className);
+	[LinkName("QApplication_Alert2")]
+	public static extern void QApplication_Alert2(void** widget, c_int duration);
+	[LinkName("QApplication_SetEffectEnabled2")]
+	public static extern void QApplication_SetEffectEnabled2(Qt_UIEffect param1, bool enable);
 }

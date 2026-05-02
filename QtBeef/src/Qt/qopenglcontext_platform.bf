@@ -15,9 +15,6 @@ struct QNativeInterface_QGLXContext_Ptr
 		this.Ptr = ptr;
 	}
 }
-extension CQt
-{
-}
 class QNativeInterface_QGLXContext : IQNativeInterface_QGLXContext
 {
 	private QNativeInterface_QGLXContext_Ptr ptr;
@@ -28,6 +25,9 @@ class QNativeInterface_QGLXContext : IQNativeInterface_QGLXContext
 	}
 }
 interface IQNativeInterface_QGLXContext : IQtObjectInterface
+{
+}
+extension CQt
 {
 }
 // --------------------------------------------------------------
@@ -41,6 +41,58 @@ struct QNativeInterface_QEGLContext_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QOpenGLContext_Ptr FromNative(void* context, void* display)
+	{
+		return QOpenGLContext_Ptr(CQt.QNativeInterface_QEGLContext_FromNative(context, display));
+	}
+	public void* NativeContext()
+	{
+		return CQt.QNativeInterface_QEGLContext_NativeContext((.)this.Ptr);
+	}
+	public void* Config()
+	{
+		return CQt.QNativeInterface_QEGLContext_Config((.)this.Ptr);
+	}
+	public void* Display()
+	{
+		return CQt.QNativeInterface_QEGLContext_Display((.)this.Ptr);
+	}
+	public QOpenGLContext_Ptr FromNative3(void* context, void* display, IQOpenGLContext shareContext)
+	{
+		return QOpenGLContext_Ptr(CQt.QNativeInterface_QEGLContext_FromNative3(context, display, (.)shareContext?.ObjectPtr));
+	}
+}
+class QNativeInterface_QEGLContext : IQNativeInterface_QEGLContext
+{
+	private QNativeInterface_QEGLContext_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QNativeInterface_QEGLContext_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public QOpenGLContext_Ptr FromNative(void* context, void* display)
+	{
+		return this.ptr.FromNative(context, display);
+	}
+	public void* NativeContext()
+	{
+		return this.ptr.NativeContext();
+	}
+	public void* Config()
+	{
+		return this.ptr.Config();
+	}
+	public void* Display()
+	{
+		return this.ptr.Display();
+	}
+	public QOpenGLContext_Ptr FromNative3(void* context, void* display, IQOpenGLContext shareContext)
+	{
+		return this.ptr.FromNative3(context, display, shareContext);
+	}
+}
+interface IQNativeInterface_QEGLContext : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -54,36 +106,4 @@ extension CQt
 	public static extern void* QNativeInterface_QEGLContext_Display(void* self);
 	[LinkName("QNativeInterface_QEGLContext_FromNative3")]
 	public static extern void** QNativeInterface_QEGLContext_FromNative3(void* context, void* display, void** shareContext);
-}
-class QNativeInterface_QEGLContext : IQNativeInterface_QEGLContext
-{
-	private QNativeInterface_QEGLContext_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QNativeInterface_QEGLContext_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public QOpenGLContext_Ptr FromNative(void* context, void* display)
-	{
-		return QOpenGLContext_Ptr(CQt.QNativeInterface_QEGLContext_FromNative(context, display));
-	}
-	public void* NativeContext()
-	{
-		return CQt.QNativeInterface_QEGLContext_NativeContext((.)this.ptr.Ptr);
-	}
-	public void* Config()
-	{
-		return CQt.QNativeInterface_QEGLContext_Config((.)this.ptr.Ptr);
-	}
-	public void* Display()
-	{
-		return CQt.QNativeInterface_QEGLContext_Display((.)this.ptr.Ptr);
-	}
-	public QOpenGLContext_Ptr FromNative3(void* context, void* display, IQOpenGLContext shareContext)
-	{
-		return QOpenGLContext_Ptr(CQt.QNativeInterface_QEGLContext_FromNative3(context, display, (.)shareContext?.ObjectPtr));
-	}
-}
-interface IQNativeInterface_QEGLContext : IQtObjectInterface
-{
 }

@@ -14,21 +14,10 @@ struct QLatin1Char_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QLatin1Char_new")]
-	public static extern QLatin1Char_Ptr QLatin1Char_new(void** other);
-	[LinkName("QLatin1Char_new2")]
-	public static extern QLatin1Char_Ptr QLatin1Char_new2(void** other);
-	[LinkName("QLatin1Char_new3")]
-	public static extern QLatin1Char_Ptr QLatin1Char_new3(c_char c);
-	[LinkName("QLatin1Char_new4")]
-	public static extern QLatin1Char_Ptr QLatin1Char_new4(void** param1);
-	[LinkName("QLatin1Char_Delete")]
-	public static extern void QLatin1Char_Delete(QLatin1Char_Ptr self);
-	[LinkName("QLatin1Char_ToLatin1")]
-	public static extern c_char QLatin1Char_ToLatin1(void* self);
+	public c_char ToLatin1()
+	{
+		return CQt.QLatin1Char_ToLatin1((.)this.Ptr);
+	}
 }
 class QLatin1Char : IQLatin1Char
 {
@@ -52,11 +41,26 @@ class QLatin1Char : IQLatin1Char
 	}
 	public c_char ToLatin1()
 	{
-		return CQt.QLatin1Char_ToLatin1((.)this.ptr.Ptr);
+		return this.ptr.ToLatin1();
 	}
 }
 interface IQLatin1Char : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QLatin1Char_new")]
+	public static extern QLatin1Char_Ptr QLatin1Char_new(void** other);
+	[LinkName("QLatin1Char_new2")]
+	public static extern QLatin1Char_Ptr QLatin1Char_new2(void** other);
+	[LinkName("QLatin1Char_new3")]
+	public static extern QLatin1Char_Ptr QLatin1Char_new3(c_char c);
+	[LinkName("QLatin1Char_new4")]
+	public static extern QLatin1Char_Ptr QLatin1Char_new4(void** param1);
+	[LinkName("QLatin1Char_Delete")]
+	public static extern void QLatin1Char_Delete(QLatin1Char_Ptr self);
+	[LinkName("QLatin1Char_ToLatin1")]
+	public static extern c_char QLatin1Char_ToLatin1(void* self);
 }
 // --------------------------------------------------------------
 // QChar
@@ -69,6 +73,374 @@ struct QChar_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QChar_Category Category()
+	{
+		return CQt.QChar_Category((.)this.Ptr);
+	}
+	public QChar_Direction Direction()
+	{
+		return CQt.QChar_Direction((.)this.Ptr);
+	}
+	public QChar_JoiningType JoiningType()
+	{
+		return CQt.QChar_JoiningType((.)this.Ptr);
+	}
+	public c_uchar CombiningClass()
+	{
+		return CQt.QChar_CombiningClass((.)this.Ptr);
+	}
+	public QChar_Ptr MirroredChar()
+	{
+		return QChar_Ptr(CQt.QChar_MirroredChar((.)this.Ptr));
+	}
+	public bool HasMirrored()
+	{
+		return CQt.QChar_HasMirrored((.)this.Ptr);
+	}
+	public void Decomposition(String outStr)
+	{
+		CQt.QChar_Decomposition((.)this.Ptr);
+	}
+	public QChar_Decomposition DecompositionTag()
+	{
+		return CQt.QChar_DecompositionTag((.)this.Ptr);
+	}
+	public c_int DigitValue()
+	{
+		return CQt.QChar_DigitValue((.)this.Ptr);
+	}
+	public QChar_Ptr ToLower()
+	{
+		return QChar_Ptr(CQt.QChar_ToLower((.)this.Ptr));
+	}
+	public QChar_Ptr ToUpper()
+	{
+		return QChar_Ptr(CQt.QChar_ToUpper((.)this.Ptr));
+	}
+	public QChar_Ptr ToTitleCase()
+	{
+		return QChar_Ptr(CQt.QChar_ToTitleCase((.)this.Ptr));
+	}
+	public QChar_Ptr ToCaseFolded()
+	{
+		return QChar_Ptr(CQt.QChar_ToCaseFolded((.)this.Ptr));
+	}
+	public QChar_Script Script()
+	{
+		return CQt.QChar_Script((.)this.Ptr);
+	}
+	public QChar_UnicodeVersion UnicodeVersion()
+	{
+		return CQt.QChar_UnicodeVersion((.)this.Ptr);
+	}
+	public c_char ToLatin1()
+	{
+		return CQt.QChar_ToLatin1((.)this.Ptr);
+	}
+	public QChar_Ptr FromLatin1(c_char c)
+	{
+		return QChar_Ptr(CQt.QChar_FromLatin1(c));
+	}
+	public bool IsNull()
+	{
+		return CQt.QChar_IsNull((.)this.Ptr);
+	}
+	public bool IsPrint()
+	{
+		return CQt.QChar_IsPrint((.)this.Ptr);
+	}
+	public bool IsSpace()
+	{
+		return CQt.QChar_IsSpace((.)this.Ptr);
+	}
+	public bool IsMark()
+	{
+		return CQt.QChar_IsMark((.)this.Ptr);
+	}
+	public bool IsPunct()
+	{
+		return CQt.QChar_IsPunct((.)this.Ptr);
+	}
+	public bool IsSymbol()
+	{
+		return CQt.QChar_IsSymbol((.)this.Ptr);
+	}
+	public bool IsLetter()
+	{
+		return CQt.QChar_IsLetter((.)this.Ptr);
+	}
+	public bool IsNumber()
+	{
+		return CQt.QChar_IsNumber((.)this.Ptr);
+	}
+	public bool IsLetterOrNumber()
+	{
+		return CQt.QChar_IsLetterOrNumber((.)this.Ptr);
+	}
+	public bool IsDigit()
+	{
+		return CQt.QChar_IsDigit((.)this.Ptr);
+	}
+	public bool IsLower()
+	{
+		return CQt.QChar_IsLower((.)this.Ptr);
+	}
+	public bool IsUpper()
+	{
+		return CQt.QChar_IsUpper((.)this.Ptr);
+	}
+	public bool IsTitleCase()
+	{
+		return CQt.QChar_IsTitleCase((.)this.Ptr);
+	}
+	public bool IsNonCharacter()
+	{
+		return CQt.QChar_IsNonCharacter((.)this.Ptr);
+	}
+	public bool IsHighSurrogate()
+	{
+		return CQt.QChar_IsHighSurrogate((.)this.Ptr);
+	}
+	public bool IsLowSurrogate()
+	{
+		return CQt.QChar_IsLowSurrogate((.)this.Ptr);
+	}
+	public bool IsSurrogate()
+	{
+		return CQt.QChar_IsSurrogate((.)this.Ptr);
+	}
+	public c_uchar Cell()
+	{
+		return CQt.QChar_Cell((.)this.Ptr);
+	}
+	public c_uchar Row()
+	{
+		return CQt.QChar_Row((.)this.Ptr);
+	}
+	public void SetCell(c_uchar acell)
+	{
+		CQt.QChar_SetCell((.)this.Ptr, acell);
+	}
+	public void SetRow(c_uchar arow)
+	{
+		CQt.QChar_SetRow((.)this.Ptr, arow);
+	}
+	public QChar_UnicodeVersion CurrentUnicodeVersion()
+	{
+		return CQt.QChar_CurrentUnicodeVersion();
+	}
+}
+class QChar : IQChar
+{
+	private QChar_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QChar_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQChar other)
+	{
+		this.ptr = CQt.QChar_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QChar_new3();
+	}
+	public this(c_ushort rc)
+	{
+		this.ptr = CQt.QChar_new4(rc);
+	}
+	public this(c_uchar c, c_uchar r)
+	{
+		this.ptr = CQt.QChar_new5(c, r);
+	}
+	public this(c_uint rc)
+	{
+		this.ptr = CQt.QChar_new7(rc);
+	}
+	public this(c_int rc)
+	{
+		this.ptr = CQt.QChar_new8(rc);
+	}
+	public this(QChar_SpecialCharacter s)
+	{
+		this.ptr = CQt.QChar_new9(s);
+	}
+	public this(IQLatin1Char ch)
+	{
+		this.ptr = CQt.QChar_new10((.)ch?.ObjectPtr);
+	}
+	public this(c_char c)
+	{
+		this.ptr = CQt.QChar_new11(c);
+	}
+	public this(c_uchar c)
+	{
+		this.ptr = CQt.QChar_new12(c);
+	}
+	public ~this()
+	{
+		CQt.QChar_Delete(this.ptr);
+	}
+	public QChar_Category Category()
+	{
+		return this.ptr.Category();
+	}
+	public QChar_Direction Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public QChar_JoiningType JoiningType()
+	{
+		return this.ptr.JoiningType();
+	}
+	public c_uchar CombiningClass()
+	{
+		return this.ptr.CombiningClass();
+	}
+	public QChar_Ptr MirroredChar()
+	{
+		return this.ptr.MirroredChar();
+	}
+	public bool HasMirrored()
+	{
+		return this.ptr.HasMirrored();
+	}
+	public void Decomposition(String outStr)
+	{
+		this.ptr.Decomposition(outStr);
+	}
+	public QChar_Decomposition DecompositionTag()
+	{
+		return this.ptr.DecompositionTag();
+	}
+	public c_int DigitValue()
+	{
+		return this.ptr.DigitValue();
+	}
+	public QChar_Ptr ToLower()
+	{
+		return this.ptr.ToLower();
+	}
+	public QChar_Ptr ToUpper()
+	{
+		return this.ptr.ToUpper();
+	}
+	public QChar_Ptr ToTitleCase()
+	{
+		return this.ptr.ToTitleCase();
+	}
+	public QChar_Ptr ToCaseFolded()
+	{
+		return this.ptr.ToCaseFolded();
+	}
+	public QChar_Script Script()
+	{
+		return this.ptr.Script();
+	}
+	public QChar_UnicodeVersion UnicodeVersion()
+	{
+		return this.ptr.UnicodeVersion();
+	}
+	public c_char ToLatin1()
+	{
+		return this.ptr.ToLatin1();
+	}
+	public QChar_Ptr FromLatin1(c_char c)
+	{
+		return this.ptr.FromLatin1(c);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public bool IsPrint()
+	{
+		return this.ptr.IsPrint();
+	}
+	public bool IsSpace()
+	{
+		return this.ptr.IsSpace();
+	}
+	public bool IsMark()
+	{
+		return this.ptr.IsMark();
+	}
+	public bool IsPunct()
+	{
+		return this.ptr.IsPunct();
+	}
+	public bool IsSymbol()
+	{
+		return this.ptr.IsSymbol();
+	}
+	public bool IsLetter()
+	{
+		return this.ptr.IsLetter();
+	}
+	public bool IsNumber()
+	{
+		return this.ptr.IsNumber();
+	}
+	public bool IsLetterOrNumber()
+	{
+		return this.ptr.IsLetterOrNumber();
+	}
+	public bool IsDigit()
+	{
+		return this.ptr.IsDigit();
+	}
+	public bool IsLower()
+	{
+		return this.ptr.IsLower();
+	}
+	public bool IsUpper()
+	{
+		return this.ptr.IsUpper();
+	}
+	public bool IsTitleCase()
+	{
+		return this.ptr.IsTitleCase();
+	}
+	public bool IsNonCharacter()
+	{
+		return this.ptr.IsNonCharacter();
+	}
+	public bool IsHighSurrogate()
+	{
+		return this.ptr.IsHighSurrogate();
+	}
+	public bool IsLowSurrogate()
+	{
+		return this.ptr.IsLowSurrogate();
+	}
+	public bool IsSurrogate()
+	{
+		return this.ptr.IsSurrogate();
+	}
+	public c_uchar Cell()
+	{
+		return this.ptr.Cell();
+	}
+	public c_uchar Row()
+	{
+		return this.ptr.Row();
+	}
+	public void SetCell(c_uchar acell)
+	{
+		this.ptr.SetCell(acell);
+	}
+	public void SetRow(c_uchar arow)
+	{
+		this.ptr.SetRow(arow);
+	}
+	public QChar_UnicodeVersion CurrentUnicodeVersion()
+	{
+		return this.ptr.CurrentUnicodeVersion();
+	}
+}
+interface IQChar : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -178,218 +550,6 @@ extension CQt
 	public static extern void QChar_SetRow(void* self, c_uchar arow);
 	[LinkName("QChar_CurrentUnicodeVersion")]
 	public static extern QChar_UnicodeVersion QChar_CurrentUnicodeVersion();
-}
-class QChar : IQChar
-{
-	private QChar_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QChar_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQChar other)
-	{
-		this.ptr = CQt.QChar_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QChar_new3();
-	}
-	public this(c_ushort rc)
-	{
-		this.ptr = CQt.QChar_new4(rc);
-	}
-	public this(c_uchar c, c_uchar r)
-	{
-		this.ptr = CQt.QChar_new5(c, r);
-	}
-	public this(c_uint rc)
-	{
-		this.ptr = CQt.QChar_new7(rc);
-	}
-	public this(c_int rc)
-	{
-		this.ptr = CQt.QChar_new8(rc);
-	}
-	public this(QChar_SpecialCharacter s)
-	{
-		this.ptr = CQt.QChar_new9(s);
-	}
-	public this(IQLatin1Char ch)
-	{
-		this.ptr = CQt.QChar_new10((.)ch?.ObjectPtr);
-	}
-	public this(c_char c)
-	{
-		this.ptr = CQt.QChar_new11(c);
-	}
-	public this(c_uchar c)
-	{
-		this.ptr = CQt.QChar_new12(c);
-	}
-	public ~this()
-	{
-		CQt.QChar_Delete(this.ptr);
-	}
-	public QChar_Category Category()
-	{
-		return CQt.QChar_Category((.)this.ptr.Ptr);
-	}
-	public QChar_Direction Direction()
-	{
-		return CQt.QChar_Direction((.)this.ptr.Ptr);
-	}
-	public QChar_JoiningType JoiningType()
-	{
-		return CQt.QChar_JoiningType((.)this.ptr.Ptr);
-	}
-	public c_uchar CombiningClass()
-	{
-		return CQt.QChar_CombiningClass((.)this.ptr.Ptr);
-	}
-	public QChar_Ptr MirroredChar()
-	{
-		return QChar_Ptr(CQt.QChar_MirroredChar((.)this.ptr.Ptr));
-	}
-	public bool HasMirrored()
-	{
-		return CQt.QChar_HasMirrored((.)this.ptr.Ptr);
-	}
-	public void Decomposition(String outStr)
-	{
-		CQt.QChar_Decomposition((.)this.ptr.Ptr);
-	}
-	public QChar_Decomposition DecompositionTag()
-	{
-		return CQt.QChar_DecompositionTag((.)this.ptr.Ptr);
-	}
-	public c_int DigitValue()
-	{
-		return CQt.QChar_DigitValue((.)this.ptr.Ptr);
-	}
-	public QChar_Ptr ToLower()
-	{
-		return QChar_Ptr(CQt.QChar_ToLower((.)this.ptr.Ptr));
-	}
-	public QChar_Ptr ToUpper()
-	{
-		return QChar_Ptr(CQt.QChar_ToUpper((.)this.ptr.Ptr));
-	}
-	public QChar_Ptr ToTitleCase()
-	{
-		return QChar_Ptr(CQt.QChar_ToTitleCase((.)this.ptr.Ptr));
-	}
-	public QChar_Ptr ToCaseFolded()
-	{
-		return QChar_Ptr(CQt.QChar_ToCaseFolded((.)this.ptr.Ptr));
-	}
-	public QChar_Script Script()
-	{
-		return CQt.QChar_Script((.)this.ptr.Ptr);
-	}
-	public QChar_UnicodeVersion UnicodeVersion()
-	{
-		return CQt.QChar_UnicodeVersion((.)this.ptr.Ptr);
-	}
-	public c_char ToLatin1()
-	{
-		return CQt.QChar_ToLatin1((.)this.ptr.Ptr);
-	}
-	public QChar_Ptr FromLatin1(c_char c)
-	{
-		return QChar_Ptr(CQt.QChar_FromLatin1(c));
-	}
-	public bool IsNull()
-	{
-		return CQt.QChar_IsNull((.)this.ptr.Ptr);
-	}
-	public bool IsPrint()
-	{
-		return CQt.QChar_IsPrint((.)this.ptr.Ptr);
-	}
-	public bool IsSpace()
-	{
-		return CQt.QChar_IsSpace((.)this.ptr.Ptr);
-	}
-	public bool IsMark()
-	{
-		return CQt.QChar_IsMark((.)this.ptr.Ptr);
-	}
-	public bool IsPunct()
-	{
-		return CQt.QChar_IsPunct((.)this.ptr.Ptr);
-	}
-	public bool IsSymbol()
-	{
-		return CQt.QChar_IsSymbol((.)this.ptr.Ptr);
-	}
-	public bool IsLetter()
-	{
-		return CQt.QChar_IsLetter((.)this.ptr.Ptr);
-	}
-	public bool IsNumber()
-	{
-		return CQt.QChar_IsNumber((.)this.ptr.Ptr);
-	}
-	public bool IsLetterOrNumber()
-	{
-		return CQt.QChar_IsLetterOrNumber((.)this.ptr.Ptr);
-	}
-	public bool IsDigit()
-	{
-		return CQt.QChar_IsDigit((.)this.ptr.Ptr);
-	}
-	public bool IsLower()
-	{
-		return CQt.QChar_IsLower((.)this.ptr.Ptr);
-	}
-	public bool IsUpper()
-	{
-		return CQt.QChar_IsUpper((.)this.ptr.Ptr);
-	}
-	public bool IsTitleCase()
-	{
-		return CQt.QChar_IsTitleCase((.)this.ptr.Ptr);
-	}
-	public bool IsNonCharacter()
-	{
-		return CQt.QChar_IsNonCharacter((.)this.ptr.Ptr);
-	}
-	public bool IsHighSurrogate()
-	{
-		return CQt.QChar_IsHighSurrogate((.)this.ptr.Ptr);
-	}
-	public bool IsLowSurrogate()
-	{
-		return CQt.QChar_IsLowSurrogate((.)this.ptr.Ptr);
-	}
-	public bool IsSurrogate()
-	{
-		return CQt.QChar_IsSurrogate((.)this.ptr.Ptr);
-	}
-	public c_uchar Cell()
-	{
-		return CQt.QChar_Cell((.)this.ptr.Ptr);
-	}
-	public c_uchar Row()
-	{
-		return CQt.QChar_Row((.)this.ptr.Ptr);
-	}
-	public void SetCell(c_uchar acell)
-	{
-		CQt.QChar_SetCell((.)this.ptr.Ptr, acell);
-	}
-	public void SetRow(c_uchar arow)
-	{
-		CQt.QChar_SetRow((.)this.ptr.Ptr, arow);
-	}
-	public QChar_UnicodeVersion CurrentUnicodeVersion()
-	{
-		return CQt.QChar_CurrentUnicodeVersion();
-	}
-}
-interface IQChar : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QChar_SpecialCharacter

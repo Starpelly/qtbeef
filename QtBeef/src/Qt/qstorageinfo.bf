@@ -14,6 +14,190 @@ struct QStorageInfo_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQStorageInfo other)
+	{
+		CQt.QStorageInfo_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void SetPath(String path)
+	{
+		CQt.QStorageInfo_SetPath((.)this.Ptr, libqt_string(path));
+	}
+	public void RootPath(String outStr)
+	{
+		CQt.QStorageInfo_RootPath((.)this.Ptr);
+	}
+	public void* Device()
+	{
+		return CQt.QStorageInfo_Device((.)this.Ptr);
+	}
+	public void* Subvolume()
+	{
+		return CQt.QStorageInfo_Subvolume((.)this.Ptr);
+	}
+	public void* FileSystemType()
+	{
+		return CQt.QStorageInfo_FileSystemType((.)this.Ptr);
+	}
+	public void Name(String outStr)
+	{
+		CQt.QStorageInfo_Name((.)this.Ptr);
+	}
+	public void DisplayName(String outStr)
+	{
+		CQt.QStorageInfo_DisplayName((.)this.Ptr);
+	}
+	public c_longlong BytesTotal()
+	{
+		return CQt.QStorageInfo_BytesTotal((.)this.Ptr);
+	}
+	public c_longlong BytesFree()
+	{
+		return CQt.QStorageInfo_BytesFree((.)this.Ptr);
+	}
+	public c_longlong BytesAvailable()
+	{
+		return CQt.QStorageInfo_BytesAvailable((.)this.Ptr);
+	}
+	public c_int BlockSize()
+	{
+		return CQt.QStorageInfo_BlockSize((.)this.Ptr);
+	}
+	public bool IsRoot()
+	{
+		return CQt.QStorageInfo_IsRoot((.)this.Ptr);
+	}
+	public bool IsReadOnly()
+	{
+		return CQt.QStorageInfo_IsReadOnly((.)this.Ptr);
+	}
+	public bool IsReady()
+	{
+		return CQt.QStorageInfo_IsReady((.)this.Ptr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QStorageInfo_IsValid((.)this.Ptr);
+	}
+	public void Refresh()
+	{
+		CQt.QStorageInfo_Refresh((.)this.Ptr);
+	}
+	public void* MountedVolumes()
+	{
+		return CQt.QStorageInfo_MountedVolumes();
+	}
+	public QStorageInfo_Ptr Root()
+	{
+		return QStorageInfo_Ptr(CQt.QStorageInfo_Root());
+	}
+}
+class QStorageInfo : IQStorageInfo
+{
+	private QStorageInfo_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStorageInfo_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStorageInfo_new();
+	}
+	public this(String path)
+	{
+		this.ptr = CQt.QStorageInfo_new2(libqt_string(path));
+	}
+	public this(IQDir dir)
+	{
+		this.ptr = CQt.QStorageInfo_new3((.)dir?.ObjectPtr);
+	}
+	public this(IQStorageInfo other)
+	{
+		this.ptr = CQt.QStorageInfo_new4((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStorageInfo_Delete(this.ptr);
+	}
+	public void Swap(IQStorageInfo other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void SetPath(String path)
+	{
+		this.ptr.SetPath(path);
+	}
+	public void RootPath(String outStr)
+	{
+		this.ptr.RootPath(outStr);
+	}
+	public void* Device()
+	{
+		return this.ptr.Device();
+	}
+	public void* Subvolume()
+	{
+		return this.ptr.Subvolume();
+	}
+	public void* FileSystemType()
+	{
+		return this.ptr.FileSystemType();
+	}
+	public void Name(String outStr)
+	{
+		this.ptr.Name(outStr);
+	}
+	public void DisplayName(String outStr)
+	{
+		this.ptr.DisplayName(outStr);
+	}
+	public c_longlong BytesTotal()
+	{
+		return this.ptr.BytesTotal();
+	}
+	public c_longlong BytesFree()
+	{
+		return this.ptr.BytesFree();
+	}
+	public c_longlong BytesAvailable()
+	{
+		return this.ptr.BytesAvailable();
+	}
+	public c_int BlockSize()
+	{
+		return this.ptr.BlockSize();
+	}
+	public bool IsRoot()
+	{
+		return this.ptr.IsRoot();
+	}
+	public bool IsReadOnly()
+	{
+		return this.ptr.IsReadOnly();
+	}
+	public bool IsReady()
+	{
+		return this.ptr.IsReady();
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void Refresh()
+	{
+		this.ptr.Refresh();
+	}
+	public void* MountedVolumes()
+	{
+		return this.ptr.MountedVolumes();
+	}
+	public QStorageInfo_Ptr Root()
+	{
+		return this.ptr.Root();
+	}
+}
+interface IQStorageInfo : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -67,112 +251,4 @@ extension CQt
 	public static extern void* QStorageInfo_MountedVolumes();
 	[LinkName("QStorageInfo_Root")]
 	public static extern void* QStorageInfo_Root();
-}
-class QStorageInfo : IQStorageInfo
-{
-	private QStorageInfo_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStorageInfo_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStorageInfo_new();
-	}
-	public this(String path)
-	{
-		this.ptr = CQt.QStorageInfo_new2(libqt_string(path));
-	}
-	public this(IQDir dir)
-	{
-		this.ptr = CQt.QStorageInfo_new3((.)dir?.ObjectPtr);
-	}
-	public this(IQStorageInfo other)
-	{
-		this.ptr = CQt.QStorageInfo_new4((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStorageInfo_Delete(this.ptr);
-	}
-	public void Swap(IQStorageInfo other)
-	{
-		CQt.QStorageInfo_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void SetPath(String path)
-	{
-		CQt.QStorageInfo_SetPath((.)this.ptr.Ptr, libqt_string(path));
-	}
-	public void RootPath(String outStr)
-	{
-		CQt.QStorageInfo_RootPath((.)this.ptr.Ptr);
-	}
-	public void* Device()
-	{
-		return CQt.QStorageInfo_Device((.)this.ptr.Ptr);
-	}
-	public void* Subvolume()
-	{
-		return CQt.QStorageInfo_Subvolume((.)this.ptr.Ptr);
-	}
-	public void* FileSystemType()
-	{
-		return CQt.QStorageInfo_FileSystemType((.)this.ptr.Ptr);
-	}
-	public void Name(String outStr)
-	{
-		CQt.QStorageInfo_Name((.)this.ptr.Ptr);
-	}
-	public void DisplayName(String outStr)
-	{
-		CQt.QStorageInfo_DisplayName((.)this.ptr.Ptr);
-	}
-	public c_longlong BytesTotal()
-	{
-		return CQt.QStorageInfo_BytesTotal((.)this.ptr.Ptr);
-	}
-	public c_longlong BytesFree()
-	{
-		return CQt.QStorageInfo_BytesFree((.)this.ptr.Ptr);
-	}
-	public c_longlong BytesAvailable()
-	{
-		return CQt.QStorageInfo_BytesAvailable((.)this.ptr.Ptr);
-	}
-	public c_int BlockSize()
-	{
-		return CQt.QStorageInfo_BlockSize((.)this.ptr.Ptr);
-	}
-	public bool IsRoot()
-	{
-		return CQt.QStorageInfo_IsRoot((.)this.ptr.Ptr);
-	}
-	public bool IsReadOnly()
-	{
-		return CQt.QStorageInfo_IsReadOnly((.)this.ptr.Ptr);
-	}
-	public bool IsReady()
-	{
-		return CQt.QStorageInfo_IsReady((.)this.ptr.Ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QStorageInfo_IsValid((.)this.ptr.Ptr);
-	}
-	public void Refresh()
-	{
-		CQt.QStorageInfo_Refresh((.)this.ptr.Ptr);
-	}
-	public void* MountedVolumes()
-	{
-		return CQt.QStorageInfo_MountedVolumes();
-	}
-	public QStorageInfo_Ptr Root()
-	{
-		return QStorageInfo_Ptr(CQt.QStorageInfo_Root());
-	}
-}
-interface IQStorageInfo : IQtObjectInterface
-{
 }

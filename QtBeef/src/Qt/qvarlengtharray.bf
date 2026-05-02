@@ -14,15 +14,18 @@ struct QVLABaseBase_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QVLABaseBase_Capacity")]
-	public static extern void* QVLABaseBase_Capacity(void* self);
-	[LinkName("QVLABaseBase_Size")]
-	public static extern void* QVLABaseBase_Size(void* self);
-	[LinkName("QVLABaseBase_Empty")]
-	public static extern bool QVLABaseBase_Empty(void* self);
+	public void* Capacity()
+	{
+		return CQt.QVLABaseBase_Capacity((.)this.Ptr);
+	}
+	public void* Size()
+	{
+		return CQt.QVLABaseBase_Size((.)this.Ptr);
+	}
+	public bool Empty()
+	{
+		return CQt.QVLABaseBase_Empty((.)this.Ptr);
+	}
 }
 class QVLABaseBase : IQVLABaseBase
 {
@@ -34,17 +37,26 @@ class QVLABaseBase : IQVLABaseBase
 	}
 	public void* Capacity()
 	{
-		return CQt.QVLABaseBase_Capacity((.)this.ptr.Ptr);
+		return this.ptr.Capacity();
 	}
 	public void* Size()
 	{
-		return CQt.QVLABaseBase_Size((.)this.ptr.Ptr);
+		return this.ptr.Size();
 	}
 	public bool Empty()
 	{
-		return CQt.QVLABaseBase_Empty((.)this.ptr.Ptr);
+		return this.ptr.Empty();
 	}
 }
 interface IQVLABaseBase : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QVLABaseBase_Capacity")]
+	public static extern void* QVLABaseBase_Capacity(void* self);
+	[LinkName("QVLABaseBase_Size")]
+	public static extern void* QVLABaseBase_Size(void* self);
+	[LinkName("QVLABaseBase_Empty")]
+	public static extern bool QVLABaseBase_Empty(void* self);
 }

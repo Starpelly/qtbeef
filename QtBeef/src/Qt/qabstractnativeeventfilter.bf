@@ -14,15 +14,10 @@ struct QAbstractNativeEventFilter_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QAbstractNativeEventFilter_new")]
-	public static extern QAbstractNativeEventFilter_Ptr QAbstractNativeEventFilter_new();
-	[LinkName("QAbstractNativeEventFilter_Delete")]
-	public static extern void QAbstractNativeEventFilter_Delete(QAbstractNativeEventFilter_Ptr self);
-	[LinkName("QAbstractNativeEventFilter_NativeEventFilter")]
-	public static extern bool QAbstractNativeEventFilter_NativeEventFilter(void* self, void** eventType, void* message, void** result);
+	public bool NativeEventFilter(void** eventType, void* message, void** result)
+	{
+		return CQt.QAbstractNativeEventFilter_NativeEventFilter((.)this.Ptr, eventType, message, result);
+	}
 }
 class QAbstractNativeEventFilter : IQAbstractNativeEventFilter
 {
@@ -42,9 +37,18 @@ class QAbstractNativeEventFilter : IQAbstractNativeEventFilter
 	}
 	public bool NativeEventFilter(void** eventType, void* message, void** result)
 	{
-		return CQt.QAbstractNativeEventFilter_NativeEventFilter((.)this.ptr.Ptr, eventType, message, result);
+		return this.ptr.NativeEventFilter(eventType, message, result);
 	}
 }
 interface IQAbstractNativeEventFilter : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QAbstractNativeEventFilter_new")]
+	public static extern QAbstractNativeEventFilter_Ptr QAbstractNativeEventFilter_new();
+	[LinkName("QAbstractNativeEventFilter_Delete")]
+	public static extern void QAbstractNativeEventFilter_Delete(QAbstractNativeEventFilter_Ptr self);
+	[LinkName("QAbstractNativeEventFilter_NativeEventFilter")]
+	public static extern bool QAbstractNativeEventFilter_NativeEventFilter(void* self, void** eventType, void* message, void** result);
 }

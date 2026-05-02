@@ -14,6 +14,466 @@ struct QMatrix4x4_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public float* OperatorCall2(c_int row, c_int column)
+	{
+		return CQt.QMatrix4x4_OperatorCall2((.)this.Ptr, row, column);
+	}
+	public QVector4D_Ptr Column(c_int index)
+	{
+		return QVector4D_Ptr(CQt.QMatrix4x4_Column((.)this.Ptr, index));
+	}
+	public void SetColumn(c_int index, IQVector4D value)
+	{
+		CQt.QMatrix4x4_SetColumn((.)this.Ptr, index, (.)value?.ObjectPtr);
+	}
+	public QVector4D_Ptr Row(c_int index)
+	{
+		return QVector4D_Ptr(CQt.QMatrix4x4_Row((.)this.Ptr, index));
+	}
+	public void SetRow(c_int index, IQVector4D value)
+	{
+		CQt.QMatrix4x4_SetRow((.)this.Ptr, index, (.)value?.ObjectPtr);
+	}
+	public bool IsAffine()
+	{
+		return CQt.QMatrix4x4_IsAffine((.)this.Ptr);
+	}
+	public bool IsIdentity()
+	{
+		return CQt.QMatrix4x4_IsIdentity((.)this.Ptr);
+	}
+	public void SetToIdentity()
+	{
+		CQt.QMatrix4x4_SetToIdentity((.)this.Ptr);
+	}
+	public void Fill(float value)
+	{
+		CQt.QMatrix4x4_Fill((.)this.Ptr, value);
+	}
+	public double Determinant()
+	{
+		return CQt.QMatrix4x4_Determinant((.)this.Ptr);
+	}
+	public QMatrix4x4_Ptr Inverted()
+	{
+		return QMatrix4x4_Ptr(CQt.QMatrix4x4_Inverted((.)this.Ptr));
+	}
+	public QMatrix4x4_Ptr Transposed()
+	{
+		return QMatrix4x4_Ptr(CQt.QMatrix4x4_Transposed((.)this.Ptr));
+	}
+	public QMatrix4x4_Ptr OperatorMultiplyAssign2(float factor)
+	{
+		return QMatrix4x4_Ptr(CQt.QMatrix4x4_OperatorMultiplyAssign2((.)this.Ptr, factor));
+	}
+	public void Scale(IQVector3D vector)
+	{
+		CQt.QMatrix4x4_Scale((.)this.Ptr, (.)vector?.ObjectPtr);
+	}
+	public void Translate(IQVector3D vector)
+	{
+		CQt.QMatrix4x4_Translate((.)this.Ptr, (.)vector?.ObjectPtr);
+	}
+	public void Rotate(float angle, IQVector3D vector)
+	{
+		CQt.QMatrix4x4_Rotate((.)this.Ptr, angle, (.)vector?.ObjectPtr);
+	}
+	public void Scale2(float x, float y)
+	{
+		CQt.QMatrix4x4_Scale2((.)this.Ptr, x, y);
+	}
+	public void Scale3(float x, float y, float z)
+	{
+		CQt.QMatrix4x4_Scale3((.)this.Ptr, x, y, z);
+	}
+	public void Scale4(float factor)
+	{
+		CQt.QMatrix4x4_Scale4((.)this.Ptr, factor);
+	}
+	public void Translate2(float x, float y)
+	{
+		CQt.QMatrix4x4_Translate2((.)this.Ptr, x, y);
+	}
+	public void Translate3(float x, float y, float z)
+	{
+		CQt.QMatrix4x4_Translate3((.)this.Ptr, x, y, z);
+	}
+	public void Rotate2(float angle, float x, float y)
+	{
+		CQt.QMatrix4x4_Rotate2((.)this.Ptr, angle, x, y);
+	}
+	public void Rotate3(IQQuaternion quaternion)
+	{
+		CQt.QMatrix4x4_Rotate3((.)this.Ptr, (.)quaternion?.ObjectPtr);
+	}
+	public void Ortho(IQRect rect)
+	{
+		CQt.QMatrix4x4_Ortho((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public void Ortho2(IQRectF rect)
+	{
+		CQt.QMatrix4x4_Ortho2((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public void Ortho3(float left, float right, float bottom, float top, float nearPlane, float farPlane)
+	{
+		CQt.QMatrix4x4_Ortho3((.)this.Ptr, left, right, bottom, top, nearPlane, farPlane);
+	}
+	public void Frustum(float left, float right, float bottom, float top, float nearPlane, float farPlane)
+	{
+		CQt.QMatrix4x4_Frustum((.)this.Ptr, left, right, bottom, top, nearPlane, farPlane);
+	}
+	public void Perspective(float verticalAngle, float aspectRatio, float nearPlane, float farPlane)
+	{
+		CQt.QMatrix4x4_Perspective((.)this.Ptr, verticalAngle, aspectRatio, nearPlane, farPlane);
+	}
+	public void LookAt(IQVector3D eye, IQVector3D center, IQVector3D up)
+	{
+		CQt.QMatrix4x4_LookAt((.)this.Ptr, (.)eye?.ObjectPtr, (.)center?.ObjectPtr, (.)up?.ObjectPtr);
+	}
+	public void Viewport(IQRectF rect)
+	{
+		CQt.QMatrix4x4_Viewport((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public void Viewport2(float left, float bottom, float width, float height)
+	{
+		CQt.QMatrix4x4_Viewport2((.)this.Ptr, left, bottom, width, height);
+	}
+	public void FlipCoordinates()
+	{
+		CQt.QMatrix4x4_FlipCoordinates((.)this.Ptr);
+	}
+	public void CopyDataTo(float* values)
+	{
+		CQt.QMatrix4x4_CopyDataTo((.)this.Ptr, values);
+	}
+	public QTransform_Ptr ToTransform()
+	{
+		return QTransform_Ptr(CQt.QMatrix4x4_ToTransform((.)this.Ptr));
+	}
+	public QTransform_Ptr ToTransform2(float distanceToPlane)
+	{
+		return QTransform_Ptr(CQt.QMatrix4x4_ToTransform2((.)this.Ptr, distanceToPlane));
+	}
+	public QPoint_Ptr Map(IQPoint point)
+	{
+		return QPoint_Ptr(CQt.QMatrix4x4_Map((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public QPointF_Ptr Map2(IQPointF point)
+	{
+		return QPointF_Ptr(CQt.QMatrix4x4_Map2((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public QVector3D_Ptr Map3(IQVector3D point)
+	{
+		return QVector3D_Ptr(CQt.QMatrix4x4_Map3((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public QVector3D_Ptr MapVector(IQVector3D vector)
+	{
+		return QVector3D_Ptr(CQt.QMatrix4x4_MapVector((.)this.Ptr, (.)vector?.ObjectPtr));
+	}
+	public QVector4D_Ptr Map4(IQVector4D point)
+	{
+		return QVector4D_Ptr(CQt.QMatrix4x4_Map4((.)this.Ptr, (.)point?.ObjectPtr));
+	}
+	public QRect_Ptr MapRect(IQRect rect)
+	{
+		return QRect_Ptr(CQt.QMatrix4x4_MapRect((.)this.Ptr, (.)rect?.ObjectPtr));
+	}
+	public QRectF_Ptr MapRect2(IQRectF rect)
+	{
+		return QRectF_Ptr(CQt.QMatrix4x4_MapRect2((.)this.Ptr, (.)rect?.ObjectPtr));
+	}
+	public float* Data()
+	{
+		return CQt.QMatrix4x4_Data((.)this.Ptr);
+	}
+	public float* Data2()
+	{
+		return CQt.QMatrix4x4_Data2((.)this.Ptr);
+	}
+	public float* ConstData()
+	{
+		return CQt.QMatrix4x4_ConstData((.)this.Ptr);
+	}
+	public void Optimize()
+	{
+		CQt.QMatrix4x4_Optimize((.)this.Ptr);
+	}
+	public void ProjectedRotate(float angle, float x, float y, float z)
+	{
+		CQt.QMatrix4x4_ProjectedRotate((.)this.Ptr, angle, x, y, z);
+	}
+	public void* Flags()
+	{
+		return CQt.QMatrix4x4_Flags((.)this.Ptr);
+	}
+	public QMatrix4x4_Ptr Inverted1(bool* invertible)
+	{
+		return QMatrix4x4_Ptr(CQt.QMatrix4x4_Inverted1((.)this.Ptr, invertible));
+	}
+	public void Rotate4(float angle, float x, float y, float z)
+	{
+		CQt.QMatrix4x4_Rotate4((.)this.Ptr, angle, x, y, z);
+	}
+	public void Viewport5(float left, float bottom, float width, float height, float nearPlane)
+	{
+		CQt.QMatrix4x4_Viewport5((.)this.Ptr, left, bottom, width, height, nearPlane);
+	}
+	public void Viewport6(float left, float bottom, float width, float height, float nearPlane, float farPlane)
+	{
+		CQt.QMatrix4x4_Viewport6((.)this.Ptr, left, bottom, width, height, nearPlane, farPlane);
+	}
+}
+class QMatrix4x4 : IQMatrix4x4
+{
+	private QMatrix4x4_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QMatrix4x4_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQMatrix4x4 other)
+	{
+		this.ptr = CQt.QMatrix4x4_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QMatrix4x4_new3();
+	}
+	public this(Qt_Initialization param1)
+	{
+		this.ptr = CQt.QMatrix4x4_new4(param1);
+	}
+	public this(float* values)
+	{
+		this.ptr = CQt.QMatrix4x4_new5(values);
+	}
+	public this(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+	{
+		this.ptr = CQt.QMatrix4x4_new6(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44);
+	}
+	public this(float* values, c_int cols, c_int rows)
+	{
+		this.ptr = CQt.QMatrix4x4_new7(values, cols, rows);
+	}
+	public this(IQTransform transform)
+	{
+		this.ptr = CQt.QMatrix4x4_new8((.)transform?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QMatrix4x4_Delete(this.ptr);
+	}
+	public float* OperatorCall2(c_int row, c_int column)
+	{
+		return this.ptr.OperatorCall2(row, column);
+	}
+	public QVector4D_Ptr Column(c_int index)
+	{
+		return this.ptr.Column(index);
+	}
+	public void SetColumn(c_int index, IQVector4D value)
+	{
+		this.ptr.SetColumn(index, value);
+	}
+	public QVector4D_Ptr Row(c_int index)
+	{
+		return this.ptr.Row(index);
+	}
+	public void SetRow(c_int index, IQVector4D value)
+	{
+		this.ptr.SetRow(index, value);
+	}
+	public bool IsAffine()
+	{
+		return this.ptr.IsAffine();
+	}
+	public bool IsIdentity()
+	{
+		return this.ptr.IsIdentity();
+	}
+	public void SetToIdentity()
+	{
+		this.ptr.SetToIdentity();
+	}
+	public void Fill(float value)
+	{
+		this.ptr.Fill(value);
+	}
+	public double Determinant()
+	{
+		return this.ptr.Determinant();
+	}
+	public QMatrix4x4_Ptr Inverted()
+	{
+		return this.ptr.Inverted();
+	}
+	public QMatrix4x4_Ptr Transposed()
+	{
+		return this.ptr.Transposed();
+	}
+	public QMatrix4x4_Ptr OperatorMultiplyAssign2(float factor)
+	{
+		return this.ptr.OperatorMultiplyAssign2(factor);
+	}
+	public void Scale(IQVector3D vector)
+	{
+		this.ptr.Scale(vector);
+	}
+	public void Translate(IQVector3D vector)
+	{
+		this.ptr.Translate(vector);
+	}
+	public void Rotate(float angle, IQVector3D vector)
+	{
+		this.ptr.Rotate(angle, vector);
+	}
+	public void Scale2(float x, float y)
+	{
+		this.ptr.Scale2(x, y);
+	}
+	public void Scale3(float x, float y, float z)
+	{
+		this.ptr.Scale3(x, y, z);
+	}
+	public void Scale4(float factor)
+	{
+		this.ptr.Scale4(factor);
+	}
+	public void Translate2(float x, float y)
+	{
+		this.ptr.Translate2(x, y);
+	}
+	public void Translate3(float x, float y, float z)
+	{
+		this.ptr.Translate3(x, y, z);
+	}
+	public void Rotate2(float angle, float x, float y)
+	{
+		this.ptr.Rotate2(angle, x, y);
+	}
+	public void Rotate3(IQQuaternion quaternion)
+	{
+		this.ptr.Rotate3(quaternion);
+	}
+	public void Ortho(IQRect rect)
+	{
+		this.ptr.Ortho(rect);
+	}
+	public void Ortho2(IQRectF rect)
+	{
+		this.ptr.Ortho2(rect);
+	}
+	public void Ortho3(float left, float right, float bottom, float top, float nearPlane, float farPlane)
+	{
+		this.ptr.Ortho3(left, right, bottom, top, nearPlane, farPlane);
+	}
+	public void Frustum(float left, float right, float bottom, float top, float nearPlane, float farPlane)
+	{
+		this.ptr.Frustum(left, right, bottom, top, nearPlane, farPlane);
+	}
+	public void Perspective(float verticalAngle, float aspectRatio, float nearPlane, float farPlane)
+	{
+		this.ptr.Perspective(verticalAngle, aspectRatio, nearPlane, farPlane);
+	}
+	public void LookAt(IQVector3D eye, IQVector3D center, IQVector3D up)
+	{
+		this.ptr.LookAt(eye, center, up);
+	}
+	public void Viewport(IQRectF rect)
+	{
+		this.ptr.Viewport(rect);
+	}
+	public void Viewport2(float left, float bottom, float width, float height)
+	{
+		this.ptr.Viewport2(left, bottom, width, height);
+	}
+	public void FlipCoordinates()
+	{
+		this.ptr.FlipCoordinates();
+	}
+	public void CopyDataTo(float* values)
+	{
+		this.ptr.CopyDataTo(values);
+	}
+	public QTransform_Ptr ToTransform()
+	{
+		return this.ptr.ToTransform();
+	}
+	public QTransform_Ptr ToTransform2(float distanceToPlane)
+	{
+		return this.ptr.ToTransform2(distanceToPlane);
+	}
+	public QPoint_Ptr Map(IQPoint point)
+	{
+		return this.ptr.Map(point);
+	}
+	public QPointF_Ptr Map2(IQPointF point)
+	{
+		return this.ptr.Map2(point);
+	}
+	public QVector3D_Ptr Map3(IQVector3D point)
+	{
+		return this.ptr.Map3(point);
+	}
+	public QVector3D_Ptr MapVector(IQVector3D vector)
+	{
+		return this.ptr.MapVector(vector);
+	}
+	public QVector4D_Ptr Map4(IQVector4D point)
+	{
+		return this.ptr.Map4(point);
+	}
+	public QRect_Ptr MapRect(IQRect rect)
+	{
+		return this.ptr.MapRect(rect);
+	}
+	public QRectF_Ptr MapRect2(IQRectF rect)
+	{
+		return this.ptr.MapRect2(rect);
+	}
+	public float* Data()
+	{
+		return this.ptr.Data();
+	}
+	public float* Data2()
+	{
+		return this.ptr.Data2();
+	}
+	public float* ConstData()
+	{
+		return this.ptr.ConstData();
+	}
+	public void Optimize()
+	{
+		this.ptr.Optimize();
+	}
+	public void ProjectedRotate(float angle, float x, float y, float z)
+	{
+		this.ptr.ProjectedRotate(angle, x, y, z);
+	}
+	public void* Flags()
+	{
+		return this.ptr.Flags();
+	}
+	public QMatrix4x4_Ptr Inverted1(bool* invertible)
+	{
+		return this.ptr.Inverted1(invertible);
+	}
+	public void Rotate4(float angle, float x, float y, float z)
+	{
+		this.ptr.Rotate4(angle, x, y, z);
+	}
+	public void Viewport5(float left, float bottom, float width, float height, float nearPlane)
+	{
+		this.ptr.Viewport5(left, bottom, width, height, nearPlane);
+	}
+	public void Viewport6(float left, float bottom, float width, float height, float nearPlane, float farPlane)
+	{
+		this.ptr.Viewport6(left, bottom, width, height, nearPlane, farPlane);
+	}
+}
+interface IQMatrix4x4 : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -157,258 +617,6 @@ extension CQt
 	public static extern void QMatrix4x4_Viewport5(void* self, float left, float bottom, float width, float height, float nearPlane);
 	[LinkName("QMatrix4x4_Viewport6")]
 	public static extern void QMatrix4x4_Viewport6(void* self, float left, float bottom, float width, float height, float nearPlane, float farPlane);
-}
-class QMatrix4x4 : IQMatrix4x4
-{
-	private QMatrix4x4_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QMatrix4x4_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQMatrix4x4 other)
-	{
-		this.ptr = CQt.QMatrix4x4_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QMatrix4x4_new3();
-	}
-	public this(Qt_Initialization param1)
-	{
-		this.ptr = CQt.QMatrix4x4_new4(param1);
-	}
-	public this(float* values)
-	{
-		this.ptr = CQt.QMatrix4x4_new5(values);
-	}
-	public this(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
-	{
-		this.ptr = CQt.QMatrix4x4_new6(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44);
-	}
-	public this(float* values, c_int cols, c_int rows)
-	{
-		this.ptr = CQt.QMatrix4x4_new7(values, cols, rows);
-	}
-	public this(IQTransform transform)
-	{
-		this.ptr = CQt.QMatrix4x4_new8((.)transform?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QMatrix4x4_Delete(this.ptr);
-	}
-	public float* OperatorCall2(c_int row, c_int column)
-	{
-		return CQt.QMatrix4x4_OperatorCall2((.)this.ptr.Ptr, row, column);
-	}
-	public QVector4D_Ptr Column(c_int index)
-	{
-		return QVector4D_Ptr(CQt.QMatrix4x4_Column((.)this.ptr.Ptr, index));
-	}
-	public void SetColumn(c_int index, IQVector4D value)
-	{
-		CQt.QMatrix4x4_SetColumn((.)this.ptr.Ptr, index, (.)value?.ObjectPtr);
-	}
-	public QVector4D_Ptr Row(c_int index)
-	{
-		return QVector4D_Ptr(CQt.QMatrix4x4_Row((.)this.ptr.Ptr, index));
-	}
-	public void SetRow(c_int index, IQVector4D value)
-	{
-		CQt.QMatrix4x4_SetRow((.)this.ptr.Ptr, index, (.)value?.ObjectPtr);
-	}
-	public bool IsAffine()
-	{
-		return CQt.QMatrix4x4_IsAffine((.)this.ptr.Ptr);
-	}
-	public bool IsIdentity()
-	{
-		return CQt.QMatrix4x4_IsIdentity((.)this.ptr.Ptr);
-	}
-	public void SetToIdentity()
-	{
-		CQt.QMatrix4x4_SetToIdentity((.)this.ptr.Ptr);
-	}
-	public void Fill(float value)
-	{
-		CQt.QMatrix4x4_Fill((.)this.ptr.Ptr, value);
-	}
-	public double Determinant()
-	{
-		return CQt.QMatrix4x4_Determinant((.)this.ptr.Ptr);
-	}
-	public QMatrix4x4_Ptr Inverted()
-	{
-		return QMatrix4x4_Ptr(CQt.QMatrix4x4_Inverted((.)this.ptr.Ptr));
-	}
-	public QMatrix4x4_Ptr Transposed()
-	{
-		return QMatrix4x4_Ptr(CQt.QMatrix4x4_Transposed((.)this.ptr.Ptr));
-	}
-	public QMatrix4x4_Ptr OperatorMultiplyAssign2(float factor)
-	{
-		return QMatrix4x4_Ptr(CQt.QMatrix4x4_OperatorMultiplyAssign2((.)this.ptr.Ptr, factor));
-	}
-	public void Scale(IQVector3D vector)
-	{
-		CQt.QMatrix4x4_Scale((.)this.ptr.Ptr, (.)vector?.ObjectPtr);
-	}
-	public void Translate(IQVector3D vector)
-	{
-		CQt.QMatrix4x4_Translate((.)this.ptr.Ptr, (.)vector?.ObjectPtr);
-	}
-	public void Rotate(float angle, IQVector3D vector)
-	{
-		CQt.QMatrix4x4_Rotate((.)this.ptr.Ptr, angle, (.)vector?.ObjectPtr);
-	}
-	public void Scale2(float x, float y)
-	{
-		CQt.QMatrix4x4_Scale2((.)this.ptr.Ptr, x, y);
-	}
-	public void Scale3(float x, float y, float z)
-	{
-		CQt.QMatrix4x4_Scale3((.)this.ptr.Ptr, x, y, z);
-	}
-	public void Scale4(float factor)
-	{
-		CQt.QMatrix4x4_Scale4((.)this.ptr.Ptr, factor);
-	}
-	public void Translate2(float x, float y)
-	{
-		CQt.QMatrix4x4_Translate2((.)this.ptr.Ptr, x, y);
-	}
-	public void Translate3(float x, float y, float z)
-	{
-		CQt.QMatrix4x4_Translate3((.)this.ptr.Ptr, x, y, z);
-	}
-	public void Rotate2(float angle, float x, float y)
-	{
-		CQt.QMatrix4x4_Rotate2((.)this.ptr.Ptr, angle, x, y);
-	}
-	public void Rotate3(IQQuaternion quaternion)
-	{
-		CQt.QMatrix4x4_Rotate3((.)this.ptr.Ptr, (.)quaternion?.ObjectPtr);
-	}
-	public void Ortho(IQRect rect)
-	{
-		CQt.QMatrix4x4_Ortho((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public void Ortho2(IQRectF rect)
-	{
-		CQt.QMatrix4x4_Ortho2((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public void Ortho3(float left, float right, float bottom, float top, float nearPlane, float farPlane)
-	{
-		CQt.QMatrix4x4_Ortho3((.)this.ptr.Ptr, left, right, bottom, top, nearPlane, farPlane);
-	}
-	public void Frustum(float left, float right, float bottom, float top, float nearPlane, float farPlane)
-	{
-		CQt.QMatrix4x4_Frustum((.)this.ptr.Ptr, left, right, bottom, top, nearPlane, farPlane);
-	}
-	public void Perspective(float verticalAngle, float aspectRatio, float nearPlane, float farPlane)
-	{
-		CQt.QMatrix4x4_Perspective((.)this.ptr.Ptr, verticalAngle, aspectRatio, nearPlane, farPlane);
-	}
-	public void LookAt(IQVector3D eye, IQVector3D center, IQVector3D up)
-	{
-		CQt.QMatrix4x4_LookAt((.)this.ptr.Ptr, (.)eye?.ObjectPtr, (.)center?.ObjectPtr, (.)up?.ObjectPtr);
-	}
-	public void Viewport(IQRectF rect)
-	{
-		CQt.QMatrix4x4_Viewport((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public void Viewport2(float left, float bottom, float width, float height)
-	{
-		CQt.QMatrix4x4_Viewport2((.)this.ptr.Ptr, left, bottom, width, height);
-	}
-	public void FlipCoordinates()
-	{
-		CQt.QMatrix4x4_FlipCoordinates((.)this.ptr.Ptr);
-	}
-	public void CopyDataTo(float* values)
-	{
-		CQt.QMatrix4x4_CopyDataTo((.)this.ptr.Ptr, values);
-	}
-	public QTransform_Ptr ToTransform()
-	{
-		return QTransform_Ptr(CQt.QMatrix4x4_ToTransform((.)this.ptr.Ptr));
-	}
-	public QTransform_Ptr ToTransform2(float distanceToPlane)
-	{
-		return QTransform_Ptr(CQt.QMatrix4x4_ToTransform2((.)this.ptr.Ptr, distanceToPlane));
-	}
-	public QPoint_Ptr Map(IQPoint point)
-	{
-		return QPoint_Ptr(CQt.QMatrix4x4_Map((.)this.ptr.Ptr, (.)point?.ObjectPtr));
-	}
-	public QPointF_Ptr Map2(IQPointF point)
-	{
-		return QPointF_Ptr(CQt.QMatrix4x4_Map2((.)this.ptr.Ptr, (.)point?.ObjectPtr));
-	}
-	public QVector3D_Ptr Map3(IQVector3D point)
-	{
-		return QVector3D_Ptr(CQt.QMatrix4x4_Map3((.)this.ptr.Ptr, (.)point?.ObjectPtr));
-	}
-	public QVector3D_Ptr MapVector(IQVector3D vector)
-	{
-		return QVector3D_Ptr(CQt.QMatrix4x4_MapVector((.)this.ptr.Ptr, (.)vector?.ObjectPtr));
-	}
-	public QVector4D_Ptr Map4(IQVector4D point)
-	{
-		return QVector4D_Ptr(CQt.QMatrix4x4_Map4((.)this.ptr.Ptr, (.)point?.ObjectPtr));
-	}
-	public QRect_Ptr MapRect(IQRect rect)
-	{
-		return QRect_Ptr(CQt.QMatrix4x4_MapRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr));
-	}
-	public QRectF_Ptr MapRect2(IQRectF rect)
-	{
-		return QRectF_Ptr(CQt.QMatrix4x4_MapRect2((.)this.ptr.Ptr, (.)rect?.ObjectPtr));
-	}
-	public float* Data()
-	{
-		return CQt.QMatrix4x4_Data((.)this.ptr.Ptr);
-	}
-	public float* Data2()
-	{
-		return CQt.QMatrix4x4_Data2((.)this.ptr.Ptr);
-	}
-	public float* ConstData()
-	{
-		return CQt.QMatrix4x4_ConstData((.)this.ptr.Ptr);
-	}
-	public void Optimize()
-	{
-		CQt.QMatrix4x4_Optimize((.)this.ptr.Ptr);
-	}
-	public void ProjectedRotate(float angle, float x, float y, float z)
-	{
-		CQt.QMatrix4x4_ProjectedRotate((.)this.ptr.Ptr, angle, x, y, z);
-	}
-	public void* Flags()
-	{
-		return CQt.QMatrix4x4_Flags((.)this.ptr.Ptr);
-	}
-	public QMatrix4x4_Ptr Inverted1(bool* invertible)
-	{
-		return QMatrix4x4_Ptr(CQt.QMatrix4x4_Inverted1((.)this.ptr.Ptr, invertible));
-	}
-	public void Rotate4(float angle, float x, float y, float z)
-	{
-		CQt.QMatrix4x4_Rotate4((.)this.ptr.Ptr, angle, x, y, z);
-	}
-	public void Viewport5(float left, float bottom, float width, float height, float nearPlane)
-	{
-		CQt.QMatrix4x4_Viewport5((.)this.ptr.Ptr, left, bottom, width, height, nearPlane);
-	}
-	public void Viewport6(float left, float bottom, float width, float height, float nearPlane, float farPlane)
-	{
-		CQt.QMatrix4x4_Viewport6((.)this.ptr.Ptr, left, bottom, width, height, nearPlane, farPlane);
-	}
-}
-interface IQMatrix4x4 : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QMatrix4x4_Flag

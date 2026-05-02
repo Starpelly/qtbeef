@@ -15,15 +15,6 @@ struct QSharedData_Ptr
 		this.Ptr = ptr;
 	}
 }
-extension CQt
-{
-	[LinkName("QSharedData_new")]
-	public static extern QSharedData_Ptr QSharedData_new();
-	[LinkName("QSharedData_new2")]
-	public static extern QSharedData_Ptr QSharedData_new2(void** param1);
-	[LinkName("QSharedData_Delete")]
-	public static extern void QSharedData_Delete(QSharedData_Ptr self);
-}
 class QSharedData : IQSharedData
 {
 	private QSharedData_Ptr ptr;
@@ -48,6 +39,15 @@ class QSharedData : IQSharedData
 interface IQSharedData : IQtObjectInterface
 {
 }
+extension CQt
+{
+	[LinkName("QSharedData_new")]
+	public static extern QSharedData_Ptr QSharedData_new();
+	[LinkName("QSharedData_new2")]
+	public static extern QSharedData_Ptr QSharedData_new2(void** param1);
+	[LinkName("QSharedData_Delete")]
+	public static extern void QSharedData_Delete(QSharedData_Ptr self);
+}
 // --------------------------------------------------------------
 // QAdoptSharedDataTag
 // --------------------------------------------------------------
@@ -59,17 +59,6 @@ struct QAdoptSharedDataTag_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QAdoptSharedDataTag_new")]
-	public static extern QAdoptSharedDataTag_Ptr QAdoptSharedDataTag_new(void** other);
-	[LinkName("QAdoptSharedDataTag_new2")]
-	public static extern QAdoptSharedDataTag_Ptr QAdoptSharedDataTag_new2(void** other);
-	[LinkName("QAdoptSharedDataTag_new3")]
-	public static extern QAdoptSharedDataTag_Ptr QAdoptSharedDataTag_new3();
-	[LinkName("QAdoptSharedDataTag_Delete")]
-	public static extern void QAdoptSharedDataTag_Delete(QAdoptSharedDataTag_Ptr self);
 }
 class QAdoptSharedDataTag : IQAdoptSharedDataTag
 {
@@ -94,4 +83,15 @@ class QAdoptSharedDataTag : IQAdoptSharedDataTag
 }
 interface IQAdoptSharedDataTag : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QAdoptSharedDataTag_new")]
+	public static extern QAdoptSharedDataTag_Ptr QAdoptSharedDataTag_new(void** other);
+	[LinkName("QAdoptSharedDataTag_new2")]
+	public static extern QAdoptSharedDataTag_Ptr QAdoptSharedDataTag_new2(void** other);
+	[LinkName("QAdoptSharedDataTag_new3")]
+	public static extern QAdoptSharedDataTag_Ptr QAdoptSharedDataTag_new3();
+	[LinkName("QAdoptSharedDataTag_Delete")]
+	public static extern void QAdoptSharedDataTag_Delete(QAdoptSharedDataTag_Ptr self);
 }

@@ -14,6 +14,214 @@ struct QUrlQuery_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQUrlQuery other)
+	{
+		CQt.QUrlQuery_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QUrlQuery_IsEmpty((.)this.Ptr);
+	}
+	public bool IsDetached()
+	{
+		return CQt.QUrlQuery_IsDetached((.)this.Ptr);
+	}
+	public void Clear()
+	{
+		CQt.QUrlQuery_Clear((.)this.Ptr);
+	}
+	public void Query(String outStr)
+	{
+		CQt.QUrlQuery_Query((.)this.Ptr);
+	}
+	public void SetQuery(String queryString)
+	{
+		CQt.QUrlQuery_SetQuery((.)this.Ptr, libqt_string(queryString));
+	}
+	public void ToString(String outStr)
+	{
+		CQt.QUrlQuery_ToString((.)this.Ptr);
+	}
+	public void SetQueryDelimiters(IQChar valueDelimiter, IQChar pairDelimiter)
+	{
+		CQt.QUrlQuery_SetQueryDelimiters((.)this.Ptr, (.)valueDelimiter?.ObjectPtr, (.)pairDelimiter?.ObjectPtr);
+	}
+	public QChar_Ptr QueryValueDelimiter()
+	{
+		return QChar_Ptr(CQt.QUrlQuery_QueryValueDelimiter((.)this.Ptr));
+	}
+	public QChar_Ptr QueryPairDelimiter()
+	{
+		return QChar_Ptr(CQt.QUrlQuery_QueryPairDelimiter((.)this.Ptr));
+	}
+	public void* QueryItems()
+	{
+		return CQt.QUrlQuery_QueryItems((.)this.Ptr);
+	}
+	public bool HasQueryItem(String key)
+	{
+		return CQt.QUrlQuery_HasQueryItem((.)this.Ptr, libqt_string(key));
+	}
+	public void AddQueryItem(String key, String value)
+	{
+		CQt.QUrlQuery_AddQueryItem((.)this.Ptr, libqt_string(key), libqt_string(value));
+	}
+	public void RemoveQueryItem(String key)
+	{
+		CQt.QUrlQuery_RemoveQueryItem((.)this.Ptr, libqt_string(key));
+	}
+	public void QueryItemValue(String outStr, String key)
+	{
+		CQt.QUrlQuery_QueryItemValue((.)this.Ptr, libqt_string(key));
+	}
+	public void* AllQueryItemValues(String key)
+	{
+		return CQt.QUrlQuery_AllQueryItemValues((.)this.Ptr, libqt_string(key));
+	}
+	public void RemoveAllQueryItems(String key)
+	{
+		CQt.QUrlQuery_RemoveAllQueryItems((.)this.Ptr, libqt_string(key));
+	}
+	public void Query1(String outStr, void* encoding)
+	{
+		CQt.QUrlQuery_Query1((.)this.Ptr, encoding);
+	}
+	public void ToString1(String outStr, void* encoding)
+	{
+		CQt.QUrlQuery_ToString1((.)this.Ptr, encoding);
+	}
+	public void* QueryItems1(void* encoding)
+	{
+		return CQt.QUrlQuery_QueryItems1((.)this.Ptr, encoding);
+	}
+	public void QueryItemValue2(String outStr, String key, void* encoding)
+	{
+		CQt.QUrlQuery_QueryItemValue2((.)this.Ptr, libqt_string(key), encoding);
+	}
+	public void* AllQueryItemValues2(String key, void* encoding)
+	{
+		return CQt.QUrlQuery_AllQueryItemValues2((.)this.Ptr, libqt_string(key), encoding);
+	}
+}
+class QUrlQuery : IQUrlQuery
+{
+	private QUrlQuery_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QUrlQuery_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QUrlQuery_new();
+	}
+	public this(IQUrl url)
+	{
+		this.ptr = CQt.QUrlQuery_new2((.)url?.ObjectPtr);
+	}
+	public this(String queryString)
+	{
+		this.ptr = CQt.QUrlQuery_new3(libqt_string(queryString));
+	}
+	public this(IQUrlQuery other)
+	{
+		this.ptr = CQt.QUrlQuery_new4((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QUrlQuery_Delete(this.ptr);
+	}
+	public void Swap(IQUrlQuery other)
+	{
+		this.ptr.Swap(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public bool IsDetached()
+	{
+		return this.ptr.IsDetached();
+	}
+	public void Clear()
+	{
+		this.ptr.Clear();
+	}
+	public void Query(String outStr)
+	{
+		this.ptr.Query(outStr);
+	}
+	public void SetQuery(String queryString)
+	{
+		this.ptr.SetQuery(queryString);
+	}
+	public void ToString(String outStr)
+	{
+		this.ptr.ToString(outStr);
+	}
+	public void SetQueryDelimiters(IQChar valueDelimiter, IQChar pairDelimiter)
+	{
+		this.ptr.SetQueryDelimiters(valueDelimiter, pairDelimiter);
+	}
+	public QChar_Ptr QueryValueDelimiter()
+	{
+		return this.ptr.QueryValueDelimiter();
+	}
+	public QChar_Ptr QueryPairDelimiter()
+	{
+		return this.ptr.QueryPairDelimiter();
+	}
+	public void* QueryItems()
+	{
+		return this.ptr.QueryItems();
+	}
+	public bool HasQueryItem(String key)
+	{
+		return this.ptr.HasQueryItem(key);
+	}
+	public void AddQueryItem(String key, String value)
+	{
+		this.ptr.AddQueryItem(key, value);
+	}
+	public void RemoveQueryItem(String key)
+	{
+		this.ptr.RemoveQueryItem(key);
+	}
+	public void QueryItemValue(String outStr, String key)
+	{
+		this.ptr.QueryItemValue(outStr, key);
+	}
+	public void* AllQueryItemValues(String key)
+	{
+		return this.ptr.AllQueryItemValues(key);
+	}
+	public void RemoveAllQueryItems(String key)
+	{
+		this.ptr.RemoveAllQueryItems(key);
+	}
+	public void Query1(String outStr, void* encoding)
+	{
+		this.ptr.Query1(outStr, encoding);
+	}
+	public void ToString1(String outStr, void* encoding)
+	{
+		this.ptr.ToString1(outStr, encoding);
+	}
+	public void* QueryItems1(void* encoding)
+	{
+		return this.ptr.QueryItems1(encoding);
+	}
+	public void QueryItemValue2(String outStr, String key, void* encoding)
+	{
+		this.ptr.QueryItemValue2(outStr, key, encoding);
+	}
+	public void* AllQueryItemValues2(String key, void* encoding)
+	{
+		return this.ptr.AllQueryItemValues2(key, encoding);
+	}
+}
+interface IQUrlQuery : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -77,124 +285,4 @@ extension CQt
 	public static extern libqt_string QUrlQuery_QueryItemValue2(void* self, libqt_string key, void* encoding);
 	[LinkName("QUrlQuery_AllQueryItemValues2")]
 	public static extern void* QUrlQuery_AllQueryItemValues2(void* self, libqt_string key, void* encoding);
-}
-class QUrlQuery : IQUrlQuery
-{
-	private QUrlQuery_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QUrlQuery_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QUrlQuery_new();
-	}
-	public this(IQUrl url)
-	{
-		this.ptr = CQt.QUrlQuery_new2((.)url?.ObjectPtr);
-	}
-	public this(String queryString)
-	{
-		this.ptr = CQt.QUrlQuery_new3(libqt_string(queryString));
-	}
-	public this(IQUrlQuery other)
-	{
-		this.ptr = CQt.QUrlQuery_new4((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QUrlQuery_Delete(this.ptr);
-	}
-	public void Swap(IQUrlQuery other)
-	{
-		CQt.QUrlQuery_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QUrlQuery_IsEmpty((.)this.ptr.Ptr);
-	}
-	public bool IsDetached()
-	{
-		return CQt.QUrlQuery_IsDetached((.)this.ptr.Ptr);
-	}
-	public void Clear()
-	{
-		CQt.QUrlQuery_Clear((.)this.ptr.Ptr);
-	}
-	public void Query(String outStr)
-	{
-		CQt.QUrlQuery_Query((.)this.ptr.Ptr);
-	}
-	public void SetQuery(String queryString)
-	{
-		CQt.QUrlQuery_SetQuery((.)this.ptr.Ptr, libqt_string(queryString));
-	}
-	public void ToString(String outStr)
-	{
-		CQt.QUrlQuery_ToString((.)this.ptr.Ptr);
-	}
-	public void SetQueryDelimiters(IQChar valueDelimiter, IQChar pairDelimiter)
-	{
-		CQt.QUrlQuery_SetQueryDelimiters((.)this.ptr.Ptr, (.)valueDelimiter?.ObjectPtr, (.)pairDelimiter?.ObjectPtr);
-	}
-	public QChar_Ptr QueryValueDelimiter()
-	{
-		return QChar_Ptr(CQt.QUrlQuery_QueryValueDelimiter((.)this.ptr.Ptr));
-	}
-	public QChar_Ptr QueryPairDelimiter()
-	{
-		return QChar_Ptr(CQt.QUrlQuery_QueryPairDelimiter((.)this.ptr.Ptr));
-	}
-	public void* QueryItems()
-	{
-		return CQt.QUrlQuery_QueryItems((.)this.ptr.Ptr);
-	}
-	public bool HasQueryItem(String key)
-	{
-		return CQt.QUrlQuery_HasQueryItem((.)this.ptr.Ptr, libqt_string(key));
-	}
-	public void AddQueryItem(String key, String value)
-	{
-		CQt.QUrlQuery_AddQueryItem((.)this.ptr.Ptr, libqt_string(key), libqt_string(value));
-	}
-	public void RemoveQueryItem(String key)
-	{
-		CQt.QUrlQuery_RemoveQueryItem((.)this.ptr.Ptr, libqt_string(key));
-	}
-	public void QueryItemValue(String outStr, String key)
-	{
-		CQt.QUrlQuery_QueryItemValue((.)this.ptr.Ptr, libqt_string(key));
-	}
-	public void* AllQueryItemValues(String key)
-	{
-		return CQt.QUrlQuery_AllQueryItemValues((.)this.ptr.Ptr, libqt_string(key));
-	}
-	public void RemoveAllQueryItems(String key)
-	{
-		CQt.QUrlQuery_RemoveAllQueryItems((.)this.ptr.Ptr, libqt_string(key));
-	}
-	public void Query1(String outStr, void* encoding)
-	{
-		CQt.QUrlQuery_Query1((.)this.ptr.Ptr, encoding);
-	}
-	public void ToString1(String outStr, void* encoding)
-	{
-		CQt.QUrlQuery_ToString1((.)this.ptr.Ptr, encoding);
-	}
-	public void* QueryItems1(void* encoding)
-	{
-		return CQt.QUrlQuery_QueryItems1((.)this.ptr.Ptr, encoding);
-	}
-	public void QueryItemValue2(String outStr, String key, void* encoding)
-	{
-		CQt.QUrlQuery_QueryItemValue2((.)this.ptr.Ptr, libqt_string(key), encoding);
-	}
-	public void* AllQueryItemValues2(String key, void* encoding)
-	{
-		return CQt.QUrlQuery_AllQueryItemValues2((.)this.ptr.Ptr, libqt_string(key), encoding);
-	}
-}
-interface IQUrlQuery : IQtObjectInterface
-{
 }

@@ -14,6 +14,206 @@ struct QRgba64_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QRgba64_Ptr FromRgba64(c_ulonglong c)
+	{
+		return QRgba64_Ptr(CQt.QRgba64_FromRgba64(c));
+	}
+	public QRgba64_Ptr FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha)
+	{
+		return QRgba64_Ptr(CQt.QRgba64_FromRgba642(red, green, blue, alpha));
+	}
+	public QRgba64_Ptr FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha)
+	{
+		return QRgba64_Ptr(CQt.QRgba64_FromRgba(red, green, blue, alpha));
+	}
+	public QRgba64_Ptr FromArgb32(c_uint rgb)
+	{
+		return QRgba64_Ptr(CQt.QRgba64_FromArgb32(rgb));
+	}
+	public bool IsOpaque()
+	{
+		return CQt.QRgba64_IsOpaque((.)this.Ptr);
+	}
+	public bool IsTransparent()
+	{
+		return CQt.QRgba64_IsTransparent((.)this.Ptr);
+	}
+	public c_ushort Red()
+	{
+		return CQt.QRgba64_Red((.)this.Ptr);
+	}
+	public c_ushort Green()
+	{
+		return CQt.QRgba64_Green((.)this.Ptr);
+	}
+	public c_ushort Blue()
+	{
+		return CQt.QRgba64_Blue((.)this.Ptr);
+	}
+	public c_ushort Alpha()
+	{
+		return CQt.QRgba64_Alpha((.)this.Ptr);
+	}
+	public void SetRed(c_ushort _red)
+	{
+		CQt.QRgba64_SetRed((.)this.Ptr, _red);
+	}
+	public void SetGreen(c_ushort _green)
+	{
+		CQt.QRgba64_SetGreen((.)this.Ptr, _green);
+	}
+	public void SetBlue(c_ushort _blue)
+	{
+		CQt.QRgba64_SetBlue((.)this.Ptr, _blue);
+	}
+	public void SetAlpha(c_ushort _alpha)
+	{
+		CQt.QRgba64_SetAlpha((.)this.Ptr, _alpha);
+	}
+	public c_uchar Red8()
+	{
+		return CQt.QRgba64_Red8((.)this.Ptr);
+	}
+	public c_uchar Green8()
+	{
+		return CQt.QRgba64_Green8((.)this.Ptr);
+	}
+	public c_uchar Blue8()
+	{
+		return CQt.QRgba64_Blue8((.)this.Ptr);
+	}
+	public c_uchar Alpha8()
+	{
+		return CQt.QRgba64_Alpha8((.)this.Ptr);
+	}
+	public c_uint ToArgb32()
+	{
+		return CQt.QRgba64_ToArgb32((.)this.Ptr);
+	}
+	public c_ushort ToRgb16()
+	{
+		return CQt.QRgba64_ToRgb16((.)this.Ptr);
+	}
+	public QRgba64_Ptr Premultiplied()
+	{
+		return QRgba64_Ptr(CQt.QRgba64_Premultiplied((.)this.Ptr));
+	}
+	public QRgba64_Ptr Unpremultiplied()
+	{
+		return QRgba64_Ptr(CQt.QRgba64_Unpremultiplied((.)this.Ptr));
+	}
+}
+class QRgba64 : IQRgba64
+{
+	private QRgba64_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QRgba64_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QRgba64_new();
+	}
+	public this(IQRgba64 param1)
+	{
+		this.ptr = CQt.QRgba64_new2((.)param1?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QRgba64_Delete(this.ptr);
+	}
+	public QRgba64_Ptr FromRgba64(c_ulonglong c)
+	{
+		return this.ptr.FromRgba64(c);
+	}
+	public QRgba64_Ptr FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha)
+	{
+		return this.ptr.FromRgba642(red, green, blue, alpha);
+	}
+	public QRgba64_Ptr FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha)
+	{
+		return this.ptr.FromRgba(red, green, blue, alpha);
+	}
+	public QRgba64_Ptr FromArgb32(c_uint rgb)
+	{
+		return this.ptr.FromArgb32(rgb);
+	}
+	public bool IsOpaque()
+	{
+		return this.ptr.IsOpaque();
+	}
+	public bool IsTransparent()
+	{
+		return this.ptr.IsTransparent();
+	}
+	public c_ushort Red()
+	{
+		return this.ptr.Red();
+	}
+	public c_ushort Green()
+	{
+		return this.ptr.Green();
+	}
+	public c_ushort Blue()
+	{
+		return this.ptr.Blue();
+	}
+	public c_ushort Alpha()
+	{
+		return this.ptr.Alpha();
+	}
+	public void SetRed(c_ushort _red)
+	{
+		this.ptr.SetRed(_red);
+	}
+	public void SetGreen(c_ushort _green)
+	{
+		this.ptr.SetGreen(_green);
+	}
+	public void SetBlue(c_ushort _blue)
+	{
+		this.ptr.SetBlue(_blue);
+	}
+	public void SetAlpha(c_ushort _alpha)
+	{
+		this.ptr.SetAlpha(_alpha);
+	}
+	public c_uchar Red8()
+	{
+		return this.ptr.Red8();
+	}
+	public c_uchar Green8()
+	{
+		return this.ptr.Green8();
+	}
+	public c_uchar Blue8()
+	{
+		return this.ptr.Blue8();
+	}
+	public c_uchar Alpha8()
+	{
+		return this.ptr.Alpha8();
+	}
+	public c_uint ToArgb32()
+	{
+		return this.ptr.ToArgb32();
+	}
+	public c_ushort ToRgb16()
+	{
+		return this.ptr.ToRgb16();
+	}
+	public QRgba64_Ptr Premultiplied()
+	{
+		return this.ptr.Premultiplied();
+	}
+	public QRgba64_Ptr Unpremultiplied()
+	{
+		return this.ptr.Unpremultiplied();
+	}
+}
+interface IQRgba64 : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -71,116 +271,4 @@ extension CQt
 	public static extern c_ulonglong QRgba64_ToUnsignedLongLong(void* self);
 	[LinkName("QRgba64_OperatorAssign")]
 	public static extern void QRgba64_OperatorAssign(void* self, c_ulonglong _rgba);
-}
-class QRgba64 : IQRgba64
-{
-	private QRgba64_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QRgba64_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QRgba64_new();
-	}
-	public this(IQRgba64 param1)
-	{
-		this.ptr = CQt.QRgba64_new2((.)param1?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QRgba64_Delete(this.ptr);
-	}
-	public QRgba64_Ptr FromRgba64(c_ulonglong c)
-	{
-		return QRgba64_Ptr(CQt.QRgba64_FromRgba64(c));
-	}
-	public QRgba64_Ptr FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha)
-	{
-		return QRgba64_Ptr(CQt.QRgba64_FromRgba642(red, green, blue, alpha));
-	}
-	public QRgba64_Ptr FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha)
-	{
-		return QRgba64_Ptr(CQt.QRgba64_FromRgba(red, green, blue, alpha));
-	}
-	public QRgba64_Ptr FromArgb32(c_uint rgb)
-	{
-		return QRgba64_Ptr(CQt.QRgba64_FromArgb32(rgb));
-	}
-	public bool IsOpaque()
-	{
-		return CQt.QRgba64_IsOpaque((.)this.ptr.Ptr);
-	}
-	public bool IsTransparent()
-	{
-		return CQt.QRgba64_IsTransparent((.)this.ptr.Ptr);
-	}
-	public c_ushort Red()
-	{
-		return CQt.QRgba64_Red((.)this.ptr.Ptr);
-	}
-	public c_ushort Green()
-	{
-		return CQt.QRgba64_Green((.)this.ptr.Ptr);
-	}
-	public c_ushort Blue()
-	{
-		return CQt.QRgba64_Blue((.)this.ptr.Ptr);
-	}
-	public c_ushort Alpha()
-	{
-		return CQt.QRgba64_Alpha((.)this.ptr.Ptr);
-	}
-	public void SetRed(c_ushort _red)
-	{
-		CQt.QRgba64_SetRed((.)this.ptr.Ptr, _red);
-	}
-	public void SetGreen(c_ushort _green)
-	{
-		CQt.QRgba64_SetGreen((.)this.ptr.Ptr, _green);
-	}
-	public void SetBlue(c_ushort _blue)
-	{
-		CQt.QRgba64_SetBlue((.)this.ptr.Ptr, _blue);
-	}
-	public void SetAlpha(c_ushort _alpha)
-	{
-		CQt.QRgba64_SetAlpha((.)this.ptr.Ptr, _alpha);
-	}
-	public c_uchar Red8()
-	{
-		return CQt.QRgba64_Red8((.)this.ptr.Ptr);
-	}
-	public c_uchar Green8()
-	{
-		return CQt.QRgba64_Green8((.)this.ptr.Ptr);
-	}
-	public c_uchar Blue8()
-	{
-		return CQt.QRgba64_Blue8((.)this.ptr.Ptr);
-	}
-	public c_uchar Alpha8()
-	{
-		return CQt.QRgba64_Alpha8((.)this.ptr.Ptr);
-	}
-	public c_uint ToArgb32()
-	{
-		return CQt.QRgba64_ToArgb32((.)this.ptr.Ptr);
-	}
-	public c_ushort ToRgb16()
-	{
-		return CQt.QRgba64_ToRgb16((.)this.ptr.Ptr);
-	}
-	public QRgba64_Ptr Premultiplied()
-	{
-		return QRgba64_Ptr(CQt.QRgba64_Premultiplied((.)this.ptr.Ptr));
-	}
-	public QRgba64_Ptr Unpremultiplied()
-	{
-		return QRgba64_Ptr(CQt.QRgba64_Unpremultiplied((.)this.ptr.Ptr));
-	}
-}
-interface IQRgba64 : IQtObjectInterface
-{
 }

@@ -14,6 +14,174 @@ struct QStyleOption_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOption : IQStyleOption
+{
+	private QStyleOption_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOption_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOption_new();
+	}
+	public this(IQStyleOption other)
+	{
+		this.ptr = CQt.QStyleOption_new2((.)other?.ObjectPtr);
+	}
+	public this(c_int version)
+	{
+		this.ptr = CQt.QStyleOption_new3(version);
+	}
+	public this(c_int version, c_int type)
+	{
+		this.ptr = CQt.QStyleOption_new4(version, type);
+	}
+	public ~this()
+	{
+		CQt.QStyleOption_Delete(this.ptr);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOption : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -64,106 +232,6 @@ extension CQt
 	[LinkName("QStyleOption_OperatorAssign")]
 	public static extern void QStyleOption_OperatorAssign(void* self, void** other);
 }
-class QStyleOption : IQStyleOption
-{
-	private QStyleOption_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOption_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOption_new();
-	}
-	public this(IQStyleOption other)
-	{
-		this.ptr = CQt.QStyleOption_new2((.)other?.ObjectPtr);
-	}
-	public this(c_int version)
-	{
-		this.ptr = CQt.QStyleOption_new3(version);
-	}
-	public this(c_int version, c_int type)
-	{
-		this.ptr = CQt.QStyleOption_new4(version, type);
-	}
-	public ~this()
-	{
-		CQt.QStyleOption_Delete(this.ptr);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOption : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionFocusRect
 // --------------------------------------------------------------
@@ -175,21 +243,82 @@ struct QStyleOptionFocusRect_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleOptionFocusRect_new")]
-	public static extern QStyleOptionFocusRect_Ptr QStyleOptionFocusRect_new();
-	[LinkName("QStyleOptionFocusRect_new2")]
-	public static extern QStyleOptionFocusRect_Ptr QStyleOptionFocusRect_new2(void** other);
-	[LinkName("QStyleOptionFocusRect_Delete")]
-	public static extern void QStyleOptionFocusRect_Delete(QStyleOptionFocusRect_Ptr self);
-	[LinkName("QStyleOptionFocusRect_BackgroundColor")]
-	public static extern void* QStyleOptionFocusRect_BackgroundColor(void* self);
-	[LinkName("QStyleOptionFocusRect_SetBackgroundColor")]
-	public static extern void QStyleOptionFocusRect_SetBackgroundColor(void* self, void* backgroundColor);
-	[LinkName("QStyleOptionFocusRect_OperatorAssign")]
-	public static extern void QStyleOptionFocusRect_OperatorAssign(void* self, void** param1);
+	public QColor_Ptr BackgroundColor()
+	{
+		return QColor_Ptr(CQt.QStyleOptionFocusRect_BackgroundColor((.)this.Ptr));
+	}
+	public void SetBackgroundColor(IQColor backgroundColor)
+	{
+		CQt.QStyleOptionFocusRect_SetBackgroundColor((.)this.Ptr, (.)backgroundColor?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
 }
 class QStyleOptionFocusRect : IQStyleOptionFocusRect, IQStyleOption
 {
@@ -213,83 +342,98 @@ class QStyleOptionFocusRect : IQStyleOptionFocusRect, IQStyleOption
 	}
 	public QColor_Ptr BackgroundColor()
 	{
-		return QColor_Ptr(CQt.QStyleOptionFocusRect_BackgroundColor((.)this.ptr.Ptr));
+		return this.ptr.BackgroundColor();
 	}
 	public void SetBackgroundColor(IQColor backgroundColor)
 	{
-		CQt.QStyleOptionFocusRect_SetBackgroundColor((.)this.ptr.Ptr, (.)backgroundColor?.ObjectPtr);
+		this.ptr.SetBackgroundColor(backgroundColor);
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 	public void* State()
 	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
+		return this.ptr.State();
 	}
 	public void SetState(void* state)
 	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
+		this.ptr.SetState(state);
 	}
 	public Qt_LayoutDirection Direction()
 	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
+		return this.ptr.Direction();
 	}
 	public void SetDirection(Qt_LayoutDirection direction)
 	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
+		this.ptr.SetDirection(direction);
 	}
 	public QRect_Ptr Rect()
 	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
+		return this.ptr.Rect();
 	}
 	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
+		this.ptr.SetRect(rect);
 	}
 	public QFontMetrics_Ptr FontMetrics()
 	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
+		return this.ptr.FontMetrics();
 	}
 	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
+		this.ptr.SetFontMetrics(fontMetrics);
 	}
 	public QPalette_Ptr Palette()
 	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
+		return this.ptr.Palette();
 	}
 	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
+		this.ptr.SetPalette(palette);
 	}
 	public QObject_Ptr StyleObject()
 	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
+		return this.ptr.StyleObject();
 	}
 	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
+		this.ptr.SetStyleObject(styleObject);
 	}
 	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
+		this.ptr.InitFrom(w);
 	}
 }
 interface IQStyleOptionFocusRect : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleOptionFocusRect_new")]
+	public static extern QStyleOptionFocusRect_Ptr QStyleOptionFocusRect_new();
+	[LinkName("QStyleOptionFocusRect_new2")]
+	public static extern QStyleOptionFocusRect_Ptr QStyleOptionFocusRect_new2(void** other);
+	[LinkName("QStyleOptionFocusRect_Delete")]
+	public static extern void QStyleOptionFocusRect_Delete(QStyleOptionFocusRect_Ptr self);
+	[LinkName("QStyleOptionFocusRect_BackgroundColor")]
+	public static extern void* QStyleOptionFocusRect_BackgroundColor(void* self);
+	[LinkName("QStyleOptionFocusRect_SetBackgroundColor")]
+	public static extern void QStyleOptionFocusRect_SetBackgroundColor(void* self, void* backgroundColor);
+	[LinkName("QStyleOptionFocusRect_OperatorAssign")]
+	public static extern void QStyleOptionFocusRect_OperatorAssign(void* self, void** param1);
 }
 // --------------------------------------------------------------
 // QStyleOptionFrame
@@ -302,6 +446,230 @@ struct QStyleOptionFrame_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_int LineWidth()
+	{
+		return CQt.QStyleOptionFrame_LineWidth((.)this.Ptr);
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		CQt.QStyleOptionFrame_SetLineWidth((.)this.Ptr, lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return CQt.QStyleOptionFrame_MidLineWidth((.)this.Ptr);
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		CQt.QStyleOptionFrame_SetMidLineWidth((.)this.Ptr, midLineWidth);
+	}
+	public void* Features()
+	{
+		return CQt.QStyleOptionFrame_Features((.)this.Ptr);
+	}
+	public void SetFeatures(void* features)
+	{
+		CQt.QStyleOptionFrame_SetFeatures((.)this.Ptr, features);
+	}
+	public QFrame_Shape FrameShape()
+	{
+		return CQt.QStyleOptionFrame_FrameShape((.)this.Ptr);
+	}
+	public void SetFrameShape(QFrame_Shape frameShape)
+	{
+		CQt.QStyleOptionFrame_SetFrameShape((.)this.Ptr, frameShape);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionFrame : IQStyleOptionFrame, IQStyleOption
+{
+	private QStyleOptionFrame_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionFrame_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionFrame_new();
+	}
+	public this(IQStyleOptionFrame other)
+	{
+		this.ptr = CQt.QStyleOptionFrame_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionFrame_Delete(this.ptr);
+	}
+	public c_int LineWidth()
+	{
+		return this.ptr.LineWidth();
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		this.ptr.SetLineWidth(lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return this.ptr.MidLineWidth();
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		this.ptr.SetMidLineWidth(midLineWidth);
+	}
+	public void* Features()
+	{
+		return this.ptr.Features();
+	}
+	public void SetFeatures(void* features)
+	{
+		this.ptr.SetFeatures(features);
+	}
+	public QFrame_Shape FrameShape()
+	{
+		return this.ptr.FrameShape();
+	}
+	public void SetFrameShape(QFrame_Shape frameShape)
+	{
+		this.ptr.SetFrameShape(frameShape);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionFrame : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -330,130 +698,6 @@ extension CQt
 	[LinkName("QStyleOptionFrame_OperatorAssign")]
 	public static extern void QStyleOptionFrame_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionFrame : IQStyleOptionFrame, IQStyleOption
-{
-	private QStyleOptionFrame_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionFrame_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionFrame_new();
-	}
-	public this(IQStyleOptionFrame other)
-	{
-		this.ptr = CQt.QStyleOptionFrame_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionFrame_Delete(this.ptr);
-	}
-	public c_int LineWidth()
-	{
-		return CQt.QStyleOptionFrame_LineWidth((.)this.ptr.Ptr);
-	}
-	public void SetLineWidth(c_int lineWidth)
-	{
-		CQt.QStyleOptionFrame_SetLineWidth((.)this.ptr.Ptr, lineWidth);
-	}
-	public c_int MidLineWidth()
-	{
-		return CQt.QStyleOptionFrame_MidLineWidth((.)this.ptr.Ptr);
-	}
-	public void SetMidLineWidth(c_int midLineWidth)
-	{
-		CQt.QStyleOptionFrame_SetMidLineWidth((.)this.ptr.Ptr, midLineWidth);
-	}
-	public void* Features()
-	{
-		return CQt.QStyleOptionFrame_Features((.)this.ptr.Ptr);
-	}
-	public void SetFeatures(void* features)
-	{
-		CQt.QStyleOptionFrame_SetFeatures((.)this.ptr.Ptr, features);
-	}
-	public QFrame_Shape FrameShape()
-	{
-		return CQt.QStyleOptionFrame_FrameShape((.)this.ptr.Ptr);
-	}
-	public void SetFrameShape(QFrame_Shape frameShape)
-	{
-		CQt.QStyleOptionFrame_SetFrameShape((.)this.ptr.Ptr, frameShape);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionFrame : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionTabWidgetFrame
 // --------------------------------------------------------------
@@ -465,6 +709,294 @@ struct QStyleOptionTabWidgetFrame_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_int LineWidth()
+	{
+		return CQt.QStyleOptionTabWidgetFrame_LineWidth((.)this.Ptr);
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetLineWidth((.)this.Ptr, lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return CQt.QStyleOptionTabWidgetFrame_MidLineWidth((.)this.Ptr);
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetMidLineWidth((.)this.Ptr, midLineWidth);
+	}
+	public QTabBar_Shape Shape()
+	{
+		return CQt.QStyleOptionTabWidgetFrame_Shape((.)this.Ptr);
+	}
+	public void SetShape(QTabBar_Shape shape)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetShape((.)this.Ptr, shape);
+	}
+	public QSize_Ptr TabBarSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionTabWidgetFrame_TabBarSize((.)this.Ptr));
+	}
+	public void SetTabBarSize(IQSize tabBarSize)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetTabBarSize((.)this.Ptr, (.)tabBarSize?.ObjectPtr);
+	}
+	public QSize_Ptr RightCornerWidgetSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionTabWidgetFrame_RightCornerWidgetSize((.)this.Ptr));
+	}
+	public void SetRightCornerWidgetSize(IQSize rightCornerWidgetSize)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetRightCornerWidgetSize((.)this.Ptr, (.)rightCornerWidgetSize?.ObjectPtr);
+	}
+	public QSize_Ptr LeftCornerWidgetSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionTabWidgetFrame_LeftCornerWidgetSize((.)this.Ptr));
+	}
+	public void SetLeftCornerWidgetSize(IQSize leftCornerWidgetSize)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetLeftCornerWidgetSize((.)this.Ptr, (.)leftCornerWidgetSize?.ObjectPtr);
+	}
+	public QRect_Ptr TabBarRect()
+	{
+		return QRect_Ptr(CQt.QStyleOptionTabWidgetFrame_TabBarRect((.)this.Ptr));
+	}
+	public void SetTabBarRect(IQRect tabBarRect)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetTabBarRect((.)this.Ptr, (.)tabBarRect?.ObjectPtr);
+	}
+	public QRect_Ptr SelectedTabRect()
+	{
+		return QRect_Ptr(CQt.QStyleOptionTabWidgetFrame_SelectedTabRect((.)this.Ptr));
+	}
+	public void SetSelectedTabRect(IQRect selectedTabRect)
+	{
+		CQt.QStyleOptionTabWidgetFrame_SetSelectedTabRect((.)this.Ptr, (.)selectedTabRect?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionTabWidgetFrame : IQStyleOptionTabWidgetFrame, IQStyleOption
+{
+	private QStyleOptionTabWidgetFrame_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionTabWidgetFrame_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionTabWidgetFrame_new();
+	}
+	public this(IQStyleOptionTabWidgetFrame other)
+	{
+		this.ptr = CQt.QStyleOptionTabWidgetFrame_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionTabWidgetFrame_Delete(this.ptr);
+	}
+	public c_int LineWidth()
+	{
+		return this.ptr.LineWidth();
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		this.ptr.SetLineWidth(lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return this.ptr.MidLineWidth();
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		this.ptr.SetMidLineWidth(midLineWidth);
+	}
+	public QTabBar_Shape Shape()
+	{
+		return this.ptr.Shape();
+	}
+	public void SetShape(QTabBar_Shape shape)
+	{
+		this.ptr.SetShape(shape);
+	}
+	public QSize_Ptr TabBarSize()
+	{
+		return this.ptr.TabBarSize();
+	}
+	public void SetTabBarSize(IQSize tabBarSize)
+	{
+		this.ptr.SetTabBarSize(tabBarSize);
+	}
+	public QSize_Ptr RightCornerWidgetSize()
+	{
+		return this.ptr.RightCornerWidgetSize();
+	}
+	public void SetRightCornerWidgetSize(IQSize rightCornerWidgetSize)
+	{
+		this.ptr.SetRightCornerWidgetSize(rightCornerWidgetSize);
+	}
+	public QSize_Ptr LeftCornerWidgetSize()
+	{
+		return this.ptr.LeftCornerWidgetSize();
+	}
+	public void SetLeftCornerWidgetSize(IQSize leftCornerWidgetSize)
+	{
+		this.ptr.SetLeftCornerWidgetSize(leftCornerWidgetSize);
+	}
+	public QRect_Ptr TabBarRect()
+	{
+		return this.ptr.TabBarRect();
+	}
+	public void SetTabBarRect(IQRect tabBarRect)
+	{
+		this.ptr.SetTabBarRect(tabBarRect);
+	}
+	public QRect_Ptr SelectedTabRect()
+	{
+		return this.ptr.SelectedTabRect();
+	}
+	public void SetSelectedTabRect(IQRect selectedTabRect)
+	{
+		this.ptr.SetSelectedTabRect(selectedTabRect);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionTabWidgetFrame : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -509,162 +1041,6 @@ extension CQt
 	[LinkName("QStyleOptionTabWidgetFrame_OperatorAssign")]
 	public static extern void QStyleOptionTabWidgetFrame_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionTabWidgetFrame : IQStyleOptionTabWidgetFrame, IQStyleOption
-{
-	private QStyleOptionTabWidgetFrame_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionTabWidgetFrame_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionTabWidgetFrame_new();
-	}
-	public this(IQStyleOptionTabWidgetFrame other)
-	{
-		this.ptr = CQt.QStyleOptionTabWidgetFrame_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionTabWidgetFrame_Delete(this.ptr);
-	}
-	public c_int LineWidth()
-	{
-		return CQt.QStyleOptionTabWidgetFrame_LineWidth((.)this.ptr.Ptr);
-	}
-	public void SetLineWidth(c_int lineWidth)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetLineWidth((.)this.ptr.Ptr, lineWidth);
-	}
-	public c_int MidLineWidth()
-	{
-		return CQt.QStyleOptionTabWidgetFrame_MidLineWidth((.)this.ptr.Ptr);
-	}
-	public void SetMidLineWidth(c_int midLineWidth)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetMidLineWidth((.)this.ptr.Ptr, midLineWidth);
-	}
-	public QTabBar_Shape Shape()
-	{
-		return CQt.QStyleOptionTabWidgetFrame_Shape((.)this.ptr.Ptr);
-	}
-	public void SetShape(QTabBar_Shape shape)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetShape((.)this.ptr.Ptr, shape);
-	}
-	public QSize_Ptr TabBarSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionTabWidgetFrame_TabBarSize((.)this.ptr.Ptr));
-	}
-	public void SetTabBarSize(IQSize tabBarSize)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetTabBarSize((.)this.ptr.Ptr, (.)tabBarSize?.ObjectPtr);
-	}
-	public QSize_Ptr RightCornerWidgetSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionTabWidgetFrame_RightCornerWidgetSize((.)this.ptr.Ptr));
-	}
-	public void SetRightCornerWidgetSize(IQSize rightCornerWidgetSize)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetRightCornerWidgetSize((.)this.ptr.Ptr, (.)rightCornerWidgetSize?.ObjectPtr);
-	}
-	public QSize_Ptr LeftCornerWidgetSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionTabWidgetFrame_LeftCornerWidgetSize((.)this.ptr.Ptr));
-	}
-	public void SetLeftCornerWidgetSize(IQSize leftCornerWidgetSize)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetLeftCornerWidgetSize((.)this.ptr.Ptr, (.)leftCornerWidgetSize?.ObjectPtr);
-	}
-	public QRect_Ptr TabBarRect()
-	{
-		return QRect_Ptr(CQt.QStyleOptionTabWidgetFrame_TabBarRect((.)this.ptr.Ptr));
-	}
-	public void SetTabBarRect(IQRect tabBarRect)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetTabBarRect((.)this.ptr.Ptr, (.)tabBarRect?.ObjectPtr);
-	}
-	public QRect_Ptr SelectedTabRect()
-	{
-		return QRect_Ptr(CQt.QStyleOptionTabWidgetFrame_SelectedTabRect((.)this.ptr.Ptr));
-	}
-	public void SetSelectedTabRect(IQRect selectedTabRect)
-	{
-		CQt.QStyleOptionTabWidgetFrame_SetSelectedTabRect((.)this.ptr.Ptr, (.)selectedTabRect?.ObjectPtr);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionTabWidgetFrame : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionTabBarBase
 // --------------------------------------------------------------
@@ -676,6 +1052,230 @@ struct QStyleOptionTabBarBase_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QTabBar_Shape Shape()
+	{
+		return CQt.QStyleOptionTabBarBase_Shape((.)this.Ptr);
+	}
+	public void SetShape(QTabBar_Shape shape)
+	{
+		CQt.QStyleOptionTabBarBase_SetShape((.)this.Ptr, shape);
+	}
+	public QRect_Ptr TabBarRect()
+	{
+		return QRect_Ptr(CQt.QStyleOptionTabBarBase_TabBarRect((.)this.Ptr));
+	}
+	public void SetTabBarRect(IQRect tabBarRect)
+	{
+		CQt.QStyleOptionTabBarBase_SetTabBarRect((.)this.Ptr, (.)tabBarRect?.ObjectPtr);
+	}
+	public QRect_Ptr SelectedTabRect()
+	{
+		return QRect_Ptr(CQt.QStyleOptionTabBarBase_SelectedTabRect((.)this.Ptr));
+	}
+	public void SetSelectedTabRect(IQRect selectedTabRect)
+	{
+		CQt.QStyleOptionTabBarBase_SetSelectedTabRect((.)this.Ptr, (.)selectedTabRect?.ObjectPtr);
+	}
+	public bool DocumentMode()
+	{
+		return CQt.QStyleOptionTabBarBase_DocumentMode((.)this.Ptr);
+	}
+	public void SetDocumentMode(bool documentMode)
+	{
+		CQt.QStyleOptionTabBarBase_SetDocumentMode((.)this.Ptr, documentMode);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionTabBarBase : IQStyleOptionTabBarBase, IQStyleOption
+{
+	private QStyleOptionTabBarBase_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionTabBarBase_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionTabBarBase_new();
+	}
+	public this(IQStyleOptionTabBarBase other)
+	{
+		this.ptr = CQt.QStyleOptionTabBarBase_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionTabBarBase_Delete(this.ptr);
+	}
+	public QTabBar_Shape Shape()
+	{
+		return this.ptr.Shape();
+	}
+	public void SetShape(QTabBar_Shape shape)
+	{
+		this.ptr.SetShape(shape);
+	}
+	public QRect_Ptr TabBarRect()
+	{
+		return this.ptr.TabBarRect();
+	}
+	public void SetTabBarRect(IQRect tabBarRect)
+	{
+		this.ptr.SetTabBarRect(tabBarRect);
+	}
+	public QRect_Ptr SelectedTabRect()
+	{
+		return this.ptr.SelectedTabRect();
+	}
+	public void SetSelectedTabRect(IQRect selectedTabRect)
+	{
+		this.ptr.SetSelectedTabRect(selectedTabRect);
+	}
+	public bool DocumentMode()
+	{
+		return this.ptr.DocumentMode();
+	}
+	public void SetDocumentMode(bool documentMode)
+	{
+		this.ptr.SetDocumentMode(documentMode);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionTabBarBase : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -704,130 +1304,6 @@ extension CQt
 	[LinkName("QStyleOptionTabBarBase_OperatorAssign")]
 	public static extern void QStyleOptionTabBarBase_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionTabBarBase : IQStyleOptionTabBarBase, IQStyleOption
-{
-	private QStyleOptionTabBarBase_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionTabBarBase_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionTabBarBase_new();
-	}
-	public this(IQStyleOptionTabBarBase other)
-	{
-		this.ptr = CQt.QStyleOptionTabBarBase_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionTabBarBase_Delete(this.ptr);
-	}
-	public QTabBar_Shape Shape()
-	{
-		return CQt.QStyleOptionTabBarBase_Shape((.)this.ptr.Ptr);
-	}
-	public void SetShape(QTabBar_Shape shape)
-	{
-		CQt.QStyleOptionTabBarBase_SetShape((.)this.ptr.Ptr, shape);
-	}
-	public QRect_Ptr TabBarRect()
-	{
-		return QRect_Ptr(CQt.QStyleOptionTabBarBase_TabBarRect((.)this.ptr.Ptr));
-	}
-	public void SetTabBarRect(IQRect tabBarRect)
-	{
-		CQt.QStyleOptionTabBarBase_SetTabBarRect((.)this.ptr.Ptr, (.)tabBarRect?.ObjectPtr);
-	}
-	public QRect_Ptr SelectedTabRect()
-	{
-		return QRect_Ptr(CQt.QStyleOptionTabBarBase_SelectedTabRect((.)this.ptr.Ptr));
-	}
-	public void SetSelectedTabRect(IQRect selectedTabRect)
-	{
-		CQt.QStyleOptionTabBarBase_SetSelectedTabRect((.)this.ptr.Ptr, (.)selectedTabRect?.ObjectPtr);
-	}
-	public bool DocumentMode()
-	{
-		return CQt.QStyleOptionTabBarBase_DocumentMode((.)this.ptr.Ptr);
-	}
-	public void SetDocumentMode(bool documentMode)
-	{
-		CQt.QStyleOptionTabBarBase_SetDocumentMode((.)this.ptr.Ptr, documentMode);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionTabBarBase : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionHeader
 // --------------------------------------------------------------
@@ -839,6 +1315,310 @@ struct QStyleOptionHeader_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_int Section()
+	{
+		return CQt.QStyleOptionHeader_Section((.)this.Ptr);
+	}
+	public void SetSection(c_int section)
+	{
+		CQt.QStyleOptionHeader_SetSection((.)this.Ptr, section);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionHeader_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionHeader_SetText((.)this.Ptr, text);
+	}
+	public void* TextAlignment()
+	{
+		return CQt.QStyleOptionHeader_TextAlignment((.)this.Ptr);
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		CQt.QStyleOptionHeader_SetTextAlignment((.)this.Ptr, textAlignment);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionHeader_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionHeader_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public void* IconAlignment()
+	{
+		return CQt.QStyleOptionHeader_IconAlignment((.)this.Ptr);
+	}
+	public void SetIconAlignment(void* iconAlignment)
+	{
+		CQt.QStyleOptionHeader_SetIconAlignment((.)this.Ptr, iconAlignment);
+	}
+	public QStyleOptionHeader_SectionPosition Position()
+	{
+		return CQt.QStyleOptionHeader_Position((.)this.Ptr);
+	}
+	public void SetPosition(QStyleOptionHeader_SectionPosition position)
+	{
+		CQt.QStyleOptionHeader_SetPosition((.)this.Ptr, position);
+	}
+	public QStyleOptionHeader_SelectedPosition SelectedPosition()
+	{
+		return CQt.QStyleOptionHeader_SelectedPosition((.)this.Ptr);
+	}
+	public void SetSelectedPosition(QStyleOptionHeader_SelectedPosition selectedPosition)
+	{
+		CQt.QStyleOptionHeader_SetSelectedPosition((.)this.Ptr, selectedPosition);
+	}
+	public QStyleOptionHeader_SortIndicator SortIndicator()
+	{
+		return CQt.QStyleOptionHeader_SortIndicator((.)this.Ptr);
+	}
+	public void SetSortIndicator(QStyleOptionHeader_SortIndicator sortIndicator)
+	{
+		CQt.QStyleOptionHeader_SetSortIndicator((.)this.Ptr, sortIndicator);
+	}
+	public Qt_Orientation Orientation()
+	{
+		return CQt.QStyleOptionHeader_Orientation((.)this.Ptr);
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		CQt.QStyleOptionHeader_SetOrientation((.)this.Ptr, orientation);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionHeader : IQStyleOptionHeader, IQStyleOption
+{
+	private QStyleOptionHeader_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionHeader_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionHeader_new();
+	}
+	public this(IQStyleOptionHeader other)
+	{
+		this.ptr = CQt.QStyleOptionHeader_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionHeader_Delete(this.ptr);
+	}
+	public c_int Section()
+	{
+		return this.ptr.Section();
+	}
+	public void SetSection(c_int section)
+	{
+		this.ptr.SetSection(section);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public void* TextAlignment()
+	{
+		return this.ptr.TextAlignment();
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		this.ptr.SetTextAlignment(textAlignment);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public void* IconAlignment()
+	{
+		return this.ptr.IconAlignment();
+	}
+	public void SetIconAlignment(void* iconAlignment)
+	{
+		this.ptr.SetIconAlignment(iconAlignment);
+	}
+	public QStyleOptionHeader_SectionPosition Position()
+	{
+		return this.ptr.Position();
+	}
+	public void SetPosition(QStyleOptionHeader_SectionPosition position)
+	{
+		this.ptr.SetPosition(position);
+	}
+	public QStyleOptionHeader_SelectedPosition SelectedPosition()
+	{
+		return this.ptr.SelectedPosition();
+	}
+	public void SetSelectedPosition(QStyleOptionHeader_SelectedPosition selectedPosition)
+	{
+		this.ptr.SetSelectedPosition(selectedPosition);
+	}
+	public QStyleOptionHeader_SortIndicator SortIndicator()
+	{
+		return this.ptr.SortIndicator();
+	}
+	public void SetSortIndicator(QStyleOptionHeader_SortIndicator sortIndicator)
+	{
+		this.ptr.SetSortIndicator(sortIndicator);
+	}
+	public Qt_Orientation Orientation()
+	{
+		return this.ptr.Orientation();
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		this.ptr.SetOrientation(orientation);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionHeader : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -887,170 +1667,6 @@ extension CQt
 	[LinkName("QStyleOptionHeader_OperatorAssign")]
 	public static extern void QStyleOptionHeader_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionHeader : IQStyleOptionHeader, IQStyleOption
-{
-	private QStyleOptionHeader_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionHeader_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionHeader_new();
-	}
-	public this(IQStyleOptionHeader other)
-	{
-		this.ptr = CQt.QStyleOptionHeader_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionHeader_Delete(this.ptr);
-	}
-	public c_int Section()
-	{
-		return CQt.QStyleOptionHeader_Section((.)this.ptr.Ptr);
-	}
-	public void SetSection(c_int section)
-	{
-		CQt.QStyleOptionHeader_SetSection((.)this.ptr.Ptr, section);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionHeader_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionHeader_SetText((.)this.ptr.Ptr, text);
-	}
-	public void* TextAlignment()
-	{
-		return CQt.QStyleOptionHeader_TextAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextAlignment(void* textAlignment)
-	{
-		CQt.QStyleOptionHeader_SetTextAlignment((.)this.ptr.Ptr, textAlignment);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionHeader_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionHeader_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public void* IconAlignment()
-	{
-		return CQt.QStyleOptionHeader_IconAlignment((.)this.ptr.Ptr);
-	}
-	public void SetIconAlignment(void* iconAlignment)
-	{
-		CQt.QStyleOptionHeader_SetIconAlignment((.)this.ptr.Ptr, iconAlignment);
-	}
-	public QStyleOptionHeader_SectionPosition Position()
-	{
-		return CQt.QStyleOptionHeader_Position((.)this.ptr.Ptr);
-	}
-	public void SetPosition(QStyleOptionHeader_SectionPosition position)
-	{
-		CQt.QStyleOptionHeader_SetPosition((.)this.ptr.Ptr, position);
-	}
-	public QStyleOptionHeader_SelectedPosition SelectedPosition()
-	{
-		return CQt.QStyleOptionHeader_SelectedPosition((.)this.ptr.Ptr);
-	}
-	public void SetSelectedPosition(QStyleOptionHeader_SelectedPosition selectedPosition)
-	{
-		CQt.QStyleOptionHeader_SetSelectedPosition((.)this.ptr.Ptr, selectedPosition);
-	}
-	public QStyleOptionHeader_SortIndicator SortIndicator()
-	{
-		return CQt.QStyleOptionHeader_SortIndicator((.)this.ptr.Ptr);
-	}
-	public void SetSortIndicator(QStyleOptionHeader_SortIndicator sortIndicator)
-	{
-		CQt.QStyleOptionHeader_SetSortIndicator((.)this.ptr.Ptr, sortIndicator);
-	}
-	public Qt_Orientation Orientation()
-	{
-		return CQt.QStyleOptionHeader_Orientation((.)this.ptr.Ptr);
-	}
-	public void SetOrientation(Qt_Orientation orientation)
-	{
-		CQt.QStyleOptionHeader_SetOrientation((.)this.ptr.Ptr, orientation);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionHeader : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionHeaderV2
 // --------------------------------------------------------------
@@ -1062,6 +1678,358 @@ struct QStyleOptionHeaderV2_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public Qt_TextElideMode TextElideMode()
+	{
+		return CQt.QStyleOptionHeaderV2_TextElideMode((.)this.Ptr);
+	}
+	public void SetTextElideMode(Qt_TextElideMode textElideMode)
+	{
+		CQt.QStyleOptionHeaderV2_SetTextElideMode((.)this.Ptr, textElideMode);
+	}
+	public bool IsSectionDragTarget()
+	{
+		return CQt.QStyleOptionHeaderV2_IsSectionDragTarget((.)this.Ptr);
+	}
+	public void SetIsSectionDragTarget(bool isSectionDragTarget)
+	{
+		CQt.QStyleOptionHeaderV2_SetIsSectionDragTarget((.)this.Ptr, isSectionDragTarget);
+	}
+	public c_int Unused()
+	{
+		return CQt.QStyleOptionHeaderV2_Unused((.)this.Ptr);
+	}
+	public void SetUnused(c_int unused)
+	{
+		CQt.QStyleOptionHeaderV2_SetUnused((.)this.Ptr, unused);
+	}
+	public c_int Section()
+	{
+		return CQt.QStyleOptionHeader_Section((.)this.Ptr);
+	}
+	public void SetSection(c_int section)
+	{
+		CQt.QStyleOptionHeader_SetSection((.)this.Ptr, section);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionHeader_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionHeader_SetText((.)this.Ptr, text);
+	}
+	public void* TextAlignment()
+	{
+		return CQt.QStyleOptionHeader_TextAlignment((.)this.Ptr);
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		CQt.QStyleOptionHeader_SetTextAlignment((.)this.Ptr, textAlignment);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionHeader_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionHeader_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public void* IconAlignment()
+	{
+		return CQt.QStyleOptionHeader_IconAlignment((.)this.Ptr);
+	}
+	public void SetIconAlignment(void* iconAlignment)
+	{
+		CQt.QStyleOptionHeader_SetIconAlignment((.)this.Ptr, iconAlignment);
+	}
+	public QStyleOptionHeader_SectionPosition Position()
+	{
+		return CQt.QStyleOptionHeader_Position((.)this.Ptr);
+	}
+	public void SetPosition(QStyleOptionHeader_SectionPosition position)
+	{
+		CQt.QStyleOptionHeader_SetPosition((.)this.Ptr, position);
+	}
+	public QStyleOptionHeader_SelectedPosition SelectedPosition()
+	{
+		return CQt.QStyleOptionHeader_SelectedPosition((.)this.Ptr);
+	}
+	public void SetSelectedPosition(QStyleOptionHeader_SelectedPosition selectedPosition)
+	{
+		CQt.QStyleOptionHeader_SetSelectedPosition((.)this.Ptr, selectedPosition);
+	}
+	public QStyleOptionHeader_SortIndicator SortIndicator()
+	{
+		return CQt.QStyleOptionHeader_SortIndicator((.)this.Ptr);
+	}
+	public void SetSortIndicator(QStyleOptionHeader_SortIndicator sortIndicator)
+	{
+		CQt.QStyleOptionHeader_SetSortIndicator((.)this.Ptr, sortIndicator);
+	}
+	public Qt_Orientation Orientation()
+	{
+		return CQt.QStyleOptionHeader_Orientation((.)this.Ptr);
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		CQt.QStyleOptionHeader_SetOrientation((.)this.Ptr, orientation);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionHeaderV2 : IQStyleOptionHeaderV2, IQStyleOptionHeader, IQStyleOption
+{
+	private QStyleOptionHeaderV2_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionHeaderV2_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionHeaderV2_new();
+	}
+	public this(IQStyleOptionHeaderV2 other)
+	{
+		this.ptr = CQt.QStyleOptionHeaderV2_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionHeaderV2_Delete(this.ptr);
+	}
+	public Qt_TextElideMode TextElideMode()
+	{
+		return this.ptr.TextElideMode();
+	}
+	public void SetTextElideMode(Qt_TextElideMode textElideMode)
+	{
+		this.ptr.SetTextElideMode(textElideMode);
+	}
+	public bool IsSectionDragTarget()
+	{
+		return this.ptr.IsSectionDragTarget();
+	}
+	public void SetIsSectionDragTarget(bool isSectionDragTarget)
+	{
+		this.ptr.SetIsSectionDragTarget(isSectionDragTarget);
+	}
+	public c_int Unused()
+	{
+		return this.ptr.Unused();
+	}
+	public void SetUnused(c_int unused)
+	{
+		this.ptr.SetUnused(unused);
+	}
+	public c_int Section()
+	{
+		return this.ptr.Section();
+	}
+	public void SetSection(c_int section)
+	{
+		this.ptr.SetSection(section);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public void* TextAlignment()
+	{
+		return this.ptr.TextAlignment();
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		this.ptr.SetTextAlignment(textAlignment);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public void* IconAlignment()
+	{
+		return this.ptr.IconAlignment();
+	}
+	public void SetIconAlignment(void* iconAlignment)
+	{
+		this.ptr.SetIconAlignment(iconAlignment);
+	}
+	public QStyleOptionHeader_SectionPosition Position()
+	{
+		return this.ptr.Position();
+	}
+	public void SetPosition(QStyleOptionHeader_SectionPosition position)
+	{
+		this.ptr.SetPosition(position);
+	}
+	public QStyleOptionHeader_SelectedPosition SelectedPosition()
+	{
+		return this.ptr.SelectedPosition();
+	}
+	public void SetSelectedPosition(QStyleOptionHeader_SelectedPosition selectedPosition)
+	{
+		this.ptr.SetSelectedPosition(selectedPosition);
+	}
+	public QStyleOptionHeader_SortIndicator SortIndicator()
+	{
+		return this.ptr.SortIndicator();
+	}
+	public void SetSortIndicator(QStyleOptionHeader_SortIndicator sortIndicator)
+	{
+		this.ptr.SetSortIndicator(sortIndicator);
+	}
+	public Qt_Orientation Orientation()
+	{
+		return this.ptr.Orientation();
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		this.ptr.SetOrientation(orientation);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionHeaderV2 : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1086,194 +2054,6 @@ extension CQt
 	[LinkName("QStyleOptionHeaderV2_SetUnused")]
 	public static extern void QStyleOptionHeaderV2_SetUnused(void* self, c_int unused);
 }
-class QStyleOptionHeaderV2 : IQStyleOptionHeaderV2, IQStyleOptionHeader, IQStyleOption
-{
-	private QStyleOptionHeaderV2_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionHeaderV2_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionHeaderV2_new();
-	}
-	public this(IQStyleOptionHeaderV2 other)
-	{
-		this.ptr = CQt.QStyleOptionHeaderV2_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionHeaderV2_Delete(this.ptr);
-	}
-	public Qt_TextElideMode TextElideMode()
-	{
-		return CQt.QStyleOptionHeaderV2_TextElideMode((.)this.ptr.Ptr);
-	}
-	public void SetTextElideMode(Qt_TextElideMode textElideMode)
-	{
-		CQt.QStyleOptionHeaderV2_SetTextElideMode((.)this.ptr.Ptr, textElideMode);
-	}
-	public bool IsSectionDragTarget()
-	{
-		return CQt.QStyleOptionHeaderV2_IsSectionDragTarget((.)this.ptr.Ptr);
-	}
-	public void SetIsSectionDragTarget(bool isSectionDragTarget)
-	{
-		CQt.QStyleOptionHeaderV2_SetIsSectionDragTarget((.)this.ptr.Ptr, isSectionDragTarget);
-	}
-	public c_int Unused()
-	{
-		return CQt.QStyleOptionHeaderV2_Unused((.)this.ptr.Ptr);
-	}
-	public void SetUnused(c_int unused)
-	{
-		CQt.QStyleOptionHeaderV2_SetUnused((.)this.ptr.Ptr, unused);
-	}
-	public c_int Section()
-	{
-		return CQt.QStyleOptionHeader_Section((.)this.ptr.Ptr);
-	}
-	public void SetSection(c_int section)
-	{
-		CQt.QStyleOptionHeader_SetSection((.)this.ptr.Ptr, section);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionHeader_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionHeader_SetText((.)this.ptr.Ptr, text);
-	}
-	public void* TextAlignment()
-	{
-		return CQt.QStyleOptionHeader_TextAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextAlignment(void* textAlignment)
-	{
-		CQt.QStyleOptionHeader_SetTextAlignment((.)this.ptr.Ptr, textAlignment);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionHeader_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionHeader_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public void* IconAlignment()
-	{
-		return CQt.QStyleOptionHeader_IconAlignment((.)this.ptr.Ptr);
-	}
-	public void SetIconAlignment(void* iconAlignment)
-	{
-		CQt.QStyleOptionHeader_SetIconAlignment((.)this.ptr.Ptr, iconAlignment);
-	}
-	public QStyleOptionHeader_SectionPosition Position()
-	{
-		return CQt.QStyleOptionHeader_Position((.)this.ptr.Ptr);
-	}
-	public void SetPosition(QStyleOptionHeader_SectionPosition position)
-	{
-		CQt.QStyleOptionHeader_SetPosition((.)this.ptr.Ptr, position);
-	}
-	public QStyleOptionHeader_SelectedPosition SelectedPosition()
-	{
-		return CQt.QStyleOptionHeader_SelectedPosition((.)this.ptr.Ptr);
-	}
-	public void SetSelectedPosition(QStyleOptionHeader_SelectedPosition selectedPosition)
-	{
-		CQt.QStyleOptionHeader_SetSelectedPosition((.)this.ptr.Ptr, selectedPosition);
-	}
-	public QStyleOptionHeader_SortIndicator SortIndicator()
-	{
-		return CQt.QStyleOptionHeader_SortIndicator((.)this.ptr.Ptr);
-	}
-	public void SetSortIndicator(QStyleOptionHeader_SortIndicator sortIndicator)
-	{
-		CQt.QStyleOptionHeader_SetSortIndicator((.)this.ptr.Ptr, sortIndicator);
-	}
-	public Qt_Orientation Orientation()
-	{
-		return CQt.QStyleOptionHeader_Orientation((.)this.ptr.Ptr);
-	}
-	public void SetOrientation(Qt_Orientation orientation)
-	{
-		CQt.QStyleOptionHeader_SetOrientation((.)this.ptr.Ptr, orientation);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionHeaderV2 : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionButton
 // --------------------------------------------------------------
@@ -1285,6 +2065,230 @@ struct QStyleOptionButton_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void* Features()
+	{
+		return CQt.QStyleOptionButton_Features((.)this.Ptr);
+	}
+	public void SetFeatures(void* features)
+	{
+		CQt.QStyleOptionButton_SetFeatures((.)this.Ptr, features);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionButton_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionButton_SetText((.)this.Ptr, text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionButton_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionButton_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionButton_IconSize((.)this.Ptr));
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		CQt.QStyleOptionButton_SetIconSize((.)this.Ptr, (.)iconSize?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionButton : IQStyleOptionButton, IQStyleOption
+{
+	private QStyleOptionButton_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionButton_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionButton_new();
+	}
+	public this(IQStyleOptionButton other)
+	{
+		this.ptr = CQt.QStyleOptionButton_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionButton_Delete(this.ptr);
+	}
+	public void* Features()
+	{
+		return this.ptr.Features();
+	}
+	public void SetFeatures(void* features)
+	{
+		this.ptr.SetFeatures(features);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return this.ptr.IconSize();
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		this.ptr.SetIconSize(iconSize);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionButton : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1313,130 +2317,6 @@ extension CQt
 	[LinkName("QStyleOptionButton_OperatorAssign")]
 	public static extern void QStyleOptionButton_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionButton : IQStyleOptionButton, IQStyleOption
-{
-	private QStyleOptionButton_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionButton_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionButton_new();
-	}
-	public this(IQStyleOptionButton other)
-	{
-		this.ptr = CQt.QStyleOptionButton_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionButton_Delete(this.ptr);
-	}
-	public void* Features()
-	{
-		return CQt.QStyleOptionButton_Features((.)this.ptr.Ptr);
-	}
-	public void SetFeatures(void* features)
-	{
-		CQt.QStyleOptionButton_SetFeatures((.)this.ptr.Ptr, features);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionButton_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionButton_SetText((.)this.ptr.Ptr, text);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionButton_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionButton_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public QSize_Ptr IconSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionButton_IconSize((.)this.ptr.Ptr));
-	}
-	public void SetIconSize(IQSize iconSize)
-	{
-		CQt.QStyleOptionButton_SetIconSize((.)this.ptr.Ptr, (.)iconSize?.ObjectPtr);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionButton : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionTab
 // --------------------------------------------------------------
@@ -1448,6 +2328,374 @@ struct QStyleOptionTab_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QTabBar_Shape Shape()
+	{
+		return CQt.QStyleOptionTab_Shape((.)this.Ptr);
+	}
+	public void SetShape(QTabBar_Shape shape)
+	{
+		CQt.QStyleOptionTab_SetShape((.)this.Ptr, shape);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionTab_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionTab_SetText((.)this.Ptr, text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionTab_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionTab_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public c_int Row()
+	{
+		return CQt.QStyleOptionTab_Row((.)this.Ptr);
+	}
+	public void SetRow(c_int row)
+	{
+		CQt.QStyleOptionTab_SetRow((.)this.Ptr, row);
+	}
+	public QStyleOptionTab_TabPosition Position()
+	{
+		return CQt.QStyleOptionTab_Position((.)this.Ptr);
+	}
+	public void SetPosition(QStyleOptionTab_TabPosition position)
+	{
+		CQt.QStyleOptionTab_SetPosition((.)this.Ptr, position);
+	}
+	public QStyleOptionTab_SelectedPosition SelectedPosition()
+	{
+		return CQt.QStyleOptionTab_SelectedPosition((.)this.Ptr);
+	}
+	public void SetSelectedPosition(QStyleOptionTab_SelectedPosition selectedPosition)
+	{
+		CQt.QStyleOptionTab_SetSelectedPosition((.)this.Ptr, selectedPosition);
+	}
+	public void* CornerWidgets()
+	{
+		return CQt.QStyleOptionTab_CornerWidgets((.)this.Ptr);
+	}
+	public void SetCornerWidgets(void* cornerWidgets)
+	{
+		CQt.QStyleOptionTab_SetCornerWidgets((.)this.Ptr, cornerWidgets);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionTab_IconSize((.)this.Ptr));
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		CQt.QStyleOptionTab_SetIconSize((.)this.Ptr, (.)iconSize?.ObjectPtr);
+	}
+	public bool DocumentMode()
+	{
+		return CQt.QStyleOptionTab_DocumentMode((.)this.Ptr);
+	}
+	public void SetDocumentMode(bool documentMode)
+	{
+		CQt.QStyleOptionTab_SetDocumentMode((.)this.Ptr, documentMode);
+	}
+	public QSize_Ptr LeftButtonSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionTab_LeftButtonSize((.)this.Ptr));
+	}
+	public void SetLeftButtonSize(IQSize leftButtonSize)
+	{
+		CQt.QStyleOptionTab_SetLeftButtonSize((.)this.Ptr, (.)leftButtonSize?.ObjectPtr);
+	}
+	public QSize_Ptr RightButtonSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionTab_RightButtonSize((.)this.Ptr));
+	}
+	public void SetRightButtonSize(IQSize rightButtonSize)
+	{
+		CQt.QStyleOptionTab_SetRightButtonSize((.)this.Ptr, (.)rightButtonSize?.ObjectPtr);
+	}
+	public void* Features()
+	{
+		return CQt.QStyleOptionTab_Features((.)this.Ptr);
+	}
+	public void SetFeatures(void* features)
+	{
+		CQt.QStyleOptionTab_SetFeatures((.)this.Ptr, features);
+	}
+	public c_int TabIndex()
+	{
+		return CQt.QStyleOptionTab_TabIndex((.)this.Ptr);
+	}
+	public void SetTabIndex(c_int tabIndex)
+	{
+		CQt.QStyleOptionTab_SetTabIndex((.)this.Ptr, tabIndex);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionTab : IQStyleOptionTab, IQStyleOption
+{
+	private QStyleOptionTab_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionTab_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionTab_new();
+	}
+	public this(IQStyleOptionTab other)
+	{
+		this.ptr = CQt.QStyleOptionTab_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionTab_Delete(this.ptr);
+	}
+	public QTabBar_Shape Shape()
+	{
+		return this.ptr.Shape();
+	}
+	public void SetShape(QTabBar_Shape shape)
+	{
+		this.ptr.SetShape(shape);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public c_int Row()
+	{
+		return this.ptr.Row();
+	}
+	public void SetRow(c_int row)
+	{
+		this.ptr.SetRow(row);
+	}
+	public QStyleOptionTab_TabPosition Position()
+	{
+		return this.ptr.Position();
+	}
+	public void SetPosition(QStyleOptionTab_TabPosition position)
+	{
+		this.ptr.SetPosition(position);
+	}
+	public QStyleOptionTab_SelectedPosition SelectedPosition()
+	{
+		return this.ptr.SelectedPosition();
+	}
+	public void SetSelectedPosition(QStyleOptionTab_SelectedPosition selectedPosition)
+	{
+		this.ptr.SetSelectedPosition(selectedPosition);
+	}
+	public void* CornerWidgets()
+	{
+		return this.ptr.CornerWidgets();
+	}
+	public void SetCornerWidgets(void* cornerWidgets)
+	{
+		this.ptr.SetCornerWidgets(cornerWidgets);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return this.ptr.IconSize();
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		this.ptr.SetIconSize(iconSize);
+	}
+	public bool DocumentMode()
+	{
+		return this.ptr.DocumentMode();
+	}
+	public void SetDocumentMode(bool documentMode)
+	{
+		this.ptr.SetDocumentMode(documentMode);
+	}
+	public QSize_Ptr LeftButtonSize()
+	{
+		return this.ptr.LeftButtonSize();
+	}
+	public void SetLeftButtonSize(IQSize leftButtonSize)
+	{
+		this.ptr.SetLeftButtonSize(leftButtonSize);
+	}
+	public QSize_Ptr RightButtonSize()
+	{
+		return this.ptr.RightButtonSize();
+	}
+	public void SetRightButtonSize(IQSize rightButtonSize)
+	{
+		this.ptr.SetRightButtonSize(rightButtonSize);
+	}
+	public void* Features()
+	{
+		return this.ptr.Features();
+	}
+	public void SetFeatures(void* features)
+	{
+		this.ptr.SetFeatures(features);
+	}
+	public c_int TabIndex()
+	{
+		return this.ptr.TabIndex();
+	}
+	public void SetTabIndex(c_int tabIndex)
+	{
+		this.ptr.SetTabIndex(tabIndex);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionTab : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1512,202 +2760,6 @@ extension CQt
 	[LinkName("QStyleOptionTab_OperatorAssign")]
 	public static extern void QStyleOptionTab_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionTab : IQStyleOptionTab, IQStyleOption
-{
-	private QStyleOptionTab_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionTab_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionTab_new();
-	}
-	public this(IQStyleOptionTab other)
-	{
-		this.ptr = CQt.QStyleOptionTab_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionTab_Delete(this.ptr);
-	}
-	public QTabBar_Shape Shape()
-	{
-		return CQt.QStyleOptionTab_Shape((.)this.ptr.Ptr);
-	}
-	public void SetShape(QTabBar_Shape shape)
-	{
-		CQt.QStyleOptionTab_SetShape((.)this.ptr.Ptr, shape);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionTab_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionTab_SetText((.)this.ptr.Ptr, text);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionTab_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionTab_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public c_int Row()
-	{
-		return CQt.QStyleOptionTab_Row((.)this.ptr.Ptr);
-	}
-	public void SetRow(c_int row)
-	{
-		CQt.QStyleOptionTab_SetRow((.)this.ptr.Ptr, row);
-	}
-	public QStyleOptionTab_TabPosition Position()
-	{
-		return CQt.QStyleOptionTab_Position((.)this.ptr.Ptr);
-	}
-	public void SetPosition(QStyleOptionTab_TabPosition position)
-	{
-		CQt.QStyleOptionTab_SetPosition((.)this.ptr.Ptr, position);
-	}
-	public QStyleOptionTab_SelectedPosition SelectedPosition()
-	{
-		return CQt.QStyleOptionTab_SelectedPosition((.)this.ptr.Ptr);
-	}
-	public void SetSelectedPosition(QStyleOptionTab_SelectedPosition selectedPosition)
-	{
-		CQt.QStyleOptionTab_SetSelectedPosition((.)this.ptr.Ptr, selectedPosition);
-	}
-	public void* CornerWidgets()
-	{
-		return CQt.QStyleOptionTab_CornerWidgets((.)this.ptr.Ptr);
-	}
-	public void SetCornerWidgets(void* cornerWidgets)
-	{
-		CQt.QStyleOptionTab_SetCornerWidgets((.)this.ptr.Ptr, cornerWidgets);
-	}
-	public QSize_Ptr IconSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionTab_IconSize((.)this.ptr.Ptr));
-	}
-	public void SetIconSize(IQSize iconSize)
-	{
-		CQt.QStyleOptionTab_SetIconSize((.)this.ptr.Ptr, (.)iconSize?.ObjectPtr);
-	}
-	public bool DocumentMode()
-	{
-		return CQt.QStyleOptionTab_DocumentMode((.)this.ptr.Ptr);
-	}
-	public void SetDocumentMode(bool documentMode)
-	{
-		CQt.QStyleOptionTab_SetDocumentMode((.)this.ptr.Ptr, documentMode);
-	}
-	public QSize_Ptr LeftButtonSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionTab_LeftButtonSize((.)this.ptr.Ptr));
-	}
-	public void SetLeftButtonSize(IQSize leftButtonSize)
-	{
-		CQt.QStyleOptionTab_SetLeftButtonSize((.)this.ptr.Ptr, (.)leftButtonSize?.ObjectPtr);
-	}
-	public QSize_Ptr RightButtonSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionTab_RightButtonSize((.)this.ptr.Ptr));
-	}
-	public void SetRightButtonSize(IQSize rightButtonSize)
-	{
-		CQt.QStyleOptionTab_SetRightButtonSize((.)this.ptr.Ptr, (.)rightButtonSize?.ObjectPtr);
-	}
-	public void* Features()
-	{
-		return CQt.QStyleOptionTab_Features((.)this.ptr.Ptr);
-	}
-	public void SetFeatures(void* features)
-	{
-		CQt.QStyleOptionTab_SetFeatures((.)this.ptr.Ptr, features);
-	}
-	public c_int TabIndex()
-	{
-		return CQt.QStyleOptionTab_TabIndex((.)this.ptr.Ptr);
-	}
-	public void SetTabIndex(c_int tabIndex)
-	{
-		CQt.QStyleOptionTab_SetTabIndex((.)this.ptr.Ptr, tabIndex);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionTab : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionToolBar
 // --------------------------------------------------------------
@@ -1719,6 +2771,262 @@ struct QStyleOptionToolBar_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QStyleOptionToolBar_ToolBarPosition PositionOfLine()
+	{
+		return CQt.QStyleOptionToolBar_PositionOfLine((.)this.Ptr);
+	}
+	public void SetPositionOfLine(QStyleOptionToolBar_ToolBarPosition positionOfLine)
+	{
+		CQt.QStyleOptionToolBar_SetPositionOfLine((.)this.Ptr, positionOfLine);
+	}
+	public QStyleOptionToolBar_ToolBarPosition PositionWithinLine()
+	{
+		return CQt.QStyleOptionToolBar_PositionWithinLine((.)this.Ptr);
+	}
+	public void SetPositionWithinLine(QStyleOptionToolBar_ToolBarPosition positionWithinLine)
+	{
+		CQt.QStyleOptionToolBar_SetPositionWithinLine((.)this.Ptr, positionWithinLine);
+	}
+	public Qt_ToolBarArea ToolBarArea()
+	{
+		return CQt.QStyleOptionToolBar_ToolBarArea((.)this.Ptr);
+	}
+	public void SetToolBarArea(Qt_ToolBarArea toolBarArea)
+	{
+		CQt.QStyleOptionToolBar_SetToolBarArea((.)this.Ptr, toolBarArea);
+	}
+	public void* Features()
+	{
+		return CQt.QStyleOptionToolBar_Features((.)this.Ptr);
+	}
+	public void SetFeatures(void* features)
+	{
+		CQt.QStyleOptionToolBar_SetFeatures((.)this.Ptr, features);
+	}
+	public c_int LineWidth()
+	{
+		return CQt.QStyleOptionToolBar_LineWidth((.)this.Ptr);
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		CQt.QStyleOptionToolBar_SetLineWidth((.)this.Ptr, lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return CQt.QStyleOptionToolBar_MidLineWidth((.)this.Ptr);
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		CQt.QStyleOptionToolBar_SetMidLineWidth((.)this.Ptr, midLineWidth);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionToolBar : IQStyleOptionToolBar, IQStyleOption
+{
+	private QStyleOptionToolBar_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionToolBar_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionToolBar_new();
+	}
+	public this(IQStyleOptionToolBar other)
+	{
+		this.ptr = CQt.QStyleOptionToolBar_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionToolBar_Delete(this.ptr);
+	}
+	public QStyleOptionToolBar_ToolBarPosition PositionOfLine()
+	{
+		return this.ptr.PositionOfLine();
+	}
+	public void SetPositionOfLine(QStyleOptionToolBar_ToolBarPosition positionOfLine)
+	{
+		this.ptr.SetPositionOfLine(positionOfLine);
+	}
+	public QStyleOptionToolBar_ToolBarPosition PositionWithinLine()
+	{
+		return this.ptr.PositionWithinLine();
+	}
+	public void SetPositionWithinLine(QStyleOptionToolBar_ToolBarPosition positionWithinLine)
+	{
+		this.ptr.SetPositionWithinLine(positionWithinLine);
+	}
+	public Qt_ToolBarArea ToolBarArea()
+	{
+		return this.ptr.ToolBarArea();
+	}
+	public void SetToolBarArea(Qt_ToolBarArea toolBarArea)
+	{
+		this.ptr.SetToolBarArea(toolBarArea);
+	}
+	public void* Features()
+	{
+		return this.ptr.Features();
+	}
+	public void SetFeatures(void* features)
+	{
+		this.ptr.SetFeatures(features);
+	}
+	public c_int LineWidth()
+	{
+		return this.ptr.LineWidth();
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		this.ptr.SetLineWidth(lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return this.ptr.MidLineWidth();
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		this.ptr.SetMidLineWidth(midLineWidth);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionToolBar : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1755,146 +3063,6 @@ extension CQt
 	[LinkName("QStyleOptionToolBar_OperatorAssign")]
 	public static extern void QStyleOptionToolBar_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionToolBar : IQStyleOptionToolBar, IQStyleOption
-{
-	private QStyleOptionToolBar_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionToolBar_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionToolBar_new();
-	}
-	public this(IQStyleOptionToolBar other)
-	{
-		this.ptr = CQt.QStyleOptionToolBar_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionToolBar_Delete(this.ptr);
-	}
-	public QStyleOptionToolBar_ToolBarPosition PositionOfLine()
-	{
-		return CQt.QStyleOptionToolBar_PositionOfLine((.)this.ptr.Ptr);
-	}
-	public void SetPositionOfLine(QStyleOptionToolBar_ToolBarPosition positionOfLine)
-	{
-		CQt.QStyleOptionToolBar_SetPositionOfLine((.)this.ptr.Ptr, positionOfLine);
-	}
-	public QStyleOptionToolBar_ToolBarPosition PositionWithinLine()
-	{
-		return CQt.QStyleOptionToolBar_PositionWithinLine((.)this.ptr.Ptr);
-	}
-	public void SetPositionWithinLine(QStyleOptionToolBar_ToolBarPosition positionWithinLine)
-	{
-		CQt.QStyleOptionToolBar_SetPositionWithinLine((.)this.ptr.Ptr, positionWithinLine);
-	}
-	public Qt_ToolBarArea ToolBarArea()
-	{
-		return CQt.QStyleOptionToolBar_ToolBarArea((.)this.ptr.Ptr);
-	}
-	public void SetToolBarArea(Qt_ToolBarArea toolBarArea)
-	{
-		CQt.QStyleOptionToolBar_SetToolBarArea((.)this.ptr.Ptr, toolBarArea);
-	}
-	public void* Features()
-	{
-		return CQt.QStyleOptionToolBar_Features((.)this.ptr.Ptr);
-	}
-	public void SetFeatures(void* features)
-	{
-		CQt.QStyleOptionToolBar_SetFeatures((.)this.ptr.Ptr, features);
-	}
-	public c_int LineWidth()
-	{
-		return CQt.QStyleOptionToolBar_LineWidth((.)this.ptr.Ptr);
-	}
-	public void SetLineWidth(c_int lineWidth)
-	{
-		CQt.QStyleOptionToolBar_SetLineWidth((.)this.ptr.Ptr, lineWidth);
-	}
-	public c_int MidLineWidth()
-	{
-		return CQt.QStyleOptionToolBar_MidLineWidth((.)this.ptr.Ptr);
-	}
-	public void SetMidLineWidth(c_int midLineWidth)
-	{
-		CQt.QStyleOptionToolBar_SetMidLineWidth((.)this.ptr.Ptr, midLineWidth);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionToolBar : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionProgressBar
 // --------------------------------------------------------------
@@ -1906,6 +3074,294 @@ struct QStyleOptionProgressBar_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_int Minimum()
+	{
+		return CQt.QStyleOptionProgressBar_Minimum((.)this.Ptr);
+	}
+	public void SetMinimum(c_int minimum)
+	{
+		CQt.QStyleOptionProgressBar_SetMinimum((.)this.Ptr, minimum);
+	}
+	public c_int Maximum()
+	{
+		return CQt.QStyleOptionProgressBar_Maximum((.)this.Ptr);
+	}
+	public void SetMaximum(c_int maximum)
+	{
+		CQt.QStyleOptionProgressBar_SetMaximum((.)this.Ptr, maximum);
+	}
+	public c_int Progress()
+	{
+		return CQt.QStyleOptionProgressBar_Progress((.)this.Ptr);
+	}
+	public void SetProgress(c_int progress)
+	{
+		CQt.QStyleOptionProgressBar_SetProgress((.)this.Ptr, progress);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionProgressBar_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionProgressBar_SetText((.)this.Ptr, text);
+	}
+	public void* TextAlignment()
+	{
+		return CQt.QStyleOptionProgressBar_TextAlignment((.)this.Ptr);
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		CQt.QStyleOptionProgressBar_SetTextAlignment((.)this.Ptr, textAlignment);
+	}
+	public bool TextVisible()
+	{
+		return CQt.QStyleOptionProgressBar_TextVisible((.)this.Ptr);
+	}
+	public void SetTextVisible(bool textVisible)
+	{
+		CQt.QStyleOptionProgressBar_SetTextVisible((.)this.Ptr, textVisible);
+	}
+	public bool InvertedAppearance()
+	{
+		return CQt.QStyleOptionProgressBar_InvertedAppearance((.)this.Ptr);
+	}
+	public void SetInvertedAppearance(bool invertedAppearance)
+	{
+		CQt.QStyleOptionProgressBar_SetInvertedAppearance((.)this.Ptr, invertedAppearance);
+	}
+	public bool BottomToTop()
+	{
+		return CQt.QStyleOptionProgressBar_BottomToTop((.)this.Ptr);
+	}
+	public void SetBottomToTop(bool bottomToTop)
+	{
+		CQt.QStyleOptionProgressBar_SetBottomToTop((.)this.Ptr, bottomToTop);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionProgressBar : IQStyleOptionProgressBar, IQStyleOption
+{
+	private QStyleOptionProgressBar_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionProgressBar_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionProgressBar_new();
+	}
+	public this(IQStyleOptionProgressBar other)
+	{
+		this.ptr = CQt.QStyleOptionProgressBar_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionProgressBar_Delete(this.ptr);
+	}
+	public c_int Minimum()
+	{
+		return this.ptr.Minimum();
+	}
+	public void SetMinimum(c_int minimum)
+	{
+		this.ptr.SetMinimum(minimum);
+	}
+	public c_int Maximum()
+	{
+		return this.ptr.Maximum();
+	}
+	public void SetMaximum(c_int maximum)
+	{
+		this.ptr.SetMaximum(maximum);
+	}
+	public c_int Progress()
+	{
+		return this.ptr.Progress();
+	}
+	public void SetProgress(c_int progress)
+	{
+		this.ptr.SetProgress(progress);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public void* TextAlignment()
+	{
+		return this.ptr.TextAlignment();
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		this.ptr.SetTextAlignment(textAlignment);
+	}
+	public bool TextVisible()
+	{
+		return this.ptr.TextVisible();
+	}
+	public void SetTextVisible(bool textVisible)
+	{
+		this.ptr.SetTextVisible(textVisible);
+	}
+	public bool InvertedAppearance()
+	{
+		return this.ptr.InvertedAppearance();
+	}
+	public void SetInvertedAppearance(bool invertedAppearance)
+	{
+		this.ptr.SetInvertedAppearance(invertedAppearance);
+	}
+	public bool BottomToTop()
+	{
+		return this.ptr.BottomToTop();
+	}
+	public void SetBottomToTop(bool bottomToTop)
+	{
+		this.ptr.SetBottomToTop(bottomToTop);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionProgressBar : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1950,162 +3406,6 @@ extension CQt
 	[LinkName("QStyleOptionProgressBar_OperatorAssign")]
 	public static extern void QStyleOptionProgressBar_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionProgressBar : IQStyleOptionProgressBar, IQStyleOption
-{
-	private QStyleOptionProgressBar_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionProgressBar_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionProgressBar_new();
-	}
-	public this(IQStyleOptionProgressBar other)
-	{
-		this.ptr = CQt.QStyleOptionProgressBar_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionProgressBar_Delete(this.ptr);
-	}
-	public c_int Minimum()
-	{
-		return CQt.QStyleOptionProgressBar_Minimum((.)this.ptr.Ptr);
-	}
-	public void SetMinimum(c_int minimum)
-	{
-		CQt.QStyleOptionProgressBar_SetMinimum((.)this.ptr.Ptr, minimum);
-	}
-	public c_int Maximum()
-	{
-		return CQt.QStyleOptionProgressBar_Maximum((.)this.ptr.Ptr);
-	}
-	public void SetMaximum(c_int maximum)
-	{
-		CQt.QStyleOptionProgressBar_SetMaximum((.)this.ptr.Ptr, maximum);
-	}
-	public c_int Progress()
-	{
-		return CQt.QStyleOptionProgressBar_Progress((.)this.ptr.Ptr);
-	}
-	public void SetProgress(c_int progress)
-	{
-		CQt.QStyleOptionProgressBar_SetProgress((.)this.ptr.Ptr, progress);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionProgressBar_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionProgressBar_SetText((.)this.ptr.Ptr, text);
-	}
-	public void* TextAlignment()
-	{
-		return CQt.QStyleOptionProgressBar_TextAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextAlignment(void* textAlignment)
-	{
-		CQt.QStyleOptionProgressBar_SetTextAlignment((.)this.ptr.Ptr, textAlignment);
-	}
-	public bool TextVisible()
-	{
-		return CQt.QStyleOptionProgressBar_TextVisible((.)this.ptr.Ptr);
-	}
-	public void SetTextVisible(bool textVisible)
-	{
-		CQt.QStyleOptionProgressBar_SetTextVisible((.)this.ptr.Ptr, textVisible);
-	}
-	public bool InvertedAppearance()
-	{
-		return CQt.QStyleOptionProgressBar_InvertedAppearance((.)this.ptr.Ptr);
-	}
-	public void SetInvertedAppearance(bool invertedAppearance)
-	{
-		CQt.QStyleOptionProgressBar_SetInvertedAppearance((.)this.ptr.Ptr, invertedAppearance);
-	}
-	public bool BottomToTop()
-	{
-		return CQt.QStyleOptionProgressBar_BottomToTop((.)this.ptr.Ptr);
-	}
-	public void SetBottomToTop(bool bottomToTop)
-	{
-		CQt.QStyleOptionProgressBar_SetBottomToTop((.)this.ptr.Ptr, bottomToTop);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionProgressBar : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionMenuItem
 // --------------------------------------------------------------
@@ -2117,6 +3417,326 @@ struct QStyleOptionMenuItem_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QStyleOptionMenuItem_MenuItemType MenuItemType()
+	{
+		return CQt.QStyleOptionMenuItem_MenuItemType((.)this.Ptr);
+	}
+	public void SetMenuItemType(QStyleOptionMenuItem_MenuItemType menuItemType)
+	{
+		CQt.QStyleOptionMenuItem_SetMenuItemType((.)this.Ptr, menuItemType);
+	}
+	public QStyleOptionMenuItem_CheckType CheckType()
+	{
+		return CQt.QStyleOptionMenuItem_CheckType((.)this.Ptr);
+	}
+	public void SetCheckType(QStyleOptionMenuItem_CheckType checkType)
+	{
+		CQt.QStyleOptionMenuItem_SetCheckType((.)this.Ptr, checkType);
+	}
+	public bool Checked()
+	{
+		return CQt.QStyleOptionMenuItem_Checked((.)this.Ptr);
+	}
+	public void SetChecked(bool _checked)
+	{
+		CQt.QStyleOptionMenuItem_SetChecked((.)this.Ptr, _checked);
+	}
+	public bool MenuHasCheckableItems()
+	{
+		return CQt.QStyleOptionMenuItem_MenuHasCheckableItems((.)this.Ptr);
+	}
+	public void SetMenuHasCheckableItems(bool menuHasCheckableItems)
+	{
+		CQt.QStyleOptionMenuItem_SetMenuHasCheckableItems((.)this.Ptr, menuHasCheckableItems);
+	}
+	public QRect_Ptr MenuRect()
+	{
+		return QRect_Ptr(CQt.QStyleOptionMenuItem_MenuRect((.)this.Ptr));
+	}
+	public void SetMenuRect(IQRect menuRect)
+	{
+		CQt.QStyleOptionMenuItem_SetMenuRect((.)this.Ptr, (.)menuRect?.ObjectPtr);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionMenuItem_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionMenuItem_SetText((.)this.Ptr, text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionMenuItem_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionMenuItem_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public c_int MaxIconWidth()
+	{
+		return CQt.QStyleOptionMenuItem_MaxIconWidth((.)this.Ptr);
+	}
+	public void SetMaxIconWidth(c_int maxIconWidth)
+	{
+		CQt.QStyleOptionMenuItem_SetMaxIconWidth((.)this.Ptr, maxIconWidth);
+	}
+	public c_int ReservedShortcutWidth()
+	{
+		return CQt.QStyleOptionMenuItem_ReservedShortcutWidth((.)this.Ptr);
+	}
+	public void SetReservedShortcutWidth(c_int reservedShortcutWidth)
+	{
+		CQt.QStyleOptionMenuItem_SetReservedShortcutWidth((.)this.Ptr, reservedShortcutWidth);
+	}
+	public QFont_Ptr Font()
+	{
+		return QFont_Ptr(CQt.QStyleOptionMenuItem_Font((.)this.Ptr));
+	}
+	public void SetFont(IQFont font)
+	{
+		CQt.QStyleOptionMenuItem_SetFont((.)this.Ptr, (.)font?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionMenuItem : IQStyleOptionMenuItem, IQStyleOption
+{
+	private QStyleOptionMenuItem_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionMenuItem_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionMenuItem_new();
+	}
+	public this(IQStyleOptionMenuItem other)
+	{
+		this.ptr = CQt.QStyleOptionMenuItem_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionMenuItem_Delete(this.ptr);
+	}
+	public QStyleOptionMenuItem_MenuItemType MenuItemType()
+	{
+		return this.ptr.MenuItemType();
+	}
+	public void SetMenuItemType(QStyleOptionMenuItem_MenuItemType menuItemType)
+	{
+		this.ptr.SetMenuItemType(menuItemType);
+	}
+	public QStyleOptionMenuItem_CheckType CheckType()
+	{
+		return this.ptr.CheckType();
+	}
+	public void SetCheckType(QStyleOptionMenuItem_CheckType checkType)
+	{
+		this.ptr.SetCheckType(checkType);
+	}
+	public bool Checked()
+	{
+		return this.ptr.Checked();
+	}
+	public void SetChecked(bool _checked)
+	{
+		this.ptr.SetChecked(_checked);
+	}
+	public bool MenuHasCheckableItems()
+	{
+		return this.ptr.MenuHasCheckableItems();
+	}
+	public void SetMenuHasCheckableItems(bool menuHasCheckableItems)
+	{
+		this.ptr.SetMenuHasCheckableItems(menuHasCheckableItems);
+	}
+	public QRect_Ptr MenuRect()
+	{
+		return this.ptr.MenuRect();
+	}
+	public void SetMenuRect(IQRect menuRect)
+	{
+		this.ptr.SetMenuRect(menuRect);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public c_int MaxIconWidth()
+	{
+		return this.ptr.MaxIconWidth();
+	}
+	public void SetMaxIconWidth(c_int maxIconWidth)
+	{
+		this.ptr.SetMaxIconWidth(maxIconWidth);
+	}
+	public c_int ReservedShortcutWidth()
+	{
+		return this.ptr.ReservedShortcutWidth();
+	}
+	public void SetReservedShortcutWidth(c_int reservedShortcutWidth)
+	{
+		this.ptr.SetReservedShortcutWidth(reservedShortcutWidth);
+	}
+	public QFont_Ptr Font()
+	{
+		return this.ptr.Font();
+	}
+	public void SetFont(IQFont font)
+	{
+		this.ptr.SetFont(font);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionMenuItem : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -2169,178 +3789,6 @@ extension CQt
 	[LinkName("QStyleOptionMenuItem_OperatorAssign")]
 	public static extern void QStyleOptionMenuItem_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionMenuItem : IQStyleOptionMenuItem, IQStyleOption
-{
-	private QStyleOptionMenuItem_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionMenuItem_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionMenuItem_new();
-	}
-	public this(IQStyleOptionMenuItem other)
-	{
-		this.ptr = CQt.QStyleOptionMenuItem_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionMenuItem_Delete(this.ptr);
-	}
-	public QStyleOptionMenuItem_MenuItemType MenuItemType()
-	{
-		return CQt.QStyleOptionMenuItem_MenuItemType((.)this.ptr.Ptr);
-	}
-	public void SetMenuItemType(QStyleOptionMenuItem_MenuItemType menuItemType)
-	{
-		CQt.QStyleOptionMenuItem_SetMenuItemType((.)this.ptr.Ptr, menuItemType);
-	}
-	public QStyleOptionMenuItem_CheckType CheckType()
-	{
-		return CQt.QStyleOptionMenuItem_CheckType((.)this.ptr.Ptr);
-	}
-	public void SetCheckType(QStyleOptionMenuItem_CheckType checkType)
-	{
-		CQt.QStyleOptionMenuItem_SetCheckType((.)this.ptr.Ptr, checkType);
-	}
-	public bool Checked()
-	{
-		return CQt.QStyleOptionMenuItem_Checked((.)this.ptr.Ptr);
-	}
-	public void SetChecked(bool _checked)
-	{
-		CQt.QStyleOptionMenuItem_SetChecked((.)this.ptr.Ptr, _checked);
-	}
-	public bool MenuHasCheckableItems()
-	{
-		return CQt.QStyleOptionMenuItem_MenuHasCheckableItems((.)this.ptr.Ptr);
-	}
-	public void SetMenuHasCheckableItems(bool menuHasCheckableItems)
-	{
-		CQt.QStyleOptionMenuItem_SetMenuHasCheckableItems((.)this.ptr.Ptr, menuHasCheckableItems);
-	}
-	public QRect_Ptr MenuRect()
-	{
-		return QRect_Ptr(CQt.QStyleOptionMenuItem_MenuRect((.)this.ptr.Ptr));
-	}
-	public void SetMenuRect(IQRect menuRect)
-	{
-		CQt.QStyleOptionMenuItem_SetMenuRect((.)this.ptr.Ptr, (.)menuRect?.ObjectPtr);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionMenuItem_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionMenuItem_SetText((.)this.ptr.Ptr, text);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionMenuItem_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionMenuItem_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public c_int MaxIconWidth()
-	{
-		return CQt.QStyleOptionMenuItem_MaxIconWidth((.)this.ptr.Ptr);
-	}
-	public void SetMaxIconWidth(c_int maxIconWidth)
-	{
-		CQt.QStyleOptionMenuItem_SetMaxIconWidth((.)this.ptr.Ptr, maxIconWidth);
-	}
-	public c_int ReservedShortcutWidth()
-	{
-		return CQt.QStyleOptionMenuItem_ReservedShortcutWidth((.)this.ptr.Ptr);
-	}
-	public void SetReservedShortcutWidth(c_int reservedShortcutWidth)
-	{
-		CQt.QStyleOptionMenuItem_SetReservedShortcutWidth((.)this.ptr.Ptr, reservedShortcutWidth);
-	}
-	public QFont_Ptr Font()
-	{
-		return QFont_Ptr(CQt.QStyleOptionMenuItem_Font((.)this.ptr.Ptr));
-	}
-	public void SetFont(IQFont font)
-	{
-		CQt.QStyleOptionMenuItem_SetFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionMenuItem : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionDockWidget
 // --------------------------------------------------------------
@@ -2352,6 +3800,246 @@ struct QStyleOptionDockWidget_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Title(String outStr)
+	{
+		CQt.QStyleOptionDockWidget_Title((.)this.Ptr);
+	}
+	public void SetTitle(String title)
+	{
+		CQt.QStyleOptionDockWidget_SetTitle((.)this.Ptr, title);
+	}
+	public bool Closable()
+	{
+		return CQt.QStyleOptionDockWidget_Closable((.)this.Ptr);
+	}
+	public void SetClosable(bool closable)
+	{
+		CQt.QStyleOptionDockWidget_SetClosable((.)this.Ptr, closable);
+	}
+	public bool Movable()
+	{
+		return CQt.QStyleOptionDockWidget_Movable((.)this.Ptr);
+	}
+	public void SetMovable(bool movable)
+	{
+		CQt.QStyleOptionDockWidget_SetMovable((.)this.Ptr, movable);
+	}
+	public bool Floatable()
+	{
+		return CQt.QStyleOptionDockWidget_Floatable((.)this.Ptr);
+	}
+	public void SetFloatable(bool floatable)
+	{
+		CQt.QStyleOptionDockWidget_SetFloatable((.)this.Ptr, floatable);
+	}
+	public bool VerticalTitleBar()
+	{
+		return CQt.QStyleOptionDockWidget_VerticalTitleBar((.)this.Ptr);
+	}
+	public void SetVerticalTitleBar(bool verticalTitleBar)
+	{
+		CQt.QStyleOptionDockWidget_SetVerticalTitleBar((.)this.Ptr, verticalTitleBar);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionDockWidget : IQStyleOptionDockWidget, IQStyleOption
+{
+	private QStyleOptionDockWidget_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionDockWidget_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionDockWidget_new();
+	}
+	public this(IQStyleOptionDockWidget other)
+	{
+		this.ptr = CQt.QStyleOptionDockWidget_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionDockWidget_Delete(this.ptr);
+	}
+	public void Title(String outStr)
+	{
+		this.ptr.Title(outStr);
+	}
+	public void SetTitle(String title)
+	{
+		this.ptr.SetTitle(title);
+	}
+	public bool Closable()
+	{
+		return this.ptr.Closable();
+	}
+	public void SetClosable(bool closable)
+	{
+		this.ptr.SetClosable(closable);
+	}
+	public bool Movable()
+	{
+		return this.ptr.Movable();
+	}
+	public void SetMovable(bool movable)
+	{
+		this.ptr.SetMovable(movable);
+	}
+	public bool Floatable()
+	{
+		return this.ptr.Floatable();
+	}
+	public void SetFloatable(bool floatable)
+	{
+		this.ptr.SetFloatable(floatable);
+	}
+	public bool VerticalTitleBar()
+	{
+		return this.ptr.VerticalTitleBar();
+	}
+	public void SetVerticalTitleBar(bool verticalTitleBar)
+	{
+		this.ptr.SetVerticalTitleBar(verticalTitleBar);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionDockWidget : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -2384,138 +4072,6 @@ extension CQt
 	[LinkName("QStyleOptionDockWidget_OperatorAssign")]
 	public static extern void QStyleOptionDockWidget_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionDockWidget : IQStyleOptionDockWidget, IQStyleOption
-{
-	private QStyleOptionDockWidget_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionDockWidget_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionDockWidget_new();
-	}
-	public this(IQStyleOptionDockWidget other)
-	{
-		this.ptr = CQt.QStyleOptionDockWidget_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionDockWidget_Delete(this.ptr);
-	}
-	public void Title(String outStr)
-	{
-		CQt.QStyleOptionDockWidget_Title((.)this.ptr.Ptr);
-	}
-	public void SetTitle(String title)
-	{
-		CQt.QStyleOptionDockWidget_SetTitle((.)this.ptr.Ptr, title);
-	}
-	public bool Closable()
-	{
-		return CQt.QStyleOptionDockWidget_Closable((.)this.ptr.Ptr);
-	}
-	public void SetClosable(bool closable)
-	{
-		CQt.QStyleOptionDockWidget_SetClosable((.)this.ptr.Ptr, closable);
-	}
-	public bool Movable()
-	{
-		return CQt.QStyleOptionDockWidget_Movable((.)this.ptr.Ptr);
-	}
-	public void SetMovable(bool movable)
-	{
-		CQt.QStyleOptionDockWidget_SetMovable((.)this.ptr.Ptr, movable);
-	}
-	public bool Floatable()
-	{
-		return CQt.QStyleOptionDockWidget_Floatable((.)this.ptr.Ptr);
-	}
-	public void SetFloatable(bool floatable)
-	{
-		CQt.QStyleOptionDockWidget_SetFloatable((.)this.ptr.Ptr, floatable);
-	}
-	public bool VerticalTitleBar()
-	{
-		return CQt.QStyleOptionDockWidget_VerticalTitleBar((.)this.ptr.Ptr);
-	}
-	public void SetVerticalTitleBar(bool verticalTitleBar)
-	{
-		CQt.QStyleOptionDockWidget_SetVerticalTitleBar((.)this.ptr.Ptr, verticalTitleBar);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionDockWidget : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionViewItem
 // --------------------------------------------------------------
@@ -2527,6 +4083,422 @@ struct QStyleOptionViewItem_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void* DisplayAlignment()
+	{
+		return CQt.QStyleOptionViewItem_DisplayAlignment((.)this.Ptr);
+	}
+	public void SetDisplayAlignment(void* displayAlignment)
+	{
+		CQt.QStyleOptionViewItem_SetDisplayAlignment((.)this.Ptr, displayAlignment);
+	}
+	public void* DecorationAlignment()
+	{
+		return CQt.QStyleOptionViewItem_DecorationAlignment((.)this.Ptr);
+	}
+	public void SetDecorationAlignment(void* decorationAlignment)
+	{
+		CQt.QStyleOptionViewItem_SetDecorationAlignment((.)this.Ptr, decorationAlignment);
+	}
+	public Qt_TextElideMode TextElideMode()
+	{
+		return CQt.QStyleOptionViewItem_TextElideMode((.)this.Ptr);
+	}
+	public void SetTextElideMode(Qt_TextElideMode textElideMode)
+	{
+		CQt.QStyleOptionViewItem_SetTextElideMode((.)this.Ptr, textElideMode);
+	}
+	public QStyleOptionViewItem_Position DecorationPosition()
+	{
+		return CQt.QStyleOptionViewItem_DecorationPosition((.)this.Ptr);
+	}
+	public void SetDecorationPosition(QStyleOptionViewItem_Position decorationPosition)
+	{
+		CQt.QStyleOptionViewItem_SetDecorationPosition((.)this.Ptr, decorationPosition);
+	}
+	public QSize_Ptr DecorationSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionViewItem_DecorationSize((.)this.Ptr));
+	}
+	public void SetDecorationSize(IQSize decorationSize)
+	{
+		CQt.QStyleOptionViewItem_SetDecorationSize((.)this.Ptr, (.)decorationSize?.ObjectPtr);
+	}
+	public QFont_Ptr Font()
+	{
+		return QFont_Ptr(CQt.QStyleOptionViewItem_Font((.)this.Ptr));
+	}
+	public void SetFont(IQFont font)
+	{
+		CQt.QStyleOptionViewItem_SetFont((.)this.Ptr, (.)font?.ObjectPtr);
+	}
+	public bool ShowDecorationSelected()
+	{
+		return CQt.QStyleOptionViewItem_ShowDecorationSelected((.)this.Ptr);
+	}
+	public void SetShowDecorationSelected(bool showDecorationSelected)
+	{
+		CQt.QStyleOptionViewItem_SetShowDecorationSelected((.)this.Ptr, showDecorationSelected);
+	}
+	public void* Features()
+	{
+		return CQt.QStyleOptionViewItem_Features((.)this.Ptr);
+	}
+	public void SetFeatures(void* features)
+	{
+		CQt.QStyleOptionViewItem_SetFeatures((.)this.Ptr, features);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return QLocale_Ptr(CQt.QStyleOptionViewItem_Locale((.)this.Ptr));
+	}
+	public void SetLocale(IQLocale locale)
+	{
+		CQt.QStyleOptionViewItem_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QStyleOptionViewItem_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QStyleOptionViewItem_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public QModelIndex_Ptr Index()
+	{
+		return QModelIndex_Ptr(CQt.QStyleOptionViewItem_Index((.)this.Ptr));
+	}
+	public void SetIndex(IQModelIndex index)
+	{
+		CQt.QStyleOptionViewItem_SetIndex((.)this.Ptr, (.)index?.ObjectPtr);
+	}
+	public Qt_CheckState CheckState()
+	{
+		return CQt.QStyleOptionViewItem_CheckState((.)this.Ptr);
+	}
+	public void SetCheckState(Qt_CheckState checkState)
+	{
+		CQt.QStyleOptionViewItem_SetCheckState((.)this.Ptr, checkState);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionViewItem_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionViewItem_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionViewItem_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionViewItem_SetText((.)this.Ptr, text);
+	}
+	public QStyleOptionViewItem_ViewItemPosition ViewItemPosition()
+	{
+		return CQt.QStyleOptionViewItem_ViewItemPosition((.)this.Ptr);
+	}
+	public void SetViewItemPosition(QStyleOptionViewItem_ViewItemPosition viewItemPosition)
+	{
+		CQt.QStyleOptionViewItem_SetViewItemPosition((.)this.Ptr, viewItemPosition);
+	}
+	public QBrush_Ptr BackgroundBrush()
+	{
+		return QBrush_Ptr(CQt.QStyleOptionViewItem_BackgroundBrush((.)this.Ptr));
+	}
+	public void SetBackgroundBrush(IQBrush backgroundBrush)
+	{
+		CQt.QStyleOptionViewItem_SetBackgroundBrush((.)this.Ptr, (.)backgroundBrush?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionViewItem : IQStyleOptionViewItem, IQStyleOption
+{
+	private QStyleOptionViewItem_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionViewItem_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionViewItem_new();
+	}
+	public this(IQStyleOptionViewItem other)
+	{
+		this.ptr = CQt.QStyleOptionViewItem_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionViewItem_Delete(this.ptr);
+	}
+	public void* DisplayAlignment()
+	{
+		return this.ptr.DisplayAlignment();
+	}
+	public void SetDisplayAlignment(void* displayAlignment)
+	{
+		this.ptr.SetDisplayAlignment(displayAlignment);
+	}
+	public void* DecorationAlignment()
+	{
+		return this.ptr.DecorationAlignment();
+	}
+	public void SetDecorationAlignment(void* decorationAlignment)
+	{
+		this.ptr.SetDecorationAlignment(decorationAlignment);
+	}
+	public Qt_TextElideMode TextElideMode()
+	{
+		return this.ptr.TextElideMode();
+	}
+	public void SetTextElideMode(Qt_TextElideMode textElideMode)
+	{
+		this.ptr.SetTextElideMode(textElideMode);
+	}
+	public QStyleOptionViewItem_Position DecorationPosition()
+	{
+		return this.ptr.DecorationPosition();
+	}
+	public void SetDecorationPosition(QStyleOptionViewItem_Position decorationPosition)
+	{
+		this.ptr.SetDecorationPosition(decorationPosition);
+	}
+	public QSize_Ptr DecorationSize()
+	{
+		return this.ptr.DecorationSize();
+	}
+	public void SetDecorationSize(IQSize decorationSize)
+	{
+		this.ptr.SetDecorationSize(decorationSize);
+	}
+	public QFont_Ptr Font()
+	{
+		return this.ptr.Font();
+	}
+	public void SetFont(IQFont font)
+	{
+		this.ptr.SetFont(font);
+	}
+	public bool ShowDecorationSelected()
+	{
+		return this.ptr.ShowDecorationSelected();
+	}
+	public void SetShowDecorationSelected(bool showDecorationSelected)
+	{
+		this.ptr.SetShowDecorationSelected(showDecorationSelected);
+	}
+	public void* Features()
+	{
+		return this.ptr.Features();
+	}
+	public void SetFeatures(void* features)
+	{
+		this.ptr.SetFeatures(features);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return this.ptr.Locale();
+	}
+	public void SetLocale(IQLocale locale)
+	{
+		this.ptr.SetLocale(locale);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public QModelIndex_Ptr Index()
+	{
+		return this.ptr.Index();
+	}
+	public void SetIndex(IQModelIndex index)
+	{
+		this.ptr.SetIndex(index);
+	}
+	public Qt_CheckState CheckState()
+	{
+		return this.ptr.CheckState();
+	}
+	public void SetCheckState(Qt_CheckState checkState)
+	{
+		this.ptr.SetCheckState(checkState);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public QStyleOptionViewItem_ViewItemPosition ViewItemPosition()
+	{
+		return this.ptr.ViewItemPosition();
+	}
+	public void SetViewItemPosition(QStyleOptionViewItem_ViewItemPosition viewItemPosition)
+	{
+		this.ptr.SetViewItemPosition(viewItemPosition);
+	}
+	public QBrush_Ptr BackgroundBrush()
+	{
+		return this.ptr.BackgroundBrush();
+	}
+	public void SetBackgroundBrush(IQBrush backgroundBrush)
+	{
+		this.ptr.SetBackgroundBrush(backgroundBrush);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionViewItem : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -2603,226 +4575,6 @@ extension CQt
 	[LinkName("QStyleOptionViewItem_OperatorAssign")]
 	public static extern void QStyleOptionViewItem_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionViewItem : IQStyleOptionViewItem, IQStyleOption
-{
-	private QStyleOptionViewItem_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionViewItem_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionViewItem_new();
-	}
-	public this(IQStyleOptionViewItem other)
-	{
-		this.ptr = CQt.QStyleOptionViewItem_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionViewItem_Delete(this.ptr);
-	}
-	public void* DisplayAlignment()
-	{
-		return CQt.QStyleOptionViewItem_DisplayAlignment((.)this.ptr.Ptr);
-	}
-	public void SetDisplayAlignment(void* displayAlignment)
-	{
-		CQt.QStyleOptionViewItem_SetDisplayAlignment((.)this.ptr.Ptr, displayAlignment);
-	}
-	public void* DecorationAlignment()
-	{
-		return CQt.QStyleOptionViewItem_DecorationAlignment((.)this.ptr.Ptr);
-	}
-	public void SetDecorationAlignment(void* decorationAlignment)
-	{
-		CQt.QStyleOptionViewItem_SetDecorationAlignment((.)this.ptr.Ptr, decorationAlignment);
-	}
-	public Qt_TextElideMode TextElideMode()
-	{
-		return CQt.QStyleOptionViewItem_TextElideMode((.)this.ptr.Ptr);
-	}
-	public void SetTextElideMode(Qt_TextElideMode textElideMode)
-	{
-		CQt.QStyleOptionViewItem_SetTextElideMode((.)this.ptr.Ptr, textElideMode);
-	}
-	public QStyleOptionViewItem_Position DecorationPosition()
-	{
-		return CQt.QStyleOptionViewItem_DecorationPosition((.)this.ptr.Ptr);
-	}
-	public void SetDecorationPosition(QStyleOptionViewItem_Position decorationPosition)
-	{
-		CQt.QStyleOptionViewItem_SetDecorationPosition((.)this.ptr.Ptr, decorationPosition);
-	}
-	public QSize_Ptr DecorationSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionViewItem_DecorationSize((.)this.ptr.Ptr));
-	}
-	public void SetDecorationSize(IQSize decorationSize)
-	{
-		CQt.QStyleOptionViewItem_SetDecorationSize((.)this.ptr.Ptr, (.)decorationSize?.ObjectPtr);
-	}
-	public QFont_Ptr Font()
-	{
-		return QFont_Ptr(CQt.QStyleOptionViewItem_Font((.)this.ptr.Ptr));
-	}
-	public void SetFont(IQFont font)
-	{
-		CQt.QStyleOptionViewItem_SetFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
-	}
-	public bool ShowDecorationSelected()
-	{
-		return CQt.QStyleOptionViewItem_ShowDecorationSelected((.)this.ptr.Ptr);
-	}
-	public void SetShowDecorationSelected(bool showDecorationSelected)
-	{
-		CQt.QStyleOptionViewItem_SetShowDecorationSelected((.)this.ptr.Ptr, showDecorationSelected);
-	}
-	public void* Features()
-	{
-		return CQt.QStyleOptionViewItem_Features((.)this.ptr.Ptr);
-	}
-	public void SetFeatures(void* features)
-	{
-		CQt.QStyleOptionViewItem_SetFeatures((.)this.ptr.Ptr, features);
-	}
-	public QLocale_Ptr Locale()
-	{
-		return QLocale_Ptr(CQt.QStyleOptionViewItem_Locale((.)this.ptr.Ptr));
-	}
-	public void SetLocale(IQLocale locale)
-	{
-		CQt.QStyleOptionViewItem_SetLocale((.)this.ptr.Ptr, (.)locale?.ObjectPtr);
-	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QStyleOptionViewItem_Widget((.)this.ptr.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QStyleOptionViewItem_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
-	}
-	public QModelIndex_Ptr Index()
-	{
-		return QModelIndex_Ptr(CQt.QStyleOptionViewItem_Index((.)this.ptr.Ptr));
-	}
-	public void SetIndex(IQModelIndex index)
-	{
-		CQt.QStyleOptionViewItem_SetIndex((.)this.ptr.Ptr, (.)index?.ObjectPtr);
-	}
-	public Qt_CheckState CheckState()
-	{
-		return CQt.QStyleOptionViewItem_CheckState((.)this.ptr.Ptr);
-	}
-	public void SetCheckState(Qt_CheckState checkState)
-	{
-		CQt.QStyleOptionViewItem_SetCheckState((.)this.ptr.Ptr, checkState);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionViewItem_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionViewItem_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionViewItem_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionViewItem_SetText((.)this.ptr.Ptr, text);
-	}
-	public QStyleOptionViewItem_ViewItemPosition ViewItemPosition()
-	{
-		return CQt.QStyleOptionViewItem_ViewItemPosition((.)this.ptr.Ptr);
-	}
-	public void SetViewItemPosition(QStyleOptionViewItem_ViewItemPosition viewItemPosition)
-	{
-		CQt.QStyleOptionViewItem_SetViewItemPosition((.)this.ptr.Ptr, viewItemPosition);
-	}
-	public QBrush_Ptr BackgroundBrush()
-	{
-		return QBrush_Ptr(CQt.QStyleOptionViewItem_BackgroundBrush((.)this.ptr.Ptr));
-	}
-	public void SetBackgroundBrush(IQBrush backgroundBrush)
-	{
-		CQt.QStyleOptionViewItem_SetBackgroundBrush((.)this.ptr.Ptr, (.)backgroundBrush?.ObjectPtr);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionViewItem : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionToolBox
 // --------------------------------------------------------------
@@ -2834,6 +4586,230 @@ struct QStyleOptionToolBox_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionToolBox_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionToolBox_SetText((.)this.Ptr, text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionToolBox_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionToolBox_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public QStyleOptionToolBox_TabPosition Position()
+	{
+		return CQt.QStyleOptionToolBox_Position((.)this.Ptr);
+	}
+	public void SetPosition(QStyleOptionToolBox_TabPosition position)
+	{
+		CQt.QStyleOptionToolBox_SetPosition((.)this.Ptr, position);
+	}
+	public QStyleOptionToolBox_SelectedPosition SelectedPosition()
+	{
+		return CQt.QStyleOptionToolBox_SelectedPosition((.)this.Ptr);
+	}
+	public void SetSelectedPosition(QStyleOptionToolBox_SelectedPosition selectedPosition)
+	{
+		CQt.QStyleOptionToolBox_SetSelectedPosition((.)this.Ptr, selectedPosition);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionToolBox : IQStyleOptionToolBox, IQStyleOption
+{
+	private QStyleOptionToolBox_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionToolBox_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionToolBox_new();
+	}
+	public this(IQStyleOptionToolBox other)
+	{
+		this.ptr = CQt.QStyleOptionToolBox_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionToolBox_Delete(this.ptr);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public QStyleOptionToolBox_TabPosition Position()
+	{
+		return this.ptr.Position();
+	}
+	public void SetPosition(QStyleOptionToolBox_TabPosition position)
+	{
+		this.ptr.SetPosition(position);
+	}
+	public QStyleOptionToolBox_SelectedPosition SelectedPosition()
+	{
+		return this.ptr.SelectedPosition();
+	}
+	public void SetSelectedPosition(QStyleOptionToolBox_SelectedPosition selectedPosition)
+	{
+		this.ptr.SetSelectedPosition(selectedPosition);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionToolBox : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -2862,130 +4838,6 @@ extension CQt
 	[LinkName("QStyleOptionToolBox_OperatorAssign")]
 	public static extern void QStyleOptionToolBox_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionToolBox : IQStyleOptionToolBox, IQStyleOption
-{
-	private QStyleOptionToolBox_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionToolBox_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionToolBox_new();
-	}
-	public this(IQStyleOptionToolBox other)
-	{
-		this.ptr = CQt.QStyleOptionToolBox_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionToolBox_Delete(this.ptr);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionToolBox_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionToolBox_SetText((.)this.ptr.Ptr, text);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionToolBox_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionToolBox_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public QStyleOptionToolBox_TabPosition Position()
-	{
-		return CQt.QStyleOptionToolBox_Position((.)this.ptr.Ptr);
-	}
-	public void SetPosition(QStyleOptionToolBox_TabPosition position)
-	{
-		CQt.QStyleOptionToolBox_SetPosition((.)this.ptr.Ptr, position);
-	}
-	public QStyleOptionToolBox_SelectedPosition SelectedPosition()
-	{
-		return CQt.QStyleOptionToolBox_SelectedPosition((.)this.ptr.Ptr);
-	}
-	public void SetSelectedPosition(QStyleOptionToolBox_SelectedPosition selectedPosition)
-	{
-		CQt.QStyleOptionToolBox_SetSelectedPosition((.)this.ptr.Ptr, selectedPosition);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionToolBox : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionRubberBand
 // --------------------------------------------------------------
@@ -2997,25 +4849,90 @@ struct QStyleOptionRubberBand_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleOptionRubberBand_new")]
-	public static extern QStyleOptionRubberBand_Ptr QStyleOptionRubberBand_new();
-	[LinkName("QStyleOptionRubberBand_new2")]
-	public static extern QStyleOptionRubberBand_Ptr QStyleOptionRubberBand_new2(void** other);
-	[LinkName("QStyleOptionRubberBand_Delete")]
-	public static extern void QStyleOptionRubberBand_Delete(QStyleOptionRubberBand_Ptr self);
-	[LinkName("QStyleOptionRubberBand_Shape")]
-	public static extern QRubberBand_Shape QStyleOptionRubberBand_Shape(void* self);
-	[LinkName("QStyleOptionRubberBand_SetShape")]
-	public static extern void QStyleOptionRubberBand_SetShape(void* self, QRubberBand_Shape shape);
-	[LinkName("QStyleOptionRubberBand_Opaque")]
-	public static extern bool QStyleOptionRubberBand_Opaque(void* self);
-	[LinkName("QStyleOptionRubberBand_SetOpaque")]
-	public static extern void QStyleOptionRubberBand_SetOpaque(void* self, bool opaque);
-	[LinkName("QStyleOptionRubberBand_OperatorAssign")]
-	public static extern void QStyleOptionRubberBand_OperatorAssign(void* self, void** param1);
+	public QRubberBand_Shape Shape()
+	{
+		return CQt.QStyleOptionRubberBand_Shape((.)this.Ptr);
+	}
+	public void SetShape(QRubberBand_Shape shape)
+	{
+		CQt.QStyleOptionRubberBand_SetShape((.)this.Ptr, shape);
+	}
+	public bool Opaque()
+	{
+		return CQt.QStyleOptionRubberBand_Opaque((.)this.Ptr);
+	}
+	public void SetOpaque(bool opaque)
+	{
+		CQt.QStyleOptionRubberBand_SetOpaque((.)this.Ptr, opaque);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
 }
 class QStyleOptionRubberBand : IQStyleOptionRubberBand, IQStyleOption
 {
@@ -3039,91 +4956,110 @@ class QStyleOptionRubberBand : IQStyleOptionRubberBand, IQStyleOption
 	}
 	public QRubberBand_Shape Shape()
 	{
-		return CQt.QStyleOptionRubberBand_Shape((.)this.ptr.Ptr);
+		return this.ptr.Shape();
 	}
 	public void SetShape(QRubberBand_Shape shape)
 	{
-		CQt.QStyleOptionRubberBand_SetShape((.)this.ptr.Ptr, shape);
+		this.ptr.SetShape(shape);
 	}
 	public bool Opaque()
 	{
-		return CQt.QStyleOptionRubberBand_Opaque((.)this.ptr.Ptr);
+		return this.ptr.Opaque();
 	}
 	public void SetOpaque(bool opaque)
 	{
-		CQt.QStyleOptionRubberBand_SetOpaque((.)this.ptr.Ptr, opaque);
+		this.ptr.SetOpaque(opaque);
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 	public void* State()
 	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
+		return this.ptr.State();
 	}
 	public void SetState(void* state)
 	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
+		this.ptr.SetState(state);
 	}
 	public Qt_LayoutDirection Direction()
 	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
+		return this.ptr.Direction();
 	}
 	public void SetDirection(Qt_LayoutDirection direction)
 	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
+		this.ptr.SetDirection(direction);
 	}
 	public QRect_Ptr Rect()
 	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
+		return this.ptr.Rect();
 	}
 	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
+		this.ptr.SetRect(rect);
 	}
 	public QFontMetrics_Ptr FontMetrics()
 	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
+		return this.ptr.FontMetrics();
 	}
 	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
+		this.ptr.SetFontMetrics(fontMetrics);
 	}
 	public QPalette_Ptr Palette()
 	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
+		return this.ptr.Palette();
 	}
 	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
+		this.ptr.SetPalette(palette);
 	}
 	public QObject_Ptr StyleObject()
 	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
+		return this.ptr.StyleObject();
 	}
 	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
+		this.ptr.SetStyleObject(styleObject);
 	}
 	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
+		this.ptr.InitFrom(w);
 	}
 }
 interface IQStyleOptionRubberBand : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleOptionRubberBand_new")]
+	public static extern QStyleOptionRubberBand_Ptr QStyleOptionRubberBand_new();
+	[LinkName("QStyleOptionRubberBand_new2")]
+	public static extern QStyleOptionRubberBand_Ptr QStyleOptionRubberBand_new2(void** other);
+	[LinkName("QStyleOptionRubberBand_Delete")]
+	public static extern void QStyleOptionRubberBand_Delete(QStyleOptionRubberBand_Ptr self);
+	[LinkName("QStyleOptionRubberBand_Shape")]
+	public static extern QRubberBand_Shape QStyleOptionRubberBand_Shape(void* self);
+	[LinkName("QStyleOptionRubberBand_SetShape")]
+	public static extern void QStyleOptionRubberBand_SetShape(void* self, QRubberBand_Shape shape);
+	[LinkName("QStyleOptionRubberBand_Opaque")]
+	public static extern bool QStyleOptionRubberBand_Opaque(void* self);
+	[LinkName("QStyleOptionRubberBand_SetOpaque")]
+	public static extern void QStyleOptionRubberBand_SetOpaque(void* self, bool opaque);
+	[LinkName("QStyleOptionRubberBand_OperatorAssign")]
+	public static extern void QStyleOptionRubberBand_OperatorAssign(void* self, void** param1);
 }
 // --------------------------------------------------------------
 // QStyleOptionComplex
@@ -3136,29 +5072,90 @@ struct QStyleOptionComplex_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleOptionComplex_new")]
-	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new();
-	[LinkName("QStyleOptionComplex_new2")]
-	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new2(void** other);
-	[LinkName("QStyleOptionComplex_new3")]
-	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new3(c_int version);
-	[LinkName("QStyleOptionComplex_new4")]
-	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new4(c_int version, c_int type);
-	[LinkName("QStyleOptionComplex_Delete")]
-	public static extern void QStyleOptionComplex_Delete(QStyleOptionComplex_Ptr self);
-	[LinkName("QStyleOptionComplex_SubControls")]
-	public static extern void* QStyleOptionComplex_SubControls(void* self);
-	[LinkName("QStyleOptionComplex_SetSubControls")]
-	public static extern void QStyleOptionComplex_SetSubControls(void* self, void* subControls);
-	[LinkName("QStyleOptionComplex_ActiveSubControls")]
-	public static extern void* QStyleOptionComplex_ActiveSubControls(void* self);
-	[LinkName("QStyleOptionComplex_SetActiveSubControls")]
-	public static extern void QStyleOptionComplex_SetActiveSubControls(void* self, void* activeSubControls);
-	[LinkName("QStyleOptionComplex_OperatorAssign")]
-	public static extern void QStyleOptionComplex_OperatorAssign(void* self, void** param1);
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
 }
 class QStyleOptionComplex : IQStyleOptionComplex, IQStyleOption
 {
@@ -3190,91 +5187,114 @@ class QStyleOptionComplex : IQStyleOptionComplex, IQStyleOption
 	}
 	public void* SubControls()
 	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
+		return this.ptr.SubControls();
 	}
 	public void SetSubControls(void* subControls)
 	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
+		this.ptr.SetSubControls(subControls);
 	}
 	public void* ActiveSubControls()
 	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
+		return this.ptr.ActiveSubControls();
 	}
 	public void SetActiveSubControls(void* activeSubControls)
 	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 	public void* State()
 	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
+		return this.ptr.State();
 	}
 	public void SetState(void* state)
 	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
+		this.ptr.SetState(state);
 	}
 	public Qt_LayoutDirection Direction()
 	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
+		return this.ptr.Direction();
 	}
 	public void SetDirection(Qt_LayoutDirection direction)
 	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
+		this.ptr.SetDirection(direction);
 	}
 	public QRect_Ptr Rect()
 	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
+		return this.ptr.Rect();
 	}
 	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
+		this.ptr.SetRect(rect);
 	}
 	public QFontMetrics_Ptr FontMetrics()
 	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
+		return this.ptr.FontMetrics();
 	}
 	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
+		this.ptr.SetFontMetrics(fontMetrics);
 	}
 	public QPalette_Ptr Palette()
 	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
+		return this.ptr.Palette();
 	}
 	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
+		this.ptr.SetPalette(palette);
 	}
 	public QObject_Ptr StyleObject()
 	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
+		return this.ptr.StyleObject();
 	}
 	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
+		this.ptr.SetStyleObject(styleObject);
 	}
 	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
+		this.ptr.InitFrom(w);
 	}
 }
 interface IQStyleOptionComplex : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleOptionComplex_new")]
+	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new();
+	[LinkName("QStyleOptionComplex_new2")]
+	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new2(void** other);
+	[LinkName("QStyleOptionComplex_new3")]
+	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new3(c_int version);
+	[LinkName("QStyleOptionComplex_new4")]
+	public static extern QStyleOptionComplex_Ptr QStyleOptionComplex_new4(c_int version, c_int type);
+	[LinkName("QStyleOptionComplex_Delete")]
+	public static extern void QStyleOptionComplex_Delete(QStyleOptionComplex_Ptr self);
+	[LinkName("QStyleOptionComplex_SubControls")]
+	public static extern void* QStyleOptionComplex_SubControls(void* self);
+	[LinkName("QStyleOptionComplex_SetSubControls")]
+	public static extern void QStyleOptionComplex_SetSubControls(void* self, void* subControls);
+	[LinkName("QStyleOptionComplex_ActiveSubControls")]
+	public static extern void* QStyleOptionComplex_ActiveSubControls(void* self);
+	[LinkName("QStyleOptionComplex_SetActiveSubControls")]
+	public static extern void QStyleOptionComplex_SetActiveSubControls(void* self, void* activeSubControls);
+	[LinkName("QStyleOptionComplex_OperatorAssign")]
+	public static extern void QStyleOptionComplex_OperatorAssign(void* self, void** param1);
 }
 // --------------------------------------------------------------
 // QStyleOptionSlider
@@ -3287,6 +5307,406 @@ struct QStyleOptionSlider_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public Qt_Orientation Orientation()
+	{
+		return CQt.QStyleOptionSlider_Orientation((.)this.Ptr);
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		CQt.QStyleOptionSlider_SetOrientation((.)this.Ptr, orientation);
+	}
+	public c_int Minimum()
+	{
+		return CQt.QStyleOptionSlider_Minimum((.)this.Ptr);
+	}
+	public void SetMinimum(c_int minimum)
+	{
+		CQt.QStyleOptionSlider_SetMinimum((.)this.Ptr, minimum);
+	}
+	public c_int Maximum()
+	{
+		return CQt.QStyleOptionSlider_Maximum((.)this.Ptr);
+	}
+	public void SetMaximum(c_int maximum)
+	{
+		CQt.QStyleOptionSlider_SetMaximum((.)this.Ptr, maximum);
+	}
+	public QSlider_TickPosition TickPosition()
+	{
+		return CQt.QStyleOptionSlider_TickPosition((.)this.Ptr);
+	}
+	public void SetTickPosition(QSlider_TickPosition tickPosition)
+	{
+		CQt.QStyleOptionSlider_SetTickPosition((.)this.Ptr, tickPosition);
+	}
+	public c_int TickInterval()
+	{
+		return CQt.QStyleOptionSlider_TickInterval((.)this.Ptr);
+	}
+	public void SetTickInterval(c_int tickInterval)
+	{
+		CQt.QStyleOptionSlider_SetTickInterval((.)this.Ptr, tickInterval);
+	}
+	public bool UpsideDown()
+	{
+		return CQt.QStyleOptionSlider_UpsideDown((.)this.Ptr);
+	}
+	public void SetUpsideDown(bool upsideDown)
+	{
+		CQt.QStyleOptionSlider_SetUpsideDown((.)this.Ptr, upsideDown);
+	}
+	public c_int SliderPosition()
+	{
+		return CQt.QStyleOptionSlider_SliderPosition((.)this.Ptr);
+	}
+	public void SetSliderPosition(c_int sliderPosition)
+	{
+		CQt.QStyleOptionSlider_SetSliderPosition((.)this.Ptr, sliderPosition);
+	}
+	public c_int SliderValue()
+	{
+		return CQt.QStyleOptionSlider_SliderValue((.)this.Ptr);
+	}
+	public void SetSliderValue(c_int sliderValue)
+	{
+		CQt.QStyleOptionSlider_SetSliderValue((.)this.Ptr, sliderValue);
+	}
+	public c_int SingleStep()
+	{
+		return CQt.QStyleOptionSlider_SingleStep((.)this.Ptr);
+	}
+	public void SetSingleStep(c_int singleStep)
+	{
+		CQt.QStyleOptionSlider_SetSingleStep((.)this.Ptr, singleStep);
+	}
+	public c_int PageStep()
+	{
+		return CQt.QStyleOptionSlider_PageStep((.)this.Ptr);
+	}
+	public void SetPageStep(c_int pageStep)
+	{
+		CQt.QStyleOptionSlider_SetPageStep((.)this.Ptr, pageStep);
+	}
+	public double NotchTarget()
+	{
+		return CQt.QStyleOptionSlider_NotchTarget((.)this.Ptr);
+	}
+	public void SetNotchTarget(double notchTarget)
+	{
+		CQt.QStyleOptionSlider_SetNotchTarget((.)this.Ptr, notchTarget);
+	}
+	public bool DialWrapping()
+	{
+		return CQt.QStyleOptionSlider_DialWrapping((.)this.Ptr);
+	}
+	public void SetDialWrapping(bool dialWrapping)
+	{
+		CQt.QStyleOptionSlider_SetDialWrapping((.)this.Ptr, dialWrapping);
+	}
+	public void* KeyboardModifiers()
+	{
+		return CQt.QStyleOptionSlider_KeyboardModifiers((.)this.Ptr);
+	}
+	public void SetKeyboardModifiers(void* keyboardModifiers)
+	{
+		CQt.QStyleOptionSlider_SetKeyboardModifiers((.)this.Ptr, keyboardModifiers);
+	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionSlider : IQStyleOptionSlider, IQStyleOptionComplex, IQStyleOption
+{
+	private QStyleOptionSlider_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionSlider_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionSlider_new();
+	}
+	public this(IQStyleOptionSlider other)
+	{
+		this.ptr = CQt.QStyleOptionSlider_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionSlider_Delete(this.ptr);
+	}
+	public Qt_Orientation Orientation()
+	{
+		return this.ptr.Orientation();
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		this.ptr.SetOrientation(orientation);
+	}
+	public c_int Minimum()
+	{
+		return this.ptr.Minimum();
+	}
+	public void SetMinimum(c_int minimum)
+	{
+		this.ptr.SetMinimum(minimum);
+	}
+	public c_int Maximum()
+	{
+		return this.ptr.Maximum();
+	}
+	public void SetMaximum(c_int maximum)
+	{
+		this.ptr.SetMaximum(maximum);
+	}
+	public QSlider_TickPosition TickPosition()
+	{
+		return this.ptr.TickPosition();
+	}
+	public void SetTickPosition(QSlider_TickPosition tickPosition)
+	{
+		this.ptr.SetTickPosition(tickPosition);
+	}
+	public c_int TickInterval()
+	{
+		return this.ptr.TickInterval();
+	}
+	public void SetTickInterval(c_int tickInterval)
+	{
+		this.ptr.SetTickInterval(tickInterval);
+	}
+	public bool UpsideDown()
+	{
+		return this.ptr.UpsideDown();
+	}
+	public void SetUpsideDown(bool upsideDown)
+	{
+		this.ptr.SetUpsideDown(upsideDown);
+	}
+	public c_int SliderPosition()
+	{
+		return this.ptr.SliderPosition();
+	}
+	public void SetSliderPosition(c_int sliderPosition)
+	{
+		this.ptr.SetSliderPosition(sliderPosition);
+	}
+	public c_int SliderValue()
+	{
+		return this.ptr.SliderValue();
+	}
+	public void SetSliderValue(c_int sliderValue)
+	{
+		this.ptr.SetSliderValue(sliderValue);
+	}
+	public c_int SingleStep()
+	{
+		return this.ptr.SingleStep();
+	}
+	public void SetSingleStep(c_int singleStep)
+	{
+		this.ptr.SetSingleStep(singleStep);
+	}
+	public c_int PageStep()
+	{
+		return this.ptr.PageStep();
+	}
+	public void SetPageStep(c_int pageStep)
+	{
+		this.ptr.SetPageStep(pageStep);
+	}
+	public double NotchTarget()
+	{
+		return this.ptr.NotchTarget();
+	}
+	public void SetNotchTarget(double notchTarget)
+	{
+		this.ptr.SetNotchTarget(notchTarget);
+	}
+	public bool DialWrapping()
+	{
+		return this.ptr.DialWrapping();
+	}
+	public void SetDialWrapping(bool dialWrapping)
+	{
+		this.ptr.SetDialWrapping(dialWrapping);
+	}
+	public void* KeyboardModifiers()
+	{
+		return this.ptr.KeyboardModifiers();
+	}
+	public void SetKeyboardModifiers(void* keyboardModifiers)
+	{
+		this.ptr.SetKeyboardModifiers(keyboardModifiers);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionSlider : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -3351,218 +5771,6 @@ extension CQt
 	[LinkName("QStyleOptionSlider_OperatorAssign")]
 	public static extern void QStyleOptionSlider_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionSlider : IQStyleOptionSlider, IQStyleOptionComplex, IQStyleOption
-{
-	private QStyleOptionSlider_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionSlider_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionSlider_new();
-	}
-	public this(IQStyleOptionSlider other)
-	{
-		this.ptr = CQt.QStyleOptionSlider_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionSlider_Delete(this.ptr);
-	}
-	public Qt_Orientation Orientation()
-	{
-		return CQt.QStyleOptionSlider_Orientation((.)this.ptr.Ptr);
-	}
-	public void SetOrientation(Qt_Orientation orientation)
-	{
-		CQt.QStyleOptionSlider_SetOrientation((.)this.ptr.Ptr, orientation);
-	}
-	public c_int Minimum()
-	{
-		return CQt.QStyleOptionSlider_Minimum((.)this.ptr.Ptr);
-	}
-	public void SetMinimum(c_int minimum)
-	{
-		CQt.QStyleOptionSlider_SetMinimum((.)this.ptr.Ptr, minimum);
-	}
-	public c_int Maximum()
-	{
-		return CQt.QStyleOptionSlider_Maximum((.)this.ptr.Ptr);
-	}
-	public void SetMaximum(c_int maximum)
-	{
-		CQt.QStyleOptionSlider_SetMaximum((.)this.ptr.Ptr, maximum);
-	}
-	public QSlider_TickPosition TickPosition()
-	{
-		return CQt.QStyleOptionSlider_TickPosition((.)this.ptr.Ptr);
-	}
-	public void SetTickPosition(QSlider_TickPosition tickPosition)
-	{
-		CQt.QStyleOptionSlider_SetTickPosition((.)this.ptr.Ptr, tickPosition);
-	}
-	public c_int TickInterval()
-	{
-		return CQt.QStyleOptionSlider_TickInterval((.)this.ptr.Ptr);
-	}
-	public void SetTickInterval(c_int tickInterval)
-	{
-		CQt.QStyleOptionSlider_SetTickInterval((.)this.ptr.Ptr, tickInterval);
-	}
-	public bool UpsideDown()
-	{
-		return CQt.QStyleOptionSlider_UpsideDown((.)this.ptr.Ptr);
-	}
-	public void SetUpsideDown(bool upsideDown)
-	{
-		CQt.QStyleOptionSlider_SetUpsideDown((.)this.ptr.Ptr, upsideDown);
-	}
-	public c_int SliderPosition()
-	{
-		return CQt.QStyleOptionSlider_SliderPosition((.)this.ptr.Ptr);
-	}
-	public void SetSliderPosition(c_int sliderPosition)
-	{
-		CQt.QStyleOptionSlider_SetSliderPosition((.)this.ptr.Ptr, sliderPosition);
-	}
-	public c_int SliderValue()
-	{
-		return CQt.QStyleOptionSlider_SliderValue((.)this.ptr.Ptr);
-	}
-	public void SetSliderValue(c_int sliderValue)
-	{
-		CQt.QStyleOptionSlider_SetSliderValue((.)this.ptr.Ptr, sliderValue);
-	}
-	public c_int SingleStep()
-	{
-		return CQt.QStyleOptionSlider_SingleStep((.)this.ptr.Ptr);
-	}
-	public void SetSingleStep(c_int singleStep)
-	{
-		CQt.QStyleOptionSlider_SetSingleStep((.)this.ptr.Ptr, singleStep);
-	}
-	public c_int PageStep()
-	{
-		return CQt.QStyleOptionSlider_PageStep((.)this.ptr.Ptr);
-	}
-	public void SetPageStep(c_int pageStep)
-	{
-		CQt.QStyleOptionSlider_SetPageStep((.)this.ptr.Ptr, pageStep);
-	}
-	public double NotchTarget()
-	{
-		return CQt.QStyleOptionSlider_NotchTarget((.)this.ptr.Ptr);
-	}
-	public void SetNotchTarget(double notchTarget)
-	{
-		CQt.QStyleOptionSlider_SetNotchTarget((.)this.ptr.Ptr, notchTarget);
-	}
-	public bool DialWrapping()
-	{
-		return CQt.QStyleOptionSlider_DialWrapping((.)this.ptr.Ptr);
-	}
-	public void SetDialWrapping(bool dialWrapping)
-	{
-		CQt.QStyleOptionSlider_SetDialWrapping((.)this.ptr.Ptr, dialWrapping);
-	}
-	public void* KeyboardModifiers()
-	{
-		return CQt.QStyleOptionSlider_KeyboardModifiers((.)this.ptr.Ptr);
-	}
-	public void SetKeyboardModifiers(void* keyboardModifiers)
-	{
-		CQt.QStyleOptionSlider_SetKeyboardModifiers((.)this.ptr.Ptr, keyboardModifiers);
-	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionSlider : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionSpinBox
 // --------------------------------------------------------------
@@ -3574,6 +5782,246 @@ struct QStyleOptionSpinBox_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	{
+		return CQt.QStyleOptionSpinBox_ButtonSymbols((.)this.Ptr);
+	}
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols buttonSymbols)
+	{
+		CQt.QStyleOptionSpinBox_SetButtonSymbols((.)this.Ptr, buttonSymbols);
+	}
+	public void* StepEnabled()
+	{
+		return CQt.QStyleOptionSpinBox_StepEnabled((.)this.Ptr);
+	}
+	public void SetStepEnabled(void* stepEnabled)
+	{
+		CQt.QStyleOptionSpinBox_SetStepEnabled((.)this.Ptr, stepEnabled);
+	}
+	public bool Frame()
+	{
+		return CQt.QStyleOptionSpinBox_Frame((.)this.Ptr);
+	}
+	public void SetFrame(bool frame)
+	{
+		CQt.QStyleOptionSpinBox_SetFrame((.)this.Ptr, frame);
+	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionSpinBox : IQStyleOptionSpinBox, IQStyleOptionComplex, IQStyleOption
+{
+	private QStyleOptionSpinBox_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionSpinBox_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionSpinBox_new();
+	}
+	public this(IQStyleOptionSpinBox other)
+	{
+		this.ptr = CQt.QStyleOptionSpinBox_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionSpinBox_Delete(this.ptr);
+	}
+	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
+	{
+		return this.ptr.ButtonSymbols();
+	}
+	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols buttonSymbols)
+	{
+		this.ptr.SetButtonSymbols(buttonSymbols);
+	}
+	public void* StepEnabled()
+	{
+		return this.ptr.StepEnabled();
+	}
+	public void SetStepEnabled(void* stepEnabled)
+	{
+		this.ptr.SetStepEnabled(stepEnabled);
+	}
+	public bool Frame()
+	{
+		return this.ptr.Frame();
+	}
+	public void SetFrame(bool frame)
+	{
+		this.ptr.SetFrame(frame);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionSpinBox : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -3598,138 +6046,6 @@ extension CQt
 	[LinkName("QStyleOptionSpinBox_OperatorAssign")]
 	public static extern void QStyleOptionSpinBox_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionSpinBox : IQStyleOptionSpinBox, IQStyleOptionComplex, IQStyleOption
-{
-	private QStyleOptionSpinBox_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionSpinBox_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionSpinBox_new();
-	}
-	public this(IQStyleOptionSpinBox other)
-	{
-		this.ptr = CQt.QStyleOptionSpinBox_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionSpinBox_Delete(this.ptr);
-	}
-	public QAbstractSpinBox_ButtonSymbols ButtonSymbols()
-	{
-		return CQt.QStyleOptionSpinBox_ButtonSymbols((.)this.ptr.Ptr);
-	}
-	public void SetButtonSymbols(QAbstractSpinBox_ButtonSymbols buttonSymbols)
-	{
-		CQt.QStyleOptionSpinBox_SetButtonSymbols((.)this.ptr.Ptr, buttonSymbols);
-	}
-	public void* StepEnabled()
-	{
-		return CQt.QStyleOptionSpinBox_StepEnabled((.)this.ptr.Ptr);
-	}
-	public void SetStepEnabled(void* stepEnabled)
-	{
-		CQt.QStyleOptionSpinBox_SetStepEnabled((.)this.ptr.Ptr, stepEnabled);
-	}
-	public bool Frame()
-	{
-		return CQt.QStyleOptionSpinBox_Frame((.)this.ptr.Ptr);
-	}
-	public void SetFrame(bool frame)
-	{
-		CQt.QStyleOptionSpinBox_SetFrame((.)this.ptr.Ptr, frame);
-	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionSpinBox : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionToolButton
 // --------------------------------------------------------------
@@ -3741,6 +6057,326 @@ struct QStyleOptionToolButton_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void* Features()
+	{
+		return CQt.QStyleOptionToolButton_Features((.)this.Ptr);
+	}
+	public void SetFeatures(void* features)
+	{
+		CQt.QStyleOptionToolButton_SetFeatures((.)this.Ptr, features);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionToolButton_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionToolButton_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionToolButton_IconSize((.)this.Ptr));
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		CQt.QStyleOptionToolButton_SetIconSize((.)this.Ptr, (.)iconSize?.ObjectPtr);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionToolButton_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionToolButton_SetText((.)this.Ptr, text);
+	}
+	public Qt_ArrowType ArrowType()
+	{
+		return CQt.QStyleOptionToolButton_ArrowType((.)this.Ptr);
+	}
+	public void SetArrowType(Qt_ArrowType arrowType)
+	{
+		CQt.QStyleOptionToolButton_SetArrowType((.)this.Ptr, arrowType);
+	}
+	public Qt_ToolButtonStyle ToolButtonStyle()
+	{
+		return CQt.QStyleOptionToolButton_ToolButtonStyle((.)this.Ptr);
+	}
+	public void SetToolButtonStyle(Qt_ToolButtonStyle toolButtonStyle)
+	{
+		CQt.QStyleOptionToolButton_SetToolButtonStyle((.)this.Ptr, toolButtonStyle);
+	}
+	public QPoint_Ptr Pos()
+	{
+		return QPoint_Ptr(CQt.QStyleOptionToolButton_Pos((.)this.Ptr));
+	}
+	public void SetPos(IQPoint pos)
+	{
+		CQt.QStyleOptionToolButton_SetPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QFont_Ptr Font()
+	{
+		return QFont_Ptr(CQt.QStyleOptionToolButton_Font((.)this.Ptr));
+	}
+	public void SetFont(IQFont font)
+	{
+		CQt.QStyleOptionToolButton_SetFont((.)this.Ptr, (.)font?.ObjectPtr);
+	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionToolButton : IQStyleOptionToolButton, IQStyleOptionComplex, IQStyleOption
+{
+	private QStyleOptionToolButton_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionToolButton_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionToolButton_new();
+	}
+	public this(IQStyleOptionToolButton other)
+	{
+		this.ptr = CQt.QStyleOptionToolButton_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionToolButton_Delete(this.ptr);
+	}
+	public void* Features()
+	{
+		return this.ptr.Features();
+	}
+	public void SetFeatures(void* features)
+	{
+		this.ptr.SetFeatures(features);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return this.ptr.IconSize();
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		this.ptr.SetIconSize(iconSize);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public Qt_ArrowType ArrowType()
+	{
+		return this.ptr.ArrowType();
+	}
+	public void SetArrowType(Qt_ArrowType arrowType)
+	{
+		this.ptr.SetArrowType(arrowType);
+	}
+	public Qt_ToolButtonStyle ToolButtonStyle()
+	{
+		return this.ptr.ToolButtonStyle();
+	}
+	public void SetToolButtonStyle(Qt_ToolButtonStyle toolButtonStyle)
+	{
+		this.ptr.SetToolButtonStyle(toolButtonStyle);
+	}
+	public QPoint_Ptr Pos()
+	{
+		return this.ptr.Pos();
+	}
+	public void SetPos(IQPoint pos)
+	{
+		this.ptr.SetPos(pos);
+	}
+	public QFont_Ptr Font()
+	{
+		return this.ptr.Font();
+	}
+	public void SetFont(IQFont font)
+	{
+		this.ptr.SetFont(font);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionToolButton : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -3785,178 +6421,6 @@ extension CQt
 	[LinkName("QStyleOptionToolButton_OperatorAssign")]
 	public static extern void QStyleOptionToolButton_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionToolButton : IQStyleOptionToolButton, IQStyleOptionComplex, IQStyleOption
-{
-	private QStyleOptionToolButton_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionToolButton_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionToolButton_new();
-	}
-	public this(IQStyleOptionToolButton other)
-	{
-		this.ptr = CQt.QStyleOptionToolButton_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionToolButton_Delete(this.ptr);
-	}
-	public void* Features()
-	{
-		return CQt.QStyleOptionToolButton_Features((.)this.ptr.Ptr);
-	}
-	public void SetFeatures(void* features)
-	{
-		CQt.QStyleOptionToolButton_SetFeatures((.)this.ptr.Ptr, features);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionToolButton_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionToolButton_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public QSize_Ptr IconSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionToolButton_IconSize((.)this.ptr.Ptr));
-	}
-	public void SetIconSize(IQSize iconSize)
-	{
-		CQt.QStyleOptionToolButton_SetIconSize((.)this.ptr.Ptr, (.)iconSize?.ObjectPtr);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionToolButton_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionToolButton_SetText((.)this.ptr.Ptr, text);
-	}
-	public Qt_ArrowType ArrowType()
-	{
-		return CQt.QStyleOptionToolButton_ArrowType((.)this.ptr.Ptr);
-	}
-	public void SetArrowType(Qt_ArrowType arrowType)
-	{
-		CQt.QStyleOptionToolButton_SetArrowType((.)this.ptr.Ptr, arrowType);
-	}
-	public Qt_ToolButtonStyle ToolButtonStyle()
-	{
-		return CQt.QStyleOptionToolButton_ToolButtonStyle((.)this.ptr.Ptr);
-	}
-	public void SetToolButtonStyle(Qt_ToolButtonStyle toolButtonStyle)
-	{
-		CQt.QStyleOptionToolButton_SetToolButtonStyle((.)this.ptr.Ptr, toolButtonStyle);
-	}
-	public QPoint_Ptr Pos()
-	{
-		return QPoint_Ptr(CQt.QStyleOptionToolButton_Pos((.)this.ptr.Ptr));
-	}
-	public void SetPos(IQPoint pos)
-	{
-		CQt.QStyleOptionToolButton_SetPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QFont_Ptr Font()
-	{
-		return QFont_Ptr(CQt.QStyleOptionToolButton_Font((.)this.ptr.Ptr));
-	}
-	public void SetFont(IQFont font)
-	{
-		CQt.QStyleOptionToolButton_SetFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
-	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionToolButton : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionComboBox
 // --------------------------------------------------------------
@@ -3968,6 +6432,310 @@ struct QStyleOptionComboBox_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool Editable()
+	{
+		return CQt.QStyleOptionComboBox_Editable((.)this.Ptr);
+	}
+	public void SetEditable(bool editable)
+	{
+		CQt.QStyleOptionComboBox_SetEditable((.)this.Ptr, editable);
+	}
+	public QRect_Ptr PopupRect()
+	{
+		return QRect_Ptr(CQt.QStyleOptionComboBox_PopupRect((.)this.Ptr));
+	}
+	public void SetPopupRect(IQRect popupRect)
+	{
+		CQt.QStyleOptionComboBox_SetPopupRect((.)this.Ptr, (.)popupRect?.ObjectPtr);
+	}
+	public bool Frame()
+	{
+		return CQt.QStyleOptionComboBox_Frame((.)this.Ptr);
+	}
+	public void SetFrame(bool frame)
+	{
+		CQt.QStyleOptionComboBox_SetFrame((.)this.Ptr, frame);
+	}
+	public void CurrentText(String outStr)
+	{
+		CQt.QStyleOptionComboBox_CurrentText((.)this.Ptr);
+	}
+	public void SetCurrentText(String currentText)
+	{
+		CQt.QStyleOptionComboBox_SetCurrentText((.)this.Ptr, currentText);
+	}
+	public QIcon_Ptr CurrentIcon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionComboBox_CurrentIcon((.)this.Ptr));
+	}
+	public void SetCurrentIcon(IQIcon currentIcon)
+	{
+		CQt.QStyleOptionComboBox_SetCurrentIcon((.)this.Ptr, (.)currentIcon?.ObjectPtr);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return QSize_Ptr(CQt.QStyleOptionComboBox_IconSize((.)this.Ptr));
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		CQt.QStyleOptionComboBox_SetIconSize((.)this.Ptr, (.)iconSize?.ObjectPtr);
+	}
+	public void* TextAlignment()
+	{
+		return CQt.QStyleOptionComboBox_TextAlignment((.)this.Ptr);
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		CQt.QStyleOptionComboBox_SetTextAlignment((.)this.Ptr, textAlignment);
+	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionComboBox : IQStyleOptionComboBox, IQStyleOptionComplex, IQStyleOption
+{
+	private QStyleOptionComboBox_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionComboBox_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionComboBox_new();
+	}
+	public this(IQStyleOptionComboBox other)
+	{
+		this.ptr = CQt.QStyleOptionComboBox_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionComboBox_Delete(this.ptr);
+	}
+	public bool Editable()
+	{
+		return this.ptr.Editable();
+	}
+	public void SetEditable(bool editable)
+	{
+		this.ptr.SetEditable(editable);
+	}
+	public QRect_Ptr PopupRect()
+	{
+		return this.ptr.PopupRect();
+	}
+	public void SetPopupRect(IQRect popupRect)
+	{
+		this.ptr.SetPopupRect(popupRect);
+	}
+	public bool Frame()
+	{
+		return this.ptr.Frame();
+	}
+	public void SetFrame(bool frame)
+	{
+		this.ptr.SetFrame(frame);
+	}
+	public void CurrentText(String outStr)
+	{
+		this.ptr.CurrentText(outStr);
+	}
+	public void SetCurrentText(String currentText)
+	{
+		this.ptr.SetCurrentText(currentText);
+	}
+	public QIcon_Ptr CurrentIcon()
+	{
+		return this.ptr.CurrentIcon();
+	}
+	public void SetCurrentIcon(IQIcon currentIcon)
+	{
+		this.ptr.SetCurrentIcon(currentIcon);
+	}
+	public QSize_Ptr IconSize()
+	{
+		return this.ptr.IconSize();
+	}
+	public void SetIconSize(IQSize iconSize)
+	{
+		this.ptr.SetIconSize(iconSize);
+	}
+	public void* TextAlignment()
+	{
+		return this.ptr.TextAlignment();
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		this.ptr.SetTextAlignment(textAlignment);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionComboBox : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -4008,170 +6776,6 @@ extension CQt
 	[LinkName("QStyleOptionComboBox_OperatorAssign")]
 	public static extern void QStyleOptionComboBox_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionComboBox : IQStyleOptionComboBox, IQStyleOptionComplex, IQStyleOption
-{
-	private QStyleOptionComboBox_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionComboBox_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionComboBox_new();
-	}
-	public this(IQStyleOptionComboBox other)
-	{
-		this.ptr = CQt.QStyleOptionComboBox_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionComboBox_Delete(this.ptr);
-	}
-	public bool Editable()
-	{
-		return CQt.QStyleOptionComboBox_Editable((.)this.ptr.Ptr);
-	}
-	public void SetEditable(bool editable)
-	{
-		CQt.QStyleOptionComboBox_SetEditable((.)this.ptr.Ptr, editable);
-	}
-	public QRect_Ptr PopupRect()
-	{
-		return QRect_Ptr(CQt.QStyleOptionComboBox_PopupRect((.)this.ptr.Ptr));
-	}
-	public void SetPopupRect(IQRect popupRect)
-	{
-		CQt.QStyleOptionComboBox_SetPopupRect((.)this.ptr.Ptr, (.)popupRect?.ObjectPtr);
-	}
-	public bool Frame()
-	{
-		return CQt.QStyleOptionComboBox_Frame((.)this.ptr.Ptr);
-	}
-	public void SetFrame(bool frame)
-	{
-		CQt.QStyleOptionComboBox_SetFrame((.)this.ptr.Ptr, frame);
-	}
-	public void CurrentText(String outStr)
-	{
-		CQt.QStyleOptionComboBox_CurrentText((.)this.ptr.Ptr);
-	}
-	public void SetCurrentText(String currentText)
-	{
-		CQt.QStyleOptionComboBox_SetCurrentText((.)this.ptr.Ptr, currentText);
-	}
-	public QIcon_Ptr CurrentIcon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionComboBox_CurrentIcon((.)this.ptr.Ptr));
-	}
-	public void SetCurrentIcon(IQIcon currentIcon)
-	{
-		CQt.QStyleOptionComboBox_SetCurrentIcon((.)this.ptr.Ptr, (.)currentIcon?.ObjectPtr);
-	}
-	public QSize_Ptr IconSize()
-	{
-		return QSize_Ptr(CQt.QStyleOptionComboBox_IconSize((.)this.ptr.Ptr));
-	}
-	public void SetIconSize(IQSize iconSize)
-	{
-		CQt.QStyleOptionComboBox_SetIconSize((.)this.ptr.Ptr, (.)iconSize?.ObjectPtr);
-	}
-	public void* TextAlignment()
-	{
-		return CQt.QStyleOptionComboBox_TextAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextAlignment(void* textAlignment)
-	{
-		CQt.QStyleOptionComboBox_SetTextAlignment((.)this.ptr.Ptr, textAlignment);
-	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionComboBox : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionTitleBar
 // --------------------------------------------------------------
@@ -4183,6 +6787,262 @@ struct QStyleOptionTitleBar_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionTitleBar_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionTitleBar_SetText((.)this.Ptr, text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return QIcon_Ptr(CQt.QStyleOptionTitleBar_Icon((.)this.Ptr));
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		CQt.QStyleOptionTitleBar_SetIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public c_int TitleBarState()
+	{
+		return CQt.QStyleOptionTitleBar_TitleBarState((.)this.Ptr);
+	}
+	public void SetTitleBarState(c_int titleBarState)
+	{
+		CQt.QStyleOptionTitleBar_SetTitleBarState((.)this.Ptr, titleBarState);
+	}
+	public void* TitleBarFlags()
+	{
+		return CQt.QStyleOptionTitleBar_TitleBarFlags((.)this.Ptr);
+	}
+	public void SetTitleBarFlags(void* titleBarFlags)
+	{
+		CQt.QStyleOptionTitleBar_SetTitleBarFlags((.)this.Ptr, titleBarFlags);
+	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionTitleBar : IQStyleOptionTitleBar, IQStyleOptionComplex, IQStyleOption
+{
+	private QStyleOptionTitleBar_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionTitleBar_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionTitleBar_new();
+	}
+	public this(IQStyleOptionTitleBar other)
+	{
+		this.ptr = CQt.QStyleOptionTitleBar_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionTitleBar_Delete(this.ptr);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public QIcon_Ptr Icon()
+	{
+		return this.ptr.Icon();
+	}
+	public void SetIcon(IQIcon icon)
+	{
+		this.ptr.SetIcon(icon);
+	}
+	public c_int TitleBarState()
+	{
+		return this.ptr.TitleBarState();
+	}
+	public void SetTitleBarState(c_int titleBarState)
+	{
+		this.ptr.SetTitleBarState(titleBarState);
+	}
+	public void* TitleBarFlags()
+	{
+		return this.ptr.TitleBarFlags();
+	}
+	public void SetTitleBarFlags(void* titleBarFlags)
+	{
+		this.ptr.SetTitleBarFlags(titleBarFlags);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionTitleBar : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -4211,146 +7071,6 @@ extension CQt
 	[LinkName("QStyleOptionTitleBar_OperatorAssign")]
 	public static extern void QStyleOptionTitleBar_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionTitleBar : IQStyleOptionTitleBar, IQStyleOptionComplex, IQStyleOption
-{
-	private QStyleOptionTitleBar_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionTitleBar_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionTitleBar_new();
-	}
-	public this(IQStyleOptionTitleBar other)
-	{
-		this.ptr = CQt.QStyleOptionTitleBar_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionTitleBar_Delete(this.ptr);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionTitleBar_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionTitleBar_SetText((.)this.ptr.Ptr, text);
-	}
-	public QIcon_Ptr Icon()
-	{
-		return QIcon_Ptr(CQt.QStyleOptionTitleBar_Icon((.)this.ptr.Ptr));
-	}
-	public void SetIcon(IQIcon icon)
-	{
-		CQt.QStyleOptionTitleBar_SetIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public c_int TitleBarState()
-	{
-		return CQt.QStyleOptionTitleBar_TitleBarState((.)this.ptr.Ptr);
-	}
-	public void SetTitleBarState(c_int titleBarState)
-	{
-		CQt.QStyleOptionTitleBar_SetTitleBarState((.)this.ptr.Ptr, titleBarState);
-	}
-	public void* TitleBarFlags()
-	{
-		return CQt.QStyleOptionTitleBar_TitleBarFlags((.)this.ptr.Ptr);
-	}
-	public void SetTitleBarFlags(void* titleBarFlags)
-	{
-		CQt.QStyleOptionTitleBar_SetTitleBarFlags((.)this.ptr.Ptr, titleBarFlags);
-	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionTitleBar : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionGroupBox
 // --------------------------------------------------------------
@@ -4362,6 +7082,294 @@ struct QStyleOptionGroupBox_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void* Features()
+	{
+		return CQt.QStyleOptionGroupBox_Features((.)this.Ptr);
+	}
+	public void SetFeatures(void* features)
+	{
+		CQt.QStyleOptionGroupBox_SetFeatures((.)this.Ptr, features);
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStyleOptionGroupBox_Text((.)this.Ptr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStyleOptionGroupBox_SetText((.)this.Ptr, text);
+	}
+	public void* TextAlignment()
+	{
+		return CQt.QStyleOptionGroupBox_TextAlignment((.)this.Ptr);
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		CQt.QStyleOptionGroupBox_SetTextAlignment((.)this.Ptr, textAlignment);
+	}
+	public QColor_Ptr TextColor()
+	{
+		return QColor_Ptr(CQt.QStyleOptionGroupBox_TextColor((.)this.Ptr));
+	}
+	public void SetTextColor(IQColor textColor)
+	{
+		CQt.QStyleOptionGroupBox_SetTextColor((.)this.Ptr, (.)textColor?.ObjectPtr);
+	}
+	public c_int LineWidth()
+	{
+		return CQt.QStyleOptionGroupBox_LineWidth((.)this.Ptr);
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		CQt.QStyleOptionGroupBox_SetLineWidth((.)this.Ptr, lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return CQt.QStyleOptionGroupBox_MidLineWidth((.)this.Ptr);
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		CQt.QStyleOptionGroupBox_SetMidLineWidth((.)this.Ptr, midLineWidth);
+	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
+}
+class QStyleOptionGroupBox : IQStyleOptionGroupBox, IQStyleOptionComplex, IQStyleOption
+{
+	private QStyleOptionGroupBox_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStyleOptionGroupBox_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStyleOptionGroupBox_new();
+	}
+	public this(IQStyleOptionGroupBox other)
+	{
+		this.ptr = CQt.QStyleOptionGroupBox_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStyleOptionGroupBox_Delete(this.ptr);
+	}
+	public void* Features()
+	{
+		return this.ptr.Features();
+	}
+	public void SetFeatures(void* features)
+	{
+		this.ptr.SetFeatures(features);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public void* TextAlignment()
+	{
+		return this.ptr.TextAlignment();
+	}
+	public void SetTextAlignment(void* textAlignment)
+	{
+		this.ptr.SetTextAlignment(textAlignment);
+	}
+	public QColor_Ptr TextColor()
+	{
+		return this.ptr.TextColor();
+	}
+	public void SetTextColor(IQColor textColor)
+	{
+		this.ptr.SetTextColor(textColor);
+	}
+	public c_int LineWidth()
+	{
+		return this.ptr.LineWidth();
+	}
+	public void SetLineWidth(c_int lineWidth)
+	{
+		this.ptr.SetLineWidth(lineWidth);
+	}
+	public c_int MidLineWidth()
+	{
+		return this.ptr.MidLineWidth();
+	}
+	public void SetMidLineWidth(c_int midLineWidth)
+	{
+		this.ptr.SetMidLineWidth(midLineWidth);
+	}
+	public void* SubControls()
+	{
+		return this.ptr.SubControls();
+	}
+	public void SetSubControls(void* subControls)
+	{
+		this.ptr.SetSubControls(subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return this.ptr.ActiveSubControls();
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		this.ptr.SetActiveSubControls(activeSubControls);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public c_int Type()
+	{
+		return this.ptr.Type();
+	}
+	public void SetType(c_int type)
+	{
+		this.ptr.SetType(type);
+	}
+	public void* State()
+	{
+		return this.ptr.State();
+	}
+	public void SetState(void* state)
+	{
+		this.ptr.SetState(state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return this.ptr.Direction();
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		this.ptr.SetDirection(direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return this.ptr.Rect();
+	}
+	public void SetRect(IQRect rect)
+	{
+		this.ptr.SetRect(rect);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return this.ptr.FontMetrics();
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		this.ptr.SetFontMetrics(fontMetrics);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return this.ptr.Palette();
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		this.ptr.SetPalette(palette);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return this.ptr.StyleObject();
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		this.ptr.SetStyleObject(styleObject);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		this.ptr.InitFrom(w);
+	}
+}
+interface IQStyleOptionGroupBox : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -4398,162 +7406,6 @@ extension CQt
 	[LinkName("QStyleOptionGroupBox_OperatorAssign")]
 	public static extern void QStyleOptionGroupBox_OperatorAssign(void* self, void** param1);
 }
-class QStyleOptionGroupBox : IQStyleOptionGroupBox, IQStyleOptionComplex, IQStyleOption
-{
-	private QStyleOptionGroupBox_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStyleOptionGroupBox_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStyleOptionGroupBox_new();
-	}
-	public this(IQStyleOptionGroupBox other)
-	{
-		this.ptr = CQt.QStyleOptionGroupBox_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStyleOptionGroupBox_Delete(this.ptr);
-	}
-	public void* Features()
-	{
-		return CQt.QStyleOptionGroupBox_Features((.)this.ptr.Ptr);
-	}
-	public void SetFeatures(void* features)
-	{
-		CQt.QStyleOptionGroupBox_SetFeatures((.)this.ptr.Ptr, features);
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStyleOptionGroupBox_Text((.)this.ptr.Ptr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStyleOptionGroupBox_SetText((.)this.ptr.Ptr, text);
-	}
-	public void* TextAlignment()
-	{
-		return CQt.QStyleOptionGroupBox_TextAlignment((.)this.ptr.Ptr);
-	}
-	public void SetTextAlignment(void* textAlignment)
-	{
-		CQt.QStyleOptionGroupBox_SetTextAlignment((.)this.ptr.Ptr, textAlignment);
-	}
-	public QColor_Ptr TextColor()
-	{
-		return QColor_Ptr(CQt.QStyleOptionGroupBox_TextColor((.)this.ptr.Ptr));
-	}
-	public void SetTextColor(IQColor textColor)
-	{
-		CQt.QStyleOptionGroupBox_SetTextColor((.)this.ptr.Ptr, (.)textColor?.ObjectPtr);
-	}
-	public c_int LineWidth()
-	{
-		return CQt.QStyleOptionGroupBox_LineWidth((.)this.ptr.Ptr);
-	}
-	public void SetLineWidth(c_int lineWidth)
-	{
-		CQt.QStyleOptionGroupBox_SetLineWidth((.)this.ptr.Ptr, lineWidth);
-	}
-	public c_int MidLineWidth()
-	{
-		return CQt.QStyleOptionGroupBox_MidLineWidth((.)this.ptr.Ptr);
-	}
-	public void SetMidLineWidth(c_int midLineWidth)
-	{
-		CQt.QStyleOptionGroupBox_SetMidLineWidth((.)this.ptr.Ptr, midLineWidth);
-	}
-	public void* SubControls()
-	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
-	}
-	public void SetSubControls(void* subControls)
-	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
-	}
-	public void* ActiveSubControls()
-	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
-	}
-	public void SetActiveSubControls(void* activeSubControls)
-	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
-	}
-	public c_int Version()
-	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public c_int Type()
-	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
-	}
-	public void SetType(c_int type)
-	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
-	}
-	public void* State()
-	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
-	}
-	public void SetState(void* state)
-	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
-	}
-	public Qt_LayoutDirection Direction()
-	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
-	}
-	public void SetDirection(Qt_LayoutDirection direction)
-	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
-	}
-	public QRect_Ptr Rect()
-	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
-	}
-	public void SetRect(IQRect rect)
-	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QFontMetrics_Ptr FontMetrics()
-	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
-	}
-	public void SetFontMetrics(IQFontMetrics fontMetrics)
-	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
-	}
-	public QPalette_Ptr Palette()
-	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
-	}
-	public void SetPalette(IQPalette palette)
-	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
-	}
-	public QObject_Ptr StyleObject()
-	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
-	}
-	public void SetStyleObject(IQObject styleObject)
-	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
-	}
-	public void InitFrom(IQWidget w)
-	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
-	}
-}
-interface IQStyleOptionGroupBox : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QStyleOptionSizeGrip
 // --------------------------------------------------------------
@@ -4565,21 +7417,98 @@ struct QStyleOptionSizeGrip_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleOptionSizeGrip_new")]
-	public static extern QStyleOptionSizeGrip_Ptr QStyleOptionSizeGrip_new();
-	[LinkName("QStyleOptionSizeGrip_new2")]
-	public static extern QStyleOptionSizeGrip_Ptr QStyleOptionSizeGrip_new2(void** other);
-	[LinkName("QStyleOptionSizeGrip_Delete")]
-	public static extern void QStyleOptionSizeGrip_Delete(QStyleOptionSizeGrip_Ptr self);
-	[LinkName("QStyleOptionSizeGrip_Corner")]
-	public static extern Qt_Corner QStyleOptionSizeGrip_Corner(void* self);
-	[LinkName("QStyleOptionSizeGrip_SetCorner")]
-	public static extern void QStyleOptionSizeGrip_SetCorner(void* self, Qt_Corner corner);
-	[LinkName("QStyleOptionSizeGrip_OperatorAssign")]
-	public static extern void QStyleOptionSizeGrip_OperatorAssign(void* self, void** param1);
+	public Qt_Corner Corner()
+	{
+		return CQt.QStyleOptionSizeGrip_Corner((.)this.Ptr);
+	}
+	public void SetCorner(Qt_Corner corner)
+	{
+		CQt.QStyleOptionSizeGrip_SetCorner((.)this.Ptr, corner);
+	}
+	public void* SubControls()
+	{
+		return CQt.QStyleOptionComplex_SubControls((.)this.Ptr);
+	}
+	public void SetSubControls(void* subControls)
+	{
+		CQt.QStyleOptionComplex_SetSubControls((.)this.Ptr, subControls);
+	}
+	public void* ActiveSubControls()
+	{
+		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.Ptr);
+	}
+	public void SetActiveSubControls(void* activeSubControls)
+	{
+		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.Ptr, activeSubControls);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
 }
 class QStyleOptionSizeGrip : IQStyleOptionSizeGrip, IQStyleOptionComplex, IQStyleOption
 {
@@ -4603,99 +7532,114 @@ class QStyleOptionSizeGrip : IQStyleOptionSizeGrip, IQStyleOptionComplex, IQStyl
 	}
 	public Qt_Corner Corner()
 	{
-		return CQt.QStyleOptionSizeGrip_Corner((.)this.ptr.Ptr);
+		return this.ptr.Corner();
 	}
 	public void SetCorner(Qt_Corner corner)
 	{
-		CQt.QStyleOptionSizeGrip_SetCorner((.)this.ptr.Ptr, corner);
+		this.ptr.SetCorner(corner);
 	}
 	public void* SubControls()
 	{
-		return CQt.QStyleOptionComplex_SubControls((.)this.ptr.Ptr);
+		return this.ptr.SubControls();
 	}
 	public void SetSubControls(void* subControls)
 	{
-		CQt.QStyleOptionComplex_SetSubControls((.)this.ptr.Ptr, subControls);
+		this.ptr.SetSubControls(subControls);
 	}
 	public void* ActiveSubControls()
 	{
-		return CQt.QStyleOptionComplex_ActiveSubControls((.)this.ptr.Ptr);
+		return this.ptr.ActiveSubControls();
 	}
 	public void SetActiveSubControls(void* activeSubControls)
 	{
-		CQt.QStyleOptionComplex_SetActiveSubControls((.)this.ptr.Ptr, activeSubControls);
+		this.ptr.SetActiveSubControls(activeSubControls);
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 	public void* State()
 	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
+		return this.ptr.State();
 	}
 	public void SetState(void* state)
 	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
+		this.ptr.SetState(state);
 	}
 	public Qt_LayoutDirection Direction()
 	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
+		return this.ptr.Direction();
 	}
 	public void SetDirection(Qt_LayoutDirection direction)
 	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
+		this.ptr.SetDirection(direction);
 	}
 	public QRect_Ptr Rect()
 	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
+		return this.ptr.Rect();
 	}
 	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
+		this.ptr.SetRect(rect);
 	}
 	public QFontMetrics_Ptr FontMetrics()
 	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
+		return this.ptr.FontMetrics();
 	}
 	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
+		this.ptr.SetFontMetrics(fontMetrics);
 	}
 	public QPalette_Ptr Palette()
 	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
+		return this.ptr.Palette();
 	}
 	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
+		this.ptr.SetPalette(palette);
 	}
 	public QObject_Ptr StyleObject()
 	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
+		return this.ptr.StyleObject();
 	}
 	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
+		this.ptr.SetStyleObject(styleObject);
 	}
 	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
+		this.ptr.InitFrom(w);
 	}
 }
 interface IQStyleOptionSizeGrip : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleOptionSizeGrip_new")]
+	public static extern QStyleOptionSizeGrip_Ptr QStyleOptionSizeGrip_new();
+	[LinkName("QStyleOptionSizeGrip_new2")]
+	public static extern QStyleOptionSizeGrip_Ptr QStyleOptionSizeGrip_new2(void** other);
+	[LinkName("QStyleOptionSizeGrip_Delete")]
+	public static extern void QStyleOptionSizeGrip_Delete(QStyleOptionSizeGrip_Ptr self);
+	[LinkName("QStyleOptionSizeGrip_Corner")]
+	public static extern Qt_Corner QStyleOptionSizeGrip_Corner(void* self);
+	[LinkName("QStyleOptionSizeGrip_SetCorner")]
+	public static extern void QStyleOptionSizeGrip_SetCorner(void* self, Qt_Corner corner);
+	[LinkName("QStyleOptionSizeGrip_OperatorAssign")]
+	public static extern void QStyleOptionSizeGrip_OperatorAssign(void* self, void** param1);
 }
 // --------------------------------------------------------------
 // QStyleOptionGraphicsItem
@@ -4708,23 +7652,86 @@ struct QStyleOptionGraphicsItem_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleOptionGraphicsItem_new")]
-	public static extern QStyleOptionGraphicsItem_Ptr QStyleOptionGraphicsItem_new();
-	[LinkName("QStyleOptionGraphicsItem_new2")]
-	public static extern QStyleOptionGraphicsItem_Ptr QStyleOptionGraphicsItem_new2(void** other);
-	[LinkName("QStyleOptionGraphicsItem_Delete")]
-	public static extern void QStyleOptionGraphicsItem_Delete(QStyleOptionGraphicsItem_Ptr self);
-	[LinkName("QStyleOptionGraphicsItem_ExposedRect")]
-	public static extern void* QStyleOptionGraphicsItem_ExposedRect(void* self);
-	[LinkName("QStyleOptionGraphicsItem_SetExposedRect")]
-	public static extern void QStyleOptionGraphicsItem_SetExposedRect(void* self, void* exposedRect);
-	[LinkName("QStyleOptionGraphicsItem_OperatorAssign")]
-	public static extern void QStyleOptionGraphicsItem_OperatorAssign(void* self, void** param1);
-	[LinkName("QStyleOptionGraphicsItem_LevelOfDetailFromTransform")]
-	public static extern double QStyleOptionGraphicsItem_LevelOfDetailFromTransform(void** worldTransform);
+	public QRectF_Ptr ExposedRect()
+	{
+		return QRectF_Ptr(CQt.QStyleOptionGraphicsItem_ExposedRect((.)this.Ptr));
+	}
+	public void SetExposedRect(IQRectF exposedRect)
+	{
+		CQt.QStyleOptionGraphicsItem_SetExposedRect((.)this.Ptr, (.)exposedRect?.ObjectPtr);
+	}
+	public double LevelOfDetailFromTransform(IQTransform worldTransform)
+	{
+		return CQt.QStyleOptionGraphicsItem_LevelOfDetailFromTransform((.)worldTransform?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleOption_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleOption_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleOption_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleOption_SetType((.)this.Ptr, type);
+	}
+	public void* State()
+	{
+		return CQt.QStyleOption_State((.)this.Ptr);
+	}
+	public void SetState(void* state)
+	{
+		CQt.QStyleOption_SetState((.)this.Ptr, state);
+	}
+	public Qt_LayoutDirection Direction()
+	{
+		return CQt.QStyleOption_Direction((.)this.Ptr);
+	}
+	public void SetDirection(Qt_LayoutDirection direction)
+	{
+		CQt.QStyleOption_SetDirection((.)this.Ptr, direction);
+	}
+	public QRect_Ptr Rect()
+	{
+		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.Ptr));
+	}
+	public void SetRect(IQRect rect)
+	{
+		CQt.QStyleOption_SetRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QFontMetrics_Ptr FontMetrics()
+	{
+		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.Ptr));
+	}
+	public void SetFontMetrics(IQFontMetrics fontMetrics)
+	{
+		CQt.QStyleOption_SetFontMetrics((.)this.Ptr, (.)fontMetrics?.ObjectPtr);
+	}
+	public QPalette_Ptr Palette()
+	{
+		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.Ptr));
+	}
+	public void SetPalette(IQPalette palette)
+	{
+		CQt.QStyleOption_SetPalette((.)this.Ptr, (.)palette?.ObjectPtr);
+	}
+	public QObject_Ptr StyleObject()
+	{
+		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.Ptr));
+	}
+	public void SetStyleObject(IQObject styleObject)
+	{
+		CQt.QStyleOption_SetStyleObject((.)this.Ptr, (.)styleObject?.ObjectPtr);
+	}
+	public void InitFrom(IQWidget w)
+	{
+		CQt.QStyleOption_InitFrom((.)this.Ptr, (.)w?.ObjectPtr);
+	}
 }
 class QStyleOptionGraphicsItem : IQStyleOptionGraphicsItem, IQStyleOption
 {
@@ -4748,87 +7755,104 @@ class QStyleOptionGraphicsItem : IQStyleOptionGraphicsItem, IQStyleOption
 	}
 	public QRectF_Ptr ExposedRect()
 	{
-		return QRectF_Ptr(CQt.QStyleOptionGraphicsItem_ExposedRect((.)this.ptr.Ptr));
+		return this.ptr.ExposedRect();
 	}
 	public void SetExposedRect(IQRectF exposedRect)
 	{
-		CQt.QStyleOptionGraphicsItem_SetExposedRect((.)this.ptr.Ptr, (.)exposedRect?.ObjectPtr);
+		this.ptr.SetExposedRect(exposedRect);
 	}
 	public double LevelOfDetailFromTransform(IQTransform worldTransform)
 	{
-		return CQt.QStyleOptionGraphicsItem_LevelOfDetailFromTransform((.)worldTransform?.ObjectPtr);
+		return this.ptr.LevelOfDetailFromTransform(worldTransform);
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleOption_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleOption_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleOption_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleOption_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 	public void* State()
 	{
-		return CQt.QStyleOption_State((.)this.ptr.Ptr);
+		return this.ptr.State();
 	}
 	public void SetState(void* state)
 	{
-		CQt.QStyleOption_SetState((.)this.ptr.Ptr, state);
+		this.ptr.SetState(state);
 	}
 	public Qt_LayoutDirection Direction()
 	{
-		return CQt.QStyleOption_Direction((.)this.ptr.Ptr);
+		return this.ptr.Direction();
 	}
 	public void SetDirection(Qt_LayoutDirection direction)
 	{
-		CQt.QStyleOption_SetDirection((.)this.ptr.Ptr, direction);
+		this.ptr.SetDirection(direction);
 	}
 	public QRect_Ptr Rect()
 	{
-		return QRect_Ptr(CQt.QStyleOption_Rect((.)this.ptr.Ptr));
+		return this.ptr.Rect();
 	}
 	public void SetRect(IQRect rect)
 	{
-		CQt.QStyleOption_SetRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
+		this.ptr.SetRect(rect);
 	}
 	public QFontMetrics_Ptr FontMetrics()
 	{
-		return QFontMetrics_Ptr(CQt.QStyleOption_FontMetrics((.)this.ptr.Ptr));
+		return this.ptr.FontMetrics();
 	}
 	public void SetFontMetrics(IQFontMetrics fontMetrics)
 	{
-		CQt.QStyleOption_SetFontMetrics((.)this.ptr.Ptr, (.)fontMetrics?.ObjectPtr);
+		this.ptr.SetFontMetrics(fontMetrics);
 	}
 	public QPalette_Ptr Palette()
 	{
-		return QPalette_Ptr(CQt.QStyleOption_Palette((.)this.ptr.Ptr));
+		return this.ptr.Palette();
 	}
 	public void SetPalette(IQPalette palette)
 	{
-		CQt.QStyleOption_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
+		this.ptr.SetPalette(palette);
 	}
 	public QObject_Ptr StyleObject()
 	{
-		return QObject_Ptr(CQt.QStyleOption_StyleObject((.)this.ptr.Ptr));
+		return this.ptr.StyleObject();
 	}
 	public void SetStyleObject(IQObject styleObject)
 	{
-		CQt.QStyleOption_SetStyleObject((.)this.ptr.Ptr, (.)styleObject?.ObjectPtr);
+		this.ptr.SetStyleObject(styleObject);
 	}
 	public void InitFrom(IQWidget w)
 	{
-		CQt.QStyleOption_InitFrom((.)this.ptr.Ptr, (.)w?.ObjectPtr);
+		this.ptr.InitFrom(w);
 	}
 }
 interface IQStyleOptionGraphicsItem : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleOptionGraphicsItem_new")]
+	public static extern QStyleOptionGraphicsItem_Ptr QStyleOptionGraphicsItem_new();
+	[LinkName("QStyleOptionGraphicsItem_new2")]
+	public static extern QStyleOptionGraphicsItem_Ptr QStyleOptionGraphicsItem_new2(void** other);
+	[LinkName("QStyleOptionGraphicsItem_Delete")]
+	public static extern void QStyleOptionGraphicsItem_Delete(QStyleOptionGraphicsItem_Ptr self);
+	[LinkName("QStyleOptionGraphicsItem_ExposedRect")]
+	public static extern void* QStyleOptionGraphicsItem_ExposedRect(void* self);
+	[LinkName("QStyleOptionGraphicsItem_SetExposedRect")]
+	public static extern void QStyleOptionGraphicsItem_SetExposedRect(void* self, void* exposedRect);
+	[LinkName("QStyleOptionGraphicsItem_OperatorAssign")]
+	public static extern void QStyleOptionGraphicsItem_OperatorAssign(void* self, void** param1);
+	[LinkName("QStyleOptionGraphicsItem_LevelOfDetailFromTransform")]
+	public static extern double QStyleOptionGraphicsItem_LevelOfDetailFromTransform(void** worldTransform);
 }
 // --------------------------------------------------------------
 // QStyleHintReturn
@@ -4841,29 +7865,22 @@ struct QStyleHintReturn_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleHintReturn_new")]
-	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new();
-	[LinkName("QStyleHintReturn_new2")]
-	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new2(void** param1);
-	[LinkName("QStyleHintReturn_new3")]
-	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new3(c_int version);
-	[LinkName("QStyleHintReturn_new4")]
-	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new4(c_int version, c_int type);
-	[LinkName("QStyleHintReturn_Delete")]
-	public static extern void QStyleHintReturn_Delete(QStyleHintReturn_Ptr self);
-	[LinkName("QStyleHintReturn_Version")]
-	public static extern c_int QStyleHintReturn_Version(void* self);
-	[LinkName("QStyleHintReturn_SetVersion")]
-	public static extern void QStyleHintReturn_SetVersion(void* self, c_int version);
-	[LinkName("QStyleHintReturn_Type")]
-	public static extern c_int QStyleHintReturn_Type(void* self);
-	[LinkName("QStyleHintReturn_SetType")]
-	public static extern void QStyleHintReturn_SetType(void* self, c_int type);
-	[LinkName("QStyleHintReturn_OperatorAssign")]
-	public static extern void QStyleHintReturn_OperatorAssign(void* self, void** param1);
+	public c_int Version()
+	{
+		return CQt.QStyleHintReturn_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleHintReturn_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleHintReturn_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleHintReturn_SetType((.)this.Ptr, type);
+	}
 }
 class QStyleHintReturn : IQStyleHintReturn
 {
@@ -4895,23 +7912,46 @@ class QStyleHintReturn : IQStyleHintReturn
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleHintReturn_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleHintReturn_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleHintReturn_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleHintReturn_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 }
 interface IQStyleHintReturn : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleHintReturn_new")]
+	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new();
+	[LinkName("QStyleHintReturn_new2")]
+	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new2(void** param1);
+	[LinkName("QStyleHintReturn_new3")]
+	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new3(c_int version);
+	[LinkName("QStyleHintReturn_new4")]
+	public static extern QStyleHintReturn_Ptr QStyleHintReturn_new4(c_int version, c_int type);
+	[LinkName("QStyleHintReturn_Delete")]
+	public static extern void QStyleHintReturn_Delete(QStyleHintReturn_Ptr self);
+	[LinkName("QStyleHintReturn_Version")]
+	public static extern c_int QStyleHintReturn_Version(void* self);
+	[LinkName("QStyleHintReturn_SetVersion")]
+	public static extern void QStyleHintReturn_SetVersion(void* self, c_int version);
+	[LinkName("QStyleHintReturn_Type")]
+	public static extern c_int QStyleHintReturn_Type(void* self);
+	[LinkName("QStyleHintReturn_SetType")]
+	public static extern void QStyleHintReturn_SetType(void* self, c_int type);
+	[LinkName("QStyleHintReturn_OperatorAssign")]
+	public static extern void QStyleHintReturn_OperatorAssign(void* self, void** param1);
 }
 // --------------------------------------------------------------
 // QStyleHintReturnMask
@@ -4924,21 +7964,30 @@ struct QStyleHintReturnMask_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleHintReturnMask_new")]
-	public static extern QStyleHintReturnMask_Ptr QStyleHintReturnMask_new();
-	[LinkName("QStyleHintReturnMask_new2")]
-	public static extern QStyleHintReturnMask_Ptr QStyleHintReturnMask_new2(void** param1);
-	[LinkName("QStyleHintReturnMask_Delete")]
-	public static extern void QStyleHintReturnMask_Delete(QStyleHintReturnMask_Ptr self);
-	[LinkName("QStyleHintReturnMask_Region")]
-	public static extern void* QStyleHintReturnMask_Region(void* self);
-	[LinkName("QStyleHintReturnMask_SetRegion")]
-	public static extern void QStyleHintReturnMask_SetRegion(void* self, void* region);
-	[LinkName("QStyleHintReturnMask_OperatorAssign")]
-	public static extern void QStyleHintReturnMask_OperatorAssign(void* self, void** param1);
+	public QRegion_Ptr Region()
+	{
+		return QRegion_Ptr(CQt.QStyleHintReturnMask_Region((.)this.Ptr));
+	}
+	public void SetRegion(IQRegion region)
+	{
+		CQt.QStyleHintReturnMask_SetRegion((.)this.Ptr, (.)region?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleHintReturn_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleHintReturn_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleHintReturn_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleHintReturn_SetType((.)this.Ptr, type);
+	}
 }
 class QStyleHintReturnMask : IQStyleHintReturnMask, IQStyleHintReturn
 {
@@ -4962,31 +8011,46 @@ class QStyleHintReturnMask : IQStyleHintReturnMask, IQStyleHintReturn
 	}
 	public QRegion_Ptr Region()
 	{
-		return QRegion_Ptr(CQt.QStyleHintReturnMask_Region((.)this.ptr.Ptr));
+		return this.ptr.Region();
 	}
 	public void SetRegion(IQRegion region)
 	{
-		CQt.QStyleHintReturnMask_SetRegion((.)this.ptr.Ptr, (.)region?.ObjectPtr);
+		this.ptr.SetRegion(region);
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleHintReturn_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleHintReturn_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleHintReturn_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleHintReturn_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 }
 interface IQStyleHintReturnMask : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleHintReturnMask_new")]
+	public static extern QStyleHintReturnMask_Ptr QStyleHintReturnMask_new();
+	[LinkName("QStyleHintReturnMask_new2")]
+	public static extern QStyleHintReturnMask_Ptr QStyleHintReturnMask_new2(void** param1);
+	[LinkName("QStyleHintReturnMask_Delete")]
+	public static extern void QStyleHintReturnMask_Delete(QStyleHintReturnMask_Ptr self);
+	[LinkName("QStyleHintReturnMask_Region")]
+	public static extern void* QStyleHintReturnMask_Region(void* self);
+	[LinkName("QStyleHintReturnMask_SetRegion")]
+	public static extern void QStyleHintReturnMask_SetRegion(void* self, void* region);
+	[LinkName("QStyleHintReturnMask_OperatorAssign")]
+	public static extern void QStyleHintReturnMask_OperatorAssign(void* self, void** param1);
 }
 // --------------------------------------------------------------
 // QStyleHintReturnVariant
@@ -4999,21 +8063,30 @@ struct QStyleHintReturnVariant_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleHintReturnVariant_new")]
-	public static extern QStyleHintReturnVariant_Ptr QStyleHintReturnVariant_new();
-	[LinkName("QStyleHintReturnVariant_new2")]
-	public static extern QStyleHintReturnVariant_Ptr QStyleHintReturnVariant_new2(void** param1);
-	[LinkName("QStyleHintReturnVariant_Delete")]
-	public static extern void QStyleHintReturnVariant_Delete(QStyleHintReturnVariant_Ptr self);
-	[LinkName("QStyleHintReturnVariant_Variant")]
-	public static extern void* QStyleHintReturnVariant_Variant(void* self);
-	[LinkName("QStyleHintReturnVariant_SetVariant")]
-	public static extern void QStyleHintReturnVariant_SetVariant(void* self, void* variant);
-	[LinkName("QStyleHintReturnVariant_OperatorAssign")]
-	public static extern void QStyleHintReturnVariant_OperatorAssign(void* self, void** param1);
+	public QVariant_Ptr Variant()
+	{
+		return QVariant_Ptr(CQt.QStyleHintReturnVariant_Variant((.)this.Ptr));
+	}
+	public void SetVariant(IQVariant variant)
+	{
+		CQt.QStyleHintReturnVariant_SetVariant((.)this.Ptr, (.)variant?.ObjectPtr);
+	}
+	public c_int Version()
+	{
+		return CQt.QStyleHintReturn_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QStyleHintReturn_SetVersion((.)this.Ptr, version);
+	}
+	public c_int Type()
+	{
+		return CQt.QStyleHintReturn_Type((.)this.Ptr);
+	}
+	public void SetType(c_int type)
+	{
+		CQt.QStyleHintReturn_SetType((.)this.Ptr, type);
+	}
 }
 class QStyleHintReturnVariant : IQStyleHintReturnVariant, IQStyleHintReturn
 {
@@ -5037,31 +8110,46 @@ class QStyleHintReturnVariant : IQStyleHintReturnVariant, IQStyleHintReturn
 	}
 	public QVariant_Ptr Variant()
 	{
-		return QVariant_Ptr(CQt.QStyleHintReturnVariant_Variant((.)this.ptr.Ptr));
+		return this.ptr.Variant();
 	}
 	public void SetVariant(IQVariant variant)
 	{
-		CQt.QStyleHintReturnVariant_SetVariant((.)this.ptr.Ptr, (.)variant?.ObjectPtr);
+		this.ptr.SetVariant(variant);
 	}
 	public c_int Version()
 	{
-		return CQt.QStyleHintReturn_Version((.)this.ptr.Ptr);
+		return this.ptr.Version();
 	}
 	public void SetVersion(c_int version)
 	{
-		CQt.QStyleHintReturn_SetVersion((.)this.ptr.Ptr, version);
+		this.ptr.SetVersion(version);
 	}
 	public c_int Type()
 	{
-		return CQt.QStyleHintReturn_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public void SetType(c_int type)
 	{
-		CQt.QStyleHintReturn_SetType((.)this.ptr.Ptr, type);
+		this.ptr.SetType(type);
 	}
 }
 interface IQStyleHintReturnVariant : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleHintReturnVariant_new")]
+	public static extern QStyleHintReturnVariant_Ptr QStyleHintReturnVariant_new();
+	[LinkName("QStyleHintReturnVariant_new2")]
+	public static extern QStyleHintReturnVariant_Ptr QStyleHintReturnVariant_new2(void** param1);
+	[LinkName("QStyleHintReturnVariant_Delete")]
+	public static extern void QStyleHintReturnVariant_Delete(QStyleHintReturnVariant_Ptr self);
+	[LinkName("QStyleHintReturnVariant_Variant")]
+	public static extern void* QStyleHintReturnVariant_Variant(void* self);
+	[LinkName("QStyleHintReturnVariant_SetVariant")]
+	public static extern void QStyleHintReturnVariant_SetVariant(void* self, void* variant);
+	[LinkName("QStyleHintReturnVariant_OperatorAssign")]
+	public static extern void QStyleHintReturnVariant_OperatorAssign(void* self, void** param1);
 }
 [AllowDuplicates]
 enum QStyleOption_OptionType

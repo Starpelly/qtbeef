@@ -14,6 +14,190 @@ struct QSizePolicy_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QSizePolicy_Policy HorizontalPolicy()
+	{
+		return CQt.QSizePolicy_HorizontalPolicy((.)this.Ptr);
+	}
+	public QSizePolicy_Policy VerticalPolicy()
+	{
+		return CQt.QSizePolicy_VerticalPolicy((.)this.Ptr);
+	}
+	public QSizePolicy_ControlType ControlType()
+	{
+		return CQt.QSizePolicy_ControlType((.)this.Ptr);
+	}
+	public void SetHorizontalPolicy(QSizePolicy_Policy d)
+	{
+		CQt.QSizePolicy_SetHorizontalPolicy((.)this.Ptr, d);
+	}
+	public void SetVerticalPolicy(QSizePolicy_Policy d)
+	{
+		CQt.QSizePolicy_SetVerticalPolicy((.)this.Ptr, d);
+	}
+	public void SetControlType(QSizePolicy_ControlType type)
+	{
+		CQt.QSizePolicy_SetControlType((.)this.Ptr, type);
+	}
+	public void* ExpandingDirections()
+	{
+		return CQt.QSizePolicy_ExpandingDirections((.)this.Ptr);
+	}
+	public void SetHeightForWidth(bool b)
+	{
+		CQt.QSizePolicy_SetHeightForWidth((.)this.Ptr, b);
+	}
+	public bool HasHeightForWidth()
+	{
+		return CQt.QSizePolicy_HasHeightForWidth((.)this.Ptr);
+	}
+	public void SetWidthForHeight(bool b)
+	{
+		CQt.QSizePolicy_SetWidthForHeight((.)this.Ptr, b);
+	}
+	public bool HasWidthForHeight()
+	{
+		return CQt.QSizePolicy_HasWidthForHeight((.)this.Ptr);
+	}
+	public c_int HorizontalStretch()
+	{
+		return CQt.QSizePolicy_HorizontalStretch((.)this.Ptr);
+	}
+	public c_int VerticalStretch()
+	{
+		return CQt.QSizePolicy_VerticalStretch((.)this.Ptr);
+	}
+	public void SetHorizontalStretch(c_int stretchFactor)
+	{
+		CQt.QSizePolicy_SetHorizontalStretch((.)this.Ptr, stretchFactor);
+	}
+	public void SetVerticalStretch(c_int stretchFactor)
+	{
+		CQt.QSizePolicy_SetVerticalStretch((.)this.Ptr, stretchFactor);
+	}
+	public bool RetainSizeWhenHidden()
+	{
+		return CQt.QSizePolicy_RetainSizeWhenHidden((.)this.Ptr);
+	}
+	public void SetRetainSizeWhenHidden(bool retainSize)
+	{
+		CQt.QSizePolicy_SetRetainSizeWhenHidden((.)this.Ptr, retainSize);
+	}
+	public void Transpose()
+	{
+		CQt.QSizePolicy_Transpose((.)this.Ptr);
+	}
+	public QSizePolicy_Ptr Transposed()
+	{
+		return QSizePolicy_Ptr(CQt.QSizePolicy_Transposed((.)this.Ptr));
+	}
+}
+class QSizePolicy : IQSizePolicy
+{
+	private QSizePolicy_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QSizePolicy_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQSizePolicy other)
+	{
+		this.ptr = CQt.QSizePolicy_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QSizePolicy_new3();
+	}
+	public this(QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical)
+	{
+		this.ptr = CQt.QSizePolicy_new4(horizontal, vertical);
+	}
+	public this(QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical, QSizePolicy_ControlType type)
+	{
+		this.ptr = CQt.QSizePolicy_new6(horizontal, vertical, type);
+	}
+	public ~this()
+	{
+		CQt.QSizePolicy_Delete(this.ptr);
+	}
+	public QSizePolicy_Policy HorizontalPolicy()
+	{
+		return this.ptr.HorizontalPolicy();
+	}
+	public QSizePolicy_Policy VerticalPolicy()
+	{
+		return this.ptr.VerticalPolicy();
+	}
+	public QSizePolicy_ControlType ControlType()
+	{
+		return this.ptr.ControlType();
+	}
+	public void SetHorizontalPolicy(QSizePolicy_Policy d)
+	{
+		this.ptr.SetHorizontalPolicy(d);
+	}
+	public void SetVerticalPolicy(QSizePolicy_Policy d)
+	{
+		this.ptr.SetVerticalPolicy(d);
+	}
+	public void SetControlType(QSizePolicy_ControlType type)
+	{
+		this.ptr.SetControlType(type);
+	}
+	public void* ExpandingDirections()
+	{
+		return this.ptr.ExpandingDirections();
+	}
+	public void SetHeightForWidth(bool b)
+	{
+		this.ptr.SetHeightForWidth(b);
+	}
+	public bool HasHeightForWidth()
+	{
+		return this.ptr.HasHeightForWidth();
+	}
+	public void SetWidthForHeight(bool b)
+	{
+		this.ptr.SetWidthForHeight(b);
+	}
+	public bool HasWidthForHeight()
+	{
+		return this.ptr.HasWidthForHeight();
+	}
+	public c_int HorizontalStretch()
+	{
+		return this.ptr.HorizontalStretch();
+	}
+	public c_int VerticalStretch()
+	{
+		return this.ptr.VerticalStretch();
+	}
+	public void SetHorizontalStretch(c_int stretchFactor)
+	{
+		this.ptr.SetHorizontalStretch(stretchFactor);
+	}
+	public void SetVerticalStretch(c_int stretchFactor)
+	{
+		this.ptr.SetVerticalStretch(stretchFactor);
+	}
+	public bool RetainSizeWhenHidden()
+	{
+		return this.ptr.RetainSizeWhenHidden();
+	}
+	public void SetRetainSizeWhenHidden(bool retainSize)
+	{
+		this.ptr.SetRetainSizeWhenHidden(retainSize);
+	}
+	public void Transpose()
+	{
+		this.ptr.Transpose();
+	}
+	public QSizePolicy_Ptr Transposed()
+	{
+		return this.ptr.Transposed();
+	}
+}
+interface IQSizePolicy : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -75,114 +259,6 @@ extension CQt
 	public static extern void QSizePolicy_Transpose(void* self);
 	[LinkName("QSizePolicy_Transposed")]
 	public static extern void* QSizePolicy_Transposed(void* self);
-}
-class QSizePolicy : IQSizePolicy
-{
-	private QSizePolicy_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QSizePolicy_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQSizePolicy other)
-	{
-		this.ptr = CQt.QSizePolicy_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QSizePolicy_new3();
-	}
-	public this(QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical)
-	{
-		this.ptr = CQt.QSizePolicy_new4(horizontal, vertical);
-	}
-	public this(QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical, QSizePolicy_ControlType type)
-	{
-		this.ptr = CQt.QSizePolicy_new6(horizontal, vertical, type);
-	}
-	public ~this()
-	{
-		CQt.QSizePolicy_Delete(this.ptr);
-	}
-	public QSizePolicy_Policy HorizontalPolicy()
-	{
-		return CQt.QSizePolicy_HorizontalPolicy((.)this.ptr.Ptr);
-	}
-	public QSizePolicy_Policy VerticalPolicy()
-	{
-		return CQt.QSizePolicy_VerticalPolicy((.)this.ptr.Ptr);
-	}
-	public QSizePolicy_ControlType ControlType()
-	{
-		return CQt.QSizePolicy_ControlType((.)this.ptr.Ptr);
-	}
-	public void SetHorizontalPolicy(QSizePolicy_Policy d)
-	{
-		CQt.QSizePolicy_SetHorizontalPolicy((.)this.ptr.Ptr, d);
-	}
-	public void SetVerticalPolicy(QSizePolicy_Policy d)
-	{
-		CQt.QSizePolicy_SetVerticalPolicy((.)this.ptr.Ptr, d);
-	}
-	public void SetControlType(QSizePolicy_ControlType type)
-	{
-		CQt.QSizePolicy_SetControlType((.)this.ptr.Ptr, type);
-	}
-	public void* ExpandingDirections()
-	{
-		return CQt.QSizePolicy_ExpandingDirections((.)this.ptr.Ptr);
-	}
-	public void SetHeightForWidth(bool b)
-	{
-		CQt.QSizePolicy_SetHeightForWidth((.)this.ptr.Ptr, b);
-	}
-	public bool HasHeightForWidth()
-	{
-		return CQt.QSizePolicy_HasHeightForWidth((.)this.ptr.Ptr);
-	}
-	public void SetWidthForHeight(bool b)
-	{
-		CQt.QSizePolicy_SetWidthForHeight((.)this.ptr.Ptr, b);
-	}
-	public bool HasWidthForHeight()
-	{
-		return CQt.QSizePolicy_HasWidthForHeight((.)this.ptr.Ptr);
-	}
-	public c_int HorizontalStretch()
-	{
-		return CQt.QSizePolicy_HorizontalStretch((.)this.ptr.Ptr);
-	}
-	public c_int VerticalStretch()
-	{
-		return CQt.QSizePolicy_VerticalStretch((.)this.ptr.Ptr);
-	}
-	public void SetHorizontalStretch(c_int stretchFactor)
-	{
-		CQt.QSizePolicy_SetHorizontalStretch((.)this.ptr.Ptr, stretchFactor);
-	}
-	public void SetVerticalStretch(c_int stretchFactor)
-	{
-		CQt.QSizePolicy_SetVerticalStretch((.)this.ptr.Ptr, stretchFactor);
-	}
-	public bool RetainSizeWhenHidden()
-	{
-		return CQt.QSizePolicy_RetainSizeWhenHidden((.)this.ptr.Ptr);
-	}
-	public void SetRetainSizeWhenHidden(bool retainSize)
-	{
-		CQt.QSizePolicy_SetRetainSizeWhenHidden((.)this.ptr.Ptr, retainSize);
-	}
-	public void Transpose()
-	{
-		CQt.QSizePolicy_Transpose((.)this.ptr.Ptr);
-	}
-	public QSizePolicy_Ptr Transposed()
-	{
-		return QSizePolicy_Ptr(CQt.QSizePolicy_Transposed((.)this.ptr.Ptr));
-	}
-}
-interface IQSizePolicy : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QSizePolicy_PolicyFlag

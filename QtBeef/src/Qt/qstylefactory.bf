@@ -14,19 +14,14 @@ struct QStyleFactory_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QStyleFactory_new")]
-	public static extern QStyleFactory_Ptr QStyleFactory_new(void** other);
-	[LinkName("QStyleFactory_new2")]
-	public static extern QStyleFactory_Ptr QStyleFactory_new2(void** other);
-	[LinkName("QStyleFactory_Delete")]
-	public static extern void QStyleFactory_Delete(QStyleFactory_Ptr self);
-	[LinkName("QStyleFactory_Keys")]
-	public static extern void* QStyleFactory_Keys();
-	[LinkName("QStyleFactory_Create")]
-	public static extern void** QStyleFactory_Create(libqt_string param1);
+	public void* Keys()
+	{
+		return CQt.QStyleFactory_Keys();
+	}
+	public QStyle_Ptr Create(String param1)
+	{
+		return QStyle_Ptr(CQt.QStyleFactory_Create(libqt_string(param1)));
+	}
 }
 class QStyleFactory : IQStyleFactory
 {
@@ -46,13 +41,26 @@ class QStyleFactory : IQStyleFactory
 	}
 	public void* Keys()
 	{
-		return CQt.QStyleFactory_Keys();
+		return this.ptr.Keys();
 	}
 	public QStyle_Ptr Create(String param1)
 	{
-		return QStyle_Ptr(CQt.QStyleFactory_Create(libqt_string(param1)));
+		return this.ptr.Create(param1);
 	}
 }
 interface IQStyleFactory : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStyleFactory_new")]
+	public static extern QStyleFactory_Ptr QStyleFactory_new(void** other);
+	[LinkName("QStyleFactory_new2")]
+	public static extern QStyleFactory_Ptr QStyleFactory_new2(void** other);
+	[LinkName("QStyleFactory_Delete")]
+	public static extern void QStyleFactory_Delete(QStyleFactory_Ptr self);
+	[LinkName("QStyleFactory_Keys")]
+	public static extern void* QStyleFactory_Keys();
+	[LinkName("QStyleFactory_Create")]
+	public static extern void** QStyleFactory_Create(libqt_string param1);
 }

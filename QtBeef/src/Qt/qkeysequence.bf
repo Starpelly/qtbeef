@@ -14,6 +14,194 @@ struct QKeySequence_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_int Count()
+	{
+		return CQt.QKeySequence_Count((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QKeySequence_IsEmpty((.)this.Ptr);
+	}
+	public void ToString(String outStr)
+	{
+		CQt.QKeySequence_ToString((.)this.Ptr);
+	}
+	public QKeySequence_Ptr FromString(String str)
+	{
+		return QKeySequence_Ptr(CQt.QKeySequence_FromString(libqt_string(str)));
+	}
+	public void* ListFromString(String str)
+	{
+		return CQt.QKeySequence_ListFromString(libqt_string(str));
+	}
+	public void ListToString(String outStr, void** list)
+	{
+		CQt.QKeySequence_ListToString(list);
+	}
+	public QKeySequence_SequenceMatch Matches(IQKeySequence seq)
+	{
+		return CQt.QKeySequence_Matches((.)this.Ptr, (.)seq?.ObjectPtr);
+	}
+	public QKeySequence_Ptr Mnemonic(String text)
+	{
+		return QKeySequence_Ptr(CQt.QKeySequence_Mnemonic(libqt_string(text)));
+	}
+	public void* KeyBindings(QKeySequence_StandardKey key)
+	{
+		return CQt.QKeySequence_KeyBindings(key);
+	}
+	public void Swap(IQKeySequence other)
+	{
+		CQt.QKeySequence_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsDetached()
+	{
+		return CQt.QKeySequence_IsDetached((.)this.Ptr);
+	}
+	public void ToString1(String outStr, QKeySequence_SequenceFormat format)
+	{
+		CQt.QKeySequence_ToString1((.)this.Ptr, format);
+	}
+	public QKeySequence_Ptr FromString2(String str, QKeySequence_SequenceFormat format)
+	{
+		return QKeySequence_Ptr(CQt.QKeySequence_FromString2(libqt_string(str), format));
+	}
+	public void* ListFromString2(String str, QKeySequence_SequenceFormat format)
+	{
+		return CQt.QKeySequence_ListFromString2(libqt_string(str), format);
+	}
+	public void ListToString2(String outStr, void** list, QKeySequence_SequenceFormat format)
+	{
+		CQt.QKeySequence_ListToString2(list, format);
+	}
+}
+class QKeySequence : IQKeySequence
+{
+	private QKeySequence_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QKeySequence_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QKeySequence_new();
+	}
+	public this(String key)
+	{
+		this.ptr = CQt.QKeySequence_new2(libqt_string(key));
+	}
+	public this(c_int k1)
+	{
+		this.ptr = CQt.QKeySequence_new3(k1);
+	}
+	public this(IQKeyCombination k1)
+	{
+		this.ptr = CQt.QKeySequence_new4((.)k1?.ObjectPtr);
+	}
+	public this(IQKeySequence ks)
+	{
+		this.ptr = CQt.QKeySequence_new5((.)ks?.ObjectPtr);
+	}
+	public this(QKeySequence_StandardKey key)
+	{
+		this.ptr = CQt.QKeySequence_new6(key);
+	}
+	public this(String key, QKeySequence_SequenceFormat format)
+	{
+		this.ptr = CQt.QKeySequence_new7(libqt_string(key), format);
+	}
+	public this(c_int k1, c_int k2)
+	{
+		this.ptr = CQt.QKeySequence_new8(k1, k2);
+	}
+	public this(c_int k1, c_int k2, c_int k3)
+	{
+		this.ptr = CQt.QKeySequence_new9(k1, k2, k3);
+	}
+	public this(c_int k1, c_int k2, c_int k3, c_int k4)
+	{
+		this.ptr = CQt.QKeySequence_new10(k1, k2, k3, k4);
+	}
+	public this(IQKeyCombination k1, IQKeyCombination k2)
+	{
+		this.ptr = CQt.QKeySequence_new11((.)k1?.ObjectPtr, (.)k2?.ObjectPtr);
+	}
+	public this(IQKeyCombination k1, IQKeyCombination k2, IQKeyCombination k3)
+	{
+		this.ptr = CQt.QKeySequence_new12((.)k1?.ObjectPtr, (.)k2?.ObjectPtr, (.)k3?.ObjectPtr);
+	}
+	public this(IQKeyCombination k1, IQKeyCombination k2, IQKeyCombination k3, IQKeyCombination k4)
+	{
+		this.ptr = CQt.QKeySequence_new13((.)k1?.ObjectPtr, (.)k2?.ObjectPtr, (.)k3?.ObjectPtr, (.)k4?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QKeySequence_Delete(this.ptr);
+	}
+	public c_int Count()
+	{
+		return this.ptr.Count();
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public void ToString(String outStr)
+	{
+		this.ptr.ToString(outStr);
+	}
+	public QKeySequence_Ptr FromString(String str)
+	{
+		return this.ptr.FromString(str);
+	}
+	public void* ListFromString(String str)
+	{
+		return this.ptr.ListFromString(str);
+	}
+	public void ListToString(String outStr, void** list)
+	{
+		this.ptr.ListToString(outStr, list);
+	}
+	public QKeySequence_SequenceMatch Matches(IQKeySequence seq)
+	{
+		return this.ptr.Matches(seq);
+	}
+	public QKeySequence_Ptr Mnemonic(String text)
+	{
+		return this.ptr.Mnemonic(text);
+	}
+	public void* KeyBindings(QKeySequence_StandardKey key)
+	{
+		return this.ptr.KeyBindings(key);
+	}
+	public void Swap(IQKeySequence other)
+	{
+		this.ptr.Swap(other);
+	}
+	public bool IsDetached()
+	{
+		return this.ptr.IsDetached();
+	}
+	public void ToString1(String outStr, QKeySequence_SequenceFormat format)
+	{
+		this.ptr.ToString1(outStr, format);
+	}
+	public QKeySequence_Ptr FromString2(String str, QKeySequence_SequenceFormat format)
+	{
+		return this.ptr.FromString2(str, format);
+	}
+	public void* ListFromString2(String str, QKeySequence_SequenceFormat format)
+	{
+		return this.ptr.ListFromString2(str, format);
+	}
+	public void ListToString2(String outStr, void** list, QKeySequence_SequenceFormat format)
+	{
+		this.ptr.ListToString2(outStr, list, format);
+	}
+}
+interface IQKeySequence : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -93,134 +281,6 @@ extension CQt
 	public static extern void* QKeySequence_ListFromString2(libqt_string str, QKeySequence_SequenceFormat format);
 	[LinkName("QKeySequence_ListToString2")]
 	public static extern libqt_string QKeySequence_ListToString2(void** list, QKeySequence_SequenceFormat format);
-}
-class QKeySequence : IQKeySequence
-{
-	private QKeySequence_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QKeySequence_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QKeySequence_new();
-	}
-	public this(String key)
-	{
-		this.ptr = CQt.QKeySequence_new2(libqt_string(key));
-	}
-	public this(c_int k1)
-	{
-		this.ptr = CQt.QKeySequence_new3(k1);
-	}
-	public this(IQKeyCombination k1)
-	{
-		this.ptr = CQt.QKeySequence_new4((.)k1?.ObjectPtr);
-	}
-	public this(IQKeySequence ks)
-	{
-		this.ptr = CQt.QKeySequence_new5((.)ks?.ObjectPtr);
-	}
-	public this(QKeySequence_StandardKey key)
-	{
-		this.ptr = CQt.QKeySequence_new6(key);
-	}
-	public this(String key, QKeySequence_SequenceFormat format)
-	{
-		this.ptr = CQt.QKeySequence_new7(libqt_string(key), format);
-	}
-	public this(c_int k1, c_int k2)
-	{
-		this.ptr = CQt.QKeySequence_new8(k1, k2);
-	}
-	public this(c_int k1, c_int k2, c_int k3)
-	{
-		this.ptr = CQt.QKeySequence_new9(k1, k2, k3);
-	}
-	public this(c_int k1, c_int k2, c_int k3, c_int k4)
-	{
-		this.ptr = CQt.QKeySequence_new10(k1, k2, k3, k4);
-	}
-	public this(IQKeyCombination k1, IQKeyCombination k2)
-	{
-		this.ptr = CQt.QKeySequence_new11((.)k1?.ObjectPtr, (.)k2?.ObjectPtr);
-	}
-	public this(IQKeyCombination k1, IQKeyCombination k2, IQKeyCombination k3)
-	{
-		this.ptr = CQt.QKeySequence_new12((.)k1?.ObjectPtr, (.)k2?.ObjectPtr, (.)k3?.ObjectPtr);
-	}
-	public this(IQKeyCombination k1, IQKeyCombination k2, IQKeyCombination k3, IQKeyCombination k4)
-	{
-		this.ptr = CQt.QKeySequence_new13((.)k1?.ObjectPtr, (.)k2?.ObjectPtr, (.)k3?.ObjectPtr, (.)k4?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QKeySequence_Delete(this.ptr);
-	}
-	public c_int Count()
-	{
-		return CQt.QKeySequence_Count((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QKeySequence_IsEmpty((.)this.ptr.Ptr);
-	}
-	public void ToString(String outStr)
-	{
-		CQt.QKeySequence_ToString((.)this.ptr.Ptr);
-	}
-	public QKeySequence_Ptr FromString(String str)
-	{
-		return QKeySequence_Ptr(CQt.QKeySequence_FromString(libqt_string(str)));
-	}
-	public void* ListFromString(String str)
-	{
-		return CQt.QKeySequence_ListFromString(libqt_string(str));
-	}
-	public void ListToString(String outStr, void** list)
-	{
-		CQt.QKeySequence_ListToString(list);
-	}
-	public QKeySequence_SequenceMatch Matches(IQKeySequence seq)
-	{
-		return CQt.QKeySequence_Matches((.)this.ptr.Ptr, (.)seq?.ObjectPtr);
-	}
-	public QKeySequence_Ptr Mnemonic(String text)
-	{
-		return QKeySequence_Ptr(CQt.QKeySequence_Mnemonic(libqt_string(text)));
-	}
-	public void* KeyBindings(QKeySequence_StandardKey key)
-	{
-		return CQt.QKeySequence_KeyBindings(key);
-	}
-	public void Swap(IQKeySequence other)
-	{
-		CQt.QKeySequence_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsDetached()
-	{
-		return CQt.QKeySequence_IsDetached((.)this.ptr.Ptr);
-	}
-	public void ToString1(String outStr, QKeySequence_SequenceFormat format)
-	{
-		CQt.QKeySequence_ToString1((.)this.ptr.Ptr, format);
-	}
-	public QKeySequence_Ptr FromString2(String str, QKeySequence_SequenceFormat format)
-	{
-		return QKeySequence_Ptr(CQt.QKeySequence_FromString2(libqt_string(str), format));
-	}
-	public void* ListFromString2(String str, QKeySequence_SequenceFormat format)
-	{
-		return CQt.QKeySequence_ListFromString2(libqt_string(str), format);
-	}
-	public void ListToString2(String outStr, void** list, QKeySequence_SequenceFormat format)
-	{
-		CQt.QKeySequence_ListToString2(list, format);
-	}
-}
-interface IQKeySequence : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QKeySequence_StandardKey

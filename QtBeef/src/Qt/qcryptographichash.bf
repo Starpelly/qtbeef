@@ -14,6 +14,90 @@ struct QCryptographicHash_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Reset()
+	{
+		CQt.QCryptographicHash_Reset((.)this.Ptr);
+	}
+	public void AddData(c_char* data, void* length)
+	{
+		CQt.QCryptographicHash_AddData((.)this.Ptr, data, length);
+	}
+	public void AddData2(void* data)
+	{
+		CQt.QCryptographicHash_AddData2((.)this.Ptr, data);
+	}
+	public bool AddData3(IQIODevice device)
+	{
+		return CQt.QCryptographicHash_AddData3((.)this.Ptr, (.)device?.ObjectPtr);
+	}
+	public void* Result()
+	{
+		return CQt.QCryptographicHash_Result((.)this.Ptr);
+	}
+	public void* ResultView()
+	{
+		return CQt.QCryptographicHash_ResultView((.)this.Ptr);
+	}
+	public void* Hash(void* data, QCryptographicHash_Algorithm method)
+	{
+		return CQt.QCryptographicHash_Hash(data, method);
+	}
+	public c_int HashLength(QCryptographicHash_Algorithm method)
+	{
+		return CQt.QCryptographicHash_HashLength(method);
+	}
+}
+class QCryptographicHash : IQCryptographicHash
+{
+	private QCryptographicHash_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QCryptographicHash_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(QCryptographicHash_Algorithm method)
+	{
+		this.ptr = CQt.QCryptographicHash_new(method);
+	}
+	public ~this()
+	{
+		CQt.QCryptographicHash_Delete(this.ptr);
+	}
+	public void Reset()
+	{
+		this.ptr.Reset();
+	}
+	public void AddData(c_char* data, void* length)
+	{
+		this.ptr.AddData(data, length);
+	}
+	public void AddData2(void* data)
+	{
+		this.ptr.AddData2(data);
+	}
+	public bool AddData3(IQIODevice device)
+	{
+		return this.ptr.AddData3(device);
+	}
+	public void* Result()
+	{
+		return this.ptr.Result();
+	}
+	public void* ResultView()
+	{
+		return this.ptr.ResultView();
+	}
+	public void* Hash(void* data, QCryptographicHash_Algorithm method)
+	{
+		return this.ptr.Hash(data, method);
+	}
+	public c_int HashLength(QCryptographicHash_Algorithm method)
+	{
+		return this.ptr.HashLength(method);
+	}
+}
+interface IQCryptographicHash : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -37,58 +121,6 @@ extension CQt
 	public static extern void* QCryptographicHash_Hash(void* data, QCryptographicHash_Algorithm method);
 	[LinkName("QCryptographicHash_HashLength")]
 	public static extern c_int QCryptographicHash_HashLength(QCryptographicHash_Algorithm method);
-}
-class QCryptographicHash : IQCryptographicHash
-{
-	private QCryptographicHash_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QCryptographicHash_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(QCryptographicHash_Algorithm method)
-	{
-		this.ptr = CQt.QCryptographicHash_new(method);
-	}
-	public ~this()
-	{
-		CQt.QCryptographicHash_Delete(this.ptr);
-	}
-	public void Reset()
-	{
-		CQt.QCryptographicHash_Reset((.)this.ptr.Ptr);
-	}
-	public void AddData(c_char* data, void* length)
-	{
-		CQt.QCryptographicHash_AddData((.)this.ptr.Ptr, data, length);
-	}
-	public void AddData2(void* data)
-	{
-		CQt.QCryptographicHash_AddData2((.)this.ptr.Ptr, data);
-	}
-	public bool AddData3(IQIODevice device)
-	{
-		return CQt.QCryptographicHash_AddData3((.)this.ptr.Ptr, (.)device?.ObjectPtr);
-	}
-	public void* Result()
-	{
-		return CQt.QCryptographicHash_Result((.)this.ptr.Ptr);
-	}
-	public void* ResultView()
-	{
-		return CQt.QCryptographicHash_ResultView((.)this.ptr.Ptr);
-	}
-	public void* Hash(void* data, QCryptographicHash_Algorithm method)
-	{
-		return CQt.QCryptographicHash_Hash(data, method);
-	}
-	public c_int HashLength(QCryptographicHash_Algorithm method)
-	{
-		return CQt.QCryptographicHash_HashLength(method);
-	}
-}
-interface IQCryptographicHash : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QCryptographicHash_Algorithm

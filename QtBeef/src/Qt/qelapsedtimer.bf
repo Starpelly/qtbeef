@@ -14,6 +14,126 @@ struct QElapsedTimer_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QElapsedTimer_ClockType ClockType()
+	{
+		return CQt.QElapsedTimer_ClockType();
+	}
+	public bool IsMonotonic()
+	{
+		return CQt.QElapsedTimer_IsMonotonic();
+	}
+	public void Start()
+	{
+		CQt.QElapsedTimer_Start((.)this.Ptr);
+	}
+	public c_longlong Restart()
+	{
+		return CQt.QElapsedTimer_Restart((.)this.Ptr);
+	}
+	public void Invalidate()
+	{
+		CQt.QElapsedTimer_Invalidate((.)this.Ptr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QElapsedTimer_IsValid((.)this.Ptr);
+	}
+	public c_longlong NsecsElapsed()
+	{
+		return CQt.QElapsedTimer_NsecsElapsed((.)this.Ptr);
+	}
+	public c_longlong Elapsed()
+	{
+		return CQt.QElapsedTimer_Elapsed((.)this.Ptr);
+	}
+	public bool HasExpired(c_longlong timeout)
+	{
+		return CQt.QElapsedTimer_HasExpired((.)this.Ptr, timeout);
+	}
+	public c_longlong MsecsSinceReference()
+	{
+		return CQt.QElapsedTimer_MsecsSinceReference((.)this.Ptr);
+	}
+	public c_longlong MsecsTo(IQElapsedTimer other)
+	{
+		return CQt.QElapsedTimer_MsecsTo((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public c_longlong SecsTo(IQElapsedTimer other)
+	{
+		return CQt.QElapsedTimer_SecsTo((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+}
+class QElapsedTimer : IQElapsedTimer
+{
+	private QElapsedTimer_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QElapsedTimer_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQElapsedTimer other)
+	{
+		this.ptr = CQt.QElapsedTimer_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QElapsedTimer_new3();
+	}
+	public ~this()
+	{
+		CQt.QElapsedTimer_Delete(this.ptr);
+	}
+	public QElapsedTimer_ClockType ClockType()
+	{
+		return this.ptr.ClockType();
+	}
+	public bool IsMonotonic()
+	{
+		return this.ptr.IsMonotonic();
+	}
+	public void Start()
+	{
+		this.ptr.Start();
+	}
+	public c_longlong Restart()
+	{
+		return this.ptr.Restart();
+	}
+	public void Invalidate()
+	{
+		this.ptr.Invalidate();
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public c_longlong NsecsElapsed()
+	{
+		return this.ptr.NsecsElapsed();
+	}
+	public c_longlong Elapsed()
+	{
+		return this.ptr.Elapsed();
+	}
+	public bool HasExpired(c_longlong timeout)
+	{
+		return this.ptr.HasExpired(timeout);
+	}
+	public c_longlong MsecsSinceReference()
+	{
+		return this.ptr.MsecsSinceReference();
+	}
+	public c_longlong MsecsTo(IQElapsedTimer other)
+	{
+		return this.ptr.MsecsTo(other);
+	}
+	public c_longlong SecsTo(IQElapsedTimer other)
+	{
+		return this.ptr.SecsTo(other);
+	}
+}
+interface IQElapsedTimer : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -49,78 +169,6 @@ extension CQt
 	public static extern c_longlong QElapsedTimer_MsecsTo(void* self, void** other);
 	[LinkName("QElapsedTimer_SecsTo")]
 	public static extern c_longlong QElapsedTimer_SecsTo(void* self, void** other);
-}
-class QElapsedTimer : IQElapsedTimer
-{
-	private QElapsedTimer_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QElapsedTimer_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQElapsedTimer other)
-	{
-		this.ptr = CQt.QElapsedTimer_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QElapsedTimer_new3();
-	}
-	public ~this()
-	{
-		CQt.QElapsedTimer_Delete(this.ptr);
-	}
-	public QElapsedTimer_ClockType ClockType()
-	{
-		return CQt.QElapsedTimer_ClockType();
-	}
-	public bool IsMonotonic()
-	{
-		return CQt.QElapsedTimer_IsMonotonic();
-	}
-	public void Start()
-	{
-		CQt.QElapsedTimer_Start((.)this.ptr.Ptr);
-	}
-	public c_longlong Restart()
-	{
-		return CQt.QElapsedTimer_Restart((.)this.ptr.Ptr);
-	}
-	public void Invalidate()
-	{
-		CQt.QElapsedTimer_Invalidate((.)this.ptr.Ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QElapsedTimer_IsValid((.)this.ptr.Ptr);
-	}
-	public c_longlong NsecsElapsed()
-	{
-		return CQt.QElapsedTimer_NsecsElapsed((.)this.ptr.Ptr);
-	}
-	public c_longlong Elapsed()
-	{
-		return CQt.QElapsedTimer_Elapsed((.)this.ptr.Ptr);
-	}
-	public bool HasExpired(c_longlong timeout)
-	{
-		return CQt.QElapsedTimer_HasExpired((.)this.ptr.Ptr, timeout);
-	}
-	public c_longlong MsecsSinceReference()
-	{
-		return CQt.QElapsedTimer_MsecsSinceReference((.)this.ptr.Ptr);
-	}
-	public c_longlong MsecsTo(IQElapsedTimer other)
-	{
-		return CQt.QElapsedTimer_MsecsTo((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public c_longlong SecsTo(IQElapsedTimer other)
-	{
-		return CQt.QElapsedTimer_SecsTo((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-}
-interface IQElapsedTimer : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QElapsedTimer_ClockType

@@ -14,6 +14,62 @@ struct QSurface_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QSurface_SurfaceClass SurfaceClass()
+	{
+		return CQt.QSurface_SurfaceClass((.)this.Ptr);
+	}
+	public QSurfaceFormat_Ptr Format()
+	{
+		return QSurfaceFormat_Ptr(CQt.QSurface_Format((.)this.Ptr));
+	}
+	public QSurface_SurfaceType SurfaceType()
+	{
+		return CQt.QSurface_SurfaceType((.)this.Ptr);
+	}
+	public bool SupportsOpenGL()
+	{
+		return CQt.QSurface_SupportsOpenGL((.)this.Ptr);
+	}
+	public QSize_Ptr Size()
+	{
+		return QSize_Ptr(CQt.QSurface_Size((.)this.Ptr));
+	}
+}
+class QSurface : IQSurface
+{
+	private QSurface_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QSurface_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public ~this()
+	{
+		CQt.QSurface_Delete(this.ptr);
+	}
+	public QSurface_SurfaceClass SurfaceClass()
+	{
+		return this.ptr.SurfaceClass();
+	}
+	public QSurfaceFormat_Ptr Format()
+	{
+		return this.ptr.Format();
+	}
+	public QSurface_SurfaceType SurfaceType()
+	{
+		return this.ptr.SurfaceType();
+	}
+	public bool SupportsOpenGL()
+	{
+		return this.ptr.SupportsOpenGL();
+	}
+	public QSize_Ptr Size()
+	{
+		return this.ptr.Size();
+	}
+}
+interface IQSurface : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -31,42 +87,6 @@ extension CQt
 	public static extern void* QSurface_Size(void* self);
 	[LinkName("QSurface_OperatorAssign")]
 	public static extern void QSurface_OperatorAssign(void* self, void** param1);
-}
-class QSurface : IQSurface
-{
-	private QSurface_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QSurface_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public ~this()
-	{
-		CQt.QSurface_Delete(this.ptr);
-	}
-	public QSurface_SurfaceClass SurfaceClass()
-	{
-		return CQt.QSurface_SurfaceClass((.)this.ptr.Ptr);
-	}
-	public QSurfaceFormat_Ptr Format()
-	{
-		return QSurfaceFormat_Ptr(CQt.QSurface_Format((.)this.ptr.Ptr));
-	}
-	public QSurface_SurfaceType SurfaceType()
-	{
-		return CQt.QSurface_SurfaceType((.)this.ptr.Ptr);
-	}
-	public bool SupportsOpenGL()
-	{
-		return CQt.QSurface_SupportsOpenGL((.)this.ptr.Ptr);
-	}
-	public QSize_Ptr Size()
-	{
-		return QSize_Ptr(CQt.QSurface_Size((.)this.ptr.Ptr));
-	}
-}
-interface IQSurface : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QSurface_SurfaceClass

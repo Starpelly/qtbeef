@@ -14,6 +14,466 @@ struct QImageReader_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Tr(String outStr, c_char* sourceText)
+	{
+		CQt.QImageReader_Tr(sourceText);
+	}
+	public void SetFormat(void** format)
+	{
+		CQt.QImageReader_SetFormat((.)this.Ptr, format);
+	}
+	public void* Format()
+	{
+		return CQt.QImageReader_Format((.)this.Ptr);
+	}
+	public void SetAutoDetectImageFormat(bool enabled)
+	{
+		CQt.QImageReader_SetAutoDetectImageFormat((.)this.Ptr, enabled);
+	}
+	public bool AutoDetectImageFormat()
+	{
+		return CQt.QImageReader_AutoDetectImageFormat((.)this.Ptr);
+	}
+	public void SetDecideFormatFromContent(bool ignored)
+	{
+		CQt.QImageReader_SetDecideFormatFromContent((.)this.Ptr, ignored);
+	}
+	public bool DecideFormatFromContent()
+	{
+		return CQt.QImageReader_DecideFormatFromContent((.)this.Ptr);
+	}
+	public void SetDevice(IQIODevice device)
+	{
+		CQt.QImageReader_SetDevice((.)this.Ptr, (.)device?.ObjectPtr);
+	}
+	public QIODevice_Ptr Device()
+	{
+		return QIODevice_Ptr(CQt.QImageReader_Device((.)this.Ptr));
+	}
+	public void SetFileName(String fileName)
+	{
+		CQt.QImageReader_SetFileName((.)this.Ptr, libqt_string(fileName));
+	}
+	public void FileName(String outStr)
+	{
+		CQt.QImageReader_FileName((.)this.Ptr);
+	}
+	public QSize_Ptr Size()
+	{
+		return QSize_Ptr(CQt.QImageReader_Size((.)this.Ptr));
+	}
+	public QImage_Format ImageFormat()
+	{
+		return CQt.QImageReader_ImageFormat((.)this.Ptr);
+	}
+	public void* TextKeys()
+	{
+		return CQt.QImageReader_TextKeys((.)this.Ptr);
+	}
+	public void Text(String outStr, String key)
+	{
+		CQt.QImageReader_Text((.)this.Ptr, libqt_string(key));
+	}
+	public void SetClipRect(IQRect rect)
+	{
+		CQt.QImageReader_SetClipRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QRect_Ptr ClipRect()
+	{
+		return QRect_Ptr(CQt.QImageReader_ClipRect((.)this.Ptr));
+	}
+	public void SetScaledSize(IQSize size)
+	{
+		CQt.QImageReader_SetScaledSize((.)this.Ptr, (.)size?.ObjectPtr);
+	}
+	public QSize_Ptr ScaledSize()
+	{
+		return QSize_Ptr(CQt.QImageReader_ScaledSize((.)this.Ptr));
+	}
+	public void SetQuality(c_int quality)
+	{
+		CQt.QImageReader_SetQuality((.)this.Ptr, quality);
+	}
+	public c_int Quality()
+	{
+		return CQt.QImageReader_Quality((.)this.Ptr);
+	}
+	public void SetScaledClipRect(IQRect rect)
+	{
+		CQt.QImageReader_SetScaledClipRect((.)this.Ptr, (.)rect?.ObjectPtr);
+	}
+	public QRect_Ptr ScaledClipRect()
+	{
+		return QRect_Ptr(CQt.QImageReader_ScaledClipRect((.)this.Ptr));
+	}
+	public void SetBackgroundColor(IQColor color)
+	{
+		CQt.QImageReader_SetBackgroundColor((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public QColor_Ptr BackgroundColor()
+	{
+		return QColor_Ptr(CQt.QImageReader_BackgroundColor((.)this.Ptr));
+	}
+	public bool SupportsAnimation()
+	{
+		return CQt.QImageReader_SupportsAnimation((.)this.Ptr);
+	}
+	public void* Transformation()
+	{
+		return CQt.QImageReader_Transformation((.)this.Ptr);
+	}
+	public void SetAutoTransform(bool enabled)
+	{
+		CQt.QImageReader_SetAutoTransform((.)this.Ptr, enabled);
+	}
+	public bool AutoTransform()
+	{
+		return CQt.QImageReader_AutoTransform((.)this.Ptr);
+	}
+	public void* SubType()
+	{
+		return CQt.QImageReader_SubType((.)this.Ptr);
+	}
+	public void* SupportedSubTypes()
+	{
+		return CQt.QImageReader_SupportedSubTypes((.)this.Ptr);
+	}
+	public bool CanRead()
+	{
+		return CQt.QImageReader_CanRead((.)this.Ptr);
+	}
+	public QImage_Ptr Read()
+	{
+		return QImage_Ptr(CQt.QImageReader_Read((.)this.Ptr));
+	}
+	public bool Read2(IQImage image)
+	{
+		return CQt.QImageReader_Read2((.)this.Ptr, (.)image?.ObjectPtr);
+	}
+	public bool JumpToNextImage()
+	{
+		return CQt.QImageReader_JumpToNextImage((.)this.Ptr);
+	}
+	public bool JumpToImage(c_int imageNumber)
+	{
+		return CQt.QImageReader_JumpToImage((.)this.Ptr, imageNumber);
+	}
+	public c_int LoopCount()
+	{
+		return CQt.QImageReader_LoopCount((.)this.Ptr);
+	}
+	public c_int ImageCount()
+	{
+		return CQt.QImageReader_ImageCount((.)this.Ptr);
+	}
+	public c_int NextImageDelay()
+	{
+		return CQt.QImageReader_NextImageDelay((.)this.Ptr);
+	}
+	public c_int CurrentImageNumber()
+	{
+		return CQt.QImageReader_CurrentImageNumber((.)this.Ptr);
+	}
+	public QRect_Ptr CurrentImageRect()
+	{
+		return QRect_Ptr(CQt.QImageReader_CurrentImageRect((.)this.Ptr));
+	}
+	public QImageReader_ImageReaderError Error()
+	{
+		return CQt.QImageReader_Error((.)this.Ptr);
+	}
+	public void ErrorString(String outStr)
+	{
+		CQt.QImageReader_ErrorString((.)this.Ptr);
+	}
+	public bool SupportsOption(QImageIOHandler_ImageOption option)
+	{
+		return CQt.QImageReader_SupportsOption((.)this.Ptr, option);
+	}
+	public void* ImageFormat2(String fileName)
+	{
+		return CQt.QImageReader_ImageFormat2(libqt_string(fileName));
+	}
+	public void* ImageFormat3(IQIODevice device)
+	{
+		return CQt.QImageReader_ImageFormat3((.)device?.ObjectPtr);
+	}
+	public void* SupportedImageFormats()
+	{
+		return CQt.QImageReader_SupportedImageFormats();
+	}
+	public void* SupportedMimeTypes()
+	{
+		return CQt.QImageReader_SupportedMimeTypes();
+	}
+	public void* ImageFormatsForMimeType(void** mimeType)
+	{
+		return CQt.QImageReader_ImageFormatsForMimeType(mimeType);
+	}
+	public c_int AllocationLimit()
+	{
+		return CQt.QImageReader_AllocationLimit();
+	}
+	public void SetAllocationLimit(c_int mbLimit)
+	{
+		CQt.QImageReader_SetAllocationLimit(mbLimit);
+	}
+	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
+	{
+		CQt.QImageReader_Tr2(sourceText, disambiguation);
+	}
+	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
+	{
+		CQt.QImageReader_Tr3(sourceText, disambiguation, n);
+	}
+}
+class QImageReader : IQImageReader
+{
+	private QImageReader_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QImageReader_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QImageReader_new();
+	}
+	public this(IQIODevice device)
+	{
+		this.ptr = CQt.QImageReader_new2((.)device?.ObjectPtr);
+	}
+	public this(String fileName)
+	{
+		this.ptr = CQt.QImageReader_new3(libqt_string(fileName));
+	}
+	public this(IQIODevice device, void** format)
+	{
+		this.ptr = CQt.QImageReader_new4((.)device?.ObjectPtr, format);
+	}
+	public this(String fileName, void** format)
+	{
+		this.ptr = CQt.QImageReader_new5(libqt_string(fileName), format);
+	}
+	public ~this()
+	{
+		CQt.QImageReader_Delete(this.ptr);
+	}
+	public void Tr(String outStr, c_char* sourceText)
+	{
+		this.ptr.Tr(outStr, sourceText);
+	}
+	public void SetFormat(void** format)
+	{
+		this.ptr.SetFormat(format);
+	}
+	public void* Format()
+	{
+		return this.ptr.Format();
+	}
+	public void SetAutoDetectImageFormat(bool enabled)
+	{
+		this.ptr.SetAutoDetectImageFormat(enabled);
+	}
+	public bool AutoDetectImageFormat()
+	{
+		return this.ptr.AutoDetectImageFormat();
+	}
+	public void SetDecideFormatFromContent(bool ignored)
+	{
+		this.ptr.SetDecideFormatFromContent(ignored);
+	}
+	public bool DecideFormatFromContent()
+	{
+		return this.ptr.DecideFormatFromContent();
+	}
+	public void SetDevice(IQIODevice device)
+	{
+		this.ptr.SetDevice(device);
+	}
+	public QIODevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public void SetFileName(String fileName)
+	{
+		this.ptr.SetFileName(fileName);
+	}
+	public void FileName(String outStr)
+	{
+		this.ptr.FileName(outStr);
+	}
+	public QSize_Ptr Size()
+	{
+		return this.ptr.Size();
+	}
+	public QImage_Format ImageFormat()
+	{
+		return this.ptr.ImageFormat();
+	}
+	public void* TextKeys()
+	{
+		return this.ptr.TextKeys();
+	}
+	public void Text(String outStr, String key)
+	{
+		this.ptr.Text(outStr, key);
+	}
+	public void SetClipRect(IQRect rect)
+	{
+		this.ptr.SetClipRect(rect);
+	}
+	public QRect_Ptr ClipRect()
+	{
+		return this.ptr.ClipRect();
+	}
+	public void SetScaledSize(IQSize size)
+	{
+		this.ptr.SetScaledSize(size);
+	}
+	public QSize_Ptr ScaledSize()
+	{
+		return this.ptr.ScaledSize();
+	}
+	public void SetQuality(c_int quality)
+	{
+		this.ptr.SetQuality(quality);
+	}
+	public c_int Quality()
+	{
+		return this.ptr.Quality();
+	}
+	public void SetScaledClipRect(IQRect rect)
+	{
+		this.ptr.SetScaledClipRect(rect);
+	}
+	public QRect_Ptr ScaledClipRect()
+	{
+		return this.ptr.ScaledClipRect();
+	}
+	public void SetBackgroundColor(IQColor color)
+	{
+		this.ptr.SetBackgroundColor(color);
+	}
+	public QColor_Ptr BackgroundColor()
+	{
+		return this.ptr.BackgroundColor();
+	}
+	public bool SupportsAnimation()
+	{
+		return this.ptr.SupportsAnimation();
+	}
+	public void* Transformation()
+	{
+		return this.ptr.Transformation();
+	}
+	public void SetAutoTransform(bool enabled)
+	{
+		this.ptr.SetAutoTransform(enabled);
+	}
+	public bool AutoTransform()
+	{
+		return this.ptr.AutoTransform();
+	}
+	public void* SubType()
+	{
+		return this.ptr.SubType();
+	}
+	public void* SupportedSubTypes()
+	{
+		return this.ptr.SupportedSubTypes();
+	}
+	public bool CanRead()
+	{
+		return this.ptr.CanRead();
+	}
+	public QImage_Ptr Read()
+	{
+		return this.ptr.Read();
+	}
+	public bool Read2(IQImage image)
+	{
+		return this.ptr.Read2(image);
+	}
+	public bool JumpToNextImage()
+	{
+		return this.ptr.JumpToNextImage();
+	}
+	public bool JumpToImage(c_int imageNumber)
+	{
+		return this.ptr.JumpToImage(imageNumber);
+	}
+	public c_int LoopCount()
+	{
+		return this.ptr.LoopCount();
+	}
+	public c_int ImageCount()
+	{
+		return this.ptr.ImageCount();
+	}
+	public c_int NextImageDelay()
+	{
+		return this.ptr.NextImageDelay();
+	}
+	public c_int CurrentImageNumber()
+	{
+		return this.ptr.CurrentImageNumber();
+	}
+	public QRect_Ptr CurrentImageRect()
+	{
+		return this.ptr.CurrentImageRect();
+	}
+	public QImageReader_ImageReaderError Error()
+	{
+		return this.ptr.Error();
+	}
+	public void ErrorString(String outStr)
+	{
+		this.ptr.ErrorString(outStr);
+	}
+	public bool SupportsOption(QImageIOHandler_ImageOption option)
+	{
+		return this.ptr.SupportsOption(option);
+	}
+	public void* ImageFormat2(String fileName)
+	{
+		return this.ptr.ImageFormat2(fileName);
+	}
+	public void* ImageFormat3(IQIODevice device)
+	{
+		return this.ptr.ImageFormat3(device);
+	}
+	public void* SupportedImageFormats()
+	{
+		return this.ptr.SupportedImageFormats();
+	}
+	public void* SupportedMimeTypes()
+	{
+		return this.ptr.SupportedMimeTypes();
+	}
+	public void* ImageFormatsForMimeType(void** mimeType)
+	{
+		return this.ptr.ImageFormatsForMimeType(mimeType);
+	}
+	public c_int AllocationLimit()
+	{
+		return this.ptr.AllocationLimit();
+	}
+	public void SetAllocationLimit(c_int mbLimit)
+	{
+		this.ptr.SetAllocationLimit(mbLimit);
+	}
+	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
+	{
+		this.ptr.Tr2(outStr, sourceText, disambiguation);
+	}
+	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
+	{
+		this.ptr.Tr3(outStr, sourceText, disambiguation, n);
+	}
+}
+interface IQImageReader : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -135,254 +595,6 @@ extension CQt
 	public static extern libqt_string QImageReader_Tr2(c_char* sourceText, c_char* disambiguation);
 	[LinkName("QImageReader_Tr3")]
 	public static extern libqt_string QImageReader_Tr3(c_char* sourceText, c_char* disambiguation, c_int n);
-}
-class QImageReader : IQImageReader
-{
-	private QImageReader_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QImageReader_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QImageReader_new();
-	}
-	public this(IQIODevice device)
-	{
-		this.ptr = CQt.QImageReader_new2((.)device?.ObjectPtr);
-	}
-	public this(String fileName)
-	{
-		this.ptr = CQt.QImageReader_new3(libqt_string(fileName));
-	}
-	public this(IQIODevice device, void** format)
-	{
-		this.ptr = CQt.QImageReader_new4((.)device?.ObjectPtr, format);
-	}
-	public this(String fileName, void** format)
-	{
-		this.ptr = CQt.QImageReader_new5(libqt_string(fileName), format);
-	}
-	public ~this()
-	{
-		CQt.QImageReader_Delete(this.ptr);
-	}
-	public void Tr(String outStr, c_char* sourceText)
-	{
-		CQt.QImageReader_Tr(sourceText);
-	}
-	public void SetFormat(void** format)
-	{
-		CQt.QImageReader_SetFormat((.)this.ptr.Ptr, format);
-	}
-	public void* Format()
-	{
-		return CQt.QImageReader_Format((.)this.ptr.Ptr);
-	}
-	public void SetAutoDetectImageFormat(bool enabled)
-	{
-		CQt.QImageReader_SetAutoDetectImageFormat((.)this.ptr.Ptr, enabled);
-	}
-	public bool AutoDetectImageFormat()
-	{
-		return CQt.QImageReader_AutoDetectImageFormat((.)this.ptr.Ptr);
-	}
-	public void SetDecideFormatFromContent(bool ignored)
-	{
-		CQt.QImageReader_SetDecideFormatFromContent((.)this.ptr.Ptr, ignored);
-	}
-	public bool DecideFormatFromContent()
-	{
-		return CQt.QImageReader_DecideFormatFromContent((.)this.ptr.Ptr);
-	}
-	public void SetDevice(IQIODevice device)
-	{
-		CQt.QImageReader_SetDevice((.)this.ptr.Ptr, (.)device?.ObjectPtr);
-	}
-	public QIODevice_Ptr Device()
-	{
-		return QIODevice_Ptr(CQt.QImageReader_Device((.)this.ptr.Ptr));
-	}
-	public void SetFileName(String fileName)
-	{
-		CQt.QImageReader_SetFileName((.)this.ptr.Ptr, libqt_string(fileName));
-	}
-	public void FileName(String outStr)
-	{
-		CQt.QImageReader_FileName((.)this.ptr.Ptr);
-	}
-	public QSize_Ptr Size()
-	{
-		return QSize_Ptr(CQt.QImageReader_Size((.)this.ptr.Ptr));
-	}
-	public QImage_Format ImageFormat()
-	{
-		return CQt.QImageReader_ImageFormat((.)this.ptr.Ptr);
-	}
-	public void* TextKeys()
-	{
-		return CQt.QImageReader_TextKeys((.)this.ptr.Ptr);
-	}
-	public void Text(String outStr, String key)
-	{
-		CQt.QImageReader_Text((.)this.ptr.Ptr, libqt_string(key));
-	}
-	public void SetClipRect(IQRect rect)
-	{
-		CQt.QImageReader_SetClipRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QRect_Ptr ClipRect()
-	{
-		return QRect_Ptr(CQt.QImageReader_ClipRect((.)this.ptr.Ptr));
-	}
-	public void SetScaledSize(IQSize size)
-	{
-		CQt.QImageReader_SetScaledSize((.)this.ptr.Ptr, (.)size?.ObjectPtr);
-	}
-	public QSize_Ptr ScaledSize()
-	{
-		return QSize_Ptr(CQt.QImageReader_ScaledSize((.)this.ptr.Ptr));
-	}
-	public void SetQuality(c_int quality)
-	{
-		CQt.QImageReader_SetQuality((.)this.ptr.Ptr, quality);
-	}
-	public c_int Quality()
-	{
-		return CQt.QImageReader_Quality((.)this.ptr.Ptr);
-	}
-	public void SetScaledClipRect(IQRect rect)
-	{
-		CQt.QImageReader_SetScaledClipRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
-	}
-	public QRect_Ptr ScaledClipRect()
-	{
-		return QRect_Ptr(CQt.QImageReader_ScaledClipRect((.)this.ptr.Ptr));
-	}
-	public void SetBackgroundColor(IQColor color)
-	{
-		CQt.QImageReader_SetBackgroundColor((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public QColor_Ptr BackgroundColor()
-	{
-		return QColor_Ptr(CQt.QImageReader_BackgroundColor((.)this.ptr.Ptr));
-	}
-	public bool SupportsAnimation()
-	{
-		return CQt.QImageReader_SupportsAnimation((.)this.ptr.Ptr);
-	}
-	public void* Transformation()
-	{
-		return CQt.QImageReader_Transformation((.)this.ptr.Ptr);
-	}
-	public void SetAutoTransform(bool enabled)
-	{
-		CQt.QImageReader_SetAutoTransform((.)this.ptr.Ptr, enabled);
-	}
-	public bool AutoTransform()
-	{
-		return CQt.QImageReader_AutoTransform((.)this.ptr.Ptr);
-	}
-	public void* SubType()
-	{
-		return CQt.QImageReader_SubType((.)this.ptr.Ptr);
-	}
-	public void* SupportedSubTypes()
-	{
-		return CQt.QImageReader_SupportedSubTypes((.)this.ptr.Ptr);
-	}
-	public bool CanRead()
-	{
-		return CQt.QImageReader_CanRead((.)this.ptr.Ptr);
-	}
-	public QImage_Ptr Read()
-	{
-		return QImage_Ptr(CQt.QImageReader_Read((.)this.ptr.Ptr));
-	}
-	public bool Read2(IQImage image)
-	{
-		return CQt.QImageReader_Read2((.)this.ptr.Ptr, (.)image?.ObjectPtr);
-	}
-	public bool JumpToNextImage()
-	{
-		return CQt.QImageReader_JumpToNextImage((.)this.ptr.Ptr);
-	}
-	public bool JumpToImage(c_int imageNumber)
-	{
-		return CQt.QImageReader_JumpToImage((.)this.ptr.Ptr, imageNumber);
-	}
-	public c_int LoopCount()
-	{
-		return CQt.QImageReader_LoopCount((.)this.ptr.Ptr);
-	}
-	public c_int ImageCount()
-	{
-		return CQt.QImageReader_ImageCount((.)this.ptr.Ptr);
-	}
-	public c_int NextImageDelay()
-	{
-		return CQt.QImageReader_NextImageDelay((.)this.ptr.Ptr);
-	}
-	public c_int CurrentImageNumber()
-	{
-		return CQt.QImageReader_CurrentImageNumber((.)this.ptr.Ptr);
-	}
-	public QRect_Ptr CurrentImageRect()
-	{
-		return QRect_Ptr(CQt.QImageReader_CurrentImageRect((.)this.ptr.Ptr));
-	}
-	public QImageReader_ImageReaderError Error()
-	{
-		return CQt.QImageReader_Error((.)this.ptr.Ptr);
-	}
-	public void ErrorString(String outStr)
-	{
-		CQt.QImageReader_ErrorString((.)this.ptr.Ptr);
-	}
-	public bool SupportsOption(QImageIOHandler_ImageOption option)
-	{
-		return CQt.QImageReader_SupportsOption((.)this.ptr.Ptr, option);
-	}
-	public void* ImageFormat2(String fileName)
-	{
-		return CQt.QImageReader_ImageFormat2(libqt_string(fileName));
-	}
-	public void* ImageFormat3(IQIODevice device)
-	{
-		return CQt.QImageReader_ImageFormat3((.)device?.ObjectPtr);
-	}
-	public void* SupportedImageFormats()
-	{
-		return CQt.QImageReader_SupportedImageFormats();
-	}
-	public void* SupportedMimeTypes()
-	{
-		return CQt.QImageReader_SupportedMimeTypes();
-	}
-	public void* ImageFormatsForMimeType(void** mimeType)
-	{
-		return CQt.QImageReader_ImageFormatsForMimeType(mimeType);
-	}
-	public c_int AllocationLimit()
-	{
-		return CQt.QImageReader_AllocationLimit();
-	}
-	public void SetAllocationLimit(c_int mbLimit)
-	{
-		CQt.QImageReader_SetAllocationLimit(mbLimit);
-	}
-	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
-	{
-		CQt.QImageReader_Tr2(sourceText, disambiguation);
-	}
-	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
-	{
-		CQt.QImageReader_Tr3(sourceText, disambiguation, n);
-	}
-}
-interface IQImageReader : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QImageReader_ImageReaderError

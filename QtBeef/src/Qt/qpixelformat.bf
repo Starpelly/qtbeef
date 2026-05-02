@@ -14,6 +14,218 @@ struct QPixelFormat_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QPixelFormat_ColorModel ColorModel()
+	{
+		return CQt.QPixelFormat_ColorModel((.)this.Ptr);
+	}
+	public c_uchar ChannelCount()
+	{
+		return CQt.QPixelFormat_ChannelCount((.)this.Ptr);
+	}
+	public c_uchar RedSize()
+	{
+		return CQt.QPixelFormat_RedSize((.)this.Ptr);
+	}
+	public c_uchar GreenSize()
+	{
+		return CQt.QPixelFormat_GreenSize((.)this.Ptr);
+	}
+	public c_uchar BlueSize()
+	{
+		return CQt.QPixelFormat_BlueSize((.)this.Ptr);
+	}
+	public c_uchar CyanSize()
+	{
+		return CQt.QPixelFormat_CyanSize((.)this.Ptr);
+	}
+	public c_uchar MagentaSize()
+	{
+		return CQt.QPixelFormat_MagentaSize((.)this.Ptr);
+	}
+	public c_uchar YellowSize()
+	{
+		return CQt.QPixelFormat_YellowSize((.)this.Ptr);
+	}
+	public c_uchar BlackSize()
+	{
+		return CQt.QPixelFormat_BlackSize((.)this.Ptr);
+	}
+	public c_uchar HueSize()
+	{
+		return CQt.QPixelFormat_HueSize((.)this.Ptr);
+	}
+	public c_uchar SaturationSize()
+	{
+		return CQt.QPixelFormat_SaturationSize((.)this.Ptr);
+	}
+	public c_uchar LightnessSize()
+	{
+		return CQt.QPixelFormat_LightnessSize((.)this.Ptr);
+	}
+	public c_uchar BrightnessSize()
+	{
+		return CQt.QPixelFormat_BrightnessSize((.)this.Ptr);
+	}
+	public c_uchar AlphaSize()
+	{
+		return CQt.QPixelFormat_AlphaSize((.)this.Ptr);
+	}
+	public c_uchar BitsPerPixel()
+	{
+		return CQt.QPixelFormat_BitsPerPixel((.)this.Ptr);
+	}
+	public QPixelFormat_AlphaUsage AlphaUsage()
+	{
+		return CQt.QPixelFormat_AlphaUsage((.)this.Ptr);
+	}
+	public QPixelFormat_AlphaPosition AlphaPosition()
+	{
+		return CQt.QPixelFormat_AlphaPosition((.)this.Ptr);
+	}
+	public QPixelFormat_AlphaPremultiplied Premultiplied()
+	{
+		return CQt.QPixelFormat_Premultiplied((.)this.Ptr);
+	}
+	public QPixelFormat_TypeInterpretation TypeInterpretation()
+	{
+		return CQt.QPixelFormat_TypeInterpretation((.)this.Ptr);
+	}
+	public QPixelFormat_ByteOrder ByteOrder()
+	{
+		return CQt.QPixelFormat_ByteOrder((.)this.Ptr);
+	}
+	public QPixelFormat_YUVLayout YuvLayout()
+	{
+		return CQt.QPixelFormat_YuvLayout((.)this.Ptr);
+	}
+	public c_uchar SubEnum()
+	{
+		return CQt.QPixelFormat_SubEnum((.)this.Ptr);
+	}
+}
+class QPixelFormat : IQPixelFormat
+{
+	private QPixelFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPixelFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQPixelFormat other)
+	{
+		this.ptr = CQt.QPixelFormat_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QPixelFormat_new3();
+	}
+	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation)
+	{
+		this.ptr = CQt.QPixelFormat_new4(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation);
+	}
+	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder)
+	{
+		this.ptr = CQt.QPixelFormat_new6(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation, byteOrder);
+	}
+	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder, c_uchar subEnum)
+	{
+		this.ptr = CQt.QPixelFormat_new7(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation, byteOrder, subEnum);
+	}
+	public ~this()
+	{
+		CQt.QPixelFormat_Delete(this.ptr);
+	}
+	public QPixelFormat_ColorModel ColorModel()
+	{
+		return this.ptr.ColorModel();
+	}
+	public c_uchar ChannelCount()
+	{
+		return this.ptr.ChannelCount();
+	}
+	public c_uchar RedSize()
+	{
+		return this.ptr.RedSize();
+	}
+	public c_uchar GreenSize()
+	{
+		return this.ptr.GreenSize();
+	}
+	public c_uchar BlueSize()
+	{
+		return this.ptr.BlueSize();
+	}
+	public c_uchar CyanSize()
+	{
+		return this.ptr.CyanSize();
+	}
+	public c_uchar MagentaSize()
+	{
+		return this.ptr.MagentaSize();
+	}
+	public c_uchar YellowSize()
+	{
+		return this.ptr.YellowSize();
+	}
+	public c_uchar BlackSize()
+	{
+		return this.ptr.BlackSize();
+	}
+	public c_uchar HueSize()
+	{
+		return this.ptr.HueSize();
+	}
+	public c_uchar SaturationSize()
+	{
+		return this.ptr.SaturationSize();
+	}
+	public c_uchar LightnessSize()
+	{
+		return this.ptr.LightnessSize();
+	}
+	public c_uchar BrightnessSize()
+	{
+		return this.ptr.BrightnessSize();
+	}
+	public c_uchar AlphaSize()
+	{
+		return this.ptr.AlphaSize();
+	}
+	public c_uchar BitsPerPixel()
+	{
+		return this.ptr.BitsPerPixel();
+	}
+	public QPixelFormat_AlphaUsage AlphaUsage()
+	{
+		return this.ptr.AlphaUsage();
+	}
+	public QPixelFormat_AlphaPosition AlphaPosition()
+	{
+		return this.ptr.AlphaPosition();
+	}
+	public QPixelFormat_AlphaPremultiplied Premultiplied()
+	{
+		return this.ptr.Premultiplied();
+	}
+	public QPixelFormat_TypeInterpretation TypeInterpretation()
+	{
+		return this.ptr.TypeInterpretation();
+	}
+	public QPixelFormat_ByteOrder ByteOrder()
+	{
+		return this.ptr.ByteOrder();
+	}
+	public QPixelFormat_YUVLayout YuvLayout()
+	{
+		return this.ptr.YuvLayout();
+	}
+	public c_uchar SubEnum()
+	{
+		return this.ptr.SubEnum();
+	}
+}
+interface IQPixelFormat : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -77,130 +289,6 @@ extension CQt
 	public static extern QPixelFormat_YUVLayout QPixelFormat_YuvLayout(void* self);
 	[LinkName("QPixelFormat_SubEnum")]
 	public static extern c_uchar QPixelFormat_SubEnum(void* self);
-}
-class QPixelFormat : IQPixelFormat
-{
-	private QPixelFormat_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QPixelFormat_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQPixelFormat other)
-	{
-		this.ptr = CQt.QPixelFormat_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QPixelFormat_new3();
-	}
-	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation)
-	{
-		this.ptr = CQt.QPixelFormat_new4(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation);
-	}
-	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder)
-	{
-		this.ptr = CQt.QPixelFormat_new6(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation, byteOrder);
-	}
-	public this(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder, c_uchar subEnum)
-	{
-		this.ptr = CQt.QPixelFormat_new7(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation, byteOrder, subEnum);
-	}
-	public ~this()
-	{
-		CQt.QPixelFormat_Delete(this.ptr);
-	}
-	public QPixelFormat_ColorModel ColorModel()
-	{
-		return CQt.QPixelFormat_ColorModel((.)this.ptr.Ptr);
-	}
-	public c_uchar ChannelCount()
-	{
-		return CQt.QPixelFormat_ChannelCount((.)this.ptr.Ptr);
-	}
-	public c_uchar RedSize()
-	{
-		return CQt.QPixelFormat_RedSize((.)this.ptr.Ptr);
-	}
-	public c_uchar GreenSize()
-	{
-		return CQt.QPixelFormat_GreenSize((.)this.ptr.Ptr);
-	}
-	public c_uchar BlueSize()
-	{
-		return CQt.QPixelFormat_BlueSize((.)this.ptr.Ptr);
-	}
-	public c_uchar CyanSize()
-	{
-		return CQt.QPixelFormat_CyanSize((.)this.ptr.Ptr);
-	}
-	public c_uchar MagentaSize()
-	{
-		return CQt.QPixelFormat_MagentaSize((.)this.ptr.Ptr);
-	}
-	public c_uchar YellowSize()
-	{
-		return CQt.QPixelFormat_YellowSize((.)this.ptr.Ptr);
-	}
-	public c_uchar BlackSize()
-	{
-		return CQt.QPixelFormat_BlackSize((.)this.ptr.Ptr);
-	}
-	public c_uchar HueSize()
-	{
-		return CQt.QPixelFormat_HueSize((.)this.ptr.Ptr);
-	}
-	public c_uchar SaturationSize()
-	{
-		return CQt.QPixelFormat_SaturationSize((.)this.ptr.Ptr);
-	}
-	public c_uchar LightnessSize()
-	{
-		return CQt.QPixelFormat_LightnessSize((.)this.ptr.Ptr);
-	}
-	public c_uchar BrightnessSize()
-	{
-		return CQt.QPixelFormat_BrightnessSize((.)this.ptr.Ptr);
-	}
-	public c_uchar AlphaSize()
-	{
-		return CQt.QPixelFormat_AlphaSize((.)this.ptr.Ptr);
-	}
-	public c_uchar BitsPerPixel()
-	{
-		return CQt.QPixelFormat_BitsPerPixel((.)this.ptr.Ptr);
-	}
-	public QPixelFormat_AlphaUsage AlphaUsage()
-	{
-		return CQt.QPixelFormat_AlphaUsage((.)this.ptr.Ptr);
-	}
-	public QPixelFormat_AlphaPosition AlphaPosition()
-	{
-		return CQt.QPixelFormat_AlphaPosition((.)this.ptr.Ptr);
-	}
-	public QPixelFormat_AlphaPremultiplied Premultiplied()
-	{
-		return CQt.QPixelFormat_Premultiplied((.)this.ptr.Ptr);
-	}
-	public QPixelFormat_TypeInterpretation TypeInterpretation()
-	{
-		return CQt.QPixelFormat_TypeInterpretation((.)this.ptr.Ptr);
-	}
-	public QPixelFormat_ByteOrder ByteOrder()
-	{
-		return CQt.QPixelFormat_ByteOrder((.)this.ptr.Ptr);
-	}
-	public QPixelFormat_YUVLayout YuvLayout()
-	{
-		return CQt.QPixelFormat_YuvLayout((.)this.ptr.Ptr);
-	}
-	public c_uchar SubEnum()
-	{
-		return CQt.QPixelFormat_SubEnum((.)this.ptr.Ptr);
-	}
-}
-interface IQPixelFormat : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QPixelFormat_ColorModel

@@ -15,13 +15,6 @@ struct QStringTokenizerBaseBase_Ptr
 		this.Ptr = ptr;
 	}
 }
-extension CQt
-{
-	[LinkName("QStringTokenizerBaseBase_new")]
-	public static extern QStringTokenizerBaseBase_Ptr QStringTokenizerBaseBase_new(void** other);
-	[LinkName("QStringTokenizerBaseBase_new2")]
-	public static extern QStringTokenizerBaseBase_Ptr QStringTokenizerBaseBase_new2(void** param1);
-}
 class QStringTokenizerBaseBase : IQStringTokenizerBaseBase
 {
 	private QStringTokenizerBaseBase_Ptr ptr;
@@ -37,4 +30,11 @@ class QStringTokenizerBaseBase : IQStringTokenizerBaseBase
 }
 interface IQStringTokenizerBaseBase : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QStringTokenizerBaseBase_new")]
+	public static extern QStringTokenizerBaseBase_Ptr QStringTokenizerBaseBase_new(void** other);
+	[LinkName("QStringTokenizerBaseBase_new2")]
+	public static extern QStringTokenizerBaseBase_Ptr QStringTokenizerBaseBase_new2(void** param1);
 }

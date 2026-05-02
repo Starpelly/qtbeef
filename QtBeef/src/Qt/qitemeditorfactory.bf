@@ -14,17 +14,14 @@ struct QItemEditorCreatorBase_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QItemEditorCreatorBase_Delete")]
-	public static extern void QItemEditorCreatorBase_Delete(QItemEditorCreatorBase_Ptr self);
-	[LinkName("QItemEditorCreatorBase_CreateWidget")]
-	public static extern void** QItemEditorCreatorBase_CreateWidget(void* self, void** parent);
-	[LinkName("QItemEditorCreatorBase_ValuePropertyName")]
-	public static extern void* QItemEditorCreatorBase_ValuePropertyName(void* self);
-	[LinkName("QItemEditorCreatorBase_OperatorAssign")]
-	public static extern void QItemEditorCreatorBase_OperatorAssign(void* self, void** param1);
+	public QWidget_Ptr CreateWidget(IQWidget parent)
+	{
+		return QWidget_Ptr(CQt.QItemEditorCreatorBase_CreateWidget((.)this.Ptr, (.)parent?.ObjectPtr));
+	}
+	public void* ValuePropertyName()
+	{
+		return CQt.QItemEditorCreatorBase_ValuePropertyName((.)this.Ptr);
+	}
 }
 class QItemEditorCreatorBase : IQItemEditorCreatorBase
 {
@@ -40,15 +37,26 @@ class QItemEditorCreatorBase : IQItemEditorCreatorBase
 	}
 	public QWidget_Ptr CreateWidget(IQWidget parent)
 	{
-		return QWidget_Ptr(CQt.QItemEditorCreatorBase_CreateWidget((.)this.ptr.Ptr, (.)parent?.ObjectPtr));
+		return this.ptr.CreateWidget(parent);
 	}
 	public void* ValuePropertyName()
 	{
-		return CQt.QItemEditorCreatorBase_ValuePropertyName((.)this.ptr.Ptr);
+		return this.ptr.ValuePropertyName();
 	}
 }
 interface IQItemEditorCreatorBase : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QItemEditorCreatorBase_Delete")]
+	public static extern void QItemEditorCreatorBase_Delete(QItemEditorCreatorBase_Ptr self);
+	[LinkName("QItemEditorCreatorBase_CreateWidget")]
+	public static extern void** QItemEditorCreatorBase_CreateWidget(void* self, void** parent);
+	[LinkName("QItemEditorCreatorBase_ValuePropertyName")]
+	public static extern void* QItemEditorCreatorBase_ValuePropertyName(void* self);
+	[LinkName("QItemEditorCreatorBase_OperatorAssign")]
+	public static extern void QItemEditorCreatorBase_OperatorAssign(void* self, void** param1);
 }
 // --------------------------------------------------------------
 // QItemEditorFactory
@@ -61,25 +69,26 @@ struct QItemEditorFactory_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QItemEditorFactory_new")]
-	public static extern QItemEditorFactory_Ptr QItemEditorFactory_new();
-	[LinkName("QItemEditorFactory_new2")]
-	public static extern QItemEditorFactory_Ptr QItemEditorFactory_new2(void** param1);
-	[LinkName("QItemEditorFactory_Delete")]
-	public static extern void QItemEditorFactory_Delete(QItemEditorFactory_Ptr self);
-	[LinkName("QItemEditorFactory_CreateEditor")]
-	public static extern void** QItemEditorFactory_CreateEditor(void* self, c_int userType, void** parent);
-	[LinkName("QItemEditorFactory_ValuePropertyName")]
-	public static extern void* QItemEditorFactory_ValuePropertyName(void* self, c_int userType);
-	[LinkName("QItemEditorFactory_RegisterEditor")]
-	public static extern void QItemEditorFactory_RegisterEditor(void* self, c_int userType, void** creator);
-	[LinkName("QItemEditorFactory_DefaultFactory")]
-	public static extern void** QItemEditorFactory_DefaultFactory();
-	[LinkName("QItemEditorFactory_SetDefaultFactory")]
-	public static extern void QItemEditorFactory_SetDefaultFactory(void** factory);
+	public QWidget_Ptr CreateEditor(c_int userType, IQWidget parent)
+	{
+		return QWidget_Ptr(CQt.QItemEditorFactory_CreateEditor((.)this.Ptr, userType, (.)parent?.ObjectPtr));
+	}
+	public void* ValuePropertyName(c_int userType)
+	{
+		return CQt.QItemEditorFactory_ValuePropertyName((.)this.Ptr, userType);
+	}
+	public void RegisterEditor(c_int userType, IQItemEditorCreatorBase creator)
+	{
+		CQt.QItemEditorFactory_RegisterEditor((.)this.Ptr, userType, (.)creator?.ObjectPtr);
+	}
+	public QItemEditorFactory_Ptr DefaultFactory()
+	{
+		return QItemEditorFactory_Ptr(CQt.QItemEditorFactory_DefaultFactory());
+	}
+	public void SetDefaultFactory(IQItemEditorFactory factory)
+	{
+		CQt.QItemEditorFactory_SetDefaultFactory((.)factory?.ObjectPtr);
+	}
 }
 class QItemEditorFactory : IQItemEditorFactory
 {
@@ -103,25 +112,44 @@ class QItemEditorFactory : IQItemEditorFactory
 	}
 	public QWidget_Ptr CreateEditor(c_int userType, IQWidget parent)
 	{
-		return QWidget_Ptr(CQt.QItemEditorFactory_CreateEditor((.)this.ptr.Ptr, userType, (.)parent?.ObjectPtr));
+		return this.ptr.CreateEditor(userType, parent);
 	}
 	public void* ValuePropertyName(c_int userType)
 	{
-		return CQt.QItemEditorFactory_ValuePropertyName((.)this.ptr.Ptr, userType);
+		return this.ptr.ValuePropertyName(userType);
 	}
 	public void RegisterEditor(c_int userType, IQItemEditorCreatorBase creator)
 	{
-		CQt.QItemEditorFactory_RegisterEditor((.)this.ptr.Ptr, userType, (.)creator?.ObjectPtr);
+		this.ptr.RegisterEditor(userType, creator);
 	}
 	public QItemEditorFactory_Ptr DefaultFactory()
 	{
-		return QItemEditorFactory_Ptr(CQt.QItemEditorFactory_DefaultFactory());
+		return this.ptr.DefaultFactory();
 	}
 	public void SetDefaultFactory(IQItemEditorFactory factory)
 	{
-		CQt.QItemEditorFactory_SetDefaultFactory((.)factory?.ObjectPtr);
+		this.ptr.SetDefaultFactory(factory);
 	}
 }
 interface IQItemEditorFactory : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QItemEditorFactory_new")]
+	public static extern QItemEditorFactory_Ptr QItemEditorFactory_new();
+	[LinkName("QItemEditorFactory_new2")]
+	public static extern QItemEditorFactory_Ptr QItemEditorFactory_new2(void** param1);
+	[LinkName("QItemEditorFactory_Delete")]
+	public static extern void QItemEditorFactory_Delete(QItemEditorFactory_Ptr self);
+	[LinkName("QItemEditorFactory_CreateEditor")]
+	public static extern void** QItemEditorFactory_CreateEditor(void* self, c_int userType, void** parent);
+	[LinkName("QItemEditorFactory_ValuePropertyName")]
+	public static extern void* QItemEditorFactory_ValuePropertyName(void* self, c_int userType);
+	[LinkName("QItemEditorFactory_RegisterEditor")]
+	public static extern void QItemEditorFactory_RegisterEditor(void* self, c_int userType, void** creator);
+	[LinkName("QItemEditorFactory_DefaultFactory")]
+	public static extern void** QItemEditorFactory_DefaultFactory();
+	[LinkName("QItemEditorFactory_SetDefaultFactory")]
+	public static extern void QItemEditorFactory_SetDefaultFactory(void** factory);
 }

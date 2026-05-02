@@ -14,6 +14,282 @@ struct QPageSize_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQPageSize other)
+	{
+		CQt.QPageSize_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEquivalentTo(IQPageSize other)
+	{
+		return CQt.QPageSize_IsEquivalentTo((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QPageSize_IsValid((.)this.Ptr);
+	}
+	public void Key(String outStr)
+	{
+		CQt.QPageSize_Key((.)this.Ptr);
+	}
+	public void Name(String outStr)
+	{
+		CQt.QPageSize_Name((.)this.Ptr);
+	}
+	public QPageSize_PageSizeId Id()
+	{
+		return CQt.QPageSize_Id((.)this.Ptr);
+	}
+	public c_int WindowsId()
+	{
+		return CQt.QPageSize_WindowsId((.)this.Ptr);
+	}
+	public QSizeF_Ptr DefinitionSize()
+	{
+		return QSizeF_Ptr(CQt.QPageSize_DefinitionSize((.)this.Ptr));
+	}
+	public QPageSize_Unit DefinitionUnits()
+	{
+		return CQt.QPageSize_DefinitionUnits((.)this.Ptr);
+	}
+	public QSizeF_Ptr Size(QPageSize_Unit units)
+	{
+		return QSizeF_Ptr(CQt.QPageSize_Size((.)this.Ptr, units));
+	}
+	public QSize_Ptr SizePoints()
+	{
+		return QSize_Ptr(CQt.QPageSize_SizePoints((.)this.Ptr));
+	}
+	public QSize_Ptr SizePixels(c_int resolution)
+	{
+		return QSize_Ptr(CQt.QPageSize_SizePixels((.)this.Ptr, resolution));
+	}
+	public QRectF_Ptr Rect(QPageSize_Unit units)
+	{
+		return QRectF_Ptr(CQt.QPageSize_Rect((.)this.Ptr, units));
+	}
+	public QRect_Ptr RectPoints()
+	{
+		return QRect_Ptr(CQt.QPageSize_RectPoints((.)this.Ptr));
+	}
+	public QRect_Ptr RectPixels(c_int resolution)
+	{
+		return QRect_Ptr(CQt.QPageSize_RectPixels((.)this.Ptr, resolution));
+	}
+	public void Key2(String outStr, QPageSize_PageSizeId pageSizeId)
+	{
+		CQt.QPageSize_Key2(pageSizeId);
+	}
+	public void Name2(String outStr, QPageSize_PageSizeId pageSizeId)
+	{
+		CQt.QPageSize_Name2(pageSizeId);
+	}
+	public QPageSize_PageSizeId Id2(IQSize pointSize)
+	{
+		return CQt.QPageSize_Id2((.)pointSize?.ObjectPtr);
+	}
+	public QPageSize_PageSizeId Id3(IQSizeF size, QPageSize_Unit units)
+	{
+		return CQt.QPageSize_Id3((.)size?.ObjectPtr, units);
+	}
+	public QPageSize_PageSizeId Id4(c_int windowsId)
+	{
+		return CQt.QPageSize_Id4(windowsId);
+	}
+	public c_int WindowsId2(QPageSize_PageSizeId pageSizeId)
+	{
+		return CQt.QPageSize_WindowsId2(pageSizeId);
+	}
+	public QSizeF_Ptr DefinitionSize2(QPageSize_PageSizeId pageSizeId)
+	{
+		return QSizeF_Ptr(CQt.QPageSize_DefinitionSize2(pageSizeId));
+	}
+	public QPageSize_Unit DefinitionUnits2(QPageSize_PageSizeId pageSizeId)
+	{
+		return CQt.QPageSize_DefinitionUnits2(pageSizeId);
+	}
+	public QSizeF_Ptr Size2(QPageSize_PageSizeId pageSizeId, QPageSize_Unit units)
+	{
+		return QSizeF_Ptr(CQt.QPageSize_Size2(pageSizeId, units));
+	}
+	public QSize_Ptr SizePoints2(QPageSize_PageSizeId pageSizeId)
+	{
+		return QSize_Ptr(CQt.QPageSize_SizePoints2(pageSizeId));
+	}
+	public QSize_Ptr SizePixels2(QPageSize_PageSizeId pageSizeId, c_int resolution)
+	{
+		return QSize_Ptr(CQt.QPageSize_SizePixels2(pageSizeId, resolution));
+	}
+	public QPageSize_PageSizeId Id22(IQSize pointSize, QPageSize_SizeMatchPolicy matchPolicy)
+	{
+		return CQt.QPageSize_Id22((.)pointSize?.ObjectPtr, matchPolicy);
+	}
+	public QPageSize_PageSizeId Id32(IQSizeF size, QPageSize_Unit units, QPageSize_SizeMatchPolicy matchPolicy)
+	{
+		return CQt.QPageSize_Id32((.)size?.ObjectPtr, units, matchPolicy);
+	}
+}
+class QPageSize : IQPageSize
+{
+	private QPageSize_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPageSize_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QPageSize_new();
+	}
+	public this(QPageSize_PageSizeId pageSizeId)
+	{
+		this.ptr = CQt.QPageSize_new2(pageSizeId);
+	}
+	public this(IQSize pointSize)
+	{
+		this.ptr = CQt.QPageSize_new3((.)pointSize?.ObjectPtr);
+	}
+	public this(IQSizeF size, QPageSize_Unit units)
+	{
+		this.ptr = CQt.QPageSize_new4((.)size?.ObjectPtr, units);
+	}
+	public this(IQPageSize other)
+	{
+		this.ptr = CQt.QPageSize_new5((.)other?.ObjectPtr);
+	}
+	public this(IQSize pointSize, String name)
+	{
+		this.ptr = CQt.QPageSize_new6((.)pointSize?.ObjectPtr, libqt_string(name));
+	}
+	public this(IQSize pointSize, String name, QPageSize_SizeMatchPolicy matchPolicy)
+	{
+		this.ptr = CQt.QPageSize_new7((.)pointSize?.ObjectPtr, libqt_string(name), matchPolicy);
+	}
+	public this(IQSizeF size, QPageSize_Unit units, String name)
+	{
+		this.ptr = CQt.QPageSize_new8((.)size?.ObjectPtr, units, libqt_string(name));
+	}
+	public this(IQSizeF size, QPageSize_Unit units, String name, QPageSize_SizeMatchPolicy matchPolicy)
+	{
+		this.ptr = CQt.QPageSize_new9((.)size?.ObjectPtr, units, libqt_string(name), matchPolicy);
+	}
+	public ~this()
+	{
+		CQt.QPageSize_Delete(this.ptr);
+	}
+	public void Swap(IQPageSize other)
+	{
+		this.ptr.Swap(other);
+	}
+	public bool IsEquivalentTo(IQPageSize other)
+	{
+		return this.ptr.IsEquivalentTo(other);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void Key(String outStr)
+	{
+		this.ptr.Key(outStr);
+	}
+	public void Name(String outStr)
+	{
+		this.ptr.Name(outStr);
+	}
+	public QPageSize_PageSizeId Id()
+	{
+		return this.ptr.Id();
+	}
+	public c_int WindowsId()
+	{
+		return this.ptr.WindowsId();
+	}
+	public QSizeF_Ptr DefinitionSize()
+	{
+		return this.ptr.DefinitionSize();
+	}
+	public QPageSize_Unit DefinitionUnits()
+	{
+		return this.ptr.DefinitionUnits();
+	}
+	public QSizeF_Ptr Size(QPageSize_Unit units)
+	{
+		return this.ptr.Size(units);
+	}
+	public QSize_Ptr SizePoints()
+	{
+		return this.ptr.SizePoints();
+	}
+	public QSize_Ptr SizePixels(c_int resolution)
+	{
+		return this.ptr.SizePixels(resolution);
+	}
+	public QRectF_Ptr Rect(QPageSize_Unit units)
+	{
+		return this.ptr.Rect(units);
+	}
+	public QRect_Ptr RectPoints()
+	{
+		return this.ptr.RectPoints();
+	}
+	public QRect_Ptr RectPixels(c_int resolution)
+	{
+		return this.ptr.RectPixels(resolution);
+	}
+	public void Key2(String outStr, QPageSize_PageSizeId pageSizeId)
+	{
+		this.ptr.Key2(outStr, pageSizeId);
+	}
+	public void Name2(String outStr, QPageSize_PageSizeId pageSizeId)
+	{
+		this.ptr.Name2(outStr, pageSizeId);
+	}
+	public QPageSize_PageSizeId Id2(IQSize pointSize)
+	{
+		return this.ptr.Id2(pointSize);
+	}
+	public QPageSize_PageSizeId Id3(IQSizeF size, QPageSize_Unit units)
+	{
+		return this.ptr.Id3(size, units);
+	}
+	public QPageSize_PageSizeId Id4(c_int windowsId)
+	{
+		return this.ptr.Id4(windowsId);
+	}
+	public c_int WindowsId2(QPageSize_PageSizeId pageSizeId)
+	{
+		return this.ptr.WindowsId2(pageSizeId);
+	}
+	public QSizeF_Ptr DefinitionSize2(QPageSize_PageSizeId pageSizeId)
+	{
+		return this.ptr.DefinitionSize2(pageSizeId);
+	}
+	public QPageSize_Unit DefinitionUnits2(QPageSize_PageSizeId pageSizeId)
+	{
+		return this.ptr.DefinitionUnits2(pageSizeId);
+	}
+	public QSizeF_Ptr Size2(QPageSize_PageSizeId pageSizeId, QPageSize_Unit units)
+	{
+		return this.ptr.Size2(pageSizeId, units);
+	}
+	public QSize_Ptr SizePoints2(QPageSize_PageSizeId pageSizeId)
+	{
+		return this.ptr.SizePoints2(pageSizeId);
+	}
+	public QSize_Ptr SizePixels2(QPageSize_PageSizeId pageSizeId, c_int resolution)
+	{
+		return this.ptr.SizePixels2(pageSizeId, resolution);
+	}
+	public QPageSize_PageSizeId Id22(IQSize pointSize, QPageSize_SizeMatchPolicy matchPolicy)
+	{
+		return this.ptr.Id22(pointSize, matchPolicy);
+	}
+	public QPageSize_PageSizeId Id32(IQSizeF size, QPageSize_Unit units, QPageSize_SizeMatchPolicy matchPolicy)
+	{
+		return this.ptr.Id32(size, units, matchPolicy);
+	}
+}
+interface IQPageSize : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -95,170 +371,6 @@ extension CQt
 	public static extern QPageSize_PageSizeId QPageSize_Id22(void** pointSize, QPageSize_SizeMatchPolicy matchPolicy);
 	[LinkName("QPageSize_Id32")]
 	public static extern QPageSize_PageSizeId QPageSize_Id32(void** size, QPageSize_Unit units, QPageSize_SizeMatchPolicy matchPolicy);
-}
-class QPageSize : IQPageSize
-{
-	private QPageSize_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QPageSize_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QPageSize_new();
-	}
-	public this(QPageSize_PageSizeId pageSizeId)
-	{
-		this.ptr = CQt.QPageSize_new2(pageSizeId);
-	}
-	public this(IQSize pointSize)
-	{
-		this.ptr = CQt.QPageSize_new3((.)pointSize?.ObjectPtr);
-	}
-	public this(IQSizeF size, QPageSize_Unit units)
-	{
-		this.ptr = CQt.QPageSize_new4((.)size?.ObjectPtr, units);
-	}
-	public this(IQPageSize other)
-	{
-		this.ptr = CQt.QPageSize_new5((.)other?.ObjectPtr);
-	}
-	public this(IQSize pointSize, String name)
-	{
-		this.ptr = CQt.QPageSize_new6((.)pointSize?.ObjectPtr, libqt_string(name));
-	}
-	public this(IQSize pointSize, String name, QPageSize_SizeMatchPolicy matchPolicy)
-	{
-		this.ptr = CQt.QPageSize_new7((.)pointSize?.ObjectPtr, libqt_string(name), matchPolicy);
-	}
-	public this(IQSizeF size, QPageSize_Unit units, String name)
-	{
-		this.ptr = CQt.QPageSize_new8((.)size?.ObjectPtr, units, libqt_string(name));
-	}
-	public this(IQSizeF size, QPageSize_Unit units, String name, QPageSize_SizeMatchPolicy matchPolicy)
-	{
-		this.ptr = CQt.QPageSize_new9((.)size?.ObjectPtr, units, libqt_string(name), matchPolicy);
-	}
-	public ~this()
-	{
-		CQt.QPageSize_Delete(this.ptr);
-	}
-	public void Swap(IQPageSize other)
-	{
-		CQt.QPageSize_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEquivalentTo(IQPageSize other)
-	{
-		return CQt.QPageSize_IsEquivalentTo((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QPageSize_IsValid((.)this.ptr.Ptr);
-	}
-	public void Key(String outStr)
-	{
-		CQt.QPageSize_Key((.)this.ptr.Ptr);
-	}
-	public void Name(String outStr)
-	{
-		CQt.QPageSize_Name((.)this.ptr.Ptr);
-	}
-	public QPageSize_PageSizeId Id()
-	{
-		return CQt.QPageSize_Id((.)this.ptr.Ptr);
-	}
-	public c_int WindowsId()
-	{
-		return CQt.QPageSize_WindowsId((.)this.ptr.Ptr);
-	}
-	public QSizeF_Ptr DefinitionSize()
-	{
-		return QSizeF_Ptr(CQt.QPageSize_DefinitionSize((.)this.ptr.Ptr));
-	}
-	public QPageSize_Unit DefinitionUnits()
-	{
-		return CQt.QPageSize_DefinitionUnits((.)this.ptr.Ptr);
-	}
-	public QSizeF_Ptr Size(QPageSize_Unit units)
-	{
-		return QSizeF_Ptr(CQt.QPageSize_Size((.)this.ptr.Ptr, units));
-	}
-	public QSize_Ptr SizePoints()
-	{
-		return QSize_Ptr(CQt.QPageSize_SizePoints((.)this.ptr.Ptr));
-	}
-	public QSize_Ptr SizePixels(c_int resolution)
-	{
-		return QSize_Ptr(CQt.QPageSize_SizePixels((.)this.ptr.Ptr, resolution));
-	}
-	public QRectF_Ptr Rect(QPageSize_Unit units)
-	{
-		return QRectF_Ptr(CQt.QPageSize_Rect((.)this.ptr.Ptr, units));
-	}
-	public QRect_Ptr RectPoints()
-	{
-		return QRect_Ptr(CQt.QPageSize_RectPoints((.)this.ptr.Ptr));
-	}
-	public QRect_Ptr RectPixels(c_int resolution)
-	{
-		return QRect_Ptr(CQt.QPageSize_RectPixels((.)this.ptr.Ptr, resolution));
-	}
-	public void Key2(String outStr, QPageSize_PageSizeId pageSizeId)
-	{
-		CQt.QPageSize_Key2(pageSizeId);
-	}
-	public void Name2(String outStr, QPageSize_PageSizeId pageSizeId)
-	{
-		CQt.QPageSize_Name2(pageSizeId);
-	}
-	public QPageSize_PageSizeId Id2(IQSize pointSize)
-	{
-		return CQt.QPageSize_Id2((.)pointSize?.ObjectPtr);
-	}
-	public QPageSize_PageSizeId Id3(IQSizeF size, QPageSize_Unit units)
-	{
-		return CQt.QPageSize_Id3((.)size?.ObjectPtr, units);
-	}
-	public QPageSize_PageSizeId Id4(c_int windowsId)
-	{
-		return CQt.QPageSize_Id4(windowsId);
-	}
-	public c_int WindowsId2(QPageSize_PageSizeId pageSizeId)
-	{
-		return CQt.QPageSize_WindowsId2(pageSizeId);
-	}
-	public QSizeF_Ptr DefinitionSize2(QPageSize_PageSizeId pageSizeId)
-	{
-		return QSizeF_Ptr(CQt.QPageSize_DefinitionSize2(pageSizeId));
-	}
-	public QPageSize_Unit DefinitionUnits2(QPageSize_PageSizeId pageSizeId)
-	{
-		return CQt.QPageSize_DefinitionUnits2(pageSizeId);
-	}
-	public QSizeF_Ptr Size2(QPageSize_PageSizeId pageSizeId, QPageSize_Unit units)
-	{
-		return QSizeF_Ptr(CQt.QPageSize_Size2(pageSizeId, units));
-	}
-	public QSize_Ptr SizePoints2(QPageSize_PageSizeId pageSizeId)
-	{
-		return QSize_Ptr(CQt.QPageSize_SizePoints2(pageSizeId));
-	}
-	public QSize_Ptr SizePixels2(QPageSize_PageSizeId pageSizeId, c_int resolution)
-	{
-		return QSize_Ptr(CQt.QPageSize_SizePixels2(pageSizeId, resolution));
-	}
-	public QPageSize_PageSizeId Id22(IQSize pointSize, QPageSize_SizeMatchPolicy matchPolicy)
-	{
-		return CQt.QPageSize_Id22((.)pointSize?.ObjectPtr, matchPolicy);
-	}
-	public QPageSize_PageSizeId Id32(IQSizeF size, QPageSize_Unit units, QPageSize_SizeMatchPolicy matchPolicy)
-	{
-		return CQt.QPageSize_Id32((.)size?.ObjectPtr, units, matchPolicy);
-	}
-}
-interface IQPageSize : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QPageSize_PageSizeId

@@ -14,6 +14,66 @@ struct QJsonParseError_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void ErrorString(String outStr)
+	{
+		CQt.QJsonParseError_ErrorString((.)this.Ptr);
+	}
+	public c_int Offset()
+	{
+		return CQt.QJsonParseError_Offset((.)this.Ptr);
+	}
+	public void SetOffset(c_int offset)
+	{
+		CQt.QJsonParseError_SetOffset((.)this.Ptr, offset);
+	}
+	public QJsonParseError_ParseError Error()
+	{
+		return CQt.QJsonParseError_Error((.)this.Ptr);
+	}
+	public void SetError(QJsonParseError_ParseError error)
+	{
+		CQt.QJsonParseError_SetError((.)this.Ptr, error);
+	}
+}
+class QJsonParseError : IQJsonParseError
+{
+	private QJsonParseError_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QJsonParseError_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQJsonParseError other)
+	{
+		this.ptr = CQt.QJsonParseError_new((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QJsonParseError_Delete(this.ptr);
+	}
+	public void ErrorString(String outStr)
+	{
+		this.ptr.ErrorString(outStr);
+	}
+	public c_int Offset()
+	{
+		return this.ptr.Offset();
+	}
+	public void SetOffset(c_int offset)
+	{
+		this.ptr.SetOffset(offset);
+	}
+	public QJsonParseError_ParseError Error()
+	{
+		return this.ptr.Error();
+	}
+	public void SetError(QJsonParseError_ParseError error)
+	{
+		this.ptr.SetError(error);
+	}
+}
+interface IQJsonParseError : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -34,46 +94,6 @@ extension CQt
 	[LinkName("QJsonParseError_SetError")]
 	public static extern void QJsonParseError_SetError(void* self, QJsonParseError_ParseError error);
 }
-class QJsonParseError : IQJsonParseError
-{
-	private QJsonParseError_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QJsonParseError_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQJsonParseError other)
-	{
-		this.ptr = CQt.QJsonParseError_new((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QJsonParseError_Delete(this.ptr);
-	}
-	public void ErrorString(String outStr)
-	{
-		CQt.QJsonParseError_ErrorString((.)this.ptr.Ptr);
-	}
-	public c_int Offset()
-	{
-		return CQt.QJsonParseError_Offset((.)this.ptr.Ptr);
-	}
-	public void SetOffset(c_int offset)
-	{
-		CQt.QJsonParseError_SetOffset((.)this.ptr.Ptr, offset);
-	}
-	public QJsonParseError_ParseError Error()
-	{
-		return CQt.QJsonParseError_Error((.)this.ptr.Ptr);
-	}
-	public void SetError(QJsonParseError_ParseError error)
-	{
-		CQt.QJsonParseError_SetError((.)this.ptr.Ptr, error);
-	}
-}
-interface IQJsonParseError : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QJsonDocument
 // --------------------------------------------------------------
@@ -85,6 +105,166 @@ struct QJsonDocument_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQJsonDocument other)
+	{
+		CQt.QJsonDocument_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public QJsonDocument_Ptr FromVariant(IQVariant variant)
+	{
+		return QJsonDocument_Ptr(CQt.QJsonDocument_FromVariant((.)variant?.ObjectPtr));
+	}
+	public QVariant_Ptr ToVariant()
+	{
+		return QVariant_Ptr(CQt.QJsonDocument_ToVariant((.)this.Ptr));
+	}
+	public QJsonDocument_Ptr FromJson(void** json)
+	{
+		return QJsonDocument_Ptr(CQt.QJsonDocument_FromJson(json));
+	}
+	public void* ToJson()
+	{
+		return CQt.QJsonDocument_ToJson((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QJsonDocument_IsEmpty((.)this.Ptr);
+	}
+	public bool IsArray()
+	{
+		return CQt.QJsonDocument_IsArray((.)this.Ptr);
+	}
+	public bool IsObject()
+	{
+		return CQt.QJsonDocument_IsObject((.)this.Ptr);
+	}
+	public QJsonObject_Ptr Object()
+	{
+		return QJsonObject_Ptr(CQt.QJsonDocument_Object((.)this.Ptr));
+	}
+	public QJsonArray_Ptr Array()
+	{
+		return QJsonArray_Ptr(CQt.QJsonDocument_Array((.)this.Ptr));
+	}
+	public void SetObject(IQJsonObject object)
+	{
+		CQt.QJsonDocument_SetObject((.)this.Ptr, (.)object?.ObjectPtr);
+	}
+	public void SetArray(IQJsonArray array)
+	{
+		CQt.QJsonDocument_SetArray((.)this.Ptr, (.)array?.ObjectPtr);
+	}
+	public QJsonValue_Ptr OperatorSubscript4(void* i)
+	{
+		return QJsonValue_Ptr(CQt.QJsonDocument_OperatorSubscript4((.)this.Ptr, i));
+	}
+	public bool IsNull()
+	{
+		return CQt.QJsonDocument_IsNull((.)this.Ptr);
+	}
+	public QJsonDocument_Ptr FromJson2(void** json, IQJsonParseError error)
+	{
+		return QJsonDocument_Ptr(CQt.QJsonDocument_FromJson2(json, (.)error?.ObjectPtr));
+	}
+	public void* ToJson1(QJsonDocument_JsonFormat format)
+	{
+		return CQt.QJsonDocument_ToJson1((.)this.Ptr, format);
+	}
+}
+class QJsonDocument : IQJsonDocument
+{
+	private QJsonDocument_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QJsonDocument_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QJsonDocument_new();
+	}
+	public this(IQJsonObject object)
+	{
+		this.ptr = CQt.QJsonDocument_new2((.)object?.ObjectPtr);
+	}
+	public this(IQJsonArray array)
+	{
+		this.ptr = CQt.QJsonDocument_new3((.)array?.ObjectPtr);
+	}
+	public this(IQJsonDocument other)
+	{
+		this.ptr = CQt.QJsonDocument_new4((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QJsonDocument_Delete(this.ptr);
+	}
+	public void Swap(IQJsonDocument other)
+	{
+		this.ptr.Swap(other);
+	}
+	public QJsonDocument_Ptr FromVariant(IQVariant variant)
+	{
+		return this.ptr.FromVariant(variant);
+	}
+	public QVariant_Ptr ToVariant()
+	{
+		return this.ptr.ToVariant();
+	}
+	public QJsonDocument_Ptr FromJson(void** json)
+	{
+		return this.ptr.FromJson(json);
+	}
+	public void* ToJson()
+	{
+		return this.ptr.ToJson();
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public bool IsArray()
+	{
+		return this.ptr.IsArray();
+	}
+	public bool IsObject()
+	{
+		return this.ptr.IsObject();
+	}
+	public QJsonObject_Ptr Object()
+	{
+		return this.ptr.Object();
+	}
+	public QJsonArray_Ptr Array()
+	{
+		return this.ptr.Array();
+	}
+	public void SetObject(IQJsonObject object)
+	{
+		this.ptr.SetObject(object);
+	}
+	public void SetArray(IQJsonArray array)
+	{
+		this.ptr.SetArray(array);
+	}
+	public QJsonValue_Ptr OperatorSubscript4(void* i)
+	{
+		return this.ptr.OperatorSubscript4(i);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public QJsonDocument_Ptr FromJson2(void** json, IQJsonParseError error)
+	{
+		return this.ptr.FromJson2(json, error);
+	}
+	public void* ToJson1(QJsonDocument_JsonFormat format)
+	{
+		return this.ptr.ToJson1(format);
+	}
+}
+interface IQJsonDocument : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -138,102 +318,6 @@ extension CQt
 	public static extern void* QJsonDocument_FromJson2(void** json, void** error);
 	[LinkName("QJsonDocument_ToJson1")]
 	public static extern void* QJsonDocument_ToJson1(void* self, QJsonDocument_JsonFormat format);
-}
-class QJsonDocument : IQJsonDocument
-{
-	private QJsonDocument_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QJsonDocument_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QJsonDocument_new();
-	}
-	public this(IQJsonObject object)
-	{
-		this.ptr = CQt.QJsonDocument_new2((.)object?.ObjectPtr);
-	}
-	public this(IQJsonArray array)
-	{
-		this.ptr = CQt.QJsonDocument_new3((.)array?.ObjectPtr);
-	}
-	public this(IQJsonDocument other)
-	{
-		this.ptr = CQt.QJsonDocument_new4((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QJsonDocument_Delete(this.ptr);
-	}
-	public void Swap(IQJsonDocument other)
-	{
-		CQt.QJsonDocument_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public QJsonDocument_Ptr FromVariant(IQVariant variant)
-	{
-		return QJsonDocument_Ptr(CQt.QJsonDocument_FromVariant((.)variant?.ObjectPtr));
-	}
-	public QVariant_Ptr ToVariant()
-	{
-		return QVariant_Ptr(CQt.QJsonDocument_ToVariant((.)this.ptr.Ptr));
-	}
-	public QJsonDocument_Ptr FromJson(void** json)
-	{
-		return QJsonDocument_Ptr(CQt.QJsonDocument_FromJson(json));
-	}
-	public void* ToJson()
-	{
-		return CQt.QJsonDocument_ToJson((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QJsonDocument_IsEmpty((.)this.ptr.Ptr);
-	}
-	public bool IsArray()
-	{
-		return CQt.QJsonDocument_IsArray((.)this.ptr.Ptr);
-	}
-	public bool IsObject()
-	{
-		return CQt.QJsonDocument_IsObject((.)this.ptr.Ptr);
-	}
-	public QJsonObject_Ptr Object()
-	{
-		return QJsonObject_Ptr(CQt.QJsonDocument_Object((.)this.ptr.Ptr));
-	}
-	public QJsonArray_Ptr Array()
-	{
-		return QJsonArray_Ptr(CQt.QJsonDocument_Array((.)this.ptr.Ptr));
-	}
-	public void SetObject(IQJsonObject object)
-	{
-		CQt.QJsonDocument_SetObject((.)this.ptr.Ptr, (.)object?.ObjectPtr);
-	}
-	public void SetArray(IQJsonArray array)
-	{
-		CQt.QJsonDocument_SetArray((.)this.ptr.Ptr, (.)array?.ObjectPtr);
-	}
-	public QJsonValue_Ptr OperatorSubscript4(void* i)
-	{
-		return QJsonValue_Ptr(CQt.QJsonDocument_OperatorSubscript4((.)this.ptr.Ptr, i));
-	}
-	public bool IsNull()
-	{
-		return CQt.QJsonDocument_IsNull((.)this.ptr.Ptr);
-	}
-	public QJsonDocument_Ptr FromJson2(void** json, IQJsonParseError error)
-	{
-		return QJsonDocument_Ptr(CQt.QJsonDocument_FromJson2(json, (.)error?.ObjectPtr));
-	}
-	public void* ToJson1(QJsonDocument_JsonFormat format)
-	{
-		return CQt.QJsonDocument_ToJson1((.)this.ptr.Ptr, format);
-	}
-}
-interface IQJsonDocument : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QJsonParseError_ParseError

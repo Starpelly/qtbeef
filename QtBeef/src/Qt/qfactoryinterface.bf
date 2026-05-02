@@ -14,13 +14,10 @@ struct QFactoryInterface_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QFactoryInterface_Delete")]
-	public static extern void QFactoryInterface_Delete(QFactoryInterface_Ptr self);
-	[LinkName("QFactoryInterface_Keys")]
-	public static extern void* QFactoryInterface_Keys(void* self);
+	public void* Keys()
+	{
+		return CQt.QFactoryInterface_Keys((.)this.Ptr);
+	}
 }
 class QFactoryInterface : IQFactoryInterface
 {
@@ -36,9 +33,16 @@ class QFactoryInterface : IQFactoryInterface
 	}
 	public void* Keys()
 	{
-		return CQt.QFactoryInterface_Keys((.)this.ptr.Ptr);
+		return this.ptr.Keys();
 	}
 }
 interface IQFactoryInterface : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QFactoryInterface_Delete")]
+	public static extern void QFactoryInterface_Delete(QFactoryInterface_Ptr self);
+	[LinkName("QFactoryInterface_Keys")]
+	public static extern void* QFactoryInterface_Keys(void* self);
 }

@@ -14,6 +14,362 @@ struct QPalette_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQPalette other)
+	{
+		CQt.QPalette_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public QPalette_ColorGroup CurrentColorGroup()
+	{
+		return CQt.QPalette_CurrentColorGroup((.)this.Ptr);
+	}
+	public void SetCurrentColorGroup(QPalette_ColorGroup cg)
+	{
+		CQt.QPalette_SetCurrentColorGroup((.)this.Ptr, cg);
+	}
+	public QColor_Ptr Color(QPalette_ColorGroup cg, QPalette_ColorRole cr)
+	{
+		return QColor_Ptr(CQt.QPalette_Color((.)this.Ptr, cg, cr));
+	}
+	public QBrush_Ptr Brush(QPalette_ColorGroup cg, QPalette_ColorRole cr)
+	{
+		return QBrush_Ptr(CQt.QPalette_Brush((.)this.Ptr, cg, cr));
+	}
+	public void SetColor(QPalette_ColorGroup cg, QPalette_ColorRole cr, IQColor color)
+	{
+		CQt.QPalette_SetColor((.)this.Ptr, cg, cr, (.)color?.ObjectPtr);
+	}
+	public void SetColor2(QPalette_ColorRole cr, IQColor color)
+	{
+		CQt.QPalette_SetColor2((.)this.Ptr, cr, (.)color?.ObjectPtr);
+	}
+	public void SetBrush(QPalette_ColorRole cr, IQBrush brush)
+	{
+		CQt.QPalette_SetBrush((.)this.Ptr, cr, (.)brush?.ObjectPtr);
+	}
+	public bool IsBrushSet(QPalette_ColorGroup cg, QPalette_ColorRole cr)
+	{
+		return CQt.QPalette_IsBrushSet((.)this.Ptr, cg, cr);
+	}
+	public void SetBrush2(QPalette_ColorGroup cg, QPalette_ColorRole cr, IQBrush brush)
+	{
+		CQt.QPalette_SetBrush2((.)this.Ptr, cg, cr, (.)brush?.ObjectPtr);
+	}
+	public void SetColorGroup(QPalette_ColorGroup cr, IQBrush windowText, IQBrush button, IQBrush light, IQBrush dark, IQBrush mid, IQBrush text, IQBrush bright_text, IQBrush _base, IQBrush window)
+	{
+		CQt.QPalette_SetColorGroup((.)this.Ptr, cr, (.)windowText?.ObjectPtr, (.)button?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)bright_text?.ObjectPtr, (.)_base?.ObjectPtr, (.)window?.ObjectPtr);
+	}
+	public bool IsEqual(QPalette_ColorGroup cr1, QPalette_ColorGroup cr2)
+	{
+		return CQt.QPalette_IsEqual((.)this.Ptr, cr1, cr2);
+	}
+	public QColor_Ptr Color2(QPalette_ColorRole cr)
+	{
+		return QColor_Ptr(CQt.QPalette_Color2((.)this.Ptr, cr));
+	}
+	public QBrush_Ptr Brush2(QPalette_ColorRole cr)
+	{
+		return QBrush_Ptr(CQt.QPalette_Brush2((.)this.Ptr, cr));
+	}
+	public QBrush_Ptr WindowText()
+	{
+		return QBrush_Ptr(CQt.QPalette_WindowText((.)this.Ptr));
+	}
+	public QBrush_Ptr Button()
+	{
+		return QBrush_Ptr(CQt.QPalette_Button((.)this.Ptr));
+	}
+	public QBrush_Ptr Light()
+	{
+		return QBrush_Ptr(CQt.QPalette_Light((.)this.Ptr));
+	}
+	public QBrush_Ptr Dark()
+	{
+		return QBrush_Ptr(CQt.QPalette_Dark((.)this.Ptr));
+	}
+	public QBrush_Ptr Mid()
+	{
+		return QBrush_Ptr(CQt.QPalette_Mid((.)this.Ptr));
+	}
+	public QBrush_Ptr Text()
+	{
+		return QBrush_Ptr(CQt.QPalette_Text((.)this.Ptr));
+	}
+	public QBrush_Ptr Base()
+	{
+		return QBrush_Ptr(CQt.QPalette_Base((.)this.Ptr));
+	}
+	public QBrush_Ptr AlternateBase()
+	{
+		return QBrush_Ptr(CQt.QPalette_AlternateBase((.)this.Ptr));
+	}
+	public QBrush_Ptr ToolTipBase()
+	{
+		return QBrush_Ptr(CQt.QPalette_ToolTipBase((.)this.Ptr));
+	}
+	public QBrush_Ptr ToolTipText()
+	{
+		return QBrush_Ptr(CQt.QPalette_ToolTipText((.)this.Ptr));
+	}
+	public QBrush_Ptr Window()
+	{
+		return QBrush_Ptr(CQt.QPalette_Window((.)this.Ptr));
+	}
+	public QBrush_Ptr Midlight()
+	{
+		return QBrush_Ptr(CQt.QPalette_Midlight((.)this.Ptr));
+	}
+	public QBrush_Ptr BrightText()
+	{
+		return QBrush_Ptr(CQt.QPalette_BrightText((.)this.Ptr));
+	}
+	public QBrush_Ptr ButtonText()
+	{
+		return QBrush_Ptr(CQt.QPalette_ButtonText((.)this.Ptr));
+	}
+	public QBrush_Ptr Shadow()
+	{
+		return QBrush_Ptr(CQt.QPalette_Shadow((.)this.Ptr));
+	}
+	public QBrush_Ptr Highlight()
+	{
+		return QBrush_Ptr(CQt.QPalette_Highlight((.)this.Ptr));
+	}
+	public QBrush_Ptr HighlightedText()
+	{
+		return QBrush_Ptr(CQt.QPalette_HighlightedText((.)this.Ptr));
+	}
+	public QBrush_Ptr Link()
+	{
+		return QBrush_Ptr(CQt.QPalette_Link((.)this.Ptr));
+	}
+	public QBrush_Ptr LinkVisited()
+	{
+		return QBrush_Ptr(CQt.QPalette_LinkVisited((.)this.Ptr));
+	}
+	public QBrush_Ptr PlaceholderText()
+	{
+		return QBrush_Ptr(CQt.QPalette_PlaceholderText((.)this.Ptr));
+	}
+	public bool IsCopyOf(IQPalette p)
+	{
+		return CQt.QPalette_IsCopyOf((.)this.Ptr, (.)p?.ObjectPtr);
+	}
+	public c_longlong CacheKey()
+	{
+		return CQt.QPalette_CacheKey((.)this.Ptr);
+	}
+	public QPalette_Ptr Resolve(IQPalette other)
+	{
+		return QPalette_Ptr(CQt.QPalette_Resolve((.)this.Ptr, (.)other?.ObjectPtr));
+	}
+	public c_ulonglong ResolveMask()
+	{
+		return CQt.QPalette_ResolveMask((.)this.Ptr);
+	}
+	public void SetResolveMask(c_ulonglong mask)
+	{
+		CQt.QPalette_SetResolveMask((.)this.Ptr, mask);
+	}
+}
+class QPalette : IQPalette
+{
+	private QPalette_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPalette_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QPalette_new();
+	}
+	public this(IQColor button)
+	{
+		this.ptr = CQt.QPalette_new2((.)button?.ObjectPtr);
+	}
+	public this(Qt_GlobalColor button)
+	{
+		this.ptr = CQt.QPalette_new3(button);
+	}
+	public this(IQColor button, IQColor window)
+	{
+		this.ptr = CQt.QPalette_new4((.)button?.ObjectPtr, (.)window?.ObjectPtr);
+	}
+	public this(IQBrush windowText, IQBrush button, IQBrush light, IQBrush dark, IQBrush mid, IQBrush text, IQBrush bright_text, IQBrush _base, IQBrush window)
+	{
+		this.ptr = CQt.QPalette_new5((.)windowText?.ObjectPtr, (.)button?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)bright_text?.ObjectPtr, (.)_base?.ObjectPtr, (.)window?.ObjectPtr);
+	}
+	public this(IQColor windowText, IQColor window, IQColor light, IQColor dark, IQColor mid, IQColor text, IQColor _base)
+	{
+		this.ptr = CQt.QPalette_new6((.)windowText?.ObjectPtr, (.)window?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)_base?.ObjectPtr);
+	}
+	public this(IQPalette palette)
+	{
+		this.ptr = CQt.QPalette_new7((.)palette?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QPalette_Delete(this.ptr);
+	}
+	public void Swap(IQPalette other)
+	{
+		this.ptr.Swap(other);
+	}
+	public QPalette_ColorGroup CurrentColorGroup()
+	{
+		return this.ptr.CurrentColorGroup();
+	}
+	public void SetCurrentColorGroup(QPalette_ColorGroup cg)
+	{
+		this.ptr.SetCurrentColorGroup(cg);
+	}
+	public QColor_Ptr Color(QPalette_ColorGroup cg, QPalette_ColorRole cr)
+	{
+		return this.ptr.Color(cg, cr);
+	}
+	public QBrush_Ptr Brush(QPalette_ColorGroup cg, QPalette_ColorRole cr)
+	{
+		return this.ptr.Brush(cg, cr);
+	}
+	public void SetColor(QPalette_ColorGroup cg, QPalette_ColorRole cr, IQColor color)
+	{
+		this.ptr.SetColor(cg, cr, color);
+	}
+	public void SetColor2(QPalette_ColorRole cr, IQColor color)
+	{
+		this.ptr.SetColor2(cr, color);
+	}
+	public void SetBrush(QPalette_ColorRole cr, IQBrush brush)
+	{
+		this.ptr.SetBrush(cr, brush);
+	}
+	public bool IsBrushSet(QPalette_ColorGroup cg, QPalette_ColorRole cr)
+	{
+		return this.ptr.IsBrushSet(cg, cr);
+	}
+	public void SetBrush2(QPalette_ColorGroup cg, QPalette_ColorRole cr, IQBrush brush)
+	{
+		this.ptr.SetBrush2(cg, cr, brush);
+	}
+	public void SetColorGroup(QPalette_ColorGroup cr, IQBrush windowText, IQBrush button, IQBrush light, IQBrush dark, IQBrush mid, IQBrush text, IQBrush bright_text, IQBrush _base, IQBrush window)
+	{
+		this.ptr.SetColorGroup(cr, windowText, button, light, dark, mid, text, bright_text, _base, window);
+	}
+	public bool IsEqual(QPalette_ColorGroup cr1, QPalette_ColorGroup cr2)
+	{
+		return this.ptr.IsEqual(cr1, cr2);
+	}
+	public QColor_Ptr Color2(QPalette_ColorRole cr)
+	{
+		return this.ptr.Color2(cr);
+	}
+	public QBrush_Ptr Brush2(QPalette_ColorRole cr)
+	{
+		return this.ptr.Brush2(cr);
+	}
+	public QBrush_Ptr WindowText()
+	{
+		return this.ptr.WindowText();
+	}
+	public QBrush_Ptr Button()
+	{
+		return this.ptr.Button();
+	}
+	public QBrush_Ptr Light()
+	{
+		return this.ptr.Light();
+	}
+	public QBrush_Ptr Dark()
+	{
+		return this.ptr.Dark();
+	}
+	public QBrush_Ptr Mid()
+	{
+		return this.ptr.Mid();
+	}
+	public QBrush_Ptr Text()
+	{
+		return this.ptr.Text();
+	}
+	public QBrush_Ptr Base()
+	{
+		return this.ptr.Base();
+	}
+	public QBrush_Ptr AlternateBase()
+	{
+		return this.ptr.AlternateBase();
+	}
+	public QBrush_Ptr ToolTipBase()
+	{
+		return this.ptr.ToolTipBase();
+	}
+	public QBrush_Ptr ToolTipText()
+	{
+		return this.ptr.ToolTipText();
+	}
+	public QBrush_Ptr Window()
+	{
+		return this.ptr.Window();
+	}
+	public QBrush_Ptr Midlight()
+	{
+		return this.ptr.Midlight();
+	}
+	public QBrush_Ptr BrightText()
+	{
+		return this.ptr.BrightText();
+	}
+	public QBrush_Ptr ButtonText()
+	{
+		return this.ptr.ButtonText();
+	}
+	public QBrush_Ptr Shadow()
+	{
+		return this.ptr.Shadow();
+	}
+	public QBrush_Ptr Highlight()
+	{
+		return this.ptr.Highlight();
+	}
+	public QBrush_Ptr HighlightedText()
+	{
+		return this.ptr.HighlightedText();
+	}
+	public QBrush_Ptr Link()
+	{
+		return this.ptr.Link();
+	}
+	public QBrush_Ptr LinkVisited()
+	{
+		return this.ptr.LinkVisited();
+	}
+	public QBrush_Ptr PlaceholderText()
+	{
+		return this.ptr.PlaceholderText();
+	}
+	public bool IsCopyOf(IQPalette p)
+	{
+		return this.ptr.IsCopyOf(p);
+	}
+	public c_longlong CacheKey()
+	{
+		return this.ptr.CacheKey();
+	}
+	public QPalette_Ptr Resolve(IQPalette other)
+	{
+		return this.ptr.Resolve(other);
+	}
+	public c_ulonglong ResolveMask()
+	{
+		return this.ptr.ResolveMask();
+	}
+	public void SetResolveMask(c_ulonglong mask)
+	{
+		this.ptr.SetResolveMask(mask);
+	}
+}
+interface IQPalette : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -119,206 +475,6 @@ extension CQt
 	public static extern c_ulonglong QPalette_ResolveMask(void* self);
 	[LinkName("QPalette_SetResolveMask")]
 	public static extern void QPalette_SetResolveMask(void* self, c_ulonglong mask);
-}
-class QPalette : IQPalette
-{
-	private QPalette_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QPalette_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QPalette_new();
-	}
-	public this(IQColor button)
-	{
-		this.ptr = CQt.QPalette_new2((.)button?.ObjectPtr);
-	}
-	public this(Qt_GlobalColor button)
-	{
-		this.ptr = CQt.QPalette_new3(button);
-	}
-	public this(IQColor button, IQColor window)
-	{
-		this.ptr = CQt.QPalette_new4((.)button?.ObjectPtr, (.)window?.ObjectPtr);
-	}
-	public this(IQBrush windowText, IQBrush button, IQBrush light, IQBrush dark, IQBrush mid, IQBrush text, IQBrush bright_text, IQBrush _base, IQBrush window)
-	{
-		this.ptr = CQt.QPalette_new5((.)windowText?.ObjectPtr, (.)button?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)bright_text?.ObjectPtr, (.)_base?.ObjectPtr, (.)window?.ObjectPtr);
-	}
-	public this(IQColor windowText, IQColor window, IQColor light, IQColor dark, IQColor mid, IQColor text, IQColor _base)
-	{
-		this.ptr = CQt.QPalette_new6((.)windowText?.ObjectPtr, (.)window?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)_base?.ObjectPtr);
-	}
-	public this(IQPalette palette)
-	{
-		this.ptr = CQt.QPalette_new7((.)palette?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QPalette_Delete(this.ptr);
-	}
-	public void Swap(IQPalette other)
-	{
-		CQt.QPalette_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public QPalette_ColorGroup CurrentColorGroup()
-	{
-		return CQt.QPalette_CurrentColorGroup((.)this.ptr.Ptr);
-	}
-	public void SetCurrentColorGroup(QPalette_ColorGroup cg)
-	{
-		CQt.QPalette_SetCurrentColorGroup((.)this.ptr.Ptr, cg);
-	}
-	public QColor_Ptr Color(QPalette_ColorGroup cg, QPalette_ColorRole cr)
-	{
-		return QColor_Ptr(CQt.QPalette_Color((.)this.ptr.Ptr, cg, cr));
-	}
-	public QBrush_Ptr Brush(QPalette_ColorGroup cg, QPalette_ColorRole cr)
-	{
-		return QBrush_Ptr(CQt.QPalette_Brush((.)this.ptr.Ptr, cg, cr));
-	}
-	public void SetColor(QPalette_ColorGroup cg, QPalette_ColorRole cr, IQColor color)
-	{
-		CQt.QPalette_SetColor((.)this.ptr.Ptr, cg, cr, (.)color?.ObjectPtr);
-	}
-	public void SetColor2(QPalette_ColorRole cr, IQColor color)
-	{
-		CQt.QPalette_SetColor2((.)this.ptr.Ptr, cr, (.)color?.ObjectPtr);
-	}
-	public void SetBrush(QPalette_ColorRole cr, IQBrush brush)
-	{
-		CQt.QPalette_SetBrush((.)this.ptr.Ptr, cr, (.)brush?.ObjectPtr);
-	}
-	public bool IsBrushSet(QPalette_ColorGroup cg, QPalette_ColorRole cr)
-	{
-		return CQt.QPalette_IsBrushSet((.)this.ptr.Ptr, cg, cr);
-	}
-	public void SetBrush2(QPalette_ColorGroup cg, QPalette_ColorRole cr, IQBrush brush)
-	{
-		CQt.QPalette_SetBrush2((.)this.ptr.Ptr, cg, cr, (.)brush?.ObjectPtr);
-	}
-	public void SetColorGroup(QPalette_ColorGroup cr, IQBrush windowText, IQBrush button, IQBrush light, IQBrush dark, IQBrush mid, IQBrush text, IQBrush bright_text, IQBrush _base, IQBrush window)
-	{
-		CQt.QPalette_SetColorGroup((.)this.ptr.Ptr, cr, (.)windowText?.ObjectPtr, (.)button?.ObjectPtr, (.)light?.ObjectPtr, (.)dark?.ObjectPtr, (.)mid?.ObjectPtr, (.)text?.ObjectPtr, (.)bright_text?.ObjectPtr, (.)_base?.ObjectPtr, (.)window?.ObjectPtr);
-	}
-	public bool IsEqual(QPalette_ColorGroup cr1, QPalette_ColorGroup cr2)
-	{
-		return CQt.QPalette_IsEqual((.)this.ptr.Ptr, cr1, cr2);
-	}
-	public QColor_Ptr Color2(QPalette_ColorRole cr)
-	{
-		return QColor_Ptr(CQt.QPalette_Color2((.)this.ptr.Ptr, cr));
-	}
-	public QBrush_Ptr Brush2(QPalette_ColorRole cr)
-	{
-		return QBrush_Ptr(CQt.QPalette_Brush2((.)this.ptr.Ptr, cr));
-	}
-	public QBrush_Ptr WindowText()
-	{
-		return QBrush_Ptr(CQt.QPalette_WindowText((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Button()
-	{
-		return QBrush_Ptr(CQt.QPalette_Button((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Light()
-	{
-		return QBrush_Ptr(CQt.QPalette_Light((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Dark()
-	{
-		return QBrush_Ptr(CQt.QPalette_Dark((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Mid()
-	{
-		return QBrush_Ptr(CQt.QPalette_Mid((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Text()
-	{
-		return QBrush_Ptr(CQt.QPalette_Text((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Base()
-	{
-		return QBrush_Ptr(CQt.QPalette_Base((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr AlternateBase()
-	{
-		return QBrush_Ptr(CQt.QPalette_AlternateBase((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr ToolTipBase()
-	{
-		return QBrush_Ptr(CQt.QPalette_ToolTipBase((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr ToolTipText()
-	{
-		return QBrush_Ptr(CQt.QPalette_ToolTipText((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Window()
-	{
-		return QBrush_Ptr(CQt.QPalette_Window((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Midlight()
-	{
-		return QBrush_Ptr(CQt.QPalette_Midlight((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr BrightText()
-	{
-		return QBrush_Ptr(CQt.QPalette_BrightText((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr ButtonText()
-	{
-		return QBrush_Ptr(CQt.QPalette_ButtonText((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Shadow()
-	{
-		return QBrush_Ptr(CQt.QPalette_Shadow((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Highlight()
-	{
-		return QBrush_Ptr(CQt.QPalette_Highlight((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr HighlightedText()
-	{
-		return QBrush_Ptr(CQt.QPalette_HighlightedText((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr Link()
-	{
-		return QBrush_Ptr(CQt.QPalette_Link((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr LinkVisited()
-	{
-		return QBrush_Ptr(CQt.QPalette_LinkVisited((.)this.ptr.Ptr));
-	}
-	public QBrush_Ptr PlaceholderText()
-	{
-		return QBrush_Ptr(CQt.QPalette_PlaceholderText((.)this.ptr.Ptr));
-	}
-	public bool IsCopyOf(IQPalette p)
-	{
-		return CQt.QPalette_IsCopyOf((.)this.ptr.Ptr, (.)p?.ObjectPtr);
-	}
-	public c_longlong CacheKey()
-	{
-		return CQt.QPalette_CacheKey((.)this.ptr.Ptr);
-	}
-	public QPalette_Ptr Resolve(IQPalette other)
-	{
-		return QPalette_Ptr(CQt.QPalette_Resolve((.)this.ptr.Ptr, (.)other?.ObjectPtr));
-	}
-	public c_ulonglong ResolveMask()
-	{
-		return CQt.QPalette_ResolveMask((.)this.ptr.Ptr);
-	}
-	public void SetResolveMask(c_ulonglong mask)
-	{
-		CQt.QPalette_SetResolveMask((.)this.ptr.Ptr, mask);
-	}
-}
-interface IQPalette : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QPalette_ColorGroup

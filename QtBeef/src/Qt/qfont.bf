@@ -14,6 +14,602 @@ struct QFont_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQFont other)
+	{
+		CQt.QFont_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void Family(String outStr)
+	{
+		CQt.QFont_Family((.)this.Ptr);
+	}
+	public void SetFamily(String family)
+	{
+		CQt.QFont_SetFamily((.)this.Ptr, libqt_string(family));
+	}
+	public void* Families()
+	{
+		return CQt.QFont_Families((.)this.Ptr);
+	}
+	public void SetFamilies(void** families)
+	{
+		CQt.QFont_SetFamilies((.)this.Ptr, families);
+	}
+	public void StyleName(String outStr)
+	{
+		CQt.QFont_StyleName((.)this.Ptr);
+	}
+	public void SetStyleName(String styleName)
+	{
+		CQt.QFont_SetStyleName((.)this.Ptr, libqt_string(styleName));
+	}
+	public c_int PointSize()
+	{
+		return CQt.QFont_PointSize((.)this.Ptr);
+	}
+	public void SetPointSize(c_int pointSize)
+	{
+		CQt.QFont_SetPointSize((.)this.Ptr, pointSize);
+	}
+	public double PointSizeF()
+	{
+		return CQt.QFont_PointSizeF((.)this.Ptr);
+	}
+	public void SetPointSizeF(double pointSizeF)
+	{
+		CQt.QFont_SetPointSizeF((.)this.Ptr, pointSizeF);
+	}
+	public c_int PixelSize()
+	{
+		return CQt.QFont_PixelSize((.)this.Ptr);
+	}
+	public void SetPixelSize(c_int pixelSize)
+	{
+		CQt.QFont_SetPixelSize((.)this.Ptr, pixelSize);
+	}
+	public QFont_Weight Weight()
+	{
+		return CQt.QFont_Weight((.)this.Ptr);
+	}
+	public void SetWeight(QFont_Weight weight)
+	{
+		CQt.QFont_SetWeight((.)this.Ptr, weight);
+	}
+	public bool Bold()
+	{
+		return CQt.QFont_Bold((.)this.Ptr);
+	}
+	public void SetBold(bool bold)
+	{
+		CQt.QFont_SetBold((.)this.Ptr, bold);
+	}
+	public void SetStyle(QFont_Style style)
+	{
+		CQt.QFont_SetStyle((.)this.Ptr, style);
+	}
+	public QFont_Style Style()
+	{
+		return CQt.QFont_Style((.)this.Ptr);
+	}
+	public bool Italic()
+	{
+		return CQt.QFont_Italic((.)this.Ptr);
+	}
+	public void SetItalic(bool b)
+	{
+		CQt.QFont_SetItalic((.)this.Ptr, b);
+	}
+	public bool Underline()
+	{
+		return CQt.QFont_Underline((.)this.Ptr);
+	}
+	public void SetUnderline(bool underline)
+	{
+		CQt.QFont_SetUnderline((.)this.Ptr, underline);
+	}
+	public bool Overline()
+	{
+		return CQt.QFont_Overline((.)this.Ptr);
+	}
+	public void SetOverline(bool overline)
+	{
+		CQt.QFont_SetOverline((.)this.Ptr, overline);
+	}
+	public bool StrikeOut()
+	{
+		return CQt.QFont_StrikeOut((.)this.Ptr);
+	}
+	public void SetStrikeOut(bool strikeOut)
+	{
+		CQt.QFont_SetStrikeOut((.)this.Ptr, strikeOut);
+	}
+	public bool FixedPitch()
+	{
+		return CQt.QFont_FixedPitch((.)this.Ptr);
+	}
+	public void SetFixedPitch(bool fixedPitch)
+	{
+		CQt.QFont_SetFixedPitch((.)this.Ptr, fixedPitch);
+	}
+	public bool Kerning()
+	{
+		return CQt.QFont_Kerning((.)this.Ptr);
+	}
+	public void SetKerning(bool kerning)
+	{
+		CQt.QFont_SetKerning((.)this.Ptr, kerning);
+	}
+	public QFont_StyleHint StyleHint()
+	{
+		return CQt.QFont_StyleHint((.)this.Ptr);
+	}
+	public QFont_StyleStrategy StyleStrategy()
+	{
+		return CQt.QFont_StyleStrategy((.)this.Ptr);
+	}
+	public void SetStyleHint(QFont_StyleHint param1)
+	{
+		CQt.QFont_SetStyleHint((.)this.Ptr, param1);
+	}
+	public void SetStyleStrategy(QFont_StyleStrategy s)
+	{
+		CQt.QFont_SetStyleStrategy((.)this.Ptr, s);
+	}
+	public c_int Stretch()
+	{
+		return CQt.QFont_Stretch((.)this.Ptr);
+	}
+	public void SetStretch(c_int stretch)
+	{
+		CQt.QFont_SetStretch((.)this.Ptr, stretch);
+	}
+	public double LetterSpacing()
+	{
+		return CQt.QFont_LetterSpacing((.)this.Ptr);
+	}
+	public QFont_SpacingType LetterSpacingType()
+	{
+		return CQt.QFont_LetterSpacingType((.)this.Ptr);
+	}
+	public void SetLetterSpacing(QFont_SpacingType type, double spacing)
+	{
+		CQt.QFont_SetLetterSpacing((.)this.Ptr, type, spacing);
+	}
+	public double WordSpacing()
+	{
+		return CQt.QFont_WordSpacing((.)this.Ptr);
+	}
+	public void SetWordSpacing(double spacing)
+	{
+		CQt.QFont_SetWordSpacing((.)this.Ptr, spacing);
+	}
+	public void SetCapitalization(QFont_Capitalization capitalization)
+	{
+		CQt.QFont_SetCapitalization((.)this.Ptr, capitalization);
+	}
+	public QFont_Capitalization Capitalization()
+	{
+		return CQt.QFont_Capitalization((.)this.Ptr);
+	}
+	public void SetHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		CQt.QFont_SetHintingPreference((.)this.Ptr, hintingPreference);
+	}
+	public QFont_HintingPreference HintingPreference()
+	{
+		return CQt.QFont_HintingPreference((.)this.Ptr);
+	}
+	public bool ExactMatch()
+	{
+		return CQt.QFont_ExactMatch((.)this.Ptr);
+	}
+	public bool IsCopyOf(IQFont param1)
+	{
+		return CQt.QFont_IsCopyOf((.)this.Ptr, (.)param1?.ObjectPtr);
+	}
+	public void Key(String outStr)
+	{
+		CQt.QFont_Key((.)this.Ptr);
+	}
+	public void ToString(String outStr)
+	{
+		CQt.QFont_ToString((.)this.Ptr);
+	}
+	public bool FromString(String param1)
+	{
+		return CQt.QFont_FromString((.)this.Ptr, libqt_string(param1));
+	}
+	public void Substitute(String outStr, String param1)
+	{
+		CQt.QFont_Substitute(libqt_string(param1));
+	}
+	public void* Substitutes(String param1)
+	{
+		return CQt.QFont_Substitutes(libqt_string(param1));
+	}
+	public void* Substitutions()
+	{
+		return CQt.QFont_Substitutions();
+	}
+	public void InsertSubstitution(String param1, String param2)
+	{
+		CQt.QFont_InsertSubstitution(libqt_string(param1), libqt_string(param2));
+	}
+	public void InsertSubstitutions(String param1, void** param2)
+	{
+		CQt.QFont_InsertSubstitutions(libqt_string(param1), param2);
+	}
+	public void RemoveSubstitutions(String param1)
+	{
+		CQt.QFont_RemoveSubstitutions(libqt_string(param1));
+	}
+	public void Initialize()
+	{
+		CQt.QFont_Initialize();
+	}
+	public void Cleanup()
+	{
+		CQt.QFont_Cleanup();
+	}
+	public void CacheStatistics()
+	{
+		CQt.QFont_CacheStatistics();
+	}
+	public void DefaultFamily(String outStr)
+	{
+		CQt.QFont_DefaultFamily((.)this.Ptr);
+	}
+	public QFont_Ptr Resolve(IQFont param1)
+	{
+		return QFont_Ptr(CQt.QFont_Resolve((.)this.Ptr, (.)param1?.ObjectPtr));
+	}
+	public c_uint ResolveMask()
+	{
+		return CQt.QFont_ResolveMask((.)this.Ptr);
+	}
+	public void SetResolveMask(c_uint mask)
+	{
+		CQt.QFont_SetResolveMask((.)this.Ptr, mask);
+	}
+	public void SetLegacyWeight(c_int legacyWeight)
+	{
+		CQt.QFont_SetLegacyWeight((.)this.Ptr, legacyWeight);
+	}
+	public c_int LegacyWeight()
+	{
+		return CQt.QFont_LegacyWeight((.)this.Ptr);
+	}
+	public void SetStyleHint2(QFont_StyleHint param1, QFont_StyleStrategy param2)
+	{
+		CQt.QFont_SetStyleHint2((.)this.Ptr, param1, param2);
+	}
+}
+class QFont : IQFont
+{
+	private QFont_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QFont_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QFont_new();
+	}
+	public this(String family)
+	{
+		this.ptr = CQt.QFont_new2(libqt_string(family));
+	}
+	public this(void** families)
+	{
+		this.ptr = CQt.QFont_new3(families);
+	}
+	public this(IQFont font, IQPaintDevice pd)
+	{
+		this.ptr = CQt.QFont_new4((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
+	}
+	public this(IQFont font)
+	{
+		this.ptr = CQt.QFont_new5((.)font?.ObjectPtr);
+	}
+	public this(String family, c_int pointSize)
+	{
+		this.ptr = CQt.QFont_new6(libqt_string(family), pointSize);
+	}
+	public this(String family, c_int pointSize, c_int weight)
+	{
+		this.ptr = CQt.QFont_new7(libqt_string(family), pointSize, weight);
+	}
+	public this(String family, c_int pointSize, c_int weight, bool italic)
+	{
+		this.ptr = CQt.QFont_new8(libqt_string(family), pointSize, weight, italic);
+	}
+	public this(void** families, c_int pointSize)
+	{
+		this.ptr = CQt.QFont_new9(families, pointSize);
+	}
+	public this(void** families, c_int pointSize, c_int weight)
+	{
+		this.ptr = CQt.QFont_new10(families, pointSize, weight);
+	}
+	public this(void** families, c_int pointSize, c_int weight, bool italic)
+	{
+		this.ptr = CQt.QFont_new11(families, pointSize, weight, italic);
+	}
+	public ~this()
+	{
+		CQt.QFont_Delete(this.ptr);
+	}
+	public void Swap(IQFont other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void Family(String outStr)
+	{
+		this.ptr.Family(outStr);
+	}
+	public void SetFamily(String family)
+	{
+		this.ptr.SetFamily(family);
+	}
+	public void* Families()
+	{
+		return this.ptr.Families();
+	}
+	public void SetFamilies(void** families)
+	{
+		this.ptr.SetFamilies(families);
+	}
+	public void StyleName(String outStr)
+	{
+		this.ptr.StyleName(outStr);
+	}
+	public void SetStyleName(String styleName)
+	{
+		this.ptr.SetStyleName(styleName);
+	}
+	public c_int PointSize()
+	{
+		return this.ptr.PointSize();
+	}
+	public void SetPointSize(c_int pointSize)
+	{
+		this.ptr.SetPointSize(pointSize);
+	}
+	public double PointSizeF()
+	{
+		return this.ptr.PointSizeF();
+	}
+	public void SetPointSizeF(double pointSizeF)
+	{
+		this.ptr.SetPointSizeF(pointSizeF);
+	}
+	public c_int PixelSize()
+	{
+		return this.ptr.PixelSize();
+	}
+	public void SetPixelSize(c_int pixelSize)
+	{
+		this.ptr.SetPixelSize(pixelSize);
+	}
+	public QFont_Weight Weight()
+	{
+		return this.ptr.Weight();
+	}
+	public void SetWeight(QFont_Weight weight)
+	{
+		this.ptr.SetWeight(weight);
+	}
+	public bool Bold()
+	{
+		return this.ptr.Bold();
+	}
+	public void SetBold(bool bold)
+	{
+		this.ptr.SetBold(bold);
+	}
+	public void SetStyle(QFont_Style style)
+	{
+		this.ptr.SetStyle(style);
+	}
+	public QFont_Style Style()
+	{
+		return this.ptr.Style();
+	}
+	public bool Italic()
+	{
+		return this.ptr.Italic();
+	}
+	public void SetItalic(bool b)
+	{
+		this.ptr.SetItalic(b);
+	}
+	public bool Underline()
+	{
+		return this.ptr.Underline();
+	}
+	public void SetUnderline(bool underline)
+	{
+		this.ptr.SetUnderline(underline);
+	}
+	public bool Overline()
+	{
+		return this.ptr.Overline();
+	}
+	public void SetOverline(bool overline)
+	{
+		this.ptr.SetOverline(overline);
+	}
+	public bool StrikeOut()
+	{
+		return this.ptr.StrikeOut();
+	}
+	public void SetStrikeOut(bool strikeOut)
+	{
+		this.ptr.SetStrikeOut(strikeOut);
+	}
+	public bool FixedPitch()
+	{
+		return this.ptr.FixedPitch();
+	}
+	public void SetFixedPitch(bool fixedPitch)
+	{
+		this.ptr.SetFixedPitch(fixedPitch);
+	}
+	public bool Kerning()
+	{
+		return this.ptr.Kerning();
+	}
+	public void SetKerning(bool kerning)
+	{
+		this.ptr.SetKerning(kerning);
+	}
+	public QFont_StyleHint StyleHint()
+	{
+		return this.ptr.StyleHint();
+	}
+	public QFont_StyleStrategy StyleStrategy()
+	{
+		return this.ptr.StyleStrategy();
+	}
+	public void SetStyleHint(QFont_StyleHint param1)
+	{
+		this.ptr.SetStyleHint(param1);
+	}
+	public void SetStyleStrategy(QFont_StyleStrategy s)
+	{
+		this.ptr.SetStyleStrategy(s);
+	}
+	public c_int Stretch()
+	{
+		return this.ptr.Stretch();
+	}
+	public void SetStretch(c_int stretch)
+	{
+		this.ptr.SetStretch(stretch);
+	}
+	public double LetterSpacing()
+	{
+		return this.ptr.LetterSpacing();
+	}
+	public QFont_SpacingType LetterSpacingType()
+	{
+		return this.ptr.LetterSpacingType();
+	}
+	public void SetLetterSpacing(QFont_SpacingType type, double spacing)
+	{
+		this.ptr.SetLetterSpacing(type, spacing);
+	}
+	public double WordSpacing()
+	{
+		return this.ptr.WordSpacing();
+	}
+	public void SetWordSpacing(double spacing)
+	{
+		this.ptr.SetWordSpacing(spacing);
+	}
+	public void SetCapitalization(QFont_Capitalization capitalization)
+	{
+		this.ptr.SetCapitalization(capitalization);
+	}
+	public QFont_Capitalization Capitalization()
+	{
+		return this.ptr.Capitalization();
+	}
+	public void SetHintingPreference(QFont_HintingPreference hintingPreference)
+	{
+		this.ptr.SetHintingPreference(hintingPreference);
+	}
+	public QFont_HintingPreference HintingPreference()
+	{
+		return this.ptr.HintingPreference();
+	}
+	public bool ExactMatch()
+	{
+		return this.ptr.ExactMatch();
+	}
+	public bool IsCopyOf(IQFont param1)
+	{
+		return this.ptr.IsCopyOf(param1);
+	}
+	public void Key(String outStr)
+	{
+		this.ptr.Key(outStr);
+	}
+	public void ToString(String outStr)
+	{
+		this.ptr.ToString(outStr);
+	}
+	public bool FromString(String param1)
+	{
+		return this.ptr.FromString(param1);
+	}
+	public void Substitute(String outStr, String param1)
+	{
+		this.ptr.Substitute(outStr, param1);
+	}
+	public void* Substitutes(String param1)
+	{
+		return this.ptr.Substitutes(param1);
+	}
+	public void* Substitutions()
+	{
+		return this.ptr.Substitutions();
+	}
+	public void InsertSubstitution(String param1, String param2)
+	{
+		this.ptr.InsertSubstitution(param1, param2);
+	}
+	public void InsertSubstitutions(String param1, void** param2)
+	{
+		this.ptr.InsertSubstitutions(param1, param2);
+	}
+	public void RemoveSubstitutions(String param1)
+	{
+		this.ptr.RemoveSubstitutions(param1);
+	}
+	public void Initialize()
+	{
+		this.ptr.Initialize();
+	}
+	public void Cleanup()
+	{
+		this.ptr.Cleanup();
+	}
+	public void CacheStatistics()
+	{
+		this.ptr.CacheStatistics();
+	}
+	public void DefaultFamily(String outStr)
+	{
+		this.ptr.DefaultFamily(outStr);
+	}
+	public QFont_Ptr Resolve(IQFont param1)
+	{
+		return this.ptr.Resolve(param1);
+	}
+	public c_uint ResolveMask()
+	{
+		return this.ptr.ResolveMask();
+	}
+	public void SetResolveMask(c_uint mask)
+	{
+		this.ptr.SetResolveMask(mask);
+	}
+	public void SetLegacyWeight(c_int legacyWeight)
+	{
+		this.ptr.SetLegacyWeight(legacyWeight);
+	}
+	public c_int LegacyWeight()
+	{
+		return this.ptr.LegacyWeight();
+	}
+	public void SetStyleHint2(QFont_StyleHint param1, QFont_StyleStrategy param2)
+	{
+		this.ptr.SetStyleHint2(param1, param2);
+	}
+}
+interface IQFont : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -185,334 +781,6 @@ extension CQt
 	public static extern c_int QFont_LegacyWeight(void* self);
 	[LinkName("QFont_SetStyleHint2")]
 	public static extern void QFont_SetStyleHint2(void* self, QFont_StyleHint param1, QFont_StyleStrategy param2);
-}
-class QFont : IQFont
-{
-	private QFont_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QFont_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QFont_new();
-	}
-	public this(String family)
-	{
-		this.ptr = CQt.QFont_new2(libqt_string(family));
-	}
-	public this(void** families)
-	{
-		this.ptr = CQt.QFont_new3(families);
-	}
-	public this(IQFont font, IQPaintDevice pd)
-	{
-		this.ptr = CQt.QFont_new4((.)font?.ObjectPtr, (.)pd?.ObjectPtr);
-	}
-	public this(IQFont font)
-	{
-		this.ptr = CQt.QFont_new5((.)font?.ObjectPtr);
-	}
-	public this(String family, c_int pointSize)
-	{
-		this.ptr = CQt.QFont_new6(libqt_string(family), pointSize);
-	}
-	public this(String family, c_int pointSize, c_int weight)
-	{
-		this.ptr = CQt.QFont_new7(libqt_string(family), pointSize, weight);
-	}
-	public this(String family, c_int pointSize, c_int weight, bool italic)
-	{
-		this.ptr = CQt.QFont_new8(libqt_string(family), pointSize, weight, italic);
-	}
-	public this(void** families, c_int pointSize)
-	{
-		this.ptr = CQt.QFont_new9(families, pointSize);
-	}
-	public this(void** families, c_int pointSize, c_int weight)
-	{
-		this.ptr = CQt.QFont_new10(families, pointSize, weight);
-	}
-	public this(void** families, c_int pointSize, c_int weight, bool italic)
-	{
-		this.ptr = CQt.QFont_new11(families, pointSize, weight, italic);
-	}
-	public ~this()
-	{
-		CQt.QFont_Delete(this.ptr);
-	}
-	public void Swap(IQFont other)
-	{
-		CQt.QFont_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void Family(String outStr)
-	{
-		CQt.QFont_Family((.)this.ptr.Ptr);
-	}
-	public void SetFamily(String family)
-	{
-		CQt.QFont_SetFamily((.)this.ptr.Ptr, libqt_string(family));
-	}
-	public void* Families()
-	{
-		return CQt.QFont_Families((.)this.ptr.Ptr);
-	}
-	public void SetFamilies(void** families)
-	{
-		CQt.QFont_SetFamilies((.)this.ptr.Ptr, families);
-	}
-	public void StyleName(String outStr)
-	{
-		CQt.QFont_StyleName((.)this.ptr.Ptr);
-	}
-	public void SetStyleName(String styleName)
-	{
-		CQt.QFont_SetStyleName((.)this.ptr.Ptr, libqt_string(styleName));
-	}
-	public c_int PointSize()
-	{
-		return CQt.QFont_PointSize((.)this.ptr.Ptr);
-	}
-	public void SetPointSize(c_int pointSize)
-	{
-		CQt.QFont_SetPointSize((.)this.ptr.Ptr, pointSize);
-	}
-	public double PointSizeF()
-	{
-		return CQt.QFont_PointSizeF((.)this.ptr.Ptr);
-	}
-	public void SetPointSizeF(double pointSizeF)
-	{
-		CQt.QFont_SetPointSizeF((.)this.ptr.Ptr, pointSizeF);
-	}
-	public c_int PixelSize()
-	{
-		return CQt.QFont_PixelSize((.)this.ptr.Ptr);
-	}
-	public void SetPixelSize(c_int pixelSize)
-	{
-		CQt.QFont_SetPixelSize((.)this.ptr.Ptr, pixelSize);
-	}
-	public QFont_Weight Weight()
-	{
-		return CQt.QFont_Weight((.)this.ptr.Ptr);
-	}
-	public void SetWeight(QFont_Weight weight)
-	{
-		CQt.QFont_SetWeight((.)this.ptr.Ptr, weight);
-	}
-	public bool Bold()
-	{
-		return CQt.QFont_Bold((.)this.ptr.Ptr);
-	}
-	public void SetBold(bool bold)
-	{
-		CQt.QFont_SetBold((.)this.ptr.Ptr, bold);
-	}
-	public void SetStyle(QFont_Style style)
-	{
-		CQt.QFont_SetStyle((.)this.ptr.Ptr, style);
-	}
-	public QFont_Style Style()
-	{
-		return CQt.QFont_Style((.)this.ptr.Ptr);
-	}
-	public bool Italic()
-	{
-		return CQt.QFont_Italic((.)this.ptr.Ptr);
-	}
-	public void SetItalic(bool b)
-	{
-		CQt.QFont_SetItalic((.)this.ptr.Ptr, b);
-	}
-	public bool Underline()
-	{
-		return CQt.QFont_Underline((.)this.ptr.Ptr);
-	}
-	public void SetUnderline(bool underline)
-	{
-		CQt.QFont_SetUnderline((.)this.ptr.Ptr, underline);
-	}
-	public bool Overline()
-	{
-		return CQt.QFont_Overline((.)this.ptr.Ptr);
-	}
-	public void SetOverline(bool overline)
-	{
-		CQt.QFont_SetOverline((.)this.ptr.Ptr, overline);
-	}
-	public bool StrikeOut()
-	{
-		return CQt.QFont_StrikeOut((.)this.ptr.Ptr);
-	}
-	public void SetStrikeOut(bool strikeOut)
-	{
-		CQt.QFont_SetStrikeOut((.)this.ptr.Ptr, strikeOut);
-	}
-	public bool FixedPitch()
-	{
-		return CQt.QFont_FixedPitch((.)this.ptr.Ptr);
-	}
-	public void SetFixedPitch(bool fixedPitch)
-	{
-		CQt.QFont_SetFixedPitch((.)this.ptr.Ptr, fixedPitch);
-	}
-	public bool Kerning()
-	{
-		return CQt.QFont_Kerning((.)this.ptr.Ptr);
-	}
-	public void SetKerning(bool kerning)
-	{
-		CQt.QFont_SetKerning((.)this.ptr.Ptr, kerning);
-	}
-	public QFont_StyleHint StyleHint()
-	{
-		return CQt.QFont_StyleHint((.)this.ptr.Ptr);
-	}
-	public QFont_StyleStrategy StyleStrategy()
-	{
-		return CQt.QFont_StyleStrategy((.)this.ptr.Ptr);
-	}
-	public void SetStyleHint(QFont_StyleHint param1)
-	{
-		CQt.QFont_SetStyleHint((.)this.ptr.Ptr, param1);
-	}
-	public void SetStyleStrategy(QFont_StyleStrategy s)
-	{
-		CQt.QFont_SetStyleStrategy((.)this.ptr.Ptr, s);
-	}
-	public c_int Stretch()
-	{
-		return CQt.QFont_Stretch((.)this.ptr.Ptr);
-	}
-	public void SetStretch(c_int stretch)
-	{
-		CQt.QFont_SetStretch((.)this.ptr.Ptr, stretch);
-	}
-	public double LetterSpacing()
-	{
-		return CQt.QFont_LetterSpacing((.)this.ptr.Ptr);
-	}
-	public QFont_SpacingType LetterSpacingType()
-	{
-		return CQt.QFont_LetterSpacingType((.)this.ptr.Ptr);
-	}
-	public void SetLetterSpacing(QFont_SpacingType type, double spacing)
-	{
-		CQt.QFont_SetLetterSpacing((.)this.ptr.Ptr, type, spacing);
-	}
-	public double WordSpacing()
-	{
-		return CQt.QFont_WordSpacing((.)this.ptr.Ptr);
-	}
-	public void SetWordSpacing(double spacing)
-	{
-		CQt.QFont_SetWordSpacing((.)this.ptr.Ptr, spacing);
-	}
-	public void SetCapitalization(QFont_Capitalization capitalization)
-	{
-		CQt.QFont_SetCapitalization((.)this.ptr.Ptr, capitalization);
-	}
-	public QFont_Capitalization Capitalization()
-	{
-		return CQt.QFont_Capitalization((.)this.ptr.Ptr);
-	}
-	public void SetHintingPreference(QFont_HintingPreference hintingPreference)
-	{
-		CQt.QFont_SetHintingPreference((.)this.ptr.Ptr, hintingPreference);
-	}
-	public QFont_HintingPreference HintingPreference()
-	{
-		return CQt.QFont_HintingPreference((.)this.ptr.Ptr);
-	}
-	public bool ExactMatch()
-	{
-		return CQt.QFont_ExactMatch((.)this.ptr.Ptr);
-	}
-	public bool IsCopyOf(IQFont param1)
-	{
-		return CQt.QFont_IsCopyOf((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
-	}
-	public void Key(String outStr)
-	{
-		CQt.QFont_Key((.)this.ptr.Ptr);
-	}
-	public void ToString(String outStr)
-	{
-		CQt.QFont_ToString((.)this.ptr.Ptr);
-	}
-	public bool FromString(String param1)
-	{
-		return CQt.QFont_FromString((.)this.ptr.Ptr, libqt_string(param1));
-	}
-	public void Substitute(String outStr, String param1)
-	{
-		CQt.QFont_Substitute(libqt_string(param1));
-	}
-	public void* Substitutes(String param1)
-	{
-		return CQt.QFont_Substitutes(libqt_string(param1));
-	}
-	public void* Substitutions()
-	{
-		return CQt.QFont_Substitutions();
-	}
-	public void InsertSubstitution(String param1, String param2)
-	{
-		CQt.QFont_InsertSubstitution(libqt_string(param1), libqt_string(param2));
-	}
-	public void InsertSubstitutions(String param1, void** param2)
-	{
-		CQt.QFont_InsertSubstitutions(libqt_string(param1), param2);
-	}
-	public void RemoveSubstitutions(String param1)
-	{
-		CQt.QFont_RemoveSubstitutions(libqt_string(param1));
-	}
-	public void Initialize()
-	{
-		CQt.QFont_Initialize();
-	}
-	public void Cleanup()
-	{
-		CQt.QFont_Cleanup();
-	}
-	public void CacheStatistics()
-	{
-		CQt.QFont_CacheStatistics();
-	}
-	public void DefaultFamily(String outStr)
-	{
-		CQt.QFont_DefaultFamily((.)this.ptr.Ptr);
-	}
-	public QFont_Ptr Resolve(IQFont param1)
-	{
-		return QFont_Ptr(CQt.QFont_Resolve((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
-	}
-	public c_uint ResolveMask()
-	{
-		return CQt.QFont_ResolveMask((.)this.ptr.Ptr);
-	}
-	public void SetResolveMask(c_uint mask)
-	{
-		CQt.QFont_SetResolveMask((.)this.ptr.Ptr, mask);
-	}
-	public void SetLegacyWeight(c_int legacyWeight)
-	{
-		CQt.QFont_SetLegacyWeight((.)this.ptr.Ptr, legacyWeight);
-	}
-	public c_int LegacyWeight()
-	{
-		return CQt.QFont_LegacyWeight((.)this.ptr.Ptr);
-	}
-	public void SetStyleHint2(QFont_StyleHint param1, QFont_StyleStrategy param2)
-	{
-		CQt.QFont_SetStyleHint2((.)this.ptr.Ptr, param1, param2);
-	}
-}
-interface IQFont : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QFont_StyleHint

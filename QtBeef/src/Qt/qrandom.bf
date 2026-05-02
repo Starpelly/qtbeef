@@ -14,6 +14,242 @@ struct QRandomGenerator_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_uint Generate()
+	{
+		return CQt.QRandomGenerator_Generate((.)this.Ptr);
+	}
+	public c_ulonglong Generate64()
+	{
+		return CQt.QRandomGenerator_Generate64((.)this.Ptr);
+	}
+	public double GenerateDouble()
+	{
+		return CQt.QRandomGenerator_GenerateDouble((.)this.Ptr);
+	}
+	public double Bounded(double highest)
+	{
+		return CQt.QRandomGenerator_Bounded((.)this.Ptr, highest);
+	}
+	public c_uint Bounded2(c_uint highest)
+	{
+		return CQt.QRandomGenerator_Bounded2((.)this.Ptr, highest);
+	}
+	public c_uint Bounded3(c_uint lowest, c_uint highest)
+	{
+		return CQt.QRandomGenerator_Bounded3((.)this.Ptr, lowest, highest);
+	}
+	public c_int Bounded4(c_int highest)
+	{
+		return CQt.QRandomGenerator_Bounded4((.)this.Ptr, highest);
+	}
+	public c_int Bounded5(c_int lowest, c_int highest)
+	{
+		return CQt.QRandomGenerator_Bounded5((.)this.Ptr, lowest, highest);
+	}
+	public c_ulonglong Bounded6(c_ulonglong highest)
+	{
+		return CQt.QRandomGenerator_Bounded6((.)this.Ptr, highest);
+	}
+	public c_ulonglong Bounded7(c_ulonglong lowest, c_ulonglong highest)
+	{
+		return CQt.QRandomGenerator_Bounded7((.)this.Ptr, lowest, highest);
+	}
+	public c_longlong Bounded8(c_longlong highest)
+	{
+		return CQt.QRandomGenerator_Bounded8((.)this.Ptr, highest);
+	}
+	public c_longlong Bounded9(c_longlong lowest, c_longlong highest)
+	{
+		return CQt.QRandomGenerator_Bounded9((.)this.Ptr, lowest, highest);
+	}
+	public c_longlong Bounded10(c_int lowest, c_longlong highest)
+	{
+		return CQt.QRandomGenerator_Bounded10((.)this.Ptr, lowest, highest);
+	}
+	public c_longlong Bounded11(c_longlong lowest, c_int highest)
+	{
+		return CQt.QRandomGenerator_Bounded11((.)this.Ptr, lowest, highest);
+	}
+	public c_ulonglong Bounded12(c_uint lowest, c_ulonglong highest)
+	{
+		return CQt.QRandomGenerator_Bounded12((.)this.Ptr, lowest, highest);
+	}
+	public c_ulonglong Bounded13(c_ulonglong lowest, c_uint highest)
+	{
+		return CQt.QRandomGenerator_Bounded13((.)this.Ptr, lowest, highest);
+	}
+	public void Generate2(c_uint* begin, c_uint* end)
+	{
+		CQt.QRandomGenerator_Generate2((.)this.Ptr, begin, end);
+	}
+	public void Seed()
+	{
+		CQt.QRandomGenerator_Seed((.)this.Ptr);
+	}
+	public void Discard(c_ulonglong z)
+	{
+		CQt.QRandomGenerator_Discard((.)this.Ptr, z);
+	}
+	public c_uint Min()
+	{
+		return CQt.QRandomGenerator_Min();
+	}
+	public c_uint Max()
+	{
+		return CQt.QRandomGenerator_Max();
+	}
+	public QRandomGenerator_Ptr System()
+	{
+		return QRandomGenerator_Ptr(CQt.QRandomGenerator_System());
+	}
+	public QRandomGenerator_Ptr Global()
+	{
+		return QRandomGenerator_Ptr(CQt.QRandomGenerator_Global());
+	}
+	public QRandomGenerator_Ptr SecurelySeeded()
+	{
+		return QRandomGenerator_Ptr(CQt.QRandomGenerator_SecurelySeeded());
+	}
+	public void Seed1(c_uint s)
+	{
+		CQt.QRandomGenerator_Seed1((.)this.Ptr, s);
+	}
+}
+class QRandomGenerator : IQRandomGenerator
+{
+	private QRandomGenerator_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QRandomGenerator_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QRandomGenerator_new();
+	}
+	public this(c_uint* seedBuffer, void* lenVal)
+	{
+		this.ptr = CQt.QRandomGenerator_new2(seedBuffer, lenVal);
+	}
+	public this(c_uint* begin, c_uint* end)
+	{
+		this.ptr = CQt.QRandomGenerator_new3(begin, end);
+	}
+	public this(IQRandomGenerator other)
+	{
+		this.ptr = CQt.QRandomGenerator_new4((.)other?.ObjectPtr);
+	}
+	public this(c_uint seedValue)
+	{
+		this.ptr = CQt.QRandomGenerator_new5(seedValue);
+	}
+	public ~this()
+	{
+		CQt.QRandomGenerator_Delete(this.ptr);
+	}
+	public c_uint Generate()
+	{
+		return this.ptr.Generate();
+	}
+	public c_ulonglong Generate64()
+	{
+		return this.ptr.Generate64();
+	}
+	public double GenerateDouble()
+	{
+		return this.ptr.GenerateDouble();
+	}
+	public double Bounded(double highest)
+	{
+		return this.ptr.Bounded(highest);
+	}
+	public c_uint Bounded2(c_uint highest)
+	{
+		return this.ptr.Bounded2(highest);
+	}
+	public c_uint Bounded3(c_uint lowest, c_uint highest)
+	{
+		return this.ptr.Bounded3(lowest, highest);
+	}
+	public c_int Bounded4(c_int highest)
+	{
+		return this.ptr.Bounded4(highest);
+	}
+	public c_int Bounded5(c_int lowest, c_int highest)
+	{
+		return this.ptr.Bounded5(lowest, highest);
+	}
+	public c_ulonglong Bounded6(c_ulonglong highest)
+	{
+		return this.ptr.Bounded6(highest);
+	}
+	public c_ulonglong Bounded7(c_ulonglong lowest, c_ulonglong highest)
+	{
+		return this.ptr.Bounded7(lowest, highest);
+	}
+	public c_longlong Bounded8(c_longlong highest)
+	{
+		return this.ptr.Bounded8(highest);
+	}
+	public c_longlong Bounded9(c_longlong lowest, c_longlong highest)
+	{
+		return this.ptr.Bounded9(lowest, highest);
+	}
+	public c_longlong Bounded10(c_int lowest, c_longlong highest)
+	{
+		return this.ptr.Bounded10(lowest, highest);
+	}
+	public c_longlong Bounded11(c_longlong lowest, c_int highest)
+	{
+		return this.ptr.Bounded11(lowest, highest);
+	}
+	public c_ulonglong Bounded12(c_uint lowest, c_ulonglong highest)
+	{
+		return this.ptr.Bounded12(lowest, highest);
+	}
+	public c_ulonglong Bounded13(c_ulonglong lowest, c_uint highest)
+	{
+		return this.ptr.Bounded13(lowest, highest);
+	}
+	public void Generate2(c_uint* begin, c_uint* end)
+	{
+		this.ptr.Generate2(begin, end);
+	}
+	public void Seed()
+	{
+		this.ptr.Seed();
+	}
+	public void Discard(c_ulonglong z)
+	{
+		this.ptr.Discard(z);
+	}
+	public c_uint Min()
+	{
+		return this.ptr.Min();
+	}
+	public c_uint Max()
+	{
+		return this.ptr.Max();
+	}
+	public QRandomGenerator_Ptr System()
+	{
+		return this.ptr.System();
+	}
+	public QRandomGenerator_Ptr Global()
+	{
+		return this.ptr.Global();
+	}
+	public QRandomGenerator_Ptr SecurelySeeded()
+	{
+		return this.ptr.SecurelySeeded();
+	}
+	public void Seed1(c_uint s)
+	{
+		this.ptr.Seed1(s);
+	}
+}
+interface IQRandomGenerator : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -84,142 +320,6 @@ extension CQt
 	[LinkName("QRandomGenerator_Seed1")]
 	public static extern void QRandomGenerator_Seed1(void* self, c_uint s);
 }
-class QRandomGenerator : IQRandomGenerator
-{
-	private QRandomGenerator_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QRandomGenerator_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QRandomGenerator_new();
-	}
-	public this(c_uint* seedBuffer, void* lenVal)
-	{
-		this.ptr = CQt.QRandomGenerator_new2(seedBuffer, lenVal);
-	}
-	public this(c_uint* begin, c_uint* end)
-	{
-		this.ptr = CQt.QRandomGenerator_new3(begin, end);
-	}
-	public this(IQRandomGenerator other)
-	{
-		this.ptr = CQt.QRandomGenerator_new4((.)other?.ObjectPtr);
-	}
-	public this(c_uint seedValue)
-	{
-		this.ptr = CQt.QRandomGenerator_new5(seedValue);
-	}
-	public ~this()
-	{
-		CQt.QRandomGenerator_Delete(this.ptr);
-	}
-	public c_uint Generate()
-	{
-		return CQt.QRandomGenerator_Generate((.)this.ptr.Ptr);
-	}
-	public c_ulonglong Generate64()
-	{
-		return CQt.QRandomGenerator_Generate64((.)this.ptr.Ptr);
-	}
-	public double GenerateDouble()
-	{
-		return CQt.QRandomGenerator_GenerateDouble((.)this.ptr.Ptr);
-	}
-	public double Bounded(double highest)
-	{
-		return CQt.QRandomGenerator_Bounded((.)this.ptr.Ptr, highest);
-	}
-	public c_uint Bounded2(c_uint highest)
-	{
-		return CQt.QRandomGenerator_Bounded2((.)this.ptr.Ptr, highest);
-	}
-	public c_uint Bounded3(c_uint lowest, c_uint highest)
-	{
-		return CQt.QRandomGenerator_Bounded3((.)this.ptr.Ptr, lowest, highest);
-	}
-	public c_int Bounded4(c_int highest)
-	{
-		return CQt.QRandomGenerator_Bounded4((.)this.ptr.Ptr, highest);
-	}
-	public c_int Bounded5(c_int lowest, c_int highest)
-	{
-		return CQt.QRandomGenerator_Bounded5((.)this.ptr.Ptr, lowest, highest);
-	}
-	public c_ulonglong Bounded6(c_ulonglong highest)
-	{
-		return CQt.QRandomGenerator_Bounded6((.)this.ptr.Ptr, highest);
-	}
-	public c_ulonglong Bounded7(c_ulonglong lowest, c_ulonglong highest)
-	{
-		return CQt.QRandomGenerator_Bounded7((.)this.ptr.Ptr, lowest, highest);
-	}
-	public c_longlong Bounded8(c_longlong highest)
-	{
-		return CQt.QRandomGenerator_Bounded8((.)this.ptr.Ptr, highest);
-	}
-	public c_longlong Bounded9(c_longlong lowest, c_longlong highest)
-	{
-		return CQt.QRandomGenerator_Bounded9((.)this.ptr.Ptr, lowest, highest);
-	}
-	public c_longlong Bounded10(c_int lowest, c_longlong highest)
-	{
-		return CQt.QRandomGenerator_Bounded10((.)this.ptr.Ptr, lowest, highest);
-	}
-	public c_longlong Bounded11(c_longlong lowest, c_int highest)
-	{
-		return CQt.QRandomGenerator_Bounded11((.)this.ptr.Ptr, lowest, highest);
-	}
-	public c_ulonglong Bounded12(c_uint lowest, c_ulonglong highest)
-	{
-		return CQt.QRandomGenerator_Bounded12((.)this.ptr.Ptr, lowest, highest);
-	}
-	public c_ulonglong Bounded13(c_ulonglong lowest, c_uint highest)
-	{
-		return CQt.QRandomGenerator_Bounded13((.)this.ptr.Ptr, lowest, highest);
-	}
-	public void Generate2(c_uint* begin, c_uint* end)
-	{
-		CQt.QRandomGenerator_Generate2((.)this.ptr.Ptr, begin, end);
-	}
-	public void Seed()
-	{
-		CQt.QRandomGenerator_Seed((.)this.ptr.Ptr);
-	}
-	public void Discard(c_ulonglong z)
-	{
-		CQt.QRandomGenerator_Discard((.)this.ptr.Ptr, z);
-	}
-	public c_uint Min()
-	{
-		return CQt.QRandomGenerator_Min();
-	}
-	public c_uint Max()
-	{
-		return CQt.QRandomGenerator_Max();
-	}
-	public QRandomGenerator_Ptr System()
-	{
-		return QRandomGenerator_Ptr(CQt.QRandomGenerator_System());
-	}
-	public QRandomGenerator_Ptr Global()
-	{
-		return QRandomGenerator_Ptr(CQt.QRandomGenerator_Global());
-	}
-	public QRandomGenerator_Ptr SecurelySeeded()
-	{
-		return QRandomGenerator_Ptr(CQt.QRandomGenerator_SecurelySeeded());
-	}
-	public void Seed1(c_uint s)
-	{
-		CQt.QRandomGenerator_Seed1((.)this.ptr.Ptr, s);
-	}
-}
-interface IQRandomGenerator : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QRandomGenerator64
 // --------------------------------------------------------------
@@ -231,41 +331,106 @@ struct QRandomGenerator64_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QRandomGenerator64_new")]
-	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new();
-	[LinkName("QRandomGenerator64_new2")]
-	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new2(c_uint* seedBuffer, void* lenVal);
-	[LinkName("QRandomGenerator64_new3")]
-	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new3(c_uint* begin, c_uint* end);
-	[LinkName("QRandomGenerator64_new4")]
-	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new4(void** other);
-	[LinkName("QRandomGenerator64_new5")]
-	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new5(void** param1);
-	[LinkName("QRandomGenerator64_new6")]
-	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new6(c_uint seedValue);
-	[LinkName("QRandomGenerator64_Delete")]
-	public static extern void QRandomGenerator64_Delete(QRandomGenerator64_Ptr self);
-	[LinkName("QRandomGenerator64_Generate")]
-	public static extern c_ulonglong QRandomGenerator64_Generate(void* self);
-	[LinkName("QRandomGenerator64_OperatorCall")]
-	public static extern c_ulonglong QRandomGenerator64_OperatorCall(void* self);
-	[LinkName("QRandomGenerator64_Discard")]
-	public static extern void QRandomGenerator64_Discard(void* self, c_ulonglong z);
-	[LinkName("QRandomGenerator64_Min")]
-	public static extern c_ulonglong QRandomGenerator64_Min();
-	[LinkName("QRandomGenerator64_Max")]
-	public static extern c_ulonglong QRandomGenerator64_Max();
-	[LinkName("QRandomGenerator64_System")]
-	public static extern void** QRandomGenerator64_System();
-	[LinkName("QRandomGenerator64_Global")]
-	public static extern void** QRandomGenerator64_Global();
-	[LinkName("QRandomGenerator64_SecurelySeeded")]
-	public static extern void* QRandomGenerator64_SecurelySeeded();
-	[LinkName("QRandomGenerator64_OperatorAssign")]
-	public static extern void QRandomGenerator64_OperatorAssign(void* self, void** param1);
+	public c_ulonglong Generate()
+	{
+		return CQt.QRandomGenerator64_Generate((.)this.Ptr);
+	}
+	public void Discard(c_ulonglong z)
+	{
+		CQt.QRandomGenerator64_Discard((.)this.Ptr, z);
+	}
+	public c_ulonglong Min()
+	{
+		return CQt.QRandomGenerator64_Min();
+	}
+	public c_ulonglong Max()
+	{
+		return CQt.QRandomGenerator64_Max();
+	}
+	public QRandomGenerator64_Ptr System()
+	{
+		return QRandomGenerator64_Ptr(CQt.QRandomGenerator64_System());
+	}
+	public QRandomGenerator64_Ptr Global()
+	{
+		return QRandomGenerator64_Ptr(CQt.QRandomGenerator64_Global());
+	}
+	public QRandomGenerator64_Ptr SecurelySeeded()
+	{
+		return QRandomGenerator64_Ptr(CQt.QRandomGenerator64_SecurelySeeded());
+	}
+	public c_ulonglong Generate64()
+	{
+		return CQt.QRandomGenerator_Generate64((.)this.Ptr);
+	}
+	public double GenerateDouble()
+	{
+		return CQt.QRandomGenerator_GenerateDouble((.)this.Ptr);
+	}
+	public double Bounded(double highest)
+	{
+		return CQt.QRandomGenerator_Bounded((.)this.Ptr, highest);
+	}
+	public c_uint Bounded2(c_uint highest)
+	{
+		return CQt.QRandomGenerator_Bounded2((.)this.Ptr, highest);
+	}
+	public c_uint Bounded3(c_uint lowest, c_uint highest)
+	{
+		return CQt.QRandomGenerator_Bounded3((.)this.Ptr, lowest, highest);
+	}
+	public c_int Bounded4(c_int highest)
+	{
+		return CQt.QRandomGenerator_Bounded4((.)this.Ptr, highest);
+	}
+	public c_int Bounded5(c_int lowest, c_int highest)
+	{
+		return CQt.QRandomGenerator_Bounded5((.)this.Ptr, lowest, highest);
+	}
+	public c_ulonglong Bounded6(c_ulonglong highest)
+	{
+		return CQt.QRandomGenerator_Bounded6((.)this.Ptr, highest);
+	}
+	public c_ulonglong Bounded7(c_ulonglong lowest, c_ulonglong highest)
+	{
+		return CQt.QRandomGenerator_Bounded7((.)this.Ptr, lowest, highest);
+	}
+	public c_longlong Bounded8(c_longlong highest)
+	{
+		return CQt.QRandomGenerator_Bounded8((.)this.Ptr, highest);
+	}
+	public c_longlong Bounded9(c_longlong lowest, c_longlong highest)
+	{
+		return CQt.QRandomGenerator_Bounded9((.)this.Ptr, lowest, highest);
+	}
+	public c_longlong Bounded10(c_int lowest, c_longlong highest)
+	{
+		return CQt.QRandomGenerator_Bounded10((.)this.Ptr, lowest, highest);
+	}
+	public c_longlong Bounded11(c_longlong lowest, c_int highest)
+	{
+		return CQt.QRandomGenerator_Bounded11((.)this.Ptr, lowest, highest);
+	}
+	public c_ulonglong Bounded12(c_uint lowest, c_ulonglong highest)
+	{
+		return CQt.QRandomGenerator_Bounded12((.)this.Ptr, lowest, highest);
+	}
+	public c_ulonglong Bounded13(c_ulonglong lowest, c_uint highest)
+	{
+		return CQt.QRandomGenerator_Bounded13((.)this.Ptr, lowest, highest);
+	}
+	public void Generate2(c_uint* begin, c_uint* end)
+	{
+		CQt.QRandomGenerator_Generate2((.)this.Ptr, begin, end);
+	}
+	public void Seed()
+	{
+		CQt.QRandomGenerator_Seed((.)this.Ptr);
+	}
+	public void Seed1(c_uint s)
+	{
+		CQt.QRandomGenerator_Seed1((.)this.Ptr, s);
+	}
 }
 class QRandomGenerator64 : IQRandomGenerator64, IQRandomGenerator
 {
@@ -305,105 +470,140 @@ class QRandomGenerator64 : IQRandomGenerator64, IQRandomGenerator
 	}
 	public c_ulonglong Generate()
 	{
-		return CQt.QRandomGenerator64_Generate((.)this.ptr.Ptr);
+		return this.ptr.Generate();
 	}
 	public void Discard(c_ulonglong z)
 	{
-		CQt.QRandomGenerator64_Discard((.)this.ptr.Ptr, z);
+		this.ptr.Discard(z);
 	}
 	public c_ulonglong Min()
 	{
-		return CQt.QRandomGenerator64_Min();
+		return this.ptr.Min();
 	}
 	public c_ulonglong Max()
 	{
-		return CQt.QRandomGenerator64_Max();
+		return this.ptr.Max();
 	}
 	public QRandomGenerator64_Ptr System()
 	{
-		return QRandomGenerator64_Ptr(CQt.QRandomGenerator64_System());
+		return this.ptr.System();
 	}
 	public QRandomGenerator64_Ptr Global()
 	{
-		return QRandomGenerator64_Ptr(CQt.QRandomGenerator64_Global());
+		return this.ptr.Global();
 	}
 	public QRandomGenerator64_Ptr SecurelySeeded()
 	{
-		return QRandomGenerator64_Ptr(CQt.QRandomGenerator64_SecurelySeeded());
+		return this.ptr.SecurelySeeded();
 	}
 	public c_ulonglong Generate64()
 	{
-		return CQt.QRandomGenerator_Generate64((.)this.ptr.Ptr);
+		return this.ptr.Generate64();
 	}
 	public double GenerateDouble()
 	{
-		return CQt.QRandomGenerator_GenerateDouble((.)this.ptr.Ptr);
+		return this.ptr.GenerateDouble();
 	}
 	public double Bounded(double highest)
 	{
-		return CQt.QRandomGenerator_Bounded((.)this.ptr.Ptr, highest);
+		return this.ptr.Bounded(highest);
 	}
 	public c_uint Bounded2(c_uint highest)
 	{
-		return CQt.QRandomGenerator_Bounded2((.)this.ptr.Ptr, highest);
+		return this.ptr.Bounded2(highest);
 	}
 	public c_uint Bounded3(c_uint lowest, c_uint highest)
 	{
-		return CQt.QRandomGenerator_Bounded3((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded3(lowest, highest);
 	}
 	public c_int Bounded4(c_int highest)
 	{
-		return CQt.QRandomGenerator_Bounded4((.)this.ptr.Ptr, highest);
+		return this.ptr.Bounded4(highest);
 	}
 	public c_int Bounded5(c_int lowest, c_int highest)
 	{
-		return CQt.QRandomGenerator_Bounded5((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded5(lowest, highest);
 	}
 	public c_ulonglong Bounded6(c_ulonglong highest)
 	{
-		return CQt.QRandomGenerator_Bounded6((.)this.ptr.Ptr, highest);
+		return this.ptr.Bounded6(highest);
 	}
 	public c_ulonglong Bounded7(c_ulonglong lowest, c_ulonglong highest)
 	{
-		return CQt.QRandomGenerator_Bounded7((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded7(lowest, highest);
 	}
 	public c_longlong Bounded8(c_longlong highest)
 	{
-		return CQt.QRandomGenerator_Bounded8((.)this.ptr.Ptr, highest);
+		return this.ptr.Bounded8(highest);
 	}
 	public c_longlong Bounded9(c_longlong lowest, c_longlong highest)
 	{
-		return CQt.QRandomGenerator_Bounded9((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded9(lowest, highest);
 	}
 	public c_longlong Bounded10(c_int lowest, c_longlong highest)
 	{
-		return CQt.QRandomGenerator_Bounded10((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded10(lowest, highest);
 	}
 	public c_longlong Bounded11(c_longlong lowest, c_int highest)
 	{
-		return CQt.QRandomGenerator_Bounded11((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded11(lowest, highest);
 	}
 	public c_ulonglong Bounded12(c_uint lowest, c_ulonglong highest)
 	{
-		return CQt.QRandomGenerator_Bounded12((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded12(lowest, highest);
 	}
 	public c_ulonglong Bounded13(c_ulonglong lowest, c_uint highest)
 	{
-		return CQt.QRandomGenerator_Bounded13((.)this.ptr.Ptr, lowest, highest);
+		return this.ptr.Bounded13(lowest, highest);
 	}
 	public void Generate2(c_uint* begin, c_uint* end)
 	{
-		CQt.QRandomGenerator_Generate2((.)this.ptr.Ptr, begin, end);
+		this.ptr.Generate2(begin, end);
 	}
 	public void Seed()
 	{
-		CQt.QRandomGenerator_Seed((.)this.ptr.Ptr);
+		this.ptr.Seed();
 	}
 	public void Seed1(c_uint s)
 	{
-		CQt.QRandomGenerator_Seed1((.)this.ptr.Ptr, s);
+		this.ptr.Seed1(s);
 	}
 }
 interface IQRandomGenerator64 : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QRandomGenerator64_new")]
+	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new();
+	[LinkName("QRandomGenerator64_new2")]
+	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new2(c_uint* seedBuffer, void* lenVal);
+	[LinkName("QRandomGenerator64_new3")]
+	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new3(c_uint* begin, c_uint* end);
+	[LinkName("QRandomGenerator64_new4")]
+	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new4(void** other);
+	[LinkName("QRandomGenerator64_new5")]
+	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new5(void** param1);
+	[LinkName("QRandomGenerator64_new6")]
+	public static extern QRandomGenerator64_Ptr QRandomGenerator64_new6(c_uint seedValue);
+	[LinkName("QRandomGenerator64_Delete")]
+	public static extern void QRandomGenerator64_Delete(QRandomGenerator64_Ptr self);
+	[LinkName("QRandomGenerator64_Generate")]
+	public static extern c_ulonglong QRandomGenerator64_Generate(void* self);
+	[LinkName("QRandomGenerator64_OperatorCall")]
+	public static extern c_ulonglong QRandomGenerator64_OperatorCall(void* self);
+	[LinkName("QRandomGenerator64_Discard")]
+	public static extern void QRandomGenerator64_Discard(void* self, c_ulonglong z);
+	[LinkName("QRandomGenerator64_Min")]
+	public static extern c_ulonglong QRandomGenerator64_Min();
+	[LinkName("QRandomGenerator64_Max")]
+	public static extern c_ulonglong QRandomGenerator64_Max();
+	[LinkName("QRandomGenerator64_System")]
+	public static extern void** QRandomGenerator64_System();
+	[LinkName("QRandomGenerator64_Global")]
+	public static extern void** QRandomGenerator64_Global();
+	[LinkName("QRandomGenerator64_SecurelySeeded")]
+	public static extern void* QRandomGenerator64_SecurelySeeded();
+	[LinkName("QRandomGenerator64_OperatorAssign")]
+	public static extern void QRandomGenerator64_OperatorAssign(void* self, void** param1);
 }

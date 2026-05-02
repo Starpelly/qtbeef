@@ -15,17 +15,6 @@ struct QPartialOrdering_Ptr
 		this.Ptr = ptr;
 	}
 }
-extension CQt
-{
-	[LinkName("QPartialOrdering_new")]
-	public static extern QPartialOrdering_Ptr QPartialOrdering_new(void** other);
-	[LinkName("QPartialOrdering_new2")]
-	public static extern QPartialOrdering_Ptr QPartialOrdering_new2(void** other);
-	[LinkName("QPartialOrdering_new3")]
-	public static extern QPartialOrdering_Ptr QPartialOrdering_new3(void** param1);
-	[LinkName("QPartialOrdering_Delete")]
-	public static extern void QPartialOrdering_Delete(QPartialOrdering_Ptr self);
-}
 class QPartialOrdering : IQPartialOrdering
 {
 	private QPartialOrdering_Ptr ptr;
@@ -45,6 +34,17 @@ class QPartialOrdering : IQPartialOrdering
 }
 interface IQPartialOrdering : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QPartialOrdering_new")]
+	public static extern QPartialOrdering_Ptr QPartialOrdering_new(void** other);
+	[LinkName("QPartialOrdering_new2")]
+	public static extern QPartialOrdering_Ptr QPartialOrdering_new2(void** other);
+	[LinkName("QPartialOrdering_new3")]
+	public static extern QPartialOrdering_Ptr QPartialOrdering_new3(void** param1);
+	[LinkName("QPartialOrdering_Delete")]
+	public static extern void QPartialOrdering_Delete(QPartialOrdering_Ptr self);
 }
 [AllowDuplicates]
 enum QtPrivate_Ordering

@@ -14,6 +14,310 @@ struct QJsonArray_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QJsonArray_Ptr FromStringList(void** list)
+	{
+		return QJsonArray_Ptr(CQt.QJsonArray_FromStringList(list));
+	}
+	public QJsonArray_Ptr FromVariantList(void** list)
+	{
+		return QJsonArray_Ptr(CQt.QJsonArray_FromVariantList(list));
+	}
+	public void* ToVariantList()
+	{
+		return CQt.QJsonArray_ToVariantList((.)this.Ptr);
+	}
+	public void* Size()
+	{
+		return CQt.QJsonArray_Size((.)this.Ptr);
+	}
+	public void* Count()
+	{
+		return CQt.QJsonArray_Count((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QJsonArray_IsEmpty((.)this.Ptr);
+	}
+	public QJsonValue_Ptr At(void* i)
+	{
+		return QJsonValue_Ptr(CQt.QJsonArray_At((.)this.Ptr, i));
+	}
+	public QJsonValue_Ptr First()
+	{
+		return QJsonValue_Ptr(CQt.QJsonArray_First((.)this.Ptr));
+	}
+	public QJsonValue_Ptr Last()
+	{
+		return QJsonValue_Ptr(CQt.QJsonArray_Last((.)this.Ptr));
+	}
+	public void Prepend(IQJsonValue value)
+	{
+		CQt.QJsonArray_Prepend((.)this.Ptr, (.)value?.ObjectPtr);
+	}
+	public void Append(IQJsonValue value)
+	{
+		CQt.QJsonArray_Append((.)this.Ptr, (.)value?.ObjectPtr);
+	}
+	public void RemoveAt(void* i)
+	{
+		CQt.QJsonArray_RemoveAt((.)this.Ptr, i);
+	}
+	public QJsonValue_Ptr TakeAt(void* i)
+	{
+		return QJsonValue_Ptr(CQt.QJsonArray_TakeAt((.)this.Ptr, i));
+	}
+	public void RemoveFirst()
+	{
+		CQt.QJsonArray_RemoveFirst((.)this.Ptr);
+	}
+	public void RemoveLast()
+	{
+		CQt.QJsonArray_RemoveLast((.)this.Ptr);
+	}
+	public void Insert(void* i, IQJsonValue value)
+	{
+		CQt.QJsonArray_Insert((.)this.Ptr, i, (.)value?.ObjectPtr);
+	}
+	public void Replace(void* i, IQJsonValue value)
+	{
+		CQt.QJsonArray_Replace((.)this.Ptr, i, (.)value?.ObjectPtr);
+	}
+	public bool Contains(IQJsonValue element)
+	{
+		return CQt.QJsonArray_Contains((.)this.Ptr, (.)element?.ObjectPtr);
+	}
+	public QJsonValue_Ptr OperatorSubscript2(void* i)
+	{
+		return QJsonValue_Ptr(CQt.QJsonArray_OperatorSubscript2((.)this.Ptr, i));
+	}
+	public void Swap(IQJsonArray other)
+	{
+		CQt.QJsonArray_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public QJsonArray_iterator_Ptr Begin()
+	{
+		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Begin((.)this.Ptr));
+	}
+	public QJsonArray_const_iterator_Ptr Begin2()
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Begin2((.)this.Ptr));
+	}
+	public QJsonArray_const_iterator_Ptr ConstBegin()
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_ConstBegin((.)this.Ptr));
+	}
+	public QJsonArray_const_iterator_Ptr Cbegin()
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Cbegin((.)this.Ptr));
+	}
+	public QJsonArray_iterator_Ptr End()
+	{
+		return QJsonArray_iterator_Ptr(CQt.QJsonArray_End((.)this.Ptr));
+	}
+	public QJsonArray_const_iterator_Ptr End2()
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_End2((.)this.Ptr));
+	}
+	public QJsonArray_const_iterator_Ptr ConstEnd()
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_ConstEnd((.)this.Ptr));
+	}
+	public QJsonArray_const_iterator_Ptr Cend()
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Cend((.)this.Ptr));
+	}
+	public QJsonArray_iterator_Ptr Insert2(IQJsonArray_iterator before, IQJsonValue value)
+	{
+		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Insert2((.)this.Ptr, (.)before?.ObjectPtr, (.)value?.ObjectPtr));
+	}
+	public QJsonArray_iterator_Ptr Erase(IQJsonArray_iterator it)
+	{
+		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Erase((.)this.Ptr, (.)it?.ObjectPtr));
+	}
+	public void Push_back(IQJsonValue t)
+	{
+		CQt.QJsonArray_Push_Back((.)this.Ptr, (.)t?.ObjectPtr);
+	}
+	public void Push_front(IQJsonValue t)
+	{
+		CQt.QJsonArray_Push_Front((.)this.Ptr, (.)t?.ObjectPtr);
+	}
+	public void Pop_front()
+	{
+		CQt.QJsonArray_Pop_Front((.)this.Ptr);
+	}
+	public void Pop_back()
+	{
+		CQt.QJsonArray_Pop_Back((.)this.Ptr);
+	}
+	public bool Empty()
+	{
+		return CQt.QJsonArray_Empty((.)this.Ptr);
+	}
+}
+class QJsonArray : IQJsonArray
+{
+	private QJsonArray_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QJsonArray_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QJsonArray_new();
+	}
+	public this(IQJsonArray other)
+	{
+		this.ptr = CQt.QJsonArray_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QJsonArray_Delete(this.ptr);
+	}
+	public QJsonArray_Ptr FromStringList(void** list)
+	{
+		return this.ptr.FromStringList(list);
+	}
+	public QJsonArray_Ptr FromVariantList(void** list)
+	{
+		return this.ptr.FromVariantList(list);
+	}
+	public void* ToVariantList()
+	{
+		return this.ptr.ToVariantList();
+	}
+	public void* Size()
+	{
+		return this.ptr.Size();
+	}
+	public void* Count()
+	{
+		return this.ptr.Count();
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public QJsonValue_Ptr At(void* i)
+	{
+		return this.ptr.At(i);
+	}
+	public QJsonValue_Ptr First()
+	{
+		return this.ptr.First();
+	}
+	public QJsonValue_Ptr Last()
+	{
+		return this.ptr.Last();
+	}
+	public void Prepend(IQJsonValue value)
+	{
+		this.ptr.Prepend(value);
+	}
+	public void Append(IQJsonValue value)
+	{
+		this.ptr.Append(value);
+	}
+	public void RemoveAt(void* i)
+	{
+		this.ptr.RemoveAt(i);
+	}
+	public QJsonValue_Ptr TakeAt(void* i)
+	{
+		return this.ptr.TakeAt(i);
+	}
+	public void RemoveFirst()
+	{
+		this.ptr.RemoveFirst();
+	}
+	public void RemoveLast()
+	{
+		this.ptr.RemoveLast();
+	}
+	public void Insert(void* i, IQJsonValue value)
+	{
+		this.ptr.Insert(i, value);
+	}
+	public void Replace(void* i, IQJsonValue value)
+	{
+		this.ptr.Replace(i, value);
+	}
+	public bool Contains(IQJsonValue element)
+	{
+		return this.ptr.Contains(element);
+	}
+	public QJsonValue_Ptr OperatorSubscript2(void* i)
+	{
+		return this.ptr.OperatorSubscript2(i);
+	}
+	public void Swap(IQJsonArray other)
+	{
+		this.ptr.Swap(other);
+	}
+	public QJsonArray_iterator_Ptr Begin()
+	{
+		return this.ptr.Begin();
+	}
+	public QJsonArray_const_iterator_Ptr Begin2()
+	{
+		return this.ptr.Begin2();
+	}
+	public QJsonArray_const_iterator_Ptr ConstBegin()
+	{
+		return this.ptr.ConstBegin();
+	}
+	public QJsonArray_const_iterator_Ptr Cbegin()
+	{
+		return this.ptr.Cbegin();
+	}
+	public QJsonArray_iterator_Ptr End()
+	{
+		return this.ptr.End();
+	}
+	public QJsonArray_const_iterator_Ptr End2()
+	{
+		return this.ptr.End2();
+	}
+	public QJsonArray_const_iterator_Ptr ConstEnd()
+	{
+		return this.ptr.ConstEnd();
+	}
+	public QJsonArray_const_iterator_Ptr Cend()
+	{
+		return this.ptr.Cend();
+	}
+	public QJsonArray_iterator_Ptr Insert2(IQJsonArray_iterator before, IQJsonValue value)
+	{
+		return this.ptr.Insert2(before, value);
+	}
+	public QJsonArray_iterator_Ptr Erase(IQJsonArray_iterator it)
+	{
+		return this.ptr.Erase(it);
+	}
+	public void Push_back(IQJsonValue t)
+	{
+		this.ptr.Push_back(t);
+	}
+	public void Push_front(IQJsonValue t)
+	{
+		this.ptr.Push_front(t);
+	}
+	public void Pop_front()
+	{
+		this.ptr.Pop_front();
+	}
+	public void Pop_back()
+	{
+		this.ptr.Pop_back();
+	}
+	public bool Empty()
+	{
+		return this.ptr.Empty();
+	}
+}
+interface IQJsonArray : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -108,170 +412,6 @@ extension CQt
 	[LinkName("QJsonArray_Empty")]
 	public static extern bool QJsonArray_Empty(void* self);
 }
-class QJsonArray : IQJsonArray
-{
-	private QJsonArray_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QJsonArray_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QJsonArray_new();
-	}
-	public this(IQJsonArray other)
-	{
-		this.ptr = CQt.QJsonArray_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QJsonArray_Delete(this.ptr);
-	}
-	public QJsonArray_Ptr FromStringList(void** list)
-	{
-		return QJsonArray_Ptr(CQt.QJsonArray_FromStringList(list));
-	}
-	public QJsonArray_Ptr FromVariantList(void** list)
-	{
-		return QJsonArray_Ptr(CQt.QJsonArray_FromVariantList(list));
-	}
-	public void* ToVariantList()
-	{
-		return CQt.QJsonArray_ToVariantList((.)this.ptr.Ptr);
-	}
-	public void* Size()
-	{
-		return CQt.QJsonArray_Size((.)this.ptr.Ptr);
-	}
-	public void* Count()
-	{
-		return CQt.QJsonArray_Count((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QJsonArray_IsEmpty((.)this.ptr.Ptr);
-	}
-	public QJsonValue_Ptr At(void* i)
-	{
-		return QJsonValue_Ptr(CQt.QJsonArray_At((.)this.ptr.Ptr, i));
-	}
-	public QJsonValue_Ptr First()
-	{
-		return QJsonValue_Ptr(CQt.QJsonArray_First((.)this.ptr.Ptr));
-	}
-	public QJsonValue_Ptr Last()
-	{
-		return QJsonValue_Ptr(CQt.QJsonArray_Last((.)this.ptr.Ptr));
-	}
-	public void Prepend(IQJsonValue value)
-	{
-		CQt.QJsonArray_Prepend((.)this.ptr.Ptr, (.)value?.ObjectPtr);
-	}
-	public void Append(IQJsonValue value)
-	{
-		CQt.QJsonArray_Append((.)this.ptr.Ptr, (.)value?.ObjectPtr);
-	}
-	public void RemoveAt(void* i)
-	{
-		CQt.QJsonArray_RemoveAt((.)this.ptr.Ptr, i);
-	}
-	public QJsonValue_Ptr TakeAt(void* i)
-	{
-		return QJsonValue_Ptr(CQt.QJsonArray_TakeAt((.)this.ptr.Ptr, i));
-	}
-	public void RemoveFirst()
-	{
-		CQt.QJsonArray_RemoveFirst((.)this.ptr.Ptr);
-	}
-	public void RemoveLast()
-	{
-		CQt.QJsonArray_RemoveLast((.)this.ptr.Ptr);
-	}
-	public void Insert(void* i, IQJsonValue value)
-	{
-		CQt.QJsonArray_Insert((.)this.ptr.Ptr, i, (.)value?.ObjectPtr);
-	}
-	public void Replace(void* i, IQJsonValue value)
-	{
-		CQt.QJsonArray_Replace((.)this.ptr.Ptr, i, (.)value?.ObjectPtr);
-	}
-	public bool Contains(IQJsonValue element)
-	{
-		return CQt.QJsonArray_Contains((.)this.ptr.Ptr, (.)element?.ObjectPtr);
-	}
-	public QJsonValue_Ptr OperatorSubscript2(void* i)
-	{
-		return QJsonValue_Ptr(CQt.QJsonArray_OperatorSubscript2((.)this.ptr.Ptr, i));
-	}
-	public void Swap(IQJsonArray other)
-	{
-		CQt.QJsonArray_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public QJsonArray_iterator_Ptr Begin()
-	{
-		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Begin((.)this.ptr.Ptr));
-	}
-	public QJsonArray_const_iterator_Ptr Begin2()
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Begin2((.)this.ptr.Ptr));
-	}
-	public QJsonArray_const_iterator_Ptr ConstBegin()
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_ConstBegin((.)this.ptr.Ptr));
-	}
-	public QJsonArray_const_iterator_Ptr Cbegin()
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Cbegin((.)this.ptr.Ptr));
-	}
-	public QJsonArray_iterator_Ptr End()
-	{
-		return QJsonArray_iterator_Ptr(CQt.QJsonArray_End((.)this.ptr.Ptr));
-	}
-	public QJsonArray_const_iterator_Ptr End2()
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_End2((.)this.ptr.Ptr));
-	}
-	public QJsonArray_const_iterator_Ptr ConstEnd()
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_ConstEnd((.)this.ptr.Ptr));
-	}
-	public QJsonArray_const_iterator_Ptr Cend()
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Cend((.)this.ptr.Ptr));
-	}
-	public QJsonArray_iterator_Ptr Insert2(IQJsonArray_iterator before, IQJsonValue value)
-	{
-		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Insert2((.)this.ptr.Ptr, (.)before?.ObjectPtr, (.)value?.ObjectPtr));
-	}
-	public QJsonArray_iterator_Ptr Erase(IQJsonArray_iterator it)
-	{
-		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Erase((.)this.ptr.Ptr, (.)it?.ObjectPtr));
-	}
-	public void Push_back(IQJsonValue t)
-	{
-		CQt.QJsonArray_Push_Back((.)this.ptr.Ptr, (.)t?.ObjectPtr);
-	}
-	public void Push_front(IQJsonValue t)
-	{
-		CQt.QJsonArray_Push_Front((.)this.ptr.Ptr, (.)t?.ObjectPtr);
-	}
-	public void Pop_front()
-	{
-		CQt.QJsonArray_Pop_Front((.)this.ptr.Ptr);
-	}
-	public void Pop_back()
-	{
-		CQt.QJsonArray_Pop_Back((.)this.ptr.Ptr);
-	}
-	public bool Empty()
-	{
-		return CQt.QJsonArray_Empty((.)this.ptr.Ptr);
-	}
-}
-interface IQJsonArray : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QJsonArray::iterator
 // --------------------------------------------------------------
@@ -283,6 +423,114 @@ struct QJsonArray_iterator_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QJsonValueRef_Ptr OperatorMinusGreater2()
+	{
+		return QJsonValueRef_Ptr(CQt.QJsonArray_Iterator_OperatorMinusGreater2((.)this.Ptr));
+	}
+	public bool OperatorEqual2(IQJsonArray_const_iterator o)
+	{
+		return CQt.QJsonArray_Iterator_OperatorEqual2((.)this.Ptr, (.)o?.ObjectPtr);
+	}
+	public bool OperatorNotEqual2(IQJsonArray_const_iterator o)
+	{
+		return CQt.QJsonArray_Iterator_OperatorNotEqual2((.)this.Ptr, (.)o?.ObjectPtr);
+	}
+	public bool OperatorLesser2(IQJsonArray_const_iterator other)
+	{
+		return CQt.QJsonArray_Iterator_OperatorLesser2((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool OperatorLesserOrEqual2(IQJsonArray_const_iterator other)
+	{
+		return CQt.QJsonArray_Iterator_OperatorLesserOrEqual2((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool OperatorGreater2(IQJsonArray_const_iterator other)
+	{
+		return CQt.QJsonArray_Iterator_OperatorGreater2((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool OperatorGreaterOrEqual2(IQJsonArray_const_iterator other)
+	{
+		return CQt.QJsonArray_Iterator_OperatorGreaterOrEqual2((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public QJsonArray_iterator_Ptr OperatorPlusPlus2(c_int param1)
+	{
+		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Iterator_OperatorPlusPlus2((.)this.Ptr, param1));
+	}
+	public QJsonArray_iterator_Ptr OperatorMinusMinus2(c_int param1)
+	{
+		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Iterator_OperatorMinusMinus2((.)this.Ptr, param1));
+	}
+	public void* OperatorMinus2(IQJsonArray_iterator j)
+	{
+		return CQt.QJsonArray_Iterator_OperatorMinus2((.)this.Ptr, (.)j?.ObjectPtr);
+	}
+}
+class QJsonArray_iterator : IQJsonArray_iterator
+{
+	private QJsonArray_iterator_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QJsonArray_iterator_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQJsonArray_iterator other)
+	{
+		this.ptr = CQt.QJsonArray_iterator_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QJsonArray_iterator_new2();
+	}
+	public this(IQJsonArray array, void* index)
+	{
+		this.ptr = CQt.QJsonArray_iterator_new3((.)array?.ObjectPtr, index);
+	}
+	public ~this()
+	{
+		CQt.QJsonArray_iterator_Delete(this.ptr);
+	}
+	public QJsonValueRef_Ptr OperatorMinusGreater2()
+	{
+		return this.ptr.OperatorMinusGreater2();
+	}
+	public bool OperatorEqual2(IQJsonArray_const_iterator o)
+	{
+		return this.ptr.OperatorEqual2(o);
+	}
+	public bool OperatorNotEqual2(IQJsonArray_const_iterator o)
+	{
+		return this.ptr.OperatorNotEqual2(o);
+	}
+	public bool OperatorLesser2(IQJsonArray_const_iterator other)
+	{
+		return this.ptr.OperatorLesser2(other);
+	}
+	public bool OperatorLesserOrEqual2(IQJsonArray_const_iterator other)
+	{
+		return this.ptr.OperatorLesserOrEqual2(other);
+	}
+	public bool OperatorGreater2(IQJsonArray_const_iterator other)
+	{
+		return this.ptr.OperatorGreater2(other);
+	}
+	public bool OperatorGreaterOrEqual2(IQJsonArray_const_iterator other)
+	{
+		return this.ptr.OperatorGreaterOrEqual2(other);
+	}
+	public QJsonArray_iterator_Ptr OperatorPlusPlus2(c_int param1)
+	{
+		return this.ptr.OperatorPlusPlus2(param1);
+	}
+	public QJsonArray_iterator_Ptr OperatorMinusMinus2(c_int param1)
+	{
+		return this.ptr.OperatorMinusMinus2(param1);
+	}
+	public void* OperatorMinus2(IQJsonArray_iterator j)
+	{
+		return this.ptr.OperatorMinus2(j);
+	}
+}
+interface IQJsonArray_iterator : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -349,74 +597,6 @@ extension CQt
 	[LinkName("QJsonArray_Iterator_OperatorMinus2")]
 	public static extern void* QJsonArray_Iterator_OperatorMinus2(void* self, void* j);
 }
-class QJsonArray_iterator : IQJsonArray_iterator
-{
-	private QJsonArray_iterator_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QJsonArray_iterator_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQJsonArray_iterator other)
-	{
-		this.ptr = CQt.QJsonArray_iterator_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QJsonArray_iterator_new2();
-	}
-	public this(IQJsonArray array, void* index)
-	{
-		this.ptr = CQt.QJsonArray_iterator_new3((.)array?.ObjectPtr, index);
-	}
-	public ~this()
-	{
-		CQt.QJsonArray_iterator_Delete(this.ptr);
-	}
-	public QJsonValueRef_Ptr OperatorMinusGreater2()
-	{
-		return QJsonValueRef_Ptr(CQt.QJsonArray_Iterator_OperatorMinusGreater2((.)this.ptr.Ptr));
-	}
-	public bool OperatorEqual2(IQJsonArray_const_iterator o)
-	{
-		return CQt.QJsonArray_Iterator_OperatorEqual2((.)this.ptr.Ptr, (.)o?.ObjectPtr);
-	}
-	public bool OperatorNotEqual2(IQJsonArray_const_iterator o)
-	{
-		return CQt.QJsonArray_Iterator_OperatorNotEqual2((.)this.ptr.Ptr, (.)o?.ObjectPtr);
-	}
-	public bool OperatorLesser2(IQJsonArray_const_iterator other)
-	{
-		return CQt.QJsonArray_Iterator_OperatorLesser2((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool OperatorLesserOrEqual2(IQJsonArray_const_iterator other)
-	{
-		return CQt.QJsonArray_Iterator_OperatorLesserOrEqual2((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool OperatorGreater2(IQJsonArray_const_iterator other)
-	{
-		return CQt.QJsonArray_Iterator_OperatorGreater2((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool OperatorGreaterOrEqual2(IQJsonArray_const_iterator other)
-	{
-		return CQt.QJsonArray_Iterator_OperatorGreaterOrEqual2((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public QJsonArray_iterator_Ptr OperatorPlusPlus2(c_int param1)
-	{
-		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Iterator_OperatorPlusPlus2((.)this.ptr.Ptr, param1));
-	}
-	public QJsonArray_iterator_Ptr OperatorMinusMinus2(c_int param1)
-	{
-		return QJsonArray_iterator_Ptr(CQt.QJsonArray_Iterator_OperatorMinusMinus2((.)this.ptr.Ptr, param1));
-	}
-	public void* OperatorMinus2(IQJsonArray_iterator j)
-	{
-		return CQt.QJsonArray_Iterator_OperatorMinus2((.)this.ptr.Ptr, (.)j?.ObjectPtr);
-	}
-}
-interface IQJsonArray_iterator : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QJsonArray::const_iterator
 // --------------------------------------------------------------
@@ -428,6 +608,62 @@ struct QJsonArray_const_iterator_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QJsonArray_const_iterator_Ptr OperatorPlusPlus2(c_int param1)
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Const_Iterator_OperatorPlusPlus2((.)this.Ptr, param1));
+	}
+	public QJsonArray_const_iterator_Ptr OperatorMinusMinus2(c_int param1)
+	{
+		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Const_Iterator_OperatorMinusMinus2((.)this.Ptr, param1));
+	}
+	public void* OperatorMinus2(IQJsonArray_const_iterator j)
+	{
+		return CQt.QJsonArray_Const_Iterator_OperatorMinus2((.)this.Ptr, (.)j?.ObjectPtr);
+	}
+}
+class QJsonArray_const_iterator : IQJsonArray_const_iterator
+{
+	private QJsonArray_const_iterator_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QJsonArray_const_iterator_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQJsonArray_const_iterator other)
+	{
+		this.ptr = CQt.QJsonArray_const_iterator_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QJsonArray_const_iterator_new2();
+	}
+	public this(IQJsonArray array, void* index)
+	{
+		this.ptr = CQt.QJsonArray_const_iterator_new3((.)array?.ObjectPtr, index);
+	}
+	public this(IQJsonArray_iterator o)
+	{
+		this.ptr = CQt.QJsonArray_const_iterator_new4((.)o?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QJsonArray_const_iterator_Delete(this.ptr);
+	}
+	public QJsonArray_const_iterator_Ptr OperatorPlusPlus2(c_int param1)
+	{
+		return this.ptr.OperatorPlusPlus2(param1);
+	}
+	public QJsonArray_const_iterator_Ptr OperatorMinusMinus2(c_int param1)
+	{
+		return this.ptr.OperatorMinusMinus2(param1);
+	}
+	public void* OperatorMinus2(IQJsonArray_const_iterator j)
+	{
+		return this.ptr.OperatorMinus2(j);
+	}
+}
+interface IQJsonArray_const_iterator : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -481,48 +717,4 @@ extension CQt
 	public static extern void* QJsonArray_Const_Iterator_OperatorMinus(void* self, void* j);
 	[LinkName("QJsonArray_Const_Iterator_OperatorMinus2")]
 	public static extern void* QJsonArray_Const_Iterator_OperatorMinus2(void* self, void* j);
-}
-class QJsonArray_const_iterator : IQJsonArray_const_iterator
-{
-	private QJsonArray_const_iterator_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QJsonArray_const_iterator_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQJsonArray_const_iterator other)
-	{
-		this.ptr = CQt.QJsonArray_const_iterator_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QJsonArray_const_iterator_new2();
-	}
-	public this(IQJsonArray array, void* index)
-	{
-		this.ptr = CQt.QJsonArray_const_iterator_new3((.)array?.ObjectPtr, index);
-	}
-	public this(IQJsonArray_iterator o)
-	{
-		this.ptr = CQt.QJsonArray_const_iterator_new4((.)o?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QJsonArray_const_iterator_Delete(this.ptr);
-	}
-	public QJsonArray_const_iterator_Ptr OperatorPlusPlus2(c_int param1)
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Const_Iterator_OperatorPlusPlus2((.)this.ptr.Ptr, param1));
-	}
-	public QJsonArray_const_iterator_Ptr OperatorMinusMinus2(c_int param1)
-	{
-		return QJsonArray_const_iterator_Ptr(CQt.QJsonArray_Const_Iterator_OperatorMinusMinus2((.)this.ptr.Ptr, param1));
-	}
-	public void* OperatorMinus2(IQJsonArray_const_iterator j)
-	{
-		return CQt.QJsonArray_Const_Iterator_OperatorMinus2((.)this.ptr.Ptr, (.)j?.ObjectPtr);
-	}
-}
-interface IQJsonArray_const_iterator : IQtObjectInterface
-{
 }

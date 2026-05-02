@@ -14,6 +14,130 @@ struct QSystemSemaphore_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Tr(String outStr, c_char* sourceText)
+	{
+		CQt.QSystemSemaphore_Tr(sourceText);
+	}
+	public void SetKey(String key)
+	{
+		CQt.QSystemSemaphore_SetKey((.)this.Ptr, libqt_string(key));
+	}
+	public void Key(String outStr)
+	{
+		CQt.QSystemSemaphore_Key((.)this.Ptr);
+	}
+	public bool Acquire()
+	{
+		return CQt.QSystemSemaphore_Acquire((.)this.Ptr);
+	}
+	public bool Release()
+	{
+		return CQt.QSystemSemaphore_Release((.)this.Ptr);
+	}
+	public QSystemSemaphore_SystemSemaphoreError Error()
+	{
+		return CQt.QSystemSemaphore_Error((.)this.Ptr);
+	}
+	public void ErrorString(String outStr)
+	{
+		CQt.QSystemSemaphore_ErrorString((.)this.Ptr);
+	}
+	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
+	{
+		CQt.QSystemSemaphore_Tr2(sourceText, disambiguation);
+	}
+	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
+	{
+		CQt.QSystemSemaphore_Tr3(sourceText, disambiguation, n);
+	}
+	public void SetKey2(String key, c_int initialValue)
+	{
+		CQt.QSystemSemaphore_SetKey2((.)this.Ptr, libqt_string(key), initialValue);
+	}
+	public void SetKey3(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
+	{
+		CQt.QSystemSemaphore_SetKey3((.)this.Ptr, libqt_string(key), initialValue, mode);
+	}
+	public bool Release1(c_int n)
+	{
+		return CQt.QSystemSemaphore_Release1((.)this.Ptr, n);
+	}
+}
+class QSystemSemaphore : IQSystemSemaphore
+{
+	private QSystemSemaphore_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QSystemSemaphore_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(String key)
+	{
+		this.ptr = CQt.QSystemSemaphore_new(libqt_string(key));
+	}
+	public this(String key, c_int initialValue)
+	{
+		this.ptr = CQt.QSystemSemaphore_new2(libqt_string(key), initialValue);
+	}
+	public this(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
+	{
+		this.ptr = CQt.QSystemSemaphore_new3(libqt_string(key), initialValue, mode);
+	}
+	public ~this()
+	{
+		CQt.QSystemSemaphore_Delete(this.ptr);
+	}
+	public void Tr(String outStr, c_char* sourceText)
+	{
+		this.ptr.Tr(outStr, sourceText);
+	}
+	public void SetKey(String key)
+	{
+		this.ptr.SetKey(key);
+	}
+	public void Key(String outStr)
+	{
+		this.ptr.Key(outStr);
+	}
+	public bool Acquire()
+	{
+		return this.ptr.Acquire();
+	}
+	public bool Release()
+	{
+		return this.ptr.Release();
+	}
+	public QSystemSemaphore_SystemSemaphoreError Error()
+	{
+		return this.ptr.Error();
+	}
+	public void ErrorString(String outStr)
+	{
+		this.ptr.ErrorString(outStr);
+	}
+	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
+	{
+		this.ptr.Tr2(outStr, sourceText, disambiguation);
+	}
+	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
+	{
+		this.ptr.Tr3(outStr, sourceText, disambiguation, n);
+	}
+	public void SetKey2(String key, c_int initialValue)
+	{
+		this.ptr.SetKey2(key, initialValue);
+	}
+	public void SetKey3(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
+	{
+		this.ptr.SetKey3(key, initialValue, mode);
+	}
+	public bool Release1(c_int n)
+	{
+		return this.ptr.Release1(n);
+	}
+}
+interface IQSystemSemaphore : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -49,82 +173,6 @@ extension CQt
 	public static extern void QSystemSemaphore_SetKey3(void* self, libqt_string key, c_int initialValue, QSystemSemaphore_AccessMode mode);
 	[LinkName("QSystemSemaphore_Release1")]
 	public static extern bool QSystemSemaphore_Release1(void* self, c_int n);
-}
-class QSystemSemaphore : IQSystemSemaphore
-{
-	private QSystemSemaphore_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QSystemSemaphore_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(String key)
-	{
-		this.ptr = CQt.QSystemSemaphore_new(libqt_string(key));
-	}
-	public this(String key, c_int initialValue)
-	{
-		this.ptr = CQt.QSystemSemaphore_new2(libqt_string(key), initialValue);
-	}
-	public this(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
-	{
-		this.ptr = CQt.QSystemSemaphore_new3(libqt_string(key), initialValue, mode);
-	}
-	public ~this()
-	{
-		CQt.QSystemSemaphore_Delete(this.ptr);
-	}
-	public void Tr(String outStr, c_char* sourceText)
-	{
-		CQt.QSystemSemaphore_Tr(sourceText);
-	}
-	public void SetKey(String key)
-	{
-		CQt.QSystemSemaphore_SetKey((.)this.ptr.Ptr, libqt_string(key));
-	}
-	public void Key(String outStr)
-	{
-		CQt.QSystemSemaphore_Key((.)this.ptr.Ptr);
-	}
-	public bool Acquire()
-	{
-		return CQt.QSystemSemaphore_Acquire((.)this.ptr.Ptr);
-	}
-	public bool Release()
-	{
-		return CQt.QSystemSemaphore_Release((.)this.ptr.Ptr);
-	}
-	public QSystemSemaphore_SystemSemaphoreError Error()
-	{
-		return CQt.QSystemSemaphore_Error((.)this.ptr.Ptr);
-	}
-	public void ErrorString(String outStr)
-	{
-		CQt.QSystemSemaphore_ErrorString((.)this.ptr.Ptr);
-	}
-	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
-	{
-		CQt.QSystemSemaphore_Tr2(sourceText, disambiguation);
-	}
-	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
-	{
-		CQt.QSystemSemaphore_Tr3(sourceText, disambiguation, n);
-	}
-	public void SetKey2(String key, c_int initialValue)
-	{
-		CQt.QSystemSemaphore_SetKey2((.)this.ptr.Ptr, libqt_string(key), initialValue);
-	}
-	public void SetKey3(String key, c_int initialValue, QSystemSemaphore_AccessMode mode)
-	{
-		CQt.QSystemSemaphore_SetKey3((.)this.ptr.Ptr, libqt_string(key), initialValue, mode);
-	}
-	public bool Release1(c_int n)
-	{
-		return CQt.QSystemSemaphore_Release1((.)this.ptr.Ptr, n);
-	}
-}
-interface IQSystemSemaphore : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QSystemSemaphore_AccessMode

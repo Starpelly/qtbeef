@@ -14,6 +14,106 @@ struct QWaitCondition_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool Wait(IQMutex lockedMutex)
+	{
+		return CQt.QWaitCondition_Wait((.)this.Ptr, (.)lockedMutex?.ObjectPtr);
+	}
+	public bool Wait2(IQMutex lockedMutex, c_ulong time)
+	{
+		return CQt.QWaitCondition_Wait2((.)this.Ptr, (.)lockedMutex?.ObjectPtr, time);
+	}
+	public bool Wait3(IQReadWriteLock lockedReadWriteLock)
+	{
+		return CQt.QWaitCondition_Wait3((.)this.Ptr, (.)lockedReadWriteLock?.ObjectPtr);
+	}
+	public bool Wait4(IQReadWriteLock lockedReadWriteLock, c_ulong time)
+	{
+		return CQt.QWaitCondition_Wait4((.)this.Ptr, (.)lockedReadWriteLock?.ObjectPtr, time);
+	}
+	public void WakeOne()
+	{
+		CQt.QWaitCondition_WakeOne((.)this.Ptr);
+	}
+	public void WakeAll()
+	{
+		CQt.QWaitCondition_WakeAll((.)this.Ptr);
+	}
+	public void Notify_one()
+	{
+		CQt.QWaitCondition_Notify_One((.)this.Ptr);
+	}
+	public void Notify_all()
+	{
+		CQt.QWaitCondition_Notify_All((.)this.Ptr);
+	}
+	public bool Wait22(IQMutex lockedMutex, IQDeadlineTimer deadline)
+	{
+		return CQt.QWaitCondition_Wait22((.)this.Ptr, (.)lockedMutex?.ObjectPtr, (.)deadline?.ObjectPtr);
+	}
+	public bool Wait23(IQReadWriteLock lockedReadWriteLock, IQDeadlineTimer deadline)
+	{
+		return CQt.QWaitCondition_Wait23((.)this.Ptr, (.)lockedReadWriteLock?.ObjectPtr, (.)deadline?.ObjectPtr);
+	}
+}
+class QWaitCondition : IQWaitCondition
+{
+	private QWaitCondition_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QWaitCondition_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QWaitCondition_new();
+	}
+	public ~this()
+	{
+		CQt.QWaitCondition_Delete(this.ptr);
+	}
+	public bool Wait(IQMutex lockedMutex)
+	{
+		return this.ptr.Wait(lockedMutex);
+	}
+	public bool Wait2(IQMutex lockedMutex, c_ulong time)
+	{
+		return this.ptr.Wait2(lockedMutex, time);
+	}
+	public bool Wait3(IQReadWriteLock lockedReadWriteLock)
+	{
+		return this.ptr.Wait3(lockedReadWriteLock);
+	}
+	public bool Wait4(IQReadWriteLock lockedReadWriteLock, c_ulong time)
+	{
+		return this.ptr.Wait4(lockedReadWriteLock, time);
+	}
+	public void WakeOne()
+	{
+		this.ptr.WakeOne();
+	}
+	public void WakeAll()
+	{
+		this.ptr.WakeAll();
+	}
+	public void Notify_one()
+	{
+		this.ptr.Notify_one();
+	}
+	public void Notify_all()
+	{
+		this.ptr.Notify_all();
+	}
+	public bool Wait22(IQMutex lockedMutex, IQDeadlineTimer deadline)
+	{
+		return this.ptr.Wait22(lockedMutex, deadline);
+	}
+	public bool Wait23(IQReadWriteLock lockedReadWriteLock, IQDeadlineTimer deadline)
+	{
+		return this.ptr.Wait23(lockedReadWriteLock, deadline);
+	}
+}
+interface IQWaitCondition : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -41,64 +141,4 @@ extension CQt
 	public static extern bool QWaitCondition_Wait22(void* self, void** lockedMutex, void* deadline);
 	[LinkName("QWaitCondition_Wait23")]
 	public static extern bool QWaitCondition_Wait23(void* self, void** lockedReadWriteLock, void* deadline);
-}
-class QWaitCondition : IQWaitCondition
-{
-	private QWaitCondition_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QWaitCondition_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QWaitCondition_new();
-	}
-	public ~this()
-	{
-		CQt.QWaitCondition_Delete(this.ptr);
-	}
-	public bool Wait(IQMutex lockedMutex)
-	{
-		return CQt.QWaitCondition_Wait((.)this.ptr.Ptr, (.)lockedMutex?.ObjectPtr);
-	}
-	public bool Wait2(IQMutex lockedMutex, c_ulong time)
-	{
-		return CQt.QWaitCondition_Wait2((.)this.ptr.Ptr, (.)lockedMutex?.ObjectPtr, time);
-	}
-	public bool Wait3(IQReadWriteLock lockedReadWriteLock)
-	{
-		return CQt.QWaitCondition_Wait3((.)this.ptr.Ptr, (.)lockedReadWriteLock?.ObjectPtr);
-	}
-	public bool Wait4(IQReadWriteLock lockedReadWriteLock, c_ulong time)
-	{
-		return CQt.QWaitCondition_Wait4((.)this.ptr.Ptr, (.)lockedReadWriteLock?.ObjectPtr, time);
-	}
-	public void WakeOne()
-	{
-		CQt.QWaitCondition_WakeOne((.)this.ptr.Ptr);
-	}
-	public void WakeAll()
-	{
-		CQt.QWaitCondition_WakeAll((.)this.ptr.Ptr);
-	}
-	public void Notify_one()
-	{
-		CQt.QWaitCondition_Notify_One((.)this.ptr.Ptr);
-	}
-	public void Notify_all()
-	{
-		CQt.QWaitCondition_Notify_All((.)this.ptr.Ptr);
-	}
-	public bool Wait22(IQMutex lockedMutex, IQDeadlineTimer deadline)
-	{
-		return CQt.QWaitCondition_Wait22((.)this.ptr.Ptr, (.)lockedMutex?.ObjectPtr, (.)deadline?.ObjectPtr);
-	}
-	public bool Wait23(IQReadWriteLock lockedReadWriteLock, IQDeadlineTimer deadline)
-	{
-		return CQt.QWaitCondition_Wait23((.)this.ptr.Ptr, (.)lockedReadWriteLock?.ObjectPtr, (.)deadline?.ObjectPtr);
-	}
-}
-interface IQWaitCondition : IQtObjectInterface
-{
 }

@@ -14,6 +14,254 @@ struct QPen_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQPen other)
+	{
+		CQt.QPen_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public Qt_PenStyle Style()
+	{
+		return CQt.QPen_Style((.)this.Ptr);
+	}
+	public void SetStyle(Qt_PenStyle style)
+	{
+		CQt.QPen_SetStyle((.)this.Ptr, style);
+	}
+	public void* DashPattern()
+	{
+		return CQt.QPen_DashPattern((.)this.Ptr);
+	}
+	public void SetDashPattern(void** pattern)
+	{
+		CQt.QPen_SetDashPattern((.)this.Ptr, pattern);
+	}
+	public double DashOffset()
+	{
+		return CQt.QPen_DashOffset((.)this.Ptr);
+	}
+	public void SetDashOffset(double doffset)
+	{
+		CQt.QPen_SetDashOffset((.)this.Ptr, doffset);
+	}
+	public double MiterLimit()
+	{
+		return CQt.QPen_MiterLimit((.)this.Ptr);
+	}
+	public void SetMiterLimit(double limit)
+	{
+		CQt.QPen_SetMiterLimit((.)this.Ptr, limit);
+	}
+	public double WidthF()
+	{
+		return CQt.QPen_WidthF((.)this.Ptr);
+	}
+	public void SetWidthF(double width)
+	{
+		CQt.QPen_SetWidthF((.)this.Ptr, width);
+	}
+	public c_int Width()
+	{
+		return CQt.QPen_Width((.)this.Ptr);
+	}
+	public void SetWidth(c_int width)
+	{
+		CQt.QPen_SetWidth((.)this.Ptr, width);
+	}
+	public QColor_Ptr Color()
+	{
+		return QColor_Ptr(CQt.QPen_Color((.)this.Ptr));
+	}
+	public void SetColor(IQColor color)
+	{
+		CQt.QPen_SetColor((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public QBrush_Ptr Brush()
+	{
+		return QBrush_Ptr(CQt.QPen_Brush((.)this.Ptr));
+	}
+	public void SetBrush(IQBrush brush)
+	{
+		CQt.QPen_SetBrush((.)this.Ptr, (.)brush?.ObjectPtr);
+	}
+	public bool IsSolid()
+	{
+		return CQt.QPen_IsSolid((.)this.Ptr);
+	}
+	public Qt_PenCapStyle CapStyle()
+	{
+		return CQt.QPen_CapStyle((.)this.Ptr);
+	}
+	public void SetCapStyle(Qt_PenCapStyle pcs)
+	{
+		CQt.QPen_SetCapStyle((.)this.Ptr, pcs);
+	}
+	public Qt_PenJoinStyle JoinStyle()
+	{
+		return CQt.QPen_JoinStyle((.)this.Ptr);
+	}
+	public void SetJoinStyle(Qt_PenJoinStyle pcs)
+	{
+		CQt.QPen_SetJoinStyle((.)this.Ptr, pcs);
+	}
+	public bool IsCosmetic()
+	{
+		return CQt.QPen_IsCosmetic((.)this.Ptr);
+	}
+	public void SetCosmetic(bool cosmetic)
+	{
+		CQt.QPen_SetCosmetic((.)this.Ptr, cosmetic);
+	}
+	public bool IsDetached()
+	{
+		return CQt.QPen_IsDetached((.)this.Ptr);
+	}
+}
+class QPen : IQPen
+{
+	private QPen_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPen_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QPen_new();
+	}
+	public this(Qt_PenStyle param1)
+	{
+		this.ptr = CQt.QPen_new2(param1);
+	}
+	public this(IQColor color)
+	{
+		this.ptr = CQt.QPen_new3((.)color?.ObjectPtr);
+	}
+	public this(IQBrush brush, double width)
+	{
+		this.ptr = CQt.QPen_new4((.)brush?.ObjectPtr, width);
+	}
+	public this(IQPen pen)
+	{
+		this.ptr = CQt.QPen_new5((.)pen?.ObjectPtr);
+	}
+	public this(IQBrush brush, double width, Qt_PenStyle s)
+	{
+		this.ptr = CQt.QPen_new6((.)brush?.ObjectPtr, width, s);
+	}
+	public this(IQBrush brush, double width, Qt_PenStyle s, Qt_PenCapStyle c)
+	{
+		this.ptr = CQt.QPen_new7((.)brush?.ObjectPtr, width, s, c);
+	}
+	public this(IQBrush brush, double width, Qt_PenStyle s, Qt_PenCapStyle c, Qt_PenJoinStyle j)
+	{
+		this.ptr = CQt.QPen_new8((.)brush?.ObjectPtr, width, s, c, j);
+	}
+	public ~this()
+	{
+		CQt.QPen_Delete(this.ptr);
+	}
+	public void Swap(IQPen other)
+	{
+		this.ptr.Swap(other);
+	}
+	public Qt_PenStyle Style()
+	{
+		return this.ptr.Style();
+	}
+	public void SetStyle(Qt_PenStyle style)
+	{
+		this.ptr.SetStyle(style);
+	}
+	public void* DashPattern()
+	{
+		return this.ptr.DashPattern();
+	}
+	public void SetDashPattern(void** pattern)
+	{
+		this.ptr.SetDashPattern(pattern);
+	}
+	public double DashOffset()
+	{
+		return this.ptr.DashOffset();
+	}
+	public void SetDashOffset(double doffset)
+	{
+		this.ptr.SetDashOffset(doffset);
+	}
+	public double MiterLimit()
+	{
+		return this.ptr.MiterLimit();
+	}
+	public void SetMiterLimit(double limit)
+	{
+		this.ptr.SetMiterLimit(limit);
+	}
+	public double WidthF()
+	{
+		return this.ptr.WidthF();
+	}
+	public void SetWidthF(double width)
+	{
+		this.ptr.SetWidthF(width);
+	}
+	public c_int Width()
+	{
+		return this.ptr.Width();
+	}
+	public void SetWidth(c_int width)
+	{
+		this.ptr.SetWidth(width);
+	}
+	public QColor_Ptr Color()
+	{
+		return this.ptr.Color();
+	}
+	public void SetColor(IQColor color)
+	{
+		this.ptr.SetColor(color);
+	}
+	public QBrush_Ptr Brush()
+	{
+		return this.ptr.Brush();
+	}
+	public void SetBrush(IQBrush brush)
+	{
+		this.ptr.SetBrush(brush);
+	}
+	public bool IsSolid()
+	{
+		return this.ptr.IsSolid();
+	}
+	public Qt_PenCapStyle CapStyle()
+	{
+		return this.ptr.CapStyle();
+	}
+	public void SetCapStyle(Qt_PenCapStyle pcs)
+	{
+		this.ptr.SetCapStyle(pcs);
+	}
+	public Qt_PenJoinStyle JoinStyle()
+	{
+		return this.ptr.JoinStyle();
+	}
+	public void SetJoinStyle(Qt_PenJoinStyle pcs)
+	{
+		this.ptr.SetJoinStyle(pcs);
+	}
+	public bool IsCosmetic()
+	{
+		return this.ptr.IsCosmetic();
+	}
+	public void SetCosmetic(bool cosmetic)
+	{
+		this.ptr.SetCosmetic(cosmetic);
+	}
+	public bool IsDetached()
+	{
+		return this.ptr.IsDetached();
+	}
+}
+interface IQPen : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -93,152 +341,4 @@ extension CQt
 	public static extern void* QPen_ToQvariant(void* self);
 	[LinkName("QPen_IsDetached")]
 	public static extern bool QPen_IsDetached(void* self);
-}
-class QPen : IQPen
-{
-	private QPen_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QPen_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QPen_new();
-	}
-	public this(Qt_PenStyle param1)
-	{
-		this.ptr = CQt.QPen_new2(param1);
-	}
-	public this(IQColor color)
-	{
-		this.ptr = CQt.QPen_new3((.)color?.ObjectPtr);
-	}
-	public this(IQBrush brush, double width)
-	{
-		this.ptr = CQt.QPen_new4((.)brush?.ObjectPtr, width);
-	}
-	public this(IQPen pen)
-	{
-		this.ptr = CQt.QPen_new5((.)pen?.ObjectPtr);
-	}
-	public this(IQBrush brush, double width, Qt_PenStyle s)
-	{
-		this.ptr = CQt.QPen_new6((.)brush?.ObjectPtr, width, s);
-	}
-	public this(IQBrush brush, double width, Qt_PenStyle s, Qt_PenCapStyle c)
-	{
-		this.ptr = CQt.QPen_new7((.)brush?.ObjectPtr, width, s, c);
-	}
-	public this(IQBrush brush, double width, Qt_PenStyle s, Qt_PenCapStyle c, Qt_PenJoinStyle j)
-	{
-		this.ptr = CQt.QPen_new8((.)brush?.ObjectPtr, width, s, c, j);
-	}
-	public ~this()
-	{
-		CQt.QPen_Delete(this.ptr);
-	}
-	public void Swap(IQPen other)
-	{
-		CQt.QPen_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public Qt_PenStyle Style()
-	{
-		return CQt.QPen_Style((.)this.ptr.Ptr);
-	}
-	public void SetStyle(Qt_PenStyle style)
-	{
-		CQt.QPen_SetStyle((.)this.ptr.Ptr, style);
-	}
-	public void* DashPattern()
-	{
-		return CQt.QPen_DashPattern((.)this.ptr.Ptr);
-	}
-	public void SetDashPattern(void** pattern)
-	{
-		CQt.QPen_SetDashPattern((.)this.ptr.Ptr, pattern);
-	}
-	public double DashOffset()
-	{
-		return CQt.QPen_DashOffset((.)this.ptr.Ptr);
-	}
-	public void SetDashOffset(double doffset)
-	{
-		CQt.QPen_SetDashOffset((.)this.ptr.Ptr, doffset);
-	}
-	public double MiterLimit()
-	{
-		return CQt.QPen_MiterLimit((.)this.ptr.Ptr);
-	}
-	public void SetMiterLimit(double limit)
-	{
-		CQt.QPen_SetMiterLimit((.)this.ptr.Ptr, limit);
-	}
-	public double WidthF()
-	{
-		return CQt.QPen_WidthF((.)this.ptr.Ptr);
-	}
-	public void SetWidthF(double width)
-	{
-		CQt.QPen_SetWidthF((.)this.ptr.Ptr, width);
-	}
-	public c_int Width()
-	{
-		return CQt.QPen_Width((.)this.ptr.Ptr);
-	}
-	public void SetWidth(c_int width)
-	{
-		CQt.QPen_SetWidth((.)this.ptr.Ptr, width);
-	}
-	public QColor_Ptr Color()
-	{
-		return QColor_Ptr(CQt.QPen_Color((.)this.ptr.Ptr));
-	}
-	public void SetColor(IQColor color)
-	{
-		CQt.QPen_SetColor((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public QBrush_Ptr Brush()
-	{
-		return QBrush_Ptr(CQt.QPen_Brush((.)this.ptr.Ptr));
-	}
-	public void SetBrush(IQBrush brush)
-	{
-		CQt.QPen_SetBrush((.)this.ptr.Ptr, (.)brush?.ObjectPtr);
-	}
-	public bool IsSolid()
-	{
-		return CQt.QPen_IsSolid((.)this.ptr.Ptr);
-	}
-	public Qt_PenCapStyle CapStyle()
-	{
-		return CQt.QPen_CapStyle((.)this.ptr.Ptr);
-	}
-	public void SetCapStyle(Qt_PenCapStyle pcs)
-	{
-		CQt.QPen_SetCapStyle((.)this.ptr.Ptr, pcs);
-	}
-	public Qt_PenJoinStyle JoinStyle()
-	{
-		return CQt.QPen_JoinStyle((.)this.ptr.Ptr);
-	}
-	public void SetJoinStyle(Qt_PenJoinStyle pcs)
-	{
-		CQt.QPen_SetJoinStyle((.)this.ptr.Ptr, pcs);
-	}
-	public bool IsCosmetic()
-	{
-		return CQt.QPen_IsCosmetic((.)this.ptr.Ptr);
-	}
-	public void SetCosmetic(bool cosmetic)
-	{
-		CQt.QPen_SetCosmetic((.)this.ptr.Ptr, cosmetic);
-	}
-	public bool IsDetached()
-	{
-		return CQt.QPen_IsDetached((.)this.ptr.Ptr);
-	}
-}
-interface IQPen : IQtObjectInterface
-{
 }

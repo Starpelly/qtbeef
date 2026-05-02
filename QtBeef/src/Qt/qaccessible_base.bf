@@ -14,62 +14,6 @@ struct QAccessible_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QAccessible_new")]
-	public static extern QAccessible_Ptr QAccessible_new(void** other);
-	[LinkName("QAccessible_new2")]
-	public static extern QAccessible_Ptr QAccessible_new2(void** other);
-	[LinkName("QAccessible_Delete")]
-	public static extern void QAccessible_Delete(QAccessible_Ptr self);
-	[LinkName("QAccessible_InstallUpdateHandler")]
-	public static extern c_intptr QAccessible_InstallUpdateHandler(c_intptr param1);
-	[LinkName("QAccessible_InstallRootObjectHandler")]
-	public static extern c_intptr QAccessible_InstallRootObjectHandler(c_intptr param1);
-	[LinkName("QAccessible_InstallActivationObserver")]
-	public static extern void QAccessible_InstallActivationObserver(void** param1);
-	[LinkName("QAccessible_RemoveActivationObserver")]
-	public static extern void QAccessible_RemoveActivationObserver(void** param1);
-	[LinkName("QAccessible_QueryAccessibleInterface")]
-	public static extern void** QAccessible_QueryAccessibleInterface(void** param1);
-	[LinkName("QAccessible_UniqueId")]
-	public static extern c_uint QAccessible_UniqueId(void** iface);
-	[LinkName("QAccessible_AccessibleInterface")]
-	public static extern void** QAccessible_AccessibleInterface(c_uint uniqueId);
-	[LinkName("QAccessible_RegisterAccessibleInterface")]
-	public static extern c_uint QAccessible_RegisterAccessibleInterface(void** iface);
-	[LinkName("QAccessible_DeleteAccessibleInterface")]
-	public static extern void QAccessible_DeleteAccessibleInterface(c_uint uniqueId);
-	[LinkName("QAccessible_UpdateAccessibility")]
-	public static extern void QAccessible_UpdateAccessibility(void** event);
-	[LinkName("QAccessible_IsActive")]
-	public static extern bool QAccessible_IsActive();
-	[LinkName("QAccessible_SetActive")]
-	public static extern void QAccessible_SetActive(bool active);
-	[LinkName("QAccessible_SetRootObject")]
-	public static extern void QAccessible_SetRootObject(void** object);
-	[LinkName("QAccessible_Cleanup")]
-	public static extern void QAccessible_Cleanup();
-	[LinkName("QAccessible_QAccessibleTextBoundaryHelper")]
-	public static extern void* QAccessible_QAccessibleTextBoundaryHelper(void** cursor, QAccessible_TextBoundaryType boundaryType);
-}
-class QAccessible : IQAccessible
-{
-	private QAccessible_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QAccessible_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQAccessible other)
-	{
-		this.ptr = CQt.QAccessible_new((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QAccessible_Delete(this.ptr);
-	}
 	public c_intptr InstallUpdateHandler(c_intptr param1)
 	{
 		return CQt.QAccessible_InstallUpdateHandler(param1);
@@ -131,8 +75,124 @@ class QAccessible : IQAccessible
 		return CQt.QAccessible_QAccessibleTextBoundaryHelper((.)cursor?.ObjectPtr, boundaryType);
 	}
 }
+class QAccessible : IQAccessible
+{
+	private QAccessible_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAccessible_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQAccessible other)
+	{
+		this.ptr = CQt.QAccessible_new((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QAccessible_Delete(this.ptr);
+	}
+	public c_intptr InstallUpdateHandler(c_intptr param1)
+	{
+		return this.ptr.InstallUpdateHandler(param1);
+	}
+	public c_intptr InstallRootObjectHandler(c_intptr param1)
+	{
+		return this.ptr.InstallRootObjectHandler(param1);
+	}
+	public void InstallActivationObserver(IQAccessible_ActivationObserver param1)
+	{
+		this.ptr.InstallActivationObserver(param1);
+	}
+	public void RemoveActivationObserver(IQAccessible_ActivationObserver param1)
+	{
+		this.ptr.RemoveActivationObserver(param1);
+	}
+	public QAccessibleInterface_Ptr QueryAccessibleInterface(IQObject param1)
+	{
+		return this.ptr.QueryAccessibleInterface(param1);
+	}
+	public c_uint UniqueId(IQAccessibleInterface iface)
+	{
+		return this.ptr.UniqueId(iface);
+	}
+	public QAccessibleInterface_Ptr AccessibleInterface(c_uint uniqueId)
+	{
+		return this.ptr.AccessibleInterface(uniqueId);
+	}
+	public c_uint RegisterAccessibleInterface(IQAccessibleInterface iface)
+	{
+		return this.ptr.RegisterAccessibleInterface(iface);
+	}
+	public void DeleteAccessibleInterface(c_uint uniqueId)
+	{
+		this.ptr.DeleteAccessibleInterface(uniqueId);
+	}
+	public void UpdateAccessibility(IQAccessibleEvent event)
+	{
+		this.ptr.UpdateAccessibility(event);
+	}
+	public bool IsActive()
+	{
+		return this.ptr.IsActive();
+	}
+	public void SetActive(bool active)
+	{
+		this.ptr.SetActive(active);
+	}
+	public void SetRootObject(IQObject object)
+	{
+		this.ptr.SetRootObject(object);
+	}
+	public void Cleanup()
+	{
+		this.ptr.Cleanup();
+	}
+	public void* QAccessibleTextBoundaryHelper(IQTextCursor cursor, QAccessible_TextBoundaryType boundaryType)
+	{
+		return this.ptr.QAccessibleTextBoundaryHelper(cursor, boundaryType);
+	}
+}
 interface IQAccessible : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QAccessible_new")]
+	public static extern QAccessible_Ptr QAccessible_new(void** other);
+	[LinkName("QAccessible_new2")]
+	public static extern QAccessible_Ptr QAccessible_new2(void** other);
+	[LinkName("QAccessible_Delete")]
+	public static extern void QAccessible_Delete(QAccessible_Ptr self);
+	[LinkName("QAccessible_InstallUpdateHandler")]
+	public static extern c_intptr QAccessible_InstallUpdateHandler(c_intptr param1);
+	[LinkName("QAccessible_InstallRootObjectHandler")]
+	public static extern c_intptr QAccessible_InstallRootObjectHandler(c_intptr param1);
+	[LinkName("QAccessible_InstallActivationObserver")]
+	public static extern void QAccessible_InstallActivationObserver(void** param1);
+	[LinkName("QAccessible_RemoveActivationObserver")]
+	public static extern void QAccessible_RemoveActivationObserver(void** param1);
+	[LinkName("QAccessible_QueryAccessibleInterface")]
+	public static extern void** QAccessible_QueryAccessibleInterface(void** param1);
+	[LinkName("QAccessible_UniqueId")]
+	public static extern c_uint QAccessible_UniqueId(void** iface);
+	[LinkName("QAccessible_AccessibleInterface")]
+	public static extern void** QAccessible_AccessibleInterface(c_uint uniqueId);
+	[LinkName("QAccessible_RegisterAccessibleInterface")]
+	public static extern c_uint QAccessible_RegisterAccessibleInterface(void** iface);
+	[LinkName("QAccessible_DeleteAccessibleInterface")]
+	public static extern void QAccessible_DeleteAccessibleInterface(c_uint uniqueId);
+	[LinkName("QAccessible_UpdateAccessibility")]
+	public static extern void QAccessible_UpdateAccessibility(void** event);
+	[LinkName("QAccessible_IsActive")]
+	public static extern bool QAccessible_IsActive();
+	[LinkName("QAccessible_SetActive")]
+	public static extern void QAccessible_SetActive(bool active);
+	[LinkName("QAccessible_SetRootObject")]
+	public static extern void QAccessible_SetRootObject(void** object);
+	[LinkName("QAccessible_Cleanup")]
+	public static extern void QAccessible_Cleanup();
+	[LinkName("QAccessible_QAccessibleTextBoundaryHelper")]
+	public static extern void* QAccessible_QAccessibleTextBoundaryHelper(void** cursor, QAccessible_TextBoundaryType boundaryType);
 }
 // --------------------------------------------------------------
 // QAccessible::State
@@ -145,6 +205,622 @@ struct QAccessible_State_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_ulonglong Disabled()
+	{
+		return CQt.QAccessible_State_Disabled((.)this.Ptr);
+	}
+	public void SetDisabled(c_ulonglong disabled)
+	{
+		CQt.QAccessible_State_SetDisabled((.)this.Ptr, disabled);
+	}
+	public c_ulonglong Selected()
+	{
+		return CQt.QAccessible_State_Selected((.)this.Ptr);
+	}
+	public void SetSelected(c_ulonglong selected)
+	{
+		CQt.QAccessible_State_SetSelected((.)this.Ptr, selected);
+	}
+	public c_ulonglong Focusable()
+	{
+		return CQt.QAccessible_State_Focusable((.)this.Ptr);
+	}
+	public void SetFocusable(c_ulonglong focusable)
+	{
+		CQt.QAccessible_State_SetFocusable((.)this.Ptr, focusable);
+	}
+	public c_ulonglong Focused()
+	{
+		return CQt.QAccessible_State_Focused((.)this.Ptr);
+	}
+	public void SetFocused(c_ulonglong focused)
+	{
+		CQt.QAccessible_State_SetFocused((.)this.Ptr, focused);
+	}
+	public c_ulonglong Pressed()
+	{
+		return CQt.QAccessible_State_Pressed((.)this.Ptr);
+	}
+	public void SetPressed(c_ulonglong pressed)
+	{
+		CQt.QAccessible_State_SetPressed((.)this.Ptr, pressed);
+	}
+	public c_ulonglong Checkable()
+	{
+		return CQt.QAccessible_State_Checkable((.)this.Ptr);
+	}
+	public void SetCheckable(c_ulonglong checkable)
+	{
+		CQt.QAccessible_State_SetCheckable((.)this.Ptr, checkable);
+	}
+	public c_ulonglong Checked()
+	{
+		return CQt.QAccessible_State_Checked((.)this.Ptr);
+	}
+	public void SetChecked(c_ulonglong _checked)
+	{
+		CQt.QAccessible_State_SetChecked((.)this.Ptr, _checked);
+	}
+	public c_ulonglong CheckStateMixed()
+	{
+		return CQt.QAccessible_State_CheckStateMixed((.)this.Ptr);
+	}
+	public void SetCheckStateMixed(c_ulonglong checkStateMixed)
+	{
+		CQt.QAccessible_State_SetCheckStateMixed((.)this.Ptr, checkStateMixed);
+	}
+	public c_ulonglong ReadOnly()
+	{
+		return CQt.QAccessible_State_ReadOnly((.)this.Ptr);
+	}
+	public void SetReadOnly(c_ulonglong readOnly)
+	{
+		CQt.QAccessible_State_SetReadOnly((.)this.Ptr, readOnly);
+	}
+	public c_ulonglong HotTracked()
+	{
+		return CQt.QAccessible_State_HotTracked((.)this.Ptr);
+	}
+	public void SetHotTracked(c_ulonglong hotTracked)
+	{
+		CQt.QAccessible_State_SetHotTracked((.)this.Ptr, hotTracked);
+	}
+	public c_ulonglong DefaultButton()
+	{
+		return CQt.QAccessible_State_DefaultButton((.)this.Ptr);
+	}
+	public void SetDefaultButton(c_ulonglong defaultButton)
+	{
+		CQt.QAccessible_State_SetDefaultButton((.)this.Ptr, defaultButton);
+	}
+	public c_ulonglong Expanded()
+	{
+		return CQt.QAccessible_State_Expanded((.)this.Ptr);
+	}
+	public void SetExpanded(c_ulonglong expanded)
+	{
+		CQt.QAccessible_State_SetExpanded((.)this.Ptr, expanded);
+	}
+	public c_ulonglong Collapsed()
+	{
+		return CQt.QAccessible_State_Collapsed((.)this.Ptr);
+	}
+	public void SetCollapsed(c_ulonglong collapsed)
+	{
+		CQt.QAccessible_State_SetCollapsed((.)this.Ptr, collapsed);
+	}
+	public c_ulonglong Busy()
+	{
+		return CQt.QAccessible_State_Busy((.)this.Ptr);
+	}
+	public void SetBusy(c_ulonglong busy)
+	{
+		CQt.QAccessible_State_SetBusy((.)this.Ptr, busy);
+	}
+	public c_ulonglong Expandable()
+	{
+		return CQt.QAccessible_State_Expandable((.)this.Ptr);
+	}
+	public void SetExpandable(c_ulonglong expandable)
+	{
+		CQt.QAccessible_State_SetExpandable((.)this.Ptr, expandable);
+	}
+	public c_ulonglong Marqueed()
+	{
+		return CQt.QAccessible_State_Marqueed((.)this.Ptr);
+	}
+	public void SetMarqueed(c_ulonglong marqueed)
+	{
+		CQt.QAccessible_State_SetMarqueed((.)this.Ptr, marqueed);
+	}
+	public c_ulonglong Animated()
+	{
+		return CQt.QAccessible_State_Animated((.)this.Ptr);
+	}
+	public void SetAnimated(c_ulonglong animated)
+	{
+		CQt.QAccessible_State_SetAnimated((.)this.Ptr, animated);
+	}
+	public c_ulonglong Invisible()
+	{
+		return CQt.QAccessible_State_Invisible((.)this.Ptr);
+	}
+	public void SetInvisible(c_ulonglong invisible)
+	{
+		CQt.QAccessible_State_SetInvisible((.)this.Ptr, invisible);
+	}
+	public c_ulonglong Offscreen()
+	{
+		return CQt.QAccessible_State_Offscreen((.)this.Ptr);
+	}
+	public void SetOffscreen(c_ulonglong offscreen)
+	{
+		CQt.QAccessible_State_SetOffscreen((.)this.Ptr, offscreen);
+	}
+	public c_ulonglong Sizeable()
+	{
+		return CQt.QAccessible_State_Sizeable((.)this.Ptr);
+	}
+	public void SetSizeable(c_ulonglong sizeable)
+	{
+		CQt.QAccessible_State_SetSizeable((.)this.Ptr, sizeable);
+	}
+	public c_ulonglong Movable()
+	{
+		return CQt.QAccessible_State_Movable((.)this.Ptr);
+	}
+	public void SetMovable(c_ulonglong movable)
+	{
+		CQt.QAccessible_State_SetMovable((.)this.Ptr, movable);
+	}
+	public c_ulonglong SelfVoicing()
+	{
+		return CQt.QAccessible_State_SelfVoicing((.)this.Ptr);
+	}
+	public void SetSelfVoicing(c_ulonglong selfVoicing)
+	{
+		CQt.QAccessible_State_SetSelfVoicing((.)this.Ptr, selfVoicing);
+	}
+	public c_ulonglong Selectable()
+	{
+		return CQt.QAccessible_State_Selectable((.)this.Ptr);
+	}
+	public void SetSelectable(c_ulonglong selectable)
+	{
+		CQt.QAccessible_State_SetSelectable((.)this.Ptr, selectable);
+	}
+	public c_ulonglong Linked()
+	{
+		return CQt.QAccessible_State_Linked((.)this.Ptr);
+	}
+	public void SetLinked(c_ulonglong linked)
+	{
+		CQt.QAccessible_State_SetLinked((.)this.Ptr, linked);
+	}
+	public c_ulonglong Traversed()
+	{
+		return CQt.QAccessible_State_Traversed((.)this.Ptr);
+	}
+	public void SetTraversed(c_ulonglong traversed)
+	{
+		CQt.QAccessible_State_SetTraversed((.)this.Ptr, traversed);
+	}
+	public c_ulonglong MultiSelectable()
+	{
+		return CQt.QAccessible_State_MultiSelectable((.)this.Ptr);
+	}
+	public void SetMultiSelectable(c_ulonglong multiSelectable)
+	{
+		CQt.QAccessible_State_SetMultiSelectable((.)this.Ptr, multiSelectable);
+	}
+	public c_ulonglong ExtSelectable()
+	{
+		return CQt.QAccessible_State_ExtSelectable((.)this.Ptr);
+	}
+	public void SetExtSelectable(c_ulonglong extSelectable)
+	{
+		CQt.QAccessible_State_SetExtSelectable((.)this.Ptr, extSelectable);
+	}
+	public c_ulonglong PasswordEdit()
+	{
+		return CQt.QAccessible_State_PasswordEdit((.)this.Ptr);
+	}
+	public void SetPasswordEdit(c_ulonglong passwordEdit)
+	{
+		CQt.QAccessible_State_SetPasswordEdit((.)this.Ptr, passwordEdit);
+	}
+	public c_ulonglong HasPopup()
+	{
+		return CQt.QAccessible_State_HasPopup((.)this.Ptr);
+	}
+	public void SetHasPopup(c_ulonglong hasPopup)
+	{
+		CQt.QAccessible_State_SetHasPopup((.)this.Ptr, hasPopup);
+	}
+	public c_ulonglong Modal()
+	{
+		return CQt.QAccessible_State_Modal((.)this.Ptr);
+	}
+	public void SetModal(c_ulonglong modal)
+	{
+		CQt.QAccessible_State_SetModal((.)this.Ptr, modal);
+	}
+	public c_ulonglong Active()
+	{
+		return CQt.QAccessible_State_Active((.)this.Ptr);
+	}
+	public void SetActive(c_ulonglong active)
+	{
+		CQt.QAccessible_State_SetActive((.)this.Ptr, active);
+	}
+	public c_ulonglong Invalid()
+	{
+		return CQt.QAccessible_State_Invalid((.)this.Ptr);
+	}
+	public void SetInvalid(c_ulonglong invalid)
+	{
+		CQt.QAccessible_State_SetInvalid((.)this.Ptr, invalid);
+	}
+	public c_ulonglong Editable()
+	{
+		return CQt.QAccessible_State_Editable((.)this.Ptr);
+	}
+	public void SetEditable(c_ulonglong editable)
+	{
+		CQt.QAccessible_State_SetEditable((.)this.Ptr, editable);
+	}
+	public c_ulonglong MultiLine()
+	{
+		return CQt.QAccessible_State_MultiLine((.)this.Ptr);
+	}
+	public void SetMultiLine(c_ulonglong multiLine)
+	{
+		CQt.QAccessible_State_SetMultiLine((.)this.Ptr, multiLine);
+	}
+	public c_ulonglong SelectableText()
+	{
+		return CQt.QAccessible_State_SelectableText((.)this.Ptr);
+	}
+	public void SetSelectableText(c_ulonglong selectableText)
+	{
+		CQt.QAccessible_State_SetSelectableText((.)this.Ptr, selectableText);
+	}
+	public c_ulonglong SupportsAutoCompletion()
+	{
+		return CQt.QAccessible_State_SupportsAutoCompletion((.)this.Ptr);
+	}
+	public void SetSupportsAutoCompletion(c_ulonglong supportsAutoCompletion)
+	{
+		CQt.QAccessible_State_SetSupportsAutoCompletion((.)this.Ptr, supportsAutoCompletion);
+	}
+	public c_ulonglong SearchEdit()
+	{
+		return CQt.QAccessible_State_SearchEdit((.)this.Ptr);
+	}
+	public void SetSearchEdit(c_ulonglong searchEdit)
+	{
+		CQt.QAccessible_State_SetSearchEdit((.)this.Ptr, searchEdit);
+	}
+}
+class QAccessible_State : IQAccessible_State
+{
+	private QAccessible_State_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAccessible_State_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQAccessible_State other)
+	{
+		this.ptr = CQt.QAccessible_State_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QAccessible_State_new3();
+	}
+	public ~this()
+	{
+		CQt.QAccessible_State_Delete(this.ptr);
+	}
+	public c_ulonglong Disabled()
+	{
+		return this.ptr.Disabled();
+	}
+	public void SetDisabled(c_ulonglong disabled)
+	{
+		this.ptr.SetDisabled(disabled);
+	}
+	public c_ulonglong Selected()
+	{
+		return this.ptr.Selected();
+	}
+	public void SetSelected(c_ulonglong selected)
+	{
+		this.ptr.SetSelected(selected);
+	}
+	public c_ulonglong Focusable()
+	{
+		return this.ptr.Focusable();
+	}
+	public void SetFocusable(c_ulonglong focusable)
+	{
+		this.ptr.SetFocusable(focusable);
+	}
+	public c_ulonglong Focused()
+	{
+		return this.ptr.Focused();
+	}
+	public void SetFocused(c_ulonglong focused)
+	{
+		this.ptr.SetFocused(focused);
+	}
+	public c_ulonglong Pressed()
+	{
+		return this.ptr.Pressed();
+	}
+	public void SetPressed(c_ulonglong pressed)
+	{
+		this.ptr.SetPressed(pressed);
+	}
+	public c_ulonglong Checkable()
+	{
+		return this.ptr.Checkable();
+	}
+	public void SetCheckable(c_ulonglong checkable)
+	{
+		this.ptr.SetCheckable(checkable);
+	}
+	public c_ulonglong Checked()
+	{
+		return this.ptr.Checked();
+	}
+	public void SetChecked(c_ulonglong _checked)
+	{
+		this.ptr.SetChecked(_checked);
+	}
+	public c_ulonglong CheckStateMixed()
+	{
+		return this.ptr.CheckStateMixed();
+	}
+	public void SetCheckStateMixed(c_ulonglong checkStateMixed)
+	{
+		this.ptr.SetCheckStateMixed(checkStateMixed);
+	}
+	public c_ulonglong ReadOnly()
+	{
+		return this.ptr.ReadOnly();
+	}
+	public void SetReadOnly(c_ulonglong readOnly)
+	{
+		this.ptr.SetReadOnly(readOnly);
+	}
+	public c_ulonglong HotTracked()
+	{
+		return this.ptr.HotTracked();
+	}
+	public void SetHotTracked(c_ulonglong hotTracked)
+	{
+		this.ptr.SetHotTracked(hotTracked);
+	}
+	public c_ulonglong DefaultButton()
+	{
+		return this.ptr.DefaultButton();
+	}
+	public void SetDefaultButton(c_ulonglong defaultButton)
+	{
+		this.ptr.SetDefaultButton(defaultButton);
+	}
+	public c_ulonglong Expanded()
+	{
+		return this.ptr.Expanded();
+	}
+	public void SetExpanded(c_ulonglong expanded)
+	{
+		this.ptr.SetExpanded(expanded);
+	}
+	public c_ulonglong Collapsed()
+	{
+		return this.ptr.Collapsed();
+	}
+	public void SetCollapsed(c_ulonglong collapsed)
+	{
+		this.ptr.SetCollapsed(collapsed);
+	}
+	public c_ulonglong Busy()
+	{
+		return this.ptr.Busy();
+	}
+	public void SetBusy(c_ulonglong busy)
+	{
+		this.ptr.SetBusy(busy);
+	}
+	public c_ulonglong Expandable()
+	{
+		return this.ptr.Expandable();
+	}
+	public void SetExpandable(c_ulonglong expandable)
+	{
+		this.ptr.SetExpandable(expandable);
+	}
+	public c_ulonglong Marqueed()
+	{
+		return this.ptr.Marqueed();
+	}
+	public void SetMarqueed(c_ulonglong marqueed)
+	{
+		this.ptr.SetMarqueed(marqueed);
+	}
+	public c_ulonglong Animated()
+	{
+		return this.ptr.Animated();
+	}
+	public void SetAnimated(c_ulonglong animated)
+	{
+		this.ptr.SetAnimated(animated);
+	}
+	public c_ulonglong Invisible()
+	{
+		return this.ptr.Invisible();
+	}
+	public void SetInvisible(c_ulonglong invisible)
+	{
+		this.ptr.SetInvisible(invisible);
+	}
+	public c_ulonglong Offscreen()
+	{
+		return this.ptr.Offscreen();
+	}
+	public void SetOffscreen(c_ulonglong offscreen)
+	{
+		this.ptr.SetOffscreen(offscreen);
+	}
+	public c_ulonglong Sizeable()
+	{
+		return this.ptr.Sizeable();
+	}
+	public void SetSizeable(c_ulonglong sizeable)
+	{
+		this.ptr.SetSizeable(sizeable);
+	}
+	public c_ulonglong Movable()
+	{
+		return this.ptr.Movable();
+	}
+	public void SetMovable(c_ulonglong movable)
+	{
+		this.ptr.SetMovable(movable);
+	}
+	public c_ulonglong SelfVoicing()
+	{
+		return this.ptr.SelfVoicing();
+	}
+	public void SetSelfVoicing(c_ulonglong selfVoicing)
+	{
+		this.ptr.SetSelfVoicing(selfVoicing);
+	}
+	public c_ulonglong Selectable()
+	{
+		return this.ptr.Selectable();
+	}
+	public void SetSelectable(c_ulonglong selectable)
+	{
+		this.ptr.SetSelectable(selectable);
+	}
+	public c_ulonglong Linked()
+	{
+		return this.ptr.Linked();
+	}
+	public void SetLinked(c_ulonglong linked)
+	{
+		this.ptr.SetLinked(linked);
+	}
+	public c_ulonglong Traversed()
+	{
+		return this.ptr.Traversed();
+	}
+	public void SetTraversed(c_ulonglong traversed)
+	{
+		this.ptr.SetTraversed(traversed);
+	}
+	public c_ulonglong MultiSelectable()
+	{
+		return this.ptr.MultiSelectable();
+	}
+	public void SetMultiSelectable(c_ulonglong multiSelectable)
+	{
+		this.ptr.SetMultiSelectable(multiSelectable);
+	}
+	public c_ulonglong ExtSelectable()
+	{
+		return this.ptr.ExtSelectable();
+	}
+	public void SetExtSelectable(c_ulonglong extSelectable)
+	{
+		this.ptr.SetExtSelectable(extSelectable);
+	}
+	public c_ulonglong PasswordEdit()
+	{
+		return this.ptr.PasswordEdit();
+	}
+	public void SetPasswordEdit(c_ulonglong passwordEdit)
+	{
+		this.ptr.SetPasswordEdit(passwordEdit);
+	}
+	public c_ulonglong HasPopup()
+	{
+		return this.ptr.HasPopup();
+	}
+	public void SetHasPopup(c_ulonglong hasPopup)
+	{
+		this.ptr.SetHasPopup(hasPopup);
+	}
+	public c_ulonglong Modal()
+	{
+		return this.ptr.Modal();
+	}
+	public void SetModal(c_ulonglong modal)
+	{
+		this.ptr.SetModal(modal);
+	}
+	public c_ulonglong Active()
+	{
+		return this.ptr.Active();
+	}
+	public void SetActive(c_ulonglong active)
+	{
+		this.ptr.SetActive(active);
+	}
+	public c_ulonglong Invalid()
+	{
+		return this.ptr.Invalid();
+	}
+	public void SetInvalid(c_ulonglong invalid)
+	{
+		this.ptr.SetInvalid(invalid);
+	}
+	public c_ulonglong Editable()
+	{
+		return this.ptr.Editable();
+	}
+	public void SetEditable(c_ulonglong editable)
+	{
+		this.ptr.SetEditable(editable);
+	}
+	public c_ulonglong MultiLine()
+	{
+		return this.ptr.MultiLine();
+	}
+	public void SetMultiLine(c_ulonglong multiLine)
+	{
+		this.ptr.SetMultiLine(multiLine);
+	}
+	public c_ulonglong SelectableText()
+	{
+		return this.ptr.SelectableText();
+	}
+	public void SetSelectableText(c_ulonglong selectableText)
+	{
+		this.ptr.SetSelectableText(selectableText);
+	}
+	public c_ulonglong SupportsAutoCompletion()
+	{
+		return this.ptr.SupportsAutoCompletion();
+	}
+	public void SetSupportsAutoCompletion(c_ulonglong supportsAutoCompletion)
+	{
+		this.ptr.SetSupportsAutoCompletion(supportsAutoCompletion);
+	}
+	public c_ulonglong SearchEdit()
+	{
+		return this.ptr.SearchEdit();
+	}
+	public void SetSearchEdit(c_ulonglong searchEdit)
+	{
+		this.ptr.SetSearchEdit(searchEdit);
+	}
+}
+interface IQAccessible_State : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -305,326 +981,6 @@ extension CQt
 	[LinkName("QAccessible_State_SetSearchEdit")]
 	public static extern void QAccessible_State_SetSearchEdit(void* self, c_ulonglong searchEdit);
 }
-class QAccessible_State : IQAccessible_State
-{
-	private QAccessible_State_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QAccessible_State_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQAccessible_State other)
-	{
-		this.ptr = CQt.QAccessible_State_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QAccessible_State_new3();
-	}
-	public ~this()
-	{
-		CQt.QAccessible_State_Delete(this.ptr);
-	}
-	public c_ulonglong Disabled()
-	{
-		return CQt.QAccessible_State_Disabled((.)this.ptr.Ptr);
-	}
-	public void SetDisabled(c_ulonglong disabled)
-	{
-		CQt.QAccessible_State_SetDisabled((.)this.ptr.Ptr, disabled);
-	}
-	public c_ulonglong Selected()
-	{
-		return CQt.QAccessible_State_Selected((.)this.ptr.Ptr);
-	}
-	public void SetSelected(c_ulonglong selected)
-	{
-		CQt.QAccessible_State_SetSelected((.)this.ptr.Ptr, selected);
-	}
-	public c_ulonglong Focusable()
-	{
-		return CQt.QAccessible_State_Focusable((.)this.ptr.Ptr);
-	}
-	public void SetFocusable(c_ulonglong focusable)
-	{
-		CQt.QAccessible_State_SetFocusable((.)this.ptr.Ptr, focusable);
-	}
-	public c_ulonglong Focused()
-	{
-		return CQt.QAccessible_State_Focused((.)this.ptr.Ptr);
-	}
-	public void SetFocused(c_ulonglong focused)
-	{
-		CQt.QAccessible_State_SetFocused((.)this.ptr.Ptr, focused);
-	}
-	public c_ulonglong Pressed()
-	{
-		return CQt.QAccessible_State_Pressed((.)this.ptr.Ptr);
-	}
-	public void SetPressed(c_ulonglong pressed)
-	{
-		CQt.QAccessible_State_SetPressed((.)this.ptr.Ptr, pressed);
-	}
-	public c_ulonglong Checkable()
-	{
-		return CQt.QAccessible_State_Checkable((.)this.ptr.Ptr);
-	}
-	public void SetCheckable(c_ulonglong checkable)
-	{
-		CQt.QAccessible_State_SetCheckable((.)this.ptr.Ptr, checkable);
-	}
-	public c_ulonglong Checked()
-	{
-		return CQt.QAccessible_State_Checked((.)this.ptr.Ptr);
-	}
-	public void SetChecked(c_ulonglong _checked)
-	{
-		CQt.QAccessible_State_SetChecked((.)this.ptr.Ptr, _checked);
-	}
-	public c_ulonglong CheckStateMixed()
-	{
-		return CQt.QAccessible_State_CheckStateMixed((.)this.ptr.Ptr);
-	}
-	public void SetCheckStateMixed(c_ulonglong checkStateMixed)
-	{
-		CQt.QAccessible_State_SetCheckStateMixed((.)this.ptr.Ptr, checkStateMixed);
-	}
-	public c_ulonglong ReadOnly()
-	{
-		return CQt.QAccessible_State_ReadOnly((.)this.ptr.Ptr);
-	}
-	public void SetReadOnly(c_ulonglong readOnly)
-	{
-		CQt.QAccessible_State_SetReadOnly((.)this.ptr.Ptr, readOnly);
-	}
-	public c_ulonglong HotTracked()
-	{
-		return CQt.QAccessible_State_HotTracked((.)this.ptr.Ptr);
-	}
-	public void SetHotTracked(c_ulonglong hotTracked)
-	{
-		CQt.QAccessible_State_SetHotTracked((.)this.ptr.Ptr, hotTracked);
-	}
-	public c_ulonglong DefaultButton()
-	{
-		return CQt.QAccessible_State_DefaultButton((.)this.ptr.Ptr);
-	}
-	public void SetDefaultButton(c_ulonglong defaultButton)
-	{
-		CQt.QAccessible_State_SetDefaultButton((.)this.ptr.Ptr, defaultButton);
-	}
-	public c_ulonglong Expanded()
-	{
-		return CQt.QAccessible_State_Expanded((.)this.ptr.Ptr);
-	}
-	public void SetExpanded(c_ulonglong expanded)
-	{
-		CQt.QAccessible_State_SetExpanded((.)this.ptr.Ptr, expanded);
-	}
-	public c_ulonglong Collapsed()
-	{
-		return CQt.QAccessible_State_Collapsed((.)this.ptr.Ptr);
-	}
-	public void SetCollapsed(c_ulonglong collapsed)
-	{
-		CQt.QAccessible_State_SetCollapsed((.)this.ptr.Ptr, collapsed);
-	}
-	public c_ulonglong Busy()
-	{
-		return CQt.QAccessible_State_Busy((.)this.ptr.Ptr);
-	}
-	public void SetBusy(c_ulonglong busy)
-	{
-		CQt.QAccessible_State_SetBusy((.)this.ptr.Ptr, busy);
-	}
-	public c_ulonglong Expandable()
-	{
-		return CQt.QAccessible_State_Expandable((.)this.ptr.Ptr);
-	}
-	public void SetExpandable(c_ulonglong expandable)
-	{
-		CQt.QAccessible_State_SetExpandable((.)this.ptr.Ptr, expandable);
-	}
-	public c_ulonglong Marqueed()
-	{
-		return CQt.QAccessible_State_Marqueed((.)this.ptr.Ptr);
-	}
-	public void SetMarqueed(c_ulonglong marqueed)
-	{
-		CQt.QAccessible_State_SetMarqueed((.)this.ptr.Ptr, marqueed);
-	}
-	public c_ulonglong Animated()
-	{
-		return CQt.QAccessible_State_Animated((.)this.ptr.Ptr);
-	}
-	public void SetAnimated(c_ulonglong animated)
-	{
-		CQt.QAccessible_State_SetAnimated((.)this.ptr.Ptr, animated);
-	}
-	public c_ulonglong Invisible()
-	{
-		return CQt.QAccessible_State_Invisible((.)this.ptr.Ptr);
-	}
-	public void SetInvisible(c_ulonglong invisible)
-	{
-		CQt.QAccessible_State_SetInvisible((.)this.ptr.Ptr, invisible);
-	}
-	public c_ulonglong Offscreen()
-	{
-		return CQt.QAccessible_State_Offscreen((.)this.ptr.Ptr);
-	}
-	public void SetOffscreen(c_ulonglong offscreen)
-	{
-		CQt.QAccessible_State_SetOffscreen((.)this.ptr.Ptr, offscreen);
-	}
-	public c_ulonglong Sizeable()
-	{
-		return CQt.QAccessible_State_Sizeable((.)this.ptr.Ptr);
-	}
-	public void SetSizeable(c_ulonglong sizeable)
-	{
-		CQt.QAccessible_State_SetSizeable((.)this.ptr.Ptr, sizeable);
-	}
-	public c_ulonglong Movable()
-	{
-		return CQt.QAccessible_State_Movable((.)this.ptr.Ptr);
-	}
-	public void SetMovable(c_ulonglong movable)
-	{
-		CQt.QAccessible_State_SetMovable((.)this.ptr.Ptr, movable);
-	}
-	public c_ulonglong SelfVoicing()
-	{
-		return CQt.QAccessible_State_SelfVoicing((.)this.ptr.Ptr);
-	}
-	public void SetSelfVoicing(c_ulonglong selfVoicing)
-	{
-		CQt.QAccessible_State_SetSelfVoicing((.)this.ptr.Ptr, selfVoicing);
-	}
-	public c_ulonglong Selectable()
-	{
-		return CQt.QAccessible_State_Selectable((.)this.ptr.Ptr);
-	}
-	public void SetSelectable(c_ulonglong selectable)
-	{
-		CQt.QAccessible_State_SetSelectable((.)this.ptr.Ptr, selectable);
-	}
-	public c_ulonglong Linked()
-	{
-		return CQt.QAccessible_State_Linked((.)this.ptr.Ptr);
-	}
-	public void SetLinked(c_ulonglong linked)
-	{
-		CQt.QAccessible_State_SetLinked((.)this.ptr.Ptr, linked);
-	}
-	public c_ulonglong Traversed()
-	{
-		return CQt.QAccessible_State_Traversed((.)this.ptr.Ptr);
-	}
-	public void SetTraversed(c_ulonglong traversed)
-	{
-		CQt.QAccessible_State_SetTraversed((.)this.ptr.Ptr, traversed);
-	}
-	public c_ulonglong MultiSelectable()
-	{
-		return CQt.QAccessible_State_MultiSelectable((.)this.ptr.Ptr);
-	}
-	public void SetMultiSelectable(c_ulonglong multiSelectable)
-	{
-		CQt.QAccessible_State_SetMultiSelectable((.)this.ptr.Ptr, multiSelectable);
-	}
-	public c_ulonglong ExtSelectable()
-	{
-		return CQt.QAccessible_State_ExtSelectable((.)this.ptr.Ptr);
-	}
-	public void SetExtSelectable(c_ulonglong extSelectable)
-	{
-		CQt.QAccessible_State_SetExtSelectable((.)this.ptr.Ptr, extSelectable);
-	}
-	public c_ulonglong PasswordEdit()
-	{
-		return CQt.QAccessible_State_PasswordEdit((.)this.ptr.Ptr);
-	}
-	public void SetPasswordEdit(c_ulonglong passwordEdit)
-	{
-		CQt.QAccessible_State_SetPasswordEdit((.)this.ptr.Ptr, passwordEdit);
-	}
-	public c_ulonglong HasPopup()
-	{
-		return CQt.QAccessible_State_HasPopup((.)this.ptr.Ptr);
-	}
-	public void SetHasPopup(c_ulonglong hasPopup)
-	{
-		CQt.QAccessible_State_SetHasPopup((.)this.ptr.Ptr, hasPopup);
-	}
-	public c_ulonglong Modal()
-	{
-		return CQt.QAccessible_State_Modal((.)this.ptr.Ptr);
-	}
-	public void SetModal(c_ulonglong modal)
-	{
-		CQt.QAccessible_State_SetModal((.)this.ptr.Ptr, modal);
-	}
-	public c_ulonglong Active()
-	{
-		return CQt.QAccessible_State_Active((.)this.ptr.Ptr);
-	}
-	public void SetActive(c_ulonglong active)
-	{
-		CQt.QAccessible_State_SetActive((.)this.ptr.Ptr, active);
-	}
-	public c_ulonglong Invalid()
-	{
-		return CQt.QAccessible_State_Invalid((.)this.ptr.Ptr);
-	}
-	public void SetInvalid(c_ulonglong invalid)
-	{
-		CQt.QAccessible_State_SetInvalid((.)this.ptr.Ptr, invalid);
-	}
-	public c_ulonglong Editable()
-	{
-		return CQt.QAccessible_State_Editable((.)this.ptr.Ptr);
-	}
-	public void SetEditable(c_ulonglong editable)
-	{
-		CQt.QAccessible_State_SetEditable((.)this.ptr.Ptr, editable);
-	}
-	public c_ulonglong MultiLine()
-	{
-		return CQt.QAccessible_State_MultiLine((.)this.ptr.Ptr);
-	}
-	public void SetMultiLine(c_ulonglong multiLine)
-	{
-		CQt.QAccessible_State_SetMultiLine((.)this.ptr.Ptr, multiLine);
-	}
-	public c_ulonglong SelectableText()
-	{
-		return CQt.QAccessible_State_SelectableText((.)this.ptr.Ptr);
-	}
-	public void SetSelectableText(c_ulonglong selectableText)
-	{
-		CQt.QAccessible_State_SetSelectableText((.)this.ptr.Ptr, selectableText);
-	}
-	public c_ulonglong SupportsAutoCompletion()
-	{
-		return CQt.QAccessible_State_SupportsAutoCompletion((.)this.ptr.Ptr);
-	}
-	public void SetSupportsAutoCompletion(c_ulonglong supportsAutoCompletion)
-	{
-		CQt.QAccessible_State_SetSupportsAutoCompletion((.)this.ptr.Ptr, supportsAutoCompletion);
-	}
-	public c_ulonglong SearchEdit()
-	{
-		return CQt.QAccessible_State_SearchEdit((.)this.ptr.Ptr);
-	}
-	public void SetSearchEdit(c_ulonglong searchEdit)
-	{
-		CQt.QAccessible_State_SetSearchEdit((.)this.ptr.Ptr, searchEdit);
-	}
-}
-interface IQAccessible_State : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QAccessible::ActivationObserver
 // --------------------------------------------------------------
@@ -636,15 +992,10 @@ struct QAccessible_ActivationObserver_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QAccessible_ActivationObserver_Delete")]
-	public static extern void QAccessible_ActivationObserver_Delete(QAccessible_ActivationObserver_Ptr self);
-	[LinkName("QAccessible_ActivationObserver_AccessibilityActiveChanged")]
-	public static extern void QAccessible_ActivationObserver_AccessibilityActiveChanged(void* self, bool active);
-	[LinkName("QAccessible_ActivationObserver_OperatorAssign")]
-	public static extern void QAccessible_ActivationObserver_OperatorAssign(void* self, void** param1);
+	public void AccessibilityActiveChanged(bool active)
+	{
+		CQt.QAccessible_ActivationObserver_AccessibilityActiveChanged((.)this.Ptr, active);
+	}
 }
 class QAccessible_ActivationObserver : IQAccessible_ActivationObserver
 {
@@ -660,11 +1011,20 @@ class QAccessible_ActivationObserver : IQAccessible_ActivationObserver
 	}
 	public void AccessibilityActiveChanged(bool active)
 	{
-		CQt.QAccessible_ActivationObserver_AccessibilityActiveChanged((.)this.ptr.Ptr, active);
+		this.ptr.AccessibilityActiveChanged(active);
 	}
 }
 interface IQAccessible_ActivationObserver : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QAccessible_ActivationObserver_Delete")]
+	public static extern void QAccessible_ActivationObserver_Delete(QAccessible_ActivationObserver_Ptr self);
+	[LinkName("QAccessible_ActivationObserver_AccessibilityActiveChanged")]
+	public static extern void QAccessible_ActivationObserver_AccessibilityActiveChanged(void* self, bool active);
+	[LinkName("QAccessible_ActivationObserver_OperatorAssign")]
+	public static extern void QAccessible_ActivationObserver_OperatorAssign(void* self, void** param1);
 }
 [AllowDuplicates]
 enum QAccessible_Event

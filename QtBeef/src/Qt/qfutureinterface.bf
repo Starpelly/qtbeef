@@ -14,6 +14,418 @@ struct QFutureInterfaceBase_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void ReportStarted()
+	{
+		CQt.QFutureInterfaceBase_ReportStarted((.)this.Ptr);
+	}
+	public void ReportFinished()
+	{
+		CQt.QFutureInterfaceBase_ReportFinished((.)this.Ptr);
+	}
+	public void ReportCanceled()
+	{
+		CQt.QFutureInterfaceBase_ReportCanceled((.)this.Ptr);
+	}
+	public void ReportResultsReady(c_int beginIndex, c_int endIndex)
+	{
+		CQt.QFutureInterfaceBase_ReportResultsReady((.)this.Ptr, beginIndex, endIndex);
+	}
+	public void SetRunnable(IQRunnable runnable)
+	{
+		CQt.QFutureInterfaceBase_SetRunnable((.)this.Ptr, (.)runnable?.ObjectPtr);
+	}
+	public void SetThreadPool(IQThreadPool pool)
+	{
+		CQt.QFutureInterfaceBase_SetThreadPool((.)this.Ptr, (.)pool?.ObjectPtr);
+	}
+	public QThreadPool_Ptr ThreadPool()
+	{
+		return QThreadPool_Ptr(CQt.QFutureInterfaceBase_ThreadPool((.)this.Ptr));
+	}
+	public void SetFilterMode(bool enable)
+	{
+		CQt.QFutureInterfaceBase_SetFilterMode((.)this.Ptr, enable);
+	}
+	public void SetProgressRange(c_int minimum, c_int maximum)
+	{
+		CQt.QFutureInterfaceBase_SetProgressRange((.)this.Ptr, minimum, maximum);
+	}
+	public c_int ProgressMinimum()
+	{
+		return CQt.QFutureInterfaceBase_ProgressMinimum((.)this.Ptr);
+	}
+	public c_int ProgressMaximum()
+	{
+		return CQt.QFutureInterfaceBase_ProgressMaximum((.)this.Ptr);
+	}
+	public bool IsProgressUpdateNeeded()
+	{
+		return CQt.QFutureInterfaceBase_IsProgressUpdateNeeded((.)this.Ptr);
+	}
+	public void SetProgressValue(c_int progressValue)
+	{
+		CQt.QFutureInterfaceBase_SetProgressValue((.)this.Ptr, progressValue);
+	}
+	public c_int ProgressValue()
+	{
+		return CQt.QFutureInterfaceBase_ProgressValue((.)this.Ptr);
+	}
+	public void SetProgressValueAndText(c_int progressValue, String progressText)
+	{
+		CQt.QFutureInterfaceBase_SetProgressValueAndText((.)this.Ptr, progressValue, libqt_string(progressText));
+	}
+	public void ProgressText(String outStr)
+	{
+		CQt.QFutureInterfaceBase_ProgressText((.)this.Ptr);
+	}
+	public void SetExpectedResultCount(c_int resultCount)
+	{
+		CQt.QFutureInterfaceBase_SetExpectedResultCount((.)this.Ptr, resultCount);
+	}
+	public c_int ExpectedResultCount()
+	{
+		return CQt.QFutureInterfaceBase_ExpectedResultCount((.)this.Ptr);
+	}
+	public c_int ResultCount()
+	{
+		return CQt.QFutureInterfaceBase_ResultCount((.)this.Ptr);
+	}
+	public bool QueryState(QFutureInterfaceBase_State state)
+	{
+		return CQt.QFutureInterfaceBase_QueryState((.)this.Ptr, state);
+	}
+	public bool IsRunning()
+	{
+		return CQt.QFutureInterfaceBase_IsRunning((.)this.Ptr);
+	}
+	public bool IsStarted()
+	{
+		return CQt.QFutureInterfaceBase_IsStarted((.)this.Ptr);
+	}
+	public bool IsCanceled()
+	{
+		return CQt.QFutureInterfaceBase_IsCanceled((.)this.Ptr);
+	}
+	public bool IsFinished()
+	{
+		return CQt.QFutureInterfaceBase_IsFinished((.)this.Ptr);
+	}
+	public bool IsPaused()
+	{
+		return CQt.QFutureInterfaceBase_IsPaused((.)this.Ptr);
+	}
+	public void SetPaused(bool paused)
+	{
+		CQt.QFutureInterfaceBase_SetPaused((.)this.Ptr, paused);
+	}
+	public void TogglePaused()
+	{
+		CQt.QFutureInterfaceBase_TogglePaused((.)this.Ptr);
+	}
+	public bool IsSuspending()
+	{
+		return CQt.QFutureInterfaceBase_IsSuspending((.)this.Ptr);
+	}
+	public bool IsSuspended()
+	{
+		return CQt.QFutureInterfaceBase_IsSuspended((.)this.Ptr);
+	}
+	public bool IsThrottled()
+	{
+		return CQt.QFutureInterfaceBase_IsThrottled((.)this.Ptr);
+	}
+	public bool IsResultReadyAt(c_int index)
+	{
+		return CQt.QFutureInterfaceBase_IsResultReadyAt((.)this.Ptr, index);
+	}
+	public bool IsValid()
+	{
+		return CQt.QFutureInterfaceBase_IsValid((.)this.Ptr);
+	}
+	public c_int LoadState()
+	{
+		return CQt.QFutureInterfaceBase_LoadState((.)this.Ptr);
+	}
+	public void Cancel()
+	{
+		CQt.QFutureInterfaceBase_Cancel((.)this.Ptr);
+	}
+	public void CancelAndFinish()
+	{
+		CQt.QFutureInterfaceBase_CancelAndFinish((.)this.Ptr);
+	}
+	public void SetSuspended(bool suspendVal)
+	{
+		CQt.QFutureInterfaceBase_SetSuspended((.)this.Ptr, suspendVal);
+	}
+	public void ToggleSuspended()
+	{
+		CQt.QFutureInterfaceBase_ToggleSuspended((.)this.Ptr);
+	}
+	public void ReportSuspended()
+	{
+		CQt.QFutureInterfaceBase_ReportSuspended((.)this.Ptr);
+	}
+	public void SetThrottled(bool enable)
+	{
+		CQt.QFutureInterfaceBase_SetThrottled((.)this.Ptr, enable);
+	}
+	public void WaitForFinished()
+	{
+		CQt.QFutureInterfaceBase_WaitForFinished((.)this.Ptr);
+	}
+	public bool WaitForNextResult()
+	{
+		return CQt.QFutureInterfaceBase_WaitForNextResult((.)this.Ptr);
+	}
+	public void WaitForResult(c_int resultIndex)
+	{
+		CQt.QFutureInterfaceBase_WaitForResult((.)this.Ptr, resultIndex);
+	}
+	public void WaitForResume()
+	{
+		CQt.QFutureInterfaceBase_WaitForResume((.)this.Ptr);
+	}
+	public void SuspendIfRequested()
+	{
+		CQt.QFutureInterfaceBase_SuspendIfRequested((.)this.Ptr);
+	}
+	public QMutex_Ptr Mutex()
+	{
+		return QMutex_Ptr(CQt.QFutureInterfaceBase_Mutex((.)this.Ptr));
+	}
+	public bool HasException()
+	{
+		return CQt.QFutureInterfaceBase_HasException((.)this.Ptr);
+	}
+	public void Swap(IQFutureInterfaceBase other)
+	{
+		CQt.QFutureInterfaceBase_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsChainCanceled()
+	{
+		return CQt.QFutureInterfaceBase_IsChainCanceled((.)this.Ptr);
+	}
+}
+class QFutureInterfaceBase : IQFutureInterfaceBase
+{
+	private QFutureInterfaceBase_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QFutureInterfaceBase_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QFutureInterfaceBase_new();
+	}
+	public this(IQFutureInterfaceBase other)
+	{
+		this.ptr = CQt.QFutureInterfaceBase_new2((.)other?.ObjectPtr);
+	}
+	public this(QFutureInterfaceBase_State initialState)
+	{
+		this.ptr = CQt.QFutureInterfaceBase_new3(initialState);
+	}
+	public ~this()
+	{
+		CQt.QFutureInterfaceBase_Delete(this.ptr);
+	}
+	public void ReportStarted()
+	{
+		this.ptr.ReportStarted();
+	}
+	public void ReportFinished()
+	{
+		this.ptr.ReportFinished();
+	}
+	public void ReportCanceled()
+	{
+		this.ptr.ReportCanceled();
+	}
+	public void ReportResultsReady(c_int beginIndex, c_int endIndex)
+	{
+		this.ptr.ReportResultsReady(beginIndex, endIndex);
+	}
+	public void SetRunnable(IQRunnable runnable)
+	{
+		this.ptr.SetRunnable(runnable);
+	}
+	public void SetThreadPool(IQThreadPool pool)
+	{
+		this.ptr.SetThreadPool(pool);
+	}
+	public QThreadPool_Ptr ThreadPool()
+	{
+		return this.ptr.ThreadPool();
+	}
+	public void SetFilterMode(bool enable)
+	{
+		this.ptr.SetFilterMode(enable);
+	}
+	public void SetProgressRange(c_int minimum, c_int maximum)
+	{
+		this.ptr.SetProgressRange(minimum, maximum);
+	}
+	public c_int ProgressMinimum()
+	{
+		return this.ptr.ProgressMinimum();
+	}
+	public c_int ProgressMaximum()
+	{
+		return this.ptr.ProgressMaximum();
+	}
+	public bool IsProgressUpdateNeeded()
+	{
+		return this.ptr.IsProgressUpdateNeeded();
+	}
+	public void SetProgressValue(c_int progressValue)
+	{
+		this.ptr.SetProgressValue(progressValue);
+	}
+	public c_int ProgressValue()
+	{
+		return this.ptr.ProgressValue();
+	}
+	public void SetProgressValueAndText(c_int progressValue, String progressText)
+	{
+		this.ptr.SetProgressValueAndText(progressValue, progressText);
+	}
+	public void ProgressText(String outStr)
+	{
+		this.ptr.ProgressText(outStr);
+	}
+	public void SetExpectedResultCount(c_int resultCount)
+	{
+		this.ptr.SetExpectedResultCount(resultCount);
+	}
+	public c_int ExpectedResultCount()
+	{
+		return this.ptr.ExpectedResultCount();
+	}
+	public c_int ResultCount()
+	{
+		return this.ptr.ResultCount();
+	}
+	public bool QueryState(QFutureInterfaceBase_State state)
+	{
+		return this.ptr.QueryState(state);
+	}
+	public bool IsRunning()
+	{
+		return this.ptr.IsRunning();
+	}
+	public bool IsStarted()
+	{
+		return this.ptr.IsStarted();
+	}
+	public bool IsCanceled()
+	{
+		return this.ptr.IsCanceled();
+	}
+	public bool IsFinished()
+	{
+		return this.ptr.IsFinished();
+	}
+	public bool IsPaused()
+	{
+		return this.ptr.IsPaused();
+	}
+	public void SetPaused(bool paused)
+	{
+		this.ptr.SetPaused(paused);
+	}
+	public void TogglePaused()
+	{
+		this.ptr.TogglePaused();
+	}
+	public bool IsSuspending()
+	{
+		return this.ptr.IsSuspending();
+	}
+	public bool IsSuspended()
+	{
+		return this.ptr.IsSuspended();
+	}
+	public bool IsThrottled()
+	{
+		return this.ptr.IsThrottled();
+	}
+	public bool IsResultReadyAt(c_int index)
+	{
+		return this.ptr.IsResultReadyAt(index);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public c_int LoadState()
+	{
+		return this.ptr.LoadState();
+	}
+	public void Cancel()
+	{
+		this.ptr.Cancel();
+	}
+	public void CancelAndFinish()
+	{
+		this.ptr.CancelAndFinish();
+	}
+	public void SetSuspended(bool suspendVal)
+	{
+		this.ptr.SetSuspended(suspendVal);
+	}
+	public void ToggleSuspended()
+	{
+		this.ptr.ToggleSuspended();
+	}
+	public void ReportSuspended()
+	{
+		this.ptr.ReportSuspended();
+	}
+	public void SetThrottled(bool enable)
+	{
+		this.ptr.SetThrottled(enable);
+	}
+	public void WaitForFinished()
+	{
+		this.ptr.WaitForFinished();
+	}
+	public bool WaitForNextResult()
+	{
+		return this.ptr.WaitForNextResult();
+	}
+	public void WaitForResult(c_int resultIndex)
+	{
+		this.ptr.WaitForResult(resultIndex);
+	}
+	public void WaitForResume()
+	{
+		this.ptr.WaitForResume();
+	}
+	public void SuspendIfRequested()
+	{
+		this.ptr.SuspendIfRequested();
+	}
+	public QMutex_Ptr Mutex()
+	{
+		return this.ptr.Mutex();
+	}
+	public bool HasException()
+	{
+		return this.ptr.HasException();
+	}
+	public void Swap(IQFutureInterfaceBase other)
+	{
+		this.ptr.Swap(other);
+	}
+	public bool IsChainCanceled()
+	{
+		return this.ptr.IsChainCanceled();
+	}
+}
+interface IQFutureInterfaceBase : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -127,226 +539,6 @@ extension CQt
 	public static extern void QFutureInterfaceBase_Swap(void* self, void** other);
 	[LinkName("QFutureInterfaceBase_IsChainCanceled")]
 	public static extern bool QFutureInterfaceBase_IsChainCanceled(void* self);
-}
-class QFutureInterfaceBase : IQFutureInterfaceBase
-{
-	private QFutureInterfaceBase_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QFutureInterfaceBase_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QFutureInterfaceBase_new();
-	}
-	public this(IQFutureInterfaceBase other)
-	{
-		this.ptr = CQt.QFutureInterfaceBase_new2((.)other?.ObjectPtr);
-	}
-	public this(QFutureInterfaceBase_State initialState)
-	{
-		this.ptr = CQt.QFutureInterfaceBase_new3(initialState);
-	}
-	public ~this()
-	{
-		CQt.QFutureInterfaceBase_Delete(this.ptr);
-	}
-	public void ReportStarted()
-	{
-		CQt.QFutureInterfaceBase_ReportStarted((.)this.ptr.Ptr);
-	}
-	public void ReportFinished()
-	{
-		CQt.QFutureInterfaceBase_ReportFinished((.)this.ptr.Ptr);
-	}
-	public void ReportCanceled()
-	{
-		CQt.QFutureInterfaceBase_ReportCanceled((.)this.ptr.Ptr);
-	}
-	public void ReportResultsReady(c_int beginIndex, c_int endIndex)
-	{
-		CQt.QFutureInterfaceBase_ReportResultsReady((.)this.ptr.Ptr, beginIndex, endIndex);
-	}
-	public void SetRunnable(IQRunnable runnable)
-	{
-		CQt.QFutureInterfaceBase_SetRunnable((.)this.ptr.Ptr, (.)runnable?.ObjectPtr);
-	}
-	public void SetThreadPool(IQThreadPool pool)
-	{
-		CQt.QFutureInterfaceBase_SetThreadPool((.)this.ptr.Ptr, (.)pool?.ObjectPtr);
-	}
-	public QThreadPool_Ptr ThreadPool()
-	{
-		return QThreadPool_Ptr(CQt.QFutureInterfaceBase_ThreadPool((.)this.ptr.Ptr));
-	}
-	public void SetFilterMode(bool enable)
-	{
-		CQt.QFutureInterfaceBase_SetFilterMode((.)this.ptr.Ptr, enable);
-	}
-	public void SetProgressRange(c_int minimum, c_int maximum)
-	{
-		CQt.QFutureInterfaceBase_SetProgressRange((.)this.ptr.Ptr, minimum, maximum);
-	}
-	public c_int ProgressMinimum()
-	{
-		return CQt.QFutureInterfaceBase_ProgressMinimum((.)this.ptr.Ptr);
-	}
-	public c_int ProgressMaximum()
-	{
-		return CQt.QFutureInterfaceBase_ProgressMaximum((.)this.ptr.Ptr);
-	}
-	public bool IsProgressUpdateNeeded()
-	{
-		return CQt.QFutureInterfaceBase_IsProgressUpdateNeeded((.)this.ptr.Ptr);
-	}
-	public void SetProgressValue(c_int progressValue)
-	{
-		CQt.QFutureInterfaceBase_SetProgressValue((.)this.ptr.Ptr, progressValue);
-	}
-	public c_int ProgressValue()
-	{
-		return CQt.QFutureInterfaceBase_ProgressValue((.)this.ptr.Ptr);
-	}
-	public void SetProgressValueAndText(c_int progressValue, String progressText)
-	{
-		CQt.QFutureInterfaceBase_SetProgressValueAndText((.)this.ptr.Ptr, progressValue, libqt_string(progressText));
-	}
-	public void ProgressText(String outStr)
-	{
-		CQt.QFutureInterfaceBase_ProgressText((.)this.ptr.Ptr);
-	}
-	public void SetExpectedResultCount(c_int resultCount)
-	{
-		CQt.QFutureInterfaceBase_SetExpectedResultCount((.)this.ptr.Ptr, resultCount);
-	}
-	public c_int ExpectedResultCount()
-	{
-		return CQt.QFutureInterfaceBase_ExpectedResultCount((.)this.ptr.Ptr);
-	}
-	public c_int ResultCount()
-	{
-		return CQt.QFutureInterfaceBase_ResultCount((.)this.ptr.Ptr);
-	}
-	public bool QueryState(QFutureInterfaceBase_State state)
-	{
-		return CQt.QFutureInterfaceBase_QueryState((.)this.ptr.Ptr, state);
-	}
-	public bool IsRunning()
-	{
-		return CQt.QFutureInterfaceBase_IsRunning((.)this.ptr.Ptr);
-	}
-	public bool IsStarted()
-	{
-		return CQt.QFutureInterfaceBase_IsStarted((.)this.ptr.Ptr);
-	}
-	public bool IsCanceled()
-	{
-		return CQt.QFutureInterfaceBase_IsCanceled((.)this.ptr.Ptr);
-	}
-	public bool IsFinished()
-	{
-		return CQt.QFutureInterfaceBase_IsFinished((.)this.ptr.Ptr);
-	}
-	public bool IsPaused()
-	{
-		return CQt.QFutureInterfaceBase_IsPaused((.)this.ptr.Ptr);
-	}
-	public void SetPaused(bool paused)
-	{
-		CQt.QFutureInterfaceBase_SetPaused((.)this.ptr.Ptr, paused);
-	}
-	public void TogglePaused()
-	{
-		CQt.QFutureInterfaceBase_TogglePaused((.)this.ptr.Ptr);
-	}
-	public bool IsSuspending()
-	{
-		return CQt.QFutureInterfaceBase_IsSuspending((.)this.ptr.Ptr);
-	}
-	public bool IsSuspended()
-	{
-		return CQt.QFutureInterfaceBase_IsSuspended((.)this.ptr.Ptr);
-	}
-	public bool IsThrottled()
-	{
-		return CQt.QFutureInterfaceBase_IsThrottled((.)this.ptr.Ptr);
-	}
-	public bool IsResultReadyAt(c_int index)
-	{
-		return CQt.QFutureInterfaceBase_IsResultReadyAt((.)this.ptr.Ptr, index);
-	}
-	public bool IsValid()
-	{
-		return CQt.QFutureInterfaceBase_IsValid((.)this.ptr.Ptr);
-	}
-	public c_int LoadState()
-	{
-		return CQt.QFutureInterfaceBase_LoadState((.)this.ptr.Ptr);
-	}
-	public void Cancel()
-	{
-		CQt.QFutureInterfaceBase_Cancel((.)this.ptr.Ptr);
-	}
-	public void CancelAndFinish()
-	{
-		CQt.QFutureInterfaceBase_CancelAndFinish((.)this.ptr.Ptr);
-	}
-	public void SetSuspended(bool suspendVal)
-	{
-		CQt.QFutureInterfaceBase_SetSuspended((.)this.ptr.Ptr, suspendVal);
-	}
-	public void ToggleSuspended()
-	{
-		CQt.QFutureInterfaceBase_ToggleSuspended((.)this.ptr.Ptr);
-	}
-	public void ReportSuspended()
-	{
-		CQt.QFutureInterfaceBase_ReportSuspended((.)this.ptr.Ptr);
-	}
-	public void SetThrottled(bool enable)
-	{
-		CQt.QFutureInterfaceBase_SetThrottled((.)this.ptr.Ptr, enable);
-	}
-	public void WaitForFinished()
-	{
-		CQt.QFutureInterfaceBase_WaitForFinished((.)this.ptr.Ptr);
-	}
-	public bool WaitForNextResult()
-	{
-		return CQt.QFutureInterfaceBase_WaitForNextResult((.)this.ptr.Ptr);
-	}
-	public void WaitForResult(c_int resultIndex)
-	{
-		CQt.QFutureInterfaceBase_WaitForResult((.)this.ptr.Ptr, resultIndex);
-	}
-	public void WaitForResume()
-	{
-		CQt.QFutureInterfaceBase_WaitForResume((.)this.ptr.Ptr);
-	}
-	public void SuspendIfRequested()
-	{
-		CQt.QFutureInterfaceBase_SuspendIfRequested((.)this.ptr.Ptr);
-	}
-	public QMutex_Ptr Mutex()
-	{
-		return QMutex_Ptr(CQt.QFutureInterfaceBase_Mutex((.)this.ptr.Ptr));
-	}
-	public bool HasException()
-	{
-		return CQt.QFutureInterfaceBase_HasException((.)this.ptr.Ptr);
-	}
-	public void Swap(IQFutureInterfaceBase other)
-	{
-		CQt.QFutureInterfaceBase_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsChainCanceled()
-	{
-		return CQt.QFutureInterfaceBase_IsChainCanceled((.)this.ptr.Ptr);
-	}
-}
-interface IQFutureInterfaceBase : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QFutureInterfaceBase_State

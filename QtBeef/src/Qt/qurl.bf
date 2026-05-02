@@ -14,6 +14,678 @@ struct QUrl_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void OperatorAssign2(String url)
+	{
+		CQt.QUrl_OperatorAssign2((.)this.Ptr, libqt_string(url));
+	}
+	public void Swap(IQUrl other)
+	{
+		CQt.QUrl_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void SetUrl(String url)
+	{
+		CQt.QUrl_SetUrl((.)this.Ptr, libqt_string(url));
+	}
+	public void Url(String outStr)
+	{
+		CQt.QUrl_Url((.)this.Ptr);
+	}
+	public void ToString(String outStr)
+	{
+		CQt.QUrl_ToString((.)this.Ptr);
+	}
+	public void ToDisplayString(String outStr)
+	{
+		CQt.QUrl_ToDisplayString((.)this.Ptr);
+	}
+	public void* ToEncoded()
+	{
+		return CQt.QUrl_ToEncoded((.)this.Ptr);
+	}
+	public QUrl_Ptr FromEncoded(void** url)
+	{
+		return QUrl_Ptr(CQt.QUrl_FromEncoded(url));
+	}
+	public QUrl_Ptr FromUserInput(String userInput)
+	{
+		return QUrl_Ptr(CQt.QUrl_FromUserInput(libqt_string(userInput)));
+	}
+	public bool IsValid()
+	{
+		return CQt.QUrl_IsValid((.)this.Ptr);
+	}
+	public void ErrorString(String outStr)
+	{
+		CQt.QUrl_ErrorString((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QUrl_IsEmpty((.)this.Ptr);
+	}
+	public void Clear()
+	{
+		CQt.QUrl_Clear((.)this.Ptr);
+	}
+	public void SetScheme(String scheme)
+	{
+		CQt.QUrl_SetScheme((.)this.Ptr, libqt_string(scheme));
+	}
+	public void Scheme(String outStr)
+	{
+		CQt.QUrl_Scheme((.)this.Ptr);
+	}
+	public void SetAuthority(String authority)
+	{
+		CQt.QUrl_SetAuthority((.)this.Ptr, libqt_string(authority));
+	}
+	public void Authority(String outStr)
+	{
+		CQt.QUrl_Authority((.)this.Ptr);
+	}
+	public void SetUserInfo(String userInfo)
+	{
+		CQt.QUrl_SetUserInfo((.)this.Ptr, libqt_string(userInfo));
+	}
+	public void UserInfo(String outStr)
+	{
+		CQt.QUrl_UserInfo((.)this.Ptr);
+	}
+	public void SetUserName(String userName)
+	{
+		CQt.QUrl_SetUserName((.)this.Ptr, libqt_string(userName));
+	}
+	public void UserName(String outStr)
+	{
+		CQt.QUrl_UserName((.)this.Ptr);
+	}
+	public void SetPassword(String password)
+	{
+		CQt.QUrl_SetPassword((.)this.Ptr, libqt_string(password));
+	}
+	public void Password(String outStr)
+	{
+		CQt.QUrl_Password((.)this.Ptr);
+	}
+	public void SetHost(String host)
+	{
+		CQt.QUrl_SetHost((.)this.Ptr, libqt_string(host));
+	}
+	public void Host(String outStr)
+	{
+		CQt.QUrl_Host((.)this.Ptr);
+	}
+	public void SetPort(c_int port)
+	{
+		CQt.QUrl_SetPort((.)this.Ptr, port);
+	}
+	public c_int Port()
+	{
+		return CQt.QUrl_Port((.)this.Ptr);
+	}
+	public void SetPath(String path)
+	{
+		CQt.QUrl_SetPath((.)this.Ptr, libqt_string(path));
+	}
+	public void Path(String outStr)
+	{
+		CQt.QUrl_Path((.)this.Ptr);
+	}
+	public void FileName(String outStr)
+	{
+		CQt.QUrl_FileName((.)this.Ptr);
+	}
+	public bool HasQuery()
+	{
+		return CQt.QUrl_HasQuery((.)this.Ptr);
+	}
+	public void SetQuery(String query)
+	{
+		CQt.QUrl_SetQuery((.)this.Ptr, libqt_string(query));
+	}
+	public void SetQuery2(IQUrlQuery query)
+	{
+		CQt.QUrl_SetQuery2((.)this.Ptr, (.)query?.ObjectPtr);
+	}
+	public void Query(String outStr)
+	{
+		CQt.QUrl_Query((.)this.Ptr);
+	}
+	public bool HasFragment()
+	{
+		return CQt.QUrl_HasFragment((.)this.Ptr);
+	}
+	public void Fragment(String outStr)
+	{
+		CQt.QUrl_Fragment((.)this.Ptr);
+	}
+	public void SetFragment(String fragment)
+	{
+		CQt.QUrl_SetFragment((.)this.Ptr, libqt_string(fragment));
+	}
+	public QUrl_Ptr Resolved(IQUrl relative)
+	{
+		return QUrl_Ptr(CQt.QUrl_Resolved((.)this.Ptr, (.)relative?.ObjectPtr));
+	}
+	public bool IsRelative()
+	{
+		return CQt.QUrl_IsRelative((.)this.Ptr);
+	}
+	public bool IsParentOf(IQUrl url)
+	{
+		return CQt.QUrl_IsParentOf((.)this.Ptr, (.)url?.ObjectPtr);
+	}
+	public bool IsLocalFile()
+	{
+		return CQt.QUrl_IsLocalFile((.)this.Ptr);
+	}
+	public QUrl_Ptr FromLocalFile(String localfile)
+	{
+		return QUrl_Ptr(CQt.QUrl_FromLocalFile(libqt_string(localfile)));
+	}
+	public void ToLocalFile(String outStr)
+	{
+		CQt.QUrl_ToLocalFile((.)this.Ptr);
+	}
+	public void Detach()
+	{
+		CQt.QUrl_Detach((.)this.Ptr);
+	}
+	public bool IsDetached()
+	{
+		return CQt.QUrl_IsDetached((.)this.Ptr);
+	}
+	public void FromPercentEncoding(String outStr, void** param1)
+	{
+		CQt.QUrl_FromPercentEncoding(param1);
+	}
+	public void* ToPercentEncoding(String param1)
+	{
+		return CQt.QUrl_ToPercentEncoding(libqt_string(param1));
+	}
+	public void FromAce(String outStr, void** domain)
+	{
+		CQt.QUrl_FromAce(domain);
+	}
+	public void* ToAce(String domain)
+	{
+		return CQt.QUrl_ToAce(libqt_string(domain));
+	}
+	public void* IdnWhitelist()
+	{
+		return CQt.QUrl_IdnWhitelist();
+	}
+	public void* ToStringList(void** uris)
+	{
+		return CQt.QUrl_ToStringList(uris);
+	}
+	public void* FromStringList(void** uris)
+	{
+		return CQt.QUrl_FromStringList(uris);
+	}
+	public void SetIdnWhitelist(void** idnWhitelist)
+	{
+		CQt.QUrl_SetIdnWhitelist(idnWhitelist);
+	}
+	public void SetUrl2(String url, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetUrl2((.)this.Ptr, libqt_string(url), mode);
+	}
+	public QUrl_Ptr FromEncoded2(void** url, QUrl_ParsingMode mode)
+	{
+		return QUrl_Ptr(CQt.QUrl_FromEncoded2(url, mode));
+	}
+	public QUrl_Ptr FromUserInput2(String userInput, String workingDirectory)
+	{
+		return QUrl_Ptr(CQt.QUrl_FromUserInput2(libqt_string(userInput), libqt_string(workingDirectory)));
+	}
+	public QUrl_Ptr FromUserInput3(String userInput, String workingDirectory, void* options)
+	{
+		return QUrl_Ptr(CQt.QUrl_FromUserInput3(libqt_string(userInput), libqt_string(workingDirectory), options));
+	}
+	public void SetAuthority2(String authority, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetAuthority2((.)this.Ptr, libqt_string(authority), mode);
+	}
+	public void Authority1(String outStr, void* options)
+	{
+		CQt.QUrl_Authority1((.)this.Ptr, options);
+	}
+	public void SetUserInfo2(String userInfo, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetUserInfo2((.)this.Ptr, libqt_string(userInfo), mode);
+	}
+	public void UserInfo1(String outStr, void* options)
+	{
+		CQt.QUrl_UserInfo1((.)this.Ptr, options);
+	}
+	public void SetUserName2(String userName, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetUserName2((.)this.Ptr, libqt_string(userName), mode);
+	}
+	public void UserName1(String outStr, void* options)
+	{
+		CQt.QUrl_UserName1((.)this.Ptr, options);
+	}
+	public void SetPassword2(String password, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetPassword2((.)this.Ptr, libqt_string(password), mode);
+	}
+	public void Password1(String outStr, void* param1)
+	{
+		CQt.QUrl_Password1((.)this.Ptr, param1);
+	}
+	public void SetHost2(String host, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetHost2((.)this.Ptr, libqt_string(host), mode);
+	}
+	public void Host1(String outStr, void* param1)
+	{
+		CQt.QUrl_Host1((.)this.Ptr, param1);
+	}
+	public c_int Port1(c_int defaultPort)
+	{
+		return CQt.QUrl_Port1((.)this.Ptr, defaultPort);
+	}
+	public void SetPath2(String path, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetPath2((.)this.Ptr, libqt_string(path), mode);
+	}
+	public void Path1(String outStr, void* options)
+	{
+		CQt.QUrl_Path1((.)this.Ptr, options);
+	}
+	public void FileName1(String outStr, void* options)
+	{
+		CQt.QUrl_FileName1((.)this.Ptr, options);
+	}
+	public void SetQuery22(String query, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetQuery22((.)this.Ptr, libqt_string(query), mode);
+	}
+	public void Query1(String outStr, void* param1)
+	{
+		CQt.QUrl_Query1((.)this.Ptr, param1);
+	}
+	public void Fragment1(String outStr, void* options)
+	{
+		CQt.QUrl_Fragment1((.)this.Ptr, options);
+	}
+	public void SetFragment2(String fragment, QUrl_ParsingMode mode)
+	{
+		CQt.QUrl_SetFragment2((.)this.Ptr, libqt_string(fragment), mode);
+	}
+	public void* ToPercentEncoding2(String param1, void** exclude)
+	{
+		return CQt.QUrl_ToPercentEncoding2(libqt_string(param1), exclude);
+	}
+	public void* ToPercentEncoding3(String param1, void** exclude, void** include)
+	{
+		return CQt.QUrl_ToPercentEncoding3(libqt_string(param1), exclude, include);
+	}
+	public void FromAce2(String outStr, void** domain, void* options)
+	{
+		CQt.QUrl_FromAce2(domain, options);
+	}
+	public void* ToAce2(String domain, void* options)
+	{
+		return CQt.QUrl_ToAce2(libqt_string(domain), options);
+	}
+	public void* FromStringList2(void** uris, QUrl_ParsingMode mode)
+	{
+		return CQt.QUrl_FromStringList2(uris, mode);
+	}
+}
+class QUrl : IQUrl
+{
+	private QUrl_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QUrl_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QUrl_new();
+	}
+	public this(IQUrl copyVal)
+	{
+		this.ptr = CQt.QUrl_new2((.)copyVal?.ObjectPtr);
+	}
+	public this(String url)
+	{
+		this.ptr = CQt.QUrl_new3(libqt_string(url));
+	}
+	public this(String url, QUrl_ParsingMode mode)
+	{
+		this.ptr = CQt.QUrl_new4(libqt_string(url), mode);
+	}
+	public ~this()
+	{
+		CQt.QUrl_Delete(this.ptr);
+	}
+	public void OperatorAssign2(String url)
+	{
+		this.ptr.OperatorAssign2(url);
+	}
+	public void Swap(IQUrl other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void SetUrl(String url)
+	{
+		this.ptr.SetUrl(url);
+	}
+	public void Url(String outStr)
+	{
+		this.ptr.Url(outStr);
+	}
+	public void ToString(String outStr)
+	{
+		this.ptr.ToString(outStr);
+	}
+	public void ToDisplayString(String outStr)
+	{
+		this.ptr.ToDisplayString(outStr);
+	}
+	public void* ToEncoded()
+	{
+		return this.ptr.ToEncoded();
+	}
+	public QUrl_Ptr FromEncoded(void** url)
+	{
+		return this.ptr.FromEncoded(url);
+	}
+	public QUrl_Ptr FromUserInput(String userInput)
+	{
+		return this.ptr.FromUserInput(userInput);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public void ErrorString(String outStr)
+	{
+		this.ptr.ErrorString(outStr);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public void Clear()
+	{
+		this.ptr.Clear();
+	}
+	public void SetScheme(String scheme)
+	{
+		this.ptr.SetScheme(scheme);
+	}
+	public void Scheme(String outStr)
+	{
+		this.ptr.Scheme(outStr);
+	}
+	public void SetAuthority(String authority)
+	{
+		this.ptr.SetAuthority(authority);
+	}
+	public void Authority(String outStr)
+	{
+		this.ptr.Authority(outStr);
+	}
+	public void SetUserInfo(String userInfo)
+	{
+		this.ptr.SetUserInfo(userInfo);
+	}
+	public void UserInfo(String outStr)
+	{
+		this.ptr.UserInfo(outStr);
+	}
+	public void SetUserName(String userName)
+	{
+		this.ptr.SetUserName(userName);
+	}
+	public void UserName(String outStr)
+	{
+		this.ptr.UserName(outStr);
+	}
+	public void SetPassword(String password)
+	{
+		this.ptr.SetPassword(password);
+	}
+	public void Password(String outStr)
+	{
+		this.ptr.Password(outStr);
+	}
+	public void SetHost(String host)
+	{
+		this.ptr.SetHost(host);
+	}
+	public void Host(String outStr)
+	{
+		this.ptr.Host(outStr);
+	}
+	public void SetPort(c_int port)
+	{
+		this.ptr.SetPort(port);
+	}
+	public c_int Port()
+	{
+		return this.ptr.Port();
+	}
+	public void SetPath(String path)
+	{
+		this.ptr.SetPath(path);
+	}
+	public void Path(String outStr)
+	{
+		this.ptr.Path(outStr);
+	}
+	public void FileName(String outStr)
+	{
+		this.ptr.FileName(outStr);
+	}
+	public bool HasQuery()
+	{
+		return this.ptr.HasQuery();
+	}
+	public void SetQuery(String query)
+	{
+		this.ptr.SetQuery(query);
+	}
+	public void SetQuery2(IQUrlQuery query)
+	{
+		this.ptr.SetQuery2(query);
+	}
+	public void Query(String outStr)
+	{
+		this.ptr.Query(outStr);
+	}
+	public bool HasFragment()
+	{
+		return this.ptr.HasFragment();
+	}
+	public void Fragment(String outStr)
+	{
+		this.ptr.Fragment(outStr);
+	}
+	public void SetFragment(String fragment)
+	{
+		this.ptr.SetFragment(fragment);
+	}
+	public QUrl_Ptr Resolved(IQUrl relative)
+	{
+		return this.ptr.Resolved(relative);
+	}
+	public bool IsRelative()
+	{
+		return this.ptr.IsRelative();
+	}
+	public bool IsParentOf(IQUrl url)
+	{
+		return this.ptr.IsParentOf(url);
+	}
+	public bool IsLocalFile()
+	{
+		return this.ptr.IsLocalFile();
+	}
+	public QUrl_Ptr FromLocalFile(String localfile)
+	{
+		return this.ptr.FromLocalFile(localfile);
+	}
+	public void ToLocalFile(String outStr)
+	{
+		this.ptr.ToLocalFile(outStr);
+	}
+	public void Detach()
+	{
+		this.ptr.Detach();
+	}
+	public bool IsDetached()
+	{
+		return this.ptr.IsDetached();
+	}
+	public void FromPercentEncoding(String outStr, void** param1)
+	{
+		this.ptr.FromPercentEncoding(outStr, param1);
+	}
+	public void* ToPercentEncoding(String param1)
+	{
+		return this.ptr.ToPercentEncoding(param1);
+	}
+	public void FromAce(String outStr, void** domain)
+	{
+		this.ptr.FromAce(outStr, domain);
+	}
+	public void* ToAce(String domain)
+	{
+		return this.ptr.ToAce(domain);
+	}
+	public void* IdnWhitelist()
+	{
+		return this.ptr.IdnWhitelist();
+	}
+	public void* ToStringList(void** uris)
+	{
+		return this.ptr.ToStringList(uris);
+	}
+	public void* FromStringList(void** uris)
+	{
+		return this.ptr.FromStringList(uris);
+	}
+	public void SetIdnWhitelist(void** idnWhitelist)
+	{
+		this.ptr.SetIdnWhitelist(idnWhitelist);
+	}
+	public void SetUrl2(String url, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetUrl2(url, mode);
+	}
+	public QUrl_Ptr FromEncoded2(void** url, QUrl_ParsingMode mode)
+	{
+		return this.ptr.FromEncoded2(url, mode);
+	}
+	public QUrl_Ptr FromUserInput2(String userInput, String workingDirectory)
+	{
+		return this.ptr.FromUserInput2(userInput, workingDirectory);
+	}
+	public QUrl_Ptr FromUserInput3(String userInput, String workingDirectory, void* options)
+	{
+		return this.ptr.FromUserInput3(userInput, workingDirectory, options);
+	}
+	public void SetAuthority2(String authority, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetAuthority2(authority, mode);
+	}
+	public void Authority1(String outStr, void* options)
+	{
+		this.ptr.Authority1(outStr, options);
+	}
+	public void SetUserInfo2(String userInfo, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetUserInfo2(userInfo, mode);
+	}
+	public void UserInfo1(String outStr, void* options)
+	{
+		this.ptr.UserInfo1(outStr, options);
+	}
+	public void SetUserName2(String userName, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetUserName2(userName, mode);
+	}
+	public void UserName1(String outStr, void* options)
+	{
+		this.ptr.UserName1(outStr, options);
+	}
+	public void SetPassword2(String password, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetPassword2(password, mode);
+	}
+	public void Password1(String outStr, void* param1)
+	{
+		this.ptr.Password1(outStr, param1);
+	}
+	public void SetHost2(String host, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetHost2(host, mode);
+	}
+	public void Host1(String outStr, void* param1)
+	{
+		this.ptr.Host1(outStr, param1);
+	}
+	public c_int Port1(c_int defaultPort)
+	{
+		return this.ptr.Port1(defaultPort);
+	}
+	public void SetPath2(String path, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetPath2(path, mode);
+	}
+	public void Path1(String outStr, void* options)
+	{
+		this.ptr.Path1(outStr, options);
+	}
+	public void FileName1(String outStr, void* options)
+	{
+		this.ptr.FileName1(outStr, options);
+	}
+	public void SetQuery22(String query, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetQuery22(query, mode);
+	}
+	public void Query1(String outStr, void* param1)
+	{
+		this.ptr.Query1(outStr, param1);
+	}
+	public void Fragment1(String outStr, void* options)
+	{
+		this.ptr.Fragment1(outStr, options);
+	}
+	public void SetFragment2(String fragment, QUrl_ParsingMode mode)
+	{
+		this.ptr.SetFragment2(fragment, mode);
+	}
+	public void* ToPercentEncoding2(String param1, void** exclude)
+	{
+		return this.ptr.ToPercentEncoding2(param1, exclude);
+	}
+	public void* ToPercentEncoding3(String param1, void** exclude, void** include)
+	{
+		return this.ptr.ToPercentEncoding3(param1, exclude, include);
+	}
+	public void FromAce2(String outStr, void** domain, void* options)
+	{
+		this.ptr.FromAce2(outStr, domain, options);
+	}
+	public void* ToAce2(String domain, void* options)
+	{
+		return this.ptr.ToAce2(domain, options);
+	}
+	public void* FromStringList2(void** uris, QUrl_ParsingMode mode)
+	{
+		return this.ptr.FromStringList2(uris, mode);
+	}
+}
+interface IQUrl : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -195,358 +867,6 @@ extension CQt
 	public static extern void* QUrl_ToAce2(libqt_string domain, void* options);
 	[LinkName("QUrl_FromStringList2")]
 	public static extern void* QUrl_FromStringList2(void** uris, QUrl_ParsingMode mode);
-}
-class QUrl : IQUrl
-{
-	private QUrl_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QUrl_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QUrl_new();
-	}
-	public this(IQUrl copyVal)
-	{
-		this.ptr = CQt.QUrl_new2((.)copyVal?.ObjectPtr);
-	}
-	public this(String url)
-	{
-		this.ptr = CQt.QUrl_new3(libqt_string(url));
-	}
-	public this(String url, QUrl_ParsingMode mode)
-	{
-		this.ptr = CQt.QUrl_new4(libqt_string(url), mode);
-	}
-	public ~this()
-	{
-		CQt.QUrl_Delete(this.ptr);
-	}
-	public void OperatorAssign2(String url)
-	{
-		CQt.QUrl_OperatorAssign2((.)this.ptr.Ptr, libqt_string(url));
-	}
-	public void Swap(IQUrl other)
-	{
-		CQt.QUrl_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void SetUrl(String url)
-	{
-		CQt.QUrl_SetUrl((.)this.ptr.Ptr, libqt_string(url));
-	}
-	public void Url(String outStr)
-	{
-		CQt.QUrl_Url((.)this.ptr.Ptr);
-	}
-	public void ToString(String outStr)
-	{
-		CQt.QUrl_ToString((.)this.ptr.Ptr);
-	}
-	public void ToDisplayString(String outStr)
-	{
-		CQt.QUrl_ToDisplayString((.)this.ptr.Ptr);
-	}
-	public void* ToEncoded()
-	{
-		return CQt.QUrl_ToEncoded((.)this.ptr.Ptr);
-	}
-	public QUrl_Ptr FromEncoded(void** url)
-	{
-		return QUrl_Ptr(CQt.QUrl_FromEncoded(url));
-	}
-	public QUrl_Ptr FromUserInput(String userInput)
-	{
-		return QUrl_Ptr(CQt.QUrl_FromUserInput(libqt_string(userInput)));
-	}
-	public bool IsValid()
-	{
-		return CQt.QUrl_IsValid((.)this.ptr.Ptr);
-	}
-	public void ErrorString(String outStr)
-	{
-		CQt.QUrl_ErrorString((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QUrl_IsEmpty((.)this.ptr.Ptr);
-	}
-	public void Clear()
-	{
-		CQt.QUrl_Clear((.)this.ptr.Ptr);
-	}
-	public void SetScheme(String scheme)
-	{
-		CQt.QUrl_SetScheme((.)this.ptr.Ptr, libqt_string(scheme));
-	}
-	public void Scheme(String outStr)
-	{
-		CQt.QUrl_Scheme((.)this.ptr.Ptr);
-	}
-	public void SetAuthority(String authority)
-	{
-		CQt.QUrl_SetAuthority((.)this.ptr.Ptr, libqt_string(authority));
-	}
-	public void Authority(String outStr)
-	{
-		CQt.QUrl_Authority((.)this.ptr.Ptr);
-	}
-	public void SetUserInfo(String userInfo)
-	{
-		CQt.QUrl_SetUserInfo((.)this.ptr.Ptr, libqt_string(userInfo));
-	}
-	public void UserInfo(String outStr)
-	{
-		CQt.QUrl_UserInfo((.)this.ptr.Ptr);
-	}
-	public void SetUserName(String userName)
-	{
-		CQt.QUrl_SetUserName((.)this.ptr.Ptr, libqt_string(userName));
-	}
-	public void UserName(String outStr)
-	{
-		CQt.QUrl_UserName((.)this.ptr.Ptr);
-	}
-	public void SetPassword(String password)
-	{
-		CQt.QUrl_SetPassword((.)this.ptr.Ptr, libqt_string(password));
-	}
-	public void Password(String outStr)
-	{
-		CQt.QUrl_Password((.)this.ptr.Ptr);
-	}
-	public void SetHost(String host)
-	{
-		CQt.QUrl_SetHost((.)this.ptr.Ptr, libqt_string(host));
-	}
-	public void Host(String outStr)
-	{
-		CQt.QUrl_Host((.)this.ptr.Ptr);
-	}
-	public void SetPort(c_int port)
-	{
-		CQt.QUrl_SetPort((.)this.ptr.Ptr, port);
-	}
-	public c_int Port()
-	{
-		return CQt.QUrl_Port((.)this.ptr.Ptr);
-	}
-	public void SetPath(String path)
-	{
-		CQt.QUrl_SetPath((.)this.ptr.Ptr, libqt_string(path));
-	}
-	public void Path(String outStr)
-	{
-		CQt.QUrl_Path((.)this.ptr.Ptr);
-	}
-	public void FileName(String outStr)
-	{
-		CQt.QUrl_FileName((.)this.ptr.Ptr);
-	}
-	public bool HasQuery()
-	{
-		return CQt.QUrl_HasQuery((.)this.ptr.Ptr);
-	}
-	public void SetQuery(String query)
-	{
-		CQt.QUrl_SetQuery((.)this.ptr.Ptr, libqt_string(query));
-	}
-	public void SetQuery2(IQUrlQuery query)
-	{
-		CQt.QUrl_SetQuery2((.)this.ptr.Ptr, (.)query?.ObjectPtr);
-	}
-	public void Query(String outStr)
-	{
-		CQt.QUrl_Query((.)this.ptr.Ptr);
-	}
-	public bool HasFragment()
-	{
-		return CQt.QUrl_HasFragment((.)this.ptr.Ptr);
-	}
-	public void Fragment(String outStr)
-	{
-		CQt.QUrl_Fragment((.)this.ptr.Ptr);
-	}
-	public void SetFragment(String fragment)
-	{
-		CQt.QUrl_SetFragment((.)this.ptr.Ptr, libqt_string(fragment));
-	}
-	public QUrl_Ptr Resolved(IQUrl relative)
-	{
-		return QUrl_Ptr(CQt.QUrl_Resolved((.)this.ptr.Ptr, (.)relative?.ObjectPtr));
-	}
-	public bool IsRelative()
-	{
-		return CQt.QUrl_IsRelative((.)this.ptr.Ptr);
-	}
-	public bool IsParentOf(IQUrl url)
-	{
-		return CQt.QUrl_IsParentOf((.)this.ptr.Ptr, (.)url?.ObjectPtr);
-	}
-	public bool IsLocalFile()
-	{
-		return CQt.QUrl_IsLocalFile((.)this.ptr.Ptr);
-	}
-	public QUrl_Ptr FromLocalFile(String localfile)
-	{
-		return QUrl_Ptr(CQt.QUrl_FromLocalFile(libqt_string(localfile)));
-	}
-	public void ToLocalFile(String outStr)
-	{
-		CQt.QUrl_ToLocalFile((.)this.ptr.Ptr);
-	}
-	public void Detach()
-	{
-		CQt.QUrl_Detach((.)this.ptr.Ptr);
-	}
-	public bool IsDetached()
-	{
-		return CQt.QUrl_IsDetached((.)this.ptr.Ptr);
-	}
-	public void FromPercentEncoding(String outStr, void** param1)
-	{
-		CQt.QUrl_FromPercentEncoding(param1);
-	}
-	public void* ToPercentEncoding(String param1)
-	{
-		return CQt.QUrl_ToPercentEncoding(libqt_string(param1));
-	}
-	public void FromAce(String outStr, void** domain)
-	{
-		CQt.QUrl_FromAce(domain);
-	}
-	public void* ToAce(String domain)
-	{
-		return CQt.QUrl_ToAce(libqt_string(domain));
-	}
-	public void* IdnWhitelist()
-	{
-		return CQt.QUrl_IdnWhitelist();
-	}
-	public void* ToStringList(void** uris)
-	{
-		return CQt.QUrl_ToStringList(uris);
-	}
-	public void* FromStringList(void** uris)
-	{
-		return CQt.QUrl_FromStringList(uris);
-	}
-	public void SetIdnWhitelist(void** idnWhitelist)
-	{
-		CQt.QUrl_SetIdnWhitelist(idnWhitelist);
-	}
-	public void SetUrl2(String url, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetUrl2((.)this.ptr.Ptr, libqt_string(url), mode);
-	}
-	public QUrl_Ptr FromEncoded2(void** url, QUrl_ParsingMode mode)
-	{
-		return QUrl_Ptr(CQt.QUrl_FromEncoded2(url, mode));
-	}
-	public QUrl_Ptr FromUserInput2(String userInput, String workingDirectory)
-	{
-		return QUrl_Ptr(CQt.QUrl_FromUserInput2(libqt_string(userInput), libqt_string(workingDirectory)));
-	}
-	public QUrl_Ptr FromUserInput3(String userInput, String workingDirectory, void* options)
-	{
-		return QUrl_Ptr(CQt.QUrl_FromUserInput3(libqt_string(userInput), libqt_string(workingDirectory), options));
-	}
-	public void SetAuthority2(String authority, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetAuthority2((.)this.ptr.Ptr, libqt_string(authority), mode);
-	}
-	public void Authority1(String outStr, void* options)
-	{
-		CQt.QUrl_Authority1((.)this.ptr.Ptr, options);
-	}
-	public void SetUserInfo2(String userInfo, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetUserInfo2((.)this.ptr.Ptr, libqt_string(userInfo), mode);
-	}
-	public void UserInfo1(String outStr, void* options)
-	{
-		CQt.QUrl_UserInfo1((.)this.ptr.Ptr, options);
-	}
-	public void SetUserName2(String userName, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetUserName2((.)this.ptr.Ptr, libqt_string(userName), mode);
-	}
-	public void UserName1(String outStr, void* options)
-	{
-		CQt.QUrl_UserName1((.)this.ptr.Ptr, options);
-	}
-	public void SetPassword2(String password, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetPassword2((.)this.ptr.Ptr, libqt_string(password), mode);
-	}
-	public void Password1(String outStr, void* param1)
-	{
-		CQt.QUrl_Password1((.)this.ptr.Ptr, param1);
-	}
-	public void SetHost2(String host, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetHost2((.)this.ptr.Ptr, libqt_string(host), mode);
-	}
-	public void Host1(String outStr, void* param1)
-	{
-		CQt.QUrl_Host1((.)this.ptr.Ptr, param1);
-	}
-	public c_int Port1(c_int defaultPort)
-	{
-		return CQt.QUrl_Port1((.)this.ptr.Ptr, defaultPort);
-	}
-	public void SetPath2(String path, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetPath2((.)this.ptr.Ptr, libqt_string(path), mode);
-	}
-	public void Path1(String outStr, void* options)
-	{
-		CQt.QUrl_Path1((.)this.ptr.Ptr, options);
-	}
-	public void FileName1(String outStr, void* options)
-	{
-		CQt.QUrl_FileName1((.)this.ptr.Ptr, options);
-	}
-	public void SetQuery22(String query, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetQuery22((.)this.ptr.Ptr, libqt_string(query), mode);
-	}
-	public void Query1(String outStr, void* param1)
-	{
-		CQt.QUrl_Query1((.)this.ptr.Ptr, param1);
-	}
-	public void Fragment1(String outStr, void* options)
-	{
-		CQt.QUrl_Fragment1((.)this.ptr.Ptr, options);
-	}
-	public void SetFragment2(String fragment, QUrl_ParsingMode mode)
-	{
-		CQt.QUrl_SetFragment2((.)this.ptr.Ptr, libqt_string(fragment), mode);
-	}
-	public void* ToPercentEncoding2(String param1, void** exclude)
-	{
-		return CQt.QUrl_ToPercentEncoding2(libqt_string(param1), exclude);
-	}
-	public void* ToPercentEncoding3(String param1, void** exclude, void** include)
-	{
-		return CQt.QUrl_ToPercentEncoding3(libqt_string(param1), exclude, include);
-	}
-	public void FromAce2(String outStr, void** domain, void* options)
-	{
-		CQt.QUrl_FromAce2(domain, options);
-	}
-	public void* ToAce2(String domain, void* options)
-	{
-		return CQt.QUrl_ToAce2(libqt_string(domain), options);
-	}
-	public void* FromStringList2(void** uris, QUrl_ParsingMode mode)
-	{
-		return CQt.QUrl_FromStringList2(uris, mode);
-	}
-}
-interface IQUrl : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QUrl_ParsingMode

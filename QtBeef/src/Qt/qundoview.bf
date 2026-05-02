@@ -14,6 +14,158 @@ struct QUndoView_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QUndoView_MetaObject((.)this.Ptr));
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QUndoView_Qt_Metacast((.)this.Ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QUndoView_Qt_Metacall((.)this.Ptr, param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		CQt.QUndoView_Tr(s);
+	}
+	public QUndoStack_Ptr Stack()
+	{
+		return QUndoStack_Ptr(CQt.QUndoView_Stack((.)this.Ptr));
+	}
+	public QUndoGroup_Ptr Group()
+	{
+		return QUndoGroup_Ptr(CQt.QUndoView_Group((.)this.Ptr));
+	}
+	public void SetEmptyLabel(String label)
+	{
+		CQt.QUndoView_SetEmptyLabel((.)this.Ptr, libqt_string(label));
+	}
+	public void EmptyLabel(String outStr)
+	{
+		CQt.QUndoView_EmptyLabel((.)this.Ptr);
+	}
+	public void SetCleanIcon(IQIcon icon)
+	{
+		CQt.QUndoView_SetCleanIcon((.)this.Ptr, (.)icon?.ObjectPtr);
+	}
+	public QIcon_Ptr CleanIcon()
+	{
+		return QIcon_Ptr(CQt.QUndoView_CleanIcon((.)this.Ptr));
+	}
+	public void SetStack(IQUndoStack stack)
+	{
+		CQt.QUndoView_SetStack((.)this.Ptr, (.)stack?.ObjectPtr);
+	}
+	public void SetGroup(IQUndoGroup group)
+	{
+		CQt.QUndoView_SetGroup((.)this.Ptr, (.)group?.ObjectPtr);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		CQt.QUndoView_Tr2(s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		CQt.QUndoView_Tr3(s, c, n);
+	}
+}
+class QUndoView : IQUndoView
+{
+	private QUndoView_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QUndoView_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQWidget parent)
+	{
+		this.ptr = CQt.QUndoView_new((.)parent?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QUndoView_new2();
+	}
+	public this(IQUndoStack stack)
+	{
+		this.ptr = CQt.QUndoView_new3((.)stack?.ObjectPtr);
+	}
+	public this(IQUndoGroup group)
+	{
+		this.ptr = CQt.QUndoView_new4((.)group?.ObjectPtr);
+	}
+	public this(IQUndoStack stack, IQWidget parent)
+	{
+		this.ptr = CQt.QUndoView_new5((.)stack?.ObjectPtr, (.)parent?.ObjectPtr);
+	}
+	public this(IQUndoGroup group, IQWidget parent)
+	{
+		this.ptr = CQt.QUndoView_new6((.)group?.ObjectPtr, (.)parent?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QUndoView_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return this.ptr.Qt_metacast(param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return this.ptr.Qt_metacall(param1, param2, param3);
+	}
+	public void Tr(String outStr, c_char* s)
+	{
+		this.ptr.Tr(outStr, s);
+	}
+	public QUndoStack_Ptr Stack()
+	{
+		return this.ptr.Stack();
+	}
+	public QUndoGroup_Ptr Group()
+	{
+		return this.ptr.Group();
+	}
+	public void SetEmptyLabel(String label)
+	{
+		this.ptr.SetEmptyLabel(label);
+	}
+	public void EmptyLabel(String outStr)
+	{
+		this.ptr.EmptyLabel(outStr);
+	}
+	public void SetCleanIcon(IQIcon icon)
+	{
+		this.ptr.SetCleanIcon(icon);
+	}
+	public QIcon_Ptr CleanIcon()
+	{
+		return this.ptr.CleanIcon();
+	}
+	public void SetStack(IQUndoStack stack)
+	{
+		this.ptr.SetStack(stack);
+	}
+	public void SetGroup(IQUndoGroup group)
+	{
+		this.ptr.SetGroup(group);
+	}
+	public void Tr2(String outStr, c_char* s, c_char* c)
+	{
+		this.ptr.Tr2(outStr, s, c);
+	}
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
+	{
+		this.ptr.Tr3(outStr, s, c, n);
+	}
+}
+interface IQUndoView : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -59,100 +211,4 @@ extension CQt
 	public static extern libqt_string QUndoView_Tr2(c_char* s, c_char* c);
 	[LinkName("QUndoView_Tr3")]
 	public static extern libqt_string QUndoView_Tr3(c_char* s, c_char* c, c_int n);
-}
-class QUndoView : IQUndoView
-{
-	private QUndoView_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QUndoView_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQWidget parent)
-	{
-		this.ptr = CQt.QUndoView_new((.)parent?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QUndoView_new2();
-	}
-	public this(IQUndoStack stack)
-	{
-		this.ptr = CQt.QUndoView_new3((.)stack?.ObjectPtr);
-	}
-	public this(IQUndoGroup group)
-	{
-		this.ptr = CQt.QUndoView_new4((.)group?.ObjectPtr);
-	}
-	public this(IQUndoStack stack, IQWidget parent)
-	{
-		this.ptr = CQt.QUndoView_new5((.)stack?.ObjectPtr, (.)parent?.ObjectPtr);
-	}
-	public this(IQUndoGroup group, IQWidget parent)
-	{
-		this.ptr = CQt.QUndoView_new6((.)group?.ObjectPtr, (.)parent?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QUndoView_Delete(this.ptr);
-	}
-	public QMetaObject_Ptr MetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QUndoView_MetaObject((.)this.ptr.Ptr));
-	}
-	public void* Qt_metacast(c_char* param1)
-	{
-		return CQt.QUndoView_Qt_Metacast((.)this.ptr.Ptr, param1);
-	}
-	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
-	{
-		return CQt.QUndoView_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
-	}
-	public void Tr(String outStr, c_char* s)
-	{
-		CQt.QUndoView_Tr(s);
-	}
-	public QUndoStack_Ptr Stack()
-	{
-		return QUndoStack_Ptr(CQt.QUndoView_Stack((.)this.ptr.Ptr));
-	}
-	public QUndoGroup_Ptr Group()
-	{
-		return QUndoGroup_Ptr(CQt.QUndoView_Group((.)this.ptr.Ptr));
-	}
-	public void SetEmptyLabel(String label)
-	{
-		CQt.QUndoView_SetEmptyLabel((.)this.ptr.Ptr, libqt_string(label));
-	}
-	public void EmptyLabel(String outStr)
-	{
-		CQt.QUndoView_EmptyLabel((.)this.ptr.Ptr);
-	}
-	public void SetCleanIcon(IQIcon icon)
-	{
-		CQt.QUndoView_SetCleanIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
-	}
-	public QIcon_Ptr CleanIcon()
-	{
-		return QIcon_Ptr(CQt.QUndoView_CleanIcon((.)this.ptr.Ptr));
-	}
-	public void SetStack(IQUndoStack stack)
-	{
-		CQt.QUndoView_SetStack((.)this.ptr.Ptr, (.)stack?.ObjectPtr);
-	}
-	public void SetGroup(IQUndoGroup group)
-	{
-		CQt.QUndoView_SetGroup((.)this.ptr.Ptr, (.)group?.ObjectPtr);
-	}
-	public void Tr2(String outStr, c_char* s, c_char* c)
-	{
-		CQt.QUndoView_Tr2(s, c);
-	}
-	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
-	{
-		CQt.QUndoView_Tr3(s, c, n);
-	}
-}
-interface IQUndoView : IQtObjectInterface
-{
 }

@@ -14,21 +14,70 @@ struct QGraphicsSceneEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QGraphicsSceneEvent_new")]
-	public static extern QGraphicsSceneEvent_Ptr QGraphicsSceneEvent_new(QEvent_Type type);
-	[LinkName("QGraphicsSceneEvent_Delete")]
-	public static extern void QGraphicsSceneEvent_Delete(QGraphicsSceneEvent_Ptr self);
-	[LinkName("QGraphicsSceneEvent_Widget")]
-	public static extern void** QGraphicsSceneEvent_Widget(void* self);
-	[LinkName("QGraphicsSceneEvent_SetWidget")]
-	public static extern void QGraphicsSceneEvent_SetWidget(void* self, void** widget);
-	[LinkName("QGraphicsSceneEvent_Timestamp")]
-	public static extern c_ulonglong QGraphicsSceneEvent_Timestamp(void* self);
-	[LinkName("QGraphicsSceneEvent_SetTimestamp")]
-	public static extern void QGraphicsSceneEvent_SetTimestamp(void* self, c_ulonglong ts);
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
 }
 class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 {
@@ -48,71 +97,86 @@ class QGraphicsSceneEvent : IQGraphicsSceneEvent, IQEvent
 	}
 	public QWidget_Ptr Widget()
 	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
+		return this.ptr.Widget();
 	}
 	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
+		this.ptr.SetWidget(widget);
 	}
 	public c_ulonglong Timestamp()
 	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
+		return this.ptr.Timestamp();
 	}
 	public void SetTimestamp(c_ulonglong ts)
 	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
+		this.ptr.SetTimestamp(ts);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
+		return this.ptr.Spontaneous();
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
+		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
+		return this.ptr.IsAccepted();
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
+		this.ptr.Accept();
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
+		this.ptr.Ignore();
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
+		return this.ptr.IsInputEvent();
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
+		return this.ptr.IsPointerEvent();
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
+		return this.ptr.IsSinglePointEvent();
 	}
 	public c_int RegisterEventType()
 	{
-		return CQt.QEvent_RegisterEventType();
+		return this.ptr.RegisterEventType();
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
+		return this.ptr.Clone();
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
-		return CQt.QEvent_RegisterEventType1(hint);
+		return this.ptr.RegisterEventType1(hint);
 	}
 }
 interface IQGraphicsSceneEvent : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QGraphicsSceneEvent_new")]
+	public static extern QGraphicsSceneEvent_Ptr QGraphicsSceneEvent_new(QEvent_Type type);
+	[LinkName("QGraphicsSceneEvent_Delete")]
+	public static extern void QGraphicsSceneEvent_Delete(QGraphicsSceneEvent_Ptr self);
+	[LinkName("QGraphicsSceneEvent_Widget")]
+	public static extern void** QGraphicsSceneEvent_Widget(void* self);
+	[LinkName("QGraphicsSceneEvent_SetWidget")]
+	public static extern void QGraphicsSceneEvent_SetWidget(void* self, void** widget);
+	[LinkName("QGraphicsSceneEvent_Timestamp")]
+	public static extern c_ulonglong QGraphicsSceneEvent_Timestamp(void* self);
+	[LinkName("QGraphicsSceneEvent_SetTimestamp")]
+	public static extern void QGraphicsSceneEvent_SetTimestamp(void* self, c_ulonglong ts);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMouseEvent
@@ -125,6 +189,382 @@ struct QGraphicsSceneMouseEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QPointF_Ptr Pos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_Pos((.)this.Ptr));
+	}
+	public void SetPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_ScenePos((.)this.Ptr));
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneMouseEvent_ScreenPos((.)this.Ptr));
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr ButtonDownPos(Qt_MouseButton button)
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_ButtonDownPos((.)this.Ptr, button));
+	}
+	public void SetButtonDownPos(Qt_MouseButton button, IQPointF pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetButtonDownPos((.)this.Ptr, button, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr ButtonDownScenePos(Qt_MouseButton button)
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_ButtonDownScenePos((.)this.Ptr, button));
+	}
+	public void SetButtonDownScenePos(Qt_MouseButton button, IQPointF pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetButtonDownScenePos((.)this.Ptr, button, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr ButtonDownScreenPos(Qt_MouseButton button)
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneMouseEvent_ButtonDownScreenPos((.)this.Ptr, button));
+	}
+	public void SetButtonDownScreenPos(Qt_MouseButton button, IQPoint pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetButtonDownScreenPos((.)this.Ptr, button, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr LastPos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_LastPos((.)this.Ptr));
+	}
+	public void SetLastPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetLastPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr LastScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_LastScenePos((.)this.Ptr));
+	}
+	public void SetLastScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetLastScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr LastScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneMouseEvent_LastScreenPos((.)this.Ptr));
+	}
+	public void SetLastScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetLastScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QGraphicsSceneMouseEvent_Buttons((.)this.Ptr);
+	}
+	public void SetButtons(void* buttons)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetButtons((.)this.Ptr, buttons);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QGraphicsSceneMouseEvent_Button((.)this.Ptr);
+	}
+	public void SetButton(Qt_MouseButton button)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetButton((.)this.Ptr, button);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QGraphicsSceneMouseEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public Qt_MouseEventSource Source()
+	{
+		return CQt.QGraphicsSceneMouseEvent_Source((.)this.Ptr);
+	}
+	public void SetSource(Qt_MouseEventSource source)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetSource((.)this.Ptr, source);
+	}
+	public void* Flags()
+	{
+		return CQt.QGraphicsSceneMouseEvent_Flags((.)this.Ptr);
+	}
+	public void SetFlags(void* flags)
+	{
+		CQt.QGraphicsSceneMouseEvent_SetFlags((.)this.Ptr, flags);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
+}
+class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent, IQEvent
+{
+	private QGraphicsSceneMouseEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsSceneMouseEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsSceneMouseEvent_new();
+	}
+	public this(QEvent_Type type)
+	{
+		this.ptr = CQt.QGraphicsSceneMouseEvent_new2(type);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsSceneMouseEvent_Delete(this.ptr);
+	}
+	public QPointF_Ptr Pos()
+	{
+		return this.ptr.Pos();
+	}
+	public void SetPos(IQPointF pos)
+	{
+		this.ptr.SetPos(pos);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return this.ptr.ScenePos();
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		this.ptr.SetScenePos(pos);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return this.ptr.ScreenPos();
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		this.ptr.SetScreenPos(pos);
+	}
+	public QPointF_Ptr ButtonDownPos(Qt_MouseButton button)
+	{
+		return this.ptr.ButtonDownPos(button);
+	}
+	public void SetButtonDownPos(Qt_MouseButton button, IQPointF pos)
+	{
+		this.ptr.SetButtonDownPos(button, pos);
+	}
+	public QPointF_Ptr ButtonDownScenePos(Qt_MouseButton button)
+	{
+		return this.ptr.ButtonDownScenePos(button);
+	}
+	public void SetButtonDownScenePos(Qt_MouseButton button, IQPointF pos)
+	{
+		this.ptr.SetButtonDownScenePos(button, pos);
+	}
+	public QPoint_Ptr ButtonDownScreenPos(Qt_MouseButton button)
+	{
+		return this.ptr.ButtonDownScreenPos(button);
+	}
+	public void SetButtonDownScreenPos(Qt_MouseButton button, IQPoint pos)
+	{
+		this.ptr.SetButtonDownScreenPos(button, pos);
+	}
+	public QPointF_Ptr LastPos()
+	{
+		return this.ptr.LastPos();
+	}
+	public void SetLastPos(IQPointF pos)
+	{
+		this.ptr.SetLastPos(pos);
+	}
+	public QPointF_Ptr LastScenePos()
+	{
+		return this.ptr.LastScenePos();
+	}
+	public void SetLastScenePos(IQPointF pos)
+	{
+		this.ptr.SetLastScenePos(pos);
+	}
+	public QPoint_Ptr LastScreenPos()
+	{
+		return this.ptr.LastScreenPos();
+	}
+	public void SetLastScreenPos(IQPoint pos)
+	{
+		this.ptr.SetLastScreenPos(pos);
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public void SetButtons(void* buttons)
+	{
+		this.ptr.SetButtons(buttons);
+	}
+	public Qt_MouseButton Button()
+	{
+		return this.ptr.Button();
+	}
+	public void SetButton(Qt_MouseButton button)
+	{
+		this.ptr.SetButton(button);
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public Qt_MouseEventSource Source()
+	{
+		return this.ptr.Source();
+	}
+	public void SetSource(Qt_MouseEventSource source)
+	{
+		this.ptr.SetSource(source);
+	}
+	public void* Flags()
+	{
+		return this.ptr.Flags();
+	}
+	public void SetFlags(void* flags)
+	{
+		this.ptr.SetFlags(flags);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
+	}
+	public QEvent_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public bool Spontaneous()
+	{
+		return this.ptr.Spontaneous();
+	}
+	public void SetAccepted(bool accepted)
+	{
+		this.ptr.SetAccepted(accepted);
+	}
+	public bool IsAccepted()
+	{
+		return this.ptr.IsAccepted();
+	}
+	public void Accept()
+	{
+		this.ptr.Accept();
+	}
+	public void Ignore()
+	{
+		this.ptr.Ignore();
+	}
+	public bool IsInputEvent()
+	{
+		return this.ptr.IsInputEvent();
+	}
+	public bool IsPointerEvent()
+	{
+		return this.ptr.IsPointerEvent();
+	}
+	public bool IsSinglePointEvent()
+	{
+		return this.ptr.IsSinglePointEvent();
+	}
+	public c_int RegisterEventType()
+	{
+		return this.ptr.RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return this.ptr.Clone();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return this.ptr.RegisterEventType1(hint);
+	}
+}
+interface IQGraphicsSceneMouseEvent : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -191,206 +631,6 @@ extension CQt
 	[LinkName("QGraphicsSceneMouseEvent_SetFlags")]
 	public static extern void QGraphicsSceneMouseEvent_SetFlags(void* self, void* flags);
 }
-class QGraphicsSceneMouseEvent : IQGraphicsSceneMouseEvent, IQGraphicsSceneEvent, IQEvent
-{
-	private QGraphicsSceneMouseEvent_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsSceneMouseEvent_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsSceneMouseEvent_new();
-	}
-	public this(QEvent_Type type)
-	{
-		this.ptr = CQt.QGraphicsSceneMouseEvent_new2(type);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsSceneMouseEvent_Delete(this.ptr);
-	}
-	public QPointF_Ptr Pos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_Pos((.)this.ptr.Ptr));
-	}
-	public void SetPos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr ScenePos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_ScenePos((.)this.ptr.Ptr));
-	}
-	public void SetScenePos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr ScreenPos()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneMouseEvent_ScreenPos((.)this.ptr.Ptr));
-	}
-	public void SetScreenPos(IQPoint pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr ButtonDownPos(Qt_MouseButton button)
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_ButtonDownPos((.)this.ptr.Ptr, button));
-	}
-	public void SetButtonDownPos(Qt_MouseButton button, IQPointF pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetButtonDownPos((.)this.ptr.Ptr, button, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr ButtonDownScenePos(Qt_MouseButton button)
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_ButtonDownScenePos((.)this.ptr.Ptr, button));
-	}
-	public void SetButtonDownScenePos(Qt_MouseButton button, IQPointF pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetButtonDownScenePos((.)this.ptr.Ptr, button, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr ButtonDownScreenPos(Qt_MouseButton button)
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneMouseEvent_ButtonDownScreenPos((.)this.ptr.Ptr, button));
-	}
-	public void SetButtonDownScreenPos(Qt_MouseButton button, IQPoint pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetButtonDownScreenPos((.)this.ptr.Ptr, button, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr LastPos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_LastPos((.)this.ptr.Ptr));
-	}
-	public void SetLastPos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetLastPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr LastScenePos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMouseEvent_LastScenePos((.)this.ptr.Ptr));
-	}
-	public void SetLastScenePos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetLastScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr LastScreenPos()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneMouseEvent_LastScreenPos((.)this.ptr.Ptr));
-	}
-	public void SetLastScreenPos(IQPoint pos)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetLastScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QGraphicsSceneMouseEvent_Buttons((.)this.ptr.Ptr);
-	}
-	public void SetButtons(void* buttons)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetButtons((.)this.ptr.Ptr, buttons);
-	}
-	public Qt_MouseButton Button()
-	{
-		return CQt.QGraphicsSceneMouseEvent_Button((.)this.ptr.Ptr);
-	}
-	public void SetButton(Qt_MouseButton button)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetButton((.)this.ptr.Ptr, button);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QGraphicsSceneMouseEvent_Modifiers((.)this.ptr.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetModifiers((.)this.ptr.Ptr, modifiers);
-	}
-	public Qt_MouseEventSource Source()
-	{
-		return CQt.QGraphicsSceneMouseEvent_Source((.)this.ptr.Ptr);
-	}
-	public void SetSource(Qt_MouseEventSource source)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetSource((.)this.ptr.Ptr, source);
-	}
-	public void* Flags()
-	{
-		return CQt.QGraphicsSceneMouseEvent_Flags((.)this.ptr.Ptr);
-	}
-	public void SetFlags(void* flags)
-	{
-		CQt.QGraphicsSceneMouseEvent_SetFlags((.)this.ptr.Ptr, flags);
-	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
-	}
-	public QEvent_Type Type()
-	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
-	}
-	public bool Spontaneous()
-	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
-	}
-	public bool IsAccepted()
-	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
-	}
-	public void Accept()
-	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
-	}
-	public void Ignore()
-	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
-	}
-	public bool IsInputEvent()
-	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
-	}
-	public bool IsPointerEvent()
-	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
-	}
-	public bool IsSinglePointEvent()
-	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
-	}
-	public c_int RegisterEventType()
-	{
-		return CQt.QEvent_RegisterEventType();
-	}
-	public QEvent_Ptr Clone()
-	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return CQt.QEvent_RegisterEventType1(hint);
-	}
-}
-interface IQGraphicsSceneMouseEvent : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsSceneWheelEvent
 // --------------------------------------------------------------
@@ -402,6 +642,318 @@ struct QGraphicsSceneWheelEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QPointF_Ptr Pos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneWheelEvent_Pos((.)this.Ptr));
+	}
+	public void SetPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneWheelEvent_ScenePos((.)this.Ptr));
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneWheelEvent_ScreenPos((.)this.Ptr));
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QGraphicsSceneWheelEvent_Buttons((.)this.Ptr);
+	}
+	public void SetButtons(void* buttons)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetButtons((.)this.Ptr, buttons);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QGraphicsSceneWheelEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public c_int Delta()
+	{
+		return CQt.QGraphicsSceneWheelEvent_Delta((.)this.Ptr);
+	}
+	public void SetDelta(c_int delta)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetDelta((.)this.Ptr, delta);
+	}
+	public Qt_Orientation Orientation()
+	{
+		return CQt.QGraphicsSceneWheelEvent_Orientation((.)this.Ptr);
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetOrientation((.)this.Ptr, orientation);
+	}
+	public Qt_ScrollPhase Phase()
+	{
+		return CQt.QGraphicsSceneWheelEvent_Phase((.)this.Ptr);
+	}
+	public void SetPhase(Qt_ScrollPhase scrollPhase)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetPhase((.)this.Ptr, scrollPhase);
+	}
+	public QPoint_Ptr PixelDelta()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneWheelEvent_PixelDelta((.)this.Ptr));
+	}
+	public void SetPixelDelta(IQPoint delta)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetPixelDelta((.)this.Ptr, (.)delta?.ObjectPtr);
+	}
+	public bool IsInverted()
+	{
+		return CQt.QGraphicsSceneWheelEvent_IsInverted((.)this.Ptr);
+	}
+	public void SetInverted(bool inverted)
+	{
+		CQt.QGraphicsSceneWheelEvent_SetInverted((.)this.Ptr, inverted);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
+}
+class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent, IQEvent
+{
+	private QGraphicsSceneWheelEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsSceneWheelEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsSceneWheelEvent_new();
+	}
+	public this(QEvent_Type type)
+	{
+		this.ptr = CQt.QGraphicsSceneWheelEvent_new2(type);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsSceneWheelEvent_Delete(this.ptr);
+	}
+	public QPointF_Ptr Pos()
+	{
+		return this.ptr.Pos();
+	}
+	public void SetPos(IQPointF pos)
+	{
+		this.ptr.SetPos(pos);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return this.ptr.ScenePos();
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		this.ptr.SetScenePos(pos);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return this.ptr.ScreenPos();
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		this.ptr.SetScreenPos(pos);
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public void SetButtons(void* buttons)
+	{
+		this.ptr.SetButtons(buttons);
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public c_int Delta()
+	{
+		return this.ptr.Delta();
+	}
+	public void SetDelta(c_int delta)
+	{
+		this.ptr.SetDelta(delta);
+	}
+	public Qt_Orientation Orientation()
+	{
+		return this.ptr.Orientation();
+	}
+	public void SetOrientation(Qt_Orientation orientation)
+	{
+		this.ptr.SetOrientation(orientation);
+	}
+	public Qt_ScrollPhase Phase()
+	{
+		return this.ptr.Phase();
+	}
+	public void SetPhase(Qt_ScrollPhase scrollPhase)
+	{
+		this.ptr.SetPhase(scrollPhase);
+	}
+	public QPoint_Ptr PixelDelta()
+	{
+		return this.ptr.PixelDelta();
+	}
+	public void SetPixelDelta(IQPoint delta)
+	{
+		this.ptr.SetPixelDelta(delta);
+	}
+	public bool IsInverted()
+	{
+		return this.ptr.IsInverted();
+	}
+	public void SetInverted(bool inverted)
+	{
+		this.ptr.SetInverted(inverted);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
+	}
+	public QEvent_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public bool Spontaneous()
+	{
+		return this.ptr.Spontaneous();
+	}
+	public void SetAccepted(bool accepted)
+	{
+		this.ptr.SetAccepted(accepted);
+	}
+	public bool IsAccepted()
+	{
+		return this.ptr.IsAccepted();
+	}
+	public void Accept()
+	{
+		this.ptr.Accept();
+	}
+	public void Ignore()
+	{
+		this.ptr.Ignore();
+	}
+	public bool IsInputEvent()
+	{
+		return this.ptr.IsInputEvent();
+	}
+	public bool IsPointerEvent()
+	{
+		return this.ptr.IsPointerEvent();
+	}
+	public bool IsSinglePointEvent()
+	{
+		return this.ptr.IsSinglePointEvent();
+	}
+	public c_int RegisterEventType()
+	{
+		return this.ptr.RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return this.ptr.Clone();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return this.ptr.RegisterEventType1(hint);
+	}
+}
+interface IQGraphicsSceneWheelEvent : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -452,174 +1004,6 @@ extension CQt
 	[LinkName("QGraphicsSceneWheelEvent_SetInverted")]
 	public static extern void QGraphicsSceneWheelEvent_SetInverted(void* self, bool inverted);
 }
-class QGraphicsSceneWheelEvent : IQGraphicsSceneWheelEvent, IQGraphicsSceneEvent, IQEvent
-{
-	private QGraphicsSceneWheelEvent_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsSceneWheelEvent_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsSceneWheelEvent_new();
-	}
-	public this(QEvent_Type type)
-	{
-		this.ptr = CQt.QGraphicsSceneWheelEvent_new2(type);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsSceneWheelEvent_Delete(this.ptr);
-	}
-	public QPointF_Ptr Pos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneWheelEvent_Pos((.)this.ptr.Ptr));
-	}
-	public void SetPos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr ScenePos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneWheelEvent_ScenePos((.)this.ptr.Ptr));
-	}
-	public void SetScenePos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr ScreenPos()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneWheelEvent_ScreenPos((.)this.ptr.Ptr));
-	}
-	public void SetScreenPos(IQPoint pos)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QGraphicsSceneWheelEvent_Buttons((.)this.ptr.Ptr);
-	}
-	public void SetButtons(void* buttons)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetButtons((.)this.ptr.Ptr, buttons);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QGraphicsSceneWheelEvent_Modifiers((.)this.ptr.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetModifiers((.)this.ptr.Ptr, modifiers);
-	}
-	public c_int Delta()
-	{
-		return CQt.QGraphicsSceneWheelEvent_Delta((.)this.ptr.Ptr);
-	}
-	public void SetDelta(c_int delta)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetDelta((.)this.ptr.Ptr, delta);
-	}
-	public Qt_Orientation Orientation()
-	{
-		return CQt.QGraphicsSceneWheelEvent_Orientation((.)this.ptr.Ptr);
-	}
-	public void SetOrientation(Qt_Orientation orientation)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetOrientation((.)this.ptr.Ptr, orientation);
-	}
-	public Qt_ScrollPhase Phase()
-	{
-		return CQt.QGraphicsSceneWheelEvent_Phase((.)this.ptr.Ptr);
-	}
-	public void SetPhase(Qt_ScrollPhase scrollPhase)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetPhase((.)this.ptr.Ptr, scrollPhase);
-	}
-	public QPoint_Ptr PixelDelta()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneWheelEvent_PixelDelta((.)this.ptr.Ptr));
-	}
-	public void SetPixelDelta(IQPoint delta)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetPixelDelta((.)this.ptr.Ptr, (.)delta?.ObjectPtr);
-	}
-	public bool IsInverted()
-	{
-		return CQt.QGraphicsSceneWheelEvent_IsInverted((.)this.ptr.Ptr);
-	}
-	public void SetInverted(bool inverted)
-	{
-		CQt.QGraphicsSceneWheelEvent_SetInverted((.)this.ptr.Ptr, inverted);
-	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
-	}
-	public QEvent_Type Type()
-	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
-	}
-	public bool Spontaneous()
-	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
-	}
-	public bool IsAccepted()
-	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
-	}
-	public void Accept()
-	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
-	}
-	public void Ignore()
-	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
-	}
-	public bool IsInputEvent()
-	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
-	}
-	public bool IsPointerEvent()
-	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
-	}
-	public bool IsSinglePointEvent()
-	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
-	}
-	public c_int RegisterEventType()
-	{
-		return CQt.QEvent_RegisterEventType();
-	}
-	public QEvent_Ptr Clone()
-	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return CQt.QEvent_RegisterEventType1(hint);
-	}
-}
-interface IQGraphicsSceneWheelEvent : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsSceneContextMenuEvent
 // --------------------------------------------------------------
@@ -631,6 +1015,238 @@ struct QGraphicsSceneContextMenuEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QPointF_Ptr Pos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneContextMenuEvent_Pos((.)this.Ptr));
+	}
+	public void SetPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneContextMenuEvent_SetPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneContextMenuEvent_ScenePos((.)this.Ptr));
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneContextMenuEvent_SetScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneContextMenuEvent_ScreenPos((.)this.Ptr));
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneContextMenuEvent_SetScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QGraphicsSceneContextMenuEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QGraphicsSceneContextMenuEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public QGraphicsSceneContextMenuEvent_Reason Reason()
+	{
+		return CQt.QGraphicsSceneContextMenuEvent_Reason((.)this.Ptr);
+	}
+	public void SetReason(QGraphicsSceneContextMenuEvent_Reason reason)
+	{
+		CQt.QGraphicsSceneContextMenuEvent_SetReason((.)this.Ptr, reason);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
+}
+class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphicsSceneEvent, IQEvent
+{
+	private QGraphicsSceneContextMenuEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsSceneContextMenuEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new();
+	}
+	public this(QEvent_Type type)
+	{
+		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new2(type);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsSceneContextMenuEvent_Delete(this.ptr);
+	}
+	public QPointF_Ptr Pos()
+	{
+		return this.ptr.Pos();
+	}
+	public void SetPos(IQPointF pos)
+	{
+		this.ptr.SetPos(pos);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return this.ptr.ScenePos();
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		this.ptr.SetScenePos(pos);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return this.ptr.ScreenPos();
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		this.ptr.SetScreenPos(pos);
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public QGraphicsSceneContextMenuEvent_Reason Reason()
+	{
+		return this.ptr.Reason();
+	}
+	public void SetReason(QGraphicsSceneContextMenuEvent_Reason reason)
+	{
+		this.ptr.SetReason(reason);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
+	}
+	public QEvent_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public bool Spontaneous()
+	{
+		return this.ptr.Spontaneous();
+	}
+	public void SetAccepted(bool accepted)
+	{
+		this.ptr.SetAccepted(accepted);
+	}
+	public bool IsAccepted()
+	{
+		return this.ptr.IsAccepted();
+	}
+	public void Accept()
+	{
+		this.ptr.Accept();
+	}
+	public void Ignore()
+	{
+		this.ptr.Ignore();
+	}
+	public bool IsInputEvent()
+	{
+		return this.ptr.IsInputEvent();
+	}
+	public bool IsPointerEvent()
+	{
+		return this.ptr.IsPointerEvent();
+	}
+	public bool IsSinglePointEvent()
+	{
+		return this.ptr.IsSinglePointEvent();
+	}
+	public c_int RegisterEventType()
+	{
+		return this.ptr.RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return this.ptr.Clone();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return this.ptr.RegisterEventType1(hint);
+	}
+}
+interface IQGraphicsSceneContextMenuEvent : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -661,134 +1277,6 @@ extension CQt
 	[LinkName("QGraphicsSceneContextMenuEvent_SetReason")]
 	public static extern void QGraphicsSceneContextMenuEvent_SetReason(void* self, QGraphicsSceneContextMenuEvent_Reason reason);
 }
-class QGraphicsSceneContextMenuEvent : IQGraphicsSceneContextMenuEvent, IQGraphicsSceneEvent, IQEvent
-{
-	private QGraphicsSceneContextMenuEvent_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsSceneContextMenuEvent_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new();
-	}
-	public this(QEvent_Type type)
-	{
-		this.ptr = CQt.QGraphicsSceneContextMenuEvent_new2(type);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsSceneContextMenuEvent_Delete(this.ptr);
-	}
-	public QPointF_Ptr Pos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneContextMenuEvent_Pos((.)this.ptr.Ptr));
-	}
-	public void SetPos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneContextMenuEvent_SetPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr ScenePos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneContextMenuEvent_ScenePos((.)this.ptr.Ptr));
-	}
-	public void SetScenePos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneContextMenuEvent_SetScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr ScreenPos()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneContextMenuEvent_ScreenPos((.)this.ptr.Ptr));
-	}
-	public void SetScreenPos(IQPoint pos)
-	{
-		CQt.QGraphicsSceneContextMenuEvent_SetScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QGraphicsSceneContextMenuEvent_Modifiers((.)this.ptr.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QGraphicsSceneContextMenuEvent_SetModifiers((.)this.ptr.Ptr, modifiers);
-	}
-	public QGraphicsSceneContextMenuEvent_Reason Reason()
-	{
-		return CQt.QGraphicsSceneContextMenuEvent_Reason((.)this.ptr.Ptr);
-	}
-	public void SetReason(QGraphicsSceneContextMenuEvent_Reason reason)
-	{
-		CQt.QGraphicsSceneContextMenuEvent_SetReason((.)this.ptr.Ptr, reason);
-	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
-	}
-	public QEvent_Type Type()
-	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
-	}
-	public bool Spontaneous()
-	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
-	}
-	public bool IsAccepted()
-	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
-	}
-	public void Accept()
-	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
-	}
-	public void Ignore()
-	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
-	}
-	public bool IsInputEvent()
-	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
-	}
-	public bool IsPointerEvent()
-	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
-	}
-	public bool IsSinglePointEvent()
-	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
-	}
-	public c_int RegisterEventType()
-	{
-		return CQt.QEvent_RegisterEventType();
-	}
-	public QEvent_Ptr Clone()
-	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return CQt.QEvent_RegisterEventType1(hint);
-	}
-}
-interface IQGraphicsSceneContextMenuEvent : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsSceneHoverEvent
 // --------------------------------------------------------------
@@ -800,6 +1288,270 @@ struct QGraphicsSceneHoverEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QPointF_Ptr Pos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_Pos((.)this.Ptr));
+	}
+	public void SetPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneHoverEvent_SetPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_ScenePos((.)this.Ptr));
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneHoverEvent_SetScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneHoverEvent_ScreenPos((.)this.Ptr));
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneHoverEvent_SetScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr LastPos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_LastPos((.)this.Ptr));
+	}
+	public void SetLastPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneHoverEvent_SetLastPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr LastScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_LastScenePos((.)this.Ptr));
+	}
+	public void SetLastScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneHoverEvent_SetLastScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr LastScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneHoverEvent_LastScreenPos((.)this.Ptr));
+	}
+	public void SetLastScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneHoverEvent_SetLastScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QGraphicsSceneHoverEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QGraphicsSceneHoverEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
+}
+class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent, IQEvent
+{
+	private QGraphicsSceneHoverEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsSceneHoverEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsSceneHoverEvent_new();
+	}
+	public this(QEvent_Type type)
+	{
+		this.ptr = CQt.QGraphicsSceneHoverEvent_new2(type);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsSceneHoverEvent_Delete(this.ptr);
+	}
+	public QPointF_Ptr Pos()
+	{
+		return this.ptr.Pos();
+	}
+	public void SetPos(IQPointF pos)
+	{
+		this.ptr.SetPos(pos);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return this.ptr.ScenePos();
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		this.ptr.SetScenePos(pos);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return this.ptr.ScreenPos();
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		this.ptr.SetScreenPos(pos);
+	}
+	public QPointF_Ptr LastPos()
+	{
+		return this.ptr.LastPos();
+	}
+	public void SetLastPos(IQPointF pos)
+	{
+		this.ptr.SetLastPos(pos);
+	}
+	public QPointF_Ptr LastScenePos()
+	{
+		return this.ptr.LastScenePos();
+	}
+	public void SetLastScenePos(IQPointF pos)
+	{
+		this.ptr.SetLastScenePos(pos);
+	}
+	public QPoint_Ptr LastScreenPos()
+	{
+		return this.ptr.LastScreenPos();
+	}
+	public void SetLastScreenPos(IQPoint pos)
+	{
+		this.ptr.SetLastScreenPos(pos);
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
+	}
+	public QEvent_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public bool Spontaneous()
+	{
+		return this.ptr.Spontaneous();
+	}
+	public void SetAccepted(bool accepted)
+	{
+		this.ptr.SetAccepted(accepted);
+	}
+	public bool IsAccepted()
+	{
+		return this.ptr.IsAccepted();
+	}
+	public void Accept()
+	{
+		this.ptr.Accept();
+	}
+	public void Ignore()
+	{
+		this.ptr.Ignore();
+	}
+	public bool IsInputEvent()
+	{
+		return this.ptr.IsInputEvent();
+	}
+	public bool IsPointerEvent()
+	{
+		return this.ptr.IsPointerEvent();
+	}
+	public bool IsSinglePointEvent()
+	{
+		return this.ptr.IsSinglePointEvent();
+	}
+	public c_int RegisterEventType()
+	{
+		return this.ptr.RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return this.ptr.Clone();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return this.ptr.RegisterEventType1(hint);
+	}
+}
+interface IQGraphicsSceneHoverEvent : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -838,150 +1590,6 @@ extension CQt
 	[LinkName("QGraphicsSceneHoverEvent_SetModifiers")]
 	public static extern void QGraphicsSceneHoverEvent_SetModifiers(void* self, void* modifiers);
 }
-class QGraphicsSceneHoverEvent : IQGraphicsSceneHoverEvent, IQGraphicsSceneEvent, IQEvent
-{
-	private QGraphicsSceneHoverEvent_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsSceneHoverEvent_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsSceneHoverEvent_new();
-	}
-	public this(QEvent_Type type)
-	{
-		this.ptr = CQt.QGraphicsSceneHoverEvent_new2(type);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsSceneHoverEvent_Delete(this.ptr);
-	}
-	public QPointF_Ptr Pos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_Pos((.)this.ptr.Ptr));
-	}
-	public void SetPos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneHoverEvent_SetPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr ScenePos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_ScenePos((.)this.ptr.Ptr));
-	}
-	public void SetScenePos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneHoverEvent_SetScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr ScreenPos()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneHoverEvent_ScreenPos((.)this.ptr.Ptr));
-	}
-	public void SetScreenPos(IQPoint pos)
-	{
-		CQt.QGraphicsSceneHoverEvent_SetScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr LastPos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_LastPos((.)this.ptr.Ptr));
-	}
-	public void SetLastPos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneHoverEvent_SetLastPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr LastScenePos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneHoverEvent_LastScenePos((.)this.ptr.Ptr));
-	}
-	public void SetLastScenePos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneHoverEvent_SetLastScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr LastScreenPos()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneHoverEvent_LastScreenPos((.)this.ptr.Ptr));
-	}
-	public void SetLastScreenPos(IQPoint pos)
-	{
-		CQt.QGraphicsSceneHoverEvent_SetLastScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QGraphicsSceneHoverEvent_Modifiers((.)this.ptr.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QGraphicsSceneHoverEvent_SetModifiers((.)this.ptr.Ptr, modifiers);
-	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
-	}
-	public QEvent_Type Type()
-	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
-	}
-	public bool Spontaneous()
-	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
-	}
-	public bool IsAccepted()
-	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
-	}
-	public void Accept()
-	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
-	}
-	public void Ignore()
-	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
-	}
-	public bool IsInputEvent()
-	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
-	}
-	public bool IsPointerEvent()
-	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
-	}
-	public bool IsSinglePointEvent()
-	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
-	}
-	public c_int RegisterEventType()
-	{
-		return CQt.QEvent_RegisterEventType();
-	}
-	public QEvent_Ptr Clone()
-	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return CQt.QEvent_RegisterEventType1(hint);
-	}
-}
-interface IQGraphicsSceneHoverEvent : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsSceneHelpEvent
 // --------------------------------------------------------------
@@ -993,23 +1601,86 @@ struct QGraphicsSceneHelpEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QGraphicsSceneHelpEvent_new")]
-	public static extern QGraphicsSceneHelpEvent_Ptr QGraphicsSceneHelpEvent_new();
-	[LinkName("QGraphicsSceneHelpEvent_new2")]
-	public static extern QGraphicsSceneHelpEvent_Ptr QGraphicsSceneHelpEvent_new2(QEvent_Type type);
-	[LinkName("QGraphicsSceneHelpEvent_Delete")]
-	public static extern void QGraphicsSceneHelpEvent_Delete(QGraphicsSceneHelpEvent_Ptr self);
-	[LinkName("QGraphicsSceneHelpEvent_ScenePos")]
-	public static extern void* QGraphicsSceneHelpEvent_ScenePos(void* self);
-	[LinkName("QGraphicsSceneHelpEvent_SetScenePos")]
-	public static extern void QGraphicsSceneHelpEvent_SetScenePos(void* self, void** pos);
-	[LinkName("QGraphicsSceneHelpEvent_ScreenPos")]
-	public static extern void* QGraphicsSceneHelpEvent_ScreenPos(void* self);
-	[LinkName("QGraphicsSceneHelpEvent_SetScreenPos")]
-	public static extern void QGraphicsSceneHelpEvent_SetScreenPos(void* self, void** pos);
+	public QPointF_Ptr ScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneHelpEvent_ScenePos((.)this.Ptr));
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneHelpEvent_SetScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneHelpEvent_ScreenPos((.)this.Ptr));
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneHelpEvent_SetScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
 }
 class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, IQEvent
 {
@@ -1033,87 +1704,104 @@ class QGraphicsSceneHelpEvent : IQGraphicsSceneHelpEvent, IQGraphicsSceneEvent, 
 	}
 	public QPointF_Ptr ScenePos()
 	{
-		return QPointF_Ptr(CQt.QGraphicsSceneHelpEvent_ScenePos((.)this.ptr.Ptr));
+		return this.ptr.ScenePos();
 	}
 	public void SetScenePos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneHelpEvent_SetScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
+		this.ptr.SetScenePos(pos);
 	}
 	public QPoint_Ptr ScreenPos()
 	{
-		return QPoint_Ptr(CQt.QGraphicsSceneHelpEvent_ScreenPos((.)this.ptr.Ptr));
+		return this.ptr.ScreenPos();
 	}
 	public void SetScreenPos(IQPoint pos)
 	{
-		CQt.QGraphicsSceneHelpEvent_SetScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
+		this.ptr.SetScreenPos(pos);
 	}
 	public QWidget_Ptr Widget()
 	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
+		return this.ptr.Widget();
 	}
 	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
+		this.ptr.SetWidget(widget);
 	}
 	public c_ulonglong Timestamp()
 	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
+		return this.ptr.Timestamp();
 	}
 	public void SetTimestamp(c_ulonglong ts)
 	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
+		this.ptr.SetTimestamp(ts);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
+		return this.ptr.Spontaneous();
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
+		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
+		return this.ptr.IsAccepted();
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
+		this.ptr.Accept();
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
+		this.ptr.Ignore();
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
+		return this.ptr.IsInputEvent();
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
+		return this.ptr.IsPointerEvent();
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
+		return this.ptr.IsSinglePointEvent();
 	}
 	public c_int RegisterEventType()
 	{
-		return CQt.QEvent_RegisterEventType();
+		return this.ptr.RegisterEventType();
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
+		return this.ptr.Clone();
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
-		return CQt.QEvent_RegisterEventType1(hint);
+		return this.ptr.RegisterEventType1(hint);
 	}
 }
 interface IQGraphicsSceneHelpEvent : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QGraphicsSceneHelpEvent_new")]
+	public static extern QGraphicsSceneHelpEvent_Ptr QGraphicsSceneHelpEvent_new();
+	[LinkName("QGraphicsSceneHelpEvent_new2")]
+	public static extern QGraphicsSceneHelpEvent_Ptr QGraphicsSceneHelpEvent_new2(QEvent_Type type);
+	[LinkName("QGraphicsSceneHelpEvent_Delete")]
+	public static extern void QGraphicsSceneHelpEvent_Delete(QGraphicsSceneHelpEvent_Ptr self);
+	[LinkName("QGraphicsSceneHelpEvent_ScenePos")]
+	public static extern void* QGraphicsSceneHelpEvent_ScenePos(void* self);
+	[LinkName("QGraphicsSceneHelpEvent_SetScenePos")]
+	public static extern void QGraphicsSceneHelpEvent_SetScenePos(void* self, void** pos);
+	[LinkName("QGraphicsSceneHelpEvent_ScreenPos")]
+	public static extern void* QGraphicsSceneHelpEvent_ScreenPos(void* self);
+	[LinkName("QGraphicsSceneHelpEvent_SetScreenPos")]
+	public static extern void QGraphicsSceneHelpEvent_SetScreenPos(void* self, void** pos);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneDragDropEvent
@@ -1126,6 +1814,326 @@ struct QGraphicsSceneDragDropEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QPointF_Ptr Pos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneDragDropEvent_Pos((.)this.Ptr));
+	}
+	public void SetPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneDragDropEvent_ScenePos((.)this.Ptr));
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetScenePos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return QPoint_Ptr(CQt.QGraphicsSceneDragDropEvent_ScreenPos((.)this.Ptr));
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetScreenPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QGraphicsSceneDragDropEvent_Buttons((.)this.Ptr);
+	}
+	public void SetButtons(void* buttons)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetButtons((.)this.Ptr, buttons);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QGraphicsSceneDragDropEvent_Modifiers((.)this.Ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetModifiers((.)this.Ptr, modifiers);
+	}
+	public void* PossibleActions()
+	{
+		return CQt.QGraphicsSceneDragDropEvent_PossibleActions((.)this.Ptr);
+	}
+	public void SetPossibleActions(void* actions)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetPossibleActions((.)this.Ptr, actions);
+	}
+	public Qt_DropAction ProposedAction()
+	{
+		return CQt.QGraphicsSceneDragDropEvent_ProposedAction((.)this.Ptr);
+	}
+	public void SetProposedAction(Qt_DropAction action)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetProposedAction((.)this.Ptr, action);
+	}
+	public void AcceptProposedAction()
+	{
+		CQt.QGraphicsSceneDragDropEvent_AcceptProposedAction((.)this.Ptr);
+	}
+	public Qt_DropAction DropAction()
+	{
+		return CQt.QGraphicsSceneDragDropEvent_DropAction((.)this.Ptr);
+	}
+	public void SetDropAction(Qt_DropAction action)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetDropAction((.)this.Ptr, action);
+	}
+	public QWidget_Ptr Source()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneDragDropEvent_Source((.)this.Ptr));
+	}
+	public void SetSource(IQWidget source)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetSource((.)this.Ptr, (.)source?.ObjectPtr);
+	}
+	public QMimeData_Ptr MimeData()
+	{
+		return QMimeData_Ptr(CQt.QGraphicsSceneDragDropEvent_MimeData((.)this.Ptr));
+	}
+	public void SetMimeData(IQMimeData data)
+	{
+		CQt.QGraphicsSceneDragDropEvent_SetMimeData((.)this.Ptr, (.)data?.ObjectPtr);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
+}
+class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsSceneEvent, IQEvent
+{
+	private QGraphicsSceneDragDropEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGraphicsSceneDragDropEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QGraphicsSceneDragDropEvent_new();
+	}
+	public this(QEvent_Type type)
+	{
+		this.ptr = CQt.QGraphicsSceneDragDropEvent_new2(type);
+	}
+	public ~this()
+	{
+		CQt.QGraphicsSceneDragDropEvent_Delete(this.ptr);
+	}
+	public QPointF_Ptr Pos()
+	{
+		return this.ptr.Pos();
+	}
+	public void SetPos(IQPointF pos)
+	{
+		this.ptr.SetPos(pos);
+	}
+	public QPointF_Ptr ScenePos()
+	{
+		return this.ptr.ScenePos();
+	}
+	public void SetScenePos(IQPointF pos)
+	{
+		this.ptr.SetScenePos(pos);
+	}
+	public QPoint_Ptr ScreenPos()
+	{
+		return this.ptr.ScreenPos();
+	}
+	public void SetScreenPos(IQPoint pos)
+	{
+		this.ptr.SetScreenPos(pos);
+	}
+	public void* Buttons()
+	{
+		return this.ptr.Buttons();
+	}
+	public void SetButtons(void* buttons)
+	{
+		this.ptr.SetButtons(buttons);
+	}
+	public void* Modifiers()
+	{
+		return this.ptr.Modifiers();
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		this.ptr.SetModifiers(modifiers);
+	}
+	public void* PossibleActions()
+	{
+		return this.ptr.PossibleActions();
+	}
+	public void SetPossibleActions(void* actions)
+	{
+		this.ptr.SetPossibleActions(actions);
+	}
+	public Qt_DropAction ProposedAction()
+	{
+		return this.ptr.ProposedAction();
+	}
+	public void SetProposedAction(Qt_DropAction action)
+	{
+		this.ptr.SetProposedAction(action);
+	}
+	public void AcceptProposedAction()
+	{
+		this.ptr.AcceptProposedAction();
+	}
+	public Qt_DropAction DropAction()
+	{
+		return this.ptr.DropAction();
+	}
+	public void SetDropAction(Qt_DropAction action)
+	{
+		this.ptr.SetDropAction(action);
+	}
+	public QWidget_Ptr Source()
+	{
+		return this.ptr.Source();
+	}
+	public void SetSource(IQWidget source)
+	{
+		this.ptr.SetSource(source);
+	}
+	public QMimeData_Ptr MimeData()
+	{
+		return this.ptr.MimeData();
+	}
+	public void SetMimeData(IQMimeData data)
+	{
+		this.ptr.SetMimeData(data);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return this.ptr.Widget();
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		this.ptr.SetWidget(widget);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return this.ptr.Timestamp();
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		this.ptr.SetTimestamp(ts);
+	}
+	public QEvent_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public bool Spontaneous()
+	{
+		return this.ptr.Spontaneous();
+	}
+	public void SetAccepted(bool accepted)
+	{
+		this.ptr.SetAccepted(accepted);
+	}
+	public bool IsAccepted()
+	{
+		return this.ptr.IsAccepted();
+	}
+	public void Accept()
+	{
+		this.ptr.Accept();
+	}
+	public void Ignore()
+	{
+		this.ptr.Ignore();
+	}
+	public bool IsInputEvent()
+	{
+		return this.ptr.IsInputEvent();
+	}
+	public bool IsPointerEvent()
+	{
+		return this.ptr.IsPointerEvent();
+	}
+	public bool IsSinglePointEvent()
+	{
+		return this.ptr.IsSinglePointEvent();
+	}
+	public c_int RegisterEventType()
+	{
+		return this.ptr.RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return this.ptr.Clone();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return this.ptr.RegisterEventType1(hint);
+	}
+}
+interface IQGraphicsSceneDragDropEvent : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -1178,178 +2186,6 @@ extension CQt
 	[LinkName("QGraphicsSceneDragDropEvent_SetMimeData")]
 	public static extern void QGraphicsSceneDragDropEvent_SetMimeData(void* self, void** data);
 }
-class QGraphicsSceneDragDropEvent : IQGraphicsSceneDragDropEvent, IQGraphicsSceneEvent, IQEvent
-{
-	private QGraphicsSceneDragDropEvent_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QGraphicsSceneDragDropEvent_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QGraphicsSceneDragDropEvent_new();
-	}
-	public this(QEvent_Type type)
-	{
-		this.ptr = CQt.QGraphicsSceneDragDropEvent_new2(type);
-	}
-	public ~this()
-	{
-		CQt.QGraphicsSceneDragDropEvent_Delete(this.ptr);
-	}
-	public QPointF_Ptr Pos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneDragDropEvent_Pos((.)this.ptr.Ptr));
-	}
-	public void SetPos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPointF_Ptr ScenePos()
-	{
-		return QPointF_Ptr(CQt.QGraphicsSceneDragDropEvent_ScenePos((.)this.ptr.Ptr));
-	}
-	public void SetScenePos(IQPointF pos)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetScenePos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public QPoint_Ptr ScreenPos()
-	{
-		return QPoint_Ptr(CQt.QGraphicsSceneDragDropEvent_ScreenPos((.)this.ptr.Ptr));
-	}
-	public void SetScreenPos(IQPoint pos)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetScreenPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
-	}
-	public void* Buttons()
-	{
-		return CQt.QGraphicsSceneDragDropEvent_Buttons((.)this.ptr.Ptr);
-	}
-	public void SetButtons(void* buttons)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetButtons((.)this.ptr.Ptr, buttons);
-	}
-	public void* Modifiers()
-	{
-		return CQt.QGraphicsSceneDragDropEvent_Modifiers((.)this.ptr.Ptr);
-	}
-	public void SetModifiers(void* modifiers)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetModifiers((.)this.ptr.Ptr, modifiers);
-	}
-	public void* PossibleActions()
-	{
-		return CQt.QGraphicsSceneDragDropEvent_PossibleActions((.)this.ptr.Ptr);
-	}
-	public void SetPossibleActions(void* actions)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetPossibleActions((.)this.ptr.Ptr, actions);
-	}
-	public Qt_DropAction ProposedAction()
-	{
-		return CQt.QGraphicsSceneDragDropEvent_ProposedAction((.)this.ptr.Ptr);
-	}
-	public void SetProposedAction(Qt_DropAction action)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetProposedAction((.)this.ptr.Ptr, action);
-	}
-	public void AcceptProposedAction()
-	{
-		CQt.QGraphicsSceneDragDropEvent_AcceptProposedAction((.)this.ptr.Ptr);
-	}
-	public Qt_DropAction DropAction()
-	{
-		return CQt.QGraphicsSceneDragDropEvent_DropAction((.)this.ptr.Ptr);
-	}
-	public void SetDropAction(Qt_DropAction action)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetDropAction((.)this.ptr.Ptr, action);
-	}
-	public QWidget_Ptr Source()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneDragDropEvent_Source((.)this.ptr.Ptr));
-	}
-	public void SetSource(IQWidget source)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetSource((.)this.ptr.Ptr, (.)source?.ObjectPtr);
-	}
-	public QMimeData_Ptr MimeData()
-	{
-		return QMimeData_Ptr(CQt.QGraphicsSceneDragDropEvent_MimeData((.)this.ptr.Ptr));
-	}
-	public void SetMimeData(IQMimeData data)
-	{
-		CQt.QGraphicsSceneDragDropEvent_SetMimeData((.)this.ptr.Ptr, (.)data?.ObjectPtr);
-	}
-	public QWidget_Ptr Widget()
-	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
-	}
-	public void SetWidget(IQWidget widget)
-	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
-	}
-	public c_ulonglong Timestamp()
-	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
-	}
-	public void SetTimestamp(c_ulonglong ts)
-	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
-	}
-	public QEvent_Type Type()
-	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
-	}
-	public bool Spontaneous()
-	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
-	}
-	public void SetAccepted(bool accepted)
-	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
-	}
-	public bool IsAccepted()
-	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
-	}
-	public void Accept()
-	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
-	}
-	public void Ignore()
-	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
-	}
-	public bool IsInputEvent()
-	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
-	}
-	public bool IsPointerEvent()
-	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
-	}
-	public bool IsSinglePointEvent()
-	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
-	}
-	public c_int RegisterEventType()
-	{
-		return CQt.QEvent_RegisterEventType();
-	}
-	public QEvent_Ptr Clone()
-	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
-	}
-	public c_int RegisterEventType1(c_int hint)
-	{
-		return CQt.QEvent_RegisterEventType1(hint);
-	}
-}
-interface IQGraphicsSceneDragDropEvent : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QGraphicsSceneResizeEvent
 // --------------------------------------------------------------
@@ -1361,21 +2197,86 @@ struct QGraphicsSceneResizeEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QGraphicsSceneResizeEvent_new")]
-	public static extern QGraphicsSceneResizeEvent_Ptr QGraphicsSceneResizeEvent_new();
-	[LinkName("QGraphicsSceneResizeEvent_Delete")]
-	public static extern void QGraphicsSceneResizeEvent_Delete(QGraphicsSceneResizeEvent_Ptr self);
-	[LinkName("QGraphicsSceneResizeEvent_OldSize")]
-	public static extern void* QGraphicsSceneResizeEvent_OldSize(void* self);
-	[LinkName("QGraphicsSceneResizeEvent_SetOldSize")]
-	public static extern void QGraphicsSceneResizeEvent_SetOldSize(void* self, void** size);
-	[LinkName("QGraphicsSceneResizeEvent_NewSize")]
-	public static extern void* QGraphicsSceneResizeEvent_NewSize(void* self);
-	[LinkName("QGraphicsSceneResizeEvent_SetNewSize")]
-	public static extern void QGraphicsSceneResizeEvent_SetNewSize(void* self, void** size);
+	public QSizeF_Ptr OldSize()
+	{
+		return QSizeF_Ptr(CQt.QGraphicsSceneResizeEvent_OldSize((.)this.Ptr));
+	}
+	public void SetOldSize(IQSizeF size)
+	{
+		CQt.QGraphicsSceneResizeEvent_SetOldSize((.)this.Ptr, (.)size?.ObjectPtr);
+	}
+	public QSizeF_Ptr NewSize()
+	{
+		return QSizeF_Ptr(CQt.QGraphicsSceneResizeEvent_NewSize((.)this.Ptr));
+	}
+	public void SetNewSize(IQSizeF size)
+	{
+		CQt.QGraphicsSceneResizeEvent_SetNewSize((.)this.Ptr, (.)size?.ObjectPtr);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
 }
 class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEvent, IQEvent
 {
@@ -1395,87 +2296,102 @@ class QGraphicsSceneResizeEvent : IQGraphicsSceneResizeEvent, IQGraphicsSceneEve
 	}
 	public QSizeF_Ptr OldSize()
 	{
-		return QSizeF_Ptr(CQt.QGraphicsSceneResizeEvent_OldSize((.)this.ptr.Ptr));
+		return this.ptr.OldSize();
 	}
 	public void SetOldSize(IQSizeF size)
 	{
-		CQt.QGraphicsSceneResizeEvent_SetOldSize((.)this.ptr.Ptr, (.)size?.ObjectPtr);
+		this.ptr.SetOldSize(size);
 	}
 	public QSizeF_Ptr NewSize()
 	{
-		return QSizeF_Ptr(CQt.QGraphicsSceneResizeEvent_NewSize((.)this.ptr.Ptr));
+		return this.ptr.NewSize();
 	}
 	public void SetNewSize(IQSizeF size)
 	{
-		CQt.QGraphicsSceneResizeEvent_SetNewSize((.)this.ptr.Ptr, (.)size?.ObjectPtr);
+		this.ptr.SetNewSize(size);
 	}
 	public QWidget_Ptr Widget()
 	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
+		return this.ptr.Widget();
 	}
 	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
+		this.ptr.SetWidget(widget);
 	}
 	public c_ulonglong Timestamp()
 	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
+		return this.ptr.Timestamp();
 	}
 	public void SetTimestamp(c_ulonglong ts)
 	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
+		this.ptr.SetTimestamp(ts);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
+		return this.ptr.Spontaneous();
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
+		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
+		return this.ptr.IsAccepted();
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
+		this.ptr.Accept();
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
+		this.ptr.Ignore();
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
+		return this.ptr.IsInputEvent();
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
+		return this.ptr.IsPointerEvent();
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
+		return this.ptr.IsSinglePointEvent();
 	}
 	public c_int RegisterEventType()
 	{
-		return CQt.QEvent_RegisterEventType();
+		return this.ptr.RegisterEventType();
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
+		return this.ptr.Clone();
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
-		return CQt.QEvent_RegisterEventType1(hint);
+		return this.ptr.RegisterEventType1(hint);
 	}
 }
 interface IQGraphicsSceneResizeEvent : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QGraphicsSceneResizeEvent_new")]
+	public static extern QGraphicsSceneResizeEvent_Ptr QGraphicsSceneResizeEvent_new();
+	[LinkName("QGraphicsSceneResizeEvent_Delete")]
+	public static extern void QGraphicsSceneResizeEvent_Delete(QGraphicsSceneResizeEvent_Ptr self);
+	[LinkName("QGraphicsSceneResizeEvent_OldSize")]
+	public static extern void* QGraphicsSceneResizeEvent_OldSize(void* self);
+	[LinkName("QGraphicsSceneResizeEvent_SetOldSize")]
+	public static extern void QGraphicsSceneResizeEvent_SetOldSize(void* self, void** size);
+	[LinkName("QGraphicsSceneResizeEvent_NewSize")]
+	public static extern void* QGraphicsSceneResizeEvent_NewSize(void* self);
+	[LinkName("QGraphicsSceneResizeEvent_SetNewSize")]
+	public static extern void QGraphicsSceneResizeEvent_SetNewSize(void* self, void** size);
 }
 // --------------------------------------------------------------
 // QGraphicsSceneMoveEvent
@@ -1488,21 +2404,86 @@ struct QGraphicsSceneMoveEvent_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QGraphicsSceneMoveEvent_new")]
-	public static extern QGraphicsSceneMoveEvent_Ptr QGraphicsSceneMoveEvent_new();
-	[LinkName("QGraphicsSceneMoveEvent_Delete")]
-	public static extern void QGraphicsSceneMoveEvent_Delete(QGraphicsSceneMoveEvent_Ptr self);
-	[LinkName("QGraphicsSceneMoveEvent_OldPos")]
-	public static extern void* QGraphicsSceneMoveEvent_OldPos(void* self);
-	[LinkName("QGraphicsSceneMoveEvent_SetOldPos")]
-	public static extern void QGraphicsSceneMoveEvent_SetOldPos(void* self, void** pos);
-	[LinkName("QGraphicsSceneMoveEvent_NewPos")]
-	public static extern void* QGraphicsSceneMoveEvent_NewPos(void* self);
-	[LinkName("QGraphicsSceneMoveEvent_SetNewPos")]
-	public static extern void QGraphicsSceneMoveEvent_SetNewPos(void* self, void** pos);
+	public QPointF_Ptr OldPos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMoveEvent_OldPos((.)this.Ptr));
+	}
+	public void SetOldPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneMoveEvent_SetOldPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QPointF_Ptr NewPos()
+	{
+		return QPointF_Ptr(CQt.QGraphicsSceneMoveEvent_NewPos((.)this.Ptr));
+	}
+	public void SetNewPos(IQPointF pos)
+	{
+		CQt.QGraphicsSceneMoveEvent_SetNewPos((.)this.Ptr, (.)pos?.ObjectPtr);
+	}
+	public QWidget_Ptr Widget()
+	{
+		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.Ptr));
+	}
+	public void SetWidget(IQWidget widget)
+	{
+		CQt.QGraphicsSceneEvent_SetWidget((.)this.Ptr, (.)widget?.ObjectPtr);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QGraphicsSceneEvent_Timestamp((.)this.Ptr);
+	}
+	public void SetTimestamp(c_ulonglong ts)
+	{
+		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.Ptr, ts);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.Ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.Ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.Ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.Ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.Ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.Ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.Ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.Ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.Ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public QEvent_Ptr Clone()
+	{
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.Ptr));
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
+	}
 }
 class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, IQEvent
 {
@@ -1522,87 +2503,102 @@ class QGraphicsSceneMoveEvent : IQGraphicsSceneMoveEvent, IQGraphicsSceneEvent, 
 	}
 	public QPointF_Ptr OldPos()
 	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMoveEvent_OldPos((.)this.ptr.Ptr));
+		return this.ptr.OldPos();
 	}
 	public void SetOldPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMoveEvent_SetOldPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
+		this.ptr.SetOldPos(pos);
 	}
 	public QPointF_Ptr NewPos()
 	{
-		return QPointF_Ptr(CQt.QGraphicsSceneMoveEvent_NewPos((.)this.ptr.Ptr));
+		return this.ptr.NewPos();
 	}
 	public void SetNewPos(IQPointF pos)
 	{
-		CQt.QGraphicsSceneMoveEvent_SetNewPos((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
+		this.ptr.SetNewPos(pos);
 	}
 	public QWidget_Ptr Widget()
 	{
-		return QWidget_Ptr(CQt.QGraphicsSceneEvent_Widget((.)this.ptr.Ptr));
+		return this.ptr.Widget();
 	}
 	public void SetWidget(IQWidget widget)
 	{
-		CQt.QGraphicsSceneEvent_SetWidget((.)this.ptr.Ptr, (.)widget?.ObjectPtr);
+		this.ptr.SetWidget(widget);
 	}
 	public c_ulonglong Timestamp()
 	{
-		return CQt.QGraphicsSceneEvent_Timestamp((.)this.ptr.Ptr);
+		return this.ptr.Timestamp();
 	}
 	public void SetTimestamp(c_ulonglong ts)
 	{
-		CQt.QGraphicsSceneEvent_SetTimestamp((.)this.ptr.Ptr, ts);
+		this.ptr.SetTimestamp(ts);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr.Ptr);
+		return this.ptr.Type();
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
+		return this.ptr.Spontaneous();
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
+		this.ptr.SetAccepted(accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
+		return this.ptr.IsAccepted();
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr.Ptr);
+		this.ptr.Accept();
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr.Ptr);
+		this.ptr.Ignore();
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
+		return this.ptr.IsInputEvent();
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
+		return this.ptr.IsPointerEvent();
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
+		return this.ptr.IsSinglePointEvent();
 	}
 	public c_int RegisterEventType()
 	{
-		return CQt.QEvent_RegisterEventType();
+		return this.ptr.RegisterEventType();
 	}
 	public QEvent_Ptr Clone()
 	{
-		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
+		return this.ptr.Clone();
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
-		return CQt.QEvent_RegisterEventType1(hint);
+		return this.ptr.RegisterEventType1(hint);
 	}
 }
 interface IQGraphicsSceneMoveEvent : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QGraphicsSceneMoveEvent_new")]
+	public static extern QGraphicsSceneMoveEvent_Ptr QGraphicsSceneMoveEvent_new();
+	[LinkName("QGraphicsSceneMoveEvent_Delete")]
+	public static extern void QGraphicsSceneMoveEvent_Delete(QGraphicsSceneMoveEvent_Ptr self);
+	[LinkName("QGraphicsSceneMoveEvent_OldPos")]
+	public static extern void* QGraphicsSceneMoveEvent_OldPos(void* self);
+	[LinkName("QGraphicsSceneMoveEvent_SetOldPos")]
+	public static extern void QGraphicsSceneMoveEvent_SetOldPos(void* self, void** pos);
+	[LinkName("QGraphicsSceneMoveEvent_NewPos")]
+	public static extern void* QGraphicsSceneMoveEvent_NewPos(void* self);
+	[LinkName("QGraphicsSceneMoveEvent_SetNewPos")]
+	public static extern void QGraphicsSceneMoveEvent_SetNewPos(void* self, void** pos);
 }
 [AllowDuplicates]
 enum QGraphicsSceneContextMenuEvent_Reason

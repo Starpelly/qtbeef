@@ -14,27 +14,18 @@ struct QHashSeed_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QHashSeed_new")]
-	public static extern QHashSeed_Ptr QHashSeed_new(void** other);
-	[LinkName("QHashSeed_new2")]
-	public static extern QHashSeed_Ptr QHashSeed_new2(void** other);
-	[LinkName("QHashSeed_new3")]
-	public static extern QHashSeed_Ptr QHashSeed_new3();
-	[LinkName("QHashSeed_new4")]
-	public static extern QHashSeed_Ptr QHashSeed_new4(c_size d);
-	[LinkName("QHashSeed_Delete")]
-	public static extern void QHashSeed_Delete(QHashSeed_Ptr self);
-	[LinkName("QHashSeed_ToUnsignedLong")]
-	public static extern c_size QHashSeed_ToUnsignedLong(void* self);
-	[LinkName("QHashSeed_GlobalSeed")]
-	public static extern void* QHashSeed_GlobalSeed();
-	[LinkName("QHashSeed_SetDeterministicGlobalSeed")]
-	public static extern void QHashSeed_SetDeterministicGlobalSeed();
-	[LinkName("QHashSeed_ResetRandomGlobalSeed")]
-	public static extern void QHashSeed_ResetRandomGlobalSeed();
+	public void* GlobalSeed()
+	{
+		return CQt.QHashSeed_GlobalSeed();
+	}
+	public void SetDeterministicGlobalSeed()
+	{
+		CQt.QHashSeed_SetDeterministicGlobalSeed();
+	}
+	public void ResetRandomGlobalSeed()
+	{
+		CQt.QHashSeed_ResetRandomGlobalSeed();
+	}
 }
 class QHashSeed : IQHashSeed
 {
@@ -62,17 +53,38 @@ class QHashSeed : IQHashSeed
 	}
 	public void* GlobalSeed()
 	{
-		return CQt.QHashSeed_GlobalSeed();
+		return this.ptr.GlobalSeed();
 	}
 	public void SetDeterministicGlobalSeed()
 	{
-		CQt.QHashSeed_SetDeterministicGlobalSeed();
+		this.ptr.SetDeterministicGlobalSeed();
 	}
 	public void ResetRandomGlobalSeed()
 	{
-		CQt.QHashSeed_ResetRandomGlobalSeed();
+		this.ptr.ResetRandomGlobalSeed();
 	}
 }
 interface IQHashSeed : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QHashSeed_new")]
+	public static extern QHashSeed_Ptr QHashSeed_new(void** other);
+	[LinkName("QHashSeed_new2")]
+	public static extern QHashSeed_Ptr QHashSeed_new2(void** other);
+	[LinkName("QHashSeed_new3")]
+	public static extern QHashSeed_Ptr QHashSeed_new3();
+	[LinkName("QHashSeed_new4")]
+	public static extern QHashSeed_Ptr QHashSeed_new4(c_size d);
+	[LinkName("QHashSeed_Delete")]
+	public static extern void QHashSeed_Delete(QHashSeed_Ptr self);
+	[LinkName("QHashSeed_ToUnsignedLong")]
+	public static extern c_size QHashSeed_ToUnsignedLong(void* self);
+	[LinkName("QHashSeed_GlobalSeed")]
+	public static extern void* QHashSeed_GlobalSeed();
+	[LinkName("QHashSeed_SetDeterministicGlobalSeed")]
+	public static extern void QHashSeed_SetDeterministicGlobalSeed();
+	[LinkName("QHashSeed_ResetRandomGlobalSeed")]
+	public static extern void QHashSeed_ResetRandomGlobalSeed();
 }

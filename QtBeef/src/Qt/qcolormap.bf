@@ -14,6 +14,106 @@ struct QColormap_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Initialize()
+	{
+		CQt.QColormap_Initialize();
+	}
+	public void Cleanup()
+	{
+		CQt.QColormap_Cleanup();
+	}
+	public QColormap_Ptr Instance()
+	{
+		return QColormap_Ptr(CQt.QColormap_Instance());
+	}
+	public QColormap_Mode Mode()
+	{
+		return CQt.QColormap_Mode((.)this.Ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QColormap_Depth((.)this.Ptr);
+	}
+	public c_int Size()
+	{
+		return CQt.QColormap_Size((.)this.Ptr);
+	}
+	public c_uint Pixel(IQColor color)
+	{
+		return CQt.QColormap_Pixel((.)this.Ptr, (.)color?.ObjectPtr);
+	}
+	public QColor_Ptr ColorAt(c_uint pixel)
+	{
+		return QColor_Ptr(CQt.QColormap_ColorAt((.)this.Ptr, pixel));
+	}
+	public void* Colormap()
+	{
+		return CQt.QColormap_Colormap((.)this.Ptr);
+	}
+	public QColormap_Ptr Instance1(c_int screen)
+	{
+		return QColormap_Ptr(CQt.QColormap_Instance1(screen));
+	}
+}
+class QColormap : IQColormap
+{
+	private QColormap_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QColormap_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQColormap colormap)
+	{
+		this.ptr = CQt.QColormap_new((.)colormap?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QColormap_Delete(this.ptr);
+	}
+	public void Initialize()
+	{
+		this.ptr.Initialize();
+	}
+	public void Cleanup()
+	{
+		this.ptr.Cleanup();
+	}
+	public QColormap_Ptr Instance()
+	{
+		return this.ptr.Instance();
+	}
+	public QColormap_Mode Mode()
+	{
+		return this.ptr.Mode();
+	}
+	public c_int Depth()
+	{
+		return this.ptr.Depth();
+	}
+	public c_int Size()
+	{
+		return this.ptr.Size();
+	}
+	public c_uint Pixel(IQColor color)
+	{
+		return this.ptr.Pixel(color);
+	}
+	public QColor_Ptr ColorAt(c_uint pixel)
+	{
+		return this.ptr.ColorAt(pixel);
+	}
+	public void* Colormap()
+	{
+		return this.ptr.Colormap();
+	}
+	public QColormap_Ptr Instance1(c_int screen)
+	{
+		return this.ptr.Instance1(screen);
+	}
+}
+interface IQColormap : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -43,66 +143,6 @@ extension CQt
 	public static extern void* QColormap_Colormap(void* self);
 	[LinkName("QColormap_Instance1")]
 	public static extern void* QColormap_Instance1(c_int screen);
-}
-class QColormap : IQColormap
-{
-	private QColormap_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QColormap_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQColormap colormap)
-	{
-		this.ptr = CQt.QColormap_new((.)colormap?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QColormap_Delete(this.ptr);
-	}
-	public void Initialize()
-	{
-		CQt.QColormap_Initialize();
-	}
-	public void Cleanup()
-	{
-		CQt.QColormap_Cleanup();
-	}
-	public QColormap_Ptr Instance()
-	{
-		return QColormap_Ptr(CQt.QColormap_Instance());
-	}
-	public QColormap_Mode Mode()
-	{
-		return CQt.QColormap_Mode((.)this.ptr.Ptr);
-	}
-	public c_int Depth()
-	{
-		return CQt.QColormap_Depth((.)this.ptr.Ptr);
-	}
-	public c_int Size()
-	{
-		return CQt.QColormap_Size((.)this.ptr.Ptr);
-	}
-	public c_uint Pixel(IQColor color)
-	{
-		return CQt.QColormap_Pixel((.)this.ptr.Ptr, (.)color?.ObjectPtr);
-	}
-	public QColor_Ptr ColorAt(c_uint pixel)
-	{
-		return QColor_Ptr(CQt.QColormap_ColorAt((.)this.ptr.Ptr, pixel));
-	}
-	public void* Colormap()
-	{
-		return CQt.QColormap_Colormap((.)this.ptr.Ptr);
-	}
-	public QColormap_Ptr Instance1(c_int screen)
-	{
-		return QColormap_Ptr(CQt.QColormap_Instance1(screen));
-	}
-}
-interface IQColormap : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QColormap_Mode

@@ -14,6 +14,274 @@ struct QRegion_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQRegion other)
+	{
+		CQt.QRegion_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QRegion_IsEmpty((.)this.Ptr);
+	}
+	public bool IsNull()
+	{
+		return CQt.QRegion_IsNull((.)this.Ptr);
+	}
+	public QRect_Ptr Begin()
+	{
+		return QRect_Ptr(CQt.QRegion_Begin((.)this.Ptr));
+	}
+	public QRect_Ptr Cbegin()
+	{
+		return QRect_Ptr(CQt.QRegion_Cbegin((.)this.Ptr));
+	}
+	public QRect_Ptr End()
+	{
+		return QRect_Ptr(CQt.QRegion_End((.)this.Ptr));
+	}
+	public QRect_Ptr Cend()
+	{
+		return QRect_Ptr(CQt.QRegion_Cend((.)this.Ptr));
+	}
+	public bool Contains(IQPoint p)
+	{
+		return CQt.QRegion_Contains((.)this.Ptr, (.)p?.ObjectPtr);
+	}
+	public bool Contains2(IQRect r)
+	{
+		return CQt.QRegion_Contains2((.)this.Ptr, (.)r?.ObjectPtr);
+	}
+	public void Translate(c_int dx, c_int dy)
+	{
+		CQt.QRegion_Translate((.)this.Ptr, dx, dy);
+	}
+	public void Translate2(IQPoint p)
+	{
+		CQt.QRegion_Translate2((.)this.Ptr, (.)p?.ObjectPtr);
+	}
+	public QRegion_Ptr Translated(c_int dx, c_int dy)
+	{
+		return QRegion_Ptr(CQt.QRegion_Translated((.)this.Ptr, dx, dy));
+	}
+	public QRegion_Ptr Translated2(IQPoint p)
+	{
+		return QRegion_Ptr(CQt.QRegion_Translated2((.)this.Ptr, (.)p?.ObjectPtr));
+	}
+	public QRegion_Ptr United(IQRegion r)
+	{
+		return QRegion_Ptr(CQt.QRegion_United((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public QRegion_Ptr United2(IQRect r)
+	{
+		return QRegion_Ptr(CQt.QRegion_United2((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public QRegion_Ptr Intersected(IQRegion r)
+	{
+		return QRegion_Ptr(CQt.QRegion_Intersected((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public QRegion_Ptr Intersected2(IQRect r)
+	{
+		return QRegion_Ptr(CQt.QRegion_Intersected2((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public QRegion_Ptr Subtracted(IQRegion r)
+	{
+		return QRegion_Ptr(CQt.QRegion_Subtracted((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public QRegion_Ptr Xored(IQRegion r)
+	{
+		return QRegion_Ptr(CQt.QRegion_Xored((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public bool Intersects(IQRegion r)
+	{
+		return CQt.QRegion_Intersects((.)this.Ptr, (.)r?.ObjectPtr);
+	}
+	public bool Intersects2(IQRect r)
+	{
+		return CQt.QRegion_Intersects2((.)this.Ptr, (.)r?.ObjectPtr);
+	}
+	public QRect_Ptr BoundingRect()
+	{
+		return QRect_Ptr(CQt.QRegion_BoundingRect((.)this.Ptr));
+	}
+	public void SetRects(IQRect rect, c_int num)
+	{
+		CQt.QRegion_SetRects((.)this.Ptr, (.)rect?.ObjectPtr, num);
+	}
+	public c_int RectCount()
+	{
+		return CQt.QRegion_RectCount((.)this.Ptr);
+	}
+	public QRegion_Ptr OperatorPlus2(IQRect r)
+	{
+		return QRegion_Ptr(CQt.QRegion_OperatorPlus2((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public QRegion_Ptr OperatorBitwiseAnd2(IQRect r)
+	{
+		return QRegion_Ptr(CQt.QRegion_OperatorBitwiseAnd2((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public QRegion_Ptr OperatorPlusAssign2(IQRect r)
+	{
+		return QRegion_Ptr(CQt.QRegion_OperatorPlusAssign2((.)this.Ptr, (.)r?.ObjectPtr));
+	}
+	public void OperatorBitwiseAndAssign2(IQRect r)
+	{
+		CQt.QRegion_OperatorBitwiseAndAssign2((.)this.Ptr, (.)r?.ObjectPtr);
+	}
+}
+class QRegion : IQRegion
+{
+	private QRegion_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QRegion_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QRegion_new();
+	}
+	public this(c_int x, c_int y, c_int w, c_int h)
+	{
+		this.ptr = CQt.QRegion_new2(x, y, w, h);
+	}
+	public this(IQRect r)
+	{
+		this.ptr = CQt.QRegion_new3((.)r?.ObjectPtr);
+	}
+	public this(IQRegion region)
+	{
+		this.ptr = CQt.QRegion_new4((.)region?.ObjectPtr);
+	}
+	public this(IQBitmap bitmap)
+	{
+		this.ptr = CQt.QRegion_new5((.)bitmap?.ObjectPtr);
+	}
+	public this(c_int x, c_int y, c_int w, c_int h, QRegion_RegionType t)
+	{
+		this.ptr = CQt.QRegion_new6(x, y, w, h, t);
+	}
+	public this(IQRect r, QRegion_RegionType t)
+	{
+		this.ptr = CQt.QRegion_new7((.)r?.ObjectPtr, t);
+	}
+	public ~this()
+	{
+		CQt.QRegion_Delete(this.ptr);
+	}
+	public void Swap(IQRegion other)
+	{
+		this.ptr.Swap(other);
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public QRect_Ptr Begin()
+	{
+		return this.ptr.Begin();
+	}
+	public QRect_Ptr Cbegin()
+	{
+		return this.ptr.Cbegin();
+	}
+	public QRect_Ptr End()
+	{
+		return this.ptr.End();
+	}
+	public QRect_Ptr Cend()
+	{
+		return this.ptr.Cend();
+	}
+	public bool Contains(IQPoint p)
+	{
+		return this.ptr.Contains(p);
+	}
+	public bool Contains2(IQRect r)
+	{
+		return this.ptr.Contains2(r);
+	}
+	public void Translate(c_int dx, c_int dy)
+	{
+		this.ptr.Translate(dx, dy);
+	}
+	public void Translate2(IQPoint p)
+	{
+		this.ptr.Translate2(p);
+	}
+	public QRegion_Ptr Translated(c_int dx, c_int dy)
+	{
+		return this.ptr.Translated(dx, dy);
+	}
+	public QRegion_Ptr Translated2(IQPoint p)
+	{
+		return this.ptr.Translated2(p);
+	}
+	public QRegion_Ptr United(IQRegion r)
+	{
+		return this.ptr.United(r);
+	}
+	public QRegion_Ptr United2(IQRect r)
+	{
+		return this.ptr.United2(r);
+	}
+	public QRegion_Ptr Intersected(IQRegion r)
+	{
+		return this.ptr.Intersected(r);
+	}
+	public QRegion_Ptr Intersected2(IQRect r)
+	{
+		return this.ptr.Intersected2(r);
+	}
+	public QRegion_Ptr Subtracted(IQRegion r)
+	{
+		return this.ptr.Subtracted(r);
+	}
+	public QRegion_Ptr Xored(IQRegion r)
+	{
+		return this.ptr.Xored(r);
+	}
+	public bool Intersects(IQRegion r)
+	{
+		return this.ptr.Intersects(r);
+	}
+	public bool Intersects2(IQRect r)
+	{
+		return this.ptr.Intersects2(r);
+	}
+	public QRect_Ptr BoundingRect()
+	{
+		return this.ptr.BoundingRect();
+	}
+	public void SetRects(IQRect rect, c_int num)
+	{
+		this.ptr.SetRects(rect, num);
+	}
+	public c_int RectCount()
+	{
+		return this.ptr.RectCount();
+	}
+	public QRegion_Ptr OperatorPlus2(IQRect r)
+	{
+		return this.ptr.OperatorPlus2(r);
+	}
+	public QRegion_Ptr OperatorBitwiseAnd2(IQRect r)
+	{
+		return this.ptr.OperatorBitwiseAnd2(r);
+	}
+	public QRegion_Ptr OperatorPlusAssign2(IQRect r)
+	{
+		return this.ptr.OperatorPlusAssign2(r);
+	}
+	public void OperatorBitwiseAndAssign2(IQRect r)
+	{
+		this.ptr.OperatorBitwiseAndAssign2(r);
+	}
+}
+interface IQRegion : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -117,162 +385,6 @@ extension CQt
 	public static extern bool QRegion_OperatorNotEqual(void* self, void** r);
 	[LinkName("QRegion_ToQvariant")]
 	public static extern void* QRegion_ToQvariant(void* self);
-}
-class QRegion : IQRegion
-{
-	private QRegion_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QRegion_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QRegion_new();
-	}
-	public this(c_int x, c_int y, c_int w, c_int h)
-	{
-		this.ptr = CQt.QRegion_new2(x, y, w, h);
-	}
-	public this(IQRect r)
-	{
-		this.ptr = CQt.QRegion_new3((.)r?.ObjectPtr);
-	}
-	public this(IQRegion region)
-	{
-		this.ptr = CQt.QRegion_new4((.)region?.ObjectPtr);
-	}
-	public this(IQBitmap bitmap)
-	{
-		this.ptr = CQt.QRegion_new5((.)bitmap?.ObjectPtr);
-	}
-	public this(c_int x, c_int y, c_int w, c_int h, QRegion_RegionType t)
-	{
-		this.ptr = CQt.QRegion_new6(x, y, w, h, t);
-	}
-	public this(IQRect r, QRegion_RegionType t)
-	{
-		this.ptr = CQt.QRegion_new7((.)r?.ObjectPtr, t);
-	}
-	public ~this()
-	{
-		CQt.QRegion_Delete(this.ptr);
-	}
-	public void Swap(IQRegion other)
-	{
-		CQt.QRegion_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QRegion_IsEmpty((.)this.ptr.Ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QRegion_IsNull((.)this.ptr.Ptr);
-	}
-	public QRect_Ptr Begin()
-	{
-		return QRect_Ptr(CQt.QRegion_Begin((.)this.ptr.Ptr));
-	}
-	public QRect_Ptr Cbegin()
-	{
-		return QRect_Ptr(CQt.QRegion_Cbegin((.)this.ptr.Ptr));
-	}
-	public QRect_Ptr End()
-	{
-		return QRect_Ptr(CQt.QRegion_End((.)this.ptr.Ptr));
-	}
-	public QRect_Ptr Cend()
-	{
-		return QRect_Ptr(CQt.QRegion_Cend((.)this.ptr.Ptr));
-	}
-	public bool Contains(IQPoint p)
-	{
-		return CQt.QRegion_Contains((.)this.ptr.Ptr, (.)p?.ObjectPtr);
-	}
-	public bool Contains2(IQRect r)
-	{
-		return CQt.QRegion_Contains2((.)this.ptr.Ptr, (.)r?.ObjectPtr);
-	}
-	public void Translate(c_int dx, c_int dy)
-	{
-		CQt.QRegion_Translate((.)this.ptr.Ptr, dx, dy);
-	}
-	public void Translate2(IQPoint p)
-	{
-		CQt.QRegion_Translate2((.)this.ptr.Ptr, (.)p?.ObjectPtr);
-	}
-	public QRegion_Ptr Translated(c_int dx, c_int dy)
-	{
-		return QRegion_Ptr(CQt.QRegion_Translated((.)this.ptr.Ptr, dx, dy));
-	}
-	public QRegion_Ptr Translated2(IQPoint p)
-	{
-		return QRegion_Ptr(CQt.QRegion_Translated2((.)this.ptr.Ptr, (.)p?.ObjectPtr));
-	}
-	public QRegion_Ptr United(IQRegion r)
-	{
-		return QRegion_Ptr(CQt.QRegion_United((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public QRegion_Ptr United2(IQRect r)
-	{
-		return QRegion_Ptr(CQt.QRegion_United2((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public QRegion_Ptr Intersected(IQRegion r)
-	{
-		return QRegion_Ptr(CQt.QRegion_Intersected((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public QRegion_Ptr Intersected2(IQRect r)
-	{
-		return QRegion_Ptr(CQt.QRegion_Intersected2((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public QRegion_Ptr Subtracted(IQRegion r)
-	{
-		return QRegion_Ptr(CQt.QRegion_Subtracted((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public QRegion_Ptr Xored(IQRegion r)
-	{
-		return QRegion_Ptr(CQt.QRegion_Xored((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public bool Intersects(IQRegion r)
-	{
-		return CQt.QRegion_Intersects((.)this.ptr.Ptr, (.)r?.ObjectPtr);
-	}
-	public bool Intersects2(IQRect r)
-	{
-		return CQt.QRegion_Intersects2((.)this.ptr.Ptr, (.)r?.ObjectPtr);
-	}
-	public QRect_Ptr BoundingRect()
-	{
-		return QRect_Ptr(CQt.QRegion_BoundingRect((.)this.ptr.Ptr));
-	}
-	public void SetRects(IQRect rect, c_int num)
-	{
-		CQt.QRegion_SetRects((.)this.ptr.Ptr, (.)rect?.ObjectPtr, num);
-	}
-	public c_int RectCount()
-	{
-		return CQt.QRegion_RectCount((.)this.ptr.Ptr);
-	}
-	public QRegion_Ptr OperatorPlus2(IQRect r)
-	{
-		return QRegion_Ptr(CQt.QRegion_OperatorPlus2((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public QRegion_Ptr OperatorBitwiseAnd2(IQRect r)
-	{
-		return QRegion_Ptr(CQt.QRegion_OperatorBitwiseAnd2((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public QRegion_Ptr OperatorPlusAssign2(IQRect r)
-	{
-		return QRegion_Ptr(CQt.QRegion_OperatorPlusAssign2((.)this.ptr.Ptr, (.)r?.ObjectPtr));
-	}
-	public void OperatorBitwiseAndAssign2(IQRect r)
-	{
-		CQt.QRegion_OperatorBitwiseAndAssign2((.)this.ptr.Ptr, (.)r?.ObjectPtr);
-	}
-}
-interface IQRegion : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QRegion_RegionType

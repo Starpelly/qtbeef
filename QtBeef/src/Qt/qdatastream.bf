@@ -14,6 +14,402 @@ struct QDataStream_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QIODevice_Ptr Device()
+	{
+		return QIODevice_Ptr(CQt.QDataStream_Device((.)this.Ptr));
+	}
+	public void SetDevice(IQIODevice device)
+	{
+		CQt.QDataStream_SetDevice((.)this.Ptr, (.)device?.ObjectPtr);
+	}
+	public bool AtEnd()
+	{
+		return CQt.QDataStream_AtEnd((.)this.Ptr);
+	}
+	public QDataStream_Status Status()
+	{
+		return CQt.QDataStream_Status((.)this.Ptr);
+	}
+	public void SetStatus(QDataStream_Status status)
+	{
+		CQt.QDataStream_SetStatus((.)this.Ptr, status);
+	}
+	public void ResetStatus()
+	{
+		CQt.QDataStream_ResetStatus((.)this.Ptr);
+	}
+	public QDataStream_FloatingPointPrecision FloatingPointPrecision()
+	{
+		return CQt.QDataStream_FloatingPointPrecision((.)this.Ptr);
+	}
+	public void SetFloatingPointPrecision(QDataStream_FloatingPointPrecision precision)
+	{
+		CQt.QDataStream_SetFloatingPointPrecision((.)this.Ptr, precision);
+	}
+	public QDataStream_ByteOrder ByteOrder()
+	{
+		return CQt.QDataStream_ByteOrder((.)this.Ptr);
+	}
+	public void SetByteOrder(QDataStream_ByteOrder byteOrder)
+	{
+		CQt.QDataStream_SetByteOrder((.)this.Ptr, byteOrder);
+	}
+	public c_int Version()
+	{
+		return CQt.QDataStream_Version((.)this.Ptr);
+	}
+	public void SetVersion(c_int version)
+	{
+		CQt.QDataStream_SetVersion((.)this.Ptr, version);
+	}
+	public void OperatorShiftRight2(c_char* i)
+	{
+		CQt.QDataStream_OperatorShiftRight2((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight3(c_uchar* i)
+	{
+		CQt.QDataStream_OperatorShiftRight3((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight4(c_ushort* i)
+	{
+		CQt.QDataStream_OperatorShiftRight4((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight5(c_ushort* i)
+	{
+		CQt.QDataStream_OperatorShiftRight5((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight6(c_int* i)
+	{
+		CQt.QDataStream_OperatorShiftRight6((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight7(c_uint* i)
+	{
+		CQt.QDataStream_OperatorShiftRight7((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight8(c_longlong* i)
+	{
+		CQt.QDataStream_OperatorShiftRight8((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight9(c_ulonglong* i)
+	{
+		CQt.QDataStream_OperatorShiftRight9((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight11(bool* i)
+	{
+		CQt.QDataStream_OperatorShiftRight11((.)this.Ptr, i);
+	}
+	public void OperatorShiftRight12(float* f)
+	{
+		CQt.QDataStream_OperatorShiftRight12((.)this.Ptr, f);
+	}
+	public void OperatorShiftRight13(double* f)
+	{
+		CQt.QDataStream_OperatorShiftRight13((.)this.Ptr, f);
+	}
+	public void OperatorShiftRight14(c_char** str)
+	{
+		CQt.QDataStream_OperatorShiftRight14((.)this.Ptr, str);
+	}
+	public void OperatorShiftLeft2(c_char i)
+	{
+		CQt.QDataStream_OperatorShiftLeft2((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft3(c_uchar i)
+	{
+		CQt.QDataStream_OperatorShiftLeft3((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft4(c_ushort i)
+	{
+		CQt.QDataStream_OperatorShiftLeft4((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft5(c_ushort i)
+	{
+		CQt.QDataStream_OperatorShiftLeft5((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft6(c_int i)
+	{
+		CQt.QDataStream_OperatorShiftLeft6((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft7(c_uint i)
+	{
+		CQt.QDataStream_OperatorShiftLeft7((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft8(c_longlong i)
+	{
+		CQt.QDataStream_OperatorShiftLeft8((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft9(c_ulonglong i)
+	{
+		CQt.QDataStream_OperatorShiftLeft9((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft11(bool i)
+	{
+		CQt.QDataStream_OperatorShiftLeft11((.)this.Ptr, i);
+	}
+	public void OperatorShiftLeft12(float f)
+	{
+		CQt.QDataStream_OperatorShiftLeft12((.)this.Ptr, f);
+	}
+	public void OperatorShiftLeft13(double f)
+	{
+		CQt.QDataStream_OperatorShiftLeft13((.)this.Ptr, f);
+	}
+	public void OperatorShiftLeft14(c_char* str)
+	{
+		CQt.QDataStream_OperatorShiftLeft14((.)this.Ptr, str);
+	}
+	public QDataStream_Ptr ReadBytes(c_char** param1, c_uint* lenVal)
+	{
+		return QDataStream_Ptr(CQt.QDataStream_ReadBytes((.)this.Ptr, param1, lenVal));
+	}
+	public c_int ReadRawData(c_char* param1, c_int lenVal)
+	{
+		return CQt.QDataStream_ReadRawData((.)this.Ptr, param1, lenVal);
+	}
+	public void WriteBytes(c_char* param1, c_uint lenVal)
+	{
+		CQt.QDataStream_WriteBytes((.)this.Ptr, param1, lenVal);
+	}
+	public c_int WriteRawData(c_char* param1, c_int lenVal)
+	{
+		return CQt.QDataStream_WriteRawData((.)this.Ptr, param1, lenVal);
+	}
+	public c_int SkipRawData(c_int lenVal)
+	{
+		return CQt.QDataStream_SkipRawData((.)this.Ptr, lenVal);
+	}
+	public void StartTransaction()
+	{
+		CQt.QDataStream_StartTransaction((.)this.Ptr);
+	}
+	public bool CommitTransaction()
+	{
+		return CQt.QDataStream_CommitTransaction((.)this.Ptr);
+	}
+	public void RollbackTransaction()
+	{
+		CQt.QDataStream_RollbackTransaction((.)this.Ptr);
+	}
+	public void AbortTransaction()
+	{
+		CQt.QDataStream_AbortTransaction((.)this.Ptr);
+	}
+	public bool IsDeviceTransactionStarted()
+	{
+		return CQt.QDataStream_IsDeviceTransactionStarted((.)this.Ptr);
+	}
+}
+class QDataStream : IQDataStream, IQIODeviceBase
+{
+	private QDataStream_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QDataStream_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QDataStream_new();
+	}
+	public this(IQIODevice param1)
+	{
+		this.ptr = CQt.QDataStream_new2((.)param1?.ObjectPtr);
+	}
+	public this(void** param1)
+	{
+		this.ptr = CQt.QDataStream_new3(param1);
+	}
+	public ~this()
+	{
+		CQt.QDataStream_Delete(this.ptr);
+	}
+	public QIODevice_Ptr Device()
+	{
+		return this.ptr.Device();
+	}
+	public void SetDevice(IQIODevice device)
+	{
+		this.ptr.SetDevice(device);
+	}
+	public bool AtEnd()
+	{
+		return this.ptr.AtEnd();
+	}
+	public QDataStream_Status Status()
+	{
+		return this.ptr.Status();
+	}
+	public void SetStatus(QDataStream_Status status)
+	{
+		this.ptr.SetStatus(status);
+	}
+	public void ResetStatus()
+	{
+		this.ptr.ResetStatus();
+	}
+	public QDataStream_FloatingPointPrecision FloatingPointPrecision()
+	{
+		return this.ptr.FloatingPointPrecision();
+	}
+	public void SetFloatingPointPrecision(QDataStream_FloatingPointPrecision precision)
+	{
+		this.ptr.SetFloatingPointPrecision(precision);
+	}
+	public QDataStream_ByteOrder ByteOrder()
+	{
+		return this.ptr.ByteOrder();
+	}
+	public void SetByteOrder(QDataStream_ByteOrder byteOrder)
+	{
+		this.ptr.SetByteOrder(byteOrder);
+	}
+	public c_int Version()
+	{
+		return this.ptr.Version();
+	}
+	public void SetVersion(c_int version)
+	{
+		this.ptr.SetVersion(version);
+	}
+	public void OperatorShiftRight2(c_char* i)
+	{
+		this.ptr.OperatorShiftRight2(i);
+	}
+	public void OperatorShiftRight3(c_uchar* i)
+	{
+		this.ptr.OperatorShiftRight3(i);
+	}
+	public void OperatorShiftRight4(c_ushort* i)
+	{
+		this.ptr.OperatorShiftRight4(i);
+	}
+	public void OperatorShiftRight5(c_ushort* i)
+	{
+		this.ptr.OperatorShiftRight5(i);
+	}
+	public void OperatorShiftRight6(c_int* i)
+	{
+		this.ptr.OperatorShiftRight6(i);
+	}
+	public void OperatorShiftRight7(c_uint* i)
+	{
+		this.ptr.OperatorShiftRight7(i);
+	}
+	public void OperatorShiftRight8(c_longlong* i)
+	{
+		this.ptr.OperatorShiftRight8(i);
+	}
+	public void OperatorShiftRight9(c_ulonglong* i)
+	{
+		this.ptr.OperatorShiftRight9(i);
+	}
+	public void OperatorShiftRight11(bool* i)
+	{
+		this.ptr.OperatorShiftRight11(i);
+	}
+	public void OperatorShiftRight12(float* f)
+	{
+		this.ptr.OperatorShiftRight12(f);
+	}
+	public void OperatorShiftRight13(double* f)
+	{
+		this.ptr.OperatorShiftRight13(f);
+	}
+	public void OperatorShiftRight14(c_char** str)
+	{
+		this.ptr.OperatorShiftRight14(str);
+	}
+	public void OperatorShiftLeft2(c_char i)
+	{
+		this.ptr.OperatorShiftLeft2(i);
+	}
+	public void OperatorShiftLeft3(c_uchar i)
+	{
+		this.ptr.OperatorShiftLeft3(i);
+	}
+	public void OperatorShiftLeft4(c_ushort i)
+	{
+		this.ptr.OperatorShiftLeft4(i);
+	}
+	public void OperatorShiftLeft5(c_ushort i)
+	{
+		this.ptr.OperatorShiftLeft5(i);
+	}
+	public void OperatorShiftLeft6(c_int i)
+	{
+		this.ptr.OperatorShiftLeft6(i);
+	}
+	public void OperatorShiftLeft7(c_uint i)
+	{
+		this.ptr.OperatorShiftLeft7(i);
+	}
+	public void OperatorShiftLeft8(c_longlong i)
+	{
+		this.ptr.OperatorShiftLeft8(i);
+	}
+	public void OperatorShiftLeft9(c_ulonglong i)
+	{
+		this.ptr.OperatorShiftLeft9(i);
+	}
+	public void OperatorShiftLeft11(bool i)
+	{
+		this.ptr.OperatorShiftLeft11(i);
+	}
+	public void OperatorShiftLeft12(float f)
+	{
+		this.ptr.OperatorShiftLeft12(f);
+	}
+	public void OperatorShiftLeft13(double f)
+	{
+		this.ptr.OperatorShiftLeft13(f);
+	}
+	public void OperatorShiftLeft14(c_char* str)
+	{
+		this.ptr.OperatorShiftLeft14(str);
+	}
+	public QDataStream_Ptr ReadBytes(c_char** param1, c_uint* lenVal)
+	{
+		return this.ptr.ReadBytes(param1, lenVal);
+	}
+	public c_int ReadRawData(c_char* param1, c_int lenVal)
+	{
+		return this.ptr.ReadRawData(param1, lenVal);
+	}
+	public void WriteBytes(c_char* param1, c_uint lenVal)
+	{
+		this.ptr.WriteBytes(param1, lenVal);
+	}
+	public c_int WriteRawData(c_char* param1, c_int lenVal)
+	{
+		return this.ptr.WriteRawData(param1, lenVal);
+	}
+	public c_int SkipRawData(c_int lenVal)
+	{
+		return this.ptr.SkipRawData(lenVal);
+	}
+	public void StartTransaction()
+	{
+		this.ptr.StartTransaction();
+	}
+	public bool CommitTransaction()
+	{
+		return this.ptr.CommitTransaction();
+	}
+	public void RollbackTransaction()
+	{
+		this.ptr.RollbackTransaction();
+	}
+	public void AbortTransaction()
+	{
+		this.ptr.AbortTransaction();
+	}
+	public bool IsDeviceTransactionStarted()
+	{
+		return this.ptr.IsDeviceTransactionStarted();
+	}
+}
+interface IQDataStream : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -121,218 +517,6 @@ extension CQt
 	public static extern void QDataStream_AbortTransaction(void* self);
 	[LinkName("QDataStream_IsDeviceTransactionStarted")]
 	public static extern bool QDataStream_IsDeviceTransactionStarted(void* self);
-}
-class QDataStream : IQDataStream, IQIODeviceBase
-{
-	private QDataStream_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QDataStream_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QDataStream_new();
-	}
-	public this(IQIODevice param1)
-	{
-		this.ptr = CQt.QDataStream_new2((.)param1?.ObjectPtr);
-	}
-	public this(void** param1)
-	{
-		this.ptr = CQt.QDataStream_new3(param1);
-	}
-	public ~this()
-	{
-		CQt.QDataStream_Delete(this.ptr);
-	}
-	public QIODevice_Ptr Device()
-	{
-		return QIODevice_Ptr(CQt.QDataStream_Device((.)this.ptr.Ptr));
-	}
-	public void SetDevice(IQIODevice device)
-	{
-		CQt.QDataStream_SetDevice((.)this.ptr.Ptr, (.)device?.ObjectPtr);
-	}
-	public bool AtEnd()
-	{
-		return CQt.QDataStream_AtEnd((.)this.ptr.Ptr);
-	}
-	public QDataStream_Status Status()
-	{
-		return CQt.QDataStream_Status((.)this.ptr.Ptr);
-	}
-	public void SetStatus(QDataStream_Status status)
-	{
-		CQt.QDataStream_SetStatus((.)this.ptr.Ptr, status);
-	}
-	public void ResetStatus()
-	{
-		CQt.QDataStream_ResetStatus((.)this.ptr.Ptr);
-	}
-	public QDataStream_FloatingPointPrecision FloatingPointPrecision()
-	{
-		return CQt.QDataStream_FloatingPointPrecision((.)this.ptr.Ptr);
-	}
-	public void SetFloatingPointPrecision(QDataStream_FloatingPointPrecision precision)
-	{
-		CQt.QDataStream_SetFloatingPointPrecision((.)this.ptr.Ptr, precision);
-	}
-	public QDataStream_ByteOrder ByteOrder()
-	{
-		return CQt.QDataStream_ByteOrder((.)this.ptr.Ptr);
-	}
-	public void SetByteOrder(QDataStream_ByteOrder byteOrder)
-	{
-		CQt.QDataStream_SetByteOrder((.)this.ptr.Ptr, byteOrder);
-	}
-	public c_int Version()
-	{
-		return CQt.QDataStream_Version((.)this.ptr.Ptr);
-	}
-	public void SetVersion(c_int version)
-	{
-		CQt.QDataStream_SetVersion((.)this.ptr.Ptr, version);
-	}
-	public void OperatorShiftRight2(c_char* i)
-	{
-		CQt.QDataStream_OperatorShiftRight2((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight3(c_uchar* i)
-	{
-		CQt.QDataStream_OperatorShiftRight3((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight4(c_ushort* i)
-	{
-		CQt.QDataStream_OperatorShiftRight4((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight5(c_ushort* i)
-	{
-		CQt.QDataStream_OperatorShiftRight5((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight6(c_int* i)
-	{
-		CQt.QDataStream_OperatorShiftRight6((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight7(c_uint* i)
-	{
-		CQt.QDataStream_OperatorShiftRight7((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight8(c_longlong* i)
-	{
-		CQt.QDataStream_OperatorShiftRight8((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight9(c_ulonglong* i)
-	{
-		CQt.QDataStream_OperatorShiftRight9((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight11(bool* i)
-	{
-		CQt.QDataStream_OperatorShiftRight11((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftRight12(float* f)
-	{
-		CQt.QDataStream_OperatorShiftRight12((.)this.ptr.Ptr, f);
-	}
-	public void OperatorShiftRight13(double* f)
-	{
-		CQt.QDataStream_OperatorShiftRight13((.)this.ptr.Ptr, f);
-	}
-	public void OperatorShiftRight14(c_char** str)
-	{
-		CQt.QDataStream_OperatorShiftRight14((.)this.ptr.Ptr, str);
-	}
-	public void OperatorShiftLeft2(c_char i)
-	{
-		CQt.QDataStream_OperatorShiftLeft2((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft3(c_uchar i)
-	{
-		CQt.QDataStream_OperatorShiftLeft3((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft4(c_ushort i)
-	{
-		CQt.QDataStream_OperatorShiftLeft4((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft5(c_ushort i)
-	{
-		CQt.QDataStream_OperatorShiftLeft5((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft6(c_int i)
-	{
-		CQt.QDataStream_OperatorShiftLeft6((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft7(c_uint i)
-	{
-		CQt.QDataStream_OperatorShiftLeft7((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft8(c_longlong i)
-	{
-		CQt.QDataStream_OperatorShiftLeft8((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft9(c_ulonglong i)
-	{
-		CQt.QDataStream_OperatorShiftLeft9((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft11(bool i)
-	{
-		CQt.QDataStream_OperatorShiftLeft11((.)this.ptr.Ptr, i);
-	}
-	public void OperatorShiftLeft12(float f)
-	{
-		CQt.QDataStream_OperatorShiftLeft12((.)this.ptr.Ptr, f);
-	}
-	public void OperatorShiftLeft13(double f)
-	{
-		CQt.QDataStream_OperatorShiftLeft13((.)this.ptr.Ptr, f);
-	}
-	public void OperatorShiftLeft14(c_char* str)
-	{
-		CQt.QDataStream_OperatorShiftLeft14((.)this.ptr.Ptr, str);
-	}
-	public QDataStream_Ptr ReadBytes(c_char** param1, c_uint* lenVal)
-	{
-		return QDataStream_Ptr(CQt.QDataStream_ReadBytes((.)this.ptr.Ptr, param1, lenVal));
-	}
-	public c_int ReadRawData(c_char* param1, c_int lenVal)
-	{
-		return CQt.QDataStream_ReadRawData((.)this.ptr.Ptr, param1, lenVal);
-	}
-	public void WriteBytes(c_char* param1, c_uint lenVal)
-	{
-		CQt.QDataStream_WriteBytes((.)this.ptr.Ptr, param1, lenVal);
-	}
-	public c_int WriteRawData(c_char* param1, c_int lenVal)
-	{
-		return CQt.QDataStream_WriteRawData((.)this.ptr.Ptr, param1, lenVal);
-	}
-	public c_int SkipRawData(c_int lenVal)
-	{
-		return CQt.QDataStream_SkipRawData((.)this.ptr.Ptr, lenVal);
-	}
-	public void StartTransaction()
-	{
-		CQt.QDataStream_StartTransaction((.)this.ptr.Ptr);
-	}
-	public bool CommitTransaction()
-	{
-		return CQt.QDataStream_CommitTransaction((.)this.ptr.Ptr);
-	}
-	public void RollbackTransaction()
-	{
-		CQt.QDataStream_RollbackTransaction((.)this.ptr.Ptr);
-	}
-	public void AbortTransaction()
-	{
-		CQt.QDataStream_AbortTransaction((.)this.ptr.Ptr);
-	}
-	public bool IsDeviceTransactionStarted()
-	{
-		return CQt.QDataStream_IsDeviceTransactionStarted((.)this.ptr.Ptr);
-	}
-}
-interface IQDataStream : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QDataStream_Version

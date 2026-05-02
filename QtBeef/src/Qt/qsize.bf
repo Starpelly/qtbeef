@@ -14,6 +14,194 @@ struct QSize_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsNull()
+	{
+		return CQt.QSize_IsNull((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QSize_IsEmpty((.)this.Ptr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QSize_IsValid((.)this.Ptr);
+	}
+	public c_int Width()
+	{
+		return CQt.QSize_Width((.)this.Ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QSize_Height((.)this.Ptr);
+	}
+	public void SetWidth(c_int w)
+	{
+		CQt.QSize_SetWidth((.)this.Ptr, w);
+	}
+	public void SetHeight(c_int h)
+	{
+		CQt.QSize_SetHeight((.)this.Ptr, h);
+	}
+	public void Transpose()
+	{
+		CQt.QSize_Transpose((.)this.Ptr);
+	}
+	public QSize_Ptr Transposed()
+	{
+		return QSize_Ptr(CQt.QSize_Transposed((.)this.Ptr));
+	}
+	public void Scale(c_int w, c_int h, Qt_AspectRatioMode mode)
+	{
+		CQt.QSize_Scale((.)this.Ptr, w, h, mode);
+	}
+	public void Scale2(IQSize s, Qt_AspectRatioMode mode)
+	{
+		CQt.QSize_Scale2((.)this.Ptr, (.)s?.ObjectPtr, mode);
+	}
+	public QSize_Ptr Scaled(c_int w, c_int h, Qt_AspectRatioMode mode)
+	{
+		return QSize_Ptr(CQt.QSize_Scaled((.)this.Ptr, w, h, mode));
+	}
+	public QSize_Ptr Scaled2(IQSize s, Qt_AspectRatioMode mode)
+	{
+		return QSize_Ptr(CQt.QSize_Scaled2((.)this.Ptr, (.)s?.ObjectPtr, mode));
+	}
+	public QSize_Ptr ExpandedTo(IQSize param1)
+	{
+		return QSize_Ptr(CQt.QSize_ExpandedTo((.)this.Ptr, (.)param1?.ObjectPtr));
+	}
+	public QSize_Ptr BoundedTo(IQSize param1)
+	{
+		return QSize_Ptr(CQt.QSize_BoundedTo((.)this.Ptr, (.)param1?.ObjectPtr));
+	}
+	public QSize_Ptr GrownBy(IQMargins m)
+	{
+		return QSize_Ptr(CQt.QSize_GrownBy((.)this.Ptr, (.)m?.ObjectPtr));
+	}
+	public QSize_Ptr ShrunkBy(IQMargins m)
+	{
+		return QSize_Ptr(CQt.QSize_ShrunkBy((.)this.Ptr, (.)m?.ObjectPtr));
+	}
+	public c_int* Rwidth()
+	{
+		return CQt.QSize_Rwidth((.)this.Ptr);
+	}
+	public c_int* Rheight()
+	{
+		return CQt.QSize_Rheight((.)this.Ptr);
+	}
+	public QSizeF_Ptr ToSizeF()
+	{
+		return QSizeF_Ptr(CQt.QSize_ToSizeF((.)this.Ptr));
+	}
+}
+class QSize : IQSize
+{
+	private QSize_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QSize_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQSize other)
+	{
+		this.ptr = CQt.QSize_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QSize_new3();
+	}
+	public this(c_int w, c_int h)
+	{
+		this.ptr = CQt.QSize_new4(w, h);
+	}
+	public ~this()
+	{
+		CQt.QSize_Delete(this.ptr);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public c_int Width()
+	{
+		return this.ptr.Width();
+	}
+	public c_int Height()
+	{
+		return this.ptr.Height();
+	}
+	public void SetWidth(c_int w)
+	{
+		this.ptr.SetWidth(w);
+	}
+	public void SetHeight(c_int h)
+	{
+		this.ptr.SetHeight(h);
+	}
+	public void Transpose()
+	{
+		this.ptr.Transpose();
+	}
+	public QSize_Ptr Transposed()
+	{
+		return this.ptr.Transposed();
+	}
+	public void Scale(c_int w, c_int h, Qt_AspectRatioMode mode)
+	{
+		this.ptr.Scale(w, h, mode);
+	}
+	public void Scale2(IQSize s, Qt_AspectRatioMode mode)
+	{
+		this.ptr.Scale2(s, mode);
+	}
+	public QSize_Ptr Scaled(c_int w, c_int h, Qt_AspectRatioMode mode)
+	{
+		return this.ptr.Scaled(w, h, mode);
+	}
+	public QSize_Ptr Scaled2(IQSize s, Qt_AspectRatioMode mode)
+	{
+		return this.ptr.Scaled2(s, mode);
+	}
+	public QSize_Ptr ExpandedTo(IQSize param1)
+	{
+		return this.ptr.ExpandedTo(param1);
+	}
+	public QSize_Ptr BoundedTo(IQSize param1)
+	{
+		return this.ptr.BoundedTo(param1);
+	}
+	public QSize_Ptr GrownBy(IQMargins m)
+	{
+		return this.ptr.GrownBy(m);
+	}
+	public QSize_Ptr ShrunkBy(IQMargins m)
+	{
+		return this.ptr.ShrunkBy(m);
+	}
+	public c_int* Rwidth()
+	{
+		return this.ptr.Rwidth();
+	}
+	public c_int* Rheight()
+	{
+		return this.ptr.Rheight();
+	}
+	public QSizeF_Ptr ToSizeF()
+	{
+		return this.ptr.ToSizeF();
+	}
+}
+interface IQSize : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -78,114 +266,6 @@ extension CQt
 	[LinkName("QSize_ToSizeF")]
 	public static extern void* QSize_ToSizeF(void* self);
 }
-class QSize : IQSize
-{
-	private QSize_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QSize_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQSize other)
-	{
-		this.ptr = CQt.QSize_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QSize_new3();
-	}
-	public this(c_int w, c_int h)
-	{
-		this.ptr = CQt.QSize_new4(w, h);
-	}
-	public ~this()
-	{
-		CQt.QSize_Delete(this.ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QSize_IsNull((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QSize_IsEmpty((.)this.ptr.Ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QSize_IsValid((.)this.ptr.Ptr);
-	}
-	public c_int Width()
-	{
-		return CQt.QSize_Width((.)this.ptr.Ptr);
-	}
-	public c_int Height()
-	{
-		return CQt.QSize_Height((.)this.ptr.Ptr);
-	}
-	public void SetWidth(c_int w)
-	{
-		CQt.QSize_SetWidth((.)this.ptr.Ptr, w);
-	}
-	public void SetHeight(c_int h)
-	{
-		CQt.QSize_SetHeight((.)this.ptr.Ptr, h);
-	}
-	public void Transpose()
-	{
-		CQt.QSize_Transpose((.)this.ptr.Ptr);
-	}
-	public QSize_Ptr Transposed()
-	{
-		return QSize_Ptr(CQt.QSize_Transposed((.)this.ptr.Ptr));
-	}
-	public void Scale(c_int w, c_int h, Qt_AspectRatioMode mode)
-	{
-		CQt.QSize_Scale((.)this.ptr.Ptr, w, h, mode);
-	}
-	public void Scale2(IQSize s, Qt_AspectRatioMode mode)
-	{
-		CQt.QSize_Scale2((.)this.ptr.Ptr, (.)s?.ObjectPtr, mode);
-	}
-	public QSize_Ptr Scaled(c_int w, c_int h, Qt_AspectRatioMode mode)
-	{
-		return QSize_Ptr(CQt.QSize_Scaled((.)this.ptr.Ptr, w, h, mode));
-	}
-	public QSize_Ptr Scaled2(IQSize s, Qt_AspectRatioMode mode)
-	{
-		return QSize_Ptr(CQt.QSize_Scaled2((.)this.ptr.Ptr, (.)s?.ObjectPtr, mode));
-	}
-	public QSize_Ptr ExpandedTo(IQSize param1)
-	{
-		return QSize_Ptr(CQt.QSize_ExpandedTo((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
-	}
-	public QSize_Ptr BoundedTo(IQSize param1)
-	{
-		return QSize_Ptr(CQt.QSize_BoundedTo((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
-	}
-	public QSize_Ptr GrownBy(IQMargins m)
-	{
-		return QSize_Ptr(CQt.QSize_GrownBy((.)this.ptr.Ptr, (.)m?.ObjectPtr));
-	}
-	public QSize_Ptr ShrunkBy(IQMargins m)
-	{
-		return QSize_Ptr(CQt.QSize_ShrunkBy((.)this.ptr.Ptr, (.)m?.ObjectPtr));
-	}
-	public c_int* Rwidth()
-	{
-		return CQt.QSize_Rwidth((.)this.ptr.Ptr);
-	}
-	public c_int* Rheight()
-	{
-		return CQt.QSize_Rheight((.)this.ptr.Ptr);
-	}
-	public QSizeF_Ptr ToSizeF()
-	{
-		return QSizeF_Ptr(CQt.QSize_ToSizeF((.)this.ptr.Ptr));
-	}
-}
-interface IQSize : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QSizeF
 // --------------------------------------------------------------
@@ -197,6 +277,198 @@ struct QSizeF_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsNull()
+	{
+		return CQt.QSizeF_IsNull((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QSizeF_IsEmpty((.)this.Ptr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QSizeF_IsValid((.)this.Ptr);
+	}
+	public double Width()
+	{
+		return CQt.QSizeF_Width((.)this.Ptr);
+	}
+	public double Height()
+	{
+		return CQt.QSizeF_Height((.)this.Ptr);
+	}
+	public void SetWidth(double w)
+	{
+		CQt.QSizeF_SetWidth((.)this.Ptr, w);
+	}
+	public void SetHeight(double h)
+	{
+		CQt.QSizeF_SetHeight((.)this.Ptr, h);
+	}
+	public void Transpose()
+	{
+		CQt.QSizeF_Transpose((.)this.Ptr);
+	}
+	public QSizeF_Ptr Transposed()
+	{
+		return QSizeF_Ptr(CQt.QSizeF_Transposed((.)this.Ptr));
+	}
+	public void Scale(double w, double h, Qt_AspectRatioMode mode)
+	{
+		CQt.QSizeF_Scale((.)this.Ptr, w, h, mode);
+	}
+	public void Scale2(IQSizeF s, Qt_AspectRatioMode mode)
+	{
+		CQt.QSizeF_Scale2((.)this.Ptr, (.)s?.ObjectPtr, mode);
+	}
+	public QSizeF_Ptr Scaled(double w, double h, Qt_AspectRatioMode mode)
+	{
+		return QSizeF_Ptr(CQt.QSizeF_Scaled((.)this.Ptr, w, h, mode));
+	}
+	public QSizeF_Ptr Scaled2(IQSizeF s, Qt_AspectRatioMode mode)
+	{
+		return QSizeF_Ptr(CQt.QSizeF_Scaled2((.)this.Ptr, (.)s?.ObjectPtr, mode));
+	}
+	public QSizeF_Ptr ExpandedTo(IQSizeF param1)
+	{
+		return QSizeF_Ptr(CQt.QSizeF_ExpandedTo((.)this.Ptr, (.)param1?.ObjectPtr));
+	}
+	public QSizeF_Ptr BoundedTo(IQSizeF param1)
+	{
+		return QSizeF_Ptr(CQt.QSizeF_BoundedTo((.)this.Ptr, (.)param1?.ObjectPtr));
+	}
+	public QSizeF_Ptr GrownBy(IQMarginsF m)
+	{
+		return QSizeF_Ptr(CQt.QSizeF_GrownBy((.)this.Ptr, (.)m?.ObjectPtr));
+	}
+	public QSizeF_Ptr ShrunkBy(IQMarginsF m)
+	{
+		return QSizeF_Ptr(CQt.QSizeF_ShrunkBy((.)this.Ptr, (.)m?.ObjectPtr));
+	}
+	public double* Rwidth()
+	{
+		return CQt.QSizeF_Rwidth((.)this.Ptr);
+	}
+	public double* Rheight()
+	{
+		return CQt.QSizeF_Rheight((.)this.Ptr);
+	}
+	public QSize_Ptr ToSize()
+	{
+		return QSize_Ptr(CQt.QSizeF_ToSize((.)this.Ptr));
+	}
+}
+class QSizeF : IQSizeF
+{
+	private QSizeF_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QSizeF_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQSizeF other)
+	{
+		this.ptr = CQt.QSizeF_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QSizeF_new3();
+	}
+	public this(IQSize sz)
+	{
+		this.ptr = CQt.QSizeF_new4((.)sz?.ObjectPtr);
+	}
+	public this(double w, double h)
+	{
+		this.ptr = CQt.QSizeF_new5(w, h);
+	}
+	public ~this()
+	{
+		CQt.QSizeF_Delete(this.ptr);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public double Width()
+	{
+		return this.ptr.Width();
+	}
+	public double Height()
+	{
+		return this.ptr.Height();
+	}
+	public void SetWidth(double w)
+	{
+		this.ptr.SetWidth(w);
+	}
+	public void SetHeight(double h)
+	{
+		this.ptr.SetHeight(h);
+	}
+	public void Transpose()
+	{
+		this.ptr.Transpose();
+	}
+	public QSizeF_Ptr Transposed()
+	{
+		return this.ptr.Transposed();
+	}
+	public void Scale(double w, double h, Qt_AspectRatioMode mode)
+	{
+		this.ptr.Scale(w, h, mode);
+	}
+	public void Scale2(IQSizeF s, Qt_AspectRatioMode mode)
+	{
+		this.ptr.Scale2(s, mode);
+	}
+	public QSizeF_Ptr Scaled(double w, double h, Qt_AspectRatioMode mode)
+	{
+		return this.ptr.Scaled(w, h, mode);
+	}
+	public QSizeF_Ptr Scaled2(IQSizeF s, Qt_AspectRatioMode mode)
+	{
+		return this.ptr.Scaled2(s, mode);
+	}
+	public QSizeF_Ptr ExpandedTo(IQSizeF param1)
+	{
+		return this.ptr.ExpandedTo(param1);
+	}
+	public QSizeF_Ptr BoundedTo(IQSizeF param1)
+	{
+		return this.ptr.BoundedTo(param1);
+	}
+	public QSizeF_Ptr GrownBy(IQMarginsF m)
+	{
+		return this.ptr.GrownBy(m);
+	}
+	public QSizeF_Ptr ShrunkBy(IQMarginsF m)
+	{
+		return this.ptr.ShrunkBy(m);
+	}
+	public double* Rwidth()
+	{
+		return this.ptr.Rwidth();
+	}
+	public double* Rheight()
+	{
+		return this.ptr.Rheight();
+	}
+	public QSize_Ptr ToSize()
+	{
+		return this.ptr.ToSize();
+	}
+}
+interface IQSizeF : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -262,116 +534,4 @@ extension CQt
 	public static extern void** QSizeF_OperatorDivideAssign(void* self, double c);
 	[LinkName("QSizeF_ToSize")]
 	public static extern void* QSizeF_ToSize(void* self);
-}
-class QSizeF : IQSizeF
-{
-	private QSizeF_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QSizeF_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQSizeF other)
-	{
-		this.ptr = CQt.QSizeF_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QSizeF_new3();
-	}
-	public this(IQSize sz)
-	{
-		this.ptr = CQt.QSizeF_new4((.)sz?.ObjectPtr);
-	}
-	public this(double w, double h)
-	{
-		this.ptr = CQt.QSizeF_new5(w, h);
-	}
-	public ~this()
-	{
-		CQt.QSizeF_Delete(this.ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QSizeF_IsNull((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QSizeF_IsEmpty((.)this.ptr.Ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QSizeF_IsValid((.)this.ptr.Ptr);
-	}
-	public double Width()
-	{
-		return CQt.QSizeF_Width((.)this.ptr.Ptr);
-	}
-	public double Height()
-	{
-		return CQt.QSizeF_Height((.)this.ptr.Ptr);
-	}
-	public void SetWidth(double w)
-	{
-		CQt.QSizeF_SetWidth((.)this.ptr.Ptr, w);
-	}
-	public void SetHeight(double h)
-	{
-		CQt.QSizeF_SetHeight((.)this.ptr.Ptr, h);
-	}
-	public void Transpose()
-	{
-		CQt.QSizeF_Transpose((.)this.ptr.Ptr);
-	}
-	public QSizeF_Ptr Transposed()
-	{
-		return QSizeF_Ptr(CQt.QSizeF_Transposed((.)this.ptr.Ptr));
-	}
-	public void Scale(double w, double h, Qt_AspectRatioMode mode)
-	{
-		CQt.QSizeF_Scale((.)this.ptr.Ptr, w, h, mode);
-	}
-	public void Scale2(IQSizeF s, Qt_AspectRatioMode mode)
-	{
-		CQt.QSizeF_Scale2((.)this.ptr.Ptr, (.)s?.ObjectPtr, mode);
-	}
-	public QSizeF_Ptr Scaled(double w, double h, Qt_AspectRatioMode mode)
-	{
-		return QSizeF_Ptr(CQt.QSizeF_Scaled((.)this.ptr.Ptr, w, h, mode));
-	}
-	public QSizeF_Ptr Scaled2(IQSizeF s, Qt_AspectRatioMode mode)
-	{
-		return QSizeF_Ptr(CQt.QSizeF_Scaled2((.)this.ptr.Ptr, (.)s?.ObjectPtr, mode));
-	}
-	public QSizeF_Ptr ExpandedTo(IQSizeF param1)
-	{
-		return QSizeF_Ptr(CQt.QSizeF_ExpandedTo((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
-	}
-	public QSizeF_Ptr BoundedTo(IQSizeF param1)
-	{
-		return QSizeF_Ptr(CQt.QSizeF_BoundedTo((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
-	}
-	public QSizeF_Ptr GrownBy(IQMarginsF m)
-	{
-		return QSizeF_Ptr(CQt.QSizeF_GrownBy((.)this.ptr.Ptr, (.)m?.ObjectPtr));
-	}
-	public QSizeF_Ptr ShrunkBy(IQMarginsF m)
-	{
-		return QSizeF_Ptr(CQt.QSizeF_ShrunkBy((.)this.ptr.Ptr, (.)m?.ObjectPtr));
-	}
-	public double* Rwidth()
-	{
-		return CQt.QSizeF_Rwidth((.)this.ptr.Ptr);
-	}
-	public double* Rheight()
-	{
-		return CQt.QSizeF_Rheight((.)this.ptr.Ptr);
-	}
-	public QSize_Ptr ToSize()
-	{
-		return QSize_Ptr(CQt.QSizeF_ToSize((.)this.ptr.Ptr));
-	}
-}
-interface IQSizeF : IQtObjectInterface
-{
 }

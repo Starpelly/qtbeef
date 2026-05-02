@@ -14,6 +14,146 @@ struct QAnyStringView_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void ToString(String outStr)
+	{
+		CQt.QAnyStringView_ToString((.)this.Ptr);
+	}
+	public void* Size()
+	{
+		return CQt.QAnyStringView_Size((.)this.Ptr);
+	}
+	public void* Data()
+	{
+		return CQt.QAnyStringView_Data((.)this.Ptr);
+	}
+	public c_int Compare(IQAnyStringView lhs, IQAnyStringView rhs)
+	{
+		return CQt.QAnyStringView_Compare((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
+	}
+	public bool Equal(IQAnyStringView lhs, IQAnyStringView rhs)
+	{
+		return CQt.QAnyStringView_Equal((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
+	}
+	public QChar_Ptr Front()
+	{
+		return QChar_Ptr(CQt.QAnyStringView_Front((.)this.Ptr));
+	}
+	public QChar_Ptr Back()
+	{
+		return QChar_Ptr(CQt.QAnyStringView_Back((.)this.Ptr));
+	}
+	public bool Empty()
+	{
+		return CQt.QAnyStringView_Empty((.)this.Ptr);
+	}
+	public void* Size_bytes()
+	{
+		return CQt.QAnyStringView_Size_Bytes((.)this.Ptr);
+	}
+	public bool IsNull()
+	{
+		return CQt.QAnyStringView_IsNull((.)this.Ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QAnyStringView_IsEmpty((.)this.Ptr);
+	}
+	public void* Length()
+	{
+		return CQt.QAnyStringView_Length((.)this.Ptr);
+	}
+	public c_int Compare3(IQAnyStringView lhs, IQAnyStringView rhs, Qt_CaseSensitivity cs)
+	{
+		return CQt.QAnyStringView_Compare3((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr, cs);
+	}
+}
+class QAnyStringView : IQAnyStringView
+{
+	private QAnyStringView_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAnyStringView_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQAnyStringView other)
+	{
+		this.ptr = CQt.QAnyStringView_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QAnyStringView_new3();
+	}
+	public this(void** str)
+	{
+		this.ptr = CQt.QAnyStringView_new4(str);
+	}
+	public this(String str)
+	{
+		this.ptr = CQt.QAnyStringView_new5(libqt_string(str));
+	}
+	public this(IQChar c)
+	{
+		this.ptr = CQt.QAnyStringView_new6((.)c?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QAnyStringView_Delete(this.ptr);
+	}
+	public void ToString(String outStr)
+	{
+		this.ptr.ToString(outStr);
+	}
+	public void* Size()
+	{
+		return this.ptr.Size();
+	}
+	public void* Data()
+	{
+		return this.ptr.Data();
+	}
+	public c_int Compare(IQAnyStringView lhs, IQAnyStringView rhs)
+	{
+		return this.ptr.Compare(lhs, rhs);
+	}
+	public bool Equal(IQAnyStringView lhs, IQAnyStringView rhs)
+	{
+		return this.ptr.Equal(lhs, rhs);
+	}
+	public QChar_Ptr Front()
+	{
+		return this.ptr.Front();
+	}
+	public QChar_Ptr Back()
+	{
+		return this.ptr.Back();
+	}
+	public bool Empty()
+	{
+		return this.ptr.Empty();
+	}
+	public void* Size_bytes()
+	{
+		return this.ptr.Size_bytes();
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public bool IsEmpty()
+	{
+		return this.ptr.IsEmpty();
+	}
+	public void* Length()
+	{
+		return this.ptr.Length();
+	}
+	public c_int Compare3(IQAnyStringView lhs, IQAnyStringView rhs, Qt_CaseSensitivity cs)
+	{
+		return this.ptr.Compare3(lhs, rhs, cs);
+	}
+}
+interface IQAnyStringView : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -59,92 +199,4 @@ extension CQt
 	public static extern void* QAnyStringView_Length(void* self);
 	[LinkName("QAnyStringView_Compare3")]
 	public static extern c_int QAnyStringView_Compare3(void* lhs, void* rhs, Qt_CaseSensitivity cs);
-}
-class QAnyStringView : IQAnyStringView
-{
-	private QAnyStringView_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QAnyStringView_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQAnyStringView other)
-	{
-		this.ptr = CQt.QAnyStringView_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QAnyStringView_new3();
-	}
-	public this(void** str)
-	{
-		this.ptr = CQt.QAnyStringView_new4(str);
-	}
-	public this(String str)
-	{
-		this.ptr = CQt.QAnyStringView_new5(libqt_string(str));
-	}
-	public this(IQChar c)
-	{
-		this.ptr = CQt.QAnyStringView_new6((.)c?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QAnyStringView_Delete(this.ptr);
-	}
-	public void ToString(String outStr)
-	{
-		CQt.QAnyStringView_ToString((.)this.ptr.Ptr);
-	}
-	public void* Size()
-	{
-		return CQt.QAnyStringView_Size((.)this.ptr.Ptr);
-	}
-	public void* Data()
-	{
-		return CQt.QAnyStringView_Data((.)this.ptr.Ptr);
-	}
-	public c_int Compare(IQAnyStringView lhs, IQAnyStringView rhs)
-	{
-		return CQt.QAnyStringView_Compare((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
-	}
-	public bool Equal(IQAnyStringView lhs, IQAnyStringView rhs)
-	{
-		return CQt.QAnyStringView_Equal((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
-	}
-	public QChar_Ptr Front()
-	{
-		return QChar_Ptr(CQt.QAnyStringView_Front((.)this.ptr.Ptr));
-	}
-	public QChar_Ptr Back()
-	{
-		return QChar_Ptr(CQt.QAnyStringView_Back((.)this.ptr.Ptr));
-	}
-	public bool Empty()
-	{
-		return CQt.QAnyStringView_Empty((.)this.ptr.Ptr);
-	}
-	public void* Size_bytes()
-	{
-		return CQt.QAnyStringView_Size_Bytes((.)this.ptr.Ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QAnyStringView_IsNull((.)this.ptr.Ptr);
-	}
-	public bool IsEmpty()
-	{
-		return CQt.QAnyStringView_IsEmpty((.)this.ptr.Ptr);
-	}
-	public void* Length()
-	{
-		return CQt.QAnyStringView_Length((.)this.ptr.Ptr);
-	}
-	public c_int Compare3(IQAnyStringView lhs, IQAnyStringView rhs, Qt_CaseSensitivity cs)
-	{
-		return CQt.QAnyStringView_Compare3((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr, cs);
-	}
-}
-interface IQAnyStringView : IQtObjectInterface
-{
 }

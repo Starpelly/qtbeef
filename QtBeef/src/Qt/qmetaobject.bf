@@ -14,6 +14,734 @@ struct QMetaMethod_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void* MethodSignature()
+	{
+		return CQt.QMetaMethod_MethodSignature((.)this.Ptr);
+	}
+	public void* Name()
+	{
+		return CQt.QMetaMethod_Name((.)this.Ptr);
+	}
+	public c_char* TypeName()
+	{
+		return CQt.QMetaMethod_TypeName((.)this.Ptr);
+	}
+	public c_int ReturnType()
+	{
+		return CQt.QMetaMethod_ReturnType((.)this.Ptr);
+	}
+	public QMetaType_Ptr ReturnMetaType()
+	{
+		return QMetaType_Ptr(CQt.QMetaMethod_ReturnMetaType((.)this.Ptr));
+	}
+	public c_int ParameterCount()
+	{
+		return CQt.QMetaMethod_ParameterCount((.)this.Ptr);
+	}
+	public c_int ParameterType(c_int index)
+	{
+		return CQt.QMetaMethod_ParameterType((.)this.Ptr, index);
+	}
+	public QMetaType_Ptr ParameterMetaType(c_int index)
+	{
+		return QMetaType_Ptr(CQt.QMetaMethod_ParameterMetaType((.)this.Ptr, index));
+	}
+	public void GetParameterTypes(c_int* types)
+	{
+		CQt.QMetaMethod_GetParameterTypes((.)this.Ptr, types);
+	}
+	public void* ParameterTypes()
+	{
+		return CQt.QMetaMethod_ParameterTypes((.)this.Ptr);
+	}
+	public void* ParameterTypeName(c_int index)
+	{
+		return CQt.QMetaMethod_ParameterTypeName((.)this.Ptr, index);
+	}
+	public void* ParameterNames()
+	{
+		return CQt.QMetaMethod_ParameterNames((.)this.Ptr);
+	}
+	public c_char* Tag()
+	{
+		return CQt.QMetaMethod_Tag((.)this.Ptr);
+	}
+	public QMetaMethod_Access Access()
+	{
+		return CQt.QMetaMethod_Access((.)this.Ptr);
+	}
+	public QMetaMethod_MethodType MethodType()
+	{
+		return CQt.QMetaMethod_MethodType((.)this.Ptr);
+	}
+	public c_int Attributes()
+	{
+		return CQt.QMetaMethod_Attributes((.)this.Ptr);
+	}
+	public c_int MethodIndex()
+	{
+		return CQt.QMetaMethod_MethodIndex((.)this.Ptr);
+	}
+	public c_int RelativeMethodIndex()
+	{
+		return CQt.QMetaMethod_RelativeMethodIndex((.)this.Ptr);
+	}
+	public c_int Revision()
+	{
+		return CQt.QMetaMethod_Revision((.)this.Ptr);
+	}
+	public bool IsConst()
+	{
+		return CQt.QMetaMethod_IsConst((.)this.Ptr);
+	}
+	public QMetaObject_Ptr EnclosingMetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QMetaMethod_EnclosingMetaObject((.)this.Ptr));
+	}
+	public bool Invoke(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue)
+	{
+		return CQt.QMetaMethod_Invoke((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr);
+	}
+	public bool Invoke2(IQObject object, IQGenericReturnArgument returnValue)
+	{
+		return CQt.QMetaMethod_Invoke2((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr);
+	}
+	public bool Invoke3(IQObject object, Qt_ConnectionType connectionType)
+	{
+		return CQt.QMetaMethod_Invoke3((.)this.Ptr, (.)object?.ObjectPtr, connectionType);
+	}
+	public bool Invoke4(IQObject object)
+	{
+		return CQt.QMetaMethod_Invoke4((.)this.Ptr, (.)object?.ObjectPtr);
+	}
+	public bool InvokeOnGadget(void* gadget, IQGenericReturnArgument returnValue)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr);
+	}
+	public bool InvokeOnGadget2(void* gadget)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget2((.)this.Ptr, gadget);
+	}
+	public bool IsValid()
+	{
+		return CQt.QMetaMethod_IsValid((.)this.Ptr);
+	}
+	public bool Invoke42(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0)
+	{
+		return CQt.QMetaMethod_Invoke42((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr);
+	}
+	public bool Invoke5(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return CQt.QMetaMethod_Invoke5((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
+	}
+	public bool Invoke6(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return CQt.QMetaMethod_Invoke6((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
+	}
+	public bool Invoke7(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return CQt.QMetaMethod_Invoke7((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
+	}
+	public bool Invoke8(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return CQt.QMetaMethod_Invoke8((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
+	}
+	public bool Invoke9(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return CQt.QMetaMethod_Invoke9((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
+	}
+	public bool Invoke10(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return CQt.QMetaMethod_Invoke10((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
+	}
+	public bool Invoke11(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return CQt.QMetaMethod_Invoke11((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
+	}
+	public bool Invoke12(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return CQt.QMetaMethod_Invoke12((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
+	}
+	public bool Invoke13(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return CQt.QMetaMethod_Invoke13((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
+	}
+	public bool Invoke32(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0)
+	{
+		return CQt.QMetaMethod_Invoke32((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr);
+	}
+	public bool Invoke43(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return CQt.QMetaMethod_Invoke43((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
+	}
+	public bool Invoke52(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return CQt.QMetaMethod_Invoke52((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
+	}
+	public bool Invoke62(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return CQt.QMetaMethod_Invoke62((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
+	}
+	public bool Invoke72(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return CQt.QMetaMethod_Invoke72((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
+	}
+	public bool Invoke82(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return CQt.QMetaMethod_Invoke82((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
+	}
+	public bool Invoke92(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return CQt.QMetaMethod_Invoke92((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
+	}
+	public bool Invoke102(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return CQt.QMetaMethod_Invoke102((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
+	}
+	public bool Invoke112(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return CQt.QMetaMethod_Invoke112((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
+	}
+	public bool Invoke122(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return CQt.QMetaMethod_Invoke122((.)this.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
+	}
+	public bool Invoke33(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0)
+	{
+		return CQt.QMetaMethod_Invoke33((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr);
+	}
+	public bool Invoke44(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return CQt.QMetaMethod_Invoke44((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
+	}
+	public bool Invoke53(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return CQt.QMetaMethod_Invoke53((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
+	}
+	public bool Invoke63(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return CQt.QMetaMethod_Invoke63((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
+	}
+	public bool Invoke73(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return CQt.QMetaMethod_Invoke73((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
+	}
+	public bool Invoke83(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return CQt.QMetaMethod_Invoke83((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
+	}
+	public bool Invoke93(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return CQt.QMetaMethod_Invoke93((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
+	}
+	public bool Invoke103(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return CQt.QMetaMethod_Invoke103((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
+	}
+	public bool Invoke113(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return CQt.QMetaMethod_Invoke113((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
+	}
+	public bool Invoke123(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return CQt.QMetaMethod_Invoke123((.)this.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
+	}
+	public bool Invoke22(IQObject object, IQGenericArgument val0)
+	{
+		return CQt.QMetaMethod_Invoke22((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr);
+	}
+	public bool Invoke34(IQObject object, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return CQt.QMetaMethod_Invoke34((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
+	}
+	public bool Invoke45(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return CQt.QMetaMethod_Invoke45((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
+	}
+	public bool Invoke54(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return CQt.QMetaMethod_Invoke54((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
+	}
+	public bool Invoke64(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return CQt.QMetaMethod_Invoke64((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
+	}
+	public bool Invoke74(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return CQt.QMetaMethod_Invoke74((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
+	}
+	public bool Invoke84(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return CQt.QMetaMethod_Invoke84((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
+	}
+	public bool Invoke94(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return CQt.QMetaMethod_Invoke94((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
+	}
+	public bool Invoke104(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return CQt.QMetaMethod_Invoke104((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
+	}
+	public bool Invoke114(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return CQt.QMetaMethod_Invoke114((.)this.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
+	}
+	public bool InvokeOnGadget3(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget3((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr);
+	}
+	public bool InvokeOnGadget4(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget4((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
+	}
+	public bool InvokeOnGadget5(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget5((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
+	}
+	public bool InvokeOnGadget6(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget6((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
+	}
+	public bool InvokeOnGadget7(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget7((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
+	}
+	public bool InvokeOnGadget8(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget8((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
+	}
+	public bool InvokeOnGadget9(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget9((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
+	}
+	public bool InvokeOnGadget10(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget10((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
+	}
+	public bool InvokeOnGadget11(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget11((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
+	}
+	public bool InvokeOnGadget12(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget12((.)this.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
+	}
+	public bool InvokeOnGadget22(void* gadget, IQGenericArgument val0)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget22((.)this.Ptr, gadget, (.)val0?.ObjectPtr);
+	}
+	public bool InvokeOnGadget32(void* gadget, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget32((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
+	}
+	public bool InvokeOnGadget42(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget42((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
+	}
+	public bool InvokeOnGadget52(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget52((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
+	}
+	public bool InvokeOnGadget62(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget62((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
+	}
+	public bool InvokeOnGadget72(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget72((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
+	}
+	public bool InvokeOnGadget82(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget82((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
+	}
+	public bool InvokeOnGadget92(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget92((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
+	}
+	public bool InvokeOnGadget102(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget102((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
+	}
+	public bool InvokeOnGadget112(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return CQt.QMetaMethod_InvokeOnGadget112((.)this.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
+	}
+}
+class QMetaMethod : IQMetaMethod
+{
+	private QMetaMethod_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QMetaMethod_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQMetaMethod other)
+	{
+		this.ptr = CQt.QMetaMethod_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QMetaMethod_new3();
+	}
+	public ~this()
+	{
+		CQt.QMetaMethod_Delete(this.ptr);
+	}
+	public void* MethodSignature()
+	{
+		return this.ptr.MethodSignature();
+	}
+	public void* Name()
+	{
+		return this.ptr.Name();
+	}
+	public c_char* TypeName()
+	{
+		return this.ptr.TypeName();
+	}
+	public c_int ReturnType()
+	{
+		return this.ptr.ReturnType();
+	}
+	public QMetaType_Ptr ReturnMetaType()
+	{
+		return this.ptr.ReturnMetaType();
+	}
+	public c_int ParameterCount()
+	{
+		return this.ptr.ParameterCount();
+	}
+	public c_int ParameterType(c_int index)
+	{
+		return this.ptr.ParameterType(index);
+	}
+	public QMetaType_Ptr ParameterMetaType(c_int index)
+	{
+		return this.ptr.ParameterMetaType(index);
+	}
+	public void GetParameterTypes(c_int* types)
+	{
+		this.ptr.GetParameterTypes(types);
+	}
+	public void* ParameterTypes()
+	{
+		return this.ptr.ParameterTypes();
+	}
+	public void* ParameterTypeName(c_int index)
+	{
+		return this.ptr.ParameterTypeName(index);
+	}
+	public void* ParameterNames()
+	{
+		return this.ptr.ParameterNames();
+	}
+	public c_char* Tag()
+	{
+		return this.ptr.Tag();
+	}
+	public QMetaMethod_Access Access()
+	{
+		return this.ptr.Access();
+	}
+	public QMetaMethod_MethodType MethodType()
+	{
+		return this.ptr.MethodType();
+	}
+	public c_int Attributes()
+	{
+		return this.ptr.Attributes();
+	}
+	public c_int MethodIndex()
+	{
+		return this.ptr.MethodIndex();
+	}
+	public c_int RelativeMethodIndex()
+	{
+		return this.ptr.RelativeMethodIndex();
+	}
+	public c_int Revision()
+	{
+		return this.ptr.Revision();
+	}
+	public bool IsConst()
+	{
+		return this.ptr.IsConst();
+	}
+	public QMetaObject_Ptr EnclosingMetaObject()
+	{
+		return this.ptr.EnclosingMetaObject();
+	}
+	public bool Invoke(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue)
+	{
+		return this.ptr.Invoke(object, connectionType, returnValue);
+	}
+	public bool Invoke2(IQObject object, IQGenericReturnArgument returnValue)
+	{
+		return this.ptr.Invoke2(object, returnValue);
+	}
+	public bool Invoke3(IQObject object, Qt_ConnectionType connectionType)
+	{
+		return this.ptr.Invoke3(object, connectionType);
+	}
+	public bool Invoke4(IQObject object)
+	{
+		return this.ptr.Invoke4(object);
+	}
+	public bool InvokeOnGadget(void* gadget, IQGenericReturnArgument returnValue)
+	{
+		return this.ptr.InvokeOnGadget(gadget, returnValue);
+	}
+	public bool InvokeOnGadget2(void* gadget)
+	{
+		return this.ptr.InvokeOnGadget2(gadget);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public bool Invoke42(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0)
+	{
+		return this.ptr.Invoke42(object, connectionType, returnValue, val0);
+	}
+	public bool Invoke5(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return this.ptr.Invoke5(object, connectionType, returnValue, val0, val1);
+	}
+	public bool Invoke6(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return this.ptr.Invoke6(object, connectionType, returnValue, val0, val1, val2);
+	}
+	public bool Invoke7(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return this.ptr.Invoke7(object, connectionType, returnValue, val0, val1, val2, val3);
+	}
+	public bool Invoke8(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return this.ptr.Invoke8(object, connectionType, returnValue, val0, val1, val2, val3, val4);
+	}
+	public bool Invoke9(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return this.ptr.Invoke9(object, connectionType, returnValue, val0, val1, val2, val3, val4, val5);
+	}
+	public bool Invoke10(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return this.ptr.Invoke10(object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6);
+	}
+	public bool Invoke11(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return this.ptr.Invoke11(object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
+	}
+	public bool Invoke12(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return this.ptr.Invoke12(object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+	}
+	public bool Invoke13(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return this.ptr.Invoke13(object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+	}
+	public bool Invoke32(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0)
+	{
+		return this.ptr.Invoke32(object, returnValue, val0);
+	}
+	public bool Invoke43(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return this.ptr.Invoke43(object, returnValue, val0, val1);
+	}
+	public bool Invoke52(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return this.ptr.Invoke52(object, returnValue, val0, val1, val2);
+	}
+	public bool Invoke62(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return this.ptr.Invoke62(object, returnValue, val0, val1, val2, val3);
+	}
+	public bool Invoke72(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return this.ptr.Invoke72(object, returnValue, val0, val1, val2, val3, val4);
+	}
+	public bool Invoke82(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return this.ptr.Invoke82(object, returnValue, val0, val1, val2, val3, val4, val5);
+	}
+	public bool Invoke92(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return this.ptr.Invoke92(object, returnValue, val0, val1, val2, val3, val4, val5, val6);
+	}
+	public bool Invoke102(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return this.ptr.Invoke102(object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
+	}
+	public bool Invoke112(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return this.ptr.Invoke112(object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+	}
+	public bool Invoke122(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return this.ptr.Invoke122(object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+	}
+	public bool Invoke33(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0)
+	{
+		return this.ptr.Invoke33(object, connectionType, val0);
+	}
+	public bool Invoke44(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return this.ptr.Invoke44(object, connectionType, val0, val1);
+	}
+	public bool Invoke53(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return this.ptr.Invoke53(object, connectionType, val0, val1, val2);
+	}
+	public bool Invoke63(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return this.ptr.Invoke63(object, connectionType, val0, val1, val2, val3);
+	}
+	public bool Invoke73(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return this.ptr.Invoke73(object, connectionType, val0, val1, val2, val3, val4);
+	}
+	public bool Invoke83(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return this.ptr.Invoke83(object, connectionType, val0, val1, val2, val3, val4, val5);
+	}
+	public bool Invoke93(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return this.ptr.Invoke93(object, connectionType, val0, val1, val2, val3, val4, val5, val6);
+	}
+	public bool Invoke103(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return this.ptr.Invoke103(object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7);
+	}
+	public bool Invoke113(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return this.ptr.Invoke113(object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+	}
+	public bool Invoke123(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return this.ptr.Invoke123(object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+	}
+	public bool Invoke22(IQObject object, IQGenericArgument val0)
+	{
+		return this.ptr.Invoke22(object, val0);
+	}
+	public bool Invoke34(IQObject object, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return this.ptr.Invoke34(object, val0, val1);
+	}
+	public bool Invoke45(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return this.ptr.Invoke45(object, val0, val1, val2);
+	}
+	public bool Invoke54(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return this.ptr.Invoke54(object, val0, val1, val2, val3);
+	}
+	public bool Invoke64(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return this.ptr.Invoke64(object, val0, val1, val2, val3, val4);
+	}
+	public bool Invoke74(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return this.ptr.Invoke74(object, val0, val1, val2, val3, val4, val5);
+	}
+	public bool Invoke84(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return this.ptr.Invoke84(object, val0, val1, val2, val3, val4, val5, val6);
+	}
+	public bool Invoke94(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return this.ptr.Invoke94(object, val0, val1, val2, val3, val4, val5, val6, val7);
+	}
+	public bool Invoke104(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return this.ptr.Invoke104(object, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+	}
+	public bool Invoke114(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return this.ptr.Invoke114(object, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+	}
+	public bool InvokeOnGadget3(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0)
+	{
+		return this.ptr.InvokeOnGadget3(gadget, returnValue, val0);
+	}
+	public bool InvokeOnGadget4(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return this.ptr.InvokeOnGadget4(gadget, returnValue, val0, val1);
+	}
+	public bool InvokeOnGadget5(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return this.ptr.InvokeOnGadget5(gadget, returnValue, val0, val1, val2);
+	}
+	public bool InvokeOnGadget6(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return this.ptr.InvokeOnGadget6(gadget, returnValue, val0, val1, val2, val3);
+	}
+	public bool InvokeOnGadget7(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return this.ptr.InvokeOnGadget7(gadget, returnValue, val0, val1, val2, val3, val4);
+	}
+	public bool InvokeOnGadget8(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return this.ptr.InvokeOnGadget8(gadget, returnValue, val0, val1, val2, val3, val4, val5);
+	}
+	public bool InvokeOnGadget9(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return this.ptr.InvokeOnGadget9(gadget, returnValue, val0, val1, val2, val3, val4, val5, val6);
+	}
+	public bool InvokeOnGadget10(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return this.ptr.InvokeOnGadget10(gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
+	}
+	public bool InvokeOnGadget11(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return this.ptr.InvokeOnGadget11(gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+	}
+	public bool InvokeOnGadget12(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return this.ptr.InvokeOnGadget12(gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+	}
+	public bool InvokeOnGadget22(void* gadget, IQGenericArgument val0)
+	{
+		return this.ptr.InvokeOnGadget22(gadget, val0);
+	}
+	public bool InvokeOnGadget32(void* gadget, IQGenericArgument val0, IQGenericArgument val1)
+	{
+		return this.ptr.InvokeOnGadget32(gadget, val0, val1);
+	}
+	public bool InvokeOnGadget42(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
+	{
+		return this.ptr.InvokeOnGadget42(gadget, val0, val1, val2);
+	}
+	public bool InvokeOnGadget52(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
+	{
+		return this.ptr.InvokeOnGadget52(gadget, val0, val1, val2, val3);
+	}
+	public bool InvokeOnGadget62(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
+	{
+		return this.ptr.InvokeOnGadget62(gadget, val0, val1, val2, val3, val4);
+	}
+	public bool InvokeOnGadget72(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
+	{
+		return this.ptr.InvokeOnGadget72(gadget, val0, val1, val2, val3, val4, val5);
+	}
+	public bool InvokeOnGadget82(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
+	{
+		return this.ptr.InvokeOnGadget82(gadget, val0, val1, val2, val3, val4, val5, val6);
+	}
+	public bool InvokeOnGadget92(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
+	{
+		return this.ptr.InvokeOnGadget92(gadget, val0, val1, val2, val3, val4, val5, val6, val7);
+	}
+	public bool InvokeOnGadget102(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
+	{
+		return this.ptr.InvokeOnGadget102(gadget, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+	}
+	public bool InvokeOnGadget112(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
+	{
+		return this.ptr.InvokeOnGadget112(gadget, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+	}
+}
+interface IQMetaMethod : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -204,382 +932,6 @@ extension CQt
 	[LinkName("QMetaMethod_InvokeOnGadget112")]
 	public static extern bool QMetaMethod_InvokeOnGadget112(void* self, void* gadget, void* val0, void* val1, void* val2, void* val3, void* val4, void* val5, void* val6, void* val7, void* val8, void* val9);
 }
-class QMetaMethod : IQMetaMethod
-{
-	private QMetaMethod_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QMetaMethod_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQMetaMethod other)
-	{
-		this.ptr = CQt.QMetaMethod_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QMetaMethod_new3();
-	}
-	public ~this()
-	{
-		CQt.QMetaMethod_Delete(this.ptr);
-	}
-	public void* MethodSignature()
-	{
-		return CQt.QMetaMethod_MethodSignature((.)this.ptr.Ptr);
-	}
-	public void* Name()
-	{
-		return CQt.QMetaMethod_Name((.)this.ptr.Ptr);
-	}
-	public c_char* TypeName()
-	{
-		return CQt.QMetaMethod_TypeName((.)this.ptr.Ptr);
-	}
-	public c_int ReturnType()
-	{
-		return CQt.QMetaMethod_ReturnType((.)this.ptr.Ptr);
-	}
-	public QMetaType_Ptr ReturnMetaType()
-	{
-		return QMetaType_Ptr(CQt.QMetaMethod_ReturnMetaType((.)this.ptr.Ptr));
-	}
-	public c_int ParameterCount()
-	{
-		return CQt.QMetaMethod_ParameterCount((.)this.ptr.Ptr);
-	}
-	public c_int ParameterType(c_int index)
-	{
-		return CQt.QMetaMethod_ParameterType((.)this.ptr.Ptr, index);
-	}
-	public QMetaType_Ptr ParameterMetaType(c_int index)
-	{
-		return QMetaType_Ptr(CQt.QMetaMethod_ParameterMetaType((.)this.ptr.Ptr, index));
-	}
-	public void GetParameterTypes(c_int* types)
-	{
-		CQt.QMetaMethod_GetParameterTypes((.)this.ptr.Ptr, types);
-	}
-	public void* ParameterTypes()
-	{
-		return CQt.QMetaMethod_ParameterTypes((.)this.ptr.Ptr);
-	}
-	public void* ParameterTypeName(c_int index)
-	{
-		return CQt.QMetaMethod_ParameterTypeName((.)this.ptr.Ptr, index);
-	}
-	public void* ParameterNames()
-	{
-		return CQt.QMetaMethod_ParameterNames((.)this.ptr.Ptr);
-	}
-	public c_char* Tag()
-	{
-		return CQt.QMetaMethod_Tag((.)this.ptr.Ptr);
-	}
-	public QMetaMethod_Access Access()
-	{
-		return CQt.QMetaMethod_Access((.)this.ptr.Ptr);
-	}
-	public QMetaMethod_MethodType MethodType()
-	{
-		return CQt.QMetaMethod_MethodType((.)this.ptr.Ptr);
-	}
-	public c_int Attributes()
-	{
-		return CQt.QMetaMethod_Attributes((.)this.ptr.Ptr);
-	}
-	public c_int MethodIndex()
-	{
-		return CQt.QMetaMethod_MethodIndex((.)this.ptr.Ptr);
-	}
-	public c_int RelativeMethodIndex()
-	{
-		return CQt.QMetaMethod_RelativeMethodIndex((.)this.ptr.Ptr);
-	}
-	public c_int Revision()
-	{
-		return CQt.QMetaMethod_Revision((.)this.ptr.Ptr);
-	}
-	public bool IsConst()
-	{
-		return CQt.QMetaMethod_IsConst((.)this.ptr.Ptr);
-	}
-	public QMetaObject_Ptr EnclosingMetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QMetaMethod_EnclosingMetaObject((.)this.ptr.Ptr));
-	}
-	public bool Invoke(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue)
-	{
-		return CQt.QMetaMethod_Invoke((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr);
-	}
-	public bool Invoke2(IQObject object, IQGenericReturnArgument returnValue)
-	{
-		return CQt.QMetaMethod_Invoke2((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr);
-	}
-	public bool Invoke3(IQObject object, Qt_ConnectionType connectionType)
-	{
-		return CQt.QMetaMethod_Invoke3((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType);
-	}
-	public bool Invoke4(IQObject object)
-	{
-		return CQt.QMetaMethod_Invoke4((.)this.ptr.Ptr, (.)object?.ObjectPtr);
-	}
-	public bool InvokeOnGadget(void* gadget, IQGenericReturnArgument returnValue)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr);
-	}
-	public bool InvokeOnGadget2(void* gadget)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget2((.)this.ptr.Ptr, gadget);
-	}
-	public bool IsValid()
-	{
-		return CQt.QMetaMethod_IsValid((.)this.ptr.Ptr);
-	}
-	public bool Invoke42(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0)
-	{
-		return CQt.QMetaMethod_Invoke42((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr);
-	}
-	public bool Invoke5(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
-	{
-		return CQt.QMetaMethod_Invoke5((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
-	}
-	public bool Invoke6(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
-	{
-		return CQt.QMetaMethod_Invoke6((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
-	}
-	public bool Invoke7(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
-	{
-		return CQt.QMetaMethod_Invoke7((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
-	}
-	public bool Invoke8(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
-	{
-		return CQt.QMetaMethod_Invoke8((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
-	}
-	public bool Invoke9(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
-	{
-		return CQt.QMetaMethod_Invoke9((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
-	}
-	public bool Invoke10(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
-	{
-		return CQt.QMetaMethod_Invoke10((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
-	}
-	public bool Invoke11(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
-	{
-		return CQt.QMetaMethod_Invoke11((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
-	}
-	public bool Invoke12(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
-	{
-		return CQt.QMetaMethod_Invoke12((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
-	}
-	public bool Invoke13(IQObject object, Qt_ConnectionType connectionType, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
-	{
-		return CQt.QMetaMethod_Invoke13((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
-	}
-	public bool Invoke32(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0)
-	{
-		return CQt.QMetaMethod_Invoke32((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr);
-	}
-	public bool Invoke43(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
-	{
-		return CQt.QMetaMethod_Invoke43((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
-	}
-	public bool Invoke52(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
-	{
-		return CQt.QMetaMethod_Invoke52((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
-	}
-	public bool Invoke62(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
-	{
-		return CQt.QMetaMethod_Invoke62((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
-	}
-	public bool Invoke72(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
-	{
-		return CQt.QMetaMethod_Invoke72((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
-	}
-	public bool Invoke82(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
-	{
-		return CQt.QMetaMethod_Invoke82((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
-	}
-	public bool Invoke92(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
-	{
-		return CQt.QMetaMethod_Invoke92((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
-	}
-	public bool Invoke102(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
-	{
-		return CQt.QMetaMethod_Invoke102((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
-	}
-	public bool Invoke112(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
-	{
-		return CQt.QMetaMethod_Invoke112((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
-	}
-	public bool Invoke122(IQObject object, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
-	{
-		return CQt.QMetaMethod_Invoke122((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
-	}
-	public bool Invoke33(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0)
-	{
-		return CQt.QMetaMethod_Invoke33((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr);
-	}
-	public bool Invoke44(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1)
-	{
-		return CQt.QMetaMethod_Invoke44((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
-	}
-	public bool Invoke53(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
-	{
-		return CQt.QMetaMethod_Invoke53((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
-	}
-	public bool Invoke63(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
-	{
-		return CQt.QMetaMethod_Invoke63((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
-	}
-	public bool Invoke73(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
-	{
-		return CQt.QMetaMethod_Invoke73((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
-	}
-	public bool Invoke83(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
-	{
-		return CQt.QMetaMethod_Invoke83((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
-	}
-	public bool Invoke93(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
-	{
-		return CQt.QMetaMethod_Invoke93((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
-	}
-	public bool Invoke103(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
-	{
-		return CQt.QMetaMethod_Invoke103((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
-	}
-	public bool Invoke113(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
-	{
-		return CQt.QMetaMethod_Invoke113((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
-	}
-	public bool Invoke123(IQObject object, Qt_ConnectionType connectionType, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
-	{
-		return CQt.QMetaMethod_Invoke123((.)this.ptr.Ptr, (.)object?.ObjectPtr, connectionType, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
-	}
-	public bool Invoke22(IQObject object, IQGenericArgument val0)
-	{
-		return CQt.QMetaMethod_Invoke22((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr);
-	}
-	public bool Invoke34(IQObject object, IQGenericArgument val0, IQGenericArgument val1)
-	{
-		return CQt.QMetaMethod_Invoke34((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
-	}
-	public bool Invoke45(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
-	{
-		return CQt.QMetaMethod_Invoke45((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
-	}
-	public bool Invoke54(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
-	{
-		return CQt.QMetaMethod_Invoke54((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
-	}
-	public bool Invoke64(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
-	{
-		return CQt.QMetaMethod_Invoke64((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
-	}
-	public bool Invoke74(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
-	{
-		return CQt.QMetaMethod_Invoke74((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
-	}
-	public bool Invoke84(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
-	{
-		return CQt.QMetaMethod_Invoke84((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
-	}
-	public bool Invoke94(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
-	{
-		return CQt.QMetaMethod_Invoke94((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
-	}
-	public bool Invoke104(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
-	{
-		return CQt.QMetaMethod_Invoke104((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
-	}
-	public bool Invoke114(IQObject object, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
-	{
-		return CQt.QMetaMethod_Invoke114((.)this.ptr.Ptr, (.)object?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
-	}
-	public bool InvokeOnGadget3(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget3((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr);
-	}
-	public bool InvokeOnGadget4(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget4((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
-	}
-	public bool InvokeOnGadget5(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget5((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
-	}
-	public bool InvokeOnGadget6(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget6((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
-	}
-	public bool InvokeOnGadget7(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget7((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
-	}
-	public bool InvokeOnGadget8(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget8((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
-	}
-	public bool InvokeOnGadget9(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget9((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
-	}
-	public bool InvokeOnGadget10(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget10((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
-	}
-	public bool InvokeOnGadget11(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget11((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
-	}
-	public bool InvokeOnGadget12(void* gadget, IQGenericReturnArgument returnValue, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget12((.)this.ptr.Ptr, gadget, (.)returnValue?.ObjectPtr, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
-	}
-	public bool InvokeOnGadget22(void* gadget, IQGenericArgument val0)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget22((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr);
-	}
-	public bool InvokeOnGadget32(void* gadget, IQGenericArgument val0, IQGenericArgument val1)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget32((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr);
-	}
-	public bool InvokeOnGadget42(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget42((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr);
-	}
-	public bool InvokeOnGadget52(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget52((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr);
-	}
-	public bool InvokeOnGadget62(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget62((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr);
-	}
-	public bool InvokeOnGadget72(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget72((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr);
-	}
-	public bool InvokeOnGadget82(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget82((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr);
-	}
-	public bool InvokeOnGadget92(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget92((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr);
-	}
-	public bool InvokeOnGadget102(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget102((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr);
-	}
-	public bool InvokeOnGadget112(void* gadget, IQGenericArgument val0, IQGenericArgument val1, IQGenericArgument val2, IQGenericArgument val3, IQGenericArgument val4, IQGenericArgument val5, IQGenericArgument val6, IQGenericArgument val7, IQGenericArgument val8, IQGenericArgument val9)
-	{
-		return CQt.QMetaMethod_InvokeOnGadget112((.)this.ptr.Ptr, gadget, (.)val0?.ObjectPtr, (.)val1?.ObjectPtr, (.)val2?.ObjectPtr, (.)val3?.ObjectPtr, (.)val4?.ObjectPtr, (.)val5?.ObjectPtr, (.)val6?.ObjectPtr, (.)val7?.ObjectPtr, (.)val8?.ObjectPtr, (.)val9?.ObjectPtr);
-	}
-}
-interface IQMetaMethod : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QMetaEnum
 // --------------------------------------------------------------
@@ -591,6 +943,158 @@ struct QMetaEnum_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_char* Name()
+	{
+		return CQt.QMetaEnum_Name((.)this.Ptr);
+	}
+	public c_char* EnumName()
+	{
+		return CQt.QMetaEnum_EnumName((.)this.Ptr);
+	}
+	public bool IsFlag()
+	{
+		return CQt.QMetaEnum_IsFlag((.)this.Ptr);
+	}
+	public bool IsScoped()
+	{
+		return CQt.QMetaEnum_IsScoped((.)this.Ptr);
+	}
+	public c_int KeyCount()
+	{
+		return CQt.QMetaEnum_KeyCount((.)this.Ptr);
+	}
+	public c_char* Key(c_int index)
+	{
+		return CQt.QMetaEnum_Key((.)this.Ptr, index);
+	}
+	public c_int Value(c_int index)
+	{
+		return CQt.QMetaEnum_Value((.)this.Ptr, index);
+	}
+	public c_char* Scope()
+	{
+		return CQt.QMetaEnum_Scope((.)this.Ptr);
+	}
+	public c_int KeyToValue(c_char* key)
+	{
+		return CQt.QMetaEnum_KeyToValue((.)this.Ptr, key);
+	}
+	public c_char* ValueToKey(c_int value)
+	{
+		return CQt.QMetaEnum_ValueToKey((.)this.Ptr, value);
+	}
+	public c_int KeysToValue(c_char* keys)
+	{
+		return CQt.QMetaEnum_KeysToValue((.)this.Ptr, keys);
+	}
+	public void* ValueToKeys(c_int value)
+	{
+		return CQt.QMetaEnum_ValueToKeys((.)this.Ptr, value);
+	}
+	public QMetaObject_Ptr EnclosingMetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QMetaEnum_EnclosingMetaObject((.)this.Ptr));
+	}
+	public bool IsValid()
+	{
+		return CQt.QMetaEnum_IsValid((.)this.Ptr);
+	}
+	public c_int KeyToValue2(c_char* key, bool* ok)
+	{
+		return CQt.QMetaEnum_KeyToValue2((.)this.Ptr, key, ok);
+	}
+	public c_int KeysToValue2(c_char* keys, bool* ok)
+	{
+		return CQt.QMetaEnum_KeysToValue2((.)this.Ptr, keys, ok);
+	}
+}
+class QMetaEnum : IQMetaEnum
+{
+	private QMetaEnum_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QMetaEnum_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQMetaEnum other)
+	{
+		this.ptr = CQt.QMetaEnum_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QMetaEnum_new3();
+	}
+	public ~this()
+	{
+		CQt.QMetaEnum_Delete(this.ptr);
+	}
+	public c_char* Name()
+	{
+		return this.ptr.Name();
+	}
+	public c_char* EnumName()
+	{
+		return this.ptr.EnumName();
+	}
+	public bool IsFlag()
+	{
+		return this.ptr.IsFlag();
+	}
+	public bool IsScoped()
+	{
+		return this.ptr.IsScoped();
+	}
+	public c_int KeyCount()
+	{
+		return this.ptr.KeyCount();
+	}
+	public c_char* Key(c_int index)
+	{
+		return this.ptr.Key(index);
+	}
+	public c_int Value(c_int index)
+	{
+		return this.ptr.Value(index);
+	}
+	public c_char* Scope()
+	{
+		return this.ptr.Scope();
+	}
+	public c_int KeyToValue(c_char* key)
+	{
+		return this.ptr.KeyToValue(key);
+	}
+	public c_char* ValueToKey(c_int value)
+	{
+		return this.ptr.ValueToKey(value);
+	}
+	public c_int KeysToValue(c_char* keys)
+	{
+		return this.ptr.KeysToValue(keys);
+	}
+	public void* ValueToKeys(c_int value)
+	{
+		return this.ptr.ValueToKeys(value);
+	}
+	public QMetaObject_Ptr EnclosingMetaObject()
+	{
+		return this.ptr.EnclosingMetaObject();
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public c_int KeyToValue2(c_char* key, bool* ok)
+	{
+		return this.ptr.KeyToValue2(key, ok);
+	}
+	public c_int KeysToValue2(c_char* keys, bool* ok)
+	{
+		return this.ptr.KeysToValue2(keys, ok);
+	}
+}
+interface IQMetaEnum : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -637,94 +1141,6 @@ extension CQt
 	[LinkName("QMetaEnum_KeysToValue2")]
 	public static extern c_int QMetaEnum_KeysToValue2(void* self, c_char* keys, bool* ok);
 }
-class QMetaEnum : IQMetaEnum
-{
-	private QMetaEnum_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QMetaEnum_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQMetaEnum other)
-	{
-		this.ptr = CQt.QMetaEnum_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QMetaEnum_new3();
-	}
-	public ~this()
-	{
-		CQt.QMetaEnum_Delete(this.ptr);
-	}
-	public c_char* Name()
-	{
-		return CQt.QMetaEnum_Name((.)this.ptr.Ptr);
-	}
-	public c_char* EnumName()
-	{
-		return CQt.QMetaEnum_EnumName((.)this.ptr.Ptr);
-	}
-	public bool IsFlag()
-	{
-		return CQt.QMetaEnum_IsFlag((.)this.ptr.Ptr);
-	}
-	public bool IsScoped()
-	{
-		return CQt.QMetaEnum_IsScoped((.)this.ptr.Ptr);
-	}
-	public c_int KeyCount()
-	{
-		return CQt.QMetaEnum_KeyCount((.)this.ptr.Ptr);
-	}
-	public c_char* Key(c_int index)
-	{
-		return CQt.QMetaEnum_Key((.)this.ptr.Ptr, index);
-	}
-	public c_int Value(c_int index)
-	{
-		return CQt.QMetaEnum_Value((.)this.ptr.Ptr, index);
-	}
-	public c_char* Scope()
-	{
-		return CQt.QMetaEnum_Scope((.)this.ptr.Ptr);
-	}
-	public c_int KeyToValue(c_char* key)
-	{
-		return CQt.QMetaEnum_KeyToValue((.)this.ptr.Ptr, key);
-	}
-	public c_char* ValueToKey(c_int value)
-	{
-		return CQt.QMetaEnum_ValueToKey((.)this.ptr.Ptr, value);
-	}
-	public c_int KeysToValue(c_char* keys)
-	{
-		return CQt.QMetaEnum_KeysToValue((.)this.ptr.Ptr, keys);
-	}
-	public void* ValueToKeys(c_int value)
-	{
-		return CQt.QMetaEnum_ValueToKeys((.)this.ptr.Ptr, value);
-	}
-	public QMetaObject_Ptr EnclosingMetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QMetaEnum_EnclosingMetaObject((.)this.ptr.Ptr));
-	}
-	public bool IsValid()
-	{
-		return CQt.QMetaEnum_IsValid((.)this.ptr.Ptr);
-	}
-	public c_int KeyToValue2(c_char* key, bool* ok)
-	{
-		return CQt.QMetaEnum_KeyToValue2((.)this.ptr.Ptr, key, ok);
-	}
-	public c_int KeysToValue2(c_char* keys, bool* ok)
-	{
-		return CQt.QMetaEnum_KeysToValue2((.)this.ptr.Ptr, keys, ok);
-	}
-}
-interface IQMetaEnum : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QMetaProperty
 // --------------------------------------------------------------
@@ -736,6 +1152,326 @@ struct QMetaProperty_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public c_char* Name()
+	{
+		return CQt.QMetaProperty_Name((.)this.Ptr);
+	}
+	public c_char* TypeName()
+	{
+		return CQt.QMetaProperty_TypeName((.)this.Ptr);
+	}
+	public QVariant_Type Type()
+	{
+		return CQt.QMetaProperty_Type((.)this.Ptr);
+	}
+	public c_int UserType()
+	{
+		return CQt.QMetaProperty_UserType((.)this.Ptr);
+	}
+	public c_int TypeId()
+	{
+		return CQt.QMetaProperty_TypeId((.)this.Ptr);
+	}
+	public QMetaType_Ptr MetaType()
+	{
+		return QMetaType_Ptr(CQt.QMetaProperty_MetaType((.)this.Ptr));
+	}
+	public c_int PropertyIndex()
+	{
+		return CQt.QMetaProperty_PropertyIndex((.)this.Ptr);
+	}
+	public c_int RelativePropertyIndex()
+	{
+		return CQt.QMetaProperty_RelativePropertyIndex((.)this.Ptr);
+	}
+	public bool IsReadable()
+	{
+		return CQt.QMetaProperty_IsReadable((.)this.Ptr);
+	}
+	public bool IsWritable()
+	{
+		return CQt.QMetaProperty_IsWritable((.)this.Ptr);
+	}
+	public bool IsResettable()
+	{
+		return CQt.QMetaProperty_IsResettable((.)this.Ptr);
+	}
+	public bool IsDesignable()
+	{
+		return CQt.QMetaProperty_IsDesignable((.)this.Ptr);
+	}
+	public bool IsScriptable()
+	{
+		return CQt.QMetaProperty_IsScriptable((.)this.Ptr);
+	}
+	public bool IsStored()
+	{
+		return CQt.QMetaProperty_IsStored((.)this.Ptr);
+	}
+	public bool IsUser()
+	{
+		return CQt.QMetaProperty_IsUser((.)this.Ptr);
+	}
+	public bool IsConstant()
+	{
+		return CQt.QMetaProperty_IsConstant((.)this.Ptr);
+	}
+	public bool IsFinal()
+	{
+		return CQt.QMetaProperty_IsFinal((.)this.Ptr);
+	}
+	public bool IsRequired()
+	{
+		return CQt.QMetaProperty_IsRequired((.)this.Ptr);
+	}
+	public bool IsBindable()
+	{
+		return CQt.QMetaProperty_IsBindable((.)this.Ptr);
+	}
+	public bool IsFlagType()
+	{
+		return CQt.QMetaProperty_IsFlagType((.)this.Ptr);
+	}
+	public bool IsEnumType()
+	{
+		return CQt.QMetaProperty_IsEnumType((.)this.Ptr);
+	}
+	public QMetaEnum_Ptr Enumerator()
+	{
+		return QMetaEnum_Ptr(CQt.QMetaProperty_Enumerator((.)this.Ptr));
+	}
+	public bool HasNotifySignal()
+	{
+		return CQt.QMetaProperty_HasNotifySignal((.)this.Ptr);
+	}
+	public QMetaMethod_Ptr NotifySignal()
+	{
+		return QMetaMethod_Ptr(CQt.QMetaProperty_NotifySignal((.)this.Ptr));
+	}
+	public c_int NotifySignalIndex()
+	{
+		return CQt.QMetaProperty_NotifySignalIndex((.)this.Ptr);
+	}
+	public c_int Revision()
+	{
+		return CQt.QMetaProperty_Revision((.)this.Ptr);
+	}
+	public QVariant_Ptr Read(IQObject obj)
+	{
+		return QVariant_Ptr(CQt.QMetaProperty_Read((.)this.Ptr, (.)obj?.ObjectPtr));
+	}
+	public bool Write(IQObject obj, IQVariant value)
+	{
+		return CQt.QMetaProperty_Write((.)this.Ptr, (.)obj?.ObjectPtr, (.)value?.ObjectPtr);
+	}
+	public bool Reset(IQObject obj)
+	{
+		return CQt.QMetaProperty_Reset((.)this.Ptr, (.)obj?.ObjectPtr);
+	}
+	public QUntypedBindable_Ptr Bindable(IQObject object)
+	{
+		return QUntypedBindable_Ptr(CQt.QMetaProperty_Bindable((.)this.Ptr, (.)object?.ObjectPtr));
+	}
+	public QVariant_Ptr ReadOnGadget(void* gadget)
+	{
+		return QVariant_Ptr(CQt.QMetaProperty_ReadOnGadget((.)this.Ptr, gadget));
+	}
+	public bool WriteOnGadget(void* gadget, IQVariant value)
+	{
+		return CQt.QMetaProperty_WriteOnGadget((.)this.Ptr, gadget, (.)value?.ObjectPtr);
+	}
+	public bool ResetOnGadget(void* gadget)
+	{
+		return CQt.QMetaProperty_ResetOnGadget((.)this.Ptr, gadget);
+	}
+	public bool HasStdCppSet()
+	{
+		return CQt.QMetaProperty_HasStdCppSet((.)this.Ptr);
+	}
+	public bool IsAlias()
+	{
+		return CQt.QMetaProperty_IsAlias((.)this.Ptr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QMetaProperty_IsValid((.)this.Ptr);
+	}
+	public QMetaObject_Ptr EnclosingMetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QMetaProperty_EnclosingMetaObject((.)this.Ptr));
+	}
+}
+class QMetaProperty : IQMetaProperty
+{
+	private QMetaProperty_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QMetaProperty_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQMetaProperty other)
+	{
+		this.ptr = CQt.QMetaProperty_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QMetaProperty_new3();
+	}
+	public ~this()
+	{
+		CQt.QMetaProperty_Delete(this.ptr);
+	}
+	public c_char* Name()
+	{
+		return this.ptr.Name();
+	}
+	public c_char* TypeName()
+	{
+		return this.ptr.TypeName();
+	}
+	public QVariant_Type Type()
+	{
+		return this.ptr.Type();
+	}
+	public c_int UserType()
+	{
+		return this.ptr.UserType();
+	}
+	public c_int TypeId()
+	{
+		return this.ptr.TypeId();
+	}
+	public QMetaType_Ptr MetaType()
+	{
+		return this.ptr.MetaType();
+	}
+	public c_int PropertyIndex()
+	{
+		return this.ptr.PropertyIndex();
+	}
+	public c_int RelativePropertyIndex()
+	{
+		return this.ptr.RelativePropertyIndex();
+	}
+	public bool IsReadable()
+	{
+		return this.ptr.IsReadable();
+	}
+	public bool IsWritable()
+	{
+		return this.ptr.IsWritable();
+	}
+	public bool IsResettable()
+	{
+		return this.ptr.IsResettable();
+	}
+	public bool IsDesignable()
+	{
+		return this.ptr.IsDesignable();
+	}
+	public bool IsScriptable()
+	{
+		return this.ptr.IsScriptable();
+	}
+	public bool IsStored()
+	{
+		return this.ptr.IsStored();
+	}
+	public bool IsUser()
+	{
+		return this.ptr.IsUser();
+	}
+	public bool IsConstant()
+	{
+		return this.ptr.IsConstant();
+	}
+	public bool IsFinal()
+	{
+		return this.ptr.IsFinal();
+	}
+	public bool IsRequired()
+	{
+		return this.ptr.IsRequired();
+	}
+	public bool IsBindable()
+	{
+		return this.ptr.IsBindable();
+	}
+	public bool IsFlagType()
+	{
+		return this.ptr.IsFlagType();
+	}
+	public bool IsEnumType()
+	{
+		return this.ptr.IsEnumType();
+	}
+	public QMetaEnum_Ptr Enumerator()
+	{
+		return this.ptr.Enumerator();
+	}
+	public bool HasNotifySignal()
+	{
+		return this.ptr.HasNotifySignal();
+	}
+	public QMetaMethod_Ptr NotifySignal()
+	{
+		return this.ptr.NotifySignal();
+	}
+	public c_int NotifySignalIndex()
+	{
+		return this.ptr.NotifySignalIndex();
+	}
+	public c_int Revision()
+	{
+		return this.ptr.Revision();
+	}
+	public QVariant_Ptr Read(IQObject obj)
+	{
+		return this.ptr.Read(obj);
+	}
+	public bool Write(IQObject obj, IQVariant value)
+	{
+		return this.ptr.Write(obj, value);
+	}
+	public bool Reset(IQObject obj)
+	{
+		return this.ptr.Reset(obj);
+	}
+	public QUntypedBindable_Ptr Bindable(IQObject object)
+	{
+		return this.ptr.Bindable(object);
+	}
+	public QVariant_Ptr ReadOnGadget(void* gadget)
+	{
+		return this.ptr.ReadOnGadget(gadget);
+	}
+	public bool WriteOnGadget(void* gadget, IQVariant value)
+	{
+		return this.ptr.WriteOnGadget(gadget, value);
+	}
+	public bool ResetOnGadget(void* gadget)
+	{
+		return this.ptr.ResetOnGadget(gadget);
+	}
+	public bool HasStdCppSet()
+	{
+		return this.ptr.HasStdCppSet();
+	}
+	public bool IsAlias()
+	{
+		return this.ptr.IsAlias();
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public QMetaObject_Ptr EnclosingMetaObject()
+	{
+		return this.ptr.EnclosingMetaObject();
+	}
+}
+interface IQMetaProperty : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -822,178 +1558,6 @@ extension CQt
 	[LinkName("QMetaProperty_EnclosingMetaObject")]
 	public static extern void** QMetaProperty_EnclosingMetaObject(void* self);
 }
-class QMetaProperty : IQMetaProperty
-{
-	private QMetaProperty_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QMetaProperty_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQMetaProperty other)
-	{
-		this.ptr = CQt.QMetaProperty_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QMetaProperty_new3();
-	}
-	public ~this()
-	{
-		CQt.QMetaProperty_Delete(this.ptr);
-	}
-	public c_char* Name()
-	{
-		return CQt.QMetaProperty_Name((.)this.ptr.Ptr);
-	}
-	public c_char* TypeName()
-	{
-		return CQt.QMetaProperty_TypeName((.)this.ptr.Ptr);
-	}
-	public QVariant_Type Type()
-	{
-		return CQt.QMetaProperty_Type((.)this.ptr.Ptr);
-	}
-	public c_int UserType()
-	{
-		return CQt.QMetaProperty_UserType((.)this.ptr.Ptr);
-	}
-	public c_int TypeId()
-	{
-		return CQt.QMetaProperty_TypeId((.)this.ptr.Ptr);
-	}
-	public QMetaType_Ptr MetaType()
-	{
-		return QMetaType_Ptr(CQt.QMetaProperty_MetaType((.)this.ptr.Ptr));
-	}
-	public c_int PropertyIndex()
-	{
-		return CQt.QMetaProperty_PropertyIndex((.)this.ptr.Ptr);
-	}
-	public c_int RelativePropertyIndex()
-	{
-		return CQt.QMetaProperty_RelativePropertyIndex((.)this.ptr.Ptr);
-	}
-	public bool IsReadable()
-	{
-		return CQt.QMetaProperty_IsReadable((.)this.ptr.Ptr);
-	}
-	public bool IsWritable()
-	{
-		return CQt.QMetaProperty_IsWritable((.)this.ptr.Ptr);
-	}
-	public bool IsResettable()
-	{
-		return CQt.QMetaProperty_IsResettable((.)this.ptr.Ptr);
-	}
-	public bool IsDesignable()
-	{
-		return CQt.QMetaProperty_IsDesignable((.)this.ptr.Ptr);
-	}
-	public bool IsScriptable()
-	{
-		return CQt.QMetaProperty_IsScriptable((.)this.ptr.Ptr);
-	}
-	public bool IsStored()
-	{
-		return CQt.QMetaProperty_IsStored((.)this.ptr.Ptr);
-	}
-	public bool IsUser()
-	{
-		return CQt.QMetaProperty_IsUser((.)this.ptr.Ptr);
-	}
-	public bool IsConstant()
-	{
-		return CQt.QMetaProperty_IsConstant((.)this.ptr.Ptr);
-	}
-	public bool IsFinal()
-	{
-		return CQt.QMetaProperty_IsFinal((.)this.ptr.Ptr);
-	}
-	public bool IsRequired()
-	{
-		return CQt.QMetaProperty_IsRequired((.)this.ptr.Ptr);
-	}
-	public bool IsBindable()
-	{
-		return CQt.QMetaProperty_IsBindable((.)this.ptr.Ptr);
-	}
-	public bool IsFlagType()
-	{
-		return CQt.QMetaProperty_IsFlagType((.)this.ptr.Ptr);
-	}
-	public bool IsEnumType()
-	{
-		return CQt.QMetaProperty_IsEnumType((.)this.ptr.Ptr);
-	}
-	public QMetaEnum_Ptr Enumerator()
-	{
-		return QMetaEnum_Ptr(CQt.QMetaProperty_Enumerator((.)this.ptr.Ptr));
-	}
-	public bool HasNotifySignal()
-	{
-		return CQt.QMetaProperty_HasNotifySignal((.)this.ptr.Ptr);
-	}
-	public QMetaMethod_Ptr NotifySignal()
-	{
-		return QMetaMethod_Ptr(CQt.QMetaProperty_NotifySignal((.)this.ptr.Ptr));
-	}
-	public c_int NotifySignalIndex()
-	{
-		return CQt.QMetaProperty_NotifySignalIndex((.)this.ptr.Ptr);
-	}
-	public c_int Revision()
-	{
-		return CQt.QMetaProperty_Revision((.)this.ptr.Ptr);
-	}
-	public QVariant_Ptr Read(IQObject obj)
-	{
-		return QVariant_Ptr(CQt.QMetaProperty_Read((.)this.ptr.Ptr, (.)obj?.ObjectPtr));
-	}
-	public bool Write(IQObject obj, IQVariant value)
-	{
-		return CQt.QMetaProperty_Write((.)this.ptr.Ptr, (.)obj?.ObjectPtr, (.)value?.ObjectPtr);
-	}
-	public bool Reset(IQObject obj)
-	{
-		return CQt.QMetaProperty_Reset((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
-	}
-	public QUntypedBindable_Ptr Bindable(IQObject object)
-	{
-		return QUntypedBindable_Ptr(CQt.QMetaProperty_Bindable((.)this.ptr.Ptr, (.)object?.ObjectPtr));
-	}
-	public QVariant_Ptr ReadOnGadget(void* gadget)
-	{
-		return QVariant_Ptr(CQt.QMetaProperty_ReadOnGadget((.)this.ptr.Ptr, gadget));
-	}
-	public bool WriteOnGadget(void* gadget, IQVariant value)
-	{
-		return CQt.QMetaProperty_WriteOnGadget((.)this.ptr.Ptr, gadget, (.)value?.ObjectPtr);
-	}
-	public bool ResetOnGadget(void* gadget)
-	{
-		return CQt.QMetaProperty_ResetOnGadget((.)this.ptr.Ptr, gadget);
-	}
-	public bool HasStdCppSet()
-	{
-		return CQt.QMetaProperty_HasStdCppSet((.)this.ptr.Ptr);
-	}
-	public bool IsAlias()
-	{
-		return CQt.QMetaProperty_IsAlias((.)this.ptr.Ptr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QMetaProperty_IsValid((.)this.ptr.Ptr);
-	}
-	public QMetaObject_Ptr EnclosingMetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QMetaProperty_EnclosingMetaObject((.)this.ptr.Ptr));
-	}
-}
-interface IQMetaProperty : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QMetaClassInfo
 // --------------------------------------------------------------
@@ -1005,23 +1569,18 @@ struct QMetaClassInfo_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QMetaClassInfo_new")]
-	public static extern QMetaClassInfo_Ptr QMetaClassInfo_new(void** other);
-	[LinkName("QMetaClassInfo_new2")]
-	public static extern QMetaClassInfo_Ptr QMetaClassInfo_new2(void** other);
-	[LinkName("QMetaClassInfo_new3")]
-	public static extern QMetaClassInfo_Ptr QMetaClassInfo_new3();
-	[LinkName("QMetaClassInfo_Delete")]
-	public static extern void QMetaClassInfo_Delete(QMetaClassInfo_Ptr self);
-	[LinkName("QMetaClassInfo_Name")]
-	public static extern c_char* QMetaClassInfo_Name(void* self);
-	[LinkName("QMetaClassInfo_Value")]
-	public static extern c_char* QMetaClassInfo_Value(void* self);
-	[LinkName("QMetaClassInfo_EnclosingMetaObject")]
-	public static extern void** QMetaClassInfo_EnclosingMetaObject(void* self);
+	public c_char* Name()
+	{
+		return CQt.QMetaClassInfo_Name((.)this.Ptr);
+	}
+	public c_char* Value()
+	{
+		return CQt.QMetaClassInfo_Value((.)this.Ptr);
+	}
+	public QMetaObject_Ptr EnclosingMetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QMetaClassInfo_EnclosingMetaObject((.)this.Ptr));
+	}
 }
 class QMetaClassInfo : IQMetaClassInfo
 {
@@ -1045,19 +1604,36 @@ class QMetaClassInfo : IQMetaClassInfo
 	}
 	public c_char* Name()
 	{
-		return CQt.QMetaClassInfo_Name((.)this.ptr.Ptr);
+		return this.ptr.Name();
 	}
 	public c_char* Value()
 	{
-		return CQt.QMetaClassInfo_Value((.)this.ptr.Ptr);
+		return this.ptr.Value();
 	}
 	public QMetaObject_Ptr EnclosingMetaObject()
 	{
-		return QMetaObject_Ptr(CQt.QMetaClassInfo_EnclosingMetaObject((.)this.ptr.Ptr));
+		return this.ptr.EnclosingMetaObject();
 	}
 }
 interface IQMetaClassInfo : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QMetaClassInfo_new")]
+	public static extern QMetaClassInfo_Ptr QMetaClassInfo_new(void** other);
+	[LinkName("QMetaClassInfo_new2")]
+	public static extern QMetaClassInfo_Ptr QMetaClassInfo_new2(void** other);
+	[LinkName("QMetaClassInfo_new3")]
+	public static extern QMetaClassInfo_Ptr QMetaClassInfo_new3();
+	[LinkName("QMetaClassInfo_Delete")]
+	public static extern void QMetaClassInfo_Delete(QMetaClassInfo_Ptr self);
+	[LinkName("QMetaClassInfo_Name")]
+	public static extern c_char* QMetaClassInfo_Name(void* self);
+	[LinkName("QMetaClassInfo_Value")]
+	public static extern c_char* QMetaClassInfo_Value(void* self);
+	[LinkName("QMetaClassInfo_EnclosingMetaObject")]
+	public static extern void** QMetaClassInfo_EnclosingMetaObject(void* self);
 }
 [AllowDuplicates]
 enum QMetaMethod_Access

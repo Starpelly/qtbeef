@@ -15,11 +15,6 @@ struct QIODeviceBase_Ptr
 		this.Ptr = ptr;
 	}
 }
-extension CQt
-{
-	[LinkName("QIODeviceBase_new")]
-	public static extern QIODeviceBase_Ptr QIODeviceBase_new(void** other);
-}
 class QIODeviceBase : IQIODeviceBase
 {
 	private QIODeviceBase_Ptr ptr;
@@ -35,6 +30,11 @@ class QIODeviceBase : IQIODeviceBase
 }
 interface IQIODeviceBase : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QIODeviceBase_new")]
+	public static extern QIODeviceBase_Ptr QIODeviceBase_new(void** other);
 }
 [AllowDuplicates]
 enum QIODeviceBase_OpenModeFlag

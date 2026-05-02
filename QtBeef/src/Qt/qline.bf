@@ -14,6 +14,190 @@ struct QLine_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public bool IsNull()
+	{
+		return CQt.QLine_IsNull((.)this.Ptr);
+	}
+	public QPoint_Ptr P1()
+	{
+		return QPoint_Ptr(CQt.QLine_P1((.)this.Ptr));
+	}
+	public QPoint_Ptr P2()
+	{
+		return QPoint_Ptr(CQt.QLine_P2((.)this.Ptr));
+	}
+	public c_int X1()
+	{
+		return CQt.QLine_X1((.)this.Ptr);
+	}
+	public c_int Y1()
+	{
+		return CQt.QLine_Y1((.)this.Ptr);
+	}
+	public c_int X2()
+	{
+		return CQt.QLine_X2((.)this.Ptr);
+	}
+	public c_int Y2()
+	{
+		return CQt.QLine_Y2((.)this.Ptr);
+	}
+	public c_int Dx()
+	{
+		return CQt.QLine_Dx((.)this.Ptr);
+	}
+	public c_int Dy()
+	{
+		return CQt.QLine_Dy((.)this.Ptr);
+	}
+	public void Translate(IQPoint p)
+	{
+		CQt.QLine_Translate((.)this.Ptr, (.)p?.ObjectPtr);
+	}
+	public void Translate2(c_int dx, c_int dy)
+	{
+		CQt.QLine_Translate2((.)this.Ptr, dx, dy);
+	}
+	public QLine_Ptr Translated(IQPoint p)
+	{
+		return QLine_Ptr(CQt.QLine_Translated((.)this.Ptr, (.)p?.ObjectPtr));
+	}
+	public QLine_Ptr Translated2(c_int dx, c_int dy)
+	{
+		return QLine_Ptr(CQt.QLine_Translated2((.)this.Ptr, dx, dy));
+	}
+	public QPoint_Ptr Center()
+	{
+		return QPoint_Ptr(CQt.QLine_Center((.)this.Ptr));
+	}
+	public void SetP1(IQPoint p1)
+	{
+		CQt.QLine_SetP1((.)this.Ptr, (.)p1?.ObjectPtr);
+	}
+	public void SetP2(IQPoint p2)
+	{
+		CQt.QLine_SetP2((.)this.Ptr, (.)p2?.ObjectPtr);
+	}
+	public void SetPoints(IQPoint p1, IQPoint p2)
+	{
+		CQt.QLine_SetPoints((.)this.Ptr, (.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
+	}
+	public void SetLine(c_int x1, c_int y1, c_int x2, c_int y2)
+	{
+		CQt.QLine_SetLine((.)this.Ptr, x1, y1, x2, y2);
+	}
+	public QLineF_Ptr ToLineF()
+	{
+		return QLineF_Ptr(CQt.QLine_ToLineF((.)this.Ptr));
+	}
+}
+class QLine : IQLine
+{
+	private QLine_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLine_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQLine other)
+	{
+		this.ptr = CQt.QLine_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QLine_new3();
+	}
+	public this(IQPoint pt1, IQPoint pt2)
+	{
+		this.ptr = CQt.QLine_new4((.)pt1?.ObjectPtr, (.)pt2?.ObjectPtr);
+	}
+	public this(c_int x1, c_int y1, c_int x2, c_int y2)
+	{
+		this.ptr = CQt.QLine_new5(x1, y1, x2, y2);
+	}
+	public ~this()
+	{
+		CQt.QLine_Delete(this.ptr);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public QPoint_Ptr P1()
+	{
+		return this.ptr.P1();
+	}
+	public QPoint_Ptr P2()
+	{
+		return this.ptr.P2();
+	}
+	public c_int X1()
+	{
+		return this.ptr.X1();
+	}
+	public c_int Y1()
+	{
+		return this.ptr.Y1();
+	}
+	public c_int X2()
+	{
+		return this.ptr.X2();
+	}
+	public c_int Y2()
+	{
+		return this.ptr.Y2();
+	}
+	public c_int Dx()
+	{
+		return this.ptr.Dx();
+	}
+	public c_int Dy()
+	{
+		return this.ptr.Dy();
+	}
+	public void Translate(IQPoint p)
+	{
+		this.ptr.Translate(p);
+	}
+	public void Translate2(c_int dx, c_int dy)
+	{
+		this.ptr.Translate2(dx, dy);
+	}
+	public QLine_Ptr Translated(IQPoint p)
+	{
+		return this.ptr.Translated(p);
+	}
+	public QLine_Ptr Translated2(c_int dx, c_int dy)
+	{
+		return this.ptr.Translated2(dx, dy);
+	}
+	public QPoint_Ptr Center()
+	{
+		return this.ptr.Center();
+	}
+	public void SetP1(IQPoint p1)
+	{
+		this.ptr.SetP1(p1);
+	}
+	public void SetP2(IQPoint p2)
+	{
+		this.ptr.SetP2(p2);
+	}
+	public void SetPoints(IQPoint p1, IQPoint p2)
+	{
+		this.ptr.SetPoints(p1, p2);
+	}
+	public void SetLine(c_int x1, c_int y1, c_int x2, c_int y2)
+	{
+		this.ptr.SetLine(x1, y1, x2, y2);
+	}
+	public QLineF_Ptr ToLineF()
+	{
+		return this.ptr.ToLineF();
+	}
+}
+interface IQLine : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -74,114 +258,6 @@ extension CQt
 	[LinkName("QLine_ToLineF")]
 	public static extern void* QLine_ToLineF(void* self);
 }
-class QLine : IQLine
-{
-	private QLine_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QLine_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQLine other)
-	{
-		this.ptr = CQt.QLine_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QLine_new3();
-	}
-	public this(IQPoint pt1, IQPoint pt2)
-	{
-		this.ptr = CQt.QLine_new4((.)pt1?.ObjectPtr, (.)pt2?.ObjectPtr);
-	}
-	public this(c_int x1, c_int y1, c_int x2, c_int y2)
-	{
-		this.ptr = CQt.QLine_new5(x1, y1, x2, y2);
-	}
-	public ~this()
-	{
-		CQt.QLine_Delete(this.ptr);
-	}
-	public bool IsNull()
-	{
-		return CQt.QLine_IsNull((.)this.ptr.Ptr);
-	}
-	public QPoint_Ptr P1()
-	{
-		return QPoint_Ptr(CQt.QLine_P1((.)this.ptr.Ptr));
-	}
-	public QPoint_Ptr P2()
-	{
-		return QPoint_Ptr(CQt.QLine_P2((.)this.ptr.Ptr));
-	}
-	public c_int X1()
-	{
-		return CQt.QLine_X1((.)this.ptr.Ptr);
-	}
-	public c_int Y1()
-	{
-		return CQt.QLine_Y1((.)this.ptr.Ptr);
-	}
-	public c_int X2()
-	{
-		return CQt.QLine_X2((.)this.ptr.Ptr);
-	}
-	public c_int Y2()
-	{
-		return CQt.QLine_Y2((.)this.ptr.Ptr);
-	}
-	public c_int Dx()
-	{
-		return CQt.QLine_Dx((.)this.ptr.Ptr);
-	}
-	public c_int Dy()
-	{
-		return CQt.QLine_Dy((.)this.ptr.Ptr);
-	}
-	public void Translate(IQPoint p)
-	{
-		CQt.QLine_Translate((.)this.ptr.Ptr, (.)p?.ObjectPtr);
-	}
-	public void Translate2(c_int dx, c_int dy)
-	{
-		CQt.QLine_Translate2((.)this.ptr.Ptr, dx, dy);
-	}
-	public QLine_Ptr Translated(IQPoint p)
-	{
-		return QLine_Ptr(CQt.QLine_Translated((.)this.ptr.Ptr, (.)p?.ObjectPtr));
-	}
-	public QLine_Ptr Translated2(c_int dx, c_int dy)
-	{
-		return QLine_Ptr(CQt.QLine_Translated2((.)this.ptr.Ptr, dx, dy));
-	}
-	public QPoint_Ptr Center()
-	{
-		return QPoint_Ptr(CQt.QLine_Center((.)this.ptr.Ptr));
-	}
-	public void SetP1(IQPoint p1)
-	{
-		CQt.QLine_SetP1((.)this.ptr.Ptr, (.)p1?.ObjectPtr);
-	}
-	public void SetP2(IQPoint p2)
-	{
-		CQt.QLine_SetP2((.)this.ptr.Ptr, (.)p2?.ObjectPtr);
-	}
-	public void SetPoints(IQPoint p1, IQPoint p2)
-	{
-		CQt.QLine_SetPoints((.)this.ptr.Ptr, (.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
-	}
-	public void SetLine(c_int x1, c_int y1, c_int x2, c_int y2)
-	{
-		CQt.QLine_SetLine((.)this.ptr.Ptr, x1, y1, x2, y2);
-	}
-	public QLineF_Ptr ToLineF()
-	{
-		return QLineF_Ptr(CQt.QLine_ToLineF((.)this.ptr.Ptr));
-	}
-}
-interface IQLine : IQtObjectInterface
-{
-}
 // --------------------------------------------------------------
 // QLineF
 // --------------------------------------------------------------
@@ -193,6 +269,282 @@ struct QLineF_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public QLineF_Ptr FromPolar(double length, double angle)
+	{
+		return QLineF_Ptr(CQt.QLineF_FromPolar(length, angle));
+	}
+	public bool IsNull()
+	{
+		return CQt.QLineF_IsNull((.)this.Ptr);
+	}
+	public QPointF_Ptr P1()
+	{
+		return QPointF_Ptr(CQt.QLineF_P1((.)this.Ptr));
+	}
+	public QPointF_Ptr P2()
+	{
+		return QPointF_Ptr(CQt.QLineF_P2((.)this.Ptr));
+	}
+	public double X1()
+	{
+		return CQt.QLineF_X1((.)this.Ptr);
+	}
+	public double Y1()
+	{
+		return CQt.QLineF_Y1((.)this.Ptr);
+	}
+	public double X2()
+	{
+		return CQt.QLineF_X2((.)this.Ptr);
+	}
+	public double Y2()
+	{
+		return CQt.QLineF_Y2((.)this.Ptr);
+	}
+	public double Dx()
+	{
+		return CQt.QLineF_Dx((.)this.Ptr);
+	}
+	public double Dy()
+	{
+		return CQt.QLineF_Dy((.)this.Ptr);
+	}
+	public double Length()
+	{
+		return CQt.QLineF_Length((.)this.Ptr);
+	}
+	public void SetLength(double lenVal)
+	{
+		CQt.QLineF_SetLength((.)this.Ptr, lenVal);
+	}
+	public double Angle()
+	{
+		return CQt.QLineF_Angle((.)this.Ptr);
+	}
+	public void SetAngle(double angle)
+	{
+		CQt.QLineF_SetAngle((.)this.Ptr, angle);
+	}
+	public double AngleTo(IQLineF l)
+	{
+		return CQt.QLineF_AngleTo((.)this.Ptr, (.)l?.ObjectPtr);
+	}
+	public QLineF_Ptr UnitVector()
+	{
+		return QLineF_Ptr(CQt.QLineF_UnitVector((.)this.Ptr));
+	}
+	public QLineF_Ptr NormalVector()
+	{
+		return QLineF_Ptr(CQt.QLineF_NormalVector((.)this.Ptr));
+	}
+	public QLineF_IntersectionType Intersects(IQLineF l)
+	{
+		return CQt.QLineF_Intersects((.)this.Ptr, (.)l?.ObjectPtr);
+	}
+	public QPointF_Ptr PointAt(double t)
+	{
+		return QPointF_Ptr(CQt.QLineF_PointAt((.)this.Ptr, t));
+	}
+	public void Translate(IQPointF p)
+	{
+		CQt.QLineF_Translate((.)this.Ptr, (.)p?.ObjectPtr);
+	}
+	public void Translate2(double dx, double dy)
+	{
+		CQt.QLineF_Translate2((.)this.Ptr, dx, dy);
+	}
+	public QLineF_Ptr Translated(IQPointF p)
+	{
+		return QLineF_Ptr(CQt.QLineF_Translated((.)this.Ptr, (.)p?.ObjectPtr));
+	}
+	public QLineF_Ptr Translated2(double dx, double dy)
+	{
+		return QLineF_Ptr(CQt.QLineF_Translated2((.)this.Ptr, dx, dy));
+	}
+	public QPointF_Ptr Center()
+	{
+		return QPointF_Ptr(CQt.QLineF_Center((.)this.Ptr));
+	}
+	public void SetP1(IQPointF p1)
+	{
+		CQt.QLineF_SetP1((.)this.Ptr, (.)p1?.ObjectPtr);
+	}
+	public void SetP2(IQPointF p2)
+	{
+		CQt.QLineF_SetP2((.)this.Ptr, (.)p2?.ObjectPtr);
+	}
+	public void SetPoints(IQPointF p1, IQPointF p2)
+	{
+		CQt.QLineF_SetPoints((.)this.Ptr, (.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
+	}
+	public void SetLine(double x1, double y1, double x2, double y2)
+	{
+		CQt.QLineF_SetLine((.)this.Ptr, x1, y1, x2, y2);
+	}
+	public QLine_Ptr ToLine()
+	{
+		return QLine_Ptr(CQt.QLineF_ToLine((.)this.Ptr));
+	}
+	public QLineF_IntersectionType Intersects2(IQLineF l, IQPointF intersectionPoint)
+	{
+		return CQt.QLineF_Intersects2((.)this.Ptr, (.)l?.ObjectPtr, (.)intersectionPoint?.ObjectPtr);
+	}
+}
+class QLineF : IQLineF
+{
+	private QLineF_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLineF_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQLineF other)
+	{
+		this.ptr = CQt.QLineF_new((.)other?.ObjectPtr);
+	}
+	public this()
+	{
+		this.ptr = CQt.QLineF_new3();
+	}
+	public this(IQPointF pt1, IQPointF pt2)
+	{
+		this.ptr = CQt.QLineF_new4((.)pt1?.ObjectPtr, (.)pt2?.ObjectPtr);
+	}
+	public this(double x1, double y1, double x2, double y2)
+	{
+		this.ptr = CQt.QLineF_new5(x1, y1, x2, y2);
+	}
+	public this(IQLine line)
+	{
+		this.ptr = CQt.QLineF_new6((.)line?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QLineF_Delete(this.ptr);
+	}
+	public QLineF_Ptr FromPolar(double length, double angle)
+	{
+		return this.ptr.FromPolar(length, angle);
+	}
+	public bool IsNull()
+	{
+		return this.ptr.IsNull();
+	}
+	public QPointF_Ptr P1()
+	{
+		return this.ptr.P1();
+	}
+	public QPointF_Ptr P2()
+	{
+		return this.ptr.P2();
+	}
+	public double X1()
+	{
+		return this.ptr.X1();
+	}
+	public double Y1()
+	{
+		return this.ptr.Y1();
+	}
+	public double X2()
+	{
+		return this.ptr.X2();
+	}
+	public double Y2()
+	{
+		return this.ptr.Y2();
+	}
+	public double Dx()
+	{
+		return this.ptr.Dx();
+	}
+	public double Dy()
+	{
+		return this.ptr.Dy();
+	}
+	public double Length()
+	{
+		return this.ptr.Length();
+	}
+	public void SetLength(double lenVal)
+	{
+		this.ptr.SetLength(lenVal);
+	}
+	public double Angle()
+	{
+		return this.ptr.Angle();
+	}
+	public void SetAngle(double angle)
+	{
+		this.ptr.SetAngle(angle);
+	}
+	public double AngleTo(IQLineF l)
+	{
+		return this.ptr.AngleTo(l);
+	}
+	public QLineF_Ptr UnitVector()
+	{
+		return this.ptr.UnitVector();
+	}
+	public QLineF_Ptr NormalVector()
+	{
+		return this.ptr.NormalVector();
+	}
+	public QLineF_IntersectionType Intersects(IQLineF l)
+	{
+		return this.ptr.Intersects(l);
+	}
+	public QPointF_Ptr PointAt(double t)
+	{
+		return this.ptr.PointAt(t);
+	}
+	public void Translate(IQPointF p)
+	{
+		this.ptr.Translate(p);
+	}
+	public void Translate2(double dx, double dy)
+	{
+		this.ptr.Translate2(dx, dy);
+	}
+	public QLineF_Ptr Translated(IQPointF p)
+	{
+		return this.ptr.Translated(p);
+	}
+	public QLineF_Ptr Translated2(double dx, double dy)
+	{
+		return this.ptr.Translated2(dx, dy);
+	}
+	public QPointF_Ptr Center()
+	{
+		return this.ptr.Center();
+	}
+	public void SetP1(IQPointF p1)
+	{
+		this.ptr.SetP1(p1);
+	}
+	public void SetP2(IQPointF p2)
+	{
+		this.ptr.SetP2(p2);
+	}
+	public void SetPoints(IQPointF p1, IQPointF p2)
+	{
+		this.ptr.SetPoints(p1, p2);
+	}
+	public void SetLine(double x1, double y1, double x2, double y2)
+	{
+		this.ptr.SetLine(x1, y1, x2, y2);
+	}
+	public QLine_Ptr ToLine()
+	{
+		return this.ptr.ToLine();
+	}
+	public QLineF_IntersectionType Intersects2(IQLineF l, IQPointF intersectionPoint)
+	{
+		return this.ptr.Intersects2(l, intersectionPoint);
+	}
+}
+interface IQLineF : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -276,162 +628,6 @@ extension CQt
 	public static extern void* QLineF_ToLine(void* self);
 	[LinkName("QLineF_Intersects2")]
 	public static extern QLineF_IntersectionType QLineF_Intersects2(void* self, void** l, void** intersectionPoint);
-}
-class QLineF : IQLineF
-{
-	private QLineF_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QLineF_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQLineF other)
-	{
-		this.ptr = CQt.QLineF_new((.)other?.ObjectPtr);
-	}
-	public this()
-	{
-		this.ptr = CQt.QLineF_new3();
-	}
-	public this(IQPointF pt1, IQPointF pt2)
-	{
-		this.ptr = CQt.QLineF_new4((.)pt1?.ObjectPtr, (.)pt2?.ObjectPtr);
-	}
-	public this(double x1, double y1, double x2, double y2)
-	{
-		this.ptr = CQt.QLineF_new5(x1, y1, x2, y2);
-	}
-	public this(IQLine line)
-	{
-		this.ptr = CQt.QLineF_new6((.)line?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QLineF_Delete(this.ptr);
-	}
-	public QLineF_Ptr FromPolar(double length, double angle)
-	{
-		return QLineF_Ptr(CQt.QLineF_FromPolar(length, angle));
-	}
-	public bool IsNull()
-	{
-		return CQt.QLineF_IsNull((.)this.ptr.Ptr);
-	}
-	public QPointF_Ptr P1()
-	{
-		return QPointF_Ptr(CQt.QLineF_P1((.)this.ptr.Ptr));
-	}
-	public QPointF_Ptr P2()
-	{
-		return QPointF_Ptr(CQt.QLineF_P2((.)this.ptr.Ptr));
-	}
-	public double X1()
-	{
-		return CQt.QLineF_X1((.)this.ptr.Ptr);
-	}
-	public double Y1()
-	{
-		return CQt.QLineF_Y1((.)this.ptr.Ptr);
-	}
-	public double X2()
-	{
-		return CQt.QLineF_X2((.)this.ptr.Ptr);
-	}
-	public double Y2()
-	{
-		return CQt.QLineF_Y2((.)this.ptr.Ptr);
-	}
-	public double Dx()
-	{
-		return CQt.QLineF_Dx((.)this.ptr.Ptr);
-	}
-	public double Dy()
-	{
-		return CQt.QLineF_Dy((.)this.ptr.Ptr);
-	}
-	public double Length()
-	{
-		return CQt.QLineF_Length((.)this.ptr.Ptr);
-	}
-	public void SetLength(double lenVal)
-	{
-		CQt.QLineF_SetLength((.)this.ptr.Ptr, lenVal);
-	}
-	public double Angle()
-	{
-		return CQt.QLineF_Angle((.)this.ptr.Ptr);
-	}
-	public void SetAngle(double angle)
-	{
-		CQt.QLineF_SetAngle((.)this.ptr.Ptr, angle);
-	}
-	public double AngleTo(IQLineF l)
-	{
-		return CQt.QLineF_AngleTo((.)this.ptr.Ptr, (.)l?.ObjectPtr);
-	}
-	public QLineF_Ptr UnitVector()
-	{
-		return QLineF_Ptr(CQt.QLineF_UnitVector((.)this.ptr.Ptr));
-	}
-	public QLineF_Ptr NormalVector()
-	{
-		return QLineF_Ptr(CQt.QLineF_NormalVector((.)this.ptr.Ptr));
-	}
-	public QLineF_IntersectionType Intersects(IQLineF l)
-	{
-		return CQt.QLineF_Intersects((.)this.ptr.Ptr, (.)l?.ObjectPtr);
-	}
-	public QPointF_Ptr PointAt(double t)
-	{
-		return QPointF_Ptr(CQt.QLineF_PointAt((.)this.ptr.Ptr, t));
-	}
-	public void Translate(IQPointF p)
-	{
-		CQt.QLineF_Translate((.)this.ptr.Ptr, (.)p?.ObjectPtr);
-	}
-	public void Translate2(double dx, double dy)
-	{
-		CQt.QLineF_Translate2((.)this.ptr.Ptr, dx, dy);
-	}
-	public QLineF_Ptr Translated(IQPointF p)
-	{
-		return QLineF_Ptr(CQt.QLineF_Translated((.)this.ptr.Ptr, (.)p?.ObjectPtr));
-	}
-	public QLineF_Ptr Translated2(double dx, double dy)
-	{
-		return QLineF_Ptr(CQt.QLineF_Translated2((.)this.ptr.Ptr, dx, dy));
-	}
-	public QPointF_Ptr Center()
-	{
-		return QPointF_Ptr(CQt.QLineF_Center((.)this.ptr.Ptr));
-	}
-	public void SetP1(IQPointF p1)
-	{
-		CQt.QLineF_SetP1((.)this.ptr.Ptr, (.)p1?.ObjectPtr);
-	}
-	public void SetP2(IQPointF p2)
-	{
-		CQt.QLineF_SetP2((.)this.ptr.Ptr, (.)p2?.ObjectPtr);
-	}
-	public void SetPoints(IQPointF p1, IQPointF p2)
-	{
-		CQt.QLineF_SetPoints((.)this.ptr.Ptr, (.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
-	}
-	public void SetLine(double x1, double y1, double x2, double y2)
-	{
-		CQt.QLineF_SetLine((.)this.ptr.Ptr, x1, y1, x2, y2);
-	}
-	public QLine_Ptr ToLine()
-	{
-		return QLine_Ptr(CQt.QLineF_ToLine((.)this.ptr.Ptr));
-	}
-	public QLineF_IntersectionType Intersects2(IQLineF l, IQPointF intersectionPoint)
-	{
-		return CQt.QLineF_Intersects2((.)this.ptr.Ptr, (.)l?.ObjectPtr, (.)intersectionPoint?.ObjectPtr);
-	}
-}
-interface IQLineF : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QLineF_IntersectionType

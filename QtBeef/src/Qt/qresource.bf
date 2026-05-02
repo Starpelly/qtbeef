@@ -14,6 +14,194 @@ struct QResource_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void SetFileName(String file)
+	{
+		CQt.QResource_SetFileName((.)this.Ptr, libqt_string(file));
+	}
+	public void FileName(String outStr)
+	{
+		CQt.QResource_FileName((.)this.Ptr);
+	}
+	public void AbsoluteFilePath(String outStr)
+	{
+		CQt.QResource_AbsoluteFilePath((.)this.Ptr);
+	}
+	public void SetLocale(IQLocale locale)
+	{
+		CQt.QResource_SetLocale((.)this.Ptr, (.)locale?.ObjectPtr);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return QLocale_Ptr(CQt.QResource_Locale((.)this.Ptr));
+	}
+	public bool IsValid()
+	{
+		return CQt.QResource_IsValid((.)this.Ptr);
+	}
+	public QResource_Compression CompressionAlgorithm()
+	{
+		return CQt.QResource_CompressionAlgorithm((.)this.Ptr);
+	}
+	public c_longlong Size()
+	{
+		return CQt.QResource_Size((.)this.Ptr);
+	}
+	public c_uchar* Data()
+	{
+		return CQt.QResource_Data((.)this.Ptr);
+	}
+	public c_longlong UncompressedSize()
+	{
+		return CQt.QResource_UncompressedSize((.)this.Ptr);
+	}
+	public void* UncompressedData()
+	{
+		return CQt.QResource_UncompressedData((.)this.Ptr);
+	}
+	public QDateTime_Ptr LastModified()
+	{
+		return QDateTime_Ptr(CQt.QResource_LastModified((.)this.Ptr));
+	}
+	public bool RegisterResource(String rccFilename)
+	{
+		return CQt.QResource_RegisterResource(libqt_string(rccFilename));
+	}
+	public bool UnregisterResource(String rccFilename)
+	{
+		return CQt.QResource_UnregisterResource(libqt_string(rccFilename));
+	}
+	public bool RegisterResource2(c_uchar* rccData)
+	{
+		return CQt.QResource_RegisterResource2(rccData);
+	}
+	public bool UnregisterResource2(c_uchar* rccData)
+	{
+		return CQt.QResource_UnregisterResource2(rccData);
+	}
+	public bool RegisterResource22(String rccFilename, String resourceRoot)
+	{
+		return CQt.QResource_RegisterResource22(libqt_string(rccFilename), libqt_string(resourceRoot));
+	}
+	public bool UnregisterResource22(String rccFilename, String resourceRoot)
+	{
+		return CQt.QResource_UnregisterResource22(libqt_string(rccFilename), libqt_string(resourceRoot));
+	}
+	public bool RegisterResource23(c_uchar* rccData, String resourceRoot)
+	{
+		return CQt.QResource_RegisterResource23(rccData, libqt_string(resourceRoot));
+	}
+	public bool UnregisterResource23(c_uchar* rccData, String resourceRoot)
+	{
+		return CQt.QResource_UnregisterResource23(rccData, libqt_string(resourceRoot));
+	}
+}
+class QResource : IQResource
+{
+	private QResource_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QResource_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QResource_new();
+	}
+	public this(String file)
+	{
+		this.ptr = CQt.QResource_new2(libqt_string(file));
+	}
+	public this(String file, IQLocale locale)
+	{
+		this.ptr = CQt.QResource_new3(libqt_string(file), (.)locale?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QResource_Delete(this.ptr);
+	}
+	public void SetFileName(String file)
+	{
+		this.ptr.SetFileName(file);
+	}
+	public void FileName(String outStr)
+	{
+		this.ptr.FileName(outStr);
+	}
+	public void AbsoluteFilePath(String outStr)
+	{
+		this.ptr.AbsoluteFilePath(outStr);
+	}
+	public void SetLocale(IQLocale locale)
+	{
+		this.ptr.SetLocale(locale);
+	}
+	public QLocale_Ptr Locale()
+	{
+		return this.ptr.Locale();
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public QResource_Compression CompressionAlgorithm()
+	{
+		return this.ptr.CompressionAlgorithm();
+	}
+	public c_longlong Size()
+	{
+		return this.ptr.Size();
+	}
+	public c_uchar* Data()
+	{
+		return this.ptr.Data();
+	}
+	public c_longlong UncompressedSize()
+	{
+		return this.ptr.UncompressedSize();
+	}
+	public void* UncompressedData()
+	{
+		return this.ptr.UncompressedData();
+	}
+	public QDateTime_Ptr LastModified()
+	{
+		return this.ptr.LastModified();
+	}
+	public bool RegisterResource(String rccFilename)
+	{
+		return this.ptr.RegisterResource(rccFilename);
+	}
+	public bool UnregisterResource(String rccFilename)
+	{
+		return this.ptr.UnregisterResource(rccFilename);
+	}
+	public bool RegisterResource2(c_uchar* rccData)
+	{
+		return this.ptr.RegisterResource2(rccData);
+	}
+	public bool UnregisterResource2(c_uchar* rccData)
+	{
+		return this.ptr.UnregisterResource2(rccData);
+	}
+	public bool RegisterResource22(String rccFilename, String resourceRoot)
+	{
+		return this.ptr.RegisterResource22(rccFilename, resourceRoot);
+	}
+	public bool UnregisterResource22(String rccFilename, String resourceRoot)
+	{
+		return this.ptr.UnregisterResource22(rccFilename, resourceRoot);
+	}
+	public bool RegisterResource23(c_uchar* rccData, String resourceRoot)
+	{
+		return this.ptr.RegisterResource23(rccData, resourceRoot);
+	}
+	public bool UnregisterResource23(c_uchar* rccData, String resourceRoot)
+	{
+		return this.ptr.UnregisterResource23(rccData, resourceRoot);
+	}
+}
+interface IQResource : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -65,114 +253,6 @@ extension CQt
 	public static extern bool QResource_RegisterResource23(c_uchar* rccData, libqt_string resourceRoot);
 	[LinkName("QResource_UnregisterResource23")]
 	public static extern bool QResource_UnregisterResource23(c_uchar* rccData, libqt_string resourceRoot);
-}
-class QResource : IQResource
-{
-	private QResource_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QResource_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QResource_new();
-	}
-	public this(String file)
-	{
-		this.ptr = CQt.QResource_new2(libqt_string(file));
-	}
-	public this(String file, IQLocale locale)
-	{
-		this.ptr = CQt.QResource_new3(libqt_string(file), (.)locale?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QResource_Delete(this.ptr);
-	}
-	public void SetFileName(String file)
-	{
-		CQt.QResource_SetFileName((.)this.ptr.Ptr, libqt_string(file));
-	}
-	public void FileName(String outStr)
-	{
-		CQt.QResource_FileName((.)this.ptr.Ptr);
-	}
-	public void AbsoluteFilePath(String outStr)
-	{
-		CQt.QResource_AbsoluteFilePath((.)this.ptr.Ptr);
-	}
-	public void SetLocale(IQLocale locale)
-	{
-		CQt.QResource_SetLocale((.)this.ptr.Ptr, (.)locale?.ObjectPtr);
-	}
-	public QLocale_Ptr Locale()
-	{
-		return QLocale_Ptr(CQt.QResource_Locale((.)this.ptr.Ptr));
-	}
-	public bool IsValid()
-	{
-		return CQt.QResource_IsValid((.)this.ptr.Ptr);
-	}
-	public QResource_Compression CompressionAlgorithm()
-	{
-		return CQt.QResource_CompressionAlgorithm((.)this.ptr.Ptr);
-	}
-	public c_longlong Size()
-	{
-		return CQt.QResource_Size((.)this.ptr.Ptr);
-	}
-	public c_uchar* Data()
-	{
-		return CQt.QResource_Data((.)this.ptr.Ptr);
-	}
-	public c_longlong UncompressedSize()
-	{
-		return CQt.QResource_UncompressedSize((.)this.ptr.Ptr);
-	}
-	public void* UncompressedData()
-	{
-		return CQt.QResource_UncompressedData((.)this.ptr.Ptr);
-	}
-	public QDateTime_Ptr LastModified()
-	{
-		return QDateTime_Ptr(CQt.QResource_LastModified((.)this.ptr.Ptr));
-	}
-	public bool RegisterResource(String rccFilename)
-	{
-		return CQt.QResource_RegisterResource(libqt_string(rccFilename));
-	}
-	public bool UnregisterResource(String rccFilename)
-	{
-		return CQt.QResource_UnregisterResource(libqt_string(rccFilename));
-	}
-	public bool RegisterResource2(c_uchar* rccData)
-	{
-		return CQt.QResource_RegisterResource2(rccData);
-	}
-	public bool UnregisterResource2(c_uchar* rccData)
-	{
-		return CQt.QResource_UnregisterResource2(rccData);
-	}
-	public bool RegisterResource22(String rccFilename, String resourceRoot)
-	{
-		return CQt.QResource_RegisterResource22(libqt_string(rccFilename), libqt_string(resourceRoot));
-	}
-	public bool UnregisterResource22(String rccFilename, String resourceRoot)
-	{
-		return CQt.QResource_UnregisterResource22(libqt_string(rccFilename), libqt_string(resourceRoot));
-	}
-	public bool RegisterResource23(c_uchar* rccData, String resourceRoot)
-	{
-		return CQt.QResource_RegisterResource23(rccData, libqt_string(resourceRoot));
-	}
-	public bool UnregisterResource23(c_uchar* rccData, String resourceRoot)
-	{
-		return CQt.QResource_UnregisterResource23(rccData, libqt_string(resourceRoot));
-	}
-}
-interface IQResource : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QResource_Compression

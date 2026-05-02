@@ -14,25 +14,26 @@ struct QGestureRecognizer_Ptr
 	{
 		this.Ptr = ptr;
 	}
-}
-extension CQt
-{
-	[LinkName("QGestureRecognizer_new")]
-	public static extern QGestureRecognizer_Ptr QGestureRecognizer_new();
-	[LinkName("QGestureRecognizer_Delete")]
-	public static extern void QGestureRecognizer_Delete(QGestureRecognizer_Ptr self);
-	[LinkName("QGestureRecognizer_Create")]
-	public static extern void** QGestureRecognizer_Create(void* self, void** target);
-	[LinkName("QGestureRecognizer_Recognize")]
-	public static extern void* QGestureRecognizer_Recognize(void* self, void** state, void** watched, void** event);
-	[LinkName("QGestureRecognizer_Reset")]
-	public static extern void QGestureRecognizer_Reset(void* self, void** state);
-	[LinkName("QGestureRecognizer_RegisterRecognizer")]
-	public static extern Qt_GestureType QGestureRecognizer_RegisterRecognizer(void** recognizer);
-	[LinkName("QGestureRecognizer_UnregisterRecognizer")]
-	public static extern void QGestureRecognizer_UnregisterRecognizer(Qt_GestureType type);
-	[LinkName("QGestureRecognizer_OperatorAssign")]
-	public static extern void QGestureRecognizer_OperatorAssign(void* self, void** param1);
+	public QGesture_Ptr Create(IQObject target)
+	{
+		return QGesture_Ptr(CQt.QGestureRecognizer_Create((.)this.Ptr, (.)target?.ObjectPtr));
+	}
+	public void* Recognize(IQGesture state, IQObject watched, IQEvent event)
+	{
+		return CQt.QGestureRecognizer_Recognize((.)this.Ptr, (.)state?.ObjectPtr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+	}
+	public void Reset(IQGesture state)
+	{
+		CQt.QGestureRecognizer_Reset((.)this.Ptr, (.)state?.ObjectPtr);
+	}
+	public Qt_GestureType RegisterRecognizer(IQGestureRecognizer recognizer)
+	{
+		return CQt.QGestureRecognizer_RegisterRecognizer((.)recognizer?.ObjectPtr);
+	}
+	public void UnregisterRecognizer(Qt_GestureType type)
+	{
+		CQt.QGestureRecognizer_UnregisterRecognizer(type);
+	}
 }
 class QGestureRecognizer : IQGestureRecognizer
 {
@@ -52,27 +53,46 @@ class QGestureRecognizer : IQGestureRecognizer
 	}
 	public QGesture_Ptr Create(IQObject target)
 	{
-		return QGesture_Ptr(CQt.QGestureRecognizer_Create((.)this.ptr.Ptr, (.)target?.ObjectPtr));
+		return this.ptr.Create(target);
 	}
 	public void* Recognize(IQGesture state, IQObject watched, IQEvent event)
 	{
-		return CQt.QGestureRecognizer_Recognize((.)this.ptr.Ptr, (.)state?.ObjectPtr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return this.ptr.Recognize(state, watched, event);
 	}
 	public void Reset(IQGesture state)
 	{
-		CQt.QGestureRecognizer_Reset((.)this.ptr.Ptr, (.)state?.ObjectPtr);
+		this.ptr.Reset(state);
 	}
 	public Qt_GestureType RegisterRecognizer(IQGestureRecognizer recognizer)
 	{
-		return CQt.QGestureRecognizer_RegisterRecognizer((.)recognizer?.ObjectPtr);
+		return this.ptr.RegisterRecognizer(recognizer);
 	}
 	public void UnregisterRecognizer(Qt_GestureType type)
 	{
-		CQt.QGestureRecognizer_UnregisterRecognizer(type);
+		this.ptr.UnregisterRecognizer(type);
 	}
 }
 interface IQGestureRecognizer : IQtObjectInterface
 {
+}
+extension CQt
+{
+	[LinkName("QGestureRecognizer_new")]
+	public static extern QGestureRecognizer_Ptr QGestureRecognizer_new();
+	[LinkName("QGestureRecognizer_Delete")]
+	public static extern void QGestureRecognizer_Delete(QGestureRecognizer_Ptr self);
+	[LinkName("QGestureRecognizer_Create")]
+	public static extern void** QGestureRecognizer_Create(void* self, void** target);
+	[LinkName("QGestureRecognizer_Recognize")]
+	public static extern void* QGestureRecognizer_Recognize(void* self, void** state, void** watched, void** event);
+	[LinkName("QGestureRecognizer_Reset")]
+	public static extern void QGestureRecognizer_Reset(void* self, void** state);
+	[LinkName("QGestureRecognizer_RegisterRecognizer")]
+	public static extern Qt_GestureType QGestureRecognizer_RegisterRecognizer(void** recognizer);
+	[LinkName("QGestureRecognizer_UnregisterRecognizer")]
+	public static extern void QGestureRecognizer_UnregisterRecognizer(Qt_GestureType type);
+	[LinkName("QGestureRecognizer_OperatorAssign")]
+	public static extern void QGestureRecognizer_OperatorAssign(void* self, void** param1);
 }
 [AllowDuplicates]
 enum QGestureRecognizer_ResultFlag

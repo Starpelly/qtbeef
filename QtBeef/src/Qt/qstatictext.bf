@@ -14,6 +14,154 @@ struct QStaticText_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQStaticText other)
+	{
+		CQt.QStaticText_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public void SetText(String text)
+	{
+		CQt.QStaticText_SetText((.)this.Ptr, libqt_string(text));
+	}
+	public void Text(String outStr)
+	{
+		CQt.QStaticText_Text((.)this.Ptr);
+	}
+	public void SetTextFormat(Qt_TextFormat textFormat)
+	{
+		CQt.QStaticText_SetTextFormat((.)this.Ptr, textFormat);
+	}
+	public Qt_TextFormat TextFormat()
+	{
+		return CQt.QStaticText_TextFormat((.)this.Ptr);
+	}
+	public void SetTextWidth(double textWidth)
+	{
+		CQt.QStaticText_SetTextWidth((.)this.Ptr, textWidth);
+	}
+	public double TextWidth()
+	{
+		return CQt.QStaticText_TextWidth((.)this.Ptr);
+	}
+	public void SetTextOption(IQTextOption textOption)
+	{
+		CQt.QStaticText_SetTextOption((.)this.Ptr, (.)textOption?.ObjectPtr);
+	}
+	public QTextOption_Ptr TextOption()
+	{
+		return QTextOption_Ptr(CQt.QStaticText_TextOption((.)this.Ptr));
+	}
+	public QSizeF_Ptr Size()
+	{
+		return QSizeF_Ptr(CQt.QStaticText_Size((.)this.Ptr));
+	}
+	public void Prepare()
+	{
+		CQt.QStaticText_Prepare((.)this.Ptr);
+	}
+	public void SetPerformanceHint(QStaticText_PerformanceHint performanceHint)
+	{
+		CQt.QStaticText_SetPerformanceHint((.)this.Ptr, performanceHint);
+	}
+	public QStaticText_PerformanceHint PerformanceHint()
+	{
+		return CQt.QStaticText_PerformanceHint((.)this.Ptr);
+	}
+	public void Prepare1(IQTransform matrix)
+	{
+		CQt.QStaticText_Prepare1((.)this.Ptr, (.)matrix?.ObjectPtr);
+	}
+	public void Prepare2(IQTransform matrix, IQFont font)
+	{
+		CQt.QStaticText_Prepare2((.)this.Ptr, (.)matrix?.ObjectPtr, (.)font?.ObjectPtr);
+	}
+}
+class QStaticText : IQStaticText
+{
+	private QStaticText_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStaticText_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QStaticText_new();
+	}
+	public this(String text)
+	{
+		this.ptr = CQt.QStaticText_new2(libqt_string(text));
+	}
+	public this(IQStaticText other)
+	{
+		this.ptr = CQt.QStaticText_new3((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QStaticText_Delete(this.ptr);
+	}
+	public void Swap(IQStaticText other)
+	{
+		this.ptr.Swap(other);
+	}
+	public void SetText(String text)
+	{
+		this.ptr.SetText(text);
+	}
+	public void Text(String outStr)
+	{
+		this.ptr.Text(outStr);
+	}
+	public void SetTextFormat(Qt_TextFormat textFormat)
+	{
+		this.ptr.SetTextFormat(textFormat);
+	}
+	public Qt_TextFormat TextFormat()
+	{
+		return this.ptr.TextFormat();
+	}
+	public void SetTextWidth(double textWidth)
+	{
+		this.ptr.SetTextWidth(textWidth);
+	}
+	public double TextWidth()
+	{
+		return this.ptr.TextWidth();
+	}
+	public void SetTextOption(IQTextOption textOption)
+	{
+		this.ptr.SetTextOption(textOption);
+	}
+	public QTextOption_Ptr TextOption()
+	{
+		return this.ptr.TextOption();
+	}
+	public QSizeF_Ptr Size()
+	{
+		return this.ptr.Size();
+	}
+	public void Prepare()
+	{
+		this.ptr.Prepare();
+	}
+	public void SetPerformanceHint(QStaticText_PerformanceHint performanceHint)
+	{
+		this.ptr.SetPerformanceHint(performanceHint);
+	}
+	public QStaticText_PerformanceHint PerformanceHint()
+	{
+		return this.ptr.PerformanceHint();
+	}
+	public void Prepare1(IQTransform matrix)
+	{
+		this.ptr.Prepare1(matrix);
+	}
+	public void Prepare2(IQTransform matrix, IQFont font)
+	{
+		this.ptr.Prepare2(matrix, font);
+	}
+}
+interface IQStaticText : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -61,94 +209,6 @@ extension CQt
 	public static extern void QStaticText_Prepare1(void* self, void** matrix);
 	[LinkName("QStaticText_Prepare2")]
 	public static extern void QStaticText_Prepare2(void* self, void** matrix, void** font);
-}
-class QStaticText : IQStaticText
-{
-	private QStaticText_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QStaticText_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QStaticText_new();
-	}
-	public this(String text)
-	{
-		this.ptr = CQt.QStaticText_new2(libqt_string(text));
-	}
-	public this(IQStaticText other)
-	{
-		this.ptr = CQt.QStaticText_new3((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QStaticText_Delete(this.ptr);
-	}
-	public void Swap(IQStaticText other)
-	{
-		CQt.QStaticText_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public void SetText(String text)
-	{
-		CQt.QStaticText_SetText((.)this.ptr.Ptr, libqt_string(text));
-	}
-	public void Text(String outStr)
-	{
-		CQt.QStaticText_Text((.)this.ptr.Ptr);
-	}
-	public void SetTextFormat(Qt_TextFormat textFormat)
-	{
-		CQt.QStaticText_SetTextFormat((.)this.ptr.Ptr, textFormat);
-	}
-	public Qt_TextFormat TextFormat()
-	{
-		return CQt.QStaticText_TextFormat((.)this.ptr.Ptr);
-	}
-	public void SetTextWidth(double textWidth)
-	{
-		CQt.QStaticText_SetTextWidth((.)this.ptr.Ptr, textWidth);
-	}
-	public double TextWidth()
-	{
-		return CQt.QStaticText_TextWidth((.)this.ptr.Ptr);
-	}
-	public void SetTextOption(IQTextOption textOption)
-	{
-		CQt.QStaticText_SetTextOption((.)this.ptr.Ptr, (.)textOption?.ObjectPtr);
-	}
-	public QTextOption_Ptr TextOption()
-	{
-		return QTextOption_Ptr(CQt.QStaticText_TextOption((.)this.ptr.Ptr));
-	}
-	public QSizeF_Ptr Size()
-	{
-		return QSizeF_Ptr(CQt.QStaticText_Size((.)this.ptr.Ptr));
-	}
-	public void Prepare()
-	{
-		CQt.QStaticText_Prepare((.)this.ptr.Ptr);
-	}
-	public void SetPerformanceHint(QStaticText_PerformanceHint performanceHint)
-	{
-		CQt.QStaticText_SetPerformanceHint((.)this.ptr.Ptr, performanceHint);
-	}
-	public QStaticText_PerformanceHint PerformanceHint()
-	{
-		return CQt.QStaticText_PerformanceHint((.)this.ptr.Ptr);
-	}
-	public void Prepare1(IQTransform matrix)
-	{
-		CQt.QStaticText_Prepare1((.)this.ptr.Ptr, (.)matrix?.ObjectPtr);
-	}
-	public void Prepare2(IQTransform matrix, IQFont font)
-	{
-		CQt.QStaticText_Prepare2((.)this.ptr.Ptr, (.)matrix?.ObjectPtr, (.)font?.ObjectPtr);
-	}
-}
-interface IQStaticText : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QStaticText_PerformanceHint

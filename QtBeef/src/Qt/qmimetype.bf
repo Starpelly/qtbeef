@@ -14,6 +14,150 @@ struct QMimeType_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void Swap(IQMimeType other)
+	{
+		CQt.QMimeType_Swap((.)this.Ptr, (.)other?.ObjectPtr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QMimeType_IsValid((.)this.Ptr);
+	}
+	public bool IsDefault()
+	{
+		return CQt.QMimeType_IsDefault((.)this.Ptr);
+	}
+	public void Name(String outStr)
+	{
+		CQt.QMimeType_Name((.)this.Ptr);
+	}
+	public void Comment(String outStr)
+	{
+		CQt.QMimeType_Comment((.)this.Ptr);
+	}
+	public void GenericIconName(String outStr)
+	{
+		CQt.QMimeType_GenericIconName((.)this.Ptr);
+	}
+	public void IconName(String outStr)
+	{
+		CQt.QMimeType_IconName((.)this.Ptr);
+	}
+	public void* GlobPatterns()
+	{
+		return CQt.QMimeType_GlobPatterns((.)this.Ptr);
+	}
+	public void* ParentMimeTypes()
+	{
+		return CQt.QMimeType_ParentMimeTypes((.)this.Ptr);
+	}
+	public void* AllAncestors()
+	{
+		return CQt.QMimeType_AllAncestors((.)this.Ptr);
+	}
+	public void* Aliases()
+	{
+		return CQt.QMimeType_Aliases((.)this.Ptr);
+	}
+	public void* Suffixes()
+	{
+		return CQt.QMimeType_Suffixes((.)this.Ptr);
+	}
+	public void PreferredSuffix(String outStr)
+	{
+		CQt.QMimeType_PreferredSuffix((.)this.Ptr);
+	}
+	public bool Inherits(String mimeTypeName)
+	{
+		return CQt.QMimeType_Inherits((.)this.Ptr, libqt_string(mimeTypeName));
+	}
+	public void FilterString(String outStr)
+	{
+		CQt.QMimeType_FilterString((.)this.Ptr);
+	}
+}
+class QMimeType : IQMimeType
+{
+	private QMimeType_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QMimeType_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this()
+	{
+		this.ptr = CQt.QMimeType_new();
+	}
+	public this(IQMimeType other)
+	{
+		this.ptr = CQt.QMimeType_new2((.)other?.ObjectPtr);
+	}
+	public ~this()
+	{
+		CQt.QMimeType_Delete(this.ptr);
+	}
+	public void Swap(IQMimeType other)
+	{
+		this.ptr.Swap(other);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public bool IsDefault()
+	{
+		return this.ptr.IsDefault();
+	}
+	public void Name(String outStr)
+	{
+		this.ptr.Name(outStr);
+	}
+	public void Comment(String outStr)
+	{
+		this.ptr.Comment(outStr);
+	}
+	public void GenericIconName(String outStr)
+	{
+		this.ptr.GenericIconName(outStr);
+	}
+	public void IconName(String outStr)
+	{
+		this.ptr.IconName(outStr);
+	}
+	public void* GlobPatterns()
+	{
+		return this.ptr.GlobPatterns();
+	}
+	public void* ParentMimeTypes()
+	{
+		return this.ptr.ParentMimeTypes();
+	}
+	public void* AllAncestors()
+	{
+		return this.ptr.AllAncestors();
+	}
+	public void* Aliases()
+	{
+		return this.ptr.Aliases();
+	}
+	public void* Suffixes()
+	{
+		return this.ptr.Suffixes();
+	}
+	public void PreferredSuffix(String outStr)
+	{
+		this.ptr.PreferredSuffix(outStr);
+	}
+	public bool Inherits(String mimeTypeName)
+	{
+		return this.ptr.Inherits(mimeTypeName);
+	}
+	public void FilterString(String outStr)
+	{
+		this.ptr.FilterString(outStr);
+	}
+}
+interface IQMimeType : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -59,88 +203,4 @@ extension CQt
 	public static extern bool QMimeType_Inherits(void* self, libqt_string mimeTypeName);
 	[LinkName("QMimeType_FilterString")]
 	public static extern libqt_string QMimeType_FilterString(void* self);
-}
-class QMimeType : IQMimeType
-{
-	private QMimeType_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QMimeType_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this()
-	{
-		this.ptr = CQt.QMimeType_new();
-	}
-	public this(IQMimeType other)
-	{
-		this.ptr = CQt.QMimeType_new2((.)other?.ObjectPtr);
-	}
-	public ~this()
-	{
-		CQt.QMimeType_Delete(this.ptr);
-	}
-	public void Swap(IQMimeType other)
-	{
-		CQt.QMimeType_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
-	}
-	public bool IsValid()
-	{
-		return CQt.QMimeType_IsValid((.)this.ptr.Ptr);
-	}
-	public bool IsDefault()
-	{
-		return CQt.QMimeType_IsDefault((.)this.ptr.Ptr);
-	}
-	public void Name(String outStr)
-	{
-		CQt.QMimeType_Name((.)this.ptr.Ptr);
-	}
-	public void Comment(String outStr)
-	{
-		CQt.QMimeType_Comment((.)this.ptr.Ptr);
-	}
-	public void GenericIconName(String outStr)
-	{
-		CQt.QMimeType_GenericIconName((.)this.ptr.Ptr);
-	}
-	public void IconName(String outStr)
-	{
-		CQt.QMimeType_IconName((.)this.ptr.Ptr);
-	}
-	public void* GlobPatterns()
-	{
-		return CQt.QMimeType_GlobPatterns((.)this.ptr.Ptr);
-	}
-	public void* ParentMimeTypes()
-	{
-		return CQt.QMimeType_ParentMimeTypes((.)this.ptr.Ptr);
-	}
-	public void* AllAncestors()
-	{
-		return CQt.QMimeType_AllAncestors((.)this.ptr.Ptr);
-	}
-	public void* Aliases()
-	{
-		return CQt.QMimeType_Aliases((.)this.ptr.Ptr);
-	}
-	public void* Suffixes()
-	{
-		return CQt.QMimeType_Suffixes((.)this.ptr.Ptr);
-	}
-	public void PreferredSuffix(String outStr)
-	{
-		CQt.QMimeType_PreferredSuffix((.)this.ptr.Ptr);
-	}
-	public bool Inherits(String mimeTypeName)
-	{
-		return CQt.QMimeType_Inherits((.)this.ptr.Ptr, libqt_string(mimeTypeName));
-	}
-	public void FilterString(String outStr)
-	{
-		CQt.QMimeType_FilterString((.)this.ptr.Ptr);
-	}
-}
-interface IQMimeType : IQtObjectInterface
-{
 }

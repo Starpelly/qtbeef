@@ -14,6 +14,482 @@ struct QMetaType_Ptr
 	{
 		this.Ptr = ptr;
 	}
+	public void RegisterNormalizedTypedef(void** normalizedTypeName, IQMetaType type)
+	{
+		CQt.QMetaType_RegisterNormalizedTypedef(normalizedTypeName, (.)type?.ObjectPtr);
+	}
+	public c_int Type(c_char* typeName)
+	{
+		return CQt.QMetaType_Type(typeName);
+	}
+	public c_int Type2(void** typeName)
+	{
+		return CQt.QMetaType_Type2(typeName);
+	}
+	public c_char* TypeName(c_int type)
+	{
+		return CQt.QMetaType_TypeName(type);
+	}
+	public c_int SizeOf(c_int type)
+	{
+		return CQt.QMetaType_SizeOf(type);
+	}
+	public void* TypeFlags(c_int type)
+	{
+		return CQt.QMetaType_TypeFlags(type);
+	}
+	public QMetaObject_Ptr MetaObjectForType(c_int type)
+	{
+		return QMetaObject_Ptr(CQt.QMetaType_MetaObjectForType(type));
+	}
+	public void* Create(c_int type)
+	{
+		return CQt.QMetaType_Create(type);
+	}
+	public void Destroy(c_int type, void* data)
+	{
+		CQt.QMetaType_Destroy(type, data);
+	}
+	public void* Construct(c_int type, void* _where, void* copyVal)
+	{
+		return CQt.QMetaType_Construct(type, _where, copyVal);
+	}
+	public void Destruct(c_int type, void* _where)
+	{
+		CQt.QMetaType_Destruct(type, _where);
+	}
+	public bool IsRegistered(c_int type)
+	{
+		return CQt.QMetaType_IsRegistered(type);
+	}
+	public bool IsValid()
+	{
+		return CQt.QMetaType_IsValid((.)this.Ptr);
+	}
+	public bool IsRegistered2()
+	{
+		return CQt.QMetaType_IsRegistered2((.)this.Ptr);
+	}
+	public c_int Id()
+	{
+		return CQt.QMetaType_Id((.)this.Ptr);
+	}
+	public void* SizeOf2()
+	{
+		return CQt.QMetaType_SizeOf2((.)this.Ptr);
+	}
+	public void* AlignOf()
+	{
+		return CQt.QMetaType_AlignOf((.)this.Ptr);
+	}
+	public void* Flags()
+	{
+		return CQt.QMetaType_Flags((.)this.Ptr);
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return QMetaObject_Ptr(CQt.QMetaType_MetaObject((.)this.Ptr));
+	}
+	public c_char* Name()
+	{
+		return CQt.QMetaType_Name((.)this.Ptr);
+	}
+	public void* Create2()
+	{
+		return CQt.QMetaType_Create2((.)this.Ptr);
+	}
+	public void Destroy2(void* data)
+	{
+		CQt.QMetaType_Destroy2((.)this.Ptr, data);
+	}
+	public void* Construct2(void* _where)
+	{
+		return CQt.QMetaType_Construct2((.)this.Ptr, _where);
+	}
+	public void Destruct2(void* data)
+	{
+		CQt.QMetaType_Destruct2((.)this.Ptr, data);
+	}
+	public QPartialOrdering_Ptr Compare(void* lhs, void* rhs)
+	{
+		return QPartialOrdering_Ptr(CQt.QMetaType_Compare((.)this.Ptr, lhs, rhs));
+	}
+	public bool Equals(void* lhs, void* rhs)
+	{
+		return CQt.QMetaType_Equals((.)this.Ptr, lhs, rhs);
+	}
+	public bool IsEqualityComparable()
+	{
+		return CQt.QMetaType_IsEqualityComparable((.)this.Ptr);
+	}
+	public bool IsOrdered()
+	{
+		return CQt.QMetaType_IsOrdered((.)this.Ptr);
+	}
+	public bool Save(IQDataStream stream, void* data)
+	{
+		return CQt.QMetaType_Save((.)this.Ptr, (.)stream?.ObjectPtr, data);
+	}
+	public bool Load(IQDataStream stream, void* data)
+	{
+		return CQt.QMetaType_Load((.)this.Ptr, (.)stream?.ObjectPtr, data);
+	}
+	public bool HasRegisteredDataStreamOperators()
+	{
+		return CQt.QMetaType_HasRegisteredDataStreamOperators((.)this.Ptr);
+	}
+	public bool Save2(IQDataStream stream, c_int type, void* data)
+	{
+		return CQt.QMetaType_Save2((.)stream?.ObjectPtr, type, data);
+	}
+	public bool Load2(IQDataStream stream, c_int type, void* data)
+	{
+		return CQt.QMetaType_Load2((.)stream?.ObjectPtr, type, data);
+	}
+	public QMetaType_Ptr FromName(void* name)
+	{
+		return QMetaType_Ptr(CQt.QMetaType_FromName(name));
+	}
+	public bool DebugStream(IQDebug dbg, void* rhs)
+	{
+		return CQt.QMetaType_DebugStream((.)this.Ptr, (.)dbg?.ObjectPtr, rhs);
+	}
+	public bool HasRegisteredDebugStreamOperator()
+	{
+		return CQt.QMetaType_HasRegisteredDebugStreamOperator((.)this.Ptr);
+	}
+	public bool DebugStream2(IQDebug dbg, void* rhs, c_int typeId)
+	{
+		return CQt.QMetaType_DebugStream2((.)dbg?.ObjectPtr, rhs, typeId);
+	}
+	public bool HasRegisteredDebugStreamOperator2(c_int typeId)
+	{
+		return CQt.QMetaType_HasRegisteredDebugStreamOperator2(typeId);
+	}
+	public bool Convert(IQMetaType fromType, void* from, IQMetaType toType, void* to)
+	{
+		return CQt.QMetaType_Convert((.)fromType?.ObjectPtr, from, (.)toType?.ObjectPtr, to);
+	}
+	public bool CanConvert(IQMetaType fromType, IQMetaType toType)
+	{
+		return CQt.QMetaType_CanConvert((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
+	}
+	public bool View(IQMetaType fromType, void* from, IQMetaType toType, void* to)
+	{
+		return CQt.QMetaType_View((.)fromType?.ObjectPtr, from, (.)toType?.ObjectPtr, to);
+	}
+	public bool CanView(IQMetaType fromType, IQMetaType toType)
+	{
+		return CQt.QMetaType_CanView((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
+	}
+	public bool Convert2(void* from, c_int fromTypeId, void* to, c_int toTypeId)
+	{
+		return CQt.QMetaType_Convert2(from, fromTypeId, to, toTypeId);
+	}
+	public bool Compare2(void* lhs, void* rhs, c_int typeId, c_int* result)
+	{
+		return CQt.QMetaType_Compare2(lhs, rhs, typeId, result);
+	}
+	public bool Equals2(void* lhs, void* rhs, c_int typeId, c_int* result)
+	{
+		return CQt.QMetaType_Equals2(lhs, rhs, typeId, result);
+	}
+	public bool HasRegisteredConverterFunction(IQMetaType fromType, IQMetaType toType)
+	{
+		return CQt.QMetaType_HasRegisteredConverterFunction((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
+	}
+	public bool HasRegisteredMutableViewFunction(IQMetaType fromType, IQMetaType toType)
+	{
+		return CQt.QMetaType_HasRegisteredMutableViewFunction((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
+	}
+	public bool RegisterConverterFunction(void** f, IQMetaType from, IQMetaType to)
+	{
+		return CQt.QMetaType_RegisterConverterFunction(f, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
+	}
+	public void UnregisterConverterFunction(IQMetaType from, IQMetaType to)
+	{
+		CQt.QMetaType_UnregisterConverterFunction((.)from?.ObjectPtr, (.)to?.ObjectPtr);
+	}
+	public bool RegisterMutableViewFunction(void** f, IQMetaType from, IQMetaType to)
+	{
+		return CQt.QMetaType_RegisterMutableViewFunction(f, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
+	}
+	public void UnregisterMutableViewFunction(IQMetaType from, IQMetaType to)
+	{
+		CQt.QMetaType_UnregisterMutableViewFunction((.)from?.ObjectPtr, (.)to?.ObjectPtr);
+	}
+	public void UnregisterMetaType(IQMetaType type)
+	{
+		CQt.QMetaType_UnregisterMetaType((.)type?.ObjectPtr);
+	}
+	public void* Create22(c_int type, void* copyVal)
+	{
+		return CQt.QMetaType_Create22(type, copyVal);
+	}
+	public c_int Id1(c_int param1)
+	{
+		return CQt.QMetaType_Id1((.)this.Ptr, param1);
+	}
+	public void* Create1(void* copyVal)
+	{
+		return CQt.QMetaType_Create1((.)this.Ptr, copyVal);
+	}
+	public void* Construct22(void* _where, void* copyVal)
+	{
+		return CQt.QMetaType_Construct22((.)this.Ptr, _where, copyVal);
+	}
+}
+class QMetaType : IQMetaType
+{
+	private QMetaType_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QMetaType_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
+	public this(IQMetaType other)
+	{
+		this.ptr = CQt.QMetaType_new((.)other?.ObjectPtr);
+	}
+	public this(c_int type)
+	{
+		this.ptr = CQt.QMetaType_new3(type);
+	}
+	public this()
+	{
+		this.ptr = CQt.QMetaType_new4();
+	}
+	public ~this()
+	{
+		CQt.QMetaType_Delete(this.ptr);
+	}
+	public void RegisterNormalizedTypedef(void** normalizedTypeName, IQMetaType type)
+	{
+		this.ptr.RegisterNormalizedTypedef(normalizedTypeName, type);
+	}
+	public c_int Type(c_char* typeName)
+	{
+		return this.ptr.Type(typeName);
+	}
+	public c_int Type2(void** typeName)
+	{
+		return this.ptr.Type2(typeName);
+	}
+	public c_char* TypeName(c_int type)
+	{
+		return this.ptr.TypeName(type);
+	}
+	public c_int SizeOf(c_int type)
+	{
+		return this.ptr.SizeOf(type);
+	}
+	public void* TypeFlags(c_int type)
+	{
+		return this.ptr.TypeFlags(type);
+	}
+	public QMetaObject_Ptr MetaObjectForType(c_int type)
+	{
+		return this.ptr.MetaObjectForType(type);
+	}
+	public void* Create(c_int type)
+	{
+		return this.ptr.Create(type);
+	}
+	public void Destroy(c_int type, void* data)
+	{
+		this.ptr.Destroy(type, data);
+	}
+	public void* Construct(c_int type, void* _where, void* copyVal)
+	{
+		return this.ptr.Construct(type, _where, copyVal);
+	}
+	public void Destruct(c_int type, void* _where)
+	{
+		this.ptr.Destruct(type, _where);
+	}
+	public bool IsRegistered(c_int type)
+	{
+		return this.ptr.IsRegistered(type);
+	}
+	public bool IsValid()
+	{
+		return this.ptr.IsValid();
+	}
+	public bool IsRegistered2()
+	{
+		return this.ptr.IsRegistered2();
+	}
+	public c_int Id()
+	{
+		return this.ptr.Id();
+	}
+	public void* SizeOf2()
+	{
+		return this.ptr.SizeOf2();
+	}
+	public void* AlignOf()
+	{
+		return this.ptr.AlignOf();
+	}
+	public void* Flags()
+	{
+		return this.ptr.Flags();
+	}
+	public QMetaObject_Ptr MetaObject()
+	{
+		return this.ptr.MetaObject();
+	}
+	public c_char* Name()
+	{
+		return this.ptr.Name();
+	}
+	public void* Create2()
+	{
+		return this.ptr.Create2();
+	}
+	public void Destroy2(void* data)
+	{
+		this.ptr.Destroy2(data);
+	}
+	public void* Construct2(void* _where)
+	{
+		return this.ptr.Construct2(_where);
+	}
+	public void Destruct2(void* data)
+	{
+		this.ptr.Destruct2(data);
+	}
+	public QPartialOrdering_Ptr Compare(void* lhs, void* rhs)
+	{
+		return this.ptr.Compare(lhs, rhs);
+	}
+	public bool Equals(void* lhs, void* rhs)
+	{
+		return this.ptr.Equals(lhs, rhs);
+	}
+	public bool IsEqualityComparable()
+	{
+		return this.ptr.IsEqualityComparable();
+	}
+	public bool IsOrdered()
+	{
+		return this.ptr.IsOrdered();
+	}
+	public bool Save(IQDataStream stream, void* data)
+	{
+		return this.ptr.Save(stream, data);
+	}
+	public bool Load(IQDataStream stream, void* data)
+	{
+		return this.ptr.Load(stream, data);
+	}
+	public bool HasRegisteredDataStreamOperators()
+	{
+		return this.ptr.HasRegisteredDataStreamOperators();
+	}
+	public bool Save2(IQDataStream stream, c_int type, void* data)
+	{
+		return this.ptr.Save2(stream, type, data);
+	}
+	public bool Load2(IQDataStream stream, c_int type, void* data)
+	{
+		return this.ptr.Load2(stream, type, data);
+	}
+	public QMetaType_Ptr FromName(void* name)
+	{
+		return this.ptr.FromName(name);
+	}
+	public bool DebugStream(IQDebug dbg, void* rhs)
+	{
+		return this.ptr.DebugStream(dbg, rhs);
+	}
+	public bool HasRegisteredDebugStreamOperator()
+	{
+		return this.ptr.HasRegisteredDebugStreamOperator();
+	}
+	public bool DebugStream2(IQDebug dbg, void* rhs, c_int typeId)
+	{
+		return this.ptr.DebugStream2(dbg, rhs, typeId);
+	}
+	public bool HasRegisteredDebugStreamOperator2(c_int typeId)
+	{
+		return this.ptr.HasRegisteredDebugStreamOperator2(typeId);
+	}
+	public bool Convert(IQMetaType fromType, void* from, IQMetaType toType, void* to)
+	{
+		return this.ptr.Convert(fromType, from, toType, to);
+	}
+	public bool CanConvert(IQMetaType fromType, IQMetaType toType)
+	{
+		return this.ptr.CanConvert(fromType, toType);
+	}
+	public bool View(IQMetaType fromType, void* from, IQMetaType toType, void* to)
+	{
+		return this.ptr.View(fromType, from, toType, to);
+	}
+	public bool CanView(IQMetaType fromType, IQMetaType toType)
+	{
+		return this.ptr.CanView(fromType, toType);
+	}
+	public bool Convert2(void* from, c_int fromTypeId, void* to, c_int toTypeId)
+	{
+		return this.ptr.Convert2(from, fromTypeId, to, toTypeId);
+	}
+	public bool Compare2(void* lhs, void* rhs, c_int typeId, c_int* result)
+	{
+		return this.ptr.Compare2(lhs, rhs, typeId, result);
+	}
+	public bool Equals2(void* lhs, void* rhs, c_int typeId, c_int* result)
+	{
+		return this.ptr.Equals2(lhs, rhs, typeId, result);
+	}
+	public bool HasRegisteredConverterFunction(IQMetaType fromType, IQMetaType toType)
+	{
+		return this.ptr.HasRegisteredConverterFunction(fromType, toType);
+	}
+	public bool HasRegisteredMutableViewFunction(IQMetaType fromType, IQMetaType toType)
+	{
+		return this.ptr.HasRegisteredMutableViewFunction(fromType, toType);
+	}
+	public bool RegisterConverterFunction(void** f, IQMetaType from, IQMetaType to)
+	{
+		return this.ptr.RegisterConverterFunction(f, from, to);
+	}
+	public void UnregisterConverterFunction(IQMetaType from, IQMetaType to)
+	{
+		this.ptr.UnregisterConverterFunction(from, to);
+	}
+	public bool RegisterMutableViewFunction(void** f, IQMetaType from, IQMetaType to)
+	{
+		return this.ptr.RegisterMutableViewFunction(f, from, to);
+	}
+	public void UnregisterMutableViewFunction(IQMetaType from, IQMetaType to)
+	{
+		this.ptr.UnregisterMutableViewFunction(from, to);
+	}
+	public void UnregisterMetaType(IQMetaType type)
+	{
+		this.ptr.UnregisterMetaType(type);
+	}
+	public void* Create22(c_int type, void* copyVal)
+	{
+		return this.ptr.Create22(type, copyVal);
+	}
+	public c_int Id1(c_int param1)
+	{
+		return this.ptr.Id1(param1);
+	}
+	public void* Create1(void* copyVal)
+	{
+		return this.ptr.Create1(copyVal);
+	}
+	public void* Construct22(void* _where, void* copyVal)
+	{
+		return this.ptr.Construct22(_where, copyVal);
+	}
+}
+interface IQMetaType : IQtObjectInterface
+{
 }
 extension CQt
 {
@@ -141,258 +617,6 @@ extension CQt
 	public static extern void* QMetaType_Create1(void* self, void* copyVal);
 	[LinkName("QMetaType_Construct22")]
 	public static extern void* QMetaType_Construct22(void* self, void* _where, void* copyVal);
-}
-class QMetaType : IQMetaType
-{
-	private QMetaType_Ptr ptr;
-	public void* ObjectPtr => ptr.Ptr;
-	public this(QMetaType_Ptr ptr)
-	{
-		this.ptr = ptr;
-	}
-	public this(IQMetaType other)
-	{
-		this.ptr = CQt.QMetaType_new((.)other?.ObjectPtr);
-	}
-	public this(c_int type)
-	{
-		this.ptr = CQt.QMetaType_new3(type);
-	}
-	public this()
-	{
-		this.ptr = CQt.QMetaType_new4();
-	}
-	public ~this()
-	{
-		CQt.QMetaType_Delete(this.ptr);
-	}
-	public void RegisterNormalizedTypedef(void** normalizedTypeName, IQMetaType type)
-	{
-		CQt.QMetaType_RegisterNormalizedTypedef(normalizedTypeName, (.)type?.ObjectPtr);
-	}
-	public c_int Type(c_char* typeName)
-	{
-		return CQt.QMetaType_Type(typeName);
-	}
-	public c_int Type2(void** typeName)
-	{
-		return CQt.QMetaType_Type2(typeName);
-	}
-	public c_char* TypeName(c_int type)
-	{
-		return CQt.QMetaType_TypeName(type);
-	}
-	public c_int SizeOf(c_int type)
-	{
-		return CQt.QMetaType_SizeOf(type);
-	}
-	public void* TypeFlags(c_int type)
-	{
-		return CQt.QMetaType_TypeFlags(type);
-	}
-	public QMetaObject_Ptr MetaObjectForType(c_int type)
-	{
-		return QMetaObject_Ptr(CQt.QMetaType_MetaObjectForType(type));
-	}
-	public void* Create(c_int type)
-	{
-		return CQt.QMetaType_Create(type);
-	}
-	public void Destroy(c_int type, void* data)
-	{
-		CQt.QMetaType_Destroy(type, data);
-	}
-	public void* Construct(c_int type, void* _where, void* copyVal)
-	{
-		return CQt.QMetaType_Construct(type, _where, copyVal);
-	}
-	public void Destruct(c_int type, void* _where)
-	{
-		CQt.QMetaType_Destruct(type, _where);
-	}
-	public bool IsRegistered(c_int type)
-	{
-		return CQt.QMetaType_IsRegistered(type);
-	}
-	public bool IsValid()
-	{
-		return CQt.QMetaType_IsValid((.)this.ptr.Ptr);
-	}
-	public bool IsRegistered2()
-	{
-		return CQt.QMetaType_IsRegistered2((.)this.ptr.Ptr);
-	}
-	public c_int Id()
-	{
-		return CQt.QMetaType_Id((.)this.ptr.Ptr);
-	}
-	public void* SizeOf2()
-	{
-		return CQt.QMetaType_SizeOf2((.)this.ptr.Ptr);
-	}
-	public void* AlignOf()
-	{
-		return CQt.QMetaType_AlignOf((.)this.ptr.Ptr);
-	}
-	public void* Flags()
-	{
-		return CQt.QMetaType_Flags((.)this.ptr.Ptr);
-	}
-	public QMetaObject_Ptr MetaObject()
-	{
-		return QMetaObject_Ptr(CQt.QMetaType_MetaObject((.)this.ptr.Ptr));
-	}
-	public c_char* Name()
-	{
-		return CQt.QMetaType_Name((.)this.ptr.Ptr);
-	}
-	public void* Create2()
-	{
-		return CQt.QMetaType_Create2((.)this.ptr.Ptr);
-	}
-	public void Destroy2(void* data)
-	{
-		CQt.QMetaType_Destroy2((.)this.ptr.Ptr, data);
-	}
-	public void* Construct2(void* _where)
-	{
-		return CQt.QMetaType_Construct2((.)this.ptr.Ptr, _where);
-	}
-	public void Destruct2(void* data)
-	{
-		CQt.QMetaType_Destruct2((.)this.ptr.Ptr, data);
-	}
-	public QPartialOrdering_Ptr Compare(void* lhs, void* rhs)
-	{
-		return QPartialOrdering_Ptr(CQt.QMetaType_Compare((.)this.ptr.Ptr, lhs, rhs));
-	}
-	public bool Equals(void* lhs, void* rhs)
-	{
-		return CQt.QMetaType_Equals((.)this.ptr.Ptr, lhs, rhs);
-	}
-	public bool IsEqualityComparable()
-	{
-		return CQt.QMetaType_IsEqualityComparable((.)this.ptr.Ptr);
-	}
-	public bool IsOrdered()
-	{
-		return CQt.QMetaType_IsOrdered((.)this.ptr.Ptr);
-	}
-	public bool Save(IQDataStream stream, void* data)
-	{
-		return CQt.QMetaType_Save((.)this.ptr.Ptr, (.)stream?.ObjectPtr, data);
-	}
-	public bool Load(IQDataStream stream, void* data)
-	{
-		return CQt.QMetaType_Load((.)this.ptr.Ptr, (.)stream?.ObjectPtr, data);
-	}
-	public bool HasRegisteredDataStreamOperators()
-	{
-		return CQt.QMetaType_HasRegisteredDataStreamOperators((.)this.ptr.Ptr);
-	}
-	public bool Save2(IQDataStream stream, c_int type, void* data)
-	{
-		return CQt.QMetaType_Save2((.)stream?.ObjectPtr, type, data);
-	}
-	public bool Load2(IQDataStream stream, c_int type, void* data)
-	{
-		return CQt.QMetaType_Load2((.)stream?.ObjectPtr, type, data);
-	}
-	public QMetaType_Ptr FromName(void* name)
-	{
-		return QMetaType_Ptr(CQt.QMetaType_FromName(name));
-	}
-	public bool DebugStream(IQDebug dbg, void* rhs)
-	{
-		return CQt.QMetaType_DebugStream((.)this.ptr.Ptr, (.)dbg?.ObjectPtr, rhs);
-	}
-	public bool HasRegisteredDebugStreamOperator()
-	{
-		return CQt.QMetaType_HasRegisteredDebugStreamOperator((.)this.ptr.Ptr);
-	}
-	public bool DebugStream2(IQDebug dbg, void* rhs, c_int typeId)
-	{
-		return CQt.QMetaType_DebugStream2((.)dbg?.ObjectPtr, rhs, typeId);
-	}
-	public bool HasRegisteredDebugStreamOperator2(c_int typeId)
-	{
-		return CQt.QMetaType_HasRegisteredDebugStreamOperator2(typeId);
-	}
-	public bool Convert(IQMetaType fromType, void* from, IQMetaType toType, void* to)
-	{
-		return CQt.QMetaType_Convert((.)fromType?.ObjectPtr, from, (.)toType?.ObjectPtr, to);
-	}
-	public bool CanConvert(IQMetaType fromType, IQMetaType toType)
-	{
-		return CQt.QMetaType_CanConvert((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
-	}
-	public bool View(IQMetaType fromType, void* from, IQMetaType toType, void* to)
-	{
-		return CQt.QMetaType_View((.)fromType?.ObjectPtr, from, (.)toType?.ObjectPtr, to);
-	}
-	public bool CanView(IQMetaType fromType, IQMetaType toType)
-	{
-		return CQt.QMetaType_CanView((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
-	}
-	public bool Convert2(void* from, c_int fromTypeId, void* to, c_int toTypeId)
-	{
-		return CQt.QMetaType_Convert2(from, fromTypeId, to, toTypeId);
-	}
-	public bool Compare2(void* lhs, void* rhs, c_int typeId, c_int* result)
-	{
-		return CQt.QMetaType_Compare2(lhs, rhs, typeId, result);
-	}
-	public bool Equals2(void* lhs, void* rhs, c_int typeId, c_int* result)
-	{
-		return CQt.QMetaType_Equals2(lhs, rhs, typeId, result);
-	}
-	public bool HasRegisteredConverterFunction(IQMetaType fromType, IQMetaType toType)
-	{
-		return CQt.QMetaType_HasRegisteredConverterFunction((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
-	}
-	public bool HasRegisteredMutableViewFunction(IQMetaType fromType, IQMetaType toType)
-	{
-		return CQt.QMetaType_HasRegisteredMutableViewFunction((.)fromType?.ObjectPtr, (.)toType?.ObjectPtr);
-	}
-	public bool RegisterConverterFunction(void** f, IQMetaType from, IQMetaType to)
-	{
-		return CQt.QMetaType_RegisterConverterFunction(f, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
-	}
-	public void UnregisterConverterFunction(IQMetaType from, IQMetaType to)
-	{
-		CQt.QMetaType_UnregisterConverterFunction((.)from?.ObjectPtr, (.)to?.ObjectPtr);
-	}
-	public bool RegisterMutableViewFunction(void** f, IQMetaType from, IQMetaType to)
-	{
-		return CQt.QMetaType_RegisterMutableViewFunction(f, (.)from?.ObjectPtr, (.)to?.ObjectPtr);
-	}
-	public void UnregisterMutableViewFunction(IQMetaType from, IQMetaType to)
-	{
-		CQt.QMetaType_UnregisterMutableViewFunction((.)from?.ObjectPtr, (.)to?.ObjectPtr);
-	}
-	public void UnregisterMetaType(IQMetaType type)
-	{
-		CQt.QMetaType_UnregisterMetaType((.)type?.ObjectPtr);
-	}
-	public void* Create22(c_int type, void* copyVal)
-	{
-		return CQt.QMetaType_Create22(type, copyVal);
-	}
-	public c_int Id1(c_int param1)
-	{
-		return CQt.QMetaType_Id1((.)this.ptr.Ptr, param1);
-	}
-	public void* Create1(void* copyVal)
-	{
-		return CQt.QMetaType_Create1((.)this.ptr.Ptr, copyVal);
-	}
-	public void* Construct22(void* _where, void* copyVal)
-	{
-		return CQt.QMetaType_Construct22((.)this.ptr.Ptr, _where, copyVal);
-	}
-}
-interface IQMetaType : IQtObjectInterface
-{
 }
 [AllowDuplicates]
 enum QCborSimpleType
