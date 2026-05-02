@@ -7,70 +7,79 @@ namespace Qt6;
 // QCursor
 // --------------------------------------------------------------
 [CRepr]
-struct QCursor_Ptr: void
+struct QCursor_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QCursor_new")]
-	public static extern QCursor_Ptr* QCursor_new();
+	public static extern QCursor_Ptr QCursor_new();
 	[LinkName("QCursor_new2")]
-	public static extern QCursor_Ptr* QCursor_new2(Qt_CursorShape shape);
+	public static extern QCursor_Ptr QCursor_new2(Qt_CursorShape shape);
 	[LinkName("QCursor_new3")]
-	public static extern QCursor_Ptr* QCursor_new3(QBitmap_Ptr* bitmap, QBitmap_Ptr* mask);
+	public static extern QCursor_Ptr QCursor_new3(void** bitmap, void** mask);
 	[LinkName("QCursor_new4")]
-	public static extern QCursor_Ptr* QCursor_new4(QPixmap_Ptr* pixmap);
+	public static extern QCursor_Ptr QCursor_new4(void** pixmap);
 	[LinkName("QCursor_new5")]
-	public static extern QCursor_Ptr* QCursor_new5(QCursor_Ptr* cursor);
+	public static extern QCursor_Ptr QCursor_new5(void** cursor);
 	[LinkName("QCursor_new6")]
-	public static extern QCursor_Ptr* QCursor_new6(QBitmap_Ptr* bitmap, QBitmap_Ptr* mask, c_int hotX);
+	public static extern QCursor_Ptr QCursor_new6(void** bitmap, void** mask, c_int hotX);
 	[LinkName("QCursor_new7")]
-	public static extern QCursor_Ptr* QCursor_new7(QBitmap_Ptr* bitmap, QBitmap_Ptr* mask, c_int hotX, c_int hotY);
+	public static extern QCursor_Ptr QCursor_new7(void** bitmap, void** mask, c_int hotX, c_int hotY);
 	[LinkName("QCursor_new8")]
-	public static extern QCursor_Ptr* QCursor_new8(QPixmap_Ptr* pixmap, c_int hotX);
+	public static extern QCursor_Ptr QCursor_new8(void** pixmap, c_int hotX);
 	[LinkName("QCursor_new9")]
-	public static extern QCursor_Ptr* QCursor_new9(QPixmap_Ptr* pixmap, c_int hotX, c_int hotY);
+	public static extern QCursor_Ptr QCursor_new9(void** pixmap, c_int hotX, c_int hotY);
 	[LinkName("QCursor_Delete")]
-	public static extern void QCursor_Delete(QCursor_Ptr* self);
+	public static extern void QCursor_Delete(QCursor_Ptr self);
 	[LinkName("QCursor_OperatorAssign")]
-	public static extern void QCursor_OperatorAssign(QCursor_Ptr* self, QCursor_Ptr* cursor);
+	public static extern void QCursor_OperatorAssign(void* self, void** cursor);
 	[LinkName("QCursor_Swap")]
-	public static extern void QCursor_Swap(QCursor_Ptr* self, QCursor_Ptr* other);
+	public static extern void QCursor_Swap(void* self, void** other);
 	[LinkName("QCursor_ToQvariant")]
-	public static extern QVariant_Ptr* QCursor_ToQvariant(QCursor_Ptr* self);
+	public static extern void* QCursor_ToQvariant(void* self);
 	[LinkName("QCursor_Shape")]
-	public static extern Qt_CursorShape QCursor_Shape(QCursor_Ptr* self);
+	public static extern Qt_CursorShape QCursor_Shape(void* self);
 	[LinkName("QCursor_SetShape")]
-	public static extern void QCursor_SetShape(QCursor_Ptr* self, Qt_CursorShape newShape);
+	public static extern void QCursor_SetShape(void* self, Qt_CursorShape newShape);
 	[LinkName("QCursor_Bitmap")]
-	public static extern QBitmap_Ptr* QCursor_Bitmap(QCursor_Ptr* self, Qt_ReturnByValueConstant param1);
+	public static extern void* QCursor_Bitmap(void* self, Qt_ReturnByValueConstant param1);
 	[LinkName("QCursor_Mask")]
-	public static extern QBitmap_Ptr* QCursor_Mask(QCursor_Ptr* self, Qt_ReturnByValueConstant param1);
+	public static extern void* QCursor_Mask(void* self, Qt_ReturnByValueConstant param1);
 	[LinkName("QCursor_Bitmap2")]
-	public static extern QBitmap_Ptr* QCursor_Bitmap2(QCursor_Ptr* self);
+	public static extern void* QCursor_Bitmap2(void* self);
 	[LinkName("QCursor_Mask2")]
-	public static extern QBitmap_Ptr* QCursor_Mask2(QCursor_Ptr* self);
+	public static extern void* QCursor_Mask2(void* self);
 	[LinkName("QCursor_Pixmap")]
-	public static extern QPixmap_Ptr* QCursor_Pixmap(QCursor_Ptr* self);
+	public static extern void* QCursor_Pixmap(void* self);
 	[LinkName("QCursor_HotSpot")]
-	public static extern QPoint_Ptr* QCursor_HotSpot(QCursor_Ptr* self);
+	public static extern void* QCursor_HotSpot(void* self);
 	[LinkName("QCursor_Pos")]
-	public static extern QPoint_Ptr* QCursor_Pos();
+	public static extern void* QCursor_Pos();
 	[LinkName("QCursor_Pos2")]
-	public static extern QPoint_Ptr* QCursor_Pos2(QScreen_Ptr** screen);
+	public static extern void* QCursor_Pos2(void** screen);
 	[LinkName("QCursor_SetPos")]
 	public static extern void QCursor_SetPos(c_int x, c_int y);
 	[LinkName("QCursor_SetPos2")]
-	public static extern void QCursor_SetPos2(QScreen_Ptr** screen, c_int x, c_int y);
+	public static extern void QCursor_SetPos2(void** screen, c_int x, c_int y);
 	[LinkName("QCursor_SetPos3")]
-	public static extern void QCursor_SetPos3(QPoint_Ptr* p);
+	public static extern void QCursor_SetPos3(void** p);
 	[LinkName("QCursor_SetPos4")]
-	public static extern void QCursor_SetPos4(QScreen_Ptr** screen, QPoint_Ptr* p);
+	public static extern void QCursor_SetPos4(void** screen, void** p);
 }
 class QCursor : IQCursor
 {
-	private QCursor_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QCursor_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QCursor_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QCursor_new();
@@ -113,47 +122,47 @@ class QCursor : IQCursor
 	}
 	public void Swap(IQCursor other)
 	{
-		CQt.QCursor_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QCursor_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public Qt_CursorShape Shape()
 	{
-		return CQt.QCursor_Shape((.)this.ptr);
+		return CQt.QCursor_Shape((.)this.ptr.Ptr);
 	}
 	public void SetShape(Qt_CursorShape newShape)
 	{
-		CQt.QCursor_SetShape((.)this.ptr, newShape);
+		CQt.QCursor_SetShape((.)this.ptr.Ptr, newShape);
 	}
-	public QBitmap_Ptr* Bitmap(Qt_ReturnByValueConstant param1)
+	public QBitmap_Ptr Bitmap(Qt_ReturnByValueConstant param1)
 	{
-		return CQt.QCursor_Bitmap((.)this.ptr, param1);
+		return QBitmap_Ptr(CQt.QCursor_Bitmap((.)this.ptr.Ptr, param1));
 	}
-	public QBitmap_Ptr* Mask(Qt_ReturnByValueConstant param1)
+	public QBitmap_Ptr Mask(Qt_ReturnByValueConstant param1)
 	{
-		return CQt.QCursor_Mask((.)this.ptr, param1);
+		return QBitmap_Ptr(CQt.QCursor_Mask((.)this.ptr.Ptr, param1));
 	}
-	public QBitmap_Ptr* Bitmap2()
+	public QBitmap_Ptr Bitmap2()
 	{
-		return CQt.QCursor_Bitmap2((.)this.ptr);
+		return QBitmap_Ptr(CQt.QCursor_Bitmap2((.)this.ptr.Ptr));
 	}
-	public QBitmap_Ptr* Mask2()
+	public QBitmap_Ptr Mask2()
 	{
-		return CQt.QCursor_Mask2((.)this.ptr);
+		return QBitmap_Ptr(CQt.QCursor_Mask2((.)this.ptr.Ptr));
 	}
-	public QPixmap_Ptr* Pixmap()
+	public QPixmap_Ptr Pixmap()
 	{
-		return CQt.QCursor_Pixmap((.)this.ptr);
+		return QPixmap_Ptr(CQt.QCursor_Pixmap((.)this.ptr.Ptr));
 	}
-	public QPoint_Ptr* HotSpot()
+	public QPoint_Ptr HotSpot()
 	{
-		return CQt.QCursor_HotSpot((.)this.ptr);
+		return QPoint_Ptr(CQt.QCursor_HotSpot((.)this.ptr.Ptr));
 	}
-	public QPoint_Ptr* Pos()
+	public QPoint_Ptr Pos()
 	{
-		return CQt.QCursor_Pos();
+		return QPoint_Ptr(CQt.QCursor_Pos());
 	}
-	public QPoint_Ptr* Pos2(IQScreen screen)
+	public QPoint_Ptr Pos2(IQScreen screen)
 	{
-		return CQt.QCursor_Pos2((.)screen?.ObjectPtr);
+		return QPoint_Ptr(CQt.QCursor_Pos2((.)screen?.ObjectPtr));
 	}
 	public void SetPos(c_int x, c_int y)
 	{

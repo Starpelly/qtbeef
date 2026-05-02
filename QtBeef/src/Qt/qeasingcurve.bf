@@ -7,60 +7,69 @@ namespace Qt6;
 // QEasingCurve
 // --------------------------------------------------------------
 [CRepr]
-struct QEasingCurve_Ptr: void
+struct QEasingCurve_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QEasingCurve_new")]
-	public static extern QEasingCurve_Ptr* QEasingCurve_new();
+	public static extern QEasingCurve_Ptr QEasingCurve_new();
 	[LinkName("QEasingCurve_new2")]
-	public static extern QEasingCurve_Ptr* QEasingCurve_new2(QEasingCurve_Ptr* other);
+	public static extern QEasingCurve_Ptr QEasingCurve_new2(void** other);
 	[LinkName("QEasingCurve_new3")]
-	public static extern QEasingCurve_Ptr* QEasingCurve_new3(QEasingCurve_Type type);
+	public static extern QEasingCurve_Ptr QEasingCurve_new3(QEasingCurve_Type type);
 	[LinkName("QEasingCurve_Delete")]
-	public static extern void QEasingCurve_Delete(QEasingCurve_Ptr* self);
+	public static extern void QEasingCurve_Delete(QEasingCurve_Ptr self);
 	[LinkName("QEasingCurve_OperatorAssign")]
-	public static extern void QEasingCurve_OperatorAssign(QEasingCurve_Ptr* self, QEasingCurve_Ptr* other);
+	public static extern void QEasingCurve_OperatorAssign(void* self, void** other);
 	[LinkName("QEasingCurve_Swap")]
-	public static extern void QEasingCurve_Swap(QEasingCurve_Ptr* self, QEasingCurve_Ptr* other);
+	public static extern void QEasingCurve_Swap(void* self, void** other);
 	[LinkName("QEasingCurve_OperatorEqual")]
-	public static extern bool QEasingCurve_OperatorEqual(QEasingCurve_Ptr* self, QEasingCurve_Ptr* other);
+	public static extern bool QEasingCurve_OperatorEqual(void* self, void** other);
 	[LinkName("QEasingCurve_OperatorNotEqual")]
-	public static extern bool QEasingCurve_OperatorNotEqual(QEasingCurve_Ptr* self, QEasingCurve_Ptr* other);
+	public static extern bool QEasingCurve_OperatorNotEqual(void* self, void** other);
 	[LinkName("QEasingCurve_Amplitude")]
-	public static extern double QEasingCurve_Amplitude(QEasingCurve_Ptr* self);
+	public static extern double QEasingCurve_Amplitude(void* self);
 	[LinkName("QEasingCurve_SetAmplitude")]
-	public static extern void QEasingCurve_SetAmplitude(QEasingCurve_Ptr* self, double amplitude);
+	public static extern void QEasingCurve_SetAmplitude(void* self, double amplitude);
 	[LinkName("QEasingCurve_Period")]
-	public static extern double QEasingCurve_Period(QEasingCurve_Ptr* self);
+	public static extern double QEasingCurve_Period(void* self);
 	[LinkName("QEasingCurve_SetPeriod")]
-	public static extern void QEasingCurve_SetPeriod(QEasingCurve_Ptr* self, double period);
+	public static extern void QEasingCurve_SetPeriod(void* self, double period);
 	[LinkName("QEasingCurve_Overshoot")]
-	public static extern double QEasingCurve_Overshoot(QEasingCurve_Ptr* self);
+	public static extern double QEasingCurve_Overshoot(void* self);
 	[LinkName("QEasingCurve_SetOvershoot")]
-	public static extern void QEasingCurve_SetOvershoot(QEasingCurve_Ptr* self, double overshoot);
+	public static extern void QEasingCurve_SetOvershoot(void* self, double overshoot);
 	[LinkName("QEasingCurve_AddCubicBezierSegment")]
-	public static extern void QEasingCurve_AddCubicBezierSegment(QEasingCurve_Ptr* self, QPointF_Ptr* c1, QPointF_Ptr* c2, QPointF_Ptr* endPoint);
+	public static extern void QEasingCurve_AddCubicBezierSegment(void* self, void** c1, void** c2, void** endPoint);
 	[LinkName("QEasingCurve_AddTCBSegment")]
-	public static extern void QEasingCurve_AddTCBSegment(QEasingCurve_Ptr* self, QPointF_Ptr* nextPoint, double t, double c, double b);
+	public static extern void QEasingCurve_AddTCBSegment(void* self, void** nextPoint, double t, double c, double b);
 	[LinkName("QEasingCurve_ToCubicSpline")]
-	public static extern void* QEasingCurve_ToCubicSpline(QEasingCurve_Ptr* self);
+	public static extern void* QEasingCurve_ToCubicSpline(void* self);
 	[LinkName("QEasingCurve_Type")]
-	public static extern QEasingCurve_Type QEasingCurve_Type(QEasingCurve_Ptr* self);
+	public static extern QEasingCurve_Type QEasingCurve_Type(void* self);
 	[LinkName("QEasingCurve_SetType")]
-	public static extern void QEasingCurve_SetType(QEasingCurve_Ptr* self, QEasingCurve_Type type);
+	public static extern void QEasingCurve_SetType(void* self, QEasingCurve_Type type);
 	[LinkName("QEasingCurve_SetCustomType")]
-	public static extern void QEasingCurve_SetCustomType(QEasingCurve_Ptr* self, c_intptr func);
+	public static extern void QEasingCurve_SetCustomType(void* self, c_intptr func);
 	[LinkName("QEasingCurve_CustomType")]
-	public static extern c_intptr QEasingCurve_CustomType(QEasingCurve_Ptr* self);
+	public static extern c_intptr QEasingCurve_CustomType(void* self);
 	[LinkName("QEasingCurve_ValueForProgress")]
-	public static extern double QEasingCurve_ValueForProgress(QEasingCurve_Ptr* self, double progress);
+	public static extern double QEasingCurve_ValueForProgress(void* self, double progress);
 }
 class QEasingCurve : IQEasingCurve
 {
-	private QEasingCurve_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QEasingCurve_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QEasingCurve_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QEasingCurve_new();
@@ -79,63 +88,63 @@ class QEasingCurve : IQEasingCurve
 	}
 	public void Swap(IQEasingCurve other)
 	{
-		CQt.QEasingCurve_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QEasingCurve_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public double Amplitude()
 	{
-		return CQt.QEasingCurve_Amplitude((.)this.ptr);
+		return CQt.QEasingCurve_Amplitude((.)this.ptr.Ptr);
 	}
 	public void SetAmplitude(double amplitude)
 	{
-		CQt.QEasingCurve_SetAmplitude((.)this.ptr, amplitude);
+		CQt.QEasingCurve_SetAmplitude((.)this.ptr.Ptr, amplitude);
 	}
 	public double Period()
 	{
-		return CQt.QEasingCurve_Period((.)this.ptr);
+		return CQt.QEasingCurve_Period((.)this.ptr.Ptr);
 	}
 	public void SetPeriod(double period)
 	{
-		CQt.QEasingCurve_SetPeriod((.)this.ptr, period);
+		CQt.QEasingCurve_SetPeriod((.)this.ptr.Ptr, period);
 	}
 	public double Overshoot()
 	{
-		return CQt.QEasingCurve_Overshoot((.)this.ptr);
+		return CQt.QEasingCurve_Overshoot((.)this.ptr.Ptr);
 	}
 	public void SetOvershoot(double overshoot)
 	{
-		CQt.QEasingCurve_SetOvershoot((.)this.ptr, overshoot);
+		CQt.QEasingCurve_SetOvershoot((.)this.ptr.Ptr, overshoot);
 	}
 	public void AddCubicBezierSegment(IQPointF c1, IQPointF c2, IQPointF endPoint)
 	{
-		CQt.QEasingCurve_AddCubicBezierSegment((.)this.ptr, (.)c1?.ObjectPtr, (.)c2?.ObjectPtr, (.)endPoint?.ObjectPtr);
+		CQt.QEasingCurve_AddCubicBezierSegment((.)this.ptr.Ptr, (.)c1?.ObjectPtr, (.)c2?.ObjectPtr, (.)endPoint?.ObjectPtr);
 	}
 	public void AddTCBSegment(IQPointF nextPoint, double t, double c, double b)
 	{
-		CQt.QEasingCurve_AddTCBSegment((.)this.ptr, (.)nextPoint?.ObjectPtr, t, c, b);
+		CQt.QEasingCurve_AddTCBSegment((.)this.ptr.Ptr, (.)nextPoint?.ObjectPtr, t, c, b);
 	}
 	public void* ToCubicSpline()
 	{
-		return CQt.QEasingCurve_ToCubicSpline((.)this.ptr);
+		return CQt.QEasingCurve_ToCubicSpline((.)this.ptr.Ptr);
 	}
 	public QEasingCurve_Type Type()
 	{
-		return CQt.QEasingCurve_Type((.)this.ptr);
+		return CQt.QEasingCurve_Type((.)this.ptr.Ptr);
 	}
 	public void SetType(QEasingCurve_Type type)
 	{
-		CQt.QEasingCurve_SetType((.)this.ptr, type);
+		CQt.QEasingCurve_SetType((.)this.ptr.Ptr, type);
 	}
 	public void SetCustomType(c_intptr func)
 	{
-		CQt.QEasingCurve_SetCustomType((.)this.ptr, func);
+		CQt.QEasingCurve_SetCustomType((.)this.ptr.Ptr, func);
 	}
 	public c_intptr CustomType()
 	{
-		return CQt.QEasingCurve_CustomType((.)this.ptr);
+		return CQt.QEasingCurve_CustomType((.)this.ptr.Ptr);
 	}
 	public double ValueForProgress(double progress)
 	{
-		return CQt.QEasingCurve_ValueForProgress((.)this.ptr, progress);
+		return CQt.QEasingCurve_ValueForProgress((.)this.ptr.Ptr, progress);
 	}
 }
 interface IQEasingCurve : IQtObjectInterface

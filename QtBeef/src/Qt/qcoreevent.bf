@@ -7,44 +7,53 @@ namespace Qt6;
 // QEvent
 // --------------------------------------------------------------
 [CRepr]
-struct QEvent_Ptr: void
+struct QEvent_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QEvent_new")]
-	public static extern QEvent_Ptr* QEvent_new(QEvent_Type type);
+	public static extern QEvent_Ptr QEvent_new(QEvent_Type type);
 	[LinkName("QEvent_Delete")]
-	public static extern void QEvent_Delete(QEvent_Ptr* self);
+	public static extern void QEvent_Delete(QEvent_Ptr self);
 	[LinkName("QEvent_Type")]
-	public static extern QEvent_Type QEvent_Type(QEvent_Ptr* self);
+	public static extern QEvent_Type QEvent_Type(void* self);
 	[LinkName("QEvent_Spontaneous")]
-	public static extern bool QEvent_Spontaneous(QEvent_Ptr* self);
+	public static extern bool QEvent_Spontaneous(void* self);
 	[LinkName("QEvent_SetAccepted")]
-	public static extern void QEvent_SetAccepted(QEvent_Ptr* self, bool accepted);
+	public static extern void QEvent_SetAccepted(void* self, bool accepted);
 	[LinkName("QEvent_IsAccepted")]
-	public static extern bool QEvent_IsAccepted(QEvent_Ptr* self);
+	public static extern bool QEvent_IsAccepted(void* self);
 	[LinkName("QEvent_Accept")]
-	public static extern void QEvent_Accept(QEvent_Ptr* self);
+	public static extern void QEvent_Accept(void* self);
 	[LinkName("QEvent_Ignore")]
-	public static extern void QEvent_Ignore(QEvent_Ptr* self);
+	public static extern void QEvent_Ignore(void* self);
 	[LinkName("QEvent_IsInputEvent")]
-	public static extern bool QEvent_IsInputEvent(QEvent_Ptr* self);
+	public static extern bool QEvent_IsInputEvent(void* self);
 	[LinkName("QEvent_IsPointerEvent")]
-	public static extern bool QEvent_IsPointerEvent(QEvent_Ptr* self);
+	public static extern bool QEvent_IsPointerEvent(void* self);
 	[LinkName("QEvent_IsSinglePointEvent")]
-	public static extern bool QEvent_IsSinglePointEvent(QEvent_Ptr* self);
+	public static extern bool QEvent_IsSinglePointEvent(void* self);
 	[LinkName("QEvent_RegisterEventType")]
 	public static extern c_int QEvent_RegisterEventType();
 	[LinkName("QEvent_Clone")]
-	public static extern QEvent_Ptr** QEvent_Clone(QEvent_Ptr* self);
+	public static extern void** QEvent_Clone(void* self);
 	[LinkName("QEvent_RegisterEventType1")]
 	public static extern c_int QEvent_RegisterEventType1(c_int hint);
 }
 class QEvent : IQEvent
 {
-	private QEvent_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(QEvent_Type type)
 	{
 		this.ptr = CQt.QEvent_new(type);
@@ -55,47 +64,47 @@ class QEvent : IQEvent
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr);
+		return CQt.QEvent_Type((.)this.ptr.Ptr);
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr);
+		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr);
+		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr);
+		CQt.QEvent_Accept((.)this.ptr.Ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr);
+		CQt.QEvent_Ignore((.)this.ptr.Ptr);
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr);
+		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
 	}
 	public c_int RegisterEventType()
 	{
 		return CQt.QEvent_RegisterEventType();
 	}
-	public QEvent_Ptr** Clone()
+	public QEvent_Ptr Clone()
 	{
-		return CQt.QEvent_Clone((.)this.ptr);
+		return QEvent_Ptr(CQt.QEvent_Clone((.)this.ptr.Ptr));
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
@@ -109,24 +118,33 @@ interface IQEvent : IQtObjectInterface
 // QTimerEvent
 // --------------------------------------------------------------
 [CRepr]
-struct QTimerEvent_Ptr: void
+struct QTimerEvent_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QTimerEvent_new")]
-	public static extern QTimerEvent_Ptr* QTimerEvent_new(c_int timerId);
+	public static extern QTimerEvent_Ptr QTimerEvent_new(c_int timerId);
 	[LinkName("QTimerEvent_Delete")]
-	public static extern void QTimerEvent_Delete(QTimerEvent_Ptr* self);
+	public static extern void QTimerEvent_Delete(QTimerEvent_Ptr self);
 	[LinkName("QTimerEvent_Clone")]
-	public static extern QTimerEvent_Ptr** QTimerEvent_Clone(QTimerEvent_Ptr* self);
+	public static extern void** QTimerEvent_Clone(void* self);
 	[LinkName("QTimerEvent_TimerId")]
-	public static extern c_int QTimerEvent_TimerId(QTimerEvent_Ptr* self);
+	public static extern c_int QTimerEvent_TimerId(void* self);
 }
 class QTimerEvent : IQTimerEvent, IQEvent
 {
-	private QTimerEvent_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QTimerEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTimerEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(c_int timerId)
 	{
 		this.ptr = CQt.QTimerEvent_new(timerId);
@@ -135,49 +153,49 @@ class QTimerEvent : IQTimerEvent, IQEvent
 	{
 		CQt.QTimerEvent_Delete(this.ptr);
 	}
-	public QTimerEvent_Ptr** Clone()
+	public QTimerEvent_Ptr Clone()
 	{
-		return CQt.QTimerEvent_Clone((.)this.ptr);
+		return QTimerEvent_Ptr(CQt.QTimerEvent_Clone((.)this.ptr.Ptr));
 	}
 	public c_int TimerId()
 	{
-		return CQt.QTimerEvent_TimerId((.)this.ptr);
+		return CQt.QTimerEvent_TimerId((.)this.ptr.Ptr);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr);
+		return CQt.QEvent_Type((.)this.ptr.Ptr);
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr);
+		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr);
+		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr);
+		CQt.QEvent_Accept((.)this.ptr.Ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr);
+		CQt.QEvent_Ignore((.)this.ptr.Ptr);
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr);
+		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
 	}
 	public c_int RegisterEventType()
 	{
@@ -195,30 +213,39 @@ interface IQTimerEvent : IQtObjectInterface
 // QChildEvent
 // --------------------------------------------------------------
 [CRepr]
-struct QChildEvent_Ptr: void
+struct QChildEvent_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QChildEvent_new")]
-	public static extern QChildEvent_Ptr* QChildEvent_new(QEvent_Type type, QObject_Ptr** child);
+	public static extern QChildEvent_Ptr QChildEvent_new(QEvent_Type type, void** child);
 	[LinkName("QChildEvent_Delete")]
-	public static extern void QChildEvent_Delete(QChildEvent_Ptr* self);
+	public static extern void QChildEvent_Delete(QChildEvent_Ptr self);
 	[LinkName("QChildEvent_Clone")]
-	public static extern QChildEvent_Ptr** QChildEvent_Clone(QChildEvent_Ptr* self);
+	public static extern void** QChildEvent_Clone(void* self);
 	[LinkName("QChildEvent_Child")]
-	public static extern QObject_Ptr** QChildEvent_Child(QChildEvent_Ptr* self);
+	public static extern void** QChildEvent_Child(void* self);
 	[LinkName("QChildEvent_Added")]
-	public static extern bool QChildEvent_Added(QChildEvent_Ptr* self);
+	public static extern bool QChildEvent_Added(void* self);
 	[LinkName("QChildEvent_Polished")]
-	public static extern bool QChildEvent_Polished(QChildEvent_Ptr* self);
+	public static extern bool QChildEvent_Polished(void* self);
 	[LinkName("QChildEvent_Removed")]
-	public static extern bool QChildEvent_Removed(QChildEvent_Ptr* self);
+	public static extern bool QChildEvent_Removed(void* self);
 }
 class QChildEvent : IQChildEvent, IQEvent
 {
-	private QChildEvent_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QChildEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QChildEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(QEvent_Type type, IQObject child)
 	{
 		this.ptr = CQt.QChildEvent_new(type, (.)child?.ObjectPtr);
@@ -227,61 +254,61 @@ class QChildEvent : IQChildEvent, IQEvent
 	{
 		CQt.QChildEvent_Delete(this.ptr);
 	}
-	public QChildEvent_Ptr** Clone()
+	public QChildEvent_Ptr Clone()
 	{
-		return CQt.QChildEvent_Clone((.)this.ptr);
+		return QChildEvent_Ptr(CQt.QChildEvent_Clone((.)this.ptr.Ptr));
 	}
-	public QObject_Ptr** Child()
+	public QObject_Ptr Child()
 	{
-		return CQt.QChildEvent_Child((.)this.ptr);
+		return QObject_Ptr(CQt.QChildEvent_Child((.)this.ptr.Ptr));
 	}
 	public bool Added()
 	{
-		return CQt.QChildEvent_Added((.)this.ptr);
+		return CQt.QChildEvent_Added((.)this.ptr.Ptr);
 	}
 	public bool Polished()
 	{
-		return CQt.QChildEvent_Polished((.)this.ptr);
+		return CQt.QChildEvent_Polished((.)this.ptr.Ptr);
 	}
 	public bool Removed()
 	{
-		return CQt.QChildEvent_Removed((.)this.ptr);
+		return CQt.QChildEvent_Removed((.)this.ptr.Ptr);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr);
+		return CQt.QEvent_Type((.)this.ptr.Ptr);
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr);
+		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr);
+		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr);
+		CQt.QEvent_Accept((.)this.ptr.Ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr);
+		CQt.QEvent_Ignore((.)this.ptr.Ptr);
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr);
+		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
 	}
 	public c_int RegisterEventType()
 	{
@@ -299,24 +326,33 @@ interface IQChildEvent : IQtObjectInterface
 // QDynamicPropertyChangeEvent
 // --------------------------------------------------------------
 [CRepr]
-struct QDynamicPropertyChangeEvent_Ptr: void
+struct QDynamicPropertyChangeEvent_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QDynamicPropertyChangeEvent_new")]
-	public static extern QDynamicPropertyChangeEvent_Ptr* QDynamicPropertyChangeEvent_new(void** name);
+	public static extern QDynamicPropertyChangeEvent_Ptr QDynamicPropertyChangeEvent_new(void** name);
 	[LinkName("QDynamicPropertyChangeEvent_Delete")]
-	public static extern void QDynamicPropertyChangeEvent_Delete(QDynamicPropertyChangeEvent_Ptr* self);
+	public static extern void QDynamicPropertyChangeEvent_Delete(QDynamicPropertyChangeEvent_Ptr self);
 	[LinkName("QDynamicPropertyChangeEvent_Clone")]
-	public static extern QDynamicPropertyChangeEvent_Ptr** QDynamicPropertyChangeEvent_Clone(QDynamicPropertyChangeEvent_Ptr* self);
+	public static extern void** QDynamicPropertyChangeEvent_Clone(void* self);
 	[LinkName("QDynamicPropertyChangeEvent_PropertyName")]
-	public static extern void* QDynamicPropertyChangeEvent_PropertyName(QDynamicPropertyChangeEvent_Ptr* self);
+	public static extern void* QDynamicPropertyChangeEvent_PropertyName(void* self);
 }
 class QDynamicPropertyChangeEvent : IQDynamicPropertyChangeEvent, IQEvent
 {
-	private QDynamicPropertyChangeEvent_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QDynamicPropertyChangeEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QDynamicPropertyChangeEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(void** name)
 	{
 		this.ptr = CQt.QDynamicPropertyChangeEvent_new(name);
@@ -325,49 +361,49 @@ class QDynamicPropertyChangeEvent : IQDynamicPropertyChangeEvent, IQEvent
 	{
 		CQt.QDynamicPropertyChangeEvent_Delete(this.ptr);
 	}
-	public QDynamicPropertyChangeEvent_Ptr** Clone()
+	public QDynamicPropertyChangeEvent_Ptr Clone()
 	{
-		return CQt.QDynamicPropertyChangeEvent_Clone((.)this.ptr);
+		return QDynamicPropertyChangeEvent_Ptr(CQt.QDynamicPropertyChangeEvent_Clone((.)this.ptr.Ptr));
 	}
 	public void* PropertyName()
 	{
-		return CQt.QDynamicPropertyChangeEvent_PropertyName((.)this.ptr);
+		return CQt.QDynamicPropertyChangeEvent_PropertyName((.)this.ptr.Ptr);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr);
+		return CQt.QEvent_Type((.)this.ptr.Ptr);
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr);
+		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr);
+		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr);
+		CQt.QEvent_Accept((.)this.ptr.Ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr);
+		CQt.QEvent_Ignore((.)this.ptr.Ptr);
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr);
+		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
 	}
 	public c_int RegisterEventType()
 	{
@@ -385,24 +421,33 @@ interface IQDynamicPropertyChangeEvent : IQtObjectInterface
 // QDeferredDeleteEvent
 // --------------------------------------------------------------
 [CRepr]
-struct QDeferredDeleteEvent_Ptr: void
+struct QDeferredDeleteEvent_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QDeferredDeleteEvent_new")]
-	public static extern QDeferredDeleteEvent_Ptr* QDeferredDeleteEvent_new();
+	public static extern QDeferredDeleteEvent_Ptr QDeferredDeleteEvent_new();
 	[LinkName("QDeferredDeleteEvent_Delete")]
-	public static extern void QDeferredDeleteEvent_Delete(QDeferredDeleteEvent_Ptr* self);
+	public static extern void QDeferredDeleteEvent_Delete(QDeferredDeleteEvent_Ptr self);
 	[LinkName("QDeferredDeleteEvent_Clone")]
-	public static extern QDeferredDeleteEvent_Ptr** QDeferredDeleteEvent_Clone(QDeferredDeleteEvent_Ptr* self);
+	public static extern void** QDeferredDeleteEvent_Clone(void* self);
 	[LinkName("QDeferredDeleteEvent_LoopLevel")]
-	public static extern c_int QDeferredDeleteEvent_LoopLevel(QDeferredDeleteEvent_Ptr* self);
+	public static extern c_int QDeferredDeleteEvent_LoopLevel(void* self);
 }
 class QDeferredDeleteEvent : IQDeferredDeleteEvent, IQEvent
 {
-	private QDeferredDeleteEvent_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QDeferredDeleteEvent_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QDeferredDeleteEvent_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QDeferredDeleteEvent_new();
@@ -411,49 +456,49 @@ class QDeferredDeleteEvent : IQDeferredDeleteEvent, IQEvent
 	{
 		CQt.QDeferredDeleteEvent_Delete(this.ptr);
 	}
-	public QDeferredDeleteEvent_Ptr** Clone()
+	public QDeferredDeleteEvent_Ptr Clone()
 	{
-		return CQt.QDeferredDeleteEvent_Clone((.)this.ptr);
+		return QDeferredDeleteEvent_Ptr(CQt.QDeferredDeleteEvent_Clone((.)this.ptr.Ptr));
 	}
 	public c_int LoopLevel()
 	{
-		return CQt.QDeferredDeleteEvent_LoopLevel((.)this.ptr);
+		return CQt.QDeferredDeleteEvent_LoopLevel((.)this.ptr.Ptr);
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type((.)this.ptr);
+		return CQt.QEvent_Type((.)this.ptr.Ptr);
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous((.)this.ptr);
+		return CQt.QEvent_Spontaneous((.)this.ptr.Ptr);
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+		CQt.QEvent_SetAccepted((.)this.ptr.Ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted((.)this.ptr);
+		return CQt.QEvent_IsAccepted((.)this.ptr.Ptr);
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept((.)this.ptr);
+		CQt.QEvent_Accept((.)this.ptr.Ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore((.)this.ptr);
+		CQt.QEvent_Ignore((.)this.ptr.Ptr);
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent((.)this.ptr);
+		return CQt.QEvent_IsInputEvent((.)this.ptr.Ptr);
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+		return CQt.QEvent_IsPointerEvent((.)this.ptr.Ptr);
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr.Ptr);
 	}
 	public c_int RegisterEventType()
 	{

@@ -7,53 +7,62 @@ namespace Qt6;
 // QSurface
 // --------------------------------------------------------------
 [CRepr]
-struct QSurface_Ptr: void
+struct QSurface_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QSurface_Delete")]
-	public static extern void QSurface_Delete(QSurface_Ptr* self);
+	public static extern void QSurface_Delete(QSurface_Ptr self);
 	[LinkName("QSurface_SurfaceClass")]
-	public static extern QSurface_SurfaceClass QSurface_SurfaceClass(QSurface_Ptr* self);
+	public static extern QSurface_SurfaceClass QSurface_SurfaceClass(void* self);
 	[LinkName("QSurface_Format")]
-	public static extern QSurfaceFormat_Ptr* QSurface_Format(QSurface_Ptr* self);
+	public static extern void* QSurface_Format(void* self);
 	[LinkName("QSurface_SurfaceType")]
-	public static extern QSurface_SurfaceType QSurface_SurfaceType(QSurface_Ptr* self);
+	public static extern QSurface_SurfaceType QSurface_SurfaceType(void* self);
 	[LinkName("QSurface_SupportsOpenGL")]
-	public static extern bool QSurface_SupportsOpenGL(QSurface_Ptr* self);
+	public static extern bool QSurface_SupportsOpenGL(void* self);
 	[LinkName("QSurface_Size")]
-	public static extern QSize_Ptr* QSurface_Size(QSurface_Ptr* self);
+	public static extern void* QSurface_Size(void* self);
 	[LinkName("QSurface_OperatorAssign")]
-	public static extern void QSurface_OperatorAssign(QSurface_Ptr* self, QSurface_Ptr* param1);
+	public static extern void QSurface_OperatorAssign(void* self, void** param1);
 }
 class QSurface : IQSurface
 {
-	private QSurface_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QSurface_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QSurface_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public ~this()
 	{
 		CQt.QSurface_Delete(this.ptr);
 	}
 	public QSurface_SurfaceClass SurfaceClass()
 	{
-		return CQt.QSurface_SurfaceClass((.)this.ptr);
+		return CQt.QSurface_SurfaceClass((.)this.ptr.Ptr);
 	}
-	public QSurfaceFormat_Ptr* Format()
+	public QSurfaceFormat_Ptr Format()
 	{
-		return CQt.QSurface_Format((.)this.ptr);
+		return QSurfaceFormat_Ptr(CQt.QSurface_Format((.)this.ptr.Ptr));
 	}
 	public QSurface_SurfaceType SurfaceType()
 	{
-		return CQt.QSurface_SurfaceType((.)this.ptr);
+		return CQt.QSurface_SurfaceType((.)this.ptr.Ptr);
 	}
 	public bool SupportsOpenGL()
 	{
-		return CQt.QSurface_SupportsOpenGL((.)this.ptr);
+		return CQt.QSurface_SupportsOpenGL((.)this.ptr.Ptr);
 	}
-	public QSize_Ptr* Size()
+	public QSize_Ptr Size()
 	{
-		return CQt.QSurface_Size((.)this.ptr);
+		return QSize_Ptr(CQt.QSurface_Size((.)this.ptr.Ptr));
 	}
 }
 interface IQSurface : IQtObjectInterface

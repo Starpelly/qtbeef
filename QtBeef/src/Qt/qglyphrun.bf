@@ -7,76 +7,85 @@ namespace Qt6;
 // QGlyphRun
 // --------------------------------------------------------------
 [CRepr]
-struct QGlyphRun_Ptr: void
+struct QGlyphRun_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QGlyphRun_new")]
-	public static extern QGlyphRun_Ptr* QGlyphRun_new();
+	public static extern QGlyphRun_Ptr QGlyphRun_new();
 	[LinkName("QGlyphRun_new2")]
-	public static extern QGlyphRun_Ptr* QGlyphRun_new2(QGlyphRun_Ptr* other);
+	public static extern QGlyphRun_Ptr QGlyphRun_new2(void** other);
 	[LinkName("QGlyphRun_Delete")]
-	public static extern void QGlyphRun_Delete(QGlyphRun_Ptr* self);
+	public static extern void QGlyphRun_Delete(QGlyphRun_Ptr self);
 	[LinkName("QGlyphRun_OperatorAssign")]
-	public static extern void QGlyphRun_OperatorAssign(QGlyphRun_Ptr* self, QGlyphRun_Ptr* other);
+	public static extern void QGlyphRun_OperatorAssign(void* self, void** other);
 	[LinkName("QGlyphRun_Swap")]
-	public static extern void QGlyphRun_Swap(QGlyphRun_Ptr* self, QGlyphRun_Ptr* other);
+	public static extern void QGlyphRun_Swap(void* self, void** other);
 	[LinkName("QGlyphRun_RawFont")]
-	public static extern QRawFont_Ptr* QGlyphRun_RawFont(QGlyphRun_Ptr* self);
+	public static extern void* QGlyphRun_RawFont(void* self);
 	[LinkName("QGlyphRun_SetRawFont")]
-	public static extern void QGlyphRun_SetRawFont(QGlyphRun_Ptr* self, QRawFont_Ptr* rawFont);
+	public static extern void QGlyphRun_SetRawFont(void* self, void** rawFont);
 	[LinkName("QGlyphRun_SetRawData")]
-	public static extern void QGlyphRun_SetRawData(QGlyphRun_Ptr* self, c_uint* glyphIndexArray, QPointF_Ptr** glyphPositionArray, c_int size);
+	public static extern void QGlyphRun_SetRawData(void* self, c_uint* glyphIndexArray, void** glyphPositionArray, c_int size);
 	[LinkName("QGlyphRun_GlyphIndexes")]
-	public static extern void* QGlyphRun_GlyphIndexes(QGlyphRun_Ptr* self);
+	public static extern void* QGlyphRun_GlyphIndexes(void* self);
 	[LinkName("QGlyphRun_SetGlyphIndexes")]
-	public static extern void QGlyphRun_SetGlyphIndexes(QGlyphRun_Ptr* self, void** glyphIndexes);
+	public static extern void QGlyphRun_SetGlyphIndexes(void* self, void** glyphIndexes);
 	[LinkName("QGlyphRun_Positions")]
-	public static extern void* QGlyphRun_Positions(QGlyphRun_Ptr* self);
+	public static extern void* QGlyphRun_Positions(void* self);
 	[LinkName("QGlyphRun_SetPositions")]
-	public static extern void QGlyphRun_SetPositions(QGlyphRun_Ptr* self, void** positions);
+	public static extern void QGlyphRun_SetPositions(void* self, void** positions);
 	[LinkName("QGlyphRun_Clear")]
-	public static extern void QGlyphRun_Clear(QGlyphRun_Ptr* self);
+	public static extern void QGlyphRun_Clear(void* self);
 	[LinkName("QGlyphRun_OperatorEqual")]
-	public static extern bool QGlyphRun_OperatorEqual(QGlyphRun_Ptr* self, QGlyphRun_Ptr* other);
+	public static extern bool QGlyphRun_OperatorEqual(void* self, void** other);
 	[LinkName("QGlyphRun_OperatorNotEqual")]
-	public static extern bool QGlyphRun_OperatorNotEqual(QGlyphRun_Ptr* self, QGlyphRun_Ptr* other);
+	public static extern bool QGlyphRun_OperatorNotEqual(void* self, void** other);
 	[LinkName("QGlyphRun_SetOverline")]
-	public static extern void QGlyphRun_SetOverline(QGlyphRun_Ptr* self, bool overline);
+	public static extern void QGlyphRun_SetOverline(void* self, bool overline);
 	[LinkName("QGlyphRun_Overline")]
-	public static extern bool QGlyphRun_Overline(QGlyphRun_Ptr* self);
+	public static extern bool QGlyphRun_Overline(void* self);
 	[LinkName("QGlyphRun_SetUnderline")]
-	public static extern void QGlyphRun_SetUnderline(QGlyphRun_Ptr* self, bool underline);
+	public static extern void QGlyphRun_SetUnderline(void* self, bool underline);
 	[LinkName("QGlyphRun_Underline")]
-	public static extern bool QGlyphRun_Underline(QGlyphRun_Ptr* self);
+	public static extern bool QGlyphRun_Underline(void* self);
 	[LinkName("QGlyphRun_SetStrikeOut")]
-	public static extern void QGlyphRun_SetStrikeOut(QGlyphRun_Ptr* self, bool strikeOut);
+	public static extern void QGlyphRun_SetStrikeOut(void* self, bool strikeOut);
 	[LinkName("QGlyphRun_StrikeOut")]
-	public static extern bool QGlyphRun_StrikeOut(QGlyphRun_Ptr* self);
+	public static extern bool QGlyphRun_StrikeOut(void* self);
 	[LinkName("QGlyphRun_SetRightToLeft")]
-	public static extern void QGlyphRun_SetRightToLeft(QGlyphRun_Ptr* self, bool on);
+	public static extern void QGlyphRun_SetRightToLeft(void* self, bool on);
 	[LinkName("QGlyphRun_IsRightToLeft")]
-	public static extern bool QGlyphRun_IsRightToLeft(QGlyphRun_Ptr* self);
+	public static extern bool QGlyphRun_IsRightToLeft(void* self);
 	[LinkName("QGlyphRun_SetFlag")]
-	public static extern void QGlyphRun_SetFlag(QGlyphRun_Ptr* self, QGlyphRun_GlyphRunFlag flag);
+	public static extern void QGlyphRun_SetFlag(void* self, QGlyphRun_GlyphRunFlag flag);
 	[LinkName("QGlyphRun_SetFlags")]
-	public static extern void QGlyphRun_SetFlags(QGlyphRun_Ptr* self, void* flags);
+	public static extern void QGlyphRun_SetFlags(void* self, void* flags);
 	[LinkName("QGlyphRun_Flags")]
-	public static extern void* QGlyphRun_Flags(QGlyphRun_Ptr* self);
+	public static extern void* QGlyphRun_Flags(void* self);
 	[LinkName("QGlyphRun_SetBoundingRect")]
-	public static extern void QGlyphRun_SetBoundingRect(QGlyphRun_Ptr* self, QRectF_Ptr* boundingRect);
+	public static extern void QGlyphRun_SetBoundingRect(void* self, void** boundingRect);
 	[LinkName("QGlyphRun_BoundingRect")]
-	public static extern QRectF_Ptr* QGlyphRun_BoundingRect(QGlyphRun_Ptr* self);
+	public static extern void* QGlyphRun_BoundingRect(void* self);
 	[LinkName("QGlyphRun_IsEmpty")]
-	public static extern bool QGlyphRun_IsEmpty(QGlyphRun_Ptr* self);
+	public static extern bool QGlyphRun_IsEmpty(void* self);
 	[LinkName("QGlyphRun_SetFlag2")]
-	public static extern void QGlyphRun_SetFlag2(QGlyphRun_Ptr* self, QGlyphRun_GlyphRunFlag flag, bool enabled);
+	public static extern void QGlyphRun_SetFlag2(void* self, QGlyphRun_GlyphRunFlag flag, bool enabled);
 }
 class QGlyphRun : IQGlyphRun
 {
-	private QGlyphRun_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QGlyphRun_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QGlyphRun_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QGlyphRun_new();
@@ -91,99 +100,99 @@ class QGlyphRun : IQGlyphRun
 	}
 	public void Swap(IQGlyphRun other)
 	{
-		CQt.QGlyphRun_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QGlyphRun_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
-	public QRawFont_Ptr* RawFont()
+	public QRawFont_Ptr RawFont()
 	{
-		return CQt.QGlyphRun_RawFont((.)this.ptr);
+		return QRawFont_Ptr(CQt.QGlyphRun_RawFont((.)this.ptr.Ptr));
 	}
 	public void SetRawFont(IQRawFont rawFont)
 	{
-		CQt.QGlyphRun_SetRawFont((.)this.ptr, (.)rawFont?.ObjectPtr);
+		CQt.QGlyphRun_SetRawFont((.)this.ptr.Ptr, (.)rawFont?.ObjectPtr);
 	}
 	public void SetRawData(c_uint* glyphIndexArray, IQPointF glyphPositionArray, c_int size)
 	{
-		CQt.QGlyphRun_SetRawData((.)this.ptr, glyphIndexArray, (.)glyphPositionArray?.ObjectPtr, size);
+		CQt.QGlyphRun_SetRawData((.)this.ptr.Ptr, glyphIndexArray, (.)glyphPositionArray?.ObjectPtr, size);
 	}
 	public void* GlyphIndexes()
 	{
-		return CQt.QGlyphRun_GlyphIndexes((.)this.ptr);
+		return CQt.QGlyphRun_GlyphIndexes((.)this.ptr.Ptr);
 	}
 	public void SetGlyphIndexes(void** glyphIndexes)
 	{
-		CQt.QGlyphRun_SetGlyphIndexes((.)this.ptr, glyphIndexes);
+		CQt.QGlyphRun_SetGlyphIndexes((.)this.ptr.Ptr, glyphIndexes);
 	}
 	public void* Positions()
 	{
-		return CQt.QGlyphRun_Positions((.)this.ptr);
+		return CQt.QGlyphRun_Positions((.)this.ptr.Ptr);
 	}
 	public void SetPositions(void** positions)
 	{
-		CQt.QGlyphRun_SetPositions((.)this.ptr, positions);
+		CQt.QGlyphRun_SetPositions((.)this.ptr.Ptr, positions);
 	}
 	public void Clear()
 	{
-		CQt.QGlyphRun_Clear((.)this.ptr);
+		CQt.QGlyphRun_Clear((.)this.ptr.Ptr);
 	}
 	public void SetOverline(bool overline)
 	{
-		CQt.QGlyphRun_SetOverline((.)this.ptr, overline);
+		CQt.QGlyphRun_SetOverline((.)this.ptr.Ptr, overline);
 	}
 	public bool Overline()
 	{
-		return CQt.QGlyphRun_Overline((.)this.ptr);
+		return CQt.QGlyphRun_Overline((.)this.ptr.Ptr);
 	}
 	public void SetUnderline(bool underline)
 	{
-		CQt.QGlyphRun_SetUnderline((.)this.ptr, underline);
+		CQt.QGlyphRun_SetUnderline((.)this.ptr.Ptr, underline);
 	}
 	public bool Underline()
 	{
-		return CQt.QGlyphRun_Underline((.)this.ptr);
+		return CQt.QGlyphRun_Underline((.)this.ptr.Ptr);
 	}
 	public void SetStrikeOut(bool strikeOut)
 	{
-		CQt.QGlyphRun_SetStrikeOut((.)this.ptr, strikeOut);
+		CQt.QGlyphRun_SetStrikeOut((.)this.ptr.Ptr, strikeOut);
 	}
 	public bool StrikeOut()
 	{
-		return CQt.QGlyphRun_StrikeOut((.)this.ptr);
+		return CQt.QGlyphRun_StrikeOut((.)this.ptr.Ptr);
 	}
 	public void SetRightToLeft(bool on)
 	{
-		CQt.QGlyphRun_SetRightToLeft((.)this.ptr, on);
+		CQt.QGlyphRun_SetRightToLeft((.)this.ptr.Ptr, on);
 	}
 	public bool IsRightToLeft()
 	{
-		return CQt.QGlyphRun_IsRightToLeft((.)this.ptr);
+		return CQt.QGlyphRun_IsRightToLeft((.)this.ptr.Ptr);
 	}
 	public void SetFlag(QGlyphRun_GlyphRunFlag flag)
 	{
-		CQt.QGlyphRun_SetFlag((.)this.ptr, flag);
+		CQt.QGlyphRun_SetFlag((.)this.ptr.Ptr, flag);
 	}
 	public void SetFlags(void* flags)
 	{
-		CQt.QGlyphRun_SetFlags((.)this.ptr, flags);
+		CQt.QGlyphRun_SetFlags((.)this.ptr.Ptr, flags);
 	}
 	public void* Flags()
 	{
-		return CQt.QGlyphRun_Flags((.)this.ptr);
+		return CQt.QGlyphRun_Flags((.)this.ptr.Ptr);
 	}
 	public void SetBoundingRect(IQRectF boundingRect)
 	{
-		CQt.QGlyphRun_SetBoundingRect((.)this.ptr, (.)boundingRect?.ObjectPtr);
+		CQt.QGlyphRun_SetBoundingRect((.)this.ptr.Ptr, (.)boundingRect?.ObjectPtr);
 	}
-	public QRectF_Ptr* BoundingRect()
+	public QRectF_Ptr BoundingRect()
 	{
-		return CQt.QGlyphRun_BoundingRect((.)this.ptr);
+		return QRectF_Ptr(CQt.QGlyphRun_BoundingRect((.)this.ptr.Ptr));
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QGlyphRun_IsEmpty((.)this.ptr);
+		return CQt.QGlyphRun_IsEmpty((.)this.ptr.Ptr);
 	}
 	public void SetFlag2(QGlyphRun_GlyphRunFlag flag, bool enabled)
 	{
-		CQt.QGlyphRun_SetFlag2((.)this.ptr, flag, enabled);
+		CQt.QGlyphRun_SetFlag2((.)this.ptr.Ptr, flag, enabled);
 	}
 }
 interface IQGlyphRun : IQtObjectInterface

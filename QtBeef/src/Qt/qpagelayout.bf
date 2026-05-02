@@ -7,94 +7,103 @@ namespace Qt6;
 // QPageLayout
 // --------------------------------------------------------------
 [CRepr]
-struct QPageLayout_Ptr: void
+struct QPageLayout_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPageLayout_new")]
-	public static extern QPageLayout_Ptr* QPageLayout_new();
+	public static extern QPageLayout_Ptr QPageLayout_new();
 	[LinkName("QPageLayout_new2")]
-	public static extern QPageLayout_Ptr* QPageLayout_new2(QPageSize_Ptr* pageSize, QPageLayout_Orientation orientation, QMarginsF_Ptr* margins);
+	public static extern QPageLayout_Ptr QPageLayout_new2(void** pageSize, QPageLayout_Orientation orientation, void** margins);
 	[LinkName("QPageLayout_new3")]
-	public static extern QPageLayout_Ptr* QPageLayout_new3(QPageLayout_Ptr* other);
+	public static extern QPageLayout_Ptr QPageLayout_new3(void** other);
 	[LinkName("QPageLayout_new4")]
-	public static extern QPageLayout_Ptr* QPageLayout_new4(QPageSize_Ptr* pageSize, QPageLayout_Orientation orientation, QMarginsF_Ptr* margins, QPageLayout_Unit units);
+	public static extern QPageLayout_Ptr QPageLayout_new4(void** pageSize, QPageLayout_Orientation orientation, void** margins, QPageLayout_Unit units);
 	[LinkName("QPageLayout_new5")]
-	public static extern QPageLayout_Ptr* QPageLayout_new5(QPageSize_Ptr* pageSize, QPageLayout_Orientation orientation, QMarginsF_Ptr* margins, QPageLayout_Unit units, QMarginsF_Ptr* minMargins);
+	public static extern QPageLayout_Ptr QPageLayout_new5(void** pageSize, QPageLayout_Orientation orientation, void** margins, QPageLayout_Unit units, void** minMargins);
 	[LinkName("QPageLayout_Delete")]
-	public static extern void QPageLayout_Delete(QPageLayout_Ptr* self);
+	public static extern void QPageLayout_Delete(QPageLayout_Ptr self);
 	[LinkName("QPageLayout_OperatorAssign")]
-	public static extern void QPageLayout_OperatorAssign(QPageLayout_Ptr* self, QPageLayout_Ptr* other);
+	public static extern void QPageLayout_OperatorAssign(void* self, void** other);
 	[LinkName("QPageLayout_Swap")]
-	public static extern void QPageLayout_Swap(QPageLayout_Ptr* self, QPageLayout_Ptr* other);
+	public static extern void QPageLayout_Swap(void* self, void** other);
 	[LinkName("QPageLayout_IsEquivalentTo")]
-	public static extern bool QPageLayout_IsEquivalentTo(QPageLayout_Ptr* self, QPageLayout_Ptr* other);
+	public static extern bool QPageLayout_IsEquivalentTo(void* self, void** other);
 	[LinkName("QPageLayout_IsValid")]
-	public static extern bool QPageLayout_IsValid(QPageLayout_Ptr* self);
+	public static extern bool QPageLayout_IsValid(void* self);
 	[LinkName("QPageLayout_SetMode")]
-	public static extern void QPageLayout_SetMode(QPageLayout_Ptr* self, QPageLayout_Mode mode);
+	public static extern void QPageLayout_SetMode(void* self, QPageLayout_Mode mode);
 	[LinkName("QPageLayout_Mode")]
-	public static extern QPageLayout_Mode QPageLayout_Mode(QPageLayout_Ptr* self);
+	public static extern QPageLayout_Mode QPageLayout_Mode(void* self);
 	[LinkName("QPageLayout_SetPageSize")]
-	public static extern void QPageLayout_SetPageSize(QPageLayout_Ptr* self, QPageSize_Ptr* pageSize);
+	public static extern void QPageLayout_SetPageSize(void* self, void** pageSize);
 	[LinkName("QPageLayout_PageSize")]
-	public static extern QPageSize_Ptr* QPageLayout_PageSize(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_PageSize(void* self);
 	[LinkName("QPageLayout_SetOrientation")]
-	public static extern void QPageLayout_SetOrientation(QPageLayout_Ptr* self, QPageLayout_Orientation orientation);
+	public static extern void QPageLayout_SetOrientation(void* self, QPageLayout_Orientation orientation);
 	[LinkName("QPageLayout_Orientation")]
-	public static extern QPageLayout_Orientation QPageLayout_Orientation(QPageLayout_Ptr* self);
+	public static extern QPageLayout_Orientation QPageLayout_Orientation(void* self);
 	[LinkName("QPageLayout_SetUnits")]
-	public static extern void QPageLayout_SetUnits(QPageLayout_Ptr* self, QPageLayout_Unit units);
+	public static extern void QPageLayout_SetUnits(void* self, QPageLayout_Unit units);
 	[LinkName("QPageLayout_Units")]
-	public static extern QPageLayout_Unit QPageLayout_Units(QPageLayout_Ptr* self);
+	public static extern QPageLayout_Unit QPageLayout_Units(void* self);
 	[LinkName("QPageLayout_SetMargins")]
-	public static extern bool QPageLayout_SetMargins(QPageLayout_Ptr* self, QMarginsF_Ptr* margins);
+	public static extern bool QPageLayout_SetMargins(void* self, void** margins);
 	[LinkName("QPageLayout_SetLeftMargin")]
-	public static extern bool QPageLayout_SetLeftMargin(QPageLayout_Ptr* self, double leftMargin);
+	public static extern bool QPageLayout_SetLeftMargin(void* self, double leftMargin);
 	[LinkName("QPageLayout_SetRightMargin")]
-	public static extern bool QPageLayout_SetRightMargin(QPageLayout_Ptr* self, double rightMargin);
+	public static extern bool QPageLayout_SetRightMargin(void* self, double rightMargin);
 	[LinkName("QPageLayout_SetTopMargin")]
-	public static extern bool QPageLayout_SetTopMargin(QPageLayout_Ptr* self, double topMargin);
+	public static extern bool QPageLayout_SetTopMargin(void* self, double topMargin);
 	[LinkName("QPageLayout_SetBottomMargin")]
-	public static extern bool QPageLayout_SetBottomMargin(QPageLayout_Ptr* self, double bottomMargin);
+	public static extern bool QPageLayout_SetBottomMargin(void* self, double bottomMargin);
 	[LinkName("QPageLayout_Margins")]
-	public static extern QMarginsF_Ptr* QPageLayout_Margins(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_Margins(void* self);
 	[LinkName("QPageLayout_Margins2")]
-	public static extern QMarginsF_Ptr* QPageLayout_Margins2(QPageLayout_Ptr* self, QPageLayout_Unit units);
+	public static extern void* QPageLayout_Margins2(void* self, QPageLayout_Unit units);
 	[LinkName("QPageLayout_MarginsPoints")]
-	public static extern QMargins_Ptr* QPageLayout_MarginsPoints(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_MarginsPoints(void* self);
 	[LinkName("QPageLayout_MarginsPixels")]
-	public static extern QMargins_Ptr* QPageLayout_MarginsPixels(QPageLayout_Ptr* self, c_int resolution);
+	public static extern void* QPageLayout_MarginsPixels(void* self, c_int resolution);
 	[LinkName("QPageLayout_SetMinimumMargins")]
-	public static extern void QPageLayout_SetMinimumMargins(QPageLayout_Ptr* self, QMarginsF_Ptr* minMargins);
+	public static extern void QPageLayout_SetMinimumMargins(void* self, void** minMargins);
 	[LinkName("QPageLayout_MinimumMargins")]
-	public static extern QMarginsF_Ptr* QPageLayout_MinimumMargins(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_MinimumMargins(void* self);
 	[LinkName("QPageLayout_MaximumMargins")]
-	public static extern QMarginsF_Ptr* QPageLayout_MaximumMargins(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_MaximumMargins(void* self);
 	[LinkName("QPageLayout_FullRect")]
-	public static extern QRectF_Ptr* QPageLayout_FullRect(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_FullRect(void* self);
 	[LinkName("QPageLayout_FullRect2")]
-	public static extern QRectF_Ptr* QPageLayout_FullRect2(QPageLayout_Ptr* self, QPageLayout_Unit units);
+	public static extern void* QPageLayout_FullRect2(void* self, QPageLayout_Unit units);
 	[LinkName("QPageLayout_FullRectPoints")]
-	public static extern QRect_Ptr* QPageLayout_FullRectPoints(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_FullRectPoints(void* self);
 	[LinkName("QPageLayout_FullRectPixels")]
-	public static extern QRect_Ptr* QPageLayout_FullRectPixels(QPageLayout_Ptr* self, c_int resolution);
+	public static extern void* QPageLayout_FullRectPixels(void* self, c_int resolution);
 	[LinkName("QPageLayout_PaintRect")]
-	public static extern QRectF_Ptr* QPageLayout_PaintRect(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_PaintRect(void* self);
 	[LinkName("QPageLayout_PaintRect2")]
-	public static extern QRectF_Ptr* QPageLayout_PaintRect2(QPageLayout_Ptr* self, QPageLayout_Unit units);
+	public static extern void* QPageLayout_PaintRect2(void* self, QPageLayout_Unit units);
 	[LinkName("QPageLayout_PaintRectPoints")]
-	public static extern QRect_Ptr* QPageLayout_PaintRectPoints(QPageLayout_Ptr* self);
+	public static extern void* QPageLayout_PaintRectPoints(void* self);
 	[LinkName("QPageLayout_PaintRectPixels")]
-	public static extern QRect_Ptr* QPageLayout_PaintRectPixels(QPageLayout_Ptr* self, c_int resolution);
+	public static extern void* QPageLayout_PaintRectPixels(void* self, c_int resolution);
 	[LinkName("QPageLayout_SetPageSize2")]
-	public static extern void QPageLayout_SetPageSize2(QPageLayout_Ptr* self, QPageSize_Ptr* pageSize, QMarginsF_Ptr* minMargins);
+	public static extern void QPageLayout_SetPageSize2(void* self, void** pageSize, void** minMargins);
 }
 class QPageLayout : IQPageLayout
 {
-	private QPageLayout_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPageLayout_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPageLayout_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPageLayout_new();
@@ -121,131 +130,131 @@ class QPageLayout : IQPageLayout
 	}
 	public void Swap(IQPageLayout other)
 	{
-		CQt.QPageLayout_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QPageLayout_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsEquivalentTo(IQPageLayout other)
 	{
-		return CQt.QPageLayout_IsEquivalentTo((.)this.ptr, (.)other?.ObjectPtr);
+		return CQt.QPageLayout_IsEquivalentTo((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QPageLayout_IsValid((.)this.ptr);
+		return CQt.QPageLayout_IsValid((.)this.ptr.Ptr);
 	}
 	public void SetMode(QPageLayout_Mode mode)
 	{
-		CQt.QPageLayout_SetMode((.)this.ptr, mode);
+		CQt.QPageLayout_SetMode((.)this.ptr.Ptr, mode);
 	}
 	public QPageLayout_Mode Mode()
 	{
-		return CQt.QPageLayout_Mode((.)this.ptr);
+		return CQt.QPageLayout_Mode((.)this.ptr.Ptr);
 	}
 	public void SetPageSize(IQPageSize pageSize)
 	{
-		CQt.QPageLayout_SetPageSize((.)this.ptr, (.)pageSize?.ObjectPtr);
+		CQt.QPageLayout_SetPageSize((.)this.ptr.Ptr, (.)pageSize?.ObjectPtr);
 	}
-	public QPageSize_Ptr* PageSize()
+	public QPageSize_Ptr PageSize()
 	{
-		return CQt.QPageLayout_PageSize((.)this.ptr);
+		return QPageSize_Ptr(CQt.QPageLayout_PageSize((.)this.ptr.Ptr));
 	}
 	public void SetOrientation(QPageLayout_Orientation orientation)
 	{
-		CQt.QPageLayout_SetOrientation((.)this.ptr, orientation);
+		CQt.QPageLayout_SetOrientation((.)this.ptr.Ptr, orientation);
 	}
 	public QPageLayout_Orientation Orientation()
 	{
-		return CQt.QPageLayout_Orientation((.)this.ptr);
+		return CQt.QPageLayout_Orientation((.)this.ptr.Ptr);
 	}
 	public void SetUnits(QPageLayout_Unit units)
 	{
-		CQt.QPageLayout_SetUnits((.)this.ptr, units);
+		CQt.QPageLayout_SetUnits((.)this.ptr.Ptr, units);
 	}
 	public QPageLayout_Unit Units()
 	{
-		return CQt.QPageLayout_Units((.)this.ptr);
+		return CQt.QPageLayout_Units((.)this.ptr.Ptr);
 	}
 	public bool SetMargins(IQMarginsF margins)
 	{
-		return CQt.QPageLayout_SetMargins((.)this.ptr, (.)margins?.ObjectPtr);
+		return CQt.QPageLayout_SetMargins((.)this.ptr.Ptr, (.)margins?.ObjectPtr);
 	}
 	public bool SetLeftMargin(double leftMargin)
 	{
-		return CQt.QPageLayout_SetLeftMargin((.)this.ptr, leftMargin);
+		return CQt.QPageLayout_SetLeftMargin((.)this.ptr.Ptr, leftMargin);
 	}
 	public bool SetRightMargin(double rightMargin)
 	{
-		return CQt.QPageLayout_SetRightMargin((.)this.ptr, rightMargin);
+		return CQt.QPageLayout_SetRightMargin((.)this.ptr.Ptr, rightMargin);
 	}
 	public bool SetTopMargin(double topMargin)
 	{
-		return CQt.QPageLayout_SetTopMargin((.)this.ptr, topMargin);
+		return CQt.QPageLayout_SetTopMargin((.)this.ptr.Ptr, topMargin);
 	}
 	public bool SetBottomMargin(double bottomMargin)
 	{
-		return CQt.QPageLayout_SetBottomMargin((.)this.ptr, bottomMargin);
+		return CQt.QPageLayout_SetBottomMargin((.)this.ptr.Ptr, bottomMargin);
 	}
-	public QMarginsF_Ptr* Margins()
+	public QMarginsF_Ptr Margins()
 	{
-		return CQt.QPageLayout_Margins((.)this.ptr);
+		return QMarginsF_Ptr(CQt.QPageLayout_Margins((.)this.ptr.Ptr));
 	}
-	public QMarginsF_Ptr* Margins2(QPageLayout_Unit units)
+	public QMarginsF_Ptr Margins2(QPageLayout_Unit units)
 	{
-		return CQt.QPageLayout_Margins2((.)this.ptr, units);
+		return QMarginsF_Ptr(CQt.QPageLayout_Margins2((.)this.ptr.Ptr, units));
 	}
-	public QMargins_Ptr* MarginsPoints()
+	public QMargins_Ptr MarginsPoints()
 	{
-		return CQt.QPageLayout_MarginsPoints((.)this.ptr);
+		return QMargins_Ptr(CQt.QPageLayout_MarginsPoints((.)this.ptr.Ptr));
 	}
-	public QMargins_Ptr* MarginsPixels(c_int resolution)
+	public QMargins_Ptr MarginsPixels(c_int resolution)
 	{
-		return CQt.QPageLayout_MarginsPixels((.)this.ptr, resolution);
+		return QMargins_Ptr(CQt.QPageLayout_MarginsPixels((.)this.ptr.Ptr, resolution));
 	}
 	public void SetMinimumMargins(IQMarginsF minMargins)
 	{
-		CQt.QPageLayout_SetMinimumMargins((.)this.ptr, (.)minMargins?.ObjectPtr);
+		CQt.QPageLayout_SetMinimumMargins((.)this.ptr.Ptr, (.)minMargins?.ObjectPtr);
 	}
-	public QMarginsF_Ptr* MinimumMargins()
+	public QMarginsF_Ptr MinimumMargins()
 	{
-		return CQt.QPageLayout_MinimumMargins((.)this.ptr);
+		return QMarginsF_Ptr(CQt.QPageLayout_MinimumMargins((.)this.ptr.Ptr));
 	}
-	public QMarginsF_Ptr* MaximumMargins()
+	public QMarginsF_Ptr MaximumMargins()
 	{
-		return CQt.QPageLayout_MaximumMargins((.)this.ptr);
+		return QMarginsF_Ptr(CQt.QPageLayout_MaximumMargins((.)this.ptr.Ptr));
 	}
-	public QRectF_Ptr* FullRect()
+	public QRectF_Ptr FullRect()
 	{
-		return CQt.QPageLayout_FullRect((.)this.ptr);
+		return QRectF_Ptr(CQt.QPageLayout_FullRect((.)this.ptr.Ptr));
 	}
-	public QRectF_Ptr* FullRect2(QPageLayout_Unit units)
+	public QRectF_Ptr FullRect2(QPageLayout_Unit units)
 	{
-		return CQt.QPageLayout_FullRect2((.)this.ptr, units);
+		return QRectF_Ptr(CQt.QPageLayout_FullRect2((.)this.ptr.Ptr, units));
 	}
-	public QRect_Ptr* FullRectPoints()
+	public QRect_Ptr FullRectPoints()
 	{
-		return CQt.QPageLayout_FullRectPoints((.)this.ptr);
+		return QRect_Ptr(CQt.QPageLayout_FullRectPoints((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* FullRectPixels(c_int resolution)
+	public QRect_Ptr FullRectPixels(c_int resolution)
 	{
-		return CQt.QPageLayout_FullRectPixels((.)this.ptr, resolution);
+		return QRect_Ptr(CQt.QPageLayout_FullRectPixels((.)this.ptr.Ptr, resolution));
 	}
-	public QRectF_Ptr* PaintRect()
+	public QRectF_Ptr PaintRect()
 	{
-		return CQt.QPageLayout_PaintRect((.)this.ptr);
+		return QRectF_Ptr(CQt.QPageLayout_PaintRect((.)this.ptr.Ptr));
 	}
-	public QRectF_Ptr* PaintRect2(QPageLayout_Unit units)
+	public QRectF_Ptr PaintRect2(QPageLayout_Unit units)
 	{
-		return CQt.QPageLayout_PaintRect2((.)this.ptr, units);
+		return QRectF_Ptr(CQt.QPageLayout_PaintRect2((.)this.ptr.Ptr, units));
 	}
-	public QRect_Ptr* PaintRectPoints()
+	public QRect_Ptr PaintRectPoints()
 	{
-		return CQt.QPageLayout_PaintRectPoints((.)this.ptr);
+		return QRect_Ptr(CQt.QPageLayout_PaintRectPoints((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* PaintRectPixels(c_int resolution)
+	public QRect_Ptr PaintRectPixels(c_int resolution)
 	{
-		return CQt.QPageLayout_PaintRectPixels((.)this.ptr, resolution);
+		return QRect_Ptr(CQt.QPageLayout_PaintRectPixels((.)this.ptr.Ptr, resolution));
 	}
 	public void SetPageSize2(IQPageSize pageSize, IQMarginsF minMargins)
 	{
-		CQt.QPageLayout_SetPageSize2((.)this.ptr, (.)pageSize?.ObjectPtr, (.)minMargins?.ObjectPtr);
+		CQt.QPageLayout_SetPageSize2((.)this.ptr.Ptr, (.)pageSize?.ObjectPtr, (.)minMargins?.ObjectPtr);
 	}
 }
 interface IQPageLayout : IQtObjectInterface

@@ -7,76 +7,85 @@ namespace Qt6;
 // QPixelFormat
 // --------------------------------------------------------------
 [CRepr]
-struct QPixelFormat_Ptr: void
+struct QPixelFormat_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPixelFormat_new")]
-	public static extern QPixelFormat_Ptr* QPixelFormat_new(QPixelFormat_Ptr* other);
+	public static extern QPixelFormat_Ptr QPixelFormat_new(void** other);
 	[LinkName("QPixelFormat_new2")]
-	public static extern QPixelFormat_Ptr* QPixelFormat_new2(QPixelFormat_Ptr* other);
+	public static extern QPixelFormat_Ptr QPixelFormat_new2(void** other);
 	[LinkName("QPixelFormat_new3")]
-	public static extern QPixelFormat_Ptr* QPixelFormat_new3();
+	public static extern QPixelFormat_Ptr QPixelFormat_new3();
 	[LinkName("QPixelFormat_new4")]
-	public static extern QPixelFormat_Ptr* QPixelFormat_new4(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation);
+	public static extern QPixelFormat_Ptr QPixelFormat_new4(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation);
 	[LinkName("QPixelFormat_new5")]
-	public static extern QPixelFormat_Ptr* QPixelFormat_new5(QPixelFormat_Ptr* param1);
+	public static extern QPixelFormat_Ptr QPixelFormat_new5(void** param1);
 	[LinkName("QPixelFormat_new6")]
-	public static extern QPixelFormat_Ptr* QPixelFormat_new6(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder);
+	public static extern QPixelFormat_Ptr QPixelFormat_new6(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder);
 	[LinkName("QPixelFormat_new7")]
-	public static extern QPixelFormat_Ptr* QPixelFormat_new7(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder, c_uchar subEnum);
+	public static extern QPixelFormat_Ptr QPixelFormat_new7(QPixelFormat_ColorModel colorModel, c_uchar firstSize, c_uchar secondSize, c_uchar thirdSize, c_uchar fourthSize, c_uchar fifthSize, c_uchar alphaSize, QPixelFormat_AlphaUsage alphaUsage, QPixelFormat_AlphaPosition alphaPosition, QPixelFormat_AlphaPremultiplied premultiplied, QPixelFormat_TypeInterpretation typeInterpretation, QPixelFormat_ByteOrder byteOrder, c_uchar subEnum);
 	[LinkName("QPixelFormat_Delete")]
-	public static extern void QPixelFormat_Delete(QPixelFormat_Ptr* self);
+	public static extern void QPixelFormat_Delete(QPixelFormat_Ptr self);
 	[LinkName("QPixelFormat_ColorModel")]
-	public static extern QPixelFormat_ColorModel QPixelFormat_ColorModel(QPixelFormat_Ptr* self);
+	public static extern QPixelFormat_ColorModel QPixelFormat_ColorModel(void* self);
 	[LinkName("QPixelFormat_ChannelCount")]
-	public static extern c_uchar QPixelFormat_ChannelCount(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_ChannelCount(void* self);
 	[LinkName("QPixelFormat_RedSize")]
-	public static extern c_uchar QPixelFormat_RedSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_RedSize(void* self);
 	[LinkName("QPixelFormat_GreenSize")]
-	public static extern c_uchar QPixelFormat_GreenSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_GreenSize(void* self);
 	[LinkName("QPixelFormat_BlueSize")]
-	public static extern c_uchar QPixelFormat_BlueSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_BlueSize(void* self);
 	[LinkName("QPixelFormat_CyanSize")]
-	public static extern c_uchar QPixelFormat_CyanSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_CyanSize(void* self);
 	[LinkName("QPixelFormat_MagentaSize")]
-	public static extern c_uchar QPixelFormat_MagentaSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_MagentaSize(void* self);
 	[LinkName("QPixelFormat_YellowSize")]
-	public static extern c_uchar QPixelFormat_YellowSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_YellowSize(void* self);
 	[LinkName("QPixelFormat_BlackSize")]
-	public static extern c_uchar QPixelFormat_BlackSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_BlackSize(void* self);
 	[LinkName("QPixelFormat_HueSize")]
-	public static extern c_uchar QPixelFormat_HueSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_HueSize(void* self);
 	[LinkName("QPixelFormat_SaturationSize")]
-	public static extern c_uchar QPixelFormat_SaturationSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_SaturationSize(void* self);
 	[LinkName("QPixelFormat_LightnessSize")]
-	public static extern c_uchar QPixelFormat_LightnessSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_LightnessSize(void* self);
 	[LinkName("QPixelFormat_BrightnessSize")]
-	public static extern c_uchar QPixelFormat_BrightnessSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_BrightnessSize(void* self);
 	[LinkName("QPixelFormat_AlphaSize")]
-	public static extern c_uchar QPixelFormat_AlphaSize(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_AlphaSize(void* self);
 	[LinkName("QPixelFormat_BitsPerPixel")]
-	public static extern c_uchar QPixelFormat_BitsPerPixel(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_BitsPerPixel(void* self);
 	[LinkName("QPixelFormat_AlphaUsage")]
-	public static extern QPixelFormat_AlphaUsage QPixelFormat_AlphaUsage(QPixelFormat_Ptr* self);
+	public static extern QPixelFormat_AlphaUsage QPixelFormat_AlphaUsage(void* self);
 	[LinkName("QPixelFormat_AlphaPosition")]
-	public static extern QPixelFormat_AlphaPosition QPixelFormat_AlphaPosition(QPixelFormat_Ptr* self);
+	public static extern QPixelFormat_AlphaPosition QPixelFormat_AlphaPosition(void* self);
 	[LinkName("QPixelFormat_Premultiplied")]
-	public static extern QPixelFormat_AlphaPremultiplied QPixelFormat_Premultiplied(QPixelFormat_Ptr* self);
+	public static extern QPixelFormat_AlphaPremultiplied QPixelFormat_Premultiplied(void* self);
 	[LinkName("QPixelFormat_TypeInterpretation")]
-	public static extern QPixelFormat_TypeInterpretation QPixelFormat_TypeInterpretation(QPixelFormat_Ptr* self);
+	public static extern QPixelFormat_TypeInterpretation QPixelFormat_TypeInterpretation(void* self);
 	[LinkName("QPixelFormat_ByteOrder")]
-	public static extern QPixelFormat_ByteOrder QPixelFormat_ByteOrder(QPixelFormat_Ptr* self);
+	public static extern QPixelFormat_ByteOrder QPixelFormat_ByteOrder(void* self);
 	[LinkName("QPixelFormat_YuvLayout")]
-	public static extern QPixelFormat_YUVLayout QPixelFormat_YuvLayout(QPixelFormat_Ptr* self);
+	public static extern QPixelFormat_YUVLayout QPixelFormat_YuvLayout(void* self);
 	[LinkName("QPixelFormat_SubEnum")]
-	public static extern c_uchar QPixelFormat_SubEnum(QPixelFormat_Ptr* self);
+	public static extern c_uchar QPixelFormat_SubEnum(void* self);
 }
 class QPixelFormat : IQPixelFormat
 {
-	private QPixelFormat_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPixelFormat_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPixelFormat_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQPixelFormat other)
 	{
 		this.ptr = CQt.QPixelFormat_new((.)other?.ObjectPtr);
@@ -103,91 +112,91 @@ class QPixelFormat : IQPixelFormat
 	}
 	public QPixelFormat_ColorModel ColorModel()
 	{
-		return CQt.QPixelFormat_ColorModel((.)this.ptr);
+		return CQt.QPixelFormat_ColorModel((.)this.ptr.Ptr);
 	}
 	public c_uchar ChannelCount()
 	{
-		return CQt.QPixelFormat_ChannelCount((.)this.ptr);
+		return CQt.QPixelFormat_ChannelCount((.)this.ptr.Ptr);
 	}
 	public c_uchar RedSize()
 	{
-		return CQt.QPixelFormat_RedSize((.)this.ptr);
+		return CQt.QPixelFormat_RedSize((.)this.ptr.Ptr);
 	}
 	public c_uchar GreenSize()
 	{
-		return CQt.QPixelFormat_GreenSize((.)this.ptr);
+		return CQt.QPixelFormat_GreenSize((.)this.ptr.Ptr);
 	}
 	public c_uchar BlueSize()
 	{
-		return CQt.QPixelFormat_BlueSize((.)this.ptr);
+		return CQt.QPixelFormat_BlueSize((.)this.ptr.Ptr);
 	}
 	public c_uchar CyanSize()
 	{
-		return CQt.QPixelFormat_CyanSize((.)this.ptr);
+		return CQt.QPixelFormat_CyanSize((.)this.ptr.Ptr);
 	}
 	public c_uchar MagentaSize()
 	{
-		return CQt.QPixelFormat_MagentaSize((.)this.ptr);
+		return CQt.QPixelFormat_MagentaSize((.)this.ptr.Ptr);
 	}
 	public c_uchar YellowSize()
 	{
-		return CQt.QPixelFormat_YellowSize((.)this.ptr);
+		return CQt.QPixelFormat_YellowSize((.)this.ptr.Ptr);
 	}
 	public c_uchar BlackSize()
 	{
-		return CQt.QPixelFormat_BlackSize((.)this.ptr);
+		return CQt.QPixelFormat_BlackSize((.)this.ptr.Ptr);
 	}
 	public c_uchar HueSize()
 	{
-		return CQt.QPixelFormat_HueSize((.)this.ptr);
+		return CQt.QPixelFormat_HueSize((.)this.ptr.Ptr);
 	}
 	public c_uchar SaturationSize()
 	{
-		return CQt.QPixelFormat_SaturationSize((.)this.ptr);
+		return CQt.QPixelFormat_SaturationSize((.)this.ptr.Ptr);
 	}
 	public c_uchar LightnessSize()
 	{
-		return CQt.QPixelFormat_LightnessSize((.)this.ptr);
+		return CQt.QPixelFormat_LightnessSize((.)this.ptr.Ptr);
 	}
 	public c_uchar BrightnessSize()
 	{
-		return CQt.QPixelFormat_BrightnessSize((.)this.ptr);
+		return CQt.QPixelFormat_BrightnessSize((.)this.ptr.Ptr);
 	}
 	public c_uchar AlphaSize()
 	{
-		return CQt.QPixelFormat_AlphaSize((.)this.ptr);
+		return CQt.QPixelFormat_AlphaSize((.)this.ptr.Ptr);
 	}
 	public c_uchar BitsPerPixel()
 	{
-		return CQt.QPixelFormat_BitsPerPixel((.)this.ptr);
+		return CQt.QPixelFormat_BitsPerPixel((.)this.ptr.Ptr);
 	}
 	public QPixelFormat_AlphaUsage AlphaUsage()
 	{
-		return CQt.QPixelFormat_AlphaUsage((.)this.ptr);
+		return CQt.QPixelFormat_AlphaUsage((.)this.ptr.Ptr);
 	}
 	public QPixelFormat_AlphaPosition AlphaPosition()
 	{
-		return CQt.QPixelFormat_AlphaPosition((.)this.ptr);
+		return CQt.QPixelFormat_AlphaPosition((.)this.ptr.Ptr);
 	}
 	public QPixelFormat_AlphaPremultiplied Premultiplied()
 	{
-		return CQt.QPixelFormat_Premultiplied((.)this.ptr);
+		return CQt.QPixelFormat_Premultiplied((.)this.ptr.Ptr);
 	}
 	public QPixelFormat_TypeInterpretation TypeInterpretation()
 	{
-		return CQt.QPixelFormat_TypeInterpretation((.)this.ptr);
+		return CQt.QPixelFormat_TypeInterpretation((.)this.ptr.Ptr);
 	}
 	public QPixelFormat_ByteOrder ByteOrder()
 	{
-		return CQt.QPixelFormat_ByteOrder((.)this.ptr);
+		return CQt.QPixelFormat_ByteOrder((.)this.ptr.Ptr);
 	}
 	public QPixelFormat_YUVLayout YuvLayout()
 	{
-		return CQt.QPixelFormat_YuvLayout((.)this.ptr);
+		return CQt.QPixelFormat_YuvLayout((.)this.ptr.Ptr);
 	}
 	public c_uchar SubEnum()
 	{
-		return CQt.QPixelFormat_SubEnum((.)this.ptr);
+		return CQt.QPixelFormat_SubEnum((.)this.ptr.Ptr);
 	}
 }
 interface IQPixelFormat : IQtObjectInterface

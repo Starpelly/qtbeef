@@ -7,193 +7,198 @@ namespace Qt6;
 // QLocale
 // --------------------------------------------------------------
 [CRepr]
-struct QLocale_Ptr: void
+struct QLocale_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QLocale_new")]
-	public static extern QLocale_Ptr* QLocale_new();
+	public static extern QLocale_Ptr QLocale_new();
 	[LinkName("QLocale_new2")]
-	public static extern QLocale_Ptr* QLocale_new2(libqt_string name);
+	public static extern QLocale_Ptr QLocale_new2(libqt_string name);
 	[LinkName("QLocale_new3")]
-	public static extern QLocale_Ptr* QLocale_new3(QLocale_Language language, QLocale_Country territory);
+	public static extern QLocale_Ptr QLocale_new3(QLocale_Language language, QLocale_Country territory);
 	[LinkName("QLocale_new4")]
-	public static extern QLocale_Ptr* QLocale_new4(QLocale_Language language);
+	public static extern QLocale_Ptr QLocale_new4(QLocale_Language language);
 	[LinkName("QLocale_new5")]
-	public static extern QLocale_Ptr* QLocale_new5(QLocale_Ptr* other);
+	public static extern QLocale_Ptr QLocale_new5(void** other);
 	[LinkName("QLocale_new6")]
-	public static extern QLocale_Ptr* QLocale_new6(QLocale_Language language, QLocale_Script script);
+	public static extern QLocale_Ptr QLocale_new6(QLocale_Language language, QLocale_Script script);
 	[LinkName("QLocale_new7")]
-	public static extern QLocale_Ptr* QLocale_new7(QLocale_Language language, QLocale_Script script, QLocale_Country territory);
+	public static extern QLocale_Ptr QLocale_new7(QLocale_Language language, QLocale_Script script, QLocale_Country territory);
 	[LinkName("QLocale_Delete")]
-	public static extern void QLocale_Delete(QLocale_Ptr* self);
+	public static extern void QLocale_Delete(QLocale_Ptr self);
 	[LinkName("QLocale_OperatorAssign")]
-	public static extern void QLocale_OperatorAssign(QLocale_Ptr* self, QLocale_Ptr* other);
+	public static extern void QLocale_OperatorAssign(void* self, void** other);
 	[LinkName("QLocale_Swap")]
-	public static extern void QLocale_Swap(QLocale_Ptr* self, QLocale_Ptr* other);
+	public static extern void QLocale_Swap(void* self, void** other);
 	[LinkName("QLocale_Language")]
-	public static extern QLocale_Language QLocale_Language(QLocale_Ptr* self);
+	public static extern QLocale_Language QLocale_Language(void* self);
 	[LinkName("QLocale_Script")]
-	public static extern QLocale_Script QLocale_Script(QLocale_Ptr* self);
+	public static extern QLocale_Script QLocale_Script(void* self);
 	[LinkName("QLocale_Territory")]
-	public static extern QLocale_Country QLocale_Territory(QLocale_Ptr* self);
+	public static extern QLocale_Country QLocale_Territory(void* self);
 	[LinkName("QLocale_Country")]
-	public static extern QLocale_Country QLocale_Country(QLocale_Ptr* self);
+	public static extern QLocale_Country QLocale_Country(void* self);
 	[LinkName("QLocale_Name")]
-	public static extern libqt_string QLocale_Name(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_Name(void* self);
 	[LinkName("QLocale_Bcp47Name")]
-	public static extern libqt_string QLocale_Bcp47Name(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_Bcp47Name(void* self);
 	[LinkName("QLocale_NativeLanguageName")]
-	public static extern libqt_string QLocale_NativeLanguageName(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_NativeLanguageName(void* self);
 	[LinkName("QLocale_NativeTerritoryName")]
-	public static extern libqt_string QLocale_NativeTerritoryName(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_NativeTerritoryName(void* self);
 	[LinkName("QLocale_NativeCountryName")]
-	public static extern libqt_string QLocale_NativeCountryName(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_NativeCountryName(void* self);
 	[LinkName("QLocale_ToShort")]
-	public static extern c_ushort QLocale_ToShort(QLocale_Ptr* self, libqt_string s);
+	public static extern c_ushort QLocale_ToShort(void* self, libqt_string s);
 	[LinkName("QLocale_ToUShort")]
-	public static extern c_ushort QLocale_ToUShort(QLocale_Ptr* self, libqt_string s);
+	public static extern c_ushort QLocale_ToUShort(void* self, libqt_string s);
 	[LinkName("QLocale_ToInt")]
-	public static extern c_int QLocale_ToInt(QLocale_Ptr* self, libqt_string s);
+	public static extern c_int QLocale_ToInt(void* self, libqt_string s);
 	[LinkName("QLocale_ToUInt")]
-	public static extern c_uint QLocale_ToUInt(QLocale_Ptr* self, libqt_string s);
+	public static extern c_uint QLocale_ToUInt(void* self, libqt_string s);
 	[LinkName("QLocale_ToLong")]
-	public static extern c_long QLocale_ToLong(QLocale_Ptr* self, libqt_string s);
+	public static extern c_long QLocale_ToLong(void* self, libqt_string s);
 	[LinkName("QLocale_ToULong")]
-	public static extern c_ulong QLocale_ToULong(QLocale_Ptr* self, libqt_string s);
+	public static extern c_ulong QLocale_ToULong(void* self, libqt_string s);
 	[LinkName("QLocale_ToLongLong")]
-	public static extern c_longlong QLocale_ToLongLong(QLocale_Ptr* self, libqt_string s);
+	public static extern c_longlong QLocale_ToLongLong(void* self, libqt_string s);
 	[LinkName("QLocale_ToULongLong")]
-	public static extern c_ulonglong QLocale_ToULongLong(QLocale_Ptr* self, libqt_string s);
+	public static extern c_ulonglong QLocale_ToULongLong(void* self, libqt_string s);
 	[LinkName("QLocale_ToFloat")]
-	public static extern float QLocale_ToFloat(QLocale_Ptr* self, libqt_string s);
+	public static extern float QLocale_ToFloat(void* self, libqt_string s);
 	[LinkName("QLocale_ToDouble")]
-	public static extern double QLocale_ToDouble(QLocale_Ptr* self, libqt_string s);
+	public static extern double QLocale_ToDouble(void* self, libqt_string s);
 	[LinkName("QLocale_ToString")]
-	public static extern libqt_string QLocale_ToString(QLocale_Ptr* self, c_longlong i);
+	public static extern libqt_string QLocale_ToString(void* self, c_longlong i);
 	[LinkName("QLocale_ToString2")]
-	public static extern libqt_string QLocale_ToString2(QLocale_Ptr* self, c_ulonglong i);
+	public static extern libqt_string QLocale_ToString2(void* self, c_ulonglong i);
 	[LinkName("QLocale_ToString3")]
-	public static extern libqt_string QLocale_ToString3(QLocale_Ptr* self, c_long i);
+	public static extern libqt_string QLocale_ToString3(void* self, c_long i);
 	[LinkName("QLocale_ToString4")]
-	public static extern libqt_string QLocale_ToString4(QLocale_Ptr* self, c_ulong i);
+	public static extern libqt_string QLocale_ToString4(void* self, c_ulong i);
 	[LinkName("QLocale_ToString5")]
-	public static extern libqt_string QLocale_ToString5(QLocale_Ptr* self, c_ushort i);
+	public static extern libqt_string QLocale_ToString5(void* self, c_ushort i);
 	[LinkName("QLocale_ToString6")]
-	public static extern libqt_string QLocale_ToString6(QLocale_Ptr* self, c_ushort i);
+	public static extern libqt_string QLocale_ToString6(void* self, c_ushort i);
 	[LinkName("QLocale_ToString7")]
-	public static extern libqt_string QLocale_ToString7(QLocale_Ptr* self, c_int i);
+	public static extern libqt_string QLocale_ToString7(void* self, c_int i);
 	[LinkName("QLocale_ToString8")]
-	public static extern libqt_string QLocale_ToString8(QLocale_Ptr* self, c_uint i);
+	public static extern libqt_string QLocale_ToString8(void* self, c_uint i);
 	[LinkName("QLocale_ToString9")]
-	public static extern libqt_string QLocale_ToString9(QLocale_Ptr* self, double f);
+	public static extern libqt_string QLocale_ToString9(void* self, double f);
 	[LinkName("QLocale_ToString10")]
-	public static extern libqt_string QLocale_ToString10(QLocale_Ptr* self, float f);
+	public static extern libqt_string QLocale_ToString10(void* self, float f);
 	[LinkName("QLocale_ToString11")]
-	public static extern libqt_string QLocale_ToString11(QLocale_Ptr* self, QDate_Ptr* date, libqt_string format);
+	public static extern libqt_string QLocale_ToString11(void* self, void* date, libqt_string format);
 	[LinkName("QLocale_ToString12")]
-	public static extern libqt_string QLocale_ToString12(QLocale_Ptr* self, QTime_Ptr* time, libqt_string format);
+	public static extern libqt_string QLocale_ToString12(void* self, void* time, libqt_string format);
 	[LinkName("QLocale_ToString13")]
-	public static extern libqt_string QLocale_ToString13(QLocale_Ptr* self, QDateTime_Ptr* dateTime, libqt_string format);
+	public static extern libqt_string QLocale_ToString13(void* self, void** dateTime, libqt_string format);
 	[LinkName("QLocale_ToString17")]
-	public static extern libqt_string QLocale_ToString17(QLocale_Ptr* self, QDate_Ptr* date);
+	public static extern libqt_string QLocale_ToString17(void* self, void* date);
 	[LinkName("QLocale_ToString18")]
-	public static extern libqt_string QLocale_ToString18(QLocale_Ptr* self, QTime_Ptr* time);
+	public static extern libqt_string QLocale_ToString18(void* self, void* time);
 	[LinkName("QLocale_ToString19")]
-	public static extern libqt_string QLocale_ToString19(QLocale_Ptr* self, QDateTime_Ptr* dateTime);
+	public static extern libqt_string QLocale_ToString19(void* self, void** dateTime);
 	[LinkName("QLocale_ToString21")]
-	public static extern libqt_string QLocale_ToString21(QLocale_Ptr* self, QDate_Ptr* date, QLocale_FormatType format, QCalendar_Ptr* cal);
+	public static extern libqt_string QLocale_ToString21(void* self, void* date, QLocale_FormatType format, void* cal);
 	[LinkName("QLocale_ToString22")]
-	public static extern libqt_string QLocale_ToString22(QLocale_Ptr* self, QDateTime_Ptr* dateTime, QLocale_FormatType format, QCalendar_Ptr* cal);
+	public static extern libqt_string QLocale_ToString22(void* self, void** dateTime, QLocale_FormatType format, void* cal);
 	[LinkName("QLocale_DateFormat")]
-	public static extern libqt_string QLocale_DateFormat(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_DateFormat(void* self);
 	[LinkName("QLocale_TimeFormat")]
-	public static extern libqt_string QLocale_TimeFormat(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_TimeFormat(void* self);
 	[LinkName("QLocale_DateTimeFormat")]
-	public static extern libqt_string QLocale_DateTimeFormat(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_DateTimeFormat(void* self);
 	[LinkName("QLocale_ToDate")]
-	public static extern QDate_Ptr* QLocale_ToDate(QLocale_Ptr* self, libqt_string stringVal);
+	public static extern void* QLocale_ToDate(void* self, libqt_string stringVal);
 	[LinkName("QLocale_ToTime")]
-	public static extern QTime_Ptr* QLocale_ToTime(QLocale_Ptr* self, libqt_string stringVal);
+	public static extern void* QLocale_ToTime(void* self, libqt_string stringVal);
 	[LinkName("QLocale_ToDateTime")]
-	public static extern QDateTime_Ptr* QLocale_ToDateTime(QLocale_Ptr* self, libqt_string stringVal);
+	public static extern void* QLocale_ToDateTime(void* self, libqt_string stringVal);
 	[LinkName("QLocale_ToDate2")]
-	public static extern QDate_Ptr* QLocale_ToDate2(QLocale_Ptr* self, libqt_string stringVal, libqt_string format);
+	public static extern void* QLocale_ToDate2(void* self, libqt_string stringVal, libqt_string format);
 	[LinkName("QLocale_ToTime2")]
-	public static extern QTime_Ptr* QLocale_ToTime2(QLocale_Ptr* self, libqt_string stringVal, libqt_string format);
+	public static extern void* QLocale_ToTime2(void* self, libqt_string stringVal, libqt_string format);
 	[LinkName("QLocale_ToDateTime2")]
-	public static extern QDateTime_Ptr* QLocale_ToDateTime2(QLocale_Ptr* self, libqt_string stringVal, libqt_string format);
+	public static extern void* QLocale_ToDateTime2(void* self, libqt_string stringVal, libqt_string format);
 	[LinkName("QLocale_ToDate3")]
-	public static extern QDate_Ptr* QLocale_ToDate3(QLocale_Ptr* self, libqt_string stringVal, QLocale_FormatType format, QCalendar_Ptr* cal);
+	public static extern void* QLocale_ToDate3(void* self, libqt_string stringVal, QLocale_FormatType format, void* cal);
 	[LinkName("QLocale_ToDateTime3")]
-	public static extern QDateTime_Ptr* QLocale_ToDateTime3(QLocale_Ptr* self, libqt_string stringVal, QLocale_FormatType format, QCalendar_Ptr* cal);
+	public static extern void* QLocale_ToDateTime3(void* self, libqt_string stringVal, QLocale_FormatType format, void* cal);
 	[LinkName("QLocale_ToDate4")]
-	public static extern QDate_Ptr* QLocale_ToDate4(QLocale_Ptr* self, libqt_string stringVal, libqt_string format, QCalendar_Ptr* cal);
+	public static extern void* QLocale_ToDate4(void* self, libqt_string stringVal, libqt_string format, void* cal);
 	[LinkName("QLocale_ToDateTime4")]
-	public static extern QDateTime_Ptr* QLocale_ToDateTime4(QLocale_Ptr* self, libqt_string stringVal, libqt_string format, QCalendar_Ptr* cal);
+	public static extern void* QLocale_ToDateTime4(void* self, libqt_string stringVal, libqt_string format, void* cal);
 	[LinkName("QLocale_DecimalPoint")]
-	public static extern libqt_string QLocale_DecimalPoint(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_DecimalPoint(void* self);
 	[LinkName("QLocale_GroupSeparator")]
-	public static extern libqt_string QLocale_GroupSeparator(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_GroupSeparator(void* self);
 	[LinkName("QLocale_Percent")]
-	public static extern libqt_string QLocale_Percent(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_Percent(void* self);
 	[LinkName("QLocale_ZeroDigit")]
-	public static extern libqt_string QLocale_ZeroDigit(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_ZeroDigit(void* self);
 	[LinkName("QLocale_NegativeSign")]
-	public static extern libqt_string QLocale_NegativeSign(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_NegativeSign(void* self);
 	[LinkName("QLocale_PositiveSign")]
-	public static extern libqt_string QLocale_PositiveSign(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_PositiveSign(void* self);
 	[LinkName("QLocale_Exponential")]
-	public static extern libqt_string QLocale_Exponential(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_Exponential(void* self);
 	[LinkName("QLocale_MonthName")]
-	public static extern libqt_string QLocale_MonthName(QLocale_Ptr* self, c_int param1);
+	public static extern libqt_string QLocale_MonthName(void* self, c_int param1);
 	[LinkName("QLocale_StandaloneMonthName")]
-	public static extern libqt_string QLocale_StandaloneMonthName(QLocale_Ptr* self, c_int param1);
+	public static extern libqt_string QLocale_StandaloneMonthName(void* self, c_int param1);
 	[LinkName("QLocale_DayName")]
-	public static extern libqt_string QLocale_DayName(QLocale_Ptr* self, c_int param1);
+	public static extern libqt_string QLocale_DayName(void* self, c_int param1);
 	[LinkName("QLocale_StandaloneDayName")]
-	public static extern libqt_string QLocale_StandaloneDayName(QLocale_Ptr* self, c_int param1);
+	public static extern libqt_string QLocale_StandaloneDayName(void* self, c_int param1);
 	[LinkName("QLocale_FirstDayOfWeek")]
-	public static extern Qt_DayOfWeek QLocale_FirstDayOfWeek(QLocale_Ptr* self);
+	public static extern Qt_DayOfWeek QLocale_FirstDayOfWeek(void* self);
 	[LinkName("QLocale_Weekdays")]
-	public static extern void* QLocale_Weekdays(QLocale_Ptr* self);
+	public static extern void* QLocale_Weekdays(void* self);
 	[LinkName("QLocale_AmText")]
-	public static extern libqt_string QLocale_AmText(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_AmText(void* self);
 	[LinkName("QLocale_PmText")]
-	public static extern libqt_string QLocale_PmText(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_PmText(void* self);
 	[LinkName("QLocale_MeasurementSystem")]
-	public static extern QLocale_MeasurementSystem QLocale_MeasurementSystem(QLocale_Ptr* self);
+	public static extern QLocale_MeasurementSystem QLocale_MeasurementSystem(void* self);
 	[LinkName("QLocale_Collation")]
-	public static extern QLocale_Ptr* QLocale_Collation(QLocale_Ptr* self);
+	public static extern void* QLocale_Collation(void* self);
 	[LinkName("QLocale_TextDirection")]
-	public static extern Qt_LayoutDirection QLocale_TextDirection(QLocale_Ptr* self);
+	public static extern Qt_LayoutDirection QLocale_TextDirection(void* self);
 	[LinkName("QLocale_ToUpper")]
-	public static extern libqt_string QLocale_ToUpper(QLocale_Ptr* self, libqt_string str);
+	public static extern libqt_string QLocale_ToUpper(void* self, libqt_string str);
 	[LinkName("QLocale_ToLower")]
-	public static extern libqt_string QLocale_ToLower(QLocale_Ptr* self, libqt_string str);
+	public static extern libqt_string QLocale_ToLower(void* self, libqt_string str);
 	[LinkName("QLocale_CurrencySymbol")]
-	public static extern libqt_string QLocale_CurrencySymbol(QLocale_Ptr* self);
+	public static extern libqt_string QLocale_CurrencySymbol(void* self);
 	[LinkName("QLocale_ToCurrencyString")]
-	public static extern libqt_string QLocale_ToCurrencyString(QLocale_Ptr* self, c_longlong param1);
+	public static extern libqt_string QLocale_ToCurrencyString(void* self, c_longlong param1);
 	[LinkName("QLocale_ToCurrencyString2")]
-	public static extern libqt_string QLocale_ToCurrencyString2(QLocale_Ptr* self, c_ulonglong param1);
+	public static extern libqt_string QLocale_ToCurrencyString2(void* self, c_ulonglong param1);
 	[LinkName("QLocale_ToCurrencyString3")]
-	public static extern libqt_string QLocale_ToCurrencyString3(QLocale_Ptr* self, c_ushort i);
+	public static extern libqt_string QLocale_ToCurrencyString3(void* self, c_ushort i);
 	[LinkName("QLocale_ToCurrencyString4")]
-	public static extern libqt_string QLocale_ToCurrencyString4(QLocale_Ptr* self, c_ushort i);
+	public static extern libqt_string QLocale_ToCurrencyString4(void* self, c_ushort i);
 	[LinkName("QLocale_ToCurrencyString5")]
-	public static extern libqt_string QLocale_ToCurrencyString5(QLocale_Ptr* self, c_int i);
+	public static extern libqt_string QLocale_ToCurrencyString5(void* self, c_int i);
 	[LinkName("QLocale_ToCurrencyString6")]
-	public static extern libqt_string QLocale_ToCurrencyString6(QLocale_Ptr* self, c_uint i);
+	public static extern libqt_string QLocale_ToCurrencyString6(void* self, c_uint i);
 	[LinkName("QLocale_ToCurrencyString7")]
-	public static extern libqt_string QLocale_ToCurrencyString7(QLocale_Ptr* self, double param1);
+	public static extern libqt_string QLocale_ToCurrencyString7(void* self, double param1);
 	[LinkName("QLocale_ToCurrencyString8")]
-	public static extern libqt_string QLocale_ToCurrencyString8(QLocale_Ptr* self, float i);
+	public static extern libqt_string QLocale_ToCurrencyString8(void* self, float i);
 	[LinkName("QLocale_FormattedDataSize")]
-	public static extern libqt_string QLocale_FormattedDataSize(QLocale_Ptr* self, c_longlong bytes);
+	public static extern libqt_string QLocale_FormattedDataSize(void* self, c_longlong bytes);
 	[LinkName("QLocale_UiLanguages")]
-	public static extern void* QLocale_UiLanguages(QLocale_Ptr* self);
+	public static extern void* QLocale_UiLanguages(void* self);
 	[LinkName("QLocale_LanguageToCode")]
 	public static extern libqt_string QLocale_LanguageToCode(QLocale_Language language);
 	[LinkName("QLocale_TerritoryToCode")]
@@ -211,112 +216,116 @@ extension CQt
 	[LinkName("QLocale_ScriptToString")]
 	public static extern libqt_string QLocale_ScriptToString(QLocale_Script script);
 	[LinkName("QLocale_SetDefault")]
-	public static extern void QLocale_SetDefault(QLocale_Ptr* locale);
+	public static extern void QLocale_SetDefault(void** locale);
 	[LinkName("QLocale_C")]
-	public static extern QLocale_Ptr* QLocale_C();
+	public static extern void* QLocale_C();
 	[LinkName("QLocale_System")]
-	public static extern QLocale_Ptr* QLocale_System();
+	public static extern void* QLocale_System();
 	[LinkName("QLocale_MatchingLocales")]
 	public static extern void* QLocale_MatchingLocales(QLocale_Language language, QLocale_Script script, QLocale_Country territory);
 	[LinkName("QLocale_CountriesForLanguage")]
 	public static extern void* QLocale_CountriesForLanguage(QLocale_Language lang);
 	[LinkName("QLocale_SetNumberOptions")]
-	public static extern void QLocale_SetNumberOptions(QLocale_Ptr* self, void* options);
+	public static extern void QLocale_SetNumberOptions(void* self, void* options);
 	[LinkName("QLocale_NumberOptions")]
-	public static extern void* QLocale_NumberOptions(QLocale_Ptr* self);
+	public static extern void* QLocale_NumberOptions(void* self);
 	[LinkName("QLocale_QuoteString")]
-	public static extern libqt_string QLocale_QuoteString(QLocale_Ptr* self, libqt_string str);
+	public static extern libqt_string QLocale_QuoteString(void* self, libqt_string str);
 	[LinkName("QLocale_CreateSeparatedList")]
-	public static extern libqt_string QLocale_CreateSeparatedList(QLocale_Ptr* self, void** strl);
+	public static extern libqt_string QLocale_CreateSeparatedList(void* self, void** strl);
 	[LinkName("QLocale_ToShort22")]
-	public static extern c_ushort QLocale_ToShort22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_ushort QLocale_ToShort22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToUShort22")]
-	public static extern c_ushort QLocale_ToUShort22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_ushort QLocale_ToUShort22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToInt22")]
-	public static extern c_int QLocale_ToInt22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_int QLocale_ToInt22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToUInt22")]
-	public static extern c_uint QLocale_ToUInt22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_uint QLocale_ToUInt22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToLong22")]
-	public static extern c_long QLocale_ToLong22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_long QLocale_ToLong22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToULong22")]
-	public static extern c_ulong QLocale_ToULong22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_ulong QLocale_ToULong22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToLongLong22")]
-	public static extern c_longlong QLocale_ToLongLong22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_longlong QLocale_ToLongLong22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToULongLong22")]
-	public static extern c_ulonglong QLocale_ToULongLong22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern c_ulonglong QLocale_ToULongLong22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToFloat22")]
-	public static extern float QLocale_ToFloat22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern float QLocale_ToFloat22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToDouble22")]
-	public static extern double QLocale_ToDouble22(QLocale_Ptr* self, libqt_string s, bool* ok);
+	public static extern double QLocale_ToDouble22(void* self, libqt_string s, bool* ok);
 	[LinkName("QLocale_ToString24")]
-	public static extern libqt_string QLocale_ToString24(QLocale_Ptr* self, double f, c_char format);
+	public static extern libqt_string QLocale_ToString24(void* self, double f, c_char format);
 	[LinkName("QLocale_ToString32")]
-	public static extern libqt_string QLocale_ToString32(QLocale_Ptr* self, double f, c_char format, c_int precision);
+	public static extern libqt_string QLocale_ToString32(void* self, double f, c_char format, c_int precision);
 	[LinkName("QLocale_ToString25")]
-	public static extern libqt_string QLocale_ToString25(QLocale_Ptr* self, float f, c_char format);
+	public static extern libqt_string QLocale_ToString25(void* self, float f, c_char format);
 	[LinkName("QLocale_ToString33")]
-	public static extern libqt_string QLocale_ToString33(QLocale_Ptr* self, float f, c_char format, c_int precision);
+	public static extern libqt_string QLocale_ToString33(void* self, float f, c_char format, c_int precision);
 	[LinkName("QLocale_ToString26")]
-	public static extern libqt_string QLocale_ToString26(QLocale_Ptr* self, QDate_Ptr* date, QLocale_FormatType format);
+	public static extern libqt_string QLocale_ToString26(void* self, void* date, QLocale_FormatType format);
 	[LinkName("QLocale_ToString27")]
-	public static extern libqt_string QLocale_ToString27(QLocale_Ptr* self, QTime_Ptr* time, QLocale_FormatType format);
+	public static extern libqt_string QLocale_ToString27(void* self, void* time, QLocale_FormatType format);
 	[LinkName("QLocale_ToString28")]
-	public static extern libqt_string QLocale_ToString28(QLocale_Ptr* self, QDateTime_Ptr* dateTime, QLocale_FormatType format);
+	public static extern libqt_string QLocale_ToString28(void* self, void** dateTime, QLocale_FormatType format);
 	[LinkName("QLocale_DateFormat1")]
-	public static extern libqt_string QLocale_DateFormat1(QLocale_Ptr* self, QLocale_FormatType format);
+	public static extern libqt_string QLocale_DateFormat1(void* self, QLocale_FormatType format);
 	[LinkName("QLocale_TimeFormat1")]
-	public static extern libqt_string QLocale_TimeFormat1(QLocale_Ptr* self, QLocale_FormatType format);
+	public static extern libqt_string QLocale_TimeFormat1(void* self, QLocale_FormatType format);
 	[LinkName("QLocale_DateTimeFormat1")]
-	public static extern libqt_string QLocale_DateTimeFormat1(QLocale_Ptr* self, QLocale_FormatType format);
+	public static extern libqt_string QLocale_DateTimeFormat1(void* self, QLocale_FormatType format);
 	[LinkName("QLocale_ToDate22")]
-	public static extern QDate_Ptr* QLocale_ToDate22(QLocale_Ptr* self, libqt_string stringVal, QLocale_FormatType param2);
+	public static extern void* QLocale_ToDate22(void* self, libqt_string stringVal, QLocale_FormatType param2);
 	[LinkName("QLocale_ToTime22")]
-	public static extern QTime_Ptr* QLocale_ToTime22(QLocale_Ptr* self, libqt_string stringVal, QLocale_FormatType param2);
+	public static extern void* QLocale_ToTime22(void* self, libqt_string stringVal, QLocale_FormatType param2);
 	[LinkName("QLocale_ToDateTime22")]
-	public static extern QDateTime_Ptr* QLocale_ToDateTime22(QLocale_Ptr* self, libqt_string stringVal, QLocale_FormatType format);
+	public static extern void* QLocale_ToDateTime22(void* self, libqt_string stringVal, QLocale_FormatType format);
 	[LinkName("QLocale_MonthName2")]
-	public static extern libqt_string QLocale_MonthName2(QLocale_Ptr* self, c_int param1, QLocale_FormatType format);
+	public static extern libqt_string QLocale_MonthName2(void* self, c_int param1, QLocale_FormatType format);
 	[LinkName("QLocale_StandaloneMonthName2")]
-	public static extern libqt_string QLocale_StandaloneMonthName2(QLocale_Ptr* self, c_int param1, QLocale_FormatType format);
+	public static extern libqt_string QLocale_StandaloneMonthName2(void* self, c_int param1, QLocale_FormatType format);
 	[LinkName("QLocale_DayName2")]
-	public static extern libqt_string QLocale_DayName2(QLocale_Ptr* self, c_int param1, QLocale_FormatType format);
+	public static extern libqt_string QLocale_DayName2(void* self, c_int param1, QLocale_FormatType format);
 	[LinkName("QLocale_StandaloneDayName2")]
-	public static extern libqt_string QLocale_StandaloneDayName2(QLocale_Ptr* self, c_int param1, QLocale_FormatType format);
+	public static extern libqt_string QLocale_StandaloneDayName2(void* self, c_int param1, QLocale_FormatType format);
 	[LinkName("QLocale_CurrencySymbol1")]
-	public static extern libqt_string QLocale_CurrencySymbol1(QLocale_Ptr* self, QLocale_CurrencySymbolFormat param1);
+	public static extern libqt_string QLocale_CurrencySymbol1(void* self, QLocale_CurrencySymbolFormat param1);
 	[LinkName("QLocale_ToCurrencyString22")]
-	public static extern libqt_string QLocale_ToCurrencyString22(QLocale_Ptr* self, c_longlong param1, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString22(void* self, c_longlong param1, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString23")]
-	public static extern libqt_string QLocale_ToCurrencyString23(QLocale_Ptr* self, c_ulonglong param1, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString23(void* self, c_ulonglong param1, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString24")]
-	public static extern libqt_string QLocale_ToCurrencyString24(QLocale_Ptr* self, c_ushort i, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString24(void* self, c_ushort i, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString25")]
-	public static extern libqt_string QLocale_ToCurrencyString25(QLocale_Ptr* self, c_ushort i, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString25(void* self, c_ushort i, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString26")]
-	public static extern libqt_string QLocale_ToCurrencyString26(QLocale_Ptr* self, c_int i, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString26(void* self, c_int i, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString27")]
-	public static extern libqt_string QLocale_ToCurrencyString27(QLocale_Ptr* self, c_uint i, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString27(void* self, c_uint i, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString28")]
-	public static extern libqt_string QLocale_ToCurrencyString28(QLocale_Ptr* self, double param1, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString28(void* self, double param1, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString32")]
-	public static extern libqt_string QLocale_ToCurrencyString32(QLocale_Ptr* self, double param1, libqt_string symbol, c_int precision);
+	public static extern libqt_string QLocale_ToCurrencyString32(void* self, double param1, libqt_string symbol, c_int precision);
 	[LinkName("QLocale_ToCurrencyString29")]
-	public static extern libqt_string QLocale_ToCurrencyString29(QLocale_Ptr* self, float i, libqt_string symbol);
+	public static extern libqt_string QLocale_ToCurrencyString29(void* self, float i, libqt_string symbol);
 	[LinkName("QLocale_ToCurrencyString33")]
-	public static extern libqt_string QLocale_ToCurrencyString33(QLocale_Ptr* self, float i, libqt_string symbol, c_int precision);
+	public static extern libqt_string QLocale_ToCurrencyString33(void* self, float i, libqt_string symbol, c_int precision);
 	[LinkName("QLocale_FormattedDataSize2")]
-	public static extern libqt_string QLocale_FormattedDataSize2(QLocale_Ptr* self, c_longlong bytes, c_int precision);
+	public static extern libqt_string QLocale_FormattedDataSize2(void* self, c_longlong bytes, c_int precision);
 	[LinkName("QLocale_FormattedDataSize3")]
-	public static extern libqt_string QLocale_FormattedDataSize3(QLocale_Ptr* self, c_longlong bytes, c_int precision, void* format);
+	public static extern libqt_string QLocale_FormattedDataSize3(void* self, c_longlong bytes, c_int precision, void* format);
 	[LinkName("QLocale_LanguageToCode2")]
 	public static extern libqt_string QLocale_LanguageToCode2(QLocale_Language language, void* codeTypes);
 	[LinkName("QLocale_QuoteString22")]
-	public static extern libqt_string QLocale_QuoteString22(QLocale_Ptr* self, libqt_string str, QLocale_QuotationStyle style);
+	public static extern libqt_string QLocale_QuoteString22(void* self, libqt_string str, QLocale_QuotationStyle style);
 }
 class QLocale : IQLocale
 {
-	private QLocale_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QLocale_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLocale_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QLocale_new();
@@ -351,375 +360,375 @@ class QLocale : IQLocale
 	}
 	public void Swap(IQLocale other)
 	{
-		CQt.QLocale_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QLocale_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public QLocale_Language Language()
 	{
-		return CQt.QLocale_Language((.)this.ptr);
+		return CQt.QLocale_Language((.)this.ptr.Ptr);
 	}
 	public QLocale_Script Script()
 	{
-		return CQt.QLocale_Script((.)this.ptr);
+		return CQt.QLocale_Script((.)this.ptr.Ptr);
 	}
 	public QLocale_Country Territory()
 	{
-		return CQt.QLocale_Territory((.)this.ptr);
+		return CQt.QLocale_Territory((.)this.ptr.Ptr);
 	}
 	public QLocale_Country Country()
 	{
-		return CQt.QLocale_Country((.)this.ptr);
+		return CQt.QLocale_Country((.)this.ptr.Ptr);
 	}
-	public libqt_string Name()
+	public void Name(String outStr)
 	{
-		return CQt.QLocale_Name((.)this.ptr);
+		CQt.QLocale_Name((.)this.ptr.Ptr);
 	}
-	public libqt_string Bcp47Name()
+	public void Bcp47Name(String outStr)
 	{
-		return CQt.QLocale_Bcp47Name((.)this.ptr);
+		CQt.QLocale_Bcp47Name((.)this.ptr.Ptr);
 	}
-	public libqt_string NativeLanguageName()
+	public void NativeLanguageName(String outStr)
 	{
-		return CQt.QLocale_NativeLanguageName((.)this.ptr);
+		CQt.QLocale_NativeLanguageName((.)this.ptr.Ptr);
 	}
-	public libqt_string NativeTerritoryName()
+	public void NativeTerritoryName(String outStr)
 	{
-		return CQt.QLocale_NativeTerritoryName((.)this.ptr);
+		CQt.QLocale_NativeTerritoryName((.)this.ptr.Ptr);
 	}
-	public libqt_string NativeCountryName()
+	public void NativeCountryName(String outStr)
 	{
-		return CQt.QLocale_NativeCountryName((.)this.ptr);
+		CQt.QLocale_NativeCountryName((.)this.ptr.Ptr);
 	}
 	public c_ushort ToShort(String s)
 	{
-		return CQt.QLocale_ToShort((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToShort((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public c_ushort ToUShort(String s)
 	{
-		return CQt.QLocale_ToUShort((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToUShort((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public c_int ToInt(String s)
 	{
-		return CQt.QLocale_ToInt((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToInt((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public c_uint ToUInt(String s)
 	{
-		return CQt.QLocale_ToUInt((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToUInt((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public c_long ToLong(String s)
 	{
-		return CQt.QLocale_ToLong((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToLong((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public c_ulong ToULong(String s)
 	{
-		return CQt.QLocale_ToULong((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToULong((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public c_longlong ToLongLong(String s)
 	{
-		return CQt.QLocale_ToLongLong((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToLongLong((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public c_ulonglong ToULongLong(String s)
 	{
-		return CQt.QLocale_ToULongLong((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToULongLong((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public float ToFloat(String s)
 	{
-		return CQt.QLocale_ToFloat((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToFloat((.)this.ptr.Ptr, libqt_string(s));
 	}
 	public double ToDouble(String s)
 	{
-		return CQt.QLocale_ToDouble((.)this.ptr, libqt_string(s));
+		return CQt.QLocale_ToDouble((.)this.ptr.Ptr, libqt_string(s));
 	}
-	public libqt_string ToString(c_longlong i)
+	public void ToString(String outStr, c_longlong i)
 	{
-		return CQt.QLocale_ToString((.)this.ptr, i);
+		CQt.QLocale_ToString((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString2(c_ulonglong i)
+	public void ToString2(String outStr, c_ulonglong i)
 	{
-		return CQt.QLocale_ToString2((.)this.ptr, i);
+		CQt.QLocale_ToString2((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString3(c_long i)
+	public void ToString3(String outStr, c_long i)
 	{
-		return CQt.QLocale_ToString3((.)this.ptr, i);
+		CQt.QLocale_ToString3((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString4(c_ulong i)
+	public void ToString4(String outStr, c_ulong i)
 	{
-		return CQt.QLocale_ToString4((.)this.ptr, i);
+		CQt.QLocale_ToString4((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString5(c_ushort i)
+	public void ToString5(String outStr, c_ushort i)
 	{
-		return CQt.QLocale_ToString5((.)this.ptr, i);
+		CQt.QLocale_ToString5((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString6(c_ushort i)
+	public void ToString6(String outStr, c_ushort i)
 	{
-		return CQt.QLocale_ToString6((.)this.ptr, i);
+		CQt.QLocale_ToString6((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString7(c_int i)
+	public void ToString7(String outStr, c_int i)
 	{
-		return CQt.QLocale_ToString7((.)this.ptr, i);
+		CQt.QLocale_ToString7((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString8(c_uint i)
+	public void ToString8(String outStr, c_uint i)
 	{
-		return CQt.QLocale_ToString8((.)this.ptr, i);
+		CQt.QLocale_ToString8((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToString9(double f)
+	public void ToString9(String outStr, double f)
 	{
-		return CQt.QLocale_ToString9((.)this.ptr, f);
+		CQt.QLocale_ToString9((.)this.ptr.Ptr, f);
 	}
-	public libqt_string ToString10(float f)
+	public void ToString10(String outStr, float f)
 	{
-		return CQt.QLocale_ToString10((.)this.ptr, f);
+		CQt.QLocale_ToString10((.)this.ptr.Ptr, f);
 	}
-	public libqt_string ToString11(IQDate date, String format)
+	public void ToString11(String outStr, IQDate date, String format)
 	{
-		return CQt.QLocale_ToString11((.)this.ptr, (.)date?.ObjectPtr, libqt_string(format));
+		CQt.QLocale_ToString11((.)this.ptr.Ptr, (.)date?.ObjectPtr, libqt_string(format));
 	}
-	public libqt_string ToString12(IQTime time, String format)
+	public void ToString12(String outStr, IQTime time, String format)
 	{
-		return CQt.QLocale_ToString12((.)this.ptr, (.)time?.ObjectPtr, libqt_string(format));
+		CQt.QLocale_ToString12((.)this.ptr.Ptr, (.)time?.ObjectPtr, libqt_string(format));
 	}
-	public libqt_string ToString13(IQDateTime dateTime, String format)
+	public void ToString13(String outStr, IQDateTime dateTime, String format)
 	{
-		return CQt.QLocale_ToString13((.)this.ptr, (.)dateTime?.ObjectPtr, libqt_string(format));
+		CQt.QLocale_ToString13((.)this.ptr.Ptr, (.)dateTime?.ObjectPtr, libqt_string(format));
 	}
-	public libqt_string ToString17(IQDate date)
+	public void ToString17(String outStr, IQDate date)
 	{
-		return CQt.QLocale_ToString17((.)this.ptr, (.)date?.ObjectPtr);
+		CQt.QLocale_ToString17((.)this.ptr.Ptr, (.)date?.ObjectPtr);
 	}
-	public libqt_string ToString18(IQTime time)
+	public void ToString18(String outStr, IQTime time)
 	{
-		return CQt.QLocale_ToString18((.)this.ptr, (.)time?.ObjectPtr);
+		CQt.QLocale_ToString18((.)this.ptr.Ptr, (.)time?.ObjectPtr);
 	}
-	public libqt_string ToString19(IQDateTime dateTime)
+	public void ToString19(String outStr, IQDateTime dateTime)
 	{
-		return CQt.QLocale_ToString19((.)this.ptr, (.)dateTime?.ObjectPtr);
+		CQt.QLocale_ToString19((.)this.ptr.Ptr, (.)dateTime?.ObjectPtr);
 	}
-	public libqt_string ToString21(IQDate date, QLocale_FormatType format, IQCalendar cal)
+	public void ToString21(String outStr, IQDate date, QLocale_FormatType format, IQCalendar cal)
 	{
-		return CQt.QLocale_ToString21((.)this.ptr, (.)date?.ObjectPtr, format, (.)cal?.ObjectPtr);
+		CQt.QLocale_ToString21((.)this.ptr.Ptr, (.)date?.ObjectPtr, format, (.)cal?.ObjectPtr);
 	}
-	public libqt_string ToString22(IQDateTime dateTime, QLocale_FormatType format, IQCalendar cal)
+	public void ToString22(String outStr, IQDateTime dateTime, QLocale_FormatType format, IQCalendar cal)
 	{
-		return CQt.QLocale_ToString22((.)this.ptr, (.)dateTime?.ObjectPtr, format, (.)cal?.ObjectPtr);
+		CQt.QLocale_ToString22((.)this.ptr.Ptr, (.)dateTime?.ObjectPtr, format, (.)cal?.ObjectPtr);
 	}
-	public libqt_string DateFormat()
+	public void DateFormat(String outStr)
 	{
-		return CQt.QLocale_DateFormat((.)this.ptr);
+		CQt.QLocale_DateFormat((.)this.ptr.Ptr);
 	}
-	public libqt_string TimeFormat()
+	public void TimeFormat(String outStr)
 	{
-		return CQt.QLocale_TimeFormat((.)this.ptr);
+		CQt.QLocale_TimeFormat((.)this.ptr.Ptr);
 	}
-	public libqt_string DateTimeFormat()
+	public void DateTimeFormat(String outStr)
 	{
-		return CQt.QLocale_DateTimeFormat((.)this.ptr);
+		CQt.QLocale_DateTimeFormat((.)this.ptr.Ptr);
 	}
-	public QDate_Ptr* ToDate(String stringVal)
+	public QDate_Ptr ToDate(String stringVal)
 	{
-		return CQt.QLocale_ToDate((.)this.ptr, libqt_string(stringVal));
+		return QDate_Ptr(CQt.QLocale_ToDate((.)this.ptr.Ptr, libqt_string(stringVal)));
 	}
-	public QTime_Ptr* ToTime(String stringVal)
+	public QTime_Ptr ToTime(String stringVal)
 	{
-		return CQt.QLocale_ToTime((.)this.ptr, libqt_string(stringVal));
+		return QTime_Ptr(CQt.QLocale_ToTime((.)this.ptr.Ptr, libqt_string(stringVal)));
 	}
-	public QDateTime_Ptr* ToDateTime(String stringVal)
+	public QDateTime_Ptr ToDateTime(String stringVal)
 	{
-		return CQt.QLocale_ToDateTime((.)this.ptr, libqt_string(stringVal));
+		return QDateTime_Ptr(CQt.QLocale_ToDateTime((.)this.ptr.Ptr, libqt_string(stringVal)));
 	}
-	public QDate_Ptr* ToDate2(String stringVal, String format)
+	public QDate_Ptr ToDate2(String stringVal, String format)
 	{
-		return CQt.QLocale_ToDate2((.)this.ptr, libqt_string(stringVal), libqt_string(format));
+		return QDate_Ptr(CQt.QLocale_ToDate2((.)this.ptr.Ptr, libqt_string(stringVal), libqt_string(format)));
 	}
-	public QTime_Ptr* ToTime2(String stringVal, String format)
+	public QTime_Ptr ToTime2(String stringVal, String format)
 	{
-		return CQt.QLocale_ToTime2((.)this.ptr, libqt_string(stringVal), libqt_string(format));
+		return QTime_Ptr(CQt.QLocale_ToTime2((.)this.ptr.Ptr, libqt_string(stringVal), libqt_string(format)));
 	}
-	public QDateTime_Ptr* ToDateTime2(String stringVal, String format)
+	public QDateTime_Ptr ToDateTime2(String stringVal, String format)
 	{
-		return CQt.QLocale_ToDateTime2((.)this.ptr, libqt_string(stringVal), libqt_string(format));
+		return QDateTime_Ptr(CQt.QLocale_ToDateTime2((.)this.ptr.Ptr, libqt_string(stringVal), libqt_string(format)));
 	}
-	public QDate_Ptr* ToDate3(String stringVal, QLocale_FormatType format, IQCalendar cal)
+	public QDate_Ptr ToDate3(String stringVal, QLocale_FormatType format, IQCalendar cal)
 	{
-		return CQt.QLocale_ToDate3((.)this.ptr, libqt_string(stringVal), format, (.)cal?.ObjectPtr);
+		return QDate_Ptr(CQt.QLocale_ToDate3((.)this.ptr.Ptr, libqt_string(stringVal), format, (.)cal?.ObjectPtr));
 	}
-	public QDateTime_Ptr* ToDateTime3(String stringVal, QLocale_FormatType format, IQCalendar cal)
+	public QDateTime_Ptr ToDateTime3(String stringVal, QLocale_FormatType format, IQCalendar cal)
 	{
-		return CQt.QLocale_ToDateTime3((.)this.ptr, libqt_string(stringVal), format, (.)cal?.ObjectPtr);
+		return QDateTime_Ptr(CQt.QLocale_ToDateTime3((.)this.ptr.Ptr, libqt_string(stringVal), format, (.)cal?.ObjectPtr));
 	}
-	public QDate_Ptr* ToDate4(String stringVal, String format, IQCalendar cal)
+	public QDate_Ptr ToDate4(String stringVal, String format, IQCalendar cal)
 	{
-		return CQt.QLocale_ToDate4((.)this.ptr, libqt_string(stringVal), libqt_string(format), (.)cal?.ObjectPtr);
+		return QDate_Ptr(CQt.QLocale_ToDate4((.)this.ptr.Ptr, libqt_string(stringVal), libqt_string(format), (.)cal?.ObjectPtr));
 	}
-	public QDateTime_Ptr* ToDateTime4(String stringVal, String format, IQCalendar cal)
+	public QDateTime_Ptr ToDateTime4(String stringVal, String format, IQCalendar cal)
 	{
-		return CQt.QLocale_ToDateTime4((.)this.ptr, libqt_string(stringVal), libqt_string(format), (.)cal?.ObjectPtr);
+		return QDateTime_Ptr(CQt.QLocale_ToDateTime4((.)this.ptr.Ptr, libqt_string(stringVal), libqt_string(format), (.)cal?.ObjectPtr));
 	}
-	public libqt_string DecimalPoint()
+	public void DecimalPoint(String outStr)
 	{
-		return CQt.QLocale_DecimalPoint((.)this.ptr);
+		CQt.QLocale_DecimalPoint((.)this.ptr.Ptr);
 	}
-	public libqt_string GroupSeparator()
+	public void GroupSeparator(String outStr)
 	{
-		return CQt.QLocale_GroupSeparator((.)this.ptr);
+		CQt.QLocale_GroupSeparator((.)this.ptr.Ptr);
 	}
-	public libqt_string Percent()
+	public void Percent(String outStr)
 	{
-		return CQt.QLocale_Percent((.)this.ptr);
+		CQt.QLocale_Percent((.)this.ptr.Ptr);
 	}
-	public libqt_string ZeroDigit()
+	public void ZeroDigit(String outStr)
 	{
-		return CQt.QLocale_ZeroDigit((.)this.ptr);
+		CQt.QLocale_ZeroDigit((.)this.ptr.Ptr);
 	}
-	public libqt_string NegativeSign()
+	public void NegativeSign(String outStr)
 	{
-		return CQt.QLocale_NegativeSign((.)this.ptr);
+		CQt.QLocale_NegativeSign((.)this.ptr.Ptr);
 	}
-	public libqt_string PositiveSign()
+	public void PositiveSign(String outStr)
 	{
-		return CQt.QLocale_PositiveSign((.)this.ptr);
+		CQt.QLocale_PositiveSign((.)this.ptr.Ptr);
 	}
-	public libqt_string Exponential()
+	public void Exponential(String outStr)
 	{
-		return CQt.QLocale_Exponential((.)this.ptr);
+		CQt.QLocale_Exponential((.)this.ptr.Ptr);
 	}
-	public libqt_string MonthName(c_int param1)
+	public void MonthName(String outStr, c_int param1)
 	{
-		return CQt.QLocale_MonthName((.)this.ptr, param1);
+		CQt.QLocale_MonthName((.)this.ptr.Ptr, param1);
 	}
-	public libqt_string StandaloneMonthName(c_int param1)
+	public void StandaloneMonthName(String outStr, c_int param1)
 	{
-		return CQt.QLocale_StandaloneMonthName((.)this.ptr, param1);
+		CQt.QLocale_StandaloneMonthName((.)this.ptr.Ptr, param1);
 	}
-	public libqt_string DayName(c_int param1)
+	public void DayName(String outStr, c_int param1)
 	{
-		return CQt.QLocale_DayName((.)this.ptr, param1);
+		CQt.QLocale_DayName((.)this.ptr.Ptr, param1);
 	}
-	public libqt_string StandaloneDayName(c_int param1)
+	public void StandaloneDayName(String outStr, c_int param1)
 	{
-		return CQt.QLocale_StandaloneDayName((.)this.ptr, param1);
+		CQt.QLocale_StandaloneDayName((.)this.ptr.Ptr, param1);
 	}
 	public Qt_DayOfWeek FirstDayOfWeek()
 	{
-		return CQt.QLocale_FirstDayOfWeek((.)this.ptr);
+		return CQt.QLocale_FirstDayOfWeek((.)this.ptr.Ptr);
 	}
 	public void* Weekdays()
 	{
-		return CQt.QLocale_Weekdays((.)this.ptr);
+		return CQt.QLocale_Weekdays((.)this.ptr.Ptr);
 	}
-	public libqt_string AmText()
+	public void AmText(String outStr)
 	{
-		return CQt.QLocale_AmText((.)this.ptr);
+		CQt.QLocale_AmText((.)this.ptr.Ptr);
 	}
-	public libqt_string PmText()
+	public void PmText(String outStr)
 	{
-		return CQt.QLocale_PmText((.)this.ptr);
+		CQt.QLocale_PmText((.)this.ptr.Ptr);
 	}
 	public QLocale_MeasurementSystem MeasurementSystem()
 	{
-		return CQt.QLocale_MeasurementSystem((.)this.ptr);
+		return CQt.QLocale_MeasurementSystem((.)this.ptr.Ptr);
 	}
-	public QLocale_Ptr* Collation()
+	public QLocale_Ptr Collation()
 	{
-		return CQt.QLocale_Collation((.)this.ptr);
+		return QLocale_Ptr(CQt.QLocale_Collation((.)this.ptr.Ptr));
 	}
 	public Qt_LayoutDirection TextDirection()
 	{
-		return CQt.QLocale_TextDirection((.)this.ptr);
+		return CQt.QLocale_TextDirection((.)this.ptr.Ptr);
 	}
-	public libqt_string ToUpper(String str)
+	public void ToUpper(String outStr, String str)
 	{
-		return CQt.QLocale_ToUpper((.)this.ptr, libqt_string(str));
+		CQt.QLocale_ToUpper((.)this.ptr.Ptr, libqt_string(str));
 	}
-	public libqt_string ToLower(String str)
+	public void ToLower(String outStr, String str)
 	{
-		return CQt.QLocale_ToLower((.)this.ptr, libqt_string(str));
+		CQt.QLocale_ToLower((.)this.ptr.Ptr, libqt_string(str));
 	}
-	public libqt_string CurrencySymbol()
+	public void CurrencySymbol(String outStr)
 	{
-		return CQt.QLocale_CurrencySymbol((.)this.ptr);
+		CQt.QLocale_CurrencySymbol((.)this.ptr.Ptr);
 	}
-	public libqt_string ToCurrencyString(c_longlong param1)
+	public void ToCurrencyString(String outStr, c_longlong param1)
 	{
-		return CQt.QLocale_ToCurrencyString((.)this.ptr, param1);
+		CQt.QLocale_ToCurrencyString((.)this.ptr.Ptr, param1);
 	}
-	public libqt_string ToCurrencyString2(c_ulonglong param1)
+	public void ToCurrencyString2(String outStr, c_ulonglong param1)
 	{
-		return CQt.QLocale_ToCurrencyString2((.)this.ptr, param1);
+		CQt.QLocale_ToCurrencyString2((.)this.ptr.Ptr, param1);
 	}
-	public libqt_string ToCurrencyString3(c_ushort i)
+	public void ToCurrencyString3(String outStr, c_ushort i)
 	{
-		return CQt.QLocale_ToCurrencyString3((.)this.ptr, i);
+		CQt.QLocale_ToCurrencyString3((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToCurrencyString4(c_ushort i)
+	public void ToCurrencyString4(String outStr, c_ushort i)
 	{
-		return CQt.QLocale_ToCurrencyString4((.)this.ptr, i);
+		CQt.QLocale_ToCurrencyString4((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToCurrencyString5(c_int i)
+	public void ToCurrencyString5(String outStr, c_int i)
 	{
-		return CQt.QLocale_ToCurrencyString5((.)this.ptr, i);
+		CQt.QLocale_ToCurrencyString5((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToCurrencyString6(c_uint i)
+	public void ToCurrencyString6(String outStr, c_uint i)
 	{
-		return CQt.QLocale_ToCurrencyString6((.)this.ptr, i);
+		CQt.QLocale_ToCurrencyString6((.)this.ptr.Ptr, i);
 	}
-	public libqt_string ToCurrencyString7(double param1)
+	public void ToCurrencyString7(String outStr, double param1)
 	{
-		return CQt.QLocale_ToCurrencyString7((.)this.ptr, param1);
+		CQt.QLocale_ToCurrencyString7((.)this.ptr.Ptr, param1);
 	}
-	public libqt_string ToCurrencyString8(float i)
+	public void ToCurrencyString8(String outStr, float i)
 	{
-		return CQt.QLocale_ToCurrencyString8((.)this.ptr, i);
+		CQt.QLocale_ToCurrencyString8((.)this.ptr.Ptr, i);
 	}
-	public libqt_string FormattedDataSize(c_longlong bytes)
+	public void FormattedDataSize(String outStr, c_longlong bytes)
 	{
-		return CQt.QLocale_FormattedDataSize((.)this.ptr, bytes);
+		CQt.QLocale_FormattedDataSize((.)this.ptr.Ptr, bytes);
 	}
 	public void* UiLanguages()
 	{
-		return CQt.QLocale_UiLanguages((.)this.ptr);
+		return CQt.QLocale_UiLanguages((.)this.ptr.Ptr);
 	}
-	public libqt_string LanguageToCode(QLocale_Language language)
+	public void LanguageToCode(String outStr, QLocale_Language language)
 	{
-		return CQt.QLocale_LanguageToCode(language);
+		CQt.QLocale_LanguageToCode(language);
 	}
-	public libqt_string TerritoryToCode(QLocale_Country territory)
+	public void TerritoryToCode(String outStr, QLocale_Country territory)
 	{
-		return CQt.QLocale_TerritoryToCode(territory);
+		CQt.QLocale_TerritoryToCode(territory);
 	}
-	public libqt_string CountryToCode(QLocale_Country country)
+	public void CountryToCode(String outStr, QLocale_Country country)
 	{
-		return CQt.QLocale_CountryToCode(country);
+		CQt.QLocale_CountryToCode(country);
 	}
-	public libqt_string ScriptToCode(QLocale_Script script)
+	public void ScriptToCode(String outStr, QLocale_Script script)
 	{
-		return CQt.QLocale_ScriptToCode(script);
+		CQt.QLocale_ScriptToCode(script);
 	}
-	public libqt_string LanguageToString(QLocale_Language language)
+	public void LanguageToString(String outStr, QLocale_Language language)
 	{
-		return CQt.QLocale_LanguageToString(language);
+		CQt.QLocale_LanguageToString(language);
 	}
-	public libqt_string TerritoryToString(QLocale_Country territory)
+	public void TerritoryToString(String outStr, QLocale_Country territory)
 	{
-		return CQt.QLocale_TerritoryToString(territory);
+		CQt.QLocale_TerritoryToString(territory);
 	}
-	public libqt_string CountryToString(QLocale_Country country)
+	public void CountryToString(String outStr, QLocale_Country country)
 	{
-		return CQt.QLocale_CountryToString(country);
+		CQt.QLocale_CountryToString(country);
 	}
-	public libqt_string ScriptToString(QLocale_Script script)
+	public void ScriptToString(String outStr, QLocale_Script script)
 	{
-		return CQt.QLocale_ScriptToString(script);
+		CQt.QLocale_ScriptToString(script);
 	}
 	public void SetDefault(IQLocale locale)
 	{
 		CQt.QLocale_SetDefault((.)locale?.ObjectPtr);
 	}
-	public QLocale_Ptr* C()
+	public QLocale_Ptr C()
 	{
-		return CQt.QLocale_C();
+		return QLocale_Ptr(CQt.QLocale_C());
 	}
-	public QLocale_Ptr* System()
+	public QLocale_Ptr System()
 	{
-		return CQt.QLocale_System();
+		return QLocale_Ptr(CQt.QLocale_System());
 	}
 	public void* MatchingLocales(QLocale_Language language, QLocale_Script script, QLocale_Country territory)
 	{
@@ -731,187 +740,187 @@ class QLocale : IQLocale
 	}
 	public void SetNumberOptions(void* options)
 	{
-		CQt.QLocale_SetNumberOptions((.)this.ptr, options);
+		CQt.QLocale_SetNumberOptions((.)this.ptr.Ptr, options);
 	}
 	public void* NumberOptions()
 	{
-		return CQt.QLocale_NumberOptions((.)this.ptr);
+		return CQt.QLocale_NumberOptions((.)this.ptr.Ptr);
 	}
-	public libqt_string QuoteString(String str)
+	public void QuoteString(String outStr, String str)
 	{
-		return CQt.QLocale_QuoteString((.)this.ptr, libqt_string(str));
+		CQt.QLocale_QuoteString((.)this.ptr.Ptr, libqt_string(str));
 	}
-	public libqt_string CreateSeparatedList(void** strl)
+	public void CreateSeparatedList(String outStr, void** strl)
 	{
-		return CQt.QLocale_CreateSeparatedList((.)this.ptr, strl);
+		CQt.QLocale_CreateSeparatedList((.)this.ptr.Ptr, strl);
 	}
 	public c_ushort ToShort22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToShort22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToShort22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public c_ushort ToUShort22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToUShort22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToUShort22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public c_int ToInt22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToInt22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToInt22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public c_uint ToUInt22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToUInt22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToUInt22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public c_long ToLong22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToLong22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToLong22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public c_ulong ToULong22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToULong22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToULong22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public c_longlong ToLongLong22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToLongLong22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToLongLong22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public c_ulonglong ToULongLong22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToULongLong22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToULongLong22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public float ToFloat22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToFloat22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToFloat22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
 	public double ToDouble22(String s, bool* ok)
 	{
-		return CQt.QLocale_ToDouble22((.)this.ptr, libqt_string(s), ok);
+		return CQt.QLocale_ToDouble22((.)this.ptr.Ptr, libqt_string(s), ok);
 	}
-	public libqt_string ToString24(double f, c_char format)
+	public void ToString24(String outStr, double f, c_char format)
 	{
-		return CQt.QLocale_ToString24((.)this.ptr, f, format);
+		CQt.QLocale_ToString24((.)this.ptr.Ptr, f, format);
 	}
-	public libqt_string ToString32(double f, c_char format, c_int precision)
+	public void ToString32(String outStr, double f, c_char format, c_int precision)
 	{
-		return CQt.QLocale_ToString32((.)this.ptr, f, format, precision);
+		CQt.QLocale_ToString32((.)this.ptr.Ptr, f, format, precision);
 	}
-	public libqt_string ToString25(float f, c_char format)
+	public void ToString25(String outStr, float f, c_char format)
 	{
-		return CQt.QLocale_ToString25((.)this.ptr, f, format);
+		CQt.QLocale_ToString25((.)this.ptr.Ptr, f, format);
 	}
-	public libqt_string ToString33(float f, c_char format, c_int precision)
+	public void ToString33(String outStr, float f, c_char format, c_int precision)
 	{
-		return CQt.QLocale_ToString33((.)this.ptr, f, format, precision);
+		CQt.QLocale_ToString33((.)this.ptr.Ptr, f, format, precision);
 	}
-	public libqt_string ToString26(IQDate date, QLocale_FormatType format)
+	public void ToString26(String outStr, IQDate date, QLocale_FormatType format)
 	{
-		return CQt.QLocale_ToString26((.)this.ptr, (.)date?.ObjectPtr, format);
+		CQt.QLocale_ToString26((.)this.ptr.Ptr, (.)date?.ObjectPtr, format);
 	}
-	public libqt_string ToString27(IQTime time, QLocale_FormatType format)
+	public void ToString27(String outStr, IQTime time, QLocale_FormatType format)
 	{
-		return CQt.QLocale_ToString27((.)this.ptr, (.)time?.ObjectPtr, format);
+		CQt.QLocale_ToString27((.)this.ptr.Ptr, (.)time?.ObjectPtr, format);
 	}
-	public libqt_string ToString28(IQDateTime dateTime, QLocale_FormatType format)
+	public void ToString28(String outStr, IQDateTime dateTime, QLocale_FormatType format)
 	{
-		return CQt.QLocale_ToString28((.)this.ptr, (.)dateTime?.ObjectPtr, format);
+		CQt.QLocale_ToString28((.)this.ptr.Ptr, (.)dateTime?.ObjectPtr, format);
 	}
-	public libqt_string DateFormat1(QLocale_FormatType format)
+	public void DateFormat1(String outStr, QLocale_FormatType format)
 	{
-		return CQt.QLocale_DateFormat1((.)this.ptr, format);
+		CQt.QLocale_DateFormat1((.)this.ptr.Ptr, format);
 	}
-	public libqt_string TimeFormat1(QLocale_FormatType format)
+	public void TimeFormat1(String outStr, QLocale_FormatType format)
 	{
-		return CQt.QLocale_TimeFormat1((.)this.ptr, format);
+		CQt.QLocale_TimeFormat1((.)this.ptr.Ptr, format);
 	}
-	public libqt_string DateTimeFormat1(QLocale_FormatType format)
+	public void DateTimeFormat1(String outStr, QLocale_FormatType format)
 	{
-		return CQt.QLocale_DateTimeFormat1((.)this.ptr, format);
+		CQt.QLocale_DateTimeFormat1((.)this.ptr.Ptr, format);
 	}
-	public QDate_Ptr* ToDate22(String stringVal, QLocale_FormatType param2)
+	public QDate_Ptr ToDate22(String stringVal, QLocale_FormatType param2)
 	{
-		return CQt.QLocale_ToDate22((.)this.ptr, libqt_string(stringVal), param2);
+		return QDate_Ptr(CQt.QLocale_ToDate22((.)this.ptr.Ptr, libqt_string(stringVal), param2));
 	}
-	public QTime_Ptr* ToTime22(String stringVal, QLocale_FormatType param2)
+	public QTime_Ptr ToTime22(String stringVal, QLocale_FormatType param2)
 	{
-		return CQt.QLocale_ToTime22((.)this.ptr, libqt_string(stringVal), param2);
+		return QTime_Ptr(CQt.QLocale_ToTime22((.)this.ptr.Ptr, libqt_string(stringVal), param2));
 	}
-	public QDateTime_Ptr* ToDateTime22(String stringVal, QLocale_FormatType format)
+	public QDateTime_Ptr ToDateTime22(String stringVal, QLocale_FormatType format)
 	{
-		return CQt.QLocale_ToDateTime22((.)this.ptr, libqt_string(stringVal), format);
+		return QDateTime_Ptr(CQt.QLocale_ToDateTime22((.)this.ptr.Ptr, libqt_string(stringVal), format));
 	}
-	public libqt_string MonthName2(c_int param1, QLocale_FormatType format)
+	public void MonthName2(String outStr, c_int param1, QLocale_FormatType format)
 	{
-		return CQt.QLocale_MonthName2((.)this.ptr, param1, format);
+		CQt.QLocale_MonthName2((.)this.ptr.Ptr, param1, format);
 	}
-	public libqt_string StandaloneMonthName2(c_int param1, QLocale_FormatType format)
+	public void StandaloneMonthName2(String outStr, c_int param1, QLocale_FormatType format)
 	{
-		return CQt.QLocale_StandaloneMonthName2((.)this.ptr, param1, format);
+		CQt.QLocale_StandaloneMonthName2((.)this.ptr.Ptr, param1, format);
 	}
-	public libqt_string DayName2(c_int param1, QLocale_FormatType format)
+	public void DayName2(String outStr, c_int param1, QLocale_FormatType format)
 	{
-		return CQt.QLocale_DayName2((.)this.ptr, param1, format);
+		CQt.QLocale_DayName2((.)this.ptr.Ptr, param1, format);
 	}
-	public libqt_string StandaloneDayName2(c_int param1, QLocale_FormatType format)
+	public void StandaloneDayName2(String outStr, c_int param1, QLocale_FormatType format)
 	{
-		return CQt.QLocale_StandaloneDayName2((.)this.ptr, param1, format);
+		CQt.QLocale_StandaloneDayName2((.)this.ptr.Ptr, param1, format);
 	}
-	public libqt_string CurrencySymbol1(QLocale_CurrencySymbolFormat param1)
+	public void CurrencySymbol1(String outStr, QLocale_CurrencySymbolFormat param1)
 	{
-		return CQt.QLocale_CurrencySymbol1((.)this.ptr, param1);
+		CQt.QLocale_CurrencySymbol1((.)this.ptr.Ptr, param1);
 	}
-	public libqt_string ToCurrencyString22(c_longlong param1, String symbol)
+	public void ToCurrencyString22(String outStr, c_longlong param1, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString22((.)this.ptr, param1, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString22((.)this.ptr.Ptr, param1, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString23(c_ulonglong param1, String symbol)
+	public void ToCurrencyString23(String outStr, c_ulonglong param1, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString23((.)this.ptr, param1, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString23((.)this.ptr.Ptr, param1, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString24(c_ushort i, String symbol)
+	public void ToCurrencyString24(String outStr, c_ushort i, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString24((.)this.ptr, i, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString24((.)this.ptr.Ptr, i, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString25(c_ushort i, String symbol)
+	public void ToCurrencyString25(String outStr, c_ushort i, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString25((.)this.ptr, i, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString25((.)this.ptr.Ptr, i, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString26(c_int i, String symbol)
+	public void ToCurrencyString26(String outStr, c_int i, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString26((.)this.ptr, i, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString26((.)this.ptr.Ptr, i, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString27(c_uint i, String symbol)
+	public void ToCurrencyString27(String outStr, c_uint i, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString27((.)this.ptr, i, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString27((.)this.ptr.Ptr, i, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString28(double param1, String symbol)
+	public void ToCurrencyString28(String outStr, double param1, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString28((.)this.ptr, param1, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString28((.)this.ptr.Ptr, param1, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString32(double param1, String symbol, c_int precision)
+	public void ToCurrencyString32(String outStr, double param1, String symbol, c_int precision)
 	{
-		return CQt.QLocale_ToCurrencyString32((.)this.ptr, param1, libqt_string(symbol), precision);
+		CQt.QLocale_ToCurrencyString32((.)this.ptr.Ptr, param1, libqt_string(symbol), precision);
 	}
-	public libqt_string ToCurrencyString29(float i, String symbol)
+	public void ToCurrencyString29(String outStr, float i, String symbol)
 	{
-		return CQt.QLocale_ToCurrencyString29((.)this.ptr, i, libqt_string(symbol));
+		CQt.QLocale_ToCurrencyString29((.)this.ptr.Ptr, i, libqt_string(symbol));
 	}
-	public libqt_string ToCurrencyString33(float i, String symbol, c_int precision)
+	public void ToCurrencyString33(String outStr, float i, String symbol, c_int precision)
 	{
-		return CQt.QLocale_ToCurrencyString33((.)this.ptr, i, libqt_string(symbol), precision);
+		CQt.QLocale_ToCurrencyString33((.)this.ptr.Ptr, i, libqt_string(symbol), precision);
 	}
-	public libqt_string FormattedDataSize2(c_longlong bytes, c_int precision)
+	public void FormattedDataSize2(String outStr, c_longlong bytes, c_int precision)
 	{
-		return CQt.QLocale_FormattedDataSize2((.)this.ptr, bytes, precision);
+		CQt.QLocale_FormattedDataSize2((.)this.ptr.Ptr, bytes, precision);
 	}
-	public libqt_string FormattedDataSize3(c_longlong bytes, c_int precision, void* format)
+	public void FormattedDataSize3(String outStr, c_longlong bytes, c_int precision, void* format)
 	{
-		return CQt.QLocale_FormattedDataSize3((.)this.ptr, bytes, precision, format);
+		CQt.QLocale_FormattedDataSize3((.)this.ptr.Ptr, bytes, precision, format);
 	}
-	public libqt_string LanguageToCode2(QLocale_Language language, void* codeTypes)
+	public void LanguageToCode2(String outStr, QLocale_Language language, void* codeTypes)
 	{
-		return CQt.QLocale_LanguageToCode2(language, codeTypes);
+		CQt.QLocale_LanguageToCode2(language, codeTypes);
 	}
-	public libqt_string QuoteString22(String str, QLocale_QuotationStyle style)
+	public void QuoteString22(String outStr, String str, QLocale_QuotationStyle style)
 	{
-		return CQt.QLocale_QuoteString22((.)this.ptr, libqt_string(str), style);
+		CQt.QLocale_QuoteString22((.)this.ptr.Ptr, libqt_string(str), style);
 	}
 }
 interface IQLocale : IQtObjectInterface

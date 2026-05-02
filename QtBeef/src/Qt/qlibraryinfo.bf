@@ -7,23 +7,28 @@ namespace Qt6;
 // QLibraryInfo
 // --------------------------------------------------------------
 [CRepr]
-struct QLibraryInfo_Ptr: void
+struct QLibraryInfo_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QLibraryInfo_new")]
-	public static extern QLibraryInfo_Ptr* QLibraryInfo_new(QLibraryInfo_Ptr* other);
+	public static extern QLibraryInfo_Ptr QLibraryInfo_new(void** other);
 	[LinkName("QLibraryInfo_new2")]
-	public static extern QLibraryInfo_Ptr* QLibraryInfo_new2(QLibraryInfo_Ptr* other);
+	public static extern QLibraryInfo_Ptr QLibraryInfo_new2(void** other);
 	[LinkName("QLibraryInfo_Delete")]
-	public static extern void QLibraryInfo_Delete(QLibraryInfo_Ptr* self);
+	public static extern void QLibraryInfo_Delete(QLibraryInfo_Ptr self);
 	[LinkName("QLibraryInfo_Build")]
 	public static extern c_char* QLibraryInfo_Build();
 	[LinkName("QLibraryInfo_IsDebugBuild")]
 	public static extern bool QLibraryInfo_IsDebugBuild();
 	[LinkName("QLibraryInfo_Version")]
-	public static extern QVersionNumber_Ptr* QLibraryInfo_Version();
+	public static extern void* QLibraryInfo_Version();
 	[LinkName("QLibraryInfo_Path")]
 	public static extern libqt_string QLibraryInfo_Path(QLibraryInfo_LibraryPath p);
 	[LinkName("QLibraryInfo_Location")]
@@ -33,8 +38,12 @@ extension CQt
 }
 class QLibraryInfo : IQLibraryInfo
 {
-	private QLibraryInfo_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QLibraryInfo_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLibraryInfo_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQLibraryInfo other)
 	{
 		this.ptr = CQt.QLibraryInfo_new((.)other?.ObjectPtr);
@@ -51,17 +60,17 @@ class QLibraryInfo : IQLibraryInfo
 	{
 		return CQt.QLibraryInfo_IsDebugBuild();
 	}
-	public QVersionNumber_Ptr* Version()
+	public QVersionNumber_Ptr Version()
 	{
-		return CQt.QLibraryInfo_Version();
+		return QVersionNumber_Ptr(CQt.QLibraryInfo_Version());
 	}
-	public libqt_string Path(QLibraryInfo_LibraryPath p)
+	public void Path(String outStr, QLibraryInfo_LibraryPath p)
 	{
-		return CQt.QLibraryInfo_Path(p);
+		CQt.QLibraryInfo_Path(p);
 	}
-	public libqt_string Location(QLibraryInfo_LibraryPath location)
+	public void Location(String outStr, QLibraryInfo_LibraryPath location)
 	{
-		return CQt.QLibraryInfo_Location(location);
+		CQt.QLibraryInfo_Location(location);
 	}
 	public void* PlatformPluginArguments(String platformName)
 	{

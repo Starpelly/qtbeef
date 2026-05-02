@@ -7,73 +7,78 @@ namespace Qt6;
 // QImageWriter
 // --------------------------------------------------------------
 [CRepr]
-struct QImageWriter_Ptr: void
+struct QImageWriter_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QImageWriter_new")]
-	public static extern QImageWriter_Ptr* QImageWriter_new();
+	public static extern QImageWriter_Ptr QImageWriter_new();
 	[LinkName("QImageWriter_new2")]
-	public static extern QImageWriter_Ptr* QImageWriter_new2(QIODevice_Ptr** device, void** format);
+	public static extern QImageWriter_Ptr QImageWriter_new2(void** device, void** format);
 	[LinkName("QImageWriter_new3")]
-	public static extern QImageWriter_Ptr* QImageWriter_new3(libqt_string fileName);
+	public static extern QImageWriter_Ptr QImageWriter_new3(libqt_string fileName);
 	[LinkName("QImageWriter_new4")]
-	public static extern QImageWriter_Ptr* QImageWriter_new4(libqt_string fileName, void** format);
+	public static extern QImageWriter_Ptr QImageWriter_new4(libqt_string fileName, void** format);
 	[LinkName("QImageWriter_Delete")]
-	public static extern void QImageWriter_Delete(QImageWriter_Ptr* self);
+	public static extern void QImageWriter_Delete(QImageWriter_Ptr self);
 	[LinkName("QImageWriter_Tr")]
 	public static extern libqt_string QImageWriter_Tr(c_char* sourceText);
 	[LinkName("QImageWriter_SetFormat")]
-	public static extern void QImageWriter_SetFormat(QImageWriter_Ptr* self, void** format);
+	public static extern void QImageWriter_SetFormat(void* self, void** format);
 	[LinkName("QImageWriter_Format")]
-	public static extern void* QImageWriter_Format(QImageWriter_Ptr* self);
+	public static extern void* QImageWriter_Format(void* self);
 	[LinkName("QImageWriter_SetDevice")]
-	public static extern void QImageWriter_SetDevice(QImageWriter_Ptr* self, QIODevice_Ptr** device);
+	public static extern void QImageWriter_SetDevice(void* self, void** device);
 	[LinkName("QImageWriter_Device")]
-	public static extern QIODevice_Ptr** QImageWriter_Device(QImageWriter_Ptr* self);
+	public static extern void** QImageWriter_Device(void* self);
 	[LinkName("QImageWriter_SetFileName")]
-	public static extern void QImageWriter_SetFileName(QImageWriter_Ptr* self, libqt_string fileName);
+	public static extern void QImageWriter_SetFileName(void* self, libqt_string fileName);
 	[LinkName("QImageWriter_FileName")]
-	public static extern libqt_string QImageWriter_FileName(QImageWriter_Ptr* self);
+	public static extern libqt_string QImageWriter_FileName(void* self);
 	[LinkName("QImageWriter_SetQuality")]
-	public static extern void QImageWriter_SetQuality(QImageWriter_Ptr* self, c_int quality);
+	public static extern void QImageWriter_SetQuality(void* self, c_int quality);
 	[LinkName("QImageWriter_Quality")]
-	public static extern c_int QImageWriter_Quality(QImageWriter_Ptr* self);
+	public static extern c_int QImageWriter_Quality(void* self);
 	[LinkName("QImageWriter_SetCompression")]
-	public static extern void QImageWriter_SetCompression(QImageWriter_Ptr* self, c_int compression);
+	public static extern void QImageWriter_SetCompression(void* self, c_int compression);
 	[LinkName("QImageWriter_Compression")]
-	public static extern c_int QImageWriter_Compression(QImageWriter_Ptr* self);
+	public static extern c_int QImageWriter_Compression(void* self);
 	[LinkName("QImageWriter_SetSubType")]
-	public static extern void QImageWriter_SetSubType(QImageWriter_Ptr* self, void** type);
+	public static extern void QImageWriter_SetSubType(void* self, void** type);
 	[LinkName("QImageWriter_SubType")]
-	public static extern void* QImageWriter_SubType(QImageWriter_Ptr* self);
+	public static extern void* QImageWriter_SubType(void* self);
 	[LinkName("QImageWriter_SupportedSubTypes")]
-	public static extern void* QImageWriter_SupportedSubTypes(QImageWriter_Ptr* self);
+	public static extern void* QImageWriter_SupportedSubTypes(void* self);
 	[LinkName("QImageWriter_SetOptimizedWrite")]
-	public static extern void QImageWriter_SetOptimizedWrite(QImageWriter_Ptr* self, bool optimize);
+	public static extern void QImageWriter_SetOptimizedWrite(void* self, bool optimize);
 	[LinkName("QImageWriter_OptimizedWrite")]
-	public static extern bool QImageWriter_OptimizedWrite(QImageWriter_Ptr* self);
+	public static extern bool QImageWriter_OptimizedWrite(void* self);
 	[LinkName("QImageWriter_SetProgressiveScanWrite")]
-	public static extern void QImageWriter_SetProgressiveScanWrite(QImageWriter_Ptr* self, bool progressive);
+	public static extern void QImageWriter_SetProgressiveScanWrite(void* self, bool progressive);
 	[LinkName("QImageWriter_ProgressiveScanWrite")]
-	public static extern bool QImageWriter_ProgressiveScanWrite(QImageWriter_Ptr* self);
+	public static extern bool QImageWriter_ProgressiveScanWrite(void* self);
 	[LinkName("QImageWriter_Transformation")]
-	public static extern void* QImageWriter_Transformation(QImageWriter_Ptr* self);
+	public static extern void* QImageWriter_Transformation(void* self);
 	[LinkName("QImageWriter_SetTransformation")]
-	public static extern void QImageWriter_SetTransformation(QImageWriter_Ptr* self, void* orientation);
+	public static extern void QImageWriter_SetTransformation(void* self, void* orientation);
 	[LinkName("QImageWriter_SetText")]
-	public static extern void QImageWriter_SetText(QImageWriter_Ptr* self, libqt_string key, libqt_string text);
+	public static extern void QImageWriter_SetText(void* self, libqt_string key, libqt_string text);
 	[LinkName("QImageWriter_CanWrite")]
-	public static extern bool QImageWriter_CanWrite(QImageWriter_Ptr* self);
+	public static extern bool QImageWriter_CanWrite(void* self);
 	[LinkName("QImageWriter_Write")]
-	public static extern bool QImageWriter_Write(QImageWriter_Ptr* self, QImage_Ptr* image);
+	public static extern bool QImageWriter_Write(void* self, void** image);
 	[LinkName("QImageWriter_Error")]
-	public static extern QImageWriter_ImageWriterError QImageWriter_Error(QImageWriter_Ptr* self);
+	public static extern QImageWriter_ImageWriterError QImageWriter_Error(void* self);
 	[LinkName("QImageWriter_ErrorString")]
-	public static extern libqt_string QImageWriter_ErrorString(QImageWriter_Ptr* self);
+	public static extern libqt_string QImageWriter_ErrorString(void* self);
 	[LinkName("QImageWriter_SupportsOption")]
-	public static extern bool QImageWriter_SupportsOption(QImageWriter_Ptr* self, QImageIOHandler_ImageOption option);
+	public static extern bool QImageWriter_SupportsOption(void* self, QImageIOHandler_ImageOption option);
 	[LinkName("QImageWriter_SupportedImageFormats")]
 	public static extern void* QImageWriter_SupportedImageFormats();
 	[LinkName("QImageWriter_SupportedMimeTypes")]
@@ -87,8 +92,12 @@ extension CQt
 }
 class QImageWriter : IQImageWriter
 {
-	private QImageWriter_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QImageWriter_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QImageWriter_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QImageWriter_new();
@@ -109,109 +118,109 @@ class QImageWriter : IQImageWriter
 	{
 		CQt.QImageWriter_Delete(this.ptr);
 	}
-	public libqt_string Tr(c_char* sourceText)
+	public void Tr(String outStr, c_char* sourceText)
 	{
-		return CQt.QImageWriter_Tr(sourceText);
+		CQt.QImageWriter_Tr(sourceText);
 	}
 	public void SetFormat(void** format)
 	{
-		CQt.QImageWriter_SetFormat((.)this.ptr, format);
+		CQt.QImageWriter_SetFormat((.)this.ptr.Ptr, format);
 	}
 	public void* Format()
 	{
-		return CQt.QImageWriter_Format((.)this.ptr);
+		return CQt.QImageWriter_Format((.)this.ptr.Ptr);
 	}
 	public void SetDevice(IQIODevice device)
 	{
-		CQt.QImageWriter_SetDevice((.)this.ptr, (.)device?.ObjectPtr);
+		CQt.QImageWriter_SetDevice((.)this.ptr.Ptr, (.)device?.ObjectPtr);
 	}
-	public QIODevice_Ptr** Device()
+	public QIODevice_Ptr Device()
 	{
-		return CQt.QImageWriter_Device((.)this.ptr);
+		return QIODevice_Ptr(CQt.QImageWriter_Device((.)this.ptr.Ptr));
 	}
 	public void SetFileName(String fileName)
 	{
-		CQt.QImageWriter_SetFileName((.)this.ptr, libqt_string(fileName));
+		CQt.QImageWriter_SetFileName((.)this.ptr.Ptr, libqt_string(fileName));
 	}
-	public libqt_string FileName()
+	public void FileName(String outStr)
 	{
-		return CQt.QImageWriter_FileName((.)this.ptr);
+		CQt.QImageWriter_FileName((.)this.ptr.Ptr);
 	}
 	public void SetQuality(c_int quality)
 	{
-		CQt.QImageWriter_SetQuality((.)this.ptr, quality);
+		CQt.QImageWriter_SetQuality((.)this.ptr.Ptr, quality);
 	}
 	public c_int Quality()
 	{
-		return CQt.QImageWriter_Quality((.)this.ptr);
+		return CQt.QImageWriter_Quality((.)this.ptr.Ptr);
 	}
 	public void SetCompression(c_int compression)
 	{
-		CQt.QImageWriter_SetCompression((.)this.ptr, compression);
+		CQt.QImageWriter_SetCompression((.)this.ptr.Ptr, compression);
 	}
 	public c_int Compression()
 	{
-		return CQt.QImageWriter_Compression((.)this.ptr);
+		return CQt.QImageWriter_Compression((.)this.ptr.Ptr);
 	}
 	public void SetSubType(void** type)
 	{
-		CQt.QImageWriter_SetSubType((.)this.ptr, type);
+		CQt.QImageWriter_SetSubType((.)this.ptr.Ptr, type);
 	}
 	public void* SubType()
 	{
-		return CQt.QImageWriter_SubType((.)this.ptr);
+		return CQt.QImageWriter_SubType((.)this.ptr.Ptr);
 	}
 	public void* SupportedSubTypes()
 	{
-		return CQt.QImageWriter_SupportedSubTypes((.)this.ptr);
+		return CQt.QImageWriter_SupportedSubTypes((.)this.ptr.Ptr);
 	}
 	public void SetOptimizedWrite(bool optimize)
 	{
-		CQt.QImageWriter_SetOptimizedWrite((.)this.ptr, optimize);
+		CQt.QImageWriter_SetOptimizedWrite((.)this.ptr.Ptr, optimize);
 	}
 	public bool OptimizedWrite()
 	{
-		return CQt.QImageWriter_OptimizedWrite((.)this.ptr);
+		return CQt.QImageWriter_OptimizedWrite((.)this.ptr.Ptr);
 	}
 	public void SetProgressiveScanWrite(bool progressive)
 	{
-		CQt.QImageWriter_SetProgressiveScanWrite((.)this.ptr, progressive);
+		CQt.QImageWriter_SetProgressiveScanWrite((.)this.ptr.Ptr, progressive);
 	}
 	public bool ProgressiveScanWrite()
 	{
-		return CQt.QImageWriter_ProgressiveScanWrite((.)this.ptr);
+		return CQt.QImageWriter_ProgressiveScanWrite((.)this.ptr.Ptr);
 	}
 	public void* Transformation()
 	{
-		return CQt.QImageWriter_Transformation((.)this.ptr);
+		return CQt.QImageWriter_Transformation((.)this.ptr.Ptr);
 	}
 	public void SetTransformation(void* orientation)
 	{
-		CQt.QImageWriter_SetTransformation((.)this.ptr, orientation);
+		CQt.QImageWriter_SetTransformation((.)this.ptr.Ptr, orientation);
 	}
 	public void SetText(String key, String text)
 	{
-		CQt.QImageWriter_SetText((.)this.ptr, libqt_string(key), libqt_string(text));
+		CQt.QImageWriter_SetText((.)this.ptr.Ptr, libqt_string(key), libqt_string(text));
 	}
 	public bool CanWrite()
 	{
-		return CQt.QImageWriter_CanWrite((.)this.ptr);
+		return CQt.QImageWriter_CanWrite((.)this.ptr.Ptr);
 	}
 	public bool Write(IQImage image)
 	{
-		return CQt.QImageWriter_Write((.)this.ptr, (.)image?.ObjectPtr);
+		return CQt.QImageWriter_Write((.)this.ptr.Ptr, (.)image?.ObjectPtr);
 	}
 	public QImageWriter_ImageWriterError Error()
 	{
-		return CQt.QImageWriter_Error((.)this.ptr);
+		return CQt.QImageWriter_Error((.)this.ptr.Ptr);
 	}
-	public libqt_string ErrorString()
+	public void ErrorString(String outStr)
 	{
-		return CQt.QImageWriter_ErrorString((.)this.ptr);
+		CQt.QImageWriter_ErrorString((.)this.ptr.Ptr);
 	}
 	public bool SupportsOption(QImageIOHandler_ImageOption option)
 	{
-		return CQt.QImageWriter_SupportsOption((.)this.ptr, option);
+		return CQt.QImageWriter_SupportsOption((.)this.ptr.Ptr, option);
 	}
 	public void* SupportedImageFormats()
 	{
@@ -225,13 +234,13 @@ class QImageWriter : IQImageWriter
 	{
 		return CQt.QImageWriter_ImageFormatsForMimeType(mimeType);
 	}
-	public libqt_string Tr2(c_char* sourceText, c_char* disambiguation)
+	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
 	{
-		return CQt.QImageWriter_Tr2(sourceText, disambiguation);
+		CQt.QImageWriter_Tr2(sourceText, disambiguation);
 	}
-	public libqt_string Tr3(c_char* sourceText, c_char* disambiguation, c_int n)
+	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
 	{
-		return CQt.QImageWriter_Tr3(sourceText, disambiguation, n);
+		CQt.QImageWriter_Tr3(sourceText, disambiguation, n);
 	}
 }
 interface IQImageWriter : IQtObjectInterface

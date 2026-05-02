@@ -7,140 +7,149 @@ namespace Qt6;
 // QTransform
 // --------------------------------------------------------------
 [CRepr]
-struct QTransform_Ptr: void
+struct QTransform_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QTransform_new")]
-	public static extern QTransform_Ptr* QTransform_new(QTransform_Ptr* other);
+	public static extern QTransform_Ptr QTransform_new(void** other);
 	[LinkName("QTransform_new2")]
-	public static extern QTransform_Ptr* QTransform_new2(QTransform_Ptr* other);
+	public static extern QTransform_Ptr QTransform_new2(void** other);
 	[LinkName("QTransform_new3")]
-	public static extern QTransform_Ptr* QTransform_new3(Qt_Initialization param1);
+	public static extern QTransform_Ptr QTransform_new3(Qt_Initialization param1);
 	[LinkName("QTransform_new4")]
-	public static extern QTransform_Ptr* QTransform_new4();
+	public static extern QTransform_Ptr QTransform_new4();
 	[LinkName("QTransform_new5")]
-	public static extern QTransform_Ptr* QTransform_new5(double h11, double h12, double h13, double h21, double h22, double h23, double h31, double h32, double h33);
+	public static extern QTransform_Ptr QTransform_new5(double h11, double h12, double h13, double h21, double h22, double h23, double h31, double h32, double h33);
 	[LinkName("QTransform_new6")]
-	public static extern QTransform_Ptr* QTransform_new6(double h11, double h12, double h21, double h22, double dx, double dy);
+	public static extern QTransform_Ptr QTransform_new6(double h11, double h12, double h21, double h22, double dx, double dy);
 	[LinkName("QTransform_new7")]
-	public static extern QTransform_Ptr* QTransform_new7(QTransform_Ptr* other);
+	public static extern QTransform_Ptr QTransform_new7(void** other);
 	[LinkName("QTransform_Delete")]
-	public static extern void QTransform_Delete(QTransform_Ptr* self);
+	public static extern void QTransform_Delete(QTransform_Ptr self);
 	[LinkName("QTransform_OperatorAssign")]
-	public static extern void QTransform_OperatorAssign(QTransform_Ptr* self, QTransform_Ptr* param1);
+	public static extern void QTransform_OperatorAssign(void* self, void** param1);
 	[LinkName("QTransform_IsAffine")]
-	public static extern bool QTransform_IsAffine(QTransform_Ptr* self);
+	public static extern bool QTransform_IsAffine(void* self);
 	[LinkName("QTransform_IsIdentity")]
-	public static extern bool QTransform_IsIdentity(QTransform_Ptr* self);
+	public static extern bool QTransform_IsIdentity(void* self);
 	[LinkName("QTransform_IsInvertible")]
-	public static extern bool QTransform_IsInvertible(QTransform_Ptr* self);
+	public static extern bool QTransform_IsInvertible(void* self);
 	[LinkName("QTransform_IsScaling")]
-	public static extern bool QTransform_IsScaling(QTransform_Ptr* self);
+	public static extern bool QTransform_IsScaling(void* self);
 	[LinkName("QTransform_IsRotating")]
-	public static extern bool QTransform_IsRotating(QTransform_Ptr* self);
+	public static extern bool QTransform_IsRotating(void* self);
 	[LinkName("QTransform_IsTranslating")]
-	public static extern bool QTransform_IsTranslating(QTransform_Ptr* self);
+	public static extern bool QTransform_IsTranslating(void* self);
 	[LinkName("QTransform_Type")]
-	public static extern QTransform_TransformationType QTransform_Type(QTransform_Ptr* self);
+	public static extern QTransform_TransformationType QTransform_Type(void* self);
 	[LinkName("QTransform_Determinant")]
-	public static extern double QTransform_Determinant(QTransform_Ptr* self);
+	public static extern double QTransform_Determinant(void* self);
 	[LinkName("QTransform_M11")]
-	public static extern double QTransform_M11(QTransform_Ptr* self);
+	public static extern double QTransform_M11(void* self);
 	[LinkName("QTransform_M12")]
-	public static extern double QTransform_M12(QTransform_Ptr* self);
+	public static extern double QTransform_M12(void* self);
 	[LinkName("QTransform_M13")]
-	public static extern double QTransform_M13(QTransform_Ptr* self);
+	public static extern double QTransform_M13(void* self);
 	[LinkName("QTransform_M21")]
-	public static extern double QTransform_M21(QTransform_Ptr* self);
+	public static extern double QTransform_M21(void* self);
 	[LinkName("QTransform_M22")]
-	public static extern double QTransform_M22(QTransform_Ptr* self);
+	public static extern double QTransform_M22(void* self);
 	[LinkName("QTransform_M23")]
-	public static extern double QTransform_M23(QTransform_Ptr* self);
+	public static extern double QTransform_M23(void* self);
 	[LinkName("QTransform_M31")]
-	public static extern double QTransform_M31(QTransform_Ptr* self);
+	public static extern double QTransform_M31(void* self);
 	[LinkName("QTransform_M32")]
-	public static extern double QTransform_M32(QTransform_Ptr* self);
+	public static extern double QTransform_M32(void* self);
 	[LinkName("QTransform_M33")]
-	public static extern double QTransform_M33(QTransform_Ptr* self);
+	public static extern double QTransform_M33(void* self);
 	[LinkName("QTransform_Dx")]
-	public static extern double QTransform_Dx(QTransform_Ptr* self);
+	public static extern double QTransform_Dx(void* self);
 	[LinkName("QTransform_Dy")]
-	public static extern double QTransform_Dy(QTransform_Ptr* self);
+	public static extern double QTransform_Dy(void* self);
 	[LinkName("QTransform_SetMatrix")]
-	public static extern void QTransform_SetMatrix(QTransform_Ptr* self, double m11, double m12, double m13, double m21, double m22, double m23, double m31, double m32, double m33);
+	public static extern void QTransform_SetMatrix(void* self, double m11, double m12, double m13, double m21, double m22, double m23, double m31, double m32, double m33);
 	[LinkName("QTransform_Inverted")]
-	public static extern QTransform_Ptr* QTransform_Inverted(QTransform_Ptr* self);
+	public static extern void* QTransform_Inverted(void* self);
 	[LinkName("QTransform_Adjoint")]
-	public static extern QTransform_Ptr* QTransform_Adjoint(QTransform_Ptr* self);
+	public static extern void* QTransform_Adjoint(void* self);
 	[LinkName("QTransform_Transposed")]
-	public static extern QTransform_Ptr* QTransform_Transposed(QTransform_Ptr* self);
+	public static extern void* QTransform_Transposed(void* self);
 	[LinkName("QTransform_Translate")]
-	public static extern QTransform_Ptr* QTransform_Translate(QTransform_Ptr* self, double dx, double dy);
+	public static extern void** QTransform_Translate(void* self, double dx, double dy);
 	[LinkName("QTransform_Scale")]
-	public static extern QTransform_Ptr* QTransform_Scale(QTransform_Ptr* self, double sx, double sy);
+	public static extern void** QTransform_Scale(void* self, double sx, double sy);
 	[LinkName("QTransform_Shear")]
-	public static extern QTransform_Ptr* QTransform_Shear(QTransform_Ptr* self, double sh, double sv);
+	public static extern void** QTransform_Shear(void* self, double sh, double sv);
 	[LinkName("QTransform_Rotate")]
-	public static extern QTransform_Ptr* QTransform_Rotate(QTransform_Ptr* self, double a);
+	public static extern void** QTransform_Rotate(void* self, double a);
 	[LinkName("QTransform_RotateRadians")]
-	public static extern QTransform_Ptr* QTransform_RotateRadians(QTransform_Ptr* self, double a);
+	public static extern void** QTransform_RotateRadians(void* self, double a);
 	[LinkName("QTransform_OperatorEqual")]
-	public static extern bool QTransform_OperatorEqual(QTransform_Ptr* self, QTransform_Ptr* param1);
+	public static extern bool QTransform_OperatorEqual(void* self, void** param1);
 	[LinkName("QTransform_OperatorNotEqual")]
-	public static extern bool QTransform_OperatorNotEqual(QTransform_Ptr* self, QTransform_Ptr* param1);
+	public static extern bool QTransform_OperatorNotEqual(void* self, void** param1);
 	[LinkName("QTransform_OperatorMultiplyAssign")]
-	public static extern QTransform_Ptr* QTransform_OperatorMultiplyAssign(QTransform_Ptr* self, QTransform_Ptr* param1);
+	public static extern void** QTransform_OperatorMultiplyAssign(void* self, void** param1);
 	[LinkName("QTransform_OperatorMultiply")]
-	public static extern QTransform_Ptr* QTransform_OperatorMultiply(QTransform_Ptr* self, QTransform_Ptr* o);
+	public static extern void* QTransform_OperatorMultiply(void* self, void** o);
 	[LinkName("QTransform_ToQvariant")]
-	public static extern QVariant_Ptr* QTransform_ToQvariant(QTransform_Ptr* self);
+	public static extern void* QTransform_ToQvariant(void* self);
 	[LinkName("QTransform_Reset")]
-	public static extern void QTransform_Reset(QTransform_Ptr* self);
+	public static extern void QTransform_Reset(void* self);
 	[LinkName("QTransform_Map")]
-	public static extern QPoint_Ptr* QTransform_Map(QTransform_Ptr* self, QPoint_Ptr* p);
+	public static extern void* QTransform_Map(void* self, void** p);
 	[LinkName("QTransform_Map2")]
-	public static extern QPointF_Ptr* QTransform_Map2(QTransform_Ptr* self, QPointF_Ptr* p);
+	public static extern void* QTransform_Map2(void* self, void** p);
 	[LinkName("QTransform_Map3")]
-	public static extern QLine_Ptr* QTransform_Map3(QTransform_Ptr* self, QLine_Ptr* l);
+	public static extern void* QTransform_Map3(void* self, void** l);
 	[LinkName("QTransform_Map4")]
-	public static extern QLineF_Ptr* QTransform_Map4(QTransform_Ptr* self, QLineF_Ptr* l);
+	public static extern void* QTransform_Map4(void* self, void** l);
 	[LinkName("QTransform_Map7")]
-	public static extern QRegion_Ptr* QTransform_Map7(QTransform_Ptr* self, QRegion_Ptr* r);
+	public static extern void* QTransform_Map7(void* self, void** r);
 	[LinkName("QTransform_Map8")]
-	public static extern QPainterPath_Ptr* QTransform_Map8(QTransform_Ptr* self, QPainterPath_Ptr* p);
+	public static extern void* QTransform_Map8(void* self, void** p);
 	[LinkName("QTransform_MapRect")]
-	public static extern QRect_Ptr* QTransform_MapRect(QTransform_Ptr* self, QRect_Ptr* param1);
+	public static extern void* QTransform_MapRect(void* self, void** param1);
 	[LinkName("QTransform_MapRect2")]
-	public static extern QRectF_Ptr* QTransform_MapRect2(QTransform_Ptr* self, QRectF_Ptr* param1);
+	public static extern void* QTransform_MapRect2(void* self, void** param1);
 	[LinkName("QTransform_Map9")]
-	public static extern void QTransform_Map9(QTransform_Ptr* self, c_int x, c_int y, c_int* tx, c_int* ty);
+	public static extern void QTransform_Map9(void* self, c_int x, c_int y, c_int* tx, c_int* ty);
 	[LinkName("QTransform_Map10")]
-	public static extern void QTransform_Map10(QTransform_Ptr* self, double x, double y, double* tx, double* ty);
+	public static extern void QTransform_Map10(void* self, double x, double y, double* tx, double* ty);
 	[LinkName("QTransform_OperatorMultiplyAssign2")]
-	public static extern QTransform_Ptr* QTransform_OperatorMultiplyAssign2(QTransform_Ptr* self, double div);
+	public static extern void** QTransform_OperatorMultiplyAssign2(void* self, double div);
 	[LinkName("QTransform_OperatorDivideAssign")]
-	public static extern QTransform_Ptr* QTransform_OperatorDivideAssign(QTransform_Ptr* self, double div);
+	public static extern void** QTransform_OperatorDivideAssign(void* self, double div);
 	[LinkName("QTransform_OperatorPlusAssign")]
-	public static extern QTransform_Ptr* QTransform_OperatorPlusAssign(QTransform_Ptr* self, double div);
+	public static extern void** QTransform_OperatorPlusAssign(void* self, double div);
 	[LinkName("QTransform_OperatorMinusAssign")]
-	public static extern QTransform_Ptr* QTransform_OperatorMinusAssign(QTransform_Ptr* self, double div);
+	public static extern void** QTransform_OperatorMinusAssign(void* self, double div);
 	[LinkName("QTransform_FromTranslate")]
-	public static extern QTransform_Ptr* QTransform_FromTranslate(double dx, double dy);
+	public static extern void* QTransform_FromTranslate(double dx, double dy);
 	[LinkName("QTransform_FromScale")]
-	public static extern QTransform_Ptr* QTransform_FromScale(double dx, double dy);
+	public static extern void* QTransform_FromScale(double dx, double dy);
 	[LinkName("QTransform_Inverted1")]
-	public static extern QTransform_Ptr* QTransform_Inverted1(QTransform_Ptr* self, bool* invertible);
+	public static extern void* QTransform_Inverted1(void* self, bool* invertible);
 	[LinkName("QTransform_Rotate2")]
-	public static extern QTransform_Ptr* QTransform_Rotate2(QTransform_Ptr* self, double a, Qt_Axis axis);
+	public static extern void** QTransform_Rotate2(void* self, double a, Qt_Axis axis);
 	[LinkName("QTransform_RotateRadians2")]
-	public static extern QTransform_Ptr* QTransform_RotateRadians2(QTransform_Ptr* self, double a, Qt_Axis axis);
+	public static extern void** QTransform_RotateRadians2(void* self, double a, Qt_Axis axis);
 }
 class QTransform : IQTransform
 {
-	private QTransform_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QTransform_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTransform_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQTransform other)
 	{
 		this.ptr = CQt.QTransform_new((.)other?.ObjectPtr);
@@ -167,183 +176,183 @@ class QTransform : IQTransform
 	}
 	public bool IsAffine()
 	{
-		return CQt.QTransform_IsAffine((.)this.ptr);
+		return CQt.QTransform_IsAffine((.)this.ptr.Ptr);
 	}
 	public bool IsIdentity()
 	{
-		return CQt.QTransform_IsIdentity((.)this.ptr);
+		return CQt.QTransform_IsIdentity((.)this.ptr.Ptr);
 	}
 	public bool IsInvertible()
 	{
-		return CQt.QTransform_IsInvertible((.)this.ptr);
+		return CQt.QTransform_IsInvertible((.)this.ptr.Ptr);
 	}
 	public bool IsScaling()
 	{
-		return CQt.QTransform_IsScaling((.)this.ptr);
+		return CQt.QTransform_IsScaling((.)this.ptr.Ptr);
 	}
 	public bool IsRotating()
 	{
-		return CQt.QTransform_IsRotating((.)this.ptr);
+		return CQt.QTransform_IsRotating((.)this.ptr.Ptr);
 	}
 	public bool IsTranslating()
 	{
-		return CQt.QTransform_IsTranslating((.)this.ptr);
+		return CQt.QTransform_IsTranslating((.)this.ptr.Ptr);
 	}
 	public QTransform_TransformationType Type()
 	{
-		return CQt.QTransform_Type((.)this.ptr);
+		return CQt.QTransform_Type((.)this.ptr.Ptr);
 	}
 	public double Determinant()
 	{
-		return CQt.QTransform_Determinant((.)this.ptr);
+		return CQt.QTransform_Determinant((.)this.ptr.Ptr);
 	}
 	public double M11()
 	{
-		return CQt.QTransform_M11((.)this.ptr);
+		return CQt.QTransform_M11((.)this.ptr.Ptr);
 	}
 	public double M12()
 	{
-		return CQt.QTransform_M12((.)this.ptr);
+		return CQt.QTransform_M12((.)this.ptr.Ptr);
 	}
 	public double M13()
 	{
-		return CQt.QTransform_M13((.)this.ptr);
+		return CQt.QTransform_M13((.)this.ptr.Ptr);
 	}
 	public double M21()
 	{
-		return CQt.QTransform_M21((.)this.ptr);
+		return CQt.QTransform_M21((.)this.ptr.Ptr);
 	}
 	public double M22()
 	{
-		return CQt.QTransform_M22((.)this.ptr);
+		return CQt.QTransform_M22((.)this.ptr.Ptr);
 	}
 	public double M23()
 	{
-		return CQt.QTransform_M23((.)this.ptr);
+		return CQt.QTransform_M23((.)this.ptr.Ptr);
 	}
 	public double M31()
 	{
-		return CQt.QTransform_M31((.)this.ptr);
+		return CQt.QTransform_M31((.)this.ptr.Ptr);
 	}
 	public double M32()
 	{
-		return CQt.QTransform_M32((.)this.ptr);
+		return CQt.QTransform_M32((.)this.ptr.Ptr);
 	}
 	public double M33()
 	{
-		return CQt.QTransform_M33((.)this.ptr);
+		return CQt.QTransform_M33((.)this.ptr.Ptr);
 	}
 	public double Dx()
 	{
-		return CQt.QTransform_Dx((.)this.ptr);
+		return CQt.QTransform_Dx((.)this.ptr.Ptr);
 	}
 	public double Dy()
 	{
-		return CQt.QTransform_Dy((.)this.ptr);
+		return CQt.QTransform_Dy((.)this.ptr.Ptr);
 	}
 	public void SetMatrix(double m11, double m12, double m13, double m21, double m22, double m23, double m31, double m32, double m33)
 	{
-		CQt.QTransform_SetMatrix((.)this.ptr, m11, m12, m13, m21, m22, m23, m31, m32, m33);
+		CQt.QTransform_SetMatrix((.)this.ptr.Ptr, m11, m12, m13, m21, m22, m23, m31, m32, m33);
 	}
-	public QTransform_Ptr* Inverted()
+	public QTransform_Ptr Inverted()
 	{
-		return CQt.QTransform_Inverted((.)this.ptr);
+		return QTransform_Ptr(CQt.QTransform_Inverted((.)this.ptr.Ptr));
 	}
-	public QTransform_Ptr* Adjoint()
+	public QTransform_Ptr Adjoint()
 	{
-		return CQt.QTransform_Adjoint((.)this.ptr);
+		return QTransform_Ptr(CQt.QTransform_Adjoint((.)this.ptr.Ptr));
 	}
-	public QTransform_Ptr* Transposed()
+	public QTransform_Ptr Transposed()
 	{
-		return CQt.QTransform_Transposed((.)this.ptr);
+		return QTransform_Ptr(CQt.QTransform_Transposed((.)this.ptr.Ptr));
 	}
-	public QTransform_Ptr* Translate(double dx, double dy)
+	public QTransform_Ptr Translate(double dx, double dy)
 	{
-		return CQt.QTransform_Translate((.)this.ptr, dx, dy);
+		return QTransform_Ptr(CQt.QTransform_Translate((.)this.ptr.Ptr, dx, dy));
 	}
-	public QTransform_Ptr* Scale(double sx, double sy)
+	public QTransform_Ptr Scale(double sx, double sy)
 	{
-		return CQt.QTransform_Scale((.)this.ptr, sx, sy);
+		return QTransform_Ptr(CQt.QTransform_Scale((.)this.ptr.Ptr, sx, sy));
 	}
-	public QTransform_Ptr* Shear(double sh, double sv)
+	public QTransform_Ptr Shear(double sh, double sv)
 	{
-		return CQt.QTransform_Shear((.)this.ptr, sh, sv);
+		return QTransform_Ptr(CQt.QTransform_Shear((.)this.ptr.Ptr, sh, sv));
 	}
-	public QTransform_Ptr* Rotate(double a)
+	public QTransform_Ptr Rotate(double a)
 	{
-		return CQt.QTransform_Rotate((.)this.ptr, a);
+		return QTransform_Ptr(CQt.QTransform_Rotate((.)this.ptr.Ptr, a));
 	}
-	public QTransform_Ptr* RotateRadians(double a)
+	public QTransform_Ptr RotateRadians(double a)
 	{
-		return CQt.QTransform_RotateRadians((.)this.ptr, a);
+		return QTransform_Ptr(CQt.QTransform_RotateRadians((.)this.ptr.Ptr, a));
 	}
 	public void Reset()
 	{
-		CQt.QTransform_Reset((.)this.ptr);
+		CQt.QTransform_Reset((.)this.ptr.Ptr);
 	}
-	public QPoint_Ptr* Map(IQPoint p)
+	public QPoint_Ptr Map(IQPoint p)
 	{
-		return CQt.QTransform_Map((.)this.ptr, (.)p?.ObjectPtr);
+		return QPoint_Ptr(CQt.QTransform_Map((.)this.ptr.Ptr, (.)p?.ObjectPtr));
 	}
-	public QPointF_Ptr* Map2(IQPointF p)
+	public QPointF_Ptr Map2(IQPointF p)
 	{
-		return CQt.QTransform_Map2((.)this.ptr, (.)p?.ObjectPtr);
+		return QPointF_Ptr(CQt.QTransform_Map2((.)this.ptr.Ptr, (.)p?.ObjectPtr));
 	}
-	public QLine_Ptr* Map3(IQLine l)
+	public QLine_Ptr Map3(IQLine l)
 	{
-		return CQt.QTransform_Map3((.)this.ptr, (.)l?.ObjectPtr);
+		return QLine_Ptr(CQt.QTransform_Map3((.)this.ptr.Ptr, (.)l?.ObjectPtr));
 	}
-	public QLineF_Ptr* Map4(IQLineF l)
+	public QLineF_Ptr Map4(IQLineF l)
 	{
-		return CQt.QTransform_Map4((.)this.ptr, (.)l?.ObjectPtr);
+		return QLineF_Ptr(CQt.QTransform_Map4((.)this.ptr.Ptr, (.)l?.ObjectPtr));
 	}
-	public QRegion_Ptr* Map7(IQRegion r)
+	public QRegion_Ptr Map7(IQRegion r)
 	{
-		return CQt.QTransform_Map7((.)this.ptr, (.)r?.ObjectPtr);
+		return QRegion_Ptr(CQt.QTransform_Map7((.)this.ptr.Ptr, (.)r?.ObjectPtr));
 	}
-	public QPainterPath_Ptr* Map8(IQPainterPath p)
+	public QPainterPath_Ptr Map8(IQPainterPath p)
 	{
-		return CQt.QTransform_Map8((.)this.ptr, (.)p?.ObjectPtr);
+		return QPainterPath_Ptr(CQt.QTransform_Map8((.)this.ptr.Ptr, (.)p?.ObjectPtr));
 	}
-	public QRect_Ptr* MapRect(IQRect param1)
+	public QRect_Ptr MapRect(IQRect param1)
 	{
-		return CQt.QTransform_MapRect((.)this.ptr, (.)param1?.ObjectPtr);
+		return QRect_Ptr(CQt.QTransform_MapRect((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QRectF_Ptr* MapRect2(IQRectF param1)
+	public QRectF_Ptr MapRect2(IQRectF param1)
 	{
-		return CQt.QTransform_MapRect2((.)this.ptr, (.)param1?.ObjectPtr);
+		return QRectF_Ptr(CQt.QTransform_MapRect2((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
 	public void Map9(c_int x, c_int y, c_int* tx, c_int* ty)
 	{
-		CQt.QTransform_Map9((.)this.ptr, x, y, tx, ty);
+		CQt.QTransform_Map9((.)this.ptr.Ptr, x, y, tx, ty);
 	}
 	public void Map10(double x, double y, double* tx, double* ty)
 	{
-		CQt.QTransform_Map10((.)this.ptr, x, y, tx, ty);
+		CQt.QTransform_Map10((.)this.ptr.Ptr, x, y, tx, ty);
 	}
-	public QTransform_Ptr* OperatorMultiplyAssign2(double div)
+	public QTransform_Ptr OperatorMultiplyAssign2(double div)
 	{
-		return CQt.QTransform_OperatorMultiplyAssign2((.)this.ptr, div);
+		return QTransform_Ptr(CQt.QTransform_OperatorMultiplyAssign2((.)this.ptr.Ptr, div));
 	}
-	public QTransform_Ptr* FromTranslate(double dx, double dy)
+	public QTransform_Ptr FromTranslate(double dx, double dy)
 	{
-		return CQt.QTransform_FromTranslate(dx, dy);
+		return QTransform_Ptr(CQt.QTransform_FromTranslate(dx, dy));
 	}
-	public QTransform_Ptr* FromScale(double dx, double dy)
+	public QTransform_Ptr FromScale(double dx, double dy)
 	{
-		return CQt.QTransform_FromScale(dx, dy);
+		return QTransform_Ptr(CQt.QTransform_FromScale(dx, dy));
 	}
-	public QTransform_Ptr* Inverted1(bool* invertible)
+	public QTransform_Ptr Inverted1(bool* invertible)
 	{
-		return CQt.QTransform_Inverted1((.)this.ptr, invertible);
+		return QTransform_Ptr(CQt.QTransform_Inverted1((.)this.ptr.Ptr, invertible));
 	}
-	public QTransform_Ptr* Rotate2(double a, Qt_Axis axis)
+	public QTransform_Ptr Rotate2(double a, Qt_Axis axis)
 	{
-		return CQt.QTransform_Rotate2((.)this.ptr, a, axis);
+		return QTransform_Ptr(CQt.QTransform_Rotate2((.)this.ptr.Ptr, a, axis));
 	}
-	public QTransform_Ptr* RotateRadians2(double a, Qt_Axis axis)
+	public QTransform_Ptr RotateRadians2(double a, Qt_Axis axis)
 	{
-		return CQt.QTransform_RotateRadians2((.)this.ptr, a, axis);
+		return QTransform_Ptr(CQt.QTransform_RotateRadians2((.)this.ptr.Ptr, a, axis));
 	}
 }
 interface IQTransform : IQtObjectInterface

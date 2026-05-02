@@ -7,19 +7,24 @@ namespace Qt6;
 // QStringConverter
 // --------------------------------------------------------------
 [CRepr]
-struct QStringConverter_Ptr: void
+struct QStringConverter_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QStringConverter_IsValid")]
-	public static extern bool QStringConverter_IsValid(QStringConverter_Ptr* self);
+	public static extern bool QStringConverter_IsValid(void* self);
 	[LinkName("QStringConverter_ResetState")]
-	public static extern void QStringConverter_ResetState(QStringConverter_Ptr* self);
+	public static extern void QStringConverter_ResetState(void* self);
 	[LinkName("QStringConverter_HasError")]
-	public static extern bool QStringConverter_HasError(QStringConverter_Ptr* self);
+	public static extern bool QStringConverter_HasError(void* self);
 	[LinkName("QStringConverter_Name")]
-	public static extern c_char* QStringConverter_Name(QStringConverter_Ptr* self);
+	public static extern c_char* QStringConverter_Name(void* self);
 	[LinkName("QStringConverter_EncodingForName")]
 	public static extern QStringConverter_Encoding QStringConverter_EncodingForName(c_char* name);
 	[LinkName("QStringConverter_NameForEncoding")]
@@ -31,23 +36,27 @@ extension CQt
 }
 class QStringConverter : IQStringConverter
 {
-	private QStringConverter_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QStringConverter_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStringConverter_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public bool IsValid()
 	{
-		return CQt.QStringConverter_IsValid((.)this.ptr);
+		return CQt.QStringConverter_IsValid((.)this.ptr.Ptr);
 	}
 	public void ResetState()
 	{
-		CQt.QStringConverter_ResetState((.)this.ptr);
+		CQt.QStringConverter_ResetState((.)this.ptr.Ptr);
 	}
 	public bool HasError()
 	{
-		return CQt.QStringConverter_HasError((.)this.ptr);
+		return CQt.QStringConverter_HasError((.)this.ptr.Ptr);
 	}
 	public c_char* Name()
 	{
-		return CQt.QStringConverter_Name((.)this.ptr);
+		return CQt.QStringConverter_Name((.)this.ptr.Ptr);
 	}
 	public QStringConverter_Encoding EncodingForName(c_char* name)
 	{

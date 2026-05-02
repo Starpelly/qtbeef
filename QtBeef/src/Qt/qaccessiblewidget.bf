@@ -7,64 +7,73 @@ namespace Qt6;
 // QAccessibleWidget
 // --------------------------------------------------------------
 [CRepr]
-struct QAccessibleWidget_Ptr: void
+struct QAccessibleWidget_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QAccessibleWidget_new")]
-	public static extern QAccessibleWidget_Ptr* QAccessibleWidget_new(QWidget_Ptr** o);
+	public static extern QAccessibleWidget_Ptr QAccessibleWidget_new(void** o);
 	[LinkName("QAccessibleWidget_new2")]
-	public static extern QAccessibleWidget_Ptr* QAccessibleWidget_new2(QWidget_Ptr** o, QAccessible_Role r);
+	public static extern QAccessibleWidget_Ptr QAccessibleWidget_new2(void** o, QAccessible_Role r);
 	[LinkName("QAccessibleWidget_new3")]
-	public static extern QAccessibleWidget_Ptr* QAccessibleWidget_new3(QWidget_Ptr** o, QAccessible_Role r, libqt_string name);
+	public static extern QAccessibleWidget_Ptr QAccessibleWidget_new3(void** o, QAccessible_Role r, libqt_string name);
 	[LinkName("QAccessibleWidget_IsValid")]
-	public static extern bool QAccessibleWidget_IsValid(QAccessibleWidget_Ptr* self);
+	public static extern bool QAccessibleWidget_IsValid(void* self);
 	[LinkName("QAccessibleWidget_Window")]
-	public static extern QWindow_Ptr** QAccessibleWidget_Window(QAccessibleWidget_Ptr* self);
+	public static extern void** QAccessibleWidget_Window(void* self);
 	[LinkName("QAccessibleWidget_ChildCount")]
-	public static extern c_int QAccessibleWidget_ChildCount(QAccessibleWidget_Ptr* self);
+	public static extern c_int QAccessibleWidget_ChildCount(void* self);
 	[LinkName("QAccessibleWidget_IndexOfChild")]
-	public static extern c_int QAccessibleWidget_IndexOfChild(QAccessibleWidget_Ptr* self, QAccessibleInterface_Ptr** child);
+	public static extern c_int QAccessibleWidget_IndexOfChild(void* self, void** child);
 	[LinkName("QAccessibleWidget_Relations")]
-	public static extern void* QAccessibleWidget_Relations(QAccessibleWidget_Ptr* self, void* match);
+	public static extern void* QAccessibleWidget_Relations(void* self, void* match);
 	[LinkName("QAccessibleWidget_FocusChild")]
-	public static extern QAccessibleInterface_Ptr** QAccessibleWidget_FocusChild(QAccessibleWidget_Ptr* self);
+	public static extern void** QAccessibleWidget_FocusChild(void* self);
 	[LinkName("QAccessibleWidget_Rect")]
-	public static extern QRect_Ptr* QAccessibleWidget_Rect(QAccessibleWidget_Ptr* self);
+	public static extern void* QAccessibleWidget_Rect(void* self);
 	[LinkName("QAccessibleWidget_Parent")]
-	public static extern QAccessibleInterface_Ptr** QAccessibleWidget_Parent(QAccessibleWidget_Ptr* self);
+	public static extern void** QAccessibleWidget_Parent(void* self);
 	[LinkName("QAccessibleWidget_Child")]
-	public static extern QAccessibleInterface_Ptr** QAccessibleWidget_Child(QAccessibleWidget_Ptr* self, c_int index);
+	public static extern void** QAccessibleWidget_Child(void* self, c_int index);
 	[LinkName("QAccessibleWidget_Text")]
-	public static extern libqt_string QAccessibleWidget_Text(QAccessibleWidget_Ptr* self, QAccessible_Text t);
+	public static extern libqt_string QAccessibleWidget_Text(void* self, QAccessible_Text t);
 	[LinkName("QAccessibleWidget_Role")]
-	public static extern QAccessible_Role QAccessibleWidget_Role(QAccessibleWidget_Ptr* self);
+	public static extern QAccessible_Role QAccessibleWidget_Role(void* self);
 	[LinkName("QAccessibleWidget_State")]
-	public static extern QAccessible_State_Ptr* QAccessibleWidget_State(QAccessibleWidget_Ptr* self);
+	public static extern void* QAccessibleWidget_State(void* self);
 	[LinkName("QAccessibleWidget_ForegroundColor")]
-	public static extern QColor_Ptr* QAccessibleWidget_ForegroundColor(QAccessibleWidget_Ptr* self);
+	public static extern void* QAccessibleWidget_ForegroundColor(void* self);
 	[LinkName("QAccessibleWidget_BackgroundColor")]
-	public static extern QColor_Ptr* QAccessibleWidget_BackgroundColor(QAccessibleWidget_Ptr* self);
+	public static extern void* QAccessibleWidget_BackgroundColor(void* self);
 	[LinkName("QAccessibleWidget_Interface_Cast")]
-	public static extern void* QAccessibleWidget_Interface_Cast(QAccessibleWidget_Ptr* self, QAccessible_InterfaceType t);
+	public static extern void* QAccessibleWidget_Interface_Cast(void* self, QAccessible_InterfaceType t);
 	[LinkName("QAccessibleWidget_ActionNames")]
-	public static extern void* QAccessibleWidget_ActionNames(QAccessibleWidget_Ptr* self);
+	public static extern void* QAccessibleWidget_ActionNames(void* self);
 	[LinkName("QAccessibleWidget_DoAction")]
-	public static extern void QAccessibleWidget_DoAction(QAccessibleWidget_Ptr* self, libqt_string actionName);
+	public static extern void QAccessibleWidget_DoAction(void* self, libqt_string actionName);
 	[LinkName("QAccessibleWidget_KeyBindingsForAction")]
-	public static extern void* QAccessibleWidget_KeyBindingsForAction(QAccessibleWidget_Ptr* self, libqt_string actionName);
+	public static extern void* QAccessibleWidget_KeyBindingsForAction(void* self, libqt_string actionName);
 	[LinkName("QAccessibleWidget_Widget")]
-	public static extern QWidget_Ptr** QAccessibleWidget_Widget(QAccessibleWidget_Ptr* self);
+	public static extern void** QAccessibleWidget_Widget(void* self);
 	[LinkName("QAccessibleWidget_ParentObject")]
-	public static extern QObject_Ptr** QAccessibleWidget_ParentObject(QAccessibleWidget_Ptr* self);
+	public static extern void** QAccessibleWidget_ParentObject(void* self);
 	[LinkName("QAccessibleWidget_AddControllingSignal")]
-	public static extern void QAccessibleWidget_AddControllingSignal(QAccessibleWidget_Ptr* self, libqt_string signal);
+	public static extern void QAccessibleWidget_AddControllingSignal(void* self, libqt_string signal);
 }
 class QAccessibleWidget : IQAccessibleWidget, IQAccessibleObject, IQAccessibleInterface, IQAccessibleActionInterface
 {
-	private QAccessibleWidget_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QAccessibleWidget_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAccessibleWidget_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQWidget o)
 	{
 		this.ptr = CQt.QAccessibleWidget_new((.)o?.ObjectPtr);
@@ -79,203 +88,203 @@ class QAccessibleWidget : IQAccessibleWidget, IQAccessibleObject, IQAccessibleIn
 	}
 	public bool IsValid()
 	{
-		return CQt.QAccessibleWidget_IsValid((.)this.ptr);
+		return CQt.QAccessibleWidget_IsValid((.)this.ptr.Ptr);
 	}
-	public QWindow_Ptr** Window()
+	public QWindow_Ptr Window()
 	{
-		return CQt.QAccessibleWidget_Window((.)this.ptr);
+		return QWindow_Ptr(CQt.QAccessibleWidget_Window((.)this.ptr.Ptr));
 	}
 	public c_int ChildCount()
 	{
-		return CQt.QAccessibleWidget_ChildCount((.)this.ptr);
+		return CQt.QAccessibleWidget_ChildCount((.)this.ptr.Ptr);
 	}
 	public c_int IndexOfChild(IQAccessibleInterface child)
 	{
-		return CQt.QAccessibleWidget_IndexOfChild((.)this.ptr, (.)child?.ObjectPtr);
+		return CQt.QAccessibleWidget_IndexOfChild((.)this.ptr.Ptr, (.)child?.ObjectPtr);
 	}
 	public void* Relations(void* match)
 	{
-		return CQt.QAccessibleWidget_Relations((.)this.ptr, match);
+		return CQt.QAccessibleWidget_Relations((.)this.ptr.Ptr, match);
 	}
-	public QAccessibleInterface_Ptr** FocusChild()
+	public QAccessibleInterface_Ptr FocusChild()
 	{
-		return CQt.QAccessibleWidget_FocusChild((.)this.ptr);
+		return QAccessibleInterface_Ptr(CQt.QAccessibleWidget_FocusChild((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* Rect()
+	public QRect_Ptr Rect()
 	{
-		return CQt.QAccessibleWidget_Rect((.)this.ptr);
+		return QRect_Ptr(CQt.QAccessibleWidget_Rect((.)this.ptr.Ptr));
 	}
-	public QAccessibleInterface_Ptr** Parent()
+	public QAccessibleInterface_Ptr Parent()
 	{
-		return CQt.QAccessibleWidget_Parent((.)this.ptr);
+		return QAccessibleInterface_Ptr(CQt.QAccessibleWidget_Parent((.)this.ptr.Ptr));
 	}
-	public QAccessibleInterface_Ptr** Child(c_int index)
+	public QAccessibleInterface_Ptr Child(c_int index)
 	{
-		return CQt.QAccessibleWidget_Child((.)this.ptr, index);
+		return QAccessibleInterface_Ptr(CQt.QAccessibleWidget_Child((.)this.ptr.Ptr, index));
 	}
-	public libqt_string Text(QAccessible_Text t)
+	public void Text(String outStr, QAccessible_Text t)
 	{
-		return CQt.QAccessibleWidget_Text((.)this.ptr, t);
+		CQt.QAccessibleWidget_Text((.)this.ptr.Ptr, t);
 	}
 	public QAccessible_Role Role()
 	{
-		return CQt.QAccessibleWidget_Role((.)this.ptr);
+		return CQt.QAccessibleWidget_Role((.)this.ptr.Ptr);
 	}
-	public QAccessible_State_Ptr* State()
+	public QAccessible_State_Ptr State()
 	{
-		return CQt.QAccessibleWidget_State((.)this.ptr);
+		return QAccessible_State_Ptr(CQt.QAccessibleWidget_State((.)this.ptr.Ptr));
 	}
-	public QColor_Ptr* ForegroundColor()
+	public QColor_Ptr ForegroundColor()
 	{
-		return CQt.QAccessibleWidget_ForegroundColor((.)this.ptr);
+		return QColor_Ptr(CQt.QAccessibleWidget_ForegroundColor((.)this.ptr.Ptr));
 	}
-	public QColor_Ptr* BackgroundColor()
+	public QColor_Ptr BackgroundColor()
 	{
-		return CQt.QAccessibleWidget_BackgroundColor((.)this.ptr);
+		return QColor_Ptr(CQt.QAccessibleWidget_BackgroundColor((.)this.ptr.Ptr));
 	}
 	public void* Interface_cast(QAccessible_InterfaceType t)
 	{
-		return CQt.QAccessibleWidget_Interface_Cast((.)this.ptr, t);
+		return CQt.QAccessibleWidget_Interface_Cast((.)this.ptr.Ptr, t);
 	}
 	public void* ActionNames()
 	{
-		return CQt.QAccessibleWidget_ActionNames((.)this.ptr);
+		return CQt.QAccessibleWidget_ActionNames((.)this.ptr.Ptr);
 	}
 	public void DoAction(String actionName)
 	{
-		CQt.QAccessibleWidget_DoAction((.)this.ptr, libqt_string(actionName));
+		CQt.QAccessibleWidget_DoAction((.)this.ptr.Ptr, libqt_string(actionName));
 	}
 	public void* KeyBindingsForAction(String actionName)
 	{
-		return CQt.QAccessibleWidget_KeyBindingsForAction((.)this.ptr, libqt_string(actionName));
+		return CQt.QAccessibleWidget_KeyBindingsForAction((.)this.ptr.Ptr, libqt_string(actionName));
 	}
-	public QWidget_Ptr** Widget()
+	public QWidget_Ptr Widget()
 	{
-		return CQt.QAccessibleWidget_Widget((.)this.ptr);
+		return QWidget_Ptr(CQt.QAccessibleWidget_Widget((.)this.ptr.Ptr));
 	}
-	public QObject_Ptr** ParentObject()
+	public QObject_Ptr ParentObject()
 	{
-		return CQt.QAccessibleWidget_ParentObject((.)this.ptr);
+		return QObject_Ptr(CQt.QAccessibleWidget_ParentObject((.)this.ptr.Ptr));
 	}
 	public void AddControllingSignal(String signal)
 	{
-		CQt.QAccessibleWidget_AddControllingSignal((.)this.ptr, libqt_string(signal));
+		CQt.QAccessibleWidget_AddControllingSignal((.)this.ptr.Ptr, libqt_string(signal));
 	}
-	public QObject_Ptr** Object()
+	public QObject_Ptr Object()
 	{
-		return CQt.QAccessibleObject_Object((.)this.ptr);
+		return QObject_Ptr(CQt.QAccessibleObject_Object((.)this.ptr.Ptr));
 	}
 	public void SetText(QAccessible_Text t, String text)
 	{
-		CQt.QAccessibleObject_SetText((.)this.ptr, t, libqt_string(text));
+		CQt.QAccessibleObject_SetText((.)this.ptr.Ptr, t, libqt_string(text));
 	}
-	public QAccessibleInterface_Ptr** ChildAt(c_int x, c_int y)
+	public QAccessibleInterface_Ptr ChildAt(c_int x, c_int y)
 	{
-		return CQt.QAccessibleObject_ChildAt((.)this.ptr, x, y);
+		return QAccessibleInterface_Ptr(CQt.QAccessibleObject_ChildAt((.)this.ptr.Ptr, x, y));
 	}
-	public QAccessibleTextInterface_Ptr** TextInterface()
+	public QAccessibleTextInterface_Ptr TextInterface()
 	{
-		return CQt.QAccessibleInterface_TextInterface((.)this.ptr);
+		return QAccessibleTextInterface_Ptr(CQt.QAccessibleInterface_TextInterface((.)this.ptr.Ptr));
 	}
-	public QAccessibleEditableTextInterface_Ptr** EditableTextInterface()
+	public QAccessibleEditableTextInterface_Ptr EditableTextInterface()
 	{
-		return CQt.QAccessibleInterface_EditableTextInterface((.)this.ptr);
+		return QAccessibleEditableTextInterface_Ptr(CQt.QAccessibleInterface_EditableTextInterface((.)this.ptr.Ptr));
 	}
-	public QAccessibleValueInterface_Ptr** ValueInterface()
+	public QAccessibleValueInterface_Ptr ValueInterface()
 	{
-		return CQt.QAccessibleInterface_ValueInterface((.)this.ptr);
+		return QAccessibleValueInterface_Ptr(CQt.QAccessibleInterface_ValueInterface((.)this.ptr.Ptr));
 	}
-	public QAccessibleActionInterface_Ptr** ActionInterface()
+	public QAccessibleActionInterface_Ptr ActionInterface()
 	{
-		return CQt.QAccessibleInterface_ActionInterface((.)this.ptr);
+		return QAccessibleActionInterface_Ptr(CQt.QAccessibleInterface_ActionInterface((.)this.ptr.Ptr));
 	}
-	public QAccessibleImageInterface_Ptr** ImageInterface()
+	public QAccessibleImageInterface_Ptr ImageInterface()
 	{
-		return CQt.QAccessibleInterface_ImageInterface((.)this.ptr);
+		return QAccessibleImageInterface_Ptr(CQt.QAccessibleInterface_ImageInterface((.)this.ptr.Ptr));
 	}
-	public QAccessibleTableInterface_Ptr** TableInterface()
+	public QAccessibleTableInterface_Ptr TableInterface()
 	{
-		return CQt.QAccessibleInterface_TableInterface((.)this.ptr);
+		return QAccessibleTableInterface_Ptr(CQt.QAccessibleInterface_TableInterface((.)this.ptr.Ptr));
 	}
-	public QAccessibleTableCellInterface_Ptr** TableCellInterface()
+	public QAccessibleTableCellInterface_Ptr TableCellInterface()
 	{
-		return CQt.QAccessibleInterface_TableCellInterface((.)this.ptr);
+		return QAccessibleTableCellInterface_Ptr(CQt.QAccessibleInterface_TableCellInterface((.)this.ptr.Ptr));
 	}
-	public QAccessibleHyperlinkInterface_Ptr** HyperlinkInterface()
+	public QAccessibleHyperlinkInterface_Ptr HyperlinkInterface()
 	{
-		return CQt.QAccessibleInterface_HyperlinkInterface((.)this.ptr);
+		return QAccessibleHyperlinkInterface_Ptr(CQt.QAccessibleInterface_HyperlinkInterface((.)this.ptr.Ptr));
 	}
 	public void Virtual_hook(c_int id, void* data)
 	{
-		CQt.QAccessibleInterface_Virtual_Hook((.)this.ptr, id, data);
+		CQt.QAccessibleInterface_Virtual_Hook((.)this.ptr.Ptr, id, data);
 	}
-	public libqt_string Tr(c_char* sourceText)
+	public void Tr(String outStr, c_char* sourceText)
 	{
-		return CQt.QAccessibleActionInterface_Tr(sourceText);
+		CQt.QAccessibleActionInterface_Tr(sourceText);
 	}
-	public libqt_string LocalizedActionName(String name)
+	public void LocalizedActionName(String outStr, String name)
 	{
-		return CQt.QAccessibleActionInterface_LocalizedActionName((.)this.ptr, libqt_string(name));
+		CQt.QAccessibleActionInterface_LocalizedActionName((.)this.ptr.Ptr, libqt_string(name));
 	}
-	public libqt_string LocalizedActionDescription(String name)
+	public void LocalizedActionDescription(String outStr, String name)
 	{
-		return CQt.QAccessibleActionInterface_LocalizedActionDescription((.)this.ptr, libqt_string(name));
+		CQt.QAccessibleActionInterface_LocalizedActionDescription((.)this.ptr.Ptr, libqt_string(name));
 	}
-	public libqt_string PressAction()
+	public void PressAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_PressAction();
+		CQt.QAccessibleActionInterface_PressAction();
 	}
-	public libqt_string IncreaseAction()
+	public void IncreaseAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_IncreaseAction();
+		CQt.QAccessibleActionInterface_IncreaseAction();
 	}
-	public libqt_string DecreaseAction()
+	public void DecreaseAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_DecreaseAction();
+		CQt.QAccessibleActionInterface_DecreaseAction();
 	}
-	public libqt_string ShowMenuAction()
+	public void ShowMenuAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_ShowMenuAction();
+		CQt.QAccessibleActionInterface_ShowMenuAction();
 	}
-	public libqt_string SetFocusAction()
+	public void SetFocusAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_SetFocusAction();
+		CQt.QAccessibleActionInterface_SetFocusAction();
 	}
-	public libqt_string ToggleAction()
+	public void ToggleAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_ToggleAction();
+		CQt.QAccessibleActionInterface_ToggleAction();
 	}
-	public libqt_string ScrollLeftAction()
+	public void ScrollLeftAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_ScrollLeftAction();
+		CQt.QAccessibleActionInterface_ScrollLeftAction();
 	}
-	public libqt_string ScrollRightAction()
+	public void ScrollRightAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_ScrollRightAction();
+		CQt.QAccessibleActionInterface_ScrollRightAction();
 	}
-	public libqt_string ScrollUpAction()
+	public void ScrollUpAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_ScrollUpAction();
+		CQt.QAccessibleActionInterface_ScrollUpAction();
 	}
-	public libqt_string ScrollDownAction()
+	public void ScrollDownAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_ScrollDownAction();
+		CQt.QAccessibleActionInterface_ScrollDownAction();
 	}
-	public libqt_string NextPageAction()
+	public void NextPageAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_NextPageAction();
+		CQt.QAccessibleActionInterface_NextPageAction();
 	}
-	public libqt_string PreviousPageAction()
+	public void PreviousPageAction(String outStr)
 	{
-		return CQt.QAccessibleActionInterface_PreviousPageAction();
+		CQt.QAccessibleActionInterface_PreviousPageAction();
 	}
-	public libqt_string Tr2(c_char* sourceText, c_char* disambiguation)
+	public void Tr2(String outStr, c_char* sourceText, c_char* disambiguation)
 	{
-		return CQt.QAccessibleActionInterface_Tr2(sourceText, disambiguation);
+		CQt.QAccessibleActionInterface_Tr2(sourceText, disambiguation);
 	}
-	public libqt_string Tr3(c_char* sourceText, c_char* disambiguation, c_int n)
+	public void Tr3(String outStr, c_char* sourceText, c_char* disambiguation, c_int n)
 	{
-		return CQt.QAccessibleActionInterface_Tr3(sourceText, disambiguation, n);
+		CQt.QAccessibleActionInterface_Tr3(sourceText, disambiguation, n);
 	}
 }
 interface IQAccessibleWidget : IQtObjectInterface

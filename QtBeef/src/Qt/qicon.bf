@@ -7,71 +7,76 @@ namespace Qt6;
 // QIcon
 // --------------------------------------------------------------
 [CRepr]
-struct QIcon_Ptr: void
+struct QIcon_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QIcon_new")]
-	public static extern QIcon_Ptr* QIcon_new();
+	public static extern QIcon_Ptr QIcon_new();
 	[LinkName("QIcon_new2")]
-	public static extern QIcon_Ptr* QIcon_new2(QPixmap_Ptr* pixmap);
+	public static extern QIcon_Ptr QIcon_new2(void** pixmap);
 	[LinkName("QIcon_new3")]
-	public static extern QIcon_Ptr* QIcon_new3(QIcon_Ptr* other);
+	public static extern QIcon_Ptr QIcon_new3(void** other);
 	[LinkName("QIcon_new4")]
-	public static extern QIcon_Ptr* QIcon_new4(libqt_string fileName);
+	public static extern QIcon_Ptr QIcon_new4(libqt_string fileName);
 	[LinkName("QIcon_new5")]
-	public static extern QIcon_Ptr* QIcon_new5(QIconEngine_Ptr** engine);
+	public static extern QIcon_Ptr QIcon_new5(void** engine);
 	[LinkName("QIcon_Delete")]
-	public static extern void QIcon_Delete(QIcon_Ptr* self);
+	public static extern void QIcon_Delete(QIcon_Ptr self);
 	[LinkName("QIcon_OperatorAssign")]
-	public static extern void QIcon_OperatorAssign(QIcon_Ptr* self, QIcon_Ptr* other);
+	public static extern void QIcon_OperatorAssign(void* self, void** other);
 	[LinkName("QIcon_Swap")]
-	public static extern void QIcon_Swap(QIcon_Ptr* self, QIcon_Ptr* other);
+	public static extern void QIcon_Swap(void* self, void** other);
 	[LinkName("QIcon_ToQvariant")]
-	public static extern QVariant_Ptr* QIcon_ToQvariant(QIcon_Ptr* self);
+	public static extern void* QIcon_ToQvariant(void* self);
 	[LinkName("QIcon_Pixmap")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap(QIcon_Ptr* self, QSize_Ptr* size);
+	public static extern void* QIcon_Pixmap(void* self, void** size);
 	[LinkName("QIcon_Pixmap2")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap2(QIcon_Ptr* self, c_int w, c_int h);
+	public static extern void* QIcon_Pixmap2(void* self, c_int w, c_int h);
 	[LinkName("QIcon_Pixmap3")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap3(QIcon_Ptr* self, c_int extent);
+	public static extern void* QIcon_Pixmap3(void* self, c_int extent);
 	[LinkName("QIcon_Pixmap4")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap4(QIcon_Ptr* self, QSize_Ptr* size, double devicePixelRatio);
+	public static extern void* QIcon_Pixmap4(void* self, void** size, double devicePixelRatio);
 	[LinkName("QIcon_Pixmap5")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap5(QIcon_Ptr* self, QWindow_Ptr** window, QSize_Ptr* size);
+	public static extern void* QIcon_Pixmap5(void* self, void** window, void** size);
 	[LinkName("QIcon_ActualSize")]
-	public static extern QSize_Ptr* QIcon_ActualSize(QIcon_Ptr* self, QSize_Ptr* size);
+	public static extern void* QIcon_ActualSize(void* self, void** size);
 	[LinkName("QIcon_ActualSize2")]
-	public static extern QSize_Ptr* QIcon_ActualSize2(QIcon_Ptr* self, QWindow_Ptr** window, QSize_Ptr* size);
+	public static extern void* QIcon_ActualSize2(void* self, void** window, void** size);
 	[LinkName("QIcon_Name")]
-	public static extern libqt_string QIcon_Name(QIcon_Ptr* self);
+	public static extern libqt_string QIcon_Name(void* self);
 	[LinkName("QIcon_Paint")]
-	public static extern void QIcon_Paint(QIcon_Ptr* self, QPainter_Ptr** painter, QRect_Ptr* rect);
+	public static extern void QIcon_Paint(void* self, void** painter, void** rect);
 	[LinkName("QIcon_Paint2")]
-	public static extern void QIcon_Paint2(QIcon_Ptr* self, QPainter_Ptr** painter, c_int x, c_int y, c_int w, c_int h);
+	public static extern void QIcon_Paint2(void* self, void** painter, c_int x, c_int y, c_int w, c_int h);
 	[LinkName("QIcon_IsNull")]
-	public static extern bool QIcon_IsNull(QIcon_Ptr* self);
+	public static extern bool QIcon_IsNull(void* self);
 	[LinkName("QIcon_IsDetached")]
-	public static extern bool QIcon_IsDetached(QIcon_Ptr* self);
+	public static extern bool QIcon_IsDetached(void* self);
 	[LinkName("QIcon_Detach")]
-	public static extern void QIcon_Detach(QIcon_Ptr* self);
+	public static extern void QIcon_Detach(void* self);
 	[LinkName("QIcon_CacheKey")]
-	public static extern c_longlong QIcon_CacheKey(QIcon_Ptr* self);
+	public static extern c_longlong QIcon_CacheKey(void* self);
 	[LinkName("QIcon_AddPixmap")]
-	public static extern void QIcon_AddPixmap(QIcon_Ptr* self, QPixmap_Ptr* pixmap);
+	public static extern void QIcon_AddPixmap(void* self, void** pixmap);
 	[LinkName("QIcon_AddFile")]
-	public static extern void QIcon_AddFile(QIcon_Ptr* self, libqt_string fileName);
+	public static extern void QIcon_AddFile(void* self, libqt_string fileName);
 	[LinkName("QIcon_AvailableSizes")]
-	public static extern void* QIcon_AvailableSizes(QIcon_Ptr* self);
+	public static extern void* QIcon_AvailableSizes(void* self);
 	[LinkName("QIcon_SetIsMask")]
-	public static extern void QIcon_SetIsMask(QIcon_Ptr* self, bool isMask);
+	public static extern void QIcon_SetIsMask(void* self, bool isMask);
 	[LinkName("QIcon_IsMask")]
-	public static extern bool QIcon_IsMask(QIcon_Ptr* self);
+	public static extern bool QIcon_IsMask(void* self);
 	[LinkName("QIcon_FromTheme")]
-	public static extern QIcon_Ptr* QIcon_FromTheme(libqt_string name);
+	public static extern void* QIcon_FromTheme(libqt_string name);
 	[LinkName("QIcon_FromTheme2")]
-	public static extern QIcon_Ptr* QIcon_FromTheme2(libqt_string name, QIcon_Ptr* fallback);
+	public static extern void* QIcon_FromTheme2(libqt_string name, void** fallback);
 	[LinkName("QIcon_HasThemeIcon")]
 	public static extern bool QIcon_HasThemeIcon(libqt_string name);
 	[LinkName("QIcon_ThemeSearchPaths")]
@@ -91,64 +96,68 @@ extension CQt
 	[LinkName("QIcon_SetFallbackThemeName")]
 	public static extern void QIcon_SetFallbackThemeName(libqt_string name);
 	[LinkName("QIcon_Pixmap22")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap22(QIcon_Ptr* self, QSize_Ptr* size, QIcon_Mode mode);
+	public static extern void* QIcon_Pixmap22(void* self, void** size, QIcon_Mode mode);
 	[LinkName("QIcon_Pixmap32")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap32(QIcon_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_Pixmap32(void* self, void** size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_Pixmap33")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap33(QIcon_Ptr* self, c_int w, c_int h, QIcon_Mode mode);
+	public static extern void* QIcon_Pixmap33(void* self, c_int w, c_int h, QIcon_Mode mode);
 	[LinkName("QIcon_Pixmap42")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap42(QIcon_Ptr* self, c_int w, c_int h, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_Pixmap42(void* self, c_int w, c_int h, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_Pixmap23")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap23(QIcon_Ptr* self, c_int extent, QIcon_Mode mode);
+	public static extern void* QIcon_Pixmap23(void* self, c_int extent, QIcon_Mode mode);
 	[LinkName("QIcon_Pixmap34")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap34(QIcon_Ptr* self, c_int extent, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_Pixmap34(void* self, c_int extent, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_Pixmap35")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap35(QIcon_Ptr* self, QSize_Ptr* size, double devicePixelRatio, QIcon_Mode mode);
+	public static extern void* QIcon_Pixmap35(void* self, void** size, double devicePixelRatio, QIcon_Mode mode);
 	[LinkName("QIcon_Pixmap43")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap43(QIcon_Ptr* self, QSize_Ptr* size, double devicePixelRatio, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_Pixmap43(void* self, void** size, double devicePixelRatio, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_Pixmap36")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap36(QIcon_Ptr* self, QWindow_Ptr** window, QSize_Ptr* size, QIcon_Mode mode);
+	public static extern void* QIcon_Pixmap36(void* self, void** window, void** size, QIcon_Mode mode);
 	[LinkName("QIcon_Pixmap44")]
-	public static extern QPixmap_Ptr* QIcon_Pixmap44(QIcon_Ptr* self, QWindow_Ptr** window, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_Pixmap44(void* self, void** window, void** size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_ActualSize22")]
-	public static extern QSize_Ptr* QIcon_ActualSize22(QIcon_Ptr* self, QSize_Ptr* size, QIcon_Mode mode);
+	public static extern void* QIcon_ActualSize22(void* self, void** size, QIcon_Mode mode);
 	[LinkName("QIcon_ActualSize3")]
-	public static extern QSize_Ptr* QIcon_ActualSize3(QIcon_Ptr* self, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_ActualSize3(void* self, void** size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_ActualSize32")]
-	public static extern QSize_Ptr* QIcon_ActualSize32(QIcon_Ptr* self, QWindow_Ptr** window, QSize_Ptr* size, QIcon_Mode mode);
+	public static extern void* QIcon_ActualSize32(void* self, void** window, void** size, QIcon_Mode mode);
 	[LinkName("QIcon_ActualSize4")]
-	public static extern QSize_Ptr* QIcon_ActualSize4(QIcon_Ptr* self, QWindow_Ptr** window, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_ActualSize4(void* self, void** window, void** size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_Paint3")]
-	public static extern void QIcon_Paint3(QIcon_Ptr* self, QPainter_Ptr** painter, QRect_Ptr* rect, void* alignment);
+	public static extern void QIcon_Paint3(void* self, void** painter, void** rect, void* alignment);
 	[LinkName("QIcon_Paint4")]
-	public static extern void QIcon_Paint4(QIcon_Ptr* self, QPainter_Ptr** painter, QRect_Ptr* rect, void* alignment, QIcon_Mode mode);
+	public static extern void QIcon_Paint4(void* self, void** painter, void** rect, void* alignment, QIcon_Mode mode);
 	[LinkName("QIcon_Paint5")]
-	public static extern void QIcon_Paint5(QIcon_Ptr* self, QPainter_Ptr** painter, QRect_Ptr* rect, void* alignment, QIcon_Mode mode, QIcon_State state);
+	public static extern void QIcon_Paint5(void* self, void** painter, void** rect, void* alignment, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_Paint6")]
-	public static extern void QIcon_Paint6(QIcon_Ptr* self, QPainter_Ptr** painter, c_int x, c_int y, c_int w, c_int h, void* alignment);
+	public static extern void QIcon_Paint6(void* self, void** painter, c_int x, c_int y, c_int w, c_int h, void* alignment);
 	[LinkName("QIcon_Paint7")]
-	public static extern void QIcon_Paint7(QIcon_Ptr* self, QPainter_Ptr** painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode);
+	public static extern void QIcon_Paint7(void* self, void** painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode);
 	[LinkName("QIcon_Paint8")]
-	public static extern void QIcon_Paint8(QIcon_Ptr* self, QPainter_Ptr** painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode, QIcon_State state);
+	public static extern void QIcon_Paint8(void* self, void** painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_AddPixmap2")]
-	public static extern void QIcon_AddPixmap2(QIcon_Ptr* self, QPixmap_Ptr* pixmap, QIcon_Mode mode);
+	public static extern void QIcon_AddPixmap2(void* self, void** pixmap, QIcon_Mode mode);
 	[LinkName("QIcon_AddPixmap3")]
-	public static extern void QIcon_AddPixmap3(QIcon_Ptr* self, QPixmap_Ptr* pixmap, QIcon_Mode mode, QIcon_State state);
+	public static extern void QIcon_AddPixmap3(void* self, void** pixmap, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_AddFile2")]
-	public static extern void QIcon_AddFile2(QIcon_Ptr* self, libqt_string fileName, QSize_Ptr* size);
+	public static extern void QIcon_AddFile2(void* self, libqt_string fileName, void** size);
 	[LinkName("QIcon_AddFile3")]
-	public static extern void QIcon_AddFile3(QIcon_Ptr* self, libqt_string fileName, QSize_Ptr* size, QIcon_Mode mode);
+	public static extern void QIcon_AddFile3(void* self, libqt_string fileName, void** size, QIcon_Mode mode);
 	[LinkName("QIcon_AddFile4")]
-	public static extern void QIcon_AddFile4(QIcon_Ptr* self, libqt_string fileName, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state);
+	public static extern void QIcon_AddFile4(void* self, libqt_string fileName, void** size, QIcon_Mode mode, QIcon_State state);
 	[LinkName("QIcon_AvailableSizes1")]
-	public static extern void* QIcon_AvailableSizes1(QIcon_Ptr* self, QIcon_Mode mode);
+	public static extern void* QIcon_AvailableSizes1(void* self, QIcon_Mode mode);
 	[LinkName("QIcon_AvailableSizes2")]
-	public static extern void* QIcon_AvailableSizes2(QIcon_Ptr* self, QIcon_Mode mode, QIcon_State state);
+	public static extern void* QIcon_AvailableSizes2(void* self, QIcon_Mode mode, QIcon_State state);
 }
 class QIcon : IQIcon
 {
-	private QIcon_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QIcon_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QIcon_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QIcon_new();
@@ -175,91 +184,91 @@ class QIcon : IQIcon
 	}
 	public void Swap(IQIcon other)
 	{
-		CQt.QIcon_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QIcon_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
-	public QPixmap_Ptr* Pixmap(IQSize size)
+	public QPixmap_Ptr Pixmap(IQSize size)
 	{
-		return CQt.QIcon_Pixmap((.)this.ptr, (.)size?.ObjectPtr);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap((.)this.ptr.Ptr, (.)size?.ObjectPtr));
 	}
-	public QPixmap_Ptr* Pixmap2(c_int w, c_int h)
+	public QPixmap_Ptr Pixmap2(c_int w, c_int h)
 	{
-		return CQt.QIcon_Pixmap2((.)this.ptr, w, h);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap2((.)this.ptr.Ptr, w, h));
 	}
-	public QPixmap_Ptr* Pixmap3(c_int extent)
+	public QPixmap_Ptr Pixmap3(c_int extent)
 	{
-		return CQt.QIcon_Pixmap3((.)this.ptr, extent);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap3((.)this.ptr.Ptr, extent));
 	}
-	public QPixmap_Ptr* Pixmap4(IQSize size, double devicePixelRatio)
+	public QPixmap_Ptr Pixmap4(IQSize size, double devicePixelRatio)
 	{
-		return CQt.QIcon_Pixmap4((.)this.ptr, (.)size?.ObjectPtr, devicePixelRatio);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap4((.)this.ptr.Ptr, (.)size?.ObjectPtr, devicePixelRatio));
 	}
-	public QPixmap_Ptr* Pixmap5(IQWindow window, IQSize size)
+	public QPixmap_Ptr Pixmap5(IQWindow window, IQSize size)
 	{
-		return CQt.QIcon_Pixmap5((.)this.ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap5((.)this.ptr.Ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr));
 	}
-	public QSize_Ptr* ActualSize(IQSize size)
+	public QSize_Ptr ActualSize(IQSize size)
 	{
-		return CQt.QIcon_ActualSize((.)this.ptr, (.)size?.ObjectPtr);
+		return QSize_Ptr(CQt.QIcon_ActualSize((.)this.ptr.Ptr, (.)size?.ObjectPtr));
 	}
-	public QSize_Ptr* ActualSize2(IQWindow window, IQSize size)
+	public QSize_Ptr ActualSize2(IQWindow window, IQSize size)
 	{
-		return CQt.QIcon_ActualSize2((.)this.ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr);
+		return QSize_Ptr(CQt.QIcon_ActualSize2((.)this.ptr.Ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr));
 	}
-	public libqt_string Name()
+	public void Name(String outStr)
 	{
-		return CQt.QIcon_Name((.)this.ptr);
+		CQt.QIcon_Name((.)this.ptr.Ptr);
 	}
 	public void Paint(IQPainter painter, IQRect rect)
 	{
-		CQt.QIcon_Paint((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr);
+		CQt.QIcon_Paint((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
 	public void Paint2(IQPainter painter, c_int x, c_int y, c_int w, c_int h)
 	{
-		CQt.QIcon_Paint2((.)this.ptr, (.)painter?.ObjectPtr, x, y, w, h);
+		CQt.QIcon_Paint2((.)this.ptr.Ptr, (.)painter?.ObjectPtr, x, y, w, h);
 	}
 	public bool IsNull()
 	{
-		return CQt.QIcon_IsNull((.)this.ptr);
+		return CQt.QIcon_IsNull((.)this.ptr.Ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QIcon_IsDetached((.)this.ptr);
+		return CQt.QIcon_IsDetached((.)this.ptr.Ptr);
 	}
 	public void Detach()
 	{
-		CQt.QIcon_Detach((.)this.ptr);
+		CQt.QIcon_Detach((.)this.ptr.Ptr);
 	}
 	public c_longlong CacheKey()
 	{
-		return CQt.QIcon_CacheKey((.)this.ptr);
+		return CQt.QIcon_CacheKey((.)this.ptr.Ptr);
 	}
 	public void AddPixmap(IQPixmap pixmap)
 	{
-		CQt.QIcon_AddPixmap((.)this.ptr, (.)pixmap?.ObjectPtr);
+		CQt.QIcon_AddPixmap((.)this.ptr.Ptr, (.)pixmap?.ObjectPtr);
 	}
 	public void AddFile(String fileName)
 	{
-		CQt.QIcon_AddFile((.)this.ptr, libqt_string(fileName));
+		CQt.QIcon_AddFile((.)this.ptr.Ptr, libqt_string(fileName));
 	}
 	public void* AvailableSizes()
 	{
-		return CQt.QIcon_AvailableSizes((.)this.ptr);
+		return CQt.QIcon_AvailableSizes((.)this.ptr.Ptr);
 	}
 	public void SetIsMask(bool isMask)
 	{
-		CQt.QIcon_SetIsMask((.)this.ptr, isMask);
+		CQt.QIcon_SetIsMask((.)this.ptr.Ptr, isMask);
 	}
 	public bool IsMask()
 	{
-		return CQt.QIcon_IsMask((.)this.ptr);
+		return CQt.QIcon_IsMask((.)this.ptr.Ptr);
 	}
-	public QIcon_Ptr* FromTheme(String name)
+	public QIcon_Ptr FromTheme(String name)
 	{
-		return CQt.QIcon_FromTheme(libqt_string(name));
+		return QIcon_Ptr(CQt.QIcon_FromTheme(libqt_string(name)));
 	}
-	public QIcon_Ptr* FromTheme2(String name, IQIcon fallback)
+	public QIcon_Ptr FromTheme2(String name, IQIcon fallback)
 	{
-		return CQt.QIcon_FromTheme2(libqt_string(name), (.)fallback?.ObjectPtr);
+		return QIcon_Ptr(CQt.QIcon_FromTheme2(libqt_string(name), (.)fallback?.ObjectPtr));
 	}
 	public bool HasThemeIcon(String name)
 	{
@@ -281,129 +290,129 @@ class QIcon : IQIcon
 	{
 		CQt.QIcon_SetFallbackSearchPaths(paths);
 	}
-	public libqt_string ThemeName()
+	public void ThemeName(String outStr)
 	{
-		return CQt.QIcon_ThemeName();
+		CQt.QIcon_ThemeName();
 	}
 	public void SetThemeName(String path)
 	{
 		CQt.QIcon_SetThemeName(libqt_string(path));
 	}
-	public libqt_string FallbackThemeName()
+	public void FallbackThemeName(String outStr)
 	{
-		return CQt.QIcon_FallbackThemeName();
+		CQt.QIcon_FallbackThemeName();
 	}
 	public void SetFallbackThemeName(String name)
 	{
 		CQt.QIcon_SetFallbackThemeName(libqt_string(name));
 	}
-	public QPixmap_Ptr* Pixmap22(IQSize size, QIcon_Mode mode)
+	public QPixmap_Ptr Pixmap22(IQSize size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap22((.)this.ptr, (.)size?.ObjectPtr, mode);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap22((.)this.ptr.Ptr, (.)size?.ObjectPtr, mode));
 	}
-	public QPixmap_Ptr* Pixmap32(IQSize size, QIcon_Mode mode, QIcon_State state)
+	public QPixmap_Ptr Pixmap32(IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap32((.)this.ptr, (.)size?.ObjectPtr, mode, state);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap32((.)this.ptr.Ptr, (.)size?.ObjectPtr, mode, state));
 	}
-	public QPixmap_Ptr* Pixmap33(c_int w, c_int h, QIcon_Mode mode)
+	public QPixmap_Ptr Pixmap33(c_int w, c_int h, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap33((.)this.ptr, w, h, mode);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap33((.)this.ptr.Ptr, w, h, mode));
 	}
-	public QPixmap_Ptr* Pixmap42(c_int w, c_int h, QIcon_Mode mode, QIcon_State state)
+	public QPixmap_Ptr Pixmap42(c_int w, c_int h, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap42((.)this.ptr, w, h, mode, state);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap42((.)this.ptr.Ptr, w, h, mode, state));
 	}
-	public QPixmap_Ptr* Pixmap23(c_int extent, QIcon_Mode mode)
+	public QPixmap_Ptr Pixmap23(c_int extent, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap23((.)this.ptr, extent, mode);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap23((.)this.ptr.Ptr, extent, mode));
 	}
-	public QPixmap_Ptr* Pixmap34(c_int extent, QIcon_Mode mode, QIcon_State state)
+	public QPixmap_Ptr Pixmap34(c_int extent, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap34((.)this.ptr, extent, mode, state);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap34((.)this.ptr.Ptr, extent, mode, state));
 	}
-	public QPixmap_Ptr* Pixmap35(IQSize size, double devicePixelRatio, QIcon_Mode mode)
+	public QPixmap_Ptr Pixmap35(IQSize size, double devicePixelRatio, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap35((.)this.ptr, (.)size?.ObjectPtr, devicePixelRatio, mode);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap35((.)this.ptr.Ptr, (.)size?.ObjectPtr, devicePixelRatio, mode));
 	}
-	public QPixmap_Ptr* Pixmap43(IQSize size, double devicePixelRatio, QIcon_Mode mode, QIcon_State state)
+	public QPixmap_Ptr Pixmap43(IQSize size, double devicePixelRatio, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap43((.)this.ptr, (.)size?.ObjectPtr, devicePixelRatio, mode, state);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap43((.)this.ptr.Ptr, (.)size?.ObjectPtr, devicePixelRatio, mode, state));
 	}
-	public QPixmap_Ptr* Pixmap36(IQWindow window, IQSize size, QIcon_Mode mode)
+	public QPixmap_Ptr Pixmap36(IQWindow window, IQSize size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap36((.)this.ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap36((.)this.ptr.Ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode));
 	}
-	public QPixmap_Ptr* Pixmap44(IQWindow window, IQSize size, QIcon_Mode mode, QIcon_State state)
+	public QPixmap_Ptr Pixmap44(IQWindow window, IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap44((.)this.ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode, state);
+		return QPixmap_Ptr(CQt.QIcon_Pixmap44((.)this.ptr.Ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode, state));
 	}
-	public QSize_Ptr* ActualSize22(IQSize size, QIcon_Mode mode)
+	public QSize_Ptr ActualSize22(IQSize size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_ActualSize22((.)this.ptr, (.)size?.ObjectPtr, mode);
+		return QSize_Ptr(CQt.QIcon_ActualSize22((.)this.ptr.Ptr, (.)size?.ObjectPtr, mode));
 	}
-	public QSize_Ptr* ActualSize3(IQSize size, QIcon_Mode mode, QIcon_State state)
+	public QSize_Ptr ActualSize3(IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_ActualSize3((.)this.ptr, (.)size?.ObjectPtr, mode, state);
+		return QSize_Ptr(CQt.QIcon_ActualSize3((.)this.ptr.Ptr, (.)size?.ObjectPtr, mode, state));
 	}
-	public QSize_Ptr* ActualSize32(IQWindow window, IQSize size, QIcon_Mode mode)
+	public QSize_Ptr ActualSize32(IQWindow window, IQSize size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_ActualSize32((.)this.ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode);
+		return QSize_Ptr(CQt.QIcon_ActualSize32((.)this.ptr.Ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode));
 	}
-	public QSize_Ptr* ActualSize4(IQWindow window, IQSize size, QIcon_Mode mode, QIcon_State state)
+	public QSize_Ptr ActualSize4(IQWindow window, IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_ActualSize4((.)this.ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode, state);
+		return QSize_Ptr(CQt.QIcon_ActualSize4((.)this.ptr.Ptr, (.)window?.ObjectPtr, (.)size?.ObjectPtr, mode, state));
 	}
 	public void Paint3(IQPainter painter, IQRect rect, void* alignment)
 	{
-		CQt.QIcon_Paint3((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, alignment);
+		CQt.QIcon_Paint3((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, alignment);
 	}
 	public void Paint4(IQPainter painter, IQRect rect, void* alignment, QIcon_Mode mode)
 	{
-		CQt.QIcon_Paint4((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, alignment, mode);
+		CQt.QIcon_Paint4((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, alignment, mode);
 	}
 	public void Paint5(IQPainter painter, IQRect rect, void* alignment, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_Paint5((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, alignment, mode, state);
+		CQt.QIcon_Paint5((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, alignment, mode, state);
 	}
 	public void Paint6(IQPainter painter, c_int x, c_int y, c_int w, c_int h, void* alignment)
 	{
-		CQt.QIcon_Paint6((.)this.ptr, (.)painter?.ObjectPtr, x, y, w, h, alignment);
+		CQt.QIcon_Paint6((.)this.ptr.Ptr, (.)painter?.ObjectPtr, x, y, w, h, alignment);
 	}
 	public void Paint7(IQPainter painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode)
 	{
-		CQt.QIcon_Paint7((.)this.ptr, (.)painter?.ObjectPtr, x, y, w, h, alignment, mode);
+		CQt.QIcon_Paint7((.)this.ptr.Ptr, (.)painter?.ObjectPtr, x, y, w, h, alignment, mode);
 	}
 	public void Paint8(IQPainter painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_Paint8((.)this.ptr, (.)painter?.ObjectPtr, x, y, w, h, alignment, mode, state);
+		CQt.QIcon_Paint8((.)this.ptr.Ptr, (.)painter?.ObjectPtr, x, y, w, h, alignment, mode, state);
 	}
 	public void AddPixmap2(IQPixmap pixmap, QIcon_Mode mode)
 	{
-		CQt.QIcon_AddPixmap2((.)this.ptr, (.)pixmap?.ObjectPtr, mode);
+		CQt.QIcon_AddPixmap2((.)this.ptr.Ptr, (.)pixmap?.ObjectPtr, mode);
 	}
 	public void AddPixmap3(IQPixmap pixmap, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_AddPixmap3((.)this.ptr, (.)pixmap?.ObjectPtr, mode, state);
+		CQt.QIcon_AddPixmap3((.)this.ptr.Ptr, (.)pixmap?.ObjectPtr, mode, state);
 	}
 	public void AddFile2(String fileName, IQSize size)
 	{
-		CQt.QIcon_AddFile2((.)this.ptr, libqt_string(fileName), (.)size?.ObjectPtr);
+		CQt.QIcon_AddFile2((.)this.ptr.Ptr, libqt_string(fileName), (.)size?.ObjectPtr);
 	}
 	public void AddFile3(String fileName, IQSize size, QIcon_Mode mode)
 	{
-		CQt.QIcon_AddFile3((.)this.ptr, libqt_string(fileName), (.)size?.ObjectPtr, mode);
+		CQt.QIcon_AddFile3((.)this.ptr.Ptr, libqt_string(fileName), (.)size?.ObjectPtr, mode);
 	}
 	public void AddFile4(String fileName, IQSize size, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_AddFile4((.)this.ptr, libqt_string(fileName), (.)size?.ObjectPtr, mode, state);
+		CQt.QIcon_AddFile4((.)this.ptr.Ptr, libqt_string(fileName), (.)size?.ObjectPtr, mode, state);
 	}
 	public void* AvailableSizes1(QIcon_Mode mode)
 	{
-		return CQt.QIcon_AvailableSizes1((.)this.ptr, mode);
+		return CQt.QIcon_AvailableSizes1((.)this.ptr.Ptr, mode);
 	}
 	public void* AvailableSizes2(QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_AvailableSizes2((.)this.ptr, mode, state);
+		return CQt.QIcon_AvailableSizes2((.)this.ptr.Ptr, mode, state);
 	}
 }
 interface IQIcon : IQtObjectInterface

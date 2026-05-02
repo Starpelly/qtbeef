@@ -7,23 +7,28 @@ namespace Qt6;
 // QHashSeed
 // --------------------------------------------------------------
 [CRepr]
-struct QHashSeed_Ptr: void
+struct QHashSeed_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QHashSeed_new")]
-	public static extern QHashSeed_Ptr* QHashSeed_new(void** other);
+	public static extern QHashSeed_Ptr QHashSeed_new(void** other);
 	[LinkName("QHashSeed_new2")]
-	public static extern QHashSeed_Ptr* QHashSeed_new2(void** other);
+	public static extern QHashSeed_Ptr QHashSeed_new2(void** other);
 	[LinkName("QHashSeed_new3")]
-	public static extern QHashSeed_Ptr* QHashSeed_new3();
+	public static extern QHashSeed_Ptr QHashSeed_new3();
 	[LinkName("QHashSeed_new4")]
-	public static extern QHashSeed_Ptr* QHashSeed_new4(c_size d);
+	public static extern QHashSeed_Ptr QHashSeed_new4(c_size d);
 	[LinkName("QHashSeed_Delete")]
-	public static extern void QHashSeed_Delete(QHashSeed_Ptr* self);
+	public static extern void QHashSeed_Delete(QHashSeed_Ptr self);
 	[LinkName("QHashSeed_ToUnsignedLong")]
-	public static extern c_size QHashSeed_ToUnsignedLong(QHashSeed_Ptr* self);
+	public static extern c_size QHashSeed_ToUnsignedLong(void* self);
 	[LinkName("QHashSeed_GlobalSeed")]
 	public static extern void* QHashSeed_GlobalSeed();
 	[LinkName("QHashSeed_SetDeterministicGlobalSeed")]
@@ -33,8 +38,12 @@ extension CQt
 }
 class QHashSeed : IQHashSeed
 {
-	private QHashSeed_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QHashSeed_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QHashSeed_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(void** other)
 	{
 		this.ptr = CQt.QHashSeed_new(other);

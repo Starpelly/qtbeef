@@ -7,31 +7,36 @@ namespace Qt6;
 // QLoggingCategory
 // --------------------------------------------------------------
 [CRepr]
-struct QLoggingCategory_Ptr: void
+struct QLoggingCategory_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QLoggingCategory_new")]
-	public static extern QLoggingCategory_Ptr* QLoggingCategory_new(c_char* category);
+	public static extern QLoggingCategory_Ptr QLoggingCategory_new(c_char* category);
 	[LinkName("QLoggingCategory_Delete")]
-	public static extern void QLoggingCategory_Delete(QLoggingCategory_Ptr* self);
+	public static extern void QLoggingCategory_Delete(QLoggingCategory_Ptr self);
 	[LinkName("QLoggingCategory_IsDebugEnabled")]
-	public static extern bool QLoggingCategory_IsDebugEnabled(QLoggingCategory_Ptr* self);
+	public static extern bool QLoggingCategory_IsDebugEnabled(void* self);
 	[LinkName("QLoggingCategory_IsInfoEnabled")]
-	public static extern bool QLoggingCategory_IsInfoEnabled(QLoggingCategory_Ptr* self);
+	public static extern bool QLoggingCategory_IsInfoEnabled(void* self);
 	[LinkName("QLoggingCategory_IsWarningEnabled")]
-	public static extern bool QLoggingCategory_IsWarningEnabled(QLoggingCategory_Ptr* self);
+	public static extern bool QLoggingCategory_IsWarningEnabled(void* self);
 	[LinkName("QLoggingCategory_IsCriticalEnabled")]
-	public static extern bool QLoggingCategory_IsCriticalEnabled(QLoggingCategory_Ptr* self);
+	public static extern bool QLoggingCategory_IsCriticalEnabled(void* self);
 	[LinkName("QLoggingCategory_CategoryName")]
-	public static extern c_char* QLoggingCategory_CategoryName(QLoggingCategory_Ptr* self);
+	public static extern c_char* QLoggingCategory_CategoryName(void* self);
 	[LinkName("QLoggingCategory_OperatorCall")]
-	public static extern QLoggingCategory_Ptr* QLoggingCategory_OperatorCall(QLoggingCategory_Ptr* self);
+	public static extern void** QLoggingCategory_OperatorCall(void* self);
 	[LinkName("QLoggingCategory_OperatorCall2")]
-	public static extern QLoggingCategory_Ptr* QLoggingCategory_OperatorCall2(QLoggingCategory_Ptr* self);
+	public static extern void** QLoggingCategory_OperatorCall2(void* self);
 	[LinkName("QLoggingCategory_DefaultCategory")]
-	public static extern QLoggingCategory_Ptr** QLoggingCategory_DefaultCategory();
+	public static extern void** QLoggingCategory_DefaultCategory();
 	[LinkName("QLoggingCategory_InstallFilter")]
 	public static extern c_intptr QLoggingCategory_InstallFilter(c_intptr param1);
 	[LinkName("QLoggingCategory_SetFilterRules")]
@@ -39,8 +44,12 @@ extension CQt
 }
 class QLoggingCategory : IQLoggingCategory
 {
-	private QLoggingCategory_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QLoggingCategory_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLoggingCategory_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(c_char* category)
 	{
 		this.ptr = CQt.QLoggingCategory_new(category);
@@ -51,31 +60,31 @@ class QLoggingCategory : IQLoggingCategory
 	}
 	public bool IsDebugEnabled()
 	{
-		return CQt.QLoggingCategory_IsDebugEnabled((.)this.ptr);
+		return CQt.QLoggingCategory_IsDebugEnabled((.)this.ptr.Ptr);
 	}
 	public bool IsInfoEnabled()
 	{
-		return CQt.QLoggingCategory_IsInfoEnabled((.)this.ptr);
+		return CQt.QLoggingCategory_IsInfoEnabled((.)this.ptr.Ptr);
 	}
 	public bool IsWarningEnabled()
 	{
-		return CQt.QLoggingCategory_IsWarningEnabled((.)this.ptr);
+		return CQt.QLoggingCategory_IsWarningEnabled((.)this.ptr.Ptr);
 	}
 	public bool IsCriticalEnabled()
 	{
-		return CQt.QLoggingCategory_IsCriticalEnabled((.)this.ptr);
+		return CQt.QLoggingCategory_IsCriticalEnabled((.)this.ptr.Ptr);
 	}
 	public c_char* CategoryName()
 	{
-		return CQt.QLoggingCategory_CategoryName((.)this.ptr);
+		return CQt.QLoggingCategory_CategoryName((.)this.ptr.Ptr);
 	}
-	public QLoggingCategory_Ptr* OperatorCall2()
+	public QLoggingCategory_Ptr OperatorCall2()
 	{
-		return CQt.QLoggingCategory_OperatorCall2((.)this.ptr);
+		return QLoggingCategory_Ptr(CQt.QLoggingCategory_OperatorCall2((.)this.ptr.Ptr));
 	}
-	public QLoggingCategory_Ptr** DefaultCategory()
+	public QLoggingCategory_Ptr DefaultCategory()
 	{
-		return CQt.QLoggingCategory_DefaultCategory();
+		return QLoggingCategory_Ptr(CQt.QLoggingCategory_DefaultCategory());
 	}
 	public c_intptr InstallFilter(c_intptr param1)
 	{

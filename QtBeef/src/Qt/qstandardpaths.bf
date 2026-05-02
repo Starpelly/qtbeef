@@ -7,8 +7,13 @@ namespace Qt6;
 // QStandardPaths
 // --------------------------------------------------------------
 [CRepr]
-struct QStandardPaths_Ptr: void
+struct QStandardPaths_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
@@ -37,31 +42,35 @@ extension CQt
 }
 class QStandardPaths : IQStandardPaths
 {
-	private QStandardPaths_Ptr* ptr;
-	public void* ObjectPtr => ptr;
-	public libqt_string WritableLocation(QStandardPaths_StandardLocation type)
+	private QStandardPaths_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStandardPaths_Ptr ptr)
 	{
-		return CQt.QStandardPaths_WritableLocation(type);
+		this.ptr = ptr;
+	}
+	public void WritableLocation(String outStr, QStandardPaths_StandardLocation type)
+	{
+		CQt.QStandardPaths_WritableLocation(type);
 	}
 	public void* StandardLocations(QStandardPaths_StandardLocation type)
 	{
 		return CQt.QStandardPaths_StandardLocations(type);
 	}
-	public libqt_string Locate(QStandardPaths_StandardLocation type, String fileName)
+	public void Locate(String outStr, QStandardPaths_StandardLocation type, String fileName)
 	{
-		return CQt.QStandardPaths_Locate(type, libqt_string(fileName));
+		CQt.QStandardPaths_Locate(type, libqt_string(fileName));
 	}
 	public void* LocateAll(QStandardPaths_StandardLocation type, String fileName)
 	{
 		return CQt.QStandardPaths_LocateAll(type, libqt_string(fileName));
 	}
-	public libqt_string DisplayName(QStandardPaths_StandardLocation type)
+	public void DisplayName(String outStr, QStandardPaths_StandardLocation type)
 	{
-		return CQt.QStandardPaths_DisplayName(type);
+		CQt.QStandardPaths_DisplayName(type);
 	}
-	public libqt_string FindExecutable(String executableName)
+	public void FindExecutable(String outStr, String executableName)
 	{
-		return CQt.QStandardPaths_FindExecutable(libqt_string(executableName));
+		CQt.QStandardPaths_FindExecutable(libqt_string(executableName));
 	}
 	public void SetTestModeEnabled(bool testMode)
 	{
@@ -71,17 +80,17 @@ class QStandardPaths : IQStandardPaths
 	{
 		return CQt.QStandardPaths_IsTestModeEnabled();
 	}
-	public libqt_string Locate3(QStandardPaths_StandardLocation type, String fileName, void* options)
+	public void Locate3(String outStr, QStandardPaths_StandardLocation type, String fileName, void* options)
 	{
-		return CQt.QStandardPaths_Locate3(type, libqt_string(fileName), options);
+		CQt.QStandardPaths_Locate3(type, libqt_string(fileName), options);
 	}
 	public void* LocateAll3(QStandardPaths_StandardLocation type, String fileName, void* options)
 	{
 		return CQt.QStandardPaths_LocateAll3(type, libqt_string(fileName), options);
 	}
-	public libqt_string FindExecutable2(String executableName, void** paths)
+	public void FindExecutable2(String outStr, String executableName, void** paths)
 	{
-		return CQt.QStandardPaths_FindExecutable2(libqt_string(executableName), paths);
+		CQt.QStandardPaths_FindExecutable2(libqt_string(executableName), paths);
 	}
 }
 interface IQStandardPaths : IQtObjectInterface

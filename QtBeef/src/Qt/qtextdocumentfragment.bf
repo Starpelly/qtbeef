@@ -7,50 +7,59 @@ namespace Qt6;
 // QTextDocumentFragment
 // --------------------------------------------------------------
 [CRepr]
-struct QTextDocumentFragment_Ptr: void
+struct QTextDocumentFragment_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QTextDocumentFragment_new")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new();
+	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_new();
 	[LinkName("QTextDocumentFragment_new2")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new2(QTextDocument_Ptr** document);
+	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_new2(void** document);
 	[LinkName("QTextDocumentFragment_new3")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new3(QTextCursor_Ptr* range);
+	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_new3(void** range);
 	[LinkName("QTextDocumentFragment_new4")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_new4(QTextDocumentFragment_Ptr* rhs);
+	public static extern QTextDocumentFragment_Ptr QTextDocumentFragment_new4(void** rhs);
 	[LinkName("QTextDocumentFragment_Delete")]
-	public static extern void QTextDocumentFragment_Delete(QTextDocumentFragment_Ptr* self);
+	public static extern void QTextDocumentFragment_Delete(QTextDocumentFragment_Ptr self);
 	[LinkName("QTextDocumentFragment_OperatorAssign")]
-	public static extern void QTextDocumentFragment_OperatorAssign(QTextDocumentFragment_Ptr* self, QTextDocumentFragment_Ptr* rhs);
+	public static extern void QTextDocumentFragment_OperatorAssign(void* self, void** rhs);
 	[LinkName("QTextDocumentFragment_IsEmpty")]
-	public static extern bool QTextDocumentFragment_IsEmpty(QTextDocumentFragment_Ptr* self);
+	public static extern bool QTextDocumentFragment_IsEmpty(void* self);
 	[LinkName("QTextDocumentFragment_ToPlainText")]
-	public static extern libqt_string QTextDocumentFragment_ToPlainText(QTextDocumentFragment_Ptr* self);
+	public static extern libqt_string QTextDocumentFragment_ToPlainText(void* self);
 	[LinkName("QTextDocumentFragment_ToRawText")]
-	public static extern libqt_string QTextDocumentFragment_ToRawText(QTextDocumentFragment_Ptr* self);
+	public static extern libqt_string QTextDocumentFragment_ToRawText(void* self);
 	[LinkName("QTextDocumentFragment_ToHtml")]
-	public static extern libqt_string QTextDocumentFragment_ToHtml(QTextDocumentFragment_Ptr* self);
+	public static extern libqt_string QTextDocumentFragment_ToHtml(void* self);
 	[LinkName("QTextDocumentFragment_ToMarkdown")]
-	public static extern libqt_string QTextDocumentFragment_ToMarkdown(QTextDocumentFragment_Ptr* self);
+	public static extern libqt_string QTextDocumentFragment_ToMarkdown(void* self);
 	[LinkName("QTextDocumentFragment_FromPlainText")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromPlainText(libqt_string plainText);
+	public static extern void* QTextDocumentFragment_FromPlainText(libqt_string plainText);
 	[LinkName("QTextDocumentFragment_FromHtml")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromHtml(libqt_string html);
+	public static extern void* QTextDocumentFragment_FromHtml(libqt_string html);
 	[LinkName("QTextDocumentFragment_FromMarkdown")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromMarkdown(libqt_string markdown);
+	public static extern void* QTextDocumentFragment_FromMarkdown(libqt_string markdown);
 	[LinkName("QTextDocumentFragment_ToMarkdown1")]
-	public static extern libqt_string QTextDocumentFragment_ToMarkdown1(QTextDocumentFragment_Ptr* self, void* features);
+	public static extern libqt_string QTextDocumentFragment_ToMarkdown1(void* self, void* features);
 	[LinkName("QTextDocumentFragment_FromHtml2")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromHtml2(libqt_string html, QTextDocument_Ptr** resourceProvider);
+	public static extern void* QTextDocumentFragment_FromHtml2(libqt_string html, void** resourceProvider);
 	[LinkName("QTextDocumentFragment_FromMarkdown2")]
-	public static extern QTextDocumentFragment_Ptr* QTextDocumentFragment_FromMarkdown2(libqt_string markdown, void* features);
+	public static extern void* QTextDocumentFragment_FromMarkdown2(libqt_string markdown, void* features);
 }
 class QTextDocumentFragment : IQTextDocumentFragment
 {
-	private QTextDocumentFragment_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QTextDocumentFragment_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextDocumentFragment_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QTextDocumentFragment_new();
@@ -73,47 +82,47 @@ class QTextDocumentFragment : IQTextDocumentFragment
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QTextDocumentFragment_IsEmpty((.)this.ptr);
+		return CQt.QTextDocumentFragment_IsEmpty((.)this.ptr.Ptr);
 	}
-	public libqt_string ToPlainText()
+	public void ToPlainText(String outStr)
 	{
-		return CQt.QTextDocumentFragment_ToPlainText((.)this.ptr);
+		CQt.QTextDocumentFragment_ToPlainText((.)this.ptr.Ptr);
 	}
-	public libqt_string ToRawText()
+	public void ToRawText(String outStr)
 	{
-		return CQt.QTextDocumentFragment_ToRawText((.)this.ptr);
+		CQt.QTextDocumentFragment_ToRawText((.)this.ptr.Ptr);
 	}
-	public libqt_string ToHtml()
+	public void ToHtml(String outStr)
 	{
-		return CQt.QTextDocumentFragment_ToHtml((.)this.ptr);
+		CQt.QTextDocumentFragment_ToHtml((.)this.ptr.Ptr);
 	}
-	public libqt_string ToMarkdown()
+	public void ToMarkdown(String outStr)
 	{
-		return CQt.QTextDocumentFragment_ToMarkdown((.)this.ptr);
+		CQt.QTextDocumentFragment_ToMarkdown((.)this.ptr.Ptr);
 	}
-	public QTextDocumentFragment_Ptr* FromPlainText(String plainText)
+	public QTextDocumentFragment_Ptr FromPlainText(String plainText)
 	{
-		return CQt.QTextDocumentFragment_FromPlainText(libqt_string(plainText));
+		return QTextDocumentFragment_Ptr(CQt.QTextDocumentFragment_FromPlainText(libqt_string(plainText)));
 	}
-	public QTextDocumentFragment_Ptr* FromHtml(String html)
+	public QTextDocumentFragment_Ptr FromHtml(String html)
 	{
-		return CQt.QTextDocumentFragment_FromHtml(libqt_string(html));
+		return QTextDocumentFragment_Ptr(CQt.QTextDocumentFragment_FromHtml(libqt_string(html)));
 	}
-	public QTextDocumentFragment_Ptr* FromMarkdown(String markdown)
+	public QTextDocumentFragment_Ptr FromMarkdown(String markdown)
 	{
-		return CQt.QTextDocumentFragment_FromMarkdown(libqt_string(markdown));
+		return QTextDocumentFragment_Ptr(CQt.QTextDocumentFragment_FromMarkdown(libqt_string(markdown)));
 	}
-	public libqt_string ToMarkdown1(void* features)
+	public void ToMarkdown1(String outStr, void* features)
 	{
-		return CQt.QTextDocumentFragment_ToMarkdown1((.)this.ptr, features);
+		CQt.QTextDocumentFragment_ToMarkdown1((.)this.ptr.Ptr, features);
 	}
-	public QTextDocumentFragment_Ptr* FromHtml2(String html, IQTextDocument resourceProvider)
+	public QTextDocumentFragment_Ptr FromHtml2(String html, IQTextDocument resourceProvider)
 	{
-		return CQt.QTextDocumentFragment_FromHtml2(libqt_string(html), (.)resourceProvider?.ObjectPtr);
+		return QTextDocumentFragment_Ptr(CQt.QTextDocumentFragment_FromHtml2(libqt_string(html), (.)resourceProvider?.ObjectPtr));
 	}
-	public QTextDocumentFragment_Ptr* FromMarkdown2(String markdown, void* features)
+	public QTextDocumentFragment_Ptr FromMarkdown2(String markdown, void* features)
 	{
-		return CQt.QTextDocumentFragment_FromMarkdown2(libqt_string(markdown), features);
+		return QTextDocumentFragment_Ptr(CQt.QTextDocumentFragment_FromMarkdown2(libqt_string(markdown), features));
 	}
 }
 interface IQTextDocumentFragment : IQtObjectInterface

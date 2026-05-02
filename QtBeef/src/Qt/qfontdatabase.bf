@@ -7,19 +7,24 @@ namespace Qt6;
 // QFontDatabase
 // --------------------------------------------------------------
 [CRepr]
-struct QFontDatabase_Ptr: void
+struct QFontDatabase_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QFontDatabase_new")]
-	public static extern QFontDatabase_Ptr* QFontDatabase_new(QFontDatabase_Ptr* other);
+	public static extern QFontDatabase_Ptr QFontDatabase_new(void** other);
 	[LinkName("QFontDatabase_new2")]
-	public static extern QFontDatabase_Ptr* QFontDatabase_new2(QFontDatabase_Ptr* other);
+	public static extern QFontDatabase_Ptr QFontDatabase_new2(void** other);
 	[LinkName("QFontDatabase_new3")]
-	public static extern QFontDatabase_Ptr* QFontDatabase_new3();
+	public static extern QFontDatabase_Ptr QFontDatabase_new3();
 	[LinkName("QFontDatabase_Delete")]
-	public static extern void QFontDatabase_Delete(QFontDatabase_Ptr* self);
+	public static extern void QFontDatabase_Delete(QFontDatabase_Ptr self);
 	[LinkName("QFontDatabase_StandardSizes")]
 	public static extern void* QFontDatabase_StandardSizes();
 	[LinkName("QFontDatabase_WritingSystems")]
@@ -35,11 +40,11 @@ extension CQt
 	[LinkName("QFontDatabase_SmoothSizes")]
 	public static extern void* QFontDatabase_SmoothSizes(libqt_string family, libqt_string style);
 	[LinkName("QFontDatabase_StyleString")]
-	public static extern libqt_string QFontDatabase_StyleString(QFont_Ptr* font);
+	public static extern libqt_string QFontDatabase_StyleString(void** font);
 	[LinkName("QFontDatabase_StyleString2")]
-	public static extern libqt_string QFontDatabase_StyleString2(QFontInfo_Ptr* fontInfo);
+	public static extern libqt_string QFontDatabase_StyleString2(void** fontInfo);
 	[LinkName("QFontDatabase_Font")]
-	public static extern QFont_Ptr* QFontDatabase_Font(libqt_string family, libqt_string style, c_int pointSize);
+	public static extern void* QFontDatabase_Font(libqt_string family, libqt_string style, c_int pointSize);
 	[LinkName("QFontDatabase_IsBitmapScalable")]
 	public static extern bool QFontDatabase_IsBitmapScalable(libqt_string family);
 	[LinkName("QFontDatabase_IsSmoothlyScalable")]
@@ -73,7 +78,7 @@ extension CQt
 	[LinkName("QFontDatabase_RemoveAllApplicationFonts")]
 	public static extern bool QFontDatabase_RemoveAllApplicationFonts();
 	[LinkName("QFontDatabase_SystemFont")]
-	public static extern QFont_Ptr* QFontDatabase_SystemFont(QFontDatabase_SystemFont type);
+	public static extern void* QFontDatabase_SystemFont(QFontDatabase_SystemFont type);
 	[LinkName("QFontDatabase_Families1")]
 	public static extern void* QFontDatabase_Families1(QFontDatabase_WritingSystem writingSystem);
 	[LinkName("QFontDatabase_PointSizes2")]
@@ -89,8 +94,12 @@ extension CQt
 }
 class QFontDatabase : IQFontDatabase
 {
-	private QFontDatabase_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QFontDatabase_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QFontDatabase_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQFontDatabase other)
 	{
 		this.ptr = CQt.QFontDatabase_new((.)other?.ObjectPtr);
@@ -131,17 +140,17 @@ class QFontDatabase : IQFontDatabase
 	{
 		return CQt.QFontDatabase_SmoothSizes(libqt_string(family), libqt_string(style));
 	}
-	public libqt_string StyleString(IQFont font)
+	public void StyleString(String outStr, IQFont font)
 	{
-		return CQt.QFontDatabase_StyleString((.)font?.ObjectPtr);
+		CQt.QFontDatabase_StyleString((.)font?.ObjectPtr);
 	}
-	public libqt_string StyleString2(IQFontInfo fontInfo)
+	public void StyleString2(String outStr, IQFontInfo fontInfo)
 	{
-		return CQt.QFontDatabase_StyleString2((.)fontInfo?.ObjectPtr);
+		CQt.QFontDatabase_StyleString2((.)fontInfo?.ObjectPtr);
 	}
-	public QFont_Ptr* Font(String family, String style, c_int pointSize)
+	public QFont_Ptr Font(String family, String style, c_int pointSize)
 	{
-		return CQt.QFontDatabase_Font(libqt_string(family), libqt_string(style), pointSize);
+		return QFont_Ptr(CQt.QFontDatabase_Font(libqt_string(family), libqt_string(style), pointSize));
 	}
 	public bool IsBitmapScalable(String family)
 	{
@@ -179,13 +188,13 @@ class QFontDatabase : IQFontDatabase
 	{
 		return CQt.QFontDatabase_IsPrivateFamily(libqt_string(family));
 	}
-	public libqt_string WritingSystemName(QFontDatabase_WritingSystem writingSystem)
+	public void WritingSystemName(String outStr, QFontDatabase_WritingSystem writingSystem)
 	{
-		return CQt.QFontDatabase_WritingSystemName(writingSystem);
+		CQt.QFontDatabase_WritingSystemName(writingSystem);
 	}
-	public libqt_string WritingSystemSample(QFontDatabase_WritingSystem writingSystem)
+	public void WritingSystemSample(String outStr, QFontDatabase_WritingSystem writingSystem)
 	{
-		return CQt.QFontDatabase_WritingSystemSample(writingSystem);
+		CQt.QFontDatabase_WritingSystemSample(writingSystem);
 	}
 	public c_int AddApplicationFont(String fileName)
 	{
@@ -207,9 +216,9 @@ class QFontDatabase : IQFontDatabase
 	{
 		return CQt.QFontDatabase_RemoveAllApplicationFonts();
 	}
-	public QFont_Ptr* SystemFont(QFontDatabase_SystemFont type)
+	public QFont_Ptr SystemFont(QFontDatabase_SystemFont type)
 	{
-		return CQt.QFontDatabase_SystemFont(type);
+		return QFont_Ptr(CQt.QFontDatabase_SystemFont(type));
 	}
 	public void* Families1(QFontDatabase_WritingSystem writingSystem)
 	{

@@ -19,6 +19,8 @@ class Program
 				m_menubar = new QMenuBar(this);
 
 				{
+					let file = scope QMenu(m_menubar.AddMenu2("File"));
+					file.AddMenu2("Quit");
 				}
 
 				m_menubar.AddMenu2("Edit");
@@ -28,10 +30,7 @@ class Program
 				m_menubar.AddMenu2("Test");
 				m_menubar.AddMenu2("Window");
 
-				// Help
-				{
-					// QMenuPtr(m_menubar.AddMenuWithTitle("Help"));
-				}
+				m_menubar.AddMenu2("Help");
 
 				SetMenuBar(m_menubar);
 			}

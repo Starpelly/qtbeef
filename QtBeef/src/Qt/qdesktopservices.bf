@@ -7,28 +7,37 @@ namespace Qt6;
 // QDesktopServices
 // --------------------------------------------------------------
 [CRepr]
-struct QDesktopServices_Ptr: void
+struct QDesktopServices_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QDesktopServices_new")]
-	public static extern QDesktopServices_Ptr* QDesktopServices_new(QDesktopServices_Ptr* other);
+	public static extern QDesktopServices_Ptr QDesktopServices_new(void** other);
 	[LinkName("QDesktopServices_new2")]
-	public static extern QDesktopServices_Ptr* QDesktopServices_new2(QDesktopServices_Ptr* other);
+	public static extern QDesktopServices_Ptr QDesktopServices_new2(void** other);
 	[LinkName("QDesktopServices_Delete")]
-	public static extern void QDesktopServices_Delete(QDesktopServices_Ptr* self);
+	public static extern void QDesktopServices_Delete(QDesktopServices_Ptr self);
 	[LinkName("QDesktopServices_OpenUrl")]
-	public static extern bool QDesktopServices_OpenUrl(QUrl_Ptr* url);
+	public static extern bool QDesktopServices_OpenUrl(void** url);
 	[LinkName("QDesktopServices_SetUrlHandler")]
-	public static extern void QDesktopServices_SetUrlHandler(libqt_string scheme, QObject_Ptr** receiver, c_char* method);
+	public static extern void QDesktopServices_SetUrlHandler(libqt_string scheme, void** receiver, c_char* method);
 	[LinkName("QDesktopServices_UnsetUrlHandler")]
 	public static extern void QDesktopServices_UnsetUrlHandler(libqt_string scheme);
 }
 class QDesktopServices : IQDesktopServices
 {
-	private QDesktopServices_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QDesktopServices_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QDesktopServices_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQDesktopServices other)
 	{
 		this.ptr = CQt.QDesktopServices_new((.)other?.ObjectPtr);

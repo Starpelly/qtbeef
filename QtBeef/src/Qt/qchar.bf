@@ -7,28 +7,37 @@ namespace Qt6;
 // QLatin1Char
 // --------------------------------------------------------------
 [CRepr]
-struct QLatin1Char_Ptr: void
+struct QLatin1Char_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QLatin1Char_new")]
-	public static extern QLatin1Char_Ptr* QLatin1Char_new(QLatin1Char_Ptr* other);
+	public static extern QLatin1Char_Ptr QLatin1Char_new(void** other);
 	[LinkName("QLatin1Char_new2")]
-	public static extern QLatin1Char_Ptr* QLatin1Char_new2(QLatin1Char_Ptr* other);
+	public static extern QLatin1Char_Ptr QLatin1Char_new2(void** other);
 	[LinkName("QLatin1Char_new3")]
-	public static extern QLatin1Char_Ptr* QLatin1Char_new3(c_char c);
+	public static extern QLatin1Char_Ptr QLatin1Char_new3(c_char c);
 	[LinkName("QLatin1Char_new4")]
-	public static extern QLatin1Char_Ptr* QLatin1Char_new4(QLatin1Char_Ptr* param1);
+	public static extern QLatin1Char_Ptr QLatin1Char_new4(void** param1);
 	[LinkName("QLatin1Char_Delete")]
-	public static extern void QLatin1Char_Delete(QLatin1Char_Ptr* self);
+	public static extern void QLatin1Char_Delete(QLatin1Char_Ptr self);
 	[LinkName("QLatin1Char_ToLatin1")]
-	public static extern c_char QLatin1Char_ToLatin1(QLatin1Char_Ptr* self);
+	public static extern c_char QLatin1Char_ToLatin1(void* self);
 }
 class QLatin1Char : IQLatin1Char
 {
-	private QLatin1Char_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QLatin1Char_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QLatin1Char_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQLatin1Char other)
 	{
 		this.ptr = CQt.QLatin1Char_new((.)other?.ObjectPtr);
@@ -43,7 +52,7 @@ class QLatin1Char : IQLatin1Char
 	}
 	public c_char ToLatin1()
 	{
-		return CQt.QLatin1Char_ToLatin1((.)this.ptr);
+		return CQt.QLatin1Char_ToLatin1((.)this.ptr.Ptr);
 	}
 }
 interface IQLatin1Char : IQtObjectInterface
@@ -53,122 +62,131 @@ interface IQLatin1Char : IQtObjectInterface
 // QChar
 // --------------------------------------------------------------
 [CRepr]
-struct QChar_Ptr: void
+struct QChar_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QChar_new")]
-	public static extern QChar_Ptr* QChar_new(QChar_Ptr* other);
+	public static extern QChar_Ptr QChar_new(void** other);
 	[LinkName("QChar_new2")]
-	public static extern QChar_Ptr* QChar_new2(QChar_Ptr* other);
+	public static extern QChar_Ptr QChar_new2(void** other);
 	[LinkName("QChar_new3")]
-	public static extern QChar_Ptr* QChar_new3();
+	public static extern QChar_Ptr QChar_new3();
 	[LinkName("QChar_new4")]
-	public static extern QChar_Ptr* QChar_new4(c_ushort rc);
+	public static extern QChar_Ptr QChar_new4(c_ushort rc);
 	[LinkName("QChar_new5")]
-	public static extern QChar_Ptr* QChar_new5(c_uchar c, c_uchar r);
+	public static extern QChar_Ptr QChar_new5(c_uchar c, c_uchar r);
 	[LinkName("QChar_new6")]
-	public static extern QChar_Ptr* QChar_new6(c_ushort rc);
+	public static extern QChar_Ptr QChar_new6(c_ushort rc);
 	[LinkName("QChar_new7")]
-	public static extern QChar_Ptr* QChar_new7(c_uint rc);
+	public static extern QChar_Ptr QChar_new7(c_uint rc);
 	[LinkName("QChar_new8")]
-	public static extern QChar_Ptr* QChar_new8(c_int rc);
+	public static extern QChar_Ptr QChar_new8(c_int rc);
 	[LinkName("QChar_new9")]
-	public static extern QChar_Ptr* QChar_new9(QChar_SpecialCharacter s);
+	public static extern QChar_Ptr QChar_new9(QChar_SpecialCharacter s);
 	[LinkName("QChar_new10")]
-	public static extern QChar_Ptr* QChar_new10(QLatin1Char_Ptr* ch);
+	public static extern QChar_Ptr QChar_new10(void* ch);
 	[LinkName("QChar_new11")]
-	public static extern QChar_Ptr* QChar_new11(c_char c);
+	public static extern QChar_Ptr QChar_new11(c_char c);
 	[LinkName("QChar_new12")]
-	public static extern QChar_Ptr* QChar_new12(c_uchar c);
+	public static extern QChar_Ptr QChar_new12(c_uchar c);
 	[LinkName("QChar_new13")]
-	public static extern QChar_Ptr* QChar_new13(QChar_Ptr* param1);
+	public static extern QChar_Ptr QChar_new13(void** param1);
 	[LinkName("QChar_Delete")]
-	public static extern void QChar_Delete(QChar_Ptr* self);
+	public static extern void QChar_Delete(QChar_Ptr self);
 	[LinkName("QChar_Category")]
-	public static extern QChar_Category QChar_Category(QChar_Ptr* self);
+	public static extern QChar_Category QChar_Category(void* self);
 	[LinkName("QChar_Direction")]
-	public static extern QChar_Direction QChar_Direction(QChar_Ptr* self);
+	public static extern QChar_Direction QChar_Direction(void* self);
 	[LinkName("QChar_JoiningType")]
-	public static extern QChar_JoiningType QChar_JoiningType(QChar_Ptr* self);
+	public static extern QChar_JoiningType QChar_JoiningType(void* self);
 	[LinkName("QChar_CombiningClass")]
-	public static extern c_uchar QChar_CombiningClass(QChar_Ptr* self);
+	public static extern c_uchar QChar_CombiningClass(void* self);
 	[LinkName("QChar_MirroredChar")]
-	public static extern QChar_Ptr* QChar_MirroredChar(QChar_Ptr* self);
+	public static extern void* QChar_MirroredChar(void* self);
 	[LinkName("QChar_HasMirrored")]
-	public static extern bool QChar_HasMirrored(QChar_Ptr* self);
+	public static extern bool QChar_HasMirrored(void* self);
 	[LinkName("QChar_Decomposition")]
-	public static extern libqt_string QChar_Decomposition(QChar_Ptr* self);
+	public static extern libqt_string QChar_Decomposition(void* self);
 	[LinkName("QChar_DecompositionTag")]
-	public static extern QChar_Decomposition QChar_DecompositionTag(QChar_Ptr* self);
+	public static extern QChar_Decomposition QChar_DecompositionTag(void* self);
 	[LinkName("QChar_DigitValue")]
-	public static extern c_int QChar_DigitValue(QChar_Ptr* self);
+	public static extern c_int QChar_DigitValue(void* self);
 	[LinkName("QChar_ToLower")]
-	public static extern QChar_Ptr* QChar_ToLower(QChar_Ptr* self);
+	public static extern void* QChar_ToLower(void* self);
 	[LinkName("QChar_ToUpper")]
-	public static extern QChar_Ptr* QChar_ToUpper(QChar_Ptr* self);
+	public static extern void* QChar_ToUpper(void* self);
 	[LinkName("QChar_ToTitleCase")]
-	public static extern QChar_Ptr* QChar_ToTitleCase(QChar_Ptr* self);
+	public static extern void* QChar_ToTitleCase(void* self);
 	[LinkName("QChar_ToCaseFolded")]
-	public static extern QChar_Ptr* QChar_ToCaseFolded(QChar_Ptr* self);
+	public static extern void* QChar_ToCaseFolded(void* self);
 	[LinkName("QChar_Script")]
-	public static extern QChar_Script QChar_Script(QChar_Ptr* self);
+	public static extern QChar_Script QChar_Script(void* self);
 	[LinkName("QChar_UnicodeVersion")]
-	public static extern QChar_UnicodeVersion QChar_UnicodeVersion(QChar_Ptr* self);
+	public static extern QChar_UnicodeVersion QChar_UnicodeVersion(void* self);
 	[LinkName("QChar_ToLatin1")]
-	public static extern c_char QChar_ToLatin1(QChar_Ptr* self);
+	public static extern c_char QChar_ToLatin1(void* self);
 	[LinkName("QChar_FromLatin1")]
-	public static extern QChar_Ptr* QChar_FromLatin1(c_char c);
+	public static extern void* QChar_FromLatin1(c_char c);
 	[LinkName("QChar_IsNull")]
-	public static extern bool QChar_IsNull(QChar_Ptr* self);
+	public static extern bool QChar_IsNull(void* self);
 	[LinkName("QChar_IsPrint")]
-	public static extern bool QChar_IsPrint(QChar_Ptr* self);
+	public static extern bool QChar_IsPrint(void* self);
 	[LinkName("QChar_IsSpace")]
-	public static extern bool QChar_IsSpace(QChar_Ptr* self);
+	public static extern bool QChar_IsSpace(void* self);
 	[LinkName("QChar_IsMark")]
-	public static extern bool QChar_IsMark(QChar_Ptr* self);
+	public static extern bool QChar_IsMark(void* self);
 	[LinkName("QChar_IsPunct")]
-	public static extern bool QChar_IsPunct(QChar_Ptr* self);
+	public static extern bool QChar_IsPunct(void* self);
 	[LinkName("QChar_IsSymbol")]
-	public static extern bool QChar_IsSymbol(QChar_Ptr* self);
+	public static extern bool QChar_IsSymbol(void* self);
 	[LinkName("QChar_IsLetter")]
-	public static extern bool QChar_IsLetter(QChar_Ptr* self);
+	public static extern bool QChar_IsLetter(void* self);
 	[LinkName("QChar_IsNumber")]
-	public static extern bool QChar_IsNumber(QChar_Ptr* self);
+	public static extern bool QChar_IsNumber(void* self);
 	[LinkName("QChar_IsLetterOrNumber")]
-	public static extern bool QChar_IsLetterOrNumber(QChar_Ptr* self);
+	public static extern bool QChar_IsLetterOrNumber(void* self);
 	[LinkName("QChar_IsDigit")]
-	public static extern bool QChar_IsDigit(QChar_Ptr* self);
+	public static extern bool QChar_IsDigit(void* self);
 	[LinkName("QChar_IsLower")]
-	public static extern bool QChar_IsLower(QChar_Ptr* self);
+	public static extern bool QChar_IsLower(void* self);
 	[LinkName("QChar_IsUpper")]
-	public static extern bool QChar_IsUpper(QChar_Ptr* self);
+	public static extern bool QChar_IsUpper(void* self);
 	[LinkName("QChar_IsTitleCase")]
-	public static extern bool QChar_IsTitleCase(QChar_Ptr* self);
+	public static extern bool QChar_IsTitleCase(void* self);
 	[LinkName("QChar_IsNonCharacter")]
-	public static extern bool QChar_IsNonCharacter(QChar_Ptr* self);
+	public static extern bool QChar_IsNonCharacter(void* self);
 	[LinkName("QChar_IsHighSurrogate")]
-	public static extern bool QChar_IsHighSurrogate(QChar_Ptr* self);
+	public static extern bool QChar_IsHighSurrogate(void* self);
 	[LinkName("QChar_IsLowSurrogate")]
-	public static extern bool QChar_IsLowSurrogate(QChar_Ptr* self);
+	public static extern bool QChar_IsLowSurrogate(void* self);
 	[LinkName("QChar_IsSurrogate")]
-	public static extern bool QChar_IsSurrogate(QChar_Ptr* self);
+	public static extern bool QChar_IsSurrogate(void* self);
 	[LinkName("QChar_Cell")]
-	public static extern c_uchar QChar_Cell(QChar_Ptr* self);
+	public static extern c_uchar QChar_Cell(void* self);
 	[LinkName("QChar_Row")]
-	public static extern c_uchar QChar_Row(QChar_Ptr* self);
+	public static extern c_uchar QChar_Row(void* self);
 	[LinkName("QChar_SetCell")]
-	public static extern void QChar_SetCell(QChar_Ptr* self, c_uchar acell);
+	public static extern void QChar_SetCell(void* self, c_uchar acell);
 	[LinkName("QChar_SetRow")]
-	public static extern void QChar_SetRow(QChar_Ptr* self, c_uchar arow);
+	public static extern void QChar_SetRow(void* self, c_uchar arow);
 	[LinkName("QChar_CurrentUnicodeVersion")]
 	public static extern QChar_UnicodeVersion QChar_CurrentUnicodeVersion();
 }
 class QChar : IQChar
 {
-	private QChar_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QChar_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QChar_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQChar other)
 	{
 		this.ptr = CQt.QChar_new((.)other?.ObjectPtr);
@@ -215,155 +233,155 @@ class QChar : IQChar
 	}
 	public QChar_Category Category()
 	{
-		return CQt.QChar_Category((.)this.ptr);
+		return CQt.QChar_Category((.)this.ptr.Ptr);
 	}
 	public QChar_Direction Direction()
 	{
-		return CQt.QChar_Direction((.)this.ptr);
+		return CQt.QChar_Direction((.)this.ptr.Ptr);
 	}
 	public QChar_JoiningType JoiningType()
 	{
-		return CQt.QChar_JoiningType((.)this.ptr);
+		return CQt.QChar_JoiningType((.)this.ptr.Ptr);
 	}
 	public c_uchar CombiningClass()
 	{
-		return CQt.QChar_CombiningClass((.)this.ptr);
+		return CQt.QChar_CombiningClass((.)this.ptr.Ptr);
 	}
-	public QChar_Ptr* MirroredChar()
+	public QChar_Ptr MirroredChar()
 	{
-		return CQt.QChar_MirroredChar((.)this.ptr);
+		return QChar_Ptr(CQt.QChar_MirroredChar((.)this.ptr.Ptr));
 	}
 	public bool HasMirrored()
 	{
-		return CQt.QChar_HasMirrored((.)this.ptr);
+		return CQt.QChar_HasMirrored((.)this.ptr.Ptr);
 	}
-	public libqt_string Decomposition()
+	public void Decomposition(String outStr)
 	{
-		return CQt.QChar_Decomposition((.)this.ptr);
+		CQt.QChar_Decomposition((.)this.ptr.Ptr);
 	}
 	public QChar_Decomposition DecompositionTag()
 	{
-		return CQt.QChar_DecompositionTag((.)this.ptr);
+		return CQt.QChar_DecompositionTag((.)this.ptr.Ptr);
 	}
 	public c_int DigitValue()
 	{
-		return CQt.QChar_DigitValue((.)this.ptr);
+		return CQt.QChar_DigitValue((.)this.ptr.Ptr);
 	}
-	public QChar_Ptr* ToLower()
+	public QChar_Ptr ToLower()
 	{
-		return CQt.QChar_ToLower((.)this.ptr);
+		return QChar_Ptr(CQt.QChar_ToLower((.)this.ptr.Ptr));
 	}
-	public QChar_Ptr* ToUpper()
+	public QChar_Ptr ToUpper()
 	{
-		return CQt.QChar_ToUpper((.)this.ptr);
+		return QChar_Ptr(CQt.QChar_ToUpper((.)this.ptr.Ptr));
 	}
-	public QChar_Ptr* ToTitleCase()
+	public QChar_Ptr ToTitleCase()
 	{
-		return CQt.QChar_ToTitleCase((.)this.ptr);
+		return QChar_Ptr(CQt.QChar_ToTitleCase((.)this.ptr.Ptr));
 	}
-	public QChar_Ptr* ToCaseFolded()
+	public QChar_Ptr ToCaseFolded()
 	{
-		return CQt.QChar_ToCaseFolded((.)this.ptr);
+		return QChar_Ptr(CQt.QChar_ToCaseFolded((.)this.ptr.Ptr));
 	}
 	public QChar_Script Script()
 	{
-		return CQt.QChar_Script((.)this.ptr);
+		return CQt.QChar_Script((.)this.ptr.Ptr);
 	}
 	public QChar_UnicodeVersion UnicodeVersion()
 	{
-		return CQt.QChar_UnicodeVersion((.)this.ptr);
+		return CQt.QChar_UnicodeVersion((.)this.ptr.Ptr);
 	}
 	public c_char ToLatin1()
 	{
-		return CQt.QChar_ToLatin1((.)this.ptr);
+		return CQt.QChar_ToLatin1((.)this.ptr.Ptr);
 	}
-	public QChar_Ptr* FromLatin1(c_char c)
+	public QChar_Ptr FromLatin1(c_char c)
 	{
-		return CQt.QChar_FromLatin1(c);
+		return QChar_Ptr(CQt.QChar_FromLatin1(c));
 	}
 	public bool IsNull()
 	{
-		return CQt.QChar_IsNull((.)this.ptr);
+		return CQt.QChar_IsNull((.)this.ptr.Ptr);
 	}
 	public bool IsPrint()
 	{
-		return CQt.QChar_IsPrint((.)this.ptr);
+		return CQt.QChar_IsPrint((.)this.ptr.Ptr);
 	}
 	public bool IsSpace()
 	{
-		return CQt.QChar_IsSpace((.)this.ptr);
+		return CQt.QChar_IsSpace((.)this.ptr.Ptr);
 	}
 	public bool IsMark()
 	{
-		return CQt.QChar_IsMark((.)this.ptr);
+		return CQt.QChar_IsMark((.)this.ptr.Ptr);
 	}
 	public bool IsPunct()
 	{
-		return CQt.QChar_IsPunct((.)this.ptr);
+		return CQt.QChar_IsPunct((.)this.ptr.Ptr);
 	}
 	public bool IsSymbol()
 	{
-		return CQt.QChar_IsSymbol((.)this.ptr);
+		return CQt.QChar_IsSymbol((.)this.ptr.Ptr);
 	}
 	public bool IsLetter()
 	{
-		return CQt.QChar_IsLetter((.)this.ptr);
+		return CQt.QChar_IsLetter((.)this.ptr.Ptr);
 	}
 	public bool IsNumber()
 	{
-		return CQt.QChar_IsNumber((.)this.ptr);
+		return CQt.QChar_IsNumber((.)this.ptr.Ptr);
 	}
 	public bool IsLetterOrNumber()
 	{
-		return CQt.QChar_IsLetterOrNumber((.)this.ptr);
+		return CQt.QChar_IsLetterOrNumber((.)this.ptr.Ptr);
 	}
 	public bool IsDigit()
 	{
-		return CQt.QChar_IsDigit((.)this.ptr);
+		return CQt.QChar_IsDigit((.)this.ptr.Ptr);
 	}
 	public bool IsLower()
 	{
-		return CQt.QChar_IsLower((.)this.ptr);
+		return CQt.QChar_IsLower((.)this.ptr.Ptr);
 	}
 	public bool IsUpper()
 	{
-		return CQt.QChar_IsUpper((.)this.ptr);
+		return CQt.QChar_IsUpper((.)this.ptr.Ptr);
 	}
 	public bool IsTitleCase()
 	{
-		return CQt.QChar_IsTitleCase((.)this.ptr);
+		return CQt.QChar_IsTitleCase((.)this.ptr.Ptr);
 	}
 	public bool IsNonCharacter()
 	{
-		return CQt.QChar_IsNonCharacter((.)this.ptr);
+		return CQt.QChar_IsNonCharacter((.)this.ptr.Ptr);
 	}
 	public bool IsHighSurrogate()
 	{
-		return CQt.QChar_IsHighSurrogate((.)this.ptr);
+		return CQt.QChar_IsHighSurrogate((.)this.ptr.Ptr);
 	}
 	public bool IsLowSurrogate()
 	{
-		return CQt.QChar_IsLowSurrogate((.)this.ptr);
+		return CQt.QChar_IsLowSurrogate((.)this.ptr.Ptr);
 	}
 	public bool IsSurrogate()
 	{
-		return CQt.QChar_IsSurrogate((.)this.ptr);
+		return CQt.QChar_IsSurrogate((.)this.ptr.Ptr);
 	}
 	public c_uchar Cell()
 	{
-		return CQt.QChar_Cell((.)this.ptr);
+		return CQt.QChar_Cell((.)this.ptr.Ptr);
 	}
 	public c_uchar Row()
 	{
-		return CQt.QChar_Row((.)this.ptr);
+		return CQt.QChar_Row((.)this.ptr.Ptr);
 	}
 	public void SetCell(c_uchar acell)
 	{
-		CQt.QChar_SetCell((.)this.ptr, acell);
+		CQt.QChar_SetCell((.)this.ptr.Ptr, acell);
 	}
 	public void SetRow(c_uchar arow)
 	{
-		CQt.QChar_SetRow((.)this.ptr, arow);
+		CQt.QChar_SetRow((.)this.ptr.Ptr, arow);
 	}
 	public QChar_UnicodeVersion CurrentUnicodeVersion()
 	{

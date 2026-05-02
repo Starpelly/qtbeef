@@ -7,246 +7,255 @@ namespace Qt6;
 // QVariant
 // --------------------------------------------------------------
 [CRepr]
-struct QVariant_Ptr: void
+struct QVariant_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QVariant_new")]
-	public static extern QVariant_Ptr* QVariant_new();
+	public static extern QVariant_Ptr QVariant_new();
 	[LinkName("QVariant_new2")]
-	public static extern QVariant_Ptr* QVariant_new2(QMetaType_Ptr* type);
+	public static extern QVariant_Ptr QVariant_new2(void* type);
 	[LinkName("QVariant_new3")]
-	public static extern QVariant_Ptr* QVariant_new3(QVariant_Ptr* other);
+	public static extern QVariant_Ptr QVariant_new3(void** other);
 	[LinkName("QVariant_new4")]
-	public static extern QVariant_Ptr* QVariant_new4(c_int i);
+	public static extern QVariant_Ptr QVariant_new4(c_int i);
 	[LinkName("QVariant_new5")]
-	public static extern QVariant_Ptr* QVariant_new5(c_uint ui);
+	public static extern QVariant_Ptr QVariant_new5(c_uint ui);
 	[LinkName("QVariant_new6")]
-	public static extern QVariant_Ptr* QVariant_new6(c_longlong ll);
+	public static extern QVariant_Ptr QVariant_new6(c_longlong ll);
 	[LinkName("QVariant_new7")]
-	public static extern QVariant_Ptr* QVariant_new7(c_ulonglong ull);
+	public static extern QVariant_Ptr QVariant_new7(c_ulonglong ull);
 	[LinkName("QVariant_new8")]
-	public static extern QVariant_Ptr* QVariant_new8(bool b);
+	public static extern QVariant_Ptr QVariant_new8(bool b);
 	[LinkName("QVariant_new9")]
-	public static extern QVariant_Ptr* QVariant_new9(double d);
+	public static extern QVariant_Ptr QVariant_new9(double d);
 	[LinkName("QVariant_new10")]
-	public static extern QVariant_Ptr* QVariant_new10(float f);
+	public static extern QVariant_Ptr QVariant_new10(float f);
 	[LinkName("QVariant_new11")]
-	public static extern QVariant_Ptr* QVariant_new11(c_char* str);
+	public static extern QVariant_Ptr QVariant_new11(c_char* str);
 	[LinkName("QVariant_new12")]
-	public static extern QVariant_Ptr* QVariant_new12(void** bytearray);
+	public static extern QVariant_Ptr QVariant_new12(void** bytearray);
 	[LinkName("QVariant_new13")]
-	public static extern QVariant_Ptr* QVariant_new13(QBitArray_Ptr* bitarray);
+	public static extern QVariant_Ptr QVariant_new13(void** bitarray);
 	[LinkName("QVariant_new14")]
-	public static extern QVariant_Ptr* QVariant_new14(libqt_string stringVal);
+	public static extern QVariant_Ptr QVariant_new14(libqt_string stringVal);
 	[LinkName("QVariant_new15")]
-	public static extern QVariant_Ptr* QVariant_new15(void** stringlist);
+	public static extern QVariant_Ptr QVariant_new15(void** stringlist);
 	[LinkName("QVariant_new16")]
-	public static extern QVariant_Ptr* QVariant_new16(QChar_Ptr* qchar);
+	public static extern QVariant_Ptr QVariant_new16(void* qchar);
 	[LinkName("QVariant_new17")]
-	public static extern QVariant_Ptr* QVariant_new17(QDate_Ptr* date);
+	public static extern QVariant_Ptr QVariant_new17(void* date);
 	[LinkName("QVariant_new18")]
-	public static extern QVariant_Ptr* QVariant_new18(QTime_Ptr* time);
+	public static extern QVariant_Ptr QVariant_new18(void* time);
 	[LinkName("QVariant_new19")]
-	public static extern QVariant_Ptr* QVariant_new19(QDateTime_Ptr* datetime);
+	public static extern QVariant_Ptr QVariant_new19(void** datetime);
 	[LinkName("QVariant_new20")]
-	public static extern QVariant_Ptr* QVariant_new20(void** list);
+	public static extern QVariant_Ptr QVariant_new20(void** list);
 	[LinkName("QVariant_new21")]
-	public static extern QVariant_Ptr* QVariant_new21(void** mapVal);
+	public static extern QVariant_Ptr QVariant_new21(void** mapVal);
 	[LinkName("QVariant_new22")]
-	public static extern QVariant_Ptr* QVariant_new22(void** hash);
+	public static extern QVariant_Ptr QVariant_new22(void** hash);
 	[LinkName("QVariant_new23")]
-	public static extern QVariant_Ptr* QVariant_new23(QSize_Ptr* size);
+	public static extern QVariant_Ptr QVariant_new23(void** size);
 	[LinkName("QVariant_new24")]
-	public static extern QVariant_Ptr* QVariant_new24(QSizeF_Ptr* size);
+	public static extern QVariant_Ptr QVariant_new24(void** size);
 	[LinkName("QVariant_new25")]
-	public static extern QVariant_Ptr* QVariant_new25(QPoint_Ptr* pt);
+	public static extern QVariant_Ptr QVariant_new25(void** pt);
 	[LinkName("QVariant_new26")]
-	public static extern QVariant_Ptr* QVariant_new26(QPointF_Ptr* pt);
+	public static extern QVariant_Ptr QVariant_new26(void** pt);
 	[LinkName("QVariant_new27")]
-	public static extern QVariant_Ptr* QVariant_new27(QLine_Ptr* line);
+	public static extern QVariant_Ptr QVariant_new27(void** line);
 	[LinkName("QVariant_new28")]
-	public static extern QVariant_Ptr* QVariant_new28(QLineF_Ptr* line);
+	public static extern QVariant_Ptr QVariant_new28(void** line);
 	[LinkName("QVariant_new29")]
-	public static extern QVariant_Ptr* QVariant_new29(QRect_Ptr* rect);
+	public static extern QVariant_Ptr QVariant_new29(void** rect);
 	[LinkName("QVariant_new30")]
-	public static extern QVariant_Ptr* QVariant_new30(QRectF_Ptr* rect);
+	public static extern QVariant_Ptr QVariant_new30(void** rect);
 	[LinkName("QVariant_new31")]
-	public static extern QVariant_Ptr* QVariant_new31(QLocale_Ptr* locale);
+	public static extern QVariant_Ptr QVariant_new31(void** locale);
 	[LinkName("QVariant_new32")]
-	public static extern QVariant_Ptr* QVariant_new32(QRegularExpression_Ptr* re);
+	public static extern QVariant_Ptr QVariant_new32(void** re);
 	[LinkName("QVariant_new33")]
-	public static extern QVariant_Ptr* QVariant_new33(QEasingCurve_Ptr* easing);
+	public static extern QVariant_Ptr QVariant_new33(void** easing);
 	[LinkName("QVariant_new34")]
-	public static extern QVariant_Ptr* QVariant_new34(QUuid_Ptr* uuid);
+	public static extern QVariant_Ptr QVariant_new34(void** uuid);
 	[LinkName("QVariant_new35")]
-	public static extern QVariant_Ptr* QVariant_new35(QUrl_Ptr* url);
+	public static extern QVariant_Ptr QVariant_new35(void** url);
 	[LinkName("QVariant_new36")]
-	public static extern QVariant_Ptr* QVariant_new36(QJsonValue_Ptr* jsonValue);
+	public static extern QVariant_Ptr QVariant_new36(void** jsonValue);
 	[LinkName("QVariant_new37")]
-	public static extern QVariant_Ptr* QVariant_new37(QJsonObject_Ptr* jsonObject);
+	public static extern QVariant_Ptr QVariant_new37(void** jsonObject);
 	[LinkName("QVariant_new38")]
-	public static extern QVariant_Ptr* QVariant_new38(QJsonArray_Ptr* jsonArray);
+	public static extern QVariant_Ptr QVariant_new38(void** jsonArray);
 	[LinkName("QVariant_new39")]
-	public static extern QVariant_Ptr* QVariant_new39(QJsonDocument_Ptr* jsonDocument);
+	public static extern QVariant_Ptr QVariant_new39(void** jsonDocument);
 	[LinkName("QVariant_new40")]
-	public static extern QVariant_Ptr* QVariant_new40(QModelIndex_Ptr* modelIndex);
+	public static extern QVariant_Ptr QVariant_new40(void** modelIndex);
 	[LinkName("QVariant_new41")]
-	public static extern QVariant_Ptr* QVariant_new41(QPersistentModelIndex_Ptr* modelIndex);
+	public static extern QVariant_Ptr QVariant_new41(void** modelIndex);
 	[LinkName("QVariant_new42")]
-	public static extern QVariant_Ptr* QVariant_new42(QVariant_Type type);
+	public static extern QVariant_Ptr QVariant_new42(QVariant_Type type);
 	[LinkName("QVariant_new43")]
-	public static extern QVariant_Ptr* QVariant_new43(QMetaType_Ptr* type, void* copyVal);
+	public static extern QVariant_Ptr QVariant_new43(void* type, void* copyVal);
 	[LinkName("QVariant_Delete")]
-	public static extern void QVariant_Delete(QVariant_Ptr* self);
+	public static extern void QVariant_Delete(QVariant_Ptr self);
 	[LinkName("QVariant_OperatorAssign")]
-	public static extern void QVariant_OperatorAssign(QVariant_Ptr* self, QVariant_Ptr* other);
+	public static extern void QVariant_OperatorAssign(void* self, void** other);
 	[LinkName("QVariant_Swap")]
-	public static extern void QVariant_Swap(QVariant_Ptr* self, QVariant_Ptr* other);
+	public static extern void QVariant_Swap(void* self, void** other);
 	[LinkName("QVariant_UserType")]
-	public static extern c_int QVariant_UserType(QVariant_Ptr* self);
+	public static extern c_int QVariant_UserType(void* self);
 	[LinkName("QVariant_TypeId")]
-	public static extern c_int QVariant_TypeId(QVariant_Ptr* self);
+	public static extern c_int QVariant_TypeId(void* self);
 	[LinkName("QVariant_TypeName")]
-	public static extern c_char* QVariant_TypeName(QVariant_Ptr* self);
+	public static extern c_char* QVariant_TypeName(void* self);
 	[LinkName("QVariant_MetaType")]
-	public static extern QMetaType_Ptr* QVariant_MetaType(QVariant_Ptr* self);
+	public static extern void* QVariant_MetaType(void* self);
 	[LinkName("QVariant_CanConvert")]
-	public static extern bool QVariant_CanConvert(QVariant_Ptr* self, QMetaType_Ptr* targetType);
+	public static extern bool QVariant_CanConvert(void* self, void* targetType);
 	[LinkName("QVariant_Convert")]
-	public static extern bool QVariant_Convert(QVariant_Ptr* self, QMetaType_Ptr* type);
+	public static extern bool QVariant_Convert(void* self, void* type);
 	[LinkName("QVariant_CanView")]
-	public static extern bool QVariant_CanView(QVariant_Ptr* self, QMetaType_Ptr* targetType);
+	public static extern bool QVariant_CanView(void* self, void* targetType);
 	[LinkName("QVariant_CanConvert2")]
-	public static extern bool QVariant_CanConvert2(QVariant_Ptr* self, c_int targetTypeId);
+	public static extern bool QVariant_CanConvert2(void* self, c_int targetTypeId);
 	[LinkName("QVariant_Convert2")]
-	public static extern bool QVariant_Convert2(QVariant_Ptr* self, c_int targetTypeId);
+	public static extern bool QVariant_Convert2(void* self, c_int targetTypeId);
 	[LinkName("QVariant_IsValid")]
-	public static extern bool QVariant_IsValid(QVariant_Ptr* self);
+	public static extern bool QVariant_IsValid(void* self);
 	[LinkName("QVariant_IsNull")]
-	public static extern bool QVariant_IsNull(QVariant_Ptr* self);
+	public static extern bool QVariant_IsNull(void* self);
 	[LinkName("QVariant_Clear")]
-	public static extern void QVariant_Clear(QVariant_Ptr* self);
+	public static extern void QVariant_Clear(void* self);
 	[LinkName("QVariant_Detach")]
-	public static extern void QVariant_Detach(QVariant_Ptr* self);
+	public static extern void QVariant_Detach(void* self);
 	[LinkName("QVariant_IsDetached")]
-	public static extern bool QVariant_IsDetached(QVariant_Ptr* self);
+	public static extern bool QVariant_IsDetached(void* self);
 	[LinkName("QVariant_ToInt")]
-	public static extern c_int QVariant_ToInt(QVariant_Ptr* self);
+	public static extern c_int QVariant_ToInt(void* self);
 	[LinkName("QVariant_ToUInt")]
-	public static extern c_uint QVariant_ToUInt(QVariant_Ptr* self);
+	public static extern c_uint QVariant_ToUInt(void* self);
 	[LinkName("QVariant_ToLongLong")]
-	public static extern c_longlong QVariant_ToLongLong(QVariant_Ptr* self);
+	public static extern c_longlong QVariant_ToLongLong(void* self);
 	[LinkName("QVariant_ToULongLong")]
-	public static extern c_ulonglong QVariant_ToULongLong(QVariant_Ptr* self);
+	public static extern c_ulonglong QVariant_ToULongLong(void* self);
 	[LinkName("QVariant_ToBool")]
-	public static extern bool QVariant_ToBool(QVariant_Ptr* self);
+	public static extern bool QVariant_ToBool(void* self);
 	[LinkName("QVariant_ToDouble")]
-	public static extern double QVariant_ToDouble(QVariant_Ptr* self);
+	public static extern double QVariant_ToDouble(void* self);
 	[LinkName("QVariant_ToFloat")]
-	public static extern float QVariant_ToFloat(QVariant_Ptr* self);
+	public static extern float QVariant_ToFloat(void* self);
 	[LinkName("QVariant_ToReal")]
-	public static extern double QVariant_ToReal(QVariant_Ptr* self);
+	public static extern double QVariant_ToReal(void* self);
 	[LinkName("QVariant_ToByteArray")]
-	public static extern void* QVariant_ToByteArray(QVariant_Ptr* self);
+	public static extern void* QVariant_ToByteArray(void* self);
 	[LinkName("QVariant_ToBitArray")]
-	public static extern QBitArray_Ptr* QVariant_ToBitArray(QVariant_Ptr* self);
+	public static extern void* QVariant_ToBitArray(void* self);
 	[LinkName("QVariant_ToString")]
-	public static extern libqt_string QVariant_ToString(QVariant_Ptr* self);
+	public static extern libqt_string QVariant_ToString(void* self);
 	[LinkName("QVariant_ToStringList")]
-	public static extern void* QVariant_ToStringList(QVariant_Ptr* self);
+	public static extern void* QVariant_ToStringList(void* self);
 	[LinkName("QVariant_ToChar")]
-	public static extern QChar_Ptr* QVariant_ToChar(QVariant_Ptr* self);
+	public static extern void* QVariant_ToChar(void* self);
 	[LinkName("QVariant_ToDate")]
-	public static extern QDate_Ptr* QVariant_ToDate(QVariant_Ptr* self);
+	public static extern void* QVariant_ToDate(void* self);
 	[LinkName("QVariant_ToTime")]
-	public static extern QTime_Ptr* QVariant_ToTime(QVariant_Ptr* self);
+	public static extern void* QVariant_ToTime(void* self);
 	[LinkName("QVariant_ToDateTime")]
-	public static extern QDateTime_Ptr* QVariant_ToDateTime(QVariant_Ptr* self);
+	public static extern void* QVariant_ToDateTime(void* self);
 	[LinkName("QVariant_ToList")]
-	public static extern void* QVariant_ToList(QVariant_Ptr* self);
+	public static extern void* QVariant_ToList(void* self);
 	[LinkName("QVariant_ToMap")]
-	public static extern void* QVariant_ToMap(QVariant_Ptr* self);
+	public static extern void* QVariant_ToMap(void* self);
 	[LinkName("QVariant_ToHash")]
-	public static extern void* QVariant_ToHash(QVariant_Ptr* self);
+	public static extern void* QVariant_ToHash(void* self);
 	[LinkName("QVariant_ToPoint")]
-	public static extern QPoint_Ptr* QVariant_ToPoint(QVariant_Ptr* self);
+	public static extern void* QVariant_ToPoint(void* self);
 	[LinkName("QVariant_ToPointF")]
-	public static extern QPointF_Ptr* QVariant_ToPointF(QVariant_Ptr* self);
+	public static extern void* QVariant_ToPointF(void* self);
 	[LinkName("QVariant_ToRect")]
-	public static extern QRect_Ptr* QVariant_ToRect(QVariant_Ptr* self);
+	public static extern void* QVariant_ToRect(void* self);
 	[LinkName("QVariant_ToSize")]
-	public static extern QSize_Ptr* QVariant_ToSize(QVariant_Ptr* self);
+	public static extern void* QVariant_ToSize(void* self);
 	[LinkName("QVariant_ToSizeF")]
-	public static extern QSizeF_Ptr* QVariant_ToSizeF(QVariant_Ptr* self);
+	public static extern void* QVariant_ToSizeF(void* self);
 	[LinkName("QVariant_ToLine")]
-	public static extern QLine_Ptr* QVariant_ToLine(QVariant_Ptr* self);
+	public static extern void* QVariant_ToLine(void* self);
 	[LinkName("QVariant_ToLineF")]
-	public static extern QLineF_Ptr* QVariant_ToLineF(QVariant_Ptr* self);
+	public static extern void* QVariant_ToLineF(void* self);
 	[LinkName("QVariant_ToRectF")]
-	public static extern QRectF_Ptr* QVariant_ToRectF(QVariant_Ptr* self);
+	public static extern void* QVariant_ToRectF(void* self);
 	[LinkName("QVariant_ToLocale")]
-	public static extern QLocale_Ptr* QVariant_ToLocale(QVariant_Ptr* self);
+	public static extern void* QVariant_ToLocale(void* self);
 	[LinkName("QVariant_ToRegularExpression")]
-	public static extern QRegularExpression_Ptr* QVariant_ToRegularExpression(QVariant_Ptr* self);
+	public static extern void* QVariant_ToRegularExpression(void* self);
 	[LinkName("QVariant_ToEasingCurve")]
-	public static extern QEasingCurve_Ptr* QVariant_ToEasingCurve(QVariant_Ptr* self);
+	public static extern void* QVariant_ToEasingCurve(void* self);
 	[LinkName("QVariant_ToUuid")]
-	public static extern QUuid_Ptr* QVariant_ToUuid(QVariant_Ptr* self);
+	public static extern void* QVariant_ToUuid(void* self);
 	[LinkName("QVariant_ToUrl")]
-	public static extern QUrl_Ptr* QVariant_ToUrl(QVariant_Ptr* self);
+	public static extern void* QVariant_ToUrl(void* self);
 	[LinkName("QVariant_ToJsonValue")]
-	public static extern QJsonValue_Ptr* QVariant_ToJsonValue(QVariant_Ptr* self);
+	public static extern void* QVariant_ToJsonValue(void* self);
 	[LinkName("QVariant_ToJsonObject")]
-	public static extern QJsonObject_Ptr* QVariant_ToJsonObject(QVariant_Ptr* self);
+	public static extern void* QVariant_ToJsonObject(void* self);
 	[LinkName("QVariant_ToJsonArray")]
-	public static extern QJsonArray_Ptr* QVariant_ToJsonArray(QVariant_Ptr* self);
+	public static extern void* QVariant_ToJsonArray(void* self);
 	[LinkName("QVariant_ToJsonDocument")]
-	public static extern QJsonDocument_Ptr* QVariant_ToJsonDocument(QVariant_Ptr* self);
+	public static extern void* QVariant_ToJsonDocument(void* self);
 	[LinkName("QVariant_ToModelIndex")]
-	public static extern QModelIndex_Ptr* QVariant_ToModelIndex(QVariant_Ptr* self);
+	public static extern void* QVariant_ToModelIndex(void* self);
 	[LinkName("QVariant_ToPersistentModelIndex")]
-	public static extern QPersistentModelIndex_Ptr* QVariant_ToPersistentModelIndex(QVariant_Ptr* self);
+	public static extern void* QVariant_ToPersistentModelIndex(void* self);
 	[LinkName("QVariant_Load")]
-	public static extern void QVariant_Load(QVariant_Ptr* self, QDataStream_Ptr* ds);
+	public static extern void QVariant_Load(void* self, void** ds);
 	[LinkName("QVariant_Save")]
-	public static extern void QVariant_Save(QVariant_Ptr* self, QDataStream_Ptr* ds);
+	public static extern void QVariant_Save(void* self, void** ds);
 	[LinkName("QVariant_Type")]
-	public static extern QVariant_Type QVariant_Type(QVariant_Ptr* self);
+	public static extern QVariant_Type QVariant_Type(void* self);
 	[LinkName("QVariant_TypeToName")]
 	public static extern c_char* QVariant_TypeToName(c_int typeId);
 	[LinkName("QVariant_NameToType")]
 	public static extern QVariant_Type QVariant_NameToType(c_char* name);
 	[LinkName("QVariant_Data")]
-	public static extern void* QVariant_Data(QVariant_Ptr* self);
+	public static extern void* QVariant_Data(void* self);
 	[LinkName("QVariant_ConstData")]
-	public static extern void* QVariant_ConstData(QVariant_Ptr* self);
+	public static extern void* QVariant_ConstData(void* self);
 	[LinkName("QVariant_Data2")]
-	public static extern void* QVariant_Data2(QVariant_Ptr* self);
+	public static extern void* QVariant_Data2(void* self);
 	[LinkName("QVariant_SetValue")]
-	public static extern void QVariant_SetValue(QVariant_Ptr* self, QVariant_Ptr* avalue);
+	public static extern void QVariant_SetValue(void* self, void** avalue);
 	[LinkName("QVariant_Compare")]
-	public static extern QPartialOrdering_Ptr* QVariant_Compare(QVariant_Ptr* lhs, QVariant_Ptr* rhs);
+	public static extern void* QVariant_Compare(void** lhs, void** rhs);
 	[LinkName("QVariant_ToInt1")]
-	public static extern c_int QVariant_ToInt1(QVariant_Ptr* self, bool* ok);
+	public static extern c_int QVariant_ToInt1(void* self, bool* ok);
 	[LinkName("QVariant_ToUInt1")]
-	public static extern c_uint QVariant_ToUInt1(QVariant_Ptr* self, bool* ok);
+	public static extern c_uint QVariant_ToUInt1(void* self, bool* ok);
 	[LinkName("QVariant_ToLongLong1")]
-	public static extern c_longlong QVariant_ToLongLong1(QVariant_Ptr* self, bool* ok);
+	public static extern c_longlong QVariant_ToLongLong1(void* self, bool* ok);
 	[LinkName("QVariant_ToULongLong1")]
-	public static extern c_ulonglong QVariant_ToULongLong1(QVariant_Ptr* self, bool* ok);
+	public static extern c_ulonglong QVariant_ToULongLong1(void* self, bool* ok);
 	[LinkName("QVariant_ToDouble1")]
-	public static extern double QVariant_ToDouble1(QVariant_Ptr* self, bool* ok);
+	public static extern double QVariant_ToDouble1(void* self, bool* ok);
 	[LinkName("QVariant_ToFloat1")]
-	public static extern float QVariant_ToFloat1(QVariant_Ptr* self, bool* ok);
+	public static extern float QVariant_ToFloat1(void* self, bool* ok);
 	[LinkName("QVariant_ToReal1")]
-	public static extern double QVariant_ToReal1(QVariant_Ptr* self, bool* ok);
+	public static extern double QVariant_ToReal1(void* self, bool* ok);
 }
 class QVariant : IQVariant
 {
-	private QVariant_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QVariant_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QVariant_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QVariant_new();
@@ -409,227 +418,227 @@ class QVariant : IQVariant
 	}
 	public void Swap(IQVariant other)
 	{
-		CQt.QVariant_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QVariant_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public c_int UserType()
 	{
-		return CQt.QVariant_UserType((.)this.ptr);
+		return CQt.QVariant_UserType((.)this.ptr.Ptr);
 	}
 	public c_int TypeId()
 	{
-		return CQt.QVariant_TypeId((.)this.ptr);
+		return CQt.QVariant_TypeId((.)this.ptr.Ptr);
 	}
 	public c_char* TypeName()
 	{
-		return CQt.QVariant_TypeName((.)this.ptr);
+		return CQt.QVariant_TypeName((.)this.ptr.Ptr);
 	}
-	public QMetaType_Ptr* MetaType()
+	public QMetaType_Ptr MetaType()
 	{
-		return CQt.QVariant_MetaType((.)this.ptr);
+		return QMetaType_Ptr(CQt.QVariant_MetaType((.)this.ptr.Ptr));
 	}
 	public bool CanConvert(IQMetaType targetType)
 	{
-		return CQt.QVariant_CanConvert((.)this.ptr, (.)targetType?.ObjectPtr);
+		return CQt.QVariant_CanConvert((.)this.ptr.Ptr, (.)targetType?.ObjectPtr);
 	}
 	public bool Convert(IQMetaType type)
 	{
-		return CQt.QVariant_Convert((.)this.ptr, (.)type?.ObjectPtr);
+		return CQt.QVariant_Convert((.)this.ptr.Ptr, (.)type?.ObjectPtr);
 	}
 	public bool CanView(IQMetaType targetType)
 	{
-		return CQt.QVariant_CanView((.)this.ptr, (.)targetType?.ObjectPtr);
+		return CQt.QVariant_CanView((.)this.ptr.Ptr, (.)targetType?.ObjectPtr);
 	}
 	public bool CanConvert2(c_int targetTypeId)
 	{
-		return CQt.QVariant_CanConvert2((.)this.ptr, targetTypeId);
+		return CQt.QVariant_CanConvert2((.)this.ptr.Ptr, targetTypeId);
 	}
 	public bool Convert2(c_int targetTypeId)
 	{
-		return CQt.QVariant_Convert2((.)this.ptr, targetTypeId);
+		return CQt.QVariant_Convert2((.)this.ptr.Ptr, targetTypeId);
 	}
 	public bool IsValid()
 	{
-		return CQt.QVariant_IsValid((.)this.ptr);
+		return CQt.QVariant_IsValid((.)this.ptr.Ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QVariant_IsNull((.)this.ptr);
+		return CQt.QVariant_IsNull((.)this.ptr.Ptr);
 	}
 	public void Clear()
 	{
-		CQt.QVariant_Clear((.)this.ptr);
+		CQt.QVariant_Clear((.)this.ptr.Ptr);
 	}
 	public void Detach()
 	{
-		CQt.QVariant_Detach((.)this.ptr);
+		CQt.QVariant_Detach((.)this.ptr.Ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QVariant_IsDetached((.)this.ptr);
+		return CQt.QVariant_IsDetached((.)this.ptr.Ptr);
 	}
 	public c_int ToInt()
 	{
-		return CQt.QVariant_ToInt((.)this.ptr);
+		return CQt.QVariant_ToInt((.)this.ptr.Ptr);
 	}
 	public c_uint ToUInt()
 	{
-		return CQt.QVariant_ToUInt((.)this.ptr);
+		return CQt.QVariant_ToUInt((.)this.ptr.Ptr);
 	}
 	public c_longlong ToLongLong()
 	{
-		return CQt.QVariant_ToLongLong((.)this.ptr);
+		return CQt.QVariant_ToLongLong((.)this.ptr.Ptr);
 	}
 	public c_ulonglong ToULongLong()
 	{
-		return CQt.QVariant_ToULongLong((.)this.ptr);
+		return CQt.QVariant_ToULongLong((.)this.ptr.Ptr);
 	}
 	public bool ToBool()
 	{
-		return CQt.QVariant_ToBool((.)this.ptr);
+		return CQt.QVariant_ToBool((.)this.ptr.Ptr);
 	}
 	public double ToDouble()
 	{
-		return CQt.QVariant_ToDouble((.)this.ptr);
+		return CQt.QVariant_ToDouble((.)this.ptr.Ptr);
 	}
 	public float ToFloat()
 	{
-		return CQt.QVariant_ToFloat((.)this.ptr);
+		return CQt.QVariant_ToFloat((.)this.ptr.Ptr);
 	}
 	public double ToReal()
 	{
-		return CQt.QVariant_ToReal((.)this.ptr);
+		return CQt.QVariant_ToReal((.)this.ptr.Ptr);
 	}
 	public void* ToByteArray()
 	{
-		return CQt.QVariant_ToByteArray((.)this.ptr);
+		return CQt.QVariant_ToByteArray((.)this.ptr.Ptr);
 	}
-	public QBitArray_Ptr* ToBitArray()
+	public QBitArray_Ptr ToBitArray()
 	{
-		return CQt.QVariant_ToBitArray((.)this.ptr);
+		return QBitArray_Ptr(CQt.QVariant_ToBitArray((.)this.ptr.Ptr));
 	}
-	public libqt_string ToString()
+	public void ToString(String outStr)
 	{
-		return CQt.QVariant_ToString((.)this.ptr);
+		CQt.QVariant_ToString((.)this.ptr.Ptr);
 	}
 	public void* ToStringList()
 	{
-		return CQt.QVariant_ToStringList((.)this.ptr);
+		return CQt.QVariant_ToStringList((.)this.ptr.Ptr);
 	}
-	public QChar_Ptr* ToChar()
+	public QChar_Ptr ToChar()
 	{
-		return CQt.QVariant_ToChar((.)this.ptr);
+		return QChar_Ptr(CQt.QVariant_ToChar((.)this.ptr.Ptr));
 	}
-	public QDate_Ptr* ToDate()
+	public QDate_Ptr ToDate()
 	{
-		return CQt.QVariant_ToDate((.)this.ptr);
+		return QDate_Ptr(CQt.QVariant_ToDate((.)this.ptr.Ptr));
 	}
-	public QTime_Ptr* ToTime()
+	public QTime_Ptr ToTime()
 	{
-		return CQt.QVariant_ToTime((.)this.ptr);
+		return QTime_Ptr(CQt.QVariant_ToTime((.)this.ptr.Ptr));
 	}
-	public QDateTime_Ptr* ToDateTime()
+	public QDateTime_Ptr ToDateTime()
 	{
-		return CQt.QVariant_ToDateTime((.)this.ptr);
+		return QDateTime_Ptr(CQt.QVariant_ToDateTime((.)this.ptr.Ptr));
 	}
 	public void* ToList()
 	{
-		return CQt.QVariant_ToList((.)this.ptr);
+		return CQt.QVariant_ToList((.)this.ptr.Ptr);
 	}
 	public void* ToMap()
 	{
-		return CQt.QVariant_ToMap((.)this.ptr);
+		return CQt.QVariant_ToMap((.)this.ptr.Ptr);
 	}
 	public void* ToHash()
 	{
-		return CQt.QVariant_ToHash((.)this.ptr);
+		return CQt.QVariant_ToHash((.)this.ptr.Ptr);
 	}
-	public QPoint_Ptr* ToPoint()
+	public QPoint_Ptr ToPoint()
 	{
-		return CQt.QVariant_ToPoint((.)this.ptr);
+		return QPoint_Ptr(CQt.QVariant_ToPoint((.)this.ptr.Ptr));
 	}
-	public QPointF_Ptr* ToPointF()
+	public QPointF_Ptr ToPointF()
 	{
-		return CQt.QVariant_ToPointF((.)this.ptr);
+		return QPointF_Ptr(CQt.QVariant_ToPointF((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* ToRect()
+	public QRect_Ptr ToRect()
 	{
-		return CQt.QVariant_ToRect((.)this.ptr);
+		return QRect_Ptr(CQt.QVariant_ToRect((.)this.ptr.Ptr));
 	}
-	public QSize_Ptr* ToSize()
+	public QSize_Ptr ToSize()
 	{
-		return CQt.QVariant_ToSize((.)this.ptr);
+		return QSize_Ptr(CQt.QVariant_ToSize((.)this.ptr.Ptr));
 	}
-	public QSizeF_Ptr* ToSizeF()
+	public QSizeF_Ptr ToSizeF()
 	{
-		return CQt.QVariant_ToSizeF((.)this.ptr);
+		return QSizeF_Ptr(CQt.QVariant_ToSizeF((.)this.ptr.Ptr));
 	}
-	public QLine_Ptr* ToLine()
+	public QLine_Ptr ToLine()
 	{
-		return CQt.QVariant_ToLine((.)this.ptr);
+		return QLine_Ptr(CQt.QVariant_ToLine((.)this.ptr.Ptr));
 	}
-	public QLineF_Ptr* ToLineF()
+	public QLineF_Ptr ToLineF()
 	{
-		return CQt.QVariant_ToLineF((.)this.ptr);
+		return QLineF_Ptr(CQt.QVariant_ToLineF((.)this.ptr.Ptr));
 	}
-	public QRectF_Ptr* ToRectF()
+	public QRectF_Ptr ToRectF()
 	{
-		return CQt.QVariant_ToRectF((.)this.ptr);
+		return QRectF_Ptr(CQt.QVariant_ToRectF((.)this.ptr.Ptr));
 	}
-	public QLocale_Ptr* ToLocale()
+	public QLocale_Ptr ToLocale()
 	{
-		return CQt.QVariant_ToLocale((.)this.ptr);
+		return QLocale_Ptr(CQt.QVariant_ToLocale((.)this.ptr.Ptr));
 	}
-	public QRegularExpression_Ptr* ToRegularExpression()
+	public QRegularExpression_Ptr ToRegularExpression()
 	{
-		return CQt.QVariant_ToRegularExpression((.)this.ptr);
+		return QRegularExpression_Ptr(CQt.QVariant_ToRegularExpression((.)this.ptr.Ptr));
 	}
-	public QEasingCurve_Ptr* ToEasingCurve()
+	public QEasingCurve_Ptr ToEasingCurve()
 	{
-		return CQt.QVariant_ToEasingCurve((.)this.ptr);
+		return QEasingCurve_Ptr(CQt.QVariant_ToEasingCurve((.)this.ptr.Ptr));
 	}
-	public QUuid_Ptr* ToUuid()
+	public QUuid_Ptr ToUuid()
 	{
-		return CQt.QVariant_ToUuid((.)this.ptr);
+		return QUuid_Ptr(CQt.QVariant_ToUuid((.)this.ptr.Ptr));
 	}
-	public QUrl_Ptr* ToUrl()
+	public QUrl_Ptr ToUrl()
 	{
-		return CQt.QVariant_ToUrl((.)this.ptr);
+		return QUrl_Ptr(CQt.QVariant_ToUrl((.)this.ptr.Ptr));
 	}
-	public QJsonValue_Ptr* ToJsonValue()
+	public QJsonValue_Ptr ToJsonValue()
 	{
-		return CQt.QVariant_ToJsonValue((.)this.ptr);
+		return QJsonValue_Ptr(CQt.QVariant_ToJsonValue((.)this.ptr.Ptr));
 	}
-	public QJsonObject_Ptr* ToJsonObject()
+	public QJsonObject_Ptr ToJsonObject()
 	{
-		return CQt.QVariant_ToJsonObject((.)this.ptr);
+		return QJsonObject_Ptr(CQt.QVariant_ToJsonObject((.)this.ptr.Ptr));
 	}
-	public QJsonArray_Ptr* ToJsonArray()
+	public QJsonArray_Ptr ToJsonArray()
 	{
-		return CQt.QVariant_ToJsonArray((.)this.ptr);
+		return QJsonArray_Ptr(CQt.QVariant_ToJsonArray((.)this.ptr.Ptr));
 	}
-	public QJsonDocument_Ptr* ToJsonDocument()
+	public QJsonDocument_Ptr ToJsonDocument()
 	{
-		return CQt.QVariant_ToJsonDocument((.)this.ptr);
+		return QJsonDocument_Ptr(CQt.QVariant_ToJsonDocument((.)this.ptr.Ptr));
 	}
-	public QModelIndex_Ptr* ToModelIndex()
+	public QModelIndex_Ptr ToModelIndex()
 	{
-		return CQt.QVariant_ToModelIndex((.)this.ptr);
+		return QModelIndex_Ptr(CQt.QVariant_ToModelIndex((.)this.ptr.Ptr));
 	}
-	public QPersistentModelIndex_Ptr* ToPersistentModelIndex()
+	public QPersistentModelIndex_Ptr ToPersistentModelIndex()
 	{
-		return CQt.QVariant_ToPersistentModelIndex((.)this.ptr);
+		return QPersistentModelIndex_Ptr(CQt.QVariant_ToPersistentModelIndex((.)this.ptr.Ptr));
 	}
 	public void Load(IQDataStream ds)
 	{
-		CQt.QVariant_Load((.)this.ptr, (.)ds?.ObjectPtr);
+		CQt.QVariant_Load((.)this.ptr.Ptr, (.)ds?.ObjectPtr);
 	}
 	public void Save(IQDataStream ds)
 	{
-		CQt.QVariant_Save((.)this.ptr, (.)ds?.ObjectPtr);
+		CQt.QVariant_Save((.)this.ptr.Ptr, (.)ds?.ObjectPtr);
 	}
 	public QVariant_Type Type()
 	{
-		return CQt.QVariant_Type((.)this.ptr);
+		return CQt.QVariant_Type((.)this.ptr.Ptr);
 	}
 	public c_char* TypeToName(c_int typeId)
 	{
@@ -641,51 +650,51 @@ class QVariant : IQVariant
 	}
 	public void* Data()
 	{
-		return CQt.QVariant_Data((.)this.ptr);
+		return CQt.QVariant_Data((.)this.ptr.Ptr);
 	}
 	public void* ConstData()
 	{
-		return CQt.QVariant_ConstData((.)this.ptr);
+		return CQt.QVariant_ConstData((.)this.ptr.Ptr);
 	}
 	public void* Data2()
 	{
-		return CQt.QVariant_Data2((.)this.ptr);
+		return CQt.QVariant_Data2((.)this.ptr.Ptr);
 	}
 	public void SetValue(IQVariant avalue)
 	{
-		CQt.QVariant_SetValue((.)this.ptr, (.)avalue?.ObjectPtr);
+		CQt.QVariant_SetValue((.)this.ptr.Ptr, (.)avalue?.ObjectPtr);
 	}
-	public QPartialOrdering_Ptr* Compare(IQVariant lhs, IQVariant rhs)
+	public QPartialOrdering_Ptr Compare(IQVariant lhs, IQVariant rhs)
 	{
-		return CQt.QVariant_Compare((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr);
+		return QPartialOrdering_Ptr(CQt.QVariant_Compare((.)lhs?.ObjectPtr, (.)rhs?.ObjectPtr));
 	}
 	public c_int ToInt1(bool* ok)
 	{
-		return CQt.QVariant_ToInt1((.)this.ptr, ok);
+		return CQt.QVariant_ToInt1((.)this.ptr.Ptr, ok);
 	}
 	public c_uint ToUInt1(bool* ok)
 	{
-		return CQt.QVariant_ToUInt1((.)this.ptr, ok);
+		return CQt.QVariant_ToUInt1((.)this.ptr.Ptr, ok);
 	}
 	public c_longlong ToLongLong1(bool* ok)
 	{
-		return CQt.QVariant_ToLongLong1((.)this.ptr, ok);
+		return CQt.QVariant_ToLongLong1((.)this.ptr.Ptr, ok);
 	}
 	public c_ulonglong ToULongLong1(bool* ok)
 	{
-		return CQt.QVariant_ToULongLong1((.)this.ptr, ok);
+		return CQt.QVariant_ToULongLong1((.)this.ptr.Ptr, ok);
 	}
 	public double ToDouble1(bool* ok)
 	{
-		return CQt.QVariant_ToDouble1((.)this.ptr, ok);
+		return CQt.QVariant_ToDouble1((.)this.ptr.Ptr, ok);
 	}
 	public float ToFloat1(bool* ok)
 	{
-		return CQt.QVariant_ToFloat1((.)this.ptr, ok);
+		return CQt.QVariant_ToFloat1((.)this.ptr.Ptr, ok);
 	}
 	public double ToReal1(bool* ok)
 	{
-		return CQt.QVariant_ToReal1((.)this.ptr, ok);
+		return CQt.QVariant_ToReal1((.)this.ptr.Ptr, ok);
 	}
 }
 interface IQVariant : IQtObjectInterface

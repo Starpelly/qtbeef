@@ -7,42 +7,51 @@ namespace Qt6;
 // QPropertyBindingSourceLocation
 // --------------------------------------------------------------
 [CRepr]
-struct QPropertyBindingSourceLocation_Ptr: void
+struct QPropertyBindingSourceLocation_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPropertyBindingSourceLocation_new")]
-	public static extern QPropertyBindingSourceLocation_Ptr* QPropertyBindingSourceLocation_new(QPropertyBindingSourceLocation_Ptr* other);
+	public static extern QPropertyBindingSourceLocation_Ptr QPropertyBindingSourceLocation_new(void** other);
 	[LinkName("QPropertyBindingSourceLocation_new2")]
-	public static extern QPropertyBindingSourceLocation_Ptr* QPropertyBindingSourceLocation_new2(QPropertyBindingSourceLocation_Ptr* other);
+	public static extern QPropertyBindingSourceLocation_Ptr QPropertyBindingSourceLocation_new2(void** other);
 	[LinkName("QPropertyBindingSourceLocation_new3")]
-	public static extern QPropertyBindingSourceLocation_Ptr* QPropertyBindingSourceLocation_new3();
+	public static extern QPropertyBindingSourceLocation_Ptr QPropertyBindingSourceLocation_new3();
 	[LinkName("QPropertyBindingSourceLocation_new4")]
-	public static extern QPropertyBindingSourceLocation_Ptr* QPropertyBindingSourceLocation_new4(QPropertyBindingSourceLocation_Ptr* param1);
+	public static extern QPropertyBindingSourceLocation_Ptr QPropertyBindingSourceLocation_new4(void** param1);
 	[LinkName("QPropertyBindingSourceLocation_Delete")]
-	public static extern void QPropertyBindingSourceLocation_Delete(QPropertyBindingSourceLocation_Ptr* self);
+	public static extern void QPropertyBindingSourceLocation_Delete(QPropertyBindingSourceLocation_Ptr self);
 	[LinkName("QPropertyBindingSourceLocation_FileName")]
-	public static extern c_char* QPropertyBindingSourceLocation_FileName(QPropertyBindingSourceLocation_Ptr* self);
+	public static extern c_char* QPropertyBindingSourceLocation_FileName(void* self);
 	[LinkName("QPropertyBindingSourceLocation_SetFileName")]
-	public static extern void QPropertyBindingSourceLocation_SetFileName(QPropertyBindingSourceLocation_Ptr* self, c_char* fileName);
+	public static extern void QPropertyBindingSourceLocation_SetFileName(void* self, c_char* fileName);
 	[LinkName("QPropertyBindingSourceLocation_FunctionName")]
-	public static extern c_char* QPropertyBindingSourceLocation_FunctionName(QPropertyBindingSourceLocation_Ptr* self);
+	public static extern c_char* QPropertyBindingSourceLocation_FunctionName(void* self);
 	[LinkName("QPropertyBindingSourceLocation_SetFunctionName")]
-	public static extern void QPropertyBindingSourceLocation_SetFunctionName(QPropertyBindingSourceLocation_Ptr* self, c_char* functionName);
+	public static extern void QPropertyBindingSourceLocation_SetFunctionName(void* self, c_char* functionName);
 	[LinkName("QPropertyBindingSourceLocation_Line")]
-	public static extern c_uint QPropertyBindingSourceLocation_Line(QPropertyBindingSourceLocation_Ptr* self);
+	public static extern c_uint QPropertyBindingSourceLocation_Line(void* self);
 	[LinkName("QPropertyBindingSourceLocation_SetLine")]
-	public static extern void QPropertyBindingSourceLocation_SetLine(QPropertyBindingSourceLocation_Ptr* self, c_uint line);
+	public static extern void QPropertyBindingSourceLocation_SetLine(void* self, c_uint line);
 	[LinkName("QPropertyBindingSourceLocation_Column")]
-	public static extern c_uint QPropertyBindingSourceLocation_Column(QPropertyBindingSourceLocation_Ptr* self);
+	public static extern c_uint QPropertyBindingSourceLocation_Column(void* self);
 	[LinkName("QPropertyBindingSourceLocation_SetColumn")]
-	public static extern void QPropertyBindingSourceLocation_SetColumn(QPropertyBindingSourceLocation_Ptr* self, c_uint column);
+	public static extern void QPropertyBindingSourceLocation_SetColumn(void* self, c_uint column);
 }
 class QPropertyBindingSourceLocation : IQPropertyBindingSourceLocation
 {
-	private QPropertyBindingSourceLocation_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPropertyBindingSourceLocation_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPropertyBindingSourceLocation_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQPropertyBindingSourceLocation other)
 	{
 		this.ptr = CQt.QPropertyBindingSourceLocation_new((.)other?.ObjectPtr);
@@ -57,35 +66,35 @@ class QPropertyBindingSourceLocation : IQPropertyBindingSourceLocation
 	}
 	public c_char* FileName()
 	{
-		return CQt.QPropertyBindingSourceLocation_FileName((.)this.ptr);
+		return CQt.QPropertyBindingSourceLocation_FileName((.)this.ptr.Ptr);
 	}
 	public void SetFileName(c_char* fileName)
 	{
-		CQt.QPropertyBindingSourceLocation_SetFileName((.)this.ptr, fileName);
+		CQt.QPropertyBindingSourceLocation_SetFileName((.)this.ptr.Ptr, fileName);
 	}
 	public c_char* FunctionName()
 	{
-		return CQt.QPropertyBindingSourceLocation_FunctionName((.)this.ptr);
+		return CQt.QPropertyBindingSourceLocation_FunctionName((.)this.ptr.Ptr);
 	}
 	public void SetFunctionName(c_char* functionName)
 	{
-		CQt.QPropertyBindingSourceLocation_SetFunctionName((.)this.ptr, functionName);
+		CQt.QPropertyBindingSourceLocation_SetFunctionName((.)this.ptr.Ptr, functionName);
 	}
 	public c_uint Line()
 	{
-		return CQt.QPropertyBindingSourceLocation_Line((.)this.ptr);
+		return CQt.QPropertyBindingSourceLocation_Line((.)this.ptr.Ptr);
 	}
 	public void SetLine(c_uint line)
 	{
-		CQt.QPropertyBindingSourceLocation_SetLine((.)this.ptr, line);
+		CQt.QPropertyBindingSourceLocation_SetLine((.)this.ptr.Ptr, line);
 	}
 	public c_uint Column()
 	{
-		return CQt.QPropertyBindingSourceLocation_Column((.)this.ptr);
+		return CQt.QPropertyBindingSourceLocation_Column((.)this.ptr.Ptr);
 	}
 	public void SetColumn(c_uint column)
 	{
-		CQt.QPropertyBindingSourceLocation_SetColumn((.)this.ptr, column);
+		CQt.QPropertyBindingSourceLocation_SetColumn((.)this.ptr.Ptr, column);
 	}
 }
 interface IQPropertyBindingSourceLocation : IQtObjectInterface
@@ -95,34 +104,43 @@ interface IQPropertyBindingSourceLocation : IQtObjectInterface
 // QPropertyBindingError
 // --------------------------------------------------------------
 [CRepr]
-struct QPropertyBindingError_Ptr: void
+struct QPropertyBindingError_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPropertyBindingError_new")]
-	public static extern QPropertyBindingError_Ptr* QPropertyBindingError_new();
+	public static extern QPropertyBindingError_Ptr QPropertyBindingError_new();
 	[LinkName("QPropertyBindingError_new2")]
-	public static extern QPropertyBindingError_Ptr* QPropertyBindingError_new2(QPropertyBindingError_Type type);
+	public static extern QPropertyBindingError_Ptr QPropertyBindingError_new2(QPropertyBindingError_Type type);
 	[LinkName("QPropertyBindingError_new3")]
-	public static extern QPropertyBindingError_Ptr* QPropertyBindingError_new3(QPropertyBindingError_Ptr* other);
+	public static extern QPropertyBindingError_Ptr QPropertyBindingError_new3(void** other);
 	[LinkName("QPropertyBindingError_new4")]
-	public static extern QPropertyBindingError_Ptr* QPropertyBindingError_new4(QPropertyBindingError_Type type, libqt_string description);
+	public static extern QPropertyBindingError_Ptr QPropertyBindingError_new4(QPropertyBindingError_Type type, libqt_string description);
 	[LinkName("QPropertyBindingError_Delete")]
-	public static extern void QPropertyBindingError_Delete(QPropertyBindingError_Ptr* self);
+	public static extern void QPropertyBindingError_Delete(QPropertyBindingError_Ptr self);
 	[LinkName("QPropertyBindingError_OperatorAssign")]
-	public static extern void QPropertyBindingError_OperatorAssign(QPropertyBindingError_Ptr* self, QPropertyBindingError_Ptr* other);
+	public static extern void QPropertyBindingError_OperatorAssign(void* self, void** other);
 	[LinkName("QPropertyBindingError_HasError")]
-	public static extern bool QPropertyBindingError_HasError(QPropertyBindingError_Ptr* self);
+	public static extern bool QPropertyBindingError_HasError(void* self);
 	[LinkName("QPropertyBindingError_Type")]
-	public static extern QPropertyBindingError_Type QPropertyBindingError_Type(QPropertyBindingError_Ptr* self);
+	public static extern QPropertyBindingError_Type QPropertyBindingError_Type(void* self);
 	[LinkName("QPropertyBindingError_Description")]
-	public static extern libqt_string QPropertyBindingError_Description(QPropertyBindingError_Ptr* self);
+	public static extern libqt_string QPropertyBindingError_Description(void* self);
 }
 class QPropertyBindingError : IQPropertyBindingError
 {
-	private QPropertyBindingError_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPropertyBindingError_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPropertyBindingError_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyBindingError_new();
@@ -145,15 +163,15 @@ class QPropertyBindingError : IQPropertyBindingError
 	}
 	public bool HasError()
 	{
-		return CQt.QPropertyBindingError_HasError((.)this.ptr);
+		return CQt.QPropertyBindingError_HasError((.)this.ptr.Ptr);
 	}
 	public QPropertyBindingError_Type Type()
 	{
-		return CQt.QPropertyBindingError_Type((.)this.ptr);
+		return CQt.QPropertyBindingError_Type((.)this.ptr.Ptr);
 	}
-	public libqt_string Description()
+	public void Description(String outStr)
 	{
-		return CQt.QPropertyBindingError_Description((.)this.ptr);
+		CQt.QPropertyBindingError_Description((.)this.ptr.Ptr);
 	}
 }
 interface IQPropertyBindingError : IQtObjectInterface
@@ -163,30 +181,39 @@ interface IQPropertyBindingError : IQtObjectInterface
 // QUntypedPropertyBinding
 // --------------------------------------------------------------
 [CRepr]
-struct QUntypedPropertyBinding_Ptr: void
+struct QUntypedPropertyBinding_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QUntypedPropertyBinding_new")]
-	public static extern QUntypedPropertyBinding_Ptr* QUntypedPropertyBinding_new();
+	public static extern QUntypedPropertyBinding_Ptr QUntypedPropertyBinding_new();
 	[LinkName("QUntypedPropertyBinding_new2")]
-	public static extern QUntypedPropertyBinding_Ptr* QUntypedPropertyBinding_new2(QUntypedPropertyBinding_Ptr* other);
+	public static extern QUntypedPropertyBinding_Ptr QUntypedPropertyBinding_new2(void** other);
 	[LinkName("QUntypedPropertyBinding_Delete")]
-	public static extern void QUntypedPropertyBinding_Delete(QUntypedPropertyBinding_Ptr* self);
+	public static extern void QUntypedPropertyBinding_Delete(QUntypedPropertyBinding_Ptr self);
 	[LinkName("QUntypedPropertyBinding_OperatorAssign")]
-	public static extern void QUntypedPropertyBinding_OperatorAssign(QUntypedPropertyBinding_Ptr* self, QUntypedPropertyBinding_Ptr* other);
+	public static extern void QUntypedPropertyBinding_OperatorAssign(void* self, void** other);
 	[LinkName("QUntypedPropertyBinding_IsNull")]
-	public static extern bool QUntypedPropertyBinding_IsNull(QUntypedPropertyBinding_Ptr* self);
+	public static extern bool QUntypedPropertyBinding_IsNull(void* self);
 	[LinkName("QUntypedPropertyBinding_Error")]
-	public static extern QPropertyBindingError_Ptr* QUntypedPropertyBinding_Error(QUntypedPropertyBinding_Ptr* self);
+	public static extern void* QUntypedPropertyBinding_Error(void* self);
 	[LinkName("QUntypedPropertyBinding_ValueMetaType")]
-	public static extern QMetaType_Ptr* QUntypedPropertyBinding_ValueMetaType(QUntypedPropertyBinding_Ptr* self);
+	public static extern void* QUntypedPropertyBinding_ValueMetaType(void* self);
 }
 class QUntypedPropertyBinding : IQUntypedPropertyBinding
 {
-	private QUntypedPropertyBinding_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QUntypedPropertyBinding_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QUntypedPropertyBinding_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QUntypedPropertyBinding_new();
@@ -201,15 +228,15 @@ class QUntypedPropertyBinding : IQUntypedPropertyBinding
 	}
 	public bool IsNull()
 	{
-		return CQt.QUntypedPropertyBinding_IsNull((.)this.ptr);
+		return CQt.QUntypedPropertyBinding_IsNull((.)this.ptr.Ptr);
 	}
-	public QPropertyBindingError_Ptr* Error()
+	public QPropertyBindingError_Ptr Error()
 	{
-		return CQt.QUntypedPropertyBinding_Error((.)this.ptr);
+		return QPropertyBindingError_Ptr(CQt.QUntypedPropertyBinding_Error((.)this.ptr.Ptr));
 	}
-	public QMetaType_Ptr* ValueMetaType()
+	public QMetaType_Ptr ValueMetaType()
 	{
-		return CQt.QUntypedPropertyBinding_ValueMetaType((.)this.ptr);
+		return QMetaType_Ptr(CQt.QUntypedPropertyBinding_ValueMetaType((.)this.ptr.Ptr));
 	}
 }
 interface IQUntypedPropertyBinding : IQtObjectInterface
@@ -219,22 +246,31 @@ interface IQUntypedPropertyBinding : IQtObjectInterface
 // QPropertyObserverBase
 // --------------------------------------------------------------
 [CRepr]
-struct QPropertyObserverBase_Ptr: void
+struct QPropertyObserverBase_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPropertyObserverBase_new")]
-	public static extern QPropertyObserverBase_Ptr* QPropertyObserverBase_new();
+	public static extern QPropertyObserverBase_Ptr QPropertyObserverBase_new();
 	[LinkName("QPropertyObserverBase_new2")]
-	public static extern QPropertyObserverBase_Ptr* QPropertyObserverBase_new2(QPropertyObserverBase_Ptr* param1);
+	public static extern QPropertyObserverBase_Ptr QPropertyObserverBase_new2(void** param1);
 	[LinkName("QPropertyObserverBase_Delete")]
-	public static extern void QPropertyObserverBase_Delete(QPropertyObserverBase_Ptr* self);
+	public static extern void QPropertyObserverBase_Delete(QPropertyObserverBase_Ptr self);
 }
 class QPropertyObserverBase : IQPropertyObserverBase
 {
-	private QPropertyObserverBase_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPropertyObserverBase_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPropertyObserverBase_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyObserverBase_new();
@@ -255,20 +291,29 @@ interface IQPropertyObserverBase : IQtObjectInterface
 // QPropertyObserver
 // --------------------------------------------------------------
 [CRepr]
-struct QPropertyObserver_Ptr: void
+struct QPropertyObserver_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPropertyObserver_new")]
-	public static extern QPropertyObserver_Ptr* QPropertyObserver_new();
+	public static extern QPropertyObserver_Ptr QPropertyObserver_new();
 	[LinkName("QPropertyObserver_Delete")]
-	public static extern void QPropertyObserver_Delete(QPropertyObserver_Ptr* self);
+	public static extern void QPropertyObserver_Delete(QPropertyObserver_Ptr self);
 }
 class QPropertyObserver : IQPropertyObserver, IQPropertyObserverBase
 {
-	private QPropertyObserver_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPropertyObserver_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPropertyObserver_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyObserver_new();
@@ -285,20 +330,29 @@ interface IQPropertyObserver : IQtObjectInterface
 // QPropertyNotifier
 // --------------------------------------------------------------
 [CRepr]
-struct QPropertyNotifier_Ptr: void
+struct QPropertyNotifier_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPropertyNotifier_new")]
-	public static extern QPropertyNotifier_Ptr* QPropertyNotifier_new();
+	public static extern QPropertyNotifier_Ptr QPropertyNotifier_new();
 	[LinkName("QPropertyNotifier_Delete")]
-	public static extern void QPropertyNotifier_Delete(QPropertyNotifier_Ptr* self);
+	public static extern void QPropertyNotifier_Delete(QPropertyNotifier_Ptr self);
 }
 class QPropertyNotifier : IQPropertyNotifier, IQPropertyObserver, IQPropertyObserverBase
 {
-	private QPropertyNotifier_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPropertyNotifier_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPropertyNotifier_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyNotifier_new();
@@ -315,48 +369,57 @@ interface IQPropertyNotifier : IQtObjectInterface
 // QUntypedBindable
 // --------------------------------------------------------------
 [CRepr]
-struct QUntypedBindable_Ptr: void
+struct QUntypedBindable_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QUntypedBindable_new")]
-	public static extern QUntypedBindable_Ptr* QUntypedBindable_new(QUntypedBindable_Ptr* other);
+	public static extern QUntypedBindable_Ptr QUntypedBindable_new(void** other);
 	[LinkName("QUntypedBindable_new2")]
-	public static extern QUntypedBindable_Ptr* QUntypedBindable_new2(QUntypedBindable_Ptr* other);
+	public static extern QUntypedBindable_Ptr QUntypedBindable_new2(void** other);
 	[LinkName("QUntypedBindable_new3")]
-	public static extern QUntypedBindable_Ptr* QUntypedBindable_new3();
+	public static extern QUntypedBindable_Ptr QUntypedBindable_new3();
 	[LinkName("QUntypedBindable_new4")]
-	public static extern QUntypedBindable_Ptr* QUntypedBindable_new4(QUntypedBindable_Ptr* param1);
+	public static extern QUntypedBindable_Ptr QUntypedBindable_new4(void** param1);
 	[LinkName("QUntypedBindable_Delete")]
-	public static extern void QUntypedBindable_Delete(QUntypedBindable_Ptr* self);
+	public static extern void QUntypedBindable_Delete(QUntypedBindable_Ptr self);
 	[LinkName("QUntypedBindable_IsValid")]
-	public static extern bool QUntypedBindable_IsValid(QUntypedBindable_Ptr* self);
+	public static extern bool QUntypedBindable_IsValid(void* self);
 	[LinkName("QUntypedBindable_IsBindable")]
-	public static extern bool QUntypedBindable_IsBindable(QUntypedBindable_Ptr* self);
+	public static extern bool QUntypedBindable_IsBindable(void* self);
 	[LinkName("QUntypedBindable_IsReadOnly")]
-	public static extern bool QUntypedBindable_IsReadOnly(QUntypedBindable_Ptr* self);
+	public static extern bool QUntypedBindable_IsReadOnly(void* self);
 	[LinkName("QUntypedBindable_MakeBinding")]
-	public static extern QUntypedPropertyBinding_Ptr* QUntypedBindable_MakeBinding(QUntypedBindable_Ptr* self);
+	public static extern void* QUntypedBindable_MakeBinding(void* self);
 	[LinkName("QUntypedBindable_TakeBinding")]
-	public static extern QUntypedPropertyBinding_Ptr* QUntypedBindable_TakeBinding(QUntypedBindable_Ptr* self);
+	public static extern void* QUntypedBindable_TakeBinding(void* self);
 	[LinkName("QUntypedBindable_Observe")]
-	public static extern void QUntypedBindable_Observe(QUntypedBindable_Ptr* self, QPropertyObserver_Ptr** observer);
+	public static extern void QUntypedBindable_Observe(void* self, void** observer);
 	[LinkName("QUntypedBindable_Binding")]
-	public static extern QUntypedPropertyBinding_Ptr* QUntypedBindable_Binding(QUntypedBindable_Ptr* self);
+	public static extern void* QUntypedBindable_Binding(void* self);
 	[LinkName("QUntypedBindable_SetBinding")]
-	public static extern bool QUntypedBindable_SetBinding(QUntypedBindable_Ptr* self, QUntypedPropertyBinding_Ptr* binding);
+	public static extern bool QUntypedBindable_SetBinding(void* self, void** binding);
 	[LinkName("QUntypedBindable_HasBinding")]
-	public static extern bool QUntypedBindable_HasBinding(QUntypedBindable_Ptr* self);
+	public static extern bool QUntypedBindable_HasBinding(void* self);
 	[LinkName("QUntypedBindable_MetaType")]
-	public static extern QMetaType_Ptr* QUntypedBindable_MetaType(QUntypedBindable_Ptr* self);
+	public static extern void* QUntypedBindable_MetaType(void* self);
 	[LinkName("QUntypedBindable_MakeBinding1")]
-	public static extern QUntypedPropertyBinding_Ptr* QUntypedBindable_MakeBinding1(QUntypedBindable_Ptr* self, QPropertyBindingSourceLocation_Ptr* location);
+	public static extern void* QUntypedBindable_MakeBinding1(void* self, void** location);
 }
 class QUntypedBindable : IQUntypedBindable
 {
-	private QUntypedBindable_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QUntypedBindable_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QUntypedBindable_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQUntypedBindable other)
 	{
 		this.ptr = CQt.QUntypedBindable_new((.)other?.ObjectPtr);
@@ -371,47 +434,47 @@ class QUntypedBindable : IQUntypedBindable
 	}
 	public bool IsValid()
 	{
-		return CQt.QUntypedBindable_IsValid((.)this.ptr);
+		return CQt.QUntypedBindable_IsValid((.)this.ptr.Ptr);
 	}
 	public bool IsBindable()
 	{
-		return CQt.QUntypedBindable_IsBindable((.)this.ptr);
+		return CQt.QUntypedBindable_IsBindable((.)this.ptr.Ptr);
 	}
 	public bool IsReadOnly()
 	{
-		return CQt.QUntypedBindable_IsReadOnly((.)this.ptr);
+		return CQt.QUntypedBindable_IsReadOnly((.)this.ptr.Ptr);
 	}
-	public QUntypedPropertyBinding_Ptr* MakeBinding()
+	public QUntypedPropertyBinding_Ptr MakeBinding()
 	{
-		return CQt.QUntypedBindable_MakeBinding((.)this.ptr);
+		return QUntypedPropertyBinding_Ptr(CQt.QUntypedBindable_MakeBinding((.)this.ptr.Ptr));
 	}
-	public QUntypedPropertyBinding_Ptr* TakeBinding()
+	public QUntypedPropertyBinding_Ptr TakeBinding()
 	{
-		return CQt.QUntypedBindable_TakeBinding((.)this.ptr);
+		return QUntypedPropertyBinding_Ptr(CQt.QUntypedBindable_TakeBinding((.)this.ptr.Ptr));
 	}
 	public void Observe(IQPropertyObserver observer)
 	{
-		CQt.QUntypedBindable_Observe((.)this.ptr, (.)observer?.ObjectPtr);
+		CQt.QUntypedBindable_Observe((.)this.ptr.Ptr, (.)observer?.ObjectPtr);
 	}
-	public QUntypedPropertyBinding_Ptr* Binding()
+	public QUntypedPropertyBinding_Ptr Binding()
 	{
-		return CQt.QUntypedBindable_Binding((.)this.ptr);
+		return QUntypedPropertyBinding_Ptr(CQt.QUntypedBindable_Binding((.)this.ptr.Ptr));
 	}
 	public bool SetBinding(IQUntypedPropertyBinding binding)
 	{
-		return CQt.QUntypedBindable_SetBinding((.)this.ptr, (.)binding?.ObjectPtr);
+		return CQt.QUntypedBindable_SetBinding((.)this.ptr.Ptr, (.)binding?.ObjectPtr);
 	}
 	public bool HasBinding()
 	{
-		return CQt.QUntypedBindable_HasBinding((.)this.ptr);
+		return CQt.QUntypedBindable_HasBinding((.)this.ptr.Ptr);
 	}
-	public QMetaType_Ptr* MetaType()
+	public QMetaType_Ptr MetaType()
 	{
-		return CQt.QUntypedBindable_MetaType((.)this.ptr);
+		return QMetaType_Ptr(CQt.QUntypedBindable_MetaType((.)this.ptr.Ptr));
 	}
-	public QUntypedPropertyBinding_Ptr* MakeBinding1(IQPropertyBindingSourceLocation location)
+	public QUntypedPropertyBinding_Ptr MakeBinding1(IQPropertyBindingSourceLocation location)
 	{
-		return CQt.QUntypedBindable_MakeBinding1((.)this.ptr, (.)location?.ObjectPtr);
+		return QUntypedPropertyBinding_Ptr(CQt.QUntypedBindable_MakeBinding1((.)this.ptr.Ptr, (.)location?.ObjectPtr));
 	}
 }
 interface IQUntypedBindable : IQtObjectInterface

@@ -7,94 +7,103 @@ namespace Qt6;
 // QPageSize
 // --------------------------------------------------------------
 [CRepr]
-struct QPageSize_Ptr: void
+struct QPageSize_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPageSize_new")]
-	public static extern QPageSize_Ptr* QPageSize_new();
+	public static extern QPageSize_Ptr QPageSize_new();
 	[LinkName("QPageSize_new2")]
-	public static extern QPageSize_Ptr* QPageSize_new2(QPageSize_PageSizeId pageSizeId);
+	public static extern QPageSize_Ptr QPageSize_new2(QPageSize_PageSizeId pageSizeId);
 	[LinkName("QPageSize_new3")]
-	public static extern QPageSize_Ptr* QPageSize_new3(QSize_Ptr* pointSize);
+	public static extern QPageSize_Ptr QPageSize_new3(void** pointSize);
 	[LinkName("QPageSize_new4")]
-	public static extern QPageSize_Ptr* QPageSize_new4(QSizeF_Ptr* size, QPageSize_Unit units);
+	public static extern QPageSize_Ptr QPageSize_new4(void** size, QPageSize_Unit units);
 	[LinkName("QPageSize_new5")]
-	public static extern QPageSize_Ptr* QPageSize_new5(QPageSize_Ptr* other);
+	public static extern QPageSize_Ptr QPageSize_new5(void** other);
 	[LinkName("QPageSize_new6")]
-	public static extern QPageSize_Ptr* QPageSize_new6(QSize_Ptr* pointSize, libqt_string name);
+	public static extern QPageSize_Ptr QPageSize_new6(void** pointSize, libqt_string name);
 	[LinkName("QPageSize_new7")]
-	public static extern QPageSize_Ptr* QPageSize_new7(QSize_Ptr* pointSize, libqt_string name, QPageSize_SizeMatchPolicy matchPolicy);
+	public static extern QPageSize_Ptr QPageSize_new7(void** pointSize, libqt_string name, QPageSize_SizeMatchPolicy matchPolicy);
 	[LinkName("QPageSize_new8")]
-	public static extern QPageSize_Ptr* QPageSize_new8(QSizeF_Ptr* size, QPageSize_Unit units, libqt_string name);
+	public static extern QPageSize_Ptr QPageSize_new8(void** size, QPageSize_Unit units, libqt_string name);
 	[LinkName("QPageSize_new9")]
-	public static extern QPageSize_Ptr* QPageSize_new9(QSizeF_Ptr* size, QPageSize_Unit units, libqt_string name, QPageSize_SizeMatchPolicy matchPolicy);
+	public static extern QPageSize_Ptr QPageSize_new9(void** size, QPageSize_Unit units, libqt_string name, QPageSize_SizeMatchPolicy matchPolicy);
 	[LinkName("QPageSize_Delete")]
-	public static extern void QPageSize_Delete(QPageSize_Ptr* self);
+	public static extern void QPageSize_Delete(QPageSize_Ptr self);
 	[LinkName("QPageSize_OperatorAssign")]
-	public static extern void QPageSize_OperatorAssign(QPageSize_Ptr* self, QPageSize_Ptr* other);
+	public static extern void QPageSize_OperatorAssign(void* self, void** other);
 	[LinkName("QPageSize_Swap")]
-	public static extern void QPageSize_Swap(QPageSize_Ptr* self, QPageSize_Ptr* other);
+	public static extern void QPageSize_Swap(void* self, void** other);
 	[LinkName("QPageSize_IsEquivalentTo")]
-	public static extern bool QPageSize_IsEquivalentTo(QPageSize_Ptr* self, QPageSize_Ptr* other);
+	public static extern bool QPageSize_IsEquivalentTo(void* self, void** other);
 	[LinkName("QPageSize_IsValid")]
-	public static extern bool QPageSize_IsValid(QPageSize_Ptr* self);
+	public static extern bool QPageSize_IsValid(void* self);
 	[LinkName("QPageSize_Key")]
-	public static extern libqt_string QPageSize_Key(QPageSize_Ptr* self);
+	public static extern libqt_string QPageSize_Key(void* self);
 	[LinkName("QPageSize_Name")]
-	public static extern libqt_string QPageSize_Name(QPageSize_Ptr* self);
+	public static extern libqt_string QPageSize_Name(void* self);
 	[LinkName("QPageSize_Id")]
-	public static extern QPageSize_PageSizeId QPageSize_Id(QPageSize_Ptr* self);
+	public static extern QPageSize_PageSizeId QPageSize_Id(void* self);
 	[LinkName("QPageSize_WindowsId")]
-	public static extern c_int QPageSize_WindowsId(QPageSize_Ptr* self);
+	public static extern c_int QPageSize_WindowsId(void* self);
 	[LinkName("QPageSize_DefinitionSize")]
-	public static extern QSizeF_Ptr* QPageSize_DefinitionSize(QPageSize_Ptr* self);
+	public static extern void* QPageSize_DefinitionSize(void* self);
 	[LinkName("QPageSize_DefinitionUnits")]
-	public static extern QPageSize_Unit QPageSize_DefinitionUnits(QPageSize_Ptr* self);
+	public static extern QPageSize_Unit QPageSize_DefinitionUnits(void* self);
 	[LinkName("QPageSize_Size")]
-	public static extern QSizeF_Ptr* QPageSize_Size(QPageSize_Ptr* self, QPageSize_Unit units);
+	public static extern void* QPageSize_Size(void* self, QPageSize_Unit units);
 	[LinkName("QPageSize_SizePoints")]
-	public static extern QSize_Ptr* QPageSize_SizePoints(QPageSize_Ptr* self);
+	public static extern void* QPageSize_SizePoints(void* self);
 	[LinkName("QPageSize_SizePixels")]
-	public static extern QSize_Ptr* QPageSize_SizePixels(QPageSize_Ptr* self, c_int resolution);
+	public static extern void* QPageSize_SizePixels(void* self, c_int resolution);
 	[LinkName("QPageSize_Rect")]
-	public static extern QRectF_Ptr* QPageSize_Rect(QPageSize_Ptr* self, QPageSize_Unit units);
+	public static extern void* QPageSize_Rect(void* self, QPageSize_Unit units);
 	[LinkName("QPageSize_RectPoints")]
-	public static extern QRect_Ptr* QPageSize_RectPoints(QPageSize_Ptr* self);
+	public static extern void* QPageSize_RectPoints(void* self);
 	[LinkName("QPageSize_RectPixels")]
-	public static extern QRect_Ptr* QPageSize_RectPixels(QPageSize_Ptr* self, c_int resolution);
+	public static extern void* QPageSize_RectPixels(void* self, c_int resolution);
 	[LinkName("QPageSize_Key2")]
 	public static extern libqt_string QPageSize_Key2(QPageSize_PageSizeId pageSizeId);
 	[LinkName("QPageSize_Name2")]
 	public static extern libqt_string QPageSize_Name2(QPageSize_PageSizeId pageSizeId);
 	[LinkName("QPageSize_Id2")]
-	public static extern QPageSize_PageSizeId QPageSize_Id2(QSize_Ptr* pointSize);
+	public static extern QPageSize_PageSizeId QPageSize_Id2(void** pointSize);
 	[LinkName("QPageSize_Id3")]
-	public static extern QPageSize_PageSizeId QPageSize_Id3(QSizeF_Ptr* size, QPageSize_Unit units);
+	public static extern QPageSize_PageSizeId QPageSize_Id3(void** size, QPageSize_Unit units);
 	[LinkName("QPageSize_Id4")]
 	public static extern QPageSize_PageSizeId QPageSize_Id4(c_int windowsId);
 	[LinkName("QPageSize_WindowsId2")]
 	public static extern c_int QPageSize_WindowsId2(QPageSize_PageSizeId pageSizeId);
 	[LinkName("QPageSize_DefinitionSize2")]
-	public static extern QSizeF_Ptr* QPageSize_DefinitionSize2(QPageSize_PageSizeId pageSizeId);
+	public static extern void* QPageSize_DefinitionSize2(QPageSize_PageSizeId pageSizeId);
 	[LinkName("QPageSize_DefinitionUnits2")]
 	public static extern QPageSize_Unit QPageSize_DefinitionUnits2(QPageSize_PageSizeId pageSizeId);
 	[LinkName("QPageSize_Size2")]
-	public static extern QSizeF_Ptr* QPageSize_Size2(QPageSize_PageSizeId pageSizeId, QPageSize_Unit units);
+	public static extern void* QPageSize_Size2(QPageSize_PageSizeId pageSizeId, QPageSize_Unit units);
 	[LinkName("QPageSize_SizePoints2")]
-	public static extern QSize_Ptr* QPageSize_SizePoints2(QPageSize_PageSizeId pageSizeId);
+	public static extern void* QPageSize_SizePoints2(QPageSize_PageSizeId pageSizeId);
 	[LinkName("QPageSize_SizePixels2")]
-	public static extern QSize_Ptr* QPageSize_SizePixels2(QPageSize_PageSizeId pageSizeId, c_int resolution);
+	public static extern void* QPageSize_SizePixels2(QPageSize_PageSizeId pageSizeId, c_int resolution);
 	[LinkName("QPageSize_Id22")]
-	public static extern QPageSize_PageSizeId QPageSize_Id22(QSize_Ptr* pointSize, QPageSize_SizeMatchPolicy matchPolicy);
+	public static extern QPageSize_PageSizeId QPageSize_Id22(void** pointSize, QPageSize_SizeMatchPolicy matchPolicy);
 	[LinkName("QPageSize_Id32")]
-	public static extern QPageSize_PageSizeId QPageSize_Id32(QSizeF_Ptr* size, QPageSize_Unit units, QPageSize_SizeMatchPolicy matchPolicy);
+	public static extern QPageSize_PageSizeId QPageSize_Id32(void** size, QPageSize_Unit units, QPageSize_SizeMatchPolicy matchPolicy);
 }
 class QPageSize : IQPageSize
 {
-	private QPageSize_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPageSize_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPageSize_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPageSize_new();
@@ -137,71 +146,71 @@ class QPageSize : IQPageSize
 	}
 	public void Swap(IQPageSize other)
 	{
-		CQt.QPageSize_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QPageSize_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsEquivalentTo(IQPageSize other)
 	{
-		return CQt.QPageSize_IsEquivalentTo((.)this.ptr, (.)other?.ObjectPtr);
+		return CQt.QPageSize_IsEquivalentTo((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QPageSize_IsValid((.)this.ptr);
+		return CQt.QPageSize_IsValid((.)this.ptr.Ptr);
 	}
-	public libqt_string Key()
+	public void Key(String outStr)
 	{
-		return CQt.QPageSize_Key((.)this.ptr);
+		CQt.QPageSize_Key((.)this.ptr.Ptr);
 	}
-	public libqt_string Name()
+	public void Name(String outStr)
 	{
-		return CQt.QPageSize_Name((.)this.ptr);
+		CQt.QPageSize_Name((.)this.ptr.Ptr);
 	}
 	public QPageSize_PageSizeId Id()
 	{
-		return CQt.QPageSize_Id((.)this.ptr);
+		return CQt.QPageSize_Id((.)this.ptr.Ptr);
 	}
 	public c_int WindowsId()
 	{
-		return CQt.QPageSize_WindowsId((.)this.ptr);
+		return CQt.QPageSize_WindowsId((.)this.ptr.Ptr);
 	}
-	public QSizeF_Ptr* DefinitionSize()
+	public QSizeF_Ptr DefinitionSize()
 	{
-		return CQt.QPageSize_DefinitionSize((.)this.ptr);
+		return QSizeF_Ptr(CQt.QPageSize_DefinitionSize((.)this.ptr.Ptr));
 	}
 	public QPageSize_Unit DefinitionUnits()
 	{
-		return CQt.QPageSize_DefinitionUnits((.)this.ptr);
+		return CQt.QPageSize_DefinitionUnits((.)this.ptr.Ptr);
 	}
-	public QSizeF_Ptr* Size(QPageSize_Unit units)
+	public QSizeF_Ptr Size(QPageSize_Unit units)
 	{
-		return CQt.QPageSize_Size((.)this.ptr, units);
+		return QSizeF_Ptr(CQt.QPageSize_Size((.)this.ptr.Ptr, units));
 	}
-	public QSize_Ptr* SizePoints()
+	public QSize_Ptr SizePoints()
 	{
-		return CQt.QPageSize_SizePoints((.)this.ptr);
+		return QSize_Ptr(CQt.QPageSize_SizePoints((.)this.ptr.Ptr));
 	}
-	public QSize_Ptr* SizePixels(c_int resolution)
+	public QSize_Ptr SizePixels(c_int resolution)
 	{
-		return CQt.QPageSize_SizePixels((.)this.ptr, resolution);
+		return QSize_Ptr(CQt.QPageSize_SizePixels((.)this.ptr.Ptr, resolution));
 	}
-	public QRectF_Ptr* Rect(QPageSize_Unit units)
+	public QRectF_Ptr Rect(QPageSize_Unit units)
 	{
-		return CQt.QPageSize_Rect((.)this.ptr, units);
+		return QRectF_Ptr(CQt.QPageSize_Rect((.)this.ptr.Ptr, units));
 	}
-	public QRect_Ptr* RectPoints()
+	public QRect_Ptr RectPoints()
 	{
-		return CQt.QPageSize_RectPoints((.)this.ptr);
+		return QRect_Ptr(CQt.QPageSize_RectPoints((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* RectPixels(c_int resolution)
+	public QRect_Ptr RectPixels(c_int resolution)
 	{
-		return CQt.QPageSize_RectPixels((.)this.ptr, resolution);
+		return QRect_Ptr(CQt.QPageSize_RectPixels((.)this.ptr.Ptr, resolution));
 	}
-	public libqt_string Key2(QPageSize_PageSizeId pageSizeId)
+	public void Key2(String outStr, QPageSize_PageSizeId pageSizeId)
 	{
-		return CQt.QPageSize_Key2(pageSizeId);
+		CQt.QPageSize_Key2(pageSizeId);
 	}
-	public libqt_string Name2(QPageSize_PageSizeId pageSizeId)
+	public void Name2(String outStr, QPageSize_PageSizeId pageSizeId)
 	{
-		return CQt.QPageSize_Name2(pageSizeId);
+		CQt.QPageSize_Name2(pageSizeId);
 	}
 	public QPageSize_PageSizeId Id2(IQSize pointSize)
 	{
@@ -219,25 +228,25 @@ class QPageSize : IQPageSize
 	{
 		return CQt.QPageSize_WindowsId2(pageSizeId);
 	}
-	public QSizeF_Ptr* DefinitionSize2(QPageSize_PageSizeId pageSizeId)
+	public QSizeF_Ptr DefinitionSize2(QPageSize_PageSizeId pageSizeId)
 	{
-		return CQt.QPageSize_DefinitionSize2(pageSizeId);
+		return QSizeF_Ptr(CQt.QPageSize_DefinitionSize2(pageSizeId));
 	}
 	public QPageSize_Unit DefinitionUnits2(QPageSize_PageSizeId pageSizeId)
 	{
 		return CQt.QPageSize_DefinitionUnits2(pageSizeId);
 	}
-	public QSizeF_Ptr* Size2(QPageSize_PageSizeId pageSizeId, QPageSize_Unit units)
+	public QSizeF_Ptr Size2(QPageSize_PageSizeId pageSizeId, QPageSize_Unit units)
 	{
-		return CQt.QPageSize_Size2(pageSizeId, units);
+		return QSizeF_Ptr(CQt.QPageSize_Size2(pageSizeId, units));
 	}
-	public QSize_Ptr* SizePoints2(QPageSize_PageSizeId pageSizeId)
+	public QSize_Ptr SizePoints2(QPageSize_PageSizeId pageSizeId)
 	{
-		return CQt.QPageSize_SizePoints2(pageSizeId);
+		return QSize_Ptr(CQt.QPageSize_SizePoints2(pageSizeId));
 	}
-	public QSize_Ptr* SizePixels2(QPageSize_PageSizeId pageSizeId, c_int resolution)
+	public QSize_Ptr SizePixels2(QPageSize_PageSizeId pageSizeId, c_int resolution)
 	{
-		return CQt.QPageSize_SizePixels2(pageSizeId, resolution);
+		return QSize_Ptr(CQt.QPageSize_SizePixels2(pageSizeId, resolution));
 	}
 	public QPageSize_PageSizeId Id22(IQSize pointSize, QPageSize_SizeMatchPolicy matchPolicy)
 	{

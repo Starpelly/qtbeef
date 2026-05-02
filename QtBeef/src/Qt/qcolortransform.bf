@@ -7,34 +7,43 @@ namespace Qt6;
 // QColorTransform
 // --------------------------------------------------------------
 [CRepr]
-struct QColorTransform_Ptr: void
+struct QColorTransform_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QColorTransform_new")]
-	public static extern QColorTransform_Ptr* QColorTransform_new();
+	public static extern QColorTransform_Ptr QColorTransform_new();
 	[LinkName("QColorTransform_new2")]
-	public static extern QColorTransform_Ptr* QColorTransform_new2(QColorTransform_Ptr* colorTransform);
+	public static extern QColorTransform_Ptr QColorTransform_new2(void** colorTransform);
 	[LinkName("QColorTransform_Delete")]
-	public static extern void QColorTransform_Delete(QColorTransform_Ptr* self);
+	public static extern void QColorTransform_Delete(QColorTransform_Ptr self);
 	[LinkName("QColorTransform_OperatorAssign")]
-	public static extern void QColorTransform_OperatorAssign(QColorTransform_Ptr* self, QColorTransform_Ptr* other);
+	public static extern void QColorTransform_OperatorAssign(void* self, void** other);
 	[LinkName("QColorTransform_Swap")]
-	public static extern void QColorTransform_Swap(QColorTransform_Ptr* self, QColorTransform_Ptr* other);
+	public static extern void QColorTransform_Swap(void* self, void** other);
 	[LinkName("QColorTransform_IsIdentity")]
-	public static extern bool QColorTransform_IsIdentity(QColorTransform_Ptr* self);
+	public static extern bool QColorTransform_IsIdentity(void* self);
 	[LinkName("QColorTransform_Map")]
-	public static extern c_uint QColorTransform_Map(QColorTransform_Ptr* self, c_uint argb);
+	public static extern c_uint QColorTransform_Map(void* self, c_uint argb);
 	[LinkName("QColorTransform_Map2")]
-	public static extern QRgba64_Ptr* QColorTransform_Map2(QColorTransform_Ptr* self, QRgba64_Ptr* rgba64);
+	public static extern void* QColorTransform_Map2(void* self, void* rgba64);
 	[LinkName("QColorTransform_Map5")]
-	public static extern QColor_Ptr* QColorTransform_Map5(QColorTransform_Ptr* self, QColor_Ptr* color);
+	public static extern void* QColorTransform_Map5(void* self, void** color);
 }
 class QColorTransform : IQColorTransform
 {
-	private QColorTransform_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QColorTransform_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QColorTransform_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QColorTransform_new();
@@ -49,23 +58,23 @@ class QColorTransform : IQColorTransform
 	}
 	public void Swap(IQColorTransform other)
 	{
-		CQt.QColorTransform_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QColorTransform_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsIdentity()
 	{
-		return CQt.QColorTransform_IsIdentity((.)this.ptr);
+		return CQt.QColorTransform_IsIdentity((.)this.ptr.Ptr);
 	}
 	public c_uint Map(c_uint argb)
 	{
-		return CQt.QColorTransform_Map((.)this.ptr, argb);
+		return CQt.QColorTransform_Map((.)this.ptr.Ptr, argb);
 	}
-	public QRgba64_Ptr* Map2(IQRgba64 rgba64)
+	public QRgba64_Ptr Map2(IQRgba64 rgba64)
 	{
-		return CQt.QColorTransform_Map2((.)this.ptr, (.)rgba64?.ObjectPtr);
+		return QRgba64_Ptr(CQt.QColorTransform_Map2((.)this.ptr.Ptr, (.)rgba64?.ObjectPtr));
 	}
-	public QColor_Ptr* Map5(IQColor color)
+	public QColor_Ptr Map5(IQColor color)
 	{
-		return CQt.QColorTransform_Map5((.)this.ptr, (.)color?.ObjectPtr);
+		return QColor_Ptr(CQt.QColorTransform_Map5((.)this.ptr.Ptr, (.)color?.ObjectPtr));
 	}
 }
 interface IQColorTransform : IQtObjectInterface

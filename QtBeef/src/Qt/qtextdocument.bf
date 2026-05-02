@@ -7,35 +7,44 @@ namespace Qt6;
 // QAbstractUndoItem
 // --------------------------------------------------------------
 [CRepr]
-struct QAbstractUndoItem_Ptr: void
+struct QAbstractUndoItem_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QAbstractUndoItem_Delete")]
-	public static extern void QAbstractUndoItem_Delete(QAbstractUndoItem_Ptr* self);
+	public static extern void QAbstractUndoItem_Delete(QAbstractUndoItem_Ptr self);
 	[LinkName("QAbstractUndoItem_Undo")]
-	public static extern void QAbstractUndoItem_Undo(QAbstractUndoItem_Ptr* self);
+	public static extern void QAbstractUndoItem_Undo(void* self);
 	[LinkName("QAbstractUndoItem_Redo")]
-	public static extern void QAbstractUndoItem_Redo(QAbstractUndoItem_Ptr* self);
+	public static extern void QAbstractUndoItem_Redo(void* self);
 	[LinkName("QAbstractUndoItem_OperatorAssign")]
-	public static extern void QAbstractUndoItem_OperatorAssign(QAbstractUndoItem_Ptr* self, QAbstractUndoItem_Ptr* param1);
+	public static extern void QAbstractUndoItem_OperatorAssign(void* self, void** param1);
 }
 class QAbstractUndoItem : IQAbstractUndoItem
 {
-	private QAbstractUndoItem_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QAbstractUndoItem_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAbstractUndoItem_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public ~this()
 	{
 		CQt.QAbstractUndoItem_Delete(this.ptr);
 	}
 	public void Undo()
 	{
-		CQt.QAbstractUndoItem_Undo((.)this.ptr);
+		CQt.QAbstractUndoItem_Undo((.)this.ptr.Ptr);
 	}
 	public void Redo()
 	{
-		CQt.QAbstractUndoItem_Redo((.)this.ptr);
+		CQt.QAbstractUndoItem_Redo((.)this.ptr.Ptr);
 	}
 }
 interface IQAbstractUndoItem : IQtObjectInterface
@@ -45,266 +54,275 @@ interface IQAbstractUndoItem : IQtObjectInterface
 // QTextDocument
 // --------------------------------------------------------------
 [CRepr]
-struct QTextDocument_Ptr: void
+struct QTextDocument_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QTextDocument_new")]
-	public static extern QTextDocument_Ptr* QTextDocument_new();
+	public static extern QTextDocument_Ptr QTextDocument_new();
 	[LinkName("QTextDocument_new2")]
-	public static extern QTextDocument_Ptr* QTextDocument_new2(libqt_string text);
+	public static extern QTextDocument_Ptr QTextDocument_new2(libqt_string text);
 	[LinkName("QTextDocument_new3")]
-	public static extern QTextDocument_Ptr* QTextDocument_new3(QObject_Ptr** parent);
+	public static extern QTextDocument_Ptr QTextDocument_new3(void** parent);
 	[LinkName("QTextDocument_new4")]
-	public static extern QTextDocument_Ptr* QTextDocument_new4(libqt_string text, QObject_Ptr** parent);
+	public static extern QTextDocument_Ptr QTextDocument_new4(libqt_string text, void** parent);
 	[LinkName("QTextDocument_Delete")]
-	public static extern void QTextDocument_Delete(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_Delete(QTextDocument_Ptr self);
 	[LinkName("QTextDocument_MetaObject")]
-	public static extern QMetaObject_Ptr** QTextDocument_MetaObject(QTextDocument_Ptr* self);
+	public static extern void** QTextDocument_MetaObject(void* self);
 	[LinkName("QTextDocument_Qt_Metacast")]
-	public static extern void* QTextDocument_Qt_Metacast(QTextDocument_Ptr* self, c_char* param1);
+	public static extern void* QTextDocument_Qt_Metacast(void* self, c_char* param1);
 	[LinkName("QTextDocument_Qt_Metacall")]
-	public static extern c_int QTextDocument_Qt_Metacall(QTextDocument_Ptr* self, QMetaObject_Call param1, c_int param2, void** param3);
+	public static extern c_int QTextDocument_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QTextDocument_Tr")]
 	public static extern libqt_string QTextDocument_Tr(c_char* s);
 	[LinkName("QTextDocument_Clone")]
-	public static extern QTextDocument_Ptr** QTextDocument_Clone(QTextDocument_Ptr* self);
+	public static extern void** QTextDocument_Clone(void* self);
 	[LinkName("QTextDocument_IsEmpty")]
-	public static extern bool QTextDocument_IsEmpty(QTextDocument_Ptr* self);
+	public static extern bool QTextDocument_IsEmpty(void* self);
 	[LinkName("QTextDocument_Clear")]
-	public static extern void QTextDocument_Clear(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_Clear(void* self);
 	[LinkName("QTextDocument_SetUndoRedoEnabled")]
-	public static extern void QTextDocument_SetUndoRedoEnabled(QTextDocument_Ptr* self, bool enable);
+	public static extern void QTextDocument_SetUndoRedoEnabled(void* self, bool enable);
 	[LinkName("QTextDocument_IsUndoRedoEnabled")]
-	public static extern bool QTextDocument_IsUndoRedoEnabled(QTextDocument_Ptr* self);
+	public static extern bool QTextDocument_IsUndoRedoEnabled(void* self);
 	[LinkName("QTextDocument_IsUndoAvailable")]
-	public static extern bool QTextDocument_IsUndoAvailable(QTextDocument_Ptr* self);
+	public static extern bool QTextDocument_IsUndoAvailable(void* self);
 	[LinkName("QTextDocument_IsRedoAvailable")]
-	public static extern bool QTextDocument_IsRedoAvailable(QTextDocument_Ptr* self);
+	public static extern bool QTextDocument_IsRedoAvailable(void* self);
 	[LinkName("QTextDocument_AvailableUndoSteps")]
-	public static extern c_int QTextDocument_AvailableUndoSteps(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_AvailableUndoSteps(void* self);
 	[LinkName("QTextDocument_AvailableRedoSteps")]
-	public static extern c_int QTextDocument_AvailableRedoSteps(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_AvailableRedoSteps(void* self);
 	[LinkName("QTextDocument_Revision")]
-	public static extern c_int QTextDocument_Revision(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_Revision(void* self);
 	[LinkName("QTextDocument_SetDocumentLayout")]
-	public static extern void QTextDocument_SetDocumentLayout(QTextDocument_Ptr* self, QAbstractTextDocumentLayout_Ptr** layout);
+	public static extern void QTextDocument_SetDocumentLayout(void* self, void** layout);
 	[LinkName("QTextDocument_DocumentLayout")]
-	public static extern QAbstractTextDocumentLayout_Ptr** QTextDocument_DocumentLayout(QTextDocument_Ptr* self);
+	public static extern void** QTextDocument_DocumentLayout(void* self);
 	[LinkName("QTextDocument_SetMetaInformation")]
-	public static extern void QTextDocument_SetMetaInformation(QTextDocument_Ptr* self, QTextDocument_MetaInformation info, libqt_string param2);
+	public static extern void QTextDocument_SetMetaInformation(void* self, QTextDocument_MetaInformation info, libqt_string param2);
 	[LinkName("QTextDocument_MetaInformation")]
-	public static extern libqt_string QTextDocument_MetaInformation(QTextDocument_Ptr* self, QTextDocument_MetaInformation info);
+	public static extern libqt_string QTextDocument_MetaInformation(void* self, QTextDocument_MetaInformation info);
 	[LinkName("QTextDocument_ToHtml")]
-	public static extern libqt_string QTextDocument_ToHtml(QTextDocument_Ptr* self);
+	public static extern libqt_string QTextDocument_ToHtml(void* self);
 	[LinkName("QTextDocument_SetHtml")]
-	public static extern void QTextDocument_SetHtml(QTextDocument_Ptr* self, libqt_string html);
+	public static extern void QTextDocument_SetHtml(void* self, libqt_string html);
 	[LinkName("QTextDocument_ToMarkdown")]
-	public static extern libqt_string QTextDocument_ToMarkdown(QTextDocument_Ptr* self);
+	public static extern libqt_string QTextDocument_ToMarkdown(void* self);
 	[LinkName("QTextDocument_SetMarkdown")]
-	public static extern void QTextDocument_SetMarkdown(QTextDocument_Ptr* self, libqt_string markdown);
+	public static extern void QTextDocument_SetMarkdown(void* self, libqt_string markdown);
 	[LinkName("QTextDocument_ToRawText")]
-	public static extern libqt_string QTextDocument_ToRawText(QTextDocument_Ptr* self);
+	public static extern libqt_string QTextDocument_ToRawText(void* self);
 	[LinkName("QTextDocument_ToPlainText")]
-	public static extern libqt_string QTextDocument_ToPlainText(QTextDocument_Ptr* self);
+	public static extern libqt_string QTextDocument_ToPlainText(void* self);
 	[LinkName("QTextDocument_SetPlainText")]
-	public static extern void QTextDocument_SetPlainText(QTextDocument_Ptr* self, libqt_string text);
+	public static extern void QTextDocument_SetPlainText(void* self, libqt_string text);
 	[LinkName("QTextDocument_CharacterAt")]
-	public static extern QChar_Ptr* QTextDocument_CharacterAt(QTextDocument_Ptr* self, c_int pos);
+	public static extern void* QTextDocument_CharacterAt(void* self, c_int pos);
 	[LinkName("QTextDocument_Find")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find(QTextDocument_Ptr* self, libqt_string subString);
+	public static extern void* QTextDocument_Find(void* self, libqt_string subString);
 	[LinkName("QTextDocument_Find2")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find2(QTextDocument_Ptr* self, libqt_string subString, QTextCursor_Ptr* cursor);
+	public static extern void* QTextDocument_Find2(void* self, libqt_string subString, void** cursor);
 	[LinkName("QTextDocument_Find3")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find3(QTextDocument_Ptr* self, QRegularExpression_Ptr* expr);
+	public static extern void* QTextDocument_Find3(void* self, void** expr);
 	[LinkName("QTextDocument_Find4")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find4(QTextDocument_Ptr* self, QRegularExpression_Ptr* expr, QTextCursor_Ptr* cursor);
+	public static extern void* QTextDocument_Find4(void* self, void** expr, void** cursor);
 	[LinkName("QTextDocument_FrameAt")]
-	public static extern QTextFrame_Ptr** QTextDocument_FrameAt(QTextDocument_Ptr* self, c_int pos);
+	public static extern void** QTextDocument_FrameAt(void* self, c_int pos);
 	[LinkName("QTextDocument_RootFrame")]
-	public static extern QTextFrame_Ptr** QTextDocument_RootFrame(QTextDocument_Ptr* self);
+	public static extern void** QTextDocument_RootFrame(void* self);
 	[LinkName("QTextDocument_Object")]
-	public static extern QTextObject_Ptr** QTextDocument_Object(QTextDocument_Ptr* self, c_int objectIndex);
+	public static extern void** QTextDocument_Object(void* self, c_int objectIndex);
 	[LinkName("QTextDocument_ObjectForFormat")]
-	public static extern QTextObject_Ptr** QTextDocument_ObjectForFormat(QTextDocument_Ptr* self, QTextFormat_Ptr* param1);
+	public static extern void** QTextDocument_ObjectForFormat(void* self, void** param1);
 	[LinkName("QTextDocument_FindBlock")]
-	public static extern QTextBlock_Ptr* QTextDocument_FindBlock(QTextDocument_Ptr* self, c_int pos);
+	public static extern void* QTextDocument_FindBlock(void* self, c_int pos);
 	[LinkName("QTextDocument_FindBlockByNumber")]
-	public static extern QTextBlock_Ptr* QTextDocument_FindBlockByNumber(QTextDocument_Ptr* self, c_int blockNumber);
+	public static extern void* QTextDocument_FindBlockByNumber(void* self, c_int blockNumber);
 	[LinkName("QTextDocument_FindBlockByLineNumber")]
-	public static extern QTextBlock_Ptr* QTextDocument_FindBlockByLineNumber(QTextDocument_Ptr* self, c_int blockNumber);
+	public static extern void* QTextDocument_FindBlockByLineNumber(void* self, c_int blockNumber);
 	[LinkName("QTextDocument_Begin")]
-	public static extern QTextBlock_Ptr* QTextDocument_Begin(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_Begin(void* self);
 	[LinkName("QTextDocument_End")]
-	public static extern QTextBlock_Ptr* QTextDocument_End(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_End(void* self);
 	[LinkName("QTextDocument_FirstBlock")]
-	public static extern QTextBlock_Ptr* QTextDocument_FirstBlock(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_FirstBlock(void* self);
 	[LinkName("QTextDocument_LastBlock")]
-	public static extern QTextBlock_Ptr* QTextDocument_LastBlock(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_LastBlock(void* self);
 	[LinkName("QTextDocument_SetPageSize")]
-	public static extern void QTextDocument_SetPageSize(QTextDocument_Ptr* self, QSizeF_Ptr* size);
+	public static extern void QTextDocument_SetPageSize(void* self, void** size);
 	[LinkName("QTextDocument_PageSize")]
-	public static extern QSizeF_Ptr* QTextDocument_PageSize(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_PageSize(void* self);
 	[LinkName("QTextDocument_SetDefaultFont")]
-	public static extern void QTextDocument_SetDefaultFont(QTextDocument_Ptr* self, QFont_Ptr* font);
+	public static extern void QTextDocument_SetDefaultFont(void* self, void** font);
 	[LinkName("QTextDocument_DefaultFont")]
-	public static extern QFont_Ptr* QTextDocument_DefaultFont(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_DefaultFont(void* self);
 	[LinkName("QTextDocument_SetSuperScriptBaseline")]
-	public static extern void QTextDocument_SetSuperScriptBaseline(QTextDocument_Ptr* self, double baseline);
+	public static extern void QTextDocument_SetSuperScriptBaseline(void* self, double baseline);
 	[LinkName("QTextDocument_SuperScriptBaseline")]
-	public static extern double QTextDocument_SuperScriptBaseline(QTextDocument_Ptr* self);
+	public static extern double QTextDocument_SuperScriptBaseline(void* self);
 	[LinkName("QTextDocument_SetSubScriptBaseline")]
-	public static extern void QTextDocument_SetSubScriptBaseline(QTextDocument_Ptr* self, double baseline);
+	public static extern void QTextDocument_SetSubScriptBaseline(void* self, double baseline);
 	[LinkName("QTextDocument_SubScriptBaseline")]
-	public static extern double QTextDocument_SubScriptBaseline(QTextDocument_Ptr* self);
+	public static extern double QTextDocument_SubScriptBaseline(void* self);
 	[LinkName("QTextDocument_SetBaselineOffset")]
-	public static extern void QTextDocument_SetBaselineOffset(QTextDocument_Ptr* self, double baseline);
+	public static extern void QTextDocument_SetBaselineOffset(void* self, double baseline);
 	[LinkName("QTextDocument_BaselineOffset")]
-	public static extern double QTextDocument_BaselineOffset(QTextDocument_Ptr* self);
+	public static extern double QTextDocument_BaselineOffset(void* self);
 	[LinkName("QTextDocument_PageCount")]
-	public static extern c_int QTextDocument_PageCount(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_PageCount(void* self);
 	[LinkName("QTextDocument_IsModified")]
-	public static extern bool QTextDocument_IsModified(QTextDocument_Ptr* self);
+	public static extern bool QTextDocument_IsModified(void* self);
 	[LinkName("QTextDocument_Print")]
-	public static extern void QTextDocument_Print(QTextDocument_Ptr* self, QPagedPaintDevice_Ptr** printer);
+	public static extern void QTextDocument_Print(void* self, void** printer);
 	[LinkName("QTextDocument_Resource")]
-	public static extern QVariant_Ptr* QTextDocument_Resource(QTextDocument_Ptr* self, c_int type, QUrl_Ptr* name);
+	public static extern void* QTextDocument_Resource(void* self, c_int type, void** name);
 	[LinkName("QTextDocument_AddResource")]
-	public static extern void QTextDocument_AddResource(QTextDocument_Ptr* self, c_int type, QUrl_Ptr* name, QVariant_Ptr* resource);
+	public static extern void QTextDocument_AddResource(void* self, c_int type, void** name, void** resource);
 	[LinkName("QTextDocument_SetResourceProvider")]
-	public static extern void QTextDocument_SetResourceProvider(QTextDocument_Ptr* self, void** provider);
+	public static extern void QTextDocument_SetResourceProvider(void* self, void** provider);
 	[LinkName("QTextDocument_SetDefaultResourceProvider")]
 	public static extern void QTextDocument_SetDefaultResourceProvider(void** provider);
 	[LinkName("QTextDocument_AllFormats")]
-	public static extern void* QTextDocument_AllFormats(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_AllFormats(void* self);
 	[LinkName("QTextDocument_MarkContentsDirty")]
-	public static extern void QTextDocument_MarkContentsDirty(QTextDocument_Ptr* self, c_int from, c_int length);
+	public static extern void QTextDocument_MarkContentsDirty(void* self, c_int from, c_int length);
 	[LinkName("QTextDocument_SetUseDesignMetrics")]
-	public static extern void QTextDocument_SetUseDesignMetrics(QTextDocument_Ptr* self, bool b);
+	public static extern void QTextDocument_SetUseDesignMetrics(void* self, bool b);
 	[LinkName("QTextDocument_UseDesignMetrics")]
-	public static extern bool QTextDocument_UseDesignMetrics(QTextDocument_Ptr* self);
+	public static extern bool QTextDocument_UseDesignMetrics(void* self);
 	[LinkName("QTextDocument_SetLayoutEnabled")]
-	public static extern void QTextDocument_SetLayoutEnabled(QTextDocument_Ptr* self, bool b);
+	public static extern void QTextDocument_SetLayoutEnabled(void* self, bool b);
 	[LinkName("QTextDocument_IsLayoutEnabled")]
-	public static extern bool QTextDocument_IsLayoutEnabled(QTextDocument_Ptr* self);
+	public static extern bool QTextDocument_IsLayoutEnabled(void* self);
 	[LinkName("QTextDocument_DrawContents")]
-	public static extern void QTextDocument_DrawContents(QTextDocument_Ptr* self, QPainter_Ptr** painter);
+	public static extern void QTextDocument_DrawContents(void* self, void** painter);
 	[LinkName("QTextDocument_SetTextWidth")]
-	public static extern void QTextDocument_SetTextWidth(QTextDocument_Ptr* self, double width);
+	public static extern void QTextDocument_SetTextWidth(void* self, double width);
 	[LinkName("QTextDocument_TextWidth")]
-	public static extern double QTextDocument_TextWidth(QTextDocument_Ptr* self);
+	public static extern double QTextDocument_TextWidth(void* self);
 	[LinkName("QTextDocument_IdealWidth")]
-	public static extern double QTextDocument_IdealWidth(QTextDocument_Ptr* self);
+	public static extern double QTextDocument_IdealWidth(void* self);
 	[LinkName("QTextDocument_IndentWidth")]
-	public static extern double QTextDocument_IndentWidth(QTextDocument_Ptr* self);
+	public static extern double QTextDocument_IndentWidth(void* self);
 	[LinkName("QTextDocument_SetIndentWidth")]
-	public static extern void QTextDocument_SetIndentWidth(QTextDocument_Ptr* self, double width);
+	public static extern void QTextDocument_SetIndentWidth(void* self, double width);
 	[LinkName("QTextDocument_DocumentMargin")]
-	public static extern double QTextDocument_DocumentMargin(QTextDocument_Ptr* self);
+	public static extern double QTextDocument_DocumentMargin(void* self);
 	[LinkName("QTextDocument_SetDocumentMargin")]
-	public static extern void QTextDocument_SetDocumentMargin(QTextDocument_Ptr* self, double margin);
+	public static extern void QTextDocument_SetDocumentMargin(void* self, double margin);
 	[LinkName("QTextDocument_AdjustSize")]
-	public static extern void QTextDocument_AdjustSize(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_AdjustSize(void* self);
 	[LinkName("QTextDocument_Size")]
-	public static extern QSizeF_Ptr* QTextDocument_Size(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_Size(void* self);
 	[LinkName("QTextDocument_BlockCount")]
-	public static extern c_int QTextDocument_BlockCount(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_BlockCount(void* self);
 	[LinkName("QTextDocument_LineCount")]
-	public static extern c_int QTextDocument_LineCount(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_LineCount(void* self);
 	[LinkName("QTextDocument_CharacterCount")]
-	public static extern c_int QTextDocument_CharacterCount(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_CharacterCount(void* self);
 	[LinkName("QTextDocument_SetDefaultStyleSheet")]
-	public static extern void QTextDocument_SetDefaultStyleSheet(QTextDocument_Ptr* self, libqt_string sheet);
+	public static extern void QTextDocument_SetDefaultStyleSheet(void* self, libqt_string sheet);
 	[LinkName("QTextDocument_DefaultStyleSheet")]
-	public static extern libqt_string QTextDocument_DefaultStyleSheet(QTextDocument_Ptr* self);
+	public static extern libqt_string QTextDocument_DefaultStyleSheet(void* self);
 	[LinkName("QTextDocument_Undo")]
-	public static extern void QTextDocument_Undo(QTextDocument_Ptr* self, QTextCursor_Ptr** cursor);
+	public static extern void QTextDocument_Undo(void* self, void** cursor);
 	[LinkName("QTextDocument_Redo")]
-	public static extern void QTextDocument_Redo(QTextDocument_Ptr* self, QTextCursor_Ptr** cursor);
+	public static extern void QTextDocument_Redo(void* self, void** cursor);
 	[LinkName("QTextDocument_ClearUndoRedoStacks")]
-	public static extern void QTextDocument_ClearUndoRedoStacks(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_ClearUndoRedoStacks(void* self);
 	[LinkName("QTextDocument_MaximumBlockCount")]
-	public static extern c_int QTextDocument_MaximumBlockCount(QTextDocument_Ptr* self);
+	public static extern c_int QTextDocument_MaximumBlockCount(void* self);
 	[LinkName("QTextDocument_SetMaximumBlockCount")]
-	public static extern void QTextDocument_SetMaximumBlockCount(QTextDocument_Ptr* self, c_int maximum);
+	public static extern void QTextDocument_SetMaximumBlockCount(void* self, c_int maximum);
 	[LinkName("QTextDocument_DefaultTextOption")]
-	public static extern QTextOption_Ptr* QTextDocument_DefaultTextOption(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_DefaultTextOption(void* self);
 	[LinkName("QTextDocument_SetDefaultTextOption")]
-	public static extern void QTextDocument_SetDefaultTextOption(QTextDocument_Ptr* self, QTextOption_Ptr* option);
+	public static extern void QTextDocument_SetDefaultTextOption(void* self, void** option);
 	[LinkName("QTextDocument_BaseUrl")]
-	public static extern QUrl_Ptr* QTextDocument_BaseUrl(QTextDocument_Ptr* self);
+	public static extern void* QTextDocument_BaseUrl(void* self);
 	[LinkName("QTextDocument_SetBaseUrl")]
-	public static extern void QTextDocument_SetBaseUrl(QTextDocument_Ptr* self, QUrl_Ptr* url);
+	public static extern void QTextDocument_SetBaseUrl(void* self, void** url);
 	[LinkName("QTextDocument_DefaultCursorMoveStyle")]
-	public static extern Qt_CursorMoveStyle QTextDocument_DefaultCursorMoveStyle(QTextDocument_Ptr* self);
+	public static extern Qt_CursorMoveStyle QTextDocument_DefaultCursorMoveStyle(void* self);
 	[LinkName("QTextDocument_SetDefaultCursorMoveStyle")]
-	public static extern void QTextDocument_SetDefaultCursorMoveStyle(QTextDocument_Ptr* self, Qt_CursorMoveStyle style);
+	public static extern void QTextDocument_SetDefaultCursorMoveStyle(void* self, Qt_CursorMoveStyle style);
 	[LinkName("QTextDocument_ContentsChange")]
-	public static extern void QTextDocument_ContentsChange(QTextDocument_Ptr* self, c_int from, c_int charsRemoved, c_int charsAdded);
+	public static extern void QTextDocument_ContentsChange(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
 	[LinkName("QTextDocument_ContentsChanged")]
-	public static extern void QTextDocument_ContentsChanged(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_ContentsChanged(void* self);
 	[LinkName("QTextDocument_UndoAvailable")]
-	public static extern void QTextDocument_UndoAvailable(QTextDocument_Ptr* self, bool param1);
+	public static extern void QTextDocument_UndoAvailable(void* self, bool param1);
 	[LinkName("QTextDocument_RedoAvailable")]
-	public static extern void QTextDocument_RedoAvailable(QTextDocument_Ptr* self, bool param1);
+	public static extern void QTextDocument_RedoAvailable(void* self, bool param1);
 	[LinkName("QTextDocument_UndoCommandAdded")]
-	public static extern void QTextDocument_UndoCommandAdded(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_UndoCommandAdded(void* self);
 	[LinkName("QTextDocument_ModificationChanged")]
-	public static extern void QTextDocument_ModificationChanged(QTextDocument_Ptr* self, bool m);
+	public static extern void QTextDocument_ModificationChanged(void* self, bool m);
 	[LinkName("QTextDocument_CursorPositionChanged")]
-	public static extern void QTextDocument_CursorPositionChanged(QTextDocument_Ptr* self, QTextCursor_Ptr* cursor);
+	public static extern void QTextDocument_CursorPositionChanged(void* self, void** cursor);
 	[LinkName("QTextDocument_BlockCountChanged")]
-	public static extern void QTextDocument_BlockCountChanged(QTextDocument_Ptr* self, c_int newBlockCount);
+	public static extern void QTextDocument_BlockCountChanged(void* self, c_int newBlockCount);
 	[LinkName("QTextDocument_BaseUrlChanged")]
-	public static extern void QTextDocument_BaseUrlChanged(QTextDocument_Ptr* self, QUrl_Ptr* url);
+	public static extern void QTextDocument_BaseUrlChanged(void* self, void** url);
 	[LinkName("QTextDocument_DocumentLayoutChanged")]
-	public static extern void QTextDocument_DocumentLayoutChanged(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_DocumentLayoutChanged(void* self);
 	[LinkName("QTextDocument_Undo2")]
-	public static extern void QTextDocument_Undo2(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_Undo2(void* self);
 	[LinkName("QTextDocument_Redo2")]
-	public static extern void QTextDocument_Redo2(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_Redo2(void* self);
 	[LinkName("QTextDocument_AppendUndoItem")]
-	public static extern void QTextDocument_AppendUndoItem(QTextDocument_Ptr* self, QAbstractUndoItem_Ptr** param1);
+	public static extern void QTextDocument_AppendUndoItem(void* self, void** param1);
 	[LinkName("QTextDocument_SetModified")]
-	public static extern void QTextDocument_SetModified(QTextDocument_Ptr* self);
+	public static extern void QTextDocument_SetModified(void* self);
 	[LinkName("QTextDocument_CreateObject")]
-	public static extern QTextObject_Ptr** QTextDocument_CreateObject(QTextDocument_Ptr* self, QTextFormat_Ptr* f);
+	public static extern void** QTextDocument_CreateObject(void* self, void** f);
 	[LinkName("QTextDocument_LoadResource")]
-	public static extern QVariant_Ptr* QTextDocument_LoadResource(QTextDocument_Ptr* self, c_int type, QUrl_Ptr* name);
+	public static extern void* QTextDocument_LoadResource(void* self, c_int type, void** name);
 	[LinkName("QTextDocument_Tr2")]
 	public static extern libqt_string QTextDocument_Tr2(c_char* s, c_char* c);
 	[LinkName("QTextDocument_Tr3")]
 	public static extern libqt_string QTextDocument_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QTextDocument_Clone1")]
-	public static extern QTextDocument_Ptr** QTextDocument_Clone1(QTextDocument_Ptr* self, QObject_Ptr** parent);
+	public static extern void** QTextDocument_Clone1(void* self, void** parent);
 	[LinkName("QTextDocument_ToMarkdown1")]
-	public static extern libqt_string QTextDocument_ToMarkdown1(QTextDocument_Ptr* self, void* features);
+	public static extern libqt_string QTextDocument_ToMarkdown1(void* self, void* features);
 	[LinkName("QTextDocument_SetMarkdown2")]
-	public static extern void QTextDocument_SetMarkdown2(QTextDocument_Ptr* self, libqt_string markdown, void* features);
+	public static extern void QTextDocument_SetMarkdown2(void* self, libqt_string markdown, void* features);
 	[LinkName("QTextDocument_Find22")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find22(QTextDocument_Ptr* self, libqt_string subString, c_int from);
+	public static extern void* QTextDocument_Find22(void* self, libqt_string subString, c_int from);
 	[LinkName("QTextDocument_Find32")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find32(QTextDocument_Ptr* self, libqt_string subString, c_int from, void* options);
+	public static extern void* QTextDocument_Find32(void* self, libqt_string subString, c_int from, void* options);
 	[LinkName("QTextDocument_Find33")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find33(QTextDocument_Ptr* self, libqt_string subString, QTextCursor_Ptr* cursor, void* options);
+	public static extern void* QTextDocument_Find33(void* self, libqt_string subString, void** cursor, void* options);
 	[LinkName("QTextDocument_Find23")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find23(QTextDocument_Ptr* self, QRegularExpression_Ptr* expr, c_int from);
+	public static extern void* QTextDocument_Find23(void* self, void** expr, c_int from);
 	[LinkName("QTextDocument_Find34")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find34(QTextDocument_Ptr* self, QRegularExpression_Ptr* expr, c_int from, void* options);
+	public static extern void* QTextDocument_Find34(void* self, void** expr, c_int from, void* options);
 	[LinkName("QTextDocument_Find35")]
-	public static extern QTextCursor_Ptr* QTextDocument_Find35(QTextDocument_Ptr* self, QRegularExpression_Ptr* expr, QTextCursor_Ptr* cursor, void* options);
+	public static extern void* QTextDocument_Find35(void* self, void** expr, void** cursor, void* options);
 	[LinkName("QTextDocument_DrawContents2")]
-	public static extern void QTextDocument_DrawContents2(QTextDocument_Ptr* self, QPainter_Ptr** painter, QRectF_Ptr* rect);
+	public static extern void QTextDocument_DrawContents2(void* self, void** painter, void** rect);
 	[LinkName("QTextDocument_ClearUndoRedoStacks1")]
-	public static extern void QTextDocument_ClearUndoRedoStacks1(QTextDocument_Ptr* self, QTextDocument_Stacks historyToClear);
+	public static extern void QTextDocument_ClearUndoRedoStacks1(void* self, QTextDocument_Stacks historyToClear);
 	[LinkName("QTextDocument_SetModified1")]
-	public static extern void QTextDocument_SetModified1(QTextDocument_Ptr* self, bool m);
+	public static extern void QTextDocument_SetModified1(void* self, bool m);
 }
 class QTextDocument : IQTextDocument, IQObject
 {
-	private QTextDocument_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QTextDocument_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextDocument_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QTextDocument_new();
@@ -325,233 +343,233 @@ class QTextDocument : IQTextDocument, IQObject
 	{
 		CQt.QTextDocument_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr** MetaObject()
+	public QMetaObject_Ptr MetaObject()
 	{
-		return CQt.QTextDocument_MetaObject((.)this.ptr);
+		return QMetaObject_Ptr(CQt.QTextDocument_MetaObject((.)this.ptr.Ptr));
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QTextDocument_Qt_Metacast((.)this.ptr, param1);
+		return CQt.QTextDocument_Qt_Metacast((.)this.ptr.Ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QTextDocument_Qt_Metacall((.)this.ptr, param1, param2, param3);
+		return CQt.QTextDocument_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
 	}
-	public libqt_string Tr(c_char* s)
+	public void Tr(String outStr, c_char* s)
 	{
-		return CQt.QTextDocument_Tr(s);
+		CQt.QTextDocument_Tr(s);
 	}
-	public QTextDocument_Ptr** Clone()
+	public QTextDocument_Ptr Clone()
 	{
-		return CQt.QTextDocument_Clone((.)this.ptr);
+		return QTextDocument_Ptr(CQt.QTextDocument_Clone((.)this.ptr.Ptr));
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QTextDocument_IsEmpty((.)this.ptr);
+		return CQt.QTextDocument_IsEmpty((.)this.ptr.Ptr);
 	}
 	public void Clear()
 	{
-		CQt.QTextDocument_Clear((.)this.ptr);
+		CQt.QTextDocument_Clear((.)this.ptr.Ptr);
 	}
 	public void SetUndoRedoEnabled(bool enable)
 	{
-		CQt.QTextDocument_SetUndoRedoEnabled((.)this.ptr, enable);
+		CQt.QTextDocument_SetUndoRedoEnabled((.)this.ptr.Ptr, enable);
 	}
 	public bool IsUndoRedoEnabled()
 	{
-		return CQt.QTextDocument_IsUndoRedoEnabled((.)this.ptr);
+		return CQt.QTextDocument_IsUndoRedoEnabled((.)this.ptr.Ptr);
 	}
 	public bool IsUndoAvailable()
 	{
-		return CQt.QTextDocument_IsUndoAvailable((.)this.ptr);
+		return CQt.QTextDocument_IsUndoAvailable((.)this.ptr.Ptr);
 	}
 	public bool IsRedoAvailable()
 	{
-		return CQt.QTextDocument_IsRedoAvailable((.)this.ptr);
+		return CQt.QTextDocument_IsRedoAvailable((.)this.ptr.Ptr);
 	}
 	public c_int AvailableUndoSteps()
 	{
-		return CQt.QTextDocument_AvailableUndoSteps((.)this.ptr);
+		return CQt.QTextDocument_AvailableUndoSteps((.)this.ptr.Ptr);
 	}
 	public c_int AvailableRedoSteps()
 	{
-		return CQt.QTextDocument_AvailableRedoSteps((.)this.ptr);
+		return CQt.QTextDocument_AvailableRedoSteps((.)this.ptr.Ptr);
 	}
 	public c_int Revision()
 	{
-		return CQt.QTextDocument_Revision((.)this.ptr);
+		return CQt.QTextDocument_Revision((.)this.ptr.Ptr);
 	}
 	public void SetDocumentLayout(IQAbstractTextDocumentLayout layout)
 	{
-		CQt.QTextDocument_SetDocumentLayout((.)this.ptr, (.)layout?.ObjectPtr);
+		CQt.QTextDocument_SetDocumentLayout((.)this.ptr.Ptr, (.)layout?.ObjectPtr);
 	}
-	public QAbstractTextDocumentLayout_Ptr** DocumentLayout()
+	public QAbstractTextDocumentLayout_Ptr DocumentLayout()
 	{
-		return CQt.QTextDocument_DocumentLayout((.)this.ptr);
+		return QAbstractTextDocumentLayout_Ptr(CQt.QTextDocument_DocumentLayout((.)this.ptr.Ptr));
 	}
 	public void SetMetaInformation(QTextDocument_MetaInformation info, String param2)
 	{
-		CQt.QTextDocument_SetMetaInformation((.)this.ptr, info, libqt_string(param2));
+		CQt.QTextDocument_SetMetaInformation((.)this.ptr.Ptr, info, libqt_string(param2));
 	}
-	public libqt_string MetaInformation(QTextDocument_MetaInformation info)
+	public void MetaInformation(String outStr, QTextDocument_MetaInformation info)
 	{
-		return CQt.QTextDocument_MetaInformation((.)this.ptr, info);
+		CQt.QTextDocument_MetaInformation((.)this.ptr.Ptr, info);
 	}
-	public libqt_string ToHtml()
+	public void ToHtml(String outStr)
 	{
-		return CQt.QTextDocument_ToHtml((.)this.ptr);
+		CQt.QTextDocument_ToHtml((.)this.ptr.Ptr);
 	}
 	public void SetHtml(String html)
 	{
-		CQt.QTextDocument_SetHtml((.)this.ptr, libqt_string(html));
+		CQt.QTextDocument_SetHtml((.)this.ptr.Ptr, libqt_string(html));
 	}
-	public libqt_string ToMarkdown()
+	public void ToMarkdown(String outStr)
 	{
-		return CQt.QTextDocument_ToMarkdown((.)this.ptr);
+		CQt.QTextDocument_ToMarkdown((.)this.ptr.Ptr);
 	}
 	public void SetMarkdown(String markdown)
 	{
-		CQt.QTextDocument_SetMarkdown((.)this.ptr, libqt_string(markdown));
+		CQt.QTextDocument_SetMarkdown((.)this.ptr.Ptr, libqt_string(markdown));
 	}
-	public libqt_string ToRawText()
+	public void ToRawText(String outStr)
 	{
-		return CQt.QTextDocument_ToRawText((.)this.ptr);
+		CQt.QTextDocument_ToRawText((.)this.ptr.Ptr);
 	}
-	public libqt_string ToPlainText()
+	public void ToPlainText(String outStr)
 	{
-		return CQt.QTextDocument_ToPlainText((.)this.ptr);
+		CQt.QTextDocument_ToPlainText((.)this.ptr.Ptr);
 	}
 	public void SetPlainText(String text)
 	{
-		CQt.QTextDocument_SetPlainText((.)this.ptr, libqt_string(text));
+		CQt.QTextDocument_SetPlainText((.)this.ptr.Ptr, libqt_string(text));
 	}
-	public QChar_Ptr* CharacterAt(c_int pos)
+	public QChar_Ptr CharacterAt(c_int pos)
 	{
-		return CQt.QTextDocument_CharacterAt((.)this.ptr, pos);
+		return QChar_Ptr(CQt.QTextDocument_CharacterAt((.)this.ptr.Ptr, pos));
 	}
-	public QTextCursor_Ptr* Find(String subString)
+	public QTextCursor_Ptr Find(String subString)
 	{
-		return CQt.QTextDocument_Find((.)this.ptr, libqt_string(subString));
+		return QTextCursor_Ptr(CQt.QTextDocument_Find((.)this.ptr.Ptr, libqt_string(subString)));
 	}
-	public QTextCursor_Ptr* Find2(String subString, IQTextCursor cursor)
+	public QTextCursor_Ptr Find2(String subString, IQTextCursor cursor)
 	{
-		return CQt.QTextDocument_Find2((.)this.ptr, libqt_string(subString), (.)cursor?.ObjectPtr);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find2((.)this.ptr.Ptr, libqt_string(subString), (.)cursor?.ObjectPtr));
 	}
-	public QTextCursor_Ptr* Find3(IQRegularExpression expr)
+	public QTextCursor_Ptr Find3(IQRegularExpression expr)
 	{
-		return CQt.QTextDocument_Find3((.)this.ptr, (.)expr?.ObjectPtr);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find3((.)this.ptr.Ptr, (.)expr?.ObjectPtr));
 	}
-	public QTextCursor_Ptr* Find4(IQRegularExpression expr, IQTextCursor cursor)
+	public QTextCursor_Ptr Find4(IQRegularExpression expr, IQTextCursor cursor)
 	{
-		return CQt.QTextDocument_Find4((.)this.ptr, (.)expr?.ObjectPtr, (.)cursor?.ObjectPtr);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find4((.)this.ptr.Ptr, (.)expr?.ObjectPtr, (.)cursor?.ObjectPtr));
 	}
-	public QTextFrame_Ptr** FrameAt(c_int pos)
+	public QTextFrame_Ptr FrameAt(c_int pos)
 	{
-		return CQt.QTextDocument_FrameAt((.)this.ptr, pos);
+		return QTextFrame_Ptr(CQt.QTextDocument_FrameAt((.)this.ptr.Ptr, pos));
 	}
-	public QTextFrame_Ptr** RootFrame()
+	public QTextFrame_Ptr RootFrame()
 	{
-		return CQt.QTextDocument_RootFrame((.)this.ptr);
+		return QTextFrame_Ptr(CQt.QTextDocument_RootFrame((.)this.ptr.Ptr));
 	}
-	public QTextObject_Ptr** Object(c_int objectIndex)
+	public QTextObject_Ptr Object(c_int objectIndex)
 	{
-		return CQt.QTextDocument_Object((.)this.ptr, objectIndex);
+		return QTextObject_Ptr(CQt.QTextDocument_Object((.)this.ptr.Ptr, objectIndex));
 	}
-	public QTextObject_Ptr** ObjectForFormat(IQTextFormat param1)
+	public QTextObject_Ptr ObjectForFormat(IQTextFormat param1)
 	{
-		return CQt.QTextDocument_ObjectForFormat((.)this.ptr, (.)param1?.ObjectPtr);
+		return QTextObject_Ptr(CQt.QTextDocument_ObjectForFormat((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QTextBlock_Ptr* FindBlock(c_int pos)
+	public QTextBlock_Ptr FindBlock(c_int pos)
 	{
-		return CQt.QTextDocument_FindBlock((.)this.ptr, pos);
+		return QTextBlock_Ptr(CQt.QTextDocument_FindBlock((.)this.ptr.Ptr, pos));
 	}
-	public QTextBlock_Ptr* FindBlockByNumber(c_int blockNumber)
+	public QTextBlock_Ptr FindBlockByNumber(c_int blockNumber)
 	{
-		return CQt.QTextDocument_FindBlockByNumber((.)this.ptr, blockNumber);
+		return QTextBlock_Ptr(CQt.QTextDocument_FindBlockByNumber((.)this.ptr.Ptr, blockNumber));
 	}
-	public QTextBlock_Ptr* FindBlockByLineNumber(c_int blockNumber)
+	public QTextBlock_Ptr FindBlockByLineNumber(c_int blockNumber)
 	{
-		return CQt.QTextDocument_FindBlockByLineNumber((.)this.ptr, blockNumber);
+		return QTextBlock_Ptr(CQt.QTextDocument_FindBlockByLineNumber((.)this.ptr.Ptr, blockNumber));
 	}
-	public QTextBlock_Ptr* Begin()
+	public QTextBlock_Ptr Begin()
 	{
-		return CQt.QTextDocument_Begin((.)this.ptr);
+		return QTextBlock_Ptr(CQt.QTextDocument_Begin((.)this.ptr.Ptr));
 	}
-	public QTextBlock_Ptr* End()
+	public QTextBlock_Ptr End()
 	{
-		return CQt.QTextDocument_End((.)this.ptr);
+		return QTextBlock_Ptr(CQt.QTextDocument_End((.)this.ptr.Ptr));
 	}
-	public QTextBlock_Ptr* FirstBlock()
+	public QTextBlock_Ptr FirstBlock()
 	{
-		return CQt.QTextDocument_FirstBlock((.)this.ptr);
+		return QTextBlock_Ptr(CQt.QTextDocument_FirstBlock((.)this.ptr.Ptr));
 	}
-	public QTextBlock_Ptr* LastBlock()
+	public QTextBlock_Ptr LastBlock()
 	{
-		return CQt.QTextDocument_LastBlock((.)this.ptr);
+		return QTextBlock_Ptr(CQt.QTextDocument_LastBlock((.)this.ptr.Ptr));
 	}
 	public void SetPageSize(IQSizeF size)
 	{
-		CQt.QTextDocument_SetPageSize((.)this.ptr, (.)size?.ObjectPtr);
+		CQt.QTextDocument_SetPageSize((.)this.ptr.Ptr, (.)size?.ObjectPtr);
 	}
-	public QSizeF_Ptr* PageSize()
+	public QSizeF_Ptr PageSize()
 	{
-		return CQt.QTextDocument_PageSize((.)this.ptr);
+		return QSizeF_Ptr(CQt.QTextDocument_PageSize((.)this.ptr.Ptr));
 	}
 	public void SetDefaultFont(IQFont font)
 	{
-		CQt.QTextDocument_SetDefaultFont((.)this.ptr, (.)font?.ObjectPtr);
+		CQt.QTextDocument_SetDefaultFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
 	}
-	public QFont_Ptr* DefaultFont()
+	public QFont_Ptr DefaultFont()
 	{
-		return CQt.QTextDocument_DefaultFont((.)this.ptr);
+		return QFont_Ptr(CQt.QTextDocument_DefaultFont((.)this.ptr.Ptr));
 	}
 	public void SetSuperScriptBaseline(double baseline)
 	{
-		CQt.QTextDocument_SetSuperScriptBaseline((.)this.ptr, baseline);
+		CQt.QTextDocument_SetSuperScriptBaseline((.)this.ptr.Ptr, baseline);
 	}
 	public double SuperScriptBaseline()
 	{
-		return CQt.QTextDocument_SuperScriptBaseline((.)this.ptr);
+		return CQt.QTextDocument_SuperScriptBaseline((.)this.ptr.Ptr);
 	}
 	public void SetSubScriptBaseline(double baseline)
 	{
-		CQt.QTextDocument_SetSubScriptBaseline((.)this.ptr, baseline);
+		CQt.QTextDocument_SetSubScriptBaseline((.)this.ptr.Ptr, baseline);
 	}
 	public double SubScriptBaseline()
 	{
-		return CQt.QTextDocument_SubScriptBaseline((.)this.ptr);
+		return CQt.QTextDocument_SubScriptBaseline((.)this.ptr.Ptr);
 	}
 	public void SetBaselineOffset(double baseline)
 	{
-		CQt.QTextDocument_SetBaselineOffset((.)this.ptr, baseline);
+		CQt.QTextDocument_SetBaselineOffset((.)this.ptr.Ptr, baseline);
 	}
 	public double BaselineOffset()
 	{
-		return CQt.QTextDocument_BaselineOffset((.)this.ptr);
+		return CQt.QTextDocument_BaselineOffset((.)this.ptr.Ptr);
 	}
 	public c_int PageCount()
 	{
-		return CQt.QTextDocument_PageCount((.)this.ptr);
+		return CQt.QTextDocument_PageCount((.)this.ptr.Ptr);
 	}
 	public bool IsModified()
 	{
-		return CQt.QTextDocument_IsModified((.)this.ptr);
+		return CQt.QTextDocument_IsModified((.)this.ptr.Ptr);
 	}
 	public void Print(IQPagedPaintDevice printer)
 	{
-		CQt.QTextDocument_Print((.)this.ptr, (.)printer?.ObjectPtr);
+		CQt.QTextDocument_Print((.)this.ptr.Ptr, (.)printer?.ObjectPtr);
 	}
-	public QVariant_Ptr* Resource(c_int type, IQUrl name)
+	public QVariant_Ptr Resource(c_int type, IQUrl name)
 	{
-		return CQt.QTextDocument_Resource((.)this.ptr, type, (.)name?.ObjectPtr);
+		return QVariant_Ptr(CQt.QTextDocument_Resource((.)this.ptr.Ptr, type, (.)name?.ObjectPtr));
 	}
 	public void AddResource(c_int type, IQUrl name, IQVariant resource)
 	{
-		CQt.QTextDocument_AddResource((.)this.ptr, type, (.)name?.ObjectPtr, (.)resource?.ObjectPtr);
+		CQt.QTextDocument_AddResource((.)this.ptr.Ptr, type, (.)name?.ObjectPtr, (.)resource?.ObjectPtr);
 	}
 	public void SetResourceProvider(void** provider)
 	{
-		CQt.QTextDocument_SetResourceProvider((.)this.ptr, provider);
+		CQt.QTextDocument_SetResourceProvider((.)this.ptr.Ptr, provider);
 	}
 	public void SetDefaultResourceProvider(void** provider)
 	{
@@ -559,335 +577,335 @@ class QTextDocument : IQTextDocument, IQObject
 	}
 	public void* AllFormats()
 	{
-		return CQt.QTextDocument_AllFormats((.)this.ptr);
+		return CQt.QTextDocument_AllFormats((.)this.ptr.Ptr);
 	}
 	public void MarkContentsDirty(c_int from, c_int length)
 	{
-		CQt.QTextDocument_MarkContentsDirty((.)this.ptr, from, length);
+		CQt.QTextDocument_MarkContentsDirty((.)this.ptr.Ptr, from, length);
 	}
 	public void SetUseDesignMetrics(bool b)
 	{
-		CQt.QTextDocument_SetUseDesignMetrics((.)this.ptr, b);
+		CQt.QTextDocument_SetUseDesignMetrics((.)this.ptr.Ptr, b);
 	}
 	public bool UseDesignMetrics()
 	{
-		return CQt.QTextDocument_UseDesignMetrics((.)this.ptr);
+		return CQt.QTextDocument_UseDesignMetrics((.)this.ptr.Ptr);
 	}
 	public void SetLayoutEnabled(bool b)
 	{
-		CQt.QTextDocument_SetLayoutEnabled((.)this.ptr, b);
+		CQt.QTextDocument_SetLayoutEnabled((.)this.ptr.Ptr, b);
 	}
 	public bool IsLayoutEnabled()
 	{
-		return CQt.QTextDocument_IsLayoutEnabled((.)this.ptr);
+		return CQt.QTextDocument_IsLayoutEnabled((.)this.ptr.Ptr);
 	}
 	public void DrawContents(IQPainter painter)
 	{
-		CQt.QTextDocument_DrawContents((.)this.ptr, (.)painter?.ObjectPtr);
+		CQt.QTextDocument_DrawContents((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
 	}
 	public void SetTextWidth(double width)
 	{
-		CQt.QTextDocument_SetTextWidth((.)this.ptr, width);
+		CQt.QTextDocument_SetTextWidth((.)this.ptr.Ptr, width);
 	}
 	public double TextWidth()
 	{
-		return CQt.QTextDocument_TextWidth((.)this.ptr);
+		return CQt.QTextDocument_TextWidth((.)this.ptr.Ptr);
 	}
 	public double IdealWidth()
 	{
-		return CQt.QTextDocument_IdealWidth((.)this.ptr);
+		return CQt.QTextDocument_IdealWidth((.)this.ptr.Ptr);
 	}
 	public double IndentWidth()
 	{
-		return CQt.QTextDocument_IndentWidth((.)this.ptr);
+		return CQt.QTextDocument_IndentWidth((.)this.ptr.Ptr);
 	}
 	public void SetIndentWidth(double width)
 	{
-		CQt.QTextDocument_SetIndentWidth((.)this.ptr, width);
+		CQt.QTextDocument_SetIndentWidth((.)this.ptr.Ptr, width);
 	}
 	public double DocumentMargin()
 	{
-		return CQt.QTextDocument_DocumentMargin((.)this.ptr);
+		return CQt.QTextDocument_DocumentMargin((.)this.ptr.Ptr);
 	}
 	public void SetDocumentMargin(double margin)
 	{
-		CQt.QTextDocument_SetDocumentMargin((.)this.ptr, margin);
+		CQt.QTextDocument_SetDocumentMargin((.)this.ptr.Ptr, margin);
 	}
 	public void AdjustSize()
 	{
-		CQt.QTextDocument_AdjustSize((.)this.ptr);
+		CQt.QTextDocument_AdjustSize((.)this.ptr.Ptr);
 	}
-	public QSizeF_Ptr* Size()
+	public QSizeF_Ptr Size()
 	{
-		return CQt.QTextDocument_Size((.)this.ptr);
+		return QSizeF_Ptr(CQt.QTextDocument_Size((.)this.ptr.Ptr));
 	}
 	public c_int BlockCount()
 	{
-		return CQt.QTextDocument_BlockCount((.)this.ptr);
+		return CQt.QTextDocument_BlockCount((.)this.ptr.Ptr);
 	}
 	public c_int LineCount()
 	{
-		return CQt.QTextDocument_LineCount((.)this.ptr);
+		return CQt.QTextDocument_LineCount((.)this.ptr.Ptr);
 	}
 	public c_int CharacterCount()
 	{
-		return CQt.QTextDocument_CharacterCount((.)this.ptr);
+		return CQt.QTextDocument_CharacterCount((.)this.ptr.Ptr);
 	}
 	public void SetDefaultStyleSheet(String sheet)
 	{
-		CQt.QTextDocument_SetDefaultStyleSheet((.)this.ptr, libqt_string(sheet));
+		CQt.QTextDocument_SetDefaultStyleSheet((.)this.ptr.Ptr, libqt_string(sheet));
 	}
-	public libqt_string DefaultStyleSheet()
+	public void DefaultStyleSheet(String outStr)
 	{
-		return CQt.QTextDocument_DefaultStyleSheet((.)this.ptr);
+		CQt.QTextDocument_DefaultStyleSheet((.)this.ptr.Ptr);
 	}
 	public void Undo(IQTextCursor cursor)
 	{
-		CQt.QTextDocument_Undo((.)this.ptr, (.)cursor?.ObjectPtr);
+		CQt.QTextDocument_Undo((.)this.ptr.Ptr, (.)cursor?.ObjectPtr);
 	}
 	public void Redo(IQTextCursor cursor)
 	{
-		CQt.QTextDocument_Redo((.)this.ptr, (.)cursor?.ObjectPtr);
+		CQt.QTextDocument_Redo((.)this.ptr.Ptr, (.)cursor?.ObjectPtr);
 	}
 	public void ClearUndoRedoStacks()
 	{
-		CQt.QTextDocument_ClearUndoRedoStacks((.)this.ptr);
+		CQt.QTextDocument_ClearUndoRedoStacks((.)this.ptr.Ptr);
 	}
 	public c_int MaximumBlockCount()
 	{
-		return CQt.QTextDocument_MaximumBlockCount((.)this.ptr);
+		return CQt.QTextDocument_MaximumBlockCount((.)this.ptr.Ptr);
 	}
 	public void SetMaximumBlockCount(c_int maximum)
 	{
-		CQt.QTextDocument_SetMaximumBlockCount((.)this.ptr, maximum);
+		CQt.QTextDocument_SetMaximumBlockCount((.)this.ptr.Ptr, maximum);
 	}
-	public QTextOption_Ptr* DefaultTextOption()
+	public QTextOption_Ptr DefaultTextOption()
 	{
-		return CQt.QTextDocument_DefaultTextOption((.)this.ptr);
+		return QTextOption_Ptr(CQt.QTextDocument_DefaultTextOption((.)this.ptr.Ptr));
 	}
 	public void SetDefaultTextOption(IQTextOption option)
 	{
-		CQt.QTextDocument_SetDefaultTextOption((.)this.ptr, (.)option?.ObjectPtr);
+		CQt.QTextDocument_SetDefaultTextOption((.)this.ptr.Ptr, (.)option?.ObjectPtr);
 	}
-	public QUrl_Ptr* BaseUrl()
+	public QUrl_Ptr BaseUrl()
 	{
-		return CQt.QTextDocument_BaseUrl((.)this.ptr);
+		return QUrl_Ptr(CQt.QTextDocument_BaseUrl((.)this.ptr.Ptr));
 	}
 	public void SetBaseUrl(IQUrl url)
 	{
-		CQt.QTextDocument_SetBaseUrl((.)this.ptr, (.)url?.ObjectPtr);
+		CQt.QTextDocument_SetBaseUrl((.)this.ptr.Ptr, (.)url?.ObjectPtr);
 	}
 	public Qt_CursorMoveStyle DefaultCursorMoveStyle()
 	{
-		return CQt.QTextDocument_DefaultCursorMoveStyle((.)this.ptr);
+		return CQt.QTextDocument_DefaultCursorMoveStyle((.)this.ptr.Ptr);
 	}
 	public void SetDefaultCursorMoveStyle(Qt_CursorMoveStyle style)
 	{
-		CQt.QTextDocument_SetDefaultCursorMoveStyle((.)this.ptr, style);
+		CQt.QTextDocument_SetDefaultCursorMoveStyle((.)this.ptr.Ptr, style);
 	}
 	public void ContentsChange(c_int from, c_int charsRemoved, c_int charsAdded)
 	{
-		CQt.QTextDocument_ContentsChange((.)this.ptr, from, charsRemoved, charsAdded);
+		CQt.QTextDocument_ContentsChange((.)this.ptr.Ptr, from, charsRemoved, charsAdded);
 	}
 	public void ContentsChanged()
 	{
-		CQt.QTextDocument_ContentsChanged((.)this.ptr);
+		CQt.QTextDocument_ContentsChanged((.)this.ptr.Ptr);
 	}
 	public void UndoAvailable(bool param1)
 	{
-		CQt.QTextDocument_UndoAvailable((.)this.ptr, param1);
+		CQt.QTextDocument_UndoAvailable((.)this.ptr.Ptr, param1);
 	}
 	public void RedoAvailable(bool param1)
 	{
-		CQt.QTextDocument_RedoAvailable((.)this.ptr, param1);
+		CQt.QTextDocument_RedoAvailable((.)this.ptr.Ptr, param1);
 	}
 	public void UndoCommandAdded()
 	{
-		CQt.QTextDocument_UndoCommandAdded((.)this.ptr);
+		CQt.QTextDocument_UndoCommandAdded((.)this.ptr.Ptr);
 	}
 	public void ModificationChanged(bool m)
 	{
-		CQt.QTextDocument_ModificationChanged((.)this.ptr, m);
+		CQt.QTextDocument_ModificationChanged((.)this.ptr.Ptr, m);
 	}
 	public void CursorPositionChanged(IQTextCursor cursor)
 	{
-		CQt.QTextDocument_CursorPositionChanged((.)this.ptr, (.)cursor?.ObjectPtr);
+		CQt.QTextDocument_CursorPositionChanged((.)this.ptr.Ptr, (.)cursor?.ObjectPtr);
 	}
 	public void BlockCountChanged(c_int newBlockCount)
 	{
-		CQt.QTextDocument_BlockCountChanged((.)this.ptr, newBlockCount);
+		CQt.QTextDocument_BlockCountChanged((.)this.ptr.Ptr, newBlockCount);
 	}
 	public void BaseUrlChanged(IQUrl url)
 	{
-		CQt.QTextDocument_BaseUrlChanged((.)this.ptr, (.)url?.ObjectPtr);
+		CQt.QTextDocument_BaseUrlChanged((.)this.ptr.Ptr, (.)url?.ObjectPtr);
 	}
 	public void DocumentLayoutChanged()
 	{
-		CQt.QTextDocument_DocumentLayoutChanged((.)this.ptr);
+		CQt.QTextDocument_DocumentLayoutChanged((.)this.ptr.Ptr);
 	}
 	public void Undo2()
 	{
-		CQt.QTextDocument_Undo2((.)this.ptr);
+		CQt.QTextDocument_Undo2((.)this.ptr.Ptr);
 	}
 	public void Redo2()
 	{
-		CQt.QTextDocument_Redo2((.)this.ptr);
+		CQt.QTextDocument_Redo2((.)this.ptr.Ptr);
 	}
 	public void AppendUndoItem(IQAbstractUndoItem param1)
 	{
-		CQt.QTextDocument_AppendUndoItem((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QTextDocument_AppendUndoItem((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void SetModified()
 	{
-		CQt.QTextDocument_SetModified((.)this.ptr);
+		CQt.QTextDocument_SetModified((.)this.ptr.Ptr);
 	}
-	public QTextObject_Ptr** CreateObject(IQTextFormat f)
+	public QTextObject_Ptr CreateObject(IQTextFormat f)
 	{
-		return CQt.QTextDocument_CreateObject((.)this.ptr, (.)f?.ObjectPtr);
+		return QTextObject_Ptr(CQt.QTextDocument_CreateObject((.)this.ptr.Ptr, (.)f?.ObjectPtr));
 	}
-	public QVariant_Ptr* LoadResource(c_int type, IQUrl name)
+	public QVariant_Ptr LoadResource(c_int type, IQUrl name)
 	{
-		return CQt.QTextDocument_LoadResource((.)this.ptr, type, (.)name?.ObjectPtr);
+		return QVariant_Ptr(CQt.QTextDocument_LoadResource((.)this.ptr.Ptr, type, (.)name?.ObjectPtr));
 	}
-	public libqt_string Tr2(c_char* s, c_char* c)
+	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
-		return CQt.QTextDocument_Tr2(s, c);
+		CQt.QTextDocument_Tr2(s, c);
 	}
-	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
 	{
-		return CQt.QTextDocument_Tr3(s, c, n);
+		CQt.QTextDocument_Tr3(s, c, n);
 	}
-	public QTextDocument_Ptr** Clone1(IQObject parent)
+	public QTextDocument_Ptr Clone1(IQObject parent)
 	{
-		return CQt.QTextDocument_Clone1((.)this.ptr, (.)parent?.ObjectPtr);
+		return QTextDocument_Ptr(CQt.QTextDocument_Clone1((.)this.ptr.Ptr, (.)parent?.ObjectPtr));
 	}
-	public libqt_string ToMarkdown1(void* features)
+	public void ToMarkdown1(String outStr, void* features)
 	{
-		return CQt.QTextDocument_ToMarkdown1((.)this.ptr, features);
+		CQt.QTextDocument_ToMarkdown1((.)this.ptr.Ptr, features);
 	}
 	public void SetMarkdown2(String markdown, void* features)
 	{
-		CQt.QTextDocument_SetMarkdown2((.)this.ptr, libqt_string(markdown), features);
+		CQt.QTextDocument_SetMarkdown2((.)this.ptr.Ptr, libqt_string(markdown), features);
 	}
-	public QTextCursor_Ptr* Find22(String subString, c_int from)
+	public QTextCursor_Ptr Find22(String subString, c_int from)
 	{
-		return CQt.QTextDocument_Find22((.)this.ptr, libqt_string(subString), from);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find22((.)this.ptr.Ptr, libqt_string(subString), from));
 	}
-	public QTextCursor_Ptr* Find32(String subString, c_int from, void* options)
+	public QTextCursor_Ptr Find32(String subString, c_int from, void* options)
 	{
-		return CQt.QTextDocument_Find32((.)this.ptr, libqt_string(subString), from, options);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find32((.)this.ptr.Ptr, libqt_string(subString), from, options));
 	}
-	public QTextCursor_Ptr* Find33(String subString, IQTextCursor cursor, void* options)
+	public QTextCursor_Ptr Find33(String subString, IQTextCursor cursor, void* options)
 	{
-		return CQt.QTextDocument_Find33((.)this.ptr, libqt_string(subString), (.)cursor?.ObjectPtr, options);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find33((.)this.ptr.Ptr, libqt_string(subString), (.)cursor?.ObjectPtr, options));
 	}
-	public QTextCursor_Ptr* Find23(IQRegularExpression expr, c_int from)
+	public QTextCursor_Ptr Find23(IQRegularExpression expr, c_int from)
 	{
-		return CQt.QTextDocument_Find23((.)this.ptr, (.)expr?.ObjectPtr, from);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find23((.)this.ptr.Ptr, (.)expr?.ObjectPtr, from));
 	}
-	public QTextCursor_Ptr* Find34(IQRegularExpression expr, c_int from, void* options)
+	public QTextCursor_Ptr Find34(IQRegularExpression expr, c_int from, void* options)
 	{
-		return CQt.QTextDocument_Find34((.)this.ptr, (.)expr?.ObjectPtr, from, options);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find34((.)this.ptr.Ptr, (.)expr?.ObjectPtr, from, options));
 	}
-	public QTextCursor_Ptr* Find35(IQRegularExpression expr, IQTextCursor cursor, void* options)
+	public QTextCursor_Ptr Find35(IQRegularExpression expr, IQTextCursor cursor, void* options)
 	{
-		return CQt.QTextDocument_Find35((.)this.ptr, (.)expr?.ObjectPtr, (.)cursor?.ObjectPtr, options);
+		return QTextCursor_Ptr(CQt.QTextDocument_Find35((.)this.ptr.Ptr, (.)expr?.ObjectPtr, (.)cursor?.ObjectPtr, options));
 	}
 	public void DrawContents2(IQPainter painter, IQRectF rect)
 	{
-		CQt.QTextDocument_DrawContents2((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr);
+		CQt.QTextDocument_DrawContents2((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr);
 	}
 	public void ClearUndoRedoStacks1(QTextDocument_Stacks historyToClear)
 	{
-		CQt.QTextDocument_ClearUndoRedoStacks1((.)this.ptr, historyToClear);
+		CQt.QTextDocument_ClearUndoRedoStacks1((.)this.ptr.Ptr, historyToClear);
 	}
 	public void SetModified1(bool m)
 	{
-		CQt.QTextDocument_SetModified1((.)this.ptr, m);
+		CQt.QTextDocument_SetModified1((.)this.ptr.Ptr, m);
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public libqt_string ObjectName()
+	public void ObjectName(String outStr)
 	{
-		return CQt.QObject_ObjectName((.)this.ptr);
+		CQt.QObject_ObjectName((.)this.ptr.Ptr);
 	}
 	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
+		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
-		return CQt.QObject_IsWidgetType((.)this.ptr);
+		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
 	}
 	public bool IsWindowType()
 	{
-		return CQt.QObject_IsWindowType((.)this.ptr);
+		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
 	}
 	public bool IsQuickItemType()
 	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr);
+		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
 	}
 	public bool SignalsBlocked()
 	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr);
+		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
 	}
 	public bool BlockSignals(bool b)
 	{
-		return CQt.QObject_BlockSignals((.)this.ptr, b);
+		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
 	}
-	public QThread_Ptr** Thread()
+	public QThread_Ptr Thread()
 	{
-		return CQt.QObject_Thread((.)this.ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
 	}
 	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
+		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QObject_StartTimer((.)this.ptr, interval);
+		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
 	}
 	public c_int StartTimer2(void* time)
 	{
-		return CQt.QObject_StartTimer2((.)this.ptr, time);
+		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
 	}
 	public void KillTimer(c_int id)
 	{
-		CQt.QObject_KillTimer((.)this.ptr, id);
+		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
 	}
 	public void** Children()
 	{
-		return CQt.QObject_Children((.)this.ptr);
+		return CQt.QObject_Children((.)this.ptr.Ptr);
 	}
 	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
+		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
 	}
 	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
 	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
@@ -899,11 +917,11 @@ class QTextDocument : IQTextDocument, IQObject
 	}
 	public bool Disconnect3()
 	{
-		return CQt.QObject_Disconnect3((.)this.ptr);
+		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
 	}
 	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
@@ -911,123 +929,123 @@ class QTextDocument : IQTextDocument, IQObject
 	}
 	public void DumpObjectTree()
 	{
-		CQt.QObject_DumpObjectTree((.)this.ptr);
+		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
 	}
 	public void DumpObjectInfo()
 	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr);
+		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
 	}
 	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
+		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr* Property(c_char* name)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return CQt.QObject_Property((.)this.ptr, name);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
 	}
 	public void* DynamicPropertyNames()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
 	}
-	public QBindingStorage_Ptr** BindingStorage()
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		return CQt.QObject_BindingStorage((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
 	}
-	public QBindingStorage_Ptr** BindingStorage2()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return CQt.QObject_BindingStorage2((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
 	}
 	public void Destroyed()
 	{
-		CQt.QObject_Destroyed((.)this.ptr);
+		CQt.QObject_Destroyed((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Parent()
+	public QObject_Ptr Parent()
 	{
-		return CQt.QObject_Parent((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
 	}
 	public bool Inherits(c_char* classname)
 	{
-		return CQt.QObject_Inherits((.)this.ptr, classname);
+		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
 	}
 	public void DeleteLater()
 	{
-		CQt.QObject_DeleteLater((.)this.ptr);
+		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Sender()
+	public QObject_Ptr Sender()
 	{
-		return CQt.QObject_Sender((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
 	}
 	public c_int SenderSignalIndex()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
 	}
 	public c_int Receivers(c_char* signal)
 	{
-		return CQt.QObject_Receivers((.)this.ptr, signal);
+		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
 	}
 	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
 	}
 	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
 	}
-	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
 	}
-	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
 	}
-	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
 	}
 	public bool Disconnect1(c_char* signal)
 	{
-		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
 	}
 	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
 	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
 	}
 	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 }
 interface IQTextDocument : IQtObjectInterface

@@ -7,164 +7,173 @@ namespace Qt6;
 // QPainterPath
 // --------------------------------------------------------------
 [CRepr]
-struct QPainterPath_Ptr: void
+struct QPainterPath_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPainterPath_new")]
-	public static extern QPainterPath_Ptr* QPainterPath_new();
+	public static extern QPainterPath_Ptr QPainterPath_new();
 	[LinkName("QPainterPath_new2")]
-	public static extern QPainterPath_Ptr* QPainterPath_new2(QPointF_Ptr* startPoint);
+	public static extern QPainterPath_Ptr QPainterPath_new2(void** startPoint);
 	[LinkName("QPainterPath_new3")]
-	public static extern QPainterPath_Ptr* QPainterPath_new3(QPainterPath_Ptr* other);
+	public static extern QPainterPath_Ptr QPainterPath_new3(void** other);
 	[LinkName("QPainterPath_Delete")]
-	public static extern void QPainterPath_Delete(QPainterPath_Ptr* self);
+	public static extern void QPainterPath_Delete(QPainterPath_Ptr self);
 	[LinkName("QPainterPath_OperatorAssign")]
-	public static extern void QPainterPath_OperatorAssign(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void QPainterPath_OperatorAssign(void* self, void** other);
 	[LinkName("QPainterPath_Swap")]
-	public static extern void QPainterPath_Swap(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void QPainterPath_Swap(void* self, void** other);
 	[LinkName("QPainterPath_Clear")]
-	public static extern void QPainterPath_Clear(QPainterPath_Ptr* self);
+	public static extern void QPainterPath_Clear(void* self);
 	[LinkName("QPainterPath_Reserve")]
-	public static extern void QPainterPath_Reserve(QPainterPath_Ptr* self, c_int size);
+	public static extern void QPainterPath_Reserve(void* self, c_int size);
 	[LinkName("QPainterPath_Capacity")]
-	public static extern c_int QPainterPath_Capacity(QPainterPath_Ptr* self);
+	public static extern c_int QPainterPath_Capacity(void* self);
 	[LinkName("QPainterPath_CloseSubpath")]
-	public static extern void QPainterPath_CloseSubpath(QPainterPath_Ptr* self);
+	public static extern void QPainterPath_CloseSubpath(void* self);
 	[LinkName("QPainterPath_MoveTo")]
-	public static extern void QPainterPath_MoveTo(QPainterPath_Ptr* self, QPointF_Ptr* p);
+	public static extern void QPainterPath_MoveTo(void* self, void** p);
 	[LinkName("QPainterPath_MoveTo2")]
-	public static extern void QPainterPath_MoveTo2(QPainterPath_Ptr* self, double x, double y);
+	public static extern void QPainterPath_MoveTo2(void* self, double x, double y);
 	[LinkName("QPainterPath_LineTo")]
-	public static extern void QPainterPath_LineTo(QPainterPath_Ptr* self, QPointF_Ptr* p);
+	public static extern void QPainterPath_LineTo(void* self, void** p);
 	[LinkName("QPainterPath_LineTo2")]
-	public static extern void QPainterPath_LineTo2(QPainterPath_Ptr* self, double x, double y);
+	public static extern void QPainterPath_LineTo2(void* self, double x, double y);
 	[LinkName("QPainterPath_ArcMoveTo")]
-	public static extern void QPainterPath_ArcMoveTo(QPainterPath_Ptr* self, QRectF_Ptr* rect, double angle);
+	public static extern void QPainterPath_ArcMoveTo(void* self, void** rect, double angle);
 	[LinkName("QPainterPath_ArcMoveTo2")]
-	public static extern void QPainterPath_ArcMoveTo2(QPainterPath_Ptr* self, double x, double y, double w, double h, double angle);
+	public static extern void QPainterPath_ArcMoveTo2(void* self, double x, double y, double w, double h, double angle);
 	[LinkName("QPainterPath_ArcTo")]
-	public static extern void QPainterPath_ArcTo(QPainterPath_Ptr* self, QRectF_Ptr* rect, double startAngle, double arcLength);
+	public static extern void QPainterPath_ArcTo(void* self, void** rect, double startAngle, double arcLength);
 	[LinkName("QPainterPath_ArcTo2")]
-	public static extern void QPainterPath_ArcTo2(QPainterPath_Ptr* self, double x, double y, double w, double h, double startAngle, double arcLength);
+	public static extern void QPainterPath_ArcTo2(void* self, double x, double y, double w, double h, double startAngle, double arcLength);
 	[LinkName("QPainterPath_CubicTo")]
-	public static extern void QPainterPath_CubicTo(QPainterPath_Ptr* self, QPointF_Ptr* ctrlPt1, QPointF_Ptr* ctrlPt2, QPointF_Ptr* endPt);
+	public static extern void QPainterPath_CubicTo(void* self, void** ctrlPt1, void** ctrlPt2, void** endPt);
 	[LinkName("QPainterPath_CubicTo2")]
-	public static extern void QPainterPath_CubicTo2(QPainterPath_Ptr* self, double ctrlPt1x, double ctrlPt1y, double ctrlPt2x, double ctrlPt2y, double endPtx, double endPty);
+	public static extern void QPainterPath_CubicTo2(void* self, double ctrlPt1x, double ctrlPt1y, double ctrlPt2x, double ctrlPt2y, double endPtx, double endPty);
 	[LinkName("QPainterPath_QuadTo")]
-	public static extern void QPainterPath_QuadTo(QPainterPath_Ptr* self, QPointF_Ptr* ctrlPt, QPointF_Ptr* endPt);
+	public static extern void QPainterPath_QuadTo(void* self, void** ctrlPt, void** endPt);
 	[LinkName("QPainterPath_QuadTo2")]
-	public static extern void QPainterPath_QuadTo2(QPainterPath_Ptr* self, double ctrlPtx, double ctrlPty, double endPtx, double endPty);
+	public static extern void QPainterPath_QuadTo2(void* self, double ctrlPtx, double ctrlPty, double endPtx, double endPty);
 	[LinkName("QPainterPath_CurrentPosition")]
-	public static extern QPointF_Ptr* QPainterPath_CurrentPosition(QPainterPath_Ptr* self);
+	public static extern void* QPainterPath_CurrentPosition(void* self);
 	[LinkName("QPainterPath_AddRect")]
-	public static extern void QPainterPath_AddRect(QPainterPath_Ptr* self, QRectF_Ptr* rect);
+	public static extern void QPainterPath_AddRect(void* self, void** rect);
 	[LinkName("QPainterPath_AddRect2")]
-	public static extern void QPainterPath_AddRect2(QPainterPath_Ptr* self, double x, double y, double w, double h);
+	public static extern void QPainterPath_AddRect2(void* self, double x, double y, double w, double h);
 	[LinkName("QPainterPath_AddEllipse")]
-	public static extern void QPainterPath_AddEllipse(QPainterPath_Ptr* self, QRectF_Ptr* rect);
+	public static extern void QPainterPath_AddEllipse(void* self, void** rect);
 	[LinkName("QPainterPath_AddEllipse2")]
-	public static extern void QPainterPath_AddEllipse2(QPainterPath_Ptr* self, double x, double y, double w, double h);
+	public static extern void QPainterPath_AddEllipse2(void* self, double x, double y, double w, double h);
 	[LinkName("QPainterPath_AddEllipse3")]
-	public static extern void QPainterPath_AddEllipse3(QPainterPath_Ptr* self, QPointF_Ptr* center, double rx, double ry);
+	public static extern void QPainterPath_AddEllipse3(void* self, void** center, double rx, double ry);
 	[LinkName("QPainterPath_AddText")]
-	public static extern void QPainterPath_AddText(QPainterPath_Ptr* self, QPointF_Ptr* point, QFont_Ptr* f, libqt_string text);
+	public static extern void QPainterPath_AddText(void* self, void** point, void** f, libqt_string text);
 	[LinkName("QPainterPath_AddText2")]
-	public static extern void QPainterPath_AddText2(QPainterPath_Ptr* self, double x, double y, QFont_Ptr* f, libqt_string text);
+	public static extern void QPainterPath_AddText2(void* self, double x, double y, void** f, libqt_string text);
 	[LinkName("QPainterPath_AddPath")]
-	public static extern void QPainterPath_AddPath(QPainterPath_Ptr* self, QPainterPath_Ptr* path);
+	public static extern void QPainterPath_AddPath(void* self, void** path);
 	[LinkName("QPainterPath_AddRegion")]
-	public static extern void QPainterPath_AddRegion(QPainterPath_Ptr* self, QRegion_Ptr* region);
+	public static extern void QPainterPath_AddRegion(void* self, void** region);
 	[LinkName("QPainterPath_AddRoundedRect")]
-	public static extern void QPainterPath_AddRoundedRect(QPainterPath_Ptr* self, QRectF_Ptr* rect, double xRadius, double yRadius);
+	public static extern void QPainterPath_AddRoundedRect(void* self, void** rect, double xRadius, double yRadius);
 	[LinkName("QPainterPath_AddRoundedRect2")]
-	public static extern void QPainterPath_AddRoundedRect2(QPainterPath_Ptr* self, double x, double y, double w, double h, double xRadius, double yRadius);
+	public static extern void QPainterPath_AddRoundedRect2(void* self, double x, double y, double w, double h, double xRadius, double yRadius);
 	[LinkName("QPainterPath_ConnectPath")]
-	public static extern void QPainterPath_ConnectPath(QPainterPath_Ptr* self, QPainterPath_Ptr* path);
+	public static extern void QPainterPath_ConnectPath(void* self, void** path);
 	[LinkName("QPainterPath_Contains")]
-	public static extern bool QPainterPath_Contains(QPainterPath_Ptr* self, QPointF_Ptr* pt);
+	public static extern bool QPainterPath_Contains(void* self, void** pt);
 	[LinkName("QPainterPath_Contains2")]
-	public static extern bool QPainterPath_Contains2(QPainterPath_Ptr* self, QRectF_Ptr* rect);
+	public static extern bool QPainterPath_Contains2(void* self, void** rect);
 	[LinkName("QPainterPath_Intersects")]
-	public static extern bool QPainterPath_Intersects(QPainterPath_Ptr* self, QRectF_Ptr* rect);
+	public static extern bool QPainterPath_Intersects(void* self, void** rect);
 	[LinkName("QPainterPath_Translate")]
-	public static extern void QPainterPath_Translate(QPainterPath_Ptr* self, double dx, double dy);
+	public static extern void QPainterPath_Translate(void* self, double dx, double dy);
 	[LinkName("QPainterPath_Translate2")]
-	public static extern void QPainterPath_Translate2(QPainterPath_Ptr* self, QPointF_Ptr* offset);
+	public static extern void QPainterPath_Translate2(void* self, void** offset);
 	[LinkName("QPainterPath_Translated")]
-	public static extern QPainterPath_Ptr* QPainterPath_Translated(QPainterPath_Ptr* self, double dx, double dy);
+	public static extern void* QPainterPath_Translated(void* self, double dx, double dy);
 	[LinkName("QPainterPath_Translated2")]
-	public static extern QPainterPath_Ptr* QPainterPath_Translated2(QPainterPath_Ptr* self, QPointF_Ptr* offset);
+	public static extern void* QPainterPath_Translated2(void* self, void** offset);
 	[LinkName("QPainterPath_BoundingRect")]
-	public static extern QRectF_Ptr* QPainterPath_BoundingRect(QPainterPath_Ptr* self);
+	public static extern void* QPainterPath_BoundingRect(void* self);
 	[LinkName("QPainterPath_ControlPointRect")]
-	public static extern QRectF_Ptr* QPainterPath_ControlPointRect(QPainterPath_Ptr* self);
+	public static extern void* QPainterPath_ControlPointRect(void* self);
 	[LinkName("QPainterPath_FillRule")]
-	public static extern Qt_FillRule QPainterPath_FillRule(QPainterPath_Ptr* self);
+	public static extern Qt_FillRule QPainterPath_FillRule(void* self);
 	[LinkName("QPainterPath_SetFillRule")]
-	public static extern void QPainterPath_SetFillRule(QPainterPath_Ptr* self, Qt_FillRule fillRule);
+	public static extern void QPainterPath_SetFillRule(void* self, Qt_FillRule fillRule);
 	[LinkName("QPainterPath_IsEmpty")]
-	public static extern bool QPainterPath_IsEmpty(QPainterPath_Ptr* self);
+	public static extern bool QPainterPath_IsEmpty(void* self);
 	[LinkName("QPainterPath_ToReversed")]
-	public static extern QPainterPath_Ptr* QPainterPath_ToReversed(QPainterPath_Ptr* self);
+	public static extern void* QPainterPath_ToReversed(void* self);
 	[LinkName("QPainterPath_ElementCount")]
-	public static extern c_int QPainterPath_ElementCount(QPainterPath_Ptr* self);
+	public static extern c_int QPainterPath_ElementCount(void* self);
 	[LinkName("QPainterPath_ElementAt")]
-	public static extern QPainterPath_Element_Ptr* QPainterPath_ElementAt(QPainterPath_Ptr* self, c_int i);
+	public static extern void* QPainterPath_ElementAt(void* self, c_int i);
 	[LinkName("QPainterPath_SetElementPositionAt")]
-	public static extern void QPainterPath_SetElementPositionAt(QPainterPath_Ptr* self, c_int i, double x, double y);
+	public static extern void QPainterPath_SetElementPositionAt(void* self, c_int i, double x, double y);
 	[LinkName("QPainterPath_Length")]
-	public static extern double QPainterPath_Length(QPainterPath_Ptr* self);
+	public static extern double QPainterPath_Length(void* self);
 	[LinkName("QPainterPath_PercentAtLength")]
-	public static extern double QPainterPath_PercentAtLength(QPainterPath_Ptr* self, double t);
+	public static extern double QPainterPath_PercentAtLength(void* self, double t);
 	[LinkName("QPainterPath_PointAtPercent")]
-	public static extern QPointF_Ptr* QPainterPath_PointAtPercent(QPainterPath_Ptr* self, double t);
+	public static extern void* QPainterPath_PointAtPercent(void* self, double t);
 	[LinkName("QPainterPath_AngleAtPercent")]
-	public static extern double QPainterPath_AngleAtPercent(QPainterPath_Ptr* self, double t);
+	public static extern double QPainterPath_AngleAtPercent(void* self, double t);
 	[LinkName("QPainterPath_SlopeAtPercent")]
-	public static extern double QPainterPath_SlopeAtPercent(QPainterPath_Ptr* self, double t);
+	public static extern double QPainterPath_SlopeAtPercent(void* self, double t);
 	[LinkName("QPainterPath_Intersects2")]
-	public static extern bool QPainterPath_Intersects2(QPainterPath_Ptr* self, QPainterPath_Ptr* p);
+	public static extern bool QPainterPath_Intersects2(void* self, void** p);
 	[LinkName("QPainterPath_Contains3")]
-	public static extern bool QPainterPath_Contains3(QPainterPath_Ptr* self, QPainterPath_Ptr* p);
+	public static extern bool QPainterPath_Contains3(void* self, void** p);
 	[LinkName("QPainterPath_United")]
-	public static extern QPainterPath_Ptr* QPainterPath_United(QPainterPath_Ptr* self, QPainterPath_Ptr* r);
+	public static extern void* QPainterPath_United(void* self, void** r);
 	[LinkName("QPainterPath_Intersected")]
-	public static extern QPainterPath_Ptr* QPainterPath_Intersected(QPainterPath_Ptr* self, QPainterPath_Ptr* r);
+	public static extern void* QPainterPath_Intersected(void* self, void** r);
 	[LinkName("QPainterPath_Subtracted")]
-	public static extern QPainterPath_Ptr* QPainterPath_Subtracted(QPainterPath_Ptr* self, QPainterPath_Ptr* r);
+	public static extern void* QPainterPath_Subtracted(void* self, void** r);
 	[LinkName("QPainterPath_Simplified")]
-	public static extern QPainterPath_Ptr* QPainterPath_Simplified(QPainterPath_Ptr* self);
+	public static extern void* QPainterPath_Simplified(void* self);
 	[LinkName("QPainterPath_OperatorEqual")]
-	public static extern bool QPainterPath_OperatorEqual(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern bool QPainterPath_OperatorEqual(void* self, void** other);
 	[LinkName("QPainterPath_OperatorNotEqual")]
-	public static extern bool QPainterPath_OperatorNotEqual(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern bool QPainterPath_OperatorNotEqual(void* self, void** other);
 	[LinkName("QPainterPath_OperatorBitwiseAnd")]
-	public static extern QPainterPath_Ptr* QPainterPath_OperatorBitwiseAnd(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void* QPainterPath_OperatorBitwiseAnd(void* self, void** other);
 	[LinkName("QPainterPath_OperatorBitwiseOr")]
-	public static extern QPainterPath_Ptr* QPainterPath_OperatorBitwiseOr(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void* QPainterPath_OperatorBitwiseOr(void* self, void** other);
 	[LinkName("QPainterPath_OperatorPlus")]
-	public static extern QPainterPath_Ptr* QPainterPath_OperatorPlus(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void* QPainterPath_OperatorPlus(void* self, void** other);
 	[LinkName("QPainterPath_OperatorMinus")]
-	public static extern QPainterPath_Ptr* QPainterPath_OperatorMinus(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void* QPainterPath_OperatorMinus(void* self, void** other);
 	[LinkName("QPainterPath_OperatorBitwiseAndAssign")]
-	public static extern void QPainterPath_OperatorBitwiseAndAssign(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void QPainterPath_OperatorBitwiseAndAssign(void* self, void** other);
 	[LinkName("QPainterPath_OperatorBitwiseOrAssign")]
-	public static extern void QPainterPath_OperatorBitwiseOrAssign(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void QPainterPath_OperatorBitwiseOrAssign(void* self, void** other);
 	[LinkName("QPainterPath_OperatorPlusAssign")]
-	public static extern QPainterPath_Ptr* QPainterPath_OperatorPlusAssign(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void** QPainterPath_OperatorPlusAssign(void* self, void** other);
 	[LinkName("QPainterPath_OperatorMinusAssign")]
-	public static extern QPainterPath_Ptr* QPainterPath_OperatorMinusAssign(QPainterPath_Ptr* self, QPainterPath_Ptr* other);
+	public static extern void** QPainterPath_OperatorMinusAssign(void* self, void** other);
 	[LinkName("QPainterPath_AddRoundedRect4")]
-	public static extern void QPainterPath_AddRoundedRect4(QPainterPath_Ptr* self, QRectF_Ptr* rect, double xRadius, double yRadius, Qt_SizeMode mode);
+	public static extern void QPainterPath_AddRoundedRect4(void* self, void** rect, double xRadius, double yRadius, Qt_SizeMode mode);
 	[LinkName("QPainterPath_AddRoundedRect7")]
-	public static extern void QPainterPath_AddRoundedRect7(QPainterPath_Ptr* self, double x, double y, double w, double h, double xRadius, double yRadius, Qt_SizeMode mode);
+	public static extern void QPainterPath_AddRoundedRect7(void* self, double x, double y, double w, double h, double xRadius, double yRadius, Qt_SizeMode mode);
 }
 class QPainterPath : IQPainterPath
 {
-	private QPainterPath_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPainterPath_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPainterPath_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPainterPath_new();
@@ -183,239 +192,239 @@ class QPainterPath : IQPainterPath
 	}
 	public void Swap(IQPainterPath other)
 	{
-		CQt.QPainterPath_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QPainterPath_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public void Clear()
 	{
-		CQt.QPainterPath_Clear((.)this.ptr);
+		CQt.QPainterPath_Clear((.)this.ptr.Ptr);
 	}
 	public void Reserve(c_int size)
 	{
-		CQt.QPainterPath_Reserve((.)this.ptr, size);
+		CQt.QPainterPath_Reserve((.)this.ptr.Ptr, size);
 	}
 	public c_int Capacity()
 	{
-		return CQt.QPainterPath_Capacity((.)this.ptr);
+		return CQt.QPainterPath_Capacity((.)this.ptr.Ptr);
 	}
 	public void CloseSubpath()
 	{
-		CQt.QPainterPath_CloseSubpath((.)this.ptr);
+		CQt.QPainterPath_CloseSubpath((.)this.ptr.Ptr);
 	}
 	public void MoveTo(IQPointF p)
 	{
-		CQt.QPainterPath_MoveTo((.)this.ptr, (.)p?.ObjectPtr);
+		CQt.QPainterPath_MoveTo((.)this.ptr.Ptr, (.)p?.ObjectPtr);
 	}
 	public void MoveTo2(double x, double y)
 	{
-		CQt.QPainterPath_MoveTo2((.)this.ptr, x, y);
+		CQt.QPainterPath_MoveTo2((.)this.ptr.Ptr, x, y);
 	}
 	public void LineTo(IQPointF p)
 	{
-		CQt.QPainterPath_LineTo((.)this.ptr, (.)p?.ObjectPtr);
+		CQt.QPainterPath_LineTo((.)this.ptr.Ptr, (.)p?.ObjectPtr);
 	}
 	public void LineTo2(double x, double y)
 	{
-		CQt.QPainterPath_LineTo2((.)this.ptr, x, y);
+		CQt.QPainterPath_LineTo2((.)this.ptr.Ptr, x, y);
 	}
 	public void ArcMoveTo(IQRectF rect, double angle)
 	{
-		CQt.QPainterPath_ArcMoveTo((.)this.ptr, (.)rect?.ObjectPtr, angle);
+		CQt.QPainterPath_ArcMoveTo((.)this.ptr.Ptr, (.)rect?.ObjectPtr, angle);
 	}
 	public void ArcMoveTo2(double x, double y, double w, double h, double angle)
 	{
-		CQt.QPainterPath_ArcMoveTo2((.)this.ptr, x, y, w, h, angle);
+		CQt.QPainterPath_ArcMoveTo2((.)this.ptr.Ptr, x, y, w, h, angle);
 	}
 	public void ArcTo(IQRectF rect, double startAngle, double arcLength)
 	{
-		CQt.QPainterPath_ArcTo((.)this.ptr, (.)rect?.ObjectPtr, startAngle, arcLength);
+		CQt.QPainterPath_ArcTo((.)this.ptr.Ptr, (.)rect?.ObjectPtr, startAngle, arcLength);
 	}
 	public void ArcTo2(double x, double y, double w, double h, double startAngle, double arcLength)
 	{
-		CQt.QPainterPath_ArcTo2((.)this.ptr, x, y, w, h, startAngle, arcLength);
+		CQt.QPainterPath_ArcTo2((.)this.ptr.Ptr, x, y, w, h, startAngle, arcLength);
 	}
 	public void CubicTo(IQPointF ctrlPt1, IQPointF ctrlPt2, IQPointF endPt)
 	{
-		CQt.QPainterPath_CubicTo((.)this.ptr, (.)ctrlPt1?.ObjectPtr, (.)ctrlPt2?.ObjectPtr, (.)endPt?.ObjectPtr);
+		CQt.QPainterPath_CubicTo((.)this.ptr.Ptr, (.)ctrlPt1?.ObjectPtr, (.)ctrlPt2?.ObjectPtr, (.)endPt?.ObjectPtr);
 	}
 	public void CubicTo2(double ctrlPt1x, double ctrlPt1y, double ctrlPt2x, double ctrlPt2y, double endPtx, double endPty)
 	{
-		CQt.QPainterPath_CubicTo2((.)this.ptr, ctrlPt1x, ctrlPt1y, ctrlPt2x, ctrlPt2y, endPtx, endPty);
+		CQt.QPainterPath_CubicTo2((.)this.ptr.Ptr, ctrlPt1x, ctrlPt1y, ctrlPt2x, ctrlPt2y, endPtx, endPty);
 	}
 	public void QuadTo(IQPointF ctrlPt, IQPointF endPt)
 	{
-		CQt.QPainterPath_QuadTo((.)this.ptr, (.)ctrlPt?.ObjectPtr, (.)endPt?.ObjectPtr);
+		CQt.QPainterPath_QuadTo((.)this.ptr.Ptr, (.)ctrlPt?.ObjectPtr, (.)endPt?.ObjectPtr);
 	}
 	public void QuadTo2(double ctrlPtx, double ctrlPty, double endPtx, double endPty)
 	{
-		CQt.QPainterPath_QuadTo2((.)this.ptr, ctrlPtx, ctrlPty, endPtx, endPty);
+		CQt.QPainterPath_QuadTo2((.)this.ptr.Ptr, ctrlPtx, ctrlPty, endPtx, endPty);
 	}
-	public QPointF_Ptr* CurrentPosition()
+	public QPointF_Ptr CurrentPosition()
 	{
-		return CQt.QPainterPath_CurrentPosition((.)this.ptr);
+		return QPointF_Ptr(CQt.QPainterPath_CurrentPosition((.)this.ptr.Ptr));
 	}
 	public void AddRect(IQRectF rect)
 	{
-		CQt.QPainterPath_AddRect((.)this.ptr, (.)rect?.ObjectPtr);
+		CQt.QPainterPath_AddRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
 	}
 	public void AddRect2(double x, double y, double w, double h)
 	{
-		CQt.QPainterPath_AddRect2((.)this.ptr, x, y, w, h);
+		CQt.QPainterPath_AddRect2((.)this.ptr.Ptr, x, y, w, h);
 	}
 	public void AddEllipse(IQRectF rect)
 	{
-		CQt.QPainterPath_AddEllipse((.)this.ptr, (.)rect?.ObjectPtr);
+		CQt.QPainterPath_AddEllipse((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
 	}
 	public void AddEllipse2(double x, double y, double w, double h)
 	{
-		CQt.QPainterPath_AddEllipse2((.)this.ptr, x, y, w, h);
+		CQt.QPainterPath_AddEllipse2((.)this.ptr.Ptr, x, y, w, h);
 	}
 	public void AddEllipse3(IQPointF center, double rx, double ry)
 	{
-		CQt.QPainterPath_AddEllipse3((.)this.ptr, (.)center?.ObjectPtr, rx, ry);
+		CQt.QPainterPath_AddEllipse3((.)this.ptr.Ptr, (.)center?.ObjectPtr, rx, ry);
 	}
 	public void AddText(IQPointF point, IQFont f, String text)
 	{
-		CQt.QPainterPath_AddText((.)this.ptr, (.)point?.ObjectPtr, (.)f?.ObjectPtr, libqt_string(text));
+		CQt.QPainterPath_AddText((.)this.ptr.Ptr, (.)point?.ObjectPtr, (.)f?.ObjectPtr, libqt_string(text));
 	}
 	public void AddText2(double x, double y, IQFont f, String text)
 	{
-		CQt.QPainterPath_AddText2((.)this.ptr, x, y, (.)f?.ObjectPtr, libqt_string(text));
+		CQt.QPainterPath_AddText2((.)this.ptr.Ptr, x, y, (.)f?.ObjectPtr, libqt_string(text));
 	}
 	public void AddPath(IQPainterPath path)
 	{
-		CQt.QPainterPath_AddPath((.)this.ptr, (.)path?.ObjectPtr);
+		CQt.QPainterPath_AddPath((.)this.ptr.Ptr, (.)path?.ObjectPtr);
 	}
 	public void AddRegion(IQRegion region)
 	{
-		CQt.QPainterPath_AddRegion((.)this.ptr, (.)region?.ObjectPtr);
+		CQt.QPainterPath_AddRegion((.)this.ptr.Ptr, (.)region?.ObjectPtr);
 	}
 	public void AddRoundedRect(IQRectF rect, double xRadius, double yRadius)
 	{
-		CQt.QPainterPath_AddRoundedRect((.)this.ptr, (.)rect?.ObjectPtr, xRadius, yRadius);
+		CQt.QPainterPath_AddRoundedRect((.)this.ptr.Ptr, (.)rect?.ObjectPtr, xRadius, yRadius);
 	}
 	public void AddRoundedRect2(double x, double y, double w, double h, double xRadius, double yRadius)
 	{
-		CQt.QPainterPath_AddRoundedRect2((.)this.ptr, x, y, w, h, xRadius, yRadius);
+		CQt.QPainterPath_AddRoundedRect2((.)this.ptr.Ptr, x, y, w, h, xRadius, yRadius);
 	}
 	public void ConnectPath(IQPainterPath path)
 	{
-		CQt.QPainterPath_ConnectPath((.)this.ptr, (.)path?.ObjectPtr);
+		CQt.QPainterPath_ConnectPath((.)this.ptr.Ptr, (.)path?.ObjectPtr);
 	}
 	public bool Contains(IQPointF pt)
 	{
-		return CQt.QPainterPath_Contains((.)this.ptr, (.)pt?.ObjectPtr);
+		return CQt.QPainterPath_Contains((.)this.ptr.Ptr, (.)pt?.ObjectPtr);
 	}
 	public bool Contains2(IQRectF rect)
 	{
-		return CQt.QPainterPath_Contains2((.)this.ptr, (.)rect?.ObjectPtr);
+		return CQt.QPainterPath_Contains2((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
 	}
 	public bool Intersects(IQRectF rect)
 	{
-		return CQt.QPainterPath_Intersects((.)this.ptr, (.)rect?.ObjectPtr);
+		return CQt.QPainterPath_Intersects((.)this.ptr.Ptr, (.)rect?.ObjectPtr);
 	}
 	public void Translate(double dx, double dy)
 	{
-		CQt.QPainterPath_Translate((.)this.ptr, dx, dy);
+		CQt.QPainterPath_Translate((.)this.ptr.Ptr, dx, dy);
 	}
 	public void Translate2(IQPointF offset)
 	{
-		CQt.QPainterPath_Translate2((.)this.ptr, (.)offset?.ObjectPtr);
+		CQt.QPainterPath_Translate2((.)this.ptr.Ptr, (.)offset?.ObjectPtr);
 	}
-	public QPainterPath_Ptr* Translated(double dx, double dy)
+	public QPainterPath_Ptr Translated(double dx, double dy)
 	{
-		return CQt.QPainterPath_Translated((.)this.ptr, dx, dy);
+		return QPainterPath_Ptr(CQt.QPainterPath_Translated((.)this.ptr.Ptr, dx, dy));
 	}
-	public QPainterPath_Ptr* Translated2(IQPointF offset)
+	public QPainterPath_Ptr Translated2(IQPointF offset)
 	{
-		return CQt.QPainterPath_Translated2((.)this.ptr, (.)offset?.ObjectPtr);
+		return QPainterPath_Ptr(CQt.QPainterPath_Translated2((.)this.ptr.Ptr, (.)offset?.ObjectPtr));
 	}
-	public QRectF_Ptr* BoundingRect()
+	public QRectF_Ptr BoundingRect()
 	{
-		return CQt.QPainterPath_BoundingRect((.)this.ptr);
+		return QRectF_Ptr(CQt.QPainterPath_BoundingRect((.)this.ptr.Ptr));
 	}
-	public QRectF_Ptr* ControlPointRect()
+	public QRectF_Ptr ControlPointRect()
 	{
-		return CQt.QPainterPath_ControlPointRect((.)this.ptr);
+		return QRectF_Ptr(CQt.QPainterPath_ControlPointRect((.)this.ptr.Ptr));
 	}
 	public Qt_FillRule FillRule()
 	{
-		return CQt.QPainterPath_FillRule((.)this.ptr);
+		return CQt.QPainterPath_FillRule((.)this.ptr.Ptr);
 	}
 	public void SetFillRule(Qt_FillRule fillRule)
 	{
-		CQt.QPainterPath_SetFillRule((.)this.ptr, fillRule);
+		CQt.QPainterPath_SetFillRule((.)this.ptr.Ptr, fillRule);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QPainterPath_IsEmpty((.)this.ptr);
+		return CQt.QPainterPath_IsEmpty((.)this.ptr.Ptr);
 	}
-	public QPainterPath_Ptr* ToReversed()
+	public QPainterPath_Ptr ToReversed()
 	{
-		return CQt.QPainterPath_ToReversed((.)this.ptr);
+		return QPainterPath_Ptr(CQt.QPainterPath_ToReversed((.)this.ptr.Ptr));
 	}
 	public c_int ElementCount()
 	{
-		return CQt.QPainterPath_ElementCount((.)this.ptr);
+		return CQt.QPainterPath_ElementCount((.)this.ptr.Ptr);
 	}
-	public QPainterPath_Element_Ptr* ElementAt(c_int i)
+	public QPainterPath_Element_Ptr ElementAt(c_int i)
 	{
-		return CQt.QPainterPath_ElementAt((.)this.ptr, i);
+		return QPainterPath_Element_Ptr(CQt.QPainterPath_ElementAt((.)this.ptr.Ptr, i));
 	}
 	public void SetElementPositionAt(c_int i, double x, double y)
 	{
-		CQt.QPainterPath_SetElementPositionAt((.)this.ptr, i, x, y);
+		CQt.QPainterPath_SetElementPositionAt((.)this.ptr.Ptr, i, x, y);
 	}
 	public double Length()
 	{
-		return CQt.QPainterPath_Length((.)this.ptr);
+		return CQt.QPainterPath_Length((.)this.ptr.Ptr);
 	}
 	public double PercentAtLength(double t)
 	{
-		return CQt.QPainterPath_PercentAtLength((.)this.ptr, t);
+		return CQt.QPainterPath_PercentAtLength((.)this.ptr.Ptr, t);
 	}
-	public QPointF_Ptr* PointAtPercent(double t)
+	public QPointF_Ptr PointAtPercent(double t)
 	{
-		return CQt.QPainterPath_PointAtPercent((.)this.ptr, t);
+		return QPointF_Ptr(CQt.QPainterPath_PointAtPercent((.)this.ptr.Ptr, t));
 	}
 	public double AngleAtPercent(double t)
 	{
-		return CQt.QPainterPath_AngleAtPercent((.)this.ptr, t);
+		return CQt.QPainterPath_AngleAtPercent((.)this.ptr.Ptr, t);
 	}
 	public double SlopeAtPercent(double t)
 	{
-		return CQt.QPainterPath_SlopeAtPercent((.)this.ptr, t);
+		return CQt.QPainterPath_SlopeAtPercent((.)this.ptr.Ptr, t);
 	}
 	public bool Intersects2(IQPainterPath p)
 	{
-		return CQt.QPainterPath_Intersects2((.)this.ptr, (.)p?.ObjectPtr);
+		return CQt.QPainterPath_Intersects2((.)this.ptr.Ptr, (.)p?.ObjectPtr);
 	}
 	public bool Contains3(IQPainterPath p)
 	{
-		return CQt.QPainterPath_Contains3((.)this.ptr, (.)p?.ObjectPtr);
+		return CQt.QPainterPath_Contains3((.)this.ptr.Ptr, (.)p?.ObjectPtr);
 	}
-	public QPainterPath_Ptr* United(IQPainterPath r)
+	public QPainterPath_Ptr United(IQPainterPath r)
 	{
-		return CQt.QPainterPath_United((.)this.ptr, (.)r?.ObjectPtr);
+		return QPainterPath_Ptr(CQt.QPainterPath_United((.)this.ptr.Ptr, (.)r?.ObjectPtr));
 	}
-	public QPainterPath_Ptr* Intersected(IQPainterPath r)
+	public QPainterPath_Ptr Intersected(IQPainterPath r)
 	{
-		return CQt.QPainterPath_Intersected((.)this.ptr, (.)r?.ObjectPtr);
+		return QPainterPath_Ptr(CQt.QPainterPath_Intersected((.)this.ptr.Ptr, (.)r?.ObjectPtr));
 	}
-	public QPainterPath_Ptr* Subtracted(IQPainterPath r)
+	public QPainterPath_Ptr Subtracted(IQPainterPath r)
 	{
-		return CQt.QPainterPath_Subtracted((.)this.ptr, (.)r?.ObjectPtr);
+		return QPainterPath_Ptr(CQt.QPainterPath_Subtracted((.)this.ptr.Ptr, (.)r?.ObjectPtr));
 	}
-	public QPainterPath_Ptr* Simplified()
+	public QPainterPath_Ptr Simplified()
 	{
-		return CQt.QPainterPath_Simplified((.)this.ptr);
+		return QPainterPath_Ptr(CQt.QPainterPath_Simplified((.)this.ptr.Ptr));
 	}
 	public void AddRoundedRect4(IQRectF rect, double xRadius, double yRadius, Qt_SizeMode mode)
 	{
-		CQt.QPainterPath_AddRoundedRect4((.)this.ptr, (.)rect?.ObjectPtr, xRadius, yRadius, mode);
+		CQt.QPainterPath_AddRoundedRect4((.)this.ptr.Ptr, (.)rect?.ObjectPtr, xRadius, yRadius, mode);
 	}
 	public void AddRoundedRect7(double x, double y, double w, double h, double xRadius, double yRadius, Qt_SizeMode mode)
 	{
-		CQt.QPainterPath_AddRoundedRect7((.)this.ptr, x, y, w, h, xRadius, yRadius, mode);
+		CQt.QPainterPath_AddRoundedRect7((.)this.ptr.Ptr, x, y, w, h, xRadius, yRadius, mode);
 	}
 }
 interface IQPainterPath : IQtObjectInterface
@@ -425,54 +434,63 @@ interface IQPainterPath : IQtObjectInterface
 // QPainterPathStroker
 // --------------------------------------------------------------
 [CRepr]
-struct QPainterPathStroker_Ptr: void
+struct QPainterPathStroker_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPainterPathStroker_new")]
-	public static extern QPainterPathStroker_Ptr* QPainterPathStroker_new();
+	public static extern QPainterPathStroker_Ptr QPainterPathStroker_new();
 	[LinkName("QPainterPathStroker_new2")]
-	public static extern QPainterPathStroker_Ptr* QPainterPathStroker_new2(QPen_Ptr* pen);
+	public static extern QPainterPathStroker_Ptr QPainterPathStroker_new2(void** pen);
 	[LinkName("QPainterPathStroker_Delete")]
-	public static extern void QPainterPathStroker_Delete(QPainterPathStroker_Ptr* self);
+	public static extern void QPainterPathStroker_Delete(QPainterPathStroker_Ptr self);
 	[LinkName("QPainterPathStroker_SetWidth")]
-	public static extern void QPainterPathStroker_SetWidth(QPainterPathStroker_Ptr* self, double width);
+	public static extern void QPainterPathStroker_SetWidth(void* self, double width);
 	[LinkName("QPainterPathStroker_Width")]
-	public static extern double QPainterPathStroker_Width(QPainterPathStroker_Ptr* self);
+	public static extern double QPainterPathStroker_Width(void* self);
 	[LinkName("QPainterPathStroker_SetCapStyle")]
-	public static extern void QPainterPathStroker_SetCapStyle(QPainterPathStroker_Ptr* self, Qt_PenCapStyle style);
+	public static extern void QPainterPathStroker_SetCapStyle(void* self, Qt_PenCapStyle style);
 	[LinkName("QPainterPathStroker_CapStyle")]
-	public static extern Qt_PenCapStyle QPainterPathStroker_CapStyle(QPainterPathStroker_Ptr* self);
+	public static extern Qt_PenCapStyle QPainterPathStroker_CapStyle(void* self);
 	[LinkName("QPainterPathStroker_SetJoinStyle")]
-	public static extern void QPainterPathStroker_SetJoinStyle(QPainterPathStroker_Ptr* self, Qt_PenJoinStyle style);
+	public static extern void QPainterPathStroker_SetJoinStyle(void* self, Qt_PenJoinStyle style);
 	[LinkName("QPainterPathStroker_JoinStyle")]
-	public static extern Qt_PenJoinStyle QPainterPathStroker_JoinStyle(QPainterPathStroker_Ptr* self);
+	public static extern Qt_PenJoinStyle QPainterPathStroker_JoinStyle(void* self);
 	[LinkName("QPainterPathStroker_SetMiterLimit")]
-	public static extern void QPainterPathStroker_SetMiterLimit(QPainterPathStroker_Ptr* self, double length);
+	public static extern void QPainterPathStroker_SetMiterLimit(void* self, double length);
 	[LinkName("QPainterPathStroker_MiterLimit")]
-	public static extern double QPainterPathStroker_MiterLimit(QPainterPathStroker_Ptr* self);
+	public static extern double QPainterPathStroker_MiterLimit(void* self);
 	[LinkName("QPainterPathStroker_SetCurveThreshold")]
-	public static extern void QPainterPathStroker_SetCurveThreshold(QPainterPathStroker_Ptr* self, double threshold);
+	public static extern void QPainterPathStroker_SetCurveThreshold(void* self, double threshold);
 	[LinkName("QPainterPathStroker_CurveThreshold")]
-	public static extern double QPainterPathStroker_CurveThreshold(QPainterPathStroker_Ptr* self);
+	public static extern double QPainterPathStroker_CurveThreshold(void* self);
 	[LinkName("QPainterPathStroker_SetDashPattern")]
-	public static extern void QPainterPathStroker_SetDashPattern(QPainterPathStroker_Ptr* self, Qt_PenStyle dashPattern);
+	public static extern void QPainterPathStroker_SetDashPattern(void* self, Qt_PenStyle dashPattern);
 	[LinkName("QPainterPathStroker_SetDashPattern2")]
-	public static extern void QPainterPathStroker_SetDashPattern2(QPainterPathStroker_Ptr* self, void** dashPattern);
+	public static extern void QPainterPathStroker_SetDashPattern2(void* self, void** dashPattern);
 	[LinkName("QPainterPathStroker_DashPattern")]
-	public static extern void* QPainterPathStroker_DashPattern(QPainterPathStroker_Ptr* self);
+	public static extern void* QPainterPathStroker_DashPattern(void* self);
 	[LinkName("QPainterPathStroker_SetDashOffset")]
-	public static extern void QPainterPathStroker_SetDashOffset(QPainterPathStroker_Ptr* self, double offset);
+	public static extern void QPainterPathStroker_SetDashOffset(void* self, double offset);
 	[LinkName("QPainterPathStroker_DashOffset")]
-	public static extern double QPainterPathStroker_DashOffset(QPainterPathStroker_Ptr* self);
+	public static extern double QPainterPathStroker_DashOffset(void* self);
 	[LinkName("QPainterPathStroker_CreateStroke")]
-	public static extern QPainterPath_Ptr* QPainterPathStroker_CreateStroke(QPainterPathStroker_Ptr* self, QPainterPath_Ptr* path);
+	public static extern void* QPainterPathStroker_CreateStroke(void* self, void** path);
 }
 class QPainterPathStroker : IQPainterPathStroker
 {
-	private QPainterPathStroker_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPainterPathStroker_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPainterPathStroker_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QPainterPathStroker_new();
@@ -487,67 +505,67 @@ class QPainterPathStroker : IQPainterPathStroker
 	}
 	public void SetWidth(double width)
 	{
-		CQt.QPainterPathStroker_SetWidth((.)this.ptr, width);
+		CQt.QPainterPathStroker_SetWidth((.)this.ptr.Ptr, width);
 	}
 	public double Width()
 	{
-		return CQt.QPainterPathStroker_Width((.)this.ptr);
+		return CQt.QPainterPathStroker_Width((.)this.ptr.Ptr);
 	}
 	public void SetCapStyle(Qt_PenCapStyle style)
 	{
-		CQt.QPainterPathStroker_SetCapStyle((.)this.ptr, style);
+		CQt.QPainterPathStroker_SetCapStyle((.)this.ptr.Ptr, style);
 	}
 	public Qt_PenCapStyle CapStyle()
 	{
-		return CQt.QPainterPathStroker_CapStyle((.)this.ptr);
+		return CQt.QPainterPathStroker_CapStyle((.)this.ptr.Ptr);
 	}
 	public void SetJoinStyle(Qt_PenJoinStyle style)
 	{
-		CQt.QPainterPathStroker_SetJoinStyle((.)this.ptr, style);
+		CQt.QPainterPathStroker_SetJoinStyle((.)this.ptr.Ptr, style);
 	}
 	public Qt_PenJoinStyle JoinStyle()
 	{
-		return CQt.QPainterPathStroker_JoinStyle((.)this.ptr);
+		return CQt.QPainterPathStroker_JoinStyle((.)this.ptr.Ptr);
 	}
 	public void SetMiterLimit(double length)
 	{
-		CQt.QPainterPathStroker_SetMiterLimit((.)this.ptr, length);
+		CQt.QPainterPathStroker_SetMiterLimit((.)this.ptr.Ptr, length);
 	}
 	public double MiterLimit()
 	{
-		return CQt.QPainterPathStroker_MiterLimit((.)this.ptr);
+		return CQt.QPainterPathStroker_MiterLimit((.)this.ptr.Ptr);
 	}
 	public void SetCurveThreshold(double threshold)
 	{
-		CQt.QPainterPathStroker_SetCurveThreshold((.)this.ptr, threshold);
+		CQt.QPainterPathStroker_SetCurveThreshold((.)this.ptr.Ptr, threshold);
 	}
 	public double CurveThreshold()
 	{
-		return CQt.QPainterPathStroker_CurveThreshold((.)this.ptr);
+		return CQt.QPainterPathStroker_CurveThreshold((.)this.ptr.Ptr);
 	}
 	public void SetDashPattern(Qt_PenStyle dashPattern)
 	{
-		CQt.QPainterPathStroker_SetDashPattern((.)this.ptr, dashPattern);
+		CQt.QPainterPathStroker_SetDashPattern((.)this.ptr.Ptr, dashPattern);
 	}
 	public void SetDashPattern2(void** dashPattern)
 	{
-		CQt.QPainterPathStroker_SetDashPattern2((.)this.ptr, dashPattern);
+		CQt.QPainterPathStroker_SetDashPattern2((.)this.ptr.Ptr, dashPattern);
 	}
 	public void* DashPattern()
 	{
-		return CQt.QPainterPathStroker_DashPattern((.)this.ptr);
+		return CQt.QPainterPathStroker_DashPattern((.)this.ptr.Ptr);
 	}
 	public void SetDashOffset(double offset)
 	{
-		CQt.QPainterPathStroker_SetDashOffset((.)this.ptr, offset);
+		CQt.QPainterPathStroker_SetDashOffset((.)this.ptr.Ptr, offset);
 	}
 	public double DashOffset()
 	{
-		return CQt.QPainterPathStroker_DashOffset((.)this.ptr);
+		return CQt.QPainterPathStroker_DashOffset((.)this.ptr.Ptr);
 	}
-	public QPainterPath_Ptr* CreateStroke(IQPainterPath path)
+	public QPainterPath_Ptr CreateStroke(IQPainterPath path)
 	{
-		return CQt.QPainterPathStroker_CreateStroke((.)this.ptr, (.)path?.ObjectPtr);
+		return QPainterPath_Ptr(CQt.QPainterPathStroker_CreateStroke((.)this.ptr.Ptr, (.)path?.ObjectPtr));
 	}
 }
 interface IQPainterPathStroker : IQtObjectInterface
@@ -557,81 +575,90 @@ interface IQPainterPathStroker : IQtObjectInterface
 // QPainterPath::Element
 // --------------------------------------------------------------
 [CRepr]
-struct QPainterPath_Element_Ptr: void
+struct QPainterPath_Element_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPainterPath_Element_Delete")]
-	public static extern void QPainterPath_Element_Delete(QPainterPath_Element_Ptr* self);
+	public static extern void QPainterPath_Element_Delete(QPainterPath_Element_Ptr self);
 	[LinkName("QPainterPath_Element_X")]
-	public static extern double QPainterPath_Element_X(QPainterPath_Element_Ptr* self);
+	public static extern double QPainterPath_Element_X(void* self);
 	[LinkName("QPainterPath_Element_SetX")]
-	public static extern void QPainterPath_Element_SetX(QPainterPath_Element_Ptr* self, double x);
+	public static extern void QPainterPath_Element_SetX(void* self, double x);
 	[LinkName("QPainterPath_Element_Y")]
-	public static extern double QPainterPath_Element_Y(QPainterPath_Element_Ptr* self);
+	public static extern double QPainterPath_Element_Y(void* self);
 	[LinkName("QPainterPath_Element_SetY")]
-	public static extern void QPainterPath_Element_SetY(QPainterPath_Element_Ptr* self, double y);
+	public static extern void QPainterPath_Element_SetY(void* self, double y);
 	[LinkName("QPainterPath_Element_Type")]
-	public static extern QPainterPath_ElementType QPainterPath_Element_Type(QPainterPath_Element_Ptr* self);
+	public static extern QPainterPath_ElementType QPainterPath_Element_Type(void* self);
 	[LinkName("QPainterPath_Element_SetType")]
-	public static extern void QPainterPath_Element_SetType(QPainterPath_Element_Ptr* self, QPainterPath_ElementType type);
+	public static extern void QPainterPath_Element_SetType(void* self, QPainterPath_ElementType type);
 	[LinkName("QPainterPath_Element_IsMoveTo")]
-	public static extern bool QPainterPath_Element_IsMoveTo(QPainterPath_Element_Ptr* self);
+	public static extern bool QPainterPath_Element_IsMoveTo(void* self);
 	[LinkName("QPainterPath_Element_IsLineTo")]
-	public static extern bool QPainterPath_Element_IsLineTo(QPainterPath_Element_Ptr* self);
+	public static extern bool QPainterPath_Element_IsLineTo(void* self);
 	[LinkName("QPainterPath_Element_IsCurveTo")]
-	public static extern bool QPainterPath_Element_IsCurveTo(QPainterPath_Element_Ptr* self);
+	public static extern bool QPainterPath_Element_IsCurveTo(void* self);
 	[LinkName("QPainterPath_Element_ToQpointf")]
-	public static extern QPointF_Ptr* QPainterPath_Element_ToQpointf(QPainterPath_Element_Ptr* self);
+	public static extern void* QPainterPath_Element_ToQpointf(void* self);
 	[LinkName("QPainterPath_Element_OperatorEqual")]
-	public static extern bool QPainterPath_Element_OperatorEqual(QPainterPath_Element_Ptr* self, QPainterPath_Element_Ptr* e);
+	public static extern bool QPainterPath_Element_OperatorEqual(void* self, void** e);
 	[LinkName("QPainterPath_Element_OperatorNotEqual")]
-	public static extern bool QPainterPath_Element_OperatorNotEqual(QPainterPath_Element_Ptr* self, QPainterPath_Element_Ptr* e);
+	public static extern bool QPainterPath_Element_OperatorNotEqual(void* self, void** e);
 }
 class QPainterPath_Element : IQPainterPath_Element
 {
-	private QPainterPath_Element_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPainterPath_Element_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPainterPath_Element_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public ~this()
 	{
 		CQt.QPainterPath_Element_Delete(this.ptr);
 	}
 	public double X()
 	{
-		return CQt.QPainterPath_Element_X((.)this.ptr);
+		return CQt.QPainterPath_Element_X((.)this.ptr.Ptr);
 	}
 	public void SetX(double x)
 	{
-		CQt.QPainterPath_Element_SetX((.)this.ptr, x);
+		CQt.QPainterPath_Element_SetX((.)this.ptr.Ptr, x);
 	}
 	public double Y()
 	{
-		return CQt.QPainterPath_Element_Y((.)this.ptr);
+		return CQt.QPainterPath_Element_Y((.)this.ptr.Ptr);
 	}
 	public void SetY(double y)
 	{
-		CQt.QPainterPath_Element_SetY((.)this.ptr, y);
+		CQt.QPainterPath_Element_SetY((.)this.ptr.Ptr, y);
 	}
 	public QPainterPath_ElementType Type()
 	{
-		return CQt.QPainterPath_Element_Type((.)this.ptr);
+		return CQt.QPainterPath_Element_Type((.)this.ptr.Ptr);
 	}
 	public void SetType(QPainterPath_ElementType type)
 	{
-		CQt.QPainterPath_Element_SetType((.)this.ptr, type);
+		CQt.QPainterPath_Element_SetType((.)this.ptr.Ptr, type);
 	}
 	public bool IsMoveTo()
 	{
-		return CQt.QPainterPath_Element_IsMoveTo((.)this.ptr);
+		return CQt.QPainterPath_Element_IsMoveTo((.)this.ptr.Ptr);
 	}
 	public bool IsLineTo()
 	{
-		return CQt.QPainterPath_Element_IsLineTo((.)this.ptr);
+		return CQt.QPainterPath_Element_IsLineTo((.)this.ptr.Ptr);
 	}
 	public bool IsCurveTo()
 	{
-		return CQt.QPainterPath_Element_IsCurveTo((.)this.ptr);
+		return CQt.QPainterPath_Element_IsCurveTo((.)this.ptr.Ptr);
 	}
 }
 interface IQPainterPath_Element : IQtObjectInterface

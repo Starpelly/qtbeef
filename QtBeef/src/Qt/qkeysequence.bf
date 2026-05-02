@@ -7,83 +7,88 @@ namespace Qt6;
 // QKeySequence
 // --------------------------------------------------------------
 [CRepr]
-struct QKeySequence_Ptr: void
+struct QKeySequence_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QKeySequence_new")]
-	public static extern QKeySequence_Ptr* QKeySequence_new();
+	public static extern QKeySequence_Ptr QKeySequence_new();
 	[LinkName("QKeySequence_new2")]
-	public static extern QKeySequence_Ptr* QKeySequence_new2(libqt_string key);
+	public static extern QKeySequence_Ptr QKeySequence_new2(libqt_string key);
 	[LinkName("QKeySequence_new3")]
-	public static extern QKeySequence_Ptr* QKeySequence_new3(c_int k1);
+	public static extern QKeySequence_Ptr QKeySequence_new3(c_int k1);
 	[LinkName("QKeySequence_new4")]
-	public static extern QKeySequence_Ptr* QKeySequence_new4(QKeyCombination_Ptr* k1);
+	public static extern QKeySequence_Ptr QKeySequence_new4(void* k1);
 	[LinkName("QKeySequence_new5")]
-	public static extern QKeySequence_Ptr* QKeySequence_new5(QKeySequence_Ptr* ks);
+	public static extern QKeySequence_Ptr QKeySequence_new5(void** ks);
 	[LinkName("QKeySequence_new6")]
-	public static extern QKeySequence_Ptr* QKeySequence_new6(QKeySequence_StandardKey key);
+	public static extern QKeySequence_Ptr QKeySequence_new6(QKeySequence_StandardKey key);
 	[LinkName("QKeySequence_new7")]
-	public static extern QKeySequence_Ptr* QKeySequence_new7(libqt_string key, QKeySequence_SequenceFormat format);
+	public static extern QKeySequence_Ptr QKeySequence_new7(libqt_string key, QKeySequence_SequenceFormat format);
 	[LinkName("QKeySequence_new8")]
-	public static extern QKeySequence_Ptr* QKeySequence_new8(c_int k1, c_int k2);
+	public static extern QKeySequence_Ptr QKeySequence_new8(c_int k1, c_int k2);
 	[LinkName("QKeySequence_new9")]
-	public static extern QKeySequence_Ptr* QKeySequence_new9(c_int k1, c_int k2, c_int k3);
+	public static extern QKeySequence_Ptr QKeySequence_new9(c_int k1, c_int k2, c_int k3);
 	[LinkName("QKeySequence_new10")]
-	public static extern QKeySequence_Ptr* QKeySequence_new10(c_int k1, c_int k2, c_int k3, c_int k4);
+	public static extern QKeySequence_Ptr QKeySequence_new10(c_int k1, c_int k2, c_int k3, c_int k4);
 	[LinkName("QKeySequence_new11")]
-	public static extern QKeySequence_Ptr* QKeySequence_new11(QKeyCombination_Ptr* k1, QKeyCombination_Ptr* k2);
+	public static extern QKeySequence_Ptr QKeySequence_new11(void* k1, void* k2);
 	[LinkName("QKeySequence_new12")]
-	public static extern QKeySequence_Ptr* QKeySequence_new12(QKeyCombination_Ptr* k1, QKeyCombination_Ptr* k2, QKeyCombination_Ptr* k3);
+	public static extern QKeySequence_Ptr QKeySequence_new12(void* k1, void* k2, void* k3);
 	[LinkName("QKeySequence_new13")]
-	public static extern QKeySequence_Ptr* QKeySequence_new13(QKeyCombination_Ptr* k1, QKeyCombination_Ptr* k2, QKeyCombination_Ptr* k3, QKeyCombination_Ptr* k4);
+	public static extern QKeySequence_Ptr QKeySequence_new13(void* k1, void* k2, void* k3, void* k4);
 	[LinkName("QKeySequence_Delete")]
-	public static extern void QKeySequence_Delete(QKeySequence_Ptr* self);
+	public static extern void QKeySequence_Delete(QKeySequence_Ptr self);
 	[LinkName("QKeySequence_Count")]
-	public static extern c_int QKeySequence_Count(QKeySequence_Ptr* self);
+	public static extern c_int QKeySequence_Count(void* self);
 	[LinkName("QKeySequence_IsEmpty")]
-	public static extern bool QKeySequence_IsEmpty(QKeySequence_Ptr* self);
+	public static extern bool QKeySequence_IsEmpty(void* self);
 	[LinkName("QKeySequence_ToString")]
-	public static extern libqt_string QKeySequence_ToString(QKeySequence_Ptr* self);
+	public static extern libqt_string QKeySequence_ToString(void* self);
 	[LinkName("QKeySequence_FromString")]
-	public static extern QKeySequence_Ptr* QKeySequence_FromString(libqt_string str);
+	public static extern void* QKeySequence_FromString(libqt_string str);
 	[LinkName("QKeySequence_ListFromString")]
 	public static extern void* QKeySequence_ListFromString(libqt_string str);
 	[LinkName("QKeySequence_ListToString")]
 	public static extern libqt_string QKeySequence_ListToString(void** list);
 	[LinkName("QKeySequence_Matches")]
-	public static extern QKeySequence_SequenceMatch QKeySequence_Matches(QKeySequence_Ptr* self, QKeySequence_Ptr* seq);
+	public static extern QKeySequence_SequenceMatch QKeySequence_Matches(void* self, void** seq);
 	[LinkName("QKeySequence_Mnemonic")]
-	public static extern QKeySequence_Ptr* QKeySequence_Mnemonic(libqt_string text);
+	public static extern void* QKeySequence_Mnemonic(libqt_string text);
 	[LinkName("QKeySequence_KeyBindings")]
 	public static extern void* QKeySequence_KeyBindings(QKeySequence_StandardKey key);
 	[LinkName("QKeySequence_ToQvariant")]
-	public static extern QVariant_Ptr* QKeySequence_ToQvariant(QKeySequence_Ptr* self);
+	public static extern void* QKeySequence_ToQvariant(void* self);
 	[LinkName("QKeySequence_OperatorSubscript")]
-	public static extern QKeyCombination_Ptr* QKeySequence_OperatorSubscript(QKeySequence_Ptr* self, c_uint i);
+	public static extern void* QKeySequence_OperatorSubscript(void* self, c_uint i);
 	[LinkName("QKeySequence_OperatorAssign")]
-	public static extern void QKeySequence_OperatorAssign(QKeySequence_Ptr* self, QKeySequence_Ptr* other);
+	public static extern void QKeySequence_OperatorAssign(void* self, void** other);
 	[LinkName("QKeySequence_Swap")]
-	public static extern void QKeySequence_Swap(QKeySequence_Ptr* self, QKeySequence_Ptr* other);
+	public static extern void QKeySequence_Swap(void* self, void** other);
 	[LinkName("QKeySequence_OperatorEqual")]
-	public static extern bool QKeySequence_OperatorEqual(QKeySequence_Ptr* self, QKeySequence_Ptr* other);
+	public static extern bool QKeySequence_OperatorEqual(void* self, void** other);
 	[LinkName("QKeySequence_OperatorNotEqual")]
-	public static extern bool QKeySequence_OperatorNotEqual(QKeySequence_Ptr* self, QKeySequence_Ptr* other);
+	public static extern bool QKeySequence_OperatorNotEqual(void* self, void** other);
 	[LinkName("QKeySequence_OperatorLesser")]
-	public static extern bool QKeySequence_OperatorLesser(QKeySequence_Ptr* self, QKeySequence_Ptr* ks);
+	public static extern bool QKeySequence_OperatorLesser(void* self, void** ks);
 	[LinkName("QKeySequence_OperatorGreater")]
-	public static extern bool QKeySequence_OperatorGreater(QKeySequence_Ptr* self, QKeySequence_Ptr* other);
+	public static extern bool QKeySequence_OperatorGreater(void* self, void** other);
 	[LinkName("QKeySequence_OperatorLesserOrEqual")]
-	public static extern bool QKeySequence_OperatorLesserOrEqual(QKeySequence_Ptr* self, QKeySequence_Ptr* other);
+	public static extern bool QKeySequence_OperatorLesserOrEqual(void* self, void** other);
 	[LinkName("QKeySequence_OperatorGreaterOrEqual")]
-	public static extern bool QKeySequence_OperatorGreaterOrEqual(QKeySequence_Ptr* self, QKeySequence_Ptr* other);
+	public static extern bool QKeySequence_OperatorGreaterOrEqual(void* self, void** other);
 	[LinkName("QKeySequence_IsDetached")]
-	public static extern bool QKeySequence_IsDetached(QKeySequence_Ptr* self);
+	public static extern bool QKeySequence_IsDetached(void* self);
 	[LinkName("QKeySequence_ToString1")]
-	public static extern libqt_string QKeySequence_ToString1(QKeySequence_Ptr* self, QKeySequence_SequenceFormat format);
+	public static extern libqt_string QKeySequence_ToString1(void* self, QKeySequence_SequenceFormat format);
 	[LinkName("QKeySequence_FromString2")]
-	public static extern QKeySequence_Ptr* QKeySequence_FromString2(libqt_string str, QKeySequence_SequenceFormat format);
+	public static extern void* QKeySequence_FromString2(libqt_string str, QKeySequence_SequenceFormat format);
 	[LinkName("QKeySequence_ListFromString2")]
 	public static extern void* QKeySequence_ListFromString2(libqt_string str, QKeySequence_SequenceFormat format);
 	[LinkName("QKeySequence_ListToString2")]
@@ -91,8 +96,12 @@ extension CQt
 }
 class QKeySequence : IQKeySequence
 {
-	private QKeySequence_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QKeySequence_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QKeySequence_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QKeySequence_new();
@@ -151,35 +160,35 @@ class QKeySequence : IQKeySequence
 	}
 	public c_int Count()
 	{
-		return CQt.QKeySequence_Count((.)this.ptr);
+		return CQt.QKeySequence_Count((.)this.ptr.Ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QKeySequence_IsEmpty((.)this.ptr);
+		return CQt.QKeySequence_IsEmpty((.)this.ptr.Ptr);
 	}
-	public libqt_string ToString()
+	public void ToString(String outStr)
 	{
-		return CQt.QKeySequence_ToString((.)this.ptr);
+		CQt.QKeySequence_ToString((.)this.ptr.Ptr);
 	}
-	public QKeySequence_Ptr* FromString(String str)
+	public QKeySequence_Ptr FromString(String str)
 	{
-		return CQt.QKeySequence_FromString(libqt_string(str));
+		return QKeySequence_Ptr(CQt.QKeySequence_FromString(libqt_string(str)));
 	}
 	public void* ListFromString(String str)
 	{
 		return CQt.QKeySequence_ListFromString(libqt_string(str));
 	}
-	public libqt_string ListToString(void** list)
+	public void ListToString(String outStr, void** list)
 	{
-		return CQt.QKeySequence_ListToString(list);
+		CQt.QKeySequence_ListToString(list);
 	}
 	public QKeySequence_SequenceMatch Matches(IQKeySequence seq)
 	{
-		return CQt.QKeySequence_Matches((.)this.ptr, (.)seq?.ObjectPtr);
+		return CQt.QKeySequence_Matches((.)this.ptr.Ptr, (.)seq?.ObjectPtr);
 	}
-	public QKeySequence_Ptr* Mnemonic(String text)
+	public QKeySequence_Ptr Mnemonic(String text)
 	{
-		return CQt.QKeySequence_Mnemonic(libqt_string(text));
+		return QKeySequence_Ptr(CQt.QKeySequence_Mnemonic(libqt_string(text)));
 	}
 	public void* KeyBindings(QKeySequence_StandardKey key)
 	{
@@ -187,27 +196,27 @@ class QKeySequence : IQKeySequence
 	}
 	public void Swap(IQKeySequence other)
 	{
-		CQt.QKeySequence_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QKeySequence_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QKeySequence_IsDetached((.)this.ptr);
+		return CQt.QKeySequence_IsDetached((.)this.ptr.Ptr);
 	}
-	public libqt_string ToString1(QKeySequence_SequenceFormat format)
+	public void ToString1(String outStr, QKeySequence_SequenceFormat format)
 	{
-		return CQt.QKeySequence_ToString1((.)this.ptr, format);
+		CQt.QKeySequence_ToString1((.)this.ptr.Ptr, format);
 	}
-	public QKeySequence_Ptr* FromString2(String str, QKeySequence_SequenceFormat format)
+	public QKeySequence_Ptr FromString2(String str, QKeySequence_SequenceFormat format)
 	{
-		return CQt.QKeySequence_FromString2(libqt_string(str), format);
+		return QKeySequence_Ptr(CQt.QKeySequence_FromString2(libqt_string(str), format));
 	}
 	public void* ListFromString2(String str, QKeySequence_SequenceFormat format)
 	{
 		return CQt.QKeySequence_ListFromString2(libqt_string(str), format);
 	}
-	public libqt_string ListToString2(void** list, QKeySequence_SequenceFormat format)
+	public void ListToString2(String outStr, void** list, QKeySequence_SequenceFormat format)
 	{
-		return CQt.QKeySequence_ListToString2(list, format);
+		CQt.QKeySequence_ListToString2(list, format);
 	}
 }
 interface IQKeySequence : IQtObjectInterface

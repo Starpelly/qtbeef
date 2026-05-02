@@ -7,28 +7,37 @@ namespace Qt6;
 // QStaticPlugin
 // --------------------------------------------------------------
 [CRepr]
-struct QStaticPlugin_Ptr: void
+struct QStaticPlugin_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QStaticPlugin_new")]
-	public static extern QStaticPlugin_Ptr* QStaticPlugin_new(QStaticPlugin_Ptr* other);
+	public static extern QStaticPlugin_Ptr QStaticPlugin_new(void** other);
 	[LinkName("QStaticPlugin_new2")]
-	public static extern QStaticPlugin_Ptr* QStaticPlugin_new2(QStaticPlugin_Ptr* other);
+	public static extern QStaticPlugin_Ptr QStaticPlugin_new2(void** other);
 	[LinkName("QStaticPlugin_Delete")]
-	public static extern void QStaticPlugin_Delete(QStaticPlugin_Ptr* self);
+	public static extern void QStaticPlugin_Delete(QStaticPlugin_Ptr self);
 	[LinkName("QStaticPlugin_Instance")]
-	public static extern c_intptr* QStaticPlugin_Instance(QStaticPlugin_Ptr* self);
+	public static extern c_intptr* QStaticPlugin_Instance(void* self);
 	[LinkName("QStaticPlugin_SetInstance")]
-	public static extern void QStaticPlugin_SetInstance(QStaticPlugin_Ptr* self, c_intptr* instance);
+	public static extern void QStaticPlugin_SetInstance(void* self, c_intptr* instance);
 	[LinkName("QStaticPlugin_MetaData")]
-	public static extern QJsonObject_Ptr* QStaticPlugin_MetaData(QStaticPlugin_Ptr* self);
+	public static extern void* QStaticPlugin_MetaData(void* self);
 }
 class QStaticPlugin : IQStaticPlugin
 {
-	private QStaticPlugin_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QStaticPlugin_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QStaticPlugin_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQStaticPlugin other)
 	{
 		this.ptr = CQt.QStaticPlugin_new((.)other?.ObjectPtr);
@@ -39,15 +48,15 @@ class QStaticPlugin : IQStaticPlugin
 	}
 	public c_intptr* Instance()
 	{
-		return CQt.QStaticPlugin_Instance((.)this.ptr);
+		return CQt.QStaticPlugin_Instance((.)this.ptr.Ptr);
 	}
 	public void SetInstance(c_intptr* instance)
 	{
-		CQt.QStaticPlugin_SetInstance((.)this.ptr, instance);
+		CQt.QStaticPlugin_SetInstance((.)this.ptr.Ptr, instance);
 	}
-	public QJsonObject_Ptr* MetaData()
+	public QJsonObject_Ptr MetaData()
 	{
-		return CQt.QStaticPlugin_MetaData((.)this.ptr);
+		return QJsonObject_Ptr(CQt.QStaticPlugin_MetaData((.)this.ptr.Ptr));
 	}
 }
 interface IQStaticPlugin : IQtObjectInterface

@@ -7,24 +7,33 @@ namespace Qt6;
 // QPartialOrdering
 // --------------------------------------------------------------
 [CRepr]
-struct QPartialOrdering_Ptr: void
+struct QPartialOrdering_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPartialOrdering_new")]
-	public static extern QPartialOrdering_Ptr* QPartialOrdering_new(QPartialOrdering_Ptr* other);
+	public static extern QPartialOrdering_Ptr QPartialOrdering_new(void** other);
 	[LinkName("QPartialOrdering_new2")]
-	public static extern QPartialOrdering_Ptr* QPartialOrdering_new2(QPartialOrdering_Ptr* other);
+	public static extern QPartialOrdering_Ptr QPartialOrdering_new2(void** other);
 	[LinkName("QPartialOrdering_new3")]
-	public static extern QPartialOrdering_Ptr* QPartialOrdering_new3(QPartialOrdering_Ptr* param1);
+	public static extern QPartialOrdering_Ptr QPartialOrdering_new3(void** param1);
 	[LinkName("QPartialOrdering_Delete")]
-	public static extern void QPartialOrdering_Delete(QPartialOrdering_Ptr* self);
+	public static extern void QPartialOrdering_Delete(QPartialOrdering_Ptr self);
 }
 class QPartialOrdering : IQPartialOrdering
 {
-	private QPartialOrdering_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPartialOrdering_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPartialOrdering_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQPartialOrdering other)
 	{
 		this.ptr = CQt.QPartialOrdering_new((.)other?.ObjectPtr);

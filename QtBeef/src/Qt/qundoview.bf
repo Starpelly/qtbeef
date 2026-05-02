@@ -7,49 +7,54 @@ namespace Qt6;
 // QUndoView
 // --------------------------------------------------------------
 [CRepr]
-struct QUndoView_Ptr: void
+struct QUndoView_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QUndoView_new")]
-	public static extern QUndoView_Ptr* QUndoView_new(QWidget_Ptr** parent);
+	public static extern QUndoView_Ptr QUndoView_new(void** parent);
 	[LinkName("QUndoView_new2")]
-	public static extern QUndoView_Ptr* QUndoView_new2();
+	public static extern QUndoView_Ptr QUndoView_new2();
 	[LinkName("QUndoView_new3")]
-	public static extern QUndoView_Ptr* QUndoView_new3(QUndoStack_Ptr** stack);
+	public static extern QUndoView_Ptr QUndoView_new3(void** stack);
 	[LinkName("QUndoView_new4")]
-	public static extern QUndoView_Ptr* QUndoView_new4(QUndoGroup_Ptr** group);
+	public static extern QUndoView_Ptr QUndoView_new4(void** group);
 	[LinkName("QUndoView_new5")]
-	public static extern QUndoView_Ptr* QUndoView_new5(QUndoStack_Ptr** stack, QWidget_Ptr** parent);
+	public static extern QUndoView_Ptr QUndoView_new5(void** stack, void** parent);
 	[LinkName("QUndoView_new6")]
-	public static extern QUndoView_Ptr* QUndoView_new6(QUndoGroup_Ptr** group, QWidget_Ptr** parent);
+	public static extern QUndoView_Ptr QUndoView_new6(void** group, void** parent);
 	[LinkName("QUndoView_Delete")]
-	public static extern void QUndoView_Delete(QUndoView_Ptr* self);
+	public static extern void QUndoView_Delete(QUndoView_Ptr self);
 	[LinkName("QUndoView_MetaObject")]
-	public static extern QMetaObject_Ptr** QUndoView_MetaObject(QUndoView_Ptr* self);
+	public static extern void** QUndoView_MetaObject(void* self);
 	[LinkName("QUndoView_Qt_Metacast")]
-	public static extern void* QUndoView_Qt_Metacast(QUndoView_Ptr* self, c_char* param1);
+	public static extern void* QUndoView_Qt_Metacast(void* self, c_char* param1);
 	[LinkName("QUndoView_Qt_Metacall")]
-	public static extern c_int QUndoView_Qt_Metacall(QUndoView_Ptr* self, QMetaObject_Call param1, c_int param2, void** param3);
+	public static extern c_int QUndoView_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QUndoView_Tr")]
 	public static extern libqt_string QUndoView_Tr(c_char* s);
 	[LinkName("QUndoView_Stack")]
-	public static extern QUndoStack_Ptr** QUndoView_Stack(QUndoView_Ptr* self);
+	public static extern void** QUndoView_Stack(void* self);
 	[LinkName("QUndoView_Group")]
-	public static extern QUndoGroup_Ptr** QUndoView_Group(QUndoView_Ptr* self);
+	public static extern void** QUndoView_Group(void* self);
 	[LinkName("QUndoView_SetEmptyLabel")]
-	public static extern void QUndoView_SetEmptyLabel(QUndoView_Ptr* self, libqt_string label);
+	public static extern void QUndoView_SetEmptyLabel(void* self, libqt_string label);
 	[LinkName("QUndoView_EmptyLabel")]
-	public static extern libqt_string QUndoView_EmptyLabel(QUndoView_Ptr* self);
+	public static extern libqt_string QUndoView_EmptyLabel(void* self);
 	[LinkName("QUndoView_SetCleanIcon")]
-	public static extern void QUndoView_SetCleanIcon(QUndoView_Ptr* self, QIcon_Ptr* icon);
+	public static extern void QUndoView_SetCleanIcon(void* self, void** icon);
 	[LinkName("QUndoView_CleanIcon")]
-	public static extern QIcon_Ptr* QUndoView_CleanIcon(QUndoView_Ptr* self);
+	public static extern void* QUndoView_CleanIcon(void* self);
 	[LinkName("QUndoView_SetStack")]
-	public static extern void QUndoView_SetStack(QUndoView_Ptr* self, QUndoStack_Ptr** stack);
+	public static extern void QUndoView_SetStack(void* self, void** stack);
 	[LinkName("QUndoView_SetGroup")]
-	public static extern void QUndoView_SetGroup(QUndoView_Ptr* self, QUndoGroup_Ptr** group);
+	public static extern void QUndoView_SetGroup(void* self, void** group);
 	[LinkName("QUndoView_Tr2")]
 	public static extern libqt_string QUndoView_Tr2(c_char* s, c_char* c);
 	[LinkName("QUndoView_Tr3")]
@@ -57,8 +62,12 @@ extension CQt
 }
 class QUndoView : IQUndoView
 {
-	private QUndoView_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QUndoView_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QUndoView_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QUndoView_new((.)parent?.ObjectPtr);
@@ -87,61 +96,61 @@ class QUndoView : IQUndoView
 	{
 		CQt.QUndoView_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr** MetaObject()
+	public QMetaObject_Ptr MetaObject()
 	{
-		return CQt.QUndoView_MetaObject((.)this.ptr);
+		return QMetaObject_Ptr(CQt.QUndoView_MetaObject((.)this.ptr.Ptr));
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QUndoView_Qt_Metacast((.)this.ptr, param1);
+		return CQt.QUndoView_Qt_Metacast((.)this.ptr.Ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QUndoView_Qt_Metacall((.)this.ptr, param1, param2, param3);
+		return CQt.QUndoView_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
 	}
-	public libqt_string Tr(c_char* s)
+	public void Tr(String outStr, c_char* s)
 	{
-		return CQt.QUndoView_Tr(s);
+		CQt.QUndoView_Tr(s);
 	}
-	public QUndoStack_Ptr** Stack()
+	public QUndoStack_Ptr Stack()
 	{
-		return CQt.QUndoView_Stack((.)this.ptr);
+		return QUndoStack_Ptr(CQt.QUndoView_Stack((.)this.ptr.Ptr));
 	}
-	public QUndoGroup_Ptr** Group()
+	public QUndoGroup_Ptr Group()
 	{
-		return CQt.QUndoView_Group((.)this.ptr);
+		return QUndoGroup_Ptr(CQt.QUndoView_Group((.)this.ptr.Ptr));
 	}
 	public void SetEmptyLabel(String label)
 	{
-		CQt.QUndoView_SetEmptyLabel((.)this.ptr, libqt_string(label));
+		CQt.QUndoView_SetEmptyLabel((.)this.ptr.Ptr, libqt_string(label));
 	}
-	public libqt_string EmptyLabel()
+	public void EmptyLabel(String outStr)
 	{
-		return CQt.QUndoView_EmptyLabel((.)this.ptr);
+		CQt.QUndoView_EmptyLabel((.)this.ptr.Ptr);
 	}
 	public void SetCleanIcon(IQIcon icon)
 	{
-		CQt.QUndoView_SetCleanIcon((.)this.ptr, (.)icon?.ObjectPtr);
+		CQt.QUndoView_SetCleanIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
 	}
-	public QIcon_Ptr* CleanIcon()
+	public QIcon_Ptr CleanIcon()
 	{
-		return CQt.QUndoView_CleanIcon((.)this.ptr);
+		return QIcon_Ptr(CQt.QUndoView_CleanIcon((.)this.ptr.Ptr));
 	}
 	public void SetStack(IQUndoStack stack)
 	{
-		CQt.QUndoView_SetStack((.)this.ptr, (.)stack?.ObjectPtr);
+		CQt.QUndoView_SetStack((.)this.ptr.Ptr, (.)stack?.ObjectPtr);
 	}
 	public void SetGroup(IQUndoGroup group)
 	{
-		CQt.QUndoView_SetGroup((.)this.ptr, (.)group?.ObjectPtr);
+		CQt.QUndoView_SetGroup((.)this.ptr.Ptr, (.)group?.ObjectPtr);
 	}
-	public libqt_string Tr2(c_char* s, c_char* c)
+	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
-		return CQt.QUndoView_Tr2(s, c);
+		CQt.QUndoView_Tr2(s, c);
 	}
-	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
 	{
-		return CQt.QUndoView_Tr3(s, c, n);
+		CQt.QUndoView_Tr3(s, c, n);
 	}
 }
 interface IQUndoView : IQtObjectInterface

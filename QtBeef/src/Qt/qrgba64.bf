@@ -7,70 +7,79 @@ namespace Qt6;
 // QRgba64
 // --------------------------------------------------------------
 [CRepr]
-struct QRgba64_Ptr: void
+struct QRgba64_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QRgba64_new")]
-	public static extern QRgba64_Ptr* QRgba64_new();
+	public static extern QRgba64_Ptr QRgba64_new();
 	[LinkName("QRgba64_new2")]
-	public static extern QRgba64_Ptr* QRgba64_new2(QRgba64_Ptr* param1);
+	public static extern QRgba64_Ptr QRgba64_new2(void** param1);
 	[LinkName("QRgba64_Delete")]
-	public static extern void QRgba64_Delete(QRgba64_Ptr* self);
+	public static extern void QRgba64_Delete(QRgba64_Ptr self);
 	[LinkName("QRgba64_FromRgba64")]
-	public static extern QRgba64_Ptr* QRgba64_FromRgba64(c_ulonglong c);
+	public static extern void* QRgba64_FromRgba64(c_ulonglong c);
 	[LinkName("QRgba64_FromRgba642")]
-	public static extern QRgba64_Ptr* QRgba64_FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha);
+	public static extern void* QRgba64_FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha);
 	[LinkName("QRgba64_FromRgba")]
-	public static extern QRgba64_Ptr* QRgba64_FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha);
+	public static extern void* QRgba64_FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha);
 	[LinkName("QRgba64_FromArgb32")]
-	public static extern QRgba64_Ptr* QRgba64_FromArgb32(c_uint rgb);
+	public static extern void* QRgba64_FromArgb32(c_uint rgb);
 	[LinkName("QRgba64_IsOpaque")]
-	public static extern bool QRgba64_IsOpaque(QRgba64_Ptr* self);
+	public static extern bool QRgba64_IsOpaque(void* self);
 	[LinkName("QRgba64_IsTransparent")]
-	public static extern bool QRgba64_IsTransparent(QRgba64_Ptr* self);
+	public static extern bool QRgba64_IsTransparent(void* self);
 	[LinkName("QRgba64_Red")]
-	public static extern c_ushort QRgba64_Red(QRgba64_Ptr* self);
+	public static extern c_ushort QRgba64_Red(void* self);
 	[LinkName("QRgba64_Green")]
-	public static extern c_ushort QRgba64_Green(QRgba64_Ptr* self);
+	public static extern c_ushort QRgba64_Green(void* self);
 	[LinkName("QRgba64_Blue")]
-	public static extern c_ushort QRgba64_Blue(QRgba64_Ptr* self);
+	public static extern c_ushort QRgba64_Blue(void* self);
 	[LinkName("QRgba64_Alpha")]
-	public static extern c_ushort QRgba64_Alpha(QRgba64_Ptr* self);
+	public static extern c_ushort QRgba64_Alpha(void* self);
 	[LinkName("QRgba64_SetRed")]
-	public static extern void QRgba64_SetRed(QRgba64_Ptr* self, c_ushort _red);
+	public static extern void QRgba64_SetRed(void* self, c_ushort _red);
 	[LinkName("QRgba64_SetGreen")]
-	public static extern void QRgba64_SetGreen(QRgba64_Ptr* self, c_ushort _green);
+	public static extern void QRgba64_SetGreen(void* self, c_ushort _green);
 	[LinkName("QRgba64_SetBlue")]
-	public static extern void QRgba64_SetBlue(QRgba64_Ptr* self, c_ushort _blue);
+	public static extern void QRgba64_SetBlue(void* self, c_ushort _blue);
 	[LinkName("QRgba64_SetAlpha")]
-	public static extern void QRgba64_SetAlpha(QRgba64_Ptr* self, c_ushort _alpha);
+	public static extern void QRgba64_SetAlpha(void* self, c_ushort _alpha);
 	[LinkName("QRgba64_Red8")]
-	public static extern c_uchar QRgba64_Red8(QRgba64_Ptr* self);
+	public static extern c_uchar QRgba64_Red8(void* self);
 	[LinkName("QRgba64_Green8")]
-	public static extern c_uchar QRgba64_Green8(QRgba64_Ptr* self);
+	public static extern c_uchar QRgba64_Green8(void* self);
 	[LinkName("QRgba64_Blue8")]
-	public static extern c_uchar QRgba64_Blue8(QRgba64_Ptr* self);
+	public static extern c_uchar QRgba64_Blue8(void* self);
 	[LinkName("QRgba64_Alpha8")]
-	public static extern c_uchar QRgba64_Alpha8(QRgba64_Ptr* self);
+	public static extern c_uchar QRgba64_Alpha8(void* self);
 	[LinkName("QRgba64_ToArgb32")]
-	public static extern c_uint QRgba64_ToArgb32(QRgba64_Ptr* self);
+	public static extern c_uint QRgba64_ToArgb32(void* self);
 	[LinkName("QRgba64_ToRgb16")]
-	public static extern c_ushort QRgba64_ToRgb16(QRgba64_Ptr* self);
+	public static extern c_ushort QRgba64_ToRgb16(void* self);
 	[LinkName("QRgba64_Premultiplied")]
-	public static extern QRgba64_Ptr* QRgba64_Premultiplied(QRgba64_Ptr* self);
+	public static extern void* QRgba64_Premultiplied(void* self);
 	[LinkName("QRgba64_Unpremultiplied")]
-	public static extern QRgba64_Ptr* QRgba64_Unpremultiplied(QRgba64_Ptr* self);
+	public static extern void* QRgba64_Unpremultiplied(void* self);
 	[LinkName("QRgba64_ToUnsignedLongLong")]
-	public static extern c_ulonglong QRgba64_ToUnsignedLongLong(QRgba64_Ptr* self);
+	public static extern c_ulonglong QRgba64_ToUnsignedLongLong(void* self);
 	[LinkName("QRgba64_OperatorAssign")]
-	public static extern void QRgba64_OperatorAssign(QRgba64_Ptr* self, c_ulonglong _rgba);
+	public static extern void QRgba64_OperatorAssign(void* self, c_ulonglong _rgba);
 }
 class QRgba64 : IQRgba64
 {
-	private QRgba64_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QRgba64_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QRgba64_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QRgba64_new();
@@ -83,93 +92,93 @@ class QRgba64 : IQRgba64
 	{
 		CQt.QRgba64_Delete(this.ptr);
 	}
-	public QRgba64_Ptr* FromRgba64(c_ulonglong c)
+	public QRgba64_Ptr FromRgba64(c_ulonglong c)
 	{
-		return CQt.QRgba64_FromRgba64(c);
+		return QRgba64_Ptr(CQt.QRgba64_FromRgba64(c));
 	}
-	public QRgba64_Ptr* FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha)
+	public QRgba64_Ptr FromRgba642(c_ushort red, c_ushort green, c_ushort blue, c_ushort alpha)
 	{
-		return CQt.QRgba64_FromRgba642(red, green, blue, alpha);
+		return QRgba64_Ptr(CQt.QRgba64_FromRgba642(red, green, blue, alpha));
 	}
-	public QRgba64_Ptr* FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha)
+	public QRgba64_Ptr FromRgba(c_uchar red, c_uchar green, c_uchar blue, c_uchar alpha)
 	{
-		return CQt.QRgba64_FromRgba(red, green, blue, alpha);
+		return QRgba64_Ptr(CQt.QRgba64_FromRgba(red, green, blue, alpha));
 	}
-	public QRgba64_Ptr* FromArgb32(c_uint rgb)
+	public QRgba64_Ptr FromArgb32(c_uint rgb)
 	{
-		return CQt.QRgba64_FromArgb32(rgb);
+		return QRgba64_Ptr(CQt.QRgba64_FromArgb32(rgb));
 	}
 	public bool IsOpaque()
 	{
-		return CQt.QRgba64_IsOpaque((.)this.ptr);
+		return CQt.QRgba64_IsOpaque((.)this.ptr.Ptr);
 	}
 	public bool IsTransparent()
 	{
-		return CQt.QRgba64_IsTransparent((.)this.ptr);
+		return CQt.QRgba64_IsTransparent((.)this.ptr.Ptr);
 	}
 	public c_ushort Red()
 	{
-		return CQt.QRgba64_Red((.)this.ptr);
+		return CQt.QRgba64_Red((.)this.ptr.Ptr);
 	}
 	public c_ushort Green()
 	{
-		return CQt.QRgba64_Green((.)this.ptr);
+		return CQt.QRgba64_Green((.)this.ptr.Ptr);
 	}
 	public c_ushort Blue()
 	{
-		return CQt.QRgba64_Blue((.)this.ptr);
+		return CQt.QRgba64_Blue((.)this.ptr.Ptr);
 	}
 	public c_ushort Alpha()
 	{
-		return CQt.QRgba64_Alpha((.)this.ptr);
+		return CQt.QRgba64_Alpha((.)this.ptr.Ptr);
 	}
 	public void SetRed(c_ushort _red)
 	{
-		CQt.QRgba64_SetRed((.)this.ptr, _red);
+		CQt.QRgba64_SetRed((.)this.ptr.Ptr, _red);
 	}
 	public void SetGreen(c_ushort _green)
 	{
-		CQt.QRgba64_SetGreen((.)this.ptr, _green);
+		CQt.QRgba64_SetGreen((.)this.ptr.Ptr, _green);
 	}
 	public void SetBlue(c_ushort _blue)
 	{
-		CQt.QRgba64_SetBlue((.)this.ptr, _blue);
+		CQt.QRgba64_SetBlue((.)this.ptr.Ptr, _blue);
 	}
 	public void SetAlpha(c_ushort _alpha)
 	{
-		CQt.QRgba64_SetAlpha((.)this.ptr, _alpha);
+		CQt.QRgba64_SetAlpha((.)this.ptr.Ptr, _alpha);
 	}
 	public c_uchar Red8()
 	{
-		return CQt.QRgba64_Red8((.)this.ptr);
+		return CQt.QRgba64_Red8((.)this.ptr.Ptr);
 	}
 	public c_uchar Green8()
 	{
-		return CQt.QRgba64_Green8((.)this.ptr);
+		return CQt.QRgba64_Green8((.)this.ptr.Ptr);
 	}
 	public c_uchar Blue8()
 	{
-		return CQt.QRgba64_Blue8((.)this.ptr);
+		return CQt.QRgba64_Blue8((.)this.ptr.Ptr);
 	}
 	public c_uchar Alpha8()
 	{
-		return CQt.QRgba64_Alpha8((.)this.ptr);
+		return CQt.QRgba64_Alpha8((.)this.ptr.Ptr);
 	}
 	public c_uint ToArgb32()
 	{
-		return CQt.QRgba64_ToArgb32((.)this.ptr);
+		return CQt.QRgba64_ToArgb32((.)this.ptr.Ptr);
 	}
 	public c_ushort ToRgb16()
 	{
-		return CQt.QRgba64_ToRgb16((.)this.ptr);
+		return CQt.QRgba64_ToRgb16((.)this.ptr.Ptr);
 	}
-	public QRgba64_Ptr* Premultiplied()
+	public QRgba64_Ptr Premultiplied()
 	{
-		return CQt.QRgba64_Premultiplied((.)this.ptr);
+		return QRgba64_Ptr(CQt.QRgba64_Premultiplied((.)this.ptr.Ptr));
 	}
-	public QRgba64_Ptr* Unpremultiplied()
+	public QRgba64_Ptr Unpremultiplied()
 	{
-		return CQt.QRgba64_Unpremultiplied((.)this.ptr);
+		return QRgba64_Ptr(CQt.QRgba64_Unpremultiplied((.)this.ptr.Ptr));
 	}
 }
 interface IQRgba64 : IQtObjectInterface

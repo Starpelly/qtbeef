@@ -7,88 +7,97 @@ namespace Qt6;
 // QAbstractTextDocumentLayout
 // --------------------------------------------------------------
 [CRepr]
-struct QAbstractTextDocumentLayout_Ptr: void
+struct QAbstractTextDocumentLayout_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QAbstractTextDocumentLayout_new")]
-	public static extern QAbstractTextDocumentLayout_Ptr* QAbstractTextDocumentLayout_new(QTextDocument_Ptr** doc);
+	public static extern QAbstractTextDocumentLayout_Ptr QAbstractTextDocumentLayout_new(void** doc);
 	[LinkName("QAbstractTextDocumentLayout_Delete")]
-	public static extern void QAbstractTextDocumentLayout_Delete(QAbstractTextDocumentLayout_Ptr* self);
+	public static extern void QAbstractTextDocumentLayout_Delete(QAbstractTextDocumentLayout_Ptr self);
 	[LinkName("QAbstractTextDocumentLayout_MetaObject")]
-	public static extern QMetaObject_Ptr** QAbstractTextDocumentLayout_MetaObject(QAbstractTextDocumentLayout_Ptr* self);
+	public static extern void** QAbstractTextDocumentLayout_MetaObject(void* self);
 	[LinkName("QAbstractTextDocumentLayout_Qt_Metacast")]
-	public static extern void* QAbstractTextDocumentLayout_Qt_Metacast(QAbstractTextDocumentLayout_Ptr* self, c_char* param1);
+	public static extern void* QAbstractTextDocumentLayout_Qt_Metacast(void* self, c_char* param1);
 	[LinkName("QAbstractTextDocumentLayout_Qt_Metacall")]
-	public static extern c_int QAbstractTextDocumentLayout_Qt_Metacall(QAbstractTextDocumentLayout_Ptr* self, QMetaObject_Call param1, c_int param2, void** param3);
+	public static extern c_int QAbstractTextDocumentLayout_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAbstractTextDocumentLayout_Tr")]
 	public static extern libqt_string QAbstractTextDocumentLayout_Tr(c_char* s);
 	[LinkName("QAbstractTextDocumentLayout_Draw")]
-	public static extern void QAbstractTextDocumentLayout_Draw(QAbstractTextDocumentLayout_Ptr* self, QPainter_Ptr** painter, QAbstractTextDocumentLayout_PaintContext_Ptr* context);
+	public static extern void QAbstractTextDocumentLayout_Draw(void* self, void** painter, void** context);
 	[LinkName("QAbstractTextDocumentLayout_HitTest")]
-	public static extern c_int QAbstractTextDocumentLayout_HitTest(QAbstractTextDocumentLayout_Ptr* self, QPointF_Ptr* point, Qt_HitTestAccuracy accuracy);
+	public static extern c_int QAbstractTextDocumentLayout_HitTest(void* self, void** point, Qt_HitTestAccuracy accuracy);
 	[LinkName("QAbstractTextDocumentLayout_AnchorAt")]
-	public static extern libqt_string QAbstractTextDocumentLayout_AnchorAt(QAbstractTextDocumentLayout_Ptr* self, QPointF_Ptr* pos);
+	public static extern libqt_string QAbstractTextDocumentLayout_AnchorAt(void* self, void** pos);
 	[LinkName("QAbstractTextDocumentLayout_ImageAt")]
-	public static extern libqt_string QAbstractTextDocumentLayout_ImageAt(QAbstractTextDocumentLayout_Ptr* self, QPointF_Ptr* pos);
+	public static extern libqt_string QAbstractTextDocumentLayout_ImageAt(void* self, void** pos);
 	[LinkName("QAbstractTextDocumentLayout_FormatAt")]
-	public static extern QTextFormat_Ptr* QAbstractTextDocumentLayout_FormatAt(QAbstractTextDocumentLayout_Ptr* self, QPointF_Ptr* pos);
+	public static extern void* QAbstractTextDocumentLayout_FormatAt(void* self, void** pos);
 	[LinkName("QAbstractTextDocumentLayout_BlockWithMarkerAt")]
-	public static extern QTextBlock_Ptr* QAbstractTextDocumentLayout_BlockWithMarkerAt(QAbstractTextDocumentLayout_Ptr* self, QPointF_Ptr* pos);
+	public static extern void* QAbstractTextDocumentLayout_BlockWithMarkerAt(void* self, void** pos);
 	[LinkName("QAbstractTextDocumentLayout_PageCount")]
-	public static extern c_int QAbstractTextDocumentLayout_PageCount(QAbstractTextDocumentLayout_Ptr* self);
+	public static extern c_int QAbstractTextDocumentLayout_PageCount(void* self);
 	[LinkName("QAbstractTextDocumentLayout_DocumentSize")]
-	public static extern QSizeF_Ptr* QAbstractTextDocumentLayout_DocumentSize(QAbstractTextDocumentLayout_Ptr* self);
+	public static extern void* QAbstractTextDocumentLayout_DocumentSize(void* self);
 	[LinkName("QAbstractTextDocumentLayout_FrameBoundingRect")]
-	public static extern QRectF_Ptr* QAbstractTextDocumentLayout_FrameBoundingRect(QAbstractTextDocumentLayout_Ptr* self, QTextFrame_Ptr** frame);
+	public static extern void* QAbstractTextDocumentLayout_FrameBoundingRect(void* self, void** frame);
 	[LinkName("QAbstractTextDocumentLayout_BlockBoundingRect")]
-	public static extern QRectF_Ptr* QAbstractTextDocumentLayout_BlockBoundingRect(QAbstractTextDocumentLayout_Ptr* self, QTextBlock_Ptr* block);
+	public static extern void* QAbstractTextDocumentLayout_BlockBoundingRect(void* self, void** block);
 	[LinkName("QAbstractTextDocumentLayout_SetPaintDevice")]
-	public static extern void QAbstractTextDocumentLayout_SetPaintDevice(QAbstractTextDocumentLayout_Ptr* self, QPaintDevice_Ptr** device);
+	public static extern void QAbstractTextDocumentLayout_SetPaintDevice(void* self, void** device);
 	[LinkName("QAbstractTextDocumentLayout_PaintDevice")]
-	public static extern QPaintDevice_Ptr** QAbstractTextDocumentLayout_PaintDevice(QAbstractTextDocumentLayout_Ptr* self);
+	public static extern void** QAbstractTextDocumentLayout_PaintDevice(void* self);
 	[LinkName("QAbstractTextDocumentLayout_Document")]
-	public static extern QTextDocument_Ptr** QAbstractTextDocumentLayout_Document(QAbstractTextDocumentLayout_Ptr* self);
+	public static extern void** QAbstractTextDocumentLayout_Document(void* self);
 	[LinkName("QAbstractTextDocumentLayout_RegisterHandler")]
-	public static extern void QAbstractTextDocumentLayout_RegisterHandler(QAbstractTextDocumentLayout_Ptr* self, c_int objectType, QObject_Ptr** component);
+	public static extern void QAbstractTextDocumentLayout_RegisterHandler(void* self, c_int objectType, void** component);
 	[LinkName("QAbstractTextDocumentLayout_UnregisterHandler")]
-	public static extern void QAbstractTextDocumentLayout_UnregisterHandler(QAbstractTextDocumentLayout_Ptr* self, c_int objectType);
+	public static extern void QAbstractTextDocumentLayout_UnregisterHandler(void* self, c_int objectType);
 	[LinkName("QAbstractTextDocumentLayout_HandlerForObject")]
-	public static extern QTextObjectInterface_Ptr** QAbstractTextDocumentLayout_HandlerForObject(QAbstractTextDocumentLayout_Ptr* self, c_int objectType);
+	public static extern void** QAbstractTextDocumentLayout_HandlerForObject(void* self, c_int objectType);
 	[LinkName("QAbstractTextDocumentLayout_Update")]
-	public static extern void QAbstractTextDocumentLayout_Update(QAbstractTextDocumentLayout_Ptr* self);
+	public static extern void QAbstractTextDocumentLayout_Update(void* self);
 	[LinkName("QAbstractTextDocumentLayout_UpdateBlock")]
-	public static extern void QAbstractTextDocumentLayout_UpdateBlock(QAbstractTextDocumentLayout_Ptr* self, QTextBlock_Ptr* block);
+	public static extern void QAbstractTextDocumentLayout_UpdateBlock(void* self, void** block);
 	[LinkName("QAbstractTextDocumentLayout_DocumentSizeChanged")]
-	public static extern void QAbstractTextDocumentLayout_DocumentSizeChanged(QAbstractTextDocumentLayout_Ptr* self, QSizeF_Ptr* newSize);
+	public static extern void QAbstractTextDocumentLayout_DocumentSizeChanged(void* self, void** newSize);
 	[LinkName("QAbstractTextDocumentLayout_PageCountChanged")]
-	public static extern void QAbstractTextDocumentLayout_PageCountChanged(QAbstractTextDocumentLayout_Ptr* self, c_int newPages);
+	public static extern void QAbstractTextDocumentLayout_PageCountChanged(void* self, c_int newPages);
 	[LinkName("QAbstractTextDocumentLayout_DocumentChanged")]
-	public static extern void QAbstractTextDocumentLayout_DocumentChanged(QAbstractTextDocumentLayout_Ptr* self, c_int from, c_int charsRemoved, c_int charsAdded);
+	public static extern void QAbstractTextDocumentLayout_DocumentChanged(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
 	[LinkName("QAbstractTextDocumentLayout_ResizeInlineObject")]
-	public static extern void QAbstractTextDocumentLayout_ResizeInlineObject(QAbstractTextDocumentLayout_Ptr* self, QTextInlineObject_Ptr* item, c_int posInDocument, QTextFormat_Ptr* format);
+	public static extern void QAbstractTextDocumentLayout_ResizeInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_PositionInlineObject")]
-	public static extern void QAbstractTextDocumentLayout_PositionInlineObject(QAbstractTextDocumentLayout_Ptr* self, QTextInlineObject_Ptr* item, c_int posInDocument, QTextFormat_Ptr* format);
+	public static extern void QAbstractTextDocumentLayout_PositionInlineObject(void* self, void* item, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_DrawInlineObject")]
-	public static extern void QAbstractTextDocumentLayout_DrawInlineObject(QAbstractTextDocumentLayout_Ptr* self, QPainter_Ptr** painter, QRectF_Ptr* rect, QTextInlineObject_Ptr* object, c_int posInDocument, QTextFormat_Ptr* format);
+	public static extern void QAbstractTextDocumentLayout_DrawInlineObject(void* self, void** painter, void** rect, void* object, c_int posInDocument, void** format);
 	[LinkName("QAbstractTextDocumentLayout_FormatIndex")]
-	public static extern c_int QAbstractTextDocumentLayout_FormatIndex(QAbstractTextDocumentLayout_Ptr* self, c_int pos);
+	public static extern c_int QAbstractTextDocumentLayout_FormatIndex(void* self, c_int pos);
 	[LinkName("QAbstractTextDocumentLayout_Format")]
-	public static extern QTextCharFormat_Ptr* QAbstractTextDocumentLayout_Format(QAbstractTextDocumentLayout_Ptr* self, c_int pos);
+	public static extern void* QAbstractTextDocumentLayout_Format(void* self, c_int pos);
 	[LinkName("QAbstractTextDocumentLayout_Tr2")]
 	public static extern libqt_string QAbstractTextDocumentLayout_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractTextDocumentLayout_Tr3")]
 	public static extern libqt_string QAbstractTextDocumentLayout_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QAbstractTextDocumentLayout_UnregisterHandler2")]
-	public static extern void QAbstractTextDocumentLayout_UnregisterHandler2(QAbstractTextDocumentLayout_Ptr* self, c_int objectType, QObject_Ptr** component);
+	public static extern void QAbstractTextDocumentLayout_UnregisterHandler2(void* self, c_int objectType, void** component);
 	[LinkName("QAbstractTextDocumentLayout_Update1")]
-	public static extern void QAbstractTextDocumentLayout_Update1(QAbstractTextDocumentLayout_Ptr* self, QRectF_Ptr* param1);
+	public static extern void QAbstractTextDocumentLayout_Update1(void* self, void** param1);
 }
 class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 {
-	private QAbstractTextDocumentLayout_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QAbstractTextDocumentLayout_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAbstractTextDocumentLayout_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQTextDocument doc)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_new((.)doc?.ObjectPtr);
@@ -97,225 +106,225 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	{
 		CQt.QAbstractTextDocumentLayout_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr** MetaObject()
+	public QMetaObject_Ptr MetaObject()
 	{
-		return CQt.QAbstractTextDocumentLayout_MetaObject((.)this.ptr);
+		return QMetaObject_Ptr(CQt.QAbstractTextDocumentLayout_MetaObject((.)this.ptr.Ptr));
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QAbstractTextDocumentLayout_Qt_Metacast((.)this.ptr, param1);
+		return CQt.QAbstractTextDocumentLayout_Qt_Metacast((.)this.ptr.Ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QAbstractTextDocumentLayout_Qt_Metacall((.)this.ptr, param1, param2, param3);
+		return CQt.QAbstractTextDocumentLayout_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
 	}
-	public libqt_string Tr(c_char* s)
+	public void Tr(String outStr, c_char* s)
 	{
-		return CQt.QAbstractTextDocumentLayout_Tr(s);
+		CQt.QAbstractTextDocumentLayout_Tr(s);
 	}
 	public void Draw(IQPainter painter, IQAbstractTextDocumentLayout_PaintContext context)
 	{
-		CQt.QAbstractTextDocumentLayout_Draw((.)this.ptr, (.)painter?.ObjectPtr, (.)context?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_Draw((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)context?.ObjectPtr);
 	}
 	public c_int HitTest(IQPointF point, Qt_HitTestAccuracy accuracy)
 	{
-		return CQt.QAbstractTextDocumentLayout_HitTest((.)this.ptr, (.)point?.ObjectPtr, accuracy);
+		return CQt.QAbstractTextDocumentLayout_HitTest((.)this.ptr.Ptr, (.)point?.ObjectPtr, accuracy);
 	}
-	public libqt_string AnchorAt(IQPointF pos)
+	public void AnchorAt(String outStr, IQPointF pos)
 	{
-		return CQt.QAbstractTextDocumentLayout_AnchorAt((.)this.ptr, (.)pos?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_AnchorAt((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
 	}
-	public libqt_string ImageAt(IQPointF pos)
+	public void ImageAt(String outStr, IQPointF pos)
 	{
-		return CQt.QAbstractTextDocumentLayout_ImageAt((.)this.ptr, (.)pos?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_ImageAt((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
 	}
-	public QTextFormat_Ptr* FormatAt(IQPointF pos)
+	public QTextFormat_Ptr FormatAt(IQPointF pos)
 	{
-		return CQt.QAbstractTextDocumentLayout_FormatAt((.)this.ptr, (.)pos?.ObjectPtr);
+		return QTextFormat_Ptr(CQt.QAbstractTextDocumentLayout_FormatAt((.)this.ptr.Ptr, (.)pos?.ObjectPtr));
 	}
-	public QTextBlock_Ptr* BlockWithMarkerAt(IQPointF pos)
+	public QTextBlock_Ptr BlockWithMarkerAt(IQPointF pos)
 	{
-		return CQt.QAbstractTextDocumentLayout_BlockWithMarkerAt((.)this.ptr, (.)pos?.ObjectPtr);
+		return QTextBlock_Ptr(CQt.QAbstractTextDocumentLayout_BlockWithMarkerAt((.)this.ptr.Ptr, (.)pos?.ObjectPtr));
 	}
 	public c_int PageCount()
 	{
-		return CQt.QAbstractTextDocumentLayout_PageCount((.)this.ptr);
+		return CQt.QAbstractTextDocumentLayout_PageCount((.)this.ptr.Ptr);
 	}
-	public QSizeF_Ptr* DocumentSize()
+	public QSizeF_Ptr DocumentSize()
 	{
-		return CQt.QAbstractTextDocumentLayout_DocumentSize((.)this.ptr);
+		return QSizeF_Ptr(CQt.QAbstractTextDocumentLayout_DocumentSize((.)this.ptr.Ptr));
 	}
-	public QRectF_Ptr* FrameBoundingRect(IQTextFrame frame)
+	public QRectF_Ptr FrameBoundingRect(IQTextFrame frame)
 	{
-		return CQt.QAbstractTextDocumentLayout_FrameBoundingRect((.)this.ptr, (.)frame?.ObjectPtr);
+		return QRectF_Ptr(CQt.QAbstractTextDocumentLayout_FrameBoundingRect((.)this.ptr.Ptr, (.)frame?.ObjectPtr));
 	}
-	public QRectF_Ptr* BlockBoundingRect(IQTextBlock block)
+	public QRectF_Ptr BlockBoundingRect(IQTextBlock block)
 	{
-		return CQt.QAbstractTextDocumentLayout_BlockBoundingRect((.)this.ptr, (.)block?.ObjectPtr);
+		return QRectF_Ptr(CQt.QAbstractTextDocumentLayout_BlockBoundingRect((.)this.ptr.Ptr, (.)block?.ObjectPtr));
 	}
 	public void SetPaintDevice(IQPaintDevice device)
 	{
-		CQt.QAbstractTextDocumentLayout_SetPaintDevice((.)this.ptr, (.)device?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_SetPaintDevice((.)this.ptr.Ptr, (.)device?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr** PaintDevice()
+	public QPaintDevice_Ptr PaintDevice()
 	{
-		return CQt.QAbstractTextDocumentLayout_PaintDevice((.)this.ptr);
+		return QPaintDevice_Ptr(CQt.QAbstractTextDocumentLayout_PaintDevice((.)this.ptr.Ptr));
 	}
-	public QTextDocument_Ptr** Document()
+	public QTextDocument_Ptr Document()
 	{
-		return CQt.QAbstractTextDocumentLayout_Document((.)this.ptr);
+		return QTextDocument_Ptr(CQt.QAbstractTextDocumentLayout_Document((.)this.ptr.Ptr));
 	}
 	public void RegisterHandler(c_int objectType, IQObject component)
 	{
-		CQt.QAbstractTextDocumentLayout_RegisterHandler((.)this.ptr, objectType, (.)component?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_RegisterHandler((.)this.ptr.Ptr, objectType, (.)component?.ObjectPtr);
 	}
 	public void UnregisterHandler(c_int objectType)
 	{
-		CQt.QAbstractTextDocumentLayout_UnregisterHandler((.)this.ptr, objectType);
+		CQt.QAbstractTextDocumentLayout_UnregisterHandler((.)this.ptr.Ptr, objectType);
 	}
-	public QTextObjectInterface_Ptr** HandlerForObject(c_int objectType)
+	public QTextObjectInterface_Ptr HandlerForObject(c_int objectType)
 	{
-		return CQt.QAbstractTextDocumentLayout_HandlerForObject((.)this.ptr, objectType);
+		return QTextObjectInterface_Ptr(CQt.QAbstractTextDocumentLayout_HandlerForObject((.)this.ptr.Ptr, objectType));
 	}
 	public void Update()
 	{
-		CQt.QAbstractTextDocumentLayout_Update((.)this.ptr);
+		CQt.QAbstractTextDocumentLayout_Update((.)this.ptr.Ptr);
 	}
 	public void UpdateBlock(IQTextBlock block)
 	{
-		CQt.QAbstractTextDocumentLayout_UpdateBlock((.)this.ptr, (.)block?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_UpdateBlock((.)this.ptr.Ptr, (.)block?.ObjectPtr);
 	}
 	public void DocumentSizeChanged(IQSizeF newSize)
 	{
-		CQt.QAbstractTextDocumentLayout_DocumentSizeChanged((.)this.ptr, (.)newSize?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_DocumentSizeChanged((.)this.ptr.Ptr, (.)newSize?.ObjectPtr);
 	}
 	public void PageCountChanged(c_int newPages)
 	{
-		CQt.QAbstractTextDocumentLayout_PageCountChanged((.)this.ptr, newPages);
+		CQt.QAbstractTextDocumentLayout_PageCountChanged((.)this.ptr.Ptr, newPages);
 	}
 	public void DocumentChanged(c_int from, c_int charsRemoved, c_int charsAdded)
 	{
-		CQt.QAbstractTextDocumentLayout_DocumentChanged((.)this.ptr, from, charsRemoved, charsAdded);
+		CQt.QAbstractTextDocumentLayout_DocumentChanged((.)this.ptr.Ptr, from, charsRemoved, charsAdded);
 	}
 	public void ResizeInlineObject(IQTextInlineObject item, c_int posInDocument, IQTextFormat format)
 	{
-		CQt.QAbstractTextDocumentLayout_ResizeInlineObject((.)this.ptr, (.)item?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_ResizeInlineObject((.)this.ptr.Ptr, (.)item?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
 	}
 	public void PositionInlineObject(IQTextInlineObject item, c_int posInDocument, IQTextFormat format)
 	{
-		CQt.QAbstractTextDocumentLayout_PositionInlineObject((.)this.ptr, (.)item?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_PositionInlineObject((.)this.ptr.Ptr, (.)item?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
 	}
 	public void DrawInlineObject(IQPainter painter, IQRectF rect, IQTextInlineObject object, c_int posInDocument, IQTextFormat format)
 	{
-		CQt.QAbstractTextDocumentLayout_DrawInlineObject((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, (.)object?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_DrawInlineObject((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, (.)object?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
 	}
 	public c_int FormatIndex(c_int pos)
 	{
-		return CQt.QAbstractTextDocumentLayout_FormatIndex((.)this.ptr, pos);
+		return CQt.QAbstractTextDocumentLayout_FormatIndex((.)this.ptr.Ptr, pos);
 	}
-	public QTextCharFormat_Ptr* Format(c_int pos)
+	public QTextCharFormat_Ptr Format(c_int pos)
 	{
-		return CQt.QAbstractTextDocumentLayout_Format((.)this.ptr, pos);
+		return QTextCharFormat_Ptr(CQt.QAbstractTextDocumentLayout_Format((.)this.ptr.Ptr, pos));
 	}
-	public libqt_string Tr2(c_char* s, c_char* c)
+	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
-		return CQt.QAbstractTextDocumentLayout_Tr2(s, c);
+		CQt.QAbstractTextDocumentLayout_Tr2(s, c);
 	}
-	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
 	{
-		return CQt.QAbstractTextDocumentLayout_Tr3(s, c, n);
+		CQt.QAbstractTextDocumentLayout_Tr3(s, c, n);
 	}
 	public void UnregisterHandler2(c_int objectType, IQObject component)
 	{
-		CQt.QAbstractTextDocumentLayout_UnregisterHandler2((.)this.ptr, objectType, (.)component?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_UnregisterHandler2((.)this.ptr.Ptr, objectType, (.)component?.ObjectPtr);
 	}
 	public void Update1(IQRectF param1)
 	{
-		CQt.QAbstractTextDocumentLayout_Update1((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_Update1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QObject_Event((.)this.ptr, (.)event?.ObjectPtr);
+		return CQt.QObject_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public libqt_string ObjectName()
+	public void ObjectName(String outStr)
 	{
-		return CQt.QObject_ObjectName((.)this.ptr);
+		CQt.QObject_ObjectName((.)this.ptr.Ptr);
 	}
 	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
+		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
-		return CQt.QObject_IsWidgetType((.)this.ptr);
+		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
 	}
 	public bool IsWindowType()
 	{
-		return CQt.QObject_IsWindowType((.)this.ptr);
+		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
 	}
 	public bool IsQuickItemType()
 	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr);
+		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
 	}
 	public bool SignalsBlocked()
 	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr);
+		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
 	}
 	public bool BlockSignals(bool b)
 	{
-		return CQt.QObject_BlockSignals((.)this.ptr, b);
+		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
 	}
-	public QThread_Ptr** Thread()
+	public QThread_Ptr Thread()
 	{
-		return CQt.QObject_Thread((.)this.ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
 	}
 	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
+		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QObject_StartTimer((.)this.ptr, interval);
+		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
 	}
 	public c_int StartTimer2(void* time)
 	{
-		return CQt.QObject_StartTimer2((.)this.ptr, time);
+		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
 	}
 	public void KillTimer(c_int id)
 	{
-		CQt.QObject_KillTimer((.)this.ptr, id);
+		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
 	}
 	public void** Children()
 	{
-		return CQt.QObject_Children((.)this.ptr);
+		return CQt.QObject_Children((.)this.ptr.Ptr);
 	}
 	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
+		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
 	}
 	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
 	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
@@ -327,11 +336,11 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	}
 	public bool Disconnect3()
 	{
-		return CQt.QObject_Disconnect3((.)this.ptr);
+		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
 	}
 	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
@@ -339,123 +348,123 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 	}
 	public void DumpObjectTree()
 	{
-		CQt.QObject_DumpObjectTree((.)this.ptr);
+		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
 	}
 	public void DumpObjectInfo()
 	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr);
+		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
 	}
 	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
+		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr* Property(c_char* name)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return CQt.QObject_Property((.)this.ptr, name);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
 	}
 	public void* DynamicPropertyNames()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
 	}
-	public QBindingStorage_Ptr** BindingStorage()
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		return CQt.QObject_BindingStorage((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
 	}
-	public QBindingStorage_Ptr** BindingStorage2()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return CQt.QObject_BindingStorage2((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
 	}
 	public void Destroyed()
 	{
-		CQt.QObject_Destroyed((.)this.ptr);
+		CQt.QObject_Destroyed((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Parent()
+	public QObject_Ptr Parent()
 	{
-		return CQt.QObject_Parent((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
 	}
 	public bool Inherits(c_char* classname)
 	{
-		return CQt.QObject_Inherits((.)this.ptr, classname);
+		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
 	}
 	public void DeleteLater()
 	{
-		CQt.QObject_DeleteLater((.)this.ptr);
+		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Sender()
+	public QObject_Ptr Sender()
 	{
-		return CQt.QObject_Sender((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
 	}
 	public c_int SenderSignalIndex()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
 	}
 	public c_int Receivers(c_char* signal)
 	{
-		return CQt.QObject_Receivers((.)this.ptr, signal);
+		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
 	}
 	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
 	}
 	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
 	}
-	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
 	}
-	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
 	}
-	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
 	}
 	public bool Disconnect1(c_char* signal)
 	{
-		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
 	}
 	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
 	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
 	}
 	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 }
 interface IQAbstractTextDocumentLayout : IQtObjectInterface
@@ -465,35 +474,44 @@ interface IQAbstractTextDocumentLayout : IQtObjectInterface
 // QTextObjectInterface
 // --------------------------------------------------------------
 [CRepr]
-struct QTextObjectInterface_Ptr: void
+struct QTextObjectInterface_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QTextObjectInterface_Delete")]
-	public static extern void QTextObjectInterface_Delete(QTextObjectInterface_Ptr* self);
+	public static extern void QTextObjectInterface_Delete(QTextObjectInterface_Ptr self);
 	[LinkName("QTextObjectInterface_IntrinsicSize")]
-	public static extern QSizeF_Ptr* QTextObjectInterface_IntrinsicSize(QTextObjectInterface_Ptr* self, QTextDocument_Ptr** doc, c_int posInDocument, QTextFormat_Ptr* format);
+	public static extern void* QTextObjectInterface_IntrinsicSize(void* self, void** doc, c_int posInDocument, void** format);
 	[LinkName("QTextObjectInterface_DrawObject")]
-	public static extern void QTextObjectInterface_DrawObject(QTextObjectInterface_Ptr* self, QPainter_Ptr** painter, QRectF_Ptr* rect, QTextDocument_Ptr** doc, c_int posInDocument, QTextFormat_Ptr* format);
+	public static extern void QTextObjectInterface_DrawObject(void* self, void** painter, void** rect, void** doc, c_int posInDocument, void** format);
 	[LinkName("QTextObjectInterface_OperatorAssign")]
-	public static extern void QTextObjectInterface_OperatorAssign(QTextObjectInterface_Ptr* self, QTextObjectInterface_Ptr* param1);
+	public static extern void QTextObjectInterface_OperatorAssign(void* self, void** param1);
 }
 class QTextObjectInterface : IQTextObjectInterface
 {
-	private QTextObjectInterface_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QTextObjectInterface_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QTextObjectInterface_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public ~this()
 	{
 		CQt.QTextObjectInterface_Delete(this.ptr);
 	}
-	public QSizeF_Ptr* IntrinsicSize(IQTextDocument doc, c_int posInDocument, IQTextFormat format)
+	public QSizeF_Ptr IntrinsicSize(IQTextDocument doc, c_int posInDocument, IQTextFormat format)
 	{
-		return CQt.QTextObjectInterface_IntrinsicSize((.)this.ptr, (.)doc?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
+		return QSizeF_Ptr(CQt.QTextObjectInterface_IntrinsicSize((.)this.ptr.Ptr, (.)doc?.ObjectPtr, posInDocument, (.)format?.ObjectPtr));
 	}
 	public void DrawObject(IQPainter painter, IQRectF rect, IQTextDocument doc, c_int posInDocument, IQTextFormat format)
 	{
-		CQt.QTextObjectInterface_DrawObject((.)this.ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, (.)doc?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
+		CQt.QTextObjectInterface_DrawObject((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)rect?.ObjectPtr, (.)doc?.ObjectPtr, posInDocument, (.)format?.ObjectPtr);
 	}
 }
 interface IQTextObjectInterface : IQtObjectInterface
@@ -503,30 +521,39 @@ interface IQTextObjectInterface : IQtObjectInterface
 // QAbstractTextDocumentLayout::Selection
 // --------------------------------------------------------------
 [CRepr]
-struct QAbstractTextDocumentLayout_Selection_Ptr: void
+struct QAbstractTextDocumentLayout_Selection_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QAbstractTextDocumentLayout_Selection_new")]
-	public static extern QAbstractTextDocumentLayout_Selection_Ptr* QAbstractTextDocumentLayout_Selection_new(QAbstractTextDocumentLayout_Selection_Ptr* param1);
+	public static extern QAbstractTextDocumentLayout_Selection_Ptr QAbstractTextDocumentLayout_Selection_new(void** param1);
 	[LinkName("QAbstractTextDocumentLayout_Selection_Delete")]
-	public static extern void QAbstractTextDocumentLayout_Selection_Delete(QAbstractTextDocumentLayout_Selection_Ptr* self);
+	public static extern void QAbstractTextDocumentLayout_Selection_Delete(QAbstractTextDocumentLayout_Selection_Ptr self);
 	[LinkName("QAbstractTextDocumentLayout_Selection_Cursor")]
-	public static extern QTextCursor_Ptr* QAbstractTextDocumentLayout_Selection_Cursor(QAbstractTextDocumentLayout_Selection_Ptr* self);
+	public static extern void* QAbstractTextDocumentLayout_Selection_Cursor(void* self);
 	[LinkName("QAbstractTextDocumentLayout_Selection_SetCursor")]
-	public static extern void QAbstractTextDocumentLayout_Selection_SetCursor(QAbstractTextDocumentLayout_Selection_Ptr* self, QTextCursor_Ptr* cursor);
+	public static extern void QAbstractTextDocumentLayout_Selection_SetCursor(void* self, void* cursor);
 	[LinkName("QAbstractTextDocumentLayout_Selection_Format")]
-	public static extern QTextCharFormat_Ptr* QAbstractTextDocumentLayout_Selection_Format(QAbstractTextDocumentLayout_Selection_Ptr* self);
+	public static extern void* QAbstractTextDocumentLayout_Selection_Format(void* self);
 	[LinkName("QAbstractTextDocumentLayout_Selection_SetFormat")]
-	public static extern void QAbstractTextDocumentLayout_Selection_SetFormat(QAbstractTextDocumentLayout_Selection_Ptr* self, QTextCharFormat_Ptr* format);
+	public static extern void QAbstractTextDocumentLayout_Selection_SetFormat(void* self, void* format);
 	[LinkName("QAbstractTextDocumentLayout_Selection_OperatorAssign")]
-	public static extern void QAbstractTextDocumentLayout_Selection_OperatorAssign(QAbstractTextDocumentLayout_Selection_Ptr* self, QAbstractTextDocumentLayout_Selection_Ptr* param1);
+	public static extern void QAbstractTextDocumentLayout_Selection_OperatorAssign(void* self, void** param1);
 }
 class QAbstractTextDocumentLayout_Selection : IQAbstractTextDocumentLayout_Selection
 {
-	private QAbstractTextDocumentLayout_Selection_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QAbstractTextDocumentLayout_Selection_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAbstractTextDocumentLayout_Selection_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQAbstractTextDocumentLayout_Selection param1)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_Selection_new((.)param1?.ObjectPtr);
@@ -535,21 +562,21 @@ class QAbstractTextDocumentLayout_Selection : IQAbstractTextDocumentLayout_Selec
 	{
 		CQt.QAbstractTextDocumentLayout_Selection_Delete(this.ptr);
 	}
-	public QTextCursor_Ptr* Cursor()
+	public QTextCursor_Ptr Cursor()
 	{
-		return CQt.QAbstractTextDocumentLayout_Selection_Cursor((.)this.ptr);
+		return QTextCursor_Ptr(CQt.QAbstractTextDocumentLayout_Selection_Cursor((.)this.ptr.Ptr));
 	}
 	public void SetCursor(IQTextCursor cursor)
 	{
-		CQt.QAbstractTextDocumentLayout_Selection_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_Selection_SetCursor((.)this.ptr.Ptr, (.)cursor?.ObjectPtr);
 	}
-	public QTextCharFormat_Ptr* Format()
+	public QTextCharFormat_Ptr Format()
 	{
-		return CQt.QAbstractTextDocumentLayout_Selection_Format((.)this.ptr);
+		return QTextCharFormat_Ptr(CQt.QAbstractTextDocumentLayout_Selection_Format((.)this.ptr.Ptr));
 	}
 	public void SetFormat(IQTextCharFormat format)
 	{
-		CQt.QAbstractTextDocumentLayout_Selection_SetFormat((.)this.ptr, (.)format?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_Selection_SetFormat((.)this.ptr.Ptr, (.)format?.ObjectPtr);
 	}
 }
 interface IQAbstractTextDocumentLayout_Selection : IQtObjectInterface
@@ -559,40 +586,49 @@ interface IQAbstractTextDocumentLayout_Selection : IQtObjectInterface
 // QAbstractTextDocumentLayout::PaintContext
 // --------------------------------------------------------------
 [CRepr]
-struct QAbstractTextDocumentLayout_PaintContext_Ptr: void
+struct QAbstractTextDocumentLayout_PaintContext_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_new")]
-	public static extern QAbstractTextDocumentLayout_PaintContext_Ptr* QAbstractTextDocumentLayout_PaintContext_new();
+	public static extern QAbstractTextDocumentLayout_PaintContext_Ptr QAbstractTextDocumentLayout_PaintContext_new();
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_new2")]
-	public static extern QAbstractTextDocumentLayout_PaintContext_Ptr* QAbstractTextDocumentLayout_PaintContext_new2(QAbstractTextDocumentLayout_PaintContext_Ptr* param1);
+	public static extern QAbstractTextDocumentLayout_PaintContext_Ptr QAbstractTextDocumentLayout_PaintContext_new2(void** param1);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_Delete")]
-	public static extern void QAbstractTextDocumentLayout_PaintContext_Delete(QAbstractTextDocumentLayout_PaintContext_Ptr* self);
+	public static extern void QAbstractTextDocumentLayout_PaintContext_Delete(QAbstractTextDocumentLayout_PaintContext_Ptr self);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_CursorPosition")]
-	public static extern c_int QAbstractTextDocumentLayout_PaintContext_CursorPosition(QAbstractTextDocumentLayout_PaintContext_Ptr* self);
+	public static extern c_int QAbstractTextDocumentLayout_PaintContext_CursorPosition(void* self);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_SetCursorPosition")]
-	public static extern void QAbstractTextDocumentLayout_PaintContext_SetCursorPosition(QAbstractTextDocumentLayout_PaintContext_Ptr* self, c_int cursorPosition);
+	public static extern void QAbstractTextDocumentLayout_PaintContext_SetCursorPosition(void* self, c_int cursorPosition);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_Palette")]
-	public static extern QPalette_Ptr* QAbstractTextDocumentLayout_PaintContext_Palette(QAbstractTextDocumentLayout_PaintContext_Ptr* self);
+	public static extern void* QAbstractTextDocumentLayout_PaintContext_Palette(void* self);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_SetPalette")]
-	public static extern void QAbstractTextDocumentLayout_PaintContext_SetPalette(QAbstractTextDocumentLayout_PaintContext_Ptr* self, QPalette_Ptr* palette);
+	public static extern void QAbstractTextDocumentLayout_PaintContext_SetPalette(void* self, void* palette);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_Clip")]
-	public static extern QRectF_Ptr* QAbstractTextDocumentLayout_PaintContext_Clip(QAbstractTextDocumentLayout_PaintContext_Ptr* self);
+	public static extern void* QAbstractTextDocumentLayout_PaintContext_Clip(void* self);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_SetClip")]
-	public static extern void QAbstractTextDocumentLayout_PaintContext_SetClip(QAbstractTextDocumentLayout_PaintContext_Ptr* self, QRectF_Ptr* clip);
+	public static extern void QAbstractTextDocumentLayout_PaintContext_SetClip(void* self, void* clip);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_Selections")]
-	public static extern void* QAbstractTextDocumentLayout_PaintContext_Selections(QAbstractTextDocumentLayout_PaintContext_Ptr* self);
+	public static extern void* QAbstractTextDocumentLayout_PaintContext_Selections(void* self);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_SetSelections")]
-	public static extern void QAbstractTextDocumentLayout_PaintContext_SetSelections(QAbstractTextDocumentLayout_PaintContext_Ptr* self, void* selections);
+	public static extern void QAbstractTextDocumentLayout_PaintContext_SetSelections(void* self, void* selections);
 	[LinkName("QAbstractTextDocumentLayout_PaintContext_OperatorAssign")]
-	public static extern void QAbstractTextDocumentLayout_PaintContext_OperatorAssign(QAbstractTextDocumentLayout_PaintContext_Ptr* self, QAbstractTextDocumentLayout_PaintContext_Ptr* param1);
+	public static extern void QAbstractTextDocumentLayout_PaintContext_OperatorAssign(void* self, void** param1);
 }
 class QAbstractTextDocumentLayout_PaintContext : IQAbstractTextDocumentLayout_PaintContext
 {
-	private QAbstractTextDocumentLayout_PaintContext_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QAbstractTextDocumentLayout_PaintContext_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAbstractTextDocumentLayout_PaintContext_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_PaintContext_new();
@@ -607,35 +643,35 @@ class QAbstractTextDocumentLayout_PaintContext : IQAbstractTextDocumentLayout_Pa
 	}
 	public c_int CursorPosition()
 	{
-		return CQt.QAbstractTextDocumentLayout_PaintContext_CursorPosition((.)this.ptr);
+		return CQt.QAbstractTextDocumentLayout_PaintContext_CursorPosition((.)this.ptr.Ptr);
 	}
 	public void SetCursorPosition(c_int cursorPosition)
 	{
-		CQt.QAbstractTextDocumentLayout_PaintContext_SetCursorPosition((.)this.ptr, cursorPosition);
+		CQt.QAbstractTextDocumentLayout_PaintContext_SetCursorPosition((.)this.ptr.Ptr, cursorPosition);
 	}
-	public QPalette_Ptr* Palette()
+	public QPalette_Ptr Palette()
 	{
-		return CQt.QAbstractTextDocumentLayout_PaintContext_Palette((.)this.ptr);
+		return QPalette_Ptr(CQt.QAbstractTextDocumentLayout_PaintContext_Palette((.)this.ptr.Ptr));
 	}
 	public void SetPalette(IQPalette palette)
 	{
-		CQt.QAbstractTextDocumentLayout_PaintContext_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_PaintContext_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
 	}
-	public QRectF_Ptr* Clip()
+	public QRectF_Ptr Clip()
 	{
-		return CQt.QAbstractTextDocumentLayout_PaintContext_Clip((.)this.ptr);
+		return QRectF_Ptr(CQt.QAbstractTextDocumentLayout_PaintContext_Clip((.)this.ptr.Ptr));
 	}
 	public void SetClip(IQRectF clip)
 	{
-		CQt.QAbstractTextDocumentLayout_PaintContext_SetClip((.)this.ptr, (.)clip?.ObjectPtr);
+		CQt.QAbstractTextDocumentLayout_PaintContext_SetClip((.)this.ptr.Ptr, (.)clip?.ObjectPtr);
 	}
 	public void* Selections()
 	{
-		return CQt.QAbstractTextDocumentLayout_PaintContext_Selections((.)this.ptr);
+		return CQt.QAbstractTextDocumentLayout_PaintContext_Selections((.)this.ptr.Ptr);
 	}
 	public void SetSelections(void* selections)
 	{
-		CQt.QAbstractTextDocumentLayout_PaintContext_SetSelections((.)this.ptr, selections);
+		CQt.QAbstractTextDocumentLayout_PaintContext_SetSelections((.)this.ptr.Ptr, selections);
 	}
 }
 interface IQAbstractTextDocumentLayout_PaintContext : IQtObjectInterface

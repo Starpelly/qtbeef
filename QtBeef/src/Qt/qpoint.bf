@@ -7,62 +7,71 @@ namespace Qt6;
 // QPoint
 // --------------------------------------------------------------
 [CRepr]
-struct QPoint_Ptr: void
+struct QPoint_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPoint_new")]
-	public static extern QPoint_Ptr* QPoint_new(QPoint_Ptr* other);
+	public static extern QPoint_Ptr QPoint_new(void** other);
 	[LinkName("QPoint_new2")]
-	public static extern QPoint_Ptr* QPoint_new2(QPoint_Ptr* other);
+	public static extern QPoint_Ptr QPoint_new2(void** other);
 	[LinkName("QPoint_new3")]
-	public static extern QPoint_Ptr* QPoint_new3();
+	public static extern QPoint_Ptr QPoint_new3();
 	[LinkName("QPoint_new4")]
-	public static extern QPoint_Ptr* QPoint_new4(c_int xpos, c_int ypos);
+	public static extern QPoint_Ptr QPoint_new4(c_int xpos, c_int ypos);
 	[LinkName("QPoint_new5")]
-	public static extern QPoint_Ptr* QPoint_new5(QPoint_Ptr* param1);
+	public static extern QPoint_Ptr QPoint_new5(void** param1);
 	[LinkName("QPoint_Delete")]
-	public static extern void QPoint_Delete(QPoint_Ptr* self);
+	public static extern void QPoint_Delete(QPoint_Ptr self);
 	[LinkName("QPoint_IsNull")]
-	public static extern bool QPoint_IsNull(QPoint_Ptr* self);
+	public static extern bool QPoint_IsNull(void* self);
 	[LinkName("QPoint_X")]
-	public static extern c_int QPoint_X(QPoint_Ptr* self);
+	public static extern c_int QPoint_X(void* self);
 	[LinkName("QPoint_Y")]
-	public static extern c_int QPoint_Y(QPoint_Ptr* self);
+	public static extern c_int QPoint_Y(void* self);
 	[LinkName("QPoint_SetX")]
-	public static extern void QPoint_SetX(QPoint_Ptr* self, c_int x);
+	public static extern void QPoint_SetX(void* self, c_int x);
 	[LinkName("QPoint_SetY")]
-	public static extern void QPoint_SetY(QPoint_Ptr* self, c_int y);
+	public static extern void QPoint_SetY(void* self, c_int y);
 	[LinkName("QPoint_ManhattanLength")]
-	public static extern c_int QPoint_ManhattanLength(QPoint_Ptr* self);
+	public static extern c_int QPoint_ManhattanLength(void* self);
 	[LinkName("QPoint_Transposed")]
-	public static extern QPoint_Ptr* QPoint_Transposed(QPoint_Ptr* self);
+	public static extern void* QPoint_Transposed(void* self);
 	[LinkName("QPoint_Rx")]
-	public static extern c_int* QPoint_Rx(QPoint_Ptr* self);
+	public static extern c_int* QPoint_Rx(void* self);
 	[LinkName("QPoint_Ry")]
-	public static extern c_int* QPoint_Ry(QPoint_Ptr* self);
+	public static extern c_int* QPoint_Ry(void* self);
 	[LinkName("QPoint_OperatorPlusAssign")]
-	public static extern QPoint_Ptr* QPoint_OperatorPlusAssign(QPoint_Ptr* self, QPoint_Ptr* p);
+	public static extern void** QPoint_OperatorPlusAssign(void* self, void** p);
 	[LinkName("QPoint_OperatorMinusAssign")]
-	public static extern QPoint_Ptr* QPoint_OperatorMinusAssign(QPoint_Ptr* self, QPoint_Ptr* p);
+	public static extern void** QPoint_OperatorMinusAssign(void* self, void** p);
 	[LinkName("QPoint_OperatorMultiplyAssign")]
-	public static extern QPoint_Ptr* QPoint_OperatorMultiplyAssign(QPoint_Ptr* self, float factor);
+	public static extern void** QPoint_OperatorMultiplyAssign(void* self, float factor);
 	[LinkName("QPoint_OperatorMultiplyAssign2")]
-	public static extern QPoint_Ptr* QPoint_OperatorMultiplyAssign2(QPoint_Ptr* self, double factor);
+	public static extern void** QPoint_OperatorMultiplyAssign2(void* self, double factor);
 	[LinkName("QPoint_OperatorMultiplyAssign3")]
-	public static extern QPoint_Ptr* QPoint_OperatorMultiplyAssign3(QPoint_Ptr* self, c_int factor);
+	public static extern void** QPoint_OperatorMultiplyAssign3(void* self, c_int factor);
 	[LinkName("QPoint_OperatorDivideAssign")]
-	public static extern QPoint_Ptr* QPoint_OperatorDivideAssign(QPoint_Ptr* self, double divisor);
+	public static extern void** QPoint_OperatorDivideAssign(void* self, double divisor);
 	[LinkName("QPoint_DotProduct")]
-	public static extern c_int QPoint_DotProduct(QPoint_Ptr* p1, QPoint_Ptr* p2);
+	public static extern c_int QPoint_DotProduct(void** p1, void** p2);
 	[LinkName("QPoint_ToPointF")]
-	public static extern QPointF_Ptr* QPoint_ToPointF(QPoint_Ptr* self);
+	public static extern void* QPoint_ToPointF(void* self);
 }
 class QPoint : IQPoint
 {
-	private QPoint_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPoint_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPoint_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQPoint other)
 	{
 		this.ptr = CQt.QPoint_new((.)other?.ObjectPtr);
@@ -81,55 +90,55 @@ class QPoint : IQPoint
 	}
 	public bool IsNull()
 	{
-		return CQt.QPoint_IsNull((.)this.ptr);
+		return CQt.QPoint_IsNull((.)this.ptr.Ptr);
 	}
 	public c_int X()
 	{
-		return CQt.QPoint_X((.)this.ptr);
+		return CQt.QPoint_X((.)this.ptr.Ptr);
 	}
 	public c_int Y()
 	{
-		return CQt.QPoint_Y((.)this.ptr);
+		return CQt.QPoint_Y((.)this.ptr.Ptr);
 	}
 	public void SetX(c_int x)
 	{
-		CQt.QPoint_SetX((.)this.ptr, x);
+		CQt.QPoint_SetX((.)this.ptr.Ptr, x);
 	}
 	public void SetY(c_int y)
 	{
-		CQt.QPoint_SetY((.)this.ptr, y);
+		CQt.QPoint_SetY((.)this.ptr.Ptr, y);
 	}
 	public c_int ManhattanLength()
 	{
-		return CQt.QPoint_ManhattanLength((.)this.ptr);
+		return CQt.QPoint_ManhattanLength((.)this.ptr.Ptr);
 	}
-	public QPoint_Ptr* Transposed()
+	public QPoint_Ptr Transposed()
 	{
-		return CQt.QPoint_Transposed((.)this.ptr);
+		return QPoint_Ptr(CQt.QPoint_Transposed((.)this.ptr.Ptr));
 	}
 	public c_int* Rx()
 	{
-		return CQt.QPoint_Rx((.)this.ptr);
+		return CQt.QPoint_Rx((.)this.ptr.Ptr);
 	}
 	public c_int* Ry()
 	{
-		return CQt.QPoint_Ry((.)this.ptr);
+		return CQt.QPoint_Ry((.)this.ptr.Ptr);
 	}
-	public QPoint_Ptr* OperatorMultiplyAssign2(double factor)
+	public QPoint_Ptr OperatorMultiplyAssign2(double factor)
 	{
-		return CQt.QPoint_OperatorMultiplyAssign2((.)this.ptr, factor);
+		return QPoint_Ptr(CQt.QPoint_OperatorMultiplyAssign2((.)this.ptr.Ptr, factor));
 	}
-	public QPoint_Ptr* OperatorMultiplyAssign3(c_int factor)
+	public QPoint_Ptr OperatorMultiplyAssign3(c_int factor)
 	{
-		return CQt.QPoint_OperatorMultiplyAssign3((.)this.ptr, factor);
+		return QPoint_Ptr(CQt.QPoint_OperatorMultiplyAssign3((.)this.ptr.Ptr, factor));
 	}
 	public c_int DotProduct(IQPoint p1, IQPoint p2)
 	{
 		return CQt.QPoint_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
 	}
-	public QPointF_Ptr* ToPointF()
+	public QPointF_Ptr ToPointF()
 	{
-		return CQt.QPoint_ToPointF((.)this.ptr);
+		return QPointF_Ptr(CQt.QPoint_ToPointF((.)this.ptr.Ptr));
 	}
 }
 interface IQPoint : IQtObjectInterface
@@ -139,60 +148,69 @@ interface IQPoint : IQtObjectInterface
 // QPointF
 // --------------------------------------------------------------
 [CRepr]
-struct QPointF_Ptr: void
+struct QPointF_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QPointF_new")]
-	public static extern QPointF_Ptr* QPointF_new(QPointF_Ptr* other);
+	public static extern QPointF_Ptr QPointF_new(void** other);
 	[LinkName("QPointF_new2")]
-	public static extern QPointF_Ptr* QPointF_new2(QPointF_Ptr* other);
+	public static extern QPointF_Ptr QPointF_new2(void** other);
 	[LinkName("QPointF_new3")]
-	public static extern QPointF_Ptr* QPointF_new3();
+	public static extern QPointF_Ptr QPointF_new3();
 	[LinkName("QPointF_new4")]
-	public static extern QPointF_Ptr* QPointF_new4(QPoint_Ptr* p);
+	public static extern QPointF_Ptr QPointF_new4(void** p);
 	[LinkName("QPointF_new5")]
-	public static extern QPointF_Ptr* QPointF_new5(double xpos, double ypos);
+	public static extern QPointF_Ptr QPointF_new5(double xpos, double ypos);
 	[LinkName("QPointF_new6")]
-	public static extern QPointF_Ptr* QPointF_new6(QPointF_Ptr* param1);
+	public static extern QPointF_Ptr QPointF_new6(void** param1);
 	[LinkName("QPointF_Delete")]
-	public static extern void QPointF_Delete(QPointF_Ptr* self);
+	public static extern void QPointF_Delete(QPointF_Ptr self);
 	[LinkName("QPointF_ManhattanLength")]
-	public static extern double QPointF_ManhattanLength(QPointF_Ptr* self);
+	public static extern double QPointF_ManhattanLength(void* self);
 	[LinkName("QPointF_IsNull")]
-	public static extern bool QPointF_IsNull(QPointF_Ptr* self);
+	public static extern bool QPointF_IsNull(void* self);
 	[LinkName("QPointF_X")]
-	public static extern double QPointF_X(QPointF_Ptr* self);
+	public static extern double QPointF_X(void* self);
 	[LinkName("QPointF_Y")]
-	public static extern double QPointF_Y(QPointF_Ptr* self);
+	public static extern double QPointF_Y(void* self);
 	[LinkName("QPointF_SetX")]
-	public static extern void QPointF_SetX(QPointF_Ptr* self, double x);
+	public static extern void QPointF_SetX(void* self, double x);
 	[LinkName("QPointF_SetY")]
-	public static extern void QPointF_SetY(QPointF_Ptr* self, double y);
+	public static extern void QPointF_SetY(void* self, double y);
 	[LinkName("QPointF_Transposed")]
-	public static extern QPointF_Ptr* QPointF_Transposed(QPointF_Ptr* self);
+	public static extern void* QPointF_Transposed(void* self);
 	[LinkName("QPointF_Rx")]
-	public static extern double* QPointF_Rx(QPointF_Ptr* self);
+	public static extern double* QPointF_Rx(void* self);
 	[LinkName("QPointF_Ry")]
-	public static extern double* QPointF_Ry(QPointF_Ptr* self);
+	public static extern double* QPointF_Ry(void* self);
 	[LinkName("QPointF_OperatorPlusAssign")]
-	public static extern QPointF_Ptr* QPointF_OperatorPlusAssign(QPointF_Ptr* self, QPointF_Ptr* p);
+	public static extern void** QPointF_OperatorPlusAssign(void* self, void** p);
 	[LinkName("QPointF_OperatorMinusAssign")]
-	public static extern QPointF_Ptr* QPointF_OperatorMinusAssign(QPointF_Ptr* self, QPointF_Ptr* p);
+	public static extern void** QPointF_OperatorMinusAssign(void* self, void** p);
 	[LinkName("QPointF_OperatorMultiplyAssign")]
-	public static extern QPointF_Ptr* QPointF_OperatorMultiplyAssign(QPointF_Ptr* self, double c);
+	public static extern void** QPointF_OperatorMultiplyAssign(void* self, double c);
 	[LinkName("QPointF_OperatorDivideAssign")]
-	public static extern QPointF_Ptr* QPointF_OperatorDivideAssign(QPointF_Ptr* self, double c);
+	public static extern void** QPointF_OperatorDivideAssign(void* self, double c);
 	[LinkName("QPointF_DotProduct")]
-	public static extern double QPointF_DotProduct(QPointF_Ptr* p1, QPointF_Ptr* p2);
+	public static extern double QPointF_DotProduct(void** p1, void** p2);
 	[LinkName("QPointF_ToPoint")]
-	public static extern QPoint_Ptr* QPointF_ToPoint(QPointF_Ptr* self);
+	public static extern void* QPointF_ToPoint(void* self);
 }
 class QPointF : IQPointF
 {
-	private QPointF_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QPointF_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QPointF_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQPointF other)
 	{
 		this.ptr = CQt.QPointF_new((.)other?.ObjectPtr);
@@ -215,47 +233,47 @@ class QPointF : IQPointF
 	}
 	public double ManhattanLength()
 	{
-		return CQt.QPointF_ManhattanLength((.)this.ptr);
+		return CQt.QPointF_ManhattanLength((.)this.ptr.Ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QPointF_IsNull((.)this.ptr);
+		return CQt.QPointF_IsNull((.)this.ptr.Ptr);
 	}
 	public double X()
 	{
-		return CQt.QPointF_X((.)this.ptr);
+		return CQt.QPointF_X((.)this.ptr.Ptr);
 	}
 	public double Y()
 	{
-		return CQt.QPointF_Y((.)this.ptr);
+		return CQt.QPointF_Y((.)this.ptr.Ptr);
 	}
 	public void SetX(double x)
 	{
-		CQt.QPointF_SetX((.)this.ptr, x);
+		CQt.QPointF_SetX((.)this.ptr.Ptr, x);
 	}
 	public void SetY(double y)
 	{
-		CQt.QPointF_SetY((.)this.ptr, y);
+		CQt.QPointF_SetY((.)this.ptr.Ptr, y);
 	}
-	public QPointF_Ptr* Transposed()
+	public QPointF_Ptr Transposed()
 	{
-		return CQt.QPointF_Transposed((.)this.ptr);
+		return QPointF_Ptr(CQt.QPointF_Transposed((.)this.ptr.Ptr));
 	}
 	public double* Rx()
 	{
-		return CQt.QPointF_Rx((.)this.ptr);
+		return CQt.QPointF_Rx((.)this.ptr.Ptr);
 	}
 	public double* Ry()
 	{
-		return CQt.QPointF_Ry((.)this.ptr);
+		return CQt.QPointF_Ry((.)this.ptr.Ptr);
 	}
 	public double DotProduct(IQPointF p1, IQPointF p2)
 	{
 		return CQt.QPointF_DotProduct((.)p1?.ObjectPtr, (.)p2?.ObjectPtr);
 	}
-	public QPoint_Ptr* ToPoint()
+	public QPoint_Ptr ToPoint()
 	{
-		return CQt.QPointF_ToPoint((.)this.ptr);
+		return QPoint_Ptr(CQt.QPointF_ToPoint((.)this.ptr.Ptr));
 	}
 }
 interface IQPointF : IQtObjectInterface

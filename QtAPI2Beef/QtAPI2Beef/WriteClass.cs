@@ -103,15 +103,16 @@ class WriteClass
 
         if (stage == Stage.CApi)
         {
-
-
             if (m_apiState.RegisteredClasses.ContainsKey(outStr))
             {
-                outStr = $"{outStr}_Ptr";
+                outStr = "void*";
+                // outStr = $"{outStr}_Ptr";
+                /*
                 if (param.ByRef == false)
                 {
                     outStr += "*";
                 }
+                */
             }
 
             if (param.ParameterType == "QString") outStr = "libqt_string";
@@ -280,10 +281,12 @@ class WriteClass
             // But NOT if it's static, since it doesn't have an object.
             if (isMethod && !method.IsStatic)
             {
-                var ptrType = $"{_class.ClassName}_Ptr";
-                ptrType = ptrType.Replace("::", "_");
+                // var ptrType = $"{_class.ClassName}_Ptr";
+                // ptrType = ptrType.Replace("::", "_");
 
-                parameters.Append($"{ptrType}* self");
+                var ptrType = "void*";
+
+                parameters.Append($"{ptrType} self");
 
                 if (method.Parameters.Length > 0)
                     parameters.Append(", ");
@@ -330,7 +333,7 @@ class WriteClass
                 var ptrType = $"{_class.ClassName}_Ptr";
                 ptrType = ptrType.Replace("::", "_");
 
-                parameters.Append($"{ptrType}* self");
+                parameters.Append($"{ptrType} self");
 
                 if (method.Parameters.Length > 0)
                     parameters.Append(", ");
@@ -340,7 +343,7 @@ class WriteClass
         {
             if (isMethod && !method.IsStatic)
             {
-                parameters.Append("(.)this.ptr");
+                parameters.Append("(.)this.ptr.Ptr");
                 if (method.Parameters.Length > 0)
                     parameters.Append(", ");
             }
@@ -364,12 +367,6 @@ class WriteClass
                     {
                         paramStr = $"libqt_string({paramStr})";
                     }
-                    /*
-                    else
-                    {
-                        paramStr = $"{paramStr}.[Friend]ptr";
-                    }
-                    */
                 }
 
                 if (m_apiState.RegisteredClasses.ContainsKey(bfTypeName))
@@ -435,10 +432,19 @@ class WriteClass
 
                 // Ptr Struct
                 code.AppendLine("[CRepr]");
-                code.AppendLine($"struct {bfClassPtrName}: void");
+                code.AppendLine($"struct {bfClassPtrName}");
                 code.AppendLine("{");
                 code.IncreaseTab();
                 {
+                    code.AppendLine("public void* Ptr;");
+                    code.AppendLine("public this(void* ptr)");
+                    code.AppendLine("{");
+                    code.IncreaseTab();
+                    {
+                        code.AppendLine("this.Ptr = ptr;");
+                    }
+                    code.DecreaseTab();
+                    code.AppendLine("}");
                 }
                 code.DecreaseTab();
                 code.AppendLine("}");
@@ -457,7 +463,7 @@ class WriteClass
                             var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false);
 
                             code.AppendLine($"[LinkName(\"{methodPrefix}_new{maybeSuffix(i)}\")]");
-                            code.AppendLine($"public static extern {bfClassName}_Ptr* {methodPrefix}_new{maybeSuffix(i)}({parameters});");
+                            code.AppendLine($"public static extern {bfClassName}_Ptr {methodPrefix}_new{maybeSuffix(i)}({parameters});");
                         }
                     }
 
@@ -467,7 +473,7 @@ class WriteClass
                         var linkName = $"{methodPrefix}_Delete";
 
                         code.AppendLine($"[LinkName(\"{linkName}\")]");
-                        code.AppendLine($"public static extern void {linkName}({bfClassName}_Ptr* self);");
+                        code.AppendLine($"public static extern void {linkName}({bfClassName}_Ptr self);");
                     }
 
                     // Normal methods
@@ -511,8 +517,18 @@ class WriteClass
                 code.AppendLine("{");
                 code.IncreaseTab();
                 {
-                    code.AppendLine($"private {bfClassName}_Ptr* ptr;");
-                    code.AppendLine("public void* ObjectPtr => ptr;");
+                    code.AppendLine($"private {bfClassName}_Ptr ptr;");
+                    code.AppendLine("public void* ObjectPtr => ptr.Ptr;");
+
+                    // Default constructor Object(ObjectHandle ptr)
+                    code.AppendLine($"public this({bfClassName}_Ptr ptr)");
+                    code.AppendLine("{");
+                    code.IncreaseTab();
+                    {
+                        code.AppendLine("this.ptr = ptr;");
+                    }
+                    code.DecreaseTab();
+                    code.AppendLine("}");
 
                     // Constructors
                     if (cppClass.Ctors != null)
@@ -572,14 +588,41 @@ class WriteClass
 
                     void genMethod(CppClass cppClass, CppMethod method)
                     {
+                        // @TODO - maybe(?)
                         if (method.MethodName.StartsWith("operator"))
                             return;
+
+                        if (method.MethodName == "AddMenu2")
+                        {
+                            var a = 0;
+                        }
 
                         var bfMethodName = Regex.Replace(method.MethodName, @"\b\p{Ll}", match => match.Value.ToUpper());
 
                         var bfParameters = buildBfParameters(cppClass, method, Stage.BfObject, true);
                         var bfArguments = buildBfArguments(cppClass, method, Stage.BfObject, true);
-                        var returnType = getBfTypeName(method.ReturnType, Stage.CApi);
+                        var returnType = getBfTypeName(method.ReturnType, Stage.BfObject);
+
+                        if (returnType == "String" || returnType == "String*")
+                        {
+                            returnType = "void";
+
+                            if (bfParameters != string.Empty)
+                            {
+                                bfParameters = $"String outStr, {bfParameters}";
+                            }
+                            else
+                            {
+                                bfParameters = "String outStr";
+                            }
+                        }
+
+                        bool isQtObjectReturnType = false;
+                        if (m_apiState.RegisteredClasses.ContainsKey(returnType))
+                        {
+                            returnType = $"{returnType}_Ptr";
+                            isQtObjectReturnType = true;
+                        }
 
                         code.AppendLine($"public {returnType} {bfMethodName}({bfParameters})");
                         code.AppendLine("{");
@@ -591,7 +634,14 @@ class WriteClass
 
                             if (returnType != "void")
                             {
-                                code.AppendLine($"return {call};");
+                                if (isQtObjectReturnType)
+                                {
+                                    code.AppendLine($"return {returnType}({call});");
+                                }
+                                else
+                                {
+                                    code.AppendLine($"return {call};");
+                                }
                             }
                             else
                             {

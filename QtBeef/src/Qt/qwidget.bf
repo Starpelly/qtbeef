@@ -7,674 +7,683 @@ namespace Qt6;
 // QWidget
 // --------------------------------------------------------------
 [CRepr]
-struct QWidget_Ptr: void
+struct QWidget_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QWidget_new")]
-	public static extern QWidget_Ptr* QWidget_new(QWidget_Ptr** parent);
+	public static extern QWidget_Ptr QWidget_new(void** parent);
 	[LinkName("QWidget_new2")]
-	public static extern QWidget_Ptr* QWidget_new2();
+	public static extern QWidget_Ptr QWidget_new2();
 	[LinkName("QWidget_new3")]
-	public static extern QWidget_Ptr* QWidget_new3(QWidget_Ptr** parent, void* f);
+	public static extern QWidget_Ptr QWidget_new3(void** parent, void* f);
 	[LinkName("QWidget_Delete")]
-	public static extern void QWidget_Delete(QWidget_Ptr* self);
+	public static extern void QWidget_Delete(QWidget_Ptr self);
 	[LinkName("QWidget_MetaObject")]
-	public static extern QMetaObject_Ptr** QWidget_MetaObject(QWidget_Ptr* self);
+	public static extern void** QWidget_MetaObject(void* self);
 	[LinkName("QWidget_Qt_Metacast")]
-	public static extern void* QWidget_Qt_Metacast(QWidget_Ptr* self, c_char* param1);
+	public static extern void* QWidget_Qt_Metacast(void* self, c_char* param1);
 	[LinkName("QWidget_Qt_Metacall")]
-	public static extern c_int QWidget_Qt_Metacall(QWidget_Ptr* self, QMetaObject_Call param1, c_int param2, void** param3);
+	public static extern c_int QWidget_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QWidget_Tr")]
 	public static extern libqt_string QWidget_Tr(c_char* s);
 	[LinkName("QWidget_DevType")]
-	public static extern c_int QWidget_DevType(QWidget_Ptr* self);
+	public static extern c_int QWidget_DevType(void* self);
 	[LinkName("QWidget_WinId")]
-	public static extern void* QWidget_WinId(QWidget_Ptr* self);
+	public static extern void* QWidget_WinId(void* self);
 	[LinkName("QWidget_CreateWinId")]
-	public static extern void QWidget_CreateWinId(QWidget_Ptr* self);
+	public static extern void QWidget_CreateWinId(void* self);
 	[LinkName("QWidget_InternalWinId")]
-	public static extern void* QWidget_InternalWinId(QWidget_Ptr* self);
+	public static extern void* QWidget_InternalWinId(void* self);
 	[LinkName("QWidget_EffectiveWinId")]
-	public static extern void* QWidget_EffectiveWinId(QWidget_Ptr* self);
+	public static extern void* QWidget_EffectiveWinId(void* self);
 	[LinkName("QWidget_Style")]
-	public static extern QStyle_Ptr** QWidget_Style(QWidget_Ptr* self);
+	public static extern void** QWidget_Style(void* self);
 	[LinkName("QWidget_SetStyle")]
-	public static extern void QWidget_SetStyle(QWidget_Ptr* self, QStyle_Ptr** style);
+	public static extern void QWidget_SetStyle(void* self, void** style);
 	[LinkName("QWidget_IsTopLevel")]
-	public static extern bool QWidget_IsTopLevel(QWidget_Ptr* self);
+	public static extern bool QWidget_IsTopLevel(void* self);
 	[LinkName("QWidget_IsWindow")]
-	public static extern bool QWidget_IsWindow(QWidget_Ptr* self);
+	public static extern bool QWidget_IsWindow(void* self);
 	[LinkName("QWidget_IsModal")]
-	public static extern bool QWidget_IsModal(QWidget_Ptr* self);
+	public static extern bool QWidget_IsModal(void* self);
 	[LinkName("QWidget_WindowModality")]
-	public static extern Qt_WindowModality QWidget_WindowModality(QWidget_Ptr* self);
+	public static extern Qt_WindowModality QWidget_WindowModality(void* self);
 	[LinkName("QWidget_SetWindowModality")]
-	public static extern void QWidget_SetWindowModality(QWidget_Ptr* self, Qt_WindowModality windowModality);
+	public static extern void QWidget_SetWindowModality(void* self, Qt_WindowModality windowModality);
 	[LinkName("QWidget_IsEnabled")]
-	public static extern bool QWidget_IsEnabled(QWidget_Ptr* self);
+	public static extern bool QWidget_IsEnabled(void* self);
 	[LinkName("QWidget_IsEnabledTo")]
-	public static extern bool QWidget_IsEnabledTo(QWidget_Ptr* self, QWidget_Ptr** param1);
+	public static extern bool QWidget_IsEnabledTo(void* self, void** param1);
 	[LinkName("QWidget_SetEnabled")]
-	public static extern void QWidget_SetEnabled(QWidget_Ptr* self, bool enabled);
+	public static extern void QWidget_SetEnabled(void* self, bool enabled);
 	[LinkName("QWidget_SetDisabled")]
-	public static extern void QWidget_SetDisabled(QWidget_Ptr* self, bool disabled);
+	public static extern void QWidget_SetDisabled(void* self, bool disabled);
 	[LinkName("QWidget_SetWindowModified")]
-	public static extern void QWidget_SetWindowModified(QWidget_Ptr* self, bool windowModified);
+	public static extern void QWidget_SetWindowModified(void* self, bool windowModified);
 	[LinkName("QWidget_FrameGeometry")]
-	public static extern QRect_Ptr* QWidget_FrameGeometry(QWidget_Ptr* self);
+	public static extern void* QWidget_FrameGeometry(void* self);
 	[LinkName("QWidget_Geometry")]
-	public static extern QRect_Ptr* QWidget_Geometry(QWidget_Ptr* self);
+	public static extern void** QWidget_Geometry(void* self);
 	[LinkName("QWidget_NormalGeometry")]
-	public static extern QRect_Ptr* QWidget_NormalGeometry(QWidget_Ptr* self);
+	public static extern void* QWidget_NormalGeometry(void* self);
 	[LinkName("QWidget_X")]
-	public static extern c_int QWidget_X(QWidget_Ptr* self);
+	public static extern c_int QWidget_X(void* self);
 	[LinkName("QWidget_Y")]
-	public static extern c_int QWidget_Y(QWidget_Ptr* self);
+	public static extern c_int QWidget_Y(void* self);
 	[LinkName("QWidget_Pos")]
-	public static extern QPoint_Ptr* QWidget_Pos(QWidget_Ptr* self);
+	public static extern void* QWidget_Pos(void* self);
 	[LinkName("QWidget_FrameSize")]
-	public static extern QSize_Ptr* QWidget_FrameSize(QWidget_Ptr* self);
+	public static extern void* QWidget_FrameSize(void* self);
 	[LinkName("QWidget_Size")]
-	public static extern QSize_Ptr* QWidget_Size(QWidget_Ptr* self);
+	public static extern void* QWidget_Size(void* self);
 	[LinkName("QWidget_Width")]
-	public static extern c_int QWidget_Width(QWidget_Ptr* self);
+	public static extern c_int QWidget_Width(void* self);
 	[LinkName("QWidget_Height")]
-	public static extern c_int QWidget_Height(QWidget_Ptr* self);
+	public static extern c_int QWidget_Height(void* self);
 	[LinkName("QWidget_Rect")]
-	public static extern QRect_Ptr* QWidget_Rect(QWidget_Ptr* self);
+	public static extern void* QWidget_Rect(void* self);
 	[LinkName("QWidget_ChildrenRect")]
-	public static extern QRect_Ptr* QWidget_ChildrenRect(QWidget_Ptr* self);
+	public static extern void* QWidget_ChildrenRect(void* self);
 	[LinkName("QWidget_ChildrenRegion")]
-	public static extern QRegion_Ptr* QWidget_ChildrenRegion(QWidget_Ptr* self);
+	public static extern void* QWidget_ChildrenRegion(void* self);
 	[LinkName("QWidget_MinimumSize")]
-	public static extern QSize_Ptr* QWidget_MinimumSize(QWidget_Ptr* self);
+	public static extern void* QWidget_MinimumSize(void* self);
 	[LinkName("QWidget_MaximumSize")]
-	public static extern QSize_Ptr* QWidget_MaximumSize(QWidget_Ptr* self);
+	public static extern void* QWidget_MaximumSize(void* self);
 	[LinkName("QWidget_MinimumWidth")]
-	public static extern c_int QWidget_MinimumWidth(QWidget_Ptr* self);
+	public static extern c_int QWidget_MinimumWidth(void* self);
 	[LinkName("QWidget_MinimumHeight")]
-	public static extern c_int QWidget_MinimumHeight(QWidget_Ptr* self);
+	public static extern c_int QWidget_MinimumHeight(void* self);
 	[LinkName("QWidget_MaximumWidth")]
-	public static extern c_int QWidget_MaximumWidth(QWidget_Ptr* self);
+	public static extern c_int QWidget_MaximumWidth(void* self);
 	[LinkName("QWidget_MaximumHeight")]
-	public static extern c_int QWidget_MaximumHeight(QWidget_Ptr* self);
+	public static extern c_int QWidget_MaximumHeight(void* self);
 	[LinkName("QWidget_SetMinimumSize")]
-	public static extern void QWidget_SetMinimumSize(QWidget_Ptr* self, QSize_Ptr* minimumSize);
+	public static extern void QWidget_SetMinimumSize(void* self, void** minimumSize);
 	[LinkName("QWidget_SetMinimumSize2")]
-	public static extern void QWidget_SetMinimumSize2(QWidget_Ptr* self, c_int minw, c_int minh);
+	public static extern void QWidget_SetMinimumSize2(void* self, c_int minw, c_int minh);
 	[LinkName("QWidget_SetMaximumSize")]
-	public static extern void QWidget_SetMaximumSize(QWidget_Ptr* self, QSize_Ptr* maximumSize);
+	public static extern void QWidget_SetMaximumSize(void* self, void** maximumSize);
 	[LinkName("QWidget_SetMaximumSize2")]
-	public static extern void QWidget_SetMaximumSize2(QWidget_Ptr* self, c_int maxw, c_int maxh);
+	public static extern void QWidget_SetMaximumSize2(void* self, c_int maxw, c_int maxh);
 	[LinkName("QWidget_SetMinimumWidth")]
-	public static extern void QWidget_SetMinimumWidth(QWidget_Ptr* self, c_int minw);
+	public static extern void QWidget_SetMinimumWidth(void* self, c_int minw);
 	[LinkName("QWidget_SetMinimumHeight")]
-	public static extern void QWidget_SetMinimumHeight(QWidget_Ptr* self, c_int minh);
+	public static extern void QWidget_SetMinimumHeight(void* self, c_int minh);
 	[LinkName("QWidget_SetMaximumWidth")]
-	public static extern void QWidget_SetMaximumWidth(QWidget_Ptr* self, c_int maxw);
+	public static extern void QWidget_SetMaximumWidth(void* self, c_int maxw);
 	[LinkName("QWidget_SetMaximumHeight")]
-	public static extern void QWidget_SetMaximumHeight(QWidget_Ptr* self, c_int maxh);
+	public static extern void QWidget_SetMaximumHeight(void* self, c_int maxh);
 	[LinkName("QWidget_SizeIncrement")]
-	public static extern QSize_Ptr* QWidget_SizeIncrement(QWidget_Ptr* self);
+	public static extern void* QWidget_SizeIncrement(void* self);
 	[LinkName("QWidget_SetSizeIncrement")]
-	public static extern void QWidget_SetSizeIncrement(QWidget_Ptr* self, QSize_Ptr* sizeIncrement);
+	public static extern void QWidget_SetSizeIncrement(void* self, void** sizeIncrement);
 	[LinkName("QWidget_SetSizeIncrement2")]
-	public static extern void QWidget_SetSizeIncrement2(QWidget_Ptr* self, c_int w, c_int h);
+	public static extern void QWidget_SetSizeIncrement2(void* self, c_int w, c_int h);
 	[LinkName("QWidget_BaseSize")]
-	public static extern QSize_Ptr* QWidget_BaseSize(QWidget_Ptr* self);
+	public static extern void* QWidget_BaseSize(void* self);
 	[LinkName("QWidget_SetBaseSize")]
-	public static extern void QWidget_SetBaseSize(QWidget_Ptr* self, QSize_Ptr* baseSize);
+	public static extern void QWidget_SetBaseSize(void* self, void** baseSize);
 	[LinkName("QWidget_SetBaseSize2")]
-	public static extern void QWidget_SetBaseSize2(QWidget_Ptr* self, c_int basew, c_int baseh);
+	public static extern void QWidget_SetBaseSize2(void* self, c_int basew, c_int baseh);
 	[LinkName("QWidget_SetFixedSize")]
-	public static extern void QWidget_SetFixedSize(QWidget_Ptr* self, QSize_Ptr* fixedSize);
+	public static extern void QWidget_SetFixedSize(void* self, void** fixedSize);
 	[LinkName("QWidget_SetFixedSize2")]
-	public static extern void QWidget_SetFixedSize2(QWidget_Ptr* self, c_int w, c_int h);
+	public static extern void QWidget_SetFixedSize2(void* self, c_int w, c_int h);
 	[LinkName("QWidget_SetFixedWidth")]
-	public static extern void QWidget_SetFixedWidth(QWidget_Ptr* self, c_int w);
+	public static extern void QWidget_SetFixedWidth(void* self, c_int w);
 	[LinkName("QWidget_SetFixedHeight")]
-	public static extern void QWidget_SetFixedHeight(QWidget_Ptr* self, c_int h);
+	public static extern void QWidget_SetFixedHeight(void* self, c_int h);
 	[LinkName("QWidget_MapToGlobal")]
-	public static extern QPointF_Ptr* QWidget_MapToGlobal(QWidget_Ptr* self, QPointF_Ptr* param1);
+	public static extern void* QWidget_MapToGlobal(void* self, void** param1);
 	[LinkName("QWidget_MapToGlobal2")]
-	public static extern QPoint_Ptr* QWidget_MapToGlobal2(QWidget_Ptr* self, QPoint_Ptr* param1);
+	public static extern void* QWidget_MapToGlobal2(void* self, void** param1);
 	[LinkName("QWidget_MapFromGlobal")]
-	public static extern QPointF_Ptr* QWidget_MapFromGlobal(QWidget_Ptr* self, QPointF_Ptr* param1);
+	public static extern void* QWidget_MapFromGlobal(void* self, void** param1);
 	[LinkName("QWidget_MapFromGlobal2")]
-	public static extern QPoint_Ptr* QWidget_MapFromGlobal2(QWidget_Ptr* self, QPoint_Ptr* param1);
+	public static extern void* QWidget_MapFromGlobal2(void* self, void** param1);
 	[LinkName("QWidget_MapToParent")]
-	public static extern QPointF_Ptr* QWidget_MapToParent(QWidget_Ptr* self, QPointF_Ptr* param1);
+	public static extern void* QWidget_MapToParent(void* self, void** param1);
 	[LinkName("QWidget_MapToParent2")]
-	public static extern QPoint_Ptr* QWidget_MapToParent2(QWidget_Ptr* self, QPoint_Ptr* param1);
+	public static extern void* QWidget_MapToParent2(void* self, void** param1);
 	[LinkName("QWidget_MapFromParent")]
-	public static extern QPointF_Ptr* QWidget_MapFromParent(QWidget_Ptr* self, QPointF_Ptr* param1);
+	public static extern void* QWidget_MapFromParent(void* self, void** param1);
 	[LinkName("QWidget_MapFromParent2")]
-	public static extern QPoint_Ptr* QWidget_MapFromParent2(QWidget_Ptr* self, QPoint_Ptr* param1);
+	public static extern void* QWidget_MapFromParent2(void* self, void** param1);
 	[LinkName("QWidget_MapTo")]
-	public static extern QPointF_Ptr* QWidget_MapTo(QWidget_Ptr* self, QWidget_Ptr** param1, QPointF_Ptr* param2);
+	public static extern void* QWidget_MapTo(void* self, void** param1, void** param2);
 	[LinkName("QWidget_MapTo2")]
-	public static extern QPoint_Ptr* QWidget_MapTo2(QWidget_Ptr* self, QWidget_Ptr** param1, QPoint_Ptr* param2);
+	public static extern void* QWidget_MapTo2(void* self, void** param1, void** param2);
 	[LinkName("QWidget_MapFrom")]
-	public static extern QPointF_Ptr* QWidget_MapFrom(QWidget_Ptr* self, QWidget_Ptr** param1, QPointF_Ptr* param2);
+	public static extern void* QWidget_MapFrom(void* self, void** param1, void** param2);
 	[LinkName("QWidget_MapFrom2")]
-	public static extern QPoint_Ptr* QWidget_MapFrom2(QWidget_Ptr* self, QWidget_Ptr** param1, QPoint_Ptr* param2);
+	public static extern void* QWidget_MapFrom2(void* self, void** param1, void** param2);
 	[LinkName("QWidget_Window")]
-	public static extern QWidget_Ptr** QWidget_Window(QWidget_Ptr* self);
+	public static extern void** QWidget_Window(void* self);
 	[LinkName("QWidget_NativeParentWidget")]
-	public static extern QWidget_Ptr** QWidget_NativeParentWidget(QWidget_Ptr* self);
+	public static extern void** QWidget_NativeParentWidget(void* self);
 	[LinkName("QWidget_TopLevelWidget")]
-	public static extern QWidget_Ptr** QWidget_TopLevelWidget(QWidget_Ptr* self);
+	public static extern void** QWidget_TopLevelWidget(void* self);
 	[LinkName("QWidget_Palette")]
-	public static extern QPalette_Ptr* QWidget_Palette(QWidget_Ptr* self);
+	public static extern void** QWidget_Palette(void* self);
 	[LinkName("QWidget_SetPalette")]
-	public static extern void QWidget_SetPalette(QWidget_Ptr* self, QPalette_Ptr* palette);
+	public static extern void QWidget_SetPalette(void* self, void** palette);
 	[LinkName("QWidget_SetBackgroundRole")]
-	public static extern void QWidget_SetBackgroundRole(QWidget_Ptr* self, QPalette_ColorRole backgroundRole);
+	public static extern void QWidget_SetBackgroundRole(void* self, QPalette_ColorRole backgroundRole);
 	[LinkName("QWidget_BackgroundRole")]
-	public static extern QPalette_ColorRole QWidget_BackgroundRole(QWidget_Ptr* self);
+	public static extern QPalette_ColorRole QWidget_BackgroundRole(void* self);
 	[LinkName("QWidget_SetForegroundRole")]
-	public static extern void QWidget_SetForegroundRole(QWidget_Ptr* self, QPalette_ColorRole foregroundRole);
+	public static extern void QWidget_SetForegroundRole(void* self, QPalette_ColorRole foregroundRole);
 	[LinkName("QWidget_ForegroundRole")]
-	public static extern QPalette_ColorRole QWidget_ForegroundRole(QWidget_Ptr* self);
+	public static extern QPalette_ColorRole QWidget_ForegroundRole(void* self);
 	[LinkName("QWidget_Font")]
-	public static extern QFont_Ptr* QWidget_Font(QWidget_Ptr* self);
+	public static extern void** QWidget_Font(void* self);
 	[LinkName("QWidget_SetFont")]
-	public static extern void QWidget_SetFont(QWidget_Ptr* self, QFont_Ptr* font);
+	public static extern void QWidget_SetFont(void* self, void** font);
 	[LinkName("QWidget_FontMetrics")]
-	public static extern QFontMetrics_Ptr* QWidget_FontMetrics(QWidget_Ptr* self);
+	public static extern void* QWidget_FontMetrics(void* self);
 	[LinkName("QWidget_FontInfo")]
-	public static extern QFontInfo_Ptr* QWidget_FontInfo(QWidget_Ptr* self);
+	public static extern void* QWidget_FontInfo(void* self);
 	[LinkName("QWidget_Cursor")]
-	public static extern QCursor_Ptr* QWidget_Cursor(QWidget_Ptr* self);
+	public static extern void* QWidget_Cursor(void* self);
 	[LinkName("QWidget_SetCursor")]
-	public static extern void QWidget_SetCursor(QWidget_Ptr* self, QCursor_Ptr* cursor);
+	public static extern void QWidget_SetCursor(void* self, void** cursor);
 	[LinkName("QWidget_UnsetCursor")]
-	public static extern void QWidget_UnsetCursor(QWidget_Ptr* self);
+	public static extern void QWidget_UnsetCursor(void* self);
 	[LinkName("QWidget_SetMouseTracking")]
-	public static extern void QWidget_SetMouseTracking(QWidget_Ptr* self, bool enable);
+	public static extern void QWidget_SetMouseTracking(void* self, bool enable);
 	[LinkName("QWidget_HasMouseTracking")]
-	public static extern bool QWidget_HasMouseTracking(QWidget_Ptr* self);
+	public static extern bool QWidget_HasMouseTracking(void* self);
 	[LinkName("QWidget_UnderMouse")]
-	public static extern bool QWidget_UnderMouse(QWidget_Ptr* self);
+	public static extern bool QWidget_UnderMouse(void* self);
 	[LinkName("QWidget_SetTabletTracking")]
-	public static extern void QWidget_SetTabletTracking(QWidget_Ptr* self, bool enable);
+	public static extern void QWidget_SetTabletTracking(void* self, bool enable);
 	[LinkName("QWidget_HasTabletTracking")]
-	public static extern bool QWidget_HasTabletTracking(QWidget_Ptr* self);
+	public static extern bool QWidget_HasTabletTracking(void* self);
 	[LinkName("QWidget_SetMask")]
-	public static extern void QWidget_SetMask(QWidget_Ptr* self, QBitmap_Ptr* mask);
+	public static extern void QWidget_SetMask(void* self, void** mask);
 	[LinkName("QWidget_SetMask2")]
-	public static extern void QWidget_SetMask2(QWidget_Ptr* self, QRegion_Ptr* mask);
+	public static extern void QWidget_SetMask2(void* self, void** mask);
 	[LinkName("QWidget_Mask")]
-	public static extern QRegion_Ptr* QWidget_Mask(QWidget_Ptr* self);
+	public static extern void* QWidget_Mask(void* self);
 	[LinkName("QWidget_ClearMask")]
-	public static extern void QWidget_ClearMask(QWidget_Ptr* self);
+	public static extern void QWidget_ClearMask(void* self);
 	[LinkName("QWidget_Render")]
-	public static extern void QWidget_Render(QWidget_Ptr* self, QPaintDevice_Ptr** target);
+	public static extern void QWidget_Render(void* self, void** target);
 	[LinkName("QWidget_Render2")]
-	public static extern void QWidget_Render2(QWidget_Ptr* self, QPainter_Ptr** painter);
+	public static extern void QWidget_Render2(void* self, void** painter);
 	[LinkName("QWidget_Grab")]
-	public static extern QPixmap_Ptr* QWidget_Grab(QWidget_Ptr* self);
+	public static extern void* QWidget_Grab(void* self);
 	[LinkName("QWidget_GraphicsEffect")]
-	public static extern QGraphicsEffect_Ptr** QWidget_GraphicsEffect(QWidget_Ptr* self);
+	public static extern void** QWidget_GraphicsEffect(void* self);
 	[LinkName("QWidget_SetGraphicsEffect")]
-	public static extern void QWidget_SetGraphicsEffect(QWidget_Ptr* self, QGraphicsEffect_Ptr** effect);
+	public static extern void QWidget_SetGraphicsEffect(void* self, void** effect);
 	[LinkName("QWidget_GrabGesture")]
-	public static extern void QWidget_GrabGesture(QWidget_Ptr* self, Qt_GestureType type);
+	public static extern void QWidget_GrabGesture(void* self, Qt_GestureType type);
 	[LinkName("QWidget_UngrabGesture")]
-	public static extern void QWidget_UngrabGesture(QWidget_Ptr* self, Qt_GestureType type);
+	public static extern void QWidget_UngrabGesture(void* self, Qt_GestureType type);
 	[LinkName("QWidget_SetWindowTitle")]
-	public static extern void QWidget_SetWindowTitle(QWidget_Ptr* self, libqt_string windowTitle);
+	public static extern void QWidget_SetWindowTitle(void* self, libqt_string windowTitle);
 	[LinkName("QWidget_SetStyleSheet")]
-	public static extern void QWidget_SetStyleSheet(QWidget_Ptr* self, libqt_string styleSheet);
+	public static extern void QWidget_SetStyleSheet(void* self, libqt_string styleSheet);
 	[LinkName("QWidget_StyleSheet")]
-	public static extern libqt_string QWidget_StyleSheet(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_StyleSheet(void* self);
 	[LinkName("QWidget_WindowTitle")]
-	public static extern libqt_string QWidget_WindowTitle(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_WindowTitle(void* self);
 	[LinkName("QWidget_SetWindowIcon")]
-	public static extern void QWidget_SetWindowIcon(QWidget_Ptr* self, QIcon_Ptr* icon);
+	public static extern void QWidget_SetWindowIcon(void* self, void** icon);
 	[LinkName("QWidget_WindowIcon")]
-	public static extern QIcon_Ptr* QWidget_WindowIcon(QWidget_Ptr* self);
+	public static extern void* QWidget_WindowIcon(void* self);
 	[LinkName("QWidget_SetWindowIconText")]
-	public static extern void QWidget_SetWindowIconText(QWidget_Ptr* self, libqt_string windowIconText);
+	public static extern void QWidget_SetWindowIconText(void* self, libqt_string windowIconText);
 	[LinkName("QWidget_WindowIconText")]
-	public static extern libqt_string QWidget_WindowIconText(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_WindowIconText(void* self);
 	[LinkName("QWidget_SetWindowRole")]
-	public static extern void QWidget_SetWindowRole(QWidget_Ptr* self, libqt_string windowRole);
+	public static extern void QWidget_SetWindowRole(void* self, libqt_string windowRole);
 	[LinkName("QWidget_WindowRole")]
-	public static extern libqt_string QWidget_WindowRole(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_WindowRole(void* self);
 	[LinkName("QWidget_SetWindowFilePath")]
-	public static extern void QWidget_SetWindowFilePath(QWidget_Ptr* self, libqt_string filePath);
+	public static extern void QWidget_SetWindowFilePath(void* self, libqt_string filePath);
 	[LinkName("QWidget_WindowFilePath")]
-	public static extern libqt_string QWidget_WindowFilePath(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_WindowFilePath(void* self);
 	[LinkName("QWidget_SetWindowOpacity")]
-	public static extern void QWidget_SetWindowOpacity(QWidget_Ptr* self, double level);
+	public static extern void QWidget_SetWindowOpacity(void* self, double level);
 	[LinkName("QWidget_WindowOpacity")]
-	public static extern double QWidget_WindowOpacity(QWidget_Ptr* self);
+	public static extern double QWidget_WindowOpacity(void* self);
 	[LinkName("QWidget_IsWindowModified")]
-	public static extern bool QWidget_IsWindowModified(QWidget_Ptr* self);
+	public static extern bool QWidget_IsWindowModified(void* self);
 	[LinkName("QWidget_SetToolTip")]
-	public static extern void QWidget_SetToolTip(QWidget_Ptr* self, libqt_string toolTip);
+	public static extern void QWidget_SetToolTip(void* self, libqt_string toolTip);
 	[LinkName("QWidget_ToolTip")]
-	public static extern libqt_string QWidget_ToolTip(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_ToolTip(void* self);
 	[LinkName("QWidget_SetToolTipDuration")]
-	public static extern void QWidget_SetToolTipDuration(QWidget_Ptr* self, c_int msec);
+	public static extern void QWidget_SetToolTipDuration(void* self, c_int msec);
 	[LinkName("QWidget_ToolTipDuration")]
-	public static extern c_int QWidget_ToolTipDuration(QWidget_Ptr* self);
+	public static extern c_int QWidget_ToolTipDuration(void* self);
 	[LinkName("QWidget_SetStatusTip")]
-	public static extern void QWidget_SetStatusTip(QWidget_Ptr* self, libqt_string statusTip);
+	public static extern void QWidget_SetStatusTip(void* self, libqt_string statusTip);
 	[LinkName("QWidget_StatusTip")]
-	public static extern libqt_string QWidget_StatusTip(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_StatusTip(void* self);
 	[LinkName("QWidget_SetWhatsThis")]
-	public static extern void QWidget_SetWhatsThis(QWidget_Ptr* self, libqt_string whatsThis);
+	public static extern void QWidget_SetWhatsThis(void* self, libqt_string whatsThis);
 	[LinkName("QWidget_WhatsThis")]
-	public static extern libqt_string QWidget_WhatsThis(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_WhatsThis(void* self);
 	[LinkName("QWidget_AccessibleName")]
-	public static extern libqt_string QWidget_AccessibleName(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_AccessibleName(void* self);
 	[LinkName("QWidget_SetAccessibleName")]
-	public static extern void QWidget_SetAccessibleName(QWidget_Ptr* self, libqt_string name);
+	public static extern void QWidget_SetAccessibleName(void* self, libqt_string name);
 	[LinkName("QWidget_AccessibleDescription")]
-	public static extern libqt_string QWidget_AccessibleDescription(QWidget_Ptr* self);
+	public static extern libqt_string QWidget_AccessibleDescription(void* self);
 	[LinkName("QWidget_SetAccessibleDescription")]
-	public static extern void QWidget_SetAccessibleDescription(QWidget_Ptr* self, libqt_string description);
+	public static extern void QWidget_SetAccessibleDescription(void* self, libqt_string description);
 	[LinkName("QWidget_SetLayoutDirection")]
-	public static extern void QWidget_SetLayoutDirection(QWidget_Ptr* self, Qt_LayoutDirection direction);
+	public static extern void QWidget_SetLayoutDirection(void* self, Qt_LayoutDirection direction);
 	[LinkName("QWidget_LayoutDirection")]
-	public static extern Qt_LayoutDirection QWidget_LayoutDirection(QWidget_Ptr* self);
+	public static extern Qt_LayoutDirection QWidget_LayoutDirection(void* self);
 	[LinkName("QWidget_UnsetLayoutDirection")]
-	public static extern void QWidget_UnsetLayoutDirection(QWidget_Ptr* self);
+	public static extern void QWidget_UnsetLayoutDirection(void* self);
 	[LinkName("QWidget_SetLocale")]
-	public static extern void QWidget_SetLocale(QWidget_Ptr* self, QLocale_Ptr* locale);
+	public static extern void QWidget_SetLocale(void* self, void** locale);
 	[LinkName("QWidget_Locale")]
-	public static extern QLocale_Ptr* QWidget_Locale(QWidget_Ptr* self);
+	public static extern void* QWidget_Locale(void* self);
 	[LinkName("QWidget_UnsetLocale")]
-	public static extern void QWidget_UnsetLocale(QWidget_Ptr* self);
+	public static extern void QWidget_UnsetLocale(void* self);
 	[LinkName("QWidget_IsRightToLeft")]
-	public static extern bool QWidget_IsRightToLeft(QWidget_Ptr* self);
+	public static extern bool QWidget_IsRightToLeft(void* self);
 	[LinkName("QWidget_IsLeftToRight")]
-	public static extern bool QWidget_IsLeftToRight(QWidget_Ptr* self);
+	public static extern bool QWidget_IsLeftToRight(void* self);
 	[LinkName("QWidget_SetFocus")]
-	public static extern void QWidget_SetFocus(QWidget_Ptr* self);
+	public static extern void QWidget_SetFocus(void* self);
 	[LinkName("QWidget_IsActiveWindow")]
-	public static extern bool QWidget_IsActiveWindow(QWidget_Ptr* self);
+	public static extern bool QWidget_IsActiveWindow(void* self);
 	[LinkName("QWidget_ActivateWindow")]
-	public static extern void QWidget_ActivateWindow(QWidget_Ptr* self);
+	public static extern void QWidget_ActivateWindow(void* self);
 	[LinkName("QWidget_ClearFocus")]
-	public static extern void QWidget_ClearFocus(QWidget_Ptr* self);
+	public static extern void QWidget_ClearFocus(void* self);
 	[LinkName("QWidget_SetFocus2")]
-	public static extern void QWidget_SetFocus2(QWidget_Ptr* self, Qt_FocusReason reason);
+	public static extern void QWidget_SetFocus2(void* self, Qt_FocusReason reason);
 	[LinkName("QWidget_FocusPolicy")]
-	public static extern Qt_FocusPolicy QWidget_FocusPolicy(QWidget_Ptr* self);
+	public static extern Qt_FocusPolicy QWidget_FocusPolicy(void* self);
 	[LinkName("QWidget_SetFocusPolicy")]
-	public static extern void QWidget_SetFocusPolicy(QWidget_Ptr* self, Qt_FocusPolicy policy);
+	public static extern void QWidget_SetFocusPolicy(void* self, Qt_FocusPolicy policy);
 	[LinkName("QWidget_HasFocus")]
-	public static extern bool QWidget_HasFocus(QWidget_Ptr* self);
+	public static extern bool QWidget_HasFocus(void* self);
 	[LinkName("QWidget_SetTabOrder")]
-	public static extern void QWidget_SetTabOrder(QWidget_Ptr** param1, QWidget_Ptr** param2);
+	public static extern void QWidget_SetTabOrder(void** param1, void** param2);
 	[LinkName("QWidget_SetFocusProxy")]
-	public static extern void QWidget_SetFocusProxy(QWidget_Ptr* self, QWidget_Ptr** focusProxy);
+	public static extern void QWidget_SetFocusProxy(void* self, void** focusProxy);
 	[LinkName("QWidget_FocusProxy")]
-	public static extern QWidget_Ptr** QWidget_FocusProxy(QWidget_Ptr* self);
+	public static extern void** QWidget_FocusProxy(void* self);
 	[LinkName("QWidget_ContextMenuPolicy")]
-	public static extern Qt_ContextMenuPolicy QWidget_ContextMenuPolicy(QWidget_Ptr* self);
+	public static extern Qt_ContextMenuPolicy QWidget_ContextMenuPolicy(void* self);
 	[LinkName("QWidget_SetContextMenuPolicy")]
-	public static extern void QWidget_SetContextMenuPolicy(QWidget_Ptr* self, Qt_ContextMenuPolicy policy);
+	public static extern void QWidget_SetContextMenuPolicy(void* self, Qt_ContextMenuPolicy policy);
 	[LinkName("QWidget_GrabMouse")]
-	public static extern void QWidget_GrabMouse(QWidget_Ptr* self);
+	public static extern void QWidget_GrabMouse(void* self);
 	[LinkName("QWidget_GrabMouse2")]
-	public static extern void QWidget_GrabMouse2(QWidget_Ptr* self, QCursor_Ptr* param1);
+	public static extern void QWidget_GrabMouse2(void* self, void** param1);
 	[LinkName("QWidget_ReleaseMouse")]
-	public static extern void QWidget_ReleaseMouse(QWidget_Ptr* self);
+	public static extern void QWidget_ReleaseMouse(void* self);
 	[LinkName("QWidget_GrabKeyboard")]
-	public static extern void QWidget_GrabKeyboard(QWidget_Ptr* self);
+	public static extern void QWidget_GrabKeyboard(void* self);
 	[LinkName("QWidget_ReleaseKeyboard")]
-	public static extern void QWidget_ReleaseKeyboard(QWidget_Ptr* self);
+	public static extern void QWidget_ReleaseKeyboard(void* self);
 	[LinkName("QWidget_GrabShortcut")]
-	public static extern c_int QWidget_GrabShortcut(QWidget_Ptr* self, QKeySequence_Ptr* key);
+	public static extern c_int QWidget_GrabShortcut(void* self, void** key);
 	[LinkName("QWidget_ReleaseShortcut")]
-	public static extern void QWidget_ReleaseShortcut(QWidget_Ptr* self, c_int id);
+	public static extern void QWidget_ReleaseShortcut(void* self, c_int id);
 	[LinkName("QWidget_SetShortcutEnabled")]
-	public static extern void QWidget_SetShortcutEnabled(QWidget_Ptr* self, c_int id);
+	public static extern void QWidget_SetShortcutEnabled(void* self, c_int id);
 	[LinkName("QWidget_SetShortcutAutoRepeat")]
-	public static extern void QWidget_SetShortcutAutoRepeat(QWidget_Ptr* self, c_int id);
+	public static extern void QWidget_SetShortcutAutoRepeat(void* self, c_int id);
 	[LinkName("QWidget_MouseGrabber")]
-	public static extern QWidget_Ptr** QWidget_MouseGrabber();
+	public static extern void** QWidget_MouseGrabber();
 	[LinkName("QWidget_KeyboardGrabber")]
-	public static extern QWidget_Ptr** QWidget_KeyboardGrabber();
+	public static extern void** QWidget_KeyboardGrabber();
 	[LinkName("QWidget_UpdatesEnabled")]
-	public static extern bool QWidget_UpdatesEnabled(QWidget_Ptr* self);
+	public static extern bool QWidget_UpdatesEnabled(void* self);
 	[LinkName("QWidget_SetUpdatesEnabled")]
-	public static extern void QWidget_SetUpdatesEnabled(QWidget_Ptr* self, bool enable);
+	public static extern void QWidget_SetUpdatesEnabled(void* self, bool enable);
 	[LinkName("QWidget_GraphicsProxyWidget")]
-	public static extern QGraphicsProxyWidget_Ptr** QWidget_GraphicsProxyWidget(QWidget_Ptr* self);
+	public static extern void** QWidget_GraphicsProxyWidget(void* self);
 	[LinkName("QWidget_Update")]
-	public static extern void QWidget_Update(QWidget_Ptr* self);
+	public static extern void QWidget_Update(void* self);
 	[LinkName("QWidget_Repaint")]
-	public static extern void QWidget_Repaint(QWidget_Ptr* self);
+	public static extern void QWidget_Repaint(void* self);
 	[LinkName("QWidget_Update2")]
-	public static extern void QWidget_Update2(QWidget_Ptr* self, c_int x, c_int y, c_int w, c_int h);
+	public static extern void QWidget_Update2(void* self, c_int x, c_int y, c_int w, c_int h);
 	[LinkName("QWidget_Update3")]
-	public static extern void QWidget_Update3(QWidget_Ptr* self, QRect_Ptr* param1);
+	public static extern void QWidget_Update3(void* self, void** param1);
 	[LinkName("QWidget_Update4")]
-	public static extern void QWidget_Update4(QWidget_Ptr* self, QRegion_Ptr* param1);
+	public static extern void QWidget_Update4(void* self, void** param1);
 	[LinkName("QWidget_Repaint2")]
-	public static extern void QWidget_Repaint2(QWidget_Ptr* self, c_int x, c_int y, c_int w, c_int h);
+	public static extern void QWidget_Repaint2(void* self, c_int x, c_int y, c_int w, c_int h);
 	[LinkName("QWidget_Repaint3")]
-	public static extern void QWidget_Repaint3(QWidget_Ptr* self, QRect_Ptr* param1);
+	public static extern void QWidget_Repaint3(void* self, void** param1);
 	[LinkName("QWidget_Repaint4")]
-	public static extern void QWidget_Repaint4(QWidget_Ptr* self, QRegion_Ptr* param1);
+	public static extern void QWidget_Repaint4(void* self, void** param1);
 	[LinkName("QWidget_SetVisible")]
-	public static extern void QWidget_SetVisible(QWidget_Ptr* self, bool visible);
+	public static extern void QWidget_SetVisible(void* self, bool visible);
 	[LinkName("QWidget_SetHidden")]
-	public static extern void QWidget_SetHidden(QWidget_Ptr* self, bool hidden);
+	public static extern void QWidget_SetHidden(void* self, bool hidden);
 	[LinkName("QWidget_Show")]
-	public static extern void QWidget_Show(QWidget_Ptr* self);
+	public static extern void QWidget_Show(void* self);
 	[LinkName("QWidget_Hide")]
-	public static extern void QWidget_Hide(QWidget_Ptr* self);
+	public static extern void QWidget_Hide(void* self);
 	[LinkName("QWidget_ShowMinimized")]
-	public static extern void QWidget_ShowMinimized(QWidget_Ptr* self);
+	public static extern void QWidget_ShowMinimized(void* self);
 	[LinkName("QWidget_ShowMaximized")]
-	public static extern void QWidget_ShowMaximized(QWidget_Ptr* self);
+	public static extern void QWidget_ShowMaximized(void* self);
 	[LinkName("QWidget_ShowFullScreen")]
-	public static extern void QWidget_ShowFullScreen(QWidget_Ptr* self);
+	public static extern void QWidget_ShowFullScreen(void* self);
 	[LinkName("QWidget_ShowNormal")]
-	public static extern void QWidget_ShowNormal(QWidget_Ptr* self);
+	public static extern void QWidget_ShowNormal(void* self);
 	[LinkName("QWidget_Close")]
-	public static extern bool QWidget_Close(QWidget_Ptr* self);
+	public static extern bool QWidget_Close(void* self);
 	[LinkName("QWidget_Raise")]
-	public static extern void QWidget_Raise(QWidget_Ptr* self);
+	public static extern void QWidget_Raise(void* self);
 	[LinkName("QWidget_Lower")]
-	public static extern void QWidget_Lower(QWidget_Ptr* self);
+	public static extern void QWidget_Lower(void* self);
 	[LinkName("QWidget_StackUnder")]
-	public static extern void QWidget_StackUnder(QWidget_Ptr* self, QWidget_Ptr** param1);
+	public static extern void QWidget_StackUnder(void* self, void** param1);
 	[LinkName("QWidget_Move")]
-	public static extern void QWidget_Move(QWidget_Ptr* self, c_int x, c_int y);
+	public static extern void QWidget_Move(void* self, c_int x, c_int y);
 	[LinkName("QWidget_Move2")]
-	public static extern void QWidget_Move2(QWidget_Ptr* self, QPoint_Ptr* param1);
+	public static extern void QWidget_Move2(void* self, void** param1);
 	[LinkName("QWidget_Resize")]
-	public static extern void QWidget_Resize(QWidget_Ptr* self, c_int w, c_int h);
+	public static extern void QWidget_Resize(void* self, c_int w, c_int h);
 	[LinkName("QWidget_Resize2")]
-	public static extern void QWidget_Resize2(QWidget_Ptr* self, QSize_Ptr* param1);
+	public static extern void QWidget_Resize2(void* self, void** param1);
 	[LinkName("QWidget_SetGeometry")]
-	public static extern void QWidget_SetGeometry(QWidget_Ptr* self, c_int x, c_int y, c_int w, c_int h);
+	public static extern void QWidget_SetGeometry(void* self, c_int x, c_int y, c_int w, c_int h);
 	[LinkName("QWidget_SetGeometry2")]
-	public static extern void QWidget_SetGeometry2(QWidget_Ptr* self, QRect_Ptr* geometry);
+	public static extern void QWidget_SetGeometry2(void* self, void** geometry);
 	[LinkName("QWidget_SaveGeometry")]
-	public static extern void* QWidget_SaveGeometry(QWidget_Ptr* self);
+	public static extern void* QWidget_SaveGeometry(void* self);
 	[LinkName("QWidget_RestoreGeometry")]
-	public static extern bool QWidget_RestoreGeometry(QWidget_Ptr* self, void** geometry);
+	public static extern bool QWidget_RestoreGeometry(void* self, void** geometry);
 	[LinkName("QWidget_AdjustSize")]
-	public static extern void QWidget_AdjustSize(QWidget_Ptr* self);
+	public static extern void QWidget_AdjustSize(void* self);
 	[LinkName("QWidget_IsVisible")]
-	public static extern bool QWidget_IsVisible(QWidget_Ptr* self);
+	public static extern bool QWidget_IsVisible(void* self);
 	[LinkName("QWidget_IsVisibleTo")]
-	public static extern bool QWidget_IsVisibleTo(QWidget_Ptr* self, QWidget_Ptr** param1);
+	public static extern bool QWidget_IsVisibleTo(void* self, void** param1);
 	[LinkName("QWidget_IsHidden")]
-	public static extern bool QWidget_IsHidden(QWidget_Ptr* self);
+	public static extern bool QWidget_IsHidden(void* self);
 	[LinkName("QWidget_IsMinimized")]
-	public static extern bool QWidget_IsMinimized(QWidget_Ptr* self);
+	public static extern bool QWidget_IsMinimized(void* self);
 	[LinkName("QWidget_IsMaximized")]
-	public static extern bool QWidget_IsMaximized(QWidget_Ptr* self);
+	public static extern bool QWidget_IsMaximized(void* self);
 	[LinkName("QWidget_IsFullScreen")]
-	public static extern bool QWidget_IsFullScreen(QWidget_Ptr* self);
+	public static extern bool QWidget_IsFullScreen(void* self);
 	[LinkName("QWidget_WindowState")]
-	public static extern void* QWidget_WindowState(QWidget_Ptr* self);
+	public static extern void* QWidget_WindowState(void* self);
 	[LinkName("QWidget_SetWindowState")]
-	public static extern void QWidget_SetWindowState(QWidget_Ptr* self, void* state);
+	public static extern void QWidget_SetWindowState(void* self, void* state);
 	[LinkName("QWidget_OverrideWindowState")]
-	public static extern void QWidget_OverrideWindowState(QWidget_Ptr* self, void* state);
+	public static extern void QWidget_OverrideWindowState(void* self, void* state);
 	[LinkName("QWidget_SizeHint")]
-	public static extern QSize_Ptr* QWidget_SizeHint(QWidget_Ptr* self);
+	public static extern void* QWidget_SizeHint(void* self);
 	[LinkName("QWidget_MinimumSizeHint")]
-	public static extern QSize_Ptr* QWidget_MinimumSizeHint(QWidget_Ptr* self);
+	public static extern void* QWidget_MinimumSizeHint(void* self);
 	[LinkName("QWidget_SizePolicy")]
-	public static extern QSizePolicy_Ptr* QWidget_SizePolicy(QWidget_Ptr* self);
+	public static extern void* QWidget_SizePolicy(void* self);
 	[LinkName("QWidget_SetSizePolicy")]
-	public static extern void QWidget_SetSizePolicy(QWidget_Ptr* self, QSizePolicy_Ptr* sizePolicy);
+	public static extern void QWidget_SetSizePolicy(void* self, void* sizePolicy);
 	[LinkName("QWidget_SetSizePolicy2")]
-	public static extern void QWidget_SetSizePolicy2(QWidget_Ptr* self, QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical);
+	public static extern void QWidget_SetSizePolicy2(void* self, QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical);
 	[LinkName("QWidget_HeightForWidth")]
-	public static extern c_int QWidget_HeightForWidth(QWidget_Ptr* self, c_int param1);
+	public static extern c_int QWidget_HeightForWidth(void* self, c_int param1);
 	[LinkName("QWidget_HasHeightForWidth")]
-	public static extern bool QWidget_HasHeightForWidth(QWidget_Ptr* self);
+	public static extern bool QWidget_HasHeightForWidth(void* self);
 	[LinkName("QWidget_VisibleRegion")]
-	public static extern QRegion_Ptr* QWidget_VisibleRegion(QWidget_Ptr* self);
+	public static extern void* QWidget_VisibleRegion(void* self);
 	[LinkName("QWidget_SetContentsMargins")]
-	public static extern void QWidget_SetContentsMargins(QWidget_Ptr* self, c_int left, c_int top, c_int right, c_int bottom);
+	public static extern void QWidget_SetContentsMargins(void* self, c_int left, c_int top, c_int right, c_int bottom);
 	[LinkName("QWidget_SetContentsMargins2")]
-	public static extern void QWidget_SetContentsMargins2(QWidget_Ptr* self, QMargins_Ptr* margins);
+	public static extern void QWidget_SetContentsMargins2(void* self, void** margins);
 	[LinkName("QWidget_ContentsMargins")]
-	public static extern QMargins_Ptr* QWidget_ContentsMargins(QWidget_Ptr* self);
+	public static extern void* QWidget_ContentsMargins(void* self);
 	[LinkName("QWidget_ContentsRect")]
-	public static extern QRect_Ptr* QWidget_ContentsRect(QWidget_Ptr* self);
+	public static extern void* QWidget_ContentsRect(void* self);
 	[LinkName("QWidget_Layout")]
-	public static extern QLayout_Ptr** QWidget_Layout(QWidget_Ptr* self);
+	public static extern void** QWidget_Layout(void* self);
 	[LinkName("QWidget_SetLayout")]
-	public static extern void QWidget_SetLayout(QWidget_Ptr* self, QLayout_Ptr** layout);
+	public static extern void QWidget_SetLayout(void* self, void** layout);
 	[LinkName("QWidget_UpdateGeometry")]
-	public static extern void QWidget_UpdateGeometry(QWidget_Ptr* self);
+	public static extern void QWidget_UpdateGeometry(void* self);
 	[LinkName("QWidget_SetParent")]
-	public static extern void QWidget_SetParent(QWidget_Ptr* self, QWidget_Ptr** parent);
+	public static extern void QWidget_SetParent(void* self, void** parent);
 	[LinkName("QWidget_SetParent2")]
-	public static extern void QWidget_SetParent2(QWidget_Ptr* self, QWidget_Ptr** parent, void* f);
+	public static extern void QWidget_SetParent2(void* self, void** parent, void* f);
 	[LinkName("QWidget_Scroll")]
-	public static extern void QWidget_Scroll(QWidget_Ptr* self, c_int dx, c_int dy);
+	public static extern void QWidget_Scroll(void* self, c_int dx, c_int dy);
 	[LinkName("QWidget_Scroll2")]
-	public static extern void QWidget_Scroll2(QWidget_Ptr* self, c_int dx, c_int dy, QRect_Ptr* param3);
+	public static extern void QWidget_Scroll2(void* self, c_int dx, c_int dy, void** param3);
 	[LinkName("QWidget_FocusWidget")]
-	public static extern QWidget_Ptr** QWidget_FocusWidget(QWidget_Ptr* self);
+	public static extern void** QWidget_FocusWidget(void* self);
 	[LinkName("QWidget_NextInFocusChain")]
-	public static extern QWidget_Ptr** QWidget_NextInFocusChain(QWidget_Ptr* self);
+	public static extern void** QWidget_NextInFocusChain(void* self);
 	[LinkName("QWidget_PreviousInFocusChain")]
-	public static extern QWidget_Ptr** QWidget_PreviousInFocusChain(QWidget_Ptr* self);
+	public static extern void** QWidget_PreviousInFocusChain(void* self);
 	[LinkName("QWidget_AcceptDrops")]
-	public static extern bool QWidget_AcceptDrops(QWidget_Ptr* self);
+	public static extern bool QWidget_AcceptDrops(void* self);
 	[LinkName("QWidget_SetAcceptDrops")]
-	public static extern void QWidget_SetAcceptDrops(QWidget_Ptr* self, bool on);
+	public static extern void QWidget_SetAcceptDrops(void* self, bool on);
 	[LinkName("QWidget_AddAction")]
-	public static extern void QWidget_AddAction(QWidget_Ptr* self, QAction_Ptr** action);
+	public static extern void QWidget_AddAction(void* self, void** action);
 	[LinkName("QWidget_AddActions")]
-	public static extern void QWidget_AddActions(QWidget_Ptr* self, void** actions);
+	public static extern void QWidget_AddActions(void* self, void** actions);
 	[LinkName("QWidget_InsertActions")]
-	public static extern void QWidget_InsertActions(QWidget_Ptr* self, QAction_Ptr** before, void** actions);
+	public static extern void QWidget_InsertActions(void* self, void** before, void** actions);
 	[LinkName("QWidget_InsertAction")]
-	public static extern void QWidget_InsertAction(QWidget_Ptr* self, QAction_Ptr** before, QAction_Ptr** action);
+	public static extern void QWidget_InsertAction(void* self, void** before, void** action);
 	[LinkName("QWidget_RemoveAction")]
-	public static extern void QWidget_RemoveAction(QWidget_Ptr* self, QAction_Ptr** action);
+	public static extern void QWidget_RemoveAction(void* self, void** action);
 	[LinkName("QWidget_Actions")]
-	public static extern void* QWidget_Actions(QWidget_Ptr* self);
+	public static extern void* QWidget_Actions(void* self);
 	[LinkName("QWidget_AddAction2")]
-	public static extern QAction_Ptr** QWidget_AddAction2(QWidget_Ptr* self, libqt_string text);
+	public static extern void** QWidget_AddAction2(void* self, libqt_string text);
 	[LinkName("QWidget_AddAction3")]
-	public static extern QAction_Ptr** QWidget_AddAction3(QWidget_Ptr* self, QIcon_Ptr* icon, libqt_string text);
+	public static extern void** QWidget_AddAction3(void* self, void** icon, libqt_string text);
 	[LinkName("QWidget_AddAction4")]
-	public static extern QAction_Ptr** QWidget_AddAction4(QWidget_Ptr* self, libqt_string text, QKeySequence_Ptr* shortcut);
+	public static extern void** QWidget_AddAction4(void* self, libqt_string text, void** shortcut);
 	[LinkName("QWidget_AddAction5")]
-	public static extern QAction_Ptr** QWidget_AddAction5(QWidget_Ptr* self, QIcon_Ptr* icon, libqt_string text, QKeySequence_Ptr* shortcut);
+	public static extern void** QWidget_AddAction5(void* self, void** icon, libqt_string text, void** shortcut);
 	[LinkName("QWidget_ParentWidget")]
-	public static extern QWidget_Ptr** QWidget_ParentWidget(QWidget_Ptr* self);
+	public static extern void** QWidget_ParentWidget(void* self);
 	[LinkName("QWidget_SetWindowFlags")]
-	public static extern void QWidget_SetWindowFlags(QWidget_Ptr* self, void* type);
+	public static extern void QWidget_SetWindowFlags(void* self, void* type);
 	[LinkName("QWidget_WindowFlags")]
-	public static extern void* QWidget_WindowFlags(QWidget_Ptr* self);
+	public static extern void* QWidget_WindowFlags(void* self);
 	[LinkName("QWidget_SetWindowFlag")]
-	public static extern void QWidget_SetWindowFlag(QWidget_Ptr* self, Qt_WindowType param1);
+	public static extern void QWidget_SetWindowFlag(void* self, Qt_WindowType param1);
 	[LinkName("QWidget_OverrideWindowFlags")]
-	public static extern void QWidget_OverrideWindowFlags(QWidget_Ptr* self, void* type);
+	public static extern void QWidget_OverrideWindowFlags(void* self, void* type);
 	[LinkName("QWidget_WindowType")]
-	public static extern Qt_WindowType QWidget_WindowType(QWidget_Ptr* self);
+	public static extern Qt_WindowType QWidget_WindowType(void* self);
 	[LinkName("QWidget_Find")]
-	public static extern QWidget_Ptr** QWidget_Find(c_ulonglong param1);
+	public static extern void** QWidget_Find(c_ulonglong param1);
 	[LinkName("QWidget_ChildAt")]
-	public static extern QWidget_Ptr** QWidget_ChildAt(QWidget_Ptr* self, c_int x, c_int y);
+	public static extern void** QWidget_ChildAt(void* self, c_int x, c_int y);
 	[LinkName("QWidget_ChildAt2")]
-	public static extern QWidget_Ptr** QWidget_ChildAt2(QWidget_Ptr* self, QPoint_Ptr* p);
+	public static extern void** QWidget_ChildAt2(void* self, void** p);
 	[LinkName("QWidget_SetAttribute")]
-	public static extern void QWidget_SetAttribute(QWidget_Ptr* self, Qt_WidgetAttribute param1);
+	public static extern void QWidget_SetAttribute(void* self, Qt_WidgetAttribute param1);
 	[LinkName("QWidget_TestAttribute")]
-	public static extern bool QWidget_TestAttribute(QWidget_Ptr* self, Qt_WidgetAttribute param1);
+	public static extern bool QWidget_TestAttribute(void* self, Qt_WidgetAttribute param1);
 	[LinkName("QWidget_PaintEngine")]
-	public static extern QPaintEngine_Ptr** QWidget_PaintEngine(QWidget_Ptr* self);
+	public static extern void** QWidget_PaintEngine(void* self);
 	[LinkName("QWidget_EnsurePolished")]
-	public static extern void QWidget_EnsurePolished(QWidget_Ptr* self);
+	public static extern void QWidget_EnsurePolished(void* self);
 	[LinkName("QWidget_IsAncestorOf")]
-	public static extern bool QWidget_IsAncestorOf(QWidget_Ptr* self, QWidget_Ptr** child);
+	public static extern bool QWidget_IsAncestorOf(void* self, void** child);
 	[LinkName("QWidget_AutoFillBackground")]
-	public static extern bool QWidget_AutoFillBackground(QWidget_Ptr* self);
+	public static extern bool QWidget_AutoFillBackground(void* self);
 	[LinkName("QWidget_SetAutoFillBackground")]
-	public static extern void QWidget_SetAutoFillBackground(QWidget_Ptr* self, bool enabled);
+	public static extern void QWidget_SetAutoFillBackground(void* self, bool enabled);
 	[LinkName("QWidget_BackingStore")]
-	public static extern QBackingStore_Ptr** QWidget_BackingStore(QWidget_Ptr* self);
+	public static extern void** QWidget_BackingStore(void* self);
 	[LinkName("QWidget_WindowHandle")]
-	public static extern QWindow_Ptr** QWidget_WindowHandle(QWidget_Ptr* self);
+	public static extern void** QWidget_WindowHandle(void* self);
 	[LinkName("QWidget_Screen")]
-	public static extern QScreen_Ptr** QWidget_Screen(QWidget_Ptr* self);
+	public static extern void** QWidget_Screen(void* self);
 	[LinkName("QWidget_SetScreen")]
-	public static extern void QWidget_SetScreen(QWidget_Ptr* self, QScreen_Ptr** screen);
+	public static extern void QWidget_SetScreen(void* self, void** screen);
 	[LinkName("QWidget_CreateWindowContainer")]
-	public static extern QWidget_Ptr** QWidget_CreateWindowContainer(QWindow_Ptr** window);
+	public static extern void** QWidget_CreateWindowContainer(void** window);
 	[LinkName("QWidget_WindowTitleChanged")]
-	public static extern void QWidget_WindowTitleChanged(QWidget_Ptr* self, libqt_string title);
+	public static extern void QWidget_WindowTitleChanged(void* self, libqt_string title);
 	[LinkName("QWidget_WindowIconChanged")]
-	public static extern void QWidget_WindowIconChanged(QWidget_Ptr* self, QIcon_Ptr* icon);
+	public static extern void QWidget_WindowIconChanged(void* self, void** icon);
 	[LinkName("QWidget_WindowIconTextChanged")]
-	public static extern void QWidget_WindowIconTextChanged(QWidget_Ptr* self, libqt_string iconText);
+	public static extern void QWidget_WindowIconTextChanged(void* self, libqt_string iconText);
 	[LinkName("QWidget_CustomContextMenuRequested")]
-	public static extern void QWidget_CustomContextMenuRequested(QWidget_Ptr* self, QPoint_Ptr* pos);
+	public static extern void QWidget_CustomContextMenuRequested(void* self, void** pos);
 	[LinkName("QWidget_Event")]
-	public static extern bool QWidget_Event(QWidget_Ptr* self, QEvent_Ptr** event);
+	public static extern bool QWidget_Event(void* self, void** event);
 	[LinkName("QWidget_MousePressEvent")]
-	public static extern void QWidget_MousePressEvent(QWidget_Ptr* self, QMouseEvent_Ptr** event);
+	public static extern void QWidget_MousePressEvent(void* self, void** event);
 	[LinkName("QWidget_MouseReleaseEvent")]
-	public static extern void QWidget_MouseReleaseEvent(QWidget_Ptr* self, QMouseEvent_Ptr** event);
+	public static extern void QWidget_MouseReleaseEvent(void* self, void** event);
 	[LinkName("QWidget_MouseDoubleClickEvent")]
-	public static extern void QWidget_MouseDoubleClickEvent(QWidget_Ptr* self, QMouseEvent_Ptr** event);
+	public static extern void QWidget_MouseDoubleClickEvent(void* self, void** event);
 	[LinkName("QWidget_MouseMoveEvent")]
-	public static extern void QWidget_MouseMoveEvent(QWidget_Ptr* self, QMouseEvent_Ptr** event);
+	public static extern void QWidget_MouseMoveEvent(void* self, void** event);
 	[LinkName("QWidget_WheelEvent")]
-	public static extern void QWidget_WheelEvent(QWidget_Ptr* self, QWheelEvent_Ptr** event);
+	public static extern void QWidget_WheelEvent(void* self, void** event);
 	[LinkName("QWidget_KeyPressEvent")]
-	public static extern void QWidget_KeyPressEvent(QWidget_Ptr* self, QKeyEvent_Ptr** event);
+	public static extern void QWidget_KeyPressEvent(void* self, void** event);
 	[LinkName("QWidget_KeyReleaseEvent")]
-	public static extern void QWidget_KeyReleaseEvent(QWidget_Ptr* self, QKeyEvent_Ptr** event);
+	public static extern void QWidget_KeyReleaseEvent(void* self, void** event);
 	[LinkName("QWidget_FocusInEvent")]
-	public static extern void QWidget_FocusInEvent(QWidget_Ptr* self, QFocusEvent_Ptr** event);
+	public static extern void QWidget_FocusInEvent(void* self, void** event);
 	[LinkName("QWidget_FocusOutEvent")]
-	public static extern void QWidget_FocusOutEvent(QWidget_Ptr* self, QFocusEvent_Ptr** event);
+	public static extern void QWidget_FocusOutEvent(void* self, void** event);
 	[LinkName("QWidget_EnterEvent")]
-	public static extern void QWidget_EnterEvent(QWidget_Ptr* self, QEnterEvent_Ptr** event);
+	public static extern void QWidget_EnterEvent(void* self, void** event);
 	[LinkName("QWidget_LeaveEvent")]
-	public static extern void QWidget_LeaveEvent(QWidget_Ptr* self, QEvent_Ptr** event);
+	public static extern void QWidget_LeaveEvent(void* self, void** event);
 	[LinkName("QWidget_PaintEvent")]
-	public static extern void QWidget_PaintEvent(QWidget_Ptr* self, QPaintEvent_Ptr** event);
+	public static extern void QWidget_PaintEvent(void* self, void** event);
 	[LinkName("QWidget_MoveEvent")]
-	public static extern void QWidget_MoveEvent(QWidget_Ptr* self, QMoveEvent_Ptr** event);
+	public static extern void QWidget_MoveEvent(void* self, void** event);
 	[LinkName("QWidget_ResizeEvent")]
-	public static extern void QWidget_ResizeEvent(QWidget_Ptr* self, QResizeEvent_Ptr** event);
+	public static extern void QWidget_ResizeEvent(void* self, void** event);
 	[LinkName("QWidget_CloseEvent")]
-	public static extern void QWidget_CloseEvent(QWidget_Ptr* self, QCloseEvent_Ptr** event);
+	public static extern void QWidget_CloseEvent(void* self, void** event);
 	[LinkName("QWidget_ContextMenuEvent")]
-	public static extern void QWidget_ContextMenuEvent(QWidget_Ptr* self, QContextMenuEvent_Ptr** event);
+	public static extern void QWidget_ContextMenuEvent(void* self, void** event);
 	[LinkName("QWidget_TabletEvent")]
-	public static extern void QWidget_TabletEvent(QWidget_Ptr* self, QTabletEvent_Ptr** event);
+	public static extern void QWidget_TabletEvent(void* self, void** event);
 	[LinkName("QWidget_ActionEvent")]
-	public static extern void QWidget_ActionEvent(QWidget_Ptr* self, QActionEvent_Ptr** event);
+	public static extern void QWidget_ActionEvent(void* self, void** event);
 	[LinkName("QWidget_DragEnterEvent")]
-	public static extern void QWidget_DragEnterEvent(QWidget_Ptr* self, QDragEnterEvent_Ptr** event);
+	public static extern void QWidget_DragEnterEvent(void* self, void** event);
 	[LinkName("QWidget_DragMoveEvent")]
-	public static extern void QWidget_DragMoveEvent(QWidget_Ptr* self, QDragMoveEvent_Ptr** event);
+	public static extern void QWidget_DragMoveEvent(void* self, void** event);
 	[LinkName("QWidget_DragLeaveEvent")]
-	public static extern void QWidget_DragLeaveEvent(QWidget_Ptr* self, QDragLeaveEvent_Ptr** event);
+	public static extern void QWidget_DragLeaveEvent(void* self, void** event);
 	[LinkName("QWidget_DropEvent")]
-	public static extern void QWidget_DropEvent(QWidget_Ptr* self, QDropEvent_Ptr** event);
+	public static extern void QWidget_DropEvent(void* self, void** event);
 	[LinkName("QWidget_ShowEvent")]
-	public static extern void QWidget_ShowEvent(QWidget_Ptr* self, QShowEvent_Ptr** event);
+	public static extern void QWidget_ShowEvent(void* self, void** event);
 	[LinkName("QWidget_HideEvent")]
-	public static extern void QWidget_HideEvent(QWidget_Ptr* self, QHideEvent_Ptr** event);
+	public static extern void QWidget_HideEvent(void* self, void** event);
 	[LinkName("QWidget_NativeEvent")]
-	public static extern bool QWidget_NativeEvent(QWidget_Ptr* self, void** eventType, void* message, void** result);
+	public static extern bool QWidget_NativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QWidget_ChangeEvent")]
-	public static extern void QWidget_ChangeEvent(QWidget_Ptr* self, QEvent_Ptr** param1);
+	public static extern void QWidget_ChangeEvent(void* self, void** param1);
 	[LinkName("QWidget_Metric")]
-	public static extern c_int QWidget_Metric(QWidget_Ptr* self, QPaintDevice_PaintDeviceMetric param1);
+	public static extern c_int QWidget_Metric(void* self, QPaintDevice_PaintDeviceMetric param1);
 	[LinkName("QWidget_InitPainter")]
-	public static extern void QWidget_InitPainter(QWidget_Ptr* self, QPainter_Ptr** painter);
+	public static extern void QWidget_InitPainter(void* self, void** painter);
 	[LinkName("QWidget_Redirected")]
-	public static extern QPaintDevice_Ptr** QWidget_Redirected(QWidget_Ptr* self, QPoint_Ptr** offset);
+	public static extern void** QWidget_Redirected(void* self, void** offset);
 	[LinkName("QWidget_SharedPainter")]
-	public static extern QPainter_Ptr** QWidget_SharedPainter(QWidget_Ptr* self);
+	public static extern void** QWidget_SharedPainter(void* self);
 	[LinkName("QWidget_InputMethodEvent")]
-	public static extern void QWidget_InputMethodEvent(QWidget_Ptr* self, QInputMethodEvent_Ptr** param1);
+	public static extern void QWidget_InputMethodEvent(void* self, void** param1);
 	[LinkName("QWidget_InputMethodQuery")]
-	public static extern QVariant_Ptr* QWidget_InputMethodQuery(QWidget_Ptr* self, Qt_InputMethodQuery param1);
+	public static extern void* QWidget_InputMethodQuery(void* self, Qt_InputMethodQuery param1);
 	[LinkName("QWidget_InputMethodHints")]
-	public static extern void* QWidget_InputMethodHints(QWidget_Ptr* self);
+	public static extern void* QWidget_InputMethodHints(void* self);
 	[LinkName("QWidget_SetInputMethodHints")]
-	public static extern void QWidget_SetInputMethodHints(QWidget_Ptr* self, void* hints);
+	public static extern void QWidget_SetInputMethodHints(void* self, void* hints);
 	[LinkName("QWidget_UpdateMicroFocus")]
-	public static extern void QWidget_UpdateMicroFocus(QWidget_Ptr* self);
+	public static extern void QWidget_UpdateMicroFocus(void* self);
 	[LinkName("QWidget_Create")]
-	public static extern void QWidget_Create(QWidget_Ptr* self);
+	public static extern void QWidget_Create(void* self);
 	[LinkName("QWidget_Destroy")]
-	public static extern void QWidget_Destroy(QWidget_Ptr* self);
+	public static extern void QWidget_Destroy(void* self);
 	[LinkName("QWidget_FocusNextPrevChild")]
-	public static extern bool QWidget_FocusNextPrevChild(QWidget_Ptr* self, bool next);
+	public static extern bool QWidget_FocusNextPrevChild(void* self, bool next);
 	[LinkName("QWidget_FocusNextChild")]
-	public static extern bool QWidget_FocusNextChild(QWidget_Ptr* self);
+	public static extern bool QWidget_FocusNextChild(void* self);
 	[LinkName("QWidget_FocusPreviousChild")]
-	public static extern bool QWidget_FocusPreviousChild(QWidget_Ptr* self);
+	public static extern bool QWidget_FocusPreviousChild(void* self);
 	[LinkName("QWidget_Tr2")]
 	public static extern libqt_string QWidget_Tr2(c_char* s, c_char* c);
 	[LinkName("QWidget_Tr3")]
 	public static extern libqt_string QWidget_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QWidget_Render22")]
-	public static extern void QWidget_Render22(QWidget_Ptr* self, QPaintDevice_Ptr** target, QPoint_Ptr* targetOffset);
+	public static extern void QWidget_Render22(void* self, void** target, void** targetOffset);
 	[LinkName("QWidget_Render3")]
-	public static extern void QWidget_Render3(QWidget_Ptr* self, QPaintDevice_Ptr** target, QPoint_Ptr* targetOffset, QRegion_Ptr* sourceRegion);
+	public static extern void QWidget_Render3(void* self, void** target, void** targetOffset, void** sourceRegion);
 	[LinkName("QWidget_Render4")]
-	public static extern void QWidget_Render4(QWidget_Ptr* self, QPaintDevice_Ptr** target, QPoint_Ptr* targetOffset, QRegion_Ptr* sourceRegion, void* renderFlags);
+	public static extern void QWidget_Render4(void* self, void** target, void** targetOffset, void** sourceRegion, void* renderFlags);
 	[LinkName("QWidget_Render23")]
-	public static extern void QWidget_Render23(QWidget_Ptr* self, QPainter_Ptr** painter, QPoint_Ptr* targetOffset);
+	public static extern void QWidget_Render23(void* self, void** painter, void** targetOffset);
 	[LinkName("QWidget_Render32")]
-	public static extern void QWidget_Render32(QWidget_Ptr* self, QPainter_Ptr** painter, QPoint_Ptr* targetOffset, QRegion_Ptr* sourceRegion);
+	public static extern void QWidget_Render32(void* self, void** painter, void** targetOffset, void** sourceRegion);
 	[LinkName("QWidget_Render42")]
-	public static extern void QWidget_Render42(QWidget_Ptr* self, QPainter_Ptr** painter, QPoint_Ptr* targetOffset, QRegion_Ptr* sourceRegion, void* renderFlags);
+	public static extern void QWidget_Render42(void* self, void** painter, void** targetOffset, void** sourceRegion, void* renderFlags);
 	[LinkName("QWidget_Grab1")]
-	public static extern QPixmap_Ptr* QWidget_Grab1(QWidget_Ptr* self, QRect_Ptr* rectangle);
+	public static extern void* QWidget_Grab1(void* self, void** rectangle);
 	[LinkName("QWidget_GrabGesture2")]
-	public static extern void QWidget_GrabGesture2(QWidget_Ptr* self, Qt_GestureType type, void* flags);
+	public static extern void QWidget_GrabGesture2(void* self, Qt_GestureType type, void* flags);
 	[LinkName("QWidget_GrabShortcut2")]
-	public static extern c_int QWidget_GrabShortcut2(QWidget_Ptr* self, QKeySequence_Ptr* key, Qt_ShortcutContext context);
+	public static extern c_int QWidget_GrabShortcut2(void* self, void** key, Qt_ShortcutContext context);
 	[LinkName("QWidget_SetShortcutEnabled2")]
-	public static extern void QWidget_SetShortcutEnabled2(QWidget_Ptr* self, c_int id, bool enable);
+	public static extern void QWidget_SetShortcutEnabled2(void* self, c_int id, bool enable);
 	[LinkName("QWidget_SetShortcutAutoRepeat2")]
-	public static extern void QWidget_SetShortcutAutoRepeat2(QWidget_Ptr* self, c_int id, bool enable);
+	public static extern void QWidget_SetShortcutAutoRepeat2(void* self, c_int id, bool enable);
 	[LinkName("QWidget_SetWindowFlag2")]
-	public static extern void QWidget_SetWindowFlag2(QWidget_Ptr* self, Qt_WindowType param1, bool on);
+	public static extern void QWidget_SetWindowFlag2(void* self, Qt_WindowType param1, bool on);
 	[LinkName("QWidget_SetAttribute2")]
-	public static extern void QWidget_SetAttribute2(QWidget_Ptr* self, Qt_WidgetAttribute param1, bool on);
+	public static extern void QWidget_SetAttribute2(void* self, Qt_WidgetAttribute param1, bool on);
 	[LinkName("QWidget_CreateWindowContainer2")]
-	public static extern QWidget_Ptr** QWidget_CreateWindowContainer2(QWindow_Ptr** window, QWidget_Ptr** parent);
+	public static extern void** QWidget_CreateWindowContainer2(void** window, void** parent);
 	[LinkName("QWidget_CreateWindowContainer3")]
-	public static extern QWidget_Ptr** QWidget_CreateWindowContainer3(QWindow_Ptr** window, QWidget_Ptr** parent, void* flags);
+	public static extern void** QWidget_CreateWindowContainer3(void** window, void** parent, void* flags);
 	[LinkName("QWidget_UpdateMicroFocus1")]
-	public static extern void QWidget_UpdateMicroFocus1(QWidget_Ptr* self, Qt_InputMethodQuery query);
+	public static extern void QWidget_UpdateMicroFocus1(void* self, Qt_InputMethodQuery query);
 	[LinkName("QWidget_Create1")]
-	public static extern void QWidget_Create1(QWidget_Ptr* self, c_ulonglong param1);
+	public static extern void QWidget_Create1(void* self, c_ulonglong param1);
 	[LinkName("QWidget_Create2")]
-	public static extern void QWidget_Create2(QWidget_Ptr* self, c_ulonglong param1, bool initializeWindow);
+	public static extern void QWidget_Create2(void* self, c_ulonglong param1, bool initializeWindow);
 	[LinkName("QWidget_Create3")]
-	public static extern void QWidget_Create3(QWidget_Ptr* self, c_ulonglong param1, bool initializeWindow, bool destroyOldWindow);
+	public static extern void QWidget_Create3(void* self, c_ulonglong param1, bool initializeWindow, bool destroyOldWindow);
 	[LinkName("QWidget_Destroy1")]
-	public static extern void QWidget_Destroy1(QWidget_Ptr* self, bool destroyWindow);
+	public static extern void QWidget_Destroy1(void* self, bool destroyWindow);
 	[LinkName("QWidget_Destroy2")]
-	public static extern void QWidget_Destroy2(QWidget_Ptr* self, bool destroyWindow, bool destroySubWindows);
+	public static extern void QWidget_Destroy2(void* self, bool destroyWindow, bool destroySubWindows);
 }
 class QWidget : IQWidget, IQObject, IQPaintDevice
 {
-	private QWidget_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QWidget_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QWidget_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QWidget_new((.)parent?.ObjectPtr);
@@ -691,585 +700,585 @@ class QWidget : IQWidget, IQObject, IQPaintDevice
 	{
 		CQt.QWidget_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr** MetaObject()
+	public QMetaObject_Ptr MetaObject()
 	{
-		return CQt.QWidget_MetaObject((.)this.ptr);
+		return QMetaObject_Ptr(CQt.QWidget_MetaObject((.)this.ptr.Ptr));
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QWidget_Qt_Metacast((.)this.ptr, param1);
+		return CQt.QWidget_Qt_Metacast((.)this.ptr.Ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QWidget_Qt_Metacall((.)this.ptr, param1, param2, param3);
+		return CQt.QWidget_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
 	}
-	public libqt_string Tr(c_char* s)
+	public void Tr(String outStr, c_char* s)
 	{
-		return CQt.QWidget_Tr(s);
+		CQt.QWidget_Tr(s);
 	}
 	public c_int DevType()
 	{
-		return CQt.QWidget_DevType((.)this.ptr);
+		return CQt.QWidget_DevType((.)this.ptr.Ptr);
 	}
 	public void* WinId()
 	{
-		return CQt.QWidget_WinId((.)this.ptr);
+		return CQt.QWidget_WinId((.)this.ptr.Ptr);
 	}
 	public void CreateWinId()
 	{
-		CQt.QWidget_CreateWinId((.)this.ptr);
+		CQt.QWidget_CreateWinId((.)this.ptr.Ptr);
 	}
 	public void* InternalWinId()
 	{
-		return CQt.QWidget_InternalWinId((.)this.ptr);
+		return CQt.QWidget_InternalWinId((.)this.ptr.Ptr);
 	}
 	public void* EffectiveWinId()
 	{
-		return CQt.QWidget_EffectiveWinId((.)this.ptr);
+		return CQt.QWidget_EffectiveWinId((.)this.ptr.Ptr);
 	}
-	public QStyle_Ptr** Style()
+	public QStyle_Ptr Style()
 	{
-		return CQt.QWidget_Style((.)this.ptr);
+		return QStyle_Ptr(CQt.QWidget_Style((.)this.ptr.Ptr));
 	}
 	public void SetStyle(IQStyle style)
 	{
-		CQt.QWidget_SetStyle((.)this.ptr, (.)style?.ObjectPtr);
+		CQt.QWidget_SetStyle((.)this.ptr.Ptr, (.)style?.ObjectPtr);
 	}
 	public bool IsTopLevel()
 	{
-		return CQt.QWidget_IsTopLevel((.)this.ptr);
+		return CQt.QWidget_IsTopLevel((.)this.ptr.Ptr);
 	}
 	public bool IsWindow()
 	{
-		return CQt.QWidget_IsWindow((.)this.ptr);
+		return CQt.QWidget_IsWindow((.)this.ptr.Ptr);
 	}
 	public bool IsModal()
 	{
-		return CQt.QWidget_IsModal((.)this.ptr);
+		return CQt.QWidget_IsModal((.)this.ptr.Ptr);
 	}
 	public Qt_WindowModality WindowModality()
 	{
-		return CQt.QWidget_WindowModality((.)this.ptr);
+		return CQt.QWidget_WindowModality((.)this.ptr.Ptr);
 	}
 	public void SetWindowModality(Qt_WindowModality windowModality)
 	{
-		CQt.QWidget_SetWindowModality((.)this.ptr, windowModality);
+		CQt.QWidget_SetWindowModality((.)this.ptr.Ptr, windowModality);
 	}
 	public bool IsEnabled()
 	{
-		return CQt.QWidget_IsEnabled((.)this.ptr);
+		return CQt.QWidget_IsEnabled((.)this.ptr.Ptr);
 	}
 	public bool IsEnabledTo(IQWidget param1)
 	{
-		return CQt.QWidget_IsEnabledTo((.)this.ptr, (.)param1?.ObjectPtr);
+		return CQt.QWidget_IsEnabledTo((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void SetEnabled(bool enabled)
 	{
-		CQt.QWidget_SetEnabled((.)this.ptr, enabled);
+		CQt.QWidget_SetEnabled((.)this.ptr.Ptr, enabled);
 	}
 	public void SetDisabled(bool disabled)
 	{
-		CQt.QWidget_SetDisabled((.)this.ptr, disabled);
+		CQt.QWidget_SetDisabled((.)this.ptr.Ptr, disabled);
 	}
 	public void SetWindowModified(bool windowModified)
 	{
-		CQt.QWidget_SetWindowModified((.)this.ptr, windowModified);
+		CQt.QWidget_SetWindowModified((.)this.ptr.Ptr, windowModified);
 	}
-	public QRect_Ptr* FrameGeometry()
+	public QRect_Ptr FrameGeometry()
 	{
-		return CQt.QWidget_FrameGeometry((.)this.ptr);
+		return QRect_Ptr(CQt.QWidget_FrameGeometry((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* Geometry()
+	public QRect_Ptr Geometry()
 	{
-		return CQt.QWidget_Geometry((.)this.ptr);
+		return QRect_Ptr(CQt.QWidget_Geometry((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* NormalGeometry()
+	public QRect_Ptr NormalGeometry()
 	{
-		return CQt.QWidget_NormalGeometry((.)this.ptr);
+		return QRect_Ptr(CQt.QWidget_NormalGeometry((.)this.ptr.Ptr));
 	}
 	public c_int X()
 	{
-		return CQt.QWidget_X((.)this.ptr);
+		return CQt.QWidget_X((.)this.ptr.Ptr);
 	}
 	public c_int Y()
 	{
-		return CQt.QWidget_Y((.)this.ptr);
+		return CQt.QWidget_Y((.)this.ptr.Ptr);
 	}
-	public QPoint_Ptr* Pos()
+	public QPoint_Ptr Pos()
 	{
-		return CQt.QWidget_Pos((.)this.ptr);
+		return QPoint_Ptr(CQt.QWidget_Pos((.)this.ptr.Ptr));
 	}
-	public QSize_Ptr* FrameSize()
+	public QSize_Ptr FrameSize()
 	{
-		return CQt.QWidget_FrameSize((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_FrameSize((.)this.ptr.Ptr));
 	}
-	public QSize_Ptr* Size()
+	public QSize_Ptr Size()
 	{
-		return CQt.QWidget_Size((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_Size((.)this.ptr.Ptr));
 	}
 	public c_int Width()
 	{
-		return CQt.QWidget_Width((.)this.ptr);
+		return CQt.QWidget_Width((.)this.ptr.Ptr);
 	}
 	public c_int Height()
 	{
-		return CQt.QWidget_Height((.)this.ptr);
+		return CQt.QWidget_Height((.)this.ptr.Ptr);
 	}
-	public QRect_Ptr* Rect()
+	public QRect_Ptr Rect()
 	{
-		return CQt.QWidget_Rect((.)this.ptr);
+		return QRect_Ptr(CQt.QWidget_Rect((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* ChildrenRect()
+	public QRect_Ptr ChildrenRect()
 	{
-		return CQt.QWidget_ChildrenRect((.)this.ptr);
+		return QRect_Ptr(CQt.QWidget_ChildrenRect((.)this.ptr.Ptr));
 	}
-	public QRegion_Ptr* ChildrenRegion()
+	public QRegion_Ptr ChildrenRegion()
 	{
-		return CQt.QWidget_ChildrenRegion((.)this.ptr);
+		return QRegion_Ptr(CQt.QWidget_ChildrenRegion((.)this.ptr.Ptr));
 	}
-	public QSize_Ptr* MinimumSize()
+	public QSize_Ptr MinimumSize()
 	{
-		return CQt.QWidget_MinimumSize((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_MinimumSize((.)this.ptr.Ptr));
 	}
-	public QSize_Ptr* MaximumSize()
+	public QSize_Ptr MaximumSize()
 	{
-		return CQt.QWidget_MaximumSize((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_MaximumSize((.)this.ptr.Ptr));
 	}
 	public c_int MinimumWidth()
 	{
-		return CQt.QWidget_MinimumWidth((.)this.ptr);
+		return CQt.QWidget_MinimumWidth((.)this.ptr.Ptr);
 	}
 	public c_int MinimumHeight()
 	{
-		return CQt.QWidget_MinimumHeight((.)this.ptr);
+		return CQt.QWidget_MinimumHeight((.)this.ptr.Ptr);
 	}
 	public c_int MaximumWidth()
 	{
-		return CQt.QWidget_MaximumWidth((.)this.ptr);
+		return CQt.QWidget_MaximumWidth((.)this.ptr.Ptr);
 	}
 	public c_int MaximumHeight()
 	{
-		return CQt.QWidget_MaximumHeight((.)this.ptr);
+		return CQt.QWidget_MaximumHeight((.)this.ptr.Ptr);
 	}
 	public void SetMinimumSize(IQSize minimumSize)
 	{
-		CQt.QWidget_SetMinimumSize((.)this.ptr, (.)minimumSize?.ObjectPtr);
+		CQt.QWidget_SetMinimumSize((.)this.ptr.Ptr, (.)minimumSize?.ObjectPtr);
 	}
 	public void SetMinimumSize2(c_int minw, c_int minh)
 	{
-		CQt.QWidget_SetMinimumSize2((.)this.ptr, minw, minh);
+		CQt.QWidget_SetMinimumSize2((.)this.ptr.Ptr, minw, minh);
 	}
 	public void SetMaximumSize(IQSize maximumSize)
 	{
-		CQt.QWidget_SetMaximumSize((.)this.ptr, (.)maximumSize?.ObjectPtr);
+		CQt.QWidget_SetMaximumSize((.)this.ptr.Ptr, (.)maximumSize?.ObjectPtr);
 	}
 	public void SetMaximumSize2(c_int maxw, c_int maxh)
 	{
-		CQt.QWidget_SetMaximumSize2((.)this.ptr, maxw, maxh);
+		CQt.QWidget_SetMaximumSize2((.)this.ptr.Ptr, maxw, maxh);
 	}
 	public void SetMinimumWidth(c_int minw)
 	{
-		CQt.QWidget_SetMinimumWidth((.)this.ptr, minw);
+		CQt.QWidget_SetMinimumWidth((.)this.ptr.Ptr, minw);
 	}
 	public void SetMinimumHeight(c_int minh)
 	{
-		CQt.QWidget_SetMinimumHeight((.)this.ptr, minh);
+		CQt.QWidget_SetMinimumHeight((.)this.ptr.Ptr, minh);
 	}
 	public void SetMaximumWidth(c_int maxw)
 	{
-		CQt.QWidget_SetMaximumWidth((.)this.ptr, maxw);
+		CQt.QWidget_SetMaximumWidth((.)this.ptr.Ptr, maxw);
 	}
 	public void SetMaximumHeight(c_int maxh)
 	{
-		CQt.QWidget_SetMaximumHeight((.)this.ptr, maxh);
+		CQt.QWidget_SetMaximumHeight((.)this.ptr.Ptr, maxh);
 	}
-	public QSize_Ptr* SizeIncrement()
+	public QSize_Ptr SizeIncrement()
 	{
-		return CQt.QWidget_SizeIncrement((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_SizeIncrement((.)this.ptr.Ptr));
 	}
 	public void SetSizeIncrement(IQSize sizeIncrement)
 	{
-		CQt.QWidget_SetSizeIncrement((.)this.ptr, (.)sizeIncrement?.ObjectPtr);
+		CQt.QWidget_SetSizeIncrement((.)this.ptr.Ptr, (.)sizeIncrement?.ObjectPtr);
 	}
 	public void SetSizeIncrement2(c_int w, c_int h)
 	{
-		CQt.QWidget_SetSizeIncrement2((.)this.ptr, w, h);
+		CQt.QWidget_SetSizeIncrement2((.)this.ptr.Ptr, w, h);
 	}
-	public QSize_Ptr* BaseSize()
+	public QSize_Ptr BaseSize()
 	{
-		return CQt.QWidget_BaseSize((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_BaseSize((.)this.ptr.Ptr));
 	}
 	public void SetBaseSize(IQSize baseSize)
 	{
-		CQt.QWidget_SetBaseSize((.)this.ptr, (.)baseSize?.ObjectPtr);
+		CQt.QWidget_SetBaseSize((.)this.ptr.Ptr, (.)baseSize?.ObjectPtr);
 	}
 	public void SetBaseSize2(c_int basew, c_int baseh)
 	{
-		CQt.QWidget_SetBaseSize2((.)this.ptr, basew, baseh);
+		CQt.QWidget_SetBaseSize2((.)this.ptr.Ptr, basew, baseh);
 	}
 	public void SetFixedSize(IQSize fixedSize)
 	{
-		CQt.QWidget_SetFixedSize((.)this.ptr, (.)fixedSize?.ObjectPtr);
+		CQt.QWidget_SetFixedSize((.)this.ptr.Ptr, (.)fixedSize?.ObjectPtr);
 	}
 	public void SetFixedSize2(c_int w, c_int h)
 	{
-		CQt.QWidget_SetFixedSize2((.)this.ptr, w, h);
+		CQt.QWidget_SetFixedSize2((.)this.ptr.Ptr, w, h);
 	}
 	public void SetFixedWidth(c_int w)
 	{
-		CQt.QWidget_SetFixedWidth((.)this.ptr, w);
+		CQt.QWidget_SetFixedWidth((.)this.ptr.Ptr, w);
 	}
 	public void SetFixedHeight(c_int h)
 	{
-		CQt.QWidget_SetFixedHeight((.)this.ptr, h);
+		CQt.QWidget_SetFixedHeight((.)this.ptr.Ptr, h);
 	}
-	public QPointF_Ptr* MapToGlobal(IQPointF param1)
+	public QPointF_Ptr MapToGlobal(IQPointF param1)
 	{
-		return CQt.QWidget_MapToGlobal((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPointF_Ptr(CQt.QWidget_MapToGlobal((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPoint_Ptr* MapToGlobal2(IQPoint param1)
+	public QPoint_Ptr MapToGlobal2(IQPoint param1)
 	{
-		return CQt.QWidget_MapToGlobal2((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPoint_Ptr(CQt.QWidget_MapToGlobal2((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPointF_Ptr* MapFromGlobal(IQPointF param1)
+	public QPointF_Ptr MapFromGlobal(IQPointF param1)
 	{
-		return CQt.QWidget_MapFromGlobal((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPointF_Ptr(CQt.QWidget_MapFromGlobal((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPoint_Ptr* MapFromGlobal2(IQPoint param1)
+	public QPoint_Ptr MapFromGlobal2(IQPoint param1)
 	{
-		return CQt.QWidget_MapFromGlobal2((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPoint_Ptr(CQt.QWidget_MapFromGlobal2((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPointF_Ptr* MapToParent(IQPointF param1)
+	public QPointF_Ptr MapToParent(IQPointF param1)
 	{
-		return CQt.QWidget_MapToParent((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPointF_Ptr(CQt.QWidget_MapToParent((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPoint_Ptr* MapToParent2(IQPoint param1)
+	public QPoint_Ptr MapToParent2(IQPoint param1)
 	{
-		return CQt.QWidget_MapToParent2((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPoint_Ptr(CQt.QWidget_MapToParent2((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPointF_Ptr* MapFromParent(IQPointF param1)
+	public QPointF_Ptr MapFromParent(IQPointF param1)
 	{
-		return CQt.QWidget_MapFromParent((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPointF_Ptr(CQt.QWidget_MapFromParent((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPoint_Ptr* MapFromParent2(IQPoint param1)
+	public QPoint_Ptr MapFromParent2(IQPoint param1)
 	{
-		return CQt.QWidget_MapFromParent2((.)this.ptr, (.)param1?.ObjectPtr);
+		return QPoint_Ptr(CQt.QWidget_MapFromParent2((.)this.ptr.Ptr, (.)param1?.ObjectPtr));
 	}
-	public QPointF_Ptr* MapTo(IQWidget param1, IQPointF param2)
+	public QPointF_Ptr MapTo(IQWidget param1, IQPointF param2)
 	{
-		return CQt.QWidget_MapTo((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
+		return QPointF_Ptr(CQt.QWidget_MapTo((.)this.ptr.Ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr));
 	}
-	public QPoint_Ptr* MapTo2(IQWidget param1, IQPoint param2)
+	public QPoint_Ptr MapTo2(IQWidget param1, IQPoint param2)
 	{
-		return CQt.QWidget_MapTo2((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
+		return QPoint_Ptr(CQt.QWidget_MapTo2((.)this.ptr.Ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr));
 	}
-	public QPointF_Ptr* MapFrom(IQWidget param1, IQPointF param2)
+	public QPointF_Ptr MapFrom(IQWidget param1, IQPointF param2)
 	{
-		return CQt.QWidget_MapFrom((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
+		return QPointF_Ptr(CQt.QWidget_MapFrom((.)this.ptr.Ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr));
 	}
-	public QPoint_Ptr* MapFrom2(IQWidget param1, IQPoint param2)
+	public QPoint_Ptr MapFrom2(IQWidget param1, IQPoint param2)
 	{
-		return CQt.QWidget_MapFrom2((.)this.ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr);
+		return QPoint_Ptr(CQt.QWidget_MapFrom2((.)this.ptr.Ptr, (.)param1?.ObjectPtr, (.)param2?.ObjectPtr));
 	}
-	public QWidget_Ptr** Window()
+	public QWidget_Ptr Window()
 	{
-		return CQt.QWidget_Window((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_Window((.)this.ptr.Ptr));
 	}
-	public QWidget_Ptr** NativeParentWidget()
+	public QWidget_Ptr NativeParentWidget()
 	{
-		return CQt.QWidget_NativeParentWidget((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_NativeParentWidget((.)this.ptr.Ptr));
 	}
-	public QWidget_Ptr** TopLevelWidget()
+	public QWidget_Ptr TopLevelWidget()
 	{
-		return CQt.QWidget_TopLevelWidget((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_TopLevelWidget((.)this.ptr.Ptr));
 	}
-	public QPalette_Ptr* Palette()
+	public QPalette_Ptr Palette()
 	{
-		return CQt.QWidget_Palette((.)this.ptr);
+		return QPalette_Ptr(CQt.QWidget_Palette((.)this.ptr.Ptr));
 	}
 	public void SetPalette(IQPalette palette)
 	{
-		CQt.QWidget_SetPalette((.)this.ptr, (.)palette?.ObjectPtr);
+		CQt.QWidget_SetPalette((.)this.ptr.Ptr, (.)palette?.ObjectPtr);
 	}
 	public void SetBackgroundRole(QPalette_ColorRole backgroundRole)
 	{
-		CQt.QWidget_SetBackgroundRole((.)this.ptr, backgroundRole);
+		CQt.QWidget_SetBackgroundRole((.)this.ptr.Ptr, backgroundRole);
 	}
 	public QPalette_ColorRole BackgroundRole()
 	{
-		return CQt.QWidget_BackgroundRole((.)this.ptr);
+		return CQt.QWidget_BackgroundRole((.)this.ptr.Ptr);
 	}
 	public void SetForegroundRole(QPalette_ColorRole foregroundRole)
 	{
-		CQt.QWidget_SetForegroundRole((.)this.ptr, foregroundRole);
+		CQt.QWidget_SetForegroundRole((.)this.ptr.Ptr, foregroundRole);
 	}
 	public QPalette_ColorRole ForegroundRole()
 	{
-		return CQt.QWidget_ForegroundRole((.)this.ptr);
+		return CQt.QWidget_ForegroundRole((.)this.ptr.Ptr);
 	}
-	public QFont_Ptr* Font()
+	public QFont_Ptr Font()
 	{
-		return CQt.QWidget_Font((.)this.ptr);
+		return QFont_Ptr(CQt.QWidget_Font((.)this.ptr.Ptr));
 	}
 	public void SetFont(IQFont font)
 	{
-		CQt.QWidget_SetFont((.)this.ptr, (.)font?.ObjectPtr);
+		CQt.QWidget_SetFont((.)this.ptr.Ptr, (.)font?.ObjectPtr);
 	}
-	public QFontMetrics_Ptr* FontMetrics()
+	public QFontMetrics_Ptr FontMetrics()
 	{
-		return CQt.QWidget_FontMetrics((.)this.ptr);
+		return QFontMetrics_Ptr(CQt.QWidget_FontMetrics((.)this.ptr.Ptr));
 	}
-	public QFontInfo_Ptr* FontInfo()
+	public QFontInfo_Ptr FontInfo()
 	{
-		return CQt.QWidget_FontInfo((.)this.ptr);
+		return QFontInfo_Ptr(CQt.QWidget_FontInfo((.)this.ptr.Ptr));
 	}
-	public QCursor_Ptr* Cursor()
+	public QCursor_Ptr Cursor()
 	{
-		return CQt.QWidget_Cursor((.)this.ptr);
+		return QCursor_Ptr(CQt.QWidget_Cursor((.)this.ptr.Ptr));
 	}
 	public void SetCursor(IQCursor cursor)
 	{
-		CQt.QWidget_SetCursor((.)this.ptr, (.)cursor?.ObjectPtr);
+		CQt.QWidget_SetCursor((.)this.ptr.Ptr, (.)cursor?.ObjectPtr);
 	}
 	public void UnsetCursor()
 	{
-		CQt.QWidget_UnsetCursor((.)this.ptr);
+		CQt.QWidget_UnsetCursor((.)this.ptr.Ptr);
 	}
 	public void SetMouseTracking(bool enable)
 	{
-		CQt.QWidget_SetMouseTracking((.)this.ptr, enable);
+		CQt.QWidget_SetMouseTracking((.)this.ptr.Ptr, enable);
 	}
 	public bool HasMouseTracking()
 	{
-		return CQt.QWidget_HasMouseTracking((.)this.ptr);
+		return CQt.QWidget_HasMouseTracking((.)this.ptr.Ptr);
 	}
 	public bool UnderMouse()
 	{
-		return CQt.QWidget_UnderMouse((.)this.ptr);
+		return CQt.QWidget_UnderMouse((.)this.ptr.Ptr);
 	}
 	public void SetTabletTracking(bool enable)
 	{
-		CQt.QWidget_SetTabletTracking((.)this.ptr, enable);
+		CQt.QWidget_SetTabletTracking((.)this.ptr.Ptr, enable);
 	}
 	public bool HasTabletTracking()
 	{
-		return CQt.QWidget_HasTabletTracking((.)this.ptr);
+		return CQt.QWidget_HasTabletTracking((.)this.ptr.Ptr);
 	}
 	public void SetMask(IQBitmap mask)
 	{
-		CQt.QWidget_SetMask((.)this.ptr, (.)mask?.ObjectPtr);
+		CQt.QWidget_SetMask((.)this.ptr.Ptr, (.)mask?.ObjectPtr);
 	}
 	public void SetMask2(IQRegion mask)
 	{
-		CQt.QWidget_SetMask2((.)this.ptr, (.)mask?.ObjectPtr);
+		CQt.QWidget_SetMask2((.)this.ptr.Ptr, (.)mask?.ObjectPtr);
 	}
-	public QRegion_Ptr* Mask()
+	public QRegion_Ptr Mask()
 	{
-		return CQt.QWidget_Mask((.)this.ptr);
+		return QRegion_Ptr(CQt.QWidget_Mask((.)this.ptr.Ptr));
 	}
 	public void ClearMask()
 	{
-		CQt.QWidget_ClearMask((.)this.ptr);
+		CQt.QWidget_ClearMask((.)this.ptr.Ptr);
 	}
 	public void Render(IQPaintDevice target)
 	{
-		CQt.QWidget_Render((.)this.ptr, (.)target?.ObjectPtr);
+		CQt.QWidget_Render((.)this.ptr.Ptr, (.)target?.ObjectPtr);
 	}
 	public void Render2(IQPainter painter)
 	{
-		CQt.QWidget_Render2((.)this.ptr, (.)painter?.ObjectPtr);
+		CQt.QWidget_Render2((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
 	}
-	public QPixmap_Ptr* Grab()
+	public QPixmap_Ptr Grab()
 	{
-		return CQt.QWidget_Grab((.)this.ptr);
+		return QPixmap_Ptr(CQt.QWidget_Grab((.)this.ptr.Ptr));
 	}
-	public QGraphicsEffect_Ptr** GraphicsEffect()
+	public QGraphicsEffect_Ptr GraphicsEffect()
 	{
-		return CQt.QWidget_GraphicsEffect((.)this.ptr);
+		return QGraphicsEffect_Ptr(CQt.QWidget_GraphicsEffect((.)this.ptr.Ptr));
 	}
 	public void SetGraphicsEffect(IQGraphicsEffect effect)
 	{
-		CQt.QWidget_SetGraphicsEffect((.)this.ptr, (.)effect?.ObjectPtr);
+		CQt.QWidget_SetGraphicsEffect((.)this.ptr.Ptr, (.)effect?.ObjectPtr);
 	}
 	public void GrabGesture(Qt_GestureType type)
 	{
-		CQt.QWidget_GrabGesture((.)this.ptr, type);
+		CQt.QWidget_GrabGesture((.)this.ptr.Ptr, type);
 	}
 	public void UngrabGesture(Qt_GestureType type)
 	{
-		CQt.QWidget_UngrabGesture((.)this.ptr, type);
+		CQt.QWidget_UngrabGesture((.)this.ptr.Ptr, type);
 	}
 	public void SetWindowTitle(String windowTitle)
 	{
-		CQt.QWidget_SetWindowTitle((.)this.ptr, libqt_string(windowTitle));
+		CQt.QWidget_SetWindowTitle((.)this.ptr.Ptr, libqt_string(windowTitle));
 	}
 	public void SetStyleSheet(String styleSheet)
 	{
-		CQt.QWidget_SetStyleSheet((.)this.ptr, libqt_string(styleSheet));
+		CQt.QWidget_SetStyleSheet((.)this.ptr.Ptr, libqt_string(styleSheet));
 	}
-	public libqt_string StyleSheet()
+	public void StyleSheet(String outStr)
 	{
-		return CQt.QWidget_StyleSheet((.)this.ptr);
+		CQt.QWidget_StyleSheet((.)this.ptr.Ptr);
 	}
-	public libqt_string WindowTitle()
+	public void WindowTitle(String outStr)
 	{
-		return CQt.QWidget_WindowTitle((.)this.ptr);
+		CQt.QWidget_WindowTitle((.)this.ptr.Ptr);
 	}
 	public void SetWindowIcon(IQIcon icon)
 	{
-		CQt.QWidget_SetWindowIcon((.)this.ptr, (.)icon?.ObjectPtr);
+		CQt.QWidget_SetWindowIcon((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
 	}
-	public QIcon_Ptr* WindowIcon()
+	public QIcon_Ptr WindowIcon()
 	{
-		return CQt.QWidget_WindowIcon((.)this.ptr);
+		return QIcon_Ptr(CQt.QWidget_WindowIcon((.)this.ptr.Ptr));
 	}
 	public void SetWindowIconText(String windowIconText)
 	{
-		CQt.QWidget_SetWindowIconText((.)this.ptr, libqt_string(windowIconText));
+		CQt.QWidget_SetWindowIconText((.)this.ptr.Ptr, libqt_string(windowIconText));
 	}
-	public libqt_string WindowIconText()
+	public void WindowIconText(String outStr)
 	{
-		return CQt.QWidget_WindowIconText((.)this.ptr);
+		CQt.QWidget_WindowIconText((.)this.ptr.Ptr);
 	}
 	public void SetWindowRole(String windowRole)
 	{
-		CQt.QWidget_SetWindowRole((.)this.ptr, libqt_string(windowRole));
+		CQt.QWidget_SetWindowRole((.)this.ptr.Ptr, libqt_string(windowRole));
 	}
-	public libqt_string WindowRole()
+	public void WindowRole(String outStr)
 	{
-		return CQt.QWidget_WindowRole((.)this.ptr);
+		CQt.QWidget_WindowRole((.)this.ptr.Ptr);
 	}
 	public void SetWindowFilePath(String filePath)
 	{
-		CQt.QWidget_SetWindowFilePath((.)this.ptr, libqt_string(filePath));
+		CQt.QWidget_SetWindowFilePath((.)this.ptr.Ptr, libqt_string(filePath));
 	}
-	public libqt_string WindowFilePath()
+	public void WindowFilePath(String outStr)
 	{
-		return CQt.QWidget_WindowFilePath((.)this.ptr);
+		CQt.QWidget_WindowFilePath((.)this.ptr.Ptr);
 	}
 	public void SetWindowOpacity(double level)
 	{
-		CQt.QWidget_SetWindowOpacity((.)this.ptr, level);
+		CQt.QWidget_SetWindowOpacity((.)this.ptr.Ptr, level);
 	}
 	public double WindowOpacity()
 	{
-		return CQt.QWidget_WindowOpacity((.)this.ptr);
+		return CQt.QWidget_WindowOpacity((.)this.ptr.Ptr);
 	}
 	public bool IsWindowModified()
 	{
-		return CQt.QWidget_IsWindowModified((.)this.ptr);
+		return CQt.QWidget_IsWindowModified((.)this.ptr.Ptr);
 	}
 	public void SetToolTip(String toolTip)
 	{
-		CQt.QWidget_SetToolTip((.)this.ptr, libqt_string(toolTip));
+		CQt.QWidget_SetToolTip((.)this.ptr.Ptr, libqt_string(toolTip));
 	}
-	public libqt_string ToolTip()
+	public void ToolTip(String outStr)
 	{
-		return CQt.QWidget_ToolTip((.)this.ptr);
+		CQt.QWidget_ToolTip((.)this.ptr.Ptr);
 	}
 	public void SetToolTipDuration(c_int msec)
 	{
-		CQt.QWidget_SetToolTipDuration((.)this.ptr, msec);
+		CQt.QWidget_SetToolTipDuration((.)this.ptr.Ptr, msec);
 	}
 	public c_int ToolTipDuration()
 	{
-		return CQt.QWidget_ToolTipDuration((.)this.ptr);
+		return CQt.QWidget_ToolTipDuration((.)this.ptr.Ptr);
 	}
 	public void SetStatusTip(String statusTip)
 	{
-		CQt.QWidget_SetStatusTip((.)this.ptr, libqt_string(statusTip));
+		CQt.QWidget_SetStatusTip((.)this.ptr.Ptr, libqt_string(statusTip));
 	}
-	public libqt_string StatusTip()
+	public void StatusTip(String outStr)
 	{
-		return CQt.QWidget_StatusTip((.)this.ptr);
+		CQt.QWidget_StatusTip((.)this.ptr.Ptr);
 	}
 	public void SetWhatsThis(String whatsThis)
 	{
-		CQt.QWidget_SetWhatsThis((.)this.ptr, libqt_string(whatsThis));
+		CQt.QWidget_SetWhatsThis((.)this.ptr.Ptr, libqt_string(whatsThis));
 	}
-	public libqt_string WhatsThis()
+	public void WhatsThis(String outStr)
 	{
-		return CQt.QWidget_WhatsThis((.)this.ptr);
+		CQt.QWidget_WhatsThis((.)this.ptr.Ptr);
 	}
-	public libqt_string AccessibleName()
+	public void AccessibleName(String outStr)
 	{
-		return CQt.QWidget_AccessibleName((.)this.ptr);
+		CQt.QWidget_AccessibleName((.)this.ptr.Ptr);
 	}
 	public void SetAccessibleName(String name)
 	{
-		CQt.QWidget_SetAccessibleName((.)this.ptr, libqt_string(name));
+		CQt.QWidget_SetAccessibleName((.)this.ptr.Ptr, libqt_string(name));
 	}
-	public libqt_string AccessibleDescription()
+	public void AccessibleDescription(String outStr)
 	{
-		return CQt.QWidget_AccessibleDescription((.)this.ptr);
+		CQt.QWidget_AccessibleDescription((.)this.ptr.Ptr);
 	}
 	public void SetAccessibleDescription(String description)
 	{
-		CQt.QWidget_SetAccessibleDescription((.)this.ptr, libqt_string(description));
+		CQt.QWidget_SetAccessibleDescription((.)this.ptr.Ptr, libqt_string(description));
 	}
 	public void SetLayoutDirection(Qt_LayoutDirection direction)
 	{
-		CQt.QWidget_SetLayoutDirection((.)this.ptr, direction);
+		CQt.QWidget_SetLayoutDirection((.)this.ptr.Ptr, direction);
 	}
 	public Qt_LayoutDirection LayoutDirection()
 	{
-		return CQt.QWidget_LayoutDirection((.)this.ptr);
+		return CQt.QWidget_LayoutDirection((.)this.ptr.Ptr);
 	}
 	public void UnsetLayoutDirection()
 	{
-		CQt.QWidget_UnsetLayoutDirection((.)this.ptr);
+		CQt.QWidget_UnsetLayoutDirection((.)this.ptr.Ptr);
 	}
 	public void SetLocale(IQLocale locale)
 	{
-		CQt.QWidget_SetLocale((.)this.ptr, (.)locale?.ObjectPtr);
+		CQt.QWidget_SetLocale((.)this.ptr.Ptr, (.)locale?.ObjectPtr);
 	}
-	public QLocale_Ptr* Locale()
+	public QLocale_Ptr Locale()
 	{
-		return CQt.QWidget_Locale((.)this.ptr);
+		return QLocale_Ptr(CQt.QWidget_Locale((.)this.ptr.Ptr));
 	}
 	public void UnsetLocale()
 	{
-		CQt.QWidget_UnsetLocale((.)this.ptr);
+		CQt.QWidget_UnsetLocale((.)this.ptr.Ptr);
 	}
 	public bool IsRightToLeft()
 	{
-		return CQt.QWidget_IsRightToLeft((.)this.ptr);
+		return CQt.QWidget_IsRightToLeft((.)this.ptr.Ptr);
 	}
 	public bool IsLeftToRight()
 	{
-		return CQt.QWidget_IsLeftToRight((.)this.ptr);
+		return CQt.QWidget_IsLeftToRight((.)this.ptr.Ptr);
 	}
 	public void SetFocus()
 	{
-		CQt.QWidget_SetFocus((.)this.ptr);
+		CQt.QWidget_SetFocus((.)this.ptr.Ptr);
 	}
 	public bool IsActiveWindow()
 	{
-		return CQt.QWidget_IsActiveWindow((.)this.ptr);
+		return CQt.QWidget_IsActiveWindow((.)this.ptr.Ptr);
 	}
 	public void ActivateWindow()
 	{
-		CQt.QWidget_ActivateWindow((.)this.ptr);
+		CQt.QWidget_ActivateWindow((.)this.ptr.Ptr);
 	}
 	public void ClearFocus()
 	{
-		CQt.QWidget_ClearFocus((.)this.ptr);
+		CQt.QWidget_ClearFocus((.)this.ptr.Ptr);
 	}
 	public void SetFocus2(Qt_FocusReason reason)
 	{
-		CQt.QWidget_SetFocus2((.)this.ptr, reason);
+		CQt.QWidget_SetFocus2((.)this.ptr.Ptr, reason);
 	}
 	public Qt_FocusPolicy FocusPolicy()
 	{
-		return CQt.QWidget_FocusPolicy((.)this.ptr);
+		return CQt.QWidget_FocusPolicy((.)this.ptr.Ptr);
 	}
 	public void SetFocusPolicy(Qt_FocusPolicy policy)
 	{
-		CQt.QWidget_SetFocusPolicy((.)this.ptr, policy);
+		CQt.QWidget_SetFocusPolicy((.)this.ptr.Ptr, policy);
 	}
 	public bool HasFocus()
 	{
-		return CQt.QWidget_HasFocus((.)this.ptr);
+		return CQt.QWidget_HasFocus((.)this.ptr.Ptr);
 	}
 	public void SetTabOrder(IQWidget param1, IQWidget param2)
 	{
@@ -1277,795 +1286,795 @@ class QWidget : IQWidget, IQObject, IQPaintDevice
 	}
 	public void SetFocusProxy(IQWidget focusProxy)
 	{
-		CQt.QWidget_SetFocusProxy((.)this.ptr, (.)focusProxy?.ObjectPtr);
+		CQt.QWidget_SetFocusProxy((.)this.ptr.Ptr, (.)focusProxy?.ObjectPtr);
 	}
-	public QWidget_Ptr** FocusProxy()
+	public QWidget_Ptr FocusProxy()
 	{
-		return CQt.QWidget_FocusProxy((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_FocusProxy((.)this.ptr.Ptr));
 	}
 	public Qt_ContextMenuPolicy ContextMenuPolicy()
 	{
-		return CQt.QWidget_ContextMenuPolicy((.)this.ptr);
+		return CQt.QWidget_ContextMenuPolicy((.)this.ptr.Ptr);
 	}
 	public void SetContextMenuPolicy(Qt_ContextMenuPolicy policy)
 	{
-		CQt.QWidget_SetContextMenuPolicy((.)this.ptr, policy);
+		CQt.QWidget_SetContextMenuPolicy((.)this.ptr.Ptr, policy);
 	}
 	public void GrabMouse()
 	{
-		CQt.QWidget_GrabMouse((.)this.ptr);
+		CQt.QWidget_GrabMouse((.)this.ptr.Ptr);
 	}
 	public void GrabMouse2(IQCursor param1)
 	{
-		CQt.QWidget_GrabMouse2((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_GrabMouse2((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void ReleaseMouse()
 	{
-		CQt.QWidget_ReleaseMouse((.)this.ptr);
+		CQt.QWidget_ReleaseMouse((.)this.ptr.Ptr);
 	}
 	public void GrabKeyboard()
 	{
-		CQt.QWidget_GrabKeyboard((.)this.ptr);
+		CQt.QWidget_GrabKeyboard((.)this.ptr.Ptr);
 	}
 	public void ReleaseKeyboard()
 	{
-		CQt.QWidget_ReleaseKeyboard((.)this.ptr);
+		CQt.QWidget_ReleaseKeyboard((.)this.ptr.Ptr);
 	}
 	public c_int GrabShortcut(IQKeySequence key)
 	{
-		return CQt.QWidget_GrabShortcut((.)this.ptr, (.)key?.ObjectPtr);
+		return CQt.QWidget_GrabShortcut((.)this.ptr.Ptr, (.)key?.ObjectPtr);
 	}
 	public void ReleaseShortcut(c_int id)
 	{
-		CQt.QWidget_ReleaseShortcut((.)this.ptr, id);
+		CQt.QWidget_ReleaseShortcut((.)this.ptr.Ptr, id);
 	}
 	public void SetShortcutEnabled(c_int id)
 	{
-		CQt.QWidget_SetShortcutEnabled((.)this.ptr, id);
+		CQt.QWidget_SetShortcutEnabled((.)this.ptr.Ptr, id);
 	}
 	public void SetShortcutAutoRepeat(c_int id)
 	{
-		CQt.QWidget_SetShortcutAutoRepeat((.)this.ptr, id);
+		CQt.QWidget_SetShortcutAutoRepeat((.)this.ptr.Ptr, id);
 	}
-	public QWidget_Ptr** MouseGrabber()
+	public QWidget_Ptr MouseGrabber()
 	{
-		return CQt.QWidget_MouseGrabber();
+		return QWidget_Ptr(CQt.QWidget_MouseGrabber());
 	}
-	public QWidget_Ptr** KeyboardGrabber()
+	public QWidget_Ptr KeyboardGrabber()
 	{
-		return CQt.QWidget_KeyboardGrabber();
+		return QWidget_Ptr(CQt.QWidget_KeyboardGrabber());
 	}
 	public bool UpdatesEnabled()
 	{
-		return CQt.QWidget_UpdatesEnabled((.)this.ptr);
+		return CQt.QWidget_UpdatesEnabled((.)this.ptr.Ptr);
 	}
 	public void SetUpdatesEnabled(bool enable)
 	{
-		CQt.QWidget_SetUpdatesEnabled((.)this.ptr, enable);
+		CQt.QWidget_SetUpdatesEnabled((.)this.ptr.Ptr, enable);
 	}
-	public QGraphicsProxyWidget_Ptr** GraphicsProxyWidget()
+	public QGraphicsProxyWidget_Ptr GraphicsProxyWidget()
 	{
-		return CQt.QWidget_GraphicsProxyWidget((.)this.ptr);
+		return QGraphicsProxyWidget_Ptr(CQt.QWidget_GraphicsProxyWidget((.)this.ptr.Ptr));
 	}
 	public void Update()
 	{
-		CQt.QWidget_Update((.)this.ptr);
+		CQt.QWidget_Update((.)this.ptr.Ptr);
 	}
 	public void Repaint()
 	{
-		CQt.QWidget_Repaint((.)this.ptr);
+		CQt.QWidget_Repaint((.)this.ptr.Ptr);
 	}
 	public void Update2(c_int x, c_int y, c_int w, c_int h)
 	{
-		CQt.QWidget_Update2((.)this.ptr, x, y, w, h);
+		CQt.QWidget_Update2((.)this.ptr.Ptr, x, y, w, h);
 	}
 	public void Update3(IQRect param1)
 	{
-		CQt.QWidget_Update3((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_Update3((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void Update4(IQRegion param1)
 	{
-		CQt.QWidget_Update4((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_Update4((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void Repaint2(c_int x, c_int y, c_int w, c_int h)
 	{
-		CQt.QWidget_Repaint2((.)this.ptr, x, y, w, h);
+		CQt.QWidget_Repaint2((.)this.ptr.Ptr, x, y, w, h);
 	}
 	public void Repaint3(IQRect param1)
 	{
-		CQt.QWidget_Repaint3((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_Repaint3((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void Repaint4(IQRegion param1)
 	{
-		CQt.QWidget_Repaint4((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_Repaint4((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QWidget_SetVisible((.)this.ptr, visible);
+		CQt.QWidget_SetVisible((.)this.ptr.Ptr, visible);
 	}
 	public void SetHidden(bool hidden)
 	{
-		CQt.QWidget_SetHidden((.)this.ptr, hidden);
+		CQt.QWidget_SetHidden((.)this.ptr.Ptr, hidden);
 	}
 	public void Show()
 	{
-		CQt.QWidget_Show((.)this.ptr);
+		CQt.QWidget_Show((.)this.ptr.Ptr);
 	}
 	public void Hide()
 	{
-		CQt.QWidget_Hide((.)this.ptr);
+		CQt.QWidget_Hide((.)this.ptr.Ptr);
 	}
 	public void ShowMinimized()
 	{
-		CQt.QWidget_ShowMinimized((.)this.ptr);
+		CQt.QWidget_ShowMinimized((.)this.ptr.Ptr);
 	}
 	public void ShowMaximized()
 	{
-		CQt.QWidget_ShowMaximized((.)this.ptr);
+		CQt.QWidget_ShowMaximized((.)this.ptr.Ptr);
 	}
 	public void ShowFullScreen()
 	{
-		CQt.QWidget_ShowFullScreen((.)this.ptr);
+		CQt.QWidget_ShowFullScreen((.)this.ptr.Ptr);
 	}
 	public void ShowNormal()
 	{
-		CQt.QWidget_ShowNormal((.)this.ptr);
+		CQt.QWidget_ShowNormal((.)this.ptr.Ptr);
 	}
 	public bool Close()
 	{
-		return CQt.QWidget_Close((.)this.ptr);
+		return CQt.QWidget_Close((.)this.ptr.Ptr);
 	}
 	public void Raise()
 	{
-		CQt.QWidget_Raise((.)this.ptr);
+		CQt.QWidget_Raise((.)this.ptr.Ptr);
 	}
 	public void Lower()
 	{
-		CQt.QWidget_Lower((.)this.ptr);
+		CQt.QWidget_Lower((.)this.ptr.Ptr);
 	}
 	public void StackUnder(IQWidget param1)
 	{
-		CQt.QWidget_StackUnder((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_StackUnder((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void Move(c_int x, c_int y)
 	{
-		CQt.QWidget_Move((.)this.ptr, x, y);
+		CQt.QWidget_Move((.)this.ptr.Ptr, x, y);
 	}
 	public void Move2(IQPoint param1)
 	{
-		CQt.QWidget_Move2((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_Move2((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void Resize(c_int w, c_int h)
 	{
-		CQt.QWidget_Resize((.)this.ptr, w, h);
+		CQt.QWidget_Resize((.)this.ptr.Ptr, w, h);
 	}
 	public void Resize2(IQSize param1)
 	{
-		CQt.QWidget_Resize2((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_Resize2((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public void SetGeometry(c_int x, c_int y, c_int w, c_int h)
 	{
-		CQt.QWidget_SetGeometry((.)this.ptr, x, y, w, h);
+		CQt.QWidget_SetGeometry((.)this.ptr.Ptr, x, y, w, h);
 	}
 	public void SetGeometry2(IQRect geometry)
 	{
-		CQt.QWidget_SetGeometry2((.)this.ptr, (.)geometry?.ObjectPtr);
+		CQt.QWidget_SetGeometry2((.)this.ptr.Ptr, (.)geometry?.ObjectPtr);
 	}
 	public void* SaveGeometry()
 	{
-		return CQt.QWidget_SaveGeometry((.)this.ptr);
+		return CQt.QWidget_SaveGeometry((.)this.ptr.Ptr);
 	}
 	public bool RestoreGeometry(void** geometry)
 	{
-		return CQt.QWidget_RestoreGeometry((.)this.ptr, geometry);
+		return CQt.QWidget_RestoreGeometry((.)this.ptr.Ptr, geometry);
 	}
 	public void AdjustSize()
 	{
-		CQt.QWidget_AdjustSize((.)this.ptr);
+		CQt.QWidget_AdjustSize((.)this.ptr.Ptr);
 	}
 	public bool IsVisible()
 	{
-		return CQt.QWidget_IsVisible((.)this.ptr);
+		return CQt.QWidget_IsVisible((.)this.ptr.Ptr);
 	}
 	public bool IsVisibleTo(IQWidget param1)
 	{
-		return CQt.QWidget_IsVisibleTo((.)this.ptr, (.)param1?.ObjectPtr);
+		return CQt.QWidget_IsVisibleTo((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public bool IsHidden()
 	{
-		return CQt.QWidget_IsHidden((.)this.ptr);
+		return CQt.QWidget_IsHidden((.)this.ptr.Ptr);
 	}
 	public bool IsMinimized()
 	{
-		return CQt.QWidget_IsMinimized((.)this.ptr);
+		return CQt.QWidget_IsMinimized((.)this.ptr.Ptr);
 	}
 	public bool IsMaximized()
 	{
-		return CQt.QWidget_IsMaximized((.)this.ptr);
+		return CQt.QWidget_IsMaximized((.)this.ptr.Ptr);
 	}
 	public bool IsFullScreen()
 	{
-		return CQt.QWidget_IsFullScreen((.)this.ptr);
+		return CQt.QWidget_IsFullScreen((.)this.ptr.Ptr);
 	}
 	public void* WindowState()
 	{
-		return CQt.QWidget_WindowState((.)this.ptr);
+		return CQt.QWidget_WindowState((.)this.ptr.Ptr);
 	}
 	public void SetWindowState(void* state)
 	{
-		CQt.QWidget_SetWindowState((.)this.ptr, state);
+		CQt.QWidget_SetWindowState((.)this.ptr.Ptr, state);
 	}
 	public void OverrideWindowState(void* state)
 	{
-		CQt.QWidget_OverrideWindowState((.)this.ptr, state);
+		CQt.QWidget_OverrideWindowState((.)this.ptr.Ptr, state);
 	}
-	public QSize_Ptr* SizeHint()
+	public QSize_Ptr SizeHint()
 	{
-		return CQt.QWidget_SizeHint((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_SizeHint((.)this.ptr.Ptr));
 	}
-	public QSize_Ptr* MinimumSizeHint()
+	public QSize_Ptr MinimumSizeHint()
 	{
-		return CQt.QWidget_MinimumSizeHint((.)this.ptr);
+		return QSize_Ptr(CQt.QWidget_MinimumSizeHint((.)this.ptr.Ptr));
 	}
-	public QSizePolicy_Ptr* SizePolicy()
+	public QSizePolicy_Ptr SizePolicy()
 	{
-		return CQt.QWidget_SizePolicy((.)this.ptr);
+		return QSizePolicy_Ptr(CQt.QWidget_SizePolicy((.)this.ptr.Ptr));
 	}
 	public void SetSizePolicy(IQSizePolicy sizePolicy)
 	{
-		CQt.QWidget_SetSizePolicy((.)this.ptr, (.)sizePolicy?.ObjectPtr);
+		CQt.QWidget_SetSizePolicy((.)this.ptr.Ptr, (.)sizePolicy?.ObjectPtr);
 	}
 	public void SetSizePolicy2(QSizePolicy_Policy horizontal, QSizePolicy_Policy vertical)
 	{
-		CQt.QWidget_SetSizePolicy2((.)this.ptr, horizontal, vertical);
+		CQt.QWidget_SetSizePolicy2((.)this.ptr.Ptr, horizontal, vertical);
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidget_HeightForWidth((.)this.ptr, param1);
+		return CQt.QWidget_HeightForWidth((.)this.ptr.Ptr, param1);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidget_HasHeightForWidth((.)this.ptr);
+		return CQt.QWidget_HasHeightForWidth((.)this.ptr.Ptr);
 	}
-	public QRegion_Ptr* VisibleRegion()
+	public QRegion_Ptr VisibleRegion()
 	{
-		return CQt.QWidget_VisibleRegion((.)this.ptr);
+		return QRegion_Ptr(CQt.QWidget_VisibleRegion((.)this.ptr.Ptr));
 	}
 	public void SetContentsMargins(c_int left, c_int top, c_int right, c_int bottom)
 	{
-		CQt.QWidget_SetContentsMargins((.)this.ptr, left, top, right, bottom);
+		CQt.QWidget_SetContentsMargins((.)this.ptr.Ptr, left, top, right, bottom);
 	}
 	public void SetContentsMargins2(IQMargins margins)
 	{
-		CQt.QWidget_SetContentsMargins2((.)this.ptr, (.)margins?.ObjectPtr);
+		CQt.QWidget_SetContentsMargins2((.)this.ptr.Ptr, (.)margins?.ObjectPtr);
 	}
-	public QMargins_Ptr* ContentsMargins()
+	public QMargins_Ptr ContentsMargins()
 	{
-		return CQt.QWidget_ContentsMargins((.)this.ptr);
+		return QMargins_Ptr(CQt.QWidget_ContentsMargins((.)this.ptr.Ptr));
 	}
-	public QRect_Ptr* ContentsRect()
+	public QRect_Ptr ContentsRect()
 	{
-		return CQt.QWidget_ContentsRect((.)this.ptr);
+		return QRect_Ptr(CQt.QWidget_ContentsRect((.)this.ptr.Ptr));
 	}
-	public QLayout_Ptr** Layout()
+	public QLayout_Ptr Layout()
 	{
-		return CQt.QWidget_Layout((.)this.ptr);
+		return QLayout_Ptr(CQt.QWidget_Layout((.)this.ptr.Ptr));
 	}
 	public void SetLayout(IQLayout layout)
 	{
-		CQt.QWidget_SetLayout((.)this.ptr, (.)layout?.ObjectPtr);
+		CQt.QWidget_SetLayout((.)this.ptr.Ptr, (.)layout?.ObjectPtr);
 	}
 	public void UpdateGeometry()
 	{
-		CQt.QWidget_UpdateGeometry((.)this.ptr);
+		CQt.QWidget_UpdateGeometry((.)this.ptr.Ptr);
 	}
 	public void SetParent(IQWidget parent)
 	{
-		CQt.QWidget_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
+		CQt.QWidget_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void SetParent2(IQWidget parent, void* f)
 	{
-		CQt.QWidget_SetParent2((.)this.ptr, (.)parent?.ObjectPtr, f);
+		CQt.QWidget_SetParent2((.)this.ptr.Ptr, (.)parent?.ObjectPtr, f);
 	}
 	public void Scroll(c_int dx, c_int dy)
 	{
-		CQt.QWidget_Scroll((.)this.ptr, dx, dy);
+		CQt.QWidget_Scroll((.)this.ptr.Ptr, dx, dy);
 	}
 	public void Scroll2(c_int dx, c_int dy, IQRect param3)
 	{
-		CQt.QWidget_Scroll2((.)this.ptr, dx, dy, (.)param3?.ObjectPtr);
+		CQt.QWidget_Scroll2((.)this.ptr.Ptr, dx, dy, (.)param3?.ObjectPtr);
 	}
-	public QWidget_Ptr** FocusWidget()
+	public QWidget_Ptr FocusWidget()
 	{
-		return CQt.QWidget_FocusWidget((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_FocusWidget((.)this.ptr.Ptr));
 	}
-	public QWidget_Ptr** NextInFocusChain()
+	public QWidget_Ptr NextInFocusChain()
 	{
-		return CQt.QWidget_NextInFocusChain((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_NextInFocusChain((.)this.ptr.Ptr));
 	}
-	public QWidget_Ptr** PreviousInFocusChain()
+	public QWidget_Ptr PreviousInFocusChain()
 	{
-		return CQt.QWidget_PreviousInFocusChain((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_PreviousInFocusChain((.)this.ptr.Ptr));
 	}
 	public bool AcceptDrops()
 	{
-		return CQt.QWidget_AcceptDrops((.)this.ptr);
+		return CQt.QWidget_AcceptDrops((.)this.ptr.Ptr);
 	}
 	public void SetAcceptDrops(bool on)
 	{
-		CQt.QWidget_SetAcceptDrops((.)this.ptr, on);
+		CQt.QWidget_SetAcceptDrops((.)this.ptr.Ptr, on);
 	}
 	public void AddAction(IQAction action)
 	{
-		CQt.QWidget_AddAction((.)this.ptr, (.)action?.ObjectPtr);
+		CQt.QWidget_AddAction((.)this.ptr.Ptr, (.)action?.ObjectPtr);
 	}
 	public void AddActions(void** actions)
 	{
-		CQt.QWidget_AddActions((.)this.ptr, actions);
+		CQt.QWidget_AddActions((.)this.ptr.Ptr, actions);
 	}
 	public void InsertActions(IQAction before, void** actions)
 	{
-		CQt.QWidget_InsertActions((.)this.ptr, (.)before?.ObjectPtr, actions);
+		CQt.QWidget_InsertActions((.)this.ptr.Ptr, (.)before?.ObjectPtr, actions);
 	}
 	public void InsertAction(IQAction before, IQAction action)
 	{
-		CQt.QWidget_InsertAction((.)this.ptr, (.)before?.ObjectPtr, (.)action?.ObjectPtr);
+		CQt.QWidget_InsertAction((.)this.ptr.Ptr, (.)before?.ObjectPtr, (.)action?.ObjectPtr);
 	}
 	public void RemoveAction(IQAction action)
 	{
-		CQt.QWidget_RemoveAction((.)this.ptr, (.)action?.ObjectPtr);
+		CQt.QWidget_RemoveAction((.)this.ptr.Ptr, (.)action?.ObjectPtr);
 	}
 	public void* Actions()
 	{
-		return CQt.QWidget_Actions((.)this.ptr);
+		return CQt.QWidget_Actions((.)this.ptr.Ptr);
 	}
-	public QAction_Ptr** AddAction2(String text)
+	public QAction_Ptr AddAction2(String text)
 	{
-		return CQt.QWidget_AddAction2((.)this.ptr, libqt_string(text));
+		return QAction_Ptr(CQt.QWidget_AddAction2((.)this.ptr.Ptr, libqt_string(text)));
 	}
-	public QAction_Ptr** AddAction3(IQIcon icon, String text)
+	public QAction_Ptr AddAction3(IQIcon icon, String text)
 	{
-		return CQt.QWidget_AddAction3((.)this.ptr, (.)icon?.ObjectPtr, libqt_string(text));
+		return QAction_Ptr(CQt.QWidget_AddAction3((.)this.ptr.Ptr, (.)icon?.ObjectPtr, libqt_string(text)));
 	}
-	public QAction_Ptr** AddAction4(String text, IQKeySequence shortcut)
+	public QAction_Ptr AddAction4(String text, IQKeySequence shortcut)
 	{
-		return CQt.QWidget_AddAction4((.)this.ptr, libqt_string(text), (.)shortcut?.ObjectPtr);
+		return QAction_Ptr(CQt.QWidget_AddAction4((.)this.ptr.Ptr, libqt_string(text), (.)shortcut?.ObjectPtr));
 	}
-	public QAction_Ptr** AddAction5(IQIcon icon, String text, IQKeySequence shortcut)
+	public QAction_Ptr AddAction5(IQIcon icon, String text, IQKeySequence shortcut)
 	{
-		return CQt.QWidget_AddAction5((.)this.ptr, (.)icon?.ObjectPtr, libqt_string(text), (.)shortcut?.ObjectPtr);
+		return QAction_Ptr(CQt.QWidget_AddAction5((.)this.ptr.Ptr, (.)icon?.ObjectPtr, libqt_string(text), (.)shortcut?.ObjectPtr));
 	}
-	public QWidget_Ptr** ParentWidget()
+	public QWidget_Ptr ParentWidget()
 	{
-		return CQt.QWidget_ParentWidget((.)this.ptr);
+		return QWidget_Ptr(CQt.QWidget_ParentWidget((.)this.ptr.Ptr));
 	}
 	public void SetWindowFlags(void* type)
 	{
-		CQt.QWidget_SetWindowFlags((.)this.ptr, type);
+		CQt.QWidget_SetWindowFlags((.)this.ptr.Ptr, type);
 	}
 	public void* WindowFlags()
 	{
-		return CQt.QWidget_WindowFlags((.)this.ptr);
+		return CQt.QWidget_WindowFlags((.)this.ptr.Ptr);
 	}
 	public void SetWindowFlag(Qt_WindowType param1)
 	{
-		CQt.QWidget_SetWindowFlag((.)this.ptr, param1);
+		CQt.QWidget_SetWindowFlag((.)this.ptr.Ptr, param1);
 	}
 	public void OverrideWindowFlags(void* type)
 	{
-		CQt.QWidget_OverrideWindowFlags((.)this.ptr, type);
+		CQt.QWidget_OverrideWindowFlags((.)this.ptr.Ptr, type);
 	}
 	public Qt_WindowType WindowType()
 	{
-		return CQt.QWidget_WindowType((.)this.ptr);
+		return CQt.QWidget_WindowType((.)this.ptr.Ptr);
 	}
-	public QWidget_Ptr** Find(c_ulonglong param1)
+	public QWidget_Ptr Find(c_ulonglong param1)
 	{
-		return CQt.QWidget_Find(param1);
+		return QWidget_Ptr(CQt.QWidget_Find(param1));
 	}
-	public QWidget_Ptr** ChildAt(c_int x, c_int y)
+	public QWidget_Ptr ChildAt(c_int x, c_int y)
 	{
-		return CQt.QWidget_ChildAt((.)this.ptr, x, y);
+		return QWidget_Ptr(CQt.QWidget_ChildAt((.)this.ptr.Ptr, x, y));
 	}
-	public QWidget_Ptr** ChildAt2(IQPoint p)
+	public QWidget_Ptr ChildAt2(IQPoint p)
 	{
-		return CQt.QWidget_ChildAt2((.)this.ptr, (.)p?.ObjectPtr);
+		return QWidget_Ptr(CQt.QWidget_ChildAt2((.)this.ptr.Ptr, (.)p?.ObjectPtr));
 	}
 	public void SetAttribute(Qt_WidgetAttribute param1)
 	{
-		CQt.QWidget_SetAttribute((.)this.ptr, param1);
+		CQt.QWidget_SetAttribute((.)this.ptr.Ptr, param1);
 	}
 	public bool TestAttribute(Qt_WidgetAttribute param1)
 	{
-		return CQt.QWidget_TestAttribute((.)this.ptr, param1);
+		return CQt.QWidget_TestAttribute((.)this.ptr.Ptr, param1);
 	}
-	public QPaintEngine_Ptr** PaintEngine()
+	public QPaintEngine_Ptr PaintEngine()
 	{
-		return CQt.QWidget_PaintEngine((.)this.ptr);
+		return QPaintEngine_Ptr(CQt.QWidget_PaintEngine((.)this.ptr.Ptr));
 	}
 	public void EnsurePolished()
 	{
-		CQt.QWidget_EnsurePolished((.)this.ptr);
+		CQt.QWidget_EnsurePolished((.)this.ptr.Ptr);
 	}
 	public bool IsAncestorOf(IQWidget child)
 	{
-		return CQt.QWidget_IsAncestorOf((.)this.ptr, (.)child?.ObjectPtr);
+		return CQt.QWidget_IsAncestorOf((.)this.ptr.Ptr, (.)child?.ObjectPtr);
 	}
 	public bool AutoFillBackground()
 	{
-		return CQt.QWidget_AutoFillBackground((.)this.ptr);
+		return CQt.QWidget_AutoFillBackground((.)this.ptr.Ptr);
 	}
 	public void SetAutoFillBackground(bool enabled)
 	{
-		CQt.QWidget_SetAutoFillBackground((.)this.ptr, enabled);
+		CQt.QWidget_SetAutoFillBackground((.)this.ptr.Ptr, enabled);
 	}
-	public QBackingStore_Ptr** BackingStore()
+	public QBackingStore_Ptr BackingStore()
 	{
-		return CQt.QWidget_BackingStore((.)this.ptr);
+		return QBackingStore_Ptr(CQt.QWidget_BackingStore((.)this.ptr.Ptr));
 	}
-	public QWindow_Ptr** WindowHandle()
+	public QWindow_Ptr WindowHandle()
 	{
-		return CQt.QWidget_WindowHandle((.)this.ptr);
+		return QWindow_Ptr(CQt.QWidget_WindowHandle((.)this.ptr.Ptr));
 	}
-	public QScreen_Ptr** Screen()
+	public QScreen_Ptr Screen()
 	{
-		return CQt.QWidget_Screen((.)this.ptr);
+		return QScreen_Ptr(CQt.QWidget_Screen((.)this.ptr.Ptr));
 	}
 	public void SetScreen(IQScreen screen)
 	{
-		CQt.QWidget_SetScreen((.)this.ptr, (.)screen?.ObjectPtr);
+		CQt.QWidget_SetScreen((.)this.ptr.Ptr, (.)screen?.ObjectPtr);
 	}
-	public QWidget_Ptr** CreateWindowContainer(IQWindow window)
+	public QWidget_Ptr CreateWindowContainer(IQWindow window)
 	{
-		return CQt.QWidget_CreateWindowContainer((.)window?.ObjectPtr);
+		return QWidget_Ptr(CQt.QWidget_CreateWindowContainer((.)window?.ObjectPtr));
 	}
 	public void WindowTitleChanged(String title)
 	{
-		CQt.QWidget_WindowTitleChanged((.)this.ptr, libqt_string(title));
+		CQt.QWidget_WindowTitleChanged((.)this.ptr.Ptr, libqt_string(title));
 	}
 	public void WindowIconChanged(IQIcon icon)
 	{
-		CQt.QWidget_WindowIconChanged((.)this.ptr, (.)icon?.ObjectPtr);
+		CQt.QWidget_WindowIconChanged((.)this.ptr.Ptr, (.)icon?.ObjectPtr);
 	}
 	public void WindowIconTextChanged(String iconText)
 	{
-		CQt.QWidget_WindowIconTextChanged((.)this.ptr, libqt_string(iconText));
+		CQt.QWidget_WindowIconTextChanged((.)this.ptr.Ptr, libqt_string(iconText));
 	}
 	public void CustomContextMenuRequested(IQPoint pos)
 	{
-		CQt.QWidget_CustomContextMenuRequested((.)this.ptr, (.)pos?.ObjectPtr);
+		CQt.QWidget_CustomContextMenuRequested((.)this.ptr.Ptr, (.)pos?.ObjectPtr);
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QWidget_Event((.)this.ptr, (.)event?.ObjectPtr);
+		return CQt.QWidget_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MousePressEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MousePressEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_MousePressEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseReleaseEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_MouseReleaseEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseDoubleClickEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseDoubleClickEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_MouseDoubleClickEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MouseMoveEvent(IQMouseEvent event)
 	{
-		CQt.QWidget_MouseMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_MouseMoveEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void WheelEvent(IQWheelEvent event)
 	{
-		CQt.QWidget_WheelEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_WheelEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void KeyPressEvent(IQKeyEvent event)
 	{
-		CQt.QWidget_KeyPressEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_KeyPressEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void KeyReleaseEvent(IQKeyEvent event)
 	{
-		CQt.QWidget_KeyReleaseEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_KeyReleaseEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusInEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusInEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_FocusInEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void FocusOutEvent(IQFocusEvent event)
 	{
-		CQt.QWidget_FocusOutEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_FocusOutEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void EnterEvent(IQEnterEvent event)
 	{
-		CQt.QWidget_EnterEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_EnterEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void LeaveEvent(IQEvent event)
 	{
-		CQt.QWidget_LeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_LeaveEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void PaintEvent(IQPaintEvent event)
 	{
-		CQt.QWidget_PaintEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_PaintEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void MoveEvent(IQMoveEvent event)
 	{
-		CQt.QWidget_MoveEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_MoveEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ResizeEvent(IQResizeEvent event)
 	{
-		CQt.QWidget_ResizeEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_ResizeEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CloseEvent(IQCloseEvent event)
 	{
-		CQt.QWidget_CloseEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_CloseEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ContextMenuEvent(IQContextMenuEvent event)
 	{
-		CQt.QWidget_ContextMenuEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_ContextMenuEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void TabletEvent(IQTabletEvent event)
 	{
-		CQt.QWidget_TabletEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_TabletEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ActionEvent(IQActionEvent event)
 	{
-		CQt.QWidget_ActionEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_ActionEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragEnterEvent(IQDragEnterEvent event)
 	{
-		CQt.QWidget_DragEnterEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_DragEnterEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragMoveEvent(IQDragMoveEvent event)
 	{
-		CQt.QWidget_DragMoveEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_DragMoveEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DragLeaveEvent(IQDragLeaveEvent event)
 	{
-		CQt.QWidget_DragLeaveEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_DragLeaveEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void DropEvent(IQDropEvent event)
 	{
-		CQt.QWidget_DropEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_DropEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ShowEvent(IQShowEvent event)
 	{
-		CQt.QWidget_ShowEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_ShowEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void HideEvent(IQHideEvent event)
 	{
-		CQt.QWidget_HideEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QWidget_HideEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public bool NativeEvent(void** eventType, void* message, void** result)
 	{
-		return CQt.QWidget_NativeEvent((.)this.ptr, eventType, message, result);
+		return CQt.QWidget_NativeEvent((.)this.ptr.Ptr, eventType, message, result);
 	}
 	public void ChangeEvent(IQEvent param1)
 	{
-		CQt.QWidget_ChangeEvent((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_ChangeEvent((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public c_int Metric(QPaintDevice_PaintDeviceMetric param1)
 	{
-		return CQt.QWidget_Metric((.)this.ptr, param1);
+		return CQt.QWidget_Metric((.)this.ptr.Ptr, param1);
 	}
 	public void InitPainter(IQPainter painter)
 	{
-		CQt.QWidget_InitPainter((.)this.ptr, (.)painter?.ObjectPtr);
+		CQt.QWidget_InitPainter((.)this.ptr.Ptr, (.)painter?.ObjectPtr);
 	}
-	public QPaintDevice_Ptr** Redirected(IQPoint offset)
+	public QPaintDevice_Ptr Redirected(IQPoint offset)
 	{
-		return CQt.QWidget_Redirected((.)this.ptr, (.)offset?.ObjectPtr);
+		return QPaintDevice_Ptr(CQt.QWidget_Redirected((.)this.ptr.Ptr, (.)offset?.ObjectPtr));
 	}
-	public QPainter_Ptr** SharedPainter()
+	public QPainter_Ptr SharedPainter()
 	{
-		return CQt.QWidget_SharedPainter((.)this.ptr);
+		return QPainter_Ptr(CQt.QWidget_SharedPainter((.)this.ptr.Ptr));
 	}
 	public void InputMethodEvent(IQInputMethodEvent param1)
 	{
-		CQt.QWidget_InputMethodEvent((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QWidget_InputMethodEvent((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
-	public QVariant_Ptr* InputMethodQuery(Qt_InputMethodQuery param1)
+	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery param1)
 	{
-		return CQt.QWidget_InputMethodQuery((.)this.ptr, param1);
+		return QVariant_Ptr(CQt.QWidget_InputMethodQuery((.)this.ptr.Ptr, param1));
 	}
 	public void* InputMethodHints()
 	{
-		return CQt.QWidget_InputMethodHints((.)this.ptr);
+		return CQt.QWidget_InputMethodHints((.)this.ptr.Ptr);
 	}
 	public void SetInputMethodHints(void* hints)
 	{
-		CQt.QWidget_SetInputMethodHints((.)this.ptr, hints);
+		CQt.QWidget_SetInputMethodHints((.)this.ptr.Ptr, hints);
 	}
 	public void UpdateMicroFocus()
 	{
-		CQt.QWidget_UpdateMicroFocus((.)this.ptr);
+		CQt.QWidget_UpdateMicroFocus((.)this.ptr.Ptr);
 	}
 	public void Create()
 	{
-		CQt.QWidget_Create((.)this.ptr);
+		CQt.QWidget_Create((.)this.ptr.Ptr);
 	}
 	public void Destroy()
 	{
-		CQt.QWidget_Destroy((.)this.ptr);
+		CQt.QWidget_Destroy((.)this.ptr.Ptr);
 	}
 	public bool FocusNextPrevChild(bool next)
 	{
-		return CQt.QWidget_FocusNextPrevChild((.)this.ptr, next);
+		return CQt.QWidget_FocusNextPrevChild((.)this.ptr.Ptr, next);
 	}
 	public bool FocusNextChild()
 	{
-		return CQt.QWidget_FocusNextChild((.)this.ptr);
+		return CQt.QWidget_FocusNextChild((.)this.ptr.Ptr);
 	}
 	public bool FocusPreviousChild()
 	{
-		return CQt.QWidget_FocusPreviousChild((.)this.ptr);
+		return CQt.QWidget_FocusPreviousChild((.)this.ptr.Ptr);
 	}
-	public libqt_string Tr2(c_char* s, c_char* c)
+	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
-		return CQt.QWidget_Tr2(s, c);
+		CQt.QWidget_Tr2(s, c);
 	}
-	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
 	{
-		return CQt.QWidget_Tr3(s, c, n);
+		CQt.QWidget_Tr3(s, c, n);
 	}
 	public void Render22(IQPaintDevice target, IQPoint targetOffset)
 	{
-		CQt.QWidget_Render22((.)this.ptr, (.)target?.ObjectPtr, (.)targetOffset?.ObjectPtr);
+		CQt.QWidget_Render22((.)this.ptr.Ptr, (.)target?.ObjectPtr, (.)targetOffset?.ObjectPtr);
 	}
 	public void Render3(IQPaintDevice target, IQPoint targetOffset, IQRegion sourceRegion)
 	{
-		CQt.QWidget_Render3((.)this.ptr, (.)target?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr);
+		CQt.QWidget_Render3((.)this.ptr.Ptr, (.)target?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr);
 	}
 	public void Render4(IQPaintDevice target, IQPoint targetOffset, IQRegion sourceRegion, void* renderFlags)
 	{
-		CQt.QWidget_Render4((.)this.ptr, (.)target?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr, renderFlags);
+		CQt.QWidget_Render4((.)this.ptr.Ptr, (.)target?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr, renderFlags);
 	}
 	public void Render23(IQPainter painter, IQPoint targetOffset)
 	{
-		CQt.QWidget_Render23((.)this.ptr, (.)painter?.ObjectPtr, (.)targetOffset?.ObjectPtr);
+		CQt.QWidget_Render23((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)targetOffset?.ObjectPtr);
 	}
 	public void Render32(IQPainter painter, IQPoint targetOffset, IQRegion sourceRegion)
 	{
-		CQt.QWidget_Render32((.)this.ptr, (.)painter?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr);
+		CQt.QWidget_Render32((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr);
 	}
 	public void Render42(IQPainter painter, IQPoint targetOffset, IQRegion sourceRegion, void* renderFlags)
 	{
-		CQt.QWidget_Render42((.)this.ptr, (.)painter?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr, renderFlags);
+		CQt.QWidget_Render42((.)this.ptr.Ptr, (.)painter?.ObjectPtr, (.)targetOffset?.ObjectPtr, (.)sourceRegion?.ObjectPtr, renderFlags);
 	}
-	public QPixmap_Ptr* Grab1(IQRect rectangle)
+	public QPixmap_Ptr Grab1(IQRect rectangle)
 	{
-		return CQt.QWidget_Grab1((.)this.ptr, (.)rectangle?.ObjectPtr);
+		return QPixmap_Ptr(CQt.QWidget_Grab1((.)this.ptr.Ptr, (.)rectangle?.ObjectPtr));
 	}
 	public void GrabGesture2(Qt_GestureType type, void* flags)
 	{
-		CQt.QWidget_GrabGesture2((.)this.ptr, type, flags);
+		CQt.QWidget_GrabGesture2((.)this.ptr.Ptr, type, flags);
 	}
 	public c_int GrabShortcut2(IQKeySequence key, Qt_ShortcutContext context)
 	{
-		return CQt.QWidget_GrabShortcut2((.)this.ptr, (.)key?.ObjectPtr, context);
+		return CQt.QWidget_GrabShortcut2((.)this.ptr.Ptr, (.)key?.ObjectPtr, context);
 	}
 	public void SetShortcutEnabled2(c_int id, bool enable)
 	{
-		CQt.QWidget_SetShortcutEnabled2((.)this.ptr, id, enable);
+		CQt.QWidget_SetShortcutEnabled2((.)this.ptr.Ptr, id, enable);
 	}
 	public void SetShortcutAutoRepeat2(c_int id, bool enable)
 	{
-		CQt.QWidget_SetShortcutAutoRepeat2((.)this.ptr, id, enable);
+		CQt.QWidget_SetShortcutAutoRepeat2((.)this.ptr.Ptr, id, enable);
 	}
 	public void SetWindowFlag2(Qt_WindowType param1, bool on)
 	{
-		CQt.QWidget_SetWindowFlag2((.)this.ptr, param1, on);
+		CQt.QWidget_SetWindowFlag2((.)this.ptr.Ptr, param1, on);
 	}
 	public void SetAttribute2(Qt_WidgetAttribute param1, bool on)
 	{
-		CQt.QWidget_SetAttribute2((.)this.ptr, param1, on);
+		CQt.QWidget_SetAttribute2((.)this.ptr.Ptr, param1, on);
 	}
-	public QWidget_Ptr** CreateWindowContainer2(IQWindow window, IQWidget parent)
+	public QWidget_Ptr CreateWindowContainer2(IQWindow window, IQWidget parent)
 	{
-		return CQt.QWidget_CreateWindowContainer2((.)window?.ObjectPtr, (.)parent?.ObjectPtr);
+		return QWidget_Ptr(CQt.QWidget_CreateWindowContainer2((.)window?.ObjectPtr, (.)parent?.ObjectPtr));
 	}
-	public QWidget_Ptr** CreateWindowContainer3(IQWindow window, IQWidget parent, void* flags)
+	public QWidget_Ptr CreateWindowContainer3(IQWindow window, IQWidget parent, void* flags)
 	{
-		return CQt.QWidget_CreateWindowContainer3((.)window?.ObjectPtr, (.)parent?.ObjectPtr, flags);
+		return QWidget_Ptr(CQt.QWidget_CreateWindowContainer3((.)window?.ObjectPtr, (.)parent?.ObjectPtr, flags));
 	}
 	public void UpdateMicroFocus1(Qt_InputMethodQuery query)
 	{
-		CQt.QWidget_UpdateMicroFocus1((.)this.ptr, query);
+		CQt.QWidget_UpdateMicroFocus1((.)this.ptr.Ptr, query);
 	}
 	public void Create1(c_ulonglong param1)
 	{
-		CQt.QWidget_Create1((.)this.ptr, param1);
+		CQt.QWidget_Create1((.)this.ptr.Ptr, param1);
 	}
 	public void Create2(c_ulonglong param1, bool initializeWindow)
 	{
-		CQt.QWidget_Create2((.)this.ptr, param1, initializeWindow);
+		CQt.QWidget_Create2((.)this.ptr.Ptr, param1, initializeWindow);
 	}
 	public void Create3(c_ulonglong param1, bool initializeWindow, bool destroyOldWindow)
 	{
-		CQt.QWidget_Create3((.)this.ptr, param1, initializeWindow, destroyOldWindow);
+		CQt.QWidget_Create3((.)this.ptr.Ptr, param1, initializeWindow, destroyOldWindow);
 	}
 	public void Destroy1(bool destroyWindow)
 	{
-		CQt.QWidget_Destroy1((.)this.ptr, destroyWindow);
+		CQt.QWidget_Destroy1((.)this.ptr.Ptr, destroyWindow);
 	}
 	public void Destroy2(bool destroyWindow, bool destroySubWindows)
 	{
-		CQt.QWidget_Destroy2((.)this.ptr, destroyWindow, destroySubWindows);
+		CQt.QWidget_Destroy2((.)this.ptr.Ptr, destroyWindow, destroySubWindows);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public libqt_string ObjectName()
+	public void ObjectName(String outStr)
 	{
-		return CQt.QObject_ObjectName((.)this.ptr);
+		CQt.QObject_ObjectName((.)this.ptr.Ptr);
 	}
 	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
+		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
-		return CQt.QObject_IsWidgetType((.)this.ptr);
+		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
 	}
 	public bool IsWindowType()
 	{
-		return CQt.QObject_IsWindowType((.)this.ptr);
+		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
 	}
 	public bool IsQuickItemType()
 	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr);
+		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
 	}
 	public bool SignalsBlocked()
 	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr);
+		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
 	}
 	public bool BlockSignals(bool b)
 	{
-		return CQt.QObject_BlockSignals((.)this.ptr, b);
+		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
 	}
-	public QThread_Ptr** Thread()
+	public QThread_Ptr Thread()
 	{
-		return CQt.QObject_Thread((.)this.ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
 	}
 	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
+		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QObject_StartTimer((.)this.ptr, interval);
+		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
 	}
 	public c_int StartTimer2(void* time)
 	{
-		return CQt.QObject_StartTimer2((.)this.ptr, time);
+		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
 	}
 	public void KillTimer(c_int id)
 	{
-		CQt.QObject_KillTimer((.)this.ptr, id);
+		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
 	}
 	public void** Children()
 	{
-		return CQt.QObject_Children((.)this.ptr);
+		return CQt.QObject_Children((.)this.ptr.Ptr);
 	}
 	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
 	}
 	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
 	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
@@ -2077,11 +2086,11 @@ class QWidget : IQWidget, IQObject, IQPaintDevice
 	}
 	public bool Disconnect3()
 	{
-		return CQt.QObject_Disconnect3((.)this.ptr);
+		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
 	}
 	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
@@ -2089,167 +2098,167 @@ class QWidget : IQWidget, IQObject, IQPaintDevice
 	}
 	public void DumpObjectTree()
 	{
-		CQt.QObject_DumpObjectTree((.)this.ptr);
+		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
 	}
 	public void DumpObjectInfo()
 	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr);
+		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
 	}
 	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
+		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr* Property(c_char* name)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return CQt.QObject_Property((.)this.ptr, name);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
 	}
 	public void* DynamicPropertyNames()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
 	}
-	public QBindingStorage_Ptr** BindingStorage()
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		return CQt.QObject_BindingStorage((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
 	}
-	public QBindingStorage_Ptr** BindingStorage2()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return CQt.QObject_BindingStorage2((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
 	}
 	public void Destroyed()
 	{
-		CQt.QObject_Destroyed((.)this.ptr);
+		CQt.QObject_Destroyed((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Parent()
+	public QObject_Ptr Parent()
 	{
-		return CQt.QObject_Parent((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
 	}
 	public bool Inherits(c_char* classname)
 	{
-		return CQt.QObject_Inherits((.)this.ptr, classname);
+		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
 	}
 	public void DeleteLater()
 	{
-		CQt.QObject_DeleteLater((.)this.ptr);
+		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Sender()
+	public QObject_Ptr Sender()
 	{
-		return CQt.QObject_Sender((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
 	}
 	public c_int SenderSignalIndex()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
 	}
 	public c_int Receivers(c_char* signal)
 	{
-		return CQt.QObject_Receivers((.)this.ptr, signal);
+		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
 	}
 	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
 	}
 	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
 	}
-	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
 	}
-	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
 	}
-	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
 	}
 	public bool Disconnect1(c_char* signal)
 	{
-		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
 	}
 	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
 	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
 	}
 	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 	public bool PaintingActive()
 	{
-		return CQt.QPaintDevice_PaintingActive((.)this.ptr);
+		return CQt.QPaintDevice_PaintingActive((.)this.ptr.Ptr);
 	}
 	public c_int WidthMM()
 	{
-		return CQt.QPaintDevice_WidthMM((.)this.ptr);
+		return CQt.QPaintDevice_WidthMM((.)this.ptr.Ptr);
 	}
 	public c_int HeightMM()
 	{
-		return CQt.QPaintDevice_HeightMM((.)this.ptr);
+		return CQt.QPaintDevice_HeightMM((.)this.ptr.Ptr);
 	}
 	public c_int LogicalDpiX()
 	{
-		return CQt.QPaintDevice_LogicalDpiX((.)this.ptr);
+		return CQt.QPaintDevice_LogicalDpiX((.)this.ptr.Ptr);
 	}
 	public c_int LogicalDpiY()
 	{
-		return CQt.QPaintDevice_LogicalDpiY((.)this.ptr);
+		return CQt.QPaintDevice_LogicalDpiY((.)this.ptr.Ptr);
 	}
 	public c_int PhysicalDpiX()
 	{
-		return CQt.QPaintDevice_PhysicalDpiX((.)this.ptr);
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.ptr.Ptr);
 	}
 	public c_int PhysicalDpiY()
 	{
-		return CQt.QPaintDevice_PhysicalDpiY((.)this.ptr);
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.ptr.Ptr);
 	}
 	public double DevicePixelRatio()
 	{
-		return CQt.QPaintDevice_DevicePixelRatio((.)this.ptr);
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.ptr.Ptr);
 	}
 	public double DevicePixelRatioF()
 	{
-		return CQt.QPaintDevice_DevicePixelRatioF((.)this.ptr);
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.ptr.Ptr);
 	}
 	public c_int ColorCount()
 	{
-		return CQt.QPaintDevice_ColorCount((.)this.ptr);
+		return CQt.QPaintDevice_ColorCount((.)this.ptr.Ptr);
 	}
 	public c_int Depth()
 	{
-		return CQt.QPaintDevice_Depth((.)this.ptr);
+		return CQt.QPaintDevice_Depth((.)this.ptr.Ptr);
 	}
 	public double DevicePixelRatioFScale()
 	{

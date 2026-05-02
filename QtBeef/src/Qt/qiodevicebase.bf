@@ -7,18 +7,27 @@ namespace Qt6;
 // QIODeviceBase
 // --------------------------------------------------------------
 [CRepr]
-struct QIODeviceBase_Ptr: void
+struct QIODeviceBase_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QIODeviceBase_new")]
-	public static extern QIODeviceBase_Ptr* QIODeviceBase_new(QIODeviceBase_Ptr* other);
+	public static extern QIODeviceBase_Ptr QIODeviceBase_new(void** other);
 }
 class QIODeviceBase : IQIODeviceBase
 {
-	private QIODeviceBase_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QIODeviceBase_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QIODeviceBase_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQIODeviceBase other)
 	{
 		this.ptr = CQt.QIODeviceBase_new((.)other?.ObjectPtr);

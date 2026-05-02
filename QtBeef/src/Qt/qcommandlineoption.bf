@@ -7,60 +7,69 @@ namespace Qt6;
 // QCommandLineOption
 // --------------------------------------------------------------
 [CRepr]
-struct QCommandLineOption_Ptr: void
+struct QCommandLineOption_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QCommandLineOption_new")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new(libqt_string name);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new(libqt_string name);
 	[LinkName("QCommandLineOption_new2")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new2(void** names);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new2(void** names);
 	[LinkName("QCommandLineOption_new3")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new3(libqt_string name, libqt_string description);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new3(libqt_string name, libqt_string description);
 	[LinkName("QCommandLineOption_new4")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new4(void** names, libqt_string description);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new4(void** names, libqt_string description);
 	[LinkName("QCommandLineOption_new5")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new5(QCommandLineOption_Ptr* other);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new5(void** other);
 	[LinkName("QCommandLineOption_new6")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new6(libqt_string name, libqt_string description, libqt_string valueName);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new6(libqt_string name, libqt_string description, libqt_string valueName);
 	[LinkName("QCommandLineOption_new7")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new7(libqt_string name, libqt_string description, libqt_string valueName, libqt_string defaultValue);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new7(libqt_string name, libqt_string description, libqt_string valueName, libqt_string defaultValue);
 	[LinkName("QCommandLineOption_new8")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new8(void** names, libqt_string description, libqt_string valueName);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new8(void** names, libqt_string description, libqt_string valueName);
 	[LinkName("QCommandLineOption_new9")]
-	public static extern QCommandLineOption_Ptr* QCommandLineOption_new9(void** names, libqt_string description, libqt_string valueName, libqt_string defaultValue);
+	public static extern QCommandLineOption_Ptr QCommandLineOption_new9(void** names, libqt_string description, libqt_string valueName, libqt_string defaultValue);
 	[LinkName("QCommandLineOption_Delete")]
-	public static extern void QCommandLineOption_Delete(QCommandLineOption_Ptr* self);
+	public static extern void QCommandLineOption_Delete(QCommandLineOption_Ptr self);
 	[LinkName("QCommandLineOption_OperatorAssign")]
-	public static extern void QCommandLineOption_OperatorAssign(QCommandLineOption_Ptr* self, QCommandLineOption_Ptr* other);
+	public static extern void QCommandLineOption_OperatorAssign(void* self, void** other);
 	[LinkName("QCommandLineOption_Swap")]
-	public static extern void QCommandLineOption_Swap(QCommandLineOption_Ptr* self, QCommandLineOption_Ptr* other);
+	public static extern void QCommandLineOption_Swap(void* self, void** other);
 	[LinkName("QCommandLineOption_Names")]
-	public static extern void* QCommandLineOption_Names(QCommandLineOption_Ptr* self);
+	public static extern void* QCommandLineOption_Names(void* self);
 	[LinkName("QCommandLineOption_SetValueName")]
-	public static extern void QCommandLineOption_SetValueName(QCommandLineOption_Ptr* self, libqt_string name);
+	public static extern void QCommandLineOption_SetValueName(void* self, libqt_string name);
 	[LinkName("QCommandLineOption_ValueName")]
-	public static extern libqt_string QCommandLineOption_ValueName(QCommandLineOption_Ptr* self);
+	public static extern libqt_string QCommandLineOption_ValueName(void* self);
 	[LinkName("QCommandLineOption_SetDescription")]
-	public static extern void QCommandLineOption_SetDescription(QCommandLineOption_Ptr* self, libqt_string description);
+	public static extern void QCommandLineOption_SetDescription(void* self, libqt_string description);
 	[LinkName("QCommandLineOption_Description")]
-	public static extern libqt_string QCommandLineOption_Description(QCommandLineOption_Ptr* self);
+	public static extern libqt_string QCommandLineOption_Description(void* self);
 	[LinkName("QCommandLineOption_SetDefaultValue")]
-	public static extern void QCommandLineOption_SetDefaultValue(QCommandLineOption_Ptr* self, libqt_string defaultValue);
+	public static extern void QCommandLineOption_SetDefaultValue(void* self, libqt_string defaultValue);
 	[LinkName("QCommandLineOption_SetDefaultValues")]
-	public static extern void QCommandLineOption_SetDefaultValues(QCommandLineOption_Ptr* self, void** defaultValues);
+	public static extern void QCommandLineOption_SetDefaultValues(void* self, void** defaultValues);
 	[LinkName("QCommandLineOption_DefaultValues")]
-	public static extern void* QCommandLineOption_DefaultValues(QCommandLineOption_Ptr* self);
+	public static extern void* QCommandLineOption_DefaultValues(void* self);
 	[LinkName("QCommandLineOption_Flags")]
-	public static extern void* QCommandLineOption_Flags(QCommandLineOption_Ptr* self);
+	public static extern void* QCommandLineOption_Flags(void* self);
 	[LinkName("QCommandLineOption_SetFlags")]
-	public static extern void QCommandLineOption_SetFlags(QCommandLineOption_Ptr* self, void* aflags);
+	public static extern void QCommandLineOption_SetFlags(void* self, void* aflags);
 }
 class QCommandLineOption : IQCommandLineOption
 {
-	private QCommandLineOption_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QCommandLineOption_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QCommandLineOption_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(String name)
 	{
 		this.ptr = CQt.QCommandLineOption_new(libqt_string(name));
@@ -103,47 +112,47 @@ class QCommandLineOption : IQCommandLineOption
 	}
 	public void Swap(IQCommandLineOption other)
 	{
-		CQt.QCommandLineOption_Swap((.)this.ptr, (.)other?.ObjectPtr);
+		CQt.QCommandLineOption_Swap((.)this.ptr.Ptr, (.)other?.ObjectPtr);
 	}
 	public void* Names()
 	{
-		return CQt.QCommandLineOption_Names((.)this.ptr);
+		return CQt.QCommandLineOption_Names((.)this.ptr.Ptr);
 	}
 	public void SetValueName(String name)
 	{
-		CQt.QCommandLineOption_SetValueName((.)this.ptr, libqt_string(name));
+		CQt.QCommandLineOption_SetValueName((.)this.ptr.Ptr, libqt_string(name));
 	}
-	public libqt_string ValueName()
+	public void ValueName(String outStr)
 	{
-		return CQt.QCommandLineOption_ValueName((.)this.ptr);
+		CQt.QCommandLineOption_ValueName((.)this.ptr.Ptr);
 	}
 	public void SetDescription(String description)
 	{
-		CQt.QCommandLineOption_SetDescription((.)this.ptr, libqt_string(description));
+		CQt.QCommandLineOption_SetDescription((.)this.ptr.Ptr, libqt_string(description));
 	}
-	public libqt_string Description()
+	public void Description(String outStr)
 	{
-		return CQt.QCommandLineOption_Description((.)this.ptr);
+		CQt.QCommandLineOption_Description((.)this.ptr.Ptr);
 	}
 	public void SetDefaultValue(String defaultValue)
 	{
-		CQt.QCommandLineOption_SetDefaultValue((.)this.ptr, libqt_string(defaultValue));
+		CQt.QCommandLineOption_SetDefaultValue((.)this.ptr.Ptr, libqt_string(defaultValue));
 	}
 	public void SetDefaultValues(void** defaultValues)
 	{
-		CQt.QCommandLineOption_SetDefaultValues((.)this.ptr, defaultValues);
+		CQt.QCommandLineOption_SetDefaultValues((.)this.ptr.Ptr, defaultValues);
 	}
 	public void* DefaultValues()
 	{
-		return CQt.QCommandLineOption_DefaultValues((.)this.ptr);
+		return CQt.QCommandLineOption_DefaultValues((.)this.ptr.Ptr);
 	}
 	public void* Flags()
 	{
-		return CQt.QCommandLineOption_Flags((.)this.ptr);
+		return CQt.QCommandLineOption_Flags((.)this.ptr.Ptr);
 	}
 	public void SetFlags(void* aflags)
 	{
-		CQt.QCommandLineOption_SetFlags((.)this.ptr, aflags);
+		CQt.QCommandLineOption_SetFlags((.)this.ptr.Ptr, aflags);
 	}
 }
 interface IQCommandLineOption : IQtObjectInterface

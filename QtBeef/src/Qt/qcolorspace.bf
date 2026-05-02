@@ -7,86 +7,95 @@ namespace Qt6;
 // QColorSpace
 // --------------------------------------------------------------
 [CRepr]
-struct QColorSpace_Ptr: void
+struct QColorSpace_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QColorSpace_new")]
-	public static extern QColorSpace_Ptr* QColorSpace_new();
+	public static extern QColorSpace_Ptr QColorSpace_new();
 	[LinkName("QColorSpace_new2")]
-	public static extern QColorSpace_Ptr* QColorSpace_new2(QColorSpace_NamedColorSpace namedColorSpace);
+	public static extern QColorSpace_Ptr QColorSpace_new2(QColorSpace_NamedColorSpace namedColorSpace);
 	[LinkName("QColorSpace_new3")]
-	public static extern QColorSpace_Ptr* QColorSpace_new3(QColorSpace_Primaries primaries, QColorSpace_TransferFunction transferFunction);
+	public static extern QColorSpace_Ptr QColorSpace_new3(QColorSpace_Primaries primaries, QColorSpace_TransferFunction transferFunction);
 	[LinkName("QColorSpace_new4")]
-	public static extern QColorSpace_Ptr* QColorSpace_new4(QColorSpace_Primaries primaries, float gamma);
+	public static extern QColorSpace_Ptr QColorSpace_new4(QColorSpace_Primaries primaries, float gamma);
 	[LinkName("QColorSpace_new5")]
-	public static extern QColorSpace_Ptr* QColorSpace_new5(QColorSpace_Primaries primaries, void** transferFunctionTable);
+	public static extern QColorSpace_Ptr QColorSpace_new5(QColorSpace_Primaries primaries, void** transferFunctionTable);
 	[LinkName("QColorSpace_new6")]
-	public static extern QColorSpace_Ptr* QColorSpace_new6(QPointF_Ptr* whitePoint, QPointF_Ptr* redPoint, QPointF_Ptr* greenPoint, QPointF_Ptr* bluePoint, QColorSpace_TransferFunction transferFunction);
+	public static extern QColorSpace_Ptr QColorSpace_new6(void** whitePoint, void** redPoint, void** greenPoint, void** bluePoint, QColorSpace_TransferFunction transferFunction);
 	[LinkName("QColorSpace_new7")]
-	public static extern QColorSpace_Ptr* QColorSpace_new7(QPointF_Ptr* whitePoint, QPointF_Ptr* redPoint, QPointF_Ptr* greenPoint, QPointF_Ptr* bluePoint, void** transferFunctionTable);
+	public static extern QColorSpace_Ptr QColorSpace_new7(void** whitePoint, void** redPoint, void** greenPoint, void** bluePoint, void** transferFunctionTable);
 	[LinkName("QColorSpace_new8")]
-	public static extern QColorSpace_Ptr* QColorSpace_new8(QPointF_Ptr* whitePoint, QPointF_Ptr* redPoint, QPointF_Ptr* greenPoint, QPointF_Ptr* bluePoint, void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable);
+	public static extern QColorSpace_Ptr QColorSpace_new8(void** whitePoint, void** redPoint, void** greenPoint, void** bluePoint, void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable);
 	[LinkName("QColorSpace_new9")]
-	public static extern QColorSpace_Ptr* QColorSpace_new9(QColorSpace_Ptr* colorSpace);
+	public static extern QColorSpace_Ptr QColorSpace_new9(void** colorSpace);
 	[LinkName("QColorSpace_new10")]
-	public static extern QColorSpace_Ptr* QColorSpace_new10(QColorSpace_Primaries primaries, QColorSpace_TransferFunction transferFunction, float gamma);
+	public static extern QColorSpace_Ptr QColorSpace_new10(QColorSpace_Primaries primaries, QColorSpace_TransferFunction transferFunction, float gamma);
 	[LinkName("QColorSpace_new11")]
-	public static extern QColorSpace_Ptr* QColorSpace_new11(QPointF_Ptr* whitePoint, QPointF_Ptr* redPoint, QPointF_Ptr* greenPoint, QPointF_Ptr* bluePoint, QColorSpace_TransferFunction transferFunction, float gamma);
+	public static extern QColorSpace_Ptr QColorSpace_new11(void** whitePoint, void** redPoint, void** greenPoint, void** bluePoint, QColorSpace_TransferFunction transferFunction, float gamma);
 	[LinkName("QColorSpace_Delete")]
-	public static extern void QColorSpace_Delete(QColorSpace_Ptr* self);
+	public static extern void QColorSpace_Delete(QColorSpace_Ptr self);
 	[LinkName("QColorSpace_OperatorAssign")]
-	public static extern void QColorSpace_OperatorAssign(QColorSpace_Ptr* self, QColorSpace_Ptr* colorSpace);
+	public static extern void QColorSpace_OperatorAssign(void* self, void** colorSpace);
 	[LinkName("QColorSpace_Swap")]
-	public static extern void QColorSpace_Swap(QColorSpace_Ptr* self, QColorSpace_Ptr* colorSpace);
+	public static extern void QColorSpace_Swap(void* self, void** colorSpace);
 	[LinkName("QColorSpace_Primaries")]
-	public static extern QColorSpace_Primaries QColorSpace_Primaries(QColorSpace_Ptr* self);
+	public static extern QColorSpace_Primaries QColorSpace_Primaries(void* self);
 	[LinkName("QColorSpace_TransferFunction")]
-	public static extern QColorSpace_TransferFunction QColorSpace_TransferFunction(QColorSpace_Ptr* self);
+	public static extern QColorSpace_TransferFunction QColorSpace_TransferFunction(void* self);
 	[LinkName("QColorSpace_Gamma")]
-	public static extern float QColorSpace_Gamma(QColorSpace_Ptr* self);
+	public static extern float QColorSpace_Gamma(void* self);
 	[LinkName("QColorSpace_Description")]
-	public static extern libqt_string QColorSpace_Description(QColorSpace_Ptr* self);
+	public static extern libqt_string QColorSpace_Description(void* self);
 	[LinkName("QColorSpace_SetDescription")]
-	public static extern void QColorSpace_SetDescription(QColorSpace_Ptr* self, libqt_string description);
+	public static extern void QColorSpace_SetDescription(void* self, libqt_string description);
 	[LinkName("QColorSpace_SetTransferFunction")]
-	public static extern void QColorSpace_SetTransferFunction(QColorSpace_Ptr* self, QColorSpace_TransferFunction transferFunction);
+	public static extern void QColorSpace_SetTransferFunction(void* self, QColorSpace_TransferFunction transferFunction);
 	[LinkName("QColorSpace_SetTransferFunction2")]
-	public static extern void QColorSpace_SetTransferFunction2(QColorSpace_Ptr* self, void** transferFunctionTable);
+	public static extern void QColorSpace_SetTransferFunction2(void* self, void** transferFunctionTable);
 	[LinkName("QColorSpace_SetTransferFunctions")]
-	public static extern void QColorSpace_SetTransferFunctions(QColorSpace_Ptr* self, void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable);
+	public static extern void QColorSpace_SetTransferFunctions(void* self, void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable);
 	[LinkName("QColorSpace_WithTransferFunction")]
-	public static extern QColorSpace_Ptr* QColorSpace_WithTransferFunction(QColorSpace_Ptr* self, QColorSpace_TransferFunction transferFunction);
+	public static extern void* QColorSpace_WithTransferFunction(void* self, QColorSpace_TransferFunction transferFunction);
 	[LinkName("QColorSpace_WithTransferFunction2")]
-	public static extern QColorSpace_Ptr* QColorSpace_WithTransferFunction2(QColorSpace_Ptr* self, void** transferFunctionTable);
+	public static extern void* QColorSpace_WithTransferFunction2(void* self, void** transferFunctionTable);
 	[LinkName("QColorSpace_WithTransferFunctions")]
-	public static extern QColorSpace_Ptr* QColorSpace_WithTransferFunctions(QColorSpace_Ptr* self, void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable);
+	public static extern void* QColorSpace_WithTransferFunctions(void* self, void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable);
 	[LinkName("QColorSpace_SetPrimaries")]
-	public static extern void QColorSpace_SetPrimaries(QColorSpace_Ptr* self, QColorSpace_Primaries primariesId);
+	public static extern void QColorSpace_SetPrimaries(void* self, QColorSpace_Primaries primariesId);
 	[LinkName("QColorSpace_SetPrimaries2")]
-	public static extern void QColorSpace_SetPrimaries2(QColorSpace_Ptr* self, QPointF_Ptr* whitePoint, QPointF_Ptr* redPoint, QPointF_Ptr* greenPoint, QPointF_Ptr* bluePoint);
+	public static extern void QColorSpace_SetPrimaries2(void* self, void** whitePoint, void** redPoint, void** greenPoint, void** bluePoint);
 	[LinkName("QColorSpace_Detach")]
-	public static extern void QColorSpace_Detach(QColorSpace_Ptr* self);
+	public static extern void QColorSpace_Detach(void* self);
 	[LinkName("QColorSpace_IsValid")]
-	public static extern bool QColorSpace_IsValid(QColorSpace_Ptr* self);
+	public static extern bool QColorSpace_IsValid(void* self);
 	[LinkName("QColorSpace_FromIccProfile")]
-	public static extern QColorSpace_Ptr* QColorSpace_FromIccProfile(void** iccProfile);
+	public static extern void* QColorSpace_FromIccProfile(void** iccProfile);
 	[LinkName("QColorSpace_IccProfile")]
-	public static extern void* QColorSpace_IccProfile(QColorSpace_Ptr* self);
+	public static extern void* QColorSpace_IccProfile(void* self);
 	[LinkName("QColorSpace_TransformationToColorSpace")]
-	public static extern QColorTransform_Ptr* QColorSpace_TransformationToColorSpace(QColorSpace_Ptr* self, QColorSpace_Ptr* colorspace);
+	public static extern void* QColorSpace_TransformationToColorSpace(void* self, void** colorspace);
 	[LinkName("QColorSpace_ToQvariant")]
-	public static extern QVariant_Ptr* QColorSpace_ToQvariant(QColorSpace_Ptr* self);
+	public static extern void* QColorSpace_ToQvariant(void* self);
 	[LinkName("QColorSpace_SetTransferFunction22")]
-	public static extern void QColorSpace_SetTransferFunction22(QColorSpace_Ptr* self, QColorSpace_TransferFunction transferFunction, float gamma);
+	public static extern void QColorSpace_SetTransferFunction22(void* self, QColorSpace_TransferFunction transferFunction, float gamma);
 	[LinkName("QColorSpace_WithTransferFunction22")]
-	public static extern QColorSpace_Ptr* QColorSpace_WithTransferFunction22(QColorSpace_Ptr* self, QColorSpace_TransferFunction transferFunction, float gamma);
+	public static extern void* QColorSpace_WithTransferFunction22(void* self, QColorSpace_TransferFunction transferFunction, float gamma);
 }
 class QColorSpace : IQColorSpace
 {
-	private QColorSpace_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QColorSpace_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QColorSpace_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QColorSpace_new();
@@ -137,87 +146,87 @@ class QColorSpace : IQColorSpace
 	}
 	public void Swap(IQColorSpace colorSpace)
 	{
-		CQt.QColorSpace_Swap((.)this.ptr, (.)colorSpace?.ObjectPtr);
+		CQt.QColorSpace_Swap((.)this.ptr.Ptr, (.)colorSpace?.ObjectPtr);
 	}
 	public QColorSpace_Primaries Primaries()
 	{
-		return CQt.QColorSpace_Primaries((.)this.ptr);
+		return CQt.QColorSpace_Primaries((.)this.ptr.Ptr);
 	}
 	public QColorSpace_TransferFunction TransferFunction()
 	{
-		return CQt.QColorSpace_TransferFunction((.)this.ptr);
+		return CQt.QColorSpace_TransferFunction((.)this.ptr.Ptr);
 	}
 	public float Gamma()
 	{
-		return CQt.QColorSpace_Gamma((.)this.ptr);
+		return CQt.QColorSpace_Gamma((.)this.ptr.Ptr);
 	}
-	public libqt_string Description()
+	public void Description(String outStr)
 	{
-		return CQt.QColorSpace_Description((.)this.ptr);
+		CQt.QColorSpace_Description((.)this.ptr.Ptr);
 	}
 	public void SetDescription(String description)
 	{
-		CQt.QColorSpace_SetDescription((.)this.ptr, libqt_string(description));
+		CQt.QColorSpace_SetDescription((.)this.ptr.Ptr, libqt_string(description));
 	}
 	public void SetTransferFunction(QColorSpace_TransferFunction transferFunction)
 	{
-		CQt.QColorSpace_SetTransferFunction((.)this.ptr, transferFunction);
+		CQt.QColorSpace_SetTransferFunction((.)this.ptr.Ptr, transferFunction);
 	}
 	public void SetTransferFunction2(void** transferFunctionTable)
 	{
-		CQt.QColorSpace_SetTransferFunction2((.)this.ptr, transferFunctionTable);
+		CQt.QColorSpace_SetTransferFunction2((.)this.ptr.Ptr, transferFunctionTable);
 	}
 	public void SetTransferFunctions(void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable)
 	{
-		CQt.QColorSpace_SetTransferFunctions((.)this.ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
+		CQt.QColorSpace_SetTransferFunctions((.)this.ptr.Ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
 	}
-	public QColorSpace_Ptr* WithTransferFunction(QColorSpace_TransferFunction transferFunction)
+	public QColorSpace_Ptr WithTransferFunction(QColorSpace_TransferFunction transferFunction)
 	{
-		return CQt.QColorSpace_WithTransferFunction((.)this.ptr, transferFunction);
+		return QColorSpace_Ptr(CQt.QColorSpace_WithTransferFunction((.)this.ptr.Ptr, transferFunction));
 	}
-	public QColorSpace_Ptr* WithTransferFunction2(void** transferFunctionTable)
+	public QColorSpace_Ptr WithTransferFunction2(void** transferFunctionTable)
 	{
-		return CQt.QColorSpace_WithTransferFunction2((.)this.ptr, transferFunctionTable);
+		return QColorSpace_Ptr(CQt.QColorSpace_WithTransferFunction2((.)this.ptr.Ptr, transferFunctionTable));
 	}
-	public QColorSpace_Ptr* WithTransferFunctions(void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable)
+	public QColorSpace_Ptr WithTransferFunctions(void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable)
 	{
-		return CQt.QColorSpace_WithTransferFunctions((.)this.ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
+		return QColorSpace_Ptr(CQt.QColorSpace_WithTransferFunctions((.)this.ptr.Ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable));
 	}
 	public void SetPrimaries(QColorSpace_Primaries primariesId)
 	{
-		CQt.QColorSpace_SetPrimaries((.)this.ptr, primariesId);
+		CQt.QColorSpace_SetPrimaries((.)this.ptr.Ptr, primariesId);
 	}
 	public void SetPrimaries2(IQPointF whitePoint, IQPointF redPoint, IQPointF greenPoint, IQPointF bluePoint)
 	{
-		CQt.QColorSpace_SetPrimaries2((.)this.ptr, (.)whitePoint?.ObjectPtr, (.)redPoint?.ObjectPtr, (.)greenPoint?.ObjectPtr, (.)bluePoint?.ObjectPtr);
+		CQt.QColorSpace_SetPrimaries2((.)this.ptr.Ptr, (.)whitePoint?.ObjectPtr, (.)redPoint?.ObjectPtr, (.)greenPoint?.ObjectPtr, (.)bluePoint?.ObjectPtr);
 	}
 	public void Detach()
 	{
-		CQt.QColorSpace_Detach((.)this.ptr);
+		CQt.QColorSpace_Detach((.)this.ptr.Ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QColorSpace_IsValid((.)this.ptr);
+		return CQt.QColorSpace_IsValid((.)this.ptr.Ptr);
 	}
-	public QColorSpace_Ptr* FromIccProfile(void** iccProfile)
+	public QColorSpace_Ptr FromIccProfile(void** iccProfile)
 	{
-		return CQt.QColorSpace_FromIccProfile(iccProfile);
+		return QColorSpace_Ptr(CQt.QColorSpace_FromIccProfile(iccProfile));
 	}
 	public void* IccProfile()
 	{
-		return CQt.QColorSpace_IccProfile((.)this.ptr);
+		return CQt.QColorSpace_IccProfile((.)this.ptr.Ptr);
 	}
-	public QColorTransform_Ptr* TransformationToColorSpace(IQColorSpace colorspace)
+	public QColorTransform_Ptr TransformationToColorSpace(IQColorSpace colorspace)
 	{
-		return CQt.QColorSpace_TransformationToColorSpace((.)this.ptr, (.)colorspace?.ObjectPtr);
+		return QColorTransform_Ptr(CQt.QColorSpace_TransformationToColorSpace((.)this.ptr.Ptr, (.)colorspace?.ObjectPtr));
 	}
 	public void SetTransferFunction22(QColorSpace_TransferFunction transferFunction, float gamma)
 	{
-		CQt.QColorSpace_SetTransferFunction22((.)this.ptr, transferFunction, gamma);
+		CQt.QColorSpace_SetTransferFunction22((.)this.ptr.Ptr, transferFunction, gamma);
 	}
-	public QColorSpace_Ptr* WithTransferFunction22(QColorSpace_TransferFunction transferFunction, float gamma)
+	public QColorSpace_Ptr WithTransferFunction22(QColorSpace_TransferFunction transferFunction, float gamma)
 	{
-		return CQt.QColorSpace_WithTransferFunction22((.)this.ptr, transferFunction, gamma);
+		return QColorSpace_Ptr(CQt.QColorSpace_WithTransferFunction22((.)this.ptr.Ptr, transferFunction, gamma));
 	}
 }
 interface IQColorSpace : IQtObjectInterface

@@ -7,43 +7,48 @@ namespace Qt6;
 // QAnimationGroup
 // --------------------------------------------------------------
 [CRepr]
-struct QAnimationGroup_Ptr: void
+struct QAnimationGroup_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QAnimationGroup_new")]
-	public static extern QAnimationGroup_Ptr* QAnimationGroup_new();
+	public static extern QAnimationGroup_Ptr QAnimationGroup_new();
 	[LinkName("QAnimationGroup_new2")]
-	public static extern QAnimationGroup_Ptr* QAnimationGroup_new2(QObject_Ptr** parent);
+	public static extern QAnimationGroup_Ptr QAnimationGroup_new2(void** parent);
 	[LinkName("QAnimationGroup_Delete")]
-	public static extern void QAnimationGroup_Delete(QAnimationGroup_Ptr* self);
+	public static extern void QAnimationGroup_Delete(QAnimationGroup_Ptr self);
 	[LinkName("QAnimationGroup_MetaObject")]
-	public static extern QMetaObject_Ptr** QAnimationGroup_MetaObject(QAnimationGroup_Ptr* self);
+	public static extern void** QAnimationGroup_MetaObject(void* self);
 	[LinkName("QAnimationGroup_Qt_Metacast")]
-	public static extern void* QAnimationGroup_Qt_Metacast(QAnimationGroup_Ptr* self, c_char* param1);
+	public static extern void* QAnimationGroup_Qt_Metacast(void* self, c_char* param1);
 	[LinkName("QAnimationGroup_Qt_Metacall")]
-	public static extern c_int QAnimationGroup_Qt_Metacall(QAnimationGroup_Ptr* self, QMetaObject_Call param1, c_int param2, void** param3);
+	public static extern c_int QAnimationGroup_Qt_Metacall(void* self, QMetaObject_Call param1, c_int param2, void** param3);
 	[LinkName("QAnimationGroup_Tr")]
 	public static extern libqt_string QAnimationGroup_Tr(c_char* s);
 	[LinkName("QAnimationGroup_AnimationAt")]
-	public static extern QAbstractAnimation_Ptr** QAnimationGroup_AnimationAt(QAnimationGroup_Ptr* self, c_int index);
+	public static extern void** QAnimationGroup_AnimationAt(void* self, c_int index);
 	[LinkName("QAnimationGroup_AnimationCount")]
-	public static extern c_int QAnimationGroup_AnimationCount(QAnimationGroup_Ptr* self);
+	public static extern c_int QAnimationGroup_AnimationCount(void* self);
 	[LinkName("QAnimationGroup_IndexOfAnimation")]
-	public static extern c_int QAnimationGroup_IndexOfAnimation(QAnimationGroup_Ptr* self, QAbstractAnimation_Ptr** animation);
+	public static extern c_int QAnimationGroup_IndexOfAnimation(void* self, void** animation);
 	[LinkName("QAnimationGroup_AddAnimation")]
-	public static extern void QAnimationGroup_AddAnimation(QAnimationGroup_Ptr* self, QAbstractAnimation_Ptr** animation);
+	public static extern void QAnimationGroup_AddAnimation(void* self, void** animation);
 	[LinkName("QAnimationGroup_InsertAnimation")]
-	public static extern void QAnimationGroup_InsertAnimation(QAnimationGroup_Ptr* self, c_int index, QAbstractAnimation_Ptr** animation);
+	public static extern void QAnimationGroup_InsertAnimation(void* self, c_int index, void** animation);
 	[LinkName("QAnimationGroup_RemoveAnimation")]
-	public static extern void QAnimationGroup_RemoveAnimation(QAnimationGroup_Ptr* self, QAbstractAnimation_Ptr** animation);
+	public static extern void QAnimationGroup_RemoveAnimation(void* self, void** animation);
 	[LinkName("QAnimationGroup_TakeAnimation")]
-	public static extern QAbstractAnimation_Ptr** QAnimationGroup_TakeAnimation(QAnimationGroup_Ptr* self, c_int index);
+	public static extern void** QAnimationGroup_TakeAnimation(void* self, c_int index);
 	[LinkName("QAnimationGroup_Clear")]
-	public static extern void QAnimationGroup_Clear(QAnimationGroup_Ptr* self);
+	public static extern void QAnimationGroup_Clear(void* self);
 	[LinkName("QAnimationGroup_Event")]
-	public static extern bool QAnimationGroup_Event(QAnimationGroup_Ptr* self, QEvent_Ptr** event);
+	public static extern bool QAnimationGroup_Event(void* self, void** event);
 	[LinkName("QAnimationGroup_Tr2")]
 	public static extern libqt_string QAnimationGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QAnimationGroup_Tr3")]
@@ -51,8 +56,12 @@ extension CQt
 }
 class QAnimationGroup : IQAnimationGroup, IQAbstractAnimation, IQObject
 {
-	private QAnimationGroup_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QAnimationGroup_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QAnimationGroup_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this()
 	{
 		this.ptr = CQt.QAnimationGroup_new();
@@ -65,245 +74,245 @@ class QAnimationGroup : IQAnimationGroup, IQAbstractAnimation, IQObject
 	{
 		CQt.QAnimationGroup_Delete(this.ptr);
 	}
-	public QMetaObject_Ptr** MetaObject()
+	public QMetaObject_Ptr MetaObject()
 	{
-		return CQt.QAnimationGroup_MetaObject((.)this.ptr);
+		return QMetaObject_Ptr(CQt.QAnimationGroup_MetaObject((.)this.ptr.Ptr));
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QAnimationGroup_Qt_Metacast((.)this.ptr, param1);
+		return CQt.QAnimationGroup_Qt_Metacast((.)this.ptr.Ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QAnimationGroup_Qt_Metacall((.)this.ptr, param1, param2, param3);
+		return CQt.QAnimationGroup_Qt_Metacall((.)this.ptr.Ptr, param1, param2, param3);
 	}
-	public libqt_string Tr(c_char* s)
+	public void Tr(String outStr, c_char* s)
 	{
-		return CQt.QAnimationGroup_Tr(s);
+		CQt.QAnimationGroup_Tr(s);
 	}
-	public QAbstractAnimation_Ptr** AnimationAt(c_int index)
+	public QAbstractAnimation_Ptr AnimationAt(c_int index)
 	{
-		return CQt.QAnimationGroup_AnimationAt((.)this.ptr, index);
+		return QAbstractAnimation_Ptr(CQt.QAnimationGroup_AnimationAt((.)this.ptr.Ptr, index));
 	}
 	public c_int AnimationCount()
 	{
-		return CQt.QAnimationGroup_AnimationCount((.)this.ptr);
+		return CQt.QAnimationGroup_AnimationCount((.)this.ptr.Ptr);
 	}
 	public c_int IndexOfAnimation(IQAbstractAnimation animation)
 	{
-		return CQt.QAnimationGroup_IndexOfAnimation((.)this.ptr, (.)animation?.ObjectPtr);
+		return CQt.QAnimationGroup_IndexOfAnimation((.)this.ptr.Ptr, (.)animation?.ObjectPtr);
 	}
 	public void AddAnimation(IQAbstractAnimation animation)
 	{
-		CQt.QAnimationGroup_AddAnimation((.)this.ptr, (.)animation?.ObjectPtr);
+		CQt.QAnimationGroup_AddAnimation((.)this.ptr.Ptr, (.)animation?.ObjectPtr);
 	}
 	public void InsertAnimation(c_int index, IQAbstractAnimation animation)
 	{
-		CQt.QAnimationGroup_InsertAnimation((.)this.ptr, index, (.)animation?.ObjectPtr);
+		CQt.QAnimationGroup_InsertAnimation((.)this.ptr.Ptr, index, (.)animation?.ObjectPtr);
 	}
 	public void RemoveAnimation(IQAbstractAnimation animation)
 	{
-		CQt.QAnimationGroup_RemoveAnimation((.)this.ptr, (.)animation?.ObjectPtr);
+		CQt.QAnimationGroup_RemoveAnimation((.)this.ptr.Ptr, (.)animation?.ObjectPtr);
 	}
-	public QAbstractAnimation_Ptr** TakeAnimation(c_int index)
+	public QAbstractAnimation_Ptr TakeAnimation(c_int index)
 	{
-		return CQt.QAnimationGroup_TakeAnimation((.)this.ptr, index);
+		return QAbstractAnimation_Ptr(CQt.QAnimationGroup_TakeAnimation((.)this.ptr.Ptr, index));
 	}
 	public void Clear()
 	{
-		CQt.QAnimationGroup_Clear((.)this.ptr);
+		CQt.QAnimationGroup_Clear((.)this.ptr.Ptr);
 	}
 	public bool Event(IQEvent event)
 	{
-		return CQt.QAnimationGroup_Event((.)this.ptr, (.)event?.ObjectPtr);
+		return CQt.QAnimationGroup_Event((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
-	public libqt_string Tr2(c_char* s, c_char* c)
+	public void Tr2(String outStr, c_char* s, c_char* c)
 	{
-		return CQt.QAnimationGroup_Tr2(s, c);
+		CQt.QAnimationGroup_Tr2(s, c);
 	}
-	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
+	public void Tr3(String outStr, c_char* s, c_char* c, c_int n)
 	{
-		return CQt.QAnimationGroup_Tr3(s, c, n);
+		CQt.QAnimationGroup_Tr3(s, c, n);
 	}
 	public QAbstractAnimation_State State()
 	{
-		return CQt.QAbstractAnimation_State((.)this.ptr);
+		return CQt.QAbstractAnimation_State((.)this.ptr.Ptr);
 	}
-	public QAnimationGroup_Ptr** Group()
+	public QAnimationGroup_Ptr Group()
 	{
-		return CQt.QAbstractAnimation_Group((.)this.ptr);
+		return QAnimationGroup_Ptr(CQt.QAbstractAnimation_Group((.)this.ptr.Ptr));
 	}
 	public QAbstractAnimation_Direction Direction()
 	{
-		return CQt.QAbstractAnimation_Direction((.)this.ptr);
+		return CQt.QAbstractAnimation_Direction((.)this.ptr.Ptr);
 	}
 	public void SetDirection(QAbstractAnimation_Direction direction)
 	{
-		CQt.QAbstractAnimation_SetDirection((.)this.ptr, direction);
+		CQt.QAbstractAnimation_SetDirection((.)this.ptr.Ptr, direction);
 	}
 	public c_int CurrentTime()
 	{
-		return CQt.QAbstractAnimation_CurrentTime((.)this.ptr);
+		return CQt.QAbstractAnimation_CurrentTime((.)this.ptr.Ptr);
 	}
 	public c_int CurrentLoopTime()
 	{
-		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.ptr);
+		return CQt.QAbstractAnimation_CurrentLoopTime((.)this.ptr.Ptr);
 	}
 	public c_int LoopCount()
 	{
-		return CQt.QAbstractAnimation_LoopCount((.)this.ptr);
+		return CQt.QAbstractAnimation_LoopCount((.)this.ptr.Ptr);
 	}
 	public void SetLoopCount(c_int loopCount)
 	{
-		CQt.QAbstractAnimation_SetLoopCount((.)this.ptr, loopCount);
+		CQt.QAbstractAnimation_SetLoopCount((.)this.ptr.Ptr, loopCount);
 	}
 	public c_int CurrentLoop()
 	{
-		return CQt.QAbstractAnimation_CurrentLoop((.)this.ptr);
+		return CQt.QAbstractAnimation_CurrentLoop((.)this.ptr.Ptr);
 	}
 	public c_int Duration()
 	{
-		return CQt.QAbstractAnimation_Duration((.)this.ptr);
+		return CQt.QAbstractAnimation_Duration((.)this.ptr.Ptr);
 	}
 	public c_int TotalDuration()
 	{
-		return CQt.QAbstractAnimation_TotalDuration((.)this.ptr);
+		return CQt.QAbstractAnimation_TotalDuration((.)this.ptr.Ptr);
 	}
 	public void Finished()
 	{
-		CQt.QAbstractAnimation_Finished((.)this.ptr);
+		CQt.QAbstractAnimation_Finished((.)this.ptr.Ptr);
 	}
 	public void StateChanged(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
 	{
-		CQt.QAbstractAnimation_StateChanged((.)this.ptr, newState, oldState);
+		CQt.QAbstractAnimation_StateChanged((.)this.ptr.Ptr, newState, oldState);
 	}
 	public void CurrentLoopChanged(c_int currentLoop)
 	{
-		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.ptr, currentLoop);
+		CQt.QAbstractAnimation_CurrentLoopChanged((.)this.ptr.Ptr, currentLoop);
 	}
 	public void DirectionChanged(QAbstractAnimation_Direction param1)
 	{
-		CQt.QAbstractAnimation_DirectionChanged((.)this.ptr, param1);
+		CQt.QAbstractAnimation_DirectionChanged((.)this.ptr.Ptr, param1);
 	}
 	public void Start()
 	{
-		CQt.QAbstractAnimation_Start((.)this.ptr);
+		CQt.QAbstractAnimation_Start((.)this.ptr.Ptr);
 	}
 	public void Pause()
 	{
-		CQt.QAbstractAnimation_Pause((.)this.ptr);
+		CQt.QAbstractAnimation_Pause((.)this.ptr.Ptr);
 	}
 	public void Resume()
 	{
-		CQt.QAbstractAnimation_Resume((.)this.ptr);
+		CQt.QAbstractAnimation_Resume((.)this.ptr.Ptr);
 	}
 	public void SetPaused(bool paused)
 	{
-		CQt.QAbstractAnimation_SetPaused((.)this.ptr, paused);
+		CQt.QAbstractAnimation_SetPaused((.)this.ptr.Ptr, paused);
 	}
 	public void Stop()
 	{
-		CQt.QAbstractAnimation_Stop((.)this.ptr);
+		CQt.QAbstractAnimation_Stop((.)this.ptr.Ptr);
 	}
 	public void SetCurrentTime(c_int msecs)
 	{
-		CQt.QAbstractAnimation_SetCurrentTime((.)this.ptr, msecs);
+		CQt.QAbstractAnimation_SetCurrentTime((.)this.ptr.Ptr, msecs);
 	}
 	public void UpdateCurrentTime(c_int currentTime)
 	{
-		CQt.QAbstractAnimation_UpdateCurrentTime((.)this.ptr, currentTime);
+		CQt.QAbstractAnimation_UpdateCurrentTime((.)this.ptr.Ptr, currentTime);
 	}
 	public void UpdateState(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
 	{
-		CQt.QAbstractAnimation_UpdateState((.)this.ptr, newState, oldState);
+		CQt.QAbstractAnimation_UpdateState((.)this.ptr.Ptr, newState, oldState);
 	}
 	public void UpdateDirection(QAbstractAnimation_Direction direction)
 	{
-		CQt.QAbstractAnimation_UpdateDirection((.)this.ptr, direction);
+		CQt.QAbstractAnimation_UpdateDirection((.)this.ptr.Ptr, direction);
 	}
 	public void Start1(QAbstractAnimation_DeletionPolicy policy)
 	{
-		CQt.QAbstractAnimation_Start1((.)this.ptr, policy);
+		CQt.QAbstractAnimation_Start1((.)this.ptr.Ptr, policy);
 	}
 	public bool EventFilter(IQObject watched, IQEvent event)
 	{
-		return CQt.QObject_EventFilter((.)this.ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
+		return CQt.QObject_EventFilter((.)this.ptr.Ptr, (.)watched?.ObjectPtr, (.)event?.ObjectPtr);
 	}
-	public libqt_string ObjectName()
+	public void ObjectName(String outStr)
 	{
-		return CQt.QObject_ObjectName((.)this.ptr);
+		CQt.QObject_ObjectName((.)this.ptr.Ptr);
 	}
 	public void SetObjectName(IQAnyStringView name)
 	{
-		CQt.QObject_SetObjectName((.)this.ptr, (.)name?.ObjectPtr);
+		CQt.QObject_SetObjectName((.)this.ptr.Ptr, (.)name?.ObjectPtr);
 	}
 	public bool IsWidgetType()
 	{
-		return CQt.QObject_IsWidgetType((.)this.ptr);
+		return CQt.QObject_IsWidgetType((.)this.ptr.Ptr);
 	}
 	public bool IsWindowType()
 	{
-		return CQt.QObject_IsWindowType((.)this.ptr);
+		return CQt.QObject_IsWindowType((.)this.ptr.Ptr);
 	}
 	public bool IsQuickItemType()
 	{
-		return CQt.QObject_IsQuickItemType((.)this.ptr);
+		return CQt.QObject_IsQuickItemType((.)this.ptr.Ptr);
 	}
 	public bool SignalsBlocked()
 	{
-		return CQt.QObject_SignalsBlocked((.)this.ptr);
+		return CQt.QObject_SignalsBlocked((.)this.ptr.Ptr);
 	}
 	public bool BlockSignals(bool b)
 	{
-		return CQt.QObject_BlockSignals((.)this.ptr, b);
+		return CQt.QObject_BlockSignals((.)this.ptr.Ptr, b);
 	}
-	public QThread_Ptr** Thread()
+	public QThread_Ptr Thread()
 	{
-		return CQt.QObject_Thread((.)this.ptr);
+		return QThread_Ptr(CQt.QObject_Thread((.)this.ptr.Ptr));
 	}
 	public void MoveToThread(IQThread thread)
 	{
-		CQt.QObject_MoveToThread((.)this.ptr, (.)thread?.ObjectPtr);
+		CQt.QObject_MoveToThread((.)this.ptr.Ptr, (.)thread?.ObjectPtr);
 	}
 	public c_int StartTimer(c_int interval)
 	{
-		return CQt.QObject_StartTimer((.)this.ptr, interval);
+		return CQt.QObject_StartTimer((.)this.ptr.Ptr, interval);
 	}
 	public c_int StartTimer2(void* time)
 	{
-		return CQt.QObject_StartTimer2((.)this.ptr, time);
+		return CQt.QObject_StartTimer2((.)this.ptr.Ptr, time);
 	}
 	public void KillTimer(c_int id)
 	{
-		CQt.QObject_KillTimer((.)this.ptr, id);
+		CQt.QObject_KillTimer((.)this.ptr.Ptr, id);
 	}
 	public void** Children()
 	{
-		return CQt.QObject_Children((.)this.ptr);
+		return CQt.QObject_Children((.)this.ptr.Ptr);
 	}
 	public void SetParent(IQObject parent)
 	{
-		CQt.QObject_SetParent((.)this.ptr, (.)parent?.ObjectPtr);
+		CQt.QObject_SetParent((.)this.ptr.Ptr, (.)parent?.ObjectPtr);
 	}
 	public void InstallEventFilter(IQObject filterObj)
 	{
-		CQt.QObject_InstallEventFilter((.)this.ptr, (.)filterObj?.ObjectPtr);
+		CQt.QObject_InstallEventFilter((.)this.ptr.Ptr, (.)filterObj?.ObjectPtr);
 	}
 	public void RemoveEventFilter(IQObject obj)
 	{
-		CQt.QObject_RemoveEventFilter((.)this.ptr, (.)obj?.ObjectPtr);
+		CQt.QObject_RemoveEventFilter((.)this.ptr.Ptr, (.)obj?.ObjectPtr);
 	}
-	public QMetaObject_Connection_Ptr* Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
+	public QMetaObject_Connection_Ptr Connect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member));
 	}
-	public QMetaObject_Connection_Ptr* Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
+	public QMetaObject_Connection_Ptr Connect2(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method)
 	{
-		return CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect2((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr));
 	}
-	public QMetaObject_Connection_Ptr* Connect3(IQObject sender, c_char* signal, c_char* member)
+	public QMetaObject_Connection_Ptr Connect3(IQObject sender, c_char* signal, c_char* member)
 	{
-		return CQt.QObject_Connect3((.)this.ptr, (.)sender?.ObjectPtr, signal, member);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect3((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member));
 	}
 	public bool Disconnect(IQObject sender, c_char* signal, IQObject receiver, c_char* member)
 	{
@@ -315,11 +324,11 @@ class QAnimationGroup : IQAnimationGroup, IQAbstractAnimation, IQObject
 	}
 	public bool Disconnect3()
 	{
-		return CQt.QObject_Disconnect3((.)this.ptr);
+		return CQt.QObject_Disconnect3((.)this.ptr.Ptr);
 	}
 	public bool Disconnect4(IQObject receiver)
 	{
-		return CQt.QObject_Disconnect4((.)this.ptr, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect4((.)this.ptr.Ptr, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect5(IQMetaObject_Connection param1)
 	{
@@ -327,123 +336,123 @@ class QAnimationGroup : IQAnimationGroup, IQAbstractAnimation, IQObject
 	}
 	public void DumpObjectTree()
 	{
-		CQt.QObject_DumpObjectTree((.)this.ptr);
+		CQt.QObject_DumpObjectTree((.)this.ptr.Ptr);
 	}
 	public void DumpObjectInfo()
 	{
-		CQt.QObject_DumpObjectInfo((.)this.ptr);
+		CQt.QObject_DumpObjectInfo((.)this.ptr.Ptr);
 	}
 	public bool SetProperty(c_char* name, IQVariant value)
 	{
-		return CQt.QObject_SetProperty((.)this.ptr, name, (.)value?.ObjectPtr);
+		return CQt.QObject_SetProperty((.)this.ptr.Ptr, name, (.)value?.ObjectPtr);
 	}
-	public QVariant_Ptr* Property(c_char* name)
+	public QVariant_Ptr Property(c_char* name)
 	{
-		return CQt.QObject_Property((.)this.ptr, name);
+		return QVariant_Ptr(CQt.QObject_Property((.)this.ptr.Ptr, name));
 	}
 	public void* DynamicPropertyNames()
 	{
-		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr.Ptr);
 	}
-	public QBindingStorage_Ptr** BindingStorage()
+	public QBindingStorage_Ptr BindingStorage()
 	{
-		return CQt.QObject_BindingStorage((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage((.)this.ptr.Ptr));
 	}
-	public QBindingStorage_Ptr** BindingStorage2()
+	public QBindingStorage_Ptr BindingStorage2()
 	{
-		return CQt.QObject_BindingStorage2((.)this.ptr);
+		return QBindingStorage_Ptr(CQt.QObject_BindingStorage2((.)this.ptr.Ptr));
 	}
 	public void Destroyed()
 	{
-		CQt.QObject_Destroyed((.)this.ptr);
+		CQt.QObject_Destroyed((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Parent()
+	public QObject_Ptr Parent()
 	{
-		return CQt.QObject_Parent((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Parent((.)this.ptr.Ptr));
 	}
 	public bool Inherits(c_char* classname)
 	{
-		return CQt.QObject_Inherits((.)this.ptr, classname);
+		return CQt.QObject_Inherits((.)this.ptr.Ptr, classname);
 	}
 	public void DeleteLater()
 	{
-		CQt.QObject_DeleteLater((.)this.ptr);
+		CQt.QObject_DeleteLater((.)this.ptr.Ptr);
 	}
-	public QObject_Ptr** Sender()
+	public QObject_Ptr Sender()
 	{
-		return CQt.QObject_Sender((.)this.ptr);
+		return QObject_Ptr(CQt.QObject_Sender((.)this.ptr.Ptr));
 	}
 	public c_int SenderSignalIndex()
 	{
-		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+		return CQt.QObject_SenderSignalIndex((.)this.ptr.Ptr);
 	}
 	public c_int Receivers(c_char* signal)
 	{
-		return CQt.QObject_Receivers((.)this.ptr, signal);
+		return CQt.QObject_Receivers((.)this.ptr.Ptr, signal);
 	}
 	public bool IsSignalConnected(IQMetaMethod signal)
 	{
-		return CQt.QObject_IsSignalConnected((.)this.ptr, (.)signal?.ObjectPtr);
+		return CQt.QObject_IsSignalConnected((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void TimerEvent(IQTimerEvent event)
 	{
-		CQt.QObject_TimerEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_TimerEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ChildEvent(IQChildEvent event)
 	{
-		CQt.QObject_ChildEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_ChildEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void CustomEvent(IQEvent event)
 	{
-		CQt.QObject_CustomEvent((.)this.ptr, (.)event?.ObjectPtr);
+		CQt.QObject_CustomEvent((.)this.ptr.Ptr, (.)event?.ObjectPtr);
 	}
 	public void ConnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_ConnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_ConnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public void DisconnectNotify(IQMetaMethod signal)
 	{
-		CQt.QObject_DisconnectNotify((.)this.ptr, (.)signal?.ObjectPtr);
+		CQt.QObject_DisconnectNotify((.)this.ptr.Ptr, (.)signal?.ObjectPtr);
 	}
 	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+		return CQt.QObject_StartTimer22((.)this.ptr.Ptr, interval, timerType);
 	}
 	public c_int StartTimer23(void* time, Qt_TimerType timerType)
 	{
-		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+		return CQt.QObject_StartTimer23((.)this.ptr.Ptr, time, timerType);
 	}
-	public QMetaObject_Connection_Ptr* Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
+	public QMetaObject_Connection_Ptr Connect5(IQObject sender, c_char* signal, IQObject receiver, c_char* member, Qt_ConnectionType param5)
 	{
-		return CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect5((.)sender?.ObjectPtr, signal, (.)receiver?.ObjectPtr, member, param5));
 	}
-	public QMetaObject_Connection_Ptr* Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect52(IQObject sender, IQMetaMethod signal, IQObject receiver, IQMetaMethod method, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect52((.)sender?.ObjectPtr, (.)signal?.ObjectPtr, (.)receiver?.ObjectPtr, (.)method?.ObjectPtr, type));
 	}
-	public QMetaObject_Connection_Ptr* Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	public QMetaObject_Connection_Ptr Connect4(IQObject sender, c_char* signal, c_char* member, Qt_ConnectionType type)
 	{
-		return CQt.QObject_Connect4((.)this.ptr, (.)sender?.ObjectPtr, signal, member, type);
+		return QMetaObject_Connection_Ptr(CQt.QObject_Connect4((.)this.ptr.Ptr, (.)sender?.ObjectPtr, signal, member, type));
 	}
 	public bool Disconnect1(c_char* signal)
 	{
-		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+		return CQt.QObject_Disconnect1((.)this.ptr.Ptr, signal);
 	}
 	public bool Disconnect22(c_char* signal, IQObject receiver)
 	{
-		return CQt.QObject_Disconnect22((.)this.ptr, signal, (.)receiver?.ObjectPtr);
+		return CQt.QObject_Disconnect22((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr);
 	}
 	public bool Disconnect32(c_char* signal, IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect32((.)this.ptr, signal, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect32((.)this.ptr.Ptr, signal, (.)receiver?.ObjectPtr, member);
 	}
 	public bool Disconnect23(IQObject receiver, c_char* member)
 	{
-		return CQt.QObject_Disconnect23((.)this.ptr, (.)receiver?.ObjectPtr, member);
+		return CQt.QObject_Disconnect23((.)this.ptr.Ptr, (.)receiver?.ObjectPtr, member);
 	}
 	public void Destroyed1(IQObject param1)
 	{
-		CQt.QObject_Destroyed1((.)this.ptr, (.)param1?.ObjectPtr);
+		CQt.QObject_Destroyed1((.)this.ptr.Ptr, (.)param1?.ObjectPtr);
 	}
 }
 interface IQAnimationGroup : IQtObjectInterface

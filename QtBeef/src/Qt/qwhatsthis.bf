@@ -7,17 +7,22 @@ namespace Qt6;
 // QWhatsThis
 // --------------------------------------------------------------
 [CRepr]
-struct QWhatsThis_Ptr: void
+struct QWhatsThis_Ptr
 {
+	public void* Ptr;
+	public this(void* ptr)
+	{
+		this.Ptr = ptr;
+	}
 }
 extension CQt
 {
 	[LinkName("QWhatsThis_new")]
-	public static extern QWhatsThis_Ptr* QWhatsThis_new(QWhatsThis_Ptr* other);
+	public static extern QWhatsThis_Ptr QWhatsThis_new(void** other);
 	[LinkName("QWhatsThis_new2")]
-	public static extern QWhatsThis_Ptr* QWhatsThis_new2(QWhatsThis_Ptr* other);
+	public static extern QWhatsThis_Ptr QWhatsThis_new2(void** other);
 	[LinkName("QWhatsThis_Delete")]
-	public static extern void QWhatsThis_Delete(QWhatsThis_Ptr* self);
+	public static extern void QWhatsThis_Delete(QWhatsThis_Ptr self);
 	[LinkName("QWhatsThis_EnterWhatsThisMode")]
 	public static extern void QWhatsThis_EnterWhatsThisMode();
 	[LinkName("QWhatsThis_InWhatsThisMode")]
@@ -25,20 +30,24 @@ extension CQt
 	[LinkName("QWhatsThis_LeaveWhatsThisMode")]
 	public static extern void QWhatsThis_LeaveWhatsThisMode();
 	[LinkName("QWhatsThis_ShowText")]
-	public static extern void QWhatsThis_ShowText(QPoint_Ptr* pos, libqt_string text);
+	public static extern void QWhatsThis_ShowText(void** pos, libqt_string text);
 	[LinkName("QWhatsThis_HideText")]
 	public static extern void QWhatsThis_HideText();
 	[LinkName("QWhatsThis_CreateAction")]
-	public static extern QAction_Ptr** QWhatsThis_CreateAction();
+	public static extern void** QWhatsThis_CreateAction();
 	[LinkName("QWhatsThis_ShowText3")]
-	public static extern void QWhatsThis_ShowText3(QPoint_Ptr* pos, libqt_string text, QWidget_Ptr** w);
+	public static extern void QWhatsThis_ShowText3(void** pos, libqt_string text, void** w);
 	[LinkName("QWhatsThis_CreateAction1")]
-	public static extern QAction_Ptr** QWhatsThis_CreateAction1(QObject_Ptr** parent);
+	public static extern void** QWhatsThis_CreateAction1(void** parent);
 }
 class QWhatsThis : IQWhatsThis
 {
-	private QWhatsThis_Ptr* ptr;
-	public void* ObjectPtr => ptr;
+	private QWhatsThis_Ptr ptr;
+	public void* ObjectPtr => ptr.Ptr;
+	public this(QWhatsThis_Ptr ptr)
+	{
+		this.ptr = ptr;
+	}
 	public this(IQWhatsThis other)
 	{
 		this.ptr = CQt.QWhatsThis_new((.)other?.ObjectPtr);
@@ -67,17 +76,17 @@ class QWhatsThis : IQWhatsThis
 	{
 		CQt.QWhatsThis_HideText();
 	}
-	public QAction_Ptr** CreateAction()
+	public QAction_Ptr CreateAction()
 	{
-		return CQt.QWhatsThis_CreateAction();
+		return QAction_Ptr(CQt.QWhatsThis_CreateAction());
 	}
 	public void ShowText3(IQPoint pos, String text, IQWidget w)
 	{
 		CQt.QWhatsThis_ShowText3((.)pos?.ObjectPtr, libqt_string(text), (.)w?.ObjectPtr);
 	}
-	public QAction_Ptr** CreateAction1(IQObject parent)
+	public QAction_Ptr CreateAction1(IQObject parent)
 	{
-		return CQt.QWhatsThis_CreateAction1((.)parent?.ObjectPtr);
+		return QAction_Ptr(CQt.QWhatsThis_CreateAction1((.)parent?.ObjectPtr));
 	}
 }
 interface IQWhatsThis : IQtObjectInterface
