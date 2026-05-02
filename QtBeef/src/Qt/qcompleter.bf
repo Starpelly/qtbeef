@@ -1,0 +1,400 @@
+using System;
+using System.Interop;
+
+namespace Qt6;
+
+// --------------------------------------------------------------
+// QCompleter
+// --------------------------------------------------------------
+[CRepr]
+struct QCompleter_Ptr: void
+{
+}
+extension CQt
+{
+	[LinkName("QCompleter_new")]
+	public static extern QCompleter_Ptr* QCompleter_new();
+	[LinkName("QCompleter_new2")]
+	public static extern QCompleter_Ptr* QCompleter_new2(QAbstractItemModel_Ptr* model);
+	[LinkName("QCompleter_new3")]
+	public static extern QCompleter_Ptr* QCompleter_new3(void** completions);
+	[LinkName("QCompleter_new4")]
+	public static extern QCompleter_Ptr* QCompleter_new4(QObject_Ptr* parent);
+	[LinkName("QCompleter_new5")]
+	public static extern QCompleter_Ptr* QCompleter_new5(QAbstractItemModel_Ptr* model, QObject_Ptr* parent);
+	[LinkName("QCompleter_new6")]
+	public static extern QCompleter_Ptr* QCompleter_new6(void** completions, QObject_Ptr* parent);
+	[LinkName("QCompleter_Delete")]
+	public static extern void QCompleter_Delete(QCompleter_Ptr* self);
+	[LinkName("QCompleter_MetaObject")]
+	public static extern QMetaObject_Ptr* QCompleter_MetaObject(QCompleter_Ptr* self);
+	[LinkName("QCompleter_Qt_Metacast")]
+	public static extern void* QCompleter_Qt_Metacast(QCompleter_Ptr* self, c_char* param1);
+	[LinkName("QCompleter_Qt_Metacall")]
+	public static extern c_int QCompleter_Qt_Metacall(QCompleter_Ptr* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QCompleter_Tr")]
+	public static extern libqt_string QCompleter_Tr(c_char* s);
+	[LinkName("QCompleter_SetWidget")]
+	public static extern void QCompleter_SetWidget(QCompleter_Ptr* self, QWidget_Ptr* widget);
+	[LinkName("QCompleter_Widget")]
+	public static extern QWidget_Ptr* QCompleter_Widget(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetModel")]
+	public static extern void QCompleter_SetModel(QCompleter_Ptr* self, QAbstractItemModel_Ptr* c);
+	[LinkName("QCompleter_Model")]
+	public static extern QAbstractItemModel_Ptr* QCompleter_Model(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetCompletionMode")]
+	public static extern void QCompleter_SetCompletionMode(QCompleter_Ptr* self, QCompleter_CompletionMode mode);
+	[LinkName("QCompleter_CompletionMode")]
+	public static extern QCompleter_CompletionMode QCompleter_CompletionMode(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetFilterMode")]
+	public static extern void QCompleter_SetFilterMode(QCompleter_Ptr* self, void* filterMode);
+	[LinkName("QCompleter_FilterMode")]
+	public static extern void* QCompleter_FilterMode(QCompleter_Ptr* self);
+	[LinkName("QCompleter_Popup")]
+	public static extern QAbstractItemView_Ptr* QCompleter_Popup(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetPopup")]
+	public static extern void QCompleter_SetPopup(QCompleter_Ptr* self, QAbstractItemView_Ptr* popup);
+	[LinkName("QCompleter_SetCaseSensitivity")]
+	public static extern void QCompleter_SetCaseSensitivity(QCompleter_Ptr* self, Qt_CaseSensitivity caseSensitivity);
+	[LinkName("QCompleter_CaseSensitivity")]
+	public static extern Qt_CaseSensitivity QCompleter_CaseSensitivity(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetModelSorting")]
+	public static extern void QCompleter_SetModelSorting(QCompleter_Ptr* self, QCompleter_ModelSorting sorting);
+	[LinkName("QCompleter_ModelSorting")]
+	public static extern QCompleter_ModelSorting QCompleter_ModelSorting(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetCompletionColumn")]
+	public static extern void QCompleter_SetCompletionColumn(QCompleter_Ptr* self, c_int column);
+	[LinkName("QCompleter_CompletionColumn")]
+	public static extern c_int QCompleter_CompletionColumn(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetCompletionRole")]
+	public static extern void QCompleter_SetCompletionRole(QCompleter_Ptr* self, c_int role);
+	[LinkName("QCompleter_CompletionRole")]
+	public static extern c_int QCompleter_CompletionRole(QCompleter_Ptr* self);
+	[LinkName("QCompleter_WrapAround")]
+	public static extern bool QCompleter_WrapAround(QCompleter_Ptr* self);
+	[LinkName("QCompleter_MaxVisibleItems")]
+	public static extern c_int QCompleter_MaxVisibleItems(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetMaxVisibleItems")]
+	public static extern void QCompleter_SetMaxVisibleItems(QCompleter_Ptr* self, c_int maxItems);
+	[LinkName("QCompleter_CompletionCount")]
+	public static extern c_int QCompleter_CompletionCount(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetCurrentRow")]
+	public static extern bool QCompleter_SetCurrentRow(QCompleter_Ptr* self, c_int row);
+	[LinkName("QCompleter_CurrentRow")]
+	public static extern c_int QCompleter_CurrentRow(QCompleter_Ptr* self);
+	[LinkName("QCompleter_CurrentIndex")]
+	public static extern QModelIndex_Ptr QCompleter_CurrentIndex(QCompleter_Ptr* self);
+	[LinkName("QCompleter_CurrentCompletion")]
+	public static extern libqt_string QCompleter_CurrentCompletion(QCompleter_Ptr* self);
+	[LinkName("QCompleter_CompletionModel")]
+	public static extern QAbstractItemModel_Ptr* QCompleter_CompletionModel(QCompleter_Ptr* self);
+	[LinkName("QCompleter_CompletionPrefix")]
+	public static extern libqt_string QCompleter_CompletionPrefix(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetCompletionPrefix")]
+	public static extern void QCompleter_SetCompletionPrefix(QCompleter_Ptr* self, libqt_string* prefix);
+	[LinkName("QCompleter_Complete")]
+	public static extern void QCompleter_Complete(QCompleter_Ptr* self);
+	[LinkName("QCompleter_SetWrapAround")]
+	public static extern void QCompleter_SetWrapAround(QCompleter_Ptr* self, bool wrap);
+	[LinkName("QCompleter_PathFromIndex")]
+	public static extern libqt_string QCompleter_PathFromIndex(QCompleter_Ptr* self, QModelIndex_Ptr* index);
+	[LinkName("QCompleter_SplitPath")]
+	public static extern void* QCompleter_SplitPath(QCompleter_Ptr* self, libqt_string* path);
+	[LinkName("QCompleter_EventFilter")]
+	public static extern bool QCompleter_EventFilter(QCompleter_Ptr* self, QObject_Ptr* o, QEvent_Ptr* e);
+	[LinkName("QCompleter_Event")]
+	public static extern bool QCompleter_Event(QCompleter_Ptr* self, QEvent_Ptr* param1);
+	[LinkName("QCompleter_Activated")]
+	public static extern void QCompleter_Activated(QCompleter_Ptr* self, libqt_string* text);
+	[LinkName("QCompleter_Activated2")]
+	public static extern void QCompleter_Activated2(QCompleter_Ptr* self, QModelIndex_Ptr* index);
+	[LinkName("QCompleter_Highlighted")]
+	public static extern void QCompleter_Highlighted(QCompleter_Ptr* self, libqt_string* text);
+	[LinkName("QCompleter_Highlighted2")]
+	public static extern void QCompleter_Highlighted2(QCompleter_Ptr* self, QModelIndex_Ptr* index);
+	[LinkName("QCompleter_Tr2")]
+	public static extern libqt_string QCompleter_Tr2(c_char* s, c_char* c);
+	[LinkName("QCompleter_Tr3")]
+	public static extern libqt_string QCompleter_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QCompleter_Complete1")]
+	public static extern void QCompleter_Complete1(QCompleter_Ptr* self, QRect_Ptr* rect);
+}
+class QCompleter
+{
+	private QCompleter_Ptr* ptr;
+	public this()
+	{
+		this.ptr = CQt.QCompleter_new();
+	}
+	public this(QAbstractItemModel_Ptr* model)
+	{
+		this.ptr = CQt.QCompleter_new2(model);
+	}
+	public this(void** completions)
+	{
+		this.ptr = CQt.QCompleter_new3(completions);
+	}
+	public this(QObject_Ptr* parent)
+	{
+		this.ptr = CQt.QCompleter_new4(parent);
+	}
+	public this(QAbstractItemModel_Ptr* model, QObject_Ptr* parent)
+	{
+		this.ptr = CQt.QCompleter_new5(model, parent);
+	}
+	public this(void** completions, QObject_Ptr* parent)
+	{
+		this.ptr = CQt.QCompleter_new6(completions, parent);
+	}
+	public ~this()
+	{
+		CQt.QCompleter_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr* MetaObject()
+	{
+		return CQt.QCompleter_MetaObject(this.ptr);
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QCompleter_Qt_Metacast(this.ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QCompleter_Qt_Metacall(this.ptr, param1, param2, param3);
+	}
+	public libqt_string Tr(c_char* s)
+	{
+		return CQt.QCompleter_Tr(s);
+	}
+	public void SetWidget(QWidget_Ptr* widget)
+	{
+		CQt.QCompleter_SetWidget(this.ptr, widget);
+	}
+	public QWidget_Ptr* Widget()
+	{
+		return CQt.QCompleter_Widget(this.ptr);
+	}
+	public void SetModel(QAbstractItemModel_Ptr* c)
+	{
+		CQt.QCompleter_SetModel(this.ptr, c);
+	}
+	public QAbstractItemModel_Ptr* Model()
+	{
+		return CQt.QCompleter_Model(this.ptr);
+	}
+	public void SetCompletionMode(QCompleter_CompletionMode mode)
+	{
+		CQt.QCompleter_SetCompletionMode(this.ptr, mode);
+	}
+	public QCompleter_CompletionMode CompletionMode()
+	{
+		return CQt.QCompleter_CompletionMode(this.ptr);
+	}
+	public void SetFilterMode(void* filterMode)
+	{
+		CQt.QCompleter_SetFilterMode(this.ptr, filterMode);
+	}
+	public void* FilterMode()
+	{
+		return CQt.QCompleter_FilterMode(this.ptr);
+	}
+	public QAbstractItemView_Ptr* Popup()
+	{
+		return CQt.QCompleter_Popup(this.ptr);
+	}
+	public void SetPopup(QAbstractItemView_Ptr* popup)
+	{
+		CQt.QCompleter_SetPopup(this.ptr, popup);
+	}
+	public void SetCaseSensitivity(Qt_CaseSensitivity caseSensitivity)
+	{
+		CQt.QCompleter_SetCaseSensitivity(this.ptr, caseSensitivity);
+	}
+	public Qt_CaseSensitivity CaseSensitivity()
+	{
+		return CQt.QCompleter_CaseSensitivity(this.ptr);
+	}
+	public void SetModelSorting(QCompleter_ModelSorting sorting)
+	{
+		CQt.QCompleter_SetModelSorting(this.ptr, sorting);
+	}
+	public QCompleter_ModelSorting ModelSorting()
+	{
+		return CQt.QCompleter_ModelSorting(this.ptr);
+	}
+	public void SetCompletionColumn(c_int column)
+	{
+		CQt.QCompleter_SetCompletionColumn(this.ptr, column);
+	}
+	public c_int CompletionColumn()
+	{
+		return CQt.QCompleter_CompletionColumn(this.ptr);
+	}
+	public void SetCompletionRole(c_int role)
+	{
+		CQt.QCompleter_SetCompletionRole(this.ptr, role);
+	}
+	public c_int CompletionRole()
+	{
+		return CQt.QCompleter_CompletionRole(this.ptr);
+	}
+	public bool WrapAround()
+	{
+		return CQt.QCompleter_WrapAround(this.ptr);
+	}
+	public c_int MaxVisibleItems()
+	{
+		return CQt.QCompleter_MaxVisibleItems(this.ptr);
+	}
+	public void SetMaxVisibleItems(c_int maxItems)
+	{
+		CQt.QCompleter_SetMaxVisibleItems(this.ptr, maxItems);
+	}
+	public c_int CompletionCount()
+	{
+		return CQt.QCompleter_CompletionCount(this.ptr);
+	}
+	public bool SetCurrentRow(c_int row)
+	{
+		return CQt.QCompleter_SetCurrentRow(this.ptr, row);
+	}
+	public c_int CurrentRow()
+	{
+		return CQt.QCompleter_CurrentRow(this.ptr);
+	}
+	public QModelIndex_Ptr CurrentIndex()
+	{
+		return CQt.QCompleter_CurrentIndex(this.ptr);
+	}
+	public libqt_string CurrentCompletion()
+	{
+		return CQt.QCompleter_CurrentCompletion(this.ptr);
+	}
+	public QAbstractItemModel_Ptr* CompletionModel()
+	{
+		return CQt.QCompleter_CompletionModel(this.ptr);
+	}
+	public libqt_string CompletionPrefix()
+	{
+		return CQt.QCompleter_CompletionPrefix(this.ptr);
+	}
+	public void SetCompletionPrefix(libqt_string* prefix)
+	{
+		CQt.QCompleter_SetCompletionPrefix(this.ptr, prefix);
+	}
+	public void Complete()
+	{
+		CQt.QCompleter_Complete(this.ptr);
+	}
+	public void SetWrapAround(bool wrap)
+	{
+		CQt.QCompleter_SetWrapAround(this.ptr, wrap);
+	}
+	public libqt_string PathFromIndex(QModelIndex_Ptr* index)
+	{
+		return CQt.QCompleter_PathFromIndex(this.ptr, index);
+	}
+	public void* SplitPath(libqt_string* path)
+	{
+		return CQt.QCompleter_SplitPath(this.ptr, path);
+	}
+	public bool EventFilter(QObject_Ptr* o, QEvent_Ptr* e)
+	{
+		return CQt.QCompleter_EventFilter(this.ptr, o, e);
+	}
+	public bool Event(QEvent_Ptr* param1)
+	{
+		return CQt.QCompleter_Event(this.ptr, param1);
+	}
+	public void Activated(libqt_string* text)
+	{
+		CQt.QCompleter_Activated(this.ptr, text);
+	}
+	public void Activated2(QModelIndex_Ptr* index)
+	{
+		CQt.QCompleter_Activated2(this.ptr, index);
+	}
+	public void Highlighted(libqt_string* text)
+	{
+		CQt.QCompleter_Highlighted(this.ptr, text);
+	}
+	public void Highlighted2(QModelIndex_Ptr* index)
+	{
+		CQt.QCompleter_Highlighted2(this.ptr, index);
+	}
+	public libqt_string Tr2(c_char* s, c_char* c)
+	{
+		return CQt.QCompleter_Tr2(s, c);
+	}
+	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
+	{
+		return CQt.QCompleter_Tr3(s, c, n);
+	}
+	public void Complete1(QRect_Ptr* rect)
+	{
+		CQt.QCompleter_Complete1(this.ptr, rect);
+	}
+}
+interface IQCompleter
+{
+	public QMetaObject* MetaObject();
+	public void* Qt_metacast();
+	public c_int Qt_metacall();
+	public libqt_string Tr();
+	public void SetWidget();
+	public QWidget* Widget();
+	public void SetModel();
+	public QAbstractItemModel* Model();
+	public void SetCompletionMode();
+	public QCompleter_CompletionMode CompletionMode();
+	public void SetFilterMode();
+	public void* FilterMode();
+	public QAbstractItemView* Popup();
+	public void SetPopup();
+	public void SetCaseSensitivity();
+	public Qt_CaseSensitivity CaseSensitivity();
+	public void SetModelSorting();
+	public QCompleter_ModelSorting ModelSorting();
+	public void SetCompletionColumn();
+	public c_int CompletionColumn();
+	public void SetCompletionRole();
+	public c_int CompletionRole();
+	public bool WrapAround();
+	public c_int MaxVisibleItems();
+	public void SetMaxVisibleItems();
+	public c_int CompletionCount();
+	public bool SetCurrentRow();
+	public c_int CurrentRow();
+	public QModelIndex CurrentIndex();
+	public libqt_string CurrentCompletion();
+	public QAbstractItemModel* CompletionModel();
+	public libqt_string CompletionPrefix();
+	public void SetCompletionPrefix();
+	public void Complete();
+	public void SetWrapAround();
+	public libqt_string PathFromIndex();
+	public void* SplitPath();
+	public bool EventFilter();
+	public bool Event();
+	public void Activated();
+	public void Activated2();
+	public void Highlighted();
+	public void Highlighted2();
+	public libqt_string Tr2();
+	public libqt_string Tr3();
+	public void Complete1();
+}
+[AllowDuplicates]
+enum QCompleter_CompletionMode
+{
+	PopupCompletion = 0,
+	UnfilteredPopupCompletion = 1,
+	InlineCompletion = 2,
+}
+[AllowDuplicates]
+enum QCompleter_ModelSorting
+{
+	UnsortedModel = 0,
+	CaseSensitivelySortedModel = 1,
+	CaseInsensitivelySortedModel = 2,
+}

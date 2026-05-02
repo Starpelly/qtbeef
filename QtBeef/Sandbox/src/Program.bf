@@ -8,18 +8,25 @@ class Program
 	public static int Main(String[] args)
 	{
 		int32 argc = 0;
-		char8*[] argv = scope .();
+		char8** argv = scope .();
 
-		QApplication_new(&argc, argv);
-		QMainWindow_new(null);
+		CQt.QApplication_new(&argc, argv);
+		CQt.QMainWindow_new(null);
 
-		let widget = QWidget_new2();
+		var str = libqt_string("Hello world!");
 
-		QPushButton_new5("Hello world!", widget);
+		// QPushButton_new5("Hello world!", widget);
+		// let btn = CQt.QPushButton_new5(&str, null);
 
-		QWidget_Show(widget);
+		let bttn = scope QPushButton(&str);
+		let btn = bttn.[Friend]ptr;
+		bttn.SetFlat(true);
 
-		QApplication_Exec();
+		CQt.QWidget_Show((Qt6.QWidget_Ptr*)btn);
+
+		CQt.QWidget_Resize((Qt6.QWidget_Ptr*)btn, 1280, 720);
+
+		CQt.QApplication_Exec();
 
 		return 0;
 	}

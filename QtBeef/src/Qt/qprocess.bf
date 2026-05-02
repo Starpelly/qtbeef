@@ -1,0 +1,738 @@
+using System;
+using System.Interop;
+
+namespace Qt6;
+
+// --------------------------------------------------------------
+// QProcessEnvironment
+// --------------------------------------------------------------
+[CRepr]
+struct QProcessEnvironment_Ptr: void
+{
+}
+extension CQt
+{
+	[LinkName("QProcessEnvironment_new")]
+	public static extern QProcessEnvironment_Ptr* QProcessEnvironment_new();
+	[LinkName("QProcessEnvironment_new2")]
+	public static extern QProcessEnvironment_Ptr* QProcessEnvironment_new2(QProcessEnvironment_Initialization param1);
+	[LinkName("QProcessEnvironment_new3")]
+	public static extern QProcessEnvironment_Ptr* QProcessEnvironment_new3(QProcessEnvironment_Ptr* other);
+	[LinkName("QProcessEnvironment_Delete")]
+	public static extern void QProcessEnvironment_Delete(QProcessEnvironment_Ptr* self);
+	[LinkName("QProcessEnvironment_OperatorAssign")]
+	public static extern void QProcessEnvironment_OperatorAssign(QProcessEnvironment_Ptr* self, QProcessEnvironment_Ptr* other);
+	[LinkName("QProcessEnvironment_Swap")]
+	public static extern void QProcessEnvironment_Swap(QProcessEnvironment_Ptr* self, QProcessEnvironment_Ptr* other);
+	[LinkName("QProcessEnvironment_OperatorEqual")]
+	public static extern bool QProcessEnvironment_OperatorEqual(QProcessEnvironment_Ptr* self, QProcessEnvironment_Ptr* other);
+	[LinkName("QProcessEnvironment_OperatorNotEqual")]
+	public static extern bool QProcessEnvironment_OperatorNotEqual(QProcessEnvironment_Ptr* self, QProcessEnvironment_Ptr* other);
+	[LinkName("QProcessEnvironment_IsEmpty")]
+	public static extern bool QProcessEnvironment_IsEmpty(QProcessEnvironment_Ptr* self);
+	[LinkName("QProcessEnvironment_InheritsFromParent")]
+	public static extern bool QProcessEnvironment_InheritsFromParent(QProcessEnvironment_Ptr* self);
+	[LinkName("QProcessEnvironment_Clear")]
+	public static extern void QProcessEnvironment_Clear(QProcessEnvironment_Ptr* self);
+	[LinkName("QProcessEnvironment_Contains")]
+	public static extern bool QProcessEnvironment_Contains(QProcessEnvironment_Ptr* self, libqt_string* name);
+	[LinkName("QProcessEnvironment_Insert")]
+	public static extern void QProcessEnvironment_Insert(QProcessEnvironment_Ptr* self, libqt_string* name, libqt_string* value);
+	[LinkName("QProcessEnvironment_Remove")]
+	public static extern void QProcessEnvironment_Remove(QProcessEnvironment_Ptr* self, libqt_string* name);
+	[LinkName("QProcessEnvironment_Value")]
+	public static extern libqt_string QProcessEnvironment_Value(QProcessEnvironment_Ptr* self, libqt_string* name);
+	[LinkName("QProcessEnvironment_ToStringList")]
+	public static extern void* QProcessEnvironment_ToStringList(QProcessEnvironment_Ptr* self);
+	[LinkName("QProcessEnvironment_Keys")]
+	public static extern void* QProcessEnvironment_Keys(QProcessEnvironment_Ptr* self);
+	[LinkName("QProcessEnvironment_Insert2")]
+	public static extern void QProcessEnvironment_Insert2(QProcessEnvironment_Ptr* self, QProcessEnvironment_Ptr* e);
+	[LinkName("QProcessEnvironment_SystemEnvironment")]
+	public static extern QProcessEnvironment_Ptr QProcessEnvironment_SystemEnvironment();
+	[LinkName("QProcessEnvironment_Value2")]
+	public static extern libqt_string QProcessEnvironment_Value2(QProcessEnvironment_Ptr* self, libqt_string* name, libqt_string* defaultValue);
+}
+class QProcessEnvironment
+{
+	private QProcessEnvironment_Ptr* ptr;
+	public this()
+	{
+		this.ptr = CQt.QProcessEnvironment_new();
+	}
+	public this(QProcessEnvironment_Initialization param1)
+	{
+		this.ptr = CQt.QProcessEnvironment_new2(param1);
+	}
+	public this(QProcessEnvironment_Ptr* other)
+	{
+		this.ptr = CQt.QProcessEnvironment_new3(other);
+	}
+	public ~this()
+	{
+		CQt.QProcessEnvironment_Delete(this.ptr);
+	}
+	public void Swap(QProcessEnvironment_Ptr* other)
+	{
+		CQt.QProcessEnvironment_Swap(this.ptr, other);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QProcessEnvironment_IsEmpty(this.ptr);
+	}
+	public bool InheritsFromParent()
+	{
+		return CQt.QProcessEnvironment_InheritsFromParent(this.ptr);
+	}
+	public void Clear()
+	{
+		CQt.QProcessEnvironment_Clear(this.ptr);
+	}
+	public bool Contains(libqt_string* name)
+	{
+		return CQt.QProcessEnvironment_Contains(this.ptr, name);
+	}
+	public void Insert(libqt_string* name, libqt_string* value)
+	{
+		CQt.QProcessEnvironment_Insert(this.ptr, name, value);
+	}
+	public void Remove(libqt_string* name)
+	{
+		CQt.QProcessEnvironment_Remove(this.ptr, name);
+	}
+	public libqt_string Value(libqt_string* name)
+	{
+		return CQt.QProcessEnvironment_Value(this.ptr, name);
+	}
+	public void* ToStringList()
+	{
+		return CQt.QProcessEnvironment_ToStringList(this.ptr);
+	}
+	public void* Keys()
+	{
+		return CQt.QProcessEnvironment_Keys(this.ptr);
+	}
+	public void Insert2(QProcessEnvironment_Ptr* e)
+	{
+		CQt.QProcessEnvironment_Insert2(this.ptr, e);
+	}
+	public QProcessEnvironment_Ptr SystemEnvironment()
+	{
+		return CQt.QProcessEnvironment_SystemEnvironment();
+	}
+	public libqt_string Value2(libqt_string* name, libqt_string* defaultValue)
+	{
+		return CQt.QProcessEnvironment_Value2(this.ptr, name, defaultValue);
+	}
+}
+interface IQProcessEnvironment
+{
+	public void Swap();
+	public bool IsEmpty();
+	public bool InheritsFromParent();
+	public void Clear();
+	public bool Contains();
+	public void Insert();
+	public void Remove();
+	public libqt_string Value();
+	public void* ToStringList();
+	public void* Keys();
+	public void Insert2();
+	public QProcessEnvironment SystemEnvironment();
+	public libqt_string Value2();
+}
+// --------------------------------------------------------------
+// QProcess
+// --------------------------------------------------------------
+[CRepr]
+struct QProcess_Ptr: void
+{
+}
+extension CQt
+{
+	[LinkName("QProcess_new")]
+	public static extern QProcess_Ptr* QProcess_new();
+	[LinkName("QProcess_new2")]
+	public static extern QProcess_Ptr* QProcess_new2(QObject_Ptr* parent);
+	[LinkName("QProcess_Delete")]
+	public static extern void QProcess_Delete(QProcess_Ptr* self);
+	[LinkName("QProcess_MetaObject")]
+	public static extern QMetaObject_Ptr* QProcess_MetaObject(QProcess_Ptr* self);
+	[LinkName("QProcess_Qt_Metacast")]
+	public static extern void* QProcess_Qt_Metacast(QProcess_Ptr* self, c_char* param1);
+	[LinkName("QProcess_Qt_Metacall")]
+	public static extern c_int QProcess_Qt_Metacall(QProcess_Ptr* self, QMetaObject_Call param1, c_int param2, void** param3);
+	[LinkName("QProcess_Tr")]
+	public static extern libqt_string QProcess_Tr(c_char* s);
+	[LinkName("QProcess_Start")]
+	public static extern void QProcess_Start(QProcess_Ptr* self, libqt_string* program);
+	[LinkName("QProcess_Start2")]
+	public static extern void QProcess_Start2(QProcess_Ptr* self);
+	[LinkName("QProcess_StartCommand")]
+	public static extern void QProcess_StartCommand(QProcess_Ptr* self, libqt_string* command);
+	[LinkName("QProcess_StartDetached")]
+	public static extern bool QProcess_StartDetached(QProcess_Ptr* self);
+	[LinkName("QProcess_Open")]
+	public static extern bool QProcess_Open(QProcess_Ptr* self, void* mode);
+	[LinkName("QProcess_Program")]
+	public static extern libqt_string QProcess_Program(QProcess_Ptr* self);
+	[LinkName("QProcess_SetProgram")]
+	public static extern void QProcess_SetProgram(QProcess_Ptr* self, libqt_string* program);
+	[LinkName("QProcess_Arguments")]
+	public static extern void* QProcess_Arguments(QProcess_Ptr* self);
+	[LinkName("QProcess_SetArguments")]
+	public static extern void QProcess_SetArguments(QProcess_Ptr* self, void** arguments);
+	[LinkName("QProcess_ProcessChannelMode")]
+	public static extern QProcess_ProcessChannelMode QProcess_ProcessChannelMode(QProcess_Ptr* self);
+	[LinkName("QProcess_SetProcessChannelMode")]
+	public static extern void QProcess_SetProcessChannelMode(QProcess_Ptr* self, QProcess_ProcessChannelMode mode);
+	[LinkName("QProcess_InputChannelMode")]
+	public static extern QProcess_InputChannelMode QProcess_InputChannelMode(QProcess_Ptr* self);
+	[LinkName("QProcess_SetInputChannelMode")]
+	public static extern void QProcess_SetInputChannelMode(QProcess_Ptr* self, QProcess_InputChannelMode mode);
+	[LinkName("QProcess_ReadChannel")]
+	public static extern QProcess_ProcessChannel QProcess_ReadChannel(QProcess_Ptr* self);
+	[LinkName("QProcess_SetReadChannel")]
+	public static extern void QProcess_SetReadChannel(QProcess_Ptr* self, QProcess_ProcessChannel channel);
+	[LinkName("QProcess_CloseReadChannel")]
+	public static extern void QProcess_CloseReadChannel(QProcess_Ptr* self, QProcess_ProcessChannel channel);
+	[LinkName("QProcess_CloseWriteChannel")]
+	public static extern void QProcess_CloseWriteChannel(QProcess_Ptr* self);
+	[LinkName("QProcess_SetStandardInputFile")]
+	public static extern void QProcess_SetStandardInputFile(QProcess_Ptr* self, libqt_string* fileName);
+	[LinkName("QProcess_SetStandardOutputFile")]
+	public static extern void QProcess_SetStandardOutputFile(QProcess_Ptr* self, libqt_string* fileName);
+	[LinkName("QProcess_SetStandardErrorFile")]
+	public static extern void QProcess_SetStandardErrorFile(QProcess_Ptr* self, libqt_string* fileName);
+	[LinkName("QProcess_SetStandardOutputProcess")]
+	public static extern void QProcess_SetStandardOutputProcess(QProcess_Ptr* self, QProcess_Ptr* destination);
+	[LinkName("QProcess_SetChildProcessModifier")]
+	public static extern void QProcess_SetChildProcessModifier(QProcess_Ptr* self, void** modifier);
+	[LinkName("QProcess_WorkingDirectory")]
+	public static extern libqt_string QProcess_WorkingDirectory(QProcess_Ptr* self);
+	[LinkName("QProcess_SetWorkingDirectory")]
+	public static extern void QProcess_SetWorkingDirectory(QProcess_Ptr* self, libqt_string* dir);
+	[LinkName("QProcess_SetEnvironment")]
+	public static extern void QProcess_SetEnvironment(QProcess_Ptr* self, void** environment);
+	[LinkName("QProcess_Environment")]
+	public static extern void* QProcess_Environment(QProcess_Ptr* self);
+	[LinkName("QProcess_SetProcessEnvironment")]
+	public static extern void QProcess_SetProcessEnvironment(QProcess_Ptr* self, QProcessEnvironment_Ptr* environment);
+	[LinkName("QProcess_ProcessEnvironment")]
+	public static extern QProcessEnvironment_Ptr QProcess_ProcessEnvironment(QProcess_Ptr* self);
+	[LinkName("QProcess_Error")]
+	public static extern QProcess_ProcessError QProcess_Error(QProcess_Ptr* self);
+	[LinkName("QProcess_State")]
+	public static extern QProcess_ProcessState QProcess_State(QProcess_Ptr* self);
+	[LinkName("QProcess_ProcessId")]
+	public static extern c_longlong QProcess_ProcessId(QProcess_Ptr* self);
+	[LinkName("QProcess_WaitForStarted")]
+	public static extern bool QProcess_WaitForStarted(QProcess_Ptr* self);
+	[LinkName("QProcess_WaitForReadyRead")]
+	public static extern bool QProcess_WaitForReadyRead(QProcess_Ptr* self, c_int msecs);
+	[LinkName("QProcess_WaitForBytesWritten")]
+	public static extern bool QProcess_WaitForBytesWritten(QProcess_Ptr* self, c_int msecs);
+	[LinkName("QProcess_WaitForFinished")]
+	public static extern bool QProcess_WaitForFinished(QProcess_Ptr* self);
+	[LinkName("QProcess_ReadAllStandardOutput")]
+	public static extern void* QProcess_ReadAllStandardOutput(QProcess_Ptr* self);
+	[LinkName("QProcess_ReadAllStandardError")]
+	public static extern void* QProcess_ReadAllStandardError(QProcess_Ptr* self);
+	[LinkName("QProcess_ExitCode")]
+	public static extern c_int QProcess_ExitCode(QProcess_Ptr* self);
+	[LinkName("QProcess_ExitStatus")]
+	public static extern QProcess_ExitStatus QProcess_ExitStatus(QProcess_Ptr* self);
+	[LinkName("QProcess_BytesToWrite")]
+	public static extern c_longlong QProcess_BytesToWrite(QProcess_Ptr* self);
+	[LinkName("QProcess_IsSequential")]
+	public static extern bool QProcess_IsSequential(QProcess_Ptr* self);
+	[LinkName("QProcess_Close")]
+	public static extern void QProcess_Close(QProcess_Ptr* self);
+	[LinkName("QProcess_Execute")]
+	public static extern c_int QProcess_Execute(libqt_string* program);
+	[LinkName("QProcess_StartDetached2")]
+	public static extern bool QProcess_StartDetached2(libqt_string* program);
+	[LinkName("QProcess_SystemEnvironment")]
+	public static extern void* QProcess_SystemEnvironment();
+	[LinkName("QProcess_NullDevice")]
+	public static extern libqt_string QProcess_NullDevice();
+	[LinkName("QProcess_Terminate")]
+	public static extern void QProcess_Terminate(QProcess_Ptr* self);
+	[LinkName("QProcess_Kill")]
+	public static extern void QProcess_Kill(QProcess_Ptr* self);
+	[LinkName("QProcess_Finished")]
+	public static extern void QProcess_Finished(QProcess_Ptr* self, c_int exitCode);
+	[LinkName("QProcess_ErrorOccurred")]
+	public static extern void QProcess_ErrorOccurred(QProcess_Ptr* self, QProcess_ProcessError error);
+	[LinkName("QProcess_SetProcessState")]
+	public static extern void QProcess_SetProcessState(QProcess_Ptr* self, QProcess_ProcessState state);
+	[LinkName("QProcess_ReadData")]
+	public static extern c_longlong QProcess_ReadData(QProcess_Ptr* self, c_char* data, c_longlong maxlen);
+	[LinkName("QProcess_WriteData")]
+	public static extern c_longlong QProcess_WriteData(QProcess_Ptr* self, c_char* data, c_longlong lenVal);
+	[LinkName("QProcess_Tr2")]
+	public static extern libqt_string QProcess_Tr2(c_char* s, c_char* c);
+	[LinkName("QProcess_Tr3")]
+	public static extern libqt_string QProcess_Tr3(c_char* s, c_char* c, c_int n);
+	[LinkName("QProcess_Start22")]
+	public static extern void QProcess_Start22(QProcess_Ptr* self, libqt_string* program, void** arguments);
+	[LinkName("QProcess_Start3")]
+	public static extern void QProcess_Start3(QProcess_Ptr* self, libqt_string* program, void** arguments, void* mode);
+	[LinkName("QProcess_Start1")]
+	public static extern void QProcess_Start1(QProcess_Ptr* self, void* mode);
+	[LinkName("QProcess_StartCommand2")]
+	public static extern void QProcess_StartCommand2(QProcess_Ptr* self, libqt_string* command, void* mode);
+	[LinkName("QProcess_StartDetached1")]
+	public static extern bool QProcess_StartDetached1(QProcess_Ptr* self, c_longlong* pid);
+	[LinkName("QProcess_SetStandardOutputFile2")]
+	public static extern void QProcess_SetStandardOutputFile2(QProcess_Ptr* self, libqt_string* fileName, void* mode);
+	[LinkName("QProcess_SetStandardErrorFile2")]
+	public static extern void QProcess_SetStandardErrorFile2(QProcess_Ptr* self, libqt_string* fileName, void* mode);
+	[LinkName("QProcess_WaitForStarted1")]
+	public static extern bool QProcess_WaitForStarted1(QProcess_Ptr* self, c_int msecs);
+	[LinkName("QProcess_WaitForFinished1")]
+	public static extern bool QProcess_WaitForFinished1(QProcess_Ptr* self, c_int msecs);
+	[LinkName("QProcess_Execute2")]
+	public static extern c_int QProcess_Execute2(libqt_string* program, void** arguments);
+	[LinkName("QProcess_StartDetached22")]
+	public static extern bool QProcess_StartDetached22(libqt_string* program, void** arguments);
+	[LinkName("QProcess_StartDetached3")]
+	public static extern bool QProcess_StartDetached3(libqt_string* program, void** arguments, libqt_string* workingDirectory);
+	[LinkName("QProcess_StartDetached4")]
+	public static extern bool QProcess_StartDetached4(libqt_string* program, void** arguments, libqt_string* workingDirectory, c_longlong* pid);
+	[LinkName("QProcess_Finished2")]
+	public static extern void QProcess_Finished2(QProcess_Ptr* self, c_int exitCode, QProcess_ExitStatus exitStatus);
+}
+class QProcess
+{
+	private QProcess_Ptr* ptr;
+	public this()
+	{
+		this.ptr = CQt.QProcess_new();
+	}
+	public this(QObject_Ptr* parent)
+	{
+		this.ptr = CQt.QProcess_new2(parent);
+	}
+	public ~this()
+	{
+		CQt.QProcess_Delete(this.ptr);
+	}
+	public QMetaObject_Ptr* MetaObject()
+	{
+		return CQt.QProcess_MetaObject(this.ptr);
+	}
+	public void* Qt_metacast(c_char* param1)
+	{
+		return CQt.QProcess_Qt_Metacast(this.ptr, param1);
+	}
+	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
+	{
+		return CQt.QProcess_Qt_Metacall(this.ptr, param1, param2, param3);
+	}
+	public libqt_string Tr(c_char* s)
+	{
+		return CQt.QProcess_Tr(s);
+	}
+	public void Start(libqt_string* program)
+	{
+		CQt.QProcess_Start(this.ptr, program);
+	}
+	public void Start2()
+	{
+		CQt.QProcess_Start2(this.ptr);
+	}
+	public void StartCommand(libqt_string* command)
+	{
+		CQt.QProcess_StartCommand(this.ptr, command);
+	}
+	public bool StartDetached()
+	{
+		return CQt.QProcess_StartDetached(this.ptr);
+	}
+	public bool Open(void* mode)
+	{
+		return CQt.QProcess_Open(this.ptr, mode);
+	}
+	public libqt_string Program()
+	{
+		return CQt.QProcess_Program(this.ptr);
+	}
+	public void SetProgram(libqt_string* program)
+	{
+		CQt.QProcess_SetProgram(this.ptr, program);
+	}
+	public void* Arguments()
+	{
+		return CQt.QProcess_Arguments(this.ptr);
+	}
+	public void SetArguments(void** arguments)
+	{
+		CQt.QProcess_SetArguments(this.ptr, arguments);
+	}
+	public QProcess_ProcessChannelMode ProcessChannelMode()
+	{
+		return CQt.QProcess_ProcessChannelMode(this.ptr);
+	}
+	public void SetProcessChannelMode(QProcess_ProcessChannelMode mode)
+	{
+		CQt.QProcess_SetProcessChannelMode(this.ptr, mode);
+	}
+	public QProcess_InputChannelMode InputChannelMode()
+	{
+		return CQt.QProcess_InputChannelMode(this.ptr);
+	}
+	public void SetInputChannelMode(QProcess_InputChannelMode mode)
+	{
+		CQt.QProcess_SetInputChannelMode(this.ptr, mode);
+	}
+	public QProcess_ProcessChannel ReadChannel()
+	{
+		return CQt.QProcess_ReadChannel(this.ptr);
+	}
+	public void SetReadChannel(QProcess_ProcessChannel channel)
+	{
+		CQt.QProcess_SetReadChannel(this.ptr, channel);
+	}
+	public void CloseReadChannel(QProcess_ProcessChannel channel)
+	{
+		CQt.QProcess_CloseReadChannel(this.ptr, channel);
+	}
+	public void CloseWriteChannel()
+	{
+		CQt.QProcess_CloseWriteChannel(this.ptr);
+	}
+	public void SetStandardInputFile(libqt_string* fileName)
+	{
+		CQt.QProcess_SetStandardInputFile(this.ptr, fileName);
+	}
+	public void SetStandardOutputFile(libqt_string* fileName)
+	{
+		CQt.QProcess_SetStandardOutputFile(this.ptr, fileName);
+	}
+	public void SetStandardErrorFile(libqt_string* fileName)
+	{
+		CQt.QProcess_SetStandardErrorFile(this.ptr, fileName);
+	}
+	public void SetStandardOutputProcess(QProcess_Ptr* destination)
+	{
+		CQt.QProcess_SetStandardOutputProcess(this.ptr, destination);
+	}
+	public void SetChildProcessModifier(void** modifier)
+	{
+		CQt.QProcess_SetChildProcessModifier(this.ptr, modifier);
+	}
+	public libqt_string WorkingDirectory()
+	{
+		return CQt.QProcess_WorkingDirectory(this.ptr);
+	}
+	public void SetWorkingDirectory(libqt_string* dir)
+	{
+		CQt.QProcess_SetWorkingDirectory(this.ptr, dir);
+	}
+	public void SetEnvironment(void** environment)
+	{
+		CQt.QProcess_SetEnvironment(this.ptr, environment);
+	}
+	public void* Environment()
+	{
+		return CQt.QProcess_Environment(this.ptr);
+	}
+	public void SetProcessEnvironment(QProcessEnvironment_Ptr* environment)
+	{
+		CQt.QProcess_SetProcessEnvironment(this.ptr, environment);
+	}
+	public QProcessEnvironment_Ptr ProcessEnvironment()
+	{
+		return CQt.QProcess_ProcessEnvironment(this.ptr);
+	}
+	public QProcess_ProcessError Error()
+	{
+		return CQt.QProcess_Error(this.ptr);
+	}
+	public QProcess_ProcessState State()
+	{
+		return CQt.QProcess_State(this.ptr);
+	}
+	public c_longlong ProcessId()
+	{
+		return CQt.QProcess_ProcessId(this.ptr);
+	}
+	public bool WaitForStarted()
+	{
+		return CQt.QProcess_WaitForStarted(this.ptr);
+	}
+	public bool WaitForReadyRead(c_int msecs)
+	{
+		return CQt.QProcess_WaitForReadyRead(this.ptr, msecs);
+	}
+	public bool WaitForBytesWritten(c_int msecs)
+	{
+		return CQt.QProcess_WaitForBytesWritten(this.ptr, msecs);
+	}
+	public bool WaitForFinished()
+	{
+		return CQt.QProcess_WaitForFinished(this.ptr);
+	}
+	public void* ReadAllStandardOutput()
+	{
+		return CQt.QProcess_ReadAllStandardOutput(this.ptr);
+	}
+	public void* ReadAllStandardError()
+	{
+		return CQt.QProcess_ReadAllStandardError(this.ptr);
+	}
+	public c_int ExitCode()
+	{
+		return CQt.QProcess_ExitCode(this.ptr);
+	}
+	public QProcess_ExitStatus ExitStatus()
+	{
+		return CQt.QProcess_ExitStatus(this.ptr);
+	}
+	public c_longlong BytesToWrite()
+	{
+		return CQt.QProcess_BytesToWrite(this.ptr);
+	}
+	public bool IsSequential()
+	{
+		return CQt.QProcess_IsSequential(this.ptr);
+	}
+	public void Close()
+	{
+		CQt.QProcess_Close(this.ptr);
+	}
+	public c_int Execute(libqt_string* program)
+	{
+		return CQt.QProcess_Execute(program);
+	}
+	public bool StartDetached2(libqt_string* program)
+	{
+		return CQt.QProcess_StartDetached2(program);
+	}
+	public void* SystemEnvironment()
+	{
+		return CQt.QProcess_SystemEnvironment();
+	}
+	public libqt_string NullDevice()
+	{
+		return CQt.QProcess_NullDevice();
+	}
+	public void Terminate()
+	{
+		CQt.QProcess_Terminate(this.ptr);
+	}
+	public void Kill()
+	{
+		CQt.QProcess_Kill(this.ptr);
+	}
+	public void Finished(c_int exitCode)
+	{
+		CQt.QProcess_Finished(this.ptr, exitCode);
+	}
+	public void ErrorOccurred(QProcess_ProcessError error)
+	{
+		CQt.QProcess_ErrorOccurred(this.ptr, error);
+	}
+	public void SetProcessState(QProcess_ProcessState state)
+	{
+		CQt.QProcess_SetProcessState(this.ptr, state);
+	}
+	public c_longlong ReadData(c_char* data, c_longlong maxlen)
+	{
+		return CQt.QProcess_ReadData(this.ptr, data, maxlen);
+	}
+	public c_longlong WriteData(c_char* data, c_longlong lenVal)
+	{
+		return CQt.QProcess_WriteData(this.ptr, data, lenVal);
+	}
+	public libqt_string Tr2(c_char* s, c_char* c)
+	{
+		return CQt.QProcess_Tr2(s, c);
+	}
+	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
+	{
+		return CQt.QProcess_Tr3(s, c, n);
+	}
+	public void Start22(libqt_string* program, void** arguments)
+	{
+		CQt.QProcess_Start22(this.ptr, program, arguments);
+	}
+	public void Start3(libqt_string* program, void** arguments, void* mode)
+	{
+		CQt.QProcess_Start3(this.ptr, program, arguments, mode);
+	}
+	public void Start1(void* mode)
+	{
+		CQt.QProcess_Start1(this.ptr, mode);
+	}
+	public void StartCommand2(libqt_string* command, void* mode)
+	{
+		CQt.QProcess_StartCommand2(this.ptr, command, mode);
+	}
+	public bool StartDetached1(c_longlong* pid)
+	{
+		return CQt.QProcess_StartDetached1(this.ptr, pid);
+	}
+	public void SetStandardOutputFile2(libqt_string* fileName, void* mode)
+	{
+		CQt.QProcess_SetStandardOutputFile2(this.ptr, fileName, mode);
+	}
+	public void SetStandardErrorFile2(libqt_string* fileName, void* mode)
+	{
+		CQt.QProcess_SetStandardErrorFile2(this.ptr, fileName, mode);
+	}
+	public bool WaitForStarted1(c_int msecs)
+	{
+		return CQt.QProcess_WaitForStarted1(this.ptr, msecs);
+	}
+	public bool WaitForFinished1(c_int msecs)
+	{
+		return CQt.QProcess_WaitForFinished1(this.ptr, msecs);
+	}
+	public c_int Execute2(libqt_string* program, void** arguments)
+	{
+		return CQt.QProcess_Execute2(program, arguments);
+	}
+	public bool StartDetached22(libqt_string* program, void** arguments)
+	{
+		return CQt.QProcess_StartDetached22(program, arguments);
+	}
+	public bool StartDetached3(libqt_string* program, void** arguments, libqt_string* workingDirectory)
+	{
+		return CQt.QProcess_StartDetached3(program, arguments, workingDirectory);
+	}
+	public bool StartDetached4(libqt_string* program, void** arguments, libqt_string* workingDirectory, c_longlong* pid)
+	{
+		return CQt.QProcess_StartDetached4(program, arguments, workingDirectory, pid);
+	}
+	public void Finished2(c_int exitCode, QProcess_ExitStatus exitStatus)
+	{
+		CQt.QProcess_Finished2(this.ptr, exitCode, exitStatus);
+	}
+}
+interface IQProcess
+{
+	public QMetaObject* MetaObject();
+	public void* Qt_metacast();
+	public c_int Qt_metacall();
+	public libqt_string Tr();
+	public void Start();
+	public void Start2();
+	public void StartCommand();
+	public bool StartDetached();
+	public bool Open();
+	public libqt_string Program();
+	public void SetProgram();
+	public void* Arguments();
+	public void SetArguments();
+	public QProcess_ProcessChannelMode ProcessChannelMode();
+	public void SetProcessChannelMode();
+	public QProcess_InputChannelMode InputChannelMode();
+	public void SetInputChannelMode();
+	public QProcess_ProcessChannel ReadChannel();
+	public void SetReadChannel();
+	public void CloseReadChannel();
+	public void CloseWriteChannel();
+	public void SetStandardInputFile();
+	public void SetStandardOutputFile();
+	public void SetStandardErrorFile();
+	public void SetStandardOutputProcess();
+	public void SetChildProcessModifier();
+	public libqt_string WorkingDirectory();
+	public void SetWorkingDirectory();
+	public void SetEnvironment();
+	public void* Environment();
+	public void SetProcessEnvironment();
+	public QProcessEnvironment ProcessEnvironment();
+	public QProcess_ProcessError Error();
+	public QProcess_ProcessState State();
+	public c_longlong ProcessId();
+	public bool WaitForStarted();
+	public bool WaitForReadyRead();
+	public bool WaitForBytesWritten();
+	public bool WaitForFinished();
+	public void* ReadAllStandardOutput();
+	public void* ReadAllStandardError();
+	public c_int ExitCode();
+	public QProcess_ExitStatus ExitStatus();
+	public c_longlong BytesToWrite();
+	public bool IsSequential();
+	public void Close();
+	public c_int Execute();
+	public bool StartDetached2();
+	public void* SystemEnvironment();
+	public libqt_string NullDevice();
+	public void Terminate();
+	public void Kill();
+	public void Finished();
+	public void ErrorOccurred();
+	public void SetProcessState();
+	public c_longlong ReadData();
+	public c_longlong WriteData();
+	public libqt_string Tr2();
+	public libqt_string Tr3();
+	public void Start22();
+	public void Start3();
+	public void Start1();
+	public void StartCommand2();
+	public bool StartDetached1();
+	public void SetStandardOutputFile2();
+	public void SetStandardErrorFile2();
+	public bool WaitForStarted1();
+	public bool WaitForFinished1();
+	public c_int Execute2();
+	public bool StartDetached22();
+	public bool StartDetached3();
+	public bool StartDetached4();
+	public void Finished2();
+}
+[AllowDuplicates]
+enum QProcessEnvironment_Initialization
+{
+	InheritFromParent = 0,
+}
+[AllowDuplicates]
+enum QProcess_ProcessError
+{
+	FailedToStart = 0,
+	Crashed = 1,
+	Timedout = 2,
+	ReadError = 3,
+	WriteError = 4,
+	UnknownError = 5,
+}
+[AllowDuplicates]
+enum QProcess_ProcessState
+{
+	NotRunning = 0,
+	Starting = 1,
+	Running = 2,
+}
+[AllowDuplicates]
+enum QProcess_ProcessChannel
+{
+	StandardOutput = 0,
+	StandardError = 1,
+}
+[AllowDuplicates]
+enum QProcess_ProcessChannelMode
+{
+	SeparateChannels = 0,
+	MergedChannels = 1,
+	ForwardedChannels = 2,
+	ForwardedOutputChannel = 3,
+	ForwardedErrorChannel = 4,
+}
+[AllowDuplicates]
+enum QProcess_InputChannelMode
+{
+	ManagedInputChannel = 0,
+	ForwardedInputChannel = 1,
+}
+[AllowDuplicates]
+enum QProcess_ExitStatus
+{
+	NormalExit = 0,
+	CrashExit = 1,
+}

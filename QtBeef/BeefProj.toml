@@ -3,8 +3,7 @@ FileVersion = 1
 [Project]
 Name = "Qt6"
 TargetType = "BeefLib"
-StartupObject = "QtBeef.Program"
-DefaultNamespace = "QtBeef"
+StartupObject = "Qt6.Program"
 
 [Configs.Debug.Win64]
 LibPaths = ["D:\\qtbeef\\libqt6c\\build\\Release\\qt6c.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Core.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Widgets.lib", "C:\\Qt\\6.8.3\\msvc2022_64\\lib\\Qt6Gui.lib"]
