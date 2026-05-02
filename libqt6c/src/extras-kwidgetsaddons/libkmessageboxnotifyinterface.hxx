@@ -1,0 +1,59 @@
+#pragma once
+#ifndef SRC_EXTRAS_KWIDGETSADDONSC_LIBVIRTUALKMESSAGEBOXNOTIFYINTERFACE_H
+#define SRC_EXTRAS_KWIDGETSADDONSC_LIBVIRTUALKMESSAGEBOXNOTIFYINTERFACE_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+// This class is a subclass of KMessageBoxNotifyInterface so that we can call protected methods
+class VirtualKMessageBoxNotifyInterface : public KMessageBoxNotifyInterface {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualKMessageBoxNotifyInterface = true;
+
+    // Virtual class public types (including callbacks)
+    using KMessageBoxNotifyInterface_SendNotification_Callback = void (*)(KMessageBoxNotifyInterface*, int, const char*, QWidget*);
+
+  protected:
+    // Instance callback storage
+    KMessageBoxNotifyInterface_SendNotification_Callback kmessageboxnotifyinterface_sendnotification_callback = nullptr;
+
+    // Instance base flags
+    mutable bool kmessageboxnotifyinterface_sendnotification_isbase = false;
+
+  public:
+    VirtualKMessageBoxNotifyInterface() : KMessageBoxNotifyInterface() {};
+
+    // Callback setters
+    inline void setKMessageBoxNotifyInterface_SendNotification_Callback(KMessageBoxNotifyInterface_SendNotification_Callback cb) { kmessageboxnotifyinterface_sendnotification_callback = cb; }
+
+    // Base flag setters
+    inline void setKMessageBoxNotifyInterface_SendNotification_IsBase(bool value) const { kmessageboxnotifyinterface_sendnotification_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void sendNotification(QMessageBox::Icon notificationType, const QString& message, QWidget* parent) override {
+        auto sendnotification_cb = kmessageboxnotifyinterface_sendnotification_callback;
+        if (sendnotification_cb) {
+            int cbval1 = static_cast<int>(notificationType);
+            const QString message_ret = message;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray message_b = message_ret.toUtf8();
+            auto message_str_len = message_b.length();
+            char* message_str = static_cast<char*>(malloc(message_str_len + 1));
+            memcpy(message_str, message_b.data(), message_str_len);
+            message_str[message_str_len] = '\0';
+            const char* cbval2 = message_str;
+            QWidget* cbval3 = parent;
+
+            sendnotification_cb(this, cbval1, cbval2, cbval3);
+            libqt_free(message_str);
+        }
+    }
+};
+
+#endif

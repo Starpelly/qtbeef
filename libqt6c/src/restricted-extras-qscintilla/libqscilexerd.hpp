@@ -1,0 +1,184 @@
+#pragma once
+#ifndef SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBQSCILEXERD_HPP
+#define SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBQSCILEXERD_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QChildEvent QChildEvent;
+typedef struct QColor QColor;
+typedef struct QEvent QEvent;
+typedef struct QFont QFont;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QSettings QSettings;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QsciLexer QsciLexer;
+typedef struct QsciLexerD QsciLexerD;
+typedef struct QsciScintilla QsciScintilla;
+#endif
+
+QsciLexerD* QsciLexerD_new();
+QsciLexerD* QsciLexerD_new2(QObject* parent);
+QMetaObject* QsciLexerD_MetaObject(const QsciLexerD* self);
+void* QsciLexerD_Metacast(QsciLexerD* self, const char* param1);
+int QsciLexerD_Metacall(QsciLexerD* self, int param1, int param2, void** param3);
+const char* QsciLexerD_Language(const QsciLexerD* self);
+const char* QsciLexerD_Lexer(const QsciLexerD* self);
+libqt_list /* of libqt_string */ QsciLexerD_AutoCompletionWordSeparators(const QsciLexerD* self);
+const char* QsciLexerD_BlockEnd(const QsciLexerD* self);
+const char* QsciLexerD_BlockStart(const QsciLexerD* self);
+const char* QsciLexerD_BlockStartKeyword(const QsciLexerD* self);
+int QsciLexerD_BraceStyle(const QsciLexerD* self);
+const char* QsciLexerD_WordCharacters(const QsciLexerD* self);
+QColor* QsciLexerD_DefaultColor(const QsciLexerD* self, int style);
+bool QsciLexerD_DefaultEolFill(const QsciLexerD* self, int style);
+QFont* QsciLexerD_DefaultFont(const QsciLexerD* self, int style);
+QColor* QsciLexerD_DefaultPaper(const QsciLexerD* self, int style);
+const char* QsciLexerD_Keywords(const QsciLexerD* self, int set);
+libqt_string QsciLexerD_Description(const QsciLexerD* self, int style);
+void QsciLexerD_RefreshProperties(QsciLexerD* self);
+bool QsciLexerD_FoldAtElse(const QsciLexerD* self);
+bool QsciLexerD_FoldComments(const QsciLexerD* self);
+bool QsciLexerD_FoldCompact(const QsciLexerD* self);
+void QsciLexerD_SetFoldAtElse(QsciLexerD* self, bool fold);
+void QsciLexerD_SetFoldComments(QsciLexerD* self, bool fold);
+void QsciLexerD_SetFoldCompact(QsciLexerD* self, bool fold);
+const char* QsciLexerD_BlockEnd1(const QsciLexerD* self, int* style);
+const char* QsciLexerD_BlockStart1(const QsciLexerD* self, int* style);
+const char* QsciLexerD_BlockStartKeyword1(const QsciLexerD* self, int* style);
+void QsciLexerD_OnMetaObject(const QsciLexerD* self, intptr_t slot);
+QMetaObject* QsciLexerD_SuperMetaObject(const QsciLexerD* self);
+void QsciLexerD_OnMetacast(QsciLexerD* self, intptr_t slot);
+void* QsciLexerD_SuperMetacast(QsciLexerD* self, const char* param1);
+void QsciLexerD_OnMetacall(QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperMetacall(QsciLexerD* self, int param1, int param2, void** param3);
+void QsciLexerD_OnSetFoldAtElse(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetFoldAtElse(QsciLexerD* self, bool fold);
+void QsciLexerD_OnSetFoldComments(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetFoldComments(QsciLexerD* self, bool fold);
+void QsciLexerD_OnSetFoldCompact(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetFoldCompact(QsciLexerD* self, bool fold);
+int QsciLexerD_LexerId(const QsciLexerD* self);
+void QsciLexerD_OnLexerId(const QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperLexerId(const QsciLexerD* self);
+const char* QsciLexerD_AutoCompletionFillups(const QsciLexerD* self);
+void QsciLexerD_OnAutoCompletionFillups(const QsciLexerD* self, intptr_t slot);
+const char* QsciLexerD_SuperAutoCompletionFillups(const QsciLexerD* self);
+int QsciLexerD_BlockLookback(const QsciLexerD* self);
+void QsciLexerD_OnBlockLookback(const QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperBlockLookback(const QsciLexerD* self);
+bool QsciLexerD_CaseSensitive(const QsciLexerD* self);
+void QsciLexerD_OnCaseSensitive(const QsciLexerD* self, intptr_t slot);
+bool QsciLexerD_SuperCaseSensitive(const QsciLexerD* self);
+QColor* QsciLexerD_Color(const QsciLexerD* self, int style);
+void QsciLexerD_OnColor(const QsciLexerD* self, intptr_t slot);
+QColor* QsciLexerD_SuperColor(const QsciLexerD* self, int style);
+bool QsciLexerD_EolFill(const QsciLexerD* self, int style);
+void QsciLexerD_OnEolFill(const QsciLexerD* self, intptr_t slot);
+bool QsciLexerD_SuperEolFill(const QsciLexerD* self, int style);
+QFont* QsciLexerD_Font(const QsciLexerD* self, int style);
+void QsciLexerD_OnFont(const QsciLexerD* self, intptr_t slot);
+QFont* QsciLexerD_SuperFont(const QsciLexerD* self, int style);
+int QsciLexerD_IndentationGuideView(const QsciLexerD* self);
+void QsciLexerD_OnIndentationGuideView(const QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperIndentationGuideView(const QsciLexerD* self);
+int QsciLexerD_DefaultStyle(const QsciLexerD* self);
+void QsciLexerD_OnDefaultStyle(const QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperDefaultStyle(const QsciLexerD* self);
+QColor* QsciLexerD_Paper(const QsciLexerD* self, int style);
+void QsciLexerD_OnPaper(const QsciLexerD* self, intptr_t slot);
+QColor* QsciLexerD_SuperPaper(const QsciLexerD* self, int style);
+QColor* QsciLexerD_DefaultColor2(const QsciLexerD* self, int style);
+void QsciLexerD_OnDefaultColor2(const QsciLexerD* self, intptr_t slot);
+QColor* QsciLexerD_SuperDefaultColor2(const QsciLexerD* self, int style);
+QFont* QsciLexerD_DefaultFont2(const QsciLexerD* self, int style);
+void QsciLexerD_OnDefaultFont2(const QsciLexerD* self, intptr_t slot);
+QFont* QsciLexerD_SuperDefaultFont2(const QsciLexerD* self, int style);
+QColor* QsciLexerD_DefaultPaper2(const QsciLexerD* self, int style);
+void QsciLexerD_OnDefaultPaper2(const QsciLexerD* self, intptr_t slot);
+QColor* QsciLexerD_SuperDefaultPaper2(const QsciLexerD* self, int style);
+void QsciLexerD_SetEditor(QsciLexerD* self, QsciScintilla* editor);
+void QsciLexerD_OnSetEditor(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetEditor(QsciLexerD* self, QsciScintilla* editor);
+int QsciLexerD_StyleBitsNeeded(const QsciLexerD* self);
+void QsciLexerD_OnStyleBitsNeeded(const QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperStyleBitsNeeded(const QsciLexerD* self);
+void QsciLexerD_SetAutoIndentStyle(QsciLexerD* self, int autoindentstyle);
+void QsciLexerD_OnSetAutoIndentStyle(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetAutoIndentStyle(QsciLexerD* self, int autoindentstyle);
+void QsciLexerD_SetColor(QsciLexerD* self, const QColor* c, int style);
+void QsciLexerD_OnSetColor(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetColor(QsciLexerD* self, const QColor* c, int style);
+void QsciLexerD_SetEolFill(QsciLexerD* self, bool eoffill, int style);
+void QsciLexerD_OnSetEolFill(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetEolFill(QsciLexerD* self, bool eoffill, int style);
+void QsciLexerD_SetFont(QsciLexerD* self, const QFont* f, int style);
+void QsciLexerD_OnSetFont(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetFont(QsciLexerD* self, const QFont* f, int style);
+void QsciLexerD_SetPaper(QsciLexerD* self, const QColor* c, int style);
+void QsciLexerD_OnSetPaper(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperSetPaper(QsciLexerD* self, const QColor* c, int style);
+bool QsciLexerD_ReadProperties(QsciLexerD* self, QSettings* qs, const libqt_string prefix);
+void QsciLexerD_OnReadProperties(QsciLexerD* self, intptr_t slot);
+bool QsciLexerD_SuperReadProperties(QsciLexerD* self, QSettings* qs, const libqt_string prefix);
+bool QsciLexerD_WriteProperties(const QsciLexerD* self, QSettings* qs, const libqt_string prefix);
+void QsciLexerD_OnWriteProperties(const QsciLexerD* self, intptr_t slot);
+bool QsciLexerD_SuperWriteProperties(const QsciLexerD* self, QSettings* qs, const libqt_string prefix);
+bool QsciLexerD_Event(QsciLexerD* self, QEvent* event);
+void QsciLexerD_OnEvent(QsciLexerD* self, intptr_t slot);
+bool QsciLexerD_SuperEvent(QsciLexerD* self, QEvent* event);
+bool QsciLexerD_EventFilter(QsciLexerD* self, QObject* watched, QEvent* event);
+void QsciLexerD_OnEventFilter(QsciLexerD* self, intptr_t slot);
+bool QsciLexerD_SuperEventFilter(QsciLexerD* self, QObject* watched, QEvent* event);
+void QsciLexerD_TimerEvent(QsciLexerD* self, QTimerEvent* event);
+void QsciLexerD_OnTimerEvent(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperTimerEvent(QsciLexerD* self, QTimerEvent* event);
+void QsciLexerD_ChildEvent(QsciLexerD* self, QChildEvent* event);
+void QsciLexerD_OnChildEvent(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperChildEvent(QsciLexerD* self, QChildEvent* event);
+void QsciLexerD_CustomEvent(QsciLexerD* self, QEvent* event);
+void QsciLexerD_OnCustomEvent(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperCustomEvent(QsciLexerD* self, QEvent* event);
+void QsciLexerD_ConnectNotify(QsciLexerD* self, const QMetaMethod* signal);
+void QsciLexerD_OnConnectNotify(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperConnectNotify(QsciLexerD* self, const QMetaMethod* signal);
+void QsciLexerD_DisconnectNotify(QsciLexerD* self, const QMetaMethod* signal);
+void QsciLexerD_OnDisconnectNotify(QsciLexerD* self, intptr_t slot);
+void QsciLexerD_SuperDisconnectNotify(QsciLexerD* self, const QMetaMethod* signal);
+libqt_string QsciLexerD_TextAsBytes(const QsciLexerD* self, const libqt_string text);
+void QsciLexerD_OnTextAsBytes(const QsciLexerD* self, intptr_t slot);
+libqt_string QsciLexerD_SuperTextAsBytes(const QsciLexerD* self, const libqt_string text);
+libqt_string QsciLexerD_BytesAsText(const QsciLexerD* self, const char* bytes, int size);
+void QsciLexerD_OnBytesAsText(const QsciLexerD* self, intptr_t slot);
+libqt_string QsciLexerD_SuperBytesAsText(const QsciLexerD* self, const char* bytes, int size);
+QObject* QsciLexerD_Sender(const QsciLexerD* self);
+void QsciLexerD_OnSender(const QsciLexerD* self, intptr_t slot);
+QObject* QsciLexerD_SuperSender(const QsciLexerD* self);
+int QsciLexerD_SenderSignalIndex(const QsciLexerD* self);
+void QsciLexerD_OnSenderSignalIndex(const QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperSenderSignalIndex(const QsciLexerD* self);
+int QsciLexerD_Receivers(const QsciLexerD* self, const char* signal);
+void QsciLexerD_OnReceivers(const QsciLexerD* self, intptr_t slot);
+int QsciLexerD_SuperReceivers(const QsciLexerD* self, const char* signal);
+bool QsciLexerD_IsSignalConnected(const QsciLexerD* self, const QMetaMethod* signal);
+void QsciLexerD_OnIsSignalConnected(const QsciLexerD* self, intptr_t slot);
+bool QsciLexerD_SuperIsSignalConnected(const QsciLexerD* self, const QMetaMethod* signal);
+void QsciLexerD_Delete(QsciLexerD* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

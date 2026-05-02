@@ -1,0 +1,263 @@
+#pragma once
+#ifndef SRCC_LIBQSTACKEDWIDGET_HPP
+#define SRCC_LIBQSTACKEDWIDGET_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QFrame QFrame;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QStackedWidget QStackedWidget;
+typedef struct QStyleOptionFrame QStyleOptionFrame;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+QStackedWidget* QStackedWidget_new(QWidget* parent);
+QStackedWidget* QStackedWidget_new2();
+QMetaObject* QStackedWidget_MetaObject(const QStackedWidget* self);
+void* QStackedWidget_Metacast(QStackedWidget* self, const char* param1);
+int QStackedWidget_Metacall(QStackedWidget* self, int param1, int param2, void** param3);
+int QStackedWidget_AddWidget(QStackedWidget* self, QWidget* w);
+int QStackedWidget_InsertWidget(QStackedWidget* self, int index, QWidget* w);
+void QStackedWidget_RemoveWidget(QStackedWidget* self, QWidget* w);
+QWidget* QStackedWidget_CurrentWidget(const QStackedWidget* self);
+int QStackedWidget_CurrentIndex(const QStackedWidget* self);
+int QStackedWidget_IndexOf(const QStackedWidget* self, const QWidget* param1);
+QWidget* QStackedWidget_Widget(const QStackedWidget* self, int param1);
+int QStackedWidget_Count(const QStackedWidget* self);
+void QStackedWidget_SetCurrentIndex(QStackedWidget* self, int index);
+void QStackedWidget_SetCurrentWidget(QStackedWidget* self, QWidget* w);
+void QStackedWidget_CurrentChanged(QStackedWidget* self, int param1);
+void QStackedWidget_Connect_CurrentChanged(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_WidgetRemoved(QStackedWidget* self, int index);
+void QStackedWidget_Connect_WidgetRemoved(QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_Event(QStackedWidget* self, QEvent* e);
+void QStackedWidget_OnMetaObject(const QStackedWidget* self, intptr_t slot);
+QMetaObject* QStackedWidget_SuperMetaObject(const QStackedWidget* self);
+void QStackedWidget_OnMetacast(QStackedWidget* self, intptr_t slot);
+void* QStackedWidget_SuperMetacast(QStackedWidget* self, const char* param1);
+void QStackedWidget_OnMetacall(QStackedWidget* self, intptr_t slot);
+int QStackedWidget_SuperMetacall(QStackedWidget* self, int param1, int param2, void** param3);
+void QStackedWidget_OnEvent(QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperEvent(QStackedWidget* self, QEvent* e);
+QSize* QStackedWidget_SizeHint(const QStackedWidget* self);
+void QStackedWidget_OnSizeHint(const QStackedWidget* self, intptr_t slot);
+QSize* QStackedWidget_SuperSizeHint(const QStackedWidget* self);
+void QStackedWidget_PaintEvent(QStackedWidget* self, QPaintEvent* param1);
+void QStackedWidget_OnPaintEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperPaintEvent(QStackedWidget* self, QPaintEvent* param1);
+void QStackedWidget_ChangeEvent(QStackedWidget* self, QEvent* param1);
+void QStackedWidget_OnChangeEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperChangeEvent(QStackedWidget* self, QEvent* param1);
+void QStackedWidget_InitStyleOption(const QStackedWidget* self, QStyleOptionFrame* option);
+void QStackedWidget_OnInitStyleOption(const QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperInitStyleOption(const QStackedWidget* self, QStyleOptionFrame* option);
+int QStackedWidget_DevType(const QStackedWidget* self);
+void QStackedWidget_OnDevType(const QStackedWidget* self, intptr_t slot);
+int QStackedWidget_SuperDevType(const QStackedWidget* self);
+void QStackedWidget_SetVisible(QStackedWidget* self, bool visible);
+void QStackedWidget_OnSetVisible(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperSetVisible(QStackedWidget* self, bool visible);
+QSize* QStackedWidget_MinimumSizeHint(const QStackedWidget* self);
+void QStackedWidget_OnMinimumSizeHint(const QStackedWidget* self, intptr_t slot);
+QSize* QStackedWidget_SuperMinimumSizeHint(const QStackedWidget* self);
+int QStackedWidget_HeightForWidth(const QStackedWidget* self, int param1);
+void QStackedWidget_OnHeightForWidth(const QStackedWidget* self, intptr_t slot);
+int QStackedWidget_SuperHeightForWidth(const QStackedWidget* self, int param1);
+bool QStackedWidget_HasHeightForWidth(const QStackedWidget* self);
+void QStackedWidget_OnHasHeightForWidth(const QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperHasHeightForWidth(const QStackedWidget* self);
+QPaintEngine* QStackedWidget_PaintEngine(const QStackedWidget* self);
+void QStackedWidget_OnPaintEngine(const QStackedWidget* self, intptr_t slot);
+QPaintEngine* QStackedWidget_SuperPaintEngine(const QStackedWidget* self);
+void QStackedWidget_MousePressEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_OnMousePressEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperMousePressEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_MouseReleaseEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_OnMouseReleaseEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperMouseReleaseEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_MouseDoubleClickEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_OnMouseDoubleClickEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperMouseDoubleClickEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_MouseMoveEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_OnMouseMoveEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperMouseMoveEvent(QStackedWidget* self, QMouseEvent* event);
+void QStackedWidget_WheelEvent(QStackedWidget* self, QWheelEvent* event);
+void QStackedWidget_OnWheelEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperWheelEvent(QStackedWidget* self, QWheelEvent* event);
+void QStackedWidget_KeyPressEvent(QStackedWidget* self, QKeyEvent* event);
+void QStackedWidget_OnKeyPressEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperKeyPressEvent(QStackedWidget* self, QKeyEvent* event);
+void QStackedWidget_KeyReleaseEvent(QStackedWidget* self, QKeyEvent* event);
+void QStackedWidget_OnKeyReleaseEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperKeyReleaseEvent(QStackedWidget* self, QKeyEvent* event);
+void QStackedWidget_FocusInEvent(QStackedWidget* self, QFocusEvent* event);
+void QStackedWidget_OnFocusInEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperFocusInEvent(QStackedWidget* self, QFocusEvent* event);
+void QStackedWidget_FocusOutEvent(QStackedWidget* self, QFocusEvent* event);
+void QStackedWidget_OnFocusOutEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperFocusOutEvent(QStackedWidget* self, QFocusEvent* event);
+void QStackedWidget_EnterEvent(QStackedWidget* self, QEnterEvent* event);
+void QStackedWidget_OnEnterEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperEnterEvent(QStackedWidget* self, QEnterEvent* event);
+void QStackedWidget_LeaveEvent(QStackedWidget* self, QEvent* event);
+void QStackedWidget_OnLeaveEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperLeaveEvent(QStackedWidget* self, QEvent* event);
+void QStackedWidget_MoveEvent(QStackedWidget* self, QMoveEvent* event);
+void QStackedWidget_OnMoveEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperMoveEvent(QStackedWidget* self, QMoveEvent* event);
+void QStackedWidget_ResizeEvent(QStackedWidget* self, QResizeEvent* event);
+void QStackedWidget_OnResizeEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperResizeEvent(QStackedWidget* self, QResizeEvent* event);
+void QStackedWidget_CloseEvent(QStackedWidget* self, QCloseEvent* event);
+void QStackedWidget_OnCloseEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperCloseEvent(QStackedWidget* self, QCloseEvent* event);
+void QStackedWidget_ContextMenuEvent(QStackedWidget* self, QContextMenuEvent* event);
+void QStackedWidget_OnContextMenuEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperContextMenuEvent(QStackedWidget* self, QContextMenuEvent* event);
+void QStackedWidget_TabletEvent(QStackedWidget* self, QTabletEvent* event);
+void QStackedWidget_OnTabletEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperTabletEvent(QStackedWidget* self, QTabletEvent* event);
+void QStackedWidget_ActionEvent(QStackedWidget* self, QActionEvent* event);
+void QStackedWidget_OnActionEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperActionEvent(QStackedWidget* self, QActionEvent* event);
+void QStackedWidget_DragEnterEvent(QStackedWidget* self, QDragEnterEvent* event);
+void QStackedWidget_OnDragEnterEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperDragEnterEvent(QStackedWidget* self, QDragEnterEvent* event);
+void QStackedWidget_DragMoveEvent(QStackedWidget* self, QDragMoveEvent* event);
+void QStackedWidget_OnDragMoveEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperDragMoveEvent(QStackedWidget* self, QDragMoveEvent* event);
+void QStackedWidget_DragLeaveEvent(QStackedWidget* self, QDragLeaveEvent* event);
+void QStackedWidget_OnDragLeaveEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperDragLeaveEvent(QStackedWidget* self, QDragLeaveEvent* event);
+void QStackedWidget_DropEvent(QStackedWidget* self, QDropEvent* event);
+void QStackedWidget_OnDropEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperDropEvent(QStackedWidget* self, QDropEvent* event);
+void QStackedWidget_ShowEvent(QStackedWidget* self, QShowEvent* event);
+void QStackedWidget_OnShowEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperShowEvent(QStackedWidget* self, QShowEvent* event);
+void QStackedWidget_HideEvent(QStackedWidget* self, QHideEvent* event);
+void QStackedWidget_OnHideEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperHideEvent(QStackedWidget* self, QHideEvent* event);
+bool QStackedWidget_NativeEvent(QStackedWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+void QStackedWidget_OnNativeEvent(QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperNativeEvent(QStackedWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+int QStackedWidget_Metric(const QStackedWidget* self, int param1);
+void QStackedWidget_OnMetric(const QStackedWidget* self, intptr_t slot);
+int QStackedWidget_SuperMetric(const QStackedWidget* self, int param1);
+void QStackedWidget_InitPainter(const QStackedWidget* self, QPainter* painter);
+void QStackedWidget_OnInitPainter(const QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperInitPainter(const QStackedWidget* self, QPainter* painter);
+QPaintDevice* QStackedWidget_Redirected(const QStackedWidget* self, QPoint* offset);
+void QStackedWidget_OnRedirected(const QStackedWidget* self, intptr_t slot);
+QPaintDevice* QStackedWidget_SuperRedirected(const QStackedWidget* self, QPoint* offset);
+QPainter* QStackedWidget_SharedPainter(const QStackedWidget* self);
+void QStackedWidget_OnSharedPainter(const QStackedWidget* self, intptr_t slot);
+QPainter* QStackedWidget_SuperSharedPainter(const QStackedWidget* self);
+void QStackedWidget_InputMethodEvent(QStackedWidget* self, QInputMethodEvent* param1);
+void QStackedWidget_OnInputMethodEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperInputMethodEvent(QStackedWidget* self, QInputMethodEvent* param1);
+QVariant* QStackedWidget_InputMethodQuery(const QStackedWidget* self, int param1);
+void QStackedWidget_OnInputMethodQuery(const QStackedWidget* self, intptr_t slot);
+QVariant* QStackedWidget_SuperInputMethodQuery(const QStackedWidget* self, int param1);
+bool QStackedWidget_FocusNextPrevChild(QStackedWidget* self, bool next);
+void QStackedWidget_OnFocusNextPrevChild(QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperFocusNextPrevChild(QStackedWidget* self, bool next);
+bool QStackedWidget_EventFilter(QStackedWidget* self, QObject* watched, QEvent* event);
+void QStackedWidget_OnEventFilter(QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperEventFilter(QStackedWidget* self, QObject* watched, QEvent* event);
+void QStackedWidget_TimerEvent(QStackedWidget* self, QTimerEvent* event);
+void QStackedWidget_OnTimerEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperTimerEvent(QStackedWidget* self, QTimerEvent* event);
+void QStackedWidget_ChildEvent(QStackedWidget* self, QChildEvent* event);
+void QStackedWidget_OnChildEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperChildEvent(QStackedWidget* self, QChildEvent* event);
+void QStackedWidget_CustomEvent(QStackedWidget* self, QEvent* event);
+void QStackedWidget_OnCustomEvent(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperCustomEvent(QStackedWidget* self, QEvent* event);
+void QStackedWidget_ConnectNotify(QStackedWidget* self, const QMetaMethod* signal);
+void QStackedWidget_OnConnectNotify(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperConnectNotify(QStackedWidget* self, const QMetaMethod* signal);
+void QStackedWidget_DisconnectNotify(QStackedWidget* self, const QMetaMethod* signal);
+void QStackedWidget_OnDisconnectNotify(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperDisconnectNotify(QStackedWidget* self, const QMetaMethod* signal);
+void QStackedWidget_DrawFrame(QStackedWidget* self, QPainter* param1);
+void QStackedWidget_OnDrawFrame(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperDrawFrame(QStackedWidget* self, QPainter* param1);
+void QStackedWidget_UpdateMicroFocus(QStackedWidget* self);
+void QStackedWidget_OnUpdateMicroFocus(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperUpdateMicroFocus(QStackedWidget* self);
+void QStackedWidget_Create(QStackedWidget* self);
+void QStackedWidget_OnCreate(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperCreate(QStackedWidget* self);
+void QStackedWidget_Destroy(QStackedWidget* self);
+void QStackedWidget_OnDestroy(QStackedWidget* self, intptr_t slot);
+void QStackedWidget_SuperDestroy(QStackedWidget* self);
+bool QStackedWidget_FocusNextChild(QStackedWidget* self);
+void QStackedWidget_OnFocusNextChild(QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperFocusNextChild(QStackedWidget* self);
+bool QStackedWidget_FocusPreviousChild(QStackedWidget* self);
+void QStackedWidget_OnFocusPreviousChild(QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperFocusPreviousChild(QStackedWidget* self);
+QObject* QStackedWidget_Sender(const QStackedWidget* self);
+void QStackedWidget_OnSender(const QStackedWidget* self, intptr_t slot);
+QObject* QStackedWidget_SuperSender(const QStackedWidget* self);
+int QStackedWidget_SenderSignalIndex(const QStackedWidget* self);
+void QStackedWidget_OnSenderSignalIndex(const QStackedWidget* self, intptr_t slot);
+int QStackedWidget_SuperSenderSignalIndex(const QStackedWidget* self);
+int QStackedWidget_Receivers(const QStackedWidget* self, const char* signal);
+void QStackedWidget_OnReceivers(const QStackedWidget* self, intptr_t slot);
+int QStackedWidget_SuperReceivers(const QStackedWidget* self, const char* signal);
+bool QStackedWidget_IsSignalConnected(const QStackedWidget* self, const QMetaMethod* signal);
+void QStackedWidget_OnIsSignalConnected(const QStackedWidget* self, intptr_t slot);
+bool QStackedWidget_SuperIsSignalConnected(const QStackedWidget* self, const QMetaMethod* signal);
+double QStackedWidget_GetDecodedMetricF(const QStackedWidget* self, int metricA, int metricB);
+void QStackedWidget_OnGetDecodedMetricF(const QStackedWidget* self, intptr_t slot);
+double QStackedWidget_SuperGetDecodedMetricF(const QStackedWidget* self, int metricA, int metricB);
+void QStackedWidget_Delete(QStackedWidget* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

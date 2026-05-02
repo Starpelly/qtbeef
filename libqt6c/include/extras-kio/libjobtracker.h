@@ -1,0 +1,22 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIO_QT6C_LIBJOBTRACKER_H
+#define SRC_EXTRAS_KIO_QT6C_LIBJOBTRACKER_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kio.html)
+
+/// [Upstream resources](https://api.kde.org/kio.html#getJobTracker)
+///
+KJobTrackerInterface* k_io_get_job_tracker();
+
+/// [Upstream resources](https://api.kde.org/kio.html#setJobTracker)
+///
+/// @param param1 KJobTrackerInterface*
+///
+void k_io_set_job_tracker(void* param1);
+#endif

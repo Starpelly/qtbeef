@@ -1,0 +1,524 @@
+#include "../libqcoreevent.hpp"
+#include "../libqmetaobject.hpp"
+#include "../libqobjectdefs.hpp"
+#include "libqnetworkcookie.hpp"
+#include "../libqobject.hpp"
+#include "../libqurl.hpp"
+#include "libqnetworkcookiejar.hpp"
+#include "libqnetworkcookiejar.h"
+
+QNetworkCookieJar* q_networkcookiejar_new() {
+    return QNetworkCookieJar_new();
+}
+
+QNetworkCookieJar* q_networkcookiejar_new2(void* parent) {
+    return QNetworkCookieJar_new2((QObject*)parent);
+}
+
+const QMetaObject* q_networkcookiejar_meta_object(void* self) {
+    return QNetworkCookieJar_MetaObject((QNetworkCookieJar*)self);
+}
+
+void q_networkcookiejar_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    QNetworkCookieJar_OnMetaObject((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+const QMetaObject* q_networkcookiejar_super_meta_object(void* self) {
+    return QNetworkCookieJar_SuperMetaObject((QNetworkCookieJar*)self);
+}
+
+void* q_networkcookiejar_metacast(void* self, const char* param1) {
+    return QNetworkCookieJar_Metacast((QNetworkCookieJar*)self, param1);
+}
+
+void q_networkcookiejar_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    QNetworkCookieJar_OnMetacast((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void* q_networkcookiejar_super_metacast(void* self, const char* param1) {
+    return QNetworkCookieJar_SuperMetacast((QNetworkCookieJar*)self, param1);
+}
+
+int32_t q_networkcookiejar_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QNetworkCookieJar_Metacall((QNetworkCookieJar*)self, param1, param2, param3);
+}
+
+void q_networkcookiejar_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    QNetworkCookieJar_OnMetacall((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+int32_t q_networkcookiejar_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QNetworkCookieJar_SuperMetacall((QNetworkCookieJar*)self, param1, param2, param3);
+}
+
+const char* q_networkcookiejar_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+libqt_list /* of QNetworkCookie* */ q_networkcookiejar_cookies_for_url(void* self, void* url) {
+    libqt_list _arr = QNetworkCookieJar_CookiesForUrl((QNetworkCookieJar*)self, (QUrl*)url);
+    return _arr;
+}
+
+void q_networkcookiejar_on_cookies_for_url(void* self, libqt_list /* of QNetworkCookie* */ (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnCookiesForUrl((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+libqt_list /* of QNetworkCookie* */ q_networkcookiejar_super_cookies_for_url(void* self, void* url) {
+    libqt_list _arr = QNetworkCookieJar_SuperCookiesForUrl((QNetworkCookieJar*)self, (QUrl*)url);
+    return _arr;
+}
+
+bool q_networkcookiejar_set_cookies_from_url(void* self, libqt_list /* of QNetworkCookie* */ cookieList, void* url) {
+    return QNetworkCookieJar_SetCookiesFromUrl((QNetworkCookieJar*)self, cookieList, (QUrl*)url);
+}
+
+void q_networkcookiejar_on_set_cookies_from_url(void* self, bool (*callback)(void*, libqt_list /* of QNetworkCookie* */, void*)) {
+    QNetworkCookieJar_OnSetCookiesFromUrl((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_super_set_cookies_from_url(void* self, libqt_list /* of QNetworkCookie* */ cookieList, void* url) {
+    return QNetworkCookieJar_SuperSetCookiesFromUrl((QNetworkCookieJar*)self, cookieList, (QUrl*)url);
+}
+
+bool q_networkcookiejar_insert_cookie(void* self, void* cookie) {
+    return QNetworkCookieJar_InsertCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie);
+}
+
+void q_networkcookiejar_on_insert_cookie(void* self, bool (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnInsertCookie((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_super_insert_cookie(void* self, void* cookie) {
+    return QNetworkCookieJar_SuperInsertCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie);
+}
+
+bool q_networkcookiejar_update_cookie(void* self, void* cookie) {
+    return QNetworkCookieJar_UpdateCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie);
+}
+
+void q_networkcookiejar_on_update_cookie(void* self, bool (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnUpdateCookie((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_super_update_cookie(void* self, void* cookie) {
+    return QNetworkCookieJar_SuperUpdateCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie);
+}
+
+bool q_networkcookiejar_delete_cookie(void* self, void* cookie) {
+    return QNetworkCookieJar_DeleteCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie);
+}
+
+void q_networkcookiejar_on_delete_cookie(void* self, bool (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnDeleteCookie((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_super_delete_cookie(void* self, void* cookie) {
+    return QNetworkCookieJar_SuperDeleteCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie);
+}
+
+libqt_list /* of QNetworkCookie* */ q_networkcookiejar_all_cookies(void* self) {
+    libqt_list _arr = QNetworkCookieJar_AllCookies((QNetworkCookieJar*)self);
+    return _arr;
+}
+
+void q_networkcookiejar_on_all_cookies(void* self, libqt_list /* of QNetworkCookie* */ (*callback)()) {
+    QNetworkCookieJar_OnAllCookies((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+libqt_list /* of QNetworkCookie* */ q_networkcookiejar_super_all_cookies(void* self) {
+    libqt_list _arr = QNetworkCookieJar_SuperAllCookies((QNetworkCookieJar*)self);
+    return _arr;
+}
+
+void q_networkcookiejar_set_all_cookies(void* self, libqt_list /* of QNetworkCookie* */ cookieList) {
+    QNetworkCookieJar_SetAllCookies((QNetworkCookieJar*)self, cookieList);
+}
+
+void q_networkcookiejar_on_set_all_cookies(void* self, void (*callback)(void*, libqt_list /* of QNetworkCookie* */)) {
+    QNetworkCookieJar_OnSetAllCookies((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_super_set_all_cookies(void* self, libqt_list /* of QNetworkCookie* */ cookieList) {
+    QNetworkCookieJar_SuperSetAllCookies((QNetworkCookieJar*)self, cookieList);
+}
+
+bool q_networkcookiejar_validate_cookie(void* self, void* cookie, void* url) {
+    return QNetworkCookieJar_ValidateCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie, (QUrl*)url);
+}
+
+void q_networkcookiejar_on_validate_cookie(void* self, bool (*callback)(void*, void*, void*)) {
+    QNetworkCookieJar_OnValidateCookie((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_super_validate_cookie(void* self, void* cookie, void* url) {
+    return QNetworkCookieJar_SuperValidateCookie((QNetworkCookieJar*)self, (QNetworkCookie*)cookie, (QUrl*)url);
+}
+
+const char* q_networkcookiejar_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_networkcookiejar_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_networkcookiejar_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_networkcookiejar_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool q_networkcookiejar_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool q_networkcookiejar_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool q_networkcookiejar_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool q_networkcookiejar_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool q_networkcookiejar_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* q_networkcookiejar_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool q_networkcookiejar_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t q_networkcookiejar_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t q_networkcookiejar_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void q_networkcookiejar_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void q_networkcookiejar_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ q_networkcookiejar_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void q_networkcookiejar_set_parent(void* self, void* parent) {
+    QObject_SetParent((QObject*)self, (QObject*)parent);
+}
+
+void q_networkcookiejar_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void q_networkcookiejar_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* q_networkcookiejar_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* q_networkcookiejar_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* q_networkcookiejar_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool q_networkcookiejar_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool q_networkcookiejar_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool q_networkcookiejar_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool q_networkcookiejar_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool q_networkcookiejar_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void q_networkcookiejar_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void q_networkcookiejar_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool q_networkcookiejar_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* q_networkcookiejar_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** q_networkcookiejar_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_networkcookiejar_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* q_networkcookiejar_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* q_networkcookiejar_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void q_networkcookiejar_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void q_networkcookiejar_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* q_networkcookiejar_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool q_networkcookiejar_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void q_networkcookiejar_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t q_networkcookiejar_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t q_networkcookiejar_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* q_networkcookiejar_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* q_networkcookiejar_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* q_networkcookiejar_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool q_networkcookiejar_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool q_networkcookiejar_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool q_networkcookiejar_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool q_networkcookiejar_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void q_networkcookiejar_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void q_networkcookiejar_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_event(void* self, void* event) {
+    return QNetworkCookieJar_Event((QNetworkCookieJar*)self, (QEvent*)event);
+}
+
+bool q_networkcookiejar_super_event(void* self, void* event) {
+    return QNetworkCookieJar_SuperEvent((QNetworkCookieJar*)self, (QEvent*)event);
+}
+
+void q_networkcookiejar_on_event(void* self, bool (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnEvent((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_event_filter(void* self, void* watched, void* event) {
+    return QNetworkCookieJar_EventFilter((QNetworkCookieJar*)self, (QObject*)watched, (QEvent*)event);
+}
+
+bool q_networkcookiejar_super_event_filter(void* self, void* watched, void* event) {
+    return QNetworkCookieJar_SuperEventFilter((QNetworkCookieJar*)self, (QObject*)watched, (QEvent*)event);
+}
+
+void q_networkcookiejar_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    QNetworkCookieJar_OnEventFilter((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_timer_event(void* self, void* event) {
+    QNetworkCookieJar_TimerEvent((QNetworkCookieJar*)self, (QTimerEvent*)event);
+}
+
+void q_networkcookiejar_super_timer_event(void* self, void* event) {
+    QNetworkCookieJar_SuperTimerEvent((QNetworkCookieJar*)self, (QTimerEvent*)event);
+}
+
+void q_networkcookiejar_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnTimerEvent((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_child_event(void* self, void* event) {
+    QNetworkCookieJar_ChildEvent((QNetworkCookieJar*)self, (QChildEvent*)event);
+}
+
+void q_networkcookiejar_super_child_event(void* self, void* event) {
+    QNetworkCookieJar_SuperChildEvent((QNetworkCookieJar*)self, (QChildEvent*)event);
+}
+
+void q_networkcookiejar_on_child_event(void* self, void (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnChildEvent((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_custom_event(void* self, void* event) {
+    QNetworkCookieJar_CustomEvent((QNetworkCookieJar*)self, (QEvent*)event);
+}
+
+void q_networkcookiejar_super_custom_event(void* self, void* event) {
+    QNetworkCookieJar_SuperCustomEvent((QNetworkCookieJar*)self, (QEvent*)event);
+}
+
+void q_networkcookiejar_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnCustomEvent((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_connect_notify(void* self, void* signal) {
+    QNetworkCookieJar_ConnectNotify((QNetworkCookieJar*)self, (QMetaMethod*)signal);
+}
+
+void q_networkcookiejar_super_connect_notify(void* self, void* signal) {
+    QNetworkCookieJar_SuperConnectNotify((QNetworkCookieJar*)self, (QMetaMethod*)signal);
+}
+
+void q_networkcookiejar_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnConnectNotify((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_disconnect_notify(void* self, void* signal) {
+    QNetworkCookieJar_DisconnectNotify((QNetworkCookieJar*)self, (QMetaMethod*)signal);
+}
+
+void q_networkcookiejar_super_disconnect_notify(void* self, void* signal) {
+    QNetworkCookieJar_SuperDisconnectNotify((QNetworkCookieJar*)self, (QMetaMethod*)signal);
+}
+
+void q_networkcookiejar_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnDisconnectNotify((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+QObject* q_networkcookiejar_sender(void* self) {
+    return QNetworkCookieJar_Sender((QNetworkCookieJar*)self);
+}
+
+QObject* q_networkcookiejar_super_sender(void* self) {
+    return QNetworkCookieJar_SuperSender((QNetworkCookieJar*)self);
+}
+
+void q_networkcookiejar_on_sender(void* self, QObject* (*callback)()) {
+    QNetworkCookieJar_OnSender((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+int32_t q_networkcookiejar_sender_signal_index(void* self) {
+    return QNetworkCookieJar_SenderSignalIndex((QNetworkCookieJar*)self);
+}
+
+int32_t q_networkcookiejar_super_sender_signal_index(void* self) {
+    return QNetworkCookieJar_SuperSenderSignalIndex((QNetworkCookieJar*)self);
+}
+
+void q_networkcookiejar_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    QNetworkCookieJar_OnSenderSignalIndex((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+int32_t q_networkcookiejar_receivers(void* self, const char* signal) {
+    return QNetworkCookieJar_Receivers((QNetworkCookieJar*)self, signal);
+}
+
+int32_t q_networkcookiejar_super_receivers(void* self, const char* signal) {
+    return QNetworkCookieJar_SuperReceivers((QNetworkCookieJar*)self, signal);
+}
+
+void q_networkcookiejar_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    QNetworkCookieJar_OnReceivers((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+bool q_networkcookiejar_is_signal_connected(void* self, void* signal) {
+    return QNetworkCookieJar_IsSignalConnected((QNetworkCookieJar*)self, (QMetaMethod*)signal);
+}
+
+bool q_networkcookiejar_super_is_signal_connected(void* self, void* signal) {
+    return QNetworkCookieJar_SuperIsSignalConnected((QNetworkCookieJar*)self, (QMetaMethod*)signal);
+}
+
+void q_networkcookiejar_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    QNetworkCookieJar_OnIsSignalConnected((QNetworkCookieJar*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void q_networkcookiejar_delete(void* self) {
+    QNetworkCookieJar_Delete((QNetworkCookieJar*)(self));
+}

@@ -1,0 +1,539 @@
+#pragma once
+#ifndef SRC_EXTRAS_KGUIADDONS_QT6C_LIBKCOUNTRYFLAGEMOJIICONENGINE_H
+#define SRC_EXTRAS_KGUIADDONS_QT6C_LIBKCOUNTRYFLAGEMOJIICONENGINE_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html)
+
+/// k_countryflagemojiiconengine_new constructs a new KCountryFlagEmojiIconEngine object.
+///
+/// @param regionOrCountry const char*
+///
+KCountryFlagEmojiIconEngine* k_countryflagemojiiconengine_new(const char* regionOrCountry);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#clone)
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+QIconEngine* k_countryflagemojiiconengine_clone(void* self);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#clone)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback QIconEngine* func()
+///
+void k_countryflagemojiiconengine_on_clone(void* self, QIconEngine* (*callback)());
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_clone` instead
+///
+#define k_countryflagemojiiconengine_qbase_clone k_countryflagemojiiconengine_super_clone
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#clone)
+///
+/// Base class method implementation
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+QIconEngine* k_countryflagemojiiconengine_super_clone(void* self);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#key)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+const char* k_countryflagemojiiconengine_key(void* self);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#key)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback const char* func()
+///
+void k_countryflagemojiiconengine_on_key(void* self, const char* (*callback)());
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_key` instead
+///
+#define k_countryflagemojiiconengine_qbase_key k_countryflagemojiiconengine_super_key
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#key)
+///
+/// Base class method implementation
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+const char* k_countryflagemojiiconengine_super_key(void* self);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#paint)
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param painter QPainter*
+/// @param rect QRect*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+void k_countryflagemojiiconengine_paint(void* self, void* painter, void* rect, int32_t mode, int32_t state);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#paint)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback void func(KCountryFlagEmojiIconEngine* self, QPainter* painter, QRect* rect, enum QIcon__Mode mode, enum QIcon__State state)
+///
+void k_countryflagemojiiconengine_on_paint(void* self, void (*callback)(void*, void*, void*, int32_t, int32_t));
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_paint` instead
+///
+#define k_countryflagemojiiconengine_qbase_paint k_countryflagemojiiconengine_super_paint
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#paint)
+///
+/// Base class method implementation
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param painter QPainter*
+/// @param rect QRect*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+void k_countryflagemojiiconengine_super_paint(void* self, void* painter, void* rect, int32_t mode, int32_t state);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#pixmap)
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+QPixmap* k_countryflagemojiiconengine_pixmap(void* self, void* size, int32_t mode, int32_t state);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#pixmap)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback QPixmap* func(KCountryFlagEmojiIconEngine* self, QSize* size, enum QIcon__Mode mode, enum QIcon__State state)
+///
+void k_countryflagemojiiconengine_on_pixmap(void* self, QPixmap* (*callback)(void*, void*, int32_t, int32_t));
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_pixmap` instead
+///
+#define k_countryflagemojiiconengine_qbase_pixmap k_countryflagemojiiconengine_super_pixmap
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#pixmap)
+///
+/// Base class method implementation
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+QPixmap* k_countryflagemojiiconengine_super_pixmap(void* self, void* size, int32_t mode, int32_t state);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#scaledPixmap)
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+/// @param scale double
+///
+QPixmap* k_countryflagemojiiconengine_scaled_pixmap(void* self, void* size, int32_t mode, int32_t state, double scale);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#scaledPixmap)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback QPixmap* func(KCountryFlagEmojiIconEngine* self, QSize* size, enum QIcon__Mode mode, enum QIcon__State state, double scale)
+///
+void k_countryflagemojiiconengine_on_scaled_pixmap(void* self, QPixmap* (*callback)(void*, void*, int32_t, int32_t, double));
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_scaled_pixmap` instead
+///
+#define k_countryflagemojiiconengine_qbase_scaled_pixmap k_countryflagemojiiconengine_super_scaled_pixmap
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#scaledPixmap)
+///
+/// Base class method implementation
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+/// @param scale double
+///
+QPixmap* k_countryflagemojiiconengine_super_scaled_pixmap(void* self, void* size, int32_t mode, int32_t state, double scale);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#isNull)
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+bool k_countryflagemojiiconengine_is_null(void* self);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#isNull)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback bool func()
+///
+void k_countryflagemojiiconengine_on_is_null(void* self, bool (*callback)());
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_is_null` instead
+///
+#define k_countryflagemojiiconengine_qbase_is_null k_countryflagemojiiconengine_super_is_null
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#isNull)
+///
+/// Base class method implementation
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+bool k_countryflagemojiiconengine_super_is_null(void* self);
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#setGlobalDefaultFont)
+///
+/// @param font QFont*
+///
+void k_countryflagemojiiconengine_set_global_default_font(void* font);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#actualSize)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+QSize* k_countryflagemojiiconengine_actual_size(void* self, void* size, int32_t mode, int32_t state);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_actual_size` instead
+///
+#define k_countryflagemojiiconengine_qbase_actual_size k_countryflagemojiiconengine_super_actual_size
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#actualSize)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+QSize* k_countryflagemojiiconengine_super_actual_size(void* self, void* size, int32_t mode, int32_t state);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#actualSize)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback QSize* func(KCountryFlagEmojiIconEngine* self, QSize* size, enum QIcon__Mode mode, enum QIcon__State state)
+///
+void k_countryflagemojiiconengine_on_actual_size(void* self, QSize* (*callback)(void*, void*, int32_t, int32_t));
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#addPixmap)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param pixmap QPixmap*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+void k_countryflagemojiiconengine_add_pixmap(void* self, void* pixmap, int32_t mode, int32_t state);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_add_pixmap` instead
+///
+#define k_countryflagemojiiconengine_qbase_add_pixmap k_countryflagemojiiconengine_super_add_pixmap
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#addPixmap)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param pixmap QPixmap*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+void k_countryflagemojiiconengine_super_add_pixmap(void* self, void* pixmap, int32_t mode, int32_t state);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#addPixmap)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback void func(KCountryFlagEmojiIconEngine* self, QPixmap* pixmap, enum QIcon__Mode mode, enum QIcon__State state)
+///
+void k_countryflagemojiiconengine_on_add_pixmap(void* self, void (*callback)(void*, void*, int32_t, int32_t));
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#addFile)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param fileName const char*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+void k_countryflagemojiiconengine_add_file(void* self, const char* fileName, void* size, int32_t mode, int32_t state);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_add_file` instead
+///
+#define k_countryflagemojiiconengine_qbase_add_file k_countryflagemojiiconengine_super_add_file
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#addFile)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param fileName const char*
+/// @param size QSize*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+void k_countryflagemojiiconengine_super_add_file(void* self, const char* fileName, void* size, int32_t mode, int32_t state);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#addFile)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback void func(KCountryFlagEmojiIconEngine* self, const char* fileName, QSize* size, enum QIcon__Mode mode, enum QIcon__State state)
+///
+void k_countryflagemojiiconengine_on_add_file(void* self, void (*callback)(void*, const char*, void*, int32_t, int32_t));
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#read)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param in QDataStream*
+///
+bool k_countryflagemojiiconengine_read(void* self, void* in);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_read` instead
+///
+#define k_countryflagemojiiconengine_qbase_read k_countryflagemojiiconengine_super_read
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#read)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param in QDataStream*
+///
+bool k_countryflagemojiiconengine_super_read(void* self, void* in);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#read)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback bool func(KCountryFlagEmojiIconEngine* self, QDataStream* in)
+///
+void k_countryflagemojiiconengine_on_read(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#write)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param out QDataStream*
+///
+bool k_countryflagemojiiconengine_write(void* self, void* out);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_write` instead
+///
+#define k_countryflagemojiiconengine_qbase_write k_countryflagemojiiconengine_super_write
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#write)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param out QDataStream*
+///
+bool k_countryflagemojiiconengine_super_write(void* self, void* out);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#write)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback bool func(KCountryFlagEmojiIconEngine* self, QDataStream* out)
+///
+void k_countryflagemojiiconengine_on_write(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#availableSizes)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+/// @return libqt_list of QSize*
+///
+libqt_list k_countryflagemojiiconengine_available_sizes(void* self, int32_t mode, int32_t state);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_available_sizes` instead
+///
+#define k_countryflagemojiiconengine_qbase_available_sizes k_countryflagemojiiconengine_super_available_sizes
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#availableSizes)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param mode enum QIcon__Mode
+/// @param state enum QIcon__State
+///
+/// @return libqt_list of QSize*
+///
+libqt_list k_countryflagemojiiconengine_super_available_sizes(void* self, int32_t mode, int32_t state);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#availableSizes)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback libqt_list of QSize* func(KCountryFlagEmojiIconEngine* self, enum QIcon__Mode mode, enum QIcon__State state)
+///
+void k_countryflagemojiiconengine_on_available_sizes(void* self, libqt_list (*callback)(void*, int32_t, int32_t));
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#iconName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+const char* k_countryflagemojiiconengine_icon_name(void* self);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_icon_name` instead
+///
+#define k_countryflagemojiiconengine_qbase_icon_name k_countryflagemojiiconengine_super_icon_name
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#iconName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+const char* k_countryflagemojiiconengine_super_icon_name(void* self);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#iconName)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback const char* func()
+///
+void k_countryflagemojiiconengine_on_icon_name(void* self, const char* (*callback)());
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#virtual_hook)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param id int
+/// @param data void*
+///
+void k_countryflagemojiiconengine_virtual_hook(void* self, int id, void* data);
+
+/// @warning DEPRECATED: Use `k_countryflagemojiiconengine_super_virtual_hook` instead
+///
+#define k_countryflagemojiiconengine_qbase_virtual_hook k_countryflagemojiiconengine_super_virtual_hook
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#virtual_hook)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param id int
+/// @param data void*
+///
+void k_countryflagemojiiconengine_super_virtual_hook(void* self, int id, void* data);
+
+/// Inherited from QIconEngine
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiconengine.html#virtual_hook)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KCountryFlagEmojiIconEngine*
+/// @param callback void func(KCountryFlagEmojiIconEngine* self, int id, void* data)
+///
+void k_countryflagemojiiconengine_on_virtual_hook(void* self, void (*callback)(void*, int, void*));
+
+/// [Upstream resources](https://api.kde.org/kcountryflagemojiiconengine.html#dtor.KCountryFlagEmojiIconEngine)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self KCountryFlagEmojiIconEngine*
+///
+void k_countryflagemojiiconengine_delete(void* self);
+
+#endif

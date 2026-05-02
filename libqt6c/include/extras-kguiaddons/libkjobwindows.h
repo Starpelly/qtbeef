@@ -1,0 +1,25 @@
+#pragma once
+#ifndef SRC_EXTRAS_KGUIADDONS_QT6C_LIBKJOBWINDOWS_H
+#define SRC_EXTRAS_KGUIADDONS_QT6C_LIBKJOBWINDOWS_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kjobwindows.html)
+
+/// [Upstream resources](https://api.kde.org/kjobwindows.html#setWindow)
+///
+/// @param param1 QObject*
+/// @param param2 QWindow*
+///
+void k_jobwindows_set_window(void* param1, void* param2);
+
+/// [Upstream resources](https://api.kde.org/kjobwindows.html#window)
+///
+/// @param param1 QObject*
+///
+QWindow* k_jobwindows_window(void* param1);
+#endif

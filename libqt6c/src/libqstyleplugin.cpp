@@ -1,0 +1,459 @@
+#include <QChildEvent>
+#include <QEvent>
+#include <QMetaMethod>
+#include <QMetaObject>
+#include <QObject>
+#include <QString>
+#include <QByteArray>
+#include <cstring>
+#include <QStyle>
+#include <QStylePlugin>
+#include <QTimerEvent>
+#include <qstyleplugin.h>
+#include "libqstyleplugin.hpp"
+#include "libqstyleplugin.hxx"
+
+QStylePlugin* QStylePlugin_new() {
+    return new VirtualQStylePlugin();
+}
+
+QStylePlugin* QStylePlugin_new2(QObject* parent) {
+    return new VirtualQStylePlugin(parent);
+}
+
+QMetaObject* QStylePlugin_MetaObject(const QStylePlugin* self) {
+    auto* vqstyleplugin = dynamic_cast<const VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return (QMetaObject*)self->metaObject();
+    } else {
+        return (QMetaObject*)((VirtualQStylePlugin*)self)->metaObject();
+    }
+}
+
+void* QStylePlugin_Metacast(QStylePlugin* self, const char* param1) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return self->qt_metacast(param1);
+    } else {
+        return ((VirtualQStylePlugin*)self)->qt_metacast(param1);
+    }
+}
+
+int QStylePlugin_Metacall(QStylePlugin* self, int param1, int param2, void** param3) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return self->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    } else {
+        return ((VirtualQStylePlugin*)self)->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    }
+}
+
+QStyle* QStylePlugin_Create(QStylePlugin* self, const libqt_string key) {
+    QString key_QString = QString::fromUtf8(key.data, key.len);
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return vqstyleplugin->create(key_QString);
+    } else {
+        return ((VirtualQStylePlugin*)self)->create(key_QString);
+    }
+}
+
+// Base class handler implementation
+QMetaObject* QStylePlugin_SuperMetaObject(const QStylePlugin* self) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_MetaObject_IsBase(true);
+        return (QMetaObject*)vqstyleplugin->metaObject();
+    } else {
+        return (QMetaObject*)self->QStylePlugin::metaObject();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnMetaObject(const QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_MetaObject_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_MetaObject_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+void* QStylePlugin_SuperMetacast(QStylePlugin* self, const char* param1) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Metacast_IsBase(true);
+        return vqstyleplugin->qt_metacast(param1);
+    } else {
+        return self->QStylePlugin::qt_metacast(param1);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnMetacast(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Metacast_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_Metacast_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+int QStylePlugin_SuperMetacall(QStylePlugin* self, int param1, int param2, void** param3) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Metacall_IsBase(true);
+        return vqstyleplugin->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    } else {
+        return self->QStylePlugin::qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnMetacall(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Metacall_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_Metacall_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+QStyle* QStylePlugin_SuperCreate(QStylePlugin* self, const libqt_string key) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    QString key_QString = QString::fromUtf8(key.data, key.len);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Create_IsBase(true);
+        return vqstyleplugin->create(key_QString);
+    } else {
+        return ((VirtualQStylePlugin*)self)->create(key_QString);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnCreate(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Create_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_Create_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QStylePlugin_Event(QStylePlugin* self, QEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return vqstyleplugin->event(event);
+    } else {
+        return self->QStylePlugin::event(event);
+    }
+}
+
+// Base class handler implementation
+bool QStylePlugin_SuperEvent(QStylePlugin* self, QEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Event_IsBase(true);
+        return vqstyleplugin->event(event);
+    } else {
+        return self->QStylePlugin::event(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnEvent(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Event_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_Event_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QStylePlugin_EventFilter(QStylePlugin* self, QObject* watched, QEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return vqstyleplugin->eventFilter(watched, event);
+    } else {
+        return self->QStylePlugin::eventFilter(watched, event);
+    }
+}
+
+// Base class handler implementation
+bool QStylePlugin_SuperEventFilter(QStylePlugin* self, QObject* watched, QEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_EventFilter_IsBase(true);
+        return vqstyleplugin->eventFilter(watched, event);
+    } else {
+        return self->QStylePlugin::eventFilter(watched, event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnEventFilter(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_EventFilter_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_EventFilter_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QStylePlugin_TimerEvent(QStylePlugin* self, QTimerEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->timerEvent(event);
+    } else {
+        ((VirtualQStylePlugin*)self)->timerEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QStylePlugin_SuperTimerEvent(QStylePlugin* self, QTimerEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_TimerEvent_IsBase(true);
+        vqstyleplugin->timerEvent(event);
+    } else {
+        ((VirtualQStylePlugin*)self)->timerEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnTimerEvent(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_TimerEvent_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_TimerEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QStylePlugin_ChildEvent(QStylePlugin* self, QChildEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->childEvent(event);
+    } else {
+        ((VirtualQStylePlugin*)self)->childEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QStylePlugin_SuperChildEvent(QStylePlugin* self, QChildEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_ChildEvent_IsBase(true);
+        vqstyleplugin->childEvent(event);
+    } else {
+        ((VirtualQStylePlugin*)self)->childEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnChildEvent(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_ChildEvent_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_ChildEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QStylePlugin_CustomEvent(QStylePlugin* self, QEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->customEvent(event);
+    } else {
+        ((VirtualQStylePlugin*)self)->customEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QStylePlugin_SuperCustomEvent(QStylePlugin* self, QEvent* event) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_CustomEvent_IsBase(true);
+        vqstyleplugin->customEvent(event);
+    } else {
+        ((VirtualQStylePlugin*)self)->customEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnCustomEvent(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_CustomEvent_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_CustomEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QStylePlugin_ConnectNotify(QStylePlugin* self, const QMetaMethod* signal) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->connectNotify(*signal);
+    } else {
+        ((VirtualQStylePlugin*)self)->connectNotify(*signal);
+    }
+}
+
+// Base class handler implementation
+void QStylePlugin_SuperConnectNotify(QStylePlugin* self, const QMetaMethod* signal) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_ConnectNotify_IsBase(true);
+        vqstyleplugin->connectNotify(*signal);
+    } else {
+        ((VirtualQStylePlugin*)self)->connectNotify(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnConnectNotify(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_ConnectNotify_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_ConnectNotify_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QStylePlugin_DisconnectNotify(QStylePlugin* self, const QMetaMethod* signal) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->disconnectNotify(*signal);
+    } else {
+        ((VirtualQStylePlugin*)self)->disconnectNotify(*signal);
+    }
+}
+
+// Base class handler implementation
+void QStylePlugin_SuperDisconnectNotify(QStylePlugin* self, const QMetaMethod* signal) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_DisconnectNotify_IsBase(true);
+        vqstyleplugin->disconnectNotify(*signal);
+    } else {
+        ((VirtualQStylePlugin*)self)->disconnectNotify(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnDisconnectNotify(QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = dynamic_cast<VirtualQStylePlugin*>(self);
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_DisconnectNotify_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_DisconnectNotify_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+QObject* QStylePlugin_Sender(const QStylePlugin* self) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return vqstyleplugin->sender();
+    } else {
+        return ((VirtualQStylePlugin*)self)->sender();
+    }
+}
+
+// Base class handler implementation
+QObject* QStylePlugin_SuperSender(const QStylePlugin* self) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Sender_IsBase(true);
+        return vqstyleplugin->sender();
+    } else {
+        return ((VirtualQStylePlugin*)self)->sender();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnSender(const QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Sender_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_Sender_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+int QStylePlugin_SenderSignalIndex(const QStylePlugin* self) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return vqstyleplugin->senderSignalIndex();
+    } else {
+        return ((VirtualQStylePlugin*)self)->senderSignalIndex();
+    }
+}
+
+// Base class handler implementation
+int QStylePlugin_SuperSenderSignalIndex(const QStylePlugin* self) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_SenderSignalIndex_IsBase(true);
+        return vqstyleplugin->senderSignalIndex();
+    } else {
+        return ((VirtualQStylePlugin*)self)->senderSignalIndex();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnSenderSignalIndex(const QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_SenderSignalIndex_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_SenderSignalIndex_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+int QStylePlugin_Receivers(const QStylePlugin* self, const char* signal) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return vqstyleplugin->receivers(signal);
+    } else {
+        return ((VirtualQStylePlugin*)self)->receivers(signal);
+    }
+}
+
+// Base class handler implementation
+int QStylePlugin_SuperReceivers(const QStylePlugin* self, const char* signal) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Receivers_IsBase(true);
+        return vqstyleplugin->receivers(signal);
+    } else {
+        return ((VirtualQStylePlugin*)self)->receivers(signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnReceivers(const QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_Receivers_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_Receivers_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QStylePlugin_IsSignalConnected(const QStylePlugin* self, const QMetaMethod* signal) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        return vqstyleplugin->isSignalConnected(*signal);
+    } else {
+        return ((VirtualQStylePlugin*)self)->isSignalConnected(*signal);
+    }
+}
+
+// Base class handler implementation
+bool QStylePlugin_SuperIsSignalConnected(const QStylePlugin* self, const QMetaMethod* signal) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_IsSignalConnected_IsBase(true);
+        return vqstyleplugin->isSignalConnected(*signal);
+    } else {
+        return ((VirtualQStylePlugin*)self)->isSignalConnected(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QStylePlugin_OnIsSignalConnected(const QStylePlugin* self, intptr_t slot) {
+    auto* vqstyleplugin = const_cast<VirtualQStylePlugin*>(dynamic_cast<const VirtualQStylePlugin*>(self));
+    if (vqstyleplugin && vqstyleplugin->isVirtualQStylePlugin) {
+        vqstyleplugin->setQStylePlugin_IsSignalConnected_Callback(reinterpret_cast<VirtualQStylePlugin::QStylePlugin_IsSignalConnected_Callback>(slot));
+    }
+}
+
+void QStylePlugin_Delete(QStylePlugin* self) {
+    delete self;
+}

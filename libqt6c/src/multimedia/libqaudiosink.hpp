@@ -1,0 +1,103 @@
+#pragma once
+#ifndef SRC_MULTIMEDIAC_LIBQAUDIOSINK_HPP
+#define SRC_MULTIMEDIAC_LIBQAUDIOSINK_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QAudioDevice QAudioDevice;
+typedef struct QAudioFormat QAudioFormat;
+typedef struct QAudioSink QAudioSink;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QIODevice QIODevice;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+QAudioSink* QAudioSink_new();
+QAudioSink* QAudioSink_new2(const QAudioDevice* audioDeviceInfo);
+QAudioSink* QAudioSink_new3(const QAudioFormat* format);
+QAudioSink* QAudioSink_new4(const QAudioFormat* format, QObject* parent);
+QAudioSink* QAudioSink_new5(const QAudioDevice* audioDeviceInfo, const QAudioFormat* format);
+QAudioSink* QAudioSink_new6(const QAudioDevice* audioDeviceInfo, const QAudioFormat* format, QObject* parent);
+QMetaObject* QAudioSink_MetaObject(const QAudioSink* self);
+void* QAudioSink_Metacast(QAudioSink* self, const char* param1);
+int QAudioSink_Metacall(QAudioSink* self, int param1, int param2, void** param3);
+bool QAudioSink_IsNull(const QAudioSink* self);
+QAudioFormat* QAudioSink_Format(const QAudioSink* self);
+void QAudioSink_Start(QAudioSink* self, QIODevice* device);
+QIODevice* QAudioSink_Start2(QAudioSink* self);
+void QAudioSink_Stop(QAudioSink* self);
+void QAudioSink_Reset(QAudioSink* self);
+void QAudioSink_Suspend(QAudioSink* self);
+void QAudioSink_Resume(QAudioSink* self);
+void QAudioSink_SetBufferSize(QAudioSink* self, ptrdiff_t bytes);
+ptrdiff_t QAudioSink_BufferSize(const QAudioSink* self);
+ptrdiff_t QAudioSink_BytesFree(const QAudioSink* self);
+long long QAudioSink_ProcessedUSecs(const QAudioSink* self);
+long long QAudioSink_ElapsedUSecs(const QAudioSink* self);
+int QAudioSink_Error(const QAudioSink* self);
+int QAudioSink_State(const QAudioSink* self);
+void QAudioSink_SetVolume(QAudioSink* self, double volume);
+double QAudioSink_Volume(const QAudioSink* self);
+void QAudioSink_StateChanged(QAudioSink* self, int state);
+void QAudioSink_Connect_StateChanged(QAudioSink* self, intptr_t slot);
+void QAudioSink_OnMetaObject(const QAudioSink* self, intptr_t slot);
+QMetaObject* QAudioSink_SuperMetaObject(const QAudioSink* self);
+void QAudioSink_OnMetacast(QAudioSink* self, intptr_t slot);
+void* QAudioSink_SuperMetacast(QAudioSink* self, const char* param1);
+void QAudioSink_OnMetacall(QAudioSink* self, intptr_t slot);
+int QAudioSink_SuperMetacall(QAudioSink* self, int param1, int param2, void** param3);
+bool QAudioSink_Event(QAudioSink* self, QEvent* event);
+void QAudioSink_OnEvent(QAudioSink* self, intptr_t slot);
+bool QAudioSink_SuperEvent(QAudioSink* self, QEvent* event);
+bool QAudioSink_EventFilter(QAudioSink* self, QObject* watched, QEvent* event);
+void QAudioSink_OnEventFilter(QAudioSink* self, intptr_t slot);
+bool QAudioSink_SuperEventFilter(QAudioSink* self, QObject* watched, QEvent* event);
+void QAudioSink_TimerEvent(QAudioSink* self, QTimerEvent* event);
+void QAudioSink_OnTimerEvent(QAudioSink* self, intptr_t slot);
+void QAudioSink_SuperTimerEvent(QAudioSink* self, QTimerEvent* event);
+void QAudioSink_ChildEvent(QAudioSink* self, QChildEvent* event);
+void QAudioSink_OnChildEvent(QAudioSink* self, intptr_t slot);
+void QAudioSink_SuperChildEvent(QAudioSink* self, QChildEvent* event);
+void QAudioSink_CustomEvent(QAudioSink* self, QEvent* event);
+void QAudioSink_OnCustomEvent(QAudioSink* self, intptr_t slot);
+void QAudioSink_SuperCustomEvent(QAudioSink* self, QEvent* event);
+void QAudioSink_ConnectNotify(QAudioSink* self, const QMetaMethod* signal);
+void QAudioSink_OnConnectNotify(QAudioSink* self, intptr_t slot);
+void QAudioSink_SuperConnectNotify(QAudioSink* self, const QMetaMethod* signal);
+void QAudioSink_DisconnectNotify(QAudioSink* self, const QMetaMethod* signal);
+void QAudioSink_OnDisconnectNotify(QAudioSink* self, intptr_t slot);
+void QAudioSink_SuperDisconnectNotify(QAudioSink* self, const QMetaMethod* signal);
+QObject* QAudioSink_Sender(const QAudioSink* self);
+void QAudioSink_OnSender(const QAudioSink* self, intptr_t slot);
+QObject* QAudioSink_SuperSender(const QAudioSink* self);
+int QAudioSink_SenderSignalIndex(const QAudioSink* self);
+void QAudioSink_OnSenderSignalIndex(const QAudioSink* self, intptr_t slot);
+int QAudioSink_SuperSenderSignalIndex(const QAudioSink* self);
+int QAudioSink_Receivers(const QAudioSink* self, const char* signal);
+void QAudioSink_OnReceivers(const QAudioSink* self, intptr_t slot);
+int QAudioSink_SuperReceivers(const QAudioSink* self, const char* signal);
+bool QAudioSink_IsSignalConnected(const QAudioSink* self, const QMetaMethod* signal);
+void QAudioSink_OnIsSignalConnected(const QAudioSink* self, intptr_t slot);
+bool QAudioSink_SuperIsSignalConnected(const QAudioSink* self, const QMetaMethod* signal);
+void QAudioSink_Delete(QAudioSink* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

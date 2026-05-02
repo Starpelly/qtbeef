@@ -1,0 +1,261 @@
+#pragma once
+#ifndef SRC_EXTRAS_KCONFIGWIDGETSC_LIBKLANGUAGEBUTTON_HPP
+#define SRC_EXTRAS_KCONFIGWIDGETSC_LIBKLANGUAGEBUTTON_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KLanguageButton KLanguageButton;
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+KLanguageButton* KLanguageButton_new(QWidget* parent);
+KLanguageButton* KLanguageButton_new2();
+KLanguageButton* KLanguageButton_new3(const libqt_string text);
+KLanguageButton* KLanguageButton_new4(const libqt_string text, QWidget* parent);
+QMetaObject* KLanguageButton_MetaObject(const KLanguageButton* self);
+void* KLanguageButton_Metacast(KLanguageButton* self, const char* param1);
+int KLanguageButton_Metacall(KLanguageButton* self, int param1, int param2, void** param3);
+void KLanguageButton_SetLocale(KLanguageButton* self, const libqt_string locale);
+void KLanguageButton_SetText(KLanguageButton* self, const libqt_string text);
+void KLanguageButton_ShowLanguageCodes(KLanguageButton* self, bool show);
+void KLanguageButton_LoadAllLanguages(KLanguageButton* self);
+void KLanguageButton_InsertLanguage(KLanguageButton* self, const libqt_string languageCode);
+void KLanguageButton_InsertSeparator(KLanguageButton* self);
+int KLanguageButton_Count(const KLanguageButton* self);
+void KLanguageButton_Clear(KLanguageButton* self);
+libqt_string KLanguageButton_Current(const KLanguageButton* self);
+bool KLanguageButton_Contains(const KLanguageButton* self, const libqt_string languageCode);
+void KLanguageButton_SetCurrentItem(KLanguageButton* self, const libqt_string languageCode);
+void KLanguageButton_Activated(KLanguageButton* self, const libqt_string languageCode);
+void KLanguageButton_Connect_Activated(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_Highlighted(KLanguageButton* self, const libqt_string languageCode);
+void KLanguageButton_Connect_Highlighted(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_InsertLanguage2(KLanguageButton* self, const libqt_string languageCode, const libqt_string name);
+void KLanguageButton_InsertLanguage3(KLanguageButton* self, const libqt_string languageCode, const libqt_string name, int index);
+void KLanguageButton_InsertSeparator1(KLanguageButton* self, int index);
+void KLanguageButton_OnMetaObject(const KLanguageButton* self, intptr_t slot);
+QMetaObject* KLanguageButton_SuperMetaObject(const KLanguageButton* self);
+void KLanguageButton_OnMetacast(KLanguageButton* self, intptr_t slot);
+void* KLanguageButton_SuperMetacast(KLanguageButton* self, const char* param1);
+void KLanguageButton_OnMetacall(KLanguageButton* self, intptr_t slot);
+int KLanguageButton_SuperMetacall(KLanguageButton* self, int param1, int param2, void** param3);
+int KLanguageButton_DevType(const KLanguageButton* self);
+void KLanguageButton_OnDevType(const KLanguageButton* self, intptr_t slot);
+int KLanguageButton_SuperDevType(const KLanguageButton* self);
+void KLanguageButton_SetVisible(KLanguageButton* self, bool visible);
+void KLanguageButton_OnSetVisible(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperSetVisible(KLanguageButton* self, bool visible);
+QSize* KLanguageButton_SizeHint(const KLanguageButton* self);
+void KLanguageButton_OnSizeHint(const KLanguageButton* self, intptr_t slot);
+QSize* KLanguageButton_SuperSizeHint(const KLanguageButton* self);
+QSize* KLanguageButton_MinimumSizeHint(const KLanguageButton* self);
+void KLanguageButton_OnMinimumSizeHint(const KLanguageButton* self, intptr_t slot);
+QSize* KLanguageButton_SuperMinimumSizeHint(const KLanguageButton* self);
+int KLanguageButton_HeightForWidth(const KLanguageButton* self, int param1);
+void KLanguageButton_OnHeightForWidth(const KLanguageButton* self, intptr_t slot);
+int KLanguageButton_SuperHeightForWidth(const KLanguageButton* self, int param1);
+bool KLanguageButton_HasHeightForWidth(const KLanguageButton* self);
+void KLanguageButton_OnHasHeightForWidth(const KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperHasHeightForWidth(const KLanguageButton* self);
+QPaintEngine* KLanguageButton_PaintEngine(const KLanguageButton* self);
+void KLanguageButton_OnPaintEngine(const KLanguageButton* self, intptr_t slot);
+QPaintEngine* KLanguageButton_SuperPaintEngine(const KLanguageButton* self);
+bool KLanguageButton_Event(KLanguageButton* self, QEvent* event);
+void KLanguageButton_OnEvent(KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperEvent(KLanguageButton* self, QEvent* event);
+void KLanguageButton_MousePressEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_OnMousePressEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperMousePressEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_MouseReleaseEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_OnMouseReleaseEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperMouseReleaseEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_MouseDoubleClickEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_OnMouseDoubleClickEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperMouseDoubleClickEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_MouseMoveEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_OnMouseMoveEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperMouseMoveEvent(KLanguageButton* self, QMouseEvent* event);
+void KLanguageButton_WheelEvent(KLanguageButton* self, QWheelEvent* event);
+void KLanguageButton_OnWheelEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperWheelEvent(KLanguageButton* self, QWheelEvent* event);
+void KLanguageButton_KeyPressEvent(KLanguageButton* self, QKeyEvent* event);
+void KLanguageButton_OnKeyPressEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperKeyPressEvent(KLanguageButton* self, QKeyEvent* event);
+void KLanguageButton_KeyReleaseEvent(KLanguageButton* self, QKeyEvent* event);
+void KLanguageButton_OnKeyReleaseEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperKeyReleaseEvent(KLanguageButton* self, QKeyEvent* event);
+void KLanguageButton_FocusInEvent(KLanguageButton* self, QFocusEvent* event);
+void KLanguageButton_OnFocusInEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperFocusInEvent(KLanguageButton* self, QFocusEvent* event);
+void KLanguageButton_FocusOutEvent(KLanguageButton* self, QFocusEvent* event);
+void KLanguageButton_OnFocusOutEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperFocusOutEvent(KLanguageButton* self, QFocusEvent* event);
+void KLanguageButton_EnterEvent(KLanguageButton* self, QEnterEvent* event);
+void KLanguageButton_OnEnterEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperEnterEvent(KLanguageButton* self, QEnterEvent* event);
+void KLanguageButton_LeaveEvent(KLanguageButton* self, QEvent* event);
+void KLanguageButton_OnLeaveEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperLeaveEvent(KLanguageButton* self, QEvent* event);
+void KLanguageButton_PaintEvent(KLanguageButton* self, QPaintEvent* event);
+void KLanguageButton_OnPaintEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperPaintEvent(KLanguageButton* self, QPaintEvent* event);
+void KLanguageButton_MoveEvent(KLanguageButton* self, QMoveEvent* event);
+void KLanguageButton_OnMoveEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperMoveEvent(KLanguageButton* self, QMoveEvent* event);
+void KLanguageButton_ResizeEvent(KLanguageButton* self, QResizeEvent* event);
+void KLanguageButton_OnResizeEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperResizeEvent(KLanguageButton* self, QResizeEvent* event);
+void KLanguageButton_CloseEvent(KLanguageButton* self, QCloseEvent* event);
+void KLanguageButton_OnCloseEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperCloseEvent(KLanguageButton* self, QCloseEvent* event);
+void KLanguageButton_ContextMenuEvent(KLanguageButton* self, QContextMenuEvent* event);
+void KLanguageButton_OnContextMenuEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperContextMenuEvent(KLanguageButton* self, QContextMenuEvent* event);
+void KLanguageButton_TabletEvent(KLanguageButton* self, QTabletEvent* event);
+void KLanguageButton_OnTabletEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperTabletEvent(KLanguageButton* self, QTabletEvent* event);
+void KLanguageButton_ActionEvent(KLanguageButton* self, QActionEvent* event);
+void KLanguageButton_OnActionEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperActionEvent(KLanguageButton* self, QActionEvent* event);
+void KLanguageButton_DragEnterEvent(KLanguageButton* self, QDragEnterEvent* event);
+void KLanguageButton_OnDragEnterEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperDragEnterEvent(KLanguageButton* self, QDragEnterEvent* event);
+void KLanguageButton_DragMoveEvent(KLanguageButton* self, QDragMoveEvent* event);
+void KLanguageButton_OnDragMoveEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperDragMoveEvent(KLanguageButton* self, QDragMoveEvent* event);
+void KLanguageButton_DragLeaveEvent(KLanguageButton* self, QDragLeaveEvent* event);
+void KLanguageButton_OnDragLeaveEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperDragLeaveEvent(KLanguageButton* self, QDragLeaveEvent* event);
+void KLanguageButton_DropEvent(KLanguageButton* self, QDropEvent* event);
+void KLanguageButton_OnDropEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperDropEvent(KLanguageButton* self, QDropEvent* event);
+void KLanguageButton_ShowEvent(KLanguageButton* self, QShowEvent* event);
+void KLanguageButton_OnShowEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperShowEvent(KLanguageButton* self, QShowEvent* event);
+void KLanguageButton_HideEvent(KLanguageButton* self, QHideEvent* event);
+void KLanguageButton_OnHideEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperHideEvent(KLanguageButton* self, QHideEvent* event);
+bool KLanguageButton_NativeEvent(KLanguageButton* self, const libqt_string eventType, void* message, intptr_t* result);
+void KLanguageButton_OnNativeEvent(KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperNativeEvent(KLanguageButton* self, const libqt_string eventType, void* message, intptr_t* result);
+void KLanguageButton_ChangeEvent(KLanguageButton* self, QEvent* param1);
+void KLanguageButton_OnChangeEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperChangeEvent(KLanguageButton* self, QEvent* param1);
+int KLanguageButton_Metric(const KLanguageButton* self, int param1);
+void KLanguageButton_OnMetric(const KLanguageButton* self, intptr_t slot);
+int KLanguageButton_SuperMetric(const KLanguageButton* self, int param1);
+void KLanguageButton_InitPainter(const KLanguageButton* self, QPainter* painter);
+void KLanguageButton_OnInitPainter(const KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperInitPainter(const KLanguageButton* self, QPainter* painter);
+QPaintDevice* KLanguageButton_Redirected(const KLanguageButton* self, QPoint* offset);
+void KLanguageButton_OnRedirected(const KLanguageButton* self, intptr_t slot);
+QPaintDevice* KLanguageButton_SuperRedirected(const KLanguageButton* self, QPoint* offset);
+QPainter* KLanguageButton_SharedPainter(const KLanguageButton* self);
+void KLanguageButton_OnSharedPainter(const KLanguageButton* self, intptr_t slot);
+QPainter* KLanguageButton_SuperSharedPainter(const KLanguageButton* self);
+void KLanguageButton_InputMethodEvent(KLanguageButton* self, QInputMethodEvent* param1);
+void KLanguageButton_OnInputMethodEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperInputMethodEvent(KLanguageButton* self, QInputMethodEvent* param1);
+QVariant* KLanguageButton_InputMethodQuery(const KLanguageButton* self, int param1);
+void KLanguageButton_OnInputMethodQuery(const KLanguageButton* self, intptr_t slot);
+QVariant* KLanguageButton_SuperInputMethodQuery(const KLanguageButton* self, int param1);
+bool KLanguageButton_FocusNextPrevChild(KLanguageButton* self, bool next);
+void KLanguageButton_OnFocusNextPrevChild(KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperFocusNextPrevChild(KLanguageButton* self, bool next);
+bool KLanguageButton_EventFilter(KLanguageButton* self, QObject* watched, QEvent* event);
+void KLanguageButton_OnEventFilter(KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperEventFilter(KLanguageButton* self, QObject* watched, QEvent* event);
+void KLanguageButton_TimerEvent(KLanguageButton* self, QTimerEvent* event);
+void KLanguageButton_OnTimerEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperTimerEvent(KLanguageButton* self, QTimerEvent* event);
+void KLanguageButton_ChildEvent(KLanguageButton* self, QChildEvent* event);
+void KLanguageButton_OnChildEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperChildEvent(KLanguageButton* self, QChildEvent* event);
+void KLanguageButton_CustomEvent(KLanguageButton* self, QEvent* event);
+void KLanguageButton_OnCustomEvent(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperCustomEvent(KLanguageButton* self, QEvent* event);
+void KLanguageButton_ConnectNotify(KLanguageButton* self, const QMetaMethod* signal);
+void KLanguageButton_OnConnectNotify(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperConnectNotify(KLanguageButton* self, const QMetaMethod* signal);
+void KLanguageButton_DisconnectNotify(KLanguageButton* self, const QMetaMethod* signal);
+void KLanguageButton_OnDisconnectNotify(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperDisconnectNotify(KLanguageButton* self, const QMetaMethod* signal);
+void KLanguageButton_UpdateMicroFocus(KLanguageButton* self);
+void KLanguageButton_OnUpdateMicroFocus(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperUpdateMicroFocus(KLanguageButton* self);
+void KLanguageButton_Create(KLanguageButton* self);
+void KLanguageButton_OnCreate(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperCreate(KLanguageButton* self);
+void KLanguageButton_Destroy(KLanguageButton* self);
+void KLanguageButton_OnDestroy(KLanguageButton* self, intptr_t slot);
+void KLanguageButton_SuperDestroy(KLanguageButton* self);
+bool KLanguageButton_FocusNextChild(KLanguageButton* self);
+void KLanguageButton_OnFocusNextChild(KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperFocusNextChild(KLanguageButton* self);
+bool KLanguageButton_FocusPreviousChild(KLanguageButton* self);
+void KLanguageButton_OnFocusPreviousChild(KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperFocusPreviousChild(KLanguageButton* self);
+QObject* KLanguageButton_Sender(const KLanguageButton* self);
+void KLanguageButton_OnSender(const KLanguageButton* self, intptr_t slot);
+QObject* KLanguageButton_SuperSender(const KLanguageButton* self);
+int KLanguageButton_SenderSignalIndex(const KLanguageButton* self);
+void KLanguageButton_OnSenderSignalIndex(const KLanguageButton* self, intptr_t slot);
+int KLanguageButton_SuperSenderSignalIndex(const KLanguageButton* self);
+int KLanguageButton_Receivers(const KLanguageButton* self, const char* signal);
+void KLanguageButton_OnReceivers(const KLanguageButton* self, intptr_t slot);
+int KLanguageButton_SuperReceivers(const KLanguageButton* self, const char* signal);
+bool KLanguageButton_IsSignalConnected(const KLanguageButton* self, const QMetaMethod* signal);
+void KLanguageButton_OnIsSignalConnected(const KLanguageButton* self, intptr_t slot);
+bool KLanguageButton_SuperIsSignalConnected(const KLanguageButton* self, const QMetaMethod* signal);
+double KLanguageButton_GetDecodedMetricF(const KLanguageButton* self, int metricA, int metricB);
+void KLanguageButton_OnGetDecodedMetricF(const KLanguageButton* self, intptr_t slot);
+double KLanguageButton_SuperGetDecodedMetricF(const KLanguageButton* self, int metricA, int metricB);
+void KLanguageButton_Delete(KLanguageButton* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

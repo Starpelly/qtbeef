@@ -1,0 +1,105 @@
+#pragma once
+#ifndef SRC_EXTRAS_KWIDGETSADDONSC_LIBKTWOFINGERSWIPE_HPP
+#define SRC_EXTRAS_KWIDGETSADDONSC_LIBKTWOFINGERSWIPE_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KTwoFingerSwipe KTwoFingerSwipe;
+typedef struct KTwoFingerSwipeRecognizer KTwoFingerSwipeRecognizer;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QGesture QGesture;
+typedef struct QGestureRecognizer QGestureRecognizer;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QPointF QPointF;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+KTwoFingerSwipe* KTwoFingerSwipe_new();
+KTwoFingerSwipe* KTwoFingerSwipe_new2(QObject* parent);
+QMetaObject* KTwoFingerSwipe_MetaObject(const KTwoFingerSwipe* self);
+void* KTwoFingerSwipe_Metacast(KTwoFingerSwipe* self, const char* param1);
+int KTwoFingerSwipe_Metacall(KTwoFingerSwipe* self, int param1, int param2, void** param3);
+QPointF* KTwoFingerSwipe_Pos(const KTwoFingerSwipe* self);
+void KTwoFingerSwipe_SetPos(KTwoFingerSwipe* self, QPointF* pos);
+QPointF* KTwoFingerSwipe_ScreenPos(const KTwoFingerSwipe* self);
+void KTwoFingerSwipe_SetScreenPos(KTwoFingerSwipe* self, QPointF* screenPos);
+QPointF* KTwoFingerSwipe_ScenePos(const KTwoFingerSwipe* self);
+void KTwoFingerSwipe_SetScenePos(KTwoFingerSwipe* self, QPointF* scenePos);
+double KTwoFingerSwipe_SwipeAngle(const KTwoFingerSwipe* self);
+void KTwoFingerSwipe_SetSwipeAngle(KTwoFingerSwipe* self, double swipeAngle);
+void KTwoFingerSwipe_OnMetaObject(const KTwoFingerSwipe* self, intptr_t slot);
+QMetaObject* KTwoFingerSwipe_SuperMetaObject(const KTwoFingerSwipe* self);
+void KTwoFingerSwipe_OnMetacast(KTwoFingerSwipe* self, intptr_t slot);
+void* KTwoFingerSwipe_SuperMetacast(KTwoFingerSwipe* self, const char* param1);
+void KTwoFingerSwipe_OnMetacall(KTwoFingerSwipe* self, intptr_t slot);
+int KTwoFingerSwipe_SuperMetacall(KTwoFingerSwipe* self, int param1, int param2, void** param3);
+bool KTwoFingerSwipe_Event(KTwoFingerSwipe* self, QEvent* event);
+void KTwoFingerSwipe_OnEvent(KTwoFingerSwipe* self, intptr_t slot);
+bool KTwoFingerSwipe_SuperEvent(KTwoFingerSwipe* self, QEvent* event);
+bool KTwoFingerSwipe_EventFilter(KTwoFingerSwipe* self, QObject* watched, QEvent* event);
+void KTwoFingerSwipe_OnEventFilter(KTwoFingerSwipe* self, intptr_t slot);
+bool KTwoFingerSwipe_SuperEventFilter(KTwoFingerSwipe* self, QObject* watched, QEvent* event);
+void KTwoFingerSwipe_TimerEvent(KTwoFingerSwipe* self, QTimerEvent* event);
+void KTwoFingerSwipe_OnTimerEvent(KTwoFingerSwipe* self, intptr_t slot);
+void KTwoFingerSwipe_SuperTimerEvent(KTwoFingerSwipe* self, QTimerEvent* event);
+void KTwoFingerSwipe_ChildEvent(KTwoFingerSwipe* self, QChildEvent* event);
+void KTwoFingerSwipe_OnChildEvent(KTwoFingerSwipe* self, intptr_t slot);
+void KTwoFingerSwipe_SuperChildEvent(KTwoFingerSwipe* self, QChildEvent* event);
+void KTwoFingerSwipe_CustomEvent(KTwoFingerSwipe* self, QEvent* event);
+void KTwoFingerSwipe_OnCustomEvent(KTwoFingerSwipe* self, intptr_t slot);
+void KTwoFingerSwipe_SuperCustomEvent(KTwoFingerSwipe* self, QEvent* event);
+void KTwoFingerSwipe_ConnectNotify(KTwoFingerSwipe* self, const QMetaMethod* signal);
+void KTwoFingerSwipe_OnConnectNotify(KTwoFingerSwipe* self, intptr_t slot);
+void KTwoFingerSwipe_SuperConnectNotify(KTwoFingerSwipe* self, const QMetaMethod* signal);
+void KTwoFingerSwipe_DisconnectNotify(KTwoFingerSwipe* self, const QMetaMethod* signal);
+void KTwoFingerSwipe_OnDisconnectNotify(KTwoFingerSwipe* self, intptr_t slot);
+void KTwoFingerSwipe_SuperDisconnectNotify(KTwoFingerSwipe* self, const QMetaMethod* signal);
+QObject* KTwoFingerSwipe_Sender(const KTwoFingerSwipe* self);
+void KTwoFingerSwipe_OnSender(const KTwoFingerSwipe* self, intptr_t slot);
+QObject* KTwoFingerSwipe_SuperSender(const KTwoFingerSwipe* self);
+int KTwoFingerSwipe_SenderSignalIndex(const KTwoFingerSwipe* self);
+void KTwoFingerSwipe_OnSenderSignalIndex(const KTwoFingerSwipe* self, intptr_t slot);
+int KTwoFingerSwipe_SuperSenderSignalIndex(const KTwoFingerSwipe* self);
+int KTwoFingerSwipe_Receivers(const KTwoFingerSwipe* self, const char* signal);
+void KTwoFingerSwipe_OnReceivers(const KTwoFingerSwipe* self, intptr_t slot);
+int KTwoFingerSwipe_SuperReceivers(const KTwoFingerSwipe* self, const char* signal);
+bool KTwoFingerSwipe_IsSignalConnected(const KTwoFingerSwipe* self, const QMetaMethod* signal);
+void KTwoFingerSwipe_OnIsSignalConnected(const KTwoFingerSwipe* self, intptr_t slot);
+bool KTwoFingerSwipe_SuperIsSignalConnected(const KTwoFingerSwipe* self, const QMetaMethod* signal);
+void KTwoFingerSwipe_Delete(KTwoFingerSwipe* self);
+
+KTwoFingerSwipeRecognizer* KTwoFingerSwipeRecognizer_new();
+QGesture* KTwoFingerSwipeRecognizer_Create(KTwoFingerSwipeRecognizer* self, QObject* target);
+int KTwoFingerSwipeRecognizer_Recognize(KTwoFingerSwipeRecognizer* self, QGesture* gesture, QObject* watched, QEvent* event);
+int KTwoFingerSwipeRecognizer_MaxSwipeTime(const KTwoFingerSwipeRecognizer* self);
+void KTwoFingerSwipeRecognizer_SetMaxSwipeTime(KTwoFingerSwipeRecognizer* self, int i);
+int KTwoFingerSwipeRecognizer_MinSswipeDistance(const KTwoFingerSwipeRecognizer* self);
+void KTwoFingerSwipeRecognizer_SetSwipeDistance(KTwoFingerSwipeRecognizer* self, int i);
+void KTwoFingerSwipeRecognizer_OnCreate(KTwoFingerSwipeRecognizer* self, intptr_t slot);
+QGesture* KTwoFingerSwipeRecognizer_SuperCreate(KTwoFingerSwipeRecognizer* self, QObject* target);
+void KTwoFingerSwipeRecognizer_OnRecognize(KTwoFingerSwipeRecognizer* self, intptr_t slot);
+int KTwoFingerSwipeRecognizer_SuperRecognize(KTwoFingerSwipeRecognizer* self, QGesture* gesture, QObject* watched, QEvent* event);
+void KTwoFingerSwipeRecognizer_Reset(KTwoFingerSwipeRecognizer* self, QGesture* state);
+void KTwoFingerSwipeRecognizer_OnReset(KTwoFingerSwipeRecognizer* self, intptr_t slot);
+void KTwoFingerSwipeRecognizer_SuperReset(KTwoFingerSwipeRecognizer* self, QGesture* state);
+void KTwoFingerSwipeRecognizer_Delete(KTwoFingerSwipeRecognizer* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

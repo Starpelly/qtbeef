@@ -1,0 +1,108 @@
+#pragma once
+#ifndef SRC_EXTRAS_KTEXTEDITORC_LIBCOMMAND_HPP
+#define SRC_EXTRAS_KTEXTEDITORC_LIBCOMMAND_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_KTextEditor__Command)
+typedef KTextEditor::Command KTextEditor__Command;
+#endif
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_KTextEditor__Range)
+typedef KTextEditor::Range KTextEditor__Range;
+#endif
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_KTextEditor__View)
+typedef KTextEditor::View KTextEditor__View;
+#endif
+#else
+typedef struct KCompletion KCompletion;
+typedef struct KTextEditor__Command KTextEditor__Command;
+typedef struct KTextEditor__Range KTextEditor__Range;
+typedef struct KTextEditor__View KTextEditor__View;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+KTextEditor__Command* KTextEditor__Command_new(const libqt_list /* of libqt_string */ cmds);
+KTextEditor__Command* KTextEditor__Command_new2(const libqt_list /* of libqt_string */ cmds, QObject* parent);
+QMetaObject* KTextEditor__Command_MetaObject(const KTextEditor__Command* self);
+void* KTextEditor__Command_Metacast(KTextEditor__Command* self, const char* param1);
+int KTextEditor__Command_Metacall(KTextEditor__Command* self, int param1, int param2, void** param3);
+libqt_list /* of libqt_string */ KTextEditor__Command_Cmds(const KTextEditor__Command* self);
+bool KTextEditor__Command_SupportsRange(KTextEditor__Command* self, const libqt_string cmd);
+bool KTextEditor__Command_Exec(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string cmd, libqt_string msg, const KTextEditor__Range* range);
+bool KTextEditor__Command_Help(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string cmd, libqt_string msg);
+KCompletion* KTextEditor__Command_CompletionObject(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string cmdname);
+bool KTextEditor__Command_WantsToProcessText(KTextEditor__Command* self, const libqt_string cmdname);
+void KTextEditor__Command_ProcessText(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string text);
+void KTextEditor__Command_OnMetaObject(const KTextEditor__Command* self, intptr_t slot);
+QMetaObject* KTextEditor__Command_SuperMetaObject(const KTextEditor__Command* self);
+void KTextEditor__Command_OnMetacast(KTextEditor__Command* self, intptr_t slot);
+void* KTextEditor__Command_SuperMetacast(KTextEditor__Command* self, const char* param1);
+void KTextEditor__Command_OnMetacall(KTextEditor__Command* self, intptr_t slot);
+int KTextEditor__Command_SuperMetacall(KTextEditor__Command* self, int param1, int param2, void** param3);
+void KTextEditor__Command_OnSupportsRange(KTextEditor__Command* self, intptr_t slot);
+bool KTextEditor__Command_SuperSupportsRange(KTextEditor__Command* self, const libqt_string cmd);
+void KTextEditor__Command_OnExec(KTextEditor__Command* self, intptr_t slot);
+bool KTextEditor__Command_SuperExec(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string cmd, libqt_string msg, const KTextEditor__Range* range);
+void KTextEditor__Command_OnHelp(KTextEditor__Command* self, intptr_t slot);
+bool KTextEditor__Command_SuperHelp(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string cmd, libqt_string msg);
+void KTextEditor__Command_OnCompletionObject(KTextEditor__Command* self, intptr_t slot);
+KCompletion* KTextEditor__Command_SuperCompletionObject(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string cmdname);
+void KTextEditor__Command_OnWantsToProcessText(KTextEditor__Command* self, intptr_t slot);
+bool KTextEditor__Command_SuperWantsToProcessText(KTextEditor__Command* self, const libqt_string cmdname);
+void KTextEditor__Command_OnProcessText(KTextEditor__Command* self, intptr_t slot);
+void KTextEditor__Command_SuperProcessText(KTextEditor__Command* self, KTextEditor__View* view, const libqt_string text);
+bool KTextEditor__Command_Event(KTextEditor__Command* self, QEvent* event);
+void KTextEditor__Command_OnEvent(KTextEditor__Command* self, intptr_t slot);
+bool KTextEditor__Command_SuperEvent(KTextEditor__Command* self, QEvent* event);
+bool KTextEditor__Command_EventFilter(KTextEditor__Command* self, QObject* watched, QEvent* event);
+void KTextEditor__Command_OnEventFilter(KTextEditor__Command* self, intptr_t slot);
+bool KTextEditor__Command_SuperEventFilter(KTextEditor__Command* self, QObject* watched, QEvent* event);
+void KTextEditor__Command_TimerEvent(KTextEditor__Command* self, QTimerEvent* event);
+void KTextEditor__Command_OnTimerEvent(KTextEditor__Command* self, intptr_t slot);
+void KTextEditor__Command_SuperTimerEvent(KTextEditor__Command* self, QTimerEvent* event);
+void KTextEditor__Command_ChildEvent(KTextEditor__Command* self, QChildEvent* event);
+void KTextEditor__Command_OnChildEvent(KTextEditor__Command* self, intptr_t slot);
+void KTextEditor__Command_SuperChildEvent(KTextEditor__Command* self, QChildEvent* event);
+void KTextEditor__Command_CustomEvent(KTextEditor__Command* self, QEvent* event);
+void KTextEditor__Command_OnCustomEvent(KTextEditor__Command* self, intptr_t slot);
+void KTextEditor__Command_SuperCustomEvent(KTextEditor__Command* self, QEvent* event);
+void KTextEditor__Command_ConnectNotify(KTextEditor__Command* self, const QMetaMethod* signal);
+void KTextEditor__Command_OnConnectNotify(KTextEditor__Command* self, intptr_t slot);
+void KTextEditor__Command_SuperConnectNotify(KTextEditor__Command* self, const QMetaMethod* signal);
+void KTextEditor__Command_DisconnectNotify(KTextEditor__Command* self, const QMetaMethod* signal);
+void KTextEditor__Command_OnDisconnectNotify(KTextEditor__Command* self, intptr_t slot);
+void KTextEditor__Command_SuperDisconnectNotify(KTextEditor__Command* self, const QMetaMethod* signal);
+QObject* KTextEditor__Command_Sender(const KTextEditor__Command* self);
+void KTextEditor__Command_OnSender(const KTextEditor__Command* self, intptr_t slot);
+QObject* KTextEditor__Command_SuperSender(const KTextEditor__Command* self);
+int KTextEditor__Command_SenderSignalIndex(const KTextEditor__Command* self);
+void KTextEditor__Command_OnSenderSignalIndex(const KTextEditor__Command* self, intptr_t slot);
+int KTextEditor__Command_SuperSenderSignalIndex(const KTextEditor__Command* self);
+int KTextEditor__Command_Receivers(const KTextEditor__Command* self, const char* signal);
+void KTextEditor__Command_OnReceivers(const KTextEditor__Command* self, intptr_t slot);
+int KTextEditor__Command_SuperReceivers(const KTextEditor__Command* self, const char* signal);
+bool KTextEditor__Command_IsSignalConnected(const KTextEditor__Command* self, const QMetaMethod* signal);
+void KTextEditor__Command_OnIsSignalConnected(const KTextEditor__Command* self, intptr_t slot);
+bool KTextEditor__Command_SuperIsSignalConnected(const KTextEditor__Command* self, const QMetaMethod* signal);
+void KTextEditor__Command_Delete(KTextEditor__Command* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

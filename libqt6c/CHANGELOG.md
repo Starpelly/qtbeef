@@ -1,0 +1,397 @@
+
+### 6.8.2 rev72 (27 April 2026)
+
+* Add [Qt TextToSpeech](https://doc.qt.io/qt-6/qttexttospeech-index.html) (#132)
+* Unblock some additional methods (#131)
+
+### 6.8.2 rev71 (21 April 2026)
+
+* Add [KStatusNotifierItem](https://api.kde.org/kstatusnotifieritem-index.html) (#130)
+
+### 6.8.2 rev70 (16 April 2026)
+
+* Opt for fixed-width type and cleanup header (#129)
+
+### 6.8.2 rev69 (15 April 2026)
+
+* **BREAKING CHANGE:** Update to Zig 0.16 and fix documentation comments for enum pointer values (#128)
+* Opt for fixed-width or platform-dependent types where possible (#126)
+
+### 6.8.2 rev68 (30 March 2026)
+
+* Add [KUnitConversion](https://api.kde.org/kunitconversion-index.html) (#125)
+
+### 6.8.2 rev67 (14 March 2026)
+
+* Add [Qt Bluetooth](https://doc.qt.io/qt-6/qtbluetooth-index.html) and expand platform support (#124)
+* Extend support for function-based parameter types (#123)
+
+### 6.8.2 rev66 (8 March 2026)
+
+* **BREAKING CHANGE:** Remove classes marked for pending deprecation or deletion (#121)
+* Remove destructors and optimize conditionals in virtual classes (#120)
+
+### 6.8.2 rev65 (4 March 2026)
+
+* Add [Poppler](https://poppler.freedesktop.org/api/qt6/) (#119)
+
+### 6.8.2 rev64 (28 February 2026)
+
+* **BREAKING CHANGE:** Add initial support for function pointer parameter types (#118)
+
+### 6.8.2 rev63 (24 February 2026)
+
+* **BREAKING CHANGE:** Add initial support for `std::vector` and deprecate qbase methods (#117)
+* **DEPRECATION NOTICE:** All `qbase` methods have been deprecated with equivalent `super` variants
+
+### 6.8.2 rev62 (22 February 2026)
+* **BREAKING CHANGES:**
+  * Extend supported containers and fix some callback types (#116)
+  * Remove header containing deprecated class (#113)
+  * Add initial support for smart pointers (#112)
+
+### 6.8.2 rev61 (18 February 2026)
+
+* Add [Qt State Machine](https://doc.qt.io/qt-6/qtstatemachine-index.html) (#111)
+
+### 6.8.2 rev60 (15 February 2026)
+
+* **BREAKING CHANGE:** Update projections for QAnyStringView, QByteArray, and QByteArrayView (#110)
+
+### 6.8.2 rev59 (6 February 2026)
+
+* **BREAKING CHANGE:** Unblock additional pointer types (#108)
+
+### 6.8.2 rev58 (5 February 2026)
+
+* Add [KFileMetaData](https://api.kde.org/kfilemetadata-index.html) (#107)
+
+### 6.8.2 rev57 (4 February 2026)
+
+* **BREAKING CHANGE:** Update some container-based callbacks (#106)
+
+### 6.8.2 rev56 (2 February 2026)
+
+* Add [Qt WebSockets](https://doc.qt.io/qt-6/qtwebsockets-index.html) (#105)
+
+### 6.8.2 rev55 (1 February 2026)
+
+* **BREAKING CHANGES:**
+  * Extend support for receiver methods and add support for `final` keyword projection (#104)
+  * Remove additional Qt classes which should not be projected (#103)
+  * Project additional overrides for Qt introspection (#102)
+  * Project some chrono-based types (#101)
+
+### 6.8.2 rev54 (19 January 2026)
+
+* **BREAKING CHANGES:**
+  * Optimize QPair projections for primitive types and extend container implementations (#100)
+  * Update blocks, backend parsing logic, and documentation comments (#99)
+  * Update enums and documentation comments (#98)
+  * Block internal Qt classes that should not be projected (#97)
+
+### 6.8.2 rev53 (11 January 2026)
+
+* Add support for QMultiHash and QMultiMap (#96)
+* Unblock some previously blocked methods (#95)
+
+### 6.8.2 rev52 (28 December 2025)
+
+* **MAJOR BREAKING CHANGE:** Switch Linux to GNU C++ ABI and fix map/hash implementations (#94)
+  * The README contains updated platform-specific system dependencies and steps.
+  * The examples and demo contain build system updates and implementation details.
+
+### 6.8.2 rev51 (22 December 2025)
+
+* **BREAKING CHANGE:** Add [Qt Location](https://doc.qt.io/qt-6/qtlocation-index.html) and remove some methods (#91)
+
+### 6.8.2 rev50 (21 December 2025)
+
+* **BREAKING CHANGE:** Add [Qt Designer](https://doc.qt.io/qt-6/qtdesigner-manual.html), [Qt UI Plugin](https://doc.qt.io/qt-6/qtdesigner-customwidgetplugin-example.html), and [Qt UI Tools](https://doc.qt.io/qt-6/qtuitools-index.html) (#90)
+
+### 6.8.2 rev49 (16 December 2025)
+
+* Add [Qt Positioning](https://doc.qt.io/qt-6/qtpositioning-index.html) (#89)
+
+### 6.8.2 rev48 (14 December 2025)
+
+* Add [KArchive](https://api.kde.org/karchive-index.html) (#88)
+
+### 6.8.2 rev47 (7 December 2025)
+
+* **BREAKING CHANGE:** Update parsing for noexcept (#87)
+* Unblock QVariantConstPointer (#86)
+* Update documentation comments for consistency and readability (#85)
+
+### 6.8.2 rev46 (30 November 2025)
+
+* Update hyperlink terminology and add documentation generation (#84)
+
+### 6.8.2 rev45 (22 November 2025)
+
+* Add lupdate-c for improved translation support (#83)
+* Centralize class-based translation methods (#82)
+
+### 6.8.2 rev44 (16 November 2025)
+
+* Add [KIdleTime](https://api.kde.org/kidletime-index.html) (#81)
+* Project QByteArrayView as native types and update platform compatibility (#80)
+* Add [SignOn](https://accounts-sso.gitlab.io/) plus various fixes (#79)
+* Enforce non-null pointer types (#78)
+* Add [Accounts](https://accounts-sso.gitlab.io/) (#77)
+
+### 6.8.2 rev43 (24 October 2025)
+
+* Minor tweaks and fixes (#76)
+
+### 6.8.2 rev42 (18 October 2025)
+
+* Add [PackageKit-Qt](https://github.com/PackageKit/PackageKit-Qt) (#75)
+
+### 6.8.2 rev41 (17 October 2025)
+
+* Unblock methods that return integer values by reference (#74)
+
+### 6.8.2 rev40 (13 October 2025)
+
+* Add [kColorPicker](https://github.com/ksnip/kColorPicker) and [kImageAnnotator](https://github.com/ksnip/kImageAnnotator) (#73)
+* Update cross-platform support (#72)
+
+### 6.8.2 rev39 (11 October 2025)
+
+* **BREAKING CHANGE:** Update for Qt 6.10 (#71)
+* Unblock additional types that inherit from templates (#70)
+* Add [QCustomPlot](https://www.qcustomplot.com/) (#69)
+
+### 6.8.2 rev38 (7 October 2025)
+
+* Add [KCrash](https://api.kde.org/kcrash-index.html), [KItemModels](https://api.kde.org/kitemmodels-index.html), [KSvg](https://api.kde.org/ksvg-index.html), [QtKeychain](https://github.com/frankosterfeld/qtkeychain), and [LayerShellQt](https://invent.kde.org/plasma/layer-shell-qt) (#68)
+
+### 6.8.2 rev37 (3 October 2025)
+
+* Add [KParts](https://api.kde.org/kparts-index.html) and [KTextEditor](https://api.kde.org/ktexteditor-index.html) (#67)
+
+### 6.8.2 rev36 (2 October 2025)
+
+* Add [KSyntaxHighlighting](https://api.kde.org/ksyntaxhighlighting-index.html) (#66)
+
+### 6.8.2 rev35 (28 September 2025)
+
+* uic-c: Add support for KDE Frameworks (#65)
+* Remove additional linker errors (#64)
+* Remove additional linker errors (#63)
+
+### 6.8.2 rev34 (27 September 2025)
+
+* Add [Qt OpenGL](https://doc.qt.io/qt-6/qtopengl-index.html) (#62)
+* Unblock `QsciScintillaBase::inputMethodQuery` (#61)
+* Remove methods causing linker errors (#60)
+
+### 6.8.2 rev33 (22 September 2025)
+
+* **BREAKING CHANGE:** Remove `KGradientSelector::setStops` (#59)
+  * This is generating an undefined symbol error when linked during compilation.
+
+### 6.8.2 rev32 (21 September 2025)
+
+* Add [KNewStuff](https://api.kde.org/knewstuff-index.html) and address cross-library duplicate header names (#58)
+
+### 6.8.2 rev31 (19 September 2025)
+
+* Add [Attica](https://api.kde.org/attica-index.html) (#57)
+
+### 6.8.2 rev30 (14 September 2025)
+
+* Add [KJobWidgets](https://api.kde.org/kjobwidgets-index.html), [KService](https://api.kde.org/kservice-index.html), [Solid](https://api.kde.org/solid-index.html), [KNotifications](https://api.kde.org/knotifications-index.html), [KWindowSystem](https://api.kde.org/kwindowsystem-index.html), and [KIO](https://api.kde.org/kio-index.html) (#56)
+
+### 6.8.2 rev29 (13 September 2025)
+
+* **BREAKING CHANGE:** Update QList-based callbacks (#55)
+
+### 6.8.2 rev28 (10 September 2025)
+
+* Add [KBookmarks](https://api.kde.org/kbookmarks-index.html) (#54)
+* Update documentation URLs (#53)
+* Fix documentation URLs (#52)
+
+### 6.8.2 rev27 (6 September 2025)
+
+* Add a build option for passing extra paths
+
+### 6.8.2 rev26 (5 September 2025)
+
+* Add [Qt XML](https://doc.qt.io/qt-6/qtxml-index.html), [KGlobalAccel](https://api.kde.org/kglobalaccel-index.html), and [KXmlGui](https://api.kde.org/kxmlgui-index.html) (#51)
+
+### 6.8.2 rev25 (4 September 2025)
+
+* Add [Qt D-Bus](https://doc.qt.io/qt-6/qtdbus-index.html) (#50)
+
+### 6.8.2 rev24 (3 September 2025)
+
+* Add [KIconThemes](https://api.kde.org/kiconthemes-index.html) (#49)
+
+### 6.8.2 rev23 (2 September 2025)
+
+* Add [KTextWidgets](https://api.kde.org/ktextwidgets-index.html) (#48)
+
+### 6.8.2 rev22 (1 September 2025)
+
+* Add [KCompletion](https://api.kde.org/kcompletion-index.html) (#47)
+
+### 6.8.2 rev21 (31 August 2025)
+
+* Add [KPlotting](https://api.kde.org/kplotting-index.html) (#46)
+
+### 6.8.2 rev20 (30 August 2025)
+
+* Add [KColorScheme](https://api.kde.org/kcolorscheme-index.html) and [KConfigWidgets](https://api.kde.org/kconfigwidgets-index.html) (#45)
+
+### 6.8.2 rev19 (29 August 2025)
+
+* **BREAKING CHANGE:** Use more precise flag types, fix signed char, and handle extra conditions (#44)
+
+### 6.8.2 rev18 (29 August 2025)
+
+* **BREAKING CHANGE:** Update to Zig 0.15
+* Ensure proper callback structure (#43)
+
+### 6.8.2 rev17 (28 August 2025)
+
+* Add [Sonnet](https://api.kde.org/sonnet-index.html) (#42)
+* Simplify override structure and update callback documentation comments (#41)
+* Fix method mismatch in C ABI (#40)
+
+### 6.8.2 rev16 (27 August 2025)
+
+* Add [KGuiAddons](https://api.kde.org/kguiaddons-index.html) (#37)
+
+### 6.8.2 rev15 (26 August 2025)
+
+* Add [KCoreAddons](https://api.kde.org/kcoreaddons-index.html) (#36)
+
+### 6.8.2 rev14 (25 August 2025)
+
+* Add [KItemViews](https://api.kde.org/kitemviews-index.html) (#35)
+
+### 6.8.2 rev13 (24 August 2025)
+
+* Add [KConfig](https://api.kde.org/kconfig-index.html) and [KWidgetsAddons](https://api.kde.org/kwidgetsaddons-index.html) (#34)
+* Add support for public variables (#33)
+
+### 6.8.2 rev12 (23 August 2025)
+
+* Add [QTermWidget](https://github.com/lxqt/qtermwidget) (#32)
+
+### 6.8.2 rev11 (22 August 2025)
+
+* **BREAKING CHANGE:** Fix some callback types (#31)
+* Add [KI18n](https://api.kde.org/ki18n-index.html) (#30)
+
+### 6.8.2 rev10 (20 August 2025)
+
+* Add [KCodecs](https://api.kde.org/kcodecs-index.html) and fix string-based slots (#29)
+
+### 6.8.2 rev9 (19 August 2025)
+
+* Add [Qt SQL](https://doc.qt.io/qt-6/qtsql-index.html) (#28)
+
+### 6.8.2 rev8 (18 August 2025)
+
+* **BREAKING CHANGE:** Add specific enum type resolution (#27)
+* Fix enum handling in certain conditions, memory allocations, and scoped class cases (#26)
+
+### 6.8.2 rev7 (15 August 2025)
+
+* **BREAKING CHANGE:** Switch to per-library options in some cases
+
+### 6.8.2 rev6 (14 August 2025)
+
+* Update documentation comments and improve library memory management (#25)
+* Optimize external command processing by batching files (#24)
+
+### 6.8.2 rev5 (3 August 2025)
+
+* Add qrc-c and uic-c for use with the Qt Resource System (#23)
+* Replace brute force resolutions with data structures (#21)
+* Update vtable information in documentation comments (#20)
+* Add library support for Homebrew on macOS
+
+### 6.8.2 rev4 (18 July 2025)
+
+* **BREAKING CHANGE:** Update container type invocations and unblock QVariantList (#17)
+* Update documentation URL for operator methods (#16)
+
+### 6.8.2 rev3 (15 July 2025)
+
+* Add projection for iterator types (#15)
+
+### 6.8.2 rev2 (14 July 2025)
+
+* **BREAKING CHANGE:** Remove non-digit method overloads (#14)
+* Add convenience macro and function to helper library
+
+### 6.8.2 rev1 (6 July 2025)
+
+* **BREAKING CHANGE:** Update to Qt 6.8 base (#13)
+
+### 6.4.2 rev13 (3 July 2025)
+
+* **BREAKING CHANGE:** Switch enum workarounds to remove uppercasing (#12)
+* Remove ineffectual const return type
+* Add QStringList null terminator
+
+### 6.4.2 rev12 (16 June 2025)
+
+* Allow virtual classes for QAccessibleObject and QAccessibleWidget (#11)
+
+### 6.4.2 rev11 (14 June 2025)
+
+* Leverage consistent constness in internal library (#10)
+
+### 6.4.2 rev10 (31 May 2025)
+
+* Breaking changes/improvements (#9)
+  * Add private signals
+  * Use consistent constness
+  * Revamp virtual subclass design
+  * Improve documentation URLs
+  * Use `libqt_list` in place of existing types (except `char*` types)
+  * Remove dead code
+  * See examples for user-facing API changes
+
+### 6.4.2 rev9 (3 May 2025)
+
+* Fix projection of QAnyStringView (#8)
+
+### 6.4.2 rev8 (20 April 2025)
+
+* Add [Qt PDF](https://doc.qt.io/qt-6/qtpdf-index.html) (#7)
+
+### 6.4.2 rev7 (14 April 2025)
+
+* Revamp attempt at Windows support
+
+### 6.4.2 rev6 (11 April 2025)
+
+* Qt 6.9: Return type for QObjectData::dynamicMetaObject is now const (#6)
+
+### 6.4.2 rev5 (31 March 2025)
+
+* Move documentation comments from source to headers (#5)
+
+### 6.4.2 rev4 (31 March 2025)
+
+* **BREAKING CHANGE:** Mark Qt Charts restricted (#4)
+
+### 6.4.2 rev3 (30 March 2025)
+
+* Add [Qt Charts](https://doc.qt.io/qt-6/qtcharts-index.html) (#3)
+
+### 6.4.2 rev2 (23 March 2025)
+
+* **BREAKING CHANGE:** Removing `QHostAddress_IsInSubnetWithSubnet` (#2)
+  * This is generating an undefined symbol error when linked during compilation.
+
+### 6.4.2 rev1 (7 March 2025)
+
+* Initial release

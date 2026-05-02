@@ -1,0 +1,427 @@
+#pragma once
+#ifndef SRCC_LIBVIRTUALQCOMPLETER_H
+#define SRCC_LIBVIRTUALQCOMPLETER_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "qtlibc.h"
+
+// This class is a subclass of QCompleter so that we can call protected methods
+class VirtualQCompleter final : public QCompleter {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualQCompleter = true;
+
+    // Virtual class public types (including callbacks)
+    using QCompleter_MetaObject_Callback = QMetaObject* (*)();
+    using QCompleter_Metacast_Callback = void* (*)(QCompleter*, const char*);
+    using QCompleter_Metacall_Callback = int (*)(QCompleter*, int, int, void**);
+    using QCompleter_PathFromIndex_Callback = const char* (*)(const QCompleter*, QModelIndex*);
+    using QCompleter_SplitPath_Callback = const char** (*)(const QCompleter*, const char*);
+    using QCompleter_EventFilter_Callback = bool (*)(QCompleter*, QObject*, QEvent*);
+    using QCompleter_Event_Callback = bool (*)(QCompleter*, QEvent*);
+    using QCompleter_TimerEvent_Callback = void (*)(QCompleter*, QTimerEvent*);
+    using QCompleter_ChildEvent_Callback = void (*)(QCompleter*, QChildEvent*);
+    using QCompleter_CustomEvent_Callback = void (*)(QCompleter*, QEvent*);
+    using QCompleter_ConnectNotify_Callback = void (*)(QCompleter*, QMetaMethod*);
+    using QCompleter_DisconnectNotify_Callback = void (*)(QCompleter*, QMetaMethod*);
+    using QCompleter_Sender_Callback = QObject* (*)();
+    using QCompleter_SenderSignalIndex_Callback = int (*)();
+    using QCompleter_Receivers_Callback = int (*)(const QCompleter*, const char*);
+    using QCompleter_IsSignalConnected_Callback = bool (*)(const QCompleter*, QMetaMethod*);
+
+  protected:
+    // Instance callback storage
+    QCompleter_MetaObject_Callback qcompleter_metaobject_callback = nullptr;
+    QCompleter_Metacast_Callback qcompleter_metacast_callback = nullptr;
+    QCompleter_Metacall_Callback qcompleter_metacall_callback = nullptr;
+    QCompleter_PathFromIndex_Callback qcompleter_pathfromindex_callback = nullptr;
+    QCompleter_SplitPath_Callback qcompleter_splitpath_callback = nullptr;
+    QCompleter_EventFilter_Callback qcompleter_eventfilter_callback = nullptr;
+    QCompleter_Event_Callback qcompleter_event_callback = nullptr;
+    QCompleter_TimerEvent_Callback qcompleter_timerevent_callback = nullptr;
+    QCompleter_ChildEvent_Callback qcompleter_childevent_callback = nullptr;
+    QCompleter_CustomEvent_Callback qcompleter_customevent_callback = nullptr;
+    QCompleter_ConnectNotify_Callback qcompleter_connectnotify_callback = nullptr;
+    QCompleter_DisconnectNotify_Callback qcompleter_disconnectnotify_callback = nullptr;
+    QCompleter_Sender_Callback qcompleter_sender_callback = nullptr;
+    QCompleter_SenderSignalIndex_Callback qcompleter_sendersignalindex_callback = nullptr;
+    QCompleter_Receivers_Callback qcompleter_receivers_callback = nullptr;
+    QCompleter_IsSignalConnected_Callback qcompleter_issignalconnected_callback = nullptr;
+
+    // Instance base flags
+    mutable bool qcompleter_metaobject_isbase = false;
+    mutable bool qcompleter_metacast_isbase = false;
+    mutable bool qcompleter_metacall_isbase = false;
+    mutable bool qcompleter_pathfromindex_isbase = false;
+    mutable bool qcompleter_splitpath_isbase = false;
+    mutable bool qcompleter_eventfilter_isbase = false;
+    mutable bool qcompleter_event_isbase = false;
+    mutable bool qcompleter_timerevent_isbase = false;
+    mutable bool qcompleter_childevent_isbase = false;
+    mutable bool qcompleter_customevent_isbase = false;
+    mutable bool qcompleter_connectnotify_isbase = false;
+    mutable bool qcompleter_disconnectnotify_isbase = false;
+    mutable bool qcompleter_sender_isbase = false;
+    mutable bool qcompleter_sendersignalindex_isbase = false;
+    mutable bool qcompleter_receivers_isbase = false;
+    mutable bool qcompleter_issignalconnected_isbase = false;
+
+  public:
+    VirtualQCompleter() : QCompleter() {};
+    VirtualQCompleter(QAbstractItemModel* model) : QCompleter(model) {};
+    VirtualQCompleter(const QList<QString>& completions) : QCompleter(completions) {};
+    VirtualQCompleter(QObject* parent) : QCompleter(parent) {};
+    VirtualQCompleter(QAbstractItemModel* model, QObject* parent) : QCompleter(model, parent) {};
+    VirtualQCompleter(const QList<QString>& completions, QObject* parent) : QCompleter(completions, parent) {};
+
+    // Callback setters
+    inline void setQCompleter_MetaObject_Callback(QCompleter_MetaObject_Callback cb) { qcompleter_metaobject_callback = cb; }
+    inline void setQCompleter_Metacast_Callback(QCompleter_Metacast_Callback cb) { qcompleter_metacast_callback = cb; }
+    inline void setQCompleter_Metacall_Callback(QCompleter_Metacall_Callback cb) { qcompleter_metacall_callback = cb; }
+    inline void setQCompleter_PathFromIndex_Callback(QCompleter_PathFromIndex_Callback cb) { qcompleter_pathfromindex_callback = cb; }
+    inline void setQCompleter_SplitPath_Callback(QCompleter_SplitPath_Callback cb) { qcompleter_splitpath_callback = cb; }
+    inline void setQCompleter_EventFilter_Callback(QCompleter_EventFilter_Callback cb) { qcompleter_eventfilter_callback = cb; }
+    inline void setQCompleter_Event_Callback(QCompleter_Event_Callback cb) { qcompleter_event_callback = cb; }
+    inline void setQCompleter_TimerEvent_Callback(QCompleter_TimerEvent_Callback cb) { qcompleter_timerevent_callback = cb; }
+    inline void setQCompleter_ChildEvent_Callback(QCompleter_ChildEvent_Callback cb) { qcompleter_childevent_callback = cb; }
+    inline void setQCompleter_CustomEvent_Callback(QCompleter_CustomEvent_Callback cb) { qcompleter_customevent_callback = cb; }
+    inline void setQCompleter_ConnectNotify_Callback(QCompleter_ConnectNotify_Callback cb) { qcompleter_connectnotify_callback = cb; }
+    inline void setQCompleter_DisconnectNotify_Callback(QCompleter_DisconnectNotify_Callback cb) { qcompleter_disconnectnotify_callback = cb; }
+    inline void setQCompleter_Sender_Callback(QCompleter_Sender_Callback cb) { qcompleter_sender_callback = cb; }
+    inline void setQCompleter_SenderSignalIndex_Callback(QCompleter_SenderSignalIndex_Callback cb) { qcompleter_sendersignalindex_callback = cb; }
+    inline void setQCompleter_Receivers_Callback(QCompleter_Receivers_Callback cb) { qcompleter_receivers_callback = cb; }
+    inline void setQCompleter_IsSignalConnected_Callback(QCompleter_IsSignalConnected_Callback cb) { qcompleter_issignalconnected_callback = cb; }
+
+    // Base flag setters
+    inline void setQCompleter_MetaObject_IsBase(bool value) const { qcompleter_metaobject_isbase = value; }
+    inline void setQCompleter_Metacast_IsBase(bool value) const { qcompleter_metacast_isbase = value; }
+    inline void setQCompleter_Metacall_IsBase(bool value) const { qcompleter_metacall_isbase = value; }
+    inline void setQCompleter_PathFromIndex_IsBase(bool value) const { qcompleter_pathfromindex_isbase = value; }
+    inline void setQCompleter_SplitPath_IsBase(bool value) const { qcompleter_splitpath_isbase = value; }
+    inline void setQCompleter_EventFilter_IsBase(bool value) const { qcompleter_eventfilter_isbase = value; }
+    inline void setQCompleter_Event_IsBase(bool value) const { qcompleter_event_isbase = value; }
+    inline void setQCompleter_TimerEvent_IsBase(bool value) const { qcompleter_timerevent_isbase = value; }
+    inline void setQCompleter_ChildEvent_IsBase(bool value) const { qcompleter_childevent_isbase = value; }
+    inline void setQCompleter_CustomEvent_IsBase(bool value) const { qcompleter_customevent_isbase = value; }
+    inline void setQCompleter_ConnectNotify_IsBase(bool value) const { qcompleter_connectnotify_isbase = value; }
+    inline void setQCompleter_DisconnectNotify_IsBase(bool value) const { qcompleter_disconnectnotify_isbase = value; }
+    inline void setQCompleter_Sender_IsBase(bool value) const { qcompleter_sender_isbase = value; }
+    inline void setQCompleter_SenderSignalIndex_IsBase(bool value) const { qcompleter_sendersignalindex_isbase = value; }
+    inline void setQCompleter_Receivers_IsBase(bool value) const { qcompleter_receivers_isbase = value; }
+    inline void setQCompleter_IsSignalConnected_IsBase(bool value) const { qcompleter_issignalconnected_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const QMetaObject* metaObject() const override {
+        if (qcompleter_metaobject_isbase) {
+            qcompleter_metaobject_isbase = false;
+            return QCompleter::metaObject();
+        }
+        auto metaobject_cb = qcompleter_metaobject_callback;
+        if (metaobject_cb) {
+            QMetaObject* callback_ret = metaobject_cb();
+            return callback_ret;
+        }
+        return QCompleter::metaObject();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void* qt_metacast(const char* param1) override {
+        if (qcompleter_metacast_isbase) {
+            qcompleter_metacast_isbase = false;
+            return QCompleter::qt_metacast(param1);
+        }
+        auto metacast_cb = qcompleter_metacast_callback;
+        if (metacast_cb) {
+            const char* cbval1 = (const char*)param1;
+
+            void* callback_ret = metacast_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QCompleter::qt_metacast(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int qt_metacall(QMetaObject::Call param1, int param2, void** param3) override {
+        if (qcompleter_metacall_isbase) {
+            qcompleter_metacall_isbase = false;
+            return QCompleter::qt_metacall(param1, param2, param3);
+        }
+        auto metacall_cb = qcompleter_metacall_callback;
+        if (metacall_cb) {
+            int cbval1 = static_cast<int>(param1);
+            int cbval2 = param2;
+            void** cbval3 = param3;
+
+            int callback_ret = metacall_cb(this, cbval1, cbval2, cbval3);
+            return static_cast<int>(callback_ret);
+        }
+        return QCompleter::qt_metacall(param1, param2, param3);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QString pathFromIndex(const QModelIndex& index) const override {
+        if (qcompleter_pathfromindex_isbase) {
+            qcompleter_pathfromindex_isbase = false;
+            return QCompleter::pathFromIndex(index);
+        }
+        auto pathfromindex_cb = qcompleter_pathfromindex_callback;
+        if (pathfromindex_cb) {
+            const QModelIndex& index_ret = index;
+            // Cast returned reference into pointer
+            QModelIndex* cbval1 = const_cast<QModelIndex*>(&index_ret);
+
+            const char* callback_ret = pathfromindex_cb(this, cbval1);
+            QString callback_ret_QString = QString::fromUtf8(callback_ret);
+            return callback_ret_QString;
+        }
+        return QCompleter::pathFromIndex(index);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QList<QString> splitPath(const QString& path) const override {
+        if (qcompleter_splitpath_isbase) {
+            qcompleter_splitpath_isbase = false;
+            return QCompleter::splitPath(path);
+        }
+        auto splitpath_cb = qcompleter_splitpath_callback;
+        if (splitpath_cb) {
+            const QString path_ret = path;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray path_b = path_ret.toUtf8();
+            auto path_str_len = path_b.length();
+            char* path_str = static_cast<char*>(malloc(path_str_len + 1));
+            memcpy(path_str, path_b.data(), path_str_len);
+            path_str[path_str_len] = '\0';
+            const char* cbval1 = path_str;
+
+            const char** callback_ret = splitpath_cb(this, cbval1);
+            QList<QString> callback_ret_QList;
+            size_t callback_ret_len = libqt_strv_length(callback_ret);
+            callback_ret_QList.reserve(callback_ret_len);
+            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
+            for (size_t i = 0; i < callback_ret_len; ++i) {
+                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
+                callback_ret_QList.push_back(callback_ret_arr_i_QString);
+            }
+            libqt_free(callback_ret);
+            libqt_free(path_str);
+            return callback_ret_QList;
+        }
+        return QCompleter::splitPath(path);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool eventFilter(QObject* o, QEvent* e) override {
+        if (qcompleter_eventfilter_isbase) {
+            qcompleter_eventfilter_isbase = false;
+            return QCompleter::eventFilter(o, e);
+        }
+        auto eventfilter_cb = qcompleter_eventfilter_callback;
+        if (eventfilter_cb) {
+            QObject* cbval1 = o;
+            QEvent* cbval2 = e;
+
+            bool callback_ret = eventfilter_cb(this, cbval1, cbval2);
+            return callback_ret;
+        }
+        return QCompleter::eventFilter(o, e);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool event(QEvent* param1) override {
+        if (qcompleter_event_isbase) {
+            qcompleter_event_isbase = false;
+            return QCompleter::event(param1);
+        }
+        auto event_cb = qcompleter_event_callback;
+        if (event_cb) {
+            QEvent* cbval1 = param1;
+
+            bool callback_ret = event_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QCompleter::event(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void timerEvent(QTimerEvent* event) override {
+        if (qcompleter_timerevent_isbase) {
+            qcompleter_timerevent_isbase = false;
+            QCompleter::timerEvent(event);
+            return;
+        }
+        auto timerevent_cb = qcompleter_timerevent_callback;
+        if (timerevent_cb) {
+            QTimerEvent* cbval1 = event;
+
+            timerevent_cb(this, cbval1);
+            return;
+        }
+        QCompleter::timerEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void childEvent(QChildEvent* event) override {
+        if (qcompleter_childevent_isbase) {
+            qcompleter_childevent_isbase = false;
+            QCompleter::childEvent(event);
+            return;
+        }
+        auto childevent_cb = qcompleter_childevent_callback;
+        if (childevent_cb) {
+            QChildEvent* cbval1 = event;
+
+            childevent_cb(this, cbval1);
+            return;
+        }
+        QCompleter::childEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void customEvent(QEvent* event) override {
+        if (qcompleter_customevent_isbase) {
+            qcompleter_customevent_isbase = false;
+            QCompleter::customEvent(event);
+            return;
+        }
+        auto customevent_cb = qcompleter_customevent_callback;
+        if (customevent_cb) {
+            QEvent* cbval1 = event;
+
+            customevent_cb(this, cbval1);
+            return;
+        }
+        QCompleter::customEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void connectNotify(const QMetaMethod& signal) override {
+        if (qcompleter_connectnotify_isbase) {
+            qcompleter_connectnotify_isbase = false;
+            QCompleter::connectNotify(signal);
+            return;
+        }
+        auto connectnotify_cb = qcompleter_connectnotify_callback;
+        if (connectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            connectnotify_cb(this, cbval1);
+            return;
+        }
+        QCompleter::connectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void disconnectNotify(const QMetaMethod& signal) override {
+        if (qcompleter_disconnectnotify_isbase) {
+            qcompleter_disconnectnotify_isbase = false;
+            QCompleter::disconnectNotify(signal);
+            return;
+        }
+        auto disconnectnotify_cb = qcompleter_disconnectnotify_callback;
+        if (disconnectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            disconnectnotify_cb(this, cbval1);
+            return;
+        }
+        QCompleter::disconnectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    QObject* sender() const {
+        if (qcompleter_sender_isbase) {
+            qcompleter_sender_isbase = false;
+            return QCompleter::sender();
+        }
+        auto sender_cb = qcompleter_sender_callback;
+        if (sender_cb) {
+            QObject* callback_ret = sender_cb();
+            return callback_ret;
+        }
+        return QCompleter::sender();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int senderSignalIndex() const {
+        if (qcompleter_sendersignalindex_isbase) {
+            qcompleter_sendersignalindex_isbase = false;
+            return QCompleter::senderSignalIndex();
+        }
+        auto sendersignalindex_cb = qcompleter_sendersignalindex_callback;
+        if (sendersignalindex_cb) {
+            int callback_ret = sendersignalindex_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QCompleter::senderSignalIndex();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int receivers(const char* signal) const {
+        if (qcompleter_receivers_isbase) {
+            qcompleter_receivers_isbase = false;
+            return QCompleter::receivers(signal);
+        }
+        auto receivers_cb = qcompleter_receivers_callback;
+        if (receivers_cb) {
+            const char* cbval1 = (const char*)signal;
+
+            int callback_ret = receivers_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return QCompleter::receivers(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool isSignalConnected(const QMetaMethod& signal) const {
+        if (qcompleter_issignalconnected_isbase) {
+            qcompleter_issignalconnected_isbase = false;
+            return QCompleter::isSignalConnected(signal);
+        }
+        auto issignalconnected_cb = qcompleter_issignalconnected_callback;
+        if (issignalconnected_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            bool callback_ret = issignalconnected_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QCompleter::isSignalConnected(signal);
+    }
+
+    // Friend functions
+    friend bool QCompleter_EventFilter(QCompleter* self, QObject* o, QEvent* e);
+    friend bool QCompleter_SuperEventFilter(QCompleter* self, QObject* o, QEvent* e);
+    friend bool QCompleter_Event(QCompleter* self, QEvent* param1);
+    friend bool QCompleter_SuperEvent(QCompleter* self, QEvent* param1);
+    friend void QCompleter_TimerEvent(QCompleter* self, QTimerEvent* event);
+    friend void QCompleter_SuperTimerEvent(QCompleter* self, QTimerEvent* event);
+    friend void QCompleter_ChildEvent(QCompleter* self, QChildEvent* event);
+    friend void QCompleter_SuperChildEvent(QCompleter* self, QChildEvent* event);
+    friend void QCompleter_CustomEvent(QCompleter* self, QEvent* event);
+    friend void QCompleter_SuperCustomEvent(QCompleter* self, QEvent* event);
+    friend void QCompleter_ConnectNotify(QCompleter* self, const QMetaMethod* signal);
+    friend void QCompleter_SuperConnectNotify(QCompleter* self, const QMetaMethod* signal);
+    friend void QCompleter_DisconnectNotify(QCompleter* self, const QMetaMethod* signal);
+    friend void QCompleter_SuperDisconnectNotify(QCompleter* self, const QMetaMethod* signal);
+    friend QObject* QCompleter_Sender(const QCompleter* self);
+    friend QObject* QCompleter_SuperSender(const QCompleter* self);
+    friend int QCompleter_SenderSignalIndex(const QCompleter* self);
+    friend int QCompleter_SuperSenderSignalIndex(const QCompleter* self);
+    friend int QCompleter_Receivers(const QCompleter* self, const char* signal);
+    friend int QCompleter_SuperReceivers(const QCompleter* self, const char* signal);
+    friend bool QCompleter_IsSignalConnected(const QCompleter* self, const QMetaMethod* signal);
+    friend bool QCompleter_SuperIsSignalConnected(const QCompleter* self, const QMetaMethod* signal);
+};
+
+#endif

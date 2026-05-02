@@ -1,0 +1,713 @@
+#include <QAbstractNetworkCache>
+#include <QChildEvent>
+#include <QEvent>
+#include <QIODevice>
+#include <QMetaMethod>
+#include <QMetaObject>
+#include <QNetworkCacheMetaData>
+#include <QNetworkDiskCache>
+#include <QObject>
+#include <QString>
+#include <QByteArray>
+#include <cstring>
+#include <QTimerEvent>
+#include <QUrl>
+#include <qnetworkdiskcache.h>
+#include "libqnetworkdiskcache.hpp"
+#include "libqnetworkdiskcache.hxx"
+
+QNetworkDiskCache* QNetworkDiskCache_new() {
+    return new VirtualQNetworkDiskCache();
+}
+
+QNetworkDiskCache* QNetworkDiskCache_new2(QObject* parent) {
+    return new VirtualQNetworkDiskCache(parent);
+}
+
+QMetaObject* QNetworkDiskCache_MetaObject(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = dynamic_cast<const VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return (QMetaObject*)self->metaObject();
+    } else {
+        return (QMetaObject*)((VirtualQNetworkDiskCache*)self)->metaObject();
+    }
+}
+
+void* QNetworkDiskCache_Metacast(QNetworkDiskCache* self, const char* param1) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return self->qt_metacast(param1);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->qt_metacast(param1);
+    }
+}
+
+int QNetworkDiskCache_Metacall(QNetworkDiskCache* self, int param1, int param2, void** param3) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return self->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    }
+}
+
+libqt_string QNetworkDiskCache_CacheDirectory(const QNetworkDiskCache* self) {
+    QString _ret = self->cacheDirectory();
+    // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
+    QByteArray _b = _ret.toUtf8();
+    libqt_string _str;
+    _str.len = _b.length();
+    _str.data = static_cast<const char*>(malloc(_str.len + 1));
+    memcpy((void*)_str.data, _b.data(), _str.len);
+    ((char*)_str.data)[_str.len] = '\0';
+    return _str;
+}
+
+void QNetworkDiskCache_SetCacheDirectory(QNetworkDiskCache* self, const libqt_string cacheDir) {
+    QString cacheDir_QString = QString::fromUtf8(cacheDir.data, cacheDir.len);
+    self->setCacheDirectory(cacheDir_QString);
+}
+
+long long QNetworkDiskCache_MaximumCacheSize(const QNetworkDiskCache* self) {
+    return static_cast<long long>(self->maximumCacheSize());
+}
+
+void QNetworkDiskCache_SetMaximumCacheSize(QNetworkDiskCache* self, long long size) {
+    self->setMaximumCacheSize(static_cast<qint64>(size));
+}
+
+long long QNetworkDiskCache_CacheSize(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = dynamic_cast<const VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return static_cast<long long>(self->cacheSize());
+    } else {
+        return static_cast<long long>(((VirtualQNetworkDiskCache*)self)->cacheSize());
+    }
+}
+
+QNetworkCacheMetaData* QNetworkDiskCache_MetaData(QNetworkDiskCache* self, const QUrl* url) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return new QNetworkCacheMetaData(self->metaData(*url));
+    } else {
+        return new QNetworkCacheMetaData(((VirtualQNetworkDiskCache*)self)->metaData(*url));
+    }
+}
+
+void QNetworkDiskCache_UpdateMetaData(QNetworkDiskCache* self, const QNetworkCacheMetaData* metaData) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        self->updateMetaData(*metaData);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->updateMetaData(*metaData);
+    }
+}
+
+QIODevice* QNetworkDiskCache_Data(QNetworkDiskCache* self, const QUrl* url) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return self->data(*url);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->data(*url);
+    }
+}
+
+bool QNetworkDiskCache_Remove(QNetworkDiskCache* self, const QUrl* url) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return self->remove(*url);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->remove(*url);
+    }
+}
+
+QIODevice* QNetworkDiskCache_Prepare(QNetworkDiskCache* self, const QNetworkCacheMetaData* metaData) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return self->prepare(*metaData);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->prepare(*metaData);
+    }
+}
+
+void QNetworkDiskCache_Insert(QNetworkDiskCache* self, QIODevice* device) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        self->insert(device);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->insert(device);
+    }
+}
+
+QNetworkCacheMetaData* QNetworkDiskCache_FileMetaData(const QNetworkDiskCache* self, const libqt_string fileName) {
+    QString fileName_QString = QString::fromUtf8(fileName.data, fileName.len);
+    return new QNetworkCacheMetaData(self->fileMetaData(fileName_QString));
+}
+
+void QNetworkDiskCache_Clear(QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        self->clear();
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->clear();
+    }
+}
+
+long long QNetworkDiskCache_Expire(QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return static_cast<long long>(vqnetworkdiskcache->expire());
+    }
+    return {};
+}
+
+// Base class handler implementation
+QMetaObject* QNetworkDiskCache_SuperMetaObject(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_MetaObject_IsBase(true);
+        return (QMetaObject*)vqnetworkdiskcache->metaObject();
+    } else {
+        return (QMetaObject*)self->QNetworkDiskCache::metaObject();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnMetaObject(const QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_MetaObject_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_MetaObject_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+void* QNetworkDiskCache_SuperMetacast(QNetworkDiskCache* self, const char* param1) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Metacast_IsBase(true);
+        return vqnetworkdiskcache->qt_metacast(param1);
+    } else {
+        return self->QNetworkDiskCache::qt_metacast(param1);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnMetacast(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Metacast_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Metacast_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+int QNetworkDiskCache_SuperMetacall(QNetworkDiskCache* self, int param1, int param2, void** param3) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Metacall_IsBase(true);
+        return vqnetworkdiskcache->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    } else {
+        return self->QNetworkDiskCache::qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnMetacall(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Metacall_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Metacall_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+long long QNetworkDiskCache_SuperCacheSize(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_CacheSize_IsBase(true);
+        return static_cast<long long>(vqnetworkdiskcache->cacheSize());
+    } else {
+        return static_cast<long long>(self->QNetworkDiskCache::cacheSize());
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnCacheSize(const QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_CacheSize_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_CacheSize_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+QNetworkCacheMetaData* QNetworkDiskCache_SuperMetaData(QNetworkDiskCache* self, const QUrl* url) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_MetaData_IsBase(true);
+        return new QNetworkCacheMetaData(vqnetworkdiskcache->metaData(*url));
+    } else {
+        return new QNetworkCacheMetaData(((VirtualQNetworkDiskCache*)self)->metaData(*url));
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnMetaData(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_MetaData_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_MetaData_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperUpdateMetaData(QNetworkDiskCache* self, const QNetworkCacheMetaData* metaData) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_UpdateMetaData_IsBase(true);
+        vqnetworkdiskcache->updateMetaData(*metaData);
+    } else {
+        self->QNetworkDiskCache::updateMetaData(*metaData);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnUpdateMetaData(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_UpdateMetaData_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_UpdateMetaData_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+QIODevice* QNetworkDiskCache_SuperData(QNetworkDiskCache* self, const QUrl* url) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Data_IsBase(true);
+        return vqnetworkdiskcache->data(*url);
+    } else {
+        return self->QNetworkDiskCache::data(*url);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnData(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Data_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Data_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+bool QNetworkDiskCache_SuperRemove(QNetworkDiskCache* self, const QUrl* url) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Remove_IsBase(true);
+        return vqnetworkdiskcache->remove(*url);
+    } else {
+        return self->QNetworkDiskCache::remove(*url);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnRemove(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Remove_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Remove_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+QIODevice* QNetworkDiskCache_SuperPrepare(QNetworkDiskCache* self, const QNetworkCacheMetaData* metaData) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Prepare_IsBase(true);
+        return vqnetworkdiskcache->prepare(*metaData);
+    } else {
+        return self->QNetworkDiskCache::prepare(*metaData);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnPrepare(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Prepare_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Prepare_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperInsert(QNetworkDiskCache* self, QIODevice* device) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Insert_IsBase(true);
+        vqnetworkdiskcache->insert(device);
+    } else {
+        self->QNetworkDiskCache::insert(device);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnInsert(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Insert_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Insert_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperClear(QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Clear_IsBase(true);
+        vqnetworkdiskcache->clear();
+    } else {
+        self->QNetworkDiskCache::clear();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnClear(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Clear_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Clear_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+long long QNetworkDiskCache_SuperExpire(QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Expire_IsBase(true);
+        return static_cast<long long>(vqnetworkdiskcache->expire());
+    } else {
+        return static_cast<long long>(((VirtualQNetworkDiskCache*)self)->expire());
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnExpire(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Expire_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Expire_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QNetworkDiskCache_Event(QNetworkDiskCache* self, QEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return vqnetworkdiskcache->event(event);
+    } else {
+        return self->QNetworkDiskCache::event(event);
+    }
+}
+
+// Base class handler implementation
+bool QNetworkDiskCache_SuperEvent(QNetworkDiskCache* self, QEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Event_IsBase(true);
+        return vqnetworkdiskcache->event(event);
+    } else {
+        return self->QNetworkDiskCache::event(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnEvent(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Event_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Event_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QNetworkDiskCache_EventFilter(QNetworkDiskCache* self, QObject* watched, QEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return vqnetworkdiskcache->eventFilter(watched, event);
+    } else {
+        return self->QNetworkDiskCache::eventFilter(watched, event);
+    }
+}
+
+// Base class handler implementation
+bool QNetworkDiskCache_SuperEventFilter(QNetworkDiskCache* self, QObject* watched, QEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_EventFilter_IsBase(true);
+        return vqnetworkdiskcache->eventFilter(watched, event);
+    } else {
+        return self->QNetworkDiskCache::eventFilter(watched, event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnEventFilter(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_EventFilter_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_EventFilter_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QNetworkDiskCache_TimerEvent(QNetworkDiskCache* self, QTimerEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->timerEvent(event);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->timerEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperTimerEvent(QNetworkDiskCache* self, QTimerEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_TimerEvent_IsBase(true);
+        vqnetworkdiskcache->timerEvent(event);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->timerEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnTimerEvent(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_TimerEvent_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_TimerEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QNetworkDiskCache_ChildEvent(QNetworkDiskCache* self, QChildEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->childEvent(event);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->childEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperChildEvent(QNetworkDiskCache* self, QChildEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_ChildEvent_IsBase(true);
+        vqnetworkdiskcache->childEvent(event);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->childEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnChildEvent(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_ChildEvent_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_ChildEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QNetworkDiskCache_CustomEvent(QNetworkDiskCache* self, QEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->customEvent(event);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->customEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperCustomEvent(QNetworkDiskCache* self, QEvent* event) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_CustomEvent_IsBase(true);
+        vqnetworkdiskcache->customEvent(event);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->customEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnCustomEvent(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_CustomEvent_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_CustomEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QNetworkDiskCache_ConnectNotify(QNetworkDiskCache* self, const QMetaMethod* signal) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->connectNotify(*signal);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->connectNotify(*signal);
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperConnectNotify(QNetworkDiskCache* self, const QMetaMethod* signal) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_ConnectNotify_IsBase(true);
+        vqnetworkdiskcache->connectNotify(*signal);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->connectNotify(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnConnectNotify(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_ConnectNotify_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_ConnectNotify_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QNetworkDiskCache_DisconnectNotify(QNetworkDiskCache* self, const QMetaMethod* signal) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->disconnectNotify(*signal);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->disconnectNotify(*signal);
+    }
+}
+
+// Base class handler implementation
+void QNetworkDiskCache_SuperDisconnectNotify(QNetworkDiskCache* self, const QMetaMethod* signal) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_DisconnectNotify_IsBase(true);
+        vqnetworkdiskcache->disconnectNotify(*signal);
+    } else {
+        ((VirtualQNetworkDiskCache*)self)->disconnectNotify(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnDisconnectNotify(QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = dynamic_cast<VirtualQNetworkDiskCache*>(self);
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_DisconnectNotify_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_DisconnectNotify_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+QObject* QNetworkDiskCache_Sender(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return vqnetworkdiskcache->sender();
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->sender();
+    }
+}
+
+// Base class handler implementation
+QObject* QNetworkDiskCache_SuperSender(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Sender_IsBase(true);
+        return vqnetworkdiskcache->sender();
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->sender();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnSender(const QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Sender_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Sender_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+int QNetworkDiskCache_SenderSignalIndex(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return vqnetworkdiskcache->senderSignalIndex();
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->senderSignalIndex();
+    }
+}
+
+// Base class handler implementation
+int QNetworkDiskCache_SuperSenderSignalIndex(const QNetworkDiskCache* self) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_SenderSignalIndex_IsBase(true);
+        return vqnetworkdiskcache->senderSignalIndex();
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->senderSignalIndex();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnSenderSignalIndex(const QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_SenderSignalIndex_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_SenderSignalIndex_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+int QNetworkDiskCache_Receivers(const QNetworkDiskCache* self, const char* signal) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return vqnetworkdiskcache->receivers(signal);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->receivers(signal);
+    }
+}
+
+// Base class handler implementation
+int QNetworkDiskCache_SuperReceivers(const QNetworkDiskCache* self, const char* signal) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Receivers_IsBase(true);
+        return vqnetworkdiskcache->receivers(signal);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->receivers(signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnReceivers(const QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_Receivers_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_Receivers_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QNetworkDiskCache_IsSignalConnected(const QNetworkDiskCache* self, const QMetaMethod* signal) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        return vqnetworkdiskcache->isSignalConnected(*signal);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->isSignalConnected(*signal);
+    }
+}
+
+// Base class handler implementation
+bool QNetworkDiskCache_SuperIsSignalConnected(const QNetworkDiskCache* self, const QMetaMethod* signal) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_IsSignalConnected_IsBase(true);
+        return vqnetworkdiskcache->isSignalConnected(*signal);
+    } else {
+        return ((VirtualQNetworkDiskCache*)self)->isSignalConnected(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QNetworkDiskCache_OnIsSignalConnected(const QNetworkDiskCache* self, intptr_t slot) {
+    auto* vqnetworkdiskcache = const_cast<VirtualQNetworkDiskCache*>(dynamic_cast<const VirtualQNetworkDiskCache*>(self));
+    if (vqnetworkdiskcache && vqnetworkdiskcache->isVirtualQNetworkDiskCache) {
+        vqnetworkdiskcache->setQNetworkDiskCache_IsSignalConnected_Callback(reinterpret_cast<VirtualQNetworkDiskCache::QNetworkDiskCache_IsSignalConnected_Callback>(slot));
+    }
+}
+
+void QNetworkDiskCache_Delete(QNetworkDiskCache* self) {
+    delete self;
+}

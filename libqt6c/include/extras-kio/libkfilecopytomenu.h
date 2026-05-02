@@ -1,0 +1,1037 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIO_QT6C_LIBKFILECOPYTOMENU_H
+#define SRC_EXTRAS_KIO_QT6C_LIBKFILECOPYTOMENU_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html)
+
+/// k_filecopytomenu_new constructs a new KFileCopyToMenu object.
+///
+/// @param parentWidget QWidget*
+///
+KFileCopyToMenu* k_filecopytomenu_new(void* parentWidget);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// @param self KFileCopyToMenu*
+///
+const QMetaObject* k_filecopytomenu_meta_object(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback const QMetaObject* func()
+///
+void k_filecopytomenu_on_meta_object(void* self, const QMetaObject* (*callback)());
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_meta_object` instead
+///
+#define k_filecopytomenu_qbase_meta_object k_filecopytomenu_super_meta_object
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Base class method implementation
+///
+/// @param self KFileCopyToMenu*
+///
+const QMetaObject* k_filecopytomenu_super_meta_object(void* self);
+
+/// @param self KFileCopyToMenu*
+/// @param param1 const char*
+///
+void* k_filecopytomenu_metacast(void* self, const char* param1);
+
+/// Allows for overriding the related default method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void* func(KFileCopyToMenu* self, const char* param1)
+///
+void k_filecopytomenu_on_metacast(void* self, void* (*callback)(void*, const char*));
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_metacast` instead
+///
+#define k_filecopytomenu_qbase_metacast k_filecopytomenu_super_metacast
+
+/// Base class method implementation
+///
+/// @param self KFileCopyToMenu*
+/// @param param1 const char*
+///
+void* k_filecopytomenu_super_metacast(void* self, const char* param1);
+
+/// @param self KFileCopyToMenu*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_filecopytomenu_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// Allows for overriding the related default method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback int32_t func(KFileCopyToMenu* self, enum QMetaObject__Call param1, int param2, void* param3)
+///
+void k_filecopytomenu_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*));
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_metacall` instead
+///
+#define k_filecopytomenu_qbase_metacall k_filecopytomenu_super_metacall
+
+/// Base class method implementation
+///
+/// @param self KFileCopyToMenu*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_filecopytomenu_super_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+///
+const char* k_filecopytomenu_tr(const char* s);
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html#setUrls)
+///
+/// @param self KFileCopyToMenu*
+/// @param urls libqt_list of QUrl*
+///
+void k_filecopytomenu_set_urls(void* self, libqt_list urls);
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html#setReadOnly)
+///
+/// @param self KFileCopyToMenu*
+/// @param ro bool
+///
+void k_filecopytomenu_set_read_only(void* self, bool ro);
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html#addActionsTo)
+///
+/// @param self KFileCopyToMenu*
+/// @param menu QMenu*
+///
+void k_filecopytomenu_add_actions_to(void* self, void* menu);
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html#setAutoErrorHandlingEnabled)
+///
+/// @param self KFileCopyToMenu*
+/// @param b bool
+///
+void k_filecopytomenu_set_auto_error_handling_enabled(void* self, bool b);
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html#error)
+///
+/// @param self KFileCopyToMenu*
+/// @param errorCode int
+/// @param message const char*
+///
+void k_filecopytomenu_error(void* self, int errorCode, const char* message);
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html#error)
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, int errorCode, const char* message)
+///
+void k_filecopytomenu_on_error(void* self, void (*callback)(void*, int, const char*));
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+///
+const char* k_filecopytomenu_tr2(const char* s, const char* c);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+/// @param n int
+///
+const char* k_filecopytomenu_tr3(const char* s, const char* c, int n);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KFileCopyToMenu*
+///
+const char* k_filecopytomenu_object_name(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setObjectName)
+///
+/// @param self KFileCopyToMenu*
+/// @param name const char*
+///
+void k_filecopytomenu_set_object_name(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWidgetType)
+///
+/// @param self KFileCopyToMenu*
+///
+bool k_filecopytomenu_is_widget_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWindowType)
+///
+/// @param self KFileCopyToMenu*
+///
+bool k_filecopytomenu_is_window_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isQuickItemType)
+///
+/// @param self KFileCopyToMenu*
+///
+bool k_filecopytomenu_is_quick_item_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#signalsBlocked)
+///
+/// @param self KFileCopyToMenu*
+///
+bool k_filecopytomenu_signals_blocked(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#blockSignals)
+///
+/// @param self KFileCopyToMenu*
+/// @param b bool
+///
+bool k_filecopytomenu_block_signals(void* self, bool b);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#thread)
+///
+/// @param self KFileCopyToMenu*
+///
+QThread* k_filecopytomenu_thread(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#moveToThread)
+///
+/// @param self KFileCopyToMenu*
+/// @param thread QThread*
+///
+bool k_filecopytomenu_move_to_thread(void* self, void* thread);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KFileCopyToMenu*
+/// @param interval int
+///
+int32_t k_filecopytomenu_start_timer(void* self, int interval);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KFileCopyToMenu*
+/// @param time int64_t of nanoseconds
+///
+int32_t k_filecopytomenu_start_timer2(void* self, int64_t time);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KFileCopyToMenu*
+/// @param id int
+///
+void k_filecopytomenu_kill_timer(void* self, int id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KFileCopyToMenu*
+/// @param id enum Qt__TimerId
+///
+void k_filecopytomenu_kill_timer2(void* self, int32_t id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#children)
+///
+/// @param self KFileCopyToMenu*
+///
+/// @return libqt_list of QObject*
+///
+libqt_list k_filecopytomenu_children(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setParent)
+///
+/// @param self KFileCopyToMenu*
+/// @param parent QObject*
+///
+void k_filecopytomenu_set_parent(void* self, void* parent);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#installEventFilter)
+///
+/// @param self KFileCopyToMenu*
+/// @param filterObj QObject*
+///
+void k_filecopytomenu_install_event_filter(void* self, void* filterObj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#removeEventFilter)
+///
+/// @param self KFileCopyToMenu*
+/// @param obj QObject*
+///
+void k_filecopytomenu_remove_event_filter(void* self, void* obj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+QMetaObject__Connection* k_filecopytomenu_connect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+///
+QMetaObject__Connection* k_filecopytomenu_connect2(void* sender, void* signal, void* receiver, void* method);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KFileCopyToMenu*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+///
+QMetaObject__Connection* k_filecopytomenu_connect3(void* self, void* sender, const char* signal, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_filecopytomenu_disconnect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param member QMetaMethod*
+///
+bool k_filecopytomenu_disconnect2(void* sender, void* signal, void* receiver, void* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KFileCopyToMenu*
+///
+bool k_filecopytomenu_disconnect3(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KFileCopyToMenu*
+/// @param receiver QObject*
+///
+bool k_filecopytomenu_disconnect4(void* self, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param param1 QMetaObject__Connection*
+///
+bool k_filecopytomenu_disconnect5(void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectTree)
+///
+/// @param self KFileCopyToMenu*
+///
+void k_filecopytomenu_dump_object_tree(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectInfo)
+///
+/// @param self KFileCopyToMenu*
+///
+void k_filecopytomenu_dump_object_info(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setProperty)
+///
+/// @param self KFileCopyToMenu*
+/// @param name const char*
+/// @param value QVariant*
+///
+bool k_filecopytomenu_set_property(void* self, const char* name, void* value);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#property)
+///
+/// @param self KFileCopyToMenu*
+/// @param name const char*
+///
+QVariant* k_filecopytomenu_property(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dynamicPropertyNames)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KFileCopyToMenu*
+///
+const char** k_filecopytomenu_dynamic_property_names(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KFileCopyToMenu*
+///
+QBindingStorage* k_filecopytomenu_binding_storage(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KFileCopyToMenu*
+///
+const QBindingStorage* k_filecopytomenu_binding_storage2(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KFileCopyToMenu*
+///
+void k_filecopytomenu_destroyed(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self)
+///
+void k_filecopytomenu_on_destroyed(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#parent)
+///
+/// @param self KFileCopyToMenu*
+///
+QObject* k_filecopytomenu_parent(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#inherits)
+///
+/// @param self KFileCopyToMenu*
+/// @param classname const char*
+///
+bool k_filecopytomenu_inherits(void* self, const char* classname);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#deleteLater)
+///
+/// @param self KFileCopyToMenu*
+///
+void k_filecopytomenu_delete_later(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KFileCopyToMenu*
+/// @param interval int
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_filecopytomenu_start_timer22(void* self, int interval, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KFileCopyToMenu*
+/// @param time int64_t of nanoseconds
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_filecopytomenu_start_timer23(void* self, int64_t time, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+/// @param param5 enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_filecopytomenu_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_filecopytomenu_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KFileCopyToMenu*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_filecopytomenu_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KFileCopyToMenu*
+/// @param signal const char*
+///
+bool k_filecopytomenu_disconnect1(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KFileCopyToMenu*
+/// @param signal const char*
+/// @param receiver QObject*
+///
+bool k_filecopytomenu_disconnect22(void* self, const char* signal, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KFileCopyToMenu*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_filecopytomenu_disconnect32(void* self, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KFileCopyToMenu*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_filecopytomenu_disconnect23(void* self, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KFileCopyToMenu*
+/// @param param1 QObject*
+///
+void k_filecopytomenu_destroyed1(void* self, void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, QObject* param1)
+///
+void k_filecopytomenu_on_destroyed1(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QEvent*
+///
+bool k_filecopytomenu_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_event` instead
+///
+#define k_filecopytomenu_qbase_event k_filecopytomenu_super_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QEvent*
+///
+bool k_filecopytomenu_super_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback bool func(KFileCopyToMenu* self, QEvent* event)
+///
+void k_filecopytomenu_on_event(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_filecopytomenu_event_filter(void* self, void* watched, void* event);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_event_filter` instead
+///
+#define k_filecopytomenu_qbase_event_filter k_filecopytomenu_super_event_filter
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_filecopytomenu_super_event_filter(void* self, void* watched, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback bool func(KFileCopyToMenu* self, QObject* watched, QEvent* event)
+///
+void k_filecopytomenu_on_event_filter(void* self, bool (*callback)(void*, void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QTimerEvent*
+///
+void k_filecopytomenu_timer_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_timer_event` instead
+///
+#define k_filecopytomenu_qbase_timer_event k_filecopytomenu_super_timer_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QTimerEvent*
+///
+void k_filecopytomenu_super_timer_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, QTimerEvent* event)
+///
+void k_filecopytomenu_on_timer_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QChildEvent*
+///
+void k_filecopytomenu_child_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_child_event` instead
+///
+#define k_filecopytomenu_qbase_child_event k_filecopytomenu_super_child_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QChildEvent*
+///
+void k_filecopytomenu_super_child_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, QChildEvent* event)
+///
+void k_filecopytomenu_on_child_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QEvent*
+///
+void k_filecopytomenu_custom_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_custom_event` instead
+///
+#define k_filecopytomenu_qbase_custom_event k_filecopytomenu_super_custom_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param event QEvent*
+///
+void k_filecopytomenu_super_custom_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, QEvent* event)
+///
+void k_filecopytomenu_on_custom_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal QMetaMethod*
+///
+void k_filecopytomenu_connect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_connect_notify` instead
+///
+#define k_filecopytomenu_qbase_connect_notify k_filecopytomenu_super_connect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal QMetaMethod*
+///
+void k_filecopytomenu_super_connect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, QMetaMethod* signal)
+///
+void k_filecopytomenu_on_connect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal QMetaMethod*
+///
+void k_filecopytomenu_disconnect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_disconnect_notify` instead
+///
+#define k_filecopytomenu_qbase_disconnect_notify k_filecopytomenu_super_disconnect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal QMetaMethod*
+///
+void k_filecopytomenu_super_disconnect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, QMetaMethod* signal)
+///
+void k_filecopytomenu_on_disconnect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+///
+QObject* k_filecopytomenu_sender(void* self);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_sender` instead
+///
+#define k_filecopytomenu_qbase_sender k_filecopytomenu_super_sender
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+///
+QObject* k_filecopytomenu_super_sender(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback QObject* func()
+///
+void k_filecopytomenu_on_sender(void* self, QObject* (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+///
+int32_t k_filecopytomenu_sender_signal_index(void* self);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_sender_signal_index` instead
+///
+#define k_filecopytomenu_qbase_sender_signal_index k_filecopytomenu_super_sender_signal_index
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+///
+int32_t k_filecopytomenu_super_sender_signal_index(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback int32_t func()
+///
+void k_filecopytomenu_on_sender_signal_index(void* self, int32_t (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal const char*
+///
+int32_t k_filecopytomenu_receivers(void* self, const char* signal);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_receivers` instead
+///
+#define k_filecopytomenu_qbase_receivers k_filecopytomenu_super_receivers
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal const char*
+///
+int32_t k_filecopytomenu_super_receivers(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback int32_t func(KFileCopyToMenu* self, const char* signal)
+///
+void k_filecopytomenu_on_receivers(void* self, int32_t (*callback)(void*, const char*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal QMetaMethod*
+///
+bool k_filecopytomenu_is_signal_connected(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_filecopytomenu_super_is_signal_connected` instead
+///
+#define k_filecopytomenu_qbase_is_signal_connected k_filecopytomenu_super_is_signal_connected
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param signal QMetaMethod*
+///
+bool k_filecopytomenu_super_is_signal_connected(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KFileCopyToMenu*
+/// @param callback bool func(KFileCopyToMenu* self, QMetaMethod* signal)
+///
+void k_filecopytomenu_on_is_signal_connected(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectNameChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KFileCopyToMenu*
+/// @param callback void func(KFileCopyToMenu* self, const char* objectName)
+///
+void k_filecopytomenu_on_object_name_changed(void* self, void (*callback)(void*, const char*));
+
+/// [Upstream resources](https://api.kde.org/kfilecopytomenu.html#dtor.KFileCopyToMenu)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self KFileCopyToMenu*
+///
+void k_filecopytomenu_delete(void* self);
+
+#endif

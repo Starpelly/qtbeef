@@ -1,0 +1,89 @@
+#pragma once
+#ifndef SRC_EXTRAS_KSYNTAXHIGHLIGHTINGC_LIBDEFINITIONDOWNLOADER_HPP
+#define SRC_EXTRAS_KSYNTAXHIGHLIGHTINGC_LIBDEFINITIONDOWNLOADER_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_KSyntaxHighlighting__DefinitionDownloader)
+typedef KSyntaxHighlighting::DefinitionDownloader KSyntaxHighlighting__DefinitionDownloader;
+#endif
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_KSyntaxHighlighting__Repository)
+typedef KSyntaxHighlighting::Repository KSyntaxHighlighting__Repository;
+#endif
+#else
+typedef struct KSyntaxHighlighting__DefinitionDownloader KSyntaxHighlighting__DefinitionDownloader;
+typedef struct KSyntaxHighlighting__Repository KSyntaxHighlighting__Repository;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+KSyntaxHighlighting__DefinitionDownloader* KSyntaxHighlighting__DefinitionDownloader_new(KSyntaxHighlighting__Repository* repo);
+KSyntaxHighlighting__DefinitionDownloader* KSyntaxHighlighting__DefinitionDownloader_new2(KSyntaxHighlighting__Repository* repo, QObject* parent);
+QMetaObject* KSyntaxHighlighting__DefinitionDownloader_MetaObject(const KSyntaxHighlighting__DefinitionDownloader* self);
+void* KSyntaxHighlighting__DefinitionDownloader_Metacast(KSyntaxHighlighting__DefinitionDownloader* self, const char* param1);
+int KSyntaxHighlighting__DefinitionDownloader_Metacall(KSyntaxHighlighting__DefinitionDownloader* self, int param1, int param2, void** param3);
+void KSyntaxHighlighting__DefinitionDownloader_Start(KSyntaxHighlighting__DefinitionDownloader* self);
+void KSyntaxHighlighting__DefinitionDownloader_InformationMessage(KSyntaxHighlighting__DefinitionDownloader* self, const libqt_string msg);
+void KSyntaxHighlighting__DefinitionDownloader_Connect_InformationMessage(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void KSyntaxHighlighting__DefinitionDownloader_Done(KSyntaxHighlighting__DefinitionDownloader* self);
+void KSyntaxHighlighting__DefinitionDownloader_Connect_Done(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void KSyntaxHighlighting__DefinitionDownloader_OnMetaObject(const KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+QMetaObject* KSyntaxHighlighting__DefinitionDownloader_SuperMetaObject(const KSyntaxHighlighting__DefinitionDownloader* self);
+void KSyntaxHighlighting__DefinitionDownloader_OnMetacast(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void* KSyntaxHighlighting__DefinitionDownloader_SuperMetacast(KSyntaxHighlighting__DefinitionDownloader* self, const char* param1);
+void KSyntaxHighlighting__DefinitionDownloader_OnMetacall(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+int KSyntaxHighlighting__DefinitionDownloader_SuperMetacall(KSyntaxHighlighting__DefinitionDownloader* self, int param1, int param2, void** param3);
+bool KSyntaxHighlighting__DefinitionDownloader_Event(KSyntaxHighlighting__DefinitionDownloader* self, QEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_OnEvent(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+bool KSyntaxHighlighting__DefinitionDownloader_SuperEvent(KSyntaxHighlighting__DefinitionDownloader* self, QEvent* event);
+bool KSyntaxHighlighting__DefinitionDownloader_EventFilter(KSyntaxHighlighting__DefinitionDownloader* self, QObject* watched, QEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_OnEventFilter(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+bool KSyntaxHighlighting__DefinitionDownloader_SuperEventFilter(KSyntaxHighlighting__DefinitionDownloader* self, QObject* watched, QEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_TimerEvent(KSyntaxHighlighting__DefinitionDownloader* self, QTimerEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_OnTimerEvent(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void KSyntaxHighlighting__DefinitionDownloader_SuperTimerEvent(KSyntaxHighlighting__DefinitionDownloader* self, QTimerEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_ChildEvent(KSyntaxHighlighting__DefinitionDownloader* self, QChildEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_OnChildEvent(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void KSyntaxHighlighting__DefinitionDownloader_SuperChildEvent(KSyntaxHighlighting__DefinitionDownloader* self, QChildEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_CustomEvent(KSyntaxHighlighting__DefinitionDownloader* self, QEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_OnCustomEvent(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void KSyntaxHighlighting__DefinitionDownloader_SuperCustomEvent(KSyntaxHighlighting__DefinitionDownloader* self, QEvent* event);
+void KSyntaxHighlighting__DefinitionDownloader_ConnectNotify(KSyntaxHighlighting__DefinitionDownloader* self, const QMetaMethod* signal);
+void KSyntaxHighlighting__DefinitionDownloader_OnConnectNotify(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void KSyntaxHighlighting__DefinitionDownloader_SuperConnectNotify(KSyntaxHighlighting__DefinitionDownloader* self, const QMetaMethod* signal);
+void KSyntaxHighlighting__DefinitionDownloader_DisconnectNotify(KSyntaxHighlighting__DefinitionDownloader* self, const QMetaMethod* signal);
+void KSyntaxHighlighting__DefinitionDownloader_OnDisconnectNotify(KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+void KSyntaxHighlighting__DefinitionDownloader_SuperDisconnectNotify(KSyntaxHighlighting__DefinitionDownloader* self, const QMetaMethod* signal);
+QObject* KSyntaxHighlighting__DefinitionDownloader_Sender(const KSyntaxHighlighting__DefinitionDownloader* self);
+void KSyntaxHighlighting__DefinitionDownloader_OnSender(const KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+QObject* KSyntaxHighlighting__DefinitionDownloader_SuperSender(const KSyntaxHighlighting__DefinitionDownloader* self);
+int KSyntaxHighlighting__DefinitionDownloader_SenderSignalIndex(const KSyntaxHighlighting__DefinitionDownloader* self);
+void KSyntaxHighlighting__DefinitionDownloader_OnSenderSignalIndex(const KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+int KSyntaxHighlighting__DefinitionDownloader_SuperSenderSignalIndex(const KSyntaxHighlighting__DefinitionDownloader* self);
+int KSyntaxHighlighting__DefinitionDownloader_Receivers(const KSyntaxHighlighting__DefinitionDownloader* self, const char* signal);
+void KSyntaxHighlighting__DefinitionDownloader_OnReceivers(const KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+int KSyntaxHighlighting__DefinitionDownloader_SuperReceivers(const KSyntaxHighlighting__DefinitionDownloader* self, const char* signal);
+bool KSyntaxHighlighting__DefinitionDownloader_IsSignalConnected(const KSyntaxHighlighting__DefinitionDownloader* self, const QMetaMethod* signal);
+void KSyntaxHighlighting__DefinitionDownloader_OnIsSignalConnected(const KSyntaxHighlighting__DefinitionDownloader* self, intptr_t slot);
+bool KSyntaxHighlighting__DefinitionDownloader_SuperIsSignalConnected(const KSyntaxHighlighting__DefinitionDownloader* self, const QMetaMethod* signal);
+void KSyntaxHighlighting__DefinitionDownloader_Delete(KSyntaxHighlighting__DefinitionDownloader* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

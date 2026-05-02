@@ -1,0 +1,12 @@
+FileVersion = 1
+
+[Project]
+Name = "Sandbox"
+StartupObject = "Sandbox.Program"
+
+[Dependencies]
+corlib = "*"
+Qt6 = "*"
+
+[Configs.Debug.Win64]
+LinkDependencies = ["\"C:\\Qt\\6.8.3\\msvc2022_64\\bin\\windeployqt.exe\" \"$(TargetDir)\""]

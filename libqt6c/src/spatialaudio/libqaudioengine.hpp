@@ -1,0 +1,107 @@
+#pragma once
+#ifndef SRC_SPATIALAUDIOC_LIBQAUDIOENGINE_HPP
+#define SRC_SPATIALAUDIOC_LIBQAUDIOENGINE_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QAudioDevice QAudioDevice;
+typedef struct QAudioEngine QAudioEngine;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+QAudioEngine* QAudioEngine_new();
+QAudioEngine* QAudioEngine_new2(QObject* parent);
+QAudioEngine* QAudioEngine_new3(int sampleRate);
+QAudioEngine* QAudioEngine_new4(int sampleRate, QObject* parent);
+QMetaObject* QAudioEngine_MetaObject(const QAudioEngine* self);
+void* QAudioEngine_Metacast(QAudioEngine* self, const char* param1);
+int QAudioEngine_Metacall(QAudioEngine* self, int param1, int param2, void** param3);
+void QAudioEngine_SetOutputMode(QAudioEngine* self, int mode);
+int QAudioEngine_OutputMode(const QAudioEngine* self);
+int QAudioEngine_SampleRate(const QAudioEngine* self);
+void QAudioEngine_SetOutputDevice(QAudioEngine* self, const QAudioDevice* device);
+QAudioDevice* QAudioEngine_OutputDevice(const QAudioEngine* self);
+void QAudioEngine_SetMasterVolume(QAudioEngine* self, float volume);
+float QAudioEngine_MasterVolume(const QAudioEngine* self);
+void QAudioEngine_SetPaused(QAudioEngine* self, bool paused);
+bool QAudioEngine_Paused(const QAudioEngine* self);
+void QAudioEngine_SetRoomEffectsEnabled(QAudioEngine* self, bool enabled);
+bool QAudioEngine_RoomEffectsEnabled(const QAudioEngine* self);
+void QAudioEngine_SetDistanceScale(QAudioEngine* self, float scale);
+float QAudioEngine_DistanceScale(const QAudioEngine* self);
+void QAudioEngine_OutputModeChanged(QAudioEngine* self);
+void QAudioEngine_Connect_OutputModeChanged(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_OutputDeviceChanged(QAudioEngine* self);
+void QAudioEngine_Connect_OutputDeviceChanged(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_MasterVolumeChanged(QAudioEngine* self);
+void QAudioEngine_Connect_MasterVolumeChanged(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_PausedChanged(QAudioEngine* self);
+void QAudioEngine_Connect_PausedChanged(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_DistanceScaleChanged(QAudioEngine* self);
+void QAudioEngine_Connect_DistanceScaleChanged(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_Start(QAudioEngine* self);
+void QAudioEngine_Stop(QAudioEngine* self);
+void QAudioEngine_Pause(QAudioEngine* self);
+void QAudioEngine_Resume(QAudioEngine* self);
+void QAudioEngine_OnMetaObject(const QAudioEngine* self, intptr_t slot);
+QMetaObject* QAudioEngine_SuperMetaObject(const QAudioEngine* self);
+void QAudioEngine_OnMetacast(QAudioEngine* self, intptr_t slot);
+void* QAudioEngine_SuperMetacast(QAudioEngine* self, const char* param1);
+void QAudioEngine_OnMetacall(QAudioEngine* self, intptr_t slot);
+int QAudioEngine_SuperMetacall(QAudioEngine* self, int param1, int param2, void** param3);
+bool QAudioEngine_Event(QAudioEngine* self, QEvent* event);
+void QAudioEngine_OnEvent(QAudioEngine* self, intptr_t slot);
+bool QAudioEngine_SuperEvent(QAudioEngine* self, QEvent* event);
+bool QAudioEngine_EventFilter(QAudioEngine* self, QObject* watched, QEvent* event);
+void QAudioEngine_OnEventFilter(QAudioEngine* self, intptr_t slot);
+bool QAudioEngine_SuperEventFilter(QAudioEngine* self, QObject* watched, QEvent* event);
+void QAudioEngine_TimerEvent(QAudioEngine* self, QTimerEvent* event);
+void QAudioEngine_OnTimerEvent(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_SuperTimerEvent(QAudioEngine* self, QTimerEvent* event);
+void QAudioEngine_ChildEvent(QAudioEngine* self, QChildEvent* event);
+void QAudioEngine_OnChildEvent(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_SuperChildEvent(QAudioEngine* self, QChildEvent* event);
+void QAudioEngine_CustomEvent(QAudioEngine* self, QEvent* event);
+void QAudioEngine_OnCustomEvent(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_SuperCustomEvent(QAudioEngine* self, QEvent* event);
+void QAudioEngine_ConnectNotify(QAudioEngine* self, const QMetaMethod* signal);
+void QAudioEngine_OnConnectNotify(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_SuperConnectNotify(QAudioEngine* self, const QMetaMethod* signal);
+void QAudioEngine_DisconnectNotify(QAudioEngine* self, const QMetaMethod* signal);
+void QAudioEngine_OnDisconnectNotify(QAudioEngine* self, intptr_t slot);
+void QAudioEngine_SuperDisconnectNotify(QAudioEngine* self, const QMetaMethod* signal);
+QObject* QAudioEngine_Sender(const QAudioEngine* self);
+void QAudioEngine_OnSender(const QAudioEngine* self, intptr_t slot);
+QObject* QAudioEngine_SuperSender(const QAudioEngine* self);
+int QAudioEngine_SenderSignalIndex(const QAudioEngine* self);
+void QAudioEngine_OnSenderSignalIndex(const QAudioEngine* self, intptr_t slot);
+int QAudioEngine_SuperSenderSignalIndex(const QAudioEngine* self);
+int QAudioEngine_Receivers(const QAudioEngine* self, const char* signal);
+void QAudioEngine_OnReceivers(const QAudioEngine* self, intptr_t slot);
+int QAudioEngine_SuperReceivers(const QAudioEngine* self, const char* signal);
+bool QAudioEngine_IsSignalConnected(const QAudioEngine* self, const QMetaMethod* signal);
+void QAudioEngine_OnIsSignalConnected(const QAudioEngine* self, intptr_t slot);
+bool QAudioEngine_SuperIsSignalConnected(const QAudioEngine* self, const QMetaMethod* signal);
+void QAudioEngine_Delete(QAudioEngine* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

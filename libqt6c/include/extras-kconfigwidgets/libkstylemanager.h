@@ -1,0 +1,22 @@
+#pragma once
+#ifndef SRC_EXTRAS_KCONFIGWIDGETS_QT6C_LIBKSTYLEMANAGER_H
+#define SRC_EXTRAS_KCONFIGWIDGETS_QT6C_LIBKSTYLEMANAGER_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kstylemanager.html)
+
+/// [Upstream resources](https://api.kde.org/kstylemanager.html#initStyle)
+///
+void k_stylemanager_init_style();
+
+/// [Upstream resources](https://api.kde.org/kstylemanager.html#createConfigureAction)
+///
+/// @param param1 QObject*
+///
+QAction* k_stylemanager_create_configure_action(void* param1);
+#endif

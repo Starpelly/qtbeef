@@ -1,0 +1,575 @@
+#include "libqcoreevent.hpp"
+#include "libqcolor.hpp"
+#include "libqfont.hpp"
+#include "libqmetaobject.hpp"
+#include "libqobjectdefs.hpp"
+#include "libqobject.hpp"
+#include "libqtextobject.hpp"
+#include "libqtextformat.hpp"
+#include "libqtextdocument.hpp"
+#include "libqsyntaxhighlighter.hpp"
+#include "libqsyntaxhighlighter.h"
+
+QSyntaxHighlighter* q_syntaxhighlighter_new(void* parent) {
+    return QSyntaxHighlighter_new((QObject*)parent);
+}
+
+QSyntaxHighlighter* q_syntaxhighlighter_new2(void* parent) {
+    return QSyntaxHighlighter_new2((QTextDocument*)parent);
+}
+
+const QMetaObject* q_syntaxhighlighter_meta_object(void* self) {
+    return QSyntaxHighlighter_MetaObject((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    QSyntaxHighlighter_OnMetaObject((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+const QMetaObject* q_syntaxhighlighter_super_meta_object(void* self) {
+    return QSyntaxHighlighter_SuperMetaObject((QSyntaxHighlighter*)self);
+}
+
+void* q_syntaxhighlighter_metacast(void* self, const char* param1) {
+    return QSyntaxHighlighter_Metacast((QSyntaxHighlighter*)self, param1);
+}
+
+void q_syntaxhighlighter_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    QSyntaxHighlighter_OnMetacast((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void* q_syntaxhighlighter_super_metacast(void* self, const char* param1) {
+    return QSyntaxHighlighter_SuperMetacast((QSyntaxHighlighter*)self, param1);
+}
+
+int32_t q_syntaxhighlighter_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QSyntaxHighlighter_Metacall((QSyntaxHighlighter*)self, param1, param2, param3);
+}
+
+void q_syntaxhighlighter_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    QSyntaxHighlighter_OnMetacall((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+int32_t q_syntaxhighlighter_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QSyntaxHighlighter_SuperMetacall((QSyntaxHighlighter*)self, param1, param2, param3);
+}
+
+const char* q_syntaxhighlighter_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_syntaxhighlighter_set_document(void* self, void* doc) {
+    QSyntaxHighlighter_SetDocument((QSyntaxHighlighter*)self, (QTextDocument*)doc);
+}
+
+QTextDocument* q_syntaxhighlighter_document(void* self) {
+    return QSyntaxHighlighter_Document((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_rehighlight(void* self) {
+    QSyntaxHighlighter_Rehighlight((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_rehighlight_block(void* self, void* block) {
+    QSyntaxHighlighter_RehighlightBlock((QSyntaxHighlighter*)self, (QTextBlock*)block);
+}
+
+void q_syntaxhighlighter_highlight_block(void* self, const char* text) {
+    QSyntaxHighlighter_HighlightBlock((QSyntaxHighlighter*)self, qstring(text));
+}
+
+void q_syntaxhighlighter_on_highlight_block(void* self, void (*callback)(void*, const char*)) {
+    QSyntaxHighlighter_OnHighlightBlock((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_super_highlight_block(void* self, const char* text) {
+    QSyntaxHighlighter_SuperHighlightBlock((QSyntaxHighlighter*)self, qstring(text));
+}
+
+void q_syntaxhighlighter_set_format(void* self, int start, int count, void* format) {
+    QSyntaxHighlighter_SetFormat((QSyntaxHighlighter*)self, start, count, (QTextCharFormat*)format);
+}
+
+void q_syntaxhighlighter_on_set_format(void* self, void (*callback)(void*, int, int, void*)) {
+    QSyntaxHighlighter_OnSetFormat((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_super_set_format(void* self, int start, int count, void* format) {
+    QSyntaxHighlighter_SuperSetFormat((QSyntaxHighlighter*)self, start, count, (QTextCharFormat*)format);
+}
+
+void q_syntaxhighlighter_set_format2(void* self, int start, int count, void* color) {
+    QSyntaxHighlighter_SetFormat2((QSyntaxHighlighter*)self, start, count, (QColor*)color);
+}
+
+void q_syntaxhighlighter_on_set_format2(void* self, void (*callback)(void*, int, int, void*)) {
+    QSyntaxHighlighter_OnSetFormat2((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_super_set_format2(void* self, int start, int count, void* color) {
+    QSyntaxHighlighter_SuperSetFormat2((QSyntaxHighlighter*)self, start, count, (QColor*)color);
+}
+
+void q_syntaxhighlighter_set_format3(void* self, int start, int count, void* font) {
+    QSyntaxHighlighter_SetFormat3((QSyntaxHighlighter*)self, start, count, (QFont*)font);
+}
+
+void q_syntaxhighlighter_on_set_format3(void* self, void (*callback)(void*, int, int, void*)) {
+    QSyntaxHighlighter_OnSetFormat3((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_super_set_format3(void* self, int start, int count, void* font) {
+    QSyntaxHighlighter_SuperSetFormat3((QSyntaxHighlighter*)self, start, count, (QFont*)font);
+}
+
+QTextCharFormat* q_syntaxhighlighter_format(void* self, int pos) {
+    return QSyntaxHighlighter_Format((QSyntaxHighlighter*)self, pos);
+}
+
+void q_syntaxhighlighter_on_format(void* self, QTextCharFormat* (*callback)(void*, int)) {
+    QSyntaxHighlighter_OnFormat((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+QTextCharFormat* q_syntaxhighlighter_super_format(void* self, int pos) {
+    return QSyntaxHighlighter_SuperFormat((QSyntaxHighlighter*)self, pos);
+}
+
+int32_t q_syntaxhighlighter_previous_block_state(void* self) {
+    return QSyntaxHighlighter_PreviousBlockState((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_on_previous_block_state(void* self, int32_t (*callback)()) {
+    QSyntaxHighlighter_OnPreviousBlockState((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+int32_t q_syntaxhighlighter_super_previous_block_state(void* self) {
+    return QSyntaxHighlighter_SuperPreviousBlockState((QSyntaxHighlighter*)self);
+}
+
+int32_t q_syntaxhighlighter_current_block_state(void* self) {
+    return QSyntaxHighlighter_CurrentBlockState((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_on_current_block_state(void* self, int32_t (*callback)()) {
+    QSyntaxHighlighter_OnCurrentBlockState((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+int32_t q_syntaxhighlighter_super_current_block_state(void* self) {
+    return QSyntaxHighlighter_SuperCurrentBlockState((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_set_current_block_state(void* self, int newState) {
+    QSyntaxHighlighter_SetCurrentBlockState((QSyntaxHighlighter*)self, newState);
+}
+
+void q_syntaxhighlighter_on_set_current_block_state(void* self, void (*callback)(void*, int)) {
+    QSyntaxHighlighter_OnSetCurrentBlockState((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_super_set_current_block_state(void* self, int newState) {
+    QSyntaxHighlighter_SuperSetCurrentBlockState((QSyntaxHighlighter*)self, newState);
+}
+
+void q_syntaxhighlighter_set_current_block_user_data(void* self, void* data) {
+    QSyntaxHighlighter_SetCurrentBlockUserData((QSyntaxHighlighter*)self, (QTextBlockUserData*)data);
+}
+
+void q_syntaxhighlighter_on_set_current_block_user_data(void* self, void (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnSetCurrentBlockUserData((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_super_set_current_block_user_data(void* self, void* data) {
+    QSyntaxHighlighter_SuperSetCurrentBlockUserData((QSyntaxHighlighter*)self, (QTextBlockUserData*)data);
+}
+
+QTextBlockUserData* q_syntaxhighlighter_current_block_user_data(void* self) {
+    return QSyntaxHighlighter_CurrentBlockUserData((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_on_current_block_user_data(void* self, QTextBlockUserData* (*callback)()) {
+    QSyntaxHighlighter_OnCurrentBlockUserData((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+QTextBlockUserData* q_syntaxhighlighter_super_current_block_user_data(void* self) {
+    return QSyntaxHighlighter_SuperCurrentBlockUserData((QSyntaxHighlighter*)self);
+}
+
+QTextBlock* q_syntaxhighlighter_current_block(void* self) {
+    return QSyntaxHighlighter_CurrentBlock((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_on_current_block(void* self, QTextBlock* (*callback)()) {
+    QSyntaxHighlighter_OnCurrentBlock((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+QTextBlock* q_syntaxhighlighter_super_current_block(void* self) {
+    return QSyntaxHighlighter_SuperCurrentBlock((QSyntaxHighlighter*)self);
+}
+
+const char* q_syntaxhighlighter_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_syntaxhighlighter_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_syntaxhighlighter_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_syntaxhighlighter_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool q_syntaxhighlighter_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool q_syntaxhighlighter_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool q_syntaxhighlighter_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool q_syntaxhighlighter_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool q_syntaxhighlighter_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* q_syntaxhighlighter_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool q_syntaxhighlighter_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t q_syntaxhighlighter_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t q_syntaxhighlighter_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void q_syntaxhighlighter_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void q_syntaxhighlighter_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ q_syntaxhighlighter_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void q_syntaxhighlighter_set_parent(void* self, void* parent) {
+    QObject_SetParent((QObject*)self, (QObject*)parent);
+}
+
+void q_syntaxhighlighter_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void q_syntaxhighlighter_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* q_syntaxhighlighter_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* q_syntaxhighlighter_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* q_syntaxhighlighter_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool q_syntaxhighlighter_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool q_syntaxhighlighter_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool q_syntaxhighlighter_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool q_syntaxhighlighter_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool q_syntaxhighlighter_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void q_syntaxhighlighter_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void q_syntaxhighlighter_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool q_syntaxhighlighter_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* q_syntaxhighlighter_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** q_syntaxhighlighter_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_syntaxhighlighter_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* q_syntaxhighlighter_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* q_syntaxhighlighter_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void q_syntaxhighlighter_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void q_syntaxhighlighter_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* q_syntaxhighlighter_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool q_syntaxhighlighter_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void q_syntaxhighlighter_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t q_syntaxhighlighter_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t q_syntaxhighlighter_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* q_syntaxhighlighter_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* q_syntaxhighlighter_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* q_syntaxhighlighter_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool q_syntaxhighlighter_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool q_syntaxhighlighter_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool q_syntaxhighlighter_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool q_syntaxhighlighter_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void q_syntaxhighlighter_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void q_syntaxhighlighter_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+bool q_syntaxhighlighter_event(void* self, void* event) {
+    return QSyntaxHighlighter_Event((QSyntaxHighlighter*)self, (QEvent*)event);
+}
+
+bool q_syntaxhighlighter_super_event(void* self, void* event) {
+    return QSyntaxHighlighter_SuperEvent((QSyntaxHighlighter*)self, (QEvent*)event);
+}
+
+void q_syntaxhighlighter_on_event(void* self, bool (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnEvent((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+bool q_syntaxhighlighter_event_filter(void* self, void* watched, void* event) {
+    return QSyntaxHighlighter_EventFilter((QSyntaxHighlighter*)self, (QObject*)watched, (QEvent*)event);
+}
+
+bool q_syntaxhighlighter_super_event_filter(void* self, void* watched, void* event) {
+    return QSyntaxHighlighter_SuperEventFilter((QSyntaxHighlighter*)self, (QObject*)watched, (QEvent*)event);
+}
+
+void q_syntaxhighlighter_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    QSyntaxHighlighter_OnEventFilter((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_timer_event(void* self, void* event) {
+    QSyntaxHighlighter_TimerEvent((QSyntaxHighlighter*)self, (QTimerEvent*)event);
+}
+
+void q_syntaxhighlighter_super_timer_event(void* self, void* event) {
+    QSyntaxHighlighter_SuperTimerEvent((QSyntaxHighlighter*)self, (QTimerEvent*)event);
+}
+
+void q_syntaxhighlighter_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnTimerEvent((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_child_event(void* self, void* event) {
+    QSyntaxHighlighter_ChildEvent((QSyntaxHighlighter*)self, (QChildEvent*)event);
+}
+
+void q_syntaxhighlighter_super_child_event(void* self, void* event) {
+    QSyntaxHighlighter_SuperChildEvent((QSyntaxHighlighter*)self, (QChildEvent*)event);
+}
+
+void q_syntaxhighlighter_on_child_event(void* self, void (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnChildEvent((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_custom_event(void* self, void* event) {
+    QSyntaxHighlighter_CustomEvent((QSyntaxHighlighter*)self, (QEvent*)event);
+}
+
+void q_syntaxhighlighter_super_custom_event(void* self, void* event) {
+    QSyntaxHighlighter_SuperCustomEvent((QSyntaxHighlighter*)self, (QEvent*)event);
+}
+
+void q_syntaxhighlighter_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnCustomEvent((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_connect_notify(void* self, void* signal) {
+    QSyntaxHighlighter_ConnectNotify((QSyntaxHighlighter*)self, (QMetaMethod*)signal);
+}
+
+void q_syntaxhighlighter_super_connect_notify(void* self, void* signal) {
+    QSyntaxHighlighter_SuperConnectNotify((QSyntaxHighlighter*)self, (QMetaMethod*)signal);
+}
+
+void q_syntaxhighlighter_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnConnectNotify((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_disconnect_notify(void* self, void* signal) {
+    QSyntaxHighlighter_DisconnectNotify((QSyntaxHighlighter*)self, (QMetaMethod*)signal);
+}
+
+void q_syntaxhighlighter_super_disconnect_notify(void* self, void* signal) {
+    QSyntaxHighlighter_SuperDisconnectNotify((QSyntaxHighlighter*)self, (QMetaMethod*)signal);
+}
+
+void q_syntaxhighlighter_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnDisconnectNotify((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+QObject* q_syntaxhighlighter_sender(void* self) {
+    return QSyntaxHighlighter_Sender((QSyntaxHighlighter*)self);
+}
+
+QObject* q_syntaxhighlighter_super_sender(void* self) {
+    return QSyntaxHighlighter_SuperSender((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_on_sender(void* self, QObject* (*callback)()) {
+    QSyntaxHighlighter_OnSender((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+int32_t q_syntaxhighlighter_sender_signal_index(void* self) {
+    return QSyntaxHighlighter_SenderSignalIndex((QSyntaxHighlighter*)self);
+}
+
+int32_t q_syntaxhighlighter_super_sender_signal_index(void* self) {
+    return QSyntaxHighlighter_SuperSenderSignalIndex((QSyntaxHighlighter*)self);
+}
+
+void q_syntaxhighlighter_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    QSyntaxHighlighter_OnSenderSignalIndex((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+int32_t q_syntaxhighlighter_receivers(void* self, const char* signal) {
+    return QSyntaxHighlighter_Receivers((QSyntaxHighlighter*)self, signal);
+}
+
+int32_t q_syntaxhighlighter_super_receivers(void* self, const char* signal) {
+    return QSyntaxHighlighter_SuperReceivers((QSyntaxHighlighter*)self, signal);
+}
+
+void q_syntaxhighlighter_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    QSyntaxHighlighter_OnReceivers((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+bool q_syntaxhighlighter_is_signal_connected(void* self, void* signal) {
+    return QSyntaxHighlighter_IsSignalConnected((QSyntaxHighlighter*)self, (QMetaMethod*)signal);
+}
+
+bool q_syntaxhighlighter_super_is_signal_connected(void* self, void* signal) {
+    return QSyntaxHighlighter_SuperIsSignalConnected((QSyntaxHighlighter*)self, (QMetaMethod*)signal);
+}
+
+void q_syntaxhighlighter_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    QSyntaxHighlighter_OnIsSignalConnected((QSyntaxHighlighter*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void q_syntaxhighlighter_delete(void* self) {
+    QSyntaxHighlighter_Delete((QSyntaxHighlighter*)(self));
+}

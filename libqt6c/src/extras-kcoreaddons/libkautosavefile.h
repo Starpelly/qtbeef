@@ -1,0 +1,2622 @@
+#pragma once
+#ifndef SRC_EXTRAS_KCOREADDONS_QT6C_LIBKAUTOSAVEFILE_H
+#define SRC_EXTRAS_KCOREADDONS_QT6C_LIBKAUTOSAVEFILE_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html)
+
+/// k_autosavefile_new constructs a new KAutoSaveFile object.
+///
+/// @param filename QUrl*
+///
+KAutoSaveFile* k_autosavefile_new(void* filename);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html)
+
+/// k_autosavefile_new2 constructs a new KAutoSaveFile object.
+///
+KAutoSaveFile* k_autosavefile_new2();
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html)
+
+/// k_autosavefile_new3 constructs a new KAutoSaveFile object.
+///
+/// @param filename QUrl*
+/// @param parent QObject*
+///
+KAutoSaveFile* k_autosavefile_new3(void* filename, void* parent);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html)
+
+/// k_autosavefile_new4 constructs a new KAutoSaveFile object.
+///
+/// @param parent QObject*
+///
+KAutoSaveFile* k_autosavefile_new4(void* parent);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// @param self KAutoSaveFile*
+///
+const QMetaObject* k_autosavefile_meta_object(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KAutoSaveFile*
+/// @param callback const QMetaObject* func()
+///
+void k_autosavefile_on_meta_object(void* self, const QMetaObject* (*callback)());
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_meta_object` instead
+///
+#define k_autosavefile_qbase_meta_object k_autosavefile_super_meta_object
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Base class method implementation
+///
+/// @param self KAutoSaveFile*
+///
+const QMetaObject* k_autosavefile_super_meta_object(void* self);
+
+/// @param self KAutoSaveFile*
+/// @param param1 const char*
+///
+void* k_autosavefile_metacast(void* self, const char* param1);
+
+/// Allows for overriding the related default method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void* func(KAutoSaveFile* self, const char* param1)
+///
+void k_autosavefile_on_metacast(void* self, void* (*callback)(void*, const char*));
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_metacast` instead
+///
+#define k_autosavefile_qbase_metacast k_autosavefile_super_metacast
+
+/// Base class method implementation
+///
+/// @param self KAutoSaveFile*
+/// @param param1 const char*
+///
+void* k_autosavefile_super_metacast(void* self, const char* param1);
+
+/// @param self KAutoSaveFile*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_autosavefile_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// Allows for overriding the related default method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int32_t func(KAutoSaveFile* self, enum QMetaObject__Call param1, int param2, void* param3)
+///
+void k_autosavefile_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*));
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_metacall` instead
+///
+#define k_autosavefile_qbase_metacall k_autosavefile_super_metacall
+
+/// Base class method implementation
+///
+/// @param self KAutoSaveFile*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_autosavefile_super_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+///
+const char* k_autosavefile_tr(const char* s);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#managedFile)
+///
+/// @param self KAutoSaveFile*
+///
+QUrl* k_autosavefile_managed_file(void* self);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#setManagedFile)
+///
+/// @param self KAutoSaveFile*
+/// @param filename QUrl*
+///
+void k_autosavefile_set_managed_file(void* self, void* filename);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#releaseLock)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_release_lock(void* self);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#releaseLock)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func()
+///
+void k_autosavefile_on_release_lock(void* self, void (*callback)());
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_release_lock` instead
+///
+#define k_autosavefile_qbase_release_lock k_autosavefile_super_release_lock
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#releaseLock)
+///
+/// Base class method implementation
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_super_release_lock(void* self);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#open)
+///
+/// @param self KAutoSaveFile*
+/// @param openmode flag of enum QIODeviceBase__OpenModeFlag
+///
+bool k_autosavefile_open(void* self, int32_t openmode);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#open)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, flag of enum QIODeviceBase__OpenModeFlag openmode)
+///
+void k_autosavefile_on_open(void* self, bool (*callback)(void*, int32_t));
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_open` instead
+///
+#define k_autosavefile_qbase_open k_autosavefile_super_open
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#open)
+///
+/// Base class method implementation
+///
+/// @param self KAutoSaveFile*
+/// @param openmode flag of enum QIODeviceBase__OpenModeFlag
+///
+bool k_autosavefile_super_open(void* self, int32_t openmode);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#staleFiles)
+///
+/// @param url QUrl*
+///
+/// @return libqt_list of KAutoSaveFile*
+///
+libqt_list k_autosavefile_stale_files(void* url);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#allStaleFiles)
+///
+/// @return libqt_list of KAutoSaveFile*
+///
+libqt_list k_autosavefile_all_stale_files();
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+///
+const char* k_autosavefile_tr2(const char* s, const char* c);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+/// @param n int
+///
+const char* k_autosavefile_tr3(const char* s, const char* c, int n);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#staleFiles)
+///
+/// @param url QUrl*
+/// @param applicationName const char*
+///
+/// @return libqt_list of KAutoSaveFile*
+///
+libqt_list k_autosavefile_stale_files2(void* url, const char* applicationName);
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#allStaleFiles)
+///
+/// @param applicationName const char*
+///
+/// @return libqt_list of KAutoSaveFile*
+///
+libqt_list k_autosavefile_all_stale_files1(const char* applicationName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#setFileName)
+///
+/// @param self KAutoSaveFile*
+/// @param name const char*
+///
+void k_autosavefile_set_file_name(void* self, const char* name);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#encodeName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param fileName const char*
+///
+char* k_autosavefile_encode_name(const char* fileName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#decodeName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param localFileName char*
+///
+const char* k_autosavefile_decode_name(char* localFileName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#decodeName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param localFileName const char*
+///
+const char* k_autosavefile_decode_name2(const char* localFileName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#exists)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_exists(void* self);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#exists)
+///
+/// @param fileName const char*
+///
+bool k_autosavefile_exists2(const char* fileName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#symLinkTarget)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KAutoSaveFile*
+///
+const char* k_autosavefile_sym_link_target(void* self);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#symLinkTarget)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param fileName const char*
+///
+const char* k_autosavefile_sym_link_target2(const char* fileName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#remove)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_remove(void* self);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#remove)
+///
+/// @param fileName const char*
+///
+bool k_autosavefile_remove2(const char* fileName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#moveToTrash)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_move_to_trash(void* self);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#moveToTrash)
+///
+/// @param fileName const char*
+///
+bool k_autosavefile_move_to_trash2(const char* fileName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#rename)
+///
+/// @param self KAutoSaveFile*
+/// @param newName const char*
+///
+bool k_autosavefile_rename(void* self, const char* newName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#rename)
+///
+/// @param oldName const char*
+/// @param newName const char*
+///
+bool k_autosavefile_rename2(const char* oldName, const char* newName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#link)
+///
+/// @param self KAutoSaveFile*
+/// @param newName const char*
+///
+bool k_autosavefile_link(void* self, const char* newName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#link)
+///
+/// @param fileName const char*
+/// @param newName const char*
+///
+bool k_autosavefile_link2(const char* fileName, const char* newName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#copy)
+///
+/// @param self KAutoSaveFile*
+/// @param newName const char*
+///
+bool k_autosavefile_copy(void* self, const char* newName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#copy)
+///
+/// @param fileName const char*
+/// @param newName const char*
+///
+bool k_autosavefile_copy2(const char* fileName, const char* newName);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#open)
+///
+/// @param self KAutoSaveFile*
+/// @param flags flag of enum QIODeviceBase__OpenModeFlag
+/// @param permissions flag of enum QFileDevice__Permission
+///
+bool k_autosavefile_open2(void* self, int32_t flags, int32_t permissions);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#open)
+///
+/// @param self KAutoSaveFile*
+/// @param fd int
+/// @param ioFlags flag of enum QIODeviceBase__OpenModeFlag
+///
+bool k_autosavefile_open4(void* self, int fd, int32_t ioFlags);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#resize)
+///
+/// @param filename const char*
+/// @param sz int64_t
+///
+bool k_autosavefile_resize2(const char* filename, int64_t sz);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#permissions)
+///
+/// @param filename const char*
+///
+/// @return flag of enum QFileDevice__Permission
+///
+int32_t k_autosavefile_permissions2(const char* filename);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#setPermissions)
+///
+/// @param filename const char*
+/// @param permissionSpec flag of enum QFileDevice__Permission
+///
+bool k_autosavefile_set_permissions2(const char* filename, int32_t permissionSpec);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#open)
+///
+/// @param self KAutoSaveFile*
+/// @param fd int
+/// @param ioFlags flag of enum QIODeviceBase__OpenModeFlag
+/// @param handleFlags flag of enum QFileDevice__FileHandleFlag
+///
+bool k_autosavefile_open33(void* self, int fd, int32_t ioFlags, int32_t handleFlags);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#error)
+///
+/// @param self KAutoSaveFile*
+///
+/// @return enum QFileDevice__FileError
+///
+int32_t k_autosavefile_error(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#unsetError)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_unset_error(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#handle)
+///
+/// @param self KAutoSaveFile*
+///
+int32_t k_autosavefile_handle(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#flush)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_flush(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#map)
+///
+/// @param self KAutoSaveFile*
+/// @param offset int64_t
+/// @param size int64_t
+///
+unsigned char* k_autosavefile_map(void* self, int64_t offset, int64_t size);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#unmap)
+///
+/// @param self KAutoSaveFile*
+/// @param address unsigned char*
+///
+bool k_autosavefile_unmap(void* self, unsigned char* address);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#fileTime)
+///
+/// @param self KAutoSaveFile*
+/// @param time enum QFileDevice__FileTime
+///
+QDateTime* k_autosavefile_file_time(void* self, int32_t time);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#setFileTime)
+///
+/// @param self KAutoSaveFile*
+/// @param newDate QDateTime*
+/// @param fileTime enum QFileDevice__FileTime
+///
+bool k_autosavefile_set_file_time(void* self, void* newDate, int32_t fileTime);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#map)
+///
+/// @param self KAutoSaveFile*
+/// @param offset int64_t
+/// @param size int64_t
+/// @param flags flag of enum QFileDevice__MemoryMapFlag
+///
+unsigned char* k_autosavefile_map3(void* self, int64_t offset, int64_t size, int32_t flags);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#openMode)
+///
+/// @param self KAutoSaveFile*
+///
+/// @return flag of enum QIODeviceBase__OpenModeFlag
+///
+int32_t k_autosavefile_open_mode(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setTextModeEnabled)
+///
+/// @param self KAutoSaveFile*
+/// @param enabled bool
+///
+void k_autosavefile_set_text_mode_enabled(void* self, bool enabled);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#isTextModeEnabled)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_text_mode_enabled(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#isOpen)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_open(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#isReadable)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_readable(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#isWritable)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_writable(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readChannelCount)
+///
+/// @param self KAutoSaveFile*
+///
+int32_t k_autosavefile_read_channel_count(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#writeChannelCount)
+///
+/// @param self KAutoSaveFile*
+///
+int32_t k_autosavefile_write_channel_count(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#currentReadChannel)
+///
+/// @param self KAutoSaveFile*
+///
+int32_t k_autosavefile_current_read_channel(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setCurrentReadChannel)
+///
+/// @param self KAutoSaveFile*
+/// @param channel int
+///
+void k_autosavefile_set_current_read_channel(void* self, int channel);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#currentWriteChannel)
+///
+/// @param self KAutoSaveFile*
+///
+int32_t k_autosavefile_current_write_channel(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setCurrentWriteChannel)
+///
+/// @param self KAutoSaveFile*
+/// @param channel int
+///
+void k_autosavefile_set_current_write_channel(void* self, int channel);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#read)
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+/// @param maxlen int64_t
+///
+int64_t k_autosavefile_read(void* self, char* data, int64_t maxlen);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#read)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KAutoSaveFile*
+/// @param maxlen int64_t
+///
+char* k_autosavefile_read2(void* self, int64_t maxlen);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readAll)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KAutoSaveFile*
+///
+char* k_autosavefile_read_all(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readLine)
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+/// @param maxlen int64_t
+///
+int64_t k_autosavefile_read_line(void* self, char* data, int64_t maxlen);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readLine)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KAutoSaveFile*
+///
+char* k_autosavefile_read_line2(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#startTransaction)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_start_transaction(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#commitTransaction)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_commit_transaction(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#rollbackTransaction)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_rollback_transaction(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#isTransactionStarted)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_transaction_started(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#write)
+///
+/// @param self KAutoSaveFile*
+/// @param data const char*
+/// @param lenVal int64_t
+///
+int64_t k_autosavefile_write(void* self, const char* data, int64_t lenVal);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#write)
+///
+/// @param self KAutoSaveFile*
+/// @param data const char*
+///
+int64_t k_autosavefile_write2(void* self, const char* data);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#write)
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+///
+int64_t k_autosavefile_write3(void* self, char* data);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#peek)
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+/// @param maxlen int64_t
+///
+int64_t k_autosavefile_peek(void* self, char* data, int64_t maxlen);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#peek)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KAutoSaveFile*
+/// @param maxlen int64_t
+///
+char* k_autosavefile_peek2(void* self, int64_t maxlen);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#skip)
+///
+/// @param self KAutoSaveFile*
+/// @param maxSize int64_t
+///
+int64_t k_autosavefile_skip(void* self, int64_t maxSize);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#ungetChar)
+///
+/// @param self KAutoSaveFile*
+/// @param c char
+///
+void k_autosavefile_unget_char(void* self, char c);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#putChar)
+///
+/// @param self KAutoSaveFile*
+/// @param c char
+///
+bool k_autosavefile_put_char(void* self, char c);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#getChar)
+///
+/// @param self KAutoSaveFile*
+/// @param c char*
+///
+bool k_autosavefile_get_char(void* self, char* c);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#errorString)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KAutoSaveFile*
+///
+const char* k_autosavefile_error_string(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readyRead)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_ready_read(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readyRead)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self)
+///
+void k_autosavefile_on_ready_read(void* self, void (*callback)(void*));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#channelReadyRead)
+///
+/// @param self KAutoSaveFile*
+/// @param channel int
+///
+void k_autosavefile_channel_ready_read(void* self, int channel);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#channelReadyRead)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, int channel)
+///
+void k_autosavefile_on_channel_ready_read(void* self, void (*callback)(void*, int));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesWritten)
+///
+/// @param self KAutoSaveFile*
+/// @param bytes int64_t
+///
+void k_autosavefile_bytes_written(void* self, int64_t bytes);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesWritten)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, int64_t bytes)
+///
+void k_autosavefile_on_bytes_written(void* self, void (*callback)(void*, int64_t));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#channelBytesWritten)
+///
+/// @param self KAutoSaveFile*
+/// @param channel int
+/// @param bytes int64_t
+///
+void k_autosavefile_channel_bytes_written(void* self, int channel, int64_t bytes);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#channelBytesWritten)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, int channel, int64_t bytes)
+///
+void k_autosavefile_on_channel_bytes_written(void* self, void (*callback)(void*, int, int64_t));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#aboutToClose)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_about_to_close(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#aboutToClose)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self)
+///
+void k_autosavefile_on_about_to_close(void* self, void (*callback)(void*));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readChannelFinished)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_read_channel_finished(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readChannelFinished)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self)
+///
+void k_autosavefile_on_read_channel_finished(void* self, void (*callback)(void*));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#readLine)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KAutoSaveFile*
+/// @param maxlen int64_t
+///
+char* k_autosavefile_read_line1(void* self, int64_t maxlen);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KAutoSaveFile*
+///
+const char* k_autosavefile_object_name(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setObjectName)
+///
+/// @param self KAutoSaveFile*
+/// @param name const char*
+///
+void k_autosavefile_set_object_name(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWidgetType)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_widget_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWindowType)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_window_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isQuickItemType)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_quick_item_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#signalsBlocked)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_signals_blocked(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#blockSignals)
+///
+/// @param self KAutoSaveFile*
+/// @param b bool
+///
+bool k_autosavefile_block_signals(void* self, bool b);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#thread)
+///
+/// @param self KAutoSaveFile*
+///
+QThread* k_autosavefile_thread(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#moveToThread)
+///
+/// @param self KAutoSaveFile*
+/// @param thread QThread*
+///
+bool k_autosavefile_move_to_thread(void* self, void* thread);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KAutoSaveFile*
+/// @param interval int
+///
+int32_t k_autosavefile_start_timer(void* self, int interval);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KAutoSaveFile*
+/// @param time int64_t of nanoseconds
+///
+int32_t k_autosavefile_start_timer2(void* self, int64_t time);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KAutoSaveFile*
+/// @param id int
+///
+void k_autosavefile_kill_timer(void* self, int id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KAutoSaveFile*
+/// @param id enum Qt__TimerId
+///
+void k_autosavefile_kill_timer2(void* self, int32_t id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#children)
+///
+/// @param self KAutoSaveFile*
+///
+/// @return libqt_list of QObject*
+///
+libqt_list k_autosavefile_children(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setParent)
+///
+/// @param self KAutoSaveFile*
+/// @param parent QObject*
+///
+void k_autosavefile_set_parent(void* self, void* parent);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#installEventFilter)
+///
+/// @param self KAutoSaveFile*
+/// @param filterObj QObject*
+///
+void k_autosavefile_install_event_filter(void* self, void* filterObj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#removeEventFilter)
+///
+/// @param self KAutoSaveFile*
+/// @param obj QObject*
+///
+void k_autosavefile_remove_event_filter(void* self, void* obj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+QMetaObject__Connection* k_autosavefile_connect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+///
+QMetaObject__Connection* k_autosavefile_connect2(void* sender, void* signal, void* receiver, void* method);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KAutoSaveFile*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+///
+QMetaObject__Connection* k_autosavefile_connect3(void* self, void* sender, const char* signal, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_autosavefile_disconnect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param member QMetaMethod*
+///
+bool k_autosavefile_disconnect2(void* sender, void* signal, void* receiver, void* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_disconnect3(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KAutoSaveFile*
+/// @param receiver QObject*
+///
+bool k_autosavefile_disconnect4(void* self, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param param1 QMetaObject__Connection*
+///
+bool k_autosavefile_disconnect5(void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectTree)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_dump_object_tree(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectInfo)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_dump_object_info(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setProperty)
+///
+/// @param self KAutoSaveFile*
+/// @param name const char*
+/// @param value QVariant*
+///
+bool k_autosavefile_set_property(void* self, const char* name, void* value);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#property)
+///
+/// @param self KAutoSaveFile*
+/// @param name const char*
+///
+QVariant* k_autosavefile_property(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dynamicPropertyNames)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KAutoSaveFile*
+///
+const char** k_autosavefile_dynamic_property_names(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KAutoSaveFile*
+///
+QBindingStorage* k_autosavefile_binding_storage(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KAutoSaveFile*
+///
+const QBindingStorage* k_autosavefile_binding_storage2(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_destroyed(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self)
+///
+void k_autosavefile_on_destroyed(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#parent)
+///
+/// @param self KAutoSaveFile*
+///
+QObject* k_autosavefile_parent(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#inherits)
+///
+/// @param self KAutoSaveFile*
+/// @param classname const char*
+///
+bool k_autosavefile_inherits(void* self, const char* classname);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#deleteLater)
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_delete_later(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KAutoSaveFile*
+/// @param interval int
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_autosavefile_start_timer22(void* self, int interval, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KAutoSaveFile*
+/// @param time int64_t of nanoseconds
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_autosavefile_start_timer23(void* self, int64_t time, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+/// @param param5 enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_autosavefile_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_autosavefile_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KAutoSaveFile*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_autosavefile_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KAutoSaveFile*
+/// @param signal const char*
+///
+bool k_autosavefile_disconnect1(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KAutoSaveFile*
+/// @param signal const char*
+/// @param receiver QObject*
+///
+bool k_autosavefile_disconnect22(void* self, const char* signal, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KAutoSaveFile*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_autosavefile_disconnect32(void* self, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KAutoSaveFile*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_autosavefile_disconnect23(void* self, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KAutoSaveFile*
+/// @param param1 QObject*
+///
+void k_autosavefile_destroyed1(void* self, void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, QObject* param1)
+///
+void k_autosavefile_on_destroyed1(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#fileName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+const char* k_autosavefile_file_name(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_file_name` instead
+///
+#define k_autosavefile_qbase_file_name k_autosavefile_super_file_name
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#fileName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+const char* k_autosavefile_super_file_name(void* self);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#fileName)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback const char* func()
+///
+void k_autosavefile_on_file_name(void* self, const char* (*callback)());
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#size)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_size(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_size` instead
+///
+#define k_autosavefile_qbase_size k_autosavefile_super_size
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#size)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_super_size(void* self);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#size)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func()
+///
+void k_autosavefile_on_size(void* self, int64_t (*callback)());
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#resize)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param sz int64_t
+///
+bool k_autosavefile_resize(void* self, int64_t sz);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_resize` instead
+///
+#define k_autosavefile_qbase_resize k_autosavefile_super_resize
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#resize)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param sz int64_t
+///
+bool k_autosavefile_super_resize(void* self, int64_t sz);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#resize)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, int64_t sz)
+///
+void k_autosavefile_on_resize(void* self, bool (*callback)(void*, int64_t));
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#permissions)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+/// @return flag of enum QFileDevice__Permission
+///
+int32_t k_autosavefile_permissions(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_permissions` instead
+///
+#define k_autosavefile_qbase_permissions k_autosavefile_super_permissions
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#permissions)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+/// @return flag of enum QFileDevice__Permission
+///
+int32_t k_autosavefile_super_permissions(void* self);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#permissions)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int32_t func()
+///
+void k_autosavefile_on_permissions(void* self, int32_t (*callback)());
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#setPermissions)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param permissionSpec flag of enum QFileDevice__Permission
+///
+bool k_autosavefile_set_permissions(void* self, int32_t permissionSpec);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_set_permissions` instead
+///
+#define k_autosavefile_qbase_set_permissions k_autosavefile_super_set_permissions
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#setPermissions)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param permissionSpec flag of enum QFileDevice__Permission
+///
+bool k_autosavefile_super_set_permissions(void* self, int32_t permissionSpec);
+
+/// Inherited from QFile
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfile.html#setPermissions)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, flag of enum QFileDevice__Permission permissionSpec)
+///
+void k_autosavefile_on_set_permissions(void* self, bool (*callback)(void*, int32_t));
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#close)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_close(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_close` instead
+///
+#define k_autosavefile_qbase_close k_autosavefile_super_close
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#close)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_super_close(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#close)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func()
+///
+void k_autosavefile_on_close(void* self, void (*callback)());
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#isSequential)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_is_sequential(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_is_sequential` instead
+///
+#define k_autosavefile_qbase_is_sequential k_autosavefile_super_is_sequential
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#isSequential)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_super_is_sequential(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#isSequential)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func()
+///
+void k_autosavefile_on_is_sequential(void* self, bool (*callback)());
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#pos)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_pos(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_pos` instead
+///
+#define k_autosavefile_qbase_pos k_autosavefile_super_pos
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#pos)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_super_pos(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#pos)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func()
+///
+void k_autosavefile_on_pos(void* self, int64_t (*callback)());
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#seek)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param offset int64_t
+///
+bool k_autosavefile_seek(void* self, int64_t offset);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_seek` instead
+///
+#define k_autosavefile_qbase_seek k_autosavefile_super_seek
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#seek)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param offset int64_t
+///
+bool k_autosavefile_super_seek(void* self, int64_t offset);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#seek)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, int64_t offset)
+///
+void k_autosavefile_on_seek(void* self, bool (*callback)(void*, int64_t));
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#atEnd)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_at_end(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_at_end` instead
+///
+#define k_autosavefile_qbase_at_end k_autosavefile_super_at_end
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#atEnd)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_super_at_end(void* self);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#atEnd)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func()
+///
+void k_autosavefile_on_at_end(void* self, bool (*callback)());
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#readData)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+/// @param maxlen int64_t
+///
+int64_t k_autosavefile_read_data(void* self, char* data, int64_t maxlen);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_read_data` instead
+///
+#define k_autosavefile_qbase_read_data k_autosavefile_super_read_data
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#readData)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+/// @param maxlen int64_t
+///
+int64_t k_autosavefile_super_read_data(void* self, char* data, int64_t maxlen);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#readData)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func(KAutoSaveFile* self, char* data, int64_t maxlen)
+///
+void k_autosavefile_on_read_data(void* self, int64_t (*callback)(void*, char*, int64_t));
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#writeData)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param data const char*
+/// @param lenVal int64_t
+///
+int64_t k_autosavefile_write_data(void* self, const char* data, int64_t lenVal);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_write_data` instead
+///
+#define k_autosavefile_qbase_write_data k_autosavefile_super_write_data
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#writeData)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param data const char*
+/// @param lenVal int64_t
+///
+int64_t k_autosavefile_super_write_data(void* self, const char* data, int64_t lenVal);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#writeData)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func(KAutoSaveFile* self, const char* data, int64_t lenVal)
+///
+void k_autosavefile_on_write_data(void* self, int64_t (*callback)(void*, const char*, int64_t));
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#readLineData)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+/// @param maxlen int64_t
+///
+int64_t k_autosavefile_read_line_data(void* self, char* data, int64_t maxlen);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_read_line_data` instead
+///
+#define k_autosavefile_qbase_read_line_data k_autosavefile_super_read_line_data
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#readLineData)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param data char*
+/// @param maxlen int64_t
+///
+int64_t k_autosavefile_super_read_line_data(void* self, char* data, int64_t maxlen);
+
+/// Inherited from QFileDevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qfiledevice.html#readLineData)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func(KAutoSaveFile* self, char* data, int64_t maxlen)
+///
+void k_autosavefile_on_read_line_data(void* self, int64_t (*callback)(void*, char*, int64_t));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#reset)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_reset(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_reset` instead
+///
+#define k_autosavefile_qbase_reset k_autosavefile_super_reset
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#reset)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_super_reset(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#reset)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func()
+///
+void k_autosavefile_on_reset(void* self, bool (*callback)());
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesAvailable)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_bytes_available(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_bytes_available` instead
+///
+#define k_autosavefile_qbase_bytes_available k_autosavefile_super_bytes_available
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesAvailable)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_super_bytes_available(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesAvailable)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func()
+///
+void k_autosavefile_on_bytes_available(void* self, int64_t (*callback)());
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesToWrite)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_bytes_to_write(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_bytes_to_write` instead
+///
+#define k_autosavefile_qbase_bytes_to_write k_autosavefile_super_bytes_to_write
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesToWrite)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int64_t k_autosavefile_super_bytes_to_write(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#bytesToWrite)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func()
+///
+void k_autosavefile_on_bytes_to_write(void* self, int64_t (*callback)());
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#canReadLine)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_can_read_line(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_can_read_line` instead
+///
+#define k_autosavefile_qbase_can_read_line k_autosavefile_super_can_read_line
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#canReadLine)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+bool k_autosavefile_super_can_read_line(void* self);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#canReadLine)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func()
+///
+void k_autosavefile_on_can_read_line(void* self, bool (*callback)());
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#waitForReadyRead)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param msecs int
+///
+bool k_autosavefile_wait_for_ready_read(void* self, int msecs);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_wait_for_ready_read` instead
+///
+#define k_autosavefile_qbase_wait_for_ready_read k_autosavefile_super_wait_for_ready_read
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#waitForReadyRead)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param msecs int
+///
+bool k_autosavefile_super_wait_for_ready_read(void* self, int msecs);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#waitForReadyRead)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, int msecs)
+///
+void k_autosavefile_on_wait_for_ready_read(void* self, bool (*callback)(void*, int));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#waitForBytesWritten)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param msecs int
+///
+bool k_autosavefile_wait_for_bytes_written(void* self, int msecs);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_wait_for_bytes_written` instead
+///
+#define k_autosavefile_qbase_wait_for_bytes_written k_autosavefile_super_wait_for_bytes_written
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#waitForBytesWritten)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param msecs int
+///
+bool k_autosavefile_super_wait_for_bytes_written(void* self, int msecs);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#waitForBytesWritten)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, int msecs)
+///
+void k_autosavefile_on_wait_for_bytes_written(void* self, bool (*callback)(void*, int));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#skipData)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param maxSize int64_t
+///
+int64_t k_autosavefile_skip_data(void* self, int64_t maxSize);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_skip_data` instead
+///
+#define k_autosavefile_qbase_skip_data k_autosavefile_super_skip_data
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#skipData)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param maxSize int64_t
+///
+int64_t k_autosavefile_super_skip_data(void* self, int64_t maxSize);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#skipData)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int64_t func(KAutoSaveFile* self, int64_t maxSize)
+///
+void k_autosavefile_on_skip_data(void* self, int64_t (*callback)(void*, int64_t));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QEvent*
+///
+bool k_autosavefile_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_event` instead
+///
+#define k_autosavefile_qbase_event k_autosavefile_super_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QEvent*
+///
+bool k_autosavefile_super_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, QEvent* event)
+///
+void k_autosavefile_on_event(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_autosavefile_event_filter(void* self, void* watched, void* event);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_event_filter` instead
+///
+#define k_autosavefile_qbase_event_filter k_autosavefile_super_event_filter
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_autosavefile_super_event_filter(void* self, void* watched, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, QObject* watched, QEvent* event)
+///
+void k_autosavefile_on_event_filter(void* self, bool (*callback)(void*, void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QTimerEvent*
+///
+void k_autosavefile_timer_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_timer_event` instead
+///
+#define k_autosavefile_qbase_timer_event k_autosavefile_super_timer_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QTimerEvent*
+///
+void k_autosavefile_super_timer_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, QTimerEvent* event)
+///
+void k_autosavefile_on_timer_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QChildEvent*
+///
+void k_autosavefile_child_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_child_event` instead
+///
+#define k_autosavefile_qbase_child_event k_autosavefile_super_child_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QChildEvent*
+///
+void k_autosavefile_super_child_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, QChildEvent* event)
+///
+void k_autosavefile_on_child_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QEvent*
+///
+void k_autosavefile_custom_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_custom_event` instead
+///
+#define k_autosavefile_qbase_custom_event k_autosavefile_super_custom_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param event QEvent*
+///
+void k_autosavefile_super_custom_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, QEvent* event)
+///
+void k_autosavefile_on_custom_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal QMetaMethod*
+///
+void k_autosavefile_connect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_connect_notify` instead
+///
+#define k_autosavefile_qbase_connect_notify k_autosavefile_super_connect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal QMetaMethod*
+///
+void k_autosavefile_super_connect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, QMetaMethod* signal)
+///
+void k_autosavefile_on_connect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal QMetaMethod*
+///
+void k_autosavefile_disconnect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_disconnect_notify` instead
+///
+#define k_autosavefile_qbase_disconnect_notify k_autosavefile_super_disconnect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal QMetaMethod*
+///
+void k_autosavefile_super_disconnect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, QMetaMethod* signal)
+///
+void k_autosavefile_on_disconnect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setOpenMode)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param openMode flag of enum QIODeviceBase__OpenModeFlag
+///
+void k_autosavefile_set_open_mode(void* self, int32_t openMode);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_set_open_mode` instead
+///
+#define k_autosavefile_qbase_set_open_mode k_autosavefile_super_set_open_mode
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setOpenMode)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param openMode flag of enum QIODeviceBase__OpenModeFlag
+///
+void k_autosavefile_super_set_open_mode(void* self, int32_t openMode);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setOpenMode)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, flag of enum QIODeviceBase__OpenModeFlag openMode)
+///
+void k_autosavefile_on_set_open_mode(void* self, void (*callback)(void*, int32_t));
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setErrorString)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param errorString const char*
+///
+void k_autosavefile_set_error_string(void* self, const char* errorString);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_set_error_string` instead
+///
+#define k_autosavefile_qbase_set_error_string k_autosavefile_super_set_error_string
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setErrorString)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param errorString const char*
+///
+void k_autosavefile_super_set_error_string(void* self, const char* errorString);
+
+/// Inherited from QIODevice
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qiodevice.html#setErrorString)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, const char* errorString)
+///
+void k_autosavefile_on_set_error_string(void* self, void (*callback)(void*, const char*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+QObject* k_autosavefile_sender(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_sender` instead
+///
+#define k_autosavefile_qbase_sender k_autosavefile_super_sender
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+QObject* k_autosavefile_super_sender(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback QObject* func()
+///
+void k_autosavefile_on_sender(void* self, QObject* (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int32_t k_autosavefile_sender_signal_index(void* self);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_sender_signal_index` instead
+///
+#define k_autosavefile_qbase_sender_signal_index k_autosavefile_super_sender_signal_index
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+///
+int32_t k_autosavefile_super_sender_signal_index(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int32_t func()
+///
+void k_autosavefile_on_sender_signal_index(void* self, int32_t (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal const char*
+///
+int32_t k_autosavefile_receivers(void* self, const char* signal);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_receivers` instead
+///
+#define k_autosavefile_qbase_receivers k_autosavefile_super_receivers
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal const char*
+///
+int32_t k_autosavefile_super_receivers(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback int32_t func(KAutoSaveFile* self, const char* signal)
+///
+void k_autosavefile_on_receivers(void* self, int32_t (*callback)(void*, const char*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal QMetaMethod*
+///
+bool k_autosavefile_is_signal_connected(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_autosavefile_super_is_signal_connected` instead
+///
+#define k_autosavefile_qbase_is_signal_connected k_autosavefile_super_is_signal_connected
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param signal QMetaMethod*
+///
+bool k_autosavefile_super_is_signal_connected(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KAutoSaveFile*
+/// @param callback bool func(KAutoSaveFile* self, QMetaMethod* signal)
+///
+void k_autosavefile_on_is_signal_connected(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectNameChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KAutoSaveFile*
+/// @param callback void func(KAutoSaveFile* self, const char* objectName)
+///
+void k_autosavefile_on_object_name_changed(void* self, void (*callback)(void*, const char*));
+
+/// [Upstream resources](https://api.kde.org/kautosavefile.html#dtor.KAutoSaveFile)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self KAutoSaveFile*
+///
+void k_autosavefile_delete(void* self);
+
+#endif

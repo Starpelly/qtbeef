@@ -1,0 +1,1422 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIOC_LIBVIRTUALKFILEWIDGET_H
+#define SRC_EXTRAS_KIOC_LIBVIRTUALKFILEWIDGET_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+// This class is a subclass of KFileWidget so that we can call protected methods
+class VirtualKFileWidget final : public KFileWidget {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualKFileWidget = true;
+
+    // Virtual class public types (including callbacks)
+    using KFileWidget_MetaObject_Callback = QMetaObject* (*)();
+    using KFileWidget_Metacast_Callback = void* (*)(KFileWidget*, const char*);
+    using KFileWidget_Metacall_Callback = int (*)(KFileWidget*, int, int, void**);
+    using KFileWidget_SizeHint_Callback = QSize* (*)();
+    using KFileWidget_ResizeEvent_Callback = void (*)(KFileWidget*, QResizeEvent*);
+    using KFileWidget_ShowEvent_Callback = void (*)(KFileWidget*, QShowEvent*);
+    using KFileWidget_EventFilter_Callback = bool (*)(KFileWidget*, QObject*, QEvent*);
+    using KFileWidget_DevType_Callback = int (*)();
+    using KFileWidget_SetVisible_Callback = void (*)(KFileWidget*, bool);
+    using KFileWidget_MinimumSizeHint_Callback = QSize* (*)();
+    using KFileWidget_HeightForWidth_Callback = int (*)(const KFileWidget*, int);
+    using KFileWidget_HasHeightForWidth_Callback = bool (*)();
+    using KFileWidget_PaintEngine_Callback = QPaintEngine* (*)();
+    using KFileWidget_Event_Callback = bool (*)(KFileWidget*, QEvent*);
+    using KFileWidget_MousePressEvent_Callback = void (*)(KFileWidget*, QMouseEvent*);
+    using KFileWidget_MouseReleaseEvent_Callback = void (*)(KFileWidget*, QMouseEvent*);
+    using KFileWidget_MouseDoubleClickEvent_Callback = void (*)(KFileWidget*, QMouseEvent*);
+    using KFileWidget_MouseMoveEvent_Callback = void (*)(KFileWidget*, QMouseEvent*);
+    using KFileWidget_WheelEvent_Callback = void (*)(KFileWidget*, QWheelEvent*);
+    using KFileWidget_KeyPressEvent_Callback = void (*)(KFileWidget*, QKeyEvent*);
+    using KFileWidget_KeyReleaseEvent_Callback = void (*)(KFileWidget*, QKeyEvent*);
+    using KFileWidget_FocusInEvent_Callback = void (*)(KFileWidget*, QFocusEvent*);
+    using KFileWidget_FocusOutEvent_Callback = void (*)(KFileWidget*, QFocusEvent*);
+    using KFileWidget_EnterEvent_Callback = void (*)(KFileWidget*, QEnterEvent*);
+    using KFileWidget_LeaveEvent_Callback = void (*)(KFileWidget*, QEvent*);
+    using KFileWidget_PaintEvent_Callback = void (*)(KFileWidget*, QPaintEvent*);
+    using KFileWidget_MoveEvent_Callback = void (*)(KFileWidget*, QMoveEvent*);
+    using KFileWidget_CloseEvent_Callback = void (*)(KFileWidget*, QCloseEvent*);
+    using KFileWidget_ContextMenuEvent_Callback = void (*)(KFileWidget*, QContextMenuEvent*);
+    using KFileWidget_TabletEvent_Callback = void (*)(KFileWidget*, QTabletEvent*);
+    using KFileWidget_ActionEvent_Callback = void (*)(KFileWidget*, QActionEvent*);
+    using KFileWidget_DragEnterEvent_Callback = void (*)(KFileWidget*, QDragEnterEvent*);
+    using KFileWidget_DragMoveEvent_Callback = void (*)(KFileWidget*, QDragMoveEvent*);
+    using KFileWidget_DragLeaveEvent_Callback = void (*)(KFileWidget*, QDragLeaveEvent*);
+    using KFileWidget_DropEvent_Callback = void (*)(KFileWidget*, QDropEvent*);
+    using KFileWidget_HideEvent_Callback = void (*)(KFileWidget*, QHideEvent*);
+    using KFileWidget_NativeEvent_Callback = bool (*)(KFileWidget*, libqt_string, void*, intptr_t*);
+    using KFileWidget_ChangeEvent_Callback = void (*)(KFileWidget*, QEvent*);
+    using KFileWidget_Metric_Callback = int (*)(const KFileWidget*, int);
+    using KFileWidget_InitPainter_Callback = void (*)(const KFileWidget*, QPainter*);
+    using KFileWidget_Redirected_Callback = QPaintDevice* (*)(const KFileWidget*, QPoint*);
+    using KFileWidget_SharedPainter_Callback = QPainter* (*)();
+    using KFileWidget_InputMethodEvent_Callback = void (*)(KFileWidget*, QInputMethodEvent*);
+    using KFileWidget_InputMethodQuery_Callback = QVariant* (*)(const KFileWidget*, int);
+    using KFileWidget_FocusNextPrevChild_Callback = bool (*)(KFileWidget*, bool);
+    using KFileWidget_TimerEvent_Callback = void (*)(KFileWidget*, QTimerEvent*);
+    using KFileWidget_ChildEvent_Callback = void (*)(KFileWidget*, QChildEvent*);
+    using KFileWidget_CustomEvent_Callback = void (*)(KFileWidget*, QEvent*);
+    using KFileWidget_ConnectNotify_Callback = void (*)(KFileWidget*, QMetaMethod*);
+    using KFileWidget_DisconnectNotify_Callback = void (*)(KFileWidget*, QMetaMethod*);
+    using KFileWidget_UpdateMicroFocus_Callback = void (*)();
+    using KFileWidget_Create_Callback = void (*)();
+    using KFileWidget_Destroy_Callback = void (*)();
+    using KFileWidget_FocusNextChild_Callback = bool (*)();
+    using KFileWidget_FocusPreviousChild_Callback = bool (*)();
+    using KFileWidget_Sender_Callback = QObject* (*)();
+    using KFileWidget_SenderSignalIndex_Callback = int (*)();
+    using KFileWidget_Receivers_Callback = int (*)(const KFileWidget*, const char*);
+    using KFileWidget_IsSignalConnected_Callback = bool (*)(const KFileWidget*, QMetaMethod*);
+    using KFileWidget_GetDecodedMetricF_Callback = double (*)(const KFileWidget*, int, int);
+
+  protected:
+    // Instance callback storage
+    KFileWidget_MetaObject_Callback kfilewidget_metaobject_callback = nullptr;
+    KFileWidget_Metacast_Callback kfilewidget_metacast_callback = nullptr;
+    KFileWidget_Metacall_Callback kfilewidget_metacall_callback = nullptr;
+    KFileWidget_SizeHint_Callback kfilewidget_sizehint_callback = nullptr;
+    KFileWidget_ResizeEvent_Callback kfilewidget_resizeevent_callback = nullptr;
+    KFileWidget_ShowEvent_Callback kfilewidget_showevent_callback = nullptr;
+    KFileWidget_EventFilter_Callback kfilewidget_eventfilter_callback = nullptr;
+    KFileWidget_DevType_Callback kfilewidget_devtype_callback = nullptr;
+    KFileWidget_SetVisible_Callback kfilewidget_setvisible_callback = nullptr;
+    KFileWidget_MinimumSizeHint_Callback kfilewidget_minimumsizehint_callback = nullptr;
+    KFileWidget_HeightForWidth_Callback kfilewidget_heightforwidth_callback = nullptr;
+    KFileWidget_HasHeightForWidth_Callback kfilewidget_hasheightforwidth_callback = nullptr;
+    KFileWidget_PaintEngine_Callback kfilewidget_paintengine_callback = nullptr;
+    KFileWidget_Event_Callback kfilewidget_event_callback = nullptr;
+    KFileWidget_MousePressEvent_Callback kfilewidget_mousepressevent_callback = nullptr;
+    KFileWidget_MouseReleaseEvent_Callback kfilewidget_mousereleaseevent_callback = nullptr;
+    KFileWidget_MouseDoubleClickEvent_Callback kfilewidget_mousedoubleclickevent_callback = nullptr;
+    KFileWidget_MouseMoveEvent_Callback kfilewidget_mousemoveevent_callback = nullptr;
+    KFileWidget_WheelEvent_Callback kfilewidget_wheelevent_callback = nullptr;
+    KFileWidget_KeyPressEvent_Callback kfilewidget_keypressevent_callback = nullptr;
+    KFileWidget_KeyReleaseEvent_Callback kfilewidget_keyreleaseevent_callback = nullptr;
+    KFileWidget_FocusInEvent_Callback kfilewidget_focusinevent_callback = nullptr;
+    KFileWidget_FocusOutEvent_Callback kfilewidget_focusoutevent_callback = nullptr;
+    KFileWidget_EnterEvent_Callback kfilewidget_enterevent_callback = nullptr;
+    KFileWidget_LeaveEvent_Callback kfilewidget_leaveevent_callback = nullptr;
+    KFileWidget_PaintEvent_Callback kfilewidget_paintevent_callback = nullptr;
+    KFileWidget_MoveEvent_Callback kfilewidget_moveevent_callback = nullptr;
+    KFileWidget_CloseEvent_Callback kfilewidget_closeevent_callback = nullptr;
+    KFileWidget_ContextMenuEvent_Callback kfilewidget_contextmenuevent_callback = nullptr;
+    KFileWidget_TabletEvent_Callback kfilewidget_tabletevent_callback = nullptr;
+    KFileWidget_ActionEvent_Callback kfilewidget_actionevent_callback = nullptr;
+    KFileWidget_DragEnterEvent_Callback kfilewidget_dragenterevent_callback = nullptr;
+    KFileWidget_DragMoveEvent_Callback kfilewidget_dragmoveevent_callback = nullptr;
+    KFileWidget_DragLeaveEvent_Callback kfilewidget_dragleaveevent_callback = nullptr;
+    KFileWidget_DropEvent_Callback kfilewidget_dropevent_callback = nullptr;
+    KFileWidget_HideEvent_Callback kfilewidget_hideevent_callback = nullptr;
+    KFileWidget_NativeEvent_Callback kfilewidget_nativeevent_callback = nullptr;
+    KFileWidget_ChangeEvent_Callback kfilewidget_changeevent_callback = nullptr;
+    KFileWidget_Metric_Callback kfilewidget_metric_callback = nullptr;
+    KFileWidget_InitPainter_Callback kfilewidget_initpainter_callback = nullptr;
+    KFileWidget_Redirected_Callback kfilewidget_redirected_callback = nullptr;
+    KFileWidget_SharedPainter_Callback kfilewidget_sharedpainter_callback = nullptr;
+    KFileWidget_InputMethodEvent_Callback kfilewidget_inputmethodevent_callback = nullptr;
+    KFileWidget_InputMethodQuery_Callback kfilewidget_inputmethodquery_callback = nullptr;
+    KFileWidget_FocusNextPrevChild_Callback kfilewidget_focusnextprevchild_callback = nullptr;
+    KFileWidget_TimerEvent_Callback kfilewidget_timerevent_callback = nullptr;
+    KFileWidget_ChildEvent_Callback kfilewidget_childevent_callback = nullptr;
+    KFileWidget_CustomEvent_Callback kfilewidget_customevent_callback = nullptr;
+    KFileWidget_ConnectNotify_Callback kfilewidget_connectnotify_callback = nullptr;
+    KFileWidget_DisconnectNotify_Callback kfilewidget_disconnectnotify_callback = nullptr;
+    KFileWidget_UpdateMicroFocus_Callback kfilewidget_updatemicrofocus_callback = nullptr;
+    KFileWidget_Create_Callback kfilewidget_create_callback = nullptr;
+    KFileWidget_Destroy_Callback kfilewidget_destroy_callback = nullptr;
+    KFileWidget_FocusNextChild_Callback kfilewidget_focusnextchild_callback = nullptr;
+    KFileWidget_FocusPreviousChild_Callback kfilewidget_focuspreviouschild_callback = nullptr;
+    KFileWidget_Sender_Callback kfilewidget_sender_callback = nullptr;
+    KFileWidget_SenderSignalIndex_Callback kfilewidget_sendersignalindex_callback = nullptr;
+    KFileWidget_Receivers_Callback kfilewidget_receivers_callback = nullptr;
+    KFileWidget_IsSignalConnected_Callback kfilewidget_issignalconnected_callback = nullptr;
+    KFileWidget_GetDecodedMetricF_Callback kfilewidget_getdecodedmetricf_callback = nullptr;
+
+    // Instance base flags
+    mutable bool kfilewidget_metaobject_isbase = false;
+    mutable bool kfilewidget_metacast_isbase = false;
+    mutable bool kfilewidget_metacall_isbase = false;
+    mutable bool kfilewidget_sizehint_isbase = false;
+    mutable bool kfilewidget_resizeevent_isbase = false;
+    mutable bool kfilewidget_showevent_isbase = false;
+    mutable bool kfilewidget_eventfilter_isbase = false;
+    mutable bool kfilewidget_devtype_isbase = false;
+    mutable bool kfilewidget_setvisible_isbase = false;
+    mutable bool kfilewidget_minimumsizehint_isbase = false;
+    mutable bool kfilewidget_heightforwidth_isbase = false;
+    mutable bool kfilewidget_hasheightforwidth_isbase = false;
+    mutable bool kfilewidget_paintengine_isbase = false;
+    mutable bool kfilewidget_event_isbase = false;
+    mutable bool kfilewidget_mousepressevent_isbase = false;
+    mutable bool kfilewidget_mousereleaseevent_isbase = false;
+    mutable bool kfilewidget_mousedoubleclickevent_isbase = false;
+    mutable bool kfilewidget_mousemoveevent_isbase = false;
+    mutable bool kfilewidget_wheelevent_isbase = false;
+    mutable bool kfilewidget_keypressevent_isbase = false;
+    mutable bool kfilewidget_keyreleaseevent_isbase = false;
+    mutable bool kfilewidget_focusinevent_isbase = false;
+    mutable bool kfilewidget_focusoutevent_isbase = false;
+    mutable bool kfilewidget_enterevent_isbase = false;
+    mutable bool kfilewidget_leaveevent_isbase = false;
+    mutable bool kfilewidget_paintevent_isbase = false;
+    mutable bool kfilewidget_moveevent_isbase = false;
+    mutable bool kfilewidget_closeevent_isbase = false;
+    mutable bool kfilewidget_contextmenuevent_isbase = false;
+    mutable bool kfilewidget_tabletevent_isbase = false;
+    mutable bool kfilewidget_actionevent_isbase = false;
+    mutable bool kfilewidget_dragenterevent_isbase = false;
+    mutable bool kfilewidget_dragmoveevent_isbase = false;
+    mutable bool kfilewidget_dragleaveevent_isbase = false;
+    mutable bool kfilewidget_dropevent_isbase = false;
+    mutable bool kfilewidget_hideevent_isbase = false;
+    mutable bool kfilewidget_nativeevent_isbase = false;
+    mutable bool kfilewidget_changeevent_isbase = false;
+    mutable bool kfilewidget_metric_isbase = false;
+    mutable bool kfilewidget_initpainter_isbase = false;
+    mutable bool kfilewidget_redirected_isbase = false;
+    mutable bool kfilewidget_sharedpainter_isbase = false;
+    mutable bool kfilewidget_inputmethodevent_isbase = false;
+    mutable bool kfilewidget_inputmethodquery_isbase = false;
+    mutable bool kfilewidget_focusnextprevchild_isbase = false;
+    mutable bool kfilewidget_timerevent_isbase = false;
+    mutable bool kfilewidget_childevent_isbase = false;
+    mutable bool kfilewidget_customevent_isbase = false;
+    mutable bool kfilewidget_connectnotify_isbase = false;
+    mutable bool kfilewidget_disconnectnotify_isbase = false;
+    mutable bool kfilewidget_updatemicrofocus_isbase = false;
+    mutable bool kfilewidget_create_isbase = false;
+    mutable bool kfilewidget_destroy_isbase = false;
+    mutable bool kfilewidget_focusnextchild_isbase = false;
+    mutable bool kfilewidget_focuspreviouschild_isbase = false;
+    mutable bool kfilewidget_sender_isbase = false;
+    mutable bool kfilewidget_sendersignalindex_isbase = false;
+    mutable bool kfilewidget_receivers_isbase = false;
+    mutable bool kfilewidget_issignalconnected_isbase = false;
+    mutable bool kfilewidget_getdecodedmetricf_isbase = false;
+
+  public:
+    VirtualKFileWidget(const QUrl& startDir) : KFileWidget(startDir) {};
+    VirtualKFileWidget(const QUrl& startDir, QWidget* parent) : KFileWidget(startDir, parent) {};
+
+    // Callback setters
+    inline void setKFileWidget_MetaObject_Callback(KFileWidget_MetaObject_Callback cb) { kfilewidget_metaobject_callback = cb; }
+    inline void setKFileWidget_Metacast_Callback(KFileWidget_Metacast_Callback cb) { kfilewidget_metacast_callback = cb; }
+    inline void setKFileWidget_Metacall_Callback(KFileWidget_Metacall_Callback cb) { kfilewidget_metacall_callback = cb; }
+    inline void setKFileWidget_SizeHint_Callback(KFileWidget_SizeHint_Callback cb) { kfilewidget_sizehint_callback = cb; }
+    inline void setKFileWidget_ResizeEvent_Callback(KFileWidget_ResizeEvent_Callback cb) { kfilewidget_resizeevent_callback = cb; }
+    inline void setKFileWidget_ShowEvent_Callback(KFileWidget_ShowEvent_Callback cb) { kfilewidget_showevent_callback = cb; }
+    inline void setKFileWidget_EventFilter_Callback(KFileWidget_EventFilter_Callback cb) { kfilewidget_eventfilter_callback = cb; }
+    inline void setKFileWidget_DevType_Callback(KFileWidget_DevType_Callback cb) { kfilewidget_devtype_callback = cb; }
+    inline void setKFileWidget_SetVisible_Callback(KFileWidget_SetVisible_Callback cb) { kfilewidget_setvisible_callback = cb; }
+    inline void setKFileWidget_MinimumSizeHint_Callback(KFileWidget_MinimumSizeHint_Callback cb) { kfilewidget_minimumsizehint_callback = cb; }
+    inline void setKFileWidget_HeightForWidth_Callback(KFileWidget_HeightForWidth_Callback cb) { kfilewidget_heightforwidth_callback = cb; }
+    inline void setKFileWidget_HasHeightForWidth_Callback(KFileWidget_HasHeightForWidth_Callback cb) { kfilewidget_hasheightforwidth_callback = cb; }
+    inline void setKFileWidget_PaintEngine_Callback(KFileWidget_PaintEngine_Callback cb) { kfilewidget_paintengine_callback = cb; }
+    inline void setKFileWidget_Event_Callback(KFileWidget_Event_Callback cb) { kfilewidget_event_callback = cb; }
+    inline void setKFileWidget_MousePressEvent_Callback(KFileWidget_MousePressEvent_Callback cb) { kfilewidget_mousepressevent_callback = cb; }
+    inline void setKFileWidget_MouseReleaseEvent_Callback(KFileWidget_MouseReleaseEvent_Callback cb) { kfilewidget_mousereleaseevent_callback = cb; }
+    inline void setKFileWidget_MouseDoubleClickEvent_Callback(KFileWidget_MouseDoubleClickEvent_Callback cb) { kfilewidget_mousedoubleclickevent_callback = cb; }
+    inline void setKFileWidget_MouseMoveEvent_Callback(KFileWidget_MouseMoveEvent_Callback cb) { kfilewidget_mousemoveevent_callback = cb; }
+    inline void setKFileWidget_WheelEvent_Callback(KFileWidget_WheelEvent_Callback cb) { kfilewidget_wheelevent_callback = cb; }
+    inline void setKFileWidget_KeyPressEvent_Callback(KFileWidget_KeyPressEvent_Callback cb) { kfilewidget_keypressevent_callback = cb; }
+    inline void setKFileWidget_KeyReleaseEvent_Callback(KFileWidget_KeyReleaseEvent_Callback cb) { kfilewidget_keyreleaseevent_callback = cb; }
+    inline void setKFileWidget_FocusInEvent_Callback(KFileWidget_FocusInEvent_Callback cb) { kfilewidget_focusinevent_callback = cb; }
+    inline void setKFileWidget_FocusOutEvent_Callback(KFileWidget_FocusOutEvent_Callback cb) { kfilewidget_focusoutevent_callback = cb; }
+    inline void setKFileWidget_EnterEvent_Callback(KFileWidget_EnterEvent_Callback cb) { kfilewidget_enterevent_callback = cb; }
+    inline void setKFileWidget_LeaveEvent_Callback(KFileWidget_LeaveEvent_Callback cb) { kfilewidget_leaveevent_callback = cb; }
+    inline void setKFileWidget_PaintEvent_Callback(KFileWidget_PaintEvent_Callback cb) { kfilewidget_paintevent_callback = cb; }
+    inline void setKFileWidget_MoveEvent_Callback(KFileWidget_MoveEvent_Callback cb) { kfilewidget_moveevent_callback = cb; }
+    inline void setKFileWidget_CloseEvent_Callback(KFileWidget_CloseEvent_Callback cb) { kfilewidget_closeevent_callback = cb; }
+    inline void setKFileWidget_ContextMenuEvent_Callback(KFileWidget_ContextMenuEvent_Callback cb) { kfilewidget_contextmenuevent_callback = cb; }
+    inline void setKFileWidget_TabletEvent_Callback(KFileWidget_TabletEvent_Callback cb) { kfilewidget_tabletevent_callback = cb; }
+    inline void setKFileWidget_ActionEvent_Callback(KFileWidget_ActionEvent_Callback cb) { kfilewidget_actionevent_callback = cb; }
+    inline void setKFileWidget_DragEnterEvent_Callback(KFileWidget_DragEnterEvent_Callback cb) { kfilewidget_dragenterevent_callback = cb; }
+    inline void setKFileWidget_DragMoveEvent_Callback(KFileWidget_DragMoveEvent_Callback cb) { kfilewidget_dragmoveevent_callback = cb; }
+    inline void setKFileWidget_DragLeaveEvent_Callback(KFileWidget_DragLeaveEvent_Callback cb) { kfilewidget_dragleaveevent_callback = cb; }
+    inline void setKFileWidget_DropEvent_Callback(KFileWidget_DropEvent_Callback cb) { kfilewidget_dropevent_callback = cb; }
+    inline void setKFileWidget_HideEvent_Callback(KFileWidget_HideEvent_Callback cb) { kfilewidget_hideevent_callback = cb; }
+    inline void setKFileWidget_NativeEvent_Callback(KFileWidget_NativeEvent_Callback cb) { kfilewidget_nativeevent_callback = cb; }
+    inline void setKFileWidget_ChangeEvent_Callback(KFileWidget_ChangeEvent_Callback cb) { kfilewidget_changeevent_callback = cb; }
+    inline void setKFileWidget_Metric_Callback(KFileWidget_Metric_Callback cb) { kfilewidget_metric_callback = cb; }
+    inline void setKFileWidget_InitPainter_Callback(KFileWidget_InitPainter_Callback cb) { kfilewidget_initpainter_callback = cb; }
+    inline void setKFileWidget_Redirected_Callback(KFileWidget_Redirected_Callback cb) { kfilewidget_redirected_callback = cb; }
+    inline void setKFileWidget_SharedPainter_Callback(KFileWidget_SharedPainter_Callback cb) { kfilewidget_sharedpainter_callback = cb; }
+    inline void setKFileWidget_InputMethodEvent_Callback(KFileWidget_InputMethodEvent_Callback cb) { kfilewidget_inputmethodevent_callback = cb; }
+    inline void setKFileWidget_InputMethodQuery_Callback(KFileWidget_InputMethodQuery_Callback cb) { kfilewidget_inputmethodquery_callback = cb; }
+    inline void setKFileWidget_FocusNextPrevChild_Callback(KFileWidget_FocusNextPrevChild_Callback cb) { kfilewidget_focusnextprevchild_callback = cb; }
+    inline void setKFileWidget_TimerEvent_Callback(KFileWidget_TimerEvent_Callback cb) { kfilewidget_timerevent_callback = cb; }
+    inline void setKFileWidget_ChildEvent_Callback(KFileWidget_ChildEvent_Callback cb) { kfilewidget_childevent_callback = cb; }
+    inline void setKFileWidget_CustomEvent_Callback(KFileWidget_CustomEvent_Callback cb) { kfilewidget_customevent_callback = cb; }
+    inline void setKFileWidget_ConnectNotify_Callback(KFileWidget_ConnectNotify_Callback cb) { kfilewidget_connectnotify_callback = cb; }
+    inline void setKFileWidget_DisconnectNotify_Callback(KFileWidget_DisconnectNotify_Callback cb) { kfilewidget_disconnectnotify_callback = cb; }
+    inline void setKFileWidget_UpdateMicroFocus_Callback(KFileWidget_UpdateMicroFocus_Callback cb) { kfilewidget_updatemicrofocus_callback = cb; }
+    inline void setKFileWidget_Create_Callback(KFileWidget_Create_Callback cb) { kfilewidget_create_callback = cb; }
+    inline void setKFileWidget_Destroy_Callback(KFileWidget_Destroy_Callback cb) { kfilewidget_destroy_callback = cb; }
+    inline void setKFileWidget_FocusNextChild_Callback(KFileWidget_FocusNextChild_Callback cb) { kfilewidget_focusnextchild_callback = cb; }
+    inline void setKFileWidget_FocusPreviousChild_Callback(KFileWidget_FocusPreviousChild_Callback cb) { kfilewidget_focuspreviouschild_callback = cb; }
+    inline void setKFileWidget_Sender_Callback(KFileWidget_Sender_Callback cb) { kfilewidget_sender_callback = cb; }
+    inline void setKFileWidget_SenderSignalIndex_Callback(KFileWidget_SenderSignalIndex_Callback cb) { kfilewidget_sendersignalindex_callback = cb; }
+    inline void setKFileWidget_Receivers_Callback(KFileWidget_Receivers_Callback cb) { kfilewidget_receivers_callback = cb; }
+    inline void setKFileWidget_IsSignalConnected_Callback(KFileWidget_IsSignalConnected_Callback cb) { kfilewidget_issignalconnected_callback = cb; }
+    inline void setKFileWidget_GetDecodedMetricF_Callback(KFileWidget_GetDecodedMetricF_Callback cb) { kfilewidget_getdecodedmetricf_callback = cb; }
+
+    // Base flag setters
+    inline void setKFileWidget_MetaObject_IsBase(bool value) const { kfilewidget_metaobject_isbase = value; }
+    inline void setKFileWidget_Metacast_IsBase(bool value) const { kfilewidget_metacast_isbase = value; }
+    inline void setKFileWidget_Metacall_IsBase(bool value) const { kfilewidget_metacall_isbase = value; }
+    inline void setKFileWidget_SizeHint_IsBase(bool value) const { kfilewidget_sizehint_isbase = value; }
+    inline void setKFileWidget_ResizeEvent_IsBase(bool value) const { kfilewidget_resizeevent_isbase = value; }
+    inline void setKFileWidget_ShowEvent_IsBase(bool value) const { kfilewidget_showevent_isbase = value; }
+    inline void setKFileWidget_EventFilter_IsBase(bool value) const { kfilewidget_eventfilter_isbase = value; }
+    inline void setKFileWidget_DevType_IsBase(bool value) const { kfilewidget_devtype_isbase = value; }
+    inline void setKFileWidget_SetVisible_IsBase(bool value) const { kfilewidget_setvisible_isbase = value; }
+    inline void setKFileWidget_MinimumSizeHint_IsBase(bool value) const { kfilewidget_minimumsizehint_isbase = value; }
+    inline void setKFileWidget_HeightForWidth_IsBase(bool value) const { kfilewidget_heightforwidth_isbase = value; }
+    inline void setKFileWidget_HasHeightForWidth_IsBase(bool value) const { kfilewidget_hasheightforwidth_isbase = value; }
+    inline void setKFileWidget_PaintEngine_IsBase(bool value) const { kfilewidget_paintengine_isbase = value; }
+    inline void setKFileWidget_Event_IsBase(bool value) const { kfilewidget_event_isbase = value; }
+    inline void setKFileWidget_MousePressEvent_IsBase(bool value) const { kfilewidget_mousepressevent_isbase = value; }
+    inline void setKFileWidget_MouseReleaseEvent_IsBase(bool value) const { kfilewidget_mousereleaseevent_isbase = value; }
+    inline void setKFileWidget_MouseDoubleClickEvent_IsBase(bool value) const { kfilewidget_mousedoubleclickevent_isbase = value; }
+    inline void setKFileWidget_MouseMoveEvent_IsBase(bool value) const { kfilewidget_mousemoveevent_isbase = value; }
+    inline void setKFileWidget_WheelEvent_IsBase(bool value) const { kfilewidget_wheelevent_isbase = value; }
+    inline void setKFileWidget_KeyPressEvent_IsBase(bool value) const { kfilewidget_keypressevent_isbase = value; }
+    inline void setKFileWidget_KeyReleaseEvent_IsBase(bool value) const { kfilewidget_keyreleaseevent_isbase = value; }
+    inline void setKFileWidget_FocusInEvent_IsBase(bool value) const { kfilewidget_focusinevent_isbase = value; }
+    inline void setKFileWidget_FocusOutEvent_IsBase(bool value) const { kfilewidget_focusoutevent_isbase = value; }
+    inline void setKFileWidget_EnterEvent_IsBase(bool value) const { kfilewidget_enterevent_isbase = value; }
+    inline void setKFileWidget_LeaveEvent_IsBase(bool value) const { kfilewidget_leaveevent_isbase = value; }
+    inline void setKFileWidget_PaintEvent_IsBase(bool value) const { kfilewidget_paintevent_isbase = value; }
+    inline void setKFileWidget_MoveEvent_IsBase(bool value) const { kfilewidget_moveevent_isbase = value; }
+    inline void setKFileWidget_CloseEvent_IsBase(bool value) const { kfilewidget_closeevent_isbase = value; }
+    inline void setKFileWidget_ContextMenuEvent_IsBase(bool value) const { kfilewidget_contextmenuevent_isbase = value; }
+    inline void setKFileWidget_TabletEvent_IsBase(bool value) const { kfilewidget_tabletevent_isbase = value; }
+    inline void setKFileWidget_ActionEvent_IsBase(bool value) const { kfilewidget_actionevent_isbase = value; }
+    inline void setKFileWidget_DragEnterEvent_IsBase(bool value) const { kfilewidget_dragenterevent_isbase = value; }
+    inline void setKFileWidget_DragMoveEvent_IsBase(bool value) const { kfilewidget_dragmoveevent_isbase = value; }
+    inline void setKFileWidget_DragLeaveEvent_IsBase(bool value) const { kfilewidget_dragleaveevent_isbase = value; }
+    inline void setKFileWidget_DropEvent_IsBase(bool value) const { kfilewidget_dropevent_isbase = value; }
+    inline void setKFileWidget_HideEvent_IsBase(bool value) const { kfilewidget_hideevent_isbase = value; }
+    inline void setKFileWidget_NativeEvent_IsBase(bool value) const { kfilewidget_nativeevent_isbase = value; }
+    inline void setKFileWidget_ChangeEvent_IsBase(bool value) const { kfilewidget_changeevent_isbase = value; }
+    inline void setKFileWidget_Metric_IsBase(bool value) const { kfilewidget_metric_isbase = value; }
+    inline void setKFileWidget_InitPainter_IsBase(bool value) const { kfilewidget_initpainter_isbase = value; }
+    inline void setKFileWidget_Redirected_IsBase(bool value) const { kfilewidget_redirected_isbase = value; }
+    inline void setKFileWidget_SharedPainter_IsBase(bool value) const { kfilewidget_sharedpainter_isbase = value; }
+    inline void setKFileWidget_InputMethodEvent_IsBase(bool value) const { kfilewidget_inputmethodevent_isbase = value; }
+    inline void setKFileWidget_InputMethodQuery_IsBase(bool value) const { kfilewidget_inputmethodquery_isbase = value; }
+    inline void setKFileWidget_FocusNextPrevChild_IsBase(bool value) const { kfilewidget_focusnextprevchild_isbase = value; }
+    inline void setKFileWidget_TimerEvent_IsBase(bool value) const { kfilewidget_timerevent_isbase = value; }
+    inline void setKFileWidget_ChildEvent_IsBase(bool value) const { kfilewidget_childevent_isbase = value; }
+    inline void setKFileWidget_CustomEvent_IsBase(bool value) const { kfilewidget_customevent_isbase = value; }
+    inline void setKFileWidget_ConnectNotify_IsBase(bool value) const { kfilewidget_connectnotify_isbase = value; }
+    inline void setKFileWidget_DisconnectNotify_IsBase(bool value) const { kfilewidget_disconnectnotify_isbase = value; }
+    inline void setKFileWidget_UpdateMicroFocus_IsBase(bool value) const { kfilewidget_updatemicrofocus_isbase = value; }
+    inline void setKFileWidget_Create_IsBase(bool value) const { kfilewidget_create_isbase = value; }
+    inline void setKFileWidget_Destroy_IsBase(bool value) const { kfilewidget_destroy_isbase = value; }
+    inline void setKFileWidget_FocusNextChild_IsBase(bool value) const { kfilewidget_focusnextchild_isbase = value; }
+    inline void setKFileWidget_FocusPreviousChild_IsBase(bool value) const { kfilewidget_focuspreviouschild_isbase = value; }
+    inline void setKFileWidget_Sender_IsBase(bool value) const { kfilewidget_sender_isbase = value; }
+    inline void setKFileWidget_SenderSignalIndex_IsBase(bool value) const { kfilewidget_sendersignalindex_isbase = value; }
+    inline void setKFileWidget_Receivers_IsBase(bool value) const { kfilewidget_receivers_isbase = value; }
+    inline void setKFileWidget_IsSignalConnected_IsBase(bool value) const { kfilewidget_issignalconnected_isbase = value; }
+    inline void setKFileWidget_GetDecodedMetricF_IsBase(bool value) const { kfilewidget_getdecodedmetricf_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const QMetaObject* metaObject() const override {
+        if (kfilewidget_metaobject_isbase) {
+            kfilewidget_metaobject_isbase = false;
+            return KFileWidget::metaObject();
+        }
+        auto metaobject_cb = kfilewidget_metaobject_callback;
+        if (metaobject_cb) {
+            QMetaObject* callback_ret = metaobject_cb();
+            return callback_ret;
+        }
+        return KFileWidget::metaObject();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void* qt_metacast(const char* param1) override {
+        if (kfilewidget_metacast_isbase) {
+            kfilewidget_metacast_isbase = false;
+            return KFileWidget::qt_metacast(param1);
+        }
+        auto metacast_cb = kfilewidget_metacast_callback;
+        if (metacast_cb) {
+            const char* cbval1 = (const char*)param1;
+
+            void* callback_ret = metacast_cb(this, cbval1);
+            return callback_ret;
+        }
+        return KFileWidget::qt_metacast(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int qt_metacall(QMetaObject::Call param1, int param2, void** param3) override {
+        if (kfilewidget_metacall_isbase) {
+            kfilewidget_metacall_isbase = false;
+            return KFileWidget::qt_metacall(param1, param2, param3);
+        }
+        auto metacall_cb = kfilewidget_metacall_callback;
+        if (metacall_cb) {
+            int cbval1 = static_cast<int>(param1);
+            int cbval2 = param2;
+            void** cbval3 = param3;
+
+            int callback_ret = metacall_cb(this, cbval1, cbval2, cbval3);
+            return static_cast<int>(callback_ret);
+        }
+        return KFileWidget::qt_metacall(param1, param2, param3);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QSize sizeHint() const override {
+        if (kfilewidget_sizehint_isbase) {
+            kfilewidget_sizehint_isbase = false;
+            return KFileWidget::sizeHint();
+        }
+        auto sizehint_cb = kfilewidget_sizehint_callback;
+        if (sizehint_cb) {
+            QSize* callback_ret = sizehint_cb();
+            return *callback_ret;
+        }
+        return KFileWidget::sizeHint();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void resizeEvent(QResizeEvent* event) override {
+        if (kfilewidget_resizeevent_isbase) {
+            kfilewidget_resizeevent_isbase = false;
+            KFileWidget::resizeEvent(event);
+            return;
+        }
+        auto resizeevent_cb = kfilewidget_resizeevent_callback;
+        if (resizeevent_cb) {
+            QResizeEvent* cbval1 = event;
+
+            resizeevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::resizeEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void showEvent(QShowEvent* event) override {
+        if (kfilewidget_showevent_isbase) {
+            kfilewidget_showevent_isbase = false;
+            KFileWidget::showEvent(event);
+            return;
+        }
+        auto showevent_cb = kfilewidget_showevent_callback;
+        if (showevent_cb) {
+            QShowEvent* cbval1 = event;
+
+            showevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::showEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool eventFilter(QObject* watched, QEvent* event) override {
+        if (kfilewidget_eventfilter_isbase) {
+            kfilewidget_eventfilter_isbase = false;
+            return KFileWidget::eventFilter(watched, event);
+        }
+        auto eventfilter_cb = kfilewidget_eventfilter_callback;
+        if (eventfilter_cb) {
+            QObject* cbval1 = watched;
+            QEvent* cbval2 = event;
+
+            bool callback_ret = eventfilter_cb(this, cbval1, cbval2);
+            return callback_ret;
+        }
+        return KFileWidget::eventFilter(watched, event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int devType() const override {
+        if (kfilewidget_devtype_isbase) {
+            kfilewidget_devtype_isbase = false;
+            return KFileWidget::devType();
+        }
+        auto devtype_cb = kfilewidget_devtype_callback;
+        if (devtype_cb) {
+            int callback_ret = devtype_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return KFileWidget::devType();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setVisible(bool visible) override {
+        if (kfilewidget_setvisible_isbase) {
+            kfilewidget_setvisible_isbase = false;
+            KFileWidget::setVisible(visible);
+            return;
+        }
+        auto setvisible_cb = kfilewidget_setvisible_callback;
+        if (setvisible_cb) {
+            bool cbval1 = visible;
+
+            setvisible_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::setVisible(visible);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QSize minimumSizeHint() const override {
+        if (kfilewidget_minimumsizehint_isbase) {
+            kfilewidget_minimumsizehint_isbase = false;
+            return KFileWidget::minimumSizeHint();
+        }
+        auto minimumsizehint_cb = kfilewidget_minimumsizehint_callback;
+        if (minimumsizehint_cb) {
+            QSize* callback_ret = minimumsizehint_cb();
+            return *callback_ret;
+        }
+        return KFileWidget::minimumSizeHint();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int heightForWidth(int param1) const override {
+        if (kfilewidget_heightforwidth_isbase) {
+            kfilewidget_heightforwidth_isbase = false;
+            return KFileWidget::heightForWidth(param1);
+        }
+        auto heightforwidth_cb = kfilewidget_heightforwidth_callback;
+        if (heightforwidth_cb) {
+            int cbval1 = param1;
+
+            int callback_ret = heightforwidth_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return KFileWidget::heightForWidth(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool hasHeightForWidth() const override {
+        if (kfilewidget_hasheightforwidth_isbase) {
+            kfilewidget_hasheightforwidth_isbase = false;
+            return KFileWidget::hasHeightForWidth();
+        }
+        auto hasheightforwidth_cb = kfilewidget_hasheightforwidth_callback;
+        if (hasheightforwidth_cb) {
+            bool callback_ret = hasheightforwidth_cb();
+            return callback_ret;
+        }
+        return KFileWidget::hasHeightForWidth();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QPaintEngine* paintEngine() const override {
+        if (kfilewidget_paintengine_isbase) {
+            kfilewidget_paintengine_isbase = false;
+            return KFileWidget::paintEngine();
+        }
+        auto paintengine_cb = kfilewidget_paintengine_callback;
+        if (paintengine_cb) {
+            QPaintEngine* callback_ret = paintengine_cb();
+            return callback_ret;
+        }
+        return KFileWidget::paintEngine();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool event(QEvent* event) override {
+        if (kfilewidget_event_isbase) {
+            kfilewidget_event_isbase = false;
+            return KFileWidget::event(event);
+        }
+        auto event_cb = kfilewidget_event_callback;
+        if (event_cb) {
+            QEvent* cbval1 = event;
+
+            bool callback_ret = event_cb(this, cbval1);
+            return callback_ret;
+        }
+        return KFileWidget::event(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mousePressEvent(QMouseEvent* event) override {
+        if (kfilewidget_mousepressevent_isbase) {
+            kfilewidget_mousepressevent_isbase = false;
+            KFileWidget::mousePressEvent(event);
+            return;
+        }
+        auto mousepressevent_cb = kfilewidget_mousepressevent_callback;
+        if (mousepressevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousepressevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::mousePressEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mouseReleaseEvent(QMouseEvent* event) override {
+        if (kfilewidget_mousereleaseevent_isbase) {
+            kfilewidget_mousereleaseevent_isbase = false;
+            KFileWidget::mouseReleaseEvent(event);
+            return;
+        }
+        auto mousereleaseevent_cb = kfilewidget_mousereleaseevent_callback;
+        if (mousereleaseevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousereleaseevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::mouseReleaseEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mouseDoubleClickEvent(QMouseEvent* event) override {
+        if (kfilewidget_mousedoubleclickevent_isbase) {
+            kfilewidget_mousedoubleclickevent_isbase = false;
+            KFileWidget::mouseDoubleClickEvent(event);
+            return;
+        }
+        auto mousedoubleclickevent_cb = kfilewidget_mousedoubleclickevent_callback;
+        if (mousedoubleclickevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousedoubleclickevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::mouseDoubleClickEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mouseMoveEvent(QMouseEvent* event) override {
+        if (kfilewidget_mousemoveevent_isbase) {
+            kfilewidget_mousemoveevent_isbase = false;
+            KFileWidget::mouseMoveEvent(event);
+            return;
+        }
+        auto mousemoveevent_cb = kfilewidget_mousemoveevent_callback;
+        if (mousemoveevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousemoveevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::mouseMoveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void wheelEvent(QWheelEvent* event) override {
+        if (kfilewidget_wheelevent_isbase) {
+            kfilewidget_wheelevent_isbase = false;
+            KFileWidget::wheelEvent(event);
+            return;
+        }
+        auto wheelevent_cb = kfilewidget_wheelevent_callback;
+        if (wheelevent_cb) {
+            QWheelEvent* cbval1 = event;
+
+            wheelevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::wheelEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void keyPressEvent(QKeyEvent* event) override {
+        if (kfilewidget_keypressevent_isbase) {
+            kfilewidget_keypressevent_isbase = false;
+            KFileWidget::keyPressEvent(event);
+            return;
+        }
+        auto keypressevent_cb = kfilewidget_keypressevent_callback;
+        if (keypressevent_cb) {
+            QKeyEvent* cbval1 = event;
+
+            keypressevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::keyPressEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void keyReleaseEvent(QKeyEvent* event) override {
+        if (kfilewidget_keyreleaseevent_isbase) {
+            kfilewidget_keyreleaseevent_isbase = false;
+            KFileWidget::keyReleaseEvent(event);
+            return;
+        }
+        auto keyreleaseevent_cb = kfilewidget_keyreleaseevent_callback;
+        if (keyreleaseevent_cb) {
+            QKeyEvent* cbval1 = event;
+
+            keyreleaseevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::keyReleaseEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void focusInEvent(QFocusEvent* event) override {
+        if (kfilewidget_focusinevent_isbase) {
+            kfilewidget_focusinevent_isbase = false;
+            KFileWidget::focusInEvent(event);
+            return;
+        }
+        auto focusinevent_cb = kfilewidget_focusinevent_callback;
+        if (focusinevent_cb) {
+            QFocusEvent* cbval1 = event;
+
+            focusinevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::focusInEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void focusOutEvent(QFocusEvent* event) override {
+        if (kfilewidget_focusoutevent_isbase) {
+            kfilewidget_focusoutevent_isbase = false;
+            KFileWidget::focusOutEvent(event);
+            return;
+        }
+        auto focusoutevent_cb = kfilewidget_focusoutevent_callback;
+        if (focusoutevent_cb) {
+            QFocusEvent* cbval1 = event;
+
+            focusoutevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::focusOutEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void enterEvent(QEnterEvent* event) override {
+        if (kfilewidget_enterevent_isbase) {
+            kfilewidget_enterevent_isbase = false;
+            KFileWidget::enterEvent(event);
+            return;
+        }
+        auto enterevent_cb = kfilewidget_enterevent_callback;
+        if (enterevent_cb) {
+            QEnterEvent* cbval1 = event;
+
+            enterevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::enterEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void leaveEvent(QEvent* event) override {
+        if (kfilewidget_leaveevent_isbase) {
+            kfilewidget_leaveevent_isbase = false;
+            KFileWidget::leaveEvent(event);
+            return;
+        }
+        auto leaveevent_cb = kfilewidget_leaveevent_callback;
+        if (leaveevent_cb) {
+            QEvent* cbval1 = event;
+
+            leaveevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::leaveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void paintEvent(QPaintEvent* event) override {
+        if (kfilewidget_paintevent_isbase) {
+            kfilewidget_paintevent_isbase = false;
+            KFileWidget::paintEvent(event);
+            return;
+        }
+        auto paintevent_cb = kfilewidget_paintevent_callback;
+        if (paintevent_cb) {
+            QPaintEvent* cbval1 = event;
+
+            paintevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::paintEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void moveEvent(QMoveEvent* event) override {
+        if (kfilewidget_moveevent_isbase) {
+            kfilewidget_moveevent_isbase = false;
+            KFileWidget::moveEvent(event);
+            return;
+        }
+        auto moveevent_cb = kfilewidget_moveevent_callback;
+        if (moveevent_cb) {
+            QMoveEvent* cbval1 = event;
+
+            moveevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::moveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void closeEvent(QCloseEvent* event) override {
+        if (kfilewidget_closeevent_isbase) {
+            kfilewidget_closeevent_isbase = false;
+            KFileWidget::closeEvent(event);
+            return;
+        }
+        auto closeevent_cb = kfilewidget_closeevent_callback;
+        if (closeevent_cb) {
+            QCloseEvent* cbval1 = event;
+
+            closeevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::closeEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void contextMenuEvent(QContextMenuEvent* event) override {
+        if (kfilewidget_contextmenuevent_isbase) {
+            kfilewidget_contextmenuevent_isbase = false;
+            KFileWidget::contextMenuEvent(event);
+            return;
+        }
+        auto contextmenuevent_cb = kfilewidget_contextmenuevent_callback;
+        if (contextmenuevent_cb) {
+            QContextMenuEvent* cbval1 = event;
+
+            contextmenuevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::contextMenuEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void tabletEvent(QTabletEvent* event) override {
+        if (kfilewidget_tabletevent_isbase) {
+            kfilewidget_tabletevent_isbase = false;
+            KFileWidget::tabletEvent(event);
+            return;
+        }
+        auto tabletevent_cb = kfilewidget_tabletevent_callback;
+        if (tabletevent_cb) {
+            QTabletEvent* cbval1 = event;
+
+            tabletevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::tabletEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void actionEvent(QActionEvent* event) override {
+        if (kfilewidget_actionevent_isbase) {
+            kfilewidget_actionevent_isbase = false;
+            KFileWidget::actionEvent(event);
+            return;
+        }
+        auto actionevent_cb = kfilewidget_actionevent_callback;
+        if (actionevent_cb) {
+            QActionEvent* cbval1 = event;
+
+            actionevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::actionEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dragEnterEvent(QDragEnterEvent* event) override {
+        if (kfilewidget_dragenterevent_isbase) {
+            kfilewidget_dragenterevent_isbase = false;
+            KFileWidget::dragEnterEvent(event);
+            return;
+        }
+        auto dragenterevent_cb = kfilewidget_dragenterevent_callback;
+        if (dragenterevent_cb) {
+            QDragEnterEvent* cbval1 = event;
+
+            dragenterevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::dragEnterEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dragMoveEvent(QDragMoveEvent* event) override {
+        if (kfilewidget_dragmoveevent_isbase) {
+            kfilewidget_dragmoveevent_isbase = false;
+            KFileWidget::dragMoveEvent(event);
+            return;
+        }
+        auto dragmoveevent_cb = kfilewidget_dragmoveevent_callback;
+        if (dragmoveevent_cb) {
+            QDragMoveEvent* cbval1 = event;
+
+            dragmoveevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::dragMoveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dragLeaveEvent(QDragLeaveEvent* event) override {
+        if (kfilewidget_dragleaveevent_isbase) {
+            kfilewidget_dragleaveevent_isbase = false;
+            KFileWidget::dragLeaveEvent(event);
+            return;
+        }
+        auto dragleaveevent_cb = kfilewidget_dragleaveevent_callback;
+        if (dragleaveevent_cb) {
+            QDragLeaveEvent* cbval1 = event;
+
+            dragleaveevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::dragLeaveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dropEvent(QDropEvent* event) override {
+        if (kfilewidget_dropevent_isbase) {
+            kfilewidget_dropevent_isbase = false;
+            KFileWidget::dropEvent(event);
+            return;
+        }
+        auto dropevent_cb = kfilewidget_dropevent_callback;
+        if (dropevent_cb) {
+            QDropEvent* cbval1 = event;
+
+            dropevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::dropEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void hideEvent(QHideEvent* event) override {
+        if (kfilewidget_hideevent_isbase) {
+            kfilewidget_hideevent_isbase = false;
+            KFileWidget::hideEvent(event);
+            return;
+        }
+        auto hideevent_cb = kfilewidget_hideevent_callback;
+        if (hideevent_cb) {
+            QHideEvent* cbval1 = event;
+
+            hideevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::hideEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool nativeEvent(const QByteArray& eventType, void* message, qintptr* result) override {
+        if (kfilewidget_nativeevent_isbase) {
+            kfilewidget_nativeevent_isbase = false;
+            return KFileWidget::nativeEvent(eventType, message, result);
+        }
+        auto nativeevent_cb = kfilewidget_nativeevent_callback;
+        if (nativeevent_cb) {
+            const QByteArray eventType_qb = eventType;
+            libqt_string eventType_str;
+            eventType_str.len = eventType_qb.length();
+            eventType_str.data = static_cast<char*>(malloc(eventType_str.len));
+            memcpy((void*)eventType_str.data, eventType_qb.data(), eventType_str.len);
+            libqt_string cbval1 = eventType_str;
+            void* cbval2 = message;
+            qintptr* result_ret = result;
+            intptr_t* cbval3 = (intptr_t*)(result_ret);
+
+            bool callback_ret = nativeevent_cb(this, cbval1, cbval2, cbval3);
+            libqt_free(eventType_str.data);
+            return callback_ret;
+        }
+        return KFileWidget::nativeEvent(eventType, message, result);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void changeEvent(QEvent* param1) override {
+        if (kfilewidget_changeevent_isbase) {
+            kfilewidget_changeevent_isbase = false;
+            KFileWidget::changeEvent(param1);
+            return;
+        }
+        auto changeevent_cb = kfilewidget_changeevent_callback;
+        if (changeevent_cb) {
+            QEvent* cbval1 = param1;
+
+            changeevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::changeEvent(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int metric(QPaintDevice::PaintDeviceMetric param1) const override {
+        if (kfilewidget_metric_isbase) {
+            kfilewidget_metric_isbase = false;
+            return KFileWidget::metric(param1);
+        }
+        auto metric_cb = kfilewidget_metric_callback;
+        if (metric_cb) {
+            int cbval1 = static_cast<int>(param1);
+
+            int callback_ret = metric_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return KFileWidget::metric(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void initPainter(QPainter* painter) const override {
+        if (kfilewidget_initpainter_isbase) {
+            kfilewidget_initpainter_isbase = false;
+            KFileWidget::initPainter(painter);
+            return;
+        }
+        auto initpainter_cb = kfilewidget_initpainter_callback;
+        if (initpainter_cb) {
+            QPainter* cbval1 = painter;
+
+            initpainter_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::initPainter(painter);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QPaintDevice* redirected(QPoint* offset) const override {
+        if (kfilewidget_redirected_isbase) {
+            kfilewidget_redirected_isbase = false;
+            return KFileWidget::redirected(offset);
+        }
+        auto redirected_cb = kfilewidget_redirected_callback;
+        if (redirected_cb) {
+            QPoint* cbval1 = offset;
+
+            QPaintDevice* callback_ret = redirected_cb(this, cbval1);
+            return callback_ret;
+        }
+        return KFileWidget::redirected(offset);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QPainter* sharedPainter() const override {
+        if (kfilewidget_sharedpainter_isbase) {
+            kfilewidget_sharedpainter_isbase = false;
+            return KFileWidget::sharedPainter();
+        }
+        auto sharedpainter_cb = kfilewidget_sharedpainter_callback;
+        if (sharedpainter_cb) {
+            QPainter* callback_ret = sharedpainter_cb();
+            return callback_ret;
+        }
+        return KFileWidget::sharedPainter();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void inputMethodEvent(QInputMethodEvent* param1) override {
+        if (kfilewidget_inputmethodevent_isbase) {
+            kfilewidget_inputmethodevent_isbase = false;
+            KFileWidget::inputMethodEvent(param1);
+            return;
+        }
+        auto inputmethodevent_cb = kfilewidget_inputmethodevent_callback;
+        if (inputmethodevent_cb) {
+            QInputMethodEvent* cbval1 = param1;
+
+            inputmethodevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::inputMethodEvent(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QVariant inputMethodQuery(Qt::InputMethodQuery param1) const override {
+        if (kfilewidget_inputmethodquery_isbase) {
+            kfilewidget_inputmethodquery_isbase = false;
+            return KFileWidget::inputMethodQuery(param1);
+        }
+        auto inputmethodquery_cb = kfilewidget_inputmethodquery_callback;
+        if (inputmethodquery_cb) {
+            int cbval1 = static_cast<int>(param1);
+
+            QVariant* callback_ret = inputmethodquery_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return KFileWidget::inputMethodQuery(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool focusNextPrevChild(bool next) override {
+        if (kfilewidget_focusnextprevchild_isbase) {
+            kfilewidget_focusnextprevchild_isbase = false;
+            return KFileWidget::focusNextPrevChild(next);
+        }
+        auto focusnextprevchild_cb = kfilewidget_focusnextprevchild_callback;
+        if (focusnextprevchild_cb) {
+            bool cbval1 = next;
+
+            bool callback_ret = focusnextprevchild_cb(this, cbval1);
+            return callback_ret;
+        }
+        return KFileWidget::focusNextPrevChild(next);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void timerEvent(QTimerEvent* event) override {
+        if (kfilewidget_timerevent_isbase) {
+            kfilewidget_timerevent_isbase = false;
+            KFileWidget::timerEvent(event);
+            return;
+        }
+        auto timerevent_cb = kfilewidget_timerevent_callback;
+        if (timerevent_cb) {
+            QTimerEvent* cbval1 = event;
+
+            timerevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::timerEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void childEvent(QChildEvent* event) override {
+        if (kfilewidget_childevent_isbase) {
+            kfilewidget_childevent_isbase = false;
+            KFileWidget::childEvent(event);
+            return;
+        }
+        auto childevent_cb = kfilewidget_childevent_callback;
+        if (childevent_cb) {
+            QChildEvent* cbval1 = event;
+
+            childevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::childEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void customEvent(QEvent* event) override {
+        if (kfilewidget_customevent_isbase) {
+            kfilewidget_customevent_isbase = false;
+            KFileWidget::customEvent(event);
+            return;
+        }
+        auto customevent_cb = kfilewidget_customevent_callback;
+        if (customevent_cb) {
+            QEvent* cbval1 = event;
+
+            customevent_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::customEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void connectNotify(const QMetaMethod& signal) override {
+        if (kfilewidget_connectnotify_isbase) {
+            kfilewidget_connectnotify_isbase = false;
+            KFileWidget::connectNotify(signal);
+            return;
+        }
+        auto connectnotify_cb = kfilewidget_connectnotify_callback;
+        if (connectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            connectnotify_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::connectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void disconnectNotify(const QMetaMethod& signal) override {
+        if (kfilewidget_disconnectnotify_isbase) {
+            kfilewidget_disconnectnotify_isbase = false;
+            KFileWidget::disconnectNotify(signal);
+            return;
+        }
+        auto disconnectnotify_cb = kfilewidget_disconnectnotify_callback;
+        if (disconnectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            disconnectnotify_cb(this, cbval1);
+            return;
+        }
+        KFileWidget::disconnectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void updateMicroFocus() {
+        if (kfilewidget_updatemicrofocus_isbase) {
+            kfilewidget_updatemicrofocus_isbase = false;
+            KFileWidget::updateMicroFocus();
+            return;
+        }
+        auto updatemicrofocus_cb = kfilewidget_updatemicrofocus_callback;
+        if (updatemicrofocus_cb) {
+            updatemicrofocus_cb();
+            return;
+        }
+        KFileWidget::updateMicroFocus();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void create() {
+        if (kfilewidget_create_isbase) {
+            kfilewidget_create_isbase = false;
+            KFileWidget::create();
+            return;
+        }
+        auto create_cb = kfilewidget_create_callback;
+        if (create_cb) {
+            create_cb();
+            return;
+        }
+        KFileWidget::create();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void destroy() {
+        if (kfilewidget_destroy_isbase) {
+            kfilewidget_destroy_isbase = false;
+            KFileWidget::destroy();
+            return;
+        }
+        auto destroy_cb = kfilewidget_destroy_callback;
+        if (destroy_cb) {
+            destroy_cb();
+            return;
+        }
+        KFileWidget::destroy();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool focusNextChild() {
+        if (kfilewidget_focusnextchild_isbase) {
+            kfilewidget_focusnextchild_isbase = false;
+            return KFileWidget::focusNextChild();
+        }
+        auto focusnextchild_cb = kfilewidget_focusnextchild_callback;
+        if (focusnextchild_cb) {
+            bool callback_ret = focusnextchild_cb();
+            return callback_ret;
+        }
+        return KFileWidget::focusNextChild();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool focusPreviousChild() {
+        if (kfilewidget_focuspreviouschild_isbase) {
+            kfilewidget_focuspreviouschild_isbase = false;
+            return KFileWidget::focusPreviousChild();
+        }
+        auto focuspreviouschild_cb = kfilewidget_focuspreviouschild_callback;
+        if (focuspreviouschild_cb) {
+            bool callback_ret = focuspreviouschild_cb();
+            return callback_ret;
+        }
+        return KFileWidget::focusPreviousChild();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    QObject* sender() const {
+        if (kfilewidget_sender_isbase) {
+            kfilewidget_sender_isbase = false;
+            return KFileWidget::sender();
+        }
+        auto sender_cb = kfilewidget_sender_callback;
+        if (sender_cb) {
+            QObject* callback_ret = sender_cb();
+            return callback_ret;
+        }
+        return KFileWidget::sender();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int senderSignalIndex() const {
+        if (kfilewidget_sendersignalindex_isbase) {
+            kfilewidget_sendersignalindex_isbase = false;
+            return KFileWidget::senderSignalIndex();
+        }
+        auto sendersignalindex_cb = kfilewidget_sendersignalindex_callback;
+        if (sendersignalindex_cb) {
+            int callback_ret = sendersignalindex_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return KFileWidget::senderSignalIndex();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int receivers(const char* signal) const {
+        if (kfilewidget_receivers_isbase) {
+            kfilewidget_receivers_isbase = false;
+            return KFileWidget::receivers(signal);
+        }
+        auto receivers_cb = kfilewidget_receivers_callback;
+        if (receivers_cb) {
+            const char* cbval1 = (const char*)signal;
+
+            int callback_ret = receivers_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return KFileWidget::receivers(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool isSignalConnected(const QMetaMethod& signal) const {
+        if (kfilewidget_issignalconnected_isbase) {
+            kfilewidget_issignalconnected_isbase = false;
+            return KFileWidget::isSignalConnected(signal);
+        }
+        auto issignalconnected_cb = kfilewidget_issignalconnected_callback;
+        if (issignalconnected_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            bool callback_ret = issignalconnected_cb(this, cbval1);
+            return callback_ret;
+        }
+        return KFileWidget::isSignalConnected(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
+        if (kfilewidget_getdecodedmetricf_isbase) {
+            kfilewidget_getdecodedmetricf_isbase = false;
+            return KFileWidget::getDecodedMetricF(metricA, metricB);
+        }
+        auto getdecodedmetricf_cb = kfilewidget_getdecodedmetricf_callback;
+        if (getdecodedmetricf_cb) {
+            int cbval1 = static_cast<int>(metricA);
+            int cbval2 = static_cast<int>(metricB);
+
+            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
+            return static_cast<double>(callback_ret);
+        }
+        return KFileWidget::getDecodedMetricF(metricA, metricB);
+    }
+
+    // Friend functions
+    friend void KFileWidget_ResizeEvent(KFileWidget* self, QResizeEvent* event);
+    friend void KFileWidget_SuperResizeEvent(KFileWidget* self, QResizeEvent* event);
+    friend void KFileWidget_ShowEvent(KFileWidget* self, QShowEvent* event);
+    friend void KFileWidget_SuperShowEvent(KFileWidget* self, QShowEvent* event);
+    friend bool KFileWidget_EventFilter(KFileWidget* self, QObject* watched, QEvent* event);
+    friend bool KFileWidget_SuperEventFilter(KFileWidget* self, QObject* watched, QEvent* event);
+    friend bool KFileWidget_Event(KFileWidget* self, QEvent* event);
+    friend bool KFileWidget_SuperEvent(KFileWidget* self, QEvent* event);
+    friend void KFileWidget_MousePressEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_SuperMousePressEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_MouseReleaseEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_SuperMouseReleaseEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_MouseDoubleClickEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_SuperMouseDoubleClickEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_MouseMoveEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_SuperMouseMoveEvent(KFileWidget* self, QMouseEvent* event);
+    friend void KFileWidget_WheelEvent(KFileWidget* self, QWheelEvent* event);
+    friend void KFileWidget_SuperWheelEvent(KFileWidget* self, QWheelEvent* event);
+    friend void KFileWidget_KeyPressEvent(KFileWidget* self, QKeyEvent* event);
+    friend void KFileWidget_SuperKeyPressEvent(KFileWidget* self, QKeyEvent* event);
+    friend void KFileWidget_KeyReleaseEvent(KFileWidget* self, QKeyEvent* event);
+    friend void KFileWidget_SuperKeyReleaseEvent(KFileWidget* self, QKeyEvent* event);
+    friend void KFileWidget_FocusInEvent(KFileWidget* self, QFocusEvent* event);
+    friend void KFileWidget_SuperFocusInEvent(KFileWidget* self, QFocusEvent* event);
+    friend void KFileWidget_FocusOutEvent(KFileWidget* self, QFocusEvent* event);
+    friend void KFileWidget_SuperFocusOutEvent(KFileWidget* self, QFocusEvent* event);
+    friend void KFileWidget_EnterEvent(KFileWidget* self, QEnterEvent* event);
+    friend void KFileWidget_SuperEnterEvent(KFileWidget* self, QEnterEvent* event);
+    friend void KFileWidget_LeaveEvent(KFileWidget* self, QEvent* event);
+    friend void KFileWidget_SuperLeaveEvent(KFileWidget* self, QEvent* event);
+    friend void KFileWidget_PaintEvent(KFileWidget* self, QPaintEvent* event);
+    friend void KFileWidget_SuperPaintEvent(KFileWidget* self, QPaintEvent* event);
+    friend void KFileWidget_MoveEvent(KFileWidget* self, QMoveEvent* event);
+    friend void KFileWidget_SuperMoveEvent(KFileWidget* self, QMoveEvent* event);
+    friend void KFileWidget_CloseEvent(KFileWidget* self, QCloseEvent* event);
+    friend void KFileWidget_SuperCloseEvent(KFileWidget* self, QCloseEvent* event);
+    friend void KFileWidget_ContextMenuEvent(KFileWidget* self, QContextMenuEvent* event);
+    friend void KFileWidget_SuperContextMenuEvent(KFileWidget* self, QContextMenuEvent* event);
+    friend void KFileWidget_TabletEvent(KFileWidget* self, QTabletEvent* event);
+    friend void KFileWidget_SuperTabletEvent(KFileWidget* self, QTabletEvent* event);
+    friend void KFileWidget_ActionEvent(KFileWidget* self, QActionEvent* event);
+    friend void KFileWidget_SuperActionEvent(KFileWidget* self, QActionEvent* event);
+    friend void KFileWidget_DragEnterEvent(KFileWidget* self, QDragEnterEvent* event);
+    friend void KFileWidget_SuperDragEnterEvent(KFileWidget* self, QDragEnterEvent* event);
+    friend void KFileWidget_DragMoveEvent(KFileWidget* self, QDragMoveEvent* event);
+    friend void KFileWidget_SuperDragMoveEvent(KFileWidget* self, QDragMoveEvent* event);
+    friend void KFileWidget_DragLeaveEvent(KFileWidget* self, QDragLeaveEvent* event);
+    friend void KFileWidget_SuperDragLeaveEvent(KFileWidget* self, QDragLeaveEvent* event);
+    friend void KFileWidget_DropEvent(KFileWidget* self, QDropEvent* event);
+    friend void KFileWidget_SuperDropEvent(KFileWidget* self, QDropEvent* event);
+    friend void KFileWidget_HideEvent(KFileWidget* self, QHideEvent* event);
+    friend void KFileWidget_SuperHideEvent(KFileWidget* self, QHideEvent* event);
+    friend bool KFileWidget_NativeEvent(KFileWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+    friend bool KFileWidget_SuperNativeEvent(KFileWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+    friend void KFileWidget_ChangeEvent(KFileWidget* self, QEvent* param1);
+    friend void KFileWidget_SuperChangeEvent(KFileWidget* self, QEvent* param1);
+    friend int KFileWidget_Metric(const KFileWidget* self, int param1);
+    friend int KFileWidget_SuperMetric(const KFileWidget* self, int param1);
+    friend void KFileWidget_InitPainter(const KFileWidget* self, QPainter* painter);
+    friend void KFileWidget_SuperInitPainter(const KFileWidget* self, QPainter* painter);
+    friend QPaintDevice* KFileWidget_Redirected(const KFileWidget* self, QPoint* offset);
+    friend QPaintDevice* KFileWidget_SuperRedirected(const KFileWidget* self, QPoint* offset);
+    friend QPainter* KFileWidget_SharedPainter(const KFileWidget* self);
+    friend QPainter* KFileWidget_SuperSharedPainter(const KFileWidget* self);
+    friend void KFileWidget_InputMethodEvent(KFileWidget* self, QInputMethodEvent* param1);
+    friend void KFileWidget_SuperInputMethodEvent(KFileWidget* self, QInputMethodEvent* param1);
+    friend bool KFileWidget_FocusNextPrevChild(KFileWidget* self, bool next);
+    friend bool KFileWidget_SuperFocusNextPrevChild(KFileWidget* self, bool next);
+    friend void KFileWidget_TimerEvent(KFileWidget* self, QTimerEvent* event);
+    friend void KFileWidget_SuperTimerEvent(KFileWidget* self, QTimerEvent* event);
+    friend void KFileWidget_ChildEvent(KFileWidget* self, QChildEvent* event);
+    friend void KFileWidget_SuperChildEvent(KFileWidget* self, QChildEvent* event);
+    friend void KFileWidget_CustomEvent(KFileWidget* self, QEvent* event);
+    friend void KFileWidget_SuperCustomEvent(KFileWidget* self, QEvent* event);
+    friend void KFileWidget_ConnectNotify(KFileWidget* self, const QMetaMethod* signal);
+    friend void KFileWidget_SuperConnectNotify(KFileWidget* self, const QMetaMethod* signal);
+    friend void KFileWidget_DisconnectNotify(KFileWidget* self, const QMetaMethod* signal);
+    friend void KFileWidget_SuperDisconnectNotify(KFileWidget* self, const QMetaMethod* signal);
+    friend void KFileWidget_UpdateMicroFocus(KFileWidget* self);
+    friend void KFileWidget_SuperUpdateMicroFocus(KFileWidget* self);
+    friend void KFileWidget_Create(KFileWidget* self);
+    friend void KFileWidget_SuperCreate(KFileWidget* self);
+    friend void KFileWidget_Destroy(KFileWidget* self);
+    friend void KFileWidget_SuperDestroy(KFileWidget* self);
+    friend bool KFileWidget_FocusNextChild(KFileWidget* self);
+    friend bool KFileWidget_SuperFocusNextChild(KFileWidget* self);
+    friend bool KFileWidget_FocusPreviousChild(KFileWidget* self);
+    friend bool KFileWidget_SuperFocusPreviousChild(KFileWidget* self);
+    friend QObject* KFileWidget_Sender(const KFileWidget* self);
+    friend QObject* KFileWidget_SuperSender(const KFileWidget* self);
+    friend int KFileWidget_SenderSignalIndex(const KFileWidget* self);
+    friend int KFileWidget_SuperSenderSignalIndex(const KFileWidget* self);
+    friend int KFileWidget_Receivers(const KFileWidget* self, const char* signal);
+    friend int KFileWidget_SuperReceivers(const KFileWidget* self, const char* signal);
+    friend bool KFileWidget_IsSignalConnected(const KFileWidget* self, const QMetaMethod* signal);
+    friend bool KFileWidget_SuperIsSignalConnected(const KFileWidget* self, const QMetaMethod* signal);
+    friend double KFileWidget_GetDecodedMetricF(const KFileWidget* self, int metricA, int metricB);
+    friend double KFileWidget_SuperGetDecodedMetricF(const KFileWidget* self, int metricA, int metricB);
+};
+
+#endif

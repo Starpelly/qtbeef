@@ -1,0 +1,2395 @@
+#pragma once
+#ifndef SRC_RESTRICTED_EXTRAS_QSCINTILLA_QT6C_LIBQSCILEXERPERL_H
+#define SRC_RESTRICTED_EXTRAS_QSCINTILLA_QT6C_LIBQSCILEXERPERL_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+
+/// q_scilexerperl_new constructs a new QsciLexerPerl object.
+///
+QsciLexerPerl* q_scilexerperl_new();
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+
+/// q_scilexerperl_new2 constructs a new QsciLexerPerl object.
+///
+/// @param parent QObject*
+///
+QsciLexerPerl* q_scilexerperl_new2(void* parent);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// @param self QsciLexerPerl*
+///
+const QMetaObject* q_scilexerperl_meta_object(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Allows for overriding the related default method
+///
+/// @param self QsciLexerPerl*
+/// @param callback const QMetaObject* func()
+///
+void q_scilexerperl_on_meta_object(void* self, const QMetaObject* (*callback)());
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_meta_object` instead
+///
+#define q_scilexerperl_qbase_meta_object q_scilexerperl_super_meta_object
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Base class method implementation
+///
+/// @param self QsciLexerPerl*
+///
+const QMetaObject* q_scilexerperl_super_meta_object(void* self);
+
+/// @param self QsciLexerPerl*
+/// @param param1 const char*
+///
+void* q_scilexerperl_metacast(void* self, const char* param1);
+
+/// Allows for overriding the related default method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void* func(QsciLexerPerl* self, const char* param1)
+///
+void q_scilexerperl_on_metacast(void* self, void* (*callback)(void*, const char*));
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_metacast` instead
+///
+#define q_scilexerperl_qbase_metacast q_scilexerperl_super_metacast
+
+/// Base class method implementation
+///
+/// @param self QsciLexerPerl*
+/// @param param1 const char*
+///
+void* q_scilexerperl_super_metacast(void* self, const char* param1);
+
+/// @param self QsciLexerPerl*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t q_scilexerperl_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// Allows for overriding the related default method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func(QsciLexerPerl* self, enum QMetaObject__Call param1, int param2, void* param3)
+///
+void q_scilexerperl_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*));
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_metacall` instead
+///
+#define q_scilexerperl_qbase_metacall q_scilexerperl_super_metacall
+
+/// Base class method implementation
+///
+/// @param self QsciLexerPerl*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t q_scilexerperl_super_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+///
+const char* q_scilexerperl_tr(const char* s);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_language(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_lexer(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char** q_scilexerperl_auto_completion_word_separators(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_block_end(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_block_start(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_brace_style(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_word_characters(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_default_color(void* self, int style);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+bool q_scilexerperl_default_eol_fill(void* self, int style);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QFont* q_scilexerperl_default_font(void* self, int style);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_default_paper(void* self, int style);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+/// @param set int
+///
+const char* q_scilexerperl_keywords(void* self, int set);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+const char* q_scilexerperl_description(void* self, int style);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+///
+void q_scilexerperl_refresh_properties(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param fold bool
+///
+void q_scilexerperl_set_fold_at_else(void* self, bool fold);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_fold_at_else(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_fold_comments(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_fold_compact(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param fold bool
+///
+void q_scilexerperl_set_fold_packages(void* self, bool fold);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_fold_packages(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param fold bool
+///
+void q_scilexerperl_set_fold_p_o_d_blocks(void* self, bool fold);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_fold_p_o_d_blocks(void* self);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param fold bool
+///
+void q_scilexerperl_set_fold_comments(void* self, bool fold);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Allows for overriding the related default method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, bool fold)
+///
+void q_scilexerperl_on_set_fold_comments(void* self, void (*callback)(void*, bool));
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_fold_comments` instead
+///
+#define q_scilexerperl_qbase_set_fold_comments q_scilexerperl_super_set_fold_comments
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Base class method implementation
+///
+/// @param self QsciLexerPerl*
+/// @param fold bool
+///
+void q_scilexerperl_super_set_fold_comments(void* self, bool fold);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param fold bool
+///
+void q_scilexerperl_set_fold_compact(void* self, bool fold);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Allows for overriding the related default method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, bool fold)
+///
+void q_scilexerperl_on_set_fold_compact(void* self, void (*callback)(void*, bool));
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_fold_compact` instead
+///
+#define q_scilexerperl_qbase_set_fold_compact q_scilexerperl_super_set_fold_compact
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Base class method implementation
+///
+/// @param self QsciLexerPerl*
+/// @param fold bool
+///
+void q_scilexerperl_super_set_fold_compact(void* self, bool fold);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+/// @param prefix const char*
+///
+bool q_scilexerperl_read_properties(void* self, void* qs, const char* prefix);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Allows for overriding the related default method
+///
+/// @param self QsciLexerPerl*
+/// @param callback bool func(QsciLexerPerl* self, QSettings* qs, const char* prefix)
+///
+void q_scilexerperl_on_read_properties(void* self, bool (*callback)(void*, void*, const char*));
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_read_properties` instead
+///
+#define q_scilexerperl_qbase_read_properties q_scilexerperl_super_read_properties
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Base class method implementation
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+/// @param prefix const char*
+///
+bool q_scilexerperl_super_read_properties(void* self, void* qs, const char* prefix);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+/// @param prefix const char*
+///
+bool q_scilexerperl_write_properties(void* self, void* qs, const char* prefix);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Allows for overriding the related default method
+///
+/// @param self QsciLexerPerl*
+/// @param callback bool func(QsciLexerPerl* self, QSettings* qs, const char* prefix)
+///
+void q_scilexerperl_on_write_properties(void* self, bool (*callback)(void*, void*, const char*));
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_write_properties` instead
+///
+#define q_scilexerperl_qbase_write_properties q_scilexerperl_super_write_properties
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Base class method implementation
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+/// @param prefix const char*
+///
+bool q_scilexerperl_super_write_properties(void* self, void* qs, const char* prefix);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+///
+const char* q_scilexerperl_tr2(const char* s, const char* c);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+/// @param n int
+///
+const char* q_scilexerperl_tr3(const char* s, const char* c, int n);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+/// @param style int*
+///
+const char* q_scilexerperl_block_end1(void* self, int* style);
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+/// @param style int*
+///
+const char* q_scilexerperl_block_start1(void* self, int* style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+///
+QsciAbstractAPIs* q_scilexerperl_apis(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_auto_indent_style(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+///
+QsciScintilla* q_scilexerperl_editor(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param apis QsciAbstractAPIs*
+///
+void q_scilexerperl_set_a_p_is(void* self, void* apis);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+///
+void q_scilexerperl_set_default_color(void* self, void* c);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param f QFont*
+///
+void q_scilexerperl_set_default_font(void* self, void* f);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+///
+void q_scilexerperl_set_default_paper(void* self, void* c);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+///
+bool q_scilexerperl_read_settings(void* self, void* qs);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+///
+bool q_scilexerperl_write_settings(void* self, void* qs);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+/// @param style int
+///
+void q_scilexerperl_color_changed(void* self, void* c, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QColor* c, int style)
+///
+void q_scilexerperl_on_color_changed(void* self, void (*callback)(void*, void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param eolfilled bool
+/// @param style int
+///
+void q_scilexerperl_eol_fill_changed(void* self, bool eolfilled, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, bool eolfilled, int style)
+///
+void q_scilexerperl_on_eol_fill_changed(void* self, void (*callback)(void*, bool, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param f QFont*
+/// @param style int
+///
+void q_scilexerperl_font_changed(void* self, void* f, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QFont* f, int style)
+///
+void q_scilexerperl_on_font_changed(void* self, void (*callback)(void*, void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+/// @param style int
+///
+void q_scilexerperl_paper_changed(void* self, void* c, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QColor* c, int style)
+///
+void q_scilexerperl_on_paper_changed(void* self, void (*callback)(void*, void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param prop const char*
+/// @param val const char*
+///
+void q_scilexerperl_property_changed(void* self, const char* prop, const char* val);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, const char* prop, const char* val)
+///
+void q_scilexerperl_on_property_changed(void* self, void (*callback)(void*, const char*, const char*));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+/// @param prefix const char*
+///
+bool q_scilexerperl_read_settings2(void* self, void* qs, const char* prefix);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @param self QsciLexerPerl*
+/// @param qs QSettings*
+/// @param prefix const char*
+///
+bool q_scilexerperl_write_settings2(void* self, void* qs, const char* prefix);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_object_name(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setObjectName)
+///
+/// @param self QsciLexerPerl*
+/// @param name const char*
+///
+void q_scilexerperl_set_object_name(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWidgetType)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_is_widget_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWindowType)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_is_window_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isQuickItemType)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_is_quick_item_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#signalsBlocked)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_signals_blocked(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#blockSignals)
+///
+/// @param self QsciLexerPerl*
+/// @param b bool
+///
+bool q_scilexerperl_block_signals(void* self, bool b);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#thread)
+///
+/// @param self QsciLexerPerl*
+///
+QThread* q_scilexerperl_thread(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#moveToThread)
+///
+/// @param self QsciLexerPerl*
+/// @param thread QThread*
+///
+bool q_scilexerperl_move_to_thread(void* self, void* thread);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self QsciLexerPerl*
+/// @param interval int
+///
+int32_t q_scilexerperl_start_timer(void* self, int interval);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self QsciLexerPerl*
+/// @param time int64_t of nanoseconds
+///
+int32_t q_scilexerperl_start_timer2(void* self, int64_t time);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self QsciLexerPerl*
+/// @param id int
+///
+void q_scilexerperl_kill_timer(void* self, int id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self QsciLexerPerl*
+/// @param id enum Qt__TimerId
+///
+void q_scilexerperl_kill_timer2(void* self, int32_t id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#children)
+///
+/// @param self QsciLexerPerl*
+///
+/// @return libqt_list of QObject*
+///
+libqt_list q_scilexerperl_children(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setParent)
+///
+/// @param self QsciLexerPerl*
+/// @param parent QObject*
+///
+void q_scilexerperl_set_parent(void* self, void* parent);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#installEventFilter)
+///
+/// @param self QsciLexerPerl*
+/// @param filterObj QObject*
+///
+void q_scilexerperl_install_event_filter(void* self, void* filterObj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#removeEventFilter)
+///
+/// @param self QsciLexerPerl*
+/// @param obj QObject*
+///
+void q_scilexerperl_remove_event_filter(void* self, void* obj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+QMetaObject__Connection* q_scilexerperl_connect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+///
+QMetaObject__Connection* q_scilexerperl_connect2(void* sender, void* signal, void* receiver, void* method);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self QsciLexerPerl*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+///
+QMetaObject__Connection* q_scilexerperl_connect3(void* self, void* sender, const char* signal, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool q_scilexerperl_disconnect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param member QMetaMethod*
+///
+bool q_scilexerperl_disconnect2(void* sender, void* signal, void* receiver, void* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_disconnect3(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self QsciLexerPerl*
+/// @param receiver QObject*
+///
+bool q_scilexerperl_disconnect4(void* self, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param param1 QMetaObject__Connection*
+///
+bool q_scilexerperl_disconnect5(void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectTree)
+///
+/// @param self QsciLexerPerl*
+///
+void q_scilexerperl_dump_object_tree(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectInfo)
+///
+/// @param self QsciLexerPerl*
+///
+void q_scilexerperl_dump_object_info(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setProperty)
+///
+/// @param self QsciLexerPerl*
+/// @param name const char*
+/// @param value QVariant*
+///
+bool q_scilexerperl_set_property(void* self, const char* name, void* value);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#property)
+///
+/// @param self QsciLexerPerl*
+/// @param name const char*
+///
+QVariant* q_scilexerperl_property(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dynamicPropertyNames)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self QsciLexerPerl*
+///
+const char** q_scilexerperl_dynamic_property_names(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self QsciLexerPerl*
+///
+QBindingStorage* q_scilexerperl_binding_storage(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self QsciLexerPerl*
+///
+const QBindingStorage* q_scilexerperl_binding_storage2(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self QsciLexerPerl*
+///
+void q_scilexerperl_destroyed(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self)
+///
+void q_scilexerperl_on_destroyed(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#parent)
+///
+/// @param self QsciLexerPerl*
+///
+QObject* q_scilexerperl_parent(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#inherits)
+///
+/// @param self QsciLexerPerl*
+/// @param classname const char*
+///
+bool q_scilexerperl_inherits(void* self, const char* classname);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#deleteLater)
+///
+/// @param self QsciLexerPerl*
+///
+void q_scilexerperl_delete_later(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self QsciLexerPerl*
+/// @param interval int
+/// @param timerType enum Qt__TimerType
+///
+int32_t q_scilexerperl_start_timer22(void* self, int interval, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self QsciLexerPerl*
+/// @param time int64_t of nanoseconds
+/// @param timerType enum Qt__TimerType
+///
+int32_t q_scilexerperl_start_timer23(void* self, int64_t time, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+/// @param param5 enum Qt__ConnectionType
+///
+QMetaObject__Connection* q_scilexerperl_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* q_scilexerperl_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self QsciLexerPerl*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* q_scilexerperl_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self QsciLexerPerl*
+/// @param signal const char*
+///
+bool q_scilexerperl_disconnect1(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self QsciLexerPerl*
+/// @param signal const char*
+/// @param receiver QObject*
+///
+bool q_scilexerperl_disconnect22(void* self, const char* signal, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self QsciLexerPerl*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool q_scilexerperl_disconnect32(void* self, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self QsciLexerPerl*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool q_scilexerperl_disconnect23(void* self, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self QsciLexerPerl*
+/// @param param1 QObject*
+///
+void q_scilexerperl_destroyed1(void* self, void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QObject* param1)
+///
+void q_scilexerperl_on_destroyed1(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_lexer_id(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_lexer_id` instead
+///
+#define q_scilexerperl_qbase_lexer_id q_scilexerperl_super_lexer_id
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_super_lexer_id(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func()
+///
+void q_scilexerperl_on_lexer_id(void* self, int32_t (*callback)());
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_auto_completion_fillups(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_auto_completion_fillups` instead
+///
+#define q_scilexerperl_qbase_auto_completion_fillups q_scilexerperl_super_auto_completion_fillups
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+const char* q_scilexerperl_super_auto_completion_fillups(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback const char* func()
+///
+void q_scilexerperl_on_auto_completion_fillups(void* self, const char* (*callback)());
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_block_lookback(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_block_lookback` instead
+///
+#define q_scilexerperl_qbase_block_lookback q_scilexerperl_super_block_lookback
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_super_block_lookback(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func()
+///
+void q_scilexerperl_on_block_lookback(void* self, int32_t (*callback)());
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int*
+///
+const char* q_scilexerperl_block_start_keyword(void* self, int* style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_block_start_keyword` instead
+///
+#define q_scilexerperl_qbase_block_start_keyword q_scilexerperl_super_block_start_keyword
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int*
+///
+const char* q_scilexerperl_super_block_start_keyword(void* self, int* style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback const char* func(QsciLexerPerl* self, int* style)
+///
+void q_scilexerperl_on_block_start_keyword(void* self, const char* (*callback)(void*, int*));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_case_sensitive(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_case_sensitive` instead
+///
+#define q_scilexerperl_qbase_case_sensitive q_scilexerperl_super_case_sensitive
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+bool q_scilexerperl_super_case_sensitive(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback bool func()
+///
+void q_scilexerperl_on_case_sensitive(void* self, bool (*callback)());
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_color(void* self, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_color` instead
+///
+#define q_scilexerperl_qbase_color q_scilexerperl_super_color
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_super_color(void* self, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback QColor* func(QsciLexerPerl* self, int style)
+///
+void q_scilexerperl_on_color(void* self, QColor* (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+bool q_scilexerperl_eol_fill(void* self, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_eol_fill` instead
+///
+#define q_scilexerperl_qbase_eol_fill q_scilexerperl_super_eol_fill
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+bool q_scilexerperl_super_eol_fill(void* self, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback bool func(QsciLexerPerl* self, int style)
+///
+void q_scilexerperl_on_eol_fill(void* self, bool (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QFont* q_scilexerperl_font(void* self, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_font` instead
+///
+#define q_scilexerperl_qbase_font q_scilexerperl_super_font
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QFont* q_scilexerperl_super_font(void* self, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback QFont* func(QsciLexerPerl* self, int style)
+///
+void q_scilexerperl_on_font(void* self, QFont* (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_indentation_guide_view(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_indentation_guide_view` instead
+///
+#define q_scilexerperl_qbase_indentation_guide_view q_scilexerperl_super_indentation_guide_view
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_super_indentation_guide_view(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func()
+///
+void q_scilexerperl_on_indentation_guide_view(void* self, int32_t (*callback)());
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_default_style(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_default_style` instead
+///
+#define q_scilexerperl_qbase_default_style q_scilexerperl_super_default_style
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_super_default_style(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func()
+///
+void q_scilexerperl_on_default_style(void* self, int32_t (*callback)());
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_paper(void* self, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_paper` instead
+///
+#define q_scilexerperl_qbase_paper q_scilexerperl_super_paper
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_super_paper(void* self, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback QColor* func(QsciLexerPerl* self, int style)
+///
+void q_scilexerperl_on_paper(void* self, QColor* (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_default_color2(void* self, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_default_color2` instead
+///
+#define q_scilexerperl_qbase_default_color2 q_scilexerperl_super_default_color2
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_super_default_color2(void* self, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback QColor* func(QsciLexerPerl* self, int style)
+///
+void q_scilexerperl_on_default_color2(void* self, QColor* (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QFont* q_scilexerperl_default_font2(void* self, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_default_font2` instead
+///
+#define q_scilexerperl_qbase_default_font2 q_scilexerperl_super_default_font2
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QFont* q_scilexerperl_super_default_font2(void* self, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback QFont* func(QsciLexerPerl* self, int style)
+///
+void q_scilexerperl_on_default_font2(void* self, QFont* (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_default_paper2(void* self, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_default_paper2` instead
+///
+#define q_scilexerperl_qbase_default_paper2 q_scilexerperl_super_default_paper2
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param style int
+///
+QColor* q_scilexerperl_super_default_paper2(void* self, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback QColor* func(QsciLexerPerl* self, int style)
+///
+void q_scilexerperl_on_default_paper2(void* self, QColor* (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param editor QsciScintilla*
+///
+void q_scilexerperl_set_editor(void* self, void* editor);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_editor` instead
+///
+#define q_scilexerperl_qbase_set_editor q_scilexerperl_super_set_editor
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param editor QsciScintilla*
+///
+void q_scilexerperl_super_set_editor(void* self, void* editor);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QsciScintilla* editor)
+///
+void q_scilexerperl_on_set_editor(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_style_bits_needed(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_style_bits_needed` instead
+///
+#define q_scilexerperl_qbase_style_bits_needed q_scilexerperl_super_style_bits_needed
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_super_style_bits_needed(void* self);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func()
+///
+void q_scilexerperl_on_style_bits_needed(void* self, int32_t (*callback)());
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param autoindentstyle int
+///
+void q_scilexerperl_set_auto_indent_style(void* self, int autoindentstyle);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_auto_indent_style` instead
+///
+#define q_scilexerperl_qbase_set_auto_indent_style q_scilexerperl_super_set_auto_indent_style
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param autoindentstyle int
+///
+void q_scilexerperl_super_set_auto_indent_style(void* self, int autoindentstyle);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, int autoindentstyle)
+///
+void q_scilexerperl_on_set_auto_indent_style(void* self, void (*callback)(void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+/// @param style int
+///
+void q_scilexerperl_set_color(void* self, void* c, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_color` instead
+///
+#define q_scilexerperl_qbase_set_color q_scilexerperl_super_set_color
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+/// @param style int
+///
+void q_scilexerperl_super_set_color(void* self, void* c, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QColor* c, int style)
+///
+void q_scilexerperl_on_set_color(void* self, void (*callback)(void*, void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param eoffill bool
+/// @param style int
+///
+void q_scilexerperl_set_eol_fill(void* self, bool eoffill, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_eol_fill` instead
+///
+#define q_scilexerperl_qbase_set_eol_fill q_scilexerperl_super_set_eol_fill
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param eoffill bool
+/// @param style int
+///
+void q_scilexerperl_super_set_eol_fill(void* self, bool eoffill, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, bool eoffill, int style)
+///
+void q_scilexerperl_on_set_eol_fill(void* self, void (*callback)(void*, bool, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param f QFont*
+/// @param style int
+///
+void q_scilexerperl_set_font(void* self, void* f, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_font` instead
+///
+#define q_scilexerperl_qbase_set_font q_scilexerperl_super_set_font
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param f QFont*
+/// @param style int
+///
+void q_scilexerperl_super_set_font(void* self, void* f, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QFont* f, int style)
+///
+void q_scilexerperl_on_set_font(void* self, void (*callback)(void*, void*, int));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+/// @param style int
+///
+void q_scilexerperl_set_paper(void* self, void* c, int style);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_set_paper` instead
+///
+#define q_scilexerperl_qbase_set_paper q_scilexerperl_super_set_paper
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param c QColor*
+/// @param style int
+///
+void q_scilexerperl_super_set_paper(void* self, void* c, int style);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QColor* c, int style)
+///
+void q_scilexerperl_on_set_paper(void* self, void (*callback)(void*, void*, int));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QEvent*
+///
+bool q_scilexerperl_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_event` instead
+///
+#define q_scilexerperl_qbase_event q_scilexerperl_super_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QEvent*
+///
+bool q_scilexerperl_super_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback bool func(QsciLexerPerl* self, QEvent* event)
+///
+void q_scilexerperl_on_event(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool q_scilexerperl_event_filter(void* self, void* watched, void* event);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_event_filter` instead
+///
+#define q_scilexerperl_qbase_event_filter q_scilexerperl_super_event_filter
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool q_scilexerperl_super_event_filter(void* self, void* watched, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback bool func(QsciLexerPerl* self, QObject* watched, QEvent* event)
+///
+void q_scilexerperl_on_event_filter(void* self, bool (*callback)(void*, void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QTimerEvent*
+///
+void q_scilexerperl_timer_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_timer_event` instead
+///
+#define q_scilexerperl_qbase_timer_event q_scilexerperl_super_timer_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QTimerEvent*
+///
+void q_scilexerperl_super_timer_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QTimerEvent* event)
+///
+void q_scilexerperl_on_timer_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QChildEvent*
+///
+void q_scilexerperl_child_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_child_event` instead
+///
+#define q_scilexerperl_qbase_child_event q_scilexerperl_super_child_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QChildEvent*
+///
+void q_scilexerperl_super_child_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QChildEvent* event)
+///
+void q_scilexerperl_on_child_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QEvent*
+///
+void q_scilexerperl_custom_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_custom_event` instead
+///
+#define q_scilexerperl_qbase_custom_event q_scilexerperl_super_custom_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param event QEvent*
+///
+void q_scilexerperl_super_custom_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QEvent* event)
+///
+void q_scilexerperl_on_custom_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal QMetaMethod*
+///
+void q_scilexerperl_connect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_connect_notify` instead
+///
+#define q_scilexerperl_qbase_connect_notify q_scilexerperl_super_connect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal QMetaMethod*
+///
+void q_scilexerperl_super_connect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QMetaMethod* signal)
+///
+void q_scilexerperl_on_connect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal QMetaMethod*
+///
+void q_scilexerperl_disconnect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_disconnect_notify` instead
+///
+#define q_scilexerperl_qbase_disconnect_notify q_scilexerperl_super_disconnect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal QMetaMethod*
+///
+void q_scilexerperl_super_disconnect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, QMetaMethod* signal)
+///
+void q_scilexerperl_on_disconnect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param text const char*
+///
+char* q_scilexerperl_text_as_bytes(void* self, const char* text);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_text_as_bytes` instead
+///
+#define q_scilexerperl_qbase_text_as_bytes q_scilexerperl_super_text_as_bytes
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param text const char*
+///
+char* q_scilexerperl_super_text_as_bytes(void* self, const char* text);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback libqt_string func(QsciLexerPerl* self, const char* text)
+///
+void q_scilexerperl_on_text_as_bytes(void* self, libqt_string (*callback)(void*, const char*));
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param bytes const char*
+/// @param size int
+///
+const char* q_scilexerperl_bytes_as_text(void* self, const char* bytes, int size);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_bytes_as_text` instead
+///
+#define q_scilexerperl_qbase_bytes_as_text q_scilexerperl_super_bytes_as_text
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param bytes const char*
+/// @param size int
+///
+const char* q_scilexerperl_super_bytes_as_text(void* self, const char* bytes, int size);
+
+/// Inherited from QsciLexer
+///
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexer.html)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback const char* func(QsciLexerPerl* self, const char* bytes, int size)
+///
+void q_scilexerperl_on_bytes_as_text(void* self, const char* (*callback)(void*, const char*, int));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+QObject* q_scilexerperl_sender(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_sender` instead
+///
+#define q_scilexerperl_qbase_sender q_scilexerperl_super_sender
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+QObject* q_scilexerperl_super_sender(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback QObject* func()
+///
+void q_scilexerperl_on_sender(void* self, QObject* (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_sender_signal_index(void* self);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_sender_signal_index` instead
+///
+#define q_scilexerperl_qbase_sender_signal_index q_scilexerperl_super_sender_signal_index
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+///
+int32_t q_scilexerperl_super_sender_signal_index(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func()
+///
+void q_scilexerperl_on_sender_signal_index(void* self, int32_t (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal const char*
+///
+int32_t q_scilexerperl_receivers(void* self, const char* signal);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_receivers` instead
+///
+#define q_scilexerperl_qbase_receivers q_scilexerperl_super_receivers
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal const char*
+///
+int32_t q_scilexerperl_super_receivers(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback int32_t func(QsciLexerPerl* self, const char* signal)
+///
+void q_scilexerperl_on_receivers(void* self, int32_t (*callback)(void*, const char*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal QMetaMethod*
+///
+bool q_scilexerperl_is_signal_connected(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `q_scilexerperl_super_is_signal_connected` instead
+///
+#define q_scilexerperl_qbase_is_signal_connected q_scilexerperl_super_is_signal_connected
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param signal QMetaMethod*
+///
+bool q_scilexerperl_super_is_signal_connected(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self QsciLexerPerl*
+/// @param callback bool func(QsciLexerPerl* self, QMetaMethod* signal)
+///
+void q_scilexerperl_on_is_signal_connected(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectNameChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self QsciLexerPerl*
+/// @param callback void func(QsciLexerPerl* self, const char* objectName)
+///
+void q_scilexerperl_on_object_name_changed(void* self, void (*callback)(void*, const char*));
+
+/// [Upstream resources](https://www.riverbankcomputing.com/static/Docs/QScintilla/classQsciLexerPerl.html)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self QsciLexerPerl*
+///
+void q_scilexerperl_delete(void* self);
+
+typedef enum {
+    QSCILEXERPERL__DEFAULT = 0,
+    QSCILEXERPERL__ERROR = 1,
+    QSCILEXERPERL__COMMENT = 2,
+    QSCILEXERPERL__POD = 3,
+    QSCILEXERPERL__NUMBER = 4,
+    QSCILEXERPERL__KEYWORD = 5,
+    QSCILEXERPERL__DOUBLEQUOTEDSTRING = 6,
+    QSCILEXERPERL__SINGLEQUOTEDSTRING = 7,
+    QSCILEXERPERL__OPERATOR = 10,
+    QSCILEXERPERL__IDENTIFIER = 11,
+    QSCILEXERPERL__SCALAR = 12,
+    QSCILEXERPERL__ARRAY = 13,
+    QSCILEXERPERL__HASH = 14,
+    QSCILEXERPERL__SYMBOLTABLE = 15,
+    QSCILEXERPERL__REGEX = 17,
+    QSCILEXERPERL__SUBSTITUTION = 18,
+    QSCILEXERPERL__BACKTICKS = 20,
+    QSCILEXERPERL__DATASECTION = 21,
+    QSCILEXERPERL__HEREDOCUMENTDELIMITER = 22,
+    QSCILEXERPERL__SINGLEQUOTEDHEREDOCUMENT = 23,
+    QSCILEXERPERL__DOUBLEQUOTEDHEREDOCUMENT = 24,
+    QSCILEXERPERL__BACKTICKHEREDOCUMENT = 25,
+    QSCILEXERPERL__QUOTEDSTRINGQ = 26,
+    QSCILEXERPERL__QUOTEDSTRINGQQ = 27,
+    QSCILEXERPERL__QUOTEDSTRINGQX = 28,
+    QSCILEXERPERL__QUOTEDSTRINGQR = 29,
+    QSCILEXERPERL__QUOTEDSTRINGQW = 30,
+    QSCILEXERPERL__PODVERBATIM = 31,
+    QSCILEXERPERL__SUBROUTINEPROTOTYPE = 40,
+    QSCILEXERPERL__FORMATIDENTIFIER = 41,
+    QSCILEXERPERL__FORMATBODY = 42,
+    QSCILEXERPERL__DOUBLEQUOTEDSTRINGVAR = 43,
+    QSCILEXERPERL__TRANSLATION = 44,
+    QSCILEXERPERL__REGEXVAR = 54,
+    QSCILEXERPERL__SUBSTITUTIONVAR = 55,
+    QSCILEXERPERL__BACKTICKSVAR = 57,
+    QSCILEXERPERL__DOUBLEQUOTEDHEREDOCUMENTVAR = 61,
+    QSCILEXERPERL__BACKTICKHEREDOCUMENTVAR = 62,
+    QSCILEXERPERL__QUOTEDSTRINGQQVAR = 64,
+    QSCILEXERPERL__QUOTEDSTRINGQXVAR = 65,
+    QSCILEXERPERL__QUOTEDSTRINGQRVAR = 66
+} QsciLexerPerl__;
+
+#endif

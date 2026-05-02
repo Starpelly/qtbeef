@@ -1,0 +1,180 @@
+#pragma once
+#ifndef SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBQSCILEXERCOFFEESCRIPT_HPP
+#define SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBQSCILEXERCOFFEESCRIPT_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QChildEvent QChildEvent;
+typedef struct QColor QColor;
+typedef struct QEvent QEvent;
+typedef struct QFont QFont;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QSettings QSettings;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QsciLexer QsciLexer;
+typedef struct QsciLexerCoffeeScript QsciLexerCoffeeScript;
+typedef struct QsciScintilla QsciScintilla;
+#endif
+
+QsciLexerCoffeeScript* QsciLexerCoffeeScript_new();
+QsciLexerCoffeeScript* QsciLexerCoffeeScript_new2(QObject* parent);
+QMetaObject* QsciLexerCoffeeScript_MetaObject(const QsciLexerCoffeeScript* self);
+void* QsciLexerCoffeeScript_Metacast(QsciLexerCoffeeScript* self, const char* param1);
+int QsciLexerCoffeeScript_Metacall(QsciLexerCoffeeScript* self, int param1, int param2, void** param3);
+const char* QsciLexerCoffeeScript_Language(const QsciLexerCoffeeScript* self);
+const char* QsciLexerCoffeeScript_Lexer(const QsciLexerCoffeeScript* self);
+libqt_list /* of libqt_string */ QsciLexerCoffeeScript_AutoCompletionWordSeparators(const QsciLexerCoffeeScript* self);
+const char* QsciLexerCoffeeScript_BlockEnd(const QsciLexerCoffeeScript* self);
+const char* QsciLexerCoffeeScript_BlockStart(const QsciLexerCoffeeScript* self);
+const char* QsciLexerCoffeeScript_BlockStartKeyword(const QsciLexerCoffeeScript* self);
+int QsciLexerCoffeeScript_BraceStyle(const QsciLexerCoffeeScript* self);
+const char* QsciLexerCoffeeScript_WordCharacters(const QsciLexerCoffeeScript* self);
+QColor* QsciLexerCoffeeScript_DefaultColor(const QsciLexerCoffeeScript* self, int style);
+bool QsciLexerCoffeeScript_DefaultEolFill(const QsciLexerCoffeeScript* self, int style);
+QFont* QsciLexerCoffeeScript_DefaultFont(const QsciLexerCoffeeScript* self, int style);
+QColor* QsciLexerCoffeeScript_DefaultPaper(const QsciLexerCoffeeScript* self, int style);
+const char* QsciLexerCoffeeScript_Keywords(const QsciLexerCoffeeScript* self, int set);
+libqt_string QsciLexerCoffeeScript_Description(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_RefreshProperties(QsciLexerCoffeeScript* self);
+bool QsciLexerCoffeeScript_DollarsAllowed(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_SetDollarsAllowed(QsciLexerCoffeeScript* self, bool allowed);
+bool QsciLexerCoffeeScript_FoldComments(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_SetFoldComments(QsciLexerCoffeeScript* self, bool fold);
+bool QsciLexerCoffeeScript_FoldCompact(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_SetFoldCompact(QsciLexerCoffeeScript* self, bool fold);
+bool QsciLexerCoffeeScript_StylePreprocessor(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_SetStylePreprocessor(QsciLexerCoffeeScript* self, bool style);
+const char* QsciLexerCoffeeScript_BlockEnd1(const QsciLexerCoffeeScript* self, int* style);
+const char* QsciLexerCoffeeScript_BlockStart1(const QsciLexerCoffeeScript* self, int* style);
+const char* QsciLexerCoffeeScript_BlockStartKeyword1(const QsciLexerCoffeeScript* self, int* style);
+void QsciLexerCoffeeScript_OnMetaObject(const QsciLexerCoffeeScript* self, intptr_t slot);
+QMetaObject* QsciLexerCoffeeScript_SuperMetaObject(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnMetacast(QsciLexerCoffeeScript* self, intptr_t slot);
+void* QsciLexerCoffeeScript_SuperMetacast(QsciLexerCoffeeScript* self, const char* param1);
+void QsciLexerCoffeeScript_OnMetacall(QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperMetacall(QsciLexerCoffeeScript* self, int param1, int param2, void** param3);
+int QsciLexerCoffeeScript_LexerId(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnLexerId(const QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperLexerId(const QsciLexerCoffeeScript* self);
+const char* QsciLexerCoffeeScript_AutoCompletionFillups(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnAutoCompletionFillups(const QsciLexerCoffeeScript* self, intptr_t slot);
+const char* QsciLexerCoffeeScript_SuperAutoCompletionFillups(const QsciLexerCoffeeScript* self);
+int QsciLexerCoffeeScript_BlockLookback(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnBlockLookback(const QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperBlockLookback(const QsciLexerCoffeeScript* self);
+bool QsciLexerCoffeeScript_CaseSensitive(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnCaseSensitive(const QsciLexerCoffeeScript* self, intptr_t slot);
+bool QsciLexerCoffeeScript_SuperCaseSensitive(const QsciLexerCoffeeScript* self);
+QColor* QsciLexerCoffeeScript_Color(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_OnColor(const QsciLexerCoffeeScript* self, intptr_t slot);
+QColor* QsciLexerCoffeeScript_SuperColor(const QsciLexerCoffeeScript* self, int style);
+bool QsciLexerCoffeeScript_EolFill(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_OnEolFill(const QsciLexerCoffeeScript* self, intptr_t slot);
+bool QsciLexerCoffeeScript_SuperEolFill(const QsciLexerCoffeeScript* self, int style);
+QFont* QsciLexerCoffeeScript_Font(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_OnFont(const QsciLexerCoffeeScript* self, intptr_t slot);
+QFont* QsciLexerCoffeeScript_SuperFont(const QsciLexerCoffeeScript* self, int style);
+int QsciLexerCoffeeScript_IndentationGuideView(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnIndentationGuideView(const QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperIndentationGuideView(const QsciLexerCoffeeScript* self);
+int QsciLexerCoffeeScript_DefaultStyle(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnDefaultStyle(const QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperDefaultStyle(const QsciLexerCoffeeScript* self);
+QColor* QsciLexerCoffeeScript_Paper(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_OnPaper(const QsciLexerCoffeeScript* self, intptr_t slot);
+QColor* QsciLexerCoffeeScript_SuperPaper(const QsciLexerCoffeeScript* self, int style);
+QColor* QsciLexerCoffeeScript_DefaultColor2(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_OnDefaultColor2(const QsciLexerCoffeeScript* self, intptr_t slot);
+QColor* QsciLexerCoffeeScript_SuperDefaultColor2(const QsciLexerCoffeeScript* self, int style);
+QFont* QsciLexerCoffeeScript_DefaultFont2(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_OnDefaultFont2(const QsciLexerCoffeeScript* self, intptr_t slot);
+QFont* QsciLexerCoffeeScript_SuperDefaultFont2(const QsciLexerCoffeeScript* self, int style);
+QColor* QsciLexerCoffeeScript_DefaultPaper2(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_OnDefaultPaper2(const QsciLexerCoffeeScript* self, intptr_t slot);
+QColor* QsciLexerCoffeeScript_SuperDefaultPaper2(const QsciLexerCoffeeScript* self, int style);
+void QsciLexerCoffeeScript_SetEditor(QsciLexerCoffeeScript* self, QsciScintilla* editor);
+void QsciLexerCoffeeScript_OnSetEditor(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperSetEditor(QsciLexerCoffeeScript* self, QsciScintilla* editor);
+int QsciLexerCoffeeScript_StyleBitsNeeded(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnStyleBitsNeeded(const QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperStyleBitsNeeded(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_SetAutoIndentStyle(QsciLexerCoffeeScript* self, int autoindentstyle);
+void QsciLexerCoffeeScript_OnSetAutoIndentStyle(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperSetAutoIndentStyle(QsciLexerCoffeeScript* self, int autoindentstyle);
+void QsciLexerCoffeeScript_SetColor(QsciLexerCoffeeScript* self, const QColor* c, int style);
+void QsciLexerCoffeeScript_OnSetColor(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperSetColor(QsciLexerCoffeeScript* self, const QColor* c, int style);
+void QsciLexerCoffeeScript_SetEolFill(QsciLexerCoffeeScript* self, bool eoffill, int style);
+void QsciLexerCoffeeScript_OnSetEolFill(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperSetEolFill(QsciLexerCoffeeScript* self, bool eoffill, int style);
+void QsciLexerCoffeeScript_SetFont(QsciLexerCoffeeScript* self, const QFont* f, int style);
+void QsciLexerCoffeeScript_OnSetFont(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperSetFont(QsciLexerCoffeeScript* self, const QFont* f, int style);
+void QsciLexerCoffeeScript_SetPaper(QsciLexerCoffeeScript* self, const QColor* c, int style);
+void QsciLexerCoffeeScript_OnSetPaper(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperSetPaper(QsciLexerCoffeeScript* self, const QColor* c, int style);
+bool QsciLexerCoffeeScript_ReadProperties(QsciLexerCoffeeScript* self, QSettings* qs, const libqt_string prefix);
+void QsciLexerCoffeeScript_OnReadProperties(QsciLexerCoffeeScript* self, intptr_t slot);
+bool QsciLexerCoffeeScript_SuperReadProperties(QsciLexerCoffeeScript* self, QSettings* qs, const libqt_string prefix);
+bool QsciLexerCoffeeScript_WriteProperties(const QsciLexerCoffeeScript* self, QSettings* qs, const libqt_string prefix);
+void QsciLexerCoffeeScript_OnWriteProperties(const QsciLexerCoffeeScript* self, intptr_t slot);
+bool QsciLexerCoffeeScript_SuperWriteProperties(const QsciLexerCoffeeScript* self, QSettings* qs, const libqt_string prefix);
+bool QsciLexerCoffeeScript_Event(QsciLexerCoffeeScript* self, QEvent* event);
+void QsciLexerCoffeeScript_OnEvent(QsciLexerCoffeeScript* self, intptr_t slot);
+bool QsciLexerCoffeeScript_SuperEvent(QsciLexerCoffeeScript* self, QEvent* event);
+bool QsciLexerCoffeeScript_EventFilter(QsciLexerCoffeeScript* self, QObject* watched, QEvent* event);
+void QsciLexerCoffeeScript_OnEventFilter(QsciLexerCoffeeScript* self, intptr_t slot);
+bool QsciLexerCoffeeScript_SuperEventFilter(QsciLexerCoffeeScript* self, QObject* watched, QEvent* event);
+void QsciLexerCoffeeScript_TimerEvent(QsciLexerCoffeeScript* self, QTimerEvent* event);
+void QsciLexerCoffeeScript_OnTimerEvent(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperTimerEvent(QsciLexerCoffeeScript* self, QTimerEvent* event);
+void QsciLexerCoffeeScript_ChildEvent(QsciLexerCoffeeScript* self, QChildEvent* event);
+void QsciLexerCoffeeScript_OnChildEvent(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperChildEvent(QsciLexerCoffeeScript* self, QChildEvent* event);
+void QsciLexerCoffeeScript_CustomEvent(QsciLexerCoffeeScript* self, QEvent* event);
+void QsciLexerCoffeeScript_OnCustomEvent(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperCustomEvent(QsciLexerCoffeeScript* self, QEvent* event);
+void QsciLexerCoffeeScript_ConnectNotify(QsciLexerCoffeeScript* self, const QMetaMethod* signal);
+void QsciLexerCoffeeScript_OnConnectNotify(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperConnectNotify(QsciLexerCoffeeScript* self, const QMetaMethod* signal);
+void QsciLexerCoffeeScript_DisconnectNotify(QsciLexerCoffeeScript* self, const QMetaMethod* signal);
+void QsciLexerCoffeeScript_OnDisconnectNotify(QsciLexerCoffeeScript* self, intptr_t slot);
+void QsciLexerCoffeeScript_SuperDisconnectNotify(QsciLexerCoffeeScript* self, const QMetaMethod* signal);
+libqt_string QsciLexerCoffeeScript_TextAsBytes(const QsciLexerCoffeeScript* self, const libqt_string text);
+void QsciLexerCoffeeScript_OnTextAsBytes(const QsciLexerCoffeeScript* self, intptr_t slot);
+libqt_string QsciLexerCoffeeScript_SuperTextAsBytes(const QsciLexerCoffeeScript* self, const libqt_string text);
+libqt_string QsciLexerCoffeeScript_BytesAsText(const QsciLexerCoffeeScript* self, const char* bytes, int size);
+void QsciLexerCoffeeScript_OnBytesAsText(const QsciLexerCoffeeScript* self, intptr_t slot);
+libqt_string QsciLexerCoffeeScript_SuperBytesAsText(const QsciLexerCoffeeScript* self, const char* bytes, int size);
+QObject* QsciLexerCoffeeScript_Sender(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnSender(const QsciLexerCoffeeScript* self, intptr_t slot);
+QObject* QsciLexerCoffeeScript_SuperSender(const QsciLexerCoffeeScript* self);
+int QsciLexerCoffeeScript_SenderSignalIndex(const QsciLexerCoffeeScript* self);
+void QsciLexerCoffeeScript_OnSenderSignalIndex(const QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperSenderSignalIndex(const QsciLexerCoffeeScript* self);
+int QsciLexerCoffeeScript_Receivers(const QsciLexerCoffeeScript* self, const char* signal);
+void QsciLexerCoffeeScript_OnReceivers(const QsciLexerCoffeeScript* self, intptr_t slot);
+int QsciLexerCoffeeScript_SuperReceivers(const QsciLexerCoffeeScript* self, const char* signal);
+bool QsciLexerCoffeeScript_IsSignalConnected(const QsciLexerCoffeeScript* self, const QMetaMethod* signal);
+void QsciLexerCoffeeScript_OnIsSignalConnected(const QsciLexerCoffeeScript* self, intptr_t slot);
+bool QsciLexerCoffeeScript_SuperIsSignalConnected(const QsciLexerCoffeeScript* self, const QMetaMethod* signal);
+void QsciLexerCoffeeScript_Delete(QsciLexerCoffeeScript* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

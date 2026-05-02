@@ -1,0 +1,265 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIOC_LIBKNAMEANDURLINPUTDIALOG_HPP
+#define SRC_EXTRAS_KIOC_LIBKNAMEANDURLINPUTDIALOG_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KNameAndUrlInputDialog KNameAndUrlInputDialog;
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDialog QDialog;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QUrl QUrl;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+KNameAndUrlInputDialog* KNameAndUrlInputDialog_new(const libqt_string nameLabel, const libqt_string urlLabel, const QUrl* startDir, QWidget* parent);
+QMetaObject* KNameAndUrlInputDialog_MetaObject(const KNameAndUrlInputDialog* self);
+void* KNameAndUrlInputDialog_Metacast(KNameAndUrlInputDialog* self, const char* param1);
+int KNameAndUrlInputDialog_Metacall(KNameAndUrlInputDialog* self, int param1, int param2, void** param3);
+void KNameAndUrlInputDialog_SetSuggestedName(KNameAndUrlInputDialog* self, const libqt_string name);
+void KNameAndUrlInputDialog_SetSuggestedUrl(KNameAndUrlInputDialog* self, const QUrl* url);
+libqt_string KNameAndUrlInputDialog_Name(const KNameAndUrlInputDialog* self);
+QUrl* KNameAndUrlInputDialog_Url(const KNameAndUrlInputDialog* self);
+libqt_string KNameAndUrlInputDialog_UrlText(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnMetaObject(const KNameAndUrlInputDialog* self, intptr_t slot);
+QMetaObject* KNameAndUrlInputDialog_SuperMetaObject(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnMetacast(KNameAndUrlInputDialog* self, intptr_t slot);
+void* KNameAndUrlInputDialog_SuperMetacast(KNameAndUrlInputDialog* self, const char* param1);
+void KNameAndUrlInputDialog_OnMetacall(KNameAndUrlInputDialog* self, intptr_t slot);
+int KNameAndUrlInputDialog_SuperMetacall(KNameAndUrlInputDialog* self, int param1, int param2, void** param3);
+void KNameAndUrlInputDialog_SetVisible(KNameAndUrlInputDialog* self, bool visible);
+void KNameAndUrlInputDialog_OnSetVisible(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperSetVisible(KNameAndUrlInputDialog* self, bool visible);
+QSize* KNameAndUrlInputDialog_SizeHint(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnSizeHint(const KNameAndUrlInputDialog* self, intptr_t slot);
+QSize* KNameAndUrlInputDialog_SuperSizeHint(const KNameAndUrlInputDialog* self);
+QSize* KNameAndUrlInputDialog_MinimumSizeHint(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnMinimumSizeHint(const KNameAndUrlInputDialog* self, intptr_t slot);
+QSize* KNameAndUrlInputDialog_SuperMinimumSizeHint(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_Open(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnOpen(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperOpen(KNameAndUrlInputDialog* self);
+int KNameAndUrlInputDialog_Exec(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnExec(KNameAndUrlInputDialog* self, intptr_t slot);
+int KNameAndUrlInputDialog_SuperExec(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_Done(KNameAndUrlInputDialog* self, int param1);
+void KNameAndUrlInputDialog_OnDone(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperDone(KNameAndUrlInputDialog* self, int param1);
+void KNameAndUrlInputDialog_Accept(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnAccept(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperAccept(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_Reject(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnReject(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperReject(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_KeyPressEvent(KNameAndUrlInputDialog* self, QKeyEvent* param1);
+void KNameAndUrlInputDialog_OnKeyPressEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperKeyPressEvent(KNameAndUrlInputDialog* self, QKeyEvent* param1);
+void KNameAndUrlInputDialog_CloseEvent(KNameAndUrlInputDialog* self, QCloseEvent* param1);
+void KNameAndUrlInputDialog_OnCloseEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperCloseEvent(KNameAndUrlInputDialog* self, QCloseEvent* param1);
+void KNameAndUrlInputDialog_ShowEvent(KNameAndUrlInputDialog* self, QShowEvent* param1);
+void KNameAndUrlInputDialog_OnShowEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperShowEvent(KNameAndUrlInputDialog* self, QShowEvent* param1);
+void KNameAndUrlInputDialog_ResizeEvent(KNameAndUrlInputDialog* self, QResizeEvent* param1);
+void KNameAndUrlInputDialog_OnResizeEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperResizeEvent(KNameAndUrlInputDialog* self, QResizeEvent* param1);
+void KNameAndUrlInputDialog_ContextMenuEvent(KNameAndUrlInputDialog* self, QContextMenuEvent* param1);
+void KNameAndUrlInputDialog_OnContextMenuEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperContextMenuEvent(KNameAndUrlInputDialog* self, QContextMenuEvent* param1);
+bool KNameAndUrlInputDialog_EventFilter(KNameAndUrlInputDialog* self, QObject* param1, QEvent* param2);
+void KNameAndUrlInputDialog_OnEventFilter(KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperEventFilter(KNameAndUrlInputDialog* self, QObject* param1, QEvent* param2);
+int KNameAndUrlInputDialog_DevType(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnDevType(const KNameAndUrlInputDialog* self, intptr_t slot);
+int KNameAndUrlInputDialog_SuperDevType(const KNameAndUrlInputDialog* self);
+int KNameAndUrlInputDialog_HeightForWidth(const KNameAndUrlInputDialog* self, int param1);
+void KNameAndUrlInputDialog_OnHeightForWidth(const KNameAndUrlInputDialog* self, intptr_t slot);
+int KNameAndUrlInputDialog_SuperHeightForWidth(const KNameAndUrlInputDialog* self, int param1);
+bool KNameAndUrlInputDialog_HasHeightForWidth(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnHasHeightForWidth(const KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperHasHeightForWidth(const KNameAndUrlInputDialog* self);
+QPaintEngine* KNameAndUrlInputDialog_PaintEngine(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnPaintEngine(const KNameAndUrlInputDialog* self, intptr_t slot);
+QPaintEngine* KNameAndUrlInputDialog_SuperPaintEngine(const KNameAndUrlInputDialog* self);
+bool KNameAndUrlInputDialog_Event(KNameAndUrlInputDialog* self, QEvent* event);
+void KNameAndUrlInputDialog_OnEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperEvent(KNameAndUrlInputDialog* self, QEvent* event);
+void KNameAndUrlInputDialog_MousePressEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_OnMousePressEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperMousePressEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_MouseReleaseEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_OnMouseReleaseEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperMouseReleaseEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_MouseDoubleClickEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_OnMouseDoubleClickEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperMouseDoubleClickEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_MouseMoveEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_OnMouseMoveEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperMouseMoveEvent(KNameAndUrlInputDialog* self, QMouseEvent* event);
+void KNameAndUrlInputDialog_WheelEvent(KNameAndUrlInputDialog* self, QWheelEvent* event);
+void KNameAndUrlInputDialog_OnWheelEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperWheelEvent(KNameAndUrlInputDialog* self, QWheelEvent* event);
+void KNameAndUrlInputDialog_KeyReleaseEvent(KNameAndUrlInputDialog* self, QKeyEvent* event);
+void KNameAndUrlInputDialog_OnKeyReleaseEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperKeyReleaseEvent(KNameAndUrlInputDialog* self, QKeyEvent* event);
+void KNameAndUrlInputDialog_FocusInEvent(KNameAndUrlInputDialog* self, QFocusEvent* event);
+void KNameAndUrlInputDialog_OnFocusInEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperFocusInEvent(KNameAndUrlInputDialog* self, QFocusEvent* event);
+void KNameAndUrlInputDialog_FocusOutEvent(KNameAndUrlInputDialog* self, QFocusEvent* event);
+void KNameAndUrlInputDialog_OnFocusOutEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperFocusOutEvent(KNameAndUrlInputDialog* self, QFocusEvent* event);
+void KNameAndUrlInputDialog_EnterEvent(KNameAndUrlInputDialog* self, QEnterEvent* event);
+void KNameAndUrlInputDialog_OnEnterEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperEnterEvent(KNameAndUrlInputDialog* self, QEnterEvent* event);
+void KNameAndUrlInputDialog_LeaveEvent(KNameAndUrlInputDialog* self, QEvent* event);
+void KNameAndUrlInputDialog_OnLeaveEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperLeaveEvent(KNameAndUrlInputDialog* self, QEvent* event);
+void KNameAndUrlInputDialog_PaintEvent(KNameAndUrlInputDialog* self, QPaintEvent* event);
+void KNameAndUrlInputDialog_OnPaintEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperPaintEvent(KNameAndUrlInputDialog* self, QPaintEvent* event);
+void KNameAndUrlInputDialog_MoveEvent(KNameAndUrlInputDialog* self, QMoveEvent* event);
+void KNameAndUrlInputDialog_OnMoveEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperMoveEvent(KNameAndUrlInputDialog* self, QMoveEvent* event);
+void KNameAndUrlInputDialog_TabletEvent(KNameAndUrlInputDialog* self, QTabletEvent* event);
+void KNameAndUrlInputDialog_OnTabletEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperTabletEvent(KNameAndUrlInputDialog* self, QTabletEvent* event);
+void KNameAndUrlInputDialog_ActionEvent(KNameAndUrlInputDialog* self, QActionEvent* event);
+void KNameAndUrlInputDialog_OnActionEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperActionEvent(KNameAndUrlInputDialog* self, QActionEvent* event);
+void KNameAndUrlInputDialog_DragEnterEvent(KNameAndUrlInputDialog* self, QDragEnterEvent* event);
+void KNameAndUrlInputDialog_OnDragEnterEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperDragEnterEvent(KNameAndUrlInputDialog* self, QDragEnterEvent* event);
+void KNameAndUrlInputDialog_DragMoveEvent(KNameAndUrlInputDialog* self, QDragMoveEvent* event);
+void KNameAndUrlInputDialog_OnDragMoveEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperDragMoveEvent(KNameAndUrlInputDialog* self, QDragMoveEvent* event);
+void KNameAndUrlInputDialog_DragLeaveEvent(KNameAndUrlInputDialog* self, QDragLeaveEvent* event);
+void KNameAndUrlInputDialog_OnDragLeaveEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperDragLeaveEvent(KNameAndUrlInputDialog* self, QDragLeaveEvent* event);
+void KNameAndUrlInputDialog_DropEvent(KNameAndUrlInputDialog* self, QDropEvent* event);
+void KNameAndUrlInputDialog_OnDropEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperDropEvent(KNameAndUrlInputDialog* self, QDropEvent* event);
+void KNameAndUrlInputDialog_HideEvent(KNameAndUrlInputDialog* self, QHideEvent* event);
+void KNameAndUrlInputDialog_OnHideEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperHideEvent(KNameAndUrlInputDialog* self, QHideEvent* event);
+bool KNameAndUrlInputDialog_NativeEvent(KNameAndUrlInputDialog* self, const libqt_string eventType, void* message, intptr_t* result);
+void KNameAndUrlInputDialog_OnNativeEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperNativeEvent(KNameAndUrlInputDialog* self, const libqt_string eventType, void* message, intptr_t* result);
+void KNameAndUrlInputDialog_ChangeEvent(KNameAndUrlInputDialog* self, QEvent* param1);
+void KNameAndUrlInputDialog_OnChangeEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperChangeEvent(KNameAndUrlInputDialog* self, QEvent* param1);
+int KNameAndUrlInputDialog_Metric(const KNameAndUrlInputDialog* self, int param1);
+void KNameAndUrlInputDialog_OnMetric(const KNameAndUrlInputDialog* self, intptr_t slot);
+int KNameAndUrlInputDialog_SuperMetric(const KNameAndUrlInputDialog* self, int param1);
+void KNameAndUrlInputDialog_InitPainter(const KNameAndUrlInputDialog* self, QPainter* painter);
+void KNameAndUrlInputDialog_OnInitPainter(const KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperInitPainter(const KNameAndUrlInputDialog* self, QPainter* painter);
+QPaintDevice* KNameAndUrlInputDialog_Redirected(const KNameAndUrlInputDialog* self, QPoint* offset);
+void KNameAndUrlInputDialog_OnRedirected(const KNameAndUrlInputDialog* self, intptr_t slot);
+QPaintDevice* KNameAndUrlInputDialog_SuperRedirected(const KNameAndUrlInputDialog* self, QPoint* offset);
+QPainter* KNameAndUrlInputDialog_SharedPainter(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnSharedPainter(const KNameAndUrlInputDialog* self, intptr_t slot);
+QPainter* KNameAndUrlInputDialog_SuperSharedPainter(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_InputMethodEvent(KNameAndUrlInputDialog* self, QInputMethodEvent* param1);
+void KNameAndUrlInputDialog_OnInputMethodEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperInputMethodEvent(KNameAndUrlInputDialog* self, QInputMethodEvent* param1);
+QVariant* KNameAndUrlInputDialog_InputMethodQuery(const KNameAndUrlInputDialog* self, int param1);
+void KNameAndUrlInputDialog_OnInputMethodQuery(const KNameAndUrlInputDialog* self, intptr_t slot);
+QVariant* KNameAndUrlInputDialog_SuperInputMethodQuery(const KNameAndUrlInputDialog* self, int param1);
+bool KNameAndUrlInputDialog_FocusNextPrevChild(KNameAndUrlInputDialog* self, bool next);
+void KNameAndUrlInputDialog_OnFocusNextPrevChild(KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperFocusNextPrevChild(KNameAndUrlInputDialog* self, bool next);
+void KNameAndUrlInputDialog_TimerEvent(KNameAndUrlInputDialog* self, QTimerEvent* event);
+void KNameAndUrlInputDialog_OnTimerEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperTimerEvent(KNameAndUrlInputDialog* self, QTimerEvent* event);
+void KNameAndUrlInputDialog_ChildEvent(KNameAndUrlInputDialog* self, QChildEvent* event);
+void KNameAndUrlInputDialog_OnChildEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperChildEvent(KNameAndUrlInputDialog* self, QChildEvent* event);
+void KNameAndUrlInputDialog_CustomEvent(KNameAndUrlInputDialog* self, QEvent* event);
+void KNameAndUrlInputDialog_OnCustomEvent(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperCustomEvent(KNameAndUrlInputDialog* self, QEvent* event);
+void KNameAndUrlInputDialog_ConnectNotify(KNameAndUrlInputDialog* self, const QMetaMethod* signal);
+void KNameAndUrlInputDialog_OnConnectNotify(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperConnectNotify(KNameAndUrlInputDialog* self, const QMetaMethod* signal);
+void KNameAndUrlInputDialog_DisconnectNotify(KNameAndUrlInputDialog* self, const QMetaMethod* signal);
+void KNameAndUrlInputDialog_OnDisconnectNotify(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperDisconnectNotify(KNameAndUrlInputDialog* self, const QMetaMethod* signal);
+void KNameAndUrlInputDialog_AdjustPosition(KNameAndUrlInputDialog* self, QWidget* param1);
+void KNameAndUrlInputDialog_OnAdjustPosition(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperAdjustPosition(KNameAndUrlInputDialog* self, QWidget* param1);
+void KNameAndUrlInputDialog_UpdateMicroFocus(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnUpdateMicroFocus(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperUpdateMicroFocus(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_Create(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnCreate(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperCreate(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_Destroy(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnDestroy(KNameAndUrlInputDialog* self, intptr_t slot);
+void KNameAndUrlInputDialog_SuperDestroy(KNameAndUrlInputDialog* self);
+bool KNameAndUrlInputDialog_FocusNextChild(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnFocusNextChild(KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperFocusNextChild(KNameAndUrlInputDialog* self);
+bool KNameAndUrlInputDialog_FocusPreviousChild(KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnFocusPreviousChild(KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperFocusPreviousChild(KNameAndUrlInputDialog* self);
+QObject* KNameAndUrlInputDialog_Sender(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnSender(const KNameAndUrlInputDialog* self, intptr_t slot);
+QObject* KNameAndUrlInputDialog_SuperSender(const KNameAndUrlInputDialog* self);
+int KNameAndUrlInputDialog_SenderSignalIndex(const KNameAndUrlInputDialog* self);
+void KNameAndUrlInputDialog_OnSenderSignalIndex(const KNameAndUrlInputDialog* self, intptr_t slot);
+int KNameAndUrlInputDialog_SuperSenderSignalIndex(const KNameAndUrlInputDialog* self);
+int KNameAndUrlInputDialog_Receivers(const KNameAndUrlInputDialog* self, const char* signal);
+void KNameAndUrlInputDialog_OnReceivers(const KNameAndUrlInputDialog* self, intptr_t slot);
+int KNameAndUrlInputDialog_SuperReceivers(const KNameAndUrlInputDialog* self, const char* signal);
+bool KNameAndUrlInputDialog_IsSignalConnected(const KNameAndUrlInputDialog* self, const QMetaMethod* signal);
+void KNameAndUrlInputDialog_OnIsSignalConnected(const KNameAndUrlInputDialog* self, intptr_t slot);
+bool KNameAndUrlInputDialog_SuperIsSignalConnected(const KNameAndUrlInputDialog* self, const QMetaMethod* signal);
+double KNameAndUrlInputDialog_GetDecodedMetricF(const KNameAndUrlInputDialog* self, int metricA, int metricB);
+void KNameAndUrlInputDialog_OnGetDecodedMetricF(const KNameAndUrlInputDialog* self, intptr_t slot);
+double KNameAndUrlInputDialog_SuperGetDecodedMetricF(const KNameAndUrlInputDialog* self, int metricA, int metricB);
+void KNameAndUrlInputDialog_Delete(KNameAndUrlInputDialog* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

@@ -1,0 +1,62 @@
+#include <QMetaMethod>
+#include <QMetaObject>
+#include <QObject>
+#include <QString>
+#include <QByteArray>
+#include <cstring>
+#include <QUrl>
+#include <QWebEngineNavigationRequest>
+#include <qwebenginenavigationrequest.h>
+#include "libqwebenginenavigationrequest.hpp"
+#include "libqwebenginenavigationrequest.hxx"
+
+QMetaObject* QWebEngineNavigationRequest_MetaObject(const QWebEngineNavigationRequest* self) {
+    return (QMetaObject*)self->metaObject();
+}
+
+void* QWebEngineNavigationRequest_Metacast(QWebEngineNavigationRequest* self, const char* param1) {
+    return self->qt_metacast(param1);
+}
+
+int QWebEngineNavigationRequest_Metacall(QWebEngineNavigationRequest* self, int param1, int param2, void** param3) {
+    return self->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+}
+
+QUrl* QWebEngineNavigationRequest_Url(const QWebEngineNavigationRequest* self) {
+    return new QUrl(self->url());
+}
+
+bool QWebEngineNavigationRequest_IsMainFrame(const QWebEngineNavigationRequest* self) {
+    return self->isMainFrame();
+}
+
+bool QWebEngineNavigationRequest_HasFormData(const QWebEngineNavigationRequest* self) {
+    return self->hasFormData();
+}
+
+int QWebEngineNavigationRequest_NavigationType(const QWebEngineNavigationRequest* self) {
+    return static_cast<int>(self->navigationType());
+}
+
+void QWebEngineNavigationRequest_Accept(QWebEngineNavigationRequest* self) {
+    self->accept();
+}
+
+void QWebEngineNavigationRequest_Reject(QWebEngineNavigationRequest* self) {
+    self->reject();
+}
+
+void QWebEngineNavigationRequest_ActionChanged(QWebEngineNavigationRequest* self) {
+    self->actionChanged();
+}
+
+void QWebEngineNavigationRequest_Connect_ActionChanged(QWebEngineNavigationRequest* self, intptr_t slot) {
+    void (*slotFunc)(QWebEngineNavigationRequest*) = reinterpret_cast<void (*)(QWebEngineNavigationRequest*)>(slot);
+    QWebEngineNavigationRequest::connect(self, &QWebEngineNavigationRequest::actionChanged, [self, slotFunc]() {
+        slotFunc(self);
+    });
+}
+
+void QWebEngineNavigationRequest_Delete(QWebEngineNavigationRequest* self) {
+    delete self;
+}

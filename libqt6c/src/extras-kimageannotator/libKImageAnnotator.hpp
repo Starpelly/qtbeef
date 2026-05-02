@@ -1,0 +1,292 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIMAGEANNOTATORC_LIBKIMAGEANNOTATOR_HPP
+#define SRC_EXTRAS_KIMAGEANNOTATORC_LIBKIMAGEANNOTATOR_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_kImageAnnotator__KImageAnnotator)
+typedef kImageAnnotator::KImageAnnotator kImageAnnotator__KImageAnnotator;
+#endif
+#else
+typedef struct QAction QAction;
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QColor QColor;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QFont QFont;
+typedef struct QHideEvent QHideEvent;
+typedef struct QImage QImage;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPixmap QPixmap;
+typedef struct QPoint QPoint;
+typedef struct QPointF QPointF;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+typedef struct kImageAnnotator kImageAnnotator;
+typedef struct kImageAnnotator__KImageAnnotator kImageAnnotator__KImageAnnotator;
+#endif
+
+void kImageAnnotator_LoadTranslations();
+
+kImageAnnotator__KImageAnnotator* kImageAnnotator__KImageAnnotator_new();
+QMetaObject* kImageAnnotator__KImageAnnotator_MetaObject(const kImageAnnotator__KImageAnnotator* self);
+void* kImageAnnotator__KImageAnnotator_Metacast(kImageAnnotator__KImageAnnotator* self, const char* param1);
+int kImageAnnotator__KImageAnnotator_Metacall(kImageAnnotator__KImageAnnotator* self, int param1, int param2, void** param3);
+QImage* kImageAnnotator__KImageAnnotator_Image(const kImageAnnotator__KImageAnnotator* self);
+QImage* kImageAnnotator__KImageAnnotator_ImageAt(const kImageAnnotator__KImageAnnotator* self, int index);
+QAction* kImageAnnotator__KImageAnnotator_UndoAction(kImageAnnotator__KImageAnnotator* self);
+QAction* kImageAnnotator__KImageAnnotator_RedoAction(kImageAnnotator__KImageAnnotator* self);
+QSize* kImageAnnotator__KImageAnnotator_SizeHint(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_ShowAnnotator(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_ShowCropper(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_ShowScaler(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_ShowRotator(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_ShowCanvasModifier(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_ShowCutter(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_LoadImage(kImageAnnotator__KImageAnnotator* self, const QPixmap* pixmap);
+int kImageAnnotator__KImageAnnotator_AddTab(kImageAnnotator__KImageAnnotator* self, const QPixmap* pixmap, const libqt_string title, const libqt_string toolTip);
+void kImageAnnotator__KImageAnnotator_UpdateTabInfo(kImageAnnotator__KImageAnnotator* self, int index, const libqt_string title, const libqt_string toolTip);
+void kImageAnnotator__KImageAnnotator_InsertImageItem(kImageAnnotator__KImageAnnotator* self, const QPointF* position, const QPixmap* pixmap);
+void kImageAnnotator__KImageAnnotator_SetTextFont(kImageAnnotator__KImageAnnotator* self, const QFont* font);
+void kImageAnnotator__KImageAnnotator_SetNumberFont(kImageAnnotator__KImageAnnotator* self, const QFont* font);
+void kImageAnnotator__KImageAnnotator_SetItemShadowEnabled(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_SetSmoothPathEnabled(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_SetSaveToolSelection(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_SetSmoothFactor(kImageAnnotator__KImageAnnotator* self, int factor);
+void kImageAnnotator__KImageAnnotator_SetSwitchToSelectToolAfterDrawingItem(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_SetNumberToolSeedChangeUpdatesAllItems(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_SetTabBarAutoHide(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_RemoveTab(kImageAnnotator__KImageAnnotator* self, int index);
+void kImageAnnotator__KImageAnnotator_SetStickers(kImageAnnotator__KImageAnnotator* self, const libqt_list /* of libqt_string */ stickerPaths, bool keepDefault);
+void kImageAnnotator__KImageAnnotator_AddTabContextMenuActions(kImageAnnotator__KImageAnnotator* self, const libqt_list /* of QAction* */ actions);
+void kImageAnnotator__KImageAnnotator_SetSettingsCollapsed(kImageAnnotator__KImageAnnotator* self, bool isCollapsed);
+void kImageAnnotator__KImageAnnotator_SetCanvasColor(kImageAnnotator__KImageAnnotator* self, const QColor* color);
+void kImageAnnotator__KImageAnnotator_SetSelectItemAfterDrawing(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_SetControlsWidgetVisible(kImageAnnotator__KImageAnnotator* self, bool enabled);
+void kImageAnnotator__KImageAnnotator_ImageChanged(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_Connect_ImageChanged(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_CurrentTabChanged(const kImageAnnotator__KImageAnnotator* self, int index);
+void kImageAnnotator__KImageAnnotator_Connect_CurrentTabChanged(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_TabCloseRequested(const kImageAnnotator__KImageAnnotator* self, int index);
+void kImageAnnotator__KImageAnnotator_Connect_TabCloseRequested(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_TabMoved(kImageAnnotator__KImageAnnotator* self, int fromIndex, int toIndex);
+void kImageAnnotator__KImageAnnotator_Connect_TabMoved(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_TabContextMenuOpened(const kImageAnnotator__KImageAnnotator* self, int index);
+void kImageAnnotator__KImageAnnotator_Connect_TabContextMenuOpened(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_OnMetaObject(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QMetaObject* kImageAnnotator__KImageAnnotator_SuperMetaObject(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnMetacast(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void* kImageAnnotator__KImageAnnotator_SuperMetacast(kImageAnnotator__KImageAnnotator* self, const char* param1);
+void kImageAnnotator__KImageAnnotator_OnMetacall(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+int kImageAnnotator__KImageAnnotator_SuperMetacall(kImageAnnotator__KImageAnnotator* self, int param1, int param2, void** param3);
+void kImageAnnotator__KImageAnnotator_OnSizeHint(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QSize* kImageAnnotator__KImageAnnotator_SuperSizeHint(const kImageAnnotator__KImageAnnotator* self);
+int kImageAnnotator__KImageAnnotator_DevType(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnDevType(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+int kImageAnnotator__KImageAnnotator_SuperDevType(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_SetVisible(kImageAnnotator__KImageAnnotator* self, bool visible);
+void kImageAnnotator__KImageAnnotator_OnSetVisible(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperSetVisible(kImageAnnotator__KImageAnnotator* self, bool visible);
+QSize* kImageAnnotator__KImageAnnotator_MinimumSizeHint(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnMinimumSizeHint(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QSize* kImageAnnotator__KImageAnnotator_SuperMinimumSizeHint(const kImageAnnotator__KImageAnnotator* self);
+int kImageAnnotator__KImageAnnotator_HeightForWidth(const kImageAnnotator__KImageAnnotator* self, int param1);
+void kImageAnnotator__KImageAnnotator_OnHeightForWidth(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+int kImageAnnotator__KImageAnnotator_SuperHeightForWidth(const kImageAnnotator__KImageAnnotator* self, int param1);
+bool kImageAnnotator__KImageAnnotator_HasHeightForWidth(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnHasHeightForWidth(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperHasHeightForWidth(const kImageAnnotator__KImageAnnotator* self);
+QPaintEngine* kImageAnnotator__KImageAnnotator_PaintEngine(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnPaintEngine(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QPaintEngine* kImageAnnotator__KImageAnnotator_SuperPaintEngine(const kImageAnnotator__KImageAnnotator* self);
+bool kImageAnnotator__KImageAnnotator_Event(kImageAnnotator__KImageAnnotator* self, QEvent* event);
+void kImageAnnotator__KImageAnnotator_OnEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperEvent(kImageAnnotator__KImageAnnotator* self, QEvent* event);
+void kImageAnnotator__KImageAnnotator_MousePressEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_OnMousePressEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperMousePressEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_MouseReleaseEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_OnMouseReleaseEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperMouseReleaseEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_MouseDoubleClickEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_OnMouseDoubleClickEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperMouseDoubleClickEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_MouseMoveEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_OnMouseMoveEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperMouseMoveEvent(kImageAnnotator__KImageAnnotator* self, QMouseEvent* event);
+void kImageAnnotator__KImageAnnotator_WheelEvent(kImageAnnotator__KImageAnnotator* self, QWheelEvent* event);
+void kImageAnnotator__KImageAnnotator_OnWheelEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperWheelEvent(kImageAnnotator__KImageAnnotator* self, QWheelEvent* event);
+void kImageAnnotator__KImageAnnotator_KeyPressEvent(kImageAnnotator__KImageAnnotator* self, QKeyEvent* event);
+void kImageAnnotator__KImageAnnotator_OnKeyPressEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperKeyPressEvent(kImageAnnotator__KImageAnnotator* self, QKeyEvent* event);
+void kImageAnnotator__KImageAnnotator_KeyReleaseEvent(kImageAnnotator__KImageAnnotator* self, QKeyEvent* event);
+void kImageAnnotator__KImageAnnotator_OnKeyReleaseEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperKeyReleaseEvent(kImageAnnotator__KImageAnnotator* self, QKeyEvent* event);
+void kImageAnnotator__KImageAnnotator_FocusInEvent(kImageAnnotator__KImageAnnotator* self, QFocusEvent* event);
+void kImageAnnotator__KImageAnnotator_OnFocusInEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperFocusInEvent(kImageAnnotator__KImageAnnotator* self, QFocusEvent* event);
+void kImageAnnotator__KImageAnnotator_FocusOutEvent(kImageAnnotator__KImageAnnotator* self, QFocusEvent* event);
+void kImageAnnotator__KImageAnnotator_OnFocusOutEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperFocusOutEvent(kImageAnnotator__KImageAnnotator* self, QFocusEvent* event);
+void kImageAnnotator__KImageAnnotator_EnterEvent(kImageAnnotator__KImageAnnotator* self, QEnterEvent* event);
+void kImageAnnotator__KImageAnnotator_OnEnterEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperEnterEvent(kImageAnnotator__KImageAnnotator* self, QEnterEvent* event);
+void kImageAnnotator__KImageAnnotator_LeaveEvent(kImageAnnotator__KImageAnnotator* self, QEvent* event);
+void kImageAnnotator__KImageAnnotator_OnLeaveEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperLeaveEvent(kImageAnnotator__KImageAnnotator* self, QEvent* event);
+void kImageAnnotator__KImageAnnotator_PaintEvent(kImageAnnotator__KImageAnnotator* self, QPaintEvent* event);
+void kImageAnnotator__KImageAnnotator_OnPaintEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperPaintEvent(kImageAnnotator__KImageAnnotator* self, QPaintEvent* event);
+void kImageAnnotator__KImageAnnotator_MoveEvent(kImageAnnotator__KImageAnnotator* self, QMoveEvent* event);
+void kImageAnnotator__KImageAnnotator_OnMoveEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperMoveEvent(kImageAnnotator__KImageAnnotator* self, QMoveEvent* event);
+void kImageAnnotator__KImageAnnotator_ResizeEvent(kImageAnnotator__KImageAnnotator* self, QResizeEvent* event);
+void kImageAnnotator__KImageAnnotator_OnResizeEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperResizeEvent(kImageAnnotator__KImageAnnotator* self, QResizeEvent* event);
+void kImageAnnotator__KImageAnnotator_CloseEvent(kImageAnnotator__KImageAnnotator* self, QCloseEvent* event);
+void kImageAnnotator__KImageAnnotator_OnCloseEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperCloseEvent(kImageAnnotator__KImageAnnotator* self, QCloseEvent* event);
+void kImageAnnotator__KImageAnnotator_ContextMenuEvent(kImageAnnotator__KImageAnnotator* self, QContextMenuEvent* event);
+void kImageAnnotator__KImageAnnotator_OnContextMenuEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperContextMenuEvent(kImageAnnotator__KImageAnnotator* self, QContextMenuEvent* event);
+void kImageAnnotator__KImageAnnotator_TabletEvent(kImageAnnotator__KImageAnnotator* self, QTabletEvent* event);
+void kImageAnnotator__KImageAnnotator_OnTabletEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperTabletEvent(kImageAnnotator__KImageAnnotator* self, QTabletEvent* event);
+void kImageAnnotator__KImageAnnotator_ActionEvent(kImageAnnotator__KImageAnnotator* self, QActionEvent* event);
+void kImageAnnotator__KImageAnnotator_OnActionEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperActionEvent(kImageAnnotator__KImageAnnotator* self, QActionEvent* event);
+void kImageAnnotator__KImageAnnotator_DragEnterEvent(kImageAnnotator__KImageAnnotator* self, QDragEnterEvent* event);
+void kImageAnnotator__KImageAnnotator_OnDragEnterEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperDragEnterEvent(kImageAnnotator__KImageAnnotator* self, QDragEnterEvent* event);
+void kImageAnnotator__KImageAnnotator_DragMoveEvent(kImageAnnotator__KImageAnnotator* self, QDragMoveEvent* event);
+void kImageAnnotator__KImageAnnotator_OnDragMoveEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperDragMoveEvent(kImageAnnotator__KImageAnnotator* self, QDragMoveEvent* event);
+void kImageAnnotator__KImageAnnotator_DragLeaveEvent(kImageAnnotator__KImageAnnotator* self, QDragLeaveEvent* event);
+void kImageAnnotator__KImageAnnotator_OnDragLeaveEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperDragLeaveEvent(kImageAnnotator__KImageAnnotator* self, QDragLeaveEvent* event);
+void kImageAnnotator__KImageAnnotator_DropEvent(kImageAnnotator__KImageAnnotator* self, QDropEvent* event);
+void kImageAnnotator__KImageAnnotator_OnDropEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperDropEvent(kImageAnnotator__KImageAnnotator* self, QDropEvent* event);
+void kImageAnnotator__KImageAnnotator_ShowEvent(kImageAnnotator__KImageAnnotator* self, QShowEvent* event);
+void kImageAnnotator__KImageAnnotator_OnShowEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperShowEvent(kImageAnnotator__KImageAnnotator* self, QShowEvent* event);
+void kImageAnnotator__KImageAnnotator_HideEvent(kImageAnnotator__KImageAnnotator* self, QHideEvent* event);
+void kImageAnnotator__KImageAnnotator_OnHideEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperHideEvent(kImageAnnotator__KImageAnnotator* self, QHideEvent* event);
+bool kImageAnnotator__KImageAnnotator_NativeEvent(kImageAnnotator__KImageAnnotator* self, const libqt_string eventType, void* message, intptr_t* result);
+void kImageAnnotator__KImageAnnotator_OnNativeEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperNativeEvent(kImageAnnotator__KImageAnnotator* self, const libqt_string eventType, void* message, intptr_t* result);
+void kImageAnnotator__KImageAnnotator_ChangeEvent(kImageAnnotator__KImageAnnotator* self, QEvent* param1);
+void kImageAnnotator__KImageAnnotator_OnChangeEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperChangeEvent(kImageAnnotator__KImageAnnotator* self, QEvent* param1);
+int kImageAnnotator__KImageAnnotator_Metric(const kImageAnnotator__KImageAnnotator* self, int param1);
+void kImageAnnotator__KImageAnnotator_OnMetric(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+int kImageAnnotator__KImageAnnotator_SuperMetric(const kImageAnnotator__KImageAnnotator* self, int param1);
+void kImageAnnotator__KImageAnnotator_InitPainter(const kImageAnnotator__KImageAnnotator* self, QPainter* painter);
+void kImageAnnotator__KImageAnnotator_OnInitPainter(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperInitPainter(const kImageAnnotator__KImageAnnotator* self, QPainter* painter);
+QPaintDevice* kImageAnnotator__KImageAnnotator_Redirected(const kImageAnnotator__KImageAnnotator* self, QPoint* offset);
+void kImageAnnotator__KImageAnnotator_OnRedirected(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QPaintDevice* kImageAnnotator__KImageAnnotator_SuperRedirected(const kImageAnnotator__KImageAnnotator* self, QPoint* offset);
+QPainter* kImageAnnotator__KImageAnnotator_SharedPainter(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnSharedPainter(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QPainter* kImageAnnotator__KImageAnnotator_SuperSharedPainter(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_InputMethodEvent(kImageAnnotator__KImageAnnotator* self, QInputMethodEvent* param1);
+void kImageAnnotator__KImageAnnotator_OnInputMethodEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperInputMethodEvent(kImageAnnotator__KImageAnnotator* self, QInputMethodEvent* param1);
+QVariant* kImageAnnotator__KImageAnnotator_InputMethodQuery(const kImageAnnotator__KImageAnnotator* self, int param1);
+void kImageAnnotator__KImageAnnotator_OnInputMethodQuery(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QVariant* kImageAnnotator__KImageAnnotator_SuperInputMethodQuery(const kImageAnnotator__KImageAnnotator* self, int param1);
+bool kImageAnnotator__KImageAnnotator_FocusNextPrevChild(kImageAnnotator__KImageAnnotator* self, bool next);
+void kImageAnnotator__KImageAnnotator_OnFocusNextPrevChild(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperFocusNextPrevChild(kImageAnnotator__KImageAnnotator* self, bool next);
+bool kImageAnnotator__KImageAnnotator_EventFilter(kImageAnnotator__KImageAnnotator* self, QObject* watched, QEvent* event);
+void kImageAnnotator__KImageAnnotator_OnEventFilter(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperEventFilter(kImageAnnotator__KImageAnnotator* self, QObject* watched, QEvent* event);
+void kImageAnnotator__KImageAnnotator_TimerEvent(kImageAnnotator__KImageAnnotator* self, QTimerEvent* event);
+void kImageAnnotator__KImageAnnotator_OnTimerEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperTimerEvent(kImageAnnotator__KImageAnnotator* self, QTimerEvent* event);
+void kImageAnnotator__KImageAnnotator_ChildEvent(kImageAnnotator__KImageAnnotator* self, QChildEvent* event);
+void kImageAnnotator__KImageAnnotator_OnChildEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperChildEvent(kImageAnnotator__KImageAnnotator* self, QChildEvent* event);
+void kImageAnnotator__KImageAnnotator_CustomEvent(kImageAnnotator__KImageAnnotator* self, QEvent* event);
+void kImageAnnotator__KImageAnnotator_OnCustomEvent(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperCustomEvent(kImageAnnotator__KImageAnnotator* self, QEvent* event);
+void kImageAnnotator__KImageAnnotator_ConnectNotify(kImageAnnotator__KImageAnnotator* self, const QMetaMethod* signal);
+void kImageAnnotator__KImageAnnotator_OnConnectNotify(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperConnectNotify(kImageAnnotator__KImageAnnotator* self, const QMetaMethod* signal);
+void kImageAnnotator__KImageAnnotator_DisconnectNotify(kImageAnnotator__KImageAnnotator* self, const QMetaMethod* signal);
+void kImageAnnotator__KImageAnnotator_OnDisconnectNotify(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperDisconnectNotify(kImageAnnotator__KImageAnnotator* self, const QMetaMethod* signal);
+void kImageAnnotator__KImageAnnotator_UpdateMicroFocus(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnUpdateMicroFocus(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperUpdateMicroFocus(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_Create(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnCreate(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperCreate(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_Destroy(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnDestroy(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+void kImageAnnotator__KImageAnnotator_SuperDestroy(kImageAnnotator__KImageAnnotator* self);
+bool kImageAnnotator__KImageAnnotator_FocusNextChild(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnFocusNextChild(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperFocusNextChild(kImageAnnotator__KImageAnnotator* self);
+bool kImageAnnotator__KImageAnnotator_FocusPreviousChild(kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnFocusPreviousChild(kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperFocusPreviousChild(kImageAnnotator__KImageAnnotator* self);
+QObject* kImageAnnotator__KImageAnnotator_Sender(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnSender(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+QObject* kImageAnnotator__KImageAnnotator_SuperSender(const kImageAnnotator__KImageAnnotator* self);
+int kImageAnnotator__KImageAnnotator_SenderSignalIndex(const kImageAnnotator__KImageAnnotator* self);
+void kImageAnnotator__KImageAnnotator_OnSenderSignalIndex(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+int kImageAnnotator__KImageAnnotator_SuperSenderSignalIndex(const kImageAnnotator__KImageAnnotator* self);
+int kImageAnnotator__KImageAnnotator_Receivers(const kImageAnnotator__KImageAnnotator* self, const char* signal);
+void kImageAnnotator__KImageAnnotator_OnReceivers(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+int kImageAnnotator__KImageAnnotator_SuperReceivers(const kImageAnnotator__KImageAnnotator* self, const char* signal);
+bool kImageAnnotator__KImageAnnotator_IsSignalConnected(const kImageAnnotator__KImageAnnotator* self, const QMetaMethod* signal);
+void kImageAnnotator__KImageAnnotator_OnIsSignalConnected(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+bool kImageAnnotator__KImageAnnotator_SuperIsSignalConnected(const kImageAnnotator__KImageAnnotator* self, const QMetaMethod* signal);
+double kImageAnnotator__KImageAnnotator_GetDecodedMetricF(const kImageAnnotator__KImageAnnotator* self, int metricA, int metricB);
+void kImageAnnotator__KImageAnnotator_OnGetDecodedMetricF(const kImageAnnotator__KImageAnnotator* self, intptr_t slot);
+double kImageAnnotator__KImageAnnotator_SuperGetDecodedMetricF(const kImageAnnotator__KImageAnnotator* self, int metricA, int metricB);
+void kImageAnnotator__KImageAnnotator_Delete(kImageAnnotator__KImageAnnotator* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

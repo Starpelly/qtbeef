@@ -1,0 +1,2014 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIO_QT6C_LIBKEMAILCLIENTLAUNCHERJOB_H
+#define SRC_EXTRAS_KIO_QT6C_LIBKEMAILCLIENTLAUNCHERJOB_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html)
+
+/// k_emailclientlauncherjob_new constructs a new KEMailClientLauncherJob object.
+///
+KEMailClientLauncherJob* k_emailclientlauncherjob_new();
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html)
+
+/// k_emailclientlauncherjob_new2 constructs a new KEMailClientLauncherJob object.
+///
+/// @param parent QObject*
+///
+KEMailClientLauncherJob* k_emailclientlauncherjob_new2(void* parent);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// @param self KEMailClientLauncherJob*
+///
+const QMetaObject* k_emailclientlauncherjob_meta_object(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback const QMetaObject* func()
+///
+void k_emailclientlauncherjob_on_meta_object(void* self, const QMetaObject* (*callback)());
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_meta_object` instead
+///
+#define k_emailclientlauncherjob_qbase_meta_object k_emailclientlauncherjob_super_meta_object
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Base class method implementation
+///
+/// @param self KEMailClientLauncherJob*
+///
+const QMetaObject* k_emailclientlauncherjob_super_meta_object(void* self);
+
+/// @param self KEMailClientLauncherJob*
+/// @param param1 const char*
+///
+void* k_emailclientlauncherjob_metacast(void* self, const char* param1);
+
+/// Allows for overriding the related default method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void* func(KEMailClientLauncherJob* self, const char* param1)
+///
+void k_emailclientlauncherjob_on_metacast(void* self, void* (*callback)(void*, const char*));
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_metacast` instead
+///
+#define k_emailclientlauncherjob_qbase_metacast k_emailclientlauncherjob_super_metacast
+
+/// Base class method implementation
+///
+/// @param self KEMailClientLauncherJob*
+/// @param param1 const char*
+///
+void* k_emailclientlauncherjob_super_metacast(void* self, const char* param1);
+
+/// @param self KEMailClientLauncherJob*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_emailclientlauncherjob_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// Allows for overriding the related default method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback int32_t func(KEMailClientLauncherJob* self, enum QMetaObject__Call param1, int param2, void* param3)
+///
+void k_emailclientlauncherjob_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*));
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_metacall` instead
+///
+#define k_emailclientlauncherjob_qbase_metacall k_emailclientlauncherjob_super_metacall
+
+/// Base class method implementation
+///
+/// @param self KEMailClientLauncherJob*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_emailclientlauncherjob_super_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+///
+const char* k_emailclientlauncherjob_tr(const char* s);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#setTo)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param to const char**
+///
+void k_emailclientlauncherjob_set_to(void* self, const char* to[1]);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#setCc)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param cc const char**
+///
+void k_emailclientlauncherjob_set_cc(void* self, const char* cc[1]);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#setBcc)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param bcc const char**
+///
+void k_emailclientlauncherjob_set_bcc(void* self, const char* bcc[1]);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#setSubject)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param subject const char*
+///
+void k_emailclientlauncherjob_set_subject(void* self, const char* subject);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#setBody)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param body const char*
+///
+void k_emailclientlauncherjob_set_body(void* self, const char* body);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#setAttachments)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param urls libqt_list of QUrl*
+///
+void k_emailclientlauncherjob_set_attachments(void* self, libqt_list urls);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#setStartupId)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param startupId char*
+///
+void k_emailclientlauncherjob_set_startup_id(void* self, char* startupId);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#start)
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_start(void* self);
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#start)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func()
+///
+void k_emailclientlauncherjob_on_start(void* self, void (*callback)());
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_start` instead
+///
+#define k_emailclientlauncherjob_qbase_start k_emailclientlauncherjob_super_start
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#start)
+///
+/// Base class method implementation
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_super_start(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+///
+const char* k_emailclientlauncherjob_tr2(const char* s, const char* c);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+/// @param n int
+///
+const char* k_emailclientlauncherjob_tr3(const char* s, const char* c, int n);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setUiDelegate)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param delegate KJobUiDelegate*
+///
+void k_emailclientlauncherjob_set_ui_delegate(void* self, void* delegate);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#uiDelegate)
+///
+/// @param self KEMailClientLauncherJob*
+///
+KJobUiDelegate* k_emailclientlauncherjob_ui_delegate(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#capabilities)
+///
+/// @param self KEMailClientLauncherJob*
+///
+/// @return flag of enum KJob__Capability
+///
+int32_t k_emailclientlauncherjob_capabilities(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isSuspended)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_suspended(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#kill)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_kill(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#suspend)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_suspend(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#resume)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_resume(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#exec)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_exec(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#error)
+///
+/// @param self KEMailClientLauncherJob*
+///
+int32_t k_emailclientlauncherjob_error(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#errorText)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KEMailClientLauncherJob*
+///
+const char* k_emailclientlauncherjob_error_text(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedAmount)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+///
+uintptr_t k_emailclientlauncherjob_processed_amount(void* self, int32_t unit);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalAmount)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+///
+uintptr_t k_emailclientlauncherjob_total_amount(void* self, int32_t unit);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#percent)
+///
+/// @param self KEMailClientLauncherJob*
+///
+uintptr_t k_emailclientlauncherjob_percent(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setAutoDelete)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param autodelete bool
+///
+void k_emailclientlauncherjob_set_auto_delete(void* self, bool autodelete);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isAutoDelete)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_auto_delete(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setFinishedNotificationHidden)
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_set_finished_notification_hidden(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isFinishedNotificationHidden)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_finished_notification_hidden(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isStartedWithExec)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_started_with_exec(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#elapsedTime)
+///
+/// @param self KEMailClientLauncherJob*
+///
+int64_t k_emailclientlauncherjob_elapsed_time(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#infoMessage)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param job KJob*
+/// @param message const char*
+///
+void k_emailclientlauncherjob_info_message(void* self, void* job, const char* message);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#infoMessage)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, const char* message)
+///
+void k_emailclientlauncherjob_on_info_message(void* self, void (*callback)(void*, void*, const char*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#warning)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param job KJob*
+/// @param message const char*
+///
+void k_emailclientlauncherjob_warning(void* self, void* job, const char* message);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#warning)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, const char* message)
+///
+void k_emailclientlauncherjob_on_warning(void* self, void (*callback)(void*, void*, const char*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalSize)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param job KJob*
+/// @param size uintptr_t
+///
+void k_emailclientlauncherjob_total_size(void* self, void* job, uintptr_t size);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalSize)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, uintptr_t size)
+///
+void k_emailclientlauncherjob_on_total_size(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedSize)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param job KJob*
+/// @param size uintptr_t
+///
+void k_emailclientlauncherjob_processed_size(void* self, void* job, uintptr_t size);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedSize)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, uintptr_t size)
+///
+void k_emailclientlauncherjob_on_processed_size(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#speed)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param job KJob*
+/// @param speed uintptr_t
+///
+void k_emailclientlauncherjob_speed(void* self, void* job, uintptr_t speed);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#speed)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, uintptr_t speed)
+///
+void k_emailclientlauncherjob_on_speed(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#kill)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param verbosity enum KJob__KillVerbosity
+///
+bool k_emailclientlauncherjob_kill1(void* self, int32_t verbosity);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setFinishedNotificationHidden)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param hide bool
+///
+void k_emailclientlauncherjob_set_finished_notification_hidden1(void* self, bool hide);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KEMailClientLauncherJob*
+///
+const char* k_emailclientlauncherjob_object_name(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setObjectName)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param name const char*
+///
+void k_emailclientlauncherjob_set_object_name(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWidgetType)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_widget_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWindowType)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_window_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isQuickItemType)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_quick_item_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#signalsBlocked)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_signals_blocked(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#blockSignals)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param b bool
+///
+bool k_emailclientlauncherjob_block_signals(void* self, bool b);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#thread)
+///
+/// @param self KEMailClientLauncherJob*
+///
+QThread* k_emailclientlauncherjob_thread(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#moveToThread)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param thread QThread*
+///
+bool k_emailclientlauncherjob_move_to_thread(void* self, void* thread);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param interval int
+///
+int32_t k_emailclientlauncherjob_start_timer(void* self, int interval);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param time int64_t of nanoseconds
+///
+int32_t k_emailclientlauncherjob_start_timer2(void* self, int64_t time);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param id int
+///
+void k_emailclientlauncherjob_kill_timer(void* self, int id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param id enum Qt__TimerId
+///
+void k_emailclientlauncherjob_kill_timer2(void* self, int32_t id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#children)
+///
+/// @param self KEMailClientLauncherJob*
+///
+/// @return libqt_list of QObject*
+///
+libqt_list k_emailclientlauncherjob_children(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setParent)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param parent QObject*
+///
+void k_emailclientlauncherjob_set_parent(void* self, void* parent);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#installEventFilter)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param filterObj QObject*
+///
+void k_emailclientlauncherjob_install_event_filter(void* self, void* filterObj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#removeEventFilter)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param obj QObject*
+///
+void k_emailclientlauncherjob_remove_event_filter(void* self, void* obj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+QMetaObject__Connection* k_emailclientlauncherjob_connect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+///
+QMetaObject__Connection* k_emailclientlauncherjob_connect2(void* sender, void* signal, void* receiver, void* method);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+///
+QMetaObject__Connection* k_emailclientlauncherjob_connect3(void* self, void* sender, const char* signal, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_emailclientlauncherjob_disconnect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param member QMetaMethod*
+///
+bool k_emailclientlauncherjob_disconnect2(void* sender, void* signal, void* receiver, void* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_disconnect3(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param receiver QObject*
+///
+bool k_emailclientlauncherjob_disconnect4(void* self, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param param1 QMetaObject__Connection*
+///
+bool k_emailclientlauncherjob_disconnect5(void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectTree)
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_dump_object_tree(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectInfo)
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_dump_object_info(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setProperty)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param name const char*
+/// @param value QVariant*
+///
+bool k_emailclientlauncherjob_set_property(void* self, const char* name, void* value);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#property)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param name const char*
+///
+QVariant* k_emailclientlauncherjob_property(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dynamicPropertyNames)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KEMailClientLauncherJob*
+///
+const char** k_emailclientlauncherjob_dynamic_property_names(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KEMailClientLauncherJob*
+///
+QBindingStorage* k_emailclientlauncherjob_binding_storage(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KEMailClientLauncherJob*
+///
+const QBindingStorage* k_emailclientlauncherjob_binding_storage2(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_destroyed(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self)
+///
+void k_emailclientlauncherjob_on_destroyed(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#parent)
+///
+/// @param self KEMailClientLauncherJob*
+///
+QObject* k_emailclientlauncherjob_parent(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#inherits)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param classname const char*
+///
+bool k_emailclientlauncherjob_inherits(void* self, const char* classname);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#deleteLater)
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_delete_later(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param interval int
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_emailclientlauncherjob_start_timer22(void* self, int interval, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param time int64_t of nanoseconds
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_emailclientlauncherjob_start_timer23(void* self, int64_t time, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+/// @param param5 enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_emailclientlauncherjob_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_emailclientlauncherjob_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_emailclientlauncherjob_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal const char*
+///
+bool k_emailclientlauncherjob_disconnect1(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal const char*
+/// @param receiver QObject*
+///
+bool k_emailclientlauncherjob_disconnect22(void* self, const char* signal, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_emailclientlauncherjob_disconnect32(void* self, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_emailclientlauncherjob_disconnect23(void* self, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param param1 QObject*
+///
+void k_emailclientlauncherjob_destroyed1(void* self, void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, QObject* param1)
+///
+void k_emailclientlauncherjob_on_destroyed1(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doKill)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_do_kill(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_do_kill` instead
+///
+#define k_emailclientlauncherjob_qbase_do_kill k_emailclientlauncherjob_super_do_kill
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doKill)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_super_do_kill(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doKill)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback bool func()
+///
+void k_emailclientlauncherjob_on_do_kill(void* self, bool (*callback)());
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doSuspend)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_do_suspend(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_do_suspend` instead
+///
+#define k_emailclientlauncherjob_qbase_do_suspend k_emailclientlauncherjob_super_do_suspend
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doSuspend)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_super_do_suspend(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doSuspend)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback bool func()
+///
+void k_emailclientlauncherjob_on_do_suspend(void* self, bool (*callback)());
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doResume)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_do_resume(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_do_resume` instead
+///
+#define k_emailclientlauncherjob_qbase_do_resume k_emailclientlauncherjob_super_do_resume
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doResume)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_super_do_resume(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#doResume)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback bool func()
+///
+void k_emailclientlauncherjob_on_do_resume(void* self, bool (*callback)());
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#errorString)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+const char* k_emailclientlauncherjob_error_string(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_error_string` instead
+///
+#define k_emailclientlauncherjob_qbase_error_string k_emailclientlauncherjob_super_error_string
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#errorString)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+const char* k_emailclientlauncherjob_super_error_string(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#errorString)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback const char* func()
+///
+void k_emailclientlauncherjob_on_error_string(void* self, const char* (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QEvent*
+///
+bool k_emailclientlauncherjob_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_event` instead
+///
+#define k_emailclientlauncherjob_qbase_event k_emailclientlauncherjob_super_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QEvent*
+///
+bool k_emailclientlauncherjob_super_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback bool func(KEMailClientLauncherJob* self, QEvent* event)
+///
+void k_emailclientlauncherjob_on_event(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_emailclientlauncherjob_event_filter(void* self, void* watched, void* event);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_event_filter` instead
+///
+#define k_emailclientlauncherjob_qbase_event_filter k_emailclientlauncherjob_super_event_filter
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_emailclientlauncherjob_super_event_filter(void* self, void* watched, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback bool func(KEMailClientLauncherJob* self, QObject* watched, QEvent* event)
+///
+void k_emailclientlauncherjob_on_event_filter(void* self, bool (*callback)(void*, void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QTimerEvent*
+///
+void k_emailclientlauncherjob_timer_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_timer_event` instead
+///
+#define k_emailclientlauncherjob_qbase_timer_event k_emailclientlauncherjob_super_timer_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QTimerEvent*
+///
+void k_emailclientlauncherjob_super_timer_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, QTimerEvent* event)
+///
+void k_emailclientlauncherjob_on_timer_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QChildEvent*
+///
+void k_emailclientlauncherjob_child_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_child_event` instead
+///
+#define k_emailclientlauncherjob_qbase_child_event k_emailclientlauncherjob_super_child_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QChildEvent*
+///
+void k_emailclientlauncherjob_super_child_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, QChildEvent* event)
+///
+void k_emailclientlauncherjob_on_child_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QEvent*
+///
+void k_emailclientlauncherjob_custom_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_custom_event` instead
+///
+#define k_emailclientlauncherjob_qbase_custom_event k_emailclientlauncherjob_super_custom_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param event QEvent*
+///
+void k_emailclientlauncherjob_super_custom_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, QEvent* event)
+///
+void k_emailclientlauncherjob_on_custom_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal QMetaMethod*
+///
+void k_emailclientlauncherjob_connect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_connect_notify` instead
+///
+#define k_emailclientlauncherjob_qbase_connect_notify k_emailclientlauncherjob_super_connect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal QMetaMethod*
+///
+void k_emailclientlauncherjob_super_connect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, QMetaMethod* signal)
+///
+void k_emailclientlauncherjob_on_connect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal QMetaMethod*
+///
+void k_emailclientlauncherjob_disconnect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_disconnect_notify` instead
+///
+#define k_emailclientlauncherjob_qbase_disconnect_notify k_emailclientlauncherjob_super_disconnect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal QMetaMethod*
+///
+void k_emailclientlauncherjob_super_disconnect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, QMetaMethod* signal)
+///
+void k_emailclientlauncherjob_on_disconnect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setCapabilities)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param capabilities flag of enum KJob__Capability
+///
+void k_emailclientlauncherjob_set_capabilities(void* self, int32_t capabilities);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_set_capabilities` instead
+///
+#define k_emailclientlauncherjob_qbase_set_capabilities k_emailclientlauncherjob_super_set_capabilities
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setCapabilities)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param capabilities flag of enum KJob__Capability
+///
+void k_emailclientlauncherjob_super_set_capabilities(void* self, int32_t capabilities);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setCapabilities)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, flag of enum KJob__Capability capabilities)
+///
+void k_emailclientlauncherjob_on_set_capabilities(void* self, void (*callback)(void*, int32_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isFinished)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_is_finished(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_is_finished` instead
+///
+#define k_emailclientlauncherjob_qbase_is_finished k_emailclientlauncherjob_super_is_finished
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isFinished)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+bool k_emailclientlauncherjob_super_is_finished(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isFinished)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback bool func()
+///
+void k_emailclientlauncherjob_on_is_finished(void* self, bool (*callback)());
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setError)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param errorCode int
+///
+void k_emailclientlauncherjob_set_error(void* self, int errorCode);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_set_error` instead
+///
+#define k_emailclientlauncherjob_qbase_set_error k_emailclientlauncherjob_super_set_error
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setError)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param errorCode int
+///
+void k_emailclientlauncherjob_super_set_error(void* self, int errorCode);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setError)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, int errorCode)
+///
+void k_emailclientlauncherjob_on_set_error(void* self, void (*callback)(void*, int));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setErrorText)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param errorText const char*
+///
+void k_emailclientlauncherjob_set_error_text(void* self, const char* errorText);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_set_error_text` instead
+///
+#define k_emailclientlauncherjob_qbase_set_error_text k_emailclientlauncherjob_super_set_error_text
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setErrorText)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param errorText const char*
+///
+void k_emailclientlauncherjob_super_set_error_text(void* self, const char* errorText);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setErrorText)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, const char* errorText)
+///
+void k_emailclientlauncherjob_on_set_error_text(void* self, void (*callback)(void*, const char*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setProcessedAmount)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+/// @param amount uintptr_t
+///
+void k_emailclientlauncherjob_set_processed_amount(void* self, int32_t unit, uintptr_t amount);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_set_processed_amount` instead
+///
+#define k_emailclientlauncherjob_qbase_set_processed_amount k_emailclientlauncherjob_super_set_processed_amount
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setProcessedAmount)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+/// @param amount uintptr_t
+///
+void k_emailclientlauncherjob_super_set_processed_amount(void* self, int32_t unit, uintptr_t amount);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setProcessedAmount)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, enum KJob__Unit unit, uintptr_t amount)
+///
+void k_emailclientlauncherjob_on_set_processed_amount(void* self, void (*callback)(void*, int32_t, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setTotalAmount)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+/// @param amount uintptr_t
+///
+void k_emailclientlauncherjob_set_total_amount(void* self, int32_t unit, uintptr_t amount);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_set_total_amount` instead
+///
+#define k_emailclientlauncherjob_qbase_set_total_amount k_emailclientlauncherjob_super_set_total_amount
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setTotalAmount)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+/// @param amount uintptr_t
+///
+void k_emailclientlauncherjob_super_set_total_amount(void* self, int32_t unit, uintptr_t amount);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setTotalAmount)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, enum KJob__Unit unit, uintptr_t amount)
+///
+void k_emailclientlauncherjob_on_set_total_amount(void* self, void (*callback)(void*, int32_t, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setProgressUnit)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+///
+void k_emailclientlauncherjob_set_progress_unit(void* self, int32_t unit);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_set_progress_unit` instead
+///
+#define k_emailclientlauncherjob_qbase_set_progress_unit k_emailclientlauncherjob_super_set_progress_unit
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setProgressUnit)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param unit enum KJob__Unit
+///
+void k_emailclientlauncherjob_super_set_progress_unit(void* self, int32_t unit);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setProgressUnit)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, enum KJob__Unit unit)
+///
+void k_emailclientlauncherjob_on_set_progress_unit(void* self, void (*callback)(void*, int32_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setPercent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param percentage uintptr_t
+///
+void k_emailclientlauncherjob_set_percent(void* self, uintptr_t percentage);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_set_percent` instead
+///
+#define k_emailclientlauncherjob_qbase_set_percent k_emailclientlauncherjob_super_set_percent
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setPercent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param percentage uintptr_t
+///
+void k_emailclientlauncherjob_super_set_percent(void* self, uintptr_t percentage);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setPercent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, uintptr_t percentage)
+///
+void k_emailclientlauncherjob_on_set_percent(void* self, void (*callback)(void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitResult)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_emit_result(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_emit_result` instead
+///
+#define k_emailclientlauncherjob_qbase_emit_result k_emailclientlauncherjob_super_emit_result
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitResult)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_super_emit_result(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitResult)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func()
+///
+void k_emailclientlauncherjob_on_emit_result(void* self, void (*callback)());
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitPercent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param processedAmount uintptr_t
+/// @param totalAmount uintptr_t
+///
+void k_emailclientlauncherjob_emit_percent(void* self, uintptr_t processedAmount, uintptr_t totalAmount);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_emit_percent` instead
+///
+#define k_emailclientlauncherjob_qbase_emit_percent k_emailclientlauncherjob_super_emit_percent
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitPercent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param processedAmount uintptr_t
+/// @param totalAmount uintptr_t
+///
+void k_emailclientlauncherjob_super_emit_percent(void* self, uintptr_t processedAmount, uintptr_t totalAmount);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitPercent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, uintptr_t processedAmount, uintptr_t totalAmount)
+///
+void k_emailclientlauncherjob_on_emit_percent(void* self, void (*callback)(void*, uintptr_t, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitSpeed)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param speed uintptr_t
+///
+void k_emailclientlauncherjob_emit_speed(void* self, uintptr_t speed);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_emit_speed` instead
+///
+#define k_emailclientlauncherjob_qbase_emit_speed k_emailclientlauncherjob_super_emit_speed
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitSpeed)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param speed uintptr_t
+///
+void k_emailclientlauncherjob_super_emit_speed(void* self, uintptr_t speed);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#emitSpeed)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, uintptr_t speed)
+///
+void k_emailclientlauncherjob_on_emit_speed(void* self, void (*callback)(void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#startElapsedTimer)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_start_elapsed_timer(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_start_elapsed_timer` instead
+///
+#define k_emailclientlauncherjob_qbase_start_elapsed_timer k_emailclientlauncherjob_super_start_elapsed_timer
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#startElapsedTimer)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_super_start_elapsed_timer(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#startElapsedTimer)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func()
+///
+void k_emailclientlauncherjob_on_start_elapsed_timer(void* self, void (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+QObject* k_emailclientlauncherjob_sender(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_sender` instead
+///
+#define k_emailclientlauncherjob_qbase_sender k_emailclientlauncherjob_super_sender
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+QObject* k_emailclientlauncherjob_super_sender(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback QObject* func()
+///
+void k_emailclientlauncherjob_on_sender(void* self, QObject* (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+int32_t k_emailclientlauncherjob_sender_signal_index(void* self);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_sender_signal_index` instead
+///
+#define k_emailclientlauncherjob_qbase_sender_signal_index k_emailclientlauncherjob_super_sender_signal_index
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+///
+int32_t k_emailclientlauncherjob_super_sender_signal_index(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback int32_t func()
+///
+void k_emailclientlauncherjob_on_sender_signal_index(void* self, int32_t (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal const char*
+///
+int32_t k_emailclientlauncherjob_receivers(void* self, const char* signal);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_receivers` instead
+///
+#define k_emailclientlauncherjob_qbase_receivers k_emailclientlauncherjob_super_receivers
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal const char*
+///
+int32_t k_emailclientlauncherjob_super_receivers(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback int32_t func(KEMailClientLauncherJob* self, const char* signal)
+///
+void k_emailclientlauncherjob_on_receivers(void* self, int32_t (*callback)(void*, const char*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal QMetaMethod*
+///
+bool k_emailclientlauncherjob_is_signal_connected(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_emailclientlauncherjob_super_is_signal_connected` instead
+///
+#define k_emailclientlauncherjob_qbase_is_signal_connected k_emailclientlauncherjob_super_is_signal_connected
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param signal QMetaMethod*
+///
+bool k_emailclientlauncherjob_super_is_signal_connected(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback bool func(KEMailClientLauncherJob* self, QMetaMethod* signal)
+///
+void k_emailclientlauncherjob_on_is_signal_connected(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#finished)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job)
+///
+void k_emailclientlauncherjob_on_finished(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#suspended)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job)
+///
+void k_emailclientlauncherjob_on_suspended(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#resumed)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job)
+///
+void k_emailclientlauncherjob_on_resumed(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#result)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job)
+///
+void k_emailclientlauncherjob_on_result(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalAmountChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, enum KJob__Unit unit, uintptr_t amount)
+///
+void k_emailclientlauncherjob_on_total_amount_changed(void* self, void (*callback)(void*, void*, int32_t, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedAmountChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, enum KJob__Unit unit, uintptr_t amount)
+///
+void k_emailclientlauncherjob_on_processed_amount_changed(void* self, void (*callback)(void*, void*, int32_t, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#percentChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, KJob* job, uintptr_t percent)
+///
+void k_emailclientlauncherjob_on_percent_changed(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectNameChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KEMailClientLauncherJob*
+/// @param callback void func(KEMailClientLauncherJob* self, const char* objectName)
+///
+void k_emailclientlauncherjob_on_object_name_changed(void* self, void (*callback)(void*, const char*));
+
+/// [Upstream resources](https://api.kde.org/kemailclientlauncherjob.html#dtor.KEMailClientLauncherJob)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self KEMailClientLauncherJob*
+///
+void k_emailclientlauncherjob_delete(void* self);
+
+#endif

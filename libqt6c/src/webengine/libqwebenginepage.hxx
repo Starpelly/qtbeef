@@ -1,0 +1,606 @@
+#pragma once
+#ifndef SRC_WEBENGINEC_LIBVIRTUALQWEBENGINEPAGE_H
+#define SRC_WEBENGINEC_LIBVIRTUALQWEBENGINEPAGE_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+// This class is a subclass of QWebEnginePage so that we can call protected methods
+class VirtualQWebEnginePage final : public QWebEnginePage {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualQWebEnginePage = true;
+
+    // Virtual class public types (including callbacks)
+    using QWebEnginePage_MetaObject_Callback = QMetaObject* (*)();
+    using QWebEnginePage_Metacast_Callback = void* (*)(QWebEnginePage*, const char*);
+    using QWebEnginePage_Metacall_Callback = int (*)(QWebEnginePage*, int, int, void**);
+    using QWebEnginePage_TriggerAction_Callback = void (*)(QWebEnginePage*, int, bool);
+    using QWebEnginePage_Event_Callback = bool (*)(QWebEnginePage*, QEvent*);
+    using QWebEnginePage_CreateWindow_Callback = QWebEnginePage* (*)(QWebEnginePage*, int);
+    using QWebEnginePage_ChooseFiles_Callback = const char** (*)(QWebEnginePage*, int, const char**, const char**);
+    using QWebEnginePage_JavaScriptAlert_Callback = void (*)(QWebEnginePage*, QUrl*, const char*);
+    using QWebEnginePage_JavaScriptConfirm_Callback = bool (*)(QWebEnginePage*, QUrl*, const char*);
+    using QWebEnginePage_JavaScriptConsoleMessage_Callback = void (*)(QWebEnginePage*, int, const char*, int, const char*);
+    using QWebEnginePage_AcceptNavigationRequest_Callback = bool (*)(QWebEnginePage*, QUrl*, int, bool);
+    using QWebEnginePage_EventFilter_Callback = bool (*)(QWebEnginePage*, QObject*, QEvent*);
+    using QWebEnginePage_TimerEvent_Callback = void (*)(QWebEnginePage*, QTimerEvent*);
+    using QWebEnginePage_ChildEvent_Callback = void (*)(QWebEnginePage*, QChildEvent*);
+    using QWebEnginePage_CustomEvent_Callback = void (*)(QWebEnginePage*, QEvent*);
+    using QWebEnginePage_ConnectNotify_Callback = void (*)(QWebEnginePage*, QMetaMethod*);
+    using QWebEnginePage_DisconnectNotify_Callback = void (*)(QWebEnginePage*, QMetaMethod*);
+    using QWebEnginePage_Sender_Callback = QObject* (*)();
+    using QWebEnginePage_SenderSignalIndex_Callback = int (*)();
+    using QWebEnginePage_Receivers_Callback = int (*)(const QWebEnginePage*, const char*);
+    using QWebEnginePage_IsSignalConnected_Callback = bool (*)(const QWebEnginePage*, QMetaMethod*);
+
+  protected:
+    // Instance callback storage
+    QWebEnginePage_MetaObject_Callback qwebenginepage_metaobject_callback = nullptr;
+    QWebEnginePage_Metacast_Callback qwebenginepage_metacast_callback = nullptr;
+    QWebEnginePage_Metacall_Callback qwebenginepage_metacall_callback = nullptr;
+    QWebEnginePage_TriggerAction_Callback qwebenginepage_triggeraction_callback = nullptr;
+    QWebEnginePage_Event_Callback qwebenginepage_event_callback = nullptr;
+    QWebEnginePage_CreateWindow_Callback qwebenginepage_createwindow_callback = nullptr;
+    QWebEnginePage_ChooseFiles_Callback qwebenginepage_choosefiles_callback = nullptr;
+    QWebEnginePage_JavaScriptAlert_Callback qwebenginepage_javascriptalert_callback = nullptr;
+    QWebEnginePage_JavaScriptConfirm_Callback qwebenginepage_javascriptconfirm_callback = nullptr;
+    QWebEnginePage_JavaScriptConsoleMessage_Callback qwebenginepage_javascriptconsolemessage_callback = nullptr;
+    QWebEnginePage_AcceptNavigationRequest_Callback qwebenginepage_acceptnavigationrequest_callback = nullptr;
+    QWebEnginePage_EventFilter_Callback qwebenginepage_eventfilter_callback = nullptr;
+    QWebEnginePage_TimerEvent_Callback qwebenginepage_timerevent_callback = nullptr;
+    QWebEnginePage_ChildEvent_Callback qwebenginepage_childevent_callback = nullptr;
+    QWebEnginePage_CustomEvent_Callback qwebenginepage_customevent_callback = nullptr;
+    QWebEnginePage_ConnectNotify_Callback qwebenginepage_connectnotify_callback = nullptr;
+    QWebEnginePage_DisconnectNotify_Callback qwebenginepage_disconnectnotify_callback = nullptr;
+    QWebEnginePage_Sender_Callback qwebenginepage_sender_callback = nullptr;
+    QWebEnginePage_SenderSignalIndex_Callback qwebenginepage_sendersignalindex_callback = nullptr;
+    QWebEnginePage_Receivers_Callback qwebenginepage_receivers_callback = nullptr;
+    QWebEnginePage_IsSignalConnected_Callback qwebenginepage_issignalconnected_callback = nullptr;
+
+    // Instance base flags
+    mutable bool qwebenginepage_metaobject_isbase = false;
+    mutable bool qwebenginepage_metacast_isbase = false;
+    mutable bool qwebenginepage_metacall_isbase = false;
+    mutable bool qwebenginepage_triggeraction_isbase = false;
+    mutable bool qwebenginepage_event_isbase = false;
+    mutable bool qwebenginepage_createwindow_isbase = false;
+    mutable bool qwebenginepage_choosefiles_isbase = false;
+    mutable bool qwebenginepage_javascriptalert_isbase = false;
+    mutable bool qwebenginepage_javascriptconfirm_isbase = false;
+    mutable bool qwebenginepage_javascriptconsolemessage_isbase = false;
+    mutable bool qwebenginepage_acceptnavigationrequest_isbase = false;
+    mutable bool qwebenginepage_eventfilter_isbase = false;
+    mutable bool qwebenginepage_timerevent_isbase = false;
+    mutable bool qwebenginepage_childevent_isbase = false;
+    mutable bool qwebenginepage_customevent_isbase = false;
+    mutable bool qwebenginepage_connectnotify_isbase = false;
+    mutable bool qwebenginepage_disconnectnotify_isbase = false;
+    mutable bool qwebenginepage_sender_isbase = false;
+    mutable bool qwebenginepage_sendersignalindex_isbase = false;
+    mutable bool qwebenginepage_receivers_isbase = false;
+    mutable bool qwebenginepage_issignalconnected_isbase = false;
+
+  public:
+    VirtualQWebEnginePage() : QWebEnginePage() {};
+    VirtualQWebEnginePage(QWebEngineProfile* profile) : QWebEnginePage(profile) {};
+    VirtualQWebEnginePage(QObject* parent) : QWebEnginePage(parent) {};
+    VirtualQWebEnginePage(QWebEngineProfile* profile, QObject* parent) : QWebEnginePage(profile, parent) {};
+
+    // Callback setters
+    inline void setQWebEnginePage_MetaObject_Callback(QWebEnginePage_MetaObject_Callback cb) { qwebenginepage_metaobject_callback = cb; }
+    inline void setQWebEnginePage_Metacast_Callback(QWebEnginePage_Metacast_Callback cb) { qwebenginepage_metacast_callback = cb; }
+    inline void setQWebEnginePage_Metacall_Callback(QWebEnginePage_Metacall_Callback cb) { qwebenginepage_metacall_callback = cb; }
+    inline void setQWebEnginePage_TriggerAction_Callback(QWebEnginePage_TriggerAction_Callback cb) { qwebenginepage_triggeraction_callback = cb; }
+    inline void setQWebEnginePage_Event_Callback(QWebEnginePage_Event_Callback cb) { qwebenginepage_event_callback = cb; }
+    inline void setQWebEnginePage_CreateWindow_Callback(QWebEnginePage_CreateWindow_Callback cb) { qwebenginepage_createwindow_callback = cb; }
+    inline void setQWebEnginePage_ChooseFiles_Callback(QWebEnginePage_ChooseFiles_Callback cb) { qwebenginepage_choosefiles_callback = cb; }
+    inline void setQWebEnginePage_JavaScriptAlert_Callback(QWebEnginePage_JavaScriptAlert_Callback cb) { qwebenginepage_javascriptalert_callback = cb; }
+    inline void setQWebEnginePage_JavaScriptConfirm_Callback(QWebEnginePage_JavaScriptConfirm_Callback cb) { qwebenginepage_javascriptconfirm_callback = cb; }
+    inline void setQWebEnginePage_JavaScriptConsoleMessage_Callback(QWebEnginePage_JavaScriptConsoleMessage_Callback cb) { qwebenginepage_javascriptconsolemessage_callback = cb; }
+    inline void setQWebEnginePage_AcceptNavigationRequest_Callback(QWebEnginePage_AcceptNavigationRequest_Callback cb) { qwebenginepage_acceptnavigationrequest_callback = cb; }
+    inline void setQWebEnginePage_EventFilter_Callback(QWebEnginePage_EventFilter_Callback cb) { qwebenginepage_eventfilter_callback = cb; }
+    inline void setQWebEnginePage_TimerEvent_Callback(QWebEnginePage_TimerEvent_Callback cb) { qwebenginepage_timerevent_callback = cb; }
+    inline void setQWebEnginePage_ChildEvent_Callback(QWebEnginePage_ChildEvent_Callback cb) { qwebenginepage_childevent_callback = cb; }
+    inline void setQWebEnginePage_CustomEvent_Callback(QWebEnginePage_CustomEvent_Callback cb) { qwebenginepage_customevent_callback = cb; }
+    inline void setQWebEnginePage_ConnectNotify_Callback(QWebEnginePage_ConnectNotify_Callback cb) { qwebenginepage_connectnotify_callback = cb; }
+    inline void setQWebEnginePage_DisconnectNotify_Callback(QWebEnginePage_DisconnectNotify_Callback cb) { qwebenginepage_disconnectnotify_callback = cb; }
+    inline void setQWebEnginePage_Sender_Callback(QWebEnginePage_Sender_Callback cb) { qwebenginepage_sender_callback = cb; }
+    inline void setQWebEnginePage_SenderSignalIndex_Callback(QWebEnginePage_SenderSignalIndex_Callback cb) { qwebenginepage_sendersignalindex_callback = cb; }
+    inline void setQWebEnginePage_Receivers_Callback(QWebEnginePage_Receivers_Callback cb) { qwebenginepage_receivers_callback = cb; }
+    inline void setQWebEnginePage_IsSignalConnected_Callback(QWebEnginePage_IsSignalConnected_Callback cb) { qwebenginepage_issignalconnected_callback = cb; }
+
+    // Base flag setters
+    inline void setQWebEnginePage_MetaObject_IsBase(bool value) const { qwebenginepage_metaobject_isbase = value; }
+    inline void setQWebEnginePage_Metacast_IsBase(bool value) const { qwebenginepage_metacast_isbase = value; }
+    inline void setQWebEnginePage_Metacall_IsBase(bool value) const { qwebenginepage_metacall_isbase = value; }
+    inline void setQWebEnginePage_TriggerAction_IsBase(bool value) const { qwebenginepage_triggeraction_isbase = value; }
+    inline void setQWebEnginePage_Event_IsBase(bool value) const { qwebenginepage_event_isbase = value; }
+    inline void setQWebEnginePage_CreateWindow_IsBase(bool value) const { qwebenginepage_createwindow_isbase = value; }
+    inline void setQWebEnginePage_ChooseFiles_IsBase(bool value) const { qwebenginepage_choosefiles_isbase = value; }
+    inline void setQWebEnginePage_JavaScriptAlert_IsBase(bool value) const { qwebenginepage_javascriptalert_isbase = value; }
+    inline void setQWebEnginePage_JavaScriptConfirm_IsBase(bool value) const { qwebenginepage_javascriptconfirm_isbase = value; }
+    inline void setQWebEnginePage_JavaScriptConsoleMessage_IsBase(bool value) const { qwebenginepage_javascriptconsolemessage_isbase = value; }
+    inline void setQWebEnginePage_AcceptNavigationRequest_IsBase(bool value) const { qwebenginepage_acceptnavigationrequest_isbase = value; }
+    inline void setQWebEnginePage_EventFilter_IsBase(bool value) const { qwebenginepage_eventfilter_isbase = value; }
+    inline void setQWebEnginePage_TimerEvent_IsBase(bool value) const { qwebenginepage_timerevent_isbase = value; }
+    inline void setQWebEnginePage_ChildEvent_IsBase(bool value) const { qwebenginepage_childevent_isbase = value; }
+    inline void setQWebEnginePage_CustomEvent_IsBase(bool value) const { qwebenginepage_customevent_isbase = value; }
+    inline void setQWebEnginePage_ConnectNotify_IsBase(bool value) const { qwebenginepage_connectnotify_isbase = value; }
+    inline void setQWebEnginePage_DisconnectNotify_IsBase(bool value) const { qwebenginepage_disconnectnotify_isbase = value; }
+    inline void setQWebEnginePage_Sender_IsBase(bool value) const { qwebenginepage_sender_isbase = value; }
+    inline void setQWebEnginePage_SenderSignalIndex_IsBase(bool value) const { qwebenginepage_sendersignalindex_isbase = value; }
+    inline void setQWebEnginePage_Receivers_IsBase(bool value) const { qwebenginepage_receivers_isbase = value; }
+    inline void setQWebEnginePage_IsSignalConnected_IsBase(bool value) const { qwebenginepage_issignalconnected_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const QMetaObject* metaObject() const override {
+        if (qwebenginepage_metaobject_isbase) {
+            qwebenginepage_metaobject_isbase = false;
+            return QWebEnginePage::metaObject();
+        }
+        auto metaobject_cb = qwebenginepage_metaobject_callback;
+        if (metaobject_cb) {
+            QMetaObject* callback_ret = metaobject_cb();
+            return callback_ret;
+        }
+        return QWebEnginePage::metaObject();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void* qt_metacast(const char* param1) override {
+        if (qwebenginepage_metacast_isbase) {
+            qwebenginepage_metacast_isbase = false;
+            return QWebEnginePage::qt_metacast(param1);
+        }
+        auto metacast_cb = qwebenginepage_metacast_callback;
+        if (metacast_cb) {
+            const char* cbval1 = (const char*)param1;
+
+            void* callback_ret = metacast_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QWebEnginePage::qt_metacast(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int qt_metacall(QMetaObject::Call param1, int param2, void** param3) override {
+        if (qwebenginepage_metacall_isbase) {
+            qwebenginepage_metacall_isbase = false;
+            return QWebEnginePage::qt_metacall(param1, param2, param3);
+        }
+        auto metacall_cb = qwebenginepage_metacall_callback;
+        if (metacall_cb) {
+            int cbval1 = static_cast<int>(param1);
+            int cbval2 = param2;
+            void** cbval3 = param3;
+
+            int callback_ret = metacall_cb(this, cbval1, cbval2, cbval3);
+            return static_cast<int>(callback_ret);
+        }
+        return QWebEnginePage::qt_metacall(param1, param2, param3);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void triggerAction(QWebEnginePage::WebAction action, bool checked) override {
+        if (qwebenginepage_triggeraction_isbase) {
+            qwebenginepage_triggeraction_isbase = false;
+            QWebEnginePage::triggerAction(action, checked);
+            return;
+        }
+        auto triggeraction_cb = qwebenginepage_triggeraction_callback;
+        if (triggeraction_cb) {
+            int cbval1 = static_cast<int>(action);
+            bool cbval2 = checked;
+
+            triggeraction_cb(this, cbval1, cbval2);
+            return;
+        }
+        QWebEnginePage::triggerAction(action, checked);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool event(QEvent* param1) override {
+        if (qwebenginepage_event_isbase) {
+            qwebenginepage_event_isbase = false;
+            return QWebEnginePage::event(param1);
+        }
+        auto event_cb = qwebenginepage_event_callback;
+        if (event_cb) {
+            QEvent* cbval1 = param1;
+
+            bool callback_ret = event_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QWebEnginePage::event(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QWebEnginePage* createWindow(QWebEnginePage::WebWindowType type) override {
+        if (qwebenginepage_createwindow_isbase) {
+            qwebenginepage_createwindow_isbase = false;
+            return QWebEnginePage::createWindow(type);
+        }
+        auto createwindow_cb = qwebenginepage_createwindow_callback;
+        if (createwindow_cb) {
+            int cbval1 = static_cast<int>(type);
+
+            QWebEnginePage* callback_ret = createwindow_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QWebEnginePage::createWindow(type);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QList<QString> chooseFiles(QWebEnginePage::FileSelectionMode mode, const QList<QString>& oldFiles, const QList<QString>& acceptedMimeTypes) override {
+        if (qwebenginepage_choosefiles_isbase) {
+            qwebenginepage_choosefiles_isbase = false;
+            return QWebEnginePage::chooseFiles(mode, oldFiles, acceptedMimeTypes);
+        }
+        auto choosefiles_cb = qwebenginepage_choosefiles_callback;
+        if (choosefiles_cb) {
+            int cbval1 = static_cast<int>(mode);
+            const QList<QString>& oldFiles_ret = oldFiles;
+            // Convert QString from UTF-16 in C++ RAII memory to null-terminated UTF-8 chars in manually-managed C memory
+            const char** oldFiles_arr = static_cast<const char**>(malloc(sizeof(const char*) * (oldFiles_ret.size() + 1)));
+            for (qsizetype i = 0; i < oldFiles_ret.size(); ++i) {
+                QByteArray oldFiles_b = oldFiles_ret[i].toUtf8();
+                auto oldFiles_str_len = oldFiles_b.length();
+                char* oldFiles_str = static_cast<char*>(malloc(oldFiles_str_len + 1));
+                memcpy(oldFiles_str, oldFiles_b.data(), oldFiles_str_len);
+                oldFiles_str[oldFiles_str_len] = '\0';
+                oldFiles_arr[i] = oldFiles_str;
+            }
+            // Append sentinel null terminator to the list
+            oldFiles_arr[oldFiles_ret.size()] = nullptr;
+            const char** cbval2 = oldFiles_arr;
+            const QList<QString>& acceptedMimeTypes_ret = acceptedMimeTypes;
+            // Convert QString from UTF-16 in C++ RAII memory to null-terminated UTF-8 chars in manually-managed C memory
+            const char** acceptedMimeTypes_arr = static_cast<const char**>(malloc(sizeof(const char*) * (acceptedMimeTypes_ret.size() + 1)));
+            for (qsizetype i = 0; i < acceptedMimeTypes_ret.size(); ++i) {
+                QByteArray acceptedMimeTypes_b = acceptedMimeTypes_ret[i].toUtf8();
+                auto acceptedMimeTypes_str_len = acceptedMimeTypes_b.length();
+                char* acceptedMimeTypes_str = static_cast<char*>(malloc(acceptedMimeTypes_str_len + 1));
+                memcpy(acceptedMimeTypes_str, acceptedMimeTypes_b.data(), acceptedMimeTypes_str_len);
+                acceptedMimeTypes_str[acceptedMimeTypes_str_len] = '\0';
+                acceptedMimeTypes_arr[i] = acceptedMimeTypes_str;
+            }
+            // Append sentinel null terminator to the list
+            acceptedMimeTypes_arr[acceptedMimeTypes_ret.size()] = nullptr;
+            const char** cbval3 = acceptedMimeTypes_arr;
+
+            const char** callback_ret = choosefiles_cb(this, cbval1, cbval2, cbval3);
+            QList<QString> callback_ret_QList;
+            size_t callback_ret_len = libqt_strv_length(callback_ret);
+            callback_ret_QList.reserve(callback_ret_len);
+            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
+            for (size_t i = 0; i < callback_ret_len; ++i) {
+                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
+                callback_ret_QList.push_back(callback_ret_arr_i_QString);
+            }
+            libqt_free(callback_ret);
+            libqt_free(oldFiles_arr);
+            libqt_free(acceptedMimeTypes_arr);
+            return callback_ret_QList;
+        }
+        return QWebEnginePage::chooseFiles(mode, oldFiles, acceptedMimeTypes);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void javaScriptAlert(const QUrl& securityOrigin, const QString& msg) override {
+        if (qwebenginepage_javascriptalert_isbase) {
+            qwebenginepage_javascriptalert_isbase = false;
+            QWebEnginePage::javaScriptAlert(securityOrigin, msg);
+            return;
+        }
+        auto javascriptalert_cb = qwebenginepage_javascriptalert_callback;
+        if (javascriptalert_cb) {
+            const QUrl& securityOrigin_ret = securityOrigin;
+            // Cast returned reference into pointer
+            QUrl* cbval1 = const_cast<QUrl*>(&securityOrigin_ret);
+            const QString msg_ret = msg;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray msg_b = msg_ret.toUtf8();
+            auto msg_str_len = msg_b.length();
+            char* msg_str = static_cast<char*>(malloc(msg_str_len + 1));
+            memcpy(msg_str, msg_b.data(), msg_str_len);
+            msg_str[msg_str_len] = '\0';
+            const char* cbval2 = msg_str;
+
+            javascriptalert_cb(this, cbval1, cbval2);
+            libqt_free(msg_str);
+            return;
+        }
+        QWebEnginePage::javaScriptAlert(securityOrigin, msg);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool javaScriptConfirm(const QUrl& securityOrigin, const QString& msg) override {
+        if (qwebenginepage_javascriptconfirm_isbase) {
+            qwebenginepage_javascriptconfirm_isbase = false;
+            return QWebEnginePage::javaScriptConfirm(securityOrigin, msg);
+        }
+        auto javascriptconfirm_cb = qwebenginepage_javascriptconfirm_callback;
+        if (javascriptconfirm_cb) {
+            const QUrl& securityOrigin_ret = securityOrigin;
+            // Cast returned reference into pointer
+            QUrl* cbval1 = const_cast<QUrl*>(&securityOrigin_ret);
+            const QString msg_ret = msg;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray msg_b = msg_ret.toUtf8();
+            auto msg_str_len = msg_b.length();
+            char* msg_str = static_cast<char*>(malloc(msg_str_len + 1));
+            memcpy(msg_str, msg_b.data(), msg_str_len);
+            msg_str[msg_str_len] = '\0';
+            const char* cbval2 = msg_str;
+
+            bool callback_ret = javascriptconfirm_cb(this, cbval1, cbval2);
+            libqt_free(msg_str);
+            return callback_ret;
+        }
+        return QWebEnginePage::javaScriptConfirm(securityOrigin, msg);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void javaScriptConsoleMessage(QWebEnginePage::JavaScriptConsoleMessageLevel level, const QString& message, int lineNumber, const QString& sourceID) override {
+        if (qwebenginepage_javascriptconsolemessage_isbase) {
+            qwebenginepage_javascriptconsolemessage_isbase = false;
+            QWebEnginePage::javaScriptConsoleMessage(level, message, lineNumber, sourceID);
+            return;
+        }
+        auto javascriptconsolemessage_cb = qwebenginepage_javascriptconsolemessage_callback;
+        if (javascriptconsolemessage_cb) {
+            int cbval1 = static_cast<int>(level);
+            const QString message_ret = message;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray message_b = message_ret.toUtf8();
+            auto message_str_len = message_b.length();
+            char* message_str = static_cast<char*>(malloc(message_str_len + 1));
+            memcpy(message_str, message_b.data(), message_str_len);
+            message_str[message_str_len] = '\0';
+            const char* cbval2 = message_str;
+            int cbval3 = lineNumber;
+            const QString sourceID_ret = sourceID;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray sourceID_b = sourceID_ret.toUtf8();
+            auto sourceID_str_len = sourceID_b.length();
+            char* sourceID_str = static_cast<char*>(malloc(sourceID_str_len + 1));
+            memcpy(sourceID_str, sourceID_b.data(), sourceID_str_len);
+            sourceID_str[sourceID_str_len] = '\0';
+            const char* cbval4 = sourceID_str;
+
+            javascriptconsolemessage_cb(this, cbval1, cbval2, cbval3, cbval4);
+            libqt_free(message_str);
+            libqt_free(sourceID_str);
+            return;
+        }
+        QWebEnginePage::javaScriptConsoleMessage(level, message, lineNumber, sourceID);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool acceptNavigationRequest(const QUrl& url, QWebEnginePage::NavigationType type, bool isMainFrame) override {
+        if (qwebenginepage_acceptnavigationrequest_isbase) {
+            qwebenginepage_acceptnavigationrequest_isbase = false;
+            return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
+        }
+        auto acceptnavigationrequest_cb = qwebenginepage_acceptnavigationrequest_callback;
+        if (acceptnavigationrequest_cb) {
+            const QUrl& url_ret = url;
+            // Cast returned reference into pointer
+            QUrl* cbval1 = const_cast<QUrl*>(&url_ret);
+            int cbval2 = static_cast<int>(type);
+            bool cbval3 = isMainFrame;
+
+            bool callback_ret = acceptnavigationrequest_cb(this, cbval1, cbval2, cbval3);
+            return callback_ret;
+        }
+        return QWebEnginePage::acceptNavigationRequest(url, type, isMainFrame);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool eventFilter(QObject* watched, QEvent* event) override {
+        if (qwebenginepage_eventfilter_isbase) {
+            qwebenginepage_eventfilter_isbase = false;
+            return QWebEnginePage::eventFilter(watched, event);
+        }
+        auto eventfilter_cb = qwebenginepage_eventfilter_callback;
+        if (eventfilter_cb) {
+            QObject* cbval1 = watched;
+            QEvent* cbval2 = event;
+
+            bool callback_ret = eventfilter_cb(this, cbval1, cbval2);
+            return callback_ret;
+        }
+        return QWebEnginePage::eventFilter(watched, event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void timerEvent(QTimerEvent* event) override {
+        if (qwebenginepage_timerevent_isbase) {
+            qwebenginepage_timerevent_isbase = false;
+            QWebEnginePage::timerEvent(event);
+            return;
+        }
+        auto timerevent_cb = qwebenginepage_timerevent_callback;
+        if (timerevent_cb) {
+            QTimerEvent* cbval1 = event;
+
+            timerevent_cb(this, cbval1);
+            return;
+        }
+        QWebEnginePage::timerEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void childEvent(QChildEvent* event) override {
+        if (qwebenginepage_childevent_isbase) {
+            qwebenginepage_childevent_isbase = false;
+            QWebEnginePage::childEvent(event);
+            return;
+        }
+        auto childevent_cb = qwebenginepage_childevent_callback;
+        if (childevent_cb) {
+            QChildEvent* cbval1 = event;
+
+            childevent_cb(this, cbval1);
+            return;
+        }
+        QWebEnginePage::childEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void customEvent(QEvent* event) override {
+        if (qwebenginepage_customevent_isbase) {
+            qwebenginepage_customevent_isbase = false;
+            QWebEnginePage::customEvent(event);
+            return;
+        }
+        auto customevent_cb = qwebenginepage_customevent_callback;
+        if (customevent_cb) {
+            QEvent* cbval1 = event;
+
+            customevent_cb(this, cbval1);
+            return;
+        }
+        QWebEnginePage::customEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void connectNotify(const QMetaMethod& signal) override {
+        if (qwebenginepage_connectnotify_isbase) {
+            qwebenginepage_connectnotify_isbase = false;
+            QWebEnginePage::connectNotify(signal);
+            return;
+        }
+        auto connectnotify_cb = qwebenginepage_connectnotify_callback;
+        if (connectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            connectnotify_cb(this, cbval1);
+            return;
+        }
+        QWebEnginePage::connectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void disconnectNotify(const QMetaMethod& signal) override {
+        if (qwebenginepage_disconnectnotify_isbase) {
+            qwebenginepage_disconnectnotify_isbase = false;
+            QWebEnginePage::disconnectNotify(signal);
+            return;
+        }
+        auto disconnectnotify_cb = qwebenginepage_disconnectnotify_callback;
+        if (disconnectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            disconnectnotify_cb(this, cbval1);
+            return;
+        }
+        QWebEnginePage::disconnectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    QObject* sender() const {
+        if (qwebenginepage_sender_isbase) {
+            qwebenginepage_sender_isbase = false;
+            return QWebEnginePage::sender();
+        }
+        auto sender_cb = qwebenginepage_sender_callback;
+        if (sender_cb) {
+            QObject* callback_ret = sender_cb();
+            return callback_ret;
+        }
+        return QWebEnginePage::sender();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int senderSignalIndex() const {
+        if (qwebenginepage_sendersignalindex_isbase) {
+            qwebenginepage_sendersignalindex_isbase = false;
+            return QWebEnginePage::senderSignalIndex();
+        }
+        auto sendersignalindex_cb = qwebenginepage_sendersignalindex_callback;
+        if (sendersignalindex_cb) {
+            int callback_ret = sendersignalindex_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QWebEnginePage::senderSignalIndex();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int receivers(const char* signal) const {
+        if (qwebenginepage_receivers_isbase) {
+            qwebenginepage_receivers_isbase = false;
+            return QWebEnginePage::receivers(signal);
+        }
+        auto receivers_cb = qwebenginepage_receivers_callback;
+        if (receivers_cb) {
+            const char* cbval1 = (const char*)signal;
+
+            int callback_ret = receivers_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return QWebEnginePage::receivers(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool isSignalConnected(const QMetaMethod& signal) const {
+        if (qwebenginepage_issignalconnected_isbase) {
+            qwebenginepage_issignalconnected_isbase = false;
+            return QWebEnginePage::isSignalConnected(signal);
+        }
+        auto issignalconnected_cb = qwebenginepage_issignalconnected_callback;
+        if (issignalconnected_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            bool callback_ret = issignalconnected_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QWebEnginePage::isSignalConnected(signal);
+    }
+
+    // Friend functions
+    friend QWebEnginePage* QWebEnginePage_CreateWindow(QWebEnginePage* self, int type);
+    friend QWebEnginePage* QWebEnginePage_SuperCreateWindow(QWebEnginePage* self, int type);
+    friend libqt_list /* of libqt_string */ QWebEnginePage_ChooseFiles(QWebEnginePage* self, int mode, const libqt_list /* of libqt_string */ oldFiles, const libqt_list /* of libqt_string */ acceptedMimeTypes);
+    friend libqt_list /* of libqt_string */ QWebEnginePage_SuperChooseFiles(QWebEnginePage* self, int mode, const libqt_list /* of libqt_string */ oldFiles, const libqt_list /* of libqt_string */ acceptedMimeTypes);
+    friend void QWebEnginePage_JavaScriptAlert(QWebEnginePage* self, const QUrl* securityOrigin, const libqt_string msg);
+    friend void QWebEnginePage_SuperJavaScriptAlert(QWebEnginePage* self, const QUrl* securityOrigin, const libqt_string msg);
+    friend bool QWebEnginePage_JavaScriptConfirm(QWebEnginePage* self, const QUrl* securityOrigin, const libqt_string msg);
+    friend bool QWebEnginePage_SuperJavaScriptConfirm(QWebEnginePage* self, const QUrl* securityOrigin, const libqt_string msg);
+    friend void QWebEnginePage_JavaScriptConsoleMessage(QWebEnginePage* self, int level, const libqt_string message, int lineNumber, const libqt_string sourceID);
+    friend void QWebEnginePage_SuperJavaScriptConsoleMessage(QWebEnginePage* self, int level, const libqt_string message, int lineNumber, const libqt_string sourceID);
+    friend bool QWebEnginePage_AcceptNavigationRequest(QWebEnginePage* self, const QUrl* url, int type, bool isMainFrame);
+    friend bool QWebEnginePage_SuperAcceptNavigationRequest(QWebEnginePage* self, const QUrl* url, int type, bool isMainFrame);
+    friend void QWebEnginePage_TimerEvent(QWebEnginePage* self, QTimerEvent* event);
+    friend void QWebEnginePage_SuperTimerEvent(QWebEnginePage* self, QTimerEvent* event);
+    friend void QWebEnginePage_ChildEvent(QWebEnginePage* self, QChildEvent* event);
+    friend void QWebEnginePage_SuperChildEvent(QWebEnginePage* self, QChildEvent* event);
+    friend void QWebEnginePage_CustomEvent(QWebEnginePage* self, QEvent* event);
+    friend void QWebEnginePage_SuperCustomEvent(QWebEnginePage* self, QEvent* event);
+    friend void QWebEnginePage_ConnectNotify(QWebEnginePage* self, const QMetaMethod* signal);
+    friend void QWebEnginePage_SuperConnectNotify(QWebEnginePage* self, const QMetaMethod* signal);
+    friend void QWebEnginePage_DisconnectNotify(QWebEnginePage* self, const QMetaMethod* signal);
+    friend void QWebEnginePage_SuperDisconnectNotify(QWebEnginePage* self, const QMetaMethod* signal);
+    friend QObject* QWebEnginePage_Sender(const QWebEnginePage* self);
+    friend QObject* QWebEnginePage_SuperSender(const QWebEnginePage* self);
+    friend int QWebEnginePage_SenderSignalIndex(const QWebEnginePage* self);
+    friend int QWebEnginePage_SuperSenderSignalIndex(const QWebEnginePage* self);
+    friend int QWebEnginePage_Receivers(const QWebEnginePage* self, const char* signal);
+    friend int QWebEnginePage_SuperReceivers(const QWebEnginePage* self, const char* signal);
+    friend bool QWebEnginePage_IsSignalConnected(const QWebEnginePage* self, const QMetaMethod* signal);
+    friend bool QWebEnginePage_SuperIsSignalConnected(const QWebEnginePage* self, const QMetaMethod* signal);
+};
+
+#endif

@@ -1,0 +1,1147 @@
+#pragma once
+#ifndef SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBVIRTUALQSCILEXERMARKDOWN_H
+#define SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBVIRTUALQSCILEXERMARKDOWN_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+// This class is a subclass of QsciLexerMarkdown so that we can call protected methods
+class VirtualQsciLexerMarkdown final : public QsciLexerMarkdown {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualQsciLexerMarkdown = true;
+
+    // Virtual class public types (including callbacks)
+    using QsciLexerMarkdown_MetaObject_Callback = QMetaObject* (*)();
+    using QsciLexerMarkdown_Metacast_Callback = void* (*)(QsciLexerMarkdown*, const char*);
+    using QsciLexerMarkdown_Metacall_Callback = int (*)(QsciLexerMarkdown*, int, int, void**);
+    using QsciLexerMarkdown_Language_Callback = const char* (*)();
+    using QsciLexerMarkdown_Lexer_Callback = const char* (*)();
+    using QsciLexerMarkdown_LexerId_Callback = int (*)();
+    using QsciLexerMarkdown_AutoCompletionFillups_Callback = const char* (*)();
+    using QsciLexerMarkdown_AutoCompletionWordSeparators_Callback = const char** (*)();
+    using QsciLexerMarkdown_BlockEnd_Callback = const char* (*)(const QsciLexerMarkdown*, int*);
+    using QsciLexerMarkdown_BlockLookback_Callback = int (*)();
+    using QsciLexerMarkdown_BlockStart_Callback = const char* (*)(const QsciLexerMarkdown*, int*);
+    using QsciLexerMarkdown_BlockStartKeyword_Callback = const char* (*)(const QsciLexerMarkdown*, int*);
+    using QsciLexerMarkdown_BraceStyle_Callback = int (*)();
+    using QsciLexerMarkdown_CaseSensitive_Callback = bool (*)();
+    using QsciLexerMarkdown_Color_Callback = QColor* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_EolFill_Callback = bool (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_Font_Callback = QFont* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_IndentationGuideView_Callback = int (*)();
+    using QsciLexerMarkdown_Keywords_Callback = const char* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_DefaultStyle_Callback = int (*)();
+    using QsciLexerMarkdown_Description_Callback = const char* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_Paper_Callback = QColor* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_DefaultColor2_Callback = QColor* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_DefaultEolFill_Callback = bool (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_DefaultFont2_Callback = QFont* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_DefaultPaper2_Callback = QColor* (*)(const QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_SetEditor_Callback = void (*)(QsciLexerMarkdown*, QsciScintilla*);
+    using QsciLexerMarkdown_RefreshProperties_Callback = void (*)();
+    using QsciLexerMarkdown_StyleBitsNeeded_Callback = int (*)();
+    using QsciLexerMarkdown_WordCharacters_Callback = const char* (*)();
+    using QsciLexerMarkdown_SetAutoIndentStyle_Callback = void (*)(QsciLexerMarkdown*, int);
+    using QsciLexerMarkdown_SetColor_Callback = void (*)(QsciLexerMarkdown*, QColor*, int);
+    using QsciLexerMarkdown_SetEolFill_Callback = void (*)(QsciLexerMarkdown*, bool, int);
+    using QsciLexerMarkdown_SetFont_Callback = void (*)(QsciLexerMarkdown*, QFont*, int);
+    using QsciLexerMarkdown_SetPaper_Callback = void (*)(QsciLexerMarkdown*, QColor*, int);
+    using QsciLexerMarkdown_ReadProperties_Callback = bool (*)(QsciLexerMarkdown*, QSettings*, const char*);
+    using QsciLexerMarkdown_WriteProperties_Callback = bool (*)(const QsciLexerMarkdown*, QSettings*, const char*);
+    using QsciLexerMarkdown_Event_Callback = bool (*)(QsciLexerMarkdown*, QEvent*);
+    using QsciLexerMarkdown_EventFilter_Callback = bool (*)(QsciLexerMarkdown*, QObject*, QEvent*);
+    using QsciLexerMarkdown_TimerEvent_Callback = void (*)(QsciLexerMarkdown*, QTimerEvent*);
+    using QsciLexerMarkdown_ChildEvent_Callback = void (*)(QsciLexerMarkdown*, QChildEvent*);
+    using QsciLexerMarkdown_CustomEvent_Callback = void (*)(QsciLexerMarkdown*, QEvent*);
+    using QsciLexerMarkdown_ConnectNotify_Callback = void (*)(QsciLexerMarkdown*, QMetaMethod*);
+    using QsciLexerMarkdown_DisconnectNotify_Callback = void (*)(QsciLexerMarkdown*, QMetaMethod*);
+    using QsciLexerMarkdown_TextAsBytes_Callback = libqt_string (*)(const QsciLexerMarkdown*, const char*);
+    using QsciLexerMarkdown_BytesAsText_Callback = const char* (*)(const QsciLexerMarkdown*, const char*, int);
+    using QsciLexerMarkdown_Sender_Callback = QObject* (*)();
+    using QsciLexerMarkdown_SenderSignalIndex_Callback = int (*)();
+    using QsciLexerMarkdown_Receivers_Callback = int (*)(const QsciLexerMarkdown*, const char*);
+    using QsciLexerMarkdown_IsSignalConnected_Callback = bool (*)(const QsciLexerMarkdown*, QMetaMethod*);
+
+  protected:
+    // Instance callback storage
+    QsciLexerMarkdown_MetaObject_Callback qscilexermarkdown_metaobject_callback = nullptr;
+    QsciLexerMarkdown_Metacast_Callback qscilexermarkdown_metacast_callback = nullptr;
+    QsciLexerMarkdown_Metacall_Callback qscilexermarkdown_metacall_callback = nullptr;
+    QsciLexerMarkdown_Language_Callback qscilexermarkdown_language_callback = nullptr;
+    QsciLexerMarkdown_Lexer_Callback qscilexermarkdown_lexer_callback = nullptr;
+    QsciLexerMarkdown_LexerId_Callback qscilexermarkdown_lexerid_callback = nullptr;
+    QsciLexerMarkdown_AutoCompletionFillups_Callback qscilexermarkdown_autocompletionfillups_callback = nullptr;
+    QsciLexerMarkdown_AutoCompletionWordSeparators_Callback qscilexermarkdown_autocompletionwordseparators_callback = nullptr;
+    QsciLexerMarkdown_BlockEnd_Callback qscilexermarkdown_blockend_callback = nullptr;
+    QsciLexerMarkdown_BlockLookback_Callback qscilexermarkdown_blocklookback_callback = nullptr;
+    QsciLexerMarkdown_BlockStart_Callback qscilexermarkdown_blockstart_callback = nullptr;
+    QsciLexerMarkdown_BlockStartKeyword_Callback qscilexermarkdown_blockstartkeyword_callback = nullptr;
+    QsciLexerMarkdown_BraceStyle_Callback qscilexermarkdown_bracestyle_callback = nullptr;
+    QsciLexerMarkdown_CaseSensitive_Callback qscilexermarkdown_casesensitive_callback = nullptr;
+    QsciLexerMarkdown_Color_Callback qscilexermarkdown_color_callback = nullptr;
+    QsciLexerMarkdown_EolFill_Callback qscilexermarkdown_eolfill_callback = nullptr;
+    QsciLexerMarkdown_Font_Callback qscilexermarkdown_font_callback = nullptr;
+    QsciLexerMarkdown_IndentationGuideView_Callback qscilexermarkdown_indentationguideview_callback = nullptr;
+    QsciLexerMarkdown_Keywords_Callback qscilexermarkdown_keywords_callback = nullptr;
+    QsciLexerMarkdown_DefaultStyle_Callback qscilexermarkdown_defaultstyle_callback = nullptr;
+    QsciLexerMarkdown_Description_Callback qscilexermarkdown_description_callback = nullptr;
+    QsciLexerMarkdown_Paper_Callback qscilexermarkdown_paper_callback = nullptr;
+    QsciLexerMarkdown_DefaultColor2_Callback qscilexermarkdown_defaultcolor2_callback = nullptr;
+    QsciLexerMarkdown_DefaultEolFill_Callback qscilexermarkdown_defaulteolfill_callback = nullptr;
+    QsciLexerMarkdown_DefaultFont2_Callback qscilexermarkdown_defaultfont2_callback = nullptr;
+    QsciLexerMarkdown_DefaultPaper2_Callback qscilexermarkdown_defaultpaper2_callback = nullptr;
+    QsciLexerMarkdown_SetEditor_Callback qscilexermarkdown_seteditor_callback = nullptr;
+    QsciLexerMarkdown_RefreshProperties_Callback qscilexermarkdown_refreshproperties_callback = nullptr;
+    QsciLexerMarkdown_StyleBitsNeeded_Callback qscilexermarkdown_stylebitsneeded_callback = nullptr;
+    QsciLexerMarkdown_WordCharacters_Callback qscilexermarkdown_wordcharacters_callback = nullptr;
+    QsciLexerMarkdown_SetAutoIndentStyle_Callback qscilexermarkdown_setautoindentstyle_callback = nullptr;
+    QsciLexerMarkdown_SetColor_Callback qscilexermarkdown_setcolor_callback = nullptr;
+    QsciLexerMarkdown_SetEolFill_Callback qscilexermarkdown_seteolfill_callback = nullptr;
+    QsciLexerMarkdown_SetFont_Callback qscilexermarkdown_setfont_callback = nullptr;
+    QsciLexerMarkdown_SetPaper_Callback qscilexermarkdown_setpaper_callback = nullptr;
+    QsciLexerMarkdown_ReadProperties_Callback qscilexermarkdown_readproperties_callback = nullptr;
+    QsciLexerMarkdown_WriteProperties_Callback qscilexermarkdown_writeproperties_callback = nullptr;
+    QsciLexerMarkdown_Event_Callback qscilexermarkdown_event_callback = nullptr;
+    QsciLexerMarkdown_EventFilter_Callback qscilexermarkdown_eventfilter_callback = nullptr;
+    QsciLexerMarkdown_TimerEvent_Callback qscilexermarkdown_timerevent_callback = nullptr;
+    QsciLexerMarkdown_ChildEvent_Callback qscilexermarkdown_childevent_callback = nullptr;
+    QsciLexerMarkdown_CustomEvent_Callback qscilexermarkdown_customevent_callback = nullptr;
+    QsciLexerMarkdown_ConnectNotify_Callback qscilexermarkdown_connectnotify_callback = nullptr;
+    QsciLexerMarkdown_DisconnectNotify_Callback qscilexermarkdown_disconnectnotify_callback = nullptr;
+    QsciLexerMarkdown_TextAsBytes_Callback qscilexermarkdown_textasbytes_callback = nullptr;
+    QsciLexerMarkdown_BytesAsText_Callback qscilexermarkdown_bytesastext_callback = nullptr;
+    QsciLexerMarkdown_Sender_Callback qscilexermarkdown_sender_callback = nullptr;
+    QsciLexerMarkdown_SenderSignalIndex_Callback qscilexermarkdown_sendersignalindex_callback = nullptr;
+    QsciLexerMarkdown_Receivers_Callback qscilexermarkdown_receivers_callback = nullptr;
+    QsciLexerMarkdown_IsSignalConnected_Callback qscilexermarkdown_issignalconnected_callback = nullptr;
+
+    // Instance base flags
+    mutable bool qscilexermarkdown_metaobject_isbase = false;
+    mutable bool qscilexermarkdown_metacast_isbase = false;
+    mutable bool qscilexermarkdown_metacall_isbase = false;
+    mutable bool qscilexermarkdown_language_isbase = false;
+    mutable bool qscilexermarkdown_lexer_isbase = false;
+    mutable bool qscilexermarkdown_lexerid_isbase = false;
+    mutable bool qscilexermarkdown_autocompletionfillups_isbase = false;
+    mutable bool qscilexermarkdown_autocompletionwordseparators_isbase = false;
+    mutable bool qscilexermarkdown_blockend_isbase = false;
+    mutable bool qscilexermarkdown_blocklookback_isbase = false;
+    mutable bool qscilexermarkdown_blockstart_isbase = false;
+    mutable bool qscilexermarkdown_blockstartkeyword_isbase = false;
+    mutable bool qscilexermarkdown_bracestyle_isbase = false;
+    mutable bool qscilexermarkdown_casesensitive_isbase = false;
+    mutable bool qscilexermarkdown_color_isbase = false;
+    mutable bool qscilexermarkdown_eolfill_isbase = false;
+    mutable bool qscilexermarkdown_font_isbase = false;
+    mutable bool qscilexermarkdown_indentationguideview_isbase = false;
+    mutable bool qscilexermarkdown_keywords_isbase = false;
+    mutable bool qscilexermarkdown_defaultstyle_isbase = false;
+    mutable bool qscilexermarkdown_description_isbase = false;
+    mutable bool qscilexermarkdown_paper_isbase = false;
+    mutable bool qscilexermarkdown_defaultcolor2_isbase = false;
+    mutable bool qscilexermarkdown_defaulteolfill_isbase = false;
+    mutable bool qscilexermarkdown_defaultfont2_isbase = false;
+    mutable bool qscilexermarkdown_defaultpaper2_isbase = false;
+    mutable bool qscilexermarkdown_seteditor_isbase = false;
+    mutable bool qscilexermarkdown_refreshproperties_isbase = false;
+    mutable bool qscilexermarkdown_stylebitsneeded_isbase = false;
+    mutable bool qscilexermarkdown_wordcharacters_isbase = false;
+    mutable bool qscilexermarkdown_setautoindentstyle_isbase = false;
+    mutable bool qscilexermarkdown_setcolor_isbase = false;
+    mutable bool qscilexermarkdown_seteolfill_isbase = false;
+    mutable bool qscilexermarkdown_setfont_isbase = false;
+    mutable bool qscilexermarkdown_setpaper_isbase = false;
+    mutable bool qscilexermarkdown_readproperties_isbase = false;
+    mutable bool qscilexermarkdown_writeproperties_isbase = false;
+    mutable bool qscilexermarkdown_event_isbase = false;
+    mutable bool qscilexermarkdown_eventfilter_isbase = false;
+    mutable bool qscilexermarkdown_timerevent_isbase = false;
+    mutable bool qscilexermarkdown_childevent_isbase = false;
+    mutable bool qscilexermarkdown_customevent_isbase = false;
+    mutable bool qscilexermarkdown_connectnotify_isbase = false;
+    mutable bool qscilexermarkdown_disconnectnotify_isbase = false;
+    mutable bool qscilexermarkdown_textasbytes_isbase = false;
+    mutable bool qscilexermarkdown_bytesastext_isbase = false;
+    mutable bool qscilexermarkdown_sender_isbase = false;
+    mutable bool qscilexermarkdown_sendersignalindex_isbase = false;
+    mutable bool qscilexermarkdown_receivers_isbase = false;
+    mutable bool qscilexermarkdown_issignalconnected_isbase = false;
+
+  public:
+    VirtualQsciLexerMarkdown() : QsciLexerMarkdown() {};
+    VirtualQsciLexerMarkdown(QObject* parent) : QsciLexerMarkdown(parent) {};
+
+    // Callback setters
+    inline void setQsciLexerMarkdown_MetaObject_Callback(QsciLexerMarkdown_MetaObject_Callback cb) { qscilexermarkdown_metaobject_callback = cb; }
+    inline void setQsciLexerMarkdown_Metacast_Callback(QsciLexerMarkdown_Metacast_Callback cb) { qscilexermarkdown_metacast_callback = cb; }
+    inline void setQsciLexerMarkdown_Metacall_Callback(QsciLexerMarkdown_Metacall_Callback cb) { qscilexermarkdown_metacall_callback = cb; }
+    inline void setQsciLexerMarkdown_Language_Callback(QsciLexerMarkdown_Language_Callback cb) { qscilexermarkdown_language_callback = cb; }
+    inline void setQsciLexerMarkdown_Lexer_Callback(QsciLexerMarkdown_Lexer_Callback cb) { qscilexermarkdown_lexer_callback = cb; }
+    inline void setQsciLexerMarkdown_LexerId_Callback(QsciLexerMarkdown_LexerId_Callback cb) { qscilexermarkdown_lexerid_callback = cb; }
+    inline void setQsciLexerMarkdown_AutoCompletionFillups_Callback(QsciLexerMarkdown_AutoCompletionFillups_Callback cb) { qscilexermarkdown_autocompletionfillups_callback = cb; }
+    inline void setQsciLexerMarkdown_AutoCompletionWordSeparators_Callback(QsciLexerMarkdown_AutoCompletionWordSeparators_Callback cb) { qscilexermarkdown_autocompletionwordseparators_callback = cb; }
+    inline void setQsciLexerMarkdown_BlockEnd_Callback(QsciLexerMarkdown_BlockEnd_Callback cb) { qscilexermarkdown_blockend_callback = cb; }
+    inline void setQsciLexerMarkdown_BlockLookback_Callback(QsciLexerMarkdown_BlockLookback_Callback cb) { qscilexermarkdown_blocklookback_callback = cb; }
+    inline void setQsciLexerMarkdown_BlockStart_Callback(QsciLexerMarkdown_BlockStart_Callback cb) { qscilexermarkdown_blockstart_callback = cb; }
+    inline void setQsciLexerMarkdown_BlockStartKeyword_Callback(QsciLexerMarkdown_BlockStartKeyword_Callback cb) { qscilexermarkdown_blockstartkeyword_callback = cb; }
+    inline void setQsciLexerMarkdown_BraceStyle_Callback(QsciLexerMarkdown_BraceStyle_Callback cb) { qscilexermarkdown_bracestyle_callback = cb; }
+    inline void setQsciLexerMarkdown_CaseSensitive_Callback(QsciLexerMarkdown_CaseSensitive_Callback cb) { qscilexermarkdown_casesensitive_callback = cb; }
+    inline void setQsciLexerMarkdown_Color_Callback(QsciLexerMarkdown_Color_Callback cb) { qscilexermarkdown_color_callback = cb; }
+    inline void setQsciLexerMarkdown_EolFill_Callback(QsciLexerMarkdown_EolFill_Callback cb) { qscilexermarkdown_eolfill_callback = cb; }
+    inline void setQsciLexerMarkdown_Font_Callback(QsciLexerMarkdown_Font_Callback cb) { qscilexermarkdown_font_callback = cb; }
+    inline void setQsciLexerMarkdown_IndentationGuideView_Callback(QsciLexerMarkdown_IndentationGuideView_Callback cb) { qscilexermarkdown_indentationguideview_callback = cb; }
+    inline void setQsciLexerMarkdown_Keywords_Callback(QsciLexerMarkdown_Keywords_Callback cb) { qscilexermarkdown_keywords_callback = cb; }
+    inline void setQsciLexerMarkdown_DefaultStyle_Callback(QsciLexerMarkdown_DefaultStyle_Callback cb) { qscilexermarkdown_defaultstyle_callback = cb; }
+    inline void setQsciLexerMarkdown_Description_Callback(QsciLexerMarkdown_Description_Callback cb) { qscilexermarkdown_description_callback = cb; }
+    inline void setQsciLexerMarkdown_Paper_Callback(QsciLexerMarkdown_Paper_Callback cb) { qscilexermarkdown_paper_callback = cb; }
+    inline void setQsciLexerMarkdown_DefaultColor2_Callback(QsciLexerMarkdown_DefaultColor2_Callback cb) { qscilexermarkdown_defaultcolor2_callback = cb; }
+    inline void setQsciLexerMarkdown_DefaultEolFill_Callback(QsciLexerMarkdown_DefaultEolFill_Callback cb) { qscilexermarkdown_defaulteolfill_callback = cb; }
+    inline void setQsciLexerMarkdown_DefaultFont2_Callback(QsciLexerMarkdown_DefaultFont2_Callback cb) { qscilexermarkdown_defaultfont2_callback = cb; }
+    inline void setQsciLexerMarkdown_DefaultPaper2_Callback(QsciLexerMarkdown_DefaultPaper2_Callback cb) { qscilexermarkdown_defaultpaper2_callback = cb; }
+    inline void setQsciLexerMarkdown_SetEditor_Callback(QsciLexerMarkdown_SetEditor_Callback cb) { qscilexermarkdown_seteditor_callback = cb; }
+    inline void setQsciLexerMarkdown_RefreshProperties_Callback(QsciLexerMarkdown_RefreshProperties_Callback cb) { qscilexermarkdown_refreshproperties_callback = cb; }
+    inline void setQsciLexerMarkdown_StyleBitsNeeded_Callback(QsciLexerMarkdown_StyleBitsNeeded_Callback cb) { qscilexermarkdown_stylebitsneeded_callback = cb; }
+    inline void setQsciLexerMarkdown_WordCharacters_Callback(QsciLexerMarkdown_WordCharacters_Callback cb) { qscilexermarkdown_wordcharacters_callback = cb; }
+    inline void setQsciLexerMarkdown_SetAutoIndentStyle_Callback(QsciLexerMarkdown_SetAutoIndentStyle_Callback cb) { qscilexermarkdown_setautoindentstyle_callback = cb; }
+    inline void setQsciLexerMarkdown_SetColor_Callback(QsciLexerMarkdown_SetColor_Callback cb) { qscilexermarkdown_setcolor_callback = cb; }
+    inline void setQsciLexerMarkdown_SetEolFill_Callback(QsciLexerMarkdown_SetEolFill_Callback cb) { qscilexermarkdown_seteolfill_callback = cb; }
+    inline void setQsciLexerMarkdown_SetFont_Callback(QsciLexerMarkdown_SetFont_Callback cb) { qscilexermarkdown_setfont_callback = cb; }
+    inline void setQsciLexerMarkdown_SetPaper_Callback(QsciLexerMarkdown_SetPaper_Callback cb) { qscilexermarkdown_setpaper_callback = cb; }
+    inline void setQsciLexerMarkdown_ReadProperties_Callback(QsciLexerMarkdown_ReadProperties_Callback cb) { qscilexermarkdown_readproperties_callback = cb; }
+    inline void setQsciLexerMarkdown_WriteProperties_Callback(QsciLexerMarkdown_WriteProperties_Callback cb) { qscilexermarkdown_writeproperties_callback = cb; }
+    inline void setQsciLexerMarkdown_Event_Callback(QsciLexerMarkdown_Event_Callback cb) { qscilexermarkdown_event_callback = cb; }
+    inline void setQsciLexerMarkdown_EventFilter_Callback(QsciLexerMarkdown_EventFilter_Callback cb) { qscilexermarkdown_eventfilter_callback = cb; }
+    inline void setQsciLexerMarkdown_TimerEvent_Callback(QsciLexerMarkdown_TimerEvent_Callback cb) { qscilexermarkdown_timerevent_callback = cb; }
+    inline void setQsciLexerMarkdown_ChildEvent_Callback(QsciLexerMarkdown_ChildEvent_Callback cb) { qscilexermarkdown_childevent_callback = cb; }
+    inline void setQsciLexerMarkdown_CustomEvent_Callback(QsciLexerMarkdown_CustomEvent_Callback cb) { qscilexermarkdown_customevent_callback = cb; }
+    inline void setQsciLexerMarkdown_ConnectNotify_Callback(QsciLexerMarkdown_ConnectNotify_Callback cb) { qscilexermarkdown_connectnotify_callback = cb; }
+    inline void setQsciLexerMarkdown_DisconnectNotify_Callback(QsciLexerMarkdown_DisconnectNotify_Callback cb) { qscilexermarkdown_disconnectnotify_callback = cb; }
+    inline void setQsciLexerMarkdown_TextAsBytes_Callback(QsciLexerMarkdown_TextAsBytes_Callback cb) { qscilexermarkdown_textasbytes_callback = cb; }
+    inline void setQsciLexerMarkdown_BytesAsText_Callback(QsciLexerMarkdown_BytesAsText_Callback cb) { qscilexermarkdown_bytesastext_callback = cb; }
+    inline void setQsciLexerMarkdown_Sender_Callback(QsciLexerMarkdown_Sender_Callback cb) { qscilexermarkdown_sender_callback = cb; }
+    inline void setQsciLexerMarkdown_SenderSignalIndex_Callback(QsciLexerMarkdown_SenderSignalIndex_Callback cb) { qscilexermarkdown_sendersignalindex_callback = cb; }
+    inline void setQsciLexerMarkdown_Receivers_Callback(QsciLexerMarkdown_Receivers_Callback cb) { qscilexermarkdown_receivers_callback = cb; }
+    inline void setQsciLexerMarkdown_IsSignalConnected_Callback(QsciLexerMarkdown_IsSignalConnected_Callback cb) { qscilexermarkdown_issignalconnected_callback = cb; }
+
+    // Base flag setters
+    inline void setQsciLexerMarkdown_MetaObject_IsBase(bool value) const { qscilexermarkdown_metaobject_isbase = value; }
+    inline void setQsciLexerMarkdown_Metacast_IsBase(bool value) const { qscilexermarkdown_metacast_isbase = value; }
+    inline void setQsciLexerMarkdown_Metacall_IsBase(bool value) const { qscilexermarkdown_metacall_isbase = value; }
+    inline void setQsciLexerMarkdown_Language_IsBase(bool value) const { qscilexermarkdown_language_isbase = value; }
+    inline void setQsciLexerMarkdown_Lexer_IsBase(bool value) const { qscilexermarkdown_lexer_isbase = value; }
+    inline void setQsciLexerMarkdown_LexerId_IsBase(bool value) const { qscilexermarkdown_lexerid_isbase = value; }
+    inline void setQsciLexerMarkdown_AutoCompletionFillups_IsBase(bool value) const { qscilexermarkdown_autocompletionfillups_isbase = value; }
+    inline void setQsciLexerMarkdown_AutoCompletionWordSeparators_IsBase(bool value) const { qscilexermarkdown_autocompletionwordseparators_isbase = value; }
+    inline void setQsciLexerMarkdown_BlockEnd_IsBase(bool value) const { qscilexermarkdown_blockend_isbase = value; }
+    inline void setQsciLexerMarkdown_BlockLookback_IsBase(bool value) const { qscilexermarkdown_blocklookback_isbase = value; }
+    inline void setQsciLexerMarkdown_BlockStart_IsBase(bool value) const { qscilexermarkdown_blockstart_isbase = value; }
+    inline void setQsciLexerMarkdown_BlockStartKeyword_IsBase(bool value) const { qscilexermarkdown_blockstartkeyword_isbase = value; }
+    inline void setQsciLexerMarkdown_BraceStyle_IsBase(bool value) const { qscilexermarkdown_bracestyle_isbase = value; }
+    inline void setQsciLexerMarkdown_CaseSensitive_IsBase(bool value) const { qscilexermarkdown_casesensitive_isbase = value; }
+    inline void setQsciLexerMarkdown_Color_IsBase(bool value) const { qscilexermarkdown_color_isbase = value; }
+    inline void setQsciLexerMarkdown_EolFill_IsBase(bool value) const { qscilexermarkdown_eolfill_isbase = value; }
+    inline void setQsciLexerMarkdown_Font_IsBase(bool value) const { qscilexermarkdown_font_isbase = value; }
+    inline void setQsciLexerMarkdown_IndentationGuideView_IsBase(bool value) const { qscilexermarkdown_indentationguideview_isbase = value; }
+    inline void setQsciLexerMarkdown_Keywords_IsBase(bool value) const { qscilexermarkdown_keywords_isbase = value; }
+    inline void setQsciLexerMarkdown_DefaultStyle_IsBase(bool value) const { qscilexermarkdown_defaultstyle_isbase = value; }
+    inline void setQsciLexerMarkdown_Description_IsBase(bool value) const { qscilexermarkdown_description_isbase = value; }
+    inline void setQsciLexerMarkdown_Paper_IsBase(bool value) const { qscilexermarkdown_paper_isbase = value; }
+    inline void setQsciLexerMarkdown_DefaultColor2_IsBase(bool value) const { qscilexermarkdown_defaultcolor2_isbase = value; }
+    inline void setQsciLexerMarkdown_DefaultEolFill_IsBase(bool value) const { qscilexermarkdown_defaulteolfill_isbase = value; }
+    inline void setQsciLexerMarkdown_DefaultFont2_IsBase(bool value) const { qscilexermarkdown_defaultfont2_isbase = value; }
+    inline void setQsciLexerMarkdown_DefaultPaper2_IsBase(bool value) const { qscilexermarkdown_defaultpaper2_isbase = value; }
+    inline void setQsciLexerMarkdown_SetEditor_IsBase(bool value) const { qscilexermarkdown_seteditor_isbase = value; }
+    inline void setQsciLexerMarkdown_RefreshProperties_IsBase(bool value) const { qscilexermarkdown_refreshproperties_isbase = value; }
+    inline void setQsciLexerMarkdown_StyleBitsNeeded_IsBase(bool value) const { qscilexermarkdown_stylebitsneeded_isbase = value; }
+    inline void setQsciLexerMarkdown_WordCharacters_IsBase(bool value) const { qscilexermarkdown_wordcharacters_isbase = value; }
+    inline void setQsciLexerMarkdown_SetAutoIndentStyle_IsBase(bool value) const { qscilexermarkdown_setautoindentstyle_isbase = value; }
+    inline void setQsciLexerMarkdown_SetColor_IsBase(bool value) const { qscilexermarkdown_setcolor_isbase = value; }
+    inline void setQsciLexerMarkdown_SetEolFill_IsBase(bool value) const { qscilexermarkdown_seteolfill_isbase = value; }
+    inline void setQsciLexerMarkdown_SetFont_IsBase(bool value) const { qscilexermarkdown_setfont_isbase = value; }
+    inline void setQsciLexerMarkdown_SetPaper_IsBase(bool value) const { qscilexermarkdown_setpaper_isbase = value; }
+    inline void setQsciLexerMarkdown_ReadProperties_IsBase(bool value) const { qscilexermarkdown_readproperties_isbase = value; }
+    inline void setQsciLexerMarkdown_WriteProperties_IsBase(bool value) const { qscilexermarkdown_writeproperties_isbase = value; }
+    inline void setQsciLexerMarkdown_Event_IsBase(bool value) const { qscilexermarkdown_event_isbase = value; }
+    inline void setQsciLexerMarkdown_EventFilter_IsBase(bool value) const { qscilexermarkdown_eventfilter_isbase = value; }
+    inline void setQsciLexerMarkdown_TimerEvent_IsBase(bool value) const { qscilexermarkdown_timerevent_isbase = value; }
+    inline void setQsciLexerMarkdown_ChildEvent_IsBase(bool value) const { qscilexermarkdown_childevent_isbase = value; }
+    inline void setQsciLexerMarkdown_CustomEvent_IsBase(bool value) const { qscilexermarkdown_customevent_isbase = value; }
+    inline void setQsciLexerMarkdown_ConnectNotify_IsBase(bool value) const { qscilexermarkdown_connectnotify_isbase = value; }
+    inline void setQsciLexerMarkdown_DisconnectNotify_IsBase(bool value) const { qscilexermarkdown_disconnectnotify_isbase = value; }
+    inline void setQsciLexerMarkdown_TextAsBytes_IsBase(bool value) const { qscilexermarkdown_textasbytes_isbase = value; }
+    inline void setQsciLexerMarkdown_BytesAsText_IsBase(bool value) const { qscilexermarkdown_bytesastext_isbase = value; }
+    inline void setQsciLexerMarkdown_Sender_IsBase(bool value) const { qscilexermarkdown_sender_isbase = value; }
+    inline void setQsciLexerMarkdown_SenderSignalIndex_IsBase(bool value) const { qscilexermarkdown_sendersignalindex_isbase = value; }
+    inline void setQsciLexerMarkdown_Receivers_IsBase(bool value) const { qscilexermarkdown_receivers_isbase = value; }
+    inline void setQsciLexerMarkdown_IsSignalConnected_IsBase(bool value) const { qscilexermarkdown_issignalconnected_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const QMetaObject* metaObject() const override {
+        if (qscilexermarkdown_metaobject_isbase) {
+            qscilexermarkdown_metaobject_isbase = false;
+            return QsciLexerMarkdown::metaObject();
+        }
+        auto metaobject_cb = qscilexermarkdown_metaobject_callback;
+        if (metaobject_cb) {
+            QMetaObject* callback_ret = metaobject_cb();
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::metaObject();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void* qt_metacast(const char* param1) override {
+        if (qscilexermarkdown_metacast_isbase) {
+            qscilexermarkdown_metacast_isbase = false;
+            return QsciLexerMarkdown::qt_metacast(param1);
+        }
+        auto metacast_cb = qscilexermarkdown_metacast_callback;
+        if (metacast_cb) {
+            const char* cbval1 = (const char*)param1;
+
+            void* callback_ret = metacast_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::qt_metacast(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int qt_metacall(QMetaObject::Call param1, int param2, void** param3) override {
+        if (qscilexermarkdown_metacall_isbase) {
+            qscilexermarkdown_metacall_isbase = false;
+            return QsciLexerMarkdown::qt_metacall(param1, param2, param3);
+        }
+        auto metacall_cb = qscilexermarkdown_metacall_callback;
+        if (metacall_cb) {
+            int cbval1 = static_cast<int>(param1);
+            int cbval2 = param2;
+            void** cbval3 = param3;
+
+            int callback_ret = metacall_cb(this, cbval1, cbval2, cbval3);
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::qt_metacall(param1, param2, param3);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* language() const override {
+        auto language_cb = qscilexermarkdown_language_callback;
+        if (language_cb) {
+            const char* callback_ret = language_cb();
+            return callback_ret;
+        }
+        return {};
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* lexer() const override {
+        if (qscilexermarkdown_lexer_isbase) {
+            qscilexermarkdown_lexer_isbase = false;
+            return QsciLexerMarkdown::lexer();
+        }
+        auto lexer_cb = qscilexermarkdown_lexer_callback;
+        if (lexer_cb) {
+            const char* callback_ret = lexer_cb();
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::lexer();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int lexerId() const override {
+        if (qscilexermarkdown_lexerid_isbase) {
+            qscilexermarkdown_lexerid_isbase = false;
+            return QsciLexerMarkdown::lexerId();
+        }
+        auto lexerid_cb = qscilexermarkdown_lexerid_callback;
+        if (lexerid_cb) {
+            int callback_ret = lexerid_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::lexerId();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* autoCompletionFillups() const override {
+        if (qscilexermarkdown_autocompletionfillups_isbase) {
+            qscilexermarkdown_autocompletionfillups_isbase = false;
+            return QsciLexerMarkdown::autoCompletionFillups();
+        }
+        auto autocompletionfillups_cb = qscilexermarkdown_autocompletionfillups_callback;
+        if (autocompletionfillups_cb) {
+            const char* callback_ret = autocompletionfillups_cb();
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::autoCompletionFillups();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QList<QString> autoCompletionWordSeparators() const override {
+        if (qscilexermarkdown_autocompletionwordseparators_isbase) {
+            qscilexermarkdown_autocompletionwordseparators_isbase = false;
+            return QsciLexerMarkdown::autoCompletionWordSeparators();
+        }
+        auto autocompletionwordseparators_cb = qscilexermarkdown_autocompletionwordseparators_callback;
+        if (autocompletionwordseparators_cb) {
+            const char** callback_ret = autocompletionwordseparators_cb();
+            QList<QString> callback_ret_QList;
+            size_t callback_ret_len = libqt_strv_length(callback_ret);
+            callback_ret_QList.reserve(callback_ret_len);
+            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
+            for (size_t i = 0; i < callback_ret_len; ++i) {
+                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
+                callback_ret_QList.push_back(callback_ret_arr_i_QString);
+            }
+            libqt_free(callback_ret);
+            return callback_ret_QList;
+        }
+        return QsciLexerMarkdown::autoCompletionWordSeparators();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* blockEnd(int* style) const override {
+        if (qscilexermarkdown_blockend_isbase) {
+            qscilexermarkdown_blockend_isbase = false;
+            return QsciLexerMarkdown::blockEnd(style);
+        }
+        auto blockend_cb = qscilexermarkdown_blockend_callback;
+        if (blockend_cb) {
+            int* cbval1 = style;
+
+            const char* callback_ret = blockend_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::blockEnd(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int blockLookback() const override {
+        if (qscilexermarkdown_blocklookback_isbase) {
+            qscilexermarkdown_blocklookback_isbase = false;
+            return QsciLexerMarkdown::blockLookback();
+        }
+        auto blocklookback_cb = qscilexermarkdown_blocklookback_callback;
+        if (blocklookback_cb) {
+            int callback_ret = blocklookback_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::blockLookback();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* blockStart(int* style) const override {
+        if (qscilexermarkdown_blockstart_isbase) {
+            qscilexermarkdown_blockstart_isbase = false;
+            return QsciLexerMarkdown::blockStart(style);
+        }
+        auto blockstart_cb = qscilexermarkdown_blockstart_callback;
+        if (blockstart_cb) {
+            int* cbval1 = style;
+
+            const char* callback_ret = blockstart_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::blockStart(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* blockStartKeyword(int* style) const override {
+        if (qscilexermarkdown_blockstartkeyword_isbase) {
+            qscilexermarkdown_blockstartkeyword_isbase = false;
+            return QsciLexerMarkdown::blockStartKeyword(style);
+        }
+        auto blockstartkeyword_cb = qscilexermarkdown_blockstartkeyword_callback;
+        if (blockstartkeyword_cb) {
+            int* cbval1 = style;
+
+            const char* callback_ret = blockstartkeyword_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::blockStartKeyword(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int braceStyle() const override {
+        if (qscilexermarkdown_bracestyle_isbase) {
+            qscilexermarkdown_bracestyle_isbase = false;
+            return QsciLexerMarkdown::braceStyle();
+        }
+        auto bracestyle_cb = qscilexermarkdown_bracestyle_callback;
+        if (bracestyle_cb) {
+            int callback_ret = bracestyle_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::braceStyle();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool caseSensitive() const override {
+        if (qscilexermarkdown_casesensitive_isbase) {
+            qscilexermarkdown_casesensitive_isbase = false;
+            return QsciLexerMarkdown::caseSensitive();
+        }
+        auto casesensitive_cb = qscilexermarkdown_casesensitive_callback;
+        if (casesensitive_cb) {
+            bool callback_ret = casesensitive_cb();
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::caseSensitive();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QColor color(int style) const override {
+        if (qscilexermarkdown_color_isbase) {
+            qscilexermarkdown_color_isbase = false;
+            return QsciLexerMarkdown::color(style);
+        }
+        auto color_cb = qscilexermarkdown_color_callback;
+        if (color_cb) {
+            int cbval1 = style;
+
+            QColor* callback_ret = color_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return QsciLexerMarkdown::color(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool eolFill(int style) const override {
+        if (qscilexermarkdown_eolfill_isbase) {
+            qscilexermarkdown_eolfill_isbase = false;
+            return QsciLexerMarkdown::eolFill(style);
+        }
+        auto eolfill_cb = qscilexermarkdown_eolfill_callback;
+        if (eolfill_cb) {
+            int cbval1 = style;
+
+            bool callback_ret = eolfill_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::eolFill(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QFont font(int style) const override {
+        if (qscilexermarkdown_font_isbase) {
+            qscilexermarkdown_font_isbase = false;
+            return QsciLexerMarkdown::font(style);
+        }
+        auto font_cb = qscilexermarkdown_font_callback;
+        if (font_cb) {
+            int cbval1 = style;
+
+            QFont* callback_ret = font_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return QsciLexerMarkdown::font(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int indentationGuideView() const override {
+        if (qscilexermarkdown_indentationguideview_isbase) {
+            qscilexermarkdown_indentationguideview_isbase = false;
+            return QsciLexerMarkdown::indentationGuideView();
+        }
+        auto indentationguideview_cb = qscilexermarkdown_indentationguideview_callback;
+        if (indentationguideview_cb) {
+            int callback_ret = indentationguideview_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::indentationGuideView();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* keywords(int set) const override {
+        if (qscilexermarkdown_keywords_isbase) {
+            qscilexermarkdown_keywords_isbase = false;
+            return QsciLexerMarkdown::keywords(set);
+        }
+        auto keywords_cb = qscilexermarkdown_keywords_callback;
+        if (keywords_cb) {
+            int cbval1 = set;
+
+            const char* callback_ret = keywords_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::keywords(set);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int defaultStyle() const override {
+        if (qscilexermarkdown_defaultstyle_isbase) {
+            qscilexermarkdown_defaultstyle_isbase = false;
+            return QsciLexerMarkdown::defaultStyle();
+        }
+        auto defaultstyle_cb = qscilexermarkdown_defaultstyle_callback;
+        if (defaultstyle_cb) {
+            int callback_ret = defaultstyle_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::defaultStyle();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QString description(int style) const override {
+        auto description_cb = qscilexermarkdown_description_callback;
+        if (description_cb) {
+            int cbval1 = style;
+
+            const char* callback_ret = description_cb(this, cbval1);
+            QString callback_ret_QString = QString::fromUtf8(callback_ret);
+            return callback_ret_QString;
+        }
+        return {};
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QColor paper(int style) const override {
+        if (qscilexermarkdown_paper_isbase) {
+            qscilexermarkdown_paper_isbase = false;
+            return QsciLexerMarkdown::paper(style);
+        }
+        auto paper_cb = qscilexermarkdown_paper_callback;
+        if (paper_cb) {
+            int cbval1 = style;
+
+            QColor* callback_ret = paper_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return QsciLexerMarkdown::paper(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QColor defaultColor(int style) const override {
+        if (qscilexermarkdown_defaultcolor2_isbase) {
+            qscilexermarkdown_defaultcolor2_isbase = false;
+            return QsciLexerMarkdown::defaultColor(style);
+        }
+        auto defaultcolor2_cb = qscilexermarkdown_defaultcolor2_callback;
+        if (defaultcolor2_cb) {
+            int cbval1 = style;
+
+            QColor* callback_ret = defaultcolor2_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return QsciLexerMarkdown::defaultColor(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool defaultEolFill(int style) const override {
+        if (qscilexermarkdown_defaulteolfill_isbase) {
+            qscilexermarkdown_defaulteolfill_isbase = false;
+            return QsciLexerMarkdown::defaultEolFill(style);
+        }
+        auto defaulteolfill_cb = qscilexermarkdown_defaulteolfill_callback;
+        if (defaulteolfill_cb) {
+            int cbval1 = style;
+
+            bool callback_ret = defaulteolfill_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::defaultEolFill(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QFont defaultFont(int style) const override {
+        if (qscilexermarkdown_defaultfont2_isbase) {
+            qscilexermarkdown_defaultfont2_isbase = false;
+            return QsciLexerMarkdown::defaultFont(style);
+        }
+        auto defaultfont2_cb = qscilexermarkdown_defaultfont2_callback;
+        if (defaultfont2_cb) {
+            int cbval1 = style;
+
+            QFont* callback_ret = defaultfont2_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return QsciLexerMarkdown::defaultFont(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QColor defaultPaper(int style) const override {
+        if (qscilexermarkdown_defaultpaper2_isbase) {
+            qscilexermarkdown_defaultpaper2_isbase = false;
+            return QsciLexerMarkdown::defaultPaper(style);
+        }
+        auto defaultpaper2_cb = qscilexermarkdown_defaultpaper2_callback;
+        if (defaultpaper2_cb) {
+            int cbval1 = style;
+
+            QColor* callback_ret = defaultpaper2_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return QsciLexerMarkdown::defaultPaper(style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setEditor(QsciScintilla* editor) override {
+        if (qscilexermarkdown_seteditor_isbase) {
+            qscilexermarkdown_seteditor_isbase = false;
+            QsciLexerMarkdown::setEditor(editor);
+            return;
+        }
+        auto seteditor_cb = qscilexermarkdown_seteditor_callback;
+        if (seteditor_cb) {
+            QsciScintilla* cbval1 = editor;
+
+            seteditor_cb(this, cbval1);
+            return;
+        }
+        QsciLexerMarkdown::setEditor(editor);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void refreshProperties() override {
+        if (qscilexermarkdown_refreshproperties_isbase) {
+            qscilexermarkdown_refreshproperties_isbase = false;
+            QsciLexerMarkdown::refreshProperties();
+            return;
+        }
+        auto refreshproperties_cb = qscilexermarkdown_refreshproperties_callback;
+        if (refreshproperties_cb) {
+            refreshproperties_cb();
+            return;
+        }
+        QsciLexerMarkdown::refreshProperties();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int styleBitsNeeded() const override {
+        if (qscilexermarkdown_stylebitsneeded_isbase) {
+            qscilexermarkdown_stylebitsneeded_isbase = false;
+            return QsciLexerMarkdown::styleBitsNeeded();
+        }
+        auto stylebitsneeded_cb = qscilexermarkdown_stylebitsneeded_callback;
+        if (stylebitsneeded_cb) {
+            int callback_ret = stylebitsneeded_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::styleBitsNeeded();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const char* wordCharacters() const override {
+        if (qscilexermarkdown_wordcharacters_isbase) {
+            qscilexermarkdown_wordcharacters_isbase = false;
+            return QsciLexerMarkdown::wordCharacters();
+        }
+        auto wordcharacters_cb = qscilexermarkdown_wordcharacters_callback;
+        if (wordcharacters_cb) {
+            const char* callback_ret = wordcharacters_cb();
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::wordCharacters();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setAutoIndentStyle(int autoindentstyle) override {
+        if (qscilexermarkdown_setautoindentstyle_isbase) {
+            qscilexermarkdown_setautoindentstyle_isbase = false;
+            QsciLexerMarkdown::setAutoIndentStyle(autoindentstyle);
+            return;
+        }
+        auto setautoindentstyle_cb = qscilexermarkdown_setautoindentstyle_callback;
+        if (setautoindentstyle_cb) {
+            int cbval1 = autoindentstyle;
+
+            setautoindentstyle_cb(this, cbval1);
+            return;
+        }
+        QsciLexerMarkdown::setAutoIndentStyle(autoindentstyle);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setColor(const QColor& c, int style) override {
+        if (qscilexermarkdown_setcolor_isbase) {
+            qscilexermarkdown_setcolor_isbase = false;
+            QsciLexerMarkdown::setColor(c, style);
+            return;
+        }
+        auto setcolor_cb = qscilexermarkdown_setcolor_callback;
+        if (setcolor_cb) {
+            const QColor& c_ret = c;
+            // Cast returned reference into pointer
+            QColor* cbval1 = const_cast<QColor*>(&c_ret);
+            int cbval2 = style;
+
+            setcolor_cb(this, cbval1, cbval2);
+            return;
+        }
+        QsciLexerMarkdown::setColor(c, style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setEolFill(bool eoffill, int style) override {
+        if (qscilexermarkdown_seteolfill_isbase) {
+            qscilexermarkdown_seteolfill_isbase = false;
+            QsciLexerMarkdown::setEolFill(eoffill, style);
+            return;
+        }
+        auto seteolfill_cb = qscilexermarkdown_seteolfill_callback;
+        if (seteolfill_cb) {
+            bool cbval1 = eoffill;
+            int cbval2 = style;
+
+            seteolfill_cb(this, cbval1, cbval2);
+            return;
+        }
+        QsciLexerMarkdown::setEolFill(eoffill, style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setFont(const QFont& f, int style) override {
+        if (qscilexermarkdown_setfont_isbase) {
+            qscilexermarkdown_setfont_isbase = false;
+            QsciLexerMarkdown::setFont(f, style);
+            return;
+        }
+        auto setfont_cb = qscilexermarkdown_setfont_callback;
+        if (setfont_cb) {
+            const QFont& f_ret = f;
+            // Cast returned reference into pointer
+            QFont* cbval1 = const_cast<QFont*>(&f_ret);
+            int cbval2 = style;
+
+            setfont_cb(this, cbval1, cbval2);
+            return;
+        }
+        QsciLexerMarkdown::setFont(f, style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setPaper(const QColor& c, int style) override {
+        if (qscilexermarkdown_setpaper_isbase) {
+            qscilexermarkdown_setpaper_isbase = false;
+            QsciLexerMarkdown::setPaper(c, style);
+            return;
+        }
+        auto setpaper_cb = qscilexermarkdown_setpaper_callback;
+        if (setpaper_cb) {
+            const QColor& c_ret = c;
+            // Cast returned reference into pointer
+            QColor* cbval1 = const_cast<QColor*>(&c_ret);
+            int cbval2 = style;
+
+            setpaper_cb(this, cbval1, cbval2);
+            return;
+        }
+        QsciLexerMarkdown::setPaper(c, style);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool readProperties(QSettings& qs, const QString& prefix) override {
+        if (qscilexermarkdown_readproperties_isbase) {
+            qscilexermarkdown_readproperties_isbase = false;
+            return QsciLexerMarkdown::readProperties(qs, prefix);
+        }
+        auto readproperties_cb = qscilexermarkdown_readproperties_callback;
+        if (readproperties_cb) {
+            QSettings& qs_ret = qs;
+            // Cast returned reference into pointer
+            QSettings* cbval1 = &qs_ret;
+            const QString prefix_ret = prefix;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray prefix_b = prefix_ret.toUtf8();
+            auto prefix_str_len = prefix_b.length();
+            char* prefix_str = static_cast<char*>(malloc(prefix_str_len + 1));
+            memcpy(prefix_str, prefix_b.data(), prefix_str_len);
+            prefix_str[prefix_str_len] = '\0';
+            const char* cbval2 = prefix_str;
+
+            bool callback_ret = readproperties_cb(this, cbval1, cbval2);
+            libqt_free(prefix_str);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::readProperties(qs, prefix);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool writeProperties(QSettings& qs, const QString& prefix) const override {
+        if (qscilexermarkdown_writeproperties_isbase) {
+            qscilexermarkdown_writeproperties_isbase = false;
+            return QsciLexerMarkdown::writeProperties(qs, prefix);
+        }
+        auto writeproperties_cb = qscilexermarkdown_writeproperties_callback;
+        if (writeproperties_cb) {
+            QSettings& qs_ret = qs;
+            // Cast returned reference into pointer
+            QSettings* cbval1 = &qs_ret;
+            const QString prefix_ret = prefix;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray prefix_b = prefix_ret.toUtf8();
+            auto prefix_str_len = prefix_b.length();
+            char* prefix_str = static_cast<char*>(malloc(prefix_str_len + 1));
+            memcpy(prefix_str, prefix_b.data(), prefix_str_len);
+            prefix_str[prefix_str_len] = '\0';
+            const char* cbval2 = prefix_str;
+
+            bool callback_ret = writeproperties_cb(this, cbval1, cbval2);
+            libqt_free(prefix_str);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::writeProperties(qs, prefix);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool event(QEvent* event) override {
+        if (qscilexermarkdown_event_isbase) {
+            qscilexermarkdown_event_isbase = false;
+            return QsciLexerMarkdown::event(event);
+        }
+        auto event_cb = qscilexermarkdown_event_callback;
+        if (event_cb) {
+            QEvent* cbval1 = event;
+
+            bool callback_ret = event_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::event(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool eventFilter(QObject* watched, QEvent* event) override {
+        if (qscilexermarkdown_eventfilter_isbase) {
+            qscilexermarkdown_eventfilter_isbase = false;
+            return QsciLexerMarkdown::eventFilter(watched, event);
+        }
+        auto eventfilter_cb = qscilexermarkdown_eventfilter_callback;
+        if (eventfilter_cb) {
+            QObject* cbval1 = watched;
+            QEvent* cbval2 = event;
+
+            bool callback_ret = eventfilter_cb(this, cbval1, cbval2);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::eventFilter(watched, event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void timerEvent(QTimerEvent* event) override {
+        if (qscilexermarkdown_timerevent_isbase) {
+            qscilexermarkdown_timerevent_isbase = false;
+            QsciLexerMarkdown::timerEvent(event);
+            return;
+        }
+        auto timerevent_cb = qscilexermarkdown_timerevent_callback;
+        if (timerevent_cb) {
+            QTimerEvent* cbval1 = event;
+
+            timerevent_cb(this, cbval1);
+            return;
+        }
+        QsciLexerMarkdown::timerEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void childEvent(QChildEvent* event) override {
+        if (qscilexermarkdown_childevent_isbase) {
+            qscilexermarkdown_childevent_isbase = false;
+            QsciLexerMarkdown::childEvent(event);
+            return;
+        }
+        auto childevent_cb = qscilexermarkdown_childevent_callback;
+        if (childevent_cb) {
+            QChildEvent* cbval1 = event;
+
+            childevent_cb(this, cbval1);
+            return;
+        }
+        QsciLexerMarkdown::childEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void customEvent(QEvent* event) override {
+        if (qscilexermarkdown_customevent_isbase) {
+            qscilexermarkdown_customevent_isbase = false;
+            QsciLexerMarkdown::customEvent(event);
+            return;
+        }
+        auto customevent_cb = qscilexermarkdown_customevent_callback;
+        if (customevent_cb) {
+            QEvent* cbval1 = event;
+
+            customevent_cb(this, cbval1);
+            return;
+        }
+        QsciLexerMarkdown::customEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void connectNotify(const QMetaMethod& signal) override {
+        if (qscilexermarkdown_connectnotify_isbase) {
+            qscilexermarkdown_connectnotify_isbase = false;
+            QsciLexerMarkdown::connectNotify(signal);
+            return;
+        }
+        auto connectnotify_cb = qscilexermarkdown_connectnotify_callback;
+        if (connectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            connectnotify_cb(this, cbval1);
+            return;
+        }
+        QsciLexerMarkdown::connectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void disconnectNotify(const QMetaMethod& signal) override {
+        if (qscilexermarkdown_disconnectnotify_isbase) {
+            qscilexermarkdown_disconnectnotify_isbase = false;
+            QsciLexerMarkdown::disconnectNotify(signal);
+            return;
+        }
+        auto disconnectnotify_cb = qscilexermarkdown_disconnectnotify_callback;
+        if (disconnectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            disconnectnotify_cb(this, cbval1);
+            return;
+        }
+        QsciLexerMarkdown::disconnectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    QByteArray textAsBytes(const QString& text) const {
+        if (qscilexermarkdown_textasbytes_isbase) {
+            qscilexermarkdown_textasbytes_isbase = false;
+            return QsciLexerMarkdown::textAsBytes(text);
+        }
+        auto textasbytes_cb = qscilexermarkdown_textasbytes_callback;
+        if (textasbytes_cb) {
+            const QString text_ret = text;
+            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+            QByteArray text_b = text_ret.toUtf8();
+            auto text_str_len = text_b.length();
+            char* text_str = static_cast<char*>(malloc(text_str_len + 1));
+            memcpy(text_str, text_b.data(), text_str_len);
+            text_str[text_str_len] = '\0';
+            const char* cbval1 = text_str;
+
+            libqt_string callback_ret = textasbytes_cb(this, cbval1);
+            QByteArray callback_ret_QByteArray(callback_ret.data, callback_ret.len);
+            libqt_free(text_str);
+            return callback_ret_QByteArray;
+        }
+        return QsciLexerMarkdown::textAsBytes(text);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    QString bytesAsText(const char* bytes, int size) const {
+        if (qscilexermarkdown_bytesastext_isbase) {
+            qscilexermarkdown_bytesastext_isbase = false;
+            return QsciLexerMarkdown::bytesAsText(bytes, size);
+        }
+        auto bytesastext_cb = qscilexermarkdown_bytesastext_callback;
+        if (bytesastext_cb) {
+            const char* cbval1 = (const char*)bytes;
+            int cbval2 = size;
+
+            const char* callback_ret = bytesastext_cb(this, cbval1, cbval2);
+            QString callback_ret_QString = QString::fromUtf8(callback_ret);
+            return callback_ret_QString;
+        }
+        return QsciLexerMarkdown::bytesAsText(bytes, size);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    QObject* sender() const {
+        if (qscilexermarkdown_sender_isbase) {
+            qscilexermarkdown_sender_isbase = false;
+            return QsciLexerMarkdown::sender();
+        }
+        auto sender_cb = qscilexermarkdown_sender_callback;
+        if (sender_cb) {
+            QObject* callback_ret = sender_cb();
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::sender();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int senderSignalIndex() const {
+        if (qscilexermarkdown_sendersignalindex_isbase) {
+            qscilexermarkdown_sendersignalindex_isbase = false;
+            return QsciLexerMarkdown::senderSignalIndex();
+        }
+        auto sendersignalindex_cb = qscilexermarkdown_sendersignalindex_callback;
+        if (sendersignalindex_cb) {
+            int callback_ret = sendersignalindex_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::senderSignalIndex();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int receivers(const char* signal) const {
+        if (qscilexermarkdown_receivers_isbase) {
+            qscilexermarkdown_receivers_isbase = false;
+            return QsciLexerMarkdown::receivers(signal);
+        }
+        auto receivers_cb = qscilexermarkdown_receivers_callback;
+        if (receivers_cb) {
+            const char* cbval1 = (const char*)signal;
+
+            int callback_ret = receivers_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return QsciLexerMarkdown::receivers(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool isSignalConnected(const QMetaMethod& signal) const {
+        if (qscilexermarkdown_issignalconnected_isbase) {
+            qscilexermarkdown_issignalconnected_isbase = false;
+            return QsciLexerMarkdown::isSignalConnected(signal);
+        }
+        auto issignalconnected_cb = qscilexermarkdown_issignalconnected_callback;
+        if (issignalconnected_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            bool callback_ret = issignalconnected_cb(this, cbval1);
+            return callback_ret;
+        }
+        return QsciLexerMarkdown::isSignalConnected(signal);
+    }
+
+    // Friend functions
+    friend bool QsciLexerMarkdown_ReadProperties(QsciLexerMarkdown* self, QSettings* qs, const libqt_string prefix);
+    friend bool QsciLexerMarkdown_SuperReadProperties(QsciLexerMarkdown* self, QSettings* qs, const libqt_string prefix);
+    friend bool QsciLexerMarkdown_WriteProperties(const QsciLexerMarkdown* self, QSettings* qs, const libqt_string prefix);
+    friend bool QsciLexerMarkdown_SuperWriteProperties(const QsciLexerMarkdown* self, QSettings* qs, const libqt_string prefix);
+    friend void QsciLexerMarkdown_TimerEvent(QsciLexerMarkdown* self, QTimerEvent* event);
+    friend void QsciLexerMarkdown_SuperTimerEvent(QsciLexerMarkdown* self, QTimerEvent* event);
+    friend void QsciLexerMarkdown_ChildEvent(QsciLexerMarkdown* self, QChildEvent* event);
+    friend void QsciLexerMarkdown_SuperChildEvent(QsciLexerMarkdown* self, QChildEvent* event);
+    friend void QsciLexerMarkdown_CustomEvent(QsciLexerMarkdown* self, QEvent* event);
+    friend void QsciLexerMarkdown_SuperCustomEvent(QsciLexerMarkdown* self, QEvent* event);
+    friend void QsciLexerMarkdown_ConnectNotify(QsciLexerMarkdown* self, const QMetaMethod* signal);
+    friend void QsciLexerMarkdown_SuperConnectNotify(QsciLexerMarkdown* self, const QMetaMethod* signal);
+    friend void QsciLexerMarkdown_DisconnectNotify(QsciLexerMarkdown* self, const QMetaMethod* signal);
+    friend void QsciLexerMarkdown_SuperDisconnectNotify(QsciLexerMarkdown* self, const QMetaMethod* signal);
+    friend libqt_string QsciLexerMarkdown_TextAsBytes(const QsciLexerMarkdown* self, const libqt_string text);
+    friend libqt_string QsciLexerMarkdown_SuperTextAsBytes(const QsciLexerMarkdown* self, const libqt_string text);
+    friend libqt_string QsciLexerMarkdown_BytesAsText(const QsciLexerMarkdown* self, const char* bytes, int size);
+    friend libqt_string QsciLexerMarkdown_SuperBytesAsText(const QsciLexerMarkdown* self, const char* bytes, int size);
+    friend QObject* QsciLexerMarkdown_Sender(const QsciLexerMarkdown* self);
+    friend QObject* QsciLexerMarkdown_SuperSender(const QsciLexerMarkdown* self);
+    friend int QsciLexerMarkdown_SenderSignalIndex(const QsciLexerMarkdown* self);
+    friend int QsciLexerMarkdown_SuperSenderSignalIndex(const QsciLexerMarkdown* self);
+    friend int QsciLexerMarkdown_Receivers(const QsciLexerMarkdown* self, const char* signal);
+    friend int QsciLexerMarkdown_SuperReceivers(const QsciLexerMarkdown* self, const char* signal);
+    friend bool QsciLexerMarkdown_IsSignalConnected(const QsciLexerMarkdown* self, const QMetaMethod* signal);
+    friend bool QsciLexerMarkdown_SuperIsSignalConnected(const QsciLexerMarkdown* self, const QMetaMethod* signal);
+};
+
+#endif

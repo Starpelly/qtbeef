@@ -1,0 +1,60 @@
+#include <KCompositeJob>
+#define WORKAROUND_INNER_CLASS_DEFINITION_KIO__BatchRenameJob
+#include <KIO/Job>
+#include <KJob>
+#include <QChar>
+#include <QList>
+#include <QMetaMethod>
+#include <QMetaObject>
+#include <QObject>
+#include <QString>
+#include <QByteArray>
+#include <cstring>
+#include <QUrl>
+#include <batchrenamejob.h>
+#include "libbatchrenamejob.hpp"
+#include "libbatchrenamejob.hxx"
+
+QMetaObject* KIO__BatchRenameJob_MetaObject(const KIO__BatchRenameJob* self) {
+    return (QMetaObject*)self->metaObject();
+}
+
+void* KIO__BatchRenameJob_Metacast(KIO__BatchRenameJob* self, const char* param1) {
+    return self->qt_metacast(param1);
+}
+
+int KIO__BatchRenameJob_Metacall(KIO__BatchRenameJob* self, int param1, int param2, void** param3) {
+    return self->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+}
+
+void KIO__BatchRenameJob_FileRenamed(KIO__BatchRenameJob* self, const QUrl* oldUrl, const QUrl* newUrl) {
+    self->fileRenamed(*oldUrl, *newUrl);
+}
+
+void KIO__BatchRenameJob_Connect_FileRenamed(KIO__BatchRenameJob* self, intptr_t slot) {
+    void (*slotFunc)(KIO__BatchRenameJob*, QUrl*, QUrl*) = reinterpret_cast<void (*)(KIO__BatchRenameJob*, QUrl*, QUrl*)>(slot);
+    KIO::BatchRenameJob::connect(self, &KIO::BatchRenameJob::fileRenamed, [self, slotFunc](const QUrl& oldUrl, const QUrl& newUrl) {
+        const QUrl& oldUrl_ret = oldUrl;
+        // Cast returned reference into pointer
+        QUrl* sigval1 = const_cast<QUrl*>(&oldUrl_ret);
+        const QUrl& newUrl_ret = newUrl;
+        // Cast returned reference into pointer
+        QUrl* sigval2 = const_cast<QUrl*>(&newUrl_ret);
+        slotFunc(self, sigval1, sigval2);
+    });
+}
+
+void KIO__BatchRenameJob_Delete(KIO__BatchRenameJob* self) {
+    delete self;
+}
+
+KIO__BatchRenameJob* KIO_BatchRename(const libqt_list /* of QUrl* */ param1, const libqt_string param2, int param3, QChar* param4, int param5) {
+    QList<QUrl> param1_QList;
+    param1_QList.reserve(param1.len);
+    QUrl** param1_arr = static_cast<QUrl**>(param1.data.ptr);
+    for (size_t i = 0; i < param1.len; ++i) {
+        param1_QList.push_back(*(param1_arr[i]));
+    }
+    QString param2_QString = QString::fromUtf8(param2.data, param2.len);
+    return KIO::batchRename(param1_QList, param2_QString, static_cast<int>(param3), *param4, static_cast<KIO::JobFlags>(param5));
+}

@@ -1,0 +1,141 @@
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"io"
+	"log"
+	"os"
+	"os/exec"
+	"sync"
+)
+
+type ClangMatcher func(astNodeFilename string) bool
+
+func ClangMatchSameHeaderDefinitionOnly(astNodeFilename string) bool {
+	return astNodeFilename == ""
+}
+
+func clangExec(ctx context.Context, clangBin, inputHeader string, cflags []string, matcher ClangMatcher) ([]any, error) {
+
+	clangArgs := []string{"-x", "c++"}
+	clangArgs = append(clangArgs, cflags...)
+	clangArgs = append(clangArgs, "-Xclang", "-ast-dump=json", "-fsyntax-only", "-Wno-pragma-once-outside-header", inputHeader)
+
+	cmd := exec.CommandContext(ctx, clangBin, clangArgs...)
+	pr, err := cmd.StdoutPipe()
+	if err != nil {
+		return nil, fmt.Errorf("stdoutPipe: %w", err)
+	}
+
+	cmd.Stderr = os.Stderr
+
+	err = cmd.Start()
+	if err != nil {
+		return nil, fmt.Errorf("start: %w", err)
+	}
+
+	var wg sync.WaitGroup
+	var inner []any
+	var innerErr error
+
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		inner, innerErr = clangStripUpToFile(pr, matcher)
+	}()
+
+	wg.Wait()
+
+	err = cmd.Wait()
+	if err != nil {
+		return nil, fmt.Errorf("command: %w", err)
+	}
+
+	return inner, innerErr
+}
+
+func mustClangExec(ctx context.Context, clangBin, inputHeader string, cflags []string, matcher ClangMatcher) []any {
+	astInner, err := clangExec(ctx, clangBin, inputHeader, cflags, matcher)
+	if err != nil {
+		log.Printf("WARNING: Clang execution failed: %v", err)
+		panic("Clang failed parsing file " + inputHeader)
+	}
+
+	// Success
+	return astInner
+}
+
+// clangStripUpToFile strips all AST nodes from the clang output until we find
+// one that really originated in the source file.
+// This cleans out everything in the translation unit that came from an
+// #included file.
+// @ref https://stackoverflow.com/a/71128654
+func clangStripUpToFile(stdout io.Reader, matcher ClangMatcher) ([]any, error) {
+
+	var obj = map[string]any{}
+	err := json.NewDecoder(stdout).Decode(&obj)
+	if err != nil {
+		return nil, fmt.Errorf("json.Decode: %v", err)
+	}
+
+	inner, ok := obj["inner"].([]any)
+	if !ok {
+		return nil, errors.New("no inner")
+	}
+
+	// This can't be done by matching the first position only, since it's possible
+	// that there are more #include<>s further down the file
+
+	ret := make([]any, 0, len(inner))
+
+	for _, entry := range inner {
+
+		entry, ok := entry.(map[string]any)
+		if !ok {
+			return nil, errors.New("entry is not a map")
+		}
+
+		// Check where this AST node came from, if it was directly written
+		// in this header or if it as part of an #include
+
+		var match_filename = ""
+
+		if loc, ok := entry["loc"].(map[string]any); ok {
+			if includedFrom, ok := loc["includedFrom"].(map[string]any); ok {
+				if filename, ok := includedFrom["file"].(string); ok {
+					match_filename = filename
+				}
+			}
+
+			if match_filename == "" {
+				if expansionloc, ok := loc["expansionLoc"].(map[string]any); ok {
+					if filename, ok := expansionloc["file"].(string); ok {
+						match_filename = filename
+
+					} else if includedFrom, ok := expansionloc["includedFrom"].(map[string]any); ok {
+						if filename, ok := includedFrom["file"].(string); ok {
+							match_filename = filename
+						}
+					}
+				}
+			}
+		} else {
+			return nil, errors.New("no loc")
+		}
+
+		// log.Printf("# name=%v kind=%v filename=%q\n", entry["name"], entry["kind"], match_filename)
+
+		if matcher(match_filename) {
+			// Keep
+			ret = append(ret, entry)
+		}
+
+		// Otherwise, discard this AST node, it comes from some imported file
+		// that we will likely scan separately
+	}
+
+	return ret, nil
+}

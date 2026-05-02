@@ -1,0 +1,91 @@
+#pragma once
+#ifndef SRC_MULTIMEDIAC_LIBQMEDIADEVICES_HPP
+#define SRC_MULTIMEDIAC_LIBQMEDIADEVICES_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QAudioDevice QAudioDevice;
+typedef struct QCameraDevice QCameraDevice;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QMediaDevices QMediaDevices;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+QMediaDevices* QMediaDevices_new();
+QMediaDevices* QMediaDevices_new2(QObject* parent);
+QMetaObject* QMediaDevices_MetaObject(const QMediaDevices* self);
+void* QMediaDevices_Metacast(QMediaDevices* self, const char* param1);
+int QMediaDevices_Metacall(QMediaDevices* self, int param1, int param2, void** param3);
+libqt_list /* of QAudioDevice* */ QMediaDevices_AudioInputs();
+libqt_list /* of QAudioDevice* */ QMediaDevices_AudioOutputs();
+libqt_list /* of QCameraDevice* */ QMediaDevices_VideoInputs();
+QAudioDevice* QMediaDevices_DefaultAudioInput();
+QAudioDevice* QMediaDevices_DefaultAudioOutput();
+QCameraDevice* QMediaDevices_DefaultVideoInput();
+void QMediaDevices_AudioInputsChanged(QMediaDevices* self);
+void QMediaDevices_Connect_AudioInputsChanged(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_AudioOutputsChanged(QMediaDevices* self);
+void QMediaDevices_Connect_AudioOutputsChanged(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_VideoInputsChanged(QMediaDevices* self);
+void QMediaDevices_Connect_VideoInputsChanged(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_ConnectNotify(QMediaDevices* self, const QMetaMethod* signal);
+void QMediaDevices_OnMetaObject(const QMediaDevices* self, intptr_t slot);
+QMetaObject* QMediaDevices_SuperMetaObject(const QMediaDevices* self);
+void QMediaDevices_OnMetacast(QMediaDevices* self, intptr_t slot);
+void* QMediaDevices_SuperMetacast(QMediaDevices* self, const char* param1);
+void QMediaDevices_OnMetacall(QMediaDevices* self, intptr_t slot);
+int QMediaDevices_SuperMetacall(QMediaDevices* self, int param1, int param2, void** param3);
+void QMediaDevices_OnConnectNotify(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_SuperConnectNotify(QMediaDevices* self, const QMetaMethod* signal);
+bool QMediaDevices_Event(QMediaDevices* self, QEvent* event);
+void QMediaDevices_OnEvent(QMediaDevices* self, intptr_t slot);
+bool QMediaDevices_SuperEvent(QMediaDevices* self, QEvent* event);
+bool QMediaDevices_EventFilter(QMediaDevices* self, QObject* watched, QEvent* event);
+void QMediaDevices_OnEventFilter(QMediaDevices* self, intptr_t slot);
+bool QMediaDevices_SuperEventFilter(QMediaDevices* self, QObject* watched, QEvent* event);
+void QMediaDevices_TimerEvent(QMediaDevices* self, QTimerEvent* event);
+void QMediaDevices_OnTimerEvent(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_SuperTimerEvent(QMediaDevices* self, QTimerEvent* event);
+void QMediaDevices_ChildEvent(QMediaDevices* self, QChildEvent* event);
+void QMediaDevices_OnChildEvent(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_SuperChildEvent(QMediaDevices* self, QChildEvent* event);
+void QMediaDevices_CustomEvent(QMediaDevices* self, QEvent* event);
+void QMediaDevices_OnCustomEvent(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_SuperCustomEvent(QMediaDevices* self, QEvent* event);
+void QMediaDevices_DisconnectNotify(QMediaDevices* self, const QMetaMethod* signal);
+void QMediaDevices_OnDisconnectNotify(QMediaDevices* self, intptr_t slot);
+void QMediaDevices_SuperDisconnectNotify(QMediaDevices* self, const QMetaMethod* signal);
+QObject* QMediaDevices_Sender(const QMediaDevices* self);
+void QMediaDevices_OnSender(const QMediaDevices* self, intptr_t slot);
+QObject* QMediaDevices_SuperSender(const QMediaDevices* self);
+int QMediaDevices_SenderSignalIndex(const QMediaDevices* self);
+void QMediaDevices_OnSenderSignalIndex(const QMediaDevices* self, intptr_t slot);
+int QMediaDevices_SuperSenderSignalIndex(const QMediaDevices* self);
+int QMediaDevices_Receivers(const QMediaDevices* self, const char* signal);
+void QMediaDevices_OnReceivers(const QMediaDevices* self, intptr_t slot);
+int QMediaDevices_SuperReceivers(const QMediaDevices* self, const char* signal);
+bool QMediaDevices_IsSignalConnected(const QMediaDevices* self, const QMetaMethod* signal);
+void QMediaDevices_OnIsSignalConnected(const QMediaDevices* self, intptr_t slot);
+bool QMediaDevices_SuperIsSignalConnected(const QMediaDevices* self, const QMetaMethod* signal);
+void QMediaDevices_Delete(QMediaDevices* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

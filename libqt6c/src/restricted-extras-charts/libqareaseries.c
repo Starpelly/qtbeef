@@ -1,0 +1,764 @@
+#include "libqabstractseries.hpp"
+#include "../libqbrush.hpp"
+#include "../libqcoreevent.hpp"
+#include "../libqcolor.hpp"
+#include "../libqfont.hpp"
+#include "libqlineseries.hpp"
+#include "../libqmetaobject.hpp"
+#include "../libqobjectdefs.hpp"
+#include "../libqobject.hpp"
+#include "../libqpen.hpp"
+#include "../libqpoint.hpp"
+#include "libqareaseries.hpp"
+#include "libqareaseries.h"
+
+QAreaSeries* q_areaseries_new() {
+    return QAreaSeries_new();
+}
+
+QAreaSeries* q_areaseries_new2(void* upperSeries) {
+    return QAreaSeries_new2((QLineSeries*)upperSeries);
+}
+
+QAreaSeries* q_areaseries_new3(void* parent) {
+    return QAreaSeries_new3((QObject*)parent);
+}
+
+QAreaSeries* q_areaseries_new4(void* upperSeries, void* lowerSeries) {
+    return QAreaSeries_new4((QLineSeries*)upperSeries, (QLineSeries*)lowerSeries);
+}
+
+const QMetaObject* q_areaseries_meta_object(void* self) {
+    return QAreaSeries_MetaObject((QAreaSeries*)self);
+}
+
+void q_areaseries_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    QAreaSeries_OnMetaObject((QAreaSeries*)self, (intptr_t)callback);
+}
+
+const QMetaObject* q_areaseries_super_meta_object(void* self) {
+    return QAreaSeries_SuperMetaObject((QAreaSeries*)self);
+}
+
+void* q_areaseries_metacast(void* self, const char* param1) {
+    return QAreaSeries_Metacast((QAreaSeries*)self, param1);
+}
+
+void q_areaseries_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    QAreaSeries_OnMetacast((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void* q_areaseries_super_metacast(void* self, const char* param1) {
+    return QAreaSeries_SuperMetacast((QAreaSeries*)self, param1);
+}
+
+int32_t q_areaseries_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QAreaSeries_Metacall((QAreaSeries*)self, param1, param2, param3);
+}
+
+void q_areaseries_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    QAreaSeries_OnMetacall((QAreaSeries*)self, (intptr_t)callback);
+}
+
+int32_t q_areaseries_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QAreaSeries_SuperMetacall((QAreaSeries*)self, param1, param2, param3);
+}
+
+const char* q_areaseries_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+int32_t q_areaseries_type(void* self) {
+    return QAreaSeries_Type((QAreaSeries*)self);
+}
+
+void q_areaseries_on_type(void* self, int32_t (*callback)()) {
+    QAreaSeries_OnType((QAreaSeries*)self, (intptr_t)callback);
+}
+
+int32_t q_areaseries_super_type(void* self) {
+    return QAreaSeries_SuperType((QAreaSeries*)self);
+}
+
+void q_areaseries_set_upper_series(void* self, void* series) {
+    QAreaSeries_SetUpperSeries((QAreaSeries*)self, (QLineSeries*)series);
+}
+
+QLineSeries* q_areaseries_upper_series(void* self) {
+    return QAreaSeries_UpperSeries((QAreaSeries*)self);
+}
+
+void q_areaseries_set_lower_series(void* self, void* series) {
+    QAreaSeries_SetLowerSeries((QAreaSeries*)self, (QLineSeries*)series);
+}
+
+QLineSeries* q_areaseries_lower_series(void* self) {
+    return QAreaSeries_LowerSeries((QAreaSeries*)self);
+}
+
+void q_areaseries_set_pen(void* self, void* pen) {
+    QAreaSeries_SetPen((QAreaSeries*)self, (QPen*)pen);
+}
+
+QPen* q_areaseries_pen(void* self) {
+    return QAreaSeries_Pen((QAreaSeries*)self);
+}
+
+void q_areaseries_set_brush(void* self, void* brush) {
+    QAreaSeries_SetBrush((QAreaSeries*)self, (QBrush*)brush);
+}
+
+QBrush* q_areaseries_brush(void* self) {
+    return QAreaSeries_Brush((QAreaSeries*)self);
+}
+
+void q_areaseries_set_color(void* self, void* color) {
+    QAreaSeries_SetColor((QAreaSeries*)self, (QColor*)color);
+}
+
+QColor* q_areaseries_color(void* self) {
+    return QAreaSeries_Color((QAreaSeries*)self);
+}
+
+void q_areaseries_set_border_color(void* self, void* color) {
+    QAreaSeries_SetBorderColor((QAreaSeries*)self, (QColor*)color);
+}
+
+QColor* q_areaseries_border_color(void* self) {
+    return QAreaSeries_BorderColor((QAreaSeries*)self);
+}
+
+void q_areaseries_set_points_visible(void* self) {
+    QAreaSeries_SetPointsVisible((QAreaSeries*)self);
+}
+
+bool q_areaseries_points_visible(void* self) {
+    return QAreaSeries_PointsVisible((QAreaSeries*)self);
+}
+
+void q_areaseries_set_point_labels_format(void* self, const char* format) {
+    QAreaSeries_SetPointLabelsFormat((QAreaSeries*)self, qstring(format));
+}
+
+const char* q_areaseries_point_labels_format(void* self) {
+    libqt_string _str = QAreaSeries_PointLabelsFormat((QAreaSeries*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_areaseries_set_point_labels_visible(void* self) {
+    QAreaSeries_SetPointLabelsVisible((QAreaSeries*)self);
+}
+
+bool q_areaseries_point_labels_visible(void* self) {
+    return QAreaSeries_PointLabelsVisible((QAreaSeries*)self);
+}
+
+void q_areaseries_set_point_labels_font(void* self, void* font) {
+    QAreaSeries_SetPointLabelsFont((QAreaSeries*)self, (QFont*)font);
+}
+
+QFont* q_areaseries_point_labels_font(void* self) {
+    return QAreaSeries_PointLabelsFont((QAreaSeries*)self);
+}
+
+void q_areaseries_set_point_labels_color(void* self, void* color) {
+    QAreaSeries_SetPointLabelsColor((QAreaSeries*)self, (QColor*)color);
+}
+
+QColor* q_areaseries_point_labels_color(void* self) {
+    return QAreaSeries_PointLabelsColor((QAreaSeries*)self);
+}
+
+void q_areaseries_set_point_labels_clipping(void* self) {
+    QAreaSeries_SetPointLabelsClipping((QAreaSeries*)self);
+}
+
+bool q_areaseries_point_labels_clipping(void* self) {
+    return QAreaSeries_PointLabelsClipping((QAreaSeries*)self);
+}
+
+void q_areaseries_clicked(void* self, void* point) {
+    QAreaSeries_Clicked((QAreaSeries*)self, (QPointF*)point);
+}
+
+void q_areaseries_on_clicked(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_Clicked((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_hovered(void* self, void* point, bool state) {
+    QAreaSeries_Hovered((QAreaSeries*)self, (QPointF*)point, state);
+}
+
+void q_areaseries_on_hovered(void* self, void (*callback)(void*, void*, bool)) {
+    QAreaSeries_Connect_Hovered((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_pressed(void* self, void* point) {
+    QAreaSeries_Pressed((QAreaSeries*)self, (QPointF*)point);
+}
+
+void q_areaseries_on_pressed(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_Pressed((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_released(void* self, void* point) {
+    QAreaSeries_Released((QAreaSeries*)self, (QPointF*)point);
+}
+
+void q_areaseries_on_released(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_Released((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_double_clicked(void* self, void* point) {
+    QAreaSeries_DoubleClicked((QAreaSeries*)self, (QPointF*)point);
+}
+
+void q_areaseries_on_double_clicked(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_DoubleClicked((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_selected(void* self) {
+    QAreaSeries_Selected((QAreaSeries*)self);
+}
+
+void q_areaseries_on_selected(void* self, void (*callback)(void*)) {
+    QAreaSeries_Connect_Selected((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_color_changed(void* self, void* color) {
+    QAreaSeries_ColorChanged((QAreaSeries*)self, (QColor*)color);
+}
+
+void q_areaseries_on_color_changed(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_ColorChanged((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_border_color_changed(void* self, void* color) {
+    QAreaSeries_BorderColorChanged((QAreaSeries*)self, (QColor*)color);
+}
+
+void q_areaseries_on_border_color_changed(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_BorderColorChanged((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_point_labels_format_changed(void* self, const char* format) {
+    QAreaSeries_PointLabelsFormatChanged((QAreaSeries*)self, qstring(format));
+}
+
+void q_areaseries_on_point_labels_format_changed(void* self, void (*callback)(void*, const char*)) {
+    QAreaSeries_Connect_PointLabelsFormatChanged((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_point_labels_visibility_changed(void* self, bool visible) {
+    QAreaSeries_PointLabelsVisibilityChanged((QAreaSeries*)self, visible);
+}
+
+void q_areaseries_on_point_labels_visibility_changed(void* self, void (*callback)(void*, bool)) {
+    QAreaSeries_Connect_PointLabelsVisibilityChanged((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_point_labels_font_changed(void* self, void* font) {
+    QAreaSeries_PointLabelsFontChanged((QAreaSeries*)self, (QFont*)font);
+}
+
+void q_areaseries_on_point_labels_font_changed(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_PointLabelsFontChanged((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_point_labels_color_changed(void* self, void* color) {
+    QAreaSeries_PointLabelsColorChanged((QAreaSeries*)self, (QColor*)color);
+}
+
+void q_areaseries_on_point_labels_color_changed(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_Connect_PointLabelsColorChanged((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_point_labels_clipping_changed(void* self, bool clipping) {
+    QAreaSeries_PointLabelsClippingChanged((QAreaSeries*)self, clipping);
+}
+
+void q_areaseries_on_point_labels_clipping_changed(void* self, void (*callback)(void*, bool)) {
+    QAreaSeries_Connect_PointLabelsClippingChanged((QAreaSeries*)self, (intptr_t)callback);
+}
+
+const char* q_areaseries_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_areaseries_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_areaseries_set_points_visible1(void* self, bool visible) {
+    QAreaSeries_SetPointsVisible1((QAreaSeries*)self, visible);
+}
+
+void q_areaseries_set_point_labels_visible1(void* self, bool visible) {
+    QAreaSeries_SetPointLabelsVisible1((QAreaSeries*)self, visible);
+}
+
+void q_areaseries_set_point_labels_clipping1(void* self, bool enabled) {
+    QAreaSeries_SetPointLabelsClipping1((QAreaSeries*)self, enabled);
+}
+
+void q_areaseries_set_name(void* self, const char* name) {
+    QAbstractSeries_SetName((QAbstractSeries*)self, qstring(name));
+}
+
+const char* q_areaseries_name(void* self) {
+    libqt_string _str = QAbstractSeries_Name((QAbstractSeries*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_areaseries_set_visible(void* self) {
+    QAbstractSeries_SetVisible((QAbstractSeries*)self);
+}
+
+bool q_areaseries_is_visible(void* self) {
+    return QAbstractSeries_IsVisible((QAbstractSeries*)self);
+}
+
+double q_areaseries_opacity(void* self) {
+    return QAbstractSeries_Opacity((QAbstractSeries*)self);
+}
+
+void q_areaseries_set_opacity(void* self, double opacity) {
+    QAbstractSeries_SetOpacity((QAbstractSeries*)self, opacity);
+}
+
+void q_areaseries_set_use_open_g_l(void* self) {
+    QAbstractSeries_SetUseOpenGL((QAbstractSeries*)self);
+}
+
+bool q_areaseries_use_open_g_l(void* self) {
+    return QAbstractSeries_UseOpenGL((QAbstractSeries*)self);
+}
+
+QChart* q_areaseries_chart(void* self) {
+    return QAbstractSeries_Chart((QAbstractSeries*)self);
+}
+
+bool q_areaseries_attach_axis(void* self, void* axis) {
+    return QAbstractSeries_AttachAxis((QAbstractSeries*)self, (QAbstractAxis*)axis);
+}
+
+bool q_areaseries_detach_axis(void* self, void* axis) {
+    return QAbstractSeries_DetachAxis((QAbstractSeries*)self, (QAbstractAxis*)axis);
+}
+
+libqt_list /* of QAbstractAxis* */ q_areaseries_attached_axes(void* self) {
+    libqt_list _arr = QAbstractSeries_AttachedAxes((QAbstractSeries*)self);
+    return _arr;
+}
+
+void q_areaseries_show(void* self) {
+    QAbstractSeries_Show((QAbstractSeries*)self);
+}
+
+void q_areaseries_hide(void* self) {
+    QAbstractSeries_Hide((QAbstractSeries*)self);
+}
+
+void q_areaseries_name_changed(void* self) {
+    QAbstractSeries_NameChanged((QAbstractSeries*)self);
+}
+
+void q_areaseries_on_name_changed(void* self, void (*callback)(void*)) {
+    QAbstractSeries_Connect_NameChanged((QAbstractSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_visible_changed(void* self) {
+    QAbstractSeries_VisibleChanged((QAbstractSeries*)self);
+}
+
+void q_areaseries_on_visible_changed(void* self, void (*callback)(void*)) {
+    QAbstractSeries_Connect_VisibleChanged((QAbstractSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_opacity_changed(void* self) {
+    QAbstractSeries_OpacityChanged((QAbstractSeries*)self);
+}
+
+void q_areaseries_on_opacity_changed(void* self, void (*callback)(void*)) {
+    QAbstractSeries_Connect_OpacityChanged((QAbstractSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_use_open_g_l_changed(void* self) {
+    QAbstractSeries_UseOpenGLChanged((QAbstractSeries*)self);
+}
+
+void q_areaseries_on_use_open_g_l_changed(void* self, void (*callback)(void*)) {
+    QAbstractSeries_Connect_UseOpenGLChanged((QAbstractSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_set_visible1(void* self, bool visible) {
+    QAbstractSeries_SetVisible1((QAbstractSeries*)self, visible);
+}
+
+void q_areaseries_set_use_open_g_l1(void* self, bool enable) {
+    QAbstractSeries_SetUseOpenGL1((QAbstractSeries*)self, enable);
+}
+
+const char* q_areaseries_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_areaseries_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool q_areaseries_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool q_areaseries_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool q_areaseries_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool q_areaseries_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool q_areaseries_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* q_areaseries_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool q_areaseries_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t q_areaseries_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t q_areaseries_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void q_areaseries_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void q_areaseries_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ q_areaseries_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void q_areaseries_set_parent(void* self, void* parent) {
+    QObject_SetParent((QObject*)self, (QObject*)parent);
+}
+
+void q_areaseries_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void q_areaseries_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* q_areaseries_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* q_areaseries_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* q_areaseries_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool q_areaseries_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool q_areaseries_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool q_areaseries_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool q_areaseries_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool q_areaseries_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void q_areaseries_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void q_areaseries_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool q_areaseries_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* q_areaseries_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** q_areaseries_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_areaseries_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* q_areaseries_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* q_areaseries_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void q_areaseries_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void q_areaseries_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* q_areaseries_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool q_areaseries_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void q_areaseries_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t q_areaseries_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t q_areaseries_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* q_areaseries_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* q_areaseries_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* q_areaseries_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool q_areaseries_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool q_areaseries_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool q_areaseries_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool q_areaseries_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void q_areaseries_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void q_areaseries_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+bool q_areaseries_event(void* self, void* event) {
+    return QAreaSeries_Event((QAreaSeries*)self, (QEvent*)event);
+}
+
+bool q_areaseries_super_event(void* self, void* event) {
+    return QAreaSeries_SuperEvent((QAreaSeries*)self, (QEvent*)event);
+}
+
+void q_areaseries_on_event(void* self, bool (*callback)(void*, void*)) {
+    QAreaSeries_OnEvent((QAreaSeries*)self, (intptr_t)callback);
+}
+
+bool q_areaseries_event_filter(void* self, void* watched, void* event) {
+    return QAreaSeries_EventFilter((QAreaSeries*)self, (QObject*)watched, (QEvent*)event);
+}
+
+bool q_areaseries_super_event_filter(void* self, void* watched, void* event) {
+    return QAreaSeries_SuperEventFilter((QAreaSeries*)self, (QObject*)watched, (QEvent*)event);
+}
+
+void q_areaseries_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    QAreaSeries_OnEventFilter((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_timer_event(void* self, void* event) {
+    QAreaSeries_TimerEvent((QAreaSeries*)self, (QTimerEvent*)event);
+}
+
+void q_areaseries_super_timer_event(void* self, void* event) {
+    QAreaSeries_SuperTimerEvent((QAreaSeries*)self, (QTimerEvent*)event);
+}
+
+void q_areaseries_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_OnTimerEvent((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_child_event(void* self, void* event) {
+    QAreaSeries_ChildEvent((QAreaSeries*)self, (QChildEvent*)event);
+}
+
+void q_areaseries_super_child_event(void* self, void* event) {
+    QAreaSeries_SuperChildEvent((QAreaSeries*)self, (QChildEvent*)event);
+}
+
+void q_areaseries_on_child_event(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_OnChildEvent((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_custom_event(void* self, void* event) {
+    QAreaSeries_CustomEvent((QAreaSeries*)self, (QEvent*)event);
+}
+
+void q_areaseries_super_custom_event(void* self, void* event) {
+    QAreaSeries_SuperCustomEvent((QAreaSeries*)self, (QEvent*)event);
+}
+
+void q_areaseries_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_OnCustomEvent((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_connect_notify(void* self, void* signal) {
+    QAreaSeries_ConnectNotify((QAreaSeries*)self, (QMetaMethod*)signal);
+}
+
+void q_areaseries_super_connect_notify(void* self, void* signal) {
+    QAreaSeries_SuperConnectNotify((QAreaSeries*)self, (QMetaMethod*)signal);
+}
+
+void q_areaseries_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_OnConnectNotify((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_disconnect_notify(void* self, void* signal) {
+    QAreaSeries_DisconnectNotify((QAreaSeries*)self, (QMetaMethod*)signal);
+}
+
+void q_areaseries_super_disconnect_notify(void* self, void* signal) {
+    QAreaSeries_SuperDisconnectNotify((QAreaSeries*)self, (QMetaMethod*)signal);
+}
+
+void q_areaseries_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    QAreaSeries_OnDisconnectNotify((QAreaSeries*)self, (intptr_t)callback);
+}
+
+QObject* q_areaseries_sender(void* self) {
+    return QAreaSeries_Sender((QAreaSeries*)self);
+}
+
+QObject* q_areaseries_super_sender(void* self) {
+    return QAreaSeries_SuperSender((QAreaSeries*)self);
+}
+
+void q_areaseries_on_sender(void* self, QObject* (*callback)()) {
+    QAreaSeries_OnSender((QAreaSeries*)self, (intptr_t)callback);
+}
+
+int32_t q_areaseries_sender_signal_index(void* self) {
+    return QAreaSeries_SenderSignalIndex((QAreaSeries*)self);
+}
+
+int32_t q_areaseries_super_sender_signal_index(void* self) {
+    return QAreaSeries_SuperSenderSignalIndex((QAreaSeries*)self);
+}
+
+void q_areaseries_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    QAreaSeries_OnSenderSignalIndex((QAreaSeries*)self, (intptr_t)callback);
+}
+
+int32_t q_areaseries_receivers(void* self, const char* signal) {
+    return QAreaSeries_Receivers((QAreaSeries*)self, signal);
+}
+
+int32_t q_areaseries_super_receivers(void* self, const char* signal) {
+    return QAreaSeries_SuperReceivers((QAreaSeries*)self, signal);
+}
+
+void q_areaseries_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    QAreaSeries_OnReceivers((QAreaSeries*)self, (intptr_t)callback);
+}
+
+bool q_areaseries_is_signal_connected(void* self, void* signal) {
+    return QAreaSeries_IsSignalConnected((QAreaSeries*)self, (QMetaMethod*)signal);
+}
+
+bool q_areaseries_super_is_signal_connected(void* self, void* signal) {
+    return QAreaSeries_SuperIsSignalConnected((QAreaSeries*)self, (QMetaMethod*)signal);
+}
+
+void q_areaseries_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    QAreaSeries_OnIsSignalConnected((QAreaSeries*)self, (intptr_t)callback);
+}
+
+void q_areaseries_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void q_areaseries_delete(void* self) {
+    QAreaSeries_Delete((QAreaSeries*)(self));
+}

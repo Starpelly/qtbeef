@@ -1,0 +1,1016 @@
+#include "../libqcoreevent.hpp"
+#include "../libqcolor.hpp"
+#include "../libqfont.hpp"
+#include "../libqmetaobject.hpp"
+#include "../libqobjectdefs.hpp"
+#include "../libqobject.hpp"
+#include "../libqsettings.hpp"
+#include "libqscilexer.hpp"
+#include "libqsciscintilla.hpp"
+#include "libqscilexerhtml.hpp"
+#include "libqscilexerhtml.h"
+
+QsciLexerHTML* q_scilexerhtml_new() {
+    return QsciLexerHTML_new();
+}
+
+QsciLexerHTML* q_scilexerhtml_new2(void* parent) {
+    return QsciLexerHTML_new2((QObject*)parent);
+}
+
+const QMetaObject* q_scilexerhtml_meta_object(void* self) {
+    return QsciLexerHTML_MetaObject((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    QsciLexerHTML_OnMetaObject((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+const QMetaObject* q_scilexerhtml_super_meta_object(void* self) {
+    return QsciLexerHTML_SuperMetaObject((QsciLexerHTML*)self);
+}
+
+void* q_scilexerhtml_metacast(void* self, const char* param1) {
+    return QsciLexerHTML_Metacast((QsciLexerHTML*)self, param1);
+}
+
+void q_scilexerhtml_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    QsciLexerHTML_OnMetacast((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void* q_scilexerhtml_super_metacast(void* self, const char* param1) {
+    return QsciLexerHTML_SuperMetacast((QsciLexerHTML*)self, param1);
+}
+
+int32_t q_scilexerhtml_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QsciLexerHTML_Metacall((QsciLexerHTML*)self, param1, param2, param3);
+}
+
+void q_scilexerhtml_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    QsciLexerHTML_OnMetacall((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QsciLexerHTML_SuperMetacall((QsciLexerHTML*)self, param1, param2, param3);
+}
+
+const char* q_scilexerhtml_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_scilexerhtml_language(void* self) {
+    return QsciLexerHTML_Language((QsciLexerHTML*)self);
+}
+
+const char* q_scilexerhtml_lexer(void* self) {
+    return QsciLexerHTML_Lexer((QsciLexerHTML*)self);
+}
+
+const char* q_scilexerhtml_auto_completion_fillups(void* self) {
+    return QsciLexerHTML_AutoCompletionFillups((QsciLexerHTML*)self);
+}
+
+const char* q_scilexerhtml_word_characters(void* self) {
+    return QsciLexerHTML_WordCharacters((QsciLexerHTML*)self);
+}
+
+QColor* q_scilexerhtml_default_color(void* self, int style) {
+    return QsciLexerHTML_DefaultColor((QsciLexerHTML*)self, style);
+}
+
+bool q_scilexerhtml_default_eol_fill(void* self, int style) {
+    return QsciLexerHTML_DefaultEolFill((QsciLexerHTML*)self, style);
+}
+
+QFont* q_scilexerhtml_default_font(void* self, int style) {
+    return QsciLexerHTML_DefaultFont((QsciLexerHTML*)self, style);
+}
+
+QColor* q_scilexerhtml_default_paper(void* self, int style) {
+    return QsciLexerHTML_DefaultPaper((QsciLexerHTML*)self, style);
+}
+
+const char* q_scilexerhtml_keywords(void* self, int set) {
+    return QsciLexerHTML_Keywords((QsciLexerHTML*)self, set);
+}
+
+const char* q_scilexerhtml_description(void* self, int style) {
+    libqt_string _str = QsciLexerHTML_Description((QsciLexerHTML*)self, style);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_scilexerhtml_refresh_properties(void* self) {
+    QsciLexerHTML_RefreshProperties((QsciLexerHTML*)self);
+}
+
+bool q_scilexerhtml_case_sensitive_tags(void* self) {
+    return QsciLexerHTML_CaseSensitiveTags((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_set_django_templates(void* self, bool enabled) {
+    QsciLexerHTML_SetDjangoTemplates((QsciLexerHTML*)self, enabled);
+}
+
+bool q_scilexerhtml_django_templates(void* self) {
+    return QsciLexerHTML_DjangoTemplates((QsciLexerHTML*)self);
+}
+
+bool q_scilexerhtml_fold_compact(void* self) {
+    return QsciLexerHTML_FoldCompact((QsciLexerHTML*)self);
+}
+
+bool q_scilexerhtml_fold_preprocessor(void* self) {
+    return QsciLexerHTML_FoldPreprocessor((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_set_fold_script_comments(void* self, bool fold) {
+    QsciLexerHTML_SetFoldScriptComments((QsciLexerHTML*)self, fold);
+}
+
+bool q_scilexerhtml_fold_script_comments(void* self) {
+    return QsciLexerHTML_FoldScriptComments((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_set_fold_script_heredocs(void* self, bool fold) {
+    QsciLexerHTML_SetFoldScriptHeredocs((QsciLexerHTML*)self, fold);
+}
+
+bool q_scilexerhtml_fold_script_heredocs(void* self) {
+    return QsciLexerHTML_FoldScriptHeredocs((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_set_mako_templates(void* self, bool enabled) {
+    QsciLexerHTML_SetMakoTemplates((QsciLexerHTML*)self, enabled);
+}
+
+bool q_scilexerhtml_mako_templates(void* self) {
+    return QsciLexerHTML_MakoTemplates((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_set_fold_compact(void* self, bool fold) {
+    QsciLexerHTML_SetFoldCompact((QsciLexerHTML*)self, fold);
+}
+
+void q_scilexerhtml_on_set_fold_compact(void* self, void (*callback)(void*, bool)) {
+    QsciLexerHTML_OnSetFoldCompact((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_super_set_fold_compact(void* self, bool fold) {
+    QsciLexerHTML_SuperSetFoldCompact((QsciLexerHTML*)self, fold);
+}
+
+void q_scilexerhtml_set_fold_preprocessor(void* self, bool fold) {
+    QsciLexerHTML_SetFoldPreprocessor((QsciLexerHTML*)self, fold);
+}
+
+void q_scilexerhtml_on_set_fold_preprocessor(void* self, void (*callback)(void*, bool)) {
+    QsciLexerHTML_OnSetFoldPreprocessor((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_super_set_fold_preprocessor(void* self, bool fold) {
+    QsciLexerHTML_SuperSetFoldPreprocessor((QsciLexerHTML*)self, fold);
+}
+
+void q_scilexerhtml_set_case_sensitive_tags(void* self, bool sens) {
+    QsciLexerHTML_SetCaseSensitiveTags((QsciLexerHTML*)self, sens);
+}
+
+void q_scilexerhtml_on_set_case_sensitive_tags(void* self, void (*callback)(void*, bool)) {
+    QsciLexerHTML_OnSetCaseSensitiveTags((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_super_set_case_sensitive_tags(void* self, bool sens) {
+    QsciLexerHTML_SuperSetCaseSensitiveTags((QsciLexerHTML*)self, sens);
+}
+
+bool q_scilexerhtml_read_properties(void* self, void* qs, const char* prefix) {
+    return QsciLexerHTML_ReadProperties((QsciLexerHTML*)self, (QSettings*)qs, qstring(prefix));
+}
+
+void q_scilexerhtml_on_read_properties(void* self, bool (*callback)(void*, void*, const char*)) {
+    QsciLexerHTML_OnReadProperties((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_super_read_properties(void* self, void* qs, const char* prefix) {
+    return QsciLexerHTML_SuperReadProperties((QsciLexerHTML*)self, (QSettings*)qs, qstring(prefix));
+}
+
+bool q_scilexerhtml_write_properties(void* self, void* qs, const char* prefix) {
+    return QsciLexerHTML_WriteProperties((QsciLexerHTML*)self, (QSettings*)qs, qstring(prefix));
+}
+
+void q_scilexerhtml_on_write_properties(void* self, bool (*callback)(void*, void*, const char*)) {
+    QsciLexerHTML_OnWriteProperties((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_super_write_properties(void* self, void* qs, const char* prefix) {
+    return QsciLexerHTML_SuperWriteProperties((QsciLexerHTML*)self, (QSettings*)qs, qstring(prefix));
+}
+
+const char* q_scilexerhtml_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_scilexerhtml_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+QsciAbstractAPIs* q_scilexerhtml_apis(void* self) {
+    return QsciLexer_Apis((QsciLexer*)self);
+}
+
+int32_t q_scilexerhtml_auto_indent_style(void* self) {
+    return QsciLexer_AutoIndentStyle((QsciLexer*)self);
+}
+
+QsciScintilla* q_scilexerhtml_editor(void* self) {
+    return QsciLexer_Editor((QsciLexer*)self);
+}
+
+void q_scilexerhtml_set_a_p_is(void* self, void* apis) {
+    QsciLexer_SetAPIs((QsciLexer*)self, (QsciAbstractAPIs*)apis);
+}
+
+void q_scilexerhtml_set_default_color(void* self, void* c) {
+    QsciLexer_SetDefaultColor((QsciLexer*)self, (QColor*)c);
+}
+
+void q_scilexerhtml_set_default_font(void* self, void* f) {
+    QsciLexer_SetDefaultFont((QsciLexer*)self, (QFont*)f);
+}
+
+void q_scilexerhtml_set_default_paper(void* self, void* c) {
+    QsciLexer_SetDefaultPaper((QsciLexer*)self, (QColor*)c);
+}
+
+bool q_scilexerhtml_read_settings(void* self, void* qs) {
+    return QsciLexer_ReadSettings((QsciLexer*)self, (QSettings*)qs);
+}
+
+bool q_scilexerhtml_write_settings(void* self, void* qs) {
+    return QsciLexer_WriteSettings((QsciLexer*)self, (QSettings*)qs);
+}
+
+void q_scilexerhtml_color_changed(void* self, void* c, int style) {
+    QsciLexer_ColorChanged((QsciLexer*)self, (QColor*)c, style);
+}
+
+void q_scilexerhtml_on_color_changed(void* self, void (*callback)(void*, void*, int)) {
+    QsciLexer_Connect_ColorChanged((QsciLexer*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_eol_fill_changed(void* self, bool eolfilled, int style) {
+    QsciLexer_EolFillChanged((QsciLexer*)self, eolfilled, style);
+}
+
+void q_scilexerhtml_on_eol_fill_changed(void* self, void (*callback)(void*, bool, int)) {
+    QsciLexer_Connect_EolFillChanged((QsciLexer*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_font_changed(void* self, void* f, int style) {
+    QsciLexer_FontChanged((QsciLexer*)self, (QFont*)f, style);
+}
+
+void q_scilexerhtml_on_font_changed(void* self, void (*callback)(void*, void*, int)) {
+    QsciLexer_Connect_FontChanged((QsciLexer*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_paper_changed(void* self, void* c, int style) {
+    QsciLexer_PaperChanged((QsciLexer*)self, (QColor*)c, style);
+}
+
+void q_scilexerhtml_on_paper_changed(void* self, void (*callback)(void*, void*, int)) {
+    QsciLexer_Connect_PaperChanged((QsciLexer*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_property_changed(void* self, const char* prop, const char* val) {
+    QsciLexer_PropertyChanged((QsciLexer*)self, prop, val);
+}
+
+void q_scilexerhtml_on_property_changed(void* self, void (*callback)(void*, const char*, const char*)) {
+    QsciLexer_Connect_PropertyChanged((QsciLexer*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_read_settings2(void* self, void* qs, const char* prefix) {
+    return QsciLexer_ReadSettings2((QsciLexer*)self, (QSettings*)qs, prefix);
+}
+
+bool q_scilexerhtml_write_settings2(void* self, void* qs, const char* prefix) {
+    return QsciLexer_WriteSettings2((QsciLexer*)self, (QSettings*)qs, prefix);
+}
+
+const char* q_scilexerhtml_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_scilexerhtml_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool q_scilexerhtml_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool q_scilexerhtml_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool q_scilexerhtml_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool q_scilexerhtml_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool q_scilexerhtml_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* q_scilexerhtml_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool q_scilexerhtml_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t q_scilexerhtml_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t q_scilexerhtml_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void q_scilexerhtml_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void q_scilexerhtml_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ q_scilexerhtml_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void q_scilexerhtml_set_parent(void* self, void* parent) {
+    QObject_SetParent((QObject*)self, (QObject*)parent);
+}
+
+void q_scilexerhtml_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void q_scilexerhtml_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* q_scilexerhtml_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* q_scilexerhtml_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* q_scilexerhtml_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool q_scilexerhtml_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool q_scilexerhtml_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool q_scilexerhtml_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool q_scilexerhtml_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool q_scilexerhtml_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void q_scilexerhtml_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void q_scilexerhtml_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool q_scilexerhtml_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* q_scilexerhtml_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** q_scilexerhtml_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_scilexerhtml_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* q_scilexerhtml_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* q_scilexerhtml_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void q_scilexerhtml_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void q_scilexerhtml_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* q_scilexerhtml_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool q_scilexerhtml_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void q_scilexerhtml_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t q_scilexerhtml_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t q_scilexerhtml_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* q_scilexerhtml_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* q_scilexerhtml_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* q_scilexerhtml_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool q_scilexerhtml_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool q_scilexerhtml_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool q_scilexerhtml_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool q_scilexerhtml_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void q_scilexerhtml_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void q_scilexerhtml_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_lexer_id(void* self) {
+    return QsciLexerHTML_LexerId((QsciLexerHTML*)self);
+}
+
+int32_t q_scilexerhtml_super_lexer_id(void* self) {
+    return QsciLexerHTML_SuperLexerId((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_lexer_id(void* self, int32_t (*callback)()) {
+    QsciLexerHTML_OnLexerId((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+const char** q_scilexerhtml_auto_completion_word_separators(void* self) {
+    libqt_list _arr = QsciLexerHTML_AutoCompletionWordSeparators((QsciLexerHTML*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_scilexerhtml_auto_completion_word_separators\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+const char** q_scilexerhtml_super_auto_completion_word_separators(void* self) {
+    libqt_list _arr = QsciLexerHTML_SuperAutoCompletionWordSeparators((QsciLexerHTML*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_scilexerhtml_auto_completion_word_separators\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+void q_scilexerhtml_on_auto_completion_word_separators(void* self, const char** (*callback)()) {
+    QsciLexerHTML_OnAutoCompletionWordSeparators((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+const char* q_scilexerhtml_block_end(void* self, int* style) {
+    return QsciLexerHTML_BlockEnd((QsciLexerHTML*)self, style);
+}
+
+const char* q_scilexerhtml_super_block_end(void* self, int* style) {
+    return QsciLexerHTML_SuperBlockEnd((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_block_end(void* self, const char* (*callback)(void*, int*)) {
+    QsciLexerHTML_OnBlockEnd((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_block_lookback(void* self) {
+    return QsciLexerHTML_BlockLookback((QsciLexerHTML*)self);
+}
+
+int32_t q_scilexerhtml_super_block_lookback(void* self) {
+    return QsciLexerHTML_SuperBlockLookback((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_block_lookback(void* self, int32_t (*callback)()) {
+    QsciLexerHTML_OnBlockLookback((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+const char* q_scilexerhtml_block_start(void* self, int* style) {
+    return QsciLexerHTML_BlockStart((QsciLexerHTML*)self, style);
+}
+
+const char* q_scilexerhtml_super_block_start(void* self, int* style) {
+    return QsciLexerHTML_SuperBlockStart((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_block_start(void* self, const char* (*callback)(void*, int*)) {
+    QsciLexerHTML_OnBlockStart((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+const char* q_scilexerhtml_block_start_keyword(void* self, int* style) {
+    return QsciLexerHTML_BlockStartKeyword((QsciLexerHTML*)self, style);
+}
+
+const char* q_scilexerhtml_super_block_start_keyword(void* self, int* style) {
+    return QsciLexerHTML_SuperBlockStartKeyword((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_block_start_keyword(void* self, const char* (*callback)(void*, int*)) {
+    QsciLexerHTML_OnBlockStartKeyword((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_brace_style(void* self) {
+    return QsciLexerHTML_BraceStyle((QsciLexerHTML*)self);
+}
+
+int32_t q_scilexerhtml_super_brace_style(void* self) {
+    return QsciLexerHTML_SuperBraceStyle((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_brace_style(void* self, int32_t (*callback)()) {
+    QsciLexerHTML_OnBraceStyle((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_case_sensitive(void* self) {
+    return QsciLexerHTML_CaseSensitive((QsciLexerHTML*)self);
+}
+
+bool q_scilexerhtml_super_case_sensitive(void* self) {
+    return QsciLexerHTML_SuperCaseSensitive((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_case_sensitive(void* self, bool (*callback)()) {
+    QsciLexerHTML_OnCaseSensitive((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+QColor* q_scilexerhtml_color(void* self, int style) {
+    return QsciLexerHTML_Color((QsciLexerHTML*)self, style);
+}
+
+QColor* q_scilexerhtml_super_color(void* self, int style) {
+    return QsciLexerHTML_SuperColor((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_color(void* self, QColor* (*callback)(void*, int)) {
+    QsciLexerHTML_OnColor((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_eol_fill(void* self, int style) {
+    return QsciLexerHTML_EolFill((QsciLexerHTML*)self, style);
+}
+
+bool q_scilexerhtml_super_eol_fill(void* self, int style) {
+    return QsciLexerHTML_SuperEolFill((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_eol_fill(void* self, bool (*callback)(void*, int)) {
+    QsciLexerHTML_OnEolFill((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+QFont* q_scilexerhtml_font(void* self, int style) {
+    return QsciLexerHTML_Font((QsciLexerHTML*)self, style);
+}
+
+QFont* q_scilexerhtml_super_font(void* self, int style) {
+    return QsciLexerHTML_SuperFont((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_font(void* self, QFont* (*callback)(void*, int)) {
+    QsciLexerHTML_OnFont((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_indentation_guide_view(void* self) {
+    return QsciLexerHTML_IndentationGuideView((QsciLexerHTML*)self);
+}
+
+int32_t q_scilexerhtml_super_indentation_guide_view(void* self) {
+    return QsciLexerHTML_SuperIndentationGuideView((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_indentation_guide_view(void* self, int32_t (*callback)()) {
+    QsciLexerHTML_OnIndentationGuideView((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_default_style(void* self) {
+    return QsciLexerHTML_DefaultStyle((QsciLexerHTML*)self);
+}
+
+int32_t q_scilexerhtml_super_default_style(void* self) {
+    return QsciLexerHTML_SuperDefaultStyle((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_default_style(void* self, int32_t (*callback)()) {
+    QsciLexerHTML_OnDefaultStyle((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+QColor* q_scilexerhtml_paper(void* self, int style) {
+    return QsciLexerHTML_Paper((QsciLexerHTML*)self, style);
+}
+
+QColor* q_scilexerhtml_super_paper(void* self, int style) {
+    return QsciLexerHTML_SuperPaper((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_paper(void* self, QColor* (*callback)(void*, int)) {
+    QsciLexerHTML_OnPaper((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+QColor* q_scilexerhtml_default_color2(void* self, int style) {
+    return QsciLexerHTML_DefaultColor2((QsciLexerHTML*)self, style);
+}
+
+QColor* q_scilexerhtml_super_default_color2(void* self, int style) {
+    return QsciLexerHTML_SuperDefaultColor2((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_default_color2(void* self, QColor* (*callback)(void*, int)) {
+    QsciLexerHTML_OnDefaultColor2((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+QFont* q_scilexerhtml_default_font2(void* self, int style) {
+    return QsciLexerHTML_DefaultFont2((QsciLexerHTML*)self, style);
+}
+
+QFont* q_scilexerhtml_super_default_font2(void* self, int style) {
+    return QsciLexerHTML_SuperDefaultFont2((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_default_font2(void* self, QFont* (*callback)(void*, int)) {
+    QsciLexerHTML_OnDefaultFont2((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+QColor* q_scilexerhtml_default_paper2(void* self, int style) {
+    return QsciLexerHTML_DefaultPaper2((QsciLexerHTML*)self, style);
+}
+
+QColor* q_scilexerhtml_super_default_paper2(void* self, int style) {
+    return QsciLexerHTML_SuperDefaultPaper2((QsciLexerHTML*)self, style);
+}
+
+void q_scilexerhtml_on_default_paper2(void* self, QColor* (*callback)(void*, int)) {
+    QsciLexerHTML_OnDefaultPaper2((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_set_editor(void* self, void* editor) {
+    QsciLexerHTML_SetEditor((QsciLexerHTML*)self, (QsciScintilla*)editor);
+}
+
+void q_scilexerhtml_super_set_editor(void* self, void* editor) {
+    QsciLexerHTML_SuperSetEditor((QsciLexerHTML*)self, (QsciScintilla*)editor);
+}
+
+void q_scilexerhtml_on_set_editor(void* self, void (*callback)(void*, void*)) {
+    QsciLexerHTML_OnSetEditor((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_style_bits_needed(void* self) {
+    return QsciLexerHTML_StyleBitsNeeded((QsciLexerHTML*)self);
+}
+
+int32_t q_scilexerhtml_super_style_bits_needed(void* self) {
+    return QsciLexerHTML_SuperStyleBitsNeeded((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_style_bits_needed(void* self, int32_t (*callback)()) {
+    QsciLexerHTML_OnStyleBitsNeeded((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_set_auto_indent_style(void* self, int autoindentstyle) {
+    QsciLexerHTML_SetAutoIndentStyle((QsciLexerHTML*)self, autoindentstyle);
+}
+
+void q_scilexerhtml_super_set_auto_indent_style(void* self, int autoindentstyle) {
+    QsciLexerHTML_SuperSetAutoIndentStyle((QsciLexerHTML*)self, autoindentstyle);
+}
+
+void q_scilexerhtml_on_set_auto_indent_style(void* self, void (*callback)(void*, int)) {
+    QsciLexerHTML_OnSetAutoIndentStyle((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_set_color(void* self, void* c, int style) {
+    QsciLexerHTML_SetColor((QsciLexerHTML*)self, (QColor*)c, style);
+}
+
+void q_scilexerhtml_super_set_color(void* self, void* c, int style) {
+    QsciLexerHTML_SuperSetColor((QsciLexerHTML*)self, (QColor*)c, style);
+}
+
+void q_scilexerhtml_on_set_color(void* self, void (*callback)(void*, void*, int)) {
+    QsciLexerHTML_OnSetColor((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_set_eol_fill(void* self, bool eoffill, int style) {
+    QsciLexerHTML_SetEolFill((QsciLexerHTML*)self, eoffill, style);
+}
+
+void q_scilexerhtml_super_set_eol_fill(void* self, bool eoffill, int style) {
+    QsciLexerHTML_SuperSetEolFill((QsciLexerHTML*)self, eoffill, style);
+}
+
+void q_scilexerhtml_on_set_eol_fill(void* self, void (*callback)(void*, bool, int)) {
+    QsciLexerHTML_OnSetEolFill((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_set_font(void* self, void* f, int style) {
+    QsciLexerHTML_SetFont((QsciLexerHTML*)self, (QFont*)f, style);
+}
+
+void q_scilexerhtml_super_set_font(void* self, void* f, int style) {
+    QsciLexerHTML_SuperSetFont((QsciLexerHTML*)self, (QFont*)f, style);
+}
+
+void q_scilexerhtml_on_set_font(void* self, void (*callback)(void*, void*, int)) {
+    QsciLexerHTML_OnSetFont((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_set_paper(void* self, void* c, int style) {
+    QsciLexerHTML_SetPaper((QsciLexerHTML*)self, (QColor*)c, style);
+}
+
+void q_scilexerhtml_super_set_paper(void* self, void* c, int style) {
+    QsciLexerHTML_SuperSetPaper((QsciLexerHTML*)self, (QColor*)c, style);
+}
+
+void q_scilexerhtml_on_set_paper(void* self, void (*callback)(void*, void*, int)) {
+    QsciLexerHTML_OnSetPaper((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_event(void* self, void* event) {
+    return QsciLexerHTML_Event((QsciLexerHTML*)self, (QEvent*)event);
+}
+
+bool q_scilexerhtml_super_event(void* self, void* event) {
+    return QsciLexerHTML_SuperEvent((QsciLexerHTML*)self, (QEvent*)event);
+}
+
+void q_scilexerhtml_on_event(void* self, bool (*callback)(void*, void*)) {
+    QsciLexerHTML_OnEvent((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_event_filter(void* self, void* watched, void* event) {
+    return QsciLexerHTML_EventFilter((QsciLexerHTML*)self, (QObject*)watched, (QEvent*)event);
+}
+
+bool q_scilexerhtml_super_event_filter(void* self, void* watched, void* event) {
+    return QsciLexerHTML_SuperEventFilter((QsciLexerHTML*)self, (QObject*)watched, (QEvent*)event);
+}
+
+void q_scilexerhtml_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    QsciLexerHTML_OnEventFilter((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_timer_event(void* self, void* event) {
+    QsciLexerHTML_TimerEvent((QsciLexerHTML*)self, (QTimerEvent*)event);
+}
+
+void q_scilexerhtml_super_timer_event(void* self, void* event) {
+    QsciLexerHTML_SuperTimerEvent((QsciLexerHTML*)self, (QTimerEvent*)event);
+}
+
+void q_scilexerhtml_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    QsciLexerHTML_OnTimerEvent((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_child_event(void* self, void* event) {
+    QsciLexerHTML_ChildEvent((QsciLexerHTML*)self, (QChildEvent*)event);
+}
+
+void q_scilexerhtml_super_child_event(void* self, void* event) {
+    QsciLexerHTML_SuperChildEvent((QsciLexerHTML*)self, (QChildEvent*)event);
+}
+
+void q_scilexerhtml_on_child_event(void* self, void (*callback)(void*, void*)) {
+    QsciLexerHTML_OnChildEvent((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_custom_event(void* self, void* event) {
+    QsciLexerHTML_CustomEvent((QsciLexerHTML*)self, (QEvent*)event);
+}
+
+void q_scilexerhtml_super_custom_event(void* self, void* event) {
+    QsciLexerHTML_SuperCustomEvent((QsciLexerHTML*)self, (QEvent*)event);
+}
+
+void q_scilexerhtml_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    QsciLexerHTML_OnCustomEvent((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_connect_notify(void* self, void* signal) {
+    QsciLexerHTML_ConnectNotify((QsciLexerHTML*)self, (QMetaMethod*)signal);
+}
+
+void q_scilexerhtml_super_connect_notify(void* self, void* signal) {
+    QsciLexerHTML_SuperConnectNotify((QsciLexerHTML*)self, (QMetaMethod*)signal);
+}
+
+void q_scilexerhtml_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    QsciLexerHTML_OnConnectNotify((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_disconnect_notify(void* self, void* signal) {
+    QsciLexerHTML_DisconnectNotify((QsciLexerHTML*)self, (QMetaMethod*)signal);
+}
+
+void q_scilexerhtml_super_disconnect_notify(void* self, void* signal) {
+    QsciLexerHTML_SuperDisconnectNotify((QsciLexerHTML*)self, (QMetaMethod*)signal);
+}
+
+void q_scilexerhtml_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    QsciLexerHTML_OnDisconnectNotify((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+char* q_scilexerhtml_text_as_bytes(void* self, const char* text) {
+    libqt_string _str = QsciLexerHTML_TextAsBytes((QsciLexerHTML*)self, qstring(text));
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+char* q_scilexerhtml_super_text_as_bytes(void* self, const char* text) {
+    libqt_string _str = QsciLexerHTML_SuperTextAsBytes((QsciLexerHTML*)self, qstring(text));
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_scilexerhtml_on_text_as_bytes(void* self, libqt_string (*callback)(void*, const char*)) {
+    QsciLexerHTML_OnTextAsBytes((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+const char* q_scilexerhtml_bytes_as_text(void* self, const char* bytes, int size) {
+    libqt_string _str = QsciLexerHTML_BytesAsText((QsciLexerHTML*)self, bytes, size);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_scilexerhtml_super_bytes_as_text(void* self, const char* bytes, int size) {
+    libqt_string _str = QsciLexerHTML_SuperBytesAsText((QsciLexerHTML*)self, bytes, size);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_scilexerhtml_on_bytes_as_text(void* self, const char* (*callback)(void*, const char*, int)) {
+    QsciLexerHTML_OnBytesAsText((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+QObject* q_scilexerhtml_sender(void* self) {
+    return QsciLexerHTML_Sender((QsciLexerHTML*)self);
+}
+
+QObject* q_scilexerhtml_super_sender(void* self) {
+    return QsciLexerHTML_SuperSender((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_sender(void* self, QObject* (*callback)()) {
+    QsciLexerHTML_OnSender((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_sender_signal_index(void* self) {
+    return QsciLexerHTML_SenderSignalIndex((QsciLexerHTML*)self);
+}
+
+int32_t q_scilexerhtml_super_sender_signal_index(void* self) {
+    return QsciLexerHTML_SuperSenderSignalIndex((QsciLexerHTML*)self);
+}
+
+void q_scilexerhtml_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    QsciLexerHTML_OnSenderSignalIndex((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+int32_t q_scilexerhtml_receivers(void* self, const char* signal) {
+    return QsciLexerHTML_Receivers((QsciLexerHTML*)self, signal);
+}
+
+int32_t q_scilexerhtml_super_receivers(void* self, const char* signal) {
+    return QsciLexerHTML_SuperReceivers((QsciLexerHTML*)self, signal);
+}
+
+void q_scilexerhtml_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    QsciLexerHTML_OnReceivers((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+bool q_scilexerhtml_is_signal_connected(void* self, void* signal) {
+    return QsciLexerHTML_IsSignalConnected((QsciLexerHTML*)self, (QMetaMethod*)signal);
+}
+
+bool q_scilexerhtml_super_is_signal_connected(void* self, void* signal) {
+    return QsciLexerHTML_SuperIsSignalConnected((QsciLexerHTML*)self, (QMetaMethod*)signal);
+}
+
+void q_scilexerhtml_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    QsciLexerHTML_OnIsSignalConnected((QsciLexerHTML*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void q_scilexerhtml_delete(void* self) {
+    QsciLexerHTML_Delete((QsciLexerHTML*)(self));
+}

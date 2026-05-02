@@ -1,0 +1,264 @@
+#pragma once
+#ifndef SRCC_LIBQSTATUSBAR_HPP
+#define SRCC_LIBQSTATUSBAR_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QStatusBar QStatusBar;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+QStatusBar* QStatusBar_new(QWidget* parent);
+QStatusBar* QStatusBar_new2();
+QMetaObject* QStatusBar_MetaObject(const QStatusBar* self);
+void* QStatusBar_Metacast(QStatusBar* self, const char* param1);
+int QStatusBar_Metacall(QStatusBar* self, int param1, int param2, void** param3);
+void QStatusBar_AddWidget(QStatusBar* self, QWidget* widget);
+int QStatusBar_InsertWidget(QStatusBar* self, int index, QWidget* widget);
+void QStatusBar_AddPermanentWidget(QStatusBar* self, QWidget* widget);
+int QStatusBar_InsertPermanentWidget(QStatusBar* self, int index, QWidget* widget);
+void QStatusBar_RemoveWidget(QStatusBar* self, QWidget* widget);
+void QStatusBar_SetSizeGripEnabled(QStatusBar* self, bool sizeGripEnabled);
+bool QStatusBar_IsSizeGripEnabled(const QStatusBar* self);
+libqt_string QStatusBar_CurrentMessage(const QStatusBar* self);
+void QStatusBar_ShowMessage(QStatusBar* self, const libqt_string text);
+void QStatusBar_ClearMessage(QStatusBar* self);
+void QStatusBar_MessageChanged(QStatusBar* self, const libqt_string text);
+void QStatusBar_Connect_MessageChanged(QStatusBar* self, intptr_t slot);
+void QStatusBar_ShowEvent(QStatusBar* self, QShowEvent* param1);
+void QStatusBar_PaintEvent(QStatusBar* self, QPaintEvent* param1);
+void QStatusBar_ResizeEvent(QStatusBar* self, QResizeEvent* param1);
+bool QStatusBar_Event(QStatusBar* self, QEvent* param1);
+void QStatusBar_AddWidget2(QStatusBar* self, QWidget* widget, int stretch);
+int QStatusBar_InsertWidget3(QStatusBar* self, int index, QWidget* widget, int stretch);
+void QStatusBar_AddPermanentWidget2(QStatusBar* self, QWidget* widget, int stretch);
+int QStatusBar_InsertPermanentWidget3(QStatusBar* self, int index, QWidget* widget, int stretch);
+void QStatusBar_ShowMessage2(QStatusBar* self, const libqt_string text, int timeout);
+void QStatusBar_OnMetaObject(const QStatusBar* self, intptr_t slot);
+QMetaObject* QStatusBar_SuperMetaObject(const QStatusBar* self);
+void QStatusBar_OnMetacast(QStatusBar* self, intptr_t slot);
+void* QStatusBar_SuperMetacast(QStatusBar* self, const char* param1);
+void QStatusBar_OnMetacall(QStatusBar* self, intptr_t slot);
+int QStatusBar_SuperMetacall(QStatusBar* self, int param1, int param2, void** param3);
+void QStatusBar_OnShowEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperShowEvent(QStatusBar* self, QShowEvent* param1);
+void QStatusBar_OnPaintEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperPaintEvent(QStatusBar* self, QPaintEvent* param1);
+void QStatusBar_OnResizeEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperResizeEvent(QStatusBar* self, QResizeEvent* param1);
+void QStatusBar_OnEvent(QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperEvent(QStatusBar* self, QEvent* param1);
+int QStatusBar_DevType(const QStatusBar* self);
+void QStatusBar_OnDevType(const QStatusBar* self, intptr_t slot);
+int QStatusBar_SuperDevType(const QStatusBar* self);
+void QStatusBar_SetVisible(QStatusBar* self, bool visible);
+void QStatusBar_OnSetVisible(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperSetVisible(QStatusBar* self, bool visible);
+QSize* QStatusBar_SizeHint(const QStatusBar* self);
+void QStatusBar_OnSizeHint(const QStatusBar* self, intptr_t slot);
+QSize* QStatusBar_SuperSizeHint(const QStatusBar* self);
+QSize* QStatusBar_MinimumSizeHint(const QStatusBar* self);
+void QStatusBar_OnMinimumSizeHint(const QStatusBar* self, intptr_t slot);
+QSize* QStatusBar_SuperMinimumSizeHint(const QStatusBar* self);
+int QStatusBar_HeightForWidth(const QStatusBar* self, int param1);
+void QStatusBar_OnHeightForWidth(const QStatusBar* self, intptr_t slot);
+int QStatusBar_SuperHeightForWidth(const QStatusBar* self, int param1);
+bool QStatusBar_HasHeightForWidth(const QStatusBar* self);
+void QStatusBar_OnHasHeightForWidth(const QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperHasHeightForWidth(const QStatusBar* self);
+QPaintEngine* QStatusBar_PaintEngine(const QStatusBar* self);
+void QStatusBar_OnPaintEngine(const QStatusBar* self, intptr_t slot);
+QPaintEngine* QStatusBar_SuperPaintEngine(const QStatusBar* self);
+void QStatusBar_MousePressEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_OnMousePressEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperMousePressEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_MouseReleaseEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_OnMouseReleaseEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperMouseReleaseEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_MouseDoubleClickEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_OnMouseDoubleClickEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperMouseDoubleClickEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_MouseMoveEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_OnMouseMoveEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperMouseMoveEvent(QStatusBar* self, QMouseEvent* event);
+void QStatusBar_WheelEvent(QStatusBar* self, QWheelEvent* event);
+void QStatusBar_OnWheelEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperWheelEvent(QStatusBar* self, QWheelEvent* event);
+void QStatusBar_KeyPressEvent(QStatusBar* self, QKeyEvent* event);
+void QStatusBar_OnKeyPressEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperKeyPressEvent(QStatusBar* self, QKeyEvent* event);
+void QStatusBar_KeyReleaseEvent(QStatusBar* self, QKeyEvent* event);
+void QStatusBar_OnKeyReleaseEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperKeyReleaseEvent(QStatusBar* self, QKeyEvent* event);
+void QStatusBar_FocusInEvent(QStatusBar* self, QFocusEvent* event);
+void QStatusBar_OnFocusInEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperFocusInEvent(QStatusBar* self, QFocusEvent* event);
+void QStatusBar_FocusOutEvent(QStatusBar* self, QFocusEvent* event);
+void QStatusBar_OnFocusOutEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperFocusOutEvent(QStatusBar* self, QFocusEvent* event);
+void QStatusBar_EnterEvent(QStatusBar* self, QEnterEvent* event);
+void QStatusBar_OnEnterEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperEnterEvent(QStatusBar* self, QEnterEvent* event);
+void QStatusBar_LeaveEvent(QStatusBar* self, QEvent* event);
+void QStatusBar_OnLeaveEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperLeaveEvent(QStatusBar* self, QEvent* event);
+void QStatusBar_MoveEvent(QStatusBar* self, QMoveEvent* event);
+void QStatusBar_OnMoveEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperMoveEvent(QStatusBar* self, QMoveEvent* event);
+void QStatusBar_CloseEvent(QStatusBar* self, QCloseEvent* event);
+void QStatusBar_OnCloseEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperCloseEvent(QStatusBar* self, QCloseEvent* event);
+void QStatusBar_ContextMenuEvent(QStatusBar* self, QContextMenuEvent* event);
+void QStatusBar_OnContextMenuEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperContextMenuEvent(QStatusBar* self, QContextMenuEvent* event);
+void QStatusBar_TabletEvent(QStatusBar* self, QTabletEvent* event);
+void QStatusBar_OnTabletEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperTabletEvent(QStatusBar* self, QTabletEvent* event);
+void QStatusBar_ActionEvent(QStatusBar* self, QActionEvent* event);
+void QStatusBar_OnActionEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperActionEvent(QStatusBar* self, QActionEvent* event);
+void QStatusBar_DragEnterEvent(QStatusBar* self, QDragEnterEvent* event);
+void QStatusBar_OnDragEnterEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperDragEnterEvent(QStatusBar* self, QDragEnterEvent* event);
+void QStatusBar_DragMoveEvent(QStatusBar* self, QDragMoveEvent* event);
+void QStatusBar_OnDragMoveEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperDragMoveEvent(QStatusBar* self, QDragMoveEvent* event);
+void QStatusBar_DragLeaveEvent(QStatusBar* self, QDragLeaveEvent* event);
+void QStatusBar_OnDragLeaveEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperDragLeaveEvent(QStatusBar* self, QDragLeaveEvent* event);
+void QStatusBar_DropEvent(QStatusBar* self, QDropEvent* event);
+void QStatusBar_OnDropEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperDropEvent(QStatusBar* self, QDropEvent* event);
+void QStatusBar_HideEvent(QStatusBar* self, QHideEvent* event);
+void QStatusBar_OnHideEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperHideEvent(QStatusBar* self, QHideEvent* event);
+bool QStatusBar_NativeEvent(QStatusBar* self, const libqt_string eventType, void* message, intptr_t* result);
+void QStatusBar_OnNativeEvent(QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperNativeEvent(QStatusBar* self, const libqt_string eventType, void* message, intptr_t* result);
+void QStatusBar_ChangeEvent(QStatusBar* self, QEvent* param1);
+void QStatusBar_OnChangeEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperChangeEvent(QStatusBar* self, QEvent* param1);
+int QStatusBar_Metric(const QStatusBar* self, int param1);
+void QStatusBar_OnMetric(const QStatusBar* self, intptr_t slot);
+int QStatusBar_SuperMetric(const QStatusBar* self, int param1);
+void QStatusBar_InitPainter(const QStatusBar* self, QPainter* painter);
+void QStatusBar_OnInitPainter(const QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperInitPainter(const QStatusBar* self, QPainter* painter);
+QPaintDevice* QStatusBar_Redirected(const QStatusBar* self, QPoint* offset);
+void QStatusBar_OnRedirected(const QStatusBar* self, intptr_t slot);
+QPaintDevice* QStatusBar_SuperRedirected(const QStatusBar* self, QPoint* offset);
+QPainter* QStatusBar_SharedPainter(const QStatusBar* self);
+void QStatusBar_OnSharedPainter(const QStatusBar* self, intptr_t slot);
+QPainter* QStatusBar_SuperSharedPainter(const QStatusBar* self);
+void QStatusBar_InputMethodEvent(QStatusBar* self, QInputMethodEvent* param1);
+void QStatusBar_OnInputMethodEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperInputMethodEvent(QStatusBar* self, QInputMethodEvent* param1);
+QVariant* QStatusBar_InputMethodQuery(const QStatusBar* self, int param1);
+void QStatusBar_OnInputMethodQuery(const QStatusBar* self, intptr_t slot);
+QVariant* QStatusBar_SuperInputMethodQuery(const QStatusBar* self, int param1);
+bool QStatusBar_FocusNextPrevChild(QStatusBar* self, bool next);
+void QStatusBar_OnFocusNextPrevChild(QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperFocusNextPrevChild(QStatusBar* self, bool next);
+bool QStatusBar_EventFilter(QStatusBar* self, QObject* watched, QEvent* event);
+void QStatusBar_OnEventFilter(QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperEventFilter(QStatusBar* self, QObject* watched, QEvent* event);
+void QStatusBar_TimerEvent(QStatusBar* self, QTimerEvent* event);
+void QStatusBar_OnTimerEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperTimerEvent(QStatusBar* self, QTimerEvent* event);
+void QStatusBar_ChildEvent(QStatusBar* self, QChildEvent* event);
+void QStatusBar_OnChildEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperChildEvent(QStatusBar* self, QChildEvent* event);
+void QStatusBar_CustomEvent(QStatusBar* self, QEvent* event);
+void QStatusBar_OnCustomEvent(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperCustomEvent(QStatusBar* self, QEvent* event);
+void QStatusBar_ConnectNotify(QStatusBar* self, const QMetaMethod* signal);
+void QStatusBar_OnConnectNotify(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperConnectNotify(QStatusBar* self, const QMetaMethod* signal);
+void QStatusBar_DisconnectNotify(QStatusBar* self, const QMetaMethod* signal);
+void QStatusBar_OnDisconnectNotify(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperDisconnectNotify(QStatusBar* self, const QMetaMethod* signal);
+void QStatusBar_Reformat(QStatusBar* self);
+void QStatusBar_OnReformat(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperReformat(QStatusBar* self);
+void QStatusBar_HideOrShow(QStatusBar* self);
+void QStatusBar_OnHideOrShow(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperHideOrShow(QStatusBar* self);
+void QStatusBar_UpdateMicroFocus(QStatusBar* self);
+void QStatusBar_OnUpdateMicroFocus(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperUpdateMicroFocus(QStatusBar* self);
+void QStatusBar_Create(QStatusBar* self);
+void QStatusBar_OnCreate(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperCreate(QStatusBar* self);
+void QStatusBar_Destroy(QStatusBar* self);
+void QStatusBar_OnDestroy(QStatusBar* self, intptr_t slot);
+void QStatusBar_SuperDestroy(QStatusBar* self);
+bool QStatusBar_FocusNextChild(QStatusBar* self);
+void QStatusBar_OnFocusNextChild(QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperFocusNextChild(QStatusBar* self);
+bool QStatusBar_FocusPreviousChild(QStatusBar* self);
+void QStatusBar_OnFocusPreviousChild(QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperFocusPreviousChild(QStatusBar* self);
+QObject* QStatusBar_Sender(const QStatusBar* self);
+void QStatusBar_OnSender(const QStatusBar* self, intptr_t slot);
+QObject* QStatusBar_SuperSender(const QStatusBar* self);
+int QStatusBar_SenderSignalIndex(const QStatusBar* self);
+void QStatusBar_OnSenderSignalIndex(const QStatusBar* self, intptr_t slot);
+int QStatusBar_SuperSenderSignalIndex(const QStatusBar* self);
+int QStatusBar_Receivers(const QStatusBar* self, const char* signal);
+void QStatusBar_OnReceivers(const QStatusBar* self, intptr_t slot);
+int QStatusBar_SuperReceivers(const QStatusBar* self, const char* signal);
+bool QStatusBar_IsSignalConnected(const QStatusBar* self, const QMetaMethod* signal);
+void QStatusBar_OnIsSignalConnected(const QStatusBar* self, intptr_t slot);
+bool QStatusBar_SuperIsSignalConnected(const QStatusBar* self, const QMetaMethod* signal);
+double QStatusBar_GetDecodedMetricF(const QStatusBar* self, int metricA, int metricB);
+void QStatusBar_OnGetDecodedMetricF(const QStatusBar* self, intptr_t slot);
+double QStatusBar_SuperGetDecodedMetricF(const QStatusBar* self, int metricA, int metricB);
+void QStatusBar_Delete(QStatusBar* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

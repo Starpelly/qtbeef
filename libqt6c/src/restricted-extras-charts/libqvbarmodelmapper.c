@@ -1,0 +1,641 @@
+#include "libqabstractbarseries.hpp"
+#include "../libqabstractitemmodel.hpp"
+#include "libqbarmodelmapper.hpp"
+#include "../libqcoreevent.hpp"
+#include "../libqmetaobject.hpp"
+#include "../libqobjectdefs.hpp"
+#include "../libqobject.hpp"
+#include "libqvbarmodelmapper.hpp"
+#include "libqvbarmodelmapper.h"
+
+QVBarModelMapper* q_vbarmodelmapper_new() {
+    return QVBarModelMapper_new();
+}
+
+QVBarModelMapper* q_vbarmodelmapper_new2(void* parent) {
+    return QVBarModelMapper_new2((QObject*)parent);
+}
+
+const QMetaObject* q_vbarmodelmapper_meta_object(void* self) {
+    return QVBarModelMapper_MetaObject((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    QVBarModelMapper_OnMetaObject((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+const QMetaObject* q_vbarmodelmapper_super_meta_object(void* self) {
+    return QVBarModelMapper_SuperMetaObject((QVBarModelMapper*)self);
+}
+
+void* q_vbarmodelmapper_metacast(void* self, const char* param1) {
+    return QVBarModelMapper_Metacast((QVBarModelMapper*)self, param1);
+}
+
+void q_vbarmodelmapper_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    QVBarModelMapper_OnMetacast((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void* q_vbarmodelmapper_super_metacast(void* self, const char* param1) {
+    return QVBarModelMapper_SuperMetacast((QVBarModelMapper*)self, param1);
+}
+
+int32_t q_vbarmodelmapper_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QVBarModelMapper_Metacall((QVBarModelMapper*)self, param1, param2, param3);
+}
+
+void q_vbarmodelmapper_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    QVBarModelMapper_OnMetacall((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QVBarModelMapper_SuperMetacall((QVBarModelMapper*)self, param1, param2, param3);
+}
+
+const char* q_vbarmodelmapper_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+QAbstractItemModel* q_vbarmodelmapper_model(void* self) {
+    return QVBarModelMapper_Model((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_set_model(void* self, void* model) {
+    QVBarModelMapper_SetModel((QVBarModelMapper*)self, (QAbstractItemModel*)model);
+}
+
+QAbstractBarSeries* q_vbarmodelmapper_series(void* self) {
+    return QVBarModelMapper_Series((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_set_series(void* self, void* series) {
+    QVBarModelMapper_SetSeries((QVBarModelMapper*)self, (QAbstractBarSeries*)series);
+}
+
+int32_t q_vbarmodelmapper_first_bar_set_column(void* self) {
+    return QVBarModelMapper_FirstBarSetColumn((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_set_first_bar_set_column(void* self, int firstBarSetColumn) {
+    QVBarModelMapper_SetFirstBarSetColumn((QVBarModelMapper*)self, firstBarSetColumn);
+}
+
+int32_t q_vbarmodelmapper_last_bar_set_column(void* self) {
+    return QVBarModelMapper_LastBarSetColumn((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_set_last_bar_set_column(void* self, int lastBarSetColumn) {
+    QVBarModelMapper_SetLastBarSetColumn((QVBarModelMapper*)self, lastBarSetColumn);
+}
+
+int32_t q_vbarmodelmapper_first_row(void* self) {
+    return QVBarModelMapper_FirstRow((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_set_first_row(void* self, int firstRow) {
+    QVBarModelMapper_SetFirstRow((QVBarModelMapper*)self, firstRow);
+}
+
+int32_t q_vbarmodelmapper_row_count(void* self) {
+    return QVBarModelMapper_RowCount((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_set_row_count(void* self, int rowCount) {
+    QVBarModelMapper_SetRowCount((QVBarModelMapper*)self, rowCount);
+}
+
+void q_vbarmodelmapper_series_replaced(void* self) {
+    QVBarModelMapper_SeriesReplaced((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_series_replaced(void* self, void (*callback)(void*)) {
+    QVBarModelMapper_Connect_SeriesReplaced((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_model_replaced(void* self) {
+    QVBarModelMapper_ModelReplaced((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_model_replaced(void* self, void (*callback)(void*)) {
+    QVBarModelMapper_Connect_ModelReplaced((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_first_bar_set_column_changed(void* self) {
+    QVBarModelMapper_FirstBarSetColumnChanged((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_first_bar_set_column_changed(void* self, void (*callback)(void*)) {
+    QVBarModelMapper_Connect_FirstBarSetColumnChanged((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_last_bar_set_column_changed(void* self) {
+    QVBarModelMapper_LastBarSetColumnChanged((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_last_bar_set_column_changed(void* self, void (*callback)(void*)) {
+    QVBarModelMapper_Connect_LastBarSetColumnChanged((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_first_row_changed(void* self) {
+    QVBarModelMapper_FirstRowChanged((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_first_row_changed(void* self, void (*callback)(void*)) {
+    QVBarModelMapper_Connect_FirstRowChanged((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_row_count_changed(void* self) {
+    QVBarModelMapper_RowCountChanged((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_row_count_changed(void* self, void (*callback)(void*)) {
+    QVBarModelMapper_Connect_RowCountChanged((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+const char* q_vbarmodelmapper_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_vbarmodelmapper_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_vbarmodelmapper_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_vbarmodelmapper_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool q_vbarmodelmapper_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool q_vbarmodelmapper_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool q_vbarmodelmapper_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool q_vbarmodelmapper_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool q_vbarmodelmapper_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* q_vbarmodelmapper_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool q_vbarmodelmapper_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t q_vbarmodelmapper_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t q_vbarmodelmapper_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void q_vbarmodelmapper_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void q_vbarmodelmapper_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ q_vbarmodelmapper_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void q_vbarmodelmapper_set_parent(void* self, void* parent) {
+    QObject_SetParent((QObject*)self, (QObject*)parent);
+}
+
+void q_vbarmodelmapper_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void q_vbarmodelmapper_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* q_vbarmodelmapper_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* q_vbarmodelmapper_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* q_vbarmodelmapper_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool q_vbarmodelmapper_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool q_vbarmodelmapper_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool q_vbarmodelmapper_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool q_vbarmodelmapper_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool q_vbarmodelmapper_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void q_vbarmodelmapper_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void q_vbarmodelmapper_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool q_vbarmodelmapper_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* q_vbarmodelmapper_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** q_vbarmodelmapper_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_vbarmodelmapper_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* q_vbarmodelmapper_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* q_vbarmodelmapper_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void q_vbarmodelmapper_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void q_vbarmodelmapper_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* q_vbarmodelmapper_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool q_vbarmodelmapper_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void q_vbarmodelmapper_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t q_vbarmodelmapper_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t q_vbarmodelmapper_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* q_vbarmodelmapper_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* q_vbarmodelmapper_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* q_vbarmodelmapper_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool q_vbarmodelmapper_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool q_vbarmodelmapper_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool q_vbarmodelmapper_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool q_vbarmodelmapper_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void q_vbarmodelmapper_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void q_vbarmodelmapper_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+bool q_vbarmodelmapper_event(void* self, void* event) {
+    return QVBarModelMapper_Event((QVBarModelMapper*)self, (QEvent*)event);
+}
+
+bool q_vbarmodelmapper_super_event(void* self, void* event) {
+    return QVBarModelMapper_SuperEvent((QVBarModelMapper*)self, (QEvent*)event);
+}
+
+void q_vbarmodelmapper_on_event(void* self, bool (*callback)(void*, void*)) {
+    QVBarModelMapper_OnEvent((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+bool q_vbarmodelmapper_event_filter(void* self, void* watched, void* event) {
+    return QVBarModelMapper_EventFilter((QVBarModelMapper*)self, (QObject*)watched, (QEvent*)event);
+}
+
+bool q_vbarmodelmapper_super_event_filter(void* self, void* watched, void* event) {
+    return QVBarModelMapper_SuperEventFilter((QVBarModelMapper*)self, (QObject*)watched, (QEvent*)event);
+}
+
+void q_vbarmodelmapper_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    QVBarModelMapper_OnEventFilter((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_timer_event(void* self, void* event) {
+    QVBarModelMapper_TimerEvent((QVBarModelMapper*)self, (QTimerEvent*)event);
+}
+
+void q_vbarmodelmapper_super_timer_event(void* self, void* event) {
+    QVBarModelMapper_SuperTimerEvent((QVBarModelMapper*)self, (QTimerEvent*)event);
+}
+
+void q_vbarmodelmapper_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    QVBarModelMapper_OnTimerEvent((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_child_event(void* self, void* event) {
+    QVBarModelMapper_ChildEvent((QVBarModelMapper*)self, (QChildEvent*)event);
+}
+
+void q_vbarmodelmapper_super_child_event(void* self, void* event) {
+    QVBarModelMapper_SuperChildEvent((QVBarModelMapper*)self, (QChildEvent*)event);
+}
+
+void q_vbarmodelmapper_on_child_event(void* self, void (*callback)(void*, void*)) {
+    QVBarModelMapper_OnChildEvent((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_custom_event(void* self, void* event) {
+    QVBarModelMapper_CustomEvent((QVBarModelMapper*)self, (QEvent*)event);
+}
+
+void q_vbarmodelmapper_super_custom_event(void* self, void* event) {
+    QVBarModelMapper_SuperCustomEvent((QVBarModelMapper*)self, (QEvent*)event);
+}
+
+void q_vbarmodelmapper_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    QVBarModelMapper_OnCustomEvent((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_connect_notify(void* self, void* signal) {
+    QVBarModelMapper_ConnectNotify((QVBarModelMapper*)self, (QMetaMethod*)signal);
+}
+
+void q_vbarmodelmapper_super_connect_notify(void* self, void* signal) {
+    QVBarModelMapper_SuperConnectNotify((QVBarModelMapper*)self, (QMetaMethod*)signal);
+}
+
+void q_vbarmodelmapper_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    QVBarModelMapper_OnConnectNotify((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_disconnect_notify(void* self, void* signal) {
+    QVBarModelMapper_DisconnectNotify((QVBarModelMapper*)self, (QMetaMethod*)signal);
+}
+
+void q_vbarmodelmapper_super_disconnect_notify(void* self, void* signal) {
+    QVBarModelMapper_SuperDisconnectNotify((QVBarModelMapper*)self, (QMetaMethod*)signal);
+}
+
+void q_vbarmodelmapper_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    QVBarModelMapper_OnDisconnectNotify((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_first(void* self) {
+    return QVBarModelMapper_First((QVBarModelMapper*)self);
+}
+
+int32_t q_vbarmodelmapper_super_first(void* self) {
+    return QVBarModelMapper_SuperFirst((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_first(void* self, int32_t (*callback)()) {
+    QVBarModelMapper_OnFirst((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_set_first(void* self, int first) {
+    QVBarModelMapper_SetFirst((QVBarModelMapper*)self, first);
+}
+
+void q_vbarmodelmapper_super_set_first(void* self, int first) {
+    QVBarModelMapper_SuperSetFirst((QVBarModelMapper*)self, first);
+}
+
+void q_vbarmodelmapper_on_set_first(void* self, void (*callback)(void*, int)) {
+    QVBarModelMapper_OnSetFirst((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_count(void* self) {
+    return QVBarModelMapper_Count((QVBarModelMapper*)self);
+}
+
+int32_t q_vbarmodelmapper_super_count(void* self) {
+    return QVBarModelMapper_SuperCount((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_count(void* self, int32_t (*callback)()) {
+    QVBarModelMapper_OnCount((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_set_count(void* self, int count) {
+    QVBarModelMapper_SetCount((QVBarModelMapper*)self, count);
+}
+
+void q_vbarmodelmapper_super_set_count(void* self, int count) {
+    QVBarModelMapper_SuperSetCount((QVBarModelMapper*)self, count);
+}
+
+void q_vbarmodelmapper_on_set_count(void* self, void (*callback)(void*, int)) {
+    QVBarModelMapper_OnSetCount((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_first_bar_set_section(void* self) {
+    return QVBarModelMapper_FirstBarSetSection((QVBarModelMapper*)self);
+}
+
+int32_t q_vbarmodelmapper_super_first_bar_set_section(void* self) {
+    return QVBarModelMapper_SuperFirstBarSetSection((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_first_bar_set_section(void* self, int32_t (*callback)()) {
+    QVBarModelMapper_OnFirstBarSetSection((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_set_first_bar_set_section(void* self, int firstBarSetSection) {
+    QVBarModelMapper_SetFirstBarSetSection((QVBarModelMapper*)self, firstBarSetSection);
+}
+
+void q_vbarmodelmapper_super_set_first_bar_set_section(void* self, int firstBarSetSection) {
+    QVBarModelMapper_SuperSetFirstBarSetSection((QVBarModelMapper*)self, firstBarSetSection);
+}
+
+void q_vbarmodelmapper_on_set_first_bar_set_section(void* self, void (*callback)(void*, int)) {
+    QVBarModelMapper_OnSetFirstBarSetSection((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_last_bar_set_section(void* self) {
+    return QVBarModelMapper_LastBarSetSection((QVBarModelMapper*)self);
+}
+
+int32_t q_vbarmodelmapper_super_last_bar_set_section(void* self) {
+    return QVBarModelMapper_SuperLastBarSetSection((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_last_bar_set_section(void* self, int32_t (*callback)()) {
+    QVBarModelMapper_OnLastBarSetSection((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_set_last_bar_set_section(void* self, int lastBarSetSection) {
+    QVBarModelMapper_SetLastBarSetSection((QVBarModelMapper*)self, lastBarSetSection);
+}
+
+void q_vbarmodelmapper_super_set_last_bar_set_section(void* self, int lastBarSetSection) {
+    QVBarModelMapper_SuperSetLastBarSetSection((QVBarModelMapper*)self, lastBarSetSection);
+}
+
+void q_vbarmodelmapper_on_set_last_bar_set_section(void* self, void (*callback)(void*, int)) {
+    QVBarModelMapper_OnSetLastBarSetSection((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_orientation(void* self) {
+    return QVBarModelMapper_Orientation((QVBarModelMapper*)self);
+}
+
+int32_t q_vbarmodelmapper_super_orientation(void* self) {
+    return QVBarModelMapper_SuperOrientation((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_orientation(void* self, int32_t (*callback)()) {
+    QVBarModelMapper_OnOrientation((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_set_orientation(void* self, int32_t orientation) {
+    QVBarModelMapper_SetOrientation((QVBarModelMapper*)self, orientation);
+}
+
+void q_vbarmodelmapper_super_set_orientation(void* self, int32_t orientation) {
+    QVBarModelMapper_SuperSetOrientation((QVBarModelMapper*)self, orientation);
+}
+
+void q_vbarmodelmapper_on_set_orientation(void* self, void (*callback)(void*, int32_t)) {
+    QVBarModelMapper_OnSetOrientation((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+QObject* q_vbarmodelmapper_sender(void* self) {
+    return QVBarModelMapper_Sender((QVBarModelMapper*)self);
+}
+
+QObject* q_vbarmodelmapper_super_sender(void* self) {
+    return QVBarModelMapper_SuperSender((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_sender(void* self, QObject* (*callback)()) {
+    QVBarModelMapper_OnSender((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_sender_signal_index(void* self) {
+    return QVBarModelMapper_SenderSignalIndex((QVBarModelMapper*)self);
+}
+
+int32_t q_vbarmodelmapper_super_sender_signal_index(void* self) {
+    return QVBarModelMapper_SuperSenderSignalIndex((QVBarModelMapper*)self);
+}
+
+void q_vbarmodelmapper_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    QVBarModelMapper_OnSenderSignalIndex((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+int32_t q_vbarmodelmapper_receivers(void* self, const char* signal) {
+    return QVBarModelMapper_Receivers((QVBarModelMapper*)self, signal);
+}
+
+int32_t q_vbarmodelmapper_super_receivers(void* self, const char* signal) {
+    return QVBarModelMapper_SuperReceivers((QVBarModelMapper*)self, signal);
+}
+
+void q_vbarmodelmapper_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    QVBarModelMapper_OnReceivers((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+bool q_vbarmodelmapper_is_signal_connected(void* self, void* signal) {
+    return QVBarModelMapper_IsSignalConnected((QVBarModelMapper*)self, (QMetaMethod*)signal);
+}
+
+bool q_vbarmodelmapper_super_is_signal_connected(void* self, void* signal) {
+    return QVBarModelMapper_SuperIsSignalConnected((QVBarModelMapper*)self, (QMetaMethod*)signal);
+}
+
+void q_vbarmodelmapper_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    QVBarModelMapper_OnIsSignalConnected((QVBarModelMapper*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void q_vbarmodelmapper_delete(void* self) {
+    QVBarModelMapper_Delete((QVBarModelMapper*)(self));
+}

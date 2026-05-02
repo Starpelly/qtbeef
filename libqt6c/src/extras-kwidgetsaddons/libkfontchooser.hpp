@@ -1,0 +1,262 @@
+#pragma once
+#ifndef SRC_EXTRAS_KWIDGETSADDONSC_LIBKFONTCHOOSER_HPP
+#define SRC_EXTRAS_KWIDGETSADDONSC_LIBKFONTCHOOSER_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KFontChooser KFontChooser;
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QColor QColor;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QFont QFont;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+KFontChooser* KFontChooser_new(QWidget* parent);
+KFontChooser* KFontChooser_new2();
+KFontChooser* KFontChooser_new3(int flags);
+KFontChooser* KFontChooser_new4(int flags, QWidget* parent);
+QMetaObject* KFontChooser_MetaObject(const KFontChooser* self);
+void* KFontChooser_Metacast(KFontChooser* self, const char* param1);
+int KFontChooser_Metacall(KFontChooser* self, int param1, int param2, void** param3);
+void KFontChooser_EnableColumn(KFontChooser* self, int column, bool state);
+void KFontChooser_SetFont(KFontChooser* self, const QFont* font);
+int KFontChooser_FontDiffFlags(const KFontChooser* self);
+QFont* KFontChooser_Font(const KFontChooser* self);
+void KFontChooser_SetColor(KFontChooser* self, const QColor* col);
+QColor* KFontChooser_Color(const KFontChooser* self);
+void KFontChooser_SetBackgroundColor(KFontChooser* self, const QColor* col);
+QColor* KFontChooser_BackgroundColor(const KFontChooser* self);
+libqt_string KFontChooser_SampleText(const KFontChooser* self);
+void KFontChooser_SetSampleText(KFontChooser* self, const libqt_string text);
+void KFontChooser_SetSampleBoxVisible(KFontChooser* self, bool visible);
+libqt_list /* of libqt_string */ KFontChooser_CreateFontList(unsigned int fontListCriteria);
+void KFontChooser_SetFontListItems(KFontChooser* self, const libqt_list /* of libqt_string */ fontList);
+void KFontChooser_SetMinVisibleItems(KFontChooser* self, int visibleItems);
+QSize* KFontChooser_SizeHint(const KFontChooser* self);
+void KFontChooser_FontSelected(KFontChooser* self, const QFont* font);
+void KFontChooser_Connect_FontSelected(KFontChooser* self, intptr_t slot);
+void KFontChooser_SetFont2(KFontChooser* self, const QFont* font, bool onlyFixed);
+void KFontChooser_OnMetaObject(const KFontChooser* self, intptr_t slot);
+QMetaObject* KFontChooser_SuperMetaObject(const KFontChooser* self);
+void KFontChooser_OnMetacast(KFontChooser* self, intptr_t slot);
+void* KFontChooser_SuperMetacast(KFontChooser* self, const char* param1);
+void KFontChooser_OnMetacall(KFontChooser* self, intptr_t slot);
+int KFontChooser_SuperMetacall(KFontChooser* self, int param1, int param2, void** param3);
+void KFontChooser_OnSizeHint(const KFontChooser* self, intptr_t slot);
+QSize* KFontChooser_SuperSizeHint(const KFontChooser* self);
+int KFontChooser_DevType(const KFontChooser* self);
+void KFontChooser_OnDevType(const KFontChooser* self, intptr_t slot);
+int KFontChooser_SuperDevType(const KFontChooser* self);
+void KFontChooser_SetVisible(KFontChooser* self, bool visible);
+void KFontChooser_OnSetVisible(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperSetVisible(KFontChooser* self, bool visible);
+QSize* KFontChooser_MinimumSizeHint(const KFontChooser* self);
+void KFontChooser_OnMinimumSizeHint(const KFontChooser* self, intptr_t slot);
+QSize* KFontChooser_SuperMinimumSizeHint(const KFontChooser* self);
+int KFontChooser_HeightForWidth(const KFontChooser* self, int param1);
+void KFontChooser_OnHeightForWidth(const KFontChooser* self, intptr_t slot);
+int KFontChooser_SuperHeightForWidth(const KFontChooser* self, int param1);
+bool KFontChooser_HasHeightForWidth(const KFontChooser* self);
+void KFontChooser_OnHasHeightForWidth(const KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperHasHeightForWidth(const KFontChooser* self);
+QPaintEngine* KFontChooser_PaintEngine(const KFontChooser* self);
+void KFontChooser_OnPaintEngine(const KFontChooser* self, intptr_t slot);
+QPaintEngine* KFontChooser_SuperPaintEngine(const KFontChooser* self);
+bool KFontChooser_Event(KFontChooser* self, QEvent* event);
+void KFontChooser_OnEvent(KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperEvent(KFontChooser* self, QEvent* event);
+void KFontChooser_MousePressEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_OnMousePressEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperMousePressEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_MouseReleaseEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_OnMouseReleaseEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperMouseReleaseEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_MouseDoubleClickEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_OnMouseDoubleClickEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperMouseDoubleClickEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_MouseMoveEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_OnMouseMoveEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperMouseMoveEvent(KFontChooser* self, QMouseEvent* event);
+void KFontChooser_WheelEvent(KFontChooser* self, QWheelEvent* event);
+void KFontChooser_OnWheelEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperWheelEvent(KFontChooser* self, QWheelEvent* event);
+void KFontChooser_KeyPressEvent(KFontChooser* self, QKeyEvent* event);
+void KFontChooser_OnKeyPressEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperKeyPressEvent(KFontChooser* self, QKeyEvent* event);
+void KFontChooser_KeyReleaseEvent(KFontChooser* self, QKeyEvent* event);
+void KFontChooser_OnKeyReleaseEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperKeyReleaseEvent(KFontChooser* self, QKeyEvent* event);
+void KFontChooser_FocusInEvent(KFontChooser* self, QFocusEvent* event);
+void KFontChooser_OnFocusInEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperFocusInEvent(KFontChooser* self, QFocusEvent* event);
+void KFontChooser_FocusOutEvent(KFontChooser* self, QFocusEvent* event);
+void KFontChooser_OnFocusOutEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperFocusOutEvent(KFontChooser* self, QFocusEvent* event);
+void KFontChooser_EnterEvent(KFontChooser* self, QEnterEvent* event);
+void KFontChooser_OnEnterEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperEnterEvent(KFontChooser* self, QEnterEvent* event);
+void KFontChooser_LeaveEvent(KFontChooser* self, QEvent* event);
+void KFontChooser_OnLeaveEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperLeaveEvent(KFontChooser* self, QEvent* event);
+void KFontChooser_PaintEvent(KFontChooser* self, QPaintEvent* event);
+void KFontChooser_OnPaintEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperPaintEvent(KFontChooser* self, QPaintEvent* event);
+void KFontChooser_MoveEvent(KFontChooser* self, QMoveEvent* event);
+void KFontChooser_OnMoveEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperMoveEvent(KFontChooser* self, QMoveEvent* event);
+void KFontChooser_ResizeEvent(KFontChooser* self, QResizeEvent* event);
+void KFontChooser_OnResizeEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperResizeEvent(KFontChooser* self, QResizeEvent* event);
+void KFontChooser_CloseEvent(KFontChooser* self, QCloseEvent* event);
+void KFontChooser_OnCloseEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperCloseEvent(KFontChooser* self, QCloseEvent* event);
+void KFontChooser_ContextMenuEvent(KFontChooser* self, QContextMenuEvent* event);
+void KFontChooser_OnContextMenuEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperContextMenuEvent(KFontChooser* self, QContextMenuEvent* event);
+void KFontChooser_TabletEvent(KFontChooser* self, QTabletEvent* event);
+void KFontChooser_OnTabletEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperTabletEvent(KFontChooser* self, QTabletEvent* event);
+void KFontChooser_ActionEvent(KFontChooser* self, QActionEvent* event);
+void KFontChooser_OnActionEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperActionEvent(KFontChooser* self, QActionEvent* event);
+void KFontChooser_DragEnterEvent(KFontChooser* self, QDragEnterEvent* event);
+void KFontChooser_OnDragEnterEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperDragEnterEvent(KFontChooser* self, QDragEnterEvent* event);
+void KFontChooser_DragMoveEvent(KFontChooser* self, QDragMoveEvent* event);
+void KFontChooser_OnDragMoveEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperDragMoveEvent(KFontChooser* self, QDragMoveEvent* event);
+void KFontChooser_DragLeaveEvent(KFontChooser* self, QDragLeaveEvent* event);
+void KFontChooser_OnDragLeaveEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperDragLeaveEvent(KFontChooser* self, QDragLeaveEvent* event);
+void KFontChooser_DropEvent(KFontChooser* self, QDropEvent* event);
+void KFontChooser_OnDropEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperDropEvent(KFontChooser* self, QDropEvent* event);
+void KFontChooser_ShowEvent(KFontChooser* self, QShowEvent* event);
+void KFontChooser_OnShowEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperShowEvent(KFontChooser* self, QShowEvent* event);
+void KFontChooser_HideEvent(KFontChooser* self, QHideEvent* event);
+void KFontChooser_OnHideEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperHideEvent(KFontChooser* self, QHideEvent* event);
+bool KFontChooser_NativeEvent(KFontChooser* self, const libqt_string eventType, void* message, intptr_t* result);
+void KFontChooser_OnNativeEvent(KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperNativeEvent(KFontChooser* self, const libqt_string eventType, void* message, intptr_t* result);
+void KFontChooser_ChangeEvent(KFontChooser* self, QEvent* param1);
+void KFontChooser_OnChangeEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperChangeEvent(KFontChooser* self, QEvent* param1);
+int KFontChooser_Metric(const KFontChooser* self, int param1);
+void KFontChooser_OnMetric(const KFontChooser* self, intptr_t slot);
+int KFontChooser_SuperMetric(const KFontChooser* self, int param1);
+void KFontChooser_InitPainter(const KFontChooser* self, QPainter* painter);
+void KFontChooser_OnInitPainter(const KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperInitPainter(const KFontChooser* self, QPainter* painter);
+QPaintDevice* KFontChooser_Redirected(const KFontChooser* self, QPoint* offset);
+void KFontChooser_OnRedirected(const KFontChooser* self, intptr_t slot);
+QPaintDevice* KFontChooser_SuperRedirected(const KFontChooser* self, QPoint* offset);
+QPainter* KFontChooser_SharedPainter(const KFontChooser* self);
+void KFontChooser_OnSharedPainter(const KFontChooser* self, intptr_t slot);
+QPainter* KFontChooser_SuperSharedPainter(const KFontChooser* self);
+void KFontChooser_InputMethodEvent(KFontChooser* self, QInputMethodEvent* param1);
+void KFontChooser_OnInputMethodEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperInputMethodEvent(KFontChooser* self, QInputMethodEvent* param1);
+QVariant* KFontChooser_InputMethodQuery(const KFontChooser* self, int param1);
+void KFontChooser_OnInputMethodQuery(const KFontChooser* self, intptr_t slot);
+QVariant* KFontChooser_SuperInputMethodQuery(const KFontChooser* self, int param1);
+bool KFontChooser_FocusNextPrevChild(KFontChooser* self, bool next);
+void KFontChooser_OnFocusNextPrevChild(KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperFocusNextPrevChild(KFontChooser* self, bool next);
+bool KFontChooser_EventFilter(KFontChooser* self, QObject* watched, QEvent* event);
+void KFontChooser_OnEventFilter(KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperEventFilter(KFontChooser* self, QObject* watched, QEvent* event);
+void KFontChooser_TimerEvent(KFontChooser* self, QTimerEvent* event);
+void KFontChooser_OnTimerEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperTimerEvent(KFontChooser* self, QTimerEvent* event);
+void KFontChooser_ChildEvent(KFontChooser* self, QChildEvent* event);
+void KFontChooser_OnChildEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperChildEvent(KFontChooser* self, QChildEvent* event);
+void KFontChooser_CustomEvent(KFontChooser* self, QEvent* event);
+void KFontChooser_OnCustomEvent(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperCustomEvent(KFontChooser* self, QEvent* event);
+void KFontChooser_ConnectNotify(KFontChooser* self, const QMetaMethod* signal);
+void KFontChooser_OnConnectNotify(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperConnectNotify(KFontChooser* self, const QMetaMethod* signal);
+void KFontChooser_DisconnectNotify(KFontChooser* self, const QMetaMethod* signal);
+void KFontChooser_OnDisconnectNotify(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperDisconnectNotify(KFontChooser* self, const QMetaMethod* signal);
+void KFontChooser_UpdateMicroFocus(KFontChooser* self);
+void KFontChooser_OnUpdateMicroFocus(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperUpdateMicroFocus(KFontChooser* self);
+void KFontChooser_Create(KFontChooser* self);
+void KFontChooser_OnCreate(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperCreate(KFontChooser* self);
+void KFontChooser_Destroy(KFontChooser* self);
+void KFontChooser_OnDestroy(KFontChooser* self, intptr_t slot);
+void KFontChooser_SuperDestroy(KFontChooser* self);
+bool KFontChooser_FocusNextChild(KFontChooser* self);
+void KFontChooser_OnFocusNextChild(KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperFocusNextChild(KFontChooser* self);
+bool KFontChooser_FocusPreviousChild(KFontChooser* self);
+void KFontChooser_OnFocusPreviousChild(KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperFocusPreviousChild(KFontChooser* self);
+QObject* KFontChooser_Sender(const KFontChooser* self);
+void KFontChooser_OnSender(const KFontChooser* self, intptr_t slot);
+QObject* KFontChooser_SuperSender(const KFontChooser* self);
+int KFontChooser_SenderSignalIndex(const KFontChooser* self);
+void KFontChooser_OnSenderSignalIndex(const KFontChooser* self, intptr_t slot);
+int KFontChooser_SuperSenderSignalIndex(const KFontChooser* self);
+int KFontChooser_Receivers(const KFontChooser* self, const char* signal);
+void KFontChooser_OnReceivers(const KFontChooser* self, intptr_t slot);
+int KFontChooser_SuperReceivers(const KFontChooser* self, const char* signal);
+bool KFontChooser_IsSignalConnected(const KFontChooser* self, const QMetaMethod* signal);
+void KFontChooser_OnIsSignalConnected(const KFontChooser* self, intptr_t slot);
+bool KFontChooser_SuperIsSignalConnected(const KFontChooser* self, const QMetaMethod* signal);
+double KFontChooser_GetDecodedMetricF(const KFontChooser* self, int metricA, int metricB);
+void KFontChooser_OnGetDecodedMetricF(const KFontChooser* self, intptr_t slot);
+double KFontChooser_SuperGetDecodedMetricF(const KFontChooser* self, int metricA, int metricB);
+void KFontChooser_Delete(KFontChooser* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

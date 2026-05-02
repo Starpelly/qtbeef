@@ -1,0 +1,210 @@
+#include <QDBusAbstractInterface>
+#include <QDBusAbstractInterfaceBase>
+#include <QDBusConnectionInterface>
+#include <QDBusError>
+#include <QDBusMessage>
+#include <QMetaMethod>
+#include <QMetaObject>
+#include <QObject>
+#include <QString>
+#include <QByteArray>
+#include <cstring>
+#include <QVariant>
+#include <qdbusconnectioninterface.h>
+#include "libqdbusconnectioninterface.hpp"
+#include "libqdbusconnectioninterface.hxx"
+
+QMetaObject* QDBusConnectionInterface_MetaObject(const QDBusConnectionInterface* self) {
+    return (QMetaObject*)self->metaObject();
+}
+
+void* QDBusConnectionInterface_Metacast(QDBusConnectionInterface* self, const char* param1) {
+    return self->qt_metacast(param1);
+}
+
+int QDBusConnectionInterface_Metacall(QDBusConnectionInterface* self, int param1, int param2, void** param3) {
+    return self->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+}
+
+void QDBusConnectionInterface_ServiceRegistered(QDBusConnectionInterface* self, const libqt_string service) {
+    QString service_QString = QString::fromUtf8(service.data, service.len);
+    self->serviceRegistered(service_QString);
+}
+
+void QDBusConnectionInterface_Connect_ServiceRegistered(QDBusConnectionInterface* self, intptr_t slot) {
+    void (*slotFunc)(QDBusConnectionInterface*, const char*) = reinterpret_cast<void (*)(QDBusConnectionInterface*, const char*)>(slot);
+    QDBusConnectionInterface::connect(self, &QDBusConnectionInterface::serviceRegistered, [self, slotFunc](const QString& service) {
+        const QString service_ret = service;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray service_b = service_ret.toUtf8();
+        auto service_str_len = service_b.length();
+        char* service_str = static_cast<char*>(malloc(service_str_len + 1));
+        memcpy(service_str, service_b.data(), service_str_len);
+        service_str[service_str_len] = '\0';
+        const char* sigval1 = service_str;
+        slotFunc(self, sigval1);
+        libqt_free(service_str);
+    });
+}
+
+void QDBusConnectionInterface_ServiceUnregistered(QDBusConnectionInterface* self, const libqt_string service) {
+    QString service_QString = QString::fromUtf8(service.data, service.len);
+    self->serviceUnregistered(service_QString);
+}
+
+void QDBusConnectionInterface_Connect_ServiceUnregistered(QDBusConnectionInterface* self, intptr_t slot) {
+    void (*slotFunc)(QDBusConnectionInterface*, const char*) = reinterpret_cast<void (*)(QDBusConnectionInterface*, const char*)>(slot);
+    QDBusConnectionInterface::connect(self, &QDBusConnectionInterface::serviceUnregistered, [self, slotFunc](const QString& service) {
+        const QString service_ret = service;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray service_b = service_ret.toUtf8();
+        auto service_str_len = service_b.length();
+        char* service_str = static_cast<char*>(malloc(service_str_len + 1));
+        memcpy(service_str, service_b.data(), service_str_len);
+        service_str[service_str_len] = '\0';
+        const char* sigval1 = service_str;
+        slotFunc(self, sigval1);
+        libqt_free(service_str);
+    });
+}
+
+void QDBusConnectionInterface_ServiceOwnerChanged(QDBusConnectionInterface* self, const libqt_string name, const libqt_string oldOwner, const libqt_string newOwner) {
+    QString name_QString = QString::fromUtf8(name.data, name.len);
+    QString oldOwner_QString = QString::fromUtf8(oldOwner.data, oldOwner.len);
+    QString newOwner_QString = QString::fromUtf8(newOwner.data, newOwner.len);
+    self->serviceOwnerChanged(name_QString, oldOwner_QString, newOwner_QString);
+}
+
+void QDBusConnectionInterface_Connect_ServiceOwnerChanged(QDBusConnectionInterface* self, intptr_t slot) {
+    void (*slotFunc)(QDBusConnectionInterface*, const char*, const char*, const char*) = reinterpret_cast<void (*)(QDBusConnectionInterface*, const char*, const char*, const char*)>(slot);
+    QDBusConnectionInterface::connect(self, &QDBusConnectionInterface::serviceOwnerChanged, [self, slotFunc](const QString& name, const QString& oldOwner, const QString& newOwner) {
+        const QString name_ret = name;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray name_b = name_ret.toUtf8();
+        auto name_str_len = name_b.length();
+        char* name_str = static_cast<char*>(malloc(name_str_len + 1));
+        memcpy(name_str, name_b.data(), name_str_len);
+        name_str[name_str_len] = '\0';
+        const char* sigval1 = name_str;
+        const QString oldOwner_ret = oldOwner;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray oldOwner_b = oldOwner_ret.toUtf8();
+        auto oldOwner_str_len = oldOwner_b.length();
+        char* oldOwner_str = static_cast<char*>(malloc(oldOwner_str_len + 1));
+        memcpy(oldOwner_str, oldOwner_b.data(), oldOwner_str_len);
+        oldOwner_str[oldOwner_str_len] = '\0';
+        const char* sigval2 = oldOwner_str;
+        const QString newOwner_ret = newOwner;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray newOwner_b = newOwner_ret.toUtf8();
+        auto newOwner_str_len = newOwner_b.length();
+        char* newOwner_str = static_cast<char*>(malloc(newOwner_str_len + 1));
+        memcpy(newOwner_str, newOwner_b.data(), newOwner_str_len);
+        newOwner_str[newOwner_str_len] = '\0';
+        const char* sigval3 = newOwner_str;
+        slotFunc(self, sigval1, sigval2, sigval3);
+        libqt_free(name_str);
+        libqt_free(oldOwner_str);
+        libqt_free(newOwner_str);
+    });
+}
+
+void QDBusConnectionInterface_CallWithCallbackFailed(QDBusConnectionInterface* self, const QDBusError* error, const QDBusMessage* call) {
+    self->callWithCallbackFailed(*error, *call);
+}
+
+void QDBusConnectionInterface_Connect_CallWithCallbackFailed(QDBusConnectionInterface* self, intptr_t slot) {
+    void (*slotFunc)(QDBusConnectionInterface*, QDBusError*, QDBusMessage*) = reinterpret_cast<void (*)(QDBusConnectionInterface*, QDBusError*, QDBusMessage*)>(slot);
+    QDBusConnectionInterface::connect(self, &QDBusConnectionInterface::callWithCallbackFailed, [self, slotFunc](const QDBusError& error, const QDBusMessage& call) {
+        const QDBusError& error_ret = error;
+        // Cast returned reference into pointer
+        QDBusError* sigval1 = const_cast<QDBusError*>(&error_ret);
+        const QDBusMessage& call_ret = call;
+        // Cast returned reference into pointer
+        QDBusMessage* sigval2 = const_cast<QDBusMessage*>(&call_ret);
+        slotFunc(self, sigval1, sigval2);
+    });
+}
+
+void QDBusConnectionInterface_NameAcquired(QDBusConnectionInterface* self, const libqt_string param1) {
+    QString param1_QString = QString::fromUtf8(param1.data, param1.len);
+    self->NameAcquired(param1_QString);
+}
+
+void QDBusConnectionInterface_Connect_NameAcquired(QDBusConnectionInterface* self, intptr_t slot) {
+    void (*slotFunc)(QDBusConnectionInterface*, const char*) = reinterpret_cast<void (*)(QDBusConnectionInterface*, const char*)>(slot);
+    QDBusConnectionInterface::connect(self, &QDBusConnectionInterface::NameAcquired, [self, slotFunc](const QString& param1) {
+        const QString param1_ret = param1;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray param1_b = param1_ret.toUtf8();
+        auto param1_str_len = param1_b.length();
+        char* param1_str = static_cast<char*>(malloc(param1_str_len + 1));
+        memcpy(param1_str, param1_b.data(), param1_str_len);
+        param1_str[param1_str_len] = '\0';
+        const char* sigval1 = param1_str;
+        slotFunc(self, sigval1);
+        libqt_free(param1_str);
+    });
+}
+
+void QDBusConnectionInterface_NameLost(QDBusConnectionInterface* self, const libqt_string param1) {
+    QString param1_QString = QString::fromUtf8(param1.data, param1.len);
+    self->NameLost(param1_QString);
+}
+
+void QDBusConnectionInterface_Connect_NameLost(QDBusConnectionInterface* self, intptr_t slot) {
+    void (*slotFunc)(QDBusConnectionInterface*, const char*) = reinterpret_cast<void (*)(QDBusConnectionInterface*, const char*)>(slot);
+    QDBusConnectionInterface::connect(self, &QDBusConnectionInterface::NameLost, [self, slotFunc](const QString& param1) {
+        const QString param1_ret = param1;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray param1_b = param1_ret.toUtf8();
+        auto param1_str_len = param1_b.length();
+        char* param1_str = static_cast<char*>(malloc(param1_str_len + 1));
+        memcpy(param1_str, param1_b.data(), param1_str_len);
+        param1_str[param1_str_len] = '\0';
+        const char* sigval1 = param1_str;
+        slotFunc(self, sigval1);
+        libqt_free(param1_str);
+    });
+}
+
+void QDBusConnectionInterface_NameOwnerChanged(QDBusConnectionInterface* self, const libqt_string param1, const libqt_string param2, const libqt_string param3) {
+    QString param1_QString = QString::fromUtf8(param1.data, param1.len);
+    QString param2_QString = QString::fromUtf8(param2.data, param2.len);
+    QString param3_QString = QString::fromUtf8(param3.data, param3.len);
+    self->NameOwnerChanged(param1_QString, param2_QString, param3_QString);
+}
+
+void QDBusConnectionInterface_Connect_NameOwnerChanged(QDBusConnectionInterface* self, intptr_t slot) {
+    void (*slotFunc)(QDBusConnectionInterface*, const char*, const char*, const char*) = reinterpret_cast<void (*)(QDBusConnectionInterface*, const char*, const char*, const char*)>(slot);
+    QDBusConnectionInterface::connect(self, &QDBusConnectionInterface::NameOwnerChanged, [self, slotFunc](const QString& param1, const QString& param2, const QString& param3) {
+        const QString param1_ret = param1;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray param1_b = param1_ret.toUtf8();
+        auto param1_str_len = param1_b.length();
+        char* param1_str = static_cast<char*>(malloc(param1_str_len + 1));
+        memcpy(param1_str, param1_b.data(), param1_str_len);
+        param1_str[param1_str_len] = '\0';
+        const char* sigval1 = param1_str;
+        const QString param2_ret = param2;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray param2_b = param2_ret.toUtf8();
+        auto param2_str_len = param2_b.length();
+        char* param2_str = static_cast<char*>(malloc(param2_str_len + 1));
+        memcpy(param2_str, param2_b.data(), param2_str_len);
+        param2_str[param2_str_len] = '\0';
+        const char* sigval2 = param2_str;
+        const QString param3_ret = param3;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray param3_b = param3_ret.toUtf8();
+        auto param3_str_len = param3_b.length();
+        char* param3_str = static_cast<char*>(malloc(param3_str_len + 1));
+        memcpy(param3_str, param3_b.data(), param3_str_len);
+        param3_str[param3_str_len] = '\0';
+        const char* sigval3 = param3_str;
+        slotFunc(self, sigval1, sigval2, sigval3);
+        libqt_free(param1_str);
+        libqt_free(param2_str);
+        libqt_free(param3_str);
+    });
+}

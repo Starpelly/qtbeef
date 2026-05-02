@@ -1,0 +1,2591 @@
+package main
+
+import (
+	"fmt"
+	"path/filepath"
+	"slices"
+	"sort"
+	"strconv"
+	"strings"
+)
+
+// cppComment renders a string safely in a C++ block comment.
+// It strips interior nested comments.
+func cppComment(s string) string {
+	// Remove nested comments
+	uncomment := strings.NewReplacer("/*", "", "*/", "")
+	return " /* " + strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(s), "  ", " ")) + " */"
+}
+
+func (p CppParameter) cParameterName() string {
+	paramName := p.ParameterName
+	if reservedWordC(paramName) {
+		paramName += "_val"
+	}
+
+	return paramName
+}
+
+type CleanupType int
+
+const (
+	NoFree CleanupType = iota
+	QListFree
+	QStringDataFree
+	QStringFree
+	QStringListFree
+)
+
+func renderCleanupType(paramName string, cleanupType CleanupType) string {
+	switch cleanupType {
+	case QListFree:
+		return "\t\tfree(" + makeNamePrefix(paramName) + "_arr);\n"
+	case QStringDataFree:
+		return "\t\tlibqt_free(" + makeNamePrefix(paramName) + "_str.data);\n"
+	case QStringFree:
+		return "\t\tlibqt_free(" + makeNamePrefix(paramName) + "_str);\n"
+	case QStringListFree:
+		return "\t\tlibqt_free(" + makeNamePrefix(paramName) + "_arr);\n"
+	default:
+		return ""
+	}
+}
+
+type FunctionTypedef struct {
+	FunctionName string
+	Parameters   []CppParameter
+	ReturnType   CppParameter
+}
+
+func getUnionType(t CppParameter) (unionType, castType, lParen, rParen string) {
+	if t.IntType() {
+		var fieldName string
+		if e, ok := KnownEnums[t.ParameterType]; ok {
+			fieldName = e.EnumTypeCABI
+		} else {
+			switch t.ParameterType {
+			case "GLuint":
+				fieldName = "uint32_t"
+			case "GLuint64":
+				fieldName = "uint64_t"
+			default:
+				fieldName = strings.ReplaceAll(t.ParameterType, " ", "")
+			}
+		}
+		return fieldName + "s", "", "", ""
+	}
+	return "ptr", "static_cast<void*>", "(", ")"
+}
+
+func (p CppParameter) RenderTypeCabi(isSlot bool) string {
+	if p.ParameterType == "QString" || p.ParameterType == "SignOn::MethodName" {
+		if isSlot {
+			return "const char*"
+		} else {
+			return "libqt_string"
+		}
+
+	} else if p.ParameterType == "QAnyStringView" {
+		return "const char*"
+
+	} else if p.ParameterType == "QByteArray" || p.ParameterType == "QByteArrayView" {
+		return "libqt_string"
+
+	} else if inner, _, ok := p.QListOf(); ok {
+		innerType := inner.RenderTypeCabi(false)
+		if isSlot {
+			if innerType == "libqt_string" {
+				return "const char**"
+			}
+		}
+
+		return "libqt_list" + cppComment("of "+strings.TrimSpace(innerType))
+
+	} else if inner, ok := p.QSetOf(); ok {
+		isSlot := false
+		if inner.ParameterType == "QString" || inner.ParameterType == "QByteArray" {
+			isSlot = true
+		}
+		return "libqt_list" + cppComment("set of "+strings.TrimSpace(inner.RenderTypeCabi(isSlot)))
+
+	} else if inner1, inner2, containerType, ok := p.QMapOf(); ok {
+		maybeQMulti := ifv(IsMultiHashMap(containerType), "libqt_list of ", "")
+		return "libqt_map" + ifv(p.Pointer, "*", "") + cppComment("of "+strings.TrimSpace(inner1.RenderTypeCabi(false))+" to "+maybeQMulti+strings.TrimSpace(inner2.RenderTypeCabi(false)))
+
+	} else if inner1, inner2, ok := p.QPairOf(); ok {
+		returnType := "libqt_pair"
+
+		if (inner1.IntType() || IsKnownClass(inner1.ParameterType)) && (inner2.IntType() || IsKnownClass(inner2.ParameterType)) {
+			kParam := inner1.ParameterType
+			vParam := inner2.ParameterType
+
+			if e, ok := KnownEnums[inner1.ParameterType]; ok {
+				kParam = e.EnumTypeC
+			}
+			if e, ok := KnownEnums[inner2.ParameterType]; ok {
+				vParam = e.EnumTypeC
+			}
+
+			kParam = strings.ReplaceAll(kParam, " ", "_")
+			vParam = strings.ReplaceAll(vParam, " ", "_")
+
+			returnType = "pair_" + strings.ToLower(kParam) + "_" + strings.ToLower(vParam)
+		}
+
+		return returnType + cppComment("tuple of "+strings.TrimSpace(inner1.RenderTypeCabi(false))+" and "+strings.TrimSpace(inner2.RenderTypeCabi(false)))
+
+	} else if p.IsFunctionPointer {
+		return "intptr_t"
+
+	} else if (p.Pointer || p.ByRef) && p.QtClassType() {
+		maybeSecondPointer := ifv(p.ByRef && p.Pointer, "*", "")
+		if p.PointerCount > 1 {
+			return cabiClassName(p.ParameterType) + strings.Repeat("*", p.PointerCount) + maybeSecondPointer
+		}
+		return cabiClassName(p.ParameterType) + "*" + maybeSecondPointer
+
+	} else if p.QtClassType() && !p.Pointer {
+		// Even if C++ returns by value, CABI is returning a heap copy (new'd, not malloc'd)
+		return cabiClassName(p.ParameterType) + "*"
+	}
+
+	ret := p.ParameterType
+
+	switch p.ParameterType {
+	case "GLvoid":
+		ret = "void"
+	case "GLchar":
+		ret = "char"
+	case "uchar", "GLboolean":
+		ret = "unsigned char"
+	case "GLbyte":
+		ret = "signed char"
+	case "uint":
+		ret = "unsigned int"
+	case "ulong":
+		ret = "unsigned long"
+	case "qint8":
+		ret = "int8_t"
+	case "quint8", "GLubyte":
+		ret = "uint8_t"
+	case "qint16", "short", "GLshort":
+		ret = "int16_t"
+	case "quint16", "ushort", "unsigned short", "GLushort":
+		ret = "uint16_t"
+	case "qint32", "GLint", "GLsizei":
+		ret = "int32_t"
+	case "quint32", "GLbitfield", "GLenum", "GLuint":
+		ret = "uint32_t"
+	case "qint64", "GLint64":
+		ret = "int64_t"
+	case "qulonglong", "quint64", "GLuint64":
+		ret = "uint64_t"
+	case "GLfloat":
+		ret = "float"
+	case "qfloat16":
+		ret = "_Float16" // No idea where this typedef comes from, but it exists
+	case "const double", "qreal", "GLdouble":
+		ret = "double"
+	case "qlonglong", "qintptr", "QIntegerForSizeof<void *>::Signed", "GLintptr", "GLsizeiptr":
+		ret = "intptr_t"
+	case "quintptr", "uintptr", "QIntegerForSizeof<void *>::Unsigned":
+		ret = "uintptr_t"
+	case "qsizetype", "qptrdiff", "QIntegerForSizeof<std::size_t>::Signed":
+		ret = "ptrdiff_t"
+	case "quint128":
+		ret = "__uint128_t"
+	}
+
+	if p.IsChronoSeconds() {
+		ret = "int64_t"
+	}
+
+	if p.Const {
+		// This is needed for const-correctness for calling some overloads
+		// e.g. QShortcut ctor taking (QWidget* parent, const char* member) signal -
+		// the signal/slot requires that member is const, not just plain char*
+		ret = "const " + ret
+	}
+
+	// Handle QFlags types
+	if ft, ok := p.QFlagsOf(); ok {
+		ret = ft.CABIType
+
+	} else if e, ok := KnownEnums[p.ParameterType]; ok {
+		ret = e.EnumTypeCABI
+	}
+
+	if p.Pointer {
+		ret += strings.Repeat("*", p.PointerCount) + ifv(p.ByRef && !strings.Contains(p.ParameterType, "char"), "*", "")
+	} else if p.ByRef {
+		ret += "*"
+	}
+
+	return ret
+}
+
+// RenderTypeQtCpp renders the Qt C++ type in the original form from the function
+// definition, before any typedefs or transformations were applied.
+func (p CppParameter) RenderTypeQtCpp() string {
+	return p.GetQtCppType().RenderTypeIntermediateCpp()
+}
+
+// RenderTypeIntermediateCpp renders the Qt C++ type WITHOUT resolving the
+// interior QtCppOriginalType. This is used for intermediate const_cast<>s.
+func (p CppParameter) RenderTypeIntermediateCpp() string {
+	cppType := p.ParameterType
+
+	if p.Const {
+		cppType = "const " + cppType
+	}
+	if p.Pointer {
+		cppType += strings.Repeat("*", p.PointerCount)
+	}
+	if p.ByRef {
+		cppType += "&"
+	}
+
+	// hack some difficult flag typedefs for now
+	if cppType == "ListJob::ListFlags" {
+		return "KIO::ListJob::ListFlags"
+	}
+	if cppType == "MovingRange::InsertBehaviors" {
+		return "KTextEditor::MovingRange::InsertBehaviors"
+	}
+	if cppType == "Transaction::Filters" {
+		return "PackageKit::Transaction::Filters"
+	}
+	if cppType == "Transaction::TransactionFlags" {
+		return "PackageKit::Transaction::TransactionFlag"
+	}
+
+	return cppType
+}
+
+// emitParametersCpp emits the parameter definitions exactly how Qt C++ defines them.
+func emitParametersCpp(m CppMethod, includeHidden bool) string {
+	tmp := make([]string, 0, len(m.Parameters))
+	for i := range m.Parameters {
+		tmp = append(tmp, ifv(m.Parameters[i].Const && m.Parameters[i].QtClassType(), "const ", "")+m.Parameters[i].RenderTypeQtCpp()+" "+m.Parameters[i].ParameterName)
+	}
+
+	if includeHidden {
+		for i := range m.HiddenParams {
+			tmp = append(tmp, ifv(m.HiddenParams[i].Const && m.HiddenParams[i].QtClassType(), "const ", "")+m.HiddenParams[i].RenderTypeQtCpp()+" "+m.HiddenParams[i].ParameterName)
+		}
+	}
+
+	return strings.ReplaceAll(strings.Join(tmp, ", "), "const const ", "const ")
+}
+
+func emitParameterNames(m CppMethod, includeHidden bool) string {
+	tmp := make([]string, 0, len(m.Parameters))
+	for i := range m.Parameters {
+		tmp = append(tmp, m.Parameters[i].ParameterName)
+	}
+
+	if includeHidden {
+		for i := range m.HiddenParams {
+			tmp = append(tmp, m.HiddenParams[i].ParameterName)
+		}
+	}
+
+	return strings.Join(tmp, ", ")
+}
+
+func emitParametersCabi(m CppMethod, selfType string) string {
+	tmp := make([]string, 0, len(m.Parameters)+1)
+
+	if !(m.IsStatic && !m.IsProtected) && selfType != "" {
+		tmp = append(tmp, selfType+" self")
+	}
+
+	for i := range m.Parameters {
+		pType := m.Parameters[i].RenderTypeCabi(false)
+		maybeConst := ifv(!m.Parameters[i].IsFunctionPointer && m.Parameters[i].Const && !strings.HasPrefix(pType, "const "), "const ", "")
+		tmp = append(tmp, maybeConst+pType+" "+m.Parameters[i].ParameterName)
+	}
+
+	return strings.Join(tmp, ", ")
+}
+
+func emitCallbackParameterTypesCabi(m CppMethod, selfType string) string {
+	tmp := make([]string, 0, len(m.Parameters)+1)
+
+	if !(m.IsStatic && !m.IsProtected) && selfType != "" {
+		tmp = append(tmp, selfType)
+	}
+
+	for i := range m.Parameters {
+		tmp = append(tmp, m.Parameters[i].RenderTypeCabi(true))
+	}
+
+	return strings.Join(tmp, ", ")
+}
+
+func emitParametersCABI2CppForwarding(params []CppParameter, indent, currentVirtualClass string) (preamble, forwarding string) {
+	tmp := make([]string, 0, len(params)+1)
+
+	for i := range params {
+		addPre, addFwd := emitCABI2CppForwarding(params[i], indent, currentVirtualClass, false)
+		preamble += addPre
+		tmp = append(tmp, addFwd)
+	}
+
+	return preamble, strings.Join(tmp, ", ")
+}
+
+func makeNamePrefix(in string) string {
+	replacer := strings.NewReplacer("[", "_", "]", "", ".", "_")
+	return replacer.Replace(in)
+}
+
+func emitCABI2CppForwarding(p CppParameter, indent, currentClass string, isSlot bool) (preamble, forwarding string) {
+	nameprefix := makeNamePrefix(p.ParameterName)
+
+	if p.ParameterType == "QString" || p.ParameterType == "SignOn::MethodName" {
+		var maybePointer string
+		if isSlot {
+			if p.Pointer || p.ByRef {
+				maybePointer = ifv(p.ByRef, "*", "")
+				preamble += indent + "QString* " + nameprefix + "_QString = new QString(QString::fromUtf8(" + p.ParameterName + "));\n"
+			} else {
+				preamble += indent + "QString " + nameprefix + "_QString = QString::fromUtf8(" + p.ParameterName + ");\n"
+			}
+		} else {
+			// The CABI received parameter is a libqt_string, passed by value
+			// C++ needs it as a QString. Create one on the stack for automatic cleanup
+			// The caller will free the libqt_string
+			preamble += indent + "QString " + nameprefix + "_QString = QString::fromUtf8(" + p.ParameterName + ".data, " + p.ParameterName + ".len);\n"
+		}
+		return preamble, maybePointer + nameprefix + "_QString"
+
+	} else if p.ParameterType == "QByteArray" || p.ParameterType == "QByteArrayView" {
+		if (isSlot && strings.Contains(p.ParameterName, "_arr[")) || strings.HasSuffix(p.ParameterName, "_arr") {
+			preamble += indent + p.ParameterType + " " + nameprefix + "_" + p.ParameterType + "(" + p.ParameterName + ");\n"
+		} else {
+			// The caller will free the libqt_string data
+			// This ctor makes a deep copy, on the stack which will be dtor'd by RAII
+			preamble += indent + p.ParameterType + " " + nameprefix + "_" + p.ParameterType + "(" + p.ParameterName + ".data, " + p.ParameterName + ".len);\n"
+		}
+		return preamble, nameprefix + "_" + p.ParameterType
+
+	} else if p.ParameterType == "QAnyStringView" {
+		return preamble, p.ParameterType + "(" + nameprefix + ")"
+
+	} else if listType, containerType, ok := p.QListOf(); ok {
+
+		// QSpan technically doesn't own the data but we use QList because we already
+		// have the structure in place to support the conversion with a patch for
+		// consideration for const types in some cases
+		paramType := p.GetQtCppType().ParameterType
+		containerQtType := strings.Replace(paramType, "QSpan<", "QList<", 1)
+		if strings.HasPrefix(containerQtType, "QList<const Q") {
+			containerQtType = strings.Replace(containerQtType, "const ", "", 1)
+		} else if strings.HasPrefix(containerQtType, "QList<const int>") {
+			containerQtType = strings.Replace(containerQtType, "const ", "", 1)
+			listType.Const = false
+		}
+		containerType = strings.ReplaceAll(containerType, "::", "__")
+		unionType, _, _, _ := getUnionType(listType)
+		cType := listType.RenderTypeCabi(false)
+
+		if cType == "uint16_t" {
+			unionType = cType + "s"
+		} else if cType == "uintptr_t" {
+			unionType = "uintptrs"
+		} else if strings.HasPrefix(unionType, "QInteger") {
+			unionType = "ptrdiffs"
+		}
+
+		var maybePointer string
+		refType := "."
+		if isSlot && p.ByRef {
+			refType = "->"
+			maybePointer = "*"
+		}
+
+		lType := ifv(isSlot && listType.ParameterType == "QByteArray", "const char*", listType.RenderTypeCabi(isSlot))
+
+		preamble += indent + containerQtType + maybePointer + " " + nameprefix + "_" + containerType + ";\n"
+
+		dataField := ".data." + unionType
+		iterField := ".len"
+
+		if isSlot && lType == "const char*" {
+			preamble += indent + "size_t " + p.ParameterName + "_len = libqt_strv_length(" + p.ParameterName + ");\n"
+			preamble += indent + nameprefix + "_" + containerType + refType + "reserve(" + p.ParameterName + "_len);\n"
+			dataField = ""
+			iterField = "_len"
+		} else {
+			preamble += indent + nameprefix + "_" + containerType + refType + "reserve(" + p.ParameterName + ".len);\n"
+		}
+
+		preamble += indent + lType + "* " + nameprefix + "_arr = static_cast<" + lType + "*>(" + p.ParameterName + dataField + ");\n"
+
+		iterator := "i"
+		if p.ParameterName[len(p.ParameterName)-1] == ']' {
+			iterator = "j"
+		}
+		preamble += indent + "for(size_t " + iterator + " = 0; " + iterator + " < " + p.ParameterName + iterField + "; ++" + iterator + ") {\n"
+
+		listType.ParameterName = nameprefix + "_arr[" + iterator + "]"
+		addPre, addFwd := emitCABI2CppForwarding(listType, indent+"\t", currentClass, isSlot)
+		preamble += addPre
+		preamble += indent + "\t" + nameprefix + "_" + containerType + refType + "push_back(" + addFwd + ");\n"
+
+		preamble += indent + "}\n"
+
+		if isSlot {
+			preamble += indent + "libqt_free(" + nameprefix + dataField + ");\n"
+		}
+
+		// Support passing QList<>* (very rare, but used in qnetwork)
+		if p.Pointer {
+			return preamble, "&" + nameprefix + "_" + containerType
+		} else {
+			return preamble, maybePointer + nameprefix + "_" + containerType
+		}
+
+	} else if kType, vType, containerType, ok := p.QMapOf(); ok {
+		var maybeDerefOpen, maybeDerefClose, maybePointer string
+		methodDeref := "."
+		if p.Pointer {
+			methodDeref = "->"
+			maybeDerefOpen = "(*"
+			maybeDerefClose = ")"
+			maybePointer = "*"
+		}
+
+		isQMulti := IsMultiHashMap(containerType)
+
+		preamble += indent + p.GetQtCppType().ParameterType + maybePointer + " " + nameprefix + "_" + containerType + ";\n"
+
+		// This container may be a Q*Map or a Q*Hash
+		// Q*Hash supports .reserve(), but Q*Map doesn't
+		if !IsOrderedMap(containerType) {
+			preamble += indent + nameprefix + "_" + containerType + ".reserve(" + p.ParameterName + ".len);\n"
+		}
+
+		preamble += indent + kType.RenderTypeCabi(false) + "* " + nameprefix + "_karr = static_cast<" + kType.RenderTypeCabi(false) + "*>(" + p.ParameterName + methodDeref + "keys);\n"
+
+		if isQMulti {
+			preamble += indent + "libqt_list* /* of " + vType.RenderTypeCabi(false) + " */ " + nameprefix + "_varr = static_cast<libqt_list*>(" + p.ParameterName + methodDeref + "values);\n"
+		} else {
+			preamble += indent + vType.RenderTypeCabi(false) + "* " + nameprefix + "_varr = static_cast<" + vType.RenderTypeCabi(false) + "*>(" + p.ParameterName + methodDeref + "values);\n"
+		}
+
+		preamble += indent + "for(size_t i = 0; i < " + p.ParameterName + methodDeref + "len; ++i) {\n"
+
+		kType.ParameterName = nameprefix + "_karr[i]"
+		addPreK, addFwdK := emitCABI2CppForwarding(kType, indent+"\t", currentClass, false)
+		preamble += addPreK
+
+		vType.ParameterName = nameprefix + "_varr[i]"
+		addPreV, addFwdV := emitCABI2CppForwarding(vType, indent+"\t", currentClass, false)
+
+		if isQMulti {
+			preamble += indent + "\tlibqt_list " + nameprefix + "_" + containerType + "_list = " + vType.ParameterName + ";\n"
+
+			if vType.ParameterType == "QByteArray" || vType.ParameterType == "QString" {
+				preamble += indent + "\t" + vType.RenderTypeCabi(false) + "* " + nameprefix + "_varr_list = static_cast<" + vType.RenderTypeCabi(false) + "*>(" + nameprefix + "_" + containerType + "_list.data.ptr);\n"
+			} else {
+				panic("UNHANDLED " + strings.ToUpper(containerType) + " VALUE TYPE: " + vType.ParameterType)
+			}
+
+			preamble += indent + "\tfor (size_t j = 0; j < " + nameprefix + "_" + containerType + "_list.len; ++j) {\n"
+			preamble += indent + "\t" + vType.ParameterType + " " + addFwdV + "(" + nameprefix + "_varr_list[j].data, " + nameprefix + "_varr_list[j].len);\n"
+			preamble += indent + "\t" + nameprefix + "_" + containerType + ".insert(" + addFwdK + ", " + addFwdV + ");\n"
+			preamble += indent + "\t}\n"
+
+		} else {
+			preamble += addPreV
+			preamble += indent + "\t" + maybeDerefOpen + nameprefix + "_" + containerType + maybeDerefClose + "[" + addFwdK + "] = " + addFwdV + ";\n"
+		}
+
+		preamble += indent + "}\n"
+		return preamble, nameprefix + "_" + containerType
+
+	} else if kType, vType, ok := p.QPairOf(); ok {
+		// QPair<F,S>
+		preamble += indent + p.GetQtCppType().ParameterType + " " + nameprefix + "_QPair;\n"
+
+		if (kType.IntType() || IsKnownClass(kType.ParameterType)) && (vType.IntType() || IsKnownClass(vType.ParameterType)) {
+			var firstDeref, firstClose, secondDeref, secondClose string
+			if p.ParameterName[len(p.ParameterName)-1] == ']' || kType.ParameterType == "QCborValue" {
+				if IsKnownClass(kType.ParameterType) && kType.ParameterType != "QAccessibleInterface" {
+					firstDeref = "*("
+					firstClose = ")"
+				}
+				if IsKnownClass(vType.ParameterType) {
+					secondDeref = "*("
+					secondClose = ")"
+				} else if _, ok := vType.QFlagsOf(); ok {
+					secondDeref = "static_cast<" + vType.ParameterType + ">("
+					secondClose = ")"
+				}
+			}
+			preamble += indent + nameprefix + "_QPair.first = " + firstDeref + p.ParameterName + ".first" + firstClose + ";\n"
+			preamble += indent + nameprefix + "_QPair.second = " + secondDeref + p.ParameterName + ".second" + secondClose + ";\n"
+
+			return preamble, nameprefix + "_QPair"
+
+		} else {
+			preamble += indent + kType.RenderTypeCabi(false) + "* " + nameprefix + "_first = static_cast<" + kType.RenderTypeCabi(false) + "*>(" + p.ParameterName + ".first);\n"
+			preamble += indent + vType.RenderTypeCabi(false) + "* " + nameprefix + "_second = static_cast<" + vType.RenderTypeCabi(false) + "*>(" + p.ParameterName + ".second);\n"
+
+			kType.ParameterName = nameprefix + "_first[0]"
+			addPreK, addFwdK := emitCABI2CppForwarding(kType, indent+"\t", currentClass, false)
+			preamble += addPreK
+
+			vType.ParameterName = nameprefix + "_second[0]"
+			addPreV, addFwdV := emitCABI2CppForwarding(vType, indent+"\t", currentClass, false)
+			preamble += addPreV
+
+			preamble += indent + nameprefix + "_QPair.first = " + addFwdK + ";\n"
+			preamble += indent + nameprefix + "_QPair.second = " + addFwdV + ";\n"
+
+			return preamble, nameprefix + "_QPair"
+		}
+
+	} else if p.IsFlagType() || p.IntType() || p.IsKnownEnum() {
+		castSrc := p.ParameterName
+		castType := p.RenderTypeQtCpp()
+		if p.IsKnownEnum() {
+			if enum, ok := KnownEnums[p.ParameterType]; ok && enum.Enum.IsProtected {
+				// For protected enums, use the unqualified name since we'll have a using declaration
+				currentClass = strings.ReplaceAll(currentClass, "::", "")
+				if !strings.HasPrefix(currentClass, "Virtual") {
+					currentClass = "Virtual" + currentClass
+				}
+				castType = currentClass + "::" + enum.Enum.EnumClassName()
+			}
+		}
+
+		if p.ByRef { // e.g. QDataStream::operator>>() overloads
+			castSrc = "*" + castSrc
+		}
+
+		if p.QtCppOriginalType != nil && p.QtCppOriginalType.Const != p.Const {
+			return preamble, "static_cast<" + p.RenderTypeQtCpp() + ">(const_cast<" + p.RenderTypeIntermediateCpp() + ">(" + p.ParameterName + "))"
+		}
+
+		if p.GetQtCppType().ParameterType == "qintptr" ||
+			p.GetQtCppType().ParameterType == "qsizetype" || // Qt 6 qversionnumber.h: invalid ‘static_cast’ from type ‘ptrdiff_t*’ {aka ‘long int*’} to type ‘qsizetype*’ {aka ‘long long int*’}
+			p.ParameterType == "qint8" ||
+			(p.IsFlagType() && p.ByRef) ||
+			(p.IsKnownEnum() && p.ByRef) {
+			// QDataStream::operator>>() by reference (qint64)
+			// QLockFile::getLockInfo() by pointer
+			// QTextStream::operator>>() by reference (qlonglong + qulonglong)
+			// QDataStream::operator>>() qint8
+			// CABI has these as int64_t* (long int) which fails a static_cast to qint64& (long long int&)
+			// Hack a hard C-style cast
+			return preamble, "(" + castType + ")(" + castSrc + ")"
+		} else if p.IsKnownEnum() && p.Pointer {
+			// requires reinterpret_cast<>
+			return preamble, "reinterpret_cast<" + castType + ">(" + castSrc + ")"
+		} else {
+			// Use static_cast<> safely
+			return preamble, "static_cast<" + castType + ">(" + castSrc + ")"
+		}
+
+	} else if t, ok := p.QSetOf(); ok {
+		preamble += "// Convert libqt_list to QSet<>\n"
+		preamble += "QSet<" + t.ParameterType + "> " + p.ParameterName + "_set;\n"
+		preamble += p.ParameterName + "_set.reserve(" + p.ParameterName + ".len);\n"
+
+		if t.ParameterType == "QString" || t.ParameterType == "QByteArray" {
+			preamble += "const char** " + p.ParameterName + "_strarr = static_cast<const char**>(" + p.ParameterName + ".data.ptr);\n"
+			preamble += "for (size_t i = 0; i < " + p.ParameterName + ".len; ++i) {\n"
+			preamble += "    " + p.ParameterName + "_set.insert(QString::fromUtf8(" + p.ParameterName + "_strarr[i]));\n"
+			preamble += "}\n"
+
+		} else if e, ok := KnownEnums[t.ParameterType]; ok {
+			unionType, _, _, _ := getUnionType(listType)
+
+			preamble += e.EnumTypeCABI + "* " + p.ParameterName + "_setarr = static_cast<" + e.EnumTypeCABI + "*>(" + p.ParameterName + ".data." + unionType + ");\n"
+			preamble += "for (size_t i = 0; i < " + p.ParameterName + ".len; ++i) {\n"
+			preamble += "    " + p.ParameterName + "_set.insert(static_cast<" + t.ParameterType + ">(" + p.ParameterName + "_setarr[i]));\n"
+			preamble += "}\n"
+
+		} else {
+			panic("QSet<> argument for " + t.ParameterType + " is not yet implemented")
+		}
+
+		return preamble, p.ParameterName + "_set"
+
+	} else if p.UniquePtr {
+		return preamble, "std::unique_ptr<" + p.ParameterType + ">(" + p.ParameterName + ")"
+
+	} else if p.IsFunctionPointer {
+		pType := ifv(p.QtCppOriginalType != nil, p.QtCppOriginalType.ParameterType, p.ParameterType)
+		if strings.Contains(pType, "(*)") {
+			pType = ifv(p.Const, "const ", "") + strings.Replace(pType, "(*)", "*(*)", max(p.PointerCount-1, 0))
+		}
+
+		if p.IsStdFunction {
+			var emitAssign, totAssign string
+			params := make([]string, 0, len(p.FunctionPointer.Parameters))
+			pTypes := make([]string, 0, len(p.FunctionPointer.Parameters))
+			pNames := make([]string, 0, len(p.FunctionPointer.Parameters))
+
+			for _, param := range p.FunctionPointer.Parameters {
+				pType := ifv(param.UniquePtr, "std::unique_ptr<"+param.RenderTypeQtCpp()+">", param.RenderTypeQtCpp())
+				params = append(params, pType+" "+param.ParameterName+"_fp")
+				pName := param.ParameterName + "_fv"
+				paramCabi := param.RenderTypeCabi(true)
+				emitAssign, _ = emitAssignCppToCabi(paramCabi+" "+pName+" = ", param, param.ParameterName+"_fp")
+				totAssign += emitAssign
+
+				pTypes = append(pTypes, paramCabi)
+				pNames = append(pNames, pName)
+			}
+
+			retType := p.FunctionPointer.ReturnType.RenderTypeQtCpp()
+
+			preamble += "auto " + p.ParameterName + "_func = [" + p.ParameterName + "](" + strings.Join(params, ",") + ") -> " + retType + "{\n"
+			preamble += totAssign
+
+			var assn, rett string
+			if retType != "void" {
+				assn = "auto " + p.ParameterName + "_funcret = "
+				rett = "return " + "static_cast<" + retType + ">(" + p.ParameterName + "_funcret);"
+			}
+
+			maybePtr := strings.Repeat("*", p.FunctionPointer.ReturnType.PointerCount)
+
+			preamble += assn + "reinterpret_cast<" + p.FunctionPointer.ReturnType.ParameterType + maybePtr + "(*)(" + strings.Join(pTypes, ",") + ")" + ">(" + p.ParameterName + ")("
+			preamble += strings.Join(pNames, ", ") + ");\n"
+			preamble += rett + "\n};\n"
+
+		} else {
+			preamble += "auto " + p.ParameterName + "_func = reinterpret_cast<" + pType + ">(" + p.ParameterName + ");\n"
+		}
+
+		return preamble, p.ParameterName + "_func"
+
+	} else if p.ByRef {
+		if p.Pointer {
+			// By ref and by pointer
+			// This happens for QDataStream &QDataStream::operator>>(char *&s)
+			// We are only using one level of indirection
+			// For class types, we need to dereference the pointer
+			maybePointer := ifv(IsKnownClass(p.ParameterType), "*", "")
+			return preamble, maybePointer + p.ParameterName
+		} else {
+			// By ref and not by pointer
+			// We changed RenderTypeCabi() to render this as a pointer
+			// Need to dereference so we can pass as reference to the actual Qt C++ function
+			return preamble, "*" + p.ParameterName
+		}
+
+	} else if p.QtClassType() && !p.Pointer {
+		// CABI takes all Qt types by pointer, even if C++ wants them by value
+		// Dereference the passed-in pointer
+		if strings.Contains(p.ParameterName, "[") {
+			return preamble, "*(" + p.ParameterName + ")" // Extra brackets aren't necessary, just nice
+		}
+		return preamble, "*" + p.ParameterName
+
+	} else {
+		return preamble, p.ParameterName
+	}
+}
+
+// emitAssignCppToCabi transforms and assigns rvalue to the assignExpression.
+// Sample assignExpression: "return ", "auto foo = "
+// Sample rvalue: "foo", "foo(xyz)"
+// The return is a complete statement including trailing newline.
+func emitAssignCppToCabi(assignExpression string, p CppParameter, rvalue string) (string, CleanupType) {
+
+	cleanupType := NoFree
+	shouldReturn := assignExpression // n.b. already has indent
+	var afterCall, retExpr string
+	assignExpression = strings.TrimLeft(assignExpression, " \t")
+	indent := shouldReturn[0 : len(shouldReturn)-len(assignExpression)]
+	isSignal := strings.Contains(assignExpression, "cbval") || strings.Contains(assignExpression, "sigval") || strings.Contains(assignExpression, "_sctr") || strings.Contains(assignExpression, "funcparam")
+
+	shouldReturn = shouldReturn[len(indent):]
+
+	namePrefix := makeNamePrefix(p.ParameterName)
+	maybeConst := ifv(p.Const, "const ", "")
+
+	if p.Void() {
+		shouldReturn = ""
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if p.ParameterType == "QString" || p.ParameterType == "SignOn::MethodName" {
+
+		if isSignal {
+			shouldReturn = maybeConst + "QString " + namePrefix + "_ret = "
+			afterCall += indent + "// Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory\n"
+			afterCall += indent + "QByteArray " + namePrefix + "_b = " + namePrefix + "_ret.toUtf8();\n"
+
+			afterCall += indent + "auto " + namePrefix + "_str_len = " + namePrefix + "_b.length();\n"
+			afterCall += indent + "char* " + namePrefix + "_str = static_cast<char*>(malloc(" + namePrefix + "_str_len + 1));\n"
+			afterCall += indent + "memcpy(" + namePrefix + "_str, " + namePrefix + "_b.data(), " + namePrefix + "_str_len);\n"
+			afterCall += indent + namePrefix + "_str[" + namePrefix + `_str_len] = '\0'` + ";\n"
+			afterCall += indent + assignExpression + namePrefix + "_str;\n"
+
+			cleanupType = QStringFree
+
+		} else {
+			if p.Pointer {
+				// e.g. QTextStream::String()
+				// These are rare, and probably expected to be lightweight references
+				// But, a copy is the best we can project it as
+				// Un-pointer-ify
+				shouldReturn = maybeConst + "QString* " + namePrefix + "_ret = "
+				afterCall += indent + "// Convert QString pointer from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory\n"
+				afterCall += indent + "QByteArray " + namePrefix + "_b = " + namePrefix + "_ret->toUtf8();\n"
+
+			} else {
+				shouldReturn = maybeConst + "QString " + namePrefix + "_ret = "
+				afterCall += indent + "// Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory\n"
+				afterCall += indent + "QByteArray " + namePrefix + "_b = " + namePrefix + "_ret.toUtf8();\n"
+			}
+
+			afterCall += indent + "libqt_string " + namePrefix + "_str;\n"
+			afterCall += indent + namePrefix + "_str.len = " + namePrefix + "_b.length();\n"
+			afterCall += indent + namePrefix + "_str.data = static_cast<const char*>(malloc(" + namePrefix + "_str.len + 1));\n"
+			afterCall += indent + "memcpy((void*)" + namePrefix + "_str.data, " + namePrefix + "_b.data(), " + namePrefix + "_str.len);\n"
+			afterCall += indent + "((char*)" + namePrefix + "_str.data)[" + namePrefix + `_str.len] = '\0'` + ";\n"
+			afterCall += indent + assignExpression + namePrefix + "_str;\n"
+		}
+
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if p.ParameterType == "QAnyStringView" {
+
+		if !p.Pointer {
+			shouldReturn = maybeConst + "QAnyStringView " + namePrefix + "_ret = "
+			afterCall += indent + "QString " + namePrefix + "_qstr = " + namePrefix + "_ret.toString();\n"
+			afterCall += indent + "// Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory\n"
+			afterCall += indent + "QByteArray " + namePrefix + "_b = " + namePrefix + "_qstr.toUtf8();\n"
+		}
+
+		afterCall += indent + "libqt_string " + namePrefix + "_str;\n"
+		afterCall += indent + namePrefix + "_str.len = " + namePrefix + "_b.length();\n"
+		afterCall += indent + namePrefix + "_str.data = static_cast<const char*>(malloc(" + namePrefix + "_str.len + 1));\n"
+		afterCall += indent + "memcpy((void*)" + namePrefix + "_str.data, " + namePrefix + "_b.data(), " + namePrefix + "_str.len);\n"
+		afterCall += indent + "((char*)" + namePrefix + "_str.data)[" + namePrefix + `_str.len] = '\0'` + ";\n"
+		afterCall += indent + assignExpression + namePrefix + "_str.data;\n"
+
+		cleanupType = QStringDataFree
+
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if p.ParameterType == "QByteArray" || p.ParameterType == "QByteArrayView" {
+
+		// C++ has given us a QByteArray. CABI needs this as a libqt_string
+		// Do not free the data, the caller will free it
+
+		shouldReturn = maybeConst + p.ParameterType + " " + namePrefix + "_qb = "
+
+		afterCall += indent + "libqt_string " + namePrefix + "_str;\n"
+		afterCall += indent + namePrefix + "_str.len = " + namePrefix + "_qb.length();\n"
+		afterCall += indent + namePrefix + "_str.data = static_cast<char*>(malloc(" + namePrefix + "_str.len));\n"
+		afterCall += indent + "memcpy((void*)" + namePrefix + "_str.data, " + namePrefix + "_qb.data(), " + namePrefix + "_str.len);\n"
+		afterCall += indent + assignExpression + namePrefix + "_str;\n"
+
+		cleanupType = QStringDataFree
+
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if t, containerType, ok := p.QListOf(); ok {
+
+		// In some cases rvalue is a function call and the temporary
+		// is necessary; in some cases it's a literal and the temporary is
+		// elided; but in some cases it's a Qt class and the temporary goes
+		// through a copy constructor
+		// TODO Detect safe cases where this can be optimized
+
+		unionType, castType, maybeLParen, maybeRParen := getUnionType(t)
+		cType := t.RenderTypeCabi(false)
+
+		// hack for QAudioDevice_SupportedSampleFormats and QLocale_CountriesForLanguage
+		if cType == "uint16_t" {
+			unionType = cType + "s"
+		} else if cType == "uintptr_t" {
+			unionType = "uintptrs"
+		} else if strings.HasPrefix(unionType, "QInteger") {
+			unionType = "ptrdiffs"
+		}
+
+		var maybeDerefOpen, maybeDerefClose string
+		memberRef := "."
+
+		if p.Pointer {
+			maybeDerefOpen = "(*"
+			maybeDerefClose = ")"
+			memberRef = "->"
+		}
+
+		iterator := "i"
+		maybeConst := ""
+		maybeRef := " "
+		if namePrefix == "_lv" {
+			iterator = "j"
+			maybeConst = "const "
+			maybeRef = "& "
+		}
+
+		shouldReturn = maybeConst + p.RenderTypeQtCpp() + maybeRef + namePrefix + "_ret = "
+
+		if isSignal && cType == "libqt_string" {
+			maybeMethod := ifv(strings.HasPrefix(t.ParameterType, "QByteArray"), "", ".toUtf8()")
+
+			afterCall += indent + "// Convert QString from UTF-16 in C++ RAII memory to null-terminated UTF-8 chars in manually-managed C memory\n"
+			afterCall += indent + "const char** " + namePrefix + "_arr = static_cast<const char**>(malloc(sizeof(const char*) * (" + namePrefix + "_ret" + memberRef + "size() + 1)));\n"
+			afterCall += indent + "for (qsizetype i = 0; i < " + namePrefix + "_ret" + memberRef + "size(); ++i) {\n"
+			afterCall += indent + "QByteArray " + namePrefix + "_b = " + maybeDerefOpen + namePrefix + "_ret" + maybeDerefClose + "[i]" + maybeMethod + ";\n"
+			afterCall += indent + "auto " + namePrefix + "_str_len = " + namePrefix + "_b.length();\n"
+			afterCall += indent + "char* " + namePrefix + "_str = static_cast<char*>(malloc(" + namePrefix + "_str_len + 1));\n"
+			afterCall += indent + "memcpy(" + namePrefix + "_str, " + namePrefix + "_b.data(), " + namePrefix + "_str_len);\n"
+			afterCall += indent + namePrefix + "_str[" + namePrefix + `_str_len] = '\0'` + ";\n"
+			afterCall += indent + namePrefix + "_arr[i] = " + namePrefix + "_str;\n"
+			afterCall += indent + "}\n"
+			afterCall += indent + "// Append sentinel null terminator to the list\n"
+			afterCall += indent + namePrefix + "_arr[" + namePrefix + "_ret" + memberRef + "size()] = nullptr;\n"
+			afterCall += indent + assignExpression + namePrefix + "_arr;\n"
+
+			cleanupType = QStringListFree
+
+			return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+		} else {
+			iterType := ifv(containerType == "std::vector", "size_t", "qsizetype")
+			t.UniquePtr = p.UniquePtr
+
+			afterCall += indent + "// Convert " + containerType + "<> from C++ memory to manually-managed C memory\n"
+			afterCall += indent + cType + "* " + namePrefix + "_arr = static_cast<" + cType + "*>(malloc(sizeof(" + cType + ") * (" + namePrefix + "_ret" + memberRef + "size())));\n"
+			afterCall += indent + "for (" + iterType + " " + iterator + " = 0; " + iterator + " < " + namePrefix + "_ret" + memberRef + "size()" + "; ++" + iterator + ") {\n"
+
+			retExpr, cleanupType = emitAssignCppToCabi(indent+"\t"+namePrefix+"_arr["+iterator+"] = ", t, maybeDerefOpen+namePrefix+"_ret"+maybeDerefClose+"["+iterator+"]")
+			afterCall += retExpr
+			afterCall += indent + "}\n"
+		}
+
+		if isSignal {
+			cleanupType = QListFree
+		}
+
+		afterCall += indent + "libqt_list " + namePrefix + "_out;\n"
+		afterCall += indent + namePrefix + "_out.len = " + namePrefix + "_ret" + memberRef + "size();\n"
+		afterCall += indent + namePrefix + "_out.data." + unionType + " = " + castType + maybeLParen + namePrefix + "_arr" + maybeRParen + ";\n"
+
+		afterCall += indent + assignExpression + namePrefix + "_out;\n"
+
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if t, ok := p.QSetOf(); ok {
+
+		unionType, castType, maybeLParen, maybeRParen := getUnionType(t)
+		cType := t.RenderTypeCabi(false)
+
+		shouldReturn = p.RenderTypeQtCpp() + " " + namePrefix + "_ret = "
+
+		if t.ParameterType == "QString" || t.ParameterType == "QByteArray" {
+			cType = t.RenderTypeCabi(true)
+
+			afterCall += indent + "// Convert QSet<> from C++ memory to manually-managed C memory\n"
+			afterCall += indent + cType + "* " + namePrefix + "_arr = static_cast<" + cType + "*>(malloc(sizeof(" + cType + ") * " + namePrefix + "_ret.size()));\n"
+			afterCall += indent + "int " + namePrefix + "_sctr = 0;\n"
+			afterCall += indent + "QSetIterator<" + t.RenderTypeQtCpp() + "> " + namePrefix + "_itr(" + namePrefix + "_ret);\n"
+			afterCall += indent + "while (" + namePrefix + "_itr.hasNext()) {\n"
+
+			retExpr, cleanupType = emitAssignCppToCabi(indent+"\t"+namePrefix+"_arr["+namePrefix+"_sctr++] = ", t, namePrefix+"_itr.next()")
+			afterCall += retExpr
+			afterCall += indent + "}\n"
+
+			afterCall += indent + "libqt_list " + namePrefix + "_out;\n"
+			afterCall += indent + namePrefix + "_out.len = " + namePrefix + "_ret.size();\n"
+			afterCall += indent + namePrefix + "_out.data.chars = (char*)" + namePrefix + "_arr;\n"
+
+			afterCall += indent + assignExpression + namePrefix + "_out;\n"
+			return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+		} else {
+			afterCall += indent + "// Convert QSet<> from C++ memory to manually-managed C memory\n"
+			afterCall += indent + cType + "* " + namePrefix + "_arr = static_cast<" + cType + "*>(malloc(sizeof(" + cType + ") * " + namePrefix + "_ret.size()));\n"
+			afterCall += indent + "int " + namePrefix + "_ctr = 0;\n"
+			afterCall += indent + "QSetIterator<" + t.RenderTypeQtCpp() + "> " + namePrefix + "_itr(" + namePrefix + "_ret);\n"
+			afterCall += indent + "while (" + namePrefix + "_itr.hasNext()) {\n"
+
+			retExpr, cleanupType = emitAssignCppToCabi(indent+"\t"+namePrefix+"_arr["+namePrefix+"_ctr++] = ", t, namePrefix+"_itr.next()")
+			afterCall += retExpr
+			afterCall += indent + "}\n"
+
+			afterCall += indent + "libqt_list " + namePrefix + "_out;\n"
+			afterCall += indent + namePrefix + "_out.len = " + namePrefix + "_ret.size();\n"
+			afterCall += indent + namePrefix + "_out.data." + unionType + " = " + castType + maybeLParen + namePrefix + "_arr" + maybeRParen + ";\n"
+
+			afterCall += indent + assignExpression + namePrefix + "_out;\n"
+			return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+		}
+
+	} else if kType, vType, containerType, ok := p.QMapOf(); ok {
+
+		// QMap<K,V>
+		kTypeC := kType.RenderTypeCabi(false)
+		vTypeC := vType.RenderTypeCabi(false)
+		vParamC := vTypeC
+
+		var cleanupType, valueCleanupType CleanupType
+		memberRef := ifv(p.Pointer, "->", ".")
+		isQMulti := IsMultiHashMap(containerType)
+		mallocSize := namePrefix + "_ret" + memberRef + "size()"
+
+		shouldReturn = p.RenderTypeQtCpp() + " " + namePrefix + "_ret = "
+
+		afterCall += indent + "// Convert " + containerType + "<> from C++ memory to manually-managed C memory\n"
+		if isQMulti {
+			afterCall += indent + "auto " + namePrefix + "_uniqueKeys = " + namePrefix + "_ret" + memberRef + "uniqueKeys();\n"
+			afterCall += indent + "auto " + namePrefix + "_numUniqueKeys = " + namePrefix + "_uniqueKeys.size();\n"
+			mallocSize = namePrefix + "_numUniqueKeys"
+			vParamC = "libqt_list"
+		}
+		afterCall += indent + kTypeC + "* " + namePrefix + "_karr = static_cast<" + kTypeC + "*>(malloc(sizeof(" + kTypeC + ") * " + mallocSize + "));\n"
+		afterCall += indent + vParamC + "* " + namePrefix + "_varr = static_cast<" + vParamC + "*>(malloc(sizeof(" + vParamC + ") * " + mallocSize + "));\n"
+
+		if isQMulti {
+			afterCall += "for (auto i = 0; i < " + namePrefix + "_numUniqueKeys; ++i) {\n"
+			afterCall += kType.ParameterType + " key = " + namePrefix + "_uniqueKeys[i];\n"
+
+			if kType.ParameterType == "QByteArray" {
+				afterCall += namePrefix + "_karr[i].len = key.length();\n"
+				afterCall += namePrefix + "_karr[i].data = static_cast<char*>(malloc(" + namePrefix + "_karr[i].len + 1));\n"
+				afterCall += "memcpy((void*)" + namePrefix + "_karr[i].data, key.data(), " + namePrefix + "_karr[i].len);\n"
+				afterCall += "((char*)" + namePrefix + "_karr[i].data)[" + namePrefix + `_karr[i].len] = '\0'` + ";\n"
+			} else if kType.IntType() {
+				afterCall += namePrefix + "_karr[i] = static_cast<" + kType.RenderTypeCabi(true) + ">(key);\n"
+			} else if IsKnownClass(kType.ParameterType) {
+				afterCall += namePrefix + "_karr[i] = new " + kType.ParameterType + "(key);\n"
+			} else {
+				panic("UNHANDLED " + strings.ToUpper(containerType) + " KEY PARAMETER TYPE: " + kType.ParameterType)
+			}
+
+			afterCall += "QList<" + vType.ParameterType + "> values = " + namePrefix + "_ret" + memberRef + "values(key);\n"
+			afterCall += "size_t numValues = values.size();\n"
+			afterCall += vTypeC + "* " + namePrefix + "_array = static_cast<" + vTypeC + "*>(malloc(sizeof(" + vTypeC + ") * numValues));\n"
+			afterCall += "for (size_t j = 0; j < numValues; ++j) {\n"
+
+			unionType, castType, maybeLParen, maybeRParen := getUnionType(vType)
+
+			if vType.ParameterType == "QString" {
+				afterCall += "QByteArray " + namePrefix + "_qb = values[j].toUtf8();\n"
+				afterCall += namePrefix + "_array[j].len = " + namePrefix + "_qb.length();\n"
+				afterCall += namePrefix + "_array[j].data = static_cast<" + vType.RenderTypeCabi(true) + ">(malloc(" + namePrefix + "_array[j].len + 1));\n"
+				afterCall += "memcpy((void*)" + namePrefix + "_array[j].data, " + namePrefix + "_qb.data(), " + namePrefix + "_array[j].len);\n"
+				afterCall += "((char*)" + namePrefix + "_array[j].data)[" + namePrefix + `_array[j].len] = '\0'` + ";\n"
+			} else if vType.ParameterType == "QByteArray" {
+				afterCall += namePrefix + "_array[j].len = values[j].length();\n"
+				afterCall += namePrefix + "_array[j].data = static_cast<char*>(malloc(" + namePrefix + "_array[j].len + 1));\n"
+				afterCall += "memcpy((void*)" + namePrefix + "_array[j].data, values[j].data(), " + namePrefix + "_array[j].len);\n"
+				afterCall += "((char*)" + namePrefix + "_array[j].data)[" + namePrefix + `_array[j].len] = '\0'` + ";\n"
+			} else if IsKnownClass(vType.ParameterType) {
+				afterCall += namePrefix + "_array[j] = new " + vType.ParameterType + "(values[j]);\n"
+			} else {
+				panic("UNHANDLED " + strings.ToUpper(containerType) + " VALUE PARAMETER TYPE: " + vType.ParameterType)
+			}
+
+			afterCall += "}\n"
+			afterCall += namePrefix + "_varr[i].len = numValues;\n"
+			afterCall += namePrefix + "_varr[i].data." + unionType + " = " + castType + maybeLParen + namePrefix + "_array" + maybeRParen + ";\n"
+
+		} else {
+			afterCall += indent + "int " + namePrefix + "_ctr = 0;\n"
+			afterCall += indent + "for (auto " + namePrefix + "_itr = " + namePrefix + "_ret" + memberRef + "keyValueBegin(); " + namePrefix + "_itr != " + namePrefix + "_ret" + memberRef + "keyValueEnd(); ++" + namePrefix + "_itr) {\n"
+
+			retExpr, cleanupType = emitAssignCppToCabi(indent+"\t"+namePrefix+"_karr["+namePrefix+"_ctr] = ", kType, namePrefix+"_itr->first")
+			afterCall += retExpr
+
+			retExpr, valueCleanupType = emitAssignCppToCabi(indent+"\t"+namePrefix+"_varr["+namePrefix+"_ctr] = ", vType, namePrefix+"_itr->second")
+			afterCall += retExpr
+			afterCall += indent + "\t" + namePrefix + "_ctr++;\n"
+		}
+
+		afterCall += indent + "}\n"
+
+		if p.Pointer {
+			afterCall += indent + "libqt_map* " + namePrefix + "_out = static_cast<libqt_map*>(malloc(sizeof(libqt_map)));\n"
+		} else {
+			afterCall += indent + "libqt_map " + namePrefix + "_out;\n"
+		}
+		afterCall += indent + namePrefix + "_out" + memberRef + "len = " + mallocSize + ";\n"
+		afterCall += indent + namePrefix + "_out" + memberRef + "keys = static_cast<void*>(" + namePrefix + "_karr);\n"
+		afterCall += indent + namePrefix + "_out" + memberRef + "values = static_cast<void*>(" + namePrefix + "_varr);\n"
+
+		afterCall += indent + assignExpression + namePrefix + "_out;\n"
+
+		if valueCleanupType != NoFree {
+			if cleanupType != NoFree && cleanupType != valueCleanupType {
+				panic("QMap cleanup type mismatch")
+			}
+			cleanupType = valueCleanupType
+		}
+
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if kType, vType, ok := p.QPairOf(); ok {
+
+		// QPair<T1,T2>
+		kTypeC := kType.RenderTypeCabi(false)
+		vTypeC := vType.RenderTypeCabi(false)
+
+		shouldReturn = p.RenderTypeQtCpp() + " " + namePrefix + "_ret = "
+
+		afterCall += indent + "// Convert QPair<> from C++ memory to manually-managed C memory\n"
+
+		if (kType.IntType() || IsKnownClass(kType.ParameterType)) && (vType.IntType() || IsKnownClass(vType.ParameterType)) {
+			afterCall += indent + p.RenderTypeCabi(false) + " " + namePrefix + "_out;"
+
+			var maybeNewF, fClose, maybeNewS, sClose string
+			if IsKnownClass(kType.ParameterType) && kType.ParameterType != "QAccessibleInterface" {
+				maybeNewF = "new " + kType.ParameterType + "("
+				fClose = ")"
+			}
+			if IsKnownClass(vType.ParameterType) && vType.ParameterType != "QAccessibleInterface" {
+				maybeNewS = "new " + vType.ParameterType + "("
+				sClose = ")"
+			}
+
+			afterCall += indent + namePrefix + "_out.first = " + maybeNewF + namePrefix + "_ret.first" + fClose + ";\n"
+			afterCall += indent + namePrefix + "_out.second = " + maybeNewS + namePrefix + "_ret.second" + sClose + ";\n"
+			afterCall += indent + assignExpression + namePrefix + "_out;\n"
+
+		} else {
+			afterCall += indent + kTypeC + "* " + namePrefix + "_first = static_cast<" + kTypeC + "*>(malloc(sizeof(" + kTypeC + ")));\n"
+			afterCall += indent + vTypeC + "* " + namePrefix + "_second = static_cast<" + vTypeC + "*>(malloc(sizeof(" + vTypeC + ")));\n"
+
+			retExpr, cleanupType = emitAssignCppToCabi(indent+"*"+namePrefix+"_first = ", kType, namePrefix+"_ret.first")
+			afterCall += retExpr
+
+			var valueCleanupType CleanupType
+			retExpr, valueCleanupType = emitAssignCppToCabi(indent+"*"+namePrefix+"_second = ", vType, namePrefix+"_ret.second")
+			afterCall += retExpr
+
+			afterCall += indent + "libqt_pair " + namePrefix + "_out;\n"
+			afterCall += indent + namePrefix + "_out.first = static_cast<void*>(" + namePrefix + "_first);\n"
+			afterCall += indent + namePrefix + "_out.second = static_cast<void*>(" + namePrefix + "_second);\n"
+			afterCall += indent + assignExpression + namePrefix + "_out;\n"
+
+			if valueCleanupType != NoFree {
+				if cleanupType != NoFree && cleanupType != valueCleanupType {
+					panic("QPair cleanup type mismatch")
+				}
+				cleanupType = valueCleanupType
+			}
+		}
+
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if p.IntType() && p.ByRef && strings.Contains(rvalue, "->") {
+		// return type by reference
+		return indent + shouldReturn + "&(" + rvalue + ");\n" + afterCall, cleanupType
+
+	} else if p.UniquePtr {
+		shouldReturn += rvalue + ".release();\n"
+		return indent + shouldReturn, cleanupType
+
+	} else if p.IsStdOptional {
+		var maybeRet, maybePre, value string
+		if p.ParameterType == "bool" {
+			value = ".value_or(false)"
+		} else if p.IsKnownEnum() {
+			maybePre = "static_cast<" + p.RenderTypeCabi(false) + ">("
+			value = ".value_or(static_cast<" + p.RenderTypeQtCpp() + ">(-1)))"
+		} else if p.IntType() {
+			value = ".value_or(-1)"
+		} else if IsKnownClass(p.ParameterType) {
+			maybeRet = "auto _ret = " + rvalue + ";\n"
+			maybePre = "_ret ? new " + p.ParameterType + "(*_ret) : nullptr"
+			rvalue = ""
+		}
+		shouldReturn += maybePre + rvalue + value + ";\n"
+		return indent + maybeRet + shouldReturn, cleanupType
+
+	} else if p.IsFunctionPointer {
+		return indent + shouldReturn + "reinterpret_cast<intptr_t>(" + rvalue + ");\n" + afterCall, cleanupType
+
+	} else if p.QtClassType() && p.ByRef {
+
+		// It's a pointer in disguise, just needs one cast
+		pCppType := p.RenderTypeQtCpp()
+		if IsKnownClass(pCppType) {
+			// Cast returned value into pointer
+			shouldReturn += "new " + pCppType + "(" + rvalue + ");\n"
+			return indent + shouldReturn, cleanupType
+		} else {
+			shouldReturn = pCppType + " " + namePrefix + "_ret = "
+			afterCall += indent + "// Cast returned reference into pointer\n"
+			if p.Const {
+				nonConst := p // copy
+				nonConst.Const = false
+				nonConst.ByRef = false
+				nonConst.Pointer = true
+				nonConst.PointerCount = 1
+				afterCall += indent + assignExpression + "const_cast<" + nonConst.RenderTypeQtCpp() + ">(&" + namePrefix + "_ret);\n"
+			} else {
+				afterCall += indent + assignExpression + "&" + namePrefix + "_ret;\n"
+			}
+		}
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if p.QtClassType() && !p.Pointer {
+
+		// Elide temporary and emit directly from the rvalue
+		return indent + assignExpression + "new " + p.ParameterType + "(" + rvalue + ");\n", cleanupType
+
+	} else if p.IsFlagType() || p.IsKnownEnum() || p.IsChronoSeconds() || p.QtCppOriginalType != nil {
+
+		// Needs an explicit cast
+		shouldReturn = p.RenderTypeQtCpp() + " " + namePrefix + "_ret = "
+
+		if p.QtCppOriginalType != nil && p.QtCppOriginalType.Const != p.Const {
+			afterCall += indent + assignExpression + "const_cast<" + p.RenderTypeCabi(false) + ">(static_cast<" + p.RenderTypeIntermediateCpp() + ">(" + namePrefix + "_ret));\n"
+		} else if p.QtCppOriginalType != nil && p.QtCppOriginalType.ParameterType == "qintptr" {
+			// Hard int cast
+			afterCall += indent + assignExpression + "(" + p.RenderTypeCabi(false) + ")(" + namePrefix + "_ret);\n"
+		} else if p.ByRef {
+			afterCall += indent + assignExpression + "reinterpret_cast<" + p.RenderTypeCabi(false) + ">(&" + rvalue + ");\n"
+		} else if p.IsChronoSeconds() {
+			afterCall += indent + assignExpression + namePrefix + "_ret.count();\n"
+		} else {
+			afterCall += indent + assignExpression + "static_cast<" + p.RenderTypeCabi(false) + ">(" + rvalue + ");\n"
+			return indent + afterCall, cleanupType
+		}
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else if p.Const {
+
+		shouldReturn += "(" + p.RenderTypeCabi(false) + ") "
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+
+	} else {
+
+		// Basic type
+		if p.ByRef {
+			// The C++ type is a reference, the CABI type is a pointer type
+			shouldReturn += "&"
+		}
+
+		return indent + shouldReturn + rvalue + ";\n" + afterCall, cleanupType
+	}
+}
+
+// getReferencedTypes finds all referenced Qt types in this file.
+func getReferencedTypes(src *CppParsedHeader, qtextradefs map[string]struct{}, qtfuncdefs map[string]FunctionTypedef) []string {
+	foundTypes := map[string]struct{}{}
+
+	var maybeAddType func(p CppParameter)
+	maybeAddType = func(p CppParameter) {
+		if p.QtClassType() {
+			foundTypes[p.ParameterType] = struct{}{}
+		}
+		if t, containerType, ok := p.QListOf(); ok {
+			foundTypes[containerType] = struct{}{}
+			maybeAddType(t)
+		}
+		if kType, vType, containerType, ok := p.QMapOf(); ok {
+			foundTypes[containerType] = struct{}{}
+			maybeAddType(kType)
+			maybeAddType(vType)
+		}
+		if kType, vType, ok := p.QPairOf(); ok {
+			foundTypes["QPair"] = struct{}{}
+			maybeAddType(kType)
+			maybeAddType(vType)
+
+			if qtextradefs != nil && (kType.IntType() || IsKnownClass(kType.ParameterType)) && (vType.IntType() || IsKnownClass(vType.ParameterType)) {
+				kParam := kType.ParameterType
+				vParam := vType.ParameterType
+
+				if e, ok := KnownEnums[kType.ParameterType]; ok {
+					kParam = e.EnumTypeC
+				}
+				if e, ok := KnownEnums[vType.ParameterType]; ok {
+					vParam = e.EnumTypeC
+				}
+
+				qtextradefs[kParam+":"+vParam] = struct{}{}
+			}
+		}
+		if t, ok := p.QSetOf(); ok {
+			foundTypes["QSet"] = struct{}{}
+			maybeAddType(t)
+		}
+	}
+
+	for _, c := range src.Classes {
+		foundTypes[c.ClassName] = struct{}{}
+
+		for _, ctor := range c.Ctors {
+			for _, p := range ctor.Parameters {
+				maybeAddType(p)
+			}
+		}
+		for _, m := range c.Methods {
+			for _, p := range m.Parameters {
+				maybeAddType(p)
+			}
+			maybeAddType(m.ReturnType)
+			if qtfuncdefs != nil && m.ReturnType.IsFunctionPointer {
+				var vFunc FunctionTypedef
+
+				vFunc.FunctionName = m.ReturnType.renderFunctionType()
+				vFunc.Parameters = m.ReturnType.FunctionPointer.Parameters
+				vFunc.ReturnType = m.ReturnType.FunctionPointer.ReturnType
+
+				if vFn, ok := qtfuncdefs[m.ReturnType.ParameterType]; ok && vFn.FunctionName != vFunc.FunctionName {
+					panic("NON-MATCHING FUNCTION DEFINITION: " + vFn.FunctionName + " vs " + vFunc.FunctionName)
+				}
+				qtfuncdefs[m.ReturnType.ParameterType] = vFunc
+			}
+		}
+		for _, vm := range c.VirtualMethods() {
+			for _, p := range vm.Parameters {
+				maybeAddType(p)
+			}
+			maybeAddType(vm.ReturnType)
+		}
+		for _, vm := range c.ProtectedMethods() {
+			for _, p := range vm.Parameters {
+				maybeAddType(p)
+			}
+			maybeAddType(vm.ReturnType)
+		}
+		for _, cn := range c.AllInheritsClassInfo() {
+			maybeAddType(CppParameter{
+				ParameterType: cn.Class.ClassName,
+			})
+		}
+	}
+
+	// Some types (e.g. QRgb) are found but are typedefs, not classes
+	for _, td := range src.Typedefs {
+		delete(foundTypes, td.Alias)
+	}
+
+	// Convert to sorted list
+	foundTypesList := make([]string, 0, len(foundTypes))
+	for ft := range foundTypes {
+		if !AllowClass(ft) {
+			continue
+		}
+
+		foundTypesList = append(foundTypesList, ft)
+	}
+	sort.Strings(foundTypesList)
+
+	return foundTypesList
+}
+
+// Add protected enum using declarations for the entire inheritance chain
+func getAllProtectedEnums(c *CppClass, seen map[string]struct{}) []CppEnum {
+	var enums []CppEnum
+
+	// Add this class's protected enums
+	for _, e := range c.ChildEnums {
+		if e.IsProtected {
+			if _, ok := seen[e.EnumName]; !ok {
+				seen[e.EnumName] = struct{}{}
+				enums = append(enums, e)
+			}
+		}
+	}
+
+	// Recursively get protected enums from all parent classes
+	for _, parentInfo := range c.DirectInheritClassInfo() {
+		parentEnums := getAllProtectedEnums(&parentInfo.Class, seen)
+		enums = append(enums, parentEnums...)
+	}
+
+	return enums
+}
+
+// cabiClassName returns the C ABI class name for a Qt C++ class.
+// Normally this is the same, except for class types that are nested inside another class definition.
+func cabiClassName(className string) string {
+
+	// Many types are defined in qnamespace.h under Qt::
+	// The C implementation is always called Qt_Foo, and though these names
+	// don't collide with anything, strip the redundant prefix
+	className = strings.TrimPrefix(className, "Qt::")
+
+	// Must use __ to avoid subclass/method name collision e.g. QPagedPaintDevice::Margins
+	return strings.ReplaceAll(className, "::", "__")
+}
+
+func cabiPreventStructDeclaration(className string) bool {
+	if !AllowStructDef(className) {
+		return true
+	}
+
+	switch className {
+	case "QList", "QString", "QSet", "QMap", "QMultiMap", "QHash", "QMultiHash",
+		"QPair", "QVector", "QByteArray", "QSpan":
+		return true // These types are reprojected
+	default:
+		return false
+	}
+}
+
+var (
+	ret = strings.Builder{}
+
+	noQtConnect = map[string]struct{}{
+		"Accounts__AccountService":      {},
+		"KNSCore__EngineBase":           {},
+		"KParts__NavigationExtension":   {},
+		"QAudioDecoder":                 {},
+		"QBluetoothPermission":          {},
+		"QCPAbstractPlottable":          {},
+		"QCPAxis":                       {},
+		"QCPPolarAxisAngular":           {},
+		"QCPPolarAxisRadial":            {},
+		"QCPPolarGraph":                 {},
+		"QCalendarPermission":           {},
+		"QCameraPermission":             {},
+		"QCompleter":                    {},
+		"QContactsPermission":           {},
+		"QDesignerIntegrationInterface": {},
+		"QLocationPermission":           {},
+		"QMicrophonePermission":         {},
+		"QNativeInterface__QEGLContext": {},
+		"QPrintDialog":                  {},
+		"QsciScintillaBase":             {},
+	}
+
+	unmatchedQtConnect = []string{
+		"QWebSocket_Error2",
+	}
+
+	moveCtorOnly = map[string]struct{}{
+		"QDirListing::const_iterator": {},
+	}
+
+	nonPolymorphicClasses = map[string]struct{}{
+		"QCborValueConstRef":          {},
+		"QJsonValueConstRef":          {},
+		"QMediaMetaData":              {},
+		"QPropertyObserver":           {},
+		"QResource":                   {},
+		"QStaticByteArrayMatcherBase": {},
+		"QStringConverterBase":        {},
+		"QTextBlockFormat":            {},
+		"QTextCharFormat":             {},
+		"QTextFrameFormat":            {},
+		"QTextListFormat":             {},
+		"QVLABaseBase":                {},
+		"QVariant":                    {},
+	}
+
+	skippedMethods = map[string]struct{}{
+		"KEncodingFileDialog_Tr":                {}, // linker error due to currently missing staticMetaObject
+		"KEncodingFileDialog_Tr2":               {}, // linker error due to currently missing staticMetaObject
+		"KEncodingFileDialog_Tr3":               {}, // linker error due to currently missing staticMetaObject
+		"KIO_FileCopy2":                         {}, // this overload is intentionally not implemented upstream
+		"KIO_FileMove2":                         {}, // this overload is intentionally not implemented upstream
+		"KTextEditor::DocumentCursor_ToCursor2": {}, // broken overload
+		"KTextEditor::MovingCursor_ToCursor2":   {}, // broken overload
+		"KTextEditor::MovingRange_ToRange2":     {}, // broken overload
+		"KTextEditor_QHash":                     {}, // multiple conflicting overloads
+		"KXmlGuiWindow_VirtualHook":             {}, // this method is found in multiple base classes of different types and undocumented
+		"QHostAddress_IsInSubnet2":              {}, // linker error
+	}
+
+	cTypes = []string{
+		"char",
+		"double",
+		"float",
+		"int",
+		"long long",
+		"uint16_t",
+		"unsigned char",
+		"unsigned int",
+	}
+)
+
+func emitVirtualBindingHeader(src *CppParsedHeader, packageName string) (string, error) {
+	if len(src.Classes) == 0 {
+		return "", nil
+	}
+
+	ret.Reset()
+
+	srcFilename := filepath.Base(src.Filename)
+	includeGuard := strings.ToUpper(strings.ReplaceAll(strings.ReplaceAll(packageName, "/", "_"), "-", "_")) + "C_LIBVIRTUAL" + strings.ToUpper(strings.ReplaceAll(strings.ReplaceAll(srcFilename, ".", "_"), "-", "_"))
+	maybeDots := ""
+
+	if strings.Contains(packageName, "/") {
+		maybeDots = "../"
+	}
+
+	ret.WriteString(`#pragma once
+#ifndef ` + includeGuard + `
+#define ` + includeGuard + `
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "` + maybeDots + `qtlibc.h"` + "\n\n\n")
+
+	for _, c := range src.Classes {
+		if !AllowDefinitionForClass(c.ClassName) {
+			continue
+		}
+
+		methodPrefixName := cabiClassName(c.ClassName)
+		virtualMethods := c.VirtualMethods()
+		protectedMethods := c.ProtectedMethods()
+
+		if len(virtualMethods) > 0 {
+			overriddenClassName := "Virtual" + strings.ReplaceAll(c.ClassName, "::", "")
+
+			var publicTypes, privateCallbacks, callbackSetters, baseSetters, privateCallbackVars, privateBaseFlags, friendFuncs []string
+
+			maybeFinal := ifv(c.Abstract, "", " final")
+			ret.WriteString("// This class is a subclass of " + c.ClassName + " so that we can call protected methods\n")
+			ret.WriteString("class " + overriddenClassName + maybeFinal + " : public " + c.ClassName + " {\n\n")
+
+			seenProtectedEnums := map[string]struct{}{}
+			allProtectedEnums := getAllProtectedEnums(&c, seenProtectedEnums)
+			for _, e := range allProtectedEnums {
+				publicTypes = append(publicTypes, "\tusing "+e.EnumName+";\n")
+			}
+
+			seenCallbacks := map[string]struct{}{}
+			seenMethodVariants := map[string]bool{}
+
+			virtualMethods = append(virtualMethods, protectedMethods...)
+
+			for _, m := range virtualMethods {
+				if m.IsFinal || m.HasStdFunctionPointerParam {
+					continue
+				}
+
+				var showHiddenParams bool
+				baseName := methodPrefixName + "_" + m.SafeMethodName()
+				if _, ok := seenMethodVariants[baseName]; ok {
+					showHiddenParams = true
+				} else {
+					seenMethodVariants[baseName] = false
+				}
+				if _, ok := skippedMethods[baseName]; ok {
+					continue
+				}
+
+				callbackType := baseName + "_Callback"
+				callbackName := strings.ToLower(callbackType)
+				isBaseName := strings.ToLower(baseName) + "_isbase"
+				if _, ok := seenCallbacks[callbackType]; ok {
+					continue
+				}
+
+				var maybeSelf string
+				maybeConst := ifv(m.IsConst, "const ", "")
+				if len(m.Parameters) != 0 || (showHiddenParams && len(m.HiddenParams) != 0) {
+					maybeSelf = maybeConst + methodPrefixName + "*"
+				}
+
+				// Callback types
+				publicTypes = append(publicTypes, "\tusing "+callbackType+" = "+m.ReturnType.RenderTypeCabi(true)+
+					" (*)("+emitCallbackParameterTypesCabi(m, maybeSelf)+");\n")
+
+				// Instance callback storage
+				privateCallbacks = append(privateCallbacks, "\t"+callbackType+" "+callbackName+" = nullptr;\n")
+				callbackSetters = append(callbackSetters, "\tinline void set"+callbackType+"("+callbackType+" cb) { "+callbackName+" = cb; }\n")
+				baseSetters = append(baseSetters, "\tinline void set"+baseName+"_IsBase(bool value) const { "+isBaseName+" = value; }\n")
+				privateCallbackVars = append(privateCallbackVars, callbackName)
+
+				// Instance base flags
+				privateBaseFlags = append(privateBaseFlags, "    mutable bool "+isBaseName+" = false;\n")
+
+				// Friend functions
+				if m.IsProtected {
+					cClassName := cabiClassName(c.ClassName)
+					friendFuncs = append(friendFuncs, "\tfriend "+m.ReturnType.RenderTypeCabi(false)+" "+cClassName+"_"+m.SafeMethodName()+"("+emitParametersCabi(m, maybeConst+c.ClassName+"*")+");\n")
+					friendFuncs = append(friendFuncs, "\tfriend "+m.ReturnType.RenderTypeCabi(false)+" "+cClassName+"_Super"+m.SafeMethodName()+"("+emitParametersCabi(m, maybeConst+c.ClassName+"*")+");\n")
+				}
+
+				seenCallbacks[callbackType] = struct{}{}
+			}
+
+			// Virtual method public types
+			ret.WriteString("public:\n\t// Virtual class boolean flag\n")
+			ret.WriteString("\tbool is" + overriddenClassName + "= true;\n\n")
+			ret.WriteString("\t// Virtual class public types (including callbacks)\n" + strings.Join(publicTypes, "") + "\n")
+
+			// Virtual method protected types
+			ret.WriteString("protected:\n\t// Instance callback storage\n" + strings.Join(privateCallbacks, "") +
+				"\n\t// Instance base flags\n" + strings.Join(privateBaseFlags, "") + "\n")
+
+			ret.WriteString("public:\n")
+
+			var seenCtors []string
+
+			for _, ctor := range c.Ctors {
+				if _, ok := moveCtorOnly[c.ClassName]; ok && !ctor.IsMoveCtor {
+					continue
+				}
+
+				cppParams := emitParametersCpp(ctor, false)
+				paramNames := emitParameterNames(ctor, false)
+
+				// hacking around this poor constructor definition
+				if paramNames == "title, text, selectedMimeTypes, defaultGroup" {
+					paramNames += ", nullptr"
+				}
+
+				if !slices.Contains(seenCtors, cppParams) {
+					ret.WriteString("\t" + overriddenClassName + "(" + cppParams + "): " + c.ClassName + "(" + paramNames + ") {};\n")
+					seenCtors = append(seenCtors, cppParams)
+				}
+			}
+			ret.WriteString("\n")
+
+			ret.WriteString("// Callback setters\n" + strings.Join(callbackSetters, "") + "\n")
+			ret.WriteString("// Base flag setters\n" + strings.Join(baseSetters, "") + "\n")
+
+			seenVirtuals := map[string]bool{}
+
+			for _, m := range virtualMethods {
+				if m.IsFinal || m.HasStdFunctionPointerParam {
+					continue
+				}
+
+				var showHiddenParams bool
+				mSafeMethodName := m.SafeMethodName()
+				baseName := methodPrefixName + "_" + mSafeMethodName
+				if b, ok := seenVirtuals[m.MethodName]; ok && b {
+					continue
+				}
+				if _, ok := seenVirtuals[m.MethodName]; ok {
+					showHiddenParams = true
+					seenVirtuals[m.MethodName] = true
+				} else {
+					seenVirtuals[m.MethodName] = false
+				}
+
+				if _, ok := skippedMethods[baseName]; ok {
+					continue
+				}
+
+				cppMethodName := m.CppCallTarget()
+				maybeReturn := ifv(!m.ReturnType.Void(), "return ", "")
+				maybeOverride := ifv(m.IsVirtual || (m.IsProtected && m.IsVirtual), "override ", "")
+				maybeVirtual := ifv(m.IsVirtual, "virtual ", "")
+
+				var maybeReturn2, retTransformP, retTransformF string
+				if !m.ReturnType.Void() {
+					maybeReturn2 = m.ReturnType.RenderTypeCabi(true) + " callback_ret = "
+					returnParam := m.ReturnType // copy
+					returnParam.ParameterName = "callback_ret"
+					retTransformP, retTransformF = emitCABI2CppForwarding(returnParam, "\t\t", c.ClassName, true)
+				}
+
+				var customCallback, maybeThis, signalCode, sigCleanup string
+				if showHiddenParams && len(m.HiddenParams) == 0 {
+					continue
+				}
+				maybeParams := emitParameterNames(m, showHiddenParams)
+				maybeFunc := emitParametersCpp(m, showHiddenParams)
+				indent := "\t\t"
+				methodExec := maybeReturn + methodPrefixName + "::" + cppMethodName + "(" + maybeParams + ");"
+				callbackName := strings.ToLower(baseName) + "_callback"
+				isBaseName := strings.ToLower(baseName) + "_isbase"
+
+				if len(m.Parameters) != 0 {
+					maybeThis = "this"
+				}
+
+				if showHiddenParams && len(m.HiddenParams) != 0 {
+					maybeThis = "this"
+				}
+
+				paramArgs := []string{}
+				if maybeThis != "" {
+					paramArgs = append(paramArgs, maybeThis)
+				}
+
+				for i, p := range m.Parameters {
+					retExpr, cleanupType := emitAssignCppToCabi(fmt.Sprintf("\t\t%s cbval%d = ", p.RenderTypeCabi(true), i+1), p, p.cParameterName())
+					signalCode += retExpr
+					paramArgs = append(paramArgs, "cbval"+strconv.Itoa(i+1))
+					sigCleanup += renderCleanupType(p.ParameterName, cleanupType)
+				}
+
+				cbName := strings.ToLower(mSafeMethodName) + "_cb"
+				returnDecl := m.ReturnType.RenderTypeQtCpp()
+				retString := ifv(len(signalCode) > 0, signalCode+"\n", "")
+				if IsKnownClass(m.ReturnType.ParameterType) && !m.ReturnType.Pointer && m.ReturnType.ParameterType != "QByteArrayView" {
+					retString += maybeReturn2 + cbName + "(" + strings.Join(paramArgs, ", ") + ");\n"
+					retString += sigCleanup
+					retString += "return *callback_ret;\n"
+				} else {
+					retString += maybeReturn2 + cbName + "(" + strings.Join(paramArgs, ", ") + ");\n"
+					retString += retTransformP + sigCleanup + ifv(returnDecl == "void", "", "return "+retTransformF+";\n")
+				}
+
+				if !m.IsPureVirtual && !m.IsPrivate {
+					customCallback += indent + "if (" + isBaseName + ") {\n"
+					customCallback += indent + "\t" + isBaseName + " = false;\n"
+					customCallback += indent + "\t" + methodExec + "\n"
+					customCallback += ifv(returnDecl == "void", indent+"\t"+"return;\n", "")
+					customCallback += indent + "}\n"
+				}
+
+				customCallback += indent + "auto " + cbName + " = " + callbackName + ";\n"
+				customCallback += indent + "if (" + cbName + ") {\n"
+				customCallback += indent + "\t" + retString
+
+				if m.IsPureVirtual || m.IsPrivate {
+					if returnDecl != "void" {
+						ret := "{}"
+						if c.ClassName == "KIO::ThumbnailCreator" && m.MethodName == "create" {
+							ret = "KIO::ThumbnailResult::fail()"
+						}
+						if strings.HasPrefix(c.ClassName, "QCP") && m.MethodName == "selectTestRect" {
+							ret = m.ReturnType.ParameterType + "()"
+						}
+						customCallback += indent + "}\n"
+						customCallback += indent + "\t" + maybeReturn + ret + ";\n"
+					} else {
+						customCallback += indent + "}\n"
+					}
+
+				} else {
+					customCallback += ifv(returnDecl == "void", indent+"return;\n", "")
+					customCallback += indent + "}\n"
+					customCallback += indent + "\t" + methodExec + "\n"
+				}
+
+				maybeConst := ifv(m.IsConst, "const ", "")
+
+				ret.WriteString("\n\t// Virtual method for C ABI access and custom callback\n" +
+					"\t" + maybeVirtual + returnDecl + " " + cppMethodName + "(" + maybeFunc + ") " +
+					maybeConst + maybeOverride + "{\n" + customCallback + "\t}\n")
+			}
+
+			if len(friendFuncs) > 0 {
+				ret.WriteString("\n\t// Friend functions\n" + strings.Join(friendFuncs, ""))
+			}
+
+			ret.WriteString("};\n\n")
+		}
+	}
+
+	ret.WriteString("#endif\n\n")
+	ret.WriteString("\n")
+
+	return ret.String(), nil
+}
+
+func emitBindingHeader(src *CppParsedHeader, packageName string) (string, map[string]struct{}, error) {
+	if len(src.Classes) == 0 {
+		return "", nil, nil
+	}
+
+	ret.Reset()
+
+	qtstructdefs := make(map[string]struct{})
+	qtextradefs := make(map[string]struct{})
+
+	srcFilename := filepath.Base(src.Filename)
+	includeGuard := strings.ToUpper(strings.ReplaceAll(strings.ReplaceAll(packageName, "/", "_"), "-", "_")) + "C_LIB" + strings.ToUpper(strings.ReplaceAll(strings.ReplaceAll(srcFilename, ".", "_"), "-", "_")+"pp")
+	maybeDots := ""
+
+	if strings.Contains(packageName, "/") {
+		maybeDots = "../"
+	}
+
+	ret.WriteString(`#pragma once
+#ifndef ` + includeGuard + `
+#define ` + includeGuard + `
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "` + maybeDots + `qtlibc.h"` + "\n" + "\n\n" + `
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+`)
+
+	foundTypesList := getReferencedTypes(src, qtextradefs, nil)
+
+	ret.WriteString("#ifdef __cplusplus\n")
+
+	for _, ft := range foundTypesList {
+		if cabiPreventStructDeclaration(ft) {
+			continue
+		}
+
+		if strings.Contains(ft, "::") {
+			// Forward declarations of inner classes are not yet supported in C++
+			// @ref https://stackoverflow.com/q/1021793
+
+			typeDefStr := "typedef " + ft + " " + cabiClassName(ft) + ";\n"
+
+			if AllowInnerClassDef(ft) {
+				ret.WriteString(typeDefStr)
+			} else {
+				ret.WriteString("#if defined(WORKAROUND_INNER_CLASS_DEFINITION_" + cabiClassName(ft) + ")\n")
+				ret.WriteString(typeDefStr)
+				ret.WriteString("#endif\n")
+			}
+		}
+	}
+
+	ret.WriteString("#else\n")
+
+	foundTypes := make([]string, 0, len(foundTypesList))
+	seenTypes := make([]string, 0, len(foundTypesList))
+
+	if srcFilename == "qopenglextrafunctions.h" || strings.HasPrefix(srcFilename, "qopenglfunctions") {
+		foundTypes = append(foundTypes, "typedef char GLchar;")
+		foundTypes = append(foundTypes, "typedef float GLclampf;")
+	}
+
+	for _, ft := range foundTypesList {
+		if cabiPreventStructDeclaration(ft) {
+			continue
+		}
+
+		fType := cabiClassName(ft)
+		fType = strings.TrimSuffix(fType, "*")
+		fType = strings.TrimPrefix(fType, "const ")
+
+		if slices.Contains(cTypes, fType) {
+			continue
+		}
+
+		if slices.Contains(seenTypes, fType) {
+			continue
+		}
+
+		seenTypes = append(seenTypes, fType)
+		typedef := "typedef struct " + fType + " " + fType + ";"
+		foundTypes = append(foundTypes, typedef)
+		qtstructdefs[typedef] = struct{}{}
+	}
+
+	sort.Strings(foundTypes)
+	ret.WriteString(strings.Join(foundTypes, "\n"))
+	ret.WriteString("\n#endif\n\n")
+
+	sortedExtras := make([]string, 0, len(qtextradefs))
+	for k := range qtextradefs {
+		sortedExtras = append(sortedExtras, k)
+	}
+	sort.Strings(sortedExtras)
+	for _, k := range sortedExtras {
+		pairs := strings.Split(k, ":")
+		f := strings.ReplaceAll(strings.ToLower(pairs[0]), " ", "_")
+		s := strings.ReplaceAll(strings.ToLower(pairs[1]), " ", "_")
+		ret.WriteString("struct pair_" + f + "_" + s + ";\n")
+	}
+	ret.WriteString("\n")
+	for _, k := range sortedExtras {
+		pairs := strings.Split(k, ":")
+		f := strings.ReplaceAll(strings.ToLower(pairs[0]), " ", "_")
+		s := strings.ReplaceAll(strings.ToLower(pairs[1]), " ", "_")
+		ret.WriteString("typedef struct pair_" + f + "_" + s + " pair_" + f + "_" + s + ";\n")
+	}
+	ret.WriteString("\n")
+	for _, k := range sortedExtras {
+		pairs := strings.Split(k, ":")
+		f := strings.ReplaceAll(strings.ToLower(pairs[0]), " ", "_")
+		s := strings.ReplaceAll(strings.ToLower(pairs[1]), " ", "_")
+		ret.WriteString("#ifndef PAIR_" + strings.ToUpper(f+"_"+s) + "\n" +
+			"#define PAIR_" + strings.ToUpper(f+"_"+s) + "\n" +
+			"struct pair_" + f + "_" + s + " {\n" +
+			pairs[0] + ifv(IsKnownClass(pairs[0]), "*", "") + " first;\n" +
+			pairs[1] + ifv(IsKnownClass(pairs[1]), "*", "") + " second;\n" +
+			"};\n" +
+			"#endif\n\n")
+	}
+
+	for _, c := range src.Classes {
+		if !AllowDefinitionForClass(c.ClassName) {
+			continue
+		}
+
+		methodPrefixName := cabiClassName(c.ClassName)
+		virtualMethods := c.VirtualMethods()
+		protectedMethods := c.ProtectedMethods()
+		seenClassMethods := map[string]bool{}
+		virtualEligible := AllowVirtualForClass(c.ClassName) && len(virtualMethods) > 0
+
+		// Add protected methods first
+		if virtualEligible && len(virtualMethods) > 0 {
+			virtualMethods = append(virtualMethods, protectedMethods...)
+		}
+
+		seenVirtualsMap := map[string]struct{}{}
+		for _, m := range c.Methods {
+			if !m.IsProtected {
+				continue
+			}
+
+			if _, ok := nonPolymorphicClasses[c.ClassName]; ok {
+				continue
+			}
+
+			virtualMethods = append(virtualMethods, m)
+			seenVirtualsMap[m.MethodName] = struct{}{}
+		}
+
+		if virtualEligible && len(virtualMethods) > 0 {
+			for _, m := range c.Methods {
+				if !m.IsProtected && !m.IsPureVirtual {
+					continue
+				}
+				if _, exists := seenVirtualsMap[m.MethodName]; !exists {
+					seenVirtualsMap[m.MethodName] = struct{}{}
+				}
+			}
+		}
+
+		for i, ctor := range c.Ctors {
+			if _, ok := moveCtorOnly[c.ClassName]; ok && !ctor.IsMoveCtor {
+				continue
+			}
+
+			var maybeMacro, maybeEndMacro string
+			if ctor.LinuxOnly {
+				maybeMacro = "#ifdef __linux__\n"
+				maybeEndMacro = "#endif\n"
+			}
+
+			ret.WriteString(fmt.Sprintf("%s%s %s_new%s(%s);\n%s", maybeMacro, methodPrefixName+"*", methodPrefixName, maybeSuffix(i), emitParametersCabi(ctor, ""), maybeEndMacro))
+		}
+
+		if c.HasTrivialCopyAssign {
+			ret.WriteString("void " + methodPrefixName + "_CopyAssign(" + methodPrefixName + "* self, " + methodPrefixName + "* other);\n")
+		}
+
+		if c.HasTrivialMoveAssign {
+			ret.WriteString("void " + methodPrefixName + "_MoveAssign(" + methodPrefixName + "* self, " + methodPrefixName + "* other);\n")
+		}
+
+		for _, m := range c.Methods {
+			if m.IsProtected && !m.IsVirtual {
+				continue
+			}
+			if (m.MethodName == "tr" || m.OverrideMethodName == "tr") && (c.ClassName != "QObject" && c.ClassName != "QMetaObject") {
+				continue
+			}
+
+			mSafeMethodName := m.SafeMethodName()
+
+			if _, ok := skippedMethods[c.ClassName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+			if (m.IsProtected || m.IsPrivate) && (!virtualEligible || len(virtualMethods) == 0) {
+				continue
+			}
+			if _, exists := seenClassMethods[methodPrefixName+"_"+mSafeMethodName]; !exists {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = true
+			} else {
+				continue
+			}
+			if (m.IsVirtual || m.IsProtected) && len(virtualMethods) > 0 && virtualEligible {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = false
+			}
+
+			returnCabi := m.ReturnType.RenderTypeCabi(false)
+
+			var maybeMacro, maybeEndMacro string
+			maybeConst := ifv(m.IsConst, "const ", "")
+
+			if m.ReturnType.BecomesConstInVersion != nil {
+				ret.WriteString(fmt.Sprintf("// This method's return type was changed from non-const to const in Qt %s\n", *m.ReturnType.BecomesConstInVersion) +
+					"#if QT_VERSION >= QT_VERSION_CHECK(" + strings.ReplaceAll(*m.ReturnType.BecomesConstInVersion, ".", ",") + ",0)\n" +
+					fmt.Sprintf("%s %s_%s(%s);\n", "const "+returnCabi, methodPrefixName, mSafeMethodName, emitParametersCabi(m, maybeConst+methodPrefixName+"*")) +
+					"#else\n" +
+					fmt.Sprintf("%s %s_%s(%s);\n", returnCabi, methodPrefixName, mSafeMethodName, emitParametersCabi(m, maybeConst+methodPrefixName+"*")) +
+					"#endif\n")
+			} else {
+				if m.LinuxOnly {
+					maybeMacro = "#ifdef __linux__\n"
+					maybeEndMacro = "#endif\n"
+				}
+
+				ret.WriteString(maybeMacro + returnCabi + " " + methodPrefixName + "_" + mSafeMethodName + "(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ");\n" + maybeEndMacro)
+			}
+
+			if m.IsSignal {
+				addConnect := true
+				if _, ok := noQtConnect[methodPrefixName]; ok {
+					addConnect = false
+				}
+				if slices.Contains(unmatchedQtConnect, methodPrefixName+"_"+mSafeMethodName) {
+					addConnect = false
+				}
+
+				if addConnect {
+					maybeConst := ifv(m.IsConst, "const ", "")
+					ret.WriteString(m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_Connect_" + mSafeMethodName + "(" + maybeConst + methodPrefixName + "* self, intptr_t slot);\n")
+				}
+			}
+		}
+
+		for _, m := range virtualMethods {
+			if !virtualEligible || m.HasStdFunctionPointerParam {
+				continue
+			}
+
+			mSafeMethodName := m.SafeMethodName()
+			baseMethod := false
+
+			if _, ok := skippedMethods[methodPrefixName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			if seen, exists := seenClassMethods[methodPrefixName+"_"+mSafeMethodName]; !exists {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = true
+			} else if seen {
+				continue
+			} else {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = true
+				baseMethod = true
+			}
+
+			var maybeMacro, maybeEndMacro string
+			maybeConst := ifv(m.IsConst, "const ", "")
+
+			if !baseMethod {
+				ret.WriteString(m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_" + mSafeMethodName + "(" +
+					emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ");\n")
+			}
+
+			if m.IsFinal {
+				continue
+			}
+
+			if m.LinuxOnly {
+				maybeMacro = "#ifdef __linux__\n"
+				maybeEndMacro = "#endif\n"
+			}
+
+			ret.WriteString(maybeMacro + "void " + methodPrefixName + "_On" + mSafeMethodName + "(" + maybeConst + methodPrefixName + "* self, intptr_t slot);\n" + maybeEndMacro)
+			ret.WriteString(maybeMacro + m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_Super" + mSafeMethodName + "(" +
+				emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ");\n" + maybeEndMacro)
+		}
+
+		for _, m := range c.PrivateSignals {
+			maybeConst := ifv(m.IsConst, "const ", "")
+			ret.WriteString(m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_Connect_" + m.SafeMethodName() + "(" + maybeConst + methodPrefixName + "* self, intptr_t slot);\n")
+		}
+
+		// delete
+		if c.CanDelete && (len(c.Methods) > 0 || len(c.VirtualMethods()) > 0 || len(c.Ctors) > 0) {
+			ret.WriteString(fmt.Sprintf("void %s_Delete(%s* self);\n", methodPrefixName, methodPrefixName))
+		}
+
+		ret.WriteString("\n")
+	}
+
+	ret.WriteString(
+		`#ifdef __cplusplus
+} /* extern C */
+#endif 
+
+#endif
+`)
+
+	return ret.String(), qtstructdefs, nil
+}
+
+func emitBindingCpp(src *CppParsedHeader, filename string) (string, error) {
+	if len(src.Classes) == 0 {
+		return "", nil
+	}
+
+	ret.Reset()
+
+	srcFilename := filepath.Base(src.Filename)
+	seenClassMethods := map[string]bool{}
+
+	if srcFilename == "offline.h" && strings.Contains(src.Filename, "PackageKit") {
+		ret.WriteString("#include <PackageKit/Transaction>\n")
+	}
+
+	referencedTypes := getReferencedTypes(src, nil, nil)
+	seenRefs := make([]string, 0, len(referencedTypes))
+
+	for _, ref := range referencedTypes {
+		if ref == "QString" {
+			ret.WriteString("#include <QString>\n")
+			ret.WriteString("#include <QByteArray>\n")
+			ret.WriteString("#include <cstring>\n")
+			continue
+		}
+
+		if strings.Contains(ref, "::") {
+			if AllowInnerClassDef(ref) {
+				ret.WriteString("#include <" + strings.ReplaceAll(ref, "::", "/") + ">\n")
+			} else if !strings.HasPrefix(ref, "std::") {
+				ret.WriteString("#define WORKAROUND_INNER_CLASS_DEFINITION_" + cabiClassName(ref) + "\n")
+			}
+			continue
+		}
+
+		if !ImportHeaderForClass(ref, true) {
+			continue
+		}
+
+		ref = strings.TrimSuffix(ref, "*")
+		ref = strings.TrimPrefix(ref, "const ")
+
+		if slices.Contains(seenRefs, ref) {
+			continue
+		}
+		seenRefs = append(seenRefs, ref)
+		ret.WriteString("#include <" + ref + ">\n")
+	}
+
+	switch srcFilename {
+	case "poppler-annotation.h":
+		ret.WriteString("#include <poppler-link.h>\n")
+	case "poppler-qt6.h":
+		ret.WriteString("#include <poppler-form.h>\n")
+	case "qwebengineprofile.h":
+		ret.WriteString("#include <QWebEngineNotification>\n")
+	}
+
+	ret.WriteString("#include <" + srcFilename + ">\n")
+	ret.WriteString(`#include "` + filename + `pp"` + "\n")
+	ret.WriteString(`#include "` + filename + `xx"` + "\n\n")
+
+	for _, c := range src.Classes {
+		if !AllowDefinitionForClass(c.ClassName) {
+			continue
+		}
+
+		methodPrefixName := cabiClassName(c.ClassName)
+		virtualMethods := c.VirtualMethods()
+		protectedMethods := c.ProtectedMethods()
+		cppClassName := strings.ReplaceAll(c.ClassName, "::", "")
+		virtualEligible := AllowVirtualForClass(c.ClassName) && len(virtualMethods) > 0
+
+		// Add protected methods first
+		if virtualEligible && len(virtualMethods) > 0 {
+			virtualMethods = append(virtualMethods, protectedMethods...)
+		}
+
+		seenVirtualsMap := map[string]struct{}{}
+
+		for _, m := range c.Methods {
+			if !m.IsProtected {
+				continue
+			}
+
+			if _, ok := nonPolymorphicClasses[c.ClassName]; ok {
+				continue
+			}
+
+			virtualMethods = append(virtualMethods, m)
+			seenVirtualsMap[m.MethodName] = struct{}{}
+		}
+
+		if virtualEligible && len(virtualMethods) > 0 {
+			for _, m := range c.Methods {
+				if !m.IsProtected && !m.IsPureVirtual {
+					continue
+				}
+				if _, exists := seenVirtualsMap[m.MethodName]; !exists {
+					seenVirtualsMap[m.MethodName] = struct{}{}
+				}
+			}
+		}
+
+		for i, ctor := range c.Ctors {
+			if _, ok := moveCtorOnly[c.ClassName]; ok && !ctor.IsMoveCtor {
+				continue
+			}
+
+			// The returned ctor needs to return a C++ pointer for the class itself
+			preamble, forwarding := emitParametersCABI2CppForwarding(ctor.Parameters, "\t", c.ClassName)
+
+			if ctor.FossOnly {
+				voidCasts := ""
+				for _, p := range ctor.Parameters {
+					voidCasts += "\t(void)" + p.ParameterName + "; // Suppress unused parameter warning\n"
+				}
+
+				ret.WriteString(fmt.Sprintf(
+					"%s* %s_new%s(%s) {\n"+
+						"#if defined(Q_OS_LINUX) || defined(Q_OS_BSD4)\n"+
+						"%s"+
+						"\treturn new %s(%s);\n"+
+						"#else\n%s"+
+						"\treturn nullptr;\n"+
+						"#endif\n"+
+						"}\n"+
+						"\n",
+					methodPrefixName,
+					methodPrefixName,
+					maybeSuffix(i),
+					emitParametersCabi(ctor, ""),
+					preamble,
+					c.ClassName, forwarding, voidCasts,
+				))
+
+			} else {
+				var virtualName, ctorReturn, maybeMoveCtor, maybeCloseMoveCtor, maybeMacro, maybeEndMacro string
+				if virtualEligible {
+					for _, m := range virtualMethods {
+						if (m.IsProtected || m.IsVirtual) && len(virtualMethods) > 0 {
+							if _, ok := nonPolymorphicClasses[c.ClassName]; ok {
+								continue
+							}
+
+							virtualName = "Virtual"
+							break
+						}
+					}
+				}
+				if ctor.IsMoveCtor {
+					maybeMoveCtor = "std::move("
+					maybeCloseMoveCtor = ")"
+				}
+
+				if ctor.LinuxOnly {
+					maybeMacro = "#ifdef __Q_OS_LINUX__\n"
+					maybeEndMacro = "#endif\n"
+				}
+
+				cClassName := ifv(virtualName != "", strings.ReplaceAll(c.ClassName, "::", ""), c.ClassName)
+				baseReturn := "new " + virtualName + cClassName + "(" + maybeMoveCtor + forwarding + maybeCloseMoveCtor + ")"
+				ctorReturn = "\t return " + baseReturn
+
+				ret.WriteString(maybeMacro + methodPrefixName + "* " + methodPrefixName + "_new" +
+					maybeSuffix(i) + "(" + emitParametersCabi(ctor, "") +
+					") {\n" + preamble + ctorReturn + ";\n}\n" + maybeEndMacro + "\n\n")
+			}
+		}
+
+		if c.HasTrivialCopyAssign {
+			ret.WriteString("void " + methodPrefixName + "_CopyAssign(" + methodPrefixName + "* self, " + methodPrefixName + "* other) {\n")
+			ret.WriteString("    *self = *other;\n")
+			ret.WriteString("}\n\n")
+		}
+
+		if c.HasTrivialMoveAssign {
+			ret.WriteString("void " + methodPrefixName + "_MoveAssign(" + methodPrefixName + "* self, " + methodPrefixName + "* other) {\n")
+			ret.WriteString("    *self = std::move(*other);\n")
+			ret.WriteString("}\n\n")
+		}
+
+		seenMethodVariants := map[string]bool{}
+
+		for _, m := range c.Methods {
+			// Protected virtual methods will be bound separately (the only
+			// useful thing is to expose calling the virtual base)
+			// Protected non-virtual methods should always be hidden
+			if m.IsProtected && !m.IsVirtual {
+				continue
+			}
+			if (m.MethodName == "tr" || m.OverrideMethodName == "tr") && (c.ClassName != "QObject" && c.ClassName != "QMetaObject") {
+				continue
+			}
+			mSafeMethodName := m.SafeMethodName()
+			baseName := c.ClassName + "_" + mSafeMethodName
+			if _, ok := skippedMethods[baseName]; ok {
+				continue
+			}
+			if (m.IsProtected || m.IsPrivate) && (!virtualEligible || len(virtualMethods) == 0) {
+				continue
+			}
+			var showHiddenParams bool
+			if _, ok := seenMethodVariants[baseName]; ok {
+				showHiddenParams = true
+			} else {
+				seenMethodVariants[baseName] = false
+			}
+
+			preamble, forwarding := emitParametersCABI2CppForwarding(m.Parameters, "\t", c.ClassName)
+
+			// Need to take an extra 'self' parameter
+			// callTarget is an rvalue representing the full C++ function call.
+			vVar := "v" + strings.ToLower(methodPrefixName)
+			callTarget := "self->"
+			if (m.IsVirtual || m.IsPrivate || m.IsProtected) && len(virtualMethods) > 0 && virtualEligible {
+				if _, exists := seenVirtualsMap[m.MethodName]; exists {
+					callTarget = vVar + "->"
+				}
+			}
+
+			if m.IsStatic && !m.IsProtected {
+				callTarget = c.ClassName + "::"
+			}
+
+			callTarget += m.CppCallTarget() + "(" + forwarding + ")"
+
+			// Qt 6.8 moved many operator== implementations from class methods
+			// into global operators.
+			// By using infix syntax, either can be called
+			if m.IsReadonlyOperator() && len(m.Parameters) == 1 {
+				operator := m.CppCallTarget()[8:]
+				callTarget = "(*self " + operator + " " + forwarding + ")"
+			}
+
+			if _, exists := seenClassMethods[methodPrefixName+"_"+mSafeMethodName]; !exists {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = true
+			} else {
+				continue
+			}
+			if (m.IsVirtual || m.IsProtected) && len(virtualMethods) > 0 && virtualEligible {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = false
+			}
+
+			var maybeMacro, maybeEndMacro, retExpr string
+			maybeConst := ifv(m.IsConst, "const ", "")
+
+			if m.FossOnly {
+				voidCasts := "\t(void)self; // Suppress unused parameter warning\n"
+				for _, p := range m.Parameters {
+					voidCasts += "\t(void)" + p.ParameterName + "; // Suppress unused parameter warning\n"
+				}
+				retExpr, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, callTarget)
+
+				ret.WriteString(fmt.Sprintf(
+					"%s %s_%s(%s) {\n"+
+						"#if defined(Q_OS_LINUX) || defined(Q_OS_BSD4)\n"+
+						"%s"+
+						"%s"+
+						"#else\n%s"+
+						"\treturn {};\n"+
+						"#endif\n"+
+						"}\n"+
+						"\n",
+					m.ReturnType.RenderTypeCabi(false), methodPrefixName, mSafeMethodName, emitParametersCabi(m, maybeConst+methodPrefixName+"*"),
+					preamble, retExpr, voidCasts,
+				))
+
+			} else if m.BecomesNonConstInVersion != nil {
+
+				nonConstCallTarget := "const_cast<" + methodPrefixName + "*>(self)->" + m.CppCallTarget() + "(" + forwarding + ")"
+
+				retExpr, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, callTarget)
+				retExprNonConst, _ := emitAssignCppToCabi("\treturn ", m.ReturnType, nonConstCallTarget)
+
+				ret.WriteString(m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_" + mSafeMethodName + "(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {\n" +
+					preamble +
+					"// This method was changed from const to non-const in Qt " + *m.BecomesNonConstInVersion + "\n" +
+					"#if QT_VERSION < QT_VERSION_CHECK(" + strings.ReplaceAll(*m.BecomesNonConstInVersion, ".", ",") + ",0)\n" +
+					retExpr +
+					"#else\n" +
+					retExprNonConst +
+					"#endif\n" +
+					"}\n" +
+					"\n",
+				)
+
+			} else if m.ReturnType.BecomesConstInVersion != nil {
+
+				retExpr, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, callTarget)
+
+				ret.WriteString("// This method's return type was changed from non-const to const in Qt " + *m.ReturnType.BecomesConstInVersion + "\n" +
+					"#if QT_VERSION >= QT_VERSION_CHECK(" + strings.ReplaceAll(*m.ReturnType.BecomesConstInVersion, ".", ",") + ",0)\n" +
+					"const " + m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_" + mSafeMethodName + "(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {\n" +
+					"#else\n" +
+					m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_" + mSafeMethodName + "(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {\n" +
+					"#endif\n" +
+					preamble + retExpr + "}\n\n",
+				)
+
+			} else {
+				returnCabi := m.ReturnType.RenderTypeCabi(false)
+				returnCallTarget := callTarget
+
+				var virtualCallTarget, vVarTarget, maybeElse, virtualStart, virtualClose, baseClose, emptyReturn string
+
+				if (m.IsVirtual || m.IsPrivate || m.IsProtected) && len(virtualMethods) > 0 && virtualEligible {
+					if !AllowVirtual(m) {
+						goto writeString
+					}
+
+					if m.LinuxOnly {
+						maybeMacro = "#ifdef __Q_OS_LINUX__\n"
+						maybeEndMacro = "#endif\n"
+					}
+
+					virtualCallTarget = ifv(m.IsPrivate || m.IsProtected, vVar+"->", "((Virtual"+cppClassName+"*)self)->")
+					vVarTarget = vVar + "->" + m.CppCallTarget() + "(" + forwarding + ")"
+					virtualCallTarget += m.CppCallTarget() + "(" + forwarding + ")"
+					maybeElse = "\t} else {\n\t\t"
+					baseClose, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, virtualCallTarget)
+					baseClose += "\n"
+					if m.IsProtected {
+						maybeElse = ""
+						baseClose = ""
+						returnCallTarget = vVarTarget
+						emptyReturn = ifv(!m.ReturnType.Void(), "return {};\n", "")
+					}
+
+					cClassName := strings.ReplaceAll(c.ClassName, "::", "")
+					virtualStart = "auto* " + vVar + " = dynamic_cast<" + maybeConst + "Virtual" + cClassName + "*>(self);\n"
+					virtualStart += "if (" + vVar + " && " + vVar + "->isVirtual" + cClassName + ") {\n"
+					virtualClose = maybeElse + baseClose + "}\n"
+				}
+
+			writeString:
+
+				if m.IsVariable {
+					ret.WriteString(returnCabi + " " + methodPrefixName + "_" + mSafeMethodName + "(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {\n")
+					if strings.HasPrefix(m.MethodName, "set") {
+						ret.WriteString(preamble + "self->" + m.VariableFieldName + " = " + forwarding + ";\n}\n\n")
+					} else {
+						retExpr, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, "self->"+m.VariableFieldName)
+						ret.WriteString(retExpr + "}\n\n")
+					}
+					continue
+				}
+
+				retExpr, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, returnCallTarget)
+
+				ret.WriteString(maybeMacro + returnCabi + " " + methodPrefixName + "_" + mSafeMethodName + "(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {\n" +
+					preamble + virtualStart + retExpr +
+					virtualClose + emptyReturn + "}\n" + maybeEndMacro + "\n\n")
+			}
+
+			if m.IsSignal {
+				if _, ok := noQtConnect[methodPrefixName]; ok {
+					continue
+				}
+				if slices.Contains(unmatchedQtConnect, methodPrefixName+"_"+mSafeMethodName) {
+					continue
+				}
+
+				signalTarget := "slotFunc(self"
+
+				// Qt 6.8 moved many operator== implementations from class methods
+				// into global operators.
+				// By using infix syntax, either can be called
+
+				bindingFunc := "\t" + ifv(m.ReturnType.Void(), "", "return ") + signalTarget
+
+				paramArgs := []string{"slot"}
+				paramArgDefs := []string{"intptr_t cb"}
+
+				var signalCode, sigCode, sigRet, sigCleanup string
+				var bindingParams, sigParams []string
+
+				for i, p := range m.Parameters {
+					emitAssign, cleanupType := emitAssignCppToCabi(fmt.Sprintf("\t\t%s sigval%d = ", p.RenderTypeCabi(true), i+1), p, p.ParameterName)
+					signalCode += emitAssign
+					sigCleanup += renderCleanupType(p.ParameterName, cleanupType)
+					sigCode += p.RenderTypeCabi(true)
+					sigParams = append(sigParams, p.RenderTypeCabi(true))
+					paramArgs = append(paramArgs, fmt.Sprintf("sigval%d", i+1))
+					paramArgDefs = append(paramArgDefs, p.RenderTypeCabi(true)+" "+p.ParameterName)
+					bindingParams = append(bindingParams, fmt.Sprintf("sigval%d", i+1))
+				}
+
+				if len(bindingParams) > 0 {
+					bindingFunc += ", " + strings.Join(bindingParams, ", ")
+				}
+				if len(sigParams) > 0 {
+					sigRet += ", " + strings.Join(sigParams, ", ")
+				}
+
+				signalCode += "\t" + bindingFunc + ");\n" + sigCleanup + "\t});\n"
+				maybeConst := ifv(m.IsConst, "const ", "")
+
+				ret.WriteString(
+					"void " + methodPrefixName + "_Connect_" + mSafeMethodName + "(" + maybeConst + methodPrefixName + "* self, intptr_t slot) {\n" +
+						"\tvoid (*slotFunc)(" + maybeConst + methodPrefixName + "*" + sigRet + ") = reinterpret_cast<void (*)(" + maybeConst + methodPrefixName + "*" + sigRet + ")>(slot);\n" +
+						"\t" + c.ClassName + "::connect(self, &" + c.ClassName + "::" + m.CppCallTarget() + ", [self, slotFunc](" + emitParametersCpp(m, showHiddenParams) + ") {\n" +
+						signalCode + "}\n\n",
+				)
+			}
+		}
+
+		for _, m := range virtualMethods {
+			if !virtualEligible || m.HasStdFunctionPointerParam {
+				continue
+			}
+
+			mSafeMethodName := m.SafeMethodName()
+			baseMethod := false
+
+			if _, ok := skippedMethods[methodPrefixName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			if seen, exists := seenClassMethods[methodPrefixName+"_"+mSafeMethodName]; !exists {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = true
+			} else if seen {
+				continue
+			} else {
+				seenClassMethods[methodPrefixName+"_"+mSafeMethodName] = true
+				baseMethod = true
+			}
+
+			var virtualTarget, vVar, maybeConst, maybeConstCast, closeConstCast string
+
+			vbpreamble, vbforwarding := emitParametersCABI2CppForwarding(m.Parameters, "\t\t", c.ClassName)
+			vbCallTarget := m.CppCallTarget() + "(" + vbforwarding + ")"
+			maybeVirtual := ifv(len(virtualMethods) > 0, "Virtual", "")
+			if m.IsProtected || m.IsVirtual {
+				if m.IsConst {
+					maybeConstCast = "const_cast<" + maybeVirtual + cppClassName + "*>("
+					closeConstCast = ")"
+					maybeConst = "const "
+				}
+				vVar = "v" + strings.ToLower(cppClassName)
+				virtualTarget = maybeConstCast + "dynamic_cast<" + maybeConst + maybeVirtual + cppClassName + "*>(self)" + closeConstCast
+			}
+
+			strippedPrefix := strings.ReplaceAll(methodPrefixName, "__", "")
+			baseName := methodPrefixName + "_" + mSafeMethodName
+			isBaseName := baseName + "_IsBase"
+
+			if IsKnownClass(m.ReturnType.ParameterType) && !m.ReturnType.Pointer && m.ReturnType.ParameterType != "QByteArrayView" {
+				// For Qt class types returned by value, we need to:
+				// 1. Get the result and store it in a temporary
+				// 2. Create a new heap instance from that temporary
+				// The exceptions are QString and QByteArray.
+				var emptyReturn string
+				maybeSelf := ifv(m.IsPrivate || m.IsProtected, vVar+"->", "((Virtual"+cppClassName+"*)self)->")
+				nonConstReturn := strings.TrimPrefix(m.ReturnType.RenderTypeQtCpp(), "const ")
+				nonConstReturn = strings.TrimSuffix(nonConstReturn, "&")
+				maybeElse := "\t} else {\nreturn new " + nonConstReturn + "(" + maybeSelf + vbCallTarget + ");\n}"
+
+				// private hack/workaround
+				if m.IsProtected || ((methodPrefixName == "QAbstractListModel" || methodPrefixName == "QAbstractTableModel") && m.MethodName == "parent") {
+					maybeElse = ""
+					emptyReturn = "\t}\nreturn {};\n"
+				}
+
+				if !baseMethod {
+					ret.WriteString("// Derived class handler implementation\n" +
+						m.ReturnType.RenderTypeCabi(false) + " " + baseName + "(" +
+						emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {" +
+						"\tauto* " + vVar + " = " + virtualTarget + ";\n" +
+						vbpreamble + "\tif (" + vVar + " && " + vVar + "->isVirtual" + strippedPrefix + ") {\n" +
+						"\t\treturn new " + nonConstReturn + "(" + vVar + "->" + vbCallTarget + ");\n" +
+						maybeElse + emptyReturn + "\n}\n\n")
+				}
+
+				if m.IsFinal {
+					continue
+				}
+
+				ret.WriteString("// Base class handler implementation\n")
+
+				ret.WriteString(
+					m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_Super" + mSafeMethodName + "(" +
+						emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {" +
+						"\tauto* " + vVar + " = " + virtualTarget + ";\n" +
+						vbpreamble + "\tif (" + vVar + " && " + vVar + "->isVirtual" + strippedPrefix + ") {\n" +
+						vVar + "->set" + isBaseName + "(true);\n" +
+						"\t\treturn new " + nonConstReturn + "(" + vVar + "->" + vbCallTarget + ");\n" +
+						maybeElse + emptyReturn + "\n}\n\n")
+
+			} else {
+
+				if !AllowVirtual(m) {
+					continue
+				}
+
+				var elseReturn string
+				virtualReturn, _ := emitAssignCppToCabi("\treturn ", m.ReturnType, vVar+"->"+vbCallTarget)
+
+				if m.IsPrivate || m.IsProtected || m.IsPureVirtual || strings.HasPrefix(cppClassName, "QsciLexer") {
+					elseReturn, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, "((Virtual"+cppClassName+"*)self)->"+vbCallTarget)
+				} else {
+					elseReturn, _ = emitAssignCppToCabi("\treturn ", m.ReturnType, "self->"+c.ClassName+"::"+vbCallTarget)
+				}
+
+				if !baseMethod {
+					ret.WriteString("// Derived class handler implementation\n" +
+						m.ReturnType.RenderTypeCabi(false) + " " + baseName +
+						"(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {" +
+						"\tauto* " + vVar + " = " + virtualTarget + ";\n" +
+						vbpreamble + "\tif (" + vVar + " && " + vVar + "->isVirtual" + strippedPrefix + ") {\n" +
+						virtualReturn + "\t} else {\n" + elseReturn + "\n}\n}\n\n")
+				}
+
+				if m.IsFinal {
+					continue
+				}
+
+				ret.WriteString("// Base class handler implementation\n")
+
+				ret.WriteString(m.ReturnType.RenderTypeCabi(false) + " " + methodPrefixName + "_Super" + mSafeMethodName +
+					"(" + emitParametersCabi(m, maybeConst+methodPrefixName+"*") + ") {" +
+					"\tauto* " + vVar + " = " + virtualTarget + ";\n" +
+					vbpreamble + "\tif (" + vVar + " && " + vVar + "->isVirtual" + strippedPrefix + ") {\n" +
+					vVar + "->set" + isBaseName + "(true);\n" +
+					virtualReturn + "\t} else {\n" + elseReturn + "\n}\n}\n\n")
+			}
+
+			callbackName := baseName + "_Callback"
+			ret.WriteString("// Auxiliary method to allow providing re-implementation\n")
+
+			ret.WriteString("void " + methodPrefixName + "_On" + mSafeMethodName + "(" + maybeConst + methodPrefixName + "* self, intptr_t slot) {\n" +
+				"\tauto* " + vVar + " = " + virtualTarget + ";\n" +
+				"\tif (" + vVar + " && " + vVar + "->isVirtual" + strippedPrefix + ") {\n" +
+				vVar + "->set" + callbackName + "(reinterpret_cast<Virtual" + strippedPrefix + "::" + callbackName + ">(slot));\n}\n}\n\n")
+		}
+
+		for _, m := range c.PrivateSignals {
+			signalTarget := "slotFunc(self"
+			bindingFunc := "\t" + ifv(m.ReturnType.Void(), "", "return ") + signalTarget
+			paramArgs := []string{"slot"}
+			paramArgDefs := []string{"intptr_t cb"}
+
+			var signalCode, sigCode, sigRet, sigCleanup string
+			var bindingParams, sigParams []string
+
+			for i, p := range m.Parameters {
+				emitAssign, cleanupType := emitAssignCppToCabi(fmt.Sprintf("\t\t%s sigval%d = ", p.RenderTypeCabi(true), i+1), p, p.ParameterName)
+				signalCode += emitAssign
+				sigCleanup += renderCleanupType(p.ParameterName, cleanupType)
+				sigCode += p.RenderTypeCabi(true)
+				sigParams = append(sigParams, p.RenderTypeCabi(true))
+				paramArgs = append(paramArgs, fmt.Sprintf("sigval%d", i+1))
+				paramArgDefs = append(paramArgDefs, p.RenderTypeCabi(true)+" "+p.ParameterName)
+				bindingParams = append(bindingParams, fmt.Sprintf("sigval%d", i+1))
+			}
+
+			if len(bindingParams) > 0 {
+				bindingFunc += ", " + strings.Join(bindingParams, ", ")
+			}
+			if len(sigParams) > 0 {
+				sigRet += ", " + strings.Join(sigParams, ", ")
+			}
+
+			signalCode += "\t" + bindingFunc + ");\n" + sigCleanup + "\t});\n"
+			maybeConst := ifv(m.IsConst, "const ", "")
+
+			ret.WriteString(
+				"void " + methodPrefixName + "_Connect_" + m.SafeMethodName() + "(" + maybeConst + methodPrefixName + "* self, intptr_t slot) {\n" +
+					"\tvoid (*slotFunc)(" + maybeConst + methodPrefixName + "*" + sigRet + ") = reinterpret_cast<void (*)(" + maybeConst + methodPrefixName + "*" + sigRet + ")>(slot);\n" +
+					"\t" + c.ClassName + "::connect(self, &" + c.ClassName + "::" + m.CppCallTarget() + ", [self, slotFunc](" + emitParametersCpp(m, false) + ") {\n" +
+					signalCode + "}\n\n",
+			)
+		}
+
+		// Delete
+		if c.CanDelete && (len(c.Methods) > 0 || len(c.VirtualMethods()) > 0 || len(c.Ctors) > 0) {
+			ret.WriteString(
+				"void " + methodPrefixName + "_Delete(" + methodPrefixName + "* self) {\n" +
+					"\tdelete self;\n" +
+					"}\n\n",
+			)
+		}
+	}
+	return ret.String(), nil
+}

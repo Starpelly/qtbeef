@@ -1,0 +1,264 @@
+#pragma once
+#ifndef SRC_PRINTSUPPORTC_LIBQPAGESETUPDIALOG_HPP
+#define SRC_PRINTSUPPORTC_LIBQPAGESETUPDIALOG_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDialog QDialog;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPageSetupDialog QPageSetupDialog;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QPrinter QPrinter;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+QPageSetupDialog* QPageSetupDialog_new(QWidget* parent);
+QPageSetupDialog* QPageSetupDialog_new2(QPrinter* printer);
+QPageSetupDialog* QPageSetupDialog_new3();
+QPageSetupDialog* QPageSetupDialog_new4(QPrinter* printer, QWidget* parent);
+QMetaObject* QPageSetupDialog_MetaObject(const QPageSetupDialog* self);
+void* QPageSetupDialog_Metacast(QPageSetupDialog* self, const char* param1);
+int QPageSetupDialog_Metacall(QPageSetupDialog* self, int param1, int param2, void** param3);
+int QPageSetupDialog_Exec(QPageSetupDialog* self);
+void QPageSetupDialog_Done(QPageSetupDialog* self, int result);
+QPrinter* QPageSetupDialog_Printer(QPageSetupDialog* self);
+void QPageSetupDialog_OnMetaObject(const QPageSetupDialog* self, intptr_t slot);
+QMetaObject* QPageSetupDialog_SuperMetaObject(const QPageSetupDialog* self);
+void QPageSetupDialog_OnMetacast(QPageSetupDialog* self, intptr_t slot);
+void* QPageSetupDialog_SuperMetacast(QPageSetupDialog* self, const char* param1);
+void QPageSetupDialog_OnMetacall(QPageSetupDialog* self, intptr_t slot);
+int QPageSetupDialog_SuperMetacall(QPageSetupDialog* self, int param1, int param2, void** param3);
+void QPageSetupDialog_OnExec(QPageSetupDialog* self, intptr_t slot);
+int QPageSetupDialog_SuperExec(QPageSetupDialog* self);
+void QPageSetupDialog_OnDone(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperDone(QPageSetupDialog* self, int result);
+void QPageSetupDialog_SetVisible(QPageSetupDialog* self, bool visible);
+void QPageSetupDialog_OnSetVisible(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperSetVisible(QPageSetupDialog* self, bool visible);
+QSize* QPageSetupDialog_SizeHint(const QPageSetupDialog* self);
+void QPageSetupDialog_OnSizeHint(const QPageSetupDialog* self, intptr_t slot);
+QSize* QPageSetupDialog_SuperSizeHint(const QPageSetupDialog* self);
+QSize* QPageSetupDialog_MinimumSizeHint(const QPageSetupDialog* self);
+void QPageSetupDialog_OnMinimumSizeHint(const QPageSetupDialog* self, intptr_t slot);
+QSize* QPageSetupDialog_SuperMinimumSizeHint(const QPageSetupDialog* self);
+void QPageSetupDialog_Open(QPageSetupDialog* self);
+void QPageSetupDialog_OnOpen(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperOpen(QPageSetupDialog* self);
+void QPageSetupDialog_Accept(QPageSetupDialog* self);
+void QPageSetupDialog_OnAccept(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperAccept(QPageSetupDialog* self);
+void QPageSetupDialog_Reject(QPageSetupDialog* self);
+void QPageSetupDialog_OnReject(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperReject(QPageSetupDialog* self);
+void QPageSetupDialog_KeyPressEvent(QPageSetupDialog* self, QKeyEvent* param1);
+void QPageSetupDialog_OnKeyPressEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperKeyPressEvent(QPageSetupDialog* self, QKeyEvent* param1);
+void QPageSetupDialog_CloseEvent(QPageSetupDialog* self, QCloseEvent* param1);
+void QPageSetupDialog_OnCloseEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperCloseEvent(QPageSetupDialog* self, QCloseEvent* param1);
+void QPageSetupDialog_ShowEvent(QPageSetupDialog* self, QShowEvent* param1);
+void QPageSetupDialog_OnShowEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperShowEvent(QPageSetupDialog* self, QShowEvent* param1);
+void QPageSetupDialog_ResizeEvent(QPageSetupDialog* self, QResizeEvent* param1);
+void QPageSetupDialog_OnResizeEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperResizeEvent(QPageSetupDialog* self, QResizeEvent* param1);
+void QPageSetupDialog_ContextMenuEvent(QPageSetupDialog* self, QContextMenuEvent* param1);
+void QPageSetupDialog_OnContextMenuEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperContextMenuEvent(QPageSetupDialog* self, QContextMenuEvent* param1);
+bool QPageSetupDialog_EventFilter(QPageSetupDialog* self, QObject* param1, QEvent* param2);
+void QPageSetupDialog_OnEventFilter(QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperEventFilter(QPageSetupDialog* self, QObject* param1, QEvent* param2);
+int QPageSetupDialog_DevType(const QPageSetupDialog* self);
+void QPageSetupDialog_OnDevType(const QPageSetupDialog* self, intptr_t slot);
+int QPageSetupDialog_SuperDevType(const QPageSetupDialog* self);
+int QPageSetupDialog_HeightForWidth(const QPageSetupDialog* self, int param1);
+void QPageSetupDialog_OnHeightForWidth(const QPageSetupDialog* self, intptr_t slot);
+int QPageSetupDialog_SuperHeightForWidth(const QPageSetupDialog* self, int param1);
+bool QPageSetupDialog_HasHeightForWidth(const QPageSetupDialog* self);
+void QPageSetupDialog_OnHasHeightForWidth(const QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperHasHeightForWidth(const QPageSetupDialog* self);
+QPaintEngine* QPageSetupDialog_PaintEngine(const QPageSetupDialog* self);
+void QPageSetupDialog_OnPaintEngine(const QPageSetupDialog* self, intptr_t slot);
+QPaintEngine* QPageSetupDialog_SuperPaintEngine(const QPageSetupDialog* self);
+bool QPageSetupDialog_Event(QPageSetupDialog* self, QEvent* event);
+void QPageSetupDialog_OnEvent(QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperEvent(QPageSetupDialog* self, QEvent* event);
+void QPageSetupDialog_MousePressEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_OnMousePressEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperMousePressEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_MouseReleaseEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_OnMouseReleaseEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperMouseReleaseEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_MouseDoubleClickEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_OnMouseDoubleClickEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperMouseDoubleClickEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_MouseMoveEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_OnMouseMoveEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperMouseMoveEvent(QPageSetupDialog* self, QMouseEvent* event);
+void QPageSetupDialog_WheelEvent(QPageSetupDialog* self, QWheelEvent* event);
+void QPageSetupDialog_OnWheelEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperWheelEvent(QPageSetupDialog* self, QWheelEvent* event);
+void QPageSetupDialog_KeyReleaseEvent(QPageSetupDialog* self, QKeyEvent* event);
+void QPageSetupDialog_OnKeyReleaseEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperKeyReleaseEvent(QPageSetupDialog* self, QKeyEvent* event);
+void QPageSetupDialog_FocusInEvent(QPageSetupDialog* self, QFocusEvent* event);
+void QPageSetupDialog_OnFocusInEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperFocusInEvent(QPageSetupDialog* self, QFocusEvent* event);
+void QPageSetupDialog_FocusOutEvent(QPageSetupDialog* self, QFocusEvent* event);
+void QPageSetupDialog_OnFocusOutEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperFocusOutEvent(QPageSetupDialog* self, QFocusEvent* event);
+void QPageSetupDialog_EnterEvent(QPageSetupDialog* self, QEnterEvent* event);
+void QPageSetupDialog_OnEnterEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperEnterEvent(QPageSetupDialog* self, QEnterEvent* event);
+void QPageSetupDialog_LeaveEvent(QPageSetupDialog* self, QEvent* event);
+void QPageSetupDialog_OnLeaveEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperLeaveEvent(QPageSetupDialog* self, QEvent* event);
+void QPageSetupDialog_PaintEvent(QPageSetupDialog* self, QPaintEvent* event);
+void QPageSetupDialog_OnPaintEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperPaintEvent(QPageSetupDialog* self, QPaintEvent* event);
+void QPageSetupDialog_MoveEvent(QPageSetupDialog* self, QMoveEvent* event);
+void QPageSetupDialog_OnMoveEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperMoveEvent(QPageSetupDialog* self, QMoveEvent* event);
+void QPageSetupDialog_TabletEvent(QPageSetupDialog* self, QTabletEvent* event);
+void QPageSetupDialog_OnTabletEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperTabletEvent(QPageSetupDialog* self, QTabletEvent* event);
+void QPageSetupDialog_ActionEvent(QPageSetupDialog* self, QActionEvent* event);
+void QPageSetupDialog_OnActionEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperActionEvent(QPageSetupDialog* self, QActionEvent* event);
+void QPageSetupDialog_DragEnterEvent(QPageSetupDialog* self, QDragEnterEvent* event);
+void QPageSetupDialog_OnDragEnterEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperDragEnterEvent(QPageSetupDialog* self, QDragEnterEvent* event);
+void QPageSetupDialog_DragMoveEvent(QPageSetupDialog* self, QDragMoveEvent* event);
+void QPageSetupDialog_OnDragMoveEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperDragMoveEvent(QPageSetupDialog* self, QDragMoveEvent* event);
+void QPageSetupDialog_DragLeaveEvent(QPageSetupDialog* self, QDragLeaveEvent* event);
+void QPageSetupDialog_OnDragLeaveEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperDragLeaveEvent(QPageSetupDialog* self, QDragLeaveEvent* event);
+void QPageSetupDialog_DropEvent(QPageSetupDialog* self, QDropEvent* event);
+void QPageSetupDialog_OnDropEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperDropEvent(QPageSetupDialog* self, QDropEvent* event);
+void QPageSetupDialog_HideEvent(QPageSetupDialog* self, QHideEvent* event);
+void QPageSetupDialog_OnHideEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperHideEvent(QPageSetupDialog* self, QHideEvent* event);
+bool QPageSetupDialog_NativeEvent(QPageSetupDialog* self, const libqt_string eventType, void* message, intptr_t* result);
+void QPageSetupDialog_OnNativeEvent(QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperNativeEvent(QPageSetupDialog* self, const libqt_string eventType, void* message, intptr_t* result);
+void QPageSetupDialog_ChangeEvent(QPageSetupDialog* self, QEvent* param1);
+void QPageSetupDialog_OnChangeEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperChangeEvent(QPageSetupDialog* self, QEvent* param1);
+int QPageSetupDialog_Metric(const QPageSetupDialog* self, int param1);
+void QPageSetupDialog_OnMetric(const QPageSetupDialog* self, intptr_t slot);
+int QPageSetupDialog_SuperMetric(const QPageSetupDialog* self, int param1);
+void QPageSetupDialog_InitPainter(const QPageSetupDialog* self, QPainter* painter);
+void QPageSetupDialog_OnInitPainter(const QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperInitPainter(const QPageSetupDialog* self, QPainter* painter);
+QPaintDevice* QPageSetupDialog_Redirected(const QPageSetupDialog* self, QPoint* offset);
+void QPageSetupDialog_OnRedirected(const QPageSetupDialog* self, intptr_t slot);
+QPaintDevice* QPageSetupDialog_SuperRedirected(const QPageSetupDialog* self, QPoint* offset);
+QPainter* QPageSetupDialog_SharedPainter(const QPageSetupDialog* self);
+void QPageSetupDialog_OnSharedPainter(const QPageSetupDialog* self, intptr_t slot);
+QPainter* QPageSetupDialog_SuperSharedPainter(const QPageSetupDialog* self);
+void QPageSetupDialog_InputMethodEvent(QPageSetupDialog* self, QInputMethodEvent* param1);
+void QPageSetupDialog_OnInputMethodEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperInputMethodEvent(QPageSetupDialog* self, QInputMethodEvent* param1);
+QVariant* QPageSetupDialog_InputMethodQuery(const QPageSetupDialog* self, int param1);
+void QPageSetupDialog_OnInputMethodQuery(const QPageSetupDialog* self, intptr_t slot);
+QVariant* QPageSetupDialog_SuperInputMethodQuery(const QPageSetupDialog* self, int param1);
+bool QPageSetupDialog_FocusNextPrevChild(QPageSetupDialog* self, bool next);
+void QPageSetupDialog_OnFocusNextPrevChild(QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperFocusNextPrevChild(QPageSetupDialog* self, bool next);
+void QPageSetupDialog_TimerEvent(QPageSetupDialog* self, QTimerEvent* event);
+void QPageSetupDialog_OnTimerEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperTimerEvent(QPageSetupDialog* self, QTimerEvent* event);
+void QPageSetupDialog_ChildEvent(QPageSetupDialog* self, QChildEvent* event);
+void QPageSetupDialog_OnChildEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperChildEvent(QPageSetupDialog* self, QChildEvent* event);
+void QPageSetupDialog_CustomEvent(QPageSetupDialog* self, QEvent* event);
+void QPageSetupDialog_OnCustomEvent(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperCustomEvent(QPageSetupDialog* self, QEvent* event);
+void QPageSetupDialog_ConnectNotify(QPageSetupDialog* self, const QMetaMethod* signal);
+void QPageSetupDialog_OnConnectNotify(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperConnectNotify(QPageSetupDialog* self, const QMetaMethod* signal);
+void QPageSetupDialog_DisconnectNotify(QPageSetupDialog* self, const QMetaMethod* signal);
+void QPageSetupDialog_OnDisconnectNotify(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperDisconnectNotify(QPageSetupDialog* self, const QMetaMethod* signal);
+void QPageSetupDialog_AdjustPosition(QPageSetupDialog* self, QWidget* param1);
+void QPageSetupDialog_OnAdjustPosition(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperAdjustPosition(QPageSetupDialog* self, QWidget* param1);
+void QPageSetupDialog_UpdateMicroFocus(QPageSetupDialog* self);
+void QPageSetupDialog_OnUpdateMicroFocus(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperUpdateMicroFocus(QPageSetupDialog* self);
+void QPageSetupDialog_Create(QPageSetupDialog* self);
+void QPageSetupDialog_OnCreate(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperCreate(QPageSetupDialog* self);
+void QPageSetupDialog_Destroy(QPageSetupDialog* self);
+void QPageSetupDialog_OnDestroy(QPageSetupDialog* self, intptr_t slot);
+void QPageSetupDialog_SuperDestroy(QPageSetupDialog* self);
+bool QPageSetupDialog_FocusNextChild(QPageSetupDialog* self);
+void QPageSetupDialog_OnFocusNextChild(QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperFocusNextChild(QPageSetupDialog* self);
+bool QPageSetupDialog_FocusPreviousChild(QPageSetupDialog* self);
+void QPageSetupDialog_OnFocusPreviousChild(QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperFocusPreviousChild(QPageSetupDialog* self);
+QObject* QPageSetupDialog_Sender(const QPageSetupDialog* self);
+void QPageSetupDialog_OnSender(const QPageSetupDialog* self, intptr_t slot);
+QObject* QPageSetupDialog_SuperSender(const QPageSetupDialog* self);
+int QPageSetupDialog_SenderSignalIndex(const QPageSetupDialog* self);
+void QPageSetupDialog_OnSenderSignalIndex(const QPageSetupDialog* self, intptr_t slot);
+int QPageSetupDialog_SuperSenderSignalIndex(const QPageSetupDialog* self);
+int QPageSetupDialog_Receivers(const QPageSetupDialog* self, const char* signal);
+void QPageSetupDialog_OnReceivers(const QPageSetupDialog* self, intptr_t slot);
+int QPageSetupDialog_SuperReceivers(const QPageSetupDialog* self, const char* signal);
+bool QPageSetupDialog_IsSignalConnected(const QPageSetupDialog* self, const QMetaMethod* signal);
+void QPageSetupDialog_OnIsSignalConnected(const QPageSetupDialog* self, intptr_t slot);
+bool QPageSetupDialog_SuperIsSignalConnected(const QPageSetupDialog* self, const QMetaMethod* signal);
+double QPageSetupDialog_GetDecodedMetricF(const QPageSetupDialog* self, int metricA, int metricB);
+void QPageSetupDialog_OnGetDecodedMetricF(const QPageSetupDialog* self, intptr_t slot);
+double QPageSetupDialog_SuperGetDecodedMetricF(const QPageSetupDialog* self, int metricA, int metricB);
+void QPageSetupDialog_Delete(QPageSetupDialog* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

@@ -1,0 +1,149 @@
+#include "libkacl.hpp"
+#include "libkacl.h"
+
+KACL* k_acl_new(const char* aclString) {
+    return KACL_new(qstring(aclString));
+}
+
+KACL* k_acl_new2(void* rhs) {
+    return KACL_new2((KACL*)rhs);
+}
+
+KACL* k_acl_new3(mode_t basicPermissions) {
+    return KACL_new3(basicPermissions);
+}
+
+KACL* k_acl_new4() {
+    return KACL_new4();
+}
+
+void k_acl_operator_assign(void* self, void* rhs) {
+    KACL_OperatorAssign((KACL*)self, (KACL*)rhs);
+}
+
+bool k_acl_operator_equal(void* self, void* rhs) {
+    return KACL_OperatorEqual((KACL*)self, (KACL*)rhs);
+}
+
+bool k_acl_operator_not_equal(void* self, void* rhs) {
+    return KACL_OperatorNotEqual((KACL*)self, (KACL*)rhs);
+}
+
+bool k_acl_is_valid(void* self) {
+    return KACL_IsValid((KACL*)self);
+}
+
+uint16_t k_acl_owner_permissions(void* self) {
+    return KACL_OwnerPermissions((KACL*)self);
+}
+
+bool k_acl_set_owner_permissions(void* self, uint16_t ownerPermissions) {
+    return KACL_SetOwnerPermissions((KACL*)self, ownerPermissions);
+}
+
+uint16_t k_acl_owning_group_permissions(void* self) {
+    return KACL_OwningGroupPermissions((KACL*)self);
+}
+
+bool k_acl_set_owning_group_permissions(void* self, uint16_t owningGroupPermissions) {
+    return KACL_SetOwningGroupPermissions((KACL*)self, owningGroupPermissions);
+}
+
+uint16_t k_acl_others_permissions(void* self) {
+    return KACL_OthersPermissions((KACL*)self);
+}
+
+bool k_acl_set_others_permissions(void* self, uint16_t othersPermissions) {
+    return KACL_SetOthersPermissions((KACL*)self, othersPermissions);
+}
+
+mode_t k_acl_base_permissions(void* self) {
+    return (int)KACL_BasePermissions((KACL*)self);
+}
+
+bool k_acl_is_extended(void* self) {
+    return KACL_IsExtended((KACL*)self);
+}
+
+uint16_t k_acl_mask_permissions(void* self, bool* exists) {
+    return KACL_MaskPermissions((KACL*)self, (bool*)exists);
+}
+
+bool k_acl_set_mask_permissions(void* self, uint16_t maskPermissions) {
+    return KACL_SetMaskPermissions((KACL*)self, maskPermissions);
+}
+
+uint16_t k_acl_named_user_permissions(void* self, const char* name, bool* exists) {
+    return KACL_NamedUserPermissions((KACL*)self, qstring(name), (bool*)exists);
+}
+
+bool k_acl_set_named_user_permissions(void* self, const char* name, uint16_t param2) {
+    return KACL_SetNamedUserPermissions((KACL*)self, qstring(name), param2);
+}
+
+libqt_list /* of libqt_pair tuple of const char* and uint16_t */ k_acl_all_user_permissions(void* self) {
+    libqt_list _arr = KACL_AllUserPermissions((KACL*)self);
+    libqt_pair* _data = (libqt_pair*)_arr.data.ptr;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string* _first_str = (libqt_string*)_data[i].first;
+        const char* _first_str_data = _first_str->data;
+        uint16_t* _second_ptr = (uint16_t*)_data[i].second;
+        uint16_t _second_value = *_second_ptr;
+        free(_first_str);
+        free(_second_ptr);
+        _data[i].first = (void*)_first_str_data;
+        _data[i].second = (void*)(uintptr_t)_second_value;
+    }
+    return _arr;
+}
+
+uint16_t k_acl_named_group_permissions(void* self, const char* name, bool* exists) {
+    return KACL_NamedGroupPermissions((KACL*)self, qstring(name), (bool*)exists);
+}
+
+bool k_acl_set_named_group_permissions(void* self, const char* name, uint16_t param2) {
+    return KACL_SetNamedGroupPermissions((KACL*)self, qstring(name), param2);
+}
+
+libqt_list /* of libqt_pair tuple of const char* and uint16_t */ k_acl_all_group_permissions(void* self) {
+    libqt_list _arr = KACL_AllGroupPermissions((KACL*)self);
+    libqt_pair* _data = (libqt_pair*)_arr.data.ptr;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string* _first_str = (libqt_string*)_data[i].first;
+        const char* _first_str_data = _first_str->data;
+        uint16_t* _second_ptr = (uint16_t*)_data[i].second;
+        uint16_t _second_value = *_second_ptr;
+        free(_first_str);
+        free(_second_ptr);
+        _data[i].first = (void*)_first_str_data;
+        _data[i].second = (void*)(uintptr_t)_second_value;
+    }
+    return _arr;
+}
+
+bool k_acl_set_a_c_l(void* self, const char* aclStr) {
+    return KACL_SetACL((KACL*)self, qstring(aclStr));
+}
+
+const char* k_acl_as_string(void* self) {
+    libqt_string _str = KACL_AsString((KACL*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void k_acl_virtual_hook(void* self, int id, void* data) {
+    KACL_VirtualHook((KACL*)self, id, data);
+}
+
+void k_acl_on_virtual_hook(void* self, void (*callback)(void*, int, void*)) {
+    KACL_OnVirtualHook((KACL*)self, (intptr_t)callback);
+}
+
+void k_acl_super_virtual_hook(void* self, int id, void* data) {
+    KACL_SuperVirtualHook((KACL*)self, id, data);
+}
+
+void k_acl_delete(void* self) {
+    KACL_Delete((KACL*)(self));
+}

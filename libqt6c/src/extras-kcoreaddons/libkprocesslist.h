@@ -1,0 +1,108 @@
+#pragma once
+#ifndef SRC_EXTRAS_KCOREADDONS_QT6C_LIBKPROCESSLIST_H
+#define SRC_EXTRAS_KCOREADDONS_QT6C_LIBKPROCESSLIST_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html)
+
+/// k_processlist__kprocessinfo_new constructs a new KProcessList::KProcessInfo object.
+///
+KProcessList__KProcessInfo* k_processlist__kprocessinfo_new();
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html)
+
+/// k_processlist__kprocessinfo_new2 constructs a new KProcessList::KProcessInfo object.
+///
+/// @param pid int64_t
+/// @param command const char*
+/// @param user const char*
+///
+KProcessList__KProcessInfo* k_processlist__kprocessinfo_new2(int64_t pid, const char* command, const char* user);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html)
+
+/// k_processlist__kprocessinfo_new3 constructs a new KProcessList::KProcessInfo object.
+///
+/// @param pid int64_t
+/// @param command const char*
+/// @param name const char*
+/// @param user const char*
+///
+KProcessList__KProcessInfo* k_processlist__kprocessinfo_new3(int64_t pid, const char* command, const char* name, const char* user);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html)
+
+/// k_processlist__kprocessinfo_new4 constructs a new KProcessList::KProcessInfo object.
+///
+/// @param other KProcessList__KProcessInfo*
+///
+KProcessList__KProcessInfo* k_processlist__kprocessinfo_new4(void* other);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html#operator-eq)
+///
+/// @param self KProcessList__KProcessInfo*
+/// @param other KProcessList__KProcessInfo*
+///
+void k_processlist__kprocessinfo_operator_assign(void* self, void* other);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html#isValid)
+///
+/// @param self KProcessList__KProcessInfo*
+///
+bool k_processlist__kprocessinfo_is_valid(void* self);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html#pid)
+///
+/// @param self KProcessList__KProcessInfo*
+///
+int64_t k_processlist__kprocessinfo_pid(void* self);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html#name)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KProcessList__KProcessInfo*
+///
+const char* k_processlist__kprocessinfo_name(void* self);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html#user)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KProcessList__KProcessInfo*
+///
+const char* k_processlist__kprocessinfo_user(void* self);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist-kprocessinfo.html#command)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KProcessList__KProcessInfo*
+///
+const char* k_processlist__kprocessinfo_command(void* self);
+
+/// Delete this object from C++ memory.
+///
+/// @param self KProcessList__KProcessInfo*
+///
+void k_processlist__kprocessinfo_delete(void* self);
+
+/// [Upstream resources](https://api.kde.org/kprocesslist.html)
+
+/// [Upstream resources](https://api.kde.org/kprocesslist.html#processInfoList)
+///
+/// @return libqt_list of KProcessList__KProcessInfo*
+///
+libqt_list k_processlist_process_info_list();
+
+/// [Upstream resources](https://api.kde.org/kprocesslist.html#processInfo)
+///
+/// @param param1 int64_t
+///
+KProcessList__KProcessInfo* k_processlist_process_info(int64_t param1);
+#endif

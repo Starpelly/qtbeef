@@ -1,0 +1,94 @@
+#pragma once
+#ifndef SRC_FOSS_EXTRAS_KWINDOWSYSTEMC_LIBKXMESSAGES_HPP
+#define SRC_FOSS_EXTRAS_KWINDOWSYSTEMC_LIBKXMESSAGES_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KXMessages KXMessages;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+KXMessages* KXMessages_new();
+#ifdef __linux__
+KXMessages* KXMessages_new2(xcb_connection_t* connection, xcb_window_t rootWindow);
+#endif
+KXMessages* KXMessages_new3(const char* accept_broadcast);
+KXMessages* KXMessages_new4(const char* accept_broadcast, QObject* parent);
+#ifdef __linux__
+KXMessages* KXMessages_new5(xcb_connection_t* connection, xcb_window_t rootWindow, const char* accept_broadcast);
+#endif
+#ifdef __linux__
+KXMessages* KXMessages_new6(xcb_connection_t* connection, xcb_window_t rootWindow, const char* accept_broadcast, QObject* parent);
+#endif
+QMetaObject* KXMessages_MetaObject(const KXMessages* self);
+void* KXMessages_Metacast(KXMessages* self, const char* param1);
+int KXMessages_Metacall(KXMessages* self, int param1, int param2, void** param3);
+void KXMessages_BroadcastMessage(KXMessages* self, const char* msg_type, const libqt_string message);
+#ifdef __linux__
+bool KXMessages_BroadcastMessageX(xcb_connection_t* c, const char* msg_type, const libqt_string message, int screenNumber);
+#endif
+void KXMessages_GotMessage(KXMessages* self, const libqt_string message);
+void KXMessages_Connect_GotMessage(KXMessages* self, intptr_t slot);
+void KXMessages_BroadcastMessage3(KXMessages* self, const char* msg_type, const libqt_string message, int screen);
+void KXMessages_OnMetaObject(const KXMessages* self, intptr_t slot);
+QMetaObject* KXMessages_SuperMetaObject(const KXMessages* self);
+void KXMessages_OnMetacast(KXMessages* self, intptr_t slot);
+void* KXMessages_SuperMetacast(KXMessages* self, const char* param1);
+void KXMessages_OnMetacall(KXMessages* self, intptr_t slot);
+int KXMessages_SuperMetacall(KXMessages* self, int param1, int param2, void** param3);
+bool KXMessages_Event(KXMessages* self, QEvent* event);
+void KXMessages_OnEvent(KXMessages* self, intptr_t slot);
+bool KXMessages_SuperEvent(KXMessages* self, QEvent* event);
+bool KXMessages_EventFilter(KXMessages* self, QObject* watched, QEvent* event);
+void KXMessages_OnEventFilter(KXMessages* self, intptr_t slot);
+bool KXMessages_SuperEventFilter(KXMessages* self, QObject* watched, QEvent* event);
+void KXMessages_TimerEvent(KXMessages* self, QTimerEvent* event);
+void KXMessages_OnTimerEvent(KXMessages* self, intptr_t slot);
+void KXMessages_SuperTimerEvent(KXMessages* self, QTimerEvent* event);
+void KXMessages_ChildEvent(KXMessages* self, QChildEvent* event);
+void KXMessages_OnChildEvent(KXMessages* self, intptr_t slot);
+void KXMessages_SuperChildEvent(KXMessages* self, QChildEvent* event);
+void KXMessages_CustomEvent(KXMessages* self, QEvent* event);
+void KXMessages_OnCustomEvent(KXMessages* self, intptr_t slot);
+void KXMessages_SuperCustomEvent(KXMessages* self, QEvent* event);
+void KXMessages_ConnectNotify(KXMessages* self, const QMetaMethod* signal);
+void KXMessages_OnConnectNotify(KXMessages* self, intptr_t slot);
+void KXMessages_SuperConnectNotify(KXMessages* self, const QMetaMethod* signal);
+void KXMessages_DisconnectNotify(KXMessages* self, const QMetaMethod* signal);
+void KXMessages_OnDisconnectNotify(KXMessages* self, intptr_t slot);
+void KXMessages_SuperDisconnectNotify(KXMessages* self, const QMetaMethod* signal);
+QObject* KXMessages_Sender(const KXMessages* self);
+void KXMessages_OnSender(const KXMessages* self, intptr_t slot);
+QObject* KXMessages_SuperSender(const KXMessages* self);
+int KXMessages_SenderSignalIndex(const KXMessages* self);
+void KXMessages_OnSenderSignalIndex(const KXMessages* self, intptr_t slot);
+int KXMessages_SuperSenderSignalIndex(const KXMessages* self);
+int KXMessages_Receivers(const KXMessages* self, const char* signal);
+void KXMessages_OnReceivers(const KXMessages* self, intptr_t slot);
+int KXMessages_SuperReceivers(const KXMessages* self, const char* signal);
+bool KXMessages_IsSignalConnected(const KXMessages* self, const QMetaMethod* signal);
+void KXMessages_OnIsSignalConnected(const KXMessages* self, intptr_t slot);
+bool KXMessages_SuperIsSignalConnected(const KXMessages* self, const QMetaMethod* signal);
+void KXMessages_Delete(KXMessages* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

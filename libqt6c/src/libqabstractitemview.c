@@ -1,0 +1,3260 @@
+#include "libqabstractitemdelegate.hpp"
+#include "libqabstractitemmodel.hpp"
+#include "libqabstractscrollarea.hpp"
+#include "libqevent.hpp"
+#include "libqcoreevent.hpp"
+#include "libqframe.hpp"
+#include "libqitemselectionmodel.hpp"
+#include "libqmargins.hpp"
+#include "libqmetaobject.hpp"
+#include "libqobjectdefs.hpp"
+#include "libqobject.hpp"
+#include "libqpaintdevice.hpp"
+#include "libqpaintengine.hpp"
+#include "libqpainter.hpp"
+#include "libqpoint.hpp"
+#include "libqrect.hpp"
+#include "libqregion.hpp"
+#include "libqsize.hpp"
+#include "libqstyleoption.hpp"
+#include "libqvariant.hpp"
+#include "libqwidget.hpp"
+#include "libqabstractitemview.hpp"
+#include "libqabstractitemview.h"
+
+QAbstractItemView* q_abstractitemview_new(void* parent) {
+    return QAbstractItemView_new((QWidget*)parent);
+}
+
+QAbstractItemView* q_abstractitemview_new2() {
+    return QAbstractItemView_new2();
+}
+
+const QMetaObject* q_abstractitemview_meta_object(void* self) {
+    return QAbstractItemView_MetaObject((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    QAbstractItemView_OnMetaObject((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+const QMetaObject* q_abstractitemview_super_meta_object(void* self) {
+    return QAbstractItemView_SuperMetaObject((QAbstractItemView*)self);
+}
+
+void* q_abstractitemview_metacast(void* self, const char* param1) {
+    return QAbstractItemView_Metacast((QAbstractItemView*)self, param1);
+}
+
+void q_abstractitemview_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    QAbstractItemView_OnMetacast((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void* q_abstractitemview_super_metacast(void* self, const char* param1) {
+    return QAbstractItemView_SuperMetacast((QAbstractItemView*)self, param1);
+}
+
+int32_t q_abstractitemview_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QAbstractItemView_Metacall((QAbstractItemView*)self, param1, param2, param3);
+}
+
+void q_abstractitemview_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    QAbstractItemView_OnMetacall((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QAbstractItemView_SuperMetacall((QAbstractItemView*)self, param1, param2, param3);
+}
+
+const char* q_abstractitemview_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_model(void* self, void* model) {
+    QAbstractItemView_SetModel((QAbstractItemView*)self, (QAbstractItemModel*)model);
+}
+
+void q_abstractitemview_on_set_model(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnSetModel((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_set_model(void* self, void* model) {
+    QAbstractItemView_SuperSetModel((QAbstractItemView*)self, (QAbstractItemModel*)model);
+}
+
+QAbstractItemModel* q_abstractitemview_model(void* self) {
+    return QAbstractItemView_Model((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_selection_model(void* self, void* selectionModel) {
+    QAbstractItemView_SetSelectionModel((QAbstractItemView*)self, (QItemSelectionModel*)selectionModel);
+}
+
+void q_abstractitemview_on_set_selection_model(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnSetSelectionModel((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_set_selection_model(void* self, void* selectionModel) {
+    QAbstractItemView_SuperSetSelectionModel((QAbstractItemView*)self, (QItemSelectionModel*)selectionModel);
+}
+
+QItemSelectionModel* q_abstractitemview_selection_model(void* self) {
+    return QAbstractItemView_SelectionModel((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_item_delegate(void* self, void* delegate) {
+    QAbstractItemView_SetItemDelegate((QAbstractItemView*)self, (QAbstractItemDelegate*)delegate);
+}
+
+QAbstractItemDelegate* q_abstractitemview_item_delegate(void* self) {
+    return QAbstractItemView_ItemDelegate((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_selection_mode(void* self, int32_t mode) {
+    QAbstractItemView_SetSelectionMode((QAbstractItemView*)self, mode);
+}
+
+int32_t q_abstractitemview_selection_mode(void* self) {
+    return QAbstractItemView_SelectionMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_selection_behavior(void* self, int32_t behavior) {
+    QAbstractItemView_SetSelectionBehavior((QAbstractItemView*)self, behavior);
+}
+
+int32_t q_abstractitemview_selection_behavior(void* self) {
+    return QAbstractItemView_SelectionBehavior((QAbstractItemView*)self);
+}
+
+QModelIndex* q_abstractitemview_current_index(void* self) {
+    return QAbstractItemView_CurrentIndex((QAbstractItemView*)self);
+}
+
+QModelIndex* q_abstractitemview_root_index(void* self) {
+    return QAbstractItemView_RootIndex((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_edit_triggers(void* self, int32_t triggers) {
+    QAbstractItemView_SetEditTriggers((QAbstractItemView*)self, triggers);
+}
+
+int32_t q_abstractitemview_edit_triggers(void* self) {
+    return QAbstractItemView_EditTriggers((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_vertical_scroll_mode(void* self, int32_t mode) {
+    QAbstractItemView_SetVerticalScrollMode((QAbstractItemView*)self, mode);
+}
+
+int32_t q_abstractitemview_vertical_scroll_mode(void* self) {
+    return QAbstractItemView_VerticalScrollMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_reset_vertical_scroll_mode(void* self) {
+    QAbstractItemView_ResetVerticalScrollMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_horizontal_scroll_mode(void* self, int32_t mode) {
+    QAbstractItemView_SetHorizontalScrollMode((QAbstractItemView*)self, mode);
+}
+
+int32_t q_abstractitemview_horizontal_scroll_mode(void* self) {
+    return QAbstractItemView_HorizontalScrollMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_reset_horizontal_scroll_mode(void* self) {
+    QAbstractItemView_ResetHorizontalScrollMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_auto_scroll(void* self, bool enable) {
+    QAbstractItemView_SetAutoScroll((QAbstractItemView*)self, enable);
+}
+
+bool q_abstractitemview_has_auto_scroll(void* self) {
+    return QAbstractItemView_HasAutoScroll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_auto_scroll_margin(void* self, int margin) {
+    QAbstractItemView_SetAutoScrollMargin((QAbstractItemView*)self, margin);
+}
+
+int32_t q_abstractitemview_auto_scroll_margin(void* self) {
+    return QAbstractItemView_AutoScrollMargin((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_tab_key_navigation(void* self, bool enable) {
+    QAbstractItemView_SetTabKeyNavigation((QAbstractItemView*)self, enable);
+}
+
+bool q_abstractitemview_tab_key_navigation(void* self) {
+    return QAbstractItemView_TabKeyNavigation((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_drop_indicator_shown(void* self, bool enable) {
+    QAbstractItemView_SetDropIndicatorShown((QAbstractItemView*)self, enable);
+}
+
+bool q_abstractitemview_show_drop_indicator(void* self) {
+    return QAbstractItemView_ShowDropIndicator((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_drag_enabled(void* self, bool enable) {
+    QAbstractItemView_SetDragEnabled((QAbstractItemView*)self, enable);
+}
+
+bool q_abstractitemview_drag_enabled(void* self) {
+    return QAbstractItemView_DragEnabled((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_drag_drop_overwrite_mode(void* self, bool overwrite) {
+    QAbstractItemView_SetDragDropOverwriteMode((QAbstractItemView*)self, overwrite);
+}
+
+bool q_abstractitemview_drag_drop_overwrite_mode(void* self) {
+    return QAbstractItemView_DragDropOverwriteMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_drag_drop_mode(void* self, int32_t behavior) {
+    QAbstractItemView_SetDragDropMode((QAbstractItemView*)self, behavior);
+}
+
+int32_t q_abstractitemview_drag_drop_mode(void* self) {
+    return QAbstractItemView_DragDropMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_default_drop_action(void* self, int32_t dropAction) {
+    QAbstractItemView_SetDefaultDropAction((QAbstractItemView*)self, dropAction);
+}
+
+int32_t q_abstractitemview_default_drop_action(void* self) {
+    return QAbstractItemView_DefaultDropAction((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_alternating_row_colors(void* self, bool enable) {
+    QAbstractItemView_SetAlternatingRowColors((QAbstractItemView*)self, enable);
+}
+
+bool q_abstractitemview_alternating_row_colors(void* self) {
+    return QAbstractItemView_AlternatingRowColors((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_icon_size(void* self, void* size) {
+    QAbstractItemView_SetIconSize((QAbstractItemView*)self, (QSize*)size);
+}
+
+QSize* q_abstractitemview_icon_size(void* self) {
+    return QAbstractItemView_IconSize((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_text_elide_mode(void* self, int32_t mode) {
+    QAbstractItemView_SetTextElideMode((QAbstractItemView*)self, mode);
+}
+
+int32_t q_abstractitemview_text_elide_mode(void* self) {
+    return QAbstractItemView_TextElideMode((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_keyboard_search(void* self, const char* search) {
+    QAbstractItemView_KeyboardSearch((QAbstractItemView*)self, qstring(search));
+}
+
+void q_abstractitemview_on_keyboard_search(void* self, void (*callback)(void*, const char*)) {
+    QAbstractItemView_OnKeyboardSearch((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_keyboard_search(void* self, const char* search) {
+    QAbstractItemView_SuperKeyboardSearch((QAbstractItemView*)self, qstring(search));
+}
+
+QRect* q_abstractitemview_visual_rect(void* self, void* index) {
+    return QAbstractItemView_VisualRect((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_visual_rect(void* self, QRect* (*callback)(void*, void*)) {
+    QAbstractItemView_OnVisualRect((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QRect* q_abstractitemview_super_visual_rect(void* self, void* index) {
+    return QAbstractItemView_SuperVisualRect((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_scroll_to(void* self, void* index, int32_t hint) {
+    QAbstractItemView_ScrollTo((QAbstractItemView*)self, (QModelIndex*)index, hint);
+}
+
+void q_abstractitemview_on_scroll_to(void* self, void (*callback)(void*, void*, int32_t)) {
+    QAbstractItemView_OnScrollTo((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_scroll_to(void* self, void* index, int32_t hint) {
+    QAbstractItemView_SuperScrollTo((QAbstractItemView*)self, (QModelIndex*)index, hint);
+}
+
+QModelIndex* q_abstractitemview_index_at(void* self, void* point) {
+    return QAbstractItemView_IndexAt((QAbstractItemView*)self, (QPoint*)point);
+}
+
+void q_abstractitemview_on_index_at(void* self, QModelIndex* (*callback)(void*, void*)) {
+    QAbstractItemView_OnIndexAt((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QModelIndex* q_abstractitemview_super_index_at(void* self, void* point) {
+    return QAbstractItemView_SuperIndexAt((QAbstractItemView*)self, (QPoint*)point);
+}
+
+QSize* q_abstractitemview_size_hint_for_index(void* self, void* index) {
+    return QAbstractItemView_SizeHintForIndex((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+int32_t q_abstractitemview_size_hint_for_row(void* self, int row) {
+    return QAbstractItemView_SizeHintForRow((QAbstractItemView*)self, row);
+}
+
+void q_abstractitemview_on_size_hint_for_row(void* self, int32_t (*callback)(void*, int)) {
+    QAbstractItemView_OnSizeHintForRow((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_size_hint_for_row(void* self, int row) {
+    return QAbstractItemView_SuperSizeHintForRow((QAbstractItemView*)self, row);
+}
+
+int32_t q_abstractitemview_size_hint_for_column(void* self, int column) {
+    return QAbstractItemView_SizeHintForColumn((QAbstractItemView*)self, column);
+}
+
+void q_abstractitemview_on_size_hint_for_column(void* self, int32_t (*callback)(void*, int)) {
+    QAbstractItemView_OnSizeHintForColumn((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_size_hint_for_column(void* self, int column) {
+    return QAbstractItemView_SuperSizeHintForColumn((QAbstractItemView*)self, column);
+}
+
+void q_abstractitemview_open_persistent_editor(void* self, void* index) {
+    QAbstractItemView_OpenPersistentEditor((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_close_persistent_editor(void* self, void* index) {
+    QAbstractItemView_ClosePersistentEditor((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+bool q_abstractitemview_is_persistent_editor_open(void* self, void* index) {
+    return QAbstractItemView_IsPersistentEditorOpen((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_set_index_widget(void* self, void* index, void* widget) {
+    QAbstractItemView_SetIndexWidget((QAbstractItemView*)self, (QModelIndex*)index, (QWidget*)widget);
+}
+
+QWidget* q_abstractitemview_index_widget(void* self, void* index) {
+    return QAbstractItemView_IndexWidget((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_set_item_delegate_for_row(void* self, int row, void* delegate) {
+    QAbstractItemView_SetItemDelegateForRow((QAbstractItemView*)self, row, (QAbstractItemDelegate*)delegate);
+}
+
+QAbstractItemDelegate* q_abstractitemview_item_delegate_for_row(void* self, int row) {
+    return QAbstractItemView_ItemDelegateForRow((QAbstractItemView*)self, row);
+}
+
+void q_abstractitemview_set_item_delegate_for_column(void* self, int column, void* delegate) {
+    QAbstractItemView_SetItemDelegateForColumn((QAbstractItemView*)self, column, (QAbstractItemDelegate*)delegate);
+}
+
+QAbstractItemDelegate* q_abstractitemview_item_delegate_for_column(void* self, int column) {
+    return QAbstractItemView_ItemDelegateForColumn((QAbstractItemView*)self, column);
+}
+
+QAbstractItemDelegate* q_abstractitemview_item_delegate2(void* self, void* index) {
+    return QAbstractItemView_ItemDelegate2((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+QAbstractItemDelegate* q_abstractitemview_item_delegate_for_index(void* self, void* index) {
+    return QAbstractItemView_ItemDelegateForIndex((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_item_delegate_for_index(void* self, QAbstractItemDelegate* (*callback)(void*, void*)) {
+    QAbstractItemView_OnItemDelegateForIndex((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QAbstractItemDelegate* q_abstractitemview_super_item_delegate_for_index(void* self, void* index) {
+    return QAbstractItemView_SuperItemDelegateForIndex((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+QVariant* q_abstractitemview_input_method_query(void* self, int32_t query) {
+    return QAbstractItemView_InputMethodQuery((QAbstractItemView*)self, query);
+}
+
+void q_abstractitemview_on_input_method_query(void* self, QVariant* (*callback)(void*, int32_t)) {
+    QAbstractItemView_OnInputMethodQuery((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QVariant* q_abstractitemview_super_input_method_query(void* self, int32_t query) {
+    return QAbstractItemView_SuperInputMethodQuery((QAbstractItemView*)self, query);
+}
+
+void q_abstractitemview_reset(void* self) {
+    QAbstractItemView_Reset((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_reset(void* self, void (*callback)()) {
+    QAbstractItemView_OnReset((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_reset(void* self) {
+    QAbstractItemView_SuperReset((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_root_index(void* self, void* index) {
+    QAbstractItemView_SetRootIndex((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_set_root_index(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnSetRootIndex((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_set_root_index(void* self, void* index) {
+    QAbstractItemView_SuperSetRootIndex((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_do_items_layout(void* self) {
+    QAbstractItemView_DoItemsLayout((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_do_items_layout(void* self, void (*callback)()) {
+    QAbstractItemView_OnDoItemsLayout((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_do_items_layout(void* self) {
+    QAbstractItemView_SuperDoItemsLayout((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_select_all(void* self) {
+    QAbstractItemView_SelectAll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_select_all(void* self, void (*callback)()) {
+    QAbstractItemView_OnSelectAll((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_select_all(void* self) {
+    QAbstractItemView_SuperSelectAll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_edit(void* self, void* index) {
+    QAbstractItemView_Edit((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_clear_selection(void* self) {
+    QAbstractItemView_ClearSelection((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_current_index(void* self, void* index) {
+    QAbstractItemView_SetCurrentIndex((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_scroll_to_top(void* self) {
+    QAbstractItemView_ScrollToTop((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_scroll_to_bottom(void* self) {
+    QAbstractItemView_ScrollToBottom((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_update(void* self, void* index) {
+    QAbstractItemView_Update((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_data_changed(void* self, void* topLeft, void* bottomRight, libqt_list /* of int */ roles) {
+    QAbstractItemView_DataChanged((QAbstractItemView*)self, (QModelIndex*)topLeft, (QModelIndex*)bottomRight, roles);
+}
+
+void q_abstractitemview_on_data_changed(void* self, void (*callback)(void*, void*, void*, libqt_list /* of int */)) {
+    QAbstractItemView_OnDataChanged((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_data_changed(void* self, void* topLeft, void* bottomRight, libqt_list /* of int */ roles) {
+    QAbstractItemView_SuperDataChanged((QAbstractItemView*)self, (QModelIndex*)topLeft, (QModelIndex*)bottomRight, roles);
+}
+
+void q_abstractitemview_rows_inserted(void* self, void* parent, int start, int end) {
+    QAbstractItemView_RowsInserted((QAbstractItemView*)self, (QModelIndex*)parent, start, end);
+}
+
+void q_abstractitemview_on_rows_inserted(void* self, void (*callback)(void*, void*, int, int)) {
+    QAbstractItemView_OnRowsInserted((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_rows_inserted(void* self, void* parent, int start, int end) {
+    QAbstractItemView_SuperRowsInserted((QAbstractItemView*)self, (QModelIndex*)parent, start, end);
+}
+
+void q_abstractitemview_rows_about_to_be_removed(void* self, void* parent, int start, int end) {
+    QAbstractItemView_RowsAboutToBeRemoved((QAbstractItemView*)self, (QModelIndex*)parent, start, end);
+}
+
+void q_abstractitemview_on_rows_about_to_be_removed(void* self, void (*callback)(void*, void*, int, int)) {
+    QAbstractItemView_OnRowsAboutToBeRemoved((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_rows_about_to_be_removed(void* self, void* parent, int start, int end) {
+    QAbstractItemView_SuperRowsAboutToBeRemoved((QAbstractItemView*)self, (QModelIndex*)parent, start, end);
+}
+
+void q_abstractitemview_selection_changed(void* self, void* selected, void* deselected) {
+    QAbstractItemView_SelectionChanged((QAbstractItemView*)self, (QItemSelection*)selected, (QItemSelection*)deselected);
+}
+
+void q_abstractitemview_on_selection_changed(void* self, void (*callback)(void*, void*, void*)) {
+    QAbstractItemView_OnSelectionChanged((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_selection_changed(void* self, void* selected, void* deselected) {
+    QAbstractItemView_SuperSelectionChanged((QAbstractItemView*)self, (QItemSelection*)selected, (QItemSelection*)deselected);
+}
+
+void q_abstractitemview_current_changed(void* self, void* current, void* previous) {
+    QAbstractItemView_CurrentChanged((QAbstractItemView*)self, (QModelIndex*)current, (QModelIndex*)previous);
+}
+
+void q_abstractitemview_on_current_changed(void* self, void (*callback)(void*, void*, void*)) {
+    QAbstractItemView_OnCurrentChanged((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_current_changed(void* self, void* current, void* previous) {
+    QAbstractItemView_SuperCurrentChanged((QAbstractItemView*)self, (QModelIndex*)current, (QModelIndex*)previous);
+}
+
+void q_abstractitemview_update_editor_data(void* self) {
+    QAbstractItemView_UpdateEditorData((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_update_editor_data(void* self, void (*callback)()) {
+    QAbstractItemView_OnUpdateEditorData((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_update_editor_data(void* self) {
+    QAbstractItemView_SuperUpdateEditorData((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_update_editor_geometries(void* self) {
+    QAbstractItemView_UpdateEditorGeometries((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_update_editor_geometries(void* self, void (*callback)()) {
+    QAbstractItemView_OnUpdateEditorGeometries((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_update_editor_geometries(void* self) {
+    QAbstractItemView_SuperUpdateEditorGeometries((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_update_geometries(void* self) {
+    QAbstractItemView_UpdateGeometries((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_update_geometries(void* self, void (*callback)()) {
+    QAbstractItemView_OnUpdateGeometries((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_update_geometries(void* self) {
+    QAbstractItemView_SuperUpdateGeometries((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_vertical_scrollbar_action(void* self, int action) {
+    QAbstractItemView_VerticalScrollbarAction((QAbstractItemView*)self, action);
+}
+
+void q_abstractitemview_on_vertical_scrollbar_action(void* self, void (*callback)(void*, int)) {
+    QAbstractItemView_OnVerticalScrollbarAction((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_vertical_scrollbar_action(void* self, int action) {
+    QAbstractItemView_SuperVerticalScrollbarAction((QAbstractItemView*)self, action);
+}
+
+void q_abstractitemview_horizontal_scrollbar_action(void* self, int action) {
+    QAbstractItemView_HorizontalScrollbarAction((QAbstractItemView*)self, action);
+}
+
+void q_abstractitemview_on_horizontal_scrollbar_action(void* self, void (*callback)(void*, int)) {
+    QAbstractItemView_OnHorizontalScrollbarAction((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_horizontal_scrollbar_action(void* self, int action) {
+    QAbstractItemView_SuperHorizontalScrollbarAction((QAbstractItemView*)self, action);
+}
+
+void q_abstractitemview_vertical_scrollbar_value_changed(void* self, int value) {
+    QAbstractItemView_VerticalScrollbarValueChanged((QAbstractItemView*)self, value);
+}
+
+void q_abstractitemview_on_vertical_scrollbar_value_changed(void* self, void (*callback)(void*, int)) {
+    QAbstractItemView_OnVerticalScrollbarValueChanged((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_vertical_scrollbar_value_changed(void* self, int value) {
+    QAbstractItemView_SuperVerticalScrollbarValueChanged((QAbstractItemView*)self, value);
+}
+
+void q_abstractitemview_horizontal_scrollbar_value_changed(void* self, int value) {
+    QAbstractItemView_HorizontalScrollbarValueChanged((QAbstractItemView*)self, value);
+}
+
+void q_abstractitemview_on_horizontal_scrollbar_value_changed(void* self, void (*callback)(void*, int)) {
+    QAbstractItemView_OnHorizontalScrollbarValueChanged((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_horizontal_scrollbar_value_changed(void* self, int value) {
+    QAbstractItemView_SuperHorizontalScrollbarValueChanged((QAbstractItemView*)self, value);
+}
+
+void q_abstractitemview_close_editor(void* self, void* editor, int32_t hint) {
+    QAbstractItemView_CloseEditor((QAbstractItemView*)self, (QWidget*)editor, hint);
+}
+
+void q_abstractitemview_on_close_editor(void* self, void (*callback)(void*, void*, int32_t)) {
+    QAbstractItemView_OnCloseEditor((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_close_editor(void* self, void* editor, int32_t hint) {
+    QAbstractItemView_SuperCloseEditor((QAbstractItemView*)self, (QWidget*)editor, hint);
+}
+
+void q_abstractitemview_commit_data(void* self, void* editor) {
+    QAbstractItemView_CommitData((QAbstractItemView*)self, (QWidget*)editor);
+}
+
+void q_abstractitemview_on_commit_data(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnCommitData((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_commit_data(void* self, void* editor) {
+    QAbstractItemView_SuperCommitData((QAbstractItemView*)self, (QWidget*)editor);
+}
+
+void q_abstractitemview_editor_destroyed(void* self, void* editor) {
+    QAbstractItemView_EditorDestroyed((QAbstractItemView*)self, (QObject*)editor);
+}
+
+void q_abstractitemview_on_editor_destroyed(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnEditorDestroyed((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_editor_destroyed(void* self, void* editor) {
+    QAbstractItemView_SuperEditorDestroyed((QAbstractItemView*)self, (QObject*)editor);
+}
+
+void q_abstractitemview_pressed(void* self, void* index) {
+    QAbstractItemView_Pressed((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_pressed(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_Connect_Pressed((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_clicked(void* self, void* index) {
+    QAbstractItemView_Clicked((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_clicked(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_Connect_Clicked((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_double_clicked(void* self, void* index) {
+    QAbstractItemView_DoubleClicked((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_double_clicked(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_Connect_DoubleClicked((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_activated(void* self, void* index) {
+    QAbstractItemView_Activated((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_activated(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_Connect_Activated((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_entered(void* self, void* index) {
+    QAbstractItemView_Entered((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_entered(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_Connect_Entered((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_viewport_entered(void* self) {
+    QAbstractItemView_ViewportEntered((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_viewport_entered(void* self, void (*callback)(void*)) {
+    QAbstractItemView_Connect_ViewportEntered((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_icon_size_changed(void* self, void* size) {
+    QAbstractItemView_IconSizeChanged((QAbstractItemView*)self, (QSize*)size);
+}
+
+void q_abstractitemview_on_icon_size_changed(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_Connect_IconSizeChanged((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QModelIndex* q_abstractitemview_move_cursor(void* self, int32_t cursorAction, int32_t modifiers) {
+    return QAbstractItemView_MoveCursor((QAbstractItemView*)self, cursorAction, modifiers);
+}
+
+void q_abstractitemview_on_move_cursor(void* self, QModelIndex* (*callback)(void*, int32_t, int32_t)) {
+    QAbstractItemView_OnMoveCursor((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QModelIndex* q_abstractitemview_super_move_cursor(void* self, int32_t cursorAction, int32_t modifiers) {
+    return QAbstractItemView_SuperMoveCursor((QAbstractItemView*)self, cursorAction, modifiers);
+}
+
+int32_t q_abstractitemview_horizontal_offset(void* self) {
+    return QAbstractItemView_HorizontalOffset((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_horizontal_offset(void* self, int32_t (*callback)()) {
+    QAbstractItemView_OnHorizontalOffset((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_horizontal_offset(void* self) {
+    return QAbstractItemView_SuperHorizontalOffset((QAbstractItemView*)self);
+}
+
+int32_t q_abstractitemview_vertical_offset(void* self) {
+    return QAbstractItemView_VerticalOffset((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_vertical_offset(void* self, int32_t (*callback)()) {
+    QAbstractItemView_OnVerticalOffset((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_vertical_offset(void* self) {
+    return QAbstractItemView_SuperVerticalOffset((QAbstractItemView*)self);
+}
+
+bool q_abstractitemview_is_index_hidden(void* self, void* index) {
+    return QAbstractItemView_IsIndexHidden((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_on_is_index_hidden(void* self, bool (*callback)(void*, void*)) {
+    QAbstractItemView_OnIsIndexHidden((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_super_is_index_hidden(void* self, void* index) {
+    return QAbstractItemView_SuperIsIndexHidden((QAbstractItemView*)self, (QModelIndex*)index);
+}
+
+void q_abstractitemview_set_selection(void* self, void* rect, int32_t command) {
+    QAbstractItemView_SetSelection((QAbstractItemView*)self, (QRect*)rect, command);
+}
+
+void q_abstractitemview_on_set_selection(void* self, void (*callback)(void*, void*, int32_t)) {
+    QAbstractItemView_OnSetSelection((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_set_selection(void* self, void* rect, int32_t command) {
+    QAbstractItemView_SuperSetSelection((QAbstractItemView*)self, (QRect*)rect, command);
+}
+
+QRegion* q_abstractitemview_visual_region_for_selection(void* self, void* selection) {
+    return QAbstractItemView_VisualRegionForSelection((QAbstractItemView*)self, (QItemSelection*)selection);
+}
+
+void q_abstractitemview_on_visual_region_for_selection(void* self, QRegion* (*callback)(void*, void*)) {
+    QAbstractItemView_OnVisualRegionForSelection((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QRegion* q_abstractitemview_super_visual_region_for_selection(void* self, void* selection) {
+    return QAbstractItemView_SuperVisualRegionForSelection((QAbstractItemView*)self, (QItemSelection*)selection);
+}
+
+libqt_list /* of QModelIndex* */ q_abstractitemview_selected_indexes(void* self) {
+    libqt_list _arr = QAbstractItemView_SelectedIndexes((QAbstractItemView*)self);
+    return _arr;
+}
+
+void q_abstractitemview_on_selected_indexes(void* self, libqt_list /* of QModelIndex* */ (*callback)()) {
+    QAbstractItemView_OnSelectedIndexes((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+libqt_list /* of QModelIndex* */ q_abstractitemview_super_selected_indexes(void* self) {
+    libqt_list _arr = QAbstractItemView_SuperSelectedIndexes((QAbstractItemView*)self);
+    return _arr;
+}
+
+bool q_abstractitemview_edit2(void* self, void* index, int32_t trigger, void* event) {
+    return QAbstractItemView_Edit2((QAbstractItemView*)self, (QModelIndex*)index, trigger, (QEvent*)event);
+}
+
+void q_abstractitemview_on_edit2(void* self, bool (*callback)(void*, void*, int32_t, void*)) {
+    QAbstractItemView_OnEdit2((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_super_edit2(void* self, void* index, int32_t trigger, void* event) {
+    return QAbstractItemView_SuperEdit2((QAbstractItemView*)self, (QModelIndex*)index, trigger, (QEvent*)event);
+}
+
+int32_t q_abstractitemview_selection_command(void* self, void* index, void* event) {
+    return QAbstractItemView_SelectionCommand((QAbstractItemView*)self, (QModelIndex*)index, (QEvent*)event);
+}
+
+void q_abstractitemview_on_selection_command(void* self, int32_t (*callback)(void*, void*, void*)) {
+    QAbstractItemView_OnSelectionCommand((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_selection_command(void* self, void* index, void* event) {
+    return QAbstractItemView_SuperSelectionCommand((QAbstractItemView*)self, (QModelIndex*)index, (QEvent*)event);
+}
+
+void q_abstractitemview_start_drag(void* self, int32_t supportedActions) {
+    QAbstractItemView_StartDrag((QAbstractItemView*)self, supportedActions);
+}
+
+void q_abstractitemview_on_start_drag(void* self, void (*callback)(void*, int32_t)) {
+    QAbstractItemView_OnStartDrag((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_start_drag(void* self, int32_t supportedActions) {
+    QAbstractItemView_SuperStartDrag((QAbstractItemView*)self, supportedActions);
+}
+
+void q_abstractitemview_init_view_item_option(void* self, void* option) {
+    QAbstractItemView_InitViewItemOption((QAbstractItemView*)self, (QStyleOptionViewItem*)option);
+}
+
+void q_abstractitemview_on_init_view_item_option(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnInitViewItemOption((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_init_view_item_option(void* self, void* option) {
+    QAbstractItemView_SuperInitViewItemOption((QAbstractItemView*)self, (QStyleOptionViewItem*)option);
+}
+
+int32_t q_abstractitemview_state(void* self) {
+    return QAbstractItemView_State((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_state(void* self, int32_t (*callback)()) {
+    QAbstractItemView_OnState((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_state(void* self) {
+    return QAbstractItemView_SuperState((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_state(void* self, int32_t state) {
+    QAbstractItemView_SetState((QAbstractItemView*)self, state);
+}
+
+void q_abstractitemview_on_set_state(void* self, void (*callback)(void*, int32_t)) {
+    QAbstractItemView_OnSetState((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_set_state(void* self, int32_t state) {
+    QAbstractItemView_SuperSetState((QAbstractItemView*)self, state);
+}
+
+void q_abstractitemview_schedule_delayed_items_layout(void* self) {
+    QAbstractItemView_ScheduleDelayedItemsLayout((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_schedule_delayed_items_layout(void* self, void (*callback)()) {
+    QAbstractItemView_OnScheduleDelayedItemsLayout((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_schedule_delayed_items_layout(void* self) {
+    QAbstractItemView_SuperScheduleDelayedItemsLayout((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_execute_delayed_items_layout(void* self) {
+    QAbstractItemView_ExecuteDelayedItemsLayout((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_execute_delayed_items_layout(void* self, void (*callback)()) {
+    QAbstractItemView_OnExecuteDelayedItemsLayout((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_execute_delayed_items_layout(void* self) {
+    QAbstractItemView_SuperExecuteDelayedItemsLayout((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_set_dirty_region(void* self, void* region) {
+    QAbstractItemView_SetDirtyRegion((QAbstractItemView*)self, (QRegion*)region);
+}
+
+void q_abstractitemview_on_set_dirty_region(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnSetDirtyRegion((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_set_dirty_region(void* self, void* region) {
+    QAbstractItemView_SuperSetDirtyRegion((QAbstractItemView*)self, (QRegion*)region);
+}
+
+void q_abstractitemview_scroll_dirty_region(void* self, int dx, int dy) {
+    QAbstractItemView_ScrollDirtyRegion((QAbstractItemView*)self, dx, dy);
+}
+
+void q_abstractitemview_on_scroll_dirty_region(void* self, void (*callback)(void*, int, int)) {
+    QAbstractItemView_OnScrollDirtyRegion((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_scroll_dirty_region(void* self, int dx, int dy) {
+    QAbstractItemView_SuperScrollDirtyRegion((QAbstractItemView*)self, dx, dy);
+}
+
+QPoint* q_abstractitemview_dirty_region_offset(void* self) {
+    return QAbstractItemView_DirtyRegionOffset((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_dirty_region_offset(void* self, QPoint* (*callback)()) {
+    QAbstractItemView_OnDirtyRegionOffset((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QPoint* q_abstractitemview_super_dirty_region_offset(void* self) {
+    return QAbstractItemView_SuperDirtyRegionOffset((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_start_auto_scroll(void* self) {
+    QAbstractItemView_StartAutoScroll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_start_auto_scroll(void* self, void (*callback)()) {
+    QAbstractItemView_OnStartAutoScroll((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_start_auto_scroll(void* self) {
+    QAbstractItemView_SuperStartAutoScroll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_stop_auto_scroll(void* self) {
+    QAbstractItemView_StopAutoScroll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_stop_auto_scroll(void* self, void (*callback)()) {
+    QAbstractItemView_OnStopAutoScroll((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_stop_auto_scroll(void* self) {
+    QAbstractItemView_SuperStopAutoScroll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_do_auto_scroll(void* self) {
+    QAbstractItemView_DoAutoScroll((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_do_auto_scroll(void* self, void (*callback)()) {
+    QAbstractItemView_OnDoAutoScroll((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_do_auto_scroll(void* self) {
+    QAbstractItemView_SuperDoAutoScroll((QAbstractItemView*)self);
+}
+
+bool q_abstractitemview_focus_next_prev_child(void* self, bool next) {
+    return QAbstractItemView_FocusNextPrevChild((QAbstractItemView*)self, next);
+}
+
+void q_abstractitemview_on_focus_next_prev_child(void* self, bool (*callback)(void*, bool)) {
+    QAbstractItemView_OnFocusNextPrevChild((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_super_focus_next_prev_child(void* self, bool next) {
+    return QAbstractItemView_SuperFocusNextPrevChild((QAbstractItemView*)self, next);
+}
+
+bool q_abstractitemview_event(void* self, void* event) {
+    return QAbstractItemView_Event((QAbstractItemView*)self, (QEvent*)event);
+}
+
+void q_abstractitemview_on_event(void* self, bool (*callback)(void*, void*)) {
+    QAbstractItemView_OnEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_super_event(void* self, void* event) {
+    return QAbstractItemView_SuperEvent((QAbstractItemView*)self, (QEvent*)event);
+}
+
+bool q_abstractitemview_viewport_event(void* self, void* event) {
+    return QAbstractItemView_ViewportEvent((QAbstractItemView*)self, (QEvent*)event);
+}
+
+void q_abstractitemview_on_viewport_event(void* self, bool (*callback)(void*, void*)) {
+    QAbstractItemView_OnViewportEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_super_viewport_event(void* self, void* event) {
+    return QAbstractItemView_SuperViewportEvent((QAbstractItemView*)self, (QEvent*)event);
+}
+
+void q_abstractitemview_mouse_press_event(void* self, void* event) {
+    QAbstractItemView_MousePressEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_on_mouse_press_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnMousePressEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_mouse_press_event(void* self, void* event) {
+    QAbstractItemView_SuperMousePressEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_mouse_move_event(void* self, void* event) {
+    QAbstractItemView_MouseMoveEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_on_mouse_move_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnMouseMoveEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_mouse_move_event(void* self, void* event) {
+    QAbstractItemView_SuperMouseMoveEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_mouse_release_event(void* self, void* event) {
+    QAbstractItemView_MouseReleaseEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_on_mouse_release_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnMouseReleaseEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_mouse_release_event(void* self, void* event) {
+    QAbstractItemView_SuperMouseReleaseEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_mouse_double_click_event(void* self, void* event) {
+    QAbstractItemView_MouseDoubleClickEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_on_mouse_double_click_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnMouseDoubleClickEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_mouse_double_click_event(void* self, void* event) {
+    QAbstractItemView_SuperMouseDoubleClickEvent((QAbstractItemView*)self, (QMouseEvent*)event);
+}
+
+void q_abstractitemview_drag_enter_event(void* self, void* event) {
+    QAbstractItemView_DragEnterEvent((QAbstractItemView*)self, (QDragEnterEvent*)event);
+}
+
+void q_abstractitemview_on_drag_enter_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnDragEnterEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_drag_enter_event(void* self, void* event) {
+    QAbstractItemView_SuperDragEnterEvent((QAbstractItemView*)self, (QDragEnterEvent*)event);
+}
+
+void q_abstractitemview_drag_move_event(void* self, void* event) {
+    QAbstractItemView_DragMoveEvent((QAbstractItemView*)self, (QDragMoveEvent*)event);
+}
+
+void q_abstractitemview_on_drag_move_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnDragMoveEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_drag_move_event(void* self, void* event) {
+    QAbstractItemView_SuperDragMoveEvent((QAbstractItemView*)self, (QDragMoveEvent*)event);
+}
+
+void q_abstractitemview_drag_leave_event(void* self, void* event) {
+    QAbstractItemView_DragLeaveEvent((QAbstractItemView*)self, (QDragLeaveEvent*)event);
+}
+
+void q_abstractitemview_on_drag_leave_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnDragLeaveEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_drag_leave_event(void* self, void* event) {
+    QAbstractItemView_SuperDragLeaveEvent((QAbstractItemView*)self, (QDragLeaveEvent*)event);
+}
+
+void q_abstractitemview_drop_event(void* self, void* event) {
+    QAbstractItemView_DropEvent((QAbstractItemView*)self, (QDropEvent*)event);
+}
+
+void q_abstractitemview_on_drop_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnDropEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_drop_event(void* self, void* event) {
+    QAbstractItemView_SuperDropEvent((QAbstractItemView*)self, (QDropEvent*)event);
+}
+
+void q_abstractitemview_focus_in_event(void* self, void* event) {
+    QAbstractItemView_FocusInEvent((QAbstractItemView*)self, (QFocusEvent*)event);
+}
+
+void q_abstractitemview_on_focus_in_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnFocusInEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_focus_in_event(void* self, void* event) {
+    QAbstractItemView_SuperFocusInEvent((QAbstractItemView*)self, (QFocusEvent*)event);
+}
+
+void q_abstractitemview_focus_out_event(void* self, void* event) {
+    QAbstractItemView_FocusOutEvent((QAbstractItemView*)self, (QFocusEvent*)event);
+}
+
+void q_abstractitemview_on_focus_out_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnFocusOutEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_focus_out_event(void* self, void* event) {
+    QAbstractItemView_SuperFocusOutEvent((QAbstractItemView*)self, (QFocusEvent*)event);
+}
+
+void q_abstractitemview_key_press_event(void* self, void* event) {
+    QAbstractItemView_KeyPressEvent((QAbstractItemView*)self, (QKeyEvent*)event);
+}
+
+void q_abstractitemview_on_key_press_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnKeyPressEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_key_press_event(void* self, void* event) {
+    QAbstractItemView_SuperKeyPressEvent((QAbstractItemView*)self, (QKeyEvent*)event);
+}
+
+void q_abstractitemview_resize_event(void* self, void* event) {
+    QAbstractItemView_ResizeEvent((QAbstractItemView*)self, (QResizeEvent*)event);
+}
+
+void q_abstractitemview_on_resize_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnResizeEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_resize_event(void* self, void* event) {
+    QAbstractItemView_SuperResizeEvent((QAbstractItemView*)self, (QResizeEvent*)event);
+}
+
+void q_abstractitemview_timer_event(void* self, void* event) {
+    QAbstractItemView_TimerEvent((QAbstractItemView*)self, (QTimerEvent*)event);
+}
+
+void q_abstractitemview_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnTimerEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_timer_event(void* self, void* event) {
+    QAbstractItemView_SuperTimerEvent((QAbstractItemView*)self, (QTimerEvent*)event);
+}
+
+void q_abstractitemview_input_method_event(void* self, void* event) {
+    QAbstractItemView_InputMethodEvent((QAbstractItemView*)self, (QInputMethodEvent*)event);
+}
+
+void q_abstractitemview_on_input_method_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnInputMethodEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_super_input_method_event(void* self, void* event) {
+    QAbstractItemView_SuperInputMethodEvent((QAbstractItemView*)self, (QInputMethodEvent*)event);
+}
+
+bool q_abstractitemview_event_filter(void* self, void* object, void* event) {
+    return QAbstractItemView_EventFilter((QAbstractItemView*)self, (QObject*)object, (QEvent*)event);
+}
+
+void q_abstractitemview_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    QAbstractItemView_OnEventFilter((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_super_event_filter(void* self, void* object, void* event) {
+    return QAbstractItemView_SuperEventFilter((QAbstractItemView*)self, (QObject*)object, (QEvent*)event);
+}
+
+int32_t q_abstractitemview_drop_indicator_position(void* self) {
+    return QAbstractItemView_DropIndicatorPosition((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_drop_indicator_position(void* self, int32_t (*callback)()) {
+    QAbstractItemView_OnDropIndicatorPosition((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_super_drop_indicator_position(void* self) {
+    return QAbstractItemView_SuperDropIndicatorPosition((QAbstractItemView*)self);
+}
+
+QSize* q_abstractitemview_viewport_size_hint(void* self) {
+    return QAbstractItemView_ViewportSizeHint((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_viewport_size_hint(void* self, QSize* (*callback)()) {
+    QAbstractItemView_OnViewportSizeHint((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QSize* q_abstractitemview_super_viewport_size_hint(void* self) {
+    return QAbstractItemView_SuperViewportSizeHint((QAbstractItemView*)self);
+}
+
+const char* q_abstractitemview_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_abstractitemview_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+int32_t q_abstractitemview_vertical_scroll_bar_policy(void* self) {
+    return QAbstractScrollArea_VerticalScrollBarPolicy((QAbstractScrollArea*)self);
+}
+
+void q_abstractitemview_set_vertical_scroll_bar_policy(void* self, int32_t verticalScrollBarPolicy) {
+    QAbstractScrollArea_SetVerticalScrollBarPolicy((QAbstractScrollArea*)self, verticalScrollBarPolicy);
+}
+
+QScrollBar* q_abstractitemview_vertical_scroll_bar(void* self) {
+    return QAbstractScrollArea_VerticalScrollBar((QAbstractScrollArea*)self);
+}
+
+void q_abstractitemview_set_vertical_scroll_bar(void* self, void* scrollbar) {
+    QAbstractScrollArea_SetVerticalScrollBar((QAbstractScrollArea*)self, (QScrollBar*)scrollbar);
+}
+
+int32_t q_abstractitemview_horizontal_scroll_bar_policy(void* self) {
+    return QAbstractScrollArea_HorizontalScrollBarPolicy((QAbstractScrollArea*)self);
+}
+
+void q_abstractitemview_set_horizontal_scroll_bar_policy(void* self, int32_t horizontalScrollBarPolicy) {
+    QAbstractScrollArea_SetHorizontalScrollBarPolicy((QAbstractScrollArea*)self, horizontalScrollBarPolicy);
+}
+
+QScrollBar* q_abstractitemview_horizontal_scroll_bar(void* self) {
+    return QAbstractScrollArea_HorizontalScrollBar((QAbstractScrollArea*)self);
+}
+
+void q_abstractitemview_set_horizontal_scroll_bar(void* self, void* scrollbar) {
+    QAbstractScrollArea_SetHorizontalScrollBar((QAbstractScrollArea*)self, (QScrollBar*)scrollbar);
+}
+
+QWidget* q_abstractitemview_corner_widget(void* self) {
+    return QAbstractScrollArea_CornerWidget((QAbstractScrollArea*)self);
+}
+
+void q_abstractitemview_set_corner_widget(void* self, void* widget) {
+    QAbstractScrollArea_SetCornerWidget((QAbstractScrollArea*)self, (QWidget*)widget);
+}
+
+void q_abstractitemview_add_scroll_bar_widget(void* self, void* widget, int32_t alignment) {
+    QAbstractScrollArea_AddScrollBarWidget((QAbstractScrollArea*)self, (QWidget*)widget, alignment);
+}
+
+libqt_list /* of QWidget* */ q_abstractitemview_scroll_bar_widgets(void* self, int32_t alignment) {
+    libqt_list _arr = QAbstractScrollArea_ScrollBarWidgets((QAbstractScrollArea*)self, alignment);
+    return _arr;
+}
+
+QWidget* q_abstractitemview_viewport(void* self) {
+    return QAbstractScrollArea_Viewport((QAbstractScrollArea*)self);
+}
+
+void q_abstractitemview_set_viewport(void* self, void* widget) {
+    QAbstractScrollArea_SetViewport((QAbstractScrollArea*)self, (QWidget*)widget);
+}
+
+QSize* q_abstractitemview_maximum_viewport_size(void* self) {
+    return QAbstractScrollArea_MaximumViewportSize((QAbstractScrollArea*)self);
+}
+
+int32_t q_abstractitemview_size_adjust_policy(void* self) {
+    return QAbstractScrollArea_SizeAdjustPolicy((QAbstractScrollArea*)self);
+}
+
+void q_abstractitemview_set_size_adjust_policy(void* self, int32_t policy) {
+    QAbstractScrollArea_SetSizeAdjustPolicy((QAbstractScrollArea*)self, policy);
+}
+
+int32_t q_abstractitemview_frame_style(void* self) {
+    return QFrame_FrameStyle((QFrame*)self);
+}
+
+void q_abstractitemview_set_frame_style(void* self, int frameStyle) {
+    QFrame_SetFrameStyle((QFrame*)self, frameStyle);
+}
+
+int32_t q_abstractitemview_frame_width(void* self) {
+    return QFrame_FrameWidth((QFrame*)self);
+}
+
+int32_t q_abstractitemview_frame_shape(void* self) {
+    return QFrame_FrameShape((QFrame*)self);
+}
+
+void q_abstractitemview_set_frame_shape(void* self, int32_t frameShape) {
+    QFrame_SetFrameShape((QFrame*)self, frameShape);
+}
+
+int32_t q_abstractitemview_frame_shadow(void* self) {
+    return QFrame_FrameShadow((QFrame*)self);
+}
+
+void q_abstractitemview_set_frame_shadow(void* self, int32_t frameShadow) {
+    QFrame_SetFrameShadow((QFrame*)self, frameShadow);
+}
+
+int32_t q_abstractitemview_line_width(void* self) {
+    return QFrame_LineWidth((QFrame*)self);
+}
+
+void q_abstractitemview_set_line_width(void* self, int lineWidth) {
+    QFrame_SetLineWidth((QFrame*)self, lineWidth);
+}
+
+int32_t q_abstractitemview_mid_line_width(void* self) {
+    return QFrame_MidLineWidth((QFrame*)self);
+}
+
+void q_abstractitemview_set_mid_line_width(void* self, int midLineWidth) {
+    QFrame_SetMidLineWidth((QFrame*)self, midLineWidth);
+}
+
+QRect* q_abstractitemview_frame_rect(void* self) {
+    return QFrame_FrameRect((QFrame*)self);
+}
+
+void q_abstractitemview_set_frame_rect(void* self, void* frameRect) {
+    QFrame_SetFrameRect((QFrame*)self, (QRect*)frameRect);
+}
+
+uintptr_t q_abstractitemview_win_id(void* self) {
+    return QWidget_WinId((QWidget*)self);
+}
+
+void q_abstractitemview_create_win_id(void* self) {
+    QWidget_CreateWinId((QWidget*)self);
+}
+
+uintptr_t q_abstractitemview_internal_win_id(void* self) {
+    return QWidget_InternalWinId((QWidget*)self);
+}
+
+uintptr_t q_abstractitemview_effective_win_id(void* self) {
+    return QWidget_EffectiveWinId((QWidget*)self);
+}
+
+QStyle* q_abstractitemview_style(void* self) {
+    return QWidget_Style((QWidget*)self);
+}
+
+void q_abstractitemview_set_style(void* self, void* style) {
+    QWidget_SetStyle((QWidget*)self, (QStyle*)style);
+}
+
+bool q_abstractitemview_is_top_level(void* self) {
+    return QWidget_IsTopLevel((QWidget*)self);
+}
+
+bool q_abstractitemview_is_window(void* self) {
+    return QWidget_IsWindow((QWidget*)self);
+}
+
+bool q_abstractitemview_is_modal(void* self) {
+    return QWidget_IsModal((QWidget*)self);
+}
+
+int32_t q_abstractitemview_window_modality(void* self) {
+    return QWidget_WindowModality((QWidget*)self);
+}
+
+void q_abstractitemview_set_window_modality(void* self, int32_t windowModality) {
+    QWidget_SetWindowModality((QWidget*)self, windowModality);
+}
+
+bool q_abstractitemview_is_enabled(void* self) {
+    return QWidget_IsEnabled((QWidget*)self);
+}
+
+bool q_abstractitemview_is_enabled_to(void* self, void* param1) {
+    return QWidget_IsEnabledTo((QWidget*)self, (QWidget*)param1);
+}
+
+void q_abstractitemview_set_enabled(void* self, bool enabled) {
+    QWidget_SetEnabled((QWidget*)self, enabled);
+}
+
+void q_abstractitemview_set_disabled(void* self, bool disabled) {
+    QWidget_SetDisabled((QWidget*)self, disabled);
+}
+
+void q_abstractitemview_set_window_modified(void* self, bool windowModified) {
+    QWidget_SetWindowModified((QWidget*)self, windowModified);
+}
+
+QRect* q_abstractitemview_frame_geometry(void* self) {
+    return QWidget_FrameGeometry((QWidget*)self);
+}
+
+const QRect* q_abstractitemview_geometry(void* self) {
+    return QWidget_Geometry((QWidget*)self);
+}
+
+QRect* q_abstractitemview_normal_geometry(void* self) {
+    return QWidget_NormalGeometry((QWidget*)self);
+}
+
+int32_t q_abstractitemview_x(void* self) {
+    return QWidget_X((QWidget*)self);
+}
+
+int32_t q_abstractitemview_y(void* self) {
+    return QWidget_Y((QWidget*)self);
+}
+
+QPoint* q_abstractitemview_pos(void* self) {
+    return QWidget_Pos((QWidget*)self);
+}
+
+QSize* q_abstractitemview_frame_size(void* self) {
+    return QWidget_FrameSize((QWidget*)self);
+}
+
+QSize* q_abstractitemview_size(void* self) {
+    return QWidget_Size((QWidget*)self);
+}
+
+int32_t q_abstractitemview_width(void* self) {
+    return QWidget_Width((QWidget*)self);
+}
+
+int32_t q_abstractitemview_height(void* self) {
+    return QWidget_Height((QWidget*)self);
+}
+
+QRect* q_abstractitemview_rect(void* self) {
+    return QWidget_Rect((QWidget*)self);
+}
+
+QRect* q_abstractitemview_children_rect(void* self) {
+    return QWidget_ChildrenRect((QWidget*)self);
+}
+
+QRegion* q_abstractitemview_children_region(void* self) {
+    return QWidget_ChildrenRegion((QWidget*)self);
+}
+
+QSize* q_abstractitemview_minimum_size(void* self) {
+    return QWidget_MinimumSize((QWidget*)self);
+}
+
+QSize* q_abstractitemview_maximum_size(void* self) {
+    return QWidget_MaximumSize((QWidget*)self);
+}
+
+int32_t q_abstractitemview_minimum_width(void* self) {
+    return QWidget_MinimumWidth((QWidget*)self);
+}
+
+int32_t q_abstractitemview_minimum_height(void* self) {
+    return QWidget_MinimumHeight((QWidget*)self);
+}
+
+int32_t q_abstractitemview_maximum_width(void* self) {
+    return QWidget_MaximumWidth((QWidget*)self);
+}
+
+int32_t q_abstractitemview_maximum_height(void* self) {
+    return QWidget_MaximumHeight((QWidget*)self);
+}
+
+void q_abstractitemview_set_minimum_size(void* self, void* minimumSize) {
+    QWidget_SetMinimumSize((QWidget*)self, (QSize*)minimumSize);
+}
+
+void q_abstractitemview_set_minimum_size2(void* self, int minw, int minh) {
+    QWidget_SetMinimumSize2((QWidget*)self, minw, minh);
+}
+
+void q_abstractitemview_set_maximum_size(void* self, void* maximumSize) {
+    QWidget_SetMaximumSize((QWidget*)self, (QSize*)maximumSize);
+}
+
+void q_abstractitemview_set_maximum_size2(void* self, int maxw, int maxh) {
+    QWidget_SetMaximumSize2((QWidget*)self, maxw, maxh);
+}
+
+void q_abstractitemview_set_minimum_width(void* self, int minw) {
+    QWidget_SetMinimumWidth((QWidget*)self, minw);
+}
+
+void q_abstractitemview_set_minimum_height(void* self, int minh) {
+    QWidget_SetMinimumHeight((QWidget*)self, minh);
+}
+
+void q_abstractitemview_set_maximum_width(void* self, int maxw) {
+    QWidget_SetMaximumWidth((QWidget*)self, maxw);
+}
+
+void q_abstractitemview_set_maximum_height(void* self, int maxh) {
+    QWidget_SetMaximumHeight((QWidget*)self, maxh);
+}
+
+QSize* q_abstractitemview_size_increment(void* self) {
+    return QWidget_SizeIncrement((QWidget*)self);
+}
+
+void q_abstractitemview_set_size_increment(void* self, void* sizeIncrement) {
+    QWidget_SetSizeIncrement((QWidget*)self, (QSize*)sizeIncrement);
+}
+
+void q_abstractitemview_set_size_increment2(void* self, int w, int h) {
+    QWidget_SetSizeIncrement2((QWidget*)self, w, h);
+}
+
+QSize* q_abstractitemview_base_size(void* self) {
+    return QWidget_BaseSize((QWidget*)self);
+}
+
+void q_abstractitemview_set_base_size(void* self, void* baseSize) {
+    QWidget_SetBaseSize((QWidget*)self, (QSize*)baseSize);
+}
+
+void q_abstractitemview_set_base_size2(void* self, int basew, int baseh) {
+    QWidget_SetBaseSize2((QWidget*)self, basew, baseh);
+}
+
+void q_abstractitemview_set_fixed_size(void* self, void* fixedSize) {
+    QWidget_SetFixedSize((QWidget*)self, (QSize*)fixedSize);
+}
+
+void q_abstractitemview_set_fixed_size2(void* self, int w, int h) {
+    QWidget_SetFixedSize2((QWidget*)self, w, h);
+}
+
+void q_abstractitemview_set_fixed_width(void* self, int w) {
+    QWidget_SetFixedWidth((QWidget*)self, w);
+}
+
+void q_abstractitemview_set_fixed_height(void* self, int h) {
+    QWidget_SetFixedHeight((QWidget*)self, h);
+}
+
+QPointF* q_abstractitemview_map_to_global(void* self, void* param1) {
+    return QWidget_MapToGlobal((QWidget*)self, (QPointF*)param1);
+}
+
+QPoint* q_abstractitemview_map_to_global2(void* self, void* param1) {
+    return QWidget_MapToGlobal2((QWidget*)self, (QPoint*)param1);
+}
+
+QPointF* q_abstractitemview_map_from_global(void* self, void* param1) {
+    return QWidget_MapFromGlobal((QWidget*)self, (QPointF*)param1);
+}
+
+QPoint* q_abstractitemview_map_from_global2(void* self, void* param1) {
+    return QWidget_MapFromGlobal2((QWidget*)self, (QPoint*)param1);
+}
+
+QPointF* q_abstractitemview_map_to_parent(void* self, void* param1) {
+    return QWidget_MapToParent((QWidget*)self, (QPointF*)param1);
+}
+
+QPoint* q_abstractitemview_map_to_parent2(void* self, void* param1) {
+    return QWidget_MapToParent2((QWidget*)self, (QPoint*)param1);
+}
+
+QPointF* q_abstractitemview_map_from_parent(void* self, void* param1) {
+    return QWidget_MapFromParent((QWidget*)self, (QPointF*)param1);
+}
+
+QPoint* q_abstractitemview_map_from_parent2(void* self, void* param1) {
+    return QWidget_MapFromParent2((QWidget*)self, (QPoint*)param1);
+}
+
+QPointF* q_abstractitemview_map_to(void* self, void* param1, void* param2) {
+    return QWidget_MapTo((QWidget*)self, (QWidget*)param1, (QPointF*)param2);
+}
+
+QPoint* q_abstractitemview_map_to2(void* self, void* param1, void* param2) {
+    return QWidget_MapTo2((QWidget*)self, (QWidget*)param1, (QPoint*)param2);
+}
+
+QPointF* q_abstractitemview_map_from(void* self, void* param1, void* param2) {
+    return QWidget_MapFrom((QWidget*)self, (QWidget*)param1, (QPointF*)param2);
+}
+
+QPoint* q_abstractitemview_map_from2(void* self, void* param1, void* param2) {
+    return QWidget_MapFrom2((QWidget*)self, (QWidget*)param1, (QPoint*)param2);
+}
+
+QWidget* q_abstractitemview_window(void* self) {
+    return QWidget_Window((QWidget*)self);
+}
+
+QWidget* q_abstractitemview_native_parent_widget(void* self) {
+    return QWidget_NativeParentWidget((QWidget*)self);
+}
+
+QWidget* q_abstractitemview_top_level_widget(void* self) {
+    return QWidget_TopLevelWidget((QWidget*)self);
+}
+
+const QPalette* q_abstractitemview_palette(void* self) {
+    return QWidget_Palette((QWidget*)self);
+}
+
+void q_abstractitemview_set_palette(void* self, void* palette) {
+    QWidget_SetPalette((QWidget*)self, (QPalette*)palette);
+}
+
+void q_abstractitemview_set_background_role(void* self, int32_t backgroundRole) {
+    QWidget_SetBackgroundRole((QWidget*)self, backgroundRole);
+}
+
+int32_t q_abstractitemview_background_role(void* self) {
+    return QWidget_BackgroundRole((QWidget*)self);
+}
+
+void q_abstractitemview_set_foreground_role(void* self, int32_t foregroundRole) {
+    QWidget_SetForegroundRole((QWidget*)self, foregroundRole);
+}
+
+int32_t q_abstractitemview_foreground_role(void* self) {
+    return QWidget_ForegroundRole((QWidget*)self);
+}
+
+const QFont* q_abstractitemview_font(void* self) {
+    return QWidget_Font((QWidget*)self);
+}
+
+void q_abstractitemview_set_font(void* self, void* font) {
+    QWidget_SetFont((QWidget*)self, (QFont*)font);
+}
+
+QFontMetrics* q_abstractitemview_font_metrics(void* self) {
+    return QWidget_FontMetrics((QWidget*)self);
+}
+
+QFontInfo* q_abstractitemview_font_info(void* self) {
+    return QWidget_FontInfo((QWidget*)self);
+}
+
+QCursor* q_abstractitemview_cursor(void* self) {
+    return QWidget_Cursor((QWidget*)self);
+}
+
+void q_abstractitemview_set_cursor(void* self, void* cursor) {
+    QWidget_SetCursor((QWidget*)self, (QCursor*)cursor);
+}
+
+void q_abstractitemview_unset_cursor(void* self) {
+    QWidget_UnsetCursor((QWidget*)self);
+}
+
+void q_abstractitemview_set_mouse_tracking(void* self, bool enable) {
+    QWidget_SetMouseTracking((QWidget*)self, enable);
+}
+
+bool q_abstractitemview_has_mouse_tracking(void* self) {
+    return QWidget_HasMouseTracking((QWidget*)self);
+}
+
+bool q_abstractitemview_under_mouse(void* self) {
+    return QWidget_UnderMouse((QWidget*)self);
+}
+
+void q_abstractitemview_set_tablet_tracking(void* self, bool enable) {
+    QWidget_SetTabletTracking((QWidget*)self, enable);
+}
+
+bool q_abstractitemview_has_tablet_tracking(void* self) {
+    return QWidget_HasTabletTracking((QWidget*)self);
+}
+
+void q_abstractitemview_set_mask(void* self, void* mask) {
+    QWidget_SetMask((QWidget*)self, (QBitmap*)mask);
+}
+
+void q_abstractitemview_set_mask2(void* self, void* mask) {
+    QWidget_SetMask2((QWidget*)self, (QRegion*)mask);
+}
+
+QRegion* q_abstractitemview_mask(void* self) {
+    return QWidget_Mask((QWidget*)self);
+}
+
+void q_abstractitemview_clear_mask(void* self) {
+    QWidget_ClearMask((QWidget*)self);
+}
+
+void q_abstractitemview_render(void* self, void* target) {
+    QWidget_Render((QWidget*)self, (QPaintDevice*)target);
+}
+
+void q_abstractitemview_render2(void* self, void* painter) {
+    QWidget_Render2((QWidget*)self, (QPainter*)painter);
+}
+
+QPixmap* q_abstractitemview_grab(void* self) {
+    return QWidget_Grab((QWidget*)self);
+}
+
+QGraphicsEffect* q_abstractitemview_graphics_effect(void* self) {
+    return QWidget_GraphicsEffect((QWidget*)self);
+}
+
+void q_abstractitemview_set_graphics_effect(void* self, void* effect) {
+    QWidget_SetGraphicsEffect((QWidget*)self, (QGraphicsEffect*)effect);
+}
+
+void q_abstractitemview_grab_gesture(void* self, int32_t type) {
+    QWidget_GrabGesture((QWidget*)self, type);
+}
+
+void q_abstractitemview_ungrab_gesture(void* self, int32_t type) {
+    QWidget_UngrabGesture((QWidget*)self, type);
+}
+
+void q_abstractitemview_set_window_title(void* self, const char* windowTitle) {
+    QWidget_SetWindowTitle((QWidget*)self, qstring(windowTitle));
+}
+
+void q_abstractitemview_set_style_sheet(void* self, const char* styleSheet) {
+    QWidget_SetStyleSheet((QWidget*)self, qstring(styleSheet));
+}
+
+const char* q_abstractitemview_style_sheet(void* self) {
+    libqt_string _str = QWidget_StyleSheet((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_abstractitemview_window_title(void* self) {
+    libqt_string _str = QWidget_WindowTitle((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_window_icon(void* self, void* icon) {
+    QWidget_SetWindowIcon((QWidget*)self, (QIcon*)icon);
+}
+
+QIcon* q_abstractitemview_window_icon(void* self) {
+    return QWidget_WindowIcon((QWidget*)self);
+}
+
+void q_abstractitemview_set_window_icon_text(void* self, const char* windowIconText) {
+    QWidget_SetWindowIconText((QWidget*)self, qstring(windowIconText));
+}
+
+const char* q_abstractitemview_window_icon_text(void* self) {
+    libqt_string _str = QWidget_WindowIconText((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_window_role(void* self, const char* windowRole) {
+    QWidget_SetWindowRole((QWidget*)self, qstring(windowRole));
+}
+
+const char* q_abstractitemview_window_role(void* self) {
+    libqt_string _str = QWidget_WindowRole((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_window_file_path(void* self, const char* filePath) {
+    QWidget_SetWindowFilePath((QWidget*)self, qstring(filePath));
+}
+
+const char* q_abstractitemview_window_file_path(void* self) {
+    libqt_string _str = QWidget_WindowFilePath((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_window_opacity(void* self, double level) {
+    QWidget_SetWindowOpacity((QWidget*)self, level);
+}
+
+double q_abstractitemview_window_opacity(void* self) {
+    return QWidget_WindowOpacity((QWidget*)self);
+}
+
+bool q_abstractitemview_is_window_modified(void* self) {
+    return QWidget_IsWindowModified((QWidget*)self);
+}
+
+void q_abstractitemview_set_tool_tip(void* self, const char* toolTip) {
+    QWidget_SetToolTip((QWidget*)self, qstring(toolTip));
+}
+
+const char* q_abstractitemview_tool_tip(void* self) {
+    libqt_string _str = QWidget_ToolTip((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_tool_tip_duration(void* self, int msec) {
+    QWidget_SetToolTipDuration((QWidget*)self, msec);
+}
+
+int32_t q_abstractitemview_tool_tip_duration(void* self) {
+    return QWidget_ToolTipDuration((QWidget*)self);
+}
+
+void q_abstractitemview_set_status_tip(void* self, const char* statusTip) {
+    QWidget_SetStatusTip((QWidget*)self, qstring(statusTip));
+}
+
+const char* q_abstractitemview_status_tip(void* self) {
+    libqt_string _str = QWidget_StatusTip((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_whats_this(void* self, const char* whatsThis) {
+    QWidget_SetWhatsThis((QWidget*)self, qstring(whatsThis));
+}
+
+const char* q_abstractitemview_whats_this(void* self) {
+    libqt_string _str = QWidget_WhatsThis((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_abstractitemview_accessible_name(void* self) {
+    libqt_string _str = QWidget_AccessibleName((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_accessible_name(void* self, const char* name) {
+    QWidget_SetAccessibleName((QWidget*)self, qstring(name));
+}
+
+const char* q_abstractitemview_accessible_description(void* self) {
+    libqt_string _str = QWidget_AccessibleDescription((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_accessible_description(void* self, const char* description) {
+    QWidget_SetAccessibleDescription((QWidget*)self, qstring(description));
+}
+
+void q_abstractitemview_set_layout_direction(void* self, int32_t direction) {
+    QWidget_SetLayoutDirection((QWidget*)self, direction);
+}
+
+int32_t q_abstractitemview_layout_direction(void* self) {
+    return QWidget_LayoutDirection((QWidget*)self);
+}
+
+void q_abstractitemview_unset_layout_direction(void* self) {
+    QWidget_UnsetLayoutDirection((QWidget*)self);
+}
+
+void q_abstractitemview_set_locale(void* self, void* locale) {
+    QWidget_SetLocale((QWidget*)self, (QLocale*)locale);
+}
+
+QLocale* q_abstractitemview_locale(void* self) {
+    return QWidget_Locale((QWidget*)self);
+}
+
+void q_abstractitemview_unset_locale(void* self) {
+    QWidget_UnsetLocale((QWidget*)self);
+}
+
+bool q_abstractitemview_is_right_to_left(void* self) {
+    return QWidget_IsRightToLeft((QWidget*)self);
+}
+
+bool q_abstractitemview_is_left_to_right(void* self) {
+    return QWidget_IsLeftToRight((QWidget*)self);
+}
+
+void q_abstractitemview_set_focus(void* self) {
+    QWidget_SetFocus((QWidget*)self);
+}
+
+bool q_abstractitemview_is_active_window(void* self) {
+    return QWidget_IsActiveWindow((QWidget*)self);
+}
+
+void q_abstractitemview_activate_window(void* self) {
+    QWidget_ActivateWindow((QWidget*)self);
+}
+
+void q_abstractitemview_clear_focus(void* self) {
+    QWidget_ClearFocus((QWidget*)self);
+}
+
+void q_abstractitemview_set_focus2(void* self, int32_t reason) {
+    QWidget_SetFocus2((QWidget*)self, reason);
+}
+
+int32_t q_abstractitemview_focus_policy(void* self) {
+    return QWidget_FocusPolicy((QWidget*)self);
+}
+
+void q_abstractitemview_set_focus_policy(void* self, int32_t policy) {
+    QWidget_SetFocusPolicy((QWidget*)self, policy);
+}
+
+bool q_abstractitemview_has_focus(void* self) {
+    return QWidget_HasFocus((QWidget*)self);
+}
+
+void q_abstractitemview_set_tab_order(void* param1, void* param2) {
+    QWidget_SetTabOrder((QWidget*)param1, (QWidget*)param2);
+}
+
+void q_abstractitemview_set_focus_proxy(void* self, void* focusProxy) {
+    QWidget_SetFocusProxy((QWidget*)self, (QWidget*)focusProxy);
+}
+
+QWidget* q_abstractitemview_focus_proxy(void* self) {
+    return QWidget_FocusProxy((QWidget*)self);
+}
+
+int32_t q_abstractitemview_context_menu_policy(void* self) {
+    return QWidget_ContextMenuPolicy((QWidget*)self);
+}
+
+void q_abstractitemview_set_context_menu_policy(void* self, int32_t policy) {
+    QWidget_SetContextMenuPolicy((QWidget*)self, policy);
+}
+
+void q_abstractitemview_grab_mouse(void* self) {
+    QWidget_GrabMouse((QWidget*)self);
+}
+
+void q_abstractitemview_grab_mouse2(void* self, void* param1) {
+    QWidget_GrabMouse2((QWidget*)self, (QCursor*)param1);
+}
+
+void q_abstractitemview_release_mouse(void* self) {
+    QWidget_ReleaseMouse((QWidget*)self);
+}
+
+void q_abstractitemview_grab_keyboard(void* self) {
+    QWidget_GrabKeyboard((QWidget*)self);
+}
+
+void q_abstractitemview_release_keyboard(void* self) {
+    QWidget_ReleaseKeyboard((QWidget*)self);
+}
+
+int32_t q_abstractitemview_grab_shortcut(void* self, void* key) {
+    return QWidget_GrabShortcut((QWidget*)self, (QKeySequence*)key);
+}
+
+void q_abstractitemview_release_shortcut(void* self, int id) {
+    QWidget_ReleaseShortcut((QWidget*)self, id);
+}
+
+void q_abstractitemview_set_shortcut_enabled(void* self, int id) {
+    QWidget_SetShortcutEnabled((QWidget*)self, id);
+}
+
+void q_abstractitemview_set_shortcut_auto_repeat(void* self, int id) {
+    QWidget_SetShortcutAutoRepeat((QWidget*)self, id);
+}
+
+QWidget* q_abstractitemview_mouse_grabber() {
+    return QWidget_MouseGrabber();
+}
+
+QWidget* q_abstractitemview_keyboard_grabber() {
+    return QWidget_KeyboardGrabber();
+}
+
+bool q_abstractitemview_updates_enabled(void* self) {
+    return QWidget_UpdatesEnabled((QWidget*)self);
+}
+
+void q_abstractitemview_set_updates_enabled(void* self, bool enable) {
+    QWidget_SetUpdatesEnabled((QWidget*)self, enable);
+}
+
+QGraphicsProxyWidget* q_abstractitemview_graphics_proxy_widget(void* self) {
+    return QWidget_GraphicsProxyWidget((QWidget*)self);
+}
+
+void q_abstractitemview_repaint(void* self) {
+    QWidget_Repaint((QWidget*)self);
+}
+
+void q_abstractitemview_update2(void* self, int x, int y, int w, int h) {
+    QWidget_Update2((QWidget*)self, x, y, w, h);
+}
+
+void q_abstractitemview_update3(void* self, void* param1) {
+    QWidget_Update3((QWidget*)self, (QRect*)param1);
+}
+
+void q_abstractitemview_update4(void* self, void* param1) {
+    QWidget_Update4((QWidget*)self, (QRegion*)param1);
+}
+
+void q_abstractitemview_repaint2(void* self, int x, int y, int w, int h) {
+    QWidget_Repaint2((QWidget*)self, x, y, w, h);
+}
+
+void q_abstractitemview_repaint3(void* self, void* param1) {
+    QWidget_Repaint3((QWidget*)self, (QRect*)param1);
+}
+
+void q_abstractitemview_repaint4(void* self, void* param1) {
+    QWidget_Repaint4((QWidget*)self, (QRegion*)param1);
+}
+
+void q_abstractitemview_set_hidden(void* self, bool hidden) {
+    QWidget_SetHidden((QWidget*)self, hidden);
+}
+
+void q_abstractitemview_show(void* self) {
+    QWidget_Show((QWidget*)self);
+}
+
+void q_abstractitemview_hide(void* self) {
+    QWidget_Hide((QWidget*)self);
+}
+
+void q_abstractitemview_show_minimized(void* self) {
+    QWidget_ShowMinimized((QWidget*)self);
+}
+
+void q_abstractitemview_show_maximized(void* self) {
+    QWidget_ShowMaximized((QWidget*)self);
+}
+
+void q_abstractitemview_show_full_screen(void* self) {
+    QWidget_ShowFullScreen((QWidget*)self);
+}
+
+void q_abstractitemview_show_normal(void* self) {
+    QWidget_ShowNormal((QWidget*)self);
+}
+
+bool q_abstractitemview_close(void* self) {
+    return QWidget_Close((QWidget*)self);
+}
+
+void q_abstractitemview_raise(void* self) {
+    QWidget_Raise((QWidget*)self);
+}
+
+void q_abstractitemview_lower(void* self) {
+    QWidget_Lower((QWidget*)self);
+}
+
+void q_abstractitemview_stack_under(void* self, void* param1) {
+    QWidget_StackUnder((QWidget*)self, (QWidget*)param1);
+}
+
+void q_abstractitemview_move(void* self, int x, int y) {
+    QWidget_Move((QWidget*)self, x, y);
+}
+
+void q_abstractitemview_move2(void* self, void* param1) {
+    QWidget_Move2((QWidget*)self, (QPoint*)param1);
+}
+
+void q_abstractitemview_resize(void* self, int w, int h) {
+    QWidget_Resize((QWidget*)self, w, h);
+}
+
+void q_abstractitemview_resize2(void* self, void* param1) {
+    QWidget_Resize2((QWidget*)self, (QSize*)param1);
+}
+
+void q_abstractitemview_set_geometry(void* self, int x, int y, int w, int h) {
+    QWidget_SetGeometry((QWidget*)self, x, y, w, h);
+}
+
+void q_abstractitemview_set_geometry2(void* self, void* geometry) {
+    QWidget_SetGeometry2((QWidget*)self, (QRect*)geometry);
+}
+
+char* q_abstractitemview_save_geometry(void* self) {
+    libqt_string _str = QWidget_SaveGeometry((QWidget*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+bool q_abstractitemview_restore_geometry(void* self, char* geometry) {
+    return QWidget_RestoreGeometry((QWidget*)self, qstring(geometry));
+}
+
+void q_abstractitemview_adjust_size(void* self) {
+    QWidget_AdjustSize((QWidget*)self);
+}
+
+bool q_abstractitemview_is_visible(void* self) {
+    return QWidget_IsVisible((QWidget*)self);
+}
+
+bool q_abstractitemview_is_visible_to(void* self, void* param1) {
+    return QWidget_IsVisibleTo((QWidget*)self, (QWidget*)param1);
+}
+
+bool q_abstractitemview_is_hidden(void* self) {
+    return QWidget_IsHidden((QWidget*)self);
+}
+
+bool q_abstractitemview_is_minimized(void* self) {
+    return QWidget_IsMinimized((QWidget*)self);
+}
+
+bool q_abstractitemview_is_maximized(void* self) {
+    return QWidget_IsMaximized((QWidget*)self);
+}
+
+bool q_abstractitemview_is_full_screen(void* self) {
+    return QWidget_IsFullScreen((QWidget*)self);
+}
+
+int32_t q_abstractitemview_window_state(void* self) {
+    return QWidget_WindowState((QWidget*)self);
+}
+
+void q_abstractitemview_set_window_state(void* self, int32_t state) {
+    QWidget_SetWindowState((QWidget*)self, state);
+}
+
+void q_abstractitemview_override_window_state(void* self, int32_t state) {
+    QWidget_OverrideWindowState((QWidget*)self, state);
+}
+
+QSizePolicy* q_abstractitemview_size_policy(void* self) {
+    return QWidget_SizePolicy((QWidget*)self);
+}
+
+void q_abstractitemview_set_size_policy(void* self, void* sizePolicy) {
+    QWidget_SetSizePolicy((QWidget*)self, (QSizePolicy*)sizePolicy);
+}
+
+void q_abstractitemview_set_size_policy2(void* self, int32_t horizontal, int32_t vertical) {
+    QWidget_SetSizePolicy2((QWidget*)self, horizontal, vertical);
+}
+
+QRegion* q_abstractitemview_visible_region(void* self) {
+    return QWidget_VisibleRegion((QWidget*)self);
+}
+
+void q_abstractitemview_set_contents_margins(void* self, int left, int top, int right, int bottom) {
+    QWidget_SetContentsMargins((QWidget*)self, left, top, right, bottom);
+}
+
+void q_abstractitemview_set_contents_margins2(void* self, void* margins) {
+    QWidget_SetContentsMargins2((QWidget*)self, (QMargins*)margins);
+}
+
+QMargins* q_abstractitemview_contents_margins(void* self) {
+    return QWidget_ContentsMargins((QWidget*)self);
+}
+
+QRect* q_abstractitemview_contents_rect(void* self) {
+    return QWidget_ContentsRect((QWidget*)self);
+}
+
+QLayout* q_abstractitemview_layout(void* self) {
+    return QWidget_Layout((QWidget*)self);
+}
+
+void q_abstractitemview_set_layout(void* self, void* layout) {
+    QWidget_SetLayout((QWidget*)self, (QLayout*)layout);
+}
+
+void q_abstractitemview_update_geometry(void* self) {
+    QWidget_UpdateGeometry((QWidget*)self);
+}
+
+void q_abstractitemview_set_parent(void* self, void* parent) {
+    QWidget_SetParent((QWidget*)self, (QWidget*)parent);
+}
+
+void q_abstractitemview_set_parent2(void* self, void* parent, int32_t f) {
+    QWidget_SetParent2((QWidget*)self, (QWidget*)parent, f);
+}
+
+void q_abstractitemview_scroll(void* self, int dx, int dy) {
+    QWidget_Scroll((QWidget*)self, dx, dy);
+}
+
+void q_abstractitemview_scroll2(void* self, int dx, int dy, void* param3) {
+    QWidget_Scroll2((QWidget*)self, dx, dy, (QRect*)param3);
+}
+
+QWidget* q_abstractitemview_focus_widget(void* self) {
+    return QWidget_FocusWidget((QWidget*)self);
+}
+
+QWidget* q_abstractitemview_next_in_focus_chain(void* self) {
+    return QWidget_NextInFocusChain((QWidget*)self);
+}
+
+QWidget* q_abstractitemview_previous_in_focus_chain(void* self) {
+    return QWidget_PreviousInFocusChain((QWidget*)self);
+}
+
+bool q_abstractitemview_accept_drops(void* self) {
+    return QWidget_AcceptDrops((QWidget*)self);
+}
+
+void q_abstractitemview_set_accept_drops(void* self, bool on) {
+    QWidget_SetAcceptDrops((QWidget*)self, on);
+}
+
+void q_abstractitemview_add_action(void* self, void* action) {
+    QWidget_AddAction((QWidget*)self, (QAction*)action);
+}
+
+void q_abstractitemview_add_actions(void* self, libqt_list /* of QAction* */ actions) {
+    QWidget_AddActions((QWidget*)self, actions);
+}
+
+void q_abstractitemview_insert_actions(void* self, void* before, libqt_list /* of QAction* */ actions) {
+    QWidget_InsertActions((QWidget*)self, (QAction*)before, actions);
+}
+
+void q_abstractitemview_insert_action(void* self, void* before, void* action) {
+    QWidget_InsertAction((QWidget*)self, (QAction*)before, (QAction*)action);
+}
+
+void q_abstractitemview_remove_action(void* self, void* action) {
+    QWidget_RemoveAction((QWidget*)self, (QAction*)action);
+}
+
+libqt_list /* of QAction* */ q_abstractitemview_actions(void* self) {
+    libqt_list _arr = QWidget_Actions((QWidget*)self);
+    return _arr;
+}
+
+QAction* q_abstractitemview_add_action2(void* self, const char* text) {
+    return QWidget_AddAction2((QWidget*)self, qstring(text));
+}
+
+QAction* q_abstractitemview_add_action3(void* self, void* icon, const char* text) {
+    return QWidget_AddAction3((QWidget*)self, (QIcon*)icon, qstring(text));
+}
+
+QAction* q_abstractitemview_add_action4(void* self, const char* text, void* shortcut) {
+    return QWidget_AddAction4((QWidget*)self, qstring(text), (QKeySequence*)shortcut);
+}
+
+QAction* q_abstractitemview_add_action5(void* self, void* icon, const char* text, void* shortcut) {
+    return QWidget_AddAction5((QWidget*)self, (QIcon*)icon, qstring(text), (QKeySequence*)shortcut);
+}
+
+QWidget* q_abstractitemview_parent_widget(void* self) {
+    return QWidget_ParentWidget((QWidget*)self);
+}
+
+void q_abstractitemview_set_window_flags(void* self, int32_t type) {
+    QWidget_SetWindowFlags((QWidget*)self, type);
+}
+
+int32_t q_abstractitemview_window_flags(void* self) {
+    return QWidget_WindowFlags((QWidget*)self);
+}
+
+void q_abstractitemview_set_window_flag(void* self, int32_t param1) {
+    QWidget_SetWindowFlag((QWidget*)self, param1);
+}
+
+void q_abstractitemview_override_window_flags(void* self, int32_t type) {
+    QWidget_OverrideWindowFlags((QWidget*)self, type);
+}
+
+int32_t q_abstractitemview_window_type(void* self) {
+    return QWidget_WindowType((QWidget*)self);
+}
+
+QWidget* q_abstractitemview_find(uintptr_t param1) {
+    return QWidget_Find(param1);
+}
+
+QWidget* q_abstractitemview_child_at(void* self, int x, int y) {
+    return QWidget_ChildAt((QWidget*)self, x, y);
+}
+
+QWidget* q_abstractitemview_child_at2(void* self, void* p) {
+    return QWidget_ChildAt2((QWidget*)self, (QPoint*)p);
+}
+
+QWidget* q_abstractitemview_child_at3(void* self, void* p) {
+    return QWidget_ChildAt3((QWidget*)self, (QPointF*)p);
+}
+
+void q_abstractitemview_set_attribute(void* self, int32_t param1) {
+    QWidget_SetAttribute((QWidget*)self, param1);
+}
+
+bool q_abstractitemview_test_attribute(void* self, int32_t param1) {
+    return QWidget_TestAttribute((QWidget*)self, param1);
+}
+
+void q_abstractitemview_ensure_polished(void* self) {
+    QWidget_EnsurePolished((QWidget*)self);
+}
+
+bool q_abstractitemview_is_ancestor_of(void* self, void* child) {
+    return QWidget_IsAncestorOf((QWidget*)self, (QWidget*)child);
+}
+
+bool q_abstractitemview_auto_fill_background(void* self) {
+    return QWidget_AutoFillBackground((QWidget*)self);
+}
+
+void q_abstractitemview_set_auto_fill_background(void* self, bool enabled) {
+    QWidget_SetAutoFillBackground((QWidget*)self, enabled);
+}
+
+QBackingStore* q_abstractitemview_backing_store(void* self) {
+    return QWidget_BackingStore((QWidget*)self);
+}
+
+QWindow* q_abstractitemview_window_handle(void* self) {
+    return QWidget_WindowHandle((QWidget*)self);
+}
+
+QScreen* q_abstractitemview_screen(void* self) {
+    return QWidget_Screen((QWidget*)self);
+}
+
+void q_abstractitemview_set_screen(void* self, void* screen) {
+    QWidget_SetScreen((QWidget*)self, (QScreen*)screen);
+}
+
+QWidget* q_abstractitemview_create_window_container(void* window) {
+    return QWidget_CreateWindowContainer((QWindow*)window);
+}
+
+void q_abstractitemview_window_title_changed(void* self, const char* title) {
+    QWidget_WindowTitleChanged((QWidget*)self, qstring(title));
+}
+
+void q_abstractitemview_on_window_title_changed(void* self, void (*callback)(void*, const char*)) {
+    QWidget_Connect_WindowTitleChanged((QWidget*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_window_icon_changed(void* self, void* icon) {
+    QWidget_WindowIconChanged((QWidget*)self, (QIcon*)icon);
+}
+
+void q_abstractitemview_on_window_icon_changed(void* self, void (*callback)(void*, void*)) {
+    QWidget_Connect_WindowIconChanged((QWidget*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_window_icon_text_changed(void* self, const char* iconText) {
+    QWidget_WindowIconTextChanged((QWidget*)self, qstring(iconText));
+}
+
+void q_abstractitemview_on_window_icon_text_changed(void* self, void (*callback)(void*, const char*)) {
+    QWidget_Connect_WindowIconTextChanged((QWidget*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_custom_context_menu_requested(void* self, void* pos) {
+    QWidget_CustomContextMenuRequested((QWidget*)self, (QPoint*)pos);
+}
+
+void q_abstractitemview_on_custom_context_menu_requested(void* self, void (*callback)(void*, void*)) {
+    QWidget_Connect_CustomContextMenuRequested((QWidget*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_input_method_hints(void* self) {
+    return QWidget_InputMethodHints((QWidget*)self);
+}
+
+void q_abstractitemview_set_input_method_hints(void* self, int32_t hints) {
+    QWidget_SetInputMethodHints((QWidget*)self, hints);
+}
+
+void q_abstractitemview_render22(void* self, void* target, void* targetOffset) {
+    QWidget_Render22((QWidget*)self, (QPaintDevice*)target, (QPoint*)targetOffset);
+}
+
+void q_abstractitemview_render3(void* self, void* target, void* targetOffset, void* sourceRegion) {
+    QWidget_Render3((QWidget*)self, (QPaintDevice*)target, (QPoint*)targetOffset, (QRegion*)sourceRegion);
+}
+
+void q_abstractitemview_render4(void* self, void* target, void* targetOffset, void* sourceRegion, int32_t renderFlags) {
+    QWidget_Render4((QWidget*)self, (QPaintDevice*)target, (QPoint*)targetOffset, (QRegion*)sourceRegion, renderFlags);
+}
+
+void q_abstractitemview_render23(void* self, void* painter, void* targetOffset) {
+    QWidget_Render23((QWidget*)self, (QPainter*)painter, (QPoint*)targetOffset);
+}
+
+void q_abstractitemview_render32(void* self, void* painter, void* targetOffset, void* sourceRegion) {
+    QWidget_Render32((QWidget*)self, (QPainter*)painter, (QPoint*)targetOffset, (QRegion*)sourceRegion);
+}
+
+void q_abstractitemview_render42(void* self, void* painter, void* targetOffset, void* sourceRegion, int32_t renderFlags) {
+    QWidget_Render42((QWidget*)self, (QPainter*)painter, (QPoint*)targetOffset, (QRegion*)sourceRegion, renderFlags);
+}
+
+QPixmap* q_abstractitemview_grab1(void* self, void* rectangle) {
+    return QWidget_Grab1((QWidget*)self, (QRect*)rectangle);
+}
+
+void q_abstractitemview_grab_gesture2(void* self, int32_t type, int32_t flags) {
+    QWidget_GrabGesture2((QWidget*)self, type, flags);
+}
+
+int32_t q_abstractitemview_grab_shortcut2(void* self, void* key, int32_t context) {
+    return QWidget_GrabShortcut2((QWidget*)self, (QKeySequence*)key, context);
+}
+
+void q_abstractitemview_set_shortcut_enabled2(void* self, int id, bool enable) {
+    QWidget_SetShortcutEnabled2((QWidget*)self, id, enable);
+}
+
+void q_abstractitemview_set_shortcut_auto_repeat2(void* self, int id, bool enable) {
+    QWidget_SetShortcutAutoRepeat2((QWidget*)self, id, enable);
+}
+
+void q_abstractitemview_set_window_flag2(void* self, int32_t param1, bool on) {
+    QWidget_SetWindowFlag2((QWidget*)self, param1, on);
+}
+
+void q_abstractitemview_set_attribute2(void* self, int32_t param1, bool on) {
+    QWidget_SetAttribute2((QWidget*)self, param1, on);
+}
+
+QWidget* q_abstractitemview_create_window_container2(void* window, void* parent) {
+    return QWidget_CreateWindowContainer2((QWindow*)window, (QWidget*)parent);
+}
+
+QWidget* q_abstractitemview_create_window_container3(void* window, void* parent, int32_t flags) {
+    return QWidget_CreateWindowContainer3((QWindow*)window, (QWidget*)parent, flags);
+}
+
+const char* q_abstractitemview_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_abstractitemview_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool q_abstractitemview_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool q_abstractitemview_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool q_abstractitemview_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool q_abstractitemview_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool q_abstractitemview_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* q_abstractitemview_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool q_abstractitemview_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t q_abstractitemview_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t q_abstractitemview_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void q_abstractitemview_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void q_abstractitemview_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ q_abstractitemview_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void q_abstractitemview_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void q_abstractitemview_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* q_abstractitemview_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* q_abstractitemview_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* q_abstractitemview_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool q_abstractitemview_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool q_abstractitemview_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool q_abstractitemview_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool q_abstractitemview_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool q_abstractitemview_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void q_abstractitemview_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void q_abstractitemview_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool q_abstractitemview_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* q_abstractitemview_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** q_abstractitemview_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_abstractitemview_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* q_abstractitemview_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* q_abstractitemview_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void q_abstractitemview_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void q_abstractitemview_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* q_abstractitemview_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool q_abstractitemview_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void q_abstractitemview_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t q_abstractitemview_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t q_abstractitemview_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* q_abstractitemview_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* q_abstractitemview_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* q_abstractitemview_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool q_abstractitemview_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool q_abstractitemview_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool q_abstractitemview_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool q_abstractitemview_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void q_abstractitemview_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void q_abstractitemview_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_painting_active(void* self) {
+    return QPaintDevice_PaintingActive((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_width_m_m(void* self) {
+    return QPaintDevice_WidthMM((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_height_m_m(void* self) {
+    return QPaintDevice_HeightMM((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_logical_dpi_x(void* self) {
+    return QPaintDevice_LogicalDpiX((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_logical_dpi_y(void* self) {
+    return QPaintDevice_LogicalDpiY((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_physical_dpi_x(void* self) {
+    return QPaintDevice_PhysicalDpiX((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_physical_dpi_y(void* self) {
+    return QPaintDevice_PhysicalDpiY((QPaintDevice*)self);
+}
+
+double q_abstractitemview_device_pixel_ratio(void* self) {
+    return QPaintDevice_DevicePixelRatio((QPaintDevice*)self);
+}
+
+double q_abstractitemview_device_pixel_ratio_f(void* self) {
+    return QPaintDevice_DevicePixelRatioF((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_color_count(void* self) {
+    return QPaintDevice_ColorCount((QPaintDevice*)self);
+}
+
+int32_t q_abstractitemview_depth(void* self) {
+    return QPaintDevice_Depth((QPaintDevice*)self);
+}
+
+double q_abstractitemview_device_pixel_ratio_f_scale() {
+    return QPaintDevice_DevicePixelRatioFScale();
+}
+
+int32_t q_abstractitemview_encode_metric_f(int32_t metric, double value) {
+    return QPaintDevice_EncodeMetricF(metric, value);
+}
+
+QSize* q_abstractitemview_minimum_size_hint(void* self) {
+    return QAbstractItemView_MinimumSizeHint((QAbstractItemView*)self);
+}
+
+QSize* q_abstractitemview_super_minimum_size_hint(void* self) {
+    return QAbstractItemView_SuperMinimumSizeHint((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_minimum_size_hint(void* self, QSize* (*callback)()) {
+    QAbstractItemView_OnMinimumSizeHint((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QSize* q_abstractitemview_size_hint(void* self) {
+    return QAbstractItemView_SizeHint((QAbstractItemView*)self);
+}
+
+QSize* q_abstractitemview_super_size_hint(void* self) {
+    return QAbstractItemView_SuperSizeHint((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_size_hint(void* self, QSize* (*callback)()) {
+    QAbstractItemView_OnSizeHint((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_setup_viewport(void* self, void* viewport) {
+    QAbstractItemView_SetupViewport((QAbstractItemView*)self, (QWidget*)viewport);
+}
+
+void q_abstractitemview_super_setup_viewport(void* self, void* viewport) {
+    QAbstractItemView_SuperSetupViewport((QAbstractItemView*)self, (QWidget*)viewport);
+}
+
+void q_abstractitemview_on_setup_viewport(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnSetupViewport((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_paint_event(void* self, void* param1) {
+    QAbstractItemView_PaintEvent((QAbstractItemView*)self, (QPaintEvent*)param1);
+}
+
+void q_abstractitemview_super_paint_event(void* self, void* param1) {
+    QAbstractItemView_SuperPaintEvent((QAbstractItemView*)self, (QPaintEvent*)param1);
+}
+
+void q_abstractitemview_on_paint_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnPaintEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_wheel_event(void* self, void* param1) {
+    QAbstractItemView_WheelEvent((QAbstractItemView*)self, (QWheelEvent*)param1);
+}
+
+void q_abstractitemview_super_wheel_event(void* self, void* param1) {
+    QAbstractItemView_SuperWheelEvent((QAbstractItemView*)self, (QWheelEvent*)param1);
+}
+
+void q_abstractitemview_on_wheel_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnWheelEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_context_menu_event(void* self, void* param1) {
+    QAbstractItemView_ContextMenuEvent((QAbstractItemView*)self, (QContextMenuEvent*)param1);
+}
+
+void q_abstractitemview_super_context_menu_event(void* self, void* param1) {
+    QAbstractItemView_SuperContextMenuEvent((QAbstractItemView*)self, (QContextMenuEvent*)param1);
+}
+
+void q_abstractitemview_on_context_menu_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnContextMenuEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_scroll_contents_by(void* self, int dx, int dy) {
+    QAbstractItemView_ScrollContentsBy((QAbstractItemView*)self, dx, dy);
+}
+
+void q_abstractitemview_super_scroll_contents_by(void* self, int dx, int dy) {
+    QAbstractItemView_SuperScrollContentsBy((QAbstractItemView*)self, dx, dy);
+}
+
+void q_abstractitemview_on_scroll_contents_by(void* self, void (*callback)(void*, int, int)) {
+    QAbstractItemView_OnScrollContentsBy((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_change_event(void* self, void* param1) {
+    QAbstractItemView_ChangeEvent((QAbstractItemView*)self, (QEvent*)param1);
+}
+
+void q_abstractitemview_super_change_event(void* self, void* param1) {
+    QAbstractItemView_SuperChangeEvent((QAbstractItemView*)self, (QEvent*)param1);
+}
+
+void q_abstractitemview_on_change_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnChangeEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_init_style_option(void* self, void* option) {
+    QAbstractItemView_InitStyleOption((QAbstractItemView*)self, (QStyleOptionFrame*)option);
+}
+
+void q_abstractitemview_super_init_style_option(void* self, void* option) {
+    QAbstractItemView_SuperInitStyleOption((QAbstractItemView*)self, (QStyleOptionFrame*)option);
+}
+
+void q_abstractitemview_on_init_style_option(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnInitStyleOption((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_dev_type(void* self) {
+    return QAbstractItemView_DevType((QAbstractItemView*)self);
+}
+
+int32_t q_abstractitemview_super_dev_type(void* self) {
+    return QAbstractItemView_SuperDevType((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_dev_type(void* self, int32_t (*callback)()) {
+    QAbstractItemView_OnDevType((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_set_visible(void* self, bool visible) {
+    QAbstractItemView_SetVisible((QAbstractItemView*)self, visible);
+}
+
+void q_abstractitemview_super_set_visible(void* self, bool visible) {
+    QAbstractItemView_SuperSetVisible((QAbstractItemView*)self, visible);
+}
+
+void q_abstractitemview_on_set_visible(void* self, void (*callback)(void*, bool)) {
+    QAbstractItemView_OnSetVisible((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_height_for_width(void* self, int param1) {
+    return QAbstractItemView_HeightForWidth((QAbstractItemView*)self, param1);
+}
+
+int32_t q_abstractitemview_super_height_for_width(void* self, int param1) {
+    return QAbstractItemView_SuperHeightForWidth((QAbstractItemView*)self, param1);
+}
+
+void q_abstractitemview_on_height_for_width(void* self, int32_t (*callback)(void*, int)) {
+    QAbstractItemView_OnHeightForWidth((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_has_height_for_width(void* self) {
+    return QAbstractItemView_HasHeightForWidth((QAbstractItemView*)self);
+}
+
+bool q_abstractitemview_super_has_height_for_width(void* self) {
+    return QAbstractItemView_SuperHasHeightForWidth((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_has_height_for_width(void* self, bool (*callback)()) {
+    QAbstractItemView_OnHasHeightForWidth((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QPaintEngine* q_abstractitemview_paint_engine(void* self) {
+    return QAbstractItemView_PaintEngine((QAbstractItemView*)self);
+}
+
+QPaintEngine* q_abstractitemview_super_paint_engine(void* self) {
+    return QAbstractItemView_SuperPaintEngine((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_paint_engine(void* self, QPaintEngine* (*callback)()) {
+    QAbstractItemView_OnPaintEngine((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_key_release_event(void* self, void* event) {
+    QAbstractItemView_KeyReleaseEvent((QAbstractItemView*)self, (QKeyEvent*)event);
+}
+
+void q_abstractitemview_super_key_release_event(void* self, void* event) {
+    QAbstractItemView_SuperKeyReleaseEvent((QAbstractItemView*)self, (QKeyEvent*)event);
+}
+
+void q_abstractitemview_on_key_release_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnKeyReleaseEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_enter_event(void* self, void* event) {
+    QAbstractItemView_EnterEvent((QAbstractItemView*)self, (QEnterEvent*)event);
+}
+
+void q_abstractitemview_super_enter_event(void* self, void* event) {
+    QAbstractItemView_SuperEnterEvent((QAbstractItemView*)self, (QEnterEvent*)event);
+}
+
+void q_abstractitemview_on_enter_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnEnterEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_leave_event(void* self, void* event) {
+    QAbstractItemView_LeaveEvent((QAbstractItemView*)self, (QEvent*)event);
+}
+
+void q_abstractitemview_super_leave_event(void* self, void* event) {
+    QAbstractItemView_SuperLeaveEvent((QAbstractItemView*)self, (QEvent*)event);
+}
+
+void q_abstractitemview_on_leave_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnLeaveEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_move_event(void* self, void* event) {
+    QAbstractItemView_MoveEvent((QAbstractItemView*)self, (QMoveEvent*)event);
+}
+
+void q_abstractitemview_super_move_event(void* self, void* event) {
+    QAbstractItemView_SuperMoveEvent((QAbstractItemView*)self, (QMoveEvent*)event);
+}
+
+void q_abstractitemview_on_move_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnMoveEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_close_event(void* self, void* event) {
+    QAbstractItemView_CloseEvent((QAbstractItemView*)self, (QCloseEvent*)event);
+}
+
+void q_abstractitemview_super_close_event(void* self, void* event) {
+    QAbstractItemView_SuperCloseEvent((QAbstractItemView*)self, (QCloseEvent*)event);
+}
+
+void q_abstractitemview_on_close_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnCloseEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_tablet_event(void* self, void* event) {
+    QAbstractItemView_TabletEvent((QAbstractItemView*)self, (QTabletEvent*)event);
+}
+
+void q_abstractitemview_super_tablet_event(void* self, void* event) {
+    QAbstractItemView_SuperTabletEvent((QAbstractItemView*)self, (QTabletEvent*)event);
+}
+
+void q_abstractitemview_on_tablet_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnTabletEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_action_event(void* self, void* event) {
+    QAbstractItemView_ActionEvent((QAbstractItemView*)self, (QActionEvent*)event);
+}
+
+void q_abstractitemview_super_action_event(void* self, void* event) {
+    QAbstractItemView_SuperActionEvent((QAbstractItemView*)self, (QActionEvent*)event);
+}
+
+void q_abstractitemview_on_action_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnActionEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_show_event(void* self, void* event) {
+    QAbstractItemView_ShowEvent((QAbstractItemView*)self, (QShowEvent*)event);
+}
+
+void q_abstractitemview_super_show_event(void* self, void* event) {
+    QAbstractItemView_SuperShowEvent((QAbstractItemView*)self, (QShowEvent*)event);
+}
+
+void q_abstractitemview_on_show_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnShowEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_hide_event(void* self, void* event) {
+    QAbstractItemView_HideEvent((QAbstractItemView*)self, (QHideEvent*)event);
+}
+
+void q_abstractitemview_super_hide_event(void* self, void* event) {
+    QAbstractItemView_SuperHideEvent((QAbstractItemView*)self, (QHideEvent*)event);
+}
+
+void q_abstractitemview_on_hide_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnHideEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_native_event(void* self, char* eventType, void* message, intptr_t* result) {
+    return QAbstractItemView_NativeEvent((QAbstractItemView*)self, qstring(eventType), message, result);
+}
+
+bool q_abstractitemview_super_native_event(void* self, char* eventType, void* message, intptr_t* result) {
+    return QAbstractItemView_SuperNativeEvent((QAbstractItemView*)self, qstring(eventType), message, result);
+}
+
+void q_abstractitemview_on_native_event(void* self, bool (*callback)(void*, libqt_string, void*, intptr_t*)) {
+    QAbstractItemView_OnNativeEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_metric(void* self, int32_t param1) {
+    return QAbstractItemView_Metric((QAbstractItemView*)self, param1);
+}
+
+int32_t q_abstractitemview_super_metric(void* self, int32_t param1) {
+    return QAbstractItemView_SuperMetric((QAbstractItemView*)self, param1);
+}
+
+void q_abstractitemview_on_metric(void* self, int32_t (*callback)(void*, int32_t)) {
+    QAbstractItemView_OnMetric((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_init_painter(void* self, void* painter) {
+    QAbstractItemView_InitPainter((QAbstractItemView*)self, (QPainter*)painter);
+}
+
+void q_abstractitemview_super_init_painter(void* self, void* painter) {
+    QAbstractItemView_SuperInitPainter((QAbstractItemView*)self, (QPainter*)painter);
+}
+
+void q_abstractitemview_on_init_painter(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnInitPainter((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QPaintDevice* q_abstractitemview_redirected(void* self, void* offset) {
+    return QAbstractItemView_Redirected((QAbstractItemView*)self, (QPoint*)offset);
+}
+
+QPaintDevice* q_abstractitemview_super_redirected(void* self, void* offset) {
+    return QAbstractItemView_SuperRedirected((QAbstractItemView*)self, (QPoint*)offset);
+}
+
+void q_abstractitemview_on_redirected(void* self, QPaintDevice* (*callback)(void*, void*)) {
+    QAbstractItemView_OnRedirected((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QPainter* q_abstractitemview_shared_painter(void* self) {
+    return QAbstractItemView_SharedPainter((QAbstractItemView*)self);
+}
+
+QPainter* q_abstractitemview_super_shared_painter(void* self) {
+    return QAbstractItemView_SuperSharedPainter((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_shared_painter(void* self, QPainter* (*callback)()) {
+    QAbstractItemView_OnSharedPainter((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_child_event(void* self, void* event) {
+    QAbstractItemView_ChildEvent((QAbstractItemView*)self, (QChildEvent*)event);
+}
+
+void q_abstractitemview_super_child_event(void* self, void* event) {
+    QAbstractItemView_SuperChildEvent((QAbstractItemView*)self, (QChildEvent*)event);
+}
+
+void q_abstractitemview_on_child_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnChildEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_custom_event(void* self, void* event) {
+    QAbstractItemView_CustomEvent((QAbstractItemView*)self, (QEvent*)event);
+}
+
+void q_abstractitemview_super_custom_event(void* self, void* event) {
+    QAbstractItemView_SuperCustomEvent((QAbstractItemView*)self, (QEvent*)event);
+}
+
+void q_abstractitemview_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnCustomEvent((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_connect_notify(void* self, void* signal) {
+    QAbstractItemView_ConnectNotify((QAbstractItemView*)self, (QMetaMethod*)signal);
+}
+
+void q_abstractitemview_super_connect_notify(void* self, void* signal) {
+    QAbstractItemView_SuperConnectNotify((QAbstractItemView*)self, (QMetaMethod*)signal);
+}
+
+void q_abstractitemview_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnConnectNotify((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_disconnect_notify(void* self, void* signal) {
+    QAbstractItemView_DisconnectNotify((QAbstractItemView*)self, (QMetaMethod*)signal);
+}
+
+void q_abstractitemview_super_disconnect_notify(void* self, void* signal) {
+    QAbstractItemView_SuperDisconnectNotify((QAbstractItemView*)self, (QMetaMethod*)signal);
+}
+
+void q_abstractitemview_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnDisconnectNotify((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_set_viewport_margins(void* self, int left, int top, int right, int bottom) {
+    QAbstractItemView_SetViewportMargins((QAbstractItemView*)self, left, top, right, bottom);
+}
+
+void q_abstractitemview_super_set_viewport_margins(void* self, int left, int top, int right, int bottom) {
+    QAbstractItemView_SuperSetViewportMargins((QAbstractItemView*)self, left, top, right, bottom);
+}
+
+void q_abstractitemview_on_set_viewport_margins(void* self, void (*callback)(void*, int, int, int, int)) {
+    QAbstractItemView_OnSetViewportMargins((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QMargins* q_abstractitemview_viewport_margins(void* self) {
+    return QAbstractItemView_ViewportMargins((QAbstractItemView*)self);
+}
+
+QMargins* q_abstractitemview_super_viewport_margins(void* self) {
+    return QAbstractItemView_SuperViewportMargins((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_viewport_margins(void* self, QMargins* (*callback)()) {
+    QAbstractItemView_OnViewportMargins((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_draw_frame(void* self, void* param1) {
+    QAbstractItemView_DrawFrame((QAbstractItemView*)self, (QPainter*)param1);
+}
+
+void q_abstractitemview_super_draw_frame(void* self, void* param1) {
+    QAbstractItemView_SuperDrawFrame((QAbstractItemView*)self, (QPainter*)param1);
+}
+
+void q_abstractitemview_on_draw_frame(void* self, void (*callback)(void*, void*)) {
+    QAbstractItemView_OnDrawFrame((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_update_micro_focus(void* self) {
+    QAbstractItemView_UpdateMicroFocus((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_super_update_micro_focus(void* self) {
+    QAbstractItemView_SuperUpdateMicroFocus((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_update_micro_focus(void* self, void (*callback)()) {
+    QAbstractItemView_OnUpdateMicroFocus((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_create(void* self) {
+    QAbstractItemView_Create((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_super_create(void* self) {
+    QAbstractItemView_SuperCreate((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_create(void* self, void (*callback)()) {
+    QAbstractItemView_OnCreate((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_destroy(void* self) {
+    QAbstractItemView_Destroy((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_super_destroy(void* self) {
+    QAbstractItemView_SuperDestroy((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_destroy(void* self, void (*callback)()) {
+    QAbstractItemView_OnDestroy((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_focus_next_child(void* self) {
+    return QAbstractItemView_FocusNextChild((QAbstractItemView*)self);
+}
+
+bool q_abstractitemview_super_focus_next_child(void* self) {
+    return QAbstractItemView_SuperFocusNextChild((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_focus_next_child(void* self, bool (*callback)()) {
+    QAbstractItemView_OnFocusNextChild((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_focus_previous_child(void* self) {
+    return QAbstractItemView_FocusPreviousChild((QAbstractItemView*)self);
+}
+
+bool q_abstractitemview_super_focus_previous_child(void* self) {
+    return QAbstractItemView_SuperFocusPreviousChild((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_focus_previous_child(void* self, bool (*callback)()) {
+    QAbstractItemView_OnFocusPreviousChild((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+QObject* q_abstractitemview_sender(void* self) {
+    return QAbstractItemView_Sender((QAbstractItemView*)self);
+}
+
+QObject* q_abstractitemview_super_sender(void* self) {
+    return QAbstractItemView_SuperSender((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_sender(void* self, QObject* (*callback)()) {
+    QAbstractItemView_OnSender((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_sender_signal_index(void* self) {
+    return QAbstractItemView_SenderSignalIndex((QAbstractItemView*)self);
+}
+
+int32_t q_abstractitemview_super_sender_signal_index(void* self) {
+    return QAbstractItemView_SuperSenderSignalIndex((QAbstractItemView*)self);
+}
+
+void q_abstractitemview_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    QAbstractItemView_OnSenderSignalIndex((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+int32_t q_abstractitemview_receivers(void* self, const char* signal) {
+    return QAbstractItemView_Receivers((QAbstractItemView*)self, signal);
+}
+
+int32_t q_abstractitemview_super_receivers(void* self, const char* signal) {
+    return QAbstractItemView_SuperReceivers((QAbstractItemView*)self, signal);
+}
+
+void q_abstractitemview_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    QAbstractItemView_OnReceivers((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+bool q_abstractitemview_is_signal_connected(void* self, void* signal) {
+    return QAbstractItemView_IsSignalConnected((QAbstractItemView*)self, (QMetaMethod*)signal);
+}
+
+bool q_abstractitemview_super_is_signal_connected(void* self, void* signal) {
+    return QAbstractItemView_SuperIsSignalConnected((QAbstractItemView*)self, (QMetaMethod*)signal);
+}
+
+void q_abstractitemview_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    QAbstractItemView_OnIsSignalConnected((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+double q_abstractitemview_get_decoded_metric_f(void* self, int32_t metricA, int32_t metricB) {
+    return QAbstractItemView_GetDecodedMetricF((QAbstractItemView*)self, metricA, metricB);
+}
+
+double q_abstractitemview_super_get_decoded_metric_f(void* self, int32_t metricA, int32_t metricB) {
+    return QAbstractItemView_SuperGetDecodedMetricF((QAbstractItemView*)self, metricA, metricB);
+}
+
+void q_abstractitemview_on_get_decoded_metric_f(void* self, double (*callback)(void*, int32_t, int32_t)) {
+    QAbstractItemView_OnGetDecodedMetricF((QAbstractItemView*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void q_abstractitemview_delete(void* self) {
+    QAbstractItemView_Delete((QAbstractItemView*)(self));
+}

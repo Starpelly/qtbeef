@@ -1,0 +1,1027 @@
+#pragma once
+#ifndef SRC_EXTRAS_KPARTS_QT6C_LIBSTATUSBAREXTENSION_H
+#define SRC_EXTRAS_KPARTS_QT6C_LIBSTATUSBAREXTENSION_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html)
+
+/// k_parts__statusbarextension_new constructs a new KParts::StatusBarExtension object.
+///
+/// @param parent KParts__Part*
+///
+KParts__StatusBarExtension* k_parts__statusbarextension_new(void* parent);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html)
+
+/// k_parts__statusbarextension_new2 constructs a new KParts::StatusBarExtension object.
+///
+/// @param parent KParts__ReadOnlyPart*
+///
+KParts__StatusBarExtension* k_parts__statusbarextension_new2(void* parent);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// @param self KParts__StatusBarExtension*
+///
+const QMetaObject* k_parts__statusbarextension_meta_object(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback const QMetaObject* func()
+///
+void k_parts__statusbarextension_on_meta_object(void* self, const QMetaObject* (*callback)());
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_meta_object` instead
+///
+#define k_parts__statusbarextension_qbase_meta_object k_parts__statusbarextension_super_meta_object
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Base class method implementation
+///
+/// @param self KParts__StatusBarExtension*
+///
+const QMetaObject* k_parts__statusbarextension_super_meta_object(void* self);
+
+/// @param self KParts__StatusBarExtension*
+/// @param param1 const char*
+///
+void* k_parts__statusbarextension_metacast(void* self, const char* param1);
+
+/// Allows for overriding the related default method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void* func(KParts__StatusBarExtension* self, const char* param1)
+///
+void k_parts__statusbarextension_on_metacast(void* self, void* (*callback)(void*, const char*));
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_metacast` instead
+///
+#define k_parts__statusbarextension_qbase_metacast k_parts__statusbarextension_super_metacast
+
+/// Base class method implementation
+///
+/// @param self KParts__StatusBarExtension*
+/// @param param1 const char*
+///
+void* k_parts__statusbarextension_super_metacast(void* self, const char* param1);
+
+/// @param self KParts__StatusBarExtension*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_parts__statusbarextension_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// Allows for overriding the related default method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback int32_t func(KParts__StatusBarExtension* self, enum QMetaObject__Call param1, int param2, void* param3)
+///
+void k_parts__statusbarextension_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*));
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_metacall` instead
+///
+#define k_parts__statusbarextension_qbase_metacall k_parts__statusbarextension_super_metacall
+
+/// Base class method implementation
+///
+/// @param self KParts__StatusBarExtension*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_parts__statusbarextension_super_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+///
+const char* k_parts__statusbarextension_tr(const char* s);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#addStatusBarItem)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param widget QWidget*
+/// @param stretch int
+/// @param permanent bool
+///
+void k_parts__statusbarextension_add_status_bar_item(void* self, void* widget, int stretch, bool permanent);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#removeStatusBarItem)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param widget QWidget*
+///
+void k_parts__statusbarextension_remove_status_bar_item(void* self, void* widget);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#statusBar)
+///
+/// @param self KParts__StatusBarExtension*
+///
+QStatusBar* k_parts__statusbarextension_status_bar(void* self);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#setStatusBar)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param status QStatusBar*
+///
+void k_parts__statusbarextension_set_status_bar(void* self, void* status);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#childObject)
+///
+/// @param obj QObject*
+///
+KParts__StatusBarExtension* k_parts__statusbarextension_child_object(void* obj);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#eventFilter)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param watched QObject*
+/// @param ev QEvent*
+///
+bool k_parts__statusbarextension_event_filter(void* self, void* watched, void* ev);
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#eventFilter)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback bool func(KParts__StatusBarExtension* self, QObject* watched, QEvent* ev)
+///
+void k_parts__statusbarextension_on_event_filter(void* self, bool (*callback)(void*, void*, void*));
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_event_filter` instead
+///
+#define k_parts__statusbarextension_qbase_event_filter k_parts__statusbarextension_super_event_filter
+
+/// [Upstream resources](https://api.kde.org/kparts-statusbarextension.html#eventFilter)
+///
+/// Base class method implementation
+///
+/// @param self KParts__StatusBarExtension*
+/// @param watched QObject*
+/// @param ev QEvent*
+///
+bool k_parts__statusbarextension_super_event_filter(void* self, void* watched, void* ev);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+///
+const char* k_parts__statusbarextension_tr2(const char* s, const char* c);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+/// @param n int
+///
+const char* k_parts__statusbarextension_tr3(const char* s, const char* c, int n);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KParts__StatusBarExtension*
+///
+const char* k_parts__statusbarextension_object_name(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setObjectName)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param name const char*
+///
+void k_parts__statusbarextension_set_object_name(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWidgetType)
+///
+/// @param self KParts__StatusBarExtension*
+///
+bool k_parts__statusbarextension_is_widget_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWindowType)
+///
+/// @param self KParts__StatusBarExtension*
+///
+bool k_parts__statusbarextension_is_window_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isQuickItemType)
+///
+/// @param self KParts__StatusBarExtension*
+///
+bool k_parts__statusbarextension_is_quick_item_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#signalsBlocked)
+///
+/// @param self KParts__StatusBarExtension*
+///
+bool k_parts__statusbarextension_signals_blocked(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#blockSignals)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param b bool
+///
+bool k_parts__statusbarextension_block_signals(void* self, bool b);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#thread)
+///
+/// @param self KParts__StatusBarExtension*
+///
+QThread* k_parts__statusbarextension_thread(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#moveToThread)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param thread QThread*
+///
+bool k_parts__statusbarextension_move_to_thread(void* self, void* thread);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param interval int
+///
+int32_t k_parts__statusbarextension_start_timer(void* self, int interval);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param time int64_t of nanoseconds
+///
+int32_t k_parts__statusbarextension_start_timer2(void* self, int64_t time);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param id int
+///
+void k_parts__statusbarextension_kill_timer(void* self, int id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param id enum Qt__TimerId
+///
+void k_parts__statusbarextension_kill_timer2(void* self, int32_t id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#children)
+///
+/// @param self KParts__StatusBarExtension*
+///
+/// @return libqt_list of QObject*
+///
+libqt_list k_parts__statusbarextension_children(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setParent)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param parent QObject*
+///
+void k_parts__statusbarextension_set_parent(void* self, void* parent);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#installEventFilter)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param filterObj QObject*
+///
+void k_parts__statusbarextension_install_event_filter(void* self, void* filterObj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#removeEventFilter)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param obj QObject*
+///
+void k_parts__statusbarextension_remove_event_filter(void* self, void* obj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+QMetaObject__Connection* k_parts__statusbarextension_connect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+///
+QMetaObject__Connection* k_parts__statusbarextension_connect2(void* sender, void* signal, void* receiver, void* method);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+///
+QMetaObject__Connection* k_parts__statusbarextension_connect3(void* self, void* sender, const char* signal, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_parts__statusbarextension_disconnect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param member QMetaMethod*
+///
+bool k_parts__statusbarextension_disconnect2(void* sender, void* signal, void* receiver, void* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KParts__StatusBarExtension*
+///
+bool k_parts__statusbarextension_disconnect3(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param receiver QObject*
+///
+bool k_parts__statusbarextension_disconnect4(void* self, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param param1 QMetaObject__Connection*
+///
+bool k_parts__statusbarextension_disconnect5(void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectTree)
+///
+/// @param self KParts__StatusBarExtension*
+///
+void k_parts__statusbarextension_dump_object_tree(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectInfo)
+///
+/// @param self KParts__StatusBarExtension*
+///
+void k_parts__statusbarextension_dump_object_info(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setProperty)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param name const char*
+/// @param value QVariant*
+///
+bool k_parts__statusbarextension_set_property(void* self, const char* name, void* value);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#property)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param name const char*
+///
+QVariant* k_parts__statusbarextension_property(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dynamicPropertyNames)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KParts__StatusBarExtension*
+///
+const char** k_parts__statusbarextension_dynamic_property_names(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KParts__StatusBarExtension*
+///
+QBindingStorage* k_parts__statusbarextension_binding_storage(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KParts__StatusBarExtension*
+///
+const QBindingStorage* k_parts__statusbarextension_binding_storage2(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KParts__StatusBarExtension*
+///
+void k_parts__statusbarextension_destroyed(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self)
+///
+void k_parts__statusbarextension_on_destroyed(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#parent)
+///
+/// @param self KParts__StatusBarExtension*
+///
+QObject* k_parts__statusbarextension_parent(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#inherits)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param classname const char*
+///
+bool k_parts__statusbarextension_inherits(void* self, const char* classname);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#deleteLater)
+///
+/// @param self KParts__StatusBarExtension*
+///
+void k_parts__statusbarextension_delete_later(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param interval int
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_parts__statusbarextension_start_timer22(void* self, int interval, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param time int64_t of nanoseconds
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_parts__statusbarextension_start_timer23(void* self, int64_t time, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+/// @param param5 enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_parts__statusbarextension_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_parts__statusbarextension_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_parts__statusbarextension_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal const char*
+///
+bool k_parts__statusbarextension_disconnect1(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal const char*
+/// @param receiver QObject*
+///
+bool k_parts__statusbarextension_disconnect22(void* self, const char* signal, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_parts__statusbarextension_disconnect32(void* self, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_parts__statusbarextension_disconnect23(void* self, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param param1 QObject*
+///
+void k_parts__statusbarextension_destroyed1(void* self, void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self, QObject* param1)
+///
+void k_parts__statusbarextension_on_destroyed1(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QEvent*
+///
+bool k_parts__statusbarextension_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_event` instead
+///
+#define k_parts__statusbarextension_qbase_event k_parts__statusbarextension_super_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QEvent*
+///
+bool k_parts__statusbarextension_super_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback bool func(KParts__StatusBarExtension* self, QEvent* event)
+///
+void k_parts__statusbarextension_on_event(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QTimerEvent*
+///
+void k_parts__statusbarextension_timer_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_timer_event` instead
+///
+#define k_parts__statusbarextension_qbase_timer_event k_parts__statusbarextension_super_timer_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QTimerEvent*
+///
+void k_parts__statusbarextension_super_timer_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self, QTimerEvent* event)
+///
+void k_parts__statusbarextension_on_timer_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QChildEvent*
+///
+void k_parts__statusbarextension_child_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_child_event` instead
+///
+#define k_parts__statusbarextension_qbase_child_event k_parts__statusbarextension_super_child_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QChildEvent*
+///
+void k_parts__statusbarextension_super_child_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self, QChildEvent* event)
+///
+void k_parts__statusbarextension_on_child_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QEvent*
+///
+void k_parts__statusbarextension_custom_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_custom_event` instead
+///
+#define k_parts__statusbarextension_qbase_custom_event k_parts__statusbarextension_super_custom_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param event QEvent*
+///
+void k_parts__statusbarextension_super_custom_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self, QEvent* event)
+///
+void k_parts__statusbarextension_on_custom_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal QMetaMethod*
+///
+void k_parts__statusbarextension_connect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_connect_notify` instead
+///
+#define k_parts__statusbarextension_qbase_connect_notify k_parts__statusbarextension_super_connect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal QMetaMethod*
+///
+void k_parts__statusbarextension_super_connect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self, QMetaMethod* signal)
+///
+void k_parts__statusbarextension_on_connect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal QMetaMethod*
+///
+void k_parts__statusbarextension_disconnect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_disconnect_notify` instead
+///
+#define k_parts__statusbarextension_qbase_disconnect_notify k_parts__statusbarextension_super_disconnect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal QMetaMethod*
+///
+void k_parts__statusbarextension_super_disconnect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self, QMetaMethod* signal)
+///
+void k_parts__statusbarextension_on_disconnect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+///
+QObject* k_parts__statusbarextension_sender(void* self);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_sender` instead
+///
+#define k_parts__statusbarextension_qbase_sender k_parts__statusbarextension_super_sender
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+///
+QObject* k_parts__statusbarextension_super_sender(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback QObject* func()
+///
+void k_parts__statusbarextension_on_sender(void* self, QObject* (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+///
+int32_t k_parts__statusbarextension_sender_signal_index(void* self);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_sender_signal_index` instead
+///
+#define k_parts__statusbarextension_qbase_sender_signal_index k_parts__statusbarextension_super_sender_signal_index
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+///
+int32_t k_parts__statusbarextension_super_sender_signal_index(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback int32_t func()
+///
+void k_parts__statusbarextension_on_sender_signal_index(void* self, int32_t (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal const char*
+///
+int32_t k_parts__statusbarextension_receivers(void* self, const char* signal);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_receivers` instead
+///
+#define k_parts__statusbarextension_qbase_receivers k_parts__statusbarextension_super_receivers
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal const char*
+///
+int32_t k_parts__statusbarextension_super_receivers(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback int32_t func(KParts__StatusBarExtension* self, const char* signal)
+///
+void k_parts__statusbarextension_on_receivers(void* self, int32_t (*callback)(void*, const char*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal QMetaMethod*
+///
+bool k_parts__statusbarextension_is_signal_connected(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_parts__statusbarextension_super_is_signal_connected` instead
+///
+#define k_parts__statusbarextension_qbase_is_signal_connected k_parts__statusbarextension_super_is_signal_connected
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param signal QMetaMethod*
+///
+bool k_parts__statusbarextension_super_is_signal_connected(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback bool func(KParts__StatusBarExtension* self, QMetaMethod* signal)
+///
+void k_parts__statusbarextension_on_is_signal_connected(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectNameChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KParts__StatusBarExtension*
+/// @param callback void func(KParts__StatusBarExtension* self, const char* objectName)
+///
+void k_parts__statusbarextension_on_object_name_changed(void* self, void (*callback)(void*, const char*));
+
+/// Delete this object from C++ memory.
+///
+/// @param self KParts__StatusBarExtension*
+///
+void k_parts__statusbarextension_delete(void* self);
+
+#endif

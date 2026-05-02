@@ -1,0 +1,30 @@
+#pragma once
+#ifndef SRC_EXTRAS_KCOREADDONS_QT6C_LIBKJSONUTILS_H
+#define SRC_EXTRAS_KCOREADDONS_QT6C_LIBKJSONUTILS_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kjsonutils.html)
+
+/// [Upstream resources](https://api.kde.org/kjsonutils.html#readTranslatedValue)
+///
+/// @param param1 QJsonObject*
+/// @param param2 const char*
+/// @param param3 QJsonValue*
+///
+QJsonValue* k_jsonutils_read_translated_value(void* param1, const char* param2, void* param3);
+
+/// [Upstream resources](https://api.kde.org/kjsonutils.html#readTranslatedString)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param param1 QJsonObject*
+/// @param param2 const char*
+/// @param param3 const char*
+///
+const char* k_jsonutils_read_translated_string(void* param1, const char* param2, const char* param3);
+#endif

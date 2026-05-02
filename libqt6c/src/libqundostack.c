@@ -1,0 +1,694 @@
+#include "libqaction.hpp"
+#include "libqcoreevent.hpp"
+#include "libqmetaobject.hpp"
+#include "libqobjectdefs.hpp"
+#include "libqobject.hpp"
+#include "libqundostack.hpp"
+#include "libqundostack.h"
+
+QUndoCommand* q_undocommand_new() {
+    return QUndoCommand_new();
+}
+
+QUndoCommand* q_undocommand_new2(const char* text) {
+    return QUndoCommand_new2(qstring(text));
+}
+
+QUndoCommand* q_undocommand_new3(void* parent) {
+    return QUndoCommand_new3((QUndoCommand*)parent);
+}
+
+QUndoCommand* q_undocommand_new4(const char* text, void* parent) {
+    return QUndoCommand_new4(qstring(text), (QUndoCommand*)parent);
+}
+
+void q_undocommand_undo(void* self) {
+    QUndoCommand_Undo((QUndoCommand*)self);
+}
+
+void q_undocommand_on_undo(void* self, void (*callback)()) {
+    QUndoCommand_OnUndo((QUndoCommand*)self, (intptr_t)callback);
+}
+
+void q_undocommand_super_undo(void* self) {
+    QUndoCommand_SuperUndo((QUndoCommand*)self);
+}
+
+void q_undocommand_redo(void* self) {
+    QUndoCommand_Redo((QUndoCommand*)self);
+}
+
+void q_undocommand_on_redo(void* self, void (*callback)()) {
+    QUndoCommand_OnRedo((QUndoCommand*)self, (intptr_t)callback);
+}
+
+void q_undocommand_super_redo(void* self) {
+    QUndoCommand_SuperRedo((QUndoCommand*)self);
+}
+
+const char* q_undocommand_text(void* self) {
+    libqt_string _str = QUndoCommand_Text((QUndoCommand*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_undocommand_action_text(void* self) {
+    libqt_string _str = QUndoCommand_ActionText((QUndoCommand*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_undocommand_set_text(void* self, const char* text) {
+    QUndoCommand_SetText((QUndoCommand*)self, qstring(text));
+}
+
+bool q_undocommand_is_obsolete(void* self) {
+    return QUndoCommand_IsObsolete((QUndoCommand*)self);
+}
+
+void q_undocommand_set_obsolete(void* self, bool obsolete) {
+    QUndoCommand_SetObsolete((QUndoCommand*)self, obsolete);
+}
+
+int32_t q_undocommand_id(void* self) {
+    return QUndoCommand_Id((QUndoCommand*)self);
+}
+
+void q_undocommand_on_id(void* self, int32_t (*callback)()) {
+    QUndoCommand_OnId((QUndoCommand*)self, (intptr_t)callback);
+}
+
+int32_t q_undocommand_super_id(void* self) {
+    return QUndoCommand_SuperId((QUndoCommand*)self);
+}
+
+bool q_undocommand_merge_with(void* self, void* other) {
+    return QUndoCommand_MergeWith((QUndoCommand*)self, (QUndoCommand*)other);
+}
+
+void q_undocommand_on_merge_with(void* self, bool (*callback)(void*, void*)) {
+    QUndoCommand_OnMergeWith((QUndoCommand*)self, (intptr_t)callback);
+}
+
+bool q_undocommand_super_merge_with(void* self, void* other) {
+    return QUndoCommand_SuperMergeWith((QUndoCommand*)self, (QUndoCommand*)other);
+}
+
+int32_t q_undocommand_child_count(void* self) {
+    return QUndoCommand_ChildCount((QUndoCommand*)self);
+}
+
+const QUndoCommand* q_undocommand_child(void* self, int index) {
+    return QUndoCommand_Child((QUndoCommand*)self, index);
+}
+
+void q_undocommand_delete(void* self) {
+    QUndoCommand_Delete((QUndoCommand*)(self));
+}
+
+QUndoStack* q_undostack_new() {
+    return QUndoStack_new();
+}
+
+QUndoStack* q_undostack_new2(void* parent) {
+    return QUndoStack_new2((QObject*)parent);
+}
+
+const QMetaObject* q_undostack_meta_object(void* self) {
+    return QUndoStack_MetaObject((QUndoStack*)self);
+}
+
+void q_undostack_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    QUndoStack_OnMetaObject((QUndoStack*)self, (intptr_t)callback);
+}
+
+const QMetaObject* q_undostack_super_meta_object(void* self) {
+    return QUndoStack_SuperMetaObject((QUndoStack*)self);
+}
+
+void* q_undostack_metacast(void* self, const char* param1) {
+    return QUndoStack_Metacast((QUndoStack*)self, param1);
+}
+
+void q_undostack_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    QUndoStack_OnMetacast((QUndoStack*)self, (intptr_t)callback);
+}
+
+void* q_undostack_super_metacast(void* self, const char* param1) {
+    return QUndoStack_SuperMetacast((QUndoStack*)self, param1);
+}
+
+int32_t q_undostack_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QUndoStack_Metacall((QUndoStack*)self, param1, param2, param3);
+}
+
+void q_undostack_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    QUndoStack_OnMetacall((QUndoStack*)self, (intptr_t)callback);
+}
+
+int32_t q_undostack_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return QUndoStack_SuperMetacall((QUndoStack*)self, param1, param2, param3);
+}
+
+const char* q_undostack_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_undostack_clear(void* self) {
+    QUndoStack_Clear((QUndoStack*)self);
+}
+
+void q_undostack_push(void* self, void* cmd) {
+    QUndoStack_Push((QUndoStack*)self, (QUndoCommand*)cmd);
+}
+
+bool q_undostack_can_undo(void* self) {
+    return QUndoStack_CanUndo((QUndoStack*)self);
+}
+
+bool q_undostack_can_redo(void* self) {
+    return QUndoStack_CanRedo((QUndoStack*)self);
+}
+
+const char* q_undostack_undo_text(void* self) {
+    libqt_string _str = QUndoStack_UndoText((QUndoStack*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_undostack_redo_text(void* self) {
+    libqt_string _str = QUndoStack_RedoText((QUndoStack*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+int32_t q_undostack_count(void* self) {
+    return QUndoStack_Count((QUndoStack*)self);
+}
+
+int32_t q_undostack_index(void* self) {
+    return QUndoStack_Index((QUndoStack*)self);
+}
+
+const char* q_undostack_text(void* self, int idx) {
+    libqt_string _str = QUndoStack_Text((QUndoStack*)self, idx);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+QAction* q_undostack_create_undo_action(void* self, void* parent) {
+    return QUndoStack_CreateUndoAction((QUndoStack*)self, (QObject*)parent);
+}
+
+QAction* q_undostack_create_redo_action(void* self, void* parent) {
+    return QUndoStack_CreateRedoAction((QUndoStack*)self, (QObject*)parent);
+}
+
+bool q_undostack_is_active(void* self) {
+    return QUndoStack_IsActive((QUndoStack*)self);
+}
+
+bool q_undostack_is_clean(void* self) {
+    return QUndoStack_IsClean((QUndoStack*)self);
+}
+
+int32_t q_undostack_clean_index(void* self) {
+    return QUndoStack_CleanIndex((QUndoStack*)self);
+}
+
+void q_undostack_begin_macro(void* self, const char* text) {
+    QUndoStack_BeginMacro((QUndoStack*)self, qstring(text));
+}
+
+void q_undostack_end_macro(void* self) {
+    QUndoStack_EndMacro((QUndoStack*)self);
+}
+
+void q_undostack_set_undo_limit(void* self, int limit) {
+    QUndoStack_SetUndoLimit((QUndoStack*)self, limit);
+}
+
+int32_t q_undostack_undo_limit(void* self) {
+    return QUndoStack_UndoLimit((QUndoStack*)self);
+}
+
+const QUndoCommand* q_undostack_command(void* self, int index) {
+    return QUndoStack_Command((QUndoStack*)self, index);
+}
+
+void q_undostack_set_clean(void* self) {
+    QUndoStack_SetClean((QUndoStack*)self);
+}
+
+void q_undostack_reset_clean(void* self) {
+    QUndoStack_ResetClean((QUndoStack*)self);
+}
+
+void q_undostack_set_index(void* self, int idx) {
+    QUndoStack_SetIndex((QUndoStack*)self, idx);
+}
+
+void q_undostack_undo(void* self) {
+    QUndoStack_Undo((QUndoStack*)self);
+}
+
+void q_undostack_redo(void* self) {
+    QUndoStack_Redo((QUndoStack*)self);
+}
+
+void q_undostack_set_active(void* self) {
+    QUndoStack_SetActive((QUndoStack*)self);
+}
+
+void q_undostack_index_changed(void* self, int idx) {
+    QUndoStack_IndexChanged((QUndoStack*)self, idx);
+}
+
+void q_undostack_on_index_changed(void* self, void (*callback)(void*, int)) {
+    QUndoStack_Connect_IndexChanged((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_clean_changed(void* self, bool clean) {
+    QUndoStack_CleanChanged((QUndoStack*)self, clean);
+}
+
+void q_undostack_on_clean_changed(void* self, void (*callback)(void*, bool)) {
+    QUndoStack_Connect_CleanChanged((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_can_undo_changed(void* self, bool canUndo) {
+    QUndoStack_CanUndoChanged((QUndoStack*)self, canUndo);
+}
+
+void q_undostack_on_can_undo_changed(void* self, void (*callback)(void*, bool)) {
+    QUndoStack_Connect_CanUndoChanged((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_can_redo_changed(void* self, bool canRedo) {
+    QUndoStack_CanRedoChanged((QUndoStack*)self, canRedo);
+}
+
+void q_undostack_on_can_redo_changed(void* self, void (*callback)(void*, bool)) {
+    QUndoStack_Connect_CanRedoChanged((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_undo_text_changed(void* self, const char* undoText) {
+    QUndoStack_UndoTextChanged((QUndoStack*)self, qstring(undoText));
+}
+
+void q_undostack_on_undo_text_changed(void* self, void (*callback)(void*, const char*)) {
+    QUndoStack_Connect_UndoTextChanged((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_redo_text_changed(void* self, const char* redoText) {
+    QUndoStack_RedoTextChanged((QUndoStack*)self, qstring(redoText));
+}
+
+void q_undostack_on_redo_text_changed(void* self, void (*callback)(void*, const char*)) {
+    QUndoStack_Connect_RedoTextChanged((QUndoStack*)self, (intptr_t)callback);
+}
+
+const char* q_undostack_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* q_undostack_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+QAction* q_undostack_create_undo_action2(void* self, void* parent, const char* prefix) {
+    return QUndoStack_CreateUndoAction2((QUndoStack*)self, (QObject*)parent, qstring(prefix));
+}
+
+QAction* q_undostack_create_redo_action2(void* self, void* parent, const char* prefix) {
+    return QUndoStack_CreateRedoAction2((QUndoStack*)self, (QObject*)parent, qstring(prefix));
+}
+
+void q_undostack_set_active1(void* self, bool active) {
+    QUndoStack_SetActive1((QUndoStack*)self, active);
+}
+
+const char* q_undostack_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void q_undostack_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool q_undostack_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool q_undostack_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool q_undostack_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool q_undostack_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool q_undostack_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* q_undostack_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool q_undostack_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t q_undostack_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t q_undostack_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void q_undostack_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void q_undostack_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ q_undostack_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void q_undostack_set_parent(void* self, void* parent) {
+    QObject_SetParent((QObject*)self, (QObject*)parent);
+}
+
+void q_undostack_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void q_undostack_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* q_undostack_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* q_undostack_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* q_undostack_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool q_undostack_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool q_undostack_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool q_undostack_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool q_undostack_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool q_undostack_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void q_undostack_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void q_undostack_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool q_undostack_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* q_undostack_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** q_undostack_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in q_undostack_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* q_undostack_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* q_undostack_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void q_undostack_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void q_undostack_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* q_undostack_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool q_undostack_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void q_undostack_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t q_undostack_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t q_undostack_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* q_undostack_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* q_undostack_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* q_undostack_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool q_undostack_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool q_undostack_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool q_undostack_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool q_undostack_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void q_undostack_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void q_undostack_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+bool q_undostack_event(void* self, void* event) {
+    return QUndoStack_Event((QUndoStack*)self, (QEvent*)event);
+}
+
+bool q_undostack_super_event(void* self, void* event) {
+    return QUndoStack_SuperEvent((QUndoStack*)self, (QEvent*)event);
+}
+
+void q_undostack_on_event(void* self, bool (*callback)(void*, void*)) {
+    QUndoStack_OnEvent((QUndoStack*)self, (intptr_t)callback);
+}
+
+bool q_undostack_event_filter(void* self, void* watched, void* event) {
+    return QUndoStack_EventFilter((QUndoStack*)self, (QObject*)watched, (QEvent*)event);
+}
+
+bool q_undostack_super_event_filter(void* self, void* watched, void* event) {
+    return QUndoStack_SuperEventFilter((QUndoStack*)self, (QObject*)watched, (QEvent*)event);
+}
+
+void q_undostack_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    QUndoStack_OnEventFilter((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_timer_event(void* self, void* event) {
+    QUndoStack_TimerEvent((QUndoStack*)self, (QTimerEvent*)event);
+}
+
+void q_undostack_super_timer_event(void* self, void* event) {
+    QUndoStack_SuperTimerEvent((QUndoStack*)self, (QTimerEvent*)event);
+}
+
+void q_undostack_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    QUndoStack_OnTimerEvent((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_child_event(void* self, void* event) {
+    QUndoStack_ChildEvent((QUndoStack*)self, (QChildEvent*)event);
+}
+
+void q_undostack_super_child_event(void* self, void* event) {
+    QUndoStack_SuperChildEvent((QUndoStack*)self, (QChildEvent*)event);
+}
+
+void q_undostack_on_child_event(void* self, void (*callback)(void*, void*)) {
+    QUndoStack_OnChildEvent((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_custom_event(void* self, void* event) {
+    QUndoStack_CustomEvent((QUndoStack*)self, (QEvent*)event);
+}
+
+void q_undostack_super_custom_event(void* self, void* event) {
+    QUndoStack_SuperCustomEvent((QUndoStack*)self, (QEvent*)event);
+}
+
+void q_undostack_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    QUndoStack_OnCustomEvent((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_connect_notify(void* self, void* signal) {
+    QUndoStack_ConnectNotify((QUndoStack*)self, (QMetaMethod*)signal);
+}
+
+void q_undostack_super_connect_notify(void* self, void* signal) {
+    QUndoStack_SuperConnectNotify((QUndoStack*)self, (QMetaMethod*)signal);
+}
+
+void q_undostack_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    QUndoStack_OnConnectNotify((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_disconnect_notify(void* self, void* signal) {
+    QUndoStack_DisconnectNotify((QUndoStack*)self, (QMetaMethod*)signal);
+}
+
+void q_undostack_super_disconnect_notify(void* self, void* signal) {
+    QUndoStack_SuperDisconnectNotify((QUndoStack*)self, (QMetaMethod*)signal);
+}
+
+void q_undostack_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    QUndoStack_OnDisconnectNotify((QUndoStack*)self, (intptr_t)callback);
+}
+
+QObject* q_undostack_sender(void* self) {
+    return QUndoStack_Sender((QUndoStack*)self);
+}
+
+QObject* q_undostack_super_sender(void* self) {
+    return QUndoStack_SuperSender((QUndoStack*)self);
+}
+
+void q_undostack_on_sender(void* self, QObject* (*callback)()) {
+    QUndoStack_OnSender((QUndoStack*)self, (intptr_t)callback);
+}
+
+int32_t q_undostack_sender_signal_index(void* self) {
+    return QUndoStack_SenderSignalIndex((QUndoStack*)self);
+}
+
+int32_t q_undostack_super_sender_signal_index(void* self) {
+    return QUndoStack_SuperSenderSignalIndex((QUndoStack*)self);
+}
+
+void q_undostack_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    QUndoStack_OnSenderSignalIndex((QUndoStack*)self, (intptr_t)callback);
+}
+
+int32_t q_undostack_receivers(void* self, const char* signal) {
+    return QUndoStack_Receivers((QUndoStack*)self, signal);
+}
+
+int32_t q_undostack_super_receivers(void* self, const char* signal) {
+    return QUndoStack_SuperReceivers((QUndoStack*)self, signal);
+}
+
+void q_undostack_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    QUndoStack_OnReceivers((QUndoStack*)self, (intptr_t)callback);
+}
+
+bool q_undostack_is_signal_connected(void* self, void* signal) {
+    return QUndoStack_IsSignalConnected((QUndoStack*)self, (QMetaMethod*)signal);
+}
+
+bool q_undostack_super_is_signal_connected(void* self, void* signal) {
+    return QUndoStack_SuperIsSignalConnected((QUndoStack*)self, (QMetaMethod*)signal);
+}
+
+void q_undostack_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    QUndoStack_OnIsSignalConnected((QUndoStack*)self, (intptr_t)callback);
+}
+
+void q_undostack_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void q_undostack_delete(void* self) {
+    QUndoStack_Delete((QUndoStack*)(self));
+}

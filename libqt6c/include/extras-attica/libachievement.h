@@ -1,0 +1,308 @@
+#pragma once
+#ifndef SRC_EXTRAS_ATTICA_QT6C_LIBACHIEVEMENT_H
+#define SRC_EXTRAS_ATTICA_QT6C_LIBACHIEVEMENT_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html)
+
+/// k_attica__achievement_new constructs a new Attica::Achievement object.
+///
+Attica__Achievement* k_attica__achievement_new();
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html)
+
+/// k_attica__achievement_new2 constructs a new Attica::Achievement object.
+///
+/// @param other Attica__Achievement*
+///
+Attica__Achievement* k_attica__achievement_new2(void* other);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#stringToAchievementType)
+///
+/// @param achievementTypeString const char*
+///
+/// @return enum Attica__Achievement__Type
+///
+int32_t k_attica__achievement_string_to_achievement_type(const char* achievementTypeString);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#achievementTypeToString)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param type enum Attica__Achievement__Type
+///
+const char* k_attica__achievement_achievement_type_to_string(int32_t type);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#stringToAchievementVisibility)
+///
+/// @param achievementVisibilityString const char*
+///
+/// @return enum Attica__Achievement__Visibility
+///
+int32_t k_attica__achievement_string_to_achievement_visibility(const char* achievementVisibilityString);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#achievementVisibilityToString)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param visibility enum Attica__Achievement__Visibility
+///
+const char* k_attica__achievement_achievement_visibility_to_string(int32_t visibility);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#operator-eq)
+///
+/// @param self Attica__Achievement*
+/// @param other Attica__Achievement*
+///
+void k_attica__achievement_operator_assign(void* self, void* other);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setId)
+///
+/// @param self Attica__Achievement*
+/// @param id const char*
+///
+void k_attica__achievement_set_id(void* self, const char* id);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#id)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self Attica__Achievement*
+///
+const char* k_attica__achievement_id(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setContentId)
+///
+/// @param self Attica__Achievement*
+/// @param contentId const char*
+///
+void k_attica__achievement_set_content_id(void* self, const char* contentId);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#contentId)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self Attica__Achievement*
+///
+const char* k_attica__achievement_content_id(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setName)
+///
+/// @param self Attica__Achievement*
+/// @param name const char*
+///
+void k_attica__achievement_set_name(void* self, const char* name);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#name)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self Attica__Achievement*
+///
+const char* k_attica__achievement_name(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setDescription)
+///
+/// @param self Attica__Achievement*
+/// @param description const char*
+///
+void k_attica__achievement_set_description(void* self, const char* description);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#description)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self Attica__Achievement*
+///
+const char* k_attica__achievement_description(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setExplanation)
+///
+/// @param self Attica__Achievement*
+/// @param explanation const char*
+///
+void k_attica__achievement_set_explanation(void* self, const char* explanation);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#explanation)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self Attica__Achievement*
+///
+const char* k_attica__achievement_explanation(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setPoints)
+///
+/// @param self Attica__Achievement*
+/// @param points int
+///
+void k_attica__achievement_set_points(void* self, int points);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#points)
+///
+/// @param self Attica__Achievement*
+///
+int32_t k_attica__achievement_points(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setImage)
+///
+/// @param self Attica__Achievement*
+/// @param image QUrl*
+///
+void k_attica__achievement_set_image(void* self, void* image);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#image)
+///
+/// @param self Attica__Achievement*
+///
+QUrl* k_attica__achievement_image(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setDependencies)
+///
+/// @param self Attica__Achievement*
+/// @param dependencies const char**
+///
+void k_attica__achievement_set_dependencies(void* self, const char* dependencies[1]);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#addDependency)
+///
+/// @param self Attica__Achievement*
+/// @param dependency const char*
+///
+void k_attica__achievement_add_dependency(void* self, const char* dependency);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#removeDependency)
+///
+/// @param self Attica__Achievement*
+/// @param dependency const char*
+///
+void k_attica__achievement_remove_dependency(void* self, const char* dependency);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#dependencies)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self Attica__Achievement*
+///
+const char** k_attica__achievement_dependencies(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setVisibility)
+///
+/// @param self Attica__Achievement*
+/// @param visibility enum Attica__Achievement__Visibility
+///
+void k_attica__achievement_set_visibility(void* self, int32_t visibility);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#visibility)
+///
+/// @param self Attica__Achievement*
+///
+/// @return enum Attica__Achievement__Visibility
+///
+int32_t k_attica__achievement_visibility(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setType)
+///
+/// @param self Attica__Achievement*
+/// @param type enum Attica__Achievement__Type
+///
+void k_attica__achievement_set_type(void* self, int32_t type);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#type)
+///
+/// @param self Attica__Achievement*
+///
+/// @return enum Attica__Achievement__Type
+///
+int32_t k_attica__achievement_type(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setOptions)
+///
+/// @param self Attica__Achievement*
+/// @param options const char**
+///
+void k_attica__achievement_set_options(void* self, const char* options[1]);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#addOption)
+///
+/// @param self Attica__Achievement*
+/// @param option const char*
+///
+void k_attica__achievement_add_option(void* self, const char* option);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#removeOption)
+///
+/// @param self Attica__Achievement*
+/// @param option const char*
+///
+void k_attica__achievement_remove_option(void* self, const char* option);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#options)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self Attica__Achievement*
+///
+const char** k_attica__achievement_options(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setSteps)
+///
+/// @param self Attica__Achievement*
+/// @param steps int
+///
+void k_attica__achievement_set_steps(void* self, int steps);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#steps)
+///
+/// @param self Attica__Achievement*
+///
+int32_t k_attica__achievement_steps(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#setProgress)
+///
+/// @param self Attica__Achievement*
+/// @param progress QVariant*
+///
+void k_attica__achievement_set_progress(void* self, void* progress);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#progress)
+///
+/// @param self Attica__Achievement*
+///
+QVariant* k_attica__achievement_progress(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#isValid)
+///
+/// @param self Attica__Achievement*
+///
+bool k_attica__achievement_is_valid(void* self);
+
+/// Delete this object from C++ memory.
+///
+/// @param self Attica__Achievement*
+///
+void k_attica__achievement_delete(void* self);
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#public-types)
+
+typedef enum {
+    ATTICA_ACHIEVEMENT_TYPE_FLOWINGACHIEVEMENT = 0,
+    ATTICA_ACHIEVEMENT_TYPE_STEPPEDACHIEVEMENT = 1,
+    ATTICA_ACHIEVEMENT_TYPE_NAMEDSTEPSACHIEVEMENT = 2,
+    ATTICA_ACHIEVEMENT_TYPE_SETACHIEVEMENT = 3
+} Attica__Achievement__Type;
+
+/// [Upstream resources](https://api.kde.org/attica-achievement.html#public-types)
+
+typedef enum {
+    ATTICA_ACHIEVEMENT_VISIBILITY_VISIBLEACHIEVEMENT = 0,
+    ATTICA_ACHIEVEMENT_VISIBILITY_DEPENDENTSACHIEVEMENT = 1,
+    ATTICA_ACHIEVEMENT_VISIBILITY_SECRETACHIEVEMENT = 2
+} Attica__Achievement__Visibility;
+
+#endif

@@ -1,0 +1,197 @@
+#pragma once
+#ifndef SRC_MULTIMEDIA_QT6C_LIBQCAMERADEVICE_H
+#define SRC_MULTIMEDIA_QT6C_LIBQCAMERADEVICE_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html)
+
+/// q_cameraformat_new constructs a new QCameraFormat object.
+///
+QCameraFormat* q_cameraformat_new();
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html)
+
+/// q_cameraformat_new2 constructs a new QCameraFormat object.
+///
+/// @param other QCameraFormat*
+///
+QCameraFormat* q_cameraformat_new2(void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#operator-eq)
+///
+/// @param self QCameraFormat*
+/// @param other QCameraFormat*
+///
+void q_cameraformat_operator_assign(void* self, void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#pixelFormat)
+///
+/// @param self QCameraFormat*
+///
+/// @return enum QVideoFrameFormat__PixelFormat
+///
+int32_t q_cameraformat_pixel_format(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#resolution)
+///
+/// @param self QCameraFormat*
+///
+QSize* q_cameraformat_resolution(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#minFrameRate)
+///
+/// @param self QCameraFormat*
+///
+float q_cameraformat_min_frame_rate(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#maxFrameRate)
+///
+/// @param self QCameraFormat*
+///
+float q_cameraformat_max_frame_rate(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#isNull)
+///
+/// @param self QCameraFormat*
+///
+bool q_cameraformat_is_null(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#operator-eq-eq)
+///
+/// @param self QCameraFormat*
+/// @param other QCameraFormat*
+///
+bool q_cameraformat_operator_equal(void* self, void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#operator-not-eq)
+///
+/// @param self QCameraFormat*
+/// @param other QCameraFormat*
+///
+bool q_cameraformat_operator_not_equal(void* self, void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameraformat.html#dtor.QCameraFormat)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self QCameraFormat*
+///
+void q_cameraformat_delete(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html)
+
+/// q_cameradevice_new constructs a new QCameraDevice object.
+///
+QCameraDevice* q_cameradevice_new();
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html)
+
+/// q_cameradevice_new2 constructs a new QCameraDevice object.
+///
+/// @param other QCameraDevice*
+///
+QCameraDevice* q_cameradevice_new2(void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#operator-eq)
+///
+/// @param self QCameraDevice*
+/// @param other QCameraDevice*
+///
+void q_cameradevice_operator_assign(void* self, void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#operator-eq-eq)
+///
+/// @param self QCameraDevice*
+/// @param other QCameraDevice*
+///
+bool q_cameradevice_operator_equal(void* self, void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#operator-not-eq)
+///
+/// @param self QCameraDevice*
+/// @param other QCameraDevice*
+///
+bool q_cameradevice_operator_not_equal(void* self, void* other);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#isNull)
+///
+/// @param self QCameraDevice*
+///
+bool q_cameradevice_is_null(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#id)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self QCameraDevice*
+///
+char* q_cameradevice_id(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#description)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self QCameraDevice*
+///
+const char* q_cameradevice_description(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#isDefault)
+///
+/// @param self QCameraDevice*
+///
+bool q_cameradevice_is_default(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#position)
+///
+/// @param self QCameraDevice*
+///
+/// @return enum QCameraDevice__Position
+///
+int32_t q_cameradevice_position(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#photoResolutions)
+///
+/// @param self QCameraDevice*
+///
+/// @return libqt_list of QSize*
+///
+libqt_list q_cameradevice_photo_resolutions(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#videoFormats)
+///
+/// @param self QCameraDevice*
+///
+/// @return libqt_list of QCameraFormat*
+///
+libqt_list q_cameradevice_video_formats(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#correctionAngle)
+///
+/// @param self QCameraDevice*
+///
+/// @return enum QtVideo__Rotation
+///
+int32_t q_cameradevice_correction_angle(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#dtor.QCameraDevice)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self QCameraDevice*
+///
+void q_cameradevice_delete(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qcameradevice.html#public-types)
+
+typedef enum {
+    QCAMERADEVICE_POSITION_UNSPECIFIEDPOSITION = 0,
+    QCAMERADEVICE_POSITION_BACKFACE = 1,
+    QCAMERADEVICE_POSITION_FRONTFACE = 2
+} QCameraDevice__Position;
+
+#endif

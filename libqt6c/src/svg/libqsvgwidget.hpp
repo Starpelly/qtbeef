@@ -1,0 +1,249 @@
+#pragma once
+#ifndef SRC_SVGC_LIBQSVGWIDGET_HPP
+#define SRC_SVGC_LIBQSVGWIDGET_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QSvgRenderer QSvgRenderer;
+typedef struct QSvgWidget QSvgWidget;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+QSvgWidget* QSvgWidget_new(QWidget* parent);
+QSvgWidget* QSvgWidget_new2();
+QSvgWidget* QSvgWidget_new3(const libqt_string file);
+QSvgWidget* QSvgWidget_new4(const libqt_string file, QWidget* parent);
+QMetaObject* QSvgWidget_MetaObject(const QSvgWidget* self);
+void* QSvgWidget_Metacast(QSvgWidget* self, const char* param1);
+int QSvgWidget_Metacall(QSvgWidget* self, int param1, int param2, void** param3);
+QSvgRenderer* QSvgWidget_Renderer(const QSvgWidget* self);
+QSize* QSvgWidget_SizeHint(const QSvgWidget* self);
+uint32_t QSvgWidget_Options(const QSvgWidget* self);
+void QSvgWidget_SetOptions(QSvgWidget* self, uint32_t options);
+void QSvgWidget_Load(QSvgWidget* self, const libqt_string file);
+void QSvgWidget_Load2(QSvgWidget* self, const libqt_string contents);
+void QSvgWidget_PaintEvent(QSvgWidget* self, QPaintEvent* event);
+void QSvgWidget_OnMetaObject(const QSvgWidget* self, intptr_t slot);
+QMetaObject* QSvgWidget_SuperMetaObject(const QSvgWidget* self);
+void QSvgWidget_OnMetacast(QSvgWidget* self, intptr_t slot);
+void* QSvgWidget_SuperMetacast(QSvgWidget* self, const char* param1);
+void QSvgWidget_OnMetacall(QSvgWidget* self, intptr_t slot);
+int QSvgWidget_SuperMetacall(QSvgWidget* self, int param1, int param2, void** param3);
+void QSvgWidget_OnSizeHint(const QSvgWidget* self, intptr_t slot);
+QSize* QSvgWidget_SuperSizeHint(const QSvgWidget* self);
+void QSvgWidget_OnPaintEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperPaintEvent(QSvgWidget* self, QPaintEvent* event);
+int QSvgWidget_DevType(const QSvgWidget* self);
+void QSvgWidget_OnDevType(const QSvgWidget* self, intptr_t slot);
+int QSvgWidget_SuperDevType(const QSvgWidget* self);
+void QSvgWidget_SetVisible(QSvgWidget* self, bool visible);
+void QSvgWidget_OnSetVisible(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperSetVisible(QSvgWidget* self, bool visible);
+QSize* QSvgWidget_MinimumSizeHint(const QSvgWidget* self);
+void QSvgWidget_OnMinimumSizeHint(const QSvgWidget* self, intptr_t slot);
+QSize* QSvgWidget_SuperMinimumSizeHint(const QSvgWidget* self);
+int QSvgWidget_HeightForWidth(const QSvgWidget* self, int param1);
+void QSvgWidget_OnHeightForWidth(const QSvgWidget* self, intptr_t slot);
+int QSvgWidget_SuperHeightForWidth(const QSvgWidget* self, int param1);
+bool QSvgWidget_HasHeightForWidth(const QSvgWidget* self);
+void QSvgWidget_OnHasHeightForWidth(const QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperHasHeightForWidth(const QSvgWidget* self);
+QPaintEngine* QSvgWidget_PaintEngine(const QSvgWidget* self);
+void QSvgWidget_OnPaintEngine(const QSvgWidget* self, intptr_t slot);
+QPaintEngine* QSvgWidget_SuperPaintEngine(const QSvgWidget* self);
+bool QSvgWidget_Event(QSvgWidget* self, QEvent* event);
+void QSvgWidget_OnEvent(QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperEvent(QSvgWidget* self, QEvent* event);
+void QSvgWidget_MousePressEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_OnMousePressEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperMousePressEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_MouseReleaseEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_OnMouseReleaseEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperMouseReleaseEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_MouseDoubleClickEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_OnMouseDoubleClickEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperMouseDoubleClickEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_MouseMoveEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_OnMouseMoveEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperMouseMoveEvent(QSvgWidget* self, QMouseEvent* event);
+void QSvgWidget_WheelEvent(QSvgWidget* self, QWheelEvent* event);
+void QSvgWidget_OnWheelEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperWheelEvent(QSvgWidget* self, QWheelEvent* event);
+void QSvgWidget_KeyPressEvent(QSvgWidget* self, QKeyEvent* event);
+void QSvgWidget_OnKeyPressEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperKeyPressEvent(QSvgWidget* self, QKeyEvent* event);
+void QSvgWidget_KeyReleaseEvent(QSvgWidget* self, QKeyEvent* event);
+void QSvgWidget_OnKeyReleaseEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperKeyReleaseEvent(QSvgWidget* self, QKeyEvent* event);
+void QSvgWidget_FocusInEvent(QSvgWidget* self, QFocusEvent* event);
+void QSvgWidget_OnFocusInEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperFocusInEvent(QSvgWidget* self, QFocusEvent* event);
+void QSvgWidget_FocusOutEvent(QSvgWidget* self, QFocusEvent* event);
+void QSvgWidget_OnFocusOutEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperFocusOutEvent(QSvgWidget* self, QFocusEvent* event);
+void QSvgWidget_EnterEvent(QSvgWidget* self, QEnterEvent* event);
+void QSvgWidget_OnEnterEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperEnterEvent(QSvgWidget* self, QEnterEvent* event);
+void QSvgWidget_LeaveEvent(QSvgWidget* self, QEvent* event);
+void QSvgWidget_OnLeaveEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperLeaveEvent(QSvgWidget* self, QEvent* event);
+void QSvgWidget_MoveEvent(QSvgWidget* self, QMoveEvent* event);
+void QSvgWidget_OnMoveEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperMoveEvent(QSvgWidget* self, QMoveEvent* event);
+void QSvgWidget_ResizeEvent(QSvgWidget* self, QResizeEvent* event);
+void QSvgWidget_OnResizeEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperResizeEvent(QSvgWidget* self, QResizeEvent* event);
+void QSvgWidget_CloseEvent(QSvgWidget* self, QCloseEvent* event);
+void QSvgWidget_OnCloseEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperCloseEvent(QSvgWidget* self, QCloseEvent* event);
+void QSvgWidget_ContextMenuEvent(QSvgWidget* self, QContextMenuEvent* event);
+void QSvgWidget_OnContextMenuEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperContextMenuEvent(QSvgWidget* self, QContextMenuEvent* event);
+void QSvgWidget_TabletEvent(QSvgWidget* self, QTabletEvent* event);
+void QSvgWidget_OnTabletEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperTabletEvent(QSvgWidget* self, QTabletEvent* event);
+void QSvgWidget_ActionEvent(QSvgWidget* self, QActionEvent* event);
+void QSvgWidget_OnActionEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperActionEvent(QSvgWidget* self, QActionEvent* event);
+void QSvgWidget_DragEnterEvent(QSvgWidget* self, QDragEnterEvent* event);
+void QSvgWidget_OnDragEnterEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperDragEnterEvent(QSvgWidget* self, QDragEnterEvent* event);
+void QSvgWidget_DragMoveEvent(QSvgWidget* self, QDragMoveEvent* event);
+void QSvgWidget_OnDragMoveEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperDragMoveEvent(QSvgWidget* self, QDragMoveEvent* event);
+void QSvgWidget_DragLeaveEvent(QSvgWidget* self, QDragLeaveEvent* event);
+void QSvgWidget_OnDragLeaveEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperDragLeaveEvent(QSvgWidget* self, QDragLeaveEvent* event);
+void QSvgWidget_DropEvent(QSvgWidget* self, QDropEvent* event);
+void QSvgWidget_OnDropEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperDropEvent(QSvgWidget* self, QDropEvent* event);
+void QSvgWidget_ShowEvent(QSvgWidget* self, QShowEvent* event);
+void QSvgWidget_OnShowEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperShowEvent(QSvgWidget* self, QShowEvent* event);
+void QSvgWidget_HideEvent(QSvgWidget* self, QHideEvent* event);
+void QSvgWidget_OnHideEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperHideEvent(QSvgWidget* self, QHideEvent* event);
+bool QSvgWidget_NativeEvent(QSvgWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+void QSvgWidget_OnNativeEvent(QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperNativeEvent(QSvgWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+void QSvgWidget_ChangeEvent(QSvgWidget* self, QEvent* param1);
+void QSvgWidget_OnChangeEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperChangeEvent(QSvgWidget* self, QEvent* param1);
+int QSvgWidget_Metric(const QSvgWidget* self, int param1);
+void QSvgWidget_OnMetric(const QSvgWidget* self, intptr_t slot);
+int QSvgWidget_SuperMetric(const QSvgWidget* self, int param1);
+void QSvgWidget_InitPainter(const QSvgWidget* self, QPainter* painter);
+void QSvgWidget_OnInitPainter(const QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperInitPainter(const QSvgWidget* self, QPainter* painter);
+QPaintDevice* QSvgWidget_Redirected(const QSvgWidget* self, QPoint* offset);
+void QSvgWidget_OnRedirected(const QSvgWidget* self, intptr_t slot);
+QPaintDevice* QSvgWidget_SuperRedirected(const QSvgWidget* self, QPoint* offset);
+QPainter* QSvgWidget_SharedPainter(const QSvgWidget* self);
+void QSvgWidget_OnSharedPainter(const QSvgWidget* self, intptr_t slot);
+QPainter* QSvgWidget_SuperSharedPainter(const QSvgWidget* self);
+void QSvgWidget_InputMethodEvent(QSvgWidget* self, QInputMethodEvent* param1);
+void QSvgWidget_OnInputMethodEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperInputMethodEvent(QSvgWidget* self, QInputMethodEvent* param1);
+QVariant* QSvgWidget_InputMethodQuery(const QSvgWidget* self, int param1);
+void QSvgWidget_OnInputMethodQuery(const QSvgWidget* self, intptr_t slot);
+QVariant* QSvgWidget_SuperInputMethodQuery(const QSvgWidget* self, int param1);
+bool QSvgWidget_FocusNextPrevChild(QSvgWidget* self, bool next);
+void QSvgWidget_OnFocusNextPrevChild(QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperFocusNextPrevChild(QSvgWidget* self, bool next);
+bool QSvgWidget_EventFilter(QSvgWidget* self, QObject* watched, QEvent* event);
+void QSvgWidget_OnEventFilter(QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperEventFilter(QSvgWidget* self, QObject* watched, QEvent* event);
+void QSvgWidget_TimerEvent(QSvgWidget* self, QTimerEvent* event);
+void QSvgWidget_OnTimerEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperTimerEvent(QSvgWidget* self, QTimerEvent* event);
+void QSvgWidget_ChildEvent(QSvgWidget* self, QChildEvent* event);
+void QSvgWidget_OnChildEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperChildEvent(QSvgWidget* self, QChildEvent* event);
+void QSvgWidget_CustomEvent(QSvgWidget* self, QEvent* event);
+void QSvgWidget_OnCustomEvent(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperCustomEvent(QSvgWidget* self, QEvent* event);
+void QSvgWidget_ConnectNotify(QSvgWidget* self, const QMetaMethod* signal);
+void QSvgWidget_OnConnectNotify(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperConnectNotify(QSvgWidget* self, const QMetaMethod* signal);
+void QSvgWidget_DisconnectNotify(QSvgWidget* self, const QMetaMethod* signal);
+void QSvgWidget_OnDisconnectNotify(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperDisconnectNotify(QSvgWidget* self, const QMetaMethod* signal);
+void QSvgWidget_UpdateMicroFocus(QSvgWidget* self);
+void QSvgWidget_OnUpdateMicroFocus(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperUpdateMicroFocus(QSvgWidget* self);
+void QSvgWidget_Create(QSvgWidget* self);
+void QSvgWidget_OnCreate(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperCreate(QSvgWidget* self);
+void QSvgWidget_Destroy(QSvgWidget* self);
+void QSvgWidget_OnDestroy(QSvgWidget* self, intptr_t slot);
+void QSvgWidget_SuperDestroy(QSvgWidget* self);
+bool QSvgWidget_FocusNextChild(QSvgWidget* self);
+void QSvgWidget_OnFocusNextChild(QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperFocusNextChild(QSvgWidget* self);
+bool QSvgWidget_FocusPreviousChild(QSvgWidget* self);
+void QSvgWidget_OnFocusPreviousChild(QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperFocusPreviousChild(QSvgWidget* self);
+QObject* QSvgWidget_Sender(const QSvgWidget* self);
+void QSvgWidget_OnSender(const QSvgWidget* self, intptr_t slot);
+QObject* QSvgWidget_SuperSender(const QSvgWidget* self);
+int QSvgWidget_SenderSignalIndex(const QSvgWidget* self);
+void QSvgWidget_OnSenderSignalIndex(const QSvgWidget* self, intptr_t slot);
+int QSvgWidget_SuperSenderSignalIndex(const QSvgWidget* self);
+int QSvgWidget_Receivers(const QSvgWidget* self, const char* signal);
+void QSvgWidget_OnReceivers(const QSvgWidget* self, intptr_t slot);
+int QSvgWidget_SuperReceivers(const QSvgWidget* self, const char* signal);
+bool QSvgWidget_IsSignalConnected(const QSvgWidget* self, const QMetaMethod* signal);
+void QSvgWidget_OnIsSignalConnected(const QSvgWidget* self, intptr_t slot);
+bool QSvgWidget_SuperIsSignalConnected(const QSvgWidget* self, const QMetaMethod* signal);
+double QSvgWidget_GetDecodedMetricF(const QSvgWidget* self, int metricA, int metricB);
+void QSvgWidget_OnGetDecodedMetricF(const QSvgWidget* self, intptr_t slot);
+double QSvgWidget_SuperGetDecodedMetricF(const QSvgWidget* self, int metricA, int metricB);
+void QSvgWidget_Delete(QSvgWidget* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

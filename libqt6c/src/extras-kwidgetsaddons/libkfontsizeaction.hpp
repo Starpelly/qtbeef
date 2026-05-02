@@ -1,0 +1,108 @@
+#pragma once
+#ifndef SRC_EXTRAS_KWIDGETSADDONSC_LIBKFONTSIZEACTION_HPP
+#define SRC_EXTRAS_KWIDGETSADDONSC_LIBKFONTSIZEACTION_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KFontSizeAction KFontSizeAction;
+typedef struct KSelectAction KSelectAction;
+typedef struct QAction QAction;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QIcon QIcon;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QWidget QWidget;
+typedef struct QWidgetAction QWidgetAction;
+#endif
+
+KFontSizeAction* KFontSizeAction_new(QObject* parent);
+KFontSizeAction* KFontSizeAction_new2(const libqt_string text, QObject* parent);
+KFontSizeAction* KFontSizeAction_new3(const QIcon* icon, const libqt_string text, QObject* parent);
+QMetaObject* KFontSizeAction_MetaObject(const KFontSizeAction* self);
+void* KFontSizeAction_Metacast(KFontSizeAction* self, const char* param1);
+int KFontSizeAction_Metacall(KFontSizeAction* self, int param1, int param2, void** param3);
+int KFontSizeAction_FontSize(const KFontSizeAction* self);
+void KFontSizeAction_SetFontSize(KFontSizeAction* self, int size);
+void KFontSizeAction_FontSizeChanged(KFontSizeAction* self, int param1);
+void KFontSizeAction_Connect_FontSizeChanged(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SlotActionTriggered(KFontSizeAction* self, QAction* action);
+void KFontSizeAction_OnMetaObject(const KFontSizeAction* self, intptr_t slot);
+QMetaObject* KFontSizeAction_SuperMetaObject(const KFontSizeAction* self);
+void KFontSizeAction_OnMetacast(KFontSizeAction* self, intptr_t slot);
+void* KFontSizeAction_SuperMetacast(KFontSizeAction* self, const char* param1);
+void KFontSizeAction_OnMetacall(KFontSizeAction* self, intptr_t slot);
+int KFontSizeAction_SuperMetacall(KFontSizeAction* self, int param1, int param2, void** param3);
+void KFontSizeAction_OnSlotActionTriggered(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperSlotActionTriggered(KFontSizeAction* self, QAction* action);
+QAction* KFontSizeAction_RemoveAction(KFontSizeAction* self, QAction* action);
+void KFontSizeAction_OnRemoveAction(KFontSizeAction* self, intptr_t slot);
+QAction* KFontSizeAction_SuperRemoveAction(KFontSizeAction* self, QAction* action);
+void KFontSizeAction_InsertAction(KFontSizeAction* self, QAction* before, QAction* action);
+void KFontSizeAction_OnInsertAction(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperInsertAction(KFontSizeAction* self, QAction* before, QAction* action);
+QWidget* KFontSizeAction_CreateWidget(KFontSizeAction* self, QWidget* parent);
+void KFontSizeAction_OnCreateWidget(KFontSizeAction* self, intptr_t slot);
+QWidget* KFontSizeAction_SuperCreateWidget(KFontSizeAction* self, QWidget* parent);
+void KFontSizeAction_DeleteWidget(KFontSizeAction* self, QWidget* widget);
+void KFontSizeAction_OnDeleteWidget(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperDeleteWidget(KFontSizeAction* self, QWidget* widget);
+bool KFontSizeAction_Event(KFontSizeAction* self, QEvent* event);
+void KFontSizeAction_OnEvent(KFontSizeAction* self, intptr_t slot);
+bool KFontSizeAction_SuperEvent(KFontSizeAction* self, QEvent* event);
+bool KFontSizeAction_EventFilter(KFontSizeAction* self, QObject* watched, QEvent* event);
+void KFontSizeAction_OnEventFilter(KFontSizeAction* self, intptr_t slot);
+bool KFontSizeAction_SuperEventFilter(KFontSizeAction* self, QObject* watched, QEvent* event);
+void KFontSizeAction_TimerEvent(KFontSizeAction* self, QTimerEvent* event);
+void KFontSizeAction_OnTimerEvent(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperTimerEvent(KFontSizeAction* self, QTimerEvent* event);
+void KFontSizeAction_ChildEvent(KFontSizeAction* self, QChildEvent* event);
+void KFontSizeAction_OnChildEvent(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperChildEvent(KFontSizeAction* self, QChildEvent* event);
+void KFontSizeAction_CustomEvent(KFontSizeAction* self, QEvent* event);
+void KFontSizeAction_OnCustomEvent(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperCustomEvent(KFontSizeAction* self, QEvent* event);
+void KFontSizeAction_ConnectNotify(KFontSizeAction* self, const QMetaMethod* signal);
+void KFontSizeAction_OnConnectNotify(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperConnectNotify(KFontSizeAction* self, const QMetaMethod* signal);
+void KFontSizeAction_DisconnectNotify(KFontSizeAction* self, const QMetaMethod* signal);
+void KFontSizeAction_OnDisconnectNotify(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperDisconnectNotify(KFontSizeAction* self, const QMetaMethod* signal);
+void KFontSizeAction_SlotToggled(KFontSizeAction* self, bool param1);
+void KFontSizeAction_OnSlotToggled(KFontSizeAction* self, intptr_t slot);
+void KFontSizeAction_SuperSlotToggled(KFontSizeAction* self, bool param1);
+libqt_list /* of QWidget* */ KFontSizeAction_CreatedWidgets(const KFontSizeAction* self);
+void KFontSizeAction_OnCreatedWidgets(const KFontSizeAction* self, intptr_t slot);
+libqt_list /* of QWidget* */ KFontSizeAction_SuperCreatedWidgets(const KFontSizeAction* self);
+QObject* KFontSizeAction_Sender(const KFontSizeAction* self);
+void KFontSizeAction_OnSender(const KFontSizeAction* self, intptr_t slot);
+QObject* KFontSizeAction_SuperSender(const KFontSizeAction* self);
+int KFontSizeAction_SenderSignalIndex(const KFontSizeAction* self);
+void KFontSizeAction_OnSenderSignalIndex(const KFontSizeAction* self, intptr_t slot);
+int KFontSizeAction_SuperSenderSignalIndex(const KFontSizeAction* self);
+int KFontSizeAction_Receivers(const KFontSizeAction* self, const char* signal);
+void KFontSizeAction_OnReceivers(const KFontSizeAction* self, intptr_t slot);
+int KFontSizeAction_SuperReceivers(const KFontSizeAction* self, const char* signal);
+bool KFontSizeAction_IsSignalConnected(const KFontSizeAction* self, const QMetaMethod* signal);
+void KFontSizeAction_OnIsSignalConnected(const KFontSizeAction* self, intptr_t slot);
+bool KFontSizeAction_SuperIsSignalConnected(const KFontSizeAction* self, const QMetaMethod* signal);
+void KFontSizeAction_Delete(KFontSizeAction* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

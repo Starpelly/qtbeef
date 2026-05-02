@@ -1,0 +1,463 @@
+const std = @import("std");
+const host_os = @import("builtin").os.tag;
+const host_arch = @import("builtin").cpu.arch;
+
+var linux_isystem: std.ArrayList([]const u8) = .empty;
+var cpp_flags: std.ArrayList([]const u8) = .empty;
+var cpp_sources: std.ArrayList([]const u8) = .empty;
+var qt_include_path: std.ArrayList([]const u8) = .empty;
+
+const msvc_cpp_flags = &.{
+    "--target=x86_64-pc-windows-msvc",
+    "-fms-compatibility",
+    "-fms-extensions",
+    "-fdelayed-template-parsing", // MSVC behavior
+};
+
+pub fn build(b: *std.Build) !void {
+    const optimize = b.standardOptimizeOption(.{});
+    const target = b.standardTargetOptions(.{});
+    const extra_paths = b.option([]const []const u8, "extra-paths", "Extra library header search paths") orelse &.{};
+    const linkage = b.option(std.builtin.LinkMode, "linkage", "Link mode for libqt6c") orelse .static;
+    const strip = b.option(bool, "strip", "Include debug information in the compiled binary") orelse (optimize != .Debug);
+
+    const is_linux = target.result.os.tag == .linux or host_os == .linux;
+    const is_macos = target.result.os.tag == .macos or host_os == .macos;
+    const is_windows = target.result.os.tag == .windows or host_os == .windows;
+
+    if (is_windows)
+    inline for (msvc_cpp_flags) |flag|
+        try cpp_flags.append(b.allocator, b.dupe(flag));
+
+    // Add isystem paths for Linux
+    var distro: Distro = .none;
+    if (is_linux) {
+        const result = try std.process.run(b.allocator, b.graph.io, .{
+            .argv = &.{ "gcc", "-xc++", "-E", "-Wp,-v", "/dev/null" },
+        });
+
+        var lines = std.mem.splitScalar(u8, result.stderr, '\n');
+        while (lines.next()) |line|
+            if (std.mem.startsWith(u8, line, " /")) {
+                const isystem_path = std.mem.trim(u8, line, &std.ascii.whitespace);
+                std.Io.Dir.cwd().access(b.graph.io, isystem_path, .{}) catch {
+                    continue;
+                };
+                try linux_isystem.append(b.allocator, isystem_path);
+            };
+
+        for (linux_isystem.items) |isystem_path| {
+            if (distro == .none)
+                if (std.mem.containsAtLeast(u8, isystem_path, 1, "suse-linux")) {
+                    distro = .suse;
+                } else if (std.mem.containsAtLeastScalar(u8, isystem_path, 2, '.') and !std.mem.containsAtLeast(u8, isystem_path, 1, "..")) {
+                    distro = .arch;
+                } else if (std.mem.containsAtLeast(u8, isystem_path, 1, "redhat-linux")) {
+                    distro = .fedora;
+                };
+
+            try cpp_flags.append(b.allocator, b.fmt("-isystem{s}", .{isystem_path}));
+        }
+
+        if (distro == .fedora) {
+            const version = try std.process.run(b.allocator, b.graph.io, .{
+                .argv = &.{ "lsb_release", "-rs" },
+            });
+            const version_str = std.mem.trim(u8, version.stdout, &std.ascii.whitespace);
+            try cpp_flags.append(b.allocator, b.fmt(
+                "-isystem/usr/" ++ @tagName(host_arch) ++ "-redhat-linux/sys-root/fc{s}/usr/include",
+                .{version_str},
+            ));
+        }
+    }
+
+    var dir = try b.build_root.handle.openDir(b.graph.io, "src", .{ .iterate = true });
+    defer dir.close(b.graph.io);
+
+    var walker = try dir.walk(b.allocator);
+    defer walker.deinit();
+
+    var ok = true;
+
+    while (try walker.next(b.graph.io)) |entry|
+        if (entry.kind == .file and std.mem.endsWith(u8, entry.path, ".cpp")) {
+            if (!ok and !std.mem.startsWith(u8, entry.path, "lib")) continue;
+            if (is_windows and std.mem.startsWith(u8, entry.path, "webengine")) continue;
+            var basename = std.Io.Dir.path.basename(entry.path);
+            basename = basename[3 .. basename.len - 4];
+            if ((!is_linux or distro == .arch or distro == .suse) and
+                (std.mem.eql(u8, basename, "qsctpsocket") or std.mem.eql(u8, basename, "qsctpserver")))
+                continue;
+            if (distro == .suse and std.mem.eql(u8, @tagName(host_arch), "aarch64") and
+                (std.mem.startsWith(u8, basename, "qopenglfunctions_") or
+                    std.mem.eql(u8, basename, "qopenglcontext_platform") or
+                    std.mem.eql(u8, basename, "qopengltimerquery") or
+                    std.mem.eql(u8, basename, "qopenglversionfunctions")))
+                continue;
+            if ((is_macos or is_windows) and std.mem.eql(u8, basename, "qopenglcontext_platform"))
+                continue;
+            if (is_windows and (std.mem.eql(u8, basename, "qhashfunctions") or std.mem.eql(u8, basename, "qprocess")))
+                continue;
+
+            try cpp_sources.append(b.allocator, b.fmt("{s}/{s}", .{ "src", entry.path }));
+        } else if (entry.kind == .directory) {
+            ok = true;
+            inline for (prefixes) |prefix|
+                if (std.mem.startsWith(u8, entry.path, prefix)) {
+                    var is_supported = true;
+                    if (is_windows and (std.mem.startsWith(u8, entry.path, "foss-") or std.mem.startsWith(u8, entry.path, "posix-")))
+                        is_supported = false;
+                    if (is_macos and std.mem.startsWith(u8, entry.path, "foss-"))
+                        is_supported = false;
+
+                    var is_enabled = true;
+                    if ((is_macos or is_windows) and (std.mem.eql(u8, prefix, "extras-") or std.mem.eql(u8, prefix, "restricted-extras-")))
+                        is_enabled = false;
+                    if (is_macos and std.mem.startsWith(u8, entry.path, "posix-"))
+                        is_enabled = false;
+
+                    const option_value = opt: switch (is_supported) {
+                        true => {
+                            const path = std.Io.Dir.path.stem(entry.path);
+                            var library = std.mem.splitBackwardsScalar(u8, path, '-');
+                            const name = library.first();
+                            const description = b.fmt("Enable {s}", .{name});
+                            const option_name = b.fmt("enable-{s}", .{name});
+                            break :opt b.option(bool, option_name, description);
+                        },
+                        false => null,
+                    };
+
+                    ok = is_supported and if (option_value) |option| option else is_enabled;
+                    break;
+                };
+        };
+
+    std.debug.assert(cpp_sources.items.len != 0);
+
+    for (extra_paths) |extra_path| {
+        if (std.mem.eql(u8, extra_path, "")) continue;
+        const inc_path = b.fmt("{s}/include", .{extra_path});
+        std.Io.Dir.cwd().access(b.graph.io, inc_path, .{}) catch {
+            try std.Io.File.stdout().writeStreamingAll(
+                b.graph.io,
+                b.fmt("WARNING: extra path {s} does not exist\n", .{inc_path}),
+            );
+            continue;
+        };
+        try qt_include_path.append(b.allocator, b.dupe(inc_path));
+    }
+    for (os_include_path) |os_path| {
+        std.Io.Dir.cwd().access(b.graph.io, os_path, .{}) catch {
+            continue;
+        };
+        try qt_include_path.append(b.allocator, b.dupe(os_path));
+    }
+
+    // Add base flags
+    inline for (base_cpp_flags) |flag|
+        try cpp_flags.append(b.allocator, b.dupe(flag));
+
+    if (is_linux)
+        inline for (linux_cpp_flags) |flag|
+            try cpp_flags.append(b.allocator, b.dupe(flag));
+
+    // Add include paths
+    for (qt_include_path.items) |qt_path|
+        try cpp_flags.append(b.allocator, b.fmt("-I{s}", .{qt_path}));
+
+    // Add Qt module include paths
+    inline for (qt_modules) |module|
+        for (qt_include_path.items) |qt_path| {
+            const includePath = b.fmt("{s}/{s}", .{ qt_path, module });
+            std.Io.Dir.cwd().access(b.graph.io, includePath, .{}) catch {
+                continue;
+            };
+            try cpp_flags.append(b.allocator, b.fmt("-I{s}", .{includePath}));
+        };
+
+    // Create a separate library for each source file
+    for (cpp_sources.items) |source| {
+        var basename = std.Io.Dir.path.basename(source);
+        basename = basename[3 .. basename.len - 4];
+
+        const lib = b.addLibrary(.{
+            .name = basename,
+            .root_module = b.createModule(.{
+                .target = target,
+                .optimize = optimize,
+                .sanitize_c = .off,
+                .strip = strip,
+                .pic = true,
+                .link_libc = true,
+            }),
+            .linkage = linkage,
+        });
+
+        if (!is_linux) lib.root_module.link_libcpp = true;
+
+        lib.root_module.addIncludePath(b.path("include"));
+        lib.root_module.addCSourceFiles(.{ .files = &.{source}, .flags = cpp_flags.items });
+
+        // Add corresponding C wrapper
+        lib.root_module.addCSourceFiles(.{ .files = &.{source[0 .. source.len - 2]}, .flags = c_flags });
+
+        b.installArtifact(lib);
+    }
+
+    // Create the main module that others will import
+    const libqt6c = b.addModule("libqt6c", .{
+        .root_source_file = b.path("include/libqt6c.h"),
+    });
+
+    try b.modules.put(b.allocator, "libqt6c", libqt6c);
+}
+
+const prefixes: []const []const u8 = &.{
+    "extras-",
+    "foss-extras-",
+    "foss-restricted-",
+    "posix-extras-",
+    "posix-restricted-",
+    "restricted-extras-",
+};
+
+const os_include_path: []const []const u8 = switch (host_os) {
+    .dragonfly, .freebsd, .netbsd, .openbsd => &.{
+        "/usr/local/include/qt6",
+        "/usr/local/include/KF6",
+        "/usr/local/include",
+        "/usr/include",
+        "/usr/local/lib/qt6/mkspecs/common/posix",
+    },
+    .linux => &.{
+        "/usr/include/" ++ @tagName(host_arch) ++ "-linux-gnu/qt6",
+        "/usr/include/qt6",
+        "/usr/include/KF6",
+        "/usr/include",
+        "/usr/lib/" ++ @tagName(host_arch) ++ "-linux-gnu/qt6/mkspecs/common/posix",
+        "/usr/lib/qt6/mkspecs/common/posix",
+        "/usr/lib64/qt6/mkspecs/common/posix",
+    },
+    .macos => &.{
+        "/usr/local/opt/qt6/include",
+        "/opt/homebrew/include",
+        "/opt/local/libexec/qt6/mkspecs/common/posix",
+    },
+    .windows => &.{
+        "C:/Qt/6.8.3/msvc2022_64/include",
+    },
+    else => @panic("Unsupported OS"),
+};
+
+const base_cpp_flags = &.{
+    "-O2",
+};
+
+const linux_cpp_flags = &.{
+    "-nostdinc++",
+    "-nostdlib++",
+};
+
+const c_flags = &.{
+    "-O2",
+};
+
+const Distro = enum {
+    arch,
+    fedora,
+    suse,
+    none,
+};
+
+const qt_modules = &.{
+    // Qt 6 Core, GUI, Widgets
+    "QtCore",
+    "QtGui",
+    "QtWidgets",
+    // Qt 6 Bluetooth
+    "QtBluetooth",
+    // Qt 6 Charts
+    "QtCharts",
+    // Qt 6 D-Bus
+    "QtDBus",
+    // Qt 6 Location
+    "QtLocation",
+    // Qt 6 Multimedia
+    "QtMultimedia",
+    "QtMultimediaWidgets",
+    // Qt 6 Network
+    "QtNetwork",
+    // Qt 6 OpenGL
+    "QtOpenGL",
+    "QtOpenGLWidgets",
+    // Qt 6 PDF
+    "QtPdf",
+    "QtPdfWidgets",
+    // Qt 6 Positioning
+    "QtPositioning",
+    // Qt 6 Print Support
+    "QtPrintSupport",
+    // Qt 6 Spatial Audio
+    "QtSpatialAudio",
+    // Qt 6 SQL
+    "QtSql",
+    // Qt 6 State Machine
+    "QtStateMachine",
+    // Qt 6 SVG
+    "QtSvg",
+    "QtSvgWidgets",
+    // Qt 6 TextToSpeech
+    "QtTextToSpeech",
+    // Qt 6 UI Plugin
+    "QtUiPlugin",
+    // Qt 6 UI Tools
+    "QtUiTools",
+    // Qt 6 Designer
+    "QtDesigner",
+    // Qt 6 WebChannel
+    "QtWebChannel",
+    "QtWebChannelQuick",
+    // Qt 6 WebEngine
+    "QtWebEngineCore",
+    "QtWebEngineWidgets",
+    // Qt 6 WebSockets
+    "QtWebSockets",
+    // Qt 6 XML
+    "QtXml",
+    // Qt 6 KArchive
+    "KArchive",
+    // Qt 6 Attica
+    "Attica",
+    "Attica/Attica",
+    "Attica/attica",
+    // Qt 6 KCodecs
+    "KCodecs",
+    // Qt 6 kColorPicker
+    "kColorPicker-Qt6",
+    "kColorPicker-Qt6/kColorPicker",
+    // Qt 6 KCompletion
+    "KCompletion",
+    // Qt 6 KConfig
+    "KConfig",
+    "KConfigCore",
+    "KConfigGui",
+    // Qt 6 KCoreAddons
+    "KCoreAddons",
+    // Qt 6 KCrash
+    "KCrash",
+    // Qt 6 KFileMetaData
+    "KFileMetaData",
+    "KFileMetaData/kfilemetadata",
+    // Qt 6 KGuiAddons
+    "KGuiAddons",
+    // Qt 6 KI18n
+    "KI18n",
+    "KI18nLocaleData",
+    // Qt 6 KIdleTime
+    "KIdleTime",
+    // Qt 6 kImageAnnotator
+    "kImageAnnotator-Qt6",
+    "kImageAnnotator-Qt6/kImageAnnotator",
+    // Qt 6 KItemModels
+    "KItemModels",
+    // Qt 6 KItemViews
+    "KItemViews",
+    // Qt 6 KJobWidgets
+    "KJobWidgets",
+    // Qt 6 KNewStuff
+    "KNewStuff",
+    "KNewStuffCore",
+    "KNewStuffCore/KNSCore",
+    "KNewStuffWidgets",
+    "KNewStuffWidgets/KNSWidgets",
+    // Qt 6 KPlotting
+    "KPlotting",
+    // Qt 6 KService
+    "KService",
+    // Qt 6 Solid
+    "Solid",
+    "Solid/Solid",
+    "Solid/solid",
+    // Qt 6 Sonnet
+    "Sonnet",
+    "SonnetCore",
+    "SonnetCore/sonnet",
+    "SonnetUi",
+    "SonnetUi/sonnet",
+    // Qt 6 KStatusNotifierItem
+    "KStatusNotifierItem",
+    // Qt 6 KSvg
+    "KSvg",
+    "KSvg/KSvg",
+    "KSvg/ksvg",
+    // Qt 6 KSyntaxHighlighting
+    "KSyntaxHighlighting",
+    "KSyntaxHighlighting/KSyntaxHighlighting",
+    // Qt 6 KTextWidgets
+    "KTextWidgets",
+    // Qt 6 KUnitConversion
+    "KUnitConversion",
+    "KUnitConversion/KUnitConversion",
+    "KUnitConversion/kunitconversion",
+    // Qt 6 KWidgetsAddons
+    "KWidgetsAddons",
+    // Qt 6 KColorScheme
+    "KColorScheme",
+    // Qt 6 KConfigWidgets
+    "KConfigWidgets",
+    // Qt 6 KBookmarks
+    "KBookmarks",
+    "KBookmarksWidgets",
+    // Qt 6 KNotifications
+    "KNotifications",
+    // Qt 6 KIconThemes
+    "KIconThemes",
+    "KIconWidgets",
+    // Qt 6 KXmlGui
+    "KXmlGui",
+    // Qt 6 QtKeychain
+    "qt6keychain",
+    // Qt 6 LayerShellQt
+    "LayerShellQt",
+    // Qt 6 KGlobalAccel
+    "KGlobalAccel",
+    // Qt 6 KWindowSystem
+    "KWindowSystem",
+    // Qt 6 PackageKit-Qt
+    "PackageKitQt",
+    "PackageKitQt/PackageKit",
+    "packagekitqt6",
+    "packagekitqt6/PackageKit",
+    // Qt 6 Accounts
+    "accounts-qt6",
+    "accounts-qt6/Accounts",
+    // Qt 6 SignOn
+    "signon-qt6",
+    "signon-qt6/SignOn",
+    // Qt 6 KIO
+    "KIO",
+    "KIOCore",
+    "KIOCore/kio",
+    "KIOFileWidgets",
+    "KIOGui",
+    "KIOGui/kio",
+    "KIOWidgets",
+    "KIOWidgets/kio",
+    // Qt 6 KParts
+    "KParts",
+    "KParts/KParts",
+    "KParts/kparts",
+    // Qt 6 KTextEditor
+    "KTextEditor",
+    "KTextEditor/KTextEditor",
+    "KTextEditor/ktexteditor",
+    // Qt 6 Poppler
+    "poppler/qt6",
+    // Qt 6 QCustomPlot
+    "QCustomPlotQt6",
+    // Qt 6 QScintilla
+    "Qsci",
+    // Qt 6 QTermWidget
+    "qtermwidget6",
+};

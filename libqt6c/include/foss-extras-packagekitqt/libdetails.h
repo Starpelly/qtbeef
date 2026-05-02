@@ -1,0 +1,87 @@
+#pragma once
+#ifndef SRC_FOSS_EXTRAS_PACKAGEKITQT_QT6C_LIBDETAILS_H
+#define SRC_FOSS_EXTRAS_PACKAGEKITQT_QT6C_LIBDETAILS_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+
+/// q_packagekit__details_new constructs a new PackageKit::Details object.
+///
+PackageKit__Details* q_packagekit__details_new();
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+
+/// q_packagekit__details_new2 constructs a new PackageKit::Details object.
+///
+/// @param other libqt_map of const char* to QVariant*
+///
+PackageKit__Details* q_packagekit__details_new2(libqt_map other);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self PackageKit__Details*
+///
+const char* q_packagekit__details_package_id(void* self);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self PackageKit__Details*
+///
+const char* q_packagekit__details_description(void* self);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// @param self PackageKit__Details*
+///
+/// @return enum PackageKit__Transaction__Group
+///
+int32_t q_packagekit__details_group(void* self);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self PackageKit__Details*
+///
+const char* q_packagekit__details_summary(void* self);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self PackageKit__Details*
+///
+const char* q_packagekit__details_url(void* self);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self PackageKit__Details*
+///
+const char* q_packagekit__details_license(void* self);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// @param self PackageKit__Details*
+///
+uintptr_t q_packagekit__details_size(void* self);
+
+/// [Upstream resources](https://github.com/PackageKit/PackageKit-Qt)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self PackageKit__Details*
+///
+void q_packagekit__details_delete(void* self);
+
+#endif

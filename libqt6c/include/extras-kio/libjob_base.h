@@ -1,0 +1,1039 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIO_QT6C_LIBJOB_BASE_H
+#define SRC_EXTRAS_KIO_QT6C_LIBJOB_BASE_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kio-job.html)
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// @param self KIO__Job*
+///
+const QMetaObject* k_io__job_meta_object(void* self);
+
+/// @param self KIO__Job*
+/// @param param1 const char*
+///
+void* k_io__job_metacast(void* self, const char* param1);
+
+/// @param self KIO__Job*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_io__job_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+///
+const char* k_io__job_tr(const char* s);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#start)
+///
+/// @param self KIO__Job*
+///
+void k_io__job_start(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#uiDelegateExtension)
+///
+/// @param self KIO__Job*
+///
+KIO__JobUiDelegateExtension* k_io__job_ui_delegate_extension(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#setUiDelegateExtension)
+///
+/// @param self KIO__Job*
+/// @param extension KIO__JobUiDelegateExtension*
+///
+void k_io__job_set_ui_delegate_extension(void* self, void* extension);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#errorString)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KIO__Job*
+///
+const char* k_io__job_error_string(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#detailedErrorStrings)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KIO__Job*
+///
+const char** k_io__job_detailed_error_strings(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#setParentJob)
+///
+/// @param self KIO__Job*
+/// @param parentJob KIO__Job*
+///
+void k_io__job_set_parent_job(void* self, void* parentJob);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#parentJob)
+///
+/// @param self KIO__Job*
+///
+KIO__Job* k_io__job_parent_job(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#setMetaData)
+///
+/// @param self KIO__Job*
+/// @param metaData KIO__MetaData*
+///
+void k_io__job_set_meta_data(void* self, void* metaData);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#addMetaData)
+///
+/// @param self KIO__Job*
+/// @param key const char*
+/// @param value const char*
+///
+void k_io__job_add_meta_data(void* self, const char* key, const char* value);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#addMetaData)
+///
+/// @param self KIO__Job*
+/// @param values libqt_map of const char* to const char*
+///
+void k_io__job_add_meta_data2(void* self, libqt_map values);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#mergeMetaData)
+///
+/// @param self KIO__Job*
+/// @param values libqt_map of const char* to const char*
+///
+void k_io__job_merge_meta_data(void* self, libqt_map values);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#outgoingMetaData)
+///
+/// @param self KIO__Job*
+///
+KIO__MetaData* k_io__job_outgoing_meta_data(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#metaData)
+///
+/// @param self KIO__Job*
+///
+KIO__MetaData* k_io__job_meta_data(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#queryMetaData)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KIO__Job*
+/// @param key const char*
+///
+const char* k_io__job_query_meta_data(void* self, const char* key);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#connected)
+///
+/// @param self KIO__Job*
+/// @param job KIO__Job*
+///
+void k_io__job_connected(void* self, void* job);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#connected)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KIO__Job* job)
+///
+void k_io__job_on_connected(void* self, void (*callback)(void*, void*));
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+///
+const char* k_io__job_tr2(const char* s, const char* c);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+/// @param n int
+///
+const char* k_io__job_tr3(const char* s, const char* c, int n);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#detailedErrorStrings)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KIO__Job*
+/// @param reqUrl QUrl*
+///
+const char** k_io__job_detailed_error_strings1(void* self, void* reqUrl);
+
+/// [Upstream resources](https://api.kde.org/kio-job.html#detailedErrorStrings)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KIO__Job*
+/// @param reqUrl QUrl*
+/// @param method int
+///
+const char** k_io__job_detailed_error_strings2(void* self, void* reqUrl, int method);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setUiDelegate)
+///
+/// @param self KIO__Job*
+/// @param delegate KJobUiDelegate*
+///
+void k_io__job_set_ui_delegate(void* self, void* delegate);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#uiDelegate)
+///
+/// @param self KIO__Job*
+///
+KJobUiDelegate* k_io__job_ui_delegate(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#capabilities)
+///
+/// @param self KIO__Job*
+///
+/// @return flag of enum KJob__Capability
+///
+int32_t k_io__job_capabilities(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isSuspended)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_is_suspended(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#kill)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_kill(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#suspend)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_suspend(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#resume)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_resume(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#exec)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_exec(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#error)
+///
+/// @param self KIO__Job*
+///
+int32_t k_io__job_error(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#errorText)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KIO__Job*
+///
+const char* k_io__job_error_text(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedAmount)
+///
+/// @param self KIO__Job*
+/// @param unit enum KJob__Unit
+///
+uintptr_t k_io__job_processed_amount(void* self, int32_t unit);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalAmount)
+///
+/// @param self KIO__Job*
+/// @param unit enum KJob__Unit
+///
+uintptr_t k_io__job_total_amount(void* self, int32_t unit);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#percent)
+///
+/// @param self KIO__Job*
+///
+uintptr_t k_io__job_percent(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setAutoDelete)
+///
+/// @param self KIO__Job*
+/// @param autodelete bool
+///
+void k_io__job_set_auto_delete(void* self, bool autodelete);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isAutoDelete)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_is_auto_delete(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setFinishedNotificationHidden)
+///
+/// @param self KIO__Job*
+///
+void k_io__job_set_finished_notification_hidden(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isFinishedNotificationHidden)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_is_finished_notification_hidden(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#isStartedWithExec)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_is_started_with_exec(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#elapsedTime)
+///
+/// @param self KIO__Job*
+///
+int64_t k_io__job_elapsed_time(void* self);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#infoMessage)
+///
+/// @param self KIO__Job*
+/// @param job KJob*
+/// @param message const char*
+///
+void k_io__job_info_message(void* self, void* job, const char* message);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#infoMessage)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, const char* message)
+///
+void k_io__job_on_info_message(void* self, void (*callback)(void*, void*, const char*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#warning)
+///
+/// @param self KIO__Job*
+/// @param job KJob*
+/// @param message const char*
+///
+void k_io__job_warning(void* self, void* job, const char* message);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#warning)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, const char* message)
+///
+void k_io__job_on_warning(void* self, void (*callback)(void*, void*, const char*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalSize)
+///
+/// @param self KIO__Job*
+/// @param job KJob*
+/// @param size uintptr_t
+///
+void k_io__job_total_size(void* self, void* job, uintptr_t size);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalSize)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, uintptr_t size)
+///
+void k_io__job_on_total_size(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedSize)
+///
+/// @param self KIO__Job*
+/// @param job KJob*
+/// @param size uintptr_t
+///
+void k_io__job_processed_size(void* self, void* job, uintptr_t size);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedSize)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, uintptr_t size)
+///
+void k_io__job_on_processed_size(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#speed)
+///
+/// @param self KIO__Job*
+/// @param job KJob*
+/// @param speed uintptr_t
+///
+void k_io__job_speed(void* self, void* job, uintptr_t speed);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#speed)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, uintptr_t speed)
+///
+void k_io__job_on_speed(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#kill)
+///
+/// @param self KIO__Job*
+/// @param verbosity enum KJob__KillVerbosity
+///
+bool k_io__job_kill1(void* self, int32_t verbosity);
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#setFinishedNotificationHidden)
+///
+/// @param self KIO__Job*
+/// @param hide bool
+///
+void k_io__job_set_finished_notification_hidden1(void* self, bool hide);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// @param self KIO__Job*
+/// @param event QEvent*
+///
+bool k_io__job_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// @param self KIO__Job*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_io__job_event_filter(void* self, void* watched, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KIO__Job*
+///
+const char* k_io__job_object_name(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setObjectName)
+///
+/// @param self KIO__Job*
+/// @param name const char*
+///
+void k_io__job_set_object_name(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWidgetType)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_is_widget_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWindowType)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_is_window_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isQuickItemType)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_is_quick_item_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#signalsBlocked)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_signals_blocked(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#blockSignals)
+///
+/// @param self KIO__Job*
+/// @param b bool
+///
+bool k_io__job_block_signals(void* self, bool b);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#thread)
+///
+/// @param self KIO__Job*
+///
+QThread* k_io__job_thread(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#moveToThread)
+///
+/// @param self KIO__Job*
+/// @param thread QThread*
+///
+bool k_io__job_move_to_thread(void* self, void* thread);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KIO__Job*
+/// @param interval int
+///
+int32_t k_io__job_start_timer(void* self, int interval);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KIO__Job*
+/// @param time int64_t of nanoseconds
+///
+int32_t k_io__job_start_timer2(void* self, int64_t time);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KIO__Job*
+/// @param id int
+///
+void k_io__job_kill_timer(void* self, int id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KIO__Job*
+/// @param id enum Qt__TimerId
+///
+void k_io__job_kill_timer2(void* self, int32_t id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#children)
+///
+/// @param self KIO__Job*
+///
+/// @return libqt_list of QObject*
+///
+libqt_list k_io__job_children(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setParent)
+///
+/// @param self KIO__Job*
+/// @param parent QObject*
+///
+void k_io__job_set_parent(void* self, void* parent);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#installEventFilter)
+///
+/// @param self KIO__Job*
+/// @param filterObj QObject*
+///
+void k_io__job_install_event_filter(void* self, void* filterObj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#removeEventFilter)
+///
+/// @param self KIO__Job*
+/// @param obj QObject*
+///
+void k_io__job_remove_event_filter(void* self, void* obj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+QMetaObject__Connection* k_io__job_connect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+///
+QMetaObject__Connection* k_io__job_connect2(void* sender, void* signal, void* receiver, void* method);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KIO__Job*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+///
+QMetaObject__Connection* k_io__job_connect3(void* self, void* sender, const char* signal, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_io__job_disconnect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param member QMetaMethod*
+///
+bool k_io__job_disconnect2(void* sender, void* signal, void* receiver, void* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KIO__Job*
+///
+bool k_io__job_disconnect3(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KIO__Job*
+/// @param receiver QObject*
+///
+bool k_io__job_disconnect4(void* self, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param param1 QMetaObject__Connection*
+///
+bool k_io__job_disconnect5(void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectTree)
+///
+/// @param self KIO__Job*
+///
+void k_io__job_dump_object_tree(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectInfo)
+///
+/// @param self KIO__Job*
+///
+void k_io__job_dump_object_info(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setProperty)
+///
+/// @param self KIO__Job*
+/// @param name const char*
+/// @param value QVariant*
+///
+bool k_io__job_set_property(void* self, const char* name, void* value);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#property)
+///
+/// @param self KIO__Job*
+/// @param name const char*
+///
+QVariant* k_io__job_property(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dynamicPropertyNames)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KIO__Job*
+///
+const char** k_io__job_dynamic_property_names(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KIO__Job*
+///
+QBindingStorage* k_io__job_binding_storage(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KIO__Job*
+///
+const QBindingStorage* k_io__job_binding_storage2(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KIO__Job*
+///
+void k_io__job_destroyed(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self)
+///
+void k_io__job_on_destroyed(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#parent)
+///
+/// @param self KIO__Job*
+///
+QObject* k_io__job_parent(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#inherits)
+///
+/// @param self KIO__Job*
+/// @param classname const char*
+///
+bool k_io__job_inherits(void* self, const char* classname);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#deleteLater)
+///
+/// @param self KIO__Job*
+///
+void k_io__job_delete_later(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KIO__Job*
+/// @param interval int
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_io__job_start_timer22(void* self, int interval, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KIO__Job*
+/// @param time int64_t of nanoseconds
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_io__job_start_timer23(void* self, int64_t time, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+/// @param param5 enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_io__job_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_io__job_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KIO__Job*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_io__job_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KIO__Job*
+/// @param signal const char*
+///
+bool k_io__job_disconnect1(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KIO__Job*
+/// @param signal const char*
+/// @param receiver QObject*
+///
+bool k_io__job_disconnect22(void* self, const char* signal, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KIO__Job*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_io__job_disconnect32(void* self, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KIO__Job*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_io__job_disconnect23(void* self, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KIO__Job*
+/// @param param1 QObject*
+///
+void k_io__job_destroyed1(void* self, void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, QObject* param1)
+///
+void k_io__job_on_destroyed1(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#finished)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job)
+///
+void k_io__job_on_finished(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#suspended)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job)
+///
+void k_io__job_on_suspended(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#resumed)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job)
+///
+void k_io__job_on_resumed(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#result)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job)
+///
+void k_io__job_on_result(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#totalAmountChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, enum KJob__Unit unit, uintptr_t amount)
+///
+void k_io__job_on_total_amount_changed(void* self, void (*callback)(void*, void*, int32_t, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#processedAmountChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, enum KJob__Unit unit, uintptr_t amount)
+///
+void k_io__job_on_processed_amount_changed(void* self, void (*callback)(void*, void*, int32_t, uintptr_t));
+
+/// Inherited from KJob
+///
+/// [Upstream resources](https://api.kde.org/kjob.html#percentChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, KJob* job, uintptr_t percent)
+///
+void k_io__job_on_percent_changed(void* self, void (*callback)(void*, void*, uintptr_t));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectNameChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KIO__Job*
+/// @param callback void func(KIO__Job* self, const char* objectName)
+///
+void k_io__job_on_object_name_changed(void* self, void (*callback)(void*, const char*));
+
+/// Delete this object from C++ memory.
+///
+/// @param self KIO__Job*
+///
+void k_io__job_delete(void* self);
+
+/// [Upstream resources](https://api.kde.org/kio-job-base.html#public-types)
+
+typedef enum {
+    KIO_JOBFLAG_DEFAULTFLAGS = 0,
+    KIO_JOBFLAG_HIDEPROGRESSINFO = 1,
+    KIO_JOBFLAG_RESUME = 2,
+    KIO_JOBFLAG_OVERWRITE = 4,
+    KIO_JOBFLAG_NOPRIVILEGEEXECUTION = 8
+} KIO__JobFlag;
+
+/// [Upstream resources](https://api.kde.org/kio-job-base.html#public-types)
+
+typedef enum {
+    KIO_LOADTYPE_RELOAD = 0,
+    KIO_LOADTYPE_NORELOAD = 1
+} KIO__LoadType;
+
+#endif

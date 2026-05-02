@@ -1,0 +1,103 @@
+#pragma once
+#ifndef SRCC_LIBQOFFSCREENSURFACE_HPP
+#define SRCC_LIBQOFFSCREENSURFACE_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QOffscreenSurface QOffscreenSurface;
+typedef struct QScreen QScreen;
+typedef struct QSize QSize;
+typedef struct QSurface QSurface;
+typedef struct QSurfaceFormat QSurfaceFormat;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+QOffscreenSurface* QOffscreenSurface_new();
+QOffscreenSurface* QOffscreenSurface_new2(QScreen* screen);
+QOffscreenSurface* QOffscreenSurface_new3(QScreen* screen, QObject* parent);
+QMetaObject* QOffscreenSurface_MetaObject(const QOffscreenSurface* self);
+void* QOffscreenSurface_Metacast(QOffscreenSurface* self, const char* param1);
+int QOffscreenSurface_Metacall(QOffscreenSurface* self, int param1, int param2, void** param3);
+int QOffscreenSurface_SurfaceType(const QOffscreenSurface* self);
+void QOffscreenSurface_Create(QOffscreenSurface* self);
+void QOffscreenSurface_Destroy(QOffscreenSurface* self);
+bool QOffscreenSurface_IsValid(const QOffscreenSurface* self);
+void QOffscreenSurface_SetFormat(QOffscreenSurface* self, const QSurfaceFormat* format);
+QSurfaceFormat* QOffscreenSurface_Format(const QOffscreenSurface* self);
+QSurfaceFormat* QOffscreenSurface_RequestedFormat(const QOffscreenSurface* self);
+QSize* QOffscreenSurface_Size(const QOffscreenSurface* self);
+QScreen* QOffscreenSurface_Screen(const QOffscreenSurface* self);
+void QOffscreenSurface_SetScreen(QOffscreenSurface* self, QScreen* screen);
+void QOffscreenSurface_ScreenChanged(QOffscreenSurface* self, QScreen* screen);
+void QOffscreenSurface_Connect_ScreenChanged(QOffscreenSurface* self, intptr_t slot);
+void QOffscreenSurface_OnMetaObject(const QOffscreenSurface* self, intptr_t slot);
+QMetaObject* QOffscreenSurface_SuperMetaObject(const QOffscreenSurface* self);
+void QOffscreenSurface_OnMetacast(QOffscreenSurface* self, intptr_t slot);
+void* QOffscreenSurface_SuperMetacast(QOffscreenSurface* self, const char* param1);
+void QOffscreenSurface_OnMetacall(QOffscreenSurface* self, intptr_t slot);
+int QOffscreenSurface_SuperMetacall(QOffscreenSurface* self, int param1, int param2, void** param3);
+void QOffscreenSurface_OnSurfaceType(const QOffscreenSurface* self, intptr_t slot);
+int QOffscreenSurface_SuperSurfaceType(const QOffscreenSurface* self);
+void QOffscreenSurface_OnFormat(const QOffscreenSurface* self, intptr_t slot);
+QSurfaceFormat* QOffscreenSurface_SuperFormat(const QOffscreenSurface* self);
+void QOffscreenSurface_OnSize(const QOffscreenSurface* self, intptr_t slot);
+QSize* QOffscreenSurface_SuperSize(const QOffscreenSurface* self);
+bool QOffscreenSurface_Event(QOffscreenSurface* self, QEvent* event);
+void QOffscreenSurface_OnEvent(QOffscreenSurface* self, intptr_t slot);
+bool QOffscreenSurface_SuperEvent(QOffscreenSurface* self, QEvent* event);
+bool QOffscreenSurface_EventFilter(QOffscreenSurface* self, QObject* watched, QEvent* event);
+void QOffscreenSurface_OnEventFilter(QOffscreenSurface* self, intptr_t slot);
+bool QOffscreenSurface_SuperEventFilter(QOffscreenSurface* self, QObject* watched, QEvent* event);
+void QOffscreenSurface_TimerEvent(QOffscreenSurface* self, QTimerEvent* event);
+void QOffscreenSurface_OnTimerEvent(QOffscreenSurface* self, intptr_t slot);
+void QOffscreenSurface_SuperTimerEvent(QOffscreenSurface* self, QTimerEvent* event);
+void QOffscreenSurface_ChildEvent(QOffscreenSurface* self, QChildEvent* event);
+void QOffscreenSurface_OnChildEvent(QOffscreenSurface* self, intptr_t slot);
+void QOffscreenSurface_SuperChildEvent(QOffscreenSurface* self, QChildEvent* event);
+void QOffscreenSurface_CustomEvent(QOffscreenSurface* self, QEvent* event);
+void QOffscreenSurface_OnCustomEvent(QOffscreenSurface* self, intptr_t slot);
+void QOffscreenSurface_SuperCustomEvent(QOffscreenSurface* self, QEvent* event);
+void QOffscreenSurface_ConnectNotify(QOffscreenSurface* self, const QMetaMethod* signal);
+void QOffscreenSurface_OnConnectNotify(QOffscreenSurface* self, intptr_t slot);
+void QOffscreenSurface_SuperConnectNotify(QOffscreenSurface* self, const QMetaMethod* signal);
+void QOffscreenSurface_DisconnectNotify(QOffscreenSurface* self, const QMetaMethod* signal);
+void QOffscreenSurface_OnDisconnectNotify(QOffscreenSurface* self, intptr_t slot);
+void QOffscreenSurface_SuperDisconnectNotify(QOffscreenSurface* self, const QMetaMethod* signal);
+void* QOffscreenSurface_ResolveInterface(const QOffscreenSurface* self, const char* name, int revision);
+void QOffscreenSurface_OnResolveInterface(const QOffscreenSurface* self, intptr_t slot);
+void* QOffscreenSurface_SuperResolveInterface(const QOffscreenSurface* self, const char* name, int revision);
+QObject* QOffscreenSurface_Sender(const QOffscreenSurface* self);
+void QOffscreenSurface_OnSender(const QOffscreenSurface* self, intptr_t slot);
+QObject* QOffscreenSurface_SuperSender(const QOffscreenSurface* self);
+int QOffscreenSurface_SenderSignalIndex(const QOffscreenSurface* self);
+void QOffscreenSurface_OnSenderSignalIndex(const QOffscreenSurface* self, intptr_t slot);
+int QOffscreenSurface_SuperSenderSignalIndex(const QOffscreenSurface* self);
+int QOffscreenSurface_Receivers(const QOffscreenSurface* self, const char* signal);
+void QOffscreenSurface_OnReceivers(const QOffscreenSurface* self, intptr_t slot);
+int QOffscreenSurface_SuperReceivers(const QOffscreenSurface* self, const char* signal);
+bool QOffscreenSurface_IsSignalConnected(const QOffscreenSurface* self, const QMetaMethod* signal);
+void QOffscreenSurface_OnIsSignalConnected(const QOffscreenSurface* self, intptr_t slot);
+bool QOffscreenSurface_SuperIsSignalConnected(const QOffscreenSurface* self, const QMetaMethod* signal);
+void QOffscreenSurface_Delete(QOffscreenSurface* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

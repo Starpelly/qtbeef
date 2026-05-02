@@ -1,0 +1,2021 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIO_QT6C_LIBKSHELLCOMPLETION_H
+#define SRC_EXTRAS_KIO_QT6C_LIBKSHELLCOMPLETION_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html)
+
+/// k_shellcompletion_new constructs a new KShellCompletion object.
+///
+KShellCompletion* k_shellcompletion_new();
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// @param self KShellCompletion*
+///
+const QMetaObject* k_shellcompletion_meta_object(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KShellCompletion*
+/// @param callback const QMetaObject* func()
+///
+void k_shellcompletion_on_meta_object(void* self, const QMetaObject* (*callback)());
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_meta_object` instead
+///
+#define k_shellcompletion_qbase_meta_object k_shellcompletion_super_meta_object
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#metaObject)
+///
+/// Base class method implementation
+///
+/// @param self KShellCompletion*
+///
+const QMetaObject* k_shellcompletion_super_meta_object(void* self);
+
+/// @param self KShellCompletion*
+/// @param param1 const char*
+///
+void* k_shellcompletion_metacast(void* self, const char* param1);
+
+/// Allows for overriding the related default method
+///
+/// @param self KShellCompletion*
+/// @param callback void* func(KShellCompletion* self, const char* param1)
+///
+void k_shellcompletion_on_metacast(void* self, void* (*callback)(void*, const char*));
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_metacast` instead
+///
+#define k_shellcompletion_qbase_metacast k_shellcompletion_super_metacast
+
+/// Base class method implementation
+///
+/// @param self KShellCompletion*
+/// @param param1 const char*
+///
+void* k_shellcompletion_super_metacast(void* self, const char* param1);
+
+/// @param self KShellCompletion*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_shellcompletion_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// Allows for overriding the related default method
+///
+/// @param self KShellCompletion*
+/// @param callback int32_t func(KShellCompletion* self, enum QMetaObject__Call param1, int param2, void* param3)
+///
+void k_shellcompletion_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*));
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_metacall` instead
+///
+#define k_shellcompletion_qbase_metacall k_shellcompletion_super_metacall
+
+/// Base class method implementation
+///
+/// @param self KShellCompletion*
+/// @param param1 enum QMetaObject__Call
+/// @param param2 int
+/// @param param3 void*
+///
+int32_t k_shellcompletion_super_metacall(void* self, int32_t param1, int param2, void* param3);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+///
+const char* k_shellcompletion_tr(const char* s);
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#makeCompletion)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KShellCompletion*
+/// @param text const char*
+///
+const char* k_shellcompletion_make_completion(void* self, const char* text);
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#makeCompletion)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KShellCompletion*
+/// @param callback const char* func(KShellCompletion* self, const char* text)
+///
+void k_shellcompletion_on_make_completion(void* self, const char* (*callback)(void*, const char*));
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_make_completion` instead
+///
+#define k_shellcompletion_qbase_make_completion k_shellcompletion_super_make_completion
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#makeCompletion)
+///
+/// Base class method implementation
+///
+/// @param self KShellCompletion*
+/// @param text const char*
+///
+const char* k_shellcompletion_super_make_completion(void* self, const char* text);
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#postProcessMatches)
+///
+/// @param self KShellCompletion*
+/// @param matches const char**
+///
+void k_shellcompletion_post_process_matches(void* self, const char* matches[1]);
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#postProcessMatches)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, const char** matches)
+///
+void k_shellcompletion_on_post_process_matches(void* self, void (*callback)(void*, const char**));
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_post_process_matches` instead
+///
+#define k_shellcompletion_qbase_post_process_matches k_shellcompletion_super_post_process_matches
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#postProcessMatches)
+///
+/// Base class method implementation
+///
+/// @param self KShellCompletion*
+/// @param matches const char**
+///
+void k_shellcompletion_super_post_process_matches(void* self, const char* matches[1]);
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#postProcessMatches)
+///
+/// @param self KShellCompletion*
+/// @param matches KCompletionMatches*
+///
+void k_shellcompletion_post_process_matches2(void* self, void* matches);
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#postProcessMatches)
+///
+/// Allows for overriding the related default method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, KCompletionMatches* matches)
+///
+void k_shellcompletion_on_post_process_matches2(void* self, void (*callback)(void*, void*));
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_post_process_matches2` instead
+///
+#define k_shellcompletion_qbase_post_process_matches2 k_shellcompletion_super_post_process_matches2
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#postProcessMatches)
+///
+/// Base class method implementation
+///
+/// @param self KShellCompletion*
+/// @param matches KCompletionMatches*
+///
+void k_shellcompletion_super_post_process_matches2(void* self, void* matches);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+///
+const char* k_shellcompletion_tr2(const char* s, const char* c);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#tr)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param s const char*
+/// @param c const char*
+/// @param n int
+///
+const char* k_shellcompletion_tr3(const char* s, const char* c, int n);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replacedPath)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KShellCompletion*
+/// @param text const char*
+///
+const char* k_shellcompletion_replaced_path(void* self, const char* text);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replacedPath)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param text const char*
+/// @param replaceHome bool
+///
+const char* k_shellcompletion_replaced_path2(const char* text, bool replaceHome);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setMimeTypeFilters)
+///
+/// @param self KShellCompletion*
+/// @param mimeTypes const char**
+///
+void k_shellcompletion_set_mime_type_filters(void* self, const char* mimeTypes[1]);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#mimeTypeFilters)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KShellCompletion*
+///
+const char** k_shellcompletion_mime_type_filters(void* self);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replacedPath)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param text const char*
+/// @param replaceHome bool
+/// @param replaceEnv bool
+///
+const char* k_shellcompletion_replaced_path3(const char* text, bool replaceHome, bool replaceEnv);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#substringCompletion)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KShellCompletion*
+/// @param stringVal const char*
+///
+const char** k_shellcompletion_substring_completion(void* self, const char* stringVal);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#items)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KShellCompletion*
+///
+const char** k_shellcompletion_items(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#isEmpty)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_is_empty(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#completionMode)
+///
+/// @param self KShellCompletion*
+///
+/// @return enum KCompletion__CompletionMode
+///
+int32_t k_shellcompletion_completion_mode(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#order)
+///
+/// @param self KShellCompletion*
+///
+/// @return enum KCompletion__CompOrder
+///
+int32_t k_shellcompletion_order(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#ignoreCase)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_ignore_case(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#shouldAutoSuggest)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_should_auto_suggest(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#allMatches)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KShellCompletion*
+///
+const char** k_shellcompletion_all_matches(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#allMatches)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KShellCompletion*
+/// @param stringVal const char*
+///
+const char** k_shellcompletion_all_matches2(void* self, const char* stringVal);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#allWeightedMatches)
+///
+/// @param self KShellCompletion*
+///
+KCompletionMatches* k_shellcompletion_all_weighted_matches(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#allWeightedMatches)
+///
+/// @param self KShellCompletion*
+/// @param stringVal const char*
+///
+KCompletionMatches* k_shellcompletion_all_weighted_matches2(void* self, const char* stringVal);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#soundsEnabled)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_sounds_enabled(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#hasMultipleMatches)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_has_multiple_matches(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#previousMatch)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KShellCompletion*
+///
+const char* k_shellcompletion_previous_match(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#nextMatch)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KShellCompletion*
+///
+const char* k_shellcompletion_next_match(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#insertItems)
+///
+/// @param self KShellCompletion*
+/// @param items const char**
+///
+void k_shellcompletion_insert_items(void* self, const char* items[1]);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#addItem)
+///
+/// @param self KShellCompletion*
+/// @param item const char*
+///
+void k_shellcompletion_add_item(void* self, const char* item);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#addItem)
+///
+/// @param self KShellCompletion*
+/// @param item const char*
+/// @param weight uint32_t
+///
+void k_shellcompletion_add_item2(void* self, const char* item, uint32_t weight);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#removeItem)
+///
+/// @param self KShellCompletion*
+/// @param item const char*
+///
+void k_shellcompletion_remove_item(void* self, const char* item);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#match)
+///
+/// @param self KShellCompletion*
+/// @param item const char*
+///
+void k_shellcompletion_match(void* self, const char* item);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#match)
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, const char* item)
+///
+void k_shellcompletion_on_match(void* self, void (*callback)(void*, const char*));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#matches)
+///
+/// @param self KShellCompletion*
+/// @param matchlist const char**
+///
+void k_shellcompletion_matches(void* self, const char* matchlist[1]);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#matches)
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, const char** matchlist)
+///
+void k_shellcompletion_on_matches(void* self, void (*callback)(void*, const char**));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#multipleMatches)
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_multiple_matches(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#multipleMatches)
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self)
+///
+void k_shellcompletion_on_multiple_matches(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KShellCompletion*
+///
+const char* k_shellcompletion_object_name(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setObjectName)
+///
+/// @param self KShellCompletion*
+/// @param name const char*
+///
+void k_shellcompletion_set_object_name(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWidgetType)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_is_widget_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isWindowType)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_is_window_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isQuickItemType)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_is_quick_item_type(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#signalsBlocked)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_signals_blocked(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#blockSignals)
+///
+/// @param self KShellCompletion*
+/// @param b bool
+///
+bool k_shellcompletion_block_signals(void* self, bool b);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#thread)
+///
+/// @param self KShellCompletion*
+///
+QThread* k_shellcompletion_thread(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#moveToThread)
+///
+/// @param self KShellCompletion*
+/// @param thread QThread*
+///
+bool k_shellcompletion_move_to_thread(void* self, void* thread);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KShellCompletion*
+/// @param interval int
+///
+int32_t k_shellcompletion_start_timer(void* self, int interval);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KShellCompletion*
+/// @param time int64_t of nanoseconds
+///
+int32_t k_shellcompletion_start_timer2(void* self, int64_t time);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KShellCompletion*
+/// @param id int
+///
+void k_shellcompletion_kill_timer(void* self, int id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#killTimer)
+///
+/// @param self KShellCompletion*
+/// @param id enum Qt__TimerId
+///
+void k_shellcompletion_kill_timer2(void* self, int32_t id);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#children)
+///
+/// @param self KShellCompletion*
+///
+/// @return libqt_list of QObject*
+///
+libqt_list k_shellcompletion_children(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setParent)
+///
+/// @param self KShellCompletion*
+/// @param parent QObject*
+///
+void k_shellcompletion_set_parent(void* self, void* parent);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#installEventFilter)
+///
+/// @param self KShellCompletion*
+/// @param filterObj QObject*
+///
+void k_shellcompletion_install_event_filter(void* self, void* filterObj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#removeEventFilter)
+///
+/// @param self KShellCompletion*
+/// @param obj QObject*
+///
+void k_shellcompletion_remove_event_filter(void* self, void* obj);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+QMetaObject__Connection* k_shellcompletion_connect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+///
+QMetaObject__Connection* k_shellcompletion_connect2(void* sender, void* signal, void* receiver, void* method);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KShellCompletion*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+///
+QMetaObject__Connection* k_shellcompletion_connect3(void* self, void* sender, const char* signal, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_shellcompletion_disconnect(void* sender, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param member QMetaMethod*
+///
+bool k_shellcompletion_disconnect2(void* sender, void* signal, void* receiver, void* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_disconnect3(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KShellCompletion*
+/// @param receiver QObject*
+///
+bool k_shellcompletion_disconnect4(void* self, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param param1 QMetaObject__Connection*
+///
+bool k_shellcompletion_disconnect5(void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectTree)
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_dump_object_tree(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dumpObjectInfo)
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_dump_object_info(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#setProperty)
+///
+/// @param self KShellCompletion*
+/// @param name const char*
+/// @param value QVariant*
+///
+bool k_shellcompletion_set_property(void* self, const char* name, void* value);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#property)
+///
+/// @param self KShellCompletion*
+/// @param name const char*
+///
+QVariant* k_shellcompletion_property(void* self, const char* name);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#dynamicPropertyNames)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KShellCompletion*
+///
+const char** k_shellcompletion_dynamic_property_names(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KShellCompletion*
+///
+QBindingStorage* k_shellcompletion_binding_storage(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#bindingStorage)
+///
+/// @param self KShellCompletion*
+///
+const QBindingStorage* k_shellcompletion_binding_storage2(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_destroyed(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self)
+///
+void k_shellcompletion_on_destroyed(void* self, void (*callback)(void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#parent)
+///
+/// @param self KShellCompletion*
+///
+QObject* k_shellcompletion_parent(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#inherits)
+///
+/// @param self KShellCompletion*
+/// @param classname const char*
+///
+bool k_shellcompletion_inherits(void* self, const char* classname);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#deleteLater)
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_delete_later(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KShellCompletion*
+/// @param interval int
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_shellcompletion_start_timer22(void* self, int interval, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#startTimer)
+///
+/// @param self KShellCompletion*
+/// @param time int64_t of nanoseconds
+/// @param timerType enum Qt__TimerType
+///
+int32_t k_shellcompletion_start_timer23(void* self, int64_t time, int32_t timerType);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+/// @param param5 enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_shellcompletion_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param sender QObject*
+/// @param signal QMetaMethod*
+/// @param receiver QObject*
+/// @param method QMetaMethod*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_shellcompletion_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connect)
+///
+/// @param self KShellCompletion*
+/// @param sender QObject*
+/// @param signal const char*
+/// @param member const char*
+/// @param type enum Qt__ConnectionType
+///
+QMetaObject__Connection* k_shellcompletion_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KShellCompletion*
+/// @param signal const char*
+///
+bool k_shellcompletion_disconnect1(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KShellCompletion*
+/// @param signal const char*
+/// @param receiver QObject*
+///
+bool k_shellcompletion_disconnect22(void* self, const char* signal, void* receiver);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KShellCompletion*
+/// @param signal const char*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_shellcompletion_disconnect32(void* self, const char* signal, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnect)
+///
+/// @param self KShellCompletion*
+/// @param receiver QObject*
+/// @param member const char*
+///
+bool k_shellcompletion_disconnect23(void* self, void* receiver, const char* member);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KShellCompletion*
+/// @param param1 QObject*
+///
+void k_shellcompletion_destroyed1(void* self, void* param1);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#destroyed)
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, QObject* param1)
+///
+void k_shellcompletion_on_destroyed1(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setDir)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param dir QUrl*
+///
+void k_shellcompletion_set_dir(void* self, void* dir);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_dir` instead
+///
+#define k_shellcompletion_qbase_set_dir k_shellcompletion_super_set_dir
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setDir)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param dir QUrl*
+///
+void k_shellcompletion_super_set_dir(void* self, void* dir);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setDir)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, QUrl* dir)
+///
+void k_shellcompletion_on_set_dir(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#dir)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+QUrl* k_shellcompletion_dir(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_dir` instead
+///
+#define k_shellcompletion_qbase_dir k_shellcompletion_super_dir
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#dir)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+QUrl* k_shellcompletion_super_dir(void* self);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#dir)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback QUrl* func()
+///
+void k_shellcompletion_on_dir(void* self, QUrl* (*callback)());
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#isRunning)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_is_running(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_is_running` instead
+///
+#define k_shellcompletion_qbase_is_running k_shellcompletion_super_is_running
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#isRunning)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_super_is_running(void* self);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#isRunning)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback bool func()
+///
+void k_shellcompletion_on_is_running(void* self, bool (*callback)());
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#stop)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_stop(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_stop` instead
+///
+#define k_shellcompletion_qbase_stop k_shellcompletion_super_stop
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#stop)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_super_stop(void* self);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#stop)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func()
+///
+void k_shellcompletion_on_stop(void* self, void (*callback)());
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#mode)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+/// @return enum KUrlCompletion__Mode
+///
+int32_t k_shellcompletion_mode(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_mode` instead
+///
+#define k_shellcompletion_qbase_mode k_shellcompletion_super_mode
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#mode)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+/// @return enum KUrlCompletion__Mode
+///
+int32_t k_shellcompletion_super_mode(void* self);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#mode)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback int32_t func()
+///
+void k_shellcompletion_on_mode(void* self, int32_t (*callback)());
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setMode)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param mode enum KUrlCompletion__Mode
+///
+void k_shellcompletion_set_mode(void* self, int32_t mode);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_mode` instead
+///
+#define k_shellcompletion_qbase_set_mode k_shellcompletion_super_set_mode
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setMode)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param mode enum KUrlCompletion__Mode
+///
+void k_shellcompletion_super_set_mode(void* self, int32_t mode);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setMode)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, enum KUrlCompletion__Mode mode)
+///
+void k_shellcompletion_on_set_mode(void* self, void (*callback)(void*, int32_t));
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replaceEnv)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_replace_env(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_replace_env` instead
+///
+#define k_shellcompletion_qbase_replace_env k_shellcompletion_super_replace_env
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replaceEnv)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_super_replace_env(void* self);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replaceEnv)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback bool func()
+///
+void k_shellcompletion_on_replace_env(void* self, bool (*callback)());
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setReplaceEnv)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param replace bool
+///
+void k_shellcompletion_set_replace_env(void* self, bool replace);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_replace_env` instead
+///
+#define k_shellcompletion_qbase_set_replace_env k_shellcompletion_super_set_replace_env
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setReplaceEnv)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param replace bool
+///
+void k_shellcompletion_super_set_replace_env(void* self, bool replace);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setReplaceEnv)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, bool replace)
+///
+void k_shellcompletion_on_set_replace_env(void* self, void (*callback)(void*, bool));
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replaceHome)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_replace_home(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_replace_home` instead
+///
+#define k_shellcompletion_qbase_replace_home k_shellcompletion_super_replace_home
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replaceHome)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+bool k_shellcompletion_super_replace_home(void* self);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#replaceHome)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback bool func()
+///
+void k_shellcompletion_on_replace_home(void* self, bool (*callback)());
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setReplaceHome)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param replace bool
+///
+void k_shellcompletion_set_replace_home(void* self, bool replace);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_replace_home` instead
+///
+#define k_shellcompletion_qbase_set_replace_home k_shellcompletion_super_set_replace_home
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setReplaceHome)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param replace bool
+///
+void k_shellcompletion_super_set_replace_home(void* self, bool replace);
+
+/// Inherited from KUrlCompletion
+///
+/// [Upstream resources](https://api.kde.org/kurlcompletion.html#setReplaceHome)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, bool replace)
+///
+void k_shellcompletion_on_set_replace_home(void* self, void (*callback)(void*, bool));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#lastMatch)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+const char* k_shellcompletion_last_match(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_last_match` instead
+///
+#define k_shellcompletion_qbase_last_match k_shellcompletion_super_last_match
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#lastMatch)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+const char* k_shellcompletion_super_last_match(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#lastMatch)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback const char* func()
+///
+void k_shellcompletion_on_last_match(void* self, const char* (*callback)());
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setCompletionMode)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param mode enum KCompletion__CompletionMode
+///
+void k_shellcompletion_set_completion_mode(void* self, int32_t mode);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_completion_mode` instead
+///
+#define k_shellcompletion_qbase_set_completion_mode k_shellcompletion_super_set_completion_mode
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setCompletionMode)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param mode enum KCompletion__CompletionMode
+///
+void k_shellcompletion_super_set_completion_mode(void* self, int32_t mode);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setCompletionMode)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, enum KCompletion__CompletionMode mode)
+///
+void k_shellcompletion_on_set_completion_mode(void* self, void (*callback)(void*, int32_t));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setOrder)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param order enum KCompletion__CompOrder
+///
+void k_shellcompletion_set_order(void* self, int32_t order);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_order` instead
+///
+#define k_shellcompletion_qbase_set_order k_shellcompletion_super_set_order
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setOrder)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param order enum KCompletion__CompOrder
+///
+void k_shellcompletion_super_set_order(void* self, int32_t order);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setOrder)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, enum KCompletion__CompOrder order)
+///
+void k_shellcompletion_on_set_order(void* self, void (*callback)(void*, int32_t));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setIgnoreCase)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param ignoreCase bool
+///
+void k_shellcompletion_set_ignore_case(void* self, bool ignoreCase);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_ignore_case` instead
+///
+#define k_shellcompletion_qbase_set_ignore_case k_shellcompletion_super_set_ignore_case
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setIgnoreCase)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param ignoreCase bool
+///
+void k_shellcompletion_super_set_ignore_case(void* self, bool ignoreCase);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setIgnoreCase)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, bool ignoreCase)
+///
+void k_shellcompletion_on_set_ignore_case(void* self, void (*callback)(void*, bool));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setSoundsEnabled)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param enable bool
+///
+void k_shellcompletion_set_sounds_enabled(void* self, bool enable);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_sounds_enabled` instead
+///
+#define k_shellcompletion_qbase_set_sounds_enabled k_shellcompletion_super_set_sounds_enabled
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setSoundsEnabled)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param enable bool
+///
+void k_shellcompletion_super_set_sounds_enabled(void* self, bool enable);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setSoundsEnabled)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, bool enable)
+///
+void k_shellcompletion_on_set_sounds_enabled(void* self, void (*callback)(void*, bool));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setItems)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param itemList const char**
+///
+void k_shellcompletion_set_items(void* self, const char* itemList[1]);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_items` instead
+///
+#define k_shellcompletion_qbase_set_items k_shellcompletion_super_set_items
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setItems)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param itemList const char**
+///
+void k_shellcompletion_super_set_items(void* self, const char* itemList[1]);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setItems)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, const char** itemList)
+///
+void k_shellcompletion_on_set_items(void* self, void (*callback)(void*, const char**));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#clear)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_clear(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_clear` instead
+///
+#define k_shellcompletion_qbase_clear k_shellcompletion_super_clear
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#clear)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_super_clear(void* self);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#clear)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func()
+///
+void k_shellcompletion_on_clear(void* self, void (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QEvent*
+///
+bool k_shellcompletion_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_event` instead
+///
+#define k_shellcompletion_qbase_event k_shellcompletion_super_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QEvent*
+///
+bool k_shellcompletion_super_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#event)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback bool func(KShellCompletion* self, QEvent* event)
+///
+void k_shellcompletion_on_event(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_shellcompletion_event_filter(void* self, void* watched, void* event);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_event_filter` instead
+///
+#define k_shellcompletion_qbase_event_filter k_shellcompletion_super_event_filter
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param watched QObject*
+/// @param event QEvent*
+///
+bool k_shellcompletion_super_event_filter(void* self, void* watched, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#eventFilter)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback bool func(KShellCompletion* self, QObject* watched, QEvent* event)
+///
+void k_shellcompletion_on_event_filter(void* self, bool (*callback)(void*, void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QTimerEvent*
+///
+void k_shellcompletion_timer_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_timer_event` instead
+///
+#define k_shellcompletion_qbase_timer_event k_shellcompletion_super_timer_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QTimerEvent*
+///
+void k_shellcompletion_super_timer_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#timerEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, QTimerEvent* event)
+///
+void k_shellcompletion_on_timer_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QChildEvent*
+///
+void k_shellcompletion_child_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_child_event` instead
+///
+#define k_shellcompletion_qbase_child_event k_shellcompletion_super_child_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QChildEvent*
+///
+void k_shellcompletion_super_child_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#childEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, QChildEvent* event)
+///
+void k_shellcompletion_on_child_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QEvent*
+///
+void k_shellcompletion_custom_event(void* self, void* event);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_custom_event` instead
+///
+#define k_shellcompletion_qbase_custom_event k_shellcompletion_super_custom_event
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param event QEvent*
+///
+void k_shellcompletion_super_custom_event(void* self, void* event);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#customEvent)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, QEvent* event)
+///
+void k_shellcompletion_on_custom_event(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal QMetaMethod*
+///
+void k_shellcompletion_connect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_connect_notify` instead
+///
+#define k_shellcompletion_qbase_connect_notify k_shellcompletion_super_connect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal QMetaMethod*
+///
+void k_shellcompletion_super_connect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#connectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, QMetaMethod* signal)
+///
+void k_shellcompletion_on_connect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal QMetaMethod*
+///
+void k_shellcompletion_disconnect_notify(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_disconnect_notify` instead
+///
+#define k_shellcompletion_qbase_disconnect_notify k_shellcompletion_super_disconnect_notify
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal QMetaMethod*
+///
+void k_shellcompletion_super_disconnect_notify(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#disconnectNotify)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, QMetaMethod* signal)
+///
+void k_shellcompletion_on_disconnect_notify(void* self, void (*callback)(void*, void*));
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setShouldAutoSuggest)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param shouldAutosuggest bool
+///
+void k_shellcompletion_set_should_auto_suggest(void* self, bool shouldAutosuggest);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_set_should_auto_suggest` instead
+///
+#define k_shellcompletion_qbase_set_should_auto_suggest k_shellcompletion_super_set_should_auto_suggest
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setShouldAutoSuggest)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param shouldAutosuggest bool
+///
+void k_shellcompletion_super_set_should_auto_suggest(void* self, bool shouldAutosuggest);
+
+/// Inherited from KCompletion
+///
+/// [Upstream resources](https://api.kde.org/kcompletion.html#setShouldAutoSuggest)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, bool shouldAutosuggest)
+///
+void k_shellcompletion_on_set_should_auto_suggest(void* self, void (*callback)(void*, bool));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+QObject* k_shellcompletion_sender(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_sender` instead
+///
+#define k_shellcompletion_qbase_sender k_shellcompletion_super_sender
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+QObject* k_shellcompletion_super_sender(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#sender)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback QObject* func()
+///
+void k_shellcompletion_on_sender(void* self, QObject* (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+int32_t k_shellcompletion_sender_signal_index(void* self);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_sender_signal_index` instead
+///
+#define k_shellcompletion_qbase_sender_signal_index k_shellcompletion_super_sender_signal_index
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+///
+int32_t k_shellcompletion_super_sender_signal_index(void* self);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#senderSignalIndex)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback int32_t func()
+///
+void k_shellcompletion_on_sender_signal_index(void* self, int32_t (*callback)());
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal const char*
+///
+int32_t k_shellcompletion_receivers(void* self, const char* signal);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_receivers` instead
+///
+#define k_shellcompletion_qbase_receivers k_shellcompletion_super_receivers
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal const char*
+///
+int32_t k_shellcompletion_super_receivers(void* self, const char* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#receivers)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback int32_t func(KShellCompletion* self, const char* signal)
+///
+void k_shellcompletion_on_receivers(void* self, int32_t (*callback)(void*, const char*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal QMetaMethod*
+///
+bool k_shellcompletion_is_signal_connected(void* self, void* signal);
+
+/// @warning DEPRECATED: Use `k_shellcompletion_super_is_signal_connected` instead
+///
+#define k_shellcompletion_qbase_is_signal_connected k_shellcompletion_super_is_signal_connected
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param signal QMetaMethod*
+///
+bool k_shellcompletion_super_is_signal_connected(void* self, void* signal);
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#isSignalConnected)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KShellCompletion*
+/// @param callback bool func(KShellCompletion* self, QMetaMethod* signal)
+///
+void k_shellcompletion_on_is_signal_connected(void* self, bool (*callback)(void*, void*));
+
+/// Inherited from QObject
+///
+/// [Upstream resources](https://doc.qt.io/qt-6/qobject.html#objectNameChanged)
+///
+/// Wrapper to allow calling private signal
+///
+/// @param self KShellCompletion*
+/// @param callback void func(KShellCompletion* self, const char* objectName)
+///
+void k_shellcompletion_on_object_name_changed(void* self, void (*callback)(void*, const char*));
+
+/// [Upstream resources](https://api.kde.org/kshellcompletion.html#dtor.KShellCompletion)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self KShellCompletion*
+///
+void k_shellcompletion_delete(void* self);
+
+#endif

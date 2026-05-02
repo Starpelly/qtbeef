@@ -1,0 +1,264 @@
+#pragma once
+#ifndef SRC_EXTRAS_KITEMVIEWSC_LIBKLISTWIDGETSEARCHLINE_HPP
+#define SRC_EXTRAS_KITEMVIEWSC_LIBKLISTWIDGETSEARCHLINE_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KListWidgetSearchLine KListWidgetSearchLine;
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QLineEdit QLineEdit;
+typedef struct QListWidget QListWidget;
+typedef struct QListWidgetItem QListWidgetItem;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QRect QRect;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QStyleOptionFrame QStyleOptionFrame;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+KListWidgetSearchLine* KListWidgetSearchLine_new(QWidget* parent);
+KListWidgetSearchLine* KListWidgetSearchLine_new2();
+KListWidgetSearchLine* KListWidgetSearchLine_new3(QWidget* parent, QListWidget* listWidget);
+QMetaObject* KListWidgetSearchLine_MetaObject(const KListWidgetSearchLine* self);
+void* KListWidgetSearchLine_Metacast(KListWidgetSearchLine* self, const char* param1);
+int KListWidgetSearchLine_Metacall(KListWidgetSearchLine* self, int param1, int param2, void** param3);
+int KListWidgetSearchLine_CaseSensitive(const KListWidgetSearchLine* self);
+QListWidget* KListWidgetSearchLine_ListWidget(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_UpdateSearch(KListWidgetSearchLine* self, const libqt_string s);
+void KListWidgetSearchLine_SetCaseSensitivity(KListWidgetSearchLine* self, int cs);
+void KListWidgetSearchLine_SetListWidget(KListWidgetSearchLine* self, QListWidget* lv);
+void KListWidgetSearchLine_Clear(KListWidgetSearchLine* self);
+bool KListWidgetSearchLine_ItemMatches(const KListWidgetSearchLine* self, const QListWidgetItem* item, const libqt_string s);
+bool KListWidgetSearchLine_Event(KListWidgetSearchLine* self, QEvent* event);
+void KListWidgetSearchLine_OnMetaObject(const KListWidgetSearchLine* self, intptr_t slot);
+QMetaObject* KListWidgetSearchLine_SuperMetaObject(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnMetacast(KListWidgetSearchLine* self, intptr_t slot);
+void* KListWidgetSearchLine_SuperMetacast(KListWidgetSearchLine* self, const char* param1);
+void KListWidgetSearchLine_OnMetacall(KListWidgetSearchLine* self, intptr_t slot);
+int KListWidgetSearchLine_SuperMetacall(KListWidgetSearchLine* self, int param1, int param2, void** param3);
+void KListWidgetSearchLine_OnUpdateSearch(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperUpdateSearch(KListWidgetSearchLine* self, const libqt_string s);
+void KListWidgetSearchLine_OnItemMatches(const KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperItemMatches(const KListWidgetSearchLine* self, const QListWidgetItem* item, const libqt_string s);
+void KListWidgetSearchLine_OnEvent(KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperEvent(KListWidgetSearchLine* self, QEvent* event);
+QSize* KListWidgetSearchLine_SizeHint(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnSizeHint(const KListWidgetSearchLine* self, intptr_t slot);
+QSize* KListWidgetSearchLine_SuperSizeHint(const KListWidgetSearchLine* self);
+QSize* KListWidgetSearchLine_MinimumSizeHint(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnMinimumSizeHint(const KListWidgetSearchLine* self, intptr_t slot);
+QSize* KListWidgetSearchLine_SuperMinimumSizeHint(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_MousePressEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_OnMousePressEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperMousePressEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_MouseMoveEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_OnMouseMoveEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperMouseMoveEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_MouseReleaseEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_OnMouseReleaseEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperMouseReleaseEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_MouseDoubleClickEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_OnMouseDoubleClickEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperMouseDoubleClickEvent(KListWidgetSearchLine* self, QMouseEvent* param1);
+void KListWidgetSearchLine_KeyPressEvent(KListWidgetSearchLine* self, QKeyEvent* param1);
+void KListWidgetSearchLine_OnKeyPressEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperKeyPressEvent(KListWidgetSearchLine* self, QKeyEvent* param1);
+void KListWidgetSearchLine_KeyReleaseEvent(KListWidgetSearchLine* self, QKeyEvent* param1);
+void KListWidgetSearchLine_OnKeyReleaseEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperKeyReleaseEvent(KListWidgetSearchLine* self, QKeyEvent* param1);
+void KListWidgetSearchLine_FocusInEvent(KListWidgetSearchLine* self, QFocusEvent* param1);
+void KListWidgetSearchLine_OnFocusInEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperFocusInEvent(KListWidgetSearchLine* self, QFocusEvent* param1);
+void KListWidgetSearchLine_FocusOutEvent(KListWidgetSearchLine* self, QFocusEvent* param1);
+void KListWidgetSearchLine_OnFocusOutEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperFocusOutEvent(KListWidgetSearchLine* self, QFocusEvent* param1);
+void KListWidgetSearchLine_PaintEvent(KListWidgetSearchLine* self, QPaintEvent* param1);
+void KListWidgetSearchLine_OnPaintEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperPaintEvent(KListWidgetSearchLine* self, QPaintEvent* param1);
+void KListWidgetSearchLine_DragEnterEvent(KListWidgetSearchLine* self, QDragEnterEvent* param1);
+void KListWidgetSearchLine_OnDragEnterEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperDragEnterEvent(KListWidgetSearchLine* self, QDragEnterEvent* param1);
+void KListWidgetSearchLine_DragMoveEvent(KListWidgetSearchLine* self, QDragMoveEvent* e);
+void KListWidgetSearchLine_OnDragMoveEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperDragMoveEvent(KListWidgetSearchLine* self, QDragMoveEvent* e);
+void KListWidgetSearchLine_DragLeaveEvent(KListWidgetSearchLine* self, QDragLeaveEvent* e);
+void KListWidgetSearchLine_OnDragLeaveEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperDragLeaveEvent(KListWidgetSearchLine* self, QDragLeaveEvent* e);
+void KListWidgetSearchLine_DropEvent(KListWidgetSearchLine* self, QDropEvent* param1);
+void KListWidgetSearchLine_OnDropEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperDropEvent(KListWidgetSearchLine* self, QDropEvent* param1);
+void KListWidgetSearchLine_ChangeEvent(KListWidgetSearchLine* self, QEvent* param1);
+void KListWidgetSearchLine_OnChangeEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperChangeEvent(KListWidgetSearchLine* self, QEvent* param1);
+void KListWidgetSearchLine_ContextMenuEvent(KListWidgetSearchLine* self, QContextMenuEvent* param1);
+void KListWidgetSearchLine_OnContextMenuEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperContextMenuEvent(KListWidgetSearchLine* self, QContextMenuEvent* param1);
+void KListWidgetSearchLine_InputMethodEvent(KListWidgetSearchLine* self, QInputMethodEvent* param1);
+void KListWidgetSearchLine_OnInputMethodEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperInputMethodEvent(KListWidgetSearchLine* self, QInputMethodEvent* param1);
+void KListWidgetSearchLine_InitStyleOption(const KListWidgetSearchLine* self, QStyleOptionFrame* option);
+void KListWidgetSearchLine_OnInitStyleOption(const KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperInitStyleOption(const KListWidgetSearchLine* self, QStyleOptionFrame* option);
+QVariant* KListWidgetSearchLine_InputMethodQuery(const KListWidgetSearchLine* self, int param1);
+void KListWidgetSearchLine_OnInputMethodQuery(const KListWidgetSearchLine* self, intptr_t slot);
+QVariant* KListWidgetSearchLine_SuperInputMethodQuery(const KListWidgetSearchLine* self, int param1);
+void KListWidgetSearchLine_TimerEvent(KListWidgetSearchLine* self, QTimerEvent* param1);
+void KListWidgetSearchLine_OnTimerEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperTimerEvent(KListWidgetSearchLine* self, QTimerEvent* param1);
+int KListWidgetSearchLine_DevType(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnDevType(const KListWidgetSearchLine* self, intptr_t slot);
+int KListWidgetSearchLine_SuperDevType(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_SetVisible(KListWidgetSearchLine* self, bool visible);
+void KListWidgetSearchLine_OnSetVisible(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperSetVisible(KListWidgetSearchLine* self, bool visible);
+int KListWidgetSearchLine_HeightForWidth(const KListWidgetSearchLine* self, int param1);
+void KListWidgetSearchLine_OnHeightForWidth(const KListWidgetSearchLine* self, intptr_t slot);
+int KListWidgetSearchLine_SuperHeightForWidth(const KListWidgetSearchLine* self, int param1);
+bool KListWidgetSearchLine_HasHeightForWidth(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnHasHeightForWidth(const KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperHasHeightForWidth(const KListWidgetSearchLine* self);
+QPaintEngine* KListWidgetSearchLine_PaintEngine(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnPaintEngine(const KListWidgetSearchLine* self, intptr_t slot);
+QPaintEngine* KListWidgetSearchLine_SuperPaintEngine(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_WheelEvent(KListWidgetSearchLine* self, QWheelEvent* event);
+void KListWidgetSearchLine_OnWheelEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperWheelEvent(KListWidgetSearchLine* self, QWheelEvent* event);
+void KListWidgetSearchLine_EnterEvent(KListWidgetSearchLine* self, QEnterEvent* event);
+void KListWidgetSearchLine_OnEnterEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperEnterEvent(KListWidgetSearchLine* self, QEnterEvent* event);
+void KListWidgetSearchLine_LeaveEvent(KListWidgetSearchLine* self, QEvent* event);
+void KListWidgetSearchLine_OnLeaveEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperLeaveEvent(KListWidgetSearchLine* self, QEvent* event);
+void KListWidgetSearchLine_MoveEvent(KListWidgetSearchLine* self, QMoveEvent* event);
+void KListWidgetSearchLine_OnMoveEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperMoveEvent(KListWidgetSearchLine* self, QMoveEvent* event);
+void KListWidgetSearchLine_ResizeEvent(KListWidgetSearchLine* self, QResizeEvent* event);
+void KListWidgetSearchLine_OnResizeEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperResizeEvent(KListWidgetSearchLine* self, QResizeEvent* event);
+void KListWidgetSearchLine_CloseEvent(KListWidgetSearchLine* self, QCloseEvent* event);
+void KListWidgetSearchLine_OnCloseEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperCloseEvent(KListWidgetSearchLine* self, QCloseEvent* event);
+void KListWidgetSearchLine_TabletEvent(KListWidgetSearchLine* self, QTabletEvent* event);
+void KListWidgetSearchLine_OnTabletEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperTabletEvent(KListWidgetSearchLine* self, QTabletEvent* event);
+void KListWidgetSearchLine_ActionEvent(KListWidgetSearchLine* self, QActionEvent* event);
+void KListWidgetSearchLine_OnActionEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperActionEvent(KListWidgetSearchLine* self, QActionEvent* event);
+void KListWidgetSearchLine_ShowEvent(KListWidgetSearchLine* self, QShowEvent* event);
+void KListWidgetSearchLine_OnShowEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperShowEvent(KListWidgetSearchLine* self, QShowEvent* event);
+void KListWidgetSearchLine_HideEvent(KListWidgetSearchLine* self, QHideEvent* event);
+void KListWidgetSearchLine_OnHideEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperHideEvent(KListWidgetSearchLine* self, QHideEvent* event);
+bool KListWidgetSearchLine_NativeEvent(KListWidgetSearchLine* self, const libqt_string eventType, void* message, intptr_t* result);
+void KListWidgetSearchLine_OnNativeEvent(KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperNativeEvent(KListWidgetSearchLine* self, const libqt_string eventType, void* message, intptr_t* result);
+int KListWidgetSearchLine_Metric(const KListWidgetSearchLine* self, int param1);
+void KListWidgetSearchLine_OnMetric(const KListWidgetSearchLine* self, intptr_t slot);
+int KListWidgetSearchLine_SuperMetric(const KListWidgetSearchLine* self, int param1);
+void KListWidgetSearchLine_InitPainter(const KListWidgetSearchLine* self, QPainter* painter);
+void KListWidgetSearchLine_OnInitPainter(const KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperInitPainter(const KListWidgetSearchLine* self, QPainter* painter);
+QPaintDevice* KListWidgetSearchLine_Redirected(const KListWidgetSearchLine* self, QPoint* offset);
+void KListWidgetSearchLine_OnRedirected(const KListWidgetSearchLine* self, intptr_t slot);
+QPaintDevice* KListWidgetSearchLine_SuperRedirected(const KListWidgetSearchLine* self, QPoint* offset);
+QPainter* KListWidgetSearchLine_SharedPainter(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnSharedPainter(const KListWidgetSearchLine* self, intptr_t slot);
+QPainter* KListWidgetSearchLine_SuperSharedPainter(const KListWidgetSearchLine* self);
+bool KListWidgetSearchLine_FocusNextPrevChild(KListWidgetSearchLine* self, bool next);
+void KListWidgetSearchLine_OnFocusNextPrevChild(KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperFocusNextPrevChild(KListWidgetSearchLine* self, bool next);
+bool KListWidgetSearchLine_EventFilter(KListWidgetSearchLine* self, QObject* watched, QEvent* event);
+void KListWidgetSearchLine_OnEventFilter(KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperEventFilter(KListWidgetSearchLine* self, QObject* watched, QEvent* event);
+void KListWidgetSearchLine_ChildEvent(KListWidgetSearchLine* self, QChildEvent* event);
+void KListWidgetSearchLine_OnChildEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperChildEvent(KListWidgetSearchLine* self, QChildEvent* event);
+void KListWidgetSearchLine_CustomEvent(KListWidgetSearchLine* self, QEvent* event);
+void KListWidgetSearchLine_OnCustomEvent(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperCustomEvent(KListWidgetSearchLine* self, QEvent* event);
+void KListWidgetSearchLine_ConnectNotify(KListWidgetSearchLine* self, const QMetaMethod* signal);
+void KListWidgetSearchLine_OnConnectNotify(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperConnectNotify(KListWidgetSearchLine* self, const QMetaMethod* signal);
+void KListWidgetSearchLine_DisconnectNotify(KListWidgetSearchLine* self, const QMetaMethod* signal);
+void KListWidgetSearchLine_OnDisconnectNotify(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperDisconnectNotify(KListWidgetSearchLine* self, const QMetaMethod* signal);
+QRect* KListWidgetSearchLine_CursorRect(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnCursorRect(const KListWidgetSearchLine* self, intptr_t slot);
+QRect* KListWidgetSearchLine_SuperCursorRect(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_UpdateMicroFocus(KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnUpdateMicroFocus(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperUpdateMicroFocus(KListWidgetSearchLine* self);
+void KListWidgetSearchLine_Create(KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnCreate(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperCreate(KListWidgetSearchLine* self);
+void KListWidgetSearchLine_Destroy(KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnDestroy(KListWidgetSearchLine* self, intptr_t slot);
+void KListWidgetSearchLine_SuperDestroy(KListWidgetSearchLine* self);
+bool KListWidgetSearchLine_FocusNextChild(KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnFocusNextChild(KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperFocusNextChild(KListWidgetSearchLine* self);
+bool KListWidgetSearchLine_FocusPreviousChild(KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnFocusPreviousChild(KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperFocusPreviousChild(KListWidgetSearchLine* self);
+QObject* KListWidgetSearchLine_Sender(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnSender(const KListWidgetSearchLine* self, intptr_t slot);
+QObject* KListWidgetSearchLine_SuperSender(const KListWidgetSearchLine* self);
+int KListWidgetSearchLine_SenderSignalIndex(const KListWidgetSearchLine* self);
+void KListWidgetSearchLine_OnSenderSignalIndex(const KListWidgetSearchLine* self, intptr_t slot);
+int KListWidgetSearchLine_SuperSenderSignalIndex(const KListWidgetSearchLine* self);
+int KListWidgetSearchLine_Receivers(const KListWidgetSearchLine* self, const char* signal);
+void KListWidgetSearchLine_OnReceivers(const KListWidgetSearchLine* self, intptr_t slot);
+int KListWidgetSearchLine_SuperReceivers(const KListWidgetSearchLine* self, const char* signal);
+bool KListWidgetSearchLine_IsSignalConnected(const KListWidgetSearchLine* self, const QMetaMethod* signal);
+void KListWidgetSearchLine_OnIsSignalConnected(const KListWidgetSearchLine* self, intptr_t slot);
+bool KListWidgetSearchLine_SuperIsSignalConnected(const KListWidgetSearchLine* self, const QMetaMethod* signal);
+double KListWidgetSearchLine_GetDecodedMetricF(const KListWidgetSearchLine* self, int metricA, int metricB);
+void KListWidgetSearchLine_OnGetDecodedMetricF(const KListWidgetSearchLine* self, intptr_t slot);
+double KListWidgetSearchLine_SuperGetDecodedMetricF(const KListWidgetSearchLine* self, int metricA, int metricB);
+void KListWidgetSearchLine_Delete(KListWidgetSearchLine* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

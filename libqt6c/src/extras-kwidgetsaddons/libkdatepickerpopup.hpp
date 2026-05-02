@@ -1,0 +1,263 @@
+#pragma once
+#ifndef SRC_EXTRAS_KWIDGETSADDONSC_LIBKDATEPICKERPOPUP_HPP
+#define SRC_EXTRAS_KWIDGETSADDONSC_LIBKDATEPICKERPOPUP_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KDatePicker KDatePicker;
+typedef struct KDatePickerPopup KDatePickerPopup;
+typedef struct QAction QAction;
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDate QDate;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMenu QMenu;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QStyleOptionMenuItem QStyleOptionMenuItem;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+KDatePickerPopup* KDatePickerPopup_new();
+KDatePickerPopup* KDatePickerPopup_new2(int modes);
+KDatePickerPopup* KDatePickerPopup_new3(int modes, QDate* date);
+KDatePickerPopup* KDatePickerPopup_new4(int modes, QDate* date, QWidget* parent);
+QMetaObject* KDatePickerPopup_MetaObject(const KDatePickerPopup* self);
+void* KDatePickerPopup_Metacast(KDatePickerPopup* self, const char* param1);
+int KDatePickerPopup_Metacall(KDatePickerPopup* self, int param1, int param2, void** param3);
+int KDatePickerPopup_Modes(const KDatePickerPopup* self);
+void KDatePickerPopup_SetModes(KDatePickerPopup* self, int modes);
+void KDatePickerPopup_SetDateRange(KDatePickerPopup* self, const QDate* minDate, const QDate* maxDate);
+libqt_map /* of QDate* to libqt_string */ KDatePickerPopup_DateMap(const KDatePickerPopup* self);
+void KDatePickerPopup_SetDateMap(KDatePickerPopup* self, const libqt_map /* of QDate* to libqt_string */ dateMap);
+KDatePicker* KDatePickerPopup_DatePicker(const KDatePickerPopup* self);
+void KDatePickerPopup_SetDate(KDatePickerPopup* self, QDate* date);
+void KDatePickerPopup_DateChanged(KDatePickerPopup* self, const QDate* date);
+void KDatePickerPopup_Connect_DateChanged(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_OnMetaObject(const KDatePickerPopup* self, intptr_t slot);
+QMetaObject* KDatePickerPopup_SuperMetaObject(const KDatePickerPopup* self);
+void KDatePickerPopup_OnMetacast(KDatePickerPopup* self, intptr_t slot);
+void* KDatePickerPopup_SuperMetacast(KDatePickerPopup* self, const char* param1);
+void KDatePickerPopup_OnMetacall(KDatePickerPopup* self, intptr_t slot);
+int KDatePickerPopup_SuperMetacall(KDatePickerPopup* self, int param1, int param2, void** param3);
+QSize* KDatePickerPopup_SizeHint(const KDatePickerPopup* self);
+void KDatePickerPopup_OnSizeHint(const KDatePickerPopup* self, intptr_t slot);
+QSize* KDatePickerPopup_SuperSizeHint(const KDatePickerPopup* self);
+void KDatePickerPopup_ChangeEvent(KDatePickerPopup* self, QEvent* param1);
+void KDatePickerPopup_OnChangeEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperChangeEvent(KDatePickerPopup* self, QEvent* param1);
+void KDatePickerPopup_KeyPressEvent(KDatePickerPopup* self, QKeyEvent* param1);
+void KDatePickerPopup_OnKeyPressEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperKeyPressEvent(KDatePickerPopup* self, QKeyEvent* param1);
+void KDatePickerPopup_MouseReleaseEvent(KDatePickerPopup* self, QMouseEvent* param1);
+void KDatePickerPopup_OnMouseReleaseEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperMouseReleaseEvent(KDatePickerPopup* self, QMouseEvent* param1);
+void KDatePickerPopup_MousePressEvent(KDatePickerPopup* self, QMouseEvent* param1);
+void KDatePickerPopup_OnMousePressEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperMousePressEvent(KDatePickerPopup* self, QMouseEvent* param1);
+void KDatePickerPopup_MouseMoveEvent(KDatePickerPopup* self, QMouseEvent* param1);
+void KDatePickerPopup_OnMouseMoveEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperMouseMoveEvent(KDatePickerPopup* self, QMouseEvent* param1);
+void KDatePickerPopup_WheelEvent(KDatePickerPopup* self, QWheelEvent* param1);
+void KDatePickerPopup_OnWheelEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperWheelEvent(KDatePickerPopup* self, QWheelEvent* param1);
+void KDatePickerPopup_EnterEvent(KDatePickerPopup* self, QEnterEvent* param1);
+void KDatePickerPopup_OnEnterEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperEnterEvent(KDatePickerPopup* self, QEnterEvent* param1);
+void KDatePickerPopup_LeaveEvent(KDatePickerPopup* self, QEvent* param1);
+void KDatePickerPopup_OnLeaveEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperLeaveEvent(KDatePickerPopup* self, QEvent* param1);
+void KDatePickerPopup_HideEvent(KDatePickerPopup* self, QHideEvent* param1);
+void KDatePickerPopup_OnHideEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperHideEvent(KDatePickerPopup* self, QHideEvent* param1);
+void KDatePickerPopup_PaintEvent(KDatePickerPopup* self, QPaintEvent* param1);
+void KDatePickerPopup_OnPaintEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperPaintEvent(KDatePickerPopup* self, QPaintEvent* param1);
+void KDatePickerPopup_ActionEvent(KDatePickerPopup* self, QActionEvent* param1);
+void KDatePickerPopup_OnActionEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperActionEvent(KDatePickerPopup* self, QActionEvent* param1);
+void KDatePickerPopup_TimerEvent(KDatePickerPopup* self, QTimerEvent* param1);
+void KDatePickerPopup_OnTimerEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperTimerEvent(KDatePickerPopup* self, QTimerEvent* param1);
+bool KDatePickerPopup_Event(KDatePickerPopup* self, QEvent* param1);
+void KDatePickerPopup_OnEvent(KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperEvent(KDatePickerPopup* self, QEvent* param1);
+bool KDatePickerPopup_FocusNextPrevChild(KDatePickerPopup* self, bool next);
+void KDatePickerPopup_OnFocusNextPrevChild(KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperFocusNextPrevChild(KDatePickerPopup* self, bool next);
+void KDatePickerPopup_InitStyleOption(const KDatePickerPopup* self, QStyleOptionMenuItem* option, const QAction* action);
+void KDatePickerPopup_OnInitStyleOption(const KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperInitStyleOption(const KDatePickerPopup* self, QStyleOptionMenuItem* option, const QAction* action);
+int KDatePickerPopup_DevType(const KDatePickerPopup* self);
+void KDatePickerPopup_OnDevType(const KDatePickerPopup* self, intptr_t slot);
+int KDatePickerPopup_SuperDevType(const KDatePickerPopup* self);
+void KDatePickerPopup_SetVisible(KDatePickerPopup* self, bool visible);
+void KDatePickerPopup_OnSetVisible(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperSetVisible(KDatePickerPopup* self, bool visible);
+QSize* KDatePickerPopup_MinimumSizeHint(const KDatePickerPopup* self);
+void KDatePickerPopup_OnMinimumSizeHint(const KDatePickerPopup* self, intptr_t slot);
+QSize* KDatePickerPopup_SuperMinimumSizeHint(const KDatePickerPopup* self);
+int KDatePickerPopup_HeightForWidth(const KDatePickerPopup* self, int param1);
+void KDatePickerPopup_OnHeightForWidth(const KDatePickerPopup* self, intptr_t slot);
+int KDatePickerPopup_SuperHeightForWidth(const KDatePickerPopup* self, int param1);
+bool KDatePickerPopup_HasHeightForWidth(const KDatePickerPopup* self);
+void KDatePickerPopup_OnHasHeightForWidth(const KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperHasHeightForWidth(const KDatePickerPopup* self);
+QPaintEngine* KDatePickerPopup_PaintEngine(const KDatePickerPopup* self);
+void KDatePickerPopup_OnPaintEngine(const KDatePickerPopup* self, intptr_t slot);
+QPaintEngine* KDatePickerPopup_SuperPaintEngine(const KDatePickerPopup* self);
+void KDatePickerPopup_MouseDoubleClickEvent(KDatePickerPopup* self, QMouseEvent* event);
+void KDatePickerPopup_OnMouseDoubleClickEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperMouseDoubleClickEvent(KDatePickerPopup* self, QMouseEvent* event);
+void KDatePickerPopup_KeyReleaseEvent(KDatePickerPopup* self, QKeyEvent* event);
+void KDatePickerPopup_OnKeyReleaseEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperKeyReleaseEvent(KDatePickerPopup* self, QKeyEvent* event);
+void KDatePickerPopup_FocusInEvent(KDatePickerPopup* self, QFocusEvent* event);
+void KDatePickerPopup_OnFocusInEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperFocusInEvent(KDatePickerPopup* self, QFocusEvent* event);
+void KDatePickerPopup_FocusOutEvent(KDatePickerPopup* self, QFocusEvent* event);
+void KDatePickerPopup_OnFocusOutEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperFocusOutEvent(KDatePickerPopup* self, QFocusEvent* event);
+void KDatePickerPopup_MoveEvent(KDatePickerPopup* self, QMoveEvent* event);
+void KDatePickerPopup_OnMoveEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperMoveEvent(KDatePickerPopup* self, QMoveEvent* event);
+void KDatePickerPopup_ResizeEvent(KDatePickerPopup* self, QResizeEvent* event);
+void KDatePickerPopup_OnResizeEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperResizeEvent(KDatePickerPopup* self, QResizeEvent* event);
+void KDatePickerPopup_CloseEvent(KDatePickerPopup* self, QCloseEvent* event);
+void KDatePickerPopup_OnCloseEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperCloseEvent(KDatePickerPopup* self, QCloseEvent* event);
+void KDatePickerPopup_ContextMenuEvent(KDatePickerPopup* self, QContextMenuEvent* event);
+void KDatePickerPopup_OnContextMenuEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperContextMenuEvent(KDatePickerPopup* self, QContextMenuEvent* event);
+void KDatePickerPopup_TabletEvent(KDatePickerPopup* self, QTabletEvent* event);
+void KDatePickerPopup_OnTabletEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperTabletEvent(KDatePickerPopup* self, QTabletEvent* event);
+void KDatePickerPopup_DragEnterEvent(KDatePickerPopup* self, QDragEnterEvent* event);
+void KDatePickerPopup_OnDragEnterEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperDragEnterEvent(KDatePickerPopup* self, QDragEnterEvent* event);
+void KDatePickerPopup_DragMoveEvent(KDatePickerPopup* self, QDragMoveEvent* event);
+void KDatePickerPopup_OnDragMoveEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperDragMoveEvent(KDatePickerPopup* self, QDragMoveEvent* event);
+void KDatePickerPopup_DragLeaveEvent(KDatePickerPopup* self, QDragLeaveEvent* event);
+void KDatePickerPopup_OnDragLeaveEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperDragLeaveEvent(KDatePickerPopup* self, QDragLeaveEvent* event);
+void KDatePickerPopup_DropEvent(KDatePickerPopup* self, QDropEvent* event);
+void KDatePickerPopup_OnDropEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperDropEvent(KDatePickerPopup* self, QDropEvent* event);
+void KDatePickerPopup_ShowEvent(KDatePickerPopup* self, QShowEvent* event);
+void KDatePickerPopup_OnShowEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperShowEvent(KDatePickerPopup* self, QShowEvent* event);
+bool KDatePickerPopup_NativeEvent(KDatePickerPopup* self, const libqt_string eventType, void* message, intptr_t* result);
+void KDatePickerPopup_OnNativeEvent(KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperNativeEvent(KDatePickerPopup* self, const libqt_string eventType, void* message, intptr_t* result);
+int KDatePickerPopup_Metric(const KDatePickerPopup* self, int param1);
+void KDatePickerPopup_OnMetric(const KDatePickerPopup* self, intptr_t slot);
+int KDatePickerPopup_SuperMetric(const KDatePickerPopup* self, int param1);
+void KDatePickerPopup_InitPainter(const KDatePickerPopup* self, QPainter* painter);
+void KDatePickerPopup_OnInitPainter(const KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperInitPainter(const KDatePickerPopup* self, QPainter* painter);
+QPaintDevice* KDatePickerPopup_Redirected(const KDatePickerPopup* self, QPoint* offset);
+void KDatePickerPopup_OnRedirected(const KDatePickerPopup* self, intptr_t slot);
+QPaintDevice* KDatePickerPopup_SuperRedirected(const KDatePickerPopup* self, QPoint* offset);
+QPainter* KDatePickerPopup_SharedPainter(const KDatePickerPopup* self);
+void KDatePickerPopup_OnSharedPainter(const KDatePickerPopup* self, intptr_t slot);
+QPainter* KDatePickerPopup_SuperSharedPainter(const KDatePickerPopup* self);
+void KDatePickerPopup_InputMethodEvent(KDatePickerPopup* self, QInputMethodEvent* param1);
+void KDatePickerPopup_OnInputMethodEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperInputMethodEvent(KDatePickerPopup* self, QInputMethodEvent* param1);
+QVariant* KDatePickerPopup_InputMethodQuery(const KDatePickerPopup* self, int param1);
+void KDatePickerPopup_OnInputMethodQuery(const KDatePickerPopup* self, intptr_t slot);
+QVariant* KDatePickerPopup_SuperInputMethodQuery(const KDatePickerPopup* self, int param1);
+bool KDatePickerPopup_EventFilter(KDatePickerPopup* self, QObject* watched, QEvent* event);
+void KDatePickerPopup_OnEventFilter(KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperEventFilter(KDatePickerPopup* self, QObject* watched, QEvent* event);
+void KDatePickerPopup_ChildEvent(KDatePickerPopup* self, QChildEvent* event);
+void KDatePickerPopup_OnChildEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperChildEvent(KDatePickerPopup* self, QChildEvent* event);
+void KDatePickerPopup_CustomEvent(KDatePickerPopup* self, QEvent* event);
+void KDatePickerPopup_OnCustomEvent(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperCustomEvent(KDatePickerPopup* self, QEvent* event);
+void KDatePickerPopup_ConnectNotify(KDatePickerPopup* self, const QMetaMethod* signal);
+void KDatePickerPopup_OnConnectNotify(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperConnectNotify(KDatePickerPopup* self, const QMetaMethod* signal);
+void KDatePickerPopup_DisconnectNotify(KDatePickerPopup* self, const QMetaMethod* signal);
+void KDatePickerPopup_OnDisconnectNotify(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperDisconnectNotify(KDatePickerPopup* self, const QMetaMethod* signal);
+int KDatePickerPopup_ColumnCount(const KDatePickerPopup* self);
+void KDatePickerPopup_OnColumnCount(const KDatePickerPopup* self, intptr_t slot);
+int KDatePickerPopup_SuperColumnCount(const KDatePickerPopup* self);
+void KDatePickerPopup_UpdateMicroFocus(KDatePickerPopup* self);
+void KDatePickerPopup_OnUpdateMicroFocus(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperUpdateMicroFocus(KDatePickerPopup* self);
+void KDatePickerPopup_Create(KDatePickerPopup* self);
+void KDatePickerPopup_OnCreate(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperCreate(KDatePickerPopup* self);
+void KDatePickerPopup_Destroy(KDatePickerPopup* self);
+void KDatePickerPopup_OnDestroy(KDatePickerPopup* self, intptr_t slot);
+void KDatePickerPopup_SuperDestroy(KDatePickerPopup* self);
+bool KDatePickerPopup_FocusNextChild(KDatePickerPopup* self);
+void KDatePickerPopup_OnFocusNextChild(KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperFocusNextChild(KDatePickerPopup* self);
+bool KDatePickerPopup_FocusPreviousChild(KDatePickerPopup* self);
+void KDatePickerPopup_OnFocusPreviousChild(KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperFocusPreviousChild(KDatePickerPopup* self);
+QObject* KDatePickerPopup_Sender(const KDatePickerPopup* self);
+void KDatePickerPopup_OnSender(const KDatePickerPopup* self, intptr_t slot);
+QObject* KDatePickerPopup_SuperSender(const KDatePickerPopup* self);
+int KDatePickerPopup_SenderSignalIndex(const KDatePickerPopup* self);
+void KDatePickerPopup_OnSenderSignalIndex(const KDatePickerPopup* self, intptr_t slot);
+int KDatePickerPopup_SuperSenderSignalIndex(const KDatePickerPopup* self);
+int KDatePickerPopup_Receivers(const KDatePickerPopup* self, const char* signal);
+void KDatePickerPopup_OnReceivers(const KDatePickerPopup* self, intptr_t slot);
+int KDatePickerPopup_SuperReceivers(const KDatePickerPopup* self, const char* signal);
+bool KDatePickerPopup_IsSignalConnected(const KDatePickerPopup* self, const QMetaMethod* signal);
+void KDatePickerPopup_OnIsSignalConnected(const KDatePickerPopup* self, intptr_t slot);
+bool KDatePickerPopup_SuperIsSignalConnected(const KDatePickerPopup* self, const QMetaMethod* signal);
+double KDatePickerPopup_GetDecodedMetricF(const KDatePickerPopup* self, int metricA, int metricB);
+void KDatePickerPopup_OnGetDecodedMetricF(const KDatePickerPopup* self, intptr_t slot);
+double KDatePickerPopup_SuperGetDecodedMetricF(const KDatePickerPopup* self, int metricA, int metricB);
+void KDatePickerPopup_Delete(KDatePickerPopup* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

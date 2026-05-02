@@ -1,0 +1,134 @@
+#pragma once
+#ifndef SRCC_LIBQGRAPHICSITEMANIMATION_HPP
+#define SRCC_LIBQGRAPHICSITEMANIMATION_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QGraphicsItem QGraphicsItem;
+typedef struct QGraphicsItemAnimation QGraphicsItemAnimation;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QPointF QPointF;
+typedef struct QTimeLine QTimeLine;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QTransform QTransform;
+#endif
+
+struct pair_double_qpointf;
+struct pair_double_double;
+
+typedef struct pair_double_qpointf pair_double_qpointf;
+typedef struct pair_double_double pair_double_double;
+
+#ifndef PAIR_DOUBLE_QPOINTF
+#define PAIR_DOUBLE_QPOINTF
+struct pair_double_qpointf {
+    double first;
+    QPointF* second;
+};
+#endif
+
+#ifndef PAIR_DOUBLE_DOUBLE
+#define PAIR_DOUBLE_DOUBLE
+struct pair_double_double {
+    double first;
+    double second;
+};
+#endif
+
+QGraphicsItemAnimation* QGraphicsItemAnimation_new();
+QGraphicsItemAnimation* QGraphicsItemAnimation_new2(QObject* parent);
+QMetaObject* QGraphicsItemAnimation_MetaObject(const QGraphicsItemAnimation* self);
+void* QGraphicsItemAnimation_Metacast(QGraphicsItemAnimation* self, const char* param1);
+int QGraphicsItemAnimation_Metacall(QGraphicsItemAnimation* self, int param1, int param2, void** param3);
+QGraphicsItem* QGraphicsItemAnimation_Item(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetItem(QGraphicsItemAnimation* self, QGraphicsItem* item);
+QTimeLine* QGraphicsItemAnimation_TimeLine(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetTimeLine(QGraphicsItemAnimation* self, QTimeLine* timeLine);
+QPointF* QGraphicsItemAnimation_PosAt(const QGraphicsItemAnimation* self, double step);
+libqt_list /* of pair_double_qpointf tuple of double and QPointF* */ QGraphicsItemAnimation_PosList(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetPosAt(QGraphicsItemAnimation* self, double step, const QPointF* pos);
+QTransform* QGraphicsItemAnimation_TransformAt(const QGraphicsItemAnimation* self, double step);
+double QGraphicsItemAnimation_RotationAt(const QGraphicsItemAnimation* self, double step);
+libqt_list /* of pair_double_double tuple of double and double */ QGraphicsItemAnimation_RotationList(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetRotationAt(QGraphicsItemAnimation* self, double step, double angle);
+double QGraphicsItemAnimation_XTranslationAt(const QGraphicsItemAnimation* self, double step);
+double QGraphicsItemAnimation_YTranslationAt(const QGraphicsItemAnimation* self, double step);
+libqt_list /* of pair_double_qpointf tuple of double and QPointF* */ QGraphicsItemAnimation_TranslationList(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetTranslationAt(QGraphicsItemAnimation* self, double step, double dx, double dy);
+double QGraphicsItemAnimation_VerticalScaleAt(const QGraphicsItemAnimation* self, double step);
+double QGraphicsItemAnimation_HorizontalScaleAt(const QGraphicsItemAnimation* self, double step);
+libqt_list /* of pair_double_qpointf tuple of double and QPointF* */ QGraphicsItemAnimation_ScaleList(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetScaleAt(QGraphicsItemAnimation* self, double step, double sx, double sy);
+double QGraphicsItemAnimation_VerticalShearAt(const QGraphicsItemAnimation* self, double step);
+double QGraphicsItemAnimation_HorizontalShearAt(const QGraphicsItemAnimation* self, double step);
+libqt_list /* of pair_double_qpointf tuple of double and QPointF* */ QGraphicsItemAnimation_ShearList(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetShearAt(QGraphicsItemAnimation* self, double step, double sh, double sv);
+void QGraphicsItemAnimation_Clear(QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_SetStep(QGraphicsItemAnimation* self, double x);
+void QGraphicsItemAnimation_BeforeAnimationStep(QGraphicsItemAnimation* self, double step);
+void QGraphicsItemAnimation_AfterAnimationStep(QGraphicsItemAnimation* self, double step);
+void QGraphicsItemAnimation_OnMetaObject(const QGraphicsItemAnimation* self, intptr_t slot);
+QMetaObject* QGraphicsItemAnimation_SuperMetaObject(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_OnMetacast(QGraphicsItemAnimation* self, intptr_t slot);
+void* QGraphicsItemAnimation_SuperMetacast(QGraphicsItemAnimation* self, const char* param1);
+void QGraphicsItemAnimation_OnMetacall(QGraphicsItemAnimation* self, intptr_t slot);
+int QGraphicsItemAnimation_SuperMetacall(QGraphicsItemAnimation* self, int param1, int param2, void** param3);
+void QGraphicsItemAnimation_OnBeforeAnimationStep(QGraphicsItemAnimation* self, intptr_t slot);
+void QGraphicsItemAnimation_SuperBeforeAnimationStep(QGraphicsItemAnimation* self, double step);
+void QGraphicsItemAnimation_OnAfterAnimationStep(QGraphicsItemAnimation* self, intptr_t slot);
+void QGraphicsItemAnimation_SuperAfterAnimationStep(QGraphicsItemAnimation* self, double step);
+bool QGraphicsItemAnimation_Event(QGraphicsItemAnimation* self, QEvent* event);
+void QGraphicsItemAnimation_OnEvent(QGraphicsItemAnimation* self, intptr_t slot);
+bool QGraphicsItemAnimation_SuperEvent(QGraphicsItemAnimation* self, QEvent* event);
+bool QGraphicsItemAnimation_EventFilter(QGraphicsItemAnimation* self, QObject* watched, QEvent* event);
+void QGraphicsItemAnimation_OnEventFilter(QGraphicsItemAnimation* self, intptr_t slot);
+bool QGraphicsItemAnimation_SuperEventFilter(QGraphicsItemAnimation* self, QObject* watched, QEvent* event);
+void QGraphicsItemAnimation_TimerEvent(QGraphicsItemAnimation* self, QTimerEvent* event);
+void QGraphicsItemAnimation_OnTimerEvent(QGraphicsItemAnimation* self, intptr_t slot);
+void QGraphicsItemAnimation_SuperTimerEvent(QGraphicsItemAnimation* self, QTimerEvent* event);
+void QGraphicsItemAnimation_ChildEvent(QGraphicsItemAnimation* self, QChildEvent* event);
+void QGraphicsItemAnimation_OnChildEvent(QGraphicsItemAnimation* self, intptr_t slot);
+void QGraphicsItemAnimation_SuperChildEvent(QGraphicsItemAnimation* self, QChildEvent* event);
+void QGraphicsItemAnimation_CustomEvent(QGraphicsItemAnimation* self, QEvent* event);
+void QGraphicsItemAnimation_OnCustomEvent(QGraphicsItemAnimation* self, intptr_t slot);
+void QGraphicsItemAnimation_SuperCustomEvent(QGraphicsItemAnimation* self, QEvent* event);
+void QGraphicsItemAnimation_ConnectNotify(QGraphicsItemAnimation* self, const QMetaMethod* signal);
+void QGraphicsItemAnimation_OnConnectNotify(QGraphicsItemAnimation* self, intptr_t slot);
+void QGraphicsItemAnimation_SuperConnectNotify(QGraphicsItemAnimation* self, const QMetaMethod* signal);
+void QGraphicsItemAnimation_DisconnectNotify(QGraphicsItemAnimation* self, const QMetaMethod* signal);
+void QGraphicsItemAnimation_OnDisconnectNotify(QGraphicsItemAnimation* self, intptr_t slot);
+void QGraphicsItemAnimation_SuperDisconnectNotify(QGraphicsItemAnimation* self, const QMetaMethod* signal);
+QObject* QGraphicsItemAnimation_Sender(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_OnSender(const QGraphicsItemAnimation* self, intptr_t slot);
+QObject* QGraphicsItemAnimation_SuperSender(const QGraphicsItemAnimation* self);
+int QGraphicsItemAnimation_SenderSignalIndex(const QGraphicsItemAnimation* self);
+void QGraphicsItemAnimation_OnSenderSignalIndex(const QGraphicsItemAnimation* self, intptr_t slot);
+int QGraphicsItemAnimation_SuperSenderSignalIndex(const QGraphicsItemAnimation* self);
+int QGraphicsItemAnimation_Receivers(const QGraphicsItemAnimation* self, const char* signal);
+void QGraphicsItemAnimation_OnReceivers(const QGraphicsItemAnimation* self, intptr_t slot);
+int QGraphicsItemAnimation_SuperReceivers(const QGraphicsItemAnimation* self, const char* signal);
+bool QGraphicsItemAnimation_IsSignalConnected(const QGraphicsItemAnimation* self, const QMetaMethod* signal);
+void QGraphicsItemAnimation_OnIsSignalConnected(const QGraphicsItemAnimation* self, intptr_t slot);
+bool QGraphicsItemAnimation_SuperIsSignalConnected(const QGraphicsItemAnimation* self, const QMetaMethod* signal);
+void QGraphicsItemAnimation_Delete(QGraphicsItemAnimation* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

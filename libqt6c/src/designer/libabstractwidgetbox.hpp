@@ -1,0 +1,324 @@
+#pragma once
+#ifndef SRC_DESIGNERC_LIBABSTRACTWIDGETBOX_HPP
+#define SRC_DESIGNERC_LIBABSTRACTWIDGETBOX_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_QDesignerWidgetBoxInterface__Category)
+typedef QDesignerWidgetBoxInterface::Category QDesignerWidgetBoxInterface__Category;
+#endif
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_QDesignerWidgetBoxInterface__Widget)
+typedef QDesignerWidgetBoxInterface::Widget QDesignerWidgetBoxInterface__Widget;
+#endif
+#else
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDesignerDnDItemInterface QDesignerDnDItemInterface;
+typedef struct QDesignerWidgetBoxInterface QDesignerWidgetBoxInterface;
+typedef struct QDesignerWidgetBoxInterface__Category QDesignerWidgetBoxInterface__Category;
+typedef struct QDesignerWidgetBoxInterface__Widget QDesignerWidgetBoxInterface__Widget;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+QDesignerWidgetBoxInterface* QDesignerWidgetBoxInterface_new(QWidget* parent);
+QDesignerWidgetBoxInterface* QDesignerWidgetBoxInterface_new2();
+QDesignerWidgetBoxInterface* QDesignerWidgetBoxInterface_new3(QWidget* parent, int flags);
+QMetaObject* QDesignerWidgetBoxInterface_MetaObject(const QDesignerWidgetBoxInterface* self);
+void* QDesignerWidgetBoxInterface_Metacast(QDesignerWidgetBoxInterface* self, const char* param1);
+int QDesignerWidgetBoxInterface_Metacall(QDesignerWidgetBoxInterface* self, int param1, int param2, void** param3);
+int QDesignerWidgetBoxInterface_CategoryCount(const QDesignerWidgetBoxInterface* self);
+QDesignerWidgetBoxInterface__Category* QDesignerWidgetBoxInterface_Category(const QDesignerWidgetBoxInterface* self, int cat_idx);
+void QDesignerWidgetBoxInterface_AddCategory(QDesignerWidgetBoxInterface* self, const QDesignerWidgetBoxInterface__Category* cat);
+void QDesignerWidgetBoxInterface_RemoveCategory(QDesignerWidgetBoxInterface* self, int cat_idx);
+int QDesignerWidgetBoxInterface_WidgetCount(const QDesignerWidgetBoxInterface* self, int cat_idx);
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface_Widget(const QDesignerWidgetBoxInterface* self, int cat_idx, int wgt_idx);
+void QDesignerWidgetBoxInterface_AddWidget(QDesignerWidgetBoxInterface* self, int cat_idx, const QDesignerWidgetBoxInterface__Widget* wgt);
+void QDesignerWidgetBoxInterface_RemoveWidget(QDesignerWidgetBoxInterface* self, int cat_idx, int wgt_idx);
+int QDesignerWidgetBoxInterface_FindOrInsertCategory(QDesignerWidgetBoxInterface* self, const libqt_string categoryName);
+void QDesignerWidgetBoxInterface_DropWidgets(QDesignerWidgetBoxInterface* self, const libqt_list /* of QDesignerDnDItemInterface* */ item_list, const QPoint* global_mouse_pos);
+void QDesignerWidgetBoxInterface_SetFileName(QDesignerWidgetBoxInterface* self, const libqt_string file_name);
+libqt_string QDesignerWidgetBoxInterface_FileName(const QDesignerWidgetBoxInterface* self);
+bool QDesignerWidgetBoxInterface_Load(QDesignerWidgetBoxInterface* self);
+bool QDesignerWidgetBoxInterface_Save(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnMetaObject(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QMetaObject* QDesignerWidgetBoxInterface_SuperMetaObject(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnMetacast(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void* QDesignerWidgetBoxInterface_SuperMetacast(QDesignerWidgetBoxInterface* self, const char* param1);
+void QDesignerWidgetBoxInterface_OnMetacall(QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperMetacall(QDesignerWidgetBoxInterface* self, int param1, int param2, void** param3);
+void QDesignerWidgetBoxInterface_OnCategoryCount(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperCategoryCount(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnCategory(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QDesignerWidgetBoxInterface__Category* QDesignerWidgetBoxInterface_SuperCategory(const QDesignerWidgetBoxInterface* self, int cat_idx);
+void QDesignerWidgetBoxInterface_OnAddCategory(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperAddCategory(QDesignerWidgetBoxInterface* self, const QDesignerWidgetBoxInterface__Category* cat);
+void QDesignerWidgetBoxInterface_OnRemoveCategory(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperRemoveCategory(QDesignerWidgetBoxInterface* self, int cat_idx);
+void QDesignerWidgetBoxInterface_OnWidgetCount(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperWidgetCount(const QDesignerWidgetBoxInterface* self, int cat_idx);
+void QDesignerWidgetBoxInterface_OnWidget(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface_SuperWidget(const QDesignerWidgetBoxInterface* self, int cat_idx, int wgt_idx);
+void QDesignerWidgetBoxInterface_OnAddWidget(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperAddWidget(QDesignerWidgetBoxInterface* self, int cat_idx, const QDesignerWidgetBoxInterface__Widget* wgt);
+void QDesignerWidgetBoxInterface_OnRemoveWidget(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperRemoveWidget(QDesignerWidgetBoxInterface* self, int cat_idx, int wgt_idx);
+void QDesignerWidgetBoxInterface_OnDropWidgets(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperDropWidgets(QDesignerWidgetBoxInterface* self, const libqt_list /* of QDesignerDnDItemInterface* */ item_list, const QPoint* global_mouse_pos);
+void QDesignerWidgetBoxInterface_OnSetFileName(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperSetFileName(QDesignerWidgetBoxInterface* self, const libqt_string file_name);
+void QDesignerWidgetBoxInterface_OnFileName(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+libqt_string QDesignerWidgetBoxInterface_SuperFileName(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnLoad(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperLoad(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnSave(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperSave(QDesignerWidgetBoxInterface* self);
+int QDesignerWidgetBoxInterface_DevType(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnDevType(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperDevType(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_SetVisible(QDesignerWidgetBoxInterface* self, bool visible);
+void QDesignerWidgetBoxInterface_OnSetVisible(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperSetVisible(QDesignerWidgetBoxInterface* self, bool visible);
+QSize* QDesignerWidgetBoxInterface_SizeHint(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnSizeHint(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QSize* QDesignerWidgetBoxInterface_SuperSizeHint(const QDesignerWidgetBoxInterface* self);
+QSize* QDesignerWidgetBoxInterface_MinimumSizeHint(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnMinimumSizeHint(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QSize* QDesignerWidgetBoxInterface_SuperMinimumSizeHint(const QDesignerWidgetBoxInterface* self);
+int QDesignerWidgetBoxInterface_HeightForWidth(const QDesignerWidgetBoxInterface* self, int param1);
+void QDesignerWidgetBoxInterface_OnHeightForWidth(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperHeightForWidth(const QDesignerWidgetBoxInterface* self, int param1);
+bool QDesignerWidgetBoxInterface_HasHeightForWidth(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnHasHeightForWidth(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperHasHeightForWidth(const QDesignerWidgetBoxInterface* self);
+QPaintEngine* QDesignerWidgetBoxInterface_PaintEngine(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnPaintEngine(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QPaintEngine* QDesignerWidgetBoxInterface_SuperPaintEngine(const QDesignerWidgetBoxInterface* self);
+bool QDesignerWidgetBoxInterface_Event(QDesignerWidgetBoxInterface* self, QEvent* event);
+void QDesignerWidgetBoxInterface_OnEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperEvent(QDesignerWidgetBoxInterface* self, QEvent* event);
+void QDesignerWidgetBoxInterface_MousePressEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_OnMousePressEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperMousePressEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_MouseReleaseEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_OnMouseReleaseEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperMouseReleaseEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_MouseDoubleClickEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_OnMouseDoubleClickEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperMouseDoubleClickEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_MouseMoveEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_OnMouseMoveEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperMouseMoveEvent(QDesignerWidgetBoxInterface* self, QMouseEvent* event);
+void QDesignerWidgetBoxInterface_WheelEvent(QDesignerWidgetBoxInterface* self, QWheelEvent* event);
+void QDesignerWidgetBoxInterface_OnWheelEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperWheelEvent(QDesignerWidgetBoxInterface* self, QWheelEvent* event);
+void QDesignerWidgetBoxInterface_KeyPressEvent(QDesignerWidgetBoxInterface* self, QKeyEvent* event);
+void QDesignerWidgetBoxInterface_OnKeyPressEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperKeyPressEvent(QDesignerWidgetBoxInterface* self, QKeyEvent* event);
+void QDesignerWidgetBoxInterface_KeyReleaseEvent(QDesignerWidgetBoxInterface* self, QKeyEvent* event);
+void QDesignerWidgetBoxInterface_OnKeyReleaseEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperKeyReleaseEvent(QDesignerWidgetBoxInterface* self, QKeyEvent* event);
+void QDesignerWidgetBoxInterface_FocusInEvent(QDesignerWidgetBoxInterface* self, QFocusEvent* event);
+void QDesignerWidgetBoxInterface_OnFocusInEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperFocusInEvent(QDesignerWidgetBoxInterface* self, QFocusEvent* event);
+void QDesignerWidgetBoxInterface_FocusOutEvent(QDesignerWidgetBoxInterface* self, QFocusEvent* event);
+void QDesignerWidgetBoxInterface_OnFocusOutEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperFocusOutEvent(QDesignerWidgetBoxInterface* self, QFocusEvent* event);
+void QDesignerWidgetBoxInterface_EnterEvent(QDesignerWidgetBoxInterface* self, QEnterEvent* event);
+void QDesignerWidgetBoxInterface_OnEnterEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperEnterEvent(QDesignerWidgetBoxInterface* self, QEnterEvent* event);
+void QDesignerWidgetBoxInterface_LeaveEvent(QDesignerWidgetBoxInterface* self, QEvent* event);
+void QDesignerWidgetBoxInterface_OnLeaveEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperLeaveEvent(QDesignerWidgetBoxInterface* self, QEvent* event);
+void QDesignerWidgetBoxInterface_PaintEvent(QDesignerWidgetBoxInterface* self, QPaintEvent* event);
+void QDesignerWidgetBoxInterface_OnPaintEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperPaintEvent(QDesignerWidgetBoxInterface* self, QPaintEvent* event);
+void QDesignerWidgetBoxInterface_MoveEvent(QDesignerWidgetBoxInterface* self, QMoveEvent* event);
+void QDesignerWidgetBoxInterface_OnMoveEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperMoveEvent(QDesignerWidgetBoxInterface* self, QMoveEvent* event);
+void QDesignerWidgetBoxInterface_ResizeEvent(QDesignerWidgetBoxInterface* self, QResizeEvent* event);
+void QDesignerWidgetBoxInterface_OnResizeEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperResizeEvent(QDesignerWidgetBoxInterface* self, QResizeEvent* event);
+void QDesignerWidgetBoxInterface_CloseEvent(QDesignerWidgetBoxInterface* self, QCloseEvent* event);
+void QDesignerWidgetBoxInterface_OnCloseEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperCloseEvent(QDesignerWidgetBoxInterface* self, QCloseEvent* event);
+void QDesignerWidgetBoxInterface_ContextMenuEvent(QDesignerWidgetBoxInterface* self, QContextMenuEvent* event);
+void QDesignerWidgetBoxInterface_OnContextMenuEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperContextMenuEvent(QDesignerWidgetBoxInterface* self, QContextMenuEvent* event);
+void QDesignerWidgetBoxInterface_TabletEvent(QDesignerWidgetBoxInterface* self, QTabletEvent* event);
+void QDesignerWidgetBoxInterface_OnTabletEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperTabletEvent(QDesignerWidgetBoxInterface* self, QTabletEvent* event);
+void QDesignerWidgetBoxInterface_ActionEvent(QDesignerWidgetBoxInterface* self, QActionEvent* event);
+void QDesignerWidgetBoxInterface_OnActionEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperActionEvent(QDesignerWidgetBoxInterface* self, QActionEvent* event);
+void QDesignerWidgetBoxInterface_DragEnterEvent(QDesignerWidgetBoxInterface* self, QDragEnterEvent* event);
+void QDesignerWidgetBoxInterface_OnDragEnterEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperDragEnterEvent(QDesignerWidgetBoxInterface* self, QDragEnterEvent* event);
+void QDesignerWidgetBoxInterface_DragMoveEvent(QDesignerWidgetBoxInterface* self, QDragMoveEvent* event);
+void QDesignerWidgetBoxInterface_OnDragMoveEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperDragMoveEvent(QDesignerWidgetBoxInterface* self, QDragMoveEvent* event);
+void QDesignerWidgetBoxInterface_DragLeaveEvent(QDesignerWidgetBoxInterface* self, QDragLeaveEvent* event);
+void QDesignerWidgetBoxInterface_OnDragLeaveEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperDragLeaveEvent(QDesignerWidgetBoxInterface* self, QDragLeaveEvent* event);
+void QDesignerWidgetBoxInterface_DropEvent(QDesignerWidgetBoxInterface* self, QDropEvent* event);
+void QDesignerWidgetBoxInterface_OnDropEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperDropEvent(QDesignerWidgetBoxInterface* self, QDropEvent* event);
+void QDesignerWidgetBoxInterface_ShowEvent(QDesignerWidgetBoxInterface* self, QShowEvent* event);
+void QDesignerWidgetBoxInterface_OnShowEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperShowEvent(QDesignerWidgetBoxInterface* self, QShowEvent* event);
+void QDesignerWidgetBoxInterface_HideEvent(QDesignerWidgetBoxInterface* self, QHideEvent* event);
+void QDesignerWidgetBoxInterface_OnHideEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperHideEvent(QDesignerWidgetBoxInterface* self, QHideEvent* event);
+bool QDesignerWidgetBoxInterface_NativeEvent(QDesignerWidgetBoxInterface* self, const libqt_string eventType, void* message, intptr_t* result);
+void QDesignerWidgetBoxInterface_OnNativeEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperNativeEvent(QDesignerWidgetBoxInterface* self, const libqt_string eventType, void* message, intptr_t* result);
+void QDesignerWidgetBoxInterface_ChangeEvent(QDesignerWidgetBoxInterface* self, QEvent* param1);
+void QDesignerWidgetBoxInterface_OnChangeEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperChangeEvent(QDesignerWidgetBoxInterface* self, QEvent* param1);
+int QDesignerWidgetBoxInterface_Metric(const QDesignerWidgetBoxInterface* self, int param1);
+void QDesignerWidgetBoxInterface_OnMetric(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperMetric(const QDesignerWidgetBoxInterface* self, int param1);
+void QDesignerWidgetBoxInterface_InitPainter(const QDesignerWidgetBoxInterface* self, QPainter* painter);
+void QDesignerWidgetBoxInterface_OnInitPainter(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperInitPainter(const QDesignerWidgetBoxInterface* self, QPainter* painter);
+QPaintDevice* QDesignerWidgetBoxInterface_Redirected(const QDesignerWidgetBoxInterface* self, QPoint* offset);
+void QDesignerWidgetBoxInterface_OnRedirected(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QPaintDevice* QDesignerWidgetBoxInterface_SuperRedirected(const QDesignerWidgetBoxInterface* self, QPoint* offset);
+QPainter* QDesignerWidgetBoxInterface_SharedPainter(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnSharedPainter(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QPainter* QDesignerWidgetBoxInterface_SuperSharedPainter(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_InputMethodEvent(QDesignerWidgetBoxInterface* self, QInputMethodEvent* param1);
+void QDesignerWidgetBoxInterface_OnInputMethodEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperInputMethodEvent(QDesignerWidgetBoxInterface* self, QInputMethodEvent* param1);
+QVariant* QDesignerWidgetBoxInterface_InputMethodQuery(const QDesignerWidgetBoxInterface* self, int param1);
+void QDesignerWidgetBoxInterface_OnInputMethodQuery(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QVariant* QDesignerWidgetBoxInterface_SuperInputMethodQuery(const QDesignerWidgetBoxInterface* self, int param1);
+bool QDesignerWidgetBoxInterface_FocusNextPrevChild(QDesignerWidgetBoxInterface* self, bool next);
+void QDesignerWidgetBoxInterface_OnFocusNextPrevChild(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperFocusNextPrevChild(QDesignerWidgetBoxInterface* self, bool next);
+bool QDesignerWidgetBoxInterface_EventFilter(QDesignerWidgetBoxInterface* self, QObject* watched, QEvent* event);
+void QDesignerWidgetBoxInterface_OnEventFilter(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperEventFilter(QDesignerWidgetBoxInterface* self, QObject* watched, QEvent* event);
+void QDesignerWidgetBoxInterface_TimerEvent(QDesignerWidgetBoxInterface* self, QTimerEvent* event);
+void QDesignerWidgetBoxInterface_OnTimerEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperTimerEvent(QDesignerWidgetBoxInterface* self, QTimerEvent* event);
+void QDesignerWidgetBoxInterface_ChildEvent(QDesignerWidgetBoxInterface* self, QChildEvent* event);
+void QDesignerWidgetBoxInterface_OnChildEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperChildEvent(QDesignerWidgetBoxInterface* self, QChildEvent* event);
+void QDesignerWidgetBoxInterface_CustomEvent(QDesignerWidgetBoxInterface* self, QEvent* event);
+void QDesignerWidgetBoxInterface_OnCustomEvent(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperCustomEvent(QDesignerWidgetBoxInterface* self, QEvent* event);
+void QDesignerWidgetBoxInterface_ConnectNotify(QDesignerWidgetBoxInterface* self, const QMetaMethod* signal);
+void QDesignerWidgetBoxInterface_OnConnectNotify(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperConnectNotify(QDesignerWidgetBoxInterface* self, const QMetaMethod* signal);
+void QDesignerWidgetBoxInterface_DisconnectNotify(QDesignerWidgetBoxInterface* self, const QMetaMethod* signal);
+void QDesignerWidgetBoxInterface_OnDisconnectNotify(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperDisconnectNotify(QDesignerWidgetBoxInterface* self, const QMetaMethod* signal);
+void QDesignerWidgetBoxInterface_UpdateMicroFocus(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnUpdateMicroFocus(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperUpdateMicroFocus(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_Create(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnCreate(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperCreate(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_Destroy(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnDestroy(QDesignerWidgetBoxInterface* self, intptr_t slot);
+void QDesignerWidgetBoxInterface_SuperDestroy(QDesignerWidgetBoxInterface* self);
+bool QDesignerWidgetBoxInterface_FocusNextChild(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnFocusNextChild(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperFocusNextChild(QDesignerWidgetBoxInterface* self);
+bool QDesignerWidgetBoxInterface_FocusPreviousChild(QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnFocusPreviousChild(QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperFocusPreviousChild(QDesignerWidgetBoxInterface* self);
+QObject* QDesignerWidgetBoxInterface_Sender(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnSender(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+QObject* QDesignerWidgetBoxInterface_SuperSender(const QDesignerWidgetBoxInterface* self);
+int QDesignerWidgetBoxInterface_SenderSignalIndex(const QDesignerWidgetBoxInterface* self);
+void QDesignerWidgetBoxInterface_OnSenderSignalIndex(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperSenderSignalIndex(const QDesignerWidgetBoxInterface* self);
+int QDesignerWidgetBoxInterface_Receivers(const QDesignerWidgetBoxInterface* self, const char* signal);
+void QDesignerWidgetBoxInterface_OnReceivers(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+int QDesignerWidgetBoxInterface_SuperReceivers(const QDesignerWidgetBoxInterface* self, const char* signal);
+bool QDesignerWidgetBoxInterface_IsSignalConnected(const QDesignerWidgetBoxInterface* self, const QMetaMethod* signal);
+void QDesignerWidgetBoxInterface_OnIsSignalConnected(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+bool QDesignerWidgetBoxInterface_SuperIsSignalConnected(const QDesignerWidgetBoxInterface* self, const QMetaMethod* signal);
+double QDesignerWidgetBoxInterface_GetDecodedMetricF(const QDesignerWidgetBoxInterface* self, int metricA, int metricB);
+void QDesignerWidgetBoxInterface_OnGetDecodedMetricF(const QDesignerWidgetBoxInterface* self, intptr_t slot);
+double QDesignerWidgetBoxInterface_SuperGetDecodedMetricF(const QDesignerWidgetBoxInterface* self, int metricA, int metricB);
+void QDesignerWidgetBoxInterface_Delete(QDesignerWidgetBoxInterface* self);
+
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface__Widget_new();
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface__Widget_new2(const QDesignerWidgetBoxInterface__Widget* w);
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface__Widget_new3(const libqt_string aname);
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface__Widget_new4(const libqt_string aname, const libqt_string xml);
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface__Widget_new5(const libqt_string aname, const libqt_string xml, const libqt_string icon_name);
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface__Widget_new6(const libqt_string aname, const libqt_string xml, const libqt_string icon_name, int atype);
+void QDesignerWidgetBoxInterface__Widget_OperatorAssign(QDesignerWidgetBoxInterface__Widget* self, const QDesignerWidgetBoxInterface__Widget* w);
+libqt_string QDesignerWidgetBoxInterface__Widget_Name(const QDesignerWidgetBoxInterface__Widget* self);
+void QDesignerWidgetBoxInterface__Widget_SetName(QDesignerWidgetBoxInterface__Widget* self, const libqt_string aname);
+libqt_string QDesignerWidgetBoxInterface__Widget_DomXml(const QDesignerWidgetBoxInterface__Widget* self);
+void QDesignerWidgetBoxInterface__Widget_SetDomXml(QDesignerWidgetBoxInterface__Widget* self, const libqt_string xml);
+libqt_string QDesignerWidgetBoxInterface__Widget_IconName(const QDesignerWidgetBoxInterface__Widget* self);
+void QDesignerWidgetBoxInterface__Widget_SetIconName(QDesignerWidgetBoxInterface__Widget* self, const libqt_string icon_name);
+int QDesignerWidgetBoxInterface__Widget_Type(const QDesignerWidgetBoxInterface__Widget* self);
+void QDesignerWidgetBoxInterface__Widget_SetType(QDesignerWidgetBoxInterface__Widget* self, int atype);
+bool QDesignerWidgetBoxInterface__Widget_IsNull(const QDesignerWidgetBoxInterface__Widget* self);
+void QDesignerWidgetBoxInterface__Widget_Delete(QDesignerWidgetBoxInterface__Widget* self);
+
+QDesignerWidgetBoxInterface__Category* QDesignerWidgetBoxInterface__Category_new();
+QDesignerWidgetBoxInterface__Category* QDesignerWidgetBoxInterface__Category_new2(const QDesignerWidgetBoxInterface__Category* param1);
+QDesignerWidgetBoxInterface__Category* QDesignerWidgetBoxInterface__Category_new3(const libqt_string aname);
+QDesignerWidgetBoxInterface__Category* QDesignerWidgetBoxInterface__Category_new4(const libqt_string aname, int atype);
+libqt_string QDesignerWidgetBoxInterface__Category_Name(const QDesignerWidgetBoxInterface__Category* self);
+void QDesignerWidgetBoxInterface__Category_SetName(QDesignerWidgetBoxInterface__Category* self, const libqt_string aname);
+int QDesignerWidgetBoxInterface__Category_WidgetCount(const QDesignerWidgetBoxInterface__Category* self);
+QDesignerWidgetBoxInterface__Widget* QDesignerWidgetBoxInterface__Category_Widget(const QDesignerWidgetBoxInterface__Category* self, int idx);
+void QDesignerWidgetBoxInterface__Category_RemoveWidget(QDesignerWidgetBoxInterface__Category* self, int idx);
+void QDesignerWidgetBoxInterface__Category_AddWidget(QDesignerWidgetBoxInterface__Category* self, const QDesignerWidgetBoxInterface__Widget* awidget);
+int QDesignerWidgetBoxInterface__Category_Type(const QDesignerWidgetBoxInterface__Category* self);
+void QDesignerWidgetBoxInterface__Category_SetType(QDesignerWidgetBoxInterface__Category* self, int atype);
+bool QDesignerWidgetBoxInterface__Category_IsNull(const QDesignerWidgetBoxInterface__Category* self);
+void QDesignerWidgetBoxInterface__Category_Delete(QDesignerWidgetBoxInterface__Category* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

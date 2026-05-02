@@ -1,0 +1,3067 @@
+package main
+
+import (
+	"C"
+	"fmt"
+	"math"
+	"path/filepath"
+	"reflect"
+	"slices"
+	"sort"
+	"strconv"
+	"strings"
+	"unicode"
+)
+
+// cComment renders a string for usage in a C comment.
+func cComment(s string) string {
+	// Remove nested comments
+	uncomment := strings.NewReplacer("/*", "", "*/", "")
+	return strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(s), "  ", " "))
+}
+
+// not language-reserved words, but binding-reserved words
+func reservedWordC(s string) bool {
+	switch s {
+	case "default", "const", "var", "len", "new", "copy", "import",
+		"string", "map", "int", "select", "ret", "suspend", "null", "self":
+		return true
+	default:
+		return false
+	}
+}
+
+func getPageName(c string) string {
+	pageName := strings.ToLower(c)
+	if pageName == "qnamespace" {
+		return "qt"
+	}
+	pageName = strings.ReplaceAll(pageName, "__", "-")
+	return pageName
+}
+
+type PageType int
+
+const (
+	QtPage PageType = iota
+	EnumPage
+	DtorPage
+)
+
+var operatorLookup = map[rune]string{
+	'!': "-not",
+	'"': "-22",
+	'&': "-and",
+	'(': "-28",
+	')': "-29",
+	'*': "-2a",
+	'+': "-2b",
+	'-': "-",
+	'/': "-2f",
+	'<': "-lt",
+	'=': "-eq",
+	'>': "-gt",
+	'[': "-5b",
+	']': "-5d",
+	'^': "-5e",
+	'|': "-7c",
+	'~': "-7e",
+}
+
+func operatorToUrl(cmdUrl string) string {
+	suffix := strings.TrimPrefix(cmdUrl, "operator")
+	ret := "operator"
+
+	for _, op := range suffix {
+		if ch, ok := operatorLookup[op]; ok {
+			ret += ch
+		}
+	}
+
+	return ret
+}
+
+const (
+	preUrl           = "/// [Upstream resources]("
+	postUrl          = ")\n"
+	uniquePtrWarning = " (WARNING: The library takes ownership of this parameter's memory and attempting to access it will lead to a crash.)"
+)
+
+func (cfs *cFileState) getPageUrl(pageType PageType, pageName, cmdURL, className string) string {
+	if strings.HasPrefix(pageName, "qsci") {
+		if pageType == EnumPage {
+			return ""
+		}
+		return preUrl + "https://www.riverbankcomputing.com/static/Docs/QScintilla/class" + className + ".html" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "layershellqt") || (pageType == EnumPage && cfs.currentPackageName == "foss-extras-layershellqt") {
+		return preUrl + "https://invent.kde.org/plasma/layer-shell-qt" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "kcolorpicker") {
+		return preUrl + "https://github.com/ksnip/kcolorpicker" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "kimageannotator") {
+		return preUrl + "https://github.com/ksnip/kImageAnnotator" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "packagekit") || (pageType == EnumPage && cfs.currentPackageName == "foss-extras-packagekitqt") {
+		return preUrl + "https://github.com/PackageKit/PackageKit-Qt" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "poppler") || (pageType == EnumPage && cfs.currentPackageName == "restricted-extras-poppler") {
+		url := strings.Split(cfs.currentClassName, "__")
+		typeName := "class"
+		classUrl := url[0]
+		if len(url) == 2 {
+			classUrl = url[1]
+		} else if len(url) > 2 {
+			classUrl = url[1] + "_1_1" + url[2]
+			if url[2] == "PdfVersion" || url[2] == "Quad" {
+				typeName = "struct"
+			}
+		}
+		prefix := ifv(classUrl == "Poppler", "namespace", typeName+"Poppler_1_1")
+		return preUrl + "https://poppler.freedesktop.org/api/qt6/" + prefix + classUrl + ".html" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "qkeychain") || (pageType == EnumPage && cfs.currentPackageName == "extras-qtkeychain") {
+		return preUrl + "https://github.com/frankosterfeld/qtkeychain" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "Accounts__") || (pageType == EnumPage && cfs.currentPackageName == "posix-extras-accounts") {
+		classUrl := strings.TrimPrefix(pageName, "Accounts__")
+		return preUrl + "https://accounts-sso.gitlab.io/libaccounts-qt/classAccounts_1_1" + strings.ToUpper(classUrl[0:1]) + classUrl[1:] + ".html" + postUrl
+	}
+
+	if strings.HasPrefix(pageName, "SignOn__") || (pageType == EnumPage && cfs.currentPackageName == "posix-extras-signon") {
+		classUrl := strings.TrimPrefix(pageName, "SignOn__")
+		return preUrl + "https://accounts-sso.gitlab.io/signond/classSignOn_1_1" + strings.ToUpper(classUrl[0:1]) + classUrl[1:] + ".html" + postUrl
+	}
+
+	if pageType == DtorPage && strings.Contains(className, "__") {
+		return ""
+	}
+
+	if strings.HasPrefix(pageName, "qtermwidget") || strings.HasPrefix(className, "Keyboard") ||
+		strings.HasPrefix(className, "Konsole") || pageName == "emulation" || pageName == "filter" {
+		return preUrl + "https://github.com/lxqt/qtermwidget?tab=readme-ov-file#api" + postUrl
+	}
+
+	qtUrl := "https://doc.qt.io/qt-6/"
+	types := ifv(pageName == "qt", "types", "public-types")
+	if pageName == "question" || (pageName[0] != 'q' && cfs.currentPackageName != "designer" &&
+		pageName != "partial_ordering" && pageName != "weak_ordering" && pageName != "strong_ordering") {
+		qtUrl = "https://api.kde.org/"
+		pageName = strings.TrimSuffix(pageName, "_1")
+		if pageType == EnumPage {
+			switch cfs.currentPackageName {
+			case "extras-attica":
+				pageName = "attica-" + pageName
+			case "extras-kfilemetadata":
+				pageName = "kfilemetadata-" + pageName
+			case "extras-kio":
+				if pageType == EnumPage && !strings.HasPrefix(pageName, "k") {
+					pageName = "kio-" + pageName
+				}
+			case "extras-knewstuff":
+				pageName = "knscore-" + pageName
+			case "extras-kparts":
+				pageName = "kparts-" + pageName
+			case "extras-ksvg":
+				pageName = "ksvg-" + pageName
+			case "extras-ksyntaxhighlighting":
+				pageName = "ksyntaxhighlighting-" + pageName
+			case "extras-kunitconversion":
+				pageName = "kunitconversion"
+			case "extras-solid":
+				pageName = "solid-" + pageName
+			case "extras-sonnet":
+				pageName = "sonnet-" + pageName
+			}
+		}
+	}
+
+	if pageName == "qcustomplot" || strings.HasPrefix(pageName, "QCP") {
+		pageName = ifv(pageName == "qcustomplot", "QCustomPlot", pageName)
+		prefix := ifv(pageName == "QCP", "namespace", "class")
+		qtUrl = "https://www.qcustomplot.com/documentation/" + prefix
+		types = "pub-types"
+		cmdURL = ""
+		if pageType == DtorPage {
+			pageType = QtPage
+		}
+	}
+
+	pageName = strings.ReplaceAll(pageName, "__", "-")
+	pageName = strings.ReplaceAll(pageName, "_", "-")
+
+	switch pageType {
+	case QtPage:
+		if strings.HasPrefix(cmdURL, "operator") {
+			cmdURL = operatorToUrl(cmdURL)
+		}
+
+		return preUrl + qtUrl + pageName + ".html" + ifv(cmdURL != "", "#"+cmdURL, "") + postUrl
+	case EnumPage:
+		return preUrl + qtUrl + pageName + ".html#" + types + postUrl
+	case DtorPage:
+		return preUrl + qtUrl + pageName + ".html#dtor." + className + postUrl
+	}
+	return ""
+}
+
+// cabiEnumName returns the C ABI enum name for a Qt C++ class.
+func cabiEnumName(className string) string {
+	// Many types are defined in qnamespace.h under Qt::
+	// The C implementation for the enums replaces the namespace
+	// with __ and uppercases the values. Some values are also
+	// prefixed to avoid collisions.
+	name := strings.Split(className, "::")
+	enumName := name[len(name)-1]
+	return strings.ReplaceAll(enumName, "::", "__")
+}
+
+// cabiEnumClassName returns the C ABI enum class name for a Qt C++ class.
+// Normally this is the same, except for class types that are nested inside another class definition.
+func cabiEnumClassName(className string) string {
+	// Must use __ to avoid subclass/method name collision e.g. QPagedPaintDevice::Margins
+	return strings.ReplaceAll(className, "::", "__")
+}
+
+func cSafeMethodName(name string) string {
+	var result []rune
+	for _, char := range name {
+		if unicode.IsUpper(char) {
+			result = append(result, '_')
+			result = append(result, unicode.ToLower(char))
+		} else {
+			result = append(result, char)
+		}
+	}
+	return strings.TrimSuffix(string(result), "_")
+}
+
+func (p CppParameter) RenderTypeC(cfs *cFileState, isReturnType, fullEnumName, includeContainerComment bool) string {
+	if p.Pointer && (p.ParameterType == "char" || p.ParameterType == "GLchar") {
+		if p.Const {
+			return "const char" + strings.Repeat("*", max(p.PointerCount, 1))
+		}
+		return "char" + strings.Repeat("*", max(p.PointerCount, 1))
+	}
+
+	if p.ParameterType == "QByteArray" || p.ParameterType == "QByteArrayView" {
+		return "char*"
+	}
+
+	if p.ParameterType == "QString" || p.ParameterType == "QByteArrayView" ||
+		p.ParameterType == "QStringView" || p.ParameterType == "SignOn::MethodName" ||
+		p.ParameterType == "QAnyStringView" {
+		return "const char*"
+	}
+
+	if t, _, ok := p.QListOf(); ok {
+		if t.ParameterType == "QString" || t.ParameterType == "QByteArray" || t.ParameterType == "SignOn::MethodName" {
+			return "const char*" + ifv(isReturnType, "*", "")
+		} else if !isReturnType {
+			if t.QtClassType() || t.IntType() {
+				maybePointer := ""
+				if !t.QtClassType() {
+					maybePointer = "*"
+				}
+				return t.RenderTypeCabi(false) + maybePointer
+			}
+		}
+		return "libqt_list" + ifv(includeContainerComment, cppComment("of "+strings.TrimSpace(t.RenderTypeC(cfs, isReturnType, true, includeContainerComment))), "")
+	}
+
+	if k, ok := p.QSetOf(); ok {
+		return "libqt_list" + ifv(p.Pointer, "*", "") + ifv(includeContainerComment, cppComment("set of "+strings.TrimSpace(k.RenderTypeC(cfs, isReturnType, true, includeContainerComment))), "")
+	}
+
+	if k, v, containerType, ok := p.QMapOf(); ok {
+		maybePointer := ifv(IsMultiHashMap(containerType), "*", "")
+		if maybePointer == "" && !isReturnType {
+			if _, _, ok := v.QListOf(); ok {
+				maybePointer = "*"
+			}
+		}
+		return "libqt_map" + ifv(p.Pointer, "*", "") + ifv(includeContainerComment, cppComment("of "+strings.TrimSpace(k.RenderTypeC(cfs, isReturnType, true, includeContainerComment))+" to "+strings.TrimSpace(v.RenderTypeC(cfs, isReturnType, true, includeContainerComment))+maybePointer), "")
+	}
+
+	if t1, t2, ok := p.QPairOf(); ok {
+		// Design QPair using capital-named members, in case it gets passed
+		// across packages
+		returnType := "libqt_pair"
+		if (t1.IntType() || IsKnownClass(t1.ParameterType)) && (t2.IntType() || IsKnownClass(t2.ParameterType)) {
+			fParam := t1.ParameterType
+			sParam := t2.ParameterType
+
+			if e, ok := KnownEnums[t1.ParameterType]; ok {
+				fParam = e.EnumTypeC
+			}
+			if e, ok := KnownEnums[t2.ParameterType]; ok {
+				sParam = e.EnumTypeC
+			}
+			returnType = "pair_" + strings.ToLower(fParam) + "_" + strings.ToLower(sParam)
+		}
+
+		f := strings.TrimSpace(t1.RenderTypeC(cfs, isReturnType, true, includeContainerComment))
+		s := strings.TrimSpace(t2.RenderTypeC(cfs, isReturnType, true, includeContainerComment))
+
+		return returnType + ifv(includeContainerComment, cppComment("tuple of "+f+" and "+s), "")
+	}
+
+	if (p.ParameterType == "void" || p.ParameterType == "GLvoid") && p.Pointer {
+		return "void*"
+	}
+
+	ret := ""
+
+	if p.IsKnownEnum() {
+		if strings.HasPrefix(p.ParameterType, "QFlags<") {
+			if fullEnumName {
+				ret = "flag of enum " + cabiEnumClassName(p.ParameterType[7:len(p.ParameterType)-1]) + ifv(p.Pointer || p.ByRef, "*", "")
+			} else {
+				e, _ := KnownEnums[p.ParameterType]
+				ret = ifv(p.Const, "const ", "") + e.EnumTypeC + ifv(p.Pointer || p.ByRef, "*", "")
+			}
+		}
+
+		if ret != "" {
+			return ret
+		}
+	}
+
+	paramType := p.ParameterType
+	if !(p.ByRef || p.Pointer) && p.IntType() && p.QtCppOriginalType != nil && shouldPreferQualType(p.QtCppOriginalType.ParameterType) {
+		paramType = p.QtCppOriginalType.ParameterType
+	}
+
+	switch paramType {
+	case "GLvoid":
+		ret += ifv((p.Pointer || p.ByRef) && fullEnumName, "*", "") + "void"
+	case "GLchar":
+		ret = "char"
+	case "uchar", "quint8", "GLboolean", "GLubyte":
+		ret += "uint8_t"
+	case "qint8", "GLbyte":
+		ret += "signed char"
+	case "qint16", "GLshort":
+		ret += "int16_t"
+	case "ushort", "quint16", "unsigned short", "GLushort":
+		ret += "uint16_t"
+	case "qint32", "GLint", "GLsizei":
+		ret += "int32_t"
+	case "quint32", "uint", "unsigned int", "GLbitfield", "GLenum", "GLuint":
+		ret += "uint32_t"
+	case "qint64", "GLint64":
+		ret += "int64_t"
+	case "quint64", "GLuint64":
+		ret += "uint64_t"
+	case "GLclampf", "GLfloat":
+		ret += "float"
+	case "qreal", "GLdouble":
+		ret += "double"
+	case "ptrdiff_t", "qptrdiff", "qintptr", "qlonglong", "qsizetype",
+		"QIntegerForSizeof<std::size_t>::Signed", "QIntegerForSizeof<void *>::Signed", "GLintptr", "GLsizeiptr":
+		ret += "intptr_t"
+	case "ulong", "unsigned long", "size_t", "unsigned long long", "qulonglong", "quintptr",
+		"QIntegerForSizeof<void *>::Unsigned":
+		ret += "uintptr_t"
+	case "quint128":
+		ret = "__uint128_t"
+
+	default:
+		if ft, ok := p.QFlagsOf(); ok {
+			if enumInfo, ok := KnownEnums[ft.UnderlyingEnum.ParameterType]; ok {
+				if enumInfo.PackageName == cfs.currentPackageName {
+					// Same package
+					if fullEnumName {
+						ret += "enum " + enumInfo.Enum.EnumName
+					} else {
+						ret += enumInfo.EnumTypeC
+					}
+				}
+			} else {
+				if fullEnumName {
+					ret += cabiEnumName(ft.UnderlyingEnum.ParameterType)
+				} else {
+					ret += enumInfo.EnumTypeC
+				}
+			}
+
+		} else if enumInfo, ok := KnownEnums[p.ParameterType]; ok {
+			enumName := cabiEnumName(p.ParameterType)
+			lastIndex := strings.LastIndex(p.ParameterType, "::")
+			if lastIndex == -1 {
+				lastIndex = len(p.ParameterType)
+			}
+			enumClass := p.ParameterType[:lastIndex] + "__"
+			enumClass = strings.ReplaceAll(enumClass, "::", "__")
+
+			if enumInfo.PackageName != cfs.currentPackageName {
+				// Potentially cross-package
+				if fullEnumName {
+					ret += "enum " + enumClass + enumName
+				} else {
+					ret += enumInfo.EnumTypeC
+				}
+			} else {
+				// Same package
+				if strings.Contains(p.ParameterType, "::") {
+					if fullEnumName {
+						ret += "enum " + enumClass + enumName
+					} else {
+						ret += enumInfo.EnumTypeC
+					}
+				} else {
+					enumClass := cfs.castType + "__"
+					if fullEnumName {
+						ret += "enum " + enumClass + enumName
+					} else {
+						ret += enumInfo.EnumTypeC
+					}
+				}
+			}
+
+		} else if strings.Contains(p.ParameterType, "::") {
+			// Inner class
+			ret += cabiClassName(p.ParameterType)
+
+		} else {
+			// Do not transform this type
+			ret += p.ParameterType
+		}
+	}
+
+	if isReturnType && p.IsFunctionPointer {
+		return p.renderFunctionType()
+	}
+
+	if p.IsChronoSeconds() {
+		ret = "int64_t"
+	}
+
+	if p.ByRef || p.Pointer {
+		if isReturnType {
+			if !strings.HasSuffix(ret, "*") {
+				ret += "*" + ifv(p.ByRef && p.Pointer, "*", "")
+			}
+		}
+	}
+
+	if e, ok := KnownEnums[ret]; ok {
+		if fullEnumName {
+			if strings.HasPrefix(p.ParameterType, "QFlags<") {
+				enumType := strings.Split(p.ParameterType, "QFlags<")[1]
+				enumType = strings.Split(enumType, ">")[0]
+				enumType = strings.ReplaceAll(enumType, ":", "_")
+				ret = "flag of enum " + enumType + ifv(p.Pointer || p.ByRef, "*", "")
+			} else {
+				enumType := p.ParameterType
+				enumType = strings.ReplaceAll(enumType, ":", "_")
+				ret = "flag of enum " + enumType + ifv(p.Pointer || p.ByRef, "*", "")
+			}
+		} else {
+			ret = e.EnumTypeC
+		}
+	}
+
+	switch ret {
+	case "quint8":
+		ret = "uint8_t"
+	case "uint", "unsigned int", "quint32":
+		ret = "uint32_t"
+	case "quint128":
+		ret = "__uint128_t"
+	}
+
+	if !strings.HasSuffix(ret, "*") {
+		if p.Pointer {
+			ret += strings.Repeat("*", p.PointerCount) + ifv(p.ByRef && p.Pointer, "*", "")
+		} else if p.ByRef || IsKnownClass(p.ParameterType) {
+			ret += "*"
+		}
+	}
+
+	if strings.Contains(ret, "::") && !fullEnumName {
+		ret = strings.ReplaceAll(ret, "::", "__")
+		ret = strings.ReplaceAll(ret, "Qt__", "")
+	}
+
+	if ret == "" {
+		if ft, ok := p.QFlagsOf(); ok {
+			ret = ft.CABIType
+		}
+	}
+
+	return ret
+}
+
+func (p CppParameter) returnAllocComment(cfs *cFileState, returnType string) string {
+	if p.ParameterType == "QString" || p.ParameterType == "QByteArray" || p.ParameterType == "QByteArrayView" ||
+		strings.HasPrefix(returnType, "char*") || strings.HasPrefix(returnType, "const char*") {
+		freeMethod := ifv(returnType == "const char*", "libqt_", "") + "free()"
+		return "\n/// @warning Caller is responsible for freeing the returned memory using `" + freeMethod + "`\n///"
+
+	} else if keyType, valueType, containerType, ok := p.QMapOf(); ok {
+		var freeLoop, keyFree, valueFree, innerFree, maybeMapFree string
+
+		deRef := "."
+		if p.Pointer {
+			deRef = "->"
+			maybeMapFree = "\n/// free(map);"
+		}
+
+		isQMulti := IsMultiHashMap(containerType)
+		inner := valueType.ParameterType
+
+		if keyType.ParameterType == "QString" || keyType.ParameterType == "QByteArray" {
+			keyFree = "\n///     libqt_free(map" + deRef + "keys[i]);"
+		} else if IsKnownClass(keyType.ParameterType) {
+			keyFree = "\n///     free(((" + keyType.ParameterType + "*)map" + deRef + "keys)[i]);"
+		}
+
+		if valueType.ParameterType == "QString" || valueType.ParameterType == "QByteArray" {
+			valueFree = "\n///     libqt_free(map" + deRef + "values[i]);"
+		} else if IsKnownClass(valueType.ParameterType) {
+			valueFree = "\n///     free(((" + valueType.ParameterType + "*)map" + deRef + "values)[i]);"
+		} else if innerType, _, ok := valueType.QListOf(); ok {
+			valueFree = "\n///     free(((" + innerType.ParameterType + "*)map" + deRef + "values)[i]);"
+		} else if _, _, _, ok := valueType.QMapOf(); ok {
+			// every current instance of this is fortunately a map consisting of primitive types
+			valueFree = "\n///     free(((libqt_map*)map" + deRef + "values)[i]" + deRef + "keys);"
+			valueFree += "\n///     free(((libqt_map*)map" + deRef + "values)[i]" + deRef + "values);"
+		}
+
+		if innerType, _, ok := valueType.QListOf(); ok {
+			inner = innerType.ParameterType
+			isQMulti = true
+		}
+
+		if isQMulti {
+			if inner == "QString" || inner == "QByteArray" {
+				var maybeConst, freeType string
+				if inner == "QString" {
+					maybeConst = "const "
+					freeType = "libqt_"
+				}
+
+				innerFree = "\n///     for (size_t j = 0; ((" + maybeConst + "char**)map" + deRef + "values)[i][j] != NULL; j++) {"
+				innerFree += "\n///         " + freeType + "free((map" + deRef + "values)[i][j]);"
+
+			} else if IsKnownClass(inner) {
+				innerFree = "\n///     for (size_t j = 0; ((" + inner + "**)map" + deRef + "values)[i][j] != NULL; j++) {"
+				innerFree += "\n///         free(((" + inner + "**)map" + deRef + "values)[i][j]);"
+			}
+
+			innerFree += "\n///     }"
+		}
+
+		if innerFree != "" || keyFree != "" || valueFree != "" {
+			freeLoop = "\n/// for (size_t i = 0; i < map" + deRef + "len; ++i) {"
+			freeLoop += innerFree
+			freeLoop += keyFree
+			freeLoop += valueFree
+			freeLoop += "\n/// }"
+		}
+
+		uncomment := strings.NewReplacer("/*", "", "*/", "")
+
+		return "\n/// @warning Caller is responsible for freeing the returned memory using a similar sequence to:" +
+			"\n/// ```c\n/// // Example for freeing the returned map of type:" +
+			"\n/// // " + strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(p.RenderTypeC(cfs, true, true, true)), "  ", " ")) +
+			freeLoop +
+			"\n/// free(map" + deRef + "keys);" +
+			"\n/// free(map" + deRef + "values);" +
+			maybeMapFree +
+			"\n/// ```\n///"
+	}
+
+	return ""
+}
+
+func (p CppParameter) renderReturnTypeC(cfs *cFileState, isSlot, includeContainerComment bool) string {
+	ret := p.RenderTypeC(cfs, true, false, includeContainerComment)
+	if e, ok := KnownEnums[ret]; ok {
+		ret = e.EnumTypeC
+	}
+
+	if ret == "int" {
+		ret = "int32_t"
+	}
+
+	if ret == "quint8" {
+		ret = "uint8_t"
+	}
+
+	if ret == "uint" {
+		ret = "uint32_t"
+	}
+
+	if strings.Contains(ret, "::") {
+		ret = strings.ReplaceAll(ret, "::", "__")
+	}
+
+	maybeConst := ifv(p.Const && !p.IsFunctionPointer && !strings.HasPrefix(ret, "const ") && !strings.HasPrefix(ret, "libqt"), "const ", "")
+
+	if strings.HasPrefix(ret, "const int") {
+		ret = strings.TrimPrefix(ret, "const ")
+		maybeConst = ""
+	}
+
+	if IsKnownClass(p.ParameterType) && p.PointerCount > 1 {
+		ret += "*"
+	}
+
+	if isSlot {
+		// overrides for slot callbacks
+		if t, _, ok := p.QListOf(); ok && (t.ParameterType == "QString" || t.ParameterType == "QByteArray") {
+			ret = "const char**"
+		} else if p.ParameterType == "QByteArray" {
+			ret = "libqt_string"
+		} else if !cfs.isC {
+			uncomment := strings.NewReplacer("/*", "", "*/", "")
+			ret = strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(ret), "  ", " "))
+		}
+	}
+	return maybeConst + ret
+}
+
+func (p CppParameter) renderFunctionType() string {
+	var typeName string
+
+	if p.QtCppOriginalType != nil {
+		typeName = strings.ReplaceAll(p.QtCppOriginalType.ParameterType, "::", "__")
+	} else {
+		typeName = p.FunctionPointer.ReturnType.ParameterType + "_"
+		if len(p.FunctionPointer.Parameters) > 0 {
+			for _, param := range p.FunctionPointer.Parameters {
+				typeName += "_" + param.ParameterType
+			}
+		} else {
+			typeName += "_void"
+		}
+		typeName += "__Function"
+	}
+
+	return typeName
+}
+
+func (cfs *cFileState) emitCommentParametersC(params []CppParameter, isSlot bool) string {
+	if len(params) == 0 {
+		return ""
+	}
+
+	tmp := make([]string, 0, len(params))
+
+	for _, p := range params {
+		pName := p.ParameterName
+		pType := p.RenderTypeC(cfs, false, true, true)
+
+		if t, _, ok := p.QListOf(); ok {
+			if l, _, ok := t.QListOf(); ok {
+				pName = cComment("of " + strings.TrimSpace(l.RenderTypeC(cfs, false, true, true)))
+				pType = "libqt_list of libqt_list"
+			} else if IsKnownClass(t.ParameterType) || strings.Contains(t.ParameterType, "::") ||
+				t.IntType() || strings.Contains(pType, "libqt_") || strings.HasPrefix(pType, "pair_") {
+				pName = cComment("of " + strings.TrimSpace(t.RenderTypeC(cfs, false, true, true)))
+				pType = "libqt_list"
+			} else if (strings.Contains(pType, "char*") && !strings.Contains(pType, "libqt_")) ||
+				!strings.HasPrefix(pType, "libqt_") {
+				pType += "*"
+			}
+		}
+
+		if k, v, containerType, ok := p.QMapOf(); ok {
+			maybePointer := ifv(IsMultiHashMap(containerType), "*", "")
+			if maybePointer == "" {
+				if _, _, ok := v.QListOf(); ok {
+					maybePointer = "*"
+				}
+			}
+			pName = cComment("of " + strings.TrimSpace(k.RenderTypeC(cfs, false, true, true)) + " to " + strings.TrimSpace(v.RenderTypeC(cfs, false, true, true)) + maybePointer)
+			pType = "libqt_map" + ifv(p.Pointer, "*", "")
+		}
+
+		if t1, t2, ok := p.QPairOf(); ok {
+			pName = cComment("tuple of " + strings.TrimSpace(t1.RenderTypeC(cfs, false, true, true)) + " and " + strings.TrimSpace(t2.RenderTypeC(cfs, false, true, true)))
+
+			if t1.IntType() || IsKnownClass(t1.ParameterType) && (t2.IntType() || IsKnownClass(t2.ParameterType)) {
+				fParam := t1.ParameterType
+				sParam := t2.ParameterType
+
+				if e, ok := KnownEnums[t1.ParameterType]; ok {
+					fParam = e.EnumTypeC
+				}
+				if e, ok := KnownEnums[t2.ParameterType]; ok {
+					sParam = e.EnumTypeC
+				}
+				pType = "pair_" + strings.ToLower(fParam) + "_" + strings.ToLower(sParam)
+			} else {
+				pType = "libqt_pair"
+			}
+		}
+
+		if isSlot && p.ParameterType == "QByteArray" {
+			pType = "libqt_string"
+		}
+
+		if p.IsChronoSeconds() {
+			secType := strings.Split(p.ParameterType, "::")[2]
+			pType += " of " + secType
+		}
+
+		if p.UniquePtr {
+			pType += uniquePtrWarning
+		}
+
+		if p.IsFunctionPointer {
+			fParams := make([]string, 0, len(p.FunctionPointer.Parameters))
+			uncomment := strings.NewReplacer("/*", "", "*/", "")
+
+			for i, p := range p.FunctionPointer.Parameters {
+				fParam := strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(p.RenderTypeC(cfs, false, true, true)), "  ", " "))
+				fParams = append(fParams, fParam+" param"+strconv.Itoa(i+1))
+			}
+			pType = p.FunctionPointer.ReturnType.renderReturnTypeC(cfs, isSlot, false) + " func(" + strings.Join(fParams, ", ") + ")"
+		}
+
+		if isSlot {
+			resParam := pType
+
+			if l, _, ok := p.QListOf(); ok && (l.ParameterType == "QString" || l.ParameterType == "QByteArray") {
+				resParam = "const char**"
+			} else if strings.HasPrefix(pType, "libqt_") && p.ParameterType != "QByteArray" {
+				pName += " " + p.ParameterName
+			}
+
+			tmp = append(tmp, resParam+" "+strings.TrimSpace(pName))
+		} else {
+			if strings.Contains(pType, "libqt") || strings.HasPrefix(pType, "pair_") {
+				tmp = append(tmp, "/// @param "+p.ParameterName+" "+pType+" "+strings.TrimSpace(pName))
+			} else {
+				tmp = append(tmp, "/// @param "+pName+" "+pType)
+			}
+		}
+	}
+
+	var maybeNewLine, maybeFinalNewLine string
+	joinStr := "\n"
+
+	if len(tmp) > 0 {
+		maybeNewLine = "\n"
+		maybeFinalNewLine = "\n///"
+	}
+
+	if isSlot {
+		joinStr = ", "
+		maybeNewLine = ""
+		maybeFinalNewLine = ""
+	}
+
+	return maybeNewLine + strings.Join(tmp, joinStr) + maybeFinalNewLine
+}
+
+func (cfs *cFileState) emitParametersC(params []CppParameter, isSlot bool) string {
+	if len(params) == 0 {
+		return ""
+	}
+
+	tmp := make([]string, 0, len(params))
+
+	for _, p := range params {
+		pName := p.ParameterName
+		pType := p.RenderTypeC(cfs, false, false, cfs.isC)
+		if t, _, ok := p.QListOf(); ok {
+			if IsKnownClass(t.ParameterType) || strings.Contains(t.ParameterType, "::") ||
+				t.IntType() {
+				pName = p.ParameterName
+				pType = "libqt_list" + ifv(cfs.isC, cppComment("of "+strings.TrimSpace(t.RenderTypeC(cfs, false, true, true))), "")
+			} else if (strings.Contains(pType, "char*") && !strings.Contains(pType, "libqt_")) ||
+				!strings.HasPrefix(pType, "libqt_") {
+				pName += "[1]"
+			}
+			if isSlot {
+				if l, _, ok := p.QListOf(); ok && (l.ParameterType == "QString" || l.ParameterType == "QByteArray") {
+					pType = "const char*"
+				}
+			}
+		}
+
+		if reservedWordC(pName) {
+			pName = "_" + pName
+		}
+		if IsKnownClass(p.ParameterType) && strings.HasSuffix(pType, "*") &&
+			!strings.Contains(pType, "char*") {
+			pType = "void*" + ifv((p.ByRef && p.Pointer) || p.PointerCount > 1, "*", "")
+		}
+		if p.IsFunctionPointer {
+			pType = p.FunctionPointer.ReturnType.renderReturnTypeC(cfs, isSlot, false) + " (*" + pName + ")(" + cfs.emitParametersC(p.FunctionPointer.Parameters, false) + ")"
+			pName = ""
+		}
+		if isSlot {
+			if strings.HasSuffix(pName, "[1]") {
+				pType += "*"
+			}
+			if p.ParameterType == "QByteArray" {
+				pType = "libqt_string"
+			}
+
+			tmp = append(tmp, pType)
+		} else {
+			tmp = append(tmp, pType+" "+pName)
+		}
+	}
+	return strings.Join(tmp, ", ")
+}
+
+type cFileState struct {
+	imports            map[string]struct{}
+	currentClassName   string
+	currentHeaderName  string
+	currentMethodName  string
+	currentPackageName string
+	allocCleanups      []string
+	castType           string
+	isC                bool
+}
+
+func (cfs *cFileState) emitReturnComment(rt CppParameter) string {
+	var returnComment string
+	uncomment := strings.NewReplacer("/*", "", "*/", "")
+
+	if rt.IsKnownEnum() {
+		maybeDetail := ifv(rt.IsStdOptional, " (Returns -1 for an invalid value)", "")
+		if strings.HasPrefix(rt.ParameterType, "QFlags<") {
+			returnComment = "/// @return flag of enum " + cabiEnumClassName(rt.ParameterType[7:len(rt.ParameterType)-1]) + ifv(rt.Pointer || rt.ByRef, "*", "") + maybeDetail
+		} else {
+			returnComment = "/// @return " + rt.RenderTypeC(cfs, true, true, true) + maybeDetail
+		}
+	} else if rt.IsChronoSeconds() {
+		secType := strings.Split(rt.ParameterType, "::")[2]
+		returnComment = "/// @return " + rt.renderReturnTypeC(cfs, false, true) + " of " + secType
+	} else if t, _, ok := rt.QListOf(); ok {
+		if _, ok := KnownEnums[t.ParameterType]; ok {
+			returnComment = "/// @return libqt_list of enum " + cabiEnumClassName(t.ParameterType)
+		} else {
+			ret := rt.RenderTypeC(cfs, true, true, true)
+			returnComment = ifv(ret == "const char**", "", "/// @return "+strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(ret), "  ", " ")))
+		}
+	} else if _, _, _, ok := rt.QMapOf(); ok {
+		returnComment = "/// @return " + strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(rt.RenderTypeC(cfs, true, true, true)), "  ", " "))
+	} else if _, _, ok := rt.QPairOf(); ok {
+		returnComment = "/// @return " + strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(rt.RenderTypeC(cfs, true, true, true)), "  ", " "))
+	} else if _, ok := rt.QSetOf(); ok {
+		returnComment = "/// @return " + strings.TrimSpace(strings.ReplaceAll(uncomment.Replace(rt.RenderTypeC(cfs, true, true, true)), "  ", " "))
+	} else if rt.IsFunctionPointer {
+		returnComment = "/// @return " + rt.FunctionPointer.ReturnType.renderReturnTypeC(cfs, false, false) + " (*" + rt.renderFunctionType() + ")(" + strings.TrimSpace(cfs.emitParametersC(rt.FunctionPointer.Parameters, false)) + ")"
+	} else if rt.IsStdOptional && IsKnownClass(rt.ParameterType) {
+		returnComment = "/// @return " + rt.RenderTypeC(cfs, true, true, true) + " (NOTE: This pointer value could be `NULL`.)"
+	}
+
+	return ifv(returnComment == "", "", returnComment+"\n///\n")
+}
+
+func (cfs *cFileState) emitParametersC2CABIForwarding(m CppMethod) (preamble, forwarding string) {
+	tmp := make([]string, 0, len(m.Parameters)+2)
+
+	if !(m.IsStatic && !m.IsProtected) {
+		tmp = append(tmp, "("+cfs.castType+"*)self")
+	}
+
+	for _, p := range m.Parameters {
+		addPreamble, rvalue := cfs.emitParameterC2CABIForwarding(p)
+
+		preamble += addPreamble
+		tmp = append(tmp, rvalue)
+	}
+	return preamble, strings.Join(tmp, ", ")
+}
+
+func (cfs *cFileState) emitParameterC2CABIForwarding(p CppParameter) (preamble, rvalue string) {
+	nameprefix := makeNamePrefix(p.ParameterName)
+	if reservedWordC(p.ParameterName) {
+		p.ParameterName = "_" + p.ParameterName
+	}
+
+	if p.ParameterType == "QString" || p.ParameterType == "QByteArray" ||
+		p.ParameterType == "QByteArrayView" || p.ParameterType == "SignOn::MethodName" {
+		// Return the C string struct without allocation since the
+		// temporary libqt_string is passed by value
+		rvalue = "qstring(" + nameprefix + ")"
+
+	} else if p.ParameterType == "QAnyStringView" {
+		rvalue = nameprefix
+
+	} else if p.ParameterType == "QStringView" {
+		// Take the address of the pointer and cast it to the expected type
+		preamble += "libqt_string " + nameprefix + "_string = qstring(" + p.ParameterName + ");\n"
+		rvalue = "(" + p.ParameterType + "*)&" + nameprefix + "_string"
+
+	} else if t, _, ok := p.QListOf(); ok {
+		// QList<T>
+		// Return the C list struct without allocation if we can
+
+		if t.ParameterType == "QString" || t.ParameterType == "QByteArray" || t.ParameterType == "SignOn::MethodName" {
+			preamble += "size_t " + nameprefix + "_len = libqt_strv_length(" + p.ParameterName + ");\n"
+			preamble += "libqt_string* " + nameprefix + "_qstr = (libqt_string*)malloc(" + nameprefix + "_len * sizeof(libqt_string));\n"
+			preamble += "if (" + nameprefix + "_qstr == NULL) {\n"
+			preamble += `    fprintf(stderr, "Failed to allocate memory for string list in ` + cfs.currentMethodName + `\n");` + "\n"
+			preamble += "    abort();\n"
+			preamble += "}\n"
+			preamble += "for (size_t i = 0; i < " + nameprefix + "_len; ++i) {\n"
+			preamble += "    " + nameprefix + "_qstr[i] = qstring(" + p.ParameterName + "[i]);\n"
+			preamble += "}\n"
+			preamble += "libqt_list " + nameprefix + "_list = qlist(" + nameprefix + "_qstr, " + nameprefix + "_len);\n"
+
+			allocCleanup := "free(" + nameprefix + "_qstr);\n"
+			cfs.allocCleanups = append(cfs.allocCleanups, allocCleanup)
+
+			rvalue = nameprefix + "_list"
+
+		} else if f, s, ok := t.QPairOf(); ok {
+			if (f.ParameterType == "QString" || f.ParameterType == "QByteArray") && (s.ParameterType == "QString" || s.ParameterType == "QByteArray") {
+				preamble += "libqt_pair* " + nameprefix + "_pairs = (libqt_pair*)malloc(" + p.ParameterName + ".len * sizeof(libqt_pair));\n"
+				preamble += "if (" + nameprefix + "_pairs == NULL) {\n"
+				preamble += `    fprintf(stderr, "Failed to allocate memory for string pairs in ` + cfs.currentMethodName + `\n");` + "\n"
+				preamble += "    abort();\n"
+				preamble += "}\n"
+				preamble += "libqt_string* " + nameprefix + "_str = (libqt_string*)malloc(" + p.ParameterName + ".len * 2 * sizeof(libqt_string));\n"
+				preamble += "if (" + nameprefix + "_str == NULL) {\n"
+				preamble += "    free(" + nameprefix + "_pairs);\n"
+				preamble += `    fprintf(stderr, "Failed to allocate memory for string pair values in ` + cfs.currentMethodName + `\n");` + "\n"
+				preamble += "    abort();\n"
+				preamble += "}\n"
+				preamble += "libqt_pair* " + nameprefix + "_data = (libqt_pair*)" + p.ParameterName + ".data.ptr;\n"
+				preamble += "for (size_t i = 0; i < " + p.ParameterName + ".len; ++i) {\n"
+				preamble += "    " + nameprefix + "_str[i * 2] = qstring((const char*)" + nameprefix + "_data[i].first);\n"
+				preamble += "    " + nameprefix + "_str[i * 2 + 1] = qstring((const char*)" + nameprefix + "_data[i].second);\n"
+				preamble += "    " + nameprefix + "_pairs[i].first = &" + nameprefix + "_str[i * 2];\n"
+				preamble += "    " + nameprefix + "_pairs[i].second = &" + nameprefix + "_str[i * 2 + 1];\n"
+				preamble += "}\n"
+				preamble += "libqt_list " + nameprefix + "_list = qlist(" + nameprefix + "_pairs, " + p.ParameterName + ".len);\n"
+				allocCleanup := "free(" + nameprefix + "_str);\n"
+				allocCleanup += "free(" + nameprefix + "_pairs);\n"
+				cfs.allocCleanups = append(cfs.allocCleanups, allocCleanup)
+				rvalue = nameprefix + "_list"
+			} else {
+				rvalue = nameprefix
+			}
+
+		} else {
+			rvalue = nameprefix
+		}
+
+	} else if _, ok := p.QSetOf(); ok {
+		rvalue = nameprefix
+
+	} else if k, v, containerType, ok := p.QMapOf(); ok {
+		// QMap<K,V>
+		kType := k.RenderTypeC(cfs, false, true, true)
+		vType := v.RenderTypeC(cfs, false, true, true)
+		isQMulti := IsMultiHashMap(containerType)
+		var isQList bool
+
+		if e, ok := KnownEnums[k.ParameterType]; ok {
+			kType = e.EnumTypeC
+		}
+		if e, ok := KnownEnums[v.ParameterType]; ok {
+			vType = e.EnumTypeC
+		}
+
+		var maybeRef, keyIter, valueIter string
+
+		maybeDeref := "."
+		if p.Pointer {
+			maybeDeref = "->"
+			maybeRef = "&"
+		}
+
+		if v.ParameterType == "SignOn::MechanismsList" {
+			vType = "const char**"
+		}
+
+		keyDest := kType
+		valueDest := vType
+
+		if k.ParameterType == "QString" || k.ParameterType == "QByteArray" || k.ParameterType == "SignOn::MethodName" {
+			keyDest = "libqt_string"
+		}
+
+		if v.ParameterType == "QString" || v.ParameterType == "QByteArray" {
+			valueDest = "libqt_string"
+		}
+
+		if innerType, _, ok := v.QListOf(); ok {
+			if innerType.ParameterType == "QString" || innerType.ParameterType == "QByteArray" {
+				valueDest = "libqt_string"
+			} else if IsKnownClass(innerType.ParameterType) {
+				valueDest = "libqt_list"
+				vType = innerType.ParameterType
+				isQList = true
+			} else {
+				panic("UNHANDLED " + strings.ToUpper(containerType) + " VALUE TYPE: " + v.ParameterType)
+			}
+			isQMulti = true
+		}
+
+		preamble += "// Convert libqt_map to " + containerType + "<" + k.ParameterType + "," + v.ParameterType + ">\n"
+		preamble += "libqt_map " + nameprefix + "_ret;\n"
+		preamble += nameprefix + "_ret.len = " + p.ParameterName + maybeDeref + "len;\n"
+
+		preamble += nameprefix + "_ret.keys = (" + keyDest + "*)malloc(" + nameprefix + "_ret.len * sizeof(" + keyDest + "));\n"
+		preamble += "if (" + nameprefix + "_ret.keys == NULL) {\n"
+		preamble += `    fprintf(stderr, "Failed to allocate memory for map keys in ` + cfs.currentMethodName + `\n");` + "\n"
+		preamble += "    abort();\n"
+		preamble += "}\n"
+
+		keyCleanup := "free(" + nameprefix + "_ret.keys);"
+		cfs.allocCleanups = append(cfs.allocCleanups, keyCleanup)
+
+		mapValue := ifv(isQMulti, "libqt_list", valueDest)
+
+		preamble += nameprefix + "_ret.values = (" + mapValue + "*)malloc(" + nameprefix + "_ret.len * sizeof(" + mapValue + "));\n"
+		preamble += "if (" + nameprefix + "_ret.values == NULL) {\n"
+		preamble += "    free(" + nameprefix + "_ret.keys);\n"
+		preamble += `    fprintf(stderr, "Failed to allocate memory for map values in ` + cfs.currentMethodName + `\n");` + "\n"
+		preamble += "    abort();\n"
+		preamble += "}\n"
+
+		valCleanup := "free(" + nameprefix + "_ret.values);"
+		cfs.allocCleanups = append(cfs.allocCleanups, valCleanup)
+
+		preamble += kType + "* " + nameprefix + "_karr = (" + kType + "*)" + nameprefix + maybeDeref + "keys;\n"
+		preamble += keyDest + "* " + nameprefix + "_kdest = (" + keyDest + "*)" + nameprefix + "_ret.keys;\n"
+
+		if k.ParameterType == "QString" || k.ParameterType == "QByteArray" || k.ParameterType == "SignOn::MethodName" {
+			keyIter = nameprefix + "_kdest[i] = qstring(" + p.ParameterName + "_karr[i]);\n"
+
+		} else {
+			keyIter = nameprefix + "_kdest[i] = " + nameprefix + "_karr[i];\n"
+		}
+
+		maybeValuePointer := ifv(isQMulti, "*", "") + ifv(isQList, "*", "")
+		preamble += vType + maybeValuePointer + "* " + nameprefix + "_varr = (" + vType + maybeValuePointer + "*)" + nameprefix + maybeDeref + "values;\n"
+		preamble += mapValue + "* " + nameprefix + "_vdest = (" + mapValue + "*)" + nameprefix + "_ret.values;\n"
+
+		if isQMulti {
+			if v.ParameterType == "QString" || v.ParameterType == "QByteArray" || valueDest == "libqt_string" {
+				valueIter = vType + "* " + nameprefix + "_array = " + nameprefix + "_varr[i];\n"
+				valueIter += "size_t " + nameprefix + "_value_count = libqt_strv_length((const char**)" + nameprefix + "_array);\n"
+				valueIter += valueDest + "* " + nameprefix + "_value_strings = (" + valueDest + "*)malloc(" + nameprefix + "_value_count * sizeof(" + valueDest + "));\n"
+				valueIter += "if (" + nameprefix + "_value_strings == NULL) {\n"
+				valueIter += "    for (size_t j = 0; j < i; j++) {\n"
+				valueIter += "        free(((" + mapValue + "*)" + nameprefix + "_ret.values)[j].data.ptr);\n"
+				valueIter += "    }\n"
+				valueIter += "    free(" + nameprefix + "_ret.keys);\n"
+				valueIter += "    free(" + nameprefix + "_ret.values);\n"
+				valueIter += `    fprintf(stderr, "Failed to allocate memory for map string key in ` + cfs.currentMethodName + `\n");` + "\n"
+				valueIter += "    abort();\n"
+				valueIter += "}\n"
+				valueIter += "for (size_t j = 0; j < " + nameprefix + "_value_count; j++) {\n"
+				valueIter += "    " + nameprefix + "_value_strings[j] = qstring(" + nameprefix + "_array[j]);\n"
+				valueIter += "}\n"
+				valueIter += nameprefix + "_vdest[i].len = " + nameprefix + "_value_count;\n"
+				valueIter += nameprefix + "_vdest[i].data.ptr = " + nameprefix + "_value_strings;\n"
+
+				mapCleanup := "for (size_t i = 0; i < " + nameprefix + "_ret.len; ++i) {"
+				mapCleanup += "    free(((" + mapValue + "*)" + nameprefix + "_ret.values)[i].data.ptr);"
+				mapCleanup += "}\n"
+
+				cfs.allocCleanups = append([]string{mapCleanup}, cfs.allocCleanups...)
+
+			} else if IsKnownClass(vType) {
+				valueIter += "size_t " + nameprefix + "_value_count = 0;\n"
+				valueIter += "while (" + nameprefix + "_varr[i][" + nameprefix + "_value_count] != NULL) {\n"
+				valueIter += "    " + nameprefix + "_value_count++;\n"
+				valueIter += "}\n"
+				valueIter += nameprefix + "_vdest[i].len = " + nameprefix + "_value_count;\n"
+				valueIter += nameprefix + "_vdest[i].data.ptr = (void*)" + nameprefix + "_varr[i];\n"
+
+			} else {
+				panic("UNHANDLED " + strings.ToUpper(containerType) + " VALUE PARAMETER TYPE: " + v.ParameterType)
+			}
+
+		} else if v.ParameterType == "QString" || v.ParameterType == "QByteArray" {
+			valueIter = nameprefix + "_vdest[i] = qstring(" + p.ParameterName + "_varr[i]);\n"
+
+		} else {
+			valueIter = nameprefix + "_vdest[i] = " + nameprefix + "_varr[i];\n"
+		}
+
+		preamble += "for (size_t i = 0; i < " + nameprefix + "_ret.len; ++i) {\n"
+		preamble += keyIter
+		preamble += valueIter
+		preamble += "}\n"
+
+		rvalue = maybeRef + nameprefix + "_ret"
+
+	} else if f, s, ok := p.QPairOf(); ok {
+		// QPair<F,S>
+		if (f.IntType() || IsKnownClass(f.ParameterType)) && (s.IntType() || IsKnownClass(s.ParameterType)) {
+			rvalue = nameprefix
+		} else {
+
+			fAddr := ""
+			fParam := ".first"
+
+			if f.ParameterType == "QString" || f.ParameterType == "QByteArray" {
+				fAddr = "&"
+				preamble += "libqt_string " + nameprefix + "_first_str = qstring(" + p.ParameterName + fParam + ");\n"
+				fParam = "_first_str"
+			} else if f.IntType() {
+				fAddr = "&"
+				preamble += f.ParameterType + " " + nameprefix + "_first = " + p.ParameterName + fParam + ";\n"
+				fParam = "_first"
+			}
+
+			sAddr := ""
+			sParam := ".second"
+			if s.ParameterType == "QString" || s.ParameterType == "QByteArray" {
+				sAddr = "&"
+				preamble += "libqt_string " + nameprefix + "_second_str = qstring(" + p.ParameterName + sParam + ");\n"
+				sParam = "_second_str"
+			} else if s.IntType() {
+				sAddr = "&"
+				preamble += s.ParameterType + " " + nameprefix + "_second = " + p.ParameterName + sParam + ";\n"
+				sParam = "_second"
+			}
+
+			preamble += "libqt_pair " + nameprefix + "_pair = {\n"
+			preamble += "    " + fAddr + nameprefix + fParam + ",\n"
+			preamble += "    " + sAddr + nameprefix + sParam + ",\n"
+			preamble += "};\n"
+
+			rvalue = nameprefix + "_pair"
+		}
+
+	} else if p.Pointer && (p.ParameterType == "char" || p.ParameterType == "GLchar") {
+		// Single char*(*) argument
+		rvalue = nameprefix
+
+	} else if p.QtClassType() {
+		// The C++ type is a pointer to Qt class
+		// We want our functions to accept the C wrapper type, and forward as a pointer
+		rvalue = "(" + p.RenderTypeC(cfs, true, false, true) + ifv(p.PointerCount > 1, "*", "") + ")" + p.ParameterName
+
+	} else if p.IntType() || p.IsFlagType() || p.IsKnownEnum() {
+		if p.ParameterType == "unsigned long long" && (p.Pointer || p.ByRef) {
+			rvalue = "(" + p.ParameterType + "*)" + p.ParameterName
+		} else {
+			rvalue = p.ParameterName
+		}
+
+	} else if p.ParameterType == "bool" {
+		if p.Pointer || p.ByRef {
+			rvalue = "(" + p.RenderTypeC(cfs, true, false, true) + ")" + p.ParameterName // n.b. This may not work if the integer type conversion was wrong
+		} else {
+			rvalue = p.ParameterName
+		}
+
+	} else if p.IsFunctionPointer {
+		rvalue = "(intptr_t)" + p.ParameterName
+
+	} else {
+		// Default
+		rvalue = p.ParameterName
+	}
+
+	return preamble, rvalue
+}
+
+func (cfs *cFileState) emitCabiToC(assignExpr string, rt CppParameter, rvalue string) string {
+	shouldReturn := assignExpr
+	afterword := ""
+	namePrefix := makeNamePrefix(rt.ParameterName)
+	maybePointer := ifv(rt.Pointer && rt.ByRef, "*", "")
+
+	if rt.Void() {
+		var maybeCleanups string
+		if len(cfs.allocCleanups) > 0 {
+			maybeCleanups = strings.Join(cfs.allocCleanups, "\n")
+			cfs.allocCleanups = []string{}
+		}
+		return rvalue + ";" + maybeCleanups
+
+	} else if (rt.ParameterType == "void" || rt.ParameterType == "GLvoid") && rt.Pointer {
+		return assignExpr + maybePointer + rvalue + ";"
+
+	} else if rt.ParameterType == "QString" || rt.ParameterType == "QStringView" ||
+		rt.ParameterType == "QByteArray" || rt.ParameterType == "QByteArrayView" ||
+		rt.ParameterType == "SignOn::MethodName" {
+		shouldReturn := "libqt_string " + namePrefix + "_str = "
+		afterword += cfs.checkAndClearAllocCleanups(false)
+		afterword += "char* " + namePrefix + "_ret = qstring_to_char(" + namePrefix + "_str);\n"
+		afterword += "libqt_string_free(&" + namePrefix + "_str);\n"
+		afterword += assignExpr + " " + namePrefix + "_ret;\n"
+
+		cfs.allocCleanups = append(cfs.allocCleanups, "free("+namePrefix+"_ret);\n")
+
+		return shouldReturn + rvalue + ";\n" + afterword
+
+	} else if rt.ParameterType == "QAnyStringView" {
+		shouldReturn := "const char* " + namePrefix + "_ret = "
+
+		afterword += assignExpr + " " + namePrefix + "_ret;\n"
+		return shouldReturn + rvalue + ";\n" + afterword
+
+	} else if rt.ParameterType == "char" && rt.Pointer {
+		// Qt functions normally return QString - anything returning char*
+		// is something like QByteArray.Data() where it returns an unsafe
+		// internal pointer.
+		// However in case this is a signal, we need to be able to marshal both
+		// forwards and backwards with the same types, this has to be a string
+		// in both cases.
+		// This is not a libqt_string and therefore we did not allocate it
+		// and therefore we don't have to free it either.
+		return shouldReturn + " " + rvalue + ";\n"
+
+	} else if t, _, ok := rt.QListOf(); ok {
+		if t.ParameterType == "QString" || t.ParameterType == "QByteArray" {
+			shouldReturn = "libqt_list " + namePrefix + "_arr = "
+			afterword += "const libqt_string* " + namePrefix + "_qstr = (libqt_string*)" + namePrefix + "_arr.data.ptr;\n"
+			afterword += "const char** " + namePrefix + "_ret = (const char**)malloc((" + namePrefix + "_arr.len + 1) * sizeof(const char*));\n"
+			afterword += "if (" + namePrefix + "_ret == NULL) {\n"
+			afterword += `    fprintf(stderr, "Failed to allocate memory for string list in ` + cfs.currentMethodName + `\n");` + "\n"
+			afterword += "    abort();\n"
+			afterword += "}\n"
+			afterword += "for (size_t i = 0; i < " + namePrefix + "_arr.len; ++i) {\n"
+			afterword += "    " + namePrefix + "_ret[i] = qstring_to_char(" + namePrefix + "_qstr[i]);\n"
+			afterword += "}\n"
+			afterword += namePrefix + "_ret[" + namePrefix + "_arr.len] = NULL;\n"
+			afterword += "for (size_t i = 0; i < " + namePrefix + "_arr.len; ++i) {\n"
+			afterword += "    libqt_string_free((libqt_string*)&" + namePrefix + "_qstr[i]);\n"
+			afterword += "}\n"
+			afterword += "libqt_free(" + namePrefix + "_arr.data.ptr);\n"
+			afterword += assignExpr + " " + namePrefix + "_ret;\n"
+
+			maybeAllocCleanup := cfs.checkAndClearAllocCleanups(false)
+			cfs.allocCleanups = append(cfs.allocCleanups, "libqt_free("+namePrefix+"_ret);\n")
+
+			return shouldReturn + rvalue + ";\n" + maybeAllocCleanup + afterword
+
+		} else if f, s, ok := t.QPairOf(); ok {
+			// QList<QPair<F,S>>
+			if (f.IntType() || IsKnownClass(f.ParameterType)) && (s.IntType() || IsKnownClass(s.ParameterType)) {
+				return shouldReturn + rvalue + ";\n" + afterword
+
+			} else {
+				shouldReturn = "libqt_list " + namePrefix + "_arr = "
+
+				var firstFree, secondFree, firstLoop, secondLoop, firstAssign, secondAssign string
+
+				if f.ParameterType == "QString" || f.ParameterType == "QByteArray" {
+					firstLoop = "    libqt_string* " + namePrefix + "_first_str = (libqt_string*)" + namePrefix + "_data[i].first;\n"
+					firstLoop += "    const char* " + namePrefix + "_first_str_data = " + namePrefix + "_first_str->data;\n"
+					firstFree = "    free(" + namePrefix + "_first_str);\n"
+					firstAssign = "    " + namePrefix + "_data[i].first = (void*)" + namePrefix + "_first_str_data;\n"
+				} else if IsKnownClass(f.ParameterType) {
+					firstLoop = "    void** " + namePrefix + "_first_ptr = (void**)" + namePrefix + "_data[i].first;\n"
+					firstLoop += "    void* " + namePrefix + "_first_data = *" + namePrefix + "_first_ptr;\n"
+					firstFree = "    free(" + namePrefix + "_first_ptr);\n"
+					firstAssign = "    " + namePrefix + "_data[i].first = " + namePrefix + "_first_data;\n"
+				} else if f.IntType() {
+					intType := f.RenderTypeCabi(false)
+					firstLoop = "    " + intType + "* " + namePrefix + "_first_ptr = (" + intType + "*)" + namePrefix + "_data[i].first;\n"
+					firstLoop += "    " + intType + " " + namePrefix + "_first_value = *" + namePrefix + "_first_ptr;\n"
+					firstFree = "    free(" + namePrefix + "_first_ptr);\n"
+					firstAssign = "    " + namePrefix + "_data[i].first = (void*)(uintptr_t)" + namePrefix + "_first_value;\n"
+				} else {
+					panic("UNHANDLED LIST OF FIRST PAIR TYPE: " + f.ParameterType + " with " + s.ParameterType)
+				}
+
+				if s.ParameterType == "QString" || s.ParameterType == "QByteArray" {
+					secondLoop = "    libqt_string* " + namePrefix + "_second_str = (libqt_string*)" + namePrefix + "_data[i].second;\n"
+					secondLoop += "    const char* " + namePrefix + "_second_str_data = " + namePrefix + "_second_str->data;\n"
+					secondFree = "    free(" + namePrefix + "_second_str);\n"
+					secondAssign = "    " + namePrefix + "_data[i].second = (void*)" + namePrefix + "_second_str_data;\n"
+				} else if IsKnownClass(s.ParameterType) {
+					secondLoop = "    void** " + namePrefix + "_second_ptr = (void**)" + namePrefix + "_data[i].second;\n"
+					secondLoop += "    " + namePrefix + "_second_data = *" + namePrefix + "_second_ptr;\n"
+					secondFree = "    free(" + namePrefix + "_second_ptr);\n"
+					secondAssign = "    " + namePrefix + "_data[i].second = " + namePrefix + "_second_data;\n"
+				} else if s.IntType() {
+					intType := s.RenderTypeCabi(false)
+					secondLoop = "    " + intType + "* " + namePrefix + "_second_ptr = (" + intType + "*)" + namePrefix + "_data[i].second;\n"
+					secondLoop += "    " + intType + " " + namePrefix + "_second_value = *" + namePrefix + "_second_ptr;\n"
+					secondFree = "    free(" + namePrefix + "_second_ptr);\n"
+					secondAssign = "    " + namePrefix + "_data[i].second = (void*)(uintptr_t)" + namePrefix + "_second_value;\n"
+				} else {
+					panic("UNHANDLED LIST OF SECOND PAIR TYPE: " + s.ParameterType + " with first " + f.ParameterType)
+				}
+
+				afterword += "libqt_pair* " + namePrefix + "_data = (libqt_pair*)" + namePrefix + "_arr.data.ptr;\n"
+				afterword += "for (size_t i = 0; i < " + namePrefix + "_arr.len; ++i) {\n"
+				afterword += firstLoop
+				afterword += secondLoop
+				afterword += firstFree
+				afterword += secondFree
+				afterword += firstAssign
+				afterword += secondAssign
+				afterword += "}\n"
+				afterword += assignExpr + " " + namePrefix + "_arr;\n"
+
+				return shouldReturn + rvalue + ";\n" + afterword
+			}
+
+		} else if p, _, ok := t.QListOf(); ok {
+			// QList<QList<QString>>
+			if p.ParameterType == "QString" || p.ParameterType == "QByteArray" {
+				shouldReturn = "libqt_list " + namePrefix + "_arr = "
+				afterword += "libqt_list* " + namePrefix + "_strlist = (libqt_list*)" + namePrefix + "_arr.data.ptr;\n"
+				afterword += "const char*** " + namePrefix + "_data = (const char***)malloc(sizeof(const char**) * " + namePrefix + "_arr.len);\n"
+				afterword += "if (" + namePrefix + "_data == NULL) {\n"
+				afterword += `    fprintf(stderr, "Failed to allocate memory for string list in ` + cfs.currentMethodName + `\n");` + "\n"
+				afterword += "    abort();\n"
+				afterword += "}\n"
+				afterword += "for (size_t i = 0; i < " + namePrefix + "_arr.len; ++i) {\n"
+				afterword += "    libqt_list " + namePrefix + "_list = " + namePrefix + "_strlist[i];\n"
+				afterword += "    libqt_string* " + namePrefix + "_str = (libqt_string*)" + namePrefix + "_list.data.ptr;\n"
+				afterword += "    const char** " + namePrefix + "_strdata = (const char**)malloc(sizeof(const char*) * (" + namePrefix + "_list.len + 1));\n"
+				afterword += "    if (" + namePrefix + "_strdata == NULL) {\n"
+				afterword += "        free(" + namePrefix + "_data);\n"
+				afterword += `        fprintf(stderr, "Failed to allocate memory for string list items in ` + cfs.currentMethodName + `\n");` + "\n"
+				afterword += "        abort();\n"
+				afterword += "    }\n"
+				afterword += "    for (size_t j = 0; j < " + namePrefix + "_list.len; ++j) {\n"
+				afterword += "        " + namePrefix + "_strdata[j] = " + namePrefix + "_str[j].data;\n"
+				afterword += "    }\n"
+				afterword += "    " + namePrefix + "_strdata[" + namePrefix + "_list.len] = NULL;\n"
+				afterword += "    " + namePrefix + "_data[i] = " + namePrefix + "_strdata;\n"
+				afterword += "    free(" + namePrefix + "_str);\n"
+				afterword += "}\n"
+				afterword += "free(" + namePrefix + "_strlist);\n"
+				afterword += "libqt_list " + namePrefix + "_out;\n"
+				afterword += namePrefix + "_out.len = " + namePrefix + "_arr.len;\n"
+				afterword += namePrefix + "_out.data.ptr = (void*)" + namePrefix + "_data;\n"
+				afterword += assignExpr + " " + namePrefix + "_out;\n"
+
+				return shouldReturn + rvalue + ";\n" + afterword
+
+			} else if IsKnownClass(p.ParameterType) || p.IsKnownEnum() {
+
+				return shouldReturn + rvalue + ";\n" + afterword
+
+			} else {
+				panic("*UNHANDLED INNER QLIST TYPE*\trt:" + rt.ParameterType + "\tt: " + t.ParameterType)
+			}
+
+		} else {
+			shouldReturn = "libqt_list " + namePrefix + "_arr = "
+			afterword += assignExpr + " " + namePrefix + "_arr;"
+			maybeAllocCleanup := cfs.checkAndClearAllocCleanups(false)
+
+			return shouldReturn + rvalue + ";\n" + maybeAllocCleanup + afterword
+		}
+
+	} else if _, ok := rt.QSetOf(); ok {
+		return shouldReturn + " " + rvalue + ";\n"
+
+	} else if k, v, containerType, ok := rt.QMapOf(); ok {
+		// QMap<K,V>
+		kType := k.RenderTypeC(cfs, false, true, true)
+		vType := v.RenderTypeC(cfs, false, true, true)
+		isQMulti := IsMultiHashMap(containerType)
+
+		var keyAssign, keyFree, keyInnerFree, keyMallocFree, keyIter, valueAssign, valueFree, valueInnerFree, valueIter string
+		keyOut := kType
+		valueOut := vType
+
+		var maybeMalloc, maybeMallocCheck, maybeMallocFree, maybePointer string
+		maybeDeref := "."
+
+		if rt.Pointer {
+			maybeDeref = "->"
+			maybePointer = "*"
+			maybeMalloc = " = (libqt_map*)malloc(sizeof(libqt_map))"
+			maybeMallocCheck = "if (" + namePrefix + "_ret == NULL) {\n"
+			maybeMallocCheck += `    fprintf(stderr, "Failed to allocate memory for return map in ` + cfs.currentMethodName + `\n");` + "\n"
+			maybeMallocCheck += "    abort();\n"
+			maybeMallocCheck += "}\n"
+			maybeMallocFree = "free(" + namePrefix + "_ret);\n"
+		}
+
+		if k.ParameterType == "QString" || k.ParameterType == "QByteArray" || k.ParameterType == "SignOn::MethodName" {
+			keyOut = "libqt_string"
+		}
+
+		if v.ParameterType == "QString" || v.ParameterType == "QByteArray" {
+			valueOut = "libqt_string"
+		}
+
+		vParamType := v.ParameterType
+		if innerType, _, ok := v.QListOf(); ok {
+			vParamType = innerType.ParameterType
+			isQMulti = true
+		}
+
+		preamble := "// Convert " + containerType + "<" + k.ParameterType + "," + v.ParameterType + "> to libqt_map\n"
+		preamble += "libqt_map" + maybePointer + " " + namePrefix + "_out = " + rvalue + ";\n"
+		preamble += "libqt_map" + maybePointer + " " + namePrefix + "_ret" + maybeMalloc + ";\n"
+		preamble += maybeMallocCheck
+		preamble += namePrefix + "_ret" + maybeDeref + "len = " + namePrefix + "_out" + maybeDeref + "len;\n"
+
+		if k.ParameterType == "QString" || k.ParameterType == "QByteArray" || k.ParameterType == "SignOn::MethodName" {
+			preamble += keyOut + "* " + namePrefix + "_out_keys = (" + keyOut + "*)" + namePrefix + "_out" + maybeDeref + "keys;\n"
+			preamble += "char** " + namePrefix + "_ret_keys = (char**)malloc(" + namePrefix + "_ret" + maybeDeref + "len * sizeof(char*));\n"
+			preamble += "if (" + namePrefix + "_ret_keys == NULL) {\n"
+			preamble += maybeMallocFree
+			preamble += `    fprintf(stderr, "Failed to allocate memory for map string keys in ` + cfs.currentMethodName + `\n");` + "\n"
+			preamble += "    abort();\n"
+			preamble += "}\n"
+
+			keyIter = namePrefix + "_ret_keys[i] = (char*)malloc(" + namePrefix + "_out_keys[i].len + 1);\n"
+			keyIter += "if (" + namePrefix + "_ret_keys[i] == NULL) {\n"
+			keyIter += "    for (size_t j = 0; j < i; j++) {\n"
+			keyIter += "        libqt_free(" + namePrefix + "_ret_keys[j]);\n"
+			if isQMulti {
+				keyIter += "        for (size_t k = 0; k < ((libqt_list*)" + namePrefix + "_out" + maybeDeref + "values)[j]" + maybeDeref + "len; k++) {\n"
+				keyIter += "            free(" + namePrefix + "_ret_values[j][k]);\n"
+				keyIter += "        }\n"
+			}
+			keyIter += ifv(isQMulti, "free("+namePrefix+"_ret_values[j]);\n", "")
+			keyIter += "    }\n"
+			keyIter += "    free(" + namePrefix + "_ret_keys);\n"
+			keyIter += ifv(isQMulti, "free("+namePrefix+"_ret_values);\n", "")
+			keyIter += maybeMallocFree
+			keyIter += `    fprintf(stderr, "Failed to allocate memory for map keys in ` + cfs.currentMethodName + `\n");` + "\n"
+			keyIter += "    abort();\n"
+			keyIter += "}\n"
+			keyIter += "memcpy(" + namePrefix + "_ret_keys[i], " + namePrefix + "_out_keys[i].data, " + namePrefix + "_out_keys[i].len);\n"
+			keyIter += namePrefix + "_ret_keys[i][" + namePrefix + `_out_keys[i].len] = '\0';` + "\n"
+
+			keyMallocFree = "free(" + namePrefix + "_ret_keys);\n"
+			keyMallocFree += "free(" + namePrefix + "_out" + maybeDeref + "keys);\n"
+
+			keyAssign = namePrefix + "_ret" + maybeDeref + "keys = (void*)" + namePrefix + "_ret_keys;\n"
+			keyInnerFree = "    libqt_free(" + namePrefix + "_out_keys[i].data);\n"
+			keyFree = "    free(" + namePrefix + "_out" + maybeDeref + "keys);\n"
+		} else {
+			keyAssign = namePrefix + "_ret" + maybeDeref + "keys = " + namePrefix + "_out" + maybeDeref + "keys;\n"
+			keyMallocFree = "free(" + namePrefix + "_out" + maybeDeref + "keys);\n"
+		}
+
+		if isQMulti {
+			preamble += "libqt_list* " + namePrefix + "_out_values = (libqt_list*)" + namePrefix + "_out" + maybeDeref + "values;\n"
+			if vParamType == "QByteArray" || vParamType == "QString" {
+				preamble += "char*** " + namePrefix + "_ret_values = (char***)malloc(" + namePrefix + "_ret" + maybeDeref + "len * sizeof(char**));\n"
+			} else if IsKnownClass(vParamType) {
+				preamble += vType + "** " + namePrefix + "_ret_values = (" + vType + "**)malloc(" + namePrefix + "_ret" + maybeDeref + "len * sizeof(" + vType + "*));\n"
+			}
+			preamble += "if (" + namePrefix + "_ret_values == NULL) {\n"
+			preamble += "    " + keyMallocFree
+			preamble += "    free(" + namePrefix + "_out" + maybeDeref + "values);\n"
+			preamble += `    fprintf(stderr, "Failed to allocate memory for map value containers in ` + cfs.currentMethodName + `\n");` + "\n"
+			preamble += "    abort();\n"
+			preamble += "}\n"
+
+			valueIter = "libqt_list " + namePrefix + "_value_list = " + namePrefix + "_out_values[i];\n"
+
+			if vParamType == "QByteArray" || vParamType == "QString" {
+				valueIter += namePrefix + "_ret_values[i] = (char**)malloc((" + namePrefix + "_value_list.len + 1) * sizeof(char*));\n"
+				valueIter += "if (" + namePrefix + "_ret_values[i] == NULL) {\n"
+			} else if IsKnownClass(vParamType) {
+				valueIter += vType + "* " + namePrefix + "_ret_arr = (" + vType + "*)malloc((" + namePrefix + "_value_list.len + 1) * sizeof(" + vType + "));\n"
+				valueIter += "if (" + namePrefix + "_ret_arr == NULL) {\n"
+			}
+
+			valueIter += "for (size_t j = 0; j < i; j++) {\n"
+			valueIter += ifv(keyIter != "", "        libqt_free("+namePrefix+"_ret_keys[j]);\n", "")
+			if vParamType == "QByteArray" || vParamType == "QString" {
+				valueIter += "for (size_t k = 0; k < ((libqt_list*)" + namePrefix + "_out" + maybeDeref + "values)[j].len; k++) {\n"
+				valueIter += "    libqt_free(" + namePrefix + "_ret_values[j][k]);\n"
+				valueIter += "}\n"
+			}
+			valueIter += "    libqt_free(" + namePrefix + "_ret_values[j]);\n"
+			valueIter += "}\n"
+			valueIter += "" + keyMallocFree
+			valueIter += "free(" + namePrefix + "_ret_values);\n"
+			valueIter += "free(" + namePrefix + "_out" + maybeDeref + "values);\n"
+			valueIter += `fprintf(stderr, "Failed to allocate memory for map values in ` + cfs.currentMethodName + `\n");` + "\n"
+			valueIter += "abort();\n"
+			valueIter += "}\n"
+
+			if vParamType == "QByteArray" || vParamType == "QString" {
+				valueIter += valueOut + "*" + namePrefix + "_value_str = (" + valueOut + "*)" + namePrefix + "_value_list.data.ptr;\n"
+				valueIter += "size_t j;\n"
+				valueIter += "for (j = 0; j < " + namePrefix + "_value_list.len; j++) {\n"
+				valueIter += namePrefix + "_ret_values[i][j] = (char*)malloc(" + namePrefix + "_value_str[j].len + 1);\n"
+				valueIter += "if (" + namePrefix + "_ret_values[i][j] == NULL) {\n"
+				valueIter += "    for (size_t k = 0; k < j; k++) {\n"
+				valueIter += "        free(" + namePrefix + "_ret_values[i][k]);\n"
+				valueIter += "    }\n"
+				valueIter += "    for (size_t k = 0; k < i; k++) {\n"
+				valueIter += ifv(keyIter != "", "free("+namePrefix+"_ret_keys[k]);\n", "")
+				valueIter += "    for (size_t l = 0; l < ((libqt_list*)" + namePrefix + "_out" + maybeDeref + "values)[k].len; l++) {\n"
+				valueIter += "        free(" + namePrefix + "_ret_values[k][l]);\n"
+				valueIter += "    }\n"
+				valueIter += "    free(" + namePrefix + "_ret_values[k]);\n"
+				valueIter += "}\n"
+				valueIter += ifv(keyIter != "", "free("+namePrefix+"_ret_keys);\n", "")
+				valueIter += "    free(" + namePrefix + "_ret_values);\n"
+				valueIter += `    fprintf(stderr, "Failed to allocate memory for map value keys in ` + cfs.currentMethodName + `\n");` + "\n"
+				valueIter += "    abort();\n"
+				valueIter += "}\n"
+				valueIter += "memcpy(" + namePrefix + "_ret_values[i][j], " + namePrefix + "_value_str[j].data, " + namePrefix + "_value_str[j].len);\n"
+				valueIter += namePrefix + "_ret_values[i][j][" + namePrefix + `_value_str[j].len] = '\0';` + "\n"
+				valueIter += "}\n"
+				valueIter += namePrefix + "_ret_values[i][j] = NULL;\n"
+
+				valueInnerFree = valueOut + "* " + namePrefix + "_value_str = (" + valueOut + "*)" + namePrefix + "_out_values[i].data.ptr;\n"
+				valueInnerFree += "for (size_t j = 0; j < " + namePrefix + "_out_values[i].len; j++) {\n"
+				valueInnerFree += "    libqt_free(" + namePrefix + "_value_str[j].data);\n"
+				valueInnerFree += "}\n"
+				valueInnerFree += "free(" + namePrefix + "_out_values[i].data.ptr);\n"
+
+			} else if IsKnownClass(vParamType) {
+				valueIter += "memcpy(" + namePrefix + "_ret_arr, " + namePrefix + "_value_list.data.ptr, " + namePrefix + "_value_list.len * sizeof(" + vType + "));\n"
+				valueIter += namePrefix + "_ret_arr[" + namePrefix + "_value_list.len] = NULL;\n"
+				valueIter += namePrefix + "_ret_values[i] = " + namePrefix + "_ret_arr;\n"
+
+				valueInnerFree = "free((" + vType + "*)" + namePrefix + "_out_values[i].data.ptr);\n"
+
+			} else {
+				panic("UNHANDLED " + strings.ToUpper(containerType) + " VALUE RETURN TYPE: " + v.ParameterType)
+			}
+
+			valueAssign = namePrefix + "_ret" + maybeDeref + "values = (void*)" + namePrefix + "_ret_values;\n"
+			valueFree = "    free(" + namePrefix + "_out" + maybeDeref + "values);\n"
+
+		} else if vParamType == "QString" || vParamType == "QByteArray" {
+			preamble += valueOut + "* " + namePrefix + "_out_values = (" + valueOut + "*)" + namePrefix + "_out" + maybeDeref + "values;\n"
+			preamble += "char** " + namePrefix + "_ret_values = (char**)malloc(" + namePrefix + "_ret" + maybeDeref + "len * sizeof(char*));\n"
+			preamble += "if (" + namePrefix + "_ret_values == NULL) {\n"
+			preamble += `    fprintf(stderr, "Failed to allocate memory for map string values in ` + cfs.currentMethodName + `\n");` + "\n"
+			preamble += keyFree
+			preamble += maybeMallocFree
+			preamble += "    abort();\n"
+			preamble += "}\n"
+
+			valueIter = namePrefix + "_ret_values[i] = (char*)malloc(" + namePrefix + "_out_values[i].len + 1);\n"
+			valueIter += "if (" + namePrefix + "_ret_values[i] == NULL) {\n"
+			valueIter += "    for (size_t j = 0; j < i; j++) {\n"
+			valueIter += ifv(keyIter != "", "libqt_free("+namePrefix+"_ret_keys[j]);\n", "")
+			valueIter += "        libqt_free(" + namePrefix + "_ret_values[j]);\n"
+			valueIter += "    }\n"
+			valueIter += ifv(keyIter != "", "free("+namePrefix+"_ret_keys);\n", "")
+			valueIter += "    free(" + namePrefix + "_ret_values);\n"
+			valueIter += maybeMallocFree
+			valueIter += `    fprintf(stderr, "Failed to allocate memory for map string values in ` + cfs.currentMethodName + `\n");` + "\n"
+			valueIter += "    abort();\n"
+			valueIter += "}\n"
+			valueIter += "memcpy(" + namePrefix + "_ret_values[i], " + namePrefix + "_out_values[i].data, " + namePrefix + "_out_values[i].len);\n"
+			valueIter += namePrefix + "_ret_values[i][" + namePrefix + `_out_values[i].len] = '\0';` + "\n"
+
+			valueAssign = namePrefix + "_ret" + maybeDeref + "values = (void*)" + namePrefix + "_ret_values;\n"
+			valueInnerFree = "    libqt_free(" + namePrefix + "_out_values[i].data);\n"
+			valueFree = "    free(" + namePrefix + "_out" + maybeDeref + "values);\n"
+
+		} else {
+			valueAssign = namePrefix + "_ret" + maybeDeref + "values = " + namePrefix + "_out" + maybeDeref + "values;\n"
+		}
+
+		if keyIter != "" || valueIter != "" {
+			preamble += "for (size_t i = 0; i < " + namePrefix + "_ret" + maybeDeref + "len; ++i) {\n"
+			preamble += keyIter
+			preamble += valueIter
+			preamble += "}\n"
+		}
+
+		preamble += keyAssign
+		preamble += valueAssign
+
+		if keyInnerFree != "" || valueInnerFree != "" {
+			preamble += "for (size_t i = 0; i < " + namePrefix + "_out" + maybeDeref + "len; ++i) {\n"
+			preamble += keyInnerFree
+			preamble += valueInnerFree
+			preamble += "}\n"
+		}
+
+		preamble += keyFree
+		preamble += valueFree
+
+		return preamble + shouldReturn + namePrefix + "_ret;\n" + afterword
+
+	} else if f, s, ok := rt.QPairOf(); ok {
+		// QPair is a struct containing two inner types
+		// e.g. QPair<QString, QString>
+		if (f.IntType() || IsKnownClass(f.ParameterType)) && (s.IntType() || IsKnownClass(s.ParameterType)) {
+			return shouldReturn + " " + rvalue + ";\n" + afterword
+
+		} else if (f.ParameterType == "QString" || f.ParameterType == "QByteArray") && (s.ParameterType == "QString" || s.ParameterType == "QByteArray") {
+			shouldReturn = "libqt_pair " + namePrefix + "_ret = "
+			afterword += "libqt_string* " + namePrefix + "_first = (libqt_string*)" + namePrefix + "_ret.first;\n"
+			afterword += "libqt_string* " + namePrefix + "_second = (libqt_string*)" + namePrefix + "_ret.second;\n"
+
+			afterword += "libqt_pair " + namePrefix + "_out;\n"
+			afterword += namePrefix + "_out.first = (void*)" + namePrefix + "_first->data;\n"
+			afterword += namePrefix + "_out.second = (void*)" + namePrefix + "_second->data;\n"
+			afterword += "free(" + namePrefix + "_first);\n"
+			afterword += "free(" + namePrefix + "_second);\n"
+			afterword += assignExpr + " " + namePrefix + "_out;\n"
+
+			return shouldReturn + " " + rvalue + ";\n" + afterword
+
+		} else {
+			panic("UNSUPPORTED QPAIR TYPE: " + f.ParameterType + "," + s.ParameterType)
+		}
+
+	} else if rt.IsFunctionPointer {
+		return shouldReturn + "(" + rt.renderFunctionType() + ")" + rvalue + ";\n" + afterword
+
+	} else if rt.QtClassType() {
+		// Construct our C type based on this inner C ABI type
+		shouldReturn = "return"
+
+		_, ok := KnownClassnames[rt.ParameterType]
+		if !ok {
+			panic("emitCabiToC: Encountered an unknown Qt class")
+		}
+
+		maybeAllocCleanup := cfs.checkAndClearAllocCleanups(false)
+
+		if maybeAllocCleanup != "" {
+			preamble := rt.renderReturnTypeC(cfs, false, true) + " " + namePrefix + "_out = " + rvalue + ";"
+			rvalue = namePrefix + "_out"
+			if rt.Pointer || rt.ByRef {
+				return preamble + maybeAllocCleanup + assignExpr + rvalue + ";"
+			}
+			return preamble + maybeAllocCleanup + shouldReturn + " " + rvalue + ";"
+		}
+
+		if rt.Pointer || rt.ByRef {
+			return assignExpr + rvalue + ";"
+		}
+		return shouldReturn + " " + rvalue + ";"
+
+	} else if rt.IntType() || rt.IsKnownEnum() || rt.IsFlagType() || rt.ParameterType == "bool" || rt.QtCppOriginalType != nil {
+
+		if rt.Pointer || rt.ByRef {
+			// Cast
+			return shouldReturn + "(" + rt.RenderTypeC(cfs, true, false, true) + maybePointer + ")" + rvalue + ";"
+		}
+
+		maybeAllocCleanup := cfs.checkAndClearAllocCleanups(false)
+
+		if maybeAllocCleanup != "" {
+			preamble := rt.renderReturnTypeC(cfs, false, true) + " " + namePrefix + "_out = " + rvalue + ";"
+			rvalue = namePrefix + "_out"
+			return preamble + maybeAllocCleanup + assignExpr + rvalue + ";"
+		} else {
+			return assignExpr + rvalue + ";"
+		}
+
+	} else if reflect.TypeFor[string]().Kind() == reflect.String {
+		// Single type conversion from C++ C ABI State to C State type
+		// This should not be necessary in most cases.
+		return shouldReturn + "(int)" + rvalue + ";"
+
+	} else {
+		panic(fmt.Sprintf("emitC::emitCabiToC missing type handler for parameter %+v", rt))
+	}
+}
+
+func (cfs *cFileState) checkAndClearAllocCleanups(resetAllocCleanups bool) string {
+	var maybeAllocCleanup string
+	if len(cfs.allocCleanups) > 0 {
+		for i, ac := range cfs.allocCleanups {
+			if strings.Contains(ac, "_qstr") || strings.Contains(ac, ".keys") || strings.Contains(ac, ".values") {
+				maybeAllocCleanup += ac
+			}
+			cfs.allocCleanups[i] = ""
+		}
+		if resetAllocCleanups {
+			cfs.allocCleanups = []string{}
+		}
+	}
+	return maybeAllocCleanup
+}
+
+// Helper function to recursively get methods from parent classes
+func collectInheritedMethodsForC(class string, seenMethods map[string]struct{}) []InheritedMethod {
+	var methods []InheritedMethod
+
+	if pkg, ok := KnownClassnames[class]; ok {
+		for _, m := range pkg.Class.Methods {
+			if _, seen := seenMethods[m.MethodName]; !seen {
+				if m.InheritedFrom != "" {
+					continue
+				}
+				if m.IsConst && m.IsVirtual && m.IsProtected {
+					continue
+				}
+
+				// Create a copy of the method to avoid modifying the original
+				methodCopy := m
+				// Apply typedefs to ensure proper type resolution
+				applyTypedefs_Method(&methodCopy, pkg.Class.ClassName)
+				if err := blocklist_MethodAllowed(&methodCopy); err != nil {
+					continue
+				}
+
+				methods = append(methods, InheritedMethod{
+					Method:      methodCopy,
+					SourceClass: pkg.Class.ClassName,
+				})
+				seenMethods[m.MethodName] = struct{}{}
+			}
+		}
+
+		for _, parentClass := range pkg.Class.DirectInherits {
+			if parentMethods := collectInheritedMethodsForC(parentClass, seenMethods); parentMethods != nil {
+				methods = append(methods, parentMethods...)
+			}
+		}
+	}
+
+	return methods
+}
+
+// Helper function to recursively get private signals from parent classes
+func collectInheritedPrivateSignals(class string, seenSignals map[string]struct{}) []InheritedMethod {
+	var signals []InheritedMethod
+
+	if pkg, ok := KnownClassnames[class]; ok {
+		for _, m := range pkg.Class.PrivateSignals {
+			if _, seen := seenSignals[m.MethodName]; !seen {
+				if m.InheritedFrom != "" {
+					continue
+				}
+
+				// Create a copy of the method to avoid modifying the original
+				methodCopy := m
+				// Apply typedefs to ensure proper type resolution
+				applyTypedefs_Method(&methodCopy, pkg.Class.ClassName)
+				if err := blocklist_MethodAllowed(&methodCopy); err != nil {
+					continue
+				}
+
+				signals = append(signals, InheritedMethod{
+					Method:      methodCopy,
+					SourceClass: pkg.Class.ClassName,
+				})
+				seenSignals[m.MethodName] = struct{}{}
+			}
+		}
+
+		for _, parentClass := range pkg.Class.DirectInherits {
+			if parentSignals := collectInheritedPrivateSignals(parentClass, seenSignals); parentSignals != nil {
+				signals = append(signals, parentSignals...)
+			}
+		}
+	}
+
+	return signals
+}
+
+// Useful at the package level since we need to do the same thing
+// for headers and code
+var (
+	qtMethodUrlOverrides = map[string]string{
+		"metaObject":  "qobject",
+		"qt_metacall": "",
+		"qt_metacast": "",
+		"tr":          "qobject",
+	}
+
+	// We need to brute force these for now
+	skipFunction = map[string]struct{}{
+		"QFileDevice_Close":        {},
+		"QPaintDevice_PaintEngine": {},
+	}
+
+	// These functions are not portable to all platforms
+	platformFunctions = map[string]struct{}{
+		"QsciScintilla_FindMatchingBrace": {},
+		"QTextStream_OperatorShiftRight8": {},
+		"QTextStream_OperatorShiftRight9": {},
+		"QVersionNumber_FromString2":      {},
+	}
+)
+
+func emitH(src *CppParsedHeader, headerName, packageName string) (string, map[string]string, error) {
+	if len(src.Classes) == 0 && len(src.Enums) == 0 {
+		return "", nil, nil
+	}
+
+	ret.Reset()
+
+	srcFilename := filepath.Base(src.Filename)
+	includeGuard := strings.ToUpper(strings.ReplaceAll(strings.ReplaceAll(packageName, "/", "_"), "-", "_")) + "_QT6C_LIB" + strings.ToUpper(strings.ReplaceAll(strings.ReplaceAll(srcFilename, ".", "_"), "-", "_"))
+	bindingInclude := "qtlibc.h"
+	var maybeDots string
+	qtextradefs := make(map[string]struct{})
+	qtfuncdefs := make(map[string]FunctionTypedef)
+	retqtfuncdefs := make(map[string]string)
+
+	dirRoot := ifv(packageName == "src", "", strings.TrimPrefix(packageName, "src/"))
+
+	cfs := cFileState{
+		imports:            map[string]struct{}{},
+		currentPackageName: dirRoot,
+		currentHeaderName:  strings.TrimSuffix(headerName[3:], ".h"),
+	}
+
+	if dirRoot != "" {
+		bindingInclude = "../" + bindingInclude
+		maybeDots = "../"
+	}
+
+	ret.WriteString(`#pragma once
+#ifndef ` + includeGuard + `
+#define ` + includeGuard + `
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "` + maybeDots + `libqttypedefs.h"
+#include "` + bindingInclude + `"` + "\n\n")
+
+	getReferencedTypes(src, qtextradefs, qtfuncdefs)
+
+	sortedFunctions := make([]string, 0, len(qtfuncdefs))
+	for k := range qtfuncdefs {
+		sortedFunctions = append(sortedFunctions, k)
+	}
+	sort.Strings(sortedFunctions)
+	for _, k := range sortedFunctions {
+		fTypedef := qtfuncdefs[k]
+		retqtfuncdefs[k] = fTypedef.ReturnType.renderReturnTypeC(&cfs, false, false) + " (*" + fTypedef.FunctionName + ")(" + cfs.emitParametersC(fTypedef.Parameters, false) + ");\n"
+	}
+
+	sortedExtras := make([]string, 0, len(qtextradefs))
+	for k := range qtextradefs {
+		sortedExtras = append(sortedExtras, k)
+	}
+	sort.Strings(sortedExtras)
+	for _, k := range sortedExtras {
+		pairs := strings.Split(k, ":")
+		f := strings.ReplaceAll(strings.ToLower(pairs[0]), " ", "_")
+		s := strings.ReplaceAll(strings.ToLower(pairs[1]), " ", "_")
+		ret.WriteString("struct pair_" + f + "_" + s + ";\n")
+	}
+	ret.WriteString("\n")
+	for _, k := range sortedExtras {
+		pairs := strings.Split(k, ":")
+		f := strings.ReplaceAll(strings.ToLower(pairs[0]), " ", "_")
+		s := strings.ReplaceAll(strings.ToLower(pairs[1]), " ", "_")
+		ret.WriteString("typedef struct pair_" + f + "_" + s + " pair_" + f + "_" + s + ";\n")
+	}
+	ret.WriteString("\n")
+	for _, k := range sortedExtras {
+		pairs := strings.Split(k, ":")
+		f := strings.ReplaceAll(strings.ToLower(pairs[0]), " ", "_")
+		s := strings.ReplaceAll(strings.ToLower(pairs[1]), " ", "_")
+		ret.WriteString("#ifndef PAIR_" + strings.ToUpper(f+"_"+s) + "\n" +
+			"#define PAIR_" + strings.ToUpper(f+"_"+s) + "\n" +
+			"struct pair_" + f + "_" + s + " {\n" +
+			pairs[0] + ifv(IsKnownClass(pairs[0]), "*", "") + " first;\n" +
+			pairs[1] + ifv(IsKnownClass(pairs[1]), "*", "") + " second;\n" +
+			"};\n" +
+			"#endif\n\n")
+	}
+
+	for _, c := range src.Classes {
+		if !AllowDefinitionForClass(c.ClassName) {
+			continue
+		}
+
+		virtualMethods := c.VirtualMethods()
+		cStructName := cabiClassName(c.ClassName)
+		cfs.currentClassName = strings.ReplaceAll(c.ClassName, "::", "__")
+		nameIndex := 0
+		cPrefix := "q_"
+		if cStructName[0] == 'Q' || cStructName[0] == 'K' || cStructName[0] == 'k' {
+			nameIndex = 1
+			cPrefix = strings.ToLower(cStructName[:1]) + "_"
+		} else if strings.Contains(src.Filename, "KF6") || strings.Contains(src.Filename, "LayerShellQt") {
+			cPrefix = "k_"
+		}
+		cMethodPrefix := cPrefix + strings.ToLower(cStructName[nameIndex:])
+
+		// Embed all inherited classes to directly allow calling inherited methods.
+		// Only include the direct inherits; the recursive inherits will exist
+		// on these types already
+		seenInheritedMethods := make(map[string]struct{})
+
+		for _, base := range c.DirectInherits {
+			if parentMethods := collectInheritedMethodsForC(base, seenInheritedMethods); parentMethods != nil {
+				for _, m := range parentMethods {
+					seenInheritedMethods[m.Method.SafeMethodName()] = struct{}{}
+				}
+			}
+			lowerClassName := strings.ToLower(cabiClassName(base))
+			if lowerClassName == cfs.currentHeaderName {
+				continue
+			}
+		}
+
+		var ctorPageUrl string
+
+		if len(c.Ctors) > 0 || len(c.Methods) > 0 || len(c.VirtualMethods()) > 0 ||
+			(len(c.DirectInherits) > 0 && len(collectInheritedMethodsForC(c.DirectInherits[0], map[string]struct{}{c.ClassName: {}})) > 0) {
+			maybeCharts := ifv(strings.Contains(src.Filename, "QtCharts"), "-qtcharts", "")
+
+			isSpecialCase := (cfs.currentHeaderName == "qcustomplot" && strings.HasPrefix(cStructName, "QCP")) ||
+				(strings.Contains(src.Filename, "accounts-qt") && cStructName[0] != 'Q') ||
+				(strings.Contains(src.Filename, "signon-qt") && cStructName[0] != 'Q')
+
+			pageName := ifv(isSpecialCase, cStructName, getPageName(cStructName)) + maybeCharts
+			ctorPageUrl = "\n\n" + cfs.getPageUrl(QtPage, pageName, "", cStructName)
+			ret.WriteString(ctorPageUrl)
+		}
+
+		for i, ctor := range c.Ctors {
+			if _, ok := moveCtorOnly[c.ClassName]; ok && !ctor.IsMoveCtor {
+				continue
+			}
+
+			var maybeMoveCtor, maybeMacro, maybeEndMacro string
+
+			if ctor.IsMoveCtor {
+				maybeMoveCtor = " object and invalidates the source " + c.ClassName
+			}
+
+			if ctor.LinuxOnly {
+				maybeMacro = "#ifdef __linux__\n"
+				maybeEndMacro = "#endif\n"
+			}
+
+			cfs.castType = cStructName
+			commentParams := cfs.emitCommentParametersC(ctor.Parameters, false)
+
+			if i > 0 {
+				ret.WriteString(ctorPageUrl)
+			}
+
+			ret.WriteString("\n\n" + maybeMacro + "/// " + cMethodPrefix + "_new" + maybeSuffix(i) + " constructs a new " + c.ClassName + maybeMoveCtor +
+				" object.\n///" + commentParams + "\n" +
+				cStructName + "* " + cMethodPrefix + "_new" + maybeSuffix(i) + "(" + cfs.emitParametersC(ctor.Parameters, false) + ");\n" + maybeEndMacro + "\n\n")
+		}
+
+		if c.HasTrivialCopyAssign {
+			ret.WriteString("/// " + cMethodPrefix + "_copy_assign shallow copies `other` into `self`.\n///\n" +
+				"/// @param self " + cStructName + "*\n/// @param other " + cStructName + "*\n///\n" +
+				"void " + cMethodPrefix + "_copy_assign(void* self, void* other);\n\n")
+		}
+
+		if c.HasTrivialMoveAssign {
+			ret.WriteString("/// " + cMethodPrefix + "_move_assign moves `other` into `self` and invalidates `other`.\n///\n" +
+				"/// @param self " + cStructName + "*\n/// @param other " + cStructName + "*\n///\n" +
+				"void " + cMethodPrefix + "_move_assign(void* self, void* other);\n\n")
+		}
+
+		seenMethods := make(map[string]struct{})
+		baseMethods := c.Methods
+		protectedMethods := c.ProtectedMethods()
+		virtualEligible := AllowVirtualForClass(c.ClassName) && len(virtualMethods) > 0
+
+		if virtualEligible && len(virtualMethods) > 0 {
+			virtualMethods = append(virtualMethods, protectedMethods...)
+		}
+
+		for _, m := range c.Methods {
+			if !m.IsProtected {
+				continue
+			}
+
+			if _, ok := nonPolymorphicClasses[c.ClassName]; ok {
+				continue
+			}
+
+			virtualMethods = append(virtualMethods, m)
+		}
+
+		for _, m := range baseMethods {
+			seenMethods[m.MethodName] = struct{}{}
+		}
+
+		for _, m := range virtualMethods {
+			seenMethods[m.MethodName] = struct{}{}
+		}
+
+		var inheritedMethods []InheritedMethod
+		for _, base := range c.DirectInherits {
+			inherited := collectInheritedMethodsForC(base, seenMethods)
+			if inherited != nil {
+				inheritedMethods = append(inheritedMethods, inherited...)
+			}
+		}
+
+		for _, im := range inheritedMethods {
+			im.Method.InheritedFrom = im.SourceClass
+			baseMethods = append(baseMethods, im.Method)
+		}
+
+		privateSignals := c.PrivateSignals
+		var inheritedPrivateSignals []InheritedMethod
+		for _, base := range c.DirectInherits {
+			inheritedS := collectInheritedPrivateSignals(base, seenMethods)
+			if inheritedS != nil {
+				inheritedPrivateSignals = append(inheritedPrivateSignals, inheritedS...)
+			}
+		}
+
+		for _, im := range inheritedPrivateSignals {
+			im.Method.InheritedFrom = im.SourceClass
+			privateSignals = append(privateSignals, im.Method)
+		}
+
+		previousMethods := map[string]struct{}{}
+		seenMethodVariants := map[string]bool{}
+
+		for _, m := range baseMethods {
+			if m.IsProtected && m.InheritedFrom != "" {
+				continue
+			}
+
+			if m.IsProtected && !virtualEligible {
+				continue
+			}
+
+			mSafeMethodName := m.SafeMethodName()
+
+			if _, ok := skippedMethods[c.ClassName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			var showHiddenParams bool
+			if _, ok := seenMethodVariants[mSafeMethodName]; ok {
+				continue
+			}
+			if b, ok := seenMethodVariants[m.MethodName]; ok {
+				if b {
+					continue
+				} else {
+					showHiddenParams = true
+					seenMethodVariants[m.MethodName] = true
+				}
+			}
+			seenMethodVariants[m.MethodName] = false
+			seenMethodVariants[mSafeMethodName] = false
+
+			if _, ok := previousMethods[mSafeMethodName]; ok {
+				continue
+			}
+			if _, ok := previousMethods[m.MethodName]; ok {
+				continue
+			}
+
+			cmdStructName := cStructName
+			cmdMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:])
+			safeMethodName := cSafeMethodName(mSafeMethodName)
+			var inheritedFrom string
+			if m.InheritedFrom != "" {
+				inheritedFrom = "\n/// Inherited from " + m.InheritedFrom + "\n///"
+				cmdStructName = cabiClassName(m.InheritedFrom)
+			}
+
+			if m.InheritedInClass != "" && m.InheritedInClass != c.ClassName {
+				inheritedFrom = "\n/// Inherited from " + m.InheritedInClass + "\n///"
+			}
+
+			needsPlatformMacro := false
+			if _, ok := platformFunctions[cmdStructName+"_"+mSafeMethodName]; ok && !m.FossOnly && !m.LinuxOnly {
+				needsPlatformMacro = true
+				ret.WriteString("\n#if defined(__linux__) || defined(__FreeBSD__)")
+			} else if m.LinuxOnly {
+				needsPlatformMacro = true
+				ret.WriteString("\n#ifdef __linux__")
+			}
+
+			ret.WriteString(inheritedFrom)
+
+			var docCommentUrl string
+			className := ifv(m.InheritedInClass == "", cmdStructName, cabiClassName(m.InheritedInClass))
+
+			isSpecialCase := (cfs.currentHeaderName == "qcustomplot" && strings.HasPrefix(className, "QCP")) ||
+				(strings.Contains(src.Filename, "accounts-qt") && className[0] != 'Q') ||
+				(strings.Contains(src.Filename, "signon-qt") && className[0] != 'Q')
+
+			subjectURL := ifv(isSpecialCase, className, strings.ToLower(className))
+			cmdURL := m.MethodName
+			if m.OverrideMethodName != "" {
+				cmdURL = m.OverrideMethodName
+			}
+			if newURL, ok := qtMethodUrlOverrides[cmdURL]; ok && cStructName != "QMetaObject" {
+				subjectURL = newURL
+			}
+			if m.IsVariable {
+				cmdURL = m.VariableFieldName + "-var"
+			}
+			if subjectURL != "" {
+				maybeCharts := ifv(strings.Contains(src.Filename, "QtCharts") && inheritedFrom == "" && subjectURL != "qobject", "-qtcharts", "")
+				pageURL := cfs.getPageUrl(QtPage, subjectURL+maybeCharts, cmdURL, className)
+				docCommentUrl = "\n" + pageURL + "///"
+				ret.WriteString(docCommentUrl)
+			}
+
+			previousMethods[m.MethodName] = struct{}{}
+			previousMethods[mSafeMethodName] = struct{}{}
+
+			cfs.castType = cmdStructName
+
+			returnTypeDecl := m.ReturnType.renderReturnTypeC(&cfs, false, false)
+
+			allocComment := m.ReturnType.returnAllocComment(&cfs, returnTypeDecl)
+			if allocComment != "" {
+				ret.WriteString(allocComment)
+			}
+
+			var commaParams string
+			if len(m.Parameters) > 0 {
+				commaParams = ", "
+			}
+
+			selfParam := "\n/// @param self " + cStructName + "* "
+
+			method := safeMethodName + "(void* self" + commaParams
+			if m.IsStatic && !m.IsProtected {
+				selfParam = ""
+				method = safeMethodName + "("
+			}
+
+			returnComment := cfs.emitReturnComment(m.ReturnType)
+			maybeFinalNewLine := ifv(selfParam != "" && len(m.Parameters) == 0 && returnComment == "", "///\n", "")
+			maybeNewLine := ifv(selfParam != "" && returnComment != "" && len(m.Parameters) == 0, "\n///", "")
+
+			ret.WriteString(selfParam + cfs.emitCommentParametersC(m.Parameters, false) + maybeNewLine + "\n" + returnComment + maybeFinalNewLine +
+				returnTypeDecl + " " + cmdMethodName + method + cfs.emitParametersC(m.Parameters, false) + ");\n")
+
+			if needsPlatformMacro {
+				ret.WriteString("#endif\n")
+			}
+
+			// Add Connect() wrappers for signal functions
+			if m.IsSignal {
+				addConnect := true
+				if _, ok := noQtConnect[cmdStructName]; ok {
+					addConnect = false
+				}
+				if slices.Contains(unmatchedQtConnect, cmdStructName+"_"+mSafeMethodName) {
+					addConnect = false
+				}
+
+				if addConnect {
+					var maybeMacro, maybeEndMacro string
+					slotComma := ifv(len(m.Parameters) != 0, ", ", "")
+					if m.LinuxOnly {
+						maybeMacro = "\n#ifdef __linux__"
+						maybeEndMacro = "#endif\n"
+					}
+
+					ret.WriteString(maybeMacro + inheritedFrom + docCommentUrl + "\n/// @param self " + cStructName + "*\n/// @param callback void func(" +
+						cStructName + "* self" + slotComma + cfs.emitCommentParametersC(m.Parameters, true) + ")\n///\n" +
+						"void " + cmdMethodName + "_on" + safeMethodName + "(void* self, void (*callback)(void*" +
+						slotComma + cfs.emitParametersC(m.Parameters, true) + "));\n" + maybeEndMacro + "\n\n")
+				}
+			}
+
+			if m.IsFinal {
+				continue
+			}
+
+			// We need to brute force these for now
+			if _, ok := skipFunction[cmdStructName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			if !AllowVirtual(m) {
+				continue
+			}
+
+			if (m.IsVirtual || m.IsProtected) && len(virtualMethods) > 0 && virtualEligible {
+				var maybeCommentStruct, maybeVoid, maybeComma, maybeMacro, maybeEndMacro string
+				if len(m.Parameters) > 0 {
+					maybeComma = ", "
+				}
+				if showHiddenParams && (len(m.Parameters) > 0 || len(m.HiddenParams) > 0) {
+					maybeComma = ", "
+				}
+				if len(m.Parameters) != 0 {
+					maybeCommentStruct = cStructName + "* self" + maybeComma
+					maybeVoid = "void*"
+				}
+				if showHiddenParams && len(m.HiddenParams) != 0 {
+					maybeCommentStruct = cStructName + "* self" + maybeComma
+					maybeVoid = "void*"
+				}
+				if m.LinuxOnly {
+					maybeMacro = "\n#ifdef __linux__"
+					maybeEndMacro = "#endif\n"
+				}
+
+				onDocComment := "\n/// Allows for overriding the related default method\n///"
+
+				ret.WriteString(maybeMacro + inheritedFrom + docCommentUrl + onDocComment + "\n/// @param self " + cStructName +
+					"*\n/// @param callback " + m.ReturnType.renderReturnTypeC(&cfs, true, true) + " func(" + maybeCommentStruct +
+					cfs.emitCommentParametersC(m.Parameters, true) + ")\n///\n" +
+					"void " + cmdMethodName + "_on" + safeMethodName + "(void* self, " + m.ReturnType.renderReturnTypeC(&cfs, true, false) +
+					"(*callback)(" + maybeVoid + maybeComma + cfs.emitParametersC(m.Parameters, true) + "));\n" + maybeEndMacro + "\n\n")
+
+				superDocComment := "\n/// Base class method implementation\n///"
+				baseMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:]) + "_super"
+				qbasebaseMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:]) + "_qbase"
+
+				ret.WriteString(maybeMacro + "\n/// @warning DEPRECATED: Use `" + baseMethodName + safeMethodName + "` instead\n///\n" +
+					"#define " + qbasebaseMethodName + safeMethodName + " " + baseMethodName + safeMethodName + "\n" + maybeEndMacro + "\n\n")
+
+				ret.WriteString(maybeMacro + inheritedFrom + docCommentUrl + superDocComment +
+					selfParam + cfs.emitCommentParametersC(m.Parameters, false) + maybeNewLine + "\n" + returnComment + maybeFinalNewLine +
+					returnTypeDecl + " " + baseMethodName + method + cfs.emitParametersC(m.Parameters, false) + ");\n" + maybeEndMacro + "\n\n")
+			}
+		}
+
+		seenVirtuals := map[string]bool{}
+
+		for _, m := range virtualMethods {
+			if !virtualEligible || m.HasStdFunctionPointerParam {
+				continue
+			}
+
+			mSafeMethodName := m.SafeMethodName()
+
+			if _, ok := skippedMethods[c.ClassName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			var showHiddenParams bool
+			if _, ok := seenVirtuals[mSafeMethodName]; ok {
+				continue
+			}
+			if b, ok := seenVirtuals[m.MethodName]; ok {
+				if b {
+					continue
+				} else {
+					showHiddenParams = true
+					seenVirtuals[m.MethodName] = true
+				}
+			}
+			seenVirtuals[m.MethodName] = false
+			seenVirtuals[mSafeMethodName] = false
+
+			if _, ok := previousMethods[m.MethodName]; ok {
+				continue
+			}
+			previousMethods[m.MethodName] = struct{}{}
+			previousMethods[mSafeMethodName] = struct{}{}
+
+			cmdStructName := cStructName
+			cmdMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:])
+			safeMethodName := cSafeMethodName(mSafeMethodName)
+
+			var inheritedFrom, commaParams string
+			if len(m.Parameters) > 0 {
+				commaParams = ", "
+			}
+			// Include inheritance information if we have it
+			if m.InheritedFrom != "" {
+				inheritedFrom = "\n/// Inherited from " + m.InheritedFrom + "\n ///"
+				cmdStructName = cabiClassName(m.InheritedFrom)
+			}
+
+			if m.InheritedInClass != "" && m.InheritedInClass != c.ClassName {
+				inheritedFrom = "\n/// Inherited from " + m.InheritedInClass + "\n ///"
+			}
+
+			className := ifv(m.InheritedInClass == "", cmdStructName, cabiClassName(m.InheritedInClass))
+
+			isSpecialCase := (cfs.currentHeaderName == "qcustomplot" && strings.HasPrefix(className, "QCP")) ||
+				(strings.Contains(src.Filename, "accounts-qt") && className[0] != 'Q') ||
+				(strings.Contains(src.Filename, "signon-qt") && className[0] != 'Q')
+
+			subjectURL := ifv(isSpecialCase, className, strings.ToLower(className))
+			cmdURL := m.MethodName
+			if m.OverrideMethodName != "" {
+				cmdURL = m.OverrideMethodName
+			}
+			if m.IsVariable {
+				cmdURL = m.VariableFieldName + "-var"
+			}
+			maybeCharts := ifv(strings.Contains(src.Filename, "QtCharts") && inheritedFrom == "", "-qtcharts", "")
+			pageURL := cfs.getPageUrl(QtPage, subjectURL+maybeCharts, cmdURL, className)
+			documentationURL := "\n" + pageURL + "///"
+
+			// Add a package-private function to call the C++ base class method
+			// QWidget_PaintEvent
+			cfs.castType = cStructName
+			returnTypeDecl := m.ReturnType.renderReturnTypeC(&cfs, false, false)
+			cfsParams := cfs.emitParametersC(m.Parameters, false)
+			returnComment := cfs.emitReturnComment(m.ReturnType)
+
+			allocComment := m.ReturnType.returnAllocComment(&cfs, returnTypeDecl)
+			headerComment := "\n/// Wrapper to allow calling virtual or protected method\n ///\n"
+			maybeNewLine := ifv(len(m.Parameters) == 0 && returnComment != "", "\n///", "")
+			maybeFinalNewLine := ifv(len(m.Parameters) == 0 && returnComment == "", "///\n", "")
+
+			ret.WriteString(inheritedFrom + documentationURL + allocComment + headerComment + "/// @param self " + cStructName + "* " + maybeNewLine +
+				cfs.emitCommentParametersC(m.Parameters, false) + "\n" + returnComment + maybeFinalNewLine +
+				returnTypeDecl + " " + cmdMethodName + safeMethodName + "(void* self" + commaParams + cfsParams + ");\n")
+
+			if !AllowVirtual(m) {
+				continue
+			}
+
+			headerComment = "\n/// Wrapper to allow calling base class virtual or protected method\n ///\n"
+
+			ret.WriteString("\n/// @warning DEPRECATED: Use `" + cmdMethodName + "_super" + safeMethodName + "` instead\n///\n" +
+				"#define " + cmdMethodName + "_qbase" + safeMethodName + " " + cmdMethodName + "_super" + safeMethodName + "\n")
+
+			ret.WriteString(inheritedFrom + documentationURL + allocComment + headerComment + "/// @param self " + cStructName + "* " + maybeNewLine +
+				cfs.emitCommentParametersC(m.Parameters, false) + "\n" + returnComment + maybeFinalNewLine +
+				returnTypeDecl + " " + cmdMethodName + "_super" + safeMethodName + "(void* self" + commaParams + cfsParams + ");\n")
+
+			var maybeCommentStruct, maybeVoid string
+			if showHiddenParams && (len(m.Parameters) > 0 || len(m.HiddenParams) > 0) {
+				commaParams = ", "
+			}
+
+			if len(m.Parameters) != 0 {
+				maybeCommentStruct = cStructName + "* self" + commaParams
+				maybeVoid = "void*"
+			}
+			if showHiddenParams && len(m.HiddenParams) != 0 {
+				maybeCommentStruct = cStructName + "* self" + commaParams
+				maybeVoid = "void*"
+			}
+
+			headerComment = "\n/// Wrapper to allow overriding base class virtual or protected method\n ///\n"
+
+			ret.WriteString(inheritedFrom + documentationURL + headerComment + "/// @param self " + cStructName +
+				"*\n/// @param callback " + m.ReturnType.renderReturnTypeC(&cfs, true, true) + " func(" + maybeCommentStruct +
+				cfs.emitCommentParametersC(m.Parameters, true) + ")\n///\n" +
+				"void " + cmdMethodName + "_on" + safeMethodName + "(void* self, " + m.ReturnType.renderReturnTypeC(&cfs, true, false) +
+				"(*callback)(" + maybeVoid + commaParams + cfs.emitParametersC(m.Parameters, true) + "));\n")
+		}
+
+		for _, m := range privateSignals {
+			cmdStructName := cStructName
+			cmdMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:])
+			safeMethodName := cSafeMethodName(m.SafeMethodName())
+			var inheritedFrom, docCommentUrl string
+			if m.InheritedFrom != "" {
+				inheritedFrom = "\n/// Inherited from " + m.InheritedFrom + "\n///"
+				cmdStructName = cabiClassName(m.InheritedFrom)
+			}
+
+			if m.InheritedInClass != "" && m.InheritedInClass != c.ClassName {
+				inheritedFrom = "\n/// Inherited from " + m.InheritedInClass + "\n///"
+			}
+
+			className := ifv(m.InheritedInClass == "", cmdStructName, cabiClassName(m.InheritedInClass))
+
+			isSpecialCase := (cfs.currentHeaderName == "qcustomplot" && strings.HasPrefix(className, "QCP")) ||
+				(strings.Contains(src.Filename, "accounts-qt") && className[0] != 'Q') ||
+				(strings.Contains(src.Filename, "signon-qt") && className[0] != 'Q')
+
+			subjectURL := ifv(isSpecialCase, className, strings.ToLower(className))
+			cmdURL := m.MethodName
+			if m.OverrideMethodName != "" {
+				cmdURL = m.OverrideMethodName
+			}
+			if newURL, ok := qtMethodUrlOverrides[cmdURL]; ok {
+				subjectURL = newURL
+			}
+			if m.IsVariable {
+				cmdURL = m.VariableFieldName + "-var"
+			}
+			if subjectURL != "" {
+				maybeCharts := ifv(strings.Contains(src.Filename, "QtCharts") && inheritedFrom == "" && subjectURL != "qobject", "-qtcharts", "")
+				pageURL := cfs.getPageUrl(QtPage, subjectURL+maybeCharts, cmdURL, className)
+				docCommentUrl = "\n" + pageURL + "///\n"
+			}
+
+			slotComma := ifv(len(m.Parameters) != 0, ", ", "")
+			headerComment := "/// Wrapper to allow calling private signal\n///"
+
+			ret.WriteString(inheritedFrom + docCommentUrl + headerComment + "\n/// @param self " + cStructName + "*\n/// @param callback void func(" +
+				cStructName + "* self" + slotComma + cfs.emitCommentParametersC(m.Parameters, true) + ")\n///\n" +
+				"void " + cmdMethodName + "_on" + safeMethodName + "(void* self, void (*callback)(void*" +
+				slotComma + cfs.emitParametersC(m.Parameters, true) + "));\n")
+		}
+
+		if c.CanDelete && (len(c.Methods) > 0 || len(c.VirtualMethods()) > 0 || len(c.Ctors) > 0) {
+			maybeCharts := ifv(strings.Contains(src.Filename, "QtCharts"), "-qtcharts", "")
+
+			isSpecialCase := (cfs.currentHeaderName == "qcustomplot" && strings.HasPrefix(cStructName, "QCP")) ||
+				(strings.Contains(src.Filename, "accounts-qt") && cStructName[0] != 'Q') ||
+				(strings.Contains(src.Filename, "signon-qt") && cStructName[0] != 'Q')
+
+			pageUrl := cfs.getPageUrl(DtorPage, ifv(isSpecialCase, cStructName, getPageName(cStructName))+maybeCharts, "", cStructName)
+			ret.WriteString(ifv(pageUrl != "", "\n"+pageUrl+"///\n", "\n") +
+				"/// Delete this object from C++ memory.\n///\n" +
+				"/// @param self " + cStructName + "*\n///\n" +
+				"void " + cPrefix + cSafeMethodName(strings.ToLower(cStructName[nameIndex:])) + "_delete(void* self);\n\n")
+		}
+	}
+
+	var maybeUrl string
+
+	if len(src.Enums) > 0 {
+		maybeCharts := ifv(strings.Contains(src.Filename, "QtCharts"), "-qtcharts", "")
+		pageName := getPageName(cfs.currentHeaderName) + maybeCharts
+		pageUrl := cfs.getPageUrl(EnumPage, pageName, "", cfs.currentHeaderName)
+		maybeUrl = ifv(pageUrl != "", "\n\n"+pageUrl, "")
+	}
+
+	for _, e := range src.Enums {
+		if e.EnumName == "" {
+			continue // Removed by transformRedundant AST pass
+		}
+
+		cEnumName := cabiEnumClassName(e.EnumName) // Fully qualified name of the enum
+
+		ret.WriteString(maybeUrl + "\n\ntypedef enum {\n")
+
+		if len(e.Entries) > 0 {
+			for i, ee := range e.Entries {
+				enumPrefix := strings.ToUpper(strings.ReplaceAll(e.EnumName, "::", "_"))
+				entryName := ee.EntryName
+				if !(strings.HasPrefix(entryName, "Key_") && enumPrefix == "QT_KEY") && !strings.HasPrefix(entryName, "PercentString") {
+					entryName = strings.ToUpper(cabiEnumClassName(ee.EntryName))
+				}
+				entryName = strings.ReplaceAll(entryName, "___", "_")
+				entry := ee.EntryValue
+				num, err := strconv.Atoi(ee.EntryValue)
+				if err == nil {
+					if float64(num) > math.MaxInt32 || float64(num) < math.MinInt32 {
+						// if needed, store wraparound value as opposed to overflow
+						enumType := e.UnderlyingType.RenderTypeC(&cfs, false, false, false)
+						if enumType[0] != 'u' {
+							entry = strconv.Itoa(int(int32(num)))
+						}
+					}
+				}
+				ret.WriteString("    " + enumPrefix + "_" + entryName + " = " + entry)
+				if i < len(e.Entries)-1 {
+					ret.WriteString(",\n")
+				} else {
+					ret.WriteString("\n")
+				}
+			}
+		} else {
+			ret.WriteString(cEnumName + "_dummy = 0\n")
+		}
+		if _, ok := KnownEnums[cEnumName]; ok {
+			cEnumName += "__"
+		}
+		// this is an enum class workaround
+		if cEnumName == "QCborSimpleType__" {
+			cEnumName = strings.ToUpper(cfs.currentHeaderName) + "_" + cEnumName
+		}
+		ret.WriteString("} " + cEnumName + ";\n\n")
+	}
+
+	ret.WriteString(`#endif
+`)
+	return ret.String(), retqtfuncdefs, nil
+}
+
+func emitC(src *CppParsedHeader, headerName, packageName string) (string, error) {
+	if len(src.Classes) == 0 {
+		return "", nil
+	}
+
+	ret.Reset()
+
+	var parentInclude string
+
+	srcFilename := filepath.Base(src.Filename)
+	dirRoot := ifv(packageName == "src", "", strings.TrimPrefix(packageName, "src/"))
+
+	cfs := cFileState{
+		imports:            map[string]struct{}{},
+		currentPackageName: dirRoot,
+		currentHeaderName:  strings.TrimSuffix(headerName[3:], ".h"),
+		isC:                true,
+	}
+
+	// TODO Remove this suffix hack once we have a better way to automate it
+	seenRefs := map[string]struct{}{cfs.currentHeaderName: {}}
+	if strings.HasSuffix(cfs.currentHeaderName, "_1") {
+		seenRefs[strings.TrimSuffix(cfs.currentHeaderName, "_1")] = struct{}{}
+	}
+
+	for _, ref := range getReferencedTypes(src, nil, nil) {
+		if cabiPreventStructDeclaration(ref) {
+			continue
+		}
+
+		if _, ok := seenRefs[ref]; ok {
+			continue
+		}
+		seenRefs[ref] = struct{}{}
+
+		if !ImportHeaderForClass(ref, false) {
+			continue
+		}
+
+		var refInc string
+		include, ok := KnownIncludes[ref]
+		if ok {
+			refInc = include.Filename[:len(include.Filename)-2]
+		} else {
+			continue
+		}
+
+		if _, ok := seenRefs[refInc]; ok {
+			continue
+		}
+		seenRefs[refInc] = struct{}{}
+
+		if include.PackageName != cfs.currentPackageName {
+			if include.PackageName == "" {
+				parentInclude = "../"
+			} else {
+				parentInclude = "../" + include.PackageName + "/"
+			}
+		} else {
+			parentInclude = ""
+		}
+
+		// TODO Remove this suffix hack once we have a better way to automate it
+		maybeFileSuffix := ""
+		if (parentInclude == "" && strings.Contains(src.Filename, "KIO") && (refInc == "deletejob" || refInc == "metadata")) ||
+			(parentInclude == "" && strings.Contains(src.Filename, "KNS") && refInc == "provider") ||
+			(parentInclude == "" && strings.Contains(src.Filename, "KTextEditor") && (refInc == "application" || refInc == "mainwindow" || refInc == "message")) ||
+			(parentInclude == "" && strings.Contains(src.Filename, "PackageKit") && refInc == "transaction") {
+			maybeFileSuffix = "_1"
+		}
+		if parentInclude == "" && strings.Contains(src.Filename, "Accounts") && refInc == "provider" {
+			maybeFileSuffix = "_2"
+		}
+
+		ret.WriteString(`#include "` + parentInclude + "lib" + refInc + maybeFileSuffix + `.hpp"` + "\n")
+	}
+
+	// workaround for qtermwidget.h
+	if srcFilename == "qtermwidget.h" {
+		ret.WriteString(`#include "libqtermwidget_interface.hpp"` + "\n")
+	}
+
+	// workaround for tr
+	switch headerName {
+	case "libk7zip.h",
+		"libkar.h",
+		"libkarchive.h",
+		"libkcharsets.h",
+		"libkconfigloader.h",
+		"libkencodingprober.h",
+		"libkrcc.h",
+		"libktar.h",
+		"libkzip.h",
+		"libqcommandlineparser.h",
+		"libqimagereader.h",
+		"libqimagewriter.h",
+		"libqsystemsemaphore.h":
+		ret.WriteString(`#include "` + parentInclude + `libqobject.hpp"` + "\n")
+
+	case "libkemailsettings.h":
+		ret.WriteString(`#include "../libqobject.hpp"` + "\n")
+	}
+
+	ret.WriteString(`%%_IMPORTLIBS_%%#include "` + headerName + `pp"
+#include "` + headerName + `"
+`)
+
+	// Check if short-named enums are allowed.
+	// We only allow short names if there are no conflicts anywhere in the whole
+	// file. This doesn't fully defend against cross-file conflicts but those
+	// should hopefully be rare enough
+	preventShortNames := map[string]struct{}{}
+	{
+		nameTest := map[string]string{}
+	nextEnum:
+		for _, e := range src.Enums {
+
+			shortEnumName := e.EnumValueName()
+
+			// Disallow entry<-->entry collisions
+			for _, ee := range e.Entries {
+				if other, ok := nameTest[shortEnumName+"::"+ee.EntryName]; ok {
+					preventShortNames[e.EnumName] = struct{}{} // Our full enum name
+					preventShortNames[other] = struct{}{}      // Their full enum name
+					continue nextEnum
+				}
+				nameTest[shortEnumName+"::"+ee.EntryName] = e.EnumName
+
+				if _, ok := KnownClassnames[shortEnumName+"::"+ee.EntryName]; ok {
+					preventShortNames[e.EnumName] = struct{}{}
+					continue nextEnum
+				}
+				if _, ok := KnownEnums[shortEnumName+"::"+ee.EntryName]; ok {
+					preventShortNames[e.EnumName] = struct{}{}
+					continue nextEnum
+				}
+			}
+		}
+	}
+
+	for _, c := range src.Classes {
+		if !AllowDefinitionForClass(c.ClassName) {
+			continue
+		}
+
+		virtualMethods := c.VirtualMethods()
+		cStructName := cabiClassName(c.ClassName)
+		cfs.currentClassName = strings.ReplaceAll(c.ClassName, "::", "__")
+		nameIndex := 0
+		cPrefix := "q_"
+		if cStructName[0] == 'Q' || cStructName[0] == 'K' || cStructName[0] == 'k' {
+			nameIndex = 1
+			cPrefix = strings.ToLower(cStructName[:1]) + "_"
+		} else if strings.Contains(src.Filename, "KF6") || strings.Contains(src.Filename, "LayerShellQt") {
+			cPrefix = "k_"
+		}
+		cMethodPrefix := cPrefix + strings.ToLower(cStructName[nameIndex:])
+
+		// Embed all inherited classes to directly allow calling inherited methods.
+		seenInheritedMethods := make(map[string]struct{})
+
+		for _, base := range c.DirectInherits {
+			if parentMethods := collectInheritedMethodsForC(base, seenInheritedMethods); parentMethods != nil {
+				for _, m := range parentMethods {
+					seenInheritedMethods[m.Method.SafeMethodName()] = struct{}{}
+				}
+			}
+			lowerClassName := strings.ToLower(cabiClassName(base))
+			if lowerClassName == cfs.currentHeaderName {
+				continue
+			}
+			if strings.HasPrefix(base, "QList<") {
+				ret.WriteString("\n// Also inherits unprojectable " + base + "\n")
+			}
+		}
+
+		ret.WriteString("\n")
+
+		for i, ctor := range c.Ctors {
+			if _, ok := moveCtorOnly[c.ClassName]; ok && !ctor.IsMoveCtor {
+				continue
+			}
+
+			cfs.castType = cStructName
+			cfs.currentMethodName = cMethodPrefix + "_new" + maybeSuffix(i)
+			preamble, forwarding := cfs.emitParametersC2CABIForwarding(ctor)
+			maybeAllocCleanup := cfs.checkAndClearAllocCleanups(true)
+
+			var ctorRet string
+			if maybeAllocCleanup == "" {
+				ctorRet = "return " + cStructName + "_new" + maybeSuffix(i) + "(" + forwarding + ");"
+			} else {
+				ctorRet = cStructName + "* _out = " + cStructName + "_new" + maybeSuffix(i) + "(" + forwarding + ");"
+				ctorRet += maybeAllocCleanup
+				ctorRet += "return _out;"
+			}
+
+			if ctor.FossOnly {
+				ret.WriteString(cStructName + "* " + cMethodPrefix + "_new" + maybeSuffix(i) + "(" + cfs.emitParametersC(ctor.Parameters, false) + `) {
+        #if !defined(__linux__) && !defined(__FreeBSD__)
+		    fprintf(stderr, "Error: Unsupported operating system\n");
+            abort();
+        #endif
+
+` + ctorRet + "}\n\n")
+			} else {
+				var maybeMacro, maybeEndMacro string
+
+				if ctor.LinuxOnly {
+					maybeMacro = "#ifdef __linux__\n"
+					maybeEndMacro = "#endif\n"
+				}
+
+				preamble = ifv(preamble != "", preamble+"\n", "")
+
+				ret.WriteString(maybeMacro + cStructName + "* " + cMethodPrefix + "_new" + maybeSuffix(i) + "(" + cfs.emitParametersC(ctor.Parameters, false) + ") {\n" +
+					preamble + ctorRet + "\n}\n" + maybeEndMacro + "\n\n")
+			}
+		}
+
+		if c.HasTrivialCopyAssign {
+			ret.WriteString("void " + cMethodPrefix + "_copy_assign(void* self, void* other) {\n" +
+				cStructName + "_CopyAssign((" + cStructName + "*)self, (" + cStructName + "*)other);\n}\n\n")
+		}
+
+		if c.HasTrivialMoveAssign {
+			ret.WriteString("void " + cMethodPrefix + "_move_assign(void* self, void* other) {\n" +
+				cStructName + "_MoveAssign((" + cStructName + "*)self, (" + cStructName + "*)other);\n}\n\n")
+		}
+
+		seenMethods := make(map[string]struct{})
+		baseMethods := c.Methods
+		protectedMethods := c.ProtectedMethods()
+		virtualEligible := AllowVirtualForClass(c.ClassName) && len(virtualMethods) > 0
+
+		if virtualEligible && len(virtualMethods) > 0 {
+			virtualMethods = append(virtualMethods, protectedMethods...)
+		}
+
+		for _, m := range c.Methods {
+			if !m.IsProtected {
+				continue
+			}
+
+			if _, ok := nonPolymorphicClasses[c.ClassName]; ok {
+				continue
+			}
+
+			virtualMethods = append(virtualMethods, m)
+		}
+
+		for _, m := range baseMethods {
+			seenMethods[m.MethodName] = struct{}{}
+		}
+
+		for _, m := range virtualMethods {
+			seenMethods[m.MethodName] = struct{}{}
+		}
+
+		var inheritedMethods []InheritedMethod
+		for _, base := range c.DirectInherits {
+			inherited := collectInheritedMethodsForC(base, seenMethods)
+			if inherited != nil {
+				inheritedMethods = append(inheritedMethods, inherited...)
+			}
+		}
+
+		for _, im := range inheritedMethods {
+			im.Method.InheritedFrom = im.SourceClass
+			baseMethods = append(baseMethods, im.Method)
+		}
+
+		privateSignals := c.PrivateSignals
+		var inheritedPrivateSignals []InheritedMethod
+		for _, base := range c.DirectInherits {
+			inheritedS := collectInheritedPrivateSignals(base, seenMethods)
+			if inheritedS != nil {
+				inheritedPrivateSignals = append(inheritedPrivateSignals, inheritedS...)
+			}
+		}
+
+		for _, im := range inheritedPrivateSignals {
+			im.Method.InheritedFrom = im.SourceClass
+			privateSignals = append(privateSignals, im.Method)
+		}
+
+		previousMethods := map[string]struct{}{}
+		seenMethodVariants := map[string]bool{}
+
+		for _, m := range baseMethods {
+			if m.IsProtected && m.InheritedFrom != "" {
+				continue
+			}
+
+			if m.IsProtected && !virtualEligible {
+				continue
+			}
+
+			mSafeMethodName := m.SafeMethodName()
+
+			if _, ok := skippedMethods[c.ClassName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			var showHiddenParams bool
+			if _, ok := seenMethodVariants[mSafeMethodName]; ok {
+				continue
+			}
+			if b, ok := seenMethodVariants[m.MethodName]; ok {
+				if b {
+					continue
+				} else {
+					showHiddenParams = true
+					seenMethodVariants[m.MethodName] = true
+				}
+			}
+			seenMethodVariants[m.MethodName] = false
+			seenMethodVariants[mSafeMethodName] = false
+
+			if _, ok := previousMethods[mSafeMethodName]; ok {
+				continue
+			}
+			if _, ok := previousMethods[m.MethodName]; ok {
+				continue
+			}
+
+			overrideTr := (m.MethodName == "tr" || m.OverrideMethodName == "tr") && cStructName != "QMetaObject"
+			cmdStructName := ifv(overrideTr, "QObject", cStructName)
+			cmdMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:])
+			safeMethodName := cSafeMethodName(mSafeMethodName)
+			if m.InheritedFrom != "" && !overrideTr {
+				cmdStructName = cabiClassName(m.InheritedFrom)
+			}
+
+			previousMethods[m.MethodName] = struct{}{}
+			previousMethods[mSafeMethodName] = struct{}{}
+
+			cfs.castType = cmdStructName
+			cfs.currentMethodName = cmdMethodName + safeMethodName
+			preamble, forwarding := cfs.emitParametersC2CABIForwarding(m)
+			returnTypeDecl := m.ReturnType.renderReturnTypeC(&cfs, false, true)
+			rvalue := cmdStructName + "_" + mSafeMethodName + "(" + forwarding + ")"
+			returnFunc := cfs.emitCabiToC("return ", m.ReturnType, rvalue)
+			cfs.checkAndClearAllocCleanups(true)
+
+			var commaParams string
+			if len(m.Parameters) > 0 {
+				commaParams = ", "
+			}
+
+			method := safeMethodName + "(void* self" + commaParams
+			if m.IsStatic && !m.IsProtected {
+				method = safeMethodName + "("
+			}
+
+			needsPlatformMacro := false
+			if _, ok := platformFunctions[cmdStructName+"_"+mSafeMethodName]; ok && !m.FossOnly && !m.LinuxOnly {
+				needsPlatformMacro = true
+				ret.WriteString("\n#if defined(__linux__) || defined(__FreeBSD__)\n")
+			} else if m.LinuxOnly {
+				needsPlatformMacro = true
+				ret.WriteString("\n#ifdef __linux__\n")
+			}
+
+			ret.WriteString(returnTypeDecl + " " + cmdMethodName + method + cfs.emitParametersC(m.Parameters, false) + ") {")
+
+			if m.FossOnly {
+				ret.WriteString(`
+    #if !defined(__linux__) && !defined(__FreeBSD__)
+        fprintf(stderr, "Error: Unsupported operating system\n");
+        abort();
+    #endif
+`)
+			}
+
+			ret.WriteString("\n" + preamble + returnFunc + "\n}\n")
+
+			if needsPlatformMacro {
+				ret.WriteString("#endif\n")
+			}
+
+			ret.WriteString("\n")
+
+			// Add Connect() wrappers for signal functions
+			if m.IsSignal {
+				var slotComma, maybeMacro, maybeEndMacro string
+				if len(m.Parameters) != 0 {
+					slotComma = ", "
+				}
+
+				addConnect := true
+				if _, ok := noQtConnect[cmdStructName]; ok {
+					addConnect = false
+				}
+				if slices.Contains(unmatchedQtConnect, cmdStructName+"_"+mSafeMethodName) {
+					addConnect = false
+				}
+
+				if addConnect {
+					if m.LinuxOnly {
+						maybeMacro = "#ifdef __linux__\n"
+						maybeEndMacro = "#endif\n"
+					}
+					ret.WriteString(maybeMacro + "void " + cmdMethodName + "_on" + safeMethodName + "(void* self, void (*callback)(void*" +
+						slotComma + cfs.emitParametersC(m.Parameters, true) + ")) {\n" +
+						cmdStructName + "_Connect_" + mSafeMethodName + "((" + cmdStructName + "*)self, (intptr_t)callback);\n}\n" + maybeEndMacro + "\n\n")
+				}
+			}
+
+			if m.IsFinal {
+				continue
+			}
+
+			// We need to brute force these for now
+			if _, ok := skipFunction[cmdStructName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			if !AllowVirtual(m) {
+				continue
+			}
+
+			if (m.IsVirtual || m.IsProtected) && len(virtualMethods) > 0 && virtualEligible {
+				var maybeVoid, maybeComma, maybeMacro, maybeEndMacro string
+				if len(m.Parameters) > 0 {
+					maybeComma = ", "
+				}
+				if showHiddenParams && (len(m.Parameters) > 0 || len(m.HiddenParams) > 0) {
+					maybeComma = ", "
+				}
+				if len(m.Parameters) != 0 {
+					maybeVoid = "void*"
+				}
+				if showHiddenParams && len(m.HiddenParams) != 0 {
+					maybeVoid = "void*"
+				}
+				if m.LinuxOnly {
+					maybeMacro = "#ifdef __linux__\n"
+					maybeEndMacro = "#endif\n"
+				}
+
+				ret.WriteString(maybeMacro + "void " + cmdMethodName + "_on" + safeMethodName + "(void* self, " + m.ReturnType.renderReturnTypeC(&cfs, true, true) +
+					"(*callback)(" + maybeVoid + maybeComma + cfs.emitParametersC(m.Parameters, true) + ")) {\n" +
+					cmdStructName + "_On" + mSafeMethodName + "((" + cmdStructName + "*)self, (intptr_t)callback);\n}\n" + maybeEndMacro + "\n\n")
+
+				baseMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:]) + "_super"
+				baseCallTarget := cmdStructName + "_Super" + mSafeMethodName + "(" + forwarding + ")"
+				basereturnFunc := cfs.emitCabiToC("return ", m.ReturnType, baseCallTarget)
+				cfs.checkAndClearAllocCleanups(true)
+
+				ret.WriteString(maybeMacro + returnTypeDecl + " " + baseMethodName + method + cfs.emitParametersC(m.Parameters, false) + ") {")
+
+				if m.FossOnly {
+					ret.WriteString(`
+#if !defined(__linux__) && !defined(__FreeBSD__)
+    fprintf(stderr, "Error: Unsupported operating system\n");
+    abort();
+#endif
+`)
+				}
+
+				ret.WriteString("\n" + preamble + basereturnFunc + "\n}\n" + maybeEndMacro + "\n\n")
+			}
+		}
+
+		seenVirtuals := map[string]bool{}
+
+		for _, m := range virtualMethods {
+			if !virtualEligible || m.HasStdFunctionPointerParam {
+				continue
+			}
+
+			mSafeMethodName := m.SafeMethodName()
+
+			if _, ok := skippedMethods[c.ClassName+"_"+mSafeMethodName]; ok {
+				continue
+			}
+
+			var showHiddenParams bool
+			if _, ok := seenVirtuals[mSafeMethodName]; ok {
+				continue
+			}
+			if b, ok := seenVirtuals[m.MethodName]; ok {
+				if b {
+					continue
+				} else {
+					showHiddenParams = true
+					seenVirtuals[m.MethodName] = true
+				}
+			}
+			seenVirtuals[m.MethodName] = false
+			seenVirtuals[mSafeMethodName] = false
+
+			if _, ok := previousMethods[m.MethodName]; ok {
+				continue
+			}
+			previousMethods[m.MethodName] = struct{}{}
+			previousMethods[mSafeMethodName] = struct{}{}
+
+			cmdStructName := cStructName
+			cmdMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:])
+			safeMethodName := cSafeMethodName(mSafeMethodName)
+
+			var commaParams string
+			if len(m.Parameters) > 0 {
+				commaParams = ", "
+			}
+
+			// Add a package-private function to call the C++ base class method
+			// QWidget_PaintEvent
+			cfs.castType = cStructName
+			cfs.currentMethodName = cmdMethodName + safeMethodName
+			preamble, forwarding := cfs.emitParametersC2CABIForwarding(m)
+			forwarding = strings.TrimPrefix(forwarding, "self")
+			returnTypeDecl := m.ReturnType.renderReturnTypeC(&cfs, false, true)
+			cfsParams := cfs.emitParametersC(m.Parameters, false)
+			returnFunc := cfs.emitCabiToC("return ", m.ReturnType, cmdStructName+"_"+mSafeMethodName+"("+forwarding+")")
+			cfs.checkAndClearAllocCleanups(true)
+
+			ret.WriteString(returnTypeDecl + " " + cmdMethodName + safeMethodName + "(void* self" + commaParams + cfsParams + ") {\n    " +
+				preamble + returnFunc + "\n}\n\n")
+
+			if !AllowVirtual(m) || m.IsFinal {
+				continue
+			}
+
+			var maybeMacro, maybeEndMacro string
+			if m.LinuxOnly {
+				maybeMacro = "#ifdef __linux__\n"
+				maybeEndMacro = "#endif\n"
+			}
+
+			preamble, forwarding = cfs.emitParametersC2CABIForwarding(m)
+			forwarding = strings.TrimPrefix(forwarding, "self")
+			returnFunc = cfs.emitCabiToC("return ", m.ReturnType, cmdStructName+"_Super"+mSafeMethodName+"("+forwarding+")")
+			cfs.checkAndClearAllocCleanups(true)
+
+			ret.WriteString(maybeMacro + returnTypeDecl + " " + cmdMethodName + "_super" + safeMethodName + "(void* self" + commaParams + cfsParams + ") {\n    " +
+				preamble + returnFunc + "\n}\n" + maybeEndMacro + "\n\n")
+
+			var maybeVoid string
+			if showHiddenParams && (len(m.Parameters) > 0 || len(m.HiddenParams) > 0) {
+				commaParams = ", "
+			}
+			if len(m.Parameters) != 0 {
+				maybeVoid = "void*"
+			}
+			if showHiddenParams && len(m.HiddenParams) != 0 {
+				maybeVoid = "void*"
+			}
+
+			ret.WriteString(maybeMacro + "void " + cmdMethodName + "_on" + safeMethodName + "(void* self, " + m.ReturnType.renderReturnTypeC(&cfs, true, true) +
+				"(*callback)(" + maybeVoid + commaParams + cfs.emitParametersC(m.Parameters, true) + ")) {\n" +
+				cmdStructName + "_On" + mSafeMethodName + "((" + cmdStructName + "*)self, (intptr_t)callback);\n}\n" + maybeEndMacro + "\n\n")
+		}
+
+		for _, m := range privateSignals {
+			cmdStructName := cStructName
+			mSafeMethodName := m.SafeMethodName()
+			cmdMethodName := cPrefix + strings.ToLower(cStructName[nameIndex:])
+			safeMethodName := cSafeMethodName(mSafeMethodName)
+			if m.InheritedFrom != "" {
+				cmdStructName = cabiClassName(m.InheritedFrom)
+			}
+			var slotComma string
+			if len(m.Parameters) != 0 {
+				slotComma = ", "
+			}
+
+			ret.WriteString("void " + cmdMethodName + "_on" + safeMethodName + "(void* self, void (*callback)(void*" +
+				slotComma + cfs.emitParametersC(m.Parameters, true) + ")) {\n" +
+				cmdStructName + "_Connect_" + mSafeMethodName + "((" + cmdStructName + "*)self, (intptr_t)callback);\n}\n\n")
+		}
+
+		if c.CanDelete && (len(c.Methods) > 0 || len(c.VirtualMethods()) > 0 || len(c.Ctors) > 0) {
+			ret.WriteString("void " + cPrefix + cSafeMethodName(strings.ToLower(cStructName[nameIndex:])) + "_delete(void* self) {\n" +
+				cStructName + "_Delete((" + cStructName + "*)(self));\n}\n")
+		}
+	}
+
+	cSrc := ret.String()
+
+	// Fixup imports and struct definitions
+	if len(cfs.imports) > 0 {
+		allImports := make([]string, 0, len(cfs.imports))
+		for k := range cfs.imports {
+			if strings.HasPrefix(k, "std") {
+				allImports = append(allImports, "#include <"+k+">\n")
+			} else if !strings.Contains(cSrc, "lib"+k+".hpp") {
+				dotInclude := ""
+				if packageName != "" && k == "qcoreevent" {
+					dotInclude = "../"
+				}
+
+				allImports = append(allImports, `#include "`+dotInclude+"lib"+k+`.hpp"`+"\n")
+			}
+		}
+
+		cSrc = strings.ReplaceAll(cSrc, "%%_IMPORTLIBS_%%", strings.Join(allImports, "\n"))
+	} else {
+		cSrc = strings.ReplaceAll(cSrc, "%%_IMPORTLIBS_%%", "")
+	}
+	return cSrc, nil
+}

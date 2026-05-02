@@ -1,0 +1,50 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIOC_LIBMKDIRJOB_HPP
+#define SRC_EXTRAS_KIOC_LIBMKDIRJOB_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+typedef KIO::Job KIO__Job;
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_KIO__MkdirJob)
+typedef KIO::MkdirJob KIO__MkdirJob;
+#endif
+typedef KIO::SimpleJob KIO__SimpleJob;
+#else
+typedef struct KCompositeJob KCompositeJob;
+typedef struct KIO KIO;
+typedef struct KIO__Job KIO__Job;
+typedef struct KIO__MkdirJob KIO__MkdirJob;
+typedef struct KIO__SimpleJob KIO__SimpleJob;
+typedef struct KJob KJob;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QUrl QUrl;
+#endif
+
+QMetaObject* KIO__MkdirJob_MetaObject(const KIO__MkdirJob* self);
+void* KIO__MkdirJob_Metacast(KIO__MkdirJob* self, const char* param1);
+int KIO__MkdirJob_Metacall(KIO__MkdirJob* self, int param1, int param2, void** param3);
+void KIO__MkdirJob_Redirection(KIO__MkdirJob* self, KIO__Job* job, const QUrl* url);
+void KIO__MkdirJob_Connect_Redirection(KIO__MkdirJob* self, intptr_t slot);
+void KIO__MkdirJob_PermanentRedirection(KIO__MkdirJob* self, KIO__Job* job, const QUrl* fromUrl, const QUrl* toUrl);
+void KIO__MkdirJob_Connect_PermanentRedirection(KIO__MkdirJob* self, intptr_t slot);
+void KIO__MkdirJob_Delete(KIO__MkdirJob* self);
+
+KIO__MkdirJob* KIO_Mkdir(const QUrl* param1, int param2);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

@@ -1,0 +1,75 @@
+#pragma once
+#ifndef SRC_DESIGNERC_LIBVIRTUALTASKMENU_H
+#define SRC_DESIGNERC_LIBVIRTUALTASKMENU_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+// This class is a subclass of QDesignerTaskMenuExtension so that we can call protected methods
+class VirtualQDesignerTaskMenuExtension : public QDesignerTaskMenuExtension {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualQDesignerTaskMenuExtension = true;
+
+    // Virtual class public types (including callbacks)
+    using QDesignerTaskMenuExtension_PreferredEditAction_Callback = QAction* (*)();
+    using QDesignerTaskMenuExtension_TaskActions_Callback = libqt_list /* of QAction* */ (*)();
+
+  protected:
+    // Instance callback storage
+    QDesignerTaskMenuExtension_PreferredEditAction_Callback qdesignertaskmenuextension_preferrededitaction_callback = nullptr;
+    QDesignerTaskMenuExtension_TaskActions_Callback qdesignertaskmenuextension_taskactions_callback = nullptr;
+
+    // Instance base flags
+    mutable bool qdesignertaskmenuextension_preferrededitaction_isbase = false;
+    mutable bool qdesignertaskmenuextension_taskactions_isbase = false;
+
+  public:
+    VirtualQDesignerTaskMenuExtension() : QDesignerTaskMenuExtension() {};
+
+    // Callback setters
+    inline void setQDesignerTaskMenuExtension_PreferredEditAction_Callback(QDesignerTaskMenuExtension_PreferredEditAction_Callback cb) { qdesignertaskmenuextension_preferrededitaction_callback = cb; }
+    inline void setQDesignerTaskMenuExtension_TaskActions_Callback(QDesignerTaskMenuExtension_TaskActions_Callback cb) { qdesignertaskmenuextension_taskactions_callback = cb; }
+
+    // Base flag setters
+    inline void setQDesignerTaskMenuExtension_PreferredEditAction_IsBase(bool value) const { qdesignertaskmenuextension_preferrededitaction_isbase = value; }
+    inline void setQDesignerTaskMenuExtension_TaskActions_IsBase(bool value) const { qdesignertaskmenuextension_taskactions_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QAction* preferredEditAction() const override {
+        if (qdesignertaskmenuextension_preferrededitaction_isbase) {
+            qdesignertaskmenuextension_preferrededitaction_isbase = false;
+            return QDesignerTaskMenuExtension::preferredEditAction();
+        }
+        auto preferrededitaction_cb = qdesignertaskmenuextension_preferrededitaction_callback;
+        if (preferrededitaction_cb) {
+            QAction* callback_ret = preferrededitaction_cb();
+            return callback_ret;
+        }
+        return QDesignerTaskMenuExtension::preferredEditAction();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QList<QAction*> taskActions() const override {
+        auto taskactions_cb = qdesignertaskmenuextension_taskactions_callback;
+        if (taskactions_cb) {
+            libqt_list /* of QAction* */ callback_ret = taskactions_cb();
+            QList<QAction*> callback_ret_QList;
+            callback_ret_QList.reserve(callback_ret.len);
+            QAction** callback_ret_arr = static_cast<QAction**>(callback_ret.data.ptr);
+            for (size_t i = 0; i < callback_ret.len; ++i) {
+                callback_ret_QList.push_back(callback_ret_arr[i]);
+            }
+            libqt_free(callback_ret.data.ptr);
+            return callback_ret_QList;
+        }
+        return {};
+    }
+};
+
+#endif

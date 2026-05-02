@@ -1,0 +1,197 @@
+#pragma once
+#ifndef SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBQSCILEXERHTML_HPP
+#define SRC_RESTRICTED_EXTRAS_QSCINTILLAC_LIBQSCILEXERHTML_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QChildEvent QChildEvent;
+typedef struct QColor QColor;
+typedef struct QEvent QEvent;
+typedef struct QFont QFont;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QSettings QSettings;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QsciLexer QsciLexer;
+typedef struct QsciLexerHTML QsciLexerHTML;
+typedef struct QsciScintilla QsciScintilla;
+#endif
+
+QsciLexerHTML* QsciLexerHTML_new();
+QsciLexerHTML* QsciLexerHTML_new2(QObject* parent);
+QMetaObject* QsciLexerHTML_MetaObject(const QsciLexerHTML* self);
+void* QsciLexerHTML_Metacast(QsciLexerHTML* self, const char* param1);
+int QsciLexerHTML_Metacall(QsciLexerHTML* self, int param1, int param2, void** param3);
+const char* QsciLexerHTML_Language(const QsciLexerHTML* self);
+const char* QsciLexerHTML_Lexer(const QsciLexerHTML* self);
+const char* QsciLexerHTML_AutoCompletionFillups(const QsciLexerHTML* self);
+const char* QsciLexerHTML_WordCharacters(const QsciLexerHTML* self);
+QColor* QsciLexerHTML_DefaultColor(const QsciLexerHTML* self, int style);
+bool QsciLexerHTML_DefaultEolFill(const QsciLexerHTML* self, int style);
+QFont* QsciLexerHTML_DefaultFont(const QsciLexerHTML* self, int style);
+QColor* QsciLexerHTML_DefaultPaper(const QsciLexerHTML* self, int style);
+const char* QsciLexerHTML_Keywords(const QsciLexerHTML* self, int set);
+libqt_string QsciLexerHTML_Description(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_RefreshProperties(QsciLexerHTML* self);
+bool QsciLexerHTML_CaseSensitiveTags(const QsciLexerHTML* self);
+void QsciLexerHTML_SetDjangoTemplates(QsciLexerHTML* self, bool enabled);
+bool QsciLexerHTML_DjangoTemplates(const QsciLexerHTML* self);
+bool QsciLexerHTML_FoldCompact(const QsciLexerHTML* self);
+bool QsciLexerHTML_FoldPreprocessor(const QsciLexerHTML* self);
+void QsciLexerHTML_SetFoldScriptComments(QsciLexerHTML* self, bool fold);
+bool QsciLexerHTML_FoldScriptComments(const QsciLexerHTML* self);
+void QsciLexerHTML_SetFoldScriptHeredocs(QsciLexerHTML* self, bool fold);
+bool QsciLexerHTML_FoldScriptHeredocs(const QsciLexerHTML* self);
+void QsciLexerHTML_SetMakoTemplates(QsciLexerHTML* self, bool enabled);
+bool QsciLexerHTML_MakoTemplates(const QsciLexerHTML* self);
+void QsciLexerHTML_SetFoldCompact(QsciLexerHTML* self, bool fold);
+void QsciLexerHTML_SetFoldPreprocessor(QsciLexerHTML* self, bool fold);
+void QsciLexerHTML_SetCaseSensitiveTags(QsciLexerHTML* self, bool sens);
+void QsciLexerHTML_OnMetaObject(const QsciLexerHTML* self, intptr_t slot);
+QMetaObject* QsciLexerHTML_SuperMetaObject(const QsciLexerHTML* self);
+void QsciLexerHTML_OnMetacast(QsciLexerHTML* self, intptr_t slot);
+void* QsciLexerHTML_SuperMetacast(QsciLexerHTML* self, const char* param1);
+void QsciLexerHTML_OnMetacall(QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperMetacall(QsciLexerHTML* self, int param1, int param2, void** param3);
+void QsciLexerHTML_OnSetFoldCompact(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetFoldCompact(QsciLexerHTML* self, bool fold);
+void QsciLexerHTML_OnSetFoldPreprocessor(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetFoldPreprocessor(QsciLexerHTML* self, bool fold);
+void QsciLexerHTML_OnSetCaseSensitiveTags(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetCaseSensitiveTags(QsciLexerHTML* self, bool sens);
+int QsciLexerHTML_LexerId(const QsciLexerHTML* self);
+void QsciLexerHTML_OnLexerId(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperLexerId(const QsciLexerHTML* self);
+libqt_list /* of libqt_string */ QsciLexerHTML_AutoCompletionWordSeparators(const QsciLexerHTML* self);
+void QsciLexerHTML_OnAutoCompletionWordSeparators(const QsciLexerHTML* self, intptr_t slot);
+libqt_list /* of libqt_string */ QsciLexerHTML_SuperAutoCompletionWordSeparators(const QsciLexerHTML* self);
+const char* QsciLexerHTML_BlockEnd(const QsciLexerHTML* self, int* style);
+void QsciLexerHTML_OnBlockEnd(const QsciLexerHTML* self, intptr_t slot);
+const char* QsciLexerHTML_SuperBlockEnd(const QsciLexerHTML* self, int* style);
+int QsciLexerHTML_BlockLookback(const QsciLexerHTML* self);
+void QsciLexerHTML_OnBlockLookback(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperBlockLookback(const QsciLexerHTML* self);
+const char* QsciLexerHTML_BlockStart(const QsciLexerHTML* self, int* style);
+void QsciLexerHTML_OnBlockStart(const QsciLexerHTML* self, intptr_t slot);
+const char* QsciLexerHTML_SuperBlockStart(const QsciLexerHTML* self, int* style);
+const char* QsciLexerHTML_BlockStartKeyword(const QsciLexerHTML* self, int* style);
+void QsciLexerHTML_OnBlockStartKeyword(const QsciLexerHTML* self, intptr_t slot);
+const char* QsciLexerHTML_SuperBlockStartKeyword(const QsciLexerHTML* self, int* style);
+int QsciLexerHTML_BraceStyle(const QsciLexerHTML* self);
+void QsciLexerHTML_OnBraceStyle(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperBraceStyle(const QsciLexerHTML* self);
+bool QsciLexerHTML_CaseSensitive(const QsciLexerHTML* self);
+void QsciLexerHTML_OnCaseSensitive(const QsciLexerHTML* self, intptr_t slot);
+bool QsciLexerHTML_SuperCaseSensitive(const QsciLexerHTML* self);
+QColor* QsciLexerHTML_Color(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_OnColor(const QsciLexerHTML* self, intptr_t slot);
+QColor* QsciLexerHTML_SuperColor(const QsciLexerHTML* self, int style);
+bool QsciLexerHTML_EolFill(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_OnEolFill(const QsciLexerHTML* self, intptr_t slot);
+bool QsciLexerHTML_SuperEolFill(const QsciLexerHTML* self, int style);
+QFont* QsciLexerHTML_Font(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_OnFont(const QsciLexerHTML* self, intptr_t slot);
+QFont* QsciLexerHTML_SuperFont(const QsciLexerHTML* self, int style);
+int QsciLexerHTML_IndentationGuideView(const QsciLexerHTML* self);
+void QsciLexerHTML_OnIndentationGuideView(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperIndentationGuideView(const QsciLexerHTML* self);
+int QsciLexerHTML_DefaultStyle(const QsciLexerHTML* self);
+void QsciLexerHTML_OnDefaultStyle(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperDefaultStyle(const QsciLexerHTML* self);
+QColor* QsciLexerHTML_Paper(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_OnPaper(const QsciLexerHTML* self, intptr_t slot);
+QColor* QsciLexerHTML_SuperPaper(const QsciLexerHTML* self, int style);
+QColor* QsciLexerHTML_DefaultColor2(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_OnDefaultColor2(const QsciLexerHTML* self, intptr_t slot);
+QColor* QsciLexerHTML_SuperDefaultColor2(const QsciLexerHTML* self, int style);
+QFont* QsciLexerHTML_DefaultFont2(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_OnDefaultFont2(const QsciLexerHTML* self, intptr_t slot);
+QFont* QsciLexerHTML_SuperDefaultFont2(const QsciLexerHTML* self, int style);
+QColor* QsciLexerHTML_DefaultPaper2(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_OnDefaultPaper2(const QsciLexerHTML* self, intptr_t slot);
+QColor* QsciLexerHTML_SuperDefaultPaper2(const QsciLexerHTML* self, int style);
+void QsciLexerHTML_SetEditor(QsciLexerHTML* self, QsciScintilla* editor);
+void QsciLexerHTML_OnSetEditor(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetEditor(QsciLexerHTML* self, QsciScintilla* editor);
+int QsciLexerHTML_StyleBitsNeeded(const QsciLexerHTML* self);
+void QsciLexerHTML_OnStyleBitsNeeded(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperStyleBitsNeeded(const QsciLexerHTML* self);
+void QsciLexerHTML_SetAutoIndentStyle(QsciLexerHTML* self, int autoindentstyle);
+void QsciLexerHTML_OnSetAutoIndentStyle(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetAutoIndentStyle(QsciLexerHTML* self, int autoindentstyle);
+void QsciLexerHTML_SetColor(QsciLexerHTML* self, const QColor* c, int style);
+void QsciLexerHTML_OnSetColor(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetColor(QsciLexerHTML* self, const QColor* c, int style);
+void QsciLexerHTML_SetEolFill(QsciLexerHTML* self, bool eoffill, int style);
+void QsciLexerHTML_OnSetEolFill(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetEolFill(QsciLexerHTML* self, bool eoffill, int style);
+void QsciLexerHTML_SetFont(QsciLexerHTML* self, const QFont* f, int style);
+void QsciLexerHTML_OnSetFont(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetFont(QsciLexerHTML* self, const QFont* f, int style);
+void QsciLexerHTML_SetPaper(QsciLexerHTML* self, const QColor* c, int style);
+void QsciLexerHTML_OnSetPaper(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperSetPaper(QsciLexerHTML* self, const QColor* c, int style);
+bool QsciLexerHTML_ReadProperties(QsciLexerHTML* self, QSettings* qs, const libqt_string prefix);
+void QsciLexerHTML_OnReadProperties(QsciLexerHTML* self, intptr_t slot);
+bool QsciLexerHTML_SuperReadProperties(QsciLexerHTML* self, QSettings* qs, const libqt_string prefix);
+bool QsciLexerHTML_WriteProperties(const QsciLexerHTML* self, QSettings* qs, const libqt_string prefix);
+void QsciLexerHTML_OnWriteProperties(const QsciLexerHTML* self, intptr_t slot);
+bool QsciLexerHTML_SuperWriteProperties(const QsciLexerHTML* self, QSettings* qs, const libqt_string prefix);
+bool QsciLexerHTML_Event(QsciLexerHTML* self, QEvent* event);
+void QsciLexerHTML_OnEvent(QsciLexerHTML* self, intptr_t slot);
+bool QsciLexerHTML_SuperEvent(QsciLexerHTML* self, QEvent* event);
+bool QsciLexerHTML_EventFilter(QsciLexerHTML* self, QObject* watched, QEvent* event);
+void QsciLexerHTML_OnEventFilter(QsciLexerHTML* self, intptr_t slot);
+bool QsciLexerHTML_SuperEventFilter(QsciLexerHTML* self, QObject* watched, QEvent* event);
+void QsciLexerHTML_TimerEvent(QsciLexerHTML* self, QTimerEvent* event);
+void QsciLexerHTML_OnTimerEvent(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperTimerEvent(QsciLexerHTML* self, QTimerEvent* event);
+void QsciLexerHTML_ChildEvent(QsciLexerHTML* self, QChildEvent* event);
+void QsciLexerHTML_OnChildEvent(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperChildEvent(QsciLexerHTML* self, QChildEvent* event);
+void QsciLexerHTML_CustomEvent(QsciLexerHTML* self, QEvent* event);
+void QsciLexerHTML_OnCustomEvent(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperCustomEvent(QsciLexerHTML* self, QEvent* event);
+void QsciLexerHTML_ConnectNotify(QsciLexerHTML* self, const QMetaMethod* signal);
+void QsciLexerHTML_OnConnectNotify(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperConnectNotify(QsciLexerHTML* self, const QMetaMethod* signal);
+void QsciLexerHTML_DisconnectNotify(QsciLexerHTML* self, const QMetaMethod* signal);
+void QsciLexerHTML_OnDisconnectNotify(QsciLexerHTML* self, intptr_t slot);
+void QsciLexerHTML_SuperDisconnectNotify(QsciLexerHTML* self, const QMetaMethod* signal);
+libqt_string QsciLexerHTML_TextAsBytes(const QsciLexerHTML* self, const libqt_string text);
+void QsciLexerHTML_OnTextAsBytes(const QsciLexerHTML* self, intptr_t slot);
+libqt_string QsciLexerHTML_SuperTextAsBytes(const QsciLexerHTML* self, const libqt_string text);
+libqt_string QsciLexerHTML_BytesAsText(const QsciLexerHTML* self, const char* bytes, int size);
+void QsciLexerHTML_OnBytesAsText(const QsciLexerHTML* self, intptr_t slot);
+libqt_string QsciLexerHTML_SuperBytesAsText(const QsciLexerHTML* self, const char* bytes, int size);
+QObject* QsciLexerHTML_Sender(const QsciLexerHTML* self);
+void QsciLexerHTML_OnSender(const QsciLexerHTML* self, intptr_t slot);
+QObject* QsciLexerHTML_SuperSender(const QsciLexerHTML* self);
+int QsciLexerHTML_SenderSignalIndex(const QsciLexerHTML* self);
+void QsciLexerHTML_OnSenderSignalIndex(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperSenderSignalIndex(const QsciLexerHTML* self);
+int QsciLexerHTML_Receivers(const QsciLexerHTML* self, const char* signal);
+void QsciLexerHTML_OnReceivers(const QsciLexerHTML* self, intptr_t slot);
+int QsciLexerHTML_SuperReceivers(const QsciLexerHTML* self, const char* signal);
+bool QsciLexerHTML_IsSignalConnected(const QsciLexerHTML* self, const QMetaMethod* signal);
+void QsciLexerHTML_OnIsSignalConnected(const QsciLexerHTML* self, intptr_t slot);
+bool QsciLexerHTML_SuperIsSignalConnected(const QsciLexerHTML* self, const QMetaMethod* signal);
+void QsciLexerHTML_Delete(QsciLexerHTML* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

@@ -1,0 +1,266 @@
+#pragma once
+#ifndef SRC_EXTRAS_KWIDGETSADDONSC_LIBKRECENTFILESMENU_HPP
+#define SRC_EXTRAS_KWIDGETSADDONSC_LIBKRECENTFILESMENU_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct KRecentFilesMenu KRecentFilesMenu;
+typedef struct QAction QAction;
+typedef struct QActionEvent QActionEvent;
+typedef struct QChildEvent QChildEvent;
+typedef struct QCloseEvent QCloseEvent;
+typedef struct QContextMenuEvent QContextMenuEvent;
+typedef struct QDragEnterEvent QDragEnterEvent;
+typedef struct QDragLeaveEvent QDragLeaveEvent;
+typedef struct QDragMoveEvent QDragMoveEvent;
+typedef struct QDropEvent QDropEvent;
+typedef struct QEnterEvent QEnterEvent;
+typedef struct QEvent QEvent;
+typedef struct QFocusEvent QFocusEvent;
+typedef struct QHideEvent QHideEvent;
+typedef struct QInputMethodEvent QInputMethodEvent;
+typedef struct QKeyEvent QKeyEvent;
+typedef struct QMenu QMenu;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QMouseEvent QMouseEvent;
+typedef struct QMoveEvent QMoveEvent;
+typedef struct QObject QObject;
+typedef struct QPaintDevice QPaintDevice;
+typedef struct QPaintEngine QPaintEngine;
+typedef struct QPaintEvent QPaintEvent;
+typedef struct QPainter QPainter;
+typedef struct QPoint QPoint;
+typedef struct QResizeEvent QResizeEvent;
+typedef struct QShowEvent QShowEvent;
+typedef struct QSize QSize;
+typedef struct QStyleOptionMenuItem QStyleOptionMenuItem;
+typedef struct QTabletEvent QTabletEvent;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QUrl QUrl;
+typedef struct QVariant QVariant;
+typedef struct QWheelEvent QWheelEvent;
+typedef struct QWidget QWidget;
+#endif
+
+KRecentFilesMenu* KRecentFilesMenu_new(QWidget* parent);
+KRecentFilesMenu* KRecentFilesMenu_new2(const libqt_string title);
+KRecentFilesMenu* KRecentFilesMenu_new3();
+KRecentFilesMenu* KRecentFilesMenu_new4(const libqt_string title, QWidget* parent);
+QMetaObject* KRecentFilesMenu_MetaObject(const KRecentFilesMenu* self);
+void* KRecentFilesMenu_Metacast(KRecentFilesMenu* self, const char* param1);
+int KRecentFilesMenu_Metacall(KRecentFilesMenu* self, int param1, int param2, void** param3);
+libqt_string KRecentFilesMenu_Group(const KRecentFilesMenu* self);
+void KRecentFilesMenu_SetGroup(KRecentFilesMenu* self, const libqt_string group);
+void KRecentFilesMenu_AddUrl(KRecentFilesMenu* self, const QUrl* url);
+void KRecentFilesMenu_RemoveUrl(KRecentFilesMenu* self, const QUrl* url);
+int KRecentFilesMenu_MaximumItems(const KRecentFilesMenu* self);
+void KRecentFilesMenu_SetMaximumItems(KRecentFilesMenu* self, size_t maximumItems);
+libqt_list /* of QUrl* */ KRecentFilesMenu_RecentFiles(const KRecentFilesMenu* self);
+void KRecentFilesMenu_ClearRecentFiles(KRecentFilesMenu* self);
+void KRecentFilesMenu_UrlTriggered(KRecentFilesMenu* self, const QUrl* url);
+void KRecentFilesMenu_Connect_UrlTriggered(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_RecentFilesChanged(KRecentFilesMenu* self);
+void KRecentFilesMenu_Connect_RecentFilesChanged(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_AddUrl2(KRecentFilesMenu* self, const QUrl* url, const libqt_string name);
+void KRecentFilesMenu_OnMetaObject(const KRecentFilesMenu* self, intptr_t slot);
+QMetaObject* KRecentFilesMenu_SuperMetaObject(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnMetacast(KRecentFilesMenu* self, intptr_t slot);
+void* KRecentFilesMenu_SuperMetacast(KRecentFilesMenu* self, const char* param1);
+void KRecentFilesMenu_OnMetacall(KRecentFilesMenu* self, intptr_t slot);
+int KRecentFilesMenu_SuperMetacall(KRecentFilesMenu* self, int param1, int param2, void** param3);
+QSize* KRecentFilesMenu_SizeHint(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnSizeHint(const KRecentFilesMenu* self, intptr_t slot);
+QSize* KRecentFilesMenu_SuperSizeHint(const KRecentFilesMenu* self);
+void KRecentFilesMenu_ChangeEvent(KRecentFilesMenu* self, QEvent* param1);
+void KRecentFilesMenu_OnChangeEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperChangeEvent(KRecentFilesMenu* self, QEvent* param1);
+void KRecentFilesMenu_KeyPressEvent(KRecentFilesMenu* self, QKeyEvent* param1);
+void KRecentFilesMenu_OnKeyPressEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperKeyPressEvent(KRecentFilesMenu* self, QKeyEvent* param1);
+void KRecentFilesMenu_MouseReleaseEvent(KRecentFilesMenu* self, QMouseEvent* param1);
+void KRecentFilesMenu_OnMouseReleaseEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperMouseReleaseEvent(KRecentFilesMenu* self, QMouseEvent* param1);
+void KRecentFilesMenu_MousePressEvent(KRecentFilesMenu* self, QMouseEvent* param1);
+void KRecentFilesMenu_OnMousePressEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperMousePressEvent(KRecentFilesMenu* self, QMouseEvent* param1);
+void KRecentFilesMenu_MouseMoveEvent(KRecentFilesMenu* self, QMouseEvent* param1);
+void KRecentFilesMenu_OnMouseMoveEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperMouseMoveEvent(KRecentFilesMenu* self, QMouseEvent* param1);
+void KRecentFilesMenu_WheelEvent(KRecentFilesMenu* self, QWheelEvent* param1);
+void KRecentFilesMenu_OnWheelEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperWheelEvent(KRecentFilesMenu* self, QWheelEvent* param1);
+void KRecentFilesMenu_EnterEvent(KRecentFilesMenu* self, QEnterEvent* param1);
+void KRecentFilesMenu_OnEnterEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperEnterEvent(KRecentFilesMenu* self, QEnterEvent* param1);
+void KRecentFilesMenu_LeaveEvent(KRecentFilesMenu* self, QEvent* param1);
+void KRecentFilesMenu_OnLeaveEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperLeaveEvent(KRecentFilesMenu* self, QEvent* param1);
+void KRecentFilesMenu_HideEvent(KRecentFilesMenu* self, QHideEvent* param1);
+void KRecentFilesMenu_OnHideEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperHideEvent(KRecentFilesMenu* self, QHideEvent* param1);
+void KRecentFilesMenu_PaintEvent(KRecentFilesMenu* self, QPaintEvent* param1);
+void KRecentFilesMenu_OnPaintEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperPaintEvent(KRecentFilesMenu* self, QPaintEvent* param1);
+void KRecentFilesMenu_ActionEvent(KRecentFilesMenu* self, QActionEvent* param1);
+void KRecentFilesMenu_OnActionEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperActionEvent(KRecentFilesMenu* self, QActionEvent* param1);
+void KRecentFilesMenu_TimerEvent(KRecentFilesMenu* self, QTimerEvent* param1);
+void KRecentFilesMenu_OnTimerEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperTimerEvent(KRecentFilesMenu* self, QTimerEvent* param1);
+bool KRecentFilesMenu_Event(KRecentFilesMenu* self, QEvent* param1);
+void KRecentFilesMenu_OnEvent(KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperEvent(KRecentFilesMenu* self, QEvent* param1);
+bool KRecentFilesMenu_FocusNextPrevChild(KRecentFilesMenu* self, bool next);
+void KRecentFilesMenu_OnFocusNextPrevChild(KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperFocusNextPrevChild(KRecentFilesMenu* self, bool next);
+void KRecentFilesMenu_InitStyleOption(const KRecentFilesMenu* self, QStyleOptionMenuItem* option, const QAction* action);
+void KRecentFilesMenu_OnInitStyleOption(const KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperInitStyleOption(const KRecentFilesMenu* self, QStyleOptionMenuItem* option, const QAction* action);
+int KRecentFilesMenu_DevType(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnDevType(const KRecentFilesMenu* self, intptr_t slot);
+int KRecentFilesMenu_SuperDevType(const KRecentFilesMenu* self);
+void KRecentFilesMenu_SetVisible(KRecentFilesMenu* self, bool visible);
+void KRecentFilesMenu_OnSetVisible(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperSetVisible(KRecentFilesMenu* self, bool visible);
+QSize* KRecentFilesMenu_MinimumSizeHint(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnMinimumSizeHint(const KRecentFilesMenu* self, intptr_t slot);
+QSize* KRecentFilesMenu_SuperMinimumSizeHint(const KRecentFilesMenu* self);
+int KRecentFilesMenu_HeightForWidth(const KRecentFilesMenu* self, int param1);
+void KRecentFilesMenu_OnHeightForWidth(const KRecentFilesMenu* self, intptr_t slot);
+int KRecentFilesMenu_SuperHeightForWidth(const KRecentFilesMenu* self, int param1);
+bool KRecentFilesMenu_HasHeightForWidth(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnHasHeightForWidth(const KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperHasHeightForWidth(const KRecentFilesMenu* self);
+QPaintEngine* KRecentFilesMenu_PaintEngine(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnPaintEngine(const KRecentFilesMenu* self, intptr_t slot);
+QPaintEngine* KRecentFilesMenu_SuperPaintEngine(const KRecentFilesMenu* self);
+void KRecentFilesMenu_MouseDoubleClickEvent(KRecentFilesMenu* self, QMouseEvent* event);
+void KRecentFilesMenu_OnMouseDoubleClickEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperMouseDoubleClickEvent(KRecentFilesMenu* self, QMouseEvent* event);
+void KRecentFilesMenu_KeyReleaseEvent(KRecentFilesMenu* self, QKeyEvent* event);
+void KRecentFilesMenu_OnKeyReleaseEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperKeyReleaseEvent(KRecentFilesMenu* self, QKeyEvent* event);
+void KRecentFilesMenu_FocusInEvent(KRecentFilesMenu* self, QFocusEvent* event);
+void KRecentFilesMenu_OnFocusInEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperFocusInEvent(KRecentFilesMenu* self, QFocusEvent* event);
+void KRecentFilesMenu_FocusOutEvent(KRecentFilesMenu* self, QFocusEvent* event);
+void KRecentFilesMenu_OnFocusOutEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperFocusOutEvent(KRecentFilesMenu* self, QFocusEvent* event);
+void KRecentFilesMenu_MoveEvent(KRecentFilesMenu* self, QMoveEvent* event);
+void KRecentFilesMenu_OnMoveEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperMoveEvent(KRecentFilesMenu* self, QMoveEvent* event);
+void KRecentFilesMenu_ResizeEvent(KRecentFilesMenu* self, QResizeEvent* event);
+void KRecentFilesMenu_OnResizeEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperResizeEvent(KRecentFilesMenu* self, QResizeEvent* event);
+void KRecentFilesMenu_CloseEvent(KRecentFilesMenu* self, QCloseEvent* event);
+void KRecentFilesMenu_OnCloseEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperCloseEvent(KRecentFilesMenu* self, QCloseEvent* event);
+void KRecentFilesMenu_ContextMenuEvent(KRecentFilesMenu* self, QContextMenuEvent* event);
+void KRecentFilesMenu_OnContextMenuEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperContextMenuEvent(KRecentFilesMenu* self, QContextMenuEvent* event);
+void KRecentFilesMenu_TabletEvent(KRecentFilesMenu* self, QTabletEvent* event);
+void KRecentFilesMenu_OnTabletEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperTabletEvent(KRecentFilesMenu* self, QTabletEvent* event);
+void KRecentFilesMenu_DragEnterEvent(KRecentFilesMenu* self, QDragEnterEvent* event);
+void KRecentFilesMenu_OnDragEnterEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperDragEnterEvent(KRecentFilesMenu* self, QDragEnterEvent* event);
+void KRecentFilesMenu_DragMoveEvent(KRecentFilesMenu* self, QDragMoveEvent* event);
+void KRecentFilesMenu_OnDragMoveEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperDragMoveEvent(KRecentFilesMenu* self, QDragMoveEvent* event);
+void KRecentFilesMenu_DragLeaveEvent(KRecentFilesMenu* self, QDragLeaveEvent* event);
+void KRecentFilesMenu_OnDragLeaveEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperDragLeaveEvent(KRecentFilesMenu* self, QDragLeaveEvent* event);
+void KRecentFilesMenu_DropEvent(KRecentFilesMenu* self, QDropEvent* event);
+void KRecentFilesMenu_OnDropEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperDropEvent(KRecentFilesMenu* self, QDropEvent* event);
+void KRecentFilesMenu_ShowEvent(KRecentFilesMenu* self, QShowEvent* event);
+void KRecentFilesMenu_OnShowEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperShowEvent(KRecentFilesMenu* self, QShowEvent* event);
+bool KRecentFilesMenu_NativeEvent(KRecentFilesMenu* self, const libqt_string eventType, void* message, intptr_t* result);
+void KRecentFilesMenu_OnNativeEvent(KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperNativeEvent(KRecentFilesMenu* self, const libqt_string eventType, void* message, intptr_t* result);
+int KRecentFilesMenu_Metric(const KRecentFilesMenu* self, int param1);
+void KRecentFilesMenu_OnMetric(const KRecentFilesMenu* self, intptr_t slot);
+int KRecentFilesMenu_SuperMetric(const KRecentFilesMenu* self, int param1);
+void KRecentFilesMenu_InitPainter(const KRecentFilesMenu* self, QPainter* painter);
+void KRecentFilesMenu_OnInitPainter(const KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperInitPainter(const KRecentFilesMenu* self, QPainter* painter);
+QPaintDevice* KRecentFilesMenu_Redirected(const KRecentFilesMenu* self, QPoint* offset);
+void KRecentFilesMenu_OnRedirected(const KRecentFilesMenu* self, intptr_t slot);
+QPaintDevice* KRecentFilesMenu_SuperRedirected(const KRecentFilesMenu* self, QPoint* offset);
+QPainter* KRecentFilesMenu_SharedPainter(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnSharedPainter(const KRecentFilesMenu* self, intptr_t slot);
+QPainter* KRecentFilesMenu_SuperSharedPainter(const KRecentFilesMenu* self);
+void KRecentFilesMenu_InputMethodEvent(KRecentFilesMenu* self, QInputMethodEvent* param1);
+void KRecentFilesMenu_OnInputMethodEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperInputMethodEvent(KRecentFilesMenu* self, QInputMethodEvent* param1);
+QVariant* KRecentFilesMenu_InputMethodQuery(const KRecentFilesMenu* self, int param1);
+void KRecentFilesMenu_OnInputMethodQuery(const KRecentFilesMenu* self, intptr_t slot);
+QVariant* KRecentFilesMenu_SuperInputMethodQuery(const KRecentFilesMenu* self, int param1);
+bool KRecentFilesMenu_EventFilter(KRecentFilesMenu* self, QObject* watched, QEvent* event);
+void KRecentFilesMenu_OnEventFilter(KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperEventFilter(KRecentFilesMenu* self, QObject* watched, QEvent* event);
+void KRecentFilesMenu_ChildEvent(KRecentFilesMenu* self, QChildEvent* event);
+void KRecentFilesMenu_OnChildEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperChildEvent(KRecentFilesMenu* self, QChildEvent* event);
+void KRecentFilesMenu_CustomEvent(KRecentFilesMenu* self, QEvent* event);
+void KRecentFilesMenu_OnCustomEvent(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperCustomEvent(KRecentFilesMenu* self, QEvent* event);
+void KRecentFilesMenu_ConnectNotify(KRecentFilesMenu* self, const QMetaMethod* signal);
+void KRecentFilesMenu_OnConnectNotify(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperConnectNotify(KRecentFilesMenu* self, const QMetaMethod* signal);
+void KRecentFilesMenu_DisconnectNotify(KRecentFilesMenu* self, const QMetaMethod* signal);
+void KRecentFilesMenu_OnDisconnectNotify(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperDisconnectNotify(KRecentFilesMenu* self, const QMetaMethod* signal);
+int KRecentFilesMenu_ColumnCount(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnColumnCount(const KRecentFilesMenu* self, intptr_t slot);
+int KRecentFilesMenu_SuperColumnCount(const KRecentFilesMenu* self);
+void KRecentFilesMenu_UpdateMicroFocus(KRecentFilesMenu* self);
+void KRecentFilesMenu_OnUpdateMicroFocus(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperUpdateMicroFocus(KRecentFilesMenu* self);
+void KRecentFilesMenu_Create(KRecentFilesMenu* self);
+void KRecentFilesMenu_OnCreate(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperCreate(KRecentFilesMenu* self);
+void KRecentFilesMenu_Destroy(KRecentFilesMenu* self);
+void KRecentFilesMenu_OnDestroy(KRecentFilesMenu* self, intptr_t slot);
+void KRecentFilesMenu_SuperDestroy(KRecentFilesMenu* self);
+bool KRecentFilesMenu_FocusNextChild(KRecentFilesMenu* self);
+void KRecentFilesMenu_OnFocusNextChild(KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperFocusNextChild(KRecentFilesMenu* self);
+bool KRecentFilesMenu_FocusPreviousChild(KRecentFilesMenu* self);
+void KRecentFilesMenu_OnFocusPreviousChild(KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperFocusPreviousChild(KRecentFilesMenu* self);
+QObject* KRecentFilesMenu_Sender(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnSender(const KRecentFilesMenu* self, intptr_t slot);
+QObject* KRecentFilesMenu_SuperSender(const KRecentFilesMenu* self);
+int KRecentFilesMenu_SenderSignalIndex(const KRecentFilesMenu* self);
+void KRecentFilesMenu_OnSenderSignalIndex(const KRecentFilesMenu* self, intptr_t slot);
+int KRecentFilesMenu_SuperSenderSignalIndex(const KRecentFilesMenu* self);
+int KRecentFilesMenu_Receivers(const KRecentFilesMenu* self, const char* signal);
+void KRecentFilesMenu_OnReceivers(const KRecentFilesMenu* self, intptr_t slot);
+int KRecentFilesMenu_SuperReceivers(const KRecentFilesMenu* self, const char* signal);
+bool KRecentFilesMenu_IsSignalConnected(const KRecentFilesMenu* self, const QMetaMethod* signal);
+void KRecentFilesMenu_OnIsSignalConnected(const KRecentFilesMenu* self, intptr_t slot);
+bool KRecentFilesMenu_SuperIsSignalConnected(const KRecentFilesMenu* self, const QMetaMethod* signal);
+double KRecentFilesMenu_GetDecodedMetricF(const KRecentFilesMenu* self, int metricA, int metricB);
+void KRecentFilesMenu_OnGetDecodedMetricF(const KRecentFilesMenu* self, intptr_t slot);
+double KRecentFilesMenu_SuperGetDecodedMetricF(const KRecentFilesMenu* self, int metricA, int metricB);
+void KRecentFilesMenu_Delete(KRecentFilesMenu* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

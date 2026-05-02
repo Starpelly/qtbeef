@@ -1,0 +1,19 @@
+#pragma once
+#ifndef SRC_SVG_QT6C_LIBQTSVGGLOBAL_H
+#define SRC_SVG_QT6C_LIBQTSVGGLOBAL_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qtsvgglobal.html#public-types)
+
+typedef enum {
+    QTSVG_OPTION_NOOPTION = 0,
+    QTSVG_OPTION_TINY12FEATURESONLY = 1,
+    QTSVG_OPTION_ASSUMETRUSTEDSOURCE = 2
+} QtSvg__Option;
+
+#endif

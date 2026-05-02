@@ -1,0 +1,122 @@
+#pragma once
+#ifndef SRC_QT6C_LIBQSCROLLERPROPERTIES_H
+#define SRC_QT6C_LIBQSCROLLERPROPERTIES_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "libqttypedefs.h"
+#include "qtlibc.h"
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html)
+
+/// q_scrollerproperties_new constructs a new QScrollerProperties object.
+///
+QScrollerProperties* q_scrollerproperties_new();
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html)
+
+/// q_scrollerproperties_new2 constructs a new QScrollerProperties object.
+///
+/// @param sp QScrollerProperties*
+///
+QScrollerProperties* q_scrollerproperties_new2(void* sp);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#operator-eq)
+///
+/// @param self QScrollerProperties*
+/// @param sp QScrollerProperties*
+///
+void q_scrollerproperties_operator_assign(void* self, void* sp);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#operator-eq-eq)
+///
+/// @param self QScrollerProperties*
+/// @param sp QScrollerProperties*
+///
+bool q_scrollerproperties_operator_equal(void* self, void* sp);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#operator-not-eq)
+///
+/// @param self QScrollerProperties*
+/// @param sp QScrollerProperties*
+///
+bool q_scrollerproperties_operator_not_equal(void* self, void* sp);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#setDefaultScrollerProperties)
+///
+/// @param sp QScrollerProperties*
+///
+void q_scrollerproperties_set_default_scroller_properties(void* sp);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#unsetDefaultScrollerProperties)
+///
+void q_scrollerproperties_unset_default_scroller_properties();
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#scrollMetric)
+///
+/// @param self QScrollerProperties*
+/// @param metric enum QScrollerProperties__ScrollMetric
+///
+QVariant* q_scrollerproperties_scroll_metric(void* self, int32_t metric);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#setScrollMetric)
+///
+/// @param self QScrollerProperties*
+/// @param metric enum QScrollerProperties__ScrollMetric
+/// @param value QVariant*
+///
+void q_scrollerproperties_set_scroll_metric(void* self, int32_t metric, void* value);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#dtor.QScrollerProperties)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self QScrollerProperties*
+///
+void q_scrollerproperties_delete(void* self);
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#public-types)
+
+typedef enum {
+    QSCROLLERPROPERTIES_OVERSHOOTPOLICY_OVERSHOOTWHENSCROLLABLE = 0,
+    QSCROLLERPROPERTIES_OVERSHOOTPOLICY_OVERSHOOTALWAYSOFF = 1,
+    QSCROLLERPROPERTIES_OVERSHOOTPOLICY_OVERSHOOTALWAYSON = 2
+} QScrollerProperties__OvershootPolicy;
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#public-types)
+
+typedef enum {
+    QSCROLLERPROPERTIES_FRAMERATES_STANDARD = 0,
+    QSCROLLERPROPERTIES_FRAMERATES_FPS60 = 1,
+    QSCROLLERPROPERTIES_FRAMERATES_FPS30 = 2,
+    QSCROLLERPROPERTIES_FRAMERATES_FPS20 = 3
+} QScrollerProperties__FrameRates;
+
+/// [Upstream resources](https://doc.qt.io/qt-6/qscrollerproperties.html#public-types)
+
+typedef enum {
+    QSCROLLERPROPERTIES_SCROLLMETRIC_MOUSEPRESSEVENTDELAY = 0,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_DRAGSTARTDISTANCE = 1,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_DRAGVELOCITYSMOOTHINGFACTOR = 2,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_AXISLOCKTHRESHOLD = 3,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_SCROLLINGCURVE = 4,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_DECELERATIONFACTOR = 5,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_MINIMUMVELOCITY = 6,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_MAXIMUMVELOCITY = 7,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_MAXIMUMCLICKTHROUGHVELOCITY = 8,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_ACCELERATINGFLICKMAXIMUMTIME = 9,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_ACCELERATINGFLICKSPEEDUPFACTOR = 10,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_SNAPPOSITIONRATIO = 11,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_SNAPTIME = 12,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_OVERSHOOTDRAGRESISTANCEFACTOR = 13,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_OVERSHOOTDRAGDISTANCEFACTOR = 14,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_OVERSHOOTSCROLLDISTANCEFACTOR = 15,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_OVERSHOOTSCROLLTIME = 16,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_HORIZONTALOVERSHOOTPOLICY = 17,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_VERTICALOVERSHOOTPOLICY = 18,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_FRAMERATE = 19,
+    QSCROLLERPROPERTIES_SCROLLMETRIC_SCROLLMETRICCOUNT = 20
+} QScrollerProperties__ScrollMetric;
+
+#endif

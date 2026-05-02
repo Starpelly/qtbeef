@@ -1,0 +1,887 @@
+#include "libkfilterbase.hpp"
+#include "../libqcoreevent.hpp"
+#include "../libqiodevice.hpp"
+#include "../libqiodevicebase.hpp"
+#include "../libqmetaobject.hpp"
+#include "../libqobjectdefs.hpp"
+#include "../libqobject.hpp"
+#include "libkcompressiondevice.hpp"
+#include "libkcompressiondevice.h"
+
+KCompressionDevice* k_compressiondevice_new(void* inputDevice, bool autoDeleteInputDevice, int32_t type) {
+    return KCompressionDevice_new((QIODevice*)inputDevice, autoDeleteInputDevice, type);
+}
+
+KCompressionDevice* k_compressiondevice_new2(const char* fileName, int32_t type) {
+    return KCompressionDevice_new2(qstring(fileName), type);
+}
+
+KCompressionDevice* k_compressiondevice_new3(const char* fileName) {
+    return KCompressionDevice_new3(qstring(fileName));
+}
+
+const QMetaObject* k_compressiondevice_meta_object(void* self) {
+    return KCompressionDevice_MetaObject((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_meta_object(void* self, const QMetaObject* (*callback)()) {
+    KCompressionDevice_OnMetaObject((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+const QMetaObject* k_compressiondevice_super_meta_object(void* self) {
+    return KCompressionDevice_SuperMetaObject((KCompressionDevice*)self);
+}
+
+void* k_compressiondevice_metacast(void* self, const char* param1) {
+    return KCompressionDevice_Metacast((KCompressionDevice*)self, param1);
+}
+
+void k_compressiondevice_on_metacast(void* self, void* (*callback)(void*, const char*)) {
+    KCompressionDevice_OnMetacast((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void* k_compressiondevice_super_metacast(void* self, const char* param1) {
+    return KCompressionDevice_SuperMetacast((KCompressionDevice*)self, param1);
+}
+
+int32_t k_compressiondevice_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return KCompressionDevice_Metacall((KCompressionDevice*)self, param1, param2, param3);
+}
+
+void k_compressiondevice_on_metacall(void* self, int32_t (*callback)(void*, int32_t, int, void*)) {
+    KCompressionDevice_OnMetacall((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int32_t k_compressiondevice_super_metacall(void* self, int32_t param1, int param2, void* param3) {
+    return KCompressionDevice_SuperMetacall((KCompressionDevice*)self, param1, param2, param3);
+}
+
+const char* k_compressiondevice_tr(const char* s) {
+    libqt_string _str = QObject_Tr(s);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+int32_t k_compressiondevice_compression_type(void* self) {
+    return KCompressionDevice_CompressionType((KCompressionDevice*)self);
+}
+
+bool k_compressiondevice_open(void* self, int32_t mode) {
+    return KCompressionDevice_Open((KCompressionDevice*)self, mode);
+}
+
+void k_compressiondevice_on_open(void* self, bool (*callback)(void*, int32_t)) {
+    KCompressionDevice_OnOpen((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_super_open(void* self, int32_t mode) {
+    return KCompressionDevice_SuperOpen((KCompressionDevice*)self, mode);
+}
+
+void k_compressiondevice_close(void* self) {
+    KCompressionDevice_Close((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_close(void* self, void (*callback)()) {
+    KCompressionDevice_OnClose((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_super_close(void* self) {
+    KCompressionDevice_SuperClose((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_set_orig_file_name(void* self, char* fileName) {
+    KCompressionDevice_SetOrigFileName((KCompressionDevice*)self, qstring(fileName));
+}
+
+void k_compressiondevice_set_skip_headers(void* self) {
+    KCompressionDevice_SetSkipHeaders((KCompressionDevice*)self);
+}
+
+bool k_compressiondevice_seek(void* self, int64_t param1) {
+    return KCompressionDevice_Seek((KCompressionDevice*)self, param1);
+}
+
+void k_compressiondevice_on_seek(void* self, bool (*callback)(void*, int64_t)) {
+    KCompressionDevice_OnSeek((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_super_seek(void* self, int64_t param1) {
+    return KCompressionDevice_SuperSeek((KCompressionDevice*)self, param1);
+}
+
+bool k_compressiondevice_at_end(void* self) {
+    return KCompressionDevice_AtEnd((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_at_end(void* self, bool (*callback)()) {
+    KCompressionDevice_OnAtEnd((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_super_at_end(void* self) {
+    return KCompressionDevice_SuperAtEnd((KCompressionDevice*)self);
+}
+
+KFilterBase* k_compressiondevice_filter_for_compression_type(int32_t type) {
+    return KCompressionDevice_FilterForCompressionType(type);
+}
+
+int32_t k_compressiondevice_compression_type_for_mime_type(const char* mimetype) {
+    return KCompressionDevice_CompressionTypeForMimeType(qstring(mimetype));
+}
+
+int32_t k_compressiondevice_error(void* self) {
+    return KCompressionDevice_Error((KCompressionDevice*)self);
+}
+
+int64_t k_compressiondevice_read_data(void* self, char* data, int64_t maxlen) {
+    return KCompressionDevice_ReadData((KCompressionDevice*)self, data, maxlen);
+}
+
+void k_compressiondevice_on_read_data(void* self, int64_t (*callback)(void*, char*, int64_t)) {
+    KCompressionDevice_OnReadData((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_super_read_data(void* self, char* data, int64_t maxlen) {
+    return KCompressionDevice_SuperReadData((KCompressionDevice*)self, data, maxlen);
+}
+
+int64_t k_compressiondevice_write_data(void* self, const char* data, int64_t lenVal) {
+    return KCompressionDevice_WriteData((KCompressionDevice*)self, data, lenVal);
+}
+
+void k_compressiondevice_on_write_data(void* self, int64_t (*callback)(void*, const char*, int64_t)) {
+    KCompressionDevice_OnWriteData((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_super_write_data(void* self, const char* data, int64_t lenVal) {
+    return KCompressionDevice_SuperWriteData((KCompressionDevice*)self, data, lenVal);
+}
+
+KFilterBase* k_compressiondevice_filter_base(void* self) {
+    return KCompressionDevice_FilterBase((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_filter_base(void* self, KFilterBase* (*callback)()) {
+    KCompressionDevice_OnFilterBase((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+KFilterBase* k_compressiondevice_super_filter_base(void* self) {
+    return KCompressionDevice_SuperFilterBase((KCompressionDevice*)self);
+}
+
+const char* k_compressiondevice_tr2(const char* s, const char* c) {
+    libqt_string _str = QObject_Tr2(s, c);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* k_compressiondevice_tr3(const char* s, const char* c, int n) {
+    libqt_string _str = QObject_Tr3(s, c, n);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+int32_t k_compressiondevice_open_mode(void* self) {
+    return QIODevice_OpenMode((QIODevice*)self);
+}
+
+void k_compressiondevice_set_text_mode_enabled(void* self, bool enabled) {
+    QIODevice_SetTextModeEnabled((QIODevice*)self, enabled);
+}
+
+bool k_compressiondevice_is_text_mode_enabled(void* self) {
+    return QIODevice_IsTextModeEnabled((QIODevice*)self);
+}
+
+bool k_compressiondevice_is_open(void* self) {
+    return QIODevice_IsOpen((QIODevice*)self);
+}
+
+bool k_compressiondevice_is_readable(void* self) {
+    return QIODevice_IsReadable((QIODevice*)self);
+}
+
+bool k_compressiondevice_is_writable(void* self) {
+    return QIODevice_IsWritable((QIODevice*)self);
+}
+
+int32_t k_compressiondevice_read_channel_count(void* self) {
+    return QIODevice_ReadChannelCount((QIODevice*)self);
+}
+
+int32_t k_compressiondevice_write_channel_count(void* self) {
+    return QIODevice_WriteChannelCount((QIODevice*)self);
+}
+
+int32_t k_compressiondevice_current_read_channel(void* self) {
+    return QIODevice_CurrentReadChannel((QIODevice*)self);
+}
+
+void k_compressiondevice_set_current_read_channel(void* self, int channel) {
+    QIODevice_SetCurrentReadChannel((QIODevice*)self, channel);
+}
+
+int32_t k_compressiondevice_current_write_channel(void* self) {
+    return QIODevice_CurrentWriteChannel((QIODevice*)self);
+}
+
+void k_compressiondevice_set_current_write_channel(void* self, int channel) {
+    QIODevice_SetCurrentWriteChannel((QIODevice*)self, channel);
+}
+
+int64_t k_compressiondevice_read(void* self, char* data, int64_t maxlen) {
+    return QIODevice_Read((QIODevice*)self, data, maxlen);
+}
+
+char* k_compressiondevice_read2(void* self, int64_t maxlen) {
+    libqt_string _str = QIODevice_Read2((QIODevice*)self, maxlen);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+char* k_compressiondevice_read_all(void* self) {
+    libqt_string _str = QIODevice_ReadAll((QIODevice*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+int64_t k_compressiondevice_read_line(void* self, char* data, int64_t maxlen) {
+    return QIODevice_ReadLine((QIODevice*)self, data, maxlen);
+}
+
+char* k_compressiondevice_read_line2(void* self) {
+    libqt_string _str = QIODevice_ReadLine2((QIODevice*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void k_compressiondevice_start_transaction(void* self) {
+    QIODevice_StartTransaction((QIODevice*)self);
+}
+
+void k_compressiondevice_commit_transaction(void* self) {
+    QIODevice_CommitTransaction((QIODevice*)self);
+}
+
+void k_compressiondevice_rollback_transaction(void* self) {
+    QIODevice_RollbackTransaction((QIODevice*)self);
+}
+
+bool k_compressiondevice_is_transaction_started(void* self) {
+    return QIODevice_IsTransactionStarted((QIODevice*)self);
+}
+
+int64_t k_compressiondevice_write(void* self, const char* data, int64_t lenVal) {
+    return QIODevice_Write((QIODevice*)self, data, lenVal);
+}
+
+int64_t k_compressiondevice_write2(void* self, const char* data) {
+    return QIODevice_Write2((QIODevice*)self, data);
+}
+
+int64_t k_compressiondevice_write3(void* self, char* data) {
+    return QIODevice_Write3((QIODevice*)self, qstring(data));
+}
+
+int64_t k_compressiondevice_peek(void* self, char* data, int64_t maxlen) {
+    return QIODevice_Peek((QIODevice*)self, data, maxlen);
+}
+
+char* k_compressiondevice_peek2(void* self, int64_t maxlen) {
+    libqt_string _str = QIODevice_Peek2((QIODevice*)self, maxlen);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+int64_t k_compressiondevice_skip(void* self, int64_t maxSize) {
+    return QIODevice_Skip((QIODevice*)self, maxSize);
+}
+
+void k_compressiondevice_unget_char(void* self, char c) {
+    QIODevice_UngetChar((QIODevice*)self, c);
+}
+
+bool k_compressiondevice_put_char(void* self, char c) {
+    return QIODevice_PutChar((QIODevice*)self, c);
+}
+
+bool k_compressiondevice_get_char(void* self, char* c) {
+    return QIODevice_GetChar((QIODevice*)self, c);
+}
+
+const char* k_compressiondevice_error_string(void* self) {
+    libqt_string _str = QIODevice_ErrorString((QIODevice*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void k_compressiondevice_ready_read(void* self) {
+    QIODevice_ReadyRead((QIODevice*)self);
+}
+
+void k_compressiondevice_on_ready_read(void* self, void (*callback)(void*)) {
+    QIODevice_Connect_ReadyRead((QIODevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_channel_ready_read(void* self, int channel) {
+    QIODevice_ChannelReadyRead((QIODevice*)self, channel);
+}
+
+void k_compressiondevice_on_channel_ready_read(void* self, void (*callback)(void*, int)) {
+    QIODevice_Connect_ChannelReadyRead((QIODevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_bytes_written(void* self, int64_t bytes) {
+    QIODevice_BytesWritten((QIODevice*)self, bytes);
+}
+
+void k_compressiondevice_on_bytes_written(void* self, void (*callback)(void*, int64_t)) {
+    QIODevice_Connect_BytesWritten((QIODevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_channel_bytes_written(void* self, int channel, int64_t bytes) {
+    QIODevice_ChannelBytesWritten((QIODevice*)self, channel, bytes);
+}
+
+void k_compressiondevice_on_channel_bytes_written(void* self, void (*callback)(void*, int, int64_t)) {
+    QIODevice_Connect_ChannelBytesWritten((QIODevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_about_to_close(void* self) {
+    QIODevice_AboutToClose((QIODevice*)self);
+}
+
+void k_compressiondevice_on_about_to_close(void* self, void (*callback)(void*)) {
+    QIODevice_Connect_AboutToClose((QIODevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_read_channel_finished(void* self) {
+    QIODevice_ReadChannelFinished((QIODevice*)self);
+}
+
+void k_compressiondevice_on_read_channel_finished(void* self, void (*callback)(void*)) {
+    QIODevice_Connect_ReadChannelFinished((QIODevice*)self, (intptr_t)callback);
+}
+
+char* k_compressiondevice_read_line1(void* self, int64_t maxlen) {
+    libqt_string _str = QIODevice_ReadLine1((QIODevice*)self, maxlen);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+const char* k_compressiondevice_object_name(void* self) {
+    libqt_string _str = QObject_ObjectName((QObject*)self);
+    char* _ret = qstring_to_char(_str);
+    libqt_string_free(&_str);
+    return _ret;
+}
+
+void k_compressiondevice_set_object_name(void* self, const char* name) {
+    QObject_SetObjectName((QObject*)self, name);
+}
+
+bool k_compressiondevice_is_widget_type(void* self) {
+    return QObject_IsWidgetType((QObject*)self);
+}
+
+bool k_compressiondevice_is_window_type(void* self) {
+    return QObject_IsWindowType((QObject*)self);
+}
+
+bool k_compressiondevice_is_quick_item_type(void* self) {
+    return QObject_IsQuickItemType((QObject*)self);
+}
+
+bool k_compressiondevice_signals_blocked(void* self) {
+    return QObject_SignalsBlocked((QObject*)self);
+}
+
+bool k_compressiondevice_block_signals(void* self, bool b) {
+    return QObject_BlockSignals((QObject*)self, b);
+}
+
+QThread* k_compressiondevice_thread(void* self) {
+    return QObject_Thread((QObject*)self);
+}
+
+bool k_compressiondevice_move_to_thread(void* self, void* thread) {
+    return QObject_MoveToThread((QObject*)self, (QThread*)thread);
+}
+
+int32_t k_compressiondevice_start_timer(void* self, int interval) {
+    return QObject_StartTimer((QObject*)self, interval);
+}
+
+int32_t k_compressiondevice_start_timer2(void* self, int64_t time) {
+    return QObject_StartTimer2((QObject*)self, time);
+}
+
+void k_compressiondevice_kill_timer(void* self, int id) {
+    QObject_KillTimer((QObject*)self, id);
+}
+
+void k_compressiondevice_kill_timer2(void* self, int32_t id) {
+    QObject_KillTimer2((QObject*)self, id);
+}
+
+libqt_list /* of QObject* */ k_compressiondevice_children(void* self) {
+    libqt_list _arr = QObject_Children((QObject*)self);
+    return _arr;
+}
+
+void k_compressiondevice_set_parent(void* self, void* parent) {
+    QObject_SetParent((QObject*)self, (QObject*)parent);
+}
+
+void k_compressiondevice_install_event_filter(void* self, void* filterObj) {
+    QObject_InstallEventFilter((QObject*)self, (QObject*)filterObj);
+}
+
+void k_compressiondevice_remove_event_filter(void* self, void* obj) {
+    QObject_RemoveEventFilter((QObject*)self, (QObject*)obj);
+}
+
+QMetaObject__Connection* k_compressiondevice_connect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Connect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+QMetaObject__Connection* k_compressiondevice_connect2(void* sender, void* signal, void* receiver, void* method) {
+    return QObject_Connect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method);
+}
+
+QMetaObject__Connection* k_compressiondevice_connect3(void* self, void* sender, const char* signal, const char* member) {
+    return QObject_Connect3((QObject*)self, (QObject*)sender, signal, member);
+}
+
+bool k_compressiondevice_disconnect(void* sender, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect((QObject*)sender, signal, (QObject*)receiver, member);
+}
+
+bool k_compressiondevice_disconnect2(void* sender, void* signal, void* receiver, void* member) {
+    return QObject_Disconnect2((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)member);
+}
+
+bool k_compressiondevice_disconnect3(void* self) {
+    return QObject_Disconnect3((QObject*)self);
+}
+
+bool k_compressiondevice_disconnect4(void* self, void* receiver) {
+    return QObject_Disconnect4((QObject*)self, (QObject*)receiver);
+}
+
+bool k_compressiondevice_disconnect5(void* param1) {
+    return QObject_Disconnect5((QMetaObject__Connection*)param1);
+}
+
+void k_compressiondevice_dump_object_tree(void* self) {
+    QObject_DumpObjectTree((QObject*)self);
+}
+
+void k_compressiondevice_dump_object_info(void* self) {
+    QObject_DumpObjectInfo((QObject*)self);
+}
+
+bool k_compressiondevice_set_property(void* self, const char* name, void* value) {
+    return QObject_SetProperty((QObject*)self, name, (QVariant*)value);
+}
+
+QVariant* k_compressiondevice_property(void* self, const char* name) {
+    return QObject_Property((QObject*)self, name);
+}
+
+const char** k_compressiondevice_dynamic_property_names(void* self) {
+    libqt_list _arr = QObject_DynamicPropertyNames((QObject*)self);
+    const libqt_string* _qstr = (libqt_string*)_arr.data.ptr;
+    const char** _ret = (const char**)malloc((_arr.len + 1) * sizeof(const char*));
+    if (_ret == NULL) {
+        fprintf(stderr, "Failed to allocate memory for string list in k_compressiondevice_dynamic_property_names\n");
+        abort();
+    }
+    for (size_t i = 0; i < _arr.len; ++i) {
+        _ret[i] = qstring_to_char(_qstr[i]);
+    }
+    _ret[_arr.len] = NULL;
+    for (size_t i = 0; i < _arr.len; ++i) {
+        libqt_string_free((libqt_string*)&_qstr[i]);
+    }
+    libqt_free(_arr.data.ptr);
+    return _ret;
+}
+
+QBindingStorage* k_compressiondevice_binding_storage(void* self) {
+    return QObject_BindingStorage((QObject*)self);
+}
+
+const QBindingStorage* k_compressiondevice_binding_storage2(void* self) {
+    return QObject_BindingStorage2((QObject*)self);
+}
+
+void k_compressiondevice_destroyed(void* self) {
+    QObject_Destroyed((QObject*)self);
+}
+
+void k_compressiondevice_on_destroyed(void* self, void (*callback)(void*)) {
+    QObject_Connect_Destroyed((QObject*)self, (intptr_t)callback);
+}
+
+QObject* k_compressiondevice_parent(void* self) {
+    return QObject_Parent((QObject*)self);
+}
+
+bool k_compressiondevice_inherits(void* self, const char* classname) {
+    return QObject_Inherits((QObject*)self, classname);
+}
+
+void k_compressiondevice_delete_later(void* self) {
+    QObject_DeleteLater((QObject*)self);
+}
+
+int32_t k_compressiondevice_start_timer22(void* self, int interval, int32_t timerType) {
+    return QObject_StartTimer22((QObject*)self, interval, timerType);
+}
+
+int32_t k_compressiondevice_start_timer23(void* self, int64_t time, int32_t timerType) {
+    return QObject_StartTimer23((QObject*)self, time, timerType);
+}
+
+QMetaObject__Connection* k_compressiondevice_connect5(void* sender, const char* signal, void* receiver, const char* member, int32_t param5) {
+    return QObject_Connect5((QObject*)sender, signal, (QObject*)receiver, member, param5);
+}
+
+QMetaObject__Connection* k_compressiondevice_connect52(void* sender, void* signal, void* receiver, void* method, int32_t type) {
+    return QObject_Connect52((QObject*)sender, (QMetaMethod*)signal, (QObject*)receiver, (QMetaMethod*)method, type);
+}
+
+QMetaObject__Connection* k_compressiondevice_connect4(void* self, void* sender, const char* signal, const char* member, int32_t type) {
+    return QObject_Connect4((QObject*)self, (QObject*)sender, signal, member, type);
+}
+
+bool k_compressiondevice_disconnect1(void* self, const char* signal) {
+    return QObject_Disconnect1((QObject*)self, signal);
+}
+
+bool k_compressiondevice_disconnect22(void* self, const char* signal, void* receiver) {
+    return QObject_Disconnect22((QObject*)self, signal, (QObject*)receiver);
+}
+
+bool k_compressiondevice_disconnect32(void* self, const char* signal, void* receiver, const char* member) {
+    return QObject_Disconnect32((QObject*)self, signal, (QObject*)receiver, member);
+}
+
+bool k_compressiondevice_disconnect23(void* self, void* receiver, const char* member) {
+    return QObject_Disconnect23((QObject*)self, (QObject*)receiver, member);
+}
+
+void k_compressiondevice_destroyed1(void* self, void* param1) {
+    QObject_Destroyed1((QObject*)self, (QObject*)param1);
+}
+
+void k_compressiondevice_on_destroyed1(void* self, void (*callback)(void*, void*)) {
+    QObject_Connect_Destroyed1((QObject*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_is_sequential(void* self) {
+    return KCompressionDevice_IsSequential((KCompressionDevice*)self);
+}
+
+bool k_compressiondevice_super_is_sequential(void* self) {
+    return KCompressionDevice_SuperIsSequential((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_is_sequential(void* self, bool (*callback)()) {
+    KCompressionDevice_OnIsSequential((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_pos(void* self) {
+    return KCompressionDevice_Pos((KCompressionDevice*)self);
+}
+
+int64_t k_compressiondevice_super_pos(void* self) {
+    return KCompressionDevice_SuperPos((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_pos(void* self, int64_t (*callback)()) {
+    KCompressionDevice_OnPos((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_size(void* self) {
+    return KCompressionDevice_Size((KCompressionDevice*)self);
+}
+
+int64_t k_compressiondevice_super_size(void* self) {
+    return KCompressionDevice_SuperSize((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_size(void* self, int64_t (*callback)()) {
+    KCompressionDevice_OnSize((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_reset(void* self) {
+    return KCompressionDevice_Reset((KCompressionDevice*)self);
+}
+
+bool k_compressiondevice_super_reset(void* self) {
+    return KCompressionDevice_SuperReset((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_reset(void* self, bool (*callback)()) {
+    KCompressionDevice_OnReset((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_bytes_available(void* self) {
+    return KCompressionDevice_BytesAvailable((KCompressionDevice*)self);
+}
+
+int64_t k_compressiondevice_super_bytes_available(void* self) {
+    return KCompressionDevice_SuperBytesAvailable((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_bytes_available(void* self, int64_t (*callback)()) {
+    KCompressionDevice_OnBytesAvailable((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_bytes_to_write(void* self) {
+    return KCompressionDevice_BytesToWrite((KCompressionDevice*)self);
+}
+
+int64_t k_compressiondevice_super_bytes_to_write(void* self) {
+    return KCompressionDevice_SuperBytesToWrite((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_bytes_to_write(void* self, int64_t (*callback)()) {
+    KCompressionDevice_OnBytesToWrite((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_can_read_line(void* self) {
+    return KCompressionDevice_CanReadLine((KCompressionDevice*)self);
+}
+
+bool k_compressiondevice_super_can_read_line(void* self) {
+    return KCompressionDevice_SuperCanReadLine((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_can_read_line(void* self, bool (*callback)()) {
+    KCompressionDevice_OnCanReadLine((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_wait_for_ready_read(void* self, int msecs) {
+    return KCompressionDevice_WaitForReadyRead((KCompressionDevice*)self, msecs);
+}
+
+bool k_compressiondevice_super_wait_for_ready_read(void* self, int msecs) {
+    return KCompressionDevice_SuperWaitForReadyRead((KCompressionDevice*)self, msecs);
+}
+
+void k_compressiondevice_on_wait_for_ready_read(void* self, bool (*callback)(void*, int)) {
+    KCompressionDevice_OnWaitForReadyRead((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_wait_for_bytes_written(void* self, int msecs) {
+    return KCompressionDevice_WaitForBytesWritten((KCompressionDevice*)self, msecs);
+}
+
+bool k_compressiondevice_super_wait_for_bytes_written(void* self, int msecs) {
+    return KCompressionDevice_SuperWaitForBytesWritten((KCompressionDevice*)self, msecs);
+}
+
+void k_compressiondevice_on_wait_for_bytes_written(void* self, bool (*callback)(void*, int)) {
+    KCompressionDevice_OnWaitForBytesWritten((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_read_line_data(void* self, char* data, int64_t maxlen) {
+    return KCompressionDevice_ReadLineData((KCompressionDevice*)self, data, maxlen);
+}
+
+int64_t k_compressiondevice_super_read_line_data(void* self, char* data, int64_t maxlen) {
+    return KCompressionDevice_SuperReadLineData((KCompressionDevice*)self, data, maxlen);
+}
+
+void k_compressiondevice_on_read_line_data(void* self, int64_t (*callback)(void*, char*, int64_t)) {
+    KCompressionDevice_OnReadLineData((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int64_t k_compressiondevice_skip_data(void* self, int64_t maxSize) {
+    return KCompressionDevice_SkipData((KCompressionDevice*)self, maxSize);
+}
+
+int64_t k_compressiondevice_super_skip_data(void* self, int64_t maxSize) {
+    return KCompressionDevice_SuperSkipData((KCompressionDevice*)self, maxSize);
+}
+
+void k_compressiondevice_on_skip_data(void* self, int64_t (*callback)(void*, int64_t)) {
+    KCompressionDevice_OnSkipData((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_event(void* self, void* event) {
+    return KCompressionDevice_Event((KCompressionDevice*)self, (QEvent*)event);
+}
+
+bool k_compressiondevice_super_event(void* self, void* event) {
+    return KCompressionDevice_SuperEvent((KCompressionDevice*)self, (QEvent*)event);
+}
+
+void k_compressiondevice_on_event(void* self, bool (*callback)(void*, void*)) {
+    KCompressionDevice_OnEvent((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_event_filter(void* self, void* watched, void* event) {
+    return KCompressionDevice_EventFilter((KCompressionDevice*)self, (QObject*)watched, (QEvent*)event);
+}
+
+bool k_compressiondevice_super_event_filter(void* self, void* watched, void* event) {
+    return KCompressionDevice_SuperEventFilter((KCompressionDevice*)self, (QObject*)watched, (QEvent*)event);
+}
+
+void k_compressiondevice_on_event_filter(void* self, bool (*callback)(void*, void*, void*)) {
+    KCompressionDevice_OnEventFilter((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_timer_event(void* self, void* event) {
+    KCompressionDevice_TimerEvent((KCompressionDevice*)self, (QTimerEvent*)event);
+}
+
+void k_compressiondevice_super_timer_event(void* self, void* event) {
+    KCompressionDevice_SuperTimerEvent((KCompressionDevice*)self, (QTimerEvent*)event);
+}
+
+void k_compressiondevice_on_timer_event(void* self, void (*callback)(void*, void*)) {
+    KCompressionDevice_OnTimerEvent((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_child_event(void* self, void* event) {
+    KCompressionDevice_ChildEvent((KCompressionDevice*)self, (QChildEvent*)event);
+}
+
+void k_compressiondevice_super_child_event(void* self, void* event) {
+    KCompressionDevice_SuperChildEvent((KCompressionDevice*)self, (QChildEvent*)event);
+}
+
+void k_compressiondevice_on_child_event(void* self, void (*callback)(void*, void*)) {
+    KCompressionDevice_OnChildEvent((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_custom_event(void* self, void* event) {
+    KCompressionDevice_CustomEvent((KCompressionDevice*)self, (QEvent*)event);
+}
+
+void k_compressiondevice_super_custom_event(void* self, void* event) {
+    KCompressionDevice_SuperCustomEvent((KCompressionDevice*)self, (QEvent*)event);
+}
+
+void k_compressiondevice_on_custom_event(void* self, void (*callback)(void*, void*)) {
+    KCompressionDevice_OnCustomEvent((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_connect_notify(void* self, void* signal) {
+    KCompressionDevice_ConnectNotify((KCompressionDevice*)self, (QMetaMethod*)signal);
+}
+
+void k_compressiondevice_super_connect_notify(void* self, void* signal) {
+    KCompressionDevice_SuperConnectNotify((KCompressionDevice*)self, (QMetaMethod*)signal);
+}
+
+void k_compressiondevice_on_connect_notify(void* self, void (*callback)(void*, void*)) {
+    KCompressionDevice_OnConnectNotify((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_disconnect_notify(void* self, void* signal) {
+    KCompressionDevice_DisconnectNotify((KCompressionDevice*)self, (QMetaMethod*)signal);
+}
+
+void k_compressiondevice_super_disconnect_notify(void* self, void* signal) {
+    KCompressionDevice_SuperDisconnectNotify((KCompressionDevice*)self, (QMetaMethod*)signal);
+}
+
+void k_compressiondevice_on_disconnect_notify(void* self, void (*callback)(void*, void*)) {
+    KCompressionDevice_OnDisconnectNotify((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_set_open_mode(void* self, int32_t openMode) {
+    KCompressionDevice_SetOpenMode((KCompressionDevice*)self, openMode);
+}
+
+void k_compressiondevice_super_set_open_mode(void* self, int32_t openMode) {
+    KCompressionDevice_SuperSetOpenMode((KCompressionDevice*)self, openMode);
+}
+
+void k_compressiondevice_on_set_open_mode(void* self, void (*callback)(void*, int32_t)) {
+    KCompressionDevice_OnSetOpenMode((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_set_error_string(void* self, const char* errorString) {
+    KCompressionDevice_SetErrorString((KCompressionDevice*)self, qstring(errorString));
+}
+
+void k_compressiondevice_super_set_error_string(void* self, const char* errorString) {
+    KCompressionDevice_SuperSetErrorString((KCompressionDevice*)self, qstring(errorString));
+}
+
+void k_compressiondevice_on_set_error_string(void* self, void (*callback)(void*, const char*)) {
+    KCompressionDevice_OnSetErrorString((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+QObject* k_compressiondevice_sender(void* self) {
+    return KCompressionDevice_Sender((KCompressionDevice*)self);
+}
+
+QObject* k_compressiondevice_super_sender(void* self) {
+    return KCompressionDevice_SuperSender((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_sender(void* self, QObject* (*callback)()) {
+    KCompressionDevice_OnSender((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int32_t k_compressiondevice_sender_signal_index(void* self) {
+    return KCompressionDevice_SenderSignalIndex((KCompressionDevice*)self);
+}
+
+int32_t k_compressiondevice_super_sender_signal_index(void* self) {
+    return KCompressionDevice_SuperSenderSignalIndex((KCompressionDevice*)self);
+}
+
+void k_compressiondevice_on_sender_signal_index(void* self, int32_t (*callback)()) {
+    KCompressionDevice_OnSenderSignalIndex((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+int32_t k_compressiondevice_receivers(void* self, const char* signal) {
+    return KCompressionDevice_Receivers((KCompressionDevice*)self, signal);
+}
+
+int32_t k_compressiondevice_super_receivers(void* self, const char* signal) {
+    return KCompressionDevice_SuperReceivers((KCompressionDevice*)self, signal);
+}
+
+void k_compressiondevice_on_receivers(void* self, int32_t (*callback)(void*, const char*)) {
+    KCompressionDevice_OnReceivers((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+bool k_compressiondevice_is_signal_connected(void* self, void* signal) {
+    return KCompressionDevice_IsSignalConnected((KCompressionDevice*)self, (QMetaMethod*)signal);
+}
+
+bool k_compressiondevice_super_is_signal_connected(void* self, void* signal) {
+    return KCompressionDevice_SuperIsSignalConnected((KCompressionDevice*)self, (QMetaMethod*)signal);
+}
+
+void k_compressiondevice_on_is_signal_connected(void* self, bool (*callback)(void*, void*)) {
+    KCompressionDevice_OnIsSignalConnected((KCompressionDevice*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_on_object_name_changed(void* self, void (*callback)(void*, const char*)) {
+    QObject_Connect_ObjectNameChanged((QObject*)self, (intptr_t)callback);
+}
+
+void k_compressiondevice_delete(void* self) {
+    KCompressionDevice_Delete((KCompressionDevice*)(self));
+}

@@ -1,0 +1,709 @@
+#include <QChildEvent>
+#include <QEvent>
+#include <QList>
+#include <QMetaMethod>
+#include <QMetaObject>
+#include <QObject>
+#include <QSslConfiguration>
+#include <QSslError>
+#include <QSslPreSharedKeyAuthenticator>
+#include <QSslServer>
+#include <QSslSocket>
+#include <QString>
+#include <QByteArray>
+#include <cstring>
+#include <QTcpServer>
+#include <QTcpSocket>
+#include <QTimerEvent>
+#include <qsslserver.h>
+#include "libqsslserver.hpp"
+#include "libqsslserver.hxx"
+
+QSslServer* QSslServer_new() {
+    return new VirtualQSslServer();
+}
+
+QSslServer* QSslServer_new2(QObject* parent) {
+    return new VirtualQSslServer(parent);
+}
+
+QMetaObject* QSslServer_MetaObject(const QSslServer* self) {
+    auto* vqsslserver = dynamic_cast<const VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return (QMetaObject*)self->metaObject();
+    } else {
+        return (QMetaObject*)((VirtualQSslServer*)self)->metaObject();
+    }
+}
+
+void* QSslServer_Metacast(QSslServer* self, const char* param1) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return self->qt_metacast(param1);
+    } else {
+        return ((VirtualQSslServer*)self)->qt_metacast(param1);
+    }
+}
+
+int QSslServer_Metacall(QSslServer* self, int param1, int param2, void** param3) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return self->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    } else {
+        return ((VirtualQSslServer*)self)->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    }
+}
+
+void QSslServer_SetSslConfiguration(QSslServer* self, const QSslConfiguration* sslConfiguration) {
+    self->setSslConfiguration(*sslConfiguration);
+}
+
+QSslConfiguration* QSslServer_SslConfiguration(const QSslServer* self) {
+    return new QSslConfiguration(self->sslConfiguration());
+}
+
+void QSslServer_SetHandshakeTimeout(QSslServer* self, int timeout) {
+    self->setHandshakeTimeout(static_cast<int>(timeout));
+}
+
+int QSslServer_HandshakeTimeout(const QSslServer* self) {
+    return self->handshakeTimeout();
+}
+
+void QSslServer_SslErrors(QSslServer* self, QSslSocket* socket, const libqt_list /* of QSslError* */ errors) {
+    QList<QSslError> errors_QList;
+    errors_QList.reserve(errors.len);
+    QSslError** errors_arr = static_cast<QSslError**>(errors.data.ptr);
+    for (size_t i = 0; i < errors.len; ++i) {
+        errors_QList.push_back(*(errors_arr[i]));
+    }
+    self->sslErrors(socket, errors_QList);
+}
+
+void QSslServer_Connect_SslErrors(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*, libqt_list /* of QSslError* */) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*, libqt_list /* of QSslError* */)>(slot);
+    QSslServer::connect(self, &QSslServer::sslErrors, [self, slotFunc](QSslSocket* socket, const QList<QSslError>& errors) {
+        QSslSocket* sigval1 = socket;
+        const QList<QSslError>& errors_ret = errors;
+        // Convert QList<> from C++ memory to manually-managed C memory
+        QSslError** errors_arr = static_cast<QSslError**>(malloc(sizeof(QSslError*) * (errors_ret.size())));
+        for (qsizetype i = 0; i < errors_ret.size(); ++i) {
+            errors_arr[i] = new QSslError(errors_ret[i]);
+        }
+        libqt_list errors_out;
+        errors_out.len = errors_ret.size();
+        errors_out.data.ptr = static_cast<void*>(errors_arr);
+        libqt_list /* of QSslError* */ sigval2 = errors_out;
+        slotFunc(self, sigval1, sigval2);
+        free(errors_arr);
+    });
+}
+
+void QSslServer_PeerVerifyError(QSslServer* self, QSslSocket* socket, const QSslError* error) {
+    self->peerVerifyError(socket, *error);
+}
+
+void QSslServer_Connect_PeerVerifyError(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*, QSslError*) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*, QSslError*)>(slot);
+    QSslServer::connect(self, &QSslServer::peerVerifyError, [self, slotFunc](QSslSocket* socket, const QSslError& error) {
+        QSslSocket* sigval1 = socket;
+        const QSslError& error_ret = error;
+        // Cast returned reference into pointer
+        QSslError* sigval2 = const_cast<QSslError*>(&error_ret);
+        slotFunc(self, sigval1, sigval2);
+    });
+}
+
+void QSslServer_ErrorOccurred(QSslServer* self, QSslSocket* socket, int error) {
+    self->errorOccurred(socket, static_cast<QAbstractSocket::SocketError>(error));
+}
+
+void QSslServer_Connect_ErrorOccurred(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*, int) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*, int)>(slot);
+    QSslServer::connect(self, &QSslServer::errorOccurred, [self, slotFunc](QSslSocket* socket, QAbstractSocket::SocketError error) {
+        QSslSocket* sigval1 = socket;
+        int sigval2 = static_cast<int>(error);
+        slotFunc(self, sigval1, sigval2);
+    });
+}
+
+void QSslServer_PreSharedKeyAuthenticationRequired(QSslServer* self, QSslSocket* socket, QSslPreSharedKeyAuthenticator* authenticator) {
+    self->preSharedKeyAuthenticationRequired(socket, authenticator);
+}
+
+void QSslServer_Connect_PreSharedKeyAuthenticationRequired(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*, QSslPreSharedKeyAuthenticator*) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*, QSslPreSharedKeyAuthenticator*)>(slot);
+    QSslServer::connect(self, &QSslServer::preSharedKeyAuthenticationRequired, [self, slotFunc](QSslSocket* socket, QSslPreSharedKeyAuthenticator* authenticator) {
+        QSslSocket* sigval1 = socket;
+        QSslPreSharedKeyAuthenticator* sigval2 = authenticator;
+        slotFunc(self, sigval1, sigval2);
+    });
+}
+
+void QSslServer_AlertSent(QSslServer* self, QSslSocket* socket, int level, int type, const libqt_string description) {
+    QString description_QString = QString::fromUtf8(description.data, description.len);
+    self->alertSent(socket, static_cast<QSsl::AlertLevel>(level), static_cast<QSsl::AlertType>(type), description_QString);
+}
+
+void QSslServer_Connect_AlertSent(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*, int, int, const char*) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*, int, int, const char*)>(slot);
+    QSslServer::connect(self, &QSslServer::alertSent, [self, slotFunc](QSslSocket* socket, QSsl::AlertLevel level, QSsl::AlertType type, const QString& description) {
+        QSslSocket* sigval1 = socket;
+        int sigval2 = static_cast<int>(level);
+        int sigval3 = static_cast<int>(type);
+        const QString description_ret = description;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray description_b = description_ret.toUtf8();
+        auto description_str_len = description_b.length();
+        char* description_str = static_cast<char*>(malloc(description_str_len + 1));
+        memcpy(description_str, description_b.data(), description_str_len);
+        description_str[description_str_len] = '\0';
+        const char* sigval4 = description_str;
+        slotFunc(self, sigval1, sigval2, sigval3, sigval4);
+        libqt_free(description_str);
+    });
+}
+
+void QSslServer_AlertReceived(QSslServer* self, QSslSocket* socket, int level, int type, const libqt_string description) {
+    QString description_QString = QString::fromUtf8(description.data, description.len);
+    self->alertReceived(socket, static_cast<QSsl::AlertLevel>(level), static_cast<QSsl::AlertType>(type), description_QString);
+}
+
+void QSslServer_Connect_AlertReceived(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*, int, int, const char*) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*, int, int, const char*)>(slot);
+    QSslServer::connect(self, &QSslServer::alertReceived, [self, slotFunc](QSslSocket* socket, QSsl::AlertLevel level, QSsl::AlertType type, const QString& description) {
+        QSslSocket* sigval1 = socket;
+        int sigval2 = static_cast<int>(level);
+        int sigval3 = static_cast<int>(type);
+        const QString description_ret = description;
+        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 chars in manually-managed C memory
+        QByteArray description_b = description_ret.toUtf8();
+        auto description_str_len = description_b.length();
+        char* description_str = static_cast<char*>(malloc(description_str_len + 1));
+        memcpy(description_str, description_b.data(), description_str_len);
+        description_str[description_str_len] = '\0';
+        const char* sigval4 = description_str;
+        slotFunc(self, sigval1, sigval2, sigval3, sigval4);
+        libqt_free(description_str);
+    });
+}
+
+void QSslServer_HandshakeInterruptedOnError(QSslServer* self, QSslSocket* socket, const QSslError* error) {
+    self->handshakeInterruptedOnError(socket, *error);
+}
+
+void QSslServer_Connect_HandshakeInterruptedOnError(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*, QSslError*) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*, QSslError*)>(slot);
+    QSslServer::connect(self, &QSslServer::handshakeInterruptedOnError, [self, slotFunc](QSslSocket* socket, const QSslError& error) {
+        QSslSocket* sigval1 = socket;
+        const QSslError& error_ret = error;
+        // Cast returned reference into pointer
+        QSslError* sigval2 = const_cast<QSslError*>(&error_ret);
+        slotFunc(self, sigval1, sigval2);
+    });
+}
+
+void QSslServer_StartedEncryptionHandshake(QSslServer* self, QSslSocket* socket) {
+    self->startedEncryptionHandshake(socket);
+}
+
+void QSslServer_Connect_StartedEncryptionHandshake(QSslServer* self, intptr_t slot) {
+    void (*slotFunc)(QSslServer*, QSslSocket*) = reinterpret_cast<void (*)(QSslServer*, QSslSocket*)>(slot);
+    QSslServer::connect(self, &QSslServer::startedEncryptionHandshake, [self, slotFunc](QSslSocket* socket) {
+        QSslSocket* sigval1 = socket;
+        slotFunc(self, sigval1);
+    });
+}
+
+void QSslServer_IncomingConnection(QSslServer* self, intptr_t socket) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->incomingConnection((qintptr)(socket));
+    }
+}
+
+// Base class handler implementation
+QMetaObject* QSslServer_SuperMetaObject(const QSslServer* self) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_MetaObject_IsBase(true);
+        return (QMetaObject*)vqsslserver->metaObject();
+    } else {
+        return (QMetaObject*)self->QSslServer::metaObject();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnMetaObject(const QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_MetaObject_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_MetaObject_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+void* QSslServer_SuperMetacast(QSslServer* self, const char* param1) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Metacast_IsBase(true);
+        return vqsslserver->qt_metacast(param1);
+    } else {
+        return self->QSslServer::qt_metacast(param1);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnMetacast(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Metacast_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_Metacast_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+int QSslServer_SuperMetacall(QSslServer* self, int param1, int param2, void** param3) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Metacall_IsBase(true);
+        return vqsslserver->qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    } else {
+        return self->QSslServer::qt_metacall(static_cast<QMetaObject::Call>(param1), static_cast<int>(param2), param3);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnMetacall(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Metacall_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_Metacall_Callback>(slot));
+    }
+}
+
+// Base class handler implementation
+void QSslServer_SuperIncomingConnection(QSslServer* self, intptr_t socket) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_IncomingConnection_IsBase(true);
+        vqsslserver->incomingConnection((qintptr)(socket));
+    } else {
+        ((VirtualQSslServer*)self)->incomingConnection((qintptr)(socket));
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnIncomingConnection(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_IncomingConnection_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_IncomingConnection_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QSslServer_HasPendingConnections(const QSslServer* self) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->hasPendingConnections();
+    } else {
+        return self->QSslServer::hasPendingConnections();
+    }
+}
+
+// Base class handler implementation
+bool QSslServer_SuperHasPendingConnections(const QSslServer* self) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_HasPendingConnections_IsBase(true);
+        return vqsslserver->hasPendingConnections();
+    } else {
+        return self->QSslServer::hasPendingConnections();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnHasPendingConnections(const QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_HasPendingConnections_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_HasPendingConnections_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+QTcpSocket* QSslServer_NextPendingConnection(QSslServer* self) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->nextPendingConnection();
+    } else {
+        return self->QSslServer::nextPendingConnection();
+    }
+}
+
+// Base class handler implementation
+QTcpSocket* QSslServer_SuperNextPendingConnection(QSslServer* self) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_NextPendingConnection_IsBase(true);
+        return vqsslserver->nextPendingConnection();
+    } else {
+        return self->QSslServer::nextPendingConnection();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnNextPendingConnection(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_NextPendingConnection_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_NextPendingConnection_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QSslServer_Event(QSslServer* self, QEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->event(event);
+    } else {
+        return self->QSslServer::event(event);
+    }
+}
+
+// Base class handler implementation
+bool QSslServer_SuperEvent(QSslServer* self, QEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Event_IsBase(true);
+        return vqsslserver->event(event);
+    } else {
+        return self->QSslServer::event(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnEvent(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Event_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_Event_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QSslServer_EventFilter(QSslServer* self, QObject* watched, QEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->eventFilter(watched, event);
+    } else {
+        return self->QSslServer::eventFilter(watched, event);
+    }
+}
+
+// Base class handler implementation
+bool QSslServer_SuperEventFilter(QSslServer* self, QObject* watched, QEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_EventFilter_IsBase(true);
+        return vqsslserver->eventFilter(watched, event);
+    } else {
+        return self->QSslServer::eventFilter(watched, event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnEventFilter(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_EventFilter_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_EventFilter_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QSslServer_TimerEvent(QSslServer* self, QTimerEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->timerEvent(event);
+    } else {
+        ((VirtualQSslServer*)self)->timerEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QSslServer_SuperTimerEvent(QSslServer* self, QTimerEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_TimerEvent_IsBase(true);
+        vqsslserver->timerEvent(event);
+    } else {
+        ((VirtualQSslServer*)self)->timerEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnTimerEvent(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_TimerEvent_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_TimerEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QSslServer_ChildEvent(QSslServer* self, QChildEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->childEvent(event);
+    } else {
+        ((VirtualQSslServer*)self)->childEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QSslServer_SuperChildEvent(QSslServer* self, QChildEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_ChildEvent_IsBase(true);
+        vqsslserver->childEvent(event);
+    } else {
+        ((VirtualQSslServer*)self)->childEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnChildEvent(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_ChildEvent_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_ChildEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QSslServer_CustomEvent(QSslServer* self, QEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->customEvent(event);
+    } else {
+        ((VirtualQSslServer*)self)->customEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QSslServer_SuperCustomEvent(QSslServer* self, QEvent* event) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_CustomEvent_IsBase(true);
+        vqsslserver->customEvent(event);
+    } else {
+        ((VirtualQSslServer*)self)->customEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnCustomEvent(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_CustomEvent_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_CustomEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QSslServer_ConnectNotify(QSslServer* self, const QMetaMethod* signal) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->connectNotify(*signal);
+    } else {
+        ((VirtualQSslServer*)self)->connectNotify(*signal);
+    }
+}
+
+// Base class handler implementation
+void QSslServer_SuperConnectNotify(QSslServer* self, const QMetaMethod* signal) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_ConnectNotify_IsBase(true);
+        vqsslserver->connectNotify(*signal);
+    } else {
+        ((VirtualQSslServer*)self)->connectNotify(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnConnectNotify(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_ConnectNotify_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_ConnectNotify_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QSslServer_DisconnectNotify(QSslServer* self, const QMetaMethod* signal) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->disconnectNotify(*signal);
+    } else {
+        ((VirtualQSslServer*)self)->disconnectNotify(*signal);
+    }
+}
+
+// Base class handler implementation
+void QSslServer_SuperDisconnectNotify(QSslServer* self, const QMetaMethod* signal) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_DisconnectNotify_IsBase(true);
+        vqsslserver->disconnectNotify(*signal);
+    } else {
+        ((VirtualQSslServer*)self)->disconnectNotify(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnDisconnectNotify(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_DisconnectNotify_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_DisconnectNotify_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QSslServer_AddPendingConnection(QSslServer* self, QTcpSocket* socket) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->addPendingConnection(socket);
+    } else {
+        ((VirtualQSslServer*)self)->addPendingConnection(socket);
+    }
+}
+
+// Base class handler implementation
+void QSslServer_SuperAddPendingConnection(QSslServer* self, QTcpSocket* socket) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_AddPendingConnection_IsBase(true);
+        vqsslserver->addPendingConnection(socket);
+    } else {
+        ((VirtualQSslServer*)self)->addPendingConnection(socket);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnAddPendingConnection(QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = dynamic_cast<VirtualQSslServer*>(self);
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_AddPendingConnection_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_AddPendingConnection_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+QObject* QSslServer_Sender(const QSslServer* self) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->sender();
+    } else {
+        return ((VirtualQSslServer*)self)->sender();
+    }
+}
+
+// Base class handler implementation
+QObject* QSslServer_SuperSender(const QSslServer* self) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Sender_IsBase(true);
+        return vqsslserver->sender();
+    } else {
+        return ((VirtualQSslServer*)self)->sender();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnSender(const QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Sender_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_Sender_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+int QSslServer_SenderSignalIndex(const QSslServer* self) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->senderSignalIndex();
+    } else {
+        return ((VirtualQSslServer*)self)->senderSignalIndex();
+    }
+}
+
+// Base class handler implementation
+int QSslServer_SuperSenderSignalIndex(const QSslServer* self) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_SenderSignalIndex_IsBase(true);
+        return vqsslserver->senderSignalIndex();
+    } else {
+        return ((VirtualQSslServer*)self)->senderSignalIndex();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnSenderSignalIndex(const QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_SenderSignalIndex_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_SenderSignalIndex_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+int QSslServer_Receivers(const QSslServer* self, const char* signal) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->receivers(signal);
+    } else {
+        return ((VirtualQSslServer*)self)->receivers(signal);
+    }
+}
+
+// Base class handler implementation
+int QSslServer_SuperReceivers(const QSslServer* self, const char* signal) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Receivers_IsBase(true);
+        return vqsslserver->receivers(signal);
+    } else {
+        return ((VirtualQSslServer*)self)->receivers(signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnReceivers(const QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_Receivers_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_Receivers_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+bool QSslServer_IsSignalConnected(const QSslServer* self, const QMetaMethod* signal) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        return vqsslserver->isSignalConnected(*signal);
+    } else {
+        return ((VirtualQSslServer*)self)->isSignalConnected(*signal);
+    }
+}
+
+// Base class handler implementation
+bool QSslServer_SuperIsSignalConnected(const QSslServer* self, const QMetaMethod* signal) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_IsSignalConnected_IsBase(true);
+        return vqsslserver->isSignalConnected(*signal);
+    } else {
+        return ((VirtualQSslServer*)self)->isSignalConnected(*signal);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QSslServer_OnIsSignalConnected(const QSslServer* self, intptr_t slot) {
+    auto* vqsslserver = const_cast<VirtualQSslServer*>(dynamic_cast<const VirtualQSslServer*>(self));
+    if (vqsslserver && vqsslserver->isVirtualQSslServer) {
+        vqsslserver->setQSslServer_IsSignalConnected_Callback(reinterpret_cast<VirtualQSslServer::QSslServer_IsSignalConnected_Callback>(slot));
+    }
+}
+
+void QSslServer_Delete(QSslServer* self) {
+    delete self;
+}

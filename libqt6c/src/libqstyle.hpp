@@ -1,0 +1,171 @@
+#pragma once
+#ifndef SRCC_LIBQSTYLE_HPP
+#define SRCC_LIBQSTYLE_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QApplication QApplication;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QFontMetrics QFontMetrics;
+typedef struct QIcon QIcon;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QPainter QPainter;
+typedef struct QPalette QPalette;
+typedef struct QPixmap QPixmap;
+typedef struct QPoint QPoint;
+typedef struct QRect QRect;
+typedef struct QSize QSize;
+typedef struct QStyle QStyle;
+typedef struct QStyleHintReturn QStyleHintReturn;
+typedef struct QStyleOption QStyleOption;
+typedef struct QStyleOptionComplex QStyleOptionComplex;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QWidget QWidget;
+#endif
+
+QStyle* QStyle_new();
+QMetaObject* QStyle_MetaObject(const QStyle* self);
+void* QStyle_Metacast(QStyle* self, const char* param1);
+int QStyle_Metacall(QStyle* self, int param1, int param2, void** param3);
+libqt_string QStyle_Name(const QStyle* self);
+void QStyle_Polish(QStyle* self, QWidget* widget);
+void QStyle_Unpolish(QStyle* self, QWidget* widget);
+void QStyle_Polish2(QStyle* self, QApplication* application);
+void QStyle_Unpolish2(QStyle* self, QApplication* application);
+void QStyle_Polish3(QStyle* self, QPalette* palette);
+QRect* QStyle_ItemTextRect(const QStyle* self, const QFontMetrics* fm, const QRect* r, int flags, bool enabled, const libqt_string text);
+QRect* QStyle_ItemPixmapRect(const QStyle* self, const QRect* r, int flags, const QPixmap* pixmap);
+void QStyle_DrawItemText(const QStyle* self, QPainter* painter, const QRect* rect, int flags, const QPalette* pal, bool enabled, const libqt_string text, int textRole);
+void QStyle_DrawItemPixmap(const QStyle* self, QPainter* painter, const QRect* rect, int alignment, const QPixmap* pixmap);
+QPalette* QStyle_StandardPalette(const QStyle* self);
+void QStyle_DrawPrimitive(const QStyle* self, int pe, const QStyleOption* opt, QPainter* p, const QWidget* w);
+void QStyle_DrawControl(const QStyle* self, int element, const QStyleOption* opt, QPainter* p, const QWidget* w);
+QRect* QStyle_SubElementRect(const QStyle* self, int subElement, const QStyleOption* option, const QWidget* widget);
+void QStyle_DrawComplexControl(const QStyle* self, int cc, const QStyleOptionComplex* opt, QPainter* p, const QWidget* widget);
+int QStyle_HitTestComplexControl(const QStyle* self, int cc, const QStyleOptionComplex* opt, const QPoint* pt, const QWidget* widget);
+QRect* QStyle_SubControlRect(const QStyle* self, int cc, const QStyleOptionComplex* opt, int sc, const QWidget* widget);
+int QStyle_PixelMetric(const QStyle* self, int metric, const QStyleOption* option, const QWidget* widget);
+QSize* QStyle_SizeFromContents(const QStyle* self, int ct, const QStyleOption* opt, const QSize* contentsSize, const QWidget* w);
+int QStyle_StyleHint(const QStyle* self, int stylehint, const QStyleOption* opt, const QWidget* widget, QStyleHintReturn* returnData);
+QPixmap* QStyle_StandardPixmap(const QStyle* self, int standardPixmap, const QStyleOption* opt, const QWidget* widget);
+QIcon* QStyle_StandardIcon(const QStyle* self, int standardIcon, const QStyleOption* option, const QWidget* widget);
+QPixmap* QStyle_GeneratedIconPixmap(const QStyle* self, int iconMode, const QPixmap* pixmap, const QStyleOption* opt);
+QRect* QStyle_VisualRect(int direction, const QRect* boundingRect, const QRect* logicalRect);
+QPoint* QStyle_VisualPos(int direction, const QRect* boundingRect, const QPoint* logicalPos);
+int QStyle_SliderPositionFromValue(int min, int max, int val, int space);
+int QStyle_SliderValueFromPosition(int min, int max, int pos, int space);
+int QStyle_VisualAlignment(int direction, int alignment);
+QRect* QStyle_AlignedRect(int direction, int alignment, const QSize* size, const QRect* rectangle);
+int QStyle_LayoutSpacing(const QStyle* self, int control1, int control2, int orientation, const QStyleOption* option, const QWidget* widget);
+int QStyle_CombinedLayoutSpacing(const QStyle* self, int controls1, int controls2, int orientation);
+QStyle* QStyle_Proxy(const QStyle* self);
+int QStyle_SliderPositionFromValue5(int min, int max, int val, int space, bool upsideDown);
+int QStyle_SliderValueFromPosition5(int min, int max, int pos, int space, bool upsideDown);
+int QStyle_CombinedLayoutSpacing4(const QStyle* self, int controls1, int controls2, int orientation, QStyleOption* option);
+int QStyle_CombinedLayoutSpacing5(const QStyle* self, int controls1, int controls2, int orientation, QStyleOption* option, QWidget* widget);
+void QStyle_OnMetaObject(const QStyle* self, intptr_t slot);
+QMetaObject* QStyle_SuperMetaObject(const QStyle* self);
+void QStyle_OnMetacast(QStyle* self, intptr_t slot);
+void* QStyle_SuperMetacast(QStyle* self, const char* param1);
+void QStyle_OnMetacall(QStyle* self, intptr_t slot);
+int QStyle_SuperMetacall(QStyle* self, int param1, int param2, void** param3);
+void QStyle_OnPolish(QStyle* self, intptr_t slot);
+void QStyle_SuperPolish(QStyle* self, QWidget* widget);
+void QStyle_OnUnpolish(QStyle* self, intptr_t slot);
+void QStyle_SuperUnpolish(QStyle* self, QWidget* widget);
+void QStyle_OnPolish2(QStyle* self, intptr_t slot);
+void QStyle_SuperPolish2(QStyle* self, QApplication* application);
+void QStyle_OnUnpolish2(QStyle* self, intptr_t slot);
+void QStyle_SuperUnpolish2(QStyle* self, QApplication* application);
+void QStyle_OnPolish3(QStyle* self, intptr_t slot);
+void QStyle_SuperPolish3(QStyle* self, QPalette* palette);
+void QStyle_OnItemTextRect(const QStyle* self, intptr_t slot);
+QRect* QStyle_SuperItemTextRect(const QStyle* self, const QFontMetrics* fm, const QRect* r, int flags, bool enabled, const libqt_string text);
+void QStyle_OnItemPixmapRect(const QStyle* self, intptr_t slot);
+QRect* QStyle_SuperItemPixmapRect(const QStyle* self, const QRect* r, int flags, const QPixmap* pixmap);
+void QStyle_OnDrawItemText(const QStyle* self, intptr_t slot);
+void QStyle_SuperDrawItemText(const QStyle* self, QPainter* painter, const QRect* rect, int flags, const QPalette* pal, bool enabled, const libqt_string text, int textRole);
+void QStyle_OnDrawItemPixmap(const QStyle* self, intptr_t slot);
+void QStyle_SuperDrawItemPixmap(const QStyle* self, QPainter* painter, const QRect* rect, int alignment, const QPixmap* pixmap);
+void QStyle_OnStandardPalette(const QStyle* self, intptr_t slot);
+QPalette* QStyle_SuperStandardPalette(const QStyle* self);
+void QStyle_OnDrawPrimitive(const QStyle* self, intptr_t slot);
+void QStyle_SuperDrawPrimitive(const QStyle* self, int pe, const QStyleOption* opt, QPainter* p, const QWidget* w);
+void QStyle_OnDrawControl(const QStyle* self, intptr_t slot);
+void QStyle_SuperDrawControl(const QStyle* self, int element, const QStyleOption* opt, QPainter* p, const QWidget* w);
+void QStyle_OnSubElementRect(const QStyle* self, intptr_t slot);
+QRect* QStyle_SuperSubElementRect(const QStyle* self, int subElement, const QStyleOption* option, const QWidget* widget);
+void QStyle_OnDrawComplexControl(const QStyle* self, intptr_t slot);
+void QStyle_SuperDrawComplexControl(const QStyle* self, int cc, const QStyleOptionComplex* opt, QPainter* p, const QWidget* widget);
+void QStyle_OnHitTestComplexControl(const QStyle* self, intptr_t slot);
+int QStyle_SuperHitTestComplexControl(const QStyle* self, int cc, const QStyleOptionComplex* opt, const QPoint* pt, const QWidget* widget);
+void QStyle_OnSubControlRect(const QStyle* self, intptr_t slot);
+QRect* QStyle_SuperSubControlRect(const QStyle* self, int cc, const QStyleOptionComplex* opt, int sc, const QWidget* widget);
+void QStyle_OnPixelMetric(const QStyle* self, intptr_t slot);
+int QStyle_SuperPixelMetric(const QStyle* self, int metric, const QStyleOption* option, const QWidget* widget);
+void QStyle_OnSizeFromContents(const QStyle* self, intptr_t slot);
+QSize* QStyle_SuperSizeFromContents(const QStyle* self, int ct, const QStyleOption* opt, const QSize* contentsSize, const QWidget* w);
+void QStyle_OnStyleHint(const QStyle* self, intptr_t slot);
+int QStyle_SuperStyleHint(const QStyle* self, int stylehint, const QStyleOption* opt, const QWidget* widget, QStyleHintReturn* returnData);
+void QStyle_OnStandardPixmap(const QStyle* self, intptr_t slot);
+QPixmap* QStyle_SuperStandardPixmap(const QStyle* self, int standardPixmap, const QStyleOption* opt, const QWidget* widget);
+void QStyle_OnStandardIcon(const QStyle* self, intptr_t slot);
+QIcon* QStyle_SuperStandardIcon(const QStyle* self, int standardIcon, const QStyleOption* option, const QWidget* widget);
+void QStyle_OnGeneratedIconPixmap(const QStyle* self, intptr_t slot);
+QPixmap* QStyle_SuperGeneratedIconPixmap(const QStyle* self, int iconMode, const QPixmap* pixmap, const QStyleOption* opt);
+void QStyle_OnLayoutSpacing(const QStyle* self, intptr_t slot);
+int QStyle_SuperLayoutSpacing(const QStyle* self, int control1, int control2, int orientation, const QStyleOption* option, const QWidget* widget);
+bool QStyle_Event(QStyle* self, QEvent* event);
+void QStyle_OnEvent(QStyle* self, intptr_t slot);
+bool QStyle_SuperEvent(QStyle* self, QEvent* event);
+bool QStyle_EventFilter(QStyle* self, QObject* watched, QEvent* event);
+void QStyle_OnEventFilter(QStyle* self, intptr_t slot);
+bool QStyle_SuperEventFilter(QStyle* self, QObject* watched, QEvent* event);
+void QStyle_TimerEvent(QStyle* self, QTimerEvent* event);
+void QStyle_OnTimerEvent(QStyle* self, intptr_t slot);
+void QStyle_SuperTimerEvent(QStyle* self, QTimerEvent* event);
+void QStyle_ChildEvent(QStyle* self, QChildEvent* event);
+void QStyle_OnChildEvent(QStyle* self, intptr_t slot);
+void QStyle_SuperChildEvent(QStyle* self, QChildEvent* event);
+void QStyle_CustomEvent(QStyle* self, QEvent* event);
+void QStyle_OnCustomEvent(QStyle* self, intptr_t slot);
+void QStyle_SuperCustomEvent(QStyle* self, QEvent* event);
+void QStyle_ConnectNotify(QStyle* self, const QMetaMethod* signal);
+void QStyle_OnConnectNotify(QStyle* self, intptr_t slot);
+void QStyle_SuperConnectNotify(QStyle* self, const QMetaMethod* signal);
+void QStyle_DisconnectNotify(QStyle* self, const QMetaMethod* signal);
+void QStyle_OnDisconnectNotify(QStyle* self, intptr_t slot);
+void QStyle_SuperDisconnectNotify(QStyle* self, const QMetaMethod* signal);
+QObject* QStyle_Sender(const QStyle* self);
+void QStyle_OnSender(const QStyle* self, intptr_t slot);
+QObject* QStyle_SuperSender(const QStyle* self);
+int QStyle_SenderSignalIndex(const QStyle* self);
+void QStyle_OnSenderSignalIndex(const QStyle* self, intptr_t slot);
+int QStyle_SuperSenderSignalIndex(const QStyle* self);
+int QStyle_Receivers(const QStyle* self, const char* signal);
+void QStyle_OnReceivers(const QStyle* self, intptr_t slot);
+int QStyle_SuperReceivers(const QStyle* self, const char* signal);
+bool QStyle_IsSignalConnected(const QStyle* self, const QMetaMethod* signal);
+void QStyle_OnIsSignalConnected(const QStyle* self, intptr_t slot);
+bool QStyle_SuperIsSignalConnected(const QStyle* self, const QMetaMethod* signal);
+void QStyle_Delete(QStyle* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

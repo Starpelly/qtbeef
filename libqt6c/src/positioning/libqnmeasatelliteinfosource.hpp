@@ -1,0 +1,124 @@
+#pragma once
+#ifndef SRC_POSITIONINGC_LIBQNMEASATELLITEINFOSOURCE_HPP
+#define SRC_POSITIONINGC_LIBQNMEASATELLITEINFOSOURCE_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QByteArrayView QByteArrayView;
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QGeoSatelliteInfo QGeoSatelliteInfo;
+typedef struct QGeoSatelliteInfoSource QGeoSatelliteInfoSource;
+typedef struct QIODevice QIODevice;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QNmeaSatelliteInfoSource QNmeaSatelliteInfoSource;
+typedef struct QObject QObject;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QVariant QVariant;
+#endif
+
+QNmeaSatelliteInfoSource* QNmeaSatelliteInfoSource_new(int mode);
+QNmeaSatelliteInfoSource* QNmeaSatelliteInfoSource_new2(int mode, QObject* parent);
+QMetaObject* QNmeaSatelliteInfoSource_MetaObject(const QNmeaSatelliteInfoSource* self);
+void* QNmeaSatelliteInfoSource_Metacast(QNmeaSatelliteInfoSource* self, const char* param1);
+int QNmeaSatelliteInfoSource_Metacall(QNmeaSatelliteInfoSource* self, int param1, int param2, void** param3);
+int QNmeaSatelliteInfoSource_UpdateMode(const QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_SetDevice(QNmeaSatelliteInfoSource* self, QIODevice* source);
+QIODevice* QNmeaSatelliteInfoSource_Device(const QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_SetUpdateInterval(QNmeaSatelliteInfoSource* self, int msec);
+int QNmeaSatelliteInfoSource_MinimumUpdateInterval(const QNmeaSatelliteInfoSource* self);
+int QNmeaSatelliteInfoSource_Error(const QNmeaSatelliteInfoSource* self);
+bool QNmeaSatelliteInfoSource_SetBackendProperty(QNmeaSatelliteInfoSource* self, const libqt_string name, const QVariant* value);
+QVariant* QNmeaSatelliteInfoSource_BackendProperty(const QNmeaSatelliteInfoSource* self, const libqt_string name);
+void QNmeaSatelliteInfoSource_StartUpdates(QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_StopUpdates(QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_RequestUpdate(QNmeaSatelliteInfoSource* self, int timeout);
+int QNmeaSatelliteInfoSource_ParseSatellitesInUseFromNmea(QNmeaSatelliteInfoSource* self, const char* data, int size, libqt_list /* of int */ pnrsInUse);
+int QNmeaSatelliteInfoSource_ParseSatelliteInfoFromNmea(QNmeaSatelliteInfoSource* self, const char* data, int size, libqt_list /* of QGeoSatelliteInfo* */ infos, int* system);
+void QNmeaSatelliteInfoSource_OnMetaObject(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+QMetaObject* QNmeaSatelliteInfoSource_SuperMetaObject(const QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_OnMetacast(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void* QNmeaSatelliteInfoSource_SuperMetacast(QNmeaSatelliteInfoSource* self, const char* param1);
+void QNmeaSatelliteInfoSource_OnMetacall(QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperMetacall(QNmeaSatelliteInfoSource* self, int param1, int param2, void** param3);
+void QNmeaSatelliteInfoSource_OnSetUpdateInterval(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperSetUpdateInterval(QNmeaSatelliteInfoSource* self, int msec);
+void QNmeaSatelliteInfoSource_OnMinimumUpdateInterval(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperMinimumUpdateInterval(const QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_OnError(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperError(const QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_OnSetBackendProperty(QNmeaSatelliteInfoSource* self, intptr_t slot);
+bool QNmeaSatelliteInfoSource_SuperSetBackendProperty(QNmeaSatelliteInfoSource* self, const libqt_string name, const QVariant* value);
+void QNmeaSatelliteInfoSource_OnBackendProperty(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+QVariant* QNmeaSatelliteInfoSource_SuperBackendProperty(const QNmeaSatelliteInfoSource* self, const libqt_string name);
+void QNmeaSatelliteInfoSource_OnStartUpdates(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperStartUpdates(QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_OnStopUpdates(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperStopUpdates(QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_OnRequestUpdate(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperRequestUpdate(QNmeaSatelliteInfoSource* self, int timeout);
+void QNmeaSatelliteInfoSource_OnParseSatellitesInUseFromNmea(QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperParseSatellitesInUseFromNmea(QNmeaSatelliteInfoSource* self, const char* data, int size, libqt_list /* of int */ pnrsInUse);
+void QNmeaSatelliteInfoSource_OnParseSatelliteInfoFromNmea(QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperParseSatelliteInfoFromNmea(QNmeaSatelliteInfoSource* self, const char* data, int size, libqt_list /* of QGeoSatelliteInfo* */ infos, int* system);
+bool QNmeaSatelliteInfoSource_Event(QNmeaSatelliteInfoSource* self, QEvent* event);
+void QNmeaSatelliteInfoSource_OnEvent(QNmeaSatelliteInfoSource* self, intptr_t slot);
+bool QNmeaSatelliteInfoSource_SuperEvent(QNmeaSatelliteInfoSource* self, QEvent* event);
+bool QNmeaSatelliteInfoSource_EventFilter(QNmeaSatelliteInfoSource* self, QObject* watched, QEvent* event);
+void QNmeaSatelliteInfoSource_OnEventFilter(QNmeaSatelliteInfoSource* self, intptr_t slot);
+bool QNmeaSatelliteInfoSource_SuperEventFilter(QNmeaSatelliteInfoSource* self, QObject* watched, QEvent* event);
+void QNmeaSatelliteInfoSource_TimerEvent(QNmeaSatelliteInfoSource* self, QTimerEvent* event);
+void QNmeaSatelliteInfoSource_OnTimerEvent(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperTimerEvent(QNmeaSatelliteInfoSource* self, QTimerEvent* event);
+void QNmeaSatelliteInfoSource_ChildEvent(QNmeaSatelliteInfoSource* self, QChildEvent* event);
+void QNmeaSatelliteInfoSource_OnChildEvent(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperChildEvent(QNmeaSatelliteInfoSource* self, QChildEvent* event);
+void QNmeaSatelliteInfoSource_CustomEvent(QNmeaSatelliteInfoSource* self, QEvent* event);
+void QNmeaSatelliteInfoSource_OnCustomEvent(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperCustomEvent(QNmeaSatelliteInfoSource* self, QEvent* event);
+void QNmeaSatelliteInfoSource_ConnectNotify(QNmeaSatelliteInfoSource* self, const QMetaMethod* signal);
+void QNmeaSatelliteInfoSource_OnConnectNotify(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperConnectNotify(QNmeaSatelliteInfoSource* self, const QMetaMethod* signal);
+void QNmeaSatelliteInfoSource_DisconnectNotify(QNmeaSatelliteInfoSource* self, const QMetaMethod* signal);
+void QNmeaSatelliteInfoSource_OnDisconnectNotify(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperDisconnectNotify(QNmeaSatelliteInfoSource* self, const QMetaMethod* signal);
+int QNmeaSatelliteInfoSource_ParseSatellitesInUseFromNmea2(QNmeaSatelliteInfoSource* self, libqt_string data, libqt_list /* of int */ pnrsInUse);
+void QNmeaSatelliteInfoSource_OnParseSatellitesInUseFromNmea2(QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperParseSatellitesInUseFromNmea2(QNmeaSatelliteInfoSource* self, libqt_string data, libqt_list /* of int */ pnrsInUse);
+int QNmeaSatelliteInfoSource_ParseSatelliteInfoFromNmea2(QNmeaSatelliteInfoSource* self, libqt_string data, libqt_list /* of QGeoSatelliteInfo* */ infos, int* system);
+void QNmeaSatelliteInfoSource_OnParseSatelliteInfoFromNmea2(QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperParseSatelliteInfoFromNmea2(QNmeaSatelliteInfoSource* self, libqt_string data, libqt_list /* of QGeoSatelliteInfo* */ infos, int* system);
+void QNmeaSatelliteInfoSource_SetError(QNmeaSatelliteInfoSource* self, int satelliteError);
+void QNmeaSatelliteInfoSource_OnSetError(QNmeaSatelliteInfoSource* self, intptr_t slot);
+void QNmeaSatelliteInfoSource_SuperSetError(QNmeaSatelliteInfoSource* self, int satelliteError);
+QObject* QNmeaSatelliteInfoSource_Sender(const QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_OnSender(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+QObject* QNmeaSatelliteInfoSource_SuperSender(const QNmeaSatelliteInfoSource* self);
+int QNmeaSatelliteInfoSource_SenderSignalIndex(const QNmeaSatelliteInfoSource* self);
+void QNmeaSatelliteInfoSource_OnSenderSignalIndex(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperSenderSignalIndex(const QNmeaSatelliteInfoSource* self);
+int QNmeaSatelliteInfoSource_Receivers(const QNmeaSatelliteInfoSource* self, const char* signal);
+void QNmeaSatelliteInfoSource_OnReceivers(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+int QNmeaSatelliteInfoSource_SuperReceivers(const QNmeaSatelliteInfoSource* self, const char* signal);
+bool QNmeaSatelliteInfoSource_IsSignalConnected(const QNmeaSatelliteInfoSource* self, const QMetaMethod* signal);
+void QNmeaSatelliteInfoSource_OnIsSignalConnected(const QNmeaSatelliteInfoSource* self, intptr_t slot);
+bool QNmeaSatelliteInfoSource_SuperIsSignalConnected(const QNmeaSatelliteInfoSource* self, const QMetaMethod* signal);
+void QNmeaSatelliteInfoSource_Delete(QNmeaSatelliteInfoSource* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

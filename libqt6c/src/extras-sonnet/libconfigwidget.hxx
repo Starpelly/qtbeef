@@ -1,0 +1,1463 @@
+#pragma once
+#ifndef SRC_EXTRAS_SONNETC_LIBVIRTUALCONFIGWIDGET_H
+#define SRC_EXTRAS_SONNETC_LIBVIRTUALCONFIGWIDGET_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+// This class is a subclass of Sonnet::ConfigWidget so that we can call protected methods
+class VirtualSonnetConfigWidget final : public Sonnet::ConfigWidget {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualSonnetConfigWidget = true;
+
+    // Virtual class public types (including callbacks)
+    using Sonnet__ConfigWidget_MetaObject_Callback = QMetaObject* (*)();
+    using Sonnet__ConfigWidget_Metacast_Callback = void* (*)(Sonnet__ConfigWidget*, const char*);
+    using Sonnet__ConfigWidget_Metacall_Callback = int (*)(Sonnet__ConfigWidget*, int, int, void**);
+    using Sonnet__ConfigWidget_DevType_Callback = int (*)();
+    using Sonnet__ConfigWidget_SetVisible_Callback = void (*)(Sonnet__ConfigWidget*, bool);
+    using Sonnet__ConfigWidget_SizeHint_Callback = QSize* (*)();
+    using Sonnet__ConfigWidget_MinimumSizeHint_Callback = QSize* (*)();
+    using Sonnet__ConfigWidget_HeightForWidth_Callback = int (*)(const Sonnet__ConfigWidget*, int);
+    using Sonnet__ConfigWidget_HasHeightForWidth_Callback = bool (*)();
+    using Sonnet__ConfigWidget_PaintEngine_Callback = QPaintEngine* (*)();
+    using Sonnet__ConfigWidget_Event_Callback = bool (*)(Sonnet__ConfigWidget*, QEvent*);
+    using Sonnet__ConfigWidget_MousePressEvent_Callback = void (*)(Sonnet__ConfigWidget*, QMouseEvent*);
+    using Sonnet__ConfigWidget_MouseReleaseEvent_Callback = void (*)(Sonnet__ConfigWidget*, QMouseEvent*);
+    using Sonnet__ConfigWidget_MouseDoubleClickEvent_Callback = void (*)(Sonnet__ConfigWidget*, QMouseEvent*);
+    using Sonnet__ConfigWidget_MouseMoveEvent_Callback = void (*)(Sonnet__ConfigWidget*, QMouseEvent*);
+    using Sonnet__ConfigWidget_WheelEvent_Callback = void (*)(Sonnet__ConfigWidget*, QWheelEvent*);
+    using Sonnet__ConfigWidget_KeyPressEvent_Callback = void (*)(Sonnet__ConfigWidget*, QKeyEvent*);
+    using Sonnet__ConfigWidget_KeyReleaseEvent_Callback = void (*)(Sonnet__ConfigWidget*, QKeyEvent*);
+    using Sonnet__ConfigWidget_FocusInEvent_Callback = void (*)(Sonnet__ConfigWidget*, QFocusEvent*);
+    using Sonnet__ConfigWidget_FocusOutEvent_Callback = void (*)(Sonnet__ConfigWidget*, QFocusEvent*);
+    using Sonnet__ConfigWidget_EnterEvent_Callback = void (*)(Sonnet__ConfigWidget*, QEnterEvent*);
+    using Sonnet__ConfigWidget_LeaveEvent_Callback = void (*)(Sonnet__ConfigWidget*, QEvent*);
+    using Sonnet__ConfigWidget_PaintEvent_Callback = void (*)(Sonnet__ConfigWidget*, QPaintEvent*);
+    using Sonnet__ConfigWidget_MoveEvent_Callback = void (*)(Sonnet__ConfigWidget*, QMoveEvent*);
+    using Sonnet__ConfigWidget_ResizeEvent_Callback = void (*)(Sonnet__ConfigWidget*, QResizeEvent*);
+    using Sonnet__ConfigWidget_CloseEvent_Callback = void (*)(Sonnet__ConfigWidget*, QCloseEvent*);
+    using Sonnet__ConfigWidget_ContextMenuEvent_Callback = void (*)(Sonnet__ConfigWidget*, QContextMenuEvent*);
+    using Sonnet__ConfigWidget_TabletEvent_Callback = void (*)(Sonnet__ConfigWidget*, QTabletEvent*);
+    using Sonnet__ConfigWidget_ActionEvent_Callback = void (*)(Sonnet__ConfigWidget*, QActionEvent*);
+    using Sonnet__ConfigWidget_DragEnterEvent_Callback = void (*)(Sonnet__ConfigWidget*, QDragEnterEvent*);
+    using Sonnet__ConfigWidget_DragMoveEvent_Callback = void (*)(Sonnet__ConfigWidget*, QDragMoveEvent*);
+    using Sonnet__ConfigWidget_DragLeaveEvent_Callback = void (*)(Sonnet__ConfigWidget*, QDragLeaveEvent*);
+    using Sonnet__ConfigWidget_DropEvent_Callback = void (*)(Sonnet__ConfigWidget*, QDropEvent*);
+    using Sonnet__ConfigWidget_ShowEvent_Callback = void (*)(Sonnet__ConfigWidget*, QShowEvent*);
+    using Sonnet__ConfigWidget_HideEvent_Callback = void (*)(Sonnet__ConfigWidget*, QHideEvent*);
+    using Sonnet__ConfigWidget_NativeEvent_Callback = bool (*)(Sonnet__ConfigWidget*, libqt_string, void*, intptr_t*);
+    using Sonnet__ConfigWidget_ChangeEvent_Callback = void (*)(Sonnet__ConfigWidget*, QEvent*);
+    using Sonnet__ConfigWidget_Metric_Callback = int (*)(const Sonnet__ConfigWidget*, int);
+    using Sonnet__ConfigWidget_InitPainter_Callback = void (*)(const Sonnet__ConfigWidget*, QPainter*);
+    using Sonnet__ConfigWidget_Redirected_Callback = QPaintDevice* (*)(const Sonnet__ConfigWidget*, QPoint*);
+    using Sonnet__ConfigWidget_SharedPainter_Callback = QPainter* (*)();
+    using Sonnet__ConfigWidget_InputMethodEvent_Callback = void (*)(Sonnet__ConfigWidget*, QInputMethodEvent*);
+    using Sonnet__ConfigWidget_InputMethodQuery_Callback = QVariant* (*)(const Sonnet__ConfigWidget*, int);
+    using Sonnet__ConfigWidget_FocusNextPrevChild_Callback = bool (*)(Sonnet__ConfigWidget*, bool);
+    using Sonnet__ConfigWidget_EventFilter_Callback = bool (*)(Sonnet__ConfigWidget*, QObject*, QEvent*);
+    using Sonnet__ConfigWidget_TimerEvent_Callback = void (*)(Sonnet__ConfigWidget*, QTimerEvent*);
+    using Sonnet__ConfigWidget_ChildEvent_Callback = void (*)(Sonnet__ConfigWidget*, QChildEvent*);
+    using Sonnet__ConfigWidget_CustomEvent_Callback = void (*)(Sonnet__ConfigWidget*, QEvent*);
+    using Sonnet__ConfigWidget_ConnectNotify_Callback = void (*)(Sonnet__ConfigWidget*, QMetaMethod*);
+    using Sonnet__ConfigWidget_DisconnectNotify_Callback = void (*)(Sonnet__ConfigWidget*, QMetaMethod*);
+    using Sonnet__ConfigWidget_SlotIgnoreWordRemoved_Callback = void (*)();
+    using Sonnet__ConfigWidget_SlotIgnoreWordAdded_Callback = void (*)();
+    using Sonnet__ConfigWidget_UpdateMicroFocus_Callback = void (*)();
+    using Sonnet__ConfigWidget_Create_Callback = void (*)();
+    using Sonnet__ConfigWidget_Destroy_Callback = void (*)();
+    using Sonnet__ConfigWidget_FocusNextChild_Callback = bool (*)();
+    using Sonnet__ConfigWidget_FocusPreviousChild_Callback = bool (*)();
+    using Sonnet__ConfigWidget_Sender_Callback = QObject* (*)();
+    using Sonnet__ConfigWidget_SenderSignalIndex_Callback = int (*)();
+    using Sonnet__ConfigWidget_Receivers_Callback = int (*)(const Sonnet__ConfigWidget*, const char*);
+    using Sonnet__ConfigWidget_IsSignalConnected_Callback = bool (*)(const Sonnet__ConfigWidget*, QMetaMethod*);
+    using Sonnet__ConfigWidget_GetDecodedMetricF_Callback = double (*)(const Sonnet__ConfigWidget*, int, int);
+
+  protected:
+    // Instance callback storage
+    Sonnet__ConfigWidget_MetaObject_Callback sonnet__configwidget_metaobject_callback = nullptr;
+    Sonnet__ConfigWidget_Metacast_Callback sonnet__configwidget_metacast_callback = nullptr;
+    Sonnet__ConfigWidget_Metacall_Callback sonnet__configwidget_metacall_callback = nullptr;
+    Sonnet__ConfigWidget_DevType_Callback sonnet__configwidget_devtype_callback = nullptr;
+    Sonnet__ConfigWidget_SetVisible_Callback sonnet__configwidget_setvisible_callback = nullptr;
+    Sonnet__ConfigWidget_SizeHint_Callback sonnet__configwidget_sizehint_callback = nullptr;
+    Sonnet__ConfigWidget_MinimumSizeHint_Callback sonnet__configwidget_minimumsizehint_callback = nullptr;
+    Sonnet__ConfigWidget_HeightForWidth_Callback sonnet__configwidget_heightforwidth_callback = nullptr;
+    Sonnet__ConfigWidget_HasHeightForWidth_Callback sonnet__configwidget_hasheightforwidth_callback = nullptr;
+    Sonnet__ConfigWidget_PaintEngine_Callback sonnet__configwidget_paintengine_callback = nullptr;
+    Sonnet__ConfigWidget_Event_Callback sonnet__configwidget_event_callback = nullptr;
+    Sonnet__ConfigWidget_MousePressEvent_Callback sonnet__configwidget_mousepressevent_callback = nullptr;
+    Sonnet__ConfigWidget_MouseReleaseEvent_Callback sonnet__configwidget_mousereleaseevent_callback = nullptr;
+    Sonnet__ConfigWidget_MouseDoubleClickEvent_Callback sonnet__configwidget_mousedoubleclickevent_callback = nullptr;
+    Sonnet__ConfigWidget_MouseMoveEvent_Callback sonnet__configwidget_mousemoveevent_callback = nullptr;
+    Sonnet__ConfigWidget_WheelEvent_Callback sonnet__configwidget_wheelevent_callback = nullptr;
+    Sonnet__ConfigWidget_KeyPressEvent_Callback sonnet__configwidget_keypressevent_callback = nullptr;
+    Sonnet__ConfigWidget_KeyReleaseEvent_Callback sonnet__configwidget_keyreleaseevent_callback = nullptr;
+    Sonnet__ConfigWidget_FocusInEvent_Callback sonnet__configwidget_focusinevent_callback = nullptr;
+    Sonnet__ConfigWidget_FocusOutEvent_Callback sonnet__configwidget_focusoutevent_callback = nullptr;
+    Sonnet__ConfigWidget_EnterEvent_Callback sonnet__configwidget_enterevent_callback = nullptr;
+    Sonnet__ConfigWidget_LeaveEvent_Callback sonnet__configwidget_leaveevent_callback = nullptr;
+    Sonnet__ConfigWidget_PaintEvent_Callback sonnet__configwidget_paintevent_callback = nullptr;
+    Sonnet__ConfigWidget_MoveEvent_Callback sonnet__configwidget_moveevent_callback = nullptr;
+    Sonnet__ConfigWidget_ResizeEvent_Callback sonnet__configwidget_resizeevent_callback = nullptr;
+    Sonnet__ConfigWidget_CloseEvent_Callback sonnet__configwidget_closeevent_callback = nullptr;
+    Sonnet__ConfigWidget_ContextMenuEvent_Callback sonnet__configwidget_contextmenuevent_callback = nullptr;
+    Sonnet__ConfigWidget_TabletEvent_Callback sonnet__configwidget_tabletevent_callback = nullptr;
+    Sonnet__ConfigWidget_ActionEvent_Callback sonnet__configwidget_actionevent_callback = nullptr;
+    Sonnet__ConfigWidget_DragEnterEvent_Callback sonnet__configwidget_dragenterevent_callback = nullptr;
+    Sonnet__ConfigWidget_DragMoveEvent_Callback sonnet__configwidget_dragmoveevent_callback = nullptr;
+    Sonnet__ConfigWidget_DragLeaveEvent_Callback sonnet__configwidget_dragleaveevent_callback = nullptr;
+    Sonnet__ConfigWidget_DropEvent_Callback sonnet__configwidget_dropevent_callback = nullptr;
+    Sonnet__ConfigWidget_ShowEvent_Callback sonnet__configwidget_showevent_callback = nullptr;
+    Sonnet__ConfigWidget_HideEvent_Callback sonnet__configwidget_hideevent_callback = nullptr;
+    Sonnet__ConfigWidget_NativeEvent_Callback sonnet__configwidget_nativeevent_callback = nullptr;
+    Sonnet__ConfigWidget_ChangeEvent_Callback sonnet__configwidget_changeevent_callback = nullptr;
+    Sonnet__ConfigWidget_Metric_Callback sonnet__configwidget_metric_callback = nullptr;
+    Sonnet__ConfigWidget_InitPainter_Callback sonnet__configwidget_initpainter_callback = nullptr;
+    Sonnet__ConfigWidget_Redirected_Callback sonnet__configwidget_redirected_callback = nullptr;
+    Sonnet__ConfigWidget_SharedPainter_Callback sonnet__configwidget_sharedpainter_callback = nullptr;
+    Sonnet__ConfigWidget_InputMethodEvent_Callback sonnet__configwidget_inputmethodevent_callback = nullptr;
+    Sonnet__ConfigWidget_InputMethodQuery_Callback sonnet__configwidget_inputmethodquery_callback = nullptr;
+    Sonnet__ConfigWidget_FocusNextPrevChild_Callback sonnet__configwidget_focusnextprevchild_callback = nullptr;
+    Sonnet__ConfigWidget_EventFilter_Callback sonnet__configwidget_eventfilter_callback = nullptr;
+    Sonnet__ConfigWidget_TimerEvent_Callback sonnet__configwidget_timerevent_callback = nullptr;
+    Sonnet__ConfigWidget_ChildEvent_Callback sonnet__configwidget_childevent_callback = nullptr;
+    Sonnet__ConfigWidget_CustomEvent_Callback sonnet__configwidget_customevent_callback = nullptr;
+    Sonnet__ConfigWidget_ConnectNotify_Callback sonnet__configwidget_connectnotify_callback = nullptr;
+    Sonnet__ConfigWidget_DisconnectNotify_Callback sonnet__configwidget_disconnectnotify_callback = nullptr;
+    Sonnet__ConfigWidget_SlotIgnoreWordRemoved_Callback sonnet__configwidget_slotignorewordremoved_callback = nullptr;
+    Sonnet__ConfigWidget_SlotIgnoreWordAdded_Callback sonnet__configwidget_slotignorewordadded_callback = nullptr;
+    Sonnet__ConfigWidget_UpdateMicroFocus_Callback sonnet__configwidget_updatemicrofocus_callback = nullptr;
+    Sonnet__ConfigWidget_Create_Callback sonnet__configwidget_create_callback = nullptr;
+    Sonnet__ConfigWidget_Destroy_Callback sonnet__configwidget_destroy_callback = nullptr;
+    Sonnet__ConfigWidget_FocusNextChild_Callback sonnet__configwidget_focusnextchild_callback = nullptr;
+    Sonnet__ConfigWidget_FocusPreviousChild_Callback sonnet__configwidget_focuspreviouschild_callback = nullptr;
+    Sonnet__ConfigWidget_Sender_Callback sonnet__configwidget_sender_callback = nullptr;
+    Sonnet__ConfigWidget_SenderSignalIndex_Callback sonnet__configwidget_sendersignalindex_callback = nullptr;
+    Sonnet__ConfigWidget_Receivers_Callback sonnet__configwidget_receivers_callback = nullptr;
+    Sonnet__ConfigWidget_IsSignalConnected_Callback sonnet__configwidget_issignalconnected_callback = nullptr;
+    Sonnet__ConfigWidget_GetDecodedMetricF_Callback sonnet__configwidget_getdecodedmetricf_callback = nullptr;
+
+    // Instance base flags
+    mutable bool sonnet__configwidget_metaobject_isbase = false;
+    mutable bool sonnet__configwidget_metacast_isbase = false;
+    mutable bool sonnet__configwidget_metacall_isbase = false;
+    mutable bool sonnet__configwidget_devtype_isbase = false;
+    mutable bool sonnet__configwidget_setvisible_isbase = false;
+    mutable bool sonnet__configwidget_sizehint_isbase = false;
+    mutable bool sonnet__configwidget_minimumsizehint_isbase = false;
+    mutable bool sonnet__configwidget_heightforwidth_isbase = false;
+    mutable bool sonnet__configwidget_hasheightforwidth_isbase = false;
+    mutable bool sonnet__configwidget_paintengine_isbase = false;
+    mutable bool sonnet__configwidget_event_isbase = false;
+    mutable bool sonnet__configwidget_mousepressevent_isbase = false;
+    mutable bool sonnet__configwidget_mousereleaseevent_isbase = false;
+    mutable bool sonnet__configwidget_mousedoubleclickevent_isbase = false;
+    mutable bool sonnet__configwidget_mousemoveevent_isbase = false;
+    mutable bool sonnet__configwidget_wheelevent_isbase = false;
+    mutable bool sonnet__configwidget_keypressevent_isbase = false;
+    mutable bool sonnet__configwidget_keyreleaseevent_isbase = false;
+    mutable bool sonnet__configwidget_focusinevent_isbase = false;
+    mutable bool sonnet__configwidget_focusoutevent_isbase = false;
+    mutable bool sonnet__configwidget_enterevent_isbase = false;
+    mutable bool sonnet__configwidget_leaveevent_isbase = false;
+    mutable bool sonnet__configwidget_paintevent_isbase = false;
+    mutable bool sonnet__configwidget_moveevent_isbase = false;
+    mutable bool sonnet__configwidget_resizeevent_isbase = false;
+    mutable bool sonnet__configwidget_closeevent_isbase = false;
+    mutable bool sonnet__configwidget_contextmenuevent_isbase = false;
+    mutable bool sonnet__configwidget_tabletevent_isbase = false;
+    mutable bool sonnet__configwidget_actionevent_isbase = false;
+    mutable bool sonnet__configwidget_dragenterevent_isbase = false;
+    mutable bool sonnet__configwidget_dragmoveevent_isbase = false;
+    mutable bool sonnet__configwidget_dragleaveevent_isbase = false;
+    mutable bool sonnet__configwidget_dropevent_isbase = false;
+    mutable bool sonnet__configwidget_showevent_isbase = false;
+    mutable bool sonnet__configwidget_hideevent_isbase = false;
+    mutable bool sonnet__configwidget_nativeevent_isbase = false;
+    mutable bool sonnet__configwidget_changeevent_isbase = false;
+    mutable bool sonnet__configwidget_metric_isbase = false;
+    mutable bool sonnet__configwidget_initpainter_isbase = false;
+    mutable bool sonnet__configwidget_redirected_isbase = false;
+    mutable bool sonnet__configwidget_sharedpainter_isbase = false;
+    mutable bool sonnet__configwidget_inputmethodevent_isbase = false;
+    mutable bool sonnet__configwidget_inputmethodquery_isbase = false;
+    mutable bool sonnet__configwidget_focusnextprevchild_isbase = false;
+    mutable bool sonnet__configwidget_eventfilter_isbase = false;
+    mutable bool sonnet__configwidget_timerevent_isbase = false;
+    mutable bool sonnet__configwidget_childevent_isbase = false;
+    mutable bool sonnet__configwidget_customevent_isbase = false;
+    mutable bool sonnet__configwidget_connectnotify_isbase = false;
+    mutable bool sonnet__configwidget_disconnectnotify_isbase = false;
+    mutable bool sonnet__configwidget_slotignorewordremoved_isbase = false;
+    mutable bool sonnet__configwidget_slotignorewordadded_isbase = false;
+    mutable bool sonnet__configwidget_updatemicrofocus_isbase = false;
+    mutable bool sonnet__configwidget_create_isbase = false;
+    mutable bool sonnet__configwidget_destroy_isbase = false;
+    mutable bool sonnet__configwidget_focusnextchild_isbase = false;
+    mutable bool sonnet__configwidget_focuspreviouschild_isbase = false;
+    mutable bool sonnet__configwidget_sender_isbase = false;
+    mutable bool sonnet__configwidget_sendersignalindex_isbase = false;
+    mutable bool sonnet__configwidget_receivers_isbase = false;
+    mutable bool sonnet__configwidget_issignalconnected_isbase = false;
+    mutable bool sonnet__configwidget_getdecodedmetricf_isbase = false;
+
+  public:
+    VirtualSonnetConfigWidget(QWidget* parent) : Sonnet::ConfigWidget(parent) {};
+
+    // Callback setters
+    inline void setSonnet__ConfigWidget_MetaObject_Callback(Sonnet__ConfigWidget_MetaObject_Callback cb) { sonnet__configwidget_metaobject_callback = cb; }
+    inline void setSonnet__ConfigWidget_Metacast_Callback(Sonnet__ConfigWidget_Metacast_Callback cb) { sonnet__configwidget_metacast_callback = cb; }
+    inline void setSonnet__ConfigWidget_Metacall_Callback(Sonnet__ConfigWidget_Metacall_Callback cb) { sonnet__configwidget_metacall_callback = cb; }
+    inline void setSonnet__ConfigWidget_DevType_Callback(Sonnet__ConfigWidget_DevType_Callback cb) { sonnet__configwidget_devtype_callback = cb; }
+    inline void setSonnet__ConfigWidget_SetVisible_Callback(Sonnet__ConfigWidget_SetVisible_Callback cb) { sonnet__configwidget_setvisible_callback = cb; }
+    inline void setSonnet__ConfigWidget_SizeHint_Callback(Sonnet__ConfigWidget_SizeHint_Callback cb) { sonnet__configwidget_sizehint_callback = cb; }
+    inline void setSonnet__ConfigWidget_MinimumSizeHint_Callback(Sonnet__ConfigWidget_MinimumSizeHint_Callback cb) { sonnet__configwidget_minimumsizehint_callback = cb; }
+    inline void setSonnet__ConfigWidget_HeightForWidth_Callback(Sonnet__ConfigWidget_HeightForWidth_Callback cb) { sonnet__configwidget_heightforwidth_callback = cb; }
+    inline void setSonnet__ConfigWidget_HasHeightForWidth_Callback(Sonnet__ConfigWidget_HasHeightForWidth_Callback cb) { sonnet__configwidget_hasheightforwidth_callback = cb; }
+    inline void setSonnet__ConfigWidget_PaintEngine_Callback(Sonnet__ConfigWidget_PaintEngine_Callback cb) { sonnet__configwidget_paintengine_callback = cb; }
+    inline void setSonnet__ConfigWidget_Event_Callback(Sonnet__ConfigWidget_Event_Callback cb) { sonnet__configwidget_event_callback = cb; }
+    inline void setSonnet__ConfigWidget_MousePressEvent_Callback(Sonnet__ConfigWidget_MousePressEvent_Callback cb) { sonnet__configwidget_mousepressevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_MouseReleaseEvent_Callback(Sonnet__ConfigWidget_MouseReleaseEvent_Callback cb) { sonnet__configwidget_mousereleaseevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_MouseDoubleClickEvent_Callback(Sonnet__ConfigWidget_MouseDoubleClickEvent_Callback cb) { sonnet__configwidget_mousedoubleclickevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_MouseMoveEvent_Callback(Sonnet__ConfigWidget_MouseMoveEvent_Callback cb) { sonnet__configwidget_mousemoveevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_WheelEvent_Callback(Sonnet__ConfigWidget_WheelEvent_Callback cb) { sonnet__configwidget_wheelevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_KeyPressEvent_Callback(Sonnet__ConfigWidget_KeyPressEvent_Callback cb) { sonnet__configwidget_keypressevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_KeyReleaseEvent_Callback(Sonnet__ConfigWidget_KeyReleaseEvent_Callback cb) { sonnet__configwidget_keyreleaseevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_FocusInEvent_Callback(Sonnet__ConfigWidget_FocusInEvent_Callback cb) { sonnet__configwidget_focusinevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_FocusOutEvent_Callback(Sonnet__ConfigWidget_FocusOutEvent_Callback cb) { sonnet__configwidget_focusoutevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_EnterEvent_Callback(Sonnet__ConfigWidget_EnterEvent_Callback cb) { sonnet__configwidget_enterevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_LeaveEvent_Callback(Sonnet__ConfigWidget_LeaveEvent_Callback cb) { sonnet__configwidget_leaveevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_PaintEvent_Callback(Sonnet__ConfigWidget_PaintEvent_Callback cb) { sonnet__configwidget_paintevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_MoveEvent_Callback(Sonnet__ConfigWidget_MoveEvent_Callback cb) { sonnet__configwidget_moveevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_ResizeEvent_Callback(Sonnet__ConfigWidget_ResizeEvent_Callback cb) { sonnet__configwidget_resizeevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_CloseEvent_Callback(Sonnet__ConfigWidget_CloseEvent_Callback cb) { sonnet__configwidget_closeevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_ContextMenuEvent_Callback(Sonnet__ConfigWidget_ContextMenuEvent_Callback cb) { sonnet__configwidget_contextmenuevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_TabletEvent_Callback(Sonnet__ConfigWidget_TabletEvent_Callback cb) { sonnet__configwidget_tabletevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_ActionEvent_Callback(Sonnet__ConfigWidget_ActionEvent_Callback cb) { sonnet__configwidget_actionevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_DragEnterEvent_Callback(Sonnet__ConfigWidget_DragEnterEvent_Callback cb) { sonnet__configwidget_dragenterevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_DragMoveEvent_Callback(Sonnet__ConfigWidget_DragMoveEvent_Callback cb) { sonnet__configwidget_dragmoveevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_DragLeaveEvent_Callback(Sonnet__ConfigWidget_DragLeaveEvent_Callback cb) { sonnet__configwidget_dragleaveevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_DropEvent_Callback(Sonnet__ConfigWidget_DropEvent_Callback cb) { sonnet__configwidget_dropevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_ShowEvent_Callback(Sonnet__ConfigWidget_ShowEvent_Callback cb) { sonnet__configwidget_showevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_HideEvent_Callback(Sonnet__ConfigWidget_HideEvent_Callback cb) { sonnet__configwidget_hideevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_NativeEvent_Callback(Sonnet__ConfigWidget_NativeEvent_Callback cb) { sonnet__configwidget_nativeevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_ChangeEvent_Callback(Sonnet__ConfigWidget_ChangeEvent_Callback cb) { sonnet__configwidget_changeevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_Metric_Callback(Sonnet__ConfigWidget_Metric_Callback cb) { sonnet__configwidget_metric_callback = cb; }
+    inline void setSonnet__ConfigWidget_InitPainter_Callback(Sonnet__ConfigWidget_InitPainter_Callback cb) { sonnet__configwidget_initpainter_callback = cb; }
+    inline void setSonnet__ConfigWidget_Redirected_Callback(Sonnet__ConfigWidget_Redirected_Callback cb) { sonnet__configwidget_redirected_callback = cb; }
+    inline void setSonnet__ConfigWidget_SharedPainter_Callback(Sonnet__ConfigWidget_SharedPainter_Callback cb) { sonnet__configwidget_sharedpainter_callback = cb; }
+    inline void setSonnet__ConfigWidget_InputMethodEvent_Callback(Sonnet__ConfigWidget_InputMethodEvent_Callback cb) { sonnet__configwidget_inputmethodevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_InputMethodQuery_Callback(Sonnet__ConfigWidget_InputMethodQuery_Callback cb) { sonnet__configwidget_inputmethodquery_callback = cb; }
+    inline void setSonnet__ConfigWidget_FocusNextPrevChild_Callback(Sonnet__ConfigWidget_FocusNextPrevChild_Callback cb) { sonnet__configwidget_focusnextprevchild_callback = cb; }
+    inline void setSonnet__ConfigWidget_EventFilter_Callback(Sonnet__ConfigWidget_EventFilter_Callback cb) { sonnet__configwidget_eventfilter_callback = cb; }
+    inline void setSonnet__ConfigWidget_TimerEvent_Callback(Sonnet__ConfigWidget_TimerEvent_Callback cb) { sonnet__configwidget_timerevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_ChildEvent_Callback(Sonnet__ConfigWidget_ChildEvent_Callback cb) { sonnet__configwidget_childevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_CustomEvent_Callback(Sonnet__ConfigWidget_CustomEvent_Callback cb) { sonnet__configwidget_customevent_callback = cb; }
+    inline void setSonnet__ConfigWidget_ConnectNotify_Callback(Sonnet__ConfigWidget_ConnectNotify_Callback cb) { sonnet__configwidget_connectnotify_callback = cb; }
+    inline void setSonnet__ConfigWidget_DisconnectNotify_Callback(Sonnet__ConfigWidget_DisconnectNotify_Callback cb) { sonnet__configwidget_disconnectnotify_callback = cb; }
+    inline void setSonnet__ConfigWidget_SlotIgnoreWordRemoved_Callback(Sonnet__ConfigWidget_SlotIgnoreWordRemoved_Callback cb) { sonnet__configwidget_slotignorewordremoved_callback = cb; }
+    inline void setSonnet__ConfigWidget_SlotIgnoreWordAdded_Callback(Sonnet__ConfigWidget_SlotIgnoreWordAdded_Callback cb) { sonnet__configwidget_slotignorewordadded_callback = cb; }
+    inline void setSonnet__ConfigWidget_UpdateMicroFocus_Callback(Sonnet__ConfigWidget_UpdateMicroFocus_Callback cb) { sonnet__configwidget_updatemicrofocus_callback = cb; }
+    inline void setSonnet__ConfigWidget_Create_Callback(Sonnet__ConfigWidget_Create_Callback cb) { sonnet__configwidget_create_callback = cb; }
+    inline void setSonnet__ConfigWidget_Destroy_Callback(Sonnet__ConfigWidget_Destroy_Callback cb) { sonnet__configwidget_destroy_callback = cb; }
+    inline void setSonnet__ConfigWidget_FocusNextChild_Callback(Sonnet__ConfigWidget_FocusNextChild_Callback cb) { sonnet__configwidget_focusnextchild_callback = cb; }
+    inline void setSonnet__ConfigWidget_FocusPreviousChild_Callback(Sonnet__ConfigWidget_FocusPreviousChild_Callback cb) { sonnet__configwidget_focuspreviouschild_callback = cb; }
+    inline void setSonnet__ConfigWidget_Sender_Callback(Sonnet__ConfigWidget_Sender_Callback cb) { sonnet__configwidget_sender_callback = cb; }
+    inline void setSonnet__ConfigWidget_SenderSignalIndex_Callback(Sonnet__ConfigWidget_SenderSignalIndex_Callback cb) { sonnet__configwidget_sendersignalindex_callback = cb; }
+    inline void setSonnet__ConfigWidget_Receivers_Callback(Sonnet__ConfigWidget_Receivers_Callback cb) { sonnet__configwidget_receivers_callback = cb; }
+    inline void setSonnet__ConfigWidget_IsSignalConnected_Callback(Sonnet__ConfigWidget_IsSignalConnected_Callback cb) { sonnet__configwidget_issignalconnected_callback = cb; }
+    inline void setSonnet__ConfigWidget_GetDecodedMetricF_Callback(Sonnet__ConfigWidget_GetDecodedMetricF_Callback cb) { sonnet__configwidget_getdecodedmetricf_callback = cb; }
+
+    // Base flag setters
+    inline void setSonnet__ConfigWidget_MetaObject_IsBase(bool value) const { sonnet__configwidget_metaobject_isbase = value; }
+    inline void setSonnet__ConfigWidget_Metacast_IsBase(bool value) const { sonnet__configwidget_metacast_isbase = value; }
+    inline void setSonnet__ConfigWidget_Metacall_IsBase(bool value) const { sonnet__configwidget_metacall_isbase = value; }
+    inline void setSonnet__ConfigWidget_DevType_IsBase(bool value) const { sonnet__configwidget_devtype_isbase = value; }
+    inline void setSonnet__ConfigWidget_SetVisible_IsBase(bool value) const { sonnet__configwidget_setvisible_isbase = value; }
+    inline void setSonnet__ConfigWidget_SizeHint_IsBase(bool value) const { sonnet__configwidget_sizehint_isbase = value; }
+    inline void setSonnet__ConfigWidget_MinimumSizeHint_IsBase(bool value) const { sonnet__configwidget_minimumsizehint_isbase = value; }
+    inline void setSonnet__ConfigWidget_HeightForWidth_IsBase(bool value) const { sonnet__configwidget_heightforwidth_isbase = value; }
+    inline void setSonnet__ConfigWidget_HasHeightForWidth_IsBase(bool value) const { sonnet__configwidget_hasheightforwidth_isbase = value; }
+    inline void setSonnet__ConfigWidget_PaintEngine_IsBase(bool value) const { sonnet__configwidget_paintengine_isbase = value; }
+    inline void setSonnet__ConfigWidget_Event_IsBase(bool value) const { sonnet__configwidget_event_isbase = value; }
+    inline void setSonnet__ConfigWidget_MousePressEvent_IsBase(bool value) const { sonnet__configwidget_mousepressevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_MouseReleaseEvent_IsBase(bool value) const { sonnet__configwidget_mousereleaseevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_MouseDoubleClickEvent_IsBase(bool value) const { sonnet__configwidget_mousedoubleclickevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_MouseMoveEvent_IsBase(bool value) const { sonnet__configwidget_mousemoveevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_WheelEvent_IsBase(bool value) const { sonnet__configwidget_wheelevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_KeyPressEvent_IsBase(bool value) const { sonnet__configwidget_keypressevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_KeyReleaseEvent_IsBase(bool value) const { sonnet__configwidget_keyreleaseevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_FocusInEvent_IsBase(bool value) const { sonnet__configwidget_focusinevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_FocusOutEvent_IsBase(bool value) const { sonnet__configwidget_focusoutevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_EnterEvent_IsBase(bool value) const { sonnet__configwidget_enterevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_LeaveEvent_IsBase(bool value) const { sonnet__configwidget_leaveevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_PaintEvent_IsBase(bool value) const { sonnet__configwidget_paintevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_MoveEvent_IsBase(bool value) const { sonnet__configwidget_moveevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_ResizeEvent_IsBase(bool value) const { sonnet__configwidget_resizeevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_CloseEvent_IsBase(bool value) const { sonnet__configwidget_closeevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_ContextMenuEvent_IsBase(bool value) const { sonnet__configwidget_contextmenuevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_TabletEvent_IsBase(bool value) const { sonnet__configwidget_tabletevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_ActionEvent_IsBase(bool value) const { sonnet__configwidget_actionevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_DragEnterEvent_IsBase(bool value) const { sonnet__configwidget_dragenterevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_DragMoveEvent_IsBase(bool value) const { sonnet__configwidget_dragmoveevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_DragLeaveEvent_IsBase(bool value) const { sonnet__configwidget_dragleaveevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_DropEvent_IsBase(bool value) const { sonnet__configwidget_dropevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_ShowEvent_IsBase(bool value) const { sonnet__configwidget_showevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_HideEvent_IsBase(bool value) const { sonnet__configwidget_hideevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_NativeEvent_IsBase(bool value) const { sonnet__configwidget_nativeevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_ChangeEvent_IsBase(bool value) const { sonnet__configwidget_changeevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_Metric_IsBase(bool value) const { sonnet__configwidget_metric_isbase = value; }
+    inline void setSonnet__ConfigWidget_InitPainter_IsBase(bool value) const { sonnet__configwidget_initpainter_isbase = value; }
+    inline void setSonnet__ConfigWidget_Redirected_IsBase(bool value) const { sonnet__configwidget_redirected_isbase = value; }
+    inline void setSonnet__ConfigWidget_SharedPainter_IsBase(bool value) const { sonnet__configwidget_sharedpainter_isbase = value; }
+    inline void setSonnet__ConfigWidget_InputMethodEvent_IsBase(bool value) const { sonnet__configwidget_inputmethodevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_InputMethodQuery_IsBase(bool value) const { sonnet__configwidget_inputmethodquery_isbase = value; }
+    inline void setSonnet__ConfigWidget_FocusNextPrevChild_IsBase(bool value) const { sonnet__configwidget_focusnextprevchild_isbase = value; }
+    inline void setSonnet__ConfigWidget_EventFilter_IsBase(bool value) const { sonnet__configwidget_eventfilter_isbase = value; }
+    inline void setSonnet__ConfigWidget_TimerEvent_IsBase(bool value) const { sonnet__configwidget_timerevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_ChildEvent_IsBase(bool value) const { sonnet__configwidget_childevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_CustomEvent_IsBase(bool value) const { sonnet__configwidget_customevent_isbase = value; }
+    inline void setSonnet__ConfigWidget_ConnectNotify_IsBase(bool value) const { sonnet__configwidget_connectnotify_isbase = value; }
+    inline void setSonnet__ConfigWidget_DisconnectNotify_IsBase(bool value) const { sonnet__configwidget_disconnectnotify_isbase = value; }
+    inline void setSonnet__ConfigWidget_SlotIgnoreWordRemoved_IsBase(bool value) const { sonnet__configwidget_slotignorewordremoved_isbase = value; }
+    inline void setSonnet__ConfigWidget_SlotIgnoreWordAdded_IsBase(bool value) const { sonnet__configwidget_slotignorewordadded_isbase = value; }
+    inline void setSonnet__ConfigWidget_UpdateMicroFocus_IsBase(bool value) const { sonnet__configwidget_updatemicrofocus_isbase = value; }
+    inline void setSonnet__ConfigWidget_Create_IsBase(bool value) const { sonnet__configwidget_create_isbase = value; }
+    inline void setSonnet__ConfigWidget_Destroy_IsBase(bool value) const { sonnet__configwidget_destroy_isbase = value; }
+    inline void setSonnet__ConfigWidget_FocusNextChild_IsBase(bool value) const { sonnet__configwidget_focusnextchild_isbase = value; }
+    inline void setSonnet__ConfigWidget_FocusPreviousChild_IsBase(bool value) const { sonnet__configwidget_focuspreviouschild_isbase = value; }
+    inline void setSonnet__ConfigWidget_Sender_IsBase(bool value) const { sonnet__configwidget_sender_isbase = value; }
+    inline void setSonnet__ConfigWidget_SenderSignalIndex_IsBase(bool value) const { sonnet__configwidget_sendersignalindex_isbase = value; }
+    inline void setSonnet__ConfigWidget_Receivers_IsBase(bool value) const { sonnet__configwidget_receivers_isbase = value; }
+    inline void setSonnet__ConfigWidget_IsSignalConnected_IsBase(bool value) const { sonnet__configwidget_issignalconnected_isbase = value; }
+    inline void setSonnet__ConfigWidget_GetDecodedMetricF_IsBase(bool value) const { sonnet__configwidget_getdecodedmetricf_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual const QMetaObject* metaObject() const override {
+        if (sonnet__configwidget_metaobject_isbase) {
+            sonnet__configwidget_metaobject_isbase = false;
+            return Sonnet__ConfigWidget::metaObject();
+        }
+        auto metaobject_cb = sonnet__configwidget_metaobject_callback;
+        if (metaobject_cb) {
+            QMetaObject* callback_ret = metaobject_cb();
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::metaObject();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void* qt_metacast(const char* param1) override {
+        if (sonnet__configwidget_metacast_isbase) {
+            sonnet__configwidget_metacast_isbase = false;
+            return Sonnet__ConfigWidget::qt_metacast(param1);
+        }
+        auto metacast_cb = sonnet__configwidget_metacast_callback;
+        if (metacast_cb) {
+            const char* cbval1 = (const char*)param1;
+
+            void* callback_ret = metacast_cb(this, cbval1);
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::qt_metacast(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int qt_metacall(QMetaObject::Call param1, int param2, void** param3) override {
+        if (sonnet__configwidget_metacall_isbase) {
+            sonnet__configwidget_metacall_isbase = false;
+            return Sonnet__ConfigWidget::qt_metacall(param1, param2, param3);
+        }
+        auto metacall_cb = sonnet__configwidget_metacall_callback;
+        if (metacall_cb) {
+            int cbval1 = static_cast<int>(param1);
+            int cbval2 = param2;
+            void** cbval3 = param3;
+
+            int callback_ret = metacall_cb(this, cbval1, cbval2, cbval3);
+            return static_cast<int>(callback_ret);
+        }
+        return Sonnet__ConfigWidget::qt_metacall(param1, param2, param3);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int devType() const override {
+        if (sonnet__configwidget_devtype_isbase) {
+            sonnet__configwidget_devtype_isbase = false;
+            return Sonnet__ConfigWidget::devType();
+        }
+        auto devtype_cb = sonnet__configwidget_devtype_callback;
+        if (devtype_cb) {
+            int callback_ret = devtype_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return Sonnet__ConfigWidget::devType();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setVisible(bool visible) override {
+        if (sonnet__configwidget_setvisible_isbase) {
+            sonnet__configwidget_setvisible_isbase = false;
+            Sonnet__ConfigWidget::setVisible(visible);
+            return;
+        }
+        auto setvisible_cb = sonnet__configwidget_setvisible_callback;
+        if (setvisible_cb) {
+            bool cbval1 = visible;
+
+            setvisible_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::setVisible(visible);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QSize sizeHint() const override {
+        if (sonnet__configwidget_sizehint_isbase) {
+            sonnet__configwidget_sizehint_isbase = false;
+            return Sonnet__ConfigWidget::sizeHint();
+        }
+        auto sizehint_cb = sonnet__configwidget_sizehint_callback;
+        if (sizehint_cb) {
+            QSize* callback_ret = sizehint_cb();
+            return *callback_ret;
+        }
+        return Sonnet__ConfigWidget::sizeHint();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QSize minimumSizeHint() const override {
+        if (sonnet__configwidget_minimumsizehint_isbase) {
+            sonnet__configwidget_minimumsizehint_isbase = false;
+            return Sonnet__ConfigWidget::minimumSizeHint();
+        }
+        auto minimumsizehint_cb = sonnet__configwidget_minimumsizehint_callback;
+        if (minimumsizehint_cb) {
+            QSize* callback_ret = minimumsizehint_cb();
+            return *callback_ret;
+        }
+        return Sonnet__ConfigWidget::minimumSizeHint();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int heightForWidth(int param1) const override {
+        if (sonnet__configwidget_heightforwidth_isbase) {
+            sonnet__configwidget_heightforwidth_isbase = false;
+            return Sonnet__ConfigWidget::heightForWidth(param1);
+        }
+        auto heightforwidth_cb = sonnet__configwidget_heightforwidth_callback;
+        if (heightforwidth_cb) {
+            int cbval1 = param1;
+
+            int callback_ret = heightforwidth_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return Sonnet__ConfigWidget::heightForWidth(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool hasHeightForWidth() const override {
+        if (sonnet__configwidget_hasheightforwidth_isbase) {
+            sonnet__configwidget_hasheightforwidth_isbase = false;
+            return Sonnet__ConfigWidget::hasHeightForWidth();
+        }
+        auto hasheightforwidth_cb = sonnet__configwidget_hasheightforwidth_callback;
+        if (hasheightforwidth_cb) {
+            bool callback_ret = hasheightforwidth_cb();
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::hasHeightForWidth();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QPaintEngine* paintEngine() const override {
+        if (sonnet__configwidget_paintengine_isbase) {
+            sonnet__configwidget_paintengine_isbase = false;
+            return Sonnet__ConfigWidget::paintEngine();
+        }
+        auto paintengine_cb = sonnet__configwidget_paintengine_callback;
+        if (paintengine_cb) {
+            QPaintEngine* callback_ret = paintengine_cb();
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::paintEngine();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool event(QEvent* event) override {
+        if (sonnet__configwidget_event_isbase) {
+            sonnet__configwidget_event_isbase = false;
+            return Sonnet__ConfigWidget::event(event);
+        }
+        auto event_cb = sonnet__configwidget_event_callback;
+        if (event_cb) {
+            QEvent* cbval1 = event;
+
+            bool callback_ret = event_cb(this, cbval1);
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::event(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mousePressEvent(QMouseEvent* event) override {
+        if (sonnet__configwidget_mousepressevent_isbase) {
+            sonnet__configwidget_mousepressevent_isbase = false;
+            Sonnet__ConfigWidget::mousePressEvent(event);
+            return;
+        }
+        auto mousepressevent_cb = sonnet__configwidget_mousepressevent_callback;
+        if (mousepressevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousepressevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::mousePressEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mouseReleaseEvent(QMouseEvent* event) override {
+        if (sonnet__configwidget_mousereleaseevent_isbase) {
+            sonnet__configwidget_mousereleaseevent_isbase = false;
+            Sonnet__ConfigWidget::mouseReleaseEvent(event);
+            return;
+        }
+        auto mousereleaseevent_cb = sonnet__configwidget_mousereleaseevent_callback;
+        if (mousereleaseevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousereleaseevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::mouseReleaseEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mouseDoubleClickEvent(QMouseEvent* event) override {
+        if (sonnet__configwidget_mousedoubleclickevent_isbase) {
+            sonnet__configwidget_mousedoubleclickevent_isbase = false;
+            Sonnet__ConfigWidget::mouseDoubleClickEvent(event);
+            return;
+        }
+        auto mousedoubleclickevent_cb = sonnet__configwidget_mousedoubleclickevent_callback;
+        if (mousedoubleclickevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousedoubleclickevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::mouseDoubleClickEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void mouseMoveEvent(QMouseEvent* event) override {
+        if (sonnet__configwidget_mousemoveevent_isbase) {
+            sonnet__configwidget_mousemoveevent_isbase = false;
+            Sonnet__ConfigWidget::mouseMoveEvent(event);
+            return;
+        }
+        auto mousemoveevent_cb = sonnet__configwidget_mousemoveevent_callback;
+        if (mousemoveevent_cb) {
+            QMouseEvent* cbval1 = event;
+
+            mousemoveevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::mouseMoveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void wheelEvent(QWheelEvent* event) override {
+        if (sonnet__configwidget_wheelevent_isbase) {
+            sonnet__configwidget_wheelevent_isbase = false;
+            Sonnet__ConfigWidget::wheelEvent(event);
+            return;
+        }
+        auto wheelevent_cb = sonnet__configwidget_wheelevent_callback;
+        if (wheelevent_cb) {
+            QWheelEvent* cbval1 = event;
+
+            wheelevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::wheelEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void keyPressEvent(QKeyEvent* event) override {
+        if (sonnet__configwidget_keypressevent_isbase) {
+            sonnet__configwidget_keypressevent_isbase = false;
+            Sonnet__ConfigWidget::keyPressEvent(event);
+            return;
+        }
+        auto keypressevent_cb = sonnet__configwidget_keypressevent_callback;
+        if (keypressevent_cb) {
+            QKeyEvent* cbval1 = event;
+
+            keypressevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::keyPressEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void keyReleaseEvent(QKeyEvent* event) override {
+        if (sonnet__configwidget_keyreleaseevent_isbase) {
+            sonnet__configwidget_keyreleaseevent_isbase = false;
+            Sonnet__ConfigWidget::keyReleaseEvent(event);
+            return;
+        }
+        auto keyreleaseevent_cb = sonnet__configwidget_keyreleaseevent_callback;
+        if (keyreleaseevent_cb) {
+            QKeyEvent* cbval1 = event;
+
+            keyreleaseevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::keyReleaseEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void focusInEvent(QFocusEvent* event) override {
+        if (sonnet__configwidget_focusinevent_isbase) {
+            sonnet__configwidget_focusinevent_isbase = false;
+            Sonnet__ConfigWidget::focusInEvent(event);
+            return;
+        }
+        auto focusinevent_cb = sonnet__configwidget_focusinevent_callback;
+        if (focusinevent_cb) {
+            QFocusEvent* cbval1 = event;
+
+            focusinevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::focusInEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void focusOutEvent(QFocusEvent* event) override {
+        if (sonnet__configwidget_focusoutevent_isbase) {
+            sonnet__configwidget_focusoutevent_isbase = false;
+            Sonnet__ConfigWidget::focusOutEvent(event);
+            return;
+        }
+        auto focusoutevent_cb = sonnet__configwidget_focusoutevent_callback;
+        if (focusoutevent_cb) {
+            QFocusEvent* cbval1 = event;
+
+            focusoutevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::focusOutEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void enterEvent(QEnterEvent* event) override {
+        if (sonnet__configwidget_enterevent_isbase) {
+            sonnet__configwidget_enterevent_isbase = false;
+            Sonnet__ConfigWidget::enterEvent(event);
+            return;
+        }
+        auto enterevent_cb = sonnet__configwidget_enterevent_callback;
+        if (enterevent_cb) {
+            QEnterEvent* cbval1 = event;
+
+            enterevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::enterEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void leaveEvent(QEvent* event) override {
+        if (sonnet__configwidget_leaveevent_isbase) {
+            sonnet__configwidget_leaveevent_isbase = false;
+            Sonnet__ConfigWidget::leaveEvent(event);
+            return;
+        }
+        auto leaveevent_cb = sonnet__configwidget_leaveevent_callback;
+        if (leaveevent_cb) {
+            QEvent* cbval1 = event;
+
+            leaveevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::leaveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void paintEvent(QPaintEvent* event) override {
+        if (sonnet__configwidget_paintevent_isbase) {
+            sonnet__configwidget_paintevent_isbase = false;
+            Sonnet__ConfigWidget::paintEvent(event);
+            return;
+        }
+        auto paintevent_cb = sonnet__configwidget_paintevent_callback;
+        if (paintevent_cb) {
+            QPaintEvent* cbval1 = event;
+
+            paintevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::paintEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void moveEvent(QMoveEvent* event) override {
+        if (sonnet__configwidget_moveevent_isbase) {
+            sonnet__configwidget_moveevent_isbase = false;
+            Sonnet__ConfigWidget::moveEvent(event);
+            return;
+        }
+        auto moveevent_cb = sonnet__configwidget_moveevent_callback;
+        if (moveevent_cb) {
+            QMoveEvent* cbval1 = event;
+
+            moveevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::moveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void resizeEvent(QResizeEvent* event) override {
+        if (sonnet__configwidget_resizeevent_isbase) {
+            sonnet__configwidget_resizeevent_isbase = false;
+            Sonnet__ConfigWidget::resizeEvent(event);
+            return;
+        }
+        auto resizeevent_cb = sonnet__configwidget_resizeevent_callback;
+        if (resizeevent_cb) {
+            QResizeEvent* cbval1 = event;
+
+            resizeevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::resizeEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void closeEvent(QCloseEvent* event) override {
+        if (sonnet__configwidget_closeevent_isbase) {
+            sonnet__configwidget_closeevent_isbase = false;
+            Sonnet__ConfigWidget::closeEvent(event);
+            return;
+        }
+        auto closeevent_cb = sonnet__configwidget_closeevent_callback;
+        if (closeevent_cb) {
+            QCloseEvent* cbval1 = event;
+
+            closeevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::closeEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void contextMenuEvent(QContextMenuEvent* event) override {
+        if (sonnet__configwidget_contextmenuevent_isbase) {
+            sonnet__configwidget_contextmenuevent_isbase = false;
+            Sonnet__ConfigWidget::contextMenuEvent(event);
+            return;
+        }
+        auto contextmenuevent_cb = sonnet__configwidget_contextmenuevent_callback;
+        if (contextmenuevent_cb) {
+            QContextMenuEvent* cbval1 = event;
+
+            contextmenuevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::contextMenuEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void tabletEvent(QTabletEvent* event) override {
+        if (sonnet__configwidget_tabletevent_isbase) {
+            sonnet__configwidget_tabletevent_isbase = false;
+            Sonnet__ConfigWidget::tabletEvent(event);
+            return;
+        }
+        auto tabletevent_cb = sonnet__configwidget_tabletevent_callback;
+        if (tabletevent_cb) {
+            QTabletEvent* cbval1 = event;
+
+            tabletevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::tabletEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void actionEvent(QActionEvent* event) override {
+        if (sonnet__configwidget_actionevent_isbase) {
+            sonnet__configwidget_actionevent_isbase = false;
+            Sonnet__ConfigWidget::actionEvent(event);
+            return;
+        }
+        auto actionevent_cb = sonnet__configwidget_actionevent_callback;
+        if (actionevent_cb) {
+            QActionEvent* cbval1 = event;
+
+            actionevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::actionEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dragEnterEvent(QDragEnterEvent* event) override {
+        if (sonnet__configwidget_dragenterevent_isbase) {
+            sonnet__configwidget_dragenterevent_isbase = false;
+            Sonnet__ConfigWidget::dragEnterEvent(event);
+            return;
+        }
+        auto dragenterevent_cb = sonnet__configwidget_dragenterevent_callback;
+        if (dragenterevent_cb) {
+            QDragEnterEvent* cbval1 = event;
+
+            dragenterevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::dragEnterEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dragMoveEvent(QDragMoveEvent* event) override {
+        if (sonnet__configwidget_dragmoveevent_isbase) {
+            sonnet__configwidget_dragmoveevent_isbase = false;
+            Sonnet__ConfigWidget::dragMoveEvent(event);
+            return;
+        }
+        auto dragmoveevent_cb = sonnet__configwidget_dragmoveevent_callback;
+        if (dragmoveevent_cb) {
+            QDragMoveEvent* cbval1 = event;
+
+            dragmoveevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::dragMoveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dragLeaveEvent(QDragLeaveEvent* event) override {
+        if (sonnet__configwidget_dragleaveevent_isbase) {
+            sonnet__configwidget_dragleaveevent_isbase = false;
+            Sonnet__ConfigWidget::dragLeaveEvent(event);
+            return;
+        }
+        auto dragleaveevent_cb = sonnet__configwidget_dragleaveevent_callback;
+        if (dragleaveevent_cb) {
+            QDragLeaveEvent* cbval1 = event;
+
+            dragleaveevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::dragLeaveEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void dropEvent(QDropEvent* event) override {
+        if (sonnet__configwidget_dropevent_isbase) {
+            sonnet__configwidget_dropevent_isbase = false;
+            Sonnet__ConfigWidget::dropEvent(event);
+            return;
+        }
+        auto dropevent_cb = sonnet__configwidget_dropevent_callback;
+        if (dropevent_cb) {
+            QDropEvent* cbval1 = event;
+
+            dropevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::dropEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void showEvent(QShowEvent* event) override {
+        if (sonnet__configwidget_showevent_isbase) {
+            sonnet__configwidget_showevent_isbase = false;
+            Sonnet__ConfigWidget::showEvent(event);
+            return;
+        }
+        auto showevent_cb = sonnet__configwidget_showevent_callback;
+        if (showevent_cb) {
+            QShowEvent* cbval1 = event;
+
+            showevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::showEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void hideEvent(QHideEvent* event) override {
+        if (sonnet__configwidget_hideevent_isbase) {
+            sonnet__configwidget_hideevent_isbase = false;
+            Sonnet__ConfigWidget::hideEvent(event);
+            return;
+        }
+        auto hideevent_cb = sonnet__configwidget_hideevent_callback;
+        if (hideevent_cb) {
+            QHideEvent* cbval1 = event;
+
+            hideevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::hideEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool nativeEvent(const QByteArray& eventType, void* message, qintptr* result) override {
+        if (sonnet__configwidget_nativeevent_isbase) {
+            sonnet__configwidget_nativeevent_isbase = false;
+            return Sonnet__ConfigWidget::nativeEvent(eventType, message, result);
+        }
+        auto nativeevent_cb = sonnet__configwidget_nativeevent_callback;
+        if (nativeevent_cb) {
+            const QByteArray eventType_qb = eventType;
+            libqt_string eventType_str;
+            eventType_str.len = eventType_qb.length();
+            eventType_str.data = static_cast<char*>(malloc(eventType_str.len));
+            memcpy((void*)eventType_str.data, eventType_qb.data(), eventType_str.len);
+            libqt_string cbval1 = eventType_str;
+            void* cbval2 = message;
+            qintptr* result_ret = result;
+            intptr_t* cbval3 = (intptr_t*)(result_ret);
+
+            bool callback_ret = nativeevent_cb(this, cbval1, cbval2, cbval3);
+            libqt_free(eventType_str.data);
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::nativeEvent(eventType, message, result);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void changeEvent(QEvent* param1) override {
+        if (sonnet__configwidget_changeevent_isbase) {
+            sonnet__configwidget_changeevent_isbase = false;
+            Sonnet__ConfigWidget::changeEvent(param1);
+            return;
+        }
+        auto changeevent_cb = sonnet__configwidget_changeevent_callback;
+        if (changeevent_cb) {
+            QEvent* cbval1 = param1;
+
+            changeevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::changeEvent(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual int metric(QPaintDevice::PaintDeviceMetric param1) const override {
+        if (sonnet__configwidget_metric_isbase) {
+            sonnet__configwidget_metric_isbase = false;
+            return Sonnet__ConfigWidget::metric(param1);
+        }
+        auto metric_cb = sonnet__configwidget_metric_callback;
+        if (metric_cb) {
+            int cbval1 = static_cast<int>(param1);
+
+            int callback_ret = metric_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return Sonnet__ConfigWidget::metric(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void initPainter(QPainter* painter) const override {
+        if (sonnet__configwidget_initpainter_isbase) {
+            sonnet__configwidget_initpainter_isbase = false;
+            Sonnet__ConfigWidget::initPainter(painter);
+            return;
+        }
+        auto initpainter_cb = sonnet__configwidget_initpainter_callback;
+        if (initpainter_cb) {
+            QPainter* cbval1 = painter;
+
+            initpainter_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::initPainter(painter);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QPaintDevice* redirected(QPoint* offset) const override {
+        if (sonnet__configwidget_redirected_isbase) {
+            sonnet__configwidget_redirected_isbase = false;
+            return Sonnet__ConfigWidget::redirected(offset);
+        }
+        auto redirected_cb = sonnet__configwidget_redirected_callback;
+        if (redirected_cb) {
+            QPoint* cbval1 = offset;
+
+            QPaintDevice* callback_ret = redirected_cb(this, cbval1);
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::redirected(offset);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QPainter* sharedPainter() const override {
+        if (sonnet__configwidget_sharedpainter_isbase) {
+            sonnet__configwidget_sharedpainter_isbase = false;
+            return Sonnet__ConfigWidget::sharedPainter();
+        }
+        auto sharedpainter_cb = sonnet__configwidget_sharedpainter_callback;
+        if (sharedpainter_cb) {
+            QPainter* callback_ret = sharedpainter_cb();
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::sharedPainter();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void inputMethodEvent(QInputMethodEvent* param1) override {
+        if (sonnet__configwidget_inputmethodevent_isbase) {
+            sonnet__configwidget_inputmethodevent_isbase = false;
+            Sonnet__ConfigWidget::inputMethodEvent(param1);
+            return;
+        }
+        auto inputmethodevent_cb = sonnet__configwidget_inputmethodevent_callback;
+        if (inputmethodevent_cb) {
+            QInputMethodEvent* cbval1 = param1;
+
+            inputmethodevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::inputMethodEvent(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QVariant inputMethodQuery(Qt::InputMethodQuery param1) const override {
+        if (sonnet__configwidget_inputmethodquery_isbase) {
+            sonnet__configwidget_inputmethodquery_isbase = false;
+            return Sonnet__ConfigWidget::inputMethodQuery(param1);
+        }
+        auto inputmethodquery_cb = sonnet__configwidget_inputmethodquery_callback;
+        if (inputmethodquery_cb) {
+            int cbval1 = static_cast<int>(param1);
+
+            QVariant* callback_ret = inputmethodquery_cb(this, cbval1);
+            return *callback_ret;
+        }
+        return Sonnet__ConfigWidget::inputMethodQuery(param1);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool focusNextPrevChild(bool next) override {
+        if (sonnet__configwidget_focusnextprevchild_isbase) {
+            sonnet__configwidget_focusnextprevchild_isbase = false;
+            return Sonnet__ConfigWidget::focusNextPrevChild(next);
+        }
+        auto focusnextprevchild_cb = sonnet__configwidget_focusnextprevchild_callback;
+        if (focusnextprevchild_cb) {
+            bool cbval1 = next;
+
+            bool callback_ret = focusnextprevchild_cb(this, cbval1);
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::focusNextPrevChild(next);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual bool eventFilter(QObject* watched, QEvent* event) override {
+        if (sonnet__configwidget_eventfilter_isbase) {
+            sonnet__configwidget_eventfilter_isbase = false;
+            return Sonnet__ConfigWidget::eventFilter(watched, event);
+        }
+        auto eventfilter_cb = sonnet__configwidget_eventfilter_callback;
+        if (eventfilter_cb) {
+            QObject* cbval1 = watched;
+            QEvent* cbval2 = event;
+
+            bool callback_ret = eventfilter_cb(this, cbval1, cbval2);
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::eventFilter(watched, event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void timerEvent(QTimerEvent* event) override {
+        if (sonnet__configwidget_timerevent_isbase) {
+            sonnet__configwidget_timerevent_isbase = false;
+            Sonnet__ConfigWidget::timerEvent(event);
+            return;
+        }
+        auto timerevent_cb = sonnet__configwidget_timerevent_callback;
+        if (timerevent_cb) {
+            QTimerEvent* cbval1 = event;
+
+            timerevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::timerEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void childEvent(QChildEvent* event) override {
+        if (sonnet__configwidget_childevent_isbase) {
+            sonnet__configwidget_childevent_isbase = false;
+            Sonnet__ConfigWidget::childEvent(event);
+            return;
+        }
+        auto childevent_cb = sonnet__configwidget_childevent_callback;
+        if (childevent_cb) {
+            QChildEvent* cbval1 = event;
+
+            childevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::childEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void customEvent(QEvent* event) override {
+        if (sonnet__configwidget_customevent_isbase) {
+            sonnet__configwidget_customevent_isbase = false;
+            Sonnet__ConfigWidget::customEvent(event);
+            return;
+        }
+        auto customevent_cb = sonnet__configwidget_customevent_callback;
+        if (customevent_cb) {
+            QEvent* cbval1 = event;
+
+            customevent_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::customEvent(event);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void connectNotify(const QMetaMethod& signal) override {
+        if (sonnet__configwidget_connectnotify_isbase) {
+            sonnet__configwidget_connectnotify_isbase = false;
+            Sonnet__ConfigWidget::connectNotify(signal);
+            return;
+        }
+        auto connectnotify_cb = sonnet__configwidget_connectnotify_callback;
+        if (connectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            connectnotify_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::connectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void disconnectNotify(const QMetaMethod& signal) override {
+        if (sonnet__configwidget_disconnectnotify_isbase) {
+            sonnet__configwidget_disconnectnotify_isbase = false;
+            Sonnet__ConfigWidget::disconnectNotify(signal);
+            return;
+        }
+        auto disconnectnotify_cb = sonnet__configwidget_disconnectnotify_callback;
+        if (disconnectnotify_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            disconnectnotify_cb(this, cbval1);
+            return;
+        }
+        Sonnet__ConfigWidget::disconnectNotify(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void slotIgnoreWordRemoved() {
+        if (sonnet__configwidget_slotignorewordremoved_isbase) {
+            sonnet__configwidget_slotignorewordremoved_isbase = false;
+            Sonnet__ConfigWidget::slotIgnoreWordRemoved();
+            return;
+        }
+        auto slotignorewordremoved_cb = sonnet__configwidget_slotignorewordremoved_callback;
+        if (slotignorewordremoved_cb) {
+            slotignorewordremoved_cb();
+            return;
+        }
+        Sonnet__ConfigWidget::slotIgnoreWordRemoved();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void slotIgnoreWordAdded() {
+        if (sonnet__configwidget_slotignorewordadded_isbase) {
+            sonnet__configwidget_slotignorewordadded_isbase = false;
+            Sonnet__ConfigWidget::slotIgnoreWordAdded();
+            return;
+        }
+        auto slotignorewordadded_cb = sonnet__configwidget_slotignorewordadded_callback;
+        if (slotignorewordadded_cb) {
+            slotignorewordadded_cb();
+            return;
+        }
+        Sonnet__ConfigWidget::slotIgnoreWordAdded();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void updateMicroFocus() {
+        if (sonnet__configwidget_updatemicrofocus_isbase) {
+            sonnet__configwidget_updatemicrofocus_isbase = false;
+            Sonnet__ConfigWidget::updateMicroFocus();
+            return;
+        }
+        auto updatemicrofocus_cb = sonnet__configwidget_updatemicrofocus_callback;
+        if (updatemicrofocus_cb) {
+            updatemicrofocus_cb();
+            return;
+        }
+        Sonnet__ConfigWidget::updateMicroFocus();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void create() {
+        if (sonnet__configwidget_create_isbase) {
+            sonnet__configwidget_create_isbase = false;
+            Sonnet__ConfigWidget::create();
+            return;
+        }
+        auto create_cb = sonnet__configwidget_create_callback;
+        if (create_cb) {
+            create_cb();
+            return;
+        }
+        Sonnet__ConfigWidget::create();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    void destroy() {
+        if (sonnet__configwidget_destroy_isbase) {
+            sonnet__configwidget_destroy_isbase = false;
+            Sonnet__ConfigWidget::destroy();
+            return;
+        }
+        auto destroy_cb = sonnet__configwidget_destroy_callback;
+        if (destroy_cb) {
+            destroy_cb();
+            return;
+        }
+        Sonnet__ConfigWidget::destroy();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool focusNextChild() {
+        if (sonnet__configwidget_focusnextchild_isbase) {
+            sonnet__configwidget_focusnextchild_isbase = false;
+            return Sonnet__ConfigWidget::focusNextChild();
+        }
+        auto focusnextchild_cb = sonnet__configwidget_focusnextchild_callback;
+        if (focusnextchild_cb) {
+            bool callback_ret = focusnextchild_cb();
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::focusNextChild();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool focusPreviousChild() {
+        if (sonnet__configwidget_focuspreviouschild_isbase) {
+            sonnet__configwidget_focuspreviouschild_isbase = false;
+            return Sonnet__ConfigWidget::focusPreviousChild();
+        }
+        auto focuspreviouschild_cb = sonnet__configwidget_focuspreviouschild_callback;
+        if (focuspreviouschild_cb) {
+            bool callback_ret = focuspreviouschild_cb();
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::focusPreviousChild();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    QObject* sender() const {
+        if (sonnet__configwidget_sender_isbase) {
+            sonnet__configwidget_sender_isbase = false;
+            return Sonnet__ConfigWidget::sender();
+        }
+        auto sender_cb = sonnet__configwidget_sender_callback;
+        if (sender_cb) {
+            QObject* callback_ret = sender_cb();
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::sender();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int senderSignalIndex() const {
+        if (sonnet__configwidget_sendersignalindex_isbase) {
+            sonnet__configwidget_sendersignalindex_isbase = false;
+            return Sonnet__ConfigWidget::senderSignalIndex();
+        }
+        auto sendersignalindex_cb = sonnet__configwidget_sendersignalindex_callback;
+        if (sendersignalindex_cb) {
+            int callback_ret = sendersignalindex_cb();
+            return static_cast<int>(callback_ret);
+        }
+        return Sonnet__ConfigWidget::senderSignalIndex();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    int receivers(const char* signal) const {
+        if (sonnet__configwidget_receivers_isbase) {
+            sonnet__configwidget_receivers_isbase = false;
+            return Sonnet__ConfigWidget::receivers(signal);
+        }
+        auto receivers_cb = sonnet__configwidget_receivers_callback;
+        if (receivers_cb) {
+            const char* cbval1 = (const char*)signal;
+
+            int callback_ret = receivers_cb(this, cbval1);
+            return static_cast<int>(callback_ret);
+        }
+        return Sonnet__ConfigWidget::receivers(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    bool isSignalConnected(const QMetaMethod& signal) const {
+        if (sonnet__configwidget_issignalconnected_isbase) {
+            sonnet__configwidget_issignalconnected_isbase = false;
+            return Sonnet__ConfigWidget::isSignalConnected(signal);
+        }
+        auto issignalconnected_cb = sonnet__configwidget_issignalconnected_callback;
+        if (issignalconnected_cb) {
+            const QMetaMethod& signal_ret = signal;
+            // Cast returned reference into pointer
+            QMetaMethod* cbval1 = const_cast<QMetaMethod*>(&signal_ret);
+
+            bool callback_ret = issignalconnected_cb(this, cbval1);
+            return callback_ret;
+        }
+        return Sonnet__ConfigWidget::isSignalConnected(signal);
+    }
+
+    // Virtual method for C ABI access and custom callback
+    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
+        if (sonnet__configwidget_getdecodedmetricf_isbase) {
+            sonnet__configwidget_getdecodedmetricf_isbase = false;
+            return Sonnet__ConfigWidget::getDecodedMetricF(metricA, metricB);
+        }
+        auto getdecodedmetricf_cb = sonnet__configwidget_getdecodedmetricf_callback;
+        if (getdecodedmetricf_cb) {
+            int cbval1 = static_cast<int>(metricA);
+            int cbval2 = static_cast<int>(metricB);
+
+            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
+            return static_cast<double>(callback_ret);
+        }
+        return Sonnet__ConfigWidget::getDecodedMetricF(metricA, metricB);
+    }
+
+    // Friend functions
+    friend bool Sonnet__ConfigWidget_Event(Sonnet::ConfigWidget* self, QEvent* event);
+    friend bool Sonnet__ConfigWidget_SuperEvent(Sonnet::ConfigWidget* self, QEvent* event);
+    friend void Sonnet__ConfigWidget_MousePressEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_SuperMousePressEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_MouseReleaseEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_SuperMouseReleaseEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_MouseDoubleClickEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_SuperMouseDoubleClickEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_MouseMoveEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_SuperMouseMoveEvent(Sonnet::ConfigWidget* self, QMouseEvent* event);
+    friend void Sonnet__ConfigWidget_WheelEvent(Sonnet::ConfigWidget* self, QWheelEvent* event);
+    friend void Sonnet__ConfigWidget_SuperWheelEvent(Sonnet::ConfigWidget* self, QWheelEvent* event);
+    friend void Sonnet__ConfigWidget_KeyPressEvent(Sonnet::ConfigWidget* self, QKeyEvent* event);
+    friend void Sonnet__ConfigWidget_SuperKeyPressEvent(Sonnet::ConfigWidget* self, QKeyEvent* event);
+    friend void Sonnet__ConfigWidget_KeyReleaseEvent(Sonnet::ConfigWidget* self, QKeyEvent* event);
+    friend void Sonnet__ConfigWidget_SuperKeyReleaseEvent(Sonnet::ConfigWidget* self, QKeyEvent* event);
+    friend void Sonnet__ConfigWidget_FocusInEvent(Sonnet::ConfigWidget* self, QFocusEvent* event);
+    friend void Sonnet__ConfigWidget_SuperFocusInEvent(Sonnet::ConfigWidget* self, QFocusEvent* event);
+    friend void Sonnet__ConfigWidget_FocusOutEvent(Sonnet::ConfigWidget* self, QFocusEvent* event);
+    friend void Sonnet__ConfigWidget_SuperFocusOutEvent(Sonnet::ConfigWidget* self, QFocusEvent* event);
+    friend void Sonnet__ConfigWidget_EnterEvent(Sonnet::ConfigWidget* self, QEnterEvent* event);
+    friend void Sonnet__ConfigWidget_SuperEnterEvent(Sonnet::ConfigWidget* self, QEnterEvent* event);
+    friend void Sonnet__ConfigWidget_LeaveEvent(Sonnet::ConfigWidget* self, QEvent* event);
+    friend void Sonnet__ConfigWidget_SuperLeaveEvent(Sonnet::ConfigWidget* self, QEvent* event);
+    friend void Sonnet__ConfigWidget_PaintEvent(Sonnet::ConfigWidget* self, QPaintEvent* event);
+    friend void Sonnet__ConfigWidget_SuperPaintEvent(Sonnet::ConfigWidget* self, QPaintEvent* event);
+    friend void Sonnet__ConfigWidget_MoveEvent(Sonnet::ConfigWidget* self, QMoveEvent* event);
+    friend void Sonnet__ConfigWidget_SuperMoveEvent(Sonnet::ConfigWidget* self, QMoveEvent* event);
+    friend void Sonnet__ConfigWidget_ResizeEvent(Sonnet::ConfigWidget* self, QResizeEvent* event);
+    friend void Sonnet__ConfigWidget_SuperResizeEvent(Sonnet::ConfigWidget* self, QResizeEvent* event);
+    friend void Sonnet__ConfigWidget_CloseEvent(Sonnet::ConfigWidget* self, QCloseEvent* event);
+    friend void Sonnet__ConfigWidget_SuperCloseEvent(Sonnet::ConfigWidget* self, QCloseEvent* event);
+    friend void Sonnet__ConfigWidget_ContextMenuEvent(Sonnet::ConfigWidget* self, QContextMenuEvent* event);
+    friend void Sonnet__ConfigWidget_SuperContextMenuEvent(Sonnet::ConfigWidget* self, QContextMenuEvent* event);
+    friend void Sonnet__ConfigWidget_TabletEvent(Sonnet::ConfigWidget* self, QTabletEvent* event);
+    friend void Sonnet__ConfigWidget_SuperTabletEvent(Sonnet::ConfigWidget* self, QTabletEvent* event);
+    friend void Sonnet__ConfigWidget_ActionEvent(Sonnet::ConfigWidget* self, QActionEvent* event);
+    friend void Sonnet__ConfigWidget_SuperActionEvent(Sonnet::ConfigWidget* self, QActionEvent* event);
+    friend void Sonnet__ConfigWidget_DragEnterEvent(Sonnet::ConfigWidget* self, QDragEnterEvent* event);
+    friend void Sonnet__ConfigWidget_SuperDragEnterEvent(Sonnet::ConfigWidget* self, QDragEnterEvent* event);
+    friend void Sonnet__ConfigWidget_DragMoveEvent(Sonnet::ConfigWidget* self, QDragMoveEvent* event);
+    friend void Sonnet__ConfigWidget_SuperDragMoveEvent(Sonnet::ConfigWidget* self, QDragMoveEvent* event);
+    friend void Sonnet__ConfigWidget_DragLeaveEvent(Sonnet::ConfigWidget* self, QDragLeaveEvent* event);
+    friend void Sonnet__ConfigWidget_SuperDragLeaveEvent(Sonnet::ConfigWidget* self, QDragLeaveEvent* event);
+    friend void Sonnet__ConfigWidget_DropEvent(Sonnet::ConfigWidget* self, QDropEvent* event);
+    friend void Sonnet__ConfigWidget_SuperDropEvent(Sonnet::ConfigWidget* self, QDropEvent* event);
+    friend void Sonnet__ConfigWidget_ShowEvent(Sonnet::ConfigWidget* self, QShowEvent* event);
+    friend void Sonnet__ConfigWidget_SuperShowEvent(Sonnet::ConfigWidget* self, QShowEvent* event);
+    friend void Sonnet__ConfigWidget_HideEvent(Sonnet::ConfigWidget* self, QHideEvent* event);
+    friend void Sonnet__ConfigWidget_SuperHideEvent(Sonnet::ConfigWidget* self, QHideEvent* event);
+    friend bool Sonnet__ConfigWidget_NativeEvent(Sonnet::ConfigWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+    friend bool Sonnet__ConfigWidget_SuperNativeEvent(Sonnet::ConfigWidget* self, const libqt_string eventType, void* message, intptr_t* result);
+    friend void Sonnet__ConfigWidget_ChangeEvent(Sonnet::ConfigWidget* self, QEvent* param1);
+    friend void Sonnet__ConfigWidget_SuperChangeEvent(Sonnet::ConfigWidget* self, QEvent* param1);
+    friend int Sonnet__ConfigWidget_Metric(const Sonnet::ConfigWidget* self, int param1);
+    friend int Sonnet__ConfigWidget_SuperMetric(const Sonnet::ConfigWidget* self, int param1);
+    friend void Sonnet__ConfigWidget_InitPainter(const Sonnet::ConfigWidget* self, QPainter* painter);
+    friend void Sonnet__ConfigWidget_SuperInitPainter(const Sonnet::ConfigWidget* self, QPainter* painter);
+    friend QPaintDevice* Sonnet__ConfigWidget_Redirected(const Sonnet::ConfigWidget* self, QPoint* offset);
+    friend QPaintDevice* Sonnet__ConfigWidget_SuperRedirected(const Sonnet::ConfigWidget* self, QPoint* offset);
+    friend QPainter* Sonnet__ConfigWidget_SharedPainter(const Sonnet::ConfigWidget* self);
+    friend QPainter* Sonnet__ConfigWidget_SuperSharedPainter(const Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_InputMethodEvent(Sonnet::ConfigWidget* self, QInputMethodEvent* param1);
+    friend void Sonnet__ConfigWidget_SuperInputMethodEvent(Sonnet::ConfigWidget* self, QInputMethodEvent* param1);
+    friend bool Sonnet__ConfigWidget_FocusNextPrevChild(Sonnet::ConfigWidget* self, bool next);
+    friend bool Sonnet__ConfigWidget_SuperFocusNextPrevChild(Sonnet::ConfigWidget* self, bool next);
+    friend void Sonnet__ConfigWidget_TimerEvent(Sonnet::ConfigWidget* self, QTimerEvent* event);
+    friend void Sonnet__ConfigWidget_SuperTimerEvent(Sonnet::ConfigWidget* self, QTimerEvent* event);
+    friend void Sonnet__ConfigWidget_ChildEvent(Sonnet::ConfigWidget* self, QChildEvent* event);
+    friend void Sonnet__ConfigWidget_SuperChildEvent(Sonnet::ConfigWidget* self, QChildEvent* event);
+    friend void Sonnet__ConfigWidget_CustomEvent(Sonnet::ConfigWidget* self, QEvent* event);
+    friend void Sonnet__ConfigWidget_SuperCustomEvent(Sonnet::ConfigWidget* self, QEvent* event);
+    friend void Sonnet__ConfigWidget_ConnectNotify(Sonnet::ConfigWidget* self, const QMetaMethod* signal);
+    friend void Sonnet__ConfigWidget_SuperConnectNotify(Sonnet::ConfigWidget* self, const QMetaMethod* signal);
+    friend void Sonnet__ConfigWidget_DisconnectNotify(Sonnet::ConfigWidget* self, const QMetaMethod* signal);
+    friend void Sonnet__ConfigWidget_SuperDisconnectNotify(Sonnet::ConfigWidget* self, const QMetaMethod* signal);
+    friend void Sonnet__ConfigWidget_SlotIgnoreWordRemoved(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_SuperSlotIgnoreWordRemoved(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_SlotIgnoreWordAdded(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_SuperSlotIgnoreWordAdded(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_UpdateMicroFocus(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_SuperUpdateMicroFocus(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_Create(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_SuperCreate(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_Destroy(Sonnet::ConfigWidget* self);
+    friend void Sonnet__ConfigWidget_SuperDestroy(Sonnet::ConfigWidget* self);
+    friend bool Sonnet__ConfigWidget_FocusNextChild(Sonnet::ConfigWidget* self);
+    friend bool Sonnet__ConfigWidget_SuperFocusNextChild(Sonnet::ConfigWidget* self);
+    friend bool Sonnet__ConfigWidget_FocusPreviousChild(Sonnet::ConfigWidget* self);
+    friend bool Sonnet__ConfigWidget_SuperFocusPreviousChild(Sonnet::ConfigWidget* self);
+    friend QObject* Sonnet__ConfigWidget_Sender(const Sonnet::ConfigWidget* self);
+    friend QObject* Sonnet__ConfigWidget_SuperSender(const Sonnet::ConfigWidget* self);
+    friend int Sonnet__ConfigWidget_SenderSignalIndex(const Sonnet::ConfigWidget* self);
+    friend int Sonnet__ConfigWidget_SuperSenderSignalIndex(const Sonnet::ConfigWidget* self);
+    friend int Sonnet__ConfigWidget_Receivers(const Sonnet::ConfigWidget* self, const char* signal);
+    friend int Sonnet__ConfigWidget_SuperReceivers(const Sonnet::ConfigWidget* self, const char* signal);
+    friend bool Sonnet__ConfigWidget_IsSignalConnected(const Sonnet::ConfigWidget* self, const QMetaMethod* signal);
+    friend bool Sonnet__ConfigWidget_SuperIsSignalConnected(const Sonnet::ConfigWidget* self, const QMetaMethod* signal);
+    friend double Sonnet__ConfigWidget_GetDecodedMetricF(const Sonnet::ConfigWidget* self, int metricA, int metricB);
+    friend double Sonnet__ConfigWidget_SuperGetDecodedMetricF(const Sonnet::ConfigWidget* self, int metricA, int metricB);
+};
+
+#endif

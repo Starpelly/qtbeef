@@ -1,0 +1,81 @@
+#pragma once
+#ifndef SRC_SQLC_LIBQSQLDRIVERPLUGIN_HPP
+#define SRC_SQLC_LIBQSQLDRIVERPLUGIN_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QChildEvent QChildEvent;
+typedef struct QEvent QEvent;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QSqlDriver QSqlDriver;
+typedef struct QSqlDriverPlugin QSqlDriverPlugin;
+typedef struct QTimerEvent QTimerEvent;
+#endif
+
+QSqlDriverPlugin* QSqlDriverPlugin_new();
+QSqlDriverPlugin* QSqlDriverPlugin_new2(QObject* parent);
+QMetaObject* QSqlDriverPlugin_MetaObject(const QSqlDriverPlugin* self);
+void* QSqlDriverPlugin_Metacast(QSqlDriverPlugin* self, const char* param1);
+int QSqlDriverPlugin_Metacall(QSqlDriverPlugin* self, int param1, int param2, void** param3);
+QSqlDriver* QSqlDriverPlugin_Create(QSqlDriverPlugin* self, const libqt_string key);
+void QSqlDriverPlugin_OnMetaObject(const QSqlDriverPlugin* self, intptr_t slot);
+QMetaObject* QSqlDriverPlugin_SuperMetaObject(const QSqlDriverPlugin* self);
+void QSqlDriverPlugin_OnMetacast(QSqlDriverPlugin* self, intptr_t slot);
+void* QSqlDriverPlugin_SuperMetacast(QSqlDriverPlugin* self, const char* param1);
+void QSqlDriverPlugin_OnMetacall(QSqlDriverPlugin* self, intptr_t slot);
+int QSqlDriverPlugin_SuperMetacall(QSqlDriverPlugin* self, int param1, int param2, void** param3);
+void QSqlDriverPlugin_OnCreate(QSqlDriverPlugin* self, intptr_t slot);
+QSqlDriver* QSqlDriverPlugin_SuperCreate(QSqlDriverPlugin* self, const libqt_string key);
+bool QSqlDriverPlugin_Event(QSqlDriverPlugin* self, QEvent* event);
+void QSqlDriverPlugin_OnEvent(QSqlDriverPlugin* self, intptr_t slot);
+bool QSqlDriverPlugin_SuperEvent(QSqlDriverPlugin* self, QEvent* event);
+bool QSqlDriverPlugin_EventFilter(QSqlDriverPlugin* self, QObject* watched, QEvent* event);
+void QSqlDriverPlugin_OnEventFilter(QSqlDriverPlugin* self, intptr_t slot);
+bool QSqlDriverPlugin_SuperEventFilter(QSqlDriverPlugin* self, QObject* watched, QEvent* event);
+void QSqlDriverPlugin_TimerEvent(QSqlDriverPlugin* self, QTimerEvent* event);
+void QSqlDriverPlugin_OnTimerEvent(QSqlDriverPlugin* self, intptr_t slot);
+void QSqlDriverPlugin_SuperTimerEvent(QSqlDriverPlugin* self, QTimerEvent* event);
+void QSqlDriverPlugin_ChildEvent(QSqlDriverPlugin* self, QChildEvent* event);
+void QSqlDriverPlugin_OnChildEvent(QSqlDriverPlugin* self, intptr_t slot);
+void QSqlDriverPlugin_SuperChildEvent(QSqlDriverPlugin* self, QChildEvent* event);
+void QSqlDriverPlugin_CustomEvent(QSqlDriverPlugin* self, QEvent* event);
+void QSqlDriverPlugin_OnCustomEvent(QSqlDriverPlugin* self, intptr_t slot);
+void QSqlDriverPlugin_SuperCustomEvent(QSqlDriverPlugin* self, QEvent* event);
+void QSqlDriverPlugin_ConnectNotify(QSqlDriverPlugin* self, const QMetaMethod* signal);
+void QSqlDriverPlugin_OnConnectNotify(QSqlDriverPlugin* self, intptr_t slot);
+void QSqlDriverPlugin_SuperConnectNotify(QSqlDriverPlugin* self, const QMetaMethod* signal);
+void QSqlDriverPlugin_DisconnectNotify(QSqlDriverPlugin* self, const QMetaMethod* signal);
+void QSqlDriverPlugin_OnDisconnectNotify(QSqlDriverPlugin* self, intptr_t slot);
+void QSqlDriverPlugin_SuperDisconnectNotify(QSqlDriverPlugin* self, const QMetaMethod* signal);
+QObject* QSqlDriverPlugin_Sender(const QSqlDriverPlugin* self);
+void QSqlDriverPlugin_OnSender(const QSqlDriverPlugin* self, intptr_t slot);
+QObject* QSqlDriverPlugin_SuperSender(const QSqlDriverPlugin* self);
+int QSqlDriverPlugin_SenderSignalIndex(const QSqlDriverPlugin* self);
+void QSqlDriverPlugin_OnSenderSignalIndex(const QSqlDriverPlugin* self, intptr_t slot);
+int QSqlDriverPlugin_SuperSenderSignalIndex(const QSqlDriverPlugin* self);
+int QSqlDriverPlugin_Receivers(const QSqlDriverPlugin* self, const char* signal);
+void QSqlDriverPlugin_OnReceivers(const QSqlDriverPlugin* self, intptr_t slot);
+int QSqlDriverPlugin_SuperReceivers(const QSqlDriverPlugin* self, const char* signal);
+bool QSqlDriverPlugin_IsSignalConnected(const QSqlDriverPlugin* self, const QMetaMethod* signal);
+void QSqlDriverPlugin_OnIsSignalConnected(const QSqlDriverPlugin* self, intptr_t slot);
+bool QSqlDriverPlugin_SuperIsSignalConnected(const QSqlDriverPlugin* self, const QMetaMethod* signal);
+void QSqlDriverPlugin_Delete(QSqlDriverPlugin* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

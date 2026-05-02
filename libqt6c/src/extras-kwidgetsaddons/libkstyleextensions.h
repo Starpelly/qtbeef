@@ -1,0 +1,39 @@
+#pragma once
+#ifndef SRC_EXTRAS_KWIDGETSADDONS_QT6C_LIBKSTYLEEXTENSIONS_H
+#define SRC_EXTRAS_KWIDGETSADDONS_QT6C_LIBKSTYLEEXTENSIONS_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kstyleextensions.html)
+
+/// [Upstream resources](https://api.kde.org/kstyleextensions.html#customControlElement)
+///
+/// @param param1 const char*
+/// @param param2 QWidget*
+///
+/// @return enum QStyle__ControlElement
+///
+int32_t k_styleextensions_custom_control_element(const char* param1, void* param2);
+
+/// [Upstream resources](https://api.kde.org/kstyleextensions.html#customStyleHint)
+///
+/// @param param1 const char*
+/// @param param2 QWidget*
+///
+/// @return enum QStyle__StyleHint
+///
+int32_t k_styleextensions_custom_style_hint(const char* param1, void* param2);
+
+/// [Upstream resources](https://api.kde.org/kstyleextensions.html#customSubElement)
+///
+/// @param param1 const char*
+/// @param param2 QWidget*
+///
+/// @return enum QStyle__SubElement
+///
+int32_t k_styleextensions_custom_sub_element(const char* param1, void* param2);
+#endif

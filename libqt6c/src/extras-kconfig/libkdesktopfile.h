@@ -1,0 +1,834 @@
+#pragma once
+#ifndef SRC_EXTRAS_KCONFIG_QT6C_LIBKDESKTOPFILE_H
+#define SRC_EXTRAS_KCONFIG_QT6C_LIBKDESKTOPFILE_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html)
+
+/// k_desktopfile_new constructs a new KDesktopFile object.
+///
+/// @param resourceType enum QStandardPaths__StandardLocation
+/// @param fileName const char*
+///
+KDesktopFile* k_desktopfile_new(int32_t resourceType, const char* fileName);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html)
+
+/// k_desktopfile_new2 constructs a new KDesktopFile object.
+///
+/// @param fileName const char*
+///
+KDesktopFile* k_desktopfile_new2(const char* fileName);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#isDesktopFile)
+///
+/// @param path const char*
+///
+bool k_desktopfile_is_desktop_file(const char* path);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#isAuthorizedDesktopFile)
+///
+/// @param path const char*
+///
+bool k_desktopfile_is_authorized_desktop_file(const char* path);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#locateLocal)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param path const char*
+///
+const char* k_desktopfile_locate_local(const char* path);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#desktopGroup)
+///
+/// @param self KDesktopFile*
+///
+KConfigGroup* k_desktopfile_desktop_group(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readType)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_type(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readIcon)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_icon(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_name(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readComment)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_comment(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readGenericName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_generic_name(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readPath)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_path(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readUrl)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_url(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readActions)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KDesktopFile*
+///
+const char** k_desktopfile_read_actions(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readMimeTypes)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KDesktopFile*
+///
+const char** k_desktopfile_read_mime_types(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#actionGroup)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+KConfigGroup* k_desktopfile_action_group(void* self, const char* group);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#actionGroup)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+KConfigGroup* k_desktopfile_action_group2(void* self, const char* group);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#hasActionGroup)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+bool k_desktopfile_has_action_group(void* self, const char* group);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#hasLinkType)
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_has_link_type(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#hasApplicationType)
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_has_application_type(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#hasDeviceType)
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_has_device_type(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#tryExec)
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_try_exec(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#readDocPath)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_read_doc_path(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#noDisplay)
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_no_display(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#copyTo)
+///
+/// @param self KDesktopFile*
+/// @param file const char*
+///
+KDesktopFile* k_desktopfile_copy_to(void* self, const char* file);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#fileName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_file_name(void* self);
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#actions)
+///
+/// @param self KDesktopFile*
+///
+/// @return libqt_list of KDesktopFileAction*
+///
+libqt_list k_desktopfile_actions(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#locationType)
+///
+/// @param self KDesktopFile*
+///
+/// @return enum QStandardPaths__StandardLocation
+///
+int32_t k_desktopfile_location_type(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#name)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_name(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#openFlags)
+///
+/// @param self KDesktopFile*
+///
+/// @return flag of enum KConfig__OpenFlag
+///
+int32_t k_desktopfile_open_flags(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isDirty)
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_is_dirty(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isConfigWritable)
+///
+/// @param self KDesktopFile*
+/// @param warnUser bool
+///
+bool k_desktopfile_is_config_writable(void* self, bool warnUser);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#checkUpdate)
+///
+/// @param self KDesktopFile*
+/// @param id const char*
+/// @param updateFile const char*
+///
+void k_desktopfile_check_update(void* self, const char* id, const char* updateFile);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#reparseConfiguration)
+///
+/// @param self KDesktopFile*
+///
+void k_desktopfile_reparse_configuration(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#addConfigSources)
+///
+/// @param self KDesktopFile*
+/// @param sources const char**
+///
+void k_desktopfile_add_config_sources(void* self, const char* sources[1]);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#additionalConfigSources)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// @param self KDesktopFile*
+///
+const char** k_desktopfile_additional_config_sources(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#locale)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+/// @param self KDesktopFile*
+///
+const char* k_desktopfile_locale(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#setLocale)
+///
+/// @param self KDesktopFile*
+/// @param aLocale const char*
+///
+bool k_desktopfile_set_locale(void* self, const char* aLocale);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#setReadDefaults)
+///
+/// @param self KDesktopFile*
+/// @param b bool
+///
+void k_desktopfile_set_read_defaults(void* self, bool b);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#readDefaults)
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_read_defaults(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#entryMap)
+///
+/// @warning Caller is responsible for freeing the returned memory using a similar sequence to:
+/// ```c
+/// // Example for freeing the returned map of type:
+/// // libqt_map of const char* to const char*
+/// for (size_t i = 0; i < map.len; ++i) {
+///     libqt_free(map.keys[i]);
+///     libqt_free(map.values[i]);
+/// }
+/// free(map.keys);
+/// free(map.values);
+/// ```
+///
+/// @param self KDesktopFile*
+///
+/// @return libqt_map of const char* to const char*
+///
+libqt_map k_desktopfile_entry_map(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#setMainConfigName)
+///
+/// @param str const char*
+///
+void k_desktopfile_set_main_config_name(const char* str);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#mainConfigName)
+///
+/// @warning Caller is responsible for freeing the returned memory using `libqt_free()`
+///
+const char* k_desktopfile_main_config_name();
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#copyTo)
+///
+/// @param self KDesktopFile*
+/// @param file const char*
+/// @param config KConfig*
+///
+KConfig* k_desktopfile_copy_to2(void* self, const char* file, void* config);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#entryMap)
+///
+/// @warning Caller is responsible for freeing the returned memory using a similar sequence to:
+/// ```c
+/// // Example for freeing the returned map of type:
+/// // libqt_map of const char* to const char*
+/// for (size_t i = 0; i < map.len; ++i) {
+///     libqt_free(map.keys[i]);
+///     libqt_free(map.values[i]);
+/// }
+/// free(map.keys);
+/// free(map.values);
+/// ```
+///
+/// @param self KDesktopFile*
+/// @param aGroup const char*
+///
+/// @return libqt_map of const char* to const char*
+///
+libqt_map k_desktopfile_entry_map1(void* self, const char* aGroup);
+
+/// Inherited from KConfigBase
+///
+/// [Upstream resources](https://api.kde.org/kconfigbase.html#hasGroup)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+bool k_desktopfile_has_group(void* self, const char* group);
+
+/// Inherited from KConfigBase
+///
+/// [Upstream resources](https://api.kde.org/kconfigbase.html#group)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+KConfigGroup* k_desktopfile_group(void* self, const char* group);
+
+/// Inherited from KConfigBase
+///
+/// [Upstream resources](https://api.kde.org/kconfigbase.html#group)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+const KConfigGroup* k_desktopfile_group2(void* self, const char* group);
+
+/// Inherited from KConfigBase
+///
+/// [Upstream resources](https://api.kde.org/kconfigbase.html#deleteGroup)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+void k_desktopfile_delete_group(void* self, const char* group);
+
+/// Inherited from KConfigBase
+///
+/// [Upstream resources](https://api.kde.org/kconfigbase.html#isGroupImmutable)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+///
+bool k_desktopfile_is_group_immutable(void* self, const char* group);
+
+/// Inherited from KConfigBase
+///
+/// [Upstream resources](https://api.kde.org/kconfigbase.html#deleteGroup)
+///
+/// @param self KDesktopFile*
+/// @param group const char*
+/// @param flags flag of enum KConfigBase__WriteConfigFlag
+///
+void k_desktopfile_delete_group2(void* self, const char* group, int32_t flags);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#sync)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_sync(void* self);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_sync` instead
+///
+#define k_desktopfile_qbase_sync k_desktopfile_super_sync
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#sync)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_super_sync(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#sync)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback bool func()
+///
+void k_desktopfile_on_sync(void* self, bool (*callback)());
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#markAsClean)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+void k_desktopfile_mark_as_clean(void* self);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_mark_as_clean` instead
+///
+#define k_desktopfile_qbase_mark_as_clean k_desktopfile_super_mark_as_clean
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#markAsClean)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+void k_desktopfile_super_mark_as_clean(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#markAsClean)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback void func()
+///
+void k_desktopfile_on_mark_as_clean(void* self, void (*callback)());
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#accessMode)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+/// @return enum KConfigBase__AccessMode
+///
+int32_t k_desktopfile_access_mode(void* self);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_access_mode` instead
+///
+#define k_desktopfile_qbase_access_mode k_desktopfile_super_access_mode
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#accessMode)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+/// @return enum KConfigBase__AccessMode
+///
+int32_t k_desktopfile_super_access_mode(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#accessMode)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback int32_t func()
+///
+void k_desktopfile_on_access_mode(void* self, int32_t (*callback)());
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isImmutable)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_is_immutable(void* self);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_is_immutable` instead
+///
+#define k_desktopfile_qbase_is_immutable k_desktopfile_super_is_immutable
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isImmutable)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+bool k_desktopfile_super_is_immutable(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isImmutable)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback bool func()
+///
+void k_desktopfile_on_is_immutable(void* self, bool (*callback)());
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#groupList)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+const char** k_desktopfile_group_list(void* self);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_group_list` instead
+///
+#define k_desktopfile_qbase_group_list k_desktopfile_super_group_list
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#groupList)
+///
+/// @warning Caller is responsible for freeing the returned memory using `free()`
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+///
+const char** k_desktopfile_super_group_list(void* self);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#groupList)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback const char** func()
+///
+void k_desktopfile_on_group_list(void* self, const char** (*callback)());
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#hasGroupImpl)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+///
+bool k_desktopfile_has_group_impl(void* self, const char* groupName);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_has_group_impl` instead
+///
+#define k_desktopfile_qbase_has_group_impl k_desktopfile_super_has_group_impl
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#hasGroupImpl)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+///
+bool k_desktopfile_super_has_group_impl(void* self, const char* groupName);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#hasGroupImpl)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback bool func(KDesktopFile* self, const char* groupName)
+///
+void k_desktopfile_on_has_group_impl(void* self, bool (*callback)(void*, const char*));
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#groupImpl)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+///
+KConfigGroup* k_desktopfile_group_impl(void* self, const char* groupName);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_group_impl` instead
+///
+#define k_desktopfile_qbase_group_impl k_desktopfile_super_group_impl
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#groupImpl)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+///
+KConfigGroup* k_desktopfile_super_group_impl(void* self, const char* groupName);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#groupImpl)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback KConfigGroup* func(KDesktopFile* self, const char* groupName)
+///
+void k_desktopfile_on_group_impl(void* self, KConfigGroup* (*callback)(void*, const char*));
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#deleteGroupImpl)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+/// @param flags flag of enum KConfigBase__WriteConfigFlag
+///
+void k_desktopfile_delete_group_impl(void* self, const char* groupName, int32_t flags);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_delete_group_impl` instead
+///
+#define k_desktopfile_qbase_delete_group_impl k_desktopfile_super_delete_group_impl
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#deleteGroupImpl)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+/// @param flags flag of enum KConfigBase__WriteConfigFlag
+///
+void k_desktopfile_super_delete_group_impl(void* self, const char* groupName, int32_t flags);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#deleteGroupImpl)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback void func(KDesktopFile* self, const char* groupName, flag of enum KConfigBase__WriteConfigFlag flags)
+///
+void k_desktopfile_on_delete_group_impl(void* self, void (*callback)(void*, const char*, int32_t));
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isGroupImmutableImpl)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+///
+bool k_desktopfile_is_group_immutable_impl(void* self, const char* groupName);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_is_group_immutable_impl` instead
+///
+#define k_desktopfile_qbase_is_group_immutable_impl k_desktopfile_super_is_group_immutable_impl
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isGroupImmutableImpl)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param groupName const char*
+///
+bool k_desktopfile_super_is_group_immutable_impl(void* self, const char* groupName);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#isGroupImmutableImpl)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback bool func(KDesktopFile* self, const char* groupName)
+///
+void k_desktopfile_on_is_group_immutable_impl(void* self, bool (*callback)(void*, const char*));
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#virtual_hook)
+///
+/// Wrapper to allow calling virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param id int
+/// @param data void*
+///
+void k_desktopfile_virtual_hook(void* self, int id, void* data);
+
+/// @warning DEPRECATED: Use `k_desktopfile_super_virtual_hook` instead
+///
+#define k_desktopfile_qbase_virtual_hook k_desktopfile_super_virtual_hook
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#virtual_hook)
+///
+/// Wrapper to allow calling base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param id int
+/// @param data void*
+///
+void k_desktopfile_super_virtual_hook(void* self, int id, void* data);
+
+/// Inherited from KConfig
+///
+/// [Upstream resources](https://api.kde.org/kconfig.html#virtual_hook)
+///
+/// Wrapper to allow overriding base class virtual or protected method
+///
+/// @param self KDesktopFile*
+/// @param callback void func(KDesktopFile* self, int id, void* data)
+///
+void k_desktopfile_on_virtual_hook(void* self, void (*callback)(void*, int, void*));
+
+/// [Upstream resources](https://api.kde.org/kdesktopfile.html#dtor.KDesktopFile)
+///
+/// Delete this object from C++ memory.
+///
+/// @param self KDesktopFile*
+///
+void k_desktopfile_delete(void* self);
+
+#endif

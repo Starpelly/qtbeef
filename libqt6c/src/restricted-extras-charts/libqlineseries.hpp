@@ -1,0 +1,97 @@
+#pragma once
+#ifndef SRC_RESTRICTED_EXTRAS_CHARTSC_LIBQLINESERIES_HPP
+#define SRC_RESTRICTED_EXTRAS_CHARTSC_LIBQLINESERIES_HPP
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
+#include "../qtlibc.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#ifdef __cplusplus
+#else
+typedef struct QAbstractSeries QAbstractSeries;
+typedef struct QBrush QBrush;
+typedef struct QChildEvent QChildEvent;
+typedef struct QColor QColor;
+typedef struct QEvent QEvent;
+typedef struct QLineSeries QLineSeries;
+typedef struct QMetaMethod QMetaMethod;
+typedef struct QMetaObject QMetaObject;
+typedef struct QObject QObject;
+typedef struct QPen QPen;
+typedef struct QTimerEvent QTimerEvent;
+typedef struct QXYSeries QXYSeries;
+#endif
+
+QLineSeries* QLineSeries_new();
+QLineSeries* QLineSeries_new2(QObject* parent);
+QMetaObject* QLineSeries_MetaObject(const QLineSeries* self);
+void* QLineSeries_Metacast(QLineSeries* self, const char* param1);
+int QLineSeries_Metacall(QLineSeries* self, int param1, int param2, void** param3);
+int QLineSeries_Type(const QLineSeries* self);
+void QLineSeries_OnMetaObject(const QLineSeries* self, intptr_t slot);
+QMetaObject* QLineSeries_SuperMetaObject(const QLineSeries* self);
+void QLineSeries_OnMetacast(QLineSeries* self, intptr_t slot);
+void* QLineSeries_SuperMetacast(QLineSeries* self, const char* param1);
+void QLineSeries_OnMetacall(QLineSeries* self, intptr_t slot);
+int QLineSeries_SuperMetacall(QLineSeries* self, int param1, int param2, void** param3);
+void QLineSeries_OnType(const QLineSeries* self, intptr_t slot);
+int QLineSeries_SuperType(const QLineSeries* self);
+void QLineSeries_SetPen(QLineSeries* self, const QPen* pen);
+void QLineSeries_OnSetPen(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperSetPen(QLineSeries* self, const QPen* pen);
+void QLineSeries_SetBrush(QLineSeries* self, const QBrush* brush);
+void QLineSeries_OnSetBrush(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperSetBrush(QLineSeries* self, const QBrush* brush);
+void QLineSeries_SetColor(QLineSeries* self, const QColor* color);
+void QLineSeries_OnSetColor(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperSetColor(QLineSeries* self, const QColor* color);
+QColor* QLineSeries_Color(const QLineSeries* self);
+void QLineSeries_OnColor(const QLineSeries* self, intptr_t slot);
+QColor* QLineSeries_SuperColor(const QLineSeries* self);
+bool QLineSeries_Event(QLineSeries* self, QEvent* event);
+void QLineSeries_OnEvent(QLineSeries* self, intptr_t slot);
+bool QLineSeries_SuperEvent(QLineSeries* self, QEvent* event);
+bool QLineSeries_EventFilter(QLineSeries* self, QObject* watched, QEvent* event);
+void QLineSeries_OnEventFilter(QLineSeries* self, intptr_t slot);
+bool QLineSeries_SuperEventFilter(QLineSeries* self, QObject* watched, QEvent* event);
+void QLineSeries_TimerEvent(QLineSeries* self, QTimerEvent* event);
+void QLineSeries_OnTimerEvent(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperTimerEvent(QLineSeries* self, QTimerEvent* event);
+void QLineSeries_ChildEvent(QLineSeries* self, QChildEvent* event);
+void QLineSeries_OnChildEvent(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperChildEvent(QLineSeries* self, QChildEvent* event);
+void QLineSeries_CustomEvent(QLineSeries* self, QEvent* event);
+void QLineSeries_OnCustomEvent(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperCustomEvent(QLineSeries* self, QEvent* event);
+void QLineSeries_ConnectNotify(QLineSeries* self, const QMetaMethod* signal);
+void QLineSeries_OnConnectNotify(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperConnectNotify(QLineSeries* self, const QMetaMethod* signal);
+void QLineSeries_DisconnectNotify(QLineSeries* self, const QMetaMethod* signal);
+void QLineSeries_OnDisconnectNotify(QLineSeries* self, intptr_t slot);
+void QLineSeries_SuperDisconnectNotify(QLineSeries* self, const QMetaMethod* signal);
+QObject* QLineSeries_Sender(const QLineSeries* self);
+void QLineSeries_OnSender(const QLineSeries* self, intptr_t slot);
+QObject* QLineSeries_SuperSender(const QLineSeries* self);
+int QLineSeries_SenderSignalIndex(const QLineSeries* self);
+void QLineSeries_OnSenderSignalIndex(const QLineSeries* self, intptr_t slot);
+int QLineSeries_SuperSenderSignalIndex(const QLineSeries* self);
+int QLineSeries_Receivers(const QLineSeries* self, const char* signal);
+void QLineSeries_OnReceivers(const QLineSeries* self, intptr_t slot);
+int QLineSeries_SuperReceivers(const QLineSeries* self, const char* signal);
+bool QLineSeries_IsSignalConnected(const QLineSeries* self, const QMetaMethod* signal);
+void QLineSeries_OnIsSignalConnected(const QLineSeries* self, intptr_t slot);
+bool QLineSeries_SuperIsSignalConnected(const QLineSeries* self, const QMetaMethod* signal);
+void QLineSeries_Delete(QLineSeries* self);
+
+#ifdef __cplusplus
+} /* extern C */
+#endif
+
+#endif

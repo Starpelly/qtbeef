@@ -1,0 +1,28 @@
+#pragma once
+#ifndef SRC_EXTRAS_KIO_QT6C_LIBKURLAUTHORIZED_H
+#define SRC_EXTRAS_KIO_QT6C_LIBKURLAUTHORIZED_H
+
+#include <stdbool.h>
+#include <stddef.h>
+
+#include "../libqttypedefs.h"
+#include "../qtlibc.h"
+
+/// [Upstream resources](https://api.kde.org/kurlauthorized.html)
+
+/// [Upstream resources](https://api.kde.org/kurlauthorized.html#authorizeUrlAction)
+///
+/// @param param1 const char*
+/// @param param2 QUrl*
+/// @param param3 QUrl*
+///
+bool k_urlauthorized_authorize_url_action(const char* param1, void* param2, void* param3);
+
+/// [Upstream resources](https://api.kde.org/kurlauthorized.html#allowUrlAction)
+///
+/// @param param1 const char*
+/// @param param2 QUrl*
+/// @param param3 QUrl*
+///
+void k_urlauthorized_allow_url_action(const char* param1, void* param2, void* param3);
+#endif
