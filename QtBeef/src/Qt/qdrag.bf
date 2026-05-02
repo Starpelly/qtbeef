@@ -721,8 +721,16 @@ extension CQt
 	public static extern void QDrag_Cancel();
 	[LinkName("QDrag_ActionChanged")]
 	public static extern void QDrag_ActionChanged(void* self, Qt_DropAction action);
+	
+	public function void QDrag_actionChanged_action(void* self, Qt_DropAction action);
+	[LinkName("QDrag_Connect_ActionChanged")]
+	public static extern void QDrag_Connect_ActionChanged(void* self, Qt_DropAction action, QDrag_actionChanged_action _action);
 	[LinkName("QDrag_TargetChanged")]
 	public static extern void QDrag_TargetChanged(void* self, void** newTarget);
+	
+	public function void QDrag_targetChanged_action(void* self, void** newTarget);
+	[LinkName("QDrag_Connect_TargetChanged")]
+	public static extern void QDrag_Connect_TargetChanged(void* self, void** newTarget, QDrag_targetChanged_action _action);
 	[LinkName("QDrag_Tr2")]
 	public static extern libqt_string QDrag_Tr2(c_char* s, c_char* c);
 	[LinkName("QDrag_Tr3")]

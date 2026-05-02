@@ -663,10 +663,22 @@ extension CQt
 	public static extern void** QSignalMapper_Mapping3(void* self, void** object);
 	[LinkName("QSignalMapper_MappedInt")]
 	public static extern void QSignalMapper_MappedInt(void* self, c_int param1);
+	
+	public function void QSignalMapper_mappedInt_action(void* self, c_int param1);
+	[LinkName("QSignalMapper_Connect_MappedInt")]
+	public static extern void QSignalMapper_Connect_MappedInt(void* self, c_int param1, QSignalMapper_mappedInt_action _action);
 	[LinkName("QSignalMapper_MappedString")]
 	public static extern void QSignalMapper_MappedString(void* self, libqt_string param1);
+	
+	public function void QSignalMapper_mappedString_action(void* self, libqt_string param1);
+	[LinkName("QSignalMapper_Connect_MappedString")]
+	public static extern void QSignalMapper_Connect_MappedString(void* self, libqt_string param1, QSignalMapper_mappedString_action _action);
 	[LinkName("QSignalMapper_MappedObject")]
 	public static extern void QSignalMapper_MappedObject(void* self, void** param1);
+	
+	public function void QSignalMapper_mappedObject_action(void* self, void** param1);
+	[LinkName("QSignalMapper_Connect_MappedObject")]
+	public static extern void QSignalMapper_Connect_MappedObject(void* self, void** param1, QSignalMapper_mappedObject_action _action);
 	[LinkName("QSignalMapper_Map")]
 	public static extern void QSignalMapper_Map(void* self);
 	[LinkName("QSignalMapper_Map2")]

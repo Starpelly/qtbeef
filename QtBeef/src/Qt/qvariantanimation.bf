@@ -899,6 +899,10 @@ extension CQt
 	public static extern void QVariantAnimation_SetEasingCurve(void* self, void** easing);
 	[LinkName("QVariantAnimation_ValueChanged")]
 	public static extern void QVariantAnimation_ValueChanged(void* self, void** value);
+	
+	public function void QVariantAnimation_valueChanged_action(void* self, void** value);
+	[LinkName("QVariantAnimation_Connect_ValueChanged")]
+	public static extern void QVariantAnimation_Connect_ValueChanged(void* self, void** value, QVariantAnimation_valueChanged_action _action);
 	[LinkName("QVariantAnimation_Event")]
 	public static extern bool QVariantAnimation_Event(void* self, void** event);
 	[LinkName("QVariantAnimation_UpdateCurrentTime")]

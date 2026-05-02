@@ -619,6 +619,10 @@ extension CQt
 	public static extern void** QObject_BindingStorage2(void* self);
 	[LinkName("QObject_Destroyed")]
 	public static extern void QObject_Destroyed(void* self);
+	
+	public function void QObject_destroyed_action(void* self);
+	[LinkName("QObject_Connect_Destroyed")]
+	public static extern void QObject_Connect_Destroyed(void* self, QObject_destroyed_action _action);
 	[LinkName("QObject_Parent")]
 	public static extern void** QObject_Parent(void* self);
 	[LinkName("QObject_Inherits")]
@@ -667,6 +671,10 @@ extension CQt
 	public static extern bool QObject_Disconnect23(void* self, void** receiver, c_char* member);
 	[LinkName("QObject_Destroyed1")]
 	public static extern void QObject_Destroyed1(void* self, void** param1);
+	
+	public function void QObject_destroyed1_action(void* self, void** param1);
+	[LinkName("QObject_Connect_Destroyed1")]
+	public static extern void QObject_Connect_Destroyed1(void* self, void** param1, QObject_destroyed1_action _action);
 }
 // --------------------------------------------------------------
 // QSignalBlocker

@@ -601,6 +601,10 @@ extension CQt
 	public static extern void QValidator_Fixup(void* self, libqt_string param1);
 	[LinkName("QValidator_Changed")]
 	public static extern void QValidator_Changed(void* self);
+	
+	public function void QValidator_changed_action(void* self);
+	[LinkName("QValidator_Connect_Changed")]
+	public static extern void QValidator_Connect_Changed(void* self, QValidator_changed_action _action);
 	[LinkName("QValidator_Tr2")]
 	public static extern libqt_string QValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QValidator_Tr3")]
@@ -1278,8 +1282,16 @@ extension CQt
 	public static extern c_int QIntValidator_Top(void* self);
 	[LinkName("QIntValidator_BottomChanged")]
 	public static extern void QIntValidator_BottomChanged(void* self, c_int bottom);
+	
+	public function void QIntValidator_bottomChanged_action(void* self, c_int bottom);
+	[LinkName("QIntValidator_Connect_BottomChanged")]
+	public static extern void QIntValidator_Connect_BottomChanged(void* self, c_int bottom, QIntValidator_bottomChanged_action _action);
 	[LinkName("QIntValidator_TopChanged")]
 	public static extern void QIntValidator_TopChanged(void* self, c_int top);
+	
+	public function void QIntValidator_topChanged_action(void* self, c_int top);
+	[LinkName("QIntValidator_Connect_TopChanged")]
+	public static extern void QIntValidator_Connect_TopChanged(void* self, c_int top, QIntValidator_topChanged_action _action);
 	[LinkName("QIntValidator_Tr2")]
 	public static extern libqt_string QIntValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QIntValidator_Tr3")]
@@ -2023,12 +2035,28 @@ extension CQt
 	public static extern QDoubleValidator_Notation QDoubleValidator_Notation(void* self);
 	[LinkName("QDoubleValidator_BottomChanged")]
 	public static extern void QDoubleValidator_BottomChanged(void* self, double bottom);
+	
+	public function void QDoubleValidator_bottomChanged_action(void* self, double bottom);
+	[LinkName("QDoubleValidator_Connect_BottomChanged")]
+	public static extern void QDoubleValidator_Connect_BottomChanged(void* self, double bottom, QDoubleValidator_bottomChanged_action _action);
 	[LinkName("QDoubleValidator_TopChanged")]
 	public static extern void QDoubleValidator_TopChanged(void* self, double top);
+	
+	public function void QDoubleValidator_topChanged_action(void* self, double top);
+	[LinkName("QDoubleValidator_Connect_TopChanged")]
+	public static extern void QDoubleValidator_Connect_TopChanged(void* self, double top, QDoubleValidator_topChanged_action _action);
 	[LinkName("QDoubleValidator_DecimalsChanged")]
 	public static extern void QDoubleValidator_DecimalsChanged(void* self, c_int decimals);
+	
+	public function void QDoubleValidator_decimalsChanged_action(void* self, c_int decimals);
+	[LinkName("QDoubleValidator_Connect_DecimalsChanged")]
+	public static extern void QDoubleValidator_Connect_DecimalsChanged(void* self, c_int decimals, QDoubleValidator_decimalsChanged_action _action);
 	[LinkName("QDoubleValidator_NotationChanged")]
 	public static extern void QDoubleValidator_NotationChanged(void* self, QDoubleValidator_Notation notation);
+	
+	public function void QDoubleValidator_notationChanged_action(void* self, QDoubleValidator_Notation notation);
+	[LinkName("QDoubleValidator_Connect_NotationChanged")]
+	public static extern void QDoubleValidator_Connect_NotationChanged(void* self, QDoubleValidator_Notation notation, QDoubleValidator_notationChanged_action _action);
 	[LinkName("QDoubleValidator_Tr2")]
 	public static extern libqt_string QDoubleValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QDoubleValidator_Tr3")]
@@ -2666,6 +2694,10 @@ extension CQt
 	public static extern void QRegularExpressionValidator_SetRegularExpression(void* self, void** re);
 	[LinkName("QRegularExpressionValidator_RegularExpressionChanged")]
 	public static extern void QRegularExpressionValidator_RegularExpressionChanged(void* self, void** re);
+	
+	public function void QRegularExpressionValidator_regularExpressionChanged_action(void* self, void** re);
+	[LinkName("QRegularExpressionValidator_Connect_RegularExpressionChanged")]
+	public static extern void QRegularExpressionValidator_Connect_RegularExpressionChanged(void* self, void** re, QRegularExpressionValidator_regularExpressionChanged_action _action);
 	[LinkName("QRegularExpressionValidator_Tr2")]
 	public static extern libqt_string QRegularExpressionValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QRegularExpressionValidator_Tr3")]

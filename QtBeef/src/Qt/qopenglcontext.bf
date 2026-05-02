@@ -1392,6 +1392,10 @@ extension CQt
 	public static extern void* QOpenGLContext_ResolveInterface(void* self, c_char* name, c_int revision);
 	[LinkName("QOpenGLContext_AboutToBeDestroyed")]
 	public static extern void QOpenGLContext_AboutToBeDestroyed(void* self);
+	
+	public function void QOpenGLContext_aboutToBeDestroyed_action(void* self);
+	[LinkName("QOpenGLContext_Connect_AboutToBeDestroyed")]
+	public static extern void QOpenGLContext_Connect_AboutToBeDestroyed(void* self, QOpenGLContext_aboutToBeDestroyed_action _action);
 	[LinkName("QOpenGLContext_Tr2")]
 	public static extern libqt_string QOpenGLContext_Tr2(c_char* s, c_char* c);
 	[LinkName("QOpenGLContext_Tr3")]

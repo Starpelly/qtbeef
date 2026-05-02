@@ -3509,12 +3509,28 @@ extension CQt
 	public static extern void QAbstractButton_SetChecked(void* self, bool _checked);
 	[LinkName("QAbstractButton_Pressed")]
 	public static extern void QAbstractButton_Pressed(void* self);
+	
+	public function void QAbstractButton_pressed_action(void* self);
+	[LinkName("QAbstractButton_Connect_Pressed")]
+	public static extern void QAbstractButton_Connect_Pressed(void* self, QAbstractButton_pressed_action _action);
 	[LinkName("QAbstractButton_Released")]
 	public static extern void QAbstractButton_Released(void* self);
+	
+	public function void QAbstractButton_released_action(void* self);
+	[LinkName("QAbstractButton_Connect_Released")]
+	public static extern void QAbstractButton_Connect_Released(void* self, QAbstractButton_released_action _action);
 	[LinkName("QAbstractButton_Clicked")]
 	public static extern void QAbstractButton_Clicked(void* self);
+	
+	public function void QAbstractButton_clicked_action(void* self);
+	[LinkName("QAbstractButton_Connect_Clicked")]
+	public static extern void QAbstractButton_Connect_Clicked(void* self, QAbstractButton_clicked_action _action);
 	[LinkName("QAbstractButton_Toggled")]
 	public static extern void QAbstractButton_Toggled(void* self, bool _checked);
+	
+	public function void QAbstractButton_toggled_action(void* self, bool _checked);
+	[LinkName("QAbstractButton_Connect_Toggled")]
+	public static extern void QAbstractButton_Connect_Toggled(void* self, bool _checked, QAbstractButton_toggled_action _action);
 	[LinkName("QAbstractButton_PaintEvent")]
 	public static extern void QAbstractButton_PaintEvent(void* self, void** e);
 	[LinkName("QAbstractButton_HitButton")]
@@ -3549,4 +3565,8 @@ extension CQt
 	public static extern libqt_string QAbstractButton_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QAbstractButton_Clicked1")]
 	public static extern void QAbstractButton_Clicked1(void* self, bool _checked);
+	
+	public function void QAbstractButton_clicked1_action(void* self, bool _checked);
+	[LinkName("QAbstractButton_Connect_Clicked1")]
+	public static extern void QAbstractButton_Connect_Clicked1(void* self, bool _checked, QAbstractButton_clicked1_action _action);
 }

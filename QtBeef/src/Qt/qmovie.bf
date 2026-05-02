@@ -945,18 +945,46 @@ extension CQt
 	public static extern void QMovie_SetCacheMode(void* self, QMovie_CacheMode mode);
 	[LinkName("QMovie_Started")]
 	public static extern void QMovie_Started(void* self);
+	
+	public function void QMovie_started_action(void* self);
+	[LinkName("QMovie_Connect_Started")]
+	public static extern void QMovie_Connect_Started(void* self, QMovie_started_action _action);
 	[LinkName("QMovie_Resized")]
 	public static extern void QMovie_Resized(void* self, void** size);
+	
+	public function void QMovie_resized_action(void* self, void** size);
+	[LinkName("QMovie_Connect_Resized")]
+	public static extern void QMovie_Connect_Resized(void* self, void** size, QMovie_resized_action _action);
 	[LinkName("QMovie_Updated")]
 	public static extern void QMovie_Updated(void* self, void** rect);
+	
+	public function void QMovie_updated_action(void* self, void** rect);
+	[LinkName("QMovie_Connect_Updated")]
+	public static extern void QMovie_Connect_Updated(void* self, void** rect, QMovie_updated_action _action);
 	[LinkName("QMovie_StateChanged")]
 	public static extern void QMovie_StateChanged(void* self, QMovie_MovieState state);
+	
+	public function void QMovie_stateChanged_action(void* self, QMovie_MovieState state);
+	[LinkName("QMovie_Connect_StateChanged")]
+	public static extern void QMovie_Connect_StateChanged(void* self, QMovie_MovieState state, QMovie_stateChanged_action _action);
 	[LinkName("QMovie_Error")]
 	public static extern void QMovie_Error(void* self, QImageReader_ImageReaderError error);
+	
+	public function void QMovie_error_action(void* self, QImageReader_ImageReaderError error);
+	[LinkName("QMovie_Connect_Error")]
+	public static extern void QMovie_Connect_Error(void* self, QImageReader_ImageReaderError error, QMovie_error_action _action);
 	[LinkName("QMovie_Finished")]
 	public static extern void QMovie_Finished(void* self);
+	
+	public function void QMovie_finished_action(void* self);
+	[LinkName("QMovie_Connect_Finished")]
+	public static extern void QMovie_Connect_Finished(void* self, QMovie_finished_action _action);
 	[LinkName("QMovie_FrameChanged")]
 	public static extern void QMovie_FrameChanged(void* self, c_int frameNumber);
+	
+	public function void QMovie_frameChanged_action(void* self, c_int frameNumber);
+	[LinkName("QMovie_Connect_FrameChanged")]
+	public static extern void QMovie_Connect_FrameChanged(void* self, c_int frameNumber, QMovie_frameChanged_action _action);
 	[LinkName("QMovie_Start")]
 	public static extern void QMovie_Start(void* self);
 	[LinkName("QMovie_JumpToNextFrame")]

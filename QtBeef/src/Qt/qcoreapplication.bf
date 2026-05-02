@@ -1075,8 +1075,16 @@ extension CQt
 	public static extern void* QCoreApplication_ResolveInterface(void* self, c_char* name, c_int revision);
 	[LinkName("QCoreApplication_InstallNativeEventFilter")]
 	public static extern void QCoreApplication_InstallNativeEventFilter(void* self, void** filterObj);
+	
+	public function void QCoreApplication_installNativeEventFilter_action(void* self, void** filterObj);
+	[LinkName("QCoreApplication_Connect_InstallNativeEventFilter")]
+	public static extern void QCoreApplication_Connect_InstallNativeEventFilter(void* self, void** filterObj, QCoreApplication_installNativeEventFilter_action _action);
 	[LinkName("QCoreApplication_RemoveNativeEventFilter")]
 	public static extern void QCoreApplication_RemoveNativeEventFilter(void* self, void** filterObj);
+	
+	public function void QCoreApplication_removeNativeEventFilter_action(void* self, void** filterObj);
+	[LinkName("QCoreApplication_Connect_RemoveNativeEventFilter")]
+	public static extern void QCoreApplication_Connect_RemoveNativeEventFilter(void* self, void** filterObj, QCoreApplication_removeNativeEventFilter_action _action);
 	[LinkName("QCoreApplication_IsQuitLockEnabled")]
 	public static extern bool QCoreApplication_IsQuitLockEnabled();
 	[LinkName("QCoreApplication_SetQuitLockEnabled")]
@@ -1087,12 +1095,28 @@ extension CQt
 	public static extern void QCoreApplication_Exit();
 	[LinkName("QCoreApplication_OrganizationNameChanged")]
 	public static extern void QCoreApplication_OrganizationNameChanged(void* self);
+	
+	public function void QCoreApplication_organizationNameChanged_action(void* self);
+	[LinkName("QCoreApplication_Connect_OrganizationNameChanged")]
+	public static extern void QCoreApplication_Connect_OrganizationNameChanged(void* self, QCoreApplication_organizationNameChanged_action _action);
 	[LinkName("QCoreApplication_OrganizationDomainChanged")]
 	public static extern void QCoreApplication_OrganizationDomainChanged(void* self);
+	
+	public function void QCoreApplication_organizationDomainChanged_action(void* self);
+	[LinkName("QCoreApplication_Connect_OrganizationDomainChanged")]
+	public static extern void QCoreApplication_Connect_OrganizationDomainChanged(void* self, QCoreApplication_organizationDomainChanged_action _action);
 	[LinkName("QCoreApplication_ApplicationNameChanged")]
 	public static extern void QCoreApplication_ApplicationNameChanged(void* self);
+	
+	public function void QCoreApplication_applicationNameChanged_action(void* self);
+	[LinkName("QCoreApplication_Connect_ApplicationNameChanged")]
+	public static extern void QCoreApplication_Connect_ApplicationNameChanged(void* self, QCoreApplication_applicationNameChanged_action _action);
 	[LinkName("QCoreApplication_ApplicationVersionChanged")]
 	public static extern void QCoreApplication_ApplicationVersionChanged(void* self);
+	
+	public function void QCoreApplication_applicationVersionChanged_action(void* self);
+	[LinkName("QCoreApplication_Connect_ApplicationVersionChanged")]
+	public static extern void QCoreApplication_Connect_ApplicationVersionChanged(void* self, QCoreApplication_applicationVersionChanged_action _action);
 	[LinkName("QCoreApplication_Event")]
 	public static extern bool QCoreApplication_Event(void* self, void** param1);
 	[LinkName("QCoreApplication_Tr2")]

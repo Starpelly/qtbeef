@@ -3497,8 +3497,16 @@ extension CQt
 	public static extern void QColorDialog_SetStandardColor(c_int index, void* color);
 	[LinkName("QColorDialog_CurrentColorChanged")]
 	public static extern void QColorDialog_CurrentColorChanged(void* self, void** color);
+	
+	public function void QColorDialog_currentColorChanged_action(void* self, void** color);
+	[LinkName("QColorDialog_Connect_CurrentColorChanged")]
+	public static extern void QColorDialog_Connect_CurrentColorChanged(void* self, void** color, QColorDialog_currentColorChanged_action _action);
 	[LinkName("QColorDialog_ColorSelected")]
 	public static extern void QColorDialog_ColorSelected(void* self, void** color);
+	
+	public function void QColorDialog_colorSelected_action(void* self, void** color);
+	[LinkName("QColorDialog_Connect_ColorSelected")]
+	public static extern void QColorDialog_Connect_ColorSelected(void* self, void** color, QColorDialog_colorSelected_action _action);
 	[LinkName("QColorDialog_ChangeEvent")]
 	public static extern void QColorDialog_ChangeEvent(void* self, void** event);
 	[LinkName("QColorDialog_Done")]

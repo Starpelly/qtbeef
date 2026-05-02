@@ -3671,12 +3671,28 @@ extension CQt
 	public static extern void QCalendarWidget_ShowToday(void* self);
 	[LinkName("QCalendarWidget_SelectionChanged")]
 	public static extern void QCalendarWidget_SelectionChanged(void* self);
+	
+	public function void QCalendarWidget_selectionChanged_action(void* self);
+	[LinkName("QCalendarWidget_Connect_SelectionChanged")]
+	public static extern void QCalendarWidget_Connect_SelectionChanged(void* self, QCalendarWidget_selectionChanged_action _action);
 	[LinkName("QCalendarWidget_Clicked")]
 	public static extern void QCalendarWidget_Clicked(void* self, void* date);
+	
+	public function void QCalendarWidget_clicked_action(void* self, void* date);
+	[LinkName("QCalendarWidget_Connect_Clicked")]
+	public static extern void QCalendarWidget_Connect_Clicked(void* self, void* date, QCalendarWidget_clicked_action _action);
 	[LinkName("QCalendarWidget_Activated")]
 	public static extern void QCalendarWidget_Activated(void* self, void* date);
+	
+	public function void QCalendarWidget_activated_action(void* self, void* date);
+	[LinkName("QCalendarWidget_Connect_Activated")]
+	public static extern void QCalendarWidget_Connect_Activated(void* self, void* date, QCalendarWidget_activated_action _action);
 	[LinkName("QCalendarWidget_CurrentPageChanged")]
 	public static extern void QCalendarWidget_CurrentPageChanged(void* self, c_int year, c_int month);
+	
+	public function void QCalendarWidget_currentPageChanged_action(void* self, c_int year, c_int month);
+	[LinkName("QCalendarWidget_Connect_CurrentPageChanged")]
+	public static extern void QCalendarWidget_Connect_CurrentPageChanged(void* self, c_int year, c_int month, QCalendarWidget_currentPageChanged_action _action);
 	[LinkName("QCalendarWidget_Tr2")]
 	public static extern libqt_string QCalendarWidget_Tr2(c_char* s, c_char* c);
 	[LinkName("QCalendarWidget_Tr3")]

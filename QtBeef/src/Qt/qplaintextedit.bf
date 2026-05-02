@@ -4365,22 +4365,58 @@ extension CQt
 	public static extern void QPlainTextEdit_ZoomOut(void* self);
 	[LinkName("QPlainTextEdit_TextChanged")]
 	public static extern void QPlainTextEdit_TextChanged(void* self);
+	
+	public function void QPlainTextEdit_textChanged_action(void* self);
+	[LinkName("QPlainTextEdit_Connect_TextChanged")]
+	public static extern void QPlainTextEdit_Connect_TextChanged(void* self, QPlainTextEdit_textChanged_action _action);
 	[LinkName("QPlainTextEdit_UndoAvailable")]
 	public static extern void QPlainTextEdit_UndoAvailable(void* self, bool b);
+	
+	public function void QPlainTextEdit_undoAvailable_action(void* self, bool b);
+	[LinkName("QPlainTextEdit_Connect_UndoAvailable")]
+	public static extern void QPlainTextEdit_Connect_UndoAvailable(void* self, bool b, QPlainTextEdit_undoAvailable_action _action);
 	[LinkName("QPlainTextEdit_RedoAvailable")]
 	public static extern void QPlainTextEdit_RedoAvailable(void* self, bool b);
+	
+	public function void QPlainTextEdit_redoAvailable_action(void* self, bool b);
+	[LinkName("QPlainTextEdit_Connect_RedoAvailable")]
+	public static extern void QPlainTextEdit_Connect_RedoAvailable(void* self, bool b, QPlainTextEdit_redoAvailable_action _action);
 	[LinkName("QPlainTextEdit_CopyAvailable")]
 	public static extern void QPlainTextEdit_CopyAvailable(void* self, bool b);
+	
+	public function void QPlainTextEdit_copyAvailable_action(void* self, bool b);
+	[LinkName("QPlainTextEdit_Connect_CopyAvailable")]
+	public static extern void QPlainTextEdit_Connect_CopyAvailable(void* self, bool b, QPlainTextEdit_copyAvailable_action _action);
 	[LinkName("QPlainTextEdit_SelectionChanged")]
 	public static extern void QPlainTextEdit_SelectionChanged(void* self);
+	
+	public function void QPlainTextEdit_selectionChanged_action(void* self);
+	[LinkName("QPlainTextEdit_Connect_SelectionChanged")]
+	public static extern void QPlainTextEdit_Connect_SelectionChanged(void* self, QPlainTextEdit_selectionChanged_action _action);
 	[LinkName("QPlainTextEdit_CursorPositionChanged")]
 	public static extern void QPlainTextEdit_CursorPositionChanged(void* self);
+	
+	public function void QPlainTextEdit_cursorPositionChanged_action(void* self);
+	[LinkName("QPlainTextEdit_Connect_CursorPositionChanged")]
+	public static extern void QPlainTextEdit_Connect_CursorPositionChanged(void* self, QPlainTextEdit_cursorPositionChanged_action _action);
 	[LinkName("QPlainTextEdit_UpdateRequest")]
 	public static extern void QPlainTextEdit_UpdateRequest(void* self, void** rect, c_int dy);
+	
+	public function void QPlainTextEdit_updateRequest_action(void* self, void** rect, c_int dy);
+	[LinkName("QPlainTextEdit_Connect_UpdateRequest")]
+	public static extern void QPlainTextEdit_Connect_UpdateRequest(void* self, void** rect, c_int dy, QPlainTextEdit_updateRequest_action _action);
 	[LinkName("QPlainTextEdit_BlockCountChanged")]
 	public static extern void QPlainTextEdit_BlockCountChanged(void* self, c_int newBlockCount);
+	
+	public function void QPlainTextEdit_blockCountChanged_action(void* self, c_int newBlockCount);
+	[LinkName("QPlainTextEdit_Connect_BlockCountChanged")]
+	public static extern void QPlainTextEdit_Connect_BlockCountChanged(void* self, c_int newBlockCount, QPlainTextEdit_blockCountChanged_action _action);
 	[LinkName("QPlainTextEdit_ModificationChanged")]
 	public static extern void QPlainTextEdit_ModificationChanged(void* self, bool param1);
+	
+	public function void QPlainTextEdit_modificationChanged_action(void* self, bool param1);
+	[LinkName("QPlainTextEdit_Connect_ModificationChanged")]
+	public static extern void QPlainTextEdit_Connect_ModificationChanged(void* self, bool param1, QPlainTextEdit_modificationChanged_action _action);
 	[LinkName("QPlainTextEdit_Event")]
 	public static extern bool QPlainTextEdit_Event(void* self, void** e);
 	[LinkName("QPlainTextEdit_TimerEvent")]

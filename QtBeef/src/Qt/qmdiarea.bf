@@ -3819,6 +3819,10 @@ extension CQt
 	public static extern QTabWidget_TabPosition QMdiArea_TabPosition(void* self);
 	[LinkName("QMdiArea_SubWindowActivated")]
 	public static extern void QMdiArea_SubWindowActivated(void* self, void** param1);
+	
+	public function void QMdiArea_subWindowActivated_action(void* self, void** param1);
+	[LinkName("QMdiArea_Connect_SubWindowActivated")]
+	public static extern void QMdiArea_Connect_SubWindowActivated(void* self, void** param1, QMdiArea_subWindowActivated_action _action);
 	[LinkName("QMdiArea_SetActiveSubWindow")]
 	public static extern void QMdiArea_SetActiveSubWindow(void* self, void** window);
 	[LinkName("QMdiArea_TileSubWindows")]

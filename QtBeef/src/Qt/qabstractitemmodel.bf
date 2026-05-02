@@ -1931,12 +1931,28 @@ extension CQt
 	public static extern void QAbstractItemModel_MultiData(void* self, void** index, void* roleDataSpan);
 	[LinkName("QAbstractItemModel_DataChanged")]
 	public static extern void QAbstractItemModel_DataChanged(void* self, void** topLeft, void** bottomRight);
+	
+	public function void QAbstractItemModel_dataChanged_action(void* self, void** topLeft, void** bottomRight);
+	[LinkName("QAbstractItemModel_Connect_DataChanged")]
+	public static extern void QAbstractItemModel_Connect_DataChanged(void* self, void** topLeft, void** bottomRight, QAbstractItemModel_dataChanged_action _action);
 	[LinkName("QAbstractItemModel_HeaderDataChanged")]
 	public static extern void QAbstractItemModel_HeaderDataChanged(void* self, Qt_Orientation orientation, c_int first, c_int last);
+	
+	public function void QAbstractItemModel_headerDataChanged_action(void* self, Qt_Orientation orientation, c_int first, c_int last);
+	[LinkName("QAbstractItemModel_Connect_HeaderDataChanged")]
+	public static extern void QAbstractItemModel_Connect_HeaderDataChanged(void* self, Qt_Orientation orientation, c_int first, c_int last, QAbstractItemModel_headerDataChanged_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged")]
 	public static extern void QAbstractItemModel_LayoutChanged(void* self);
+	
+	public function void QAbstractItemModel_layoutChanged_action(void* self);
+	[LinkName("QAbstractItemModel_Connect_LayoutChanged")]
+	public static extern void QAbstractItemModel_Connect_LayoutChanged(void* self, QAbstractItemModel_layoutChanged_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged(void* self);
+	
+	public function void QAbstractItemModel_layoutAboutToBeChanged_action(void* self);
+	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged")]
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged(void* self, QAbstractItemModel_layoutAboutToBeChanged_action _action);
 	[LinkName("QAbstractItemModel_Submit")]
 	public static extern bool QAbstractItemModel_Submit(void* self);
 	[LinkName("QAbstractItemModel_Revert")]
@@ -2003,14 +2019,34 @@ extension CQt
 	public static extern bool QAbstractItemModel_CheckIndex2(void* self, void** index, void* options);
 	[LinkName("QAbstractItemModel_DataChanged3")]
 	public static extern void QAbstractItemModel_DataChanged3(void* self, void** topLeft, void** bottomRight, void** roles);
+	
+	public function void QAbstractItemModel_dataChanged3_action(void* self, void** topLeft, void** bottomRight, void** roles);
+	[LinkName("QAbstractItemModel_Connect_DataChanged3")]
+	public static extern void QAbstractItemModel_Connect_DataChanged3(void* self, void** topLeft, void** bottomRight, void** roles, QAbstractItemModel_dataChanged3_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged1")]
 	public static extern void QAbstractItemModel_LayoutChanged1(void* self, void** parents);
+	
+	public function void QAbstractItemModel_layoutChanged1_action(void* self, void** parents);
+	[LinkName("QAbstractItemModel_Connect_LayoutChanged1")]
+	public static extern void QAbstractItemModel_Connect_LayoutChanged1(void* self, void** parents, QAbstractItemModel_layoutChanged1_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged2")]
 	public static extern void QAbstractItemModel_LayoutChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
+	
+	public function void QAbstractItemModel_layoutChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
+	[LinkName("QAbstractItemModel_Connect_LayoutChanged2")]
+	public static extern void QAbstractItemModel_Connect_LayoutChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint, QAbstractItemModel_layoutChanged2_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged1")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged1(void* self, void** parents);
+	
+	public function void QAbstractItemModel_layoutAboutToBeChanged1_action(void* self, void** parents);
+	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged1")]
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged1(void* self, void** parents, QAbstractItemModel_layoutAboutToBeChanged1_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged2")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
+	
+	public function void QAbstractItemModel_layoutAboutToBeChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
+	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged2")]
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint, QAbstractItemModel_layoutAboutToBeChanged2_action _action);
 	[LinkName("QAbstractItemModel_CreateIndex3")]
 	public static extern void* QAbstractItemModel_CreateIndex3(void* self, c_int row, c_int column, void* data);
 }

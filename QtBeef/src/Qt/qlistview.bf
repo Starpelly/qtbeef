@@ -4763,6 +4763,10 @@ extension CQt
 	public static extern void QListView_SetRootIndex(void* self, void** index);
 	[LinkName("QListView_IndexesMoved")]
 	public static extern void QListView_IndexesMoved(void* self, void** indexes);
+	
+	public function void QListView_indexesMoved_action(void* self, void** indexes);
+	[LinkName("QListView_Connect_IndexesMoved")]
+	public static extern void QListView_Connect_IndexesMoved(void* self, void** indexes, QListView_indexesMoved_action _action);
 	[LinkName("QListView_Event")]
 	public static extern bool QListView_Event(void* self, void** e);
 	[LinkName("QListView_ScrollContentsBy")]

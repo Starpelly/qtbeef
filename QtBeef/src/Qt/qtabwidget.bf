@@ -3733,12 +3733,28 @@ extension CQt
 	public static extern void QTabWidget_SetCurrentWidget(void* self, void** widget);
 	[LinkName("QTabWidget_CurrentChanged")]
 	public static extern void QTabWidget_CurrentChanged(void* self, c_int index);
+	
+	public function void QTabWidget_currentChanged_action(void* self, c_int index);
+	[LinkName("QTabWidget_Connect_CurrentChanged")]
+	public static extern void QTabWidget_Connect_CurrentChanged(void* self, c_int index, QTabWidget_currentChanged_action _action);
 	[LinkName("QTabWidget_TabCloseRequested")]
 	public static extern void QTabWidget_TabCloseRequested(void* self, c_int index);
+	
+	public function void QTabWidget_tabCloseRequested_action(void* self, c_int index);
+	[LinkName("QTabWidget_Connect_TabCloseRequested")]
+	public static extern void QTabWidget_Connect_TabCloseRequested(void* self, c_int index, QTabWidget_tabCloseRequested_action _action);
 	[LinkName("QTabWidget_TabBarClicked")]
 	public static extern void QTabWidget_TabBarClicked(void* self, c_int index);
+	
+	public function void QTabWidget_tabBarClicked_action(void* self, c_int index);
+	[LinkName("QTabWidget_Connect_TabBarClicked")]
+	public static extern void QTabWidget_Connect_TabBarClicked(void* self, c_int index, QTabWidget_tabBarClicked_action _action);
 	[LinkName("QTabWidget_TabBarDoubleClicked")]
 	public static extern void QTabWidget_TabBarDoubleClicked(void* self, c_int index);
+	
+	public function void QTabWidget_tabBarDoubleClicked_action(void* self, c_int index);
+	[LinkName("QTabWidget_Connect_TabBarDoubleClicked")]
+	public static extern void QTabWidget_Connect_TabBarDoubleClicked(void* self, c_int index, QTabWidget_tabBarDoubleClicked_action _action);
 	[LinkName("QTabWidget_TabInserted")]
 	public static extern void QTabWidget_TabInserted(void* self, c_int index);
 	[LinkName("QTabWidget_TabRemoved")]

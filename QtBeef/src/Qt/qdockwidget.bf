@@ -3377,14 +3377,34 @@ extension CQt
 	public static extern void** QDockWidget_ToggleViewAction(void* self);
 	[LinkName("QDockWidget_FeaturesChanged")]
 	public static extern void QDockWidget_FeaturesChanged(void* self, void* features);
+	
+	public function void QDockWidget_featuresChanged_action(void* self, void* features);
+	[LinkName("QDockWidget_Connect_FeaturesChanged")]
+	public static extern void QDockWidget_Connect_FeaturesChanged(void* self, void* features, QDockWidget_featuresChanged_action _action);
 	[LinkName("QDockWidget_TopLevelChanged")]
 	public static extern void QDockWidget_TopLevelChanged(void* self, bool topLevel);
+	
+	public function void QDockWidget_topLevelChanged_action(void* self, bool topLevel);
+	[LinkName("QDockWidget_Connect_TopLevelChanged")]
+	public static extern void QDockWidget_Connect_TopLevelChanged(void* self, bool topLevel, QDockWidget_topLevelChanged_action _action);
 	[LinkName("QDockWidget_AllowedAreasChanged")]
 	public static extern void QDockWidget_AllowedAreasChanged(void* self, void* allowedAreas);
+	
+	public function void QDockWidget_allowedAreasChanged_action(void* self, void* allowedAreas);
+	[LinkName("QDockWidget_Connect_AllowedAreasChanged")]
+	public static extern void QDockWidget_Connect_AllowedAreasChanged(void* self, void* allowedAreas, QDockWidget_allowedAreasChanged_action _action);
 	[LinkName("QDockWidget_VisibilityChanged")]
 	public static extern void QDockWidget_VisibilityChanged(void* self, bool visible);
+	
+	public function void QDockWidget_visibilityChanged_action(void* self, bool visible);
+	[LinkName("QDockWidget_Connect_VisibilityChanged")]
+	public static extern void QDockWidget_Connect_VisibilityChanged(void* self, bool visible, QDockWidget_visibilityChanged_action _action);
 	[LinkName("QDockWidget_DockLocationChanged")]
 	public static extern void QDockWidget_DockLocationChanged(void* self, Qt_DockWidgetArea area);
+	
+	public function void QDockWidget_dockLocationChanged_action(void* self, Qt_DockWidgetArea area);
+	[LinkName("QDockWidget_Connect_DockLocationChanged")]
+	public static extern void QDockWidget_Connect_DockLocationChanged(void* self, Qt_DockWidgetArea area, QDockWidget_dockLocationChanged_action _action);
 	[LinkName("QDockWidget_ChangeEvent")]
 	public static extern void QDockWidget_ChangeEvent(void* self, void** event);
 	[LinkName("QDockWidget_CloseEvent")]

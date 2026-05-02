@@ -1987,42 +1987,118 @@ extension CQt
 	public static extern void QWindow_RequestUpdate(void* self);
 	[LinkName("QWindow_ScreenChanged")]
 	public static extern void QWindow_ScreenChanged(void* self, void** screen);
+	
+	public function void QWindow_screenChanged_action(void* self, void** screen);
+	[LinkName("QWindow_Connect_ScreenChanged")]
+	public static extern void QWindow_Connect_ScreenChanged(void* self, void** screen, QWindow_screenChanged_action _action);
 	[LinkName("QWindow_ModalityChanged")]
 	public static extern void QWindow_ModalityChanged(void* self, Qt_WindowModality modality);
+	
+	public function void QWindow_modalityChanged_action(void* self, Qt_WindowModality modality);
+	[LinkName("QWindow_Connect_ModalityChanged")]
+	public static extern void QWindow_Connect_ModalityChanged(void* self, Qt_WindowModality modality, QWindow_modalityChanged_action _action);
 	[LinkName("QWindow_WindowStateChanged")]
 	public static extern void QWindow_WindowStateChanged(void* self, Qt_WindowState windowState);
+	
+	public function void QWindow_windowStateChanged_action(void* self, Qt_WindowState windowState);
+	[LinkName("QWindow_Connect_WindowStateChanged")]
+	public static extern void QWindow_Connect_WindowStateChanged(void* self, Qt_WindowState windowState, QWindow_windowStateChanged_action _action);
 	[LinkName("QWindow_WindowTitleChanged")]
 	public static extern void QWindow_WindowTitleChanged(void* self, libqt_string title);
+	
+	public function void QWindow_windowTitleChanged_action(void* self, libqt_string title);
+	[LinkName("QWindow_Connect_WindowTitleChanged")]
+	public static extern void QWindow_Connect_WindowTitleChanged(void* self, libqt_string title, QWindow_windowTitleChanged_action _action);
 	[LinkName("QWindow_XChanged")]
 	public static extern void QWindow_XChanged(void* self, c_int arg);
+	
+	public function void QWindow_xChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_XChanged")]
+	public static extern void QWindow_Connect_XChanged(void* self, c_int arg, QWindow_xChanged_action _action);
 	[LinkName("QWindow_YChanged")]
 	public static extern void QWindow_YChanged(void* self, c_int arg);
+	
+	public function void QWindow_yChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_YChanged")]
+	public static extern void QWindow_Connect_YChanged(void* self, c_int arg, QWindow_yChanged_action _action);
 	[LinkName("QWindow_WidthChanged")]
 	public static extern void QWindow_WidthChanged(void* self, c_int arg);
+	
+	public function void QWindow_widthChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_WidthChanged")]
+	public static extern void QWindow_Connect_WidthChanged(void* self, c_int arg, QWindow_widthChanged_action _action);
 	[LinkName("QWindow_HeightChanged")]
 	public static extern void QWindow_HeightChanged(void* self, c_int arg);
+	
+	public function void QWindow_heightChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_HeightChanged")]
+	public static extern void QWindow_Connect_HeightChanged(void* self, c_int arg, QWindow_heightChanged_action _action);
 	[LinkName("QWindow_MinimumWidthChanged")]
 	public static extern void QWindow_MinimumWidthChanged(void* self, c_int arg);
+	
+	public function void QWindow_minimumWidthChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_MinimumWidthChanged")]
+	public static extern void QWindow_Connect_MinimumWidthChanged(void* self, c_int arg, QWindow_minimumWidthChanged_action _action);
 	[LinkName("QWindow_MinimumHeightChanged")]
 	public static extern void QWindow_MinimumHeightChanged(void* self, c_int arg);
+	
+	public function void QWindow_minimumHeightChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_MinimumHeightChanged")]
+	public static extern void QWindow_Connect_MinimumHeightChanged(void* self, c_int arg, QWindow_minimumHeightChanged_action _action);
 	[LinkName("QWindow_MaximumWidthChanged")]
 	public static extern void QWindow_MaximumWidthChanged(void* self, c_int arg);
+	
+	public function void QWindow_maximumWidthChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_MaximumWidthChanged")]
+	public static extern void QWindow_Connect_MaximumWidthChanged(void* self, c_int arg, QWindow_maximumWidthChanged_action _action);
 	[LinkName("QWindow_MaximumHeightChanged")]
 	public static extern void QWindow_MaximumHeightChanged(void* self, c_int arg);
+	
+	public function void QWindow_maximumHeightChanged_action(void* self, c_int arg);
+	[LinkName("QWindow_Connect_MaximumHeightChanged")]
+	public static extern void QWindow_Connect_MaximumHeightChanged(void* self, c_int arg, QWindow_maximumHeightChanged_action _action);
 	[LinkName("QWindow_VisibleChanged")]
 	public static extern void QWindow_VisibleChanged(void* self, bool arg);
+	
+	public function void QWindow_visibleChanged_action(void* self, bool arg);
+	[LinkName("QWindow_Connect_VisibleChanged")]
+	public static extern void QWindow_Connect_VisibleChanged(void* self, bool arg, QWindow_visibleChanged_action _action);
 	[LinkName("QWindow_VisibilityChanged")]
 	public static extern void QWindow_VisibilityChanged(void* self, QWindow_Visibility visibility);
+	
+	public function void QWindow_visibilityChanged_action(void* self, QWindow_Visibility visibility);
+	[LinkName("QWindow_Connect_VisibilityChanged")]
+	public static extern void QWindow_Connect_VisibilityChanged(void* self, QWindow_Visibility visibility, QWindow_visibilityChanged_action _action);
 	[LinkName("QWindow_ActiveChanged")]
 	public static extern void QWindow_ActiveChanged(void* self);
+	
+	public function void QWindow_activeChanged_action(void* self);
+	[LinkName("QWindow_Connect_ActiveChanged")]
+	public static extern void QWindow_Connect_ActiveChanged(void* self, QWindow_activeChanged_action _action);
 	[LinkName("QWindow_ContentOrientationChanged")]
 	public static extern void QWindow_ContentOrientationChanged(void* self, Qt_ScreenOrientation orientation);
+	
+	public function void QWindow_contentOrientationChanged_action(void* self, Qt_ScreenOrientation orientation);
+	[LinkName("QWindow_Connect_ContentOrientationChanged")]
+	public static extern void QWindow_Connect_ContentOrientationChanged(void* self, Qt_ScreenOrientation orientation, QWindow_contentOrientationChanged_action _action);
 	[LinkName("QWindow_FocusObjectChanged")]
 	public static extern void QWindow_FocusObjectChanged(void* self, void** object);
+	
+	public function void QWindow_focusObjectChanged_action(void* self, void** object);
+	[LinkName("QWindow_Connect_FocusObjectChanged")]
+	public static extern void QWindow_Connect_FocusObjectChanged(void* self, void** object, QWindow_focusObjectChanged_action _action);
 	[LinkName("QWindow_OpacityChanged")]
 	public static extern void QWindow_OpacityChanged(void* self, double opacity);
+	
+	public function void QWindow_opacityChanged_action(void* self, double opacity);
+	[LinkName("QWindow_Connect_OpacityChanged")]
+	public static extern void QWindow_Connect_OpacityChanged(void* self, double opacity, QWindow_opacityChanged_action _action);
 	[LinkName("QWindow_TransientParentChanged")]
 	public static extern void QWindow_TransientParentChanged(void* self, void** transientParent);
+	
+	public function void QWindow_transientParentChanged_action(void* self, void** transientParent);
+	[LinkName("QWindow_Connect_TransientParentChanged")]
+	public static extern void QWindow_Connect_TransientParentChanged(void* self, void** transientParent, QWindow_transientParentChanged_action _action);
 	[LinkName("QWindow_ExposeEvent")]
 	public static extern void QWindow_ExposeEvent(void* self, void** param1);
 	[LinkName("QWindow_ResizeEvent")]

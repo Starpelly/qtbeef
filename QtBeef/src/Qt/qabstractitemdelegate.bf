@@ -685,16 +685,32 @@ extension CQt
 	public static extern void* QAbstractItemDelegate_PaintingRoles(void* self);
 	[LinkName("QAbstractItemDelegate_CommitData")]
 	public static extern void QAbstractItemDelegate_CommitData(void* self, void** editor);
+	
+	public function void QAbstractItemDelegate_commitData_action(void* self, void** editor);
+	[LinkName("QAbstractItemDelegate_Connect_CommitData")]
+	public static extern void QAbstractItemDelegate_Connect_CommitData(void* self, void** editor, QAbstractItemDelegate_commitData_action _action);
 	[LinkName("QAbstractItemDelegate_CloseEditor")]
 	public static extern void QAbstractItemDelegate_CloseEditor(void* self, void** editor);
+	
+	public function void QAbstractItemDelegate_closeEditor_action(void* self, void** editor);
+	[LinkName("QAbstractItemDelegate_Connect_CloseEditor")]
+	public static extern void QAbstractItemDelegate_Connect_CloseEditor(void* self, void** editor, QAbstractItemDelegate_closeEditor_action _action);
 	[LinkName("QAbstractItemDelegate_SizeHintChanged")]
 	public static extern void QAbstractItemDelegate_SizeHintChanged(void* self, void** param1);
+	
+	public function void QAbstractItemDelegate_sizeHintChanged_action(void* self, void** param1);
+	[LinkName("QAbstractItemDelegate_Connect_SizeHintChanged")]
+	public static extern void QAbstractItemDelegate_Connect_SizeHintChanged(void* self, void** param1, QAbstractItemDelegate_sizeHintChanged_action _action);
 	[LinkName("QAbstractItemDelegate_Tr2")]
 	public static extern libqt_string QAbstractItemDelegate_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractItemDelegate_Tr3")]
 	public static extern libqt_string QAbstractItemDelegate_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QAbstractItemDelegate_CloseEditor2")]
 	public static extern void QAbstractItemDelegate_CloseEditor2(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
+	
+	public function void QAbstractItemDelegate_closeEditor2_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
+	[LinkName("QAbstractItemDelegate_Connect_CloseEditor2")]
+	public static extern void QAbstractItemDelegate_Connect_CloseEditor2(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint, QAbstractItemDelegate_closeEditor2_action _action);
 }
 [AllowDuplicates]
 enum QAbstractItemDelegate_EndEditHint

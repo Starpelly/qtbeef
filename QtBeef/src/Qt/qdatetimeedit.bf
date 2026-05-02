@@ -4003,10 +4003,22 @@ extension CQt
 	public static extern bool QDateTimeEdit_Event(void* self, void** event);
 	[LinkName("QDateTimeEdit_DateTimeChanged")]
 	public static extern void QDateTimeEdit_DateTimeChanged(void* self, void** dateTime);
+	
+	public function void QDateTimeEdit_dateTimeChanged_action(void* self, void** dateTime);
+	[LinkName("QDateTimeEdit_Connect_DateTimeChanged")]
+	public static extern void QDateTimeEdit_Connect_DateTimeChanged(void* self, void** dateTime, QDateTimeEdit_dateTimeChanged_action _action);
 	[LinkName("QDateTimeEdit_TimeChanged")]
 	public static extern void QDateTimeEdit_TimeChanged(void* self, void* time);
+	
+	public function void QDateTimeEdit_timeChanged_action(void* self, void* time);
+	[LinkName("QDateTimeEdit_Connect_TimeChanged")]
+	public static extern void QDateTimeEdit_Connect_TimeChanged(void* self, void* time, QDateTimeEdit_timeChanged_action _action);
 	[LinkName("QDateTimeEdit_DateChanged")]
 	public static extern void QDateTimeEdit_DateChanged(void* self, void* date);
+	
+	public function void QDateTimeEdit_dateChanged_action(void* self, void* date);
+	[LinkName("QDateTimeEdit_Connect_DateChanged")]
+	public static extern void QDateTimeEdit_Connect_DateChanged(void* self, void* date, QDateTimeEdit_dateChanged_action _action);
 	[LinkName("QDateTimeEdit_SetDateTime")]
 	public static extern void QDateTimeEdit_SetDateTime(void* self, void** dateTime);
 	[LinkName("QDateTimeEdit_SetDate")]
@@ -7932,6 +7944,10 @@ extension CQt
 	public static extern libqt_string QTimeEdit_Tr(c_char* s);
 	[LinkName("QTimeEdit_UserTimeChanged")]
 	public static extern void QTimeEdit_UserTimeChanged(void* self, void* time);
+	
+	public function void QTimeEdit_userTimeChanged_action(void* self, void* time);
+	[LinkName("QTimeEdit_Connect_UserTimeChanged")]
+	public static extern void QTimeEdit_Connect_UserTimeChanged(void* self, void* time, QTimeEdit_userTimeChanged_action _action);
 	[LinkName("QTimeEdit_Tr2")]
 	public static extern libqt_string QTimeEdit_Tr2(c_char* s, c_char* c);
 	[LinkName("QTimeEdit_Tr3")]
@@ -11827,6 +11843,10 @@ extension CQt
 	public static extern libqt_string QDateEdit_Tr(c_char* s);
 	[LinkName("QDateEdit_UserDateChanged")]
 	public static extern void QDateEdit_UserDateChanged(void* self, void* date);
+	
+	public function void QDateEdit_userDateChanged_action(void* self, void* date);
+	[LinkName("QDateEdit_Connect_UserDateChanged")]
+	public static extern void QDateEdit_Connect_UserDateChanged(void* self, void* date, QDateEdit_userDateChanged_action _action);
 	[LinkName("QDateEdit_Tr2")]
 	public static extern libqt_string QDateEdit_Tr2(c_char* s, c_char* c);
 	[LinkName("QDateEdit_Tr3")]

@@ -3425,6 +3425,10 @@ extension CQt
 	public static extern void QProgressBar_SetOrientation(void* self, Qt_Orientation orientation);
 	[LinkName("QProgressBar_ValueChanged")]
 	public static extern void QProgressBar_ValueChanged(void* self, c_int value);
+	
+	public function void QProgressBar_valueChanged_action(void* self, c_int value);
+	[LinkName("QProgressBar_Connect_ValueChanged")]
+	public static extern void QProgressBar_Connect_ValueChanged(void* self, c_int value, QProgressBar_valueChanged_action _action);
 	[LinkName("QProgressBar_Event")]
 	public static extern bool QProgressBar_Event(void* self, void** e);
 	[LinkName("QProgressBar_PaintEvent")]

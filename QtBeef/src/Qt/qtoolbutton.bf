@@ -3607,6 +3607,10 @@ extension CQt
 	public static extern void QToolButton_SetDefaultAction(void* self, void** defaultAction);
 	[LinkName("QToolButton_Triggered")]
 	public static extern void QToolButton_Triggered(void* self, void** param1);
+	
+	public function void QToolButton_triggered_action(void* self, void** param1);
+	[LinkName("QToolButton_Connect_Triggered")]
+	public static extern void QToolButton_Connect_Triggered(void* self, void** param1, QToolButton_triggered_action _action);
 	[LinkName("QToolButton_Event")]
 	public static extern bool QToolButton_Event(void* self, void** e);
 	[LinkName("QToolButton_MousePressEvent")]

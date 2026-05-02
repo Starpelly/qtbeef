@@ -4371,6 +4371,10 @@ extension CQt
 	public static extern void QGraphicsView_UpdateSceneRect(void* self, void** rect);
 	[LinkName("QGraphicsView_RubberBandChanged")]
 	public static extern void QGraphicsView_RubberBandChanged(void* self, void* viewportRect, void* fromScenePoint, void* toScenePoint);
+	
+	public function void QGraphicsView_rubberBandChanged_action(void* self, void* viewportRect, void* fromScenePoint, void* toScenePoint);
+	[LinkName("QGraphicsView_Connect_RubberBandChanged")]
+	public static extern void QGraphicsView_Connect_RubberBandChanged(void* self, void* viewportRect, void* fromScenePoint, void* toScenePoint, QGraphicsView_rubberBandChanged_action _action);
 	[LinkName("QGraphicsView_SetupViewport")]
 	public static extern void QGraphicsView_SetupViewport(void* self, void** widget);
 	[LinkName("QGraphicsView_Event")]

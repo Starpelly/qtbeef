@@ -1106,14 +1106,34 @@ extension CQt
 	public static extern void QItemSelectionModel_ClearCurrentIndex(void* self);
 	[LinkName("QItemSelectionModel_SelectionChanged")]
 	public static extern void QItemSelectionModel_SelectionChanged(void* self, void** selected, void** deselected);
+	
+	public function void QItemSelectionModel_selectionChanged_action(void* self, void** selected, void** deselected);
+	[LinkName("QItemSelectionModel_Connect_SelectionChanged")]
+	public static extern void QItemSelectionModel_Connect_SelectionChanged(void* self, void** selected, void** deselected, QItemSelectionModel_selectionChanged_action _action);
 	[LinkName("QItemSelectionModel_CurrentChanged")]
 	public static extern void QItemSelectionModel_CurrentChanged(void* self, void** current, void** previous);
+	
+	public function void QItemSelectionModel_currentChanged_action(void* self, void** current, void** previous);
+	[LinkName("QItemSelectionModel_Connect_CurrentChanged")]
+	public static extern void QItemSelectionModel_Connect_CurrentChanged(void* self, void** current, void** previous, QItemSelectionModel_currentChanged_action _action);
 	[LinkName("QItemSelectionModel_CurrentRowChanged")]
 	public static extern void QItemSelectionModel_CurrentRowChanged(void* self, void** current, void** previous);
+	
+	public function void QItemSelectionModel_currentRowChanged_action(void* self, void** current, void** previous);
+	[LinkName("QItemSelectionModel_Connect_CurrentRowChanged")]
+	public static extern void QItemSelectionModel_Connect_CurrentRowChanged(void* self, void** current, void** previous, QItemSelectionModel_currentRowChanged_action _action);
 	[LinkName("QItemSelectionModel_CurrentColumnChanged")]
 	public static extern void QItemSelectionModel_CurrentColumnChanged(void* self, void** current, void** previous);
+	
+	public function void QItemSelectionModel_currentColumnChanged_action(void* self, void** current, void** previous);
+	[LinkName("QItemSelectionModel_Connect_CurrentColumnChanged")]
+	public static extern void QItemSelectionModel_Connect_CurrentColumnChanged(void* self, void** current, void** previous, QItemSelectionModel_currentColumnChanged_action _action);
 	[LinkName("QItemSelectionModel_ModelChanged")]
 	public static extern void QItemSelectionModel_ModelChanged(void* self, void** model);
+	
+	public function void QItemSelectionModel_modelChanged_action(void* self, void** model);
+	[LinkName("QItemSelectionModel_Connect_ModelChanged")]
+	public static extern void QItemSelectionModel_Connect_ModelChanged(void* self, void** model, QItemSelectionModel_modelChanged_action _action);
 	[LinkName("QItemSelectionModel_EmitSelectionChanged")]
 	public static extern void QItemSelectionModel_EmitSelectionChanged(void* self, void** newSelection, void** oldSelection);
 	[LinkName("QItemSelectionModel_Tr2")]

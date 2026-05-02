@@ -2578,6 +2578,10 @@ extension CQt
 	public static extern bool QStandardItemModel_DropMimeData(void* self, void** data, Qt_DropAction action, c_int row, c_int column, void** parent);
 	[LinkName("QStandardItemModel_ItemChanged")]
 	public static extern void QStandardItemModel_ItemChanged(void* self, void** item);
+	
+	public function void QStandardItemModel_itemChanged_action(void* self, void** item);
+	[LinkName("QStandardItemModel_Connect_ItemChanged")]
+	public static extern void QStandardItemModel_Connect_ItemChanged(void* self, void** item, QStandardItemModel_itemChanged_action _action);
 	[LinkName("QStandardItemModel_Tr2")]
 	public static extern libqt_string QStandardItemModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QStandardItemModel_Tr3")]

@@ -857,6 +857,10 @@ extension CQt
 	public static extern c_int QSequentialAnimationGroup_Duration(void* self);
 	[LinkName("QSequentialAnimationGroup_CurrentAnimationChanged")]
 	public static extern void QSequentialAnimationGroup_CurrentAnimationChanged(void* self, void** current);
+	
+	public function void QSequentialAnimationGroup_currentAnimationChanged_action(void* self, void** current);
+	[LinkName("QSequentialAnimationGroup_Connect_CurrentAnimationChanged")]
+	public static extern void QSequentialAnimationGroup_Connect_CurrentAnimationChanged(void* self, void** current, QSequentialAnimationGroup_currentAnimationChanged_action _action);
 	[LinkName("QSequentialAnimationGroup_Event")]
 	public static extern bool QSequentialAnimationGroup_Event(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_UpdateCurrentTime")]

@@ -3711,8 +3711,16 @@ extension CQt
 	public static extern void QLabel_Clear(void* self);
 	[LinkName("QLabel_LinkActivated")]
 	public static extern void QLabel_LinkActivated(void* self, libqt_string link);
+	
+	public function void QLabel_linkActivated_action(void* self, libqt_string link);
+	[LinkName("QLabel_Connect_LinkActivated")]
+	public static extern void QLabel_Connect_LinkActivated(void* self, libqt_string link, QLabel_linkActivated_action _action);
 	[LinkName("QLabel_LinkHovered")]
 	public static extern void QLabel_LinkHovered(void* self, libqt_string link);
+	
+	public function void QLabel_linkHovered_action(void* self, libqt_string link);
+	[LinkName("QLabel_Connect_LinkHovered")]
+	public static extern void QLabel_Connect_LinkHovered(void* self, libqt_string link, QLabel_linkHovered_action _action);
 	[LinkName("QLabel_Event")]
 	public static extern bool QLabel_Event(void* self, void** e);
 	[LinkName("QLabel_KeyPressEvent")]

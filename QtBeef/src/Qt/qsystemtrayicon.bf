@@ -755,8 +755,16 @@ extension CQt
 	public static extern void QSystemTrayIcon_ShowMessage2(void* self, libqt_string title, libqt_string msg);
 	[LinkName("QSystemTrayIcon_Activated")]
 	public static extern void QSystemTrayIcon_Activated(void* self, QSystemTrayIcon_ActivationReason reason);
+	
+	public function void QSystemTrayIcon_activated_action(void* self, QSystemTrayIcon_ActivationReason reason);
+	[LinkName("QSystemTrayIcon_Connect_Activated")]
+	public static extern void QSystemTrayIcon_Connect_Activated(void* self, QSystemTrayIcon_ActivationReason reason, QSystemTrayIcon_activated_action _action);
 	[LinkName("QSystemTrayIcon_MessageClicked")]
 	public static extern void QSystemTrayIcon_MessageClicked(void* self);
+	
+	public function void QSystemTrayIcon_messageClicked_action(void* self);
+	[LinkName("QSystemTrayIcon_Connect_MessageClicked")]
+	public static extern void QSystemTrayIcon_Connect_MessageClicked(void* self, QSystemTrayIcon_messageClicked_action _action);
 	[LinkName("QSystemTrayIcon_Event")]
 	public static extern bool QSystemTrayIcon_Event(void* self, void** event);
 	[LinkName("QSystemTrayIcon_Tr2")]

@@ -797,12 +797,28 @@ extension CQt
 	public static extern void QClipboard_SetPixmap(void* self, void** param1);
 	[LinkName("QClipboard_Changed")]
 	public static extern void QClipboard_Changed(void* self, QClipboard_Mode mode);
+	
+	public function void QClipboard_changed_action(void* self, QClipboard_Mode mode);
+	[LinkName("QClipboard_Connect_Changed")]
+	public static extern void QClipboard_Connect_Changed(void* self, QClipboard_Mode mode, QClipboard_changed_action _action);
 	[LinkName("QClipboard_SelectionChanged")]
 	public static extern void QClipboard_SelectionChanged(void* self);
+	
+	public function void QClipboard_selectionChanged_action(void* self);
+	[LinkName("QClipboard_Connect_SelectionChanged")]
+	public static extern void QClipboard_Connect_SelectionChanged(void* self, QClipboard_selectionChanged_action _action);
 	[LinkName("QClipboard_FindBufferChanged")]
 	public static extern void QClipboard_FindBufferChanged(void* self);
+	
+	public function void QClipboard_findBufferChanged_action(void* self);
+	[LinkName("QClipboard_Connect_FindBufferChanged")]
+	public static extern void QClipboard_Connect_FindBufferChanged(void* self, QClipboard_findBufferChanged_action _action);
 	[LinkName("QClipboard_DataChanged")]
 	public static extern void QClipboard_DataChanged(void* self);
+	
+	public function void QClipboard_dataChanged_action(void* self);
+	[LinkName("QClipboard_Connect_DataChanged")]
+	public static extern void QClipboard_Connect_DataChanged(void* self, QClipboard_dataChanged_action _action);
 	[LinkName("QClipboard_Tr2")]
 	public static extern libqt_string QClipboard_Tr2(c_char* s, c_char* c);
 	[LinkName("QClipboard_Tr3")]

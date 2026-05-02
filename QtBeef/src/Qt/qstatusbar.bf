@@ -3349,6 +3349,10 @@ extension CQt
 	public static extern void QStatusBar_ClearMessage(void* self);
 	[LinkName("QStatusBar_MessageChanged")]
 	public static extern void QStatusBar_MessageChanged(void* self, libqt_string text);
+	
+	public function void QStatusBar_messageChanged_action(void* self, libqt_string text);
+	[LinkName("QStatusBar_Connect_MessageChanged")]
+	public static extern void QStatusBar_Connect_MessageChanged(void* self, libqt_string text, QStatusBar_messageChanged_action _action);
 	[LinkName("QStatusBar_ShowEvent")]
 	public static extern void QStatusBar_ShowEvent(void* self, void** param1);
 	[LinkName("QStatusBar_PaintEvent")]

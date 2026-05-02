@@ -3375,8 +3375,16 @@ extension CQt
 	public static extern void** QMdiSubWindow_MdiArea(void* self);
 	[LinkName("QMdiSubWindow_WindowStateChanged")]
 	public static extern void QMdiSubWindow_WindowStateChanged(void* self, void* oldState, void* newState);
+	
+	public function void QMdiSubWindow_windowStateChanged_action(void* self, void* oldState, void* newState);
+	[LinkName("QMdiSubWindow_Connect_WindowStateChanged")]
+	public static extern void QMdiSubWindow_Connect_WindowStateChanged(void* self, void* oldState, void* newState, QMdiSubWindow_windowStateChanged_action _action);
 	[LinkName("QMdiSubWindow_AboutToActivate")]
 	public static extern void QMdiSubWindow_AboutToActivate(void* self);
+	
+	public function void QMdiSubWindow_aboutToActivate_action(void* self);
+	[LinkName("QMdiSubWindow_Connect_AboutToActivate")]
+	public static extern void QMdiSubWindow_Connect_AboutToActivate(void* self, QMdiSubWindow_aboutToActivate_action _action);
 	[LinkName("QMdiSubWindow_ShowSystemMenu")]
 	public static extern void QMdiSubWindow_ShowSystemMenu(void* self);
 	[LinkName("QMdiSubWindow_ShowShaded")]

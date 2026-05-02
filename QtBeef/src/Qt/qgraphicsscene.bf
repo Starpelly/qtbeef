@@ -1875,12 +1875,28 @@ extension CQt
 	public static extern bool QGraphicsScene_FocusNextPrevChild(void* self, bool next);
 	[LinkName("QGraphicsScene_Changed")]
 	public static extern void QGraphicsScene_Changed(void* self, void** region);
+	
+	public function void QGraphicsScene_changed_action(void* self, void** region);
+	[LinkName("QGraphicsScene_Connect_Changed")]
+	public static extern void QGraphicsScene_Connect_Changed(void* self, void** region, QGraphicsScene_changed_action _action);
 	[LinkName("QGraphicsScene_SceneRectChanged")]
 	public static extern void QGraphicsScene_SceneRectChanged(void* self, void** rect);
+	
+	public function void QGraphicsScene_sceneRectChanged_action(void* self, void** rect);
+	[LinkName("QGraphicsScene_Connect_SceneRectChanged")]
+	public static extern void QGraphicsScene_Connect_SceneRectChanged(void* self, void** rect, QGraphicsScene_sceneRectChanged_action _action);
 	[LinkName("QGraphicsScene_SelectionChanged")]
 	public static extern void QGraphicsScene_SelectionChanged(void* self);
+	
+	public function void QGraphicsScene_selectionChanged_action(void* self);
+	[LinkName("QGraphicsScene_Connect_SelectionChanged")]
+	public static extern void QGraphicsScene_Connect_SelectionChanged(void* self, QGraphicsScene_selectionChanged_action _action);
 	[LinkName("QGraphicsScene_FocusItemChanged")]
 	public static extern void QGraphicsScene_FocusItemChanged(void* self, void** newFocus, void** oldFocus, Qt_FocusReason reason);
+	
+	public function void QGraphicsScene_focusItemChanged_action(void* self, void** newFocus, void** oldFocus, Qt_FocusReason reason);
+	[LinkName("QGraphicsScene_Connect_FocusItemChanged")]
+	public static extern void QGraphicsScene_Connect_FocusItemChanged(void* self, void** newFocus, void** oldFocus, Qt_FocusReason reason, QGraphicsScene_focusItemChanged_action _action);
 	[LinkName("QGraphicsScene_Tr2")]
 	public static extern libqt_string QGraphicsScene_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsScene_Tr3")]

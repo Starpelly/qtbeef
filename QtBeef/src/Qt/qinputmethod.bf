@@ -799,20 +799,52 @@ extension CQt
 	public static extern void QInputMethod_InvokeAction(void* self, QInputMethod_Action a, c_int cursorPosition);
 	[LinkName("QInputMethod_CursorRectangleChanged")]
 	public static extern void QInputMethod_CursorRectangleChanged(void* self);
+	
+	public function void QInputMethod_cursorRectangleChanged_action(void* self);
+	[LinkName("QInputMethod_Connect_CursorRectangleChanged")]
+	public static extern void QInputMethod_Connect_CursorRectangleChanged(void* self, QInputMethod_cursorRectangleChanged_action _action);
 	[LinkName("QInputMethod_AnchorRectangleChanged")]
 	public static extern void QInputMethod_AnchorRectangleChanged(void* self);
+	
+	public function void QInputMethod_anchorRectangleChanged_action(void* self);
+	[LinkName("QInputMethod_Connect_AnchorRectangleChanged")]
+	public static extern void QInputMethod_Connect_AnchorRectangleChanged(void* self, QInputMethod_anchorRectangleChanged_action _action);
 	[LinkName("QInputMethod_KeyboardRectangleChanged")]
 	public static extern void QInputMethod_KeyboardRectangleChanged(void* self);
+	
+	public function void QInputMethod_keyboardRectangleChanged_action(void* self);
+	[LinkName("QInputMethod_Connect_KeyboardRectangleChanged")]
+	public static extern void QInputMethod_Connect_KeyboardRectangleChanged(void* self, QInputMethod_keyboardRectangleChanged_action _action);
 	[LinkName("QInputMethod_InputItemClipRectangleChanged")]
 	public static extern void QInputMethod_InputItemClipRectangleChanged(void* self);
+	
+	public function void QInputMethod_inputItemClipRectangleChanged_action(void* self);
+	[LinkName("QInputMethod_Connect_InputItemClipRectangleChanged")]
+	public static extern void QInputMethod_Connect_InputItemClipRectangleChanged(void* self, QInputMethod_inputItemClipRectangleChanged_action _action);
 	[LinkName("QInputMethod_VisibleChanged")]
 	public static extern void QInputMethod_VisibleChanged(void* self);
+	
+	public function void QInputMethod_visibleChanged_action(void* self);
+	[LinkName("QInputMethod_Connect_VisibleChanged")]
+	public static extern void QInputMethod_Connect_VisibleChanged(void* self, QInputMethod_visibleChanged_action _action);
 	[LinkName("QInputMethod_AnimatingChanged")]
 	public static extern void QInputMethod_AnimatingChanged(void* self);
+	
+	public function void QInputMethod_animatingChanged_action(void* self);
+	[LinkName("QInputMethod_Connect_AnimatingChanged")]
+	public static extern void QInputMethod_Connect_AnimatingChanged(void* self, QInputMethod_animatingChanged_action _action);
 	[LinkName("QInputMethod_LocaleChanged")]
 	public static extern void QInputMethod_LocaleChanged(void* self);
+	
+	public function void QInputMethod_localeChanged_action(void* self);
+	[LinkName("QInputMethod_Connect_LocaleChanged")]
+	public static extern void QInputMethod_Connect_LocaleChanged(void* self, QInputMethod_localeChanged_action _action);
 	[LinkName("QInputMethod_InputDirectionChanged")]
 	public static extern void QInputMethod_InputDirectionChanged(void* self, Qt_LayoutDirection newDirection);
+	
+	public function void QInputMethod_inputDirectionChanged_action(void* self, Qt_LayoutDirection newDirection);
+	[LinkName("QInputMethod_Connect_InputDirectionChanged")]
+	public static extern void QInputMethod_Connect_InputDirectionChanged(void* self, Qt_LayoutDirection newDirection, QInputMethod_inputDirectionChanged_action _action);
 	[LinkName("QInputMethod_Tr2")]
 	public static extern libqt_string QInputMethod_Tr2(c_char* s, c_char* c);
 	[LinkName("QInputMethod_Tr3")]

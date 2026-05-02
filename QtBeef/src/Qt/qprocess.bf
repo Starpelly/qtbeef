@@ -1764,8 +1764,16 @@ extension CQt
 	public static extern void QProcess_Kill(void* self);
 	[LinkName("QProcess_Finished")]
 	public static extern void QProcess_Finished(void* self, c_int exitCode);
+	
+	public function void QProcess_finished_action(void* self, c_int exitCode);
+	[LinkName("QProcess_Connect_Finished")]
+	public static extern void QProcess_Connect_Finished(void* self, c_int exitCode, QProcess_finished_action _action);
 	[LinkName("QProcess_ErrorOccurred")]
 	public static extern void QProcess_ErrorOccurred(void* self, QProcess_ProcessError error);
+	
+	public function void QProcess_errorOccurred_action(void* self, QProcess_ProcessError error);
+	[LinkName("QProcess_Connect_ErrorOccurred")]
+	public static extern void QProcess_Connect_ErrorOccurred(void* self, QProcess_ProcessError error, QProcess_errorOccurred_action _action);
 	[LinkName("QProcess_SetProcessState")]
 	public static extern void QProcess_SetProcessState(void* self, QProcess_ProcessState state);
 	[LinkName("QProcess_ReadData")]
@@ -1804,6 +1812,10 @@ extension CQt
 	public static extern bool QProcess_StartDetached4(libqt_string program, void** arguments, libqt_string workingDirectory, c_longlong* pid);
 	[LinkName("QProcess_Finished2")]
 	public static extern void QProcess_Finished2(void* self, c_int exitCode, QProcess_ExitStatus exitStatus);
+	
+	public function void QProcess_finished2_action(void* self, c_int exitCode, QProcess_ExitStatus exitStatus);
+	[LinkName("QProcess_Connect_Finished2")]
+	public static extern void QProcess_Connect_Finished2(void* self, c_int exitCode, QProcess_ExitStatus exitStatus, QProcess_finished2_action _action);
 }
 [AllowDuplicates]
 enum QProcessEnvironment_Initialization

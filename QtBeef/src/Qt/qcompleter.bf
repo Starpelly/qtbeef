@@ -951,12 +951,28 @@ extension CQt
 	public static extern bool QCompleter_Event(void* self, void** param1);
 	[LinkName("QCompleter_Activated")]
 	public static extern void QCompleter_Activated(void* self, libqt_string text);
+	
+	public function void QCompleter_activated_action(void* self, libqt_string text);
+	[LinkName("QCompleter_Connect_Activated")]
+	public static extern void QCompleter_Connect_Activated(void* self, libqt_string text, QCompleter_activated_action _action);
 	[LinkName("QCompleter_Activated2")]
 	public static extern void QCompleter_Activated2(void* self, void** index);
+	
+	public function void QCompleter_Activated2_action(void* self, void** index);
+	[LinkName("QCompleter_Connect_Activated2")]
+	public static extern void QCompleter_Connect_Activated2(void* self, void** index, QCompleter_Activated2_action _action);
 	[LinkName("QCompleter_Highlighted")]
 	public static extern void QCompleter_Highlighted(void* self, libqt_string text);
+	
+	public function void QCompleter_highlighted_action(void* self, libqt_string text);
+	[LinkName("QCompleter_Connect_Highlighted")]
+	public static extern void QCompleter_Connect_Highlighted(void* self, libqt_string text, QCompleter_highlighted_action _action);
 	[LinkName("QCompleter_Highlighted2")]
 	public static extern void QCompleter_Highlighted2(void* self, void** index);
+	
+	public function void QCompleter_Highlighted2_action(void* self, void** index);
+	[LinkName("QCompleter_Connect_Highlighted2")]
+	public static extern void QCompleter_Connect_Highlighted2(void* self, void** index, QCompleter_Highlighted2_action _action);
 	[LinkName("QCompleter_Tr2")]
 	public static extern libqt_string QCompleter_Tr2(c_char* s, c_char* c);
 	[LinkName("QCompleter_Tr3")]

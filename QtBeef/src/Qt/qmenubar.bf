@@ -3403,8 +3403,16 @@ extension CQt
 	public static extern void QMenuBar_SetVisible(void* self, bool visible);
 	[LinkName("QMenuBar_Triggered")]
 	public static extern void QMenuBar_Triggered(void* self, void** action);
+	
+	public function void QMenuBar_triggered_action(void* self, void** action);
+	[LinkName("QMenuBar_Connect_Triggered")]
+	public static extern void QMenuBar_Connect_Triggered(void* self, void** action, QMenuBar_triggered_action _action);
 	[LinkName("QMenuBar_Hovered")]
 	public static extern void QMenuBar_Hovered(void* self, void** action);
+	
+	public function void QMenuBar_hovered_action(void* self, void** action);
+	[LinkName("QMenuBar_Connect_Hovered")]
+	public static extern void QMenuBar_Connect_Hovered(void* self, void** action, QMenuBar_hovered_action _action);
 	[LinkName("QMenuBar_ChangeEvent")]
 	public static extern void QMenuBar_ChangeEvent(void* self, void** param1);
 	[LinkName("QMenuBar_KeyPressEvent")]

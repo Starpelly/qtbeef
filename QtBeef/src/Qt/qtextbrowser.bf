@@ -4611,16 +4611,40 @@ extension CQt
 	public static extern void QTextBrowser_Reload(void* self);
 	[LinkName("QTextBrowser_BackwardAvailable")]
 	public static extern void QTextBrowser_BackwardAvailable(void* self, bool param1);
+	
+	public function void QTextBrowser_backwardAvailable_action(void* self, bool param1);
+	[LinkName("QTextBrowser_Connect_BackwardAvailable")]
+	public static extern void QTextBrowser_Connect_BackwardAvailable(void* self, bool param1, QTextBrowser_backwardAvailable_action _action);
 	[LinkName("QTextBrowser_ForwardAvailable")]
 	public static extern void QTextBrowser_ForwardAvailable(void* self, bool param1);
+	
+	public function void QTextBrowser_forwardAvailable_action(void* self, bool param1);
+	[LinkName("QTextBrowser_Connect_ForwardAvailable")]
+	public static extern void QTextBrowser_Connect_ForwardAvailable(void* self, bool param1, QTextBrowser_forwardAvailable_action _action);
 	[LinkName("QTextBrowser_HistoryChanged")]
 	public static extern void QTextBrowser_HistoryChanged(void* self);
+	
+	public function void QTextBrowser_historyChanged_action(void* self);
+	[LinkName("QTextBrowser_Connect_HistoryChanged")]
+	public static extern void QTextBrowser_Connect_HistoryChanged(void* self, QTextBrowser_historyChanged_action _action);
 	[LinkName("QTextBrowser_SourceChanged")]
 	public static extern void QTextBrowser_SourceChanged(void* self, void** param1);
+	
+	public function void QTextBrowser_sourceChanged_action(void* self, void** param1);
+	[LinkName("QTextBrowser_Connect_SourceChanged")]
+	public static extern void QTextBrowser_Connect_SourceChanged(void* self, void** param1, QTextBrowser_sourceChanged_action _action);
 	[LinkName("QTextBrowser_Highlighted")]
 	public static extern void QTextBrowser_Highlighted(void* self, void** param1);
+	
+	public function void QTextBrowser_highlighted_action(void* self, void** param1);
+	[LinkName("QTextBrowser_Connect_Highlighted")]
+	public static extern void QTextBrowser_Connect_Highlighted(void* self, void** param1, QTextBrowser_highlighted_action _action);
 	[LinkName("QTextBrowser_AnchorClicked")]
 	public static extern void QTextBrowser_AnchorClicked(void* self, void** param1);
+	
+	public function void QTextBrowser_anchorClicked_action(void* self, void** param1);
+	[LinkName("QTextBrowser_Connect_AnchorClicked")]
+	public static extern void QTextBrowser_Connect_AnchorClicked(void* self, void** param1, QTextBrowser_anchorClicked_action _action);
 	[LinkName("QTextBrowser_Event")]
 	public static extern bool QTextBrowser_Event(void* self, void** e);
 	[LinkName("QTextBrowser_KeyPressEvent")]

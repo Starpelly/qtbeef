@@ -3537,6 +3537,10 @@ extension CQt
 	public static extern void QCheckBox_SetCheckState(void* self, Qt_CheckState state);
 	[LinkName("QCheckBox_StateChanged")]
 	public static extern void QCheckBox_StateChanged(void* self, c_int param1);
+	
+	public function void QCheckBox_stateChanged_action(void* self, c_int param1);
+	[LinkName("QCheckBox_Connect_StateChanged")]
+	public static extern void QCheckBox_Connect_StateChanged(void* self, c_int param1, QCheckBox_stateChanged_action _action);
 	[LinkName("QCheckBox_Event")]
 	public static extern bool QCheckBox_Event(void* self, void** e);
 	[LinkName("QCheckBox_HitButton")]

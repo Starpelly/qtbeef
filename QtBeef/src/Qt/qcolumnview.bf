@@ -4473,6 +4473,10 @@ extension CQt
 	public static extern libqt_string QColumnView_Tr(c_char* s);
 	[LinkName("QColumnView_UpdatePreviewWidget")]
 	public static extern void QColumnView_UpdatePreviewWidget(void* self, void** index);
+	
+	public function void QColumnView_updatePreviewWidget_action(void* self, void** index);
+	[LinkName("QColumnView_Connect_UpdatePreviewWidget")]
+	public static extern void QColumnView_Connect_UpdatePreviewWidget(void* self, void** index, QColumnView_updatePreviewWidget_action _action);
 	[LinkName("QColumnView_IndexAt")]
 	public static extern void* QColumnView_IndexAt(void* self, void** point);
 	[LinkName("QColumnView_ScrollTo")]

@@ -689,6 +689,10 @@ extension CQt
 	public static extern bool QInputDevice_OperatorEqual(void* self, void** other);
 	[LinkName("QInputDevice_AvailableVirtualGeometryChanged")]
 	public static extern void QInputDevice_AvailableVirtualGeometryChanged(void* self, void* area);
+	
+	public function void QInputDevice_availableVirtualGeometryChanged_action(void* self, void* area);
+	[LinkName("QInputDevice_Connect_AvailableVirtualGeometryChanged")]
+	public static extern void QInputDevice_Connect_AvailableVirtualGeometryChanged(void* self, void* area, QInputDevice_availableVirtualGeometryChanged_action _action);
 	[LinkName("QInputDevice_Tr2")]
 	public static extern libqt_string QInputDevice_Tr2(c_char* s, c_char* c);
 	[LinkName("QInputDevice_Tr3")]

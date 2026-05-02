@@ -775,12 +775,28 @@ extension CQt
 	public static extern c_int QAbstractAnimation_TotalDuration(void* self);
 	[LinkName("QAbstractAnimation_Finished")]
 	public static extern void QAbstractAnimation_Finished(void* self);
+	
+	public function void QAbstractAnimation_finished_action(void* self);
+	[LinkName("QAbstractAnimation_Connect_Finished")]
+	public static extern void QAbstractAnimation_Connect_Finished(void* self, QAbstractAnimation_finished_action _action);
 	[LinkName("QAbstractAnimation_StateChanged")]
 	public static extern void QAbstractAnimation_StateChanged(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	
+	public function void QAbstractAnimation_stateChanged_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
+	[LinkName("QAbstractAnimation_Connect_StateChanged")]
+	public static extern void QAbstractAnimation_Connect_StateChanged(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState, QAbstractAnimation_stateChanged_action _action);
 	[LinkName("QAbstractAnimation_CurrentLoopChanged")]
 	public static extern void QAbstractAnimation_CurrentLoopChanged(void* self, c_int currentLoop);
+	
+	public function void QAbstractAnimation_currentLoopChanged_action(void* self, c_int currentLoop);
+	[LinkName("QAbstractAnimation_Connect_CurrentLoopChanged")]
+	public static extern void QAbstractAnimation_Connect_CurrentLoopChanged(void* self, c_int currentLoop, QAbstractAnimation_currentLoopChanged_action _action);
 	[LinkName("QAbstractAnimation_DirectionChanged")]
 	public static extern void QAbstractAnimation_DirectionChanged(void* self, QAbstractAnimation_Direction param1);
+	
+	public function void QAbstractAnimation_directionChanged_action(void* self, QAbstractAnimation_Direction param1);
+	[LinkName("QAbstractAnimation_Connect_DirectionChanged")]
+	public static extern void QAbstractAnimation_Connect_DirectionChanged(void* self, QAbstractAnimation_Direction param1, QAbstractAnimation_directionChanged_action _action);
 	[LinkName("QAbstractAnimation_Start")]
 	public static extern void QAbstractAnimation_Start(void* self);
 	[LinkName("QAbstractAnimation_Pause")]
@@ -1448,8 +1464,16 @@ extension CQt
 	public static extern c_longlong QAnimationDriver_Elapsed(void* self);
 	[LinkName("QAnimationDriver_Started")]
 	public static extern void QAnimationDriver_Started(void* self);
+	
+	public function void QAnimationDriver_started_action(void* self);
+	[LinkName("QAnimationDriver_Connect_Started")]
+	public static extern void QAnimationDriver_Connect_Started(void* self, QAnimationDriver_started_action _action);
 	[LinkName("QAnimationDriver_Stopped")]
 	public static extern void QAnimationDriver_Stopped(void* self);
+	
+	public function void QAnimationDriver_stopped_action(void* self);
+	[LinkName("QAnimationDriver_Connect_Stopped")]
+	public static extern void QAnimationDriver_Connect_Stopped(void* self, QAnimationDriver_stopped_action _action);
 	[LinkName("QAnimationDriver_AdvanceAnimation")]
 	public static extern void QAnimationDriver_AdvanceAnimation(void* self);
 	[LinkName("QAnimationDriver_Start")]

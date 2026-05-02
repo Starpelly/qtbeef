@@ -857,28 +857,76 @@ extension CQt
 	public static extern bool QFutureWatcherBase_Event(void* self, void** event);
 	[LinkName("QFutureWatcherBase_Started")]
 	public static extern void QFutureWatcherBase_Started(void* self);
+	
+	public function void QFutureWatcherBase_started_action(void* self);
+	[LinkName("QFutureWatcherBase_Connect_Started")]
+	public static extern void QFutureWatcherBase_Connect_Started(void* self, QFutureWatcherBase_started_action _action);
 	[LinkName("QFutureWatcherBase_Finished")]
 	public static extern void QFutureWatcherBase_Finished(void* self);
+	
+	public function void QFutureWatcherBase_finished_action(void* self);
+	[LinkName("QFutureWatcherBase_Connect_Finished")]
+	public static extern void QFutureWatcherBase_Connect_Finished(void* self, QFutureWatcherBase_finished_action _action);
 	[LinkName("QFutureWatcherBase_Canceled")]
 	public static extern void QFutureWatcherBase_Canceled(void* self);
+	
+	public function void QFutureWatcherBase_canceled_action(void* self);
+	[LinkName("QFutureWatcherBase_Connect_Canceled")]
+	public static extern void QFutureWatcherBase_Connect_Canceled(void* self, QFutureWatcherBase_canceled_action _action);
 	[LinkName("QFutureWatcherBase_Paused")]
 	public static extern void QFutureWatcherBase_Paused(void* self);
+	
+	public function void QFutureWatcherBase_paused_action(void* self);
+	[LinkName("QFutureWatcherBase_Connect_Paused")]
+	public static extern void QFutureWatcherBase_Connect_Paused(void* self, QFutureWatcherBase_paused_action _action);
 	[LinkName("QFutureWatcherBase_Suspending")]
 	public static extern void QFutureWatcherBase_Suspending(void* self);
+	
+	public function void QFutureWatcherBase_suspending_action(void* self);
+	[LinkName("QFutureWatcherBase_Connect_Suspending")]
+	public static extern void QFutureWatcherBase_Connect_Suspending(void* self, QFutureWatcherBase_suspending_action _action);
 	[LinkName("QFutureWatcherBase_Suspended")]
 	public static extern void QFutureWatcherBase_Suspended(void* self);
+	
+	public function void QFutureWatcherBase_suspended_action(void* self);
+	[LinkName("QFutureWatcherBase_Connect_Suspended")]
+	public static extern void QFutureWatcherBase_Connect_Suspended(void* self, QFutureWatcherBase_suspended_action _action);
 	[LinkName("QFutureWatcherBase_Resumed")]
 	public static extern void QFutureWatcherBase_Resumed(void* self);
+	
+	public function void QFutureWatcherBase_resumed_action(void* self);
+	[LinkName("QFutureWatcherBase_Connect_Resumed")]
+	public static extern void QFutureWatcherBase_Connect_Resumed(void* self, QFutureWatcherBase_resumed_action _action);
 	[LinkName("QFutureWatcherBase_ResultReadyAt")]
 	public static extern void QFutureWatcherBase_ResultReadyAt(void* self, c_int resultIndex);
+	
+	public function void QFutureWatcherBase_resultReadyAt_action(void* self, c_int resultIndex);
+	[LinkName("QFutureWatcherBase_Connect_ResultReadyAt")]
+	public static extern void QFutureWatcherBase_Connect_ResultReadyAt(void* self, c_int resultIndex, QFutureWatcherBase_resultReadyAt_action _action);
 	[LinkName("QFutureWatcherBase_ResultsReadyAt")]
 	public static extern void QFutureWatcherBase_ResultsReadyAt(void* self, c_int beginIndex, c_int endIndex);
+	
+	public function void QFutureWatcherBase_resultsReadyAt_action(void* self, c_int beginIndex, c_int endIndex);
+	[LinkName("QFutureWatcherBase_Connect_ResultsReadyAt")]
+	public static extern void QFutureWatcherBase_Connect_ResultsReadyAt(void* self, c_int beginIndex, c_int endIndex, QFutureWatcherBase_resultsReadyAt_action _action);
 	[LinkName("QFutureWatcherBase_ProgressRangeChanged")]
 	public static extern void QFutureWatcherBase_ProgressRangeChanged(void* self, c_int minimum, c_int maximum);
+	
+	public function void QFutureWatcherBase_progressRangeChanged_action(void* self, c_int minimum, c_int maximum);
+	[LinkName("QFutureWatcherBase_Connect_ProgressRangeChanged")]
+	public static extern void QFutureWatcherBase_Connect_ProgressRangeChanged(void* self, c_int minimum, c_int maximum, QFutureWatcherBase_progressRangeChanged_action _action);
 	[LinkName("QFutureWatcherBase_ProgressValueChanged")]
 	public static extern void QFutureWatcherBase_ProgressValueChanged(void* self, c_int progressValue);
+	
+	public function void QFutureWatcherBase_progressValueChanged_action(void* self, c_int progressValue);
+	[LinkName("QFutureWatcherBase_Connect_ProgressValueChanged")]
+	public static extern void QFutureWatcherBase_Connect_ProgressValueChanged(void* self, c_int progressValue, QFutureWatcherBase_progressValueChanged_action _action);
 	[LinkName("QFutureWatcherBase_ProgressTextChanged")]
 	public static extern void QFutureWatcherBase_ProgressTextChanged(void* self, libqt_string progressText);
+	
+	public function void QFutureWatcherBase_progressTextChanged_action(void* self, libqt_string progressText);
+	[LinkName("QFutureWatcherBase_Connect_ProgressTextChanged")]
+	public static extern void QFutureWatcherBase_Connect_ProgressTextChanged(void* self, libqt_string progressText, QFutureWatcherBase_progressTextChanged_action _action);
 	[LinkName("QFutureWatcherBase_Cancel")]
 	public static extern void QFutureWatcherBase_Cancel(void* self);
 	[LinkName("QFutureWatcherBase_SetSuspended")]

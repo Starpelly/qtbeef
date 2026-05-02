@@ -4147,6 +4147,10 @@ extension CQt
 	public static extern void* QMessageBox_StandardIcon(QMessageBox_Icon icon);
 	[LinkName("QMessageBox_ButtonClicked")]
 	public static extern void QMessageBox_ButtonClicked(void* self, void** button);
+	
+	public function void QMessageBox_buttonClicked_action(void* self, void** button);
+	[LinkName("QMessageBox_Connect_ButtonClicked")]
+	public static extern void QMessageBox_Connect_ButtonClicked(void* self, void** button, QMessageBox_buttonClicked_action _action);
 	[LinkName("QMessageBox_Event")]
 	public static extern bool QMessageBox_Event(void* self, void** e);
 	[LinkName("QMessageBox_ResizeEvent")]

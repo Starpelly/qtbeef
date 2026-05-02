@@ -3343,8 +3343,16 @@ extension CQt
 	public static extern void* QGraphicsWidget_Shape(void* self);
 	[LinkName("QGraphicsWidget_GeometryChanged")]
 	public static extern void QGraphicsWidget_GeometryChanged(void* self);
+	
+	public function void QGraphicsWidget_geometryChanged_action(void* self);
+	[LinkName("QGraphicsWidget_Connect_GeometryChanged")]
+	public static extern void QGraphicsWidget_Connect_GeometryChanged(void* self, QGraphicsWidget_geometryChanged_action _action);
 	[LinkName("QGraphicsWidget_LayoutChanged")]
 	public static extern void QGraphicsWidget_LayoutChanged(void* self);
+	
+	public function void QGraphicsWidget_layoutChanged_action(void* self);
+	[LinkName("QGraphicsWidget_Connect_LayoutChanged")]
+	public static extern void QGraphicsWidget_Connect_LayoutChanged(void* self, QGraphicsWidget_layoutChanged_action _action);
 	[LinkName("QGraphicsWidget_Close")]
 	public static extern bool QGraphicsWidget_Close(void* self);
 	[LinkName("QGraphicsWidget_InitStyleOption")]

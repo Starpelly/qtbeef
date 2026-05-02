@@ -5229,26 +5229,70 @@ extension CQt
 	public static extern void QHeaderView_HeaderDataChanged(void* self, Qt_Orientation orientation, c_int logicalFirst, c_int logicalLast);
 	[LinkName("QHeaderView_SectionMoved")]
 	public static extern void QHeaderView_SectionMoved(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex);
+	
+	public function void QHeaderView_sectionMoved_action(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex);
+	[LinkName("QHeaderView_Connect_SectionMoved")]
+	public static extern void QHeaderView_Connect_SectionMoved(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex, QHeaderView_sectionMoved_action _action);
 	[LinkName("QHeaderView_SectionResized")]
 	public static extern void QHeaderView_SectionResized(void* self, c_int logicalIndex, c_int oldSize, c_int newSize);
+	
+	public function void QHeaderView_sectionResized_action(void* self, c_int logicalIndex, c_int oldSize, c_int newSize);
+	[LinkName("QHeaderView_Connect_SectionResized")]
+	public static extern void QHeaderView_Connect_SectionResized(void* self, c_int logicalIndex, c_int oldSize, c_int newSize, QHeaderView_sectionResized_action _action);
 	[LinkName("QHeaderView_SectionPressed")]
 	public static extern void QHeaderView_SectionPressed(void* self, c_int logicalIndex);
+	
+	public function void QHeaderView_sectionPressed_action(void* self, c_int logicalIndex);
+	[LinkName("QHeaderView_Connect_SectionPressed")]
+	public static extern void QHeaderView_Connect_SectionPressed(void* self, c_int logicalIndex, QHeaderView_sectionPressed_action _action);
 	[LinkName("QHeaderView_SectionClicked")]
 	public static extern void QHeaderView_SectionClicked(void* self, c_int logicalIndex);
+	
+	public function void QHeaderView_sectionClicked_action(void* self, c_int logicalIndex);
+	[LinkName("QHeaderView_Connect_SectionClicked")]
+	public static extern void QHeaderView_Connect_SectionClicked(void* self, c_int logicalIndex, QHeaderView_sectionClicked_action _action);
 	[LinkName("QHeaderView_SectionEntered")]
 	public static extern void QHeaderView_SectionEntered(void* self, c_int logicalIndex);
+	
+	public function void QHeaderView_sectionEntered_action(void* self, c_int logicalIndex);
+	[LinkName("QHeaderView_Connect_SectionEntered")]
+	public static extern void QHeaderView_Connect_SectionEntered(void* self, c_int logicalIndex, QHeaderView_sectionEntered_action _action);
 	[LinkName("QHeaderView_SectionDoubleClicked")]
 	public static extern void QHeaderView_SectionDoubleClicked(void* self, c_int logicalIndex);
+	
+	public function void QHeaderView_sectionDoubleClicked_action(void* self, c_int logicalIndex);
+	[LinkName("QHeaderView_Connect_SectionDoubleClicked")]
+	public static extern void QHeaderView_Connect_SectionDoubleClicked(void* self, c_int logicalIndex, QHeaderView_sectionDoubleClicked_action _action);
 	[LinkName("QHeaderView_SectionCountChanged")]
 	public static extern void QHeaderView_SectionCountChanged(void* self, c_int oldCount, c_int newCount);
+	
+	public function void QHeaderView_sectionCountChanged_action(void* self, c_int oldCount, c_int newCount);
+	[LinkName("QHeaderView_Connect_SectionCountChanged")]
+	public static extern void QHeaderView_Connect_SectionCountChanged(void* self, c_int oldCount, c_int newCount, QHeaderView_sectionCountChanged_action _action);
 	[LinkName("QHeaderView_SectionHandleDoubleClicked")]
 	public static extern void QHeaderView_SectionHandleDoubleClicked(void* self, c_int logicalIndex);
+	
+	public function void QHeaderView_sectionHandleDoubleClicked_action(void* self, c_int logicalIndex);
+	[LinkName("QHeaderView_Connect_SectionHandleDoubleClicked")]
+	public static extern void QHeaderView_Connect_SectionHandleDoubleClicked(void* self, c_int logicalIndex, QHeaderView_sectionHandleDoubleClicked_action _action);
 	[LinkName("QHeaderView_GeometriesChanged")]
 	public static extern void QHeaderView_GeometriesChanged(void* self);
+	
+	public function void QHeaderView_geometriesChanged_action(void* self);
+	[LinkName("QHeaderView_Connect_GeometriesChanged")]
+	public static extern void QHeaderView_Connect_GeometriesChanged(void* self, QHeaderView_geometriesChanged_action _action);
 	[LinkName("QHeaderView_SortIndicatorChanged")]
 	public static extern void QHeaderView_SortIndicatorChanged(void* self, c_int logicalIndex, Qt_SortOrder order);
+	
+	public function void QHeaderView_sortIndicatorChanged_action(void* self, c_int logicalIndex, Qt_SortOrder order);
+	[LinkName("QHeaderView_Connect_SortIndicatorChanged")]
+	public static extern void QHeaderView_Connect_SortIndicatorChanged(void* self, c_int logicalIndex, Qt_SortOrder order, QHeaderView_sortIndicatorChanged_action _action);
 	[LinkName("QHeaderView_SortIndicatorClearableChanged")]
 	public static extern void QHeaderView_SortIndicatorClearableChanged(void* self, bool clearable);
+	
+	public function void QHeaderView_sortIndicatorClearableChanged_action(void* self, bool clearable);
+	[LinkName("QHeaderView_Connect_SortIndicatorClearableChanged")]
+	public static extern void QHeaderView_Connect_SortIndicatorClearableChanged(void* self, bool clearable, QHeaderView_sortIndicatorClearableChanged_action _action);
 	[LinkName("QHeaderView_UpdateSection")]
 	public static extern void QHeaderView_UpdateSection(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_ResizeSections2")]

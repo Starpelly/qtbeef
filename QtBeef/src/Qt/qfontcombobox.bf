@@ -3971,6 +3971,10 @@ extension CQt
 	public static extern void QFontComboBox_SetCurrentFont(void* self, void** f);
 	[LinkName("QFontComboBox_CurrentFontChanged")]
 	public static extern void QFontComboBox_CurrentFontChanged(void* self, void** f);
+	
+	public function void QFontComboBox_currentFontChanged_action(void* self, void** f);
+	[LinkName("QFontComboBox_Connect_CurrentFontChanged")]
+	public static extern void QFontComboBox_Connect_CurrentFontChanged(void* self, void** f, QFontComboBox_currentFontChanged_action _action);
 	[LinkName("QFontComboBox_Event")]
 	public static extern bool QFontComboBox_Event(void* self, void** e);
 	[LinkName("QFontComboBox_Tr2")]

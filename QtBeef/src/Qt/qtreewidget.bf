@@ -6204,24 +6204,64 @@ extension CQt
 	public static extern void QTreeWidget_Clear(void* self);
 	[LinkName("QTreeWidget_ItemPressed")]
 	public static extern void QTreeWidget_ItemPressed(void* self, void** item, c_int column);
+	
+	public function void QTreeWidget_itemPressed_action(void* self, void** item, c_int column);
+	[LinkName("QTreeWidget_Connect_ItemPressed")]
+	public static extern void QTreeWidget_Connect_ItemPressed(void* self, void** item, c_int column, QTreeWidget_itemPressed_action _action);
 	[LinkName("QTreeWidget_ItemClicked")]
 	public static extern void QTreeWidget_ItemClicked(void* self, void** item, c_int column);
+	
+	public function void QTreeWidget_itemClicked_action(void* self, void** item, c_int column);
+	[LinkName("QTreeWidget_Connect_ItemClicked")]
+	public static extern void QTreeWidget_Connect_ItemClicked(void* self, void** item, c_int column, QTreeWidget_itemClicked_action _action);
 	[LinkName("QTreeWidget_ItemDoubleClicked")]
 	public static extern void QTreeWidget_ItemDoubleClicked(void* self, void** item, c_int column);
+	
+	public function void QTreeWidget_itemDoubleClicked_action(void* self, void** item, c_int column);
+	[LinkName("QTreeWidget_Connect_ItemDoubleClicked")]
+	public static extern void QTreeWidget_Connect_ItemDoubleClicked(void* self, void** item, c_int column, QTreeWidget_itemDoubleClicked_action _action);
 	[LinkName("QTreeWidget_ItemActivated")]
 	public static extern void QTreeWidget_ItemActivated(void* self, void** item, c_int column);
+	
+	public function void QTreeWidget_itemActivated_action(void* self, void** item, c_int column);
+	[LinkName("QTreeWidget_Connect_ItemActivated")]
+	public static extern void QTreeWidget_Connect_ItemActivated(void* self, void** item, c_int column, QTreeWidget_itemActivated_action _action);
 	[LinkName("QTreeWidget_ItemEntered")]
 	public static extern void QTreeWidget_ItemEntered(void* self, void** item, c_int column);
+	
+	public function void QTreeWidget_itemEntered_action(void* self, void** item, c_int column);
+	[LinkName("QTreeWidget_Connect_ItemEntered")]
+	public static extern void QTreeWidget_Connect_ItemEntered(void* self, void** item, c_int column, QTreeWidget_itemEntered_action _action);
 	[LinkName("QTreeWidget_ItemChanged")]
 	public static extern void QTreeWidget_ItemChanged(void* self, void** item, c_int column);
+	
+	public function void QTreeWidget_itemChanged_action(void* self, void** item, c_int column);
+	[LinkName("QTreeWidget_Connect_ItemChanged")]
+	public static extern void QTreeWidget_Connect_ItemChanged(void* self, void** item, c_int column, QTreeWidget_itemChanged_action _action);
 	[LinkName("QTreeWidget_ItemExpanded")]
 	public static extern void QTreeWidget_ItemExpanded(void* self, void** item);
+	
+	public function void QTreeWidget_itemExpanded_action(void* self, void** item);
+	[LinkName("QTreeWidget_Connect_ItemExpanded")]
+	public static extern void QTreeWidget_Connect_ItemExpanded(void* self, void** item, QTreeWidget_itemExpanded_action _action);
 	[LinkName("QTreeWidget_ItemCollapsed")]
 	public static extern void QTreeWidget_ItemCollapsed(void* self, void** item);
+	
+	public function void QTreeWidget_itemCollapsed_action(void* self, void** item);
+	[LinkName("QTreeWidget_Connect_ItemCollapsed")]
+	public static extern void QTreeWidget_Connect_ItemCollapsed(void* self, void** item, QTreeWidget_itemCollapsed_action _action);
 	[LinkName("QTreeWidget_CurrentItemChanged")]
 	public static extern void QTreeWidget_CurrentItemChanged(void* self, void** current, void** previous);
+	
+	public function void QTreeWidget_currentItemChanged_action(void* self, void** current, void** previous);
+	[LinkName("QTreeWidget_Connect_CurrentItemChanged")]
+	public static extern void QTreeWidget_Connect_CurrentItemChanged(void* self, void** current, void** previous, QTreeWidget_currentItemChanged_action _action);
 	[LinkName("QTreeWidget_ItemSelectionChanged")]
 	public static extern void QTreeWidget_ItemSelectionChanged(void* self);
+	
+	public function void QTreeWidget_itemSelectionChanged_action(void* self);
+	[LinkName("QTreeWidget_Connect_ItemSelectionChanged")]
+	public static extern void QTreeWidget_Connect_ItemSelectionChanged(void* self, QTreeWidget_itemSelectionChanged_action _action);
 	[LinkName("QTreeWidget_Event")]
 	public static extern bool QTreeWidget_Event(void* self, void** e);
 	[LinkName("QTreeWidget_MimeTypes")]

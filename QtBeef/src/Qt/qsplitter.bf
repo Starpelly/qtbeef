@@ -3609,6 +3609,10 @@ extension CQt
 	public static extern void QSplitter_SetStretchFactor(void* self, c_int index, c_int stretch);
 	[LinkName("QSplitter_SplitterMoved")]
 	public static extern void QSplitter_SplitterMoved(void* self, c_int pos, c_int index);
+	
+	public function void QSplitter_splitterMoved_action(void* self, c_int pos, c_int index);
+	[LinkName("QSplitter_Connect_SplitterMoved")]
+	public static extern void QSplitter_Connect_SplitterMoved(void* self, c_int pos, c_int index, QSplitter_splitterMoved_action _action);
 	[LinkName("QSplitter_CreateHandle")]
 	public static extern void** QSplitter_CreateHandle(void* self);
 	[LinkName("QSplitter_ChildEvent")]

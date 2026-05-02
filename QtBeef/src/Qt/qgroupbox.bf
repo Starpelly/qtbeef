@@ -3331,8 +3331,16 @@ extension CQt
 	public static extern void QGroupBox_SetChecked(void* self, bool _checked);
 	[LinkName("QGroupBox_Clicked")]
 	public static extern void QGroupBox_Clicked(void* self);
+	
+	public function void QGroupBox_clicked_action(void* self);
+	[LinkName("QGroupBox_Connect_Clicked")]
+	public static extern void QGroupBox_Connect_Clicked(void* self, QGroupBox_clicked_action _action);
 	[LinkName("QGroupBox_Toggled")]
 	public static extern void QGroupBox_Toggled(void* self, bool param1);
+	
+	public function void QGroupBox_toggled_action(void* self, bool param1);
+	[LinkName("QGroupBox_Connect_Toggled")]
+	public static extern void QGroupBox_Connect_Toggled(void* self, bool param1, QGroupBox_toggled_action _action);
 	[LinkName("QGroupBox_Event")]
 	public static extern bool QGroupBox_Event(void* self, void** event);
 	[LinkName("QGroupBox_ChildEvent")]
@@ -3359,4 +3367,8 @@ extension CQt
 	public static extern libqt_string QGroupBox_Tr3(c_char* s, c_char* c, c_int n);
 	[LinkName("QGroupBox_Clicked1")]
 	public static extern void QGroupBox_Clicked1(void* self, bool _checked);
+	
+	public function void QGroupBox_clicked1_action(void* self, bool _checked);
+	[LinkName("QGroupBox_Connect_Clicked1")]
+	public static extern void QGroupBox_Connect_Clicked1(void* self, bool _checked, QGroupBox_clicked1_action _action);
 }

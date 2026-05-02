@@ -3403,12 +3403,28 @@ extension CQt
 	public static extern bool QDialogButtonBox_CenterButtons(void* self);
 	[LinkName("QDialogButtonBox_Clicked")]
 	public static extern void QDialogButtonBox_Clicked(void* self, void** button);
+	
+	public function void QDialogButtonBox_clicked_action(void* self, void** button);
+	[LinkName("QDialogButtonBox_Connect_Clicked")]
+	public static extern void QDialogButtonBox_Connect_Clicked(void* self, void** button, QDialogButtonBox_clicked_action _action);
 	[LinkName("QDialogButtonBox_Accepted")]
 	public static extern void QDialogButtonBox_Accepted(void* self);
+	
+	public function void QDialogButtonBox_accepted_action(void* self);
+	[LinkName("QDialogButtonBox_Connect_Accepted")]
+	public static extern void QDialogButtonBox_Connect_Accepted(void* self, QDialogButtonBox_accepted_action _action);
 	[LinkName("QDialogButtonBox_HelpRequested")]
 	public static extern void QDialogButtonBox_HelpRequested(void* self);
+	
+	public function void QDialogButtonBox_helpRequested_action(void* self);
+	[LinkName("QDialogButtonBox_Connect_HelpRequested")]
+	public static extern void QDialogButtonBox_Connect_HelpRequested(void* self, QDialogButtonBox_helpRequested_action _action);
 	[LinkName("QDialogButtonBox_Rejected")]
 	public static extern void QDialogButtonBox_Rejected(void* self);
+	
+	public function void QDialogButtonBox_rejected_action(void* self);
+	[LinkName("QDialogButtonBox_Connect_Rejected")]
+	public static extern void QDialogButtonBox_Connect_Rejected(void* self, QDialogButtonBox_rejected_action _action);
 	[LinkName("QDialogButtonBox_ChangeEvent")]
 	public static extern void QDialogButtonBox_ChangeEvent(void* self, void** event);
 	[LinkName("QDialogButtonBox_Event")]

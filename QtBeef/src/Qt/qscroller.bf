@@ -817,8 +817,16 @@ extension CQt
 	public static extern void QScroller_ResendPrepareEvent(void* self);
 	[LinkName("QScroller_StateChanged")]
 	public static extern void QScroller_StateChanged(void* self, QScroller_State newstate);
+	
+	public function void QScroller_stateChanged_action(void* self, QScroller_State newstate);
+	[LinkName("QScroller_Connect_StateChanged")]
+	public static extern void QScroller_Connect_StateChanged(void* self, QScroller_State newstate, QScroller_stateChanged_action _action);
 	[LinkName("QScroller_ScrollerPropertiesChanged")]
 	public static extern void QScroller_ScrollerPropertiesChanged(void* self, void** param1);
+	
+	public function void QScroller_scrollerPropertiesChanged_action(void* self, void** param1);
+	[LinkName("QScroller_Connect_ScrollerPropertiesChanged")]
+	public static extern void QScroller_Connect_ScrollerPropertiesChanged(void* self, void** param1, QScroller_scrollerPropertiesChanged_action _action);
 	[LinkName("QScroller_Tr2")]
 	public static extern libqt_string QScroller_Tr2(c_char* s, c_char* c);
 	[LinkName("QScroller_Tr3")]

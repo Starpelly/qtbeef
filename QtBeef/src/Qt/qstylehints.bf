@@ -969,26 +969,70 @@ extension CQt
 	public static extern c_int QStyleHints_MouseQuickSelectionThreshold(void* self);
 	[LinkName("QStyleHints_CursorFlashTimeChanged")]
 	public static extern void QStyleHints_CursorFlashTimeChanged(void* self, c_int cursorFlashTime);
+	
+	public function void QStyleHints_cursorFlashTimeChanged_action(void* self, c_int cursorFlashTime);
+	[LinkName("QStyleHints_Connect_CursorFlashTimeChanged")]
+	public static extern void QStyleHints_Connect_CursorFlashTimeChanged(void* self, c_int cursorFlashTime, QStyleHints_cursorFlashTimeChanged_action _action);
 	[LinkName("QStyleHints_KeyboardInputIntervalChanged")]
 	public static extern void QStyleHints_KeyboardInputIntervalChanged(void* self, c_int keyboardInputInterval);
+	
+	public function void QStyleHints_keyboardInputIntervalChanged_action(void* self, c_int keyboardInputInterval);
+	[LinkName("QStyleHints_Connect_KeyboardInputIntervalChanged")]
+	public static extern void QStyleHints_Connect_KeyboardInputIntervalChanged(void* self, c_int keyboardInputInterval, QStyleHints_keyboardInputIntervalChanged_action _action);
 	[LinkName("QStyleHints_MouseDoubleClickIntervalChanged")]
 	public static extern void QStyleHints_MouseDoubleClickIntervalChanged(void* self, c_int mouseDoubleClickInterval);
+	
+	public function void QStyleHints_mouseDoubleClickIntervalChanged_action(void* self, c_int mouseDoubleClickInterval);
+	[LinkName("QStyleHints_Connect_MouseDoubleClickIntervalChanged")]
+	public static extern void QStyleHints_Connect_MouseDoubleClickIntervalChanged(void* self, c_int mouseDoubleClickInterval, QStyleHints_mouseDoubleClickIntervalChanged_action _action);
 	[LinkName("QStyleHints_MousePressAndHoldIntervalChanged")]
 	public static extern void QStyleHints_MousePressAndHoldIntervalChanged(void* self, c_int mousePressAndHoldInterval);
+	
+	public function void QStyleHints_mousePressAndHoldIntervalChanged_action(void* self, c_int mousePressAndHoldInterval);
+	[LinkName("QStyleHints_Connect_MousePressAndHoldIntervalChanged")]
+	public static extern void QStyleHints_Connect_MousePressAndHoldIntervalChanged(void* self, c_int mousePressAndHoldInterval, QStyleHints_mousePressAndHoldIntervalChanged_action _action);
 	[LinkName("QStyleHints_StartDragDistanceChanged")]
 	public static extern void QStyleHints_StartDragDistanceChanged(void* self, c_int startDragDistance);
+	
+	public function void QStyleHints_startDragDistanceChanged_action(void* self, c_int startDragDistance);
+	[LinkName("QStyleHints_Connect_StartDragDistanceChanged")]
+	public static extern void QStyleHints_Connect_StartDragDistanceChanged(void* self, c_int startDragDistance, QStyleHints_startDragDistanceChanged_action _action);
 	[LinkName("QStyleHints_StartDragTimeChanged")]
 	public static extern void QStyleHints_StartDragTimeChanged(void* self, c_int startDragTime);
+	
+	public function void QStyleHints_startDragTimeChanged_action(void* self, c_int startDragTime);
+	[LinkName("QStyleHints_Connect_StartDragTimeChanged")]
+	public static extern void QStyleHints_Connect_StartDragTimeChanged(void* self, c_int startDragTime, QStyleHints_startDragTimeChanged_action _action);
 	[LinkName("QStyleHints_TabFocusBehaviorChanged")]
 	public static extern void QStyleHints_TabFocusBehaviorChanged(void* self, Qt_TabFocusBehavior tabFocusBehavior);
+	
+	public function void QStyleHints_tabFocusBehaviorChanged_action(void* self, Qt_TabFocusBehavior tabFocusBehavior);
+	[LinkName("QStyleHints_Connect_TabFocusBehaviorChanged")]
+	public static extern void QStyleHints_Connect_TabFocusBehaviorChanged(void* self, Qt_TabFocusBehavior tabFocusBehavior, QStyleHints_tabFocusBehaviorChanged_action _action);
 	[LinkName("QStyleHints_UseHoverEffectsChanged")]
 	public static extern void QStyleHints_UseHoverEffectsChanged(void* self, bool useHoverEffects);
+	
+	public function void QStyleHints_useHoverEffectsChanged_action(void* self, bool useHoverEffects);
+	[LinkName("QStyleHints_Connect_UseHoverEffectsChanged")]
+	public static extern void QStyleHints_Connect_UseHoverEffectsChanged(void* self, bool useHoverEffects, QStyleHints_useHoverEffectsChanged_action _action);
 	[LinkName("QStyleHints_ShowShortcutsInContextMenusChanged")]
 	public static extern void QStyleHints_ShowShortcutsInContextMenusChanged(void* self, bool param1);
+	
+	public function void QStyleHints_showShortcutsInContextMenusChanged_action(void* self, bool param1);
+	[LinkName("QStyleHints_Connect_ShowShortcutsInContextMenusChanged")]
+	public static extern void QStyleHints_Connect_ShowShortcutsInContextMenusChanged(void* self, bool param1, QStyleHints_showShortcutsInContextMenusChanged_action _action);
 	[LinkName("QStyleHints_WheelScrollLinesChanged")]
 	public static extern void QStyleHints_WheelScrollLinesChanged(void* self, c_int scrollLines);
+	
+	public function void QStyleHints_wheelScrollLinesChanged_action(void* self, c_int scrollLines);
+	[LinkName("QStyleHints_Connect_WheelScrollLinesChanged")]
+	public static extern void QStyleHints_Connect_WheelScrollLinesChanged(void* self, c_int scrollLines, QStyleHints_wheelScrollLinesChanged_action _action);
 	[LinkName("QStyleHints_MouseQuickSelectionThresholdChanged")]
 	public static extern void QStyleHints_MouseQuickSelectionThresholdChanged(void* self, c_int threshold);
+	
+	public function void QStyleHints_mouseQuickSelectionThresholdChanged_action(void* self, c_int threshold);
+	[LinkName("QStyleHints_Connect_MouseQuickSelectionThresholdChanged")]
+	public static extern void QStyleHints_Connect_MouseQuickSelectionThresholdChanged(void* self, c_int threshold, QStyleHints_mouseQuickSelectionThresholdChanged_action _action);
 	[LinkName("QStyleHints_Tr2")]
 	public static extern libqt_string QStyleHints_Tr2(c_char* s, c_char* c);
 	[LinkName("QStyleHints_Tr3")]

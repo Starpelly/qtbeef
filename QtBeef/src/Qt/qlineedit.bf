@@ -3921,18 +3921,46 @@ extension CQt
 	public static extern void** QLineEdit_CreateStandardContextMenu(void* self);
 	[LinkName("QLineEdit_TextChanged")]
 	public static extern void QLineEdit_TextChanged(void* self, libqt_string param1);
+	
+	public function void QLineEdit_textChanged_action(void* self, libqt_string param1);
+	[LinkName("QLineEdit_Connect_TextChanged")]
+	public static extern void QLineEdit_Connect_TextChanged(void* self, libqt_string param1, QLineEdit_textChanged_action _action);
 	[LinkName("QLineEdit_TextEdited")]
 	public static extern void QLineEdit_TextEdited(void* self, libqt_string param1);
+	
+	public function void QLineEdit_textEdited_action(void* self, libqt_string param1);
+	[LinkName("QLineEdit_Connect_TextEdited")]
+	public static extern void QLineEdit_Connect_TextEdited(void* self, libqt_string param1, QLineEdit_textEdited_action _action);
 	[LinkName("QLineEdit_CursorPositionChanged")]
 	public static extern void QLineEdit_CursorPositionChanged(void* self, c_int param1, c_int param2);
+	
+	public function void QLineEdit_cursorPositionChanged_action(void* self, c_int param1, c_int param2);
+	[LinkName("QLineEdit_Connect_CursorPositionChanged")]
+	public static extern void QLineEdit_Connect_CursorPositionChanged(void* self, c_int param1, c_int param2, QLineEdit_cursorPositionChanged_action _action);
 	[LinkName("QLineEdit_ReturnPressed")]
 	public static extern void QLineEdit_ReturnPressed(void* self);
+	
+	public function void QLineEdit_returnPressed_action(void* self);
+	[LinkName("QLineEdit_Connect_ReturnPressed")]
+	public static extern void QLineEdit_Connect_ReturnPressed(void* self, QLineEdit_returnPressed_action _action);
 	[LinkName("QLineEdit_EditingFinished")]
 	public static extern void QLineEdit_EditingFinished(void* self);
+	
+	public function void QLineEdit_editingFinished_action(void* self);
+	[LinkName("QLineEdit_Connect_EditingFinished")]
+	public static extern void QLineEdit_Connect_EditingFinished(void* self, QLineEdit_editingFinished_action _action);
 	[LinkName("QLineEdit_SelectionChanged")]
 	public static extern void QLineEdit_SelectionChanged(void* self);
+	
+	public function void QLineEdit_selectionChanged_action(void* self);
+	[LinkName("QLineEdit_Connect_SelectionChanged")]
+	public static extern void QLineEdit_Connect_SelectionChanged(void* self, QLineEdit_selectionChanged_action _action);
 	[LinkName("QLineEdit_InputRejected")]
 	public static extern void QLineEdit_InputRejected(void* self);
+	
+	public function void QLineEdit_inputRejected_action(void* self);
+	[LinkName("QLineEdit_Connect_InputRejected")]
+	public static extern void QLineEdit_Connect_InputRejected(void* self, QLineEdit_inputRejected_action _action);
 	[LinkName("QLineEdit_MousePressEvent")]
 	public static extern void QLineEdit_MousePressEvent(void* self, void** param1);
 	[LinkName("QLineEdit_MouseMoveEvent")]

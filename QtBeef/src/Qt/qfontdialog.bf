@@ -3457,8 +3457,16 @@ extension CQt
 	public static extern void* QFontDialog_GetFont2(bool* ok, void** initial);
 	[LinkName("QFontDialog_CurrentFontChanged")]
 	public static extern void QFontDialog_CurrentFontChanged(void* self, void** font);
+	
+	public function void QFontDialog_currentFontChanged_action(void* self, void** font);
+	[LinkName("QFontDialog_Connect_CurrentFontChanged")]
+	public static extern void QFontDialog_Connect_CurrentFontChanged(void* self, void** font, QFontDialog_currentFontChanged_action _action);
 	[LinkName("QFontDialog_FontSelected")]
 	public static extern void QFontDialog_FontSelected(void* self, void** font);
+	
+	public function void QFontDialog_fontSelected_action(void* self, void** font);
+	[LinkName("QFontDialog_Connect_FontSelected")]
+	public static extern void QFontDialog_Connect_FontSelected(void* self, void** font, QFontDialog_fontSelected_action _action);
 	[LinkName("QFontDialog_ChangeEvent")]
 	public static extern void QFontDialog_ChangeEvent(void* self, void** event);
 	[LinkName("QFontDialog_Done")]

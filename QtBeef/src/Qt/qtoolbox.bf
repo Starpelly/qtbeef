@@ -3535,6 +3535,10 @@ extension CQt
 	public static extern void QToolBox_SetCurrentWidget(void* self, void** widget);
 	[LinkName("QToolBox_CurrentChanged")]
 	public static extern void QToolBox_CurrentChanged(void* self, c_int index);
+	
+	public function void QToolBox_currentChanged_action(void* self, c_int index);
+	[LinkName("QToolBox_Connect_CurrentChanged")]
+	public static extern void QToolBox_Connect_CurrentChanged(void* self, c_int index, QToolBox_currentChanged_action _action);
 	[LinkName("QToolBox_Event")]
 	public static extern bool QToolBox_Event(void* self, void** e);
 	[LinkName("QToolBox_ItemInserted")]

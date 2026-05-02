@@ -4235,22 +4235,58 @@ extension CQt
 	public static extern void QFileDialog_SetVisible(void* self, bool visible);
 	[LinkName("QFileDialog_FileSelected")]
 	public static extern void QFileDialog_FileSelected(void* self, libqt_string file);
+	
+	public function void QFileDialog_fileSelected_action(void* self, libqt_string file);
+	[LinkName("QFileDialog_Connect_FileSelected")]
+	public static extern void QFileDialog_Connect_FileSelected(void* self, libqt_string file, QFileDialog_fileSelected_action _action);
 	[LinkName("QFileDialog_FilesSelected")]
 	public static extern void QFileDialog_FilesSelected(void* self, void** files);
+	
+	public function void QFileDialog_filesSelected_action(void* self, void** files);
+	[LinkName("QFileDialog_Connect_FilesSelected")]
+	public static extern void QFileDialog_Connect_FilesSelected(void* self, void** files, QFileDialog_filesSelected_action _action);
 	[LinkName("QFileDialog_CurrentChanged")]
 	public static extern void QFileDialog_CurrentChanged(void* self, libqt_string path);
+	
+	public function void QFileDialog_currentChanged_action(void* self, libqt_string path);
+	[LinkName("QFileDialog_Connect_CurrentChanged")]
+	public static extern void QFileDialog_Connect_CurrentChanged(void* self, libqt_string path, QFileDialog_currentChanged_action _action);
 	[LinkName("QFileDialog_DirectoryEntered")]
 	public static extern void QFileDialog_DirectoryEntered(void* self, libqt_string directory);
+	
+	public function void QFileDialog_directoryEntered_action(void* self, libqt_string directory);
+	[LinkName("QFileDialog_Connect_DirectoryEntered")]
+	public static extern void QFileDialog_Connect_DirectoryEntered(void* self, libqt_string directory, QFileDialog_directoryEntered_action _action);
 	[LinkName("QFileDialog_UrlSelected")]
 	public static extern void QFileDialog_UrlSelected(void* self, void** url);
+	
+	public function void QFileDialog_urlSelected_action(void* self, void** url);
+	[LinkName("QFileDialog_Connect_UrlSelected")]
+	public static extern void QFileDialog_Connect_UrlSelected(void* self, void** url, QFileDialog_urlSelected_action _action);
 	[LinkName("QFileDialog_UrlsSelected")]
 	public static extern void QFileDialog_UrlsSelected(void* self, void** urls);
+	
+	public function void QFileDialog_urlsSelected_action(void* self, void** urls);
+	[LinkName("QFileDialog_Connect_UrlsSelected")]
+	public static extern void QFileDialog_Connect_UrlsSelected(void* self, void** urls, QFileDialog_urlsSelected_action _action);
 	[LinkName("QFileDialog_CurrentUrlChanged")]
 	public static extern void QFileDialog_CurrentUrlChanged(void* self, void** url);
+	
+	public function void QFileDialog_currentUrlChanged_action(void* self, void** url);
+	[LinkName("QFileDialog_Connect_CurrentUrlChanged")]
+	public static extern void QFileDialog_Connect_CurrentUrlChanged(void* self, void** url, QFileDialog_currentUrlChanged_action _action);
 	[LinkName("QFileDialog_DirectoryUrlEntered")]
 	public static extern void QFileDialog_DirectoryUrlEntered(void* self, void** directory);
+	
+	public function void QFileDialog_directoryUrlEntered_action(void* self, void** directory);
+	[LinkName("QFileDialog_Connect_DirectoryUrlEntered")]
+	public static extern void QFileDialog_Connect_DirectoryUrlEntered(void* self, void** directory, QFileDialog_directoryUrlEntered_action _action);
 	[LinkName("QFileDialog_FilterSelected")]
 	public static extern void QFileDialog_FilterSelected(void* self, libqt_string filter);
+	
+	public function void QFileDialog_filterSelected_action(void* self, libqt_string filter);
+	[LinkName("QFileDialog_Connect_FilterSelected")]
+	public static extern void QFileDialog_Connect_FilterSelected(void* self, libqt_string filter, QFileDialog_filterSelected_action _action);
 	[LinkName("QFileDialog_GetOpenFileName")]
 	public static extern libqt_string QFileDialog_GetOpenFileName();
 	[LinkName("QFileDialog_GetOpenFileUrl")]

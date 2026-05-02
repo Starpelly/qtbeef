@@ -1704,24 +1704,64 @@ extension CQt
 	public static extern void QTextDocument_SetDefaultCursorMoveStyle(void* self, Qt_CursorMoveStyle style);
 	[LinkName("QTextDocument_ContentsChange")]
 	public static extern void QTextDocument_ContentsChange(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
+	
+	public function void QTextDocument_contentsChange_action(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
+	[LinkName("QTextDocument_Connect_ContentsChange")]
+	public static extern void QTextDocument_Connect_ContentsChange(void* self, c_int from, c_int charsRemoved, c_int charsAdded, QTextDocument_contentsChange_action _action);
 	[LinkName("QTextDocument_ContentsChanged")]
 	public static extern void QTextDocument_ContentsChanged(void* self);
+	
+	public function void QTextDocument_contentsChanged_action(void* self);
+	[LinkName("QTextDocument_Connect_ContentsChanged")]
+	public static extern void QTextDocument_Connect_ContentsChanged(void* self, QTextDocument_contentsChanged_action _action);
 	[LinkName("QTextDocument_UndoAvailable")]
 	public static extern void QTextDocument_UndoAvailable(void* self, bool param1);
+	
+	public function void QTextDocument_undoAvailable_action(void* self, bool param1);
+	[LinkName("QTextDocument_Connect_UndoAvailable")]
+	public static extern void QTextDocument_Connect_UndoAvailable(void* self, bool param1, QTextDocument_undoAvailable_action _action);
 	[LinkName("QTextDocument_RedoAvailable")]
 	public static extern void QTextDocument_RedoAvailable(void* self, bool param1);
+	
+	public function void QTextDocument_redoAvailable_action(void* self, bool param1);
+	[LinkName("QTextDocument_Connect_RedoAvailable")]
+	public static extern void QTextDocument_Connect_RedoAvailable(void* self, bool param1, QTextDocument_redoAvailable_action _action);
 	[LinkName("QTextDocument_UndoCommandAdded")]
 	public static extern void QTextDocument_UndoCommandAdded(void* self);
+	
+	public function void QTextDocument_undoCommandAdded_action(void* self);
+	[LinkName("QTextDocument_Connect_UndoCommandAdded")]
+	public static extern void QTextDocument_Connect_UndoCommandAdded(void* self, QTextDocument_undoCommandAdded_action _action);
 	[LinkName("QTextDocument_ModificationChanged")]
 	public static extern void QTextDocument_ModificationChanged(void* self, bool m);
+	
+	public function void QTextDocument_modificationChanged_action(void* self, bool m);
+	[LinkName("QTextDocument_Connect_ModificationChanged")]
+	public static extern void QTextDocument_Connect_ModificationChanged(void* self, bool m, QTextDocument_modificationChanged_action _action);
 	[LinkName("QTextDocument_CursorPositionChanged")]
 	public static extern void QTextDocument_CursorPositionChanged(void* self, void** cursor);
+	
+	public function void QTextDocument_cursorPositionChanged_action(void* self, void** cursor);
+	[LinkName("QTextDocument_Connect_CursorPositionChanged")]
+	public static extern void QTextDocument_Connect_CursorPositionChanged(void* self, void** cursor, QTextDocument_cursorPositionChanged_action _action);
 	[LinkName("QTextDocument_BlockCountChanged")]
 	public static extern void QTextDocument_BlockCountChanged(void* self, c_int newBlockCount);
+	
+	public function void QTextDocument_blockCountChanged_action(void* self, c_int newBlockCount);
+	[LinkName("QTextDocument_Connect_BlockCountChanged")]
+	public static extern void QTextDocument_Connect_BlockCountChanged(void* self, c_int newBlockCount, QTextDocument_blockCountChanged_action _action);
 	[LinkName("QTextDocument_BaseUrlChanged")]
 	public static extern void QTextDocument_BaseUrlChanged(void* self, void** url);
+	
+	public function void QTextDocument_baseUrlChanged_action(void* self, void** url);
+	[LinkName("QTextDocument_Connect_BaseUrlChanged")]
+	public static extern void QTextDocument_Connect_BaseUrlChanged(void* self, void** url, QTextDocument_baseUrlChanged_action _action);
 	[LinkName("QTextDocument_DocumentLayoutChanged")]
 	public static extern void QTextDocument_DocumentLayoutChanged(void* self);
+	
+	public function void QTextDocument_documentLayoutChanged_action(void* self);
+	[LinkName("QTextDocument_Connect_DocumentLayoutChanged")]
+	public static extern void QTextDocument_Connect_DocumentLayoutChanged(void* self, QTextDocument_documentLayoutChanged_action _action);
 	[LinkName("QTextDocument_Undo2")]
 	public static extern void QTextDocument_Undo2(void* self);
 	[LinkName("QTextDocument_Redo2")]

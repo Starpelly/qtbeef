@@ -1264,14 +1264,34 @@ extension CQt
 	public static extern void QGraphicsScale_ApplyTo(void* self, void** matrix);
 	[LinkName("QGraphicsScale_OriginChanged")]
 	public static extern void QGraphicsScale_OriginChanged(void* self);
+	
+	public function void QGraphicsScale_originChanged_action(void* self);
+	[LinkName("QGraphicsScale_Connect_OriginChanged")]
+	public static extern void QGraphicsScale_Connect_OriginChanged(void* self, QGraphicsScale_originChanged_action _action);
 	[LinkName("QGraphicsScale_XScaleChanged")]
 	public static extern void QGraphicsScale_XScaleChanged(void* self);
+	
+	public function void QGraphicsScale_xScaleChanged_action(void* self);
+	[LinkName("QGraphicsScale_Connect_XScaleChanged")]
+	public static extern void QGraphicsScale_Connect_XScaleChanged(void* self, QGraphicsScale_xScaleChanged_action _action);
 	[LinkName("QGraphicsScale_YScaleChanged")]
 	public static extern void QGraphicsScale_YScaleChanged(void* self);
+	
+	public function void QGraphicsScale_yScaleChanged_action(void* self);
+	[LinkName("QGraphicsScale_Connect_YScaleChanged")]
+	public static extern void QGraphicsScale_Connect_YScaleChanged(void* self, QGraphicsScale_yScaleChanged_action _action);
 	[LinkName("QGraphicsScale_ZScaleChanged")]
 	public static extern void QGraphicsScale_ZScaleChanged(void* self);
+	
+	public function void QGraphicsScale_zScaleChanged_action(void* self);
+	[LinkName("QGraphicsScale_Connect_ZScaleChanged")]
+	public static extern void QGraphicsScale_Connect_ZScaleChanged(void* self, QGraphicsScale_zScaleChanged_action _action);
 	[LinkName("QGraphicsScale_ScaleChanged")]
 	public static extern void QGraphicsScale_ScaleChanged(void* self);
+	
+	public function void QGraphicsScale_scaleChanged_action(void* self);
+	[LinkName("QGraphicsScale_Connect_ScaleChanged")]
+	public static extern void QGraphicsScale_Connect_ScaleChanged(void* self, QGraphicsScale_scaleChanged_action _action);
 	[LinkName("QGraphicsScale_Tr2")]
 	public static extern libqt_string QGraphicsScale_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsScale_Tr3")]
@@ -1939,10 +1959,22 @@ extension CQt
 	public static extern void QGraphicsRotation_ApplyTo(void* self, void** matrix);
 	[LinkName("QGraphicsRotation_OriginChanged")]
 	public static extern void QGraphicsRotation_OriginChanged(void* self);
+	
+	public function void QGraphicsRotation_originChanged_action(void* self);
+	[LinkName("QGraphicsRotation_Connect_OriginChanged")]
+	public static extern void QGraphicsRotation_Connect_OriginChanged(void* self, QGraphicsRotation_originChanged_action _action);
 	[LinkName("QGraphicsRotation_AngleChanged")]
 	public static extern void QGraphicsRotation_AngleChanged(void* self);
+	
+	public function void QGraphicsRotation_angleChanged_action(void* self);
+	[LinkName("QGraphicsRotation_Connect_AngleChanged")]
+	public static extern void QGraphicsRotation_Connect_AngleChanged(void* self, QGraphicsRotation_angleChanged_action _action);
 	[LinkName("QGraphicsRotation_AxisChanged")]
 	public static extern void QGraphicsRotation_AxisChanged(void* self);
+	
+	public function void QGraphicsRotation_axisChanged_action(void* self);
+	[LinkName("QGraphicsRotation_Connect_AxisChanged")]
+	public static extern void QGraphicsRotation_Connect_AxisChanged(void* self, QGraphicsRotation_axisChanged_action _action);
 	[LinkName("QGraphicsRotation_Tr2")]
 	public static extern libqt_string QGraphicsRotation_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsRotation_Tr3")]

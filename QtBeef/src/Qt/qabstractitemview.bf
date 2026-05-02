@@ -4573,18 +4573,46 @@ extension CQt
 	public static extern void QAbstractItemView_EditorDestroyed(void* self, void** editor);
 	[LinkName("QAbstractItemView_Pressed")]
 	public static extern void QAbstractItemView_Pressed(void* self, void** index);
+	
+	public function void QAbstractItemView_pressed_action(void* self, void** index);
+	[LinkName("QAbstractItemView_Connect_Pressed")]
+	public static extern void QAbstractItemView_Connect_Pressed(void* self, void** index, QAbstractItemView_pressed_action _action);
 	[LinkName("QAbstractItemView_Clicked")]
 	public static extern void QAbstractItemView_Clicked(void* self, void** index);
+	
+	public function void QAbstractItemView_clicked_action(void* self, void** index);
+	[LinkName("QAbstractItemView_Connect_Clicked")]
+	public static extern void QAbstractItemView_Connect_Clicked(void* self, void** index, QAbstractItemView_clicked_action _action);
 	[LinkName("QAbstractItemView_DoubleClicked")]
 	public static extern void QAbstractItemView_DoubleClicked(void* self, void** index);
+	
+	public function void QAbstractItemView_doubleClicked_action(void* self, void** index);
+	[LinkName("QAbstractItemView_Connect_DoubleClicked")]
+	public static extern void QAbstractItemView_Connect_DoubleClicked(void* self, void** index, QAbstractItemView_doubleClicked_action _action);
 	[LinkName("QAbstractItemView_Activated")]
 	public static extern void QAbstractItemView_Activated(void* self, void** index);
+	
+	public function void QAbstractItemView_activated_action(void* self, void** index);
+	[LinkName("QAbstractItemView_Connect_Activated")]
+	public static extern void QAbstractItemView_Connect_Activated(void* self, void** index, QAbstractItemView_activated_action _action);
 	[LinkName("QAbstractItemView_Entered")]
 	public static extern void QAbstractItemView_Entered(void* self, void** index);
+	
+	public function void QAbstractItemView_entered_action(void* self, void** index);
+	[LinkName("QAbstractItemView_Connect_Entered")]
+	public static extern void QAbstractItemView_Connect_Entered(void* self, void** index, QAbstractItemView_entered_action _action);
 	[LinkName("QAbstractItemView_ViewportEntered")]
 	public static extern void QAbstractItemView_ViewportEntered(void* self);
+	
+	public function void QAbstractItemView_viewportEntered_action(void* self);
+	[LinkName("QAbstractItemView_Connect_ViewportEntered")]
+	public static extern void QAbstractItemView_Connect_ViewportEntered(void* self, QAbstractItemView_viewportEntered_action _action);
 	[LinkName("QAbstractItemView_IconSizeChanged")]
 	public static extern void QAbstractItemView_IconSizeChanged(void* self, void** size);
+	
+	public function void QAbstractItemView_iconSizeChanged_action(void* self, void** size);
+	[LinkName("QAbstractItemView_Connect_IconSizeChanged")]
+	public static extern void QAbstractItemView_Connect_IconSizeChanged(void* self, void** size, QAbstractItemView_iconSizeChanged_action _action);
 	[LinkName("QAbstractItemView_MoveCursor")]
 	public static extern void* QAbstractItemView_MoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QAbstractItemView_HorizontalOffset")]

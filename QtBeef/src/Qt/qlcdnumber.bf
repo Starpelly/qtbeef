@@ -3517,6 +3517,10 @@ extension CQt
 	public static extern void QLCDNumber_SetSmallDecimalPoint(void* self, bool smallDecimalPoint);
 	[LinkName("QLCDNumber_Overflow")]
 	public static extern void QLCDNumber_Overflow(void* self);
+	
+	public function void QLCDNumber_overflow_action(void* self);
+	[LinkName("QLCDNumber_Connect_Overflow")]
+	public static extern void QLCDNumber_Connect_Overflow(void* self, QLCDNumber_overflow_action _action);
 	[LinkName("QLCDNumber_Event")]
 	public static extern bool QLCDNumber_Event(void* self, void** e);
 	[LinkName("QLCDNumber_PaintEvent")]

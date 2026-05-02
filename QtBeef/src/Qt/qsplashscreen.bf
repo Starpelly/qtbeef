@@ -3303,6 +3303,10 @@ extension CQt
 	public static extern void QSplashScreen_ClearMessage(void* self);
 	[LinkName("QSplashScreen_MessageChanged")]
 	public static extern void QSplashScreen_MessageChanged(void* self, libqt_string message);
+	
+	public function void QSplashScreen_messageChanged_action(void* self, libqt_string message);
+	[LinkName("QSplashScreen_Connect_MessageChanged")]
+	public static extern void QSplashScreen_Connect_MessageChanged(void* self, libqt_string message, QSplashScreen_messageChanged_action _action);
 	[LinkName("QSplashScreen_Event")]
 	public static extern bool QSplashScreen_Event(void* self, void** e);
 	[LinkName("QSplashScreen_DrawContents")]

@@ -765,18 +765,46 @@ extension CQt
 	public static extern void QUndoGroup_SetActiveStack(void* self, void** stack);
 	[LinkName("QUndoGroup_ActiveStackChanged")]
 	public static extern void QUndoGroup_ActiveStackChanged(void* self, void** stack);
+	
+	public function void QUndoGroup_activeStackChanged_action(void* self, void** stack);
+	[LinkName("QUndoGroup_Connect_ActiveStackChanged")]
+	public static extern void QUndoGroup_Connect_ActiveStackChanged(void* self, void** stack, QUndoGroup_activeStackChanged_action _action);
 	[LinkName("QUndoGroup_IndexChanged")]
 	public static extern void QUndoGroup_IndexChanged(void* self, c_int idx);
+	
+	public function void QUndoGroup_indexChanged_action(void* self, c_int idx);
+	[LinkName("QUndoGroup_Connect_IndexChanged")]
+	public static extern void QUndoGroup_Connect_IndexChanged(void* self, c_int idx, QUndoGroup_indexChanged_action _action);
 	[LinkName("QUndoGroup_CleanChanged")]
 	public static extern void QUndoGroup_CleanChanged(void* self, bool clean);
+	
+	public function void QUndoGroup_cleanChanged_action(void* self, bool clean);
+	[LinkName("QUndoGroup_Connect_CleanChanged")]
+	public static extern void QUndoGroup_Connect_CleanChanged(void* self, bool clean, QUndoGroup_cleanChanged_action _action);
 	[LinkName("QUndoGroup_CanUndoChanged")]
 	public static extern void QUndoGroup_CanUndoChanged(void* self, bool canUndo);
+	
+	public function void QUndoGroup_canUndoChanged_action(void* self, bool canUndo);
+	[LinkName("QUndoGroup_Connect_CanUndoChanged")]
+	public static extern void QUndoGroup_Connect_CanUndoChanged(void* self, bool canUndo, QUndoGroup_canUndoChanged_action _action);
 	[LinkName("QUndoGroup_CanRedoChanged")]
 	public static extern void QUndoGroup_CanRedoChanged(void* self, bool canRedo);
+	
+	public function void QUndoGroup_canRedoChanged_action(void* self, bool canRedo);
+	[LinkName("QUndoGroup_Connect_CanRedoChanged")]
+	public static extern void QUndoGroup_Connect_CanRedoChanged(void* self, bool canRedo, QUndoGroup_canRedoChanged_action _action);
 	[LinkName("QUndoGroup_UndoTextChanged")]
 	public static extern void QUndoGroup_UndoTextChanged(void* self, libqt_string undoText);
+	
+	public function void QUndoGroup_undoTextChanged_action(void* self, libqt_string undoText);
+	[LinkName("QUndoGroup_Connect_UndoTextChanged")]
+	public static extern void QUndoGroup_Connect_UndoTextChanged(void* self, libqt_string undoText, QUndoGroup_undoTextChanged_action _action);
 	[LinkName("QUndoGroup_RedoTextChanged")]
 	public static extern void QUndoGroup_RedoTextChanged(void* self, libqt_string redoText);
+	
+	public function void QUndoGroup_redoTextChanged_action(void* self, libqt_string redoText);
+	[LinkName("QUndoGroup_Connect_RedoTextChanged")]
+	public static extern void QUndoGroup_Connect_RedoTextChanged(void* self, libqt_string redoText, QUndoGroup_redoTextChanged_action _action);
 	[LinkName("QUndoGroup_Tr2")]
 	public static extern libqt_string QUndoGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QUndoGroup_Tr3")]

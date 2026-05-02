@@ -4414,28 +4414,76 @@ extension CQt
 	public static extern void QGraphicsObject_UpdateMicroFocus(void* self);
 	[LinkName("QGraphicsObject_ParentChanged")]
 	public static extern void QGraphicsObject_ParentChanged(void* self);
+	
+	public function void QGraphicsObject_parentChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_ParentChanged")]
+	public static extern void QGraphicsObject_Connect_ParentChanged(void* self, QGraphicsObject_parentChanged_action _action);
 	[LinkName("QGraphicsObject_OpacityChanged")]
 	public static extern void QGraphicsObject_OpacityChanged(void* self);
+	
+	public function void QGraphicsObject_opacityChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_OpacityChanged")]
+	public static extern void QGraphicsObject_Connect_OpacityChanged(void* self, QGraphicsObject_opacityChanged_action _action);
 	[LinkName("QGraphicsObject_VisibleChanged")]
 	public static extern void QGraphicsObject_VisibleChanged(void* self);
+	
+	public function void QGraphicsObject_visibleChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_VisibleChanged")]
+	public static extern void QGraphicsObject_Connect_VisibleChanged(void* self, QGraphicsObject_visibleChanged_action _action);
 	[LinkName("QGraphicsObject_EnabledChanged")]
 	public static extern void QGraphicsObject_EnabledChanged(void* self);
+	
+	public function void QGraphicsObject_enabledChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_EnabledChanged")]
+	public static extern void QGraphicsObject_Connect_EnabledChanged(void* self, QGraphicsObject_enabledChanged_action _action);
 	[LinkName("QGraphicsObject_XChanged")]
 	public static extern void QGraphicsObject_XChanged(void* self);
+	
+	public function void QGraphicsObject_xChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_XChanged")]
+	public static extern void QGraphicsObject_Connect_XChanged(void* self, QGraphicsObject_xChanged_action _action);
 	[LinkName("QGraphicsObject_YChanged")]
 	public static extern void QGraphicsObject_YChanged(void* self);
+	
+	public function void QGraphicsObject_yChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_YChanged")]
+	public static extern void QGraphicsObject_Connect_YChanged(void* self, QGraphicsObject_yChanged_action _action);
 	[LinkName("QGraphicsObject_ZChanged")]
 	public static extern void QGraphicsObject_ZChanged(void* self);
+	
+	public function void QGraphicsObject_zChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_ZChanged")]
+	public static extern void QGraphicsObject_Connect_ZChanged(void* self, QGraphicsObject_zChanged_action _action);
 	[LinkName("QGraphicsObject_RotationChanged")]
 	public static extern void QGraphicsObject_RotationChanged(void* self);
+	
+	public function void QGraphicsObject_rotationChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_RotationChanged")]
+	public static extern void QGraphicsObject_Connect_RotationChanged(void* self, QGraphicsObject_rotationChanged_action _action);
 	[LinkName("QGraphicsObject_ScaleChanged")]
 	public static extern void QGraphicsObject_ScaleChanged(void* self);
+	
+	public function void QGraphicsObject_scaleChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_ScaleChanged")]
+	public static extern void QGraphicsObject_Connect_ScaleChanged(void* self, QGraphicsObject_scaleChanged_action _action);
 	[LinkName("QGraphicsObject_ChildrenChanged")]
 	public static extern void QGraphicsObject_ChildrenChanged(void* self);
+	
+	public function void QGraphicsObject_childrenChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_ChildrenChanged")]
+	public static extern void QGraphicsObject_Connect_ChildrenChanged(void* self, QGraphicsObject_childrenChanged_action _action);
 	[LinkName("QGraphicsObject_WidthChanged")]
 	public static extern void QGraphicsObject_WidthChanged(void* self);
+	
+	public function void QGraphicsObject_widthChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_WidthChanged")]
+	public static extern void QGraphicsObject_Connect_WidthChanged(void* self, QGraphicsObject_widthChanged_action _action);
 	[LinkName("QGraphicsObject_HeightChanged")]
 	public static extern void QGraphicsObject_HeightChanged(void* self);
+	
+	public function void QGraphicsObject_heightChanged_action(void* self);
+	[LinkName("QGraphicsObject_Connect_HeightChanged")]
+	public static extern void QGraphicsObject_Connect_HeightChanged(void* self, QGraphicsObject_heightChanged_action _action);
 	[LinkName("QGraphicsObject_Event")]
 	public static extern bool QGraphicsObject_Event(void* self, void** ev);
 	[LinkName("QGraphicsObject_Tr2")]
@@ -19470,8 +19518,16 @@ extension CQt
 	public static extern void* QGraphicsTextItem_TextCursor(void* self);
 	[LinkName("QGraphicsTextItem_LinkActivated")]
 	public static extern void QGraphicsTextItem_LinkActivated(void* self, libqt_string param1);
+	
+	public function void QGraphicsTextItem_linkActivated_action(void* self, libqt_string param1);
+	[LinkName("QGraphicsTextItem_Connect_LinkActivated")]
+	public static extern void QGraphicsTextItem_Connect_LinkActivated(void* self, libqt_string param1, QGraphicsTextItem_linkActivated_action _action);
 	[LinkName("QGraphicsTextItem_LinkHovered")]
 	public static extern void QGraphicsTextItem_LinkHovered(void* self, libqt_string param1);
+	
+	public function void QGraphicsTextItem_linkHovered_action(void* self, libqt_string param1);
+	[LinkName("QGraphicsTextItem_Connect_LinkHovered")]
+	public static extern void QGraphicsTextItem_Connect_LinkHovered(void* self, libqt_string param1, QGraphicsTextItem_linkHovered_action _action);
 	[LinkName("QGraphicsTextItem_SceneEvent")]
 	public static extern bool QGraphicsTextItem_SceneEvent(void* self, void** event);
 	[LinkName("QGraphicsTextItem_MousePressEvent")]

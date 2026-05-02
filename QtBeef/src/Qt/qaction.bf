@@ -1181,18 +1181,46 @@ extension CQt
 	public static extern void QAction_SetVisible(void* self, bool visible);
 	[LinkName("QAction_Changed")]
 	public static extern void QAction_Changed(void* self);
+	
+	public function void QAction_changed_action(void* self);
+	[LinkName("QAction_Connect_Changed")]
+	public static extern void QAction_Connect_Changed(void* self, QAction_changed_action _action);
 	[LinkName("QAction_EnabledChanged")]
 	public static extern void QAction_EnabledChanged(void* self, bool enabled);
+	
+	public function void QAction_enabledChanged_action(void* self, bool enabled);
+	[LinkName("QAction_Connect_EnabledChanged")]
+	public static extern void QAction_Connect_EnabledChanged(void* self, bool enabled, QAction_enabledChanged_action _action);
 	[LinkName("QAction_CheckableChanged")]
 	public static extern void QAction_CheckableChanged(void* self, bool checkable);
+	
+	public function void QAction_checkableChanged_action(void* self, bool checkable);
+	[LinkName("QAction_Connect_CheckableChanged")]
+	public static extern void QAction_Connect_CheckableChanged(void* self, bool checkable, QAction_checkableChanged_action _action);
 	[LinkName("QAction_VisibleChanged")]
 	public static extern void QAction_VisibleChanged(void* self);
+	
+	public function void QAction_visibleChanged_action(void* self);
+	[LinkName("QAction_Connect_VisibleChanged")]
+	public static extern void QAction_Connect_VisibleChanged(void* self, QAction_visibleChanged_action _action);
 	[LinkName("QAction_Triggered")]
 	public static extern void QAction_Triggered(void* self);
+	
+	public function void QAction_triggered_action(void* self);
+	[LinkName("QAction_Connect_Triggered")]
+	public static extern void QAction_Connect_Triggered(void* self, QAction_triggered_action _action);
 	[LinkName("QAction_Hovered")]
 	public static extern void QAction_Hovered(void* self);
+	
+	public function void QAction_hovered_action(void* self);
+	[LinkName("QAction_Connect_Hovered")]
+	public static extern void QAction_Connect_Hovered(void* self, QAction_hovered_action _action);
 	[LinkName("QAction_Toggled")]
 	public static extern void QAction_Toggled(void* self, bool param1);
+	
+	public function void QAction_toggled_action(void* self, bool param1);
+	[LinkName("QAction_Connect_Toggled")]
+	public static extern void QAction_Connect_Toggled(void* self, bool param1, QAction_toggled_action _action);
 	[LinkName("QAction_Tr2")]
 	public static extern libqt_string QAction_Tr2(c_char* s, c_char* c);
 	[LinkName("QAction_Tr3")]
@@ -1201,6 +1229,10 @@ extension CQt
 	public static extern bool QAction_ShowStatusText1(void* self, void** object);
 	[LinkName("QAction_Triggered1")]
 	public static extern void QAction_Triggered1(void* self, bool _checked);
+	
+	public function void QAction_triggered1_action(void* self, bool _checked);
+	[LinkName("QAction_Connect_Triggered1")]
+	public static extern void QAction_Connect_Triggered1(void* self, bool _checked, QAction_triggered1_action _action);
 }
 [AllowDuplicates]
 enum QAction_MenuRole

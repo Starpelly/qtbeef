@@ -699,6 +699,10 @@ extension CQt
 	public static extern void QGraphicsEffect_Update(void* self);
 	[LinkName("QGraphicsEffect_EnabledChanged")]
 	public static extern void QGraphicsEffect_EnabledChanged(void* self, bool enabled);
+	
+	public function void QGraphicsEffect_enabledChanged_action(void* self, bool enabled);
+	[LinkName("QGraphicsEffect_Connect_EnabledChanged")]
+	public static extern void QGraphicsEffect_Connect_EnabledChanged(void* self, bool enabled, QGraphicsEffect_enabledChanged_action _action);
 	[LinkName("QGraphicsEffect_Draw")]
 	public static extern void QGraphicsEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsEffect_SourceChanged")]
@@ -1468,8 +1472,16 @@ extension CQt
 	public static extern void QGraphicsColorizeEffect_SetStrength(void* self, double strength);
 	[LinkName("QGraphicsColorizeEffect_ColorChanged")]
 	public static extern void QGraphicsColorizeEffect_ColorChanged(void* self, void** color);
+	
+	public function void QGraphicsColorizeEffect_colorChanged_action(void* self, void** color);
+	[LinkName("QGraphicsColorizeEffect_Connect_ColorChanged")]
+	public static extern void QGraphicsColorizeEffect_Connect_ColorChanged(void* self, void** color, QGraphicsColorizeEffect_colorChanged_action _action);
 	[LinkName("QGraphicsColorizeEffect_StrengthChanged")]
 	public static extern void QGraphicsColorizeEffect_StrengthChanged(void* self, double strength);
+	
+	public function void QGraphicsColorizeEffect_strengthChanged_action(void* self, double strength);
+	[LinkName("QGraphicsColorizeEffect_Connect_StrengthChanged")]
+	public static extern void QGraphicsColorizeEffect_Connect_StrengthChanged(void* self, double strength, QGraphicsColorizeEffect_strengthChanged_action _action);
 	[LinkName("QGraphicsColorizeEffect_Draw")]
 	public static extern void QGraphicsColorizeEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsColorizeEffect_Tr2")]
@@ -2221,8 +2233,16 @@ extension CQt
 	public static extern void QGraphicsBlurEffect_SetBlurHints(void* self, void* hints);
 	[LinkName("QGraphicsBlurEffect_BlurRadiusChanged")]
 	public static extern void QGraphicsBlurEffect_BlurRadiusChanged(void* self, double blurRadius);
+	
+	public function void QGraphicsBlurEffect_blurRadiusChanged_action(void* self, double blurRadius);
+	[LinkName("QGraphicsBlurEffect_Connect_BlurRadiusChanged")]
+	public static extern void QGraphicsBlurEffect_Connect_BlurRadiusChanged(void* self, double blurRadius, QGraphicsBlurEffect_blurRadiusChanged_action _action);
 	[LinkName("QGraphicsBlurEffect_BlurHintsChanged")]
 	public static extern void QGraphicsBlurEffect_BlurHintsChanged(void* self, void* hints);
+	
+	public function void QGraphicsBlurEffect_blurHintsChanged_action(void* self, void* hints);
+	[LinkName("QGraphicsBlurEffect_Connect_BlurHintsChanged")]
+	public static extern void QGraphicsBlurEffect_Connect_BlurHintsChanged(void* self, void* hints, QGraphicsBlurEffect_blurHintsChanged_action _action);
 	[LinkName("QGraphicsBlurEffect_Draw")]
 	public static extern void QGraphicsBlurEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsBlurEffect_Tr2")]
@@ -3062,10 +3082,22 @@ extension CQt
 	public static extern void QGraphicsDropShadowEffect_SetColor(void* self, void** color);
 	[LinkName("QGraphicsDropShadowEffect_OffsetChanged")]
 	public static extern void QGraphicsDropShadowEffect_OffsetChanged(void* self, void** offset);
+	
+	public function void QGraphicsDropShadowEffect_offsetChanged_action(void* self, void** offset);
+	[LinkName("QGraphicsDropShadowEffect_Connect_OffsetChanged")]
+	public static extern void QGraphicsDropShadowEffect_Connect_OffsetChanged(void* self, void** offset, QGraphicsDropShadowEffect_offsetChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_BlurRadiusChanged")]
 	public static extern void QGraphicsDropShadowEffect_BlurRadiusChanged(void* self, double blurRadius);
+	
+	public function void QGraphicsDropShadowEffect_blurRadiusChanged_action(void* self, double blurRadius);
+	[LinkName("QGraphicsDropShadowEffect_Connect_BlurRadiusChanged")]
+	public static extern void QGraphicsDropShadowEffect_Connect_BlurRadiusChanged(void* self, double blurRadius, QGraphicsDropShadowEffect_blurRadiusChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_ColorChanged")]
 	public static extern void QGraphicsDropShadowEffect_ColorChanged(void* self, void** color);
+	
+	public function void QGraphicsDropShadowEffect_colorChanged_action(void* self, void** color);
+	[LinkName("QGraphicsDropShadowEffect_Connect_ColorChanged")]
+	public static extern void QGraphicsDropShadowEffect_Connect_ColorChanged(void* self, void** color, QGraphicsDropShadowEffect_colorChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Draw")]
 	public static extern void QGraphicsDropShadowEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsDropShadowEffect_Tr2")]
@@ -3815,8 +3847,16 @@ extension CQt
 	public static extern void QGraphicsOpacityEffect_SetOpacityMask(void* self, void** mask);
 	[LinkName("QGraphicsOpacityEffect_OpacityChanged")]
 	public static extern void QGraphicsOpacityEffect_OpacityChanged(void* self, double opacity);
+	
+	public function void QGraphicsOpacityEffect_opacityChanged_action(void* self, double opacity);
+	[LinkName("QGraphicsOpacityEffect_Connect_OpacityChanged")]
+	public static extern void QGraphicsOpacityEffect_Connect_OpacityChanged(void* self, double opacity, QGraphicsOpacityEffect_opacityChanged_action _action);
 	[LinkName("QGraphicsOpacityEffect_OpacityMaskChanged")]
 	public static extern void QGraphicsOpacityEffect_OpacityMaskChanged(void* self, void** mask);
+	
+	public function void QGraphicsOpacityEffect_opacityMaskChanged_action(void* self, void** mask);
+	[LinkName("QGraphicsOpacityEffect_Connect_OpacityMaskChanged")]
+	public static extern void QGraphicsOpacityEffect_Connect_OpacityMaskChanged(void* self, void** mask, QGraphicsOpacityEffect_opacityMaskChanged_action _action);
 	[LinkName("QGraphicsOpacityEffect_Draw")]
 	public static extern void QGraphicsOpacityEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsOpacityEffect_Tr2")]

@@ -693,6 +693,10 @@ extension CQt
 	public static extern void* QOffscreenSurface_ResolveInterface(void* self, c_char* name, c_int revision);
 	[LinkName("QOffscreenSurface_ScreenChanged")]
 	public static extern void QOffscreenSurface_ScreenChanged(void* self, void** screen);
+	
+	public function void QOffscreenSurface_screenChanged_action(void* self, void** screen);
+	[LinkName("QOffscreenSurface_Connect_ScreenChanged")]
+	public static extern void QOffscreenSurface_Connect_ScreenChanged(void* self, void** screen, QOffscreenSurface_screenChanged_action _action);
 	[LinkName("QOffscreenSurface_Tr2")]
 	public static extern libqt_string QOffscreenSurface_Tr2(c_char* s, c_char* c);
 	[LinkName("QOffscreenSurface_Tr3")]

@@ -1111,8 +1111,16 @@ extension CQt
 	public static extern c_int QStackedLayout_HeightForWidth(void* self, c_int width);
 	[LinkName("QStackedLayout_WidgetRemoved")]
 	public static extern void QStackedLayout_WidgetRemoved(void* self, c_int index);
+	
+	public function void QStackedLayout_widgetRemoved_action(void* self, c_int index);
+	[LinkName("QStackedLayout_Connect_WidgetRemoved")]
+	public static extern void QStackedLayout_Connect_WidgetRemoved(void* self, c_int index, QStackedLayout_widgetRemoved_action _action);
 	[LinkName("QStackedLayout_CurrentChanged")]
 	public static extern void QStackedLayout_CurrentChanged(void* self, c_int index);
+	
+	public function void QStackedLayout_currentChanged_action(void* self, c_int index);
+	[LinkName("QStackedLayout_Connect_CurrentChanged")]
+	public static extern void QStackedLayout_Connect_CurrentChanged(void* self, c_int index, QStackedLayout_currentChanged_action _action);
 	[LinkName("QStackedLayout_SetCurrentIndex")]
 	public static extern void QStackedLayout_SetCurrentIndex(void* self, c_int index);
 	[LinkName("QStackedLayout_SetCurrentWidget")]

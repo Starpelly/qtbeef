@@ -5017,8 +5017,16 @@ extension CQt
 	public static extern void QTreeView_SelectAll(void* self);
 	[LinkName("QTreeView_Expanded")]
 	public static extern void QTreeView_Expanded(void* self, void** index);
+	
+	public function void QTreeView_expanded_action(void* self, void** index);
+	[LinkName("QTreeView_Connect_Expanded")]
+	public static extern void QTreeView_Connect_Expanded(void* self, void** index, QTreeView_expanded_action _action);
 	[LinkName("QTreeView_Collapsed")]
 	public static extern void QTreeView_Collapsed(void* self, void** index);
+	
+	public function void QTreeView_collapsed_action(void* self, void** index);
+	[LinkName("QTreeView_Connect_Collapsed")]
+	public static extern void QTreeView_Connect_Collapsed(void* self, void** index, QTreeView_collapsed_action _action);
 	[LinkName("QTreeView_HideColumn")]
 	public static extern void QTreeView_HideColumn(void* self, c_int column);
 	[LinkName("QTreeView_ShowColumn")]

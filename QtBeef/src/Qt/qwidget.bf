@@ -3697,12 +3697,28 @@ extension CQt
 	public static extern void** QWidget_CreateWindowContainer(void** window);
 	[LinkName("QWidget_WindowTitleChanged")]
 	public static extern void QWidget_WindowTitleChanged(void* self, libqt_string title);
+	
+	public function void QWidget_windowTitleChanged_action(void* self, libqt_string title);
+	[LinkName("QWidget_Connect_WindowTitleChanged")]
+	public static extern void QWidget_Connect_WindowTitleChanged(void* self, libqt_string title, QWidget_windowTitleChanged_action _action);
 	[LinkName("QWidget_WindowIconChanged")]
 	public static extern void QWidget_WindowIconChanged(void* self, void** icon);
+	
+	public function void QWidget_windowIconChanged_action(void* self, void** icon);
+	[LinkName("QWidget_Connect_WindowIconChanged")]
+	public static extern void QWidget_Connect_WindowIconChanged(void* self, void** icon, QWidget_windowIconChanged_action _action);
 	[LinkName("QWidget_WindowIconTextChanged")]
 	public static extern void QWidget_WindowIconTextChanged(void* self, libqt_string iconText);
+	
+	public function void QWidget_windowIconTextChanged_action(void* self, libqt_string iconText);
+	[LinkName("QWidget_Connect_WindowIconTextChanged")]
+	public static extern void QWidget_Connect_WindowIconTextChanged(void* self, libqt_string iconText, QWidget_windowIconTextChanged_action _action);
 	[LinkName("QWidget_CustomContextMenuRequested")]
 	public static extern void QWidget_CustomContextMenuRequested(void* self, void** pos);
+	
+	public function void QWidget_customContextMenuRequested_action(void* self, void** pos);
+	[LinkName("QWidget_Connect_CustomContextMenuRequested")]
+	public static extern void QWidget_Connect_CustomContextMenuRequested(void* self, void** pos, QWidget_customContextMenuRequested_action _action);
 	[LinkName("QWidget_Event")]
 	public static extern bool QWidget_Event(void* self, void** event);
 	[LinkName("QWidget_MousePressEvent")]

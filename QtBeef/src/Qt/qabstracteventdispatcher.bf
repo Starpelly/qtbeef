@@ -735,8 +735,16 @@ extension CQt
 	public static extern bool QAbstractEventDispatcher_FilterNativeEvent(void* self, void** eventType, void* message, void** result);
 	[LinkName("QAbstractEventDispatcher_AboutToBlock")]
 	public static extern void QAbstractEventDispatcher_AboutToBlock(void* self);
+	
+	public function void QAbstractEventDispatcher_aboutToBlock_action(void* self);
+	[LinkName("QAbstractEventDispatcher_Connect_AboutToBlock")]
+	public static extern void QAbstractEventDispatcher_Connect_AboutToBlock(void* self, QAbstractEventDispatcher_aboutToBlock_action _action);
 	[LinkName("QAbstractEventDispatcher_Awake")]
 	public static extern void QAbstractEventDispatcher_Awake(void* self);
+	
+	public function void QAbstractEventDispatcher_awake_action(void* self);
+	[LinkName("QAbstractEventDispatcher_Connect_Awake")]
+	public static extern void QAbstractEventDispatcher_Connect_Awake(void* self, QAbstractEventDispatcher_awake_action _action);
 	[LinkName("QAbstractEventDispatcher_Tr2")]
 	public static extern libqt_string QAbstractEventDispatcher_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractEventDispatcher_Tr3")]

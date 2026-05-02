@@ -3319,10 +3319,22 @@ extension CQt
 	public static extern void QDialog_SetResult(void* self, c_int r);
 	[LinkName("QDialog_Finished")]
 	public static extern void QDialog_Finished(void* self, c_int result);
+	
+	public function void QDialog_finished_action(void* self, c_int result);
+	[LinkName("QDialog_Connect_Finished")]
+	public static extern void QDialog_Connect_Finished(void* self, c_int result, QDialog_finished_action _action);
 	[LinkName("QDialog_Accepted")]
 	public static extern void QDialog_Accepted(void* self);
+	
+	public function void QDialog_accepted_action(void* self);
+	[LinkName("QDialog_Connect_Accepted")]
+	public static extern void QDialog_Connect_Accepted(void* self, QDialog_accepted_action _action);
 	[LinkName("QDialog_Rejected")]
 	public static extern void QDialog_Rejected(void* self);
+	
+	public function void QDialog_rejected_action(void* self);
+	[LinkName("QDialog_Connect_Rejected")]
+	public static extern void QDialog_Connect_Rejected(void* self, QDialog_rejected_action _action);
 	[LinkName("QDialog_Open")]
 	public static extern void QDialog_Open(void* self);
 	[LinkName("QDialog_Exec")]

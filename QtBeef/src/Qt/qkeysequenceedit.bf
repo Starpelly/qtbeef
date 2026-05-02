@@ -3263,8 +3263,16 @@ extension CQt
 	public static extern void QKeySequenceEdit_Clear(void* self);
 	[LinkName("QKeySequenceEdit_EditingFinished")]
 	public static extern void QKeySequenceEdit_EditingFinished(void* self);
+	
+	public function void QKeySequenceEdit_editingFinished_action(void* self);
+	[LinkName("QKeySequenceEdit_Connect_EditingFinished")]
+	public static extern void QKeySequenceEdit_Connect_EditingFinished(void* self, QKeySequenceEdit_editingFinished_action _action);
 	[LinkName("QKeySequenceEdit_KeySequenceChanged")]
 	public static extern void QKeySequenceEdit_KeySequenceChanged(void* self, void** keySequence);
+	
+	public function void QKeySequenceEdit_keySequenceChanged_action(void* self, void** keySequence);
+	[LinkName("QKeySequenceEdit_Connect_KeySequenceChanged")]
+	public static extern void QKeySequenceEdit_Connect_KeySequenceChanged(void* self, void** keySequence, QKeySequenceEdit_keySequenceChanged_action _action);
 	[LinkName("QKeySequenceEdit_Event")]
 	public static extern bool QKeySequenceEdit_Event(void* self, void** param1);
 	[LinkName("QKeySequenceEdit_KeyPressEvent")]

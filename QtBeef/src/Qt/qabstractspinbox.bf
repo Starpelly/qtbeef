@@ -3573,6 +3573,10 @@ extension CQt
 	public static extern void* QAbstractSpinBox_StepEnabled(void* self);
 	[LinkName("QAbstractSpinBox_EditingFinished")]
 	public static extern void QAbstractSpinBox_EditingFinished(void* self);
+	
+	public function void QAbstractSpinBox_editingFinished_action(void* self);
+	[LinkName("QAbstractSpinBox_Connect_EditingFinished")]
+	public static extern void QAbstractSpinBox_Connect_EditingFinished(void* self, QAbstractSpinBox_editingFinished_action _action);
 	[LinkName("QAbstractSpinBox_Tr2")]
 	public static extern libqt_string QAbstractSpinBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractSpinBox_Tr3")]

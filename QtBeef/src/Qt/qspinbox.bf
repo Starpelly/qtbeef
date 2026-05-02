@@ -3687,8 +3687,16 @@ extension CQt
 	public static extern void QSpinBox_SetValue(void* self, c_int val);
 	[LinkName("QSpinBox_ValueChanged")]
 	public static extern void QSpinBox_ValueChanged(void* self, c_int param1);
+	
+	public function void QSpinBox_valueChanged_action(void* self, c_int param1);
+	[LinkName("QSpinBox_Connect_ValueChanged")]
+	public static extern void QSpinBox_Connect_ValueChanged(void* self, c_int param1, QSpinBox_valueChanged_action _action);
 	[LinkName("QSpinBox_TextChanged")]
 	public static extern void QSpinBox_TextChanged(void* self, libqt_string param1);
+	
+	public function void QSpinBox_textChanged_action(void* self, libqt_string param1);
+	[LinkName("QSpinBox_Connect_TextChanged")]
+	public static extern void QSpinBox_Connect_TextChanged(void* self, libqt_string param1, QSpinBox_textChanged_action _action);
 	[LinkName("QSpinBox_Tr2")]
 	public static extern libqt_string QSpinBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QSpinBox_Tr3")]
@@ -7376,8 +7384,16 @@ extension CQt
 	public static extern void QDoubleSpinBox_SetValue(void* self, double val);
 	[LinkName("QDoubleSpinBox_ValueChanged")]
 	public static extern void QDoubleSpinBox_ValueChanged(void* self, double param1);
+	
+	public function void QDoubleSpinBox_valueChanged_action(void* self, double param1);
+	[LinkName("QDoubleSpinBox_Connect_ValueChanged")]
+	public static extern void QDoubleSpinBox_Connect_ValueChanged(void* self, double param1, QDoubleSpinBox_valueChanged_action _action);
 	[LinkName("QDoubleSpinBox_TextChanged")]
 	public static extern void QDoubleSpinBox_TextChanged(void* self, libqt_string param1);
+	
+	public function void QDoubleSpinBox_textChanged_action(void* self, libqt_string param1);
+	[LinkName("QDoubleSpinBox_Connect_TextChanged")]
+	public static extern void QDoubleSpinBox_Connect_TextChanged(void* self, libqt_string param1, QDoubleSpinBox_textChanged_action _action);
 	[LinkName("QDoubleSpinBox_Tr2")]
 	public static extern libqt_string QDoubleSpinBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QDoubleSpinBox_Tr3")]

@@ -3977,18 +3977,46 @@ extension CQt
 	public static extern void QComboBox_SetCurrentText(void* self, libqt_string text);
 	[LinkName("QComboBox_EditTextChanged")]
 	public static extern void QComboBox_EditTextChanged(void* self, libqt_string param1);
+	
+	public function void QComboBox_editTextChanged_action(void* self, libqt_string param1);
+	[LinkName("QComboBox_Connect_EditTextChanged")]
+	public static extern void QComboBox_Connect_EditTextChanged(void* self, libqt_string param1, QComboBox_editTextChanged_action _action);
 	[LinkName("QComboBox_Activated")]
 	public static extern void QComboBox_Activated(void* self, c_int index);
+	
+	public function void QComboBox_activated_action(void* self, c_int index);
+	[LinkName("QComboBox_Connect_Activated")]
+	public static extern void QComboBox_Connect_Activated(void* self, c_int index, QComboBox_activated_action _action);
 	[LinkName("QComboBox_TextActivated")]
 	public static extern void QComboBox_TextActivated(void* self, libqt_string param1);
+	
+	public function void QComboBox_textActivated_action(void* self, libqt_string param1);
+	[LinkName("QComboBox_Connect_TextActivated")]
+	public static extern void QComboBox_Connect_TextActivated(void* self, libqt_string param1, QComboBox_textActivated_action _action);
 	[LinkName("QComboBox_Highlighted")]
 	public static extern void QComboBox_Highlighted(void* self, c_int index);
+	
+	public function void QComboBox_highlighted_action(void* self, c_int index);
+	[LinkName("QComboBox_Connect_Highlighted")]
+	public static extern void QComboBox_Connect_Highlighted(void* self, c_int index, QComboBox_highlighted_action _action);
 	[LinkName("QComboBox_TextHighlighted")]
 	public static extern void QComboBox_TextHighlighted(void* self, libqt_string param1);
+	
+	public function void QComboBox_textHighlighted_action(void* self, libqt_string param1);
+	[LinkName("QComboBox_Connect_TextHighlighted")]
+	public static extern void QComboBox_Connect_TextHighlighted(void* self, libqt_string param1, QComboBox_textHighlighted_action _action);
 	[LinkName("QComboBox_CurrentIndexChanged")]
 	public static extern void QComboBox_CurrentIndexChanged(void* self, c_int index);
+	
+	public function void QComboBox_currentIndexChanged_action(void* self, c_int index);
+	[LinkName("QComboBox_Connect_CurrentIndexChanged")]
+	public static extern void QComboBox_Connect_CurrentIndexChanged(void* self, c_int index, QComboBox_currentIndexChanged_action _action);
 	[LinkName("QComboBox_CurrentTextChanged")]
 	public static extern void QComboBox_CurrentTextChanged(void* self, libqt_string param1);
+	
+	public function void QComboBox_currentTextChanged_action(void* self, libqt_string param1);
+	[LinkName("QComboBox_Connect_CurrentTextChanged")]
+	public static extern void QComboBox_Connect_CurrentTextChanged(void* self, libqt_string param1, QComboBox_currentTextChanged_action _action);
 	[LinkName("QComboBox_FocusInEvent")]
 	public static extern void QComboBox_FocusInEvent(void* self, void** e);
 	[LinkName("QComboBox_FocusOutEvent")]

@@ -232,14 +232,21 @@ class WriteClass
         return name;
     }
 
-    private string cppMethodNameToBfMethodName(CppClass _class, CppMethod method, Stage stage)
+    private string cppMethodNameToBfMethodName(CppClass _class, CppMethod method, Stage stage, bool isSignal)
     {
         var bfClassName = cppNameToBf(_class.ClassName);
         var outStr = string.Empty;
 
         if (stage == Stage.CApi)
         {
-            outStr = $"{bfClassName}_{method.MethodName}";
+            if (isSignal)
+            {
+                outStr = $"{bfClassName}_Connect_{method.MethodName}";
+            }
+            else
+            {
+                outStr = $"{bfClassName}_{method.MethodName}";
+            }
 
             foreach (var replace in m_operatorReplacerHash)
             {
@@ -271,7 +278,7 @@ class WriteClass
         return outStr;
     }
 
-    private string buildBfParameters(CppClass _class, CppMethod method, Stage stage, bool isMethod)
+    private string buildBfParameters(CppClass _class, CppMethod method, Stage stage, bool isMethod, bool isSignal)
     {
         var parameters = new StringCodeBuilder();
 
@@ -317,7 +324,23 @@ class WriteClass
                 parameters.Append(", ");
         }
 
+        if (stage == Stage.CApi)
+        {
+            if (isSignal)
+            {
+                if (parameters.Code != string.Empty)
+                    parameters.Append(", ");
+
+                parameters.Append($"{getSignalFunctionTypedefName(_class, method)} _action");
+            }
+        }
+
         return parameters.Code;
+    }
+
+    string getSignalFunctionTypedefName(CppClass _class, CppMethod method)
+    {
+        return $"{cppNameToBf(_class.ClassName)}_{method.MethodName}_action";
     }
 
     private string buildBfArguments(CppClass _class, CppMethod method, Stage stage, bool isMethod)
@@ -430,7 +453,7 @@ class WriteClass
 
                     var bfMethodName = Regex.Replace(method.MethodName, @"\b\p{Ll}", match => match.Value.ToUpper());
 
-                    var bfParameters = buildBfParameters(cppClass, method, Stage.BfObject, true);
+                    var bfParameters = buildBfParameters(cppClass, method, Stage.BfObject, true, false);
                     var bfArguments = string.Empty;
                     if (isHandle)
                     {
@@ -480,7 +503,7 @@ class WriteClass
 
                         if (isHandle)
                         {
-                            var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi);
+                            var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, false);
                             call = $"CQt.{linkName}({bfArguments})";
                         }
                         else
@@ -601,7 +624,7 @@ class WriteClass
                             if (cppClass.Ctors[i].IsMoveCtor)
                                 continue;
 
-                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.BfObject, false);
+                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.BfObject, false, false);
                             var arguments = buildBfArguments(cppClass, cppClass.Ctors[i], Stage.BfObject, false);
 
                             // @HACK
@@ -708,7 +731,7 @@ class WriteClass
                     {
                         for (var i = 0; i < cppClass.Ctors.Length; i++)
                         {
-                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false);
+                            var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.CApi, false, false);
 
                             code.AppendLine($"[LinkName(\"{methodPrefix}_new{maybeSuffix(i)}\")]");
                             code.AppendLine($"public static extern {bfClassName}_Ptr {methodPrefix}_new{maybeSuffix(i)}({parameters});");
@@ -727,22 +750,38 @@ class WriteClass
                     // Normal methods
                     foreach (var method in cppClass.Methods)
                     {
-                        /*
-                        if (cppClass.ClassName == "QWidget")
+                        var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, false);
+                        var parameters = buildBfParameters(cppClass, method, Stage.CApi, true, false);
+
+                        // Non signaled
                         {
-                            if (method.MethodName == "show")
-                            {
-                                var a = 0;
-                            }
+
+
+                            code.AppendLine($"[LinkName(\"{linkName}\")]");
+                            code.AppendLine($"public static extern {getBfTypeName(method.ReturnType, Stage.CApi)} {linkName}({parameters});");
                         }
-                        */
 
-                        var parameters = buildBfParameters(cppClass, method, Stage.CApi, true);
 
-                        var linkName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi);
+                        /*
+                         * 	public function void clicked(void* self);
 
-                        code.AppendLine($"[LinkName(\"{linkName}\")]");
-                        code.AppendLine($"public static extern {getBfTypeName(method.ReturnType, Stage.CApi)} {linkName}({parameters});");
+	[CLink]
+	public static extern void QAbstractButton_Connect_Clicked(void* self, clicked slot);
+                         */
+
+
+                        if (method.IsSignal)
+                        {
+                            code.AppendEmptyLine();
+
+                            code.AppendLine($"public function void {getSignalFunctionTypedefName(cppClass, method)}({parameters});");
+
+                            var signalName = cppMethodNameToBfMethodName(cppClass, method, Stage.CApi, true);
+                            var signalParameters = buildBfParameters(cppClass, method, Stage.CApi, true, true);
+
+                            code.AppendLine($"[LinkName(\"{signalName}\")]");
+                            code.AppendLine($"public static extern {getBfTypeName(method.ReturnType, Stage.CApi)} {signalName}({signalParameters});");
+                        }
                     }
                 }
                 code.DecreaseTab();

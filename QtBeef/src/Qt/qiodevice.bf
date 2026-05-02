@@ -1097,16 +1097,40 @@ extension CQt
 	public static extern libqt_string QIODevice_ErrorString(void* self);
 	[LinkName("QIODevice_ReadyRead")]
 	public static extern void QIODevice_ReadyRead(void* self);
+	
+	public function void QIODevice_readyRead_action(void* self);
+	[LinkName("QIODevice_Connect_ReadyRead")]
+	public static extern void QIODevice_Connect_ReadyRead(void* self, QIODevice_readyRead_action _action);
 	[LinkName("QIODevice_ChannelReadyRead")]
 	public static extern void QIODevice_ChannelReadyRead(void* self, c_int channel);
+	
+	public function void QIODevice_channelReadyRead_action(void* self, c_int channel);
+	[LinkName("QIODevice_Connect_ChannelReadyRead")]
+	public static extern void QIODevice_Connect_ChannelReadyRead(void* self, c_int channel, QIODevice_channelReadyRead_action _action);
 	[LinkName("QIODevice_BytesWritten")]
 	public static extern void QIODevice_BytesWritten(void* self, c_longlong bytes);
+	
+	public function void QIODevice_bytesWritten_action(void* self, c_longlong bytes);
+	[LinkName("QIODevice_Connect_BytesWritten")]
+	public static extern void QIODevice_Connect_BytesWritten(void* self, c_longlong bytes, QIODevice_bytesWritten_action _action);
 	[LinkName("QIODevice_ChannelBytesWritten")]
 	public static extern void QIODevice_ChannelBytesWritten(void* self, c_int channel, c_longlong bytes);
+	
+	public function void QIODevice_channelBytesWritten_action(void* self, c_int channel, c_longlong bytes);
+	[LinkName("QIODevice_Connect_ChannelBytesWritten")]
+	public static extern void QIODevice_Connect_ChannelBytesWritten(void* self, c_int channel, c_longlong bytes, QIODevice_channelBytesWritten_action _action);
 	[LinkName("QIODevice_AboutToClose")]
 	public static extern void QIODevice_AboutToClose(void* self);
+	
+	public function void QIODevice_aboutToClose_action(void* self);
+	[LinkName("QIODevice_Connect_AboutToClose")]
+	public static extern void QIODevice_Connect_AboutToClose(void* self, QIODevice_aboutToClose_action _action);
 	[LinkName("QIODevice_ReadChannelFinished")]
 	public static extern void QIODevice_ReadChannelFinished(void* self);
+	
+	public function void QIODevice_readChannelFinished_action(void* self);
+	[LinkName("QIODevice_Connect_ReadChannelFinished")]
+	public static extern void QIODevice_Connect_ReadChannelFinished(void* self, QIODevice_readChannelFinished_action _action);
 	[LinkName("QIODevice_ReadData")]
 	public static extern c_longlong QIODevice_ReadData(void* self, c_char* data, c_longlong maxlen);
 	[LinkName("QIODevice_ReadLineData")]

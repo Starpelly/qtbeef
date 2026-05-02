@@ -3513,16 +3513,40 @@ extension CQt
 	public static extern void QAbstractSlider_SetRange(void* self, c_int min, c_int max);
 	[LinkName("QAbstractSlider_ValueChanged")]
 	public static extern void QAbstractSlider_ValueChanged(void* self, c_int value);
+	
+	public function void QAbstractSlider_valueChanged_action(void* self, c_int value);
+	[LinkName("QAbstractSlider_Connect_ValueChanged")]
+	public static extern void QAbstractSlider_Connect_ValueChanged(void* self, c_int value, QAbstractSlider_valueChanged_action _action);
 	[LinkName("QAbstractSlider_SliderPressed")]
 	public static extern void QAbstractSlider_SliderPressed(void* self);
+	
+	public function void QAbstractSlider_sliderPressed_action(void* self);
+	[LinkName("QAbstractSlider_Connect_SliderPressed")]
+	public static extern void QAbstractSlider_Connect_SliderPressed(void* self, QAbstractSlider_sliderPressed_action _action);
 	[LinkName("QAbstractSlider_SliderMoved")]
 	public static extern void QAbstractSlider_SliderMoved(void* self, c_int position);
+	
+	public function void QAbstractSlider_sliderMoved_action(void* self, c_int position);
+	[LinkName("QAbstractSlider_Connect_SliderMoved")]
+	public static extern void QAbstractSlider_Connect_SliderMoved(void* self, c_int position, QAbstractSlider_sliderMoved_action _action);
 	[LinkName("QAbstractSlider_SliderReleased")]
 	public static extern void QAbstractSlider_SliderReleased(void* self);
+	
+	public function void QAbstractSlider_sliderReleased_action(void* self);
+	[LinkName("QAbstractSlider_Connect_SliderReleased")]
+	public static extern void QAbstractSlider_Connect_SliderReleased(void* self, QAbstractSlider_sliderReleased_action _action);
 	[LinkName("QAbstractSlider_RangeChanged")]
 	public static extern void QAbstractSlider_RangeChanged(void* self, c_int min, c_int max);
+	
+	public function void QAbstractSlider_rangeChanged_action(void* self, c_int min, c_int max);
+	[LinkName("QAbstractSlider_Connect_RangeChanged")]
+	public static extern void QAbstractSlider_Connect_RangeChanged(void* self, c_int min, c_int max, QAbstractSlider_rangeChanged_action _action);
 	[LinkName("QAbstractSlider_ActionTriggered")]
 	public static extern void QAbstractSlider_ActionTriggered(void* self, c_int action);
+	
+	public function void QAbstractSlider_actionTriggered_action(void* self, c_int action);
+	[LinkName("QAbstractSlider_Connect_ActionTriggered")]
+	public static extern void QAbstractSlider_Connect_ActionTriggered(void* self, c_int action, QAbstractSlider_actionTriggered_action _action);
 	[LinkName("QAbstractSlider_Event")]
 	public static extern bool QAbstractSlider_Event(void* self, void** e);
 	[LinkName("QAbstractSlider_SetRepeatAction")]

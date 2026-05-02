@@ -3509,20 +3509,52 @@ extension CQt
 	public static extern void QToolBar_SetToolButtonStyle(void* self, Qt_ToolButtonStyle toolButtonStyle);
 	[LinkName("QToolBar_ActionTriggered")]
 	public static extern void QToolBar_ActionTriggered(void* self, void** action);
+	
+	public function void QToolBar_actionTriggered_action(void* self, void** action);
+	[LinkName("QToolBar_Connect_ActionTriggered")]
+	public static extern void QToolBar_Connect_ActionTriggered(void* self, void** action, QToolBar_actionTriggered_action _action);
 	[LinkName("QToolBar_MovableChanged")]
 	public static extern void QToolBar_MovableChanged(void* self, bool movable);
+	
+	public function void QToolBar_movableChanged_action(void* self, bool movable);
+	[LinkName("QToolBar_Connect_MovableChanged")]
+	public static extern void QToolBar_Connect_MovableChanged(void* self, bool movable, QToolBar_movableChanged_action _action);
 	[LinkName("QToolBar_AllowedAreasChanged")]
 	public static extern void QToolBar_AllowedAreasChanged(void* self, void* allowedAreas);
+	
+	public function void QToolBar_allowedAreasChanged_action(void* self, void* allowedAreas);
+	[LinkName("QToolBar_Connect_AllowedAreasChanged")]
+	public static extern void QToolBar_Connect_AllowedAreasChanged(void* self, void* allowedAreas, QToolBar_allowedAreasChanged_action _action);
 	[LinkName("QToolBar_OrientationChanged")]
 	public static extern void QToolBar_OrientationChanged(void* self, Qt_Orientation orientation);
+	
+	public function void QToolBar_orientationChanged_action(void* self, Qt_Orientation orientation);
+	[LinkName("QToolBar_Connect_OrientationChanged")]
+	public static extern void QToolBar_Connect_OrientationChanged(void* self, Qt_Orientation orientation, QToolBar_orientationChanged_action _action);
 	[LinkName("QToolBar_IconSizeChanged")]
 	public static extern void QToolBar_IconSizeChanged(void* self, void** iconSize);
+	
+	public function void QToolBar_iconSizeChanged_action(void* self, void** iconSize);
+	[LinkName("QToolBar_Connect_IconSizeChanged")]
+	public static extern void QToolBar_Connect_IconSizeChanged(void* self, void** iconSize, QToolBar_iconSizeChanged_action _action);
 	[LinkName("QToolBar_ToolButtonStyleChanged")]
 	public static extern void QToolBar_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle);
+	
+	public function void QToolBar_toolButtonStyleChanged_action(void* self, Qt_ToolButtonStyle toolButtonStyle);
+	[LinkName("QToolBar_Connect_ToolButtonStyleChanged")]
+	public static extern void QToolBar_Connect_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle, QToolBar_toolButtonStyleChanged_action _action);
 	[LinkName("QToolBar_TopLevelChanged")]
 	public static extern void QToolBar_TopLevelChanged(void* self, bool topLevel);
+	
+	public function void QToolBar_topLevelChanged_action(void* self, bool topLevel);
+	[LinkName("QToolBar_Connect_TopLevelChanged")]
+	public static extern void QToolBar_Connect_TopLevelChanged(void* self, bool topLevel, QToolBar_topLevelChanged_action _action);
 	[LinkName("QToolBar_VisibilityChanged")]
 	public static extern void QToolBar_VisibilityChanged(void* self, bool visible);
+	
+	public function void QToolBar_visibilityChanged_action(void* self, bool visible);
+	[LinkName("QToolBar_Connect_VisibilityChanged")]
+	public static extern void QToolBar_Connect_VisibilityChanged(void* self, bool visible, QToolBar_visibilityChanged_action _action);
 	[LinkName("QToolBar_ActionEvent")]
 	public static extern void QToolBar_ActionEvent(void* self, void** event);
 	[LinkName("QToolBar_ChangeEvent")]

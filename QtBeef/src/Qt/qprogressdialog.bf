@@ -3559,6 +3559,10 @@ extension CQt
 	public static extern void QProgressDialog_SetMinimumDuration(void* self, c_int ms);
 	[LinkName("QProgressDialog_Canceled")]
 	public static extern void QProgressDialog_Canceled(void* self);
+	
+	public function void QProgressDialog_canceled_action(void* self);
+	[LinkName("QProgressDialog_Connect_Canceled")]
+	public static extern void QProgressDialog_Connect_Canceled(void* self, QProgressDialog_canceled_action _action);
 	[LinkName("QProgressDialog_ResizeEvent")]
 	public static extern void QProgressDialog_ResizeEvent(void* self, void** event);
 	[LinkName("QProgressDialog_CloseEvent")]

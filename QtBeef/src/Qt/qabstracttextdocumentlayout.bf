@@ -803,12 +803,28 @@ extension CQt
 	public static extern void** QAbstractTextDocumentLayout_HandlerForObject(void* self, c_int objectType);
 	[LinkName("QAbstractTextDocumentLayout_Update")]
 	public static extern void QAbstractTextDocumentLayout_Update(void* self);
+	
+	public function void QAbstractTextDocumentLayout_update_action(void* self);
+	[LinkName("QAbstractTextDocumentLayout_Connect_Update")]
+	public static extern void QAbstractTextDocumentLayout_Connect_Update(void* self, QAbstractTextDocumentLayout_update_action _action);
 	[LinkName("QAbstractTextDocumentLayout_UpdateBlock")]
 	public static extern void QAbstractTextDocumentLayout_UpdateBlock(void* self, void** block);
+	
+	public function void QAbstractTextDocumentLayout_updateBlock_action(void* self, void** block);
+	[LinkName("QAbstractTextDocumentLayout_Connect_UpdateBlock")]
+	public static extern void QAbstractTextDocumentLayout_Connect_UpdateBlock(void* self, void** block, QAbstractTextDocumentLayout_updateBlock_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DocumentSizeChanged")]
 	public static extern void QAbstractTextDocumentLayout_DocumentSizeChanged(void* self, void** newSize);
+	
+	public function void QAbstractTextDocumentLayout_documentSizeChanged_action(void* self, void** newSize);
+	[LinkName("QAbstractTextDocumentLayout_Connect_DocumentSizeChanged")]
+	public static extern void QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(void* self, void** newSize, QAbstractTextDocumentLayout_documentSizeChanged_action _action);
 	[LinkName("QAbstractTextDocumentLayout_PageCountChanged")]
 	public static extern void QAbstractTextDocumentLayout_PageCountChanged(void* self, c_int newPages);
+	
+	public function void QAbstractTextDocumentLayout_pageCountChanged_action(void* self, c_int newPages);
+	[LinkName("QAbstractTextDocumentLayout_Connect_PageCountChanged")]
+	public static extern void QAbstractTextDocumentLayout_Connect_PageCountChanged(void* self, c_int newPages, QAbstractTextDocumentLayout_pageCountChanged_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DocumentChanged")]
 	public static extern void QAbstractTextDocumentLayout_DocumentChanged(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
 	[LinkName("QAbstractTextDocumentLayout_ResizeInlineObject")]
@@ -829,6 +845,10 @@ extension CQt
 	public static extern void QAbstractTextDocumentLayout_UnregisterHandler2(void* self, c_int objectType, void** component);
 	[LinkName("QAbstractTextDocumentLayout_Update1")]
 	public static extern void QAbstractTextDocumentLayout_Update1(void* self, void** param1);
+	
+	public function void QAbstractTextDocumentLayout_update1_action(void* self, void** param1);
+	[LinkName("QAbstractTextDocumentLayout_Connect_Update1")]
+	public static extern void QAbstractTextDocumentLayout_Connect_Update1(void* self, void** param1, QAbstractTextDocumentLayout_update1_action _action);
 }
 // --------------------------------------------------------------
 // QTextObjectInterface

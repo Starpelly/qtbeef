@@ -1513,10 +1513,22 @@ extension CQt
 	public static extern libqt_string QFileSystemModel_Tr(c_char* s);
 	[LinkName("QFileSystemModel_RootPathChanged")]
 	public static extern void QFileSystemModel_RootPathChanged(void* self, libqt_string newPath);
+	
+	public function void QFileSystemModel_rootPathChanged_action(void* self, libqt_string newPath);
+	[LinkName("QFileSystemModel_Connect_RootPathChanged")]
+	public static extern void QFileSystemModel_Connect_RootPathChanged(void* self, libqt_string newPath, QFileSystemModel_rootPathChanged_action _action);
 	[LinkName("QFileSystemModel_FileRenamed")]
 	public static extern void QFileSystemModel_FileRenamed(void* self, libqt_string path, libqt_string oldName, libqt_string newName);
+	
+	public function void QFileSystemModel_fileRenamed_action(void* self, libqt_string path, libqt_string oldName, libqt_string newName);
+	[LinkName("QFileSystemModel_Connect_FileRenamed")]
+	public static extern void QFileSystemModel_Connect_FileRenamed(void* self, libqt_string path, libqt_string oldName, libqt_string newName, QFileSystemModel_fileRenamed_action _action);
 	[LinkName("QFileSystemModel_DirectoryLoaded")]
 	public static extern void QFileSystemModel_DirectoryLoaded(void* self, libqt_string path);
+	
+	public function void QFileSystemModel_directoryLoaded_action(void* self, libqt_string path);
+	[LinkName("QFileSystemModel_Connect_DirectoryLoaded")]
+	public static extern void QFileSystemModel_Connect_DirectoryLoaded(void* self, libqt_string path, QFileSystemModel_directoryLoaded_action _action);
 	[LinkName("QFileSystemModel_Index")]
 	public static extern void* QFileSystemModel_Index(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_Index2")]

@@ -4031,16 +4031,40 @@ extension CQt
 	public static extern double QInputDialog_DoubleStep(void* self);
 	[LinkName("QInputDialog_TextValueChanged")]
 	public static extern void QInputDialog_TextValueChanged(void* self, libqt_string text);
+	
+	public function void QInputDialog_textValueChanged_action(void* self, libqt_string text);
+	[LinkName("QInputDialog_Connect_TextValueChanged")]
+	public static extern void QInputDialog_Connect_TextValueChanged(void* self, libqt_string text, QInputDialog_textValueChanged_action _action);
 	[LinkName("QInputDialog_TextValueSelected")]
 	public static extern void QInputDialog_TextValueSelected(void* self, libqt_string text);
+	
+	public function void QInputDialog_textValueSelected_action(void* self, libqt_string text);
+	[LinkName("QInputDialog_Connect_TextValueSelected")]
+	public static extern void QInputDialog_Connect_TextValueSelected(void* self, libqt_string text, QInputDialog_textValueSelected_action _action);
 	[LinkName("QInputDialog_IntValueChanged")]
 	public static extern void QInputDialog_IntValueChanged(void* self, c_int value);
+	
+	public function void QInputDialog_intValueChanged_action(void* self, c_int value);
+	[LinkName("QInputDialog_Connect_IntValueChanged")]
+	public static extern void QInputDialog_Connect_IntValueChanged(void* self, c_int value, QInputDialog_intValueChanged_action _action);
 	[LinkName("QInputDialog_IntValueSelected")]
 	public static extern void QInputDialog_IntValueSelected(void* self, c_int value);
+	
+	public function void QInputDialog_intValueSelected_action(void* self, c_int value);
+	[LinkName("QInputDialog_Connect_IntValueSelected")]
+	public static extern void QInputDialog_Connect_IntValueSelected(void* self, c_int value, QInputDialog_intValueSelected_action _action);
 	[LinkName("QInputDialog_DoubleValueChanged")]
 	public static extern void QInputDialog_DoubleValueChanged(void* self, double value);
+	
+	public function void QInputDialog_doubleValueChanged_action(void* self, double value);
+	[LinkName("QInputDialog_Connect_DoubleValueChanged")]
+	public static extern void QInputDialog_Connect_DoubleValueChanged(void* self, double value, QInputDialog_doubleValueChanged_action _action);
 	[LinkName("QInputDialog_DoubleValueSelected")]
 	public static extern void QInputDialog_DoubleValueSelected(void* self, double value);
+	
+	public function void QInputDialog_doubleValueSelected_action(void* self, double value);
+	[LinkName("QInputDialog_Connect_DoubleValueSelected")]
+	public static extern void QInputDialog_Connect_DoubleValueSelected(void* self, double value, QInputDialog_doubleValueSelected_action _action);
 	[LinkName("QInputDialog_Done")]
 	public static extern void QInputDialog_Done(void* self, c_int result);
 	[LinkName("QInputDialog_Tr2")]

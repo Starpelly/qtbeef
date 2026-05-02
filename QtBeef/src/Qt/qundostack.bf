@@ -1042,16 +1042,40 @@ extension CQt
 	public static extern void QUndoStack_SetActive(void* self);
 	[LinkName("QUndoStack_IndexChanged")]
 	public static extern void QUndoStack_IndexChanged(void* self, c_int idx);
+	
+	public function void QUndoStack_indexChanged_action(void* self, c_int idx);
+	[LinkName("QUndoStack_Connect_IndexChanged")]
+	public static extern void QUndoStack_Connect_IndexChanged(void* self, c_int idx, QUndoStack_indexChanged_action _action);
 	[LinkName("QUndoStack_CleanChanged")]
 	public static extern void QUndoStack_CleanChanged(void* self, bool clean);
+	
+	public function void QUndoStack_cleanChanged_action(void* self, bool clean);
+	[LinkName("QUndoStack_Connect_CleanChanged")]
+	public static extern void QUndoStack_Connect_CleanChanged(void* self, bool clean, QUndoStack_cleanChanged_action _action);
 	[LinkName("QUndoStack_CanUndoChanged")]
 	public static extern void QUndoStack_CanUndoChanged(void* self, bool canUndo);
+	
+	public function void QUndoStack_canUndoChanged_action(void* self, bool canUndo);
+	[LinkName("QUndoStack_Connect_CanUndoChanged")]
+	public static extern void QUndoStack_Connect_CanUndoChanged(void* self, bool canUndo, QUndoStack_canUndoChanged_action _action);
 	[LinkName("QUndoStack_CanRedoChanged")]
 	public static extern void QUndoStack_CanRedoChanged(void* self, bool canRedo);
+	
+	public function void QUndoStack_canRedoChanged_action(void* self, bool canRedo);
+	[LinkName("QUndoStack_Connect_CanRedoChanged")]
+	public static extern void QUndoStack_Connect_CanRedoChanged(void* self, bool canRedo, QUndoStack_canRedoChanged_action _action);
 	[LinkName("QUndoStack_UndoTextChanged")]
 	public static extern void QUndoStack_UndoTextChanged(void* self, libqt_string undoText);
+	
+	public function void QUndoStack_undoTextChanged_action(void* self, libqt_string undoText);
+	[LinkName("QUndoStack_Connect_UndoTextChanged")]
+	public static extern void QUndoStack_Connect_UndoTextChanged(void* self, libqt_string undoText, QUndoStack_undoTextChanged_action _action);
 	[LinkName("QUndoStack_RedoTextChanged")]
 	public static extern void QUndoStack_RedoTextChanged(void* self, libqt_string redoText);
+	
+	public function void QUndoStack_redoTextChanged_action(void* self, libqt_string redoText);
+	[LinkName("QUndoStack_Connect_RedoTextChanged")]
+	public static extern void QUndoStack_Connect_RedoTextChanged(void* self, libqt_string redoText, QUndoStack_redoTextChanged_action _action);
 	[LinkName("QUndoStack_Tr2")]
 	public static extern libqt_string QUndoStack_Tr2(c_char* s, c_char* c);
 	[LinkName("QUndoStack_Tr3")]

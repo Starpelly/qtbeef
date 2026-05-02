@@ -1701,20 +1701,52 @@ extension CQt
 	public static extern void* QSortFilterProxyModel_SupportedDropActions(void* self);
 	[LinkName("QSortFilterProxyModel_DynamicSortFilterChanged")]
 	public static extern void QSortFilterProxyModel_DynamicSortFilterChanged(void* self, bool dynamicSortFilter);
+	
+	public function void QSortFilterProxyModel_dynamicSortFilterChanged_action(void* self, bool dynamicSortFilter);
+	[LinkName("QSortFilterProxyModel_Connect_DynamicSortFilterChanged")]
+	public static extern void QSortFilterProxyModel_Connect_DynamicSortFilterChanged(void* self, bool dynamicSortFilter, QSortFilterProxyModel_dynamicSortFilterChanged_action _action);
 	[LinkName("QSortFilterProxyModel_FilterCaseSensitivityChanged")]
 	public static extern void QSortFilterProxyModel_FilterCaseSensitivityChanged(void* self, Qt_CaseSensitivity filterCaseSensitivity);
+	
+	public function void QSortFilterProxyModel_filterCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity filterCaseSensitivity);
+	[LinkName("QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged")]
+	public static extern void QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(void* self, Qt_CaseSensitivity filterCaseSensitivity, QSortFilterProxyModel_filterCaseSensitivityChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortCaseSensitivityChanged")]
 	public static extern void QSortFilterProxyModel_SortCaseSensitivityChanged(void* self, Qt_CaseSensitivity sortCaseSensitivity);
+	
+	public function void QSortFilterProxyModel_sortCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity sortCaseSensitivity);
+	[LinkName("QSortFilterProxyModel_Connect_SortCaseSensitivityChanged")]
+	public static extern void QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(void* self, Qt_CaseSensitivity sortCaseSensitivity, QSortFilterProxyModel_sortCaseSensitivityChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortLocaleAwareChanged")]
 	public static extern void QSortFilterProxyModel_SortLocaleAwareChanged(void* self, bool sortLocaleAware);
+	
+	public function void QSortFilterProxyModel_sortLocaleAwareChanged_action(void* self, bool sortLocaleAware);
+	[LinkName("QSortFilterProxyModel_Connect_SortLocaleAwareChanged")]
+	public static extern void QSortFilterProxyModel_Connect_SortLocaleAwareChanged(void* self, bool sortLocaleAware, QSortFilterProxyModel_sortLocaleAwareChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortRoleChanged")]
 	public static extern void QSortFilterProxyModel_SortRoleChanged(void* self, c_int sortRole);
+	
+	public function void QSortFilterProxyModel_sortRoleChanged_action(void* self, c_int sortRole);
+	[LinkName("QSortFilterProxyModel_Connect_SortRoleChanged")]
+	public static extern void QSortFilterProxyModel_Connect_SortRoleChanged(void* self, c_int sortRole, QSortFilterProxyModel_sortRoleChanged_action _action);
 	[LinkName("QSortFilterProxyModel_FilterRoleChanged")]
 	public static extern void QSortFilterProxyModel_FilterRoleChanged(void* self, c_int filterRole);
+	
+	public function void QSortFilterProxyModel_filterRoleChanged_action(void* self, c_int filterRole);
+	[LinkName("QSortFilterProxyModel_Connect_FilterRoleChanged")]
+	public static extern void QSortFilterProxyModel_Connect_FilterRoleChanged(void* self, c_int filterRole, QSortFilterProxyModel_filterRoleChanged_action _action);
 	[LinkName("QSortFilterProxyModel_RecursiveFilteringEnabledChanged")]
 	public static extern void QSortFilterProxyModel_RecursiveFilteringEnabledChanged(void* self, bool recursiveFilteringEnabled);
+	
+	public function void QSortFilterProxyModel_recursiveFilteringEnabledChanged_action(void* self, bool recursiveFilteringEnabled);
+	[LinkName("QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged")]
+	public static extern void QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(void* self, bool recursiveFilteringEnabled, QSortFilterProxyModel_recursiveFilteringEnabledChanged_action _action);
 	[LinkName("QSortFilterProxyModel_AutoAcceptChildRowsChanged")]
 	public static extern void QSortFilterProxyModel_AutoAcceptChildRowsChanged(void* self, bool autoAcceptChildRows);
+	
+	public function void QSortFilterProxyModel_autoAcceptChildRowsChanged_action(void* self, bool autoAcceptChildRows);
+	[LinkName("QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged")]
+	public static extern void QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(void* self, bool autoAcceptChildRows, QSortFilterProxyModel_autoAcceptChildRowsChanged_action _action);
 	[LinkName("QSortFilterProxyModel_Tr2")]
 	public static extern libqt_string QSortFilterProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QSortFilterProxyModel_Tr3")]

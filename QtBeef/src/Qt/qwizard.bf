@@ -3753,14 +3753,34 @@ extension CQt
 	public static extern void* QWizard_SizeHint(void* self);
 	[LinkName("QWizard_CurrentIdChanged")]
 	public static extern void QWizard_CurrentIdChanged(void* self, c_int id);
+	
+	public function void QWizard_currentIdChanged_action(void* self, c_int id);
+	[LinkName("QWizard_Connect_CurrentIdChanged")]
+	public static extern void QWizard_Connect_CurrentIdChanged(void* self, c_int id, QWizard_currentIdChanged_action _action);
 	[LinkName("QWizard_HelpRequested")]
 	public static extern void QWizard_HelpRequested(void* self);
+	
+	public function void QWizard_helpRequested_action(void* self);
+	[LinkName("QWizard_Connect_HelpRequested")]
+	public static extern void QWizard_Connect_HelpRequested(void* self, QWizard_helpRequested_action _action);
 	[LinkName("QWizard_CustomButtonClicked")]
 	public static extern void QWizard_CustomButtonClicked(void* self, c_int which);
+	
+	public function void QWizard_customButtonClicked_action(void* self, c_int which);
+	[LinkName("QWizard_Connect_CustomButtonClicked")]
+	public static extern void QWizard_Connect_CustomButtonClicked(void* self, c_int which, QWizard_customButtonClicked_action _action);
 	[LinkName("QWizard_PageAdded")]
 	public static extern void QWizard_PageAdded(void* self, c_int id);
+	
+	public function void QWizard_pageAdded_action(void* self, c_int id);
+	[LinkName("QWizard_Connect_PageAdded")]
+	public static extern void QWizard_Connect_PageAdded(void* self, c_int id, QWizard_pageAdded_action _action);
 	[LinkName("QWizard_PageRemoved")]
 	public static extern void QWizard_PageRemoved(void* self, c_int id);
+	
+	public function void QWizard_pageRemoved_action(void* self, c_int id);
+	[LinkName("QWizard_Connect_PageRemoved")]
+	public static extern void QWizard_Connect_PageRemoved(void* self, c_int id, QWizard_pageRemoved_action _action);
 	[LinkName("QWizard_Back")]
 	public static extern void QWizard_Back(void* self);
 	[LinkName("QWizard_Next")]
@@ -7196,6 +7216,10 @@ extension CQt
 	public static extern c_int QWizardPage_NextId(void* self);
 	[LinkName("QWizardPage_CompleteChanged")]
 	public static extern void QWizardPage_CompleteChanged(void* self);
+	
+	public function void QWizardPage_completeChanged_action(void* self);
+	[LinkName("QWizardPage_Connect_CompleteChanged")]
+	public static extern void QWizardPage_Connect_CompleteChanged(void* self, QWizardPage_completeChanged_action _action);
 	[LinkName("QWizardPage_SetField")]
 	public static extern void QWizardPage_SetField(void* self, libqt_string name, void** value);
 	[LinkName("QWizardPage_Field")]

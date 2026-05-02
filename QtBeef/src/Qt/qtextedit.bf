@@ -4537,18 +4537,46 @@ extension CQt
 	public static extern void QTextEdit_ZoomOut(void* self);
 	[LinkName("QTextEdit_TextChanged")]
 	public static extern void QTextEdit_TextChanged(void* self);
+	
+	public function void QTextEdit_textChanged_action(void* self);
+	[LinkName("QTextEdit_Connect_TextChanged")]
+	public static extern void QTextEdit_Connect_TextChanged(void* self, QTextEdit_textChanged_action _action);
 	[LinkName("QTextEdit_UndoAvailable")]
 	public static extern void QTextEdit_UndoAvailable(void* self, bool b);
+	
+	public function void QTextEdit_undoAvailable_action(void* self, bool b);
+	[LinkName("QTextEdit_Connect_UndoAvailable")]
+	public static extern void QTextEdit_Connect_UndoAvailable(void* self, bool b, QTextEdit_undoAvailable_action _action);
 	[LinkName("QTextEdit_RedoAvailable")]
 	public static extern void QTextEdit_RedoAvailable(void* self, bool b);
+	
+	public function void QTextEdit_redoAvailable_action(void* self, bool b);
+	[LinkName("QTextEdit_Connect_RedoAvailable")]
+	public static extern void QTextEdit_Connect_RedoAvailable(void* self, bool b, QTextEdit_redoAvailable_action _action);
 	[LinkName("QTextEdit_CurrentCharFormatChanged")]
 	public static extern void QTextEdit_CurrentCharFormatChanged(void* self, void** format);
+	
+	public function void QTextEdit_currentCharFormatChanged_action(void* self, void** format);
+	[LinkName("QTextEdit_Connect_CurrentCharFormatChanged")]
+	public static extern void QTextEdit_Connect_CurrentCharFormatChanged(void* self, void** format, QTextEdit_currentCharFormatChanged_action _action);
 	[LinkName("QTextEdit_CopyAvailable")]
 	public static extern void QTextEdit_CopyAvailable(void* self, bool b);
+	
+	public function void QTextEdit_copyAvailable_action(void* self, bool b);
+	[LinkName("QTextEdit_Connect_CopyAvailable")]
+	public static extern void QTextEdit_Connect_CopyAvailable(void* self, bool b, QTextEdit_copyAvailable_action _action);
 	[LinkName("QTextEdit_SelectionChanged")]
 	public static extern void QTextEdit_SelectionChanged(void* self);
+	
+	public function void QTextEdit_selectionChanged_action(void* self);
+	[LinkName("QTextEdit_Connect_SelectionChanged")]
+	public static extern void QTextEdit_Connect_SelectionChanged(void* self, QTextEdit_selectionChanged_action _action);
 	[LinkName("QTextEdit_CursorPositionChanged")]
 	public static extern void QTextEdit_CursorPositionChanged(void* self);
+	
+	public function void QTextEdit_cursorPositionChanged_action(void* self);
+	[LinkName("QTextEdit_Connect_CursorPositionChanged")]
+	public static extern void QTextEdit_Connect_CursorPositionChanged(void* self, QTextEdit_cursorPositionChanged_action _action);
 	[LinkName("QTextEdit_Event")]
 	public static extern bool QTextEdit_Event(void* self, void** e);
 	[LinkName("QTextEdit_TimerEvent")]

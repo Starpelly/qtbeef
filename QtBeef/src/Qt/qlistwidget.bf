@@ -1084,24 +1084,64 @@ extension CQt
 	public static extern void QListWidget_Clear(void* self);
 	[LinkName("QListWidget_ItemPressed")]
 	public static extern void QListWidget_ItemPressed(void* self, void** item);
+	
+	public function void QListWidget_itemPressed_action(void* self, void** item);
+	[LinkName("QListWidget_Connect_ItemPressed")]
+	public static extern void QListWidget_Connect_ItemPressed(void* self, void** item, QListWidget_itemPressed_action _action);
 	[LinkName("QListWidget_ItemClicked")]
 	public static extern void QListWidget_ItemClicked(void* self, void** item);
+	
+	public function void QListWidget_itemClicked_action(void* self, void** item);
+	[LinkName("QListWidget_Connect_ItemClicked")]
+	public static extern void QListWidget_Connect_ItemClicked(void* self, void** item, QListWidget_itemClicked_action _action);
 	[LinkName("QListWidget_ItemDoubleClicked")]
 	public static extern void QListWidget_ItemDoubleClicked(void* self, void** item);
+	
+	public function void QListWidget_itemDoubleClicked_action(void* self, void** item);
+	[LinkName("QListWidget_Connect_ItemDoubleClicked")]
+	public static extern void QListWidget_Connect_ItemDoubleClicked(void* self, void** item, QListWidget_itemDoubleClicked_action _action);
 	[LinkName("QListWidget_ItemActivated")]
 	public static extern void QListWidget_ItemActivated(void* self, void** item);
+	
+	public function void QListWidget_itemActivated_action(void* self, void** item);
+	[LinkName("QListWidget_Connect_ItemActivated")]
+	public static extern void QListWidget_Connect_ItemActivated(void* self, void** item, QListWidget_itemActivated_action _action);
 	[LinkName("QListWidget_ItemEntered")]
 	public static extern void QListWidget_ItemEntered(void* self, void** item);
+	
+	public function void QListWidget_itemEntered_action(void* self, void** item);
+	[LinkName("QListWidget_Connect_ItemEntered")]
+	public static extern void QListWidget_Connect_ItemEntered(void* self, void** item, QListWidget_itemEntered_action _action);
 	[LinkName("QListWidget_ItemChanged")]
 	public static extern void QListWidget_ItemChanged(void* self, void** item);
+	
+	public function void QListWidget_itemChanged_action(void* self, void** item);
+	[LinkName("QListWidget_Connect_ItemChanged")]
+	public static extern void QListWidget_Connect_ItemChanged(void* self, void** item, QListWidget_itemChanged_action _action);
 	[LinkName("QListWidget_CurrentItemChanged")]
 	public static extern void QListWidget_CurrentItemChanged(void* self, void** current, void** previous);
+	
+	public function void QListWidget_currentItemChanged_action(void* self, void** current, void** previous);
+	[LinkName("QListWidget_Connect_CurrentItemChanged")]
+	public static extern void QListWidget_Connect_CurrentItemChanged(void* self, void** current, void** previous, QListWidget_currentItemChanged_action _action);
 	[LinkName("QListWidget_CurrentTextChanged")]
 	public static extern void QListWidget_CurrentTextChanged(void* self, libqt_string currentText);
+	
+	public function void QListWidget_currentTextChanged_action(void* self, libqt_string currentText);
+	[LinkName("QListWidget_Connect_CurrentTextChanged")]
+	public static extern void QListWidget_Connect_CurrentTextChanged(void* self, libqt_string currentText, QListWidget_currentTextChanged_action _action);
 	[LinkName("QListWidget_CurrentRowChanged")]
 	public static extern void QListWidget_CurrentRowChanged(void* self, c_int currentRow);
+	
+	public function void QListWidget_currentRowChanged_action(void* self, c_int currentRow);
+	[LinkName("QListWidget_Connect_CurrentRowChanged")]
+	public static extern void QListWidget_Connect_CurrentRowChanged(void* self, c_int currentRow, QListWidget_currentRowChanged_action _action);
 	[LinkName("QListWidget_ItemSelectionChanged")]
 	public static extern void QListWidget_ItemSelectionChanged(void* self);
+	
+	public function void QListWidget_itemSelectionChanged_action(void* self);
+	[LinkName("QListWidget_Connect_ItemSelectionChanged")]
+	public static extern void QListWidget_Connect_ItemSelectionChanged(void* self, QListWidget_itemSelectionChanged_action _action);
 	[LinkName("QListWidget_Event")]
 	public static extern bool QListWidget_Event(void* self, void** e);
 	[LinkName("QListWidget_MimeTypes")]

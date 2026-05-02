@@ -993,22 +993,58 @@ extension CQt
 	public static extern void* QScreen_ResolveInterface(void* self, c_char* name, c_int revision);
 	[LinkName("QScreen_GeometryChanged")]
 	public static extern void QScreen_GeometryChanged(void* self, void** geometry);
+	
+	public function void QScreen_geometryChanged_action(void* self, void** geometry);
+	[LinkName("QScreen_Connect_GeometryChanged")]
+	public static extern void QScreen_Connect_GeometryChanged(void* self, void** geometry, QScreen_geometryChanged_action _action);
 	[LinkName("QScreen_AvailableGeometryChanged")]
 	public static extern void QScreen_AvailableGeometryChanged(void* self, void** geometry);
+	
+	public function void QScreen_availableGeometryChanged_action(void* self, void** geometry);
+	[LinkName("QScreen_Connect_AvailableGeometryChanged")]
+	public static extern void QScreen_Connect_AvailableGeometryChanged(void* self, void** geometry, QScreen_availableGeometryChanged_action _action);
 	[LinkName("QScreen_PhysicalSizeChanged")]
 	public static extern void QScreen_PhysicalSizeChanged(void* self, void** size);
+	
+	public function void QScreen_physicalSizeChanged_action(void* self, void** size);
+	[LinkName("QScreen_Connect_PhysicalSizeChanged")]
+	public static extern void QScreen_Connect_PhysicalSizeChanged(void* self, void** size, QScreen_physicalSizeChanged_action _action);
 	[LinkName("QScreen_PhysicalDotsPerInchChanged")]
 	public static extern void QScreen_PhysicalDotsPerInchChanged(void* self, double dpi);
+	
+	public function void QScreen_physicalDotsPerInchChanged_action(void* self, double dpi);
+	[LinkName("QScreen_Connect_PhysicalDotsPerInchChanged")]
+	public static extern void QScreen_Connect_PhysicalDotsPerInchChanged(void* self, double dpi, QScreen_physicalDotsPerInchChanged_action _action);
 	[LinkName("QScreen_LogicalDotsPerInchChanged")]
 	public static extern void QScreen_LogicalDotsPerInchChanged(void* self, double dpi);
+	
+	public function void QScreen_logicalDotsPerInchChanged_action(void* self, double dpi);
+	[LinkName("QScreen_Connect_LogicalDotsPerInchChanged")]
+	public static extern void QScreen_Connect_LogicalDotsPerInchChanged(void* self, double dpi, QScreen_logicalDotsPerInchChanged_action _action);
 	[LinkName("QScreen_VirtualGeometryChanged")]
 	public static extern void QScreen_VirtualGeometryChanged(void* self, void** rect);
+	
+	public function void QScreen_virtualGeometryChanged_action(void* self, void** rect);
+	[LinkName("QScreen_Connect_VirtualGeometryChanged")]
+	public static extern void QScreen_Connect_VirtualGeometryChanged(void* self, void** rect, QScreen_virtualGeometryChanged_action _action);
 	[LinkName("QScreen_PrimaryOrientationChanged")]
 	public static extern void QScreen_PrimaryOrientationChanged(void* self, Qt_ScreenOrientation orientation);
+	
+	public function void QScreen_primaryOrientationChanged_action(void* self, Qt_ScreenOrientation orientation);
+	[LinkName("QScreen_Connect_PrimaryOrientationChanged")]
+	public static extern void QScreen_Connect_PrimaryOrientationChanged(void* self, Qt_ScreenOrientation orientation, QScreen_primaryOrientationChanged_action _action);
 	[LinkName("QScreen_OrientationChanged")]
 	public static extern void QScreen_OrientationChanged(void* self, Qt_ScreenOrientation orientation);
+	
+	public function void QScreen_orientationChanged_action(void* self, Qt_ScreenOrientation orientation);
+	[LinkName("QScreen_Connect_OrientationChanged")]
+	public static extern void QScreen_Connect_OrientationChanged(void* self, Qt_ScreenOrientation orientation, QScreen_orientationChanged_action _action);
 	[LinkName("QScreen_RefreshRateChanged")]
 	public static extern void QScreen_RefreshRateChanged(void* self, double refreshRate);
+	
+	public function void QScreen_refreshRateChanged_action(void* self, double refreshRate);
+	[LinkName("QScreen_Connect_RefreshRateChanged")]
+	public static extern void QScreen_Connect_RefreshRateChanged(void* self, double refreshRate, QScreen_refreshRateChanged_action _action);
 	[LinkName("QScreen_Tr2")]
 	public static extern libqt_string QScreen_Tr2(c_char* s, c_char* c);
 	[LinkName("QScreen_Tr3")]

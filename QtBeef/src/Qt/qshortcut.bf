@@ -751,8 +751,16 @@ extension CQt
 	public static extern libqt_string QShortcut_WhatsThis(void* self);
 	[LinkName("QShortcut_Activated")]
 	public static extern void QShortcut_Activated(void* self);
+	
+	public function void QShortcut_activated_action(void* self);
+	[LinkName("QShortcut_Connect_Activated")]
+	public static extern void QShortcut_Connect_Activated(void* self, QShortcut_activated_action _action);
 	[LinkName("QShortcut_ActivatedAmbiguously")]
 	public static extern void QShortcut_ActivatedAmbiguously(void* self);
+	
+	public function void QShortcut_activatedAmbiguously_action(void* self);
+	[LinkName("QShortcut_Connect_ActivatedAmbiguously")]
+	public static extern void QShortcut_Connect_ActivatedAmbiguously(void* self, QShortcut_activatedAmbiguously_action _action);
 	[LinkName("QShortcut_Event")]
 	public static extern bool QShortcut_Event(void* self, void** e);
 	[LinkName("QShortcut_Tr2")]

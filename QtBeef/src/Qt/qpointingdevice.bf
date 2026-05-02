@@ -850,6 +850,10 @@ extension CQt
 	public static extern bool QPointingDevice_OperatorEqual(void* self, void** other);
 	[LinkName("QPointingDevice_GrabChanged")]
 	public static extern void QPointingDevice_GrabChanged(void* self, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point);
+	
+	public function void QPointingDevice_grabChanged_action(void* self, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point);
+	[LinkName("QPointingDevice_Connect_GrabChanged")]
+	public static extern void QPointingDevice_Connect_GrabChanged(void* self, void** grabber, QPointingDevice_GrabTransition transition, void** event, void** point, QPointingDevice_grabChanged_action _action);
 	[LinkName("QPointingDevice_Tr2")]
 	public static extern libqt_string QPointingDevice_Tr2(c_char* s, c_char* c);
 	[LinkName("QPointingDevice_Tr3")]

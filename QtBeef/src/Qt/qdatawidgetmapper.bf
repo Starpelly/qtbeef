@@ -821,6 +821,10 @@ extension CQt
 	public static extern void QDataWidgetMapper_SetCurrentModelIndex(void* self, void** index);
 	[LinkName("QDataWidgetMapper_CurrentIndexChanged")]
 	public static extern void QDataWidgetMapper_CurrentIndexChanged(void* self, c_int index);
+	
+	public function void QDataWidgetMapper_currentIndexChanged_action(void* self, c_int index);
+	[LinkName("QDataWidgetMapper_Connect_CurrentIndexChanged")]
+	public static extern void QDataWidgetMapper_Connect_CurrentIndexChanged(void* self, c_int index, QDataWidgetMapper_currentIndexChanged_action _action);
 	[LinkName("QDataWidgetMapper_Tr2")]
 	public static extern libqt_string QDataWidgetMapper_Tr2(c_char* s, c_char* c);
 	[LinkName("QDataWidgetMapper_Tr3")]

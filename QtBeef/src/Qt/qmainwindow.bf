@@ -3759,10 +3759,22 @@ extension CQt
 	public static extern void QMainWindow_SetUnifiedTitleAndToolBarOnMac(void* self, bool set);
 	[LinkName("QMainWindow_IconSizeChanged")]
 	public static extern void QMainWindow_IconSizeChanged(void* self, void** iconSize);
+	
+	public function void QMainWindow_iconSizeChanged_action(void* self, void** iconSize);
+	[LinkName("QMainWindow_Connect_IconSizeChanged")]
+	public static extern void QMainWindow_Connect_IconSizeChanged(void* self, void** iconSize, QMainWindow_iconSizeChanged_action _action);
 	[LinkName("QMainWindow_ToolButtonStyleChanged")]
 	public static extern void QMainWindow_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle);
+	
+	public function void QMainWindow_toolButtonStyleChanged_action(void* self, Qt_ToolButtonStyle toolButtonStyle);
+	[LinkName("QMainWindow_Connect_ToolButtonStyleChanged")]
+	public static extern void QMainWindow_Connect_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle, QMainWindow_toolButtonStyleChanged_action _action);
 	[LinkName("QMainWindow_TabifiedDockWidgetActivated")]
 	public static extern void QMainWindow_TabifiedDockWidgetActivated(void* self, void** dockWidget);
+	
+	public function void QMainWindow_tabifiedDockWidgetActivated_action(void* self, void** dockWidget);
+	[LinkName("QMainWindow_Connect_TabifiedDockWidgetActivated")]
+	public static extern void QMainWindow_Connect_TabifiedDockWidgetActivated(void* self, void** dockWidget, QMainWindow_tabifiedDockWidgetActivated_action _action);
 	[LinkName("QMainWindow_ContextMenuEvent")]
 	public static extern void QMainWindow_ContextMenuEvent(void* self, void** event);
 	[LinkName("QMainWindow_Event")]

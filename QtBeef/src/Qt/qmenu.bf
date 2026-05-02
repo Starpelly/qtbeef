@@ -3669,12 +3669,28 @@ extension CQt
 	public static extern void QMenu_SetToolTipsVisible(void* self, bool visible);
 	[LinkName("QMenu_AboutToShow")]
 	public static extern void QMenu_AboutToShow(void* self);
+	
+	public function void QMenu_aboutToShow_action(void* self);
+	[LinkName("QMenu_Connect_AboutToShow")]
+	public static extern void QMenu_Connect_AboutToShow(void* self, QMenu_aboutToShow_action _action);
 	[LinkName("QMenu_AboutToHide")]
 	public static extern void QMenu_AboutToHide(void* self);
+	
+	public function void QMenu_aboutToHide_action(void* self);
+	[LinkName("QMenu_Connect_AboutToHide")]
+	public static extern void QMenu_Connect_AboutToHide(void* self, QMenu_aboutToHide_action _action);
 	[LinkName("QMenu_Triggered")]
 	public static extern void QMenu_Triggered(void* self, void** action);
+	
+	public function void QMenu_triggered_action(void* self, void** action);
+	[LinkName("QMenu_Connect_Triggered")]
+	public static extern void QMenu_Connect_Triggered(void* self, void** action, QMenu_triggered_action _action);
 	[LinkName("QMenu_Hovered")]
 	public static extern void QMenu_Hovered(void* self, void** action);
+	
+	public function void QMenu_hovered_action(void* self, void** action);
+	[LinkName("QMenu_Connect_Hovered")]
+	public static extern void QMenu_Connect_Hovered(void* self, void** action, QMenu_hovered_action _action);
 	[LinkName("QMenu_ColumnCount")]
 	public static extern c_int QMenu_ColumnCount(void* self);
 	[LinkName("QMenu_ChangeEvent")]

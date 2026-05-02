@@ -713,8 +713,16 @@ extension CQt
 	public static extern void QActionGroup_SetExclusionPolicy(void* self, QActionGroup_ExclusionPolicy policy);
 	[LinkName("QActionGroup_Triggered")]
 	public static extern void QActionGroup_Triggered(void* self, void** param1);
+	
+	public function void QActionGroup_triggered_action(void* self, void** param1);
+	[LinkName("QActionGroup_Connect_Triggered")]
+	public static extern void QActionGroup_Connect_Triggered(void* self, void** param1, QActionGroup_triggered_action _action);
 	[LinkName("QActionGroup_Hovered")]
 	public static extern void QActionGroup_Hovered(void* self, void** param1);
+	
+	public function void QActionGroup_hovered_action(void* self, void** param1);
+	[LinkName("QActionGroup_Connect_Hovered")]
+	public static extern void QActionGroup_Connect_Hovered(void* self, void** param1, QActionGroup_hovered_action _action);
 	[LinkName("QActionGroup_Tr2")]
 	public static extern libqt_string QActionGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QActionGroup_Tr3")]

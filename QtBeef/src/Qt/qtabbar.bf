@@ -3827,14 +3827,34 @@ extension CQt
 	public static extern void QTabBar_SetCurrentIndex(void* self, c_int index);
 	[LinkName("QTabBar_CurrentChanged")]
 	public static extern void QTabBar_CurrentChanged(void* self, c_int index);
+	
+	public function void QTabBar_currentChanged_action(void* self, c_int index);
+	[LinkName("QTabBar_Connect_CurrentChanged")]
+	public static extern void QTabBar_Connect_CurrentChanged(void* self, c_int index, QTabBar_currentChanged_action _action);
 	[LinkName("QTabBar_TabCloseRequested")]
 	public static extern void QTabBar_TabCloseRequested(void* self, c_int index);
+	
+	public function void QTabBar_tabCloseRequested_action(void* self, c_int index);
+	[LinkName("QTabBar_Connect_TabCloseRequested")]
+	public static extern void QTabBar_Connect_TabCloseRequested(void* self, c_int index, QTabBar_tabCloseRequested_action _action);
 	[LinkName("QTabBar_TabMoved")]
 	public static extern void QTabBar_TabMoved(void* self, c_int from, c_int to);
+	
+	public function void QTabBar_tabMoved_action(void* self, c_int from, c_int to);
+	[LinkName("QTabBar_Connect_TabMoved")]
+	public static extern void QTabBar_Connect_TabMoved(void* self, c_int from, c_int to, QTabBar_tabMoved_action _action);
 	[LinkName("QTabBar_TabBarClicked")]
 	public static extern void QTabBar_TabBarClicked(void* self, c_int index);
+	
+	public function void QTabBar_tabBarClicked_action(void* self, c_int index);
+	[LinkName("QTabBar_Connect_TabBarClicked")]
+	public static extern void QTabBar_Connect_TabBarClicked(void* self, c_int index, QTabBar_tabBarClicked_action _action);
 	[LinkName("QTabBar_TabBarDoubleClicked")]
 	public static extern void QTabBar_TabBarDoubleClicked(void* self, c_int index);
+	
+	public function void QTabBar_tabBarDoubleClicked_action(void* self, c_int index);
+	[LinkName("QTabBar_Connect_TabBarDoubleClicked")]
+	public static extern void QTabBar_Connect_TabBarDoubleClicked(void* self, c_int index, QTabBar_tabBarDoubleClicked_action _action);
 	[LinkName("QTabBar_TabSizeHint")]
 	public static extern void* QTabBar_TabSizeHint(void* self, c_int index);
 	[LinkName("QTabBar_MinimumTabSizeHint")]

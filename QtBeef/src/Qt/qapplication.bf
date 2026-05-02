@@ -1931,6 +1931,10 @@ extension CQt
 	public static extern void* QApplication_ResolveInterface(void* self, c_char* name, c_int revision);
 	[LinkName("QApplication_FocusChanged")]
 	public static extern void QApplication_FocusChanged(void* self, void** old, void** now);
+	
+	public function void QApplication_focusChanged_action(void* self, void** old, void** now);
+	[LinkName("QApplication_Connect_FocusChanged")]
+	public static extern void QApplication_Connect_FocusChanged(void* self, void** old, void** now, QApplication_focusChanged_action _action);
 	[LinkName("QApplication_StyleSheet")]
 	public static extern libqt_string QApplication_StyleSheet(void* self);
 	[LinkName("QApplication_SetStyleSheet")]

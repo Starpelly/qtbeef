@@ -3421,8 +3421,16 @@ extension CQt
 	public static extern void QStackedWidget_SetCurrentWidget(void* self, void** w);
 	[LinkName("QStackedWidget_CurrentChanged")]
 	public static extern void QStackedWidget_CurrentChanged(void* self, c_int param1);
+	
+	public function void QStackedWidget_currentChanged_action(void* self, c_int param1);
+	[LinkName("QStackedWidget_Connect_CurrentChanged")]
+	public static extern void QStackedWidget_Connect_CurrentChanged(void* self, c_int param1, QStackedWidget_currentChanged_action _action);
 	[LinkName("QStackedWidget_WidgetRemoved")]
 	public static extern void QStackedWidget_WidgetRemoved(void* self, c_int index);
+	
+	public function void QStackedWidget_widgetRemoved_action(void* self, c_int index);
+	[LinkName("QStackedWidget_Connect_WidgetRemoved")]
+	public static extern void QStackedWidget_Connect_WidgetRemoved(void* self, c_int index, QStackedWidget_widgetRemoved_action _action);
 	[LinkName("QStackedWidget_Event")]
 	public static extern bool QStackedWidget_Event(void* self, void** e);
 	[LinkName("QStackedWidget_Tr2")]
