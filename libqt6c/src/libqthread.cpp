@@ -57,10 +57,6 @@ QThread* QThread_CurrentThread() {
     return QThread::currentThread();
 }
 
-bool QThread_IsMainThread() {
-    return QThread::isMainThread();
-}
-
 int QThread_IdealThreadCount() {
     return QThread::idealThreadCount();
 }
@@ -122,10 +118,6 @@ int QThread_LoopLevel(const QThread* self) {
     return self->loopLevel();
 }
 
-bool QThread_IsCurrentThread(const QThread* self) {
-    return self->isCurrentThread();
-}
-
 void QThread_Start(QThread* self) {
     self->start();
 }
@@ -160,10 +152,6 @@ void QThread_Msleep(unsigned long param1) {
 
 void QThread_Usleep(unsigned long param1) {
     QThread::usleep(static_cast<unsigned long>(param1));
-}
-
-void QThread_Sleep2(int64_t nsec) {
-    QThread::sleep(static_cast<std::chrono::nanoseconds>(nsec));
 }
 
 void QThread_Run(QThread* self) {

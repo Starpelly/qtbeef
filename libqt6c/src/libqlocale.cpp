@@ -429,20 +429,19 @@ libqt_string QLocale_DateTimeFormat(const QLocale* self) {
     return _str;
 }
 
+QDate* QLocale_ToDate(const QLocale* self, const libqt_string stringVal) {
+    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
+    return new QDate(self->toDate(stringVal_QString));
+}
+
 QTime* QLocale_ToTime(const QLocale* self, const libqt_string stringVal) {
     QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
     return new QTime(self->toTime(stringVal_QString));
 }
 
-QTime* QLocale_ToTime2(const QLocale* self, const libqt_string stringVal, const libqt_string format) {
+QDateTime* QLocale_ToDateTime(const QLocale* self, const libqt_string stringVal) {
     QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    QString format_QString = QString::fromUtf8(format.data, format.len);
-    return new QTime(self->toTime(stringVal_QString, format_QString));
-}
-
-QDate* QLocale_ToDate(const QLocale* self, const libqt_string stringVal) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QDate(self->toDate(stringVal_QString));
+    return new QDateTime(self->toDateTime(stringVal_QString));
 }
 
 QDate* QLocale_ToDate2(const QLocale* self, const libqt_string stringVal, const libqt_string format) {
@@ -451,9 +450,10 @@ QDate* QLocale_ToDate2(const QLocale* self, const libqt_string stringVal, const 
     return new QDate(self->toDate(stringVal_QString, format_QString));
 }
 
-QDateTime* QLocale_ToDateTime(const QLocale* self, const libqt_string stringVal) {
+QTime* QLocale_ToTime2(const QLocale* self, const libqt_string stringVal, const libqt_string format) {
     QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QDateTime(self->toDateTime(stringVal_QString));
+    QString format_QString = QString::fromUtf8(format.data, format.len);
+    return new QTime(self->toTime(stringVal_QString, format_QString));
 }
 
 QDateTime* QLocale_ToDateTime2(const QLocale* self, const libqt_string stringVal, const libqt_string format) {
@@ -467,15 +467,15 @@ QDate* QLocale_ToDate3(const QLocale* self, const libqt_string stringVal, int fo
     return new QDate(self->toDate(stringVal_QString, static_cast<QLocale::FormatType>(format), *cal));
 }
 
+QDateTime* QLocale_ToDateTime3(const QLocale* self, const libqt_string stringVal, int format, QCalendar* cal) {
+    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
+    return new QDateTime(self->toDateTime(stringVal_QString, static_cast<QLocale::FormatType>(format), *cal));
+}
+
 QDate* QLocale_ToDate4(const QLocale* self, const libqt_string stringVal, const libqt_string format, QCalendar* cal) {
     QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
     QString format_QString = QString::fromUtf8(format.data, format.len);
     return new QDate(self->toDate(stringVal_QString, format_QString, *cal));
-}
-
-QDateTime* QLocale_ToDateTime3(const QLocale* self, const libqt_string stringVal, int format, QCalendar* cal) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QDateTime(self->toDateTime(stringVal_QString, static_cast<QLocale::FormatType>(format), *cal));
 }
 
 QDateTime* QLocale_ToDateTime4(const QLocale* self, const libqt_string stringVal, const libqt_string format, QCalendar* cal) {
@@ -815,25 +815,8 @@ libqt_string QLocale_FormattedDataSize(const QLocale* self, long long bytes) {
     return _str;
 }
 
-libqt_list /* of libqt_string */ QLocale_UiLanguages(const QLocale* self) {
-    QList<QString> _ret = self->uiLanguages();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QLocale_UiLanguages(const QLocale* self) {
+    return self->uiLanguages();
 }
 
 libqt_string QLocale_LanguageToCode(uint16_t language) {
@@ -991,39 +974,8 @@ libqt_string QLocale_QuoteString(const QLocale* self, const libqt_string str) {
     return _str;
 }
 
-libqt_string QLocale_CreateSeparatedList(const QLocale* self, const libqt_list /* of libqt_string */ strl) {
-    QList<QString> strl_QList;
-    strl_QList.reserve(strl.len);
-    libqt_string* strl_arr = static_cast<libqt_string*>(strl.data.ptr);
-    for (size_t i = 0; i < strl.len; ++i) {
-        QString strl_arr_i_QString = QString::fromUtf8(strl_arr[i].data, strl_arr[i].len);
-        strl_QList.push_back(strl_arr_i_QString);
-    }
-    QString _ret = self->createSeparatedList(strl_QList);
-    // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-    QByteArray _b = _ret.toUtf8();
-    libqt_string _str;
-    _str.len = _b.length();
-    _str.data = static_cast<const char*>(malloc(_str.len + 1));
-    memcpy((void*)_str.data, _b.data(), _str.len);
-    ((char*)_str.data)[_str.len] = '\0';
-    return _str;
-}
-
-libqt_string QLocale_Name1(const QLocale* self, char separator) {
-    QString _ret = self->name(static_cast<QLocale::TagSeparator>(separator));
-    // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-    QByteArray _b = _ret.toUtf8();
-    libqt_string _str;
-    _str.len = _b.length();
-    _str.data = static_cast<const char*>(malloc(_str.len + 1));
-    memcpy((void*)_str.data, _b.data(), _str.len);
-    ((char*)_str.data)[_str.len] = '\0';
-    return _str;
-}
-
-libqt_string QLocale_Bcp47Name1(const QLocale* self, char separator) {
-    QString _ret = self->bcp47Name(static_cast<QLocale::TagSeparator>(separator));
+libqt_string QLocale_CreateSeparatedList(const QLocale* self, const QStringList* strl) {
+    QString _ret = self->createSeparatedList(*strl);
     // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
     QByteArray _b = _ret.toUtf8();
     libqt_string _str;
@@ -1204,63 +1156,19 @@ libqt_string QLocale_DateTimeFormat1(const QLocale* self, int format) {
     return _str;
 }
 
-QTime* QLocale_ToTime22(const QLocale* self, const libqt_string stringVal, int param2) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QTime(self->toTime(stringVal_QString, static_cast<QLocale::FormatType>(param2)));
-}
-
 QDate* QLocale_ToDate22(const QLocale* self, const libqt_string stringVal, int param2) {
     QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
     return new QDate(self->toDate(stringVal_QString, static_cast<QLocale::FormatType>(param2)));
 }
 
-QDate* QLocale_ToDate32(const QLocale* self, const libqt_string stringVal, int param2, int baseYear) {
+QTime* QLocale_ToTime22(const QLocale* self, const libqt_string stringVal, int param2) {
     QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QDate(self->toDate(stringVal_QString, static_cast<QLocale::FormatType>(param2), static_cast<int>(baseYear)));
-}
-
-QDate* QLocale_ToDate33(const QLocale* self, const libqt_string stringVal, const libqt_string format, int baseYear) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    QString format_QString = QString::fromUtf8(format.data, format.len);
-    return new QDate(self->toDate(stringVal_QString, format_QString, static_cast<int>(baseYear)));
+    return new QTime(self->toTime(stringVal_QString, static_cast<QLocale::FormatType>(param2)));
 }
 
 QDateTime* QLocale_ToDateTime22(const QLocale* self, const libqt_string stringVal, int format) {
     QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
     return new QDateTime(self->toDateTime(stringVal_QString, static_cast<QLocale::FormatType>(format)));
-}
-
-QDateTime* QLocale_ToDateTime32(const QLocale* self, const libqt_string stringVal, int format, int baseYear) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QDateTime(self->toDateTime(stringVal_QString, static_cast<QLocale::FormatType>(format), static_cast<int>(baseYear)));
-}
-
-QDateTime* QLocale_ToDateTime33(const QLocale* self, const libqt_string stringVal, const libqt_string format, int baseYear) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    QString format_QString = QString::fromUtf8(format.data, format.len);
-    return new QDateTime(self->toDateTime(stringVal_QString, format_QString, static_cast<int>(baseYear)));
-}
-
-QDate* QLocale_ToDate42(const QLocale* self, const libqt_string stringVal, int format, QCalendar* cal, int baseYear) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QDate(self->toDate(stringVal_QString, static_cast<QLocale::FormatType>(format), *cal, static_cast<int>(baseYear)));
-}
-
-QDate* QLocale_ToDate43(const QLocale* self, const libqt_string stringVal, const libqt_string format, QCalendar* cal, int baseYear) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    QString format_QString = QString::fromUtf8(format.data, format.len);
-    return new QDate(self->toDate(stringVal_QString, format_QString, *cal, static_cast<int>(baseYear)));
-}
-
-QDateTime* QLocale_ToDateTime42(const QLocale* self, const libqt_string stringVal, int format, QCalendar* cal, int baseYear) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    return new QDateTime(self->toDateTime(stringVal_QString, static_cast<QLocale::FormatType>(format), *cal, static_cast<int>(baseYear)));
-}
-
-QDateTime* QLocale_ToDateTime43(const QLocale* self, const libqt_string stringVal, const libqt_string format, QCalendar* cal, int baseYear) {
-    QString stringVal_QString = QString::fromUtf8(stringVal.data, stringVal.len);
-    QString format_QString = QString::fromUtf8(format.data, format.len);
-    return new QDateTime(self->toDateTime(stringVal_QString, format_QString, *cal, static_cast<int>(baseYear)));
 }
 
 libqt_string QLocale_MonthName2(const QLocale* self, int param1, int format) {
@@ -1475,27 +1383,6 @@ libqt_string QLocale_FormattedDataSize3(const QLocale* self, long long bytes, in
     memcpy((void*)_str.data, _b.data(), _str.len);
     ((char*)_str.data)[_str.len] = '\0';
     return _str;
-}
-
-libqt_list /* of libqt_string */ QLocale_UiLanguages1(const QLocale* self, char separator) {
-    QList<QString> _ret = self->uiLanguages(static_cast<QLocale::TagSeparator>(separator));
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
 }
 
 libqt_string QLocale_LanguageToCode2(uint16_t language, int codeTypes) {

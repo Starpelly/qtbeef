@@ -1894,35 +1894,6 @@ void QDialogButtonBox_OnIsSignalConnected(const QDialogButtonBox* self, intptr_t
     }
 }
 
-// Derived class handler implementation
-double QDialogButtonBox_GetDecodedMetricF(const QDialogButtonBox* self, int metricA, int metricB) {
-    auto* vqdialogbuttonbox = const_cast<VirtualQDialogButtonBox*>(dynamic_cast<const VirtualQDialogButtonBox*>(self));
-    if (vqdialogbuttonbox && vqdialogbuttonbox->isVirtualQDialogButtonBox) {
-        return vqdialogbuttonbox->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQDialogButtonBox*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QDialogButtonBox_SuperGetDecodedMetricF(const QDialogButtonBox* self, int metricA, int metricB) {
-    auto* vqdialogbuttonbox = const_cast<VirtualQDialogButtonBox*>(dynamic_cast<const VirtualQDialogButtonBox*>(self));
-    if (vqdialogbuttonbox && vqdialogbuttonbox->isVirtualQDialogButtonBox) {
-        vqdialogbuttonbox->setQDialogButtonBox_GetDecodedMetricF_IsBase(true);
-        return vqdialogbuttonbox->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQDialogButtonBox*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QDialogButtonBox_OnGetDecodedMetricF(const QDialogButtonBox* self, intptr_t slot) {
-    auto* vqdialogbuttonbox = const_cast<VirtualQDialogButtonBox*>(dynamic_cast<const VirtualQDialogButtonBox*>(self));
-    if (vqdialogbuttonbox && vqdialogbuttonbox->isVirtualQDialogButtonBox) {
-        vqdialogbuttonbox->setQDialogButtonBox_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQDialogButtonBox::QDialogButtonBox_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QDialogButtonBox_Delete(QDialogButtonBox* self) {
     delete self;
 }

@@ -33,7 +33,7 @@ class VirtualQAbstractItemModel : public QAbstractItemModel {
     using QAbstractItemModel_ItemData_Callback = libqt_map /* of int to QVariant* */ (*)(const QAbstractItemModel*, QModelIndex*);
     using QAbstractItemModel_SetItemData_Callback = bool (*)(QAbstractItemModel*, QModelIndex*, libqt_map /* of int to QVariant* */);
     using QAbstractItemModel_ClearItemData_Callback = bool (*)(QAbstractItemModel*, QModelIndex*);
-    using QAbstractItemModel_MimeTypes_Callback = const char** (*)();
+    using QAbstractItemModel_MimeTypes_Callback = QStringList (*)();
     using QAbstractItemModel_MimeData_Callback = QMimeData* (*)(const QAbstractItemModel*, libqt_list /* of QModelIndex* */);
     using QAbstractItemModel_CanDropMimeData_Callback = bool (*)(const QAbstractItemModel*, QMimeData*, int, int, int, QModelIndex*);
     using QAbstractItemModel_DropMimeData_Callback = bool (*)(QAbstractItemModel*, QMimeData*, int, int, int, QModelIndex*);
@@ -243,8 +243,8 @@ class VirtualQAbstractItemModel : public QAbstractItemModel {
     mutable bool qabstractitemmodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQAbstractItemModel() : QAbstractItemModel() {};
-    VirtualQAbstractItemModel(QObject* parent) : QAbstractItemModel(parent) {};
+    VirtualQAbstractItemModel() : QAbstractItemModel(){};
+    VirtualQAbstractItemModel(QObject* parent) : QAbstractItemModel(parent){};
 
     // Callback setters
     inline void setQAbstractItemModel_MetaObject_Callback(QAbstractItemModel_MetaObject_Callback cb) { qabstractitemmodel_metaobject_callback = cb; }
@@ -692,24 +692,15 @@ class VirtualQAbstractItemModel : public QAbstractItemModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qabstractitemmodel_mimetypes_isbase) {
             qabstractitemmodel_mimetypes_isbase = false;
             return QAbstractItemModel::mimeTypes();
         }
         auto mimetypes_cb = qabstractitemmodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QAbstractItemModel::mimeTypes();
     }
@@ -1880,7 +1871,7 @@ class VirtualQAbstractTableModel : public QAbstractTableModel {
     using QAbstractTableModel_ItemData_Callback = libqt_map /* of int to QVariant* */ (*)(const QAbstractTableModel*, QModelIndex*);
     using QAbstractTableModel_SetItemData_Callback = bool (*)(QAbstractTableModel*, QModelIndex*, libqt_map /* of int to QVariant* */);
     using QAbstractTableModel_ClearItemData_Callback = bool (*)(QAbstractTableModel*, QModelIndex*);
-    using QAbstractTableModel_MimeTypes_Callback = const char** (*)();
+    using QAbstractTableModel_MimeTypes_Callback = QStringList (*)();
     using QAbstractTableModel_MimeData_Callback = QMimeData* (*)(const QAbstractTableModel*, libqt_list /* of QModelIndex* */);
     using QAbstractTableModel_CanDropMimeData_Callback = bool (*)(const QAbstractTableModel*, QMimeData*, int, int, int, QModelIndex*);
     using QAbstractTableModel_SupportedDropActions_Callback = int (*)();
@@ -2078,8 +2069,8 @@ class VirtualQAbstractTableModel : public QAbstractTableModel {
     mutable bool qabstracttablemodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQAbstractTableModel() : QAbstractTableModel() {};
-    VirtualQAbstractTableModel(QObject* parent) : QAbstractTableModel(parent) {};
+    VirtualQAbstractTableModel() : QAbstractTableModel(){};
+    VirtualQAbstractTableModel(QObject* parent) : QAbstractTableModel(parent){};
 
     // Callback setters
     inline void setQAbstractTableModel_MetaObject_Callback(QAbstractTableModel_MetaObject_Callback cb) { qabstracttablemodel_metaobject_callback = cb; }
@@ -2531,24 +2522,15 @@ class VirtualQAbstractTableModel : public QAbstractTableModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qabstracttablemodel_mimetypes_isbase) {
             qabstracttablemodel_mimetypes_isbase = false;
             return QAbstractTableModel::mimeTypes();
         }
         auto mimetypes_cb = qabstracttablemodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QAbstractTableModel::mimeTypes();
     }
@@ -3638,7 +3620,7 @@ class VirtualQAbstractListModel : public QAbstractListModel {
     using QAbstractListModel_ItemData_Callback = libqt_map /* of int to QVariant* */ (*)(const QAbstractListModel*, QModelIndex*);
     using QAbstractListModel_SetItemData_Callback = bool (*)(QAbstractListModel*, QModelIndex*, libqt_map /* of int to QVariant* */);
     using QAbstractListModel_ClearItemData_Callback = bool (*)(QAbstractListModel*, QModelIndex*);
-    using QAbstractListModel_MimeTypes_Callback = const char** (*)();
+    using QAbstractListModel_MimeTypes_Callback = QStringList (*)();
     using QAbstractListModel_MimeData_Callback = QMimeData* (*)(const QAbstractListModel*, libqt_list /* of QModelIndex* */);
     using QAbstractListModel_CanDropMimeData_Callback = bool (*)(const QAbstractListModel*, QMimeData*, int, int, int, QModelIndex*);
     using QAbstractListModel_SupportedDropActions_Callback = int (*)();
@@ -3834,8 +3816,8 @@ class VirtualQAbstractListModel : public QAbstractListModel {
     mutable bool qabstractlistmodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQAbstractListModel() : QAbstractListModel() {};
-    VirtualQAbstractListModel(QObject* parent) : QAbstractListModel(parent) {};
+    VirtualQAbstractListModel() : QAbstractListModel(){};
+    VirtualQAbstractListModel(QObject* parent) : QAbstractListModel(parent){};
 
     // Callback setters
     inline void setQAbstractListModel_MetaObject_Callback(QAbstractListModel_MetaObject_Callback cb) { qabstractlistmodel_metaobject_callback = cb; }
@@ -4271,24 +4253,15 @@ class VirtualQAbstractListModel : public QAbstractListModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qabstractlistmodel_mimetypes_isbase) {
             qabstractlistmodel_mimetypes_isbase = false;
             return QAbstractListModel::mimeTypes();
         }
         auto mimetypes_cb = qabstractlistmodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QAbstractListModel::mimeTypes();
     }

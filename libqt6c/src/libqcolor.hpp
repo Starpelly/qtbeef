@@ -42,7 +42,7 @@ void QColor_OperatorAssign(QColor* self, int color);
 bool QColor_IsValid(const QColor* self);
 libqt_string QColor_Name(const QColor* self);
 void QColor_SetNamedColor(QColor* self, const libqt_string name);
-libqt_list /* of libqt_string */ QColor_ColorNames();
+QStringList QColor_ColorNames();
 int QColor_Spec(const QColor* self);
 int QColor_Alpha(const QColor* self);
 void QColor_SetAlpha(QColor* self, int alpha);

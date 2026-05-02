@@ -96,10 +96,6 @@ void QMessageBox_SetTextInteractionFlags(QMessageBox* self, int flags);
 int QMessageBox_TextInteractionFlags(const QMessageBox* self);
 void QMessageBox_SetCheckBox(QMessageBox* self, QCheckBox* cb);
 QCheckBox* QMessageBox_CheckBox(const QMessageBox* self);
-void QMessageBox_SetOption(QMessageBox* self, int option);
-bool QMessageBox_TestOption(const QMessageBox* self, int option);
-void QMessageBox_SetOptions(QMessageBox* self, int options);
-int QMessageBox_Options(const QMessageBox* self);
 int QMessageBox_Information(QWidget* parent, const libqt_string title, const libqt_string text);
 int QMessageBox_Information2(QWidget* parent, const libqt_string title, const libqt_string text, int button0);
 int QMessageBox_Question(QWidget* parent, const libqt_string title, const libqt_string text);
@@ -135,7 +131,6 @@ void QMessageBox_ShowEvent(QMessageBox* self, QShowEvent* event);
 void QMessageBox_CloseEvent(QMessageBox* self, QCloseEvent* event);
 void QMessageBox_KeyPressEvent(QMessageBox* self, QKeyEvent* event);
 void QMessageBox_ChangeEvent(QMessageBox* self, QEvent* event);
-void QMessageBox_SetOption2(QMessageBox* self, int option, bool on);
 int QMessageBox_Information42(QWidget* parent, const libqt_string title, const libqt_string text, int buttons);
 int QMessageBox_Information5(QWidget* parent, const libqt_string title, const libqt_string text, int buttons, int defaultButton);
 int QMessageBox_Information52(QWidget* parent, const libqt_string title, const libqt_string text, int button0, int button1);
@@ -354,9 +349,6 @@ int QMessageBox_SuperReceivers(const QMessageBox* self, const char* signal);
 bool QMessageBox_IsSignalConnected(const QMessageBox* self, const QMetaMethod* signal);
 void QMessageBox_OnIsSignalConnected(const QMessageBox* self, intptr_t slot);
 bool QMessageBox_SuperIsSignalConnected(const QMessageBox* self, const QMetaMethod* signal);
-double QMessageBox_GetDecodedMetricF(const QMessageBox* self, int metricA, int metricB);
-void QMessageBox_OnGetDecodedMetricF(const QMessageBox* self, intptr_t slot);
-double QMessageBox_SuperGetDecodedMetricF(const QMessageBox* self, int metricA, int metricB);
 void QMessageBox_Delete(QMessageBox* self);
 
 #ifdef __cplusplus

@@ -250,9 +250,6 @@ int QCommandLinkButton_SuperReceivers(const QCommandLinkButton* self, const char
 bool QCommandLinkButton_IsSignalConnected(const QCommandLinkButton* self, const QMetaMethod* signal);
 void QCommandLinkButton_OnIsSignalConnected(const QCommandLinkButton* self, intptr_t slot);
 bool QCommandLinkButton_SuperIsSignalConnected(const QCommandLinkButton* self, const QMetaMethod* signal);
-double QCommandLinkButton_GetDecodedMetricF(const QCommandLinkButton* self, int metricA, int metricB);
-void QCommandLinkButton_OnGetDecodedMetricF(const QCommandLinkButton* self, intptr_t slot);
-double QCommandLinkButton_SuperGetDecodedMetricF(const QCommandLinkButton* self, int metricA, int metricB);
 void QCommandLinkButton_Delete(QCommandLinkButton* self);
 
 #ifdef __cplusplus

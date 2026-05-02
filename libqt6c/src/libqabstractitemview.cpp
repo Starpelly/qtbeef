@@ -3673,35 +3673,6 @@ void QAbstractItemView_OnIsSignalConnected(const QAbstractItemView* self, intptr
     }
 }
 
-// Derived class handler implementation
-double QAbstractItemView_GetDecodedMetricF(const QAbstractItemView* self, int metricA, int metricB) {
-    auto* vqabstractitemview = const_cast<VirtualQAbstractItemView*>(dynamic_cast<const VirtualQAbstractItemView*>(self));
-    if (vqabstractitemview && vqabstractitemview->isVirtualQAbstractItemView) {
-        return vqabstractitemview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQAbstractItemView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QAbstractItemView_SuperGetDecodedMetricF(const QAbstractItemView* self, int metricA, int metricB) {
-    auto* vqabstractitemview = const_cast<VirtualQAbstractItemView*>(dynamic_cast<const VirtualQAbstractItemView*>(self));
-    if (vqabstractitemview && vqabstractitemview->isVirtualQAbstractItemView) {
-        vqabstractitemview->setQAbstractItemView_GetDecodedMetricF_IsBase(true);
-        return vqabstractitemview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQAbstractItemView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QAbstractItemView_OnGetDecodedMetricF(const QAbstractItemView* self, intptr_t slot) {
-    auto* vqabstractitemview = const_cast<VirtualQAbstractItemView*>(dynamic_cast<const VirtualQAbstractItemView*>(self));
-    if (vqabstractitemview && vqabstractitemview->isVirtualQAbstractItemView) {
-        vqabstractitemview->setQAbstractItemView_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQAbstractItemView::QAbstractItemView_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QAbstractItemView_Delete(QAbstractItemView* self) {
     delete self;
 }

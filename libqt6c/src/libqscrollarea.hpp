@@ -270,9 +270,6 @@ int QScrollArea_SuperReceivers(const QScrollArea* self, const char* signal);
 bool QScrollArea_IsSignalConnected(const QScrollArea* self, const QMetaMethod* signal);
 void QScrollArea_OnIsSignalConnected(const QScrollArea* self, intptr_t slot);
 bool QScrollArea_SuperIsSignalConnected(const QScrollArea* self, const QMetaMethod* signal);
-double QScrollArea_GetDecodedMetricF(const QScrollArea* self, int metricA, int metricB);
-void QScrollArea_OnGetDecodedMetricF(const QScrollArea* self, intptr_t slot);
-double QScrollArea_SuperGetDecodedMetricF(const QScrollArea* self, int metricA, int metricB);
 void QScrollArea_Delete(QScrollArea* self);
 
 #ifdef __cplusplus

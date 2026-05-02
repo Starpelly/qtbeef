@@ -87,7 +87,6 @@ class VirtualQGraphicsView final : public QGraphicsView {
     using QGraphicsView_SenderSignalIndex_Callback = int (*)();
     using QGraphicsView_Receivers_Callback = int (*)(const QGraphicsView*, const char*);
     using QGraphicsView_IsSignalConnected_Callback = bool (*)(const QGraphicsView*, QMetaMethod*);
-    using QGraphicsView_GetDecodedMetricF_Callback = double (*)(const QGraphicsView*, int, int);
 
   protected:
     // Instance callback storage
@@ -161,7 +160,6 @@ class VirtualQGraphicsView final : public QGraphicsView {
     QGraphicsView_SenderSignalIndex_Callback qgraphicsview_sendersignalindex_callback = nullptr;
     QGraphicsView_Receivers_Callback qgraphicsview_receivers_callback = nullptr;
     QGraphicsView_IsSignalConnected_Callback qgraphicsview_issignalconnected_callback = nullptr;
-    QGraphicsView_GetDecodedMetricF_Callback qgraphicsview_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qgraphicsview_metaobject_isbase = false;
@@ -234,13 +232,12 @@ class VirtualQGraphicsView final : public QGraphicsView {
     mutable bool qgraphicsview_sendersignalindex_isbase = false;
     mutable bool qgraphicsview_receivers_isbase = false;
     mutable bool qgraphicsview_issignalconnected_isbase = false;
-    mutable bool qgraphicsview_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQGraphicsView(QWidget* parent) : QGraphicsView(parent) {};
-    VirtualQGraphicsView() : QGraphicsView() {};
-    VirtualQGraphicsView(QGraphicsScene* scene) : QGraphicsView(scene) {};
-    VirtualQGraphicsView(QGraphicsScene* scene, QWidget* parent) : QGraphicsView(scene, parent) {};
+    VirtualQGraphicsView(QWidget* parent) : QGraphicsView(parent){};
+    VirtualQGraphicsView() : QGraphicsView(){};
+    VirtualQGraphicsView(QGraphicsScene* scene) : QGraphicsView(scene){};
+    VirtualQGraphicsView(QGraphicsScene* scene, QWidget* parent) : QGraphicsView(scene, parent){};
 
     // Callback setters
     inline void setQGraphicsView_MetaObject_Callback(QGraphicsView_MetaObject_Callback cb) { qgraphicsview_metaobject_callback = cb; }
@@ -313,7 +310,6 @@ class VirtualQGraphicsView final : public QGraphicsView {
     inline void setQGraphicsView_SenderSignalIndex_Callback(QGraphicsView_SenderSignalIndex_Callback cb) { qgraphicsview_sendersignalindex_callback = cb; }
     inline void setQGraphicsView_Receivers_Callback(QGraphicsView_Receivers_Callback cb) { qgraphicsview_receivers_callback = cb; }
     inline void setQGraphicsView_IsSignalConnected_Callback(QGraphicsView_IsSignalConnected_Callback cb) { qgraphicsview_issignalconnected_callback = cb; }
-    inline void setQGraphicsView_GetDecodedMetricF_Callback(QGraphicsView_GetDecodedMetricF_Callback cb) { qgraphicsview_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQGraphicsView_MetaObject_IsBase(bool value) const { qgraphicsview_metaobject_isbase = value; }
@@ -386,7 +382,6 @@ class VirtualQGraphicsView final : public QGraphicsView {
     inline void setQGraphicsView_SenderSignalIndex_IsBase(bool value) const { qgraphicsview_sendersignalindex_isbase = value; }
     inline void setQGraphicsView_Receivers_IsBase(bool value) const { qgraphicsview_receivers_isbase = value; }
     inline void setQGraphicsView_IsSignalConnected_IsBase(bool value) const { qgraphicsview_issignalconnected_isbase = value; }
-    inline void setQGraphicsView_GetDecodedMetricF_IsBase(bool value) const { qgraphicsview_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1551,23 +1546,6 @@ class VirtualQGraphicsView final : public QGraphicsView {
         return QGraphicsView::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qgraphicsview_getdecodedmetricf_isbase) {
-            qgraphicsview_getdecodedmetricf_isbase = false;
-            return QGraphicsView::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qgraphicsview_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QGraphicsView::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QGraphicsView_SetupViewport(QGraphicsView* self, QWidget* widget);
     friend void QGraphicsView_SuperSetupViewport(QGraphicsView* self, QWidget* widget);
@@ -1687,8 +1665,6 @@ class VirtualQGraphicsView final : public QGraphicsView {
     friend int QGraphicsView_SuperReceivers(const QGraphicsView* self, const char* signal);
     friend bool QGraphicsView_IsSignalConnected(const QGraphicsView* self, const QMetaMethod* signal);
     friend bool QGraphicsView_SuperIsSignalConnected(const QGraphicsView* self, const QMetaMethod* signal);
-    friend double QGraphicsView_GetDecodedMetricF(const QGraphicsView* self, int metricA, int metricB);
-    friend double QGraphicsView_SuperGetDecodedMetricF(const QGraphicsView* self, int metricA, int metricB);
 };
 
 #endif

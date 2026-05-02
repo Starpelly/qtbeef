@@ -53,7 +53,6 @@ void* QRasterWindow_Metacast(QRasterWindow* self, const char* param1);
 int QRasterWindow_Metacall(QRasterWindow* self, int param1, int param2, void** param3);
 int QRasterWindow_Metric(const QRasterWindow* self, int metric);
 QPaintDevice* QRasterWindow_Redirected(const QRasterWindow* self, QPoint* param1);
-void QRasterWindow_ResizeEvent(QRasterWindow* self, QResizeEvent* event);
 void QRasterWindow_OnMetaObject(const QRasterWindow* self, intptr_t slot);
 QMetaObject* QRasterWindow_SuperMetaObject(const QRasterWindow* self);
 void QRasterWindow_OnMetacast(QRasterWindow* self, intptr_t slot);
@@ -64,8 +63,6 @@ void QRasterWindow_OnMetric(const QRasterWindow* self, intptr_t slot);
 int QRasterWindow_SuperMetric(const QRasterWindow* self, int metric);
 void QRasterWindow_OnRedirected(const QRasterWindow* self, intptr_t slot);
 QPaintDevice* QRasterWindow_SuperRedirected(const QRasterWindow* self, QPoint* param1);
-void QRasterWindow_OnResizeEvent(QRasterWindow* self, intptr_t slot);
-void QRasterWindow_SuperResizeEvent(QRasterWindow* self, QResizeEvent* event);
 void QRasterWindow_ExposeEvent(QRasterWindow* self, QExposeEvent* param1);
 void QRasterWindow_OnExposeEvent(QRasterWindow* self, intptr_t slot);
 void QRasterWindow_SuperExposeEvent(QRasterWindow* self, QExposeEvent* param1);
@@ -90,6 +87,9 @@ QAccessibleInterface* QRasterWindow_SuperAccessibleRoot(const QRasterWindow* sel
 QObject* QRasterWindow_FocusObject(const QRasterWindow* self);
 void QRasterWindow_OnFocusObject(const QRasterWindow* self, intptr_t slot);
 QObject* QRasterWindow_SuperFocusObject(const QRasterWindow* self);
+void QRasterWindow_ResizeEvent(QRasterWindow* self, QResizeEvent* param1);
+void QRasterWindow_OnResizeEvent(QRasterWindow* self, intptr_t slot);
+void QRasterWindow_SuperResizeEvent(QRasterWindow* self, QResizeEvent* param1);
 void QRasterWindow_MoveEvent(QRasterWindow* self, QMoveEvent* param1);
 void QRasterWindow_OnMoveEvent(QRasterWindow* self, intptr_t slot);
 void QRasterWindow_SuperMoveEvent(QRasterWindow* self, QMoveEvent* param1);
@@ -180,9 +180,6 @@ int QRasterWindow_SuperReceivers(const QRasterWindow* self, const char* signal);
 bool QRasterWindow_IsSignalConnected(const QRasterWindow* self, const QMetaMethod* signal);
 void QRasterWindow_OnIsSignalConnected(const QRasterWindow* self, intptr_t slot);
 bool QRasterWindow_SuperIsSignalConnected(const QRasterWindow* self, const QMetaMethod* signal);
-double QRasterWindow_GetDecodedMetricF(const QRasterWindow* self, int metricA, int metricB);
-void QRasterWindow_OnGetDecodedMetricF(const QRasterWindow* self, intptr_t slot);
-double QRasterWindow_SuperGetDecodedMetricF(const QRasterWindow* self, int metricA, int metricB);
 void QRasterWindow_Delete(QRasterWindow* self);
 
 #ifdef __cplusplus

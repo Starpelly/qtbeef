@@ -16,6 +16,7 @@ extern "C" {
 #ifdef __cplusplus
 #else
 typedef struct QChildEvent QChildEvent;
+typedef struct QDeferredDeleteEvent QDeferredDeleteEvent;
 typedef struct QDynamicPropertyChangeEvent QDynamicPropertyChangeEvent;
 typedef struct QEvent QEvent;
 typedef struct QObject QObject;
@@ -42,10 +43,8 @@ QEvent* QEvent_SuperClone(const QEvent* self);
 void QEvent_Delete(QEvent* self);
 
 QTimerEvent* QTimerEvent_new(int timerId);
-QTimerEvent* QTimerEvent_new2(int timerId);
 QTimerEvent* QTimerEvent_Clone(const QTimerEvent* self);
 int QTimerEvent_TimerId(const QTimerEvent* self);
-int QTimerEvent_Id(const QTimerEvent* self);
 void QTimerEvent_OnClone(const QTimerEvent* self, intptr_t slot);
 QTimerEvent* QTimerEvent_SuperClone(const QTimerEvent* self);
 void QTimerEvent_SetAccepted(QTimerEvent* self, bool accepted);
@@ -75,6 +74,16 @@ void QDynamicPropertyChangeEvent_SetAccepted(QDynamicPropertyChangeEvent* self, 
 void QDynamicPropertyChangeEvent_OnSetAccepted(QDynamicPropertyChangeEvent* self, intptr_t slot);
 void QDynamicPropertyChangeEvent_SuperSetAccepted(QDynamicPropertyChangeEvent* self, bool accepted);
 void QDynamicPropertyChangeEvent_Delete(QDynamicPropertyChangeEvent* self);
+
+QDeferredDeleteEvent* QDeferredDeleteEvent_new();
+QDeferredDeleteEvent* QDeferredDeleteEvent_Clone(const QDeferredDeleteEvent* self);
+int QDeferredDeleteEvent_LoopLevel(const QDeferredDeleteEvent* self);
+void QDeferredDeleteEvent_OnClone(const QDeferredDeleteEvent* self, intptr_t slot);
+QDeferredDeleteEvent* QDeferredDeleteEvent_SuperClone(const QDeferredDeleteEvent* self);
+void QDeferredDeleteEvent_SetAccepted(QDeferredDeleteEvent* self, bool accepted);
+void QDeferredDeleteEvent_OnSetAccepted(QDeferredDeleteEvent* self, intptr_t slot);
+void QDeferredDeleteEvent_SuperSetAccepted(QDeferredDeleteEvent* self, bool accepted);
+void QDeferredDeleteEvent_Delete(QDeferredDeleteEvent* self);
 
 #ifdef __cplusplus
 } /* extern C */

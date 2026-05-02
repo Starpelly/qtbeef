@@ -251,9 +251,6 @@ int QErrorMessage_SuperReceivers(const QErrorMessage* self, const char* signal);
 bool QErrorMessage_IsSignalConnected(const QErrorMessage* self, const QMetaMethod* signal);
 void QErrorMessage_OnIsSignalConnected(const QErrorMessage* self, intptr_t slot);
 bool QErrorMessage_SuperIsSignalConnected(const QErrorMessage* self, const QMetaMethod* signal);
-double QErrorMessage_GetDecodedMetricF(const QErrorMessage* self, int metricA, int metricB);
-void QErrorMessage_OnGetDecodedMetricF(const QErrorMessage* self, intptr_t slot);
-double QErrorMessage_SuperGetDecodedMetricF(const QErrorMessage* self, int metricA, int metricB);
 void QErrorMessage_Delete(QErrorMessage* self);
 
 #ifdef __cplusplus

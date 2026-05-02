@@ -75,7 +75,7 @@ class VirtualQWidgetAction final : public QWidgetAction {
     mutable bool qwidgetaction_issignalconnected_isbase = false;
 
   public:
-    VirtualQWidgetAction(QObject* parent) : QWidgetAction(parent) {};
+    VirtualQWidgetAction(QObject* parent) : QWidgetAction(parent){};
 
     // Callback setters
     inline void setQWidgetAction_MetaObject_Callback(QWidgetAction_MetaObject_Callback cb) { qwidgetaction_metaobject_callback = cb; }

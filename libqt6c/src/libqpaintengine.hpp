@@ -39,8 +39,6 @@ typedef struct QTransform QTransform;
 
 QTextItem* QTextItem_new(const QTextItem* other);
 QTextItem* QTextItem_new2(QTextItem* other);
-QTextItem* QTextItem_new3();
-QTextItem* QTextItem_new4(const QTextItem* param1);
 void QTextItem_CopyAssign(QTextItem* self, QTextItem* other);
 void QTextItem_MoveAssign(QTextItem* self, QTextItem* other);
 double QTextItem_Descent(const QTextItem* self);

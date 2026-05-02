@@ -36,10 +36,10 @@ class VirtualQUndoCommand final : public QUndoCommand {
     mutable bool qundocommand_mergewith_isbase = false;
 
   public:
-    VirtualQUndoCommand() : QUndoCommand() {};
-    VirtualQUndoCommand(const QString& text) : QUndoCommand(text) {};
-    VirtualQUndoCommand(QUndoCommand* parent) : QUndoCommand(parent) {};
-    VirtualQUndoCommand(const QString& text, QUndoCommand* parent) : QUndoCommand(text, parent) {};
+    VirtualQUndoCommand() : QUndoCommand(){};
+    VirtualQUndoCommand(const QString& text) : QUndoCommand(text){};
+    VirtualQUndoCommand(QUndoCommand* parent) : QUndoCommand(parent){};
+    VirtualQUndoCommand(const QString& text, QUndoCommand* parent) : QUndoCommand(text, parent){};
 
     // Callback setters
     inline void setQUndoCommand_Undo_Callback(QUndoCommand_Undo_Callback cb) { qundocommand_undo_callback = cb; }
@@ -171,8 +171,8 @@ class VirtualQUndoStack final : public QUndoStack {
     mutable bool qundostack_issignalconnected_isbase = false;
 
   public:
-    VirtualQUndoStack() : QUndoStack() {};
-    VirtualQUndoStack(QObject* parent) : QUndoStack(parent) {};
+    VirtualQUndoStack() : QUndoStack(){};
+    VirtualQUndoStack(QObject* parent) : QUndoStack(parent){};
 
     // Callback setters
     inline void setQUndoStack_MetaObject_Callback(QUndoStack_MetaObject_Callback cb) { qundostack_metaobject_callback = cb; }

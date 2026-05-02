@@ -45,7 +45,7 @@ class VirtualQAbstractProxyModel : public QAbstractProxyModel {
     using QAbstractProxyModel_MimeData_Callback = QMimeData* (*)(const QAbstractProxyModel*, libqt_list /* of QModelIndex* */);
     using QAbstractProxyModel_CanDropMimeData_Callback = bool (*)(const QAbstractProxyModel*, QMimeData*, int, int, int, QModelIndex*);
     using QAbstractProxyModel_DropMimeData_Callback = bool (*)(QAbstractProxyModel*, QMimeData*, int, int, int, QModelIndex*);
-    using QAbstractProxyModel_MimeTypes_Callback = const char** (*)();
+    using QAbstractProxyModel_MimeTypes_Callback = QStringList (*)();
     using QAbstractProxyModel_SupportedDragActions_Callback = int (*)();
     using QAbstractProxyModel_SupportedDropActions_Callback = int (*)();
     using QAbstractProxyModel_RoleNames_Callback = libqt_map /* of int to libqt_string */ (*)();
@@ -255,8 +255,8 @@ class VirtualQAbstractProxyModel : public QAbstractProxyModel {
     mutable bool qabstractproxymodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQAbstractProxyModel() : QAbstractProxyModel() {};
-    VirtualQAbstractProxyModel(QObject* parent) : QAbstractProxyModel(parent) {};
+    VirtualQAbstractProxyModel() : QAbstractProxyModel(){};
+    VirtualQAbstractProxyModel(QObject* parent) : QAbstractProxyModel(parent){};
 
     // Callback setters
     inline void setQAbstractProxyModel_MetaObject_Callback(QAbstractProxyModel_MetaObject_Callback cb) { qabstractproxymodel_metaobject_callback = cb; }
@@ -947,24 +947,15 @@ class VirtualQAbstractProxyModel : public QAbstractProxyModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qabstractproxymodel_mimetypes_isbase) {
             qabstractproxymodel_mimetypes_isbase = false;
             return QAbstractProxyModel::mimeTypes();
         }
         auto mimetypes_cb = qabstractproxymodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QAbstractProxyModel::mimeTypes();
     }

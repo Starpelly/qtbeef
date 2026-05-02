@@ -2125,35 +2125,6 @@ void QMdiArea_OnIsSignalConnected(const QMdiArea* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QMdiArea_GetDecodedMetricF(const QMdiArea* self, int metricA, int metricB) {
-    auto* vqmdiarea = const_cast<VirtualQMdiArea*>(dynamic_cast<const VirtualQMdiArea*>(self));
-    if (vqmdiarea && vqmdiarea->isVirtualQMdiArea) {
-        return vqmdiarea->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQMdiArea*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QMdiArea_SuperGetDecodedMetricF(const QMdiArea* self, int metricA, int metricB) {
-    auto* vqmdiarea = const_cast<VirtualQMdiArea*>(dynamic_cast<const VirtualQMdiArea*>(self));
-    if (vqmdiarea && vqmdiarea->isVirtualQMdiArea) {
-        vqmdiarea->setQMdiArea_GetDecodedMetricF_IsBase(true);
-        return vqmdiarea->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQMdiArea*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QMdiArea_OnGetDecodedMetricF(const QMdiArea* self, intptr_t slot) {
-    auto* vqmdiarea = const_cast<VirtualQMdiArea*>(dynamic_cast<const VirtualQMdiArea*>(self));
-    if (vqmdiarea && vqmdiarea->isVirtualQMdiArea) {
-        vqmdiarea->setQMdiArea_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQMdiArea::QMdiArea_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QMdiArea_Delete(QMdiArea* self) {
     delete self;
 }

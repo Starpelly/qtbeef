@@ -486,9 +486,6 @@ int QAbstractItemView_SuperReceivers(const QAbstractItemView* self, const char* 
 bool QAbstractItemView_IsSignalConnected(const QAbstractItemView* self, const QMetaMethod* signal);
 void QAbstractItemView_OnIsSignalConnected(const QAbstractItemView* self, intptr_t slot);
 bool QAbstractItemView_SuperIsSignalConnected(const QAbstractItemView* self, const QMetaMethod* signal);
-double QAbstractItemView_GetDecodedMetricF(const QAbstractItemView* self, int metricA, int metricB);
-void QAbstractItemView_OnGetDecodedMetricF(const QAbstractItemView* self, intptr_t slot);
-double QAbstractItemView_SuperGetDecodedMetricF(const QAbstractItemView* self, int metricA, int metricB);
 void QAbstractItemView_Delete(QAbstractItemView* self);
 
 #ifdef __cplusplus

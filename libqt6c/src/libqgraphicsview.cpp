@@ -2474,35 +2474,6 @@ void QGraphicsView_OnIsSignalConnected(const QGraphicsView* self, intptr_t slot)
     }
 }
 
-// Derived class handler implementation
-double QGraphicsView_GetDecodedMetricF(const QGraphicsView* self, int metricA, int metricB) {
-    auto* vqgraphicsview = const_cast<VirtualQGraphicsView*>(dynamic_cast<const VirtualQGraphicsView*>(self));
-    if (vqgraphicsview && vqgraphicsview->isVirtualQGraphicsView) {
-        return vqgraphicsview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQGraphicsView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QGraphicsView_SuperGetDecodedMetricF(const QGraphicsView* self, int metricA, int metricB) {
-    auto* vqgraphicsview = const_cast<VirtualQGraphicsView*>(dynamic_cast<const VirtualQGraphicsView*>(self));
-    if (vqgraphicsview && vqgraphicsview->isVirtualQGraphicsView) {
-        vqgraphicsview->setQGraphicsView_GetDecodedMetricF_IsBase(true);
-        return vqgraphicsview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQGraphicsView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QGraphicsView_OnGetDecodedMetricF(const QGraphicsView* self, intptr_t slot) {
-    auto* vqgraphicsview = const_cast<VirtualQGraphicsView*>(dynamic_cast<const VirtualQGraphicsView*>(self));
-    if (vqgraphicsview && vqgraphicsview->isVirtualQGraphicsView) {
-        vqgraphicsview->setQGraphicsView_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQGraphicsView::QGraphicsView_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QGraphicsView_Delete(QGraphicsView* self) {
     delete self;
 }

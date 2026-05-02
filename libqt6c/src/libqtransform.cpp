@@ -162,25 +162,13 @@ QTransform* QTransform_Shear(QTransform* self, double sh, double sv) {
     return &_ret;
 }
 
-QTransform* QTransform_Rotate(QTransform* self, double a, int axis, double distanceToPlane) {
-    QTransform& _ret = self->rotate(static_cast<qreal>(a), static_cast<Qt::Axis>(axis), static_cast<qreal>(distanceToPlane));
-    // Cast returned reference into pointer
-    return &_ret;
-}
-
-QTransform* QTransform_Rotate2(QTransform* self, double a) {
+QTransform* QTransform_Rotate(QTransform* self, double a) {
     QTransform& _ret = self->rotate(static_cast<qreal>(a));
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QTransform* QTransform_RotateRadians(QTransform* self, double a, int axis, double distanceToPlane) {
-    QTransform& _ret = self->rotateRadians(static_cast<qreal>(a), static_cast<Qt::Axis>(axis), static_cast<qreal>(distanceToPlane));
-    // Cast returned reference into pointer
-    return &_ret;
-}
-
-QTransform* QTransform_RotateRadians2(QTransform* self, double a) {
+QTransform* QTransform_RotateRadians(QTransform* self, double a) {
     QTransform& _ret = self->rotateRadians(static_cast<qreal>(a));
     // Cast returned reference into pointer
     return &_ret;
@@ -288,13 +276,13 @@ QTransform* QTransform_Inverted1(const QTransform* self, bool* invertible) {
     return new QTransform(self->inverted(invertible));
 }
 
-QTransform* QTransform_Rotate22(QTransform* self, double a, int axis) {
+QTransform* QTransform_Rotate2(QTransform* self, double a, int axis) {
     QTransform& _ret = self->rotate(static_cast<qreal>(a), static_cast<Qt::Axis>(axis));
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QTransform* QTransform_RotateRadians22(QTransform* self, double a, int axis) {
+QTransform* QTransform_RotateRadians2(QTransform* self, double a, int axis) {
     QTransform& _ret = self->rotateRadians(static_cast<qreal>(a), static_cast<Qt::Axis>(axis));
     // Cast returned reference into pointer
     return &_ret;

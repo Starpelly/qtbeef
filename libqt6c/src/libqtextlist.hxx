@@ -78,7 +78,7 @@ class VirtualQTextList final : public QTextList {
     mutable bool qtextlist_issignalconnected_isbase = false;
 
   public:
-    VirtualQTextList(QTextDocument* doc) : QTextList(doc) {};
+    VirtualQTextList(QTextDocument* doc) : QTextList(doc){};
 
     // Callback setters
     inline void setQTextList_MetaObject_Callback(QTextList_MetaObject_Callback cb) { qtextlist_metaobject_callback = cb; }

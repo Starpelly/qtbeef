@@ -249,14 +249,6 @@ bool QIdentityProxyModel_MoveColumns(QIdentityProxyModel* self, const QModelInde
     }
 }
 
-bool QIdentityProxyModel_HandleSourceLayoutChanges(const QIdentityProxyModel* self) {
-    return self->handleSourceLayoutChanges();
-}
-
-bool QIdentityProxyModel_HandleSourceDataChanges(const QIdentityProxyModel* self) {
-    return self->handleSourceDataChanges();
-}
-
 // Base class handler implementation
 QMetaObject* QIdentityProxyModel_SuperMetaObject(const QIdentityProxyModel* self) {
     auto* vqidentityproxymodel = const_cast<VirtualQIdentityProxyModel*>(dynamic_cast<const VirtualQIdentityProxyModel*>(self));
@@ -1267,91 +1259,23 @@ void QIdentityProxyModel_OnCanDropMimeData(const QIdentityProxyModel* self, intp
 }
 
 // Derived class handler implementation
-libqt_list /* of libqt_string */ QIdentityProxyModel_MimeTypes(const QIdentityProxyModel* self) {
+QStringList QIdentityProxyModel_MimeTypes(const QIdentityProxyModel* self) {
     auto* vqidentityproxymodel = const_cast<VirtualQIdentityProxyModel*>(dynamic_cast<const VirtualQIdentityProxyModel*>(self));
     if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
-        QList<QString> _ret = vqidentityproxymodel->mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return vqidentityproxymodel->mimeTypes();
     } else {
-        QList<QString> _ret = self->QIdentityProxyModel::mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->QIdentityProxyModel::mimeTypes();
     }
 }
 
 // Base class handler implementation
-libqt_list /* of libqt_string */ QIdentityProxyModel_SuperMimeTypes(const QIdentityProxyModel* self) {
+QStringList QIdentityProxyModel_SuperMimeTypes(const QIdentityProxyModel* self) {
     auto* vqidentityproxymodel = const_cast<VirtualQIdentityProxyModel*>(dynamic_cast<const VirtualQIdentityProxyModel*>(self));
     if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
         vqidentityproxymodel->setQIdentityProxyModel_MimeTypes_IsBase(true);
-        QList<QString> _ret = vqidentityproxymodel->mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return vqidentityproxymodel->mimeTypes();
     } else {
-        QList<QString> _ret = self->QIdentityProxyModel::mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->QIdentityProxyModel::mimeTypes();
     }
 }
 
@@ -1784,64 +1708,6 @@ void QIdentityProxyModel_OnDisconnectNotify(QIdentityProxyModel* self, intptr_t 
     auto* vqidentityproxymodel = dynamic_cast<VirtualQIdentityProxyModel*>(self);
     if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
         vqidentityproxymodel->setQIdentityProxyModel_DisconnectNotify_Callback(reinterpret_cast<VirtualQIdentityProxyModel::QIdentityProxyModel_DisconnectNotify_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-void QIdentityProxyModel_SetHandleSourceLayoutChanges(QIdentityProxyModel* self, bool handleSourceLayoutChanges) {
-    auto* vqidentityproxymodel = dynamic_cast<VirtualQIdentityProxyModel*>(self);
-    if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
-        vqidentityproxymodel->setHandleSourceLayoutChanges(handleSourceLayoutChanges);
-    } else {
-        ((VirtualQIdentityProxyModel*)self)->setHandleSourceLayoutChanges(handleSourceLayoutChanges);
-    }
-}
-
-// Base class handler implementation
-void QIdentityProxyModel_SuperSetHandleSourceLayoutChanges(QIdentityProxyModel* self, bool handleSourceLayoutChanges) {
-    auto* vqidentityproxymodel = dynamic_cast<VirtualQIdentityProxyModel*>(self);
-    if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
-        vqidentityproxymodel->setQIdentityProxyModel_SetHandleSourceLayoutChanges_IsBase(true);
-        vqidentityproxymodel->setHandleSourceLayoutChanges(handleSourceLayoutChanges);
-    } else {
-        ((VirtualQIdentityProxyModel*)self)->setHandleSourceLayoutChanges(handleSourceLayoutChanges);
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QIdentityProxyModel_OnSetHandleSourceLayoutChanges(QIdentityProxyModel* self, intptr_t slot) {
-    auto* vqidentityproxymodel = dynamic_cast<VirtualQIdentityProxyModel*>(self);
-    if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
-        vqidentityproxymodel->setQIdentityProxyModel_SetHandleSourceLayoutChanges_Callback(reinterpret_cast<VirtualQIdentityProxyModel::QIdentityProxyModel_SetHandleSourceLayoutChanges_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-void QIdentityProxyModel_SetHandleSourceDataChanges(QIdentityProxyModel* self, bool handleSourceDataChanges) {
-    auto* vqidentityproxymodel = dynamic_cast<VirtualQIdentityProxyModel*>(self);
-    if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
-        vqidentityproxymodel->setHandleSourceDataChanges(handleSourceDataChanges);
-    } else {
-        ((VirtualQIdentityProxyModel*)self)->setHandleSourceDataChanges(handleSourceDataChanges);
-    }
-}
-
-// Base class handler implementation
-void QIdentityProxyModel_SuperSetHandleSourceDataChanges(QIdentityProxyModel* self, bool handleSourceDataChanges) {
-    auto* vqidentityproxymodel = dynamic_cast<VirtualQIdentityProxyModel*>(self);
-    if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
-        vqidentityproxymodel->setQIdentityProxyModel_SetHandleSourceDataChanges_IsBase(true);
-        vqidentityproxymodel->setHandleSourceDataChanges(handleSourceDataChanges);
-    } else {
-        ((VirtualQIdentityProxyModel*)self)->setHandleSourceDataChanges(handleSourceDataChanges);
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QIdentityProxyModel_OnSetHandleSourceDataChanges(QIdentityProxyModel* self, intptr_t slot) {
-    auto* vqidentityproxymodel = dynamic_cast<VirtualQIdentityProxyModel*>(self);
-    if (vqidentityproxymodel && vqidentityproxymodel->isVirtualQIdentityProxyModel) {
-        vqidentityproxymodel->setQIdentityProxyModel_SetHandleSourceDataChanges_Callback(reinterpret_cast<VirtualQIdentityProxyModel::QIdentityProxyModel_SetHandleSourceDataChanges_Callback>(slot));
     }
 }
 

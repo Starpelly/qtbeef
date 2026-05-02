@@ -24,6 +24,8 @@ QEasingCurve* QEasingCurve_new2(const QEasingCurve* other);
 QEasingCurve* QEasingCurve_new3(int type);
 void QEasingCurve_OperatorAssign(QEasingCurve* self, const QEasingCurve* other);
 void QEasingCurve_Swap(QEasingCurve* self, QEasingCurve* other);
+bool QEasingCurve_OperatorEqual(const QEasingCurve* self, const QEasingCurve* other);
+bool QEasingCurve_OperatorNotEqual(const QEasingCurve* self, const QEasingCurve* other);
 double QEasingCurve_Amplitude(const QEasingCurve* self);
 void QEasingCurve_SetAmplitude(QEasingCurve* self, double amplitude);
 double QEasingCurve_Period(const QEasingCurve* self);

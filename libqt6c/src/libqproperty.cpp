@@ -4,7 +4,6 @@
 #include <QPropertyNotifier>
 #include <QPropertyObserver>
 #include <QPropertyObserverBase>
-#include <QScopedPropertyUpdateGroup>
 #include <QString>
 #include <QByteArray>
 #include <cstring>
@@ -13,14 +12,6 @@
 #include <qproperty.h>
 #include "libqproperty.hpp"
 #include "libqproperty.hxx"
-
-QScopedPropertyUpdateGroup* QScopedPropertyUpdateGroup_new() {
-    return new QScopedPropertyUpdateGroup();
-}
-
-void QScopedPropertyUpdateGroup_Delete(QScopedPropertyUpdateGroup* self) {
-    delete self;
-}
 
 QPropertyBindingSourceLocation* QPropertyBindingSourceLocation_new(const QPropertyBindingSourceLocation* other) {
     return new QPropertyBindingSourceLocation(*other);

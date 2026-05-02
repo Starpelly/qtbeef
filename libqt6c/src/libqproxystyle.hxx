@@ -135,9 +135,9 @@ class VirtualQProxyStyle final : public QProxyStyle {
     mutable bool qproxystyle_issignalconnected_isbase = false;
 
   public:
-    VirtualQProxyStyle() : QProxyStyle() {};
-    VirtualQProxyStyle(const QString& key) : QProxyStyle(key) {};
-    VirtualQProxyStyle(QStyle* style) : QProxyStyle(style) {};
+    VirtualQProxyStyle() : QProxyStyle(){};
+    VirtualQProxyStyle(const QString& key) : QProxyStyle(key){};
+    VirtualQProxyStyle(QStyle* style) : QProxyStyle(style){};
 
     // Callback setters
     inline void setQProxyStyle_MetaObject_Callback(QProxyStyle_MetaObject_Callback cb) { qproxystyle_metaobject_callback = cb; }

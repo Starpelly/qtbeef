@@ -50,7 +50,7 @@ libqt_string QMimeData_Data(const QMimeData* self, const libqt_string mimetype);
 void QMimeData_SetData(QMimeData* self, const libqt_string mimetype, const libqt_string data);
 void QMimeData_RemoveFormat(QMimeData* self, const libqt_string mimetype);
 bool QMimeData_HasFormat(const QMimeData* self, const libqt_string mimetype);
-libqt_list /* of libqt_string */ QMimeData_Formats(const QMimeData* self);
+QStringList QMimeData_Formats(const QMimeData* self);
 void QMimeData_Clear(QMimeData* self);
 QVariant* QMimeData_RetrieveData(const QMimeData* self, const libqt_string mimetype, QMetaType* preferredType);
 void QMimeData_OnMetaObject(const QMimeData* self, intptr_t slot);
@@ -62,7 +62,7 @@ int QMimeData_SuperMetacall(QMimeData* self, int param1, int param2, void** para
 void QMimeData_OnHasFormat(const QMimeData* self, intptr_t slot);
 bool QMimeData_SuperHasFormat(const QMimeData* self, const libqt_string mimetype);
 void QMimeData_OnFormats(const QMimeData* self, intptr_t slot);
-libqt_list /* of libqt_string */ QMimeData_SuperFormats(const QMimeData* self);
+QStringList QMimeData_SuperFormats(const QMimeData* self);
 void QMimeData_OnRetrieveData(const QMimeData* self, intptr_t slot);
 QVariant* QMimeData_SuperRetrieveData(const QMimeData* self, const libqt_string mimetype, QMetaType* preferredType);
 bool QMimeData_Event(QMimeData* self, QEvent* event);

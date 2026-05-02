@@ -15,7 +15,6 @@ extern "C" {
 
 #ifdef __cplusplus
 #else
-typedef struct QDeadlineTimer QDeadlineTimer;
 typedef struct QReadLocker QReadLocker;
 typedef struct QReadWriteLock QReadWriteLock;
 typedef struct QWriteLocker QWriteLocker;
@@ -24,14 +23,12 @@ typedef struct QWriteLocker QWriteLocker;
 QReadWriteLock* QReadWriteLock_new();
 QReadWriteLock* QReadWriteLock_new2(int recursionMode);
 void QReadWriteLock_LockForRead(QReadWriteLock* self);
-bool QReadWriteLock_TryLockForRead(QReadWriteLock* self, int timeout);
-bool QReadWriteLock_TryLockForRead2(QReadWriteLock* self);
+bool QReadWriteLock_TryLockForRead(QReadWriteLock* self);
+bool QReadWriteLock_TryLockForRead2(QReadWriteLock* self, int timeout);
 void QReadWriteLock_LockForWrite(QReadWriteLock* self);
-bool QReadWriteLock_TryLockForWrite(QReadWriteLock* self, int timeout);
-bool QReadWriteLock_TryLockForWrite2(QReadWriteLock* self);
+bool QReadWriteLock_TryLockForWrite(QReadWriteLock* self);
+bool QReadWriteLock_TryLockForWrite2(QReadWriteLock* self, int timeout);
 void QReadWriteLock_Unlock(QReadWriteLock* self);
-bool QReadWriteLock_TryLockForRead1(QReadWriteLock* self, QDeadlineTimer* timeout);
-bool QReadWriteLock_TryLockForWrite1(QReadWriteLock* self, QDeadlineTimer* timeout);
 void QReadWriteLock_Delete(QReadWriteLock* self);
 
 QReadLocker* QReadLocker_new(QReadWriteLock* readWriteLock);

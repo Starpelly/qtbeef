@@ -135,10 +135,10 @@ class VirtualQFile final : public QFile {
     mutable bool qfile_issignalconnected_isbase = false;
 
   public:
-    VirtualQFile() : QFile() {};
-    VirtualQFile(const QString& name) : QFile(name) {};
-    VirtualQFile(QObject* parent) : QFile(parent) {};
-    VirtualQFile(const QString& name, QObject* parent) : QFile(name, parent) {};
+    VirtualQFile() : QFile(){};
+    VirtualQFile(const QString& name) : QFile(name){};
+    VirtualQFile(QObject* parent) : QFile(parent){};
+    VirtualQFile(const QString& name, QObject* parent) : QFile(name, parent){};
 
     // Callback setters
     inline void setQFile_MetaObject_Callback(QFile_MetaObject_Callback cb) { qfile_metaobject_callback = cb; }

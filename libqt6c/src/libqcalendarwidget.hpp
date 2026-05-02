@@ -66,10 +66,8 @@ int QCalendarWidget_YearShown(const QCalendarWidget* self);
 int QCalendarWidget_MonthShown(const QCalendarWidget* self);
 QDate* QCalendarWidget_MinimumDate(const QCalendarWidget* self);
 void QCalendarWidget_SetMinimumDate(QCalendarWidget* self, QDate* date);
-void QCalendarWidget_ClearMinimumDate(QCalendarWidget* self);
 QDate* QCalendarWidget_MaximumDate(const QCalendarWidget* self);
 void QCalendarWidget_SetMaximumDate(QCalendarWidget* self, QDate* date);
-void QCalendarWidget_ClearMaximumDate(QCalendarWidget* self);
 int QCalendarWidget_FirstDayOfWeek(const QCalendarWidget* self);
 void QCalendarWidget_SetFirstDayOfWeek(QCalendarWidget* self, int dayOfWeek);
 bool QCalendarWidget_IsNavigationBarVisible(const QCalendarWidget* self);
@@ -293,9 +291,6 @@ int QCalendarWidget_SuperReceivers(const QCalendarWidget* self, const char* sign
 bool QCalendarWidget_IsSignalConnected(const QCalendarWidget* self, const QMetaMethod* signal);
 void QCalendarWidget_OnIsSignalConnected(const QCalendarWidget* self, intptr_t slot);
 bool QCalendarWidget_SuperIsSignalConnected(const QCalendarWidget* self, const QMetaMethod* signal);
-double QCalendarWidget_GetDecodedMetricF(const QCalendarWidget* self, int metricA, int metricB);
-void QCalendarWidget_OnGetDecodedMetricF(const QCalendarWidget* self, intptr_t slot);
-double QCalendarWidget_SuperGetDecodedMetricF(const QCalendarWidget* self, int metricA, int metricB);
 void QCalendarWidget_Delete(QCalendarWidget* self);
 
 #ifdef __cplusplus

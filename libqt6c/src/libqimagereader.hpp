@@ -40,7 +40,7 @@ void QImageReader_SetFileName(QImageReader* self, const libqt_string fileName);
 libqt_string QImageReader_FileName(const QImageReader* self);
 QSize* QImageReader_Size(const QImageReader* self);
 int QImageReader_ImageFormat(const QImageReader* self);
-libqt_list /* of libqt_string */ QImageReader_TextKeys(const QImageReader* self);
+QStringList QImageReader_TextKeys(const QImageReader* self);
 libqt_string QImageReader_Text(const QImageReader* self, const libqt_string key);
 void QImageReader_SetClipRect(QImageReader* self, const QRect* rect);
 QRect* QImageReader_ClipRect(const QImageReader* self);

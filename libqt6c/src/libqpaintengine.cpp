@@ -33,14 +33,6 @@ QTextItem* QTextItem_new2(QTextItem* other) {
     return new QTextItem(std::move(*other));
 }
 
-QTextItem* QTextItem_new3() {
-    return new QTextItem();
-}
-
-QTextItem* QTextItem_new4(const QTextItem* param1) {
-    return new QTextItem(*param1);
-}
-
 void QTextItem_CopyAssign(QTextItem* self, QTextItem* other) {
     *self = *other;
 }

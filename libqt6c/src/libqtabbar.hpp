@@ -316,9 +316,6 @@ int QTabBar_SuperReceivers(const QTabBar* self, const char* signal);
 bool QTabBar_IsSignalConnected(const QTabBar* self, const QMetaMethod* signal);
 void QTabBar_OnIsSignalConnected(const QTabBar* self, intptr_t slot);
 bool QTabBar_SuperIsSignalConnected(const QTabBar* self, const QMetaMethod* signal);
-double QTabBar_GetDecodedMetricF(const QTabBar* self, int metricA, int metricB);
-void QTabBar_OnGetDecodedMetricF(const QTabBar* self, intptr_t slot);
-double QTabBar_SuperGetDecodedMetricF(const QTabBar* self, int metricA, int metricB);
 void QTabBar_Delete(QTabBar* self);
 
 #ifdef __cplusplus

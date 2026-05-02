@@ -27,7 +27,7 @@ class VirtualQRunnable : public QRunnable {
     mutable bool qrunnable_run_isbase = false;
 
   public:
-    VirtualQRunnable() : QRunnable() {};
+    VirtualQRunnable() : QRunnable(){};
 
     // Callback setters
     inline void setQRunnable_Run_Callback(QRunnable_Run_Callback cb) { qrunnable_run_callback = cb; }

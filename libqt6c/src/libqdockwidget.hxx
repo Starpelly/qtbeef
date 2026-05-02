@@ -77,7 +77,6 @@ class VirtualQDockWidget final : public QDockWidget {
     using QDockWidget_SenderSignalIndex_Callback = int (*)();
     using QDockWidget_Receivers_Callback = int (*)(const QDockWidget*, const char*);
     using QDockWidget_IsSignalConnected_Callback = bool (*)(const QDockWidget*, QMetaMethod*);
-    using QDockWidget_GetDecodedMetricF_Callback = double (*)(const QDockWidget*, int, int);
 
   protected:
     // Instance callback storage
@@ -141,7 +140,6 @@ class VirtualQDockWidget final : public QDockWidget {
     QDockWidget_SenderSignalIndex_Callback qdockwidget_sendersignalindex_callback = nullptr;
     QDockWidget_Receivers_Callback qdockwidget_receivers_callback = nullptr;
     QDockWidget_IsSignalConnected_Callback qdockwidget_issignalconnected_callback = nullptr;
-    QDockWidget_GetDecodedMetricF_Callback qdockwidget_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qdockwidget_metaobject_isbase = false;
@@ -204,15 +202,14 @@ class VirtualQDockWidget final : public QDockWidget {
     mutable bool qdockwidget_sendersignalindex_isbase = false;
     mutable bool qdockwidget_receivers_isbase = false;
     mutable bool qdockwidget_issignalconnected_isbase = false;
-    mutable bool qdockwidget_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQDockWidget(QWidget* parent) : QDockWidget(parent) {};
-    VirtualQDockWidget(const QString& title) : QDockWidget(title) {};
-    VirtualQDockWidget() : QDockWidget() {};
-    VirtualQDockWidget(const QString& title, QWidget* parent) : QDockWidget(title, parent) {};
-    VirtualQDockWidget(const QString& title, QWidget* parent, Qt::WindowFlags flags) : QDockWidget(title, parent, flags) {};
-    VirtualQDockWidget(QWidget* parent, Qt::WindowFlags flags) : QDockWidget(parent, flags) {};
+    VirtualQDockWidget(QWidget* parent) : QDockWidget(parent){};
+    VirtualQDockWidget(const QString& title) : QDockWidget(title){};
+    VirtualQDockWidget() : QDockWidget(){};
+    VirtualQDockWidget(const QString& title, QWidget* parent) : QDockWidget(title, parent){};
+    VirtualQDockWidget(const QString& title, QWidget* parent, Qt::WindowFlags flags) : QDockWidget(title, parent, flags){};
+    VirtualQDockWidget(QWidget* parent, Qt::WindowFlags flags) : QDockWidget(parent, flags){};
 
     // Callback setters
     inline void setQDockWidget_MetaObject_Callback(QDockWidget_MetaObject_Callback cb) { qdockwidget_metaobject_callback = cb; }
@@ -275,7 +272,6 @@ class VirtualQDockWidget final : public QDockWidget {
     inline void setQDockWidget_SenderSignalIndex_Callback(QDockWidget_SenderSignalIndex_Callback cb) { qdockwidget_sendersignalindex_callback = cb; }
     inline void setQDockWidget_Receivers_Callback(QDockWidget_Receivers_Callback cb) { qdockwidget_receivers_callback = cb; }
     inline void setQDockWidget_IsSignalConnected_Callback(QDockWidget_IsSignalConnected_Callback cb) { qdockwidget_issignalconnected_callback = cb; }
-    inline void setQDockWidget_GetDecodedMetricF_Callback(QDockWidget_GetDecodedMetricF_Callback cb) { qdockwidget_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQDockWidget_MetaObject_IsBase(bool value) const { qdockwidget_metaobject_isbase = value; }
@@ -338,7 +334,6 @@ class VirtualQDockWidget final : public QDockWidget {
     inline void setQDockWidget_SenderSignalIndex_IsBase(bool value) const { qdockwidget_sendersignalindex_isbase = value; }
     inline void setQDockWidget_Receivers_IsBase(bool value) const { qdockwidget_receivers_isbase = value; }
     inline void setQDockWidget_IsSignalConnected_IsBase(bool value) const { qdockwidget_issignalconnected_isbase = value; }
-    inline void setQDockWidget_GetDecodedMetricF_IsBase(bool value) const { qdockwidget_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1327,23 +1322,6 @@ class VirtualQDockWidget final : public QDockWidget {
         return QDockWidget::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qdockwidget_getdecodedmetricf_isbase) {
-            qdockwidget_getdecodedmetricf_isbase = false;
-            return QDockWidget::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qdockwidget_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QDockWidget::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QDockWidget_ChangeEvent(QDockWidget* self, QEvent* event);
     friend void QDockWidget_SuperChangeEvent(QDockWidget* self, QEvent* event);
@@ -1441,8 +1419,6 @@ class VirtualQDockWidget final : public QDockWidget {
     friend int QDockWidget_SuperReceivers(const QDockWidget* self, const char* signal);
     friend bool QDockWidget_IsSignalConnected(const QDockWidget* self, const QMetaMethod* signal);
     friend bool QDockWidget_SuperIsSignalConnected(const QDockWidget* self, const QMetaMethod* signal);
-    friend double QDockWidget_GetDecodedMetricF(const QDockWidget* self, int metricA, int metricB);
-    friend double QDockWidget_SuperGetDecodedMetricF(const QDockWidget* self, int metricA, int metricB);
 };
 
 #endif

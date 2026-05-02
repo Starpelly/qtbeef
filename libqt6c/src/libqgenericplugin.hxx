@@ -69,8 +69,8 @@ class VirtualQGenericPlugin : public QGenericPlugin {
     mutable bool qgenericplugin_issignalconnected_isbase = false;
 
   public:
-    VirtualQGenericPlugin() : QGenericPlugin() {};
-    VirtualQGenericPlugin(QObject* parent) : QGenericPlugin(parent) {};
+    VirtualQGenericPlugin() : QGenericPlugin(){};
+    VirtualQGenericPlugin(QObject* parent) : QGenericPlugin(parent){};
 
     // Callback setters
     inline void setQGenericPlugin_MetaObject_Callback(QGenericPlugin_MetaObject_Callback cb) { qgenericplugin_metaobject_callback = cb; }

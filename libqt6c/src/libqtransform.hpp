@@ -63,10 +63,8 @@ QTransform* QTransform_Transposed(const QTransform* self);
 QTransform* QTransform_Translate(QTransform* self, double dx, double dy);
 QTransform* QTransform_Scale(QTransform* self, double sx, double sy);
 QTransform* QTransform_Shear(QTransform* self, double sh, double sv);
-QTransform* QTransform_Rotate(QTransform* self, double a, int axis, double distanceToPlane);
-QTransform* QTransform_Rotate2(QTransform* self, double a);
-QTransform* QTransform_RotateRadians(QTransform* self, double a, int axis, double distanceToPlane);
-QTransform* QTransform_RotateRadians2(QTransform* self, double a);
+QTransform* QTransform_Rotate(QTransform* self, double a);
+QTransform* QTransform_RotateRadians(QTransform* self, double a);
 bool QTransform_OperatorEqual(const QTransform* self, const QTransform* param1);
 bool QTransform_OperatorNotEqual(const QTransform* self, const QTransform* param1);
 QTransform* QTransform_OperatorMultiplyAssign(QTransform* self, const QTransform* param1);
@@ -90,8 +88,8 @@ QTransform* QTransform_OperatorMinusAssign(QTransform* self, double div);
 QTransform* QTransform_FromTranslate(double dx, double dy);
 QTransform* QTransform_FromScale(double dx, double dy);
 QTransform* QTransform_Inverted1(const QTransform* self, bool* invertible);
-QTransform* QTransform_Rotate22(QTransform* self, double a, int axis);
-QTransform* QTransform_RotateRadians22(QTransform* self, double a, int axis);
+QTransform* QTransform_Rotate2(QTransform* self, double a, int axis);
+QTransform* QTransform_RotateRadians2(QTransform* self, double a, int axis);
 void QTransform_Delete(QTransform* self);
 
 #ifdef __cplusplus

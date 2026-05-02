@@ -31,10 +31,10 @@ typedef struct QWidget QWidget;
 
 QCompleter* QCompleter_new();
 QCompleter* QCompleter_new2(QAbstractItemModel* model);
-QCompleter* QCompleter_new3(const libqt_list /* of libqt_string */ completions);
+QCompleter* QCompleter_new3(const QStringList* completions);
 QCompleter* QCompleter_new4(QObject* parent);
 QCompleter* QCompleter_new5(QAbstractItemModel* model, QObject* parent);
-QCompleter* QCompleter_new6(const libqt_list /* of libqt_string */ completions, QObject* parent);
+QCompleter* QCompleter_new6(const QStringList* completions, QObject* parent);
 QMetaObject* QCompleter_MetaObject(const QCompleter* self);
 void* QCompleter_Metacast(QCompleter* self, const char* param1);
 int QCompleter_Metacall(QCompleter* self, int param1, int param2, void** param3);
@@ -70,7 +70,7 @@ void QCompleter_SetCompletionPrefix(QCompleter* self, const libqt_string prefix)
 void QCompleter_Complete(QCompleter* self);
 void QCompleter_SetWrapAround(QCompleter* self, bool wrap);
 libqt_string QCompleter_PathFromIndex(const QCompleter* self, const QModelIndex* index);
-libqt_list /* of libqt_string */ QCompleter_SplitPath(const QCompleter* self, const libqt_string path);
+QStringList QCompleter_SplitPath(const QCompleter* self, const libqt_string path);
 bool QCompleter_EventFilter(QCompleter* self, QObject* o, QEvent* e);
 bool QCompleter_Event(QCompleter* self, QEvent* param1);
 void QCompleter_Activated(QCompleter* self, const libqt_string text);
@@ -87,7 +87,7 @@ int QCompleter_SuperMetacall(QCompleter* self, int param1, int param2, void** pa
 void QCompleter_OnPathFromIndex(const QCompleter* self, intptr_t slot);
 libqt_string QCompleter_SuperPathFromIndex(const QCompleter* self, const QModelIndex* index);
 void QCompleter_OnSplitPath(const QCompleter* self, intptr_t slot);
-libqt_list /* of libqt_string */ QCompleter_SuperSplitPath(const QCompleter* self, const libqt_string path);
+QStringList QCompleter_SuperSplitPath(const QCompleter* self, const libqt_string path);
 void QCompleter_OnEventFilter(QCompleter* self, intptr_t slot);
 bool QCompleter_SuperEventFilter(QCompleter* self, QObject* o, QEvent* e);
 void QCompleter_OnEvent(QCompleter* self, intptr_t slot);

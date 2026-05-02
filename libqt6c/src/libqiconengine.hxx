@@ -66,7 +66,7 @@ class VirtualQIconEngine : public QIconEngine {
     mutable bool qiconengine_virtualhook_isbase = false;
 
   public:
-    VirtualQIconEngine() : QIconEngine() {};
+    VirtualQIconEngine() : QIconEngine(){};
 
     // Callback setters
     inline void setQIconEngine_Paint_Callback(QIconEngine_Paint_Callback cb) { qiconengine_paint_callback = cb; }

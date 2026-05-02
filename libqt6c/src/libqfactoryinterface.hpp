@@ -18,7 +18,7 @@ extern "C" {
 typedef struct QFactoryInterface QFactoryInterface;
 #endif
 
-libqt_list /* of libqt_string */ QFactoryInterface_Keys(const QFactoryInterface* self);
+QStringList QFactoryInterface_Keys(const QFactoryInterface* self);
 void QFactoryInterface_Delete(QFactoryInterface* self);
 
 #ifdef __cplusplus

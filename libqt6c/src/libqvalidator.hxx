@@ -72,8 +72,8 @@ class VirtualQValidator : public QValidator {
     mutable bool qvalidator_issignalconnected_isbase = false;
 
   public:
-    VirtualQValidator() : QValidator() {};
-    VirtualQValidator(QObject* parent) : QValidator(parent) {};
+    VirtualQValidator() : QValidator(){};
+    VirtualQValidator(QObject* parent) : QValidator(parent){};
 
     // Callback setters
     inline void setQValidator_MetaObject_Callback(QValidator_MetaObject_Callback cb) { qvalidator_metaobject_callback = cb; }
@@ -473,10 +473,10 @@ class VirtualQIntValidator final : public QIntValidator {
     mutable bool qintvalidator_issignalconnected_isbase = false;
 
   public:
-    VirtualQIntValidator() : QIntValidator() {};
-    VirtualQIntValidator(int bottom, int top) : QIntValidator(bottom, top) {};
-    VirtualQIntValidator(QObject* parent) : QIntValidator(parent) {};
-    VirtualQIntValidator(int bottom, int top, QObject* parent) : QIntValidator(bottom, top, parent) {};
+    VirtualQIntValidator() : QIntValidator(){};
+    VirtualQIntValidator(int bottom, int top) : QIntValidator(bottom, top){};
+    VirtualQIntValidator(QObject* parent) : QIntValidator(parent){};
+    VirtualQIntValidator(int bottom, int top, QObject* parent) : QIntValidator(bottom, top, parent){};
 
     // Callback setters
     inline void setQIntValidator_MetaObject_Callback(QIntValidator_MetaObject_Callback cb) { qintvalidator_metaobject_callback = cb; }
@@ -880,10 +880,10 @@ class VirtualQDoubleValidator final : public QDoubleValidator {
     mutable bool qdoublevalidator_issignalconnected_isbase = false;
 
   public:
-    VirtualQDoubleValidator() : QDoubleValidator() {};
-    VirtualQDoubleValidator(double bottom, double top, int decimals) : QDoubleValidator(bottom, top, decimals) {};
-    VirtualQDoubleValidator(QObject* parent) : QDoubleValidator(parent) {};
-    VirtualQDoubleValidator(double bottom, double top, int decimals, QObject* parent) : QDoubleValidator(bottom, top, decimals, parent) {};
+    VirtualQDoubleValidator() : QDoubleValidator(){};
+    VirtualQDoubleValidator(double bottom, double top, int decimals) : QDoubleValidator(bottom, top, decimals){};
+    VirtualQDoubleValidator(QObject* parent) : QDoubleValidator(parent){};
+    VirtualQDoubleValidator(double bottom, double top, int decimals, QObject* parent) : QDoubleValidator(bottom, top, decimals, parent){};
 
     // Callback setters
     inline void setQDoubleValidator_MetaObject_Callback(QDoubleValidator_MetaObject_Callback cb) { qdoublevalidator_metaobject_callback = cb; }
@@ -1287,10 +1287,10 @@ class VirtualQRegularExpressionValidator final : public QRegularExpressionValida
     mutable bool qregularexpressionvalidator_issignalconnected_isbase = false;
 
   public:
-    VirtualQRegularExpressionValidator() : QRegularExpressionValidator() {};
-    VirtualQRegularExpressionValidator(const QRegularExpression& re) : QRegularExpressionValidator(re) {};
-    VirtualQRegularExpressionValidator(QObject* parent) : QRegularExpressionValidator(parent) {};
-    VirtualQRegularExpressionValidator(const QRegularExpression& re, QObject* parent) : QRegularExpressionValidator(re, parent) {};
+    VirtualQRegularExpressionValidator() : QRegularExpressionValidator(){};
+    VirtualQRegularExpressionValidator(const QRegularExpression& re) : QRegularExpressionValidator(re){};
+    VirtualQRegularExpressionValidator(QObject* parent) : QRegularExpressionValidator(parent){};
+    VirtualQRegularExpressionValidator(const QRegularExpression& re, QObject* parent) : QRegularExpressionValidator(re, parent){};
 
     // Callback setters
     inline void setQRegularExpressionValidator_MetaObject_Callback(QRegularExpressionValidator_MetaObject_Callback cb) { qregularexpressionvalidator_metaobject_callback = cb; }

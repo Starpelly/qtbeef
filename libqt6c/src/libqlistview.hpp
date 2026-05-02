@@ -461,9 +461,6 @@ int QListView_SuperReceivers(const QListView* self, const char* signal);
 bool QListView_IsSignalConnected(const QListView* self, const QMetaMethod* signal);
 void QListView_OnIsSignalConnected(const QListView* self, intptr_t slot);
 bool QListView_SuperIsSignalConnected(const QListView* self, const QMetaMethod* signal);
-double QListView_GetDecodedMetricF(const QListView* self, int metricA, int metricB);
-void QListView_OnGetDecodedMetricF(const QListView* self, intptr_t slot);
-double QListView_SuperGetDecodedMetricF(const QListView* self, int metricA, int metricB);
 void QListView_Delete(QListView* self);
 
 #ifdef __cplusplus

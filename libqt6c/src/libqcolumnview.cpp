@@ -3571,35 +3571,6 @@ void QColumnView_OnIsSignalConnected(const QColumnView* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QColumnView_GetDecodedMetricF(const QColumnView* self, int metricA, int metricB) {
-    auto* vqcolumnview = const_cast<VirtualQColumnView*>(dynamic_cast<const VirtualQColumnView*>(self));
-    if (vqcolumnview && vqcolumnview->isVirtualQColumnView) {
-        return vqcolumnview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQColumnView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QColumnView_SuperGetDecodedMetricF(const QColumnView* self, int metricA, int metricB) {
-    auto* vqcolumnview = const_cast<VirtualQColumnView*>(dynamic_cast<const VirtualQColumnView*>(self));
-    if (vqcolumnview && vqcolumnview->isVirtualQColumnView) {
-        vqcolumnview->setQColumnView_GetDecodedMetricF_IsBase(true);
-        return vqcolumnview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQColumnView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QColumnView_OnGetDecodedMetricF(const QColumnView* self, intptr_t slot) {
-    auto* vqcolumnview = const_cast<VirtualQColumnView*>(dynamic_cast<const VirtualQColumnView*>(self));
-    if (vqcolumnview && vqcolumnview->isVirtualQColumnView) {
-        vqcolumnview->setQColumnView_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQColumnView::QColumnView_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QColumnView_Delete(QColumnView* self) {
     delete self;
 }

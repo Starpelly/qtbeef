@@ -344,13 +344,6 @@ void QTableView_TimerEvent(QTableView* self, QTimerEvent* event) {
     }
 }
 
-void QTableView_DropEvent(QTableView* self, QDropEvent* event) {
-    auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
-    if (vqtableview && vqtableview->isVirtualQTableView) {
-        vqtableview->dropEvent(event);
-    }
-}
-
 int QTableView_HorizontalOffset(const QTableView* self) {
     auto* vqtableview = dynamic_cast<const VirtualQTableView*>(self);
     if (vqtableview && vqtableview->isVirtualQTableView) {
@@ -737,25 +730,6 @@ void QTableView_OnTimerEvent(QTableView* self, intptr_t slot) {
     auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
     if (vqtableview && vqtableview->isVirtualQTableView) {
         vqtableview->setQTableView_TimerEvent_Callback(reinterpret_cast<VirtualQTableView::QTableView_TimerEvent_Callback>(slot));
-    }
-}
-
-// Base class handler implementation
-void QTableView_SuperDropEvent(QTableView* self, QDropEvent* event) {
-    auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
-    if (vqtableview && vqtableview->isVirtualQTableView) {
-        vqtableview->setQTableView_DropEvent_IsBase(true);
-        vqtableview->dropEvent(event);
-    } else {
-        ((VirtualQTableView*)self)->dropEvent(event);
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QTableView_OnDropEvent(QTableView* self, intptr_t slot) {
-    auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
-    if (vqtableview && vqtableview->isVirtualQTableView) {
-        vqtableview->setQTableView_DropEvent_Callback(reinterpret_cast<VirtualQTableView::QTableView_DropEvent_Callback>(slot));
     }
 }
 
@@ -1882,6 +1856,35 @@ void QTableView_OnDragLeaveEvent(QTableView* self, intptr_t slot) {
     auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
     if (vqtableview && vqtableview->isVirtualQTableView) {
         vqtableview->setQTableView_DragLeaveEvent_Callback(reinterpret_cast<VirtualQTableView::QTableView_DragLeaveEvent_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QTableView_DropEvent(QTableView* self, QDropEvent* event) {
+    auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
+    if (vqtableview && vqtableview->isVirtualQTableView) {
+        vqtableview->dropEvent(event);
+    } else {
+        ((VirtualQTableView*)self)->dropEvent(event);
+    }
+}
+
+// Base class handler implementation
+void QTableView_SuperDropEvent(QTableView* self, QDropEvent* event) {
+    auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
+    if (vqtableview && vqtableview->isVirtualQTableView) {
+        vqtableview->setQTableView_DropEvent_IsBase(true);
+        vqtableview->dropEvent(event);
+    } else {
+        ((VirtualQTableView*)self)->dropEvent(event);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QTableView_OnDropEvent(QTableView* self, intptr_t slot) {
+    auto* vqtableview = dynamic_cast<VirtualQTableView*>(self);
+    if (vqtableview && vqtableview->isVirtualQTableView) {
+        vqtableview->setQTableView_DropEvent_Callback(reinterpret_cast<VirtualQTableView::QTableView_DropEvent_Callback>(slot));
     }
 }
 
@@ -3765,35 +3768,6 @@ void QTableView_OnIsSignalConnected(const QTableView* self, intptr_t slot) {
     auto* vqtableview = const_cast<VirtualQTableView*>(dynamic_cast<const VirtualQTableView*>(self));
     if (vqtableview && vqtableview->isVirtualQTableView) {
         vqtableview->setQTableView_IsSignalConnected_Callback(reinterpret_cast<VirtualQTableView::QTableView_IsSignalConnected_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-double QTableView_GetDecodedMetricF(const QTableView* self, int metricA, int metricB) {
-    auto* vqtableview = const_cast<VirtualQTableView*>(dynamic_cast<const VirtualQTableView*>(self));
-    if (vqtableview && vqtableview->isVirtualQTableView) {
-        return vqtableview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQTableView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QTableView_SuperGetDecodedMetricF(const QTableView* self, int metricA, int metricB) {
-    auto* vqtableview = const_cast<VirtualQTableView*>(dynamic_cast<const VirtualQTableView*>(self));
-    if (vqtableview && vqtableview->isVirtualQTableView) {
-        vqtableview->setQTableView_GetDecodedMetricF_IsBase(true);
-        return vqtableview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQTableView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QTableView_OnGetDecodedMetricF(const QTableView* self, intptr_t slot) {
-    auto* vqtableview = const_cast<VirtualQTableView*>(dynamic_cast<const VirtualQTableView*>(self));
-    if (vqtableview && vqtableview->isVirtualQTableView) {
-        vqtableview->setQTableView_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQTableView::QTableView_GetDecodedMetricF_Callback>(slot));
     }
 }
 

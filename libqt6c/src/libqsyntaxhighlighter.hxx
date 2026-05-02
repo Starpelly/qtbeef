@@ -99,8 +99,8 @@ class VirtualQSyntaxHighlighter : public QSyntaxHighlighter {
     mutable bool qsyntaxhighlighter_issignalconnected_isbase = false;
 
   public:
-    VirtualQSyntaxHighlighter(QObject* parent) : QSyntaxHighlighter(parent) {};
-    VirtualQSyntaxHighlighter(QTextDocument* parent) : QSyntaxHighlighter(parent) {};
+    VirtualQSyntaxHighlighter(QObject* parent) : QSyntaxHighlighter(parent){};
+    VirtualQSyntaxHighlighter(QTextDocument* parent) : QSyntaxHighlighter(parent){};
 
     // Callback setters
     inline void setQSyntaxHighlighter_MetaObject_Callback(QSyntaxHighlighter_MetaObject_Callback cb) { qsyntaxhighlighter_metaobject_callback = cb; }

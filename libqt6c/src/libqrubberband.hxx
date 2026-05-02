@@ -77,7 +77,6 @@ class VirtualQRubberBand final : public QRubberBand {
     using QRubberBand_SenderSignalIndex_Callback = int (*)();
     using QRubberBand_Receivers_Callback = int (*)(const QRubberBand*, const char*);
     using QRubberBand_IsSignalConnected_Callback = bool (*)(const QRubberBand*, QMetaMethod*);
-    using QRubberBand_GetDecodedMetricF_Callback = double (*)(const QRubberBand*, int, int);
 
   protected:
     // Instance callback storage
@@ -141,7 +140,6 @@ class VirtualQRubberBand final : public QRubberBand {
     QRubberBand_SenderSignalIndex_Callback qrubberband_sendersignalindex_callback = nullptr;
     QRubberBand_Receivers_Callback qrubberband_receivers_callback = nullptr;
     QRubberBand_IsSignalConnected_Callback qrubberband_issignalconnected_callback = nullptr;
-    QRubberBand_GetDecodedMetricF_Callback qrubberband_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qrubberband_metaobject_isbase = false;
@@ -204,11 +202,10 @@ class VirtualQRubberBand final : public QRubberBand {
     mutable bool qrubberband_sendersignalindex_isbase = false;
     mutable bool qrubberband_receivers_isbase = false;
     mutable bool qrubberband_issignalconnected_isbase = false;
-    mutable bool qrubberband_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQRubberBand(QRubberBand::Shape param1) : QRubberBand(param1) {};
-    VirtualQRubberBand(QRubberBand::Shape param1, QWidget* param2) : QRubberBand(param1, param2) {};
+    VirtualQRubberBand(QRubberBand::Shape param1) : QRubberBand(param1){};
+    VirtualQRubberBand(QRubberBand::Shape param1, QWidget* param2) : QRubberBand(param1, param2){};
 
     // Callback setters
     inline void setQRubberBand_MetaObject_Callback(QRubberBand_MetaObject_Callback cb) { qrubberband_metaobject_callback = cb; }
@@ -271,7 +268,6 @@ class VirtualQRubberBand final : public QRubberBand {
     inline void setQRubberBand_SenderSignalIndex_Callback(QRubberBand_SenderSignalIndex_Callback cb) { qrubberband_sendersignalindex_callback = cb; }
     inline void setQRubberBand_Receivers_Callback(QRubberBand_Receivers_Callback cb) { qrubberband_receivers_callback = cb; }
     inline void setQRubberBand_IsSignalConnected_Callback(QRubberBand_IsSignalConnected_Callback cb) { qrubberband_issignalconnected_callback = cb; }
-    inline void setQRubberBand_GetDecodedMetricF_Callback(QRubberBand_GetDecodedMetricF_Callback cb) { qrubberband_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQRubberBand_MetaObject_IsBase(bool value) const { qrubberband_metaobject_isbase = value; }
@@ -334,7 +330,6 @@ class VirtualQRubberBand final : public QRubberBand {
     inline void setQRubberBand_SenderSignalIndex_IsBase(bool value) const { qrubberband_sendersignalindex_isbase = value; }
     inline void setQRubberBand_Receivers_IsBase(bool value) const { qrubberband_receivers_isbase = value; }
     inline void setQRubberBand_IsSignalConnected_IsBase(bool value) const { qrubberband_issignalconnected_isbase = value; }
-    inline void setQRubberBand_GetDecodedMetricF_IsBase(bool value) const { qrubberband_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1323,23 +1318,6 @@ class VirtualQRubberBand final : public QRubberBand {
         return QRubberBand::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qrubberband_getdecodedmetricf_isbase) {
-            qrubberband_getdecodedmetricf_isbase = false;
-            return QRubberBand::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qrubberband_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QRubberBand::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QRubberBand_Event(QRubberBand* self, QEvent* e);
     friend bool QRubberBand_SuperEvent(QRubberBand* self, QEvent* e);
@@ -1437,8 +1415,6 @@ class VirtualQRubberBand final : public QRubberBand {
     friend int QRubberBand_SuperReceivers(const QRubberBand* self, const char* signal);
     friend bool QRubberBand_IsSignalConnected(const QRubberBand* self, const QMetaMethod* signal);
     friend bool QRubberBand_SuperIsSignalConnected(const QRubberBand* self, const QMetaMethod* signal);
-    friend double QRubberBand_GetDecodedMetricF(const QRubberBand* self, int metricA, int metricB);
-    friend double QRubberBand_SuperGetDecodedMetricF(const QRubberBand* self, int metricA, int metricB);
 };
 
 #endif

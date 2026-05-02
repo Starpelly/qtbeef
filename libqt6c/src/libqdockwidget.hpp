@@ -260,9 +260,6 @@ int QDockWidget_SuperReceivers(const QDockWidget* self, const char* signal);
 bool QDockWidget_IsSignalConnected(const QDockWidget* self, const QMetaMethod* signal);
 void QDockWidget_OnIsSignalConnected(const QDockWidget* self, intptr_t slot);
 bool QDockWidget_SuperIsSignalConnected(const QDockWidget* self, const QMetaMethod* signal);
-double QDockWidget_GetDecodedMetricF(const QDockWidget* self, int metricA, int metricB);
-void QDockWidget_OnGetDecodedMetricF(const QDockWidget* self, intptr_t slot);
-double QDockWidget_SuperGetDecodedMetricF(const QDockWidget* self, int metricA, int metricB);
 void QDockWidget_Delete(QDockWidget* self);
 
 #ifdef __cplusplus

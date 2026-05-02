@@ -126,8 +126,8 @@ class VirtualQProcess final : public QProcess {
     mutable bool qprocess_issignalconnected_isbase = false;
 
   public:
-    VirtualQProcess() : QProcess() {};
-    VirtualQProcess(QObject* parent) : QProcess(parent) {};
+    VirtualQProcess() : QProcess(){};
+    VirtualQProcess(QObject* parent) : QProcess(parent){};
 
     // Callback setters
     inline void setQProcess_MetaObject_Callback(QProcess_MetaObject_Callback cb) { qprocess_metaobject_callback = cb; }

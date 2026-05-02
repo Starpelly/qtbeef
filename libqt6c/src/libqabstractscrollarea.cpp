@@ -2044,35 +2044,6 @@ void QAbstractScrollArea_OnIsSignalConnected(const QAbstractScrollArea* self, in
     }
 }
 
-// Derived class handler implementation
-double QAbstractScrollArea_GetDecodedMetricF(const QAbstractScrollArea* self, int metricA, int metricB) {
-    auto* vqabstractscrollarea = const_cast<VirtualQAbstractScrollArea*>(dynamic_cast<const VirtualQAbstractScrollArea*>(self));
-    if (vqabstractscrollarea && vqabstractscrollarea->isVirtualQAbstractScrollArea) {
-        return vqabstractscrollarea->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQAbstractScrollArea*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QAbstractScrollArea_SuperGetDecodedMetricF(const QAbstractScrollArea* self, int metricA, int metricB) {
-    auto* vqabstractscrollarea = const_cast<VirtualQAbstractScrollArea*>(dynamic_cast<const VirtualQAbstractScrollArea*>(self));
-    if (vqabstractscrollarea && vqabstractscrollarea->isVirtualQAbstractScrollArea) {
-        vqabstractscrollarea->setQAbstractScrollArea_GetDecodedMetricF_IsBase(true);
-        return vqabstractscrollarea->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQAbstractScrollArea*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QAbstractScrollArea_OnGetDecodedMetricF(const QAbstractScrollArea* self, intptr_t slot) {
-    auto* vqabstractscrollarea = const_cast<VirtualQAbstractScrollArea*>(dynamic_cast<const VirtualQAbstractScrollArea*>(self));
-    if (vqabstractscrollarea && vqabstractscrollarea->isVirtualQAbstractScrollArea) {
-        vqabstractscrollarea->setQAbstractScrollArea_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQAbstractScrollArea::QAbstractScrollArea_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QAbstractScrollArea_Delete(QAbstractScrollArea* self) {
     delete self;
 }

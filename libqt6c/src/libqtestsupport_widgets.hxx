@@ -36,7 +36,7 @@ class VirtualQTestQTouchEventWidgetSequence final : public QTest::QTouchEventWid
     mutable bool qtest__qtoucheventwidgetsequence_pointorpreviouspoint_isbase = false;
 
   public:
-    VirtualQTestQTouchEventWidgetSequence(const QTest::QTouchEventWidgetSequence& param1) : QTest::QTouchEventWidgetSequence(param1) {};
+    VirtualQTestQTouchEventWidgetSequence(const QTest::QTouchEventWidgetSequence& param1) : QTest::QTouchEventWidgetSequence(param1){};
 
     // Callback setters
     inline void setQTest__QTouchEventWidgetSequence_Stationary_Callback(QTest__QTouchEventWidgetSequence_Stationary_Callback cb) { qtest__qtoucheventwidgetsequence_stationary_callback = cb; }

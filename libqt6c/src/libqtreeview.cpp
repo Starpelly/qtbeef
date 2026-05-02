@@ -3925,35 +3925,6 @@ void QTreeView_OnIsSignalConnected(const QTreeView* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QTreeView_GetDecodedMetricF(const QTreeView* self, int metricA, int metricB) {
-    auto* vqtreeview = const_cast<VirtualQTreeView*>(dynamic_cast<const VirtualQTreeView*>(self));
-    if (vqtreeview && vqtreeview->isVirtualQTreeView) {
-        return vqtreeview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQTreeView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QTreeView_SuperGetDecodedMetricF(const QTreeView* self, int metricA, int metricB) {
-    auto* vqtreeview = const_cast<VirtualQTreeView*>(dynamic_cast<const VirtualQTreeView*>(self));
-    if (vqtreeview && vqtreeview->isVirtualQTreeView) {
-        vqtreeview->setQTreeView_GetDecodedMetricF_IsBase(true);
-        return vqtreeview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQTreeView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QTreeView_OnGetDecodedMetricF(const QTreeView* self, intptr_t slot) {
-    auto* vqtreeview = const_cast<VirtualQTreeView*>(dynamic_cast<const VirtualQTreeView*>(self));
-    if (vqtreeview && vqtreeview->isVirtualQTreeView) {
-        vqtreeview->setQTreeView_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQTreeView::QTreeView_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QTreeView_Delete(QTreeView* self) {
     delete self;
 }

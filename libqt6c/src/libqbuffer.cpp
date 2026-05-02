@@ -73,8 +73,8 @@ void QBuffer_SetData(QBuffer* self, const libqt_string data) {
     self->setData(data_QByteArray);
 }
 
-void QBuffer_SetData2(QBuffer* self, const char* data, ptrdiff_t lenVal) {
-    self->setData(data, (qsizetype)(lenVal));
+void QBuffer_SetData2(QBuffer* self, const char* data, int lenVal) {
+    self->setData(data, static_cast<int>(lenVal));
 }
 
 libqt_string QBuffer_Data(const QBuffer* self) {

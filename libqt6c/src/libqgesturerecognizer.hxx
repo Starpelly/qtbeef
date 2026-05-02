@@ -33,7 +33,7 @@ class VirtualQGestureRecognizer : public QGestureRecognizer {
     mutable bool qgesturerecognizer_reset_isbase = false;
 
   public:
-    VirtualQGestureRecognizer() : QGestureRecognizer() {};
+    VirtualQGestureRecognizer() : QGestureRecognizer(){};
 
     // Callback setters
     inline void setQGestureRecognizer_Create_Callback(QGestureRecognizer_Create_Callback cb) { qgesturerecognizer_create_callback = cb; }

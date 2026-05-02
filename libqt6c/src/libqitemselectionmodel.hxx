@@ -87,9 +87,9 @@ class VirtualQItemSelectionModel final : public QItemSelectionModel {
     mutable bool qitemselectionmodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQItemSelectionModel() : QItemSelectionModel() {};
-    VirtualQItemSelectionModel(QAbstractItemModel* model, QObject* parent) : QItemSelectionModel(model, parent) {};
-    VirtualQItemSelectionModel(QAbstractItemModel* model) : QItemSelectionModel(model) {};
+    VirtualQItemSelectionModel() : QItemSelectionModel(){};
+    VirtualQItemSelectionModel(QAbstractItemModel* model, QObject* parent) : QItemSelectionModel(model, parent){};
+    VirtualQItemSelectionModel(QAbstractItemModel* model) : QItemSelectionModel(model){};
 
     // Callback setters
     inline void setQItemSelectionModel_MetaObject_Callback(QItemSelectionModel_MetaObject_Callback cb) { qitemselectionmodel_metaobject_callback = cb; }

@@ -147,7 +147,6 @@ class VirtualQTreeView final : public QTreeView {
     using QTreeView_SenderSignalIndex_Callback = int (*)();
     using QTreeView_Receivers_Callback = int (*)(const QTreeView*, const char*);
     using QTreeView_IsSignalConnected_Callback = bool (*)(const QTreeView*, QMetaMethod*);
-    using QTreeView_GetDecodedMetricF_Callback = double (*)(const QTreeView*, int, int);
 
   protected:
     // Instance callback storage
@@ -278,7 +277,6 @@ class VirtualQTreeView final : public QTreeView {
     QTreeView_SenderSignalIndex_Callback qtreeview_sendersignalindex_callback = nullptr;
     QTreeView_Receivers_Callback qtreeview_receivers_callback = nullptr;
     QTreeView_IsSignalConnected_Callback qtreeview_issignalconnected_callback = nullptr;
-    QTreeView_GetDecodedMetricF_Callback qtreeview_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qtreeview_metaobject_isbase = false;
@@ -408,11 +406,10 @@ class VirtualQTreeView final : public QTreeView {
     mutable bool qtreeview_sendersignalindex_isbase = false;
     mutable bool qtreeview_receivers_isbase = false;
     mutable bool qtreeview_issignalconnected_isbase = false;
-    mutable bool qtreeview_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQTreeView(QWidget* parent) : QTreeView(parent) {};
-    VirtualQTreeView() : QTreeView() {};
+    VirtualQTreeView(QWidget* parent) : QTreeView(parent){};
+    VirtualQTreeView() : QTreeView(){};
 
     // Callback setters
     inline void setQTreeView_MetaObject_Callback(QTreeView_MetaObject_Callback cb) { qtreeview_metaobject_callback = cb; }
@@ -542,7 +539,6 @@ class VirtualQTreeView final : public QTreeView {
     inline void setQTreeView_SenderSignalIndex_Callback(QTreeView_SenderSignalIndex_Callback cb) { qtreeview_sendersignalindex_callback = cb; }
     inline void setQTreeView_Receivers_Callback(QTreeView_Receivers_Callback cb) { qtreeview_receivers_callback = cb; }
     inline void setQTreeView_IsSignalConnected_Callback(QTreeView_IsSignalConnected_Callback cb) { qtreeview_issignalconnected_callback = cb; }
-    inline void setQTreeView_GetDecodedMetricF_Callback(QTreeView_GetDecodedMetricF_Callback cb) { qtreeview_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQTreeView_MetaObject_IsBase(bool value) const { qtreeview_metaobject_isbase = value; }
@@ -672,7 +668,6 @@ class VirtualQTreeView final : public QTreeView {
     inline void setQTreeView_SenderSignalIndex_IsBase(bool value) const { qtreeview_sendersignalindex_isbase = value; }
     inline void setQTreeView_Receivers_IsBase(bool value) const { qtreeview_receivers_isbase = value; }
     inline void setQTreeView_IsSignalConnected_IsBase(bool value) const { qtreeview_issignalconnected_isbase = value; }
-    inline void setQTreeView_GetDecodedMetricF_IsBase(bool value) const { qtreeview_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -2846,23 +2841,6 @@ class VirtualQTreeView final : public QTreeView {
         return QTreeView::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qtreeview_getdecodedmetricf_isbase) {
-            qtreeview_getdecodedmetricf_isbase = false;
-            return QTreeView::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qtreeview_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QTreeView::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QTreeView_VerticalScrollbarValueChanged(QTreeView* self, int value);
     friend void QTreeView_SuperVerticalScrollbarValueChanged(QTreeView* self, int value);
@@ -3068,8 +3046,6 @@ class VirtualQTreeView final : public QTreeView {
     friend int QTreeView_SuperReceivers(const QTreeView* self, const char* signal);
     friend bool QTreeView_IsSignalConnected(const QTreeView* self, const QMetaMethod* signal);
     friend bool QTreeView_SuperIsSignalConnected(const QTreeView* self, const QMetaMethod* signal);
-    friend double QTreeView_GetDecodedMetricF(const QTreeView* self, int metricA, int metricB);
-    friend double QTreeView_SuperGetDecodedMetricF(const QTreeView* self, int metricA, int metricB);
 };
 
 #endif

@@ -33,8 +33,8 @@ class VirtualQInputEvent final : public QInputEvent {
     mutable bool qinputevent_setaccepted_isbase = false;
 
   public:
-    VirtualQInputEvent(QEvent::Type type, const QInputDevice* m_dev) : QInputEvent(type, m_dev) {};
-    VirtualQInputEvent(QEvent::Type type, const QInputDevice* m_dev, Qt::KeyboardModifiers modifiers) : QInputEvent(type, m_dev, modifiers) {};
+    VirtualQInputEvent(QEvent::Type type, const QInputDevice* m_dev) : QInputEvent(type, m_dev){};
+    VirtualQInputEvent(QEvent::Type type, const QInputDevice* m_dev, Qt::KeyboardModifiers modifiers) : QInputEvent(type, m_dev, modifiers){};
 
     // Callback setters
     inline void setQInputEvent_Clone_Callback(QInputEvent_Clone_Callback cb) { qinputevent_clone_callback = cb; }
@@ -128,9 +128,9 @@ class VirtualQPointerEvent final : public QPointerEvent {
     mutable bool qpointerevent_setaccepted_isbase = false;
 
   public:
-    VirtualQPointerEvent(QEvent::Type type, const QPointingDevice* dev) : QPointerEvent(type, dev) {};
-    VirtualQPointerEvent(QEvent::Type type, const QPointingDevice* dev, Qt::KeyboardModifiers modifiers) : QPointerEvent(type, dev, modifiers) {};
-    VirtualQPointerEvent(QEvent::Type type, const QPointingDevice* dev, Qt::KeyboardModifiers modifiers, const QList<QEventPoint>& points) : QPointerEvent(type, dev, modifiers, points) {};
+    VirtualQPointerEvent(QEvent::Type type, const QPointingDevice* dev) : QPointerEvent(type, dev){};
+    VirtualQPointerEvent(QEvent::Type type, const QPointingDevice* dev, Qt::KeyboardModifiers modifiers) : QPointerEvent(type, dev, modifiers){};
+    VirtualQPointerEvent(QEvent::Type type, const QPointingDevice* dev, Qt::KeyboardModifiers modifiers, const QList<QEventPoint>& points) : QPointerEvent(type, dev, modifiers, points){};
 
     // Callback setters
     inline void setQPointerEvent_Clone_Callback(QPointerEvent_Clone_Callback cb) { qpointerevent_clone_callback = cb; }
@@ -272,8 +272,8 @@ class VirtualQEnterEvent final : public QEnterEvent {
     mutable bool qenterevent_setaccepted_isbase = false;
 
   public:
-    VirtualQEnterEvent(const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos) : QEnterEvent(localPos, scenePos, globalPos) {};
-    VirtualQEnterEvent(const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, const QPointingDevice* device) : QEnterEvent(localPos, scenePos, globalPos, device) {};
+    VirtualQEnterEvent(const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos) : QEnterEvent(localPos, scenePos, globalPos){};
+    VirtualQEnterEvent(const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, const QPointingDevice* device) : QEnterEvent(localPos, scenePos, globalPos, device){};
 
     // Callback setters
     inline void setQEnterEvent_Clone_Callback(QEnterEvent_Clone_Callback cb) { qenterevent_clone_callback = cb; }
@@ -415,14 +415,14 @@ class VirtualQMouseEvent final : public QMouseEvent {
     mutable bool qmouseevent_setaccepted_isbase = false;
 
   public:
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QMouseEvent(type, localPos, button, buttons, modifiers) {};
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QMouseEvent(type, localPos, globalPos, button, buttons, modifiers) {};
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers) {};
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::MouseEventSource source) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers, source) {};
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QMouseEvent(type, localPos, button, buttons, modifiers, device) {};
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QMouseEvent(type, localPos, globalPos, button, buttons, modifiers, device) {};
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers, device) {};
-    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::MouseEventSource source, const QPointingDevice* device) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers, source, device) {};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QMouseEvent(type, localPos, button, buttons, modifiers){};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QMouseEvent(type, localPos, globalPos, button, buttons, modifiers){};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers){};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::MouseEventSource source) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers, source){};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QMouseEvent(type, localPos, button, buttons, modifiers, device){};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QMouseEvent(type, localPos, globalPos, button, buttons, modifiers, device){};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers, device){};
+    VirtualQMouseEvent(QEvent::Type type, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, Qt::MouseButton button, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::MouseEventSource source, const QPointingDevice* device) : QMouseEvent(type, localPos, scenePos, globalPos, button, buttons, modifiers, source, device){};
 
     // Callback setters
     inline void setQMouseEvent_Clone_Callback(QMouseEvent_Clone_Callback cb) { qmouseevent_clone_callback = cb; }
@@ -564,12 +564,12 @@ class VirtualQHoverEvent final : public QHoverEvent {
     mutable bool qhoverevent_setaccepted_isbase = false;
 
   public:
-    VirtualQHoverEvent(QEvent::Type type, const QPointF& scenePos, const QPointF& globalPos, const QPointF& oldPos) : QHoverEvent(type, scenePos, globalPos, oldPos) {};
-    VirtualQHoverEvent(QEvent::Type type, const QPointF& pos, const QPointF& oldPos) : QHoverEvent(type, pos, oldPos) {};
-    VirtualQHoverEvent(QEvent::Type type, const QPointF& scenePos, const QPointF& globalPos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers) : QHoverEvent(type, scenePos, globalPos, oldPos, modifiers) {};
-    VirtualQHoverEvent(QEvent::Type type, const QPointF& scenePos, const QPointF& globalPos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QHoverEvent(type, scenePos, globalPos, oldPos, modifiers, device) {};
-    VirtualQHoverEvent(QEvent::Type type, const QPointF& pos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers) : QHoverEvent(type, pos, oldPos, modifiers) {};
-    VirtualQHoverEvent(QEvent::Type type, const QPointF& pos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QHoverEvent(type, pos, oldPos, modifiers, device) {};
+    VirtualQHoverEvent(QEvent::Type type, const QPointF& scenePos, const QPointF& globalPos, const QPointF& oldPos) : QHoverEvent(type, scenePos, globalPos, oldPos){};
+    VirtualQHoverEvent(QEvent::Type type, const QPointF& pos, const QPointF& oldPos) : QHoverEvent(type, pos, oldPos){};
+    VirtualQHoverEvent(QEvent::Type type, const QPointF& scenePos, const QPointF& globalPos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers) : QHoverEvent(type, scenePos, globalPos, oldPos, modifiers){};
+    VirtualQHoverEvent(QEvent::Type type, const QPointF& scenePos, const QPointF& globalPos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QHoverEvent(type, scenePos, globalPos, oldPos, modifiers, device){};
+    VirtualQHoverEvent(QEvent::Type type, const QPointF& pos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers) : QHoverEvent(type, pos, oldPos, modifiers){};
+    VirtualQHoverEvent(QEvent::Type type, const QPointF& pos, const QPointF& oldPos, Qt::KeyboardModifiers modifiers, const QPointingDevice* device) : QHoverEvent(type, pos, oldPos, modifiers, device){};
 
     // Callback setters
     inline void setQHoverEvent_Clone_Callback(QHoverEvent_Clone_Callback cb) { qhoverevent_clone_callback = cb; }
@@ -711,9 +711,9 @@ class VirtualQWheelEvent final : public QWheelEvent {
     mutable bool qwheelevent_setaccepted_isbase = false;
 
   public:
-    VirtualQWheelEvent(const QPointF& pos, const QPointF& globalPos, QPoint pixelDelta, QPoint angleDelta, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::ScrollPhase phase, bool inverted) : QWheelEvent(pos, globalPos, pixelDelta, angleDelta, buttons, modifiers, phase, inverted) {};
-    VirtualQWheelEvent(const QPointF& pos, const QPointF& globalPos, QPoint pixelDelta, QPoint angleDelta, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::ScrollPhase phase, bool inverted, Qt::MouseEventSource source) : QWheelEvent(pos, globalPos, pixelDelta, angleDelta, buttons, modifiers, phase, inverted, source) {};
-    VirtualQWheelEvent(const QPointF& pos, const QPointF& globalPos, QPoint pixelDelta, QPoint angleDelta, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::ScrollPhase phase, bool inverted, Qt::MouseEventSource source, const QPointingDevice* device) : QWheelEvent(pos, globalPos, pixelDelta, angleDelta, buttons, modifiers, phase, inverted, source, device) {};
+    VirtualQWheelEvent(const QPointF& pos, const QPointF& globalPos, QPoint pixelDelta, QPoint angleDelta, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::ScrollPhase phase, bool inverted) : QWheelEvent(pos, globalPos, pixelDelta, angleDelta, buttons, modifiers, phase, inverted){};
+    VirtualQWheelEvent(const QPointF& pos, const QPointF& globalPos, QPoint pixelDelta, QPoint angleDelta, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::ScrollPhase phase, bool inverted, Qt::MouseEventSource source) : QWheelEvent(pos, globalPos, pixelDelta, angleDelta, buttons, modifiers, phase, inverted, source){};
+    VirtualQWheelEvent(const QPointF& pos, const QPointF& globalPos, QPoint pixelDelta, QPoint angleDelta, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, Qt::ScrollPhase phase, bool inverted, Qt::MouseEventSource source, const QPointingDevice* device) : QWheelEvent(pos, globalPos, pixelDelta, angleDelta, buttons, modifiers, phase, inverted, source, device){};
 
     // Callback setters
     inline void setQWheelEvent_Clone_Callback(QWheelEvent_Clone_Callback cb) { qwheelevent_clone_callback = cb; }
@@ -855,7 +855,7 @@ class VirtualQTabletEvent final : public QTabletEvent {
     mutable bool qtabletevent_setaccepted_isbase = false;
 
   public:
-    VirtualQTabletEvent(QEvent::Type t, const QPointingDevice* device, const QPointF& pos, const QPointF& globalPos, qreal pressure, float xTilt, float yTilt, float tangentialPressure, qreal rotation, float z, Qt::KeyboardModifiers keyState, Qt::MouseButton button, Qt::MouseButtons buttons) : QTabletEvent(t, device, pos, globalPos, pressure, xTilt, yTilt, tangentialPressure, rotation, z, keyState, button, buttons) {};
+    VirtualQTabletEvent(QEvent::Type t, const QPointingDevice* device, const QPointF& pos, const QPointF& globalPos, qreal pressure, float xTilt, float yTilt, float tangentialPressure, qreal rotation, float z, Qt::KeyboardModifiers keyState, Qt::MouseButton button, Qt::MouseButtons buttons) : QTabletEvent(t, device, pos, globalPos, pressure, xTilt, yTilt, tangentialPressure, rotation, z, keyState, button, buttons){};
 
     // Callback setters
     inline void setQTabletEvent_Clone_Callback(QTabletEvent_Clone_Callback cb) { qtabletevent_clone_callback = cb; }
@@ -997,9 +997,9 @@ class VirtualQNativeGestureEvent final : public QNativeGestureEvent {
     mutable bool qnativegestureevent_setaccepted_isbase = false;
 
   public:
-    VirtualQNativeGestureEvent(Qt::NativeGestureType type, const QPointingDevice* dev, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, qreal value, quint64 sequenceId, quint64 intArgument) : QNativeGestureEvent(type, dev, localPos, scenePos, globalPos, value, sequenceId, intArgument) {};
-    VirtualQNativeGestureEvent(Qt::NativeGestureType type, const QPointingDevice* dev, int fingerCount, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, qreal value, const QPointF& delta) : QNativeGestureEvent(type, dev, fingerCount, localPos, scenePos, globalPos, value, delta) {};
-    VirtualQNativeGestureEvent(Qt::NativeGestureType type, const QPointingDevice* dev, int fingerCount, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, qreal value, const QPointF& delta, quint64 sequenceId) : QNativeGestureEvent(type, dev, fingerCount, localPos, scenePos, globalPos, value, delta, sequenceId) {};
+    VirtualQNativeGestureEvent(Qt::NativeGestureType type, const QPointingDevice* dev, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, qreal value, quint64 sequenceId, quint64 intArgument) : QNativeGestureEvent(type, dev, localPos, scenePos, globalPos, value, sequenceId, intArgument){};
+    VirtualQNativeGestureEvent(Qt::NativeGestureType type, const QPointingDevice* dev, int fingerCount, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, qreal value, const QPointF& delta) : QNativeGestureEvent(type, dev, fingerCount, localPos, scenePos, globalPos, value, delta){};
+    VirtualQNativeGestureEvent(Qt::NativeGestureType type, const QPointingDevice* dev, int fingerCount, const QPointF& localPos, const QPointF& scenePos, const QPointF& globalPos, qreal value, const QPointF& delta, quint64 sequenceId) : QNativeGestureEvent(type, dev, fingerCount, localPos, scenePos, globalPos, value, delta, sequenceId){};
 
     // Callback setters
     inline void setQNativeGestureEvent_Clone_Callback(QNativeGestureEvent_Clone_Callback cb) { qnativegestureevent_clone_callback = cb; }
@@ -1132,15 +1132,15 @@ class VirtualQKeyEvent final : public QKeyEvent {
     mutable bool qkeyevent_setaccepted_isbase = false;
 
   public:
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers) : QKeyEvent(type, key, modifiers) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, const QString& text) : QKeyEvent(type, key, modifiers, text) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, const QString& text, bool autorep) : QKeyEvent(type, key, modifiers, text, autorep) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, const QString& text, bool autorep, quint16 count) : QKeyEvent(type, key, modifiers, text, autorep, count) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text, bool autorep) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text, autorep) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text, bool autorep, quint16 count) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text, autorep, count) {};
-    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text, bool autorep, quint16 count, const QInputDevice* device) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text, autorep, count, device) {};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers) : QKeyEvent(type, key, modifiers){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, const QString& text) : QKeyEvent(type, key, modifiers, text){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, const QString& text, bool autorep) : QKeyEvent(type, key, modifiers, text, autorep){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, const QString& text, bool autorep, quint16 count) : QKeyEvent(type, key, modifiers, text, autorep, count){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text, bool autorep) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text, autorep){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text, bool autorep, quint16 count) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text, autorep, count){};
+    VirtualQKeyEvent(QEvent::Type type, int key, Qt::KeyboardModifiers modifiers, quint32 nativeScanCode, quint32 nativeVirtualKey, quint32 nativeModifiers, const QString& text, bool autorep, quint16 count, const QInputDevice* device) : QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text, autorep, count, device){};
 
     // Callback setters
     inline void setQKeyEvent_Clone_Callback(QKeyEvent_Clone_Callback cb) { qkeyevent_clone_callback = cb; }
@@ -1222,8 +1222,8 @@ class VirtualQFocusEvent final : public QFocusEvent {
     mutable bool qfocusevent_setaccepted_isbase = false;
 
   public:
-    VirtualQFocusEvent(QEvent::Type type) : QFocusEvent(type) {};
-    VirtualQFocusEvent(QEvent::Type type, Qt::FocusReason reason) : QFocusEvent(type, reason) {};
+    VirtualQFocusEvent(QEvent::Type type) : QFocusEvent(type){};
+    VirtualQFocusEvent(QEvent::Type type, Qt::FocusReason reason) : QFocusEvent(type, reason){};
 
     // Callback setters
     inline void setQFocusEvent_Clone_Callback(QFocusEvent_Clone_Callback cb) { qfocusevent_clone_callback = cb; }
@@ -1286,8 +1286,8 @@ class VirtualQPaintEvent final : public QPaintEvent {
     mutable bool qpaintevent_setaccepted_isbase = false;
 
   public:
-    VirtualQPaintEvent(const QRegion& paintRegion) : QPaintEvent(paintRegion) {};
-    VirtualQPaintEvent(const QRect& paintRect) : QPaintEvent(paintRect) {};
+    VirtualQPaintEvent(const QRegion& paintRegion) : QPaintEvent(paintRegion){};
+    VirtualQPaintEvent(const QRect& paintRect) : QPaintEvent(paintRect){};
 
     // Callback setters
     inline void setQPaintEvent_Clone_Callback(QPaintEvent_Clone_Callback cb) { qpaintevent_clone_callback = cb; }
@@ -1350,7 +1350,7 @@ class VirtualQMoveEvent final : public QMoveEvent {
     mutable bool qmoveevent_setaccepted_isbase = false;
 
   public:
-    VirtualQMoveEvent(const QPoint& pos, const QPoint& oldPos) : QMoveEvent(pos, oldPos) {};
+    VirtualQMoveEvent(const QPoint& pos, const QPoint& oldPos) : QMoveEvent(pos, oldPos){};
 
     // Callback setters
     inline void setQMoveEvent_Clone_Callback(QMoveEvent_Clone_Callback cb) { qmoveevent_clone_callback = cb; }
@@ -1413,7 +1413,7 @@ class VirtualQExposeEvent final : public QExposeEvent {
     mutable bool qexposeevent_setaccepted_isbase = false;
 
   public:
-    VirtualQExposeEvent(const QRegion& m_region) : QExposeEvent(m_region) {};
+    VirtualQExposeEvent(const QRegion& m_region) : QExposeEvent(m_region){};
 
     // Callback setters
     inline void setQExposeEvent_Clone_Callback(QExposeEvent_Clone_Callback cb) { qexposeevent_clone_callback = cb; }
@@ -1476,7 +1476,7 @@ class VirtualQPlatformSurfaceEvent final : public QPlatformSurfaceEvent {
     mutable bool qplatformsurfaceevent_setaccepted_isbase = false;
 
   public:
-    VirtualQPlatformSurfaceEvent(QPlatformSurfaceEvent::SurfaceEventType surfaceEventType) : QPlatformSurfaceEvent(surfaceEventType) {};
+    VirtualQPlatformSurfaceEvent(QPlatformSurfaceEvent::SurfaceEventType surfaceEventType) : QPlatformSurfaceEvent(surfaceEventType){};
 
     // Callback setters
     inline void setQPlatformSurfaceEvent_Clone_Callback(QPlatformSurfaceEvent_Clone_Callback cb) { qplatformsurfaceevent_clone_callback = cb; }
@@ -1539,7 +1539,7 @@ class VirtualQResizeEvent final : public QResizeEvent {
     mutable bool qresizeevent_setaccepted_isbase = false;
 
   public:
-    VirtualQResizeEvent(const QSize& size, const QSize& oldSize) : QResizeEvent(size, oldSize) {};
+    VirtualQResizeEvent(const QSize& size, const QSize& oldSize) : QResizeEvent(size, oldSize){};
 
     // Callback setters
     inline void setQResizeEvent_Clone_Callback(QResizeEvent_Clone_Callback cb) { qresizeevent_clone_callback = cb; }
@@ -1602,7 +1602,7 @@ class VirtualQCloseEvent final : public QCloseEvent {
     mutable bool qcloseevent_setaccepted_isbase = false;
 
   public:
-    VirtualQCloseEvent() : QCloseEvent() {};
+    VirtualQCloseEvent() : QCloseEvent(){};
 
     // Callback setters
     inline void setQCloseEvent_Clone_Callback(QCloseEvent_Clone_Callback cb) { qcloseevent_clone_callback = cb; }
@@ -1665,7 +1665,7 @@ class VirtualQIconDragEvent final : public QIconDragEvent {
     mutable bool qicondragevent_setaccepted_isbase = false;
 
   public:
-    VirtualQIconDragEvent() : QIconDragEvent() {};
+    VirtualQIconDragEvent() : QIconDragEvent(){};
 
     // Callback setters
     inline void setQIconDragEvent_Clone_Callback(QIconDragEvent_Clone_Callback cb) { qicondragevent_clone_callback = cb; }
@@ -1728,7 +1728,7 @@ class VirtualQShowEvent final : public QShowEvent {
     mutable bool qshowevent_setaccepted_isbase = false;
 
   public:
-    VirtualQShowEvent() : QShowEvent() {};
+    VirtualQShowEvent() : QShowEvent(){};
 
     // Callback setters
     inline void setQShowEvent_Clone_Callback(QShowEvent_Clone_Callback cb) { qshowevent_clone_callback = cb; }
@@ -1791,7 +1791,7 @@ class VirtualQHideEvent final : public QHideEvent {
     mutable bool qhideevent_setaccepted_isbase = false;
 
   public:
-    VirtualQHideEvent() : QHideEvent() {};
+    VirtualQHideEvent() : QHideEvent(){};
 
     // Callback setters
     inline void setQHideEvent_Clone_Callback(QHideEvent_Clone_Callback cb) { qhideevent_clone_callback = cb; }
@@ -1857,9 +1857,9 @@ class VirtualQContextMenuEvent final : public QContextMenuEvent {
     mutable bool qcontextmenuevent_setaccepted_isbase = false;
 
   public:
-    VirtualQContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint& pos, const QPoint& globalPos) : QContextMenuEvent(reason, pos, globalPos) {};
-    VirtualQContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint& pos) : QContextMenuEvent(reason, pos) {};
-    VirtualQContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint& pos, const QPoint& globalPos, Qt::KeyboardModifiers modifiers) : QContextMenuEvent(reason, pos, globalPos, modifiers) {};
+    VirtualQContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint& pos, const QPoint& globalPos) : QContextMenuEvent(reason, pos, globalPos){};
+    VirtualQContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint& pos) : QContextMenuEvent(reason, pos){};
+    VirtualQContextMenuEvent(QContextMenuEvent::Reason reason, const QPoint& pos, const QPoint& globalPos, Qt::KeyboardModifiers modifiers) : QContextMenuEvent(reason, pos, globalPos, modifiers){};
 
     // Callback setters
     inline void setQContextMenuEvent_Clone_Callback(QContextMenuEvent_Clone_Callback cb) { qcontextmenuevent_clone_callback = cb; }
@@ -1941,8 +1941,8 @@ class VirtualQInputMethodEvent final : public QInputMethodEvent {
     mutable bool qinputmethodevent_setaccepted_isbase = false;
 
   public:
-    VirtualQInputMethodEvent() : QInputMethodEvent() {};
-    VirtualQInputMethodEvent(const QString& preeditText, const QList<QInputMethodEvent::Attribute>& attributes) : QInputMethodEvent(preeditText, attributes) {};
+    VirtualQInputMethodEvent() : QInputMethodEvent(){};
+    VirtualQInputMethodEvent(const QString& preeditText, const QList<QInputMethodEvent::Attribute>& attributes) : QInputMethodEvent(preeditText, attributes){};
 
     // Callback setters
     inline void setQInputMethodEvent_Clone_Callback(QInputMethodEvent_Clone_Callback cb) { qinputmethodevent_clone_callback = cb; }
@@ -2005,7 +2005,7 @@ class VirtualQInputMethodQueryEvent final : public QInputMethodQueryEvent {
     mutable bool qinputmethodqueryevent_setaccepted_isbase = false;
 
   public:
-    VirtualQInputMethodQueryEvent(Qt::InputMethodQueries queries) : QInputMethodQueryEvent(queries) {};
+    VirtualQInputMethodQueryEvent(Qt::InputMethodQueries queries) : QInputMethodQueryEvent(queries){};
 
     // Callback setters
     inline void setQInputMethodQueryEvent_Clone_Callback(QInputMethodQueryEvent_Clone_Callback cb) { qinputmethodqueryevent_clone_callback = cb; }
@@ -2068,8 +2068,8 @@ class VirtualQDropEvent final : public QDropEvent {
     mutable bool qdropevent_setaccepted_isbase = false;
 
   public:
-    VirtualQDropEvent(const QPointF& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QDropEvent(pos, actions, data, buttons, modifiers) {};
-    VirtualQDropEvent(const QPointF& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, QEvent::Type type) : QDropEvent(pos, actions, data, buttons, modifiers, type) {};
+    VirtualQDropEvent(const QPointF& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QDropEvent(pos, actions, data, buttons, modifiers){};
+    VirtualQDropEvent(const QPointF& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, QEvent::Type type) : QDropEvent(pos, actions, data, buttons, modifiers, type){};
 
     // Callback setters
     inline void setQDropEvent_Clone_Callback(QDropEvent_Clone_Callback cb) { qdropevent_clone_callback = cb; }
@@ -2132,8 +2132,8 @@ class VirtualQDragMoveEvent final : public QDragMoveEvent {
     mutable bool qdragmoveevent_setaccepted_isbase = false;
 
   public:
-    VirtualQDragMoveEvent(const QPoint& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QDragMoveEvent(pos, actions, data, buttons, modifiers) {};
-    VirtualQDragMoveEvent(const QPoint& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, QEvent::Type type) : QDragMoveEvent(pos, actions, data, buttons, modifiers, type) {};
+    VirtualQDragMoveEvent(const QPoint& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QDragMoveEvent(pos, actions, data, buttons, modifiers){};
+    VirtualQDragMoveEvent(const QPoint& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers, QEvent::Type type) : QDragMoveEvent(pos, actions, data, buttons, modifiers, type){};
 
     // Callback setters
     inline void setQDragMoveEvent_Clone_Callback(QDragMoveEvent_Clone_Callback cb) { qdragmoveevent_clone_callback = cb; }
@@ -2196,7 +2196,7 @@ class VirtualQDragEnterEvent final : public QDragEnterEvent {
     mutable bool qdragenterevent_setaccepted_isbase = false;
 
   public:
-    VirtualQDragEnterEvent(const QPoint& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QDragEnterEvent(pos, actions, data, buttons, modifiers) {};
+    VirtualQDragEnterEvent(const QPoint& pos, Qt::DropActions actions, const QMimeData* data, Qt::MouseButtons buttons, Qt::KeyboardModifiers modifiers) : QDragEnterEvent(pos, actions, data, buttons, modifiers){};
 
     // Callback setters
     inline void setQDragEnterEvent_Clone_Callback(QDragEnterEvent_Clone_Callback cb) { qdragenterevent_clone_callback = cb; }
@@ -2259,7 +2259,7 @@ class VirtualQDragLeaveEvent final : public QDragLeaveEvent {
     mutable bool qdragleaveevent_setaccepted_isbase = false;
 
   public:
-    VirtualQDragLeaveEvent() : QDragLeaveEvent() {};
+    VirtualQDragLeaveEvent() : QDragLeaveEvent(){};
 
     // Callback setters
     inline void setQDragLeaveEvent_Clone_Callback(QDragLeaveEvent_Clone_Callback cb) { qdragleaveevent_clone_callback = cb; }
@@ -2322,7 +2322,7 @@ class VirtualQHelpEvent final : public QHelpEvent {
     mutable bool qhelpevent_setaccepted_isbase = false;
 
   public:
-    VirtualQHelpEvent(QEvent::Type type, const QPoint& pos, const QPoint& globalPos) : QHelpEvent(type, pos, globalPos) {};
+    VirtualQHelpEvent(QEvent::Type type, const QPoint& pos, const QPoint& globalPos) : QHelpEvent(type, pos, globalPos){};
 
     // Callback setters
     inline void setQHelpEvent_Clone_Callback(QHelpEvent_Clone_Callback cb) { qhelpevent_clone_callback = cb; }
@@ -2385,7 +2385,7 @@ class VirtualQStatusTipEvent final : public QStatusTipEvent {
     mutable bool qstatustipevent_setaccepted_isbase = false;
 
   public:
-    VirtualQStatusTipEvent(const QString& tip) : QStatusTipEvent(tip) {};
+    VirtualQStatusTipEvent(const QString& tip) : QStatusTipEvent(tip){};
 
     // Callback setters
     inline void setQStatusTipEvent_Clone_Callback(QStatusTipEvent_Clone_Callback cb) { qstatustipevent_clone_callback = cb; }
@@ -2448,7 +2448,7 @@ class VirtualQWhatsThisClickedEvent final : public QWhatsThisClickedEvent {
     mutable bool qwhatsthisclickedevent_setaccepted_isbase = false;
 
   public:
-    VirtualQWhatsThisClickedEvent(const QString& href) : QWhatsThisClickedEvent(href) {};
+    VirtualQWhatsThisClickedEvent(const QString& href) : QWhatsThisClickedEvent(href){};
 
     // Callback setters
     inline void setQWhatsThisClickedEvent_Clone_Callback(QWhatsThisClickedEvent_Clone_Callback cb) { qwhatsthisclickedevent_clone_callback = cb; }
@@ -2511,8 +2511,8 @@ class VirtualQActionEvent final : public QActionEvent {
     mutable bool qactionevent_setaccepted_isbase = false;
 
   public:
-    VirtualQActionEvent(int type, QAction* action) : QActionEvent(type, action) {};
-    VirtualQActionEvent(int type, QAction* action, QAction* before) : QActionEvent(type, action, before) {};
+    VirtualQActionEvent(int type, QAction* action) : QActionEvent(type, action){};
+    VirtualQActionEvent(int type, QAction* action, QAction* before) : QActionEvent(type, action, before){};
 
     // Callback setters
     inline void setQActionEvent_Clone_Callback(QActionEvent_Clone_Callback cb) { qactionevent_clone_callback = cb; }
@@ -2575,8 +2575,8 @@ class VirtualQFileOpenEvent final : public QFileOpenEvent {
     mutable bool qfileopenevent_setaccepted_isbase = false;
 
   public:
-    VirtualQFileOpenEvent(const QString& file) : QFileOpenEvent(file) {};
-    VirtualQFileOpenEvent(const QUrl& url) : QFileOpenEvent(url) {};
+    VirtualQFileOpenEvent(const QString& file) : QFileOpenEvent(file){};
+    VirtualQFileOpenEvent(const QUrl& url) : QFileOpenEvent(url){};
 
     // Callback setters
     inline void setQFileOpenEvent_Clone_Callback(QFileOpenEvent_Clone_Callback cb) { qfileopenevent_clone_callback = cb; }
@@ -2639,7 +2639,7 @@ class VirtualQToolBarChangeEvent final : public QToolBarChangeEvent {
     mutable bool qtoolbarchangeevent_setaccepted_isbase = false;
 
   public:
-    VirtualQToolBarChangeEvent(bool t) : QToolBarChangeEvent(t) {};
+    VirtualQToolBarChangeEvent(bool t) : QToolBarChangeEvent(t){};
 
     // Callback setters
     inline void setQToolBarChangeEvent_Clone_Callback(QToolBarChangeEvent_Clone_Callback cb) { qtoolbarchangeevent_clone_callback = cb; }
@@ -2702,11 +2702,8 @@ class VirtualQShortcutEvent final : public QShortcutEvent {
     mutable bool qshortcutevent_setaccepted_isbase = false;
 
   public:
-    VirtualQShortcutEvent(const QKeySequence& key, int id) : QShortcutEvent(key, id) {};
-    VirtualQShortcutEvent(const QKeySequence& key) : QShortcutEvent(key) {};
-    VirtualQShortcutEvent(const QKeySequence& key, int id, bool ambiguous) : QShortcutEvent(key, id, ambiguous) {};
-    VirtualQShortcutEvent(const QKeySequence& key, const QShortcut* shortcut) : QShortcutEvent(key, shortcut) {};
-    VirtualQShortcutEvent(const QKeySequence& key, const QShortcut* shortcut, bool ambiguous) : QShortcutEvent(key, shortcut, ambiguous) {};
+    VirtualQShortcutEvent(const QKeySequence& key, int id) : QShortcutEvent(key, id){};
+    VirtualQShortcutEvent(const QKeySequence& key, int id, bool ambiguous) : QShortcutEvent(key, id, ambiguous){};
 
     // Callback setters
     inline void setQShortcutEvent_Clone_Callback(QShortcutEvent_Clone_Callback cb) { qshortcutevent_clone_callback = cb; }
@@ -2769,8 +2766,8 @@ class VirtualQWindowStateChangeEvent final : public QWindowStateChangeEvent {
     mutable bool qwindowstatechangeevent_setaccepted_isbase = false;
 
   public:
-    VirtualQWindowStateChangeEvent(Qt::WindowStates oldState) : QWindowStateChangeEvent(oldState) {};
-    VirtualQWindowStateChangeEvent(Qt::WindowStates oldState, bool isOverride) : QWindowStateChangeEvent(oldState, isOverride) {};
+    VirtualQWindowStateChangeEvent(Qt::WindowStates oldState) : QWindowStateChangeEvent(oldState){};
+    VirtualQWindowStateChangeEvent(Qt::WindowStates oldState, bool isOverride) : QWindowStateChangeEvent(oldState, isOverride){};
 
     // Callback setters
     inline void setQWindowStateChangeEvent_Clone_Callback(QWindowStateChangeEvent_Clone_Callback cb) { qwindowstatechangeevent_clone_callback = cb; }
@@ -2845,12 +2842,12 @@ class VirtualQTouchEvent final : public QTouchEvent {
     mutable bool qtouchevent_setaccepted_isbase = false;
 
   public:
-    VirtualQTouchEvent(QEvent::Type eventType) : QTouchEvent(eventType) {};
-    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers, QEventPoint::States touchPointStates) : QTouchEvent(eventType, device, modifiers, touchPointStates) {};
-    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device) : QTouchEvent(eventType, device) {};
-    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers) : QTouchEvent(eventType, device, modifiers) {};
-    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers, const QList<QEventPoint>& touchPoints) : QTouchEvent(eventType, device, modifiers, touchPoints) {};
-    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers, QEventPoint::States touchPointStates, const QList<QEventPoint>& touchPoints) : QTouchEvent(eventType, device, modifiers, touchPointStates, touchPoints) {};
+    VirtualQTouchEvent(QEvent::Type eventType) : QTouchEvent(eventType){};
+    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers, QEventPoint::States touchPointStates) : QTouchEvent(eventType, device, modifiers, touchPointStates){};
+    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device) : QTouchEvent(eventType, device){};
+    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers) : QTouchEvent(eventType, device, modifiers){};
+    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers, const QList<QEventPoint>& touchPoints) : QTouchEvent(eventType, device, modifiers, touchPoints){};
+    VirtualQTouchEvent(QEvent::Type eventType, const QPointingDevice* device, Qt::KeyboardModifiers modifiers, QEventPoint::States touchPointStates, const QList<QEventPoint>& touchPoints) : QTouchEvent(eventType, device, modifiers, touchPointStates, touchPoints){};
 
     // Callback setters
     inline void setQTouchEvent_Clone_Callback(QTouchEvent_Clone_Callback cb) { qtouchevent_clone_callback = cb; }
@@ -2980,7 +2977,7 @@ class VirtualQScrollPrepareEvent final : public QScrollPrepareEvent {
     mutable bool qscrollprepareevent_setaccepted_isbase = false;
 
   public:
-    VirtualQScrollPrepareEvent(const QPointF& startPos) : QScrollPrepareEvent(startPos) {};
+    VirtualQScrollPrepareEvent(const QPointF& startPos) : QScrollPrepareEvent(startPos){};
 
     // Callback setters
     inline void setQScrollPrepareEvent_Clone_Callback(QScrollPrepareEvent_Clone_Callback cb) { qscrollprepareevent_clone_callback = cb; }
@@ -3043,7 +3040,7 @@ class VirtualQScrollEvent final : public QScrollEvent {
     mutable bool qscrollevent_setaccepted_isbase = false;
 
   public:
-    VirtualQScrollEvent(const QPointF& contentPos, const QPointF& overshoot, QScrollEvent::ScrollState scrollState) : QScrollEvent(contentPos, overshoot, scrollState) {};
+    VirtualQScrollEvent(const QPointF& contentPos, const QPointF& overshoot, QScrollEvent::ScrollState scrollState) : QScrollEvent(contentPos, overshoot, scrollState){};
 
     // Callback setters
     inline void setQScrollEvent_Clone_Callback(QScrollEvent_Clone_Callback cb) { qscrollevent_clone_callback = cb; }
@@ -3106,7 +3103,7 @@ class VirtualQScreenOrientationChangeEvent final : public QScreenOrientationChan
     mutable bool qscreenorientationchangeevent_setaccepted_isbase = false;
 
   public:
-    VirtualQScreenOrientationChangeEvent(QScreen* screen, Qt::ScreenOrientation orientation) : QScreenOrientationChangeEvent(screen, orientation) {};
+    VirtualQScreenOrientationChangeEvent(QScreen* screen, Qt::ScreenOrientation orientation) : QScreenOrientationChangeEvent(screen, orientation){};
 
     // Callback setters
     inline void setQScreenOrientationChangeEvent_Clone_Callback(QScreenOrientationChangeEvent_Clone_Callback cb) { qscreenorientationchangeevent_clone_callback = cb; }
@@ -3169,7 +3166,7 @@ class VirtualQApplicationStateChangeEvent final : public QApplicationStateChange
     mutable bool qapplicationstatechangeevent_setaccepted_isbase = false;
 
   public:
-    VirtualQApplicationStateChangeEvent(Qt::ApplicationState state) : QApplicationStateChangeEvent(state) {};
+    VirtualQApplicationStateChangeEvent(Qt::ApplicationState state) : QApplicationStateChangeEvent(state){};
 
     // Callback setters
     inline void setQApplicationStateChangeEvent_Clone_Callback(QApplicationStateChangeEvent_Clone_Callback cb) { qapplicationstatechangeevent_clone_callback = cb; }
@@ -3208,69 +3205,6 @@ class VirtualQApplicationStateChangeEvent final : public QApplicationStateChange
             return;
         }
         QApplicationStateChangeEvent::setAccepted(accepted);
-    }
-};
-
-// This class is a subclass of QChildWindowEvent so that we can call protected methods
-class VirtualQChildWindowEvent final : public QChildWindowEvent {
-
-  public:
-    // Virtual class boolean flag
-    bool isVirtualQChildWindowEvent = true;
-
-    // Virtual class public types (including callbacks)
-    using QChildWindowEvent_Clone_Callback = QChildWindowEvent* (*)();
-    using QChildWindowEvent_SetAccepted_Callback = void (*)(QChildWindowEvent*, bool);
-
-  protected:
-    // Instance callback storage
-    QChildWindowEvent_Clone_Callback qchildwindowevent_clone_callback = nullptr;
-    QChildWindowEvent_SetAccepted_Callback qchildwindowevent_setaccepted_callback = nullptr;
-
-    // Instance base flags
-    mutable bool qchildwindowevent_clone_isbase = false;
-    mutable bool qchildwindowevent_setaccepted_isbase = false;
-
-  public:
-    VirtualQChildWindowEvent(QEvent::Type type, QWindow* childWindow) : QChildWindowEvent(type, childWindow) {};
-
-    // Callback setters
-    inline void setQChildWindowEvent_Clone_Callback(QChildWindowEvent_Clone_Callback cb) { qchildwindowevent_clone_callback = cb; }
-    inline void setQChildWindowEvent_SetAccepted_Callback(QChildWindowEvent_SetAccepted_Callback cb) { qchildwindowevent_setaccepted_callback = cb; }
-
-    // Base flag setters
-    inline void setQChildWindowEvent_Clone_IsBase(bool value) const { qchildwindowevent_clone_isbase = value; }
-    inline void setQChildWindowEvent_SetAccepted_IsBase(bool value) const { qchildwindowevent_setaccepted_isbase = value; }
-
-    // Virtual method for C ABI access and custom callback
-    virtual QChildWindowEvent* clone() const override {
-        if (qchildwindowevent_clone_isbase) {
-            qchildwindowevent_clone_isbase = false;
-            return QChildWindowEvent::clone();
-        }
-        auto clone_cb = qchildwindowevent_clone_callback;
-        if (clone_cb) {
-            QChildWindowEvent* callback_ret = clone_cb();
-            return callback_ret;
-        }
-        return QChildWindowEvent::clone();
-    }
-
-    // Virtual method for C ABI access and custom callback
-    virtual void setAccepted(bool accepted) override {
-        if (qchildwindowevent_setaccepted_isbase) {
-            qchildwindowevent_setaccepted_isbase = false;
-            QChildWindowEvent::setAccepted(accepted);
-            return;
-        }
-        auto setaccepted_cb = qchildwindowevent_setaccepted_callback;
-        if (setaccepted_cb) {
-            bool cbval1 = accepted;
-
-            setaccepted_cb(this, cbval1);
-            return;
-        }
-        QChildWindowEvent::setAccepted(accepted);
     }
 };
 

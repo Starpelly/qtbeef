@@ -249,9 +249,6 @@ int QSlider_SuperReceivers(const QSlider* self, const char* signal);
 bool QSlider_IsSignalConnected(const QSlider* self, const QMetaMethod* signal);
 void QSlider_OnIsSignalConnected(const QSlider* self, intptr_t slot);
 bool QSlider_SuperIsSignalConnected(const QSlider* self, const QMetaMethod* signal);
-double QSlider_GetDecodedMetricF(const QSlider* self, int metricA, int metricB);
-void QSlider_OnGetDecodedMetricF(const QSlider* self, intptr_t slot);
-double QSlider_SuperGetDecodedMetricF(const QSlider* self, int metricA, int metricB);
 void QSlider_Delete(QSlider* self);
 
 #ifdef __cplusplus

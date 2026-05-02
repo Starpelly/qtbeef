@@ -69,7 +69,7 @@ class VirtualQTextFrame final : public QTextFrame {
     mutable bool qtextframe_issignalconnected_isbase = false;
 
   public:
-    VirtualQTextFrame(QTextDocument* doc) : QTextFrame(doc) {};
+    VirtualQTextFrame(QTextDocument* doc) : QTextFrame(doc){};
 
     // Callback setters
     inline void setQTextFrame_MetaObject_Callback(QTextFrame_MetaObject_Callback cb) { qtextframe_metaobject_callback = cb; }

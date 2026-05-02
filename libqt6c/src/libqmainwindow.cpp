@@ -2078,35 +2078,6 @@ void QMainWindow_OnIsSignalConnected(const QMainWindow* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QMainWindow_GetDecodedMetricF(const QMainWindow* self, int metricA, int metricB) {
-    auto* vqmainwindow = const_cast<VirtualQMainWindow*>(dynamic_cast<const VirtualQMainWindow*>(self));
-    if (vqmainwindow && vqmainwindow->isVirtualQMainWindow) {
-        return vqmainwindow->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQMainWindow*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QMainWindow_SuperGetDecodedMetricF(const QMainWindow* self, int metricA, int metricB) {
-    auto* vqmainwindow = const_cast<VirtualQMainWindow*>(dynamic_cast<const VirtualQMainWindow*>(self));
-    if (vqmainwindow && vqmainwindow->isVirtualQMainWindow) {
-        vqmainwindow->setQMainWindow_GetDecodedMetricF_IsBase(true);
-        return vqmainwindow->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQMainWindow*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QMainWindow_OnGetDecodedMetricF(const QMainWindow* self, intptr_t slot) {
-    auto* vqmainwindow = const_cast<VirtualQMainWindow*>(dynamic_cast<const VirtualQMainWindow*>(self));
-    if (vqmainwindow && vqmainwindow->isVirtualQMainWindow) {
-        vqmainwindow->setQMainWindow_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQMainWindow::QMainWindow_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QMainWindow_Delete(QMainWindow* self) {
     delete self;
 }

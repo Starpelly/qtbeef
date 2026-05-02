@@ -277,9 +277,6 @@ int QAbstractScrollArea_SuperReceivers(const QAbstractScrollArea* self, const ch
 bool QAbstractScrollArea_IsSignalConnected(const QAbstractScrollArea* self, const QMetaMethod* signal);
 void QAbstractScrollArea_OnIsSignalConnected(const QAbstractScrollArea* self, intptr_t slot);
 bool QAbstractScrollArea_SuperIsSignalConnected(const QAbstractScrollArea* self, const QMetaMethod* signal);
-double QAbstractScrollArea_GetDecodedMetricF(const QAbstractScrollArea* self, int metricA, int metricB);
-void QAbstractScrollArea_OnGetDecodedMetricF(const QAbstractScrollArea* self, intptr_t slot);
-double QAbstractScrollArea_SuperGetDecodedMetricF(const QAbstractScrollArea* self, int metricA, int metricB);
 void QAbstractScrollArea_Delete(QAbstractScrollArea* self);
 
 #ifdef __cplusplus

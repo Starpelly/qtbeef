@@ -156,80 +156,20 @@ bool QIcon_HasThemeIcon(const libqt_string name) {
     return QIcon::hasThemeIcon(name_QString);
 }
 
-QIcon* QIcon_FromTheme3(int icon) {
-    return new QIcon(QIcon::fromTheme(static_cast<QIcon::ThemeIcon>(icon)));
+QStringList QIcon_ThemeSearchPaths() {
+    return QIcon::themeSearchPaths();
 }
 
-QIcon* QIcon_FromTheme4(int icon, const QIcon* fallback) {
-    return new QIcon(QIcon::fromTheme(static_cast<QIcon::ThemeIcon>(icon), *fallback));
+void QIcon_SetThemeSearchPaths(const QStringList* searchpath) {
+    QIcon::setThemeSearchPaths(*searchpath);
 }
 
-bool QIcon_HasThemeIcon2(int icon) {
-    return QIcon::hasThemeIcon(static_cast<QIcon::ThemeIcon>(icon));
+QStringList QIcon_FallbackSearchPaths() {
+    return QIcon::fallbackSearchPaths();
 }
 
-libqt_list /* of libqt_string */ QIcon_ThemeSearchPaths() {
-    QList<QString> _ret = QIcon::themeSearchPaths();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
-}
-
-void QIcon_SetThemeSearchPaths(const libqt_list /* of libqt_string */ searchpath) {
-    QList<QString> searchpath_QList;
-    searchpath_QList.reserve(searchpath.len);
-    libqt_string* searchpath_arr = static_cast<libqt_string*>(searchpath.data.ptr);
-    for (size_t i = 0; i < searchpath.len; ++i) {
-        QString searchpath_arr_i_QString = QString::fromUtf8(searchpath_arr[i].data, searchpath_arr[i].len);
-        searchpath_QList.push_back(searchpath_arr_i_QString);
-    }
-    QIcon::setThemeSearchPaths(searchpath_QList);
-}
-
-libqt_list /* of libqt_string */ QIcon_FallbackSearchPaths() {
-    QList<QString> _ret = QIcon::fallbackSearchPaths();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
-}
-
-void QIcon_SetFallbackSearchPaths(const libqt_list /* of libqt_string */ paths) {
-    QList<QString> paths_QList;
-    paths_QList.reserve(paths.len);
-    libqt_string* paths_arr = static_cast<libqt_string*>(paths.data.ptr);
-    for (size_t i = 0; i < paths.len; ++i) {
-        QString paths_arr_i_QString = QString::fromUtf8(paths_arr[i].data, paths_arr[i].len);
-        paths_QList.push_back(paths_arr_i_QString);
-    }
-    QIcon::setFallbackSearchPaths(paths_QList);
+void QIcon_SetFallbackSearchPaths(const QStringList* paths) {
+    QIcon::setFallbackSearchPaths(*paths);
 }
 
 libqt_string QIcon_ThemeName() {

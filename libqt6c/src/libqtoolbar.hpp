@@ -277,9 +277,6 @@ int QToolBar_SuperReceivers(const QToolBar* self, const char* signal);
 bool QToolBar_IsSignalConnected(const QToolBar* self, const QMetaMethod* signal);
 void QToolBar_OnIsSignalConnected(const QToolBar* self, intptr_t slot);
 bool QToolBar_SuperIsSignalConnected(const QToolBar* self, const QMetaMethod* signal);
-double QToolBar_GetDecodedMetricF(const QToolBar* self, int metricA, int metricB);
-void QToolBar_OnGetDecodedMetricF(const QToolBar* self, intptr_t slot);
-double QToolBar_SuperGetDecodedMetricF(const QToolBar* self, int metricA, int metricB);
 void QToolBar_Delete(QToolBar* self);
 
 #ifdef __cplusplus

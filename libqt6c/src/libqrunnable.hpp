@@ -20,6 +20,7 @@ typedef struct QRunnable QRunnable;
 
 QRunnable* QRunnable_new();
 void QRunnable_Run(QRunnable* self);
+QRunnable* QRunnable_Create(intptr_t functionToRun);
 bool QRunnable_AutoDelete(const QRunnable* self);
 void QRunnable_SetAutoDelete(QRunnable* self, bool autoDelete);
 void QRunnable_OnRun(QRunnable* self, intptr_t slot);

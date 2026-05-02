@@ -84,7 +84,6 @@ class VirtualQMdiArea final : public QMdiArea {
     using QMdiArea_SenderSignalIndex_Callback = int (*)();
     using QMdiArea_Receivers_Callback = int (*)(const QMdiArea*, const char*);
     using QMdiArea_IsSignalConnected_Callback = bool (*)(const QMdiArea*, QMetaMethod*);
-    using QMdiArea_GetDecodedMetricF_Callback = double (*)(const QMdiArea*, int, int);
 
   protected:
     // Instance callback storage
@@ -155,7 +154,6 @@ class VirtualQMdiArea final : public QMdiArea {
     QMdiArea_SenderSignalIndex_Callback qmdiarea_sendersignalindex_callback = nullptr;
     QMdiArea_Receivers_Callback qmdiarea_receivers_callback = nullptr;
     QMdiArea_IsSignalConnected_Callback qmdiarea_issignalconnected_callback = nullptr;
-    QMdiArea_GetDecodedMetricF_Callback qmdiarea_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qmdiarea_metaobject_isbase = false;
@@ -225,11 +223,10 @@ class VirtualQMdiArea final : public QMdiArea {
     mutable bool qmdiarea_sendersignalindex_isbase = false;
     mutable bool qmdiarea_receivers_isbase = false;
     mutable bool qmdiarea_issignalconnected_isbase = false;
-    mutable bool qmdiarea_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQMdiArea(QWidget* parent) : QMdiArea(parent) {};
-    VirtualQMdiArea() : QMdiArea() {};
+    VirtualQMdiArea(QWidget* parent) : QMdiArea(parent){};
+    VirtualQMdiArea() : QMdiArea(){};
 
     // Callback setters
     inline void setQMdiArea_MetaObject_Callback(QMdiArea_MetaObject_Callback cb) { qmdiarea_metaobject_callback = cb; }
@@ -299,7 +296,6 @@ class VirtualQMdiArea final : public QMdiArea {
     inline void setQMdiArea_SenderSignalIndex_Callback(QMdiArea_SenderSignalIndex_Callback cb) { qmdiarea_sendersignalindex_callback = cb; }
     inline void setQMdiArea_Receivers_Callback(QMdiArea_Receivers_Callback cb) { qmdiarea_receivers_callback = cb; }
     inline void setQMdiArea_IsSignalConnected_Callback(QMdiArea_IsSignalConnected_Callback cb) { qmdiarea_issignalconnected_callback = cb; }
-    inline void setQMdiArea_GetDecodedMetricF_Callback(QMdiArea_GetDecodedMetricF_Callback cb) { qmdiarea_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQMdiArea_MetaObject_IsBase(bool value) const { qmdiarea_metaobject_isbase = value; }
@@ -369,7 +365,6 @@ class VirtualQMdiArea final : public QMdiArea {
     inline void setQMdiArea_SenderSignalIndex_IsBase(bool value) const { qmdiarea_sendersignalindex_isbase = value; }
     inline void setQMdiArea_Receivers_IsBase(bool value) const { qmdiarea_receivers_isbase = value; }
     inline void setQMdiArea_IsSignalConnected_IsBase(bool value) const { qmdiarea_issignalconnected_isbase = value; }
-    inline void setQMdiArea_GetDecodedMetricF_IsBase(bool value) const { qmdiarea_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1474,23 +1469,6 @@ class VirtualQMdiArea final : public QMdiArea {
         return QMdiArea::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qmdiarea_getdecodedmetricf_isbase) {
-            qmdiarea_getdecodedmetricf_isbase = false;
-            return QMdiArea::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qmdiarea_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QMdiArea::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QMdiArea_SetupViewport(QMdiArea* self, QWidget* viewport);
     friend void QMdiArea_SuperSetupViewport(QMdiArea* self, QWidget* viewport);
@@ -1604,8 +1582,6 @@ class VirtualQMdiArea final : public QMdiArea {
     friend int QMdiArea_SuperReceivers(const QMdiArea* self, const char* signal);
     friend bool QMdiArea_IsSignalConnected(const QMdiArea* self, const QMetaMethod* signal);
     friend bool QMdiArea_SuperIsSignalConnected(const QMdiArea* self, const QMetaMethod* signal);
-    friend double QMdiArea_GetDecodedMetricF(const QMdiArea* self, int metricA, int metricB);
-    friend double QMdiArea_SuperGetDecodedMetricF(const QMdiArea* self, int metricA, int metricB);
 };
 
 #endif

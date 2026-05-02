@@ -65,8 +65,8 @@ void* QTextBrowser_Metacast(QTextBrowser* self, const char* param1);
 int QTextBrowser_Metacall(QTextBrowser* self, int param1, int param2, void** param3);
 QUrl* QTextBrowser_Source(const QTextBrowser* self);
 int QTextBrowser_SourceType(const QTextBrowser* self);
-libqt_list /* of libqt_string */ QTextBrowser_SearchPaths(const QTextBrowser* self);
-void QTextBrowser_SetSearchPaths(QTextBrowser* self, const libqt_list /* of libqt_string */ paths);
+QStringList QTextBrowser_SearchPaths(const QTextBrowser* self);
+void QTextBrowser_SetSearchPaths(QTextBrowser* self, const QStringList* paths);
 QVariant* QTextBrowser_LoadResource(QTextBrowser* self, int type, const QUrl* name);
 bool QTextBrowser_IsBackwardAvailable(const QTextBrowser* self);
 bool QTextBrowser_IsForwardAvailable(const QTextBrowser* self);
@@ -323,9 +323,6 @@ int QTextBrowser_SuperReceivers(const QTextBrowser* self, const char* signal);
 bool QTextBrowser_IsSignalConnected(const QTextBrowser* self, const QMetaMethod* signal);
 void QTextBrowser_OnIsSignalConnected(const QTextBrowser* self, intptr_t slot);
 bool QTextBrowser_SuperIsSignalConnected(const QTextBrowser* self, const QMetaMethod* signal);
-double QTextBrowser_GetDecodedMetricF(const QTextBrowser* self, int metricA, int metricB);
-void QTextBrowser_OnGetDecodedMetricF(const QTextBrowser* self, intptr_t slot);
-double QTextBrowser_SuperGetDecodedMetricF(const QTextBrowser* self, int metricA, int metricB);
 void QTextBrowser_Delete(QTextBrowser* self);
 
 #ifdef __cplusplus

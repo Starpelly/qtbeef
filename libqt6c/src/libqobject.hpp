@@ -48,11 +48,10 @@ bool QObject_IsQuickItemType(const QObject* self);
 bool QObject_SignalsBlocked(const QObject* self);
 bool QObject_BlockSignals(QObject* self, bool b);
 QThread* QObject_Thread(const QObject* self);
-bool QObject_MoveToThread(QObject* self, QThread* thread);
+void QObject_MoveToThread(QObject* self, QThread* thread);
 int QObject_StartTimer(QObject* self, int interval);
 int QObject_StartTimer2(QObject* self, int64_t time);
 void QObject_KillTimer(QObject* self, int id);
-void QObject_KillTimer2(QObject* self, int id);
 libqt_list /* of QObject* */ QObject_Children(const QObject* self);
 void QObject_SetParent(QObject* self, QObject* parent);
 void QObject_InstallEventFilter(QObject* self, QObject* filterObj);
@@ -134,7 +133,6 @@ QSignalBlocker* QSignalBlocker_new(QObject* o);
 QSignalBlocker* QSignalBlocker_new2(QObject* o);
 void QSignalBlocker_Reblock(QSignalBlocker* self);
 void QSignalBlocker_Unblock(QSignalBlocker* self);
-void QSignalBlocker_Dismiss(QSignalBlocker* self);
 void QSignalBlocker_Delete(QSignalBlocker* self);
 
 #ifdef __cplusplus

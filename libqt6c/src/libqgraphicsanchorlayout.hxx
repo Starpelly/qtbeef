@@ -63,8 +63,8 @@ class VirtualQGraphicsAnchorLayout final : public QGraphicsAnchorLayout {
     mutable bool qgraphicsanchorlayout_setownedbylayout_isbase = false;
 
   public:
-    VirtualQGraphicsAnchorLayout() : QGraphicsAnchorLayout() {};
-    VirtualQGraphicsAnchorLayout(QGraphicsLayoutItem* parent) : QGraphicsAnchorLayout(parent) {};
+    VirtualQGraphicsAnchorLayout() : QGraphicsAnchorLayout(){};
+    VirtualQGraphicsAnchorLayout(QGraphicsLayoutItem* parent) : QGraphicsAnchorLayout(parent){};
 
     // Callback setters
     inline void setQGraphicsAnchorLayout_RemoveAt_Callback(QGraphicsAnchorLayout_RemoveAt_Callback cb) { qgraphicsanchorlayout_removeat_callback = cb; }

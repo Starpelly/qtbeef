@@ -86,7 +86,6 @@ class VirtualQDateTimeEdit final : public QDateTimeEdit {
     using QDateTimeEdit_SenderSignalIndex_Callback = int (*)();
     using QDateTimeEdit_Receivers_Callback = int (*)(const QDateTimeEdit*, const char*);
     using QDateTimeEdit_IsSignalConnected_Callback = bool (*)(const QDateTimeEdit*, QMetaMethod*);
-    using QDateTimeEdit_GetDecodedMetricF_Callback = double (*)(const QDateTimeEdit*, int, int);
 
   protected:
     // Instance callback storage
@@ -159,7 +158,6 @@ class VirtualQDateTimeEdit final : public QDateTimeEdit {
     QDateTimeEdit_SenderSignalIndex_Callback qdatetimeedit_sendersignalindex_callback = nullptr;
     QDateTimeEdit_Receivers_Callback qdatetimeedit_receivers_callback = nullptr;
     QDateTimeEdit_IsSignalConnected_Callback qdatetimeedit_issignalconnected_callback = nullptr;
-    QDateTimeEdit_GetDecodedMetricF_Callback qdatetimeedit_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qdatetimeedit_metaobject_isbase = false;
@@ -231,17 +229,16 @@ class VirtualQDateTimeEdit final : public QDateTimeEdit {
     mutable bool qdatetimeedit_sendersignalindex_isbase = false;
     mutable bool qdatetimeedit_receivers_isbase = false;
     mutable bool qdatetimeedit_issignalconnected_isbase = false;
-    mutable bool qdatetimeedit_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQDateTimeEdit(QWidget* parent) : QDateTimeEdit(parent) {};
-    VirtualQDateTimeEdit() : QDateTimeEdit() {};
-    VirtualQDateTimeEdit(const QDateTime& dt) : QDateTimeEdit(dt) {};
-    VirtualQDateTimeEdit(QDate d) : QDateTimeEdit(d) {};
-    VirtualQDateTimeEdit(QTime t) : QDateTimeEdit(t) {};
-    VirtualQDateTimeEdit(const QDateTime& dt, QWidget* parent) : QDateTimeEdit(dt, parent) {};
-    VirtualQDateTimeEdit(QDate d, QWidget* parent) : QDateTimeEdit(d, parent) {};
-    VirtualQDateTimeEdit(QTime t, QWidget* parent) : QDateTimeEdit(t, parent) {};
+    VirtualQDateTimeEdit(QWidget* parent) : QDateTimeEdit(parent){};
+    VirtualQDateTimeEdit() : QDateTimeEdit(){};
+    VirtualQDateTimeEdit(const QDateTime& dt) : QDateTimeEdit(dt){};
+    VirtualQDateTimeEdit(QDate d) : QDateTimeEdit(d){};
+    VirtualQDateTimeEdit(QTime t) : QDateTimeEdit(t){};
+    VirtualQDateTimeEdit(const QDateTime& dt, QWidget* parent) : QDateTimeEdit(dt, parent){};
+    VirtualQDateTimeEdit(QDate d, QWidget* parent) : QDateTimeEdit(d, parent){};
+    VirtualQDateTimeEdit(QTime t, QWidget* parent) : QDateTimeEdit(t, parent){};
 
     // Callback setters
     inline void setQDateTimeEdit_MetaObject_Callback(QDateTimeEdit_MetaObject_Callback cb) { qdatetimeedit_metaobject_callback = cb; }
@@ -313,7 +310,6 @@ class VirtualQDateTimeEdit final : public QDateTimeEdit {
     inline void setQDateTimeEdit_SenderSignalIndex_Callback(QDateTimeEdit_SenderSignalIndex_Callback cb) { qdatetimeedit_sendersignalindex_callback = cb; }
     inline void setQDateTimeEdit_Receivers_Callback(QDateTimeEdit_Receivers_Callback cb) { qdatetimeedit_receivers_callback = cb; }
     inline void setQDateTimeEdit_IsSignalConnected_Callback(QDateTimeEdit_IsSignalConnected_Callback cb) { qdatetimeedit_issignalconnected_callback = cb; }
-    inline void setQDateTimeEdit_GetDecodedMetricF_Callback(QDateTimeEdit_GetDecodedMetricF_Callback cb) { qdatetimeedit_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQDateTimeEdit_MetaObject_IsBase(bool value) const { qdatetimeedit_metaobject_isbase = value; }
@@ -385,7 +381,6 @@ class VirtualQDateTimeEdit final : public QDateTimeEdit {
     inline void setQDateTimeEdit_SenderSignalIndex_IsBase(bool value) const { qdatetimeedit_sendersignalindex_isbase = value; }
     inline void setQDateTimeEdit_Receivers_IsBase(bool value) const { qdatetimeedit_receivers_isbase = value; }
     inline void setQDateTimeEdit_IsSignalConnected_IsBase(bool value) const { qdatetimeedit_issignalconnected_isbase = value; }
-    inline void setQDateTimeEdit_GetDecodedMetricF_IsBase(bool value) const { qdatetimeedit_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1544,23 +1539,6 @@ class VirtualQDateTimeEdit final : public QDateTimeEdit {
         return QDateTimeEdit::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qdatetimeedit_getdecodedmetricf_isbase) {
-            qdatetimeedit_getdecodedmetricf_isbase = false;
-            return QDateTimeEdit::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qdatetimeedit_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QDateTimeEdit::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QDateTimeEdit_KeyPressEvent(QDateTimeEdit* self, QKeyEvent* event);
     friend void QDateTimeEdit_SuperKeyPressEvent(QDateTimeEdit* self, QKeyEvent* event);
@@ -1670,8 +1648,6 @@ class VirtualQDateTimeEdit final : public QDateTimeEdit {
     friend int QDateTimeEdit_SuperReceivers(const QDateTimeEdit* self, const char* signal);
     friend bool QDateTimeEdit_IsSignalConnected(const QDateTimeEdit* self, const QMetaMethod* signal);
     friend bool QDateTimeEdit_SuperIsSignalConnected(const QDateTimeEdit* self, const QMetaMethod* signal);
-    friend double QDateTimeEdit_GetDecodedMetricF(const QDateTimeEdit* self, int metricA, int metricB);
-    friend double QDateTimeEdit_SuperGetDecodedMetricF(const QDateTimeEdit* self, int metricA, int metricB);
 };
 
 // This class is a subclass of QTimeEdit so that we can call protected methods
@@ -1751,7 +1727,6 @@ class VirtualQTimeEdit final : public QTimeEdit {
     using QTimeEdit_SenderSignalIndex_Callback = int (*)();
     using QTimeEdit_Receivers_Callback = int (*)(const QTimeEdit*, const char*);
     using QTimeEdit_IsSignalConnected_Callback = bool (*)(const QTimeEdit*, QMetaMethod*);
-    using QTimeEdit_GetDecodedMetricF_Callback = double (*)(const QTimeEdit*, int, int);
 
   protected:
     // Instance callback storage
@@ -1824,7 +1799,6 @@ class VirtualQTimeEdit final : public QTimeEdit {
     QTimeEdit_SenderSignalIndex_Callback qtimeedit_sendersignalindex_callback = nullptr;
     QTimeEdit_Receivers_Callback qtimeedit_receivers_callback = nullptr;
     QTimeEdit_IsSignalConnected_Callback qtimeedit_issignalconnected_callback = nullptr;
-    QTimeEdit_GetDecodedMetricF_Callback qtimeedit_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qtimeedit_metaobject_isbase = false;
@@ -1896,13 +1870,12 @@ class VirtualQTimeEdit final : public QTimeEdit {
     mutable bool qtimeedit_sendersignalindex_isbase = false;
     mutable bool qtimeedit_receivers_isbase = false;
     mutable bool qtimeedit_issignalconnected_isbase = false;
-    mutable bool qtimeedit_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQTimeEdit(QWidget* parent) : QTimeEdit(parent) {};
-    VirtualQTimeEdit() : QTimeEdit() {};
-    VirtualQTimeEdit(QTime time) : QTimeEdit(time) {};
-    VirtualQTimeEdit(QTime time, QWidget* parent) : QTimeEdit(time, parent) {};
+    VirtualQTimeEdit(QWidget* parent) : QTimeEdit(parent){};
+    VirtualQTimeEdit() : QTimeEdit(){};
+    VirtualQTimeEdit(QTime time) : QTimeEdit(time){};
+    VirtualQTimeEdit(QTime time, QWidget* parent) : QTimeEdit(time, parent){};
 
     // Callback setters
     inline void setQTimeEdit_MetaObject_Callback(QTimeEdit_MetaObject_Callback cb) { qtimeedit_metaobject_callback = cb; }
@@ -1974,7 +1947,6 @@ class VirtualQTimeEdit final : public QTimeEdit {
     inline void setQTimeEdit_SenderSignalIndex_Callback(QTimeEdit_SenderSignalIndex_Callback cb) { qtimeedit_sendersignalindex_callback = cb; }
     inline void setQTimeEdit_Receivers_Callback(QTimeEdit_Receivers_Callback cb) { qtimeedit_receivers_callback = cb; }
     inline void setQTimeEdit_IsSignalConnected_Callback(QTimeEdit_IsSignalConnected_Callback cb) { qtimeedit_issignalconnected_callback = cb; }
-    inline void setQTimeEdit_GetDecodedMetricF_Callback(QTimeEdit_GetDecodedMetricF_Callback cb) { qtimeedit_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQTimeEdit_MetaObject_IsBase(bool value) const { qtimeedit_metaobject_isbase = value; }
@@ -2046,7 +2018,6 @@ class VirtualQTimeEdit final : public QTimeEdit {
     inline void setQTimeEdit_SenderSignalIndex_IsBase(bool value) const { qtimeedit_sendersignalindex_isbase = value; }
     inline void setQTimeEdit_Receivers_IsBase(bool value) const { qtimeedit_receivers_isbase = value; }
     inline void setQTimeEdit_IsSignalConnected_IsBase(bool value) const { qtimeedit_issignalconnected_isbase = value; }
-    inline void setQTimeEdit_GetDecodedMetricF_IsBase(bool value) const { qtimeedit_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -3205,23 +3176,6 @@ class VirtualQTimeEdit final : public QTimeEdit {
         return QTimeEdit::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qtimeedit_getdecodedmetricf_isbase) {
-            qtimeedit_getdecodedmetricf_isbase = false;
-            return QTimeEdit::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qtimeedit_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QTimeEdit::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QTimeEdit_KeyPressEvent(QTimeEdit* self, QKeyEvent* event);
     friend void QTimeEdit_SuperKeyPressEvent(QTimeEdit* self, QKeyEvent* event);
@@ -3331,8 +3285,6 @@ class VirtualQTimeEdit final : public QTimeEdit {
     friend int QTimeEdit_SuperReceivers(const QTimeEdit* self, const char* signal);
     friend bool QTimeEdit_IsSignalConnected(const QTimeEdit* self, const QMetaMethod* signal);
     friend bool QTimeEdit_SuperIsSignalConnected(const QTimeEdit* self, const QMetaMethod* signal);
-    friend double QTimeEdit_GetDecodedMetricF(const QTimeEdit* self, int metricA, int metricB);
-    friend double QTimeEdit_SuperGetDecodedMetricF(const QTimeEdit* self, int metricA, int metricB);
 };
 
 // This class is a subclass of QDateEdit so that we can call protected methods
@@ -3412,7 +3364,6 @@ class VirtualQDateEdit final : public QDateEdit {
     using QDateEdit_SenderSignalIndex_Callback = int (*)();
     using QDateEdit_Receivers_Callback = int (*)(const QDateEdit*, const char*);
     using QDateEdit_IsSignalConnected_Callback = bool (*)(const QDateEdit*, QMetaMethod*);
-    using QDateEdit_GetDecodedMetricF_Callback = double (*)(const QDateEdit*, int, int);
 
   protected:
     // Instance callback storage
@@ -3485,7 +3436,6 @@ class VirtualQDateEdit final : public QDateEdit {
     QDateEdit_SenderSignalIndex_Callback qdateedit_sendersignalindex_callback = nullptr;
     QDateEdit_Receivers_Callback qdateedit_receivers_callback = nullptr;
     QDateEdit_IsSignalConnected_Callback qdateedit_issignalconnected_callback = nullptr;
-    QDateEdit_GetDecodedMetricF_Callback qdateedit_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qdateedit_metaobject_isbase = false;
@@ -3557,13 +3507,12 @@ class VirtualQDateEdit final : public QDateEdit {
     mutable bool qdateedit_sendersignalindex_isbase = false;
     mutable bool qdateedit_receivers_isbase = false;
     mutable bool qdateedit_issignalconnected_isbase = false;
-    mutable bool qdateedit_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQDateEdit(QWidget* parent) : QDateEdit(parent) {};
-    VirtualQDateEdit() : QDateEdit() {};
-    VirtualQDateEdit(QDate date) : QDateEdit(date) {};
-    VirtualQDateEdit(QDate date, QWidget* parent) : QDateEdit(date, parent) {};
+    VirtualQDateEdit(QWidget* parent) : QDateEdit(parent){};
+    VirtualQDateEdit() : QDateEdit(){};
+    VirtualQDateEdit(QDate date) : QDateEdit(date){};
+    VirtualQDateEdit(QDate date, QWidget* parent) : QDateEdit(date, parent){};
 
     // Callback setters
     inline void setQDateEdit_MetaObject_Callback(QDateEdit_MetaObject_Callback cb) { qdateedit_metaobject_callback = cb; }
@@ -3635,7 +3584,6 @@ class VirtualQDateEdit final : public QDateEdit {
     inline void setQDateEdit_SenderSignalIndex_Callback(QDateEdit_SenderSignalIndex_Callback cb) { qdateedit_sendersignalindex_callback = cb; }
     inline void setQDateEdit_Receivers_Callback(QDateEdit_Receivers_Callback cb) { qdateedit_receivers_callback = cb; }
     inline void setQDateEdit_IsSignalConnected_Callback(QDateEdit_IsSignalConnected_Callback cb) { qdateedit_issignalconnected_callback = cb; }
-    inline void setQDateEdit_GetDecodedMetricF_Callback(QDateEdit_GetDecodedMetricF_Callback cb) { qdateedit_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQDateEdit_MetaObject_IsBase(bool value) const { qdateedit_metaobject_isbase = value; }
@@ -3707,7 +3655,6 @@ class VirtualQDateEdit final : public QDateEdit {
     inline void setQDateEdit_SenderSignalIndex_IsBase(bool value) const { qdateedit_sendersignalindex_isbase = value; }
     inline void setQDateEdit_Receivers_IsBase(bool value) const { qdateedit_receivers_isbase = value; }
     inline void setQDateEdit_IsSignalConnected_IsBase(bool value) const { qdateedit_issignalconnected_isbase = value; }
-    inline void setQDateEdit_GetDecodedMetricF_IsBase(bool value) const { qdateedit_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -4866,23 +4813,6 @@ class VirtualQDateEdit final : public QDateEdit {
         return QDateEdit::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qdateedit_getdecodedmetricf_isbase) {
-            qdateedit_getdecodedmetricf_isbase = false;
-            return QDateEdit::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qdateedit_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QDateEdit::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QDateEdit_KeyPressEvent(QDateEdit* self, QKeyEvent* event);
     friend void QDateEdit_SuperKeyPressEvent(QDateEdit* self, QKeyEvent* event);
@@ -4992,8 +4922,6 @@ class VirtualQDateEdit final : public QDateEdit {
     friend int QDateEdit_SuperReceivers(const QDateEdit* self, const char* signal);
     friend bool QDateEdit_IsSignalConnected(const QDateEdit* self, const QMetaMethod* signal);
     friend bool QDateEdit_SuperIsSignalConnected(const QDateEdit* self, const QMetaMethod* signal);
-    friend double QDateEdit_GetDecodedMetricF(const QDateEdit* self, int metricA, int metricB);
-    friend double QDateEdit_SuperGetDecodedMetricF(const QDateEdit* self, int metricA, int metricB);
 };
 
 #endif

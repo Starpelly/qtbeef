@@ -69,8 +69,8 @@ class VirtualQStylePlugin : public QStylePlugin {
     mutable bool qstyleplugin_issignalconnected_isbase = false;
 
   public:
-    VirtualQStylePlugin() : QStylePlugin() {};
-    VirtualQStylePlugin(QObject* parent) : QStylePlugin(parent) {};
+    VirtualQStylePlugin() : QStylePlugin(){};
+    VirtualQStylePlugin(QObject* parent) : QStylePlugin(parent){};
 
     // Callback setters
     inline void setQStylePlugin_MetaObject_Callback(QStylePlugin_MetaObject_Callback cb) { qstyleplugin_metaobject_callback = cb; }

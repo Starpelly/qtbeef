@@ -210,8 +210,6 @@ void QFormLayout_OnIsSignalConnected(const QFormLayout* self, intptr_t slot);
 bool QFormLayout_SuperIsSignalConnected(const QFormLayout* self, const QMetaMethod* signal);
 void QFormLayout_Delete(QFormLayout* self);
 
-QFormLayout__TakeRowResult* QFormLayout__TakeRowResult_new();
-QFormLayout__TakeRowResult* QFormLayout__TakeRowResult_new2(const QFormLayout__TakeRowResult* param1);
 QLayoutItem* QFormLayout__TakeRowResult_LabelItem(const QFormLayout__TakeRowResult* self);
 void QFormLayout__TakeRowResult_SetLabelItem(QFormLayout__TakeRowResult* self, QLayoutItem* labelItem);
 QLayoutItem* QFormLayout__TakeRowResult_FieldItem(const QFormLayout__TakeRowResult* self);

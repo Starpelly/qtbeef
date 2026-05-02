@@ -259,9 +259,6 @@ int QDialog_SuperReceivers(const QDialog* self, const char* signal);
 bool QDialog_IsSignalConnected(const QDialog* self, const QMetaMethod* signal);
 void QDialog_OnIsSignalConnected(const QDialog* self, intptr_t slot);
 bool QDialog_SuperIsSignalConnected(const QDialog* self, const QMetaMethod* signal);
-double QDialog_GetDecodedMetricF(const QDialog* self, int metricA, int metricB);
-void QDialog_OnGetDecodedMetricF(const QDialog* self, intptr_t slot);
-double QDialog_SuperGetDecodedMetricF(const QDialog* self, int metricA, int metricB);
 void QDialog_Delete(QDialog* self);
 
 #ifdef __cplusplus

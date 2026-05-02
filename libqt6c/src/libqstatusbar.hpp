@@ -252,9 +252,6 @@ int QStatusBar_SuperReceivers(const QStatusBar* self, const char* signal);
 bool QStatusBar_IsSignalConnected(const QStatusBar* self, const QMetaMethod* signal);
 void QStatusBar_OnIsSignalConnected(const QStatusBar* self, intptr_t slot);
 bool QStatusBar_SuperIsSignalConnected(const QStatusBar* self, const QMetaMethod* signal);
-double QStatusBar_GetDecodedMetricF(const QStatusBar* self, int metricA, int metricB);
-void QStatusBar_OnGetDecodedMetricF(const QStatusBar* self, intptr_t slot);
-double QStatusBar_SuperGetDecodedMetricF(const QStatusBar* self, int metricA, int metricB);
 void QStatusBar_Delete(QStatusBar* self);
 
 #ifdef __cplusplus

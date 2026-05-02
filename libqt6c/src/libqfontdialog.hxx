@@ -82,7 +82,6 @@ class VirtualQFontDialog final : public QFontDialog {
     using QFontDialog_SenderSignalIndex_Callback = int (*)();
     using QFontDialog_Receivers_Callback = int (*)(const QFontDialog*, const char*);
     using QFontDialog_IsSignalConnected_Callback = bool (*)(const QFontDialog*, QMetaMethod*);
-    using QFontDialog_GetDecodedMetricF_Callback = double (*)(const QFontDialog*, int, int);
 
   protected:
     // Instance callback storage
@@ -151,7 +150,6 @@ class VirtualQFontDialog final : public QFontDialog {
     QFontDialog_SenderSignalIndex_Callback qfontdialog_sendersignalindex_callback = nullptr;
     QFontDialog_Receivers_Callback qfontdialog_receivers_callback = nullptr;
     QFontDialog_IsSignalConnected_Callback qfontdialog_issignalconnected_callback = nullptr;
-    QFontDialog_GetDecodedMetricF_Callback qfontdialog_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qfontdialog_metaobject_isbase = false;
@@ -219,13 +217,12 @@ class VirtualQFontDialog final : public QFontDialog {
     mutable bool qfontdialog_sendersignalindex_isbase = false;
     mutable bool qfontdialog_receivers_isbase = false;
     mutable bool qfontdialog_issignalconnected_isbase = false;
-    mutable bool qfontdialog_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQFontDialog(QWidget* parent) : QFontDialog(parent) {};
-    VirtualQFontDialog() : QFontDialog() {};
-    VirtualQFontDialog(const QFont& initial) : QFontDialog(initial) {};
-    VirtualQFontDialog(const QFont& initial, QWidget* parent) : QFontDialog(initial, parent) {};
+    VirtualQFontDialog(QWidget* parent) : QFontDialog(parent){};
+    VirtualQFontDialog() : QFontDialog(){};
+    VirtualQFontDialog(const QFont& initial) : QFontDialog(initial){};
+    VirtualQFontDialog(const QFont& initial, QWidget* parent) : QFontDialog(initial, parent){};
 
     // Callback setters
     inline void setQFontDialog_MetaObject_Callback(QFontDialog_MetaObject_Callback cb) { qfontdialog_metaobject_callback = cb; }
@@ -293,7 +290,6 @@ class VirtualQFontDialog final : public QFontDialog {
     inline void setQFontDialog_SenderSignalIndex_Callback(QFontDialog_SenderSignalIndex_Callback cb) { qfontdialog_sendersignalindex_callback = cb; }
     inline void setQFontDialog_Receivers_Callback(QFontDialog_Receivers_Callback cb) { qfontdialog_receivers_callback = cb; }
     inline void setQFontDialog_IsSignalConnected_Callback(QFontDialog_IsSignalConnected_Callback cb) { qfontdialog_issignalconnected_callback = cb; }
-    inline void setQFontDialog_GetDecodedMetricF_Callback(QFontDialog_GetDecodedMetricF_Callback cb) { qfontdialog_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQFontDialog_MetaObject_IsBase(bool value) const { qfontdialog_metaobject_isbase = value; }
@@ -361,7 +357,6 @@ class VirtualQFontDialog final : public QFontDialog {
     inline void setQFontDialog_SenderSignalIndex_IsBase(bool value) const { qfontdialog_sendersignalindex_isbase = value; }
     inline void setQFontDialog_Receivers_IsBase(bool value) const { qfontdialog_receivers_isbase = value; }
     inline void setQFontDialog_IsSignalConnected_IsBase(bool value) const { qfontdialog_issignalconnected_isbase = value; }
-    inline void setQFontDialog_GetDecodedMetricF_IsBase(bool value) const { qfontdialog_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1426,23 +1421,6 @@ class VirtualQFontDialog final : public QFontDialog {
         return QFontDialog::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qfontdialog_getdecodedmetricf_isbase) {
-            qfontdialog_getdecodedmetricf_isbase = false;
-            return QFontDialog::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qfontdialog_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QFontDialog::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QFontDialog_ChangeEvent(QFontDialog* self, QEvent* event);
     friend void QFontDialog_SuperChangeEvent(QFontDialog* self, QEvent* event);
@@ -1544,8 +1522,6 @@ class VirtualQFontDialog final : public QFontDialog {
     friend int QFontDialog_SuperReceivers(const QFontDialog* self, const char* signal);
     friend bool QFontDialog_IsSignalConnected(const QFontDialog* self, const QMetaMethod* signal);
     friend bool QFontDialog_SuperIsSignalConnected(const QFontDialog* self, const QMetaMethod* signal);
-    friend double QFontDialog_GetDecodedMetricF(const QFontDialog* self, int metricA, int metricB);
-    friend double QFontDialog_SuperGetDecodedMetricF(const QFontDialog* self, int metricA, int metricB);
 };
 
 #endif

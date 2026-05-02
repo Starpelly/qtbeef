@@ -69,8 +69,8 @@ class VirtualQOpenGLContext final : public QOpenGLContext {
     mutable bool qopenglcontext_issignalconnected_isbase = false;
 
   public:
-    VirtualQOpenGLContext() : QOpenGLContext() {};
-    VirtualQOpenGLContext(QObject* parent) : QOpenGLContext(parent) {};
+    VirtualQOpenGLContext() : QOpenGLContext(){};
+    VirtualQOpenGLContext(QObject* parent) : QOpenGLContext(parent){};
 
     // Callback setters
     inline void setQOpenGLContext_MetaObject_Callback(QOpenGLContext_MetaObject_Callback cb) { qopenglcontext_metaobject_callback = cb; }

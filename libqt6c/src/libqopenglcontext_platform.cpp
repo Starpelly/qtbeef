@@ -21,10 +21,6 @@ void* QNativeInterface__QEGLContext_Display(const QNativeInterface__QEGLContext*
     return static_cast<void*>(self->display());
 }
 
-void QNativeInterface__QEGLContext_InvalidateContext(QNativeInterface__QEGLContext* self) {
-    self->invalidateContext();
-}
-
 QOpenGLContext* QNativeInterface__QEGLContext_FromNative3(void* context, void* display, QOpenGLContext* shareContext) {
     return QNativeInterface::QEGLContext::fromNative(context, display, shareContext);
 }

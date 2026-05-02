@@ -39,7 +39,7 @@ class VirtualQAbstractFileIconProvider final : public QAbstractFileIconProvider 
     mutable bool qabstractfileiconprovider_options_isbase = false;
 
   public:
-    VirtualQAbstractFileIconProvider() : QAbstractFileIconProvider() {};
+    VirtualQAbstractFileIconProvider() : QAbstractFileIconProvider(){};
 
     // Callback setters
     inline void setQAbstractFileIconProvider_Icon_Callback(QAbstractFileIconProvider_Icon_Callback cb) { qabstractfileiconprovider_icon_callback = cb; }

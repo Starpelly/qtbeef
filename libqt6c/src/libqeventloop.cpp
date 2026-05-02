@@ -1,5 +1,4 @@
 #include <QChildEvent>
-#include <QDeadlineTimer>
 #include <QEvent>
 #include <QEventLoop>
 #include <QEventLoopLocker>
@@ -56,10 +55,6 @@ bool QEventLoop_ProcessEvents(QEventLoop* self) {
 
 void QEventLoop_ProcessEvents2(QEventLoop* self, int flags, int maximumTime) {
     self->processEvents(static_cast<QEventLoop::ProcessEventsFlags>(flags), static_cast<int>(maximumTime));
-}
-
-void QEventLoop_ProcessEvents3(QEventLoop* self, int flags, QDeadlineTimer* deadline) {
-    self->processEvents(static_cast<QEventLoop::ProcessEventsFlags>(flags), *deadline);
 }
 
 int QEventLoop_Exec(QEventLoop* self) {
@@ -483,10 +478,6 @@ QEventLoopLocker* QEventLoopLocker_new2(QEventLoop* loop) {
 
 QEventLoopLocker* QEventLoopLocker_new3(QThread* thread) {
     return new QEventLoopLocker(thread);
-}
-
-void QEventLoopLocker_Swap(QEventLoopLocker* self, QEventLoopLocker* other) {
-    self->swap(*other);
 }
 
 void QEventLoopLocker_Delete(QEventLoopLocker* self) {

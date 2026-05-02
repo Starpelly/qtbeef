@@ -98,6 +98,14 @@ QItemSelectionRange* QItemSelectionRange_Intersected(const QItemSelectionRange* 
     return new QItemSelectionRange(self->intersected(*other));
 }
 
+bool QItemSelectionRange_OperatorEqual(const QItemSelectionRange* self, const QItemSelectionRange* other) {
+    return (*self == *other);
+}
+
+bool QItemSelectionRange_OperatorNotEqual(const QItemSelectionRange* self, const QItemSelectionRange* other) {
+    return (*self != *other);
+}
+
 bool QItemSelectionRange_IsValid(const QItemSelectionRange* self) {
     return self->isValid();
 }

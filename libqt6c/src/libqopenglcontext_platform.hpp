@@ -30,7 +30,6 @@ QOpenGLContext* QNativeInterface__QEGLContext_FromNative(void* context, void* di
 void* QNativeInterface__QEGLContext_NativeContext(const QNativeInterface__QEGLContext* self);
 void* QNativeInterface__QEGLContext_Config(const QNativeInterface__QEGLContext* self);
 void* QNativeInterface__QEGLContext_Display(const QNativeInterface__QEGLContext* self);
-void QNativeInterface__QEGLContext_InvalidateContext(QNativeInterface__QEGLContext* self);
 QOpenGLContext* QNativeInterface__QEGLContext_FromNative3(void* context, void* display, QOpenGLContext* shareContext);
 
 #ifdef __cplusplus

@@ -292,9 +292,6 @@ int QMenu_SuperReceivers(const QMenu* self, const char* signal);
 bool QMenu_IsSignalConnected(const QMenu* self, const QMetaMethod* signal);
 void QMenu_OnIsSignalConnected(const QMenu* self, intptr_t slot);
 bool QMenu_SuperIsSignalConnected(const QMenu* self, const QMetaMethod* signal);
-double QMenu_GetDecodedMetricF(const QMenu* self, int metricA, int metricB);
-void QMenu_OnGetDecodedMetricF(const QMenu* self, intptr_t slot);
-double QMenu_SuperGetDecodedMetricF(const QMenu* self, int metricA, int metricB);
 void QMenu_Delete(QMenu* self);
 
 #ifdef __cplusplus

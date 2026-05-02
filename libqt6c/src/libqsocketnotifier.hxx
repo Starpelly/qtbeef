@@ -66,10 +66,10 @@ class VirtualQSocketNotifier final : public QSocketNotifier {
     mutable bool qsocketnotifier_issignalconnected_isbase = false;
 
   public:
-    VirtualQSocketNotifier(QSocketNotifier::Type param1) : QSocketNotifier(param1) {};
-    VirtualQSocketNotifier(qintptr socket, QSocketNotifier::Type param2) : QSocketNotifier(socket, param2) {};
-    VirtualQSocketNotifier(QSocketNotifier::Type param1, QObject* parent) : QSocketNotifier(param1, parent) {};
-    VirtualQSocketNotifier(qintptr socket, QSocketNotifier::Type param2, QObject* parent) : QSocketNotifier(socket, param2, parent) {};
+    VirtualQSocketNotifier(QSocketNotifier::Type param1) : QSocketNotifier(param1){};
+    VirtualQSocketNotifier(qintptr socket, QSocketNotifier::Type param2) : QSocketNotifier(socket, param2){};
+    VirtualQSocketNotifier(QSocketNotifier::Type param1, QObject* parent) : QSocketNotifier(param1, parent){};
+    VirtualQSocketNotifier(qintptr socket, QSocketNotifier::Type param2, QObject* parent) : QSocketNotifier(socket, param2, parent){};
 
     // Callback setters
     inline void setQSocketNotifier_MetaObject_Callback(QSocketNotifier_MetaObject_Callback cb) { qsocketnotifier_metaobject_callback = cb; }

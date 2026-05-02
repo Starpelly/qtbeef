@@ -15,7 +15,6 @@ extern "C" {
 
 #ifdef __cplusplus
 #else
-typedef struct QAnyStringView QAnyStringView;
 typedef struct QIODevice QIODevice;
 typedef struct QXmlStreamAttribute QXmlStreamAttribute;
 typedef struct QXmlStreamAttributes QXmlStreamAttributes;
@@ -32,43 +31,49 @@ QXmlStreamAttribute* QXmlStreamAttribute_new2(const libqt_string qualifiedName, 
 QXmlStreamAttribute* QXmlStreamAttribute_new3(const libqt_string namespaceUri, const libqt_string name, const libqt_string value);
 QXmlStreamAttribute* QXmlStreamAttribute_new4(const QXmlStreamAttribute* param1);
 bool QXmlStreamAttribute_IsDefault(const QXmlStreamAttribute* self);
+bool QXmlStreamAttribute_OperatorEqual(const QXmlStreamAttribute* self, const QXmlStreamAttribute* other);
+bool QXmlStreamAttribute_OperatorNotEqual(const QXmlStreamAttribute* self, const QXmlStreamAttribute* other);
+void QXmlStreamAttribute_OperatorAssign(QXmlStreamAttribute* self, const QXmlStreamAttribute* param1);
 void QXmlStreamAttribute_Delete(QXmlStreamAttribute* self);
 
 QXmlStreamAttributes* QXmlStreamAttributes_new();
 void QXmlStreamAttributes_Append(QXmlStreamAttributes* self, const libqt_string namespaceUri, const libqt_string name, const libqt_string value);
 void QXmlStreamAttributes_Append2(QXmlStreamAttributes* self, const libqt_string qualifiedName, const libqt_string value);
-bool QXmlStreamAttributes_HasAttribute(const QXmlStreamAttributes* self, const char* qualifiedName);
-bool QXmlStreamAttributes_HasAttribute2(const QXmlStreamAttributes* self, const char* namespaceUri, const char* name);
+bool QXmlStreamAttributes_HasAttribute(const QXmlStreamAttributes* self, const libqt_string qualifiedName);
+bool QXmlStreamAttributes_HasAttribute3(const QXmlStreamAttributes* self, const libqt_string namespaceUri, const libqt_string name);
 void QXmlStreamAttributes_Delete(QXmlStreamAttributes* self);
 
 QXmlStreamNamespaceDeclaration* QXmlStreamNamespaceDeclaration_new();
 QXmlStreamNamespaceDeclaration* QXmlStreamNamespaceDeclaration_new2(const libqt_string prefix, const libqt_string namespaceUri);
-QXmlStreamNamespaceDeclaration* QXmlStreamNamespaceDeclaration_new3(const QXmlStreamNamespaceDeclaration* param1);
+bool QXmlStreamNamespaceDeclaration_OperatorEqual(const QXmlStreamNamespaceDeclaration* self, const QXmlStreamNamespaceDeclaration* other);
+bool QXmlStreamNamespaceDeclaration_OperatorNotEqual(const QXmlStreamNamespaceDeclaration* self, const QXmlStreamNamespaceDeclaration* other);
 void QXmlStreamNamespaceDeclaration_Delete(QXmlStreamNamespaceDeclaration* self);
 
 QXmlStreamNotationDeclaration* QXmlStreamNotationDeclaration_new();
-QXmlStreamNotationDeclaration* QXmlStreamNotationDeclaration_new2(const QXmlStreamNotationDeclaration* param1);
+bool QXmlStreamNotationDeclaration_OperatorEqual(const QXmlStreamNotationDeclaration* self, const QXmlStreamNotationDeclaration* other);
+bool QXmlStreamNotationDeclaration_OperatorNotEqual(const QXmlStreamNotationDeclaration* self, const QXmlStreamNotationDeclaration* other);
 void QXmlStreamNotationDeclaration_Delete(QXmlStreamNotationDeclaration* self);
 
 QXmlStreamEntityDeclaration* QXmlStreamEntityDeclaration_new();
-QXmlStreamEntityDeclaration* QXmlStreamEntityDeclaration_new2(const QXmlStreamEntityDeclaration* param1);
+bool QXmlStreamEntityDeclaration_OperatorEqual(const QXmlStreamEntityDeclaration* self, const QXmlStreamEntityDeclaration* other);
+bool QXmlStreamEntityDeclaration_OperatorNotEqual(const QXmlStreamEntityDeclaration* self, const QXmlStreamEntityDeclaration* other);
 void QXmlStreamEntityDeclaration_Delete(QXmlStreamEntityDeclaration* self);
 
-QXmlStreamEntityResolver* QXmlStreamEntityResolver_new();
 libqt_string QXmlStreamEntityResolver_ResolveEntity(QXmlStreamEntityResolver* self, const libqt_string publicId, const libqt_string systemId);
 libqt_string QXmlStreamEntityResolver_ResolveUndeclaredEntity(QXmlStreamEntityResolver* self, const libqt_string name);
-void QXmlStreamEntityResolver_OnResolveEntity(QXmlStreamEntityResolver* self, intptr_t slot);
-libqt_string QXmlStreamEntityResolver_SuperResolveEntity(QXmlStreamEntityResolver* self, const libqt_string publicId, const libqt_string systemId);
-void QXmlStreamEntityResolver_OnResolveUndeclaredEntity(QXmlStreamEntityResolver* self, intptr_t slot);
-libqt_string QXmlStreamEntityResolver_SuperResolveUndeclaredEntity(QXmlStreamEntityResolver* self, const libqt_string name);
+void QXmlStreamEntityResolver_OperatorAssign(QXmlStreamEntityResolver* self, const QXmlStreamEntityResolver* param1);
 void QXmlStreamEntityResolver_Delete(QXmlStreamEntityResolver* self);
 
 QXmlStreamReader* QXmlStreamReader_new();
 QXmlStreamReader* QXmlStreamReader_new2(QIODevice* device);
-QXmlStreamReader* QXmlStreamReader_new3(const char* data);
+QXmlStreamReader* QXmlStreamReader_new3(const libqt_string data);
+QXmlStreamReader* QXmlStreamReader_new4(const libqt_string data);
+QXmlStreamReader* QXmlStreamReader_new5(const char* data);
 void QXmlStreamReader_SetDevice(QXmlStreamReader* self, QIODevice* device);
 QIODevice* QXmlStreamReader_Device(const QXmlStreamReader* self);
-void QXmlStreamReader_AddData(QXmlStreamReader* self, const char* data);
+void QXmlStreamReader_AddData(QXmlStreamReader* self, const libqt_string data);
+void QXmlStreamReader_AddData2(QXmlStreamReader* self, const libqt_string data);
+void QXmlStreamReader_AddData3(QXmlStreamReader* self, const char* data);
 void QXmlStreamReader_Clear(QXmlStreamReader* self);
 bool QXmlStreamReader_AtEnd(const QXmlStreamReader* self);
 int QXmlStreamReader_ReadNext(QXmlStreamReader* self);
@@ -90,7 +95,6 @@ bool QXmlStreamReader_IsDTD(const QXmlStreamReader* self);
 bool QXmlStreamReader_IsEntityReference(const QXmlStreamReader* self);
 bool QXmlStreamReader_IsProcessingInstruction(const QXmlStreamReader* self);
 bool QXmlStreamReader_IsStandaloneDocument(const QXmlStreamReader* self);
-bool QXmlStreamReader_HasStandaloneDeclaration(const QXmlStreamReader* self);
 long long QXmlStreamReader_LineNumber(const QXmlStreamReader* self);
 long long QXmlStreamReader_ColumnNumber(const QXmlStreamReader* self);
 long long QXmlStreamReader_CharacterOffset(const QXmlStreamReader* self);
@@ -121,33 +125,33 @@ void QXmlStreamWriter_SetAutoFormatting(QXmlStreamWriter* self, bool autoFormatt
 bool QXmlStreamWriter_AutoFormatting(const QXmlStreamWriter* self);
 void QXmlStreamWriter_SetAutoFormattingIndent(QXmlStreamWriter* self, int spacesOrTabs);
 int QXmlStreamWriter_AutoFormattingIndent(const QXmlStreamWriter* self);
-void QXmlStreamWriter_WriteAttribute(QXmlStreamWriter* self, const char* qualifiedName, const char* value);
-void QXmlStreamWriter_WriteAttribute2(QXmlStreamWriter* self, const char* namespaceUri, const char* name, const char* value);
+void QXmlStreamWriter_WriteAttribute(QXmlStreamWriter* self, const libqt_string qualifiedName, const libqt_string value);
+void QXmlStreamWriter_WriteAttribute2(QXmlStreamWriter* self, const libqt_string namespaceUri, const libqt_string name, const libqt_string value);
 void QXmlStreamWriter_WriteAttribute3(QXmlStreamWriter* self, const QXmlStreamAttribute* attribute);
 void QXmlStreamWriter_WriteAttributes(QXmlStreamWriter* self, const QXmlStreamAttributes* attributes);
-void QXmlStreamWriter_WriteCDATA(QXmlStreamWriter* self, const char* text);
-void QXmlStreamWriter_WriteCharacters(QXmlStreamWriter* self, const char* text);
-void QXmlStreamWriter_WriteComment(QXmlStreamWriter* self, const char* text);
-void QXmlStreamWriter_WriteDTD(QXmlStreamWriter* self, const char* dtd);
-void QXmlStreamWriter_WriteEmptyElement(QXmlStreamWriter* self, const char* qualifiedName);
-void QXmlStreamWriter_WriteEmptyElement2(QXmlStreamWriter* self, const char* namespaceUri, const char* name);
-void QXmlStreamWriter_WriteTextElement(QXmlStreamWriter* self, const char* qualifiedName, const char* text);
-void QXmlStreamWriter_WriteTextElement2(QXmlStreamWriter* self, const char* namespaceUri, const char* name, const char* text);
+void QXmlStreamWriter_WriteCDATA(QXmlStreamWriter* self, const libqt_string text);
+void QXmlStreamWriter_WriteCharacters(QXmlStreamWriter* self, const libqt_string text);
+void QXmlStreamWriter_WriteComment(QXmlStreamWriter* self, const libqt_string text);
+void QXmlStreamWriter_WriteDTD(QXmlStreamWriter* self, const libqt_string dtd);
+void QXmlStreamWriter_WriteEmptyElement(QXmlStreamWriter* self, const libqt_string qualifiedName);
+void QXmlStreamWriter_WriteEmptyElement2(QXmlStreamWriter* self, const libqt_string namespaceUri, const libqt_string name);
+void QXmlStreamWriter_WriteTextElement(QXmlStreamWriter* self, const libqt_string qualifiedName, const libqt_string text);
+void QXmlStreamWriter_WriteTextElement2(QXmlStreamWriter* self, const libqt_string namespaceUri, const libqt_string name, const libqt_string text);
 void QXmlStreamWriter_WriteEndDocument(QXmlStreamWriter* self);
 void QXmlStreamWriter_WriteEndElement(QXmlStreamWriter* self);
-void QXmlStreamWriter_WriteEntityReference(QXmlStreamWriter* self, const char* name);
-void QXmlStreamWriter_WriteNamespace(QXmlStreamWriter* self, const char* namespaceUri);
-void QXmlStreamWriter_WriteDefaultNamespace(QXmlStreamWriter* self, const char* namespaceUri);
-void QXmlStreamWriter_WriteProcessingInstruction(QXmlStreamWriter* self, const char* target);
+void QXmlStreamWriter_WriteEntityReference(QXmlStreamWriter* self, const libqt_string name);
+void QXmlStreamWriter_WriteNamespace(QXmlStreamWriter* self, const libqt_string namespaceUri);
+void QXmlStreamWriter_WriteDefaultNamespace(QXmlStreamWriter* self, const libqt_string namespaceUri);
+void QXmlStreamWriter_WriteProcessingInstruction(QXmlStreamWriter* self, const libqt_string target);
 void QXmlStreamWriter_WriteStartDocument(QXmlStreamWriter* self);
-void QXmlStreamWriter_WriteStartDocument2(QXmlStreamWriter* self, const char* version);
-void QXmlStreamWriter_WriteStartDocument3(QXmlStreamWriter* self, const char* version, bool standalone);
-void QXmlStreamWriter_WriteStartElement(QXmlStreamWriter* self, const char* qualifiedName);
-void QXmlStreamWriter_WriteStartElement2(QXmlStreamWriter* self, const char* namespaceUri, const char* name);
+void QXmlStreamWriter_WriteStartDocument2(QXmlStreamWriter* self, const libqt_string version);
+void QXmlStreamWriter_WriteStartDocument3(QXmlStreamWriter* self, const libqt_string version, bool standalone);
+void QXmlStreamWriter_WriteStartElement(QXmlStreamWriter* self, const libqt_string qualifiedName);
+void QXmlStreamWriter_WriteStartElement2(QXmlStreamWriter* self, const libqt_string namespaceUri, const libqt_string name);
 void QXmlStreamWriter_WriteCurrentToken(QXmlStreamWriter* self, const QXmlStreamReader* reader);
 bool QXmlStreamWriter_HasError(const QXmlStreamWriter* self);
-void QXmlStreamWriter_WriteNamespace2(QXmlStreamWriter* self, const char* namespaceUri, const char* prefix);
-void QXmlStreamWriter_WriteProcessingInstruction2(QXmlStreamWriter* self, const char* target, const char* data);
+void QXmlStreamWriter_WriteNamespace2(QXmlStreamWriter* self, const libqt_string namespaceUri, const libqt_string prefix);
+void QXmlStreamWriter_WriteProcessingInstruction2(QXmlStreamWriter* self, const libqt_string target, const libqt_string data);
 void QXmlStreamWriter_Delete(QXmlStreamWriter* self);
 
 #ifdef __cplusplus

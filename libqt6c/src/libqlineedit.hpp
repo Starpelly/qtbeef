@@ -326,9 +326,6 @@ int QLineEdit_SuperReceivers(const QLineEdit* self, const char* signal);
 bool QLineEdit_IsSignalConnected(const QLineEdit* self, const QMetaMethod* signal);
 void QLineEdit_OnIsSignalConnected(const QLineEdit* self, intptr_t slot);
 bool QLineEdit_SuperIsSignalConnected(const QLineEdit* self, const QMetaMethod* signal);
-double QLineEdit_GetDecodedMetricF(const QLineEdit* self, int metricA, int metricB);
-void QLineEdit_OnGetDecodedMetricF(const QLineEdit* self, intptr_t slot);
-double QLineEdit_SuperGetDecodedMetricF(const QLineEdit* self, int metricA, int metricB);
 void QLineEdit_Delete(QLineEdit* self);
 
 #ifdef __cplusplus

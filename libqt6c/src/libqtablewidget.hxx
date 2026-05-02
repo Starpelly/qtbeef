@@ -42,13 +42,13 @@ class VirtualQTableWidgetItem final : public QTableWidgetItem {
     mutable bool qtablewidgetitem_write_isbase = false;
 
   public:
-    VirtualQTableWidgetItem() : QTableWidgetItem() {};
-    VirtualQTableWidgetItem(const QString& text) : QTableWidgetItem(text) {};
-    VirtualQTableWidgetItem(const QIcon& icon, const QString& text) : QTableWidgetItem(icon, text) {};
-    VirtualQTableWidgetItem(const QTableWidgetItem& other) : QTableWidgetItem(other) {};
-    VirtualQTableWidgetItem(int type) : QTableWidgetItem(type) {};
-    VirtualQTableWidgetItem(const QString& text, int type) : QTableWidgetItem(text, type) {};
-    VirtualQTableWidgetItem(const QIcon& icon, const QString& text, int type) : QTableWidgetItem(icon, text, type) {};
+    VirtualQTableWidgetItem() : QTableWidgetItem(){};
+    VirtualQTableWidgetItem(const QString& text) : QTableWidgetItem(text){};
+    VirtualQTableWidgetItem(const QIcon& icon, const QString& text) : QTableWidgetItem(icon, text){};
+    VirtualQTableWidgetItem(const QTableWidgetItem& other) : QTableWidgetItem(other){};
+    VirtualQTableWidgetItem(int type) : QTableWidgetItem(type){};
+    VirtualQTableWidgetItem(const QString& text, int type) : QTableWidgetItem(text, type){};
+    VirtualQTableWidgetItem(const QIcon& icon, const QString& text, int type) : QTableWidgetItem(icon, text, type){};
 
     // Callback setters
     inline void setQTableWidgetItem_Clone_Callback(QTableWidgetItem_Clone_Callback cb) { qtablewidgetitem_clone_callback = cb; }
@@ -188,7 +188,7 @@ class VirtualQTableWidget final : public QTableWidget {
     using QTableWidget_Metacast_Callback = void* (*)(QTableWidget*, const char*);
     using QTableWidget_Metacall_Callback = int (*)(QTableWidget*, int, int, void**);
     using QTableWidget_Event_Callback = bool (*)(QTableWidget*, QEvent*);
-    using QTableWidget_MimeTypes_Callback = const char** (*)();
+    using QTableWidget_MimeTypes_Callback = QStringList (*)();
     using QTableWidget_MimeData_Callback = QMimeData* (*)(const QTableWidget*, libqt_list /* of QTableWidgetItem* */);
     using QTableWidget_DropMimeData_Callback = bool (*)(QTableWidget*, int, int, QMimeData*, int);
     using QTableWidget_SupportedDropActions_Callback = int (*)();
@@ -310,7 +310,6 @@ class VirtualQTableWidget final : public QTableWidget {
     using QTableWidget_SenderSignalIndex_Callback = int (*)();
     using QTableWidget_Receivers_Callback = int (*)(const QTableWidget*, const char*);
     using QTableWidget_IsSignalConnected_Callback = bool (*)(const QTableWidget*, QMetaMethod*);
-    using QTableWidget_GetDecodedMetricF_Callback = double (*)(const QTableWidget*, int, int);
 
   protected:
     // Instance callback storage
@@ -440,7 +439,6 @@ class VirtualQTableWidget final : public QTableWidget {
     QTableWidget_SenderSignalIndex_Callback qtablewidget_sendersignalindex_callback = nullptr;
     QTableWidget_Receivers_Callback qtablewidget_receivers_callback = nullptr;
     QTableWidget_IsSignalConnected_Callback qtablewidget_issignalconnected_callback = nullptr;
-    QTableWidget_GetDecodedMetricF_Callback qtablewidget_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qtablewidget_metaobject_isbase = false;
@@ -569,13 +567,12 @@ class VirtualQTableWidget final : public QTableWidget {
     mutable bool qtablewidget_sendersignalindex_isbase = false;
     mutable bool qtablewidget_receivers_isbase = false;
     mutable bool qtablewidget_issignalconnected_isbase = false;
-    mutable bool qtablewidget_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQTableWidget(QWidget* parent) : QTableWidget(parent) {};
-    VirtualQTableWidget() : QTableWidget() {};
-    VirtualQTableWidget(int rows, int columns) : QTableWidget(rows, columns) {};
-    VirtualQTableWidget(int rows, int columns, QWidget* parent) : QTableWidget(rows, columns, parent) {};
+    VirtualQTableWidget(QWidget* parent) : QTableWidget(parent){};
+    VirtualQTableWidget() : QTableWidget(){};
+    VirtualQTableWidget(int rows, int columns) : QTableWidget(rows, columns){};
+    VirtualQTableWidget(int rows, int columns, QWidget* parent) : QTableWidget(rows, columns, parent){};
 
     // Callback setters
     inline void setQTableWidget_MetaObject_Callback(QTableWidget_MetaObject_Callback cb) { qtablewidget_metaobject_callback = cb; }
@@ -704,7 +701,6 @@ class VirtualQTableWidget final : public QTableWidget {
     inline void setQTableWidget_SenderSignalIndex_Callback(QTableWidget_SenderSignalIndex_Callback cb) { qtablewidget_sendersignalindex_callback = cb; }
     inline void setQTableWidget_Receivers_Callback(QTableWidget_Receivers_Callback cb) { qtablewidget_receivers_callback = cb; }
     inline void setQTableWidget_IsSignalConnected_Callback(QTableWidget_IsSignalConnected_Callback cb) { qtablewidget_issignalconnected_callback = cb; }
-    inline void setQTableWidget_GetDecodedMetricF_Callback(QTableWidget_GetDecodedMetricF_Callback cb) { qtablewidget_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQTableWidget_MetaObject_IsBase(bool value) const { qtablewidget_metaobject_isbase = value; }
@@ -833,7 +829,6 @@ class VirtualQTableWidget final : public QTableWidget {
     inline void setQTableWidget_SenderSignalIndex_IsBase(bool value) const { qtablewidget_sendersignalindex_isbase = value; }
     inline void setQTableWidget_Receivers_IsBase(bool value) const { qtablewidget_receivers_isbase = value; }
     inline void setQTableWidget_IsSignalConnected_IsBase(bool value) const { qtablewidget_issignalconnected_isbase = value; }
-    inline void setQTableWidget_GetDecodedMetricF_IsBase(bool value) const { qtablewidget_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -900,24 +895,15 @@ class VirtualQTableWidget final : public QTableWidget {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qtablewidget_mimetypes_isbase) {
             qtablewidget_mimetypes_isbase = false;
             return QTableWidget::mimeTypes();
         }
         auto mimetypes_cb = qtablewidget_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QTableWidget::mimeTypes();
     }
@@ -2994,28 +2980,11 @@ class VirtualQTableWidget final : public QTableWidget {
         return QTableWidget::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qtablewidget_getdecodedmetricf_isbase) {
-            qtablewidget_getdecodedmetricf_isbase = false;
-            return QTableWidget::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qtablewidget_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QTableWidget::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QTableWidget_Event(QTableWidget* self, QEvent* e);
     friend bool QTableWidget_SuperEvent(QTableWidget* self, QEvent* e);
-    friend libqt_list /* of libqt_string */ QTableWidget_MimeTypes(const QTableWidget* self);
-    friend libqt_list /* of libqt_string */ QTableWidget_SuperMimeTypes(const QTableWidget* self);
+    friend QStringList QTableWidget_MimeTypes(const QTableWidget* self);
+    friend QStringList QTableWidget_SuperMimeTypes(const QTableWidget* self);
     friend QMimeData* QTableWidget_MimeData(const QTableWidget* self, const libqt_list /* of QTableWidgetItem* */ items);
     friend QMimeData* QTableWidget_SuperMimeData(const QTableWidget* self, const libqt_list /* of QTableWidgetItem* */ items);
     friend bool QTableWidget_DropMimeData(QTableWidget* self, int row, int column, const QMimeData* data, int action);
@@ -3220,8 +3189,6 @@ class VirtualQTableWidget final : public QTableWidget {
     friend int QTableWidget_SuperReceivers(const QTableWidget* self, const char* signal);
     friend bool QTableWidget_IsSignalConnected(const QTableWidget* self, const QMetaMethod* signal);
     friend bool QTableWidget_SuperIsSignalConnected(const QTableWidget* self, const QMetaMethod* signal);
-    friend double QTableWidget_GetDecodedMetricF(const QTableWidget* self, int metricA, int metricB);
-    friend double QTableWidget_SuperGetDecodedMetricF(const QTableWidget* self, int metricA, int metricB);
 };
 
 #endif

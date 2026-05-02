@@ -66,7 +66,7 @@ class VirtualQActionGroup final : public QActionGroup {
     mutable bool qactiongroup_issignalconnected_isbase = false;
 
   public:
-    VirtualQActionGroup(QObject* parent) : QActionGroup(parent) {};
+    VirtualQActionGroup(QObject* parent) : QActionGroup(parent){};
 
     // Callback setters
     inline void setQActionGroup_MetaObject_Callback(QActionGroup_MetaObject_Callback cb) { qactiongroup_metaobject_callback = cb; }

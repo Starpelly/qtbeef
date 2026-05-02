@@ -407,9 +407,6 @@ int QPlainTextEdit_SuperReceivers(const QPlainTextEdit* self, const char* signal
 bool QPlainTextEdit_IsSignalConnected(const QPlainTextEdit* self, const QMetaMethod* signal);
 void QPlainTextEdit_OnIsSignalConnected(const QPlainTextEdit* self, intptr_t slot);
 bool QPlainTextEdit_SuperIsSignalConnected(const QPlainTextEdit* self, const QMetaMethod* signal);
-double QPlainTextEdit_GetDecodedMetricF(const QPlainTextEdit* self, int metricA, int metricB);
-void QPlainTextEdit_OnGetDecodedMetricF(const QPlainTextEdit* self, intptr_t slot);
-double QPlainTextEdit_SuperGetDecodedMetricF(const QPlainTextEdit* self, int metricA, int metricB);
 void QPlainTextEdit_Delete(QPlainTextEdit* self);
 
 QPlainTextDocumentLayout* QPlainTextDocumentLayout_new(QTextDocument* document);

@@ -312,9 +312,6 @@ int QWizard_SuperReceivers(const QWizard* self, const char* signal);
 bool QWizard_IsSignalConnected(const QWizard* self, const QMetaMethod* signal);
 void QWizard_OnIsSignalConnected(const QWizard* self, intptr_t slot);
 bool QWizard_SuperIsSignalConnected(const QWizard* self, const QMetaMethod* signal);
-double QWizard_GetDecodedMetricF(const QWizard* self, int metricA, int metricB);
-void QWizard_OnGetDecodedMetricF(const QWizard* self, intptr_t slot);
-double QWizard_SuperGetDecodedMetricF(const QWizard* self, int metricA, int metricB);
 void QWizard_Delete(QWizard* self);
 
 QWizardPage* QWizardPage_new(QWidget* parent);
@@ -543,9 +540,6 @@ int QWizardPage_SuperReceivers(const QWizardPage* self, const char* signal);
 bool QWizardPage_IsSignalConnected(const QWizardPage* self, const QMetaMethod* signal);
 void QWizardPage_OnIsSignalConnected(const QWizardPage* self, intptr_t slot);
 bool QWizardPage_SuperIsSignalConnected(const QWizardPage* self, const QMetaMethod* signal);
-double QWizardPage_GetDecodedMetricF(const QWizardPage* self, int metricA, int metricB);
-void QWizardPage_OnGetDecodedMetricF(const QWizardPage* self, intptr_t slot);
-double QWizardPage_SuperGetDecodedMetricF(const QWizardPage* self, int metricA, int metricB);
 void QWizardPage_Delete(QWizardPage* self);
 
 #ifdef __cplusplus

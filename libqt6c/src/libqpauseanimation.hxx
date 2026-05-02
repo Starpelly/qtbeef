@@ -78,10 +78,10 @@ class VirtualQPauseAnimation final : public QPauseAnimation {
     mutable bool qpauseanimation_issignalconnected_isbase = false;
 
   public:
-    VirtualQPauseAnimation() : QPauseAnimation() {};
-    VirtualQPauseAnimation(int msecs) : QPauseAnimation(msecs) {};
-    VirtualQPauseAnimation(QObject* parent) : QPauseAnimation(parent) {};
-    VirtualQPauseAnimation(int msecs, QObject* parent) : QPauseAnimation(msecs, parent) {};
+    VirtualQPauseAnimation() : QPauseAnimation(){};
+    VirtualQPauseAnimation(int msecs) : QPauseAnimation(msecs){};
+    VirtualQPauseAnimation(QObject* parent) : QPauseAnimation(parent){};
+    VirtualQPauseAnimation(int msecs, QObject* parent) : QPauseAnimation(msecs, parent){};
 
     // Callback setters
     inline void setQPauseAnimation_MetaObject_Callback(QPauseAnimation_MetaObject_Callback cb) { qpauseanimation_metaobject_callback = cb; }

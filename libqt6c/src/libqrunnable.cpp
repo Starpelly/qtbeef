@@ -16,6 +16,13 @@ void QRunnable_Run(QRunnable* self) {
     }
 }
 
+QRunnable* QRunnable_Create(intptr_t functionToRun) {
+    auto functionToRun_func = [functionToRun]() -> void {
+        reinterpret_cast<void (*)()>(functionToRun)();
+    };
+    return QRunnable::create(functionToRun_func);
+}
+
 bool QRunnable_AutoDelete(const QRunnable* self) {
     return self->autoDelete();
 }

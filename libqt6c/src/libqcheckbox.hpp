@@ -67,8 +67,6 @@ int QCheckBox_CheckState(const QCheckBox* self);
 void QCheckBox_SetCheckState(QCheckBox* self, int state);
 void QCheckBox_StateChanged(QCheckBox* self, int param1);
 void QCheckBox_Connect_StateChanged(QCheckBox* self, intptr_t slot);
-void QCheckBox_CheckStateChanged(QCheckBox* self, int param1);
-void QCheckBox_Connect_CheckStateChanged(QCheckBox* self, intptr_t slot);
 bool QCheckBox_Event(QCheckBox* self, QEvent* e);
 bool QCheckBox_HitButton(const QCheckBox* self, const QPoint* pos);
 void QCheckBox_CheckStateSet(QCheckBox* self);
@@ -254,9 +252,6 @@ int QCheckBox_SuperReceivers(const QCheckBox* self, const char* signal);
 bool QCheckBox_IsSignalConnected(const QCheckBox* self, const QMetaMethod* signal);
 void QCheckBox_OnIsSignalConnected(const QCheckBox* self, intptr_t slot);
 bool QCheckBox_SuperIsSignalConnected(const QCheckBox* self, const QMetaMethod* signal);
-double QCheckBox_GetDecodedMetricF(const QCheckBox* self, int metricA, int metricB);
-void QCheckBox_OnGetDecodedMetricF(const QCheckBox* self, intptr_t slot);
-double QCheckBox_SuperGetDecodedMetricF(const QCheckBox* self, int metricA, int metricB);
 void QCheckBox_Delete(QCheckBox* self);
 
 #ifdef __cplusplus

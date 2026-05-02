@@ -84,8 +84,8 @@ class VirtualQVariantAnimation final : public QVariantAnimation {
     mutable bool qvariantanimation_issignalconnected_isbase = false;
 
   public:
-    VirtualQVariantAnimation() : QVariantAnimation() {};
-    VirtualQVariantAnimation(QObject* parent) : QVariantAnimation(parent) {};
+    VirtualQVariantAnimation() : QVariantAnimation(){};
+    VirtualQVariantAnimation(QObject* parent) : QVariantAnimation(parent){};
 
     // Callback setters
     inline void setQVariantAnimation_MetaObject_Callback(QVariantAnimation_MetaObject_Callback cb) { qvariantanimation_metaobject_callback = cb; }

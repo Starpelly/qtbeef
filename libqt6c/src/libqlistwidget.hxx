@@ -42,16 +42,16 @@ class VirtualQListWidgetItem final : public QListWidgetItem {
     mutable bool qlistwidgetitem_write_isbase = false;
 
   public:
-    VirtualQListWidgetItem() : QListWidgetItem() {};
-    VirtualQListWidgetItem(const QString& text) : QListWidgetItem(text) {};
-    VirtualQListWidgetItem(const QIcon& icon, const QString& text) : QListWidgetItem(icon, text) {};
-    VirtualQListWidgetItem(const QListWidgetItem& other) : QListWidgetItem(other) {};
-    VirtualQListWidgetItem(QListWidget* listview) : QListWidgetItem(listview) {};
-    VirtualQListWidgetItem(QListWidget* listview, int type) : QListWidgetItem(listview, type) {};
-    VirtualQListWidgetItem(const QString& text, QListWidget* listview) : QListWidgetItem(text, listview) {};
-    VirtualQListWidgetItem(const QString& text, QListWidget* listview, int type) : QListWidgetItem(text, listview, type) {};
-    VirtualQListWidgetItem(const QIcon& icon, const QString& text, QListWidget* listview) : QListWidgetItem(icon, text, listview) {};
-    VirtualQListWidgetItem(const QIcon& icon, const QString& text, QListWidget* listview, int type) : QListWidgetItem(icon, text, listview, type) {};
+    VirtualQListWidgetItem() : QListWidgetItem(){};
+    VirtualQListWidgetItem(const QString& text) : QListWidgetItem(text){};
+    VirtualQListWidgetItem(const QIcon& icon, const QString& text) : QListWidgetItem(icon, text){};
+    VirtualQListWidgetItem(const QListWidgetItem& other) : QListWidgetItem(other){};
+    VirtualQListWidgetItem(QListWidget* listview) : QListWidgetItem(listview){};
+    VirtualQListWidgetItem(QListWidget* listview, int type) : QListWidgetItem(listview, type){};
+    VirtualQListWidgetItem(const QString& text, QListWidget* listview) : QListWidgetItem(text, listview){};
+    VirtualQListWidgetItem(const QString& text, QListWidget* listview, int type) : QListWidgetItem(text, listview, type){};
+    VirtualQListWidgetItem(const QIcon& icon, const QString& text, QListWidget* listview) : QListWidgetItem(icon, text, listview){};
+    VirtualQListWidgetItem(const QIcon& icon, const QString& text, QListWidget* listview, int type) : QListWidgetItem(icon, text, listview, type){};
 
     // Callback setters
     inline void setQListWidgetItem_Clone_Callback(QListWidgetItem_Clone_Callback cb) { qlistwidgetitem_clone_callback = cb; }
@@ -193,7 +193,7 @@ class VirtualQListWidget final : public QListWidget {
     using QListWidget_SetSelectionModel_Callback = void (*)(QListWidget*, QItemSelectionModel*);
     using QListWidget_DropEvent_Callback = void (*)(QListWidget*, QDropEvent*);
     using QListWidget_Event_Callback = bool (*)(QListWidget*, QEvent*);
-    using QListWidget_MimeTypes_Callback = const char** (*)();
+    using QListWidget_MimeTypes_Callback = QStringList (*)();
     using QListWidget_MimeData_Callback = QMimeData* (*)(const QListWidget*, libqt_list /* of QListWidgetItem* */);
     using QListWidget_DropMimeData_Callback = bool (*)(QListWidget*, int, QMimeData*, int);
     using QListWidget_SupportedDropActions_Callback = int (*)();
@@ -311,7 +311,6 @@ class VirtualQListWidget final : public QListWidget {
     using QListWidget_SenderSignalIndex_Callback = int (*)();
     using QListWidget_Receivers_Callback = int (*)(const QListWidget*, const char*);
     using QListWidget_IsSignalConnected_Callback = bool (*)(const QListWidget*, QMetaMethod*);
-    using QListWidget_GetDecodedMetricF_Callback = double (*)(const QListWidget*, int, int);
 
   protected:
     // Instance callback storage
@@ -439,7 +438,6 @@ class VirtualQListWidget final : public QListWidget {
     QListWidget_SenderSignalIndex_Callback qlistwidget_sendersignalindex_callback = nullptr;
     QListWidget_Receivers_Callback qlistwidget_receivers_callback = nullptr;
     QListWidget_IsSignalConnected_Callback qlistwidget_issignalconnected_callback = nullptr;
-    QListWidget_GetDecodedMetricF_Callback qlistwidget_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qlistwidget_metaobject_isbase = false;
@@ -566,11 +564,10 @@ class VirtualQListWidget final : public QListWidget {
     mutable bool qlistwidget_sendersignalindex_isbase = false;
     mutable bool qlistwidget_receivers_isbase = false;
     mutable bool qlistwidget_issignalconnected_isbase = false;
-    mutable bool qlistwidget_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQListWidget(QWidget* parent) : QListWidget(parent) {};
-    VirtualQListWidget() : QListWidget() {};
+    VirtualQListWidget(QWidget* parent) : QListWidget(parent){};
+    VirtualQListWidget() : QListWidget(){};
 
     // Callback setters
     inline void setQListWidget_MetaObject_Callback(QListWidget_MetaObject_Callback cb) { qlistwidget_metaobject_callback = cb; }
@@ -697,7 +694,6 @@ class VirtualQListWidget final : public QListWidget {
     inline void setQListWidget_SenderSignalIndex_Callback(QListWidget_SenderSignalIndex_Callback cb) { qlistwidget_sendersignalindex_callback = cb; }
     inline void setQListWidget_Receivers_Callback(QListWidget_Receivers_Callback cb) { qlistwidget_receivers_callback = cb; }
     inline void setQListWidget_IsSignalConnected_Callback(QListWidget_IsSignalConnected_Callback cb) { qlistwidget_issignalconnected_callback = cb; }
-    inline void setQListWidget_GetDecodedMetricF_Callback(QListWidget_GetDecodedMetricF_Callback cb) { qlistwidget_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQListWidget_MetaObject_IsBase(bool value) const { qlistwidget_metaobject_isbase = value; }
@@ -824,7 +820,6 @@ class VirtualQListWidget final : public QListWidget {
     inline void setQListWidget_SenderSignalIndex_IsBase(bool value) const { qlistwidget_sendersignalindex_isbase = value; }
     inline void setQListWidget_Receivers_IsBase(bool value) const { qlistwidget_receivers_isbase = value; }
     inline void setQListWidget_IsSignalConnected_IsBase(bool value) const { qlistwidget_issignalconnected_isbase = value; }
-    inline void setQListWidget_GetDecodedMetricF_IsBase(bool value) const { qlistwidget_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -925,24 +920,15 @@ class VirtualQListWidget final : public QListWidget {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qlistwidget_mimetypes_isbase) {
             qlistwidget_mimetypes_isbase = false;
             return QListWidget::mimeTypes();
         }
         auto mimetypes_cb = qlistwidget_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QListWidget::mimeTypes();
     }
@@ -2944,30 +2930,13 @@ class VirtualQListWidget final : public QListWidget {
         return QListWidget::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qlistwidget_getdecodedmetricf_isbase) {
-            qlistwidget_getdecodedmetricf_isbase = false;
-            return QListWidget::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qlistwidget_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QListWidget::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QListWidget_DropEvent(QListWidget* self, QDropEvent* event);
     friend void QListWidget_SuperDropEvent(QListWidget* self, QDropEvent* event);
     friend bool QListWidget_Event(QListWidget* self, QEvent* e);
     friend bool QListWidget_SuperEvent(QListWidget* self, QEvent* e);
-    friend libqt_list /* of libqt_string */ QListWidget_MimeTypes(const QListWidget* self);
-    friend libqt_list /* of libqt_string */ QListWidget_SuperMimeTypes(const QListWidget* self);
+    friend QStringList QListWidget_MimeTypes(const QListWidget* self);
+    friend QStringList QListWidget_SuperMimeTypes(const QListWidget* self);
     friend QMimeData* QListWidget_MimeData(const QListWidget* self, const libqt_list /* of QListWidgetItem* */ items);
     friend QMimeData* QListWidget_SuperMimeData(const QListWidget* self, const libqt_list /* of QListWidgetItem* */ items);
     friend bool QListWidget_DropMimeData(QListWidget* self, int index, const QMimeData* data, int action);
@@ -3162,8 +3131,6 @@ class VirtualQListWidget final : public QListWidget {
     friend int QListWidget_SuperReceivers(const QListWidget* self, const char* signal);
     friend bool QListWidget_IsSignalConnected(const QListWidget* self, const QMetaMethod* signal);
     friend bool QListWidget_SuperIsSignalConnected(const QListWidget* self, const QMetaMethod* signal);
-    friend double QListWidget_GetDecodedMetricF(const QListWidget* self, int metricA, int metricB);
-    friend double QListWidget_SuperGetDecodedMetricF(const QListWidget* self, int metricA, int metricB);
 };
 
 #endif

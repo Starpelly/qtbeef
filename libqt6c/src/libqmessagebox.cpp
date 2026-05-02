@@ -257,22 +257,6 @@ QCheckBox* QMessageBox_CheckBox(const QMessageBox* self) {
     return self->checkBox();
 }
 
-void QMessageBox_SetOption(QMessageBox* self, int option) {
-    self->setOption(static_cast<QMessageBox::Option>(option));
-}
-
-bool QMessageBox_TestOption(const QMessageBox* self, int option) {
-    return self->testOption(static_cast<QMessageBox::Option>(option));
-}
-
-void QMessageBox_SetOptions(QMessageBox* self, int options) {
-    self->setOptions(static_cast<QMessageBox::Options>(options));
-}
-
-int QMessageBox_Options(const QMessageBox* self) {
-    return static_cast<int>(self->options());
-}
-
 int QMessageBox_Information(QWidget* parent, const libqt_string title, const libqt_string text) {
     QString title_QString = QString::fromUtf8(title.data, title.len);
     QString text_QString = QString::fromUtf8(text.data, text.len);
@@ -500,10 +484,6 @@ void QMessageBox_ChangeEvent(QMessageBox* self, QEvent* event) {
     if (vqmessagebox && vqmessagebox->isVirtualQMessageBox) {
         vqmessagebox->changeEvent(event);
     }
-}
-
-void QMessageBox_SetOption2(QMessageBox* self, int option, bool on) {
-    self->setOption(static_cast<QMessageBox::Option>(option), on);
 }
 
 int QMessageBox_Information42(QWidget* parent, const libqt_string title, const libqt_string text, int buttons) {
@@ -2535,35 +2515,6 @@ void QMessageBox_OnIsSignalConnected(const QMessageBox* self, intptr_t slot) {
     auto* vqmessagebox = const_cast<VirtualQMessageBox*>(dynamic_cast<const VirtualQMessageBox*>(self));
     if (vqmessagebox && vqmessagebox->isVirtualQMessageBox) {
         vqmessagebox->setQMessageBox_IsSignalConnected_Callback(reinterpret_cast<VirtualQMessageBox::QMessageBox_IsSignalConnected_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-double QMessageBox_GetDecodedMetricF(const QMessageBox* self, int metricA, int metricB) {
-    auto* vqmessagebox = const_cast<VirtualQMessageBox*>(dynamic_cast<const VirtualQMessageBox*>(self));
-    if (vqmessagebox && vqmessagebox->isVirtualQMessageBox) {
-        return vqmessagebox->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQMessageBox*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QMessageBox_SuperGetDecodedMetricF(const QMessageBox* self, int metricA, int metricB) {
-    auto* vqmessagebox = const_cast<VirtualQMessageBox*>(dynamic_cast<const VirtualQMessageBox*>(self));
-    if (vqmessagebox && vqmessagebox->isVirtualQMessageBox) {
-        vqmessagebox->setQMessageBox_GetDecodedMetricF_IsBase(true);
-        return vqmessagebox->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQMessageBox*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QMessageBox_OnGetDecodedMetricF(const QMessageBox* self, intptr_t slot) {
-    auto* vqmessagebox = const_cast<VirtualQMessageBox*>(dynamic_cast<const VirtualQMessageBox*>(self));
-    if (vqmessagebox && vqmessagebox->isVirtualQMessageBox) {
-        vqmessagebox->setQMessageBox_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQMessageBox::QMessageBox_GetDecodedMetricF_Callback>(slot));
     }
 }
 

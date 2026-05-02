@@ -265,10 +265,6 @@ libqt_string QApplication_StyleSheet(const QApplication* self) {
     return _str;
 }
 
-bool QApplication_AutoSipEnabled(const QApplication* self) {
-    return self->autoSipEnabled();
-}
-
 void QApplication_SetStyleSheet(QApplication* self, const libqt_string sheet) {
     QString sheet_QString = QString::fromUtf8(sheet.data, sheet.len);
     self->setStyleSheet(sheet_QString);
@@ -276,6 +272,10 @@ void QApplication_SetStyleSheet(QApplication* self, const libqt_string sheet) {
 
 void QApplication_SetAutoSipEnabled(QApplication* self, const bool enabled) {
     self->setAutoSipEnabled(enabled);
+}
+
+bool QApplication_AutoSipEnabled(const QApplication* self) {
+    return self->autoSipEnabled();
 }
 
 void QApplication_CloseAllWindows() {

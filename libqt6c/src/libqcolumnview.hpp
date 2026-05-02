@@ -430,9 +430,6 @@ int QColumnView_SuperReceivers(const QColumnView* self, const char* signal);
 bool QColumnView_IsSignalConnected(const QColumnView* self, const QMetaMethod* signal);
 void QColumnView_OnIsSignalConnected(const QColumnView* self, intptr_t slot);
 bool QColumnView_SuperIsSignalConnected(const QColumnView* self, const QMetaMethod* signal);
-double QColumnView_GetDecodedMetricF(const QColumnView* self, int metricA, int metricB);
-void QColumnView_OnGetDecodedMetricF(const QColumnView* self, intptr_t slot);
-double QColumnView_SuperGetDecodedMetricF(const QColumnView* self, int metricA, int metricB);
 void QColumnView_Delete(QColumnView* self);
 
 #ifdef __cplusplus

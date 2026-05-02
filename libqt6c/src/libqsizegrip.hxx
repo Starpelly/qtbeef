@@ -76,7 +76,6 @@ class VirtualQSizeGrip final : public QSizeGrip {
     using QSizeGrip_SenderSignalIndex_Callback = int (*)();
     using QSizeGrip_Receivers_Callback = int (*)(const QSizeGrip*, const char*);
     using QSizeGrip_IsSignalConnected_Callback = bool (*)(const QSizeGrip*, QMetaMethod*);
-    using QSizeGrip_GetDecodedMetricF_Callback = double (*)(const QSizeGrip*, int, int);
 
   protected:
     // Instance callback storage
@@ -139,7 +138,6 @@ class VirtualQSizeGrip final : public QSizeGrip {
     QSizeGrip_SenderSignalIndex_Callback qsizegrip_sendersignalindex_callback = nullptr;
     QSizeGrip_Receivers_Callback qsizegrip_receivers_callback = nullptr;
     QSizeGrip_IsSignalConnected_Callback qsizegrip_issignalconnected_callback = nullptr;
-    QSizeGrip_GetDecodedMetricF_Callback qsizegrip_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qsizegrip_metaobject_isbase = false;
@@ -201,10 +199,9 @@ class VirtualQSizeGrip final : public QSizeGrip {
     mutable bool qsizegrip_sendersignalindex_isbase = false;
     mutable bool qsizegrip_receivers_isbase = false;
     mutable bool qsizegrip_issignalconnected_isbase = false;
-    mutable bool qsizegrip_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQSizeGrip(QWidget* parent) : QSizeGrip(parent) {};
+    VirtualQSizeGrip(QWidget* parent) : QSizeGrip(parent){};
 
     // Callback setters
     inline void setQSizeGrip_MetaObject_Callback(QSizeGrip_MetaObject_Callback cb) { qsizegrip_metaobject_callback = cb; }
@@ -266,7 +263,6 @@ class VirtualQSizeGrip final : public QSizeGrip {
     inline void setQSizeGrip_SenderSignalIndex_Callback(QSizeGrip_SenderSignalIndex_Callback cb) { qsizegrip_sendersignalindex_callback = cb; }
     inline void setQSizeGrip_Receivers_Callback(QSizeGrip_Receivers_Callback cb) { qsizegrip_receivers_callback = cb; }
     inline void setQSizeGrip_IsSignalConnected_Callback(QSizeGrip_IsSignalConnected_Callback cb) { qsizegrip_issignalconnected_callback = cb; }
-    inline void setQSizeGrip_GetDecodedMetricF_Callback(QSizeGrip_GetDecodedMetricF_Callback cb) { qsizegrip_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQSizeGrip_MetaObject_IsBase(bool value) const { qsizegrip_metaobject_isbase = value; }
@@ -328,7 +324,6 @@ class VirtualQSizeGrip final : public QSizeGrip {
     inline void setQSizeGrip_SenderSignalIndex_IsBase(bool value) const { qsizegrip_sendersignalindex_isbase = value; }
     inline void setQSizeGrip_Receivers_IsBase(bool value) const { qsizegrip_receivers_isbase = value; }
     inline void setQSizeGrip_IsSignalConnected_IsBase(bool value) const { qsizegrip_issignalconnected_isbase = value; }
-    inline void setQSizeGrip_GetDecodedMetricF_IsBase(bool value) const { qsizegrip_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1300,23 +1295,6 @@ class VirtualQSizeGrip final : public QSizeGrip {
         return QSizeGrip::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qsizegrip_getdecodedmetricf_isbase) {
-            qsizegrip_getdecodedmetricf_isbase = false;
-            return QSizeGrip::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qsizegrip_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QSizeGrip::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QSizeGrip_PaintEvent(QSizeGrip* self, QPaintEvent* param1);
     friend void QSizeGrip_SuperPaintEvent(QSizeGrip* self, QPaintEvent* param1);
@@ -1414,8 +1392,6 @@ class VirtualQSizeGrip final : public QSizeGrip {
     friend int QSizeGrip_SuperReceivers(const QSizeGrip* self, const char* signal);
     friend bool QSizeGrip_IsSignalConnected(const QSizeGrip* self, const QMetaMethod* signal);
     friend bool QSizeGrip_SuperIsSignalConnected(const QSizeGrip* self, const QMetaMethod* signal);
-    friend double QSizeGrip_GetDecodedMetricF(const QSizeGrip* self, int metricA, int metricB);
-    friend double QSizeGrip_SuperGetDecodedMetricF(const QSizeGrip* self, int metricA, int metricB);
 };
 
 #endif

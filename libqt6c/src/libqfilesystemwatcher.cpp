@@ -1,7 +1,6 @@
 #include <QChildEvent>
 #include <QEvent>
 #include <QFileSystemWatcher>
-#include <QList>
 #include <QMetaMethod>
 #include <QMetaObject>
 #include <QObject>
@@ -17,30 +16,16 @@ QFileSystemWatcher* QFileSystemWatcher_new() {
     return new VirtualQFileSystemWatcher();
 }
 
-QFileSystemWatcher* QFileSystemWatcher_new2(const libqt_list /* of libqt_string */ paths) {
-    QList<QString> paths_QList;
-    paths_QList.reserve(paths.len);
-    libqt_string* paths_arr = static_cast<libqt_string*>(paths.data.ptr);
-    for (size_t i = 0; i < paths.len; ++i) {
-        QString paths_arr_i_QString = QString::fromUtf8(paths_arr[i].data, paths_arr[i].len);
-        paths_QList.push_back(paths_arr_i_QString);
-    }
-    return new VirtualQFileSystemWatcher(paths_QList);
+QFileSystemWatcher* QFileSystemWatcher_new2(const QStringList* paths) {
+    return new VirtualQFileSystemWatcher(*paths);
 }
 
 QFileSystemWatcher* QFileSystemWatcher_new3(QObject* parent) {
     return new VirtualQFileSystemWatcher(parent);
 }
 
-QFileSystemWatcher* QFileSystemWatcher_new4(const libqt_list /* of libqt_string */ paths, QObject* parent) {
-    QList<QString> paths_QList;
-    paths_QList.reserve(paths.len);
-    libqt_string* paths_arr = static_cast<libqt_string*>(paths.data.ptr);
-    for (size_t i = 0; i < paths.len; ++i) {
-        QString paths_arr_i_QString = QString::fromUtf8(paths_arr[i].data, paths_arr[i].len);
-        paths_QList.push_back(paths_arr_i_QString);
-    }
-    return new VirtualQFileSystemWatcher(paths_QList, parent);
+QFileSystemWatcher* QFileSystemWatcher_new4(const QStringList* paths, QObject* parent) {
+    return new VirtualQFileSystemWatcher(*paths, parent);
 }
 
 QMetaObject* QFileSystemWatcher_MetaObject(const QFileSystemWatcher* self) {
@@ -75,32 +60,8 @@ bool QFileSystemWatcher_AddPath(QFileSystemWatcher* self, const libqt_string fil
     return self->addPath(file_QString);
 }
 
-libqt_list /* of libqt_string */ QFileSystemWatcher_AddPaths(QFileSystemWatcher* self, const libqt_list /* of libqt_string */ files) {
-    QList<QString> files_QList;
-    files_QList.reserve(files.len);
-    libqt_string* files_arr = static_cast<libqt_string*>(files.data.ptr);
-    for (size_t i = 0; i < files.len; ++i) {
-        QString files_arr_i_QString = QString::fromUtf8(files_arr[i].data, files_arr[i].len);
-        files_QList.push_back(files_arr_i_QString);
-    }
-    QList<QString> _ret = self->addPaths(files_QList);
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QFileSystemWatcher_AddPaths(QFileSystemWatcher* self, const QStringList* files) {
+    return self->addPaths(*files);
 }
 
 bool QFileSystemWatcher_RemovePath(QFileSystemWatcher* self, const libqt_string file) {
@@ -108,74 +69,16 @@ bool QFileSystemWatcher_RemovePath(QFileSystemWatcher* self, const libqt_string 
     return self->removePath(file_QString);
 }
 
-libqt_list /* of libqt_string */ QFileSystemWatcher_RemovePaths(QFileSystemWatcher* self, const libqt_list /* of libqt_string */ files) {
-    QList<QString> files_QList;
-    files_QList.reserve(files.len);
-    libqt_string* files_arr = static_cast<libqt_string*>(files.data.ptr);
-    for (size_t i = 0; i < files.len; ++i) {
-        QString files_arr_i_QString = QString::fromUtf8(files_arr[i].data, files_arr[i].len);
-        files_QList.push_back(files_arr_i_QString);
-    }
-    QList<QString> _ret = self->removePaths(files_QList);
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QFileSystemWatcher_RemovePaths(QFileSystemWatcher* self, const QStringList* files) {
+    return self->removePaths(*files);
 }
 
-libqt_list /* of libqt_string */ QFileSystemWatcher_Files(const QFileSystemWatcher* self) {
-    QList<QString> _ret = self->files();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QFileSystemWatcher_Files(const QFileSystemWatcher* self) {
+    return self->files();
 }
 
-libqt_list /* of libqt_string */ QFileSystemWatcher_Directories(const QFileSystemWatcher* self) {
-    QList<QString> _ret = self->directories();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QFileSystemWatcher_Directories(const QFileSystemWatcher* self) {
+    return self->directories();
 }
 
 // Base class handler implementation

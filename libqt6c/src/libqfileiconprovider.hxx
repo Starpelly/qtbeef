@@ -39,7 +39,7 @@ class VirtualQFileIconProvider final : public QFileIconProvider {
     mutable bool qfileiconprovider_options_isbase = false;
 
   public:
-    VirtualQFileIconProvider() : QFileIconProvider() {};
+    VirtualQFileIconProvider() : QFileIconProvider(){};
 
     // Callback setters
     inline void setQFileIconProvider_Icon_Callback(QFileIconProvider_Icon_Callback cb) { qfileiconprovider_icon_callback = cb; }

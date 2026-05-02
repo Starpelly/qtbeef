@@ -7,7 +7,6 @@ import (
 	"flag"
 	"fmt"
 	"log"
-	"maps"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -482,27 +481,29 @@ func generate(srcName string, srcDirs []string, allowHeaderFn func(string) bool,
 			panic(err)
 		}
 
-		srcC, err := emitC(parsed, headerName, packageName)
-		if err != nil {
-			panic(err)
-		}
+		/*
+			srcC, err := emitC(parsed, headerName, packageName)
+			if err != nil {
+				panic(err)
+			}
 
-		err = os.WriteFile(outputName+".c", []byte(srcC), 0644)
-		if err != nil {
-			panic(err)
-		}
+			err = os.WriteFile(outputName+".c", []byte(srcC), 0644)
+			if err != nil {
+				panic(err)
+			}
 
-		includeH, qtfuncdefs, err := emitH(parsed, headerName, packageName)
-		if err != nil {
-			panic(err)
-		}
+			includeH, qtfuncdefs, err := emitH(parsed, headerName, packageName)
+			if err != nil {
+				panic(err)
+			}
 
-		maps.Copy(allqtfuncdefs, qtfuncdefs)
+			maps.Copy(allqtfuncdefs, qtfuncdefs)
 
-		err = os.WriteFile(outputName+".h", []byte(includeH), 0644)
-		if err != nil {
-			panic(err)
-		}
+			err = os.WriteFile(outputName+".h", []byte(includeH), 0644)
+			if err != nil {
+				panic(err)
+			}
+		*/
 
 		err = os.MkdirAll(filepath.Dir(includeDir), 0755)
 		if err != nil {

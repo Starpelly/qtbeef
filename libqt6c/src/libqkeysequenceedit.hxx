@@ -76,7 +76,6 @@ class VirtualQKeySequenceEdit final : public QKeySequenceEdit {
     using QKeySequenceEdit_SenderSignalIndex_Callback = int (*)();
     using QKeySequenceEdit_Receivers_Callback = int (*)(const QKeySequenceEdit*, const char*);
     using QKeySequenceEdit_IsSignalConnected_Callback = bool (*)(const QKeySequenceEdit*, QMetaMethod*);
-    using QKeySequenceEdit_GetDecodedMetricF_Callback = double (*)(const QKeySequenceEdit*, int, int);
 
   protected:
     // Instance callback storage
@@ -139,7 +138,6 @@ class VirtualQKeySequenceEdit final : public QKeySequenceEdit {
     QKeySequenceEdit_SenderSignalIndex_Callback qkeysequenceedit_sendersignalindex_callback = nullptr;
     QKeySequenceEdit_Receivers_Callback qkeysequenceedit_receivers_callback = nullptr;
     QKeySequenceEdit_IsSignalConnected_Callback qkeysequenceedit_issignalconnected_callback = nullptr;
-    QKeySequenceEdit_GetDecodedMetricF_Callback qkeysequenceedit_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qkeysequenceedit_metaobject_isbase = false;
@@ -201,13 +199,12 @@ class VirtualQKeySequenceEdit final : public QKeySequenceEdit {
     mutable bool qkeysequenceedit_sendersignalindex_isbase = false;
     mutable bool qkeysequenceedit_receivers_isbase = false;
     mutable bool qkeysequenceedit_issignalconnected_isbase = false;
-    mutable bool qkeysequenceedit_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQKeySequenceEdit(QWidget* parent) : QKeySequenceEdit(parent) {};
-    VirtualQKeySequenceEdit() : QKeySequenceEdit() {};
-    VirtualQKeySequenceEdit(const QKeySequence& keySequence) : QKeySequenceEdit(keySequence) {};
-    VirtualQKeySequenceEdit(const QKeySequence& keySequence, QWidget* parent) : QKeySequenceEdit(keySequence, parent) {};
+    VirtualQKeySequenceEdit(QWidget* parent) : QKeySequenceEdit(parent){};
+    VirtualQKeySequenceEdit() : QKeySequenceEdit(){};
+    VirtualQKeySequenceEdit(const QKeySequence& keySequence) : QKeySequenceEdit(keySequence){};
+    VirtualQKeySequenceEdit(const QKeySequence& keySequence, QWidget* parent) : QKeySequenceEdit(keySequence, parent){};
 
     // Callback setters
     inline void setQKeySequenceEdit_MetaObject_Callback(QKeySequenceEdit_MetaObject_Callback cb) { qkeysequenceedit_metaobject_callback = cb; }
@@ -269,7 +266,6 @@ class VirtualQKeySequenceEdit final : public QKeySequenceEdit {
     inline void setQKeySequenceEdit_SenderSignalIndex_Callback(QKeySequenceEdit_SenderSignalIndex_Callback cb) { qkeysequenceedit_sendersignalindex_callback = cb; }
     inline void setQKeySequenceEdit_Receivers_Callback(QKeySequenceEdit_Receivers_Callback cb) { qkeysequenceedit_receivers_callback = cb; }
     inline void setQKeySequenceEdit_IsSignalConnected_Callback(QKeySequenceEdit_IsSignalConnected_Callback cb) { qkeysequenceedit_issignalconnected_callback = cb; }
-    inline void setQKeySequenceEdit_GetDecodedMetricF_Callback(QKeySequenceEdit_GetDecodedMetricF_Callback cb) { qkeysequenceedit_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQKeySequenceEdit_MetaObject_IsBase(bool value) const { qkeysequenceedit_metaobject_isbase = value; }
@@ -331,7 +327,6 @@ class VirtualQKeySequenceEdit final : public QKeySequenceEdit {
     inline void setQKeySequenceEdit_SenderSignalIndex_IsBase(bool value) const { qkeysequenceedit_sendersignalindex_isbase = value; }
     inline void setQKeySequenceEdit_Receivers_IsBase(bool value) const { qkeysequenceedit_receivers_isbase = value; }
     inline void setQKeySequenceEdit_IsSignalConnected_IsBase(bool value) const { qkeysequenceedit_issignalconnected_isbase = value; }
-    inline void setQKeySequenceEdit_GetDecodedMetricF_IsBase(bool value) const { qkeysequenceedit_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1303,23 +1298,6 @@ class VirtualQKeySequenceEdit final : public QKeySequenceEdit {
         return QKeySequenceEdit::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qkeysequenceedit_getdecodedmetricf_isbase) {
-            qkeysequenceedit_getdecodedmetricf_isbase = false;
-            return QKeySequenceEdit::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qkeysequenceedit_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QKeySequenceEdit::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QKeySequenceEdit_Event(QKeySequenceEdit* self, QEvent* param1);
     friend bool QKeySequenceEdit_SuperEvent(QKeySequenceEdit* self, QEvent* param1);
@@ -1415,8 +1393,6 @@ class VirtualQKeySequenceEdit final : public QKeySequenceEdit {
     friend int QKeySequenceEdit_SuperReceivers(const QKeySequenceEdit* self, const char* signal);
     friend bool QKeySequenceEdit_IsSignalConnected(const QKeySequenceEdit* self, const QMetaMethod* signal);
     friend bool QKeySequenceEdit_SuperIsSignalConnected(const QKeySequenceEdit* self, const QMetaMethod* signal);
-    friend double QKeySequenceEdit_GetDecodedMetricF(const QKeySequenceEdit* self, int metricA, int metricB);
-    friend double QKeySequenceEdit_SuperGetDecodedMetricF(const QKeySequenceEdit* self, int metricA, int metricB);
 };
 
 #endif

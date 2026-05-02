@@ -368,9 +368,6 @@ int QGraphicsView_SuperReceivers(const QGraphicsView* self, const char* signal);
 bool QGraphicsView_IsSignalConnected(const QGraphicsView* self, const QMetaMethod* signal);
 void QGraphicsView_OnIsSignalConnected(const QGraphicsView* self, intptr_t slot);
 bool QGraphicsView_SuperIsSignalConnected(const QGraphicsView* self, const QMetaMethod* signal);
-double QGraphicsView_GetDecodedMetricF(const QGraphicsView* self, int metricA, int metricB);
-void QGraphicsView_OnGetDecodedMetricF(const QGraphicsView* self, intptr_t slot);
-double QGraphicsView_SuperGetDecodedMetricF(const QGraphicsView* self, int metricA, int metricB);
 void QGraphicsView_Delete(QGraphicsView* self);
 
 #ifdef __cplusplus

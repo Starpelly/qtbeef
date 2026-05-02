@@ -47,6 +47,8 @@ void QLine_SetP1(QLine* self, const QPoint* p1);
 void QLine_SetP2(QLine* self, const QPoint* p2);
 void QLine_SetPoints(QLine* self, const QPoint* p1, const QPoint* p2);
 void QLine_SetLine(QLine* self, int x1, int y1, int x2, int y2);
+bool QLine_OperatorEqual(const QLine* self, const QLine* d);
+bool QLine_OperatorNotEqual(const QLine* self, const QLine* d);
 QLineF* QLine_ToLineF(const QLine* self);
 void QLine_Delete(QLine* self);
 
@@ -87,6 +89,8 @@ void QLineF_SetP1(QLineF* self, const QPointF* p1);
 void QLineF_SetP2(QLineF* self, const QPointF* p2);
 void QLineF_SetPoints(QLineF* self, const QPointF* p1, const QPointF* p2);
 void QLineF_SetLine(QLineF* self, double x1, double y1, double x2, double y2);
+bool QLineF_OperatorEqual(const QLineF* self, const QLineF* d);
+bool QLineF_OperatorNotEqual(const QLineF* self, const QLineF* d);
 QLine* QLineF_ToLine(const QLineF* self);
 int QLineF_Intersects2(const QLineF* self, const QLineF* l, QPointF* intersectionPoint);
 void QLineF_Delete(QLineF* self);

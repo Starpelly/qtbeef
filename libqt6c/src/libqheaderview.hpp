@@ -533,9 +533,6 @@ int QHeaderView_SuperReceivers(const QHeaderView* self, const char* signal);
 bool QHeaderView_IsSignalConnected(const QHeaderView* self, const QMetaMethod* signal);
 void QHeaderView_OnIsSignalConnected(const QHeaderView* self, intptr_t slot);
 bool QHeaderView_SuperIsSignalConnected(const QHeaderView* self, const QMetaMethod* signal);
-double QHeaderView_GetDecodedMetricF(const QHeaderView* self, int metricA, int metricB);
-void QHeaderView_OnGetDecodedMetricF(const QHeaderView* self, intptr_t slot);
-double QHeaderView_SuperGetDecodedMetricF(const QHeaderView* self, int metricA, int metricB);
 void QHeaderView_Delete(QHeaderView* self);
 
 #ifdef __cplusplus

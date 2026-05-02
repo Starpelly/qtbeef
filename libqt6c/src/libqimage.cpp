@@ -431,20 +431,12 @@ QColorSpace* QImage_ColorSpace(const QImage* self) {
     return new QColorSpace(self->colorSpace());
 }
 
-QImage* QImage_ConvertedToColorSpace(const QImage* self, const QColorSpace* colorSpace) {
-    return new QImage(self->convertedToColorSpace(*colorSpace));
+QImage* QImage_ConvertedToColorSpace(const QImage* self, const QColorSpace* param1) {
+    return new QImage(self->convertedToColorSpace(*param1));
 }
 
-QImage* QImage_ConvertedToColorSpace2(const QImage* self, const QColorSpace* colorSpace, int format) {
-    return new QImage(self->convertedToColorSpace(*colorSpace, static_cast<QImage::Format>(format)));
-}
-
-void QImage_ConvertToColorSpace(QImage* self, const QColorSpace* colorSpace) {
-    self->convertToColorSpace(*colorSpace);
-}
-
-void QImage_ConvertToColorSpace2(QImage* self, const QColorSpace* colorSpace, int format) {
-    self->convertToColorSpace(*colorSpace, static_cast<QImage::Format>(format));
+void QImage_ConvertToColorSpace(QImage* self, const QColorSpace* param1) {
+    self->convertToColorSpace(*param1);
 }
 
 void QImage_SetColorSpace(QImage* self, const QColorSpace* colorSpace) {
@@ -455,16 +447,8 @@ QImage* QImage_ColorTransformed(const QImage* self, const QColorTransform* trans
     return new QImage(self->colorTransformed(*transform));
 }
 
-QImage* QImage_ColorTransformed2(const QImage* self, const QColorTransform* transform, int format) {
-    return new QImage(self->colorTransformed(*transform, static_cast<QImage::Format>(format)));
-}
-
 void QImage_ApplyColorTransform(QImage* self, const QColorTransform* transform) {
     self->applyColorTransform(*transform);
-}
-
-void QImage_ApplyColorTransform2(QImage* self, const QColorTransform* transform, int format) {
-    self->applyColorTransform(*transform, static_cast<QImage::Format>(format));
 }
 
 bool QImage_Load(QImage* self, QIODevice* device, const char* format) {
@@ -550,25 +534,8 @@ void QImage_SetOffset(QImage* self, const QPoint* offset) {
     self->setOffset(*offset);
 }
 
-libqt_list /* of libqt_string */ QImage_TextKeys(const QImage* self) {
-    QList<QString> _ret = self->textKeys();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QImage_TextKeys(const QImage* self) {
+    return self->textKeys();
 }
 
 libqt_string QImage_Text(const QImage* self) {
@@ -693,22 +660,6 @@ void QImage_Mirror2(QImage* self, bool horizontally, bool vertically) {
 
 void QImage_InvertPixels1(QImage* self, int param1) {
     self->invertPixels(static_cast<QImage::InvertMode>(param1));
-}
-
-QImage* QImage_ConvertedToColorSpace3(const QImage* self, const QColorSpace* colorSpace, int format, int flags) {
-    return new QImage(self->convertedToColorSpace(*colorSpace, static_cast<QImage::Format>(format), static_cast<Qt::ImageConversionFlags>(flags)));
-}
-
-void QImage_ConvertToColorSpace3(QImage* self, const QColorSpace* colorSpace, int format, int flags) {
-    self->convertToColorSpace(*colorSpace, static_cast<QImage::Format>(format), static_cast<Qt::ImageConversionFlags>(flags));
-}
-
-QImage* QImage_ColorTransformed3(const QImage* self, const QColorTransform* transform, int format, int flags) {
-    return new QImage(self->colorTransformed(*transform, static_cast<QImage::Format>(format), static_cast<Qt::ImageConversionFlags>(flags)));
-}
-
-void QImage_ApplyColorTransform3(QImage* self, const QColorTransform* transform, int format, int flags) {
-    self->applyColorTransform(*transform, static_cast<QImage::Format>(format), static_cast<Qt::ImageConversionFlags>(flags));
 }
 
 bool QImage_Load22(QImage* self, const libqt_string fileName, const char* format) {
@@ -1169,35 +1120,6 @@ void QImage_OnDetachMetadata1(QImage* self, intptr_t slot) {
     auto* vqimage = dynamic_cast<VirtualQImage*>(self);
     if (vqimage && vqimage->isVirtualQImage) {
         vqimage->setQImage_DetachMetadata1_Callback(reinterpret_cast<VirtualQImage::QImage_DetachMetadata1_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-double QImage_GetDecodedMetricF(const QImage* self, int metricA, int metricB) {
-    auto* vqimage = const_cast<VirtualQImage*>(dynamic_cast<const VirtualQImage*>(self));
-    if (vqimage && vqimage->isVirtualQImage) {
-        return vqimage->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQImage*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QImage_SuperGetDecodedMetricF(const QImage* self, int metricA, int metricB) {
-    auto* vqimage = const_cast<VirtualQImage*>(dynamic_cast<const VirtualQImage*>(self));
-    if (vqimage && vqimage->isVirtualQImage) {
-        vqimage->setQImage_GetDecodedMetricF_IsBase(true);
-        return vqimage->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQImage*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QImage_OnGetDecodedMetricF(const QImage* self, intptr_t slot) {
-    auto* vqimage = const_cast<VirtualQImage*>(dynamic_cast<const VirtualQImage*>(self));
-    if (vqimage && vqimage->isVirtualQImage) {
-        vqimage->setQImage_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQImage::QImage_GetDecodedMetricF_Callback>(slot));
     }
 }
 

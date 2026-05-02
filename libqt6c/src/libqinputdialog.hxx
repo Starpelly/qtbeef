@@ -82,7 +82,6 @@ class VirtualQInputDialog final : public QInputDialog {
     using QInputDialog_SenderSignalIndex_Callback = int (*)();
     using QInputDialog_Receivers_Callback = int (*)(const QInputDialog*, const char*);
     using QInputDialog_IsSignalConnected_Callback = bool (*)(const QInputDialog*, QMetaMethod*);
-    using QInputDialog_GetDecodedMetricF_Callback = double (*)(const QInputDialog*, int, int);
 
   protected:
     // Instance callback storage
@@ -151,7 +150,6 @@ class VirtualQInputDialog final : public QInputDialog {
     QInputDialog_SenderSignalIndex_Callback qinputdialog_sendersignalindex_callback = nullptr;
     QInputDialog_Receivers_Callback qinputdialog_receivers_callback = nullptr;
     QInputDialog_IsSignalConnected_Callback qinputdialog_issignalconnected_callback = nullptr;
-    QInputDialog_GetDecodedMetricF_Callback qinputdialog_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qinputdialog_metaobject_isbase = false;
@@ -219,12 +217,11 @@ class VirtualQInputDialog final : public QInputDialog {
     mutable bool qinputdialog_sendersignalindex_isbase = false;
     mutable bool qinputdialog_receivers_isbase = false;
     mutable bool qinputdialog_issignalconnected_isbase = false;
-    mutable bool qinputdialog_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQInputDialog(QWidget* parent) : QInputDialog(parent) {};
-    VirtualQInputDialog() : QInputDialog() {};
-    VirtualQInputDialog(QWidget* parent, Qt::WindowFlags flags) : QInputDialog(parent, flags) {};
+    VirtualQInputDialog(QWidget* parent) : QInputDialog(parent){};
+    VirtualQInputDialog() : QInputDialog(){};
+    VirtualQInputDialog(QWidget* parent, Qt::WindowFlags flags) : QInputDialog(parent, flags){};
 
     // Callback setters
     inline void setQInputDialog_MetaObject_Callback(QInputDialog_MetaObject_Callback cb) { qinputdialog_metaobject_callback = cb; }
@@ -292,7 +289,6 @@ class VirtualQInputDialog final : public QInputDialog {
     inline void setQInputDialog_SenderSignalIndex_Callback(QInputDialog_SenderSignalIndex_Callback cb) { qinputdialog_sendersignalindex_callback = cb; }
     inline void setQInputDialog_Receivers_Callback(QInputDialog_Receivers_Callback cb) { qinputdialog_receivers_callback = cb; }
     inline void setQInputDialog_IsSignalConnected_Callback(QInputDialog_IsSignalConnected_Callback cb) { qinputdialog_issignalconnected_callback = cb; }
-    inline void setQInputDialog_GetDecodedMetricF_Callback(QInputDialog_GetDecodedMetricF_Callback cb) { qinputdialog_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQInputDialog_MetaObject_IsBase(bool value) const { qinputdialog_metaobject_isbase = value; }
@@ -360,7 +356,6 @@ class VirtualQInputDialog final : public QInputDialog {
     inline void setQInputDialog_SenderSignalIndex_IsBase(bool value) const { qinputdialog_sendersignalindex_isbase = value; }
     inline void setQInputDialog_Receivers_IsBase(bool value) const { qinputdialog_receivers_isbase = value; }
     inline void setQInputDialog_IsSignalConnected_IsBase(bool value) const { qinputdialog_issignalconnected_isbase = value; }
-    inline void setQInputDialog_GetDecodedMetricF_IsBase(bool value) const { qinputdialog_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1425,23 +1420,6 @@ class VirtualQInputDialog final : public QInputDialog {
         return QInputDialog::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qinputdialog_getdecodedmetricf_isbase) {
-            qinputdialog_getdecodedmetricf_isbase = false;
-            return QInputDialog::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qinputdialog_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QInputDialog::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QInputDialog_KeyPressEvent(QInputDialog* self, QKeyEvent* param1);
     friend void QInputDialog_SuperKeyPressEvent(QInputDialog* self, QKeyEvent* param1);
@@ -1541,8 +1519,6 @@ class VirtualQInputDialog final : public QInputDialog {
     friend int QInputDialog_SuperReceivers(const QInputDialog* self, const char* signal);
     friend bool QInputDialog_IsSignalConnected(const QInputDialog* self, const QMetaMethod* signal);
     friend bool QInputDialog_SuperIsSignalConnected(const QInputDialog* self, const QMetaMethod* signal);
-    friend double QInputDialog_GetDecodedMetricF(const QInputDialog* self, int metricA, int metricB);
-    friend double QInputDialog_SuperGetDecodedMetricF(const QInputDialog* self, int metricA, int metricB);
 };
 
 #endif

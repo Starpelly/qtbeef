@@ -135,7 +135,7 @@ class VirtualQStyle : public QStyle {
     mutable bool qstyle_issignalconnected_isbase = false;
 
   public:
-    VirtualQStyle() : QStyle() {};
+    VirtualQStyle() : QStyle(){};
 
     // Callback setters
     inline void setQStyle_MetaObject_Callback(QStyle_MetaObject_Callback cb) { qstyle_metaobject_callback = cb; }

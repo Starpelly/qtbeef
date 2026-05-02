@@ -11,15 +11,15 @@ class Program
 		char8*[] argv = scope .();
 
 		QApplication_new(&argc, argv);
-		q_mainwindow_new(null);
+		QMainWindow_new(null);
 
-		let widget = q_widget_new2();
+		let widget = QWidget_new2();
 
-		q_pushbutton_new5("Hello world!", widget);
+		QPushButton_new5("Hello world!", widget);
 
-		q_widget_show(widget);
+		QWidget_Show(widget);
 
-		q_application_exec();
+		QApplication_Exec();
 
 		return 0;
 	}

@@ -66,12 +66,10 @@ class VirtualQSharedMemory final : public QSharedMemory {
     mutable bool qsharedmemory_issignalconnected_isbase = false;
 
   public:
-    VirtualQSharedMemory() : QSharedMemory() {};
-    VirtualQSharedMemory(const QNativeIpcKey& key) : QSharedMemory(key) {};
-    VirtualQSharedMemory(const QString& key) : QSharedMemory(key) {};
-    VirtualQSharedMemory(QObject* parent) : QSharedMemory(parent) {};
-    VirtualQSharedMemory(const QNativeIpcKey& key, QObject* parent) : QSharedMemory(key, parent) {};
-    VirtualQSharedMemory(const QString& key, QObject* parent) : QSharedMemory(key, parent) {};
+    VirtualQSharedMemory() : QSharedMemory(){};
+    VirtualQSharedMemory(const QString& key) : QSharedMemory(key){};
+    VirtualQSharedMemory(QObject* parent) : QSharedMemory(parent){};
+    VirtualQSharedMemory(const QString& key, QObject* parent) : QSharedMemory(key, parent){};
 
     // Callback setters
     inline void setQSharedMemory_MetaObject_Callback(QSharedMemory_MetaObject_Callback cb) { qsharedmemory_metaobject_callback = cb; }

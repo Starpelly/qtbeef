@@ -123,8 +123,6 @@ double QPainterPathStroker_DashOffset(const QPainterPathStroker* self);
 QPainterPath* QPainterPathStroker_CreateStroke(const QPainterPathStroker* self, const QPainterPath* path);
 void QPainterPathStroker_Delete(QPainterPathStroker* self);
 
-QPainterPath__Element* QPainterPath__Element_new();
-QPainterPath__Element* QPainterPath__Element_new2(const QPainterPath__Element* param1);
 double QPainterPath__Element_X(const QPainterPath__Element* self);
 void QPainterPath__Element_SetX(QPainterPath__Element* self, double x);
 double QPainterPath__Element_Y(const QPainterPath__Element* self);

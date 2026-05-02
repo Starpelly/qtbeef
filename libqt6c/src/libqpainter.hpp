@@ -269,8 +269,6 @@ void QPainter_SetRenderHint2(QPainter* self, int hint, bool on);
 void QPainter_SetRenderHints2(QPainter* self, int hints, bool on);
 void QPainter_Delete(QPainter* self);
 
-QPainter__PixmapFragment* QPainter__PixmapFragment_new();
-QPainter__PixmapFragment* QPainter__PixmapFragment_new2(const QPainter__PixmapFragment* param1);
 double QPainter__PixmapFragment_X(const QPainter__PixmapFragment* self);
 void QPainter__PixmapFragment_SetX(QPainter__PixmapFragment* self, double x);
 double QPainter__PixmapFragment_Y(const QPainter__PixmapFragment* self);

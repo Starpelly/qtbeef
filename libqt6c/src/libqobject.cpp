@@ -124,8 +124,8 @@ QThread* QObject_Thread(const QObject* self) {
     return self->thread();
 }
 
-bool QObject_MoveToThread(QObject* self, QThread* thread) {
-    return self->moveToThread(thread);
+void QObject_MoveToThread(QObject* self, QThread* thread) {
+    self->moveToThread(thread);
 }
 
 int QObject_StartTimer(QObject* self, int interval) {
@@ -133,15 +133,11 @@ int QObject_StartTimer(QObject* self, int interval) {
 }
 
 int QObject_StartTimer2(QObject* self, int64_t time) {
-    return self->startTimer(static_cast<std::chrono::nanoseconds>(time));
+    return self->startTimer(static_cast<std::chrono::milliseconds>(time));
 }
 
 void QObject_KillTimer(QObject* self, int id) {
     self->killTimer(static_cast<int>(id));
-}
-
-void QObject_KillTimer2(QObject* self, int id) {
-    self->killTimer(static_cast<Qt::TimerId>(id));
 }
 
 libqt_list /* of QObject* */ QObject_Children(const QObject* self) {
@@ -330,7 +326,7 @@ int QObject_StartTimer22(QObject* self, int interval, int timerType) {
 }
 
 int QObject_StartTimer23(QObject* self, int64_t time, int timerType) {
-    return self->startTimer(static_cast<std::chrono::nanoseconds>(time), static_cast<Qt::TimerType>(timerType));
+    return self->startTimer(static_cast<std::chrono::milliseconds>(time), static_cast<Qt::TimerType>(timerType));
 }
 
 QMetaObject__Connection* QObject_Connect5(const QObject* sender, const char* signal, const QObject* receiver, const char* member, int param5) {
@@ -713,10 +709,6 @@ void QSignalBlocker_Reblock(QSignalBlocker* self) {
 
 void QSignalBlocker_Unblock(QSignalBlocker* self) {
     self->unblock();
-}
-
-void QSignalBlocker_Dismiss(QSignalBlocker* self) {
-    self->dismiss();
 }
 
 void QSignalBlocker_Delete(QSignalBlocker* self) {

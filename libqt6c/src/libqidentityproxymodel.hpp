@@ -57,8 +57,6 @@ bool QIdentityProxyModel_RemoveColumns(QIdentityProxyModel* self, int column, in
 bool QIdentityProxyModel_RemoveRows(QIdentityProxyModel* self, int row, int count, const QModelIndex* parent);
 bool QIdentityProxyModel_MoveRows(QIdentityProxyModel* self, const QModelIndex* sourceParent, int sourceRow, int count, const QModelIndex* destinationParent, int destinationChild);
 bool QIdentityProxyModel_MoveColumns(QIdentityProxyModel* self, const QModelIndex* sourceParent, int sourceColumn, int count, const QModelIndex* destinationParent, int destinationChild);
-bool QIdentityProxyModel_HandleSourceLayoutChanges(const QIdentityProxyModel* self);
-bool QIdentityProxyModel_HandleSourceDataChanges(const QIdentityProxyModel* self);
 void QIdentityProxyModel_OnMetaObject(const QIdentityProxyModel* self, intptr_t slot);
 QMetaObject* QIdentityProxyModel_SuperMetaObject(const QIdentityProxyModel* self);
 void QIdentityProxyModel_OnMetacast(QIdentityProxyModel* self, intptr_t slot);
@@ -154,9 +152,9 @@ QMimeData* QIdentityProxyModel_SuperMimeData(const QIdentityProxyModel* self, co
 bool QIdentityProxyModel_CanDropMimeData(const QIdentityProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
 void QIdentityProxyModel_OnCanDropMimeData(const QIdentityProxyModel* self, intptr_t slot);
 bool QIdentityProxyModel_SuperCanDropMimeData(const QIdentityProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
-libqt_list /* of libqt_string */ QIdentityProxyModel_MimeTypes(const QIdentityProxyModel* self);
+QStringList QIdentityProxyModel_MimeTypes(const QIdentityProxyModel* self);
 void QIdentityProxyModel_OnMimeTypes(const QIdentityProxyModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QIdentityProxyModel_SuperMimeTypes(const QIdentityProxyModel* self);
+QStringList QIdentityProxyModel_SuperMimeTypes(const QIdentityProxyModel* self);
 int QIdentityProxyModel_SupportedDragActions(const QIdentityProxyModel* self);
 void QIdentityProxyModel_OnSupportedDragActions(const QIdentityProxyModel* self, intptr_t slot);
 int QIdentityProxyModel_SuperSupportedDragActions(const QIdentityProxyModel* self);
@@ -193,12 +191,6 @@ void QIdentityProxyModel_SuperConnectNotify(QIdentityProxyModel* self, const QMe
 void QIdentityProxyModel_DisconnectNotify(QIdentityProxyModel* self, const QMetaMethod* signal);
 void QIdentityProxyModel_OnDisconnectNotify(QIdentityProxyModel* self, intptr_t slot);
 void QIdentityProxyModel_SuperDisconnectNotify(QIdentityProxyModel* self, const QMetaMethod* signal);
-void QIdentityProxyModel_SetHandleSourceLayoutChanges(QIdentityProxyModel* self, bool handleSourceLayoutChanges);
-void QIdentityProxyModel_OnSetHandleSourceLayoutChanges(QIdentityProxyModel* self, intptr_t slot);
-void QIdentityProxyModel_SuperSetHandleSourceLayoutChanges(QIdentityProxyModel* self, bool handleSourceLayoutChanges);
-void QIdentityProxyModel_SetHandleSourceDataChanges(QIdentityProxyModel* self, bool handleSourceDataChanges);
-void QIdentityProxyModel_OnSetHandleSourceDataChanges(QIdentityProxyModel* self, intptr_t slot);
-void QIdentityProxyModel_SuperSetHandleSourceDataChanges(QIdentityProxyModel* self, bool handleSourceDataChanges);
 QModelIndex* QIdentityProxyModel_CreateSourceIndex(const QIdentityProxyModel* self, int row, int col, void* internalPtr);
 void QIdentityProxyModel_OnCreateSourceIndex(const QIdentityProxyModel* self, intptr_t slot);
 QModelIndex* QIdentityProxyModel_SuperCreateSourceIndex(const QIdentityProxyModel* self, int row, int col, void* internalPtr);

@@ -54,11 +54,11 @@ class VirtualQStandardItem final : public QStandardItem {
     mutable bool qstandarditem_emitdatachanged_isbase = false;
 
   public:
-    VirtualQStandardItem() : QStandardItem() {};
-    VirtualQStandardItem(const QString& text) : QStandardItem(text) {};
-    VirtualQStandardItem(const QIcon& icon, const QString& text) : QStandardItem(icon, text) {};
-    VirtualQStandardItem(int rows) : QStandardItem(rows) {};
-    VirtualQStandardItem(int rows, int columns) : QStandardItem(rows, columns) {};
+    VirtualQStandardItem() : QStandardItem(){};
+    VirtualQStandardItem(const QString& text) : QStandardItem(text){};
+    VirtualQStandardItem(const QIcon& icon, const QString& text) : QStandardItem(icon, text){};
+    VirtualQStandardItem(int rows) : QStandardItem(rows){};
+    VirtualQStandardItem(int rows, int columns) : QStandardItem(rows, columns){};
 
     // Callback setters
     inline void setQStandardItem_Data_Callback(QStandardItem_Data_Callback cb) { qstandarditem_data_callback = cb; }
@@ -294,7 +294,7 @@ class VirtualQStandardItemModel final : public QStandardItemModel {
     using QStandardItemModel_ItemData_Callback = libqt_map /* of int to QVariant* */ (*)(const QStandardItemModel*, QModelIndex*);
     using QStandardItemModel_SetItemData_Callback = bool (*)(QStandardItemModel*, QModelIndex*, libqt_map /* of int to QVariant* */);
     using QStandardItemModel_Sort_Callback = void (*)(QStandardItemModel*, int, int);
-    using QStandardItemModel_MimeTypes_Callback = const char** (*)();
+    using QStandardItemModel_MimeTypes_Callback = QStringList (*)();
     using QStandardItemModel_MimeData_Callback = QMimeData* (*)(const QStandardItemModel*, libqt_list /* of QModelIndex* */);
     using QStandardItemModel_DropMimeData_Callback = bool (*)(QStandardItemModel*, QMimeData*, int, int, int, QModelIndex*);
     using QStandardItemModel_Sibling_Callback = QModelIndex* (*)(const QStandardItemModel*, int, int, QModelIndex*);
@@ -490,10 +490,10 @@ class VirtualQStandardItemModel final : public QStandardItemModel {
     mutable bool qstandarditemmodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQStandardItemModel() : QStandardItemModel() {};
-    VirtualQStandardItemModel(int rows, int columns) : QStandardItemModel(rows, columns) {};
-    VirtualQStandardItemModel(QObject* parent) : QStandardItemModel(parent) {};
-    VirtualQStandardItemModel(int rows, int columns, QObject* parent) : QStandardItemModel(rows, columns, parent) {};
+    VirtualQStandardItemModel() : QStandardItemModel(){};
+    VirtualQStandardItemModel(int rows, int columns) : QStandardItemModel(rows, columns){};
+    VirtualQStandardItemModel(QObject* parent) : QStandardItemModel(parent){};
+    VirtualQStandardItemModel(int rows, int columns, QObject* parent) : QStandardItemModel(rows, columns, parent){};
 
     // Callback setters
     inline void setQStandardItemModel_MetaObject_Callback(QStandardItemModel_MetaObject_Callback cb) { qstandarditemmodel_metaobject_callback = cb; }
@@ -1109,24 +1109,15 @@ class VirtualQStandardItemModel final : public QStandardItemModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qstandarditemmodel_mimetypes_isbase) {
             qstandarditemmodel_mimetypes_isbase = false;
             return QStandardItemModel::mimeTypes();
         }
         auto mimetypes_cb = qstandarditemmodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QStandardItemModel::mimeTypes();
     }

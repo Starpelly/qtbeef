@@ -280,9 +280,6 @@ int QAbstractSlider_SuperReceivers(const QAbstractSlider* self, const char* sign
 bool QAbstractSlider_IsSignalConnected(const QAbstractSlider* self, const QMetaMethod* signal);
 void QAbstractSlider_OnIsSignalConnected(const QAbstractSlider* self, intptr_t slot);
 bool QAbstractSlider_SuperIsSignalConnected(const QAbstractSlider* self, const QMetaMethod* signal);
-double QAbstractSlider_GetDecodedMetricF(const QAbstractSlider* self, int metricA, int metricB);
-void QAbstractSlider_OnGetDecodedMetricF(const QAbstractSlider* self, intptr_t slot);
-double QAbstractSlider_SuperGetDecodedMetricF(const QAbstractSlider* self, int metricA, int metricB);
 void QAbstractSlider_Delete(QAbstractSlider* self);
 
 #ifdef __cplusplus

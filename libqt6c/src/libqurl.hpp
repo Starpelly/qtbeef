@@ -15,7 +15,6 @@ extern "C" {
 
 #ifdef __cplusplus
 #else
-typedef struct QByteArrayView QByteArrayView;
 typedef struct QUrl QUrl;
 typedef struct QUrlQuery QUrlQuery;
 #endif
@@ -32,7 +31,7 @@ libqt_string QUrl_Url(const QUrl* self);
 libqt_string QUrl_ToString(const QUrl* self);
 libqt_string QUrl_ToDisplayString(const QUrl* self);
 libqt_string QUrl_ToEncoded(const QUrl* self);
-QUrl* QUrl_FromEncoded(libqt_string input);
+QUrl* QUrl_FromEncoded(const libqt_string url);
 QUrl* QUrl_FromUserInput(const libqt_string userInput);
 bool QUrl_IsValid(const QUrl* self);
 libqt_string QUrl_ErrorString(const QUrl* self);
@@ -70,16 +69,19 @@ QUrl* QUrl_FromLocalFile(const libqt_string localfile);
 libqt_string QUrl_ToLocalFile(const QUrl* self);
 void QUrl_Detach(QUrl* self);
 bool QUrl_IsDetached(const QUrl* self);
+bool QUrl_OperatorLesser(const QUrl* self, const QUrl* url);
+bool QUrl_OperatorEqual(const QUrl* self, const QUrl* url);
+bool QUrl_OperatorNotEqual(const QUrl* self, const QUrl* url);
 libqt_string QUrl_FromPercentEncoding(const libqt_string param1);
 libqt_string QUrl_ToPercentEncoding(const libqt_string param1);
 libqt_string QUrl_FromAce(const libqt_string domain);
 libqt_string QUrl_ToAce(const libqt_string domain);
-libqt_list /* of libqt_string */ QUrl_IdnWhitelist();
-libqt_list /* of libqt_string */ QUrl_ToStringList(const libqt_list /* of QUrl* */ uris);
-libqt_list /* of QUrl* */ QUrl_FromStringList(const libqt_list /* of libqt_string */ uris);
-void QUrl_SetIdnWhitelist(const libqt_list /* of libqt_string */ idnWhitelist);
+QStringList QUrl_IdnWhitelist();
+QStringList QUrl_ToStringList(const libqt_list /* of QUrl* */ uris);
+libqt_list /* of QUrl* */ QUrl_FromStringList(const QStringList* uris);
+void QUrl_SetIdnWhitelist(const QStringList* idnWhitelist);
 void QUrl_SetUrl2(QUrl* self, const libqt_string url, int mode);
-QUrl* QUrl_FromEncoded2(libqt_string input, int mode);
+QUrl* QUrl_FromEncoded2(const libqt_string url, int mode);
 QUrl* QUrl_FromUserInput2(const libqt_string userInput, const libqt_string workingDirectory);
 QUrl* QUrl_FromUserInput3(const libqt_string userInput, const libqt_string workingDirectory, int options);
 void QUrl_SetAuthority2(QUrl* self, const libqt_string authority, int mode);
@@ -104,7 +106,7 @@ libqt_string QUrl_ToPercentEncoding2(const libqt_string param1, const libqt_stri
 libqt_string QUrl_ToPercentEncoding3(const libqt_string param1, const libqt_string exclude, const libqt_string include);
 libqt_string QUrl_FromAce2(const libqt_string domain, unsigned int options);
 libqt_string QUrl_ToAce2(const libqt_string domain, unsigned int options);
-libqt_list /* of QUrl* */ QUrl_FromStringList2(const libqt_list /* of libqt_string */ uris, int mode);
+libqt_list /* of QUrl* */ QUrl_FromStringList2(const QStringList* uris, int mode);
 void QUrl_Delete(QUrl* self);
 
 #ifdef __cplusplus

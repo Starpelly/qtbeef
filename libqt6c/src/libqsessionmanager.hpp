@@ -32,12 +32,12 @@ void QSessionManager_Release(QSessionManager* self);
 void QSessionManager_Cancel(QSessionManager* self);
 void QSessionManager_SetRestartHint(QSessionManager* self, int restartHint);
 int QSessionManager_RestartHint(const QSessionManager* self);
-void QSessionManager_SetRestartCommand(QSessionManager* self, const libqt_list /* of libqt_string */ restartCommand);
-libqt_list /* of libqt_string */ QSessionManager_RestartCommand(const QSessionManager* self);
-void QSessionManager_SetDiscardCommand(QSessionManager* self, const libqt_list /* of libqt_string */ discardCommand);
-libqt_list /* of libqt_string */ QSessionManager_DiscardCommand(const QSessionManager* self);
+void QSessionManager_SetRestartCommand(QSessionManager* self, const QStringList* restartCommand);
+QStringList QSessionManager_RestartCommand(const QSessionManager* self);
+void QSessionManager_SetDiscardCommand(QSessionManager* self, const QStringList* discardCommand);
+QStringList QSessionManager_DiscardCommand(const QSessionManager* self);
 void QSessionManager_SetManagerProperty(QSessionManager* self, const libqt_string name, const libqt_string value);
-void QSessionManager_SetManagerProperty2(QSessionManager* self, const libqt_string name, const libqt_list /* of libqt_string */ value);
+void QSessionManager_SetManagerProperty2(QSessionManager* self, const libqt_string name, const QStringList* value);
 bool QSessionManager_IsPhase2(const QSessionManager* self);
 void QSessionManager_RequestPhase2(QSessionManager* self);
 

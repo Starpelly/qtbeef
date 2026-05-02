@@ -66,14 +66,14 @@ class VirtualQLibrary final : public QLibrary {
     mutable bool qlibrary_issignalconnected_isbase = false;
 
   public:
-    VirtualQLibrary() : QLibrary() {};
-    VirtualQLibrary(const QString& fileName) : QLibrary(fileName) {};
-    VirtualQLibrary(const QString& fileName, int verNum) : QLibrary(fileName, verNum) {};
-    VirtualQLibrary(const QString& fileName, const QString& version) : QLibrary(fileName, version) {};
-    VirtualQLibrary(QObject* parent) : QLibrary(parent) {};
-    VirtualQLibrary(const QString& fileName, QObject* parent) : QLibrary(fileName, parent) {};
-    VirtualQLibrary(const QString& fileName, int verNum, QObject* parent) : QLibrary(fileName, verNum, parent) {};
-    VirtualQLibrary(const QString& fileName, const QString& version, QObject* parent) : QLibrary(fileName, version, parent) {};
+    VirtualQLibrary() : QLibrary(){};
+    VirtualQLibrary(const QString& fileName) : QLibrary(fileName){};
+    VirtualQLibrary(const QString& fileName, int verNum) : QLibrary(fileName, verNum){};
+    VirtualQLibrary(const QString& fileName, const QString& version) : QLibrary(fileName, version){};
+    VirtualQLibrary(QObject* parent) : QLibrary(parent){};
+    VirtualQLibrary(const QString& fileName, QObject* parent) : QLibrary(fileName, parent){};
+    VirtualQLibrary(const QString& fileName, int verNum, QObject* parent) : QLibrary(fileName, verNum, parent){};
+    VirtualQLibrary(const QString& fileName, const QString& version, QObject* parent) : QLibrary(fileName, version, parent){};
 
     // Callback setters
     inline void setQLibrary_MetaObject_Callback(QLibrary_MetaObject_Callback cb) { qlibrary_metaobject_callback = cb; }

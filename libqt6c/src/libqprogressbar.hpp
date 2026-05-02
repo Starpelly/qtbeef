@@ -259,9 +259,6 @@ int QProgressBar_SuperReceivers(const QProgressBar* self, const char* signal);
 bool QProgressBar_IsSignalConnected(const QProgressBar* self, const QMetaMethod* signal);
 void QProgressBar_OnIsSignalConnected(const QProgressBar* self, intptr_t slot);
 bool QProgressBar_SuperIsSignalConnected(const QProgressBar* self, const QMetaMethod* signal);
-double QProgressBar_GetDecodedMetricF(const QProgressBar* self, int metricA, int metricB);
-void QProgressBar_OnGetDecodedMetricF(const QProgressBar* self, intptr_t slot);
-double QProgressBar_SuperGetDecodedMetricF(const QProgressBar* self, int metricA, int metricB);
 void QProgressBar_Delete(QProgressBar* self);
 
 #ifdef __cplusplus

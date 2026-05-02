@@ -300,9 +300,6 @@ int QTabWidget_SuperReceivers(const QTabWidget* self, const char* signal);
 bool QTabWidget_IsSignalConnected(const QTabWidget* self, const QMetaMethod* signal);
 void QTabWidget_OnIsSignalConnected(const QTabWidget* self, intptr_t slot);
 bool QTabWidget_SuperIsSignalConnected(const QTabWidget* self, const QMetaMethod* signal);
-double QTabWidget_GetDecodedMetricF(const QTabWidget* self, int metricA, int metricB);
-void QTabWidget_OnGetDecodedMetricF(const QTabWidget* self, intptr_t slot);
-double QTabWidget_SuperGetDecodedMetricF(const QTabWidget* self, int metricA, int metricB);
 void QTabWidget_Delete(QTabWidget* self);
 
 #ifdef __cplusplus

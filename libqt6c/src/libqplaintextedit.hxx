@@ -95,7 +95,6 @@ class VirtualQPlainTextEdit final : public QPlainTextEdit {
     using QPlainTextEdit_SenderSignalIndex_Callback = int (*)();
     using QPlainTextEdit_Receivers_Callback = int (*)(const QPlainTextEdit*, const char*);
     using QPlainTextEdit_IsSignalConnected_Callback = bool (*)(const QPlainTextEdit*, QMetaMethod*);
-    using QPlainTextEdit_GetDecodedMetricF_Callback = double (*)(const QPlainTextEdit*, int, int);
 
   protected:
     // Instance callback storage
@@ -177,7 +176,6 @@ class VirtualQPlainTextEdit final : public QPlainTextEdit {
     QPlainTextEdit_SenderSignalIndex_Callback qplaintextedit_sendersignalindex_callback = nullptr;
     QPlainTextEdit_Receivers_Callback qplaintextedit_receivers_callback = nullptr;
     QPlainTextEdit_IsSignalConnected_Callback qplaintextedit_issignalconnected_callback = nullptr;
-    QPlainTextEdit_GetDecodedMetricF_Callback qplaintextedit_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qplaintextedit_metaobject_isbase = false;
@@ -258,13 +256,12 @@ class VirtualQPlainTextEdit final : public QPlainTextEdit {
     mutable bool qplaintextedit_sendersignalindex_isbase = false;
     mutable bool qplaintextedit_receivers_isbase = false;
     mutable bool qplaintextedit_issignalconnected_isbase = false;
-    mutable bool qplaintextedit_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQPlainTextEdit(QWidget* parent) : QPlainTextEdit(parent) {};
-    VirtualQPlainTextEdit() : QPlainTextEdit() {};
-    VirtualQPlainTextEdit(const QString& text) : QPlainTextEdit(text) {};
-    VirtualQPlainTextEdit(const QString& text, QWidget* parent) : QPlainTextEdit(text, parent) {};
+    VirtualQPlainTextEdit(QWidget* parent) : QPlainTextEdit(parent){};
+    VirtualQPlainTextEdit() : QPlainTextEdit(){};
+    VirtualQPlainTextEdit(const QString& text) : QPlainTextEdit(text){};
+    VirtualQPlainTextEdit(const QString& text, QWidget* parent) : QPlainTextEdit(text, parent){};
 
     // Callback setters
     inline void setQPlainTextEdit_MetaObject_Callback(QPlainTextEdit_MetaObject_Callback cb) { qplaintextedit_metaobject_callback = cb; }
@@ -345,7 +342,6 @@ class VirtualQPlainTextEdit final : public QPlainTextEdit {
     inline void setQPlainTextEdit_SenderSignalIndex_Callback(QPlainTextEdit_SenderSignalIndex_Callback cb) { qplaintextedit_sendersignalindex_callback = cb; }
     inline void setQPlainTextEdit_Receivers_Callback(QPlainTextEdit_Receivers_Callback cb) { qplaintextedit_receivers_callback = cb; }
     inline void setQPlainTextEdit_IsSignalConnected_Callback(QPlainTextEdit_IsSignalConnected_Callback cb) { qplaintextedit_issignalconnected_callback = cb; }
-    inline void setQPlainTextEdit_GetDecodedMetricF_Callback(QPlainTextEdit_GetDecodedMetricF_Callback cb) { qplaintextedit_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQPlainTextEdit_MetaObject_IsBase(bool value) const { qplaintextedit_metaobject_isbase = value; }
@@ -426,7 +422,6 @@ class VirtualQPlainTextEdit final : public QPlainTextEdit {
     inline void setQPlainTextEdit_SenderSignalIndex_IsBase(bool value) const { qplaintextedit_sendersignalindex_isbase = value; }
     inline void setQPlainTextEdit_Receivers_IsBase(bool value) const { qplaintextedit_receivers_isbase = value; }
     inline void setQPlainTextEdit_IsSignalConnected_IsBase(bool value) const { qplaintextedit_issignalconnected_isbase = value; }
-    inline void setQPlainTextEdit_GetDecodedMetricF_IsBase(bool value) const { qplaintextedit_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1711,23 +1706,6 @@ class VirtualQPlainTextEdit final : public QPlainTextEdit {
         return QPlainTextEdit::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qplaintextedit_getdecodedmetricf_isbase) {
-            qplaintextedit_getdecodedmetricf_isbase = false;
-            return QPlainTextEdit::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qplaintextedit_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QPlainTextEdit::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QPlainTextEdit_Event(QPlainTextEdit* self, QEvent* e);
     friend bool QPlainTextEdit_SuperEvent(QPlainTextEdit* self, QEvent* e);
@@ -1859,8 +1837,6 @@ class VirtualQPlainTextEdit final : public QPlainTextEdit {
     friend int QPlainTextEdit_SuperReceivers(const QPlainTextEdit* self, const char* signal);
     friend bool QPlainTextEdit_IsSignalConnected(const QPlainTextEdit* self, const QMetaMethod* signal);
     friend bool QPlainTextEdit_SuperIsSignalConnected(const QPlainTextEdit* self, const QMetaMethod* signal);
-    friend double QPlainTextEdit_GetDecodedMetricF(const QPlainTextEdit* self, int metricA, int metricB);
-    friend double QPlainTextEdit_SuperGetDecodedMetricF(const QPlainTextEdit* self, int metricA, int metricB);
 };
 
 // This class is a subclass of QPlainTextDocumentLayout so that we can call protected methods
@@ -1956,7 +1932,7 @@ class VirtualQPlainTextDocumentLayout final : public QPlainTextDocumentLayout {
     mutable bool qplaintextdocumentlayout_issignalconnected_isbase = false;
 
   public:
-    VirtualQPlainTextDocumentLayout(QTextDocument* document) : QPlainTextDocumentLayout(document) {};
+    VirtualQPlainTextDocumentLayout(QTextDocument* document) : QPlainTextDocumentLayout(document){};
 
     // Callback setters
     inline void setQPlainTextDocumentLayout_MetaObject_Callback(QPlainTextDocumentLayout_MetaObject_Callback cb) { qplaintextdocumentlayout_metaobject_callback = cb; }

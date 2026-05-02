@@ -4115,35 +4115,6 @@ void QHeaderView_OnIsSignalConnected(const QHeaderView* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QHeaderView_GetDecodedMetricF(const QHeaderView* self, int metricA, int metricB) {
-    auto* vqheaderview = const_cast<VirtualQHeaderView*>(dynamic_cast<const VirtualQHeaderView*>(self));
-    if (vqheaderview && vqheaderview->isVirtualQHeaderView) {
-        return vqheaderview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQHeaderView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QHeaderView_SuperGetDecodedMetricF(const QHeaderView* self, int metricA, int metricB) {
-    auto* vqheaderview = const_cast<VirtualQHeaderView*>(dynamic_cast<const VirtualQHeaderView*>(self));
-    if (vqheaderview && vqheaderview->isVirtualQHeaderView) {
-        vqheaderview->setQHeaderView_GetDecodedMetricF_IsBase(true);
-        return vqheaderview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQHeaderView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QHeaderView_OnGetDecodedMetricF(const QHeaderView* self, intptr_t slot) {
-    auto* vqheaderview = const_cast<VirtualQHeaderView*>(dynamic_cast<const VirtualQHeaderView*>(self));
-    if (vqheaderview && vqheaderview->isVirtualQHeaderView) {
-        vqheaderview->setQHeaderView_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQHeaderView::QHeaderView_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QHeaderView_Delete(QHeaderView* self) {
     delete self;
 }

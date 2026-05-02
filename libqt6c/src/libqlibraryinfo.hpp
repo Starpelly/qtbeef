@@ -25,12 +25,10 @@ void QLibraryInfo_CopyAssign(QLibraryInfo* self, QLibraryInfo* other);
 void QLibraryInfo_MoveAssign(QLibraryInfo* self, QLibraryInfo* other);
 const char* QLibraryInfo_Build();
 bool QLibraryInfo_IsDebugBuild();
-bool QLibraryInfo_IsSharedBuild();
 QVersionNumber* QLibraryInfo_Version();
 libqt_string QLibraryInfo_Path(int p);
-libqt_list /* of libqt_string */ QLibraryInfo_Paths(int p);
 libqt_string QLibraryInfo_Location(int location);
-libqt_list /* of libqt_string */ QLibraryInfo_PlatformPluginArguments(const libqt_string platformName);
+QStringList QLibraryInfo_PlatformPluginArguments(const libqt_string platformName);
 void QLibraryInfo_Delete(QLibraryInfo* self);
 
 #ifdef __cplusplus

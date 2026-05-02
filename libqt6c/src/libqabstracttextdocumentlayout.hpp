@@ -154,7 +154,6 @@ void QTextObjectInterface_OperatorAssign(QTextObjectInterface* self, const QText
 void QTextObjectInterface_Delete(QTextObjectInterface* self);
 
 QAbstractTextDocumentLayout__Selection* QAbstractTextDocumentLayout__Selection_new(const QAbstractTextDocumentLayout__Selection* param1);
-QAbstractTextDocumentLayout__Selection* QAbstractTextDocumentLayout__Selection_new2();
 QTextCursor* QAbstractTextDocumentLayout__Selection_Cursor(const QAbstractTextDocumentLayout__Selection* self);
 void QAbstractTextDocumentLayout__Selection_SetCursor(QAbstractTextDocumentLayout__Selection* self, QTextCursor* cursor);
 QTextCharFormat* QAbstractTextDocumentLayout__Selection_Format(const QAbstractTextDocumentLayout__Selection* self);

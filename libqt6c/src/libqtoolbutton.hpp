@@ -260,9 +260,6 @@ int QToolButton_SuperReceivers(const QToolButton* self, const char* signal);
 bool QToolButton_IsSignalConnected(const QToolButton* self, const QMetaMethod* signal);
 void QToolButton_OnIsSignalConnected(const QToolButton* self, intptr_t slot);
 bool QToolButton_SuperIsSignalConnected(const QToolButton* self, const QMetaMethod* signal);
-double QToolButton_GetDecodedMetricF(const QToolButton* self, int metricA, int metricB);
-void QToolButton_OnGetDecodedMetricF(const QToolButton* self, intptr_t slot);
-double QToolButton_SuperGetDecodedMetricF(const QToolButton* self, int metricA, int metricB);
 void QToolButton_Delete(QToolButton* self);
 
 #ifdef __cplusplus

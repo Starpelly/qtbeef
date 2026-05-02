@@ -20,7 +20,6 @@
 #include <QInputMethodEvent>
 #include <QKeyEvent>
 #include <QLineEdit>
-#include <QList>
 #include <QMetaMethod>
 #include <QMetaObject>
 #include <QModelIndex>
@@ -297,15 +296,8 @@ void QComboBox_AddItem2(QComboBox* self, const QIcon* icon, const libqt_string t
     self->addItem(*icon, text_QString);
 }
 
-void QComboBox_AddItems(QComboBox* self, const libqt_list /* of libqt_string */ texts) {
-    QList<QString> texts_QList;
-    texts_QList.reserve(texts.len);
-    libqt_string* texts_arr = static_cast<libqt_string*>(texts.data.ptr);
-    for (size_t i = 0; i < texts.len; ++i) {
-        QString texts_arr_i_QString = QString::fromUtf8(texts_arr[i].data, texts_arr[i].len);
-        texts_QList.push_back(texts_arr_i_QString);
-    }
-    self->addItems(texts_QList);
+void QComboBox_AddItems(QComboBox* self, const QStringList* texts) {
+    self->addItems(*texts);
 }
 
 void QComboBox_InsertItem(QComboBox* self, int index, const libqt_string text) {
@@ -318,15 +310,8 @@ void QComboBox_InsertItem2(QComboBox* self, int index, const QIcon* icon, const 
     self->insertItem(static_cast<int>(index), *icon, text_QString);
 }
 
-void QComboBox_InsertItems(QComboBox* self, int index, const libqt_list /* of libqt_string */ texts) {
-    QList<QString> texts_QList;
-    texts_QList.reserve(texts.len);
-    libqt_string* texts_arr = static_cast<libqt_string*>(texts.data.ptr);
-    for (size_t i = 0; i < texts.len; ++i) {
-        QString texts_arr_i_QString = QString::fromUtf8(texts_arr[i].data, texts_arr[i].len);
-        texts_QList.push_back(texts_arr_i_QString);
-    }
-    self->insertItems(static_cast<int>(index), texts_QList);
+void QComboBox_InsertItems(QComboBox* self, int index, const QStringList* texts) {
+    self->insertItems(static_cast<int>(index), *texts);
 }
 
 void QComboBox_InsertSeparator(QComboBox* self, int index) {
@@ -2284,35 +2269,6 @@ void QComboBox_OnIsSignalConnected(const QComboBox* self, intptr_t slot) {
     auto* vqcombobox = const_cast<VirtualQComboBox*>(dynamic_cast<const VirtualQComboBox*>(self));
     if (vqcombobox && vqcombobox->isVirtualQComboBox) {
         vqcombobox->setQComboBox_IsSignalConnected_Callback(reinterpret_cast<VirtualQComboBox::QComboBox_IsSignalConnected_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-double QComboBox_GetDecodedMetricF(const QComboBox* self, int metricA, int metricB) {
-    auto* vqcombobox = const_cast<VirtualQComboBox*>(dynamic_cast<const VirtualQComboBox*>(self));
-    if (vqcombobox && vqcombobox->isVirtualQComboBox) {
-        return vqcombobox->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQComboBox*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QComboBox_SuperGetDecodedMetricF(const QComboBox* self, int metricA, int metricB) {
-    auto* vqcombobox = const_cast<VirtualQComboBox*>(dynamic_cast<const VirtualQComboBox*>(self));
-    if (vqcombobox && vqcombobox->isVirtualQComboBox) {
-        vqcombobox->setQComboBox_GetDecodedMetricF_IsBase(true);
-        return vqcombobox->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQComboBox*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QComboBox_OnGetDecodedMetricF(const QComboBox* self, intptr_t slot) {
-    auto* vqcombobox = const_cast<VirtualQComboBox*>(dynamic_cast<const VirtualQComboBox*>(self));
-    if (vqcombobox && vqcombobox->isVirtualQComboBox) {
-        vqcombobox->setQComboBox_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQComboBox::QComboBox_GetDecodedMetricF_Callback>(slot));
     }
 }
 

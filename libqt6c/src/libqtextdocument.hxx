@@ -75,10 +75,10 @@ class VirtualQTextDocument final : public QTextDocument {
     mutable bool qtextdocument_issignalconnected_isbase = false;
 
   public:
-    VirtualQTextDocument() : QTextDocument() {};
-    VirtualQTextDocument(const QString& text) : QTextDocument(text) {};
-    VirtualQTextDocument(QObject* parent) : QTextDocument(parent) {};
-    VirtualQTextDocument(const QString& text, QObject* parent) : QTextDocument(text, parent) {};
+    VirtualQTextDocument() : QTextDocument(){};
+    VirtualQTextDocument(const QString& text) : QTextDocument(text){};
+    VirtualQTextDocument(QObject* parent) : QTextDocument(parent){};
+    VirtualQTextDocument(const QString& text, QObject* parent) : QTextDocument(text, parent){};
 
     // Callback setters
     inline void setQTextDocument_MetaObject_Callback(QTextDocument_MetaObject_Callback cb) { qtextdocument_metaobject_callback = cb; }

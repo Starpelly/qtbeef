@@ -16,7 +16,6 @@ extern "C" {
 #ifdef __cplusplus
 #else
 typedef struct QChildEvent QChildEvent;
-typedef struct QDeadlineTimer QDeadlineTimer;
 typedef struct QEvent QEvent;
 typedef struct QEventLoop QEventLoop;
 typedef struct QEventLoopLocker QEventLoopLocker;
@@ -34,7 +33,6 @@ void* QEventLoop_Metacast(QEventLoop* self, const char* param1);
 int QEventLoop_Metacall(QEventLoop* self, int param1, int param2, void** param3);
 bool QEventLoop_ProcessEvents(QEventLoop* self);
 void QEventLoop_ProcessEvents2(QEventLoop* self, int flags, int maximumTime);
-void QEventLoop_ProcessEvents3(QEventLoop* self, int flags, QDeadlineTimer* deadline);
 int QEventLoop_Exec(QEventLoop* self);
 bool QEventLoop_IsRunning(const QEventLoop* self);
 void QEventLoop_WakeUp(QEventLoop* self);
@@ -87,7 +85,6 @@ void QEventLoop_Delete(QEventLoop* self);
 QEventLoopLocker* QEventLoopLocker_new();
 QEventLoopLocker* QEventLoopLocker_new2(QEventLoop* loop);
 QEventLoopLocker* QEventLoopLocker_new3(QThread* thread);
-void QEventLoopLocker_Swap(QEventLoopLocker* self, QEventLoopLocker* other);
 void QEventLoopLocker_Delete(QEventLoopLocker* self);
 
 #ifdef __cplusplus

@@ -150,8 +150,8 @@ class VirtualQFormLayout final : public QFormLayout {
     mutable bool qformlayout_issignalconnected_isbase = false;
 
   public:
-    VirtualQFormLayout(QWidget* parent) : QFormLayout(parent) {};
-    VirtualQFormLayout() : QFormLayout() {};
+    VirtualQFormLayout(QWidget* parent) : QFormLayout(parent){};
+    VirtualQFormLayout() : QFormLayout(){};
 
     // Callback setters
     inline void setQFormLayout_MetaObject_Callback(QFormLayout_MetaObject_Callback cb) { qformlayout_metaobject_callback = cb; }

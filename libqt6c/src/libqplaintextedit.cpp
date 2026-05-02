@@ -2697,35 +2697,6 @@ void QPlainTextEdit_OnIsSignalConnected(const QPlainTextEdit* self, intptr_t slo
     }
 }
 
-// Derived class handler implementation
-double QPlainTextEdit_GetDecodedMetricF(const QPlainTextEdit* self, int metricA, int metricB) {
-    auto* vqplaintextedit = const_cast<VirtualQPlainTextEdit*>(dynamic_cast<const VirtualQPlainTextEdit*>(self));
-    if (vqplaintextedit && vqplaintextedit->isVirtualQPlainTextEdit) {
-        return vqplaintextedit->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQPlainTextEdit*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QPlainTextEdit_SuperGetDecodedMetricF(const QPlainTextEdit* self, int metricA, int metricB) {
-    auto* vqplaintextedit = const_cast<VirtualQPlainTextEdit*>(dynamic_cast<const VirtualQPlainTextEdit*>(self));
-    if (vqplaintextedit && vqplaintextedit->isVirtualQPlainTextEdit) {
-        vqplaintextedit->setQPlainTextEdit_GetDecodedMetricF_IsBase(true);
-        return vqplaintextedit->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQPlainTextEdit*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QPlainTextEdit_OnGetDecodedMetricF(const QPlainTextEdit* self, intptr_t slot) {
-    auto* vqplaintextedit = const_cast<VirtualQPlainTextEdit*>(dynamic_cast<const VirtualQPlainTextEdit*>(self));
-    if (vqplaintextedit && vqplaintextedit->isVirtualQPlainTextEdit) {
-        vqplaintextedit->setQPlainTextEdit_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQPlainTextEdit::QPlainTextEdit_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QPlainTextEdit_Delete(QPlainTextEdit* self) {
     delete self;
 }

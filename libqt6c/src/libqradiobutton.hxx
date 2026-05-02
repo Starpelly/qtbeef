@@ -80,7 +80,6 @@ class VirtualQRadioButton final : public QRadioButton {
     using QRadioButton_SenderSignalIndex_Callback = int (*)();
     using QRadioButton_Receivers_Callback = int (*)(const QRadioButton*, const char*);
     using QRadioButton_IsSignalConnected_Callback = bool (*)(const QRadioButton*, QMetaMethod*);
-    using QRadioButton_GetDecodedMetricF_Callback = double (*)(const QRadioButton*, int, int);
 
   protected:
     // Instance callback storage
@@ -147,7 +146,6 @@ class VirtualQRadioButton final : public QRadioButton {
     QRadioButton_SenderSignalIndex_Callback qradiobutton_sendersignalindex_callback = nullptr;
     QRadioButton_Receivers_Callback qradiobutton_receivers_callback = nullptr;
     QRadioButton_IsSignalConnected_Callback qradiobutton_issignalconnected_callback = nullptr;
-    QRadioButton_GetDecodedMetricF_Callback qradiobutton_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qradiobutton_metaobject_isbase = false;
@@ -213,13 +211,12 @@ class VirtualQRadioButton final : public QRadioButton {
     mutable bool qradiobutton_sendersignalindex_isbase = false;
     mutable bool qradiobutton_receivers_isbase = false;
     mutable bool qradiobutton_issignalconnected_isbase = false;
-    mutable bool qradiobutton_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQRadioButton(QWidget* parent) : QRadioButton(parent) {};
-    VirtualQRadioButton() : QRadioButton() {};
-    VirtualQRadioButton(const QString& text) : QRadioButton(text) {};
-    VirtualQRadioButton(const QString& text, QWidget* parent) : QRadioButton(text, parent) {};
+    VirtualQRadioButton(QWidget* parent) : QRadioButton(parent){};
+    VirtualQRadioButton() : QRadioButton(){};
+    VirtualQRadioButton(const QString& text) : QRadioButton(text){};
+    VirtualQRadioButton(const QString& text, QWidget* parent) : QRadioButton(text, parent){};
 
     // Callback setters
     inline void setQRadioButton_MetaObject_Callback(QRadioButton_MetaObject_Callback cb) { qradiobutton_metaobject_callback = cb; }
@@ -285,7 +282,6 @@ class VirtualQRadioButton final : public QRadioButton {
     inline void setQRadioButton_SenderSignalIndex_Callback(QRadioButton_SenderSignalIndex_Callback cb) { qradiobutton_sendersignalindex_callback = cb; }
     inline void setQRadioButton_Receivers_Callback(QRadioButton_Receivers_Callback cb) { qradiobutton_receivers_callback = cb; }
     inline void setQRadioButton_IsSignalConnected_Callback(QRadioButton_IsSignalConnected_Callback cb) { qradiobutton_issignalconnected_callback = cb; }
-    inline void setQRadioButton_GetDecodedMetricF_Callback(QRadioButton_GetDecodedMetricF_Callback cb) { qradiobutton_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQRadioButton_MetaObject_IsBase(bool value) const { qradiobutton_metaobject_isbase = value; }
@@ -351,7 +347,6 @@ class VirtualQRadioButton final : public QRadioButton {
     inline void setQRadioButton_SenderSignalIndex_IsBase(bool value) const { qradiobutton_sendersignalindex_isbase = value; }
     inline void setQRadioButton_Receivers_IsBase(bool value) const { qradiobutton_receivers_isbase = value; }
     inline void setQRadioButton_IsSignalConnected_IsBase(bool value) const { qradiobutton_issignalconnected_isbase = value; }
-    inline void setQRadioButton_GetDecodedMetricF_IsBase(bool value) const { qradiobutton_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1388,23 +1383,6 @@ class VirtualQRadioButton final : public QRadioButton {
         return QRadioButton::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qradiobutton_getdecodedmetricf_isbase) {
-            qradiobutton_getdecodedmetricf_isbase = false;
-            return QRadioButton::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qradiobutton_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QRadioButton::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QRadioButton_Event(QRadioButton* self, QEvent* e);
     friend bool QRadioButton_SuperEvent(QRadioButton* self, QEvent* e);
@@ -1508,8 +1486,6 @@ class VirtualQRadioButton final : public QRadioButton {
     friend int QRadioButton_SuperReceivers(const QRadioButton* self, const char* signal);
     friend bool QRadioButton_IsSignalConnected(const QRadioButton* self, const QMetaMethod* signal);
     friend bool QRadioButton_SuperIsSignalConnected(const QRadioButton* self, const QMetaMethod* signal);
-    friend double QRadioButton_GetDecodedMetricF(const QRadioButton* self, int metricA, int metricB);
-    friend double QRadioButton_SuperGetDecodedMetricF(const QRadioButton* self, int metricA, int metricB);
 };
 
 #endif

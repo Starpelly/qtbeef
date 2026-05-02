@@ -407,14 +407,6 @@ void QPainterPathStroker_Delete(QPainterPathStroker* self) {
     delete self;
 }
 
-QPainterPath__Element* QPainterPath__Element_new() {
-    return new QPainterPath::Element();
-}
-
-QPainterPath__Element* QPainterPath__Element_new2(const QPainterPath__Element* param1) {
-    return new QPainterPath::Element(*param1);
-}
-
 double QPainterPath__Element_X(const QPainterPath__Element* self) {
     return self->x;
 }

@@ -64,7 +64,6 @@ QBrush* QPalette_HighlightedText(const QPalette* self);
 QBrush* QPalette_Link(const QPalette* self);
 QBrush* QPalette_LinkVisited(const QPalette* self);
 QBrush* QPalette_PlaceholderText(const QPalette* self);
-QBrush* QPalette_Accent(const QPalette* self);
 bool QPalette_OperatorEqual(const QPalette* self, const QPalette* p);
 bool QPalette_OperatorNotEqual(const QPalette* self, const QPalette* p);
 bool QPalette_IsCopyOf(const QPalette* self, const QPalette* p);

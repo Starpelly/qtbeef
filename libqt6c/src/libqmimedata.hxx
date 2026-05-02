@@ -21,7 +21,7 @@ class VirtualQMimeData final : public QMimeData {
     using QMimeData_Metacast_Callback = void* (*)(QMimeData*, const char*);
     using QMimeData_Metacall_Callback = int (*)(QMimeData*, int, int, void**);
     using QMimeData_HasFormat_Callback = bool (*)(const QMimeData*, const char*);
-    using QMimeData_Formats_Callback = const char** (*)();
+    using QMimeData_Formats_Callback = QStringList (*)();
     using QMimeData_RetrieveData_Callback = QVariant* (*)(const QMimeData*, const char*, QMetaType*);
     using QMimeData_Event_Callback = bool (*)(QMimeData*, QEvent*);
     using QMimeData_EventFilter_Callback = bool (*)(QMimeData*, QObject*, QEvent*);
@@ -75,7 +75,7 @@ class VirtualQMimeData final : public QMimeData {
     mutable bool qmimedata_issignalconnected_isbase = false;
 
   public:
-    VirtualQMimeData() : QMimeData() {};
+    VirtualQMimeData() : QMimeData(){};
 
     // Callback setters
     inline void setQMimeData_MetaObject_Callback(QMimeData_MetaObject_Callback cb) { qmimedata_metaobject_callback = cb; }
@@ -188,24 +188,15 @@ class VirtualQMimeData final : public QMimeData {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> formats() const override {
+    virtual QStringList formats() const override {
         if (qmimedata_formats_isbase) {
             qmimedata_formats_isbase = false;
             return QMimeData::formats();
         }
         auto formats_cb = qmimedata_formats_callback;
         if (formats_cb) {
-            const char** callback_ret = formats_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = formats_cb();
+            return callback_ret;
         }
         return QMimeData::formats();
     }

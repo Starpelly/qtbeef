@@ -85,7 +85,6 @@ class VirtualQAbstractScrollArea final : public QAbstractScrollArea {
     using QAbstractScrollArea_SenderSignalIndex_Callback = int (*)();
     using QAbstractScrollArea_Receivers_Callback = int (*)(const QAbstractScrollArea*, const char*);
     using QAbstractScrollArea_IsSignalConnected_Callback = bool (*)(const QAbstractScrollArea*, QMetaMethod*);
-    using QAbstractScrollArea_GetDecodedMetricF_Callback = double (*)(const QAbstractScrollArea*, int, int);
 
   protected:
     // Instance callback storage
@@ -157,7 +156,6 @@ class VirtualQAbstractScrollArea final : public QAbstractScrollArea {
     QAbstractScrollArea_SenderSignalIndex_Callback qabstractscrollarea_sendersignalindex_callback = nullptr;
     QAbstractScrollArea_Receivers_Callback qabstractscrollarea_receivers_callback = nullptr;
     QAbstractScrollArea_IsSignalConnected_Callback qabstractscrollarea_issignalconnected_callback = nullptr;
-    QAbstractScrollArea_GetDecodedMetricF_Callback qabstractscrollarea_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qabstractscrollarea_metaobject_isbase = false;
@@ -228,11 +226,10 @@ class VirtualQAbstractScrollArea final : public QAbstractScrollArea {
     mutable bool qabstractscrollarea_sendersignalindex_isbase = false;
     mutable bool qabstractscrollarea_receivers_isbase = false;
     mutable bool qabstractscrollarea_issignalconnected_isbase = false;
-    mutable bool qabstractscrollarea_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQAbstractScrollArea(QWidget* parent) : QAbstractScrollArea(parent) {};
-    VirtualQAbstractScrollArea() : QAbstractScrollArea() {};
+    VirtualQAbstractScrollArea(QWidget* parent) : QAbstractScrollArea(parent){};
+    VirtualQAbstractScrollArea() : QAbstractScrollArea(){};
 
     // Callback setters
     inline void setQAbstractScrollArea_MetaObject_Callback(QAbstractScrollArea_MetaObject_Callback cb) { qabstractscrollarea_metaobject_callback = cb; }
@@ -303,7 +300,6 @@ class VirtualQAbstractScrollArea final : public QAbstractScrollArea {
     inline void setQAbstractScrollArea_SenderSignalIndex_Callback(QAbstractScrollArea_SenderSignalIndex_Callback cb) { qabstractscrollarea_sendersignalindex_callback = cb; }
     inline void setQAbstractScrollArea_Receivers_Callback(QAbstractScrollArea_Receivers_Callback cb) { qabstractscrollarea_receivers_callback = cb; }
     inline void setQAbstractScrollArea_IsSignalConnected_Callback(QAbstractScrollArea_IsSignalConnected_Callback cb) { qabstractscrollarea_issignalconnected_callback = cb; }
-    inline void setQAbstractScrollArea_GetDecodedMetricF_Callback(QAbstractScrollArea_GetDecodedMetricF_Callback cb) { qabstractscrollarea_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQAbstractScrollArea_MetaObject_IsBase(bool value) const { qabstractscrollarea_metaobject_isbase = value; }
@@ -374,7 +370,6 @@ class VirtualQAbstractScrollArea final : public QAbstractScrollArea {
     inline void setQAbstractScrollArea_SenderSignalIndex_IsBase(bool value) const { qabstractscrollarea_sendersignalindex_isbase = value; }
     inline void setQAbstractScrollArea_Receivers_IsBase(bool value) const { qabstractscrollarea_receivers_isbase = value; }
     inline void setQAbstractScrollArea_IsSignalConnected_IsBase(bool value) const { qabstractscrollarea_issignalconnected_isbase = value; }
-    inline void setQAbstractScrollArea_GetDecodedMetricF_IsBase(bool value) const { qabstractscrollarea_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1498,23 +1493,6 @@ class VirtualQAbstractScrollArea final : public QAbstractScrollArea {
         return QAbstractScrollArea::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qabstractscrollarea_getdecodedmetricf_isbase) {
-            qabstractscrollarea_getdecodedmetricf_isbase = false;
-            return QAbstractScrollArea::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qabstractscrollarea_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QAbstractScrollArea::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QAbstractScrollArea_EventFilter(QAbstractScrollArea* self, QObject* param1, QEvent* param2);
     friend bool QAbstractScrollArea_SuperEventFilter(QAbstractScrollArea* self, QObject* param1, QEvent* param2);
@@ -1628,8 +1606,6 @@ class VirtualQAbstractScrollArea final : public QAbstractScrollArea {
     friend int QAbstractScrollArea_SuperReceivers(const QAbstractScrollArea* self, const char* signal);
     friend bool QAbstractScrollArea_IsSignalConnected(const QAbstractScrollArea* self, const QMetaMethod* signal);
     friend bool QAbstractScrollArea_SuperIsSignalConnected(const QAbstractScrollArea* self, const QMetaMethod* signal);
-    friend double QAbstractScrollArea_GetDecodedMetricF(const QAbstractScrollArea* self, int metricA, int metricB);
-    friend double QAbstractScrollArea_SuperGetDecodedMetricF(const QAbstractScrollArea* self, int metricA, int metricB);
 };
 
 #endif

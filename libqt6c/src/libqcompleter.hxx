@@ -21,7 +21,7 @@ class VirtualQCompleter final : public QCompleter {
     using QCompleter_Metacast_Callback = void* (*)(QCompleter*, const char*);
     using QCompleter_Metacall_Callback = int (*)(QCompleter*, int, int, void**);
     using QCompleter_PathFromIndex_Callback = const char* (*)(const QCompleter*, QModelIndex*);
-    using QCompleter_SplitPath_Callback = const char** (*)(const QCompleter*, const char*);
+    using QCompleter_SplitPath_Callback = QStringList (*)(const QCompleter*, const char*);
     using QCompleter_EventFilter_Callback = bool (*)(QCompleter*, QObject*, QEvent*);
     using QCompleter_Event_Callback = bool (*)(QCompleter*, QEvent*);
     using QCompleter_TimerEvent_Callback = void (*)(QCompleter*, QTimerEvent*);
@@ -72,12 +72,12 @@ class VirtualQCompleter final : public QCompleter {
     mutable bool qcompleter_issignalconnected_isbase = false;
 
   public:
-    VirtualQCompleter() : QCompleter() {};
-    VirtualQCompleter(QAbstractItemModel* model) : QCompleter(model) {};
-    VirtualQCompleter(const QList<QString>& completions) : QCompleter(completions) {};
-    VirtualQCompleter(QObject* parent) : QCompleter(parent) {};
-    VirtualQCompleter(QAbstractItemModel* model, QObject* parent) : QCompleter(model, parent) {};
-    VirtualQCompleter(const QList<QString>& completions, QObject* parent) : QCompleter(completions, parent) {};
+    VirtualQCompleter() : QCompleter(){};
+    VirtualQCompleter(QAbstractItemModel* model) : QCompleter(model){};
+    VirtualQCompleter(const QStringList& completions) : QCompleter(completions){};
+    VirtualQCompleter(QObject* parent) : QCompleter(parent){};
+    VirtualQCompleter(QAbstractItemModel* model, QObject* parent) : QCompleter(model, parent){};
+    VirtualQCompleter(const QStringList& completions, QObject* parent) : QCompleter(completions, parent){};
 
     // Callback setters
     inline void setQCompleter_MetaObject_Callback(QCompleter_MetaObject_Callback cb) { qcompleter_metaobject_callback = cb; }
@@ -183,7 +183,7 @@ class VirtualQCompleter final : public QCompleter {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> splitPath(const QString& path) const override {
+    virtual QStringList splitPath(const QString& path) const override {
         if (qcompleter_splitpath_isbase) {
             qcompleter_splitpath_isbase = false;
             return QCompleter::splitPath(path);
@@ -199,18 +199,9 @@ class VirtualQCompleter final : public QCompleter {
             path_str[path_str_len] = '\0';
             const char* cbval1 = path_str;
 
-            const char** callback_ret = splitpath_cb(this, cbval1);
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
+            QStringList callback_ret = splitpath_cb(this, cbval1);
             libqt_free(path_str);
-            return callback_ret_QList;
+            return callback_ret;
         }
         return QCompleter::splitPath(path);
     }

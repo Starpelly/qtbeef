@@ -72,8 +72,8 @@ class VirtualQGuiApplication final : public QGuiApplication {
     mutable bool qguiapplication_issignalconnected_isbase = false;
 
   public:
-    VirtualQGuiApplication(int& argc, char** argv) : QGuiApplication(argc, argv) {};
-    VirtualQGuiApplication(int& argc, char** argv, int param3) : QGuiApplication(argc, argv, param3) {};
+    VirtualQGuiApplication(int& argc, char** argv) : QGuiApplication(argc, argv){};
+    VirtualQGuiApplication(int& argc, char** argv, int param3) : QGuiApplication(argc, argv, param3){};
 
     // Callback setters
     inline void setQGuiApplication_MetaObject_Callback(QGuiApplication_MetaObject_Callback cb) { qguiapplication_metaobject_callback = cb; }

@@ -22,7 +22,6 @@
 #include <QString>
 #include <QByteArray>
 #include <cstring>
-#include <QTimeZone>
 #include <QTimerEvent>
 #include <QVariant>
 #include <qfilesystemmodel.h>
@@ -273,46 +272,12 @@ void QFileSystemModel_Sort(QFileSystemModel* self, int column, int order) {
     }
 }
 
-libqt_list /* of libqt_string */ QFileSystemModel_MimeTypes(const QFileSystemModel* self) {
+QStringList QFileSystemModel_MimeTypes(const QFileSystemModel* self) {
     auto* vqfilesystemmodel = dynamic_cast<const VirtualQFileSystemModel*>(self);
     if (vqfilesystemmodel && vqfilesystemmodel->isVirtualQFileSystemModel) {
-        QList<QString> _ret = self->mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->mimeTypes();
     } else {
-        QList<QString> _ret = ((VirtualQFileSystemModel*)self)->mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return ((VirtualQFileSystemModel*)self)->mimeTypes();
     }
 }
 
@@ -457,36 +422,12 @@ bool QFileSystemModel_NameFilterDisables(const QFileSystemModel* self) {
     return self->nameFilterDisables();
 }
 
-void QFileSystemModel_SetNameFilters(QFileSystemModel* self, const libqt_list /* of libqt_string */ filters) {
-    QList<QString> filters_QList;
-    filters_QList.reserve(filters.len);
-    libqt_string* filters_arr = static_cast<libqt_string*>(filters.data.ptr);
-    for (size_t i = 0; i < filters.len; ++i) {
-        QString filters_arr_i_QString = QString::fromUtf8(filters_arr[i].data, filters_arr[i].len);
-        filters_QList.push_back(filters_arr_i_QString);
-    }
-    self->setNameFilters(filters_QList);
+void QFileSystemModel_SetNameFilters(QFileSystemModel* self, const QStringList* filters) {
+    self->setNameFilters(*filters);
 }
 
-libqt_list /* of libqt_string */ QFileSystemModel_NameFilters(const QFileSystemModel* self) {
-    QList<QString> _ret = self->nameFilters();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QFileSystemModel_NameFilters(const QFileSystemModel* self) {
+    return self->nameFilters();
 }
 
 void QFileSystemModel_SetOption(QFileSystemModel* self, int option) {
@@ -539,10 +480,6 @@ libqt_string QFileSystemModel_Type(const QFileSystemModel* self, const QModelInd
 
 QDateTime* QFileSystemModel_LastModified(const QFileSystemModel* self, const QModelIndex* index) {
     return new QDateTime(self->lastModified(*index));
-}
-
-QDateTime* QFileSystemModel_LastModified2(const QFileSystemModel* self, const QModelIndex* index, const QTimeZone* tz) {
-    return new QDateTime(self->lastModified(*index, *tz));
 }
 
 QModelIndex* QFileSystemModel_Mkdir(QFileSystemModel* self, const QModelIndex* parent, const libqt_string name) {
@@ -915,47 +852,13 @@ void QFileSystemModel_OnSort(QFileSystemModel* self, intptr_t slot) {
 }
 
 // Base class handler implementation
-libqt_list /* of libqt_string */ QFileSystemModel_SuperMimeTypes(const QFileSystemModel* self) {
+QStringList QFileSystemModel_SuperMimeTypes(const QFileSystemModel* self) {
     auto* vqfilesystemmodel = const_cast<VirtualQFileSystemModel*>(dynamic_cast<const VirtualQFileSystemModel*>(self));
     if (vqfilesystemmodel && vqfilesystemmodel->isVirtualQFileSystemModel) {
         vqfilesystemmodel->setQFileSystemModel_MimeTypes_IsBase(true);
-        QList<QString> _ret = vqfilesystemmodel->mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return vqfilesystemmodel->mimeTypes();
     } else {
-        QList<QString> _ret = self->QFileSystemModel::mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->QFileSystemModel::mimeTypes();
     }
 }
 

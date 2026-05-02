@@ -129,9 +129,6 @@ QPaintDevice* QPixmap_SuperRedirected(const QPixmap* self, QPoint* offset);
 QPainter* QPixmap_SharedPainter(const QPixmap* self);
 void QPixmap_OnSharedPainter(const QPixmap* self, intptr_t slot);
 QPainter* QPixmap_SuperSharedPainter(const QPixmap* self);
-double QPixmap_GetDecodedMetricF(const QPixmap* self, int metricA, int metricB);
-void QPixmap_OnGetDecodedMetricF(const QPixmap* self, intptr_t slot);
-double QPixmap_SuperGetDecodedMetricF(const QPixmap* self, int metricA, int metricB);
 void QPixmap_Delete(QPixmap* self);
 
 #ifdef __cplusplus

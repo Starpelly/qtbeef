@@ -169,8 +169,8 @@ QTableWidgetItem* QTableWidget_TakeVerticalHeaderItem(QTableWidget* self, int ro
 QTableWidgetItem* QTableWidget_HorizontalHeaderItem(const QTableWidget* self, int column);
 void QTableWidget_SetHorizontalHeaderItem(QTableWidget* self, int column, QTableWidgetItem* item);
 QTableWidgetItem* QTableWidget_TakeHorizontalHeaderItem(QTableWidget* self, int column);
-void QTableWidget_SetVerticalHeaderLabels(QTableWidget* self, const libqt_list /* of libqt_string */ labels);
-void QTableWidget_SetHorizontalHeaderLabels(QTableWidget* self, const libqt_list /* of libqt_string */ labels);
+void QTableWidget_SetVerticalHeaderLabels(QTableWidget* self, const QStringList* labels);
+void QTableWidget_SetHorizontalHeaderLabels(QTableWidget* self, const QStringList* labels);
 int QTableWidget_CurrentRow(const QTableWidget* self);
 int QTableWidget_CurrentColumn(const QTableWidget* self);
 QTableWidgetItem* QTableWidget_CurrentItem(const QTableWidget* self);
@@ -237,7 +237,7 @@ void QTableWidget_Connect_CellChanged(QTableWidget* self, intptr_t slot);
 void QTableWidget_CurrentCellChanged(QTableWidget* self, int currentRow, int currentColumn, int previousRow, int previousColumn);
 void QTableWidget_Connect_CurrentCellChanged(QTableWidget* self, intptr_t slot);
 bool QTableWidget_Event(QTableWidget* self, QEvent* e);
-libqt_list /* of libqt_string */ QTableWidget_MimeTypes(const QTableWidget* self);
+QStringList QTableWidget_MimeTypes(const QTableWidget* self);
 QMimeData* QTableWidget_MimeData(const QTableWidget* self, const libqt_list /* of QTableWidgetItem* */ items);
 bool QTableWidget_DropMimeData(QTableWidget* self, int row, int column, const QMimeData* data, int action);
 int QTableWidget_SupportedDropActions(const QTableWidget* self);
@@ -253,7 +253,7 @@ int QTableWidget_SuperMetacall(QTableWidget* self, int param1, int param2, void*
 void QTableWidget_OnEvent(QTableWidget* self, intptr_t slot);
 bool QTableWidget_SuperEvent(QTableWidget* self, QEvent* e);
 void QTableWidget_OnMimeTypes(const QTableWidget* self, intptr_t slot);
-libqt_list /* of libqt_string */ QTableWidget_SuperMimeTypes(const QTableWidget* self);
+QStringList QTableWidget_SuperMimeTypes(const QTableWidget* self);
 void QTableWidget_OnMimeData(const QTableWidget* self, intptr_t slot);
 QMimeData* QTableWidget_SuperMimeData(const QTableWidget* self, const libqt_list /* of QTableWidgetItem* */ items);
 void QTableWidget_OnDropMimeData(QTableWidget* self, intptr_t slot);
@@ -613,9 +613,6 @@ int QTableWidget_SuperReceivers(const QTableWidget* self, const char* signal);
 bool QTableWidget_IsSignalConnected(const QTableWidget* self, const QMetaMethod* signal);
 void QTableWidget_OnIsSignalConnected(const QTableWidget* self, intptr_t slot);
 bool QTableWidget_SuperIsSignalConnected(const QTableWidget* self, const QMetaMethod* signal);
-double QTableWidget_GetDecodedMetricF(const QTableWidget* self, int metricA, int metricB);
-void QTableWidget_OnGetDecodedMetricF(const QTableWidget* self, intptr_t slot);
-double QTableWidget_SuperGetDecodedMetricF(const QTableWidget* self, int metricA, int metricB);
 void QTableWidget_Delete(QTableWidget* self);
 
 #ifdef __cplusplus

@@ -30,7 +30,7 @@ class VirtualQEvent final : public QEvent {
     mutable bool qevent_clone_isbase = false;
 
   public:
-    VirtualQEvent(QEvent::Type type) : QEvent(type) {};
+    VirtualQEvent(QEvent::Type type) : QEvent(type){};
 
     // Callback setters
     inline void setQEvent_SetAccepted_Callback(QEvent_SetAccepted_Callback cb) { qevent_setaccepted_callback = cb; }
@@ -93,8 +93,7 @@ class VirtualQTimerEvent final : public QTimerEvent {
     mutable bool qtimerevent_setaccepted_isbase = false;
 
   public:
-    VirtualQTimerEvent(int timerId) : QTimerEvent(timerId) {};
-    VirtualQTimerEvent(Qt::TimerId timerId) : QTimerEvent(timerId) {};
+    VirtualQTimerEvent(int timerId) : QTimerEvent(timerId){};
 
     // Callback setters
     inline void setQTimerEvent_Clone_Callback(QTimerEvent_Clone_Callback cb) { qtimerevent_clone_callback = cb; }
@@ -157,7 +156,7 @@ class VirtualQChildEvent final : public QChildEvent {
     mutable bool qchildevent_setaccepted_isbase = false;
 
   public:
-    VirtualQChildEvent(QEvent::Type type, QObject* child) : QChildEvent(type, child) {};
+    VirtualQChildEvent(QEvent::Type type, QObject* child) : QChildEvent(type, child){};
 
     // Callback setters
     inline void setQChildEvent_Clone_Callback(QChildEvent_Clone_Callback cb) { qchildevent_clone_callback = cb; }
@@ -220,7 +219,7 @@ class VirtualQDynamicPropertyChangeEvent final : public QDynamicPropertyChangeEv
     mutable bool qdynamicpropertychangeevent_setaccepted_isbase = false;
 
   public:
-    VirtualQDynamicPropertyChangeEvent(const QByteArray& name) : QDynamicPropertyChangeEvent(name) {};
+    VirtualQDynamicPropertyChangeEvent(const QByteArray& name) : QDynamicPropertyChangeEvent(name){};
 
     // Callback setters
     inline void setQDynamicPropertyChangeEvent_Clone_Callback(QDynamicPropertyChangeEvent_Clone_Callback cb) { qdynamicpropertychangeevent_clone_callback = cb; }
@@ -259,6 +258,69 @@ class VirtualQDynamicPropertyChangeEvent final : public QDynamicPropertyChangeEv
             return;
         }
         QDynamicPropertyChangeEvent::setAccepted(accepted);
+    }
+};
+
+// This class is a subclass of QDeferredDeleteEvent so that we can call protected methods
+class VirtualQDeferredDeleteEvent final : public QDeferredDeleteEvent {
+
+  public:
+    // Virtual class boolean flag
+    bool isVirtualQDeferredDeleteEvent = true;
+
+    // Virtual class public types (including callbacks)
+    using QDeferredDeleteEvent_Clone_Callback = QDeferredDeleteEvent* (*)();
+    using QDeferredDeleteEvent_SetAccepted_Callback = void (*)(QDeferredDeleteEvent*, bool);
+
+  protected:
+    // Instance callback storage
+    QDeferredDeleteEvent_Clone_Callback qdeferreddeleteevent_clone_callback = nullptr;
+    QDeferredDeleteEvent_SetAccepted_Callback qdeferreddeleteevent_setaccepted_callback = nullptr;
+
+    // Instance base flags
+    mutable bool qdeferreddeleteevent_clone_isbase = false;
+    mutable bool qdeferreddeleteevent_setaccepted_isbase = false;
+
+  public:
+    VirtualQDeferredDeleteEvent() : QDeferredDeleteEvent(){};
+
+    // Callback setters
+    inline void setQDeferredDeleteEvent_Clone_Callback(QDeferredDeleteEvent_Clone_Callback cb) { qdeferreddeleteevent_clone_callback = cb; }
+    inline void setQDeferredDeleteEvent_SetAccepted_Callback(QDeferredDeleteEvent_SetAccepted_Callback cb) { qdeferreddeleteevent_setaccepted_callback = cb; }
+
+    // Base flag setters
+    inline void setQDeferredDeleteEvent_Clone_IsBase(bool value) const { qdeferreddeleteevent_clone_isbase = value; }
+    inline void setQDeferredDeleteEvent_SetAccepted_IsBase(bool value) const { qdeferreddeleteevent_setaccepted_isbase = value; }
+
+    // Virtual method for C ABI access and custom callback
+    virtual QDeferredDeleteEvent* clone() const override {
+        if (qdeferreddeleteevent_clone_isbase) {
+            qdeferreddeleteevent_clone_isbase = false;
+            return QDeferredDeleteEvent::clone();
+        }
+        auto clone_cb = qdeferreddeleteevent_clone_callback;
+        if (clone_cb) {
+            QDeferredDeleteEvent* callback_ret = clone_cb();
+            return callback_ret;
+        }
+        return QDeferredDeleteEvent::clone();
+    }
+
+    // Virtual method for C ABI access and custom callback
+    virtual void setAccepted(bool accepted) override {
+        if (qdeferreddeleteevent_setaccepted_isbase) {
+            qdeferreddeleteevent_setaccepted_isbase = false;
+            QDeferredDeleteEvent::setAccepted(accepted);
+            return;
+        }
+        auto setaccepted_cb = qdeferreddeleteevent_setaccepted_callback;
+        if (setaccepted_cb) {
+            bool cbval1 = accepted;
+
+            setaccepted_cb(this, cbval1);
+            return;
+        }
+        QDeferredDeleteEvent::setAccepted(accepted);
     }
 };
 

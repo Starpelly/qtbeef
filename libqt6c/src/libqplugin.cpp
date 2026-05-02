@@ -12,10 +12,6 @@ QStaticPlugin* QStaticPlugin_new2(QStaticPlugin* other) {
     return new QStaticPlugin(std::move(*other));
 }
 
-QStaticPlugin* QStaticPlugin_new3(const QStaticPlugin* param1) {
-    return new QStaticPlugin(*param1);
-}
-
 void QStaticPlugin_CopyAssign(QStaticPlugin* self, QStaticPlugin* other) {
     *self = *other;
 }

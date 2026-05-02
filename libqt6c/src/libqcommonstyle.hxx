@@ -135,7 +135,7 @@ class VirtualQCommonStyle final : public QCommonStyle {
     mutable bool qcommonstyle_issignalconnected_isbase = false;
 
   public:
-    VirtualQCommonStyle() : QCommonStyle() {};
+    VirtualQCommonStyle() : QCommonStyle(){};
 
     // Callback setters
     inline void setQCommonStyle_MetaObject_Callback(QCommonStyle_MetaObject_Callback cb) { qcommonstyle_metaobject_callback = cb; }

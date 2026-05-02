@@ -66,7 +66,7 @@ class VirtualQTextTable final : public QTextTable {
     mutable bool qtexttable_issignalconnected_isbase = false;
 
   public:
-    VirtualQTextTable(QTextDocument* doc) : QTextTable(doc) {};
+    VirtualQTextTable(QTextDocument* doc) : QTextTable(doc){};
 
     // Callback setters
     inline void setQTextTable_MetaObject_Callback(QTextTable_MetaObject_Callback cb) { qtexttable_metaobject_callback = cb; }

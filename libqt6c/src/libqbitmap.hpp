@@ -63,9 +63,6 @@ QPaintDevice* QBitmap_SuperRedirected(const QBitmap* self, QPoint* offset);
 QPainter* QBitmap_SharedPainter(const QBitmap* self);
 void QBitmap_OnSharedPainter(const QBitmap* self, intptr_t slot);
 QPainter* QBitmap_SuperSharedPainter(const QBitmap* self);
-double QBitmap_GetDecodedMetricF(const QBitmap* self, int metricA, int metricB);
-void QBitmap_OnGetDecodedMetricF(const QBitmap* self, intptr_t slot);
-double QBitmap_SuperGetDecodedMetricF(const QBitmap* self, int metricA, int metricB);
 void QBitmap_Delete(QBitmap* self);
 
 #ifdef __cplusplus

@@ -51,7 +51,7 @@ QModelIndex* QConcatenateTablesProxyModel_Parent(const QConcatenateTablesProxyMo
 int QConcatenateTablesProxyModel_RowCount(const QConcatenateTablesProxyModel* self, const QModelIndex* parent);
 QVariant* QConcatenateTablesProxyModel_HeaderData(const QConcatenateTablesProxyModel* self, int section, int orientation, int role);
 int QConcatenateTablesProxyModel_ColumnCount(const QConcatenateTablesProxyModel* self, const QModelIndex* parent);
-libqt_list /* of libqt_string */ QConcatenateTablesProxyModel_MimeTypes(const QConcatenateTablesProxyModel* self);
+QStringList QConcatenateTablesProxyModel_MimeTypes(const QConcatenateTablesProxyModel* self);
 QMimeData* QConcatenateTablesProxyModel_MimeData(const QConcatenateTablesProxyModel* self, const libqt_list /* of QModelIndex* */ indexes);
 bool QConcatenateTablesProxyModel_CanDropMimeData(const QConcatenateTablesProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
 bool QConcatenateTablesProxyModel_DropMimeData(QConcatenateTablesProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
@@ -83,7 +83,7 @@ QVariant* QConcatenateTablesProxyModel_SuperHeaderData(const QConcatenateTablesP
 void QConcatenateTablesProxyModel_OnColumnCount(const QConcatenateTablesProxyModel* self, intptr_t slot);
 int QConcatenateTablesProxyModel_SuperColumnCount(const QConcatenateTablesProxyModel* self, const QModelIndex* parent);
 void QConcatenateTablesProxyModel_OnMimeTypes(const QConcatenateTablesProxyModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QConcatenateTablesProxyModel_SuperMimeTypes(const QConcatenateTablesProxyModel* self);
+QStringList QConcatenateTablesProxyModel_SuperMimeTypes(const QConcatenateTablesProxyModel* self);
 void QConcatenateTablesProxyModel_OnMimeData(const QConcatenateTablesProxyModel* self, intptr_t slot);
 QMimeData* QConcatenateTablesProxyModel_SuperMimeData(const QConcatenateTablesProxyModel* self, const libqt_list /* of QModelIndex* */ indexes);
 void QConcatenateTablesProxyModel_OnCanDropMimeData(const QConcatenateTablesProxyModel* self, intptr_t slot);

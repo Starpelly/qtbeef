@@ -81,7 +81,7 @@ class VirtualQAccessibleObject : public QAccessibleObject {
     mutable bool qaccessibleobject_interfacecast_isbase = false;
 
   public:
-    VirtualQAccessibleObject(QObject* object) : QAccessibleObject(object) {};
+    VirtualQAccessibleObject(QObject* object) : QAccessibleObject(object){};
 
     // Callback setters
     inline void setQAccessibleObject_IsValid_Callback(QAccessibleObject_IsValid_Callback cb) { qaccessibleobject_isvalid_callback = cb; }
@@ -476,7 +476,7 @@ class VirtualQAccessibleApplication final : public QAccessibleApplication {
     mutable bool qaccessibleapplication_interfacecast_isbase = false;
 
   public:
-    VirtualQAccessibleApplication() : QAccessibleApplication() {};
+    VirtualQAccessibleApplication() : QAccessibleApplication(){};
 
     // Callback setters
     inline void setQAccessibleApplication_Window_Callback(QAccessibleApplication_Window_Callback cb) { qaccessibleapplication_window_callback = cb; }

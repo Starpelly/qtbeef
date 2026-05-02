@@ -21,17 +21,17 @@ typedef struct QLockFile QLockFile;
 QLockFile* QLockFile_new(const libqt_string fileName);
 libqt_string QLockFile_FileName(const QLockFile* self);
 bool QLockFile_Lock(QLockFile* self);
-bool QLockFile_TryLock(QLockFile* self, int timeout);
+bool QLockFile_TryLock(QLockFile* self);
 void QLockFile_Unlock(QLockFile* self);
 void QLockFile_SetStaleLockTime(QLockFile* self, int staleLockTime);
 int QLockFile_StaleLockTime(const QLockFile* self);
-bool QLockFile_TryLock2(QLockFile* self);
+bool QLockFile_TryLock2(QLockFile* self, int64_t timeout);
 void QLockFile_SetStaleLockTime2(QLockFile* self, int64_t value);
 int64_t QLockFile_StaleLockTimeAsDuration(const QLockFile* self);
 bool QLockFile_IsLocked(const QLockFile* self);
 bool QLockFile_RemoveStaleLockFile(QLockFile* self);
 int QLockFile_Error(const QLockFile* self);
-bool QLockFile_TryLock1(QLockFile* self, int64_t timeout);
+bool QLockFile_TryLock1(QLockFile* self, int timeout);
 void QLockFile_Delete(QLockFile* self);
 
 #ifdef __cplusplus

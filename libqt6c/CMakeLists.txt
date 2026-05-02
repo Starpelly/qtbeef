@@ -163,7 +163,7 @@ elseif(IS_MACOS)
     )
 elseif(IS_WINDOWS)
     set(OS_INCLUDES
-        "C:/Qt/6.8.3/msvc2022_64/include"
+        "C:/Qt/6.4.2/msvc2019_64/include"
     )
 elseif(IS_BSD)
     set(OS_INCLUDES

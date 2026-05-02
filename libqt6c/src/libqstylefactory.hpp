@@ -23,7 +23,7 @@ QStyleFactory* QStyleFactory_new(const QStyleFactory* other);
 QStyleFactory* QStyleFactory_new2(QStyleFactory* other);
 void QStyleFactory_CopyAssign(QStyleFactory* self, QStyleFactory* other);
 void QStyleFactory_MoveAssign(QStyleFactory* self, QStyleFactory* other);
-libqt_list /* of libqt_string */ QStyleFactory_Keys();
+QStringList QStyleFactory_Keys();
 QStyle* QStyleFactory_Create(const libqt_string param1);
 void QStyleFactory_Delete(QStyleFactory* self);
 

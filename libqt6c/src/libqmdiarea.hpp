@@ -294,9 +294,6 @@ int QMdiArea_SuperReceivers(const QMdiArea* self, const char* signal);
 bool QMdiArea_IsSignalConnected(const QMdiArea* self, const QMetaMethod* signal);
 void QMdiArea_OnIsSignalConnected(const QMdiArea* self, intptr_t slot);
 bool QMdiArea_SuperIsSignalConnected(const QMdiArea* self, const QMetaMethod* signal);
-double QMdiArea_GetDecodedMetricF(const QMdiArea* self, int metricA, int metricB);
-void QMdiArea_OnGetDecodedMetricF(const QMdiArea* self, intptr_t slot);
-double QMdiArea_SuperGetDecodedMetricF(const QMdiArea* self, int metricA, int metricB);
 void QMdiArea_Delete(QMdiArea* self);
 
 #ifdef __cplusplus

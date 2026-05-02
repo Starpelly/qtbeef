@@ -16,7 +16,6 @@ extern "C" {
 #ifdef __cplusplus
 #else
 typedef struct QChildEvent QChildEvent;
-typedef struct QDeadlineTimer QDeadlineTimer;
 typedef struct QEvent QEvent;
 typedef struct QMetaMethod QMetaMethod;
 typedef struct QMetaObject QMetaObject;
@@ -35,7 +34,10 @@ int QThreadPool_Metacall(QThreadPool* self, int param1, int param2, void** param
 QThreadPool* QThreadPool_GlobalInstance();
 void QThreadPool_Start(QThreadPool* self, QRunnable* runnable);
 bool QThreadPool_TryStart(QThreadPool* self, QRunnable* runnable);
+void QThreadPool_Start2(QThreadPool* self, intptr_t functionToRun);
+bool QThreadPool_TryStart2(QThreadPool* self, intptr_t functionToRun);
 void QThreadPool_StartOnReservedThread(QThreadPool* self, QRunnable* runnable);
+void QThreadPool_StartOnReservedThread2(QThreadPool* self, intptr_t functionToRun);
 int QThreadPool_ExpiryTimeout(const QThreadPool* self);
 void QThreadPool_SetExpiryTimeout(QThreadPool* self, int expiryTimeout);
 int QThreadPool_MaxThreadCount(const QThreadPool* self);
@@ -47,13 +49,13 @@ void QThreadPool_SetThreadPriority(QThreadPool* self, int priority);
 int QThreadPool_ThreadPriority(const QThreadPool* self);
 void QThreadPool_ReserveThread(QThreadPool* self);
 void QThreadPool_ReleaseThread(QThreadPool* self);
-bool QThreadPool_WaitForDone(QThreadPool* self, int msecs);
-bool QThreadPool_WaitForDone2(QThreadPool* self);
+bool QThreadPool_WaitForDone(QThreadPool* self);
 void QThreadPool_Clear(QThreadPool* self);
 bool QThreadPool_Contains(const QThreadPool* self, const QThread* thread);
 bool QThreadPool_TryTake(QThreadPool* self, QRunnable* runnable);
-void QThreadPool_Start2(QThreadPool* self, QRunnable* runnable, int priority);
-bool QThreadPool_WaitForDone1(QThreadPool* self, QDeadlineTimer* deadline);
+void QThreadPool_Start22(QThreadPool* self, QRunnable* runnable, int priority);
+void QThreadPool_Start23(QThreadPool* self, intptr_t functionToRun, int priority);
+bool QThreadPool_WaitForDone1(QThreadPool* self, int msecs);
 void QThreadPool_OnMetaObject(const QThreadPool* self, intptr_t slot);
 QMetaObject* QThreadPool_SuperMetaObject(const QThreadPool* self);
 void QThreadPool_OnMetacast(QThreadPool* self, intptr_t slot);

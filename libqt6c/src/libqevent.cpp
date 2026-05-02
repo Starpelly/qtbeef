@@ -1,7 +1,6 @@
 #include <QAction>
 #include <QActionEvent>
 #include <QApplicationStateChangeEvent>
-#include <QChildWindowEvent>
 #include <QCloseEvent>
 #include <QContextMenuEvent>
 #include <QDragEnterEvent>
@@ -46,7 +45,6 @@
 #include <QScreenOrientationChangeEvent>
 #include <QScrollEvent>
 #include <QScrollPrepareEvent>
-#include <QShortcut>
 #include <QShortcutEvent>
 #include <QShowEvent>
 #include <QSinglePointEvent>
@@ -63,7 +61,6 @@
 #include <QVariant>
 #include <QWhatsThisClickedEvent>
 #include <QWheelEvent>
-#include <QWindow>
 #include <QWindowStateChangeEvent>
 #include <qevent.h>
 #include "libqevent.hpp"
@@ -3942,20 +3939,8 @@ QShortcutEvent* QShortcutEvent_new(const QKeySequence* key, int id) {
     return new VirtualQShortcutEvent(*key, static_cast<int>(id));
 }
 
-QShortcutEvent* QShortcutEvent_new2(const QKeySequence* key) {
-    return new VirtualQShortcutEvent(*key);
-}
-
-QShortcutEvent* QShortcutEvent_new3(const QKeySequence* key, int id, bool ambiguous) {
+QShortcutEvent* QShortcutEvent_new2(const QKeySequence* key, int id, bool ambiguous) {
     return new VirtualQShortcutEvent(*key, static_cast<int>(id), ambiguous);
-}
-
-QShortcutEvent* QShortcutEvent_new4(const QKeySequence* key, const QShortcut* shortcut) {
-    return new VirtualQShortcutEvent(*key, shortcut);
-}
-
-QShortcutEvent* QShortcutEvent_new5(const QKeySequence* key, const QShortcut* shortcut, bool ambiguous) {
-    return new VirtualQShortcutEvent(*key, shortcut, ambiguous);
 }
 
 QShortcutEvent* QShortcutEvent_Clone(const QShortcutEvent* self) {
@@ -4650,75 +4635,6 @@ void QApplicationStateChangeEvent_OnSetAccepted(QApplicationStateChangeEvent* se
 }
 
 void QApplicationStateChangeEvent_Delete(QApplicationStateChangeEvent* self) {
-    delete self;
-}
-
-QChildWindowEvent* QChildWindowEvent_new(int type, QWindow* childWindow) {
-    return new VirtualQChildWindowEvent(static_cast<QEvent::Type>(type), childWindow);
-}
-
-QChildWindowEvent* QChildWindowEvent_Clone(const QChildWindowEvent* self) {
-    auto* vqchildwindowevent = dynamic_cast<const VirtualQChildWindowEvent*>(self);
-    if (vqchildwindowevent && vqchildwindowevent->isVirtualQChildWindowEvent) {
-        return self->clone();
-    } else {
-        return ((VirtualQChildWindowEvent*)self)->clone();
-    }
-}
-
-QWindow* QChildWindowEvent_Child(const QChildWindowEvent* self) {
-    return self->child();
-}
-
-// Base class handler implementation
-QChildWindowEvent* QChildWindowEvent_SuperClone(const QChildWindowEvent* self) {
-    auto* vqchildwindowevent = const_cast<VirtualQChildWindowEvent*>(dynamic_cast<const VirtualQChildWindowEvent*>(self));
-    if (vqchildwindowevent && vqchildwindowevent->isVirtualQChildWindowEvent) {
-        vqchildwindowevent->setQChildWindowEvent_Clone_IsBase(true);
-        return vqchildwindowevent->clone();
-    } else {
-        return self->QChildWindowEvent::clone();
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QChildWindowEvent_OnClone(const QChildWindowEvent* self, intptr_t slot) {
-    auto* vqchildwindowevent = const_cast<VirtualQChildWindowEvent*>(dynamic_cast<const VirtualQChildWindowEvent*>(self));
-    if (vqchildwindowevent && vqchildwindowevent->isVirtualQChildWindowEvent) {
-        vqchildwindowevent->setQChildWindowEvent_Clone_Callback(reinterpret_cast<VirtualQChildWindowEvent::QChildWindowEvent_Clone_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-void QChildWindowEvent_SetAccepted(QChildWindowEvent* self, bool accepted) {
-    auto* vqchildwindowevent = dynamic_cast<VirtualQChildWindowEvent*>(self);
-    if (vqchildwindowevent && vqchildwindowevent->isVirtualQChildWindowEvent) {
-        vqchildwindowevent->setAccepted(accepted);
-    } else {
-        self->QChildWindowEvent::setAccepted(accepted);
-    }
-}
-
-// Base class handler implementation
-void QChildWindowEvent_SuperSetAccepted(QChildWindowEvent* self, bool accepted) {
-    auto* vqchildwindowevent = dynamic_cast<VirtualQChildWindowEvent*>(self);
-    if (vqchildwindowevent && vqchildwindowevent->isVirtualQChildWindowEvent) {
-        vqchildwindowevent->setQChildWindowEvent_SetAccepted_IsBase(true);
-        vqchildwindowevent->setAccepted(accepted);
-    } else {
-        self->QChildWindowEvent::setAccepted(accepted);
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QChildWindowEvent_OnSetAccepted(QChildWindowEvent* self, intptr_t slot) {
-    auto* vqchildwindowevent = dynamic_cast<VirtualQChildWindowEvent*>(self);
-    if (vqchildwindowevent && vqchildwindowevent->isVirtualQChildWindowEvent) {
-        vqchildwindowevent->setQChildWindowEvent_SetAccepted_Callback(reinterpret_cast<VirtualQChildWindowEvent::QChildWindowEvent_SetAccepted_Callback>(slot));
-    }
-}
-
-void QChildWindowEvent_Delete(QChildWindowEvent* self) {
     delete self;
 }
 

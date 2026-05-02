@@ -269,9 +269,6 @@ int QFontDialog_SuperReceivers(const QFontDialog* self, const char* signal);
 bool QFontDialog_IsSignalConnected(const QFontDialog* self, const QMetaMethod* signal);
 void QFontDialog_OnIsSignalConnected(const QFontDialog* self, intptr_t slot);
 bool QFontDialog_SuperIsSignalConnected(const QFontDialog* self, const QMetaMethod* signal);
-double QFontDialog_GetDecodedMetricF(const QFontDialog* self, int metricA, int metricB);
-void QFontDialog_OnGetDecodedMetricF(const QFontDialog* self, intptr_t slot);
-double QFontDialog_SuperGetDecodedMetricF(const QFontDialog* self, int metricA, int metricB);
 void QFontDialog_Delete(QFontDialog* self);
 
 #ifdef __cplusplus

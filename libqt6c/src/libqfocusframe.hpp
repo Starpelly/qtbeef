@@ -235,9 +235,6 @@ int QFocusFrame_SuperReceivers(const QFocusFrame* self, const char* signal);
 bool QFocusFrame_IsSignalConnected(const QFocusFrame* self, const QMetaMethod* signal);
 void QFocusFrame_OnIsSignalConnected(const QFocusFrame* self, intptr_t slot);
 bool QFocusFrame_SuperIsSignalConnected(const QFocusFrame* self, const QMetaMethod* signal);
-double QFocusFrame_GetDecodedMetricF(const QFocusFrame* self, int metricA, int metricB);
-void QFocusFrame_OnGetDecodedMetricF(const QFocusFrame* self, intptr_t slot);
-double QFocusFrame_SuperGetDecodedMetricF(const QFocusFrame* self, int metricA, int metricB);
 void QFocusFrame_Delete(QFocusFrame* self);
 
 #ifdef __cplusplus

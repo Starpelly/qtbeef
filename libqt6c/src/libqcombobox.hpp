@@ -109,10 +109,10 @@ QIcon* QComboBox_ItemIcon(const QComboBox* self, int index);
 QVariant* QComboBox_ItemData(const QComboBox* self, int index);
 void QComboBox_AddItem(QComboBox* self, const libqt_string text);
 void QComboBox_AddItem2(QComboBox* self, const QIcon* icon, const libqt_string text);
-void QComboBox_AddItems(QComboBox* self, const libqt_list /* of libqt_string */ texts);
+void QComboBox_AddItems(QComboBox* self, const QStringList* texts);
 void QComboBox_InsertItem(QComboBox* self, int index, const libqt_string text);
 void QComboBox_InsertItem2(QComboBox* self, int index, const QIcon* icon, const libqt_string text);
-void QComboBox_InsertItems(QComboBox* self, int index, const libqt_list /* of libqt_string */ texts);
+void QComboBox_InsertItems(QComboBox* self, int index, const QStringList* texts);
 void QComboBox_InsertSeparator(QComboBox* self, int index);
 void QComboBox_RemoveItem(QComboBox* self, int index);
 void QComboBox_SetItemText(QComboBox* self, int index, const libqt_string text);
@@ -335,9 +335,6 @@ int QComboBox_SuperReceivers(const QComboBox* self, const char* signal);
 bool QComboBox_IsSignalConnected(const QComboBox* self, const QMetaMethod* signal);
 void QComboBox_OnIsSignalConnected(const QComboBox* self, intptr_t slot);
 bool QComboBox_SuperIsSignalConnected(const QComboBox* self, const QMetaMethod* signal);
-double QComboBox_GetDecodedMetricF(const QComboBox* self, int metricA, int metricB);
-void QComboBox_OnGetDecodedMetricF(const QComboBox* self, intptr_t slot);
-double QComboBox_SuperGetDecodedMetricF(const QComboBox* self, int metricA, int metricB);
 void QComboBox_Delete(QComboBox* self);
 
 #ifdef __cplusplus

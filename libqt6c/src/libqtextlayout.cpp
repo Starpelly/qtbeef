@@ -303,20 +303,7 @@ double QTextLayout_MaximumWidth(const QTextLayout* self) {
     return static_cast<double>(self->maximumWidth());
 }
 
-libqt_list /* of QGlyphRun* */ QTextLayout_GlyphRuns(const QTextLayout* self, int from, int length, uint16_t flags) {
-    QList<QGlyphRun> _ret = self->glyphRuns(static_cast<int>(from), static_cast<int>(length), static_cast<QTextLayout::GlyphRunRetrievalFlags>(flags));
-    // Convert QList<> from C++ memory to manually-managed C memory
-    QGlyphRun** _arr = static_cast<QGlyphRun**>(malloc(sizeof(QGlyphRun*) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        _arr[i] = new QGlyphRun(_ret[i]);
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
-}
-
-libqt_list /* of QGlyphRun* */ QTextLayout_GlyphRuns2(const QTextLayout* self) {
+libqt_list /* of QGlyphRun* */ QTextLayout_GlyphRuns(const QTextLayout* self) {
     QList<QGlyphRun> _ret = self->glyphRuns();
     // Convert QList<> from C++ memory to manually-managed C memory
     QGlyphRun** _arr = static_cast<QGlyphRun**>(malloc(sizeof(QGlyphRun*) * (_ret.size())));
@@ -374,7 +361,7 @@ libqt_list /* of QGlyphRun* */ QTextLayout_GlyphRuns1(const QTextLayout* self, i
     return _out;
 }
 
-libqt_list /* of QGlyphRun* */ QTextLayout_GlyphRuns22(const QTextLayout* self, int from, int length) {
+libqt_list /* of QGlyphRun* */ QTextLayout_GlyphRuns2(const QTextLayout* self, int from, int length) {
     QList<QGlyphRun> _ret = self->glyphRuns(static_cast<int>(from), static_cast<int>(length));
     // Convert QList<> from C++ memory to manually-managed C memory
     QGlyphRun** _arr = static_cast<QGlyphRun**>(malloc(sizeof(QGlyphRun*) * (_ret.size())));
@@ -515,20 +502,7 @@ void QTextLine_Draw(const QTextLine* self, QPainter* painter, const QPointF* pos
     self->draw(painter, *position);
 }
 
-libqt_list /* of QGlyphRun* */ QTextLine_GlyphRuns(const QTextLine* self, int from, int length, uint16_t flags) {
-    QList<QGlyphRun> _ret = self->glyphRuns(static_cast<int>(from), static_cast<int>(length), static_cast<QTextLayout::GlyphRunRetrievalFlags>(flags));
-    // Convert QList<> from C++ memory to manually-managed C memory
-    QGlyphRun** _arr = static_cast<QGlyphRun**>(malloc(sizeof(QGlyphRun*) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        _arr[i] = new QGlyphRun(_ret[i]);
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
-}
-
-libqt_list /* of QGlyphRun* */ QTextLine_GlyphRuns2(const QTextLine* self) {
+libqt_list /* of QGlyphRun* */ QTextLine_GlyphRuns(const QTextLine* self) {
     QList<QGlyphRun> _ret = self->glyphRuns();
     // Convert QList<> from C++ memory to manually-managed C memory
     QGlyphRun** _arr = static_cast<QGlyphRun**>(malloc(sizeof(QGlyphRun*) * (_ret.size())));
@@ -566,7 +540,7 @@ libqt_list /* of QGlyphRun* */ QTextLine_GlyphRuns1(const QTextLine* self, int f
     return _out;
 }
 
-libqt_list /* of QGlyphRun* */ QTextLine_GlyphRuns22(const QTextLine* self, int from, int length) {
+libqt_list /* of QGlyphRun* */ QTextLine_GlyphRuns2(const QTextLine* self, int from, int length) {
     QList<QGlyphRun> _ret = self->glyphRuns(static_cast<int>(from), static_cast<int>(length));
     // Convert QList<> from C++ memory to manually-managed C memory
     QGlyphRun** _arr = static_cast<QGlyphRun**>(malloc(sizeof(QGlyphRun*) * (_ret.size())));
@@ -583,11 +557,7 @@ void QTextLine_Delete(QTextLine* self) {
     delete self;
 }
 
-QTextLayout__FormatRange* QTextLayout__FormatRange_new() {
-    return new QTextLayout::FormatRange();
-}
-
-QTextLayout__FormatRange* QTextLayout__FormatRange_new2(const QTextLayout__FormatRange* param1) {
+QTextLayout__FormatRange* QTextLayout__FormatRange_new(const QTextLayout__FormatRange* param1) {
     return new QTextLayout::FormatRange(*param1);
 }
 
@@ -613,6 +583,10 @@ QTextCharFormat* QTextLayout__FormatRange_Format(const QTextLayout__FormatRange*
 
 void QTextLayout__FormatRange_SetFormat(QTextLayout__FormatRange* self, QTextCharFormat* format) {
     self->format = *format;
+}
+
+void QTextLayout__FormatRange_OperatorAssign(QTextLayout__FormatRange* self, const QTextLayout__FormatRange* param1) {
+    self->operator=(*param1);
 }
 
 void QTextLayout__FormatRange_Delete(QTextLayout__FormatRange* self) {

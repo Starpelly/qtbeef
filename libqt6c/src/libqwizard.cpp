@@ -2281,35 +2281,6 @@ void QWizard_OnIsSignalConnected(const QWizard* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QWizard_GetDecodedMetricF(const QWizard* self, int metricA, int metricB) {
-    auto* vqwizard = const_cast<VirtualQWizard*>(dynamic_cast<const VirtualQWizard*>(self));
-    if (vqwizard && vqwizard->isVirtualQWizard) {
-        return vqwizard->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQWizard*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QWizard_SuperGetDecodedMetricF(const QWizard* self, int metricA, int metricB) {
-    auto* vqwizard = const_cast<VirtualQWizard*>(dynamic_cast<const VirtualQWizard*>(self));
-    if (vqwizard && vqwizard->isVirtualQWizard) {
-        vqwizard->setQWizard_GetDecodedMetricF_IsBase(true);
-        return vqwizard->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQWizard*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QWizard_OnGetDecodedMetricF(const QWizard* self, intptr_t slot) {
-    auto* vqwizard = const_cast<VirtualQWizard*>(dynamic_cast<const VirtualQWizard*>(self));
-    if (vqwizard && vqwizard->isVirtualQWizard) {
-        vqwizard->setQWizard_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQWizard::QWizard_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QWizard_Delete(QWizard* self) {
     delete self;
 }
@@ -4437,35 +4408,6 @@ void QWizardPage_OnIsSignalConnected(const QWizardPage* self, intptr_t slot) {
     auto* vqwizardpage = const_cast<VirtualQWizardPage*>(dynamic_cast<const VirtualQWizardPage*>(self));
     if (vqwizardpage && vqwizardpage->isVirtualQWizardPage) {
         vqwizardpage->setQWizardPage_IsSignalConnected_Callback(reinterpret_cast<VirtualQWizardPage::QWizardPage_IsSignalConnected_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-double QWizardPage_GetDecodedMetricF(const QWizardPage* self, int metricA, int metricB) {
-    auto* vqwizardpage = const_cast<VirtualQWizardPage*>(dynamic_cast<const VirtualQWizardPage*>(self));
-    if (vqwizardpage && vqwizardpage->isVirtualQWizardPage) {
-        return vqwizardpage->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQWizardPage*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QWizardPage_SuperGetDecodedMetricF(const QWizardPage* self, int metricA, int metricB) {
-    auto* vqwizardpage = const_cast<VirtualQWizardPage*>(dynamic_cast<const VirtualQWizardPage*>(self));
-    if (vqwizardpage && vqwizardpage->isVirtualQWizardPage) {
-        vqwizardpage->setQWizardPage_GetDecodedMetricF_IsBase(true);
-        return vqwizardpage->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQWizardPage*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QWizardPage_OnGetDecodedMetricF(const QWizardPage* self, intptr_t slot) {
-    auto* vqwizardpage = const_cast<VirtualQWizardPage*>(dynamic_cast<const VirtualQWizardPage*>(self));
-    if (vqwizardpage && vqwizardpage->isVirtualQWizardPage) {
-        vqwizardpage->setQWizardPage_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQWizardPage::QWizardPage_GetDecodedMetricF_Callback>(slot));
     }
 }
 

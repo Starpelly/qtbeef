@@ -3,7 +3,6 @@
 #include <QChildEvent>
 #include <QCompleter>
 #include <QEvent>
-#include <QList>
 #include <QMetaMethod>
 #include <QMetaObject>
 #include <QModelIndex>
@@ -26,15 +25,8 @@ QCompleter* QCompleter_new2(QAbstractItemModel* model) {
     return new VirtualQCompleter(model);
 }
 
-QCompleter* QCompleter_new3(const libqt_list /* of libqt_string */ completions) {
-    QList<QString> completions_QList;
-    completions_QList.reserve(completions.len);
-    libqt_string* completions_arr = static_cast<libqt_string*>(completions.data.ptr);
-    for (size_t i = 0; i < completions.len; ++i) {
-        QString completions_arr_i_QString = QString::fromUtf8(completions_arr[i].data, completions_arr[i].len);
-        completions_QList.push_back(completions_arr_i_QString);
-    }
-    return new VirtualQCompleter(completions_QList);
+QCompleter* QCompleter_new3(const QStringList* completions) {
+    return new VirtualQCompleter(*completions);
 }
 
 QCompleter* QCompleter_new4(QObject* parent) {
@@ -45,15 +37,8 @@ QCompleter* QCompleter_new5(QAbstractItemModel* model, QObject* parent) {
     return new VirtualQCompleter(model, parent);
 }
 
-QCompleter* QCompleter_new6(const libqt_list /* of libqt_string */ completions, QObject* parent) {
-    QList<QString> completions_QList;
-    completions_QList.reserve(completions.len);
-    libqt_string* completions_arr = static_cast<libqt_string*>(completions.data.ptr);
-    for (size_t i = 0; i < completions.len; ++i) {
-        QString completions_arr_i_QString = QString::fromUtf8(completions_arr[i].data, completions_arr[i].len);
-        completions_QList.push_back(completions_arr_i_QString);
-    }
-    return new VirtualQCompleter(completions_QList, parent);
+QCompleter* QCompleter_new6(const QStringList* completions, QObject* parent) {
+    return new VirtualQCompleter(*completions, parent);
 }
 
 QMetaObject* QCompleter_MetaObject(const QCompleter* self) {
@@ -249,47 +234,13 @@ libqt_string QCompleter_PathFromIndex(const QCompleter* self, const QModelIndex*
     }
 }
 
-libqt_list /* of libqt_string */ QCompleter_SplitPath(const QCompleter* self, const libqt_string path) {
+QStringList QCompleter_SplitPath(const QCompleter* self, const libqt_string path) {
     QString path_QString = QString::fromUtf8(path.data, path.len);
     auto* vqcompleter = dynamic_cast<const VirtualQCompleter*>(self);
     if (vqcompleter && vqcompleter->isVirtualQCompleter) {
-        QList<QString> _ret = self->splitPath(path_QString);
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->splitPath(path_QString);
     } else {
-        QList<QString> _ret = ((VirtualQCompleter*)self)->splitPath(path_QString);
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return ((VirtualQCompleter*)self)->splitPath(path_QString);
     }
 }
 
@@ -424,48 +375,14 @@ void QCompleter_OnPathFromIndex(const QCompleter* self, intptr_t slot) {
 }
 
 // Base class handler implementation
-libqt_list /* of libqt_string */ QCompleter_SuperSplitPath(const QCompleter* self, const libqt_string path) {
+QStringList QCompleter_SuperSplitPath(const QCompleter* self, const libqt_string path) {
     auto* vqcompleter = const_cast<VirtualQCompleter*>(dynamic_cast<const VirtualQCompleter*>(self));
     QString path_QString = QString::fromUtf8(path.data, path.len);
     if (vqcompleter && vqcompleter->isVirtualQCompleter) {
         vqcompleter->setQCompleter_SplitPath_IsBase(true);
-        QList<QString> _ret = vqcompleter->splitPath(path_QString);
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return vqcompleter->splitPath(path_QString);
     } else {
-        QList<QString> _ret = self->QCompleter::splitPath(path_QString);
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->QCompleter::splitPath(path_QString);
     }
 }
 

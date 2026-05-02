@@ -1,5 +1,4 @@
 #include <QByteArray>
-#include <QByteArrayView>
 #include <QList>
 #include <QString>
 #include <QByteArray>
@@ -91,9 +90,9 @@ libqt_string QUrl_ToEncoded(const QUrl* self) {
     return _str;
 }
 
-QUrl* QUrl_FromEncoded(libqt_string input) {
-    QByteArrayView input_QByteArrayView(input.data, input.len);
-    return new QUrl(QUrl::fromEncoded(input_QByteArrayView));
+QUrl* QUrl_FromEncoded(const libqt_string url) {
+    QByteArray url_QByteArray(url.data, url.len);
+    return new QUrl(QUrl::fromEncoded(url_QByteArray));
 }
 
 QUrl* QUrl_FromUserInput(const libqt_string userInput) {
@@ -351,6 +350,18 @@ bool QUrl_IsDetached(const QUrl* self) {
     return self->isDetached();
 }
 
+bool QUrl_OperatorLesser(const QUrl* self, const QUrl* url) {
+    return (*self < *url);
+}
+
+bool QUrl_OperatorEqual(const QUrl* self, const QUrl* url) {
+    return (*self == *url);
+}
+
+bool QUrl_OperatorNotEqual(const QUrl* self, const QUrl* url) {
+    return (*self != *url);
+}
+
 libqt_string QUrl_FromPercentEncoding(const libqt_string param1) {
     QByteArray param1_QByteArray(param1.data, param1.len);
     QString _ret = QUrl::fromPercentEncoding(param1_QByteArray);
@@ -397,63 +408,22 @@ libqt_string QUrl_ToAce(const libqt_string domain) {
     return _str;
 }
 
-libqt_list /* of libqt_string */ QUrl_IdnWhitelist() {
-    QList<QString> _ret = QUrl::idnWhitelist();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QUrl_IdnWhitelist() {
+    return QUrl::idnWhitelist();
 }
 
-libqt_list /* of libqt_string */ QUrl_ToStringList(const libqt_list /* of QUrl* */ uris) {
+QStringList QUrl_ToStringList(const libqt_list /* of QUrl* */ uris) {
     QList<QUrl> uris_QList;
     uris_QList.reserve(uris.len);
     QUrl** uris_arr = static_cast<QUrl**>(uris.data.ptr);
     for (size_t i = 0; i < uris.len; ++i) {
         uris_QList.push_back(*(uris_arr[i]));
     }
-    QList<QString> _ret = QUrl::toStringList(uris_QList);
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+    return QUrl::toStringList(uris_QList);
 }
 
-libqt_list /* of QUrl* */ QUrl_FromStringList(const libqt_list /* of libqt_string */ uris) {
-    QList<QString> uris_QList;
-    uris_QList.reserve(uris.len);
-    libqt_string* uris_arr = static_cast<libqt_string*>(uris.data.ptr);
-    for (size_t i = 0; i < uris.len; ++i) {
-        QString uris_arr_i_QString = QString::fromUtf8(uris_arr[i].data, uris_arr[i].len);
-        uris_QList.push_back(uris_arr_i_QString);
-    }
-    QList<QUrl> _ret = QUrl::fromStringList(uris_QList);
+libqt_list /* of QUrl* */ QUrl_FromStringList(const QStringList* uris) {
+    QList<QUrl> _ret = QUrl::fromStringList(*uris);
     // Convert QList<> from C++ memory to manually-managed C memory
     QUrl** _arr = static_cast<QUrl**>(malloc(sizeof(QUrl*) * (_ret.size())));
     for (qsizetype i = 0; i < _ret.size(); ++i) {
@@ -465,15 +435,8 @@ libqt_list /* of QUrl* */ QUrl_FromStringList(const libqt_list /* of libqt_strin
     return _out;
 }
 
-void QUrl_SetIdnWhitelist(const libqt_list /* of libqt_string */ idnWhitelist) {
-    QList<QString> idnWhitelist_QList;
-    idnWhitelist_QList.reserve(idnWhitelist.len);
-    libqt_string* idnWhitelist_arr = static_cast<libqt_string*>(idnWhitelist.data.ptr);
-    for (size_t i = 0; i < idnWhitelist.len; ++i) {
-        QString idnWhitelist_arr_i_QString = QString::fromUtf8(idnWhitelist_arr[i].data, idnWhitelist_arr[i].len);
-        idnWhitelist_QList.push_back(idnWhitelist_arr_i_QString);
-    }
-    QUrl::setIdnWhitelist(idnWhitelist_QList);
+void QUrl_SetIdnWhitelist(const QStringList* idnWhitelist) {
+    QUrl::setIdnWhitelist(*idnWhitelist);
 }
 
 void QUrl_SetUrl2(QUrl* self, const libqt_string url, int mode) {
@@ -481,9 +444,9 @@ void QUrl_SetUrl2(QUrl* self, const libqt_string url, int mode) {
     self->setUrl(url_QString, static_cast<QUrl::ParsingMode>(mode));
 }
 
-QUrl* QUrl_FromEncoded2(libqt_string input, int mode) {
-    QByteArrayView input_QByteArrayView(input.data, input.len);
-    return new QUrl(QUrl::fromEncoded(input_QByteArrayView, static_cast<QUrl::ParsingMode>(mode)));
+QUrl* QUrl_FromEncoded2(const libqt_string url, int mode) {
+    QByteArray url_QByteArray(url.data, url.len);
+    return new QUrl(QUrl::fromEncoded(url_QByteArray, static_cast<QUrl::ParsingMode>(mode)));
 }
 
 QUrl* QUrl_FromUserInput2(const libqt_string userInput, const libqt_string workingDirectory) {
@@ -696,15 +659,8 @@ libqt_string QUrl_ToAce2(const libqt_string domain, unsigned int options) {
     return _str;
 }
 
-libqt_list /* of QUrl* */ QUrl_FromStringList2(const libqt_list /* of libqt_string */ uris, int mode) {
-    QList<QString> uris_QList;
-    uris_QList.reserve(uris.len);
-    libqt_string* uris_arr = static_cast<libqt_string*>(uris.data.ptr);
-    for (size_t i = 0; i < uris.len; ++i) {
-        QString uris_arr_i_QString = QString::fromUtf8(uris_arr[i].data, uris_arr[i].len);
-        uris_QList.push_back(uris_arr_i_QString);
-    }
-    QList<QUrl> _ret = QUrl::fromStringList(uris_QList, static_cast<QUrl::ParsingMode>(mode));
+libqt_list /* of QUrl* */ QUrl_FromStringList2(const QStringList* uris, int mode) {
+    QList<QUrl> _ret = QUrl::fromStringList(*uris, static_cast<QUrl::ParsingMode>(mode));
     // Convert QList<> from C++ memory to manually-managed C memory
     QUrl** _arr = static_cast<QUrl**>(malloc(sizeof(QUrl*) * (_ret.size())));
     for (qsizetype i = 0; i < _ret.size(); ++i) {

@@ -18,13 +18,25 @@ extern "C" {
 typedef struct QDeadlineTimer QDeadlineTimer;
 #endif
 
+struct pair_long_long_unsigned_int;
+
+typedef struct pair_long_long_unsigned_int pair_long_long_unsigned_int;
+
+#ifndef PAIR_LONG_LONG_UNSIGNED_INT
+#define PAIR_LONG_LONG_UNSIGNED_INT
+struct pair_long_long_unsigned_int {
+    long long first;
+    unsigned int second;
+};
+#endif
+
 QDeadlineTimer* QDeadlineTimer_new(const QDeadlineTimer* other);
 QDeadlineTimer* QDeadlineTimer_new2(QDeadlineTimer* other);
 QDeadlineTimer* QDeadlineTimer_new3();
-QDeadlineTimer* QDeadlineTimer_new4(int type_);
-QDeadlineTimer* QDeadlineTimer_new5(int param1);
-QDeadlineTimer* QDeadlineTimer_new6(long long msecs);
-QDeadlineTimer* QDeadlineTimer_new7(const QDeadlineTimer* param1);
+QDeadlineTimer* QDeadlineTimer_new4(int param1);
+QDeadlineTimer* QDeadlineTimer_new5(long long msecs);
+QDeadlineTimer* QDeadlineTimer_new6(const QDeadlineTimer* param1);
+QDeadlineTimer* QDeadlineTimer_new7(int type_);
 QDeadlineTimer* QDeadlineTimer_new8(int param1, int type_);
 QDeadlineTimer* QDeadlineTimer_new9(long long msecs, int type);
 void QDeadlineTimer_CopyAssign(QDeadlineTimer* self, QDeadlineTimer* other);
@@ -47,6 +59,8 @@ QDeadlineTimer* QDeadlineTimer_Current();
 QDeadlineTimer* QDeadlineTimer_OperatorPlusAssign(QDeadlineTimer* self, long long msecs);
 QDeadlineTimer* QDeadlineTimer_OperatorMinusAssign(QDeadlineTimer* self, long long msecs);
 int64_t QDeadlineTimer_RemainingTimeAsDuration(const QDeadlineTimer* self);
+pair_long_long_unsigned_int /* tuple of long long and unsigned int */ QDeadlineTimer_QData(const QDeadlineTimer* self);
+void QDeadlineTimer_OperatorAssign(QDeadlineTimer* self, const QDeadlineTimer* param1);
 void QDeadlineTimer_SetRemainingTime2(QDeadlineTimer* self, long long msecs, int type);
 void QDeadlineTimer_SetPreciseRemainingTime2(QDeadlineTimer* self, long long secs, long long nsecs);
 void QDeadlineTimer_SetPreciseRemainingTime3(QDeadlineTimer* self, long long secs, long long nsecs, int type);

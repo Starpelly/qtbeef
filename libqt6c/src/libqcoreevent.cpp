@@ -1,5 +1,6 @@
 #include <QByteArray>
 #include <QChildEvent>
+#include <QDeferredDeleteEvent>
 #include <QDynamicPropertyChangeEvent>
 #include <QEvent>
 #include <QObject>
@@ -116,10 +117,6 @@ QTimerEvent* QTimerEvent_new(int timerId) {
     return new VirtualQTimerEvent(static_cast<int>(timerId));
 }
 
-QTimerEvent* QTimerEvent_new2(int timerId) {
-    return new VirtualQTimerEvent(static_cast<Qt::TimerId>(timerId));
-}
-
 QTimerEvent* QTimerEvent_Clone(const QTimerEvent* self) {
     auto* vqtimerevent = dynamic_cast<const VirtualQTimerEvent*>(self);
     if (vqtimerevent && vqtimerevent->isVirtualQTimerEvent) {
@@ -131,10 +128,6 @@ QTimerEvent* QTimerEvent_Clone(const QTimerEvent* self) {
 
 int QTimerEvent_TimerId(const QTimerEvent* self) {
     return self->timerId();
-}
-
-int QTimerEvent_Id(const QTimerEvent* self) {
-    return static_cast<int>(self->id());
 }
 
 // Base class handler implementation
@@ -342,5 +335,74 @@ void QDynamicPropertyChangeEvent_OnSetAccepted(QDynamicPropertyChangeEvent* self
 }
 
 void QDynamicPropertyChangeEvent_Delete(QDynamicPropertyChangeEvent* self) {
+    delete self;
+}
+
+QDeferredDeleteEvent* QDeferredDeleteEvent_new() {
+    return new VirtualQDeferredDeleteEvent();
+}
+
+QDeferredDeleteEvent* QDeferredDeleteEvent_Clone(const QDeferredDeleteEvent* self) {
+    auto* vqdeferreddeleteevent = dynamic_cast<const VirtualQDeferredDeleteEvent*>(self);
+    if (vqdeferreddeleteevent && vqdeferreddeleteevent->isVirtualQDeferredDeleteEvent) {
+        return self->clone();
+    } else {
+        return ((VirtualQDeferredDeleteEvent*)self)->clone();
+    }
+}
+
+int QDeferredDeleteEvent_LoopLevel(const QDeferredDeleteEvent* self) {
+    return self->loopLevel();
+}
+
+// Base class handler implementation
+QDeferredDeleteEvent* QDeferredDeleteEvent_SuperClone(const QDeferredDeleteEvent* self) {
+    auto* vqdeferreddeleteevent = const_cast<VirtualQDeferredDeleteEvent*>(dynamic_cast<const VirtualQDeferredDeleteEvent*>(self));
+    if (vqdeferreddeleteevent && vqdeferreddeleteevent->isVirtualQDeferredDeleteEvent) {
+        vqdeferreddeleteevent->setQDeferredDeleteEvent_Clone_IsBase(true);
+        return vqdeferreddeleteevent->clone();
+    } else {
+        return self->QDeferredDeleteEvent::clone();
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QDeferredDeleteEvent_OnClone(const QDeferredDeleteEvent* self, intptr_t slot) {
+    auto* vqdeferreddeleteevent = const_cast<VirtualQDeferredDeleteEvent*>(dynamic_cast<const VirtualQDeferredDeleteEvent*>(self));
+    if (vqdeferreddeleteevent && vqdeferreddeleteevent->isVirtualQDeferredDeleteEvent) {
+        vqdeferreddeleteevent->setQDeferredDeleteEvent_Clone_Callback(reinterpret_cast<VirtualQDeferredDeleteEvent::QDeferredDeleteEvent_Clone_Callback>(slot));
+    }
+}
+
+// Derived class handler implementation
+void QDeferredDeleteEvent_SetAccepted(QDeferredDeleteEvent* self, bool accepted) {
+    auto* vqdeferreddeleteevent = dynamic_cast<VirtualQDeferredDeleteEvent*>(self);
+    if (vqdeferreddeleteevent && vqdeferreddeleteevent->isVirtualQDeferredDeleteEvent) {
+        vqdeferreddeleteevent->setAccepted(accepted);
+    } else {
+        self->QDeferredDeleteEvent::setAccepted(accepted);
+    }
+}
+
+// Base class handler implementation
+void QDeferredDeleteEvent_SuperSetAccepted(QDeferredDeleteEvent* self, bool accepted) {
+    auto* vqdeferreddeleteevent = dynamic_cast<VirtualQDeferredDeleteEvent*>(self);
+    if (vqdeferreddeleteevent && vqdeferreddeleteevent->isVirtualQDeferredDeleteEvent) {
+        vqdeferreddeleteevent->setQDeferredDeleteEvent_SetAccepted_IsBase(true);
+        vqdeferreddeleteevent->setAccepted(accepted);
+    } else {
+        self->QDeferredDeleteEvent::setAccepted(accepted);
+    }
+}
+
+// Auxiliary method to allow providing re-implementation
+void QDeferredDeleteEvent_OnSetAccepted(QDeferredDeleteEvent* self, intptr_t slot) {
+    auto* vqdeferreddeleteevent = dynamic_cast<VirtualQDeferredDeleteEvent*>(self);
+    if (vqdeferreddeleteevent && vqdeferreddeleteevent->isVirtualQDeferredDeleteEvent) {
+        vqdeferreddeleteevent->setQDeferredDeleteEvent_SetAccepted_Callback(reinterpret_cast<VirtualQDeferredDeleteEvent::QDeferredDeleteEvent_SetAccepted_Callback>(slot));
+    }
+}
+
+void QDeferredDeleteEvent_Delete(QDeferredDeleteEvent* self) {
     delete self;
 }

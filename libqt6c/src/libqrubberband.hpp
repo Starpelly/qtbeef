@@ -241,9 +241,6 @@ int QRubberBand_SuperReceivers(const QRubberBand* self, const char* signal);
 bool QRubberBand_IsSignalConnected(const QRubberBand* self, const QMetaMethod* signal);
 void QRubberBand_OnIsSignalConnected(const QRubberBand* self, intptr_t slot);
 bool QRubberBand_SuperIsSignalConnected(const QRubberBand* self, const QMetaMethod* signal);
-double QRubberBand_GetDecodedMetricF(const QRubberBand* self, int metricA, int metricB);
-void QRubberBand_OnGetDecodedMetricF(const QRubberBand* self, intptr_t slot);
-double QRubberBand_SuperGetDecodedMetricF(const QRubberBand* self, int metricA, int metricB);
 void QRubberBand_Delete(QRubberBand* self);
 
 #ifdef __cplusplus

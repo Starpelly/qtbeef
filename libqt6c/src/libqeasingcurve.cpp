@@ -25,6 +25,14 @@ void QEasingCurve_Swap(QEasingCurve* self, QEasingCurve* other) {
     self->swap(*other);
 }
 
+bool QEasingCurve_OperatorEqual(const QEasingCurve* self, const QEasingCurve* other) {
+    return (*self == *other);
+}
+
+bool QEasingCurve_OperatorNotEqual(const QEasingCurve* self, const QEasingCurve* other) {
+    return (*self != *other);
+}
+
 double QEasingCurve_Amplitude(const QEasingCurve* self) {
     return static_cast<double>(self->amplitude());
 }

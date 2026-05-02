@@ -250,9 +250,6 @@ int QSplashScreen_SuperReceivers(const QSplashScreen* self, const char* signal);
 bool QSplashScreen_IsSignalConnected(const QSplashScreen* self, const QMetaMethod* signal);
 void QSplashScreen_OnIsSignalConnected(const QSplashScreen* self, intptr_t slot);
 bool QSplashScreen_SuperIsSignalConnected(const QSplashScreen* self, const QMetaMethod* signal);
-double QSplashScreen_GetDecodedMetricF(const QSplashScreen* self, int metricA, int metricB);
-void QSplashScreen_OnGetDecodedMetricF(const QSplashScreen* self, intptr_t slot);
-double QSplashScreen_SuperGetDecodedMetricF(const QSplashScreen* self, int metricA, int metricB);
 void QSplashScreen_Delete(QSplashScreen* self);
 
 #ifdef __cplusplus

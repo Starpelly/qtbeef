@@ -40,7 +40,7 @@ bool QInputDevice_HasCapability(const QInputDevice* self, int cap);
 long long QInputDevice_SystemId(const QInputDevice* self);
 libqt_string QInputDevice_SeatName(const QInputDevice* self);
 QRect* QInputDevice_AvailableVirtualGeometry(const QInputDevice* self);
-libqt_list /* of libqt_string */ QInputDevice_SeatNames();
+QStringList QInputDevice_SeatNames();
 libqt_list /* of QInputDevice* */ QInputDevice_Devices();
 QInputDevice* QInputDevice_PrimaryKeyboard();
 bool QInputDevice_OperatorEqual(const QInputDevice* self, const QInputDevice* other);

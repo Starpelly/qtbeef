@@ -21,13 +21,9 @@ typedef struct QPropertyBindingSourceLocation QPropertyBindingSourceLocation;
 typedef struct QPropertyNotifier QPropertyNotifier;
 typedef struct QPropertyObserver QPropertyObserver;
 typedef struct QPropertyObserverBase QPropertyObserverBase;
-typedef struct QScopedPropertyUpdateGroup QScopedPropertyUpdateGroup;
 typedef struct QUntypedBindable QUntypedBindable;
 typedef struct QUntypedPropertyBinding QUntypedPropertyBinding;
 #endif
-
-QScopedPropertyUpdateGroup* QScopedPropertyUpdateGroup_new();
-void QScopedPropertyUpdateGroup_Delete(QScopedPropertyUpdateGroup* self);
 
 QPropertyBindingSourceLocation* QPropertyBindingSourceLocation_new(const QPropertyBindingSourceLocation* other);
 QPropertyBindingSourceLocation* QPropertyBindingSourceLocation_new2(QPropertyBindingSourceLocation* other);

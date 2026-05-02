@@ -191,8 +191,8 @@ QStandardItem* QStandardItemModel_HorizontalHeaderItem(const QStandardItemModel*
 void QStandardItemModel_SetHorizontalHeaderItem(QStandardItemModel* self, int column, QStandardItem* item);
 QStandardItem* QStandardItemModel_VerticalHeaderItem(const QStandardItemModel* self, int row);
 void QStandardItemModel_SetVerticalHeaderItem(QStandardItemModel* self, int row, QStandardItem* item);
-void QStandardItemModel_SetHorizontalHeaderLabels(QStandardItemModel* self, const libqt_list /* of libqt_string */ labels);
-void QStandardItemModel_SetVerticalHeaderLabels(QStandardItemModel* self, const libqt_list /* of libqt_string */ labels);
+void QStandardItemModel_SetHorizontalHeaderLabels(QStandardItemModel* self, const QStringList* labels);
+void QStandardItemModel_SetVerticalHeaderLabels(QStandardItemModel* self, const QStringList* labels);
 void QStandardItemModel_SetRowCount(QStandardItemModel* self, int rows);
 void QStandardItemModel_SetColumnCount(QStandardItemModel* self, int columns);
 void QStandardItemModel_AppendRow(QStandardItemModel* self, const libqt_list /* of QStandardItem* */ items);
@@ -213,7 +213,7 @@ void QStandardItemModel_SetItemPrototype(QStandardItemModel* self, const QStanda
 libqt_list /* of QStandardItem* */ QStandardItemModel_FindItems(const QStandardItemModel* self, const libqt_string text);
 int QStandardItemModel_SortRole(const QStandardItemModel* self);
 void QStandardItemModel_SetSortRole(QStandardItemModel* self, int role);
-libqt_list /* of libqt_string */ QStandardItemModel_MimeTypes(const QStandardItemModel* self);
+QStringList QStandardItemModel_MimeTypes(const QStandardItemModel* self);
 QMimeData* QStandardItemModel_MimeData(const QStandardItemModel* self, const libqt_list /* of QModelIndex* */ indexes);
 bool QStandardItemModel_DropMimeData(QStandardItemModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
 void QStandardItemModel_ItemChanged(QStandardItemModel* self, QStandardItem* item);
@@ -273,7 +273,7 @@ bool QStandardItemModel_SuperSetItemData(QStandardItemModel* self, const QModelI
 void QStandardItemModel_OnSort(QStandardItemModel* self, intptr_t slot);
 void QStandardItemModel_SuperSort(QStandardItemModel* self, int column, int order);
 void QStandardItemModel_OnMimeTypes(const QStandardItemModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QStandardItemModel_SuperMimeTypes(const QStandardItemModel* self);
+QStringList QStandardItemModel_SuperMimeTypes(const QStandardItemModel* self);
 void QStandardItemModel_OnMimeData(const QStandardItemModel* self, intptr_t slot);
 QMimeData* QStandardItemModel_SuperMimeData(const QStandardItemModel* self, const libqt_list /* of QModelIndex* */ indexes);
 void QStandardItemModel_OnDropMimeData(QStandardItemModel* self, intptr_t slot);

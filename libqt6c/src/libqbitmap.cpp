@@ -263,35 +263,6 @@ void QBitmap_OnSharedPainter(const QBitmap* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QBitmap_GetDecodedMetricF(const QBitmap* self, int metricA, int metricB) {
-    auto* vqbitmap = const_cast<VirtualQBitmap*>(dynamic_cast<const VirtualQBitmap*>(self));
-    if (vqbitmap && vqbitmap->isVirtualQBitmap) {
-        return vqbitmap->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQBitmap*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QBitmap_SuperGetDecodedMetricF(const QBitmap* self, int metricA, int metricB) {
-    auto* vqbitmap = const_cast<VirtualQBitmap*>(dynamic_cast<const VirtualQBitmap*>(self));
-    if (vqbitmap && vqbitmap->isVirtualQBitmap) {
-        vqbitmap->setQBitmap_GetDecodedMetricF_IsBase(true);
-        return vqbitmap->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQBitmap*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QBitmap_OnGetDecodedMetricF(const QBitmap* self, intptr_t slot) {
-    auto* vqbitmap = const_cast<VirtualQBitmap*>(dynamic_cast<const VirtualQBitmap*>(self));
-    if (vqbitmap && vqbitmap->isVirtualQBitmap) {
-        vqbitmap->setQBitmap_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQBitmap::QBitmap_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QBitmap_Delete(QBitmap* self) {
     delete self;
 }

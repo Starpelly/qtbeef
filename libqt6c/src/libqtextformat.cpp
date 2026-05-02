@@ -372,15 +372,8 @@ libqt_string QTextCharFormat_FontFamily(const QTextCharFormat* self) {
     return _str;
 }
 
-void QTextCharFormat_SetFontFamilies(QTextCharFormat* self, const libqt_list /* of libqt_string */ families) {
-    QList<QString> families_QList;
-    families_QList.reserve(families.len);
-    libqt_string* families_arr = static_cast<libqt_string*>(families.data.ptr);
-    for (size_t i = 0; i < families.len; ++i) {
-        QString families_arr_i_QString = QString::fromUtf8(families_arr[i].data, families_arr[i].len);
-        families_QList.push_back(families_arr_i_QString);
-    }
-    self->setFontFamilies(families_QList);
+void QTextCharFormat_SetFontFamilies(QTextCharFormat* self, const QStringList* families) {
+    self->setFontFamilies(*families);
 }
 
 QVariant* QTextCharFormat_FontFamilies(const QTextCharFormat* self) {
@@ -622,36 +615,12 @@ libqt_string QTextCharFormat_AnchorHref(const QTextCharFormat* self) {
     return _str;
 }
 
-void QTextCharFormat_SetAnchorNames(QTextCharFormat* self, const libqt_list /* of libqt_string */ names) {
-    QList<QString> names_QList;
-    names_QList.reserve(names.len);
-    libqt_string* names_arr = static_cast<libqt_string*>(names.data.ptr);
-    for (size_t i = 0; i < names.len; ++i) {
-        QString names_arr_i_QString = QString::fromUtf8(names_arr[i].data, names_arr[i].len);
-        names_QList.push_back(names_arr_i_QString);
-    }
-    self->setAnchorNames(names_QList);
+void QTextCharFormat_SetAnchorNames(QTextCharFormat* self, const QStringList* names) {
+    self->setAnchorNames(*names);
 }
 
-libqt_list /* of libqt_string */ QTextCharFormat_AnchorNames(const QTextCharFormat* self) {
-    QList<QString> _ret = self->anchorNames();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QTextCharFormat_AnchorNames(const QTextCharFormat* self) {
+    return self->anchorNames();
 }
 
 void QTextCharFormat_SetTableCellRowSpan(QTextCharFormat* self, int tableCellRowSpan) {
@@ -887,24 +856,12 @@ libqt_string QTextListFormat_NumberSuffix(const QTextListFormat* self) {
     return _str;
 }
 
-void QTextListFormat_SetStart(QTextListFormat* self, int indent) {
-    self->setStart(static_cast<int>(indent));
-}
-
-int QTextListFormat_Start(const QTextListFormat* self) {
-    return self->start();
-}
-
 void QTextListFormat_Delete(QTextListFormat* self) {
     delete self;
 }
 
 QTextImageFormat* QTextImageFormat_new() {
     return new QTextImageFormat();
-}
-
-QTextImageFormat* QTextImageFormat_new2(const QTextImageFormat* param1) {
-    return new QTextImageFormat(*param1);
 }
 
 bool QTextImageFormat_IsValid(const QTextImageFormat* self) {
@@ -934,14 +891,6 @@ void QTextImageFormat_SetWidth(QTextImageFormat* self, double width) {
 
 double QTextImageFormat_Width(const QTextImageFormat* self) {
     return static_cast<double>(self->width());
-}
-
-void QTextImageFormat_SetMaximumWidth(QTextImageFormat* self, QTextLength* maxWidth) {
-    self->setMaximumWidth(*maxWidth);
-}
-
-QTextLength* QTextImageFormat_MaximumWidth(const QTextImageFormat* self) {
-    return new QTextLength(self->maximumWidth());
 }
 
 void QTextImageFormat_SetHeight(QTextImageFormat* self, double height) {
@@ -1100,10 +1049,6 @@ QTextTableFormat* QTextTableFormat_new() {
     return new QTextTableFormat();
 }
 
-QTextTableFormat* QTextTableFormat_new2(const QTextTableFormat* param1) {
-    return new QTextTableFormat(*param1);
-}
-
 bool QTextTableFormat_IsValid(const QTextTableFormat* self) {
     return self->isValid();
 }
@@ -1189,10 +1134,6 @@ void QTextTableFormat_Delete(QTextTableFormat* self) {
 
 QTextTableCellFormat* QTextTableCellFormat_new() {
     return new QTextTableCellFormat();
-}
-
-QTextTableCellFormat* QTextTableCellFormat_new2(const QTextTableCellFormat* param1) {
-    return new QTextTableCellFormat(*param1);
 }
 
 bool QTextTableCellFormat_IsValid(const QTextTableCellFormat* self) {

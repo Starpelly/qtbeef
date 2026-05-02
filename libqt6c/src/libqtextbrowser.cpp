@@ -15,7 +15,6 @@
 #include <QHideEvent>
 #include <QInputMethodEvent>
 #include <QKeyEvent>
-#include <QList>
 #include <QMargins>
 #include <QMetaMethod>
 #include <QMetaObject>
@@ -91,36 +90,12 @@ int QTextBrowser_SourceType(const QTextBrowser* self) {
     return static_cast<int>(self->sourceType());
 }
 
-libqt_list /* of libqt_string */ QTextBrowser_SearchPaths(const QTextBrowser* self) {
-    QList<QString> _ret = self->searchPaths();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QTextBrowser_SearchPaths(const QTextBrowser* self) {
+    return self->searchPaths();
 }
 
-void QTextBrowser_SetSearchPaths(QTextBrowser* self, const libqt_list /* of libqt_string */ paths) {
-    QList<QString> paths_QList;
-    paths_QList.reserve(paths.len);
-    libqt_string* paths_arr = static_cast<libqt_string*>(paths.data.ptr);
-    for (size_t i = 0; i < paths.len; ++i) {
-        QString paths_arr_i_QString = QString::fromUtf8(paths_arr[i].data, paths_arr[i].len);
-        paths_QList.push_back(paths_arr_i_QString);
-    }
-    self->setSearchPaths(paths_QList);
+void QTextBrowser_SetSearchPaths(QTextBrowser* self, const QStringList* paths) {
+    self->setSearchPaths(*paths);
 }
 
 QVariant* QTextBrowser_LoadResource(QTextBrowser* self, int type, const QUrl* name) {
@@ -2457,35 +2432,6 @@ void QTextBrowser_OnIsSignalConnected(const QTextBrowser* self, intptr_t slot) {
     auto* vqtextbrowser = const_cast<VirtualQTextBrowser*>(dynamic_cast<const VirtualQTextBrowser*>(self));
     if (vqtextbrowser && vqtextbrowser->isVirtualQTextBrowser) {
         vqtextbrowser->setQTextBrowser_IsSignalConnected_Callback(reinterpret_cast<VirtualQTextBrowser::QTextBrowser_IsSignalConnected_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-double QTextBrowser_GetDecodedMetricF(const QTextBrowser* self, int metricA, int metricB) {
-    auto* vqtextbrowser = const_cast<VirtualQTextBrowser*>(dynamic_cast<const VirtualQTextBrowser*>(self));
-    if (vqtextbrowser && vqtextbrowser->isVirtualQTextBrowser) {
-        return vqtextbrowser->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQTextBrowser*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QTextBrowser_SuperGetDecodedMetricF(const QTextBrowser* self, int metricA, int metricB) {
-    auto* vqtextbrowser = const_cast<VirtualQTextBrowser*>(dynamic_cast<const VirtualQTextBrowser*>(self));
-    if (vqtextbrowser && vqtextbrowser->isVirtualQTextBrowser) {
-        vqtextbrowser->setQTextBrowser_GetDecodedMetricF_IsBase(true);
-        return vqtextbrowser->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQTextBrowser*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QTextBrowser_OnGetDecodedMetricF(const QTextBrowser* self, intptr_t slot) {
-    auto* vqtextbrowser = const_cast<VirtualQTextBrowser*>(dynamic_cast<const VirtualQTextBrowser*>(self));
-    if (vqtextbrowser && vqtextbrowser->isVirtualQTextBrowser) {
-        vqtextbrowser->setQTextBrowser_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQTextBrowser::QTextBrowser_GetDecodedMetricF_Callback>(slot));
     }
 }
 

@@ -69,8 +69,8 @@ class VirtualQAccessibleBridgePlugin : public QAccessibleBridgePlugin {
     mutable bool qaccessiblebridgeplugin_issignalconnected_isbase = false;
 
   public:
-    VirtualQAccessibleBridgePlugin() : QAccessibleBridgePlugin() {};
-    VirtualQAccessibleBridgePlugin(QObject* parent) : QAccessibleBridgePlugin(parent) {};
+    VirtualQAccessibleBridgePlugin() : QAccessibleBridgePlugin(){};
+    VirtualQAccessibleBridgePlugin(QObject* parent) : QAccessibleBridgePlugin(parent){};
 
     // Callback setters
     inline void setQAccessibleBridgePlugin_MetaObject_Callback(QAccessibleBridgePlugin_MetaObject_Callback cb) { qaccessiblebridgeplugin_metaobject_callback = cb; }

@@ -30,7 +30,7 @@ class VirtualQGraphicsSceneEvent final : public QGraphicsSceneEvent {
     mutable bool qgraphicssceneevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneEvent(QEvent::Type type) : QGraphicsSceneEvent(type) {};
+    VirtualQGraphicsSceneEvent(QEvent::Type type) : QGraphicsSceneEvent(type){};
 
     // Callback setters
     inline void setQGraphicsSceneEvent_SetAccepted_Callback(QGraphicsSceneEvent_SetAccepted_Callback cb) { qgraphicssceneevent_setaccepted_callback = cb; }
@@ -93,8 +93,8 @@ class VirtualQGraphicsSceneMouseEvent final : public QGraphicsSceneMouseEvent {
     mutable bool qgraphicsscenemouseevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneMouseEvent() : QGraphicsSceneMouseEvent() {};
-    VirtualQGraphicsSceneMouseEvent(QEvent::Type type) : QGraphicsSceneMouseEvent(type) {};
+    VirtualQGraphicsSceneMouseEvent() : QGraphicsSceneMouseEvent(){};
+    VirtualQGraphicsSceneMouseEvent(QEvent::Type type) : QGraphicsSceneMouseEvent(type){};
 
     // Callback setters
     inline void setQGraphicsSceneMouseEvent_SetAccepted_Callback(QGraphicsSceneMouseEvent_SetAccepted_Callback cb) { qgraphicsscenemouseevent_setaccepted_callback = cb; }
@@ -157,8 +157,8 @@ class VirtualQGraphicsSceneWheelEvent final : public QGraphicsSceneWheelEvent {
     mutable bool qgraphicsscenewheelevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneWheelEvent() : QGraphicsSceneWheelEvent() {};
-    VirtualQGraphicsSceneWheelEvent(QEvent::Type type) : QGraphicsSceneWheelEvent(type) {};
+    VirtualQGraphicsSceneWheelEvent() : QGraphicsSceneWheelEvent(){};
+    VirtualQGraphicsSceneWheelEvent(QEvent::Type type) : QGraphicsSceneWheelEvent(type){};
 
     // Callback setters
     inline void setQGraphicsSceneWheelEvent_SetAccepted_Callback(QGraphicsSceneWheelEvent_SetAccepted_Callback cb) { qgraphicsscenewheelevent_setaccepted_callback = cb; }
@@ -221,8 +221,8 @@ class VirtualQGraphicsSceneContextMenuEvent final : public QGraphicsSceneContext
     mutable bool qgraphicsscenecontextmenuevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneContextMenuEvent() : QGraphicsSceneContextMenuEvent() {};
-    VirtualQGraphicsSceneContextMenuEvent(QEvent::Type type) : QGraphicsSceneContextMenuEvent(type) {};
+    VirtualQGraphicsSceneContextMenuEvent() : QGraphicsSceneContextMenuEvent(){};
+    VirtualQGraphicsSceneContextMenuEvent(QEvent::Type type) : QGraphicsSceneContextMenuEvent(type){};
 
     // Callback setters
     inline void setQGraphicsSceneContextMenuEvent_SetAccepted_Callback(QGraphicsSceneContextMenuEvent_SetAccepted_Callback cb) { qgraphicsscenecontextmenuevent_setaccepted_callback = cb; }
@@ -285,8 +285,8 @@ class VirtualQGraphicsSceneHoverEvent final : public QGraphicsSceneHoverEvent {
     mutable bool qgraphicsscenehoverevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneHoverEvent() : QGraphicsSceneHoverEvent() {};
-    VirtualQGraphicsSceneHoverEvent(QEvent::Type type) : QGraphicsSceneHoverEvent(type) {};
+    VirtualQGraphicsSceneHoverEvent() : QGraphicsSceneHoverEvent(){};
+    VirtualQGraphicsSceneHoverEvent(QEvent::Type type) : QGraphicsSceneHoverEvent(type){};
 
     // Callback setters
     inline void setQGraphicsSceneHoverEvent_SetAccepted_Callback(QGraphicsSceneHoverEvent_SetAccepted_Callback cb) { qgraphicsscenehoverevent_setaccepted_callback = cb; }
@@ -349,8 +349,8 @@ class VirtualQGraphicsSceneHelpEvent final : public QGraphicsSceneHelpEvent {
     mutable bool qgraphicsscenehelpevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneHelpEvent() : QGraphicsSceneHelpEvent() {};
-    VirtualQGraphicsSceneHelpEvent(QEvent::Type type) : QGraphicsSceneHelpEvent(type) {};
+    VirtualQGraphicsSceneHelpEvent() : QGraphicsSceneHelpEvent(){};
+    VirtualQGraphicsSceneHelpEvent(QEvent::Type type) : QGraphicsSceneHelpEvent(type){};
 
     // Callback setters
     inline void setQGraphicsSceneHelpEvent_SetAccepted_Callback(QGraphicsSceneHelpEvent_SetAccepted_Callback cb) { qgraphicsscenehelpevent_setaccepted_callback = cb; }
@@ -413,8 +413,8 @@ class VirtualQGraphicsSceneDragDropEvent final : public QGraphicsSceneDragDropEv
     mutable bool qgraphicsscenedragdropevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneDragDropEvent() : QGraphicsSceneDragDropEvent() {};
-    VirtualQGraphicsSceneDragDropEvent(QEvent::Type type) : QGraphicsSceneDragDropEvent(type) {};
+    VirtualQGraphicsSceneDragDropEvent() : QGraphicsSceneDragDropEvent(){};
+    VirtualQGraphicsSceneDragDropEvent(QEvent::Type type) : QGraphicsSceneDragDropEvent(type){};
 
     // Callback setters
     inline void setQGraphicsSceneDragDropEvent_SetAccepted_Callback(QGraphicsSceneDragDropEvent_SetAccepted_Callback cb) { qgraphicsscenedragdropevent_setaccepted_callback = cb; }
@@ -477,7 +477,7 @@ class VirtualQGraphicsSceneResizeEvent final : public QGraphicsSceneResizeEvent 
     mutable bool qgraphicssceneresizeevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneResizeEvent() : QGraphicsSceneResizeEvent() {};
+    VirtualQGraphicsSceneResizeEvent() : QGraphicsSceneResizeEvent(){};
 
     // Callback setters
     inline void setQGraphicsSceneResizeEvent_SetAccepted_Callback(QGraphicsSceneResizeEvent_SetAccepted_Callback cb) { qgraphicssceneresizeevent_setaccepted_callback = cb; }
@@ -540,7 +540,7 @@ class VirtualQGraphicsSceneMoveEvent final : public QGraphicsSceneMoveEvent {
     mutable bool qgraphicsscenemoveevent_clone_isbase = false;
 
   public:
-    VirtualQGraphicsSceneMoveEvent() : QGraphicsSceneMoveEvent() {};
+    VirtualQGraphicsSceneMoveEvent() : QGraphicsSceneMoveEvent(){};
 
     // Callback setters
     inline void setQGraphicsSceneMoveEvent_SetAccepted_Callback(QGraphicsSceneMoveEvent_SetAccepted_Callback cb) { qgraphicsscenemoveevent_setaccepted_callback = cb; }

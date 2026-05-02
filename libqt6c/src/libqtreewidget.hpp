@@ -70,21 +70,21 @@ typedef struct QWidget QWidget;
 #endif
 
 QTreeWidgetItem* QTreeWidgetItem_new();
-QTreeWidgetItem* QTreeWidgetItem_new2(const libqt_list /* of libqt_string */ strings);
+QTreeWidgetItem* QTreeWidgetItem_new2(const QStringList* strings);
 QTreeWidgetItem* QTreeWidgetItem_new3(QTreeWidget* treeview);
-QTreeWidgetItem* QTreeWidgetItem_new4(QTreeWidget* treeview, const libqt_list /* of libqt_string */ strings);
+QTreeWidgetItem* QTreeWidgetItem_new4(QTreeWidget* treeview, const QStringList* strings);
 QTreeWidgetItem* QTreeWidgetItem_new5(QTreeWidget* treeview, QTreeWidgetItem* after);
 QTreeWidgetItem* QTreeWidgetItem_new6(QTreeWidgetItem* parent);
-QTreeWidgetItem* QTreeWidgetItem_new7(QTreeWidgetItem* parent, const libqt_list /* of libqt_string */ strings);
+QTreeWidgetItem* QTreeWidgetItem_new7(QTreeWidgetItem* parent, const QStringList* strings);
 QTreeWidgetItem* QTreeWidgetItem_new8(QTreeWidgetItem* parent, QTreeWidgetItem* after);
 QTreeWidgetItem* QTreeWidgetItem_new9(const QTreeWidgetItem* other);
 QTreeWidgetItem* QTreeWidgetItem_new10(int type);
-QTreeWidgetItem* QTreeWidgetItem_new11(const libqt_list /* of libqt_string */ strings, int type);
+QTreeWidgetItem* QTreeWidgetItem_new11(const QStringList* strings, int type);
 QTreeWidgetItem* QTreeWidgetItem_new12(QTreeWidget* treeview, int type);
-QTreeWidgetItem* QTreeWidgetItem_new13(QTreeWidget* treeview, const libqt_list /* of libqt_string */ strings, int type);
+QTreeWidgetItem* QTreeWidgetItem_new13(QTreeWidget* treeview, const QStringList* strings, int type);
 QTreeWidgetItem* QTreeWidgetItem_new14(QTreeWidget* treeview, QTreeWidgetItem* after, int type);
 QTreeWidgetItem* QTreeWidgetItem_new15(QTreeWidgetItem* parent, int type);
-QTreeWidgetItem* QTreeWidgetItem_new16(QTreeWidgetItem* parent, const libqt_list /* of libqt_string */ strings, int type);
+QTreeWidgetItem* QTreeWidgetItem_new16(QTreeWidgetItem* parent, const QStringList* strings, int type);
 QTreeWidgetItem* QTreeWidgetItem_new17(QTreeWidgetItem* parent, QTreeWidgetItem* after, int type);
 QTreeWidgetItem* QTreeWidgetItem_Clone(const QTreeWidgetItem* self);
 QTreeWidget* QTreeWidgetItem_TreeWidget(const QTreeWidgetItem* self);
@@ -181,7 +181,7 @@ void QTreeWidget_InsertTopLevelItems(QTreeWidget* self, int index, const libqt_l
 void QTreeWidget_AddTopLevelItems(QTreeWidget* self, const libqt_list /* of QTreeWidgetItem* */ items);
 QTreeWidgetItem* QTreeWidget_HeaderItem(const QTreeWidget* self);
 void QTreeWidget_SetHeaderItem(QTreeWidget* self, QTreeWidgetItem* item);
-void QTreeWidget_SetHeaderLabels(QTreeWidget* self, const libqt_list /* of libqt_string */ labels);
+void QTreeWidget_SetHeaderLabels(QTreeWidget* self, const QStringList* labels);
 void QTreeWidget_SetHeaderLabel(QTreeWidget* self, const libqt_string label);
 QTreeWidgetItem* QTreeWidget_CurrentItem(const QTreeWidget* self);
 int QTreeWidget_CurrentColumn(const QTreeWidget* self);
@@ -232,7 +232,7 @@ void QTreeWidget_Connect_CurrentItemChanged(QTreeWidget* self, intptr_t slot);
 void QTreeWidget_ItemSelectionChanged(QTreeWidget* self);
 void QTreeWidget_Connect_ItemSelectionChanged(QTreeWidget* self, intptr_t slot);
 bool QTreeWidget_Event(QTreeWidget* self, QEvent* e);
-libqt_list /* of libqt_string */ QTreeWidget_MimeTypes(const QTreeWidget* self);
+QStringList QTreeWidget_MimeTypes(const QTreeWidget* self);
 QMimeData* QTreeWidget_MimeData(const QTreeWidget* self, const libqt_list /* of QTreeWidgetItem* */ items);
 bool QTreeWidget_DropMimeData(QTreeWidget* self, QTreeWidgetItem* parent, int index, const QMimeData* data, int action);
 int QTreeWidget_SupportedDropActions(const QTreeWidget* self);
@@ -255,7 +255,7 @@ void QTreeWidget_SuperSetSelectionModel(QTreeWidget* self, QItemSelectionModel* 
 void QTreeWidget_OnEvent(QTreeWidget* self, intptr_t slot);
 bool QTreeWidget_SuperEvent(QTreeWidget* self, QEvent* e);
 void QTreeWidget_OnMimeTypes(const QTreeWidget* self, intptr_t slot);
-libqt_list /* of libqt_string */ QTreeWidget_SuperMimeTypes(const QTreeWidget* self);
+QStringList QTreeWidget_SuperMimeTypes(const QTreeWidget* self);
 void QTreeWidget_OnMimeData(const QTreeWidget* self, intptr_t slot);
 QMimeData* QTreeWidget_SuperMimeData(const QTreeWidget* self, const libqt_list /* of QTreeWidgetItem* */ items);
 void QTreeWidget_OnDropMimeData(QTreeWidget* self, intptr_t slot);
@@ -624,9 +624,6 @@ int QTreeWidget_SuperReceivers(const QTreeWidget* self, const char* signal);
 bool QTreeWidget_IsSignalConnected(const QTreeWidget* self, const QMetaMethod* signal);
 void QTreeWidget_OnIsSignalConnected(const QTreeWidget* self, intptr_t slot);
 bool QTreeWidget_SuperIsSignalConnected(const QTreeWidget* self, const QMetaMethod* signal);
-double QTreeWidget_GetDecodedMetricF(const QTreeWidget* self, int metricA, int metricB);
-void QTreeWidget_OnGetDecodedMetricF(const QTreeWidget* self, intptr_t slot);
-double QTreeWidget_SuperGetDecodedMetricF(const QTreeWidget* self, int metricA, int metricB);
 void QTreeWidget_Delete(QTreeWidget* self);
 
 #ifdef __cplusplus

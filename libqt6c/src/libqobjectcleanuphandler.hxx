@@ -66,7 +66,7 @@ class VirtualQObjectCleanupHandler final : public QObjectCleanupHandler {
     mutable bool qobjectcleanuphandler_issignalconnected_isbase = false;
 
   public:
-    VirtualQObjectCleanupHandler() : QObjectCleanupHandler() {};
+    VirtualQObjectCleanupHandler() : QObjectCleanupHandler(){};
 
     // Callback setters
     inline void setQObjectCleanupHandler_MetaObject_Callback(QObjectCleanupHandler_MetaObject_Callback cb) { qobjectcleanuphandler_metaobject_callback = cb; }

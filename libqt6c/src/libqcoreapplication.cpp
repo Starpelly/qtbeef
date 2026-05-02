@@ -2,13 +2,10 @@
 #include <QAbstractNativeEventFilter>
 #include <QChildEvent>
 #include <QCoreApplication>
-#include <QDeadlineTimer>
 #include <QEvent>
-#include <QList>
 #include <QMetaMethod>
 #include <QMetaObject>
 #include <QObject>
-#include <QPermission>
 #include <QString>
 #include <QByteArray>
 #include <cstring>
@@ -53,25 +50,8 @@ int QCoreApplication_Metacall(QCoreApplication* self, int param1, int param2, vo
     }
 }
 
-libqt_list /* of libqt_string */ QCoreApplication_Arguments() {
-    QList<QString> _ret = QCoreApplication::arguments();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QCoreApplication_Arguments() {
+    return QCoreApplication::arguments();
 }
 
 void QCoreApplication_SetAttribute(int attribute) {
@@ -174,10 +154,6 @@ void QCoreApplication_ProcessEvents2(int flags, int maxtime) {
     QCoreApplication::processEvents(static_cast<QEventLoop::ProcessEventsFlags>(flags), static_cast<int>(maxtime));
 }
 
-void QCoreApplication_ProcessEvents3(int flags, QDeadlineTimer* deadline) {
-    QCoreApplication::processEvents(static_cast<QEventLoop::ProcessEventsFlags>(flags), *deadline);
-}
-
 bool QCoreApplication_SendEvent(QObject* receiver, QEvent* event) {
     return QCoreApplication::sendEvent(receiver, event);
 }
@@ -247,40 +223,12 @@ long long QCoreApplication_ApplicationPid() {
     return static_cast<long long>(QCoreApplication::applicationPid());
 }
 
-int QCoreApplication_CheckPermission(QCoreApplication* self, const QPermission* permission) {
-    return static_cast<int>(self->checkPermission(*permission));
+void QCoreApplication_SetLibraryPaths(const QStringList* libraryPaths) {
+    QCoreApplication::setLibraryPaths(*libraryPaths);
 }
 
-void QCoreApplication_SetLibraryPaths(const libqt_list /* of libqt_string */ libraryPaths) {
-    QList<QString> libraryPaths_QList;
-    libraryPaths_QList.reserve(libraryPaths.len);
-    libqt_string* libraryPaths_arr = static_cast<libqt_string*>(libraryPaths.data.ptr);
-    for (size_t i = 0; i < libraryPaths.len; ++i) {
-        QString libraryPaths_arr_i_QString = QString::fromUtf8(libraryPaths_arr[i].data, libraryPaths_arr[i].len);
-        libraryPaths_QList.push_back(libraryPaths_arr_i_QString);
-    }
-    QCoreApplication::setLibraryPaths(libraryPaths_QList);
-}
-
-libqt_list /* of libqt_string */ QCoreApplication_LibraryPaths() {
-    QList<QString> _ret = QCoreApplication::libraryPaths();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QCoreApplication_LibraryPaths() {
+    return QCoreApplication::libraryPaths();
 }
 
 void QCoreApplication_AddLibraryPath(const libqt_string param1) {

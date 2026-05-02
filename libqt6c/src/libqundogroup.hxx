@@ -66,8 +66,8 @@ class VirtualQUndoGroup final : public QUndoGroup {
     mutable bool qundogroup_issignalconnected_isbase = false;
 
   public:
-    VirtualQUndoGroup() : QUndoGroup() {};
-    VirtualQUndoGroup(QObject* parent) : QUndoGroup(parent) {};
+    VirtualQUndoGroup() : QUndoGroup(){};
+    VirtualQUndoGroup(QObject* parent) : QUndoGroup(parent){};
 
     // Callback setters
     inline void setQUndoGroup_MetaObject_Callback(QUndoGroup_MetaObject_Callback cb) { qundogroup_metaobject_callback = cb; }

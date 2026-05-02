@@ -80,14 +80,22 @@ void QModelIndex_MultiData(const QModelIndex* self, QModelRoleDataSpan* roleData
 int QModelIndex_Flags(const QModelIndex* self);
 QAbstractItemModel* QModelIndex_Model(const QModelIndex* self);
 bool QModelIndex_IsValid(const QModelIndex* self);
+bool QModelIndex_OperatorEqual(const QModelIndex* self, const QModelIndex* other);
+bool QModelIndex_OperatorNotEqual(const QModelIndex* self, const QModelIndex* other);
+bool QModelIndex_OperatorLesser(const QModelIndex* self, const QModelIndex* other);
 QVariant* QModelIndex_Data1(const QModelIndex* self, int role);
 void QModelIndex_Delete(QModelIndex* self);
 
 QPersistentModelIndex* QPersistentModelIndex_new();
 QPersistentModelIndex* QPersistentModelIndex_new2(const QModelIndex* index);
 QPersistentModelIndex* QPersistentModelIndex_new3(const QPersistentModelIndex* other);
+bool QPersistentModelIndex_OperatorLesser(const QPersistentModelIndex* self, const QPersistentModelIndex* other);
+bool QPersistentModelIndex_OperatorEqual(const QPersistentModelIndex* self, const QPersistentModelIndex* other);
+bool QPersistentModelIndex_OperatorNotEqual(const QPersistentModelIndex* self, const QPersistentModelIndex* other);
 void QPersistentModelIndex_OperatorAssign(QPersistentModelIndex* self, const QPersistentModelIndex* other);
 void QPersistentModelIndex_Swap(QPersistentModelIndex* self, QPersistentModelIndex* other);
+bool QPersistentModelIndex_OperatorEqual2(const QPersistentModelIndex* self, const QModelIndex* other);
+bool QPersistentModelIndex_OperatorNotEqual2(const QPersistentModelIndex* self, const QModelIndex* other);
 void QPersistentModelIndex_OperatorAssign2(QPersistentModelIndex* self, const QModelIndex* other);
 QModelIndex* QPersistentModelIndex_ToQModelIndex(const QPersistentModelIndex* self);
 int QPersistentModelIndex_Row(const QPersistentModelIndex* self);
@@ -124,7 +132,7 @@ bool QAbstractItemModel_SetHeaderData(QAbstractItemModel* self, int section, int
 libqt_map /* of int to QVariant* */ QAbstractItemModel_ItemData(const QAbstractItemModel* self, const QModelIndex* index);
 bool QAbstractItemModel_SetItemData(QAbstractItemModel* self, const QModelIndex* index, const libqt_map /* of int to QVariant* */ roles);
 bool QAbstractItemModel_ClearItemData(QAbstractItemModel* self, const QModelIndex* index);
-libqt_list /* of libqt_string */ QAbstractItemModel_MimeTypes(const QAbstractItemModel* self);
+QStringList QAbstractItemModel_MimeTypes(const QAbstractItemModel* self);
 QMimeData* QAbstractItemModel_MimeData(const QAbstractItemModel* self, const libqt_list /* of QModelIndex* */ indexes);
 bool QAbstractItemModel_CanDropMimeData(const QAbstractItemModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
 bool QAbstractItemModel_DropMimeData(QAbstractItemModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
@@ -212,7 +220,7 @@ bool QAbstractItemModel_SuperSetItemData(QAbstractItemModel* self, const QModelI
 void QAbstractItemModel_OnClearItemData(QAbstractItemModel* self, intptr_t slot);
 bool QAbstractItemModel_SuperClearItemData(QAbstractItemModel* self, const QModelIndex* index);
 void QAbstractItemModel_OnMimeTypes(const QAbstractItemModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QAbstractItemModel_SuperMimeTypes(const QAbstractItemModel* self);
+QStringList QAbstractItemModel_SuperMimeTypes(const QAbstractItemModel* self);
 void QAbstractItemModel_OnMimeData(const QAbstractItemModel* self, intptr_t slot);
 QMimeData* QAbstractItemModel_SuperMimeData(const QAbstractItemModel* self, const libqt_list /* of QModelIndex* */ indexes);
 void QAbstractItemModel_OnCanDropMimeData(const QAbstractItemModel* self, intptr_t slot);
@@ -424,9 +432,9 @@ bool QAbstractTableModel_SuperSetItemData(QAbstractTableModel* self, const QMode
 bool QAbstractTableModel_ClearItemData(QAbstractTableModel* self, const QModelIndex* index);
 void QAbstractTableModel_OnClearItemData(QAbstractTableModel* self, intptr_t slot);
 bool QAbstractTableModel_SuperClearItemData(QAbstractTableModel* self, const QModelIndex* index);
-libqt_list /* of libqt_string */ QAbstractTableModel_MimeTypes(const QAbstractTableModel* self);
+QStringList QAbstractTableModel_MimeTypes(const QAbstractTableModel* self);
 void QAbstractTableModel_OnMimeTypes(const QAbstractTableModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QAbstractTableModel_SuperMimeTypes(const QAbstractTableModel* self);
+QStringList QAbstractTableModel_SuperMimeTypes(const QAbstractTableModel* self);
 QMimeData* QAbstractTableModel_MimeData(const QAbstractTableModel* self, const libqt_list /* of QModelIndex* */ indexes);
 void QAbstractTableModel_OnMimeData(const QAbstractTableModel* self, intptr_t slot);
 QMimeData* QAbstractTableModel_SuperMimeData(const QAbstractTableModel* self, const libqt_list /* of QModelIndex* */ indexes);
@@ -632,9 +640,9 @@ bool QAbstractListModel_SuperSetItemData(QAbstractListModel* self, const QModelI
 bool QAbstractListModel_ClearItemData(QAbstractListModel* self, const QModelIndex* index);
 void QAbstractListModel_OnClearItemData(QAbstractListModel* self, intptr_t slot);
 bool QAbstractListModel_SuperClearItemData(QAbstractListModel* self, const QModelIndex* index);
-libqt_list /* of libqt_string */ QAbstractListModel_MimeTypes(const QAbstractListModel* self);
+QStringList QAbstractListModel_MimeTypes(const QAbstractListModel* self);
 void QAbstractListModel_OnMimeTypes(const QAbstractListModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QAbstractListModel_SuperMimeTypes(const QAbstractListModel* self);
+QStringList QAbstractListModel_SuperMimeTypes(const QAbstractListModel* self);
 QMimeData* QAbstractListModel_MimeData(const QAbstractListModel* self, const libqt_list /* of QModelIndex* */ indexes);
 void QAbstractListModel_OnMimeData(const QAbstractListModel* self, intptr_t slot);
 QMimeData* QAbstractListModel_SuperMimeData(const QAbstractListModel* self, const libqt_list /* of QModelIndex* */ indexes);

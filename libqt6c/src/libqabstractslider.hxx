@@ -82,7 +82,6 @@ class VirtualQAbstractSlider final : public QAbstractSlider {
     using QAbstractSlider_SenderSignalIndex_Callback = int (*)();
     using QAbstractSlider_Receivers_Callback = int (*)(const QAbstractSlider*, const char*);
     using QAbstractSlider_IsSignalConnected_Callback = bool (*)(const QAbstractSlider*, QMetaMethod*);
-    using QAbstractSlider_GetDecodedMetricF_Callback = double (*)(const QAbstractSlider*, int, int);
 
   protected:
     // Instance callback storage
@@ -150,7 +149,6 @@ class VirtualQAbstractSlider final : public QAbstractSlider {
     QAbstractSlider_SenderSignalIndex_Callback qabstractslider_sendersignalindex_callback = nullptr;
     QAbstractSlider_Receivers_Callback qabstractslider_receivers_callback = nullptr;
     QAbstractSlider_IsSignalConnected_Callback qabstractslider_issignalconnected_callback = nullptr;
-    QAbstractSlider_GetDecodedMetricF_Callback qabstractslider_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qabstractslider_metaobject_isbase = false;
@@ -217,11 +215,10 @@ class VirtualQAbstractSlider final : public QAbstractSlider {
     mutable bool qabstractslider_sendersignalindex_isbase = false;
     mutable bool qabstractslider_receivers_isbase = false;
     mutable bool qabstractslider_issignalconnected_isbase = false;
-    mutable bool qabstractslider_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQAbstractSlider(QWidget* parent) : QAbstractSlider(parent) {};
-    VirtualQAbstractSlider() : QAbstractSlider() {};
+    VirtualQAbstractSlider(QWidget* parent) : QAbstractSlider(parent){};
+    VirtualQAbstractSlider() : QAbstractSlider(){};
 
     // Callback setters
     inline void setQAbstractSlider_MetaObject_Callback(QAbstractSlider_MetaObject_Callback cb) { qabstractslider_metaobject_callback = cb; }
@@ -288,7 +285,6 @@ class VirtualQAbstractSlider final : public QAbstractSlider {
     inline void setQAbstractSlider_SenderSignalIndex_Callback(QAbstractSlider_SenderSignalIndex_Callback cb) { qabstractslider_sendersignalindex_callback = cb; }
     inline void setQAbstractSlider_Receivers_Callback(QAbstractSlider_Receivers_Callback cb) { qabstractslider_receivers_callback = cb; }
     inline void setQAbstractSlider_IsSignalConnected_Callback(QAbstractSlider_IsSignalConnected_Callback cb) { qabstractslider_issignalconnected_callback = cb; }
-    inline void setQAbstractSlider_GetDecodedMetricF_Callback(QAbstractSlider_GetDecodedMetricF_Callback cb) { qabstractslider_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQAbstractSlider_MetaObject_IsBase(bool value) const { qabstractslider_metaobject_isbase = value; }
@@ -355,7 +351,6 @@ class VirtualQAbstractSlider final : public QAbstractSlider {
     inline void setQAbstractSlider_SenderSignalIndex_IsBase(bool value) const { qabstractslider_sendersignalindex_isbase = value; }
     inline void setQAbstractSlider_Receivers_IsBase(bool value) const { qabstractslider_receivers_isbase = value; }
     inline void setQAbstractSlider_IsSignalConnected_IsBase(bool value) const { qabstractslider_issignalconnected_isbase = value; }
-    inline void setQAbstractSlider_GetDecodedMetricF_IsBase(bool value) const { qabstractslider_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1412,23 +1407,6 @@ class VirtualQAbstractSlider final : public QAbstractSlider {
         return QAbstractSlider::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qabstractslider_getdecodedmetricf_isbase) {
-            qabstractslider_getdecodedmetricf_isbase = false;
-            return QAbstractSlider::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qabstractslider_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QAbstractSlider::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QAbstractSlider_Event(QAbstractSlider* self, QEvent* e);
     friend bool QAbstractSlider_SuperEvent(QAbstractSlider* self, QEvent* e);
@@ -1534,8 +1512,6 @@ class VirtualQAbstractSlider final : public QAbstractSlider {
     friend int QAbstractSlider_SuperReceivers(const QAbstractSlider* self, const char* signal);
     friend bool QAbstractSlider_IsSignalConnected(const QAbstractSlider* self, const QMetaMethod* signal);
     friend bool QAbstractSlider_SuperIsSignalConnected(const QAbstractSlider* self, const QMetaMethod* signal);
-    friend double QAbstractSlider_GetDecodedMetricF(const QAbstractSlider* self, int metricA, int metricB);
-    friend double QAbstractSlider_SuperGetDecodedMetricF(const QAbstractSlider* self, int metricA, int metricB);
 };
 
 #endif

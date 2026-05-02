@@ -80,7 +80,6 @@ class VirtualQToolBox final : public QToolBox {
     using QToolBox_SenderSignalIndex_Callback = int (*)();
     using QToolBox_Receivers_Callback = int (*)(const QToolBox*, const char*);
     using QToolBox_IsSignalConnected_Callback = bool (*)(const QToolBox*, QMetaMethod*);
-    using QToolBox_GetDecodedMetricF_Callback = double (*)(const QToolBox*, int, int);
 
   protected:
     // Instance callback storage
@@ -147,7 +146,6 @@ class VirtualQToolBox final : public QToolBox {
     QToolBox_SenderSignalIndex_Callback qtoolbox_sendersignalindex_callback = nullptr;
     QToolBox_Receivers_Callback qtoolbox_receivers_callback = nullptr;
     QToolBox_IsSignalConnected_Callback qtoolbox_issignalconnected_callback = nullptr;
-    QToolBox_GetDecodedMetricF_Callback qtoolbox_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qtoolbox_metaobject_isbase = false;
@@ -213,12 +211,11 @@ class VirtualQToolBox final : public QToolBox {
     mutable bool qtoolbox_sendersignalindex_isbase = false;
     mutable bool qtoolbox_receivers_isbase = false;
     mutable bool qtoolbox_issignalconnected_isbase = false;
-    mutable bool qtoolbox_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQToolBox(QWidget* parent) : QToolBox(parent) {};
-    VirtualQToolBox() : QToolBox() {};
-    VirtualQToolBox(QWidget* parent, Qt::WindowFlags f) : QToolBox(parent, f) {};
+    VirtualQToolBox(QWidget* parent) : QToolBox(parent){};
+    VirtualQToolBox() : QToolBox(){};
+    VirtualQToolBox(QWidget* parent, Qt::WindowFlags f) : QToolBox(parent, f){};
 
     // Callback setters
     inline void setQToolBox_MetaObject_Callback(QToolBox_MetaObject_Callback cb) { qtoolbox_metaobject_callback = cb; }
@@ -284,7 +281,6 @@ class VirtualQToolBox final : public QToolBox {
     inline void setQToolBox_SenderSignalIndex_Callback(QToolBox_SenderSignalIndex_Callback cb) { qtoolbox_sendersignalindex_callback = cb; }
     inline void setQToolBox_Receivers_Callback(QToolBox_Receivers_Callback cb) { qtoolbox_receivers_callback = cb; }
     inline void setQToolBox_IsSignalConnected_Callback(QToolBox_IsSignalConnected_Callback cb) { qtoolbox_issignalconnected_callback = cb; }
-    inline void setQToolBox_GetDecodedMetricF_Callback(QToolBox_GetDecodedMetricF_Callback cb) { qtoolbox_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQToolBox_MetaObject_IsBase(bool value) const { qtoolbox_metaobject_isbase = value; }
@@ -350,7 +346,6 @@ class VirtualQToolBox final : public QToolBox {
     inline void setQToolBox_SenderSignalIndex_IsBase(bool value) const { qtoolbox_sendersignalindex_isbase = value; }
     inline void setQToolBox_Receivers_IsBase(bool value) const { qtoolbox_receivers_isbase = value; }
     inline void setQToolBox_IsSignalConnected_IsBase(bool value) const { qtoolbox_issignalconnected_isbase = value; }
-    inline void setQToolBox_GetDecodedMetricF_IsBase(bool value) const { qtoolbox_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1390,23 +1385,6 @@ class VirtualQToolBox final : public QToolBox {
         return QToolBox::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qtoolbox_getdecodedmetricf_isbase) {
-            qtoolbox_getdecodedmetricf_isbase = false;
-            return QToolBox::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qtoolbox_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QToolBox::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QToolBox_Event(QToolBox* self, QEvent* e);
     friend bool QToolBox_SuperEvent(QToolBox* self, QEvent* e);
@@ -1510,8 +1488,6 @@ class VirtualQToolBox final : public QToolBox {
     friend int QToolBox_SuperReceivers(const QToolBox* self, const char* signal);
     friend bool QToolBox_IsSignalConnected(const QToolBox* self, const QMetaMethod* signal);
     friend bool QToolBox_SuperIsSignalConnected(const QToolBox* self, const QMetaMethod* signal);
-    friend double QToolBox_GetDecodedMetricF(const QToolBox* self, int metricA, int metricB);
-    friend double QToolBox_SuperGetDecodedMetricF(const QToolBox* self, int metricA, int metricB);
 };
 
 #endif

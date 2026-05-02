@@ -29,11 +29,9 @@ typedef struct QPagedPaintDevice QPagedPaintDevice;
 typedef struct QPaintDevice QPaintDevice;
 typedef struct QPaintEngine QPaintEngine;
 typedef struct QPainter QPainter;
-typedef struct QPdfOutputIntent QPdfOutputIntent;
 typedef struct QPdfWriter QPdfWriter;
 typedef struct QPoint QPoint;
 typedef struct QTimerEvent QTimerEvent;
-typedef struct QUuid QUuid;
 #endif
 
 QPdfWriter* QPdfWriter_new(const libqt_string filename);
@@ -47,18 +45,12 @@ libqt_string QPdfWriter_Title(const QPdfWriter* self);
 void QPdfWriter_SetTitle(QPdfWriter* self, const libqt_string title);
 libqt_string QPdfWriter_Creator(const QPdfWriter* self);
 void QPdfWriter_SetCreator(QPdfWriter* self, const libqt_string creator);
-QUuid* QPdfWriter_DocumentId(const QPdfWriter* self);
-void QPdfWriter_SetDocumentId(QPdfWriter* self, QUuid* documentId);
 bool QPdfWriter_NewPage(QPdfWriter* self);
 void QPdfWriter_SetResolution(QPdfWriter* self, int resolution);
 int QPdfWriter_Resolution(const QPdfWriter* self);
 void QPdfWriter_SetDocumentXmpMetadata(QPdfWriter* self, const libqt_string xmpMetadata);
 libqt_string QPdfWriter_DocumentXmpMetadata(const QPdfWriter* self);
 void QPdfWriter_AddFileAttachment(QPdfWriter* self, const libqt_string fileName, const libqt_string data);
-int QPdfWriter_ColorModel(const QPdfWriter* self);
-void QPdfWriter_SetColorModel(QPdfWriter* self, int model);
-QPdfOutputIntent* QPdfWriter_OutputIntent(const QPdfWriter* self);
-void QPdfWriter_SetOutputIntent(QPdfWriter* self, const QPdfOutputIntent* intent);
 QPaintEngine* QPdfWriter_PaintEngine(const QPdfWriter* self);
 int QPdfWriter_Metric(const QPdfWriter* self, int id);
 void QPdfWriter_AddFileAttachment3(QPdfWriter* self, const libqt_string fileName, const libqt_string data, const libqt_string mimeType);
@@ -134,9 +126,6 @@ int QPdfWriter_SuperReceivers(const QPdfWriter* self, const char* signal);
 bool QPdfWriter_IsSignalConnected(const QPdfWriter* self, const QMetaMethod* signal);
 void QPdfWriter_OnIsSignalConnected(const QPdfWriter* self, intptr_t slot);
 bool QPdfWriter_SuperIsSignalConnected(const QPdfWriter* self, const QMetaMethod* signal);
-double QPdfWriter_GetDecodedMetricF(const QPdfWriter* self, int metricA, int metricB);
-void QPdfWriter_OnGetDecodedMetricF(const QPdfWriter* self, intptr_t slot);
-double QPdfWriter_SuperGetDecodedMetricF(const QPdfWriter* self, int metricA, int metricB);
 void QPdfWriter_Delete(QPdfWriter* self);
 
 #ifdef __cplusplus

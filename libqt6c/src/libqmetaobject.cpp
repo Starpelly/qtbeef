@@ -174,20 +174,20 @@ bool QMetaMethod_Invoke2(const QMetaMethod* self, QObject* object, QGenericRetur
     return self->invoke(object, *returnValue);
 }
 
-bool QMetaMethod_Invoke3(const QMetaMethod* self, QObject* object, int connectionType, QGenericArgument* val0) {
-    return self->invoke(object, static_cast<Qt::ConnectionType>(connectionType), *val0);
+bool QMetaMethod_Invoke3(const QMetaMethod* self, QObject* object, int connectionType) {
+    return self->invoke(object, static_cast<Qt::ConnectionType>(connectionType));
 }
 
-bool QMetaMethod_Invoke4(const QMetaMethod* self, QObject* object, QGenericArgument* val0) {
-    return self->invoke(object, *val0);
+bool QMetaMethod_Invoke4(const QMetaMethod* self, QObject* object) {
+    return self->invoke(object);
 }
 
 bool QMetaMethod_InvokeOnGadget(const QMetaMethod* self, void* gadget, QGenericReturnArgument* returnValue) {
     return self->invokeOnGadget(gadget, *returnValue);
 }
 
-bool QMetaMethod_InvokeOnGadget2(const QMetaMethod* self, void* gadget, QGenericArgument* val0) {
-    return self->invokeOnGadget(gadget, *val0);
+bool QMetaMethod_InvokeOnGadget2(const QMetaMethod* self, void* gadget) {
+    return self->invokeOnGadget(gadget);
 }
 
 bool QMetaMethod_IsValid(const QMetaMethod* self) {
@@ -274,6 +274,10 @@ bool QMetaMethod_Invoke122(const QMetaMethod* self, QObject* object, QGenericRet
     return self->invoke(object, *returnValue, *val0, *val1, *val2, *val3, *val4, *val5, *val6, *val7, *val8, *val9);
 }
 
+bool QMetaMethod_Invoke33(const QMetaMethod* self, QObject* object, int connectionType, QGenericArgument* val0) {
+    return self->invoke(object, static_cast<Qt::ConnectionType>(connectionType), *val0);
+}
+
 bool QMetaMethod_Invoke44(const QMetaMethod* self, QObject* object, int connectionType, QGenericArgument* val0, QGenericArgument* val1) {
     return self->invoke(object, static_cast<Qt::ConnectionType>(connectionType), *val0, *val1);
 }
@@ -310,7 +314,11 @@ bool QMetaMethod_Invoke123(const QMetaMethod* self, QObject* object, int connect
     return self->invoke(object, static_cast<Qt::ConnectionType>(connectionType), *val0, *val1, *val2, *val3, *val4, *val5, *val6, *val7, *val8, *val9);
 }
 
-bool QMetaMethod_Invoke33(const QMetaMethod* self, QObject* object, QGenericArgument* val0, QGenericArgument* val1) {
+bool QMetaMethod_Invoke22(const QMetaMethod* self, QObject* object, QGenericArgument* val0) {
+    return self->invoke(object, *val0);
+}
+
+bool QMetaMethod_Invoke34(const QMetaMethod* self, QObject* object, QGenericArgument* val0, QGenericArgument* val1) {
     return self->invoke(object, *val0, *val1);
 }
 
@@ -386,6 +394,10 @@ bool QMetaMethod_InvokeOnGadget12(const QMetaMethod* self, void* gadget, QGeneri
     return self->invokeOnGadget(gadget, *returnValue, *val0, *val1, *val2, *val3, *val4, *val5, *val6, *val7, *val8, *val9);
 }
 
+bool QMetaMethod_InvokeOnGadget22(const QMetaMethod* self, void* gadget, QGenericArgument* val0) {
+    return self->invokeOnGadget(gadget, *val0);
+}
+
 bool QMetaMethod_InvokeOnGadget32(const QMetaMethod* self, void* gadget, QGenericArgument* val0, QGenericArgument* val1) {
     return self->invokeOnGadget(gadget, *val0, *val1);
 }
@@ -456,10 +468,6 @@ const char* QMetaEnum_Name(const QMetaEnum* self) {
 
 const char* QMetaEnum_EnumName(const QMetaEnum* self) {
     return (const char*)self->enumName();
-}
-
-QMetaType* QMetaEnum_MetaType(const QMetaEnum* self) {
-    return new QMetaType(self->metaType());
 }
 
 bool QMetaEnum_IsFlag(const QMetaEnum* self) {
@@ -709,10 +717,6 @@ QMetaClassInfo* QMetaClassInfo_new2(QMetaClassInfo* other) {
 
 QMetaClassInfo* QMetaClassInfo_new3() {
     return new QMetaClassInfo();
-}
-
-QMetaClassInfo* QMetaClassInfo_new4(const QMetaClassInfo* param1) {
-    return new QMetaClassInfo(*param1);
 }
 
 void QMetaClassInfo_CopyAssign(QMetaClassInfo* self, QMetaClassInfo* other) {

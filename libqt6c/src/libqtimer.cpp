@@ -55,10 +55,6 @@ int QTimer_TimerId(const QTimer* self) {
     return self->timerId();
 }
 
-int QTimer_Id(const QTimer* self) {
-    return static_cast<int>(self->id());
-}
-
 void QTimer_SetInterval(QTimer* self, int msec) {
     self->setInterval(static_cast<int>(msec));
 }
@@ -122,11 +118,11 @@ int64_t QTimer_RemainingTimeAsDuration(const QTimer* self) {
 }
 
 void QTimer_SingleShot3(int64_t value, const QObject* receiver, const char* member) {
-    QTimer::singleShot(static_cast<std::chrono::nanoseconds>(value), receiver, member);
+    QTimer::singleShot(static_cast<std::chrono::milliseconds>(value), receiver, member);
 }
 
-void QTimer_SingleShot4(int64_t interval, int timerType, const QObject* receiver, const char* member) {
-    QTimer::singleShot(static_cast<std::chrono::nanoseconds>(interval), static_cast<Qt::TimerType>(timerType), receiver, member);
+void QTimer_SingleShot4(int64_t value, int timerType, const QObject* receiver, const char* member) {
+    QTimer::singleShot(static_cast<std::chrono::milliseconds>(value), static_cast<Qt::TimerType>(timerType), receiver, member);
 }
 
 void QTimer_Start3(QTimer* self, int64_t value) {

@@ -14,8 +14,12 @@ extern "C" {
 #endif
 
 #ifdef __cplusplus
+#if defined(WORKAROUND_INNER_CLASS_DEFINITION_QUntypedPropertyData__InheritsQUntypedPropertyData)
+typedef QUntypedPropertyData::InheritsQUntypedPropertyData QUntypedPropertyData__InheritsQUntypedPropertyData;
+#endif
 #else
 typedef struct QUntypedPropertyData QUntypedPropertyData;
+typedef struct QUntypedPropertyData__InheritsQUntypedPropertyData QUntypedPropertyData__InheritsQUntypedPropertyData;
 #endif
 
 QUntypedPropertyData* QUntypedPropertyData_new(const QUntypedPropertyData* other);
@@ -23,6 +27,12 @@ QUntypedPropertyData* QUntypedPropertyData_new2(QUntypedPropertyData* other);
 void QUntypedPropertyData_CopyAssign(QUntypedPropertyData* self, QUntypedPropertyData* other);
 void QUntypedPropertyData_MoveAssign(QUntypedPropertyData* self, QUntypedPropertyData* other);
 void QUntypedPropertyData_Delete(QUntypedPropertyData* self);
+
+QUntypedPropertyData__InheritsQUntypedPropertyData* QUntypedPropertyData__InheritsQUntypedPropertyData_new(const QUntypedPropertyData__InheritsQUntypedPropertyData* other);
+QUntypedPropertyData__InheritsQUntypedPropertyData* QUntypedPropertyData__InheritsQUntypedPropertyData_new2(QUntypedPropertyData__InheritsQUntypedPropertyData* other);
+void QUntypedPropertyData__InheritsQUntypedPropertyData_CopyAssign(QUntypedPropertyData__InheritsQUntypedPropertyData* self, QUntypedPropertyData__InheritsQUntypedPropertyData* other);
+void QUntypedPropertyData__InheritsQUntypedPropertyData_MoveAssign(QUntypedPropertyData__InheritsQUntypedPropertyData* self, QUntypedPropertyData__InheritsQUntypedPropertyData* other);
+void QUntypedPropertyData__InheritsQUntypedPropertyData_Delete(QUntypedPropertyData__InheritsQUntypedPropertyData* self);
 
 #ifdef __cplusplus
 } /* extern C */

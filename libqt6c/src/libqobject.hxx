@@ -66,8 +66,8 @@ class VirtualQObject final : public QObject {
     mutable bool qobject_issignalconnected_isbase = false;
 
   public:
-    VirtualQObject() : QObject() {};
-    VirtualQObject(QObject* parent) : QObject(parent) {};
+    VirtualQObject() : QObject(){};
+    VirtualQObject(QObject* parent) : QObject(parent){};
 
     // Callback setters
     inline void setQObject_MetaObject_Callback(QObject_MetaObject_Callback cb) { qobject_metaobject_callback = cb; }

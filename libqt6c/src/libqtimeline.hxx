@@ -69,9 +69,9 @@ class VirtualQTimeLine final : public QTimeLine {
     mutable bool qtimeline_issignalconnected_isbase = false;
 
   public:
-    VirtualQTimeLine() : QTimeLine() {};
-    VirtualQTimeLine(int duration) : QTimeLine(duration) {};
-    VirtualQTimeLine(int duration, QObject* parent) : QTimeLine(duration, parent) {};
+    VirtualQTimeLine() : QTimeLine(){};
+    VirtualQTimeLine(int duration) : QTimeLine(duration){};
+    VirtualQTimeLine(int duration, QObject* parent) : QTimeLine(duration, parent){};
 
     // Callback setters
     inline void setQTimeLine_MetaObject_Callback(QTimeLine_MetaObject_Callback cb) { qtimeline_metaobject_callback = cb; }

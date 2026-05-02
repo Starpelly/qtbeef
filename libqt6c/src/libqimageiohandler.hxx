@@ -63,7 +63,7 @@ class VirtualQImageIOHandler : public QImageIOHandler {
     mutable bool qimageiohandler_currentimagerect_isbase = false;
 
   public:
-    VirtualQImageIOHandler() : QImageIOHandler() {};
+    VirtualQImageIOHandler() : QImageIOHandler(){};
 
     // Callback setters
     inline void setQImageIOHandler_CanRead_Callback(QImageIOHandler_CanRead_Callback cb) { qimageiohandler_canread_callback = cb; }
@@ -351,8 +351,8 @@ class VirtualQImageIOPlugin : public QImageIOPlugin {
     mutable bool qimageioplugin_issignalconnected_isbase = false;
 
   public:
-    VirtualQImageIOPlugin() : QImageIOPlugin() {};
-    VirtualQImageIOPlugin(QObject* parent) : QImageIOPlugin(parent) {};
+    VirtualQImageIOPlugin() : QImageIOPlugin(){};
+    VirtualQImageIOPlugin(QObject* parent) : QImageIOPlugin(parent){};
 
     // Callback setters
     inline void setQImageIOPlugin_MetaObject_Callback(QImageIOPlugin_MetaObject_Callback cb) { qimageioplugin_metaobject_callback = cb; }

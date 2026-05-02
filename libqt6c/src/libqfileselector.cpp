@@ -1,7 +1,6 @@
 #include <QChildEvent>
 #include <QEvent>
 #include <QFileSelector>
-#include <QList>
 #include <QMetaMethod>
 #include <QMetaObject>
 #include <QObject>
@@ -66,57 +65,16 @@ QUrl* QFileSelector_Select2(const QFileSelector* self, const QUrl* filePath) {
     return new QUrl(self->select(*filePath));
 }
 
-libqt_list /* of libqt_string */ QFileSelector_ExtraSelectors(const QFileSelector* self) {
-    QList<QString> _ret = self->extraSelectors();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QFileSelector_ExtraSelectors(const QFileSelector* self) {
+    return self->extraSelectors();
 }
 
-void QFileSelector_SetExtraSelectors(QFileSelector* self, const libqt_list /* of libqt_string */ list) {
-    QList<QString> list_QList;
-    list_QList.reserve(list.len);
-    libqt_string* list_arr = static_cast<libqt_string*>(list.data.ptr);
-    for (size_t i = 0; i < list.len; ++i) {
-        QString list_arr_i_QString = QString::fromUtf8(list_arr[i].data, list_arr[i].len);
-        list_QList.push_back(list_arr_i_QString);
-    }
-    self->setExtraSelectors(list_QList);
+void QFileSelector_SetExtraSelectors(QFileSelector* self, const QStringList* list) {
+    self->setExtraSelectors(*list);
 }
 
-libqt_list /* of libqt_string */ QFileSelector_AllSelectors(const QFileSelector* self) {
-    QList<QString> _ret = self->allSelectors();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QFileSelector_AllSelectors(const QFileSelector* self) {
+    return self->allSelectors();
 }
 
 // Base class handler implementation

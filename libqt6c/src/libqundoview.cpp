@@ -3666,35 +3666,6 @@ void QUndoView_OnIsSignalConnected(const QUndoView* self, intptr_t slot) {
     }
 }
 
-// Derived class handler implementation
-double QUndoView_GetDecodedMetricF(const QUndoView* self, int metricA, int metricB) {
-    auto* vqundoview = const_cast<VirtualQUndoView*>(dynamic_cast<const VirtualQUndoView*>(self));
-    if (vqundoview && vqundoview->isVirtualQUndoView) {
-        return vqundoview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQUndoView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QUndoView_SuperGetDecodedMetricF(const QUndoView* self, int metricA, int metricB) {
-    auto* vqundoview = const_cast<VirtualQUndoView*>(dynamic_cast<const VirtualQUndoView*>(self));
-    if (vqundoview && vqundoview->isVirtualQUndoView) {
-        vqundoview->setQUndoView_GetDecodedMetricF_IsBase(true);
-        return vqundoview->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQUndoView*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QUndoView_OnGetDecodedMetricF(const QUndoView* self, intptr_t slot) {
-    auto* vqundoview = const_cast<VirtualQUndoView*>(dynamic_cast<const VirtualQUndoView*>(self));
-    if (vqundoview && vqundoview->isVirtualQUndoView) {
-        vqundoview->setQUndoView_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQUndoView::QUndoView_GetDecodedMetricF_Callback>(slot));
-    }
-}
-
 void QUndoView_Delete(QUndoView* self) {
     delete self;
 }

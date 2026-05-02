@@ -23,7 +23,6 @@ class VirtualQPixmap final : public QPixmap {
     using QPixmap_InitPainter_Callback = void (*)(const QPixmap*, QPainter*);
     using QPixmap_Redirected_Callback = QPaintDevice* (*)(const QPixmap*, QPoint*);
     using QPixmap_SharedPainter_Callback = QPainter* (*)();
-    using QPixmap_GetDecodedMetricF_Callback = double (*)(const QPixmap*, int, int);
 
   protected:
     // Instance callback storage
@@ -33,7 +32,6 @@ class VirtualQPixmap final : public QPixmap {
     QPixmap_InitPainter_Callback qpixmap_initpainter_callback = nullptr;
     QPixmap_Redirected_Callback qpixmap_redirected_callback = nullptr;
     QPixmap_SharedPainter_Callback qpixmap_sharedpainter_callback = nullptr;
-    QPixmap_GetDecodedMetricF_Callback qpixmap_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qpixmap_devtype_isbase = false;
@@ -42,17 +40,16 @@ class VirtualQPixmap final : public QPixmap {
     mutable bool qpixmap_initpainter_isbase = false;
     mutable bool qpixmap_redirected_isbase = false;
     mutable bool qpixmap_sharedpainter_isbase = false;
-    mutable bool qpixmap_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQPixmap() : QPixmap() {};
-    VirtualQPixmap(int w, int h) : QPixmap(w, h) {};
-    VirtualQPixmap(const QSize& param1) : QPixmap(param1) {};
-    VirtualQPixmap(const QString& fileName) : QPixmap(fileName) {};
-    VirtualQPixmap(const char** xpm) : QPixmap(xpm) {};
-    VirtualQPixmap(const QPixmap& param1) : QPixmap(param1) {};
-    VirtualQPixmap(const QString& fileName, const char* format) : QPixmap(fileName, format) {};
-    VirtualQPixmap(const QString& fileName, const char* format, Qt::ImageConversionFlags flags) : QPixmap(fileName, format, flags) {};
+    VirtualQPixmap() : QPixmap(){};
+    VirtualQPixmap(int w, int h) : QPixmap(w, h){};
+    VirtualQPixmap(const QSize& param1) : QPixmap(param1){};
+    VirtualQPixmap(const QString& fileName) : QPixmap(fileName){};
+    VirtualQPixmap(const char** xpm) : QPixmap(xpm){};
+    VirtualQPixmap(const QPixmap& param1) : QPixmap(param1){};
+    VirtualQPixmap(const QString& fileName, const char* format) : QPixmap(fileName, format){};
+    VirtualQPixmap(const QString& fileName, const char* format, Qt::ImageConversionFlags flags) : QPixmap(fileName, format, flags){};
 
     // Callback setters
     inline void setQPixmap_DevType_Callback(QPixmap_DevType_Callback cb) { qpixmap_devtype_callback = cb; }
@@ -61,7 +58,6 @@ class VirtualQPixmap final : public QPixmap {
     inline void setQPixmap_InitPainter_Callback(QPixmap_InitPainter_Callback cb) { qpixmap_initpainter_callback = cb; }
     inline void setQPixmap_Redirected_Callback(QPixmap_Redirected_Callback cb) { qpixmap_redirected_callback = cb; }
     inline void setQPixmap_SharedPainter_Callback(QPixmap_SharedPainter_Callback cb) { qpixmap_sharedpainter_callback = cb; }
-    inline void setQPixmap_GetDecodedMetricF_Callback(QPixmap_GetDecodedMetricF_Callback cb) { qpixmap_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQPixmap_DevType_IsBase(bool value) const { qpixmap_devtype_isbase = value; }
@@ -70,7 +66,6 @@ class VirtualQPixmap final : public QPixmap {
     inline void setQPixmap_InitPainter_IsBase(bool value) const { qpixmap_initpainter_isbase = value; }
     inline void setQPixmap_Redirected_IsBase(bool value) const { qpixmap_redirected_isbase = value; }
     inline void setQPixmap_SharedPainter_IsBase(bool value) const { qpixmap_sharedpainter_isbase = value; }
-    inline void setQPixmap_GetDecodedMetricF_IsBase(bool value) const { qpixmap_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual int devType() const override {
@@ -163,23 +158,6 @@ class VirtualQPixmap final : public QPixmap {
         return QPixmap::sharedPainter();
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qpixmap_getdecodedmetricf_isbase) {
-            qpixmap_getdecodedmetricf_isbase = false;
-            return QPixmap::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qpixmap_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QPixmap::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend int QPixmap_Metric(const QPixmap* self, int param1);
     friend int QPixmap_SuperMetric(const QPixmap* self, int param1);
@@ -189,8 +167,6 @@ class VirtualQPixmap final : public QPixmap {
     friend QPaintDevice* QPixmap_SuperRedirected(const QPixmap* self, QPoint* offset);
     friend QPainter* QPixmap_SharedPainter(const QPixmap* self);
     friend QPainter* QPixmap_SuperSharedPainter(const QPixmap* self);
-    friend double QPixmap_GetDecodedMetricF(const QPixmap* self, int metricA, int metricB);
-    friend double QPixmap_SuperGetDecodedMetricF(const QPixmap* self, int metricA, int metricB);
 };
 
 #endif

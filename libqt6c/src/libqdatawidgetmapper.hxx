@@ -69,8 +69,8 @@ class VirtualQDataWidgetMapper final : public QDataWidgetMapper {
     mutable bool qdatawidgetmapper_issignalconnected_isbase = false;
 
   public:
-    VirtualQDataWidgetMapper() : QDataWidgetMapper() {};
-    VirtualQDataWidgetMapper(QObject* parent) : QDataWidgetMapper(parent) {};
+    VirtualQDataWidgetMapper() : QDataWidgetMapper(){};
+    VirtualQDataWidgetMapper(QObject* parent) : QDataWidgetMapper(parent){};
 
     // Callback setters
     inline void setQDataWidgetMapper_MetaObject_Callback(QDataWidgetMapper_MetaObject_Callback cb) { qdatawidgetmapper_metaobject_callback = cb; }

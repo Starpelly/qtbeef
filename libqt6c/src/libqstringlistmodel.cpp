@@ -28,30 +28,16 @@ QStringListModel* QStringListModel_new() {
     return new VirtualQStringListModel();
 }
 
-QStringListModel* QStringListModel_new2(const libqt_list /* of libqt_string */ strings) {
-    QList<QString> strings_QList;
-    strings_QList.reserve(strings.len);
-    libqt_string* strings_arr = static_cast<libqt_string*>(strings.data.ptr);
-    for (size_t i = 0; i < strings.len; ++i) {
-        QString strings_arr_i_QString = QString::fromUtf8(strings_arr[i].data, strings_arr[i].len);
-        strings_QList.push_back(strings_arr_i_QString);
-    }
-    return new VirtualQStringListModel(strings_QList);
+QStringListModel* QStringListModel_new2(const QStringList* strings) {
+    return new VirtualQStringListModel(*strings);
 }
 
 QStringListModel* QStringListModel_new3(QObject* parent) {
     return new VirtualQStringListModel(parent);
 }
 
-QStringListModel* QStringListModel_new4(const libqt_list /* of libqt_string */ strings, QObject* parent) {
-    QList<QString> strings_QList;
-    strings_QList.reserve(strings.len);
-    libqt_string* strings_arr = static_cast<libqt_string*>(strings.data.ptr);
-    for (size_t i = 0; i < strings.len; ++i) {
-        QString strings_arr_i_QString = QString::fromUtf8(strings_arr[i].data, strings_arr[i].len);
-        strings_QList.push_back(strings_arr_i_QString);
-    }
-    return new VirtualQStringListModel(strings_QList, parent);
+QStringListModel* QStringListModel_new4(const QStringList* strings, QObject* parent) {
+    return new VirtualQStringListModel(*strings, parent);
 }
 
 QMetaObject* QStringListModel_MetaObject(const QStringListModel* self) {
@@ -223,36 +209,12 @@ void QStringListModel_Sort(QStringListModel* self, int column, int order) {
     }
 }
 
-libqt_list /* of libqt_string */ QStringListModel_StringList(const QStringListModel* self) {
-    QList<QString> _ret = self->stringList();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QStringListModel_StringList(const QStringListModel* self) {
+    return self->stringList();
 }
 
-void QStringListModel_SetStringList(QStringListModel* self, const libqt_list /* of libqt_string */ strings) {
-    QList<QString> strings_QList;
-    strings_QList.reserve(strings.len);
-    libqt_string* strings_arr = static_cast<libqt_string*>(strings.data.ptr);
-    for (size_t i = 0; i < strings.len; ++i) {
-        QString strings_arr_i_QString = QString::fromUtf8(strings_arr[i].data, strings_arr[i].len);
-        strings_QList.push_back(strings_arr_i_QString);
-    }
-    self->setStringList(strings_QList);
+void QStringListModel_SetStringList(QStringListModel* self, const QStringList* strings) {
+    self->setStringList(*strings);
 }
 
 int QStringListModel_SupportedDropActions(const QStringListModel* self) {
@@ -719,91 +681,23 @@ void QStringListModel_OnSetHeaderData(QStringListModel* self, intptr_t slot) {
 }
 
 // Derived class handler implementation
-libqt_list /* of libqt_string */ QStringListModel_MimeTypes(const QStringListModel* self) {
+QStringList QStringListModel_MimeTypes(const QStringListModel* self) {
     auto* vqstringlistmodel = const_cast<VirtualQStringListModel*>(dynamic_cast<const VirtualQStringListModel*>(self));
     if (vqstringlistmodel && vqstringlistmodel->isVirtualQStringListModel) {
-        QList<QString> _ret = vqstringlistmodel->mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return vqstringlistmodel->mimeTypes();
     } else {
-        QList<QString> _ret = self->QStringListModel::mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->QStringListModel::mimeTypes();
     }
 }
 
 // Base class handler implementation
-libqt_list /* of libqt_string */ QStringListModel_SuperMimeTypes(const QStringListModel* self) {
+QStringList QStringListModel_SuperMimeTypes(const QStringListModel* self) {
     auto* vqstringlistmodel = const_cast<VirtualQStringListModel*>(dynamic_cast<const VirtualQStringListModel*>(self));
     if (vqstringlistmodel && vqstringlistmodel->isVirtualQStringListModel) {
         vqstringlistmodel->setQStringListModel_MimeTypes_IsBase(true);
-        QList<QString> _ret = vqstringlistmodel->mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return vqstringlistmodel->mimeTypes();
     } else {
-        QList<QString> _ret = self->QStringListModel::mimeTypes();
-        // Convert QList<> from C++ memory to manually-managed C memory
-        libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-        for (qsizetype i = 0; i < _ret.size(); ++i) {
-            QString _lv_ret = _ret[i];
-            // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-            QByteArray _lv_b = _lv_ret.toUtf8();
-            libqt_string _lv_str;
-            _lv_str.len = _lv_b.length();
-            _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-            memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-            ((char*)_lv_str.data)[_lv_str.len] = '\0';
-            _arr[i] = _lv_str;
-        }
-        libqt_list _out;
-        _out.len = _ret.size();
-        _out.data.ptr = static_cast<void*>(_arr);
-        return _out;
+        return self->QStringListModel::mimeTypes();
     }
 }
 

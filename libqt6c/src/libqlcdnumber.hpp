@@ -260,9 +260,6 @@ int QLCDNumber_SuperReceivers(const QLCDNumber* self, const char* signal);
 bool QLCDNumber_IsSignalConnected(const QLCDNumber* self, const QMetaMethod* signal);
 void QLCDNumber_OnIsSignalConnected(const QLCDNumber* self, intptr_t slot);
 bool QLCDNumber_SuperIsSignalConnected(const QLCDNumber* self, const QMetaMethod* signal);
-double QLCDNumber_GetDecodedMetricF(const QLCDNumber* self, int metricA, int metricB);
-void QLCDNumber_OnGetDecodedMetricF(const QLCDNumber* self, intptr_t slot);
-double QLCDNumber_SuperGetDecodedMetricF(const QLCDNumber* self, int metricA, int metricB);
 void QLCDNumber_Delete(QLCDNumber* self);
 
 #ifdef __cplusplus

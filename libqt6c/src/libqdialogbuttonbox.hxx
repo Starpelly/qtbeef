@@ -76,7 +76,6 @@ class VirtualQDialogButtonBox final : public QDialogButtonBox {
     using QDialogButtonBox_SenderSignalIndex_Callback = int (*)();
     using QDialogButtonBox_Receivers_Callback = int (*)(const QDialogButtonBox*, const char*);
     using QDialogButtonBox_IsSignalConnected_Callback = bool (*)(const QDialogButtonBox*, QMetaMethod*);
-    using QDialogButtonBox_GetDecodedMetricF_Callback = double (*)(const QDialogButtonBox*, int, int);
 
   protected:
     // Instance callback storage
@@ -139,7 +138,6 @@ class VirtualQDialogButtonBox final : public QDialogButtonBox {
     QDialogButtonBox_SenderSignalIndex_Callback qdialogbuttonbox_sendersignalindex_callback = nullptr;
     QDialogButtonBox_Receivers_Callback qdialogbuttonbox_receivers_callback = nullptr;
     QDialogButtonBox_IsSignalConnected_Callback qdialogbuttonbox_issignalconnected_callback = nullptr;
-    QDialogButtonBox_GetDecodedMetricF_Callback qdialogbuttonbox_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qdialogbuttonbox_metaobject_isbase = false;
@@ -201,17 +199,16 @@ class VirtualQDialogButtonBox final : public QDialogButtonBox {
     mutable bool qdialogbuttonbox_sendersignalindex_isbase = false;
     mutable bool qdialogbuttonbox_receivers_isbase = false;
     mutable bool qdialogbuttonbox_issignalconnected_isbase = false;
-    mutable bool qdialogbuttonbox_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQDialogButtonBox(QWidget* parent) : QDialogButtonBox(parent) {};
-    VirtualQDialogButtonBox() : QDialogButtonBox() {};
-    VirtualQDialogButtonBox(Qt::Orientation orientation) : QDialogButtonBox(orientation) {};
-    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons) : QDialogButtonBox(buttons) {};
-    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons, Qt::Orientation orientation) : QDialogButtonBox(buttons, orientation) {};
-    VirtualQDialogButtonBox(Qt::Orientation orientation, QWidget* parent) : QDialogButtonBox(orientation, parent) {};
-    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons, QWidget* parent) : QDialogButtonBox(buttons, parent) {};
-    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons, Qt::Orientation orientation, QWidget* parent) : QDialogButtonBox(buttons, orientation, parent) {};
+    VirtualQDialogButtonBox(QWidget* parent) : QDialogButtonBox(parent){};
+    VirtualQDialogButtonBox() : QDialogButtonBox(){};
+    VirtualQDialogButtonBox(Qt::Orientation orientation) : QDialogButtonBox(orientation){};
+    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons) : QDialogButtonBox(buttons){};
+    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons, Qt::Orientation orientation) : QDialogButtonBox(buttons, orientation){};
+    VirtualQDialogButtonBox(Qt::Orientation orientation, QWidget* parent) : QDialogButtonBox(orientation, parent){};
+    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons, QWidget* parent) : QDialogButtonBox(buttons, parent){};
+    VirtualQDialogButtonBox(QDialogButtonBox::StandardButtons buttons, Qt::Orientation orientation, QWidget* parent) : QDialogButtonBox(buttons, orientation, parent){};
 
     // Callback setters
     inline void setQDialogButtonBox_MetaObject_Callback(QDialogButtonBox_MetaObject_Callback cb) { qdialogbuttonbox_metaobject_callback = cb; }
@@ -273,7 +270,6 @@ class VirtualQDialogButtonBox final : public QDialogButtonBox {
     inline void setQDialogButtonBox_SenderSignalIndex_Callback(QDialogButtonBox_SenderSignalIndex_Callback cb) { qdialogbuttonbox_sendersignalindex_callback = cb; }
     inline void setQDialogButtonBox_Receivers_Callback(QDialogButtonBox_Receivers_Callback cb) { qdialogbuttonbox_receivers_callback = cb; }
     inline void setQDialogButtonBox_IsSignalConnected_Callback(QDialogButtonBox_IsSignalConnected_Callback cb) { qdialogbuttonbox_issignalconnected_callback = cb; }
-    inline void setQDialogButtonBox_GetDecodedMetricF_Callback(QDialogButtonBox_GetDecodedMetricF_Callback cb) { qdialogbuttonbox_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQDialogButtonBox_MetaObject_IsBase(bool value) const { qdialogbuttonbox_metaobject_isbase = value; }
@@ -335,7 +331,6 @@ class VirtualQDialogButtonBox final : public QDialogButtonBox {
     inline void setQDialogButtonBox_SenderSignalIndex_IsBase(bool value) const { qdialogbuttonbox_sendersignalindex_isbase = value; }
     inline void setQDialogButtonBox_Receivers_IsBase(bool value) const { qdialogbuttonbox_receivers_isbase = value; }
     inline void setQDialogButtonBox_IsSignalConnected_IsBase(bool value) const { qdialogbuttonbox_issignalconnected_isbase = value; }
-    inline void setQDialogButtonBox_GetDecodedMetricF_IsBase(bool value) const { qdialogbuttonbox_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1307,23 +1302,6 @@ class VirtualQDialogButtonBox final : public QDialogButtonBox {
         return QDialogButtonBox::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qdialogbuttonbox_getdecodedmetricf_isbase) {
-            qdialogbuttonbox_getdecodedmetricf_isbase = false;
-            return QDialogButtonBox::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qdialogbuttonbox_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QDialogButtonBox::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QDialogButtonBox_ChangeEvent(QDialogButtonBox* self, QEvent* event);
     friend void QDialogButtonBox_SuperChangeEvent(QDialogButtonBox* self, QEvent* event);
@@ -1419,8 +1397,6 @@ class VirtualQDialogButtonBox final : public QDialogButtonBox {
     friend int QDialogButtonBox_SuperReceivers(const QDialogButtonBox* self, const char* signal);
     friend bool QDialogButtonBox_IsSignalConnected(const QDialogButtonBox* self, const QMetaMethod* signal);
     friend bool QDialogButtonBox_SuperIsSignalConnected(const QDialogButtonBox* self, const QMetaMethod* signal);
-    friend double QDialogButtonBox_GetDecodedMetricF(const QDialogButtonBox* self, int metricA, int metricB);
-    friend double QDialogButtonBox_SuperGetDecodedMetricF(const QDialogButtonBox* self, int metricA, int metricB);
 };
 
 #endif

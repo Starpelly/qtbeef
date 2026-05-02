@@ -72,9 +72,9 @@ class VirtualQLayoutItem : public QLayoutItem {
     mutable bool qlayoutitem_operatorassign_isbase = false;
 
   public:
-    VirtualQLayoutItem() : QLayoutItem() {};
-    VirtualQLayoutItem(const QLayoutItem& param1) : QLayoutItem(param1) {};
-    VirtualQLayoutItem(Qt::Alignment alignment) : QLayoutItem(alignment) {};
+    VirtualQLayoutItem() : QLayoutItem(){};
+    VirtualQLayoutItem(const QLayoutItem& param1) : QLayoutItem(param1){};
+    VirtualQLayoutItem(Qt::Alignment alignment) : QLayoutItem(alignment){};
 
     // Callback setters
     inline void setQLayoutItem_SizeHint_Callback(QLayoutItem_SizeHint_Callback cb) { qlayoutitem_sizehint_callback = cb; }
@@ -385,10 +385,10 @@ class VirtualQSpacerItem final : public QSpacerItem {
     mutable bool qspaceritem_controltypes_isbase = false;
 
   public:
-    VirtualQSpacerItem(int w, int h) : QSpacerItem(w, h) {};
-    VirtualQSpacerItem(const QSpacerItem& param1) : QSpacerItem(param1) {};
-    VirtualQSpacerItem(int w, int h, QSizePolicy::Policy hData) : QSpacerItem(w, h, hData) {};
-    VirtualQSpacerItem(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData) : QSpacerItem(w, h, hData, vData) {};
+    VirtualQSpacerItem(int w, int h) : QSpacerItem(w, h){};
+    VirtualQSpacerItem(const QSpacerItem& param1) : QSpacerItem(param1){};
+    VirtualQSpacerItem(int w, int h, QSizePolicy::Policy hData) : QSpacerItem(w, h, hData){};
+    VirtualQSpacerItem(int w, int h, QSizePolicy::Policy hData, QSizePolicy::Policy vData) : QSpacerItem(w, h, hData, vData){};
 
     // Callback setters
     inline void setQSpacerItem_SizeHint_Callback(QSpacerItem_SizeHint_Callback cb) { qspaceritem_sizehint_callback = cb; }
@@ -705,7 +705,7 @@ class VirtualQWidgetItem final : public QWidgetItem {
     mutable bool qwidgetitem_spaceritem_isbase = false;
 
   public:
-    VirtualQWidgetItem(QWidget* w) : QWidgetItem(w) {};
+    VirtualQWidgetItem(QWidget* w) : QWidgetItem(w){};
 
     // Callback setters
     inline void setQWidgetItem_SizeHint_Callback(QWidgetItem_SizeHint_Callback cb) { qwidgetitem_sizehint_callback = cb; }
@@ -1022,7 +1022,7 @@ class VirtualQWidgetItemV2 final : public QWidgetItemV2 {
     mutable bool qwidgetitemv2_spaceritem_isbase = false;
 
   public:
-    VirtualQWidgetItemV2(QWidget* widget) : QWidgetItemV2(widget) {};
+    VirtualQWidgetItemV2(QWidget* widget) : QWidgetItemV2(widget){};
 
     // Callback setters
     inline void setQWidgetItemV2_SizeHint_Callback(QWidgetItemV2_SizeHint_Callback cb) { qwidgetitemv2_sizehint_callback = cb; }

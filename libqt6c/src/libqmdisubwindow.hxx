@@ -76,7 +76,6 @@ class VirtualQMdiSubWindow final : public QMdiSubWindow {
     using QMdiSubWindow_SenderSignalIndex_Callback = int (*)();
     using QMdiSubWindow_Receivers_Callback = int (*)(const QMdiSubWindow*, const char*);
     using QMdiSubWindow_IsSignalConnected_Callback = bool (*)(const QMdiSubWindow*, QMetaMethod*);
-    using QMdiSubWindow_GetDecodedMetricF_Callback = double (*)(const QMdiSubWindow*, int, int);
 
   protected:
     // Instance callback storage
@@ -139,7 +138,6 @@ class VirtualQMdiSubWindow final : public QMdiSubWindow {
     QMdiSubWindow_SenderSignalIndex_Callback qmdisubwindow_sendersignalindex_callback = nullptr;
     QMdiSubWindow_Receivers_Callback qmdisubwindow_receivers_callback = nullptr;
     QMdiSubWindow_IsSignalConnected_Callback qmdisubwindow_issignalconnected_callback = nullptr;
-    QMdiSubWindow_GetDecodedMetricF_Callback qmdisubwindow_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qmdisubwindow_metaobject_isbase = false;
@@ -201,12 +199,11 @@ class VirtualQMdiSubWindow final : public QMdiSubWindow {
     mutable bool qmdisubwindow_sendersignalindex_isbase = false;
     mutable bool qmdisubwindow_receivers_isbase = false;
     mutable bool qmdisubwindow_issignalconnected_isbase = false;
-    mutable bool qmdisubwindow_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQMdiSubWindow(QWidget* parent) : QMdiSubWindow(parent) {};
-    VirtualQMdiSubWindow() : QMdiSubWindow() {};
-    VirtualQMdiSubWindow(QWidget* parent, Qt::WindowFlags flags) : QMdiSubWindow(parent, flags) {};
+    VirtualQMdiSubWindow(QWidget* parent) : QMdiSubWindow(parent){};
+    VirtualQMdiSubWindow() : QMdiSubWindow(){};
+    VirtualQMdiSubWindow(QWidget* parent, Qt::WindowFlags flags) : QMdiSubWindow(parent, flags){};
 
     // Callback setters
     inline void setQMdiSubWindow_MetaObject_Callback(QMdiSubWindow_MetaObject_Callback cb) { qmdisubwindow_metaobject_callback = cb; }
@@ -268,7 +265,6 @@ class VirtualQMdiSubWindow final : public QMdiSubWindow {
     inline void setQMdiSubWindow_SenderSignalIndex_Callback(QMdiSubWindow_SenderSignalIndex_Callback cb) { qmdisubwindow_sendersignalindex_callback = cb; }
     inline void setQMdiSubWindow_Receivers_Callback(QMdiSubWindow_Receivers_Callback cb) { qmdisubwindow_receivers_callback = cb; }
     inline void setQMdiSubWindow_IsSignalConnected_Callback(QMdiSubWindow_IsSignalConnected_Callback cb) { qmdisubwindow_issignalconnected_callback = cb; }
-    inline void setQMdiSubWindow_GetDecodedMetricF_Callback(QMdiSubWindow_GetDecodedMetricF_Callback cb) { qmdisubwindow_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQMdiSubWindow_MetaObject_IsBase(bool value) const { qmdisubwindow_metaobject_isbase = value; }
@@ -330,7 +326,6 @@ class VirtualQMdiSubWindow final : public QMdiSubWindow {
     inline void setQMdiSubWindow_SenderSignalIndex_IsBase(bool value) const { qmdisubwindow_sendersignalindex_isbase = value; }
     inline void setQMdiSubWindow_Receivers_IsBase(bool value) const { qmdisubwindow_receivers_isbase = value; }
     inline void setQMdiSubWindow_IsSignalConnected_IsBase(bool value) const { qmdisubwindow_issignalconnected_isbase = value; }
-    inline void setQMdiSubWindow_GetDecodedMetricF_IsBase(bool value) const { qmdisubwindow_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1302,23 +1297,6 @@ class VirtualQMdiSubWindow final : public QMdiSubWindow {
         return QMdiSubWindow::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qmdisubwindow_getdecodedmetricf_isbase) {
-            qmdisubwindow_getdecodedmetricf_isbase = false;
-            return QMdiSubWindow::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qmdisubwindow_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QMdiSubWindow::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QMdiSubWindow_EventFilter(QMdiSubWindow* self, QObject* object, QEvent* event);
     friend bool QMdiSubWindow_SuperEventFilter(QMdiSubWindow* self, QObject* object, QEvent* event);
@@ -1416,8 +1394,6 @@ class VirtualQMdiSubWindow final : public QMdiSubWindow {
     friend int QMdiSubWindow_SuperReceivers(const QMdiSubWindow* self, const char* signal);
     friend bool QMdiSubWindow_IsSignalConnected(const QMdiSubWindow* self, const QMetaMethod* signal);
     friend bool QMdiSubWindow_SuperIsSignalConnected(const QMdiSubWindow* self, const QMetaMethod* signal);
-    friend double QMdiSubWindow_GetDecodedMetricF(const QMdiSubWindow* self, int metricA, int metricB);
-    friend double QMdiSubWindow_SuperGetDecodedMetricF(const QMdiSubWindow* self, int metricA, int metricB);
 };
 
 #endif

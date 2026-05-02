@@ -81,7 +81,6 @@ class VirtualQScrollBar final : public QScrollBar {
     using QScrollBar_SenderSignalIndex_Callback = int (*)();
     using QScrollBar_Receivers_Callback = int (*)(const QScrollBar*, const char*);
     using QScrollBar_IsSignalConnected_Callback = bool (*)(const QScrollBar*, QMetaMethod*);
-    using QScrollBar_GetDecodedMetricF_Callback = double (*)(const QScrollBar*, int, int);
 
   protected:
     // Instance callback storage
@@ -148,7 +147,6 @@ class VirtualQScrollBar final : public QScrollBar {
     QScrollBar_SenderSignalIndex_Callback qscrollbar_sendersignalindex_callback = nullptr;
     QScrollBar_Receivers_Callback qscrollbar_receivers_callback = nullptr;
     QScrollBar_IsSignalConnected_Callback qscrollbar_issignalconnected_callback = nullptr;
-    QScrollBar_GetDecodedMetricF_Callback qscrollbar_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qscrollbar_metaobject_isbase = false;
@@ -214,13 +212,12 @@ class VirtualQScrollBar final : public QScrollBar {
     mutable bool qscrollbar_sendersignalindex_isbase = false;
     mutable bool qscrollbar_receivers_isbase = false;
     mutable bool qscrollbar_issignalconnected_isbase = false;
-    mutable bool qscrollbar_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQScrollBar(QWidget* parent) : QScrollBar(parent) {};
-    VirtualQScrollBar() : QScrollBar() {};
-    VirtualQScrollBar(Qt::Orientation param1) : QScrollBar(param1) {};
-    VirtualQScrollBar(Qt::Orientation param1, QWidget* parent) : QScrollBar(param1, parent) {};
+    VirtualQScrollBar(QWidget* parent) : QScrollBar(parent){};
+    VirtualQScrollBar() : QScrollBar(){};
+    VirtualQScrollBar(Qt::Orientation param1) : QScrollBar(param1){};
+    VirtualQScrollBar(Qt::Orientation param1, QWidget* parent) : QScrollBar(param1, parent){};
 
     // Callback setters
     inline void setQScrollBar_MetaObject_Callback(QScrollBar_MetaObject_Callback cb) { qscrollbar_metaobject_callback = cb; }
@@ -286,7 +283,6 @@ class VirtualQScrollBar final : public QScrollBar {
     inline void setQScrollBar_SenderSignalIndex_Callback(QScrollBar_SenderSignalIndex_Callback cb) { qscrollbar_sendersignalindex_callback = cb; }
     inline void setQScrollBar_Receivers_Callback(QScrollBar_Receivers_Callback cb) { qscrollbar_receivers_callback = cb; }
     inline void setQScrollBar_IsSignalConnected_Callback(QScrollBar_IsSignalConnected_Callback cb) { qscrollbar_issignalconnected_callback = cb; }
-    inline void setQScrollBar_GetDecodedMetricF_Callback(QScrollBar_GetDecodedMetricF_Callback cb) { qscrollbar_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQScrollBar_MetaObject_IsBase(bool value) const { qscrollbar_metaobject_isbase = value; }
@@ -352,7 +348,6 @@ class VirtualQScrollBar final : public QScrollBar {
     inline void setQScrollBar_SenderSignalIndex_IsBase(bool value) const { qscrollbar_sendersignalindex_isbase = value; }
     inline void setQScrollBar_Receivers_IsBase(bool value) const { qscrollbar_receivers_isbase = value; }
     inline void setQScrollBar_IsSignalConnected_IsBase(bool value) const { qscrollbar_issignalconnected_isbase = value; }
-    inline void setQScrollBar_GetDecodedMetricF_IsBase(bool value) const { qscrollbar_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1389,23 +1384,6 @@ class VirtualQScrollBar final : public QScrollBar {
         return QScrollBar::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qscrollbar_getdecodedmetricf_isbase) {
-            qscrollbar_getdecodedmetricf_isbase = false;
-            return QScrollBar::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qscrollbar_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QScrollBar::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QScrollBar_WheelEvent(QScrollBar* self, QWheelEvent* param1);
     friend void QScrollBar_SuperWheelEvent(QScrollBar* self, QWheelEvent* param1);
@@ -1507,8 +1485,6 @@ class VirtualQScrollBar final : public QScrollBar {
     friend int QScrollBar_SuperReceivers(const QScrollBar* self, const char* signal);
     friend bool QScrollBar_IsSignalConnected(const QScrollBar* self, const QMetaMethod* signal);
     friend bool QScrollBar_SuperIsSignalConnected(const QScrollBar* self, const QMetaMethod* signal);
-    friend double QScrollBar_GetDecodedMetricF(const QScrollBar* self, int metricA, int metricB);
-    friend double QScrollBar_SuperGetDecodedMetricF(const QScrollBar* self, int metricA, int metricB);
 };
 
 #endif

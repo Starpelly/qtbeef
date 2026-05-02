@@ -253,9 +253,6 @@ int QMdiSubWindow_SuperReceivers(const QMdiSubWindow* self, const char* signal);
 bool QMdiSubWindow_IsSignalConnected(const QMdiSubWindow* self, const QMetaMethod* signal);
 void QMdiSubWindow_OnIsSignalConnected(const QMdiSubWindow* self, intptr_t slot);
 bool QMdiSubWindow_SuperIsSignalConnected(const QMdiSubWindow* self, const QMetaMethod* signal);
-double QMdiSubWindow_GetDecodedMetricF(const QMdiSubWindow* self, int metricA, int metricB);
-void QMdiSubWindow_OnGetDecodedMetricF(const QMdiSubWindow* self, intptr_t slot);
-double QMdiSubWindow_SuperGetDecodedMetricF(const QMdiSubWindow* self, int metricA, int metricB);
 void QMdiSubWindow_Delete(QMdiSubWindow* self);
 
 #ifdef __cplusplus

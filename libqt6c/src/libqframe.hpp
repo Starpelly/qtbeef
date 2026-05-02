@@ -251,9 +251,6 @@ int QFrame_SuperReceivers(const QFrame* self, const char* signal);
 bool QFrame_IsSignalConnected(const QFrame* self, const QMetaMethod* signal);
 void QFrame_OnIsSignalConnected(const QFrame* self, intptr_t slot);
 bool QFrame_SuperIsSignalConnected(const QFrame* self, const QMetaMethod* signal);
-double QFrame_GetDecodedMetricF(const QFrame* self, int metricA, int metricB);
-void QFrame_OnGetDecodedMetricF(const QFrame* self, intptr_t slot);
-double QFrame_SuperGetDecodedMetricF(const QFrame* self, int metricA, int metricB);
 void QFrame_Delete(QFrame* self);
 
 #ifdef __cplusplus

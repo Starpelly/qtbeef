@@ -102,8 +102,8 @@ class VirtualQStyledItemDelegate final : public QStyledItemDelegate {
     mutable bool qstyleditemdelegate_issignalconnected_isbase = false;
 
   public:
-    VirtualQStyledItemDelegate() : QStyledItemDelegate() {};
-    VirtualQStyledItemDelegate(QObject* parent) : QStyledItemDelegate(parent) {};
+    VirtualQStyledItemDelegate() : QStyledItemDelegate(){};
+    VirtualQStyledItemDelegate(QObject* parent) : QStyledItemDelegate(parent){};
 
     // Callback setters
     inline void setQStyledItemDelegate_MetaObject_Callback(QStyledItemDelegate_MetaObject_Callback cb) { qstyleditemdelegate_metaobject_callback = cb; }

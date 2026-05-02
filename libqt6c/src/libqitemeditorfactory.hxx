@@ -30,8 +30,8 @@ class VirtualQItemEditorFactory final : public QItemEditorFactory {
     mutable bool qitemeditorfactory_valuepropertyname_isbase = false;
 
   public:
-    VirtualQItemEditorFactory() : QItemEditorFactory() {};
-    VirtualQItemEditorFactory(const QItemEditorFactory& param1) : QItemEditorFactory(param1) {};
+    VirtualQItemEditorFactory() : QItemEditorFactory(){};
+    VirtualQItemEditorFactory(const QItemEditorFactory& param1) : QItemEditorFactory(param1){};
 
     // Callback setters
     inline void setQItemEditorFactory_CreateEditor_Callback(QItemEditorFactory_CreateEditor_Callback cb) { qitemeditorfactory_createeditor_callback = cb; }

@@ -1,5 +1,4 @@
 #include <QChildEvent>
-#include <QDeadlineTimer>
 #include <QEvent>
 #include <QMetaMethod>
 #include <QMetaObject>
@@ -62,8 +61,29 @@ bool QThreadPool_TryStart(QThreadPool* self, QRunnable* runnable) {
     return self->tryStart(runnable);
 }
 
+void QThreadPool_Start2(QThreadPool* self, intptr_t functionToRun) {
+    auto functionToRun_func = [functionToRun]() -> void {
+        reinterpret_cast<void (*)()>(functionToRun)();
+    };
+    self->start(functionToRun_func);
+}
+
+bool QThreadPool_TryStart2(QThreadPool* self, intptr_t functionToRun) {
+    auto functionToRun_func = [functionToRun]() -> void {
+        reinterpret_cast<void (*)()>(functionToRun)();
+    };
+    return self->tryStart(functionToRun_func);
+}
+
 void QThreadPool_StartOnReservedThread(QThreadPool* self, QRunnable* runnable) {
     self->startOnReservedThread(runnable);
+}
+
+void QThreadPool_StartOnReservedThread2(QThreadPool* self, intptr_t functionToRun) {
+    auto functionToRun_func = [functionToRun]() -> void {
+        reinterpret_cast<void (*)()>(functionToRun)();
+    };
+    self->startOnReservedThread(functionToRun_func);
 }
 
 int QThreadPool_ExpiryTimeout(const QThreadPool* self) {
@@ -110,11 +130,7 @@ void QThreadPool_ReleaseThread(QThreadPool* self) {
     self->releaseThread();
 }
 
-bool QThreadPool_WaitForDone(QThreadPool* self, int msecs) {
-    return self->waitForDone(static_cast<int>(msecs));
-}
-
-bool QThreadPool_WaitForDone2(QThreadPool* self) {
+bool QThreadPool_WaitForDone(QThreadPool* self) {
     return self->waitForDone();
 }
 
@@ -130,12 +146,19 @@ bool QThreadPool_TryTake(QThreadPool* self, QRunnable* runnable) {
     return self->tryTake(runnable);
 }
 
-void QThreadPool_Start2(QThreadPool* self, QRunnable* runnable, int priority) {
+void QThreadPool_Start22(QThreadPool* self, QRunnable* runnable, int priority) {
     self->start(runnable, static_cast<int>(priority));
 }
 
-bool QThreadPool_WaitForDone1(QThreadPool* self, QDeadlineTimer* deadline) {
-    return self->waitForDone(*deadline);
+void QThreadPool_Start23(QThreadPool* self, intptr_t functionToRun, int priority) {
+    auto functionToRun_func = [functionToRun]() -> void {
+        reinterpret_cast<void (*)()>(functionToRun)();
+    };
+    self->start(functionToRun_func, static_cast<int>(priority));
+}
+
+bool QThreadPool_WaitForDone1(QThreadPool* self, int msecs) {
+    return self->waitForDone(static_cast<int>(msecs));
 }
 
 // Base class handler implementation

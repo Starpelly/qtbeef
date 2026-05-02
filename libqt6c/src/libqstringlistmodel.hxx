@@ -37,7 +37,7 @@ class VirtualQStringListModel final : public QStringListModel {
     using QStringListModel_DropMimeData_Callback = bool (*)(QStringListModel*, QMimeData*, int, int, int, QModelIndex*);
     using QStringListModel_HeaderData_Callback = QVariant* (*)(const QStringListModel*, int, int, int);
     using QStringListModel_SetHeaderData_Callback = bool (*)(QStringListModel*, int, int, QVariant*, int);
-    using QStringListModel_MimeTypes_Callback = const char** (*)();
+    using QStringListModel_MimeTypes_Callback = QStringList (*)();
     using QStringListModel_MimeData_Callback = QMimeData* (*)(const QStringListModel*, libqt_list /* of QModelIndex* */);
     using QStringListModel_CanDropMimeData_Callback = bool (*)(const QStringListModel*, QMimeData*, int, int, int, QModelIndex*);
     using QStringListModel_SupportedDragActions_Callback = int (*)();
@@ -228,10 +228,10 @@ class VirtualQStringListModel final : public QStringListModel {
     mutable bool qstringlistmodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQStringListModel() : QStringListModel() {};
-    VirtualQStringListModel(const QList<QString>& strings) : QStringListModel(strings) {};
-    VirtualQStringListModel(QObject* parent) : QStringListModel(parent) {};
-    VirtualQStringListModel(const QList<QString>& strings, QObject* parent) : QStringListModel(strings, parent) {};
+    VirtualQStringListModel() : QStringListModel(){};
+    VirtualQStringListModel(const QStringList& strings) : QStringListModel(strings){};
+    VirtualQStringListModel(QObject* parent) : QStringListModel(parent){};
+    VirtualQStringListModel(const QStringList& strings, QObject* parent) : QStringListModel(strings, parent){};
 
     // Callback setters
     inline void setQStringListModel_MetaObject_Callback(QStringListModel_MetaObject_Callback cb) { qstringlistmodel_metaobject_callback = cb; }
@@ -771,24 +771,15 @@ class VirtualQStringListModel final : public QStringListModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qstringlistmodel_mimetypes_isbase) {
             qstringlistmodel_mimetypes_isbase = false;
             return QStringListModel::mimeTypes();
         }
         auto mimetypes_cb = qstringlistmodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QStringListModel::mimeTypes();
     }

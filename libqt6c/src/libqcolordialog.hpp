@@ -273,9 +273,6 @@ int QColorDialog_SuperReceivers(const QColorDialog* self, const char* signal);
 bool QColorDialog_IsSignalConnected(const QColorDialog* self, const QMetaMethod* signal);
 void QColorDialog_OnIsSignalConnected(const QColorDialog* self, intptr_t slot);
 bool QColorDialog_SuperIsSignalConnected(const QColorDialog* self, const QMetaMethod* signal);
-double QColorDialog_GetDecodedMetricF(const QColorDialog* self, int metricA, int metricB);
-void QColorDialog_OnGetDecodedMetricF(const QColorDialog* self, intptr_t slot);
-double QColorDialog_SuperGetDecodedMetricF(const QColorDialog* self, int metricA, int metricB);
 void QColorDialog_Delete(QColorDialog* self);
 
 #ifdef __cplusplus

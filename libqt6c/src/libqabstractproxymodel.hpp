@@ -63,7 +63,7 @@ QModelIndex* QAbstractProxyModel_Sibling(const QAbstractProxyModel* self, int ro
 QMimeData* QAbstractProxyModel_MimeData(const QAbstractProxyModel* self, const libqt_list /* of QModelIndex* */ indexes);
 bool QAbstractProxyModel_CanDropMimeData(const QAbstractProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
 bool QAbstractProxyModel_DropMimeData(QAbstractProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
-libqt_list /* of libqt_string */ QAbstractProxyModel_MimeTypes(const QAbstractProxyModel* self);
+QStringList QAbstractProxyModel_MimeTypes(const QAbstractProxyModel* self);
 int QAbstractProxyModel_SupportedDragActions(const QAbstractProxyModel* self);
 int QAbstractProxyModel_SupportedDropActions(const QAbstractProxyModel* self);
 libqt_map /* of int to libqt_string */ QAbstractProxyModel_RoleNames(const QAbstractProxyModel* self);
@@ -124,7 +124,7 @@ bool QAbstractProxyModel_SuperCanDropMimeData(const QAbstractProxyModel* self, c
 void QAbstractProxyModel_OnDropMimeData(QAbstractProxyModel* self, intptr_t slot);
 bool QAbstractProxyModel_SuperDropMimeData(QAbstractProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
 void QAbstractProxyModel_OnMimeTypes(const QAbstractProxyModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QAbstractProxyModel_SuperMimeTypes(const QAbstractProxyModel* self);
+QStringList QAbstractProxyModel_SuperMimeTypes(const QAbstractProxyModel* self);
 void QAbstractProxyModel_OnSupportedDragActions(const QAbstractProxyModel* self, intptr_t slot);
 int QAbstractProxyModel_SuperSupportedDragActions(const QAbstractProxyModel* self);
 void QAbstractProxyModel_OnSupportedDropActions(const QAbstractProxyModel* self, intptr_t slot);

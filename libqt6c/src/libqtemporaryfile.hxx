@@ -135,10 +135,10 @@ class VirtualQTemporaryFile final : public QTemporaryFile {
     mutable bool qtemporaryfile_issignalconnected_isbase = false;
 
   public:
-    VirtualQTemporaryFile() : QTemporaryFile() {};
-    VirtualQTemporaryFile(const QString& templateName) : QTemporaryFile(templateName) {};
-    VirtualQTemporaryFile(QObject* parent) : QTemporaryFile(parent) {};
-    VirtualQTemporaryFile(const QString& templateName, QObject* parent) : QTemporaryFile(templateName, parent) {};
+    VirtualQTemporaryFile() : QTemporaryFile(){};
+    VirtualQTemporaryFile(const QString& templateName) : QTemporaryFile(templateName){};
+    VirtualQTemporaryFile(QObject* parent) : QTemporaryFile(parent){};
+    VirtualQTemporaryFile(const QString& templateName, QObject* parent) : QTemporaryFile(templateName, parent){};
 
     // Callback setters
     inline void setQTemporaryFile_MetaObject_Callback(QTemporaryFile_MetaObject_Callback cb) { qtemporaryfile_metaobject_callback = cb; }

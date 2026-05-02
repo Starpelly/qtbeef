@@ -45,23 +45,23 @@ class VirtualQTreeWidgetItem final : public QTreeWidgetItem {
     mutable bool qtreewidgetitem_emitdatachanged_isbase = false;
 
   public:
-    VirtualQTreeWidgetItem() : QTreeWidgetItem() {};
-    VirtualQTreeWidgetItem(const QList<QString>& strings) : QTreeWidgetItem(strings) {};
-    VirtualQTreeWidgetItem(QTreeWidget* treeview) : QTreeWidgetItem(treeview) {};
-    VirtualQTreeWidgetItem(QTreeWidget* treeview, const QList<QString>& strings) : QTreeWidgetItem(treeview, strings) {};
-    VirtualQTreeWidgetItem(QTreeWidget* treeview, QTreeWidgetItem* after) : QTreeWidgetItem(treeview, after) {};
-    VirtualQTreeWidgetItem(QTreeWidgetItem* parent) : QTreeWidgetItem(parent) {};
-    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, const QList<QString>& strings) : QTreeWidgetItem(parent, strings) {};
-    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, QTreeWidgetItem* after) : QTreeWidgetItem(parent, after) {};
-    VirtualQTreeWidgetItem(const QTreeWidgetItem& other) : QTreeWidgetItem(other) {};
-    VirtualQTreeWidgetItem(int type) : QTreeWidgetItem(type) {};
-    VirtualQTreeWidgetItem(const QList<QString>& strings, int type) : QTreeWidgetItem(strings, type) {};
-    VirtualQTreeWidgetItem(QTreeWidget* treeview, int type) : QTreeWidgetItem(treeview, type) {};
-    VirtualQTreeWidgetItem(QTreeWidget* treeview, const QList<QString>& strings, int type) : QTreeWidgetItem(treeview, strings, type) {};
-    VirtualQTreeWidgetItem(QTreeWidget* treeview, QTreeWidgetItem* after, int type) : QTreeWidgetItem(treeview, after, type) {};
-    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, int type) : QTreeWidgetItem(parent, type) {};
-    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, const QList<QString>& strings, int type) : QTreeWidgetItem(parent, strings, type) {};
-    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, QTreeWidgetItem* after, int type) : QTreeWidgetItem(parent, after, type) {};
+    VirtualQTreeWidgetItem() : QTreeWidgetItem(){};
+    VirtualQTreeWidgetItem(const QStringList& strings) : QTreeWidgetItem(strings){};
+    VirtualQTreeWidgetItem(QTreeWidget* treeview) : QTreeWidgetItem(treeview){};
+    VirtualQTreeWidgetItem(QTreeWidget* treeview, const QStringList& strings) : QTreeWidgetItem(treeview, strings){};
+    VirtualQTreeWidgetItem(QTreeWidget* treeview, QTreeWidgetItem* after) : QTreeWidgetItem(treeview, after){};
+    VirtualQTreeWidgetItem(QTreeWidgetItem* parent) : QTreeWidgetItem(parent){};
+    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, const QStringList& strings) : QTreeWidgetItem(parent, strings){};
+    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, QTreeWidgetItem* after) : QTreeWidgetItem(parent, after){};
+    VirtualQTreeWidgetItem(const QTreeWidgetItem& other) : QTreeWidgetItem(other){};
+    VirtualQTreeWidgetItem(int type) : QTreeWidgetItem(type){};
+    VirtualQTreeWidgetItem(const QStringList& strings, int type) : QTreeWidgetItem(strings, type){};
+    VirtualQTreeWidgetItem(QTreeWidget* treeview, int type) : QTreeWidgetItem(treeview, type){};
+    VirtualQTreeWidgetItem(QTreeWidget* treeview, const QStringList& strings, int type) : QTreeWidgetItem(treeview, strings, type){};
+    VirtualQTreeWidgetItem(QTreeWidget* treeview, QTreeWidgetItem* after, int type) : QTreeWidgetItem(treeview, after, type){};
+    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, int type) : QTreeWidgetItem(parent, type){};
+    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, const QStringList& strings, int type) : QTreeWidgetItem(parent, strings, type){};
+    VirtualQTreeWidgetItem(QTreeWidgetItem* parent, QTreeWidgetItem* after, int type) : QTreeWidgetItem(parent, after, type){};
 
     // Callback setters
     inline void setQTreeWidgetItem_Clone_Callback(QTreeWidgetItem_Clone_Callback cb) { qtreewidgetitem_clone_callback = cb; }
@@ -225,7 +225,7 @@ class VirtualQTreeWidget final : public QTreeWidget {
     using QTreeWidget_Metacall_Callback = int (*)(QTreeWidget*, int, int, void**);
     using QTreeWidget_SetSelectionModel_Callback = void (*)(QTreeWidget*, QItemSelectionModel*);
     using QTreeWidget_Event_Callback = bool (*)(QTreeWidget*, QEvent*);
-    using QTreeWidget_MimeTypes_Callback = const char** (*)();
+    using QTreeWidget_MimeTypes_Callback = QStringList (*)();
     using QTreeWidget_MimeData_Callback = QMimeData* (*)(const QTreeWidget*, libqt_list /* of QTreeWidgetItem* */);
     using QTreeWidget_DropMimeData_Callback = bool (*)(QTreeWidget*, QTreeWidgetItem*, int, QMimeData*, int);
     using QTreeWidget_SupportedDropActions_Callback = int (*)();
@@ -350,7 +350,6 @@ class VirtualQTreeWidget final : public QTreeWidget {
     using QTreeWidget_SenderSignalIndex_Callback = int (*)();
     using QTreeWidget_Receivers_Callback = int (*)(const QTreeWidget*, const char*);
     using QTreeWidget_IsSignalConnected_Callback = bool (*)(const QTreeWidget*, QMetaMethod*);
-    using QTreeWidget_GetDecodedMetricF_Callback = double (*)(const QTreeWidget*, int, int);
 
   protected:
     // Instance callback storage
@@ -484,7 +483,6 @@ class VirtualQTreeWidget final : public QTreeWidget {
     QTreeWidget_SenderSignalIndex_Callback qtreewidget_sendersignalindex_callback = nullptr;
     QTreeWidget_Receivers_Callback qtreewidget_receivers_callback = nullptr;
     QTreeWidget_IsSignalConnected_Callback qtreewidget_issignalconnected_callback = nullptr;
-    QTreeWidget_GetDecodedMetricF_Callback qtreewidget_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qtreewidget_metaobject_isbase = false;
@@ -617,11 +615,10 @@ class VirtualQTreeWidget final : public QTreeWidget {
     mutable bool qtreewidget_sendersignalindex_isbase = false;
     mutable bool qtreewidget_receivers_isbase = false;
     mutable bool qtreewidget_issignalconnected_isbase = false;
-    mutable bool qtreewidget_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQTreeWidget(QWidget* parent) : QTreeWidget(parent) {};
-    VirtualQTreeWidget() : QTreeWidget() {};
+    VirtualQTreeWidget(QWidget* parent) : QTreeWidget(parent){};
+    VirtualQTreeWidget() : QTreeWidget(){};
 
     // Callback setters
     inline void setQTreeWidget_MetaObject_Callback(QTreeWidget_MetaObject_Callback cb) { qtreewidget_metaobject_callback = cb; }
@@ -754,7 +751,6 @@ class VirtualQTreeWidget final : public QTreeWidget {
     inline void setQTreeWidget_SenderSignalIndex_Callback(QTreeWidget_SenderSignalIndex_Callback cb) { qtreewidget_sendersignalindex_callback = cb; }
     inline void setQTreeWidget_Receivers_Callback(QTreeWidget_Receivers_Callback cb) { qtreewidget_receivers_callback = cb; }
     inline void setQTreeWidget_IsSignalConnected_Callback(QTreeWidget_IsSignalConnected_Callback cb) { qtreewidget_issignalconnected_callback = cb; }
-    inline void setQTreeWidget_GetDecodedMetricF_Callback(QTreeWidget_GetDecodedMetricF_Callback cb) { qtreewidget_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQTreeWidget_MetaObject_IsBase(bool value) const { qtreewidget_metaobject_isbase = value; }
@@ -887,7 +883,6 @@ class VirtualQTreeWidget final : public QTreeWidget {
     inline void setQTreeWidget_SenderSignalIndex_IsBase(bool value) const { qtreewidget_sendersignalindex_isbase = value; }
     inline void setQTreeWidget_Receivers_IsBase(bool value) const { qtreewidget_receivers_isbase = value; }
     inline void setQTreeWidget_IsSignalConnected_IsBase(bool value) const { qtreewidget_issignalconnected_isbase = value; }
-    inline void setQTreeWidget_GetDecodedMetricF_IsBase(bool value) const { qtreewidget_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -971,24 +966,15 @@ class VirtualQTreeWidget final : public QTreeWidget {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qtreewidget_mimetypes_isbase) {
             qtreewidget_mimetypes_isbase = false;
             return QTreeWidget::mimeTypes();
         }
         auto mimetypes_cb = qtreewidget_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QTreeWidget::mimeTypes();
     }
@@ -3126,28 +3112,11 @@ class VirtualQTreeWidget final : public QTreeWidget {
         return QTreeWidget::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qtreewidget_getdecodedmetricf_isbase) {
-            qtreewidget_getdecodedmetricf_isbase = false;
-            return QTreeWidget::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qtreewidget_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QTreeWidget::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QTreeWidget_Event(QTreeWidget* self, QEvent* e);
     friend bool QTreeWidget_SuperEvent(QTreeWidget* self, QEvent* e);
-    friend libqt_list /* of libqt_string */ QTreeWidget_MimeTypes(const QTreeWidget* self);
-    friend libqt_list /* of libqt_string */ QTreeWidget_SuperMimeTypes(const QTreeWidget* self);
+    friend QStringList QTreeWidget_MimeTypes(const QTreeWidget* self);
+    friend QStringList QTreeWidget_SuperMimeTypes(const QTreeWidget* self);
     friend QMimeData* QTreeWidget_MimeData(const QTreeWidget* self, const libqt_list /* of QTreeWidgetItem* */ items);
     friend QMimeData* QTreeWidget_SuperMimeData(const QTreeWidget* self, const libqt_list /* of QTreeWidgetItem* */ items);
     friend bool QTreeWidget_DropMimeData(QTreeWidget* self, QTreeWidgetItem* parent, int index, const QMimeData* data, int action);
@@ -3356,8 +3325,6 @@ class VirtualQTreeWidget final : public QTreeWidget {
     friend int QTreeWidget_SuperReceivers(const QTreeWidget* self, const char* signal);
     friend bool QTreeWidget_IsSignalConnected(const QTreeWidget* self, const QMetaMethod* signal);
     friend bool QTreeWidget_SuperIsSignalConnected(const QTreeWidget* self, const QMetaMethod* signal);
-    friend double QTreeWidget_GetDecodedMetricF(const QTreeWidget* self, int metricA, int metricB);
-    friend double QTreeWidget_SuperGetDecodedMetricF(const QTreeWidget* self, int metricA, int metricB);
 };
 
 #endif

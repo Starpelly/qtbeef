@@ -105,11 +105,11 @@ void QStringView_Chop(QStringView* self, ptrdiff_t n) {
     self->chop((qsizetype)(n));
 }
 
-int QStringView_Compare4(const QStringView* self, QChar* c) {
+int QStringView_Compare3(const QStringView* self, QChar* c) {
     return self->compare(*c);
 }
 
-int QStringView_Compare5(const QStringView* self, QChar* c, int cs) {
+int QStringView_Compare4(const QStringView* self, QChar* c, int cs) {
     return self->compare(*c, static_cast<Qt::CaseSensitivity>(cs));
 }
 
@@ -171,14 +171,6 @@ bool QStringView_IsRightToLeft(const QStringView* self) {
 
 bool QStringView_IsValidUtf16(const QStringView* self) {
     return self->isValidUtf16();
-}
-
-bool QStringView_IsUpper(const QStringView* self) {
-    return self->isUpper();
-}
-
-bool QStringView_IsLower(const QStringView* self) {
-    return self->isLower();
 }
 
 int16_t QStringView_ToShort(const QStringView* self) {
@@ -253,10 +245,6 @@ QChar* QStringView_Back(const QStringView* self) {
     return new QChar(self->back());
 }
 
-ptrdiff_t QStringView_MaxSize(const QStringView* self) {
-    return static_cast<ptrdiff_t>(self->max_size());
-}
-
 QChar* QStringView_ConstBegin(const QStringView* self) {
     QStringView::const_iterator _ret = self->constBegin();
     return const_cast<QChar*>(static_cast<const QChar*>(_ret));
@@ -285,10 +273,6 @@ QChar* QStringView_First2(const QStringView* self) {
 
 QChar* QStringView_Last2(const QStringView* self) {
     return new QChar(self->last());
-}
-
-ptrdiff_t QStringView_MaxSize2() {
-    return static_cast<ptrdiff_t>(QStringView::maxSize());
 }
 
 ptrdiff_t QStringView_IndexOf22(const QStringView* self, QChar* c, ptrdiff_t from) {

@@ -251,9 +251,6 @@ int QStackedWidget_SuperReceivers(const QStackedWidget* self, const char* signal
 bool QStackedWidget_IsSignalConnected(const QStackedWidget* self, const QMetaMethod* signal);
 void QStackedWidget_OnIsSignalConnected(const QStackedWidget* self, intptr_t slot);
 bool QStackedWidget_SuperIsSignalConnected(const QStackedWidget* self, const QMetaMethod* signal);
-double QStackedWidget_GetDecodedMetricF(const QStackedWidget* self, int metricA, int metricB);
-void QStackedWidget_OnGetDecodedMetricF(const QStackedWidget* self, intptr_t slot);
-double QStackedWidget_SuperGetDecodedMetricF(const QStackedWidget* self, int metricA, int metricB);
 void QStackedWidget_Delete(QStackedWidget* self);
 
 #ifdef __cplusplus

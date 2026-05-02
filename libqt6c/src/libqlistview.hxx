@@ -141,7 +141,6 @@ class VirtualQListView final : public QListView {
     using QListView_SenderSignalIndex_Callback = int (*)();
     using QListView_Receivers_Callback = int (*)(const QListView*, const char*);
     using QListView_IsSignalConnected_Callback = bool (*)(const QListView*, QMetaMethod*);
-    using QListView_GetDecodedMetricF_Callback = double (*)(const QListView*, int, int);
 
   protected:
     // Instance callback storage
@@ -266,7 +265,6 @@ class VirtualQListView final : public QListView {
     QListView_SenderSignalIndex_Callback qlistview_sendersignalindex_callback = nullptr;
     QListView_Receivers_Callback qlistview_receivers_callback = nullptr;
     QListView_IsSignalConnected_Callback qlistview_issignalconnected_callback = nullptr;
-    QListView_GetDecodedMetricF_Callback qlistview_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qlistview_metaobject_isbase = false;
@@ -390,11 +388,10 @@ class VirtualQListView final : public QListView {
     mutable bool qlistview_sendersignalindex_isbase = false;
     mutable bool qlistview_receivers_isbase = false;
     mutable bool qlistview_issignalconnected_isbase = false;
-    mutable bool qlistview_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQListView(QWidget* parent) : QListView(parent) {};
-    VirtualQListView() : QListView() {};
+    VirtualQListView(QWidget* parent) : QListView(parent){};
+    VirtualQListView() : QListView(){};
 
     // Callback setters
     inline void setQListView_MetaObject_Callback(QListView_MetaObject_Callback cb) { qlistview_metaobject_callback = cb; }
@@ -518,7 +515,6 @@ class VirtualQListView final : public QListView {
     inline void setQListView_SenderSignalIndex_Callback(QListView_SenderSignalIndex_Callback cb) { qlistview_sendersignalindex_callback = cb; }
     inline void setQListView_Receivers_Callback(QListView_Receivers_Callback cb) { qlistview_receivers_callback = cb; }
     inline void setQListView_IsSignalConnected_Callback(QListView_IsSignalConnected_Callback cb) { qlistview_issignalconnected_callback = cb; }
-    inline void setQListView_GetDecodedMetricF_Callback(QListView_GetDecodedMetricF_Callback cb) { qlistview_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQListView_MetaObject_IsBase(bool value) const { qlistview_metaobject_isbase = value; }
@@ -642,7 +638,6 @@ class VirtualQListView final : public QListView {
     inline void setQListView_SenderSignalIndex_IsBase(bool value) const { qlistview_sendersignalindex_isbase = value; }
     inline void setQListView_Receivers_IsBase(bool value) const { qlistview_receivers_isbase = value; }
     inline void setQListView_IsSignalConnected_IsBase(bool value) const { qlistview_issignalconnected_isbase = value; }
-    inline void setQListView_GetDecodedMetricF_IsBase(bool value) const { qlistview_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -2698,23 +2693,6 @@ class VirtualQListView final : public QListView {
         return QListView::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qlistview_getdecodedmetricf_isbase) {
-            qlistview_getdecodedmetricf_isbase = false;
-            return QListView::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qlistview_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QListView::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QListView_Event(QListView* self, QEvent* e);
     friend bool QListView_SuperEvent(QListView* self, QEvent* e);
@@ -2908,8 +2886,6 @@ class VirtualQListView final : public QListView {
     friend int QListView_SuperReceivers(const QListView* self, const char* signal);
     friend bool QListView_IsSignalConnected(const QListView* self, const QMetaMethod* signal);
     friend bool QListView_SuperIsSignalConnected(const QListView* self, const QMetaMethod* signal);
-    friend double QListView_GetDecodedMetricF(const QListView* self, int metricA, int metricB);
-    friend double QListView_SuperGetDecodedMetricF(const QListView* self, int metricA, int metricB);
 };
 
 #endif

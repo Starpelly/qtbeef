@@ -33,9 +33,9 @@ typedef struct QVariant QVariant;
 #endif
 
 QStringListModel* QStringListModel_new();
-QStringListModel* QStringListModel_new2(const libqt_list /* of libqt_string */ strings);
+QStringListModel* QStringListModel_new2(const QStringList* strings);
 QStringListModel* QStringListModel_new3(QObject* parent);
-QStringListModel* QStringListModel_new4(const libqt_list /* of libqt_string */ strings, QObject* parent);
+QStringListModel* QStringListModel_new4(const QStringList* strings, QObject* parent);
 QMetaObject* QStringListModel_MetaObject(const QStringListModel* self);
 void* QStringListModel_Metacast(QStringListModel* self, const char* param1);
 int QStringListModel_Metacall(QStringListModel* self, int param1, int param2, void** param3);
@@ -51,8 +51,8 @@ bool QStringListModel_MoveRows(QStringListModel* self, const QModelIndex* source
 libqt_map /* of int to QVariant* */ QStringListModel_ItemData(const QStringListModel* self, const QModelIndex* index);
 bool QStringListModel_SetItemData(QStringListModel* self, const QModelIndex* index, const libqt_map /* of int to QVariant* */ roles);
 void QStringListModel_Sort(QStringListModel* self, int column, int order);
-libqt_list /* of libqt_string */ QStringListModel_StringList(const QStringListModel* self);
-void QStringListModel_SetStringList(QStringListModel* self, const libqt_list /* of libqt_string */ strings);
+QStringList QStringListModel_StringList(const QStringListModel* self);
+void QStringListModel_SetStringList(QStringListModel* self, const QStringList* strings);
 int QStringListModel_SupportedDropActions(const QStringListModel* self);
 void QStringListModel_OnMetaObject(const QStringListModel* self, intptr_t slot);
 QMetaObject* QStringListModel_SuperMetaObject(const QStringListModel* self);
@@ -98,9 +98,9 @@ QVariant* QStringListModel_SuperHeaderData(const QStringListModel* self, int sec
 bool QStringListModel_SetHeaderData(QStringListModel* self, int section, int orientation, const QVariant* value, int role);
 void QStringListModel_OnSetHeaderData(QStringListModel* self, intptr_t slot);
 bool QStringListModel_SuperSetHeaderData(QStringListModel* self, int section, int orientation, const QVariant* value, int role);
-libqt_list /* of libqt_string */ QStringListModel_MimeTypes(const QStringListModel* self);
+QStringList QStringListModel_MimeTypes(const QStringListModel* self);
 void QStringListModel_OnMimeTypes(const QStringListModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QStringListModel_SuperMimeTypes(const QStringListModel* self);
+QStringList QStringListModel_SuperMimeTypes(const QStringListModel* self);
 QMimeData* QStringListModel_MimeData(const QStringListModel* self, const libqt_list /* of QModelIndex* */ indexes);
 void QStringListModel_OnMimeData(const QStringListModel* self, intptr_t slot);
 QMimeData* QStringListModel_SuperMimeData(const QStringListModel* self, const libqt_list /* of QModelIndex* */ indexes);

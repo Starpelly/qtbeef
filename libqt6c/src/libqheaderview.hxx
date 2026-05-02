@@ -147,7 +147,6 @@ class VirtualQHeaderView final : public QHeaderView {
     using QHeaderView_SenderSignalIndex_Callback = int (*)();
     using QHeaderView_Receivers_Callback = int (*)(const QHeaderView*, const char*);
     using QHeaderView_IsSignalConnected_Callback = bool (*)(const QHeaderView*, QMetaMethod*);
-    using QHeaderView_GetDecodedMetricF_Callback = double (*)(const QHeaderView*, int, int);
 
   protected:
     // Instance callback storage
@@ -278,7 +277,6 @@ class VirtualQHeaderView final : public QHeaderView {
     QHeaderView_SenderSignalIndex_Callback qheaderview_sendersignalindex_callback = nullptr;
     QHeaderView_Receivers_Callback qheaderview_receivers_callback = nullptr;
     QHeaderView_IsSignalConnected_Callback qheaderview_issignalconnected_callback = nullptr;
-    QHeaderView_GetDecodedMetricF_Callback qheaderview_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qheaderview_metaobject_isbase = false;
@@ -408,11 +406,10 @@ class VirtualQHeaderView final : public QHeaderView {
     mutable bool qheaderview_sendersignalindex_isbase = false;
     mutable bool qheaderview_receivers_isbase = false;
     mutable bool qheaderview_issignalconnected_isbase = false;
-    mutable bool qheaderview_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQHeaderView(Qt::Orientation orientation) : QHeaderView(orientation) {};
-    VirtualQHeaderView(Qt::Orientation orientation, QWidget* parent) : QHeaderView(orientation, parent) {};
+    VirtualQHeaderView(Qt::Orientation orientation) : QHeaderView(orientation){};
+    VirtualQHeaderView(Qt::Orientation orientation, QWidget* parent) : QHeaderView(orientation, parent){};
 
     // Callback setters
     inline void setQHeaderView_MetaObject_Callback(QHeaderView_MetaObject_Callback cb) { qheaderview_metaobject_callback = cb; }
@@ -542,7 +539,6 @@ class VirtualQHeaderView final : public QHeaderView {
     inline void setQHeaderView_SenderSignalIndex_Callback(QHeaderView_SenderSignalIndex_Callback cb) { qheaderview_sendersignalindex_callback = cb; }
     inline void setQHeaderView_Receivers_Callback(QHeaderView_Receivers_Callback cb) { qheaderview_receivers_callback = cb; }
     inline void setQHeaderView_IsSignalConnected_Callback(QHeaderView_IsSignalConnected_Callback cb) { qheaderview_issignalconnected_callback = cb; }
-    inline void setQHeaderView_GetDecodedMetricF_Callback(QHeaderView_GetDecodedMetricF_Callback cb) { qheaderview_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQHeaderView_MetaObject_IsBase(bool value) const { qheaderview_metaobject_isbase = value; }
@@ -672,7 +668,6 @@ class VirtualQHeaderView final : public QHeaderView {
     inline void setQHeaderView_SenderSignalIndex_IsBase(bool value) const { qheaderview_sendersignalindex_isbase = value; }
     inline void setQHeaderView_Receivers_IsBase(bool value) const { qheaderview_receivers_isbase = value; }
     inline void setQHeaderView_IsSignalConnected_IsBase(bool value) const { qheaderview_issignalconnected_isbase = value; }
-    inline void setQHeaderView_GetDecodedMetricF_IsBase(bool value) const { qheaderview_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -2833,23 +2828,6 @@ class VirtualQHeaderView final : public QHeaderView {
         return QHeaderView::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qheaderview_getdecodedmetricf_isbase) {
-            qheaderview_getdecodedmetricf_isbase = false;
-            return QHeaderView::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qheaderview_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QHeaderView::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QHeaderView_CurrentChanged(QHeaderView* self, const QModelIndex* current, const QModelIndex* old);
     friend void QHeaderView_SuperCurrentChanged(QHeaderView* self, const QModelIndex* current, const QModelIndex* old);
@@ -3061,8 +3039,6 @@ class VirtualQHeaderView final : public QHeaderView {
     friend int QHeaderView_SuperReceivers(const QHeaderView* self, const char* signal);
     friend bool QHeaderView_IsSignalConnected(const QHeaderView* self, const QMetaMethod* signal);
     friend bool QHeaderView_SuperIsSignalConnected(const QHeaderView* self, const QMetaMethod* signal);
-    friend double QHeaderView_GetDecodedMetricF(const QHeaderView* self, int metricA, int metricB);
-    friend double QHeaderView_SuperGetDecodedMetricF(const QHeaderView* self, int metricA, int metricB);
 };
 
 #endif

@@ -1,4 +1,3 @@
-#include <QAnyStringView>
 #include <QByteArrayView>
 #include <QChar>
 #include <QStringConverter>
@@ -17,7 +16,7 @@ QStringEncoder* QStringEncoder_new2(int encoding) {
 }
 
 QStringEncoder* QStringEncoder_new3(const char* name) {
-    return new QStringEncoder(QAnyStringView(name));
+    return new QStringEncoder(name);
 }
 
 QStringEncoder* QStringEncoder_new4(int encoding, int flags) {
@@ -25,7 +24,7 @@ QStringEncoder* QStringEncoder_new4(int encoding, int flags) {
 }
 
 QStringEncoder* QStringEncoder_new5(const char* name, int flags) {
-    return new QStringEncoder(QAnyStringView(name), static_cast<QStringConverterBase::Flags>(flags));
+    return new QStringEncoder(name, static_cast<QStringConverterBase::Flags>(flags));
 }
 
 ptrdiff_t QStringEncoder_RequiredSpace(const QStringEncoder* self, ptrdiff_t inputLength) {
@@ -45,7 +44,7 @@ QStringDecoder* QStringDecoder_new2() {
 }
 
 QStringDecoder* QStringDecoder_new3(const char* name) {
-    return new QStringDecoder(QAnyStringView(name));
+    return new QStringDecoder(name);
 }
 
 QStringDecoder* QStringDecoder_new4(int encoding, int flags) {
@@ -53,7 +52,7 @@ QStringDecoder* QStringDecoder_new4(int encoding, int flags) {
 }
 
 QStringDecoder* QStringDecoder_new5(const char* name, int f) {
-    return new QStringDecoder(QAnyStringView(name), static_cast<QStringConverterBase::Flags>(f));
+    return new QStringDecoder(name, static_cast<QStringConverterBase::Flags>(f));
 }
 
 ptrdiff_t QStringDecoder_RequiredSpace(const QStringDecoder* self, ptrdiff_t inputLength) {

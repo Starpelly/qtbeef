@@ -123,8 +123,8 @@ class VirtualQBuffer final : public QBuffer {
     mutable bool qbuffer_issignalconnected_isbase = false;
 
   public:
-    VirtualQBuffer() : QBuffer() {};
-    VirtualQBuffer(QObject* parent) : QBuffer(parent) {};
+    VirtualQBuffer() : QBuffer(){};
+    VirtualQBuffer(QObject* parent) : QBuffer(parent){};
 
     // Callback setters
     inline void setQBuffer_MetaObject_Callback(QBuffer_MetaObject_Callback cb) { qbuffer_metaobject_callback = cb; }

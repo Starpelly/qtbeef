@@ -80,7 +80,6 @@ class VirtualQFontComboBox final : public QFontComboBox {
     using QFontComboBox_SenderSignalIndex_Callback = int (*)();
     using QFontComboBox_Receivers_Callback = int (*)(const QFontComboBox*, const char*);
     using QFontComboBox_IsSignalConnected_Callback = bool (*)(const QFontComboBox*, QMetaMethod*);
-    using QFontComboBox_GetDecodedMetricF_Callback = double (*)(const QFontComboBox*, int, int);
 
   protected:
     // Instance callback storage
@@ -147,7 +146,6 @@ class VirtualQFontComboBox final : public QFontComboBox {
     QFontComboBox_SenderSignalIndex_Callback qfontcombobox_sendersignalindex_callback = nullptr;
     QFontComboBox_Receivers_Callback qfontcombobox_receivers_callback = nullptr;
     QFontComboBox_IsSignalConnected_Callback qfontcombobox_issignalconnected_callback = nullptr;
-    QFontComboBox_GetDecodedMetricF_Callback qfontcombobox_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qfontcombobox_metaobject_isbase = false;
@@ -213,11 +211,10 @@ class VirtualQFontComboBox final : public QFontComboBox {
     mutable bool qfontcombobox_sendersignalindex_isbase = false;
     mutable bool qfontcombobox_receivers_isbase = false;
     mutable bool qfontcombobox_issignalconnected_isbase = false;
-    mutable bool qfontcombobox_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQFontComboBox(QWidget* parent) : QFontComboBox(parent) {};
-    VirtualQFontComboBox() : QFontComboBox() {};
+    VirtualQFontComboBox(QWidget* parent) : QFontComboBox(parent){};
+    VirtualQFontComboBox() : QFontComboBox(){};
 
     // Callback setters
     inline void setQFontComboBox_MetaObject_Callback(QFontComboBox_MetaObject_Callback cb) { qfontcombobox_metaobject_callback = cb; }
@@ -283,7 +280,6 @@ class VirtualQFontComboBox final : public QFontComboBox {
     inline void setQFontComboBox_SenderSignalIndex_Callback(QFontComboBox_SenderSignalIndex_Callback cb) { qfontcombobox_sendersignalindex_callback = cb; }
     inline void setQFontComboBox_Receivers_Callback(QFontComboBox_Receivers_Callback cb) { qfontcombobox_receivers_callback = cb; }
     inline void setQFontComboBox_IsSignalConnected_Callback(QFontComboBox_IsSignalConnected_Callback cb) { qfontcombobox_issignalconnected_callback = cb; }
-    inline void setQFontComboBox_GetDecodedMetricF_Callback(QFontComboBox_GetDecodedMetricF_Callback cb) { qfontcombobox_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQFontComboBox_MetaObject_IsBase(bool value) const { qfontcombobox_metaobject_isbase = value; }
@@ -349,7 +345,6 @@ class VirtualQFontComboBox final : public QFontComboBox {
     inline void setQFontComboBox_SenderSignalIndex_IsBase(bool value) const { qfontcombobox_sendersignalindex_isbase = value; }
     inline void setQFontComboBox_Receivers_IsBase(bool value) const { qfontcombobox_receivers_isbase = value; }
     inline void setQFontComboBox_IsSignalConnected_IsBase(bool value) const { qfontcombobox_issignalconnected_isbase = value; }
-    inline void setQFontComboBox_GetDecodedMetricF_IsBase(bool value) const { qfontcombobox_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1385,23 +1380,6 @@ class VirtualQFontComboBox final : public QFontComboBox {
         return QFontComboBox::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qfontcombobox_getdecodedmetricf_isbase) {
-            qfontcombobox_getdecodedmetricf_isbase = false;
-            return QFontComboBox::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qfontcombobox_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QFontComboBox::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QFontComboBox_Event(QFontComboBox* self, QEvent* e);
     friend bool QFontComboBox_SuperEvent(QFontComboBox* self, QEvent* e);
@@ -1499,8 +1477,6 @@ class VirtualQFontComboBox final : public QFontComboBox {
     friend int QFontComboBox_SuperReceivers(const QFontComboBox* self, const char* signal);
     friend bool QFontComboBox_IsSignalConnected(const QFontComboBox* self, const QMetaMethod* signal);
     friend bool QFontComboBox_SuperIsSignalConnected(const QFontComboBox* self, const QMetaMethod* signal);
-    friend double QFontComboBox_GetDecodedMetricF(const QFontComboBox* self, int metricA, int metricB);
-    friend double QFontComboBox_SuperGetDecodedMetricF(const QFontComboBox* self, int metricA, int metricB);
 };
 
 #endif

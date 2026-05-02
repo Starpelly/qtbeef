@@ -1,7 +1,6 @@
 #include <QByteArray>
 #include <QChar>
 #include <QFont>
-#define WORKAROUND_INNER_CLASS_DEFINITION_QFont__Tag
 #include <QImage>
 #include <QList>
 #include <QPainterPath>
@@ -257,15 +256,6 @@ libqt_list /* of int */ QRawFont_SupportedWritingSystems(const QRawFont* self) {
 
 libqt_string QRawFont_FontTable(const QRawFont* self, const char* tagName) {
     QByteArray _qb = self->fontTable(tagName);
-    libqt_string _str;
-    _str.len = _qb.length();
-    _str.data = static_cast<char*>(malloc(_str.len));
-    memcpy((void*)_str.data, _qb.data(), _str.len);
-    return _str;
-}
-
-libqt_string QRawFont_FontTable2(const QRawFont* self, QFont__Tag* tag) {
-    QByteArray _qb = self->fontTable(*tag);
     libqt_string _str;
     _str.len = _qb.length();
     _str.data = static_cast<char*>(malloc(_str.len));

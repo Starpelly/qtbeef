@@ -66,8 +66,8 @@ class VirtualQFileSelector final : public QFileSelector {
     mutable bool qfileselector_issignalconnected_isbase = false;
 
   public:
-    VirtualQFileSelector() : QFileSelector() {};
-    VirtualQFileSelector(QObject* parent) : QFileSelector(parent) {};
+    VirtualQFileSelector() : QFileSelector(){};
+    VirtualQFileSelector(QObject* parent) : QFileSelector(parent){};
 
     // Callback setters
     inline void setQFileSelector_MetaObject_Callback(QFileSelector_MetaObject_Callback cb) { qfileselector_metaobject_callback = cb; }

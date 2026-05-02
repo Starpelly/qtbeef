@@ -96,7 +96,7 @@ QModelIndex* QSortFilterProxyModel_Buddy(const QSortFilterProxyModel* self, cons
 libqt_list /* of QModelIndex* */ QSortFilterProxyModel_Match(const QSortFilterProxyModel* self, const QModelIndex* start, int role, const QVariant* value, int hits, int flags);
 QSize* QSortFilterProxyModel_Span(const QSortFilterProxyModel* self, const QModelIndex* index);
 void QSortFilterProxyModel_Sort(QSortFilterProxyModel* self, int column, int order);
-libqt_list /* of libqt_string */ QSortFilterProxyModel_MimeTypes(const QSortFilterProxyModel* self);
+QStringList QSortFilterProxyModel_MimeTypes(const QSortFilterProxyModel* self);
 int QSortFilterProxyModel_SupportedDropActions(const QSortFilterProxyModel* self);
 void QSortFilterProxyModel_DynamicSortFilterChanged(QSortFilterProxyModel* self, bool dynamicSortFilter);
 void QSortFilterProxyModel_Connect_DynamicSortFilterChanged(QSortFilterProxyModel* self, intptr_t slot);
@@ -183,7 +183,7 @@ QSize* QSortFilterProxyModel_SuperSpan(const QSortFilterProxyModel* self, const 
 void QSortFilterProxyModel_OnSort(QSortFilterProxyModel* self, intptr_t slot);
 void QSortFilterProxyModel_SuperSort(QSortFilterProxyModel* self, int column, int order);
 void QSortFilterProxyModel_OnMimeTypes(const QSortFilterProxyModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QSortFilterProxyModel_SuperMimeTypes(const QSortFilterProxyModel* self);
+QStringList QSortFilterProxyModel_SuperMimeTypes(const QSortFilterProxyModel* self);
 void QSortFilterProxyModel_OnSupportedDropActions(const QSortFilterProxyModel* self, intptr_t slot);
 int QSortFilterProxyModel_SuperSupportedDropActions(const QSortFilterProxyModel* self);
 bool QSortFilterProxyModel_Submit(QSortFilterProxyModel* self);

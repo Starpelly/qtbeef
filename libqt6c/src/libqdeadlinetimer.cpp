@@ -1,4 +1,5 @@
 #include <QDeadlineTimer>
+#include <QPair>
 #include <qdeadlinetimer.h>
 #include "libqdeadlinetimer.hpp"
 #include "libqdeadlinetimer.hxx"
@@ -15,20 +16,20 @@ QDeadlineTimer* QDeadlineTimer_new3() {
     return new QDeadlineTimer();
 }
 
-QDeadlineTimer* QDeadlineTimer_new4(int type_) {
-    return new QDeadlineTimer(static_cast<Qt::TimerType>(type_));
-}
-
-QDeadlineTimer* QDeadlineTimer_new5(int param1) {
+QDeadlineTimer* QDeadlineTimer_new4(int param1) {
     return new QDeadlineTimer(static_cast<QDeadlineTimer::ForeverConstant>(param1));
 }
 
-QDeadlineTimer* QDeadlineTimer_new6(long long msecs) {
+QDeadlineTimer* QDeadlineTimer_new5(long long msecs) {
     return new QDeadlineTimer(static_cast<qint64>(msecs));
 }
 
-QDeadlineTimer* QDeadlineTimer_new7(const QDeadlineTimer* param1) {
+QDeadlineTimer* QDeadlineTimer_new6(const QDeadlineTimer* param1) {
     return new QDeadlineTimer(*param1);
+}
+
+QDeadlineTimer* QDeadlineTimer_new7(int type_) {
+    return new QDeadlineTimer(static_cast<Qt::TimerType>(type_));
 }
 
 QDeadlineTimer* QDeadlineTimer_new8(int param1, int type_) {
@@ -122,6 +123,19 @@ QDeadlineTimer* QDeadlineTimer_OperatorMinusAssign(QDeadlineTimer* self, long lo
 int64_t QDeadlineTimer_RemainingTimeAsDuration(const QDeadlineTimer* self) {
     std::chrono::nanoseconds _ret = self->remainingTimeAsDuration();
     return _ret.count();
+}
+
+pair_long_long_unsigned_int /* tuple of long long and unsigned int */ QDeadlineTimer_QData(const QDeadlineTimer* self) {
+    QPair<long long, unsigned int> _ret = self->_q_data();
+    // Convert QPair<> from C++ memory to manually-managed C memory
+    pair_long_long_unsigned_int /* tuple of long long and unsigned int */ _out;
+    _out.first = _ret.first;
+    _out.second = _ret.second;
+    return _out;
+}
+
+void QDeadlineTimer_OperatorAssign(QDeadlineTimer* self, const QDeadlineTimer* param1) {
+    self->operator=(*param1);
 }
 
 void QDeadlineTimer_SetRemainingTime2(QDeadlineTimer* self, long long msecs, int type) {

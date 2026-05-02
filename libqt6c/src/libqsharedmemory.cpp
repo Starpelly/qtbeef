@@ -2,7 +2,6 @@
 #include <QEvent>
 #include <QMetaMethod>
 #include <QMetaObject>
-#include <QNativeIpcKey>
 #include <QObject>
 #include <QSharedMemory>
 #include <QString>
@@ -17,24 +16,16 @@ QSharedMemory* QSharedMemory_new() {
     return new VirtualQSharedMemory();
 }
 
-QSharedMemory* QSharedMemory_new2(const QNativeIpcKey* key) {
-    return new VirtualQSharedMemory(*key);
-}
-
-QSharedMemory* QSharedMemory_new3(const libqt_string key) {
+QSharedMemory* QSharedMemory_new2(const libqt_string key) {
     QString key_QString = QString::fromUtf8(key.data, key.len);
     return new VirtualQSharedMemory(key_QString);
 }
 
-QSharedMemory* QSharedMemory_new4(QObject* parent) {
+QSharedMemory* QSharedMemory_new3(QObject* parent) {
     return new VirtualQSharedMemory(parent);
 }
 
-QSharedMemory* QSharedMemory_new5(const QNativeIpcKey* key, QObject* parent) {
-    return new VirtualQSharedMemory(*key, parent);
-}
-
-QSharedMemory* QSharedMemory_new6(const libqt_string key, QObject* parent) {
+QSharedMemory* QSharedMemory_new4(const libqt_string key, QObject* parent) {
     QString key_QString = QString::fromUtf8(key.data, key.len);
     return new VirtualQSharedMemory(key_QString, parent);
 }
@@ -83,11 +74,7 @@ libqt_string QSharedMemory_Key(const QSharedMemory* self) {
     return _str;
 }
 
-void QSharedMemory_SetNativeKey(QSharedMemory* self, const QNativeIpcKey* key) {
-    self->setNativeKey(*key);
-}
-
-void QSharedMemory_SetNativeKey2(QSharedMemory* self, const libqt_string key) {
+void QSharedMemory_SetNativeKey(QSharedMemory* self, const libqt_string key) {
     QString key_QString = QString::fromUtf8(key.data, key.len);
     self->setNativeKey(key_QString);
 }
@@ -102,10 +89,6 @@ libqt_string QSharedMemory_NativeKey(const QSharedMemory* self) {
     memcpy((void*)_str.data, _b.data(), _str.len);
     ((char*)_str.data)[_str.len] = '\0';
     return _str;
-}
-
-QNativeIpcKey* QSharedMemory_NativeIpcKey(const QSharedMemory* self) {
-    return new QNativeIpcKey(self->nativeIpcKey());
 }
 
 bool QSharedMemory_Create(QSharedMemory* self, ptrdiff_t size) {
@@ -164,41 +147,12 @@ libqt_string QSharedMemory_ErrorString(const QSharedMemory* self) {
     return _str;
 }
 
-bool QSharedMemory_IsKeyTypeSupported(uint16_t type) {
-    return QSharedMemory::isKeyTypeSupported(static_cast<QNativeIpcKey::Type>(type));
-}
-
-QNativeIpcKey* QSharedMemory_PlatformSafeKey(const libqt_string key) {
-    QString key_QString = QString::fromUtf8(key.data, key.len);
-    return new QNativeIpcKey(QSharedMemory::platformSafeKey(key_QString));
-}
-
-QNativeIpcKey* QSharedMemory_LegacyNativeKey(const libqt_string key) {
-    QString key_QString = QString::fromUtf8(key.data, key.len);
-    return new QNativeIpcKey(QSharedMemory::legacyNativeKey(key_QString));
-}
-
-void QSharedMemory_SetNativeKey22(QSharedMemory* self, const libqt_string key, uint16_t type) {
-    QString key_QString = QString::fromUtf8(key.data, key.len);
-    self->setNativeKey(key_QString, static_cast<QNativeIpcKey::Type>(type));
-}
-
 bool QSharedMemory_Create2(QSharedMemory* self, ptrdiff_t size, int mode) {
     return self->create((qsizetype)(size), static_cast<QSharedMemory::AccessMode>(mode));
 }
 
 bool QSharedMemory_Attach1(QSharedMemory* self, int mode) {
     return self->attach(static_cast<QSharedMemory::AccessMode>(mode));
-}
-
-QNativeIpcKey* QSharedMemory_PlatformSafeKey2(const libqt_string key, uint16_t type) {
-    QString key_QString = QString::fromUtf8(key.data, key.len);
-    return new QNativeIpcKey(QSharedMemory::platformSafeKey(key_QString, static_cast<QNativeIpcKey::Type>(type)));
-}
-
-QNativeIpcKey* QSharedMemory_LegacyNativeKey2(const libqt_string key, uint16_t type) {
-    QString key_QString = QString::fromUtf8(key.data, key.len);
-    return new QNativeIpcKey(QSharedMemory::legacyNativeKey(key_QString, static_cast<QNativeIpcKey::Type>(type)));
 }
 
 // Base class handler implementation

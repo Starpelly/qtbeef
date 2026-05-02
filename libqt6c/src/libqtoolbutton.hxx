@@ -80,7 +80,6 @@ class VirtualQToolButton final : public QToolButton {
     using QToolButton_SenderSignalIndex_Callback = int (*)();
     using QToolButton_Receivers_Callback = int (*)(const QToolButton*, const char*);
     using QToolButton_IsSignalConnected_Callback = bool (*)(const QToolButton*, QMetaMethod*);
-    using QToolButton_GetDecodedMetricF_Callback = double (*)(const QToolButton*, int, int);
 
   protected:
     // Instance callback storage
@@ -147,7 +146,6 @@ class VirtualQToolButton final : public QToolButton {
     QToolButton_SenderSignalIndex_Callback qtoolbutton_sendersignalindex_callback = nullptr;
     QToolButton_Receivers_Callback qtoolbutton_receivers_callback = nullptr;
     QToolButton_IsSignalConnected_Callback qtoolbutton_issignalconnected_callback = nullptr;
-    QToolButton_GetDecodedMetricF_Callback qtoolbutton_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qtoolbutton_metaobject_isbase = false;
@@ -213,11 +211,10 @@ class VirtualQToolButton final : public QToolButton {
     mutable bool qtoolbutton_sendersignalindex_isbase = false;
     mutable bool qtoolbutton_receivers_isbase = false;
     mutable bool qtoolbutton_issignalconnected_isbase = false;
-    mutable bool qtoolbutton_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQToolButton(QWidget* parent) : QToolButton(parent) {};
-    VirtualQToolButton() : QToolButton() {};
+    VirtualQToolButton(QWidget* parent) : QToolButton(parent){};
+    VirtualQToolButton() : QToolButton(){};
 
     // Callback setters
     inline void setQToolButton_MetaObject_Callback(QToolButton_MetaObject_Callback cb) { qtoolbutton_metaobject_callback = cb; }
@@ -283,7 +280,6 @@ class VirtualQToolButton final : public QToolButton {
     inline void setQToolButton_SenderSignalIndex_Callback(QToolButton_SenderSignalIndex_Callback cb) { qtoolbutton_sendersignalindex_callback = cb; }
     inline void setQToolButton_Receivers_Callback(QToolButton_Receivers_Callback cb) { qtoolbutton_receivers_callback = cb; }
     inline void setQToolButton_IsSignalConnected_Callback(QToolButton_IsSignalConnected_Callback cb) { qtoolbutton_issignalconnected_callback = cb; }
-    inline void setQToolButton_GetDecodedMetricF_Callback(QToolButton_GetDecodedMetricF_Callback cb) { qtoolbutton_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQToolButton_MetaObject_IsBase(bool value) const { qtoolbutton_metaobject_isbase = value; }
@@ -349,7 +345,6 @@ class VirtualQToolButton final : public QToolButton {
     inline void setQToolButton_SenderSignalIndex_IsBase(bool value) const { qtoolbutton_sendersignalindex_isbase = value; }
     inline void setQToolButton_Receivers_IsBase(bool value) const { qtoolbutton_receivers_isbase = value; }
     inline void setQToolButton_IsSignalConnected_IsBase(bool value) const { qtoolbutton_issignalconnected_isbase = value; }
-    inline void setQToolButton_GetDecodedMetricF_IsBase(bool value) const { qtoolbutton_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1386,23 +1381,6 @@ class VirtualQToolButton final : public QToolButton {
         return QToolButton::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qtoolbutton_getdecodedmetricf_isbase) {
-            qtoolbutton_getdecodedmetricf_isbase = false;
-            return QToolButton::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qtoolbutton_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QToolButton::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QToolButton_Event(QToolButton* self, QEvent* e);
     friend bool QToolButton_SuperEvent(QToolButton* self, QEvent* e);
@@ -1506,8 +1484,6 @@ class VirtualQToolButton final : public QToolButton {
     friend int QToolButton_SuperReceivers(const QToolButton* self, const char* signal);
     friend bool QToolButton_IsSignalConnected(const QToolButton* self, const QMetaMethod* signal);
     friend bool QToolButton_SuperIsSignalConnected(const QToolButton* self, const QMetaMethod* signal);
-    friend double QToolButton_GetDecodedMetricF(const QToolButton* self, int metricA, int metricB);
-    friend double QToolButton_SuperGetDecodedMetricF(const QToolButton* self, int metricA, int metricB);
 };
 
 #endif

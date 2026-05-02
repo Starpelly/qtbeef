@@ -141,9 +141,9 @@ class VirtualQWindow final : public QWindow {
     mutable bool qwindow_issignalconnected_isbase = false;
 
   public:
-    VirtualQWindow() : QWindow() {};
-    VirtualQWindow(QWindow* parent) : QWindow(parent) {};
-    VirtualQWindow(QScreen* screen) : QWindow(screen) {};
+    VirtualQWindow() : QWindow(){};
+    VirtualQWindow(QWindow* parent) : QWindow(parent){};
+    VirtualQWindow(QScreen* screen) : QWindow(screen){};
 
     // Callback setters
     inline void setQWindow_MetaObject_Callback(QWindow_MetaObject_Callback cb) { qwindow_metaobject_callback = cb; }

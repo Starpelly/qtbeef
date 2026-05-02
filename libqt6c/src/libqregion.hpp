@@ -53,8 +53,6 @@ bool QRegion_Intersects(const QRegion* self, const QRegion* r);
 bool QRegion_Intersects2(const QRegion* self, const QRect* r);
 QRect* QRegion_BoundingRect(const QRegion* self);
 void QRegion_SetRects(QRegion* self, const QRect* rect, int num);
-void QRegion_SetRects2(QRegion* self, libqt_list /* of QRect* */ r);
-libqt_list /* of QRect* */ QRegion_Rects(const QRegion* self);
 int QRegion_RectCount(const QRegion* self);
 QRegion* QRegion_OperatorBitwiseOr(const QRegion* self, const QRegion* r);
 QRegion* QRegion_OperatorPlus(const QRegion* self, const QRegion* r);

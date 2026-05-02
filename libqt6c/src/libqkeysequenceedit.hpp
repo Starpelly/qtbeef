@@ -28,7 +28,6 @@ typedef struct QEvent QEvent;
 typedef struct QFocusEvent QFocusEvent;
 typedef struct QHideEvent QHideEvent;
 typedef struct QInputMethodEvent QInputMethodEvent;
-typedef struct QKeyCombination QKeyCombination;
 typedef struct QKeyEvent QKeyEvent;
 typedef struct QKeySequence QKeySequence;
 typedef struct QKeySequenceEdit QKeySequenceEdit;
@@ -60,14 +59,10 @@ QMetaObject* QKeySequenceEdit_MetaObject(const QKeySequenceEdit* self);
 void* QKeySequenceEdit_Metacast(QKeySequenceEdit* self, const char* param1);
 int QKeySequenceEdit_Metacall(QKeySequenceEdit* self, int param1, int param2, void** param3);
 QKeySequence* QKeySequenceEdit_KeySequence(const QKeySequenceEdit* self);
-ptrdiff_t QKeySequenceEdit_MaximumSequenceLength(const QKeySequenceEdit* self);
 void QKeySequenceEdit_SetClearButtonEnabled(QKeySequenceEdit* self, bool enable);
 bool QKeySequenceEdit_IsClearButtonEnabled(const QKeySequenceEdit* self);
-void QKeySequenceEdit_SetFinishingKeyCombinations(QKeySequenceEdit* self, const libqt_list /* of QKeyCombination* */ finishingKeyCombinations);
-libqt_list /* of QKeyCombination* */ QKeySequenceEdit_FinishingKeyCombinations(const QKeySequenceEdit* self);
 void QKeySequenceEdit_SetKeySequence(QKeySequenceEdit* self, const QKeySequence* keySequence);
 void QKeySequenceEdit_Clear(QKeySequenceEdit* self);
-void QKeySequenceEdit_SetMaximumSequenceLength(QKeySequenceEdit* self, ptrdiff_t count);
 void QKeySequenceEdit_EditingFinished(QKeySequenceEdit* self);
 void QKeySequenceEdit_Connect_EditingFinished(QKeySequenceEdit* self, intptr_t slot);
 void QKeySequenceEdit_KeySequenceChanged(QKeySequenceEdit* self, const QKeySequence* keySequence);
@@ -246,9 +241,6 @@ int QKeySequenceEdit_SuperReceivers(const QKeySequenceEdit* self, const char* si
 bool QKeySequenceEdit_IsSignalConnected(const QKeySequenceEdit* self, const QMetaMethod* signal);
 void QKeySequenceEdit_OnIsSignalConnected(const QKeySequenceEdit* self, intptr_t slot);
 bool QKeySequenceEdit_SuperIsSignalConnected(const QKeySequenceEdit* self, const QMetaMethod* signal);
-double QKeySequenceEdit_GetDecodedMetricF(const QKeySequenceEdit* self, int metricA, int metricB);
-void QKeySequenceEdit_OnGetDecodedMetricF(const QKeySequenceEdit* self, intptr_t slot);
-double QKeySequenceEdit_SuperGetDecodedMetricF(const QKeySequenceEdit* self, int metricA, int metricB);
 void QKeySequenceEdit_Delete(QKeySequenceEdit* self);
 
 #ifdef __cplusplus

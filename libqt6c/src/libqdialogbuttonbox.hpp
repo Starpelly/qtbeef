@@ -260,9 +260,6 @@ int QDialogButtonBox_SuperReceivers(const QDialogButtonBox* self, const char* si
 bool QDialogButtonBox_IsSignalConnected(const QDialogButtonBox* self, const QMetaMethod* signal);
 void QDialogButtonBox_OnIsSignalConnected(const QDialogButtonBox* self, intptr_t slot);
 bool QDialogButtonBox_SuperIsSignalConnected(const QDialogButtonBox* self, const QMetaMethod* signal);
-double QDialogButtonBox_GetDecodedMetricF(const QDialogButtonBox* self, int metricA, int metricB);
-void QDialogButtonBox_OnGetDecodedMetricF(const QDialogButtonBox* self, intptr_t slot);
-double QDialogButtonBox_SuperGetDecodedMetricF(const QDialogButtonBox* self, int metricA, int metricB);
 void QDialogButtonBox_Delete(QDialogButtonBox* self);
 
 #ifdef __cplusplus

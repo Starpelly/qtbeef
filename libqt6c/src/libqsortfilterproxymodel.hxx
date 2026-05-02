@@ -51,7 +51,7 @@ class VirtualQSortFilterProxyModel final : public QSortFilterProxyModel {
     using QSortFilterProxyModel_Match_Callback = libqt_list /* of QModelIndex* */ (*)(const QSortFilterProxyModel*, QModelIndex*, int, QVariant*, int, int);
     using QSortFilterProxyModel_Span_Callback = QSize* (*)(const QSortFilterProxyModel*, QModelIndex*);
     using QSortFilterProxyModel_Sort_Callback = void (*)(QSortFilterProxyModel*, int, int);
-    using QSortFilterProxyModel_MimeTypes_Callback = const char** (*)();
+    using QSortFilterProxyModel_MimeTypes_Callback = QStringList (*)();
     using QSortFilterProxyModel_SupportedDropActions_Callback = int (*)();
     using QSortFilterProxyModel_Submit_Callback = bool (*)();
     using QSortFilterProxyModel_Revert_Callback = void (*)();
@@ -273,8 +273,8 @@ class VirtualQSortFilterProxyModel final : public QSortFilterProxyModel {
     mutable bool qsortfilterproxymodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQSortFilterProxyModel() : QSortFilterProxyModel() {};
-    VirtualQSortFilterProxyModel(QObject* parent) : QSortFilterProxyModel(parent) {};
+    VirtualQSortFilterProxyModel() : QSortFilterProxyModel(){};
+    VirtualQSortFilterProxyModel(QObject* parent) : QSortFilterProxyModel(parent){};
 
     // Callback setters
     inline void setQSortFilterProxyModel_MetaObject_Callback(QSortFilterProxyModel_MetaObject_Callback cb) { qsortfilterproxymodel_metaobject_callback = cb; }
@@ -1103,24 +1103,15 @@ class VirtualQSortFilterProxyModel final : public QSortFilterProxyModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qsortfilterproxymodel_mimetypes_isbase) {
             qsortfilterproxymodel_mimetypes_isbase = false;
             return QSortFilterProxyModel::mimeTypes();
         }
         auto mimetypes_cb = qsortfilterproxymodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QSortFilterProxyModel::mimeTypes();
     }

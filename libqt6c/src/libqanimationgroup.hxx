@@ -78,8 +78,8 @@ class VirtualQAnimationGroup : public QAnimationGroup {
     mutable bool qanimationgroup_issignalconnected_isbase = false;
 
   public:
-    VirtualQAnimationGroup() : QAnimationGroup() {};
-    VirtualQAnimationGroup(QObject* parent) : QAnimationGroup(parent) {};
+    VirtualQAnimationGroup() : QAnimationGroup(){};
+    VirtualQAnimationGroup(QObject* parent) : QAnimationGroup(parent){};
 
     // Callback setters
     inline void setQAnimationGroup_MetaObject_Callback(QAnimationGroup_MetaObject_Callback cb) { qanimationgroup_metaobject_callback = cb; }

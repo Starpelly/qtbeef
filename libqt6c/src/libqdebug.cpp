@@ -75,14 +75,6 @@ void QDebug_SetAutoInsertSpaces(QDebug* self, bool b) {
     self->setAutoInsertSpaces(b);
 }
 
-bool QDebug_QuoteStrings(const QDebug* self) {
-    return self->quoteStrings();
-}
-
-void QDebug_SetQuoteStrings(QDebug* self, bool b) {
-    self->setQuoteStrings(b);
-}
-
 QDebug* QDebug_Quote(QDebug* self) {
     QDebug& _ret = self->quote();
     // Cast returned reference into pointer
@@ -167,52 +159,52 @@ QDebug* QDebug_OperatorShiftLeft13(QDebug* self, unsigned long long t) {
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft15(QDebug* self, float t) {
+QDebug* QDebug_OperatorShiftLeft14(QDebug* self, float t) {
     QDebug& _ret = self->operator<<(static_cast<float>(t));
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft16(QDebug* self, double t) {
+QDebug* QDebug_OperatorShiftLeft15(QDebug* self, double t) {
     QDebug& _ret = self->operator<<(static_cast<double>(t));
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft17(QDebug* self, const char* t) {
+QDebug* QDebug_OperatorShiftLeft16(QDebug* self, const char* t) {
     QDebug& _ret = self->operator<<(t);
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft19(QDebug* self, const libqt_string t) {
+QDebug* QDebug_OperatorShiftLeft18(QDebug* self, const libqt_string t) {
     QString t_QString = QString::fromUtf8(t.data, t.len);
     QDebug& _ret = self->operator<<(t_QString);
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft23(QDebug* self, const libqt_string t) {
+QDebug* QDebug_OperatorShiftLeft22(QDebug* self, const libqt_string t) {
     QByteArray t_QByteArray(t.data, t.len);
     QDebug& _ret = self->operator<<(t_QByteArray);
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft24(QDebug* self, libqt_string t) {
+QDebug* QDebug_OperatorShiftLeft23(QDebug* self, libqt_string t) {
     QByteArrayView t_QByteArrayView(t.data, t.len);
     QDebug& _ret = self->operator<<(t_QByteArrayView);
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft25(QDebug* self, const void* t) {
+QDebug* QDebug_OperatorShiftLeft24(QDebug* self, const void* t) {
     QDebug& _ret = self->operator<<(t);
     // Cast returned reference into pointer
     return &_ret;
 }
 
-QDebug* QDebug_OperatorShiftLeft28(QDebug* self, intptr_t f) {
+QDebug* QDebug_OperatorShiftLeft26(QDebug* self, intptr_t f) {
     auto f_func = reinterpret_cast<QTextStreamFunction>(f);
     QDebug& _ret = self->operator<<(f_func);
     // Cast returned reference into pointer

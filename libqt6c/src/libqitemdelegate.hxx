@@ -129,8 +129,8 @@ class VirtualQItemDelegate final : public QItemDelegate {
     mutable bool qitemdelegate_issignalconnected_isbase = false;
 
   public:
-    VirtualQItemDelegate() : QItemDelegate() {};
-    VirtualQItemDelegate(QObject* parent) : QItemDelegate(parent) {};
+    VirtualQItemDelegate() : QItemDelegate(){};
+    VirtualQItemDelegate(QObject* parent) : QItemDelegate(parent){};
 
     // Callback setters
     inline void setQItemDelegate_MetaObject_Callback(QItemDelegate_MetaObject_Callback cb) { qitemdelegate_metaobject_callback = cb; }

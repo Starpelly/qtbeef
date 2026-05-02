@@ -82,7 +82,6 @@ class VirtualQMessageBox final : public QMessageBox {
     using QMessageBox_SenderSignalIndex_Callback = int (*)();
     using QMessageBox_Receivers_Callback = int (*)(const QMessageBox*, const char*);
     using QMessageBox_IsSignalConnected_Callback = bool (*)(const QMessageBox*, QMetaMethod*);
-    using QMessageBox_GetDecodedMetricF_Callback = double (*)(const QMessageBox*, int, int);
 
   protected:
     // Instance callback storage
@@ -151,7 +150,6 @@ class VirtualQMessageBox final : public QMessageBox {
     QMessageBox_SenderSignalIndex_Callback qmessagebox_sendersignalindex_callback = nullptr;
     QMessageBox_Receivers_Callback qmessagebox_receivers_callback = nullptr;
     QMessageBox_IsSignalConnected_Callback qmessagebox_issignalconnected_callback = nullptr;
-    QMessageBox_GetDecodedMetricF_Callback qmessagebox_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qmessagebox_metaobject_isbase = false;
@@ -219,18 +217,17 @@ class VirtualQMessageBox final : public QMessageBox {
     mutable bool qmessagebox_sendersignalindex_isbase = false;
     mutable bool qmessagebox_receivers_isbase = false;
     mutable bool qmessagebox_issignalconnected_isbase = false;
-    mutable bool qmessagebox_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQMessageBox(QWidget* parent) : QMessageBox(parent) {};
-    VirtualQMessageBox() : QMessageBox() {};
-    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text) : QMessageBox(icon, title, text) {};
-    VirtualQMessageBox(const QString& title, const QString& text, QMessageBox::Icon icon, int button0, int button1, int button2) : QMessageBox(title, text, icon, button0, button1, button2) {};
-    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text, QMessageBox::StandardButtons buttons) : QMessageBox(icon, title, text, buttons) {};
-    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text, QMessageBox::StandardButtons buttons, QWidget* parent) : QMessageBox(icon, title, text, buttons, parent) {};
-    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text, QMessageBox::StandardButtons buttons, QWidget* parent, Qt::WindowFlags flags) : QMessageBox(icon, title, text, buttons, parent, flags) {};
-    VirtualQMessageBox(const QString& title, const QString& text, QMessageBox::Icon icon, int button0, int button1, int button2, QWidget* parent) : QMessageBox(title, text, icon, button0, button1, button2, parent) {};
-    VirtualQMessageBox(const QString& title, const QString& text, QMessageBox::Icon icon, int button0, int button1, int button2, QWidget* parent, Qt::WindowFlags f) : QMessageBox(title, text, icon, button0, button1, button2, parent, f) {};
+    VirtualQMessageBox(QWidget* parent) : QMessageBox(parent){};
+    VirtualQMessageBox() : QMessageBox(){};
+    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text) : QMessageBox(icon, title, text){};
+    VirtualQMessageBox(const QString& title, const QString& text, QMessageBox::Icon icon, int button0, int button1, int button2) : QMessageBox(title, text, icon, button0, button1, button2){};
+    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text, QMessageBox::StandardButtons buttons) : QMessageBox(icon, title, text, buttons){};
+    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text, QMessageBox::StandardButtons buttons, QWidget* parent) : QMessageBox(icon, title, text, buttons, parent){};
+    VirtualQMessageBox(QMessageBox::Icon icon, const QString& title, const QString& text, QMessageBox::StandardButtons buttons, QWidget* parent, Qt::WindowFlags flags) : QMessageBox(icon, title, text, buttons, parent, flags){};
+    VirtualQMessageBox(const QString& title, const QString& text, QMessageBox::Icon icon, int button0, int button1, int button2, QWidget* parent) : QMessageBox(title, text, icon, button0, button1, button2, parent){};
+    VirtualQMessageBox(const QString& title, const QString& text, QMessageBox::Icon icon, int button0, int button1, int button2, QWidget* parent, Qt::WindowFlags f) : QMessageBox(title, text, icon, button0, button1, button2, parent, f){};
 
     // Callback setters
     inline void setQMessageBox_MetaObject_Callback(QMessageBox_MetaObject_Callback cb) { qmessagebox_metaobject_callback = cb; }
@@ -298,7 +295,6 @@ class VirtualQMessageBox final : public QMessageBox {
     inline void setQMessageBox_SenderSignalIndex_Callback(QMessageBox_SenderSignalIndex_Callback cb) { qmessagebox_sendersignalindex_callback = cb; }
     inline void setQMessageBox_Receivers_Callback(QMessageBox_Receivers_Callback cb) { qmessagebox_receivers_callback = cb; }
     inline void setQMessageBox_IsSignalConnected_Callback(QMessageBox_IsSignalConnected_Callback cb) { qmessagebox_issignalconnected_callback = cb; }
-    inline void setQMessageBox_GetDecodedMetricF_Callback(QMessageBox_GetDecodedMetricF_Callback cb) { qmessagebox_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQMessageBox_MetaObject_IsBase(bool value) const { qmessagebox_metaobject_isbase = value; }
@@ -366,7 +362,6 @@ class VirtualQMessageBox final : public QMessageBox {
     inline void setQMessageBox_SenderSignalIndex_IsBase(bool value) const { qmessagebox_sendersignalindex_isbase = value; }
     inline void setQMessageBox_Receivers_IsBase(bool value) const { qmessagebox_receivers_isbase = value; }
     inline void setQMessageBox_IsSignalConnected_IsBase(bool value) const { qmessagebox_issignalconnected_isbase = value; }
-    inline void setQMessageBox_GetDecodedMetricF_IsBase(bool value) const { qmessagebox_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1431,23 +1426,6 @@ class VirtualQMessageBox final : public QMessageBox {
         return QMessageBox::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qmessagebox_getdecodedmetricf_isbase) {
-            qmessagebox_getdecodedmetricf_isbase = false;
-            return QMessageBox::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qmessagebox_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QMessageBox::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QMessageBox_Event(QMessageBox* self, QEvent* e);
     friend bool QMessageBox_SuperEvent(QMessageBox* self, QEvent* e);
@@ -1547,8 +1525,6 @@ class VirtualQMessageBox final : public QMessageBox {
     friend int QMessageBox_SuperReceivers(const QMessageBox* self, const char* signal);
     friend bool QMessageBox_IsSignalConnected(const QMessageBox* self, const QMetaMethod* signal);
     friend bool QMessageBox_SuperIsSignalConnected(const QMessageBox* self, const QMetaMethod* signal);
-    friend double QMessageBox_GetDecodedMetricF(const QMessageBox* self, int metricA, int metricB);
-    friend double QMessageBox_SuperGetDecodedMetricF(const QMessageBox* self, int metricA, int metricB);
 };
 
 #endif

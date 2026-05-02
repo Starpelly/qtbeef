@@ -282,9 +282,6 @@ int QProgressDialog_SuperReceivers(const QProgressDialog* self, const char* sign
 bool QProgressDialog_IsSignalConnected(const QProgressDialog* self, const QMetaMethod* signal);
 void QProgressDialog_OnIsSignalConnected(const QProgressDialog* self, intptr_t slot);
 bool QProgressDialog_SuperIsSignalConnected(const QProgressDialog* self, const QMetaMethod* signal);
-double QProgressDialog_GetDecodedMetricF(const QProgressDialog* self, int metricA, int metricB);
-void QProgressDialog_OnGetDecodedMetricF(const QProgressDialog* self, intptr_t slot);
-double QProgressDialog_SuperGetDecodedMetricF(const QProgressDialog* self, int metricA, int metricB);
 void QProgressDialog_Delete(QProgressDialog* self);
 
 #ifdef __cplusplus

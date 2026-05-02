@@ -400,9 +400,6 @@ int QTextEdit_SuperReceivers(const QTextEdit* self, const char* signal);
 bool QTextEdit_IsSignalConnected(const QTextEdit* self, const QMetaMethod* signal);
 void QTextEdit_OnIsSignalConnected(const QTextEdit* self, intptr_t slot);
 bool QTextEdit_SuperIsSignalConnected(const QTextEdit* self, const QMetaMethod* signal);
-double QTextEdit_GetDecodedMetricF(const QTextEdit* self, int metricA, int metricB);
-void QTextEdit_OnGetDecodedMetricF(const QTextEdit* self, intptr_t slot);
-double QTextEdit_SuperGetDecodedMetricF(const QTextEdit* self, int metricA, int metricB);
 void QTextEdit_Delete(QTextEdit* self);
 
 QTextEdit__ExtraSelection* QTextEdit__ExtraSelection_new(const QTextEdit__ExtraSelection* param1);

@@ -77,7 +77,6 @@ class VirtualQToolBar final : public QToolBar {
     using QToolBar_SenderSignalIndex_Callback = int (*)();
     using QToolBar_Receivers_Callback = int (*)(const QToolBar*, const char*);
     using QToolBar_IsSignalConnected_Callback = bool (*)(const QToolBar*, QMetaMethod*);
-    using QToolBar_GetDecodedMetricF_Callback = double (*)(const QToolBar*, int, int);
 
   protected:
     // Instance callback storage
@@ -141,7 +140,6 @@ class VirtualQToolBar final : public QToolBar {
     QToolBar_SenderSignalIndex_Callback qtoolbar_sendersignalindex_callback = nullptr;
     QToolBar_Receivers_Callback qtoolbar_receivers_callback = nullptr;
     QToolBar_IsSignalConnected_Callback qtoolbar_issignalconnected_callback = nullptr;
-    QToolBar_GetDecodedMetricF_Callback qtoolbar_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qtoolbar_metaobject_isbase = false;
@@ -204,13 +202,12 @@ class VirtualQToolBar final : public QToolBar {
     mutable bool qtoolbar_sendersignalindex_isbase = false;
     mutable bool qtoolbar_receivers_isbase = false;
     mutable bool qtoolbar_issignalconnected_isbase = false;
-    mutable bool qtoolbar_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQToolBar(QWidget* parent) : QToolBar(parent) {};
-    VirtualQToolBar(const QString& title) : QToolBar(title) {};
-    VirtualQToolBar() : QToolBar() {};
-    VirtualQToolBar(const QString& title, QWidget* parent) : QToolBar(title, parent) {};
+    VirtualQToolBar(QWidget* parent) : QToolBar(parent){};
+    VirtualQToolBar(const QString& title) : QToolBar(title){};
+    VirtualQToolBar() : QToolBar(){};
+    VirtualQToolBar(const QString& title, QWidget* parent) : QToolBar(title, parent){};
 
     // Callback setters
     inline void setQToolBar_MetaObject_Callback(QToolBar_MetaObject_Callback cb) { qtoolbar_metaobject_callback = cb; }
@@ -273,7 +270,6 @@ class VirtualQToolBar final : public QToolBar {
     inline void setQToolBar_SenderSignalIndex_Callback(QToolBar_SenderSignalIndex_Callback cb) { qtoolbar_sendersignalindex_callback = cb; }
     inline void setQToolBar_Receivers_Callback(QToolBar_Receivers_Callback cb) { qtoolbar_receivers_callback = cb; }
     inline void setQToolBar_IsSignalConnected_Callback(QToolBar_IsSignalConnected_Callback cb) { qtoolbar_issignalconnected_callback = cb; }
-    inline void setQToolBar_GetDecodedMetricF_Callback(QToolBar_GetDecodedMetricF_Callback cb) { qtoolbar_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQToolBar_MetaObject_IsBase(bool value) const { qtoolbar_metaobject_isbase = value; }
@@ -336,7 +332,6 @@ class VirtualQToolBar final : public QToolBar {
     inline void setQToolBar_SenderSignalIndex_IsBase(bool value) const { qtoolbar_sendersignalindex_isbase = value; }
     inline void setQToolBar_Receivers_IsBase(bool value) const { qtoolbar_receivers_isbase = value; }
     inline void setQToolBar_IsSignalConnected_IsBase(bool value) const { qtoolbar_issignalconnected_isbase = value; }
-    inline void setQToolBar_GetDecodedMetricF_IsBase(bool value) const { qtoolbar_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1325,23 +1320,6 @@ class VirtualQToolBar final : public QToolBar {
         return QToolBar::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qtoolbar_getdecodedmetricf_isbase) {
-            qtoolbar_getdecodedmetricf_isbase = false;
-            return QToolBar::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qtoolbar_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QToolBar::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend void QToolBar_ActionEvent(QToolBar* self, QActionEvent* event);
     friend void QToolBar_SuperActionEvent(QToolBar* self, QActionEvent* event);
@@ -1439,8 +1417,6 @@ class VirtualQToolBar final : public QToolBar {
     friend int QToolBar_SuperReceivers(const QToolBar* self, const char* signal);
     friend bool QToolBar_IsSignalConnected(const QToolBar* self, const QMetaMethod* signal);
     friend bool QToolBar_SuperIsSignalConnected(const QToolBar* self, const QMetaMethod* signal);
-    friend double QToolBar_GetDecodedMetricF(const QToolBar* self, int metricA, int metricB);
-    friend double QToolBar_SuperGetDecodedMetricF(const QToolBar* self, int metricA, int metricB);
 };
 
 #endif

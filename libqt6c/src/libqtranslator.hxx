@@ -72,8 +72,8 @@ class VirtualQTranslator final : public QTranslator {
     mutable bool qtranslator_issignalconnected_isbase = false;
 
   public:
-    VirtualQTranslator() : QTranslator() {};
-    VirtualQTranslator(QObject* parent) : QTranslator(parent) {};
+    VirtualQTranslator() : QTranslator(){};
+    VirtualQTranslator(QObject* parent) : QTranslator(parent){};
 
     // Callback setters
     inline void setQTranslator_MetaObject_Callback(QTranslator_MetaObject_Callback cb) { qtranslator_metaobject_callback = cb; }

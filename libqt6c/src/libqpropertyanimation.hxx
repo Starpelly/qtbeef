@@ -84,10 +84,10 @@ class VirtualQPropertyAnimation final : public QPropertyAnimation {
     mutable bool qpropertyanimation_issignalconnected_isbase = false;
 
   public:
-    VirtualQPropertyAnimation() : QPropertyAnimation() {};
-    VirtualQPropertyAnimation(QObject* target, const QByteArray& propertyName) : QPropertyAnimation(target, propertyName) {};
-    VirtualQPropertyAnimation(QObject* parent) : QPropertyAnimation(parent) {};
-    VirtualQPropertyAnimation(QObject* target, const QByteArray& propertyName, QObject* parent) : QPropertyAnimation(target, propertyName, parent) {};
+    VirtualQPropertyAnimation() : QPropertyAnimation(){};
+    VirtualQPropertyAnimation(QObject* target, const QByteArray& propertyName) : QPropertyAnimation(target, propertyName){};
+    VirtualQPropertyAnimation(QObject* parent) : QPropertyAnimation(parent){};
+    VirtualQPropertyAnimation(QObject* target, const QByteArray& propertyName, QObject* parent) : QPropertyAnimation(target, propertyName, parent){};
 
     // Callback setters
     inline void setQPropertyAnimation_MetaObject_Callback(QPropertyAnimation_MetaObject_Callback cb) { qpropertyanimation_metaobject_callback = cb; }

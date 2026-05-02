@@ -78,7 +78,6 @@ class VirtualQProgressBar final : public QProgressBar {
     using QProgressBar_SenderSignalIndex_Callback = int (*)();
     using QProgressBar_Receivers_Callback = int (*)(const QProgressBar*, const char*);
     using QProgressBar_IsSignalConnected_Callback = bool (*)(const QProgressBar*, QMetaMethod*);
-    using QProgressBar_GetDecodedMetricF_Callback = double (*)(const QProgressBar*, int, int);
 
   protected:
     // Instance callback storage
@@ -143,7 +142,6 @@ class VirtualQProgressBar final : public QProgressBar {
     QProgressBar_SenderSignalIndex_Callback qprogressbar_sendersignalindex_callback = nullptr;
     QProgressBar_Receivers_Callback qprogressbar_receivers_callback = nullptr;
     QProgressBar_IsSignalConnected_Callback qprogressbar_issignalconnected_callback = nullptr;
-    QProgressBar_GetDecodedMetricF_Callback qprogressbar_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qprogressbar_metaobject_isbase = false;
@@ -207,11 +205,10 @@ class VirtualQProgressBar final : public QProgressBar {
     mutable bool qprogressbar_sendersignalindex_isbase = false;
     mutable bool qprogressbar_receivers_isbase = false;
     mutable bool qprogressbar_issignalconnected_isbase = false;
-    mutable bool qprogressbar_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQProgressBar(QWidget* parent) : QProgressBar(parent) {};
-    VirtualQProgressBar() : QProgressBar() {};
+    VirtualQProgressBar(QWidget* parent) : QProgressBar(parent){};
+    VirtualQProgressBar() : QProgressBar(){};
 
     // Callback setters
     inline void setQProgressBar_MetaObject_Callback(QProgressBar_MetaObject_Callback cb) { qprogressbar_metaobject_callback = cb; }
@@ -275,7 +272,6 @@ class VirtualQProgressBar final : public QProgressBar {
     inline void setQProgressBar_SenderSignalIndex_Callback(QProgressBar_SenderSignalIndex_Callback cb) { qprogressbar_sendersignalindex_callback = cb; }
     inline void setQProgressBar_Receivers_Callback(QProgressBar_Receivers_Callback cb) { qprogressbar_receivers_callback = cb; }
     inline void setQProgressBar_IsSignalConnected_Callback(QProgressBar_IsSignalConnected_Callback cb) { qprogressbar_issignalconnected_callback = cb; }
-    inline void setQProgressBar_GetDecodedMetricF_Callback(QProgressBar_GetDecodedMetricF_Callback cb) { qprogressbar_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQProgressBar_MetaObject_IsBase(bool value) const { qprogressbar_metaobject_isbase = value; }
@@ -339,7 +335,6 @@ class VirtualQProgressBar final : public QProgressBar {
     inline void setQProgressBar_SenderSignalIndex_IsBase(bool value) const { qprogressbar_sendersignalindex_isbase = value; }
     inline void setQProgressBar_Receivers_IsBase(bool value) const { qprogressbar_receivers_isbase = value; }
     inline void setQProgressBar_IsSignalConnected_IsBase(bool value) const { qprogressbar_issignalconnected_isbase = value; }
-    inline void setQProgressBar_GetDecodedMetricF_IsBase(bool value) const { qprogressbar_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1343,23 +1338,6 @@ class VirtualQProgressBar final : public QProgressBar {
         return QProgressBar::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qprogressbar_getdecodedmetricf_isbase) {
-            qprogressbar_getdecodedmetricf_isbase = false;
-            return QProgressBar::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qprogressbar_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QProgressBar::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QProgressBar_Event(QProgressBar* self, QEvent* e);
     friend bool QProgressBar_SuperEvent(QProgressBar* self, QEvent* e);
@@ -1457,8 +1435,6 @@ class VirtualQProgressBar final : public QProgressBar {
     friend int QProgressBar_SuperReceivers(const QProgressBar* self, const char* signal);
     friend bool QProgressBar_IsSignalConnected(const QProgressBar* self, const QMetaMethod* signal);
     friend bool QProgressBar_SuperIsSignalConnected(const QProgressBar* self, const QMetaMethod* signal);
-    friend double QProgressBar_GetDecodedMetricF(const QProgressBar* self, int metricA, int metricB);
-    friend double QProgressBar_SuperGetDecodedMetricF(const QProgressBar* self, int metricA, int metricB);
 };
 
 #endif

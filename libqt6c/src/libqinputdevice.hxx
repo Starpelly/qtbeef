@@ -66,11 +66,11 @@ class VirtualQInputDevice final : public QInputDevice {
     mutable bool qinputdevice_issignalconnected_isbase = false;
 
   public:
-    VirtualQInputDevice() : QInputDevice() {};
-    VirtualQInputDevice(const QString& name, qint64 systemId, QInputDevice::DeviceType type) : QInputDevice(name, systemId, type) {};
-    VirtualQInputDevice(QObject* parent) : QInputDevice(parent) {};
-    VirtualQInputDevice(const QString& name, qint64 systemId, QInputDevice::DeviceType type, const QString& seatName) : QInputDevice(name, systemId, type, seatName) {};
-    VirtualQInputDevice(const QString& name, qint64 systemId, QInputDevice::DeviceType type, const QString& seatName, QObject* parent) : QInputDevice(name, systemId, type, seatName, parent) {};
+    VirtualQInputDevice() : QInputDevice(){};
+    VirtualQInputDevice(const QString& name, qint64 systemId, QInputDevice::DeviceType type) : QInputDevice(name, systemId, type){};
+    VirtualQInputDevice(QObject* parent) : QInputDevice(parent){};
+    VirtualQInputDevice(const QString& name, qint64 systemId, QInputDevice::DeviceType type, const QString& seatName) : QInputDevice(name, systemId, type, seatName){};
+    VirtualQInputDevice(const QString& name, qint64 systemId, QInputDevice::DeviceType type, const QString& seatName, QObject* parent) : QInputDevice(name, systemId, type, seatName, parent){};
 
     // Callback setters
     inline void setQInputDevice_MetaObject_Callback(QInputDevice_MetaObject_Callback cb) { qinputdevice_metaobject_callback = cb; }

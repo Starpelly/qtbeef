@@ -86,7 +86,6 @@ class VirtualQWizard final : public QWizard {
     using QWizard_SenderSignalIndex_Callback = int (*)();
     using QWizard_Receivers_Callback = int (*)(const QWizard*, const char*);
     using QWizard_IsSignalConnected_Callback = bool (*)(const QWizard*, QMetaMethod*);
-    using QWizard_GetDecodedMetricF_Callback = double (*)(const QWizard*, int, int);
 
   protected:
     // Instance callback storage
@@ -159,7 +158,6 @@ class VirtualQWizard final : public QWizard {
     QWizard_SenderSignalIndex_Callback qwizard_sendersignalindex_callback = nullptr;
     QWizard_Receivers_Callback qwizard_receivers_callback = nullptr;
     QWizard_IsSignalConnected_Callback qwizard_issignalconnected_callback = nullptr;
-    QWizard_GetDecodedMetricF_Callback qwizard_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qwizard_metaobject_isbase = false;
@@ -231,12 +229,11 @@ class VirtualQWizard final : public QWizard {
     mutable bool qwizard_sendersignalindex_isbase = false;
     mutable bool qwizard_receivers_isbase = false;
     mutable bool qwizard_issignalconnected_isbase = false;
-    mutable bool qwizard_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQWizard(QWidget* parent) : QWizard(parent) {};
-    VirtualQWizard() : QWizard() {};
-    VirtualQWizard(QWidget* parent, Qt::WindowFlags flags) : QWizard(parent, flags) {};
+    VirtualQWizard(QWidget* parent) : QWizard(parent){};
+    VirtualQWizard() : QWizard(){};
+    VirtualQWizard(QWidget* parent, Qt::WindowFlags flags) : QWizard(parent, flags){};
 
     // Callback setters
     inline void setQWizard_MetaObject_Callback(QWizard_MetaObject_Callback cb) { qwizard_metaobject_callback = cb; }
@@ -308,7 +305,6 @@ class VirtualQWizard final : public QWizard {
     inline void setQWizard_SenderSignalIndex_Callback(QWizard_SenderSignalIndex_Callback cb) { qwizard_sendersignalindex_callback = cb; }
     inline void setQWizard_Receivers_Callback(QWizard_Receivers_Callback cb) { qwizard_receivers_callback = cb; }
     inline void setQWizard_IsSignalConnected_Callback(QWizard_IsSignalConnected_Callback cb) { qwizard_issignalconnected_callback = cb; }
-    inline void setQWizard_GetDecodedMetricF_Callback(QWizard_GetDecodedMetricF_Callback cb) { qwizard_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQWizard_MetaObject_IsBase(bool value) const { qwizard_metaobject_isbase = value; }
@@ -380,7 +376,6 @@ class VirtualQWizard final : public QWizard {
     inline void setQWizard_SenderSignalIndex_IsBase(bool value) const { qwizard_sendersignalindex_isbase = value; }
     inline void setQWizard_Receivers_IsBase(bool value) const { qwizard_receivers_isbase = value; }
     inline void setQWizard_IsSignalConnected_IsBase(bool value) const { qwizard_issignalconnected_isbase = value; }
-    inline void setQWizard_GetDecodedMetricF_IsBase(bool value) const { qwizard_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -1507,23 +1502,6 @@ class VirtualQWizard final : public QWizard {
         return QWizard::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qwizard_getdecodedmetricf_isbase) {
-            qwizard_getdecodedmetricf_isbase = false;
-            return QWizard::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qwizard_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QWizard::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QWizard_Event(QWizard* self, QEvent* event);
     friend bool QWizard_SuperEvent(QWizard* self, QEvent* event);
@@ -1629,8 +1607,6 @@ class VirtualQWizard final : public QWizard {
     friend int QWizard_SuperReceivers(const QWizard* self, const char* signal);
     friend bool QWizard_IsSignalConnected(const QWizard* self, const QMetaMethod* signal);
     friend bool QWizard_SuperIsSignalConnected(const QWizard* self, const QMetaMethod* signal);
-    friend double QWizard_GetDecodedMetricF(const QWizard* self, int metricA, int metricB);
-    friend double QWizard_SuperGetDecodedMetricF(const QWizard* self, int metricA, int metricB);
 };
 
 // This class is a subclass of QWizardPage so that we can call protected methods
@@ -1711,7 +1687,6 @@ class VirtualQWizardPage final : public QWizardPage {
     using QWizardPage_SenderSignalIndex_Callback = int (*)();
     using QWizardPage_Receivers_Callback = int (*)(const QWizardPage*, const char*);
     using QWizardPage_IsSignalConnected_Callback = bool (*)(const QWizardPage*, QMetaMethod*);
-    using QWizardPage_GetDecodedMetricF_Callback = double (*)(const QWizardPage*, int, int);
 
   protected:
     // Instance callback storage
@@ -1785,7 +1760,6 @@ class VirtualQWizardPage final : public QWizardPage {
     QWizardPage_SenderSignalIndex_Callback qwizardpage_sendersignalindex_callback = nullptr;
     QWizardPage_Receivers_Callback qwizardpage_receivers_callback = nullptr;
     QWizardPage_IsSignalConnected_Callback qwizardpage_issignalconnected_callback = nullptr;
-    QWizardPage_GetDecodedMetricF_Callback qwizardpage_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qwizardpage_metaobject_isbase = false;
@@ -1858,11 +1832,10 @@ class VirtualQWizardPage final : public QWizardPage {
     mutable bool qwizardpage_sendersignalindex_isbase = false;
     mutable bool qwizardpage_receivers_isbase = false;
     mutable bool qwizardpage_issignalconnected_isbase = false;
-    mutable bool qwizardpage_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQWizardPage(QWidget* parent) : QWizardPage(parent) {};
-    VirtualQWizardPage() : QWizardPage() {};
+    VirtualQWizardPage(QWidget* parent) : QWizardPage(parent){};
+    VirtualQWizardPage() : QWizardPage(){};
 
     // Callback setters
     inline void setQWizardPage_MetaObject_Callback(QWizardPage_MetaObject_Callback cb) { qwizardpage_metaobject_callback = cb; }
@@ -1935,7 +1908,6 @@ class VirtualQWizardPage final : public QWizardPage {
     inline void setQWizardPage_SenderSignalIndex_Callback(QWizardPage_SenderSignalIndex_Callback cb) { qwizardpage_sendersignalindex_callback = cb; }
     inline void setQWizardPage_Receivers_Callback(QWizardPage_Receivers_Callback cb) { qwizardpage_receivers_callback = cb; }
     inline void setQWizardPage_IsSignalConnected_Callback(QWizardPage_IsSignalConnected_Callback cb) { qwizardpage_issignalconnected_callback = cb; }
-    inline void setQWizardPage_GetDecodedMetricF_Callback(QWizardPage_GetDecodedMetricF_Callback cb) { qwizardpage_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQWizardPage_MetaObject_IsBase(bool value) const { qwizardpage_metaobject_isbase = value; }
@@ -2008,7 +1980,6 @@ class VirtualQWizardPage final : public QWizardPage {
     inline void setQWizardPage_SenderSignalIndex_IsBase(bool value) const { qwizardpage_sendersignalindex_isbase = value; }
     inline void setQWizardPage_Receivers_IsBase(bool value) const { qwizardpage_receivers_isbase = value; }
     inline void setQWizardPage_IsSignalConnected_IsBase(bool value) const { qwizardpage_issignalconnected_isbase = value; }
-    inline void setQWizardPage_GetDecodedMetricF_IsBase(bool value) const { qwizardpage_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual const QMetaObject* metaObject() const override {
@@ -3199,23 +3170,6 @@ class VirtualQWizardPage final : public QWizardPage {
         return QWizardPage::isSignalConnected(signal);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qwizardpage_getdecodedmetricf_isbase) {
-            qwizardpage_getdecodedmetricf_isbase = false;
-            return QWizardPage::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qwizardpage_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QWizardPage::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend bool QWizardPage_Event(QWizardPage* self, QEvent* event);
     friend bool QWizardPage_SuperEvent(QWizardPage* self, QEvent* event);
@@ -3323,8 +3277,6 @@ class VirtualQWizardPage final : public QWizardPage {
     friend int QWizardPage_SuperReceivers(const QWizardPage* self, const char* signal);
     friend bool QWizardPage_IsSignalConnected(const QWizardPage* self, const QMetaMethod* signal);
     friend bool QWizardPage_SuperIsSignalConnected(const QWizardPage* self, const QMetaMethod* signal);
-    friend double QWizardPage_GetDecodedMetricF(const QWizardPage* self, int metricA, int metricB);
-    friend double QWizardPage_SuperGetDecodedMetricF(const QWizardPage* self, int metricA, int metricB);
 };
 
 #endif

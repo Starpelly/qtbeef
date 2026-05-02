@@ -32,7 +32,6 @@ class VirtualQImage final : public QImage {
     using QImage_SmoothScaled_Callback = QImage* (*)(const QImage*, int, int);
     using QImage_DetachMetadata_Callback = void (*)();
     using QImage_DetachMetadata1_Callback = void (*)(QImage*, bool);
-    using QImage_GetDecodedMetricF_Callback = double (*)(const QImage*, int, int);
 
   protected:
     // Instance callback storage
@@ -51,7 +50,6 @@ class VirtualQImage final : public QImage {
     QImage_SmoothScaled_Callback qimage_smoothscaled_callback = nullptr;
     QImage_DetachMetadata_Callback qimage_detachmetadata_callback = nullptr;
     QImage_DetachMetadata1_Callback qimage_detachmetadata1_callback = nullptr;
-    QImage_GetDecodedMetricF_Callback qimage_getdecodedmetricf_callback = nullptr;
 
     // Instance base flags
     mutable bool qimage_devtype_isbase = false;
@@ -69,28 +67,27 @@ class VirtualQImage final : public QImage {
     mutable bool qimage_smoothscaled_isbase = false;
     mutable bool qimage_detachmetadata_isbase = false;
     mutable bool qimage_detachmetadata1_isbase = false;
-    mutable bool qimage_getdecodedmetricf_isbase = false;
 
   public:
-    VirtualQImage() : QImage() {};
-    VirtualQImage(const QSize& size, QImage::Format format) : QImage(size, format) {};
-    VirtualQImage(int width, int height, QImage::Format format) : QImage(width, height, format) {};
-    VirtualQImage(uchar* data, int width, int height, QImage::Format format) : QImage(data, width, height, format) {};
-    VirtualQImage(const uchar* data, int width, int height, QImage::Format format) : QImage(data, width, height, format) {};
-    VirtualQImage(uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format) : QImage(data, width, height, bytesPerLine, format) {};
-    VirtualQImage(const uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format) : QImage(data, width, height, bytesPerLine, format) {};
-    VirtualQImage(const char** xpm) : QImage(xpm) {};
-    VirtualQImage(const QString& fileName) : QImage(fileName) {};
-    VirtualQImage(const QImage& param1) : QImage(param1) {};
-    VirtualQImage(uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, format, cleanupFunction) {};
-    VirtualQImage(uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, format, cleanupFunction, cleanupInfo) {};
-    VirtualQImage(const uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, format, cleanupFunction) {};
-    VirtualQImage(const uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, format, cleanupFunction, cleanupInfo) {};
-    VirtualQImage(uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, bytesPerLine, format, cleanupFunction) {};
-    VirtualQImage(uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, bytesPerLine, format, cleanupFunction, cleanupInfo) {};
-    VirtualQImage(const uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, bytesPerLine, format, cleanupFunction) {};
-    VirtualQImage(const uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, bytesPerLine, format, cleanupFunction, cleanupInfo) {};
-    VirtualQImage(const QString& fileName, const char* format) : QImage(fileName, format) {};
+    VirtualQImage() : QImage(){};
+    VirtualQImage(const QSize& size, QImage::Format format) : QImage(size, format){};
+    VirtualQImage(int width, int height, QImage::Format format) : QImage(width, height, format){};
+    VirtualQImage(uchar* data, int width, int height, QImage::Format format) : QImage(data, width, height, format){};
+    VirtualQImage(const uchar* data, int width, int height, QImage::Format format) : QImage(data, width, height, format){};
+    VirtualQImage(uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format) : QImage(data, width, height, bytesPerLine, format){};
+    VirtualQImage(const uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format) : QImage(data, width, height, bytesPerLine, format){};
+    VirtualQImage(const char** xpm) : QImage(xpm){};
+    VirtualQImage(const QString& fileName) : QImage(fileName){};
+    VirtualQImage(const QImage& param1) : QImage(param1){};
+    VirtualQImage(uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, format, cleanupFunction){};
+    VirtualQImage(uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, format, cleanupFunction, cleanupInfo){};
+    VirtualQImage(const uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, format, cleanupFunction){};
+    VirtualQImage(const uchar* data, int width, int height, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, format, cleanupFunction, cleanupInfo){};
+    VirtualQImage(uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, bytesPerLine, format, cleanupFunction){};
+    VirtualQImage(uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, bytesPerLine, format, cleanupFunction, cleanupInfo){};
+    VirtualQImage(const uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction) : QImage(data, width, height, bytesPerLine, format, cleanupFunction){};
+    VirtualQImage(const uchar* data, int width, int height, qsizetype bytesPerLine, QImage::Format format, QImageCleanupFunction cleanupFunction, void* cleanupInfo) : QImage(data, width, height, bytesPerLine, format, cleanupFunction, cleanupInfo){};
+    VirtualQImage(const QString& fileName, const char* format) : QImage(fileName, format){};
 
     // Callback setters
     inline void setQImage_DevType_Callback(QImage_DevType_Callback cb) { qimage_devtype_callback = cb; }
@@ -108,7 +105,6 @@ class VirtualQImage final : public QImage {
     inline void setQImage_SmoothScaled_Callback(QImage_SmoothScaled_Callback cb) { qimage_smoothscaled_callback = cb; }
     inline void setQImage_DetachMetadata_Callback(QImage_DetachMetadata_Callback cb) { qimage_detachmetadata_callback = cb; }
     inline void setQImage_DetachMetadata1_Callback(QImage_DetachMetadata1_Callback cb) { qimage_detachmetadata1_callback = cb; }
-    inline void setQImage_GetDecodedMetricF_Callback(QImage_GetDecodedMetricF_Callback cb) { qimage_getdecodedmetricf_callback = cb; }
 
     // Base flag setters
     inline void setQImage_DevType_IsBase(bool value) const { qimage_devtype_isbase = value; }
@@ -126,7 +122,6 @@ class VirtualQImage final : public QImage {
     inline void setQImage_SmoothScaled_IsBase(bool value) const { qimage_smoothscaled_isbase = value; }
     inline void setQImage_DetachMetadata_IsBase(bool value) const { qimage_detachmetadata_isbase = value; }
     inline void setQImage_DetachMetadata1_IsBase(bool value) const { qimage_detachmetadata1_isbase = value; }
-    inline void setQImage_GetDecodedMetricF_IsBase(bool value) const { qimage_getdecodedmetricf_isbase = value; }
 
     // Virtual method for C ABI access and custom callback
     virtual int devType() const override {
@@ -366,23 +361,6 @@ class VirtualQImage final : public QImage {
         QImage::detachMetadata(invalidateCache);
     }
 
-    // Virtual method for C ABI access and custom callback
-    double getDecodedMetricF(QPaintDevice::PaintDeviceMetric metricA, QPaintDevice::PaintDeviceMetric metricB) const {
-        if (qimage_getdecodedmetricf_isbase) {
-            qimage_getdecodedmetricf_isbase = false;
-            return QImage::getDecodedMetricF(metricA, metricB);
-        }
-        auto getdecodedmetricf_cb = qimage_getdecodedmetricf_callback;
-        if (getdecodedmetricf_cb) {
-            int cbval1 = static_cast<int>(metricA);
-            int cbval2 = static_cast<int>(metricB);
-
-            double callback_ret = getdecodedmetricf_cb(this, cbval1, cbval2);
-            return static_cast<double>(callback_ret);
-        }
-        return QImage::getDecodedMetricF(metricA, metricB);
-    }
-
     // Friend functions
     friend int QImage_Metric(const QImage* self, int metric);
     friend int QImage_SuperMetric(const QImage* self, int metric);
@@ -410,8 +388,6 @@ class VirtualQImage final : public QImage {
     friend void QImage_SuperDetachMetadata(QImage* self);
     friend void QImage_DetachMetadata1(QImage* self, bool invalidateCache);
     friend void QImage_SuperDetachMetadata1(QImage* self, bool invalidateCache);
-    friend double QImage_GetDecodedMetricF(const QImage* self, int metricA, int metricB);
-    friend double QImage_SuperGetDecodedMetricF(const QImage* self, int metricA, int metricB);
 };
 
 #endif

@@ -298,9 +298,6 @@ int QMainWindow_SuperReceivers(const QMainWindow* self, const char* signal);
 bool QMainWindow_IsSignalConnected(const QMainWindow* self, const QMetaMethod* signal);
 void QMainWindow_OnIsSignalConnected(const QMainWindow* self, intptr_t slot);
 bool QMainWindow_SuperIsSignalConnected(const QMainWindow* self, const QMetaMethod* signal);
-double QMainWindow_GetDecodedMetricF(const QMainWindow* self, int metricA, int metricB);
-void QMainWindow_OnGetDecodedMetricF(const QMainWindow* self, intptr_t slot);
-double QMainWindow_SuperGetDecodedMetricF(const QMainWindow* self, int metricA, int metricB);
 void QMainWindow_Delete(QMainWindow* self);
 
 #ifdef __cplusplus

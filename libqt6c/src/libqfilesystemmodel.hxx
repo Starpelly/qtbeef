@@ -33,7 +33,7 @@ class VirtualQFileSystemModel final : public QFileSystemModel {
     using QFileSystemModel_HeaderData_Callback = QVariant* (*)(const QFileSystemModel*, int, int, int);
     using QFileSystemModel_Flags_Callback = int (*)(const QFileSystemModel*, QModelIndex*);
     using QFileSystemModel_Sort_Callback = void (*)(QFileSystemModel*, int, int);
-    using QFileSystemModel_MimeTypes_Callback = const char** (*)();
+    using QFileSystemModel_MimeTypes_Callback = QStringList (*)();
     using QFileSystemModel_MimeData_Callback = QMimeData* (*)(const QFileSystemModel*, libqt_list /* of QModelIndex* */);
     using QFileSystemModel_DropMimeData_Callback = bool (*)(QFileSystemModel*, QMimeData*, int, int, int, QModelIndex*);
     using QFileSystemModel_SupportedDropActions_Callback = int (*)();
@@ -237,8 +237,8 @@ class VirtualQFileSystemModel final : public QFileSystemModel {
     mutable bool qfilesystemmodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQFileSystemModel() : QFileSystemModel() {};
-    VirtualQFileSystemModel(QObject* parent) : QFileSystemModel(parent) {};
+    VirtualQFileSystemModel() : QFileSystemModel(){};
+    VirtualQFileSystemModel(QObject* parent) : QFileSystemModel(parent){};
 
     // Callback setters
     inline void setQFileSystemModel_MetaObject_Callback(QFileSystemModel_MetaObject_Callback cb) { qfilesystemmodel_metaobject_callback = cb; }
@@ -679,24 +679,15 @@ class VirtualQFileSystemModel final : public QFileSystemModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qfilesystemmodel_mimetypes_isbase) {
             qfilesystemmodel_mimetypes_isbase = false;
             return QFileSystemModel::mimeTypes();
         }
         auto mimetypes_cb = qfilesystemmodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QFileSystemModel::mimeTypes();
     }

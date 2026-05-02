@@ -283,9 +283,6 @@ int QAbstractSpinBox_SuperReceivers(const QAbstractSpinBox* self, const char* si
 bool QAbstractSpinBox_IsSignalConnected(const QAbstractSpinBox* self, const QMetaMethod* signal);
 void QAbstractSpinBox_OnIsSignalConnected(const QAbstractSpinBox* self, intptr_t slot);
 bool QAbstractSpinBox_SuperIsSignalConnected(const QAbstractSpinBox* self, const QMetaMethod* signal);
-double QAbstractSpinBox_GetDecodedMetricF(const QAbstractSpinBox* self, int metricA, int metricB);
-void QAbstractSpinBox_OnGetDecodedMetricF(const QAbstractSpinBox* self, intptr_t slot);
-double QAbstractSpinBox_SuperGetDecodedMetricF(const QAbstractSpinBox* self, int metricA, int metricB);
 void QAbstractSpinBox_Delete(QAbstractSpinBox* self);
 
 #ifdef __cplusplus

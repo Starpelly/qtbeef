@@ -15,7 +15,6 @@
 #include <QInputDialog>
 #include <QInputMethodEvent>
 #include <QKeyEvent>
-#include <QList>
 #include <QMetaMethod>
 #include <QMetaObject>
 #include <QMouseEvent>
@@ -154,36 +153,12 @@ bool QInputDialog_IsComboBoxEditable(const QInputDialog* self) {
     return self->isComboBoxEditable();
 }
 
-void QInputDialog_SetComboBoxItems(QInputDialog* self, const libqt_list /* of libqt_string */ items) {
-    QList<QString> items_QList;
-    items_QList.reserve(items.len);
-    libqt_string* items_arr = static_cast<libqt_string*>(items.data.ptr);
-    for (size_t i = 0; i < items.len; ++i) {
-        QString items_arr_i_QString = QString::fromUtf8(items_arr[i].data, items_arr[i].len);
-        items_QList.push_back(items_arr_i_QString);
-    }
-    self->setComboBoxItems(items_QList);
+void QInputDialog_SetComboBoxItems(QInputDialog* self, const QStringList* items) {
+    self->setComboBoxItems(*items);
 }
 
-libqt_list /* of libqt_string */ QInputDialog_ComboBoxItems(const QInputDialog* self) {
-    QList<QString> _ret = self->comboBoxItems();
-    // Convert QList<> from C++ memory to manually-managed C memory
-    libqt_string* _arr = static_cast<libqt_string*>(malloc(sizeof(libqt_string) * (_ret.size())));
-    for (qsizetype i = 0; i < _ret.size(); ++i) {
-        QString _lv_ret = _ret[i];
-        // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
-        QByteArray _lv_b = _lv_ret.toUtf8();
-        libqt_string _lv_str;
-        _lv_str.len = _lv_b.length();
-        _lv_str.data = static_cast<const char*>(malloc(_lv_str.len + 1));
-        memcpy((void*)_lv_str.data, _lv_b.data(), _lv_str.len);
-        ((char*)_lv_str.data)[_lv_str.len] = '\0';
-        _arr[i] = _lv_str;
-    }
-    libqt_list _out;
-    _out.len = _ret.size();
-    _out.data.ptr = static_cast<void*>(_arr);
-    return _out;
+QStringList QInputDialog_ComboBoxItems(const QInputDialog* self) {
+    return self->comboBoxItems();
 }
 
 void QInputDialog_SetIntValue(QInputDialog* self, int value) {
@@ -347,17 +322,10 @@ libqt_string QInputDialog_GetMultiLineText(QWidget* parent, const libqt_string t
     return _str;
 }
 
-libqt_string QInputDialog_GetItem(QWidget* parent, const libqt_string title, const libqt_string label, const libqt_list /* of libqt_string */ items) {
+libqt_string QInputDialog_GetItem(QWidget* parent, const libqt_string title, const libqt_string label, const QStringList* items) {
     QString title_QString = QString::fromUtf8(title.data, title.len);
     QString label_QString = QString::fromUtf8(label.data, label.len);
-    QList<QString> items_QList;
-    items_QList.reserve(items.len);
-    libqt_string* items_arr = static_cast<libqt_string*>(items.data.ptr);
-    for (size_t i = 0; i < items.len; ++i) {
-        QString items_arr_i_QString = QString::fromUtf8(items_arr[i].data, items_arr[i].len);
-        items_QList.push_back(items_arr_i_QString);
-    }
-    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, items_QList);
+    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, *items);
     // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
     QByteArray _b = _ret.toUtf8();
     libqt_string _str;
@@ -625,17 +593,10 @@ libqt_string QInputDialog_GetMultiLineText7(QWidget* parent, const libqt_string 
     return _str;
 }
 
-libqt_string QInputDialog_GetItem5(QWidget* parent, const libqt_string title, const libqt_string label, const libqt_list /* of libqt_string */ items, int current) {
+libqt_string QInputDialog_GetItem5(QWidget* parent, const libqt_string title, const libqt_string label, const QStringList* items, int current) {
     QString title_QString = QString::fromUtf8(title.data, title.len);
     QString label_QString = QString::fromUtf8(label.data, label.len);
-    QList<QString> items_QList;
-    items_QList.reserve(items.len);
-    libqt_string* items_arr = static_cast<libqt_string*>(items.data.ptr);
-    for (size_t i = 0; i < items.len; ++i) {
-        QString items_arr_i_QString = QString::fromUtf8(items_arr[i].data, items_arr[i].len);
-        items_QList.push_back(items_arr_i_QString);
-    }
-    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, items_QList, static_cast<int>(current));
+    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, *items, static_cast<int>(current));
     // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
     QByteArray _b = _ret.toUtf8();
     libqt_string _str;
@@ -646,17 +607,10 @@ libqt_string QInputDialog_GetItem5(QWidget* parent, const libqt_string title, co
     return _str;
 }
 
-libqt_string QInputDialog_GetItem6(QWidget* parent, const libqt_string title, const libqt_string label, const libqt_list /* of libqt_string */ items, int current, bool editable) {
+libqt_string QInputDialog_GetItem6(QWidget* parent, const libqt_string title, const libqt_string label, const QStringList* items, int current, bool editable) {
     QString title_QString = QString::fromUtf8(title.data, title.len);
     QString label_QString = QString::fromUtf8(label.data, label.len);
-    QList<QString> items_QList;
-    items_QList.reserve(items.len);
-    libqt_string* items_arr = static_cast<libqt_string*>(items.data.ptr);
-    for (size_t i = 0; i < items.len; ++i) {
-        QString items_arr_i_QString = QString::fromUtf8(items_arr[i].data, items_arr[i].len);
-        items_QList.push_back(items_arr_i_QString);
-    }
-    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, items_QList, static_cast<int>(current), editable);
+    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, *items, static_cast<int>(current), editable);
     // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
     QByteArray _b = _ret.toUtf8();
     libqt_string _str;
@@ -667,17 +621,10 @@ libqt_string QInputDialog_GetItem6(QWidget* parent, const libqt_string title, co
     return _str;
 }
 
-libqt_string QInputDialog_GetItem7(QWidget* parent, const libqt_string title, const libqt_string label, const libqt_list /* of libqt_string */ items, int current, bool editable, bool* ok) {
+libqt_string QInputDialog_GetItem7(QWidget* parent, const libqt_string title, const libqt_string label, const QStringList* items, int current, bool editable, bool* ok) {
     QString title_QString = QString::fromUtf8(title.data, title.len);
     QString label_QString = QString::fromUtf8(label.data, label.len);
-    QList<QString> items_QList;
-    items_QList.reserve(items.len);
-    libqt_string* items_arr = static_cast<libqt_string*>(items.data.ptr);
-    for (size_t i = 0; i < items.len; ++i) {
-        QString items_arr_i_QString = QString::fromUtf8(items_arr[i].data, items_arr[i].len);
-        items_QList.push_back(items_arr_i_QString);
-    }
-    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, items_QList, static_cast<int>(current), editable, ok);
+    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, *items, static_cast<int>(current), editable, ok);
     // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
     QByteArray _b = _ret.toUtf8();
     libqt_string _str;
@@ -688,17 +635,10 @@ libqt_string QInputDialog_GetItem7(QWidget* parent, const libqt_string title, co
     return _str;
 }
 
-libqt_string QInputDialog_GetItem8(QWidget* parent, const libqt_string title, const libqt_string label, const libqt_list /* of libqt_string */ items, int current, bool editable, bool* ok, int flags) {
+libqt_string QInputDialog_GetItem8(QWidget* parent, const libqt_string title, const libqt_string label, const QStringList* items, int current, bool editable, bool* ok, int flags) {
     QString title_QString = QString::fromUtf8(title.data, title.len);
     QString label_QString = QString::fromUtf8(label.data, label.len);
-    QList<QString> items_QList;
-    items_QList.reserve(items.len);
-    libqt_string* items_arr = static_cast<libqt_string*>(items.data.ptr);
-    for (size_t i = 0; i < items.len; ++i) {
-        QString items_arr_i_QString = QString::fromUtf8(items_arr[i].data, items_arr[i].len);
-        items_QList.push_back(items_arr_i_QString);
-    }
-    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, items_QList, static_cast<int>(current), editable, ok, static_cast<Qt::WindowFlags>(flags));
+    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, *items, static_cast<int>(current), editable, ok, static_cast<Qt::WindowFlags>(flags));
     // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
     QByteArray _b = _ret.toUtf8();
     libqt_string _str;
@@ -709,17 +649,10 @@ libqt_string QInputDialog_GetItem8(QWidget* parent, const libqt_string title, co
     return _str;
 }
 
-libqt_string QInputDialog_GetItem9(QWidget* parent, const libqt_string title, const libqt_string label, const libqt_list /* of libqt_string */ items, int current, bool editable, bool* ok, int flags, int inputMethodHints) {
+libqt_string QInputDialog_GetItem9(QWidget* parent, const libqt_string title, const libqt_string label, const QStringList* items, int current, bool editable, bool* ok, int flags, int inputMethodHints) {
     QString title_QString = QString::fromUtf8(title.data, title.len);
     QString label_QString = QString::fromUtf8(label.data, label.len);
-    QList<QString> items_QList;
-    items_QList.reserve(items.len);
-    libqt_string* items_arr = static_cast<libqt_string*>(items.data.ptr);
-    for (size_t i = 0; i < items.len; ++i) {
-        QString items_arr_i_QString = QString::fromUtf8(items_arr[i].data, items_arr[i].len);
-        items_QList.push_back(items_arr_i_QString);
-    }
-    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, items_QList, static_cast<int>(current), editable, ok, static_cast<Qt::WindowFlags>(flags), static_cast<Qt::InputMethodHints>(inputMethodHints));
+    QString _ret = QInputDialog::getItem(parent, title_QString, label_QString, *items, static_cast<int>(current), editable, ok, static_cast<Qt::WindowFlags>(flags), static_cast<Qt::InputMethodHints>(inputMethodHints));
     // Convert QString from UTF-16 in C++ RAII memory to UTF-8 in manually-managed C memory
     QByteArray _b = _ret.toUtf8();
     libqt_string _str;
@@ -2622,35 +2555,6 @@ void QInputDialog_OnIsSignalConnected(const QInputDialog* self, intptr_t slot) {
     auto* vqinputdialog = const_cast<VirtualQInputDialog*>(dynamic_cast<const VirtualQInputDialog*>(self));
     if (vqinputdialog && vqinputdialog->isVirtualQInputDialog) {
         vqinputdialog->setQInputDialog_IsSignalConnected_Callback(reinterpret_cast<VirtualQInputDialog::QInputDialog_IsSignalConnected_Callback>(slot));
-    }
-}
-
-// Derived class handler implementation
-double QInputDialog_GetDecodedMetricF(const QInputDialog* self, int metricA, int metricB) {
-    auto* vqinputdialog = const_cast<VirtualQInputDialog*>(dynamic_cast<const VirtualQInputDialog*>(self));
-    if (vqinputdialog && vqinputdialog->isVirtualQInputDialog) {
-        return vqinputdialog->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQInputDialog*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Base class handler implementation
-double QInputDialog_SuperGetDecodedMetricF(const QInputDialog* self, int metricA, int metricB) {
-    auto* vqinputdialog = const_cast<VirtualQInputDialog*>(dynamic_cast<const VirtualQInputDialog*>(self));
-    if (vqinputdialog && vqinputdialog->isVirtualQInputDialog) {
-        vqinputdialog->setQInputDialog_GetDecodedMetricF_IsBase(true);
-        return vqinputdialog->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    } else {
-        return ((VirtualQInputDialog*)self)->getDecodedMetricF(static_cast<QPaintDevice::PaintDeviceMetric>(metricA), static_cast<QPaintDevice::PaintDeviceMetric>(metricB));
-    }
-}
-
-// Auxiliary method to allow providing re-implementation
-void QInputDialog_OnGetDecodedMetricF(const QInputDialog* self, intptr_t slot) {
-    auto* vqinputdialog = const_cast<VirtualQInputDialog*>(dynamic_cast<const VirtualQInputDialog*>(self));
-    if (vqinputdialog && vqinputdialog->isVirtualQInputDialog) {
-        vqinputdialog->setQInputDialog_GetDecodedMetricF_Callback(reinterpret_cast<VirtualQInputDialog::QInputDialog_GetDecodedMetricF_Callback>(slot));
     }
 }
 

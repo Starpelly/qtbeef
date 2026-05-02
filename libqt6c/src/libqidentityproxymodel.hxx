@@ -56,7 +56,7 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     using QIdentityProxyModel_HasChildren_Callback = bool (*)(const QIdentityProxyModel*, QModelIndex*);
     using QIdentityProxyModel_MimeData_Callback = QMimeData* (*)(const QIdentityProxyModel*, libqt_list /* of QModelIndex* */);
     using QIdentityProxyModel_CanDropMimeData_Callback = bool (*)(const QIdentityProxyModel*, QMimeData*, int, int, int, QModelIndex*);
-    using QIdentityProxyModel_MimeTypes_Callback = const char** (*)();
+    using QIdentityProxyModel_MimeTypes_Callback = QStringList (*)();
     using QIdentityProxyModel_SupportedDragActions_Callback = int (*)();
     using QIdentityProxyModel_SupportedDropActions_Callback = int (*)();
     using QIdentityProxyModel_RoleNames_Callback = libqt_map /* of int to libqt_string */ (*)();
@@ -69,8 +69,6 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     using QIdentityProxyModel_CustomEvent_Callback = void (*)(QIdentityProxyModel*, QEvent*);
     using QIdentityProxyModel_ConnectNotify_Callback = void (*)(QIdentityProxyModel*, QMetaMethod*);
     using QIdentityProxyModel_DisconnectNotify_Callback = void (*)(QIdentityProxyModel*, QMetaMethod*);
-    using QIdentityProxyModel_SetHandleSourceLayoutChanges_Callback = void (*)(QIdentityProxyModel*, bool);
-    using QIdentityProxyModel_SetHandleSourceDataChanges_Callback = void (*)(QIdentityProxyModel*, bool);
     using QIdentityProxyModel_CreateSourceIndex_Callback = QModelIndex* (*)(const QIdentityProxyModel*, int, int, void*);
     using QIdentityProxyModel_CreateIndex_Callback = QModelIndex* (*)(const QIdentityProxyModel*, int, int);
     using QIdentityProxyModel_EncodeData_Callback = void (*)(const QIdentityProxyModel*, libqt_list /* of QModelIndex* */, QDataStream*);
@@ -151,8 +149,6 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     QIdentityProxyModel_CustomEvent_Callback qidentityproxymodel_customevent_callback = nullptr;
     QIdentityProxyModel_ConnectNotify_Callback qidentityproxymodel_connectnotify_callback = nullptr;
     QIdentityProxyModel_DisconnectNotify_Callback qidentityproxymodel_disconnectnotify_callback = nullptr;
-    QIdentityProxyModel_SetHandleSourceLayoutChanges_Callback qidentityproxymodel_sethandlesourcelayoutchanges_callback = nullptr;
-    QIdentityProxyModel_SetHandleSourceDataChanges_Callback qidentityproxymodel_sethandlesourcedatachanges_callback = nullptr;
     QIdentityProxyModel_CreateSourceIndex_Callback qidentityproxymodel_createsourceindex_callback = nullptr;
     QIdentityProxyModel_CreateIndex_Callback qidentityproxymodel_createindex_callback = nullptr;
     QIdentityProxyModel_EncodeData_Callback qidentityproxymodel_encodedata_callback = nullptr;
@@ -232,8 +228,6 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     mutable bool qidentityproxymodel_customevent_isbase = false;
     mutable bool qidentityproxymodel_connectnotify_isbase = false;
     mutable bool qidentityproxymodel_disconnectnotify_isbase = false;
-    mutable bool qidentityproxymodel_sethandlesourcelayoutchanges_isbase = false;
-    mutable bool qidentityproxymodel_sethandlesourcedatachanges_isbase = false;
     mutable bool qidentityproxymodel_createsourceindex_isbase = false;
     mutable bool qidentityproxymodel_createindex_isbase = false;
     mutable bool qidentityproxymodel_encodedata_isbase = false;
@@ -261,8 +255,8 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     mutable bool qidentityproxymodel_issignalconnected_isbase = false;
 
   public:
-    VirtualQIdentityProxyModel() : QIdentityProxyModel() {};
-    VirtualQIdentityProxyModel(QObject* parent) : QIdentityProxyModel(parent) {};
+    VirtualQIdentityProxyModel() : QIdentityProxyModel(){};
+    VirtualQIdentityProxyModel(QObject* parent) : QIdentityProxyModel(parent){};
 
     // Callback setters
     inline void setQIdentityProxyModel_MetaObject_Callback(QIdentityProxyModel_MetaObject_Callback cb) { qidentityproxymodel_metaobject_callback = cb; }
@@ -317,8 +311,6 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     inline void setQIdentityProxyModel_CustomEvent_Callback(QIdentityProxyModel_CustomEvent_Callback cb) { qidentityproxymodel_customevent_callback = cb; }
     inline void setQIdentityProxyModel_ConnectNotify_Callback(QIdentityProxyModel_ConnectNotify_Callback cb) { qidentityproxymodel_connectnotify_callback = cb; }
     inline void setQIdentityProxyModel_DisconnectNotify_Callback(QIdentityProxyModel_DisconnectNotify_Callback cb) { qidentityproxymodel_disconnectnotify_callback = cb; }
-    inline void setQIdentityProxyModel_SetHandleSourceLayoutChanges_Callback(QIdentityProxyModel_SetHandleSourceLayoutChanges_Callback cb) { qidentityproxymodel_sethandlesourcelayoutchanges_callback = cb; }
-    inline void setQIdentityProxyModel_SetHandleSourceDataChanges_Callback(QIdentityProxyModel_SetHandleSourceDataChanges_Callback cb) { qidentityproxymodel_sethandlesourcedatachanges_callback = cb; }
     inline void setQIdentityProxyModel_CreateSourceIndex_Callback(QIdentityProxyModel_CreateSourceIndex_Callback cb) { qidentityproxymodel_createsourceindex_callback = cb; }
     inline void setQIdentityProxyModel_CreateIndex_Callback(QIdentityProxyModel_CreateIndex_Callback cb) { qidentityproxymodel_createindex_callback = cb; }
     inline void setQIdentityProxyModel_EncodeData_Callback(QIdentityProxyModel_EncodeData_Callback cb) { qidentityproxymodel_encodedata_callback = cb; }
@@ -398,8 +390,6 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     inline void setQIdentityProxyModel_CustomEvent_IsBase(bool value) const { qidentityproxymodel_customevent_isbase = value; }
     inline void setQIdentityProxyModel_ConnectNotify_IsBase(bool value) const { qidentityproxymodel_connectnotify_isbase = value; }
     inline void setQIdentityProxyModel_DisconnectNotify_IsBase(bool value) const { qidentityproxymodel_disconnectnotify_isbase = value; }
-    inline void setQIdentityProxyModel_SetHandleSourceLayoutChanges_IsBase(bool value) const { qidentityproxymodel_sethandlesourcelayoutchanges_isbase = value; }
-    inline void setQIdentityProxyModel_SetHandleSourceDataChanges_IsBase(bool value) const { qidentityproxymodel_sethandlesourcedatachanges_isbase = value; }
     inline void setQIdentityProxyModel_CreateSourceIndex_IsBase(bool value) const { qidentityproxymodel_createsourceindex_isbase = value; }
     inline void setQIdentityProxyModel_CreateIndex_IsBase(bool value) const { qidentityproxymodel_createindex_isbase = value; }
     inline void setQIdentityProxyModel_EncodeData_IsBase(bool value) const { qidentityproxymodel_encodedata_isbase = value; }
@@ -1198,24 +1188,15 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     }
 
     // Virtual method for C ABI access and custom callback
-    virtual QList<QString> mimeTypes() const override {
+    virtual QStringList mimeTypes() const override {
         if (qidentityproxymodel_mimetypes_isbase) {
             qidentityproxymodel_mimetypes_isbase = false;
             return QIdentityProxyModel::mimeTypes();
         }
         auto mimetypes_cb = qidentityproxymodel_mimetypes_callback;
         if (mimetypes_cb) {
-            const char** callback_ret = mimetypes_cb();
-            QList<QString> callback_ret_QList;
-            size_t callback_ret_len = libqt_strv_length(callback_ret);
-            callback_ret_QList.reserve(callback_ret_len);
-            const char** callback_ret_arr = static_cast<const char**>(callback_ret);
-            for (size_t i = 0; i < callback_ret_len; ++i) {
-                QString callback_ret_arr_i_QString = QString::fromUtf8(callback_ret_arr[i]);
-                callback_ret_QList.push_back(callback_ret_arr_i_QString);
-            }
-            libqt_free(callback_ret);
-            return callback_ret_QList;
+            QStringList callback_ret = mimetypes_cb();
+            return callback_ret;
         }
         return QIdentityProxyModel::mimeTypes();
     }
@@ -1425,40 +1406,6 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
             return;
         }
         QIdentityProxyModel::disconnectNotify(signal);
-    }
-
-    // Virtual method for C ABI access and custom callback
-    void setHandleSourceLayoutChanges(bool handleSourceLayoutChanges) {
-        if (qidentityproxymodel_sethandlesourcelayoutchanges_isbase) {
-            qidentityproxymodel_sethandlesourcelayoutchanges_isbase = false;
-            QIdentityProxyModel::setHandleSourceLayoutChanges(handleSourceLayoutChanges);
-            return;
-        }
-        auto sethandlesourcelayoutchanges_cb = qidentityproxymodel_sethandlesourcelayoutchanges_callback;
-        if (sethandlesourcelayoutchanges_cb) {
-            bool cbval1 = handleSourceLayoutChanges;
-
-            sethandlesourcelayoutchanges_cb(this, cbval1);
-            return;
-        }
-        QIdentityProxyModel::setHandleSourceLayoutChanges(handleSourceLayoutChanges);
-    }
-
-    // Virtual method for C ABI access and custom callback
-    void setHandleSourceDataChanges(bool handleSourceDataChanges) {
-        if (qidentityproxymodel_sethandlesourcedatachanges_isbase) {
-            qidentityproxymodel_sethandlesourcedatachanges_isbase = false;
-            QIdentityProxyModel::setHandleSourceDataChanges(handleSourceDataChanges);
-            return;
-        }
-        auto sethandlesourcedatachanges_cb = qidentityproxymodel_sethandlesourcedatachanges_callback;
-        if (sethandlesourcedatachanges_cb) {
-            bool cbval1 = handleSourceDataChanges;
-
-            sethandlesourcedatachanges_cb(this, cbval1);
-            return;
-        }
-        QIdentityProxyModel::setHandleSourceDataChanges(handleSourceDataChanges);
     }
 
     // Virtual method for C ABI access and custom callback
@@ -1957,10 +1904,6 @@ class VirtualQIdentityProxyModel final : public QIdentityProxyModel {
     friend void QIdentityProxyModel_SuperConnectNotify(QIdentityProxyModel* self, const QMetaMethod* signal);
     friend void QIdentityProxyModel_DisconnectNotify(QIdentityProxyModel* self, const QMetaMethod* signal);
     friend void QIdentityProxyModel_SuperDisconnectNotify(QIdentityProxyModel* self, const QMetaMethod* signal);
-    friend void QIdentityProxyModel_SetHandleSourceLayoutChanges(QIdentityProxyModel* self, bool handleSourceLayoutChanges);
-    friend void QIdentityProxyModel_SuperSetHandleSourceLayoutChanges(QIdentityProxyModel* self, bool handleSourceLayoutChanges);
-    friend void QIdentityProxyModel_SetHandleSourceDataChanges(QIdentityProxyModel* self, bool handleSourceDataChanges);
-    friend void QIdentityProxyModel_SuperSetHandleSourceDataChanges(QIdentityProxyModel* self, bool handleSourceDataChanges);
     friend QModelIndex* QIdentityProxyModel_CreateSourceIndex(const QIdentityProxyModel* self, int row, int col, void* internalPtr);
     friend QModelIndex* QIdentityProxyModel_SuperCreateSourceIndex(const QIdentityProxyModel* self, int row, int col, void* internalPtr);
     friend QModelIndex* QIdentityProxyModel_CreateIndex(const QIdentityProxyModel* self, int row, int column);

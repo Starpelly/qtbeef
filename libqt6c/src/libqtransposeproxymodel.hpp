@@ -149,9 +149,9 @@ bool QTransposeProxyModel_SuperCanDropMimeData(const QTransposeProxyModel* self,
 bool QTransposeProxyModel_DropMimeData(QTransposeProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
 void QTransposeProxyModel_OnDropMimeData(QTransposeProxyModel* self, intptr_t slot);
 bool QTransposeProxyModel_SuperDropMimeData(QTransposeProxyModel* self, const QMimeData* data, int action, int row, int column, const QModelIndex* parent);
-libqt_list /* of libqt_string */ QTransposeProxyModel_MimeTypes(const QTransposeProxyModel* self);
+QStringList QTransposeProxyModel_MimeTypes(const QTransposeProxyModel* self);
 void QTransposeProxyModel_OnMimeTypes(const QTransposeProxyModel* self, intptr_t slot);
-libqt_list /* of libqt_string */ QTransposeProxyModel_SuperMimeTypes(const QTransposeProxyModel* self);
+QStringList QTransposeProxyModel_SuperMimeTypes(const QTransposeProxyModel* self);
 int QTransposeProxyModel_SupportedDragActions(const QTransposeProxyModel* self);
 void QTransposeProxyModel_OnSupportedDragActions(const QTransposeProxyModel* self, intptr_t slot);
 int QTransposeProxyModel_SuperSupportedDragActions(const QTransposeProxyModel* self);

@@ -21,7 +21,6 @@ typedef QInputMethodEvent::Attribute QInputMethodEvent__Attribute;
 typedef struct QAction QAction;
 typedef struct QActionEvent QActionEvent;
 typedef struct QApplicationStateChangeEvent QApplicationStateChangeEvent;
-typedef struct QChildWindowEvent QChildWindowEvent;
 typedef struct QCloseEvent QCloseEvent;
 typedef struct QContextMenuEvent QContextMenuEvent;
 typedef struct QDragEnterEvent QDragEnterEvent;
@@ -66,7 +65,6 @@ typedef struct QScreen QScreen;
 typedef struct QScreenOrientationChangeEvent QScreenOrientationChangeEvent;
 typedef struct QScrollEvent QScrollEvent;
 typedef struct QScrollPrepareEvent QScrollPrepareEvent;
-typedef struct QShortcut QShortcut;
 typedef struct QShortcutEvent QShortcutEvent;
 typedef struct QShowEvent QShowEvent;
 typedef struct QSinglePointEvent QSinglePointEvent;
@@ -80,7 +78,6 @@ typedef struct QUrl QUrl;
 typedef struct QVariant QVariant;
 typedef struct QWhatsThisClickedEvent QWhatsThisClickedEvent;
 typedef struct QWheelEvent QWheelEvent;
-typedef struct QWindow QWindow;
 typedef struct QWindowStateChangeEvent QWindowStateChangeEvent;
 #endif
 
@@ -663,10 +660,7 @@ void QToolBarChangeEvent_SuperSetAccepted(QToolBarChangeEvent* self, bool accept
 void QToolBarChangeEvent_Delete(QToolBarChangeEvent* self);
 
 QShortcutEvent* QShortcutEvent_new(const QKeySequence* key, int id);
-QShortcutEvent* QShortcutEvent_new2(const QKeySequence* key);
-QShortcutEvent* QShortcutEvent_new3(const QKeySequence* key, int id, bool ambiguous);
-QShortcutEvent* QShortcutEvent_new4(const QKeySequence* key, const QShortcut* shortcut);
-QShortcutEvent* QShortcutEvent_new5(const QKeySequence* key, const QShortcut* shortcut, bool ambiguous);
+QShortcutEvent* QShortcutEvent_new2(const QKeySequence* key, int id, bool ambiguous);
 QShortcutEvent* QShortcutEvent_Clone(const QShortcutEvent* self);
 QKeySequence* QShortcutEvent_Key(const QShortcutEvent* self);
 int QShortcutEvent_ShortcutId(const QShortcutEvent* self);
@@ -767,16 +761,6 @@ void QApplicationStateChangeEvent_SetAccepted(QApplicationStateChangeEvent* self
 void QApplicationStateChangeEvent_OnSetAccepted(QApplicationStateChangeEvent* self, intptr_t slot);
 void QApplicationStateChangeEvent_SuperSetAccepted(QApplicationStateChangeEvent* self, bool accepted);
 void QApplicationStateChangeEvent_Delete(QApplicationStateChangeEvent* self);
-
-QChildWindowEvent* QChildWindowEvent_new(int type, QWindow* childWindow);
-QChildWindowEvent* QChildWindowEvent_Clone(const QChildWindowEvent* self);
-QWindow* QChildWindowEvent_Child(const QChildWindowEvent* self);
-void QChildWindowEvent_OnClone(const QChildWindowEvent* self, intptr_t slot);
-QChildWindowEvent* QChildWindowEvent_SuperClone(const QChildWindowEvent* self);
-void QChildWindowEvent_SetAccepted(QChildWindowEvent* self, bool accepted);
-void QChildWindowEvent_OnSetAccepted(QChildWindowEvent* self, intptr_t slot);
-void QChildWindowEvent_SuperSetAccepted(QChildWindowEvent* self, bool accepted);
-void QChildWindowEvent_Delete(QChildWindowEvent* self);
 
 QInputMethodEvent__Attribute* QInputMethodEvent__Attribute_new(int typ, int s, int l, QVariant* val);
 QInputMethodEvent__Attribute* QInputMethodEvent__Attribute_new2(int typ, int s, int l);

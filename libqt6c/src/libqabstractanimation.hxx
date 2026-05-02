@@ -78,8 +78,8 @@ class VirtualQAbstractAnimation : public QAbstractAnimation {
     mutable bool qabstractanimation_issignalconnected_isbase = false;
 
   public:
-    VirtualQAbstractAnimation() : QAbstractAnimation() {};
-    VirtualQAbstractAnimation(QObject* parent) : QAbstractAnimation(parent) {};
+    VirtualQAbstractAnimation() : QAbstractAnimation(){};
+    VirtualQAbstractAnimation(QObject* parent) : QAbstractAnimation(parent){};
 
     // Callback setters
     inline void setQAbstractAnimation_MetaObject_Callback(QAbstractAnimation_MetaObject_Callback cb) { qabstractanimation_metaobject_callback = cb; }
@@ -509,8 +509,8 @@ class VirtualQAnimationDriver final : public QAnimationDriver {
     mutable bool qanimationdriver_issignalconnected_isbase = false;
 
   public:
-    VirtualQAnimationDriver() : QAnimationDriver() {};
-    VirtualQAnimationDriver(QObject* parent) : QAnimationDriver(parent) {};
+    VirtualQAnimationDriver() : QAnimationDriver(){};
+    VirtualQAnimationDriver(QObject* parent) : QAnimationDriver(parent){};
 
     // Callback setters
     inline void setQAnimationDriver_MetaObject_Callback(QAnimationDriver_MetaObject_Callback cb) { qanimationdriver_metaobject_callback = cb; }

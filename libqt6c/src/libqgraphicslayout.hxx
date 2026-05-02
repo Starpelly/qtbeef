@@ -63,8 +63,8 @@ class VirtualQGraphicsLayout : public QGraphicsLayout {
     mutable bool qgraphicslayout_setownedbylayout_isbase = false;
 
   public:
-    VirtualQGraphicsLayout() : QGraphicsLayout() {};
-    VirtualQGraphicsLayout(QGraphicsLayoutItem* parent) : QGraphicsLayout(parent) {};
+    VirtualQGraphicsLayout() : QGraphicsLayout(){};
+    VirtualQGraphicsLayout(QGraphicsLayoutItem* parent) : QGraphicsLayout(parent){};
 
     // Callback setters
     inline void setQGraphicsLayout_GetContentsMargins_Callback(QGraphicsLayout_GetContentsMargins_Callback cb) { qgraphicslayout_getcontentsmargins_callback = cb; }

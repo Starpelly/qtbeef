@@ -150,9 +150,9 @@ class VirtualQStackedLayout final : public QStackedLayout {
     mutable bool qstackedlayout_issignalconnected_isbase = false;
 
   public:
-    VirtualQStackedLayout(QWidget* parent) : QStackedLayout(parent) {};
-    VirtualQStackedLayout() : QStackedLayout() {};
-    VirtualQStackedLayout(QLayout* parentLayout) : QStackedLayout(parentLayout) {};
+    VirtualQStackedLayout(QWidget* parent) : QStackedLayout(parent){};
+    VirtualQStackedLayout() : QStackedLayout(){};
+    VirtualQStackedLayout(QLayout* parentLayout) : QStackedLayout(parentLayout){};
 
     // Callback setters
     inline void setQStackedLayout_MetaObject_Callback(QStackedLayout_MetaObject_Callback cb) { qstackedlayout_metaobject_callback = cb; }

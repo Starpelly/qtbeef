@@ -259,9 +259,6 @@ int QFontComboBox_SuperReceivers(const QFontComboBox* self, const char* signal);
 bool QFontComboBox_IsSignalConnected(const QFontComboBox* self, const QMetaMethod* signal);
 void QFontComboBox_OnIsSignalConnected(const QFontComboBox* self, intptr_t slot);
 bool QFontComboBox_SuperIsSignalConnected(const QFontComboBox* self, const QMetaMethod* signal);
-double QFontComboBox_GetDecodedMetricF(const QFontComboBox* self, int metricA, int metricB);
-void QFontComboBox_OnGetDecodedMetricF(const QFontComboBox* self, intptr_t slot);
-double QFontComboBox_SuperGetDecodedMetricF(const QFontComboBox* self, int metricA, int metricB);
 void QFontComboBox_Delete(QFontComboBox* self);
 
 #ifdef __cplusplus

@@ -66,8 +66,8 @@ class VirtualQSignalMapper final : public QSignalMapper {
     mutable bool qsignalmapper_issignalconnected_isbase = false;
 
   public:
-    VirtualQSignalMapper() : QSignalMapper() {};
-    VirtualQSignalMapper(QObject* parent) : QSignalMapper(parent) {};
+    VirtualQSignalMapper() : QSignalMapper(){};
+    VirtualQSignalMapper(QObject* parent) : QSignalMapper(parent){};
 
     // Callback setters
     inline void setQSignalMapper_MetaObject_Callback(QSignalMapper_MetaObject_Callback cb) { qsignalmapper_metaobject_callback = cb; }
