@@ -90,43 +90,43 @@ class QVersionNumber
 	}
 	public bool IsNull()
 	{
-		return CQt.QVersionNumber_IsNull(this.ptr);
+		return CQt.QVersionNumber_IsNull((.)this.ptr);
 	}
 	public bool IsNormalized()
 	{
-		return CQt.QVersionNumber_IsNormalized(this.ptr);
+		return CQt.QVersionNumber_IsNormalized((.)this.ptr);
 	}
 	public c_int MajorVersion()
 	{
-		return CQt.QVersionNumber_MajorVersion(this.ptr);
+		return CQt.QVersionNumber_MajorVersion((.)this.ptr);
 	}
 	public c_int MinorVersion()
 	{
-		return CQt.QVersionNumber_MinorVersion(this.ptr);
+		return CQt.QVersionNumber_MinorVersion((.)this.ptr);
 	}
 	public c_int MicroVersion()
 	{
-		return CQt.QVersionNumber_MicroVersion(this.ptr);
+		return CQt.QVersionNumber_MicroVersion((.)this.ptr);
 	}
 	public QVersionNumber_Ptr Normalized()
 	{
-		return CQt.QVersionNumber_Normalized(this.ptr);
+		return CQt.QVersionNumber_Normalized((.)this.ptr);
 	}
 	public void* Segments()
 	{
-		return CQt.QVersionNumber_Segments(this.ptr);
+		return CQt.QVersionNumber_Segments((.)this.ptr);
 	}
 	public c_int SegmentAt(void* index)
 	{
-		return CQt.QVersionNumber_SegmentAt(this.ptr, index);
+		return CQt.QVersionNumber_SegmentAt((.)this.ptr, index);
 	}
 	public void* SegmentCount()
 	{
-		return CQt.QVersionNumber_SegmentCount(this.ptr);
+		return CQt.QVersionNumber_SegmentCount((.)this.ptr);
 	}
 	public bool IsPrefixOf(QVersionNumber_Ptr* other)
 	{
-		return CQt.QVersionNumber_IsPrefixOf(this.ptr, other);
+		return CQt.QVersionNumber_IsPrefixOf((.)this.ptr, other);
 	}
 	public c_int Compare(QVersionNumber_Ptr* v1, QVersionNumber_Ptr* v2)
 	{
@@ -138,7 +138,7 @@ class QVersionNumber
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QVersionNumber_ToString(this.ptr);
+		return CQt.QVersionNumber_ToString((.)this.ptr);
 	}
 	public QVersionNumber_Ptr FromString(QAnyStringView_Ptr stringVal)
 	{
@@ -220,23 +220,23 @@ class QTypeRevision
 	}
 	public bool HasMajorVersion()
 	{
-		return CQt.QTypeRevision_HasMajorVersion(this.ptr);
+		return CQt.QTypeRevision_HasMajorVersion((.)this.ptr);
 	}
 	public c_uchar MajorVersion()
 	{
-		return CQt.QTypeRevision_MajorVersion(this.ptr);
+		return CQt.QTypeRevision_MajorVersion((.)this.ptr);
 	}
 	public bool HasMinorVersion()
 	{
-		return CQt.QTypeRevision_HasMinorVersion(this.ptr);
+		return CQt.QTypeRevision_HasMinorVersion((.)this.ptr);
 	}
 	public c_uchar MinorVersion()
 	{
-		return CQt.QTypeRevision_MinorVersion(this.ptr);
+		return CQt.QTypeRevision_MinorVersion((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QTypeRevision_IsValid(this.ptr);
+		return CQt.QTypeRevision_IsValid((.)this.ptr);
 	}
 }
 interface IQTypeRevision

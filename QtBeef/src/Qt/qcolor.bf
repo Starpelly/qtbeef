@@ -348,15 +348,15 @@ class QColor
 	}
 	public bool IsValid()
 	{
-		return CQt.QColor_IsValid(this.ptr);
+		return CQt.QColor_IsValid((.)this.ptr);
 	}
 	public libqt_string Name()
 	{
-		return CQt.QColor_Name(this.ptr);
+		return CQt.QColor_Name((.)this.ptr);
 	}
 	public void SetNamedColor(libqt_string* name)
 	{
-		CQt.QColor_SetNamedColor(this.ptr, name);
+		CQt.QColor_SetNamedColor((.)this.ptr, name);
 	}
 	public void* ColorNames()
 	{
@@ -364,279 +364,279 @@ class QColor
 	}
 	public QColor_Spec Spec()
 	{
-		return CQt.QColor_Spec(this.ptr);
+		return CQt.QColor_Spec((.)this.ptr);
 	}
 	public c_int Alpha()
 	{
-		return CQt.QColor_Alpha(this.ptr);
+		return CQt.QColor_Alpha((.)this.ptr);
 	}
 	public void SetAlpha(c_int alpha)
 	{
-		CQt.QColor_SetAlpha(this.ptr, alpha);
+		CQt.QColor_SetAlpha((.)this.ptr, alpha);
 	}
 	public float AlphaF()
 	{
-		return CQt.QColor_AlphaF(this.ptr);
+		return CQt.QColor_AlphaF((.)this.ptr);
 	}
 	public void SetAlphaF(float alpha)
 	{
-		CQt.QColor_SetAlphaF(this.ptr, alpha);
+		CQt.QColor_SetAlphaF((.)this.ptr, alpha);
 	}
 	public c_int Red()
 	{
-		return CQt.QColor_Red(this.ptr);
+		return CQt.QColor_Red((.)this.ptr);
 	}
 	public c_int Green()
 	{
-		return CQt.QColor_Green(this.ptr);
+		return CQt.QColor_Green((.)this.ptr);
 	}
 	public c_int Blue()
 	{
-		return CQt.QColor_Blue(this.ptr);
+		return CQt.QColor_Blue((.)this.ptr);
 	}
 	public void SetRed(c_int red)
 	{
-		CQt.QColor_SetRed(this.ptr, red);
+		CQt.QColor_SetRed((.)this.ptr, red);
 	}
 	public void SetGreen(c_int green)
 	{
-		CQt.QColor_SetGreen(this.ptr, green);
+		CQt.QColor_SetGreen((.)this.ptr, green);
 	}
 	public void SetBlue(c_int blue)
 	{
-		CQt.QColor_SetBlue(this.ptr, blue);
+		CQt.QColor_SetBlue((.)this.ptr, blue);
 	}
 	public float RedF()
 	{
-		return CQt.QColor_RedF(this.ptr);
+		return CQt.QColor_RedF((.)this.ptr);
 	}
 	public float GreenF()
 	{
-		return CQt.QColor_GreenF(this.ptr);
+		return CQt.QColor_GreenF((.)this.ptr);
 	}
 	public float BlueF()
 	{
-		return CQt.QColor_BlueF(this.ptr);
+		return CQt.QColor_BlueF((.)this.ptr);
 	}
 	public void SetRedF(float red)
 	{
-		CQt.QColor_SetRedF(this.ptr, red);
+		CQt.QColor_SetRedF((.)this.ptr, red);
 	}
 	public void SetGreenF(float green)
 	{
-		CQt.QColor_SetGreenF(this.ptr, green);
+		CQt.QColor_SetGreenF((.)this.ptr, green);
 	}
 	public void SetBlueF(float blue)
 	{
-		CQt.QColor_SetBlueF(this.ptr, blue);
+		CQt.QColor_SetBlueF((.)this.ptr, blue);
 	}
 	public void GetRgb(c_int* r, c_int* g, c_int* b)
 	{
-		CQt.QColor_GetRgb(this.ptr, r, g, b);
+		CQt.QColor_GetRgb((.)this.ptr, r, g, b);
 	}
 	public void SetRgb(c_int r, c_int g, c_int b)
 	{
-		CQt.QColor_SetRgb(this.ptr, r, g, b);
+		CQt.QColor_SetRgb((.)this.ptr, r, g, b);
 	}
 	public void GetRgbF(float* r, float* g, float* b)
 	{
-		CQt.QColor_GetRgbF(this.ptr, r, g, b);
+		CQt.QColor_GetRgbF((.)this.ptr, r, g, b);
 	}
 	public void SetRgbF(float r, float g, float b)
 	{
-		CQt.QColor_SetRgbF(this.ptr, r, g, b);
+		CQt.QColor_SetRgbF((.)this.ptr, r, g, b);
 	}
 	public QRgba64_Ptr Rgba64()
 	{
-		return CQt.QColor_Rgba64(this.ptr);
+		return CQt.QColor_Rgba64((.)this.ptr);
 	}
 	public void SetRgba64(QRgba64_Ptr rgba)
 	{
-		CQt.QColor_SetRgba64(this.ptr, rgba);
+		CQt.QColor_SetRgba64((.)this.ptr, rgba);
 	}
 	public c_uint Rgba()
 	{
-		return CQt.QColor_Rgba(this.ptr);
+		return CQt.QColor_Rgba((.)this.ptr);
 	}
 	public void SetRgba(c_uint rgba)
 	{
-		CQt.QColor_SetRgba(this.ptr, rgba);
+		CQt.QColor_SetRgba((.)this.ptr, rgba);
 	}
 	public c_uint Rgb()
 	{
-		return CQt.QColor_Rgb(this.ptr);
+		return CQt.QColor_Rgb((.)this.ptr);
 	}
 	public void SetRgb2(c_uint rgb)
 	{
-		CQt.QColor_SetRgb2(this.ptr, rgb);
+		CQt.QColor_SetRgb2((.)this.ptr, rgb);
 	}
 	public c_int Hue()
 	{
-		return CQt.QColor_Hue(this.ptr);
+		return CQt.QColor_Hue((.)this.ptr);
 	}
 	public c_int Saturation()
 	{
-		return CQt.QColor_Saturation(this.ptr);
+		return CQt.QColor_Saturation((.)this.ptr);
 	}
 	public c_int HsvHue()
 	{
-		return CQt.QColor_HsvHue(this.ptr);
+		return CQt.QColor_HsvHue((.)this.ptr);
 	}
 	public c_int HsvSaturation()
 	{
-		return CQt.QColor_HsvSaturation(this.ptr);
+		return CQt.QColor_HsvSaturation((.)this.ptr);
 	}
 	public c_int Value()
 	{
-		return CQt.QColor_Value(this.ptr);
+		return CQt.QColor_Value((.)this.ptr);
 	}
 	public float HueF()
 	{
-		return CQt.QColor_HueF(this.ptr);
+		return CQt.QColor_HueF((.)this.ptr);
 	}
 	public float SaturationF()
 	{
-		return CQt.QColor_SaturationF(this.ptr);
+		return CQt.QColor_SaturationF((.)this.ptr);
 	}
 	public float HsvHueF()
 	{
-		return CQt.QColor_HsvHueF(this.ptr);
+		return CQt.QColor_HsvHueF((.)this.ptr);
 	}
 	public float HsvSaturationF()
 	{
-		return CQt.QColor_HsvSaturationF(this.ptr);
+		return CQt.QColor_HsvSaturationF((.)this.ptr);
 	}
 	public float ValueF()
 	{
-		return CQt.QColor_ValueF(this.ptr);
+		return CQt.QColor_ValueF((.)this.ptr);
 	}
 	public void GetHsv(c_int* h, c_int* s, c_int* v)
 	{
-		CQt.QColor_GetHsv(this.ptr, h, s, v);
+		CQt.QColor_GetHsv((.)this.ptr, h, s, v);
 	}
 	public void SetHsv(c_int h, c_int s, c_int v)
 	{
-		CQt.QColor_SetHsv(this.ptr, h, s, v);
+		CQt.QColor_SetHsv((.)this.ptr, h, s, v);
 	}
 	public void GetHsvF(float* h, float* s, float* v)
 	{
-		CQt.QColor_GetHsvF(this.ptr, h, s, v);
+		CQt.QColor_GetHsvF((.)this.ptr, h, s, v);
 	}
 	public void SetHsvF(float h, float s, float v)
 	{
-		CQt.QColor_SetHsvF(this.ptr, h, s, v);
+		CQt.QColor_SetHsvF((.)this.ptr, h, s, v);
 	}
 	public c_int Cyan()
 	{
-		return CQt.QColor_Cyan(this.ptr);
+		return CQt.QColor_Cyan((.)this.ptr);
 	}
 	public c_int Magenta()
 	{
-		return CQt.QColor_Magenta(this.ptr);
+		return CQt.QColor_Magenta((.)this.ptr);
 	}
 	public c_int Yellow()
 	{
-		return CQt.QColor_Yellow(this.ptr);
+		return CQt.QColor_Yellow((.)this.ptr);
 	}
 	public c_int Black()
 	{
-		return CQt.QColor_Black(this.ptr);
+		return CQt.QColor_Black((.)this.ptr);
 	}
 	public float CyanF()
 	{
-		return CQt.QColor_CyanF(this.ptr);
+		return CQt.QColor_CyanF((.)this.ptr);
 	}
 	public float MagentaF()
 	{
-		return CQt.QColor_MagentaF(this.ptr);
+		return CQt.QColor_MagentaF((.)this.ptr);
 	}
 	public float YellowF()
 	{
-		return CQt.QColor_YellowF(this.ptr);
+		return CQt.QColor_YellowF((.)this.ptr);
 	}
 	public float BlackF()
 	{
-		return CQt.QColor_BlackF(this.ptr);
+		return CQt.QColor_BlackF((.)this.ptr);
 	}
 	public void GetCmyk(c_int* c, c_int* m, c_int* y, c_int* k)
 	{
-		CQt.QColor_GetCmyk(this.ptr, c, m, y, k);
+		CQt.QColor_GetCmyk((.)this.ptr, c, m, y, k);
 	}
 	public void SetCmyk(c_int c, c_int m, c_int y, c_int k)
 	{
-		CQt.QColor_SetCmyk(this.ptr, c, m, y, k);
+		CQt.QColor_SetCmyk((.)this.ptr, c, m, y, k);
 	}
 	public void GetCmykF(float* c, float* m, float* y, float* k)
 	{
-		CQt.QColor_GetCmykF(this.ptr, c, m, y, k);
+		CQt.QColor_GetCmykF((.)this.ptr, c, m, y, k);
 	}
 	public void SetCmykF(float c, float m, float y, float k)
 	{
-		CQt.QColor_SetCmykF(this.ptr, c, m, y, k);
+		CQt.QColor_SetCmykF((.)this.ptr, c, m, y, k);
 	}
 	public c_int HslHue()
 	{
-		return CQt.QColor_HslHue(this.ptr);
+		return CQt.QColor_HslHue((.)this.ptr);
 	}
 	public c_int HslSaturation()
 	{
-		return CQt.QColor_HslSaturation(this.ptr);
+		return CQt.QColor_HslSaturation((.)this.ptr);
 	}
 	public c_int Lightness()
 	{
-		return CQt.QColor_Lightness(this.ptr);
+		return CQt.QColor_Lightness((.)this.ptr);
 	}
 	public float HslHueF()
 	{
-		return CQt.QColor_HslHueF(this.ptr);
+		return CQt.QColor_HslHueF((.)this.ptr);
 	}
 	public float HslSaturationF()
 	{
-		return CQt.QColor_HslSaturationF(this.ptr);
+		return CQt.QColor_HslSaturationF((.)this.ptr);
 	}
 	public float LightnessF()
 	{
-		return CQt.QColor_LightnessF(this.ptr);
+		return CQt.QColor_LightnessF((.)this.ptr);
 	}
 	public void GetHsl(c_int* h, c_int* s, c_int* l)
 	{
-		CQt.QColor_GetHsl(this.ptr, h, s, l);
+		CQt.QColor_GetHsl((.)this.ptr, h, s, l);
 	}
 	public void SetHsl(c_int h, c_int s, c_int l)
 	{
-		CQt.QColor_SetHsl(this.ptr, h, s, l);
+		CQt.QColor_SetHsl((.)this.ptr, h, s, l);
 	}
 	public void GetHslF(float* h, float* s, float* l)
 	{
-		CQt.QColor_GetHslF(this.ptr, h, s, l);
+		CQt.QColor_GetHslF((.)this.ptr, h, s, l);
 	}
 	public void SetHslF(float h, float s, float l)
 	{
-		CQt.QColor_SetHslF(this.ptr, h, s, l);
+		CQt.QColor_SetHslF((.)this.ptr, h, s, l);
 	}
 	public QColor_Ptr ToRgb()
 	{
-		return CQt.QColor_ToRgb(this.ptr);
+		return CQt.QColor_ToRgb((.)this.ptr);
 	}
 	public QColor_Ptr ToHsv()
 	{
-		return CQt.QColor_ToHsv(this.ptr);
+		return CQt.QColor_ToHsv((.)this.ptr);
 	}
 	public QColor_Ptr ToCmyk()
 	{
-		return CQt.QColor_ToCmyk(this.ptr);
+		return CQt.QColor_ToCmyk((.)this.ptr);
 	}
 	public QColor_Ptr ToHsl()
 	{
-		return CQt.QColor_ToHsl(this.ptr);
+		return CQt.QColor_ToHsl((.)this.ptr);
 	}
 	public QColor_Ptr ToExtendedRgb()
 	{
-		return CQt.QColor_ToExtendedRgb(this.ptr);
+		return CQt.QColor_ToExtendedRgb((.)this.ptr);
 	}
 	public QColor_Ptr ConvertTo(QColor_Spec colorSpec)
 	{
-		return CQt.QColor_ConvertTo(this.ptr, colorSpec);
+		return CQt.QColor_ConvertTo((.)this.ptr, colorSpec);
 	}
 	public QColor_Ptr FromRgb(c_uint rgb)
 	{
@@ -688,11 +688,11 @@ class QColor
 	}
 	public QColor_Ptr Lighter()
 	{
-		return CQt.QColor_Lighter(this.ptr);
+		return CQt.QColor_Lighter((.)this.ptr);
 	}
 	public QColor_Ptr Darker()
 	{
-		return CQt.QColor_Darker(this.ptr);
+		return CQt.QColor_Darker((.)this.ptr);
 	}
 	public bool IsValidColor(libqt_string* name)
 	{
@@ -704,71 +704,71 @@ class QColor
 	}
 	public libqt_string Name1(QColor_NameFormat format)
 	{
-		return CQt.QColor_Name1(this.ptr, format);
+		return CQt.QColor_Name1((.)this.ptr, format);
 	}
 	public void GetRgb4(c_int* r, c_int* g, c_int* b, c_int* a)
 	{
-		CQt.QColor_GetRgb4(this.ptr, r, g, b, a);
+		CQt.QColor_GetRgb4((.)this.ptr, r, g, b, a);
 	}
 	public void SetRgb4(c_int r, c_int g, c_int b, c_int a)
 	{
-		CQt.QColor_SetRgb4(this.ptr, r, g, b, a);
+		CQt.QColor_SetRgb4((.)this.ptr, r, g, b, a);
 	}
 	public void GetRgbF4(float* r, float* g, float* b, float* a)
 	{
-		CQt.QColor_GetRgbF4(this.ptr, r, g, b, a);
+		CQt.QColor_GetRgbF4((.)this.ptr, r, g, b, a);
 	}
 	public void SetRgbF4(float r, float g, float b, float a)
 	{
-		CQt.QColor_SetRgbF4(this.ptr, r, g, b, a);
+		CQt.QColor_SetRgbF4((.)this.ptr, r, g, b, a);
 	}
 	public void GetHsv4(c_int* h, c_int* s, c_int* v, c_int* a)
 	{
-		CQt.QColor_GetHsv4(this.ptr, h, s, v, a);
+		CQt.QColor_GetHsv4((.)this.ptr, h, s, v, a);
 	}
 	public void SetHsv4(c_int h, c_int s, c_int v, c_int a)
 	{
-		CQt.QColor_SetHsv4(this.ptr, h, s, v, a);
+		CQt.QColor_SetHsv4((.)this.ptr, h, s, v, a);
 	}
 	public void GetHsvF4(float* h, float* s, float* v, float* a)
 	{
-		CQt.QColor_GetHsvF4(this.ptr, h, s, v, a);
+		CQt.QColor_GetHsvF4((.)this.ptr, h, s, v, a);
 	}
 	public void SetHsvF4(float h, float s, float v, float a)
 	{
-		CQt.QColor_SetHsvF4(this.ptr, h, s, v, a);
+		CQt.QColor_SetHsvF4((.)this.ptr, h, s, v, a);
 	}
 	public void GetCmyk5(c_int* c, c_int* m, c_int* y, c_int* k, c_int* a)
 	{
-		CQt.QColor_GetCmyk5(this.ptr, c, m, y, k, a);
+		CQt.QColor_GetCmyk5((.)this.ptr, c, m, y, k, a);
 	}
 	public void SetCmyk5(c_int c, c_int m, c_int y, c_int k, c_int a)
 	{
-		CQt.QColor_SetCmyk5(this.ptr, c, m, y, k, a);
+		CQt.QColor_SetCmyk5((.)this.ptr, c, m, y, k, a);
 	}
 	public void GetCmykF5(float* c, float* m, float* y, float* k, float* a)
 	{
-		CQt.QColor_GetCmykF5(this.ptr, c, m, y, k, a);
+		CQt.QColor_GetCmykF5((.)this.ptr, c, m, y, k, a);
 	}
 	public void SetCmykF5(float c, float m, float y, float k, float a)
 	{
-		CQt.QColor_SetCmykF5(this.ptr, c, m, y, k, a);
+		CQt.QColor_SetCmykF5((.)this.ptr, c, m, y, k, a);
 	}
 	public void GetHsl4(c_int* h, c_int* s, c_int* l, c_int* a)
 	{
-		CQt.QColor_GetHsl4(this.ptr, h, s, l, a);
+		CQt.QColor_GetHsl4((.)this.ptr, h, s, l, a);
 	}
 	public void SetHsl4(c_int h, c_int s, c_int l, c_int a)
 	{
-		CQt.QColor_SetHsl4(this.ptr, h, s, l, a);
+		CQt.QColor_SetHsl4((.)this.ptr, h, s, l, a);
 	}
 	public void GetHslF4(float* h, float* s, float* l, float* a)
 	{
-		CQt.QColor_GetHslF4(this.ptr, h, s, l, a);
+		CQt.QColor_GetHslF4((.)this.ptr, h, s, l, a);
 	}
 	public void SetHslF4(float h, float s, float l, float a)
 	{
-		CQt.QColor_SetHslF4(this.ptr, h, s, l, a);
+		CQt.QColor_SetHslF4((.)this.ptr, h, s, l, a);
 	}
 	public QColor_Ptr FromRgb4(c_int r, c_int g, c_int b, c_int a)
 	{
@@ -808,11 +808,11 @@ class QColor
 	}
 	public QColor_Ptr Lighter1(c_int f)
 	{
-		return CQt.QColor_Lighter1(this.ptr, f);
+		return CQt.QColor_Lighter1((.)this.ptr, f);
 	}
 	public QColor_Ptr Darker1(c_int f)
 	{
-		return CQt.QColor_Darker1(this.ptr, f);
+		return CQt.QColor_Darker1((.)this.ptr, f);
 	}
 }
 interface IQColor

@@ -166,163 +166,163 @@ class QTransform
 	}
 	public bool IsAffine()
 	{
-		return CQt.QTransform_IsAffine(this.ptr);
+		return CQt.QTransform_IsAffine((.)this.ptr);
 	}
 	public bool IsIdentity()
 	{
-		return CQt.QTransform_IsIdentity(this.ptr);
+		return CQt.QTransform_IsIdentity((.)this.ptr);
 	}
 	public bool IsInvertible()
 	{
-		return CQt.QTransform_IsInvertible(this.ptr);
+		return CQt.QTransform_IsInvertible((.)this.ptr);
 	}
 	public bool IsScaling()
 	{
-		return CQt.QTransform_IsScaling(this.ptr);
+		return CQt.QTransform_IsScaling((.)this.ptr);
 	}
 	public bool IsRotating()
 	{
-		return CQt.QTransform_IsRotating(this.ptr);
+		return CQt.QTransform_IsRotating((.)this.ptr);
 	}
 	public bool IsTranslating()
 	{
-		return CQt.QTransform_IsTranslating(this.ptr);
+		return CQt.QTransform_IsTranslating((.)this.ptr);
 	}
 	public QTransform_TransformationType Type()
 	{
-		return CQt.QTransform_Type(this.ptr);
+		return CQt.QTransform_Type((.)this.ptr);
 	}
 	public double Determinant()
 	{
-		return CQt.QTransform_Determinant(this.ptr);
+		return CQt.QTransform_Determinant((.)this.ptr);
 	}
 	public double M11()
 	{
-		return CQt.QTransform_M11(this.ptr);
+		return CQt.QTransform_M11((.)this.ptr);
 	}
 	public double M12()
 	{
-		return CQt.QTransform_M12(this.ptr);
+		return CQt.QTransform_M12((.)this.ptr);
 	}
 	public double M13()
 	{
-		return CQt.QTransform_M13(this.ptr);
+		return CQt.QTransform_M13((.)this.ptr);
 	}
 	public double M21()
 	{
-		return CQt.QTransform_M21(this.ptr);
+		return CQt.QTransform_M21((.)this.ptr);
 	}
 	public double M22()
 	{
-		return CQt.QTransform_M22(this.ptr);
+		return CQt.QTransform_M22((.)this.ptr);
 	}
 	public double M23()
 	{
-		return CQt.QTransform_M23(this.ptr);
+		return CQt.QTransform_M23((.)this.ptr);
 	}
 	public double M31()
 	{
-		return CQt.QTransform_M31(this.ptr);
+		return CQt.QTransform_M31((.)this.ptr);
 	}
 	public double M32()
 	{
-		return CQt.QTransform_M32(this.ptr);
+		return CQt.QTransform_M32((.)this.ptr);
 	}
 	public double M33()
 	{
-		return CQt.QTransform_M33(this.ptr);
+		return CQt.QTransform_M33((.)this.ptr);
 	}
 	public double Dx()
 	{
-		return CQt.QTransform_Dx(this.ptr);
+		return CQt.QTransform_Dx((.)this.ptr);
 	}
 	public double Dy()
 	{
-		return CQt.QTransform_Dy(this.ptr);
+		return CQt.QTransform_Dy((.)this.ptr);
 	}
 	public void SetMatrix(double m11, double m12, double m13, double m21, double m22, double m23, double m31, double m32, double m33)
 	{
-		CQt.QTransform_SetMatrix(this.ptr, m11, m12, m13, m21, m22, m23, m31, m32, m33);
+		CQt.QTransform_SetMatrix((.)this.ptr, m11, m12, m13, m21, m22, m23, m31, m32, m33);
 	}
 	public QTransform_Ptr Inverted()
 	{
-		return CQt.QTransform_Inverted(this.ptr);
+		return CQt.QTransform_Inverted((.)this.ptr);
 	}
 	public QTransform_Ptr Adjoint()
 	{
-		return CQt.QTransform_Adjoint(this.ptr);
+		return CQt.QTransform_Adjoint((.)this.ptr);
 	}
 	public QTransform_Ptr Transposed()
 	{
-		return CQt.QTransform_Transposed(this.ptr);
+		return CQt.QTransform_Transposed((.)this.ptr);
 	}
 	public QTransform_Ptr* Translate(double dx, double dy)
 	{
-		return CQt.QTransform_Translate(this.ptr, dx, dy);
+		return CQt.QTransform_Translate((.)this.ptr, dx, dy);
 	}
 	public QTransform_Ptr* Scale(double sx, double sy)
 	{
-		return CQt.QTransform_Scale(this.ptr, sx, sy);
+		return CQt.QTransform_Scale((.)this.ptr, sx, sy);
 	}
 	public QTransform_Ptr* Shear(double sh, double sv)
 	{
-		return CQt.QTransform_Shear(this.ptr, sh, sv);
+		return CQt.QTransform_Shear((.)this.ptr, sh, sv);
 	}
 	public QTransform_Ptr* Rotate(double a)
 	{
-		return CQt.QTransform_Rotate(this.ptr, a);
+		return CQt.QTransform_Rotate((.)this.ptr, a);
 	}
 	public QTransform_Ptr* RotateRadians(double a)
 	{
-		return CQt.QTransform_RotateRadians(this.ptr, a);
+		return CQt.QTransform_RotateRadians((.)this.ptr, a);
 	}
 	public void Reset()
 	{
-		CQt.QTransform_Reset(this.ptr);
+		CQt.QTransform_Reset((.)this.ptr);
 	}
 	public QPoint_Ptr Map(QPoint_Ptr* p)
 	{
-		return CQt.QTransform_Map(this.ptr, p);
+		return CQt.QTransform_Map((.)this.ptr, p);
 	}
 	public QPointF_Ptr Map2(QPointF_Ptr* p)
 	{
-		return CQt.QTransform_Map2(this.ptr, p);
+		return CQt.QTransform_Map2((.)this.ptr, p);
 	}
 	public QLine_Ptr Map3(QLine_Ptr* l)
 	{
-		return CQt.QTransform_Map3(this.ptr, l);
+		return CQt.QTransform_Map3((.)this.ptr, l);
 	}
 	public QLineF_Ptr Map4(QLineF_Ptr* l)
 	{
-		return CQt.QTransform_Map4(this.ptr, l);
+		return CQt.QTransform_Map4((.)this.ptr, l);
 	}
 	public QRegion_Ptr Map7(QRegion_Ptr* r)
 	{
-		return CQt.QTransform_Map7(this.ptr, r);
+		return CQt.QTransform_Map7((.)this.ptr, r);
 	}
 	public QPainterPath_Ptr Map8(QPainterPath_Ptr* p)
 	{
-		return CQt.QTransform_Map8(this.ptr, p);
+		return CQt.QTransform_Map8((.)this.ptr, p);
 	}
 	public QRect_Ptr MapRect(QRect_Ptr* param1)
 	{
-		return CQt.QTransform_MapRect(this.ptr, param1);
+		return CQt.QTransform_MapRect((.)this.ptr, param1);
 	}
 	public QRectF_Ptr MapRect2(QRectF_Ptr* param1)
 	{
-		return CQt.QTransform_MapRect2(this.ptr, param1);
+		return CQt.QTransform_MapRect2((.)this.ptr, param1);
 	}
 	public void Map9(c_int x, c_int y, c_int* tx, c_int* ty)
 	{
-		CQt.QTransform_Map9(this.ptr, x, y, tx, ty);
+		CQt.QTransform_Map9((.)this.ptr, x, y, tx, ty);
 	}
 	public void Map10(double x, double y, double* tx, double* ty)
 	{
-		CQt.QTransform_Map10(this.ptr, x, y, tx, ty);
+		CQt.QTransform_Map10((.)this.ptr, x, y, tx, ty);
 	}
 	public QTransform_Ptr* OperatorMultiplyAssign2(double div)
 	{
-		return CQt.QTransform_OperatorMultiplyAssign2(this.ptr, div);
+		return CQt.QTransform_OperatorMultiplyAssign2((.)this.ptr, div);
 	}
 	public QTransform_Ptr FromTranslate(double dx, double dy)
 	{
@@ -334,15 +334,15 @@ class QTransform
 	}
 	public QTransform_Ptr Inverted1(bool* invertible)
 	{
-		return CQt.QTransform_Inverted1(this.ptr, invertible);
+		return CQt.QTransform_Inverted1((.)this.ptr, invertible);
 	}
 	public QTransform_Ptr* Rotate2(double a, Qt_Axis axis)
 	{
-		return CQt.QTransform_Rotate2(this.ptr, a, axis);
+		return CQt.QTransform_Rotate2((.)this.ptr, a, axis);
 	}
 	public QTransform_Ptr* RotateRadians2(double a, Qt_Axis axis)
 	{
-		return CQt.QTransform_RotateRadians2(this.ptr, a, axis);
+		return CQt.QTransform_RotateRadians2((.)this.ptr, a, axis);
 	}
 }
 interface IQTransform

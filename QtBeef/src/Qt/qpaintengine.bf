@@ -44,27 +44,27 @@ class QTextItem
 	}
 	public double Descent()
 	{
-		return CQt.QTextItem_Descent(this.ptr);
+		return CQt.QTextItem_Descent((.)this.ptr);
 	}
 	public double Ascent()
 	{
-		return CQt.QTextItem_Ascent(this.ptr);
+		return CQt.QTextItem_Ascent((.)this.ptr);
 	}
 	public double Width()
 	{
-		return CQt.QTextItem_Width(this.ptr);
+		return CQt.QTextItem_Width((.)this.ptr);
 	}
 	public void* RenderFlags()
 	{
-		return CQt.QTextItem_RenderFlags(this.ptr);
+		return CQt.QTextItem_RenderFlags((.)this.ptr);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QTextItem_Text(this.ptr);
+		return CQt.QTextItem_Text((.)this.ptr);
 	}
 	public QFont_Ptr Font()
 	{
-		return CQt.QTextItem_Font(this.ptr);
+		return CQt.QTextItem_Font((.)this.ptr);
 	}
 }
 interface IQTextItem
@@ -185,155 +185,155 @@ class QPaintEngine
 	}
 	public bool IsActive()
 	{
-		return CQt.QPaintEngine_IsActive(this.ptr);
+		return CQt.QPaintEngine_IsActive((.)this.ptr);
 	}
 	public void SetActive(bool newState)
 	{
-		CQt.QPaintEngine_SetActive(this.ptr, newState);
+		CQt.QPaintEngine_SetActive((.)this.ptr, newState);
 	}
 	public bool Begin(QPaintDevice_Ptr* pdev)
 	{
-		return CQt.QPaintEngine_Begin(this.ptr, pdev);
+		return CQt.QPaintEngine_Begin((.)this.ptr, pdev);
 	}
 	public bool End()
 	{
-		return CQt.QPaintEngine_End(this.ptr);
+		return CQt.QPaintEngine_End((.)this.ptr);
 	}
 	public void UpdateState(QPaintEngineState_Ptr* state)
 	{
-		CQt.QPaintEngine_UpdateState(this.ptr, state);
+		CQt.QPaintEngine_UpdateState((.)this.ptr, state);
 	}
 	public void DrawRects(QRect_Ptr* rects, c_int rectCount)
 	{
-		CQt.QPaintEngine_DrawRects(this.ptr, rects, rectCount);
+		CQt.QPaintEngine_DrawRects((.)this.ptr, rects, rectCount);
 	}
 	public void DrawRects2(QRectF_Ptr* rects, c_int rectCount)
 	{
-		CQt.QPaintEngine_DrawRects2(this.ptr, rects, rectCount);
+		CQt.QPaintEngine_DrawRects2((.)this.ptr, rects, rectCount);
 	}
 	public void DrawLines(QLine_Ptr* lines, c_int lineCount)
 	{
-		CQt.QPaintEngine_DrawLines(this.ptr, lines, lineCount);
+		CQt.QPaintEngine_DrawLines((.)this.ptr, lines, lineCount);
 	}
 	public void DrawLines2(QLineF_Ptr* lines, c_int lineCount)
 	{
-		CQt.QPaintEngine_DrawLines2(this.ptr, lines, lineCount);
+		CQt.QPaintEngine_DrawLines2((.)this.ptr, lines, lineCount);
 	}
 	public void DrawEllipse(QRectF_Ptr* r)
 	{
-		CQt.QPaintEngine_DrawEllipse(this.ptr, r);
+		CQt.QPaintEngine_DrawEllipse((.)this.ptr, r);
 	}
 	public void DrawEllipse2(QRect_Ptr* r)
 	{
-		CQt.QPaintEngine_DrawEllipse2(this.ptr, r);
+		CQt.QPaintEngine_DrawEllipse2((.)this.ptr, r);
 	}
 	public void DrawPath(QPainterPath_Ptr* path)
 	{
-		CQt.QPaintEngine_DrawPath(this.ptr, path);
+		CQt.QPaintEngine_DrawPath((.)this.ptr, path);
 	}
 	public void DrawPoints(QPointF_Ptr* points, c_int pointCount)
 	{
-		CQt.QPaintEngine_DrawPoints(this.ptr, points, pointCount);
+		CQt.QPaintEngine_DrawPoints((.)this.ptr, points, pointCount);
 	}
 	public void DrawPoints2(QPoint_Ptr* points, c_int pointCount)
 	{
-		CQt.QPaintEngine_DrawPoints2(this.ptr, points, pointCount);
+		CQt.QPaintEngine_DrawPoints2((.)this.ptr, points, pointCount);
 	}
 	public void DrawPolygon(QPointF_Ptr* points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
 	{
-		CQt.QPaintEngine_DrawPolygon(this.ptr, points, pointCount, mode);
+		CQt.QPaintEngine_DrawPolygon((.)this.ptr, points, pointCount, mode);
 	}
 	public void DrawPolygon2(QPoint_Ptr* points, c_int pointCount, QPaintEngine_PolygonDrawMode mode)
 	{
-		CQt.QPaintEngine_DrawPolygon2(this.ptr, points, pointCount, mode);
+		CQt.QPaintEngine_DrawPolygon2((.)this.ptr, points, pointCount, mode);
 	}
 	public void DrawPixmap(QRectF_Ptr* r, QPixmap_Ptr* pm, QRectF_Ptr* sr)
 	{
-		CQt.QPaintEngine_DrawPixmap(this.ptr, r, pm, sr);
+		CQt.QPaintEngine_DrawPixmap((.)this.ptr, r, pm, sr);
 	}
 	public void DrawTextItem(QPointF_Ptr* p, QTextItem_Ptr* textItem)
 	{
-		CQt.QPaintEngine_DrawTextItem(this.ptr, p, textItem);
+		CQt.QPaintEngine_DrawTextItem((.)this.ptr, p, textItem);
 	}
 	public void DrawTiledPixmap(QRectF_Ptr* r, QPixmap_Ptr* pixmap, QPointF_Ptr* s)
 	{
-		CQt.QPaintEngine_DrawTiledPixmap(this.ptr, r, pixmap, s);
+		CQt.QPaintEngine_DrawTiledPixmap((.)this.ptr, r, pixmap, s);
 	}
 	public void DrawImage(QRectF_Ptr* r, QImage_Ptr* pm, QRectF_Ptr* sr, void* flags)
 	{
-		CQt.QPaintEngine_DrawImage(this.ptr, r, pm, sr, flags);
+		CQt.QPaintEngine_DrawImage((.)this.ptr, r, pm, sr, flags);
 	}
 	public void SetPaintDevice(QPaintDevice_Ptr* device)
 	{
-		CQt.QPaintEngine_SetPaintDevice(this.ptr, device);
+		CQt.QPaintEngine_SetPaintDevice((.)this.ptr, device);
 	}
 	public QPaintDevice_Ptr* PaintDevice()
 	{
-		return CQt.QPaintEngine_PaintDevice(this.ptr);
+		return CQt.QPaintEngine_PaintDevice((.)this.ptr);
 	}
 	public void SetSystemClip(QRegion_Ptr* baseClip)
 	{
-		CQt.QPaintEngine_SetSystemClip(this.ptr, baseClip);
+		CQt.QPaintEngine_SetSystemClip((.)this.ptr, baseClip);
 	}
 	public QRegion_Ptr SystemClip()
 	{
-		return CQt.QPaintEngine_SystemClip(this.ptr);
+		return CQt.QPaintEngine_SystemClip((.)this.ptr);
 	}
 	public void SetSystemRect(QRect_Ptr* rect)
 	{
-		CQt.QPaintEngine_SetSystemRect(this.ptr, rect);
+		CQt.QPaintEngine_SetSystemRect((.)this.ptr, rect);
 	}
 	public QRect_Ptr SystemRect()
 	{
-		return CQt.QPaintEngine_SystemRect(this.ptr);
+		return CQt.QPaintEngine_SystemRect((.)this.ptr);
 	}
 	public QPoint_Ptr CoordinateOffset()
 	{
-		return CQt.QPaintEngine_CoordinateOffset(this.ptr);
+		return CQt.QPaintEngine_CoordinateOffset((.)this.ptr);
 	}
 	public QPaintEngine_Type Type()
 	{
-		return CQt.QPaintEngine_Type(this.ptr);
+		return CQt.QPaintEngine_Type((.)this.ptr);
 	}
 	public void Fix_neg_rect(c_int* x, c_int* y, c_int* w, c_int* h)
 	{
-		CQt.QPaintEngine_Fix_Neg_Rect(this.ptr, x, y, w, h);
+		CQt.QPaintEngine_Fix_Neg_Rect((.)this.ptr, x, y, w, h);
 	}
 	public bool TestDirty(void* df)
 	{
-		return CQt.QPaintEngine_TestDirty(this.ptr, df);
+		return CQt.QPaintEngine_TestDirty((.)this.ptr, df);
 	}
 	public void SetDirty(void* df)
 	{
-		CQt.QPaintEngine_SetDirty(this.ptr, df);
+		CQt.QPaintEngine_SetDirty((.)this.ptr, df);
 	}
 	public void ClearDirty(void* df)
 	{
-		CQt.QPaintEngine_ClearDirty(this.ptr, df);
+		CQt.QPaintEngine_ClearDirty((.)this.ptr, df);
 	}
 	public bool HasFeature(void* feature)
 	{
-		return CQt.QPaintEngine_HasFeature(this.ptr, feature);
+		return CQt.QPaintEngine_HasFeature((.)this.ptr, feature);
 	}
 	public QPainter_Ptr* Painter()
 	{
-		return CQt.QPaintEngine_Painter(this.ptr);
+		return CQt.QPaintEngine_Painter((.)this.ptr);
 	}
 	public void SyncState()
 	{
-		CQt.QPaintEngine_SyncState(this.ptr);
+		CQt.QPaintEngine_SyncState((.)this.ptr);
 	}
 	public bool IsExtended()
 	{
-		return CQt.QPaintEngine_IsExtended(this.ptr);
+		return CQt.QPaintEngine_IsExtended((.)this.ptr);
 	}
 	public QPixmap_Ptr CreatePixmap(QSize_Ptr size)
 	{
-		return CQt.QPaintEngine_CreatePixmap(this.ptr, size);
+		return CQt.QPaintEngine_CreatePixmap((.)this.ptr, size);
 	}
 	public QPixmap_Ptr CreatePixmapFromImage(QImage_Ptr image, void* flags)
 	{
-		return CQt.QPaintEngine_CreatePixmapFromImage(this.ptr, image, flags);
+		return CQt.QPaintEngine_CreatePixmapFromImage((.)this.ptr, image, flags);
 	}
 }
 interface IQPaintEngine
@@ -442,75 +442,75 @@ class QPaintEngineState
 	}
 	public void* State()
 	{
-		return CQt.QPaintEngineState_State(this.ptr);
+		return CQt.QPaintEngineState_State((.)this.ptr);
 	}
 	public QPen_Ptr Pen()
 	{
-		return CQt.QPaintEngineState_Pen(this.ptr);
+		return CQt.QPaintEngineState_Pen((.)this.ptr);
 	}
 	public QBrush_Ptr Brush()
 	{
-		return CQt.QPaintEngineState_Brush(this.ptr);
+		return CQt.QPaintEngineState_Brush((.)this.ptr);
 	}
 	public QPointF_Ptr BrushOrigin()
 	{
-		return CQt.QPaintEngineState_BrushOrigin(this.ptr);
+		return CQt.QPaintEngineState_BrushOrigin((.)this.ptr);
 	}
 	public QBrush_Ptr BackgroundBrush()
 	{
-		return CQt.QPaintEngineState_BackgroundBrush(this.ptr);
+		return CQt.QPaintEngineState_BackgroundBrush((.)this.ptr);
 	}
 	public Qt_BGMode BackgroundMode()
 	{
-		return CQt.QPaintEngineState_BackgroundMode(this.ptr);
+		return CQt.QPaintEngineState_BackgroundMode((.)this.ptr);
 	}
 	public QFont_Ptr Font()
 	{
-		return CQt.QPaintEngineState_Font(this.ptr);
+		return CQt.QPaintEngineState_Font((.)this.ptr);
 	}
 	public QTransform_Ptr Transform()
 	{
-		return CQt.QPaintEngineState_Transform(this.ptr);
+		return CQt.QPaintEngineState_Transform((.)this.ptr);
 	}
 	public Qt_ClipOperation ClipOperation()
 	{
-		return CQt.QPaintEngineState_ClipOperation(this.ptr);
+		return CQt.QPaintEngineState_ClipOperation((.)this.ptr);
 	}
 	public QRegion_Ptr ClipRegion()
 	{
-		return CQt.QPaintEngineState_ClipRegion(this.ptr);
+		return CQt.QPaintEngineState_ClipRegion((.)this.ptr);
 	}
 	public QPainterPath_Ptr ClipPath()
 	{
-		return CQt.QPaintEngineState_ClipPath(this.ptr);
+		return CQt.QPaintEngineState_ClipPath((.)this.ptr);
 	}
 	public bool IsClipEnabled()
 	{
-		return CQt.QPaintEngineState_IsClipEnabled(this.ptr);
+		return CQt.QPaintEngineState_IsClipEnabled((.)this.ptr);
 	}
 	public void* RenderHints()
 	{
-		return CQt.QPaintEngineState_RenderHints(this.ptr);
+		return CQt.QPaintEngineState_RenderHints((.)this.ptr);
 	}
 	public QPainter_CompositionMode CompositionMode()
 	{
-		return CQt.QPaintEngineState_CompositionMode(this.ptr);
+		return CQt.QPaintEngineState_CompositionMode((.)this.ptr);
 	}
 	public double Opacity()
 	{
-		return CQt.QPaintEngineState_Opacity(this.ptr);
+		return CQt.QPaintEngineState_Opacity((.)this.ptr);
 	}
 	public QPainter_Ptr* Painter()
 	{
-		return CQt.QPaintEngineState_Painter(this.ptr);
+		return CQt.QPaintEngineState_Painter((.)this.ptr);
 	}
 	public bool BrushNeedsResolving()
 	{
-		return CQt.QPaintEngineState_BrushNeedsResolving(this.ptr);
+		return CQt.QPaintEngineState_BrushNeedsResolving((.)this.ptr);
 	}
 	public bool PenNeedsResolving()
 	{
-		return CQt.QPaintEngineState_PenNeedsResolving(this.ptr);
+		return CQt.QPaintEngineState_PenNeedsResolving((.)this.ptr);
 	}
 }
 interface IQPaintEngineState

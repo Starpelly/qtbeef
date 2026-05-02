@@ -170,23 +170,23 @@ class QFileInfo
 	}
 	public void Swap(QFileInfo_Ptr* other)
 	{
-		CQt.QFileInfo_Swap(this.ptr, other);
+		CQt.QFileInfo_Swap((.)this.ptr, other);
 	}
 	public void SetFile(libqt_string* file)
 	{
-		CQt.QFileInfo_SetFile(this.ptr, file);
+		CQt.QFileInfo_SetFile((.)this.ptr, file);
 	}
 	public void SetFile2(QFileDevice_Ptr* file)
 	{
-		CQt.QFileInfo_SetFile2(this.ptr, file);
+		CQt.QFileInfo_SetFile2((.)this.ptr, file);
 	}
 	public void SetFile3(QDir_Ptr* dir, libqt_string* file)
 	{
-		CQt.QFileInfo_SetFile3(this.ptr, dir, file);
+		CQt.QFileInfo_SetFile3((.)this.ptr, dir, file);
 	}
 	public bool Exists()
 	{
-		return CQt.QFileInfo_Exists(this.ptr);
+		return CQt.QFileInfo_Exists((.)this.ptr);
 	}
 	public bool Exists2(libqt_string* file)
 	{
@@ -194,199 +194,199 @@ class QFileInfo
 	}
 	public void Refresh()
 	{
-		CQt.QFileInfo_Refresh(this.ptr);
+		CQt.QFileInfo_Refresh((.)this.ptr);
 	}
 	public libqt_string FilePath()
 	{
-		return CQt.QFileInfo_FilePath(this.ptr);
+		return CQt.QFileInfo_FilePath((.)this.ptr);
 	}
 	public libqt_string AbsoluteFilePath()
 	{
-		return CQt.QFileInfo_AbsoluteFilePath(this.ptr);
+		return CQt.QFileInfo_AbsoluteFilePath((.)this.ptr);
 	}
 	public libqt_string CanonicalFilePath()
 	{
-		return CQt.QFileInfo_CanonicalFilePath(this.ptr);
+		return CQt.QFileInfo_CanonicalFilePath((.)this.ptr);
 	}
 	public libqt_string FileName()
 	{
-		return CQt.QFileInfo_FileName(this.ptr);
+		return CQt.QFileInfo_FileName((.)this.ptr);
 	}
 	public libqt_string BaseName()
 	{
-		return CQt.QFileInfo_BaseName(this.ptr);
+		return CQt.QFileInfo_BaseName((.)this.ptr);
 	}
 	public libqt_string CompleteBaseName()
 	{
-		return CQt.QFileInfo_CompleteBaseName(this.ptr);
+		return CQt.QFileInfo_CompleteBaseName((.)this.ptr);
 	}
 	public libqt_string Suffix()
 	{
-		return CQt.QFileInfo_Suffix(this.ptr);
+		return CQt.QFileInfo_Suffix((.)this.ptr);
 	}
 	public libqt_string BundleName()
 	{
-		return CQt.QFileInfo_BundleName(this.ptr);
+		return CQt.QFileInfo_BundleName((.)this.ptr);
 	}
 	public libqt_string CompleteSuffix()
 	{
-		return CQt.QFileInfo_CompleteSuffix(this.ptr);
+		return CQt.QFileInfo_CompleteSuffix((.)this.ptr);
 	}
 	public libqt_string Path()
 	{
-		return CQt.QFileInfo_Path(this.ptr);
+		return CQt.QFileInfo_Path((.)this.ptr);
 	}
 	public libqt_string AbsolutePath()
 	{
-		return CQt.QFileInfo_AbsolutePath(this.ptr);
+		return CQt.QFileInfo_AbsolutePath((.)this.ptr);
 	}
 	public libqt_string CanonicalPath()
 	{
-		return CQt.QFileInfo_CanonicalPath(this.ptr);
+		return CQt.QFileInfo_CanonicalPath((.)this.ptr);
 	}
 	public QDir_Ptr Dir()
 	{
-		return CQt.QFileInfo_Dir(this.ptr);
+		return CQt.QFileInfo_Dir((.)this.ptr);
 	}
 	public QDir_Ptr AbsoluteDir()
 	{
-		return CQt.QFileInfo_AbsoluteDir(this.ptr);
+		return CQt.QFileInfo_AbsoluteDir((.)this.ptr);
 	}
 	public bool IsReadable()
 	{
-		return CQt.QFileInfo_IsReadable(this.ptr);
+		return CQt.QFileInfo_IsReadable((.)this.ptr);
 	}
 	public bool IsWritable()
 	{
-		return CQt.QFileInfo_IsWritable(this.ptr);
+		return CQt.QFileInfo_IsWritable((.)this.ptr);
 	}
 	public bool IsExecutable()
 	{
-		return CQt.QFileInfo_IsExecutable(this.ptr);
+		return CQt.QFileInfo_IsExecutable((.)this.ptr);
 	}
 	public bool IsHidden()
 	{
-		return CQt.QFileInfo_IsHidden(this.ptr);
+		return CQt.QFileInfo_IsHidden((.)this.ptr);
 	}
 	public bool IsNativePath()
 	{
-		return CQt.QFileInfo_IsNativePath(this.ptr);
+		return CQt.QFileInfo_IsNativePath((.)this.ptr);
 	}
 	public bool IsRelative()
 	{
-		return CQt.QFileInfo_IsRelative(this.ptr);
+		return CQt.QFileInfo_IsRelative((.)this.ptr);
 	}
 	public bool IsAbsolute()
 	{
-		return CQt.QFileInfo_IsAbsolute(this.ptr);
+		return CQt.QFileInfo_IsAbsolute((.)this.ptr);
 	}
 	public bool MakeAbsolute()
 	{
-		return CQt.QFileInfo_MakeAbsolute(this.ptr);
+		return CQt.QFileInfo_MakeAbsolute((.)this.ptr);
 	}
 	public bool IsFile()
 	{
-		return CQt.QFileInfo_IsFile(this.ptr);
+		return CQt.QFileInfo_IsFile((.)this.ptr);
 	}
 	public bool IsDir()
 	{
-		return CQt.QFileInfo_IsDir(this.ptr);
+		return CQt.QFileInfo_IsDir((.)this.ptr);
 	}
 	public bool IsSymLink()
 	{
-		return CQt.QFileInfo_IsSymLink(this.ptr);
+		return CQt.QFileInfo_IsSymLink((.)this.ptr);
 	}
 	public bool IsSymbolicLink()
 	{
-		return CQt.QFileInfo_IsSymbolicLink(this.ptr);
+		return CQt.QFileInfo_IsSymbolicLink((.)this.ptr);
 	}
 	public bool IsShortcut()
 	{
-		return CQt.QFileInfo_IsShortcut(this.ptr);
+		return CQt.QFileInfo_IsShortcut((.)this.ptr);
 	}
 	public bool IsAlias()
 	{
-		return CQt.QFileInfo_IsAlias(this.ptr);
+		return CQt.QFileInfo_IsAlias((.)this.ptr);
 	}
 	public bool IsJunction()
 	{
-		return CQt.QFileInfo_IsJunction(this.ptr);
+		return CQt.QFileInfo_IsJunction((.)this.ptr);
 	}
 	public bool IsRoot()
 	{
-		return CQt.QFileInfo_IsRoot(this.ptr);
+		return CQt.QFileInfo_IsRoot((.)this.ptr);
 	}
 	public bool IsBundle()
 	{
-		return CQt.QFileInfo_IsBundle(this.ptr);
+		return CQt.QFileInfo_IsBundle((.)this.ptr);
 	}
 	public libqt_string SymLinkTarget()
 	{
-		return CQt.QFileInfo_SymLinkTarget(this.ptr);
+		return CQt.QFileInfo_SymLinkTarget((.)this.ptr);
 	}
 	public libqt_string JunctionTarget()
 	{
-		return CQt.QFileInfo_JunctionTarget(this.ptr);
+		return CQt.QFileInfo_JunctionTarget((.)this.ptr);
 	}
 	public libqt_string Owner()
 	{
-		return CQt.QFileInfo_Owner(this.ptr);
+		return CQt.QFileInfo_Owner((.)this.ptr);
 	}
 	public c_uint OwnerId()
 	{
-		return CQt.QFileInfo_OwnerId(this.ptr);
+		return CQt.QFileInfo_OwnerId((.)this.ptr);
 	}
 	public libqt_string Group()
 	{
-		return CQt.QFileInfo_Group(this.ptr);
+		return CQt.QFileInfo_Group((.)this.ptr);
 	}
 	public c_uint GroupId()
 	{
-		return CQt.QFileInfo_GroupId(this.ptr);
+		return CQt.QFileInfo_GroupId((.)this.ptr);
 	}
 	public bool Permission(void* permissions)
 	{
-		return CQt.QFileInfo_Permission(this.ptr, permissions);
+		return CQt.QFileInfo_Permission((.)this.ptr, permissions);
 	}
 	public void* Permissions()
 	{
-		return CQt.QFileInfo_Permissions(this.ptr);
+		return CQt.QFileInfo_Permissions((.)this.ptr);
 	}
 	public c_longlong Size()
 	{
-		return CQt.QFileInfo_Size(this.ptr);
+		return CQt.QFileInfo_Size((.)this.ptr);
 	}
 	public QDateTime_Ptr BirthTime()
 	{
-		return CQt.QFileInfo_BirthTime(this.ptr);
+		return CQt.QFileInfo_BirthTime((.)this.ptr);
 	}
 	public QDateTime_Ptr MetadataChangeTime()
 	{
-		return CQt.QFileInfo_MetadataChangeTime(this.ptr);
+		return CQt.QFileInfo_MetadataChangeTime((.)this.ptr);
 	}
 	public QDateTime_Ptr LastModified()
 	{
-		return CQt.QFileInfo_LastModified(this.ptr);
+		return CQt.QFileInfo_LastModified((.)this.ptr);
 	}
 	public QDateTime_Ptr LastRead()
 	{
-		return CQt.QFileInfo_LastRead(this.ptr);
+		return CQt.QFileInfo_LastRead((.)this.ptr);
 	}
 	public QDateTime_Ptr FileTime(QFileDevice_FileTime time)
 	{
-		return CQt.QFileInfo_FileTime(this.ptr, time);
+		return CQt.QFileInfo_FileTime((.)this.ptr, time);
 	}
 	public bool Caching()
 	{
-		return CQt.QFileInfo_Caching(this.ptr);
+		return CQt.QFileInfo_Caching((.)this.ptr);
 	}
 	public void SetCaching(bool on)
 	{
-		CQt.QFileInfo_SetCaching(this.ptr, on);
+		CQt.QFileInfo_SetCaching((.)this.ptr, on);
 	}
 	public void Stat()
 	{
-		CQt.QFileInfo_Stat(this.ptr);
+		CQt.QFileInfo_Stat((.)this.ptr);
 	}
 }
 interface IQFileInfo

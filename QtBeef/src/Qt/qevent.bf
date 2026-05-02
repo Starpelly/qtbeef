@@ -50,31 +50,75 @@ class QInputEvent
 	}
 	public QInputEvent_Ptr* Clone()
 	{
-		return CQt.QInputEvent_Clone(this.ptr);
+		return CQt.QInputEvent_Clone((.)this.ptr);
 	}
 	public QInputDevice_Ptr* Device()
 	{
-		return CQt.QInputEvent_Device(this.ptr);
+		return CQt.QInputEvent_Device((.)this.ptr);
 	}
 	public QInputDevice_DeviceType DeviceType()
 	{
-		return CQt.QInputEvent_DeviceType(this.ptr);
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
 	}
 	public void* Modifiers()
 	{
-		return CQt.QInputEvent_Modifiers(this.ptr);
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
 	}
 	public void SetModifiers(void* modifiers)
 	{
-		CQt.QInputEvent_SetModifiers(this.ptr, modifiers);
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
 	}
 	public c_ulonglong Timestamp()
 	{
-		return CQt.QInputEvent_Timestamp(this.ptr);
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
 	}
 	public void SetTimestamp(c_ulonglong timestamp)
 	{
-		CQt.QInputEvent_SetTimestamp(this.ptr, timestamp);
+		CQt.QInputEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQInputEvent
@@ -164,79 +208,139 @@ class QPointerEvent
 	}
 	public QPointerEvent_Ptr* Clone()
 	{
-		return CQt.QPointerEvent_Clone(this.ptr);
+		return CQt.QPointerEvent_Clone((.)this.ptr);
 	}
 	public QPointingDevice_Ptr* PointingDevice()
 	{
-		return CQt.QPointerEvent_PointingDevice(this.ptr);
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
 	}
 	public QPointingDevice_PointerType PointerType()
 	{
-		return CQt.QPointerEvent_PointerType(this.ptr);
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
 	}
 	public void SetTimestamp(c_ulonglong timestamp)
 	{
-		CQt.QPointerEvent_SetTimestamp(this.ptr, timestamp);
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
 	}
 	public void* PointCount()
 	{
-		return CQt.QPointerEvent_PointCount(this.ptr);
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
 	}
 	public QEventPoint_Ptr* Point(void* i)
 	{
-		return CQt.QPointerEvent_Point(this.ptr, i);
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
 	}
 	public void** Points()
 	{
-		return CQt.QPointerEvent_Points(this.ptr);
+		return CQt.QPointerEvent_Points((.)this.ptr);
 	}
 	public QEventPoint_Ptr* PointById(c_int id)
 	{
-		return CQt.QPointerEvent_PointById(this.ptr, id);
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
 	}
 	public bool AllPointsGrabbed()
 	{
-		return CQt.QPointerEvent_AllPointsGrabbed(this.ptr);
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
 	}
 	public bool IsBeginEvent()
 	{
-		return CQt.QPointerEvent_IsBeginEvent(this.ptr);
+		return CQt.QPointerEvent_IsBeginEvent((.)this.ptr);
 	}
 	public bool IsUpdateEvent()
 	{
-		return CQt.QPointerEvent_IsUpdateEvent(this.ptr);
+		return CQt.QPointerEvent_IsUpdateEvent((.)this.ptr);
 	}
 	public bool IsEndEvent()
 	{
-		return CQt.QPointerEvent_IsEndEvent(this.ptr);
+		return CQt.QPointerEvent_IsEndEvent((.)this.ptr);
 	}
 	public bool AllPointsAccepted()
 	{
-		return CQt.QPointerEvent_AllPointsAccepted(this.ptr);
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QPointerEvent_SetAccepted(this.ptr, accepted);
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
 	}
 	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
 	{
-		return CQt.QPointerEvent_ExclusiveGrabber(this.ptr, point);
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
 	}
 	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
 	{
-		CQt.QPointerEvent_SetExclusiveGrabber(this.ptr, point, exclusiveGrabber);
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
 	}
 	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
 	{
-		CQt.QPointerEvent_ClearPassiveGrabbers(this.ptr, point);
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
 	}
 	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
 	{
-		return CQt.QPointerEvent_AddPassiveGrabber(this.ptr, point, grabber);
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
 	}
 	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
 	{
-		return CQt.QPointerEvent_RemovePassiveGrabber(this.ptr, point, grabber);
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQPointerEvent
@@ -304,47 +408,167 @@ class QSinglePointEvent
 	}
 	public QSinglePointEvent_Ptr* Clone()
 	{
-		return CQt.QSinglePointEvent_Clone(this.ptr);
+		return CQt.QSinglePointEvent_Clone((.)this.ptr);
 	}
 	public Qt_MouseButton Button()
 	{
-		return CQt.QSinglePointEvent_Button(this.ptr);
+		return CQt.QSinglePointEvent_Button((.)this.ptr);
 	}
 	public void* Buttons()
 	{
-		return CQt.QSinglePointEvent_Buttons(this.ptr);
+		return CQt.QSinglePointEvent_Buttons((.)this.ptr);
 	}
 	public QPointF_Ptr Position()
 	{
-		return CQt.QSinglePointEvent_Position(this.ptr);
+		return CQt.QSinglePointEvent_Position((.)this.ptr);
 	}
 	public QPointF_Ptr ScenePosition()
 	{
-		return CQt.QSinglePointEvent_ScenePosition(this.ptr);
+		return CQt.QSinglePointEvent_ScenePosition((.)this.ptr);
 	}
 	public QPointF_Ptr GlobalPosition()
 	{
-		return CQt.QSinglePointEvent_GlobalPosition(this.ptr);
+		return CQt.QSinglePointEvent_GlobalPosition((.)this.ptr);
 	}
 	public bool IsBeginEvent()
 	{
-		return CQt.QSinglePointEvent_IsBeginEvent(this.ptr);
+		return CQt.QSinglePointEvent_IsBeginEvent((.)this.ptr);
 	}
 	public bool IsUpdateEvent()
 	{
-		return CQt.QSinglePointEvent_IsUpdateEvent(this.ptr);
+		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.ptr);
 	}
 	public bool IsEndEvent()
 	{
-		return CQt.QSinglePointEvent_IsEndEvent(this.ptr);
+		return CQt.QSinglePointEvent_IsEndEvent((.)this.ptr);
 	}
 	public QObject_Ptr* ExclusivePointGrabber()
 	{
-		return CQt.QSinglePointEvent_ExclusivePointGrabber(this.ptr);
+		return CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.ptr);
 	}
 	public void SetExclusivePointGrabber(QObject_Ptr* exclusiveGrabber)
 	{
-		CQt.QSinglePointEvent_SetExclusivePointGrabber(this.ptr, exclusiveGrabber);
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.ptr, exclusiveGrabber);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQSinglePointEvent
@@ -414,43 +638,203 @@ class QEnterEvent
 	}
 	public QEnterEvent_Ptr* Clone()
 	{
-		return CQt.QEnterEvent_Clone(this.ptr);
+		return CQt.QEnterEvent_Clone((.)this.ptr);
 	}
 	public QPoint_Ptr Pos()
 	{
-		return CQt.QEnterEvent_Pos(this.ptr);
+		return CQt.QEnterEvent_Pos((.)this.ptr);
 	}
 	public QPoint_Ptr GlobalPos()
 	{
-		return CQt.QEnterEvent_GlobalPos(this.ptr);
+		return CQt.QEnterEvent_GlobalPos((.)this.ptr);
 	}
 	public c_int X()
 	{
-		return CQt.QEnterEvent_X(this.ptr);
+		return CQt.QEnterEvent_X((.)this.ptr);
 	}
 	public c_int Y()
 	{
-		return CQt.QEnterEvent_Y(this.ptr);
+		return CQt.QEnterEvent_Y((.)this.ptr);
 	}
 	public c_int GlobalX()
 	{
-		return CQt.QEnterEvent_GlobalX(this.ptr);
+		return CQt.QEnterEvent_GlobalX((.)this.ptr);
 	}
 	public c_int GlobalY()
 	{
-		return CQt.QEnterEvent_GlobalY(this.ptr);
+		return CQt.QEnterEvent_GlobalY((.)this.ptr);
 	}
 	public QPointF_Ptr LocalPos()
 	{
-		return CQt.QEnterEvent_LocalPos(this.ptr);
+		return CQt.QEnterEvent_LocalPos((.)this.ptr);
 	}
 	public QPointF_Ptr WindowPos()
 	{
-		return CQt.QEnterEvent_WindowPos(this.ptr);
+		return CQt.QEnterEvent_WindowPos((.)this.ptr);
 	}
 	public QPointF_Ptr ScreenPos()
 	{
-		return CQt.QEnterEvent_ScreenPos(this.ptr);
+		return CQt.QEnterEvent_ScreenPos((.)this.ptr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QSinglePointEvent_Position((.)this.ptr);
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return CQt.QSinglePointEvent_ScenePosition((.)this.ptr);
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return CQt.QSinglePointEvent_GlobalPosition((.)this.ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QSinglePointEvent_IsBeginEvent((.)this.ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QSinglePointEvent_IsEndEvent((.)this.ptr);
+	}
+	public QObject_Ptr* ExclusivePointGrabber()
+	{
+		return CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.ptr);
+	}
+	public void SetExclusivePointGrabber(QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.ptr, exclusiveGrabber);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQEnterEvent
@@ -559,51 +943,211 @@ class QMouseEvent
 	}
 	public QMouseEvent_Ptr* Clone()
 	{
-		return CQt.QMouseEvent_Clone(this.ptr);
+		return CQt.QMouseEvent_Clone((.)this.ptr);
 	}
 	public QPoint_Ptr Pos()
 	{
-		return CQt.QMouseEvent_Pos(this.ptr);
+		return CQt.QMouseEvent_Pos((.)this.ptr);
 	}
 	public QPoint_Ptr GlobalPos()
 	{
-		return CQt.QMouseEvent_GlobalPos(this.ptr);
+		return CQt.QMouseEvent_GlobalPos((.)this.ptr);
 	}
 	public c_int X()
 	{
-		return CQt.QMouseEvent_X(this.ptr);
+		return CQt.QMouseEvent_X((.)this.ptr);
 	}
 	public c_int Y()
 	{
-		return CQt.QMouseEvent_Y(this.ptr);
+		return CQt.QMouseEvent_Y((.)this.ptr);
 	}
 	public c_int GlobalX()
 	{
-		return CQt.QMouseEvent_GlobalX(this.ptr);
+		return CQt.QMouseEvent_GlobalX((.)this.ptr);
 	}
 	public c_int GlobalY()
 	{
-		return CQt.QMouseEvent_GlobalY(this.ptr);
+		return CQt.QMouseEvent_GlobalY((.)this.ptr);
 	}
 	public QPointF_Ptr LocalPos()
 	{
-		return CQt.QMouseEvent_LocalPos(this.ptr);
+		return CQt.QMouseEvent_LocalPos((.)this.ptr);
 	}
 	public QPointF_Ptr WindowPos()
 	{
-		return CQt.QMouseEvent_WindowPos(this.ptr);
+		return CQt.QMouseEvent_WindowPos((.)this.ptr);
 	}
 	public QPointF_Ptr ScreenPos()
 	{
-		return CQt.QMouseEvent_ScreenPos(this.ptr);
+		return CQt.QMouseEvent_ScreenPos((.)this.ptr);
 	}
 	public Qt_MouseEventSource Source()
 	{
-		return CQt.QMouseEvent_Source(this.ptr);
+		return CQt.QMouseEvent_Source((.)this.ptr);
 	}
 	public void* Flags()
 	{
-		return CQt.QMouseEvent_Flags(this.ptr);
+		return CQt.QMouseEvent_Flags((.)this.ptr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QSinglePointEvent_Position((.)this.ptr);
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return CQt.QSinglePointEvent_ScenePosition((.)this.ptr);
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return CQt.QSinglePointEvent_GlobalPosition((.)this.ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QSinglePointEvent_IsBeginEvent((.)this.ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QSinglePointEvent_IsEndEvent((.)this.ptr);
+	}
+	public QObject_Ptr* ExclusivePointGrabber()
+	{
+		return CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.ptr);
+	}
+	public void SetExclusivePointGrabber(QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.ptr, exclusiveGrabber);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQMouseEvent
@@ -690,27 +1234,183 @@ class QHoverEvent
 	}
 	public QHoverEvent_Ptr* Clone()
 	{
-		return CQt.QHoverEvent_Clone(this.ptr);
+		return CQt.QHoverEvent_Clone((.)this.ptr);
 	}
 	public QPoint_Ptr Pos()
 	{
-		return CQt.QHoverEvent_Pos(this.ptr);
+		return CQt.QHoverEvent_Pos((.)this.ptr);
 	}
 	public QPointF_Ptr PosF()
 	{
-		return CQt.QHoverEvent_PosF(this.ptr);
+		return CQt.QHoverEvent_PosF((.)this.ptr);
 	}
 	public bool IsUpdateEvent()
 	{
-		return CQt.QHoverEvent_IsUpdateEvent(this.ptr);
+		return CQt.QHoverEvent_IsUpdateEvent((.)this.ptr);
 	}
 	public QPoint_Ptr OldPos()
 	{
-		return CQt.QHoverEvent_OldPos(this.ptr);
+		return CQt.QHoverEvent_OldPos((.)this.ptr);
 	}
 	public QPointF_Ptr OldPosF()
 	{
-		return CQt.QHoverEvent_OldPosF(this.ptr);
+		return CQt.QHoverEvent_OldPosF((.)this.ptr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QSinglePointEvent_Position((.)this.ptr);
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return CQt.QSinglePointEvent_ScenePosition((.)this.ptr);
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return CQt.QSinglePointEvent_GlobalPosition((.)this.ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QSinglePointEvent_IsBeginEvent((.)this.ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QSinglePointEvent_IsEndEvent((.)this.ptr);
+	}
+	public QObject_Ptr* ExclusivePointGrabber()
+	{
+		return CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.ptr);
+	}
+	public void SetExclusivePointGrabber(QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.ptr, exclusiveGrabber);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQHoverEvent
@@ -783,47 +1483,195 @@ class QWheelEvent
 	}
 	public QWheelEvent_Ptr* Clone()
 	{
-		return CQt.QWheelEvent_Clone(this.ptr);
+		return CQt.QWheelEvent_Clone((.)this.ptr);
 	}
 	public QPoint_Ptr PixelDelta()
 	{
-		return CQt.QWheelEvent_PixelDelta(this.ptr);
+		return CQt.QWheelEvent_PixelDelta((.)this.ptr);
 	}
 	public QPoint_Ptr AngleDelta()
 	{
-		return CQt.QWheelEvent_AngleDelta(this.ptr);
+		return CQt.QWheelEvent_AngleDelta((.)this.ptr);
 	}
 	public Qt_ScrollPhase Phase()
 	{
-		return CQt.QWheelEvent_Phase(this.ptr);
+		return CQt.QWheelEvent_Phase((.)this.ptr);
 	}
 	public bool Inverted()
 	{
-		return CQt.QWheelEvent_Inverted(this.ptr);
+		return CQt.QWheelEvent_Inverted((.)this.ptr);
 	}
 	public bool IsInverted()
 	{
-		return CQt.QWheelEvent_IsInverted(this.ptr);
+		return CQt.QWheelEvent_IsInverted((.)this.ptr);
 	}
 	public bool HasPixelDelta()
 	{
-		return CQt.QWheelEvent_HasPixelDelta(this.ptr);
+		return CQt.QWheelEvent_HasPixelDelta((.)this.ptr);
 	}
 	public bool IsBeginEvent()
 	{
-		return CQt.QWheelEvent_IsBeginEvent(this.ptr);
+		return CQt.QWheelEvent_IsBeginEvent((.)this.ptr);
 	}
 	public bool IsUpdateEvent()
 	{
-		return CQt.QWheelEvent_IsUpdateEvent(this.ptr);
+		return CQt.QWheelEvent_IsUpdateEvent((.)this.ptr);
 	}
 	public bool IsEndEvent()
 	{
-		return CQt.QWheelEvent_IsEndEvent(this.ptr);
+		return CQt.QWheelEvent_IsEndEvent((.)this.ptr);
 	}
 	public Qt_MouseEventSource Source()
 	{
-		return CQt.QWheelEvent_Source(this.ptr);
+		return CQt.QWheelEvent_Source((.)this.ptr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QSinglePointEvent_Position((.)this.ptr);
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return CQt.QSinglePointEvent_ScenePosition((.)this.ptr);
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return CQt.QSinglePointEvent_GlobalPosition((.)this.ptr);
+	}
+	public QObject_Ptr* ExclusivePointGrabber()
+	{
+		return CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.ptr);
+	}
+	public void SetExclusivePointGrabber(QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.ptr, exclusiveGrabber);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQWheelEvent
@@ -903,75 +1751,235 @@ class QTabletEvent
 	}
 	public QTabletEvent_Ptr* Clone()
 	{
-		return CQt.QTabletEvent_Clone(this.ptr);
+		return CQt.QTabletEvent_Clone((.)this.ptr);
 	}
 	public QPoint_Ptr Pos()
 	{
-		return CQt.QTabletEvent_Pos(this.ptr);
+		return CQt.QTabletEvent_Pos((.)this.ptr);
 	}
 	public QPoint_Ptr GlobalPos()
 	{
-		return CQt.QTabletEvent_GlobalPos(this.ptr);
+		return CQt.QTabletEvent_GlobalPos((.)this.ptr);
 	}
 	public QPointF_Ptr PosF()
 	{
-		return CQt.QTabletEvent_PosF(this.ptr);
+		return CQt.QTabletEvent_PosF((.)this.ptr);
 	}
 	public QPointF_Ptr GlobalPosF()
 	{
-		return CQt.QTabletEvent_GlobalPosF(this.ptr);
+		return CQt.QTabletEvent_GlobalPosF((.)this.ptr);
 	}
 	public c_int X()
 	{
-		return CQt.QTabletEvent_X(this.ptr);
+		return CQt.QTabletEvent_X((.)this.ptr);
 	}
 	public c_int Y()
 	{
-		return CQt.QTabletEvent_Y(this.ptr);
+		return CQt.QTabletEvent_Y((.)this.ptr);
 	}
 	public c_int GlobalX()
 	{
-		return CQt.QTabletEvent_GlobalX(this.ptr);
+		return CQt.QTabletEvent_GlobalX((.)this.ptr);
 	}
 	public c_int GlobalY()
 	{
-		return CQt.QTabletEvent_GlobalY(this.ptr);
+		return CQt.QTabletEvent_GlobalY((.)this.ptr);
 	}
 	public double HiResGlobalX()
 	{
-		return CQt.QTabletEvent_HiResGlobalX(this.ptr);
+		return CQt.QTabletEvent_HiResGlobalX((.)this.ptr);
 	}
 	public double HiResGlobalY()
 	{
-		return CQt.QTabletEvent_HiResGlobalY(this.ptr);
+		return CQt.QTabletEvent_HiResGlobalY((.)this.ptr);
 	}
 	public c_longlong UniqueId()
 	{
-		return CQt.QTabletEvent_UniqueId(this.ptr);
+		return CQt.QTabletEvent_UniqueId((.)this.ptr);
 	}
 	public double Pressure()
 	{
-		return CQt.QTabletEvent_Pressure(this.ptr);
+		return CQt.QTabletEvent_Pressure((.)this.ptr);
 	}
 	public double Rotation()
 	{
-		return CQt.QTabletEvent_Rotation(this.ptr);
+		return CQt.QTabletEvent_Rotation((.)this.ptr);
 	}
 	public double Z()
 	{
-		return CQt.QTabletEvent_Z(this.ptr);
+		return CQt.QTabletEvent_Z((.)this.ptr);
 	}
 	public double TangentialPressure()
 	{
-		return CQt.QTabletEvent_TangentialPressure(this.ptr);
+		return CQt.QTabletEvent_TangentialPressure((.)this.ptr);
 	}
 	public double XTilt()
 	{
-		return CQt.QTabletEvent_XTilt(this.ptr);
+		return CQt.QTabletEvent_XTilt((.)this.ptr);
 	}
 	public double YTilt()
 	{
-		return CQt.QTabletEvent_YTilt(this.ptr);
+		return CQt.QTabletEvent_YTilt((.)this.ptr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QSinglePointEvent_Position((.)this.ptr);
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return CQt.QSinglePointEvent_ScenePosition((.)this.ptr);
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return CQt.QSinglePointEvent_GlobalPosition((.)this.ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QSinglePointEvent_IsBeginEvent((.)this.ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QSinglePointEvent_IsEndEvent((.)this.ptr);
+	}
+	public QObject_Ptr* ExclusivePointGrabber()
+	{
+		return CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.ptr);
+	}
+	public void SetExclusivePointGrabber(QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.ptr, exclusiveGrabber);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQTabletEvent
@@ -1054,43 +2062,203 @@ class QNativeGestureEvent
 	}
 	public QNativeGestureEvent_Ptr* Clone()
 	{
-		return CQt.QNativeGestureEvent_Clone(this.ptr);
+		return CQt.QNativeGestureEvent_Clone((.)this.ptr);
 	}
 	public Qt_NativeGestureType GestureType()
 	{
-		return CQt.QNativeGestureEvent_GestureType(this.ptr);
+		return CQt.QNativeGestureEvent_GestureType((.)this.ptr);
 	}
 	public c_int FingerCount()
 	{
-		return CQt.QNativeGestureEvent_FingerCount(this.ptr);
+		return CQt.QNativeGestureEvent_FingerCount((.)this.ptr);
 	}
 	public double Value()
 	{
-		return CQt.QNativeGestureEvent_Value(this.ptr);
+		return CQt.QNativeGestureEvent_Value((.)this.ptr);
 	}
 	public QPointF_Ptr Delta()
 	{
-		return CQt.QNativeGestureEvent_Delta(this.ptr);
+		return CQt.QNativeGestureEvent_Delta((.)this.ptr);
 	}
 	public QPoint_Ptr Pos()
 	{
-		return CQt.QNativeGestureEvent_Pos(this.ptr);
+		return CQt.QNativeGestureEvent_Pos((.)this.ptr);
 	}
 	public QPoint_Ptr GlobalPos()
 	{
-		return CQt.QNativeGestureEvent_GlobalPos(this.ptr);
+		return CQt.QNativeGestureEvent_GlobalPos((.)this.ptr);
 	}
 	public QPointF_Ptr LocalPos()
 	{
-		return CQt.QNativeGestureEvent_LocalPos(this.ptr);
+		return CQt.QNativeGestureEvent_LocalPos((.)this.ptr);
 	}
 	public QPointF_Ptr WindowPos()
 	{
-		return CQt.QNativeGestureEvent_WindowPos(this.ptr);
+		return CQt.QNativeGestureEvent_WindowPos((.)this.ptr);
 	}
 	public QPointF_Ptr ScreenPos()
 	{
-		return CQt.QNativeGestureEvent_ScreenPos(this.ptr);
+		return CQt.QNativeGestureEvent_ScreenPos((.)this.ptr);
+	}
+	public Qt_MouseButton Button()
+	{
+		return CQt.QSinglePointEvent_Button((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QSinglePointEvent_Buttons((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QSinglePointEvent_Position((.)this.ptr);
+	}
+	public QPointF_Ptr ScenePosition()
+	{
+		return CQt.QSinglePointEvent_ScenePosition((.)this.ptr);
+	}
+	public QPointF_Ptr GlobalPosition()
+	{
+		return CQt.QSinglePointEvent_GlobalPosition((.)this.ptr);
+	}
+	public bool IsBeginEvent()
+	{
+		return CQt.QSinglePointEvent_IsBeginEvent((.)this.ptr);
+	}
+	public bool IsUpdateEvent()
+	{
+		return CQt.QSinglePointEvent_IsUpdateEvent((.)this.ptr);
+	}
+	public bool IsEndEvent()
+	{
+		return CQt.QSinglePointEvent_IsEndEvent((.)this.ptr);
+	}
+	public QObject_Ptr* ExclusivePointGrabber()
+	{
+		return CQt.QSinglePointEvent_ExclusivePointGrabber((.)this.ptr);
+	}
+	public void SetExclusivePointGrabber(QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QSinglePointEvent_SetExclusivePointGrabber((.)this.ptr, exclusiveGrabber);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQNativeGestureEvent
@@ -1203,47 +2371,111 @@ class QKeyEvent
 	}
 	public QKeyEvent_Ptr* Clone()
 	{
-		return CQt.QKeyEvent_Clone(this.ptr);
+		return CQt.QKeyEvent_Clone((.)this.ptr);
 	}
 	public c_int Key()
 	{
-		return CQt.QKeyEvent_Key(this.ptr);
+		return CQt.QKeyEvent_Key((.)this.ptr);
 	}
 	public bool Matches(QKeySequence_StandardKey key)
 	{
-		return CQt.QKeyEvent_Matches(this.ptr, key);
+		return CQt.QKeyEvent_Matches((.)this.ptr, key);
 	}
 	public void* Modifiers()
 	{
-		return CQt.QKeyEvent_Modifiers(this.ptr);
+		return CQt.QKeyEvent_Modifiers((.)this.ptr);
 	}
 	public QKeyCombination_Ptr KeyCombination()
 	{
-		return CQt.QKeyEvent_KeyCombination(this.ptr);
+		return CQt.QKeyEvent_KeyCombination((.)this.ptr);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QKeyEvent_Text(this.ptr);
+		return CQt.QKeyEvent_Text((.)this.ptr);
 	}
 	public bool IsAutoRepeat()
 	{
-		return CQt.QKeyEvent_IsAutoRepeat(this.ptr);
+		return CQt.QKeyEvent_IsAutoRepeat((.)this.ptr);
 	}
 	public c_int Count()
 	{
-		return CQt.QKeyEvent_Count(this.ptr);
+		return CQt.QKeyEvent_Count((.)this.ptr);
 	}
 	public c_uint NativeScanCode()
 	{
-		return CQt.QKeyEvent_NativeScanCode(this.ptr);
+		return CQt.QKeyEvent_NativeScanCode((.)this.ptr);
 	}
 	public c_uint NativeVirtualKey()
 	{
-		return CQt.QKeyEvent_NativeVirtualKey(this.ptr);
+		return CQt.QKeyEvent_NativeVirtualKey((.)this.ptr);
 	}
 	public c_uint NativeModifiers()
 	{
-		return CQt.QKeyEvent_NativeModifiers(this.ptr);
+		return CQt.QKeyEvent_NativeModifiers((.)this.ptr);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QInputEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQKeyEvent
@@ -1301,19 +2533,63 @@ class QFocusEvent
 	}
 	public QFocusEvent_Ptr* Clone()
 	{
-		return CQt.QFocusEvent_Clone(this.ptr);
+		return CQt.QFocusEvent_Clone((.)this.ptr);
 	}
 	public bool GotFocus()
 	{
-		return CQt.QFocusEvent_GotFocus(this.ptr);
+		return CQt.QFocusEvent_GotFocus((.)this.ptr);
 	}
 	public bool LostFocus()
 	{
-		return CQt.QFocusEvent_LostFocus(this.ptr);
+		return CQt.QFocusEvent_LostFocus((.)this.ptr);
 	}
 	public Qt_FocusReason Reason()
 	{
-		return CQt.QFocusEvent_Reason(this.ptr);
+		return CQt.QFocusEvent_Reason((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQFocusEvent
@@ -1362,15 +2638,59 @@ class QPaintEvent
 	}
 	public QPaintEvent_Ptr* Clone()
 	{
-		return CQt.QPaintEvent_Clone(this.ptr);
+		return CQt.QPaintEvent_Clone((.)this.ptr);
 	}
 	public QRect_Ptr* Rect()
 	{
-		return CQt.QPaintEvent_Rect(this.ptr);
+		return CQt.QPaintEvent_Rect((.)this.ptr);
 	}
 	public QRegion_Ptr* Region()
 	{
-		return CQt.QPaintEvent_Region(this.ptr);
+		return CQt.QPaintEvent_Region((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQPaintEvent
@@ -1412,15 +2732,59 @@ class QMoveEvent
 	}
 	public QMoveEvent_Ptr* Clone()
 	{
-		return CQt.QMoveEvent_Clone(this.ptr);
+		return CQt.QMoveEvent_Clone((.)this.ptr);
 	}
 	public QPoint_Ptr* Pos()
 	{
-		return CQt.QMoveEvent_Pos(this.ptr);
+		return CQt.QMoveEvent_Pos((.)this.ptr);
 	}
 	public QPoint_Ptr* OldPos()
 	{
-		return CQt.QMoveEvent_OldPos(this.ptr);
+		return CQt.QMoveEvent_OldPos((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQMoveEvent
@@ -1460,11 +2824,55 @@ class QExposeEvent
 	}
 	public QExposeEvent_Ptr* Clone()
 	{
-		return CQt.QExposeEvent_Clone(this.ptr);
+		return CQt.QExposeEvent_Clone((.)this.ptr);
 	}
 	public QRegion_Ptr* Region()
 	{
-		return CQt.QExposeEvent_Region(this.ptr);
+		return CQt.QExposeEvent_Region((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQExposeEvent
@@ -1503,11 +2911,55 @@ class QPlatformSurfaceEvent
 	}
 	public QPlatformSurfaceEvent_Ptr* Clone()
 	{
-		return CQt.QPlatformSurfaceEvent_Clone(this.ptr);
+		return CQt.QPlatformSurfaceEvent_Clone((.)this.ptr);
 	}
 	public QPlatformSurfaceEvent_SurfaceEventType SurfaceEventType()
 	{
-		return CQt.QPlatformSurfaceEvent_SurfaceEventType(this.ptr);
+		return CQt.QPlatformSurfaceEvent_SurfaceEventType((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQPlatformSurfaceEvent
@@ -1548,15 +3000,59 @@ class QResizeEvent
 	}
 	public QResizeEvent_Ptr* Clone()
 	{
-		return CQt.QResizeEvent_Clone(this.ptr);
+		return CQt.QResizeEvent_Clone((.)this.ptr);
 	}
 	public QSize_Ptr* Size()
 	{
-		return CQt.QResizeEvent_Size(this.ptr);
+		return CQt.QResizeEvent_Size((.)this.ptr);
 	}
 	public QSize_Ptr* OldSize()
 	{
-		return CQt.QResizeEvent_OldSize(this.ptr);
+		return CQt.QResizeEvent_OldSize((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQResizeEvent
@@ -1594,7 +3090,51 @@ class QCloseEvent
 	}
 	public QCloseEvent_Ptr* Clone()
 	{
-		return CQt.QCloseEvent_Clone(this.ptr);
+		return CQt.QCloseEvent_Clone((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQCloseEvent
@@ -1630,7 +3170,51 @@ class QIconDragEvent
 	}
 	public QIconDragEvent_Ptr* Clone()
 	{
-		return CQt.QIconDragEvent_Clone(this.ptr);
+		return CQt.QIconDragEvent_Clone((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQIconDragEvent
@@ -1666,7 +3250,51 @@ class QShowEvent
 	}
 	public QShowEvent_Ptr* Clone()
 	{
-		return CQt.QShowEvent_Clone(this.ptr);
+		return CQt.QShowEvent_Clone((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQShowEvent
@@ -1702,7 +3330,51 @@ class QHideEvent
 	}
 	public QHideEvent_Ptr* Clone()
 	{
-		return CQt.QHideEvent_Clone(this.ptr);
+		return CQt.QHideEvent_Clone((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQHideEvent
@@ -1764,35 +3436,103 @@ class QContextMenuEvent
 	}
 	public QContextMenuEvent_Ptr* Clone()
 	{
-		return CQt.QContextMenuEvent_Clone(this.ptr);
+		return CQt.QContextMenuEvent_Clone((.)this.ptr);
 	}
 	public c_int X()
 	{
-		return CQt.QContextMenuEvent_X(this.ptr);
+		return CQt.QContextMenuEvent_X((.)this.ptr);
 	}
 	public c_int Y()
 	{
-		return CQt.QContextMenuEvent_Y(this.ptr);
+		return CQt.QContextMenuEvent_Y((.)this.ptr);
 	}
 	public c_int GlobalX()
 	{
-		return CQt.QContextMenuEvent_GlobalX(this.ptr);
+		return CQt.QContextMenuEvent_GlobalX((.)this.ptr);
 	}
 	public c_int GlobalY()
 	{
-		return CQt.QContextMenuEvent_GlobalY(this.ptr);
+		return CQt.QContextMenuEvent_GlobalY((.)this.ptr);
 	}
 	public QPoint_Ptr* Pos()
 	{
-		return CQt.QContextMenuEvent_Pos(this.ptr);
+		return CQt.QContextMenuEvent_Pos((.)this.ptr);
 	}
 	public QPoint_Ptr* GlobalPos()
 	{
-		return CQt.QContextMenuEvent_GlobalPos(this.ptr);
+		return CQt.QContextMenuEvent_GlobalPos((.)this.ptr);
 	}
 	public QContextMenuEvent_Reason Reason()
 	{
-		return CQt.QContextMenuEvent_Reason(this.ptr);
+		return CQt.QContextMenuEvent_Reason((.)this.ptr);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QInputEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQContextMenuEvent
@@ -1857,39 +3597,83 @@ class QInputMethodEvent
 	}
 	public QInputMethodEvent_Ptr* Clone()
 	{
-		return CQt.QInputMethodEvent_Clone(this.ptr);
+		return CQt.QInputMethodEvent_Clone((.)this.ptr);
 	}
 	public void SetCommitString(libqt_string* commitString)
 	{
-		CQt.QInputMethodEvent_SetCommitString(this.ptr, commitString);
+		CQt.QInputMethodEvent_SetCommitString((.)this.ptr, commitString);
 	}
 	public void** Attributes()
 	{
-		return CQt.QInputMethodEvent_Attributes(this.ptr);
+		return CQt.QInputMethodEvent_Attributes((.)this.ptr);
 	}
 	public libqt_string* PreeditString()
 	{
-		return CQt.QInputMethodEvent_PreeditString(this.ptr);
+		return CQt.QInputMethodEvent_PreeditString((.)this.ptr);
 	}
 	public libqt_string* CommitString()
 	{
-		return CQt.QInputMethodEvent_CommitString(this.ptr);
+		return CQt.QInputMethodEvent_CommitString((.)this.ptr);
 	}
 	public c_int ReplacementStart()
 	{
-		return CQt.QInputMethodEvent_ReplacementStart(this.ptr);
+		return CQt.QInputMethodEvent_ReplacementStart((.)this.ptr);
 	}
 	public c_int ReplacementLength()
 	{
-		return CQt.QInputMethodEvent_ReplacementLength(this.ptr);
+		return CQt.QInputMethodEvent_ReplacementLength((.)this.ptr);
 	}
 	public void SetCommitString2(libqt_string* commitString, c_int replaceFrom)
 	{
-		CQt.QInputMethodEvent_SetCommitString2(this.ptr, commitString, replaceFrom);
+		CQt.QInputMethodEvent_SetCommitString2((.)this.ptr, commitString, replaceFrom);
 	}
 	public void SetCommitString3(libqt_string* commitString, c_int replaceFrom, c_int replaceLength)
 	{
-		CQt.QInputMethodEvent_SetCommitString3(this.ptr, commitString, replaceFrom, replaceLength);
+		CQt.QInputMethodEvent_SetCommitString3((.)this.ptr, commitString, replaceFrom, replaceLength);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQInputMethodEvent
@@ -1939,19 +3723,63 @@ class QInputMethodQueryEvent
 	}
 	public QInputMethodQueryEvent_Ptr* Clone()
 	{
-		return CQt.QInputMethodQueryEvent_Clone(this.ptr);
+		return CQt.QInputMethodQueryEvent_Clone((.)this.ptr);
 	}
 	public void* Queries()
 	{
-		return CQt.QInputMethodQueryEvent_Queries(this.ptr);
+		return CQt.QInputMethodQueryEvent_Queries((.)this.ptr);
 	}
 	public void SetValue(Qt_InputMethodQuery query, QVariant_Ptr* value)
 	{
-		CQt.QInputMethodQueryEvent_SetValue(this.ptr, query, value);
+		CQt.QInputMethodQueryEvent_SetValue((.)this.ptr, query, value);
 	}
 	public QVariant_Ptr Value(Qt_InputMethodQuery query)
 	{
-		return CQt.QInputMethodQueryEvent_Value(this.ptr, query);
+		return CQt.QInputMethodQueryEvent_Value((.)this.ptr, query);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQInputMethodQueryEvent
@@ -2024,63 +3852,107 @@ class QDropEvent
 	}
 	public QDropEvent_Ptr* Clone()
 	{
-		return CQt.QDropEvent_Clone(this.ptr);
+		return CQt.QDropEvent_Clone((.)this.ptr);
 	}
 	public QPoint_Ptr Pos()
 	{
-		return CQt.QDropEvent_Pos(this.ptr);
+		return CQt.QDropEvent_Pos((.)this.ptr);
 	}
 	public QPointF_Ptr PosF()
 	{
-		return CQt.QDropEvent_PosF(this.ptr);
+		return CQt.QDropEvent_PosF((.)this.ptr);
 	}
 	public void* MouseButtons()
 	{
-		return CQt.QDropEvent_MouseButtons(this.ptr);
+		return CQt.QDropEvent_MouseButtons((.)this.ptr);
 	}
 	public void* KeyboardModifiers()
 	{
-		return CQt.QDropEvent_KeyboardModifiers(this.ptr);
+		return CQt.QDropEvent_KeyboardModifiers((.)this.ptr);
 	}
 	public QPointF_Ptr Position()
 	{
-		return CQt.QDropEvent_Position(this.ptr);
+		return CQt.QDropEvent_Position((.)this.ptr);
 	}
 	public void* Buttons()
 	{
-		return CQt.QDropEvent_Buttons(this.ptr);
+		return CQt.QDropEvent_Buttons((.)this.ptr);
 	}
 	public void* Modifiers()
 	{
-		return CQt.QDropEvent_Modifiers(this.ptr);
+		return CQt.QDropEvent_Modifiers((.)this.ptr);
 	}
 	public void* PossibleActions()
 	{
-		return CQt.QDropEvent_PossibleActions(this.ptr);
+		return CQt.QDropEvent_PossibleActions((.)this.ptr);
 	}
 	public Qt_DropAction ProposedAction()
 	{
-		return CQt.QDropEvent_ProposedAction(this.ptr);
+		return CQt.QDropEvent_ProposedAction((.)this.ptr);
 	}
 	public void AcceptProposedAction()
 	{
-		CQt.QDropEvent_AcceptProposedAction(this.ptr);
+		CQt.QDropEvent_AcceptProposedAction((.)this.ptr);
 	}
 	public Qt_DropAction DropAction()
 	{
-		return CQt.QDropEvent_DropAction(this.ptr);
+		return CQt.QDropEvent_DropAction((.)this.ptr);
 	}
 	public void SetDropAction(Qt_DropAction action)
 	{
-		CQt.QDropEvent_SetDropAction(this.ptr, action);
+		CQt.QDropEvent_SetDropAction((.)this.ptr, action);
 	}
 	public QObject_Ptr* Source()
 	{
-		return CQt.QDropEvent_Source(this.ptr);
+		return CQt.QDropEvent_Source((.)this.ptr);
 	}
 	public QMimeData_Ptr* MimeData()
 	{
-		return CQt.QDropEvent_MimeData(this.ptr);
+		return CQt.QDropEvent_MimeData((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQDropEvent
@@ -2146,27 +4018,119 @@ class QDragMoveEvent
 	}
 	public QDragMoveEvent_Ptr* Clone()
 	{
-		return CQt.QDragMoveEvent_Clone(this.ptr);
+		return CQt.QDragMoveEvent_Clone((.)this.ptr);
 	}
 	public QRect_Ptr AnswerRect()
 	{
-		return CQt.QDragMoveEvent_AnswerRect(this.ptr);
+		return CQt.QDragMoveEvent_AnswerRect((.)this.ptr);
 	}
 	public void Accept()
 	{
-		CQt.QDragMoveEvent_Accept(this.ptr);
+		CQt.QDragMoveEvent_Accept((.)this.ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QDragMoveEvent_Ignore(this.ptr);
+		CQt.QDragMoveEvent_Ignore((.)this.ptr);
 	}
 	public void Accept2(QRect_Ptr* r)
 	{
-		CQt.QDragMoveEvent_Accept2(this.ptr, r);
+		CQt.QDragMoveEvent_Accept2((.)this.ptr, r);
 	}
 	public void Ignore2(QRect_Ptr* r)
 	{
-		CQt.QDragMoveEvent_Ignore2(this.ptr, r);
+		CQt.QDragMoveEvent_Ignore2((.)this.ptr, r);
+	}
+	public QPoint_Ptr Pos()
+	{
+		return CQt.QDropEvent_Pos((.)this.ptr);
+	}
+	public QPointF_Ptr PosF()
+	{
+		return CQt.QDropEvent_PosF((.)this.ptr);
+	}
+	public void* MouseButtons()
+	{
+		return CQt.QDropEvent_MouseButtons((.)this.ptr);
+	}
+	public void* KeyboardModifiers()
+	{
+		return CQt.QDropEvent_KeyboardModifiers((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QDropEvent_Position((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QDropEvent_Buttons((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QDropEvent_Modifiers((.)this.ptr);
+	}
+	public void* PossibleActions()
+	{
+		return CQt.QDropEvent_PossibleActions((.)this.ptr);
+	}
+	public Qt_DropAction ProposedAction()
+	{
+		return CQt.QDropEvent_ProposedAction((.)this.ptr);
+	}
+	public void AcceptProposedAction()
+	{
+		CQt.QDropEvent_AcceptProposedAction((.)this.ptr);
+	}
+	public Qt_DropAction DropAction()
+	{
+		return CQt.QDropEvent_DropAction((.)this.ptr);
+	}
+	public void SetDropAction(Qt_DropAction action)
+	{
+		CQt.QDropEvent_SetDropAction((.)this.ptr, action);
+	}
+	public QObject_Ptr* Source()
+	{
+		return CQt.QDropEvent_Source((.)this.ptr);
+	}
+	public QMimeData_Ptr* MimeData()
+	{
+		return CQt.QDropEvent_MimeData((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQDragMoveEvent
@@ -2207,7 +4171,119 @@ class QDragEnterEvent
 	}
 	public QDragEnterEvent_Ptr* Clone()
 	{
-		return CQt.QDragEnterEvent_Clone(this.ptr);
+		return CQt.QDragEnterEvent_Clone((.)this.ptr);
+	}
+	public QRect_Ptr AnswerRect()
+	{
+		return CQt.QDragMoveEvent_AnswerRect((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QDragMoveEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QDragMoveEvent_Ignore((.)this.ptr);
+	}
+	public void Accept2(QRect_Ptr* r)
+	{
+		CQt.QDragMoveEvent_Accept2((.)this.ptr, r);
+	}
+	public void Ignore2(QRect_Ptr* r)
+	{
+		CQt.QDragMoveEvent_Ignore2((.)this.ptr, r);
+	}
+	public QPoint_Ptr Pos()
+	{
+		return CQt.QDropEvent_Pos((.)this.ptr);
+	}
+	public QPointF_Ptr PosF()
+	{
+		return CQt.QDropEvent_PosF((.)this.ptr);
+	}
+	public void* MouseButtons()
+	{
+		return CQt.QDropEvent_MouseButtons((.)this.ptr);
+	}
+	public void* KeyboardModifiers()
+	{
+		return CQt.QDropEvent_KeyboardModifiers((.)this.ptr);
+	}
+	public QPointF_Ptr Position()
+	{
+		return CQt.QDropEvent_Position((.)this.ptr);
+	}
+	public void* Buttons()
+	{
+		return CQt.QDropEvent_Buttons((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QDropEvent_Modifiers((.)this.ptr);
+	}
+	public void* PossibleActions()
+	{
+		return CQt.QDropEvent_PossibleActions((.)this.ptr);
+	}
+	public Qt_DropAction ProposedAction()
+	{
+		return CQt.QDropEvent_ProposedAction((.)this.ptr);
+	}
+	public void AcceptProposedAction()
+	{
+		CQt.QDropEvent_AcceptProposedAction((.)this.ptr);
+	}
+	public Qt_DropAction DropAction()
+	{
+		return CQt.QDropEvent_DropAction((.)this.ptr);
+	}
+	public void SetDropAction(Qt_DropAction action)
+	{
+		CQt.QDropEvent_SetDropAction((.)this.ptr, action);
+	}
+	public QObject_Ptr* Source()
+	{
+		return CQt.QDropEvent_Source((.)this.ptr);
+	}
+	public QMimeData_Ptr* MimeData()
+	{
+		return CQt.QDropEvent_MimeData((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQDragEnterEvent
@@ -2243,7 +4319,51 @@ class QDragLeaveEvent
 	}
 	public QDragLeaveEvent_Ptr* Clone()
 	{
-		return CQt.QDragLeaveEvent_Clone(this.ptr);
+		return CQt.QDragLeaveEvent_Clone((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQDragLeaveEvent
@@ -2291,31 +4411,75 @@ class QHelpEvent
 	}
 	public QHelpEvent_Ptr* Clone()
 	{
-		return CQt.QHelpEvent_Clone(this.ptr);
+		return CQt.QHelpEvent_Clone((.)this.ptr);
 	}
 	public c_int X()
 	{
-		return CQt.QHelpEvent_X(this.ptr);
+		return CQt.QHelpEvent_X((.)this.ptr);
 	}
 	public c_int Y()
 	{
-		return CQt.QHelpEvent_Y(this.ptr);
+		return CQt.QHelpEvent_Y((.)this.ptr);
 	}
 	public c_int GlobalX()
 	{
-		return CQt.QHelpEvent_GlobalX(this.ptr);
+		return CQt.QHelpEvent_GlobalX((.)this.ptr);
 	}
 	public c_int GlobalY()
 	{
-		return CQt.QHelpEvent_GlobalY(this.ptr);
+		return CQt.QHelpEvent_GlobalY((.)this.ptr);
 	}
 	public QPoint_Ptr* Pos()
 	{
-		return CQt.QHelpEvent_Pos(this.ptr);
+		return CQt.QHelpEvent_Pos((.)this.ptr);
 	}
 	public QPoint_Ptr* GlobalPos()
 	{
-		return CQt.QHelpEvent_GlobalPos(this.ptr);
+		return CQt.QHelpEvent_GlobalPos((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQHelpEvent
@@ -2359,11 +4523,55 @@ class QStatusTipEvent
 	}
 	public QStatusTipEvent_Ptr* Clone()
 	{
-		return CQt.QStatusTipEvent_Clone(this.ptr);
+		return CQt.QStatusTipEvent_Clone((.)this.ptr);
 	}
 	public libqt_string Tip()
 	{
-		return CQt.QStatusTipEvent_Tip(this.ptr);
+		return CQt.QStatusTipEvent_Tip((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQStatusTipEvent
@@ -2402,11 +4610,55 @@ class QWhatsThisClickedEvent
 	}
 	public QWhatsThisClickedEvent_Ptr* Clone()
 	{
-		return CQt.QWhatsThisClickedEvent_Clone(this.ptr);
+		return CQt.QWhatsThisClickedEvent_Clone((.)this.ptr);
 	}
 	public libqt_string Href()
 	{
-		return CQt.QWhatsThisClickedEvent_Href(this.ptr);
+		return CQt.QWhatsThisClickedEvent_Href((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQWhatsThisClickedEvent
@@ -2453,15 +4705,59 @@ class QActionEvent
 	}
 	public QActionEvent_Ptr* Clone()
 	{
-		return CQt.QActionEvent_Clone(this.ptr);
+		return CQt.QActionEvent_Clone((.)this.ptr);
 	}
 	public QAction_Ptr* Action()
 	{
-		return CQt.QActionEvent_Action(this.ptr);
+		return CQt.QActionEvent_Action((.)this.ptr);
 	}
 	public QAction_Ptr* Before()
 	{
-		return CQt.QActionEvent_Before(this.ptr);
+		return CQt.QActionEvent_Before((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQActionEvent
@@ -2511,19 +4807,63 @@ class QFileOpenEvent
 	}
 	public QFileOpenEvent_Ptr* Clone()
 	{
-		return CQt.QFileOpenEvent_Clone(this.ptr);
+		return CQt.QFileOpenEvent_Clone((.)this.ptr);
 	}
 	public libqt_string File()
 	{
-		return CQt.QFileOpenEvent_File(this.ptr);
+		return CQt.QFileOpenEvent_File((.)this.ptr);
 	}
 	public QUrl_Ptr Url()
 	{
-		return CQt.QFileOpenEvent_Url(this.ptr);
+		return CQt.QFileOpenEvent_Url((.)this.ptr);
 	}
 	public bool OpenFile(QFile_Ptr* file, void* flags)
 	{
-		return CQt.QFileOpenEvent_OpenFile(this.ptr, file, flags);
+		return CQt.QFileOpenEvent_OpenFile((.)this.ptr, file, flags);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQFileOpenEvent
@@ -2564,11 +4904,55 @@ class QToolBarChangeEvent
 	}
 	public QToolBarChangeEvent_Ptr* Clone()
 	{
-		return CQt.QToolBarChangeEvent_Clone(this.ptr);
+		return CQt.QToolBarChangeEvent_Clone((.)this.ptr);
 	}
 	public bool Toggle()
 	{
-		return CQt.QToolBarChangeEvent_Toggle(this.ptr);
+		return CQt.QToolBarChangeEvent_Toggle((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQToolBarChangeEvent
@@ -2617,19 +5001,63 @@ class QShortcutEvent
 	}
 	public QShortcutEvent_Ptr* Clone()
 	{
-		return CQt.QShortcutEvent_Clone(this.ptr);
+		return CQt.QShortcutEvent_Clone((.)this.ptr);
 	}
 	public QKeySequence_Ptr* Key()
 	{
-		return CQt.QShortcutEvent_Key(this.ptr);
+		return CQt.QShortcutEvent_Key((.)this.ptr);
 	}
 	public c_int ShortcutId()
 	{
-		return CQt.QShortcutEvent_ShortcutId(this.ptr);
+		return CQt.QShortcutEvent_ShortcutId((.)this.ptr);
 	}
 	public bool IsAmbiguous()
 	{
-		return CQt.QShortcutEvent_IsAmbiguous(this.ptr);
+		return CQt.QShortcutEvent_IsAmbiguous((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQShortcutEvent
@@ -2678,15 +5106,59 @@ class QWindowStateChangeEvent
 	}
 	public QWindowStateChangeEvent_Ptr* Clone()
 	{
-		return CQt.QWindowStateChangeEvent_Clone(this.ptr);
+		return CQt.QWindowStateChangeEvent_Clone((.)this.ptr);
 	}
 	public void* OldState()
 	{
-		return CQt.QWindowStateChangeEvent_OldState(this.ptr);
+		return CQt.QWindowStateChangeEvent_OldState((.)this.ptr);
 	}
 	public bool IsOverride()
 	{
-		return CQt.QWindowStateChangeEvent_IsOverride(this.ptr);
+		return CQt.QWindowStateChangeEvent_IsOverride((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQWindowStateChangeEvent
@@ -2766,31 +5238,151 @@ class QTouchEvent
 	}
 	public QTouchEvent_Ptr* Clone()
 	{
-		return CQt.QTouchEvent_Clone(this.ptr);
+		return CQt.QTouchEvent_Clone((.)this.ptr);
 	}
 	public QObject_Ptr* Target()
 	{
-		return CQt.QTouchEvent_Target(this.ptr);
+		return CQt.QTouchEvent_Target((.)this.ptr);
 	}
 	public void* TouchPointStates()
 	{
-		return CQt.QTouchEvent_TouchPointStates(this.ptr);
+		return CQt.QTouchEvent_TouchPointStates((.)this.ptr);
 	}
 	public void** TouchPoints()
 	{
-		return CQt.QTouchEvent_TouchPoints(this.ptr);
+		return CQt.QTouchEvent_TouchPoints((.)this.ptr);
 	}
 	public bool IsBeginEvent()
 	{
-		return CQt.QTouchEvent_IsBeginEvent(this.ptr);
+		return CQt.QTouchEvent_IsBeginEvent((.)this.ptr);
 	}
 	public bool IsUpdateEvent()
 	{
-		return CQt.QTouchEvent_IsUpdateEvent(this.ptr);
+		return CQt.QTouchEvent_IsUpdateEvent((.)this.ptr);
 	}
 	public bool IsEndEvent()
 	{
-		return CQt.QTouchEvent_IsEndEvent(this.ptr);
+		return CQt.QTouchEvent_IsEndEvent((.)this.ptr);
+	}
+	public QPointingDevice_Ptr* PointingDevice()
+	{
+		return CQt.QPointerEvent_PointingDevice((.)this.ptr);
+	}
+	public QPointingDevice_PointerType PointerType()
+	{
+		return CQt.QPointerEvent_PointerType((.)this.ptr);
+	}
+	public void SetTimestamp(c_ulonglong timestamp)
+	{
+		CQt.QPointerEvent_SetTimestamp((.)this.ptr, timestamp);
+	}
+	public void* PointCount()
+	{
+		return CQt.QPointerEvent_PointCount((.)this.ptr);
+	}
+	public QEventPoint_Ptr* Point(void* i)
+	{
+		return CQt.QPointerEvent_Point((.)this.ptr, i);
+	}
+	public void** Points()
+	{
+		return CQt.QPointerEvent_Points((.)this.ptr);
+	}
+	public QEventPoint_Ptr* PointById(c_int id)
+	{
+		return CQt.QPointerEvent_PointById((.)this.ptr, id);
+	}
+	public bool AllPointsGrabbed()
+	{
+		return CQt.QPointerEvent_AllPointsGrabbed((.)this.ptr);
+	}
+	public bool AllPointsAccepted()
+	{
+		return CQt.QPointerEvent_AllPointsAccepted((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QPointerEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public QObject_Ptr* ExclusiveGrabber(QEventPoint_Ptr* point)
+	{
+		return CQt.QPointerEvent_ExclusiveGrabber((.)this.ptr, point);
+	}
+	public void SetExclusiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* exclusiveGrabber)
+	{
+		CQt.QPointerEvent_SetExclusiveGrabber((.)this.ptr, point, exclusiveGrabber);
+	}
+	public void ClearPassiveGrabbers(QEventPoint_Ptr* point)
+	{
+		CQt.QPointerEvent_ClearPassiveGrabbers((.)this.ptr, point);
+	}
+	public bool AddPassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_AddPassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public bool RemovePassiveGrabber(QEventPoint_Ptr* point, QObject_Ptr* grabber)
+	{
+		return CQt.QPointerEvent_RemovePassiveGrabber((.)this.ptr, point, grabber);
+	}
+	public QInputDevice_Ptr* Device()
+	{
+		return CQt.QInputEvent_Device((.)this.ptr);
+	}
+	public QInputDevice_DeviceType DeviceType()
+	{
+		return CQt.QInputEvent_DeviceType((.)this.ptr);
+	}
+	public void* Modifiers()
+	{
+		return CQt.QInputEvent_Modifiers((.)this.ptr);
+	}
+	public void SetModifiers(void* modifiers)
+	{
+		CQt.QInputEvent_SetModifiers((.)this.ptr, modifiers);
+	}
+	public c_ulonglong Timestamp()
+	{
+		return CQt.QInputEvent_Timestamp((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQTouchEvent
@@ -2846,35 +5438,79 @@ class QScrollPrepareEvent
 	}
 	public QScrollPrepareEvent_Ptr* Clone()
 	{
-		return CQt.QScrollPrepareEvent_Clone(this.ptr);
+		return CQt.QScrollPrepareEvent_Clone((.)this.ptr);
 	}
 	public QPointF_Ptr StartPos()
 	{
-		return CQt.QScrollPrepareEvent_StartPos(this.ptr);
+		return CQt.QScrollPrepareEvent_StartPos((.)this.ptr);
 	}
 	public QSizeF_Ptr ViewportSize()
 	{
-		return CQt.QScrollPrepareEvent_ViewportSize(this.ptr);
+		return CQt.QScrollPrepareEvent_ViewportSize((.)this.ptr);
 	}
 	public QRectF_Ptr ContentPosRange()
 	{
-		return CQt.QScrollPrepareEvent_ContentPosRange(this.ptr);
+		return CQt.QScrollPrepareEvent_ContentPosRange((.)this.ptr);
 	}
 	public QPointF_Ptr ContentPos()
 	{
-		return CQt.QScrollPrepareEvent_ContentPos(this.ptr);
+		return CQt.QScrollPrepareEvent_ContentPos((.)this.ptr);
 	}
 	public void SetViewportSize(QSizeF_Ptr* size)
 	{
-		CQt.QScrollPrepareEvent_SetViewportSize(this.ptr, size);
+		CQt.QScrollPrepareEvent_SetViewportSize((.)this.ptr, size);
 	}
 	public void SetContentPosRange(QRectF_Ptr* rect)
 	{
-		CQt.QScrollPrepareEvent_SetContentPosRange(this.ptr, rect);
+		CQt.QScrollPrepareEvent_SetContentPosRange((.)this.ptr, rect);
 	}
 	public void SetContentPos(QPointF_Ptr* pos)
 	{
-		CQt.QScrollPrepareEvent_SetContentPos(this.ptr, pos);
+		CQt.QScrollPrepareEvent_SetContentPos((.)this.ptr, pos);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQScrollPrepareEvent
@@ -2923,19 +5559,63 @@ class QScrollEvent
 	}
 	public QScrollEvent_Ptr* Clone()
 	{
-		return CQt.QScrollEvent_Clone(this.ptr);
+		return CQt.QScrollEvent_Clone((.)this.ptr);
 	}
 	public QPointF_Ptr ContentPos()
 	{
-		return CQt.QScrollEvent_ContentPos(this.ptr);
+		return CQt.QScrollEvent_ContentPos((.)this.ptr);
 	}
 	public QPointF_Ptr OvershootDistance()
 	{
-		return CQt.QScrollEvent_OvershootDistance(this.ptr);
+		return CQt.QScrollEvent_OvershootDistance((.)this.ptr);
 	}
 	public QScrollEvent_ScrollState ScrollState()
 	{
-		return CQt.QScrollEvent_ScrollState(this.ptr);
+		return CQt.QScrollEvent_ScrollState((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQScrollEvent
@@ -2978,15 +5658,59 @@ class QScreenOrientationChangeEvent
 	}
 	public QScreenOrientationChangeEvent_Ptr* Clone()
 	{
-		return CQt.QScreenOrientationChangeEvent_Clone(this.ptr);
+		return CQt.QScreenOrientationChangeEvent_Clone((.)this.ptr);
 	}
 	public QScreen_Ptr* Screen()
 	{
-		return CQt.QScreenOrientationChangeEvent_Screen(this.ptr);
+		return CQt.QScreenOrientationChangeEvent_Screen((.)this.ptr);
 	}
 	public Qt_ScreenOrientation Orientation()
 	{
-		return CQt.QScreenOrientationChangeEvent_Orientation(this.ptr);
+		return CQt.QScreenOrientationChangeEvent_Orientation((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQScreenOrientationChangeEvent
@@ -3026,11 +5750,55 @@ class QApplicationStateChangeEvent
 	}
 	public QApplicationStateChangeEvent_Ptr* Clone()
 	{
-		return CQt.QApplicationStateChangeEvent_Clone(this.ptr);
+		return CQt.QApplicationStateChangeEvent_Clone((.)this.ptr);
 	}
 	public Qt_ApplicationState ApplicationState()
 	{
-		return CQt.QApplicationStateChangeEvent_ApplicationState(this.ptr);
+		return CQt.QApplicationStateChangeEvent_ApplicationState((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQApplicationStateChangeEvent
@@ -3095,35 +5863,35 @@ class QInputMethodEvent_Attribute
 	}
 	public QInputMethodEvent_AttributeType Type()
 	{
-		return CQt.QInputMethodEvent_Attribute_Type(this.ptr);
+		return CQt.QInputMethodEvent_Attribute_Type((.)this.ptr);
 	}
 	public void SetType(QInputMethodEvent_AttributeType type)
 	{
-		CQt.QInputMethodEvent_Attribute_SetType(this.ptr, type);
+		CQt.QInputMethodEvent_Attribute_SetType((.)this.ptr, type);
 	}
 	public c_int Start()
 	{
-		return CQt.QInputMethodEvent_Attribute_Start(this.ptr);
+		return CQt.QInputMethodEvent_Attribute_Start((.)this.ptr);
 	}
 	public void SetStart(c_int start)
 	{
-		CQt.QInputMethodEvent_Attribute_SetStart(this.ptr, start);
+		CQt.QInputMethodEvent_Attribute_SetStart((.)this.ptr, start);
 	}
 	public c_int Length()
 	{
-		return CQt.QInputMethodEvent_Attribute_Length(this.ptr);
+		return CQt.QInputMethodEvent_Attribute_Length((.)this.ptr);
 	}
 	public void SetLength(c_int length)
 	{
-		CQt.QInputMethodEvent_Attribute_SetLength(this.ptr, length);
+		CQt.QInputMethodEvent_Attribute_SetLength((.)this.ptr, length);
 	}
 	public QVariant_Ptr Value()
 	{
-		return CQt.QInputMethodEvent_Attribute_Value(this.ptr);
+		return CQt.QInputMethodEvent_Attribute_Value((.)this.ptr);
 	}
 	public void SetValue(QVariant_Ptr value)
 	{
-		CQt.QInputMethodEvent_Attribute_SetValue(this.ptr, value);
+		CQt.QInputMethodEvent_Attribute_SetValue((.)this.ptr, value);
 	}
 }
 interface IQInputMethodEvent_Attribute

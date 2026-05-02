@@ -404,255 +404,255 @@ class QImage
 	}
 	public void Swap(QImage_Ptr* other)
 	{
-		CQt.QImage_Swap(this.ptr, other);
+		CQt.QImage_Swap((.)this.ptr, other);
 	}
 	public bool IsNull()
 	{
-		return CQt.QImage_IsNull(this.ptr);
+		return CQt.QImage_IsNull((.)this.ptr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QImage_DevType(this.ptr);
+		return CQt.QImage_DevType((.)this.ptr);
 	}
 	public void Detach()
 	{
-		CQt.QImage_Detach(this.ptr);
+		CQt.QImage_Detach((.)this.ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QImage_IsDetached(this.ptr);
+		return CQt.QImage_IsDetached((.)this.ptr);
 	}
 	public QImage_Ptr Copy()
 	{
-		return CQt.QImage_Copy(this.ptr);
+		return CQt.QImage_Copy((.)this.ptr);
 	}
 	public QImage_Ptr Copy2(c_int x, c_int y, c_int w, c_int h)
 	{
-		return CQt.QImage_Copy2(this.ptr, x, y, w, h);
+		return CQt.QImage_Copy2((.)this.ptr, x, y, w, h);
 	}
 	public QImage_Format Format()
 	{
-		return CQt.QImage_Format(this.ptr);
+		return CQt.QImage_Format((.)this.ptr);
 	}
 	public QImage_Ptr ConvertToFormat(QImage_Format f)
 	{
-		return CQt.QImage_ConvertToFormat(this.ptr, f);
+		return CQt.QImage_ConvertToFormat((.)this.ptr, f);
 	}
 	public QImage_Ptr ConvertToFormat2(QImage_Format f, void** colorTable)
 	{
-		return CQt.QImage_ConvertToFormat2(this.ptr, f, colorTable);
+		return CQt.QImage_ConvertToFormat2((.)this.ptr, f, colorTable);
 	}
 	public bool ReinterpretAsFormat(QImage_Format f)
 	{
-		return CQt.QImage_ReinterpretAsFormat(this.ptr, f);
+		return CQt.QImage_ReinterpretAsFormat((.)this.ptr, f);
 	}
 	public QImage_Ptr ConvertedTo(QImage_Format f)
 	{
-		return CQt.QImage_ConvertedTo(this.ptr, f);
+		return CQt.QImage_ConvertedTo((.)this.ptr, f);
 	}
 	public void ConvertTo(QImage_Format f)
 	{
-		CQt.QImage_ConvertTo(this.ptr, f);
+		CQt.QImage_ConvertTo((.)this.ptr, f);
 	}
 	public c_int Width()
 	{
-		return CQt.QImage_Width(this.ptr);
+		return CQt.QImage_Width((.)this.ptr);
 	}
 	public c_int Height()
 	{
-		return CQt.QImage_Height(this.ptr);
+		return CQt.QImage_Height((.)this.ptr);
 	}
 	public QSize_Ptr Size()
 	{
-		return CQt.QImage_Size(this.ptr);
+		return CQt.QImage_Size((.)this.ptr);
 	}
 	public QRect_Ptr Rect()
 	{
-		return CQt.QImage_Rect(this.ptr);
+		return CQt.QImage_Rect((.)this.ptr);
 	}
 	public c_int Depth()
 	{
-		return CQt.QImage_Depth(this.ptr);
+		return CQt.QImage_Depth((.)this.ptr);
 	}
 	public c_int ColorCount()
 	{
-		return CQt.QImage_ColorCount(this.ptr);
+		return CQt.QImage_ColorCount((.)this.ptr);
 	}
 	public c_int BitPlaneCount()
 	{
-		return CQt.QImage_BitPlaneCount(this.ptr);
+		return CQt.QImage_BitPlaneCount((.)this.ptr);
 	}
 	public c_uint Color(c_int i)
 	{
-		return CQt.QImage_Color(this.ptr, i);
+		return CQt.QImage_Color((.)this.ptr, i);
 	}
 	public void SetColor(c_int i, c_uint c)
 	{
-		CQt.QImage_SetColor(this.ptr, i, c);
+		CQt.QImage_SetColor((.)this.ptr, i, c);
 	}
 	public void SetColorCount(c_int colorCount)
 	{
-		CQt.QImage_SetColorCount(this.ptr, colorCount);
+		CQt.QImage_SetColorCount((.)this.ptr, colorCount);
 	}
 	public bool AllGray()
 	{
-		return CQt.QImage_AllGray(this.ptr);
+		return CQt.QImage_AllGray((.)this.ptr);
 	}
 	public bool IsGrayscale()
 	{
-		return CQt.QImage_IsGrayscale(this.ptr);
+		return CQt.QImage_IsGrayscale((.)this.ptr);
 	}
 	public c_uchar* Bits()
 	{
-		return CQt.QImage_Bits(this.ptr);
+		return CQt.QImage_Bits((.)this.ptr);
 	}
 	public c_uchar* Bits2()
 	{
-		return CQt.QImage_Bits2(this.ptr);
+		return CQt.QImage_Bits2((.)this.ptr);
 	}
 	public c_uchar* ConstBits()
 	{
-		return CQt.QImage_ConstBits(this.ptr);
+		return CQt.QImage_ConstBits((.)this.ptr);
 	}
 	public void* SizeInBytes()
 	{
-		return CQt.QImage_SizeInBytes(this.ptr);
+		return CQt.QImage_SizeInBytes((.)this.ptr);
 	}
 	public c_uchar* ScanLine(c_int param1)
 	{
-		return CQt.QImage_ScanLine(this.ptr, param1);
+		return CQt.QImage_ScanLine((.)this.ptr, param1);
 	}
 	public c_uchar* ScanLine2(c_int param1)
 	{
-		return CQt.QImage_ScanLine2(this.ptr, param1);
+		return CQt.QImage_ScanLine2((.)this.ptr, param1);
 	}
 	public c_uchar* ConstScanLine(c_int param1)
 	{
-		return CQt.QImage_ConstScanLine(this.ptr, param1);
+		return CQt.QImage_ConstScanLine((.)this.ptr, param1);
 	}
 	public void* BytesPerLine()
 	{
-		return CQt.QImage_BytesPerLine(this.ptr);
+		return CQt.QImage_BytesPerLine((.)this.ptr);
 	}
 	public bool Valid(c_int x, c_int y)
 	{
-		return CQt.QImage_Valid(this.ptr, x, y);
+		return CQt.QImage_Valid((.)this.ptr, x, y);
 	}
 	public bool Valid2(QPoint_Ptr* pt)
 	{
-		return CQt.QImage_Valid2(this.ptr, pt);
+		return CQt.QImage_Valid2((.)this.ptr, pt);
 	}
 	public c_int PixelIndex(c_int x, c_int y)
 	{
-		return CQt.QImage_PixelIndex(this.ptr, x, y);
+		return CQt.QImage_PixelIndex((.)this.ptr, x, y);
 	}
 	public c_int PixelIndex2(QPoint_Ptr* pt)
 	{
-		return CQt.QImage_PixelIndex2(this.ptr, pt);
+		return CQt.QImage_PixelIndex2((.)this.ptr, pt);
 	}
 	public c_uint Pixel(c_int x, c_int y)
 	{
-		return CQt.QImage_Pixel(this.ptr, x, y);
+		return CQt.QImage_Pixel((.)this.ptr, x, y);
 	}
 	public c_uint Pixel2(QPoint_Ptr* pt)
 	{
-		return CQt.QImage_Pixel2(this.ptr, pt);
+		return CQt.QImage_Pixel2((.)this.ptr, pt);
 	}
 	public void SetPixel(c_int x, c_int y, c_uint index_or_rgb)
 	{
-		CQt.QImage_SetPixel(this.ptr, x, y, index_or_rgb);
+		CQt.QImage_SetPixel((.)this.ptr, x, y, index_or_rgb);
 	}
 	public void SetPixel2(QPoint_Ptr* pt, c_uint index_or_rgb)
 	{
-		CQt.QImage_SetPixel2(this.ptr, pt, index_or_rgb);
+		CQt.QImage_SetPixel2((.)this.ptr, pt, index_or_rgb);
 	}
 	public QColor_Ptr PixelColor(c_int x, c_int y)
 	{
-		return CQt.QImage_PixelColor(this.ptr, x, y);
+		return CQt.QImage_PixelColor((.)this.ptr, x, y);
 	}
 	public QColor_Ptr PixelColor2(QPoint_Ptr* pt)
 	{
-		return CQt.QImage_PixelColor2(this.ptr, pt);
+		return CQt.QImage_PixelColor2((.)this.ptr, pt);
 	}
 	public void SetPixelColor(c_int x, c_int y, QColor_Ptr* c)
 	{
-		CQt.QImage_SetPixelColor(this.ptr, x, y, c);
+		CQt.QImage_SetPixelColor((.)this.ptr, x, y, c);
 	}
 	public void SetPixelColor2(QPoint_Ptr* pt, QColor_Ptr* c)
 	{
-		CQt.QImage_SetPixelColor2(this.ptr, pt, c);
+		CQt.QImage_SetPixelColor2((.)this.ptr, pt, c);
 	}
 	public void* ColorTable()
 	{
-		return CQt.QImage_ColorTable(this.ptr);
+		return CQt.QImage_ColorTable((.)this.ptr);
 	}
 	public void SetColorTable(void** colors)
 	{
-		CQt.QImage_SetColorTable(this.ptr, colors);
+		CQt.QImage_SetColorTable((.)this.ptr, colors);
 	}
 	public double DevicePixelRatio()
 	{
-		return CQt.QImage_DevicePixelRatio(this.ptr);
+		return CQt.QImage_DevicePixelRatio((.)this.ptr);
 	}
 	public void SetDevicePixelRatio(double scaleFactor)
 	{
-		CQt.QImage_SetDevicePixelRatio(this.ptr, scaleFactor);
+		CQt.QImage_SetDevicePixelRatio((.)this.ptr, scaleFactor);
 	}
 	public QSizeF_Ptr DeviceIndependentSize()
 	{
-		return CQt.QImage_DeviceIndependentSize(this.ptr);
+		return CQt.QImage_DeviceIndependentSize((.)this.ptr);
 	}
 	public void Fill(c_uint pixel)
 	{
-		CQt.QImage_Fill(this.ptr, pixel);
+		CQt.QImage_Fill((.)this.ptr, pixel);
 	}
 	public void Fill2(QColor_Ptr* color)
 	{
-		CQt.QImage_Fill2(this.ptr, color);
+		CQt.QImage_Fill2((.)this.ptr, color);
 	}
 	public void Fill3(Qt_GlobalColor color)
 	{
-		CQt.QImage_Fill3(this.ptr, color);
+		CQt.QImage_Fill3((.)this.ptr, color);
 	}
 	public bool HasAlphaChannel()
 	{
-		return CQt.QImage_HasAlphaChannel(this.ptr);
+		return CQt.QImage_HasAlphaChannel((.)this.ptr);
 	}
 	public void SetAlphaChannel(QImage_Ptr* alphaChannel)
 	{
-		CQt.QImage_SetAlphaChannel(this.ptr, alphaChannel);
+		CQt.QImage_SetAlphaChannel((.)this.ptr, alphaChannel);
 	}
 	public QImage_Ptr CreateAlphaMask()
 	{
-		return CQt.QImage_CreateAlphaMask(this.ptr);
+		return CQt.QImage_CreateAlphaMask((.)this.ptr);
 	}
 	public QImage_Ptr CreateHeuristicMask()
 	{
-		return CQt.QImage_CreateHeuristicMask(this.ptr);
+		return CQt.QImage_CreateHeuristicMask((.)this.ptr);
 	}
 	public QImage_Ptr CreateMaskFromColor(c_uint color)
 	{
-		return CQt.QImage_CreateMaskFromColor(this.ptr, color);
+		return CQt.QImage_CreateMaskFromColor((.)this.ptr, color);
 	}
 	public QImage_Ptr Scaled(c_int w, c_int h)
 	{
-		return CQt.QImage_Scaled(this.ptr, w, h);
+		return CQt.QImage_Scaled((.)this.ptr, w, h);
 	}
 	public QImage_Ptr Scaled2(QSize_Ptr* s)
 	{
-		return CQt.QImage_Scaled2(this.ptr, s);
+		return CQt.QImage_Scaled2((.)this.ptr, s);
 	}
 	public QImage_Ptr ScaledToWidth(c_int w)
 	{
-		return CQt.QImage_ScaledToWidth(this.ptr, w);
+		return CQt.QImage_ScaledToWidth((.)this.ptr, w);
 	}
 	public QImage_Ptr ScaledToHeight(c_int h)
 	{
-		return CQt.QImage_ScaledToHeight(this.ptr, h);
+		return CQt.QImage_ScaledToHeight((.)this.ptr, h);
 	}
 	public QImage_Ptr Transformed(QTransform_Ptr* matrix)
 	{
-		return CQt.QImage_Transformed(this.ptr, matrix);
+		return CQt.QImage_Transformed((.)this.ptr, matrix);
 	}
 	public QTransform_Ptr TrueMatrix(QTransform_Ptr* param1, c_int w, c_int h)
 	{
@@ -660,75 +660,75 @@ class QImage
 	}
 	public QImage_Ptr Mirrored()
 	{
-		return CQt.QImage_Mirrored(this.ptr);
+		return CQt.QImage_Mirrored((.)this.ptr);
 	}
 	public QImage_Ptr RgbSwapped()
 	{
-		return CQt.QImage_RgbSwapped(this.ptr);
+		return CQt.QImage_RgbSwapped((.)this.ptr);
 	}
 	public void Mirror()
 	{
-		CQt.QImage_Mirror(this.ptr);
+		CQt.QImage_Mirror((.)this.ptr);
 	}
 	public void RgbSwap()
 	{
-		CQt.QImage_RgbSwap(this.ptr);
+		CQt.QImage_RgbSwap((.)this.ptr);
 	}
 	public void InvertPixels()
 	{
-		CQt.QImage_InvertPixels(this.ptr);
+		CQt.QImage_InvertPixels((.)this.ptr);
 	}
 	public QColorSpace_Ptr ColorSpace()
 	{
-		return CQt.QImage_ColorSpace(this.ptr);
+		return CQt.QImage_ColorSpace((.)this.ptr);
 	}
 	public QImage_Ptr ConvertedToColorSpace(QColorSpace_Ptr* param1)
 	{
-		return CQt.QImage_ConvertedToColorSpace(this.ptr, param1);
+		return CQt.QImage_ConvertedToColorSpace((.)this.ptr, param1);
 	}
 	public void ConvertToColorSpace(QColorSpace_Ptr* param1)
 	{
-		CQt.QImage_ConvertToColorSpace(this.ptr, param1);
+		CQt.QImage_ConvertToColorSpace((.)this.ptr, param1);
 	}
 	public void SetColorSpace(QColorSpace_Ptr* colorSpace)
 	{
-		CQt.QImage_SetColorSpace(this.ptr, colorSpace);
+		CQt.QImage_SetColorSpace((.)this.ptr, colorSpace);
 	}
 	public QImage_Ptr ColorTransformed(QColorTransform_Ptr* transform)
 	{
-		return CQt.QImage_ColorTransformed(this.ptr, transform);
+		return CQt.QImage_ColorTransformed((.)this.ptr, transform);
 	}
 	public void ApplyColorTransform(QColorTransform_Ptr* transform)
 	{
-		CQt.QImage_ApplyColorTransform(this.ptr, transform);
+		CQt.QImage_ApplyColorTransform((.)this.ptr, transform);
 	}
 	public bool Load(QIODevice_Ptr* device, c_char* format)
 	{
-		return CQt.QImage_Load(this.ptr, device, format);
+		return CQt.QImage_Load((.)this.ptr, device, format);
 	}
 	public bool Load2(libqt_string* fileName)
 	{
-		return CQt.QImage_Load2(this.ptr, fileName);
+		return CQt.QImage_Load2((.)this.ptr, fileName);
 	}
 	public bool LoadFromData(void* data)
 	{
-		return CQt.QImage_LoadFromData(this.ptr, data);
+		return CQt.QImage_LoadFromData((.)this.ptr, data);
 	}
 	public bool LoadFromData2(c_uchar* buf, c_int lenVal)
 	{
-		return CQt.QImage_LoadFromData2(this.ptr, buf, lenVal);
+		return CQt.QImage_LoadFromData2((.)this.ptr, buf, lenVal);
 	}
 	public bool LoadFromData3(void** data)
 	{
-		return CQt.QImage_LoadFromData3(this.ptr, data);
+		return CQt.QImage_LoadFromData3((.)this.ptr, data);
 	}
 	public bool Save(libqt_string* fileName)
 	{
-		return CQt.QImage_Save(this.ptr, fileName);
+		return CQt.QImage_Save((.)this.ptr, fileName);
 	}
 	public bool Save2(QIODevice_Ptr* device)
 	{
-		return CQt.QImage_Save2(this.ptr, device);
+		return CQt.QImage_Save2((.)this.ptr, device);
 	}
 	public QImage_Ptr FromData(void* data)
 	{
@@ -744,51 +744,51 @@ class QImage
 	}
 	public c_longlong CacheKey()
 	{
-		return CQt.QImage_CacheKey(this.ptr);
+		return CQt.QImage_CacheKey((.)this.ptr);
 	}
 	public QPaintEngine_Ptr* PaintEngine()
 	{
-		return CQt.QImage_PaintEngine(this.ptr);
+		return CQt.QImage_PaintEngine((.)this.ptr);
 	}
 	public c_int DotsPerMeterX()
 	{
-		return CQt.QImage_DotsPerMeterX(this.ptr);
+		return CQt.QImage_DotsPerMeterX((.)this.ptr);
 	}
 	public c_int DotsPerMeterY()
 	{
-		return CQt.QImage_DotsPerMeterY(this.ptr);
+		return CQt.QImage_DotsPerMeterY((.)this.ptr);
 	}
 	public void SetDotsPerMeterX(c_int dotsPerMeterX)
 	{
-		CQt.QImage_SetDotsPerMeterX(this.ptr, dotsPerMeterX);
+		CQt.QImage_SetDotsPerMeterX((.)this.ptr, dotsPerMeterX);
 	}
 	public void SetDotsPerMeterY(c_int dotsPerMeterY)
 	{
-		CQt.QImage_SetDotsPerMeterY(this.ptr, dotsPerMeterY);
+		CQt.QImage_SetDotsPerMeterY((.)this.ptr, dotsPerMeterY);
 	}
 	public QPoint_Ptr Offset()
 	{
-		return CQt.QImage_Offset(this.ptr);
+		return CQt.QImage_Offset((.)this.ptr);
 	}
 	public void SetOffset(QPoint_Ptr* offset)
 	{
-		CQt.QImage_SetOffset(this.ptr, offset);
+		CQt.QImage_SetOffset((.)this.ptr, offset);
 	}
 	public void* TextKeys()
 	{
-		return CQt.QImage_TextKeys(this.ptr);
+		return CQt.QImage_TextKeys((.)this.ptr);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QImage_Text(this.ptr);
+		return CQt.QImage_Text((.)this.ptr);
 	}
 	public void SetText(libqt_string* key, libqt_string* value)
 	{
-		CQt.QImage_SetText(this.ptr, key, value);
+		CQt.QImage_SetText((.)this.ptr, key, value);
 	}
 	public QPixelFormat_Ptr PixelFormat()
 	{
-		return CQt.QImage_PixelFormat(this.ptr);
+		return CQt.QImage_PixelFormat((.)this.ptr);
 	}
 	public QPixelFormat_Ptr ToPixelFormat(QImage_Format format)
 	{
@@ -800,151 +800,151 @@ class QImage
 	}
 	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		return CQt.QImage_Metric(this.ptr, metric);
+		return CQt.QImage_Metric((.)this.ptr, metric);
 	}
 	public QImage_Ptr Mirrored_helper(bool horizontal, bool vertical)
 	{
-		return CQt.QImage_Mirrored_Helper(this.ptr, horizontal, vertical);
+		return CQt.QImage_Mirrored_Helper((.)this.ptr, horizontal, vertical);
 	}
 	public QImage_Ptr RgbSwapped_helper()
 	{
-		return CQt.QImage_RgbSwapped_Helper(this.ptr);
+		return CQt.QImage_RgbSwapped_Helper((.)this.ptr);
 	}
 	public void Mirrored_inplace(bool horizontal, bool vertical)
 	{
-		CQt.QImage_Mirrored_Inplace(this.ptr, horizontal, vertical);
+		CQt.QImage_Mirrored_Inplace((.)this.ptr, horizontal, vertical);
 	}
 	public void RgbSwapped_inplace()
 	{
-		CQt.QImage_RgbSwapped_Inplace(this.ptr);
+		CQt.QImage_RgbSwapped_Inplace((.)this.ptr);
 	}
 	public QImage_Ptr ConvertToFormat_helper(QImage_Format format, void* flags)
 	{
-		return CQt.QImage_ConvertToFormat_Helper(this.ptr, format, flags);
+		return CQt.QImage_ConvertToFormat_Helper((.)this.ptr, format, flags);
 	}
 	public bool ConvertToFormat_inplace(QImage_Format format, void* flags)
 	{
-		return CQt.QImage_ConvertToFormat_Inplace(this.ptr, format, flags);
+		return CQt.QImage_ConvertToFormat_Inplace((.)this.ptr, format, flags);
 	}
 	public QImage_Ptr SmoothScaled(c_int w, c_int h)
 	{
-		return CQt.QImage_SmoothScaled(this.ptr, w, h);
+		return CQt.QImage_SmoothScaled((.)this.ptr, w, h);
 	}
 	public void DetachMetadata()
 	{
-		CQt.QImage_DetachMetadata(this.ptr);
+		CQt.QImage_DetachMetadata((.)this.ptr);
 	}
 	public QImage_Ptr Copy1(QRect_Ptr* rect)
 	{
-		return CQt.QImage_Copy1(this.ptr, rect);
+		return CQt.QImage_Copy1((.)this.ptr, rect);
 	}
 	public QImage_Ptr ConvertToFormat22(QImage_Format f, void* flags)
 	{
-		return CQt.QImage_ConvertToFormat22(this.ptr, f, flags);
+		return CQt.QImage_ConvertToFormat22((.)this.ptr, f, flags);
 	}
 	public QImage_Ptr ConvertToFormat3(QImage_Format f, void** colorTable, void* flags)
 	{
-		return CQt.QImage_ConvertToFormat3(this.ptr, f, colorTable, flags);
+		return CQt.QImage_ConvertToFormat3((.)this.ptr, f, colorTable, flags);
 	}
 	public QImage_Ptr ConvertedTo2(QImage_Format f, void* flags)
 	{
-		return CQt.QImage_ConvertedTo2(this.ptr, f, flags);
+		return CQt.QImage_ConvertedTo2((.)this.ptr, f, flags);
 	}
 	public void ConvertTo2(QImage_Format f, void* flags)
 	{
-		CQt.QImage_ConvertTo2(this.ptr, f, flags);
+		CQt.QImage_ConvertTo2((.)this.ptr, f, flags);
 	}
 	public QImage_Ptr CreateAlphaMask1(void* flags)
 	{
-		return CQt.QImage_CreateAlphaMask1(this.ptr, flags);
+		return CQt.QImage_CreateAlphaMask1((.)this.ptr, flags);
 	}
 	public QImage_Ptr CreateHeuristicMask1(bool clipTight)
 	{
-		return CQt.QImage_CreateHeuristicMask1(this.ptr, clipTight);
+		return CQt.QImage_CreateHeuristicMask1((.)this.ptr, clipTight);
 	}
 	public QImage_Ptr CreateMaskFromColor2(c_uint color, Qt_MaskMode mode)
 	{
-		return CQt.QImage_CreateMaskFromColor2(this.ptr, color, mode);
+		return CQt.QImage_CreateMaskFromColor2((.)this.ptr, color, mode);
 	}
 	public QImage_Ptr Scaled3(c_int w, c_int h, Qt_AspectRatioMode aspectMode)
 	{
-		return CQt.QImage_Scaled3(this.ptr, w, h, aspectMode);
+		return CQt.QImage_Scaled3((.)this.ptr, w, h, aspectMode);
 	}
 	public QImage_Ptr Scaled4(c_int w, c_int h, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode)
 	{
-		return CQt.QImage_Scaled4(this.ptr, w, h, aspectMode, mode);
+		return CQt.QImage_Scaled4((.)this.ptr, w, h, aspectMode, mode);
 	}
 	public QImage_Ptr Scaled22(QSize_Ptr* s, Qt_AspectRatioMode aspectMode)
 	{
-		return CQt.QImage_Scaled22(this.ptr, s, aspectMode);
+		return CQt.QImage_Scaled22((.)this.ptr, s, aspectMode);
 	}
 	public QImage_Ptr Scaled32(QSize_Ptr* s, Qt_AspectRatioMode aspectMode, Qt_TransformationMode mode)
 	{
-		return CQt.QImage_Scaled32(this.ptr, s, aspectMode, mode);
+		return CQt.QImage_Scaled32((.)this.ptr, s, aspectMode, mode);
 	}
 	public QImage_Ptr ScaledToWidth2(c_int w, Qt_TransformationMode mode)
 	{
-		return CQt.QImage_ScaledToWidth2(this.ptr, w, mode);
+		return CQt.QImage_ScaledToWidth2((.)this.ptr, w, mode);
 	}
 	public QImage_Ptr ScaledToHeight2(c_int h, Qt_TransformationMode mode)
 	{
-		return CQt.QImage_ScaledToHeight2(this.ptr, h, mode);
+		return CQt.QImage_ScaledToHeight2((.)this.ptr, h, mode);
 	}
 	public QImage_Ptr Transformed2(QTransform_Ptr* matrix, Qt_TransformationMode mode)
 	{
-		return CQt.QImage_Transformed2(this.ptr, matrix, mode);
+		return CQt.QImage_Transformed2((.)this.ptr, matrix, mode);
 	}
 	public QImage_Ptr Mirrored1(bool horizontally)
 	{
-		return CQt.QImage_Mirrored1(this.ptr, horizontally);
+		return CQt.QImage_Mirrored1((.)this.ptr, horizontally);
 	}
 	public QImage_Ptr Mirrored2(bool horizontally, bool vertically)
 	{
-		return CQt.QImage_Mirrored2(this.ptr, horizontally, vertically);
+		return CQt.QImage_Mirrored2((.)this.ptr, horizontally, vertically);
 	}
 	public void Mirror1(bool horizontally)
 	{
-		CQt.QImage_Mirror1(this.ptr, horizontally);
+		CQt.QImage_Mirror1((.)this.ptr, horizontally);
 	}
 	public void Mirror2(bool horizontally, bool vertically)
 	{
-		CQt.QImage_Mirror2(this.ptr, horizontally, vertically);
+		CQt.QImage_Mirror2((.)this.ptr, horizontally, vertically);
 	}
 	public void InvertPixels1(QImage_InvertMode param1)
 	{
-		CQt.QImage_InvertPixels1(this.ptr, param1);
+		CQt.QImage_InvertPixels1((.)this.ptr, param1);
 	}
 	public bool Load22(libqt_string* fileName, c_char* format)
 	{
-		return CQt.QImage_Load22(this.ptr, fileName, format);
+		return CQt.QImage_Load22((.)this.ptr, fileName, format);
 	}
 	public bool LoadFromData22(void* data, c_char* format)
 	{
-		return CQt.QImage_LoadFromData22(this.ptr, data, format);
+		return CQt.QImage_LoadFromData22((.)this.ptr, data, format);
 	}
 	public bool LoadFromData32(c_uchar* buf, c_int lenVal, c_char* format)
 	{
-		return CQt.QImage_LoadFromData32(this.ptr, buf, lenVal, format);
+		return CQt.QImage_LoadFromData32((.)this.ptr, buf, lenVal, format);
 	}
 	public bool LoadFromData23(void** data, c_char* format)
 	{
-		return CQt.QImage_LoadFromData23(this.ptr, data, format);
+		return CQt.QImage_LoadFromData23((.)this.ptr, data, format);
 	}
 	public bool Save22(libqt_string* fileName, c_char* format)
 	{
-		return CQt.QImage_Save22(this.ptr, fileName, format);
+		return CQt.QImage_Save22((.)this.ptr, fileName, format);
 	}
 	public bool Save3(libqt_string* fileName, c_char* format, c_int quality)
 	{
-		return CQt.QImage_Save3(this.ptr, fileName, format, quality);
+		return CQt.QImage_Save3((.)this.ptr, fileName, format, quality);
 	}
 	public bool Save23(QIODevice_Ptr* device, c_char* format)
 	{
-		return CQt.QImage_Save23(this.ptr, device, format);
+		return CQt.QImage_Save23((.)this.ptr, device, format);
 	}
 	public bool Save32(QIODevice_Ptr* device, c_char* format, c_int quality)
 	{
-		return CQt.QImage_Save32(this.ptr, device, format, quality);
+		return CQt.QImage_Save32((.)this.ptr, device, format, quality);
 	}
 	public QImage_Ptr FromData22(void* data, c_char* format)
 	{
@@ -960,11 +960,59 @@ class QImage
 	}
 	public libqt_string Text1(libqt_string* key)
 	{
-		return CQt.QImage_Text1(this.ptr, key);
+		return CQt.QImage_Text1((.)this.ptr, key);
 	}
 	public void DetachMetadata1(bool invalidateCache)
 	{
-		CQt.QImage_DetachMetadata1(this.ptr, invalidateCache);
+		CQt.QImage_DetachMetadata1((.)this.ptr, invalidateCache);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public void InitPainter(QPainter_Ptr* painter)
+	{
+		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
+	}
+	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
+	{
+		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
+	}
+	public QPainter_Ptr* SharedPainter()
+	{
+		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
 interface IQImage

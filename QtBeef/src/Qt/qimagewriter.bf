@@ -114,103 +114,103 @@ class QImageWriter
 	}
 	public void SetFormat(void** format)
 	{
-		CQt.QImageWriter_SetFormat(this.ptr, format);
+		CQt.QImageWriter_SetFormat((.)this.ptr, format);
 	}
 	public void* Format()
 	{
-		return CQt.QImageWriter_Format(this.ptr);
+		return CQt.QImageWriter_Format((.)this.ptr);
 	}
 	public void SetDevice(QIODevice_Ptr* device)
 	{
-		CQt.QImageWriter_SetDevice(this.ptr, device);
+		CQt.QImageWriter_SetDevice((.)this.ptr, device);
 	}
 	public QIODevice_Ptr* Device()
 	{
-		return CQt.QImageWriter_Device(this.ptr);
+		return CQt.QImageWriter_Device((.)this.ptr);
 	}
 	public void SetFileName(libqt_string* fileName)
 	{
-		CQt.QImageWriter_SetFileName(this.ptr, fileName);
+		CQt.QImageWriter_SetFileName((.)this.ptr, fileName);
 	}
 	public libqt_string FileName()
 	{
-		return CQt.QImageWriter_FileName(this.ptr);
+		return CQt.QImageWriter_FileName((.)this.ptr);
 	}
 	public void SetQuality(c_int quality)
 	{
-		CQt.QImageWriter_SetQuality(this.ptr, quality);
+		CQt.QImageWriter_SetQuality((.)this.ptr, quality);
 	}
 	public c_int Quality()
 	{
-		return CQt.QImageWriter_Quality(this.ptr);
+		return CQt.QImageWriter_Quality((.)this.ptr);
 	}
 	public void SetCompression(c_int compression)
 	{
-		CQt.QImageWriter_SetCompression(this.ptr, compression);
+		CQt.QImageWriter_SetCompression((.)this.ptr, compression);
 	}
 	public c_int Compression()
 	{
-		return CQt.QImageWriter_Compression(this.ptr);
+		return CQt.QImageWriter_Compression((.)this.ptr);
 	}
 	public void SetSubType(void** type)
 	{
-		CQt.QImageWriter_SetSubType(this.ptr, type);
+		CQt.QImageWriter_SetSubType((.)this.ptr, type);
 	}
 	public void* SubType()
 	{
-		return CQt.QImageWriter_SubType(this.ptr);
+		return CQt.QImageWriter_SubType((.)this.ptr);
 	}
 	public void* SupportedSubTypes()
 	{
-		return CQt.QImageWriter_SupportedSubTypes(this.ptr);
+		return CQt.QImageWriter_SupportedSubTypes((.)this.ptr);
 	}
 	public void SetOptimizedWrite(bool optimize)
 	{
-		CQt.QImageWriter_SetOptimizedWrite(this.ptr, optimize);
+		CQt.QImageWriter_SetOptimizedWrite((.)this.ptr, optimize);
 	}
 	public bool OptimizedWrite()
 	{
-		return CQt.QImageWriter_OptimizedWrite(this.ptr);
+		return CQt.QImageWriter_OptimizedWrite((.)this.ptr);
 	}
 	public void SetProgressiveScanWrite(bool progressive)
 	{
-		CQt.QImageWriter_SetProgressiveScanWrite(this.ptr, progressive);
+		CQt.QImageWriter_SetProgressiveScanWrite((.)this.ptr, progressive);
 	}
 	public bool ProgressiveScanWrite()
 	{
-		return CQt.QImageWriter_ProgressiveScanWrite(this.ptr);
+		return CQt.QImageWriter_ProgressiveScanWrite((.)this.ptr);
 	}
 	public void* Transformation()
 	{
-		return CQt.QImageWriter_Transformation(this.ptr);
+		return CQt.QImageWriter_Transformation((.)this.ptr);
 	}
 	public void SetTransformation(void* orientation)
 	{
-		CQt.QImageWriter_SetTransformation(this.ptr, orientation);
+		CQt.QImageWriter_SetTransformation((.)this.ptr, orientation);
 	}
 	public void SetText(libqt_string* key, libqt_string* text)
 	{
-		CQt.QImageWriter_SetText(this.ptr, key, text);
+		CQt.QImageWriter_SetText((.)this.ptr, key, text);
 	}
 	public bool CanWrite()
 	{
-		return CQt.QImageWriter_CanWrite(this.ptr);
+		return CQt.QImageWriter_CanWrite((.)this.ptr);
 	}
 	public bool Write(QImage_Ptr* image)
 	{
-		return CQt.QImageWriter_Write(this.ptr, image);
+		return CQt.QImageWriter_Write((.)this.ptr, image);
 	}
 	public QImageWriter_ImageWriterError Error()
 	{
-		return CQt.QImageWriter_Error(this.ptr);
+		return CQt.QImageWriter_Error((.)this.ptr);
 	}
 	public libqt_string ErrorString()
 	{
-		return CQt.QImageWriter_ErrorString(this.ptr);
+		return CQt.QImageWriter_ErrorString((.)this.ptr);
 	}
 	public bool SupportsOption(QImageIOHandler_ImageOption option)
 	{
-		return CQt.QImageWriter_SupportsOption(this.ptr, option);
+		return CQt.QImageWriter_SupportsOption((.)this.ptr, option);
 	}
 	public void* SupportedImageFormats()
 	{

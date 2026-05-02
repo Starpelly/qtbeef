@@ -80,31 +80,31 @@ class QOperatingSystemVersionBase
 	}
 	public QVersionNumber_Ptr Version()
 	{
-		return CQt.QOperatingSystemVersionBase_Version(this.ptr);
+		return CQt.QOperatingSystemVersionBase_Version((.)this.ptr);
 	}
 	public c_int MajorVersion()
 	{
-		return CQt.QOperatingSystemVersionBase_MajorVersion(this.ptr);
+		return CQt.QOperatingSystemVersionBase_MajorVersion((.)this.ptr);
 	}
 	public c_int MinorVersion()
 	{
-		return CQt.QOperatingSystemVersionBase_MinorVersion(this.ptr);
+		return CQt.QOperatingSystemVersionBase_MinorVersion((.)this.ptr);
 	}
 	public c_int MicroVersion()
 	{
-		return CQt.QOperatingSystemVersionBase_MicroVersion(this.ptr);
+		return CQt.QOperatingSystemVersionBase_MicroVersion((.)this.ptr);
 	}
 	public c_int SegmentCount()
 	{
-		return CQt.QOperatingSystemVersionBase_SegmentCount(this.ptr);
+		return CQt.QOperatingSystemVersionBase_SegmentCount((.)this.ptr);
 	}
 	public QOperatingSystemVersionBase_OSType Type()
 	{
-		return CQt.QOperatingSystemVersionBase_Type(this.ptr);
+		return CQt.QOperatingSystemVersionBase_Type((.)this.ptr);
 	}
 	public libqt_string Name2()
 	{
-		return CQt.QOperatingSystemVersionBase_Name2(this.ptr);
+		return CQt.QOperatingSystemVersionBase_Name2((.)this.ptr);
 	}
 }
 interface IQOperatingSystemVersionBase
@@ -197,31 +197,35 @@ class QOperatingSystemVersion
 	}
 	public QVersionNumber_Ptr Version()
 	{
-		return CQt.QOperatingSystemVersion_Version(this.ptr);
+		return CQt.QOperatingSystemVersion_Version((.)this.ptr);
 	}
 	public c_int MajorVersion()
 	{
-		return CQt.QOperatingSystemVersion_MajorVersion(this.ptr);
+		return CQt.QOperatingSystemVersion_MajorVersion((.)this.ptr);
 	}
 	public c_int MinorVersion()
 	{
-		return CQt.QOperatingSystemVersion_MinorVersion(this.ptr);
+		return CQt.QOperatingSystemVersion_MinorVersion((.)this.ptr);
 	}
 	public c_int MicroVersion()
 	{
-		return CQt.QOperatingSystemVersion_MicroVersion(this.ptr);
+		return CQt.QOperatingSystemVersion_MicroVersion((.)this.ptr);
 	}
 	public c_int SegmentCount()
 	{
-		return CQt.QOperatingSystemVersion_SegmentCount(this.ptr);
+		return CQt.QOperatingSystemVersion_SegmentCount((.)this.ptr);
 	}
 	public QOperatingSystemVersion_OSType Type()
 	{
-		return CQt.QOperatingSystemVersion_Type(this.ptr);
+		return CQt.QOperatingSystemVersion_Type((.)this.ptr);
 	}
 	public libqt_string Name()
 	{
-		return CQt.QOperatingSystemVersion_Name(this.ptr);
+		return CQt.QOperatingSystemVersion_Name((.)this.ptr);
+	}
+	public libqt_string Name2()
+	{
+		return CQt.QOperatingSystemVersionBase_Name2((.)this.ptr);
 	}
 }
 interface IQOperatingSystemVersion

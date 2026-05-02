@@ -78,71 +78,139 @@ class QPicture
 	}
 	public bool IsNull()
 	{
-		return CQt.QPicture_IsNull(this.ptr);
+		return CQt.QPicture_IsNull((.)this.ptr);
 	}
 	public c_int DevType()
 	{
-		return CQt.QPicture_DevType(this.ptr);
+		return CQt.QPicture_DevType((.)this.ptr);
 	}
 	public c_uint Size()
 	{
-		return CQt.QPicture_Size(this.ptr);
+		return CQt.QPicture_Size((.)this.ptr);
 	}
 	public c_char* Data()
 	{
-		return CQt.QPicture_Data(this.ptr);
+		return CQt.QPicture_Data((.)this.ptr);
 	}
 	public void SetData(c_char* data, c_uint size)
 	{
-		CQt.QPicture_SetData(this.ptr, data, size);
+		CQt.QPicture_SetData((.)this.ptr, data, size);
 	}
 	public bool Play(QPainter_Ptr* p)
 	{
-		return CQt.QPicture_Play(this.ptr, p);
+		return CQt.QPicture_Play((.)this.ptr, p);
 	}
 	public bool Load(QIODevice_Ptr* dev)
 	{
-		return CQt.QPicture_Load(this.ptr, dev);
+		return CQt.QPicture_Load((.)this.ptr, dev);
 	}
 	public bool Load2(libqt_string* fileName)
 	{
-		return CQt.QPicture_Load2(this.ptr, fileName);
+		return CQt.QPicture_Load2((.)this.ptr, fileName);
 	}
 	public bool Save(QIODevice_Ptr* dev)
 	{
-		return CQt.QPicture_Save(this.ptr, dev);
+		return CQt.QPicture_Save((.)this.ptr, dev);
 	}
 	public bool Save2(libqt_string* fileName)
 	{
-		return CQt.QPicture_Save2(this.ptr, fileName);
+		return CQt.QPicture_Save2((.)this.ptr, fileName);
 	}
 	public QRect_Ptr BoundingRect()
 	{
-		return CQt.QPicture_BoundingRect(this.ptr);
+		return CQt.QPicture_BoundingRect((.)this.ptr);
 	}
 	public void SetBoundingRect(QRect_Ptr* r)
 	{
-		CQt.QPicture_SetBoundingRect(this.ptr, r);
+		CQt.QPicture_SetBoundingRect((.)this.ptr, r);
 	}
 	public void Swap(QPicture_Ptr* other)
 	{
-		CQt.QPicture_Swap(this.ptr, other);
+		CQt.QPicture_Swap((.)this.ptr, other);
 	}
 	public void Detach()
 	{
-		CQt.QPicture_Detach(this.ptr);
+		CQt.QPicture_Detach((.)this.ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QPicture_IsDetached(this.ptr);
+		return CQt.QPicture_IsDetached((.)this.ptr);
 	}
 	public QPaintEngine_Ptr* PaintEngine()
 	{
-		return CQt.QPicture_PaintEngine(this.ptr);
+		return CQt.QPicture_PaintEngine((.)this.ptr);
 	}
 	public c_int Metric(QPaintDevice_PaintDeviceMetric m)
 	{
-		return CQt.QPicture_Metric(this.ptr, m);
+		return CQt.QPicture_Metric((.)this.ptr, m);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.ptr);
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public void InitPainter(QPainter_Ptr* painter)
+	{
+		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
+	}
+	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
+	{
+		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
+	}
+	public QPainter_Ptr* SharedPainter()
+	{
+		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
 interface IQPicture

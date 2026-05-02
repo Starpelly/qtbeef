@@ -42,27 +42,27 @@ class QBasicTimer
 	}
 	public void Swap(QBasicTimer_Ptr* other)
 	{
-		CQt.QBasicTimer_Swap(this.ptr, other);
+		CQt.QBasicTimer_Swap((.)this.ptr, other);
 	}
 	public bool IsActive()
 	{
-		return CQt.QBasicTimer_IsActive(this.ptr);
+		return CQt.QBasicTimer_IsActive((.)this.ptr);
 	}
 	public c_int TimerId()
 	{
-		return CQt.QBasicTimer_TimerId(this.ptr);
+		return CQt.QBasicTimer_TimerId((.)this.ptr);
 	}
 	public void Start(c_int msec, QObject_Ptr* obj)
 	{
-		CQt.QBasicTimer_Start(this.ptr, msec, obj);
+		CQt.QBasicTimer_Start((.)this.ptr, msec, obj);
 	}
 	public void Start2(c_int msec, Qt_TimerType timerType, QObject_Ptr* obj)
 	{
-		CQt.QBasicTimer_Start2(this.ptr, msec, timerType, obj);
+		CQt.QBasicTimer_Start2((.)this.ptr, msec, timerType, obj);
 	}
 	public void Stop()
 	{
-		CQt.QBasicTimer_Stop(this.ptr);
+		CQt.QBasicTimer_Stop((.)this.ptr);
 	}
 }
 interface IQBasicTimer

@@ -90,99 +90,99 @@ class QGlyphRun
 	}
 	public void Swap(QGlyphRun_Ptr* other)
 	{
-		CQt.QGlyphRun_Swap(this.ptr, other);
+		CQt.QGlyphRun_Swap((.)this.ptr, other);
 	}
 	public QRawFont_Ptr RawFont()
 	{
-		return CQt.QGlyphRun_RawFont(this.ptr);
+		return CQt.QGlyphRun_RawFont((.)this.ptr);
 	}
 	public void SetRawFont(QRawFont_Ptr* rawFont)
 	{
-		CQt.QGlyphRun_SetRawFont(this.ptr, rawFont);
+		CQt.QGlyphRun_SetRawFont((.)this.ptr, rawFont);
 	}
 	public void SetRawData(c_uint* glyphIndexArray, QPointF_Ptr* glyphPositionArray, c_int size)
 	{
-		CQt.QGlyphRun_SetRawData(this.ptr, glyphIndexArray, glyphPositionArray, size);
+		CQt.QGlyphRun_SetRawData((.)this.ptr, glyphIndexArray, glyphPositionArray, size);
 	}
 	public void* GlyphIndexes()
 	{
-		return CQt.QGlyphRun_GlyphIndexes(this.ptr);
+		return CQt.QGlyphRun_GlyphIndexes((.)this.ptr);
 	}
 	public void SetGlyphIndexes(void** glyphIndexes)
 	{
-		CQt.QGlyphRun_SetGlyphIndexes(this.ptr, glyphIndexes);
+		CQt.QGlyphRun_SetGlyphIndexes((.)this.ptr, glyphIndexes);
 	}
 	public void* Positions()
 	{
-		return CQt.QGlyphRun_Positions(this.ptr);
+		return CQt.QGlyphRun_Positions((.)this.ptr);
 	}
 	public void SetPositions(void** positions)
 	{
-		CQt.QGlyphRun_SetPositions(this.ptr, positions);
+		CQt.QGlyphRun_SetPositions((.)this.ptr, positions);
 	}
 	public void Clear()
 	{
-		CQt.QGlyphRun_Clear(this.ptr);
+		CQt.QGlyphRun_Clear((.)this.ptr);
 	}
 	public void SetOverline(bool overline)
 	{
-		CQt.QGlyphRun_SetOverline(this.ptr, overline);
+		CQt.QGlyphRun_SetOverline((.)this.ptr, overline);
 	}
 	public bool Overline()
 	{
-		return CQt.QGlyphRun_Overline(this.ptr);
+		return CQt.QGlyphRun_Overline((.)this.ptr);
 	}
 	public void SetUnderline(bool underline)
 	{
-		CQt.QGlyphRun_SetUnderline(this.ptr, underline);
+		CQt.QGlyphRun_SetUnderline((.)this.ptr, underline);
 	}
 	public bool Underline()
 	{
-		return CQt.QGlyphRun_Underline(this.ptr);
+		return CQt.QGlyphRun_Underline((.)this.ptr);
 	}
 	public void SetStrikeOut(bool strikeOut)
 	{
-		CQt.QGlyphRun_SetStrikeOut(this.ptr, strikeOut);
+		CQt.QGlyphRun_SetStrikeOut((.)this.ptr, strikeOut);
 	}
 	public bool StrikeOut()
 	{
-		return CQt.QGlyphRun_StrikeOut(this.ptr);
+		return CQt.QGlyphRun_StrikeOut((.)this.ptr);
 	}
 	public void SetRightToLeft(bool on)
 	{
-		CQt.QGlyphRun_SetRightToLeft(this.ptr, on);
+		CQt.QGlyphRun_SetRightToLeft((.)this.ptr, on);
 	}
 	public bool IsRightToLeft()
 	{
-		return CQt.QGlyphRun_IsRightToLeft(this.ptr);
+		return CQt.QGlyphRun_IsRightToLeft((.)this.ptr);
 	}
 	public void SetFlag(QGlyphRun_GlyphRunFlag flag)
 	{
-		CQt.QGlyphRun_SetFlag(this.ptr, flag);
+		CQt.QGlyphRun_SetFlag((.)this.ptr, flag);
 	}
 	public void SetFlags(void* flags)
 	{
-		CQt.QGlyphRun_SetFlags(this.ptr, flags);
+		CQt.QGlyphRun_SetFlags((.)this.ptr, flags);
 	}
 	public void* Flags()
 	{
-		return CQt.QGlyphRun_Flags(this.ptr);
+		return CQt.QGlyphRun_Flags((.)this.ptr);
 	}
 	public void SetBoundingRect(QRectF_Ptr* boundingRect)
 	{
-		CQt.QGlyphRun_SetBoundingRect(this.ptr, boundingRect);
+		CQt.QGlyphRun_SetBoundingRect((.)this.ptr, boundingRect);
 	}
 	public QRectF_Ptr BoundingRect()
 	{
-		return CQt.QGlyphRun_BoundingRect(this.ptr);
+		return CQt.QGlyphRun_BoundingRect((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QGlyphRun_IsEmpty(this.ptr);
+		return CQt.QGlyphRun_IsEmpty((.)this.ptr);
 	}
 	public void SetFlag2(QGlyphRun_GlyphRunFlag flag, bool enabled)
 	{
-		CQt.QGlyphRun_SetFlag2(this.ptr, flag, enabled);
+		CQt.QGlyphRun_SetFlag2((.)this.ptr, flag, enabled);
 	}
 }
 interface IQGlyphRun

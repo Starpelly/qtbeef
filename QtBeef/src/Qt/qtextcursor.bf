@@ -214,295 +214,295 @@ class QTextCursor
 	}
 	public void Swap(QTextCursor_Ptr* other)
 	{
-		CQt.QTextCursor_Swap(this.ptr, other);
+		CQt.QTextCursor_Swap((.)this.ptr, other);
 	}
 	public bool IsNull()
 	{
-		return CQt.QTextCursor_IsNull(this.ptr);
+		return CQt.QTextCursor_IsNull((.)this.ptr);
 	}
 	public void SetPosition(c_int pos)
 	{
-		CQt.QTextCursor_SetPosition(this.ptr, pos);
+		CQt.QTextCursor_SetPosition((.)this.ptr, pos);
 	}
 	public c_int Position()
 	{
-		return CQt.QTextCursor_Position(this.ptr);
+		return CQt.QTextCursor_Position((.)this.ptr);
 	}
 	public c_int PositionInBlock()
 	{
-		return CQt.QTextCursor_PositionInBlock(this.ptr);
+		return CQt.QTextCursor_PositionInBlock((.)this.ptr);
 	}
 	public c_int Anchor()
 	{
-		return CQt.QTextCursor_Anchor(this.ptr);
+		return CQt.QTextCursor_Anchor((.)this.ptr);
 	}
 	public void InsertText(libqt_string* text)
 	{
-		CQt.QTextCursor_InsertText(this.ptr, text);
+		CQt.QTextCursor_InsertText((.)this.ptr, text);
 	}
 	public void InsertText2(libqt_string* text, QTextCharFormat_Ptr* format)
 	{
-		CQt.QTextCursor_InsertText2(this.ptr, text, format);
+		CQt.QTextCursor_InsertText2((.)this.ptr, text, format);
 	}
 	public bool MovePosition(QTextCursor_MoveOperation op)
 	{
-		return CQt.QTextCursor_MovePosition(this.ptr, op);
+		return CQt.QTextCursor_MovePosition((.)this.ptr, op);
 	}
 	public bool VisualNavigation()
 	{
-		return CQt.QTextCursor_VisualNavigation(this.ptr);
+		return CQt.QTextCursor_VisualNavigation((.)this.ptr);
 	}
 	public void SetVisualNavigation(bool b)
 	{
-		CQt.QTextCursor_SetVisualNavigation(this.ptr, b);
+		CQt.QTextCursor_SetVisualNavigation((.)this.ptr, b);
 	}
 	public void SetVerticalMovementX(c_int x)
 	{
-		CQt.QTextCursor_SetVerticalMovementX(this.ptr, x);
+		CQt.QTextCursor_SetVerticalMovementX((.)this.ptr, x);
 	}
 	public c_int VerticalMovementX()
 	{
-		return CQt.QTextCursor_VerticalMovementX(this.ptr);
+		return CQt.QTextCursor_VerticalMovementX((.)this.ptr);
 	}
 	public void SetKeepPositionOnInsert(bool b)
 	{
-		CQt.QTextCursor_SetKeepPositionOnInsert(this.ptr, b);
+		CQt.QTextCursor_SetKeepPositionOnInsert((.)this.ptr, b);
 	}
 	public bool KeepPositionOnInsert()
 	{
-		return CQt.QTextCursor_KeepPositionOnInsert(this.ptr);
+		return CQt.QTextCursor_KeepPositionOnInsert((.)this.ptr);
 	}
 	public void DeleteChar()
 	{
-		CQt.QTextCursor_DeleteChar(this.ptr);
+		CQt.QTextCursor_DeleteChar((.)this.ptr);
 	}
 	public void DeletePreviousChar()
 	{
-		CQt.QTextCursor_DeletePreviousChar(this.ptr);
+		CQt.QTextCursor_DeletePreviousChar((.)this.ptr);
 	}
 	public void Select(QTextCursor_SelectionType selection)
 	{
-		CQt.QTextCursor_Select(this.ptr, selection);
+		CQt.QTextCursor_Select((.)this.ptr, selection);
 	}
 	public bool HasSelection()
 	{
-		return CQt.QTextCursor_HasSelection(this.ptr);
+		return CQt.QTextCursor_HasSelection((.)this.ptr);
 	}
 	public bool HasComplexSelection()
 	{
-		return CQt.QTextCursor_HasComplexSelection(this.ptr);
+		return CQt.QTextCursor_HasComplexSelection((.)this.ptr);
 	}
 	public void RemoveSelectedText()
 	{
-		CQt.QTextCursor_RemoveSelectedText(this.ptr);
+		CQt.QTextCursor_RemoveSelectedText((.)this.ptr);
 	}
 	public void ClearSelection()
 	{
-		CQt.QTextCursor_ClearSelection(this.ptr);
+		CQt.QTextCursor_ClearSelection((.)this.ptr);
 	}
 	public c_int SelectionStart()
 	{
-		return CQt.QTextCursor_SelectionStart(this.ptr);
+		return CQt.QTextCursor_SelectionStart((.)this.ptr);
 	}
 	public c_int SelectionEnd()
 	{
-		return CQt.QTextCursor_SelectionEnd(this.ptr);
+		return CQt.QTextCursor_SelectionEnd((.)this.ptr);
 	}
 	public libqt_string SelectedText()
 	{
-		return CQt.QTextCursor_SelectedText(this.ptr);
+		return CQt.QTextCursor_SelectedText((.)this.ptr);
 	}
 	public QTextDocumentFragment_Ptr Selection()
 	{
-		return CQt.QTextCursor_Selection(this.ptr);
+		return CQt.QTextCursor_Selection((.)this.ptr);
 	}
 	public void SelectedTableCells(c_int* firstRow, c_int* numRows, c_int* firstColumn, c_int* numColumns)
 	{
-		CQt.QTextCursor_SelectedTableCells(this.ptr, firstRow, numRows, firstColumn, numColumns);
+		CQt.QTextCursor_SelectedTableCells((.)this.ptr, firstRow, numRows, firstColumn, numColumns);
 	}
 	public QTextBlock_Ptr Block()
 	{
-		return CQt.QTextCursor_Block(this.ptr);
+		return CQt.QTextCursor_Block((.)this.ptr);
 	}
 	public QTextCharFormat_Ptr CharFormat()
 	{
-		return CQt.QTextCursor_CharFormat(this.ptr);
+		return CQt.QTextCursor_CharFormat((.)this.ptr);
 	}
 	public void SetCharFormat(QTextCharFormat_Ptr* format)
 	{
-		CQt.QTextCursor_SetCharFormat(this.ptr, format);
+		CQt.QTextCursor_SetCharFormat((.)this.ptr, format);
 	}
 	public void MergeCharFormat(QTextCharFormat_Ptr* modifier)
 	{
-		CQt.QTextCursor_MergeCharFormat(this.ptr, modifier);
+		CQt.QTextCursor_MergeCharFormat((.)this.ptr, modifier);
 	}
 	public QTextBlockFormat_Ptr BlockFormat()
 	{
-		return CQt.QTextCursor_BlockFormat(this.ptr);
+		return CQt.QTextCursor_BlockFormat((.)this.ptr);
 	}
 	public void SetBlockFormat(QTextBlockFormat_Ptr* format)
 	{
-		CQt.QTextCursor_SetBlockFormat(this.ptr, format);
+		CQt.QTextCursor_SetBlockFormat((.)this.ptr, format);
 	}
 	public void MergeBlockFormat(QTextBlockFormat_Ptr* modifier)
 	{
-		CQt.QTextCursor_MergeBlockFormat(this.ptr, modifier);
+		CQt.QTextCursor_MergeBlockFormat((.)this.ptr, modifier);
 	}
 	public QTextCharFormat_Ptr BlockCharFormat()
 	{
-		return CQt.QTextCursor_BlockCharFormat(this.ptr);
+		return CQt.QTextCursor_BlockCharFormat((.)this.ptr);
 	}
 	public void SetBlockCharFormat(QTextCharFormat_Ptr* format)
 	{
-		CQt.QTextCursor_SetBlockCharFormat(this.ptr, format);
+		CQt.QTextCursor_SetBlockCharFormat((.)this.ptr, format);
 	}
 	public void MergeBlockCharFormat(QTextCharFormat_Ptr* modifier)
 	{
-		CQt.QTextCursor_MergeBlockCharFormat(this.ptr, modifier);
+		CQt.QTextCursor_MergeBlockCharFormat((.)this.ptr, modifier);
 	}
 	public bool AtBlockStart()
 	{
-		return CQt.QTextCursor_AtBlockStart(this.ptr);
+		return CQt.QTextCursor_AtBlockStart((.)this.ptr);
 	}
 	public bool AtBlockEnd()
 	{
-		return CQt.QTextCursor_AtBlockEnd(this.ptr);
+		return CQt.QTextCursor_AtBlockEnd((.)this.ptr);
 	}
 	public bool AtStart()
 	{
-		return CQt.QTextCursor_AtStart(this.ptr);
+		return CQt.QTextCursor_AtStart((.)this.ptr);
 	}
 	public bool AtEnd()
 	{
-		return CQt.QTextCursor_AtEnd(this.ptr);
+		return CQt.QTextCursor_AtEnd((.)this.ptr);
 	}
 	public void InsertBlock()
 	{
-		CQt.QTextCursor_InsertBlock(this.ptr);
+		CQt.QTextCursor_InsertBlock((.)this.ptr);
 	}
 	public void InsertBlock2(QTextBlockFormat_Ptr* format)
 	{
-		CQt.QTextCursor_InsertBlock2(this.ptr, format);
+		CQt.QTextCursor_InsertBlock2((.)this.ptr, format);
 	}
 	public void InsertBlock3(QTextBlockFormat_Ptr* format, QTextCharFormat_Ptr* charFormat)
 	{
-		CQt.QTextCursor_InsertBlock3(this.ptr, format, charFormat);
+		CQt.QTextCursor_InsertBlock3((.)this.ptr, format, charFormat);
 	}
 	public QTextList_Ptr* InsertList(QTextListFormat_Ptr* format)
 	{
-		return CQt.QTextCursor_InsertList(this.ptr, format);
+		return CQt.QTextCursor_InsertList((.)this.ptr, format);
 	}
 	public QTextList_Ptr* InsertList2(QTextListFormat_Style style)
 	{
-		return CQt.QTextCursor_InsertList2(this.ptr, style);
+		return CQt.QTextCursor_InsertList2((.)this.ptr, style);
 	}
 	public QTextList_Ptr* CreateList(QTextListFormat_Ptr* format)
 	{
-		return CQt.QTextCursor_CreateList(this.ptr, format);
+		return CQt.QTextCursor_CreateList((.)this.ptr, format);
 	}
 	public QTextList_Ptr* CreateList2(QTextListFormat_Style style)
 	{
-		return CQt.QTextCursor_CreateList2(this.ptr, style);
+		return CQt.QTextCursor_CreateList2((.)this.ptr, style);
 	}
 	public QTextList_Ptr* CurrentList()
 	{
-		return CQt.QTextCursor_CurrentList(this.ptr);
+		return CQt.QTextCursor_CurrentList((.)this.ptr);
 	}
 	public QTextTable_Ptr* InsertTable(c_int rows, c_int cols, QTextTableFormat_Ptr* format)
 	{
-		return CQt.QTextCursor_InsertTable(this.ptr, rows, cols, format);
+		return CQt.QTextCursor_InsertTable((.)this.ptr, rows, cols, format);
 	}
 	public QTextTable_Ptr* InsertTable2(c_int rows, c_int cols)
 	{
-		return CQt.QTextCursor_InsertTable2(this.ptr, rows, cols);
+		return CQt.QTextCursor_InsertTable2((.)this.ptr, rows, cols);
 	}
 	public QTextTable_Ptr* CurrentTable()
 	{
-		return CQt.QTextCursor_CurrentTable(this.ptr);
+		return CQt.QTextCursor_CurrentTable((.)this.ptr);
 	}
 	public QTextFrame_Ptr* InsertFrame(QTextFrameFormat_Ptr* format)
 	{
-		return CQt.QTextCursor_InsertFrame(this.ptr, format);
+		return CQt.QTextCursor_InsertFrame((.)this.ptr, format);
 	}
 	public QTextFrame_Ptr* CurrentFrame()
 	{
-		return CQt.QTextCursor_CurrentFrame(this.ptr);
+		return CQt.QTextCursor_CurrentFrame((.)this.ptr);
 	}
 	public void InsertFragment(QTextDocumentFragment_Ptr* fragment)
 	{
-		CQt.QTextCursor_InsertFragment(this.ptr, fragment);
+		CQt.QTextCursor_InsertFragment((.)this.ptr, fragment);
 	}
 	public void InsertHtml(libqt_string* html)
 	{
-		CQt.QTextCursor_InsertHtml(this.ptr, html);
+		CQt.QTextCursor_InsertHtml((.)this.ptr, html);
 	}
 	public void InsertMarkdown(libqt_string* markdown)
 	{
-		CQt.QTextCursor_InsertMarkdown(this.ptr, markdown);
+		CQt.QTextCursor_InsertMarkdown((.)this.ptr, markdown);
 	}
 	public void InsertImage(QTextImageFormat_Ptr* format, QTextFrameFormat_Position alignment)
 	{
-		CQt.QTextCursor_InsertImage(this.ptr, format, alignment);
+		CQt.QTextCursor_InsertImage((.)this.ptr, format, alignment);
 	}
 	public void InsertImage2(QTextImageFormat_Ptr* format)
 	{
-		CQt.QTextCursor_InsertImage2(this.ptr, format);
+		CQt.QTextCursor_InsertImage2((.)this.ptr, format);
 	}
 	public void InsertImage3(libqt_string* name)
 	{
-		CQt.QTextCursor_InsertImage3(this.ptr, name);
+		CQt.QTextCursor_InsertImage3((.)this.ptr, name);
 	}
 	public void InsertImage4(QImage_Ptr* image)
 	{
-		CQt.QTextCursor_InsertImage4(this.ptr, image);
+		CQt.QTextCursor_InsertImage4((.)this.ptr, image);
 	}
 	public void BeginEditBlock()
 	{
-		CQt.QTextCursor_BeginEditBlock(this.ptr);
+		CQt.QTextCursor_BeginEditBlock((.)this.ptr);
 	}
 	public void JoinPreviousEditBlock()
 	{
-		CQt.QTextCursor_JoinPreviousEditBlock(this.ptr);
+		CQt.QTextCursor_JoinPreviousEditBlock((.)this.ptr);
 	}
 	public void EndEditBlock()
 	{
-		CQt.QTextCursor_EndEditBlock(this.ptr);
+		CQt.QTextCursor_EndEditBlock((.)this.ptr);
 	}
 	public bool IsCopyOf(QTextCursor_Ptr* other)
 	{
-		return CQt.QTextCursor_IsCopyOf(this.ptr, other);
+		return CQt.QTextCursor_IsCopyOf((.)this.ptr, other);
 	}
 	public c_int BlockNumber()
 	{
-		return CQt.QTextCursor_BlockNumber(this.ptr);
+		return CQt.QTextCursor_BlockNumber((.)this.ptr);
 	}
 	public c_int ColumnNumber()
 	{
-		return CQt.QTextCursor_ColumnNumber(this.ptr);
+		return CQt.QTextCursor_ColumnNumber((.)this.ptr);
 	}
 	public QTextDocument_Ptr* Document()
 	{
-		return CQt.QTextCursor_Document(this.ptr);
+		return CQt.QTextCursor_Document((.)this.ptr);
 	}
 	public void SetPosition2(c_int pos, QTextCursor_MoveMode mode)
 	{
-		CQt.QTextCursor_SetPosition2(this.ptr, pos, mode);
+		CQt.QTextCursor_SetPosition2((.)this.ptr, pos, mode);
 	}
 	public bool MovePosition2(QTextCursor_MoveOperation op, QTextCursor_MoveMode param2)
 	{
-		return CQt.QTextCursor_MovePosition2(this.ptr, op, param2);
+		return CQt.QTextCursor_MovePosition2((.)this.ptr, op, param2);
 	}
 	public bool MovePosition3(QTextCursor_MoveOperation op, QTextCursor_MoveMode param2, c_int n)
 	{
-		return CQt.QTextCursor_MovePosition3(this.ptr, op, param2, n);
+		return CQt.QTextCursor_MovePosition3((.)this.ptr, op, param2, n);
 	}
 	public void InsertMarkdown2(libqt_string* markdown, void* features)
 	{
-		CQt.QTextCursor_InsertMarkdown2(this.ptr, markdown, features);
+		CQt.QTextCursor_InsertMarkdown2((.)this.ptr, markdown, features);
 	}
 	public void InsertImage22(QImage_Ptr* image, libqt_string* name)
 	{
-		CQt.QTextCursor_InsertImage22(this.ptr, image, name);
+		CQt.QTextCursor_InsertImage22((.)this.ptr, image, name);
 	}
 }
 interface IQTextCursor

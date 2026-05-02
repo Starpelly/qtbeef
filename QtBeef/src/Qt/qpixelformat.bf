@@ -102,91 +102,91 @@ class QPixelFormat
 	}
 	public QPixelFormat_ColorModel ColorModel()
 	{
-		return CQt.QPixelFormat_ColorModel(this.ptr);
+		return CQt.QPixelFormat_ColorModel((.)this.ptr);
 	}
 	public c_uchar ChannelCount()
 	{
-		return CQt.QPixelFormat_ChannelCount(this.ptr);
+		return CQt.QPixelFormat_ChannelCount((.)this.ptr);
 	}
 	public c_uchar RedSize()
 	{
-		return CQt.QPixelFormat_RedSize(this.ptr);
+		return CQt.QPixelFormat_RedSize((.)this.ptr);
 	}
 	public c_uchar GreenSize()
 	{
-		return CQt.QPixelFormat_GreenSize(this.ptr);
+		return CQt.QPixelFormat_GreenSize((.)this.ptr);
 	}
 	public c_uchar BlueSize()
 	{
-		return CQt.QPixelFormat_BlueSize(this.ptr);
+		return CQt.QPixelFormat_BlueSize((.)this.ptr);
 	}
 	public c_uchar CyanSize()
 	{
-		return CQt.QPixelFormat_CyanSize(this.ptr);
+		return CQt.QPixelFormat_CyanSize((.)this.ptr);
 	}
 	public c_uchar MagentaSize()
 	{
-		return CQt.QPixelFormat_MagentaSize(this.ptr);
+		return CQt.QPixelFormat_MagentaSize((.)this.ptr);
 	}
 	public c_uchar YellowSize()
 	{
-		return CQt.QPixelFormat_YellowSize(this.ptr);
+		return CQt.QPixelFormat_YellowSize((.)this.ptr);
 	}
 	public c_uchar BlackSize()
 	{
-		return CQt.QPixelFormat_BlackSize(this.ptr);
+		return CQt.QPixelFormat_BlackSize((.)this.ptr);
 	}
 	public c_uchar HueSize()
 	{
-		return CQt.QPixelFormat_HueSize(this.ptr);
+		return CQt.QPixelFormat_HueSize((.)this.ptr);
 	}
 	public c_uchar SaturationSize()
 	{
-		return CQt.QPixelFormat_SaturationSize(this.ptr);
+		return CQt.QPixelFormat_SaturationSize((.)this.ptr);
 	}
 	public c_uchar LightnessSize()
 	{
-		return CQt.QPixelFormat_LightnessSize(this.ptr);
+		return CQt.QPixelFormat_LightnessSize((.)this.ptr);
 	}
 	public c_uchar BrightnessSize()
 	{
-		return CQt.QPixelFormat_BrightnessSize(this.ptr);
+		return CQt.QPixelFormat_BrightnessSize((.)this.ptr);
 	}
 	public c_uchar AlphaSize()
 	{
-		return CQt.QPixelFormat_AlphaSize(this.ptr);
+		return CQt.QPixelFormat_AlphaSize((.)this.ptr);
 	}
 	public c_uchar BitsPerPixel()
 	{
-		return CQt.QPixelFormat_BitsPerPixel(this.ptr);
+		return CQt.QPixelFormat_BitsPerPixel((.)this.ptr);
 	}
 	public QPixelFormat_AlphaUsage AlphaUsage()
 	{
-		return CQt.QPixelFormat_AlphaUsage(this.ptr);
+		return CQt.QPixelFormat_AlphaUsage((.)this.ptr);
 	}
 	public QPixelFormat_AlphaPosition AlphaPosition()
 	{
-		return CQt.QPixelFormat_AlphaPosition(this.ptr);
+		return CQt.QPixelFormat_AlphaPosition((.)this.ptr);
 	}
 	public QPixelFormat_AlphaPremultiplied Premultiplied()
 	{
-		return CQt.QPixelFormat_Premultiplied(this.ptr);
+		return CQt.QPixelFormat_Premultiplied((.)this.ptr);
 	}
 	public QPixelFormat_TypeInterpretation TypeInterpretation()
 	{
-		return CQt.QPixelFormat_TypeInterpretation(this.ptr);
+		return CQt.QPixelFormat_TypeInterpretation((.)this.ptr);
 	}
 	public QPixelFormat_ByteOrder ByteOrder()
 	{
-		return CQt.QPixelFormat_ByteOrder(this.ptr);
+		return CQt.QPixelFormat_ByteOrder((.)this.ptr);
 	}
 	public QPixelFormat_YUVLayout YuvLayout()
 	{
-		return CQt.QPixelFormat_YuvLayout(this.ptr);
+		return CQt.QPixelFormat_YuvLayout((.)this.ptr);
 	}
 	public c_uchar SubEnum()
 	{
-		return CQt.QPixelFormat_SubEnum(this.ptr);
+		return CQt.QPixelFormat_SubEnum((.)this.ptr);
 	}
 }
 interface IQPixelFormat

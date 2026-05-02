@@ -158,151 +158,151 @@ class QListWidgetItem
 	}
 	public void** Clone()
 	{
-		return CQt.QListWidgetItem_Clone(this.ptr);
+		return CQt.QListWidgetItem_Clone((.)this.ptr);
 	}
 	public void** ListWidget()
 	{
-		return CQt.QListWidgetItem_ListWidget(this.ptr);
+		return CQt.QListWidgetItem_ListWidget((.)this.ptr);
 	}
 	public void SetSelected(bool selectVal)
 	{
-		CQt.QListWidgetItem_SetSelected(this.ptr, selectVal);
+		CQt.QListWidgetItem_SetSelected((.)this.ptr, selectVal);
 	}
 	public bool IsSelected()
 	{
-		return CQt.QListWidgetItem_IsSelected(this.ptr);
+		return CQt.QListWidgetItem_IsSelected((.)this.ptr);
 	}
 	public void SetHidden(bool hide)
 	{
-		CQt.QListWidgetItem_SetHidden(this.ptr, hide);
+		CQt.QListWidgetItem_SetHidden((.)this.ptr, hide);
 	}
 	public bool IsHidden()
 	{
-		return CQt.QListWidgetItem_IsHidden(this.ptr);
+		return CQt.QListWidgetItem_IsHidden((.)this.ptr);
 	}
 	public void* Flags()
 	{
-		return CQt.QListWidgetItem_Flags(this.ptr);
+		return CQt.QListWidgetItem_Flags((.)this.ptr);
 	}
 	public void SetFlags(void* flags)
 	{
-		CQt.QListWidgetItem_SetFlags(this.ptr, flags);
+		CQt.QListWidgetItem_SetFlags((.)this.ptr, flags);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QListWidgetItem_Text(this.ptr);
+		return CQt.QListWidgetItem_Text((.)this.ptr);
 	}
 	public void SetText(libqt_string* text)
 	{
-		CQt.QListWidgetItem_SetText(this.ptr, text);
+		CQt.QListWidgetItem_SetText((.)this.ptr, text);
 	}
 	public QIcon_Ptr Icon()
 	{
-		return CQt.QListWidgetItem_Icon(this.ptr);
+		return CQt.QListWidgetItem_Icon((.)this.ptr);
 	}
 	public void SetIcon(QIcon_Ptr* icon)
 	{
-		CQt.QListWidgetItem_SetIcon(this.ptr, icon);
+		CQt.QListWidgetItem_SetIcon((.)this.ptr, icon);
 	}
 	public libqt_string StatusTip()
 	{
-		return CQt.QListWidgetItem_StatusTip(this.ptr);
+		return CQt.QListWidgetItem_StatusTip((.)this.ptr);
 	}
 	public void SetStatusTip(libqt_string* statusTip)
 	{
-		CQt.QListWidgetItem_SetStatusTip(this.ptr, statusTip);
+		CQt.QListWidgetItem_SetStatusTip((.)this.ptr, statusTip);
 	}
 	public libqt_string ToolTip()
 	{
-		return CQt.QListWidgetItem_ToolTip(this.ptr);
+		return CQt.QListWidgetItem_ToolTip((.)this.ptr);
 	}
 	public void SetToolTip(libqt_string* toolTip)
 	{
-		CQt.QListWidgetItem_SetToolTip(this.ptr, toolTip);
+		CQt.QListWidgetItem_SetToolTip((.)this.ptr, toolTip);
 	}
 	public libqt_string WhatsThis()
 	{
-		return CQt.QListWidgetItem_WhatsThis(this.ptr);
+		return CQt.QListWidgetItem_WhatsThis((.)this.ptr);
 	}
 	public void SetWhatsThis(libqt_string* whatsThis)
 	{
-		CQt.QListWidgetItem_SetWhatsThis(this.ptr, whatsThis);
+		CQt.QListWidgetItem_SetWhatsThis((.)this.ptr, whatsThis);
 	}
 	public QFont_Ptr Font()
 	{
-		return CQt.QListWidgetItem_Font(this.ptr);
+		return CQt.QListWidgetItem_Font((.)this.ptr);
 	}
 	public void SetFont(QFont_Ptr* font)
 	{
-		CQt.QListWidgetItem_SetFont(this.ptr, font);
+		CQt.QListWidgetItem_SetFont((.)this.ptr, font);
 	}
 	public c_int TextAlignment()
 	{
-		return CQt.QListWidgetItem_TextAlignment(this.ptr);
+		return CQt.QListWidgetItem_TextAlignment((.)this.ptr);
 	}
 	public void SetTextAlignment(c_int alignment)
 	{
-		CQt.QListWidgetItem_SetTextAlignment(this.ptr, alignment);
+		CQt.QListWidgetItem_SetTextAlignment((.)this.ptr, alignment);
 	}
 	public void SetTextAlignment2(Qt_AlignmentFlag alignment)
 	{
-		CQt.QListWidgetItem_SetTextAlignment2(this.ptr, alignment);
+		CQt.QListWidgetItem_SetTextAlignment2((.)this.ptr, alignment);
 	}
 	public void SetTextAlignment3(void* alignment)
 	{
-		CQt.QListWidgetItem_SetTextAlignment3(this.ptr, alignment);
+		CQt.QListWidgetItem_SetTextAlignment3((.)this.ptr, alignment);
 	}
 	public QBrush_Ptr Background()
 	{
-		return CQt.QListWidgetItem_Background(this.ptr);
+		return CQt.QListWidgetItem_Background((.)this.ptr);
 	}
 	public void SetBackground(QBrush_Ptr* brush)
 	{
-		CQt.QListWidgetItem_SetBackground(this.ptr, brush);
+		CQt.QListWidgetItem_SetBackground((.)this.ptr, brush);
 	}
 	public QBrush_Ptr Foreground()
 	{
-		return CQt.QListWidgetItem_Foreground(this.ptr);
+		return CQt.QListWidgetItem_Foreground((.)this.ptr);
 	}
 	public void SetForeground(QBrush_Ptr* brush)
 	{
-		CQt.QListWidgetItem_SetForeground(this.ptr, brush);
+		CQt.QListWidgetItem_SetForeground((.)this.ptr, brush);
 	}
 	public Qt_CheckState CheckState()
 	{
-		return CQt.QListWidgetItem_CheckState(this.ptr);
+		return CQt.QListWidgetItem_CheckState((.)this.ptr);
 	}
 	public void SetCheckState(Qt_CheckState state)
 	{
-		CQt.QListWidgetItem_SetCheckState(this.ptr, state);
+		CQt.QListWidgetItem_SetCheckState((.)this.ptr, state);
 	}
 	public QSize_Ptr SizeHint()
 	{
-		return CQt.QListWidgetItem_SizeHint(this.ptr);
+		return CQt.QListWidgetItem_SizeHint((.)this.ptr);
 	}
 	public void SetSizeHint(QSize_Ptr* size)
 	{
-		CQt.QListWidgetItem_SetSizeHint(this.ptr, size);
+		CQt.QListWidgetItem_SetSizeHint((.)this.ptr, size);
 	}
 	public QVariant_Ptr Data(c_int role)
 	{
-		return CQt.QListWidgetItem_Data(this.ptr, role);
+		return CQt.QListWidgetItem_Data((.)this.ptr, role);
 	}
 	public void SetData(c_int role, QVariant_Ptr* value)
 	{
-		CQt.QListWidgetItem_SetData(this.ptr, role, value);
+		CQt.QListWidgetItem_SetData((.)this.ptr, role, value);
 	}
 	public void Read(QDataStream_Ptr* _in)
 	{
-		CQt.QListWidgetItem_Read(this.ptr, _in);
+		CQt.QListWidgetItem_Read((.)this.ptr, _in);
 	}
 	public void Write(QDataStream_Ptr* _out)
 	{
-		CQt.QListWidgetItem_Write(this.ptr, _out);
+		CQt.QListWidgetItem_Write((.)this.ptr, _out);
 	}
 	public c_int Type()
 	{
-		return CQt.QListWidgetItem_Type(this.ptr);
+		return CQt.QListWidgetItem_Type((.)this.ptr);
 	}
 }
 interface IQListWidgetItem
@@ -500,15 +500,15 @@ class QListWidget
 	}
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QListWidget_MetaObject(this.ptr);
+		return CQt.QListWidget_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QListWidget_Qt_Metacast(this.ptr, param1);
+		return CQt.QListWidget_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QListWidget_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QListWidget_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -516,215 +516,215 @@ class QListWidget
 	}
 	public void SetSelectionModel(QItemSelectionModel_Ptr* selectionModel)
 	{
-		CQt.QListWidget_SetSelectionModel(this.ptr, selectionModel);
+		CQt.QListWidget_SetSelectionModel((.)this.ptr, selectionModel);
 	}
 	public void** Item(c_int row)
 	{
-		return CQt.QListWidget_Item(this.ptr, row);
+		return CQt.QListWidget_Item((.)this.ptr, row);
 	}
 	public c_int Row(void** item)
 	{
-		return CQt.QListWidget_Row(this.ptr, item);
+		return CQt.QListWidget_Row((.)this.ptr, item);
 	}
 	public void InsertItem(c_int row, void** item)
 	{
-		CQt.QListWidget_InsertItem(this.ptr, row, item);
+		CQt.QListWidget_InsertItem((.)this.ptr, row, item);
 	}
 	public void InsertItem2(c_int row, libqt_string* label)
 	{
-		CQt.QListWidget_InsertItem2(this.ptr, row, label);
+		CQt.QListWidget_InsertItem2((.)this.ptr, row, label);
 	}
 	public void InsertItems(c_int row, void** labels)
 	{
-		CQt.QListWidget_InsertItems(this.ptr, row, labels);
+		CQt.QListWidget_InsertItems((.)this.ptr, row, labels);
 	}
 	public void AddItem(libqt_string* label)
 	{
-		CQt.QListWidget_AddItem(this.ptr, label);
+		CQt.QListWidget_AddItem((.)this.ptr, label);
 	}
 	public void AddItem2(void** item)
 	{
-		CQt.QListWidget_AddItem2(this.ptr, item);
+		CQt.QListWidget_AddItem2((.)this.ptr, item);
 	}
 	public void AddItems(void** labels)
 	{
-		CQt.QListWidget_AddItems(this.ptr, labels);
+		CQt.QListWidget_AddItems((.)this.ptr, labels);
 	}
 	public void** TakeItem(c_int row)
 	{
-		return CQt.QListWidget_TakeItem(this.ptr, row);
+		return CQt.QListWidget_TakeItem((.)this.ptr, row);
 	}
 	public c_int Count()
 	{
-		return CQt.QListWidget_Count(this.ptr);
+		return CQt.QListWidget_Count((.)this.ptr);
 	}
 	public void** CurrentItem()
 	{
-		return CQt.QListWidget_CurrentItem(this.ptr);
+		return CQt.QListWidget_CurrentItem((.)this.ptr);
 	}
 	public void SetCurrentItem(void** item)
 	{
-		CQt.QListWidget_SetCurrentItem(this.ptr, item);
+		CQt.QListWidget_SetCurrentItem((.)this.ptr, item);
 	}
 	public void SetCurrentItem2(void** item, void* command)
 	{
-		CQt.QListWidget_SetCurrentItem2(this.ptr, item, command);
+		CQt.QListWidget_SetCurrentItem2((.)this.ptr, item, command);
 	}
 	public c_int CurrentRow()
 	{
-		return CQt.QListWidget_CurrentRow(this.ptr);
+		return CQt.QListWidget_CurrentRow((.)this.ptr);
 	}
 	public void SetCurrentRow(c_int row)
 	{
-		CQt.QListWidget_SetCurrentRow(this.ptr, row);
+		CQt.QListWidget_SetCurrentRow((.)this.ptr, row);
 	}
 	public void SetCurrentRow2(c_int row, void* command)
 	{
-		CQt.QListWidget_SetCurrentRow2(this.ptr, row, command);
+		CQt.QListWidget_SetCurrentRow2((.)this.ptr, row, command);
 	}
 	public void** ItemAt(QPoint_Ptr* p)
 	{
-		return CQt.QListWidget_ItemAt(this.ptr, p);
+		return CQt.QListWidget_ItemAt((.)this.ptr, p);
 	}
 	public void** ItemAt2(c_int x, c_int y)
 	{
-		return CQt.QListWidget_ItemAt2(this.ptr, x, y);
+		return CQt.QListWidget_ItemAt2((.)this.ptr, x, y);
 	}
 	public QRect_Ptr VisualItemRect(void** item)
 	{
-		return CQt.QListWidget_VisualItemRect(this.ptr, item);
+		return CQt.QListWidget_VisualItemRect((.)this.ptr, item);
 	}
 	public void SortItems()
 	{
-		CQt.QListWidget_SortItems(this.ptr);
+		CQt.QListWidget_SortItems((.)this.ptr);
 	}
 	public void SetSortingEnabled(bool enable)
 	{
-		CQt.QListWidget_SetSortingEnabled(this.ptr, enable);
+		CQt.QListWidget_SetSortingEnabled((.)this.ptr, enable);
 	}
 	public bool IsSortingEnabled()
 	{
-		return CQt.QListWidget_IsSortingEnabled(this.ptr);
+		return CQt.QListWidget_IsSortingEnabled((.)this.ptr);
 	}
 	public void EditItem(void** item)
 	{
-		CQt.QListWidget_EditItem(this.ptr, item);
+		CQt.QListWidget_EditItem((.)this.ptr, item);
 	}
 	public void OpenPersistentEditor(void** item)
 	{
-		CQt.QListWidget_OpenPersistentEditor(this.ptr, item);
+		CQt.QListWidget_OpenPersistentEditor((.)this.ptr, item);
 	}
 	public void ClosePersistentEditor(void** item)
 	{
-		CQt.QListWidget_ClosePersistentEditor(this.ptr, item);
+		CQt.QListWidget_ClosePersistentEditor((.)this.ptr, item);
 	}
 	public bool IsPersistentEditorOpen(void** item)
 	{
-		return CQt.QListWidget_IsPersistentEditorOpen(this.ptr, item);
+		return CQt.QListWidget_IsPersistentEditorOpen((.)this.ptr, item);
 	}
 	public QWidget_Ptr* ItemWidget(void** item)
 	{
-		return CQt.QListWidget_ItemWidget(this.ptr, item);
+		return CQt.QListWidget_ItemWidget((.)this.ptr, item);
 	}
 	public void SetItemWidget(void** item, QWidget_Ptr* widget)
 	{
-		CQt.QListWidget_SetItemWidget(this.ptr, item, widget);
+		CQt.QListWidget_SetItemWidget((.)this.ptr, item, widget);
 	}
 	public void RemoveItemWidget(void** item)
 	{
-		CQt.QListWidget_RemoveItemWidget(this.ptr, item);
+		CQt.QListWidget_RemoveItemWidget((.)this.ptr, item);
 	}
 	public void* SelectedItems()
 	{
-		return CQt.QListWidget_SelectedItems(this.ptr);
+		return CQt.QListWidget_SelectedItems((.)this.ptr);
 	}
 	public void* FindItems(libqt_string* text, void* flags)
 	{
-		return CQt.QListWidget_FindItems(this.ptr, text, flags);
+		return CQt.QListWidget_FindItems((.)this.ptr, text, flags);
 	}
 	public void* Items(QMimeData_Ptr* data)
 	{
-		return CQt.QListWidget_Items(this.ptr, data);
+		return CQt.QListWidget_Items((.)this.ptr, data);
 	}
 	public QModelIndex_Ptr IndexFromItem(void** item)
 	{
-		return CQt.QListWidget_IndexFromItem(this.ptr, item);
+		return CQt.QListWidget_IndexFromItem((.)this.ptr, item);
 	}
 	public void** ItemFromIndex(QModelIndex_Ptr* index)
 	{
-		return CQt.QListWidget_ItemFromIndex(this.ptr, index);
+		return CQt.QListWidget_ItemFromIndex((.)this.ptr, index);
 	}
 	public void DropEvent(QDropEvent_Ptr* event)
 	{
-		CQt.QListWidget_DropEvent(this.ptr, event);
+		CQt.QListWidget_DropEvent((.)this.ptr, event);
 	}
 	public void ScrollToItem(void** item)
 	{
-		CQt.QListWidget_ScrollToItem(this.ptr, item);
+		CQt.QListWidget_ScrollToItem((.)this.ptr, item);
 	}
 	public void Clear()
 	{
-		CQt.QListWidget_Clear(this.ptr);
+		CQt.QListWidget_Clear((.)this.ptr);
 	}
 	public void ItemPressed(void** item)
 	{
-		CQt.QListWidget_ItemPressed(this.ptr, item);
+		CQt.QListWidget_ItemPressed((.)this.ptr, item);
 	}
 	public void ItemClicked(void** item)
 	{
-		CQt.QListWidget_ItemClicked(this.ptr, item);
+		CQt.QListWidget_ItemClicked((.)this.ptr, item);
 	}
 	public void ItemDoubleClicked(void** item)
 	{
-		CQt.QListWidget_ItemDoubleClicked(this.ptr, item);
+		CQt.QListWidget_ItemDoubleClicked((.)this.ptr, item);
 	}
 	public void ItemActivated(void** item)
 	{
-		CQt.QListWidget_ItemActivated(this.ptr, item);
+		CQt.QListWidget_ItemActivated((.)this.ptr, item);
 	}
 	public void ItemEntered(void** item)
 	{
-		CQt.QListWidget_ItemEntered(this.ptr, item);
+		CQt.QListWidget_ItemEntered((.)this.ptr, item);
 	}
 	public void ItemChanged(void** item)
 	{
-		CQt.QListWidget_ItemChanged(this.ptr, item);
+		CQt.QListWidget_ItemChanged((.)this.ptr, item);
 	}
 	public void CurrentItemChanged(void** current, void** previous)
 	{
-		CQt.QListWidget_CurrentItemChanged(this.ptr, current, previous);
+		CQt.QListWidget_CurrentItemChanged((.)this.ptr, current, previous);
 	}
 	public void CurrentTextChanged(libqt_string* currentText)
 	{
-		CQt.QListWidget_CurrentTextChanged(this.ptr, currentText);
+		CQt.QListWidget_CurrentTextChanged((.)this.ptr, currentText);
 	}
 	public void CurrentRowChanged(c_int currentRow)
 	{
-		CQt.QListWidget_CurrentRowChanged(this.ptr, currentRow);
+		CQt.QListWidget_CurrentRowChanged((.)this.ptr, currentRow);
 	}
 	public void ItemSelectionChanged()
 	{
-		CQt.QListWidget_ItemSelectionChanged(this.ptr);
+		CQt.QListWidget_ItemSelectionChanged((.)this.ptr);
 	}
 	public bool Event(QEvent_Ptr* e)
 	{
-		return CQt.QListWidget_Event(this.ptr, e);
+		return CQt.QListWidget_Event((.)this.ptr, e);
 	}
 	public void* MimeTypes()
 	{
-		return CQt.QListWidget_MimeTypes(this.ptr);
+		return CQt.QListWidget_MimeTypes((.)this.ptr);
 	}
 	public QMimeData_Ptr* MimeData(void** items)
 	{
-		return CQt.QListWidget_MimeData(this.ptr, items);
+		return CQt.QListWidget_MimeData((.)this.ptr, items);
 	}
 	public bool DropMimeData(c_int index, QMimeData_Ptr* data, Qt_DropAction action)
 	{
-		return CQt.QListWidget_DropMimeData(this.ptr, index, data, action);
+		return CQt.QListWidget_DropMimeData((.)this.ptr, index, data, action);
 	}
 	public void* SupportedDropActions()
 	{
-		return CQt.QListWidget_SupportedDropActions(this.ptr);
+		return CQt.QListWidget_SupportedDropActions((.)this.ptr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -736,11 +736,11 @@ class QListWidget
 	}
 	public void SortItems1(Qt_SortOrder order)
 	{
-		CQt.QListWidget_SortItems1(this.ptr, order);
+		CQt.QListWidget_SortItems1((.)this.ptr, order);
 	}
 	public void ScrollToItem2(void** item, QAbstractItemView_ScrollHint hint)
 	{
-		CQt.QListWidget_ScrollToItem2(this.ptr, item, hint);
+		CQt.QListWidget_ScrollToItem2((.)this.ptr, item, hint);
 	}
 }
 interface IQListWidget

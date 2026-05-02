@@ -64,55 +64,55 @@ class QTextInlineObject
 	}
 	public bool IsValid()
 	{
-		return CQt.QTextInlineObject_IsValid(this.ptr);
+		return CQt.QTextInlineObject_IsValid((.)this.ptr);
 	}
 	public QRectF_Ptr Rect()
 	{
-		return CQt.QTextInlineObject_Rect(this.ptr);
+		return CQt.QTextInlineObject_Rect((.)this.ptr);
 	}
 	public double Width()
 	{
-		return CQt.QTextInlineObject_Width(this.ptr);
+		return CQt.QTextInlineObject_Width((.)this.ptr);
 	}
 	public double Ascent()
 	{
-		return CQt.QTextInlineObject_Ascent(this.ptr);
+		return CQt.QTextInlineObject_Ascent((.)this.ptr);
 	}
 	public double Descent()
 	{
-		return CQt.QTextInlineObject_Descent(this.ptr);
+		return CQt.QTextInlineObject_Descent((.)this.ptr);
 	}
 	public double Height()
 	{
-		return CQt.QTextInlineObject_Height(this.ptr);
+		return CQt.QTextInlineObject_Height((.)this.ptr);
 	}
 	public Qt_LayoutDirection TextDirection()
 	{
-		return CQt.QTextInlineObject_TextDirection(this.ptr);
+		return CQt.QTextInlineObject_TextDirection((.)this.ptr);
 	}
 	public void SetWidth(double w)
 	{
-		CQt.QTextInlineObject_SetWidth(this.ptr, w);
+		CQt.QTextInlineObject_SetWidth((.)this.ptr, w);
 	}
 	public void SetAscent(double a)
 	{
-		CQt.QTextInlineObject_SetAscent(this.ptr, a);
+		CQt.QTextInlineObject_SetAscent((.)this.ptr, a);
 	}
 	public void SetDescent(double d)
 	{
-		CQt.QTextInlineObject_SetDescent(this.ptr, d);
+		CQt.QTextInlineObject_SetDescent((.)this.ptr, d);
 	}
 	public c_int TextPosition()
 	{
-		return CQt.QTextInlineObject_TextPosition(this.ptr);
+		return CQt.QTextInlineObject_TextPosition((.)this.ptr);
 	}
 	public c_int FormatIndex()
 	{
-		return CQt.QTextInlineObject_FormatIndex(this.ptr);
+		return CQt.QTextInlineObject_FormatIndex((.)this.ptr);
 	}
 	public QTextFormat_Ptr Format()
 	{
-		return CQt.QTextInlineObject_Format(this.ptr);
+		return CQt.QTextInlineObject_Format((.)this.ptr);
 	}
 }
 interface IQTextInlineObject
@@ -272,183 +272,183 @@ class QTextLayout
 	}
 	public void SetFont(QFont_Ptr* f)
 	{
-		CQt.QTextLayout_SetFont(this.ptr, f);
+		CQt.QTextLayout_SetFont((.)this.ptr, f);
 	}
 	public QFont_Ptr Font()
 	{
-		return CQt.QTextLayout_Font(this.ptr);
+		return CQt.QTextLayout_Font((.)this.ptr);
 	}
 	public void SetRawFont(QRawFont_Ptr* rawFont)
 	{
-		CQt.QTextLayout_SetRawFont(this.ptr, rawFont);
+		CQt.QTextLayout_SetRawFont((.)this.ptr, rawFont);
 	}
 	public void SetText(libqt_string* stringVal)
 	{
-		CQt.QTextLayout_SetText(this.ptr, stringVal);
+		CQt.QTextLayout_SetText((.)this.ptr, stringVal);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QTextLayout_Text(this.ptr);
+		return CQt.QTextLayout_Text((.)this.ptr);
 	}
 	public void SetTextOption(QTextOption_Ptr* option)
 	{
-		CQt.QTextLayout_SetTextOption(this.ptr, option);
+		CQt.QTextLayout_SetTextOption((.)this.ptr, option);
 	}
 	public QTextOption_Ptr* TextOption()
 	{
-		return CQt.QTextLayout_TextOption(this.ptr);
+		return CQt.QTextLayout_TextOption((.)this.ptr);
 	}
 	public void SetPreeditArea(c_int position, libqt_string* text)
 	{
-		CQt.QTextLayout_SetPreeditArea(this.ptr, position, text);
+		CQt.QTextLayout_SetPreeditArea((.)this.ptr, position, text);
 	}
 	public c_int PreeditAreaPosition()
 	{
-		return CQt.QTextLayout_PreeditAreaPosition(this.ptr);
+		return CQt.QTextLayout_PreeditAreaPosition((.)this.ptr);
 	}
 	public libqt_string PreeditAreaText()
 	{
-		return CQt.QTextLayout_PreeditAreaText(this.ptr);
+		return CQt.QTextLayout_PreeditAreaText((.)this.ptr);
 	}
 	public void SetFormats(void** overrides)
 	{
-		CQt.QTextLayout_SetFormats(this.ptr, overrides);
+		CQt.QTextLayout_SetFormats((.)this.ptr, overrides);
 	}
 	public void* Formats()
 	{
-		return CQt.QTextLayout_Formats(this.ptr);
+		return CQt.QTextLayout_Formats((.)this.ptr);
 	}
 	public void ClearFormats()
 	{
-		CQt.QTextLayout_ClearFormats(this.ptr);
+		CQt.QTextLayout_ClearFormats((.)this.ptr);
 	}
 	public void SetCacheEnabled(bool enable)
 	{
-		CQt.QTextLayout_SetCacheEnabled(this.ptr, enable);
+		CQt.QTextLayout_SetCacheEnabled((.)this.ptr, enable);
 	}
 	public bool CacheEnabled()
 	{
-		return CQt.QTextLayout_CacheEnabled(this.ptr);
+		return CQt.QTextLayout_CacheEnabled((.)this.ptr);
 	}
 	public void SetCursorMoveStyle(Qt_CursorMoveStyle style)
 	{
-		CQt.QTextLayout_SetCursorMoveStyle(this.ptr, style);
+		CQt.QTextLayout_SetCursorMoveStyle((.)this.ptr, style);
 	}
 	public Qt_CursorMoveStyle CursorMoveStyle()
 	{
-		return CQt.QTextLayout_CursorMoveStyle(this.ptr);
+		return CQt.QTextLayout_CursorMoveStyle((.)this.ptr);
 	}
 	public void BeginLayout()
 	{
-		CQt.QTextLayout_BeginLayout(this.ptr);
+		CQt.QTextLayout_BeginLayout((.)this.ptr);
 	}
 	public void EndLayout()
 	{
-		CQt.QTextLayout_EndLayout(this.ptr);
+		CQt.QTextLayout_EndLayout((.)this.ptr);
 	}
 	public void ClearLayout()
 	{
-		CQt.QTextLayout_ClearLayout(this.ptr);
+		CQt.QTextLayout_ClearLayout((.)this.ptr);
 	}
 	public QTextLine_Ptr CreateLine()
 	{
-		return CQt.QTextLayout_CreateLine(this.ptr);
+		return CQt.QTextLayout_CreateLine((.)this.ptr);
 	}
 	public c_int LineCount()
 	{
-		return CQt.QTextLayout_LineCount(this.ptr);
+		return CQt.QTextLayout_LineCount((.)this.ptr);
 	}
 	public QTextLine_Ptr LineAt(c_int i)
 	{
-		return CQt.QTextLayout_LineAt(this.ptr, i);
+		return CQt.QTextLayout_LineAt((.)this.ptr, i);
 	}
 	public QTextLine_Ptr LineForTextPosition(c_int pos)
 	{
-		return CQt.QTextLayout_LineForTextPosition(this.ptr, pos);
+		return CQt.QTextLayout_LineForTextPosition((.)this.ptr, pos);
 	}
 	public bool IsValidCursorPosition(c_int pos)
 	{
-		return CQt.QTextLayout_IsValidCursorPosition(this.ptr, pos);
+		return CQt.QTextLayout_IsValidCursorPosition((.)this.ptr, pos);
 	}
 	public c_int NextCursorPosition(c_int oldPos)
 	{
-		return CQt.QTextLayout_NextCursorPosition(this.ptr, oldPos);
+		return CQt.QTextLayout_NextCursorPosition((.)this.ptr, oldPos);
 	}
 	public c_int PreviousCursorPosition(c_int oldPos)
 	{
-		return CQt.QTextLayout_PreviousCursorPosition(this.ptr, oldPos);
+		return CQt.QTextLayout_PreviousCursorPosition((.)this.ptr, oldPos);
 	}
 	public c_int LeftCursorPosition(c_int oldPos)
 	{
-		return CQt.QTextLayout_LeftCursorPosition(this.ptr, oldPos);
+		return CQt.QTextLayout_LeftCursorPosition((.)this.ptr, oldPos);
 	}
 	public c_int RightCursorPosition(c_int oldPos)
 	{
-		return CQt.QTextLayout_RightCursorPosition(this.ptr, oldPos);
+		return CQt.QTextLayout_RightCursorPosition((.)this.ptr, oldPos);
 	}
 	public void Draw(QPainter_Ptr* p, QPointF_Ptr* pos)
 	{
-		CQt.QTextLayout_Draw(this.ptr, p, pos);
+		CQt.QTextLayout_Draw((.)this.ptr, p, pos);
 	}
 	public void DrawCursor(QPainter_Ptr* p, QPointF_Ptr* pos, c_int cursorPosition)
 	{
-		CQt.QTextLayout_DrawCursor(this.ptr, p, pos, cursorPosition);
+		CQt.QTextLayout_DrawCursor((.)this.ptr, p, pos, cursorPosition);
 	}
 	public void DrawCursor2(QPainter_Ptr* p, QPointF_Ptr* pos, c_int cursorPosition, c_int width)
 	{
-		CQt.QTextLayout_DrawCursor2(this.ptr, p, pos, cursorPosition, width);
+		CQt.QTextLayout_DrawCursor2((.)this.ptr, p, pos, cursorPosition, width);
 	}
 	public QPointF_Ptr Position()
 	{
-		return CQt.QTextLayout_Position(this.ptr);
+		return CQt.QTextLayout_Position((.)this.ptr);
 	}
 	public void SetPosition(QPointF_Ptr* p)
 	{
-		CQt.QTextLayout_SetPosition(this.ptr, p);
+		CQt.QTextLayout_SetPosition((.)this.ptr, p);
 	}
 	public QRectF_Ptr BoundingRect()
 	{
-		return CQt.QTextLayout_BoundingRect(this.ptr);
+		return CQt.QTextLayout_BoundingRect((.)this.ptr);
 	}
 	public double MinimumWidth()
 	{
-		return CQt.QTextLayout_MinimumWidth(this.ptr);
+		return CQt.QTextLayout_MinimumWidth((.)this.ptr);
 	}
 	public double MaximumWidth()
 	{
-		return CQt.QTextLayout_MaximumWidth(this.ptr);
+		return CQt.QTextLayout_MaximumWidth((.)this.ptr);
 	}
 	public void* GlyphRuns()
 	{
-		return CQt.QTextLayout_GlyphRuns(this.ptr);
+		return CQt.QTextLayout_GlyphRuns((.)this.ptr);
 	}
 	public void SetFlags(c_int flags)
 	{
-		CQt.QTextLayout_SetFlags(this.ptr, flags);
+		CQt.QTextLayout_SetFlags((.)this.ptr, flags);
 	}
 	public c_int NextCursorPosition2(c_int oldPos, QTextLayout_CursorMode mode)
 	{
-		return CQt.QTextLayout_NextCursorPosition2(this.ptr, oldPos, mode);
+		return CQt.QTextLayout_NextCursorPosition2((.)this.ptr, oldPos, mode);
 	}
 	public c_int PreviousCursorPosition2(c_int oldPos, QTextLayout_CursorMode mode)
 	{
-		return CQt.QTextLayout_PreviousCursorPosition2(this.ptr, oldPos, mode);
+		return CQt.QTextLayout_PreviousCursorPosition2((.)this.ptr, oldPos, mode);
 	}
 	public void Draw3(QPainter_Ptr* p, QPointF_Ptr* pos, void** selections)
 	{
-		CQt.QTextLayout_Draw3(this.ptr, p, pos, selections);
+		CQt.QTextLayout_Draw3((.)this.ptr, p, pos, selections);
 	}
 	public void Draw4(QPainter_Ptr* p, QPointF_Ptr* pos, void** selections, QRectF_Ptr* clip)
 	{
-		CQt.QTextLayout_Draw4(this.ptr, p, pos, selections, clip);
+		CQt.QTextLayout_Draw4((.)this.ptr, p, pos, selections, clip);
 	}
 	public void* GlyphRuns1(c_int from)
 	{
-		return CQt.QTextLayout_GlyphRuns1(this.ptr, from);
+		return CQt.QTextLayout_GlyphRuns1((.)this.ptr, from);
 	}
 	public void* GlyphRuns2(c_int from, c_int length)
 	{
-		return CQt.QTextLayout_GlyphRuns2(this.ptr, from, length);
+		return CQt.QTextLayout_GlyphRuns2((.)this.ptr, from, length);
 	}
 }
 interface IQTextLayout
@@ -598,131 +598,131 @@ class QTextLine
 	}
 	public bool IsValid()
 	{
-		return CQt.QTextLine_IsValid(this.ptr);
+		return CQt.QTextLine_IsValid((.)this.ptr);
 	}
 	public QRectF_Ptr Rect()
 	{
-		return CQt.QTextLine_Rect(this.ptr);
+		return CQt.QTextLine_Rect((.)this.ptr);
 	}
 	public double X()
 	{
-		return CQt.QTextLine_X(this.ptr);
+		return CQt.QTextLine_X((.)this.ptr);
 	}
 	public double Y()
 	{
-		return CQt.QTextLine_Y(this.ptr);
+		return CQt.QTextLine_Y((.)this.ptr);
 	}
 	public double Width()
 	{
-		return CQt.QTextLine_Width(this.ptr);
+		return CQt.QTextLine_Width((.)this.ptr);
 	}
 	public double Ascent()
 	{
-		return CQt.QTextLine_Ascent(this.ptr);
+		return CQt.QTextLine_Ascent((.)this.ptr);
 	}
 	public double Descent()
 	{
-		return CQt.QTextLine_Descent(this.ptr);
+		return CQt.QTextLine_Descent((.)this.ptr);
 	}
 	public double Height()
 	{
-		return CQt.QTextLine_Height(this.ptr);
+		return CQt.QTextLine_Height((.)this.ptr);
 	}
 	public double Leading()
 	{
-		return CQt.QTextLine_Leading(this.ptr);
+		return CQt.QTextLine_Leading((.)this.ptr);
 	}
 	public void SetLeadingIncluded(bool included)
 	{
-		CQt.QTextLine_SetLeadingIncluded(this.ptr, included);
+		CQt.QTextLine_SetLeadingIncluded((.)this.ptr, included);
 	}
 	public bool LeadingIncluded()
 	{
-		return CQt.QTextLine_LeadingIncluded(this.ptr);
+		return CQt.QTextLine_LeadingIncluded((.)this.ptr);
 	}
 	public double NaturalTextWidth()
 	{
-		return CQt.QTextLine_NaturalTextWidth(this.ptr);
+		return CQt.QTextLine_NaturalTextWidth((.)this.ptr);
 	}
 	public double HorizontalAdvance()
 	{
-		return CQt.QTextLine_HorizontalAdvance(this.ptr);
+		return CQt.QTextLine_HorizontalAdvance((.)this.ptr);
 	}
 	public QRectF_Ptr NaturalTextRect()
 	{
-		return CQt.QTextLine_NaturalTextRect(this.ptr);
+		return CQt.QTextLine_NaturalTextRect((.)this.ptr);
 	}
 	public double CursorToX(c_int* cursorPos)
 	{
-		return CQt.QTextLine_CursorToX(this.ptr, cursorPos);
+		return CQt.QTextLine_CursorToX((.)this.ptr, cursorPos);
 	}
 	public double CursorToX2(c_int cursorPos)
 	{
-		return CQt.QTextLine_CursorToX2(this.ptr, cursorPos);
+		return CQt.QTextLine_CursorToX2((.)this.ptr, cursorPos);
 	}
 	public c_int XToCursor(double x)
 	{
-		return CQt.QTextLine_XToCursor(this.ptr, x);
+		return CQt.QTextLine_XToCursor((.)this.ptr, x);
 	}
 	public void SetLineWidth(double width)
 	{
-		CQt.QTextLine_SetLineWidth(this.ptr, width);
+		CQt.QTextLine_SetLineWidth((.)this.ptr, width);
 	}
 	public void SetNumColumns(c_int columns)
 	{
-		CQt.QTextLine_SetNumColumns(this.ptr, columns);
+		CQt.QTextLine_SetNumColumns((.)this.ptr, columns);
 	}
 	public void SetNumColumns2(c_int columns, double alignmentWidth)
 	{
-		CQt.QTextLine_SetNumColumns2(this.ptr, columns, alignmentWidth);
+		CQt.QTextLine_SetNumColumns2((.)this.ptr, columns, alignmentWidth);
 	}
 	public void SetPosition(QPointF_Ptr* pos)
 	{
-		CQt.QTextLine_SetPosition(this.ptr, pos);
+		CQt.QTextLine_SetPosition((.)this.ptr, pos);
 	}
 	public QPointF_Ptr Position()
 	{
-		return CQt.QTextLine_Position(this.ptr);
+		return CQt.QTextLine_Position((.)this.ptr);
 	}
 	public c_int TextStart()
 	{
-		return CQt.QTextLine_TextStart(this.ptr);
+		return CQt.QTextLine_TextStart((.)this.ptr);
 	}
 	public c_int TextLength()
 	{
-		return CQt.QTextLine_TextLength(this.ptr);
+		return CQt.QTextLine_TextLength((.)this.ptr);
 	}
 	public c_int LineNumber()
 	{
-		return CQt.QTextLine_LineNumber(this.ptr);
+		return CQt.QTextLine_LineNumber((.)this.ptr);
 	}
 	public void Draw(QPainter_Ptr* painter, QPointF_Ptr* position)
 	{
-		CQt.QTextLine_Draw(this.ptr, painter, position);
+		CQt.QTextLine_Draw((.)this.ptr, painter, position);
 	}
 	public void* GlyphRuns()
 	{
-		return CQt.QTextLine_GlyphRuns(this.ptr);
+		return CQt.QTextLine_GlyphRuns((.)this.ptr);
 	}
 	public double CursorToX22(c_int* cursorPos, QTextLine_Edge edge)
 	{
-		return CQt.QTextLine_CursorToX22(this.ptr, cursorPos, edge);
+		return CQt.QTextLine_CursorToX22((.)this.ptr, cursorPos, edge);
 	}
 	public double CursorToX23(c_int cursorPos, QTextLine_Edge edge)
 	{
-		return CQt.QTextLine_CursorToX23(this.ptr, cursorPos, edge);
+		return CQt.QTextLine_CursorToX23((.)this.ptr, cursorPos, edge);
 	}
 	public c_int XToCursor2(double x, QTextLine_CursorPosition param2)
 	{
-		return CQt.QTextLine_XToCursor2(this.ptr, x, param2);
+		return CQt.QTextLine_XToCursor2((.)this.ptr, x, param2);
 	}
 	public void* GlyphRuns1(c_int from)
 	{
-		return CQt.QTextLine_GlyphRuns1(this.ptr, from);
+		return CQt.QTextLine_GlyphRuns1((.)this.ptr, from);
 	}
 	public void* GlyphRuns2(c_int from, c_int length)
 	{
-		return CQt.QTextLine_GlyphRuns2(this.ptr, from, length);
+		return CQt.QTextLine_GlyphRuns2((.)this.ptr, from, length);
 	}
 }
 interface IQTextLine
@@ -801,27 +801,27 @@ class QTextLayout_FormatRange
 	}
 	public c_int Start()
 	{
-		return CQt.QTextLayout_FormatRange_Start(this.ptr);
+		return CQt.QTextLayout_FormatRange_Start((.)this.ptr);
 	}
 	public void SetStart(c_int start)
 	{
-		CQt.QTextLayout_FormatRange_SetStart(this.ptr, start);
+		CQt.QTextLayout_FormatRange_SetStart((.)this.ptr, start);
 	}
 	public c_int Length()
 	{
-		return CQt.QTextLayout_FormatRange_Length(this.ptr);
+		return CQt.QTextLayout_FormatRange_Length((.)this.ptr);
 	}
 	public void SetLength(c_int length)
 	{
-		CQt.QTextLayout_FormatRange_SetLength(this.ptr, length);
+		CQt.QTextLayout_FormatRange_SetLength((.)this.ptr, length);
 	}
 	public QTextCharFormat_Ptr Format()
 	{
-		return CQt.QTextLayout_FormatRange_Format(this.ptr);
+		return CQt.QTextLayout_FormatRange_Format((.)this.ptr);
 	}
 	public void SetFormat(QTextCharFormat_Ptr format)
 	{
-		CQt.QTextLayout_FormatRange_SetFormat(this.ptr, format);
+		CQt.QTextLayout_FormatRange_SetFormat((.)this.ptr, format);
 	}
 }
 interface IQTextLayout_FormatRange

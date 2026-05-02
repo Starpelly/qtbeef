@@ -78,63 +78,63 @@ class QEasingCurve
 	}
 	public void Swap(QEasingCurve_Ptr* other)
 	{
-		CQt.QEasingCurve_Swap(this.ptr, other);
+		CQt.QEasingCurve_Swap((.)this.ptr, other);
 	}
 	public double Amplitude()
 	{
-		return CQt.QEasingCurve_Amplitude(this.ptr);
+		return CQt.QEasingCurve_Amplitude((.)this.ptr);
 	}
 	public void SetAmplitude(double amplitude)
 	{
-		CQt.QEasingCurve_SetAmplitude(this.ptr, amplitude);
+		CQt.QEasingCurve_SetAmplitude((.)this.ptr, amplitude);
 	}
 	public double Period()
 	{
-		return CQt.QEasingCurve_Period(this.ptr);
+		return CQt.QEasingCurve_Period((.)this.ptr);
 	}
 	public void SetPeriod(double period)
 	{
-		CQt.QEasingCurve_SetPeriod(this.ptr, period);
+		CQt.QEasingCurve_SetPeriod((.)this.ptr, period);
 	}
 	public double Overshoot()
 	{
-		return CQt.QEasingCurve_Overshoot(this.ptr);
+		return CQt.QEasingCurve_Overshoot((.)this.ptr);
 	}
 	public void SetOvershoot(double overshoot)
 	{
-		CQt.QEasingCurve_SetOvershoot(this.ptr, overshoot);
+		CQt.QEasingCurve_SetOvershoot((.)this.ptr, overshoot);
 	}
 	public void AddCubicBezierSegment(QPointF_Ptr* c1, QPointF_Ptr* c2, QPointF_Ptr* endPoint)
 	{
-		CQt.QEasingCurve_AddCubicBezierSegment(this.ptr, c1, c2, endPoint);
+		CQt.QEasingCurve_AddCubicBezierSegment((.)this.ptr, c1, c2, endPoint);
 	}
 	public void AddTCBSegment(QPointF_Ptr* nextPoint, double t, double c, double b)
 	{
-		CQt.QEasingCurve_AddTCBSegment(this.ptr, nextPoint, t, c, b);
+		CQt.QEasingCurve_AddTCBSegment((.)this.ptr, nextPoint, t, c, b);
 	}
 	public void* ToCubicSpline()
 	{
-		return CQt.QEasingCurve_ToCubicSpline(this.ptr);
+		return CQt.QEasingCurve_ToCubicSpline((.)this.ptr);
 	}
 	public QEasingCurve_Type Type()
 	{
-		return CQt.QEasingCurve_Type(this.ptr);
+		return CQt.QEasingCurve_Type((.)this.ptr);
 	}
 	public void SetType(QEasingCurve_Type type)
 	{
-		CQt.QEasingCurve_SetType(this.ptr, type);
+		CQt.QEasingCurve_SetType((.)this.ptr, type);
 	}
 	public void SetCustomType(c_intptr func)
 	{
-		CQt.QEasingCurve_SetCustomType(this.ptr, func);
+		CQt.QEasingCurve_SetCustomType((.)this.ptr, func);
 	}
 	public c_intptr CustomType()
 	{
-		return CQt.QEasingCurve_CustomType(this.ptr);
+		return CQt.QEasingCurve_CustomType((.)this.ptr);
 	}
 	public double ValueForProgress(double progress)
 	{
-		return CQt.QEasingCurve_ValueForProgress(this.ptr, progress);
+		return CQt.QEasingCurve_ValueForProgress((.)this.ptr, progress);
 	}
 }
 interface IQEasingCurve

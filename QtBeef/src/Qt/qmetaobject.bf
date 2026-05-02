@@ -216,355 +216,355 @@ class QMetaMethod
 	}
 	public void* MethodSignature()
 	{
-		return CQt.QMetaMethod_MethodSignature(this.ptr);
+		return CQt.QMetaMethod_MethodSignature((.)this.ptr);
 	}
 	public void* Name()
 	{
-		return CQt.QMetaMethod_Name(this.ptr);
+		return CQt.QMetaMethod_Name((.)this.ptr);
 	}
 	public c_char* TypeName()
 	{
-		return CQt.QMetaMethod_TypeName(this.ptr);
+		return CQt.QMetaMethod_TypeName((.)this.ptr);
 	}
 	public c_int ReturnType()
 	{
-		return CQt.QMetaMethod_ReturnType(this.ptr);
+		return CQt.QMetaMethod_ReturnType((.)this.ptr);
 	}
 	public QMetaType_Ptr ReturnMetaType()
 	{
-		return CQt.QMetaMethod_ReturnMetaType(this.ptr);
+		return CQt.QMetaMethod_ReturnMetaType((.)this.ptr);
 	}
 	public c_int ParameterCount()
 	{
-		return CQt.QMetaMethod_ParameterCount(this.ptr);
+		return CQt.QMetaMethod_ParameterCount((.)this.ptr);
 	}
 	public c_int ParameterType(c_int index)
 	{
-		return CQt.QMetaMethod_ParameterType(this.ptr, index);
+		return CQt.QMetaMethod_ParameterType((.)this.ptr, index);
 	}
 	public QMetaType_Ptr ParameterMetaType(c_int index)
 	{
-		return CQt.QMetaMethod_ParameterMetaType(this.ptr, index);
+		return CQt.QMetaMethod_ParameterMetaType((.)this.ptr, index);
 	}
 	public void GetParameterTypes(c_int* types)
 	{
-		CQt.QMetaMethod_GetParameterTypes(this.ptr, types);
+		CQt.QMetaMethod_GetParameterTypes((.)this.ptr, types);
 	}
 	public void* ParameterTypes()
 	{
-		return CQt.QMetaMethod_ParameterTypes(this.ptr);
+		return CQt.QMetaMethod_ParameterTypes((.)this.ptr);
 	}
 	public void* ParameterTypeName(c_int index)
 	{
-		return CQt.QMetaMethod_ParameterTypeName(this.ptr, index);
+		return CQt.QMetaMethod_ParameterTypeName((.)this.ptr, index);
 	}
 	public void* ParameterNames()
 	{
-		return CQt.QMetaMethod_ParameterNames(this.ptr);
+		return CQt.QMetaMethod_ParameterNames((.)this.ptr);
 	}
 	public c_char* Tag()
 	{
-		return CQt.QMetaMethod_Tag(this.ptr);
+		return CQt.QMetaMethod_Tag((.)this.ptr);
 	}
 	public QMetaMethod_Access Access()
 	{
-		return CQt.QMetaMethod_Access(this.ptr);
+		return CQt.QMetaMethod_Access((.)this.ptr);
 	}
 	public QMetaMethod_MethodType MethodType()
 	{
-		return CQt.QMetaMethod_MethodType(this.ptr);
+		return CQt.QMetaMethod_MethodType((.)this.ptr);
 	}
 	public c_int Attributes()
 	{
-		return CQt.QMetaMethod_Attributes(this.ptr);
+		return CQt.QMetaMethod_Attributes((.)this.ptr);
 	}
 	public c_int MethodIndex()
 	{
-		return CQt.QMetaMethod_MethodIndex(this.ptr);
+		return CQt.QMetaMethod_MethodIndex((.)this.ptr);
 	}
 	public c_int RelativeMethodIndex()
 	{
-		return CQt.QMetaMethod_RelativeMethodIndex(this.ptr);
+		return CQt.QMetaMethod_RelativeMethodIndex((.)this.ptr);
 	}
 	public c_int Revision()
 	{
-		return CQt.QMetaMethod_Revision(this.ptr);
+		return CQt.QMetaMethod_Revision((.)this.ptr);
 	}
 	public bool IsConst()
 	{
-		return CQt.QMetaMethod_IsConst(this.ptr);
+		return CQt.QMetaMethod_IsConst((.)this.ptr);
 	}
 	public QMetaObject_Ptr* EnclosingMetaObject()
 	{
-		return CQt.QMetaMethod_EnclosingMetaObject(this.ptr);
+		return CQt.QMetaMethod_EnclosingMetaObject((.)this.ptr);
 	}
 	public bool Invoke(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue)
 	{
-		return CQt.QMetaMethod_Invoke(this.ptr, object, connectionType, returnValue);
+		return CQt.QMetaMethod_Invoke((.)this.ptr, object, connectionType, returnValue);
 	}
 	public bool Invoke2(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue)
 	{
-		return CQt.QMetaMethod_Invoke2(this.ptr, object, returnValue);
+		return CQt.QMetaMethod_Invoke2((.)this.ptr, object, returnValue);
 	}
 	public bool Invoke3(QObject_Ptr* object, Qt_ConnectionType connectionType)
 	{
-		return CQt.QMetaMethod_Invoke3(this.ptr, object, connectionType);
+		return CQt.QMetaMethod_Invoke3((.)this.ptr, object, connectionType);
 	}
 	public bool Invoke4(QObject_Ptr* object)
 	{
-		return CQt.QMetaMethod_Invoke4(this.ptr, object);
+		return CQt.QMetaMethod_Invoke4((.)this.ptr, object);
 	}
 	public bool InvokeOnGadget(void* gadget, QGenericReturnArgument_Ptr returnValue)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget(this.ptr, gadget, returnValue);
+		return CQt.QMetaMethod_InvokeOnGadget((.)this.ptr, gadget, returnValue);
 	}
 	public bool InvokeOnGadget2(void* gadget)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget2(this.ptr, gadget);
+		return CQt.QMetaMethod_InvokeOnGadget2((.)this.ptr, gadget);
 	}
 	public bool IsValid()
 	{
-		return CQt.QMetaMethod_IsValid(this.ptr);
+		return CQt.QMetaMethod_IsValid((.)this.ptr);
 	}
 	public bool Invoke42(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0)
 	{
-		return CQt.QMetaMethod_Invoke42(this.ptr, object, connectionType, returnValue, val0);
+		return CQt.QMetaMethod_Invoke42((.)this.ptr, object, connectionType, returnValue, val0);
 	}
 	public bool Invoke5(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1)
 	{
-		return CQt.QMetaMethod_Invoke5(this.ptr, object, connectionType, returnValue, val0, val1);
+		return CQt.QMetaMethod_Invoke5((.)this.ptr, object, connectionType, returnValue, val0, val1);
 	}
 	public bool Invoke6(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2)
 	{
-		return CQt.QMetaMethod_Invoke6(this.ptr, object, connectionType, returnValue, val0, val1, val2);
+		return CQt.QMetaMethod_Invoke6((.)this.ptr, object, connectionType, returnValue, val0, val1, val2);
 	}
 	public bool Invoke7(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3)
 	{
-		return CQt.QMetaMethod_Invoke7(this.ptr, object, connectionType, returnValue, val0, val1, val2, val3);
+		return CQt.QMetaMethod_Invoke7((.)this.ptr, object, connectionType, returnValue, val0, val1, val2, val3);
 	}
 	public bool Invoke8(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4)
 	{
-		return CQt.QMetaMethod_Invoke8(this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4);
+		return CQt.QMetaMethod_Invoke8((.)this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4);
 	}
 	public bool Invoke9(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5)
 	{
-		return CQt.QMetaMethod_Invoke9(this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5);
+		return CQt.QMetaMethod_Invoke9((.)this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5);
 	}
 	public bool Invoke10(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6)
 	{
-		return CQt.QMetaMethod_Invoke10(this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6);
+		return CQt.QMetaMethod_Invoke10((.)this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6);
 	}
 	public bool Invoke11(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7)
 	{
-		return CQt.QMetaMethod_Invoke11(this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
+		return CQt.QMetaMethod_Invoke11((.)this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
 	}
 	public bool Invoke12(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8)
 	{
-		return CQt.QMetaMethod_Invoke12(this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+		return CQt.QMetaMethod_Invoke12((.)this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
 	}
 	public bool Invoke13(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8, QGenericArgument_Ptr val9)
 	{
-		return CQt.QMetaMethod_Invoke13(this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+		return CQt.QMetaMethod_Invoke13((.)this.ptr, object, connectionType, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
 	}
 	public bool Invoke32(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0)
 	{
-		return CQt.QMetaMethod_Invoke32(this.ptr, object, returnValue, val0);
+		return CQt.QMetaMethod_Invoke32((.)this.ptr, object, returnValue, val0);
 	}
 	public bool Invoke43(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1)
 	{
-		return CQt.QMetaMethod_Invoke43(this.ptr, object, returnValue, val0, val1);
+		return CQt.QMetaMethod_Invoke43((.)this.ptr, object, returnValue, val0, val1);
 	}
 	public bool Invoke52(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2)
 	{
-		return CQt.QMetaMethod_Invoke52(this.ptr, object, returnValue, val0, val1, val2);
+		return CQt.QMetaMethod_Invoke52((.)this.ptr, object, returnValue, val0, val1, val2);
 	}
 	public bool Invoke62(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3)
 	{
-		return CQt.QMetaMethod_Invoke62(this.ptr, object, returnValue, val0, val1, val2, val3);
+		return CQt.QMetaMethod_Invoke62((.)this.ptr, object, returnValue, val0, val1, val2, val3);
 	}
 	public bool Invoke72(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4)
 	{
-		return CQt.QMetaMethod_Invoke72(this.ptr, object, returnValue, val0, val1, val2, val3, val4);
+		return CQt.QMetaMethod_Invoke72((.)this.ptr, object, returnValue, val0, val1, val2, val3, val4);
 	}
 	public bool Invoke82(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5)
 	{
-		return CQt.QMetaMethod_Invoke82(this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5);
+		return CQt.QMetaMethod_Invoke82((.)this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5);
 	}
 	public bool Invoke92(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6)
 	{
-		return CQt.QMetaMethod_Invoke92(this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6);
+		return CQt.QMetaMethod_Invoke92((.)this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6);
 	}
 	public bool Invoke102(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7)
 	{
-		return CQt.QMetaMethod_Invoke102(this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
+		return CQt.QMetaMethod_Invoke102((.)this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
 	}
 	public bool Invoke112(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8)
 	{
-		return CQt.QMetaMethod_Invoke112(this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+		return CQt.QMetaMethod_Invoke112((.)this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
 	}
 	public bool Invoke122(QObject_Ptr* object, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8, QGenericArgument_Ptr val9)
 	{
-		return CQt.QMetaMethod_Invoke122(this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+		return CQt.QMetaMethod_Invoke122((.)this.ptr, object, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
 	}
 	public bool Invoke33(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0)
 	{
-		return CQt.QMetaMethod_Invoke33(this.ptr, object, connectionType, val0);
+		return CQt.QMetaMethod_Invoke33((.)this.ptr, object, connectionType, val0);
 	}
 	public bool Invoke44(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1)
 	{
-		return CQt.QMetaMethod_Invoke44(this.ptr, object, connectionType, val0, val1);
+		return CQt.QMetaMethod_Invoke44((.)this.ptr, object, connectionType, val0, val1);
 	}
 	public bool Invoke53(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2)
 	{
-		return CQt.QMetaMethod_Invoke53(this.ptr, object, connectionType, val0, val1, val2);
+		return CQt.QMetaMethod_Invoke53((.)this.ptr, object, connectionType, val0, val1, val2);
 	}
 	public bool Invoke63(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3)
 	{
-		return CQt.QMetaMethod_Invoke63(this.ptr, object, connectionType, val0, val1, val2, val3);
+		return CQt.QMetaMethod_Invoke63((.)this.ptr, object, connectionType, val0, val1, val2, val3);
 	}
 	public bool Invoke73(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4)
 	{
-		return CQt.QMetaMethod_Invoke73(this.ptr, object, connectionType, val0, val1, val2, val3, val4);
+		return CQt.QMetaMethod_Invoke73((.)this.ptr, object, connectionType, val0, val1, val2, val3, val4);
 	}
 	public bool Invoke83(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5)
 	{
-		return CQt.QMetaMethod_Invoke83(this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5);
+		return CQt.QMetaMethod_Invoke83((.)this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5);
 	}
 	public bool Invoke93(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6)
 	{
-		return CQt.QMetaMethod_Invoke93(this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6);
+		return CQt.QMetaMethod_Invoke93((.)this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6);
 	}
 	public bool Invoke103(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7)
 	{
-		return CQt.QMetaMethod_Invoke103(this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7);
+		return CQt.QMetaMethod_Invoke103((.)this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7);
 	}
 	public bool Invoke113(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8)
 	{
-		return CQt.QMetaMethod_Invoke113(this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+		return CQt.QMetaMethod_Invoke113((.)this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7, val8);
 	}
 	public bool Invoke123(QObject_Ptr* object, Qt_ConnectionType connectionType, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8, QGenericArgument_Ptr val9)
 	{
-		return CQt.QMetaMethod_Invoke123(this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+		return CQt.QMetaMethod_Invoke123((.)this.ptr, object, connectionType, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
 	}
 	public bool Invoke22(QObject_Ptr* object, QGenericArgument_Ptr val0)
 	{
-		return CQt.QMetaMethod_Invoke22(this.ptr, object, val0);
+		return CQt.QMetaMethod_Invoke22((.)this.ptr, object, val0);
 	}
 	public bool Invoke34(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1)
 	{
-		return CQt.QMetaMethod_Invoke34(this.ptr, object, val0, val1);
+		return CQt.QMetaMethod_Invoke34((.)this.ptr, object, val0, val1);
 	}
 	public bool Invoke45(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2)
 	{
-		return CQt.QMetaMethod_Invoke45(this.ptr, object, val0, val1, val2);
+		return CQt.QMetaMethod_Invoke45((.)this.ptr, object, val0, val1, val2);
 	}
 	public bool Invoke54(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3)
 	{
-		return CQt.QMetaMethod_Invoke54(this.ptr, object, val0, val1, val2, val3);
+		return CQt.QMetaMethod_Invoke54((.)this.ptr, object, val0, val1, val2, val3);
 	}
 	public bool Invoke64(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4)
 	{
-		return CQt.QMetaMethod_Invoke64(this.ptr, object, val0, val1, val2, val3, val4);
+		return CQt.QMetaMethod_Invoke64((.)this.ptr, object, val0, val1, val2, val3, val4);
 	}
 	public bool Invoke74(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5)
 	{
-		return CQt.QMetaMethod_Invoke74(this.ptr, object, val0, val1, val2, val3, val4, val5);
+		return CQt.QMetaMethod_Invoke74((.)this.ptr, object, val0, val1, val2, val3, val4, val5);
 	}
 	public bool Invoke84(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6)
 	{
-		return CQt.QMetaMethod_Invoke84(this.ptr, object, val0, val1, val2, val3, val4, val5, val6);
+		return CQt.QMetaMethod_Invoke84((.)this.ptr, object, val0, val1, val2, val3, val4, val5, val6);
 	}
 	public bool Invoke94(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7)
 	{
-		return CQt.QMetaMethod_Invoke94(this.ptr, object, val0, val1, val2, val3, val4, val5, val6, val7);
+		return CQt.QMetaMethod_Invoke94((.)this.ptr, object, val0, val1, val2, val3, val4, val5, val6, val7);
 	}
 	public bool Invoke104(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8)
 	{
-		return CQt.QMetaMethod_Invoke104(this.ptr, object, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+		return CQt.QMetaMethod_Invoke104((.)this.ptr, object, val0, val1, val2, val3, val4, val5, val6, val7, val8);
 	}
 	public bool Invoke114(QObject_Ptr* object, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8, QGenericArgument_Ptr val9)
 	{
-		return CQt.QMetaMethod_Invoke114(this.ptr, object, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+		return CQt.QMetaMethod_Invoke114((.)this.ptr, object, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
 	}
 	public bool InvokeOnGadget3(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget3(this.ptr, gadget, returnValue, val0);
+		return CQt.QMetaMethod_InvokeOnGadget3((.)this.ptr, gadget, returnValue, val0);
 	}
 	public bool InvokeOnGadget4(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget4(this.ptr, gadget, returnValue, val0, val1);
+		return CQt.QMetaMethod_InvokeOnGadget4((.)this.ptr, gadget, returnValue, val0, val1);
 	}
 	public bool InvokeOnGadget5(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget5(this.ptr, gadget, returnValue, val0, val1, val2);
+		return CQt.QMetaMethod_InvokeOnGadget5((.)this.ptr, gadget, returnValue, val0, val1, val2);
 	}
 	public bool InvokeOnGadget6(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget6(this.ptr, gadget, returnValue, val0, val1, val2, val3);
+		return CQt.QMetaMethod_InvokeOnGadget6((.)this.ptr, gadget, returnValue, val0, val1, val2, val3);
 	}
 	public bool InvokeOnGadget7(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget7(this.ptr, gadget, returnValue, val0, val1, val2, val3, val4);
+		return CQt.QMetaMethod_InvokeOnGadget7((.)this.ptr, gadget, returnValue, val0, val1, val2, val3, val4);
 	}
 	public bool InvokeOnGadget8(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget8(this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5);
+		return CQt.QMetaMethod_InvokeOnGadget8((.)this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5);
 	}
 	public bool InvokeOnGadget9(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget9(this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6);
+		return CQt.QMetaMethod_InvokeOnGadget9((.)this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6);
 	}
 	public bool InvokeOnGadget10(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget10(this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
+		return CQt.QMetaMethod_InvokeOnGadget10((.)this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7);
 	}
 	public bool InvokeOnGadget11(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget11(this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+		return CQt.QMetaMethod_InvokeOnGadget11((.)this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8);
 	}
 	public bool InvokeOnGadget12(void* gadget, QGenericReturnArgument_Ptr returnValue, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8, QGenericArgument_Ptr val9)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget12(this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+		return CQt.QMetaMethod_InvokeOnGadget12((.)this.ptr, gadget, returnValue, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
 	}
 	public bool InvokeOnGadget22(void* gadget, QGenericArgument_Ptr val0)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget22(this.ptr, gadget, val0);
+		return CQt.QMetaMethod_InvokeOnGadget22((.)this.ptr, gadget, val0);
 	}
 	public bool InvokeOnGadget32(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget32(this.ptr, gadget, val0, val1);
+		return CQt.QMetaMethod_InvokeOnGadget32((.)this.ptr, gadget, val0, val1);
 	}
 	public bool InvokeOnGadget42(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget42(this.ptr, gadget, val0, val1, val2);
+		return CQt.QMetaMethod_InvokeOnGadget42((.)this.ptr, gadget, val0, val1, val2);
 	}
 	public bool InvokeOnGadget52(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget52(this.ptr, gadget, val0, val1, val2, val3);
+		return CQt.QMetaMethod_InvokeOnGadget52((.)this.ptr, gadget, val0, val1, val2, val3);
 	}
 	public bool InvokeOnGadget62(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget62(this.ptr, gadget, val0, val1, val2, val3, val4);
+		return CQt.QMetaMethod_InvokeOnGadget62((.)this.ptr, gadget, val0, val1, val2, val3, val4);
 	}
 	public bool InvokeOnGadget72(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget72(this.ptr, gadget, val0, val1, val2, val3, val4, val5);
+		return CQt.QMetaMethod_InvokeOnGadget72((.)this.ptr, gadget, val0, val1, val2, val3, val4, val5);
 	}
 	public bool InvokeOnGadget82(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget82(this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6);
+		return CQt.QMetaMethod_InvokeOnGadget82((.)this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6);
 	}
 	public bool InvokeOnGadget92(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget92(this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6, val7);
+		return CQt.QMetaMethod_InvokeOnGadget92((.)this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6, val7);
 	}
 	public bool InvokeOnGadget102(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget102(this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+		return CQt.QMetaMethod_InvokeOnGadget102((.)this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6, val7, val8);
 	}
 	public bool InvokeOnGadget112(void* gadget, QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8, QGenericArgument_Ptr val9)
 	{
-		return CQt.QMetaMethod_InvokeOnGadget112(this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+		return CQt.QMetaMethod_InvokeOnGadget112((.)this.ptr, gadget, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
 	}
 }
 interface IQMetaMethod
@@ -727,67 +727,67 @@ class QMetaEnum
 	}
 	public c_char* Name()
 	{
-		return CQt.QMetaEnum_Name(this.ptr);
+		return CQt.QMetaEnum_Name((.)this.ptr);
 	}
 	public c_char* EnumName()
 	{
-		return CQt.QMetaEnum_EnumName(this.ptr);
+		return CQt.QMetaEnum_EnumName((.)this.ptr);
 	}
 	public bool IsFlag()
 	{
-		return CQt.QMetaEnum_IsFlag(this.ptr);
+		return CQt.QMetaEnum_IsFlag((.)this.ptr);
 	}
 	public bool IsScoped()
 	{
-		return CQt.QMetaEnum_IsScoped(this.ptr);
+		return CQt.QMetaEnum_IsScoped((.)this.ptr);
 	}
 	public c_int KeyCount()
 	{
-		return CQt.QMetaEnum_KeyCount(this.ptr);
+		return CQt.QMetaEnum_KeyCount((.)this.ptr);
 	}
 	public c_char* Key(c_int index)
 	{
-		return CQt.QMetaEnum_Key(this.ptr, index);
+		return CQt.QMetaEnum_Key((.)this.ptr, index);
 	}
 	public c_int Value(c_int index)
 	{
-		return CQt.QMetaEnum_Value(this.ptr, index);
+		return CQt.QMetaEnum_Value((.)this.ptr, index);
 	}
 	public c_char* Scope()
 	{
-		return CQt.QMetaEnum_Scope(this.ptr);
+		return CQt.QMetaEnum_Scope((.)this.ptr);
 	}
 	public c_int KeyToValue(c_char* key)
 	{
-		return CQt.QMetaEnum_KeyToValue(this.ptr, key);
+		return CQt.QMetaEnum_KeyToValue((.)this.ptr, key);
 	}
 	public c_char* ValueToKey(c_int value)
 	{
-		return CQt.QMetaEnum_ValueToKey(this.ptr, value);
+		return CQt.QMetaEnum_ValueToKey((.)this.ptr, value);
 	}
 	public c_int KeysToValue(c_char* keys)
 	{
-		return CQt.QMetaEnum_KeysToValue(this.ptr, keys);
+		return CQt.QMetaEnum_KeysToValue((.)this.ptr, keys);
 	}
 	public void* ValueToKeys(c_int value)
 	{
-		return CQt.QMetaEnum_ValueToKeys(this.ptr, value);
+		return CQt.QMetaEnum_ValueToKeys((.)this.ptr, value);
 	}
 	public QMetaObject_Ptr* EnclosingMetaObject()
 	{
-		return CQt.QMetaEnum_EnclosingMetaObject(this.ptr);
+		return CQt.QMetaEnum_EnclosingMetaObject((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QMetaEnum_IsValid(this.ptr);
+		return CQt.QMetaEnum_IsValid((.)this.ptr);
 	}
 	public c_int KeyToValue2(c_char* key, bool* ok)
 	{
-		return CQt.QMetaEnum_KeyToValue2(this.ptr, key, ok);
+		return CQt.QMetaEnum_KeyToValue2((.)this.ptr, key, ok);
 	}
 	public c_int KeysToValue2(c_char* keys, bool* ok)
 	{
-		return CQt.QMetaEnum_KeysToValue2(this.ptr, keys, ok);
+		return CQt.QMetaEnum_KeysToValue2((.)this.ptr, keys, ok);
 	}
 }
 interface IQMetaEnum
@@ -918,151 +918,151 @@ class QMetaProperty
 	}
 	public c_char* Name()
 	{
-		return CQt.QMetaProperty_Name(this.ptr);
+		return CQt.QMetaProperty_Name((.)this.ptr);
 	}
 	public c_char* TypeName()
 	{
-		return CQt.QMetaProperty_TypeName(this.ptr);
+		return CQt.QMetaProperty_TypeName((.)this.ptr);
 	}
 	public QVariant_Type Type()
 	{
-		return CQt.QMetaProperty_Type(this.ptr);
+		return CQt.QMetaProperty_Type((.)this.ptr);
 	}
 	public c_int UserType()
 	{
-		return CQt.QMetaProperty_UserType(this.ptr);
+		return CQt.QMetaProperty_UserType((.)this.ptr);
 	}
 	public c_int TypeId()
 	{
-		return CQt.QMetaProperty_TypeId(this.ptr);
+		return CQt.QMetaProperty_TypeId((.)this.ptr);
 	}
 	public QMetaType_Ptr MetaType()
 	{
-		return CQt.QMetaProperty_MetaType(this.ptr);
+		return CQt.QMetaProperty_MetaType((.)this.ptr);
 	}
 	public c_int PropertyIndex()
 	{
-		return CQt.QMetaProperty_PropertyIndex(this.ptr);
+		return CQt.QMetaProperty_PropertyIndex((.)this.ptr);
 	}
 	public c_int RelativePropertyIndex()
 	{
-		return CQt.QMetaProperty_RelativePropertyIndex(this.ptr);
+		return CQt.QMetaProperty_RelativePropertyIndex((.)this.ptr);
 	}
 	public bool IsReadable()
 	{
-		return CQt.QMetaProperty_IsReadable(this.ptr);
+		return CQt.QMetaProperty_IsReadable((.)this.ptr);
 	}
 	public bool IsWritable()
 	{
-		return CQt.QMetaProperty_IsWritable(this.ptr);
+		return CQt.QMetaProperty_IsWritable((.)this.ptr);
 	}
 	public bool IsResettable()
 	{
-		return CQt.QMetaProperty_IsResettable(this.ptr);
+		return CQt.QMetaProperty_IsResettable((.)this.ptr);
 	}
 	public bool IsDesignable()
 	{
-		return CQt.QMetaProperty_IsDesignable(this.ptr);
+		return CQt.QMetaProperty_IsDesignable((.)this.ptr);
 	}
 	public bool IsScriptable()
 	{
-		return CQt.QMetaProperty_IsScriptable(this.ptr);
+		return CQt.QMetaProperty_IsScriptable((.)this.ptr);
 	}
 	public bool IsStored()
 	{
-		return CQt.QMetaProperty_IsStored(this.ptr);
+		return CQt.QMetaProperty_IsStored((.)this.ptr);
 	}
 	public bool IsUser()
 	{
-		return CQt.QMetaProperty_IsUser(this.ptr);
+		return CQt.QMetaProperty_IsUser((.)this.ptr);
 	}
 	public bool IsConstant()
 	{
-		return CQt.QMetaProperty_IsConstant(this.ptr);
+		return CQt.QMetaProperty_IsConstant((.)this.ptr);
 	}
 	public bool IsFinal()
 	{
-		return CQt.QMetaProperty_IsFinal(this.ptr);
+		return CQt.QMetaProperty_IsFinal((.)this.ptr);
 	}
 	public bool IsRequired()
 	{
-		return CQt.QMetaProperty_IsRequired(this.ptr);
+		return CQt.QMetaProperty_IsRequired((.)this.ptr);
 	}
 	public bool IsBindable()
 	{
-		return CQt.QMetaProperty_IsBindable(this.ptr);
+		return CQt.QMetaProperty_IsBindable((.)this.ptr);
 	}
 	public bool IsFlagType()
 	{
-		return CQt.QMetaProperty_IsFlagType(this.ptr);
+		return CQt.QMetaProperty_IsFlagType((.)this.ptr);
 	}
 	public bool IsEnumType()
 	{
-		return CQt.QMetaProperty_IsEnumType(this.ptr);
+		return CQt.QMetaProperty_IsEnumType((.)this.ptr);
 	}
 	public QMetaEnum_Ptr Enumerator()
 	{
-		return CQt.QMetaProperty_Enumerator(this.ptr);
+		return CQt.QMetaProperty_Enumerator((.)this.ptr);
 	}
 	public bool HasNotifySignal()
 	{
-		return CQt.QMetaProperty_HasNotifySignal(this.ptr);
+		return CQt.QMetaProperty_HasNotifySignal((.)this.ptr);
 	}
 	public QMetaMethod_Ptr NotifySignal()
 	{
-		return CQt.QMetaProperty_NotifySignal(this.ptr);
+		return CQt.QMetaProperty_NotifySignal((.)this.ptr);
 	}
 	public c_int NotifySignalIndex()
 	{
-		return CQt.QMetaProperty_NotifySignalIndex(this.ptr);
+		return CQt.QMetaProperty_NotifySignalIndex((.)this.ptr);
 	}
 	public c_int Revision()
 	{
-		return CQt.QMetaProperty_Revision(this.ptr);
+		return CQt.QMetaProperty_Revision((.)this.ptr);
 	}
 	public QVariant_Ptr Read(QObject_Ptr* obj)
 	{
-		return CQt.QMetaProperty_Read(this.ptr, obj);
+		return CQt.QMetaProperty_Read((.)this.ptr, obj);
 	}
 	public bool Write(QObject_Ptr* obj, QVariant_Ptr* value)
 	{
-		return CQt.QMetaProperty_Write(this.ptr, obj, value);
+		return CQt.QMetaProperty_Write((.)this.ptr, obj, value);
 	}
 	public bool Reset(QObject_Ptr* obj)
 	{
-		return CQt.QMetaProperty_Reset(this.ptr, obj);
+		return CQt.QMetaProperty_Reset((.)this.ptr, obj);
 	}
 	public QUntypedBindable_Ptr Bindable(QObject_Ptr* object)
 	{
-		return CQt.QMetaProperty_Bindable(this.ptr, object);
+		return CQt.QMetaProperty_Bindable((.)this.ptr, object);
 	}
 	public QVariant_Ptr ReadOnGadget(void* gadget)
 	{
-		return CQt.QMetaProperty_ReadOnGadget(this.ptr, gadget);
+		return CQt.QMetaProperty_ReadOnGadget((.)this.ptr, gadget);
 	}
 	public bool WriteOnGadget(void* gadget, QVariant_Ptr* value)
 	{
-		return CQt.QMetaProperty_WriteOnGadget(this.ptr, gadget, value);
+		return CQt.QMetaProperty_WriteOnGadget((.)this.ptr, gadget, value);
 	}
 	public bool ResetOnGadget(void* gadget)
 	{
-		return CQt.QMetaProperty_ResetOnGadget(this.ptr, gadget);
+		return CQt.QMetaProperty_ResetOnGadget((.)this.ptr, gadget);
 	}
 	public bool HasStdCppSet()
 	{
-		return CQt.QMetaProperty_HasStdCppSet(this.ptr);
+		return CQt.QMetaProperty_HasStdCppSet((.)this.ptr);
 	}
 	public bool IsAlias()
 	{
-		return CQt.QMetaProperty_IsAlias(this.ptr);
+		return CQt.QMetaProperty_IsAlias((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QMetaProperty_IsValid(this.ptr);
+		return CQt.QMetaProperty_IsValid((.)this.ptr);
 	}
 	public QMetaObject_Ptr* EnclosingMetaObject()
 	{
-		return CQt.QMetaProperty_EnclosingMetaObject(this.ptr);
+		return CQt.QMetaProperty_EnclosingMetaObject((.)this.ptr);
 	}
 }
 interface IQMetaProperty
@@ -1146,15 +1146,15 @@ class QMetaClassInfo
 	}
 	public c_char* Name()
 	{
-		return CQt.QMetaClassInfo_Name(this.ptr);
+		return CQt.QMetaClassInfo_Name((.)this.ptr);
 	}
 	public c_char* Value()
 	{
-		return CQt.QMetaClassInfo_Value(this.ptr);
+		return CQt.QMetaClassInfo_Value((.)this.ptr);
 	}
 	public QMetaObject_Ptr* EnclosingMetaObject()
 	{
-		return CQt.QMetaClassInfo_EnclosingMetaObject(this.ptr);
+		return CQt.QMetaClassInfo_EnclosingMetaObject((.)this.ptr);
 	}
 }
 interface IQMetaClassInfo

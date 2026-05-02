@@ -48,23 +48,23 @@ class QColorTransform
 	}
 	public void Swap(QColorTransform_Ptr* other)
 	{
-		CQt.QColorTransform_Swap(this.ptr, other);
+		CQt.QColorTransform_Swap((.)this.ptr, other);
 	}
 	public bool IsIdentity()
 	{
-		return CQt.QColorTransform_IsIdentity(this.ptr);
+		return CQt.QColorTransform_IsIdentity((.)this.ptr);
 	}
 	public c_uint Map(c_uint argb)
 	{
-		return CQt.QColorTransform_Map(this.ptr, argb);
+		return CQt.QColorTransform_Map((.)this.ptr, argb);
 	}
 	public QRgba64_Ptr Map2(QRgba64_Ptr rgba64)
 	{
-		return CQt.QColorTransform_Map2(this.ptr, rgba64);
+		return CQt.QColorTransform_Map2((.)this.ptr, rgba64);
 	}
 	public QColor_Ptr Map5(QColor_Ptr* color)
 	{
-		return CQt.QColorTransform_Map5(this.ptr, color);
+		return CQt.QColorTransform_Map5((.)this.ptr, color);
 	}
 }
 interface IQColorTransform

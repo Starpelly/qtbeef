@@ -78,71 +78,71 @@ class QLayoutItem
 	}
 	public QSize_Ptr SizeHint()
 	{
-		return CQt.QLayoutItem_SizeHint(this.ptr);
+		return CQt.QLayoutItem_SizeHint((.)this.ptr);
 	}
 	public QSize_Ptr MinimumSize()
 	{
-		return CQt.QLayoutItem_MinimumSize(this.ptr);
+		return CQt.QLayoutItem_MinimumSize((.)this.ptr);
 	}
 	public QSize_Ptr MaximumSize()
 	{
-		return CQt.QLayoutItem_MaximumSize(this.ptr);
+		return CQt.QLayoutItem_MaximumSize((.)this.ptr);
 	}
 	public void* ExpandingDirections()
 	{
-		return CQt.QLayoutItem_ExpandingDirections(this.ptr);
+		return CQt.QLayoutItem_ExpandingDirections((.)this.ptr);
 	}
 	public void SetGeometry(QRect_Ptr* geometry)
 	{
-		CQt.QLayoutItem_SetGeometry(this.ptr, geometry);
+		CQt.QLayoutItem_SetGeometry((.)this.ptr, geometry);
 	}
 	public QRect_Ptr Geometry()
 	{
-		return CQt.QLayoutItem_Geometry(this.ptr);
+		return CQt.QLayoutItem_Geometry((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QLayoutItem_IsEmpty(this.ptr);
+		return CQt.QLayoutItem_IsEmpty((.)this.ptr);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QLayoutItem_HasHeightForWidth(this.ptr);
+		return CQt.QLayoutItem_HasHeightForWidth((.)this.ptr);
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QLayoutItem_HeightForWidth(this.ptr, param1);
+		return CQt.QLayoutItem_HeightForWidth((.)this.ptr, param1);
 	}
 	public c_int MinimumHeightForWidth(c_int param1)
 	{
-		return CQt.QLayoutItem_MinimumHeightForWidth(this.ptr, param1);
+		return CQt.QLayoutItem_MinimumHeightForWidth((.)this.ptr, param1);
 	}
 	public void Invalidate()
 	{
-		CQt.QLayoutItem_Invalidate(this.ptr);
+		CQt.QLayoutItem_Invalidate((.)this.ptr);
 	}
 	public QWidget_Ptr* Widget()
 	{
-		return CQt.QLayoutItem_Widget(this.ptr);
+		return CQt.QLayoutItem_Widget((.)this.ptr);
 	}
 	public QLayout_Ptr* Layout()
 	{
-		return CQt.QLayoutItem_Layout(this.ptr);
+		return CQt.QLayoutItem_Layout((.)this.ptr);
 	}
 	public QSpacerItem_Ptr* SpacerItem()
 	{
-		return CQt.QLayoutItem_SpacerItem(this.ptr);
+		return CQt.QLayoutItem_SpacerItem((.)this.ptr);
 	}
 	public void* Alignment()
 	{
-		return CQt.QLayoutItem_Alignment(this.ptr);
+		return CQt.QLayoutItem_Alignment((.)this.ptr);
 	}
 	public void SetAlignment(void* a)
 	{
-		CQt.QLayoutItem_SetAlignment(this.ptr, a);
+		CQt.QLayoutItem_SetAlignment((.)this.ptr, a);
 	}
 	public void* ControlTypes()
 	{
-		return CQt.QLayoutItem_ControlTypes(this.ptr);
+		return CQt.QLayoutItem_ControlTypes((.)this.ptr);
 	}
 }
 interface IQLayoutItem
@@ -234,51 +234,87 @@ class QSpacerItem
 	}
 	public void ChangeSize(c_int w, c_int h)
 	{
-		CQt.QSpacerItem_ChangeSize(this.ptr, w, h);
+		CQt.QSpacerItem_ChangeSize((.)this.ptr, w, h);
 	}
 	public QSize_Ptr SizeHint()
 	{
-		return CQt.QSpacerItem_SizeHint(this.ptr);
+		return CQt.QSpacerItem_SizeHint((.)this.ptr);
 	}
 	public QSize_Ptr MinimumSize()
 	{
-		return CQt.QSpacerItem_MinimumSize(this.ptr);
+		return CQt.QSpacerItem_MinimumSize((.)this.ptr);
 	}
 	public QSize_Ptr MaximumSize()
 	{
-		return CQt.QSpacerItem_MaximumSize(this.ptr);
+		return CQt.QSpacerItem_MaximumSize((.)this.ptr);
 	}
 	public void* ExpandingDirections()
 	{
-		return CQt.QSpacerItem_ExpandingDirections(this.ptr);
+		return CQt.QSpacerItem_ExpandingDirections((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QSpacerItem_IsEmpty(this.ptr);
+		return CQt.QSpacerItem_IsEmpty((.)this.ptr);
 	}
 	public void SetGeometry(QRect_Ptr* geometry)
 	{
-		CQt.QSpacerItem_SetGeometry(this.ptr, geometry);
+		CQt.QSpacerItem_SetGeometry((.)this.ptr, geometry);
 	}
 	public QRect_Ptr Geometry()
 	{
-		return CQt.QSpacerItem_Geometry(this.ptr);
+		return CQt.QSpacerItem_Geometry((.)this.ptr);
 	}
 	public QSpacerItem_Ptr* SpacerItem()
 	{
-		return CQt.QSpacerItem_SpacerItem(this.ptr);
+		return CQt.QSpacerItem_SpacerItem((.)this.ptr);
 	}
 	public QSizePolicy_Ptr SizePolicy()
 	{
-		return CQt.QSpacerItem_SizePolicy(this.ptr);
+		return CQt.QSpacerItem_SizePolicy((.)this.ptr);
 	}
 	public void ChangeSize3(c_int w, c_int h, QSizePolicy_Policy hData)
 	{
-		CQt.QSpacerItem_ChangeSize3(this.ptr, w, h, hData);
+		CQt.QSpacerItem_ChangeSize3((.)this.ptr, w, h, hData);
 	}
 	public void ChangeSize4(c_int w, c_int h, QSizePolicy_Policy hData, QSizePolicy_Policy vData)
 	{
-		CQt.QSpacerItem_ChangeSize4(this.ptr, w, h, hData, vData);
+		CQt.QSpacerItem_ChangeSize4((.)this.ptr, w, h, hData, vData);
+	}
+	public bool HasHeightForWidth()
+	{
+		return CQt.QLayoutItem_HasHeightForWidth((.)this.ptr);
+	}
+	public c_int HeightForWidth(c_int param1)
+	{
+		return CQt.QLayoutItem_HeightForWidth((.)this.ptr, param1);
+	}
+	public c_int MinimumHeightForWidth(c_int param1)
+	{
+		return CQt.QLayoutItem_MinimumHeightForWidth((.)this.ptr, param1);
+	}
+	public void Invalidate()
+	{
+		CQt.QLayoutItem_Invalidate((.)this.ptr);
+	}
+	public QWidget_Ptr* Widget()
+	{
+		return CQt.QLayoutItem_Widget((.)this.ptr);
+	}
+	public QLayout_Ptr* Layout()
+	{
+		return CQt.QLayoutItem_Layout((.)this.ptr);
+	}
+	public void* Alignment()
+	{
+		return CQt.QLayoutItem_Alignment((.)this.ptr);
+	}
+	public void SetAlignment(void* a)
+	{
+		CQt.QLayoutItem_SetAlignment((.)this.ptr, a);
+	}
+	public void* ControlTypes()
+	{
+		return CQt.QLayoutItem_ControlTypes((.)this.ptr);
 	}
 }
 interface IQSpacerItem
@@ -347,51 +383,71 @@ class QWidgetItem
 	}
 	public QSize_Ptr SizeHint()
 	{
-		return CQt.QWidgetItem_SizeHint(this.ptr);
+		return CQt.QWidgetItem_SizeHint((.)this.ptr);
 	}
 	public QSize_Ptr MinimumSize()
 	{
-		return CQt.QWidgetItem_MinimumSize(this.ptr);
+		return CQt.QWidgetItem_MinimumSize((.)this.ptr);
 	}
 	public QSize_Ptr MaximumSize()
 	{
-		return CQt.QWidgetItem_MaximumSize(this.ptr);
+		return CQt.QWidgetItem_MaximumSize((.)this.ptr);
 	}
 	public void* ExpandingDirections()
 	{
-		return CQt.QWidgetItem_ExpandingDirections(this.ptr);
+		return CQt.QWidgetItem_ExpandingDirections((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QWidgetItem_IsEmpty(this.ptr);
+		return CQt.QWidgetItem_IsEmpty((.)this.ptr);
 	}
 	public void SetGeometry(QRect_Ptr* geometry)
 	{
-		CQt.QWidgetItem_SetGeometry(this.ptr, geometry);
+		CQt.QWidgetItem_SetGeometry((.)this.ptr, geometry);
 	}
 	public QRect_Ptr Geometry()
 	{
-		return CQt.QWidgetItem_Geometry(this.ptr);
+		return CQt.QWidgetItem_Geometry((.)this.ptr);
 	}
 	public QWidget_Ptr* Widget()
 	{
-		return CQt.QWidgetItem_Widget(this.ptr);
+		return CQt.QWidgetItem_Widget((.)this.ptr);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QWidgetItem_HasHeightForWidth(this.ptr);
+		return CQt.QWidgetItem_HasHeightForWidth((.)this.ptr);
 	}
 	public c_int HeightForWidth(c_int param1)
 	{
-		return CQt.QWidgetItem_HeightForWidth(this.ptr, param1);
+		return CQt.QWidgetItem_HeightForWidth((.)this.ptr, param1);
 	}
 	public c_int MinimumHeightForWidth(c_int param1)
 	{
-		return CQt.QWidgetItem_MinimumHeightForWidth(this.ptr, param1);
+		return CQt.QWidgetItem_MinimumHeightForWidth((.)this.ptr, param1);
 	}
 	public void* ControlTypes()
 	{
-		return CQt.QWidgetItem_ControlTypes(this.ptr);
+		return CQt.QWidgetItem_ControlTypes((.)this.ptr);
+	}
+	public void Invalidate()
+	{
+		CQt.QLayoutItem_Invalidate((.)this.ptr);
+	}
+	public QLayout_Ptr* Layout()
+	{
+		return CQt.QLayoutItem_Layout((.)this.ptr);
+	}
+	public QSpacerItem_Ptr* SpacerItem()
+	{
+		return CQt.QLayoutItem_SpacerItem((.)this.ptr);
+	}
+	public void* Alignment()
+	{
+		return CQt.QLayoutItem_Alignment((.)this.ptr);
+	}
+	public void SetAlignment(void* a)
+	{
+		CQt.QLayoutItem_SetAlignment((.)this.ptr, a);
 	}
 }
 interface IQWidgetItem
@@ -444,19 +500,71 @@ class QWidgetItemV2
 	}
 	public QSize_Ptr SizeHint()
 	{
-		return CQt.QWidgetItemV2_SizeHint(this.ptr);
+		return CQt.QWidgetItemV2_SizeHint((.)this.ptr);
 	}
 	public QSize_Ptr MinimumSize()
 	{
-		return CQt.QWidgetItemV2_MinimumSize(this.ptr);
+		return CQt.QWidgetItemV2_MinimumSize((.)this.ptr);
 	}
 	public QSize_Ptr MaximumSize()
 	{
-		return CQt.QWidgetItemV2_MaximumSize(this.ptr);
+		return CQt.QWidgetItemV2_MaximumSize((.)this.ptr);
 	}
 	public c_int HeightForWidth(c_int width)
 	{
-		return CQt.QWidgetItemV2_HeightForWidth(this.ptr, width);
+		return CQt.QWidgetItemV2_HeightForWidth((.)this.ptr, width);
+	}
+	public void* ExpandingDirections()
+	{
+		return CQt.QWidgetItem_ExpandingDirections((.)this.ptr);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QWidgetItem_IsEmpty((.)this.ptr);
+	}
+	public void SetGeometry(QRect_Ptr* geometry)
+	{
+		CQt.QWidgetItem_SetGeometry((.)this.ptr, geometry);
+	}
+	public QRect_Ptr Geometry()
+	{
+		return CQt.QWidgetItem_Geometry((.)this.ptr);
+	}
+	public QWidget_Ptr* Widget()
+	{
+		return CQt.QWidgetItem_Widget((.)this.ptr);
+	}
+	public bool HasHeightForWidth()
+	{
+		return CQt.QWidgetItem_HasHeightForWidth((.)this.ptr);
+	}
+	public c_int MinimumHeightForWidth(c_int param1)
+	{
+		return CQt.QWidgetItem_MinimumHeightForWidth((.)this.ptr, param1);
+	}
+	public void* ControlTypes()
+	{
+		return CQt.QWidgetItem_ControlTypes((.)this.ptr);
+	}
+	public void Invalidate()
+	{
+		CQt.QLayoutItem_Invalidate((.)this.ptr);
+	}
+	public QLayout_Ptr* Layout()
+	{
+		return CQt.QLayoutItem_Layout((.)this.ptr);
+	}
+	public QSpacerItem_Ptr* SpacerItem()
+	{
+		return CQt.QLayoutItem_SpacerItem((.)this.ptr);
+	}
+	public void* Alignment()
+	{
+		return CQt.QLayoutItem_Alignment((.)this.ptr);
+	}
+	public void SetAlignment(void* a)
+	{
+		CQt.QLayoutItem_SetAlignment((.)this.ptr, a);
 	}
 }
 interface IQWidgetItemV2

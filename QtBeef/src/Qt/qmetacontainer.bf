@@ -88,99 +88,99 @@ class QMetaContainer
 	}
 	public bool HasInputIterator()
 	{
-		return CQt.QMetaContainer_HasInputIterator(this.ptr);
+		return CQt.QMetaContainer_HasInputIterator((.)this.ptr);
 	}
 	public bool HasForwardIterator()
 	{
-		return CQt.QMetaContainer_HasForwardIterator(this.ptr);
+		return CQt.QMetaContainer_HasForwardIterator((.)this.ptr);
 	}
 	public bool HasBidirectionalIterator()
 	{
-		return CQt.QMetaContainer_HasBidirectionalIterator(this.ptr);
+		return CQt.QMetaContainer_HasBidirectionalIterator((.)this.ptr);
 	}
 	public bool HasRandomAccessIterator()
 	{
-		return CQt.QMetaContainer_HasRandomAccessIterator(this.ptr);
+		return CQt.QMetaContainer_HasRandomAccessIterator((.)this.ptr);
 	}
 	public bool HasSize()
 	{
-		return CQt.QMetaContainer_HasSize(this.ptr);
+		return CQt.QMetaContainer_HasSize((.)this.ptr);
 	}
 	public void* Size(void* container)
 	{
-		return CQt.QMetaContainer_Size(this.ptr, container);
+		return CQt.QMetaContainer_Size((.)this.ptr, container);
 	}
 	public bool CanClear()
 	{
-		return CQt.QMetaContainer_CanClear(this.ptr);
+		return CQt.QMetaContainer_CanClear((.)this.ptr);
 	}
 	public void Clear(void* container)
 	{
-		CQt.QMetaContainer_Clear(this.ptr, container);
+		CQt.QMetaContainer_Clear((.)this.ptr, container);
 	}
 	public bool HasIterator()
 	{
-		return CQt.QMetaContainer_HasIterator(this.ptr);
+		return CQt.QMetaContainer_HasIterator((.)this.ptr);
 	}
 	public void* Begin(void* container)
 	{
-		return CQt.QMetaContainer_Begin(this.ptr, container);
+		return CQt.QMetaContainer_Begin((.)this.ptr, container);
 	}
 	public void* End(void* container)
 	{
-		return CQt.QMetaContainer_End(this.ptr, container);
+		return CQt.QMetaContainer_End((.)this.ptr, container);
 	}
 	public void DestroyIterator(void* iterator)
 	{
-		CQt.QMetaContainer_DestroyIterator(this.ptr, iterator);
+		CQt.QMetaContainer_DestroyIterator((.)this.ptr, iterator);
 	}
 	public bool CompareIterator(void* i, void* j)
 	{
-		return CQt.QMetaContainer_CompareIterator(this.ptr, i, j);
+		return CQt.QMetaContainer_CompareIterator((.)this.ptr, i, j);
 	}
 	public void CopyIterator(void* target, void* source)
 	{
-		CQt.QMetaContainer_CopyIterator(this.ptr, target, source);
+		CQt.QMetaContainer_CopyIterator((.)this.ptr, target, source);
 	}
 	public void AdvanceIterator(void* iterator, void* step)
 	{
-		CQt.QMetaContainer_AdvanceIterator(this.ptr, iterator, step);
+		CQt.QMetaContainer_AdvanceIterator((.)this.ptr, iterator, step);
 	}
 	public void* DiffIterator(void* i, void* j)
 	{
-		return CQt.QMetaContainer_DiffIterator(this.ptr, i, j);
+		return CQt.QMetaContainer_DiffIterator((.)this.ptr, i, j);
 	}
 	public bool HasConstIterator()
 	{
-		return CQt.QMetaContainer_HasConstIterator(this.ptr);
+		return CQt.QMetaContainer_HasConstIterator((.)this.ptr);
 	}
 	public void* ConstBegin(void* container)
 	{
-		return CQt.QMetaContainer_ConstBegin(this.ptr, container);
+		return CQt.QMetaContainer_ConstBegin((.)this.ptr, container);
 	}
 	public void* ConstEnd(void* container)
 	{
-		return CQt.QMetaContainer_ConstEnd(this.ptr, container);
+		return CQt.QMetaContainer_ConstEnd((.)this.ptr, container);
 	}
 	public void DestroyConstIterator(void* iterator)
 	{
-		CQt.QMetaContainer_DestroyConstIterator(this.ptr, iterator);
+		CQt.QMetaContainer_DestroyConstIterator((.)this.ptr, iterator);
 	}
 	public bool CompareConstIterator(void* i, void* j)
 	{
-		return CQt.QMetaContainer_CompareConstIterator(this.ptr, i, j);
+		return CQt.QMetaContainer_CompareConstIterator((.)this.ptr, i, j);
 	}
 	public void CopyConstIterator(void* target, void* source)
 	{
-		CQt.QMetaContainer_CopyConstIterator(this.ptr, target, source);
+		CQt.QMetaContainer_CopyConstIterator((.)this.ptr, target, source);
 	}
 	public void AdvanceConstIterator(void* iterator, void* step)
 	{
-		CQt.QMetaContainer_AdvanceConstIterator(this.ptr, iterator, step);
+		CQt.QMetaContainer_AdvanceConstIterator((.)this.ptr, iterator, step);
 	}
 	public void* DiffConstIterator(void* i, void* j)
 	{
-		return CQt.QMetaContainer_DiffConstIterator(this.ptr, i, j);
+		return CQt.QMetaContainer_DiffConstIterator((.)this.ptr, i, j);
 	}
 }
 interface IQMetaContainer
@@ -305,123 +305,219 @@ class QMetaSequence
 	}
 	public QMetaType_Ptr ValueMetaType()
 	{
-		return CQt.QMetaSequence_ValueMetaType(this.ptr);
+		return CQt.QMetaSequence_ValueMetaType((.)this.ptr);
 	}
 	public bool IsSortable()
 	{
-		return CQt.QMetaSequence_IsSortable(this.ptr);
+		return CQt.QMetaSequence_IsSortable((.)this.ptr);
 	}
 	public bool CanAddValueAtBegin()
 	{
-		return CQt.QMetaSequence_CanAddValueAtBegin(this.ptr);
+		return CQt.QMetaSequence_CanAddValueAtBegin((.)this.ptr);
 	}
 	public void AddValueAtBegin(void* container, void* value)
 	{
-		CQt.QMetaSequence_AddValueAtBegin(this.ptr, container, value);
+		CQt.QMetaSequence_AddValueAtBegin((.)this.ptr, container, value);
 	}
 	public bool CanAddValueAtEnd()
 	{
-		return CQt.QMetaSequence_CanAddValueAtEnd(this.ptr);
+		return CQt.QMetaSequence_CanAddValueAtEnd((.)this.ptr);
 	}
 	public void AddValueAtEnd(void* container, void* value)
 	{
-		CQt.QMetaSequence_AddValueAtEnd(this.ptr, container, value);
+		CQt.QMetaSequence_AddValueAtEnd((.)this.ptr, container, value);
 	}
 	public bool CanRemoveValueAtBegin()
 	{
-		return CQt.QMetaSequence_CanRemoveValueAtBegin(this.ptr);
+		return CQt.QMetaSequence_CanRemoveValueAtBegin((.)this.ptr);
 	}
 	public void RemoveValueAtBegin(void* container)
 	{
-		CQt.QMetaSequence_RemoveValueAtBegin(this.ptr, container);
+		CQt.QMetaSequence_RemoveValueAtBegin((.)this.ptr, container);
 	}
 	public bool CanRemoveValueAtEnd()
 	{
-		return CQt.QMetaSequence_CanRemoveValueAtEnd(this.ptr);
+		return CQt.QMetaSequence_CanRemoveValueAtEnd((.)this.ptr);
 	}
 	public void RemoveValueAtEnd(void* container)
 	{
-		CQt.QMetaSequence_RemoveValueAtEnd(this.ptr, container);
+		CQt.QMetaSequence_RemoveValueAtEnd((.)this.ptr, container);
 	}
 	public bool CanGetValueAtIndex()
 	{
-		return CQt.QMetaSequence_CanGetValueAtIndex(this.ptr);
+		return CQt.QMetaSequence_CanGetValueAtIndex((.)this.ptr);
 	}
 	public void ValueAtIndex(void* container, void* index, void* result)
 	{
-		CQt.QMetaSequence_ValueAtIndex(this.ptr, container, index, result);
+		CQt.QMetaSequence_ValueAtIndex((.)this.ptr, container, index, result);
 	}
 	public bool CanSetValueAtIndex()
 	{
-		return CQt.QMetaSequence_CanSetValueAtIndex(this.ptr);
+		return CQt.QMetaSequence_CanSetValueAtIndex((.)this.ptr);
 	}
 	public void SetValueAtIndex(void* container, void* index, void* value)
 	{
-		CQt.QMetaSequence_SetValueAtIndex(this.ptr, container, index, value);
+		CQt.QMetaSequence_SetValueAtIndex((.)this.ptr, container, index, value);
 	}
 	public bool CanAddValue()
 	{
-		return CQt.QMetaSequence_CanAddValue(this.ptr);
+		return CQt.QMetaSequence_CanAddValue((.)this.ptr);
 	}
 	public void AddValue(void* container, void* value)
 	{
-		CQt.QMetaSequence_AddValue(this.ptr, container, value);
+		CQt.QMetaSequence_AddValue((.)this.ptr, container, value);
 	}
 	public bool CanRemoveValue()
 	{
-		return CQt.QMetaSequence_CanRemoveValue(this.ptr);
+		return CQt.QMetaSequence_CanRemoveValue((.)this.ptr);
 	}
 	public void RemoveValue(void* container)
 	{
-		CQt.QMetaSequence_RemoveValue(this.ptr, container);
+		CQt.QMetaSequence_RemoveValue((.)this.ptr, container);
 	}
 	public bool CanGetValueAtIterator()
 	{
-		return CQt.QMetaSequence_CanGetValueAtIterator(this.ptr);
+		return CQt.QMetaSequence_CanGetValueAtIterator((.)this.ptr);
 	}
 	public void ValueAtIterator(void* iterator, void* result)
 	{
-		CQt.QMetaSequence_ValueAtIterator(this.ptr, iterator, result);
+		CQt.QMetaSequence_ValueAtIterator((.)this.ptr, iterator, result);
 	}
 	public bool CanSetValueAtIterator()
 	{
-		return CQt.QMetaSequence_CanSetValueAtIterator(this.ptr);
+		return CQt.QMetaSequence_CanSetValueAtIterator((.)this.ptr);
 	}
 	public void SetValueAtIterator(void* iterator, void* value)
 	{
-		CQt.QMetaSequence_SetValueAtIterator(this.ptr, iterator, value);
+		CQt.QMetaSequence_SetValueAtIterator((.)this.ptr, iterator, value);
 	}
 	public bool CanInsertValueAtIterator()
 	{
-		return CQt.QMetaSequence_CanInsertValueAtIterator(this.ptr);
+		return CQt.QMetaSequence_CanInsertValueAtIterator((.)this.ptr);
 	}
 	public void InsertValueAtIterator(void* container, void* iterator, void* value)
 	{
-		CQt.QMetaSequence_InsertValueAtIterator(this.ptr, container, iterator, value);
+		CQt.QMetaSequence_InsertValueAtIterator((.)this.ptr, container, iterator, value);
 	}
 	public bool CanEraseValueAtIterator()
 	{
-		return CQt.QMetaSequence_CanEraseValueAtIterator(this.ptr);
+		return CQt.QMetaSequence_CanEraseValueAtIterator((.)this.ptr);
 	}
 	public void EraseValueAtIterator(void* container, void* iterator)
 	{
-		CQt.QMetaSequence_EraseValueAtIterator(this.ptr, container, iterator);
+		CQt.QMetaSequence_EraseValueAtIterator((.)this.ptr, container, iterator);
 	}
 	public bool CanEraseRangeAtIterator()
 	{
-		return CQt.QMetaSequence_CanEraseRangeAtIterator(this.ptr);
+		return CQt.QMetaSequence_CanEraseRangeAtIterator((.)this.ptr);
 	}
 	public void EraseRangeAtIterator(void* container, void* iterator1, void* iterator2)
 	{
-		CQt.QMetaSequence_EraseRangeAtIterator(this.ptr, container, iterator1, iterator2);
+		CQt.QMetaSequence_EraseRangeAtIterator((.)this.ptr, container, iterator1, iterator2);
 	}
 	public bool CanGetValueAtConstIterator()
 	{
-		return CQt.QMetaSequence_CanGetValueAtConstIterator(this.ptr);
+		return CQt.QMetaSequence_CanGetValueAtConstIterator((.)this.ptr);
 	}
 	public void ValueAtConstIterator(void* iterator, void* result)
 	{
-		CQt.QMetaSequence_ValueAtConstIterator(this.ptr, iterator, result);
+		CQt.QMetaSequence_ValueAtConstIterator((.)this.ptr, iterator, result);
+	}
+	public bool HasInputIterator()
+	{
+		return CQt.QMetaContainer_HasInputIterator((.)this.ptr);
+	}
+	public bool HasForwardIterator()
+	{
+		return CQt.QMetaContainer_HasForwardIterator((.)this.ptr);
+	}
+	public bool HasBidirectionalIterator()
+	{
+		return CQt.QMetaContainer_HasBidirectionalIterator((.)this.ptr);
+	}
+	public bool HasRandomAccessIterator()
+	{
+		return CQt.QMetaContainer_HasRandomAccessIterator((.)this.ptr);
+	}
+	public bool HasSize()
+	{
+		return CQt.QMetaContainer_HasSize((.)this.ptr);
+	}
+	public void* Size(void* container)
+	{
+		return CQt.QMetaContainer_Size((.)this.ptr, container);
+	}
+	public bool CanClear()
+	{
+		return CQt.QMetaContainer_CanClear((.)this.ptr);
+	}
+	public void Clear(void* container)
+	{
+		CQt.QMetaContainer_Clear((.)this.ptr, container);
+	}
+	public bool HasIterator()
+	{
+		return CQt.QMetaContainer_HasIterator((.)this.ptr);
+	}
+	public void* Begin(void* container)
+	{
+		return CQt.QMetaContainer_Begin((.)this.ptr, container);
+	}
+	public void* End(void* container)
+	{
+		return CQt.QMetaContainer_End((.)this.ptr, container);
+	}
+	public void DestroyIterator(void* iterator)
+	{
+		CQt.QMetaContainer_DestroyIterator((.)this.ptr, iterator);
+	}
+	public bool CompareIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_CompareIterator((.)this.ptr, i, j);
+	}
+	public void CopyIterator(void* target, void* source)
+	{
+		CQt.QMetaContainer_CopyIterator((.)this.ptr, target, source);
+	}
+	public void AdvanceIterator(void* iterator, void* step)
+	{
+		CQt.QMetaContainer_AdvanceIterator((.)this.ptr, iterator, step);
+	}
+	public void* DiffIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_DiffIterator((.)this.ptr, i, j);
+	}
+	public bool HasConstIterator()
+	{
+		return CQt.QMetaContainer_HasConstIterator((.)this.ptr);
+	}
+	public void* ConstBegin(void* container)
+	{
+		return CQt.QMetaContainer_ConstBegin((.)this.ptr, container);
+	}
+	public void* ConstEnd(void* container)
+	{
+		return CQt.QMetaContainer_ConstEnd((.)this.ptr, container);
+	}
+	public void DestroyConstIterator(void* iterator)
+	{
+		CQt.QMetaContainer_DestroyConstIterator((.)this.ptr, iterator);
+	}
+	public bool CompareConstIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_CompareConstIterator((.)this.ptr, i, j);
+	}
+	public void CopyConstIterator(void* target, void* source)
+	{
+		CQt.QMetaContainer_CopyConstIterator((.)this.ptr, target, source);
+	}
+	public void AdvanceConstIterator(void* iterator, void* step)
+	{
+		CQt.QMetaContainer_AdvanceConstIterator((.)this.ptr, iterator, step);
+	}
+	public void* DiffConstIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_DiffConstIterator((.)this.ptr, i, j);
 	}
 }
 interface IQMetaSequence
@@ -544,107 +640,203 @@ class QMetaAssociation
 	}
 	public QMetaType_Ptr KeyMetaType()
 	{
-		return CQt.QMetaAssociation_KeyMetaType(this.ptr);
+		return CQt.QMetaAssociation_KeyMetaType((.)this.ptr);
 	}
 	public QMetaType_Ptr MappedMetaType()
 	{
-		return CQt.QMetaAssociation_MappedMetaType(this.ptr);
+		return CQt.QMetaAssociation_MappedMetaType((.)this.ptr);
 	}
 	public bool CanInsertKey()
 	{
-		return CQt.QMetaAssociation_CanInsertKey(this.ptr);
+		return CQt.QMetaAssociation_CanInsertKey((.)this.ptr);
 	}
 	public void InsertKey(void* container, void* key)
 	{
-		CQt.QMetaAssociation_InsertKey(this.ptr, container, key);
+		CQt.QMetaAssociation_InsertKey((.)this.ptr, container, key);
 	}
 	public bool CanRemoveKey()
 	{
-		return CQt.QMetaAssociation_CanRemoveKey(this.ptr);
+		return CQt.QMetaAssociation_CanRemoveKey((.)this.ptr);
 	}
 	public void RemoveKey(void* container, void* key)
 	{
-		CQt.QMetaAssociation_RemoveKey(this.ptr, container, key);
+		CQt.QMetaAssociation_RemoveKey((.)this.ptr, container, key);
 	}
 	public bool CanContainsKey()
 	{
-		return CQt.QMetaAssociation_CanContainsKey(this.ptr);
+		return CQt.QMetaAssociation_CanContainsKey((.)this.ptr);
 	}
 	public bool ContainsKey(void* container, void* key)
 	{
-		return CQt.QMetaAssociation_ContainsKey(this.ptr, container, key);
+		return CQt.QMetaAssociation_ContainsKey((.)this.ptr, container, key);
 	}
 	public bool CanGetMappedAtKey()
 	{
-		return CQt.QMetaAssociation_CanGetMappedAtKey(this.ptr);
+		return CQt.QMetaAssociation_CanGetMappedAtKey((.)this.ptr);
 	}
 	public void MappedAtKey(void* container, void* key, void* mapped)
 	{
-		CQt.QMetaAssociation_MappedAtKey(this.ptr, container, key, mapped);
+		CQt.QMetaAssociation_MappedAtKey((.)this.ptr, container, key, mapped);
 	}
 	public bool CanSetMappedAtKey()
 	{
-		return CQt.QMetaAssociation_CanSetMappedAtKey(this.ptr);
+		return CQt.QMetaAssociation_CanSetMappedAtKey((.)this.ptr);
 	}
 	public void SetMappedAtKey(void* container, void* key, void* mapped)
 	{
-		CQt.QMetaAssociation_SetMappedAtKey(this.ptr, container, key, mapped);
+		CQt.QMetaAssociation_SetMappedAtKey((.)this.ptr, container, key, mapped);
 	}
 	public bool CanGetKeyAtIterator()
 	{
-		return CQt.QMetaAssociation_CanGetKeyAtIterator(this.ptr);
+		return CQt.QMetaAssociation_CanGetKeyAtIterator((.)this.ptr);
 	}
 	public void KeyAtIterator(void* iterator, void* key)
 	{
-		CQt.QMetaAssociation_KeyAtIterator(this.ptr, iterator, key);
+		CQt.QMetaAssociation_KeyAtIterator((.)this.ptr, iterator, key);
 	}
 	public bool CanGetKeyAtConstIterator()
 	{
-		return CQt.QMetaAssociation_CanGetKeyAtConstIterator(this.ptr);
+		return CQt.QMetaAssociation_CanGetKeyAtConstIterator((.)this.ptr);
 	}
 	public void KeyAtConstIterator(void* iterator, void* key)
 	{
-		CQt.QMetaAssociation_KeyAtConstIterator(this.ptr, iterator, key);
+		CQt.QMetaAssociation_KeyAtConstIterator((.)this.ptr, iterator, key);
 	}
 	public bool CanGetMappedAtIterator()
 	{
-		return CQt.QMetaAssociation_CanGetMappedAtIterator(this.ptr);
+		return CQt.QMetaAssociation_CanGetMappedAtIterator((.)this.ptr);
 	}
 	public void MappedAtIterator(void* iterator, void* mapped)
 	{
-		CQt.QMetaAssociation_MappedAtIterator(this.ptr, iterator, mapped);
+		CQt.QMetaAssociation_MappedAtIterator((.)this.ptr, iterator, mapped);
 	}
 	public bool CanGetMappedAtConstIterator()
 	{
-		return CQt.QMetaAssociation_CanGetMappedAtConstIterator(this.ptr);
+		return CQt.QMetaAssociation_CanGetMappedAtConstIterator((.)this.ptr);
 	}
 	public void MappedAtConstIterator(void* iterator, void* mapped)
 	{
-		CQt.QMetaAssociation_MappedAtConstIterator(this.ptr, iterator, mapped);
+		CQt.QMetaAssociation_MappedAtConstIterator((.)this.ptr, iterator, mapped);
 	}
 	public bool CanSetMappedAtIterator()
 	{
-		return CQt.QMetaAssociation_CanSetMappedAtIterator(this.ptr);
+		return CQt.QMetaAssociation_CanSetMappedAtIterator((.)this.ptr);
 	}
 	public void SetMappedAtIterator(void* iterator, void* mapped)
 	{
-		CQt.QMetaAssociation_SetMappedAtIterator(this.ptr, iterator, mapped);
+		CQt.QMetaAssociation_SetMappedAtIterator((.)this.ptr, iterator, mapped);
 	}
 	public bool CanCreateIteratorAtKey()
 	{
-		return CQt.QMetaAssociation_CanCreateIteratorAtKey(this.ptr);
+		return CQt.QMetaAssociation_CanCreateIteratorAtKey((.)this.ptr);
 	}
 	public void* CreateIteratorAtKey(void* container, void* key)
 	{
-		return CQt.QMetaAssociation_CreateIteratorAtKey(this.ptr, container, key);
+		return CQt.QMetaAssociation_CreateIteratorAtKey((.)this.ptr, container, key);
 	}
 	public bool CanCreateConstIteratorAtKey()
 	{
-		return CQt.QMetaAssociation_CanCreateConstIteratorAtKey(this.ptr);
+		return CQt.QMetaAssociation_CanCreateConstIteratorAtKey((.)this.ptr);
 	}
 	public void* CreateConstIteratorAtKey(void* container, void* key)
 	{
-		return CQt.QMetaAssociation_CreateConstIteratorAtKey(this.ptr, container, key);
+		return CQt.QMetaAssociation_CreateConstIteratorAtKey((.)this.ptr, container, key);
+	}
+	public bool HasInputIterator()
+	{
+		return CQt.QMetaContainer_HasInputIterator((.)this.ptr);
+	}
+	public bool HasForwardIterator()
+	{
+		return CQt.QMetaContainer_HasForwardIterator((.)this.ptr);
+	}
+	public bool HasBidirectionalIterator()
+	{
+		return CQt.QMetaContainer_HasBidirectionalIterator((.)this.ptr);
+	}
+	public bool HasRandomAccessIterator()
+	{
+		return CQt.QMetaContainer_HasRandomAccessIterator((.)this.ptr);
+	}
+	public bool HasSize()
+	{
+		return CQt.QMetaContainer_HasSize((.)this.ptr);
+	}
+	public void* Size(void* container)
+	{
+		return CQt.QMetaContainer_Size((.)this.ptr, container);
+	}
+	public bool CanClear()
+	{
+		return CQt.QMetaContainer_CanClear((.)this.ptr);
+	}
+	public void Clear(void* container)
+	{
+		CQt.QMetaContainer_Clear((.)this.ptr, container);
+	}
+	public bool HasIterator()
+	{
+		return CQt.QMetaContainer_HasIterator((.)this.ptr);
+	}
+	public void* Begin(void* container)
+	{
+		return CQt.QMetaContainer_Begin((.)this.ptr, container);
+	}
+	public void* End(void* container)
+	{
+		return CQt.QMetaContainer_End((.)this.ptr, container);
+	}
+	public void DestroyIterator(void* iterator)
+	{
+		CQt.QMetaContainer_DestroyIterator((.)this.ptr, iterator);
+	}
+	public bool CompareIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_CompareIterator((.)this.ptr, i, j);
+	}
+	public void CopyIterator(void* target, void* source)
+	{
+		CQt.QMetaContainer_CopyIterator((.)this.ptr, target, source);
+	}
+	public void AdvanceIterator(void* iterator, void* step)
+	{
+		CQt.QMetaContainer_AdvanceIterator((.)this.ptr, iterator, step);
+	}
+	public void* DiffIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_DiffIterator((.)this.ptr, i, j);
+	}
+	public bool HasConstIterator()
+	{
+		return CQt.QMetaContainer_HasConstIterator((.)this.ptr);
+	}
+	public void* ConstBegin(void* container)
+	{
+		return CQt.QMetaContainer_ConstBegin((.)this.ptr, container);
+	}
+	public void* ConstEnd(void* container)
+	{
+		return CQt.QMetaContainer_ConstEnd((.)this.ptr, container);
+	}
+	public void DestroyConstIterator(void* iterator)
+	{
+		CQt.QMetaContainer_DestroyConstIterator((.)this.ptr, iterator);
+	}
+	public bool CompareConstIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_CompareConstIterator((.)this.ptr, i, j);
+	}
+	public void CopyConstIterator(void* target, void* source)
+	{
+		CQt.QMetaContainer_CopyConstIterator((.)this.ptr, target, source);
+	}
+	public void AdvanceConstIterator(void* iterator, void* step)
+	{
+		CQt.QMetaContainer_AdvanceConstIterator((.)this.ptr, iterator, step);
+	}
+	public void* DiffConstIterator(void* i, void* j)
+	{
+		return CQt.QMetaContainer_DiffConstIterator((.)this.ptr, i, j);
 	}
 }
 interface IQMetaAssociation

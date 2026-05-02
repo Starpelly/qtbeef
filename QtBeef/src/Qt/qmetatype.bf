@@ -206,79 +206,79 @@ class QMetaType
 	}
 	public bool IsValid()
 	{
-		return CQt.QMetaType_IsValid(this.ptr);
+		return CQt.QMetaType_IsValid((.)this.ptr);
 	}
 	public bool IsRegistered2()
 	{
-		return CQt.QMetaType_IsRegistered2(this.ptr);
+		return CQt.QMetaType_IsRegistered2((.)this.ptr);
 	}
 	public c_int Id()
 	{
-		return CQt.QMetaType_Id(this.ptr);
+		return CQt.QMetaType_Id((.)this.ptr);
 	}
 	public void* SizeOf2()
 	{
-		return CQt.QMetaType_SizeOf2(this.ptr);
+		return CQt.QMetaType_SizeOf2((.)this.ptr);
 	}
 	public void* AlignOf()
 	{
-		return CQt.QMetaType_AlignOf(this.ptr);
+		return CQt.QMetaType_AlignOf((.)this.ptr);
 	}
 	public void* Flags()
 	{
-		return CQt.QMetaType_Flags(this.ptr);
+		return CQt.QMetaType_Flags((.)this.ptr);
 	}
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QMetaType_MetaObject(this.ptr);
+		return CQt.QMetaType_MetaObject((.)this.ptr);
 	}
 	public c_char* Name()
 	{
-		return CQt.QMetaType_Name(this.ptr);
+		return CQt.QMetaType_Name((.)this.ptr);
 	}
 	public void* Create2()
 	{
-		return CQt.QMetaType_Create2(this.ptr);
+		return CQt.QMetaType_Create2((.)this.ptr);
 	}
 	public void Destroy2(void* data)
 	{
-		CQt.QMetaType_Destroy2(this.ptr, data);
+		CQt.QMetaType_Destroy2((.)this.ptr, data);
 	}
 	public void* Construct2(void* _where)
 	{
-		return CQt.QMetaType_Construct2(this.ptr, _where);
+		return CQt.QMetaType_Construct2((.)this.ptr, _where);
 	}
 	public void Destruct2(void* data)
 	{
-		CQt.QMetaType_Destruct2(this.ptr, data);
+		CQt.QMetaType_Destruct2((.)this.ptr, data);
 	}
 	public QPartialOrdering_Ptr Compare(void* lhs, void* rhs)
 	{
-		return CQt.QMetaType_Compare(this.ptr, lhs, rhs);
+		return CQt.QMetaType_Compare((.)this.ptr, lhs, rhs);
 	}
 	public bool Equals(void* lhs, void* rhs)
 	{
-		return CQt.QMetaType_Equals(this.ptr, lhs, rhs);
+		return CQt.QMetaType_Equals((.)this.ptr, lhs, rhs);
 	}
 	public bool IsEqualityComparable()
 	{
-		return CQt.QMetaType_IsEqualityComparable(this.ptr);
+		return CQt.QMetaType_IsEqualityComparable((.)this.ptr);
 	}
 	public bool IsOrdered()
 	{
-		return CQt.QMetaType_IsOrdered(this.ptr);
+		return CQt.QMetaType_IsOrdered((.)this.ptr);
 	}
 	public bool Save(QDataStream_Ptr* stream, void* data)
 	{
-		return CQt.QMetaType_Save(this.ptr, stream, data);
+		return CQt.QMetaType_Save((.)this.ptr, stream, data);
 	}
 	public bool Load(QDataStream_Ptr* stream, void* data)
 	{
-		return CQt.QMetaType_Load(this.ptr, stream, data);
+		return CQt.QMetaType_Load((.)this.ptr, stream, data);
 	}
 	public bool HasRegisteredDataStreamOperators()
 	{
-		return CQt.QMetaType_HasRegisteredDataStreamOperators(this.ptr);
+		return CQt.QMetaType_HasRegisteredDataStreamOperators((.)this.ptr);
 	}
 	public bool Save2(QDataStream_Ptr* stream, c_int type, void* data)
 	{
@@ -294,11 +294,11 @@ class QMetaType
 	}
 	public bool DebugStream(QDebug_Ptr* dbg, void* rhs)
 	{
-		return CQt.QMetaType_DebugStream(this.ptr, dbg, rhs);
+		return CQt.QMetaType_DebugStream((.)this.ptr, dbg, rhs);
 	}
 	public bool HasRegisteredDebugStreamOperator()
 	{
-		return CQt.QMetaType_HasRegisteredDebugStreamOperator(this.ptr);
+		return CQt.QMetaType_HasRegisteredDebugStreamOperator((.)this.ptr);
 	}
 	public bool DebugStream2(QDebug_Ptr* dbg, void* rhs, c_int typeId)
 	{
@@ -370,15 +370,15 @@ class QMetaType
 	}
 	public c_int Id1(c_int param1)
 	{
-		return CQt.QMetaType_Id1(this.ptr, param1);
+		return CQt.QMetaType_Id1((.)this.ptr, param1);
 	}
 	public void* Create1(void* copyVal)
 	{
-		return CQt.QMetaType_Create1(this.ptr, copyVal);
+		return CQt.QMetaType_Create1((.)this.ptr, copyVal);
 	}
 	public void* Construct22(void* _where, void* copyVal)
 	{
-		return CQt.QMetaType_Construct22(this.ptr, _where, copyVal);
+		return CQt.QMetaType_Construct22((.)this.ptr, _where, copyVal);
 	}
 }
 interface IQMetaType

@@ -72,63 +72,63 @@ class QMimeType
 	}
 	public void Swap(QMimeType_Ptr* other)
 	{
-		CQt.QMimeType_Swap(this.ptr, other);
+		CQt.QMimeType_Swap((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QMimeType_IsValid(this.ptr);
+		return CQt.QMimeType_IsValid((.)this.ptr);
 	}
 	public bool IsDefault()
 	{
-		return CQt.QMimeType_IsDefault(this.ptr);
+		return CQt.QMimeType_IsDefault((.)this.ptr);
 	}
 	public libqt_string Name()
 	{
-		return CQt.QMimeType_Name(this.ptr);
+		return CQt.QMimeType_Name((.)this.ptr);
 	}
 	public libqt_string Comment()
 	{
-		return CQt.QMimeType_Comment(this.ptr);
+		return CQt.QMimeType_Comment((.)this.ptr);
 	}
 	public libqt_string GenericIconName()
 	{
-		return CQt.QMimeType_GenericIconName(this.ptr);
+		return CQt.QMimeType_GenericIconName((.)this.ptr);
 	}
 	public libqt_string IconName()
 	{
-		return CQt.QMimeType_IconName(this.ptr);
+		return CQt.QMimeType_IconName((.)this.ptr);
 	}
 	public void* GlobPatterns()
 	{
-		return CQt.QMimeType_GlobPatterns(this.ptr);
+		return CQt.QMimeType_GlobPatterns((.)this.ptr);
 	}
 	public void* ParentMimeTypes()
 	{
-		return CQt.QMimeType_ParentMimeTypes(this.ptr);
+		return CQt.QMimeType_ParentMimeTypes((.)this.ptr);
 	}
 	public void* AllAncestors()
 	{
-		return CQt.QMimeType_AllAncestors(this.ptr);
+		return CQt.QMimeType_AllAncestors((.)this.ptr);
 	}
 	public void* Aliases()
 	{
-		return CQt.QMimeType_Aliases(this.ptr);
+		return CQt.QMimeType_Aliases((.)this.ptr);
 	}
 	public void* Suffixes()
 	{
-		return CQt.QMimeType_Suffixes(this.ptr);
+		return CQt.QMimeType_Suffixes((.)this.ptr);
 	}
 	public libqt_string PreferredSuffix()
 	{
-		return CQt.QMimeType_PreferredSuffix(this.ptr);
+		return CQt.QMimeType_PreferredSuffix((.)this.ptr);
 	}
 	public bool Inherits(libqt_string* mimeTypeName)
 	{
-		return CQt.QMimeType_Inherits(this.ptr, mimeTypeName);
+		return CQt.QMimeType_Inherits((.)this.ptr, mimeTypeName);
 	}
 	public libqt_string FilterString()
 	{
-		return CQt.QMimeType_FilterString(this.ptr);
+		return CQt.QMimeType_FilterString((.)this.ptr);
 	}
 }
 interface IQMimeType

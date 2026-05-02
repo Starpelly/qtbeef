@@ -352,15 +352,15 @@ class QGraphicsScene
 	}
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QGraphicsScene_MetaObject(this.ptr);
+		return CQt.QGraphicsScene_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QGraphicsScene_Qt_Metacast(this.ptr, param1);
+		return CQt.QGraphicsScene_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QGraphicsScene_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QGraphicsScene_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -368,407 +368,407 @@ class QGraphicsScene
 	}
 	public QRectF_Ptr SceneRect()
 	{
-		return CQt.QGraphicsScene_SceneRect(this.ptr);
+		return CQt.QGraphicsScene_SceneRect((.)this.ptr);
 	}
 	public double Width()
 	{
-		return CQt.QGraphicsScene_Width(this.ptr);
+		return CQt.QGraphicsScene_Width((.)this.ptr);
 	}
 	public double Height()
 	{
-		return CQt.QGraphicsScene_Height(this.ptr);
+		return CQt.QGraphicsScene_Height((.)this.ptr);
 	}
 	public void SetSceneRect(QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsScene_SetSceneRect(this.ptr, rect);
+		CQt.QGraphicsScene_SetSceneRect((.)this.ptr, rect);
 	}
 	public void SetSceneRect2(double x, double y, double w, double h)
 	{
-		CQt.QGraphicsScene_SetSceneRect2(this.ptr, x, y, w, h);
+		CQt.QGraphicsScene_SetSceneRect2((.)this.ptr, x, y, w, h);
 	}
 	public void Render(QPainter_Ptr* painter)
 	{
-		CQt.QGraphicsScene_Render(this.ptr, painter);
+		CQt.QGraphicsScene_Render((.)this.ptr, painter);
 	}
 	public QGraphicsScene_ItemIndexMethod ItemIndexMethod()
 	{
-		return CQt.QGraphicsScene_ItemIndexMethod(this.ptr);
+		return CQt.QGraphicsScene_ItemIndexMethod((.)this.ptr);
 	}
 	public void SetItemIndexMethod(QGraphicsScene_ItemIndexMethod method)
 	{
-		CQt.QGraphicsScene_SetItemIndexMethod(this.ptr, method);
+		CQt.QGraphicsScene_SetItemIndexMethod((.)this.ptr, method);
 	}
 	public c_int BspTreeDepth()
 	{
-		return CQt.QGraphicsScene_BspTreeDepth(this.ptr);
+		return CQt.QGraphicsScene_BspTreeDepth((.)this.ptr);
 	}
 	public void SetBspTreeDepth(c_int depth)
 	{
-		CQt.QGraphicsScene_SetBspTreeDepth(this.ptr, depth);
+		CQt.QGraphicsScene_SetBspTreeDepth((.)this.ptr, depth);
 	}
 	public QRectF_Ptr ItemsBoundingRect()
 	{
-		return CQt.QGraphicsScene_ItemsBoundingRect(this.ptr);
+		return CQt.QGraphicsScene_ItemsBoundingRect((.)this.ptr);
 	}
 	public void* Items()
 	{
-		return CQt.QGraphicsScene_Items(this.ptr);
+		return CQt.QGraphicsScene_Items((.)this.ptr);
 	}
 	public void* Items2(QPointF_Ptr* pos)
 	{
-		return CQt.QGraphicsScene_Items2(this.ptr, pos);
+		return CQt.QGraphicsScene_Items2((.)this.ptr, pos);
 	}
 	public void* Items3(QRectF_Ptr* rect)
 	{
-		return CQt.QGraphicsScene_Items3(this.ptr, rect);
+		return CQt.QGraphicsScene_Items3((.)this.ptr, rect);
 	}
 	public void* Items5(QPainterPath_Ptr* path)
 	{
-		return CQt.QGraphicsScene_Items5(this.ptr, path);
+		return CQt.QGraphicsScene_Items5((.)this.ptr, path);
 	}
 	public void* Items6(double x, double y, double w, double h, Qt_ItemSelectionMode mode, Qt_SortOrder order)
 	{
-		return CQt.QGraphicsScene_Items6(this.ptr, x, y, w, h, mode, order);
+		return CQt.QGraphicsScene_Items6((.)this.ptr, x, y, w, h, mode, order);
 	}
 	public void* CollidingItems(QGraphicsItem_Ptr* item)
 	{
-		return CQt.QGraphicsScene_CollidingItems(this.ptr, item);
+		return CQt.QGraphicsScene_CollidingItems((.)this.ptr, item);
 	}
 	public QGraphicsItem_Ptr* ItemAt(QPointF_Ptr* pos, QTransform_Ptr* deviceTransform)
 	{
-		return CQt.QGraphicsScene_ItemAt(this.ptr, pos, deviceTransform);
+		return CQt.QGraphicsScene_ItemAt((.)this.ptr, pos, deviceTransform);
 	}
 	public QGraphicsItem_Ptr* ItemAt2(double x, double y, QTransform_Ptr* deviceTransform)
 	{
-		return CQt.QGraphicsScene_ItemAt2(this.ptr, x, y, deviceTransform);
+		return CQt.QGraphicsScene_ItemAt2((.)this.ptr, x, y, deviceTransform);
 	}
 	public void* SelectedItems()
 	{
-		return CQt.QGraphicsScene_SelectedItems(this.ptr);
+		return CQt.QGraphicsScene_SelectedItems((.)this.ptr);
 	}
 	public QPainterPath_Ptr SelectionArea()
 	{
-		return CQt.QGraphicsScene_SelectionArea(this.ptr);
+		return CQt.QGraphicsScene_SelectionArea((.)this.ptr);
 	}
 	public void SetSelectionArea(QPainterPath_Ptr* path, QTransform_Ptr* deviceTransform)
 	{
-		CQt.QGraphicsScene_SetSelectionArea(this.ptr, path, deviceTransform);
+		CQt.QGraphicsScene_SetSelectionArea((.)this.ptr, path, deviceTransform);
 	}
 	public void SetSelectionArea2(QPainterPath_Ptr* path)
 	{
-		CQt.QGraphicsScene_SetSelectionArea2(this.ptr, path);
+		CQt.QGraphicsScene_SetSelectionArea2((.)this.ptr, path);
 	}
 	public QGraphicsItemGroup_Ptr* CreateItemGroup(void** items)
 	{
-		return CQt.QGraphicsScene_CreateItemGroup(this.ptr, items);
+		return CQt.QGraphicsScene_CreateItemGroup((.)this.ptr, items);
 	}
 	public void DestroyItemGroup(QGraphicsItemGroup_Ptr* group)
 	{
-		CQt.QGraphicsScene_DestroyItemGroup(this.ptr, group);
+		CQt.QGraphicsScene_DestroyItemGroup((.)this.ptr, group);
 	}
 	public void AddItem(QGraphicsItem_Ptr* item)
 	{
-		CQt.QGraphicsScene_AddItem(this.ptr, item);
+		CQt.QGraphicsScene_AddItem((.)this.ptr, item);
 	}
 	public QGraphicsEllipseItem_Ptr* AddEllipse(QRectF_Ptr* rect)
 	{
-		return CQt.QGraphicsScene_AddEllipse(this.ptr, rect);
+		return CQt.QGraphicsScene_AddEllipse((.)this.ptr, rect);
 	}
 	public QGraphicsLineItem_Ptr* AddLine(QLineF_Ptr* line)
 	{
-		return CQt.QGraphicsScene_AddLine(this.ptr, line);
+		return CQt.QGraphicsScene_AddLine((.)this.ptr, line);
 	}
 	public QGraphicsPathItem_Ptr* AddPath(QPainterPath_Ptr* path)
 	{
-		return CQt.QGraphicsScene_AddPath(this.ptr, path);
+		return CQt.QGraphicsScene_AddPath((.)this.ptr, path);
 	}
 	public QGraphicsPixmapItem_Ptr* AddPixmap(QPixmap_Ptr* pixmap)
 	{
-		return CQt.QGraphicsScene_AddPixmap(this.ptr, pixmap);
+		return CQt.QGraphicsScene_AddPixmap((.)this.ptr, pixmap);
 	}
 	public QGraphicsRectItem_Ptr* AddRect(QRectF_Ptr* rect)
 	{
-		return CQt.QGraphicsScene_AddRect(this.ptr, rect);
+		return CQt.QGraphicsScene_AddRect((.)this.ptr, rect);
 	}
 	public QGraphicsTextItem_Ptr* AddText(libqt_string* text)
 	{
-		return CQt.QGraphicsScene_AddText(this.ptr, text);
+		return CQt.QGraphicsScene_AddText((.)this.ptr, text);
 	}
 	public QGraphicsSimpleTextItem_Ptr* AddSimpleText(libqt_string* text)
 	{
-		return CQt.QGraphicsScene_AddSimpleText(this.ptr, text);
+		return CQt.QGraphicsScene_AddSimpleText((.)this.ptr, text);
 	}
 	public QGraphicsProxyWidget_Ptr* AddWidget(QWidget_Ptr* widget)
 	{
-		return CQt.QGraphicsScene_AddWidget(this.ptr, widget);
+		return CQt.QGraphicsScene_AddWidget((.)this.ptr, widget);
 	}
 	public QGraphicsEllipseItem_Ptr* AddEllipse2(double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsScene_AddEllipse2(this.ptr, x, y, w, h);
+		return CQt.QGraphicsScene_AddEllipse2((.)this.ptr, x, y, w, h);
 	}
 	public QGraphicsLineItem_Ptr* AddLine2(double x1, double y1, double x2, double y2)
 	{
-		return CQt.QGraphicsScene_AddLine2(this.ptr, x1, y1, x2, y2);
+		return CQt.QGraphicsScene_AddLine2((.)this.ptr, x1, y1, x2, y2);
 	}
 	public QGraphicsRectItem_Ptr* AddRect2(double x, double y, double w, double h)
 	{
-		return CQt.QGraphicsScene_AddRect2(this.ptr, x, y, w, h);
+		return CQt.QGraphicsScene_AddRect2((.)this.ptr, x, y, w, h);
 	}
 	public void RemoveItem(QGraphicsItem_Ptr* item)
 	{
-		CQt.QGraphicsScene_RemoveItem(this.ptr, item);
+		CQt.QGraphicsScene_RemoveItem((.)this.ptr, item);
 	}
 	public QGraphicsItem_Ptr* FocusItem()
 	{
-		return CQt.QGraphicsScene_FocusItem(this.ptr);
+		return CQt.QGraphicsScene_FocusItem((.)this.ptr);
 	}
 	public void SetFocusItem(QGraphicsItem_Ptr* item)
 	{
-		CQt.QGraphicsScene_SetFocusItem(this.ptr, item);
+		CQt.QGraphicsScene_SetFocusItem((.)this.ptr, item);
 	}
 	public bool HasFocus()
 	{
-		return CQt.QGraphicsScene_HasFocus(this.ptr);
+		return CQt.QGraphicsScene_HasFocus((.)this.ptr);
 	}
 	public void SetFocus()
 	{
-		CQt.QGraphicsScene_SetFocus(this.ptr);
+		CQt.QGraphicsScene_SetFocus((.)this.ptr);
 	}
 	public void ClearFocus()
 	{
-		CQt.QGraphicsScene_ClearFocus(this.ptr);
+		CQt.QGraphicsScene_ClearFocus((.)this.ptr);
 	}
 	public void SetStickyFocus(bool enabled)
 	{
-		CQt.QGraphicsScene_SetStickyFocus(this.ptr, enabled);
+		CQt.QGraphicsScene_SetStickyFocus((.)this.ptr, enabled);
 	}
 	public bool StickyFocus()
 	{
-		return CQt.QGraphicsScene_StickyFocus(this.ptr);
+		return CQt.QGraphicsScene_StickyFocus((.)this.ptr);
 	}
 	public QGraphicsItem_Ptr* MouseGrabberItem()
 	{
-		return CQt.QGraphicsScene_MouseGrabberItem(this.ptr);
+		return CQt.QGraphicsScene_MouseGrabberItem((.)this.ptr);
 	}
 	public QBrush_Ptr BackgroundBrush()
 	{
-		return CQt.QGraphicsScene_BackgroundBrush(this.ptr);
+		return CQt.QGraphicsScene_BackgroundBrush((.)this.ptr);
 	}
 	public void SetBackgroundBrush(QBrush_Ptr* brush)
 	{
-		CQt.QGraphicsScene_SetBackgroundBrush(this.ptr, brush);
+		CQt.QGraphicsScene_SetBackgroundBrush((.)this.ptr, brush);
 	}
 	public QBrush_Ptr ForegroundBrush()
 	{
-		return CQt.QGraphicsScene_ForegroundBrush(this.ptr);
+		return CQt.QGraphicsScene_ForegroundBrush((.)this.ptr);
 	}
 	public void SetForegroundBrush(QBrush_Ptr* brush)
 	{
-		CQt.QGraphicsScene_SetForegroundBrush(this.ptr, brush);
+		CQt.QGraphicsScene_SetForegroundBrush((.)this.ptr, brush);
 	}
 	public QVariant_Ptr InputMethodQuery(Qt_InputMethodQuery query)
 	{
-		return CQt.QGraphicsScene_InputMethodQuery(this.ptr, query);
+		return CQt.QGraphicsScene_InputMethodQuery((.)this.ptr, query);
 	}
 	public void* Views()
 	{
-		return CQt.QGraphicsScene_Views(this.ptr);
+		return CQt.QGraphicsScene_Views((.)this.ptr);
 	}
 	public void Update(double x, double y, double w, double h)
 	{
-		CQt.QGraphicsScene_Update(this.ptr, x, y, w, h);
+		CQt.QGraphicsScene_Update((.)this.ptr, x, y, w, h);
 	}
 	public void Invalidate(double x, double y, double w, double h)
 	{
-		CQt.QGraphicsScene_Invalidate(this.ptr, x, y, w, h);
+		CQt.QGraphicsScene_Invalidate((.)this.ptr, x, y, w, h);
 	}
 	public QStyle_Ptr* Style()
 	{
-		return CQt.QGraphicsScene_Style(this.ptr);
+		return CQt.QGraphicsScene_Style((.)this.ptr);
 	}
 	public void SetStyle(QStyle_Ptr* style)
 	{
-		CQt.QGraphicsScene_SetStyle(this.ptr, style);
+		CQt.QGraphicsScene_SetStyle((.)this.ptr, style);
 	}
 	public QFont_Ptr Font()
 	{
-		return CQt.QGraphicsScene_Font(this.ptr);
+		return CQt.QGraphicsScene_Font((.)this.ptr);
 	}
 	public void SetFont(QFont_Ptr* font)
 	{
-		CQt.QGraphicsScene_SetFont(this.ptr, font);
+		CQt.QGraphicsScene_SetFont((.)this.ptr, font);
 	}
 	public QPalette_Ptr Palette()
 	{
-		return CQt.QGraphicsScene_Palette(this.ptr);
+		return CQt.QGraphicsScene_Palette((.)this.ptr);
 	}
 	public void SetPalette(QPalette_Ptr* palette)
 	{
-		CQt.QGraphicsScene_SetPalette(this.ptr, palette);
+		CQt.QGraphicsScene_SetPalette((.)this.ptr, palette);
 	}
 	public bool IsActive()
 	{
-		return CQt.QGraphicsScene_IsActive(this.ptr);
+		return CQt.QGraphicsScene_IsActive((.)this.ptr);
 	}
 	public QGraphicsItem_Ptr* ActivePanel()
 	{
-		return CQt.QGraphicsScene_ActivePanel(this.ptr);
+		return CQt.QGraphicsScene_ActivePanel((.)this.ptr);
 	}
 	public void SetActivePanel(QGraphicsItem_Ptr* item)
 	{
-		CQt.QGraphicsScene_SetActivePanel(this.ptr, item);
+		CQt.QGraphicsScene_SetActivePanel((.)this.ptr, item);
 	}
 	public QGraphicsWidget_Ptr* ActiveWindow()
 	{
-		return CQt.QGraphicsScene_ActiveWindow(this.ptr);
+		return CQt.QGraphicsScene_ActiveWindow((.)this.ptr);
 	}
 	public void SetActiveWindow(QGraphicsWidget_Ptr* widget)
 	{
-		CQt.QGraphicsScene_SetActiveWindow(this.ptr, widget);
+		CQt.QGraphicsScene_SetActiveWindow((.)this.ptr, widget);
 	}
 	public bool SendEvent(QGraphicsItem_Ptr* item, QEvent_Ptr* event)
 	{
-		return CQt.QGraphicsScene_SendEvent(this.ptr, item, event);
+		return CQt.QGraphicsScene_SendEvent((.)this.ptr, item, event);
 	}
 	public double MinimumRenderSize()
 	{
-		return CQt.QGraphicsScene_MinimumRenderSize(this.ptr);
+		return CQt.QGraphicsScene_MinimumRenderSize((.)this.ptr);
 	}
 	public void SetMinimumRenderSize(double minSize)
 	{
-		CQt.QGraphicsScene_SetMinimumRenderSize(this.ptr, minSize);
+		CQt.QGraphicsScene_SetMinimumRenderSize((.)this.ptr, minSize);
 	}
 	public bool FocusOnTouch()
 	{
-		return CQt.QGraphicsScene_FocusOnTouch(this.ptr);
+		return CQt.QGraphicsScene_FocusOnTouch((.)this.ptr);
 	}
 	public void SetFocusOnTouch(bool enabled)
 	{
-		CQt.QGraphicsScene_SetFocusOnTouch(this.ptr, enabled);
+		CQt.QGraphicsScene_SetFocusOnTouch((.)this.ptr, enabled);
 	}
 	public void Update2()
 	{
-		CQt.QGraphicsScene_Update2(this.ptr);
+		CQt.QGraphicsScene_Update2((.)this.ptr);
 	}
 	public void Invalidate2()
 	{
-		CQt.QGraphicsScene_Invalidate2(this.ptr);
+		CQt.QGraphicsScene_Invalidate2((.)this.ptr);
 	}
 	public void Advance()
 	{
-		CQt.QGraphicsScene_Advance(this.ptr);
+		CQt.QGraphicsScene_Advance((.)this.ptr);
 	}
 	public void ClearSelection()
 	{
-		CQt.QGraphicsScene_ClearSelection(this.ptr);
+		CQt.QGraphicsScene_ClearSelection((.)this.ptr);
 	}
 	public void Clear()
 	{
-		CQt.QGraphicsScene_Clear(this.ptr);
+		CQt.QGraphicsScene_Clear((.)this.ptr);
 	}
 	public bool Event(QEvent_Ptr* event)
 	{
-		return CQt.QGraphicsScene_Event(this.ptr, event);
+		return CQt.QGraphicsScene_Event((.)this.ptr, event);
 	}
 	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
 	{
-		return CQt.QGraphicsScene_EventFilter(this.ptr, watched, event);
+		return CQt.QGraphicsScene_EventFilter((.)this.ptr, watched, event);
 	}
 	public void ContextMenuEvent(QGraphicsSceneContextMenuEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_ContextMenuEvent(this.ptr, event);
+		CQt.QGraphicsScene_ContextMenuEvent((.)this.ptr, event);
 	}
 	public void DragEnterEvent(QGraphicsSceneDragDropEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_DragEnterEvent(this.ptr, event);
+		CQt.QGraphicsScene_DragEnterEvent((.)this.ptr, event);
 	}
 	public void DragMoveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_DragMoveEvent(this.ptr, event);
+		CQt.QGraphicsScene_DragMoveEvent((.)this.ptr, event);
 	}
 	public void DragLeaveEvent(QGraphicsSceneDragDropEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_DragLeaveEvent(this.ptr, event);
+		CQt.QGraphicsScene_DragLeaveEvent((.)this.ptr, event);
 	}
 	public void DropEvent(QGraphicsSceneDragDropEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_DropEvent(this.ptr, event);
+		CQt.QGraphicsScene_DropEvent((.)this.ptr, event);
 	}
 	public void FocusInEvent(QFocusEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_FocusInEvent(this.ptr, event);
+		CQt.QGraphicsScene_FocusInEvent((.)this.ptr, event);
 	}
 	public void FocusOutEvent(QFocusEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_FocusOutEvent(this.ptr, event);
+		CQt.QGraphicsScene_FocusOutEvent((.)this.ptr, event);
 	}
 	public void HelpEvent(QGraphicsSceneHelpEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_HelpEvent(this.ptr, event);
+		CQt.QGraphicsScene_HelpEvent((.)this.ptr, event);
 	}
 	public void KeyPressEvent(QKeyEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_KeyPressEvent(this.ptr, event);
+		CQt.QGraphicsScene_KeyPressEvent((.)this.ptr, event);
 	}
 	public void KeyReleaseEvent(QKeyEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_KeyReleaseEvent(this.ptr, event);
+		CQt.QGraphicsScene_KeyReleaseEvent((.)this.ptr, event);
 	}
 	public void MousePressEvent(QGraphicsSceneMouseEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_MousePressEvent(this.ptr, event);
+		CQt.QGraphicsScene_MousePressEvent((.)this.ptr, event);
 	}
 	public void MouseMoveEvent(QGraphicsSceneMouseEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_MouseMoveEvent(this.ptr, event);
+		CQt.QGraphicsScene_MouseMoveEvent((.)this.ptr, event);
 	}
 	public void MouseReleaseEvent(QGraphicsSceneMouseEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_MouseReleaseEvent(this.ptr, event);
+		CQt.QGraphicsScene_MouseReleaseEvent((.)this.ptr, event);
 	}
 	public void MouseDoubleClickEvent(QGraphicsSceneMouseEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_MouseDoubleClickEvent(this.ptr, event);
+		CQt.QGraphicsScene_MouseDoubleClickEvent((.)this.ptr, event);
 	}
 	public void WheelEvent(QGraphicsSceneWheelEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_WheelEvent(this.ptr, event);
+		CQt.QGraphicsScene_WheelEvent((.)this.ptr, event);
 	}
 	public void InputMethodEvent(QInputMethodEvent_Ptr* event)
 	{
-		CQt.QGraphicsScene_InputMethodEvent(this.ptr, event);
+		CQt.QGraphicsScene_InputMethodEvent((.)this.ptr, event);
 	}
 	public void DrawBackground(QPainter_Ptr* painter, QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsScene_DrawBackground(this.ptr, painter, rect);
+		CQt.QGraphicsScene_DrawBackground((.)this.ptr, painter, rect);
 	}
 	public void DrawForeground(QPainter_Ptr* painter, QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsScene_DrawForeground(this.ptr, painter, rect);
+		CQt.QGraphicsScene_DrawForeground((.)this.ptr, painter, rect);
 	}
 	public void DrawItems(QPainter_Ptr* painter, c_int numItems, QGraphicsItem_Ptr** items, QStyleOptionGraphicsItem_Ptr* options, QWidget_Ptr* widget)
 	{
-		CQt.QGraphicsScene_DrawItems(this.ptr, painter, numItems, items, options, widget);
+		CQt.QGraphicsScene_DrawItems((.)this.ptr, painter, numItems, items, options, widget);
 	}
 	public bool FocusNextPrevChild(bool next)
 	{
-		return CQt.QGraphicsScene_FocusNextPrevChild(this.ptr, next);
+		return CQt.QGraphicsScene_FocusNextPrevChild((.)this.ptr, next);
 	}
 	public void Changed(void** region)
 	{
-		CQt.QGraphicsScene_Changed(this.ptr, region);
+		CQt.QGraphicsScene_Changed((.)this.ptr, region);
 	}
 	public void SceneRectChanged(QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsScene_SceneRectChanged(this.ptr, rect);
+		CQt.QGraphicsScene_SceneRectChanged((.)this.ptr, rect);
 	}
 	public void SelectionChanged()
 	{
-		CQt.QGraphicsScene_SelectionChanged(this.ptr);
+		CQt.QGraphicsScene_SelectionChanged((.)this.ptr);
 	}
 	public void FocusItemChanged(QGraphicsItem_Ptr* newFocus, QGraphicsItem_Ptr* oldFocus, Qt_FocusReason reason)
 	{
-		CQt.QGraphicsScene_FocusItemChanged(this.ptr, newFocus, oldFocus, reason);
+		CQt.QGraphicsScene_FocusItemChanged((.)this.ptr, newFocus, oldFocus, reason);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -780,159 +780,375 @@ class QGraphicsScene
 	}
 	public void Render2(QPainter_Ptr* painter, QRectF_Ptr* target)
 	{
-		CQt.QGraphicsScene_Render2(this.ptr, painter, target);
+		CQt.QGraphicsScene_Render2((.)this.ptr, painter, target);
 	}
 	public void Render3(QPainter_Ptr* painter, QRectF_Ptr* target, QRectF_Ptr* source)
 	{
-		CQt.QGraphicsScene_Render3(this.ptr, painter, target, source);
+		CQt.QGraphicsScene_Render3((.)this.ptr, painter, target, source);
 	}
 	public void Render4(QPainter_Ptr* painter, QRectF_Ptr* target, QRectF_Ptr* source, Qt_AspectRatioMode aspectRatioMode)
 	{
-		CQt.QGraphicsScene_Render4(this.ptr, painter, target, source, aspectRatioMode);
+		CQt.QGraphicsScene_Render4((.)this.ptr, painter, target, source, aspectRatioMode);
 	}
 	public void* Items1(Qt_SortOrder order)
 	{
-		return CQt.QGraphicsScene_Items1(this.ptr, order);
+		return CQt.QGraphicsScene_Items1((.)this.ptr, order);
 	}
 	public void* Items22(QPointF_Ptr* pos, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsScene_Items22(this.ptr, pos, mode);
+		return CQt.QGraphicsScene_Items22((.)this.ptr, pos, mode);
 	}
 	public void* Items32(QPointF_Ptr* pos, Qt_ItemSelectionMode mode, Qt_SortOrder order)
 	{
-		return CQt.QGraphicsScene_Items32(this.ptr, pos, mode, order);
+		return CQt.QGraphicsScene_Items32((.)this.ptr, pos, mode, order);
 	}
 	public void* Items42(QPointF_Ptr* pos, Qt_ItemSelectionMode mode, Qt_SortOrder order, QTransform_Ptr* deviceTransform)
 	{
-		return CQt.QGraphicsScene_Items42(this.ptr, pos, mode, order, deviceTransform);
+		return CQt.QGraphicsScene_Items42((.)this.ptr, pos, mode, order, deviceTransform);
 	}
 	public void* Items23(QRectF_Ptr* rect, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsScene_Items23(this.ptr, rect, mode);
+		return CQt.QGraphicsScene_Items23((.)this.ptr, rect, mode);
 	}
 	public void* Items33(QRectF_Ptr* rect, Qt_ItemSelectionMode mode, Qt_SortOrder order)
 	{
-		return CQt.QGraphicsScene_Items33(this.ptr, rect, mode, order);
+		return CQt.QGraphicsScene_Items33((.)this.ptr, rect, mode, order);
 	}
 	public void* Items43(QRectF_Ptr* rect, Qt_ItemSelectionMode mode, Qt_SortOrder order, QTransform_Ptr* deviceTransform)
 	{
-		return CQt.QGraphicsScene_Items43(this.ptr, rect, mode, order, deviceTransform);
+		return CQt.QGraphicsScene_Items43((.)this.ptr, rect, mode, order, deviceTransform);
 	}
 	public void* Items25(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsScene_Items25(this.ptr, path, mode);
+		return CQt.QGraphicsScene_Items25((.)this.ptr, path, mode);
 	}
 	public void* Items35(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode, Qt_SortOrder order)
 	{
-		return CQt.QGraphicsScene_Items35(this.ptr, path, mode, order);
+		return CQt.QGraphicsScene_Items35((.)this.ptr, path, mode, order);
 	}
 	public void* Items45(QPainterPath_Ptr* path, Qt_ItemSelectionMode mode, Qt_SortOrder order, QTransform_Ptr* deviceTransform)
 	{
-		return CQt.QGraphicsScene_Items45(this.ptr, path, mode, order, deviceTransform);
+		return CQt.QGraphicsScene_Items45((.)this.ptr, path, mode, order, deviceTransform);
 	}
 	public void* Items7(double x, double y, double w, double h, Qt_ItemSelectionMode mode, Qt_SortOrder order, QTransform_Ptr* deviceTransform)
 	{
-		return CQt.QGraphicsScene_Items7(this.ptr, x, y, w, h, mode, order, deviceTransform);
+		return CQt.QGraphicsScene_Items7((.)this.ptr, x, y, w, h, mode, order, deviceTransform);
 	}
 	public void* CollidingItems2(QGraphicsItem_Ptr* item, Qt_ItemSelectionMode mode)
 	{
-		return CQt.QGraphicsScene_CollidingItems2(this.ptr, item, mode);
+		return CQt.QGraphicsScene_CollidingItems2((.)this.ptr, item, mode);
 	}
 	public void SetSelectionArea22(QPainterPath_Ptr* path, Qt_ItemSelectionOperation selectionOperation)
 	{
-		CQt.QGraphicsScene_SetSelectionArea22(this.ptr, path, selectionOperation);
+		CQt.QGraphicsScene_SetSelectionArea22((.)this.ptr, path, selectionOperation);
 	}
 	public void SetSelectionArea3(QPainterPath_Ptr* path, Qt_ItemSelectionOperation selectionOperation, Qt_ItemSelectionMode mode)
 	{
-		CQt.QGraphicsScene_SetSelectionArea3(this.ptr, path, selectionOperation, mode);
+		CQt.QGraphicsScene_SetSelectionArea3((.)this.ptr, path, selectionOperation, mode);
 	}
 	public void SetSelectionArea4(QPainterPath_Ptr* path, Qt_ItemSelectionOperation selectionOperation, Qt_ItemSelectionMode mode, QTransform_Ptr* deviceTransform)
 	{
-		CQt.QGraphicsScene_SetSelectionArea4(this.ptr, path, selectionOperation, mode, deviceTransform);
+		CQt.QGraphicsScene_SetSelectionArea4((.)this.ptr, path, selectionOperation, mode, deviceTransform);
 	}
 	public QGraphicsEllipseItem_Ptr* AddEllipse22(QRectF_Ptr* rect, QPen_Ptr* pen)
 	{
-		return CQt.QGraphicsScene_AddEllipse22(this.ptr, rect, pen);
+		return CQt.QGraphicsScene_AddEllipse22((.)this.ptr, rect, pen);
 	}
 	public QGraphicsEllipseItem_Ptr* AddEllipse3(QRectF_Ptr* rect, QPen_Ptr* pen, QBrush_Ptr* brush)
 	{
-		return CQt.QGraphicsScene_AddEllipse3(this.ptr, rect, pen, brush);
+		return CQt.QGraphicsScene_AddEllipse3((.)this.ptr, rect, pen, brush);
 	}
 	public QGraphicsLineItem_Ptr* AddLine22(QLineF_Ptr* line, QPen_Ptr* pen)
 	{
-		return CQt.QGraphicsScene_AddLine22(this.ptr, line, pen);
+		return CQt.QGraphicsScene_AddLine22((.)this.ptr, line, pen);
 	}
 	public QGraphicsPathItem_Ptr* AddPath2(QPainterPath_Ptr* path, QPen_Ptr* pen)
 	{
-		return CQt.QGraphicsScene_AddPath2(this.ptr, path, pen);
+		return CQt.QGraphicsScene_AddPath2((.)this.ptr, path, pen);
 	}
 	public QGraphicsPathItem_Ptr* AddPath3(QPainterPath_Ptr* path, QPen_Ptr* pen, QBrush_Ptr* brush)
 	{
-		return CQt.QGraphicsScene_AddPath3(this.ptr, path, pen, brush);
+		return CQt.QGraphicsScene_AddPath3((.)this.ptr, path, pen, brush);
 	}
 	public QGraphicsRectItem_Ptr* AddRect22(QRectF_Ptr* rect, QPen_Ptr* pen)
 	{
-		return CQt.QGraphicsScene_AddRect22(this.ptr, rect, pen);
+		return CQt.QGraphicsScene_AddRect22((.)this.ptr, rect, pen);
 	}
 	public QGraphicsRectItem_Ptr* AddRect3(QRectF_Ptr* rect, QPen_Ptr* pen, QBrush_Ptr* brush)
 	{
-		return CQt.QGraphicsScene_AddRect3(this.ptr, rect, pen, brush);
+		return CQt.QGraphicsScene_AddRect3((.)this.ptr, rect, pen, brush);
 	}
 	public QGraphicsTextItem_Ptr* AddText2(libqt_string* text, QFont_Ptr* font)
 	{
-		return CQt.QGraphicsScene_AddText2(this.ptr, text, font);
+		return CQt.QGraphicsScene_AddText2((.)this.ptr, text, font);
 	}
 	public QGraphicsSimpleTextItem_Ptr* AddSimpleText2(libqt_string* text, QFont_Ptr* font)
 	{
-		return CQt.QGraphicsScene_AddSimpleText2(this.ptr, text, font);
+		return CQt.QGraphicsScene_AddSimpleText2((.)this.ptr, text, font);
 	}
 	public QGraphicsProxyWidget_Ptr* AddWidget2(QWidget_Ptr* widget, void* wFlags)
 	{
-		return CQt.QGraphicsScene_AddWidget2(this.ptr, widget, wFlags);
+		return CQt.QGraphicsScene_AddWidget2((.)this.ptr, widget, wFlags);
 	}
 	public QGraphicsEllipseItem_Ptr* AddEllipse5(double x, double y, double w, double h, QPen_Ptr* pen)
 	{
-		return CQt.QGraphicsScene_AddEllipse5(this.ptr, x, y, w, h, pen);
+		return CQt.QGraphicsScene_AddEllipse5((.)this.ptr, x, y, w, h, pen);
 	}
 	public QGraphicsEllipseItem_Ptr* AddEllipse6(double x, double y, double w, double h, QPen_Ptr* pen, QBrush_Ptr* brush)
 	{
-		return CQt.QGraphicsScene_AddEllipse6(this.ptr, x, y, w, h, pen, brush);
+		return CQt.QGraphicsScene_AddEllipse6((.)this.ptr, x, y, w, h, pen, brush);
 	}
 	public QGraphicsLineItem_Ptr* AddLine5(double x1, double y1, double x2, double y2, QPen_Ptr* pen)
 	{
-		return CQt.QGraphicsScene_AddLine5(this.ptr, x1, y1, x2, y2, pen);
+		return CQt.QGraphicsScene_AddLine5((.)this.ptr, x1, y1, x2, y2, pen);
 	}
 	public QGraphicsRectItem_Ptr* AddRect5(double x, double y, double w, double h, QPen_Ptr* pen)
 	{
-		return CQt.QGraphicsScene_AddRect5(this.ptr, x, y, w, h, pen);
+		return CQt.QGraphicsScene_AddRect5((.)this.ptr, x, y, w, h, pen);
 	}
 	public QGraphicsRectItem_Ptr* AddRect6(double x, double y, double w, double h, QPen_Ptr* pen, QBrush_Ptr* brush)
 	{
-		return CQt.QGraphicsScene_AddRect6(this.ptr, x, y, w, h, pen, brush);
+		return CQt.QGraphicsScene_AddRect6((.)this.ptr, x, y, w, h, pen, brush);
 	}
 	public void SetFocusItem2(QGraphicsItem_Ptr* item, Qt_FocusReason focusReason)
 	{
-		CQt.QGraphicsScene_SetFocusItem2(this.ptr, item, focusReason);
+		CQt.QGraphicsScene_SetFocusItem2((.)this.ptr, item, focusReason);
 	}
 	public void SetFocus1(Qt_FocusReason focusReason)
 	{
-		CQt.QGraphicsScene_SetFocus1(this.ptr, focusReason);
+		CQt.QGraphicsScene_SetFocus1((.)this.ptr, focusReason);
 	}
 	public void Invalidate5(double x, double y, double w, double h, void* layers)
 	{
-		CQt.QGraphicsScene_Invalidate5(this.ptr, x, y, w, h, layers);
+		CQt.QGraphicsScene_Invalidate5((.)this.ptr, x, y, w, h, layers);
 	}
 	public void Update1(QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsScene_Update1(this.ptr, rect);
+		CQt.QGraphicsScene_Update1((.)this.ptr, rect);
 	}
 	public void Invalidate1(QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsScene_Invalidate1(this.ptr, rect);
+		CQt.QGraphicsScene_Invalidate1((.)this.ptr, rect);
 	}
 	public void Invalidate22(QRectF_Ptr* rect, void* layers)
 	{
-		CQt.QGraphicsScene_Invalidate22(this.ptr, rect, layers);
+		CQt.QGraphicsScene_Invalidate22((.)this.ptr, rect, layers);
+	}
+	public libqt_string ObjectName()
+	{
+		return CQt.QObject_ObjectName((.)this.ptr);
+	}
+	public void SetObjectName(QAnyStringView_Ptr name)
+	{
+		CQt.QObject_SetObjectName((.)this.ptr, name);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.ptr, b);
+	}
+	public QThread_Ptr* Thread()
+	{
+		return CQt.QObject_Thread((.)this.ptr);
+	}
+	public void MoveToThread(QThread_Ptr* thread)
+	{
+		CQt.QObject_MoveToThread((.)this.ptr, thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.ptr);
+	}
+	public void SetParent(QObject_Ptr* parent)
+	{
+		CQt.QObject_SetParent((.)this.ptr, parent);
+	}
+	public void InstallEventFilter(QObject_Ptr* filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+	}
+	public void RemoveEventFilter(QObject_Ptr* obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+	}
+	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	{
+		return CQt.QObject_Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	{
+		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+	}
+	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	{
+		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.ptr);
+	}
+	public bool Disconnect4(QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+	}
+	public bool Disconnect5(QMetaObject_Connection* param1)
+	{
+		return CQt.QObject_Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.ptr);
+	}
+	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	{
+		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return CQt.QObject_Property((.)this.ptr, name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage()
+	{
+		return CQt.QObject_BindingStorage((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage2()
+	{
+		return CQt.QObject_BindingStorage2((.)this.ptr);
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.ptr);
+	}
+	public QObject_Ptr* Parent()
+	{
+		return CQt.QObject_Parent((.)this.ptr);
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.ptr);
+	}
+	public QObject_Ptr* Sender()
+	{
+		return CQt.QObject_Sender((.)this.ptr);
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.ptr, signal);
+	}
+	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+	}
+	public void TimerEvent(QTimerEvent_Ptr* event)
+	{
+		CQt.QObject_TimerEvent((.)this.ptr, event);
+	}
+	public void ChildEvent(QChildEvent_Ptr* event)
+	{
+		CQt.QObject_ChildEvent((.)this.ptr, event);
+	}
+	public void CustomEvent(QEvent_Ptr* event)
+	{
+		CQt.QObject_CustomEvent((.)this.ptr, event);
+	}
+	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+	}
+	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+	}
+	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+	}
+	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+	}
+	public void Destroyed1(QObject_Ptr* param1)
+	{
+		CQt.QObject_Destroyed1((.)this.ptr, param1);
 	}
 }
 interface IQGraphicsScene

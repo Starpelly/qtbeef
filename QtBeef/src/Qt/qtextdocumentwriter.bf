@@ -66,35 +66,35 @@ class QTextDocumentWriter
 	}
 	public void SetFormat(void** format)
 	{
-		CQt.QTextDocumentWriter_SetFormat(this.ptr, format);
+		CQt.QTextDocumentWriter_SetFormat((.)this.ptr, format);
 	}
 	public void* Format()
 	{
-		return CQt.QTextDocumentWriter_Format(this.ptr);
+		return CQt.QTextDocumentWriter_Format((.)this.ptr);
 	}
 	public void SetDevice(QIODevice_Ptr* device)
 	{
-		CQt.QTextDocumentWriter_SetDevice(this.ptr, device);
+		CQt.QTextDocumentWriter_SetDevice((.)this.ptr, device);
 	}
 	public QIODevice_Ptr* Device()
 	{
-		return CQt.QTextDocumentWriter_Device(this.ptr);
+		return CQt.QTextDocumentWriter_Device((.)this.ptr);
 	}
 	public void SetFileName(libqt_string* fileName)
 	{
-		CQt.QTextDocumentWriter_SetFileName(this.ptr, fileName);
+		CQt.QTextDocumentWriter_SetFileName((.)this.ptr, fileName);
 	}
 	public libqt_string FileName()
 	{
-		return CQt.QTextDocumentWriter_FileName(this.ptr);
+		return CQt.QTextDocumentWriter_FileName((.)this.ptr);
 	}
 	public bool Write(QTextDocument_Ptr* document)
 	{
-		return CQt.QTextDocumentWriter_Write(this.ptr, document);
+		return CQt.QTextDocumentWriter_Write((.)this.ptr, document);
 	}
 	public bool Write2(QTextDocumentFragment_Ptr* fragment)
 	{
-		return CQt.QTextDocumentWriter_Write2(this.ptr, fragment);
+		return CQt.QTextDocumentWriter_Write2((.)this.ptr, fragment);
 	}
 	public void* SupportedDocumentFormats()
 	{

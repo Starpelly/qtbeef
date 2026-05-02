@@ -150,15 +150,15 @@ class QKeySequence
 	}
 	public c_int Count()
 	{
-		return CQt.QKeySequence_Count(this.ptr);
+		return CQt.QKeySequence_Count((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QKeySequence_IsEmpty(this.ptr);
+		return CQt.QKeySequence_IsEmpty((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QKeySequence_ToString(this.ptr);
+		return CQt.QKeySequence_ToString((.)this.ptr);
 	}
 	public QKeySequence_Ptr FromString(libqt_string* str)
 	{
@@ -174,7 +174,7 @@ class QKeySequence
 	}
 	public QKeySequence_SequenceMatch Matches(QKeySequence_Ptr* seq)
 	{
-		return CQt.QKeySequence_Matches(this.ptr, seq);
+		return CQt.QKeySequence_Matches((.)this.ptr, seq);
 	}
 	public QKeySequence_Ptr Mnemonic(libqt_string* text)
 	{
@@ -186,15 +186,15 @@ class QKeySequence
 	}
 	public void Swap(QKeySequence_Ptr* other)
 	{
-		CQt.QKeySequence_Swap(this.ptr, other);
+		CQt.QKeySequence_Swap((.)this.ptr, other);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QKeySequence_IsDetached(this.ptr);
+		return CQt.QKeySequence_IsDetached((.)this.ptr);
 	}
 	public libqt_string ToString1(QKeySequence_SequenceFormat format)
 	{
-		return CQt.QKeySequence_ToString1(this.ptr, format);
+		return CQt.QKeySequence_ToString1((.)this.ptr, format);
 	}
 	public QKeySequence_Ptr FromString2(libqt_string* str, QKeySequence_SequenceFormat format)
 	{

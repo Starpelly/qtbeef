@@ -96,107 +96,107 @@ class QCommandLineParser
 	}
 	public void SetSingleDashWordOptionMode(QCommandLineParser_SingleDashWordOptionMode parsingMode)
 	{
-		CQt.QCommandLineParser_SetSingleDashWordOptionMode(this.ptr, parsingMode);
+		CQt.QCommandLineParser_SetSingleDashWordOptionMode((.)this.ptr, parsingMode);
 	}
 	public void SetOptionsAfterPositionalArgumentsMode(QCommandLineParser_OptionsAfterPositionalArgumentsMode mode)
 	{
-		CQt.QCommandLineParser_SetOptionsAfterPositionalArgumentsMode(this.ptr, mode);
+		CQt.QCommandLineParser_SetOptionsAfterPositionalArgumentsMode((.)this.ptr, mode);
 	}
 	public bool AddOption(QCommandLineOption_Ptr* commandLineOption)
 	{
-		return CQt.QCommandLineParser_AddOption(this.ptr, commandLineOption);
+		return CQt.QCommandLineParser_AddOption((.)this.ptr, commandLineOption);
 	}
 	public bool AddOptions(void** options)
 	{
-		return CQt.QCommandLineParser_AddOptions(this.ptr, options);
+		return CQt.QCommandLineParser_AddOptions((.)this.ptr, options);
 	}
 	public QCommandLineOption_Ptr AddVersionOption()
 	{
-		return CQt.QCommandLineParser_AddVersionOption(this.ptr);
+		return CQt.QCommandLineParser_AddVersionOption((.)this.ptr);
 	}
 	public QCommandLineOption_Ptr AddHelpOption()
 	{
-		return CQt.QCommandLineParser_AddHelpOption(this.ptr);
+		return CQt.QCommandLineParser_AddHelpOption((.)this.ptr);
 	}
 	public void SetApplicationDescription(libqt_string* description)
 	{
-		CQt.QCommandLineParser_SetApplicationDescription(this.ptr, description);
+		CQt.QCommandLineParser_SetApplicationDescription((.)this.ptr, description);
 	}
 	public libqt_string ApplicationDescription()
 	{
-		return CQt.QCommandLineParser_ApplicationDescription(this.ptr);
+		return CQt.QCommandLineParser_ApplicationDescription((.)this.ptr);
 	}
 	public void AddPositionalArgument(libqt_string* name, libqt_string* description)
 	{
-		CQt.QCommandLineParser_AddPositionalArgument(this.ptr, name, description);
+		CQt.QCommandLineParser_AddPositionalArgument((.)this.ptr, name, description);
 	}
 	public void ClearPositionalArguments()
 	{
-		CQt.QCommandLineParser_ClearPositionalArguments(this.ptr);
+		CQt.QCommandLineParser_ClearPositionalArguments((.)this.ptr);
 	}
 	public void Process(void** arguments)
 	{
-		CQt.QCommandLineParser_Process(this.ptr, arguments);
+		CQt.QCommandLineParser_Process((.)this.ptr, arguments);
 	}
 	public void Process2(QCoreApplication_Ptr* app)
 	{
-		CQt.QCommandLineParser_Process2(this.ptr, app);
+		CQt.QCommandLineParser_Process2((.)this.ptr, app);
 	}
 	public bool Parse(void** arguments)
 	{
-		return CQt.QCommandLineParser_Parse(this.ptr, arguments);
+		return CQt.QCommandLineParser_Parse((.)this.ptr, arguments);
 	}
 	public libqt_string ErrorText()
 	{
-		return CQt.QCommandLineParser_ErrorText(this.ptr);
+		return CQt.QCommandLineParser_ErrorText((.)this.ptr);
 	}
 	public bool IsSet(libqt_string* name)
 	{
-		return CQt.QCommandLineParser_IsSet(this.ptr, name);
+		return CQt.QCommandLineParser_IsSet((.)this.ptr, name);
 	}
 	public libqt_string Value(libqt_string* name)
 	{
-		return CQt.QCommandLineParser_Value(this.ptr, name);
+		return CQt.QCommandLineParser_Value((.)this.ptr, name);
 	}
 	public void* Values(libqt_string* name)
 	{
-		return CQt.QCommandLineParser_Values(this.ptr, name);
+		return CQt.QCommandLineParser_Values((.)this.ptr, name);
 	}
 	public bool IsSet2(QCommandLineOption_Ptr* option)
 	{
-		return CQt.QCommandLineParser_IsSet2(this.ptr, option);
+		return CQt.QCommandLineParser_IsSet2((.)this.ptr, option);
 	}
 	public libqt_string Value2(QCommandLineOption_Ptr* option)
 	{
-		return CQt.QCommandLineParser_Value2(this.ptr, option);
+		return CQt.QCommandLineParser_Value2((.)this.ptr, option);
 	}
 	public void* Values2(QCommandLineOption_Ptr* option)
 	{
-		return CQt.QCommandLineParser_Values2(this.ptr, option);
+		return CQt.QCommandLineParser_Values2((.)this.ptr, option);
 	}
 	public void* PositionalArguments()
 	{
-		return CQt.QCommandLineParser_PositionalArguments(this.ptr);
+		return CQt.QCommandLineParser_PositionalArguments((.)this.ptr);
 	}
 	public void* OptionNames()
 	{
-		return CQt.QCommandLineParser_OptionNames(this.ptr);
+		return CQt.QCommandLineParser_OptionNames((.)this.ptr);
 	}
 	public void* UnknownOptionNames()
 	{
-		return CQt.QCommandLineParser_UnknownOptionNames(this.ptr);
+		return CQt.QCommandLineParser_UnknownOptionNames((.)this.ptr);
 	}
 	public void ShowVersion()
 	{
-		CQt.QCommandLineParser_ShowVersion(this.ptr);
+		CQt.QCommandLineParser_ShowVersion((.)this.ptr);
 	}
 	public void ShowHelp()
 	{
-		CQt.QCommandLineParser_ShowHelp(this.ptr);
+		CQt.QCommandLineParser_ShowHelp((.)this.ptr);
 	}
 	public libqt_string HelpText()
 	{
-		return CQt.QCommandLineParser_HelpText(this.ptr);
+		return CQt.QCommandLineParser_HelpText((.)this.ptr);
 	}
 	public libqt_string Tr2(c_char* sourceText, c_char* disambiguation)
 	{
@@ -208,11 +208,11 @@ class QCommandLineParser
 	}
 	public void AddPositionalArgument3(libqt_string* name, libqt_string* description, libqt_string* syntax)
 	{
-		CQt.QCommandLineParser_AddPositionalArgument3(this.ptr, name, description, syntax);
+		CQt.QCommandLineParser_AddPositionalArgument3((.)this.ptr, name, description, syntax);
 	}
 	public void ShowHelp1(c_int exitCode)
 	{
-		CQt.QCommandLineParser_ShowHelp1(this.ptr, exitCode);
+		CQt.QCommandLineParser_ShowHelp1((.)this.ptr, exitCode);
 	}
 }
 interface IQCommandLineParser

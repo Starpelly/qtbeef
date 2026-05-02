@@ -60,19 +60,19 @@ class QTileRules
 	}
 	public Qt_TileRule Horizontal()
 	{
-		return CQt.QTileRules_Horizontal(this.ptr);
+		return CQt.QTileRules_Horizontal((.)this.ptr);
 	}
 	public void SetHorizontal(Qt_TileRule horizontal)
 	{
-		CQt.QTileRules_SetHorizontal(this.ptr, horizontal);
+		CQt.QTileRules_SetHorizontal((.)this.ptr, horizontal);
 	}
 	public Qt_TileRule Vertical()
 	{
-		return CQt.QTileRules_Vertical(this.ptr);
+		return CQt.QTileRules_Vertical((.)this.ptr);
 	}
 	public void SetVertical(Qt_TileRule vertical)
 	{
-		CQt.QTileRules_SetVertical(this.ptr, vertical);
+		CQt.QTileRules_SetVertical((.)this.ptr, vertical);
 	}
 }
 interface IQTileRules

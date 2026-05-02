@@ -70,27 +70,27 @@ class QByteArrayMatcher
 	}
 	public void SetPattern(void** pattern)
 	{
-		CQt.QByteArrayMatcher_SetPattern(this.ptr, pattern);
+		CQt.QByteArrayMatcher_SetPattern((.)this.ptr, pattern);
 	}
 	public void* IndexIn(c_char* str, void* lenVal)
 	{
-		return CQt.QByteArrayMatcher_IndexIn(this.ptr, str, lenVal);
+		return CQt.QByteArrayMatcher_IndexIn((.)this.ptr, str, lenVal);
 	}
 	public void* IndexIn2(void* data)
 	{
-		return CQt.QByteArrayMatcher_IndexIn2(this.ptr, data);
+		return CQt.QByteArrayMatcher_IndexIn2((.)this.ptr, data);
 	}
 	public void* Pattern()
 	{
-		return CQt.QByteArrayMatcher_Pattern(this.ptr);
+		return CQt.QByteArrayMatcher_Pattern((.)this.ptr);
 	}
 	public void* IndexIn3(c_char* str, void* lenVal, void* from)
 	{
-		return CQt.QByteArrayMatcher_IndexIn3(this.ptr, str, lenVal, from);
+		return CQt.QByteArrayMatcher_IndexIn3((.)this.ptr, str, lenVal, from);
 	}
 	public void* IndexIn22(void* data, void* from)
 	{
-		return CQt.QByteArrayMatcher_IndexIn22(this.ptr, data, from);
+		return CQt.QByteArrayMatcher_IndexIn22((.)this.ptr, data, from);
 	}
 }
 interface IQByteArrayMatcher

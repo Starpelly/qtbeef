@@ -142,139 +142,139 @@ class QRawFont
 	}
 	public void Swap(QRawFont_Ptr* other)
 	{
-		CQt.QRawFont_Swap(this.ptr, other);
+		CQt.QRawFont_Swap((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QRawFont_IsValid(this.ptr);
+		return CQt.QRawFont_IsValid((.)this.ptr);
 	}
 	public libqt_string FamilyName()
 	{
-		return CQt.QRawFont_FamilyName(this.ptr);
+		return CQt.QRawFont_FamilyName((.)this.ptr);
 	}
 	public libqt_string StyleName()
 	{
-		return CQt.QRawFont_StyleName(this.ptr);
+		return CQt.QRawFont_StyleName((.)this.ptr);
 	}
 	public QFont_Style Style()
 	{
-		return CQt.QRawFont_Style(this.ptr);
+		return CQt.QRawFont_Style((.)this.ptr);
 	}
 	public c_int Weight()
 	{
-		return CQt.QRawFont_Weight(this.ptr);
+		return CQt.QRawFont_Weight((.)this.ptr);
 	}
 	public void* GlyphIndexesForString(libqt_string* text)
 	{
-		return CQt.QRawFont_GlyphIndexesForString(this.ptr, text);
+		return CQt.QRawFont_GlyphIndexesForString((.)this.ptr, text);
 	}
 	public void* AdvancesForGlyphIndexes(void** glyphIndexes)
 	{
-		return CQt.QRawFont_AdvancesForGlyphIndexes(this.ptr, glyphIndexes);
+		return CQt.QRawFont_AdvancesForGlyphIndexes((.)this.ptr, glyphIndexes);
 	}
 	public void* AdvancesForGlyphIndexes2(void** glyphIndexes, void* layoutFlags)
 	{
-		return CQt.QRawFont_AdvancesForGlyphIndexes2(this.ptr, glyphIndexes, layoutFlags);
+		return CQt.QRawFont_AdvancesForGlyphIndexes2((.)this.ptr, glyphIndexes, layoutFlags);
 	}
 	public bool GlyphIndexesForChars(QChar_Ptr* chars, c_int numChars, c_uint* glyphIndexes, c_int* numGlyphs)
 	{
-		return CQt.QRawFont_GlyphIndexesForChars(this.ptr, chars, numChars, glyphIndexes, numGlyphs);
+		return CQt.QRawFont_GlyphIndexesForChars((.)this.ptr, chars, numChars, glyphIndexes, numGlyphs);
 	}
 	public bool AdvancesForGlyphIndexes3(c_uint* glyphIndexes, QPointF_Ptr* advances, c_int numGlyphs)
 	{
-		return CQt.QRawFont_AdvancesForGlyphIndexes3(this.ptr, glyphIndexes, advances, numGlyphs);
+		return CQt.QRawFont_AdvancesForGlyphIndexes3((.)this.ptr, glyphIndexes, advances, numGlyphs);
 	}
 	public bool AdvancesForGlyphIndexes4(c_uint* glyphIndexes, QPointF_Ptr* advances, c_int numGlyphs, void* layoutFlags)
 	{
-		return CQt.QRawFont_AdvancesForGlyphIndexes4(this.ptr, glyphIndexes, advances, numGlyphs, layoutFlags);
+		return CQt.QRawFont_AdvancesForGlyphIndexes4((.)this.ptr, glyphIndexes, advances, numGlyphs, layoutFlags);
 	}
 	public QImage_Ptr AlphaMapForGlyph(c_uint glyphIndex)
 	{
-		return CQt.QRawFont_AlphaMapForGlyph(this.ptr, glyphIndex);
+		return CQt.QRawFont_AlphaMapForGlyph((.)this.ptr, glyphIndex);
 	}
 	public QPainterPath_Ptr PathForGlyph(c_uint glyphIndex)
 	{
-		return CQt.QRawFont_PathForGlyph(this.ptr, glyphIndex);
+		return CQt.QRawFont_PathForGlyph((.)this.ptr, glyphIndex);
 	}
 	public QRectF_Ptr BoundingRect(c_uint glyphIndex)
 	{
-		return CQt.QRawFont_BoundingRect(this.ptr, glyphIndex);
+		return CQt.QRawFont_BoundingRect((.)this.ptr, glyphIndex);
 	}
 	public void SetPixelSize(double pixelSize)
 	{
-		CQt.QRawFont_SetPixelSize(this.ptr, pixelSize);
+		CQt.QRawFont_SetPixelSize((.)this.ptr, pixelSize);
 	}
 	public double PixelSize()
 	{
-		return CQt.QRawFont_PixelSize(this.ptr);
+		return CQt.QRawFont_PixelSize((.)this.ptr);
 	}
 	public QFont_HintingPreference HintingPreference()
 	{
-		return CQt.QRawFont_HintingPreference(this.ptr);
+		return CQt.QRawFont_HintingPreference((.)this.ptr);
 	}
 	public double Ascent()
 	{
-		return CQt.QRawFont_Ascent(this.ptr);
+		return CQt.QRawFont_Ascent((.)this.ptr);
 	}
 	public double CapHeight()
 	{
-		return CQt.QRawFont_CapHeight(this.ptr);
+		return CQt.QRawFont_CapHeight((.)this.ptr);
 	}
 	public double Descent()
 	{
-		return CQt.QRawFont_Descent(this.ptr);
+		return CQt.QRawFont_Descent((.)this.ptr);
 	}
 	public double Leading()
 	{
-		return CQt.QRawFont_Leading(this.ptr);
+		return CQt.QRawFont_Leading((.)this.ptr);
 	}
 	public double XHeight()
 	{
-		return CQt.QRawFont_XHeight(this.ptr);
+		return CQt.QRawFont_XHeight((.)this.ptr);
 	}
 	public double AverageCharWidth()
 	{
-		return CQt.QRawFont_AverageCharWidth(this.ptr);
+		return CQt.QRawFont_AverageCharWidth((.)this.ptr);
 	}
 	public double MaxCharWidth()
 	{
-		return CQt.QRawFont_MaxCharWidth(this.ptr);
+		return CQt.QRawFont_MaxCharWidth((.)this.ptr);
 	}
 	public double LineThickness()
 	{
-		return CQt.QRawFont_LineThickness(this.ptr);
+		return CQt.QRawFont_LineThickness((.)this.ptr);
 	}
 	public double UnderlinePosition()
 	{
-		return CQt.QRawFont_UnderlinePosition(this.ptr);
+		return CQt.QRawFont_UnderlinePosition((.)this.ptr);
 	}
 	public double UnitsPerEm()
 	{
-		return CQt.QRawFont_UnitsPerEm(this.ptr);
+		return CQt.QRawFont_UnitsPerEm((.)this.ptr);
 	}
 	public void LoadFromFile(libqt_string* fileName, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
-		CQt.QRawFont_LoadFromFile(this.ptr, fileName, pixelSize, hintingPreference);
+		CQt.QRawFont_LoadFromFile((.)this.ptr, fileName, pixelSize, hintingPreference);
 	}
 	public void LoadFromData(void** fontData, double pixelSize, QFont_HintingPreference hintingPreference)
 	{
-		CQt.QRawFont_LoadFromData(this.ptr, fontData, pixelSize, hintingPreference);
+		CQt.QRawFont_LoadFromData((.)this.ptr, fontData, pixelSize, hintingPreference);
 	}
 	public bool SupportsCharacter(c_uint ucs4)
 	{
-		return CQt.QRawFont_SupportsCharacter(this.ptr, ucs4);
+		return CQt.QRawFont_SupportsCharacter((.)this.ptr, ucs4);
 	}
 	public bool SupportsCharacter2(QChar_Ptr character)
 	{
-		return CQt.QRawFont_SupportsCharacter2(this.ptr, character);
+		return CQt.QRawFont_SupportsCharacter2((.)this.ptr, character);
 	}
 	public void* SupportedWritingSystems()
 	{
-		return CQt.QRawFont_SupportedWritingSystems(this.ptr);
+		return CQt.QRawFont_SupportedWritingSystems((.)this.ptr);
 	}
 	public void* FontTable(c_char* tagName)
 	{
-		return CQt.QRawFont_FontTable(this.ptr, tagName);
+		return CQt.QRawFont_FontTable((.)this.ptr, tagName);
 	}
 	public QRawFont_Ptr FromFont(QFont_Ptr* font)
 	{
@@ -282,11 +282,11 @@ class QRawFont
 	}
 	public QImage_Ptr AlphaMapForGlyph2(c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType)
 	{
-		return CQt.QRawFont_AlphaMapForGlyph2(this.ptr, glyphIndex, antialiasingType);
+		return CQt.QRawFont_AlphaMapForGlyph2((.)this.ptr, glyphIndex, antialiasingType);
 	}
 	public QImage_Ptr AlphaMapForGlyph3(c_uint glyphIndex, QRawFont_AntialiasingType antialiasingType, QTransform_Ptr* transform)
 	{
-		return CQt.QRawFont_AlphaMapForGlyph3(this.ptr, glyphIndex, antialiasingType, transform);
+		return CQt.QRawFont_AlphaMapForGlyph3((.)this.ptr, glyphIndex, antialiasingType, transform);
 	}
 	public QRawFont_Ptr FromFont2(QFont_Ptr* font, QFontDatabase_WritingSystem writingSystem)
 	{

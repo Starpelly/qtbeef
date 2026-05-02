@@ -100,55 +100,55 @@ class QRegularExpression
 	}
 	public void* PatternOptions()
 	{
-		return CQt.QRegularExpression_PatternOptions(this.ptr);
+		return CQt.QRegularExpression_PatternOptions((.)this.ptr);
 	}
 	public void SetPatternOptions(void* options)
 	{
-		CQt.QRegularExpression_SetPatternOptions(this.ptr, options);
+		CQt.QRegularExpression_SetPatternOptions((.)this.ptr, options);
 	}
 	public void Swap(QRegularExpression_Ptr* other)
 	{
-		CQt.QRegularExpression_Swap(this.ptr, other);
+		CQt.QRegularExpression_Swap((.)this.ptr, other);
 	}
 	public libqt_string Pattern()
 	{
-		return CQt.QRegularExpression_Pattern(this.ptr);
+		return CQt.QRegularExpression_Pattern((.)this.ptr);
 	}
 	public void SetPattern(libqt_string* pattern)
 	{
-		CQt.QRegularExpression_SetPattern(this.ptr, pattern);
+		CQt.QRegularExpression_SetPattern((.)this.ptr, pattern);
 	}
 	public bool IsValid()
 	{
-		return CQt.QRegularExpression_IsValid(this.ptr);
+		return CQt.QRegularExpression_IsValid((.)this.ptr);
 	}
 	public void* PatternErrorOffset()
 	{
-		return CQt.QRegularExpression_PatternErrorOffset(this.ptr);
+		return CQt.QRegularExpression_PatternErrorOffset((.)this.ptr);
 	}
 	public libqt_string ErrorString()
 	{
-		return CQt.QRegularExpression_ErrorString(this.ptr);
+		return CQt.QRegularExpression_ErrorString((.)this.ptr);
 	}
 	public c_int CaptureCount()
 	{
-		return CQt.QRegularExpression_CaptureCount(this.ptr);
+		return CQt.QRegularExpression_CaptureCount((.)this.ptr);
 	}
 	public void* NamedCaptureGroups()
 	{
-		return CQt.QRegularExpression_NamedCaptureGroups(this.ptr);
+		return CQt.QRegularExpression_NamedCaptureGroups((.)this.ptr);
 	}
 	public QRegularExpressionMatch_Ptr Match(libqt_string* subject)
 	{
-		return CQt.QRegularExpression_Match(this.ptr, subject);
+		return CQt.QRegularExpression_Match((.)this.ptr, subject);
 	}
 	public QRegularExpressionMatchIterator_Ptr GlobalMatch(libqt_string* subject)
 	{
-		return CQt.QRegularExpression_GlobalMatch(this.ptr, subject);
+		return CQt.QRegularExpression_GlobalMatch((.)this.ptr, subject);
 	}
 	public void Optimize()
 	{
-		CQt.QRegularExpression_Optimize(this.ptr);
+		CQt.QRegularExpression_Optimize((.)this.ptr);
 	}
 	public libqt_string Escape(libqt_string* str)
 	{
@@ -164,27 +164,27 @@ class QRegularExpression
 	}
 	public QRegularExpressionMatch_Ptr Match22(libqt_string* subject, void* offset)
 	{
-		return CQt.QRegularExpression_Match22(this.ptr, subject, offset);
+		return CQt.QRegularExpression_Match22((.)this.ptr, subject, offset);
 	}
 	public QRegularExpressionMatch_Ptr Match3(libqt_string* subject, void* offset, QRegularExpression_MatchType matchType)
 	{
-		return CQt.QRegularExpression_Match3(this.ptr, subject, offset, matchType);
+		return CQt.QRegularExpression_Match3((.)this.ptr, subject, offset, matchType);
 	}
 	public QRegularExpressionMatch_Ptr Match4(libqt_string* subject, void* offset, QRegularExpression_MatchType matchType, void* matchOptions)
 	{
-		return CQt.QRegularExpression_Match4(this.ptr, subject, offset, matchType, matchOptions);
+		return CQt.QRegularExpression_Match4((.)this.ptr, subject, offset, matchType, matchOptions);
 	}
 	public QRegularExpressionMatchIterator_Ptr GlobalMatch22(libqt_string* subject, void* offset)
 	{
-		return CQt.QRegularExpression_GlobalMatch22(this.ptr, subject, offset);
+		return CQt.QRegularExpression_GlobalMatch22((.)this.ptr, subject, offset);
 	}
 	public QRegularExpressionMatchIterator_Ptr GlobalMatch3(libqt_string* subject, void* offset, QRegularExpression_MatchType matchType)
 	{
-		return CQt.QRegularExpression_GlobalMatch3(this.ptr, subject, offset, matchType);
+		return CQt.QRegularExpression_GlobalMatch3((.)this.ptr, subject, offset, matchType);
 	}
 	public QRegularExpressionMatchIterator_Ptr GlobalMatch4(libqt_string* subject, void* offset, QRegularExpression_MatchType matchType, void* matchOptions)
 	{
-		return CQt.QRegularExpression_GlobalMatch4(this.ptr, subject, offset, matchType, matchOptions);
+		return CQt.QRegularExpression_GlobalMatch4((.)this.ptr, subject, offset, matchType, matchOptions);
 	}
 	public libqt_string WildcardToRegularExpression22(libqt_string* str, void* options)
 	{
@@ -298,95 +298,95 @@ class QRegularExpressionMatch
 	}
 	public void Swap(QRegularExpressionMatch_Ptr* other)
 	{
-		CQt.QRegularExpressionMatch_Swap(this.ptr, other);
+		CQt.QRegularExpressionMatch_Swap((.)this.ptr, other);
 	}
 	public QRegularExpression_Ptr RegularExpression()
 	{
-		return CQt.QRegularExpressionMatch_RegularExpression(this.ptr);
+		return CQt.QRegularExpressionMatch_RegularExpression((.)this.ptr);
 	}
 	public QRegularExpression_MatchType MatchType()
 	{
-		return CQt.QRegularExpressionMatch_MatchType(this.ptr);
+		return CQt.QRegularExpressionMatch_MatchType((.)this.ptr);
 	}
 	public void* MatchOptions()
 	{
-		return CQt.QRegularExpressionMatch_MatchOptions(this.ptr);
+		return CQt.QRegularExpressionMatch_MatchOptions((.)this.ptr);
 	}
 	public bool HasMatch()
 	{
-		return CQt.QRegularExpressionMatch_HasMatch(this.ptr);
+		return CQt.QRegularExpressionMatch_HasMatch((.)this.ptr);
 	}
 	public bool HasPartialMatch()
 	{
-		return CQt.QRegularExpressionMatch_HasPartialMatch(this.ptr);
+		return CQt.QRegularExpressionMatch_HasPartialMatch((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QRegularExpressionMatch_IsValid(this.ptr);
+		return CQt.QRegularExpressionMatch_IsValid((.)this.ptr);
 	}
 	public c_int LastCapturedIndex()
 	{
-		return CQt.QRegularExpressionMatch_LastCapturedIndex(this.ptr);
+		return CQt.QRegularExpressionMatch_LastCapturedIndex((.)this.ptr);
 	}
 	public bool HasCaptured(libqt_string* name)
 	{
-		return CQt.QRegularExpressionMatch_HasCaptured(this.ptr, name);
+		return CQt.QRegularExpressionMatch_HasCaptured((.)this.ptr, name);
 	}
 	public bool HasCaptured3(c_int nth)
 	{
-		return CQt.QRegularExpressionMatch_HasCaptured3(this.ptr, nth);
+		return CQt.QRegularExpressionMatch_HasCaptured3((.)this.ptr, nth);
 	}
 	public libqt_string Captured()
 	{
-		return CQt.QRegularExpressionMatch_Captured(this.ptr);
+		return CQt.QRegularExpressionMatch_Captured((.)this.ptr);
 	}
 	public libqt_string Captured2(libqt_string* name)
 	{
-		return CQt.QRegularExpressionMatch_Captured2(this.ptr, name);
+		return CQt.QRegularExpressionMatch_Captured2((.)this.ptr, name);
 	}
 	public void* CapturedTexts()
 	{
-		return CQt.QRegularExpressionMatch_CapturedTexts(this.ptr);
+		return CQt.QRegularExpressionMatch_CapturedTexts((.)this.ptr);
 	}
 	public void* CapturedStart()
 	{
-		return CQt.QRegularExpressionMatch_CapturedStart(this.ptr);
+		return CQt.QRegularExpressionMatch_CapturedStart((.)this.ptr);
 	}
 	public void* CapturedLength()
 	{
-		return CQt.QRegularExpressionMatch_CapturedLength(this.ptr);
+		return CQt.QRegularExpressionMatch_CapturedLength((.)this.ptr);
 	}
 	public void* CapturedEnd()
 	{
-		return CQt.QRegularExpressionMatch_CapturedEnd(this.ptr);
+		return CQt.QRegularExpressionMatch_CapturedEnd((.)this.ptr);
 	}
 	public void* CapturedStart2(libqt_string* name)
 	{
-		return CQt.QRegularExpressionMatch_CapturedStart2(this.ptr, name);
+		return CQt.QRegularExpressionMatch_CapturedStart2((.)this.ptr, name);
 	}
 	public void* CapturedLength2(libqt_string* name)
 	{
-		return CQt.QRegularExpressionMatch_CapturedLength2(this.ptr, name);
+		return CQt.QRegularExpressionMatch_CapturedLength2((.)this.ptr, name);
 	}
 	public void* CapturedEnd2(libqt_string* name)
 	{
-		return CQt.QRegularExpressionMatch_CapturedEnd2(this.ptr, name);
+		return CQt.QRegularExpressionMatch_CapturedEnd2((.)this.ptr, name);
 	}
 	public libqt_string Captured1(c_int nth)
 	{
-		return CQt.QRegularExpressionMatch_Captured1(this.ptr, nth);
+		return CQt.QRegularExpressionMatch_Captured1((.)this.ptr, nth);
 	}
 	public void* CapturedStart1(c_int nth)
 	{
-		return CQt.QRegularExpressionMatch_CapturedStart1(this.ptr, nth);
+		return CQt.QRegularExpressionMatch_CapturedStart1((.)this.ptr, nth);
 	}
 	public void* CapturedLength1(c_int nth)
 	{
-		return CQt.QRegularExpressionMatch_CapturedLength1(this.ptr, nth);
+		return CQt.QRegularExpressionMatch_CapturedLength1((.)this.ptr, nth);
 	}
 	public void* CapturedEnd1(c_int nth)
 	{
-		return CQt.QRegularExpressionMatch_CapturedEnd1(this.ptr, nth);
+		return CQt.QRegularExpressionMatch_CapturedEnd1((.)this.ptr, nth);
 	}
 }
 interface IQRegularExpressionMatch
@@ -466,35 +466,35 @@ class QRegularExpressionMatchIterator
 	}
 	public void Swap(QRegularExpressionMatchIterator_Ptr* other)
 	{
-		CQt.QRegularExpressionMatchIterator_Swap(this.ptr, other);
+		CQt.QRegularExpressionMatchIterator_Swap((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QRegularExpressionMatchIterator_IsValid(this.ptr);
+		return CQt.QRegularExpressionMatchIterator_IsValid((.)this.ptr);
 	}
 	public bool HasNext()
 	{
-		return CQt.QRegularExpressionMatchIterator_HasNext(this.ptr);
+		return CQt.QRegularExpressionMatchIterator_HasNext((.)this.ptr);
 	}
 	public QRegularExpressionMatch_Ptr Next()
 	{
-		return CQt.QRegularExpressionMatchIterator_Next(this.ptr);
+		return CQt.QRegularExpressionMatchIterator_Next((.)this.ptr);
 	}
 	public QRegularExpressionMatch_Ptr PeekNext()
 	{
-		return CQt.QRegularExpressionMatchIterator_PeekNext(this.ptr);
+		return CQt.QRegularExpressionMatchIterator_PeekNext((.)this.ptr);
 	}
 	public QRegularExpression_Ptr RegularExpression()
 	{
-		return CQt.QRegularExpressionMatchIterator_RegularExpression(this.ptr);
+		return CQt.QRegularExpressionMatchIterator_RegularExpression((.)this.ptr);
 	}
 	public QRegularExpression_MatchType MatchType()
 	{
-		return CQt.QRegularExpressionMatchIterator_MatchType(this.ptr);
+		return CQt.QRegularExpressionMatchIterator_MatchType((.)this.ptr);
 	}
 	public void* MatchOptions()
 	{
-		return CQt.QRegularExpressionMatchIterator_MatchOptions(this.ptr);
+		return CQt.QRegularExpressionMatchIterator_MatchOptions((.)this.ptr);
 	}
 }
 interface IQRegularExpressionMatchIterator

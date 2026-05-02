@@ -98,103 +98,287 @@ class QGraphicsLinearLayout
 	}
 	public void SetOrientation(Qt_Orientation orientation)
 	{
-		CQt.QGraphicsLinearLayout_SetOrientation(this.ptr, orientation);
+		CQt.QGraphicsLinearLayout_SetOrientation((.)this.ptr, orientation);
 	}
 	public Qt_Orientation Orientation()
 	{
-		return CQt.QGraphicsLinearLayout_Orientation(this.ptr);
+		return CQt.QGraphicsLinearLayout_Orientation((.)this.ptr);
 	}
 	public void AddItem(QGraphicsLayoutItem_Ptr* item)
 	{
-		CQt.QGraphicsLinearLayout_AddItem(this.ptr, item);
+		CQt.QGraphicsLinearLayout_AddItem((.)this.ptr, item);
 	}
 	public void AddStretch()
 	{
-		CQt.QGraphicsLinearLayout_AddStretch(this.ptr);
+		CQt.QGraphicsLinearLayout_AddStretch((.)this.ptr);
 	}
 	public void InsertItem(c_int index, QGraphicsLayoutItem_Ptr* item)
 	{
-		CQt.QGraphicsLinearLayout_InsertItem(this.ptr, index, item);
+		CQt.QGraphicsLinearLayout_InsertItem((.)this.ptr, index, item);
 	}
 	public void InsertStretch(c_int index)
 	{
-		CQt.QGraphicsLinearLayout_InsertStretch(this.ptr, index);
+		CQt.QGraphicsLinearLayout_InsertStretch((.)this.ptr, index);
 	}
 	public void RemoveItem(QGraphicsLayoutItem_Ptr* item)
 	{
-		CQt.QGraphicsLinearLayout_RemoveItem(this.ptr, item);
+		CQt.QGraphicsLinearLayout_RemoveItem((.)this.ptr, item);
 	}
 	public void RemoveAt(c_int index)
 	{
-		CQt.QGraphicsLinearLayout_RemoveAt(this.ptr, index);
+		CQt.QGraphicsLinearLayout_RemoveAt((.)this.ptr, index);
 	}
 	public void SetSpacing(double spacing)
 	{
-		CQt.QGraphicsLinearLayout_SetSpacing(this.ptr, spacing);
+		CQt.QGraphicsLinearLayout_SetSpacing((.)this.ptr, spacing);
 	}
 	public double Spacing()
 	{
-		return CQt.QGraphicsLinearLayout_Spacing(this.ptr);
+		return CQt.QGraphicsLinearLayout_Spacing((.)this.ptr);
 	}
 	public void SetItemSpacing(c_int index, double spacing)
 	{
-		CQt.QGraphicsLinearLayout_SetItemSpacing(this.ptr, index, spacing);
+		CQt.QGraphicsLinearLayout_SetItemSpacing((.)this.ptr, index, spacing);
 	}
 	public double ItemSpacing(c_int index)
 	{
-		return CQt.QGraphicsLinearLayout_ItemSpacing(this.ptr, index);
+		return CQt.QGraphicsLinearLayout_ItemSpacing((.)this.ptr, index);
 	}
 	public void SetStretchFactor(QGraphicsLayoutItem_Ptr* item, c_int stretch)
 	{
-		CQt.QGraphicsLinearLayout_SetStretchFactor(this.ptr, item, stretch);
+		CQt.QGraphicsLinearLayout_SetStretchFactor((.)this.ptr, item, stretch);
 	}
 	public c_int StretchFactor(QGraphicsLayoutItem_Ptr* item)
 	{
-		return CQt.QGraphicsLinearLayout_StretchFactor(this.ptr, item);
+		return CQt.QGraphicsLinearLayout_StretchFactor((.)this.ptr, item);
 	}
 	public void SetAlignment(QGraphicsLayoutItem_Ptr* item, void* alignment)
 	{
-		CQt.QGraphicsLinearLayout_SetAlignment(this.ptr, item, alignment);
+		CQt.QGraphicsLinearLayout_SetAlignment((.)this.ptr, item, alignment);
 	}
 	public void* Alignment(QGraphicsLayoutItem_Ptr* item)
 	{
-		return CQt.QGraphicsLinearLayout_Alignment(this.ptr, item);
+		return CQt.QGraphicsLinearLayout_Alignment((.)this.ptr, item);
 	}
 	public void SetGeometry(QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsLinearLayout_SetGeometry(this.ptr, rect);
+		CQt.QGraphicsLinearLayout_SetGeometry((.)this.ptr, rect);
 	}
 	public c_int Count()
 	{
-		return CQt.QGraphicsLinearLayout_Count(this.ptr);
+		return CQt.QGraphicsLinearLayout_Count((.)this.ptr);
 	}
 	public QGraphicsLayoutItem_Ptr* ItemAt(c_int index)
 	{
-		return CQt.QGraphicsLinearLayout_ItemAt(this.ptr, index);
+		return CQt.QGraphicsLinearLayout_ItemAt((.)this.ptr, index);
 	}
 	public void Invalidate()
 	{
-		CQt.QGraphicsLinearLayout_Invalidate(this.ptr);
+		CQt.QGraphicsLinearLayout_Invalidate((.)this.ptr);
 	}
 	public QSizeF_Ptr SizeHint(Qt_SizeHint which, QSizeF_Ptr* constraint)
 	{
-		return CQt.QGraphicsLinearLayout_SizeHint(this.ptr, which, constraint);
+		return CQt.QGraphicsLinearLayout_SizeHint((.)this.ptr, which, constraint);
 	}
 	public void Dump()
 	{
-		CQt.QGraphicsLinearLayout_Dump(this.ptr);
+		CQt.QGraphicsLinearLayout_Dump((.)this.ptr);
 	}
 	public void AddStretch1(c_int stretch)
 	{
-		CQt.QGraphicsLinearLayout_AddStretch1(this.ptr, stretch);
+		CQt.QGraphicsLinearLayout_AddStretch1((.)this.ptr, stretch);
 	}
 	public void InsertStretch2(c_int index, c_int stretch)
 	{
-		CQt.QGraphicsLinearLayout_InsertStretch2(this.ptr, index, stretch);
+		CQt.QGraphicsLinearLayout_InsertStretch2((.)this.ptr, index, stretch);
 	}
 	public void Dump1(c_int indent)
 	{
-		CQt.QGraphicsLinearLayout_Dump1(this.ptr, indent);
+		CQt.QGraphicsLinearLayout_Dump1((.)this.ptr, indent);
+	}
+	public void SetContentsMargins(double left, double top, double right, double bottom)
+	{
+		CQt.QGraphicsLayout_SetContentsMargins((.)this.ptr, left, top, right, bottom);
+	}
+	public void GetContentsMargins(double* left, double* top, double* right, double* bottom)
+	{
+		CQt.QGraphicsLayout_GetContentsMargins((.)this.ptr, left, top, right, bottom);
+	}
+	public void Activate()
+	{
+		CQt.QGraphicsLayout_Activate((.)this.ptr);
+	}
+	public bool IsActivated()
+	{
+		return CQt.QGraphicsLayout_IsActivated((.)this.ptr);
+	}
+	public void UpdateGeometry()
+	{
+		CQt.QGraphicsLayout_UpdateGeometry((.)this.ptr);
+	}
+	public void WidgetEvent(QEvent_Ptr* e)
+	{
+		CQt.QGraphicsLayout_WidgetEvent((.)this.ptr, e);
+	}
+	public void SetInstantInvalidatePropagation(bool enable)
+	{
+		CQt.QGraphicsLayout_SetInstantInvalidatePropagation(enable);
+	}
+	public bool InstantInvalidatePropagation()
+	{
+		return CQt.QGraphicsLayout_InstantInvalidatePropagation();
+	}
+	public void AddChildLayoutItem(QGraphicsLayoutItem_Ptr* layoutItem)
+	{
+		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.ptr, layoutItem);
+	}
+	public void SetSizePolicy(QSizePolicy_Ptr* policy)
+	{
+		CQt.QGraphicsLayoutItem_SetSizePolicy((.)this.ptr, policy);
+	}
+	public void SetSizePolicy2(QSizePolicy_Policy hPolicy, QSizePolicy_Policy vPolicy)
+	{
+		CQt.QGraphicsLayoutItem_SetSizePolicy2((.)this.ptr, hPolicy, vPolicy);
+	}
+	public QSizePolicy_Ptr SizePolicy()
+	{
+		return CQt.QGraphicsLayoutItem_SizePolicy((.)this.ptr);
+	}
+	public void SetMinimumSize(QSizeF_Ptr* size)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumSize((.)this.ptr, size);
+	}
+	public void SetMinimumSize2(double w, double h)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumSize2((.)this.ptr, w, h);
+	}
+	public QSizeF_Ptr MinimumSize()
+	{
+		return CQt.QGraphicsLayoutItem_MinimumSize((.)this.ptr);
+	}
+	public void SetMinimumWidth(double width)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumWidth((.)this.ptr, width);
+	}
+	public double MinimumWidth()
+	{
+		return CQt.QGraphicsLayoutItem_MinimumWidth((.)this.ptr);
+	}
+	public void SetMinimumHeight(double height)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumHeight((.)this.ptr, height);
+	}
+	public double MinimumHeight()
+	{
+		return CQt.QGraphicsLayoutItem_MinimumHeight((.)this.ptr);
+	}
+	public void SetPreferredSize(QSizeF_Ptr* size)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredSize((.)this.ptr, size);
+	}
+	public void SetPreferredSize2(double w, double h)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredSize2((.)this.ptr, w, h);
+	}
+	public QSizeF_Ptr PreferredSize()
+	{
+		return CQt.QGraphicsLayoutItem_PreferredSize((.)this.ptr);
+	}
+	public void SetPreferredWidth(double width)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredWidth((.)this.ptr, width);
+	}
+	public double PreferredWidth()
+	{
+		return CQt.QGraphicsLayoutItem_PreferredWidth((.)this.ptr);
+	}
+	public void SetPreferredHeight(double height)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredHeight((.)this.ptr, height);
+	}
+	public double PreferredHeight()
+	{
+		return CQt.QGraphicsLayoutItem_PreferredHeight((.)this.ptr);
+	}
+	public void SetMaximumSize(QSizeF_Ptr* size)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumSize((.)this.ptr, size);
+	}
+	public void SetMaximumSize2(double w, double h)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumSize2((.)this.ptr, w, h);
+	}
+	public QSizeF_Ptr MaximumSize()
+	{
+		return CQt.QGraphicsLayoutItem_MaximumSize((.)this.ptr);
+	}
+	public void SetMaximumWidth(double width)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumWidth((.)this.ptr, width);
+	}
+	public double MaximumWidth()
+	{
+		return CQt.QGraphicsLayoutItem_MaximumWidth((.)this.ptr);
+	}
+	public void SetMaximumHeight(double height)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumHeight((.)this.ptr, height);
+	}
+	public double MaximumHeight()
+	{
+		return CQt.QGraphicsLayoutItem_MaximumHeight((.)this.ptr);
+	}
+	public QRectF_Ptr Geometry()
+	{
+		return CQt.QGraphicsLayoutItem_Geometry((.)this.ptr);
+	}
+	public QRectF_Ptr ContentsRect()
+	{
+		return CQt.QGraphicsLayoutItem_ContentsRect((.)this.ptr);
+	}
+	public QSizeF_Ptr EffectiveSizeHint(Qt_SizeHint which)
+	{
+		return CQt.QGraphicsLayoutItem_EffectiveSizeHint((.)this.ptr, which);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QGraphicsLayoutItem_IsEmpty((.)this.ptr);
+	}
+	public QGraphicsLayoutItem_Ptr* ParentLayoutItem()
+	{
+		return CQt.QGraphicsLayoutItem_ParentLayoutItem((.)this.ptr);
+	}
+	public void SetParentLayoutItem(QGraphicsLayoutItem_Ptr* parent)
+	{
+		CQt.QGraphicsLayoutItem_SetParentLayoutItem((.)this.ptr, parent);
+	}
+	public bool IsLayout()
+	{
+		return CQt.QGraphicsLayoutItem_IsLayout((.)this.ptr);
+	}
+	public QGraphicsItem_Ptr* GraphicsItem()
+	{
+		return CQt.QGraphicsLayoutItem_GraphicsItem((.)this.ptr);
+	}
+	public bool OwnedByLayout()
+	{
+		return CQt.QGraphicsLayoutItem_OwnedByLayout((.)this.ptr);
+	}
+	public void SetGraphicsItem(QGraphicsItem_Ptr* item)
+	{
+		CQt.QGraphicsLayoutItem_SetGraphicsItem((.)this.ptr, item);
+	}
+	public void SetOwnedByLayout(bool ownedByLayout)
+	{
+		CQt.QGraphicsLayoutItem_SetOwnedByLayout((.)this.ptr, ownedByLayout);
+	}
+	public void SetSizePolicy3(QSizePolicy_Policy hPolicy, QSizePolicy_Policy vPolicy, QSizePolicy_ControlType controlType)
+	{
+		CQt.QGraphicsLayoutItem_SetSizePolicy3((.)this.ptr, hPolicy, vPolicy, controlType);
+	}
+	public QSizeF_Ptr EffectiveSizeHint2(Qt_SizeHint which, QSizeF_Ptr* constraint)
+	{
+		return CQt.QGraphicsLayoutItem_EffectiveSizeHint2((.)this.ptr, which, constraint);
 	}
 }
 interface IQGraphicsLinearLayout

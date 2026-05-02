@@ -32,7 +32,7 @@ class QAbstractNativeEventFilter
 	}
 	public bool NativeEventFilter(void** eventType, void* message, void** result)
 	{
-		return CQt.QAbstractNativeEventFilter_NativeEventFilter(this.ptr, eventType, message, result);
+		return CQt.QAbstractNativeEventFilter_NativeEventFilter((.)this.ptr, eventType, message, result);
 	}
 }
 interface IQAbstractNativeEventFilter

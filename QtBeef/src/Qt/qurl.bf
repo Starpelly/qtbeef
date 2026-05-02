@@ -216,31 +216,31 @@ class QUrl
 	}
 	public void OperatorAssign2(libqt_string* url)
 	{
-		CQt.QUrl_OperatorAssign2(this.ptr, url);
+		CQt.QUrl_OperatorAssign2((.)this.ptr, url);
 	}
 	public void Swap(QUrl_Ptr* other)
 	{
-		CQt.QUrl_Swap(this.ptr, other);
+		CQt.QUrl_Swap((.)this.ptr, other);
 	}
 	public void SetUrl(libqt_string* url)
 	{
-		CQt.QUrl_SetUrl(this.ptr, url);
+		CQt.QUrl_SetUrl((.)this.ptr, url);
 	}
 	public libqt_string Url()
 	{
-		return CQt.QUrl_Url(this.ptr);
+		return CQt.QUrl_Url((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QUrl_ToString(this.ptr);
+		return CQt.QUrl_ToString((.)this.ptr);
 	}
 	public libqt_string ToDisplayString()
 	{
-		return CQt.QUrl_ToDisplayString(this.ptr);
+		return CQt.QUrl_ToDisplayString((.)this.ptr);
 	}
 	public void* ToEncoded()
 	{
-		return CQt.QUrl_ToEncoded(this.ptr);
+		return CQt.QUrl_ToEncoded((.)this.ptr);
 	}
 	public QUrl_Ptr FromEncoded(void** url)
 	{
@@ -252,131 +252,131 @@ class QUrl
 	}
 	public bool IsValid()
 	{
-		return CQt.QUrl_IsValid(this.ptr);
+		return CQt.QUrl_IsValid((.)this.ptr);
 	}
 	public libqt_string ErrorString()
 	{
-		return CQt.QUrl_ErrorString(this.ptr);
+		return CQt.QUrl_ErrorString((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QUrl_IsEmpty(this.ptr);
+		return CQt.QUrl_IsEmpty((.)this.ptr);
 	}
 	public void Clear()
 	{
-		CQt.QUrl_Clear(this.ptr);
+		CQt.QUrl_Clear((.)this.ptr);
 	}
 	public void SetScheme(libqt_string* scheme)
 	{
-		CQt.QUrl_SetScheme(this.ptr, scheme);
+		CQt.QUrl_SetScheme((.)this.ptr, scheme);
 	}
 	public libqt_string Scheme()
 	{
-		return CQt.QUrl_Scheme(this.ptr);
+		return CQt.QUrl_Scheme((.)this.ptr);
 	}
 	public void SetAuthority(libqt_string* authority)
 	{
-		CQt.QUrl_SetAuthority(this.ptr, authority);
+		CQt.QUrl_SetAuthority((.)this.ptr, authority);
 	}
 	public libqt_string Authority()
 	{
-		return CQt.QUrl_Authority(this.ptr);
+		return CQt.QUrl_Authority((.)this.ptr);
 	}
 	public void SetUserInfo(libqt_string* userInfo)
 	{
-		CQt.QUrl_SetUserInfo(this.ptr, userInfo);
+		CQt.QUrl_SetUserInfo((.)this.ptr, userInfo);
 	}
 	public libqt_string UserInfo()
 	{
-		return CQt.QUrl_UserInfo(this.ptr);
+		return CQt.QUrl_UserInfo((.)this.ptr);
 	}
 	public void SetUserName(libqt_string* userName)
 	{
-		CQt.QUrl_SetUserName(this.ptr, userName);
+		CQt.QUrl_SetUserName((.)this.ptr, userName);
 	}
 	public libqt_string UserName()
 	{
-		return CQt.QUrl_UserName(this.ptr);
+		return CQt.QUrl_UserName((.)this.ptr);
 	}
 	public void SetPassword(libqt_string* password)
 	{
-		CQt.QUrl_SetPassword(this.ptr, password);
+		CQt.QUrl_SetPassword((.)this.ptr, password);
 	}
 	public libqt_string Password()
 	{
-		return CQt.QUrl_Password(this.ptr);
+		return CQt.QUrl_Password((.)this.ptr);
 	}
 	public void SetHost(libqt_string* host)
 	{
-		CQt.QUrl_SetHost(this.ptr, host);
+		CQt.QUrl_SetHost((.)this.ptr, host);
 	}
 	public libqt_string Host()
 	{
-		return CQt.QUrl_Host(this.ptr);
+		return CQt.QUrl_Host((.)this.ptr);
 	}
 	public void SetPort(c_int port)
 	{
-		CQt.QUrl_SetPort(this.ptr, port);
+		CQt.QUrl_SetPort((.)this.ptr, port);
 	}
 	public c_int Port()
 	{
-		return CQt.QUrl_Port(this.ptr);
+		return CQt.QUrl_Port((.)this.ptr);
 	}
 	public void SetPath(libqt_string* path)
 	{
-		CQt.QUrl_SetPath(this.ptr, path);
+		CQt.QUrl_SetPath((.)this.ptr, path);
 	}
 	public libqt_string Path()
 	{
-		return CQt.QUrl_Path(this.ptr);
+		return CQt.QUrl_Path((.)this.ptr);
 	}
 	public libqt_string FileName()
 	{
-		return CQt.QUrl_FileName(this.ptr);
+		return CQt.QUrl_FileName((.)this.ptr);
 	}
 	public bool HasQuery()
 	{
-		return CQt.QUrl_HasQuery(this.ptr);
+		return CQt.QUrl_HasQuery((.)this.ptr);
 	}
 	public void SetQuery(libqt_string* query)
 	{
-		CQt.QUrl_SetQuery(this.ptr, query);
+		CQt.QUrl_SetQuery((.)this.ptr, query);
 	}
 	public void SetQuery2(QUrlQuery_Ptr* query)
 	{
-		CQt.QUrl_SetQuery2(this.ptr, query);
+		CQt.QUrl_SetQuery2((.)this.ptr, query);
 	}
 	public libqt_string Query()
 	{
-		return CQt.QUrl_Query(this.ptr);
+		return CQt.QUrl_Query((.)this.ptr);
 	}
 	public bool HasFragment()
 	{
-		return CQt.QUrl_HasFragment(this.ptr);
+		return CQt.QUrl_HasFragment((.)this.ptr);
 	}
 	public libqt_string Fragment()
 	{
-		return CQt.QUrl_Fragment(this.ptr);
+		return CQt.QUrl_Fragment((.)this.ptr);
 	}
 	public void SetFragment(libqt_string* fragment)
 	{
-		CQt.QUrl_SetFragment(this.ptr, fragment);
+		CQt.QUrl_SetFragment((.)this.ptr, fragment);
 	}
 	public QUrl_Ptr Resolved(QUrl_Ptr* relative)
 	{
-		return CQt.QUrl_Resolved(this.ptr, relative);
+		return CQt.QUrl_Resolved((.)this.ptr, relative);
 	}
 	public bool IsRelative()
 	{
-		return CQt.QUrl_IsRelative(this.ptr);
+		return CQt.QUrl_IsRelative((.)this.ptr);
 	}
 	public bool IsParentOf(QUrl_Ptr* url)
 	{
-		return CQt.QUrl_IsParentOf(this.ptr, url);
+		return CQt.QUrl_IsParentOf((.)this.ptr, url);
 	}
 	public bool IsLocalFile()
 	{
-		return CQt.QUrl_IsLocalFile(this.ptr);
+		return CQt.QUrl_IsLocalFile((.)this.ptr);
 	}
 	public QUrl_Ptr FromLocalFile(libqt_string* localfile)
 	{
@@ -384,15 +384,15 @@ class QUrl
 	}
 	public libqt_string ToLocalFile()
 	{
-		return CQt.QUrl_ToLocalFile(this.ptr);
+		return CQt.QUrl_ToLocalFile((.)this.ptr);
 	}
 	public void Detach()
 	{
-		CQt.QUrl_Detach(this.ptr);
+		CQt.QUrl_Detach((.)this.ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QUrl_IsDetached(this.ptr);
+		return CQt.QUrl_IsDetached((.)this.ptr);
 	}
 	public libqt_string FromPercentEncoding(void** param1)
 	{
@@ -428,7 +428,7 @@ class QUrl
 	}
 	public void SetUrl2(libqt_string* url, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetUrl2(this.ptr, url, mode);
+		CQt.QUrl_SetUrl2((.)this.ptr, url, mode);
 	}
 	public QUrl_Ptr FromEncoded2(void** url, QUrl_ParsingMode mode)
 	{
@@ -444,75 +444,75 @@ class QUrl
 	}
 	public void SetAuthority2(libqt_string* authority, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetAuthority2(this.ptr, authority, mode);
+		CQt.QUrl_SetAuthority2((.)this.ptr, authority, mode);
 	}
 	public libqt_string Authority1(void* options)
 	{
-		return CQt.QUrl_Authority1(this.ptr, options);
+		return CQt.QUrl_Authority1((.)this.ptr, options);
 	}
 	public void SetUserInfo2(libqt_string* userInfo, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetUserInfo2(this.ptr, userInfo, mode);
+		CQt.QUrl_SetUserInfo2((.)this.ptr, userInfo, mode);
 	}
 	public libqt_string UserInfo1(void* options)
 	{
-		return CQt.QUrl_UserInfo1(this.ptr, options);
+		return CQt.QUrl_UserInfo1((.)this.ptr, options);
 	}
 	public void SetUserName2(libqt_string* userName, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetUserName2(this.ptr, userName, mode);
+		CQt.QUrl_SetUserName2((.)this.ptr, userName, mode);
 	}
 	public libqt_string UserName1(void* options)
 	{
-		return CQt.QUrl_UserName1(this.ptr, options);
+		return CQt.QUrl_UserName1((.)this.ptr, options);
 	}
 	public void SetPassword2(libqt_string* password, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetPassword2(this.ptr, password, mode);
+		CQt.QUrl_SetPassword2((.)this.ptr, password, mode);
 	}
 	public libqt_string Password1(void* param1)
 	{
-		return CQt.QUrl_Password1(this.ptr, param1);
+		return CQt.QUrl_Password1((.)this.ptr, param1);
 	}
 	public void SetHost2(libqt_string* host, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetHost2(this.ptr, host, mode);
+		CQt.QUrl_SetHost2((.)this.ptr, host, mode);
 	}
 	public libqt_string Host1(void* param1)
 	{
-		return CQt.QUrl_Host1(this.ptr, param1);
+		return CQt.QUrl_Host1((.)this.ptr, param1);
 	}
 	public c_int Port1(c_int defaultPort)
 	{
-		return CQt.QUrl_Port1(this.ptr, defaultPort);
+		return CQt.QUrl_Port1((.)this.ptr, defaultPort);
 	}
 	public void SetPath2(libqt_string* path, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetPath2(this.ptr, path, mode);
+		CQt.QUrl_SetPath2((.)this.ptr, path, mode);
 	}
 	public libqt_string Path1(void* options)
 	{
-		return CQt.QUrl_Path1(this.ptr, options);
+		return CQt.QUrl_Path1((.)this.ptr, options);
 	}
 	public libqt_string FileName1(void* options)
 	{
-		return CQt.QUrl_FileName1(this.ptr, options);
+		return CQt.QUrl_FileName1((.)this.ptr, options);
 	}
 	public void SetQuery22(libqt_string* query, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetQuery22(this.ptr, query, mode);
+		CQt.QUrl_SetQuery22((.)this.ptr, query, mode);
 	}
 	public libqt_string Query1(void* param1)
 	{
-		return CQt.QUrl_Query1(this.ptr, param1);
+		return CQt.QUrl_Query1((.)this.ptr, param1);
 	}
 	public libqt_string Fragment1(void* options)
 	{
-		return CQt.QUrl_Fragment1(this.ptr, options);
+		return CQt.QUrl_Fragment1((.)this.ptr, options);
 	}
 	public void SetFragment2(libqt_string* fragment, QUrl_ParsingMode mode)
 	{
-		CQt.QUrl_SetFragment2(this.ptr, fragment, mode);
+		CQt.QUrl_SetFragment2((.)this.ptr, fragment, mode);
 	}
 	public void* ToPercentEncoding2(libqt_string* param1, void** exclude)
 	{

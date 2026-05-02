@@ -126,155 +126,155 @@ class QSurfaceFormat
 	}
 	public void SetDepthBufferSize(c_int size)
 	{
-		CQt.QSurfaceFormat_SetDepthBufferSize(this.ptr, size);
+		CQt.QSurfaceFormat_SetDepthBufferSize((.)this.ptr, size);
 	}
 	public c_int DepthBufferSize()
 	{
-		return CQt.QSurfaceFormat_DepthBufferSize(this.ptr);
+		return CQt.QSurfaceFormat_DepthBufferSize((.)this.ptr);
 	}
 	public void SetStencilBufferSize(c_int size)
 	{
-		CQt.QSurfaceFormat_SetStencilBufferSize(this.ptr, size);
+		CQt.QSurfaceFormat_SetStencilBufferSize((.)this.ptr, size);
 	}
 	public c_int StencilBufferSize()
 	{
-		return CQt.QSurfaceFormat_StencilBufferSize(this.ptr);
+		return CQt.QSurfaceFormat_StencilBufferSize((.)this.ptr);
 	}
 	public void SetRedBufferSize(c_int size)
 	{
-		CQt.QSurfaceFormat_SetRedBufferSize(this.ptr, size);
+		CQt.QSurfaceFormat_SetRedBufferSize((.)this.ptr, size);
 	}
 	public c_int RedBufferSize()
 	{
-		return CQt.QSurfaceFormat_RedBufferSize(this.ptr);
+		return CQt.QSurfaceFormat_RedBufferSize((.)this.ptr);
 	}
 	public void SetGreenBufferSize(c_int size)
 	{
-		CQt.QSurfaceFormat_SetGreenBufferSize(this.ptr, size);
+		CQt.QSurfaceFormat_SetGreenBufferSize((.)this.ptr, size);
 	}
 	public c_int GreenBufferSize()
 	{
-		return CQt.QSurfaceFormat_GreenBufferSize(this.ptr);
+		return CQt.QSurfaceFormat_GreenBufferSize((.)this.ptr);
 	}
 	public void SetBlueBufferSize(c_int size)
 	{
-		CQt.QSurfaceFormat_SetBlueBufferSize(this.ptr, size);
+		CQt.QSurfaceFormat_SetBlueBufferSize((.)this.ptr, size);
 	}
 	public c_int BlueBufferSize()
 	{
-		return CQt.QSurfaceFormat_BlueBufferSize(this.ptr);
+		return CQt.QSurfaceFormat_BlueBufferSize((.)this.ptr);
 	}
 	public void SetAlphaBufferSize(c_int size)
 	{
-		CQt.QSurfaceFormat_SetAlphaBufferSize(this.ptr, size);
+		CQt.QSurfaceFormat_SetAlphaBufferSize((.)this.ptr, size);
 	}
 	public c_int AlphaBufferSize()
 	{
-		return CQt.QSurfaceFormat_AlphaBufferSize(this.ptr);
+		return CQt.QSurfaceFormat_AlphaBufferSize((.)this.ptr);
 	}
 	public void SetSamples(c_int numSamples)
 	{
-		CQt.QSurfaceFormat_SetSamples(this.ptr, numSamples);
+		CQt.QSurfaceFormat_SetSamples((.)this.ptr, numSamples);
 	}
 	public c_int Samples()
 	{
-		return CQt.QSurfaceFormat_Samples(this.ptr);
+		return CQt.QSurfaceFormat_Samples((.)this.ptr);
 	}
 	public void SetSwapBehavior(QSurfaceFormat_SwapBehavior behavior)
 	{
-		CQt.QSurfaceFormat_SetSwapBehavior(this.ptr, behavior);
+		CQt.QSurfaceFormat_SetSwapBehavior((.)this.ptr, behavior);
 	}
 	public QSurfaceFormat_SwapBehavior SwapBehavior()
 	{
-		return CQt.QSurfaceFormat_SwapBehavior(this.ptr);
+		return CQt.QSurfaceFormat_SwapBehavior((.)this.ptr);
 	}
 	public bool HasAlpha()
 	{
-		return CQt.QSurfaceFormat_HasAlpha(this.ptr);
+		return CQt.QSurfaceFormat_HasAlpha((.)this.ptr);
 	}
 	public void SetProfile(QSurfaceFormat_OpenGLContextProfile profile)
 	{
-		CQt.QSurfaceFormat_SetProfile(this.ptr, profile);
+		CQt.QSurfaceFormat_SetProfile((.)this.ptr, profile);
 	}
 	public QSurfaceFormat_OpenGLContextProfile Profile()
 	{
-		return CQt.QSurfaceFormat_Profile(this.ptr);
+		return CQt.QSurfaceFormat_Profile((.)this.ptr);
 	}
 	public void SetRenderableType(QSurfaceFormat_RenderableType type)
 	{
-		CQt.QSurfaceFormat_SetRenderableType(this.ptr, type);
+		CQt.QSurfaceFormat_SetRenderableType((.)this.ptr, type);
 	}
 	public QSurfaceFormat_RenderableType RenderableType()
 	{
-		return CQt.QSurfaceFormat_RenderableType(this.ptr);
+		return CQt.QSurfaceFormat_RenderableType((.)this.ptr);
 	}
 	public void SetMajorVersion(c_int majorVersion)
 	{
-		CQt.QSurfaceFormat_SetMajorVersion(this.ptr, majorVersion);
+		CQt.QSurfaceFormat_SetMajorVersion((.)this.ptr, majorVersion);
 	}
 	public c_int MajorVersion()
 	{
-		return CQt.QSurfaceFormat_MajorVersion(this.ptr);
+		return CQt.QSurfaceFormat_MajorVersion((.)this.ptr);
 	}
 	public void SetMinorVersion(c_int minorVersion)
 	{
-		CQt.QSurfaceFormat_SetMinorVersion(this.ptr, minorVersion);
+		CQt.QSurfaceFormat_SetMinorVersion((.)this.ptr, minorVersion);
 	}
 	public c_int MinorVersion()
 	{
-		return CQt.QSurfaceFormat_MinorVersion(this.ptr);
+		return CQt.QSurfaceFormat_MinorVersion((.)this.ptr);
 	}
 	public void* Version()
 	{
-		return CQt.QSurfaceFormat_Version(this.ptr);
+		return CQt.QSurfaceFormat_Version((.)this.ptr);
 	}
 	public void SetVersion(c_int major, c_int minor)
 	{
-		CQt.QSurfaceFormat_SetVersion(this.ptr, major, minor);
+		CQt.QSurfaceFormat_SetVersion((.)this.ptr, major, minor);
 	}
 	public bool Stereo()
 	{
-		return CQt.QSurfaceFormat_Stereo(this.ptr);
+		return CQt.QSurfaceFormat_Stereo((.)this.ptr);
 	}
 	public void SetStereo(bool enable)
 	{
-		CQt.QSurfaceFormat_SetStereo(this.ptr, enable);
+		CQt.QSurfaceFormat_SetStereo((.)this.ptr, enable);
 	}
 	public void SetOptions(void* options)
 	{
-		CQt.QSurfaceFormat_SetOptions(this.ptr, options);
+		CQt.QSurfaceFormat_SetOptions((.)this.ptr, options);
 	}
 	public void SetOption(QSurfaceFormat_FormatOption option)
 	{
-		CQt.QSurfaceFormat_SetOption(this.ptr, option);
+		CQt.QSurfaceFormat_SetOption((.)this.ptr, option);
 	}
 	public bool TestOption(QSurfaceFormat_FormatOption option)
 	{
-		return CQt.QSurfaceFormat_TestOption(this.ptr, option);
+		return CQt.QSurfaceFormat_TestOption((.)this.ptr, option);
 	}
 	public void* Options()
 	{
-		return CQt.QSurfaceFormat_Options(this.ptr);
+		return CQt.QSurfaceFormat_Options((.)this.ptr);
 	}
 	public c_int SwapInterval()
 	{
-		return CQt.QSurfaceFormat_SwapInterval(this.ptr);
+		return CQt.QSurfaceFormat_SwapInterval((.)this.ptr);
 	}
 	public void SetSwapInterval(c_int interval)
 	{
-		CQt.QSurfaceFormat_SetSwapInterval(this.ptr, interval);
+		CQt.QSurfaceFormat_SetSwapInterval((.)this.ptr, interval);
 	}
 	public QColorSpace_Ptr* ColorSpace()
 	{
-		return CQt.QSurfaceFormat_ColorSpace(this.ptr);
+		return CQt.QSurfaceFormat_ColorSpace((.)this.ptr);
 	}
 	public void SetColorSpace(QColorSpace_Ptr* colorSpace)
 	{
-		CQt.QSurfaceFormat_SetColorSpace(this.ptr, colorSpace);
+		CQt.QSurfaceFormat_SetColorSpace((.)this.ptr, colorSpace);
 	}
 	public void SetColorSpace2(QSurfaceFormat_ColorSpace colorSpace)
 	{
-		CQt.QSurfaceFormat_SetColorSpace2(this.ptr, colorSpace);
+		CQt.QSurfaceFormat_SetColorSpace2((.)this.ptr, colorSpace);
 	}
 	public void SetDefaultFormat(QSurfaceFormat_Ptr* format)
 	{
@@ -286,7 +286,7 @@ class QSurfaceFormat
 	}
 	public void SetOption2(QSurfaceFormat_FormatOption option, bool on)
 	{
-		CQt.QSurfaceFormat_SetOption2(this.ptr, option, on);
+		CQt.QSurfaceFormat_SetOption2((.)this.ptr, option, on);
 	}
 }
 interface IQSurfaceFormat

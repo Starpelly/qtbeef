@@ -56,55 +56,55 @@ class QMimeDatabase
 	}
 	public QMimeType_Ptr MimeTypeForName(libqt_string* nameOrAlias)
 	{
-		return CQt.QMimeDatabase_MimeTypeForName(this.ptr, nameOrAlias);
+		return CQt.QMimeDatabase_MimeTypeForName((.)this.ptr, nameOrAlias);
 	}
 	public QMimeType_Ptr MimeTypeForFile(libqt_string* fileName)
 	{
-		return CQt.QMimeDatabase_MimeTypeForFile(this.ptr, fileName);
+		return CQt.QMimeDatabase_MimeTypeForFile((.)this.ptr, fileName);
 	}
 	public QMimeType_Ptr MimeTypeForFile2(QFileInfo_Ptr* fileInfo)
 	{
-		return CQt.QMimeDatabase_MimeTypeForFile2(this.ptr, fileInfo);
+		return CQt.QMimeDatabase_MimeTypeForFile2((.)this.ptr, fileInfo);
 	}
 	public void* MimeTypesForFileName(libqt_string* fileName)
 	{
-		return CQt.QMimeDatabase_MimeTypesForFileName(this.ptr, fileName);
+		return CQt.QMimeDatabase_MimeTypesForFileName((.)this.ptr, fileName);
 	}
 	public QMimeType_Ptr MimeTypeForData(void** data)
 	{
-		return CQt.QMimeDatabase_MimeTypeForData(this.ptr, data);
+		return CQt.QMimeDatabase_MimeTypeForData((.)this.ptr, data);
 	}
 	public QMimeType_Ptr MimeTypeForData2(QIODevice_Ptr* device)
 	{
-		return CQt.QMimeDatabase_MimeTypeForData2(this.ptr, device);
+		return CQt.QMimeDatabase_MimeTypeForData2((.)this.ptr, device);
 	}
 	public QMimeType_Ptr MimeTypeForUrl(QUrl_Ptr* url)
 	{
-		return CQt.QMimeDatabase_MimeTypeForUrl(this.ptr, url);
+		return CQt.QMimeDatabase_MimeTypeForUrl((.)this.ptr, url);
 	}
 	public QMimeType_Ptr MimeTypeForFileNameAndData(libqt_string* fileName, QIODevice_Ptr* device)
 	{
-		return CQt.QMimeDatabase_MimeTypeForFileNameAndData(this.ptr, fileName, device);
+		return CQt.QMimeDatabase_MimeTypeForFileNameAndData((.)this.ptr, fileName, device);
 	}
 	public QMimeType_Ptr MimeTypeForFileNameAndData2(libqt_string* fileName, void** data)
 	{
-		return CQt.QMimeDatabase_MimeTypeForFileNameAndData2(this.ptr, fileName, data);
+		return CQt.QMimeDatabase_MimeTypeForFileNameAndData2((.)this.ptr, fileName, data);
 	}
 	public libqt_string SuffixForFileName(libqt_string* fileName)
 	{
-		return CQt.QMimeDatabase_SuffixForFileName(this.ptr, fileName);
+		return CQt.QMimeDatabase_SuffixForFileName((.)this.ptr, fileName);
 	}
 	public void* AllMimeTypes()
 	{
-		return CQt.QMimeDatabase_AllMimeTypes(this.ptr);
+		return CQt.QMimeDatabase_AllMimeTypes((.)this.ptr);
 	}
 	public QMimeType_Ptr MimeTypeForFile22(libqt_string* fileName, QMimeDatabase_MatchMode mode)
 	{
-		return CQt.QMimeDatabase_MimeTypeForFile22(this.ptr, fileName, mode);
+		return CQt.QMimeDatabase_MimeTypeForFile22((.)this.ptr, fileName, mode);
 	}
 	public QMimeType_Ptr MimeTypeForFile23(QFileInfo_Ptr* fileInfo, QMimeDatabase_MatchMode mode)
 	{
-		return CQt.QMimeDatabase_MimeTypeForFile23(this.ptr, fileInfo, mode);
+		return CQt.QMimeDatabase_MimeTypeForFile23((.)this.ptr, fileInfo, mode);
 	}
 }
 interface IQMimeDatabase

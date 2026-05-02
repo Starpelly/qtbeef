@@ -54,23 +54,23 @@ class qfloat16
 	}
 	public bool IsInf()
 	{
-		return CQt.qfloat16_IsInf(this.ptr);
+		return CQt.qfloat16_IsInf((.)this.ptr);
 	}
 	public bool IsNaN()
 	{
-		return CQt.qfloat16_IsNaN(this.ptr);
+		return CQt.qfloat16_IsNaN((.)this.ptr);
 	}
 	public bool IsFinite()
 	{
-		return CQt.qfloat16_IsFinite(this.ptr);
+		return CQt.qfloat16_IsFinite((.)this.ptr);
 	}
 	public c_int FpClassify()
 	{
-		return CQt.qfloat16_FpClassify(this.ptr);
+		return CQt.qfloat16_FpClassify((.)this.ptr);
 	}
 	public bool IsNormal()
 	{
-		return CQt.qfloat16_IsNormal(this.ptr);
+		return CQt.qfloat16_IsNormal((.)this.ptr);
 	}
 }
 interface Iqfloat16

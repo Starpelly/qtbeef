@@ -50,31 +50,31 @@ class QReadWriteLock
 	}
 	public void LockForRead()
 	{
-		CQt.QReadWriteLock_LockForRead(this.ptr);
+		CQt.QReadWriteLock_LockForRead((.)this.ptr);
 	}
 	public bool TryLockForRead()
 	{
-		return CQt.QReadWriteLock_TryLockForRead(this.ptr);
+		return CQt.QReadWriteLock_TryLockForRead((.)this.ptr);
 	}
 	public bool TryLockForRead2(c_int timeout)
 	{
-		return CQt.QReadWriteLock_TryLockForRead2(this.ptr, timeout);
+		return CQt.QReadWriteLock_TryLockForRead2((.)this.ptr, timeout);
 	}
 	public void LockForWrite()
 	{
-		CQt.QReadWriteLock_LockForWrite(this.ptr);
+		CQt.QReadWriteLock_LockForWrite((.)this.ptr);
 	}
 	public bool TryLockForWrite()
 	{
-		return CQt.QReadWriteLock_TryLockForWrite(this.ptr);
+		return CQt.QReadWriteLock_TryLockForWrite((.)this.ptr);
 	}
 	public bool TryLockForWrite2(c_int timeout)
 	{
-		return CQt.QReadWriteLock_TryLockForWrite2(this.ptr, timeout);
+		return CQt.QReadWriteLock_TryLockForWrite2((.)this.ptr, timeout);
 	}
 	public void Unlock()
 	{
-		CQt.QReadWriteLock_Unlock(this.ptr);
+		CQt.QReadWriteLock_Unlock((.)this.ptr);
 	}
 }
 interface IQReadWriteLock
@@ -120,15 +120,15 @@ class QReadLocker
 	}
 	public void Unlock()
 	{
-		CQt.QReadLocker_Unlock(this.ptr);
+		CQt.QReadLocker_Unlock((.)this.ptr);
 	}
 	public void Relock()
 	{
-		CQt.QReadLocker_Relock(this.ptr);
+		CQt.QReadLocker_Relock((.)this.ptr);
 	}
 	public QReadWriteLock_Ptr* ReadWriteLock()
 	{
-		return CQt.QReadLocker_ReadWriteLock(this.ptr);
+		return CQt.QReadLocker_ReadWriteLock((.)this.ptr);
 	}
 }
 interface IQReadLocker
@@ -170,15 +170,15 @@ class QWriteLocker
 	}
 	public void Unlock()
 	{
-		CQt.QWriteLocker_Unlock(this.ptr);
+		CQt.QWriteLocker_Unlock((.)this.ptr);
 	}
 	public void Relock()
 	{
-		CQt.QWriteLocker_Relock(this.ptr);
+		CQt.QWriteLocker_Relock((.)this.ptr);
 	}
 	public QReadWriteLock_Ptr* ReadWriteLock()
 	{
-		return CQt.QWriteLocker_ReadWriteLock(this.ptr);
+		return CQt.QWriteLocker_ReadWriteLock((.)this.ptr);
 	}
 }
 interface IQWriteLocker

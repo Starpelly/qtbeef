@@ -64,27 +64,27 @@ class QColormap
 	}
 	public QColormap_Mode Mode()
 	{
-		return CQt.QColormap_Mode(this.ptr);
+		return CQt.QColormap_Mode((.)this.ptr);
 	}
 	public c_int Depth()
 	{
-		return CQt.QColormap_Depth(this.ptr);
+		return CQt.QColormap_Depth((.)this.ptr);
 	}
 	public c_int Size()
 	{
-		return CQt.QColormap_Size(this.ptr);
+		return CQt.QColormap_Size((.)this.ptr);
 	}
 	public c_uint Pixel(QColor_Ptr* color)
 	{
-		return CQt.QColormap_Pixel(this.ptr, color);
+		return CQt.QColormap_Pixel((.)this.ptr, color);
 	}
 	public QColor_Ptr ColorAt(c_uint pixel)
 	{
-		return CQt.QColormap_ColorAt(this.ptr, pixel);
+		return CQt.QColormap_ColorAt((.)this.ptr, pixel);
 	}
 	public void* Colormap()
 	{
-		return CQt.QColormap_Colormap(this.ptr);
+		return CQt.QColormap_Colormap((.)this.ptr);
 	}
 	public QColormap_Ptr Instance1(c_int screen)
 	{

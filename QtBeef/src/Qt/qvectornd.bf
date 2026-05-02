@@ -126,59 +126,59 @@ class QVector2D
 	}
 	public bool IsNull()
 	{
-		return CQt.QVector2D_IsNull(this.ptr);
+		return CQt.QVector2D_IsNull((.)this.ptr);
 	}
 	public float X()
 	{
-		return CQt.QVector2D_X(this.ptr);
+		return CQt.QVector2D_X((.)this.ptr);
 	}
 	public float Y()
 	{
-		return CQt.QVector2D_Y(this.ptr);
+		return CQt.QVector2D_Y((.)this.ptr);
 	}
 	public void SetX(float x)
 	{
-		CQt.QVector2D_SetX(this.ptr, x);
+		CQt.QVector2D_SetX((.)this.ptr, x);
 	}
 	public void SetY(float y)
 	{
-		CQt.QVector2D_SetY(this.ptr, y);
+		CQt.QVector2D_SetY((.)this.ptr, y);
 	}
 	public float OperatorSubscript2(c_int i)
 	{
-		return CQt.QVector2D_OperatorSubscript2(this.ptr, i);
+		return CQt.QVector2D_OperatorSubscript2((.)this.ptr, i);
 	}
 	public float Length()
 	{
-		return CQt.QVector2D_Length(this.ptr);
+		return CQt.QVector2D_Length((.)this.ptr);
 	}
 	public float LengthSquared()
 	{
-		return CQt.QVector2D_LengthSquared(this.ptr);
+		return CQt.QVector2D_LengthSquared((.)this.ptr);
 	}
 	public QVector2D_Ptr Normalized()
 	{
-		return CQt.QVector2D_Normalized(this.ptr);
+		return CQt.QVector2D_Normalized((.)this.ptr);
 	}
 	public void Normalize()
 	{
-		CQt.QVector2D_Normalize(this.ptr);
+		CQt.QVector2D_Normalize((.)this.ptr);
 	}
 	public float DistanceToPoint(QVector2D_Ptr point)
 	{
-		return CQt.QVector2D_DistanceToPoint(this.ptr, point);
+		return CQt.QVector2D_DistanceToPoint((.)this.ptr, point);
 	}
 	public float DistanceToLine(QVector2D_Ptr point, QVector2D_Ptr direction)
 	{
-		return CQt.QVector2D_DistanceToLine(this.ptr, point, direction);
+		return CQt.QVector2D_DistanceToLine((.)this.ptr, point, direction);
 	}
 	public QVector2D_Ptr* OperatorMultiplyAssign2(QVector2D_Ptr vector)
 	{
-		return CQt.QVector2D_OperatorMultiplyAssign2(this.ptr, vector);
+		return CQt.QVector2D_OperatorMultiplyAssign2((.)this.ptr, vector);
 	}
 	public QVector2D_Ptr* OperatorDivideAssign2(QVector2D_Ptr vector)
 	{
-		return CQt.QVector2D_OperatorDivideAssign2(this.ptr, vector);
+		return CQt.QVector2D_OperatorDivideAssign2((.)this.ptr, vector);
 	}
 	public float DotProduct(QVector2D_Ptr v1, QVector2D_Ptr v2)
 	{
@@ -186,19 +186,19 @@ class QVector2D
 	}
 	public QVector3D_Ptr ToVector3D()
 	{
-		return CQt.QVector2D_ToVector3D(this.ptr);
+		return CQt.QVector2D_ToVector3D((.)this.ptr);
 	}
 	public QVector4D_Ptr ToVector4D()
 	{
-		return CQt.QVector2D_ToVector4D(this.ptr);
+		return CQt.QVector2D_ToVector4D((.)this.ptr);
 	}
 	public QPoint_Ptr ToPoint()
 	{
-		return CQt.QVector2D_ToPoint(this.ptr);
+		return CQt.QVector2D_ToPoint((.)this.ptr);
 	}
 	public QPointF_Ptr ToPointF()
 	{
-		return CQt.QVector2D_ToPointF(this.ptr);
+		return CQt.QVector2D_ToPointF((.)this.ptr);
 	}
 }
 interface IQVector2D
@@ -370,59 +370,59 @@ class QVector3D
 	}
 	public bool IsNull()
 	{
-		return CQt.QVector3D_IsNull(this.ptr);
+		return CQt.QVector3D_IsNull((.)this.ptr);
 	}
 	public float X()
 	{
-		return CQt.QVector3D_X(this.ptr);
+		return CQt.QVector3D_X((.)this.ptr);
 	}
 	public float Y()
 	{
-		return CQt.QVector3D_Y(this.ptr);
+		return CQt.QVector3D_Y((.)this.ptr);
 	}
 	public float Z()
 	{
-		return CQt.QVector3D_Z(this.ptr);
+		return CQt.QVector3D_Z((.)this.ptr);
 	}
 	public void SetX(float x)
 	{
-		CQt.QVector3D_SetX(this.ptr, x);
+		CQt.QVector3D_SetX((.)this.ptr, x);
 	}
 	public void SetY(float y)
 	{
-		CQt.QVector3D_SetY(this.ptr, y);
+		CQt.QVector3D_SetY((.)this.ptr, y);
 	}
 	public void SetZ(float z)
 	{
-		CQt.QVector3D_SetZ(this.ptr, z);
+		CQt.QVector3D_SetZ((.)this.ptr, z);
 	}
 	public float OperatorSubscript2(c_int i)
 	{
-		return CQt.QVector3D_OperatorSubscript2(this.ptr, i);
+		return CQt.QVector3D_OperatorSubscript2((.)this.ptr, i);
 	}
 	public float Length()
 	{
-		return CQt.QVector3D_Length(this.ptr);
+		return CQt.QVector3D_Length((.)this.ptr);
 	}
 	public float LengthSquared()
 	{
-		return CQt.QVector3D_LengthSquared(this.ptr);
+		return CQt.QVector3D_LengthSquared((.)this.ptr);
 	}
 	public QVector3D_Ptr Normalized()
 	{
-		return CQt.QVector3D_Normalized(this.ptr);
+		return CQt.QVector3D_Normalized((.)this.ptr);
 	}
 	public void Normalize()
 	{
-		CQt.QVector3D_Normalize(this.ptr);
+		CQt.QVector3D_Normalize((.)this.ptr);
 	}
 	public QVector3D_Ptr* OperatorMultiplyAssign2(QVector3D_Ptr vector)
 	{
-		return CQt.QVector3D_OperatorMultiplyAssign2(this.ptr, vector);
+		return CQt.QVector3D_OperatorMultiplyAssign2((.)this.ptr, vector);
 	}
 	public QVector3D_Ptr* OperatorDivideAssign2(QVector3D_Ptr vector)
 	{
-		return CQt.QVector3D_OperatorDivideAssign2(this.ptr, vector);
+		return CQt.QVector3D_OperatorDivideAssign2((.)this.ptr, vector);
 	}
 	public float DotProduct(QVector3D_Ptr v1, QVector3D_Ptr v2)
 	{
@@ -442,43 +442,43 @@ class QVector3D
 	}
 	public QVector3D_Ptr Project(QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport)
 	{
-		return CQt.QVector3D_Project(this.ptr, modelView, projection, viewport);
+		return CQt.QVector3D_Project((.)this.ptr, modelView, projection, viewport);
 	}
 	public QVector3D_Ptr Unproject(QMatrix4x4_Ptr* modelView, QMatrix4x4_Ptr* projection, QRect_Ptr* viewport)
 	{
-		return CQt.QVector3D_Unproject(this.ptr, modelView, projection, viewport);
+		return CQt.QVector3D_Unproject((.)this.ptr, modelView, projection, viewport);
 	}
 	public float DistanceToPoint(QVector3D_Ptr point)
 	{
-		return CQt.QVector3D_DistanceToPoint(this.ptr, point);
+		return CQt.QVector3D_DistanceToPoint((.)this.ptr, point);
 	}
 	public float DistanceToPlane(QVector3D_Ptr plane, QVector3D_Ptr normal)
 	{
-		return CQt.QVector3D_DistanceToPlane(this.ptr, plane, normal);
+		return CQt.QVector3D_DistanceToPlane((.)this.ptr, plane, normal);
 	}
 	public float DistanceToPlane2(QVector3D_Ptr plane1, QVector3D_Ptr plane2, QVector3D_Ptr plane3)
 	{
-		return CQt.QVector3D_DistanceToPlane2(this.ptr, plane1, plane2, plane3);
+		return CQt.QVector3D_DistanceToPlane2((.)this.ptr, plane1, plane2, plane3);
 	}
 	public float DistanceToLine(QVector3D_Ptr point, QVector3D_Ptr direction)
 	{
-		return CQt.QVector3D_DistanceToLine(this.ptr, point, direction);
+		return CQt.QVector3D_DistanceToLine((.)this.ptr, point, direction);
 	}
 	public QVector2D_Ptr ToVector2D()
 	{
-		return CQt.QVector3D_ToVector2D(this.ptr);
+		return CQt.QVector3D_ToVector2D((.)this.ptr);
 	}
 	public QVector4D_Ptr ToVector4D()
 	{
-		return CQt.QVector3D_ToVector4D(this.ptr);
+		return CQt.QVector3D_ToVector4D((.)this.ptr);
 	}
 	public QPoint_Ptr ToPoint()
 	{
-		return CQt.QVector3D_ToPoint(this.ptr);
+		return CQt.QVector3D_ToPoint((.)this.ptr);
 	}
 	public QPointF_Ptr ToPointF()
 	{
-		return CQt.QVector3D_ToPointF(this.ptr);
+		return CQt.QVector3D_ToPointF((.)this.ptr);
 	}
 }
 interface IQVector3D
@@ -655,67 +655,67 @@ class QVector4D
 	}
 	public bool IsNull()
 	{
-		return CQt.QVector4D_IsNull(this.ptr);
+		return CQt.QVector4D_IsNull((.)this.ptr);
 	}
 	public float X()
 	{
-		return CQt.QVector4D_X(this.ptr);
+		return CQt.QVector4D_X((.)this.ptr);
 	}
 	public float Y()
 	{
-		return CQt.QVector4D_Y(this.ptr);
+		return CQt.QVector4D_Y((.)this.ptr);
 	}
 	public float Z()
 	{
-		return CQt.QVector4D_Z(this.ptr);
+		return CQt.QVector4D_Z((.)this.ptr);
 	}
 	public float W()
 	{
-		return CQt.QVector4D_W(this.ptr);
+		return CQt.QVector4D_W((.)this.ptr);
 	}
 	public void SetX(float x)
 	{
-		CQt.QVector4D_SetX(this.ptr, x);
+		CQt.QVector4D_SetX((.)this.ptr, x);
 	}
 	public void SetY(float y)
 	{
-		CQt.QVector4D_SetY(this.ptr, y);
+		CQt.QVector4D_SetY((.)this.ptr, y);
 	}
 	public void SetZ(float z)
 	{
-		CQt.QVector4D_SetZ(this.ptr, z);
+		CQt.QVector4D_SetZ((.)this.ptr, z);
 	}
 	public void SetW(float w)
 	{
-		CQt.QVector4D_SetW(this.ptr, w);
+		CQt.QVector4D_SetW((.)this.ptr, w);
 	}
 	public float OperatorSubscript2(c_int i)
 	{
-		return CQt.QVector4D_OperatorSubscript2(this.ptr, i);
+		return CQt.QVector4D_OperatorSubscript2((.)this.ptr, i);
 	}
 	public float Length()
 	{
-		return CQt.QVector4D_Length(this.ptr);
+		return CQt.QVector4D_Length((.)this.ptr);
 	}
 	public float LengthSquared()
 	{
-		return CQt.QVector4D_LengthSquared(this.ptr);
+		return CQt.QVector4D_LengthSquared((.)this.ptr);
 	}
 	public QVector4D_Ptr Normalized()
 	{
-		return CQt.QVector4D_Normalized(this.ptr);
+		return CQt.QVector4D_Normalized((.)this.ptr);
 	}
 	public void Normalize()
 	{
-		CQt.QVector4D_Normalize(this.ptr);
+		CQt.QVector4D_Normalize((.)this.ptr);
 	}
 	public QVector4D_Ptr* OperatorMultiplyAssign2(QVector4D_Ptr vector)
 	{
-		return CQt.QVector4D_OperatorMultiplyAssign2(this.ptr, vector);
+		return CQt.QVector4D_OperatorMultiplyAssign2((.)this.ptr, vector);
 	}
 	public QVector4D_Ptr* OperatorDivideAssign2(QVector4D_Ptr vector)
 	{
-		return CQt.QVector4D_OperatorDivideAssign2(this.ptr, vector);
+		return CQt.QVector4D_OperatorDivideAssign2((.)this.ptr, vector);
 	}
 	public float DotProduct(QVector4D_Ptr v1, QVector4D_Ptr v2)
 	{
@@ -723,27 +723,27 @@ class QVector4D
 	}
 	public QVector2D_Ptr ToVector2D()
 	{
-		return CQt.QVector4D_ToVector2D(this.ptr);
+		return CQt.QVector4D_ToVector2D((.)this.ptr);
 	}
 	public QVector2D_Ptr ToVector2DAffine()
 	{
-		return CQt.QVector4D_ToVector2DAffine(this.ptr);
+		return CQt.QVector4D_ToVector2DAffine((.)this.ptr);
 	}
 	public QVector3D_Ptr ToVector3D()
 	{
-		return CQt.QVector4D_ToVector3D(this.ptr);
+		return CQt.QVector4D_ToVector3D((.)this.ptr);
 	}
 	public QVector3D_Ptr ToVector3DAffine()
 	{
-		return CQt.QVector4D_ToVector3DAffine(this.ptr);
+		return CQt.QVector4D_ToVector3DAffine((.)this.ptr);
 	}
 	public QPoint_Ptr ToPoint()
 	{
-		return CQt.QVector4D_ToPoint(this.ptr);
+		return CQt.QVector4D_ToPoint((.)this.ptr);
 	}
 	public QPointF_Ptr ToPointF()
 	{
-		return CQt.QVector4D_ToPointF(this.ptr);
+		return CQt.QVector4D_ToPointF((.)this.ptr);
 	}
 }
 interface IQVector4D

@@ -62,27 +62,27 @@ class QPageRanges
 	}
 	public void Swap(QPageRanges_Ptr* other)
 	{
-		CQt.QPageRanges_Swap(this.ptr, other);
+		CQt.QPageRanges_Swap((.)this.ptr, other);
 	}
 	public void AddPage(c_int pageNumber)
 	{
-		CQt.QPageRanges_AddPage(this.ptr, pageNumber);
+		CQt.QPageRanges_AddPage((.)this.ptr, pageNumber);
 	}
 	public void AddRange(c_int from, c_int to)
 	{
-		CQt.QPageRanges_AddRange(this.ptr, from, to);
+		CQt.QPageRanges_AddRange((.)this.ptr, from, to);
 	}
 	public void* ToRangeList()
 	{
-		return CQt.QPageRanges_ToRangeList(this.ptr);
+		return CQt.QPageRanges_ToRangeList((.)this.ptr);
 	}
 	public void Clear()
 	{
-		CQt.QPageRanges_Clear(this.ptr);
+		CQt.QPageRanges_Clear((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QPageRanges_ToString(this.ptr);
+		return CQt.QPageRanges_ToString((.)this.ptr);
 	}
 	public QPageRanges_Ptr FromString(libqt_string* ranges)
 	{
@@ -90,23 +90,23 @@ class QPageRanges
 	}
 	public bool Contains(c_int pageNumber)
 	{
-		return CQt.QPageRanges_Contains(this.ptr, pageNumber);
+		return CQt.QPageRanges_Contains((.)this.ptr, pageNumber);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QPageRanges_IsEmpty(this.ptr);
+		return CQt.QPageRanges_IsEmpty((.)this.ptr);
 	}
 	public c_int FirstPage()
 	{
-		return CQt.QPageRanges_FirstPage(this.ptr);
+		return CQt.QPageRanges_FirstPage((.)this.ptr);
 	}
 	public c_int LastPage()
 	{
-		return CQt.QPageRanges_LastPage(this.ptr);
+		return CQt.QPageRanges_LastPage((.)this.ptr);
 	}
 	public void Detach()
 	{
-		CQt.QPageRanges_Detach(this.ptr);
+		CQt.QPageRanges_Detach((.)this.ptr);
 	}
 }
 interface IQPageRanges
@@ -171,23 +171,23 @@ class QPageRanges_Range
 	}
 	public c_int From()
 	{
-		return CQt.QPageRanges_Range_From(this.ptr);
+		return CQt.QPageRanges_Range_From((.)this.ptr);
 	}
 	public void SetFrom(c_int from)
 	{
-		CQt.QPageRanges_Range_SetFrom(this.ptr, from);
+		CQt.QPageRanges_Range_SetFrom((.)this.ptr, from);
 	}
 	public c_int To()
 	{
-		return CQt.QPageRanges_Range_To(this.ptr);
+		return CQt.QPageRanges_Range_To((.)this.ptr);
 	}
 	public void SetTo(c_int to)
 	{
-		CQt.QPageRanges_Range_SetTo(this.ptr, to);
+		CQt.QPageRanges_Range_SetTo((.)this.ptr, to);
 	}
 	public bool Contains(c_int pageNumber)
 	{
-		return CQt.QPageRanges_Range_Contains(this.ptr, pageNumber);
+		return CQt.QPageRanges_Range_Contains((.)this.ptr, pageNumber);
 	}
 }
 interface IQPageRanges_Range

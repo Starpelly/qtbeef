@@ -46,35 +46,47 @@ class QTest_QTouchEventWidgetSequence
 	}
 	public QTest_QTouchEventWidgetSequence* Press(c_int touchId, QPoint_Ptr* pt)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Press(this.ptr, touchId, pt);
+		return CQt.QTest_QTouchEventWidgetSequence_Press((.)this.ptr, touchId, pt);
 	}
 	public QTest_QTouchEventWidgetSequence* Move(c_int touchId, QPoint_Ptr* pt)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Move(this.ptr, touchId, pt);
+		return CQt.QTest_QTouchEventWidgetSequence_Move((.)this.ptr, touchId, pt);
 	}
 	public QTest_QTouchEventWidgetSequence* Release(c_int touchId, QPoint_Ptr* pt)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Release(this.ptr, touchId, pt);
+		return CQt.QTest_QTouchEventWidgetSequence_Release((.)this.ptr, touchId, pt);
 	}
 	public QTest_QTouchEventWidgetSequence* Stationary(c_int touchId)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Stationary(this.ptr, touchId);
+		return CQt.QTest_QTouchEventWidgetSequence_Stationary((.)this.ptr, touchId);
 	}
 	public bool Commit(bool processEvents)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Commit(this.ptr, processEvents);
+		return CQt.QTest_QTouchEventWidgetSequence_Commit((.)this.ptr, processEvents);
 	}
 	public QTest_QTouchEventWidgetSequence* Press3(c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Press3(this.ptr, touchId, pt, widget);
+		return CQt.QTest_QTouchEventWidgetSequence_Press3((.)this.ptr, touchId, pt, widget);
 	}
 	public QTest_QTouchEventWidgetSequence* Move3(c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Move3(this.ptr, touchId, pt, widget);
+		return CQt.QTest_QTouchEventWidgetSequence_Move3((.)this.ptr, touchId, pt, widget);
 	}
 	public QTest_QTouchEventWidgetSequence* Release3(c_int touchId, QPoint_Ptr* pt, QWidget_Ptr* widget)
 	{
-		return CQt.QTest_QTouchEventWidgetSequence_Release3(this.ptr, touchId, pt, widget);
+		return CQt.QTest_QTouchEventWidgetSequence_Release3((.)this.ptr, touchId, pt, widget);
+	}
+	public QPoint_Ptr MapToScreen(QWindow_Ptr* window, QPoint_Ptr* pt)
+	{
+		return CQt.QTest_QTouchEventSequence_MapToScreen((.)this.ptr, window, pt);
+	}
+	public QEventPoint_Ptr* Point(c_int touchId)
+	{
+		return CQt.QTest_QTouchEventSequence_Point((.)this.ptr, touchId);
+	}
+	public QEventPoint_Ptr* PointOrPreviousPoint(c_int touchId)
+	{
+		return CQt.QTest_QTouchEventSequence_PointOrPreviousPoint((.)this.ptr, touchId);
 	}
 }
 interface IQTest_QTouchEventWidgetSequence

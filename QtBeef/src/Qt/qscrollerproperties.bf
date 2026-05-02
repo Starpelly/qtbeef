@@ -58,11 +58,11 @@ class QScrollerProperties
 	}
 	public QVariant_Ptr ScrollMetric(QScrollerProperties_ScrollMetric metric)
 	{
-		return CQt.QScrollerProperties_ScrollMetric(this.ptr, metric);
+		return CQt.QScrollerProperties_ScrollMetric((.)this.ptr, metric);
 	}
 	public void SetScrollMetric(QScrollerProperties_ScrollMetric metric, QVariant_Ptr* value)
 	{
-		CQt.QScrollerProperties_SetScrollMetric(this.ptr, metric, value);
+		CQt.QScrollerProperties_SetScrollMetric((.)this.ptr, metric, value);
 	}
 }
 interface IQScrollerProperties

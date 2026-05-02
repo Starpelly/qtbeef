@@ -54,39 +54,39 @@ class QEvent
 	}
 	public QEvent_Type Type()
 	{
-		return CQt.QEvent_Type(this.ptr);
+		return CQt.QEvent_Type((.)this.ptr);
 	}
 	public bool Spontaneous()
 	{
-		return CQt.QEvent_Spontaneous(this.ptr);
+		return CQt.QEvent_Spontaneous((.)this.ptr);
 	}
 	public void SetAccepted(bool accepted)
 	{
-		CQt.QEvent_SetAccepted(this.ptr, accepted);
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEvent_IsAccepted(this.ptr);
+		return CQt.QEvent_IsAccepted((.)this.ptr);
 	}
 	public void Accept()
 	{
-		CQt.QEvent_Accept(this.ptr);
+		CQt.QEvent_Accept((.)this.ptr);
 	}
 	public void Ignore()
 	{
-		CQt.QEvent_Ignore(this.ptr);
+		CQt.QEvent_Ignore((.)this.ptr);
 	}
 	public bool IsInputEvent()
 	{
-		return CQt.QEvent_IsInputEvent(this.ptr);
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
 	}
 	public bool IsPointerEvent()
 	{
-		return CQt.QEvent_IsPointerEvent(this.ptr);
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
 	}
 	public bool IsSinglePointEvent()
 	{
-		return CQt.QEvent_IsSinglePointEvent(this.ptr);
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
 	}
 	public c_int RegisterEventType()
 	{
@@ -94,7 +94,7 @@ class QEvent
 	}
 	public QEvent_Ptr* Clone()
 	{
-		return CQt.QEvent_Clone(this.ptr);
+		return CQt.QEvent_Clone((.)this.ptr);
 	}
 	public c_int RegisterEventType1(c_int hint)
 	{
@@ -147,11 +147,55 @@ class QTimerEvent
 	}
 	public QTimerEvent_Ptr* Clone()
 	{
-		return CQt.QTimerEvent_Clone(this.ptr);
+		return CQt.QTimerEvent_Clone((.)this.ptr);
 	}
 	public c_int TimerId()
 	{
-		return CQt.QTimerEvent_TimerId(this.ptr);
+		return CQt.QTimerEvent_TimerId((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQTimerEvent
@@ -196,23 +240,67 @@ class QChildEvent
 	}
 	public QChildEvent_Ptr* Clone()
 	{
-		return CQt.QChildEvent_Clone(this.ptr);
+		return CQt.QChildEvent_Clone((.)this.ptr);
 	}
 	public QObject_Ptr* Child()
 	{
-		return CQt.QChildEvent_Child(this.ptr);
+		return CQt.QChildEvent_Child((.)this.ptr);
 	}
 	public bool Added()
 	{
-		return CQt.QChildEvent_Added(this.ptr);
+		return CQt.QChildEvent_Added((.)this.ptr);
 	}
 	public bool Polished()
 	{
-		return CQt.QChildEvent_Polished(this.ptr);
+		return CQt.QChildEvent_Polished((.)this.ptr);
 	}
 	public bool Removed()
 	{
-		return CQt.QChildEvent_Removed(this.ptr);
+		return CQt.QChildEvent_Removed((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQChildEvent
@@ -254,11 +342,55 @@ class QDynamicPropertyChangeEvent
 	}
 	public QDynamicPropertyChangeEvent_Ptr* Clone()
 	{
-		return CQt.QDynamicPropertyChangeEvent_Clone(this.ptr);
+		return CQt.QDynamicPropertyChangeEvent_Clone((.)this.ptr);
 	}
 	public void* PropertyName()
 	{
-		return CQt.QDynamicPropertyChangeEvent_PropertyName(this.ptr);
+		return CQt.QDynamicPropertyChangeEvent_PropertyName((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQDynamicPropertyChangeEvent
@@ -297,11 +429,55 @@ class QDeferredDeleteEvent
 	}
 	public QDeferredDeleteEvent_Ptr* Clone()
 	{
-		return CQt.QDeferredDeleteEvent_Clone(this.ptr);
+		return CQt.QDeferredDeleteEvent_Clone((.)this.ptr);
 	}
 	public c_int LoopLevel()
 	{
-		return CQt.QDeferredDeleteEvent_LoopLevel(this.ptr);
+		return CQt.QDeferredDeleteEvent_LoopLevel((.)this.ptr);
+	}
+	public QEvent_Type Type()
+	{
+		return CQt.QEvent_Type((.)this.ptr);
+	}
+	public bool Spontaneous()
+	{
+		return CQt.QEvent_Spontaneous((.)this.ptr);
+	}
+	public void SetAccepted(bool accepted)
+	{
+		CQt.QEvent_SetAccepted((.)this.ptr, accepted);
+	}
+	public bool IsAccepted()
+	{
+		return CQt.QEvent_IsAccepted((.)this.ptr);
+	}
+	public void Accept()
+	{
+		CQt.QEvent_Accept((.)this.ptr);
+	}
+	public void Ignore()
+	{
+		CQt.QEvent_Ignore((.)this.ptr);
+	}
+	public bool IsInputEvent()
+	{
+		return CQt.QEvent_IsInputEvent((.)this.ptr);
+	}
+	public bool IsPointerEvent()
+	{
+		return CQt.QEvent_IsPointerEvent((.)this.ptr);
+	}
+	public bool IsSinglePointEvent()
+	{
+		return CQt.QEvent_IsSinglePointEvent((.)this.ptr);
+	}
+	public c_int RegisterEventType()
+	{
+		return CQt.QEvent_RegisterEventType();
+	}
+	public c_int RegisterEventType1(c_int hint)
+	{
+		return CQt.QEvent_RegisterEventType1(hint);
 	}
 }
 interface IQDeferredDeleteEvent

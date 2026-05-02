@@ -54,39 +54,39 @@ class QSemaphore
 	}
 	public void Acquire()
 	{
-		CQt.QSemaphore_Acquire(this.ptr);
+		CQt.QSemaphore_Acquire((.)this.ptr);
 	}
 	public bool TryAcquire()
 	{
-		return CQt.QSemaphore_TryAcquire(this.ptr);
+		return CQt.QSemaphore_TryAcquire((.)this.ptr);
 	}
 	public bool TryAcquire2(c_int n, c_int timeout)
 	{
-		return CQt.QSemaphore_TryAcquire2(this.ptr, n, timeout);
+		return CQt.QSemaphore_TryAcquire2((.)this.ptr, n, timeout);
 	}
 	public void Release()
 	{
-		CQt.QSemaphore_Release(this.ptr);
+		CQt.QSemaphore_Release((.)this.ptr);
 	}
 	public c_int Available()
 	{
-		return CQt.QSemaphore_Available(this.ptr);
+		return CQt.QSemaphore_Available((.)this.ptr);
 	}
 	public bool TryAcquire3()
 	{
-		return CQt.QSemaphore_TryAcquire3(this.ptr);
+		return CQt.QSemaphore_TryAcquire3((.)this.ptr);
 	}
 	public void Acquire1(c_int n)
 	{
-		CQt.QSemaphore_Acquire1(this.ptr, n);
+		CQt.QSemaphore_Acquire1((.)this.ptr, n);
 	}
 	public bool TryAcquire1(c_int n)
 	{
-		return CQt.QSemaphore_TryAcquire1(this.ptr, n);
+		return CQt.QSemaphore_TryAcquire1((.)this.ptr, n);
 	}
 	public void Release1(c_int n)
 	{
-		CQt.QSemaphore_Release1(this.ptr, n);
+		CQt.QSemaphore_Release1((.)this.ptr, n);
 	}
 }
 interface IQSemaphore
@@ -150,15 +150,15 @@ class QSemaphoreReleaser
 	}
 	public void Swap(QSemaphoreReleaser_Ptr* other)
 	{
-		CQt.QSemaphoreReleaser_Swap(this.ptr, other);
+		CQt.QSemaphoreReleaser_Swap((.)this.ptr, other);
 	}
 	public QSemaphore_Ptr* Semaphore()
 	{
-		return CQt.QSemaphoreReleaser_Semaphore(this.ptr);
+		return CQt.QSemaphoreReleaser_Semaphore((.)this.ptr);
 	}
 	public QSemaphore_Ptr* Cancel()
 	{
-		return CQt.QSemaphoreReleaser_Cancel(this.ptr);
+		return CQt.QSemaphoreReleaser_Cancel((.)this.ptr);
 	}
 }
 interface IQSemaphoreReleaser

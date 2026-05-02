@@ -56,55 +56,55 @@ class QLockFile
 	}
 	public libqt_string FileName()
 	{
-		return CQt.QLockFile_FileName(this.ptr);
+		return CQt.QLockFile_FileName((.)this.ptr);
 	}
 	public bool Lock()
 	{
-		return CQt.QLockFile_Lock(this.ptr);
+		return CQt.QLockFile_Lock((.)this.ptr);
 	}
 	public bool TryLock()
 	{
-		return CQt.QLockFile_TryLock(this.ptr);
+		return CQt.QLockFile_TryLock((.)this.ptr);
 	}
 	public void Unlock()
 	{
-		CQt.QLockFile_Unlock(this.ptr);
+		CQt.QLockFile_Unlock((.)this.ptr);
 	}
 	public void SetStaleLockTime(c_int staleLockTime)
 	{
-		CQt.QLockFile_SetStaleLockTime(this.ptr, staleLockTime);
+		CQt.QLockFile_SetStaleLockTime((.)this.ptr, staleLockTime);
 	}
 	public c_int StaleLockTime()
 	{
-		return CQt.QLockFile_StaleLockTime(this.ptr);
+		return CQt.QLockFile_StaleLockTime((.)this.ptr);
 	}
 	public bool TryLock2(void* timeout)
 	{
-		return CQt.QLockFile_TryLock2(this.ptr, timeout);
+		return CQt.QLockFile_TryLock2((.)this.ptr, timeout);
 	}
 	public void SetStaleLockTime2(void* value)
 	{
-		CQt.QLockFile_SetStaleLockTime2(this.ptr, value);
+		CQt.QLockFile_SetStaleLockTime2((.)this.ptr, value);
 	}
 	public void* StaleLockTimeAsDuration()
 	{
-		return CQt.QLockFile_StaleLockTimeAsDuration(this.ptr);
+		return CQt.QLockFile_StaleLockTimeAsDuration((.)this.ptr);
 	}
 	public bool IsLocked()
 	{
-		return CQt.QLockFile_IsLocked(this.ptr);
+		return CQt.QLockFile_IsLocked((.)this.ptr);
 	}
 	public bool RemoveStaleLockFile()
 	{
-		return CQt.QLockFile_RemoveStaleLockFile(this.ptr);
+		return CQt.QLockFile_RemoveStaleLockFile((.)this.ptr);
 	}
 	public QLockFile_LockError Error()
 	{
-		return CQt.QLockFile_Error(this.ptr);
+		return CQt.QLockFile_Error((.)this.ptr);
 	}
 	public bool TryLock1(c_int timeout)
 	{
-		return CQt.QLockFile_TryLock1(this.ptr, timeout);
+		return CQt.QLockFile_TryLock1((.)this.ptr, timeout);
 	}
 }
 interface IQLockFile

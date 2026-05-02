@@ -114,87 +114,87 @@ class QBitArray
 	}
 	public void Swap(QBitArray_Ptr* other)
 	{
-		CQt.QBitArray_Swap(this.ptr, other);
+		CQt.QBitArray_Swap((.)this.ptr, other);
 	}
 	public void* Size()
 	{
-		return CQt.QBitArray_Size(this.ptr);
+		return CQt.QBitArray_Size((.)this.ptr);
 	}
 	public void* Count()
 	{
-		return CQt.QBitArray_Count(this.ptr);
+		return CQt.QBitArray_Count((.)this.ptr);
 	}
 	public void* Count2(bool on)
 	{
-		return CQt.QBitArray_Count2(this.ptr, on);
+		return CQt.QBitArray_Count2((.)this.ptr, on);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QBitArray_IsEmpty(this.ptr);
+		return CQt.QBitArray_IsEmpty((.)this.ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QBitArray_IsNull(this.ptr);
+		return CQt.QBitArray_IsNull((.)this.ptr);
 	}
 	public void Resize(void* size)
 	{
-		CQt.QBitArray_Resize(this.ptr, size);
+		CQt.QBitArray_Resize((.)this.ptr, size);
 	}
 	public void Detach()
 	{
-		CQt.QBitArray_Detach(this.ptr);
+		CQt.QBitArray_Detach((.)this.ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QBitArray_IsDetached(this.ptr);
+		return CQt.QBitArray_IsDetached((.)this.ptr);
 	}
 	public void Clear()
 	{
-		CQt.QBitArray_Clear(this.ptr);
+		CQt.QBitArray_Clear((.)this.ptr);
 	}
 	public bool TestBit(void* i)
 	{
-		return CQt.QBitArray_TestBit(this.ptr, i);
+		return CQt.QBitArray_TestBit((.)this.ptr, i);
 	}
 	public void SetBit(void* i)
 	{
-		CQt.QBitArray_SetBit(this.ptr, i);
+		CQt.QBitArray_SetBit((.)this.ptr, i);
 	}
 	public void SetBit2(void* i, bool val)
 	{
-		CQt.QBitArray_SetBit2(this.ptr, i, val);
+		CQt.QBitArray_SetBit2((.)this.ptr, i, val);
 	}
 	public void ClearBit(void* i)
 	{
-		CQt.QBitArray_ClearBit(this.ptr, i);
+		CQt.QBitArray_ClearBit((.)this.ptr, i);
 	}
 	public bool ToggleBit(void* i)
 	{
-		return CQt.QBitArray_ToggleBit(this.ptr, i);
+		return CQt.QBitArray_ToggleBit((.)this.ptr, i);
 	}
 	public bool At(void* i)
 	{
-		return CQt.QBitArray_At(this.ptr, i);
+		return CQt.QBitArray_At((.)this.ptr, i);
 	}
 	public bool OperatorSubscript2(void* i)
 	{
-		return CQt.QBitArray_OperatorSubscript2(this.ptr, i);
+		return CQt.QBitArray_OperatorSubscript2((.)this.ptr, i);
 	}
 	public bool Fill(bool val)
 	{
-		return CQt.QBitArray_Fill(this.ptr, val);
+		return CQt.QBitArray_Fill((.)this.ptr, val);
 	}
 	public void Fill2(bool val, void* first, void* last)
 	{
-		CQt.QBitArray_Fill2(this.ptr, val, first, last);
+		CQt.QBitArray_Fill2((.)this.ptr, val, first, last);
 	}
 	public void Truncate(void* pos)
 	{
-		CQt.QBitArray_Truncate(this.ptr, pos);
+		CQt.QBitArray_Truncate((.)this.ptr, pos);
 	}
 	public c_char* Bits()
 	{
-		return CQt.QBitArray_Bits(this.ptr);
+		return CQt.QBitArray_Bits((.)this.ptr);
 	}
 	public QBitArray_Ptr FromBits(c_char* data, void* lenVal)
 	{
@@ -202,15 +202,15 @@ class QBitArray
 	}
 	public c_uint ToUInt32(void* endianness)
 	{
-		return CQt.QBitArray_ToUInt32(this.ptr, endianness);
+		return CQt.QBitArray_ToUInt32((.)this.ptr, endianness);
 	}
 	public bool Fill22(bool val, void* size)
 	{
-		return CQt.QBitArray_Fill22(this.ptr, val, size);
+		return CQt.QBitArray_Fill22((.)this.ptr, val, size);
 	}
 	public c_uint ToUInt322(void* endianness, bool* ok)
 	{
-		return CQt.QBitArray_ToUInt322(this.ptr, endianness, ok);
+		return CQt.QBitArray_ToUInt322((.)this.ptr, endianness, ok);
 	}
 }
 interface IQBitArray
@@ -278,7 +278,7 @@ class QBitRef
 	}
 	public void OperatorAssign2(bool val)
 	{
-		CQt.QBitRef_OperatorAssign2(this.ptr, val);
+		CQt.QBitRef_OperatorAssign2((.)this.ptr, val);
 	}
 }
 interface IQBitRef

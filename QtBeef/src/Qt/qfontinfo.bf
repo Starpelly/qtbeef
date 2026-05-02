@@ -72,71 +72,71 @@ class QFontInfo
 	}
 	public void Swap(QFontInfo_Ptr* other)
 	{
-		CQt.QFontInfo_Swap(this.ptr, other);
+		CQt.QFontInfo_Swap((.)this.ptr, other);
 	}
 	public libqt_string Family()
 	{
-		return CQt.QFontInfo_Family(this.ptr);
+		return CQt.QFontInfo_Family((.)this.ptr);
 	}
 	public libqt_string StyleName()
 	{
-		return CQt.QFontInfo_StyleName(this.ptr);
+		return CQt.QFontInfo_StyleName((.)this.ptr);
 	}
 	public c_int PixelSize()
 	{
-		return CQt.QFontInfo_PixelSize(this.ptr);
+		return CQt.QFontInfo_PixelSize((.)this.ptr);
 	}
 	public c_int PointSize()
 	{
-		return CQt.QFontInfo_PointSize(this.ptr);
+		return CQt.QFontInfo_PointSize((.)this.ptr);
 	}
 	public double PointSizeF()
 	{
-		return CQt.QFontInfo_PointSizeF(this.ptr);
+		return CQt.QFontInfo_PointSizeF((.)this.ptr);
 	}
 	public bool Italic()
 	{
-		return CQt.QFontInfo_Italic(this.ptr);
+		return CQt.QFontInfo_Italic((.)this.ptr);
 	}
 	public QFont_Style Style()
 	{
-		return CQt.QFontInfo_Style(this.ptr);
+		return CQt.QFontInfo_Style((.)this.ptr);
 	}
 	public c_int Weight()
 	{
-		return CQt.QFontInfo_Weight(this.ptr);
+		return CQt.QFontInfo_Weight((.)this.ptr);
 	}
 	public bool Bold()
 	{
-		return CQt.QFontInfo_Bold(this.ptr);
+		return CQt.QFontInfo_Bold((.)this.ptr);
 	}
 	public bool Underline()
 	{
-		return CQt.QFontInfo_Underline(this.ptr);
+		return CQt.QFontInfo_Underline((.)this.ptr);
 	}
 	public bool Overline()
 	{
-		return CQt.QFontInfo_Overline(this.ptr);
+		return CQt.QFontInfo_Overline((.)this.ptr);
 	}
 	public bool StrikeOut()
 	{
-		return CQt.QFontInfo_StrikeOut(this.ptr);
+		return CQt.QFontInfo_StrikeOut((.)this.ptr);
 	}
 	public bool FixedPitch()
 	{
-		return CQt.QFontInfo_FixedPitch(this.ptr);
+		return CQt.QFontInfo_FixedPitch((.)this.ptr);
 	}
 	public QFont_StyleHint StyleHint()
 	{
-		return CQt.QFontInfo_StyleHint(this.ptr);
+		return CQt.QFontInfo_StyleHint((.)this.ptr);
 	}
 	public c_int LegacyWeight()
 	{
-		return CQt.QFontInfo_LegacyWeight(this.ptr);
+		return CQt.QFontInfo_LegacyWeight((.)this.ptr);
 	}
 	public bool ExactMatch()
 	{
-		return CQt.QFontInfo_ExactMatch(this.ptr);
+		return CQt.QFontInfo_ExactMatch((.)this.ptr);
 	}
 }
 interface IQFontInfo

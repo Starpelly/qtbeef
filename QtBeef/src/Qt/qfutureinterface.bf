@@ -144,195 +144,195 @@ class QFutureInterfaceBase
 	}
 	public void ReportStarted()
 	{
-		CQt.QFutureInterfaceBase_ReportStarted(this.ptr);
+		CQt.QFutureInterfaceBase_ReportStarted((.)this.ptr);
 	}
 	public void ReportFinished()
 	{
-		CQt.QFutureInterfaceBase_ReportFinished(this.ptr);
+		CQt.QFutureInterfaceBase_ReportFinished((.)this.ptr);
 	}
 	public void ReportCanceled()
 	{
-		CQt.QFutureInterfaceBase_ReportCanceled(this.ptr);
+		CQt.QFutureInterfaceBase_ReportCanceled((.)this.ptr);
 	}
 	public void ReportResultsReady(c_int beginIndex, c_int endIndex)
 	{
-		CQt.QFutureInterfaceBase_ReportResultsReady(this.ptr, beginIndex, endIndex);
+		CQt.QFutureInterfaceBase_ReportResultsReady((.)this.ptr, beginIndex, endIndex);
 	}
 	public void SetRunnable(QRunnable_Ptr* runnable)
 	{
-		CQt.QFutureInterfaceBase_SetRunnable(this.ptr, runnable);
+		CQt.QFutureInterfaceBase_SetRunnable((.)this.ptr, runnable);
 	}
 	public void SetThreadPool(QThreadPool_Ptr* pool)
 	{
-		CQt.QFutureInterfaceBase_SetThreadPool(this.ptr, pool);
+		CQt.QFutureInterfaceBase_SetThreadPool((.)this.ptr, pool);
 	}
 	public QThreadPool_Ptr* ThreadPool()
 	{
-		return CQt.QFutureInterfaceBase_ThreadPool(this.ptr);
+		return CQt.QFutureInterfaceBase_ThreadPool((.)this.ptr);
 	}
 	public void SetFilterMode(bool enable)
 	{
-		CQt.QFutureInterfaceBase_SetFilterMode(this.ptr, enable);
+		CQt.QFutureInterfaceBase_SetFilterMode((.)this.ptr, enable);
 	}
 	public void SetProgressRange(c_int minimum, c_int maximum)
 	{
-		CQt.QFutureInterfaceBase_SetProgressRange(this.ptr, minimum, maximum);
+		CQt.QFutureInterfaceBase_SetProgressRange((.)this.ptr, minimum, maximum);
 	}
 	public c_int ProgressMinimum()
 	{
-		return CQt.QFutureInterfaceBase_ProgressMinimum(this.ptr);
+		return CQt.QFutureInterfaceBase_ProgressMinimum((.)this.ptr);
 	}
 	public c_int ProgressMaximum()
 	{
-		return CQt.QFutureInterfaceBase_ProgressMaximum(this.ptr);
+		return CQt.QFutureInterfaceBase_ProgressMaximum((.)this.ptr);
 	}
 	public bool IsProgressUpdateNeeded()
 	{
-		return CQt.QFutureInterfaceBase_IsProgressUpdateNeeded(this.ptr);
+		return CQt.QFutureInterfaceBase_IsProgressUpdateNeeded((.)this.ptr);
 	}
 	public void SetProgressValue(c_int progressValue)
 	{
-		CQt.QFutureInterfaceBase_SetProgressValue(this.ptr, progressValue);
+		CQt.QFutureInterfaceBase_SetProgressValue((.)this.ptr, progressValue);
 	}
 	public c_int ProgressValue()
 	{
-		return CQt.QFutureInterfaceBase_ProgressValue(this.ptr);
+		return CQt.QFutureInterfaceBase_ProgressValue((.)this.ptr);
 	}
 	public void SetProgressValueAndText(c_int progressValue, libqt_string* progressText)
 	{
-		CQt.QFutureInterfaceBase_SetProgressValueAndText(this.ptr, progressValue, progressText);
+		CQt.QFutureInterfaceBase_SetProgressValueAndText((.)this.ptr, progressValue, progressText);
 	}
 	public libqt_string ProgressText()
 	{
-		return CQt.QFutureInterfaceBase_ProgressText(this.ptr);
+		return CQt.QFutureInterfaceBase_ProgressText((.)this.ptr);
 	}
 	public void SetExpectedResultCount(c_int resultCount)
 	{
-		CQt.QFutureInterfaceBase_SetExpectedResultCount(this.ptr, resultCount);
+		CQt.QFutureInterfaceBase_SetExpectedResultCount((.)this.ptr, resultCount);
 	}
 	public c_int ExpectedResultCount()
 	{
-		return CQt.QFutureInterfaceBase_ExpectedResultCount(this.ptr);
+		return CQt.QFutureInterfaceBase_ExpectedResultCount((.)this.ptr);
 	}
 	public c_int ResultCount()
 	{
-		return CQt.QFutureInterfaceBase_ResultCount(this.ptr);
+		return CQt.QFutureInterfaceBase_ResultCount((.)this.ptr);
 	}
 	public bool QueryState(QFutureInterfaceBase_State state)
 	{
-		return CQt.QFutureInterfaceBase_QueryState(this.ptr, state);
+		return CQt.QFutureInterfaceBase_QueryState((.)this.ptr, state);
 	}
 	public bool IsRunning()
 	{
-		return CQt.QFutureInterfaceBase_IsRunning(this.ptr);
+		return CQt.QFutureInterfaceBase_IsRunning((.)this.ptr);
 	}
 	public bool IsStarted()
 	{
-		return CQt.QFutureInterfaceBase_IsStarted(this.ptr);
+		return CQt.QFutureInterfaceBase_IsStarted((.)this.ptr);
 	}
 	public bool IsCanceled()
 	{
-		return CQt.QFutureInterfaceBase_IsCanceled(this.ptr);
+		return CQt.QFutureInterfaceBase_IsCanceled((.)this.ptr);
 	}
 	public bool IsFinished()
 	{
-		return CQt.QFutureInterfaceBase_IsFinished(this.ptr);
+		return CQt.QFutureInterfaceBase_IsFinished((.)this.ptr);
 	}
 	public bool IsPaused()
 	{
-		return CQt.QFutureInterfaceBase_IsPaused(this.ptr);
+		return CQt.QFutureInterfaceBase_IsPaused((.)this.ptr);
 	}
 	public void SetPaused(bool paused)
 	{
-		CQt.QFutureInterfaceBase_SetPaused(this.ptr, paused);
+		CQt.QFutureInterfaceBase_SetPaused((.)this.ptr, paused);
 	}
 	public void TogglePaused()
 	{
-		CQt.QFutureInterfaceBase_TogglePaused(this.ptr);
+		CQt.QFutureInterfaceBase_TogglePaused((.)this.ptr);
 	}
 	public bool IsSuspending()
 	{
-		return CQt.QFutureInterfaceBase_IsSuspending(this.ptr);
+		return CQt.QFutureInterfaceBase_IsSuspending((.)this.ptr);
 	}
 	public bool IsSuspended()
 	{
-		return CQt.QFutureInterfaceBase_IsSuspended(this.ptr);
+		return CQt.QFutureInterfaceBase_IsSuspended((.)this.ptr);
 	}
 	public bool IsThrottled()
 	{
-		return CQt.QFutureInterfaceBase_IsThrottled(this.ptr);
+		return CQt.QFutureInterfaceBase_IsThrottled((.)this.ptr);
 	}
 	public bool IsResultReadyAt(c_int index)
 	{
-		return CQt.QFutureInterfaceBase_IsResultReadyAt(this.ptr, index);
+		return CQt.QFutureInterfaceBase_IsResultReadyAt((.)this.ptr, index);
 	}
 	public bool IsValid()
 	{
-		return CQt.QFutureInterfaceBase_IsValid(this.ptr);
+		return CQt.QFutureInterfaceBase_IsValid((.)this.ptr);
 	}
 	public c_int LoadState()
 	{
-		return CQt.QFutureInterfaceBase_LoadState(this.ptr);
+		return CQt.QFutureInterfaceBase_LoadState((.)this.ptr);
 	}
 	public void Cancel()
 	{
-		CQt.QFutureInterfaceBase_Cancel(this.ptr);
+		CQt.QFutureInterfaceBase_Cancel((.)this.ptr);
 	}
 	public void CancelAndFinish()
 	{
-		CQt.QFutureInterfaceBase_CancelAndFinish(this.ptr);
+		CQt.QFutureInterfaceBase_CancelAndFinish((.)this.ptr);
 	}
 	public void SetSuspended(bool suspendVal)
 	{
-		CQt.QFutureInterfaceBase_SetSuspended(this.ptr, suspendVal);
+		CQt.QFutureInterfaceBase_SetSuspended((.)this.ptr, suspendVal);
 	}
 	public void ToggleSuspended()
 	{
-		CQt.QFutureInterfaceBase_ToggleSuspended(this.ptr);
+		CQt.QFutureInterfaceBase_ToggleSuspended((.)this.ptr);
 	}
 	public void ReportSuspended()
 	{
-		CQt.QFutureInterfaceBase_ReportSuspended(this.ptr);
+		CQt.QFutureInterfaceBase_ReportSuspended((.)this.ptr);
 	}
 	public void SetThrottled(bool enable)
 	{
-		CQt.QFutureInterfaceBase_SetThrottled(this.ptr, enable);
+		CQt.QFutureInterfaceBase_SetThrottled((.)this.ptr, enable);
 	}
 	public void WaitForFinished()
 	{
-		CQt.QFutureInterfaceBase_WaitForFinished(this.ptr);
+		CQt.QFutureInterfaceBase_WaitForFinished((.)this.ptr);
 	}
 	public bool WaitForNextResult()
 	{
-		return CQt.QFutureInterfaceBase_WaitForNextResult(this.ptr);
+		return CQt.QFutureInterfaceBase_WaitForNextResult((.)this.ptr);
 	}
 	public void WaitForResult(c_int resultIndex)
 	{
-		CQt.QFutureInterfaceBase_WaitForResult(this.ptr, resultIndex);
+		CQt.QFutureInterfaceBase_WaitForResult((.)this.ptr, resultIndex);
 	}
 	public void WaitForResume()
 	{
-		CQt.QFutureInterfaceBase_WaitForResume(this.ptr);
+		CQt.QFutureInterfaceBase_WaitForResume((.)this.ptr);
 	}
 	public void SuspendIfRequested()
 	{
-		CQt.QFutureInterfaceBase_SuspendIfRequested(this.ptr);
+		CQt.QFutureInterfaceBase_SuspendIfRequested((.)this.ptr);
 	}
 	public QMutex_Ptr* Mutex()
 	{
-		return CQt.QFutureInterfaceBase_Mutex(this.ptr);
+		return CQt.QFutureInterfaceBase_Mutex((.)this.ptr);
 	}
 	public bool HasException()
 	{
-		return CQt.QFutureInterfaceBase_HasException(this.ptr);
+		return CQt.QFutureInterfaceBase_HasException((.)this.ptr);
 	}
 	public void Swap(QFutureInterfaceBase_Ptr* other)
 	{
-		CQt.QFutureInterfaceBase_Swap(this.ptr, other);
+		CQt.QFutureInterfaceBase_Swap((.)this.ptr, other);
 	}
 	public bool IsChainCanceled()
 	{
-		return CQt.QFutureInterfaceBase_IsChainCanceled(this.ptr);
+		return CQt.QFutureInterfaceBase_IsChainCanceled((.)this.ptr);
 	}
 }
 interface IQFutureInterfaceBase

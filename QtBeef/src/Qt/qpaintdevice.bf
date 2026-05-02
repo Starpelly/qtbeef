@@ -64,63 +64,63 @@ class QPaintDevice
 	}
 	public c_int DevType()
 	{
-		return CQt.QPaintDevice_DevType(this.ptr);
+		return CQt.QPaintDevice_DevType((.)this.ptr);
 	}
 	public bool PaintingActive()
 	{
-		return CQt.QPaintDevice_PaintingActive(this.ptr);
+		return CQt.QPaintDevice_PaintingActive((.)this.ptr);
 	}
 	public QPaintEngine_Ptr* PaintEngine()
 	{
-		return CQt.QPaintDevice_PaintEngine(this.ptr);
+		return CQt.QPaintDevice_PaintEngine((.)this.ptr);
 	}
 	public c_int Width()
 	{
-		return CQt.QPaintDevice_Width(this.ptr);
+		return CQt.QPaintDevice_Width((.)this.ptr);
 	}
 	public c_int Height()
 	{
-		return CQt.QPaintDevice_Height(this.ptr);
+		return CQt.QPaintDevice_Height((.)this.ptr);
 	}
 	public c_int WidthMM()
 	{
-		return CQt.QPaintDevice_WidthMM(this.ptr);
+		return CQt.QPaintDevice_WidthMM((.)this.ptr);
 	}
 	public c_int HeightMM()
 	{
-		return CQt.QPaintDevice_HeightMM(this.ptr);
+		return CQt.QPaintDevice_HeightMM((.)this.ptr);
 	}
 	public c_int LogicalDpiX()
 	{
-		return CQt.QPaintDevice_LogicalDpiX(this.ptr);
+		return CQt.QPaintDevice_LogicalDpiX((.)this.ptr);
 	}
 	public c_int LogicalDpiY()
 	{
-		return CQt.QPaintDevice_LogicalDpiY(this.ptr);
+		return CQt.QPaintDevice_LogicalDpiY((.)this.ptr);
 	}
 	public c_int PhysicalDpiX()
 	{
-		return CQt.QPaintDevice_PhysicalDpiX(this.ptr);
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.ptr);
 	}
 	public c_int PhysicalDpiY()
 	{
-		return CQt.QPaintDevice_PhysicalDpiY(this.ptr);
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.ptr);
 	}
 	public double DevicePixelRatio()
 	{
-		return CQt.QPaintDevice_DevicePixelRatio(this.ptr);
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.ptr);
 	}
 	public double DevicePixelRatioF()
 	{
-		return CQt.QPaintDevice_DevicePixelRatioF(this.ptr);
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.ptr);
 	}
 	public c_int ColorCount()
 	{
-		return CQt.QPaintDevice_ColorCount(this.ptr);
+		return CQt.QPaintDevice_ColorCount((.)this.ptr);
 	}
 	public c_int Depth()
 	{
-		return CQt.QPaintDevice_Depth(this.ptr);
+		return CQt.QPaintDevice_Depth((.)this.ptr);
 	}
 	public double DevicePixelRatioFScale()
 	{
@@ -128,19 +128,19 @@ class QPaintDevice
 	}
 	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
 	{
-		return CQt.QPaintDevice_Metric(this.ptr, metric);
+		return CQt.QPaintDevice_Metric((.)this.ptr, metric);
 	}
 	public void InitPainter(QPainter_Ptr* painter)
 	{
-		CQt.QPaintDevice_InitPainter(this.ptr, painter);
+		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
 	}
 	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
 	{
-		return CQt.QPaintDevice_Redirected(this.ptr, offset);
+		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
 	}
 	public QPainter_Ptr* SharedPainter()
 	{
-		return CQt.QPaintDevice_SharedPainter(this.ptr);
+		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
 interface IQPaintDevice

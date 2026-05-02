@@ -72,11 +72,11 @@ class QKeyCombination
 	}
 	public void* KeyboardModifiers()
 	{
-		return CQt.QKeyCombination_KeyboardModifiers(this.ptr);
+		return CQt.QKeyCombination_KeyboardModifiers((.)this.ptr);
 	}
 	public Qt_Key Key()
 	{
-		return CQt.QKeyCombination_Key(this.ptr);
+		return CQt.QKeyCombination_Key((.)this.ptr);
 	}
 	public QKeyCombination_Ptr FromCombined(c_int combined)
 	{
@@ -84,7 +84,7 @@ class QKeyCombination
 	}
 	public c_int ToCombined()
 	{
-		return CQt.QKeyCombination_ToCombined(this.ptr);
+		return CQt.QKeyCombination_ToCombined((.)this.ptr);
 	}
 }
 interface IQKeyCombination

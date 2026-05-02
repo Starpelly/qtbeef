@@ -166,15 +166,15 @@ class QFormLayout
 	}
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QFormLayout_MetaObject(this.ptr);
+		return CQt.QFormLayout_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QFormLayout_Qt_Metacast(this.ptr, param1);
+		return CQt.QFormLayout_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QFormLayout_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QFormLayout_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -182,239 +182,239 @@ class QFormLayout
 	}
 	public void SetFieldGrowthPolicy(QFormLayout_FieldGrowthPolicy policy)
 	{
-		CQt.QFormLayout_SetFieldGrowthPolicy(this.ptr, policy);
+		CQt.QFormLayout_SetFieldGrowthPolicy((.)this.ptr, policy);
 	}
 	public QFormLayout_FieldGrowthPolicy FieldGrowthPolicy()
 	{
-		return CQt.QFormLayout_FieldGrowthPolicy(this.ptr);
+		return CQt.QFormLayout_FieldGrowthPolicy((.)this.ptr);
 	}
 	public void SetRowWrapPolicy(QFormLayout_RowWrapPolicy policy)
 	{
-		CQt.QFormLayout_SetRowWrapPolicy(this.ptr, policy);
+		CQt.QFormLayout_SetRowWrapPolicy((.)this.ptr, policy);
 	}
 	public QFormLayout_RowWrapPolicy RowWrapPolicy()
 	{
-		return CQt.QFormLayout_RowWrapPolicy(this.ptr);
+		return CQt.QFormLayout_RowWrapPolicy((.)this.ptr);
 	}
 	public void SetLabelAlignment(void* alignment)
 	{
-		CQt.QFormLayout_SetLabelAlignment(this.ptr, alignment);
+		CQt.QFormLayout_SetLabelAlignment((.)this.ptr, alignment);
 	}
 	public void* LabelAlignment()
 	{
-		return CQt.QFormLayout_LabelAlignment(this.ptr);
+		return CQt.QFormLayout_LabelAlignment((.)this.ptr);
 	}
 	public void SetFormAlignment(void* alignment)
 	{
-		CQt.QFormLayout_SetFormAlignment(this.ptr, alignment);
+		CQt.QFormLayout_SetFormAlignment((.)this.ptr, alignment);
 	}
 	public void* FormAlignment()
 	{
-		return CQt.QFormLayout_FormAlignment(this.ptr);
+		return CQt.QFormLayout_FormAlignment((.)this.ptr);
 	}
 	public void SetHorizontalSpacing(c_int spacing)
 	{
-		CQt.QFormLayout_SetHorizontalSpacing(this.ptr, spacing);
+		CQt.QFormLayout_SetHorizontalSpacing((.)this.ptr, spacing);
 	}
 	public c_int HorizontalSpacing()
 	{
-		return CQt.QFormLayout_HorizontalSpacing(this.ptr);
+		return CQt.QFormLayout_HorizontalSpacing((.)this.ptr);
 	}
 	public void SetVerticalSpacing(c_int spacing)
 	{
-		CQt.QFormLayout_SetVerticalSpacing(this.ptr, spacing);
+		CQt.QFormLayout_SetVerticalSpacing((.)this.ptr, spacing);
 	}
 	public c_int VerticalSpacing()
 	{
-		return CQt.QFormLayout_VerticalSpacing(this.ptr);
+		return CQt.QFormLayout_VerticalSpacing((.)this.ptr);
 	}
 	public c_int Spacing()
 	{
-		return CQt.QFormLayout_Spacing(this.ptr);
+		return CQt.QFormLayout_Spacing((.)this.ptr);
 	}
 	public void SetSpacing(c_int spacing)
 	{
-		CQt.QFormLayout_SetSpacing(this.ptr, spacing);
+		CQt.QFormLayout_SetSpacing((.)this.ptr, spacing);
 	}
 	public void AddRow(QWidget_Ptr* label, QWidget_Ptr* field)
 	{
-		CQt.QFormLayout_AddRow(this.ptr, label, field);
+		CQt.QFormLayout_AddRow((.)this.ptr, label, field);
 	}
 	public void AddRow2(QWidget_Ptr* label, QLayout_Ptr* field)
 	{
-		CQt.QFormLayout_AddRow2(this.ptr, label, field);
+		CQt.QFormLayout_AddRow2((.)this.ptr, label, field);
 	}
 	public void AddRow3(libqt_string* labelText, QWidget_Ptr* field)
 	{
-		CQt.QFormLayout_AddRow3(this.ptr, labelText, field);
+		CQt.QFormLayout_AddRow3((.)this.ptr, labelText, field);
 	}
 	public void AddRow4(libqt_string* labelText, QLayout_Ptr* field)
 	{
-		CQt.QFormLayout_AddRow4(this.ptr, labelText, field);
+		CQt.QFormLayout_AddRow4((.)this.ptr, labelText, field);
 	}
 	public void AddRow5(QWidget_Ptr* widget)
 	{
-		CQt.QFormLayout_AddRow5(this.ptr, widget);
+		CQt.QFormLayout_AddRow5((.)this.ptr, widget);
 	}
 	public void AddRow6(QLayout_Ptr* layout)
 	{
-		CQt.QFormLayout_AddRow6(this.ptr, layout);
+		CQt.QFormLayout_AddRow6((.)this.ptr, layout);
 	}
 	public void InsertRow(c_int row, QWidget_Ptr* label, QWidget_Ptr* field)
 	{
-		CQt.QFormLayout_InsertRow(this.ptr, row, label, field);
+		CQt.QFormLayout_InsertRow((.)this.ptr, row, label, field);
 	}
 	public void InsertRow2(c_int row, QWidget_Ptr* label, QLayout_Ptr* field)
 	{
-		CQt.QFormLayout_InsertRow2(this.ptr, row, label, field);
+		CQt.QFormLayout_InsertRow2((.)this.ptr, row, label, field);
 	}
 	public void InsertRow3(c_int row, libqt_string* labelText, QWidget_Ptr* field)
 	{
-		CQt.QFormLayout_InsertRow3(this.ptr, row, labelText, field);
+		CQt.QFormLayout_InsertRow3((.)this.ptr, row, labelText, field);
 	}
 	public void InsertRow4(c_int row, libqt_string* labelText, QLayout_Ptr* field)
 	{
-		CQt.QFormLayout_InsertRow4(this.ptr, row, labelText, field);
+		CQt.QFormLayout_InsertRow4((.)this.ptr, row, labelText, field);
 	}
 	public void InsertRow5(c_int row, QWidget_Ptr* widget)
 	{
-		CQt.QFormLayout_InsertRow5(this.ptr, row, widget);
+		CQt.QFormLayout_InsertRow5((.)this.ptr, row, widget);
 	}
 	public void InsertRow6(c_int row, QLayout_Ptr* layout)
 	{
-		CQt.QFormLayout_InsertRow6(this.ptr, row, layout);
+		CQt.QFormLayout_InsertRow6((.)this.ptr, row, layout);
 	}
 	public void RemoveRow(c_int row)
 	{
-		CQt.QFormLayout_RemoveRow(this.ptr, row);
+		CQt.QFormLayout_RemoveRow((.)this.ptr, row);
 	}
 	public void RemoveRow2(QWidget_Ptr* widget)
 	{
-		CQt.QFormLayout_RemoveRow2(this.ptr, widget);
+		CQt.QFormLayout_RemoveRow2((.)this.ptr, widget);
 	}
 	public void RemoveRow3(QLayout_Ptr* layout)
 	{
-		CQt.QFormLayout_RemoveRow3(this.ptr, layout);
+		CQt.QFormLayout_RemoveRow3((.)this.ptr, layout);
 	}
 	public QFormLayout_TakeRowResult TakeRow(c_int row)
 	{
-		return CQt.QFormLayout_TakeRow(this.ptr, row);
+		return CQt.QFormLayout_TakeRow((.)this.ptr, row);
 	}
 	public QFormLayout_TakeRowResult TakeRow2(QWidget_Ptr* widget)
 	{
-		return CQt.QFormLayout_TakeRow2(this.ptr, widget);
+		return CQt.QFormLayout_TakeRow2((.)this.ptr, widget);
 	}
 	public QFormLayout_TakeRowResult TakeRow3(QLayout_Ptr* layout)
 	{
-		return CQt.QFormLayout_TakeRow3(this.ptr, layout);
+		return CQt.QFormLayout_TakeRow3((.)this.ptr, layout);
 	}
 	public void SetItem(c_int row, QFormLayout_ItemRole role, QLayoutItem_Ptr* item)
 	{
-		CQt.QFormLayout_SetItem(this.ptr, row, role, item);
+		CQt.QFormLayout_SetItem((.)this.ptr, row, role, item);
 	}
 	public void SetWidget(c_int row, QFormLayout_ItemRole role, QWidget_Ptr* widget)
 	{
-		CQt.QFormLayout_SetWidget(this.ptr, row, role, widget);
+		CQt.QFormLayout_SetWidget((.)this.ptr, row, role, widget);
 	}
 	public void SetLayout(c_int row, QFormLayout_ItemRole role, QLayout_Ptr* layout)
 	{
-		CQt.QFormLayout_SetLayout(this.ptr, row, role, layout);
+		CQt.QFormLayout_SetLayout((.)this.ptr, row, role, layout);
 	}
 	public void SetRowVisible(c_int row, bool on)
 	{
-		CQt.QFormLayout_SetRowVisible(this.ptr, row, on);
+		CQt.QFormLayout_SetRowVisible((.)this.ptr, row, on);
 	}
 	public void SetRowVisible2(QWidget_Ptr* widget, bool on)
 	{
-		CQt.QFormLayout_SetRowVisible2(this.ptr, widget, on);
+		CQt.QFormLayout_SetRowVisible2((.)this.ptr, widget, on);
 	}
 	public void SetRowVisible3(QLayout_Ptr* layout, bool on)
 	{
-		CQt.QFormLayout_SetRowVisible3(this.ptr, layout, on);
+		CQt.QFormLayout_SetRowVisible3((.)this.ptr, layout, on);
 	}
 	public bool IsRowVisible(c_int row)
 	{
-		return CQt.QFormLayout_IsRowVisible(this.ptr, row);
+		return CQt.QFormLayout_IsRowVisible((.)this.ptr, row);
 	}
 	public bool IsRowVisible2(QWidget_Ptr* widget)
 	{
-		return CQt.QFormLayout_IsRowVisible2(this.ptr, widget);
+		return CQt.QFormLayout_IsRowVisible2((.)this.ptr, widget);
 	}
 	public bool IsRowVisible3(QLayout_Ptr* layout)
 	{
-		return CQt.QFormLayout_IsRowVisible3(this.ptr, layout);
+		return CQt.QFormLayout_IsRowVisible3((.)this.ptr, layout);
 	}
 	public QLayoutItem_Ptr* ItemAt(c_int row, QFormLayout_ItemRole role)
 	{
-		return CQt.QFormLayout_ItemAt(this.ptr, row, role);
+		return CQt.QFormLayout_ItemAt((.)this.ptr, row, role);
 	}
 	public void GetItemPosition(c_int index, c_int* rowPtr, QFormLayout_ItemRole* rolePtr)
 	{
-		CQt.QFormLayout_GetItemPosition(this.ptr, index, rowPtr, rolePtr);
+		CQt.QFormLayout_GetItemPosition((.)this.ptr, index, rowPtr, rolePtr);
 	}
 	public void GetWidgetPosition(QWidget_Ptr* widget, c_int* rowPtr, QFormLayout_ItemRole* rolePtr)
 	{
-		CQt.QFormLayout_GetWidgetPosition(this.ptr, widget, rowPtr, rolePtr);
+		CQt.QFormLayout_GetWidgetPosition((.)this.ptr, widget, rowPtr, rolePtr);
 	}
 	public void GetLayoutPosition(QLayout_Ptr* layout, c_int* rowPtr, QFormLayout_ItemRole* rolePtr)
 	{
-		CQt.QFormLayout_GetLayoutPosition(this.ptr, layout, rowPtr, rolePtr);
+		CQt.QFormLayout_GetLayoutPosition((.)this.ptr, layout, rowPtr, rolePtr);
 	}
 	public QWidget_Ptr* LabelForField(QWidget_Ptr* field)
 	{
-		return CQt.QFormLayout_LabelForField(this.ptr, field);
+		return CQt.QFormLayout_LabelForField((.)this.ptr, field);
 	}
 	public QWidget_Ptr* LabelForField2(QLayout_Ptr* field)
 	{
-		return CQt.QFormLayout_LabelForField2(this.ptr, field);
+		return CQt.QFormLayout_LabelForField2((.)this.ptr, field);
 	}
 	public void AddItem(QLayoutItem_Ptr* item)
 	{
-		CQt.QFormLayout_AddItem(this.ptr, item);
+		CQt.QFormLayout_AddItem((.)this.ptr, item);
 	}
 	public QLayoutItem_Ptr* ItemAt2(c_int index)
 	{
-		return CQt.QFormLayout_ItemAt2(this.ptr, index);
+		return CQt.QFormLayout_ItemAt2((.)this.ptr, index);
 	}
 	public QLayoutItem_Ptr* TakeAt(c_int index)
 	{
-		return CQt.QFormLayout_TakeAt(this.ptr, index);
+		return CQt.QFormLayout_TakeAt((.)this.ptr, index);
 	}
 	public void SetGeometry(QRect_Ptr* rect)
 	{
-		CQt.QFormLayout_SetGeometry(this.ptr, rect);
+		CQt.QFormLayout_SetGeometry((.)this.ptr, rect);
 	}
 	public QSize_Ptr MinimumSize()
 	{
-		return CQt.QFormLayout_MinimumSize(this.ptr);
+		return CQt.QFormLayout_MinimumSize((.)this.ptr);
 	}
 	public QSize_Ptr SizeHint()
 	{
-		return CQt.QFormLayout_SizeHint(this.ptr);
+		return CQt.QFormLayout_SizeHint((.)this.ptr);
 	}
 	public void Invalidate()
 	{
-		CQt.QFormLayout_Invalidate(this.ptr);
+		CQt.QFormLayout_Invalidate((.)this.ptr);
 	}
 	public bool HasHeightForWidth()
 	{
-		return CQt.QFormLayout_HasHeightForWidth(this.ptr);
+		return CQt.QFormLayout_HasHeightForWidth((.)this.ptr);
 	}
 	public c_int HeightForWidth(c_int width)
 	{
-		return CQt.QFormLayout_HeightForWidth(this.ptr, width);
+		return CQt.QFormLayout_HeightForWidth((.)this.ptr, width);
 	}
 	public void* ExpandingDirections()
 	{
-		return CQt.QFormLayout_ExpandingDirections(this.ptr);
+		return CQt.QFormLayout_ExpandingDirections((.)this.ptr);
 	}
 	public c_int Count()
 	{
-		return CQt.QFormLayout_Count(this.ptr);
+		return CQt.QFormLayout_Count((.)this.ptr);
 	}
 	public c_int RowCount()
 	{
-		return CQt.QFormLayout_RowCount(this.ptr);
+		return CQt.QFormLayout_RowCount((.)this.ptr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -423,6 +423,402 @@ class QFormLayout
 	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
 	{
 		return CQt.QFormLayout_Tr3(s, c, n);
+	}
+	public void SetContentsMargins(c_int left, c_int top, c_int right, c_int bottom)
+	{
+		CQt.QLayout_SetContentsMargins((.)this.ptr, left, top, right, bottom);
+	}
+	public void SetContentsMargins2(QMargins_Ptr* margins)
+	{
+		CQt.QLayout_SetContentsMargins2((.)this.ptr, margins);
+	}
+	public void UnsetContentsMargins()
+	{
+		CQt.QLayout_UnsetContentsMargins((.)this.ptr);
+	}
+	public void GetContentsMargins(c_int* left, c_int* top, c_int* right, c_int* bottom)
+	{
+		CQt.QLayout_GetContentsMargins((.)this.ptr, left, top, right, bottom);
+	}
+	public QMargins_Ptr ContentsMargins()
+	{
+		return CQt.QLayout_ContentsMargins((.)this.ptr);
+	}
+	public QRect_Ptr ContentsRect()
+	{
+		return CQt.QLayout_ContentsRect((.)this.ptr);
+	}
+	public bool SetAlignment(QWidget_Ptr* w, void* alignment)
+	{
+		return CQt.QLayout_SetAlignment((.)this.ptr, w, alignment);
+	}
+	public bool SetAlignment2(QLayout_Ptr* l, void* alignment)
+	{
+		return CQt.QLayout_SetAlignment2((.)this.ptr, l, alignment);
+	}
+	public void SetSizeConstraint(QLayout_SizeConstraint sizeConstraint)
+	{
+		CQt.QLayout_SetSizeConstraint((.)this.ptr, sizeConstraint);
+	}
+	public QLayout_SizeConstraint SizeConstraint()
+	{
+		return CQt.QLayout_SizeConstraint((.)this.ptr);
+	}
+	public void SetMenuBar(QWidget_Ptr* w)
+	{
+		CQt.QLayout_SetMenuBar((.)this.ptr, w);
+	}
+	public QWidget_Ptr* MenuBar()
+	{
+		return CQt.QLayout_MenuBar((.)this.ptr);
+	}
+	public QWidget_Ptr* ParentWidget()
+	{
+		return CQt.QLayout_ParentWidget((.)this.ptr);
+	}
+	public QRect_Ptr Geometry()
+	{
+		return CQt.QLayout_Geometry((.)this.ptr);
+	}
+	public bool Activate()
+	{
+		return CQt.QLayout_Activate((.)this.ptr);
+	}
+	public void Update()
+	{
+		CQt.QLayout_Update((.)this.ptr);
+	}
+	public void AddWidget(QWidget_Ptr* w)
+	{
+		CQt.QLayout_AddWidget((.)this.ptr, w);
+	}
+	public void RemoveWidget(QWidget_Ptr* w)
+	{
+		CQt.QLayout_RemoveWidget((.)this.ptr, w);
+	}
+	public void RemoveItem(QLayoutItem_Ptr* param1)
+	{
+		CQt.QLayout_RemoveItem((.)this.ptr, param1);
+	}
+	public QSize_Ptr MaximumSize()
+	{
+		return CQt.QLayout_MaximumSize((.)this.ptr);
+	}
+	public c_int IndexOf(QWidget_Ptr* param1)
+	{
+		return CQt.QLayout_IndexOf((.)this.ptr, param1);
+	}
+	public c_int IndexOf2(QLayoutItem_Ptr* param1)
+	{
+		return CQt.QLayout_IndexOf2((.)this.ptr, param1);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QLayout_IsEmpty((.)this.ptr);
+	}
+	public void* ControlTypes()
+	{
+		return CQt.QLayout_ControlTypes((.)this.ptr);
+	}
+	public QLayoutItem_Ptr* ReplaceWidget(QWidget_Ptr* from, QWidget_Ptr* to, void* options)
+	{
+		return CQt.QLayout_ReplaceWidget((.)this.ptr, from, to, options);
+	}
+	public c_int TotalMinimumHeightForWidth(c_int w)
+	{
+		return CQt.QLayout_TotalMinimumHeightForWidth((.)this.ptr, w);
+	}
+	public c_int TotalHeightForWidth(c_int w)
+	{
+		return CQt.QLayout_TotalHeightForWidth((.)this.ptr, w);
+	}
+	public QSize_Ptr TotalMinimumSize()
+	{
+		return CQt.QLayout_TotalMinimumSize((.)this.ptr);
+	}
+	public QSize_Ptr TotalMaximumSize()
+	{
+		return CQt.QLayout_TotalMaximumSize((.)this.ptr);
+	}
+	public QSize_Ptr TotalSizeHint()
+	{
+		return CQt.QLayout_TotalSizeHint((.)this.ptr);
+	}
+	public QLayout_Ptr* Layout()
+	{
+		return CQt.QLayout_Layout((.)this.ptr);
+	}
+	public void SetEnabled(bool enabled)
+	{
+		CQt.QLayout_SetEnabled((.)this.ptr, enabled);
+	}
+	public bool IsEnabled()
+	{
+		return CQt.QLayout_IsEnabled((.)this.ptr);
+	}
+	public QSize_Ptr ClosestAcceptableSize(QWidget_Ptr* w, QSize_Ptr* s)
+	{
+		return CQt.QLayout_ClosestAcceptableSize(w, s);
+	}
+	public void WidgetEvent(QEvent_Ptr* param1)
+	{
+		CQt.QLayout_WidgetEvent((.)this.ptr, param1);
+	}
+	public void ChildEvent(QChildEvent_Ptr* e)
+	{
+		CQt.QLayout_ChildEvent((.)this.ptr, e);
+	}
+	public void AddChildLayout(QLayout_Ptr* l)
+	{
+		CQt.QLayout_AddChildLayout((.)this.ptr, l);
+	}
+	public void AddChildWidget(QWidget_Ptr* w)
+	{
+		CQt.QLayout_AddChildWidget((.)this.ptr, w);
+	}
+	public bool AdoptLayout(QLayout_Ptr* layout)
+	{
+		return CQt.QLayout_AdoptLayout((.)this.ptr, layout);
+	}
+	public QRect_Ptr AlignmentRect(QRect_Ptr* param1)
+	{
+		return CQt.QLayout_AlignmentRect((.)this.ptr, param1);
+	}
+	public bool Event(QEvent_Ptr* event)
+	{
+		return CQt.QObject_Event((.)this.ptr, event);
+	}
+	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	{
+		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+	}
+	public libqt_string ObjectName()
+	{
+		return CQt.QObject_ObjectName((.)this.ptr);
+	}
+	public void SetObjectName(QAnyStringView_Ptr name)
+	{
+		CQt.QObject_SetObjectName((.)this.ptr, name);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.ptr, b);
+	}
+	public QThread_Ptr* Thread()
+	{
+		return CQt.QObject_Thread((.)this.ptr);
+	}
+	public void MoveToThread(QThread_Ptr* thread)
+	{
+		CQt.QObject_MoveToThread((.)this.ptr, thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.ptr);
+	}
+	public void SetParent(QObject_Ptr* parent)
+	{
+		CQt.QObject_SetParent((.)this.ptr, parent);
+	}
+	public void InstallEventFilter(QObject_Ptr* filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+	}
+	public void RemoveEventFilter(QObject_Ptr* obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+	}
+	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	{
+		return CQt.QObject_Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	{
+		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+	}
+	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	{
+		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.ptr);
+	}
+	public bool Disconnect4(QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+	}
+	public bool Disconnect5(QMetaObject_Connection* param1)
+	{
+		return CQt.QObject_Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.ptr);
+	}
+	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	{
+		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return CQt.QObject_Property((.)this.ptr, name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage()
+	{
+		return CQt.QObject_BindingStorage((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage2()
+	{
+		return CQt.QObject_BindingStorage2((.)this.ptr);
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.ptr);
+	}
+	public QObject_Ptr* Parent()
+	{
+		return CQt.QObject_Parent((.)this.ptr);
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.ptr);
+	}
+	public QObject_Ptr* Sender()
+	{
+		return CQt.QObject_Sender((.)this.ptr);
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.ptr, signal);
+	}
+	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+	}
+	public void TimerEvent(QTimerEvent_Ptr* event)
+	{
+		CQt.QObject_TimerEvent((.)this.ptr, event);
+	}
+	public void CustomEvent(QEvent_Ptr* event)
+	{
+		CQt.QObject_CustomEvent((.)this.ptr, event);
+	}
+	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+	}
+	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+	}
+	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+	}
+	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+	}
+	public void Destroyed1(QObject_Ptr* param1)
+	{
+		CQt.QObject_Destroyed1((.)this.ptr, param1);
+	}
+	public c_int MinimumHeightForWidth(c_int param1)
+	{
+		return CQt.QLayoutItem_MinimumHeightForWidth((.)this.ptr, param1);
+	}
+	public QWidget_Ptr* Widget()
+	{
+		return CQt.QLayoutItem_Widget((.)this.ptr);
+	}
+	public QSpacerItem_Ptr* SpacerItem()
+	{
+		return CQt.QLayoutItem_SpacerItem((.)this.ptr);
+	}
+	public void* Alignment()
+	{
+		return CQt.QLayoutItem_Alignment((.)this.ptr);
 	}
 }
 interface IQFormLayout
@@ -522,19 +918,19 @@ class QFormLayout_TakeRowResult
 	}
 	public QLayoutItem_Ptr* LabelItem()
 	{
-		return CQt.QFormLayout_TakeRowResult_LabelItem(this.ptr);
+		return CQt.QFormLayout_TakeRowResult_LabelItem((.)this.ptr);
 	}
 	public void SetLabelItem(QLayoutItem_Ptr* labelItem)
 	{
-		CQt.QFormLayout_TakeRowResult_SetLabelItem(this.ptr, labelItem);
+		CQt.QFormLayout_TakeRowResult_SetLabelItem((.)this.ptr, labelItem);
 	}
 	public QLayoutItem_Ptr* FieldItem()
 	{
-		return CQt.QFormLayout_TakeRowResult_FieldItem(this.ptr);
+		return CQt.QFormLayout_TakeRowResult_FieldItem((.)this.ptr);
 	}
 	public void SetFieldItem(QLayoutItem_Ptr* fieldItem)
 	{
-		CQt.QFormLayout_TakeRowResult_SetFieldItem(this.ptr, fieldItem);
+		CQt.QFormLayout_TakeRowResult_SetFieldItem((.)this.ptr, fieldItem);
 	}
 }
 interface IQFormLayout_TakeRowResult

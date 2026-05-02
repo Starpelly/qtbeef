@@ -130,191 +130,375 @@ class QGraphicsGridLayout
 	}
 	public void AddItem(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, c_int rowSpan, c_int columnSpan)
 	{
-		CQt.QGraphicsGridLayout_AddItem(this.ptr, item, row, column, rowSpan, columnSpan);
+		CQt.QGraphicsGridLayout_AddItem((.)this.ptr, item, row, column, rowSpan, columnSpan);
 	}
 	public void AddItem2(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column)
 	{
-		CQt.QGraphicsGridLayout_AddItem2(this.ptr, item, row, column);
+		CQt.QGraphicsGridLayout_AddItem2((.)this.ptr, item, row, column);
 	}
 	public void SetHorizontalSpacing(double spacing)
 	{
-		CQt.QGraphicsGridLayout_SetHorizontalSpacing(this.ptr, spacing);
+		CQt.QGraphicsGridLayout_SetHorizontalSpacing((.)this.ptr, spacing);
 	}
 	public double HorizontalSpacing()
 	{
-		return CQt.QGraphicsGridLayout_HorizontalSpacing(this.ptr);
+		return CQt.QGraphicsGridLayout_HorizontalSpacing((.)this.ptr);
 	}
 	public void SetVerticalSpacing(double spacing)
 	{
-		CQt.QGraphicsGridLayout_SetVerticalSpacing(this.ptr, spacing);
+		CQt.QGraphicsGridLayout_SetVerticalSpacing((.)this.ptr, spacing);
 	}
 	public double VerticalSpacing()
 	{
-		return CQt.QGraphicsGridLayout_VerticalSpacing(this.ptr);
+		return CQt.QGraphicsGridLayout_VerticalSpacing((.)this.ptr);
 	}
 	public void SetSpacing(double spacing)
 	{
-		CQt.QGraphicsGridLayout_SetSpacing(this.ptr, spacing);
+		CQt.QGraphicsGridLayout_SetSpacing((.)this.ptr, spacing);
 	}
 	public void SetRowSpacing(c_int row, double spacing)
 	{
-		CQt.QGraphicsGridLayout_SetRowSpacing(this.ptr, row, spacing);
+		CQt.QGraphicsGridLayout_SetRowSpacing((.)this.ptr, row, spacing);
 	}
 	public double RowSpacing(c_int row)
 	{
-		return CQt.QGraphicsGridLayout_RowSpacing(this.ptr, row);
+		return CQt.QGraphicsGridLayout_RowSpacing((.)this.ptr, row);
 	}
 	public void SetColumnSpacing(c_int column, double spacing)
 	{
-		CQt.QGraphicsGridLayout_SetColumnSpacing(this.ptr, column, spacing);
+		CQt.QGraphicsGridLayout_SetColumnSpacing((.)this.ptr, column, spacing);
 	}
 	public double ColumnSpacing(c_int column)
 	{
-		return CQt.QGraphicsGridLayout_ColumnSpacing(this.ptr, column);
+		return CQt.QGraphicsGridLayout_ColumnSpacing((.)this.ptr, column);
 	}
 	public void SetRowStretchFactor(c_int row, c_int stretch)
 	{
-		CQt.QGraphicsGridLayout_SetRowStretchFactor(this.ptr, row, stretch);
+		CQt.QGraphicsGridLayout_SetRowStretchFactor((.)this.ptr, row, stretch);
 	}
 	public c_int RowStretchFactor(c_int row)
 	{
-		return CQt.QGraphicsGridLayout_RowStretchFactor(this.ptr, row);
+		return CQt.QGraphicsGridLayout_RowStretchFactor((.)this.ptr, row);
 	}
 	public void SetColumnStretchFactor(c_int column, c_int stretch)
 	{
-		CQt.QGraphicsGridLayout_SetColumnStretchFactor(this.ptr, column, stretch);
+		CQt.QGraphicsGridLayout_SetColumnStretchFactor((.)this.ptr, column, stretch);
 	}
 	public c_int ColumnStretchFactor(c_int column)
 	{
-		return CQt.QGraphicsGridLayout_ColumnStretchFactor(this.ptr, column);
+		return CQt.QGraphicsGridLayout_ColumnStretchFactor((.)this.ptr, column);
 	}
 	public void SetRowMinimumHeight(c_int row, double height)
 	{
-		CQt.QGraphicsGridLayout_SetRowMinimumHeight(this.ptr, row, height);
+		CQt.QGraphicsGridLayout_SetRowMinimumHeight((.)this.ptr, row, height);
 	}
 	public double RowMinimumHeight(c_int row)
 	{
-		return CQt.QGraphicsGridLayout_RowMinimumHeight(this.ptr, row);
+		return CQt.QGraphicsGridLayout_RowMinimumHeight((.)this.ptr, row);
 	}
 	public void SetRowPreferredHeight(c_int row, double height)
 	{
-		CQt.QGraphicsGridLayout_SetRowPreferredHeight(this.ptr, row, height);
+		CQt.QGraphicsGridLayout_SetRowPreferredHeight((.)this.ptr, row, height);
 	}
 	public double RowPreferredHeight(c_int row)
 	{
-		return CQt.QGraphicsGridLayout_RowPreferredHeight(this.ptr, row);
+		return CQt.QGraphicsGridLayout_RowPreferredHeight((.)this.ptr, row);
 	}
 	public void SetRowMaximumHeight(c_int row, double height)
 	{
-		CQt.QGraphicsGridLayout_SetRowMaximumHeight(this.ptr, row, height);
+		CQt.QGraphicsGridLayout_SetRowMaximumHeight((.)this.ptr, row, height);
 	}
 	public double RowMaximumHeight(c_int row)
 	{
-		return CQt.QGraphicsGridLayout_RowMaximumHeight(this.ptr, row);
+		return CQt.QGraphicsGridLayout_RowMaximumHeight((.)this.ptr, row);
 	}
 	public void SetRowFixedHeight(c_int row, double height)
 	{
-		CQt.QGraphicsGridLayout_SetRowFixedHeight(this.ptr, row, height);
+		CQt.QGraphicsGridLayout_SetRowFixedHeight((.)this.ptr, row, height);
 	}
 	public void SetColumnMinimumWidth(c_int column, double width)
 	{
-		CQt.QGraphicsGridLayout_SetColumnMinimumWidth(this.ptr, column, width);
+		CQt.QGraphicsGridLayout_SetColumnMinimumWidth((.)this.ptr, column, width);
 	}
 	public double ColumnMinimumWidth(c_int column)
 	{
-		return CQt.QGraphicsGridLayout_ColumnMinimumWidth(this.ptr, column);
+		return CQt.QGraphicsGridLayout_ColumnMinimumWidth((.)this.ptr, column);
 	}
 	public void SetColumnPreferredWidth(c_int column, double width)
 	{
-		CQt.QGraphicsGridLayout_SetColumnPreferredWidth(this.ptr, column, width);
+		CQt.QGraphicsGridLayout_SetColumnPreferredWidth((.)this.ptr, column, width);
 	}
 	public double ColumnPreferredWidth(c_int column)
 	{
-		return CQt.QGraphicsGridLayout_ColumnPreferredWidth(this.ptr, column);
+		return CQt.QGraphicsGridLayout_ColumnPreferredWidth((.)this.ptr, column);
 	}
 	public void SetColumnMaximumWidth(c_int column, double width)
 	{
-		CQt.QGraphicsGridLayout_SetColumnMaximumWidth(this.ptr, column, width);
+		CQt.QGraphicsGridLayout_SetColumnMaximumWidth((.)this.ptr, column, width);
 	}
 	public double ColumnMaximumWidth(c_int column)
 	{
-		return CQt.QGraphicsGridLayout_ColumnMaximumWidth(this.ptr, column);
+		return CQt.QGraphicsGridLayout_ColumnMaximumWidth((.)this.ptr, column);
 	}
 	public void SetColumnFixedWidth(c_int column, double width)
 	{
-		CQt.QGraphicsGridLayout_SetColumnFixedWidth(this.ptr, column, width);
+		CQt.QGraphicsGridLayout_SetColumnFixedWidth((.)this.ptr, column, width);
 	}
 	public void SetRowAlignment(c_int row, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_SetRowAlignment(this.ptr, row, alignment);
+		CQt.QGraphicsGridLayout_SetRowAlignment((.)this.ptr, row, alignment);
 	}
 	public void* RowAlignment(c_int row)
 	{
-		return CQt.QGraphicsGridLayout_RowAlignment(this.ptr, row);
+		return CQt.QGraphicsGridLayout_RowAlignment((.)this.ptr, row);
 	}
 	public void SetColumnAlignment(c_int column, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_SetColumnAlignment(this.ptr, column, alignment);
+		CQt.QGraphicsGridLayout_SetColumnAlignment((.)this.ptr, column, alignment);
 	}
 	public void* ColumnAlignment(c_int column)
 	{
-		return CQt.QGraphicsGridLayout_ColumnAlignment(this.ptr, column);
+		return CQt.QGraphicsGridLayout_ColumnAlignment((.)this.ptr, column);
 	}
 	public void SetAlignment(QGraphicsLayoutItem_Ptr* item, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_SetAlignment(this.ptr, item, alignment);
+		CQt.QGraphicsGridLayout_SetAlignment((.)this.ptr, item, alignment);
 	}
 	public void* Alignment(QGraphicsLayoutItem_Ptr* item)
 	{
-		return CQt.QGraphicsGridLayout_Alignment(this.ptr, item);
+		return CQt.QGraphicsGridLayout_Alignment((.)this.ptr, item);
 	}
 	public c_int RowCount()
 	{
-		return CQt.QGraphicsGridLayout_RowCount(this.ptr);
+		return CQt.QGraphicsGridLayout_RowCount((.)this.ptr);
 	}
 	public c_int ColumnCount()
 	{
-		return CQt.QGraphicsGridLayout_ColumnCount(this.ptr);
+		return CQt.QGraphicsGridLayout_ColumnCount((.)this.ptr);
 	}
 	public QGraphicsLayoutItem_Ptr* ItemAt(c_int row, c_int column)
 	{
-		return CQt.QGraphicsGridLayout_ItemAt(this.ptr, row, column);
+		return CQt.QGraphicsGridLayout_ItemAt((.)this.ptr, row, column);
 	}
 	public c_int Count()
 	{
-		return CQt.QGraphicsGridLayout_Count(this.ptr);
+		return CQt.QGraphicsGridLayout_Count((.)this.ptr);
 	}
 	public QGraphicsLayoutItem_Ptr* ItemAt2(c_int index)
 	{
-		return CQt.QGraphicsGridLayout_ItemAt2(this.ptr, index);
+		return CQt.QGraphicsGridLayout_ItemAt2((.)this.ptr, index);
 	}
 	public void RemoveAt(c_int index)
 	{
-		CQt.QGraphicsGridLayout_RemoveAt(this.ptr, index);
+		CQt.QGraphicsGridLayout_RemoveAt((.)this.ptr, index);
 	}
 	public void RemoveItem(QGraphicsLayoutItem_Ptr* item)
 	{
-		CQt.QGraphicsGridLayout_RemoveItem(this.ptr, item);
+		CQt.QGraphicsGridLayout_RemoveItem((.)this.ptr, item);
 	}
 	public void Invalidate()
 	{
-		CQt.QGraphicsGridLayout_Invalidate(this.ptr);
+		CQt.QGraphicsGridLayout_Invalidate((.)this.ptr);
 	}
 	public void SetGeometry(QRectF_Ptr* rect)
 	{
-		CQt.QGraphicsGridLayout_SetGeometry(this.ptr, rect);
+		CQt.QGraphicsGridLayout_SetGeometry((.)this.ptr, rect);
 	}
 	public QSizeF_Ptr SizeHint(Qt_SizeHint which, QSizeF_Ptr* constraint)
 	{
-		return CQt.QGraphicsGridLayout_SizeHint(this.ptr, which, constraint);
+		return CQt.QGraphicsGridLayout_SizeHint((.)this.ptr, which, constraint);
 	}
 	public void AddItem6(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, c_int rowSpan, c_int columnSpan, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_AddItem6(this.ptr, item, row, column, rowSpan, columnSpan, alignment);
+		CQt.QGraphicsGridLayout_AddItem6((.)this.ptr, item, row, column, rowSpan, columnSpan, alignment);
 	}
 	public void AddItem4(QGraphicsLayoutItem_Ptr* item, c_int row, c_int column, void* alignment)
 	{
-		CQt.QGraphicsGridLayout_AddItem4(this.ptr, item, row, column, alignment);
+		CQt.QGraphicsGridLayout_AddItem4((.)this.ptr, item, row, column, alignment);
+	}
+	public void SetContentsMargins(double left, double top, double right, double bottom)
+	{
+		CQt.QGraphicsLayout_SetContentsMargins((.)this.ptr, left, top, right, bottom);
+	}
+	public void GetContentsMargins(double* left, double* top, double* right, double* bottom)
+	{
+		CQt.QGraphicsLayout_GetContentsMargins((.)this.ptr, left, top, right, bottom);
+	}
+	public void Activate()
+	{
+		CQt.QGraphicsLayout_Activate((.)this.ptr);
+	}
+	public bool IsActivated()
+	{
+		return CQt.QGraphicsLayout_IsActivated((.)this.ptr);
+	}
+	public void UpdateGeometry()
+	{
+		CQt.QGraphicsLayout_UpdateGeometry((.)this.ptr);
+	}
+	public void WidgetEvent(QEvent_Ptr* e)
+	{
+		CQt.QGraphicsLayout_WidgetEvent((.)this.ptr, e);
+	}
+	public void SetInstantInvalidatePropagation(bool enable)
+	{
+		CQt.QGraphicsLayout_SetInstantInvalidatePropagation(enable);
+	}
+	public bool InstantInvalidatePropagation()
+	{
+		return CQt.QGraphicsLayout_InstantInvalidatePropagation();
+	}
+	public void AddChildLayoutItem(QGraphicsLayoutItem_Ptr* layoutItem)
+	{
+		CQt.QGraphicsLayout_AddChildLayoutItem((.)this.ptr, layoutItem);
+	}
+	public void SetSizePolicy(QSizePolicy_Ptr* policy)
+	{
+		CQt.QGraphicsLayoutItem_SetSizePolicy((.)this.ptr, policy);
+	}
+	public void SetSizePolicy2(QSizePolicy_Policy hPolicy, QSizePolicy_Policy vPolicy)
+	{
+		CQt.QGraphicsLayoutItem_SetSizePolicy2((.)this.ptr, hPolicy, vPolicy);
+	}
+	public QSizePolicy_Ptr SizePolicy()
+	{
+		return CQt.QGraphicsLayoutItem_SizePolicy((.)this.ptr);
+	}
+	public void SetMinimumSize(QSizeF_Ptr* size)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumSize((.)this.ptr, size);
+	}
+	public void SetMinimumSize2(double w, double h)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumSize2((.)this.ptr, w, h);
+	}
+	public QSizeF_Ptr MinimumSize()
+	{
+		return CQt.QGraphicsLayoutItem_MinimumSize((.)this.ptr);
+	}
+	public void SetMinimumWidth(double width)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumWidth((.)this.ptr, width);
+	}
+	public double MinimumWidth()
+	{
+		return CQt.QGraphicsLayoutItem_MinimumWidth((.)this.ptr);
+	}
+	public void SetMinimumHeight(double height)
+	{
+		CQt.QGraphicsLayoutItem_SetMinimumHeight((.)this.ptr, height);
+	}
+	public double MinimumHeight()
+	{
+		return CQt.QGraphicsLayoutItem_MinimumHeight((.)this.ptr);
+	}
+	public void SetPreferredSize(QSizeF_Ptr* size)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredSize((.)this.ptr, size);
+	}
+	public void SetPreferredSize2(double w, double h)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredSize2((.)this.ptr, w, h);
+	}
+	public QSizeF_Ptr PreferredSize()
+	{
+		return CQt.QGraphicsLayoutItem_PreferredSize((.)this.ptr);
+	}
+	public void SetPreferredWidth(double width)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredWidth((.)this.ptr, width);
+	}
+	public double PreferredWidth()
+	{
+		return CQt.QGraphicsLayoutItem_PreferredWidth((.)this.ptr);
+	}
+	public void SetPreferredHeight(double height)
+	{
+		CQt.QGraphicsLayoutItem_SetPreferredHeight((.)this.ptr, height);
+	}
+	public double PreferredHeight()
+	{
+		return CQt.QGraphicsLayoutItem_PreferredHeight((.)this.ptr);
+	}
+	public void SetMaximumSize(QSizeF_Ptr* size)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumSize((.)this.ptr, size);
+	}
+	public void SetMaximumSize2(double w, double h)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumSize2((.)this.ptr, w, h);
+	}
+	public QSizeF_Ptr MaximumSize()
+	{
+		return CQt.QGraphicsLayoutItem_MaximumSize((.)this.ptr);
+	}
+	public void SetMaximumWidth(double width)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumWidth((.)this.ptr, width);
+	}
+	public double MaximumWidth()
+	{
+		return CQt.QGraphicsLayoutItem_MaximumWidth((.)this.ptr);
+	}
+	public void SetMaximumHeight(double height)
+	{
+		CQt.QGraphicsLayoutItem_SetMaximumHeight((.)this.ptr, height);
+	}
+	public double MaximumHeight()
+	{
+		return CQt.QGraphicsLayoutItem_MaximumHeight((.)this.ptr);
+	}
+	public QRectF_Ptr Geometry()
+	{
+		return CQt.QGraphicsLayoutItem_Geometry((.)this.ptr);
+	}
+	public QRectF_Ptr ContentsRect()
+	{
+		return CQt.QGraphicsLayoutItem_ContentsRect((.)this.ptr);
+	}
+	public QSizeF_Ptr EffectiveSizeHint(Qt_SizeHint which)
+	{
+		return CQt.QGraphicsLayoutItem_EffectiveSizeHint((.)this.ptr, which);
+	}
+	public bool IsEmpty()
+	{
+		return CQt.QGraphicsLayoutItem_IsEmpty((.)this.ptr);
+	}
+	public QGraphicsLayoutItem_Ptr* ParentLayoutItem()
+	{
+		return CQt.QGraphicsLayoutItem_ParentLayoutItem((.)this.ptr);
+	}
+	public void SetParentLayoutItem(QGraphicsLayoutItem_Ptr* parent)
+	{
+		CQt.QGraphicsLayoutItem_SetParentLayoutItem((.)this.ptr, parent);
+	}
+	public bool IsLayout()
+	{
+		return CQt.QGraphicsLayoutItem_IsLayout((.)this.ptr);
+	}
+	public QGraphicsItem_Ptr* GraphicsItem()
+	{
+		return CQt.QGraphicsLayoutItem_GraphicsItem((.)this.ptr);
+	}
+	public bool OwnedByLayout()
+	{
+		return CQt.QGraphicsLayoutItem_OwnedByLayout((.)this.ptr);
+	}
+	public void SetGraphicsItem(QGraphicsItem_Ptr* item)
+	{
+		CQt.QGraphicsLayoutItem_SetGraphicsItem((.)this.ptr, item);
+	}
+	public void SetOwnedByLayout(bool ownedByLayout)
+	{
+		CQt.QGraphicsLayoutItem_SetOwnedByLayout((.)this.ptr, ownedByLayout);
+	}
+	public void SetSizePolicy3(QSizePolicy_Policy hPolicy, QSizePolicy_Policy vPolicy, QSizePolicy_ControlType controlType)
+	{
+		CQt.QGraphicsLayoutItem_SetSizePolicy3((.)this.ptr, hPolicy, vPolicy, controlType);
+	}
+	public QSizeF_Ptr EffectiveSizeHint2(Qt_SizeHint which, QSizeF_Ptr* constraint)
+	{
+		return CQt.QGraphicsLayoutItem_EffectiveSizeHint2((.)this.ptr, which, constraint);
 	}
 }
 interface IQGraphicsGridLayout

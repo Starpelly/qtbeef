@@ -88,71 +88,71 @@ class QStorageInfo
 	}
 	public void Swap(QStorageInfo_Ptr* other)
 	{
-		CQt.QStorageInfo_Swap(this.ptr, other);
+		CQt.QStorageInfo_Swap((.)this.ptr, other);
 	}
 	public void SetPath(libqt_string* path)
 	{
-		CQt.QStorageInfo_SetPath(this.ptr, path);
+		CQt.QStorageInfo_SetPath((.)this.ptr, path);
 	}
 	public libqt_string RootPath()
 	{
-		return CQt.QStorageInfo_RootPath(this.ptr);
+		return CQt.QStorageInfo_RootPath((.)this.ptr);
 	}
 	public void* Device()
 	{
-		return CQt.QStorageInfo_Device(this.ptr);
+		return CQt.QStorageInfo_Device((.)this.ptr);
 	}
 	public void* Subvolume()
 	{
-		return CQt.QStorageInfo_Subvolume(this.ptr);
+		return CQt.QStorageInfo_Subvolume((.)this.ptr);
 	}
 	public void* FileSystemType()
 	{
-		return CQt.QStorageInfo_FileSystemType(this.ptr);
+		return CQt.QStorageInfo_FileSystemType((.)this.ptr);
 	}
 	public libqt_string Name()
 	{
-		return CQt.QStorageInfo_Name(this.ptr);
+		return CQt.QStorageInfo_Name((.)this.ptr);
 	}
 	public libqt_string DisplayName()
 	{
-		return CQt.QStorageInfo_DisplayName(this.ptr);
+		return CQt.QStorageInfo_DisplayName((.)this.ptr);
 	}
 	public c_longlong BytesTotal()
 	{
-		return CQt.QStorageInfo_BytesTotal(this.ptr);
+		return CQt.QStorageInfo_BytesTotal((.)this.ptr);
 	}
 	public c_longlong BytesFree()
 	{
-		return CQt.QStorageInfo_BytesFree(this.ptr);
+		return CQt.QStorageInfo_BytesFree((.)this.ptr);
 	}
 	public c_longlong BytesAvailable()
 	{
-		return CQt.QStorageInfo_BytesAvailable(this.ptr);
+		return CQt.QStorageInfo_BytesAvailable((.)this.ptr);
 	}
 	public c_int BlockSize()
 	{
-		return CQt.QStorageInfo_BlockSize(this.ptr);
+		return CQt.QStorageInfo_BlockSize((.)this.ptr);
 	}
 	public bool IsRoot()
 	{
-		return CQt.QStorageInfo_IsRoot(this.ptr);
+		return CQt.QStorageInfo_IsRoot((.)this.ptr);
 	}
 	public bool IsReadOnly()
 	{
-		return CQt.QStorageInfo_IsReadOnly(this.ptr);
+		return CQt.QStorageInfo_IsReadOnly((.)this.ptr);
 	}
 	public bool IsReady()
 	{
-		return CQt.QStorageInfo_IsReady(this.ptr);
+		return CQt.QStorageInfo_IsReady((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QStorageInfo_IsValid(this.ptr);
+		return CQt.QStorageInfo_IsValid((.)this.ptr);
 	}
 	public void Refresh()
 	{
-		CQt.QStorageInfo_Refresh(this.ptr);
+		CQt.QStorageInfo_Refresh((.)this.ptr);
 	}
 	public void* MountedVolumes()
 	{

@@ -104,131 +104,131 @@ class QDebug
 	}
 	public void Swap(QDebug_Ptr* other)
 	{
-		CQt.QDebug_Swap(this.ptr, other);
+		CQt.QDebug_Swap((.)this.ptr, other);
 	}
 	public QDebug_Ptr* ResetFormat()
 	{
-		return CQt.QDebug_ResetFormat(this.ptr);
+		return CQt.QDebug_ResetFormat((.)this.ptr);
 	}
 	public QDebug_Ptr* Space()
 	{
-		return CQt.QDebug_Space(this.ptr);
+		return CQt.QDebug_Space((.)this.ptr);
 	}
 	public QDebug_Ptr* Nospace()
 	{
-		return CQt.QDebug_Nospace(this.ptr);
+		return CQt.QDebug_Nospace((.)this.ptr);
 	}
 	public QDebug_Ptr* MaybeSpace()
 	{
-		return CQt.QDebug_MaybeSpace(this.ptr);
+		return CQt.QDebug_MaybeSpace((.)this.ptr);
 	}
 	public QDebug_Ptr* Verbosity(c_int verbosityLevel)
 	{
-		return CQt.QDebug_Verbosity(this.ptr, verbosityLevel);
+		return CQt.QDebug_Verbosity((.)this.ptr, verbosityLevel);
 	}
 	public c_int Verbosity2()
 	{
-		return CQt.QDebug_Verbosity2(this.ptr);
+		return CQt.QDebug_Verbosity2((.)this.ptr);
 	}
 	public void SetVerbosity(c_int verbosityLevel)
 	{
-		CQt.QDebug_SetVerbosity(this.ptr, verbosityLevel);
+		CQt.QDebug_SetVerbosity((.)this.ptr, verbosityLevel);
 	}
 	public bool AutoInsertSpaces()
 	{
-		return CQt.QDebug_AutoInsertSpaces(this.ptr);
+		return CQt.QDebug_AutoInsertSpaces((.)this.ptr);
 	}
 	public void SetAutoInsertSpaces(bool b)
 	{
-		CQt.QDebug_SetAutoInsertSpaces(this.ptr, b);
+		CQt.QDebug_SetAutoInsertSpaces((.)this.ptr, b);
 	}
 	public QDebug_Ptr* Quote()
 	{
-		return CQt.QDebug_Quote(this.ptr);
+		return CQt.QDebug_Quote((.)this.ptr);
 	}
 	public QDebug_Ptr* Noquote()
 	{
-		return CQt.QDebug_Noquote(this.ptr);
+		return CQt.QDebug_Noquote((.)this.ptr);
 	}
 	public QDebug_Ptr* MaybeQuote()
 	{
-		return CQt.QDebug_MaybeQuote(this.ptr);
+		return CQt.QDebug_MaybeQuote((.)this.ptr);
 	}
 	public QDebug_Ptr* OperatorShiftLeft2(bool t)
 	{
-		return CQt.QDebug_OperatorShiftLeft2(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft2((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft3(c_char t)
 	{
-		return CQt.QDebug_OperatorShiftLeft3(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft3((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft4(c_ushort t)
 	{
-		return CQt.QDebug_OperatorShiftLeft4(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft4((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft5(c_ushort t)
 	{
-		return CQt.QDebug_OperatorShiftLeft5(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft5((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft8(c_int t)
 	{
-		return CQt.QDebug_OperatorShiftLeft8(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft8((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft9(c_uint t)
 	{
-		return CQt.QDebug_OperatorShiftLeft9(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft9((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft10(c_long t)
 	{
-		return CQt.QDebug_OperatorShiftLeft10(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft10((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft11(c_ulong t)
 	{
-		return CQt.QDebug_OperatorShiftLeft11(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft11((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft12(c_longlong t)
 	{
-		return CQt.QDebug_OperatorShiftLeft12(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft12((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft13(c_ulonglong t)
 	{
-		return CQt.QDebug_OperatorShiftLeft13(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft13((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft14(float t)
 	{
-		return CQt.QDebug_OperatorShiftLeft14(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft14((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft15(double t)
 	{
-		return CQt.QDebug_OperatorShiftLeft15(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft15((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft16(c_char* t)
 	{
-		return CQt.QDebug_OperatorShiftLeft16(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft16((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft18(libqt_string* t)
 	{
-		return CQt.QDebug_OperatorShiftLeft18(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft18((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft22(void** t)
 	{
-		return CQt.QDebug_OperatorShiftLeft22(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft22((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft23(void* t)
 	{
-		return CQt.QDebug_OperatorShiftLeft23(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft23((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft24(void* t)
 	{
-		return CQt.QDebug_OperatorShiftLeft24(this.ptr, t);
+		return CQt.QDebug_OperatorShiftLeft24((.)this.ptr, t);
 	}
 	public QDebug_Ptr* OperatorShiftLeft26(c_intptr* f)
 	{
-		return CQt.QDebug_OperatorShiftLeft26(this.ptr, f);
+		return CQt.QDebug_OperatorShiftLeft26((.)this.ptr, f);
 	}
 	public QDebug_Ptr* MaybeQuote1(c_char c)
 	{
-		return CQt.QDebug_MaybeQuote1(this.ptr, c);
+		return CQt.QDebug_MaybeQuote1((.)this.ptr, c);
 	}
 }
 interface IQDebug
@@ -342,35 +342,35 @@ class QNoDebug
 	}
 	public QNoDebug_Ptr* Space()
 	{
-		return CQt.QNoDebug_Space(this.ptr);
+		return CQt.QNoDebug_Space((.)this.ptr);
 	}
 	public QNoDebug_Ptr* Nospace()
 	{
-		return CQt.QNoDebug_Nospace(this.ptr);
+		return CQt.QNoDebug_Nospace((.)this.ptr);
 	}
 	public QNoDebug_Ptr* MaybeSpace()
 	{
-		return CQt.QNoDebug_MaybeSpace(this.ptr);
+		return CQt.QNoDebug_MaybeSpace((.)this.ptr);
 	}
 	public QNoDebug_Ptr* Quote()
 	{
-		return CQt.QNoDebug_Quote(this.ptr);
+		return CQt.QNoDebug_Quote((.)this.ptr);
 	}
 	public QNoDebug_Ptr* Noquote()
 	{
-		return CQt.QNoDebug_Noquote(this.ptr);
+		return CQt.QNoDebug_Noquote((.)this.ptr);
 	}
 	public QNoDebug_Ptr* MaybeQuote()
 	{
-		return CQt.QNoDebug_MaybeQuote(this.ptr);
+		return CQt.QNoDebug_MaybeQuote((.)this.ptr);
 	}
 	public QNoDebug_Ptr* Verbosity(c_int param1)
 	{
-		return CQt.QNoDebug_Verbosity(this.ptr, param1);
+		return CQt.QNoDebug_Verbosity((.)this.ptr, param1);
 	}
 	public QNoDebug_Ptr* MaybeQuote1(c_char param1)
 	{
-		return CQt.QNoDebug_MaybeQuote1(this.ptr, param1);
+		return CQt.QNoDebug_MaybeQuote1((.)this.ptr, param1);
 	}
 }
 interface IQNoDebug

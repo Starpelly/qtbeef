@@ -50,27 +50,27 @@ class QLoggingCategory
 	}
 	public bool IsDebugEnabled()
 	{
-		return CQt.QLoggingCategory_IsDebugEnabled(this.ptr);
+		return CQt.QLoggingCategory_IsDebugEnabled((.)this.ptr);
 	}
 	public bool IsInfoEnabled()
 	{
-		return CQt.QLoggingCategory_IsInfoEnabled(this.ptr);
+		return CQt.QLoggingCategory_IsInfoEnabled((.)this.ptr);
 	}
 	public bool IsWarningEnabled()
 	{
-		return CQt.QLoggingCategory_IsWarningEnabled(this.ptr);
+		return CQt.QLoggingCategory_IsWarningEnabled((.)this.ptr);
 	}
 	public bool IsCriticalEnabled()
 	{
-		return CQt.QLoggingCategory_IsCriticalEnabled(this.ptr);
+		return CQt.QLoggingCategory_IsCriticalEnabled((.)this.ptr);
 	}
 	public c_char* CategoryName()
 	{
-		return CQt.QLoggingCategory_CategoryName(this.ptr);
+		return CQt.QLoggingCategory_CategoryName((.)this.ptr);
 	}
 	public QLoggingCategory_Ptr* OperatorCall2()
 	{
-		return CQt.QLoggingCategory_OperatorCall2(this.ptr);
+		return CQt.QLoggingCategory_OperatorCall2((.)this.ptr);
 	}
 	public QLoggingCategory_Ptr* DefaultCategory()
 	{

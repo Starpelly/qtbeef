@@ -280,7 +280,7 @@ class WriteClass
         {
             if (isMethod && !method.IsStatic)
             {
-                parameters.Append("this.ptr");
+                parameters.Append("(.)this.ptr");
                 if (method.Parameters.Length > 0)
                     parameters.Append(", ");
             }
@@ -313,6 +313,28 @@ class WriteClass
         {
             foreach (var cppClass in this.Header.Classes)
             {
+                var inheritedClasses = new List<CppClass>();
+
+                void gatherInherited(CppClass @class)
+                {
+                    if (@class.DirectInherits != null)
+                    {
+                        foreach (var impl in @class.DirectInherits)
+                        {
+                            // @HACK
+                            if (impl.StartsWith("QList") || impl.StartsWith("QString"))
+                                continue;
+
+                            var foundClass = m_apiState.RegisteredClasses[impl];
+                            inheritedClasses.Add(foundClass);
+
+                            gatherInherited(foundClass);
+                        }
+                    }
+                }
+
+                gatherInherited(cppClass);
+
                 var bfClassName = cppNameToBf(cppClass.ClassName);
                 var bfClassPtrName = bfClassName + "_Ptr";
 
@@ -460,11 +482,10 @@ class WriteClass
                         code.AppendLine("}");
                     }
 
-                    // Normal methods
-                    foreach (var method in cppClass.Methods)
+                    void genMethod(CppClass cppClass, CppMethod method)
                     {
                         if (method.MethodName.StartsWith("operator"))
-                            continue;
+                            return;
 
                         var bfMethodName = Regex.Replace(method.MethodName, @"\b\p{Ll}", match => match.Value.ToUpper());
 
@@ -491,6 +512,28 @@ class WriteClass
                         }
                         code.DecreaseTab();
                         code.AppendLine("}");
+                    }
+
+                    var toCheck = new List<CppMethod>();
+
+                    // Normal methods
+                    foreach (var method in cppClass.Methods)
+                    {
+                        genMethod(cppClass, method);
+                    }
+                    toCheck.AddRange(cppClass.Methods);
+
+                    foreach (var inheritedClass in inheritedClasses)
+                    {
+                        foreach (var method in  inheritedClass.Methods)
+                        {
+                            if (toCheck.Any(c => c.MethodName == method.MethodName))
+                                continue;
+
+                            genMethod(inheritedClass, method);
+                        }
+
+                        toCheck.AddRange(inheritedClass.Methods);
                     }
                 }
                 code.DecreaseTab();

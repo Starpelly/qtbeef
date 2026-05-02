@@ -36,11 +36,11 @@ class QCollatorSortKey
 	}
 	public void Swap(QCollatorSortKey_Ptr* other)
 	{
-		CQt.QCollatorSortKey_Swap(this.ptr, other);
+		CQt.QCollatorSortKey_Swap((.)this.ptr, other);
 	}
 	public c_int Compare(QCollatorSortKey_Ptr* key)
 	{
-		return CQt.QCollatorSortKey_Compare(this.ptr, key);
+		return CQt.QCollatorSortKey_Compare((.)this.ptr, key);
 	}
 }
 interface IQCollatorSortKey
@@ -115,51 +115,51 @@ class QCollator
 	}
 	public void Swap(QCollator_Ptr* other)
 	{
-		CQt.QCollator_Swap(this.ptr, other);
+		CQt.QCollator_Swap((.)this.ptr, other);
 	}
 	public void SetLocale(QLocale_Ptr* locale)
 	{
-		CQt.QCollator_SetLocale(this.ptr, locale);
+		CQt.QCollator_SetLocale((.)this.ptr, locale);
 	}
 	public QLocale_Ptr Locale()
 	{
-		return CQt.QCollator_Locale(this.ptr);
+		return CQt.QCollator_Locale((.)this.ptr);
 	}
 	public Qt_CaseSensitivity CaseSensitivity()
 	{
-		return CQt.QCollator_CaseSensitivity(this.ptr);
+		return CQt.QCollator_CaseSensitivity((.)this.ptr);
 	}
 	public void SetCaseSensitivity(Qt_CaseSensitivity cs)
 	{
-		CQt.QCollator_SetCaseSensitivity(this.ptr, cs);
+		CQt.QCollator_SetCaseSensitivity((.)this.ptr, cs);
 	}
 	public void SetNumericMode(bool on)
 	{
-		CQt.QCollator_SetNumericMode(this.ptr, on);
+		CQt.QCollator_SetNumericMode((.)this.ptr, on);
 	}
 	public bool NumericMode()
 	{
-		return CQt.QCollator_NumericMode(this.ptr);
+		return CQt.QCollator_NumericMode((.)this.ptr);
 	}
 	public void SetIgnorePunctuation(bool on)
 	{
-		CQt.QCollator_SetIgnorePunctuation(this.ptr, on);
+		CQt.QCollator_SetIgnorePunctuation((.)this.ptr, on);
 	}
 	public bool IgnorePunctuation()
 	{
-		return CQt.QCollator_IgnorePunctuation(this.ptr);
+		return CQt.QCollator_IgnorePunctuation((.)this.ptr);
 	}
 	public c_int Compare(libqt_string* s1, libqt_string* s2)
 	{
-		return CQt.QCollator_Compare(this.ptr, s1, s2);
+		return CQt.QCollator_Compare((.)this.ptr, s1, s2);
 	}
 	public c_int Compare2(QChar_Ptr* s1, void* len1, QChar_Ptr* s2, void* len2)
 	{
-		return CQt.QCollator_Compare2(this.ptr, s1, len1, s2, len2);
+		return CQt.QCollator_Compare2((.)this.ptr, s1, len1, s2, len2);
 	}
 	public QCollatorSortKey_Ptr SortKey(libqt_string* stringVal)
 	{
-		return CQt.QCollator_SortKey(this.ptr, stringVal);
+		return CQt.QCollator_SortKey((.)this.ptr, stringVal);
 	}
 }
 interface IQCollator

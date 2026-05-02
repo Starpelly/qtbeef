@@ -186,291 +186,291 @@ class QByteArrayView
 	}
 	public void* ToByteArray()
 	{
-		return CQt.QByteArrayView_ToByteArray(this.ptr);
+		return CQt.QByteArrayView_ToByteArray((.)this.ptr);
 	}
 	public void* Size()
 	{
-		return CQt.QByteArrayView_Size(this.ptr);
+		return CQt.QByteArrayView_Size((.)this.ptr);
 	}
 	public c_char* Data()
 	{
-		return CQt.QByteArrayView_Data(this.ptr);
+		return CQt.QByteArrayView_Data((.)this.ptr);
 	}
 	public c_char* ConstData()
 	{
-		return CQt.QByteArrayView_ConstData(this.ptr);
+		return CQt.QByteArrayView_ConstData((.)this.ptr);
 	}
 	public c_char At(void* n)
 	{
-		return CQt.QByteArrayView_At(this.ptr, n);
+		return CQt.QByteArrayView_At((.)this.ptr, n);
 	}
 	public void* First(void* n)
 	{
-		return CQt.QByteArrayView_First(this.ptr, n);
+		return CQt.QByteArrayView_First((.)this.ptr, n);
 	}
 	public void* Last(void* n)
 	{
-		return CQt.QByteArrayView_Last(this.ptr, n);
+		return CQt.QByteArrayView_Last((.)this.ptr, n);
 	}
 	public void* Sliced(void* pos)
 	{
-		return CQt.QByteArrayView_Sliced(this.ptr, pos);
+		return CQt.QByteArrayView_Sliced((.)this.ptr, pos);
 	}
 	public void* Sliced2(void* pos, void* n)
 	{
-		return CQt.QByteArrayView_Sliced2(this.ptr, pos, n);
+		return CQt.QByteArrayView_Sliced2((.)this.ptr, pos, n);
 	}
 	public void* Chopped(void* lenVal)
 	{
-		return CQt.QByteArrayView_Chopped(this.ptr, lenVal);
+		return CQt.QByteArrayView_Chopped((.)this.ptr, lenVal);
 	}
 	public void Truncate(void* n)
 	{
-		CQt.QByteArrayView_Truncate(this.ptr, n);
+		CQt.QByteArrayView_Truncate((.)this.ptr, n);
 	}
 	public void Chop(void* n)
 	{
-		CQt.QByteArrayView_Chop(this.ptr, n);
+		CQt.QByteArrayView_Chop((.)this.ptr, n);
 	}
 	public void* Trimmed()
 	{
-		return CQt.QByteArrayView_Trimmed(this.ptr);
+		return CQt.QByteArrayView_Trimmed((.)this.ptr);
 	}
 	public c_ushort ToShort()
 	{
-		return CQt.QByteArrayView_ToShort(this.ptr);
+		return CQt.QByteArrayView_ToShort((.)this.ptr);
 	}
 	public c_ushort ToUShort()
 	{
-		return CQt.QByteArrayView_ToUShort(this.ptr);
+		return CQt.QByteArrayView_ToUShort((.)this.ptr);
 	}
 	public c_int ToInt()
 	{
-		return CQt.QByteArrayView_ToInt(this.ptr);
+		return CQt.QByteArrayView_ToInt((.)this.ptr);
 	}
 	public c_uint ToUInt()
 	{
-		return CQt.QByteArrayView_ToUInt(this.ptr);
+		return CQt.QByteArrayView_ToUInt((.)this.ptr);
 	}
 	public c_long ToLong()
 	{
-		return CQt.QByteArrayView_ToLong(this.ptr);
+		return CQt.QByteArrayView_ToLong((.)this.ptr);
 	}
 	public c_ulong ToULong()
 	{
-		return CQt.QByteArrayView_ToULong(this.ptr);
+		return CQt.QByteArrayView_ToULong((.)this.ptr);
 	}
 	public c_longlong ToLongLong()
 	{
-		return CQt.QByteArrayView_ToLongLong(this.ptr);
+		return CQt.QByteArrayView_ToLongLong((.)this.ptr);
 	}
 	public c_ulonglong ToULongLong()
 	{
-		return CQt.QByteArrayView_ToULongLong(this.ptr);
+		return CQt.QByteArrayView_ToULongLong((.)this.ptr);
 	}
 	public float ToFloat()
 	{
-		return CQt.QByteArrayView_ToFloat(this.ptr);
+		return CQt.QByteArrayView_ToFloat((.)this.ptr);
 	}
 	public double ToDouble()
 	{
-		return CQt.QByteArrayView_ToDouble(this.ptr);
+		return CQt.QByteArrayView_ToDouble((.)this.ptr);
 	}
 	public bool StartsWith(void* other)
 	{
-		return CQt.QByteArrayView_StartsWith(this.ptr, other);
+		return CQt.QByteArrayView_StartsWith((.)this.ptr, other);
 	}
 	public bool StartsWith2(c_char c)
 	{
-		return CQt.QByteArrayView_StartsWith2(this.ptr, c);
+		return CQt.QByteArrayView_StartsWith2((.)this.ptr, c);
 	}
 	public bool EndsWith(void* other)
 	{
-		return CQt.QByteArrayView_EndsWith(this.ptr, other);
+		return CQt.QByteArrayView_EndsWith((.)this.ptr, other);
 	}
 	public bool EndsWith2(c_char c)
 	{
-		return CQt.QByteArrayView_EndsWith2(this.ptr, c);
+		return CQt.QByteArrayView_EndsWith2((.)this.ptr, c);
 	}
 	public void* IndexOf(void* a)
 	{
-		return CQt.QByteArrayView_IndexOf(this.ptr, a);
+		return CQt.QByteArrayView_IndexOf((.)this.ptr, a);
 	}
 	public void* IndexOf2(c_char ch)
 	{
-		return CQt.QByteArrayView_IndexOf2(this.ptr, ch);
+		return CQt.QByteArrayView_IndexOf2((.)this.ptr, ch);
 	}
 	public bool Contains(void* a)
 	{
-		return CQt.QByteArrayView_Contains(this.ptr, a);
+		return CQt.QByteArrayView_Contains((.)this.ptr, a);
 	}
 	public bool Contains2(c_char c)
 	{
-		return CQt.QByteArrayView_Contains2(this.ptr, c);
+		return CQt.QByteArrayView_Contains2((.)this.ptr, c);
 	}
 	public void* LastIndexOf(void* a)
 	{
-		return CQt.QByteArrayView_LastIndexOf(this.ptr, a);
+		return CQt.QByteArrayView_LastIndexOf((.)this.ptr, a);
 	}
 	public void* LastIndexOf2(void* a, void* from)
 	{
-		return CQt.QByteArrayView_LastIndexOf2(this.ptr, a, from);
+		return CQt.QByteArrayView_LastIndexOf2((.)this.ptr, a, from);
 	}
 	public void* LastIndexOf3(c_char ch)
 	{
-		return CQt.QByteArrayView_LastIndexOf3(this.ptr, ch);
+		return CQt.QByteArrayView_LastIndexOf3((.)this.ptr, ch);
 	}
 	public void* Count(void* a)
 	{
-		return CQt.QByteArrayView_Count(this.ptr, a);
+		return CQt.QByteArrayView_Count((.)this.ptr, a);
 	}
 	public void* Count2(c_char ch)
 	{
-		return CQt.QByteArrayView_Count2(this.ptr, ch);
+		return CQt.QByteArrayView_Count2((.)this.ptr, ch);
 	}
 	public c_int Compare(void* a)
 	{
-		return CQt.QByteArrayView_Compare(this.ptr, a);
+		return CQt.QByteArrayView_Compare((.)this.ptr, a);
 	}
 	public bool IsValidUtf8()
 	{
-		return CQt.QByteArrayView_IsValidUtf8(this.ptr);
+		return CQt.QByteArrayView_IsValidUtf8((.)this.ptr);
 	}
 	public c_char* Begin()
 	{
-		return CQt.QByteArrayView_Begin(this.ptr);
+		return CQt.QByteArrayView_Begin((.)this.ptr);
 	}
 	public c_char* End()
 	{
-		return CQt.QByteArrayView_End(this.ptr);
+		return CQt.QByteArrayView_End((.)this.ptr);
 	}
 	public c_char* Cbegin()
 	{
-		return CQt.QByteArrayView_Cbegin(this.ptr);
+		return CQt.QByteArrayView_Cbegin((.)this.ptr);
 	}
 	public c_char* Cend()
 	{
-		return CQt.QByteArrayView_Cend(this.ptr);
+		return CQt.QByteArrayView_Cend((.)this.ptr);
 	}
 	public bool Empty()
 	{
-		return CQt.QByteArrayView_Empty(this.ptr);
+		return CQt.QByteArrayView_Empty((.)this.ptr);
 	}
 	public c_char Front()
 	{
-		return CQt.QByteArrayView_Front(this.ptr);
+		return CQt.QByteArrayView_Front((.)this.ptr);
 	}
 	public c_char Back()
 	{
-		return CQt.QByteArrayView_Back(this.ptr);
+		return CQt.QByteArrayView_Back((.)this.ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QByteArrayView_IsNull(this.ptr);
+		return CQt.QByteArrayView_IsNull((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QByteArrayView_IsEmpty(this.ptr);
+		return CQt.QByteArrayView_IsEmpty((.)this.ptr);
 	}
 	public void* Length()
 	{
-		return CQt.QByteArrayView_Length(this.ptr);
+		return CQt.QByteArrayView_Length((.)this.ptr);
 	}
 	public c_char First2()
 	{
-		return CQt.QByteArrayView_First2(this.ptr);
+		return CQt.QByteArrayView_First2((.)this.ptr);
 	}
 	public c_char Last2()
 	{
-		return CQt.QByteArrayView_Last2(this.ptr);
+		return CQt.QByteArrayView_Last2((.)this.ptr);
 	}
 	public c_ushort ToShort1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToShort1(this.ptr, ok);
+		return CQt.QByteArrayView_ToShort1((.)this.ptr, ok);
 	}
 	public c_ushort ToShort2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToShort2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToShort2((.)this.ptr, ok, _base);
 	}
 	public c_ushort ToUShort1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToUShort1(this.ptr, ok);
+		return CQt.QByteArrayView_ToUShort1((.)this.ptr, ok);
 	}
 	public c_ushort ToUShort2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToUShort2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToUShort2((.)this.ptr, ok, _base);
 	}
 	public c_int ToInt1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToInt1(this.ptr, ok);
+		return CQt.QByteArrayView_ToInt1((.)this.ptr, ok);
 	}
 	public c_int ToInt2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToInt2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToInt2((.)this.ptr, ok, _base);
 	}
 	public c_uint ToUInt1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToUInt1(this.ptr, ok);
+		return CQt.QByteArrayView_ToUInt1((.)this.ptr, ok);
 	}
 	public c_uint ToUInt2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToUInt2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToUInt2((.)this.ptr, ok, _base);
 	}
 	public c_long ToLong1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToLong1(this.ptr, ok);
+		return CQt.QByteArrayView_ToLong1((.)this.ptr, ok);
 	}
 	public c_long ToLong2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToLong2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToLong2((.)this.ptr, ok, _base);
 	}
 	public c_ulong ToULong1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToULong1(this.ptr, ok);
+		return CQt.QByteArrayView_ToULong1((.)this.ptr, ok);
 	}
 	public c_ulong ToULong2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToULong2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToULong2((.)this.ptr, ok, _base);
 	}
 	public c_longlong ToLongLong1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToLongLong1(this.ptr, ok);
+		return CQt.QByteArrayView_ToLongLong1((.)this.ptr, ok);
 	}
 	public c_longlong ToLongLong2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToLongLong2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToLongLong2((.)this.ptr, ok, _base);
 	}
 	public c_ulonglong ToULongLong1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToULongLong1(this.ptr, ok);
+		return CQt.QByteArrayView_ToULongLong1((.)this.ptr, ok);
 	}
 	public c_ulonglong ToULongLong2(bool* ok, c_int _base)
 	{
-		return CQt.QByteArrayView_ToULongLong2(this.ptr, ok, _base);
+		return CQt.QByteArrayView_ToULongLong2((.)this.ptr, ok, _base);
 	}
 	public float ToFloat1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToFloat1(this.ptr, ok);
+		return CQt.QByteArrayView_ToFloat1((.)this.ptr, ok);
 	}
 	public double ToDouble1(bool* ok)
 	{
-		return CQt.QByteArrayView_ToDouble1(this.ptr, ok);
+		return CQt.QByteArrayView_ToDouble1((.)this.ptr, ok);
 	}
 	public void* IndexOf22(void* a, void* from)
 	{
-		return CQt.QByteArrayView_IndexOf22(this.ptr, a, from);
+		return CQt.QByteArrayView_IndexOf22((.)this.ptr, a, from);
 	}
 	public void* IndexOf23(c_char ch, void* from)
 	{
-		return CQt.QByteArrayView_IndexOf23(this.ptr, ch, from);
+		return CQt.QByteArrayView_IndexOf23((.)this.ptr, ch, from);
 	}
 	public void* LastIndexOf22(c_char ch, void* from)
 	{
-		return CQt.QByteArrayView_LastIndexOf22(this.ptr, ch, from);
+		return CQt.QByteArrayView_LastIndexOf22((.)this.ptr, ch, from);
 	}
 	public c_int Compare2(void* a, Qt_CaseSensitivity cs)
 	{
-		return CQt.QByteArrayView_Compare2(this.ptr, a, cs);
+		return CQt.QByteArrayView_Compare2((.)this.ptr, a, cs);
 	}
 }
 interface IQByteArrayView

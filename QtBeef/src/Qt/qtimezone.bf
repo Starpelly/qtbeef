@@ -142,79 +142,79 @@ class QTimeZone
 	}
 	public void Swap(QTimeZone_Ptr* other)
 	{
-		CQt.QTimeZone_Swap(this.ptr, other);
+		CQt.QTimeZone_Swap((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QTimeZone_IsValid(this.ptr);
+		return CQt.QTimeZone_IsValid((.)this.ptr);
 	}
 	public void* Id()
 	{
-		return CQt.QTimeZone_Id(this.ptr);
+		return CQt.QTimeZone_Id((.)this.ptr);
 	}
 	public QLocale_Country Territory()
 	{
-		return CQt.QTimeZone_Territory(this.ptr);
+		return CQt.QTimeZone_Territory((.)this.ptr);
 	}
 	public QLocale_Country Country()
 	{
-		return CQt.QTimeZone_Country(this.ptr);
+		return CQt.QTimeZone_Country((.)this.ptr);
 	}
 	public libqt_string Comment()
 	{
-		return CQt.QTimeZone_Comment(this.ptr);
+		return CQt.QTimeZone_Comment((.)this.ptr);
 	}
 	public libqt_string DisplayName(QDateTime_Ptr* atDateTime)
 	{
-		return CQt.QTimeZone_DisplayName(this.ptr, atDateTime);
+		return CQt.QTimeZone_DisplayName((.)this.ptr, atDateTime);
 	}
 	public libqt_string DisplayName2(QTimeZone_TimeType timeType)
 	{
-		return CQt.QTimeZone_DisplayName2(this.ptr, timeType);
+		return CQt.QTimeZone_DisplayName2((.)this.ptr, timeType);
 	}
 	public libqt_string Abbreviation(QDateTime_Ptr* atDateTime)
 	{
-		return CQt.QTimeZone_Abbreviation(this.ptr, atDateTime);
+		return CQt.QTimeZone_Abbreviation((.)this.ptr, atDateTime);
 	}
 	public c_int OffsetFromUtc(QDateTime_Ptr* atDateTime)
 	{
-		return CQt.QTimeZone_OffsetFromUtc(this.ptr, atDateTime);
+		return CQt.QTimeZone_OffsetFromUtc((.)this.ptr, atDateTime);
 	}
 	public c_int StandardTimeOffset(QDateTime_Ptr* atDateTime)
 	{
-		return CQt.QTimeZone_StandardTimeOffset(this.ptr, atDateTime);
+		return CQt.QTimeZone_StandardTimeOffset((.)this.ptr, atDateTime);
 	}
 	public c_int DaylightTimeOffset(QDateTime_Ptr* atDateTime)
 	{
-		return CQt.QTimeZone_DaylightTimeOffset(this.ptr, atDateTime);
+		return CQt.QTimeZone_DaylightTimeOffset((.)this.ptr, atDateTime);
 	}
 	public bool HasDaylightTime()
 	{
-		return CQt.QTimeZone_HasDaylightTime(this.ptr);
+		return CQt.QTimeZone_HasDaylightTime((.)this.ptr);
 	}
 	public bool IsDaylightTime(QDateTime_Ptr* atDateTime)
 	{
-		return CQt.QTimeZone_IsDaylightTime(this.ptr, atDateTime);
+		return CQt.QTimeZone_IsDaylightTime((.)this.ptr, atDateTime);
 	}
 	public QTimeZone_OffsetData OffsetData(QDateTime_Ptr* forDateTime)
 	{
-		return CQt.QTimeZone_OffsetData(this.ptr, forDateTime);
+		return CQt.QTimeZone_OffsetData((.)this.ptr, forDateTime);
 	}
 	public bool HasTransitions()
 	{
-		return CQt.QTimeZone_HasTransitions(this.ptr);
+		return CQt.QTimeZone_HasTransitions((.)this.ptr);
 	}
 	public QTimeZone_OffsetData NextTransition(QDateTime_Ptr* afterDateTime)
 	{
-		return CQt.QTimeZone_NextTransition(this.ptr, afterDateTime);
+		return CQt.QTimeZone_NextTransition((.)this.ptr, afterDateTime);
 	}
 	public QTimeZone_OffsetData PreviousTransition(QDateTime_Ptr* beforeDateTime)
 	{
-		return CQt.QTimeZone_PreviousTransition(this.ptr, beforeDateTime);
+		return CQt.QTimeZone_PreviousTransition((.)this.ptr, beforeDateTime);
 	}
 	public void* Transitions(QDateTime_Ptr* fromDateTime, QDateTime_Ptr* toDateTime)
 	{
-		return CQt.QTimeZone_Transitions(this.ptr, fromDateTime, toDateTime);
+		return CQt.QTimeZone_Transitions((.)this.ptr, fromDateTime, toDateTime);
 	}
 	public void* SystemTimeZoneId()
 	{
@@ -266,19 +266,19 @@ class QTimeZone
 	}
 	public libqt_string DisplayName22(QDateTime_Ptr* atDateTime, QTimeZone_NameType nameType)
 	{
-		return CQt.QTimeZone_DisplayName22(this.ptr, atDateTime, nameType);
+		return CQt.QTimeZone_DisplayName22((.)this.ptr, atDateTime, nameType);
 	}
 	public libqt_string DisplayName3(QDateTime_Ptr* atDateTime, QTimeZone_NameType nameType, QLocale_Ptr* locale)
 	{
-		return CQt.QTimeZone_DisplayName3(this.ptr, atDateTime, nameType, locale);
+		return CQt.QTimeZone_DisplayName3((.)this.ptr, atDateTime, nameType, locale);
 	}
 	public libqt_string DisplayName23(QTimeZone_TimeType timeType, QTimeZone_NameType nameType)
 	{
-		return CQt.QTimeZone_DisplayName23(this.ptr, timeType, nameType);
+		return CQt.QTimeZone_DisplayName23((.)this.ptr, timeType, nameType);
 	}
 	public libqt_string DisplayName32(QTimeZone_TimeType timeType, QTimeZone_NameType nameType, QLocale_Ptr* locale)
 	{
-		return CQt.QTimeZone_DisplayName32(this.ptr, timeType, nameType, locale);
+		return CQt.QTimeZone_DisplayName32((.)this.ptr, timeType, nameType, locale);
 	}
 }
 interface IQTimeZone
@@ -368,43 +368,43 @@ class QTimeZone_OffsetData
 	}
 	public libqt_string Abbreviation()
 	{
-		return CQt.QTimeZone_OffsetData_Abbreviation(this.ptr);
+		return CQt.QTimeZone_OffsetData_Abbreviation((.)this.ptr);
 	}
 	public void SetAbbreviation(libqt_string abbreviation)
 	{
-		CQt.QTimeZone_OffsetData_SetAbbreviation(this.ptr, abbreviation);
+		CQt.QTimeZone_OffsetData_SetAbbreviation((.)this.ptr, abbreviation);
 	}
 	public QDateTime_Ptr AtUtc()
 	{
-		return CQt.QTimeZone_OffsetData_AtUtc(this.ptr);
+		return CQt.QTimeZone_OffsetData_AtUtc((.)this.ptr);
 	}
 	public void SetAtUtc(QDateTime_Ptr atUtc)
 	{
-		CQt.QTimeZone_OffsetData_SetAtUtc(this.ptr, atUtc);
+		CQt.QTimeZone_OffsetData_SetAtUtc((.)this.ptr, atUtc);
 	}
 	public c_int OffsetFromUtc()
 	{
-		return CQt.QTimeZone_OffsetData_OffsetFromUtc(this.ptr);
+		return CQt.QTimeZone_OffsetData_OffsetFromUtc((.)this.ptr);
 	}
 	public void SetOffsetFromUtc(c_int offsetFromUtc)
 	{
-		CQt.QTimeZone_OffsetData_SetOffsetFromUtc(this.ptr, offsetFromUtc);
+		CQt.QTimeZone_OffsetData_SetOffsetFromUtc((.)this.ptr, offsetFromUtc);
 	}
 	public c_int StandardTimeOffset()
 	{
-		return CQt.QTimeZone_OffsetData_StandardTimeOffset(this.ptr);
+		return CQt.QTimeZone_OffsetData_StandardTimeOffset((.)this.ptr);
 	}
 	public void SetStandardTimeOffset(c_int standardTimeOffset)
 	{
-		CQt.QTimeZone_OffsetData_SetStandardTimeOffset(this.ptr, standardTimeOffset);
+		CQt.QTimeZone_OffsetData_SetStandardTimeOffset((.)this.ptr, standardTimeOffset);
 	}
 	public c_int DaylightTimeOffset()
 	{
-		return CQt.QTimeZone_OffsetData_DaylightTimeOffset(this.ptr);
+		return CQt.QTimeZone_OffsetData_DaylightTimeOffset((.)this.ptr);
 	}
 	public void SetDaylightTimeOffset(c_int daylightTimeOffset)
 	{
-		CQt.QTimeZone_OffsetData_SetDaylightTimeOffset(this.ptr, daylightTimeOffset);
+		CQt.QTimeZone_OffsetData_SetDaylightTimeOffset((.)this.ptr, daylightTimeOffset);
 	}
 }
 interface IQTimeZone_OffsetData

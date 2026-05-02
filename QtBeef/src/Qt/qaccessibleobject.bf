@@ -34,23 +34,111 @@ class QAccessibleObject
 	}
 	public bool IsValid()
 	{
-		return CQt.QAccessibleObject_IsValid(this.ptr);
+		return CQt.QAccessibleObject_IsValid((.)this.ptr);
 	}
 	public QObject_Ptr* Object()
 	{
-		return CQt.QAccessibleObject_Object(this.ptr);
+		return CQt.QAccessibleObject_Object((.)this.ptr);
 	}
 	public QRect_Ptr Rect()
 	{
-		return CQt.QAccessibleObject_Rect(this.ptr);
+		return CQt.QAccessibleObject_Rect((.)this.ptr);
 	}
 	public void SetText(QAccessible_Text t, libqt_string* text)
 	{
-		CQt.QAccessibleObject_SetText(this.ptr, t, text);
+		CQt.QAccessibleObject_SetText((.)this.ptr, t, text);
 	}
 	public QAccessibleInterface_Ptr* ChildAt(c_int x, c_int y)
 	{
-		return CQt.QAccessibleObject_ChildAt(this.ptr, x, y);
+		return CQt.QAccessibleObject_ChildAt((.)this.ptr, x, y);
+	}
+	public QWindow_Ptr* Window()
+	{
+		return CQt.QAccessibleInterface_Window((.)this.ptr);
+	}
+	public void* Relations(void* match)
+	{
+		return CQt.QAccessibleInterface_Relations((.)this.ptr, match);
+	}
+	public QAccessibleInterface_Ptr* FocusChild()
+	{
+		return CQt.QAccessibleInterface_FocusChild((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* Parent()
+	{
+		return CQt.QAccessibleInterface_Parent((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* Child(c_int index)
+	{
+		return CQt.QAccessibleInterface_Child((.)this.ptr, index);
+	}
+	public c_int ChildCount()
+	{
+		return CQt.QAccessibleInterface_ChildCount((.)this.ptr);
+	}
+	public c_int IndexOfChild(QAccessibleInterface_Ptr* param1)
+	{
+		return CQt.QAccessibleInterface_IndexOfChild((.)this.ptr, param1);
+	}
+	public libqt_string Text(QAccessible_Text t)
+	{
+		return CQt.QAccessibleInterface_Text((.)this.ptr, t);
+	}
+	public QAccessible_Role Role()
+	{
+		return CQt.QAccessibleInterface_Role((.)this.ptr);
+	}
+	public QAccessible_State State()
+	{
+		return CQt.QAccessibleInterface_State((.)this.ptr);
+	}
+	public QColor_Ptr ForegroundColor()
+	{
+		return CQt.QAccessibleInterface_ForegroundColor((.)this.ptr);
+	}
+	public QColor_Ptr BackgroundColor()
+	{
+		return CQt.QAccessibleInterface_BackgroundColor((.)this.ptr);
+	}
+	public QAccessibleTextInterface_Ptr* TextInterface()
+	{
+		return CQt.QAccessibleInterface_TextInterface((.)this.ptr);
+	}
+	public QAccessibleEditableTextInterface_Ptr* EditableTextInterface()
+	{
+		return CQt.QAccessibleInterface_EditableTextInterface((.)this.ptr);
+	}
+	public QAccessibleValueInterface_Ptr* ValueInterface()
+	{
+		return CQt.QAccessibleInterface_ValueInterface((.)this.ptr);
+	}
+	public QAccessibleActionInterface_Ptr* ActionInterface()
+	{
+		return CQt.QAccessibleInterface_ActionInterface((.)this.ptr);
+	}
+	public QAccessibleImageInterface_Ptr* ImageInterface()
+	{
+		return CQt.QAccessibleInterface_ImageInterface((.)this.ptr);
+	}
+	public QAccessibleTableInterface_Ptr* TableInterface()
+	{
+		return CQt.QAccessibleInterface_TableInterface((.)this.ptr);
+	}
+	public QAccessibleTableCellInterface_Ptr* TableCellInterface()
+	{
+		return CQt.QAccessibleInterface_TableCellInterface((.)this.ptr);
+	}
+	public QAccessibleHyperlinkInterface_Ptr* HyperlinkInterface()
+	{
+		return CQt.QAccessibleInterface_HyperlinkInterface((.)this.ptr);
+	}
+	public void Virtual_hook(c_int id, void* data)
+	{
+		CQt.QAccessibleInterface_Virtual_Hook((.)this.ptr, id, data);
+	}
+	public void* Interface_cast(QAccessible_InterfaceType param1)
+	{
+		return CQt.QAccessibleInterface_Interface_Cast((.)this.ptr, param1);
 	}
 }
 interface IQAccessibleObject
@@ -106,39 +194,111 @@ class QAccessibleApplication
 	}
 	public QWindow_Ptr* Window()
 	{
-		return CQt.QAccessibleApplication_Window(this.ptr);
+		return CQt.QAccessibleApplication_Window((.)this.ptr);
 	}
 	public c_int ChildCount()
 	{
-		return CQt.QAccessibleApplication_ChildCount(this.ptr);
+		return CQt.QAccessibleApplication_ChildCount((.)this.ptr);
 	}
 	public c_int IndexOfChild(QAccessibleInterface_Ptr* param1)
 	{
-		return CQt.QAccessibleApplication_IndexOfChild(this.ptr, param1);
+		return CQt.QAccessibleApplication_IndexOfChild((.)this.ptr, param1);
 	}
 	public QAccessibleInterface_Ptr* FocusChild()
 	{
-		return CQt.QAccessibleApplication_FocusChild(this.ptr);
+		return CQt.QAccessibleApplication_FocusChild((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* Parent()
 	{
-		return CQt.QAccessibleApplication_Parent(this.ptr);
+		return CQt.QAccessibleApplication_Parent((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* Child(c_int index)
 	{
-		return CQt.QAccessibleApplication_Child(this.ptr, index);
+		return CQt.QAccessibleApplication_Child((.)this.ptr, index);
 	}
 	public libqt_string Text(QAccessible_Text t)
 	{
-		return CQt.QAccessibleApplication_Text(this.ptr, t);
+		return CQt.QAccessibleApplication_Text((.)this.ptr, t);
 	}
 	public QAccessible_Role Role()
 	{
-		return CQt.QAccessibleApplication_Role(this.ptr);
+		return CQt.QAccessibleApplication_Role((.)this.ptr);
 	}
 	public QAccessible_State State()
 	{
-		return CQt.QAccessibleApplication_State(this.ptr);
+		return CQt.QAccessibleApplication_State((.)this.ptr);
+	}
+	public bool IsValid()
+	{
+		return CQt.QAccessibleObject_IsValid((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleObject_Object((.)this.ptr);
+	}
+	public QRect_Ptr Rect()
+	{
+		return CQt.QAccessibleObject_Rect((.)this.ptr);
+	}
+	public void SetText(QAccessible_Text t, libqt_string* text)
+	{
+		CQt.QAccessibleObject_SetText((.)this.ptr, t, text);
+	}
+	public QAccessibleInterface_Ptr* ChildAt(c_int x, c_int y)
+	{
+		return CQt.QAccessibleObject_ChildAt((.)this.ptr, x, y);
+	}
+	public void* Relations(void* match)
+	{
+		return CQt.QAccessibleInterface_Relations((.)this.ptr, match);
+	}
+	public QColor_Ptr ForegroundColor()
+	{
+		return CQt.QAccessibleInterface_ForegroundColor((.)this.ptr);
+	}
+	public QColor_Ptr BackgroundColor()
+	{
+		return CQt.QAccessibleInterface_BackgroundColor((.)this.ptr);
+	}
+	public QAccessibleTextInterface_Ptr* TextInterface()
+	{
+		return CQt.QAccessibleInterface_TextInterface((.)this.ptr);
+	}
+	public QAccessibleEditableTextInterface_Ptr* EditableTextInterface()
+	{
+		return CQt.QAccessibleInterface_EditableTextInterface((.)this.ptr);
+	}
+	public QAccessibleValueInterface_Ptr* ValueInterface()
+	{
+		return CQt.QAccessibleInterface_ValueInterface((.)this.ptr);
+	}
+	public QAccessibleActionInterface_Ptr* ActionInterface()
+	{
+		return CQt.QAccessibleInterface_ActionInterface((.)this.ptr);
+	}
+	public QAccessibleImageInterface_Ptr* ImageInterface()
+	{
+		return CQt.QAccessibleInterface_ImageInterface((.)this.ptr);
+	}
+	public QAccessibleTableInterface_Ptr* TableInterface()
+	{
+		return CQt.QAccessibleInterface_TableInterface((.)this.ptr);
+	}
+	public QAccessibleTableCellInterface_Ptr* TableCellInterface()
+	{
+		return CQt.QAccessibleInterface_TableCellInterface((.)this.ptr);
+	}
+	public QAccessibleHyperlinkInterface_Ptr* HyperlinkInterface()
+	{
+		return CQt.QAccessibleInterface_HyperlinkInterface((.)this.ptr);
+	}
+	public void Virtual_hook(c_int id, void* data)
+	{
+		CQt.QAccessibleInterface_Virtual_Hook((.)this.ptr, id, data);
+	}
+	public void* Interface_cast(QAccessible_InterfaceType param1)
+	{
+		return CQt.QAccessibleInterface_Interface_Cast((.)this.ptr, param1);
 	}
 }
 interface IQAccessibleApplication

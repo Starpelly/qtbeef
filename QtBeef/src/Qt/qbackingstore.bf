@@ -56,55 +56,55 @@ class QBackingStore
 	}
 	public QWindow_Ptr* Window()
 	{
-		return CQt.QBackingStore_Window(this.ptr);
+		return CQt.QBackingStore_Window((.)this.ptr);
 	}
 	public QPaintDevice_Ptr* PaintDevice()
 	{
-		return CQt.QBackingStore_PaintDevice(this.ptr);
+		return CQt.QBackingStore_PaintDevice((.)this.ptr);
 	}
 	public void Flush(QRegion_Ptr* region)
 	{
-		CQt.QBackingStore_Flush(this.ptr, region);
+		CQt.QBackingStore_Flush((.)this.ptr, region);
 	}
 	public void Resize(QSize_Ptr* size)
 	{
-		CQt.QBackingStore_Resize(this.ptr, size);
+		CQt.QBackingStore_Resize((.)this.ptr, size);
 	}
 	public QSize_Ptr Size()
 	{
-		return CQt.QBackingStore_Size(this.ptr);
+		return CQt.QBackingStore_Size((.)this.ptr);
 	}
 	public bool Scroll(QRegion_Ptr* area, c_int dx, c_int dy)
 	{
-		return CQt.QBackingStore_Scroll(this.ptr, area, dx, dy);
+		return CQt.QBackingStore_Scroll((.)this.ptr, area, dx, dy);
 	}
 	public void BeginPaint(QRegion_Ptr* param1)
 	{
-		CQt.QBackingStore_BeginPaint(this.ptr, param1);
+		CQt.QBackingStore_BeginPaint((.)this.ptr, param1);
 	}
 	public void EndPaint()
 	{
-		CQt.QBackingStore_EndPaint(this.ptr);
+		CQt.QBackingStore_EndPaint((.)this.ptr);
 	}
 	public void SetStaticContents(QRegion_Ptr* region)
 	{
-		CQt.QBackingStore_SetStaticContents(this.ptr, region);
+		CQt.QBackingStore_SetStaticContents((.)this.ptr, region);
 	}
 	public QRegion_Ptr StaticContents()
 	{
-		return CQt.QBackingStore_StaticContents(this.ptr);
+		return CQt.QBackingStore_StaticContents((.)this.ptr);
 	}
 	public bool HasStaticContents()
 	{
-		return CQt.QBackingStore_HasStaticContents(this.ptr);
+		return CQt.QBackingStore_HasStaticContents((.)this.ptr);
 	}
 	public void Flush2(QRegion_Ptr* region, QWindow_Ptr* window)
 	{
-		CQt.QBackingStore_Flush2(this.ptr, region, window);
+		CQt.QBackingStore_Flush2((.)this.ptr, region, window);
 	}
 	public void Flush3(QRegion_Ptr* region, QWindow_Ptr* window, QPoint_Ptr* offset)
 	{
-		CQt.QBackingStore_Flush3(this.ptr, region, window, offset);
+		CQt.QBackingStore_Flush3((.)this.ptr, region, window, offset);
 	}
 }
 interface IQBackingStore

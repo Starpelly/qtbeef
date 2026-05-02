@@ -40,35 +40,115 @@ class QPagedPaintDevice
 	}
 	public bool NewPage()
 	{
-		return CQt.QPagedPaintDevice_NewPage(this.ptr);
+		return CQt.QPagedPaintDevice_NewPage((.)this.ptr);
 	}
 	public bool SetPageLayout(QPageLayout_Ptr* pageLayout)
 	{
-		return CQt.QPagedPaintDevice_SetPageLayout(this.ptr, pageLayout);
+		return CQt.QPagedPaintDevice_SetPageLayout((.)this.ptr, pageLayout);
 	}
 	public bool SetPageSize(QPageSize_Ptr* pageSize)
 	{
-		return CQt.QPagedPaintDevice_SetPageSize(this.ptr, pageSize);
+		return CQt.QPagedPaintDevice_SetPageSize((.)this.ptr, pageSize);
 	}
 	public bool SetPageOrientation(QPageLayout_Orientation orientation)
 	{
-		return CQt.QPagedPaintDevice_SetPageOrientation(this.ptr, orientation);
+		return CQt.QPagedPaintDevice_SetPageOrientation((.)this.ptr, orientation);
 	}
 	public bool SetPageMargins(QMarginsF_Ptr* margins, QPageLayout_Unit units)
 	{
-		return CQt.QPagedPaintDevice_SetPageMargins(this.ptr, margins, units);
+		return CQt.QPagedPaintDevice_SetPageMargins((.)this.ptr, margins, units);
 	}
 	public QPageLayout_Ptr PageLayout()
 	{
-		return CQt.QPagedPaintDevice_PageLayout(this.ptr);
+		return CQt.QPagedPaintDevice_PageLayout((.)this.ptr);
 	}
 	public void SetPageRanges(QPageRanges_Ptr* ranges)
 	{
-		CQt.QPagedPaintDevice_SetPageRanges(this.ptr, ranges);
+		CQt.QPagedPaintDevice_SetPageRanges((.)this.ptr, ranges);
 	}
 	public QPageRanges_Ptr PageRanges()
 	{
-		return CQt.QPagedPaintDevice_PageRanges(this.ptr);
+		return CQt.QPagedPaintDevice_PageRanges((.)this.ptr);
+	}
+	public c_int DevType()
+	{
+		return CQt.QPaintDevice_DevType((.)this.ptr);
+	}
+	public bool PaintingActive()
+	{
+		return CQt.QPaintDevice_PaintingActive((.)this.ptr);
+	}
+	public QPaintEngine_Ptr* PaintEngine()
+	{
+		return CQt.QPaintDevice_PaintEngine((.)this.ptr);
+	}
+	public c_int Width()
+	{
+		return CQt.QPaintDevice_Width((.)this.ptr);
+	}
+	public c_int Height()
+	{
+		return CQt.QPaintDevice_Height((.)this.ptr);
+	}
+	public c_int WidthMM()
+	{
+		return CQt.QPaintDevice_WidthMM((.)this.ptr);
+	}
+	public c_int HeightMM()
+	{
+		return CQt.QPaintDevice_HeightMM((.)this.ptr);
+	}
+	public c_int LogicalDpiX()
+	{
+		return CQt.QPaintDevice_LogicalDpiX((.)this.ptr);
+	}
+	public c_int LogicalDpiY()
+	{
+		return CQt.QPaintDevice_LogicalDpiY((.)this.ptr);
+	}
+	public c_int PhysicalDpiX()
+	{
+		return CQt.QPaintDevice_PhysicalDpiX((.)this.ptr);
+	}
+	public c_int PhysicalDpiY()
+	{
+		return CQt.QPaintDevice_PhysicalDpiY((.)this.ptr);
+	}
+	public double DevicePixelRatio()
+	{
+		return CQt.QPaintDevice_DevicePixelRatio((.)this.ptr);
+	}
+	public double DevicePixelRatioF()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioF((.)this.ptr);
+	}
+	public c_int ColorCount()
+	{
+		return CQt.QPaintDevice_ColorCount((.)this.ptr);
+	}
+	public c_int Depth()
+	{
+		return CQt.QPaintDevice_Depth((.)this.ptr);
+	}
+	public double DevicePixelRatioFScale()
+	{
+		return CQt.QPaintDevice_DevicePixelRatioFScale();
+	}
+	public c_int Metric(QPaintDevice_PaintDeviceMetric metric)
+	{
+		return CQt.QPaintDevice_Metric((.)this.ptr, metric);
+	}
+	public void InitPainter(QPainter_Ptr* painter)
+	{
+		CQt.QPaintDevice_InitPainter((.)this.ptr, painter);
+	}
+	public QPaintDevice_Ptr* Redirected(QPoint_Ptr* offset)
+	{
+		return CQt.QPaintDevice_Redirected((.)this.ptr, offset);
+	}
+	public QPainter_Ptr* SharedPainter()
+	{
+		return CQt.QPaintDevice_SharedPainter((.)this.ptr);
 	}
 }
 interface IQPagedPaintDevice

@@ -46,27 +46,27 @@ class QCryptographicHash
 	}
 	public void Reset()
 	{
-		CQt.QCryptographicHash_Reset(this.ptr);
+		CQt.QCryptographicHash_Reset((.)this.ptr);
 	}
 	public void AddData(c_char* data, void* length)
 	{
-		CQt.QCryptographicHash_AddData(this.ptr, data, length);
+		CQt.QCryptographicHash_AddData((.)this.ptr, data, length);
 	}
 	public void AddData2(void* data)
 	{
-		CQt.QCryptographicHash_AddData2(this.ptr, data);
+		CQt.QCryptographicHash_AddData2((.)this.ptr, data);
 	}
 	public bool AddData3(QIODevice_Ptr* device)
 	{
-		return CQt.QCryptographicHash_AddData3(this.ptr, device);
+		return CQt.QCryptographicHash_AddData3((.)this.ptr, device);
 	}
 	public void* Result()
 	{
-		return CQt.QCryptographicHash_Result(this.ptr);
+		return CQt.QCryptographicHash_Result((.)this.ptr);
 	}
 	public void* ResultView()
 	{
-		return CQt.QCryptographicHash_ResultView(this.ptr);
+		return CQt.QCryptographicHash_ResultView((.)this.ptr);
 	}
 	public void* Hash(void* data, QCryptographicHash_Algorithm method)
 	{

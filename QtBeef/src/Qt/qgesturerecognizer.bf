@@ -42,15 +42,15 @@ class QGestureRecognizer
 	}
 	public QGesture_Ptr* Create(QObject_Ptr* target)
 	{
-		return CQt.QGestureRecognizer_Create(this.ptr, target);
+		return CQt.QGestureRecognizer_Create((.)this.ptr, target);
 	}
 	public void* Recognize(QGesture_Ptr* state, QObject_Ptr* watched, QEvent_Ptr* event)
 	{
-		return CQt.QGestureRecognizer_Recognize(this.ptr, state, watched, event);
+		return CQt.QGestureRecognizer_Recognize((.)this.ptr, state, watched, event);
 	}
 	public void Reset(QGesture_Ptr* state)
 	{
-		CQt.QGestureRecognizer_Reset(this.ptr, state);
+		CQt.QGestureRecognizer_Reset((.)this.ptr, state);
 	}
 	public Qt_GestureType RegisterRecognizer(QGestureRecognizer_Ptr* recognizer)
 	{

@@ -147,11 +147,11 @@ class QPixmapCache_Key
 	}
 	public void Swap(QPixmapCache_Key* other)
 	{
-		CQt.QPixmapCache_Key_Swap(this.ptr, other);
+		CQt.QPixmapCache_Key_Swap((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QPixmapCache_Key_IsValid(this.ptr);
+		return CQt.QPixmapCache_Key_IsValid((.)this.ptr);
 	}
 }
 interface IQPixmapCache_Key

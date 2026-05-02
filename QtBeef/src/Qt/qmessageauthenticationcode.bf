@@ -50,27 +50,27 @@ class QMessageAuthenticationCode
 	}
 	public void Reset()
 	{
-		CQt.QMessageAuthenticationCode_Reset(this.ptr);
+		CQt.QMessageAuthenticationCode_Reset((.)this.ptr);
 	}
 	public void SetKey(void** key)
 	{
-		CQt.QMessageAuthenticationCode_SetKey(this.ptr, key);
+		CQt.QMessageAuthenticationCode_SetKey((.)this.ptr, key);
 	}
 	public void AddData(c_char* data, void* length)
 	{
-		CQt.QMessageAuthenticationCode_AddData(this.ptr, data, length);
+		CQt.QMessageAuthenticationCode_AddData((.)this.ptr, data, length);
 	}
 	public void AddData2(void** data)
 	{
-		CQt.QMessageAuthenticationCode_AddData2(this.ptr, data);
+		CQt.QMessageAuthenticationCode_AddData2((.)this.ptr, data);
 	}
 	public bool AddData3(QIODevice_Ptr* device)
 	{
-		return CQt.QMessageAuthenticationCode_AddData3(this.ptr, device);
+		return CQt.QMessageAuthenticationCode_AddData3((.)this.ptr, device);
 	}
 	public void* Result()
 	{
-		return CQt.QMessageAuthenticationCode_Result(this.ptr);
+		return CQt.QMessageAuthenticationCode_Result((.)this.ptr);
 	}
 	public void* Hash(void** message, void** key, QCryptographicHash_Algorithm method)
 	{

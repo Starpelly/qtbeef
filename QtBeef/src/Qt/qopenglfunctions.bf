@@ -318,567 +318,567 @@ class QOpenGLFunctions
 	}
 	public void* OpenGLFeatures()
 	{
-		return CQt.QOpenGLFunctions_OpenGLFeatures(this.ptr);
+		return CQt.QOpenGLFunctions_OpenGLFeatures((.)this.ptr);
 	}
 	public bool HasOpenGLFeature(QOpenGLFunctions_OpenGLFeature feature)
 	{
-		return CQt.QOpenGLFunctions_HasOpenGLFeature(this.ptr, feature);
+		return CQt.QOpenGLFunctions_HasOpenGLFeature((.)this.ptr, feature);
 	}
 	public void InitializeOpenGLFunctions()
 	{
-		CQt.QOpenGLFunctions_InitializeOpenGLFunctions(this.ptr);
+		CQt.QOpenGLFunctions_InitializeOpenGLFunctions((.)this.ptr);
 	}
 	public void GlBindTexture(c_uint target, c_uint texture)
 	{
-		CQt.QOpenGLFunctions_GlBindTexture(this.ptr, target, texture);
+		CQt.QOpenGLFunctions_GlBindTexture((.)this.ptr, target, texture);
 	}
 	public void GlBlendFunc(c_uint sfactor, c_uint dfactor)
 	{
-		CQt.QOpenGLFunctions_GlBlendFunc(this.ptr, sfactor, dfactor);
+		CQt.QOpenGLFunctions_GlBlendFunc((.)this.ptr, sfactor, dfactor);
 	}
 	public void GlClear(c_size mask)
 	{
-		CQt.QOpenGLFunctions_GlClear(this.ptr, mask);
+		CQt.QOpenGLFunctions_GlClear((.)this.ptr, mask);
 	}
 	public void GlClearColor(float red, float green, float blue, float alpha)
 	{
-		CQt.QOpenGLFunctions_GlClearColor(this.ptr, red, green, blue, alpha);
+		CQt.QOpenGLFunctions_GlClearColor((.)this.ptr, red, green, blue, alpha);
 	}
 	public void GlClearStencil(c_int s)
 	{
-		CQt.QOpenGLFunctions_GlClearStencil(this.ptr, s);
+		CQt.QOpenGLFunctions_GlClearStencil((.)this.ptr, s);
 	}
 	public void GlColorMask(bool red, bool green, bool blue, bool alpha)
 	{
-		CQt.QOpenGLFunctions_GlColorMask(this.ptr, red, green, blue, alpha);
+		CQt.QOpenGLFunctions_GlColorMask((.)this.ptr, red, green, blue, alpha);
 	}
 	public void GlCopyTexImage2D(c_uint target, c_int level, c_uint internalformat, c_int x, c_int y, c_size width, c_size height, c_int border)
 	{
-		CQt.QOpenGLFunctions_GlCopyTexImage2D(this.ptr, target, level, internalformat, x, y, width, height, border);
+		CQt.QOpenGLFunctions_GlCopyTexImage2D((.)this.ptr, target, level, internalformat, x, y, width, height, border);
 	}
 	public void GlCopyTexSubImage2D(c_uint target, c_int level, c_int xoffset, c_int yoffset, c_int x, c_int y, c_size width, c_size height)
 	{
-		CQt.QOpenGLFunctions_GlCopyTexSubImage2D(this.ptr, target, level, xoffset, yoffset, x, y, width, height);
+		CQt.QOpenGLFunctions_GlCopyTexSubImage2D((.)this.ptr, target, level, xoffset, yoffset, x, y, width, height);
 	}
 	public void GlCullFace(c_uint mode)
 	{
-		CQt.QOpenGLFunctions_GlCullFace(this.ptr, mode);
+		CQt.QOpenGLFunctions_GlCullFace((.)this.ptr, mode);
 	}
 	public void GlDeleteTextures(c_size n, c_uint* textures)
 	{
-		CQt.QOpenGLFunctions_GlDeleteTextures(this.ptr, n, textures);
+		CQt.QOpenGLFunctions_GlDeleteTextures((.)this.ptr, n, textures);
 	}
 	public void GlDepthFunc(c_uint func)
 	{
-		CQt.QOpenGLFunctions_GlDepthFunc(this.ptr, func);
+		CQt.QOpenGLFunctions_GlDepthFunc((.)this.ptr, func);
 	}
 	public void GlDepthMask(bool flag)
 	{
-		CQt.QOpenGLFunctions_GlDepthMask(this.ptr, flag);
+		CQt.QOpenGLFunctions_GlDepthMask((.)this.ptr, flag);
 	}
 	public void GlDisable(c_uint cap)
 	{
-		CQt.QOpenGLFunctions_GlDisable(this.ptr, cap);
+		CQt.QOpenGLFunctions_GlDisable((.)this.ptr, cap);
 	}
 	public void GlDrawArrays(c_uint mode, c_int first, c_size count)
 	{
-		CQt.QOpenGLFunctions_GlDrawArrays(this.ptr, mode, first, count);
+		CQt.QOpenGLFunctions_GlDrawArrays((.)this.ptr, mode, first, count);
 	}
 	public void GlDrawElements(c_uint mode, c_size count, c_uint type, void* indices)
 	{
-		CQt.QOpenGLFunctions_GlDrawElements(this.ptr, mode, count, type, indices);
+		CQt.QOpenGLFunctions_GlDrawElements((.)this.ptr, mode, count, type, indices);
 	}
 	public void GlEnable(c_uint cap)
 	{
-		CQt.QOpenGLFunctions_GlEnable(this.ptr, cap);
+		CQt.QOpenGLFunctions_GlEnable((.)this.ptr, cap);
 	}
 	public void GlFinish()
 	{
-		CQt.QOpenGLFunctions_GlFinish(this.ptr);
+		CQt.QOpenGLFunctions_GlFinish((.)this.ptr);
 	}
 	public void GlFlush()
 	{
-		CQt.QOpenGLFunctions_GlFlush(this.ptr);
+		CQt.QOpenGLFunctions_GlFlush((.)this.ptr);
 	}
 	public void GlFrontFace(c_uint mode)
 	{
-		CQt.QOpenGLFunctions_GlFrontFace(this.ptr, mode);
+		CQt.QOpenGLFunctions_GlFrontFace((.)this.ptr, mode);
 	}
 	public void GlGenTextures(c_size n, c_uint* textures)
 	{
-		CQt.QOpenGLFunctions_GlGenTextures(this.ptr, n, textures);
+		CQt.QOpenGLFunctions_GlGenTextures((.)this.ptr, n, textures);
 	}
 	public void GlGetBooleanv(c_uint pname, bool* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetBooleanv(this.ptr, pname, _params);
+		CQt.QOpenGLFunctions_GlGetBooleanv((.)this.ptr, pname, _params);
 	}
 	public void GlGetFloatv(c_uint pname, float* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetFloatv(this.ptr, pname, _params);
+		CQt.QOpenGLFunctions_GlGetFloatv((.)this.ptr, pname, _params);
 	}
 	public void GlGetIntegerv(c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetIntegerv(this.ptr, pname, _params);
+		CQt.QOpenGLFunctions_GlGetIntegerv((.)this.ptr, pname, _params);
 	}
 	public uint8* GlGetString(c_uint name)
 	{
-		return CQt.QOpenGLFunctions_GlGetString(this.ptr, name);
+		return CQt.QOpenGLFunctions_GlGetString((.)this.ptr, name);
 	}
 	public void GlGetTexParameterfv(c_uint target, c_uint pname, float* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetTexParameterfv(this.ptr, target, pname, _params);
+		CQt.QOpenGLFunctions_GlGetTexParameterfv((.)this.ptr, target, pname, _params);
 	}
 	public void GlGetTexParameteriv(c_uint target, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetTexParameteriv(this.ptr, target, pname, _params);
+		CQt.QOpenGLFunctions_GlGetTexParameteriv((.)this.ptr, target, pname, _params);
 	}
 	public void GlHint(c_uint target, c_uint mode)
 	{
-		CQt.QOpenGLFunctions_GlHint(this.ptr, target, mode);
+		CQt.QOpenGLFunctions_GlHint((.)this.ptr, target, mode);
 	}
 	public bool GlIsEnabled(c_uint cap)
 	{
-		return CQt.QOpenGLFunctions_GlIsEnabled(this.ptr, cap);
+		return CQt.QOpenGLFunctions_GlIsEnabled((.)this.ptr, cap);
 	}
 	public bool GlIsTexture(c_uint texture)
 	{
-		return CQt.QOpenGLFunctions_GlIsTexture(this.ptr, texture);
+		return CQt.QOpenGLFunctions_GlIsTexture((.)this.ptr, texture);
 	}
 	public void GlLineWidth(float width)
 	{
-		CQt.QOpenGLFunctions_GlLineWidth(this.ptr, width);
+		CQt.QOpenGLFunctions_GlLineWidth((.)this.ptr, width);
 	}
 	public void GlPixelStorei(c_uint pname, c_int param)
 	{
-		CQt.QOpenGLFunctions_GlPixelStorei(this.ptr, pname, param);
+		CQt.QOpenGLFunctions_GlPixelStorei((.)this.ptr, pname, param);
 	}
 	public void GlPolygonOffset(float factor, float units)
 	{
-		CQt.QOpenGLFunctions_GlPolygonOffset(this.ptr, factor, units);
+		CQt.QOpenGLFunctions_GlPolygonOffset((.)this.ptr, factor, units);
 	}
 	public void GlReadPixels(c_int x, c_int y, c_size width, c_size height, c_uint format, c_uint type, void* pixels)
 	{
-		CQt.QOpenGLFunctions_GlReadPixels(this.ptr, x, y, width, height, format, type, pixels);
+		CQt.QOpenGLFunctions_GlReadPixels((.)this.ptr, x, y, width, height, format, type, pixels);
 	}
 	public void GlScissor(c_int x, c_int y, c_size width, c_size height)
 	{
-		CQt.QOpenGLFunctions_GlScissor(this.ptr, x, y, width, height);
+		CQt.QOpenGLFunctions_GlScissor((.)this.ptr, x, y, width, height);
 	}
 	public void GlStencilFunc(c_uint func, c_int _ref, c_uint mask)
 	{
-		CQt.QOpenGLFunctions_GlStencilFunc(this.ptr, func, _ref, mask);
+		CQt.QOpenGLFunctions_GlStencilFunc((.)this.ptr, func, _ref, mask);
 	}
 	public void GlStencilMask(c_uint mask)
 	{
-		CQt.QOpenGLFunctions_GlStencilMask(this.ptr, mask);
+		CQt.QOpenGLFunctions_GlStencilMask((.)this.ptr, mask);
 	}
 	public void GlStencilOp(c_uint fail, c_uint zfail, c_uint zpass)
 	{
-		CQt.QOpenGLFunctions_GlStencilOp(this.ptr, fail, zfail, zpass);
+		CQt.QOpenGLFunctions_GlStencilOp((.)this.ptr, fail, zfail, zpass);
 	}
 	public void GlTexImage2D(c_uint target, c_int level, c_int internalformat, c_size width, c_size height, c_int border, c_uint format, c_uint type, void* pixels)
 	{
-		CQt.QOpenGLFunctions_GlTexImage2D(this.ptr, target, level, internalformat, width, height, border, format, type, pixels);
+		CQt.QOpenGLFunctions_GlTexImage2D((.)this.ptr, target, level, internalformat, width, height, border, format, type, pixels);
 	}
 	public void GlTexParameterf(c_uint target, c_uint pname, float param)
 	{
-		CQt.QOpenGLFunctions_GlTexParameterf(this.ptr, target, pname, param);
+		CQt.QOpenGLFunctions_GlTexParameterf((.)this.ptr, target, pname, param);
 	}
 	public void GlTexParameterfv(c_uint target, c_uint pname, float* _params)
 	{
-		CQt.QOpenGLFunctions_GlTexParameterfv(this.ptr, target, pname, _params);
+		CQt.QOpenGLFunctions_GlTexParameterfv((.)this.ptr, target, pname, _params);
 	}
 	public void GlTexParameteri(c_uint target, c_uint pname, c_int param)
 	{
-		CQt.QOpenGLFunctions_GlTexParameteri(this.ptr, target, pname, param);
+		CQt.QOpenGLFunctions_GlTexParameteri((.)this.ptr, target, pname, param);
 	}
 	public void GlTexParameteriv(c_uint target, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlTexParameteriv(this.ptr, target, pname, _params);
+		CQt.QOpenGLFunctions_GlTexParameteriv((.)this.ptr, target, pname, _params);
 	}
 	public void GlTexSubImage2D(c_uint target, c_int level, c_int xoffset, c_int yoffset, c_size width, c_size height, c_uint format, c_uint type, void* pixels)
 	{
-		CQt.QOpenGLFunctions_GlTexSubImage2D(this.ptr, target, level, xoffset, yoffset, width, height, format, type, pixels);
+		CQt.QOpenGLFunctions_GlTexSubImage2D((.)this.ptr, target, level, xoffset, yoffset, width, height, format, type, pixels);
 	}
 	public void GlViewport(c_int x, c_int y, c_size width, c_size height)
 	{
-		CQt.QOpenGLFunctions_GlViewport(this.ptr, x, y, width, height);
+		CQt.QOpenGLFunctions_GlViewport((.)this.ptr, x, y, width, height);
 	}
 	public void GlActiveTexture(c_uint texture)
 	{
-		CQt.QOpenGLFunctions_GlActiveTexture(this.ptr, texture);
+		CQt.QOpenGLFunctions_GlActiveTexture((.)this.ptr, texture);
 	}
 	public void GlAttachShader(c_uint program, c_uint shader)
 	{
-		CQt.QOpenGLFunctions_GlAttachShader(this.ptr, program, shader);
+		CQt.QOpenGLFunctions_GlAttachShader((.)this.ptr, program, shader);
 	}
 	public void GlBindAttribLocation(c_uint program, c_uint index, c_char* name)
 	{
-		CQt.QOpenGLFunctions_GlBindAttribLocation(this.ptr, program, index, name);
+		CQt.QOpenGLFunctions_GlBindAttribLocation((.)this.ptr, program, index, name);
 	}
 	public void GlBindBuffer(c_uint target, c_uint buffer)
 	{
-		CQt.QOpenGLFunctions_GlBindBuffer(this.ptr, target, buffer);
+		CQt.QOpenGLFunctions_GlBindBuffer((.)this.ptr, target, buffer);
 	}
 	public void GlBindFramebuffer(c_uint target, c_uint framebuffer)
 	{
-		CQt.QOpenGLFunctions_GlBindFramebuffer(this.ptr, target, framebuffer);
+		CQt.QOpenGLFunctions_GlBindFramebuffer((.)this.ptr, target, framebuffer);
 	}
 	public void GlBindRenderbuffer(c_uint target, c_uint renderbuffer)
 	{
-		CQt.QOpenGLFunctions_GlBindRenderbuffer(this.ptr, target, renderbuffer);
+		CQt.QOpenGLFunctions_GlBindRenderbuffer((.)this.ptr, target, renderbuffer);
 	}
 	public void GlBlendColor(float red, float green, float blue, float alpha)
 	{
-		CQt.QOpenGLFunctions_GlBlendColor(this.ptr, red, green, blue, alpha);
+		CQt.QOpenGLFunctions_GlBlendColor((.)this.ptr, red, green, blue, alpha);
 	}
 	public void GlBlendEquation(c_uint mode)
 	{
-		CQt.QOpenGLFunctions_GlBlendEquation(this.ptr, mode);
+		CQt.QOpenGLFunctions_GlBlendEquation((.)this.ptr, mode);
 	}
 	public void GlBlendEquationSeparate(c_uint modeRGB, c_uint modeAlpha)
 	{
-		CQt.QOpenGLFunctions_GlBlendEquationSeparate(this.ptr, modeRGB, modeAlpha);
+		CQt.QOpenGLFunctions_GlBlendEquationSeparate((.)this.ptr, modeRGB, modeAlpha);
 	}
 	public void GlBlendFuncSeparate(c_uint srcRGB, c_uint dstRGB, c_uint srcAlpha, c_uint dstAlpha)
 	{
-		CQt.QOpenGLFunctions_GlBlendFuncSeparate(this.ptr, srcRGB, dstRGB, srcAlpha, dstAlpha);
+		CQt.QOpenGLFunctions_GlBlendFuncSeparate((.)this.ptr, srcRGB, dstRGB, srcAlpha, dstAlpha);
 	}
 	public void GlBufferData(c_uint target, c_intptr size, void* data, c_uint usage)
 	{
-		CQt.QOpenGLFunctions_GlBufferData(this.ptr, target, size, data, usage);
+		CQt.QOpenGLFunctions_GlBufferData((.)this.ptr, target, size, data, usage);
 	}
 	public void GlBufferSubData(c_uint target, c_intptr offset, c_intptr size, void* data)
 	{
-		CQt.QOpenGLFunctions_GlBufferSubData(this.ptr, target, offset, size, data);
+		CQt.QOpenGLFunctions_GlBufferSubData((.)this.ptr, target, offset, size, data);
 	}
 	public void GlClearDepthf(float depth)
 	{
-		CQt.QOpenGLFunctions_GlClearDepthf(this.ptr, depth);
+		CQt.QOpenGLFunctions_GlClearDepthf((.)this.ptr, depth);
 	}
 	public void GlCompileShader(c_uint shader)
 	{
-		CQt.QOpenGLFunctions_GlCompileShader(this.ptr, shader);
+		CQt.QOpenGLFunctions_GlCompileShader((.)this.ptr, shader);
 	}
 	public void GlCompressedTexImage2D(c_uint target, c_int level, c_uint internalformat, c_size width, c_size height, c_int border, c_size imageSize, void* data)
 	{
-		CQt.QOpenGLFunctions_GlCompressedTexImage2D(this.ptr, target, level, internalformat, width, height, border, imageSize, data);
+		CQt.QOpenGLFunctions_GlCompressedTexImage2D((.)this.ptr, target, level, internalformat, width, height, border, imageSize, data);
 	}
 	public void GlCompressedTexSubImage2D(c_uint target, c_int level, c_int xoffset, c_int yoffset, c_size width, c_size height, c_uint format, c_size imageSize, void* data)
 	{
-		CQt.QOpenGLFunctions_GlCompressedTexSubImage2D(this.ptr, target, level, xoffset, yoffset, width, height, format, imageSize, data);
+		CQt.QOpenGLFunctions_GlCompressedTexSubImage2D((.)this.ptr, target, level, xoffset, yoffset, width, height, format, imageSize, data);
 	}
 	public c_uint GlCreateProgram()
 	{
-		return CQt.QOpenGLFunctions_GlCreateProgram(this.ptr);
+		return CQt.QOpenGLFunctions_GlCreateProgram((.)this.ptr);
 	}
 	public c_uint GlCreateShader(c_uint type)
 	{
-		return CQt.QOpenGLFunctions_GlCreateShader(this.ptr, type);
+		return CQt.QOpenGLFunctions_GlCreateShader((.)this.ptr, type);
 	}
 	public void GlDeleteBuffers(c_size n, c_uint* buffers)
 	{
-		CQt.QOpenGLFunctions_GlDeleteBuffers(this.ptr, n, buffers);
+		CQt.QOpenGLFunctions_GlDeleteBuffers((.)this.ptr, n, buffers);
 	}
 	public void GlDeleteFramebuffers(c_size n, c_uint* framebuffers)
 	{
-		CQt.QOpenGLFunctions_GlDeleteFramebuffers(this.ptr, n, framebuffers);
+		CQt.QOpenGLFunctions_GlDeleteFramebuffers((.)this.ptr, n, framebuffers);
 	}
 	public void GlDeleteProgram(c_uint program)
 	{
-		CQt.QOpenGLFunctions_GlDeleteProgram(this.ptr, program);
+		CQt.QOpenGLFunctions_GlDeleteProgram((.)this.ptr, program);
 	}
 	public void GlDeleteRenderbuffers(c_size n, c_uint* renderbuffers)
 	{
-		CQt.QOpenGLFunctions_GlDeleteRenderbuffers(this.ptr, n, renderbuffers);
+		CQt.QOpenGLFunctions_GlDeleteRenderbuffers((.)this.ptr, n, renderbuffers);
 	}
 	public void GlDeleteShader(c_uint shader)
 	{
-		CQt.QOpenGLFunctions_GlDeleteShader(this.ptr, shader);
+		CQt.QOpenGLFunctions_GlDeleteShader((.)this.ptr, shader);
 	}
 	public void GlDepthRangef(float zNear, float zFar)
 	{
-		CQt.QOpenGLFunctions_GlDepthRangef(this.ptr, zNear, zFar);
+		CQt.QOpenGLFunctions_GlDepthRangef((.)this.ptr, zNear, zFar);
 	}
 	public void GlDetachShader(c_uint program, c_uint shader)
 	{
-		CQt.QOpenGLFunctions_GlDetachShader(this.ptr, program, shader);
+		CQt.QOpenGLFunctions_GlDetachShader((.)this.ptr, program, shader);
 	}
 	public void GlDisableVertexAttribArray(c_uint index)
 	{
-		CQt.QOpenGLFunctions_GlDisableVertexAttribArray(this.ptr, index);
+		CQt.QOpenGLFunctions_GlDisableVertexAttribArray((.)this.ptr, index);
 	}
 	public void GlEnableVertexAttribArray(c_uint index)
 	{
-		CQt.QOpenGLFunctions_GlEnableVertexAttribArray(this.ptr, index);
+		CQt.QOpenGLFunctions_GlEnableVertexAttribArray((.)this.ptr, index);
 	}
 	public void GlFramebufferRenderbuffer(c_uint target, c_uint attachment, c_uint renderbuffertarget, c_uint renderbuffer)
 	{
-		CQt.QOpenGLFunctions_GlFramebufferRenderbuffer(this.ptr, target, attachment, renderbuffertarget, renderbuffer);
+		CQt.QOpenGLFunctions_GlFramebufferRenderbuffer((.)this.ptr, target, attachment, renderbuffertarget, renderbuffer);
 	}
 	public void GlFramebufferTexture2D(c_uint target, c_uint attachment, c_uint textarget, c_uint texture, c_int level)
 	{
-		CQt.QOpenGLFunctions_GlFramebufferTexture2D(this.ptr, target, attachment, textarget, texture, level);
+		CQt.QOpenGLFunctions_GlFramebufferTexture2D((.)this.ptr, target, attachment, textarget, texture, level);
 	}
 	public void GlGenBuffers(c_size n, c_uint* buffers)
 	{
-		CQt.QOpenGLFunctions_GlGenBuffers(this.ptr, n, buffers);
+		CQt.QOpenGLFunctions_GlGenBuffers((.)this.ptr, n, buffers);
 	}
 	public void GlGenerateMipmap(c_uint target)
 	{
-		CQt.QOpenGLFunctions_GlGenerateMipmap(this.ptr, target);
+		CQt.QOpenGLFunctions_GlGenerateMipmap((.)this.ptr, target);
 	}
 	public void GlGenFramebuffers(c_size n, c_uint* framebuffers)
 	{
-		CQt.QOpenGLFunctions_GlGenFramebuffers(this.ptr, n, framebuffers);
+		CQt.QOpenGLFunctions_GlGenFramebuffers((.)this.ptr, n, framebuffers);
 	}
 	public void GlGenRenderbuffers(c_size n, c_uint* renderbuffers)
 	{
-		CQt.QOpenGLFunctions_GlGenRenderbuffers(this.ptr, n, renderbuffers);
+		CQt.QOpenGLFunctions_GlGenRenderbuffers((.)this.ptr, n, renderbuffers);
 	}
 	public void GlGetAttachedShaders(c_uint program, c_size maxcount, c_size* count, c_uint* shaders)
 	{
-		CQt.QOpenGLFunctions_GlGetAttachedShaders(this.ptr, program, maxcount, count, shaders);
+		CQt.QOpenGLFunctions_GlGetAttachedShaders((.)this.ptr, program, maxcount, count, shaders);
 	}
 	public c_int GlGetAttribLocation(c_uint program, c_char* name)
 	{
-		return CQt.QOpenGLFunctions_GlGetAttribLocation(this.ptr, program, name);
+		return CQt.QOpenGLFunctions_GlGetAttribLocation((.)this.ptr, program, name);
 	}
 	public void GlGetBufferParameteriv(c_uint target, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetBufferParameteriv(this.ptr, target, pname, _params);
+		CQt.QOpenGLFunctions_GlGetBufferParameteriv((.)this.ptr, target, pname, _params);
 	}
 	public void GlGetFramebufferAttachmentParameteriv(c_uint target, c_uint attachment, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetFramebufferAttachmentParameteriv(this.ptr, target, attachment, pname, _params);
+		CQt.QOpenGLFunctions_GlGetFramebufferAttachmentParameteriv((.)this.ptr, target, attachment, pname, _params);
 	}
 	public void GlGetProgramiv(c_uint program, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetProgramiv(this.ptr, program, pname, _params);
+		CQt.QOpenGLFunctions_GlGetProgramiv((.)this.ptr, program, pname, _params);
 	}
 	public void GlGetProgramInfoLog(c_uint program, c_size bufsize, c_size* length, c_char* infolog)
 	{
-		CQt.QOpenGLFunctions_GlGetProgramInfoLog(this.ptr, program, bufsize, length, infolog);
+		CQt.QOpenGLFunctions_GlGetProgramInfoLog((.)this.ptr, program, bufsize, length, infolog);
 	}
 	public void GlGetRenderbufferParameteriv(c_uint target, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetRenderbufferParameteriv(this.ptr, target, pname, _params);
+		CQt.QOpenGLFunctions_GlGetRenderbufferParameteriv((.)this.ptr, target, pname, _params);
 	}
 	public void GlGetShaderiv(c_uint shader, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetShaderiv(this.ptr, shader, pname, _params);
+		CQt.QOpenGLFunctions_GlGetShaderiv((.)this.ptr, shader, pname, _params);
 	}
 	public void GlGetShaderInfoLog(c_uint shader, c_size bufsize, c_size* length, c_char* infolog)
 	{
-		CQt.QOpenGLFunctions_GlGetShaderInfoLog(this.ptr, shader, bufsize, length, infolog);
+		CQt.QOpenGLFunctions_GlGetShaderInfoLog((.)this.ptr, shader, bufsize, length, infolog);
 	}
 	public void GlGetShaderPrecisionFormat(c_uint shadertype, c_uint precisiontype, c_int* range, c_int* precision)
 	{
-		CQt.QOpenGLFunctions_GlGetShaderPrecisionFormat(this.ptr, shadertype, precisiontype, range, precision);
+		CQt.QOpenGLFunctions_GlGetShaderPrecisionFormat((.)this.ptr, shadertype, precisiontype, range, precision);
 	}
 	public void GlGetShaderSource(c_uint shader, c_size bufsize, c_size* length, c_char* source)
 	{
-		CQt.QOpenGLFunctions_GlGetShaderSource(this.ptr, shader, bufsize, length, source);
+		CQt.QOpenGLFunctions_GlGetShaderSource((.)this.ptr, shader, bufsize, length, source);
 	}
 	public void GlGetUniformfv(c_uint program, c_int location, float* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetUniformfv(this.ptr, program, location, _params);
+		CQt.QOpenGLFunctions_GlGetUniformfv((.)this.ptr, program, location, _params);
 	}
 	public void GlGetUniformiv(c_uint program, c_int location, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetUniformiv(this.ptr, program, location, _params);
+		CQt.QOpenGLFunctions_GlGetUniformiv((.)this.ptr, program, location, _params);
 	}
 	public c_int GlGetUniformLocation(c_uint program, c_char* name)
 	{
-		return CQt.QOpenGLFunctions_GlGetUniformLocation(this.ptr, program, name);
+		return CQt.QOpenGLFunctions_GlGetUniformLocation((.)this.ptr, program, name);
 	}
 	public void GlGetVertexAttribfv(c_uint index, c_uint pname, float* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetVertexAttribfv(this.ptr, index, pname, _params);
+		CQt.QOpenGLFunctions_GlGetVertexAttribfv((.)this.ptr, index, pname, _params);
 	}
 	public void GlGetVertexAttribiv(c_uint index, c_uint pname, c_int* _params)
 	{
-		CQt.QOpenGLFunctions_GlGetVertexAttribiv(this.ptr, index, pname, _params);
+		CQt.QOpenGLFunctions_GlGetVertexAttribiv((.)this.ptr, index, pname, _params);
 	}
 	public void GlGetVertexAttribPointerv(c_uint index, c_uint pname, void** pointer)
 	{
-		CQt.QOpenGLFunctions_GlGetVertexAttribPointerv(this.ptr, index, pname, pointer);
+		CQt.QOpenGLFunctions_GlGetVertexAttribPointerv((.)this.ptr, index, pname, pointer);
 	}
 	public bool GlIsBuffer(c_uint buffer)
 	{
-		return CQt.QOpenGLFunctions_GlIsBuffer(this.ptr, buffer);
+		return CQt.QOpenGLFunctions_GlIsBuffer((.)this.ptr, buffer);
 	}
 	public bool GlIsFramebuffer(c_uint framebuffer)
 	{
-		return CQt.QOpenGLFunctions_GlIsFramebuffer(this.ptr, framebuffer);
+		return CQt.QOpenGLFunctions_GlIsFramebuffer((.)this.ptr, framebuffer);
 	}
 	public bool GlIsProgram(c_uint program)
 	{
-		return CQt.QOpenGLFunctions_GlIsProgram(this.ptr, program);
+		return CQt.QOpenGLFunctions_GlIsProgram((.)this.ptr, program);
 	}
 	public bool GlIsRenderbuffer(c_uint renderbuffer)
 	{
-		return CQt.QOpenGLFunctions_GlIsRenderbuffer(this.ptr, renderbuffer);
+		return CQt.QOpenGLFunctions_GlIsRenderbuffer((.)this.ptr, renderbuffer);
 	}
 	public bool GlIsShader(c_uint shader)
 	{
-		return CQt.QOpenGLFunctions_GlIsShader(this.ptr, shader);
+		return CQt.QOpenGLFunctions_GlIsShader((.)this.ptr, shader);
 	}
 	public void GlLinkProgram(c_uint program)
 	{
-		CQt.QOpenGLFunctions_GlLinkProgram(this.ptr, program);
+		CQt.QOpenGLFunctions_GlLinkProgram((.)this.ptr, program);
 	}
 	public void GlReleaseShaderCompiler()
 	{
-		CQt.QOpenGLFunctions_GlReleaseShaderCompiler(this.ptr);
+		CQt.QOpenGLFunctions_GlReleaseShaderCompiler((.)this.ptr);
 	}
 	public void GlRenderbufferStorage(c_uint target, c_uint internalformat, c_size width, c_size height)
 	{
-		CQt.QOpenGLFunctions_GlRenderbufferStorage(this.ptr, target, internalformat, width, height);
+		CQt.QOpenGLFunctions_GlRenderbufferStorage((.)this.ptr, target, internalformat, width, height);
 	}
 	public void GlSampleCoverage(float value, bool invert)
 	{
-		CQt.QOpenGLFunctions_GlSampleCoverage(this.ptr, value, invert);
+		CQt.QOpenGLFunctions_GlSampleCoverage((.)this.ptr, value, invert);
 	}
 	public void GlShaderBinary(c_int n, c_uint* shaders, c_uint binaryformat, void* binary, c_int length)
 	{
-		CQt.QOpenGLFunctions_GlShaderBinary(this.ptr, n, shaders, binaryformat, binary, length);
+		CQt.QOpenGLFunctions_GlShaderBinary((.)this.ptr, n, shaders, binaryformat, binary, length);
 	}
 	public void GlShaderSource(c_uint shader, c_size count, c_char** stringVal, c_int* length)
 	{
-		CQt.QOpenGLFunctions_GlShaderSource(this.ptr, shader, count, stringVal, length);
+		CQt.QOpenGLFunctions_GlShaderSource((.)this.ptr, shader, count, stringVal, length);
 	}
 	public void GlStencilFuncSeparate(c_uint face, c_uint func, c_int _ref, c_uint mask)
 	{
-		CQt.QOpenGLFunctions_GlStencilFuncSeparate(this.ptr, face, func, _ref, mask);
+		CQt.QOpenGLFunctions_GlStencilFuncSeparate((.)this.ptr, face, func, _ref, mask);
 	}
 	public void GlStencilMaskSeparate(c_uint face, c_uint mask)
 	{
-		CQt.QOpenGLFunctions_GlStencilMaskSeparate(this.ptr, face, mask);
+		CQt.QOpenGLFunctions_GlStencilMaskSeparate((.)this.ptr, face, mask);
 	}
 	public void GlStencilOpSeparate(c_uint face, c_uint fail, c_uint zfail, c_uint zpass)
 	{
-		CQt.QOpenGLFunctions_GlStencilOpSeparate(this.ptr, face, fail, zfail, zpass);
+		CQt.QOpenGLFunctions_GlStencilOpSeparate((.)this.ptr, face, fail, zfail, zpass);
 	}
 	public void GlUniform1f(c_int location, float x)
 	{
-		CQt.QOpenGLFunctions_GlUniform1f(this.ptr, location, x);
+		CQt.QOpenGLFunctions_GlUniform1f((.)this.ptr, location, x);
 	}
 	public void GlUniform1fv(c_int location, c_size count, float* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform1fv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform1fv((.)this.ptr, location, count, v);
 	}
 	public void GlUniform1i(c_int location, c_int x)
 	{
-		CQt.QOpenGLFunctions_GlUniform1i(this.ptr, location, x);
+		CQt.QOpenGLFunctions_GlUniform1i((.)this.ptr, location, x);
 	}
 	public void GlUniform1iv(c_int location, c_size count, c_int* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform1iv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform1iv((.)this.ptr, location, count, v);
 	}
 	public void GlUniform2f(c_int location, float x, float y)
 	{
-		CQt.QOpenGLFunctions_GlUniform2f(this.ptr, location, x, y);
+		CQt.QOpenGLFunctions_GlUniform2f((.)this.ptr, location, x, y);
 	}
 	public void GlUniform2fv(c_int location, c_size count, float* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform2fv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform2fv((.)this.ptr, location, count, v);
 	}
 	public void GlUniform2i(c_int location, c_int x, c_int y)
 	{
-		CQt.QOpenGLFunctions_GlUniform2i(this.ptr, location, x, y);
+		CQt.QOpenGLFunctions_GlUniform2i((.)this.ptr, location, x, y);
 	}
 	public void GlUniform2iv(c_int location, c_size count, c_int* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform2iv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform2iv((.)this.ptr, location, count, v);
 	}
 	public void GlUniform3f(c_int location, float x, float y, float z)
 	{
-		CQt.QOpenGLFunctions_GlUniform3f(this.ptr, location, x, y, z);
+		CQt.QOpenGLFunctions_GlUniform3f((.)this.ptr, location, x, y, z);
 	}
 	public void GlUniform3fv(c_int location, c_size count, float* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform3fv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform3fv((.)this.ptr, location, count, v);
 	}
 	public void GlUniform3i(c_int location, c_int x, c_int y, c_int z)
 	{
-		CQt.QOpenGLFunctions_GlUniform3i(this.ptr, location, x, y, z);
+		CQt.QOpenGLFunctions_GlUniform3i((.)this.ptr, location, x, y, z);
 	}
 	public void GlUniform3iv(c_int location, c_size count, c_int* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform3iv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform3iv((.)this.ptr, location, count, v);
 	}
 	public void GlUniform4f(c_int location, float x, float y, float z, float w)
 	{
-		CQt.QOpenGLFunctions_GlUniform4f(this.ptr, location, x, y, z, w);
+		CQt.QOpenGLFunctions_GlUniform4f((.)this.ptr, location, x, y, z, w);
 	}
 	public void GlUniform4fv(c_int location, c_size count, float* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform4fv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform4fv((.)this.ptr, location, count, v);
 	}
 	public void GlUniform4i(c_int location, c_int x, c_int y, c_int z, c_int w)
 	{
-		CQt.QOpenGLFunctions_GlUniform4i(this.ptr, location, x, y, z, w);
+		CQt.QOpenGLFunctions_GlUniform4i((.)this.ptr, location, x, y, z, w);
 	}
 	public void GlUniform4iv(c_int location, c_size count, c_int* v)
 	{
-		CQt.QOpenGLFunctions_GlUniform4iv(this.ptr, location, count, v);
+		CQt.QOpenGLFunctions_GlUniform4iv((.)this.ptr, location, count, v);
 	}
 	public void GlUniformMatrix2fv(c_int location, c_size count, bool transpose, float* value)
 	{
-		CQt.QOpenGLFunctions_GlUniformMatrix2fv(this.ptr, location, count, transpose, value);
+		CQt.QOpenGLFunctions_GlUniformMatrix2fv((.)this.ptr, location, count, transpose, value);
 	}
 	public void GlUniformMatrix3fv(c_int location, c_size count, bool transpose, float* value)
 	{
-		CQt.QOpenGLFunctions_GlUniformMatrix3fv(this.ptr, location, count, transpose, value);
+		CQt.QOpenGLFunctions_GlUniformMatrix3fv((.)this.ptr, location, count, transpose, value);
 	}
 	public void GlUniformMatrix4fv(c_int location, c_size count, bool transpose, float* value)
 	{
-		CQt.QOpenGLFunctions_GlUniformMatrix4fv(this.ptr, location, count, transpose, value);
+		CQt.QOpenGLFunctions_GlUniformMatrix4fv((.)this.ptr, location, count, transpose, value);
 	}
 	public void GlUseProgram(c_uint program)
 	{
-		CQt.QOpenGLFunctions_GlUseProgram(this.ptr, program);
+		CQt.QOpenGLFunctions_GlUseProgram((.)this.ptr, program);
 	}
 	public void GlValidateProgram(c_uint program)
 	{
-		CQt.QOpenGLFunctions_GlValidateProgram(this.ptr, program);
+		CQt.QOpenGLFunctions_GlValidateProgram((.)this.ptr, program);
 	}
 	public void GlVertexAttrib1f(c_uint indx, float x)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib1f(this.ptr, indx, x);
+		CQt.QOpenGLFunctions_GlVertexAttrib1f((.)this.ptr, indx, x);
 	}
 	public void GlVertexAttrib1fv(c_uint indx, float* values)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib1fv(this.ptr, indx, values);
+		CQt.QOpenGLFunctions_GlVertexAttrib1fv((.)this.ptr, indx, values);
 	}
 	public void GlVertexAttrib2f(c_uint indx, float x, float y)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib2f(this.ptr, indx, x, y);
+		CQt.QOpenGLFunctions_GlVertexAttrib2f((.)this.ptr, indx, x, y);
 	}
 	public void GlVertexAttrib2fv(c_uint indx, float* values)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib2fv(this.ptr, indx, values);
+		CQt.QOpenGLFunctions_GlVertexAttrib2fv((.)this.ptr, indx, values);
 	}
 	public void GlVertexAttrib3f(c_uint indx, float x, float y, float z)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib3f(this.ptr, indx, x, y, z);
+		CQt.QOpenGLFunctions_GlVertexAttrib3f((.)this.ptr, indx, x, y, z);
 	}
 	public void GlVertexAttrib3fv(c_uint indx, float* values)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib3fv(this.ptr, indx, values);
+		CQt.QOpenGLFunctions_GlVertexAttrib3fv((.)this.ptr, indx, values);
 	}
 	public void GlVertexAttrib4f(c_uint indx, float x, float y, float z, float w)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib4f(this.ptr, indx, x, y, z, w);
+		CQt.QOpenGLFunctions_GlVertexAttrib4f((.)this.ptr, indx, x, y, z, w);
 	}
 	public void GlVertexAttrib4fv(c_uint indx, float* values)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttrib4fv(this.ptr, indx, values);
+		CQt.QOpenGLFunctions_GlVertexAttrib4fv((.)this.ptr, indx, values);
 	}
 	public void GlVertexAttribPointer(c_uint indx, c_int size, c_uint type, bool normalized, c_size stride, void* ptr)
 	{
-		CQt.QOpenGLFunctions_GlVertexAttribPointer(this.ptr, indx, size, type, normalized, stride, ptr);
+		CQt.QOpenGLFunctions_GlVertexAttribPointer((.)this.ptr, indx, size, type, normalized, stride, ptr);
 	}
 }
 interface IQOpenGLFunctions

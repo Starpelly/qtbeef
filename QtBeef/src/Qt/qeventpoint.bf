@@ -142,167 +142,167 @@ class QEventPoint
 	}
 	public void Swap(QEventPoint_Ptr* other)
 	{
-		CQt.QEventPoint_Swap(this.ptr, other);
+		CQt.QEventPoint_Swap((.)this.ptr, other);
 	}
 	public QPointF_Ptr Position()
 	{
-		return CQt.QEventPoint_Position(this.ptr);
+		return CQt.QEventPoint_Position((.)this.ptr);
 	}
 	public QPointF_Ptr PressPosition()
 	{
-		return CQt.QEventPoint_PressPosition(this.ptr);
+		return CQt.QEventPoint_PressPosition((.)this.ptr);
 	}
 	public QPointF_Ptr GrabPosition()
 	{
-		return CQt.QEventPoint_GrabPosition(this.ptr);
+		return CQt.QEventPoint_GrabPosition((.)this.ptr);
 	}
 	public QPointF_Ptr LastPosition()
 	{
-		return CQt.QEventPoint_LastPosition(this.ptr);
+		return CQt.QEventPoint_LastPosition((.)this.ptr);
 	}
 	public QPointF_Ptr ScenePosition()
 	{
-		return CQt.QEventPoint_ScenePosition(this.ptr);
+		return CQt.QEventPoint_ScenePosition((.)this.ptr);
 	}
 	public QPointF_Ptr ScenePressPosition()
 	{
-		return CQt.QEventPoint_ScenePressPosition(this.ptr);
+		return CQt.QEventPoint_ScenePressPosition((.)this.ptr);
 	}
 	public QPointF_Ptr SceneGrabPosition()
 	{
-		return CQt.QEventPoint_SceneGrabPosition(this.ptr);
+		return CQt.QEventPoint_SceneGrabPosition((.)this.ptr);
 	}
 	public QPointF_Ptr SceneLastPosition()
 	{
-		return CQt.QEventPoint_SceneLastPosition(this.ptr);
+		return CQt.QEventPoint_SceneLastPosition((.)this.ptr);
 	}
 	public QPointF_Ptr GlobalPosition()
 	{
-		return CQt.QEventPoint_GlobalPosition(this.ptr);
+		return CQt.QEventPoint_GlobalPosition((.)this.ptr);
 	}
 	public QPointF_Ptr GlobalPressPosition()
 	{
-		return CQt.QEventPoint_GlobalPressPosition(this.ptr);
+		return CQt.QEventPoint_GlobalPressPosition((.)this.ptr);
 	}
 	public QPointF_Ptr GlobalGrabPosition()
 	{
-		return CQt.QEventPoint_GlobalGrabPosition(this.ptr);
+		return CQt.QEventPoint_GlobalGrabPosition((.)this.ptr);
 	}
 	public QPointF_Ptr GlobalLastPosition()
 	{
-		return CQt.QEventPoint_GlobalLastPosition(this.ptr);
+		return CQt.QEventPoint_GlobalLastPosition((.)this.ptr);
 	}
 	public QPointF_Ptr NormalizedPosition()
 	{
-		return CQt.QEventPoint_NormalizedPosition(this.ptr);
+		return CQt.QEventPoint_NormalizedPosition((.)this.ptr);
 	}
 	public QPointF_Ptr Pos()
 	{
-		return CQt.QEventPoint_Pos(this.ptr);
+		return CQt.QEventPoint_Pos((.)this.ptr);
 	}
 	public QPointF_Ptr StartPos()
 	{
-		return CQt.QEventPoint_StartPos(this.ptr);
+		return CQt.QEventPoint_StartPos((.)this.ptr);
 	}
 	public QPointF_Ptr ScenePos()
 	{
-		return CQt.QEventPoint_ScenePos(this.ptr);
+		return CQt.QEventPoint_ScenePos((.)this.ptr);
 	}
 	public QPointF_Ptr StartScenePos()
 	{
-		return CQt.QEventPoint_StartScenePos(this.ptr);
+		return CQt.QEventPoint_StartScenePos((.)this.ptr);
 	}
 	public QPointF_Ptr ScreenPos()
 	{
-		return CQt.QEventPoint_ScreenPos(this.ptr);
+		return CQt.QEventPoint_ScreenPos((.)this.ptr);
 	}
 	public QPointF_Ptr StartScreenPos()
 	{
-		return CQt.QEventPoint_StartScreenPos(this.ptr);
+		return CQt.QEventPoint_StartScreenPos((.)this.ptr);
 	}
 	public QPointF_Ptr StartNormalizedPos()
 	{
-		return CQt.QEventPoint_StartNormalizedPos(this.ptr);
+		return CQt.QEventPoint_StartNormalizedPos((.)this.ptr);
 	}
 	public QPointF_Ptr NormalizedPos()
 	{
-		return CQt.QEventPoint_NormalizedPos(this.ptr);
+		return CQt.QEventPoint_NormalizedPos((.)this.ptr);
 	}
 	public QPointF_Ptr LastPos()
 	{
-		return CQt.QEventPoint_LastPos(this.ptr);
+		return CQt.QEventPoint_LastPos((.)this.ptr);
 	}
 	public QPointF_Ptr LastScenePos()
 	{
-		return CQt.QEventPoint_LastScenePos(this.ptr);
+		return CQt.QEventPoint_LastScenePos((.)this.ptr);
 	}
 	public QPointF_Ptr LastScreenPos()
 	{
-		return CQt.QEventPoint_LastScreenPos(this.ptr);
+		return CQt.QEventPoint_LastScreenPos((.)this.ptr);
 	}
 	public QPointF_Ptr LastNormalizedPos()
 	{
-		return CQt.QEventPoint_LastNormalizedPos(this.ptr);
+		return CQt.QEventPoint_LastNormalizedPos((.)this.ptr);
 	}
 	public QVector2D_Ptr Velocity()
 	{
-		return CQt.QEventPoint_Velocity(this.ptr);
+		return CQt.QEventPoint_Velocity((.)this.ptr);
 	}
 	public QEventPoint_State State()
 	{
-		return CQt.QEventPoint_State(this.ptr);
+		return CQt.QEventPoint_State((.)this.ptr);
 	}
 	public QPointingDevice_Ptr* Device()
 	{
-		return CQt.QEventPoint_Device(this.ptr);
+		return CQt.QEventPoint_Device((.)this.ptr);
 	}
 	public c_int Id()
 	{
-		return CQt.QEventPoint_Id(this.ptr);
+		return CQt.QEventPoint_Id((.)this.ptr);
 	}
 	public QPointingDeviceUniqueId_Ptr UniqueId()
 	{
-		return CQt.QEventPoint_UniqueId(this.ptr);
+		return CQt.QEventPoint_UniqueId((.)this.ptr);
 	}
 	public c_ulong Timestamp()
 	{
-		return CQt.QEventPoint_Timestamp(this.ptr);
+		return CQt.QEventPoint_Timestamp((.)this.ptr);
 	}
 	public c_ulong LastTimestamp()
 	{
-		return CQt.QEventPoint_LastTimestamp(this.ptr);
+		return CQt.QEventPoint_LastTimestamp((.)this.ptr);
 	}
 	public c_ulong PressTimestamp()
 	{
-		return CQt.QEventPoint_PressTimestamp(this.ptr);
+		return CQt.QEventPoint_PressTimestamp((.)this.ptr);
 	}
 	public double TimeHeld()
 	{
-		return CQt.QEventPoint_TimeHeld(this.ptr);
+		return CQt.QEventPoint_TimeHeld((.)this.ptr);
 	}
 	public double Pressure()
 	{
-		return CQt.QEventPoint_Pressure(this.ptr);
+		return CQt.QEventPoint_Pressure((.)this.ptr);
 	}
 	public double Rotation()
 	{
-		return CQt.QEventPoint_Rotation(this.ptr);
+		return CQt.QEventPoint_Rotation((.)this.ptr);
 	}
 	public QSizeF_Ptr EllipseDiameters()
 	{
-		return CQt.QEventPoint_EllipseDiameters(this.ptr);
+		return CQt.QEventPoint_EllipseDiameters((.)this.ptr);
 	}
 	public bool IsAccepted()
 	{
-		return CQt.QEventPoint_IsAccepted(this.ptr);
+		return CQt.QEventPoint_IsAccepted((.)this.ptr);
 	}
 	public void SetAccepted()
 	{
-		CQt.QEventPoint_SetAccepted(this.ptr);
+		CQt.QEventPoint_SetAccepted((.)this.ptr);
 	}
 	public void SetAccepted1(bool accepted)
 	{
-		CQt.QEventPoint_SetAccepted1(this.ptr, accepted);
+		CQt.QEventPoint_SetAccepted1((.)this.ptr, accepted);
 	}
 }
 interface IQEventPoint

@@ -136,63 +136,63 @@ class QPageSize
 	}
 	public void Swap(QPageSize_Ptr* other)
 	{
-		CQt.QPageSize_Swap(this.ptr, other);
+		CQt.QPageSize_Swap((.)this.ptr, other);
 	}
 	public bool IsEquivalentTo(QPageSize_Ptr* other)
 	{
-		return CQt.QPageSize_IsEquivalentTo(this.ptr, other);
+		return CQt.QPageSize_IsEquivalentTo((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QPageSize_IsValid(this.ptr);
+		return CQt.QPageSize_IsValid((.)this.ptr);
 	}
 	public libqt_string Key()
 	{
-		return CQt.QPageSize_Key(this.ptr);
+		return CQt.QPageSize_Key((.)this.ptr);
 	}
 	public libqt_string Name()
 	{
-		return CQt.QPageSize_Name(this.ptr);
+		return CQt.QPageSize_Name((.)this.ptr);
 	}
 	public QPageSize_PageSizeId Id()
 	{
-		return CQt.QPageSize_Id(this.ptr);
+		return CQt.QPageSize_Id((.)this.ptr);
 	}
 	public c_int WindowsId()
 	{
-		return CQt.QPageSize_WindowsId(this.ptr);
+		return CQt.QPageSize_WindowsId((.)this.ptr);
 	}
 	public QSizeF_Ptr DefinitionSize()
 	{
-		return CQt.QPageSize_DefinitionSize(this.ptr);
+		return CQt.QPageSize_DefinitionSize((.)this.ptr);
 	}
 	public QPageSize_Unit DefinitionUnits()
 	{
-		return CQt.QPageSize_DefinitionUnits(this.ptr);
+		return CQt.QPageSize_DefinitionUnits((.)this.ptr);
 	}
 	public QSizeF_Ptr Size(QPageSize_Unit units)
 	{
-		return CQt.QPageSize_Size(this.ptr, units);
+		return CQt.QPageSize_Size((.)this.ptr, units);
 	}
 	public QSize_Ptr SizePoints()
 	{
-		return CQt.QPageSize_SizePoints(this.ptr);
+		return CQt.QPageSize_SizePoints((.)this.ptr);
 	}
 	public QSize_Ptr SizePixels(c_int resolution)
 	{
-		return CQt.QPageSize_SizePixels(this.ptr, resolution);
+		return CQt.QPageSize_SizePixels((.)this.ptr, resolution);
 	}
 	public QRectF_Ptr Rect(QPageSize_Unit units)
 	{
-		return CQt.QPageSize_Rect(this.ptr, units);
+		return CQt.QPageSize_Rect((.)this.ptr, units);
 	}
 	public QRect_Ptr RectPoints()
 	{
-		return CQt.QPageSize_RectPoints(this.ptr);
+		return CQt.QPageSize_RectPoints((.)this.ptr);
 	}
 	public QRect_Ptr RectPixels(c_int resolution)
 	{
-		return CQt.QPageSize_RectPixels(this.ptr, resolution);
+		return CQt.QPageSize_RectPixels((.)this.ptr, resolution);
 	}
 	public libqt_string Key2(QPageSize_PageSizeId pageSizeId)
 	{

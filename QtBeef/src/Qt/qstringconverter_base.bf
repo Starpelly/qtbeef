@@ -34,19 +34,19 @@ class QStringConverter
 	private QStringConverter_Ptr* ptr;
 	public bool IsValid()
 	{
-		return CQt.QStringConverter_IsValid(this.ptr);
+		return CQt.QStringConverter_IsValid((.)this.ptr);
 	}
 	public void ResetState()
 	{
-		CQt.QStringConverter_ResetState(this.ptr);
+		CQt.QStringConverter_ResetState((.)this.ptr);
 	}
 	public bool HasError()
 	{
-		return CQt.QStringConverter_HasError(this.ptr);
+		return CQt.QStringConverter_HasError((.)this.ptr);
 	}
 	public c_char* Name()
 	{
-		return CQt.QStringConverter_Name(this.ptr);
+		return CQt.QStringConverter_Name((.)this.ptr);
 	}
 	public QStringConverter_Encoding EncodingForName(c_char* name)
 	{

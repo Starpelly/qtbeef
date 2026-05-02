@@ -152,15 +152,15 @@ class QCompleter
 	}
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QCompleter_MetaObject(this.ptr);
+		return CQt.QCompleter_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QCompleter_Qt_Metacast(this.ptr, param1);
+		return CQt.QCompleter_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QCompleter_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QCompleter_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -168,159 +168,159 @@ class QCompleter
 	}
 	public void SetWidget(QWidget_Ptr* widget)
 	{
-		CQt.QCompleter_SetWidget(this.ptr, widget);
+		CQt.QCompleter_SetWidget((.)this.ptr, widget);
 	}
 	public QWidget_Ptr* Widget()
 	{
-		return CQt.QCompleter_Widget(this.ptr);
+		return CQt.QCompleter_Widget((.)this.ptr);
 	}
 	public void SetModel(QAbstractItemModel_Ptr* c)
 	{
-		CQt.QCompleter_SetModel(this.ptr, c);
+		CQt.QCompleter_SetModel((.)this.ptr, c);
 	}
 	public QAbstractItemModel_Ptr* Model()
 	{
-		return CQt.QCompleter_Model(this.ptr);
+		return CQt.QCompleter_Model((.)this.ptr);
 	}
 	public void SetCompletionMode(QCompleter_CompletionMode mode)
 	{
-		CQt.QCompleter_SetCompletionMode(this.ptr, mode);
+		CQt.QCompleter_SetCompletionMode((.)this.ptr, mode);
 	}
 	public QCompleter_CompletionMode CompletionMode()
 	{
-		return CQt.QCompleter_CompletionMode(this.ptr);
+		return CQt.QCompleter_CompletionMode((.)this.ptr);
 	}
 	public void SetFilterMode(void* filterMode)
 	{
-		CQt.QCompleter_SetFilterMode(this.ptr, filterMode);
+		CQt.QCompleter_SetFilterMode((.)this.ptr, filterMode);
 	}
 	public void* FilterMode()
 	{
-		return CQt.QCompleter_FilterMode(this.ptr);
+		return CQt.QCompleter_FilterMode((.)this.ptr);
 	}
 	public QAbstractItemView_Ptr* Popup()
 	{
-		return CQt.QCompleter_Popup(this.ptr);
+		return CQt.QCompleter_Popup((.)this.ptr);
 	}
 	public void SetPopup(QAbstractItemView_Ptr* popup)
 	{
-		CQt.QCompleter_SetPopup(this.ptr, popup);
+		CQt.QCompleter_SetPopup((.)this.ptr, popup);
 	}
 	public void SetCaseSensitivity(Qt_CaseSensitivity caseSensitivity)
 	{
-		CQt.QCompleter_SetCaseSensitivity(this.ptr, caseSensitivity);
+		CQt.QCompleter_SetCaseSensitivity((.)this.ptr, caseSensitivity);
 	}
 	public Qt_CaseSensitivity CaseSensitivity()
 	{
-		return CQt.QCompleter_CaseSensitivity(this.ptr);
+		return CQt.QCompleter_CaseSensitivity((.)this.ptr);
 	}
 	public void SetModelSorting(QCompleter_ModelSorting sorting)
 	{
-		CQt.QCompleter_SetModelSorting(this.ptr, sorting);
+		CQt.QCompleter_SetModelSorting((.)this.ptr, sorting);
 	}
 	public QCompleter_ModelSorting ModelSorting()
 	{
-		return CQt.QCompleter_ModelSorting(this.ptr);
+		return CQt.QCompleter_ModelSorting((.)this.ptr);
 	}
 	public void SetCompletionColumn(c_int column)
 	{
-		CQt.QCompleter_SetCompletionColumn(this.ptr, column);
+		CQt.QCompleter_SetCompletionColumn((.)this.ptr, column);
 	}
 	public c_int CompletionColumn()
 	{
-		return CQt.QCompleter_CompletionColumn(this.ptr);
+		return CQt.QCompleter_CompletionColumn((.)this.ptr);
 	}
 	public void SetCompletionRole(c_int role)
 	{
-		CQt.QCompleter_SetCompletionRole(this.ptr, role);
+		CQt.QCompleter_SetCompletionRole((.)this.ptr, role);
 	}
 	public c_int CompletionRole()
 	{
-		return CQt.QCompleter_CompletionRole(this.ptr);
+		return CQt.QCompleter_CompletionRole((.)this.ptr);
 	}
 	public bool WrapAround()
 	{
-		return CQt.QCompleter_WrapAround(this.ptr);
+		return CQt.QCompleter_WrapAround((.)this.ptr);
 	}
 	public c_int MaxVisibleItems()
 	{
-		return CQt.QCompleter_MaxVisibleItems(this.ptr);
+		return CQt.QCompleter_MaxVisibleItems((.)this.ptr);
 	}
 	public void SetMaxVisibleItems(c_int maxItems)
 	{
-		CQt.QCompleter_SetMaxVisibleItems(this.ptr, maxItems);
+		CQt.QCompleter_SetMaxVisibleItems((.)this.ptr, maxItems);
 	}
 	public c_int CompletionCount()
 	{
-		return CQt.QCompleter_CompletionCount(this.ptr);
+		return CQt.QCompleter_CompletionCount((.)this.ptr);
 	}
 	public bool SetCurrentRow(c_int row)
 	{
-		return CQt.QCompleter_SetCurrentRow(this.ptr, row);
+		return CQt.QCompleter_SetCurrentRow((.)this.ptr, row);
 	}
 	public c_int CurrentRow()
 	{
-		return CQt.QCompleter_CurrentRow(this.ptr);
+		return CQt.QCompleter_CurrentRow((.)this.ptr);
 	}
 	public QModelIndex_Ptr CurrentIndex()
 	{
-		return CQt.QCompleter_CurrentIndex(this.ptr);
+		return CQt.QCompleter_CurrentIndex((.)this.ptr);
 	}
 	public libqt_string CurrentCompletion()
 	{
-		return CQt.QCompleter_CurrentCompletion(this.ptr);
+		return CQt.QCompleter_CurrentCompletion((.)this.ptr);
 	}
 	public QAbstractItemModel_Ptr* CompletionModel()
 	{
-		return CQt.QCompleter_CompletionModel(this.ptr);
+		return CQt.QCompleter_CompletionModel((.)this.ptr);
 	}
 	public libqt_string CompletionPrefix()
 	{
-		return CQt.QCompleter_CompletionPrefix(this.ptr);
+		return CQt.QCompleter_CompletionPrefix((.)this.ptr);
 	}
 	public void SetCompletionPrefix(libqt_string* prefix)
 	{
-		CQt.QCompleter_SetCompletionPrefix(this.ptr, prefix);
+		CQt.QCompleter_SetCompletionPrefix((.)this.ptr, prefix);
 	}
 	public void Complete()
 	{
-		CQt.QCompleter_Complete(this.ptr);
+		CQt.QCompleter_Complete((.)this.ptr);
 	}
 	public void SetWrapAround(bool wrap)
 	{
-		CQt.QCompleter_SetWrapAround(this.ptr, wrap);
+		CQt.QCompleter_SetWrapAround((.)this.ptr, wrap);
 	}
 	public libqt_string PathFromIndex(QModelIndex_Ptr* index)
 	{
-		return CQt.QCompleter_PathFromIndex(this.ptr, index);
+		return CQt.QCompleter_PathFromIndex((.)this.ptr, index);
 	}
 	public void* SplitPath(libqt_string* path)
 	{
-		return CQt.QCompleter_SplitPath(this.ptr, path);
+		return CQt.QCompleter_SplitPath((.)this.ptr, path);
 	}
 	public bool EventFilter(QObject_Ptr* o, QEvent_Ptr* e)
 	{
-		return CQt.QCompleter_EventFilter(this.ptr, o, e);
+		return CQt.QCompleter_EventFilter((.)this.ptr, o, e);
 	}
 	public bool Event(QEvent_Ptr* param1)
 	{
-		return CQt.QCompleter_Event(this.ptr, param1);
+		return CQt.QCompleter_Event((.)this.ptr, param1);
 	}
 	public void Activated(libqt_string* text)
 	{
-		CQt.QCompleter_Activated(this.ptr, text);
+		CQt.QCompleter_Activated((.)this.ptr, text);
 	}
 	public void Activated2(QModelIndex_Ptr* index)
 	{
-		CQt.QCompleter_Activated2(this.ptr, index);
+		CQt.QCompleter_Activated2((.)this.ptr, index);
 	}
 	public void Highlighted(libqt_string* text)
 	{
-		CQt.QCompleter_Highlighted(this.ptr, text);
+		CQt.QCompleter_Highlighted((.)this.ptr, text);
 	}
 	public void Highlighted2(QModelIndex_Ptr* index)
 	{
-		CQt.QCompleter_Highlighted2(this.ptr, index);
+		CQt.QCompleter_Highlighted2((.)this.ptr, index);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -332,7 +332,223 @@ class QCompleter
 	}
 	public void Complete1(QRect_Ptr* rect)
 	{
-		CQt.QCompleter_Complete1(this.ptr, rect);
+		CQt.QCompleter_Complete1((.)this.ptr, rect);
+	}
+	public libqt_string ObjectName()
+	{
+		return CQt.QObject_ObjectName((.)this.ptr);
+	}
+	public void SetObjectName(QAnyStringView_Ptr name)
+	{
+		CQt.QObject_SetObjectName((.)this.ptr, name);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.ptr, b);
+	}
+	public QThread_Ptr* Thread()
+	{
+		return CQt.QObject_Thread((.)this.ptr);
+	}
+	public void MoveToThread(QThread_Ptr* thread)
+	{
+		CQt.QObject_MoveToThread((.)this.ptr, thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.ptr);
+	}
+	public void SetParent(QObject_Ptr* parent)
+	{
+		CQt.QObject_SetParent((.)this.ptr, parent);
+	}
+	public void InstallEventFilter(QObject_Ptr* filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+	}
+	public void RemoveEventFilter(QObject_Ptr* obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+	}
+	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	{
+		return CQt.QObject_Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	{
+		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+	}
+	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	{
+		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.ptr);
+	}
+	public bool Disconnect4(QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+	}
+	public bool Disconnect5(QMetaObject_Connection* param1)
+	{
+		return CQt.QObject_Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.ptr);
+	}
+	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	{
+		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return CQt.QObject_Property((.)this.ptr, name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage()
+	{
+		return CQt.QObject_BindingStorage((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage2()
+	{
+		return CQt.QObject_BindingStorage2((.)this.ptr);
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.ptr);
+	}
+	public QObject_Ptr* Parent()
+	{
+		return CQt.QObject_Parent((.)this.ptr);
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.ptr);
+	}
+	public QObject_Ptr* Sender()
+	{
+		return CQt.QObject_Sender((.)this.ptr);
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.ptr, signal);
+	}
+	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+	}
+	public void TimerEvent(QTimerEvent_Ptr* event)
+	{
+		CQt.QObject_TimerEvent((.)this.ptr, event);
+	}
+	public void ChildEvent(QChildEvent_Ptr* event)
+	{
+		CQt.QObject_ChildEvent((.)this.ptr, event);
+	}
+	public void CustomEvent(QEvent_Ptr* event)
+	{
+		CQt.QObject_CustomEvent((.)this.ptr, event);
+	}
+	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+	}
+	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+	}
+	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+	}
+	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+	}
+	public void Destroyed1(QObject_Ptr* param1)
+	{
+		CQt.QObject_Destroyed1((.)this.ptr, param1);
 	}
 }
 interface IQCompleter

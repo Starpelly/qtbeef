@@ -186,271 +186,271 @@ class QTextStream
 	}
 	public void SetEncoding(QStringConverter_Encoding encoding)
 	{
-		CQt.QTextStream_SetEncoding(this.ptr, encoding);
+		CQt.QTextStream_SetEncoding((.)this.ptr, encoding);
 	}
 	public QStringConverter_Encoding Encoding()
 	{
-		return CQt.QTextStream_Encoding(this.ptr);
+		return CQt.QTextStream_Encoding((.)this.ptr);
 	}
 	public void SetAutoDetectUnicode(bool enabled)
 	{
-		CQt.QTextStream_SetAutoDetectUnicode(this.ptr, enabled);
+		CQt.QTextStream_SetAutoDetectUnicode((.)this.ptr, enabled);
 	}
 	public bool AutoDetectUnicode()
 	{
-		return CQt.QTextStream_AutoDetectUnicode(this.ptr);
+		return CQt.QTextStream_AutoDetectUnicode((.)this.ptr);
 	}
 	public void SetGenerateByteOrderMark(bool generate)
 	{
-		CQt.QTextStream_SetGenerateByteOrderMark(this.ptr, generate);
+		CQt.QTextStream_SetGenerateByteOrderMark((.)this.ptr, generate);
 	}
 	public bool GenerateByteOrderMark()
 	{
-		return CQt.QTextStream_GenerateByteOrderMark(this.ptr);
+		return CQt.QTextStream_GenerateByteOrderMark((.)this.ptr);
 	}
 	public void SetLocale(QLocale_Ptr* locale)
 	{
-		CQt.QTextStream_SetLocale(this.ptr, locale);
+		CQt.QTextStream_SetLocale((.)this.ptr, locale);
 	}
 	public QLocale_Ptr Locale()
 	{
-		return CQt.QTextStream_Locale(this.ptr);
+		return CQt.QTextStream_Locale((.)this.ptr);
 	}
 	public void SetDevice(QIODevice_Ptr* device)
 	{
-		CQt.QTextStream_SetDevice(this.ptr, device);
+		CQt.QTextStream_SetDevice((.)this.ptr, device);
 	}
 	public QIODevice_Ptr* Device()
 	{
-		return CQt.QTextStream_Device(this.ptr);
+		return CQt.QTextStream_Device((.)this.ptr);
 	}
 	public libqt_string* String()
 	{
-		return CQt.QTextStream_String(this.ptr);
+		return CQt.QTextStream_String((.)this.ptr);
 	}
 	public QTextStream_Status Status()
 	{
-		return CQt.QTextStream_Status(this.ptr);
+		return CQt.QTextStream_Status((.)this.ptr);
 	}
 	public void SetStatus(QTextStream_Status status)
 	{
-		CQt.QTextStream_SetStatus(this.ptr, status);
+		CQt.QTextStream_SetStatus((.)this.ptr, status);
 	}
 	public void ResetStatus()
 	{
-		CQt.QTextStream_ResetStatus(this.ptr);
+		CQt.QTextStream_ResetStatus((.)this.ptr);
 	}
 	public bool AtEnd()
 	{
-		return CQt.QTextStream_AtEnd(this.ptr);
+		return CQt.QTextStream_AtEnd((.)this.ptr);
 	}
 	public void Reset()
 	{
-		CQt.QTextStream_Reset(this.ptr);
+		CQt.QTextStream_Reset((.)this.ptr);
 	}
 	public void Flush()
 	{
-		CQt.QTextStream_Flush(this.ptr);
+		CQt.QTextStream_Flush((.)this.ptr);
 	}
 	public bool Seek(c_longlong pos)
 	{
-		return CQt.QTextStream_Seek(this.ptr, pos);
+		return CQt.QTextStream_Seek((.)this.ptr, pos);
 	}
 	public c_longlong Pos()
 	{
-		return CQt.QTextStream_Pos(this.ptr);
+		return CQt.QTextStream_Pos((.)this.ptr);
 	}
 	public void SkipWhiteSpace()
 	{
-		CQt.QTextStream_SkipWhiteSpace(this.ptr);
+		CQt.QTextStream_SkipWhiteSpace((.)this.ptr);
 	}
 	public libqt_string ReadLine()
 	{
-		return CQt.QTextStream_ReadLine(this.ptr);
+		return CQt.QTextStream_ReadLine((.)this.ptr);
 	}
 	public libqt_string ReadAll()
 	{
-		return CQt.QTextStream_ReadAll(this.ptr);
+		return CQt.QTextStream_ReadAll((.)this.ptr);
 	}
 	public libqt_string Read(c_longlong maxlen)
 	{
-		return CQt.QTextStream_Read(this.ptr, maxlen);
+		return CQt.QTextStream_Read((.)this.ptr, maxlen);
 	}
 	public void SetFieldAlignment(QTextStream_FieldAlignment alignment)
 	{
-		CQt.QTextStream_SetFieldAlignment(this.ptr, alignment);
+		CQt.QTextStream_SetFieldAlignment((.)this.ptr, alignment);
 	}
 	public QTextStream_FieldAlignment FieldAlignment()
 	{
-		return CQt.QTextStream_FieldAlignment(this.ptr);
+		return CQt.QTextStream_FieldAlignment((.)this.ptr);
 	}
 	public void SetPadChar(QChar_Ptr ch)
 	{
-		CQt.QTextStream_SetPadChar(this.ptr, ch);
+		CQt.QTextStream_SetPadChar((.)this.ptr, ch);
 	}
 	public QChar_Ptr PadChar()
 	{
-		return CQt.QTextStream_PadChar(this.ptr);
+		return CQt.QTextStream_PadChar((.)this.ptr);
 	}
 	public void SetFieldWidth(c_int width)
 	{
-		CQt.QTextStream_SetFieldWidth(this.ptr, width);
+		CQt.QTextStream_SetFieldWidth((.)this.ptr, width);
 	}
 	public c_int FieldWidth()
 	{
-		return CQt.QTextStream_FieldWidth(this.ptr);
+		return CQt.QTextStream_FieldWidth((.)this.ptr);
 	}
 	public void SetNumberFlags(void* flags)
 	{
-		CQt.QTextStream_SetNumberFlags(this.ptr, flags);
+		CQt.QTextStream_SetNumberFlags((.)this.ptr, flags);
 	}
 	public void* NumberFlags()
 	{
-		return CQt.QTextStream_NumberFlags(this.ptr);
+		return CQt.QTextStream_NumberFlags((.)this.ptr);
 	}
 	public void SetIntegerBase(c_int _base)
 	{
-		CQt.QTextStream_SetIntegerBase(this.ptr, _base);
+		CQt.QTextStream_SetIntegerBase((.)this.ptr, _base);
 	}
 	public c_int IntegerBase()
 	{
-		return CQt.QTextStream_IntegerBase(this.ptr);
+		return CQt.QTextStream_IntegerBase((.)this.ptr);
 	}
 	public void SetRealNumberNotation(QTextStream_RealNumberNotation notation)
 	{
-		CQt.QTextStream_SetRealNumberNotation(this.ptr, notation);
+		CQt.QTextStream_SetRealNumberNotation((.)this.ptr, notation);
 	}
 	public QTextStream_RealNumberNotation RealNumberNotation()
 	{
-		return CQt.QTextStream_RealNumberNotation(this.ptr);
+		return CQt.QTextStream_RealNumberNotation((.)this.ptr);
 	}
 	public void SetRealNumberPrecision(c_int precision)
 	{
-		CQt.QTextStream_SetRealNumberPrecision(this.ptr, precision);
+		CQt.QTextStream_SetRealNumberPrecision((.)this.ptr, precision);
 	}
 	public c_int RealNumberPrecision()
 	{
-		return CQt.QTextStream_RealNumberPrecision(this.ptr);
+		return CQt.QTextStream_RealNumberPrecision((.)this.ptr);
 	}
 	public QTextStream_Ptr* OperatorShiftRight2(c_char* ch)
 	{
-		return CQt.QTextStream_OperatorShiftRight2(this.ptr, ch);
+		return CQt.QTextStream_OperatorShiftRight2((.)this.ptr, ch);
 	}
 	public QTextStream_Ptr* OperatorShiftRight4(c_ushort* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight4(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight4((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight5(c_ushort* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight5(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight5((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight6(c_int* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight6(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight6((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight7(c_uint* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight7(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight7((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight8(c_long* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight8(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight8((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight9(c_ulong* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight9(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight9((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight10(c_longlong* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight10(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight10((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight11(c_ulonglong* i)
 	{
-		return CQt.QTextStream_OperatorShiftRight11(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftRight11((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftRight12(float* f)
 	{
-		return CQt.QTextStream_OperatorShiftRight12(this.ptr, f);
+		return CQt.QTextStream_OperatorShiftRight12((.)this.ptr, f);
 	}
 	public QTextStream_Ptr* OperatorShiftRight13(double* f)
 	{
-		return CQt.QTextStream_OperatorShiftRight13(this.ptr, f);
+		return CQt.QTextStream_OperatorShiftRight13((.)this.ptr, f);
 	}
 	public QTextStream_Ptr* OperatorShiftRight14(libqt_string* s)
 	{
-		return CQt.QTextStream_OperatorShiftRight14(this.ptr, s);
+		return CQt.QTextStream_OperatorShiftRight14((.)this.ptr, s);
 	}
 	public QTextStream_Ptr* OperatorShiftRight15(void** array)
 	{
-		return CQt.QTextStream_OperatorShiftRight15(this.ptr, array);
+		return CQt.QTextStream_OperatorShiftRight15((.)this.ptr, array);
 	}
 	public QTextStream_Ptr* OperatorShiftRight16(c_char* c)
 	{
-		return CQt.QTextStream_OperatorShiftRight16(this.ptr, c);
+		return CQt.QTextStream_OperatorShiftRight16((.)this.ptr, c);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft2(c_char ch)
 	{
-		return CQt.QTextStream_OperatorShiftLeft2(this.ptr, ch);
+		return CQt.QTextStream_OperatorShiftLeft2((.)this.ptr, ch);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft4(c_ushort i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft4(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft4((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft5(c_ushort i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft5(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft5((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft6(c_int i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft6(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft6((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft7(c_uint i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft7(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft7((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft8(c_long i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft8(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft8((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft9(c_ulong i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft9(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft9((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft10(c_longlong i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft10(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft10((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft11(c_ulonglong i)
 	{
-		return CQt.QTextStream_OperatorShiftLeft11(this.ptr, i);
+		return CQt.QTextStream_OperatorShiftLeft11((.)this.ptr, i);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft12(float f)
 	{
-		return CQt.QTextStream_OperatorShiftLeft12(this.ptr, f);
+		return CQt.QTextStream_OperatorShiftLeft12((.)this.ptr, f);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft13(double f)
 	{
-		return CQt.QTextStream_OperatorShiftLeft13(this.ptr, f);
+		return CQt.QTextStream_OperatorShiftLeft13((.)this.ptr, f);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft14(libqt_string* s)
 	{
-		return CQt.QTextStream_OperatorShiftLeft14(this.ptr, s);
+		return CQt.QTextStream_OperatorShiftLeft14((.)this.ptr, s);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft17(void** array)
 	{
-		return CQt.QTextStream_OperatorShiftLeft17(this.ptr, array);
+		return CQt.QTextStream_OperatorShiftLeft17((.)this.ptr, array);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft18(c_char* c)
 	{
-		return CQt.QTextStream_OperatorShiftLeft18(this.ptr, c);
+		return CQt.QTextStream_OperatorShiftLeft18((.)this.ptr, c);
 	}
 	public QTextStream_Ptr* OperatorShiftLeft19(void* ptr)
 	{
-		return CQt.QTextStream_OperatorShiftLeft19(this.ptr, ptr);
+		return CQt.QTextStream_OperatorShiftLeft19((.)this.ptr, ptr);
 	}
 	public libqt_string ReadLine1(c_longlong maxlen)
 	{
-		return CQt.QTextStream_ReadLine1(this.ptr, maxlen);
+		return CQt.QTextStream_ReadLine1((.)this.ptr, maxlen);
 	}
 }
 interface IQTextStream

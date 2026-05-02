@@ -52,35 +52,35 @@ class QTemporaryDir
 	}
 	public void Swap(QTemporaryDir_Ptr* other)
 	{
-		CQt.QTemporaryDir_Swap(this.ptr, other);
+		CQt.QTemporaryDir_Swap((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QTemporaryDir_IsValid(this.ptr);
+		return CQt.QTemporaryDir_IsValid((.)this.ptr);
 	}
 	public libqt_string ErrorString()
 	{
-		return CQt.QTemporaryDir_ErrorString(this.ptr);
+		return CQt.QTemporaryDir_ErrorString((.)this.ptr);
 	}
 	public bool AutoRemove()
 	{
-		return CQt.QTemporaryDir_AutoRemove(this.ptr);
+		return CQt.QTemporaryDir_AutoRemove((.)this.ptr);
 	}
 	public void SetAutoRemove(bool b)
 	{
-		CQt.QTemporaryDir_SetAutoRemove(this.ptr, b);
+		CQt.QTemporaryDir_SetAutoRemove((.)this.ptr, b);
 	}
 	public bool Remove()
 	{
-		return CQt.QTemporaryDir_Remove(this.ptr);
+		return CQt.QTemporaryDir_Remove((.)this.ptr);
 	}
 	public libqt_string Path()
 	{
-		return CQt.QTemporaryDir_Path(this.ptr);
+		return CQt.QTemporaryDir_Path((.)this.ptr);
 	}
 	public libqt_string FilePath(libqt_string* fileName)
 	{
-		return CQt.QTemporaryDir_FilePath(this.ptr, fileName);
+		return CQt.QTemporaryDir_FilePath((.)this.ptr, fileName);
 	}
 }
 interface IQTemporaryDir

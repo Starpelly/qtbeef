@@ -102,47 +102,47 @@ class QCommandLineOption
 	}
 	public void Swap(QCommandLineOption_Ptr* other)
 	{
-		CQt.QCommandLineOption_Swap(this.ptr, other);
+		CQt.QCommandLineOption_Swap((.)this.ptr, other);
 	}
 	public void* Names()
 	{
-		return CQt.QCommandLineOption_Names(this.ptr);
+		return CQt.QCommandLineOption_Names((.)this.ptr);
 	}
 	public void SetValueName(libqt_string* name)
 	{
-		CQt.QCommandLineOption_SetValueName(this.ptr, name);
+		CQt.QCommandLineOption_SetValueName((.)this.ptr, name);
 	}
 	public libqt_string ValueName()
 	{
-		return CQt.QCommandLineOption_ValueName(this.ptr);
+		return CQt.QCommandLineOption_ValueName((.)this.ptr);
 	}
 	public void SetDescription(libqt_string* description)
 	{
-		CQt.QCommandLineOption_SetDescription(this.ptr, description);
+		CQt.QCommandLineOption_SetDescription((.)this.ptr, description);
 	}
 	public libqt_string Description()
 	{
-		return CQt.QCommandLineOption_Description(this.ptr);
+		return CQt.QCommandLineOption_Description((.)this.ptr);
 	}
 	public void SetDefaultValue(libqt_string* defaultValue)
 	{
-		CQt.QCommandLineOption_SetDefaultValue(this.ptr, defaultValue);
+		CQt.QCommandLineOption_SetDefaultValue((.)this.ptr, defaultValue);
 	}
 	public void SetDefaultValues(void** defaultValues)
 	{
-		CQt.QCommandLineOption_SetDefaultValues(this.ptr, defaultValues);
+		CQt.QCommandLineOption_SetDefaultValues((.)this.ptr, defaultValues);
 	}
 	public void* DefaultValues()
 	{
-		return CQt.QCommandLineOption_DefaultValues(this.ptr);
+		return CQt.QCommandLineOption_DefaultValues((.)this.ptr);
 	}
 	public void* Flags()
 	{
-		return CQt.QCommandLineOption_Flags(this.ptr);
+		return CQt.QCommandLineOption_Flags((.)this.ptr);
 	}
 	public void SetFlags(void* aflags)
 	{
-		CQt.QCommandLineOption_SetFlags(this.ptr, aflags);
+		CQt.QCommandLineOption_SetFlags((.)this.ptr, aflags);
 	}
 }
 interface IQCommandLineOption

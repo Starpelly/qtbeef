@@ -106,15 +106,15 @@ class QUuid
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QUuid_ToString(this.ptr);
+		return CQt.QUuid_ToString((.)this.ptr);
 	}
 	public void* ToByteArray()
 	{
-		return CQt.QUuid_ToByteArray(this.ptr);
+		return CQt.QUuid_ToByteArray((.)this.ptr);
 	}
 	public void* ToRfc4122()
 	{
-		return CQt.QUuid_ToRfc4122(this.ptr);
+		return CQt.QUuid_ToRfc4122((.)this.ptr);
 	}
 	public QUuid_Ptr FromRfc4122(void* param1)
 	{
@@ -122,7 +122,7 @@ class QUuid
 	}
 	public bool IsNull()
 	{
-		return CQt.QUuid_IsNull(this.ptr);
+		return CQt.QUuid_IsNull((.)this.ptr);
 	}
 	public QUuid_Ptr CreateUuid()
 	{
@@ -146,43 +146,43 @@ class QUuid
 	}
 	public QUuid_Variant Variant()
 	{
-		return CQt.QUuid_Variant(this.ptr);
+		return CQt.QUuid_Variant((.)this.ptr);
 	}
 	public QUuid_Version Version()
 	{
-		return CQt.QUuid_Version(this.ptr);
+		return CQt.QUuid_Version((.)this.ptr);
 	}
 	public c_uint Data1()
 	{
-		return CQt.QUuid_Data1(this.ptr);
+		return CQt.QUuid_Data1((.)this.ptr);
 	}
 	public void SetData1(c_uint data1)
 	{
-		CQt.QUuid_SetData1(this.ptr, data1);
+		CQt.QUuid_SetData1((.)this.ptr, data1);
 	}
 	public c_ushort Data2()
 	{
-		return CQt.QUuid_Data2(this.ptr);
+		return CQt.QUuid_Data2((.)this.ptr);
 	}
 	public void SetData2(c_ushort data2)
 	{
-		CQt.QUuid_SetData2(this.ptr, data2);
+		CQt.QUuid_SetData2((.)this.ptr, data2);
 	}
 	public c_ushort Data3()
 	{
-		return CQt.QUuid_Data3(this.ptr);
+		return CQt.QUuid_Data3((.)this.ptr);
 	}
 	public void SetData3(c_ushort data3)
 	{
-		CQt.QUuid_SetData3(this.ptr, data3);
+		CQt.QUuid_SetData3((.)this.ptr, data3);
 	}
 	public libqt_string ToString1(QUuid_StringFormat mode)
 	{
-		return CQt.QUuid_ToString1(this.ptr, mode);
+		return CQt.QUuid_ToString1((.)this.ptr, mode);
 	}
 	public void* ToByteArray1(QUuid_StringFormat mode)
 	{
-		return CQt.QUuid_ToByteArray1(this.ptr, mode);
+		return CQt.QUuid_ToByteArray1((.)this.ptr, mode);
 	}
 }
 interface IQUuid

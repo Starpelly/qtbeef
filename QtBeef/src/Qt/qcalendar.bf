@@ -120,99 +120,99 @@ class QCalendar
 	}
 	public bool IsValid()
 	{
-		return CQt.QCalendar_IsValid(this.ptr);
+		return CQt.QCalendar_IsValid((.)this.ptr);
 	}
 	public c_int DaysInMonth(c_int month)
 	{
-		return CQt.QCalendar_DaysInMonth(this.ptr, month);
+		return CQt.QCalendar_DaysInMonth((.)this.ptr, month);
 	}
 	public c_int DaysInYear(c_int year)
 	{
-		return CQt.QCalendar_DaysInYear(this.ptr, year);
+		return CQt.QCalendar_DaysInYear((.)this.ptr, year);
 	}
 	public c_int MonthsInYear(c_int year)
 	{
-		return CQt.QCalendar_MonthsInYear(this.ptr, year);
+		return CQt.QCalendar_MonthsInYear((.)this.ptr, year);
 	}
 	public bool IsDateValid(c_int year, c_int month, c_int day)
 	{
-		return CQt.QCalendar_IsDateValid(this.ptr, year, month, day);
+		return CQt.QCalendar_IsDateValid((.)this.ptr, year, month, day);
 	}
 	public bool IsLeapYear(c_int year)
 	{
-		return CQt.QCalendar_IsLeapYear(this.ptr, year);
+		return CQt.QCalendar_IsLeapYear((.)this.ptr, year);
 	}
 	public bool IsGregorian()
 	{
-		return CQt.QCalendar_IsGregorian(this.ptr);
+		return CQt.QCalendar_IsGregorian((.)this.ptr);
 	}
 	public bool IsLunar()
 	{
-		return CQt.QCalendar_IsLunar(this.ptr);
+		return CQt.QCalendar_IsLunar((.)this.ptr);
 	}
 	public bool IsLuniSolar()
 	{
-		return CQt.QCalendar_IsLuniSolar(this.ptr);
+		return CQt.QCalendar_IsLuniSolar((.)this.ptr);
 	}
 	public bool IsSolar()
 	{
-		return CQt.QCalendar_IsSolar(this.ptr);
+		return CQt.QCalendar_IsSolar((.)this.ptr);
 	}
 	public bool IsProleptic()
 	{
-		return CQt.QCalendar_IsProleptic(this.ptr);
+		return CQt.QCalendar_IsProleptic((.)this.ptr);
 	}
 	public bool HasYearZero()
 	{
-		return CQt.QCalendar_HasYearZero(this.ptr);
+		return CQt.QCalendar_HasYearZero((.)this.ptr);
 	}
 	public c_int MaximumDaysInMonth()
 	{
-		return CQt.QCalendar_MaximumDaysInMonth(this.ptr);
+		return CQt.QCalendar_MaximumDaysInMonth((.)this.ptr);
 	}
 	public c_int MinimumDaysInMonth()
 	{
-		return CQt.QCalendar_MinimumDaysInMonth(this.ptr);
+		return CQt.QCalendar_MinimumDaysInMonth((.)this.ptr);
 	}
 	public c_int MaximumMonthsInYear()
 	{
-		return CQt.QCalendar_MaximumMonthsInYear(this.ptr);
+		return CQt.QCalendar_MaximumMonthsInYear((.)this.ptr);
 	}
 	public libqt_string Name()
 	{
-		return CQt.QCalendar_Name(this.ptr);
+		return CQt.QCalendar_Name((.)this.ptr);
 	}
 	public QDate_Ptr DateFromParts(c_int year, c_int month, c_int day)
 	{
-		return CQt.QCalendar_DateFromParts(this.ptr, year, month, day);
+		return CQt.QCalendar_DateFromParts((.)this.ptr, year, month, day);
 	}
 	public QDate_Ptr DateFromParts2(QCalendar_YearMonthDay* parts)
 	{
-		return CQt.QCalendar_DateFromParts2(this.ptr, parts);
+		return CQt.QCalendar_DateFromParts2((.)this.ptr, parts);
 	}
 	public QCalendar_YearMonthDay PartsFromDate(QDate_Ptr date)
 	{
-		return CQt.QCalendar_PartsFromDate(this.ptr, date);
+		return CQt.QCalendar_PartsFromDate((.)this.ptr, date);
 	}
 	public c_int DayOfWeek(QDate_Ptr date)
 	{
-		return CQt.QCalendar_DayOfWeek(this.ptr, date);
+		return CQt.QCalendar_DayOfWeek((.)this.ptr, date);
 	}
 	public libqt_string MonthName(QLocale_Ptr* locale, c_int month)
 	{
-		return CQt.QCalendar_MonthName(this.ptr, locale, month);
+		return CQt.QCalendar_MonthName((.)this.ptr, locale, month);
 	}
 	public libqt_string StandaloneMonthName(QLocale_Ptr* locale, c_int month)
 	{
-		return CQt.QCalendar_StandaloneMonthName(this.ptr, locale, month);
+		return CQt.QCalendar_StandaloneMonthName((.)this.ptr, locale, month);
 	}
 	public libqt_string WeekDayName(QLocale_Ptr* locale, c_int day)
 	{
-		return CQt.QCalendar_WeekDayName(this.ptr, locale, day);
+		return CQt.QCalendar_WeekDayName((.)this.ptr, locale, day);
 	}
 	public libqt_string StandaloneWeekDayName(QLocale_Ptr* locale, c_int day)
 	{
-		return CQt.QCalendar_StandaloneWeekDayName(this.ptr, locale, day);
+		return CQt.QCalendar_StandaloneWeekDayName((.)this.ptr, locale, day);
 	}
 	public void* AvailableCalendars()
 	{
@@ -220,31 +220,31 @@ class QCalendar
 	}
 	public c_int DaysInMonth2(c_int month, c_int year)
 	{
-		return CQt.QCalendar_DaysInMonth2(this.ptr, month, year);
+		return CQt.QCalendar_DaysInMonth2((.)this.ptr, month, year);
 	}
 	public libqt_string MonthName3(QLocale_Ptr* locale, c_int month, c_int year)
 	{
-		return CQt.QCalendar_MonthName3(this.ptr, locale, month, year);
+		return CQt.QCalendar_MonthName3((.)this.ptr, locale, month, year);
 	}
 	public libqt_string MonthName4(QLocale_Ptr* locale, c_int month, c_int year, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_MonthName4(this.ptr, locale, month, year, format);
+		return CQt.QCalendar_MonthName4((.)this.ptr, locale, month, year, format);
 	}
 	public libqt_string StandaloneMonthName3(QLocale_Ptr* locale, c_int month, c_int year)
 	{
-		return CQt.QCalendar_StandaloneMonthName3(this.ptr, locale, month, year);
+		return CQt.QCalendar_StandaloneMonthName3((.)this.ptr, locale, month, year);
 	}
 	public libqt_string StandaloneMonthName4(QLocale_Ptr* locale, c_int month, c_int year, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_StandaloneMonthName4(this.ptr, locale, month, year, format);
+		return CQt.QCalendar_StandaloneMonthName4((.)this.ptr, locale, month, year, format);
 	}
 	public libqt_string WeekDayName3(QLocale_Ptr* locale, c_int day, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_WeekDayName3(this.ptr, locale, day, format);
+		return CQt.QCalendar_WeekDayName3((.)this.ptr, locale, day, format);
 	}
 	public libqt_string StandaloneWeekDayName3(QLocale_Ptr* locale, c_int day, QLocale_FormatType format)
 	{
-		return CQt.QCalendar_StandaloneWeekDayName3(this.ptr, locale, day, format);
+		return CQt.QCalendar_StandaloneWeekDayName3((.)this.ptr, locale, day, format);
 	}
 }
 interface IQCalendar
@@ -349,31 +349,31 @@ class QCalendar_YearMonthDay
 	}
 	public bool IsValid()
 	{
-		return CQt.QCalendar_YearMonthDay_IsValid(this.ptr);
+		return CQt.QCalendar_YearMonthDay_IsValid((.)this.ptr);
 	}
 	public c_int Year()
 	{
-		return CQt.QCalendar_YearMonthDay_Year(this.ptr);
+		return CQt.QCalendar_YearMonthDay_Year((.)this.ptr);
 	}
 	public void SetYear(c_int year)
 	{
-		CQt.QCalendar_YearMonthDay_SetYear(this.ptr, year);
+		CQt.QCalendar_YearMonthDay_SetYear((.)this.ptr, year);
 	}
 	public c_int Month()
 	{
-		return CQt.QCalendar_YearMonthDay_Month(this.ptr);
+		return CQt.QCalendar_YearMonthDay_Month((.)this.ptr);
 	}
 	public void SetMonth(c_int month)
 	{
-		CQt.QCalendar_YearMonthDay_SetMonth(this.ptr, month);
+		CQt.QCalendar_YearMonthDay_SetMonth((.)this.ptr, month);
 	}
 	public c_int Day()
 	{
-		return CQt.QCalendar_YearMonthDay_Day(this.ptr);
+		return CQt.QCalendar_YearMonthDay_Day((.)this.ptr);
 	}
 	public void SetDay(c_int day)
 	{
-		CQt.QCalendar_YearMonthDay_SetDay(this.ptr, day);
+		CQt.QCalendar_YearMonthDay_SetDay((.)this.ptr, day);
 	}
 }
 interface IQCalendar_YearMonthDay
@@ -425,11 +425,11 @@ class QCalendar_SystemId
 	}
 	public c_size Index()
 	{
-		return CQt.QCalendar_SystemId_Index(this.ptr);
+		return CQt.QCalendar_SystemId_Index((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QCalendar_SystemId_IsValid(this.ptr);
+		return CQt.QCalendar_SystemId_IsValid((.)this.ptr);
 	}
 }
 interface IQCalendar_SystemId

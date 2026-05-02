@@ -150,7 +150,7 @@ class QJsonValue
 	}
 	public void Swap(QJsonValue_Ptr* other)
 	{
-		CQt.QJsonValue_Swap(this.ptr, other);
+		CQt.QJsonValue_Swap((.)this.ptr, other);
 	}
 	public QJsonValue_Ptr FromVariant(QVariant_Ptr* variant)
 	{
@@ -158,99 +158,99 @@ class QJsonValue
 	}
 	public QVariant_Ptr ToVariant()
 	{
-		return CQt.QJsonValue_ToVariant(this.ptr);
+		return CQt.QJsonValue_ToVariant((.)this.ptr);
 	}
 	public QJsonValue_Type Type()
 	{
-		return CQt.QJsonValue_Type(this.ptr);
+		return CQt.QJsonValue_Type((.)this.ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QJsonValue_IsNull(this.ptr);
+		return CQt.QJsonValue_IsNull((.)this.ptr);
 	}
 	public bool IsBool()
 	{
-		return CQt.QJsonValue_IsBool(this.ptr);
+		return CQt.QJsonValue_IsBool((.)this.ptr);
 	}
 	public bool IsDouble()
 	{
-		return CQt.QJsonValue_IsDouble(this.ptr);
+		return CQt.QJsonValue_IsDouble((.)this.ptr);
 	}
 	public bool IsString()
 	{
-		return CQt.QJsonValue_IsString(this.ptr);
+		return CQt.QJsonValue_IsString((.)this.ptr);
 	}
 	public bool IsArray()
 	{
-		return CQt.QJsonValue_IsArray(this.ptr);
+		return CQt.QJsonValue_IsArray((.)this.ptr);
 	}
 	public bool IsObject()
 	{
-		return CQt.QJsonValue_IsObject(this.ptr);
+		return CQt.QJsonValue_IsObject((.)this.ptr);
 	}
 	public bool IsUndefined()
 	{
-		return CQt.QJsonValue_IsUndefined(this.ptr);
+		return CQt.QJsonValue_IsUndefined((.)this.ptr);
 	}
 	public bool ToBool()
 	{
-		return CQt.QJsonValue_ToBool(this.ptr);
+		return CQt.QJsonValue_ToBool((.)this.ptr);
 	}
 	public c_int ToInt()
 	{
-		return CQt.QJsonValue_ToInt(this.ptr);
+		return CQt.QJsonValue_ToInt((.)this.ptr);
 	}
 	public c_longlong ToInteger()
 	{
-		return CQt.QJsonValue_ToInteger(this.ptr);
+		return CQt.QJsonValue_ToInteger((.)this.ptr);
 	}
 	public double ToDouble()
 	{
-		return CQt.QJsonValue_ToDouble(this.ptr);
+		return CQt.QJsonValue_ToDouble((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QJsonValue_ToString(this.ptr);
+		return CQt.QJsonValue_ToString((.)this.ptr);
 	}
 	public libqt_string ToString2(libqt_string* defaultValue)
 	{
-		return CQt.QJsonValue_ToString2(this.ptr, defaultValue);
+		return CQt.QJsonValue_ToString2((.)this.ptr, defaultValue);
 	}
 	public QJsonArray_Ptr ToArray()
 	{
-		return CQt.QJsonValue_ToArray(this.ptr);
+		return CQt.QJsonValue_ToArray((.)this.ptr);
 	}
 	public QJsonArray_Ptr ToArray2(QJsonArray_Ptr* defaultValue)
 	{
-		return CQt.QJsonValue_ToArray2(this.ptr, defaultValue);
+		return CQt.QJsonValue_ToArray2((.)this.ptr, defaultValue);
 	}
 	public QJsonObject_Ptr ToObject()
 	{
-		return CQt.QJsonValue_ToObject(this.ptr);
+		return CQt.QJsonValue_ToObject((.)this.ptr);
 	}
 	public QJsonObject_Ptr ToObject2(QJsonObject_Ptr* defaultValue)
 	{
-		return CQt.QJsonValue_ToObject2(this.ptr, defaultValue);
+		return CQt.QJsonValue_ToObject2((.)this.ptr, defaultValue);
 	}
 	public QJsonValue_Ptr OperatorSubscript4(void* i)
 	{
-		return CQt.QJsonValue_OperatorSubscript4(this.ptr, i);
+		return CQt.QJsonValue_OperatorSubscript4((.)this.ptr, i);
 	}
 	public bool ToBool1(bool defaultValue)
 	{
-		return CQt.QJsonValue_ToBool1(this.ptr, defaultValue);
+		return CQt.QJsonValue_ToBool1((.)this.ptr, defaultValue);
 	}
 	public c_int ToInt1(c_int defaultValue)
 	{
-		return CQt.QJsonValue_ToInt1(this.ptr, defaultValue);
+		return CQt.QJsonValue_ToInt1((.)this.ptr, defaultValue);
 	}
 	public c_longlong ToInteger1(c_longlong defaultValue)
 	{
-		return CQt.QJsonValue_ToInteger1(this.ptr, defaultValue);
+		return CQt.QJsonValue_ToInteger1((.)this.ptr, defaultValue);
 	}
 	public double ToDouble1(double defaultValue)
 	{
-		return CQt.QJsonValue_ToDouble1(this.ptr, defaultValue);
+		return CQt.QJsonValue_ToDouble1((.)this.ptr, defaultValue);
 	}
 }
 interface IQJsonValue
@@ -361,91 +361,91 @@ class QJsonValueConstRef
 	}
 	public QVariant_Ptr ToVariant()
 	{
-		return CQt.QJsonValueConstRef_ToVariant(this.ptr);
+		return CQt.QJsonValueConstRef_ToVariant((.)this.ptr);
 	}
 	public QJsonValue_Type Type()
 	{
-		return CQt.QJsonValueConstRef_Type(this.ptr);
+		return CQt.QJsonValueConstRef_Type((.)this.ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QJsonValueConstRef_IsNull(this.ptr);
+		return CQt.QJsonValueConstRef_IsNull((.)this.ptr);
 	}
 	public bool IsBool()
 	{
-		return CQt.QJsonValueConstRef_IsBool(this.ptr);
+		return CQt.QJsonValueConstRef_IsBool((.)this.ptr);
 	}
 	public bool IsDouble()
 	{
-		return CQt.QJsonValueConstRef_IsDouble(this.ptr);
+		return CQt.QJsonValueConstRef_IsDouble((.)this.ptr);
 	}
 	public bool IsString()
 	{
-		return CQt.QJsonValueConstRef_IsString(this.ptr);
+		return CQt.QJsonValueConstRef_IsString((.)this.ptr);
 	}
 	public bool IsArray()
 	{
-		return CQt.QJsonValueConstRef_IsArray(this.ptr);
+		return CQt.QJsonValueConstRef_IsArray((.)this.ptr);
 	}
 	public bool IsObject()
 	{
-		return CQt.QJsonValueConstRef_IsObject(this.ptr);
+		return CQt.QJsonValueConstRef_IsObject((.)this.ptr);
 	}
 	public bool IsUndefined()
 	{
-		return CQt.QJsonValueConstRef_IsUndefined(this.ptr);
+		return CQt.QJsonValueConstRef_IsUndefined((.)this.ptr);
 	}
 	public bool ToBool()
 	{
-		return CQt.QJsonValueConstRef_ToBool(this.ptr);
+		return CQt.QJsonValueConstRef_ToBool((.)this.ptr);
 	}
 	public c_int ToInt()
 	{
-		return CQt.QJsonValueConstRef_ToInt(this.ptr);
+		return CQt.QJsonValueConstRef_ToInt((.)this.ptr);
 	}
 	public c_longlong ToInteger()
 	{
-		return CQt.QJsonValueConstRef_ToInteger(this.ptr);
+		return CQt.QJsonValueConstRef_ToInteger((.)this.ptr);
 	}
 	public double ToDouble()
 	{
-		return CQt.QJsonValueConstRef_ToDouble(this.ptr);
+		return CQt.QJsonValueConstRef_ToDouble((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QJsonValueConstRef_ToString(this.ptr);
+		return CQt.QJsonValueConstRef_ToString((.)this.ptr);
 	}
 	public QJsonArray_Ptr ToArray()
 	{
-		return CQt.QJsonValueConstRef_ToArray(this.ptr);
+		return CQt.QJsonValueConstRef_ToArray((.)this.ptr);
 	}
 	public QJsonObject_Ptr ToObject()
 	{
-		return CQt.QJsonValueConstRef_ToObject(this.ptr);
+		return CQt.QJsonValueConstRef_ToObject((.)this.ptr);
 	}
 	public QJsonValue_Ptr OperatorSubscript3(void* i)
 	{
-		return CQt.QJsonValueConstRef_OperatorSubscript3(this.ptr, i);
+		return CQt.QJsonValueConstRef_OperatorSubscript3((.)this.ptr, i);
 	}
 	public bool ToBool1(bool defaultValue)
 	{
-		return CQt.QJsonValueConstRef_ToBool1(this.ptr, defaultValue);
+		return CQt.QJsonValueConstRef_ToBool1((.)this.ptr, defaultValue);
 	}
 	public c_int ToInt1(c_int defaultValue)
 	{
-		return CQt.QJsonValueConstRef_ToInt1(this.ptr, defaultValue);
+		return CQt.QJsonValueConstRef_ToInt1((.)this.ptr, defaultValue);
 	}
 	public c_longlong ToInteger1(c_longlong defaultValue)
 	{
-		return CQt.QJsonValueConstRef_ToInteger1(this.ptr, defaultValue);
+		return CQt.QJsonValueConstRef_ToInteger1((.)this.ptr, defaultValue);
 	}
 	public double ToDouble1(double defaultValue)
 	{
-		return CQt.QJsonValueConstRef_ToDouble1(this.ptr, defaultValue);
+		return CQt.QJsonValueConstRef_ToDouble1((.)this.ptr, defaultValue);
 	}
 	public libqt_string ToString1(libqt_string* defaultValue)
 	{
-		return CQt.QJsonValueConstRef_ToString1(this.ptr, defaultValue);
+		return CQt.QJsonValueConstRef_ToString1((.)this.ptr, defaultValue);
 	}
 }
 interface IQJsonValueConstRef
@@ -568,95 +568,95 @@ class QJsonValueRef
 	}
 	public void OperatorAssign2(QJsonValueRef_Ptr* val)
 	{
-		CQt.QJsonValueRef_OperatorAssign2(this.ptr, val);
+		CQt.QJsonValueRef_OperatorAssign2((.)this.ptr, val);
 	}
 	public QVariant_Ptr ToVariant()
 	{
-		return CQt.QJsonValueRef_ToVariant(this.ptr);
+		return CQt.QJsonValueRef_ToVariant((.)this.ptr);
 	}
 	public QJsonValue_Type Type()
 	{
-		return CQt.QJsonValueRef_Type(this.ptr);
+		return CQt.QJsonValueRef_Type((.)this.ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QJsonValueRef_IsNull(this.ptr);
+		return CQt.QJsonValueRef_IsNull((.)this.ptr);
 	}
 	public bool IsBool()
 	{
-		return CQt.QJsonValueRef_IsBool(this.ptr);
+		return CQt.QJsonValueRef_IsBool((.)this.ptr);
 	}
 	public bool IsDouble()
 	{
-		return CQt.QJsonValueRef_IsDouble(this.ptr);
+		return CQt.QJsonValueRef_IsDouble((.)this.ptr);
 	}
 	public bool IsString()
 	{
-		return CQt.QJsonValueRef_IsString(this.ptr);
+		return CQt.QJsonValueRef_IsString((.)this.ptr);
 	}
 	public bool IsArray()
 	{
-		return CQt.QJsonValueRef_IsArray(this.ptr);
+		return CQt.QJsonValueRef_IsArray((.)this.ptr);
 	}
 	public bool IsObject()
 	{
-		return CQt.QJsonValueRef_IsObject(this.ptr);
+		return CQt.QJsonValueRef_IsObject((.)this.ptr);
 	}
 	public bool IsUndefined()
 	{
-		return CQt.QJsonValueRef_IsUndefined(this.ptr);
+		return CQt.QJsonValueRef_IsUndefined((.)this.ptr);
 	}
 	public bool ToBool()
 	{
-		return CQt.QJsonValueRef_ToBool(this.ptr);
+		return CQt.QJsonValueRef_ToBool((.)this.ptr);
 	}
 	public c_int ToInt()
 	{
-		return CQt.QJsonValueRef_ToInt(this.ptr);
+		return CQt.QJsonValueRef_ToInt((.)this.ptr);
 	}
 	public c_longlong ToInteger()
 	{
-		return CQt.QJsonValueRef_ToInteger(this.ptr);
+		return CQt.QJsonValueRef_ToInteger((.)this.ptr);
 	}
 	public double ToDouble()
 	{
-		return CQt.QJsonValueRef_ToDouble(this.ptr);
+		return CQt.QJsonValueRef_ToDouble((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QJsonValueRef_ToString(this.ptr);
+		return CQt.QJsonValueRef_ToString((.)this.ptr);
 	}
 	public QJsonArray_Ptr ToArray()
 	{
-		return CQt.QJsonValueRef_ToArray(this.ptr);
+		return CQt.QJsonValueRef_ToArray((.)this.ptr);
 	}
 	public QJsonObject_Ptr ToObject()
 	{
-		return CQt.QJsonValueRef_ToObject(this.ptr);
+		return CQt.QJsonValueRef_ToObject((.)this.ptr);
 	}
 	public QJsonValue_Ptr OperatorSubscript3(void* i)
 	{
-		return CQt.QJsonValueRef_OperatorSubscript3(this.ptr, i);
+		return CQt.QJsonValueRef_OperatorSubscript3((.)this.ptr, i);
 	}
 	public bool ToBool1(bool defaultValue)
 	{
-		return CQt.QJsonValueRef_ToBool1(this.ptr, defaultValue);
+		return CQt.QJsonValueRef_ToBool1((.)this.ptr, defaultValue);
 	}
 	public c_int ToInt1(c_int defaultValue)
 	{
-		return CQt.QJsonValueRef_ToInt1(this.ptr, defaultValue);
+		return CQt.QJsonValueRef_ToInt1((.)this.ptr, defaultValue);
 	}
 	public c_longlong ToInteger1(c_longlong defaultValue)
 	{
-		return CQt.QJsonValueRef_ToInteger1(this.ptr, defaultValue);
+		return CQt.QJsonValueRef_ToInteger1((.)this.ptr, defaultValue);
 	}
 	public double ToDouble1(double defaultValue)
 	{
-		return CQt.QJsonValueRef_ToDouble1(this.ptr, defaultValue);
+		return CQt.QJsonValueRef_ToDouble1((.)this.ptr, defaultValue);
 	}
 	public libqt_string ToString1(libqt_string* defaultValue)
 	{
-		return CQt.QJsonValueRef_ToString1(this.ptr, defaultValue);
+		return CQt.QJsonValueRef_ToString1((.)this.ptr, defaultValue);
 	}
 }
 interface IQJsonValueRef

@@ -210,23 +210,23 @@ class QDir
 	}
 	public void Swap(QDir_Ptr* other)
 	{
-		CQt.QDir_Swap(this.ptr, other);
+		CQt.QDir_Swap((.)this.ptr, other);
 	}
 	public void SetPath(libqt_string* path)
 	{
-		CQt.QDir_SetPath(this.ptr, path);
+		CQt.QDir_SetPath((.)this.ptr, path);
 	}
 	public libqt_string Path()
 	{
-		return CQt.QDir_Path(this.ptr);
+		return CQt.QDir_Path((.)this.ptr);
 	}
 	public libqt_string AbsolutePath()
 	{
-		return CQt.QDir_AbsolutePath(this.ptr);
+		return CQt.QDir_AbsolutePath((.)this.ptr);
 	}
 	public libqt_string CanonicalPath()
 	{
-		return CQt.QDir_CanonicalPath(this.ptr);
+		return CQt.QDir_CanonicalPath((.)this.ptr);
 	}
 	public void SetSearchPaths(libqt_string* prefix, void** searchPaths)
 	{
@@ -242,19 +242,19 @@ class QDir
 	}
 	public libqt_string DirName()
 	{
-		return CQt.QDir_DirName(this.ptr);
+		return CQt.QDir_DirName((.)this.ptr);
 	}
 	public libqt_string FilePath(libqt_string* fileName)
 	{
-		return CQt.QDir_FilePath(this.ptr, fileName);
+		return CQt.QDir_FilePath((.)this.ptr, fileName);
 	}
 	public libqt_string AbsoluteFilePath(libqt_string* fileName)
 	{
-		return CQt.QDir_AbsoluteFilePath(this.ptr, fileName);
+		return CQt.QDir_AbsoluteFilePath((.)this.ptr, fileName);
 	}
 	public libqt_string RelativeFilePath(libqt_string* fileName)
 	{
-		return CQt.QDir_RelativeFilePath(this.ptr, fileName);
+		return CQt.QDir_RelativeFilePath((.)this.ptr, fileName);
 	}
 	public libqt_string ToNativeSeparators(libqt_string* pathName)
 	{
@@ -266,43 +266,43 @@ class QDir
 	}
 	public bool Cd(libqt_string* dirName)
 	{
-		return CQt.QDir_Cd(this.ptr, dirName);
+		return CQt.QDir_Cd((.)this.ptr, dirName);
 	}
 	public bool CdUp()
 	{
-		return CQt.QDir_CdUp(this.ptr);
+		return CQt.QDir_CdUp((.)this.ptr);
 	}
 	public void* NameFilters()
 	{
-		return CQt.QDir_NameFilters(this.ptr);
+		return CQt.QDir_NameFilters((.)this.ptr);
 	}
 	public void SetNameFilters(void** nameFilters)
 	{
-		CQt.QDir_SetNameFilters(this.ptr, nameFilters);
+		CQt.QDir_SetNameFilters((.)this.ptr, nameFilters);
 	}
 	public void* Filter()
 	{
-		return CQt.QDir_Filter(this.ptr);
+		return CQt.QDir_Filter((.)this.ptr);
 	}
 	public void SetFilter(void* filter)
 	{
-		CQt.QDir_SetFilter(this.ptr, filter);
+		CQt.QDir_SetFilter((.)this.ptr, filter);
 	}
 	public void* Sorting()
 	{
-		return CQt.QDir_Sorting(this.ptr);
+		return CQt.QDir_Sorting((.)this.ptr);
 	}
 	public void SetSorting(void* sort)
 	{
-		CQt.QDir_SetSorting(this.ptr, sort);
+		CQt.QDir_SetSorting((.)this.ptr, sort);
 	}
 	public c_uint Count()
 	{
-		return CQt.QDir_Count(this.ptr);
+		return CQt.QDir_Count((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QDir_IsEmpty(this.ptr);
+		return CQt.QDir_IsEmpty((.)this.ptr);
 	}
 	public void* NameFiltersFromString(libqt_string* nameFilter)
 	{
@@ -310,55 +310,55 @@ class QDir
 	}
 	public void* EntryList()
 	{
-		return CQt.QDir_EntryList(this.ptr);
+		return CQt.QDir_EntryList((.)this.ptr);
 	}
 	public void* EntryList2(void** nameFilters)
 	{
-		return CQt.QDir_EntryList2(this.ptr, nameFilters);
+		return CQt.QDir_EntryList2((.)this.ptr, nameFilters);
 	}
 	public void* EntryInfoList()
 	{
-		return CQt.QDir_EntryInfoList(this.ptr);
+		return CQt.QDir_EntryInfoList((.)this.ptr);
 	}
 	public void* EntryInfoList2(void** nameFilters)
 	{
-		return CQt.QDir_EntryInfoList2(this.ptr, nameFilters);
+		return CQt.QDir_EntryInfoList2((.)this.ptr, nameFilters);
 	}
 	public bool Mkdir(libqt_string* dirName)
 	{
-		return CQt.QDir_Mkdir(this.ptr, dirName);
+		return CQt.QDir_Mkdir((.)this.ptr, dirName);
 	}
 	public bool Mkdir2(libqt_string* dirName, void* permissions)
 	{
-		return CQt.QDir_Mkdir2(this.ptr, dirName, permissions);
+		return CQt.QDir_Mkdir2((.)this.ptr, dirName, permissions);
 	}
 	public bool Rmdir(libqt_string* dirName)
 	{
-		return CQt.QDir_Rmdir(this.ptr, dirName);
+		return CQt.QDir_Rmdir((.)this.ptr, dirName);
 	}
 	public bool Mkpath(libqt_string* dirPath)
 	{
-		return CQt.QDir_Mkpath(this.ptr, dirPath);
+		return CQt.QDir_Mkpath((.)this.ptr, dirPath);
 	}
 	public bool Rmpath(libqt_string* dirPath)
 	{
-		return CQt.QDir_Rmpath(this.ptr, dirPath);
+		return CQt.QDir_Rmpath((.)this.ptr, dirPath);
 	}
 	public bool RemoveRecursively()
 	{
-		return CQt.QDir_RemoveRecursively(this.ptr);
+		return CQt.QDir_RemoveRecursively((.)this.ptr);
 	}
 	public bool IsReadable()
 	{
-		return CQt.QDir_IsReadable(this.ptr);
+		return CQt.QDir_IsReadable((.)this.ptr);
 	}
 	public bool Exists()
 	{
-		return CQt.QDir_Exists(this.ptr);
+		return CQt.QDir_Exists((.)this.ptr);
 	}
 	public bool IsRoot()
 	{
-		return CQt.QDir_IsRoot(this.ptr);
+		return CQt.QDir_IsRoot((.)this.ptr);
 	}
 	public bool IsRelativePath(libqt_string* path)
 	{
@@ -370,27 +370,27 @@ class QDir
 	}
 	public bool IsRelative()
 	{
-		return CQt.QDir_IsRelative(this.ptr);
+		return CQt.QDir_IsRelative((.)this.ptr);
 	}
 	public bool IsAbsolute()
 	{
-		return CQt.QDir_IsAbsolute(this.ptr);
+		return CQt.QDir_IsAbsolute((.)this.ptr);
 	}
 	public bool MakeAbsolute()
 	{
-		return CQt.QDir_MakeAbsolute(this.ptr);
+		return CQt.QDir_MakeAbsolute((.)this.ptr);
 	}
 	public bool Remove(libqt_string* fileName)
 	{
-		return CQt.QDir_Remove(this.ptr, fileName);
+		return CQt.QDir_Remove((.)this.ptr, fileName);
 	}
 	public bool Rename(libqt_string* oldName, libqt_string* newName)
 	{
-		return CQt.QDir_Rename(this.ptr, oldName, newName);
+		return CQt.QDir_Rename((.)this.ptr, oldName, newName);
 	}
 	public bool Exists2(libqt_string* name)
 	{
-		return CQt.QDir_Exists2(this.ptr, name);
+		return CQt.QDir_Exists2((.)this.ptr, name);
 	}
 	public void* Drives()
 	{
@@ -454,43 +454,43 @@ class QDir
 	}
 	public void Refresh()
 	{
-		CQt.QDir_Refresh(this.ptr);
+		CQt.QDir_Refresh((.)this.ptr);
 	}
 	public bool IsEmpty1(void* filters)
 	{
-		return CQt.QDir_IsEmpty1(this.ptr, filters);
+		return CQt.QDir_IsEmpty1((.)this.ptr, filters);
 	}
 	public void* EntryList1(void* filters)
 	{
-		return CQt.QDir_EntryList1(this.ptr, filters);
+		return CQt.QDir_EntryList1((.)this.ptr, filters);
 	}
 	public void* EntryList22(void* filters, void* sort)
 	{
-		return CQt.QDir_EntryList22(this.ptr, filters, sort);
+		return CQt.QDir_EntryList22((.)this.ptr, filters, sort);
 	}
 	public void* EntryList23(void** nameFilters, void* filters)
 	{
-		return CQt.QDir_EntryList23(this.ptr, nameFilters, filters);
+		return CQt.QDir_EntryList23((.)this.ptr, nameFilters, filters);
 	}
 	public void* EntryList3(void** nameFilters, void* filters, void* sort)
 	{
-		return CQt.QDir_EntryList3(this.ptr, nameFilters, filters, sort);
+		return CQt.QDir_EntryList3((.)this.ptr, nameFilters, filters, sort);
 	}
 	public void* EntryInfoList1(void* filters)
 	{
-		return CQt.QDir_EntryInfoList1(this.ptr, filters);
+		return CQt.QDir_EntryInfoList1((.)this.ptr, filters);
 	}
 	public void* EntryInfoList22(void* filters, void* sort)
 	{
-		return CQt.QDir_EntryInfoList22(this.ptr, filters, sort);
+		return CQt.QDir_EntryInfoList22((.)this.ptr, filters, sort);
 	}
 	public void* EntryInfoList23(void** nameFilters, void* filters)
 	{
-		return CQt.QDir_EntryInfoList23(this.ptr, nameFilters, filters);
+		return CQt.QDir_EntryInfoList23((.)this.ptr, nameFilters, filters);
 	}
 	public void* EntryInfoList3(void** nameFilters, void* filters, void* sort)
 	{
-		return CQt.QDir_EntryInfoList3(this.ptr, nameFilters, filters, sort);
+		return CQt.QDir_EntryInfoList3((.)this.ptr, nameFilters, filters, sort);
 	}
 }
 interface IQDir

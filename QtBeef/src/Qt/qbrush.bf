@@ -134,63 +134,63 @@ class QBrush
 	}
 	public void Swap(QBrush_Ptr* other)
 	{
-		CQt.QBrush_Swap(this.ptr, other);
+		CQt.QBrush_Swap((.)this.ptr, other);
 	}
 	public Qt_BrushStyle Style()
 	{
-		return CQt.QBrush_Style(this.ptr);
+		return CQt.QBrush_Style((.)this.ptr);
 	}
 	public void SetStyle(Qt_BrushStyle style)
 	{
-		CQt.QBrush_SetStyle(this.ptr, style);
+		CQt.QBrush_SetStyle((.)this.ptr, style);
 	}
 	public QTransform_Ptr Transform()
 	{
-		return CQt.QBrush_Transform(this.ptr);
+		return CQt.QBrush_Transform((.)this.ptr);
 	}
 	public void SetTransform(QTransform_Ptr* transform)
 	{
-		CQt.QBrush_SetTransform(this.ptr, transform);
+		CQt.QBrush_SetTransform((.)this.ptr, transform);
 	}
 	public QPixmap_Ptr Texture()
 	{
-		return CQt.QBrush_Texture(this.ptr);
+		return CQt.QBrush_Texture((.)this.ptr);
 	}
 	public void SetTexture(QPixmap_Ptr* pixmap)
 	{
-		CQt.QBrush_SetTexture(this.ptr, pixmap);
+		CQt.QBrush_SetTexture((.)this.ptr, pixmap);
 	}
 	public QImage_Ptr TextureImage()
 	{
-		return CQt.QBrush_TextureImage(this.ptr);
+		return CQt.QBrush_TextureImage((.)this.ptr);
 	}
 	public void SetTextureImage(QImage_Ptr* image)
 	{
-		CQt.QBrush_SetTextureImage(this.ptr, image);
+		CQt.QBrush_SetTextureImage((.)this.ptr, image);
 	}
 	public QColor_Ptr* Color()
 	{
-		return CQt.QBrush_Color(this.ptr);
+		return CQt.QBrush_Color((.)this.ptr);
 	}
 	public void SetColor(QColor_Ptr* color)
 	{
-		CQt.QBrush_SetColor(this.ptr, color);
+		CQt.QBrush_SetColor((.)this.ptr, color);
 	}
 	public void SetColor2(Qt_GlobalColor color)
 	{
-		CQt.QBrush_SetColor2(this.ptr, color);
+		CQt.QBrush_SetColor2((.)this.ptr, color);
 	}
 	public QGradient_Ptr* Gradient()
 	{
-		return CQt.QBrush_Gradient(this.ptr);
+		return CQt.QBrush_Gradient((.)this.ptr);
 	}
 	public bool IsOpaque()
 	{
-		return CQt.QBrush_IsOpaque(this.ptr);
+		return CQt.QBrush_IsOpaque((.)this.ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QBrush_IsDetached(this.ptr);
+		return CQt.QBrush_IsDetached((.)this.ptr);
 	}
 }
 interface IQBrush
@@ -274,43 +274,43 @@ class QGradient
 	}
 	public QGradient_Type Type()
 	{
-		return CQt.QGradient_Type(this.ptr);
+		return CQt.QGradient_Type((.)this.ptr);
 	}
 	public void SetSpread(QGradient_Spread spread)
 	{
-		CQt.QGradient_SetSpread(this.ptr, spread);
+		CQt.QGradient_SetSpread((.)this.ptr, spread);
 	}
 	public QGradient_Spread Spread()
 	{
-		return CQt.QGradient_Spread(this.ptr);
+		return CQt.QGradient_Spread((.)this.ptr);
 	}
 	public void SetColorAt(double pos, QColor_Ptr* color)
 	{
-		CQt.QGradient_SetColorAt(this.ptr, pos, color);
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
 	}
 	public void SetStops(void** stops)
 	{
-		CQt.QGradient_SetStops(this.ptr, stops);
+		CQt.QGradient_SetStops((.)this.ptr, stops);
 	}
 	public void* Stops()
 	{
-		return CQt.QGradient_Stops(this.ptr);
+		return CQt.QGradient_Stops((.)this.ptr);
 	}
 	public QGradient_CoordinateMode CoordinateMode()
 	{
-		return CQt.QGradient_CoordinateMode(this.ptr);
+		return CQt.QGradient_CoordinateMode((.)this.ptr);
 	}
 	public void SetCoordinateMode(QGradient_CoordinateMode mode)
 	{
-		CQt.QGradient_SetCoordinateMode(this.ptr, mode);
+		CQt.QGradient_SetCoordinateMode((.)this.ptr, mode);
 	}
 	public QGradient_InterpolationMode InterpolationMode()
 	{
-		return CQt.QGradient_InterpolationMode(this.ptr);
+		return CQt.QGradient_InterpolationMode((.)this.ptr);
 	}
 	public void SetInterpolationMode(QGradient_InterpolationMode mode)
 	{
-		CQt.QGradient_SetInterpolationMode(this.ptr, mode);
+		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
 interface IQGradient
@@ -383,27 +383,67 @@ class QLinearGradient
 	}
 	public QPointF_Ptr Start()
 	{
-		return CQt.QLinearGradient_Start(this.ptr);
+		return CQt.QLinearGradient_Start((.)this.ptr);
 	}
 	public void SetStart(QPointF_Ptr* start)
 	{
-		CQt.QLinearGradient_SetStart(this.ptr, start);
+		CQt.QLinearGradient_SetStart((.)this.ptr, start);
 	}
 	public void SetStart2(double x, double y)
 	{
-		CQt.QLinearGradient_SetStart2(this.ptr, x, y);
+		CQt.QLinearGradient_SetStart2((.)this.ptr, x, y);
 	}
 	public QPointF_Ptr FinalStop()
 	{
-		return CQt.QLinearGradient_FinalStop(this.ptr);
+		return CQt.QLinearGradient_FinalStop((.)this.ptr);
 	}
 	public void SetFinalStop(QPointF_Ptr* stop)
 	{
-		CQt.QLinearGradient_SetFinalStop(this.ptr, stop);
+		CQt.QLinearGradient_SetFinalStop((.)this.ptr, stop);
 	}
 	public void SetFinalStop2(double x, double y)
 	{
-		CQt.QLinearGradient_SetFinalStop2(this.ptr, x, y);
+		CQt.QLinearGradient_SetFinalStop2((.)this.ptr, x, y);
+	}
+	public QGradient_Type Type()
+	{
+		return CQt.QGradient_Type((.)this.ptr);
+	}
+	public void SetSpread(QGradient_Spread spread)
+	{
+		CQt.QGradient_SetSpread((.)this.ptr, spread);
+	}
+	public QGradient_Spread Spread()
+	{
+		return CQt.QGradient_Spread((.)this.ptr);
+	}
+	public void SetColorAt(double pos, QColor_Ptr* color)
+	{
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
+	}
+	public void SetStops(void** stops)
+	{
+		CQt.QGradient_SetStops((.)this.ptr, stops);
+	}
+	public void* Stops()
+	{
+		return CQt.QGradient_Stops((.)this.ptr);
+	}
+	public QGradient_CoordinateMode CoordinateMode()
+	{
+		return CQt.QGradient_CoordinateMode((.)this.ptr);
+	}
+	public void SetCoordinateMode(QGradient_CoordinateMode mode)
+	{
+		CQt.QGradient_SetCoordinateMode((.)this.ptr, mode);
+	}
+	public QGradient_InterpolationMode InterpolationMode()
+	{
+		return CQt.QGradient_InterpolationMode((.)this.ptr);
+	}
+	public void SetInterpolationMode(QGradient_InterpolationMode mode)
+	{
+		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
 interface IQLinearGradient
@@ -508,51 +548,91 @@ class QRadialGradient
 	}
 	public QPointF_Ptr Center()
 	{
-		return CQt.QRadialGradient_Center(this.ptr);
+		return CQt.QRadialGradient_Center((.)this.ptr);
 	}
 	public void SetCenter(QPointF_Ptr* center)
 	{
-		CQt.QRadialGradient_SetCenter(this.ptr, center);
+		CQt.QRadialGradient_SetCenter((.)this.ptr, center);
 	}
 	public void SetCenter2(double x, double y)
 	{
-		CQt.QRadialGradient_SetCenter2(this.ptr, x, y);
+		CQt.QRadialGradient_SetCenter2((.)this.ptr, x, y);
 	}
 	public QPointF_Ptr FocalPoint()
 	{
-		return CQt.QRadialGradient_FocalPoint(this.ptr);
+		return CQt.QRadialGradient_FocalPoint((.)this.ptr);
 	}
 	public void SetFocalPoint(QPointF_Ptr* focalPoint)
 	{
-		CQt.QRadialGradient_SetFocalPoint(this.ptr, focalPoint);
+		CQt.QRadialGradient_SetFocalPoint((.)this.ptr, focalPoint);
 	}
 	public void SetFocalPoint2(double x, double y)
 	{
-		CQt.QRadialGradient_SetFocalPoint2(this.ptr, x, y);
+		CQt.QRadialGradient_SetFocalPoint2((.)this.ptr, x, y);
 	}
 	public double Radius()
 	{
-		return CQt.QRadialGradient_Radius(this.ptr);
+		return CQt.QRadialGradient_Radius((.)this.ptr);
 	}
 	public void SetRadius(double radius)
 	{
-		CQt.QRadialGradient_SetRadius(this.ptr, radius);
+		CQt.QRadialGradient_SetRadius((.)this.ptr, radius);
 	}
 	public double CenterRadius()
 	{
-		return CQt.QRadialGradient_CenterRadius(this.ptr);
+		return CQt.QRadialGradient_CenterRadius((.)this.ptr);
 	}
 	public void SetCenterRadius(double radius)
 	{
-		CQt.QRadialGradient_SetCenterRadius(this.ptr, radius);
+		CQt.QRadialGradient_SetCenterRadius((.)this.ptr, radius);
 	}
 	public double FocalRadius()
 	{
-		return CQt.QRadialGradient_FocalRadius(this.ptr);
+		return CQt.QRadialGradient_FocalRadius((.)this.ptr);
 	}
 	public void SetFocalRadius(double radius)
 	{
-		CQt.QRadialGradient_SetFocalRadius(this.ptr, radius);
+		CQt.QRadialGradient_SetFocalRadius((.)this.ptr, radius);
+	}
+	public QGradient_Type Type()
+	{
+		return CQt.QGradient_Type((.)this.ptr);
+	}
+	public void SetSpread(QGradient_Spread spread)
+	{
+		CQt.QGradient_SetSpread((.)this.ptr, spread);
+	}
+	public QGradient_Spread Spread()
+	{
+		return CQt.QGradient_Spread((.)this.ptr);
+	}
+	public void SetColorAt(double pos, QColor_Ptr* color)
+	{
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
+	}
+	public void SetStops(void** stops)
+	{
+		CQt.QGradient_SetStops((.)this.ptr, stops);
+	}
+	public void* Stops()
+	{
+		return CQt.QGradient_Stops((.)this.ptr);
+	}
+	public QGradient_CoordinateMode CoordinateMode()
+	{
+		return CQt.QGradient_CoordinateMode((.)this.ptr);
+	}
+	public void SetCoordinateMode(QGradient_CoordinateMode mode)
+	{
+		CQt.QGradient_SetCoordinateMode((.)this.ptr, mode);
+	}
+	public QGradient_InterpolationMode InterpolationMode()
+	{
+		return CQt.QGradient_InterpolationMode((.)this.ptr);
+	}
+	public void SetInterpolationMode(QGradient_InterpolationMode mode)
+	{
+		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
 interface IQRadialGradient
@@ -625,23 +705,63 @@ class QConicalGradient
 	}
 	public QPointF_Ptr Center()
 	{
-		return CQt.QConicalGradient_Center(this.ptr);
+		return CQt.QConicalGradient_Center((.)this.ptr);
 	}
 	public void SetCenter(QPointF_Ptr* center)
 	{
-		CQt.QConicalGradient_SetCenter(this.ptr, center);
+		CQt.QConicalGradient_SetCenter((.)this.ptr, center);
 	}
 	public void SetCenter2(double x, double y)
 	{
-		CQt.QConicalGradient_SetCenter2(this.ptr, x, y);
+		CQt.QConicalGradient_SetCenter2((.)this.ptr, x, y);
 	}
 	public double Angle()
 	{
-		return CQt.QConicalGradient_Angle(this.ptr);
+		return CQt.QConicalGradient_Angle((.)this.ptr);
 	}
 	public void SetAngle(double angle)
 	{
-		CQt.QConicalGradient_SetAngle(this.ptr, angle);
+		CQt.QConicalGradient_SetAngle((.)this.ptr, angle);
+	}
+	public QGradient_Type Type()
+	{
+		return CQt.QGradient_Type((.)this.ptr);
+	}
+	public void SetSpread(QGradient_Spread spread)
+	{
+		CQt.QGradient_SetSpread((.)this.ptr, spread);
+	}
+	public QGradient_Spread Spread()
+	{
+		return CQt.QGradient_Spread((.)this.ptr);
+	}
+	public void SetColorAt(double pos, QColor_Ptr* color)
+	{
+		CQt.QGradient_SetColorAt((.)this.ptr, pos, color);
+	}
+	public void SetStops(void** stops)
+	{
+		CQt.QGradient_SetStops((.)this.ptr, stops);
+	}
+	public void* Stops()
+	{
+		return CQt.QGradient_Stops((.)this.ptr);
+	}
+	public QGradient_CoordinateMode CoordinateMode()
+	{
+		return CQt.QGradient_CoordinateMode((.)this.ptr);
+	}
+	public void SetCoordinateMode(QGradient_CoordinateMode mode)
+	{
+		CQt.QGradient_SetCoordinateMode((.)this.ptr, mode);
+	}
+	public QGradient_InterpolationMode InterpolationMode()
+	{
+		return CQt.QGradient_InterpolationMode((.)this.ptr);
+	}
+	public void SetInterpolationMode(QGradient_InterpolationMode mode)
+	{
+		CQt.QGradient_SetInterpolationMode((.)this.ptr, mode);
 	}
 }
 interface IQConicalGradient

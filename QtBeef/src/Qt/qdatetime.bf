@@ -148,131 +148,131 @@ class QDate
 	}
 	public bool IsNull()
 	{
-		return CQt.QDate_IsNull(this.ptr);
+		return CQt.QDate_IsNull((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QDate_IsValid(this.ptr);
+		return CQt.QDate_IsValid((.)this.ptr);
 	}
 	public c_int Year()
 	{
-		return CQt.QDate_Year(this.ptr);
+		return CQt.QDate_Year((.)this.ptr);
 	}
 	public c_int Month()
 	{
-		return CQt.QDate_Month(this.ptr);
+		return CQt.QDate_Month((.)this.ptr);
 	}
 	public c_int Day()
 	{
-		return CQt.QDate_Day(this.ptr);
+		return CQt.QDate_Day((.)this.ptr);
 	}
 	public c_int DayOfWeek()
 	{
-		return CQt.QDate_DayOfWeek(this.ptr);
+		return CQt.QDate_DayOfWeek((.)this.ptr);
 	}
 	public c_int DayOfYear()
 	{
-		return CQt.QDate_DayOfYear(this.ptr);
+		return CQt.QDate_DayOfYear((.)this.ptr);
 	}
 	public c_int DaysInMonth()
 	{
-		return CQt.QDate_DaysInMonth(this.ptr);
+		return CQt.QDate_DaysInMonth((.)this.ptr);
 	}
 	public c_int DaysInYear()
 	{
-		return CQt.QDate_DaysInYear(this.ptr);
+		return CQt.QDate_DaysInYear((.)this.ptr);
 	}
 	public c_int WeekNumber()
 	{
-		return CQt.QDate_WeekNumber(this.ptr);
+		return CQt.QDate_WeekNumber((.)this.ptr);
 	}
 	public c_int Year2(QCalendar_Ptr cal)
 	{
-		return CQt.QDate_Year2(this.ptr, cal);
+		return CQt.QDate_Year2((.)this.ptr, cal);
 	}
 	public c_int Month2(QCalendar_Ptr cal)
 	{
-		return CQt.QDate_Month2(this.ptr, cal);
+		return CQt.QDate_Month2((.)this.ptr, cal);
 	}
 	public c_int Day2(QCalendar_Ptr cal)
 	{
-		return CQt.QDate_Day2(this.ptr, cal);
+		return CQt.QDate_Day2((.)this.ptr, cal);
 	}
 	public c_int DayOfWeek2(QCalendar_Ptr cal)
 	{
-		return CQt.QDate_DayOfWeek2(this.ptr, cal);
+		return CQt.QDate_DayOfWeek2((.)this.ptr, cal);
 	}
 	public c_int DayOfYear2(QCalendar_Ptr cal)
 	{
-		return CQt.QDate_DayOfYear2(this.ptr, cal);
+		return CQt.QDate_DayOfYear2((.)this.ptr, cal);
 	}
 	public c_int DaysInMonth2(QCalendar_Ptr cal)
 	{
-		return CQt.QDate_DaysInMonth2(this.ptr, cal);
+		return CQt.QDate_DaysInMonth2((.)this.ptr, cal);
 	}
 	public c_int DaysInYear2(QCalendar_Ptr cal)
 	{
-		return CQt.QDate_DaysInYear2(this.ptr, cal);
+		return CQt.QDate_DaysInYear2((.)this.ptr, cal);
 	}
 	public QDateTime_Ptr StartOfDay()
 	{
-		return CQt.QDate_StartOfDay(this.ptr);
+		return CQt.QDate_StartOfDay((.)this.ptr);
 	}
 	public QDateTime_Ptr EndOfDay()
 	{
-		return CQt.QDate_EndOfDay(this.ptr);
+		return CQt.QDate_EndOfDay((.)this.ptr);
 	}
 	public QDateTime_Ptr StartOfDay2(QTimeZone_Ptr* zone)
 	{
-		return CQt.QDate_StartOfDay2(this.ptr, zone);
+		return CQt.QDate_StartOfDay2((.)this.ptr, zone);
 	}
 	public QDateTime_Ptr EndOfDay2(QTimeZone_Ptr* zone)
 	{
-		return CQt.QDate_EndOfDay2(this.ptr, zone);
+		return CQt.QDate_EndOfDay2((.)this.ptr, zone);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QDate_ToString(this.ptr);
+		return CQt.QDate_ToString((.)this.ptr);
 	}
 	public libqt_string ToString2(libqt_string* format)
 	{
-		return CQt.QDate_ToString2(this.ptr, format);
+		return CQt.QDate_ToString2((.)this.ptr, format);
 	}
 	public bool SetDate(c_int year, c_int month, c_int day)
 	{
-		return CQt.QDate_SetDate(this.ptr, year, month, day);
+		return CQt.QDate_SetDate((.)this.ptr, year, month, day);
 	}
 	public bool SetDate2(c_int year, c_int month, c_int day, QCalendar_Ptr cal)
 	{
-		return CQt.QDate_SetDate2(this.ptr, year, month, day, cal);
+		return CQt.QDate_SetDate2((.)this.ptr, year, month, day, cal);
 	}
 	public void GetDate(c_int* year, c_int* month, c_int* day)
 	{
-		CQt.QDate_GetDate(this.ptr, year, month, day);
+		CQt.QDate_GetDate((.)this.ptr, year, month, day);
 	}
 	public QDate_Ptr AddDays(c_longlong days)
 	{
-		return CQt.QDate_AddDays(this.ptr, days);
+		return CQt.QDate_AddDays((.)this.ptr, days);
 	}
 	public QDate_Ptr AddMonths(c_int months)
 	{
-		return CQt.QDate_AddMonths(this.ptr, months);
+		return CQt.QDate_AddMonths((.)this.ptr, months);
 	}
 	public QDate_Ptr AddYears(c_int years)
 	{
-		return CQt.QDate_AddYears(this.ptr, years);
+		return CQt.QDate_AddYears((.)this.ptr, years);
 	}
 	public QDate_Ptr AddMonths2(c_int months, QCalendar_Ptr cal)
 	{
-		return CQt.QDate_AddMonths2(this.ptr, months, cal);
+		return CQt.QDate_AddMonths2((.)this.ptr, months, cal);
 	}
 	public QDate_Ptr AddYears2(c_int years, QCalendar_Ptr cal)
 	{
-		return CQt.QDate_AddYears2(this.ptr, years, cal);
+		return CQt.QDate_AddYears2((.)this.ptr, years, cal);
 	}
 	public c_longlong DaysTo(QDate_Ptr d)
 	{
-		return CQt.QDate_DaysTo(this.ptr, d);
+		return CQt.QDate_DaysTo((.)this.ptr, d);
 	}
 	public QDate_Ptr CurrentDate()
 	{
@@ -300,35 +300,35 @@ class QDate
 	}
 	public c_longlong ToJulianDay()
 	{
-		return CQt.QDate_ToJulianDay(this.ptr);
+		return CQt.QDate_ToJulianDay((.)this.ptr);
 	}
 	public c_int WeekNumber1(c_int* yearNum)
 	{
-		return CQt.QDate_WeekNumber1(this.ptr, yearNum);
+		return CQt.QDate_WeekNumber1((.)this.ptr, yearNum);
 	}
 	public QDateTime_Ptr StartOfDay1(Qt_TimeSpec spec)
 	{
-		return CQt.QDate_StartOfDay1(this.ptr, spec);
+		return CQt.QDate_StartOfDay1((.)this.ptr, spec);
 	}
 	public QDateTime_Ptr StartOfDay22(Qt_TimeSpec spec, c_int offsetSeconds)
 	{
-		return CQt.QDate_StartOfDay22(this.ptr, spec, offsetSeconds);
+		return CQt.QDate_StartOfDay22((.)this.ptr, spec, offsetSeconds);
 	}
 	public QDateTime_Ptr EndOfDay1(Qt_TimeSpec spec)
 	{
-		return CQt.QDate_EndOfDay1(this.ptr, spec);
+		return CQt.QDate_EndOfDay1((.)this.ptr, spec);
 	}
 	public QDateTime_Ptr EndOfDay22(Qt_TimeSpec spec, c_int offsetSeconds)
 	{
-		return CQt.QDate_EndOfDay22(this.ptr, spec, offsetSeconds);
+		return CQt.QDate_EndOfDay22((.)this.ptr, spec, offsetSeconds);
 	}
 	public libqt_string ToString1(Qt_DateFormat format)
 	{
-		return CQt.QDate_ToString1(this.ptr, format);
+		return CQt.QDate_ToString1((.)this.ptr, format);
 	}
 	public libqt_string ToString22(libqt_string* format, QCalendar_Ptr cal)
 	{
-		return CQt.QDate_ToString22(this.ptr, format, cal);
+		return CQt.QDate_ToString22((.)this.ptr, format, cal);
 	}
 	public QDate_Ptr FromString23(libqt_string* stringVal, Qt_DateFormat format)
 	{
@@ -491,55 +491,55 @@ class QTime
 	}
 	public bool IsNull()
 	{
-		return CQt.QTime_IsNull(this.ptr);
+		return CQt.QTime_IsNull((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QTime_IsValid(this.ptr);
+		return CQt.QTime_IsValid((.)this.ptr);
 	}
 	public c_int Hour()
 	{
-		return CQt.QTime_Hour(this.ptr);
+		return CQt.QTime_Hour((.)this.ptr);
 	}
 	public c_int Minute()
 	{
-		return CQt.QTime_Minute(this.ptr);
+		return CQt.QTime_Minute((.)this.ptr);
 	}
 	public c_int Second()
 	{
-		return CQt.QTime_Second(this.ptr);
+		return CQt.QTime_Second((.)this.ptr);
 	}
 	public c_int Msec()
 	{
-		return CQt.QTime_Msec(this.ptr);
+		return CQt.QTime_Msec((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QTime_ToString(this.ptr);
+		return CQt.QTime_ToString((.)this.ptr);
 	}
 	public libqt_string ToString2(libqt_string* format)
 	{
-		return CQt.QTime_ToString2(this.ptr, format);
+		return CQt.QTime_ToString2((.)this.ptr, format);
 	}
 	public bool SetHMS(c_int h, c_int m, c_int s)
 	{
-		return CQt.QTime_SetHMS(this.ptr, h, m, s);
+		return CQt.QTime_SetHMS((.)this.ptr, h, m, s);
 	}
 	public QTime_Ptr AddSecs(c_int secs)
 	{
-		return CQt.QTime_AddSecs(this.ptr, secs);
+		return CQt.QTime_AddSecs((.)this.ptr, secs);
 	}
 	public c_int SecsTo(QTime_Ptr t)
 	{
-		return CQt.QTime_SecsTo(this.ptr, t);
+		return CQt.QTime_SecsTo((.)this.ptr, t);
 	}
 	public QTime_Ptr AddMSecs(c_int ms)
 	{
-		return CQt.QTime_AddMSecs(this.ptr, ms);
+		return CQt.QTime_AddMSecs((.)this.ptr, ms);
 	}
 	public c_int MsecsTo(QTime_Ptr t)
 	{
-		return CQt.QTime_MsecsTo(this.ptr, t);
+		return CQt.QTime_MsecsTo((.)this.ptr, t);
 	}
 	public QTime_Ptr FromMSecsSinceStartOfDay(c_int msecs)
 	{
@@ -547,7 +547,7 @@ class QTime
 	}
 	public c_int MsecsSinceStartOfDay()
 	{
-		return CQt.QTime_MsecsSinceStartOfDay(this.ptr);
+		return CQt.QTime_MsecsSinceStartOfDay((.)this.ptr);
 	}
 	public QTime_Ptr CurrentTime()
 	{
@@ -567,11 +567,11 @@ class QTime
 	}
 	public libqt_string ToString1(Qt_DateFormat f)
 	{
-		return CQt.QTime_ToString1(this.ptr, f);
+		return CQt.QTime_ToString1((.)this.ptr, f);
 	}
 	public bool SetHMS4(c_int h, c_int m, c_int s, c_int ms)
 	{
-		return CQt.QTime_SetHMS4(this.ptr, h, m, s, ms);
+		return CQt.QTime_SetHMS4((.)this.ptr, h, m, s, ms);
 	}
 	public QTime_Ptr FromString23(libqt_string* stringVal, Qt_DateFormat format)
 	{
@@ -777,143 +777,143 @@ class QDateTime
 	}
 	public void Swap(QDateTime_Ptr* other)
 	{
-		CQt.QDateTime_Swap(this.ptr, other);
+		CQt.QDateTime_Swap((.)this.ptr, other);
 	}
 	public bool IsNull()
 	{
-		return CQt.QDateTime_IsNull(this.ptr);
+		return CQt.QDateTime_IsNull((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QDateTime_IsValid(this.ptr);
+		return CQt.QDateTime_IsValid((.)this.ptr);
 	}
 	public QDate_Ptr Date()
 	{
-		return CQt.QDateTime_Date(this.ptr);
+		return CQt.QDateTime_Date((.)this.ptr);
 	}
 	public QTime_Ptr Time()
 	{
-		return CQt.QDateTime_Time(this.ptr);
+		return CQt.QDateTime_Time((.)this.ptr);
 	}
 	public Qt_TimeSpec TimeSpec()
 	{
-		return CQt.QDateTime_TimeSpec(this.ptr);
+		return CQt.QDateTime_TimeSpec((.)this.ptr);
 	}
 	public c_int OffsetFromUtc()
 	{
-		return CQt.QDateTime_OffsetFromUtc(this.ptr);
+		return CQt.QDateTime_OffsetFromUtc((.)this.ptr);
 	}
 	public QTimeZone_Ptr TimeZone()
 	{
-		return CQt.QDateTime_TimeZone(this.ptr);
+		return CQt.QDateTime_TimeZone((.)this.ptr);
 	}
 	public libqt_string TimeZoneAbbreviation()
 	{
-		return CQt.QDateTime_TimeZoneAbbreviation(this.ptr);
+		return CQt.QDateTime_TimeZoneAbbreviation((.)this.ptr);
 	}
 	public bool IsDaylightTime()
 	{
-		return CQt.QDateTime_IsDaylightTime(this.ptr);
+		return CQt.QDateTime_IsDaylightTime((.)this.ptr);
 	}
 	public c_longlong ToMSecsSinceEpoch()
 	{
-		return CQt.QDateTime_ToMSecsSinceEpoch(this.ptr);
+		return CQt.QDateTime_ToMSecsSinceEpoch((.)this.ptr);
 	}
 	public c_longlong ToSecsSinceEpoch()
 	{
-		return CQt.QDateTime_ToSecsSinceEpoch(this.ptr);
+		return CQt.QDateTime_ToSecsSinceEpoch((.)this.ptr);
 	}
 	public void SetDate(QDate_Ptr date)
 	{
-		CQt.QDateTime_SetDate(this.ptr, date);
+		CQt.QDateTime_SetDate((.)this.ptr, date);
 	}
 	public void SetTime(QTime_Ptr time)
 	{
-		CQt.QDateTime_SetTime(this.ptr, time);
+		CQt.QDateTime_SetTime((.)this.ptr, time);
 	}
 	public void SetTimeSpec(Qt_TimeSpec spec)
 	{
-		CQt.QDateTime_SetTimeSpec(this.ptr, spec);
+		CQt.QDateTime_SetTimeSpec((.)this.ptr, spec);
 	}
 	public void SetOffsetFromUtc(c_int offsetSeconds)
 	{
-		CQt.QDateTime_SetOffsetFromUtc(this.ptr, offsetSeconds);
+		CQt.QDateTime_SetOffsetFromUtc((.)this.ptr, offsetSeconds);
 	}
 	public void SetTimeZone(QTimeZone_Ptr* toZone)
 	{
-		CQt.QDateTime_SetTimeZone(this.ptr, toZone);
+		CQt.QDateTime_SetTimeZone((.)this.ptr, toZone);
 	}
 	public void SetMSecsSinceEpoch(c_longlong msecs)
 	{
-		CQt.QDateTime_SetMSecsSinceEpoch(this.ptr, msecs);
+		CQt.QDateTime_SetMSecsSinceEpoch((.)this.ptr, msecs);
 	}
 	public void SetSecsSinceEpoch(c_longlong secs)
 	{
-		CQt.QDateTime_SetSecsSinceEpoch(this.ptr, secs);
+		CQt.QDateTime_SetSecsSinceEpoch((.)this.ptr, secs);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QDateTime_ToString(this.ptr);
+		return CQt.QDateTime_ToString((.)this.ptr);
 	}
 	public libqt_string ToString2(libqt_string* format)
 	{
-		return CQt.QDateTime_ToString2(this.ptr, format);
+		return CQt.QDateTime_ToString2((.)this.ptr, format);
 	}
 	public QDateTime_Ptr AddDays(c_longlong days)
 	{
-		return CQt.QDateTime_AddDays(this.ptr, days);
+		return CQt.QDateTime_AddDays((.)this.ptr, days);
 	}
 	public QDateTime_Ptr AddMonths(c_int months)
 	{
-		return CQt.QDateTime_AddMonths(this.ptr, months);
+		return CQt.QDateTime_AddMonths((.)this.ptr, months);
 	}
 	public QDateTime_Ptr AddYears(c_int years)
 	{
-		return CQt.QDateTime_AddYears(this.ptr, years);
+		return CQt.QDateTime_AddYears((.)this.ptr, years);
 	}
 	public QDateTime_Ptr AddSecs(c_longlong secs)
 	{
-		return CQt.QDateTime_AddSecs(this.ptr, secs);
+		return CQt.QDateTime_AddSecs((.)this.ptr, secs);
 	}
 	public QDateTime_Ptr AddMSecs(c_longlong msecs)
 	{
-		return CQt.QDateTime_AddMSecs(this.ptr, msecs);
+		return CQt.QDateTime_AddMSecs((.)this.ptr, msecs);
 	}
 	public QDateTime_Ptr AddDuration(void* msecs)
 	{
-		return CQt.QDateTime_AddDuration(this.ptr, msecs);
+		return CQt.QDateTime_AddDuration((.)this.ptr, msecs);
 	}
 	public QDateTime_Ptr ToTimeSpec(Qt_TimeSpec spec)
 	{
-		return CQt.QDateTime_ToTimeSpec(this.ptr, spec);
+		return CQt.QDateTime_ToTimeSpec((.)this.ptr, spec);
 	}
 	public QDateTime_Ptr ToLocalTime()
 	{
-		return CQt.QDateTime_ToLocalTime(this.ptr);
+		return CQt.QDateTime_ToLocalTime((.)this.ptr);
 	}
 	public QDateTime_Ptr ToUTC()
 	{
-		return CQt.QDateTime_ToUTC(this.ptr);
+		return CQt.QDateTime_ToUTC((.)this.ptr);
 	}
 	public QDateTime_Ptr ToOffsetFromUtc(c_int offsetSeconds)
 	{
-		return CQt.QDateTime_ToOffsetFromUtc(this.ptr, offsetSeconds);
+		return CQt.QDateTime_ToOffsetFromUtc((.)this.ptr, offsetSeconds);
 	}
 	public QDateTime_Ptr ToTimeZone(QTimeZone_Ptr* toZone)
 	{
-		return CQt.QDateTime_ToTimeZone(this.ptr, toZone);
+		return CQt.QDateTime_ToTimeZone((.)this.ptr, toZone);
 	}
 	public c_longlong DaysTo(QDateTime_Ptr* param1)
 	{
-		return CQt.QDateTime_DaysTo(this.ptr, param1);
+		return CQt.QDateTime_DaysTo((.)this.ptr, param1);
 	}
 	public c_longlong SecsTo(QDateTime_Ptr* param1)
 	{
-		return CQt.QDateTime_SecsTo(this.ptr, param1);
+		return CQt.QDateTime_SecsTo((.)this.ptr, param1);
 	}
 	public c_longlong MsecsTo(QDateTime_Ptr* param1)
 	{
-		return CQt.QDateTime_MsecsTo(this.ptr, param1);
+		return CQt.QDateTime_MsecsTo((.)this.ptr, param1);
 	}
 	public QDateTime_Ptr CurrentDateTime()
 	{
@@ -957,11 +957,11 @@ class QDateTime
 	}
 	public libqt_string ToString1(Qt_DateFormat format)
 	{
-		return CQt.QDateTime_ToString1(this.ptr, format);
+		return CQt.QDateTime_ToString1((.)this.ptr, format);
 	}
 	public libqt_string ToString22(libqt_string* format, QCalendar_Ptr cal)
 	{
-		return CQt.QDateTime_ToString22(this.ptr, format, cal);
+		return CQt.QDateTime_ToString22((.)this.ptr, format, cal);
 	}
 	public QDateTime_Ptr FromString23(libqt_string* stringVal, Qt_DateFormat format)
 	{

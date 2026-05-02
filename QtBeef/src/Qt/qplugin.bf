@@ -38,15 +38,15 @@ class QStaticPlugin
 	}
 	public c_intptr* Instance()
 	{
-		return CQt.QStaticPlugin_Instance(this.ptr);
+		return CQt.QStaticPlugin_Instance((.)this.ptr);
 	}
 	public void SetInstance(c_intptr* instance)
 	{
-		CQt.QStaticPlugin_SetInstance(this.ptr, instance);
+		CQt.QStaticPlugin_SetInstance((.)this.ptr, instance);
 	}
 	public QJsonObject_Ptr MetaData()
 	{
-		return CQt.QStaticPlugin_MetaData(this.ptr);
+		return CQt.QStaticPlugin_MetaData((.)this.ptr);
 	}
 }
 interface IQStaticPlugin

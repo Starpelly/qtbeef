@@ -98,7 +98,7 @@ class QJsonObject
 	}
 	public void Swap(QJsonObject_Ptr* other)
 	{
-		CQt.QJsonObject_Swap(this.ptr, other);
+		CQt.QJsonObject_Swap((.)this.ptr, other);
 	}
 	public QJsonObject_Ptr FromVariantMap(void** mapVal)
 	{
@@ -106,7 +106,7 @@ class QJsonObject
 	}
 	public void* ToVariantMap()
 	{
-		return CQt.QJsonObject_ToVariantMap(this.ptr);
+		return CQt.QJsonObject_ToVariantMap((.)this.ptr);
 	}
 	public QJsonObject_Ptr FromVariantHash(void** mapVal)
 	{
@@ -114,95 +114,95 @@ class QJsonObject
 	}
 	public void* ToVariantHash()
 	{
-		return CQt.QJsonObject_ToVariantHash(this.ptr);
+		return CQt.QJsonObject_ToVariantHash((.)this.ptr);
 	}
 	public void* Keys()
 	{
-		return CQt.QJsonObject_Keys(this.ptr);
+		return CQt.QJsonObject_Keys((.)this.ptr);
 	}
 	public void* Size()
 	{
-		return CQt.QJsonObject_Size(this.ptr);
+		return CQt.QJsonObject_Size((.)this.ptr);
 	}
 	public void* Count()
 	{
-		return CQt.QJsonObject_Count(this.ptr);
+		return CQt.QJsonObject_Count((.)this.ptr);
 	}
 	public void* Length()
 	{
-		return CQt.QJsonObject_Length(this.ptr);
+		return CQt.QJsonObject_Length((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QJsonObject_IsEmpty(this.ptr);
+		return CQt.QJsonObject_IsEmpty((.)this.ptr);
 	}
 	public QJsonValue_Ptr Value(libqt_string* key)
 	{
-		return CQt.QJsonObject_Value(this.ptr, key);
+		return CQt.QJsonObject_Value((.)this.ptr, key);
 	}
 	public QJsonValueRef_Ptr OperatorSubscript2(libqt_string* key)
 	{
-		return CQt.QJsonObject_OperatorSubscript2(this.ptr, key);
+		return CQt.QJsonObject_OperatorSubscript2((.)this.ptr, key);
 	}
 	public void Remove(libqt_string* key)
 	{
-		CQt.QJsonObject_Remove(this.ptr, key);
+		CQt.QJsonObject_Remove((.)this.ptr, key);
 	}
 	public QJsonValue_Ptr Take(libqt_string* key)
 	{
-		return CQt.QJsonObject_Take(this.ptr, key);
+		return CQt.QJsonObject_Take((.)this.ptr, key);
 	}
 	public bool Contains(libqt_string* key)
 	{
-		return CQt.QJsonObject_Contains(this.ptr, key);
+		return CQt.QJsonObject_Contains((.)this.ptr, key);
 	}
 	public QJsonObject_iterator Begin()
 	{
-		return CQt.QJsonObject_Begin(this.ptr);
+		return CQt.QJsonObject_Begin((.)this.ptr);
 	}
 	public QJsonObject_const_iterator Begin2()
 	{
-		return CQt.QJsonObject_Begin2(this.ptr);
+		return CQt.QJsonObject_Begin2((.)this.ptr);
 	}
 	public QJsonObject_const_iterator ConstBegin()
 	{
-		return CQt.QJsonObject_ConstBegin(this.ptr);
+		return CQt.QJsonObject_ConstBegin((.)this.ptr);
 	}
 	public QJsonObject_iterator End()
 	{
-		return CQt.QJsonObject_End(this.ptr);
+		return CQt.QJsonObject_End((.)this.ptr);
 	}
 	public QJsonObject_const_iterator End2()
 	{
-		return CQt.QJsonObject_End2(this.ptr);
+		return CQt.QJsonObject_End2((.)this.ptr);
 	}
 	public QJsonObject_const_iterator ConstEnd()
 	{
-		return CQt.QJsonObject_ConstEnd(this.ptr);
+		return CQt.QJsonObject_ConstEnd((.)this.ptr);
 	}
 	public QJsonObject_iterator Erase(QJsonObject_iterator it)
 	{
-		return CQt.QJsonObject_Erase(this.ptr, it);
+		return CQt.QJsonObject_Erase((.)this.ptr, it);
 	}
 	public QJsonObject_iterator Find(libqt_string* key)
 	{
-		return CQt.QJsonObject_Find(this.ptr, key);
+		return CQt.QJsonObject_Find((.)this.ptr, key);
 	}
 	public QJsonObject_const_iterator Find2(libqt_string* key)
 	{
-		return CQt.QJsonObject_Find2(this.ptr, key);
+		return CQt.QJsonObject_Find2((.)this.ptr, key);
 	}
 	public QJsonObject_const_iterator ConstFind(libqt_string* key)
 	{
-		return CQt.QJsonObject_ConstFind(this.ptr, key);
+		return CQt.QJsonObject_ConstFind((.)this.ptr, key);
 	}
 	public QJsonObject_iterator Insert(libqt_string* key, QJsonValue_Ptr* value)
 	{
-		return CQt.QJsonObject_Insert(this.ptr, key, value);
+		return CQt.QJsonObject_Insert((.)this.ptr, key, value);
 	}
 	public bool Empty()
 	{
-		return CQt.QJsonObject_Empty(this.ptr);
+		return CQt.QJsonObject_Empty((.)this.ptr);
 	}
 }
 interface IQJsonObject
@@ -332,51 +332,51 @@ class QJsonObject_iterator
 	}
 	public libqt_string Key()
 	{
-		return CQt.QJsonObject_Iterator_Key(this.ptr);
+		return CQt.QJsonObject_Iterator_Key((.)this.ptr);
 	}
 	public QJsonValueRef_Ptr Value()
 	{
-		return CQt.QJsonObject_Iterator_Value(this.ptr);
+		return CQt.QJsonObject_Iterator_Value((.)this.ptr);
 	}
 	public QJsonValueRef_Ptr* OperatorMinusGreater2()
 	{
-		return CQt.QJsonObject_Iterator_OperatorMinusGreater2(this.ptr);
+		return CQt.QJsonObject_Iterator_OperatorMinusGreater2((.)this.ptr);
 	}
 	public QJsonObject_iterator OperatorPlusPlus2(c_int param1)
 	{
-		return CQt.QJsonObject_Iterator_OperatorPlusPlus2(this.ptr, param1);
+		return CQt.QJsonObject_Iterator_OperatorPlusPlus2((.)this.ptr, param1);
 	}
 	public QJsonObject_iterator OperatorMinusMinus2(c_int param1)
 	{
-		return CQt.QJsonObject_Iterator_OperatorMinusMinus2(this.ptr, param1);
+		return CQt.QJsonObject_Iterator_OperatorMinusMinus2((.)this.ptr, param1);
 	}
 	public void* OperatorMinus2(QJsonObject_iterator j)
 	{
-		return CQt.QJsonObject_Iterator_OperatorMinus2(this.ptr, j);
+		return CQt.QJsonObject_Iterator_OperatorMinus2((.)this.ptr, j);
 	}
 	public bool OperatorEqual2(QJsonObject_const_iterator* other)
 	{
-		return CQt.QJsonObject_Iterator_OperatorEqual2(this.ptr, other);
+		return CQt.QJsonObject_Iterator_OperatorEqual2((.)this.ptr, other);
 	}
 	public bool OperatorNotEqual2(QJsonObject_const_iterator* other)
 	{
-		return CQt.QJsonObject_Iterator_OperatorNotEqual2(this.ptr, other);
+		return CQt.QJsonObject_Iterator_OperatorNotEqual2((.)this.ptr, other);
 	}
 	public bool OperatorLesser2(QJsonObject_const_iterator* other)
 	{
-		return CQt.QJsonObject_Iterator_OperatorLesser2(this.ptr, other);
+		return CQt.QJsonObject_Iterator_OperatorLesser2((.)this.ptr, other);
 	}
 	public bool OperatorLesserOrEqual2(QJsonObject_const_iterator* other)
 	{
-		return CQt.QJsonObject_Iterator_OperatorLesserOrEqual2(this.ptr, other);
+		return CQt.QJsonObject_Iterator_OperatorLesserOrEqual2((.)this.ptr, other);
 	}
 	public bool OperatorGreater2(QJsonObject_const_iterator* other)
 	{
-		return CQt.QJsonObject_Iterator_OperatorGreater2(this.ptr, other);
+		return CQt.QJsonObject_Iterator_OperatorGreater2((.)this.ptr, other);
 	}
 	public bool OperatorGreaterOrEqual2(QJsonObject_const_iterator* other)
 	{
-		return CQt.QJsonObject_Iterator_OperatorGreaterOrEqual2(this.ptr, other);
+		return CQt.QJsonObject_Iterator_OperatorGreaterOrEqual2((.)this.ptr, other);
 	}
 }
 interface IQJsonObject_iterator
@@ -495,47 +495,47 @@ class QJsonObject_const_iterator
 	}
 	public libqt_string Key()
 	{
-		return CQt.QJsonObject_Const_Iterator_Key(this.ptr);
+		return CQt.QJsonObject_Const_Iterator_Key((.)this.ptr);
 	}
 	public QJsonValueConstRef_Ptr Value()
 	{
-		return CQt.QJsonObject_Const_Iterator_Value(this.ptr);
+		return CQt.QJsonObject_Const_Iterator_Value((.)this.ptr);
 	}
 	public QJsonObject_const_iterator OperatorPlusPlus2(c_int param1)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorPlusPlus2(this.ptr, param1);
+		return CQt.QJsonObject_Const_Iterator_OperatorPlusPlus2((.)this.ptr, param1);
 	}
 	public QJsonObject_const_iterator OperatorMinusMinus2(c_int param1)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorMinusMinus2(this.ptr, param1);
+		return CQt.QJsonObject_Const_Iterator_OperatorMinusMinus2((.)this.ptr, param1);
 	}
 	public void* OperatorMinus2(QJsonObject_const_iterator j)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorMinus2(this.ptr, j);
+		return CQt.QJsonObject_Const_Iterator_OperatorMinus2((.)this.ptr, j);
 	}
 	public bool OperatorEqual2(QJsonObject_iterator* other)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorEqual2(this.ptr, other);
+		return CQt.QJsonObject_Const_Iterator_OperatorEqual2((.)this.ptr, other);
 	}
 	public bool OperatorNotEqual2(QJsonObject_iterator* other)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorNotEqual2(this.ptr, other);
+		return CQt.QJsonObject_Const_Iterator_OperatorNotEqual2((.)this.ptr, other);
 	}
 	public bool OperatorLesser2(QJsonObject_iterator* other)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorLesser2(this.ptr, other);
+		return CQt.QJsonObject_Const_Iterator_OperatorLesser2((.)this.ptr, other);
 	}
 	public bool OperatorLesserOrEqual2(QJsonObject_iterator* other)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorLesserOrEqual2(this.ptr, other);
+		return CQt.QJsonObject_Const_Iterator_OperatorLesserOrEqual2((.)this.ptr, other);
 	}
 	public bool OperatorGreater2(QJsonObject_iterator* other)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorGreater2(this.ptr, other);
+		return CQt.QJsonObject_Const_Iterator_OperatorGreater2((.)this.ptr, other);
 	}
 	public bool OperatorGreaterOrEqual2(QJsonObject_iterator* other)
 	{
-		return CQt.QJsonObject_Const_Iterator_OperatorGreaterOrEqual2(this.ptr, other);
+		return CQt.QJsonObject_Const_Iterator_OperatorGreaterOrEqual2((.)this.ptr, other);
 	}
 }
 interface IQJsonObject_const_iterator

@@ -124,55 +124,55 @@ class QDeadlineTimer
 	}
 	public void Swap(QDeadlineTimer_Ptr* other)
 	{
-		CQt.QDeadlineTimer_Swap(this.ptr, other);
+		CQt.QDeadlineTimer_Swap((.)this.ptr, other);
 	}
 	public bool IsForever()
 	{
-		return CQt.QDeadlineTimer_IsForever(this.ptr);
+		return CQt.QDeadlineTimer_IsForever((.)this.ptr);
 	}
 	public bool HasExpired()
 	{
-		return CQt.QDeadlineTimer_HasExpired(this.ptr);
+		return CQt.QDeadlineTimer_HasExpired((.)this.ptr);
 	}
 	public Qt_TimerType TimerType()
 	{
-		return CQt.QDeadlineTimer_TimerType(this.ptr);
+		return CQt.QDeadlineTimer_TimerType((.)this.ptr);
 	}
 	public void SetTimerType(Qt_TimerType type)
 	{
-		CQt.QDeadlineTimer_SetTimerType(this.ptr, type);
+		CQt.QDeadlineTimer_SetTimerType((.)this.ptr, type);
 	}
 	public c_longlong RemainingTime()
 	{
-		return CQt.QDeadlineTimer_RemainingTime(this.ptr);
+		return CQt.QDeadlineTimer_RemainingTime((.)this.ptr);
 	}
 	public c_longlong RemainingTimeNSecs()
 	{
-		return CQt.QDeadlineTimer_RemainingTimeNSecs(this.ptr);
+		return CQt.QDeadlineTimer_RemainingTimeNSecs((.)this.ptr);
 	}
 	public void SetRemainingTime(c_longlong msecs)
 	{
-		CQt.QDeadlineTimer_SetRemainingTime(this.ptr, msecs);
+		CQt.QDeadlineTimer_SetRemainingTime((.)this.ptr, msecs);
 	}
 	public void SetPreciseRemainingTime(c_longlong secs)
 	{
-		CQt.QDeadlineTimer_SetPreciseRemainingTime(this.ptr, secs);
+		CQt.QDeadlineTimer_SetPreciseRemainingTime((.)this.ptr, secs);
 	}
 	public c_longlong Deadline()
 	{
-		return CQt.QDeadlineTimer_Deadline(this.ptr);
+		return CQt.QDeadlineTimer_Deadline((.)this.ptr);
 	}
 	public c_longlong DeadlineNSecs()
 	{
-		return CQt.QDeadlineTimer_DeadlineNSecs(this.ptr);
+		return CQt.QDeadlineTimer_DeadlineNSecs((.)this.ptr);
 	}
 	public void SetDeadline(c_longlong msecs)
 	{
-		CQt.QDeadlineTimer_SetDeadline(this.ptr, msecs);
+		CQt.QDeadlineTimer_SetDeadline((.)this.ptr, msecs);
 	}
 	public void SetPreciseDeadline(c_longlong secs)
 	{
-		CQt.QDeadlineTimer_SetPreciseDeadline(this.ptr, secs);
+		CQt.QDeadlineTimer_SetPreciseDeadline((.)this.ptr, secs);
 	}
 	public QDeadlineTimer_Ptr AddNSecs(QDeadlineTimer_Ptr dt, c_longlong nsecs)
 	{
@@ -184,35 +184,35 @@ class QDeadlineTimer
 	}
 	public void* RemainingTimeAsDuration()
 	{
-		return CQt.QDeadlineTimer_RemainingTimeAsDuration(this.ptr);
+		return CQt.QDeadlineTimer_RemainingTimeAsDuration((.)this.ptr);
 	}
 	public void* _q_data()
 	{
-		return CQt.QDeadlineTimer__Q_Data(this.ptr);
+		return CQt.QDeadlineTimer__Q_Data((.)this.ptr);
 	}
 	public void SetRemainingTime2(c_longlong msecs, Qt_TimerType type)
 	{
-		CQt.QDeadlineTimer_SetRemainingTime2(this.ptr, msecs, type);
+		CQt.QDeadlineTimer_SetRemainingTime2((.)this.ptr, msecs, type);
 	}
 	public void SetPreciseRemainingTime2(c_longlong secs, c_longlong nsecs)
 	{
-		CQt.QDeadlineTimer_SetPreciseRemainingTime2(this.ptr, secs, nsecs);
+		CQt.QDeadlineTimer_SetPreciseRemainingTime2((.)this.ptr, secs, nsecs);
 	}
 	public void SetPreciseRemainingTime3(c_longlong secs, c_longlong nsecs, Qt_TimerType type)
 	{
-		CQt.QDeadlineTimer_SetPreciseRemainingTime3(this.ptr, secs, nsecs, type);
+		CQt.QDeadlineTimer_SetPreciseRemainingTime3((.)this.ptr, secs, nsecs, type);
 	}
 	public void SetDeadline2(c_longlong msecs, Qt_TimerType timerType)
 	{
-		CQt.QDeadlineTimer_SetDeadline2(this.ptr, msecs, timerType);
+		CQt.QDeadlineTimer_SetDeadline2((.)this.ptr, msecs, timerType);
 	}
 	public void SetPreciseDeadline2(c_longlong secs, c_longlong nsecs)
 	{
-		CQt.QDeadlineTimer_SetPreciseDeadline2(this.ptr, secs, nsecs);
+		CQt.QDeadlineTimer_SetPreciseDeadline2((.)this.ptr, secs, nsecs);
 	}
 	public void SetPreciseDeadline3(c_longlong secs, c_longlong nsecs, Qt_TimerType type)
 	{
-		CQt.QDeadlineTimer_SetPreciseDeadline3(this.ptr, secs, nsecs, type);
+		CQt.QDeadlineTimer_SetPreciseDeadline3((.)this.ptr, secs, nsecs, type);
 	}
 	public QDeadlineTimer_Ptr Current1(Qt_TimerType timerType)
 	{

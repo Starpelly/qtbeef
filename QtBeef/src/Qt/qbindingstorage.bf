@@ -67,15 +67,15 @@ class QBindingStorage
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QBindingStorage_IsEmpty(this.ptr);
+		return CQt.QBindingStorage_IsEmpty((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QBindingStorage_IsValid(this.ptr);
+		return CQt.QBindingStorage_IsValid((.)this.ptr);
 	}
 	public void RegisterDependency(QUntypedPropertyData_Ptr* data)
 	{
-		CQt.QBindingStorage_RegisterDependency(this.ptr, data);
+		CQt.QBindingStorage_RegisterDependency((.)this.ptr, data);
 	}
 }
 interface IQBindingStorage

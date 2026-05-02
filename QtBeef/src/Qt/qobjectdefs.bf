@@ -79,11 +79,11 @@ class QGenericArgument
 	}
 	public void* Data()
 	{
-		return CQt.QGenericArgument_Data(this.ptr);
+		return CQt.QGenericArgument_Data((.)this.ptr);
 	}
 	public c_char* Name()
 	{
-		return CQt.QGenericArgument_Name(this.ptr);
+		return CQt.QGenericArgument_Name((.)this.ptr);
 	}
 }
 interface IQGenericArgument
@@ -137,6 +137,14 @@ class QGenericReturnArgument
 	public ~this()
 	{
 		CQt.QGenericReturnArgument_Delete(this.ptr);
+	}
+	public void* Data()
+	{
+		return CQt.QGenericArgument_Data((.)this.ptr);
+	}
+	public c_char* Name()
+	{
+		return CQt.QGenericArgument_Name((.)this.ptr);
 	}
 }
 interface IQGenericReturnArgument
@@ -379,119 +387,119 @@ class QMetaObject
 	}
 	public c_char* ClassName()
 	{
-		return CQt.QMetaObject_ClassName(this.ptr);
+		return CQt.QMetaObject_ClassName((.)this.ptr);
 	}
 	public QMetaObject_Ptr* SuperClass()
 	{
-		return CQt.QMetaObject_SuperClass(this.ptr);
+		return CQt.QMetaObject_SuperClass((.)this.ptr);
 	}
 	public bool Inherits(QMetaObject_Ptr* metaObject)
 	{
-		return CQt.QMetaObject_Inherits(this.ptr, metaObject);
+		return CQt.QMetaObject_Inherits((.)this.ptr, metaObject);
 	}
 	public QObject_Ptr* Cast(QObject_Ptr* obj)
 	{
-		return CQt.QMetaObject_Cast(this.ptr, obj);
+		return CQt.QMetaObject_Cast((.)this.ptr, obj);
 	}
 	public QObject_Ptr* Cast2(QObject_Ptr* obj)
 	{
-		return CQt.QMetaObject_Cast2(this.ptr, obj);
+		return CQt.QMetaObject_Cast2((.)this.ptr, obj);
 	}
 	public libqt_string Tr(c_char* s, c_char* c)
 	{
-		return CQt.QMetaObject_Tr(this.ptr, s, c);
+		return CQt.QMetaObject_Tr((.)this.ptr, s, c);
 	}
 	public QMetaType_Ptr MetaType()
 	{
-		return CQt.QMetaObject_MetaType(this.ptr);
+		return CQt.QMetaObject_MetaType((.)this.ptr);
 	}
 	public c_int MethodOffset()
 	{
-		return CQt.QMetaObject_MethodOffset(this.ptr);
+		return CQt.QMetaObject_MethodOffset((.)this.ptr);
 	}
 	public c_int EnumeratorOffset()
 	{
-		return CQt.QMetaObject_EnumeratorOffset(this.ptr);
+		return CQt.QMetaObject_EnumeratorOffset((.)this.ptr);
 	}
 	public c_int PropertyOffset()
 	{
-		return CQt.QMetaObject_PropertyOffset(this.ptr);
+		return CQt.QMetaObject_PropertyOffset((.)this.ptr);
 	}
 	public c_int ClassInfoOffset()
 	{
-		return CQt.QMetaObject_ClassInfoOffset(this.ptr);
+		return CQt.QMetaObject_ClassInfoOffset((.)this.ptr);
 	}
 	public c_int ConstructorCount()
 	{
-		return CQt.QMetaObject_ConstructorCount(this.ptr);
+		return CQt.QMetaObject_ConstructorCount((.)this.ptr);
 	}
 	public c_int MethodCount()
 	{
-		return CQt.QMetaObject_MethodCount(this.ptr);
+		return CQt.QMetaObject_MethodCount((.)this.ptr);
 	}
 	public c_int EnumeratorCount()
 	{
-		return CQt.QMetaObject_EnumeratorCount(this.ptr);
+		return CQt.QMetaObject_EnumeratorCount((.)this.ptr);
 	}
 	public c_int PropertyCount()
 	{
-		return CQt.QMetaObject_PropertyCount(this.ptr);
+		return CQt.QMetaObject_PropertyCount((.)this.ptr);
 	}
 	public c_int ClassInfoCount()
 	{
-		return CQt.QMetaObject_ClassInfoCount(this.ptr);
+		return CQt.QMetaObject_ClassInfoCount((.)this.ptr);
 	}
 	public c_int IndexOfConstructor(c_char* constructor)
 	{
-		return CQt.QMetaObject_IndexOfConstructor(this.ptr, constructor);
+		return CQt.QMetaObject_IndexOfConstructor((.)this.ptr, constructor);
 	}
 	public c_int IndexOfMethod(c_char* method)
 	{
-		return CQt.QMetaObject_IndexOfMethod(this.ptr, method);
+		return CQt.QMetaObject_IndexOfMethod((.)this.ptr, method);
 	}
 	public c_int IndexOfSignal(c_char* signal)
 	{
-		return CQt.QMetaObject_IndexOfSignal(this.ptr, signal);
+		return CQt.QMetaObject_IndexOfSignal((.)this.ptr, signal);
 	}
 	public c_int IndexOfSlot(c_char* slot)
 	{
-		return CQt.QMetaObject_IndexOfSlot(this.ptr, slot);
+		return CQt.QMetaObject_IndexOfSlot((.)this.ptr, slot);
 	}
 	public c_int IndexOfEnumerator(c_char* name)
 	{
-		return CQt.QMetaObject_IndexOfEnumerator(this.ptr, name);
+		return CQt.QMetaObject_IndexOfEnumerator((.)this.ptr, name);
 	}
 	public c_int IndexOfProperty(c_char* name)
 	{
-		return CQt.QMetaObject_IndexOfProperty(this.ptr, name);
+		return CQt.QMetaObject_IndexOfProperty((.)this.ptr, name);
 	}
 	public c_int IndexOfClassInfo(c_char* name)
 	{
-		return CQt.QMetaObject_IndexOfClassInfo(this.ptr, name);
+		return CQt.QMetaObject_IndexOfClassInfo((.)this.ptr, name);
 	}
 	public QMetaMethod_Ptr Constructor(c_int index)
 	{
-		return CQt.QMetaObject_Constructor(this.ptr, index);
+		return CQt.QMetaObject_Constructor((.)this.ptr, index);
 	}
 	public QMetaMethod_Ptr Method(c_int index)
 	{
-		return CQt.QMetaObject_Method(this.ptr, index);
+		return CQt.QMetaObject_Method((.)this.ptr, index);
 	}
 	public QMetaEnum_Ptr Enumerator(c_int index)
 	{
-		return CQt.QMetaObject_Enumerator(this.ptr, index);
+		return CQt.QMetaObject_Enumerator((.)this.ptr, index);
 	}
 	public QMetaProperty_Ptr Property(c_int index)
 	{
-		return CQt.QMetaObject_Property(this.ptr, index);
+		return CQt.QMetaObject_Property((.)this.ptr, index);
 	}
 	public QMetaClassInfo_Ptr ClassInfo(c_int index)
 	{
-		return CQt.QMetaObject_ClassInfo(this.ptr, index);
+		return CQt.QMetaObject_ClassInfo((.)this.ptr, index);
 	}
 	public QMetaProperty_Ptr UserProperty()
 	{
-		return CQt.QMetaObject_UserProperty(this.ptr);
+		return CQt.QMetaObject_UserProperty((.)this.ptr);
 	}
 	public bool CheckConnectArgs(c_char* signal, c_char* method)
 	{
@@ -555,11 +563,11 @@ class QMetaObject
 	}
 	public QObject_Ptr* NewInstance()
 	{
-		return CQt.QMetaObject_NewInstance(this.ptr);
+		return CQt.QMetaObject_NewInstance((.)this.ptr);
 	}
 	public c_int Static_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QMetaObject_Static_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QMetaObject_Static_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public c_int Metacall(QObject_Ptr* param1, QMetaObject_Call param2, c_int param3, void** param4)
 	{
@@ -567,15 +575,15 @@ class QMetaObject
 	}
 	public QMetaObject_Data D()
 	{
-		return CQt.QMetaObject_D(this.ptr);
+		return CQt.QMetaObject_D((.)this.ptr);
 	}
 	public void SetD(QMetaObject_Data d)
 	{
-		CQt.QMetaObject_SetD(this.ptr, d);
+		CQt.QMetaObject_SetD((.)this.ptr, d);
 	}
 	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
 	{
-		return CQt.QMetaObject_Tr3(this.ptr, s, c, n);
+		return CQt.QMetaObject_Tr3((.)this.ptr, s, c, n);
 	}
 	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_int signal_index, QObject_Ptr* receiver, c_int method_index, c_int type)
 	{
@@ -747,43 +755,43 @@ class QMetaObject
 	}
 	public QObject_Ptr* NewInstance1(QGenericArgument_Ptr val0)
 	{
-		return CQt.QMetaObject_NewInstance1(this.ptr, val0);
+		return CQt.QMetaObject_NewInstance1((.)this.ptr, val0);
 	}
 	public QObject_Ptr* NewInstance2(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1)
 	{
-		return CQt.QMetaObject_NewInstance2(this.ptr, val0, val1);
+		return CQt.QMetaObject_NewInstance2((.)this.ptr, val0, val1);
 	}
 	public QObject_Ptr* NewInstance3(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2)
 	{
-		return CQt.QMetaObject_NewInstance3(this.ptr, val0, val1, val2);
+		return CQt.QMetaObject_NewInstance3((.)this.ptr, val0, val1, val2);
 	}
 	public QObject_Ptr* NewInstance4(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3)
 	{
-		return CQt.QMetaObject_NewInstance4(this.ptr, val0, val1, val2, val3);
+		return CQt.QMetaObject_NewInstance4((.)this.ptr, val0, val1, val2, val3);
 	}
 	public QObject_Ptr* NewInstance5(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4)
 	{
-		return CQt.QMetaObject_NewInstance5(this.ptr, val0, val1, val2, val3, val4);
+		return CQt.QMetaObject_NewInstance5((.)this.ptr, val0, val1, val2, val3, val4);
 	}
 	public QObject_Ptr* NewInstance6(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5)
 	{
-		return CQt.QMetaObject_NewInstance6(this.ptr, val0, val1, val2, val3, val4, val5);
+		return CQt.QMetaObject_NewInstance6((.)this.ptr, val0, val1, val2, val3, val4, val5);
 	}
 	public QObject_Ptr* NewInstance7(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6)
 	{
-		return CQt.QMetaObject_NewInstance7(this.ptr, val0, val1, val2, val3, val4, val5, val6);
+		return CQt.QMetaObject_NewInstance7((.)this.ptr, val0, val1, val2, val3, val4, val5, val6);
 	}
 	public QObject_Ptr* NewInstance8(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7)
 	{
-		return CQt.QMetaObject_NewInstance8(this.ptr, val0, val1, val2, val3, val4, val5, val6, val7);
+		return CQt.QMetaObject_NewInstance8((.)this.ptr, val0, val1, val2, val3, val4, val5, val6, val7);
 	}
 	public QObject_Ptr* NewInstance9(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8)
 	{
-		return CQt.QMetaObject_NewInstance9(this.ptr, val0, val1, val2, val3, val4, val5, val6, val7, val8);
+		return CQt.QMetaObject_NewInstance9((.)this.ptr, val0, val1, val2, val3, val4, val5, val6, val7, val8);
 	}
 	public QObject_Ptr* NewInstance10(QGenericArgument_Ptr val0, QGenericArgument_Ptr val1, QGenericArgument_Ptr val2, QGenericArgument_Ptr val3, QGenericArgument_Ptr val4, QGenericArgument_Ptr val5, QGenericArgument_Ptr val6, QGenericArgument_Ptr val7, QGenericArgument_Ptr val8, QGenericArgument_Ptr val9)
 	{
-		return CQt.QMetaObject_NewInstance10(this.ptr, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
+		return CQt.QMetaObject_NewInstance10((.)this.ptr, val0, val1, val2, val3, val4, val5, val6, val7, val8, val9);
 	}
 }
 interface IQMetaObject
@@ -928,7 +936,7 @@ class QMetaObject_Connection
 	}
 	public void Swap(QMetaObject_Connection* other)
 	{
-		CQt.QMetaObject_Connection_Swap(this.ptr, other);
+		CQt.QMetaObject_Connection_Swap((.)this.ptr, other);
 	}
 }
 interface IQMetaObject_Connection
@@ -990,11 +998,11 @@ class QMetaObject_SuperData
 	}
 	public QMetaObject_Ptr* Direct()
 	{
-		return CQt.QMetaObject_SuperData_Direct(this.ptr);
+		return CQt.QMetaObject_SuperData_Direct((.)this.ptr);
 	}
 	public void SetDirect(QMetaObject_Ptr* direct)
 	{
-		CQt.QMetaObject_SuperData_SetDirect(this.ptr, direct);
+		CQt.QMetaObject_SuperData_SetDirect((.)this.ptr, direct);
 	}
 }
 interface IQMetaObject_SuperData
@@ -1053,35 +1061,35 @@ class QMetaObject_Data
 	}
 	public QMetaObject_SuperData Superdata()
 	{
-		return CQt.QMetaObject_Data_Superdata(this.ptr);
+		return CQt.QMetaObject_Data_Superdata((.)this.ptr);
 	}
 	public void SetSuperdata(QMetaObject_SuperData superdata)
 	{
-		CQt.QMetaObject_Data_SetSuperdata(this.ptr, superdata);
+		CQt.QMetaObject_Data_SetSuperdata((.)this.ptr, superdata);
 	}
 	public c_uint* Stringdata()
 	{
-		return CQt.QMetaObject_Data_Stringdata(this.ptr);
+		return CQt.QMetaObject_Data_Stringdata((.)this.ptr);
 	}
 	public void SetStringdata(c_uint* stringdata)
 	{
-		CQt.QMetaObject_Data_SetStringdata(this.ptr, stringdata);
+		CQt.QMetaObject_Data_SetStringdata((.)this.ptr, stringdata);
 	}
 	public c_uint* Data()
 	{
-		return CQt.QMetaObject_Data_Data(this.ptr);
+		return CQt.QMetaObject_Data_Data((.)this.ptr);
 	}
 	public void SetData(c_uint* data)
 	{
-		CQt.QMetaObject_Data_SetData(this.ptr, data);
+		CQt.QMetaObject_Data_SetData((.)this.ptr, data);
 	}
 	public QMetaObject_SuperData* RelatedMetaObjects()
 	{
-		return CQt.QMetaObject_Data_RelatedMetaObjects(this.ptr);
+		return CQt.QMetaObject_Data_RelatedMetaObjects((.)this.ptr);
 	}
 	public void SetRelatedMetaObjects(QMetaObject_SuperData* relatedMetaObjects)
 	{
-		CQt.QMetaObject_Data_SetRelatedMetaObjects(this.ptr, relatedMetaObjects);
+		CQt.QMetaObject_Data_SetRelatedMetaObjects((.)this.ptr, relatedMetaObjects);
 	}
 }
 interface IQMetaObject_Data

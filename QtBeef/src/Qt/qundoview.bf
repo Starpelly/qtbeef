@@ -88,15 +88,15 @@ class QUndoView
 	}
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QUndoView_MetaObject(this.ptr);
+		return CQt.QUndoView_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QUndoView_Qt_Metacast(this.ptr, param1);
+		return CQt.QUndoView_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QUndoView_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QUndoView_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -104,35 +104,35 @@ class QUndoView
 	}
 	public QUndoStack_Ptr* Stack()
 	{
-		return CQt.QUndoView_Stack(this.ptr);
+		return CQt.QUndoView_Stack((.)this.ptr);
 	}
 	public QUndoGroup_Ptr* Group()
 	{
-		return CQt.QUndoView_Group(this.ptr);
+		return CQt.QUndoView_Group((.)this.ptr);
 	}
 	public void SetEmptyLabel(libqt_string* label)
 	{
-		CQt.QUndoView_SetEmptyLabel(this.ptr, label);
+		CQt.QUndoView_SetEmptyLabel((.)this.ptr, label);
 	}
 	public libqt_string EmptyLabel()
 	{
-		return CQt.QUndoView_EmptyLabel(this.ptr);
+		return CQt.QUndoView_EmptyLabel((.)this.ptr);
 	}
 	public void SetCleanIcon(QIcon_Ptr* icon)
 	{
-		CQt.QUndoView_SetCleanIcon(this.ptr, icon);
+		CQt.QUndoView_SetCleanIcon((.)this.ptr, icon);
 	}
 	public QIcon_Ptr CleanIcon()
 	{
-		return CQt.QUndoView_CleanIcon(this.ptr);
+		return CQt.QUndoView_CleanIcon((.)this.ptr);
 	}
 	public void SetStack(QUndoStack_Ptr* stack)
 	{
-		CQt.QUndoView_SetStack(this.ptr, stack);
+		CQt.QUndoView_SetStack((.)this.ptr, stack);
 	}
 	public void SetGroup(QUndoGroup_Ptr* group)
 	{
-		CQt.QUndoView_SetGroup(this.ptr, group);
+		CQt.QUndoView_SetGroup((.)this.ptr, group);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{

@@ -56,7 +56,7 @@ class QXmlStreamAttribute
 	}
 	public bool IsDefault()
 	{
-		return CQt.QXmlStreamAttribute_IsDefault(this.ptr);
+		return CQt.QXmlStreamAttribute_IsDefault((.)this.ptr);
 	}
 }
 interface IQXmlStreamAttribute
@@ -98,19 +98,19 @@ class QXmlStreamAttributes
 	}
 	public void Append(libqt_string* namespaceUri, libqt_string* name, libqt_string* value)
 	{
-		CQt.QXmlStreamAttributes_Append(this.ptr, namespaceUri, name, value);
+		CQt.QXmlStreamAttributes_Append((.)this.ptr, namespaceUri, name, value);
 	}
 	public void Append2(libqt_string* qualifiedName, libqt_string* value)
 	{
-		CQt.QXmlStreamAttributes_Append2(this.ptr, qualifiedName, value);
+		CQt.QXmlStreamAttributes_Append2((.)this.ptr, qualifiedName, value);
 	}
 	public bool HasAttribute(libqt_string* qualifiedName)
 	{
-		return CQt.QXmlStreamAttributes_HasAttribute(this.ptr, qualifiedName);
+		return CQt.QXmlStreamAttributes_HasAttribute((.)this.ptr, qualifiedName);
 	}
 	public bool HasAttribute3(libqt_string* namespaceUri, libqt_string* name)
 	{
-		return CQt.QXmlStreamAttributes_HasAttribute3(this.ptr, namespaceUri, name);
+		return CQt.QXmlStreamAttributes_HasAttribute3((.)this.ptr, namespaceUri, name);
 	}
 }
 interface IQXmlStreamAttributes
@@ -252,11 +252,11 @@ class QXmlStreamEntityResolver
 	}
 	public libqt_string ResolveEntity(libqt_string* publicId, libqt_string* systemId)
 	{
-		return CQt.QXmlStreamEntityResolver_ResolveEntity(this.ptr, publicId, systemId);
+		return CQt.QXmlStreamEntityResolver_ResolveEntity((.)this.ptr, publicId, systemId);
 	}
 	public libqt_string ResolveUndeclaredEntity(libqt_string* name)
 	{
-		return CQt.QXmlStreamEntityResolver_ResolveUndeclaredEntity(this.ptr, name);
+		return CQt.QXmlStreamEntityResolver_ResolveUndeclaredEntity((.)this.ptr, name);
 	}
 }
 interface IQXmlStreamEntityResolver
@@ -407,187 +407,187 @@ class QXmlStreamReader
 	}
 	public void SetDevice(QIODevice_Ptr* device)
 	{
-		CQt.QXmlStreamReader_SetDevice(this.ptr, device);
+		CQt.QXmlStreamReader_SetDevice((.)this.ptr, device);
 	}
 	public QIODevice_Ptr* Device()
 	{
-		return CQt.QXmlStreamReader_Device(this.ptr);
+		return CQt.QXmlStreamReader_Device((.)this.ptr);
 	}
 	public void AddData(void** data)
 	{
-		CQt.QXmlStreamReader_AddData(this.ptr, data);
+		CQt.QXmlStreamReader_AddData((.)this.ptr, data);
 	}
 	public void AddData2(libqt_string* data)
 	{
-		CQt.QXmlStreamReader_AddData2(this.ptr, data);
+		CQt.QXmlStreamReader_AddData2((.)this.ptr, data);
 	}
 	public void AddData3(c_char* data)
 	{
-		CQt.QXmlStreamReader_AddData3(this.ptr, data);
+		CQt.QXmlStreamReader_AddData3((.)this.ptr, data);
 	}
 	public void Clear()
 	{
-		CQt.QXmlStreamReader_Clear(this.ptr);
+		CQt.QXmlStreamReader_Clear((.)this.ptr);
 	}
 	public bool AtEnd()
 	{
-		return CQt.QXmlStreamReader_AtEnd(this.ptr);
+		return CQt.QXmlStreamReader_AtEnd((.)this.ptr);
 	}
 	public QXmlStreamReader_TokenType ReadNext()
 	{
-		return CQt.QXmlStreamReader_ReadNext(this.ptr);
+		return CQt.QXmlStreamReader_ReadNext((.)this.ptr);
 	}
 	public bool ReadNextStartElement()
 	{
-		return CQt.QXmlStreamReader_ReadNextStartElement(this.ptr);
+		return CQt.QXmlStreamReader_ReadNextStartElement((.)this.ptr);
 	}
 	public void SkipCurrentElement()
 	{
-		CQt.QXmlStreamReader_SkipCurrentElement(this.ptr);
+		CQt.QXmlStreamReader_SkipCurrentElement((.)this.ptr);
 	}
 	public QXmlStreamReader_TokenType TokenType()
 	{
-		return CQt.QXmlStreamReader_TokenType(this.ptr);
+		return CQt.QXmlStreamReader_TokenType((.)this.ptr);
 	}
 	public libqt_string TokenString()
 	{
-		return CQt.QXmlStreamReader_TokenString(this.ptr);
+		return CQt.QXmlStreamReader_TokenString((.)this.ptr);
 	}
 	public void SetNamespaceProcessing(bool namespaceProcessing)
 	{
-		CQt.QXmlStreamReader_SetNamespaceProcessing(this.ptr, namespaceProcessing);
+		CQt.QXmlStreamReader_SetNamespaceProcessing((.)this.ptr, namespaceProcessing);
 	}
 	public bool NamespaceProcessing()
 	{
-		return CQt.QXmlStreamReader_NamespaceProcessing(this.ptr);
+		return CQt.QXmlStreamReader_NamespaceProcessing((.)this.ptr);
 	}
 	public bool IsStartDocument()
 	{
-		return CQt.QXmlStreamReader_IsStartDocument(this.ptr);
+		return CQt.QXmlStreamReader_IsStartDocument((.)this.ptr);
 	}
 	public bool IsEndDocument()
 	{
-		return CQt.QXmlStreamReader_IsEndDocument(this.ptr);
+		return CQt.QXmlStreamReader_IsEndDocument((.)this.ptr);
 	}
 	public bool IsStartElement()
 	{
-		return CQt.QXmlStreamReader_IsStartElement(this.ptr);
+		return CQt.QXmlStreamReader_IsStartElement((.)this.ptr);
 	}
 	public bool IsEndElement()
 	{
-		return CQt.QXmlStreamReader_IsEndElement(this.ptr);
+		return CQt.QXmlStreamReader_IsEndElement((.)this.ptr);
 	}
 	public bool IsCharacters()
 	{
-		return CQt.QXmlStreamReader_IsCharacters(this.ptr);
+		return CQt.QXmlStreamReader_IsCharacters((.)this.ptr);
 	}
 	public bool IsWhitespace()
 	{
-		return CQt.QXmlStreamReader_IsWhitespace(this.ptr);
+		return CQt.QXmlStreamReader_IsWhitespace((.)this.ptr);
 	}
 	public bool IsCDATA()
 	{
-		return CQt.QXmlStreamReader_IsCDATA(this.ptr);
+		return CQt.QXmlStreamReader_IsCDATA((.)this.ptr);
 	}
 	public bool IsComment()
 	{
-		return CQt.QXmlStreamReader_IsComment(this.ptr);
+		return CQt.QXmlStreamReader_IsComment((.)this.ptr);
 	}
 	public bool IsDTD()
 	{
-		return CQt.QXmlStreamReader_IsDTD(this.ptr);
+		return CQt.QXmlStreamReader_IsDTD((.)this.ptr);
 	}
 	public bool IsEntityReference()
 	{
-		return CQt.QXmlStreamReader_IsEntityReference(this.ptr);
+		return CQt.QXmlStreamReader_IsEntityReference((.)this.ptr);
 	}
 	public bool IsProcessingInstruction()
 	{
-		return CQt.QXmlStreamReader_IsProcessingInstruction(this.ptr);
+		return CQt.QXmlStreamReader_IsProcessingInstruction((.)this.ptr);
 	}
 	public bool IsStandaloneDocument()
 	{
-		return CQt.QXmlStreamReader_IsStandaloneDocument(this.ptr);
+		return CQt.QXmlStreamReader_IsStandaloneDocument((.)this.ptr);
 	}
 	public c_longlong LineNumber()
 	{
-		return CQt.QXmlStreamReader_LineNumber(this.ptr);
+		return CQt.QXmlStreamReader_LineNumber((.)this.ptr);
 	}
 	public c_longlong ColumnNumber()
 	{
-		return CQt.QXmlStreamReader_ColumnNumber(this.ptr);
+		return CQt.QXmlStreamReader_ColumnNumber((.)this.ptr);
 	}
 	public c_longlong CharacterOffset()
 	{
-		return CQt.QXmlStreamReader_CharacterOffset(this.ptr);
+		return CQt.QXmlStreamReader_CharacterOffset((.)this.ptr);
 	}
 	public QXmlStreamAttributes_Ptr Attributes()
 	{
-		return CQt.QXmlStreamReader_Attributes(this.ptr);
+		return CQt.QXmlStreamReader_Attributes((.)this.ptr);
 	}
 	public libqt_string ReadElementText()
 	{
-		return CQt.QXmlStreamReader_ReadElementText(this.ptr);
+		return CQt.QXmlStreamReader_ReadElementText((.)this.ptr);
 	}
 	public void* NamespaceDeclarations()
 	{
-		return CQt.QXmlStreamReader_NamespaceDeclarations(this.ptr);
+		return CQt.QXmlStreamReader_NamespaceDeclarations((.)this.ptr);
 	}
 	public void AddExtraNamespaceDeclaration(QXmlStreamNamespaceDeclaration_Ptr* extraNamespaceDeclaraction)
 	{
-		CQt.QXmlStreamReader_AddExtraNamespaceDeclaration(this.ptr, extraNamespaceDeclaraction);
+		CQt.QXmlStreamReader_AddExtraNamespaceDeclaration((.)this.ptr, extraNamespaceDeclaraction);
 	}
 	public void AddExtraNamespaceDeclarations(void** extraNamespaceDeclaractions)
 	{
-		CQt.QXmlStreamReader_AddExtraNamespaceDeclarations(this.ptr, extraNamespaceDeclaractions);
+		CQt.QXmlStreamReader_AddExtraNamespaceDeclarations((.)this.ptr, extraNamespaceDeclaractions);
 	}
 	public void* NotationDeclarations()
 	{
-		return CQt.QXmlStreamReader_NotationDeclarations(this.ptr);
+		return CQt.QXmlStreamReader_NotationDeclarations((.)this.ptr);
 	}
 	public void* EntityDeclarations()
 	{
-		return CQt.QXmlStreamReader_EntityDeclarations(this.ptr);
+		return CQt.QXmlStreamReader_EntityDeclarations((.)this.ptr);
 	}
 	public c_int EntityExpansionLimit()
 	{
-		return CQt.QXmlStreamReader_EntityExpansionLimit(this.ptr);
+		return CQt.QXmlStreamReader_EntityExpansionLimit((.)this.ptr);
 	}
 	public void SetEntityExpansionLimit(c_int limit)
 	{
-		CQt.QXmlStreamReader_SetEntityExpansionLimit(this.ptr, limit);
+		CQt.QXmlStreamReader_SetEntityExpansionLimit((.)this.ptr, limit);
 	}
 	public void RaiseError()
 	{
-		CQt.QXmlStreamReader_RaiseError(this.ptr);
+		CQt.QXmlStreamReader_RaiseError((.)this.ptr);
 	}
 	public libqt_string ErrorString()
 	{
-		return CQt.QXmlStreamReader_ErrorString(this.ptr);
+		return CQt.QXmlStreamReader_ErrorString((.)this.ptr);
 	}
 	public QXmlStreamReader_Error Error()
 	{
-		return CQt.QXmlStreamReader_Error(this.ptr);
+		return CQt.QXmlStreamReader_Error((.)this.ptr);
 	}
 	public bool HasError()
 	{
-		return CQt.QXmlStreamReader_HasError(this.ptr);
+		return CQt.QXmlStreamReader_HasError((.)this.ptr);
 	}
 	public void SetEntityResolver(QXmlStreamEntityResolver_Ptr* resolver)
 	{
-		CQt.QXmlStreamReader_SetEntityResolver(this.ptr, resolver);
+		CQt.QXmlStreamReader_SetEntityResolver((.)this.ptr, resolver);
 	}
 	public QXmlStreamEntityResolver_Ptr* EntityResolver()
 	{
-		return CQt.QXmlStreamReader_EntityResolver(this.ptr);
+		return CQt.QXmlStreamReader_EntityResolver((.)this.ptr);
 	}
 	public libqt_string ReadElementText1(QXmlStreamReader_ReadElementTextBehaviour behaviour)
 	{
-		return CQt.QXmlStreamReader_ReadElementText1(this.ptr, behaviour);
+		return CQt.QXmlStreamReader_ReadElementText1((.)this.ptr, behaviour);
 	}
 	public void RaiseError1(libqt_string* message)
 	{
-		CQt.QXmlStreamReader_RaiseError1(this.ptr, message);
+		CQt.QXmlStreamReader_RaiseError1((.)this.ptr, message);
 	}
 }
 interface IQXmlStreamReader
@@ -738,135 +738,135 @@ class QXmlStreamWriter
 	}
 	public void SetDevice(QIODevice_Ptr* device)
 	{
-		CQt.QXmlStreamWriter_SetDevice(this.ptr, device);
+		CQt.QXmlStreamWriter_SetDevice((.)this.ptr, device);
 	}
 	public QIODevice_Ptr* Device()
 	{
-		return CQt.QXmlStreamWriter_Device(this.ptr);
+		return CQt.QXmlStreamWriter_Device((.)this.ptr);
 	}
 	public void SetAutoFormatting(bool autoFormatting)
 	{
-		CQt.QXmlStreamWriter_SetAutoFormatting(this.ptr, autoFormatting);
+		CQt.QXmlStreamWriter_SetAutoFormatting((.)this.ptr, autoFormatting);
 	}
 	public bool AutoFormatting()
 	{
-		return CQt.QXmlStreamWriter_AutoFormatting(this.ptr);
+		return CQt.QXmlStreamWriter_AutoFormatting((.)this.ptr);
 	}
 	public void SetAutoFormattingIndent(c_int spacesOrTabs)
 	{
-		CQt.QXmlStreamWriter_SetAutoFormattingIndent(this.ptr, spacesOrTabs);
+		CQt.QXmlStreamWriter_SetAutoFormattingIndent((.)this.ptr, spacesOrTabs);
 	}
 	public c_int AutoFormattingIndent()
 	{
-		return CQt.QXmlStreamWriter_AutoFormattingIndent(this.ptr);
+		return CQt.QXmlStreamWriter_AutoFormattingIndent((.)this.ptr);
 	}
 	public void WriteAttribute(libqt_string* qualifiedName, libqt_string* value)
 	{
-		CQt.QXmlStreamWriter_WriteAttribute(this.ptr, qualifiedName, value);
+		CQt.QXmlStreamWriter_WriteAttribute((.)this.ptr, qualifiedName, value);
 	}
 	public void WriteAttribute2(libqt_string* namespaceUri, libqt_string* name, libqt_string* value)
 	{
-		CQt.QXmlStreamWriter_WriteAttribute2(this.ptr, namespaceUri, name, value);
+		CQt.QXmlStreamWriter_WriteAttribute2((.)this.ptr, namespaceUri, name, value);
 	}
 	public void WriteAttribute3(QXmlStreamAttribute_Ptr* attribute)
 	{
-		CQt.QXmlStreamWriter_WriteAttribute3(this.ptr, attribute);
+		CQt.QXmlStreamWriter_WriteAttribute3((.)this.ptr, attribute);
 	}
 	public void WriteAttributes(QXmlStreamAttributes_Ptr* attributes)
 	{
-		CQt.QXmlStreamWriter_WriteAttributes(this.ptr, attributes);
+		CQt.QXmlStreamWriter_WriteAttributes((.)this.ptr, attributes);
 	}
 	public void WriteCDATA(libqt_string* text)
 	{
-		CQt.QXmlStreamWriter_WriteCDATA(this.ptr, text);
+		CQt.QXmlStreamWriter_WriteCDATA((.)this.ptr, text);
 	}
 	public void WriteCharacters(libqt_string* text)
 	{
-		CQt.QXmlStreamWriter_WriteCharacters(this.ptr, text);
+		CQt.QXmlStreamWriter_WriteCharacters((.)this.ptr, text);
 	}
 	public void WriteComment(libqt_string* text)
 	{
-		CQt.QXmlStreamWriter_WriteComment(this.ptr, text);
+		CQt.QXmlStreamWriter_WriteComment((.)this.ptr, text);
 	}
 	public void WriteDTD(libqt_string* dtd)
 	{
-		CQt.QXmlStreamWriter_WriteDTD(this.ptr, dtd);
+		CQt.QXmlStreamWriter_WriteDTD((.)this.ptr, dtd);
 	}
 	public void WriteEmptyElement(libqt_string* qualifiedName)
 	{
-		CQt.QXmlStreamWriter_WriteEmptyElement(this.ptr, qualifiedName);
+		CQt.QXmlStreamWriter_WriteEmptyElement((.)this.ptr, qualifiedName);
 	}
 	public void WriteEmptyElement2(libqt_string* namespaceUri, libqt_string* name)
 	{
-		CQt.QXmlStreamWriter_WriteEmptyElement2(this.ptr, namespaceUri, name);
+		CQt.QXmlStreamWriter_WriteEmptyElement2((.)this.ptr, namespaceUri, name);
 	}
 	public void WriteTextElement(libqt_string* qualifiedName, libqt_string* text)
 	{
-		CQt.QXmlStreamWriter_WriteTextElement(this.ptr, qualifiedName, text);
+		CQt.QXmlStreamWriter_WriteTextElement((.)this.ptr, qualifiedName, text);
 	}
 	public void WriteTextElement2(libqt_string* namespaceUri, libqt_string* name, libqt_string* text)
 	{
-		CQt.QXmlStreamWriter_WriteTextElement2(this.ptr, namespaceUri, name, text);
+		CQt.QXmlStreamWriter_WriteTextElement2((.)this.ptr, namespaceUri, name, text);
 	}
 	public void WriteEndDocument()
 	{
-		CQt.QXmlStreamWriter_WriteEndDocument(this.ptr);
+		CQt.QXmlStreamWriter_WriteEndDocument((.)this.ptr);
 	}
 	public void WriteEndElement()
 	{
-		CQt.QXmlStreamWriter_WriteEndElement(this.ptr);
+		CQt.QXmlStreamWriter_WriteEndElement((.)this.ptr);
 	}
 	public void WriteEntityReference(libqt_string* name)
 	{
-		CQt.QXmlStreamWriter_WriteEntityReference(this.ptr, name);
+		CQt.QXmlStreamWriter_WriteEntityReference((.)this.ptr, name);
 	}
 	public void WriteNamespace(libqt_string* namespaceUri)
 	{
-		CQt.QXmlStreamWriter_WriteNamespace(this.ptr, namespaceUri);
+		CQt.QXmlStreamWriter_WriteNamespace((.)this.ptr, namespaceUri);
 	}
 	public void WriteDefaultNamespace(libqt_string* namespaceUri)
 	{
-		CQt.QXmlStreamWriter_WriteDefaultNamespace(this.ptr, namespaceUri);
+		CQt.QXmlStreamWriter_WriteDefaultNamespace((.)this.ptr, namespaceUri);
 	}
 	public void WriteProcessingInstruction(libqt_string* target)
 	{
-		CQt.QXmlStreamWriter_WriteProcessingInstruction(this.ptr, target);
+		CQt.QXmlStreamWriter_WriteProcessingInstruction((.)this.ptr, target);
 	}
 	public void WriteStartDocument()
 	{
-		CQt.QXmlStreamWriter_WriteStartDocument(this.ptr);
+		CQt.QXmlStreamWriter_WriteStartDocument((.)this.ptr);
 	}
 	public void WriteStartDocument2(libqt_string* version)
 	{
-		CQt.QXmlStreamWriter_WriteStartDocument2(this.ptr, version);
+		CQt.QXmlStreamWriter_WriteStartDocument2((.)this.ptr, version);
 	}
 	public void WriteStartDocument3(libqt_string* version, bool standalone)
 	{
-		CQt.QXmlStreamWriter_WriteStartDocument3(this.ptr, version, standalone);
+		CQt.QXmlStreamWriter_WriteStartDocument3((.)this.ptr, version, standalone);
 	}
 	public void WriteStartElement(libqt_string* qualifiedName)
 	{
-		CQt.QXmlStreamWriter_WriteStartElement(this.ptr, qualifiedName);
+		CQt.QXmlStreamWriter_WriteStartElement((.)this.ptr, qualifiedName);
 	}
 	public void WriteStartElement2(libqt_string* namespaceUri, libqt_string* name)
 	{
-		CQt.QXmlStreamWriter_WriteStartElement2(this.ptr, namespaceUri, name);
+		CQt.QXmlStreamWriter_WriteStartElement2((.)this.ptr, namespaceUri, name);
 	}
 	public void WriteCurrentToken(QXmlStreamReader_Ptr* reader)
 	{
-		CQt.QXmlStreamWriter_WriteCurrentToken(this.ptr, reader);
+		CQt.QXmlStreamWriter_WriteCurrentToken((.)this.ptr, reader);
 	}
 	public bool HasError()
 	{
-		return CQt.QXmlStreamWriter_HasError(this.ptr);
+		return CQt.QXmlStreamWriter_HasError((.)this.ptr);
 	}
 	public void WriteNamespace2(libqt_string* namespaceUri, libqt_string* prefix)
 	{
-		CQt.QXmlStreamWriter_WriteNamespace2(this.ptr, namespaceUri, prefix);
+		CQt.QXmlStreamWriter_WriteNamespace2((.)this.ptr, namespaceUri, prefix);
 	}
 	public void WriteProcessingInstruction2(libqt_string* target, libqt_string* data)
 	{
-		CQt.QXmlStreamWriter_WriteProcessingInstruction2(this.ptr, target, data);
+		CQt.QXmlStreamWriter_WriteProcessingInstruction2((.)this.ptr, target, data);
 	}
 }
 interface IQXmlStreamWriter

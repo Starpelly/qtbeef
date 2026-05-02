@@ -72,23 +72,23 @@ class QTextDocumentFragment
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QTextDocumentFragment_IsEmpty(this.ptr);
+		return CQt.QTextDocumentFragment_IsEmpty((.)this.ptr);
 	}
 	public libqt_string ToPlainText()
 	{
-		return CQt.QTextDocumentFragment_ToPlainText(this.ptr);
+		return CQt.QTextDocumentFragment_ToPlainText((.)this.ptr);
 	}
 	public libqt_string ToRawText()
 	{
-		return CQt.QTextDocumentFragment_ToRawText(this.ptr);
+		return CQt.QTextDocumentFragment_ToRawText((.)this.ptr);
 	}
 	public libqt_string ToHtml()
 	{
-		return CQt.QTextDocumentFragment_ToHtml(this.ptr);
+		return CQt.QTextDocumentFragment_ToHtml((.)this.ptr);
 	}
 	public libqt_string ToMarkdown()
 	{
-		return CQt.QTextDocumentFragment_ToMarkdown(this.ptr);
+		return CQt.QTextDocumentFragment_ToMarkdown((.)this.ptr);
 	}
 	public QTextDocumentFragment_Ptr FromPlainText(libqt_string* plainText)
 	{
@@ -104,7 +104,7 @@ class QTextDocumentFragment
 	}
 	public libqt_string ToMarkdown1(void* features)
 	{
-		return CQt.QTextDocumentFragment_ToMarkdown1(this.ptr, features);
+		return CQt.QTextDocumentFragment_ToMarkdown1((.)this.ptr, features);
 	}
 	public QTextDocumentFragment_Ptr FromHtml2(libqt_string* html, QTextDocument_Ptr* resourceProvider)
 	{

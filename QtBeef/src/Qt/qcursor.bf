@@ -112,39 +112,39 @@ class QCursor
 	}
 	public void Swap(QCursor_Ptr* other)
 	{
-		CQt.QCursor_Swap(this.ptr, other);
+		CQt.QCursor_Swap((.)this.ptr, other);
 	}
 	public Qt_CursorShape Shape()
 	{
-		return CQt.QCursor_Shape(this.ptr);
+		return CQt.QCursor_Shape((.)this.ptr);
 	}
 	public void SetShape(Qt_CursorShape newShape)
 	{
-		CQt.QCursor_SetShape(this.ptr, newShape);
+		CQt.QCursor_SetShape((.)this.ptr, newShape);
 	}
 	public QBitmap_Ptr Bitmap(Qt_ReturnByValueConstant param1)
 	{
-		return CQt.QCursor_Bitmap(this.ptr, param1);
+		return CQt.QCursor_Bitmap((.)this.ptr, param1);
 	}
 	public QBitmap_Ptr Mask(Qt_ReturnByValueConstant param1)
 	{
-		return CQt.QCursor_Mask(this.ptr, param1);
+		return CQt.QCursor_Mask((.)this.ptr, param1);
 	}
 	public QBitmap_Ptr Bitmap2()
 	{
-		return CQt.QCursor_Bitmap2(this.ptr);
+		return CQt.QCursor_Bitmap2((.)this.ptr);
 	}
 	public QBitmap_Ptr Mask2()
 	{
-		return CQt.QCursor_Mask2(this.ptr);
+		return CQt.QCursor_Mask2((.)this.ptr);
 	}
 	public QPixmap_Ptr Pixmap()
 	{
-		return CQt.QCursor_Pixmap(this.ptr);
+		return CQt.QCursor_Pixmap((.)this.ptr);
 	}
 	public QPoint_Ptr HotSpot()
 	{
-		return CQt.QCursor_HotSpot(this.ptr);
+		return CQt.QCursor_HotSpot((.)this.ptr);
 	}
 	public QPoint_Ptr Pos()
 	{

@@ -120,131 +120,131 @@ class QPageLayout
 	}
 	public void Swap(QPageLayout_Ptr* other)
 	{
-		CQt.QPageLayout_Swap(this.ptr, other);
+		CQt.QPageLayout_Swap((.)this.ptr, other);
 	}
 	public bool IsEquivalentTo(QPageLayout_Ptr* other)
 	{
-		return CQt.QPageLayout_IsEquivalentTo(this.ptr, other);
+		return CQt.QPageLayout_IsEquivalentTo((.)this.ptr, other);
 	}
 	public bool IsValid()
 	{
-		return CQt.QPageLayout_IsValid(this.ptr);
+		return CQt.QPageLayout_IsValid((.)this.ptr);
 	}
 	public void SetMode(QPageLayout_Mode mode)
 	{
-		CQt.QPageLayout_SetMode(this.ptr, mode);
+		CQt.QPageLayout_SetMode((.)this.ptr, mode);
 	}
 	public QPageLayout_Mode Mode()
 	{
-		return CQt.QPageLayout_Mode(this.ptr);
+		return CQt.QPageLayout_Mode((.)this.ptr);
 	}
 	public void SetPageSize(QPageSize_Ptr* pageSize)
 	{
-		CQt.QPageLayout_SetPageSize(this.ptr, pageSize);
+		CQt.QPageLayout_SetPageSize((.)this.ptr, pageSize);
 	}
 	public QPageSize_Ptr PageSize()
 	{
-		return CQt.QPageLayout_PageSize(this.ptr);
+		return CQt.QPageLayout_PageSize((.)this.ptr);
 	}
 	public void SetOrientation(QPageLayout_Orientation orientation)
 	{
-		CQt.QPageLayout_SetOrientation(this.ptr, orientation);
+		CQt.QPageLayout_SetOrientation((.)this.ptr, orientation);
 	}
 	public QPageLayout_Orientation Orientation()
 	{
-		return CQt.QPageLayout_Orientation(this.ptr);
+		return CQt.QPageLayout_Orientation((.)this.ptr);
 	}
 	public void SetUnits(QPageLayout_Unit units)
 	{
-		CQt.QPageLayout_SetUnits(this.ptr, units);
+		CQt.QPageLayout_SetUnits((.)this.ptr, units);
 	}
 	public QPageLayout_Unit Units()
 	{
-		return CQt.QPageLayout_Units(this.ptr);
+		return CQt.QPageLayout_Units((.)this.ptr);
 	}
 	public bool SetMargins(QMarginsF_Ptr* margins)
 	{
-		return CQt.QPageLayout_SetMargins(this.ptr, margins);
+		return CQt.QPageLayout_SetMargins((.)this.ptr, margins);
 	}
 	public bool SetLeftMargin(double leftMargin)
 	{
-		return CQt.QPageLayout_SetLeftMargin(this.ptr, leftMargin);
+		return CQt.QPageLayout_SetLeftMargin((.)this.ptr, leftMargin);
 	}
 	public bool SetRightMargin(double rightMargin)
 	{
-		return CQt.QPageLayout_SetRightMargin(this.ptr, rightMargin);
+		return CQt.QPageLayout_SetRightMargin((.)this.ptr, rightMargin);
 	}
 	public bool SetTopMargin(double topMargin)
 	{
-		return CQt.QPageLayout_SetTopMargin(this.ptr, topMargin);
+		return CQt.QPageLayout_SetTopMargin((.)this.ptr, topMargin);
 	}
 	public bool SetBottomMargin(double bottomMargin)
 	{
-		return CQt.QPageLayout_SetBottomMargin(this.ptr, bottomMargin);
+		return CQt.QPageLayout_SetBottomMargin((.)this.ptr, bottomMargin);
 	}
 	public QMarginsF_Ptr Margins()
 	{
-		return CQt.QPageLayout_Margins(this.ptr);
+		return CQt.QPageLayout_Margins((.)this.ptr);
 	}
 	public QMarginsF_Ptr Margins2(QPageLayout_Unit units)
 	{
-		return CQt.QPageLayout_Margins2(this.ptr, units);
+		return CQt.QPageLayout_Margins2((.)this.ptr, units);
 	}
 	public QMargins_Ptr MarginsPoints()
 	{
-		return CQt.QPageLayout_MarginsPoints(this.ptr);
+		return CQt.QPageLayout_MarginsPoints((.)this.ptr);
 	}
 	public QMargins_Ptr MarginsPixels(c_int resolution)
 	{
-		return CQt.QPageLayout_MarginsPixels(this.ptr, resolution);
+		return CQt.QPageLayout_MarginsPixels((.)this.ptr, resolution);
 	}
 	public void SetMinimumMargins(QMarginsF_Ptr* minMargins)
 	{
-		CQt.QPageLayout_SetMinimumMargins(this.ptr, minMargins);
+		CQt.QPageLayout_SetMinimumMargins((.)this.ptr, minMargins);
 	}
 	public QMarginsF_Ptr MinimumMargins()
 	{
-		return CQt.QPageLayout_MinimumMargins(this.ptr);
+		return CQt.QPageLayout_MinimumMargins((.)this.ptr);
 	}
 	public QMarginsF_Ptr MaximumMargins()
 	{
-		return CQt.QPageLayout_MaximumMargins(this.ptr);
+		return CQt.QPageLayout_MaximumMargins((.)this.ptr);
 	}
 	public QRectF_Ptr FullRect()
 	{
-		return CQt.QPageLayout_FullRect(this.ptr);
+		return CQt.QPageLayout_FullRect((.)this.ptr);
 	}
 	public QRectF_Ptr FullRect2(QPageLayout_Unit units)
 	{
-		return CQt.QPageLayout_FullRect2(this.ptr, units);
+		return CQt.QPageLayout_FullRect2((.)this.ptr, units);
 	}
 	public QRect_Ptr FullRectPoints()
 	{
-		return CQt.QPageLayout_FullRectPoints(this.ptr);
+		return CQt.QPageLayout_FullRectPoints((.)this.ptr);
 	}
 	public QRect_Ptr FullRectPixels(c_int resolution)
 	{
-		return CQt.QPageLayout_FullRectPixels(this.ptr, resolution);
+		return CQt.QPageLayout_FullRectPixels((.)this.ptr, resolution);
 	}
 	public QRectF_Ptr PaintRect()
 	{
-		return CQt.QPageLayout_PaintRect(this.ptr);
+		return CQt.QPageLayout_PaintRect((.)this.ptr);
 	}
 	public QRectF_Ptr PaintRect2(QPageLayout_Unit units)
 	{
-		return CQt.QPageLayout_PaintRect2(this.ptr, units);
+		return CQt.QPageLayout_PaintRect2((.)this.ptr, units);
 	}
 	public QRect_Ptr PaintRectPoints()
 	{
-		return CQt.QPageLayout_PaintRectPoints(this.ptr);
+		return CQt.QPageLayout_PaintRectPoints((.)this.ptr);
 	}
 	public QRect_Ptr PaintRectPixels(c_int resolution)
 	{
-		return CQt.QPageLayout_PaintRectPixels(this.ptr, resolution);
+		return CQt.QPageLayout_PaintRectPixels((.)this.ptr, resolution);
 	}
 	public void SetPageSize2(QPageSize_Ptr* pageSize, QMarginsF_Ptr* minMargins)
 	{
-		CQt.QPageLayout_SetPageSize2(this.ptr, pageSize, minMargins);
+		CQt.QPageLayout_SetPageSize2((.)this.ptr, pageSize, minMargins);
 	}
 }
 interface IQPageLayout

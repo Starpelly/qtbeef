@@ -49,15 +49,15 @@ class QNativeInterface_QEGLContext
 	}
 	public void* NativeContext()
 	{
-		return CQt.QNativeInterface_QEGLContext_NativeContext(this.ptr);
+		return CQt.QNativeInterface_QEGLContext_NativeContext((.)this.ptr);
 	}
 	public void* Config()
 	{
-		return CQt.QNativeInterface_QEGLContext_Config(this.ptr);
+		return CQt.QNativeInterface_QEGLContext_Config((.)this.ptr);
 	}
 	public void* Display()
 	{
-		return CQt.QNativeInterface_QEGLContext_Display(this.ptr);
+		return CQt.QNativeInterface_QEGLContext_Display((.)this.ptr);
 	}
 	public QOpenGLContext_Ptr* FromNative3(void* context, void* display, QOpenGLContext_Ptr* shareContext)
 	{

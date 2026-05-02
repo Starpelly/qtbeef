@@ -84,47 +84,47 @@ class QTextBoundaryFinder
 	}
 	public bool IsValid()
 	{
-		return CQt.QTextBoundaryFinder_IsValid(this.ptr);
+		return CQt.QTextBoundaryFinder_IsValid((.)this.ptr);
 	}
 	public QTextBoundaryFinder_BoundaryType Type()
 	{
-		return CQt.QTextBoundaryFinder_Type(this.ptr);
+		return CQt.QTextBoundaryFinder_Type((.)this.ptr);
 	}
 	public libqt_string String()
 	{
-		return CQt.QTextBoundaryFinder_String(this.ptr);
+		return CQt.QTextBoundaryFinder_String((.)this.ptr);
 	}
 	public void ToStart()
 	{
-		CQt.QTextBoundaryFinder_ToStart(this.ptr);
+		CQt.QTextBoundaryFinder_ToStart((.)this.ptr);
 	}
 	public void ToEnd()
 	{
-		CQt.QTextBoundaryFinder_ToEnd(this.ptr);
+		CQt.QTextBoundaryFinder_ToEnd((.)this.ptr);
 	}
 	public void* Position()
 	{
-		return CQt.QTextBoundaryFinder_Position(this.ptr);
+		return CQt.QTextBoundaryFinder_Position((.)this.ptr);
 	}
 	public void SetPosition(void* position)
 	{
-		CQt.QTextBoundaryFinder_SetPosition(this.ptr, position);
+		CQt.QTextBoundaryFinder_SetPosition((.)this.ptr, position);
 	}
 	public void* ToNextBoundary()
 	{
-		return CQt.QTextBoundaryFinder_ToNextBoundary(this.ptr);
+		return CQt.QTextBoundaryFinder_ToNextBoundary((.)this.ptr);
 	}
 	public void* ToPreviousBoundary()
 	{
-		return CQt.QTextBoundaryFinder_ToPreviousBoundary(this.ptr);
+		return CQt.QTextBoundaryFinder_ToPreviousBoundary((.)this.ptr);
 	}
 	public bool IsAtBoundary()
 	{
-		return CQt.QTextBoundaryFinder_IsAtBoundary(this.ptr);
+		return CQt.QTextBoundaryFinder_IsAtBoundary((.)this.ptr);
 	}
 	public void* BoundaryReasons()
 	{
-		return CQt.QTextBoundaryFinder_BoundaryReasons(this.ptr);
+		return CQt.QTextBoundaryFinder_BoundaryReasons((.)this.ptr);
 	}
 }
 interface IQTextBoundaryFinder

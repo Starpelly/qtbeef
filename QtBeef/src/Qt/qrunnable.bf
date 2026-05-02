@@ -38,7 +38,7 @@ class QRunnable
 	}
 	public void Run()
 	{
-		CQt.QRunnable_Run(this.ptr);
+		CQt.QRunnable_Run((.)this.ptr);
 	}
 	public QRunnable_Ptr* Create(void* functionToRun)
 	{
@@ -46,11 +46,11 @@ class QRunnable
 	}
 	public bool AutoDelete()
 	{
-		return CQt.QRunnable_AutoDelete(this.ptr);
+		return CQt.QRunnable_AutoDelete((.)this.ptr);
 	}
 	public void SetAutoDelete(bool autoDelete)
 	{
-		CQt.QRunnable_SetAutoDelete(this.ptr, autoDelete);
+		CQt.QRunnable_SetAutoDelete((.)this.ptr, autoDelete);
 	}
 }
 interface IQRunnable

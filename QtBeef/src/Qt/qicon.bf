@@ -174,83 +174,83 @@ class QIcon
 	}
 	public void Swap(QIcon_Ptr* other)
 	{
-		CQt.QIcon_Swap(this.ptr, other);
+		CQt.QIcon_Swap((.)this.ptr, other);
 	}
 	public QPixmap_Ptr Pixmap(QSize_Ptr* size)
 	{
-		return CQt.QIcon_Pixmap(this.ptr, size);
+		return CQt.QIcon_Pixmap((.)this.ptr, size);
 	}
 	public QPixmap_Ptr Pixmap2(c_int w, c_int h)
 	{
-		return CQt.QIcon_Pixmap2(this.ptr, w, h);
+		return CQt.QIcon_Pixmap2((.)this.ptr, w, h);
 	}
 	public QPixmap_Ptr Pixmap3(c_int extent)
 	{
-		return CQt.QIcon_Pixmap3(this.ptr, extent);
+		return CQt.QIcon_Pixmap3((.)this.ptr, extent);
 	}
 	public QPixmap_Ptr Pixmap4(QSize_Ptr* size, double devicePixelRatio)
 	{
-		return CQt.QIcon_Pixmap4(this.ptr, size, devicePixelRatio);
+		return CQt.QIcon_Pixmap4((.)this.ptr, size, devicePixelRatio);
 	}
 	public QPixmap_Ptr Pixmap5(QWindow_Ptr* window, QSize_Ptr* size)
 	{
-		return CQt.QIcon_Pixmap5(this.ptr, window, size);
+		return CQt.QIcon_Pixmap5((.)this.ptr, window, size);
 	}
 	public QSize_Ptr ActualSize(QSize_Ptr* size)
 	{
-		return CQt.QIcon_ActualSize(this.ptr, size);
+		return CQt.QIcon_ActualSize((.)this.ptr, size);
 	}
 	public QSize_Ptr ActualSize2(QWindow_Ptr* window, QSize_Ptr* size)
 	{
-		return CQt.QIcon_ActualSize2(this.ptr, window, size);
+		return CQt.QIcon_ActualSize2((.)this.ptr, window, size);
 	}
 	public libqt_string Name()
 	{
-		return CQt.QIcon_Name(this.ptr);
+		return CQt.QIcon_Name((.)this.ptr);
 	}
 	public void Paint(QPainter_Ptr* painter, QRect_Ptr* rect)
 	{
-		CQt.QIcon_Paint(this.ptr, painter, rect);
+		CQt.QIcon_Paint((.)this.ptr, painter, rect);
 	}
 	public void Paint2(QPainter_Ptr* painter, c_int x, c_int y, c_int w, c_int h)
 	{
-		CQt.QIcon_Paint2(this.ptr, painter, x, y, w, h);
+		CQt.QIcon_Paint2((.)this.ptr, painter, x, y, w, h);
 	}
 	public bool IsNull()
 	{
-		return CQt.QIcon_IsNull(this.ptr);
+		return CQt.QIcon_IsNull((.)this.ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QIcon_IsDetached(this.ptr);
+		return CQt.QIcon_IsDetached((.)this.ptr);
 	}
 	public void Detach()
 	{
-		CQt.QIcon_Detach(this.ptr);
+		CQt.QIcon_Detach((.)this.ptr);
 	}
 	public c_longlong CacheKey()
 	{
-		return CQt.QIcon_CacheKey(this.ptr);
+		return CQt.QIcon_CacheKey((.)this.ptr);
 	}
 	public void AddPixmap(QPixmap_Ptr* pixmap)
 	{
-		CQt.QIcon_AddPixmap(this.ptr, pixmap);
+		CQt.QIcon_AddPixmap((.)this.ptr, pixmap);
 	}
 	public void AddFile(libqt_string* fileName)
 	{
-		CQt.QIcon_AddFile(this.ptr, fileName);
+		CQt.QIcon_AddFile((.)this.ptr, fileName);
 	}
 	public void* AvailableSizes()
 	{
-		return CQt.QIcon_AvailableSizes(this.ptr);
+		return CQt.QIcon_AvailableSizes((.)this.ptr);
 	}
 	public void SetIsMask(bool isMask)
 	{
-		CQt.QIcon_SetIsMask(this.ptr, isMask);
+		CQt.QIcon_SetIsMask((.)this.ptr, isMask);
 	}
 	public bool IsMask()
 	{
-		return CQt.QIcon_IsMask(this.ptr);
+		return CQt.QIcon_IsMask((.)this.ptr);
 	}
 	public QIcon_Ptr FromTheme(libqt_string* name)
 	{
@@ -298,111 +298,111 @@ class QIcon
 	}
 	public QPixmap_Ptr Pixmap22(QSize_Ptr* size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap22(this.ptr, size, mode);
+		return CQt.QIcon_Pixmap22((.)this.ptr, size, mode);
 	}
 	public QPixmap_Ptr Pixmap32(QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap32(this.ptr, size, mode, state);
+		return CQt.QIcon_Pixmap32((.)this.ptr, size, mode, state);
 	}
 	public QPixmap_Ptr Pixmap33(c_int w, c_int h, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap33(this.ptr, w, h, mode);
+		return CQt.QIcon_Pixmap33((.)this.ptr, w, h, mode);
 	}
 	public QPixmap_Ptr Pixmap42(c_int w, c_int h, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap42(this.ptr, w, h, mode, state);
+		return CQt.QIcon_Pixmap42((.)this.ptr, w, h, mode, state);
 	}
 	public QPixmap_Ptr Pixmap23(c_int extent, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap23(this.ptr, extent, mode);
+		return CQt.QIcon_Pixmap23((.)this.ptr, extent, mode);
 	}
 	public QPixmap_Ptr Pixmap34(c_int extent, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap34(this.ptr, extent, mode, state);
+		return CQt.QIcon_Pixmap34((.)this.ptr, extent, mode, state);
 	}
 	public QPixmap_Ptr Pixmap35(QSize_Ptr* size, double devicePixelRatio, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap35(this.ptr, size, devicePixelRatio, mode);
+		return CQt.QIcon_Pixmap35((.)this.ptr, size, devicePixelRatio, mode);
 	}
 	public QPixmap_Ptr Pixmap43(QSize_Ptr* size, double devicePixelRatio, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap43(this.ptr, size, devicePixelRatio, mode, state);
+		return CQt.QIcon_Pixmap43((.)this.ptr, size, devicePixelRatio, mode, state);
 	}
 	public QPixmap_Ptr Pixmap36(QWindow_Ptr* window, QSize_Ptr* size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_Pixmap36(this.ptr, window, size, mode);
+		return CQt.QIcon_Pixmap36((.)this.ptr, window, size, mode);
 	}
 	public QPixmap_Ptr Pixmap44(QWindow_Ptr* window, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_Pixmap44(this.ptr, window, size, mode, state);
+		return CQt.QIcon_Pixmap44((.)this.ptr, window, size, mode, state);
 	}
 	public QSize_Ptr ActualSize22(QSize_Ptr* size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_ActualSize22(this.ptr, size, mode);
+		return CQt.QIcon_ActualSize22((.)this.ptr, size, mode);
 	}
 	public QSize_Ptr ActualSize3(QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_ActualSize3(this.ptr, size, mode, state);
+		return CQt.QIcon_ActualSize3((.)this.ptr, size, mode, state);
 	}
 	public QSize_Ptr ActualSize32(QWindow_Ptr* window, QSize_Ptr* size, QIcon_Mode mode)
 	{
-		return CQt.QIcon_ActualSize32(this.ptr, window, size, mode);
+		return CQt.QIcon_ActualSize32((.)this.ptr, window, size, mode);
 	}
 	public QSize_Ptr ActualSize4(QWindow_Ptr* window, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_ActualSize4(this.ptr, window, size, mode, state);
+		return CQt.QIcon_ActualSize4((.)this.ptr, window, size, mode, state);
 	}
 	public void Paint3(QPainter_Ptr* painter, QRect_Ptr* rect, void* alignment)
 	{
-		CQt.QIcon_Paint3(this.ptr, painter, rect, alignment);
+		CQt.QIcon_Paint3((.)this.ptr, painter, rect, alignment);
 	}
 	public void Paint4(QPainter_Ptr* painter, QRect_Ptr* rect, void* alignment, QIcon_Mode mode)
 	{
-		CQt.QIcon_Paint4(this.ptr, painter, rect, alignment, mode);
+		CQt.QIcon_Paint4((.)this.ptr, painter, rect, alignment, mode);
 	}
 	public void Paint5(QPainter_Ptr* painter, QRect_Ptr* rect, void* alignment, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_Paint5(this.ptr, painter, rect, alignment, mode, state);
+		CQt.QIcon_Paint5((.)this.ptr, painter, rect, alignment, mode, state);
 	}
 	public void Paint6(QPainter_Ptr* painter, c_int x, c_int y, c_int w, c_int h, void* alignment)
 	{
-		CQt.QIcon_Paint6(this.ptr, painter, x, y, w, h, alignment);
+		CQt.QIcon_Paint6((.)this.ptr, painter, x, y, w, h, alignment);
 	}
 	public void Paint7(QPainter_Ptr* painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode)
 	{
-		CQt.QIcon_Paint7(this.ptr, painter, x, y, w, h, alignment, mode);
+		CQt.QIcon_Paint7((.)this.ptr, painter, x, y, w, h, alignment, mode);
 	}
 	public void Paint8(QPainter_Ptr* painter, c_int x, c_int y, c_int w, c_int h, void* alignment, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_Paint8(this.ptr, painter, x, y, w, h, alignment, mode, state);
+		CQt.QIcon_Paint8((.)this.ptr, painter, x, y, w, h, alignment, mode, state);
 	}
 	public void AddPixmap2(QPixmap_Ptr* pixmap, QIcon_Mode mode)
 	{
-		CQt.QIcon_AddPixmap2(this.ptr, pixmap, mode);
+		CQt.QIcon_AddPixmap2((.)this.ptr, pixmap, mode);
 	}
 	public void AddPixmap3(QPixmap_Ptr* pixmap, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_AddPixmap3(this.ptr, pixmap, mode, state);
+		CQt.QIcon_AddPixmap3((.)this.ptr, pixmap, mode, state);
 	}
 	public void AddFile2(libqt_string* fileName, QSize_Ptr* size)
 	{
-		CQt.QIcon_AddFile2(this.ptr, fileName, size);
+		CQt.QIcon_AddFile2((.)this.ptr, fileName, size);
 	}
 	public void AddFile3(libqt_string* fileName, QSize_Ptr* size, QIcon_Mode mode)
 	{
-		CQt.QIcon_AddFile3(this.ptr, fileName, size, mode);
+		CQt.QIcon_AddFile3((.)this.ptr, fileName, size, mode);
 	}
 	public void AddFile4(libqt_string* fileName, QSize_Ptr* size, QIcon_Mode mode, QIcon_State state)
 	{
-		CQt.QIcon_AddFile4(this.ptr, fileName, size, mode, state);
+		CQt.QIcon_AddFile4((.)this.ptr, fileName, size, mode, state);
 	}
 	public void* AvailableSizes1(QIcon_Mode mode)
 	{
-		return CQt.QIcon_AvailableSizes1(this.ptr, mode);
+		return CQt.QIcon_AvailableSizes1((.)this.ptr, mode);
 	}
 	public void* AvailableSizes2(QIcon_Mode mode, QIcon_State state)
 	{
-		return CQt.QIcon_AvailableSizes2(this.ptr, mode, state);
+		return CQt.QIcon_AvailableSizes2((.)this.ptr, mode, state);
 	}
 }
 interface IQIcon

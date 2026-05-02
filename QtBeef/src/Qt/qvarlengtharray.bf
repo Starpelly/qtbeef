@@ -24,15 +24,15 @@ class QVLABaseBase
 	private QVLABaseBase_Ptr* ptr;
 	public void* Capacity()
 	{
-		return CQt.QVLABaseBase_Capacity(this.ptr);
+		return CQt.QVLABaseBase_Capacity((.)this.ptr);
 	}
 	public void* Size()
 	{
-		return CQt.QVLABaseBase_Size(this.ptr);
+		return CQt.QVLABaseBase_Size((.)this.ptr);
 	}
 	public bool Empty()
 	{
-		return CQt.QVLABaseBase_Empty(this.ptr);
+		return CQt.QVLABaseBase_Empty((.)this.ptr);
 	}
 }
 interface IQVLABaseBase

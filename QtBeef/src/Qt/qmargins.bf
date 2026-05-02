@@ -82,59 +82,59 @@ class QMargins
 	}
 	public bool IsNull()
 	{
-		return CQt.QMargins_IsNull(this.ptr);
+		return CQt.QMargins_IsNull((.)this.ptr);
 	}
 	public c_int Left()
 	{
-		return CQt.QMargins_Left(this.ptr);
+		return CQt.QMargins_Left((.)this.ptr);
 	}
 	public c_int Top()
 	{
-		return CQt.QMargins_Top(this.ptr);
+		return CQt.QMargins_Top((.)this.ptr);
 	}
 	public c_int Right()
 	{
-		return CQt.QMargins_Right(this.ptr);
+		return CQt.QMargins_Right((.)this.ptr);
 	}
 	public c_int Bottom()
 	{
-		return CQt.QMargins_Bottom(this.ptr);
+		return CQt.QMargins_Bottom((.)this.ptr);
 	}
 	public void SetLeft(c_int left)
 	{
-		CQt.QMargins_SetLeft(this.ptr, left);
+		CQt.QMargins_SetLeft((.)this.ptr, left);
 	}
 	public void SetTop(c_int top)
 	{
-		CQt.QMargins_SetTop(this.ptr, top);
+		CQt.QMargins_SetTop((.)this.ptr, top);
 	}
 	public void SetRight(c_int right)
 	{
-		CQt.QMargins_SetRight(this.ptr, right);
+		CQt.QMargins_SetRight((.)this.ptr, right);
 	}
 	public void SetBottom(c_int bottom)
 	{
-		CQt.QMargins_SetBottom(this.ptr, bottom);
+		CQt.QMargins_SetBottom((.)this.ptr, bottom);
 	}
 	public QMargins_Ptr* OperatorPlusAssign2(c_int param1)
 	{
-		return CQt.QMargins_OperatorPlusAssign2(this.ptr, param1);
+		return CQt.QMargins_OperatorPlusAssign2((.)this.ptr, param1);
 	}
 	public QMargins_Ptr* OperatorMinusAssign2(c_int param1)
 	{
-		return CQt.QMargins_OperatorMinusAssign2(this.ptr, param1);
+		return CQt.QMargins_OperatorMinusAssign2((.)this.ptr, param1);
 	}
 	public QMargins_Ptr* OperatorMultiplyAssign2(double param1)
 	{
-		return CQt.QMargins_OperatorMultiplyAssign2(this.ptr, param1);
+		return CQt.QMargins_OperatorMultiplyAssign2((.)this.ptr, param1);
 	}
 	public QMargins_Ptr* OperatorDivideAssign2(double param1)
 	{
-		return CQt.QMargins_OperatorDivideAssign2(this.ptr, param1);
+		return CQt.QMargins_OperatorDivideAssign2((.)this.ptr, param1);
 	}
 	public QMarginsF_Ptr ToMarginsF()
 	{
-		return CQt.QMargins_ToMarginsF(this.ptr);
+		return CQt.QMargins_ToMarginsF((.)this.ptr);
 	}
 }
 interface IQMargins
@@ -235,51 +235,51 @@ class QMarginsF
 	}
 	public bool IsNull()
 	{
-		return CQt.QMarginsF_IsNull(this.ptr);
+		return CQt.QMarginsF_IsNull((.)this.ptr);
 	}
 	public double Left()
 	{
-		return CQt.QMarginsF_Left(this.ptr);
+		return CQt.QMarginsF_Left((.)this.ptr);
 	}
 	public double Top()
 	{
-		return CQt.QMarginsF_Top(this.ptr);
+		return CQt.QMarginsF_Top((.)this.ptr);
 	}
 	public double Right()
 	{
-		return CQt.QMarginsF_Right(this.ptr);
+		return CQt.QMarginsF_Right((.)this.ptr);
 	}
 	public double Bottom()
 	{
-		return CQt.QMarginsF_Bottom(this.ptr);
+		return CQt.QMarginsF_Bottom((.)this.ptr);
 	}
 	public void SetLeft(double aleft)
 	{
-		CQt.QMarginsF_SetLeft(this.ptr, aleft);
+		CQt.QMarginsF_SetLeft((.)this.ptr, aleft);
 	}
 	public void SetTop(double atop)
 	{
-		CQt.QMarginsF_SetTop(this.ptr, atop);
+		CQt.QMarginsF_SetTop((.)this.ptr, atop);
 	}
 	public void SetRight(double aright)
 	{
-		CQt.QMarginsF_SetRight(this.ptr, aright);
+		CQt.QMarginsF_SetRight((.)this.ptr, aright);
 	}
 	public void SetBottom(double abottom)
 	{
-		CQt.QMarginsF_SetBottom(this.ptr, abottom);
+		CQt.QMarginsF_SetBottom((.)this.ptr, abottom);
 	}
 	public QMarginsF_Ptr* OperatorPlusAssign2(double addend)
 	{
-		return CQt.QMarginsF_OperatorPlusAssign2(this.ptr, addend);
+		return CQt.QMarginsF_OperatorPlusAssign2((.)this.ptr, addend);
 	}
 	public QMarginsF_Ptr* OperatorMinusAssign2(double subtrahend)
 	{
-		return CQt.QMarginsF_OperatorMinusAssign2(this.ptr, subtrahend);
+		return CQt.QMarginsF_OperatorMinusAssign2((.)this.ptr, subtrahend);
 	}
 	public QMargins_Ptr ToMargins()
 	{
-		return CQt.QMarginsF_ToMargins(this.ptr);
+		return CQt.QMarginsF_ToMargins((.)this.ptr);
 	}
 }
 interface IQMarginsF

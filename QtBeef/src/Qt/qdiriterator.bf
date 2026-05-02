@@ -88,31 +88,31 @@ class QDirIterator
 	}
 	public libqt_string Next()
 	{
-		return CQt.QDirIterator_Next(this.ptr);
+		return CQt.QDirIterator_Next((.)this.ptr);
 	}
 	public QFileInfo_Ptr NextFileInfo()
 	{
-		return CQt.QDirIterator_NextFileInfo(this.ptr);
+		return CQt.QDirIterator_NextFileInfo((.)this.ptr);
 	}
 	public bool HasNext()
 	{
-		return CQt.QDirIterator_HasNext(this.ptr);
+		return CQt.QDirIterator_HasNext((.)this.ptr);
 	}
 	public libqt_string FileName()
 	{
-		return CQt.QDirIterator_FileName(this.ptr);
+		return CQt.QDirIterator_FileName((.)this.ptr);
 	}
 	public libqt_string FilePath()
 	{
-		return CQt.QDirIterator_FilePath(this.ptr);
+		return CQt.QDirIterator_FilePath((.)this.ptr);
 	}
 	public QFileInfo_Ptr FileInfo()
 	{
-		return CQt.QDirIterator_FileInfo(this.ptr);
+		return CQt.QDirIterator_FileInfo((.)this.ptr);
 	}
 	public libqt_string Path()
 	{
-		return CQt.QDirIterator_Path(this.ptr);
+		return CQt.QDirIterator_Path((.)this.ptr);
 	}
 }
 interface IQDirIterator

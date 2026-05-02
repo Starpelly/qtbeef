@@ -26,7 +26,7 @@ class QFactoryInterface
 	}
 	public void* Keys()
 	{
-		return CQt.QFactoryInterface_Keys(this.ptr);
+		return CQt.QFactoryInterface_Keys((.)this.ptr);
 	}
 }
 interface IQFactoryInterface

@@ -56,7 +56,7 @@ class QStringEncoder
 	}
 	public void* RequiredSpace(void* inputLength)
 	{
-		return CQt.QStringEncoder_RequiredSpace(this.ptr, inputLength);
+		return CQt.QStringEncoder_RequiredSpace((.)this.ptr, inputLength);
 	}
 }
 interface IQStringEncoder
@@ -120,11 +120,11 @@ class QStringDecoder
 	}
 	public void* RequiredSpace(void* inputLength)
 	{
-		return CQt.QStringDecoder_RequiredSpace(this.ptr, inputLength);
+		return CQt.QStringDecoder_RequiredSpace((.)this.ptr, inputLength);
 	}
 	public QChar_Ptr* AppendToBuffer(QChar_Ptr* _out, void* ba)
 	{
-		return CQt.QStringDecoder_AppendToBuffer(this.ptr, _out, ba);
+		return CQt.QStringDecoder_AppendToBuffer((.)this.ptr, _out, ba);
 	}
 	public QStringDecoder_Ptr DecoderForHtml(void* data)
 	{

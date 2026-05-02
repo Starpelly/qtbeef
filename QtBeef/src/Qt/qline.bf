@@ -94,79 +94,79 @@ class QLine
 	}
 	public bool IsNull()
 	{
-		return CQt.QLine_IsNull(this.ptr);
+		return CQt.QLine_IsNull((.)this.ptr);
 	}
 	public QPoint_Ptr P1()
 	{
-		return CQt.QLine_P1(this.ptr);
+		return CQt.QLine_P1((.)this.ptr);
 	}
 	public QPoint_Ptr P2()
 	{
-		return CQt.QLine_P2(this.ptr);
+		return CQt.QLine_P2((.)this.ptr);
 	}
 	public c_int X1()
 	{
-		return CQt.QLine_X1(this.ptr);
+		return CQt.QLine_X1((.)this.ptr);
 	}
 	public c_int Y1()
 	{
-		return CQt.QLine_Y1(this.ptr);
+		return CQt.QLine_Y1((.)this.ptr);
 	}
 	public c_int X2()
 	{
-		return CQt.QLine_X2(this.ptr);
+		return CQt.QLine_X2((.)this.ptr);
 	}
 	public c_int Y2()
 	{
-		return CQt.QLine_Y2(this.ptr);
+		return CQt.QLine_Y2((.)this.ptr);
 	}
 	public c_int Dx()
 	{
-		return CQt.QLine_Dx(this.ptr);
+		return CQt.QLine_Dx((.)this.ptr);
 	}
 	public c_int Dy()
 	{
-		return CQt.QLine_Dy(this.ptr);
+		return CQt.QLine_Dy((.)this.ptr);
 	}
 	public void Translate(QPoint_Ptr* p)
 	{
-		CQt.QLine_Translate(this.ptr, p);
+		CQt.QLine_Translate((.)this.ptr, p);
 	}
 	public void Translate2(c_int dx, c_int dy)
 	{
-		CQt.QLine_Translate2(this.ptr, dx, dy);
+		CQt.QLine_Translate2((.)this.ptr, dx, dy);
 	}
 	public QLine_Ptr Translated(QPoint_Ptr* p)
 	{
-		return CQt.QLine_Translated(this.ptr, p);
+		return CQt.QLine_Translated((.)this.ptr, p);
 	}
 	public QLine_Ptr Translated2(c_int dx, c_int dy)
 	{
-		return CQt.QLine_Translated2(this.ptr, dx, dy);
+		return CQt.QLine_Translated2((.)this.ptr, dx, dy);
 	}
 	public QPoint_Ptr Center()
 	{
-		return CQt.QLine_Center(this.ptr);
+		return CQt.QLine_Center((.)this.ptr);
 	}
 	public void SetP1(QPoint_Ptr* p1)
 	{
-		CQt.QLine_SetP1(this.ptr, p1);
+		CQt.QLine_SetP1((.)this.ptr, p1);
 	}
 	public void SetP2(QPoint_Ptr* p2)
 	{
-		CQt.QLine_SetP2(this.ptr, p2);
+		CQt.QLine_SetP2((.)this.ptr, p2);
 	}
 	public void SetPoints(QPoint_Ptr* p1, QPoint_Ptr* p2)
 	{
-		CQt.QLine_SetPoints(this.ptr, p1, p2);
+		CQt.QLine_SetPoints((.)this.ptr, p1, p2);
 	}
 	public void SetLine(c_int x1, c_int y1, c_int x2, c_int y2)
 	{
-		CQt.QLine_SetLine(this.ptr, x1, y1, x2, y2);
+		CQt.QLine_SetLine((.)this.ptr, x1, y1, x2, y2);
 	}
 	public QLineF_Ptr ToLineF()
 	{
-		return CQt.QLine_ToLineF(this.ptr);
+		return CQt.QLine_ToLineF((.)this.ptr);
 	}
 }
 interface IQLine
@@ -314,119 +314,119 @@ class QLineF
 	}
 	public bool IsNull()
 	{
-		return CQt.QLineF_IsNull(this.ptr);
+		return CQt.QLineF_IsNull((.)this.ptr);
 	}
 	public QPointF_Ptr P1()
 	{
-		return CQt.QLineF_P1(this.ptr);
+		return CQt.QLineF_P1((.)this.ptr);
 	}
 	public QPointF_Ptr P2()
 	{
-		return CQt.QLineF_P2(this.ptr);
+		return CQt.QLineF_P2((.)this.ptr);
 	}
 	public double X1()
 	{
-		return CQt.QLineF_X1(this.ptr);
+		return CQt.QLineF_X1((.)this.ptr);
 	}
 	public double Y1()
 	{
-		return CQt.QLineF_Y1(this.ptr);
+		return CQt.QLineF_Y1((.)this.ptr);
 	}
 	public double X2()
 	{
-		return CQt.QLineF_X2(this.ptr);
+		return CQt.QLineF_X2((.)this.ptr);
 	}
 	public double Y2()
 	{
-		return CQt.QLineF_Y2(this.ptr);
+		return CQt.QLineF_Y2((.)this.ptr);
 	}
 	public double Dx()
 	{
-		return CQt.QLineF_Dx(this.ptr);
+		return CQt.QLineF_Dx((.)this.ptr);
 	}
 	public double Dy()
 	{
-		return CQt.QLineF_Dy(this.ptr);
+		return CQt.QLineF_Dy((.)this.ptr);
 	}
 	public double Length()
 	{
-		return CQt.QLineF_Length(this.ptr);
+		return CQt.QLineF_Length((.)this.ptr);
 	}
 	public void SetLength(double lenVal)
 	{
-		CQt.QLineF_SetLength(this.ptr, lenVal);
+		CQt.QLineF_SetLength((.)this.ptr, lenVal);
 	}
 	public double Angle()
 	{
-		return CQt.QLineF_Angle(this.ptr);
+		return CQt.QLineF_Angle((.)this.ptr);
 	}
 	public void SetAngle(double angle)
 	{
-		CQt.QLineF_SetAngle(this.ptr, angle);
+		CQt.QLineF_SetAngle((.)this.ptr, angle);
 	}
 	public double AngleTo(QLineF_Ptr* l)
 	{
-		return CQt.QLineF_AngleTo(this.ptr, l);
+		return CQt.QLineF_AngleTo((.)this.ptr, l);
 	}
 	public QLineF_Ptr UnitVector()
 	{
-		return CQt.QLineF_UnitVector(this.ptr);
+		return CQt.QLineF_UnitVector((.)this.ptr);
 	}
 	public QLineF_Ptr NormalVector()
 	{
-		return CQt.QLineF_NormalVector(this.ptr);
+		return CQt.QLineF_NormalVector((.)this.ptr);
 	}
 	public QLineF_IntersectionType Intersects(QLineF_Ptr* l)
 	{
-		return CQt.QLineF_Intersects(this.ptr, l);
+		return CQt.QLineF_Intersects((.)this.ptr, l);
 	}
 	public QPointF_Ptr PointAt(double t)
 	{
-		return CQt.QLineF_PointAt(this.ptr, t);
+		return CQt.QLineF_PointAt((.)this.ptr, t);
 	}
 	public void Translate(QPointF_Ptr* p)
 	{
-		CQt.QLineF_Translate(this.ptr, p);
+		CQt.QLineF_Translate((.)this.ptr, p);
 	}
 	public void Translate2(double dx, double dy)
 	{
-		CQt.QLineF_Translate2(this.ptr, dx, dy);
+		CQt.QLineF_Translate2((.)this.ptr, dx, dy);
 	}
 	public QLineF_Ptr Translated(QPointF_Ptr* p)
 	{
-		return CQt.QLineF_Translated(this.ptr, p);
+		return CQt.QLineF_Translated((.)this.ptr, p);
 	}
 	public QLineF_Ptr Translated2(double dx, double dy)
 	{
-		return CQt.QLineF_Translated2(this.ptr, dx, dy);
+		return CQt.QLineF_Translated2((.)this.ptr, dx, dy);
 	}
 	public QPointF_Ptr Center()
 	{
-		return CQt.QLineF_Center(this.ptr);
+		return CQt.QLineF_Center((.)this.ptr);
 	}
 	public void SetP1(QPointF_Ptr* p1)
 	{
-		CQt.QLineF_SetP1(this.ptr, p1);
+		CQt.QLineF_SetP1((.)this.ptr, p1);
 	}
 	public void SetP2(QPointF_Ptr* p2)
 	{
-		CQt.QLineF_SetP2(this.ptr, p2);
+		CQt.QLineF_SetP2((.)this.ptr, p2);
 	}
 	public void SetPoints(QPointF_Ptr* p1, QPointF_Ptr* p2)
 	{
-		CQt.QLineF_SetPoints(this.ptr, p1, p2);
+		CQt.QLineF_SetPoints((.)this.ptr, p1, p2);
 	}
 	public void SetLine(double x1, double y1, double x2, double y2)
 	{
-		CQt.QLineF_SetLine(this.ptr, x1, y1, x2, y2);
+		CQt.QLineF_SetLine((.)this.ptr, x1, y1, x2, y2);
 	}
 	public QLine_Ptr ToLine()
 	{
-		return CQt.QLineF_ToLine(this.ptr);
+		return CQt.QLineF_ToLine((.)this.ptr);
 	}
 	public QLineF_IntersectionType Intersects2(QLineF_Ptr* l, QPointF_Ptr* intersectionPoint)
 	{
-		return CQt.QLineF_Intersects2(this.ptr, l, intersectionPoint);
+		return CQt.QLineF_Intersects2((.)this.ptr, l, intersectionPoint);
 	}
 }
 interface IQLineF

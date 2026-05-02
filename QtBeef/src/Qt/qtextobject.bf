@@ -40,15 +40,15 @@ class QTextObject
 	private QTextObject_Ptr* ptr;
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QTextObject_MetaObject(this.ptr);
+		return CQt.QTextObject_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QTextObject_Qt_Metacast(this.ptr, param1);
+		return CQt.QTextObject_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QTextObject_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QTextObject_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -56,23 +56,23 @@ class QTextObject
 	}
 	public void SetFormat(QTextFormat_Ptr* format)
 	{
-		CQt.QTextObject_SetFormat(this.ptr, format);
+		CQt.QTextObject_SetFormat((.)this.ptr, format);
 	}
 	public QTextFormat_Ptr Format()
 	{
-		return CQt.QTextObject_Format(this.ptr);
+		return CQt.QTextObject_Format((.)this.ptr);
 	}
 	public c_int FormatIndex()
 	{
-		return CQt.QTextObject_FormatIndex(this.ptr);
+		return CQt.QTextObject_FormatIndex((.)this.ptr);
 	}
 	public QTextDocument_Ptr* Document()
 	{
-		return CQt.QTextObject_Document(this.ptr);
+		return CQt.QTextObject_Document((.)this.ptr);
 	}
 	public c_int ObjectIndex()
 	{
-		return CQt.QTextObject_ObjectIndex(this.ptr);
+		return CQt.QTextObject_ObjectIndex((.)this.ptr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -81,6 +81,230 @@ class QTextObject
 	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
 	{
 		return CQt.QTextObject_Tr3(s, c, n);
+	}
+	public bool Event(QEvent_Ptr* event)
+	{
+		return CQt.QObject_Event((.)this.ptr, event);
+	}
+	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	{
+		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+	}
+	public libqt_string ObjectName()
+	{
+		return CQt.QObject_ObjectName((.)this.ptr);
+	}
+	public void SetObjectName(QAnyStringView_Ptr name)
+	{
+		CQt.QObject_SetObjectName((.)this.ptr, name);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.ptr, b);
+	}
+	public QThread_Ptr* Thread()
+	{
+		return CQt.QObject_Thread((.)this.ptr);
+	}
+	public void MoveToThread(QThread_Ptr* thread)
+	{
+		CQt.QObject_MoveToThread((.)this.ptr, thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.ptr);
+	}
+	public void SetParent(QObject_Ptr* parent)
+	{
+		CQt.QObject_SetParent((.)this.ptr, parent);
+	}
+	public void InstallEventFilter(QObject_Ptr* filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+	}
+	public void RemoveEventFilter(QObject_Ptr* obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+	}
+	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	{
+		return CQt.QObject_Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	{
+		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+	}
+	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	{
+		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.ptr);
+	}
+	public bool Disconnect4(QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+	}
+	public bool Disconnect5(QMetaObject_Connection* param1)
+	{
+		return CQt.QObject_Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.ptr);
+	}
+	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	{
+		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return CQt.QObject_Property((.)this.ptr, name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage()
+	{
+		return CQt.QObject_BindingStorage((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage2()
+	{
+		return CQt.QObject_BindingStorage2((.)this.ptr);
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.ptr);
+	}
+	public QObject_Ptr* Parent()
+	{
+		return CQt.QObject_Parent((.)this.ptr);
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.ptr);
+	}
+	public QObject_Ptr* Sender()
+	{
+		return CQt.QObject_Sender((.)this.ptr);
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.ptr, signal);
+	}
+	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+	}
+	public void TimerEvent(QTimerEvent_Ptr* event)
+	{
+		CQt.QObject_TimerEvent((.)this.ptr, event);
+	}
+	public void ChildEvent(QChildEvent_Ptr* event)
+	{
+		CQt.QObject_ChildEvent((.)this.ptr, event);
+	}
+	public void CustomEvent(QEvent_Ptr* event)
+	{
+		CQt.QObject_CustomEvent((.)this.ptr, event);
+	}
+	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+	}
+	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+	}
+	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+	}
+	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+	}
+	public void Destroyed1(QObject_Ptr* param1)
+	{
+		CQt.QObject_Destroyed1((.)this.ptr, param1);
 	}
 }
 interface IQTextObject
@@ -132,15 +356,15 @@ class QTextBlockGroup
 	private QTextBlockGroup_Ptr* ptr;
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QTextBlockGroup_MetaObject(this.ptr);
+		return CQt.QTextBlockGroup_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QTextBlockGroup_Qt_Metacast(this.ptr, param1);
+		return CQt.QTextBlockGroup_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QTextBlockGroup_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QTextBlockGroup_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -148,19 +372,19 @@ class QTextBlockGroup
 	}
 	public void BlockInserted(QTextBlock_Ptr* block)
 	{
-		CQt.QTextBlockGroup_BlockInserted(this.ptr, block);
+		CQt.QTextBlockGroup_BlockInserted((.)this.ptr, block);
 	}
 	public void BlockRemoved(QTextBlock_Ptr* block)
 	{
-		CQt.QTextBlockGroup_BlockRemoved(this.ptr, block);
+		CQt.QTextBlockGroup_BlockRemoved((.)this.ptr, block);
 	}
 	public void BlockFormatChanged(QTextBlock_Ptr* block)
 	{
-		CQt.QTextBlockGroup_BlockFormatChanged(this.ptr, block);
+		CQt.QTextBlockGroup_BlockFormatChanged((.)this.ptr, block);
 	}
 	public void* BlockList()
 	{
-		return CQt.QTextBlockGroup_BlockList(this.ptr);
+		return CQt.QTextBlockGroup_BlockList((.)this.ptr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -169,6 +393,250 @@ class QTextBlockGroup
 	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
 	{
 		return CQt.QTextBlockGroup_Tr3(s, c, n);
+	}
+	public void SetFormat(QTextFormat_Ptr* format)
+	{
+		CQt.QTextObject_SetFormat((.)this.ptr, format);
+	}
+	public QTextFormat_Ptr Format()
+	{
+		return CQt.QTextObject_Format((.)this.ptr);
+	}
+	public c_int FormatIndex()
+	{
+		return CQt.QTextObject_FormatIndex((.)this.ptr);
+	}
+	public QTextDocument_Ptr* Document()
+	{
+		return CQt.QTextObject_Document((.)this.ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextObject_ObjectIndex((.)this.ptr);
+	}
+	public bool Event(QEvent_Ptr* event)
+	{
+		return CQt.QObject_Event((.)this.ptr, event);
+	}
+	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	{
+		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+	}
+	public libqt_string ObjectName()
+	{
+		return CQt.QObject_ObjectName((.)this.ptr);
+	}
+	public void SetObjectName(QAnyStringView_Ptr name)
+	{
+		CQt.QObject_SetObjectName((.)this.ptr, name);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.ptr, b);
+	}
+	public QThread_Ptr* Thread()
+	{
+		return CQt.QObject_Thread((.)this.ptr);
+	}
+	public void MoveToThread(QThread_Ptr* thread)
+	{
+		CQt.QObject_MoveToThread((.)this.ptr, thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.ptr);
+	}
+	public void SetParent(QObject_Ptr* parent)
+	{
+		CQt.QObject_SetParent((.)this.ptr, parent);
+	}
+	public void InstallEventFilter(QObject_Ptr* filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+	}
+	public void RemoveEventFilter(QObject_Ptr* obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+	}
+	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	{
+		return CQt.QObject_Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	{
+		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+	}
+	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	{
+		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.ptr);
+	}
+	public bool Disconnect4(QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+	}
+	public bool Disconnect5(QMetaObject_Connection* param1)
+	{
+		return CQt.QObject_Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.ptr);
+	}
+	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	{
+		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return CQt.QObject_Property((.)this.ptr, name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage()
+	{
+		return CQt.QObject_BindingStorage((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage2()
+	{
+		return CQt.QObject_BindingStorage2((.)this.ptr);
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.ptr);
+	}
+	public QObject_Ptr* Parent()
+	{
+		return CQt.QObject_Parent((.)this.ptr);
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.ptr);
+	}
+	public QObject_Ptr* Sender()
+	{
+		return CQt.QObject_Sender((.)this.ptr);
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.ptr, signal);
+	}
+	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+	}
+	public void TimerEvent(QTimerEvent_Ptr* event)
+	{
+		CQt.QObject_TimerEvent((.)this.ptr, event);
+	}
+	public void ChildEvent(QChildEvent_Ptr* event)
+	{
+		CQt.QObject_ChildEvent((.)this.ptr, event);
+	}
+	public void CustomEvent(QEvent_Ptr* event)
+	{
+		CQt.QObject_CustomEvent((.)this.ptr, event);
+	}
+	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+	}
+	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+	}
+	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+	}
+	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+	}
+	public void Destroyed1(QObject_Ptr* param1)
+	{
+		CQt.QObject_Destroyed1((.)this.ptr, param1);
 	}
 }
 interface IQTextBlockGroup
@@ -243,15 +711,15 @@ class QTextFrame
 	}
 	public QMetaObject_Ptr* MetaObject()
 	{
-		return CQt.QTextFrame_MetaObject(this.ptr);
+		return CQt.QTextFrame_MetaObject((.)this.ptr);
 	}
 	public void* Qt_metacast(c_char* param1)
 	{
-		return CQt.QTextFrame_Qt_Metacast(this.ptr, param1);
+		return CQt.QTextFrame_Qt_Metacast((.)this.ptr, param1);
 	}
 	public c_int Qt_metacall(QMetaObject_Call param1, c_int param2, void** param3)
 	{
-		return CQt.QTextFrame_Qt_Metacall(this.ptr, param1, param2, param3);
+		return CQt.QTextFrame_Qt_Metacall((.)this.ptr, param1, param2, param3);
 	}
 	public libqt_string Tr(c_char* s)
 	{
@@ -259,43 +727,43 @@ class QTextFrame
 	}
 	public void SetFrameFormat(QTextFrameFormat_Ptr* format)
 	{
-		CQt.QTextFrame_SetFrameFormat(this.ptr, format);
+		CQt.QTextFrame_SetFrameFormat((.)this.ptr, format);
 	}
 	public QTextFrameFormat_Ptr FrameFormat()
 	{
-		return CQt.QTextFrame_FrameFormat(this.ptr);
+		return CQt.QTextFrame_FrameFormat((.)this.ptr);
 	}
 	public QTextCursor_Ptr FirstCursorPosition()
 	{
-		return CQt.QTextFrame_FirstCursorPosition(this.ptr);
+		return CQt.QTextFrame_FirstCursorPosition((.)this.ptr);
 	}
 	public QTextCursor_Ptr LastCursorPosition()
 	{
-		return CQt.QTextFrame_LastCursorPosition(this.ptr);
+		return CQt.QTextFrame_LastCursorPosition((.)this.ptr);
 	}
 	public c_int FirstPosition()
 	{
-		return CQt.QTextFrame_FirstPosition(this.ptr);
+		return CQt.QTextFrame_FirstPosition((.)this.ptr);
 	}
 	public c_int LastPosition()
 	{
-		return CQt.QTextFrame_LastPosition(this.ptr);
+		return CQt.QTextFrame_LastPosition((.)this.ptr);
 	}
 	public void* ChildFrames()
 	{
-		return CQt.QTextFrame_ChildFrames(this.ptr);
+		return CQt.QTextFrame_ChildFrames((.)this.ptr);
 	}
 	public QTextFrame_Ptr* ParentFrame()
 	{
-		return CQt.QTextFrame_ParentFrame(this.ptr);
+		return CQt.QTextFrame_ParentFrame((.)this.ptr);
 	}
 	public QTextFrame_iterator Begin()
 	{
-		return CQt.QTextFrame_Begin(this.ptr);
+		return CQt.QTextFrame_Begin((.)this.ptr);
 	}
 	public QTextFrame_iterator End()
 	{
-		return CQt.QTextFrame_End(this.ptr);
+		return CQt.QTextFrame_End((.)this.ptr);
 	}
 	public libqt_string Tr2(c_char* s, c_char* c)
 	{
@@ -304,6 +772,250 @@ class QTextFrame
 	public libqt_string Tr3(c_char* s, c_char* c, c_int n)
 	{
 		return CQt.QTextFrame_Tr3(s, c, n);
+	}
+	public void SetFormat(QTextFormat_Ptr* format)
+	{
+		CQt.QTextObject_SetFormat((.)this.ptr, format);
+	}
+	public QTextFormat_Ptr Format()
+	{
+		return CQt.QTextObject_Format((.)this.ptr);
+	}
+	public c_int FormatIndex()
+	{
+		return CQt.QTextObject_FormatIndex((.)this.ptr);
+	}
+	public QTextDocument_Ptr* Document()
+	{
+		return CQt.QTextObject_Document((.)this.ptr);
+	}
+	public c_int ObjectIndex()
+	{
+		return CQt.QTextObject_ObjectIndex((.)this.ptr);
+	}
+	public bool Event(QEvent_Ptr* event)
+	{
+		return CQt.QObject_Event((.)this.ptr, event);
+	}
+	public bool EventFilter(QObject_Ptr* watched, QEvent_Ptr* event)
+	{
+		return CQt.QObject_EventFilter((.)this.ptr, watched, event);
+	}
+	public libqt_string ObjectName()
+	{
+		return CQt.QObject_ObjectName((.)this.ptr);
+	}
+	public void SetObjectName(QAnyStringView_Ptr name)
+	{
+		CQt.QObject_SetObjectName((.)this.ptr, name);
+	}
+	public bool IsWidgetType()
+	{
+		return CQt.QObject_IsWidgetType((.)this.ptr);
+	}
+	public bool IsWindowType()
+	{
+		return CQt.QObject_IsWindowType((.)this.ptr);
+	}
+	public bool IsQuickItemType()
+	{
+		return CQt.QObject_IsQuickItemType((.)this.ptr);
+	}
+	public bool SignalsBlocked()
+	{
+		return CQt.QObject_SignalsBlocked((.)this.ptr);
+	}
+	public bool BlockSignals(bool b)
+	{
+		return CQt.QObject_BlockSignals((.)this.ptr, b);
+	}
+	public QThread_Ptr* Thread()
+	{
+		return CQt.QObject_Thread((.)this.ptr);
+	}
+	public void MoveToThread(QThread_Ptr* thread)
+	{
+		CQt.QObject_MoveToThread((.)this.ptr, thread);
+	}
+	public c_int StartTimer(c_int interval)
+	{
+		return CQt.QObject_StartTimer((.)this.ptr, interval);
+	}
+	public c_int StartTimer2(void* time)
+	{
+		return CQt.QObject_StartTimer2((.)this.ptr, time);
+	}
+	public void KillTimer(c_int id)
+	{
+		CQt.QObject_KillTimer((.)this.ptr, id);
+	}
+	public void** Children()
+	{
+		return CQt.QObject_Children((.)this.ptr);
+	}
+	public void SetParent(QObject_Ptr* parent)
+	{
+		CQt.QObject_SetParent((.)this.ptr, parent);
+	}
+	public void InstallEventFilter(QObject_Ptr* filterObj)
+	{
+		CQt.QObject_InstallEventFilter((.)this.ptr, filterObj);
+	}
+	public void RemoveEventFilter(QObject_Ptr* obj)
+	{
+		CQt.QObject_RemoveEventFilter((.)this.ptr, obj);
+	}
+	public QMetaObject_Connection Connect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Connect(sender, signal, receiver, member);
+	}
+	public QMetaObject_Connection Connect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method)
+	{
+		return CQt.QObject_Connect2(sender, signal, receiver, method);
+	}
+	public QMetaObject_Connection Connect3(QObject_Ptr* sender, c_char* signal, c_char* member)
+	{
+		return CQt.QObject_Connect3((.)this.ptr, sender, signal, member);
+	}
+	public bool Disconnect(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect(sender, signal, receiver, member);
+	}
+	public bool Disconnect2(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* member)
+	{
+		return CQt.QObject_Disconnect2(sender, signal, receiver, member);
+	}
+	public bool Disconnect3()
+	{
+		return CQt.QObject_Disconnect3((.)this.ptr);
+	}
+	public bool Disconnect4(QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect4((.)this.ptr, receiver);
+	}
+	public bool Disconnect5(QMetaObject_Connection* param1)
+	{
+		return CQt.QObject_Disconnect5(param1);
+	}
+	public void DumpObjectTree()
+	{
+		CQt.QObject_DumpObjectTree((.)this.ptr);
+	}
+	public void DumpObjectInfo()
+	{
+		CQt.QObject_DumpObjectInfo((.)this.ptr);
+	}
+	public bool SetProperty(c_char* name, QVariant_Ptr* value)
+	{
+		return CQt.QObject_SetProperty((.)this.ptr, name, value);
+	}
+	public QVariant_Ptr Property(c_char* name)
+	{
+		return CQt.QObject_Property((.)this.ptr, name);
+	}
+	public void* DynamicPropertyNames()
+	{
+		return CQt.QObject_DynamicPropertyNames((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage()
+	{
+		return CQt.QObject_BindingStorage((.)this.ptr);
+	}
+	public QBindingStorage_Ptr* BindingStorage2()
+	{
+		return CQt.QObject_BindingStorage2((.)this.ptr);
+	}
+	public void Destroyed()
+	{
+		CQt.QObject_Destroyed((.)this.ptr);
+	}
+	public QObject_Ptr* Parent()
+	{
+		return CQt.QObject_Parent((.)this.ptr);
+	}
+	public bool Inherits(c_char* classname)
+	{
+		return CQt.QObject_Inherits((.)this.ptr, classname);
+	}
+	public void DeleteLater()
+	{
+		CQt.QObject_DeleteLater((.)this.ptr);
+	}
+	public QObject_Ptr* Sender()
+	{
+		return CQt.QObject_Sender((.)this.ptr);
+	}
+	public c_int SenderSignalIndex()
+	{
+		return CQt.QObject_SenderSignalIndex((.)this.ptr);
+	}
+	public c_int Receivers(c_char* signal)
+	{
+		return CQt.QObject_Receivers((.)this.ptr, signal);
+	}
+	public bool IsSignalConnected(QMetaMethod_Ptr* signal)
+	{
+		return CQt.QObject_IsSignalConnected((.)this.ptr, signal);
+	}
+	public void TimerEvent(QTimerEvent_Ptr* event)
+	{
+		CQt.QObject_TimerEvent((.)this.ptr, event);
+	}
+	public void ChildEvent(QChildEvent_Ptr* event)
+	{
+		CQt.QObject_ChildEvent((.)this.ptr, event);
+	}
+	public void CustomEvent(QEvent_Ptr* event)
+	{
+		CQt.QObject_CustomEvent((.)this.ptr, event);
+	}
+	public void ConnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_ConnectNotify((.)this.ptr, signal);
+	}
+	public void DisconnectNotify(QMetaMethod_Ptr* signal)
+	{
+		CQt.QObject_DisconnectNotify((.)this.ptr, signal);
+	}
+	public c_int StartTimer22(c_int interval, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer22((.)this.ptr, interval, timerType);
+	}
+	public c_int StartTimer23(void* time, Qt_TimerType timerType)
+	{
+		return CQt.QObject_StartTimer23((.)this.ptr, time, timerType);
+	}
+	public QMetaObject_Connection Connect5(QObject_Ptr* sender, c_char* signal, QObject_Ptr* receiver, c_char* member, Qt_ConnectionType param5)
+	{
+		return CQt.QObject_Connect5(sender, signal, receiver, member, param5);
+	}
+	public QMetaObject_Connection Connect52(QObject_Ptr* sender, QMetaMethod_Ptr* signal, QObject_Ptr* receiver, QMetaMethod_Ptr* method, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect52(sender, signal, receiver, method, type);
+	}
+	public QMetaObject_Connection Connect4(QObject_Ptr* sender, c_char* signal, c_char* member, Qt_ConnectionType type)
+	{
+		return CQt.QObject_Connect4((.)this.ptr, sender, signal, member, type);
+	}
+	public bool Disconnect1(c_char* signal)
+	{
+		return CQt.QObject_Disconnect1((.)this.ptr, signal);
+	}
+	public bool Disconnect22(c_char* signal, QObject_Ptr* receiver)
+	{
+		return CQt.QObject_Disconnect22((.)this.ptr, signal, receiver);
+	}
+	public bool Disconnect32(c_char* signal, QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect32((.)this.ptr, signal, receiver, member);
+	}
+	public bool Disconnect23(QObject_Ptr* receiver, c_char* member)
+	{
+		return CQt.QObject_Disconnect23((.)this.ptr, receiver, member);
+	}
+	public void Destroyed1(QObject_Ptr* param1)
+	{
+		CQt.QObject_Destroyed1((.)this.ptr, param1);
 	}
 }
 interface IQTextFrame
@@ -455,131 +1167,131 @@ class QTextBlock
 	}
 	public bool IsValid()
 	{
-		return CQt.QTextBlock_IsValid(this.ptr);
+		return CQt.QTextBlock_IsValid((.)this.ptr);
 	}
 	public c_int Position()
 	{
-		return CQt.QTextBlock_Position(this.ptr);
+		return CQt.QTextBlock_Position((.)this.ptr);
 	}
 	public c_int Length()
 	{
-		return CQt.QTextBlock_Length(this.ptr);
+		return CQt.QTextBlock_Length((.)this.ptr);
 	}
 	public bool Contains(c_int position)
 	{
-		return CQt.QTextBlock_Contains(this.ptr, position);
+		return CQt.QTextBlock_Contains((.)this.ptr, position);
 	}
 	public QTextLayout_Ptr* Layout()
 	{
-		return CQt.QTextBlock_Layout(this.ptr);
+		return CQt.QTextBlock_Layout((.)this.ptr);
 	}
 	public void ClearLayout()
 	{
-		CQt.QTextBlock_ClearLayout(this.ptr);
+		CQt.QTextBlock_ClearLayout((.)this.ptr);
 	}
 	public QTextBlockFormat_Ptr BlockFormat()
 	{
-		return CQt.QTextBlock_BlockFormat(this.ptr);
+		return CQt.QTextBlock_BlockFormat((.)this.ptr);
 	}
 	public c_int BlockFormatIndex()
 	{
-		return CQt.QTextBlock_BlockFormatIndex(this.ptr);
+		return CQt.QTextBlock_BlockFormatIndex((.)this.ptr);
 	}
 	public QTextCharFormat_Ptr CharFormat()
 	{
-		return CQt.QTextBlock_CharFormat(this.ptr);
+		return CQt.QTextBlock_CharFormat((.)this.ptr);
 	}
 	public c_int CharFormatIndex()
 	{
-		return CQt.QTextBlock_CharFormatIndex(this.ptr);
+		return CQt.QTextBlock_CharFormatIndex((.)this.ptr);
 	}
 	public Qt_LayoutDirection TextDirection()
 	{
-		return CQt.QTextBlock_TextDirection(this.ptr);
+		return CQt.QTextBlock_TextDirection((.)this.ptr);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QTextBlock_Text(this.ptr);
+		return CQt.QTextBlock_Text((.)this.ptr);
 	}
 	public void* TextFormats()
 	{
-		return CQt.QTextBlock_TextFormats(this.ptr);
+		return CQt.QTextBlock_TextFormats((.)this.ptr);
 	}
 	public QTextDocument_Ptr* Document()
 	{
-		return CQt.QTextBlock_Document(this.ptr);
+		return CQt.QTextBlock_Document((.)this.ptr);
 	}
 	public QTextList_Ptr* TextList()
 	{
-		return CQt.QTextBlock_TextList(this.ptr);
+		return CQt.QTextBlock_TextList((.)this.ptr);
 	}
 	public QTextBlockUserData_Ptr* UserData()
 	{
-		return CQt.QTextBlock_UserData(this.ptr);
+		return CQt.QTextBlock_UserData((.)this.ptr);
 	}
 	public void SetUserData(QTextBlockUserData_Ptr* data)
 	{
-		CQt.QTextBlock_SetUserData(this.ptr, data);
+		CQt.QTextBlock_SetUserData((.)this.ptr, data);
 	}
 	public c_int UserState()
 	{
-		return CQt.QTextBlock_UserState(this.ptr);
+		return CQt.QTextBlock_UserState((.)this.ptr);
 	}
 	public void SetUserState(c_int state)
 	{
-		CQt.QTextBlock_SetUserState(this.ptr, state);
+		CQt.QTextBlock_SetUserState((.)this.ptr, state);
 	}
 	public c_int Revision()
 	{
-		return CQt.QTextBlock_Revision(this.ptr);
+		return CQt.QTextBlock_Revision((.)this.ptr);
 	}
 	public void SetRevision(c_int rev)
 	{
-		CQt.QTextBlock_SetRevision(this.ptr, rev);
+		CQt.QTextBlock_SetRevision((.)this.ptr, rev);
 	}
 	public bool IsVisible()
 	{
-		return CQt.QTextBlock_IsVisible(this.ptr);
+		return CQt.QTextBlock_IsVisible((.)this.ptr);
 	}
 	public void SetVisible(bool visible)
 	{
-		CQt.QTextBlock_SetVisible(this.ptr, visible);
+		CQt.QTextBlock_SetVisible((.)this.ptr, visible);
 	}
 	public c_int BlockNumber()
 	{
-		return CQt.QTextBlock_BlockNumber(this.ptr);
+		return CQt.QTextBlock_BlockNumber((.)this.ptr);
 	}
 	public c_int FirstLineNumber()
 	{
-		return CQt.QTextBlock_FirstLineNumber(this.ptr);
+		return CQt.QTextBlock_FirstLineNumber((.)this.ptr);
 	}
 	public void SetLineCount(c_int count)
 	{
-		CQt.QTextBlock_SetLineCount(this.ptr, count);
+		CQt.QTextBlock_SetLineCount((.)this.ptr, count);
 	}
 	public c_int LineCount()
 	{
-		return CQt.QTextBlock_LineCount(this.ptr);
+		return CQt.QTextBlock_LineCount((.)this.ptr);
 	}
 	public QTextBlock_iterator Begin()
 	{
-		return CQt.QTextBlock_Begin(this.ptr);
+		return CQt.QTextBlock_Begin((.)this.ptr);
 	}
 	public QTextBlock_iterator End()
 	{
-		return CQt.QTextBlock_End(this.ptr);
+		return CQt.QTextBlock_End((.)this.ptr);
 	}
 	public QTextBlock_Ptr Next()
 	{
-		return CQt.QTextBlock_Next(this.ptr);
+		return CQt.QTextBlock_Next((.)this.ptr);
 	}
 	public QTextBlock_Ptr Previous()
 	{
-		return CQt.QTextBlock_Previous(this.ptr);
+		return CQt.QTextBlock_Previous((.)this.ptr);
 	}
 	public c_int FragmentIndex()
 	{
-		return CQt.QTextBlock_FragmentIndex(this.ptr);
+		return CQt.QTextBlock_FragmentIndex((.)this.ptr);
 	}
 }
 interface IQTextBlock
@@ -678,43 +1390,43 @@ class QTextFragment
 	}
 	public bool IsValid()
 	{
-		return CQt.QTextFragment_IsValid(this.ptr);
+		return CQt.QTextFragment_IsValid((.)this.ptr);
 	}
 	public c_int Position()
 	{
-		return CQt.QTextFragment_Position(this.ptr);
+		return CQt.QTextFragment_Position((.)this.ptr);
 	}
 	public c_int Length()
 	{
-		return CQt.QTextFragment_Length(this.ptr);
+		return CQt.QTextFragment_Length((.)this.ptr);
 	}
 	public bool Contains(c_int position)
 	{
-		return CQt.QTextFragment_Contains(this.ptr, position);
+		return CQt.QTextFragment_Contains((.)this.ptr, position);
 	}
 	public QTextCharFormat_Ptr CharFormat()
 	{
-		return CQt.QTextFragment_CharFormat(this.ptr);
+		return CQt.QTextFragment_CharFormat((.)this.ptr);
 	}
 	public c_int CharFormatIndex()
 	{
-		return CQt.QTextFragment_CharFormatIndex(this.ptr);
+		return CQt.QTextFragment_CharFormatIndex((.)this.ptr);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QTextFragment_Text(this.ptr);
+		return CQt.QTextFragment_Text((.)this.ptr);
 	}
 	public void* GlyphRuns()
 	{
-		return CQt.QTextFragment_GlyphRuns(this.ptr);
+		return CQt.QTextFragment_GlyphRuns((.)this.ptr);
 	}
 	public void* GlyphRuns1(c_int from)
 	{
-		return CQt.QTextFragment_GlyphRuns1(this.ptr, from);
+		return CQt.QTextFragment_GlyphRuns1((.)this.ptr, from);
 	}
 	public void* GlyphRuns2(c_int from, c_int length)
 	{
-		return CQt.QTextFragment_GlyphRuns2(this.ptr, from, length);
+		return CQt.QTextFragment_GlyphRuns2((.)this.ptr, from, length);
 	}
 }
 interface IQTextFragment
@@ -787,27 +1499,27 @@ class QTextFrame_iterator
 	}
 	public QTextFrame_Ptr* ParentFrame()
 	{
-		return CQt.QTextFrame_Iterator_ParentFrame(this.ptr);
+		return CQt.QTextFrame_Iterator_ParentFrame((.)this.ptr);
 	}
 	public QTextFrame_Ptr* CurrentFrame()
 	{
-		return CQt.QTextFrame_Iterator_CurrentFrame(this.ptr);
+		return CQt.QTextFrame_Iterator_CurrentFrame((.)this.ptr);
 	}
 	public QTextBlock_Ptr CurrentBlock()
 	{
-		return CQt.QTextFrame_Iterator_CurrentBlock(this.ptr);
+		return CQt.QTextFrame_Iterator_CurrentBlock((.)this.ptr);
 	}
 	public bool AtEnd()
 	{
-		return CQt.QTextFrame_Iterator_AtEnd(this.ptr);
+		return CQt.QTextFrame_Iterator_AtEnd((.)this.ptr);
 	}
 	public QTextFrame_iterator OperatorPlusPlus2(c_int param1)
 	{
-		return CQt.QTextFrame_Iterator_OperatorPlusPlus2(this.ptr, param1);
+		return CQt.QTextFrame_Iterator_OperatorPlusPlus2((.)this.ptr, param1);
 	}
 	public QTextFrame_iterator OperatorMinusMinus2(c_int param1)
 	{
-		return CQt.QTextFrame_Iterator_OperatorMinusMinus2(this.ptr, param1);
+		return CQt.QTextFrame_Iterator_OperatorMinusMinus2((.)this.ptr, param1);
 	}
 }
 interface IQTextFrame_iterator
@@ -872,19 +1584,19 @@ class QTextBlock_iterator
 	}
 	public QTextFragment_Ptr Fragment()
 	{
-		return CQt.QTextBlock_Iterator_Fragment(this.ptr);
+		return CQt.QTextBlock_Iterator_Fragment((.)this.ptr);
 	}
 	public bool AtEnd()
 	{
-		return CQt.QTextBlock_Iterator_AtEnd(this.ptr);
+		return CQt.QTextBlock_Iterator_AtEnd((.)this.ptr);
 	}
 	public QTextBlock_iterator OperatorPlusPlus2(c_int param1)
 	{
-		return CQt.QTextBlock_Iterator_OperatorPlusPlus2(this.ptr, param1);
+		return CQt.QTextBlock_Iterator_OperatorPlusPlus2((.)this.ptr, param1);
 	}
 	public QTextBlock_iterator OperatorMinusMinus2(c_int param1)
 	{
-		return CQt.QTextBlock_Iterator_OperatorMinusMinus2(this.ptr, param1);
+		return CQt.QTextBlock_Iterator_OperatorMinusMinus2((.)this.ptr, param1);
 	}
 }
 interface IQTextBlock_iterator

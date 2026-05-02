@@ -70,11 +70,11 @@ class QTreeWidgetItemIterator
 	}
 	public QTreeWidgetItemIterator_Ptr OperatorPlusPlus2(c_int param1)
 	{
-		return CQt.QTreeWidgetItemIterator_OperatorPlusPlus2(this.ptr, param1);
+		return CQt.QTreeWidgetItemIterator_OperatorPlusPlus2((.)this.ptr, param1);
 	}
 	public QTreeWidgetItemIterator_Ptr OperatorMinusMinus2(c_int param1)
 	{
-		return CQt.QTreeWidgetItemIterator_OperatorMinusMinus2(this.ptr, param1);
+		return CQt.QTreeWidgetItemIterator_OperatorMinusMinus2((.)this.ptr, param1);
 	}
 }
 interface IQTreeWidgetItemIterator

@@ -38,19 +38,19 @@ class QBasicMutex
 	}
 	public void Lock()
 	{
-		CQt.QBasicMutex_Lock(this.ptr);
+		CQt.QBasicMutex_Lock((.)this.ptr);
 	}
 	public void Unlock()
 	{
-		CQt.QBasicMutex_Unlock(this.ptr);
+		CQt.QBasicMutex_Unlock((.)this.ptr);
 	}
 	public bool TryLock()
 	{
-		return CQt.QBasicMutex_TryLock(this.ptr);
+		return CQt.QBasicMutex_TryLock((.)this.ptr);
 	}
 	public bool TryLock2()
 	{
-		return CQt.QBasicMutex_TryLock2(this.ptr);
+		return CQt.QBasicMutex_TryLock2((.)this.ptr);
 	}
 }
 interface IQBasicMutex
@@ -91,11 +91,23 @@ class QMutex
 	}
 	public bool Try_lock()
 	{
-		return CQt.QMutex_Try_Lock(this.ptr);
+		return CQt.QMutex_Try_Lock((.)this.ptr);
 	}
 	public bool TryLock2(c_int timeout)
 	{
-		return CQt.QMutex_TryLock2(this.ptr, timeout);
+		return CQt.QMutex_TryLock2((.)this.ptr, timeout);
+	}
+	public void Lock()
+	{
+		CQt.QBasicMutex_Lock((.)this.ptr);
+	}
+	public void Unlock()
+	{
+		CQt.QBasicMutex_Unlock((.)this.ptr);
+	}
+	public bool TryLock()
+	{
+		return CQt.QBasicMutex_TryLock((.)this.ptr);
 	}
 }
 interface IQMutex
@@ -140,23 +152,23 @@ class QRecursiveMutex
 	}
 	public void Lock()
 	{
-		CQt.QRecursiveMutex_Lock(this.ptr);
+		CQt.QRecursiveMutex_Lock((.)this.ptr);
 	}
 	public bool TryLock()
 	{
-		return CQt.QRecursiveMutex_TryLock(this.ptr);
+		return CQt.QRecursiveMutex_TryLock((.)this.ptr);
 	}
 	public void Unlock()
 	{
-		CQt.QRecursiveMutex_Unlock(this.ptr);
+		CQt.QRecursiveMutex_Unlock((.)this.ptr);
 	}
 	public bool TryLock2()
 	{
-		return CQt.QRecursiveMutex_TryLock2(this.ptr);
+		return CQt.QRecursiveMutex_TryLock2((.)this.ptr);
 	}
 	public bool TryLock1(c_int timeout)
 	{
-		return CQt.QRecursiveMutex_TryLock1(this.ptr, timeout);
+		return CQt.QRecursiveMutex_TryLock1((.)this.ptr, timeout);
 	}
 }
 interface IQRecursiveMutex

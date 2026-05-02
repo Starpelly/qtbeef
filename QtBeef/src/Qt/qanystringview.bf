@@ -84,15 +84,15 @@ class QAnyStringView
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QAnyStringView_ToString(this.ptr);
+		return CQt.QAnyStringView_ToString((.)this.ptr);
 	}
 	public void* Size()
 	{
-		return CQt.QAnyStringView_Size(this.ptr);
+		return CQt.QAnyStringView_Size((.)this.ptr);
 	}
 	public void* Data()
 	{
-		return CQt.QAnyStringView_Data(this.ptr);
+		return CQt.QAnyStringView_Data((.)this.ptr);
 	}
 	public c_int Compare(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs)
 	{
@@ -104,31 +104,31 @@ class QAnyStringView
 	}
 	public QChar_Ptr Front()
 	{
-		return CQt.QAnyStringView_Front(this.ptr);
+		return CQt.QAnyStringView_Front((.)this.ptr);
 	}
 	public QChar_Ptr Back()
 	{
-		return CQt.QAnyStringView_Back(this.ptr);
+		return CQt.QAnyStringView_Back((.)this.ptr);
 	}
 	public bool Empty()
 	{
-		return CQt.QAnyStringView_Empty(this.ptr);
+		return CQt.QAnyStringView_Empty((.)this.ptr);
 	}
 	public void* Size_bytes()
 	{
-		return CQt.QAnyStringView_Size_Bytes(this.ptr);
+		return CQt.QAnyStringView_Size_Bytes((.)this.ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QAnyStringView_IsNull(this.ptr);
+		return CQt.QAnyStringView_IsNull((.)this.ptr);
 	}
 	public bool IsEmpty()
 	{
-		return CQt.QAnyStringView_IsEmpty(this.ptr);
+		return CQt.QAnyStringView_IsEmpty((.)this.ptr);
 	}
 	public void* Length()
 	{
-		return CQt.QAnyStringView_Length(this.ptr);
+		return CQt.QAnyStringView_Length((.)this.ptr);
 	}
 	public c_int Compare3(QAnyStringView_Ptr lhs, QAnyStringView_Ptr rhs, Qt_CaseSensitivity cs)
 	{

@@ -136,67 +136,67 @@ class QColorSpace
 	}
 	public void Swap(QColorSpace_Ptr* colorSpace)
 	{
-		CQt.QColorSpace_Swap(this.ptr, colorSpace);
+		CQt.QColorSpace_Swap((.)this.ptr, colorSpace);
 	}
 	public QColorSpace_Primaries Primaries()
 	{
-		return CQt.QColorSpace_Primaries(this.ptr);
+		return CQt.QColorSpace_Primaries((.)this.ptr);
 	}
 	public QColorSpace_TransferFunction TransferFunction()
 	{
-		return CQt.QColorSpace_TransferFunction(this.ptr);
+		return CQt.QColorSpace_TransferFunction((.)this.ptr);
 	}
 	public float Gamma()
 	{
-		return CQt.QColorSpace_Gamma(this.ptr);
+		return CQt.QColorSpace_Gamma((.)this.ptr);
 	}
 	public libqt_string Description()
 	{
-		return CQt.QColorSpace_Description(this.ptr);
+		return CQt.QColorSpace_Description((.)this.ptr);
 	}
 	public void SetDescription(libqt_string* description)
 	{
-		CQt.QColorSpace_SetDescription(this.ptr, description);
+		CQt.QColorSpace_SetDescription((.)this.ptr, description);
 	}
 	public void SetTransferFunction(QColorSpace_TransferFunction transferFunction)
 	{
-		CQt.QColorSpace_SetTransferFunction(this.ptr, transferFunction);
+		CQt.QColorSpace_SetTransferFunction((.)this.ptr, transferFunction);
 	}
 	public void SetTransferFunction2(void** transferFunctionTable)
 	{
-		CQt.QColorSpace_SetTransferFunction2(this.ptr, transferFunctionTable);
+		CQt.QColorSpace_SetTransferFunction2((.)this.ptr, transferFunctionTable);
 	}
 	public void SetTransferFunctions(void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable)
 	{
-		CQt.QColorSpace_SetTransferFunctions(this.ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
+		CQt.QColorSpace_SetTransferFunctions((.)this.ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
 	}
 	public QColorSpace_Ptr WithTransferFunction(QColorSpace_TransferFunction transferFunction)
 	{
-		return CQt.QColorSpace_WithTransferFunction(this.ptr, transferFunction);
+		return CQt.QColorSpace_WithTransferFunction((.)this.ptr, transferFunction);
 	}
 	public QColorSpace_Ptr WithTransferFunction2(void** transferFunctionTable)
 	{
-		return CQt.QColorSpace_WithTransferFunction2(this.ptr, transferFunctionTable);
+		return CQt.QColorSpace_WithTransferFunction2((.)this.ptr, transferFunctionTable);
 	}
 	public QColorSpace_Ptr WithTransferFunctions(void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable)
 	{
-		return CQt.QColorSpace_WithTransferFunctions(this.ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
+		return CQt.QColorSpace_WithTransferFunctions((.)this.ptr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
 	}
 	public void SetPrimaries(QColorSpace_Primaries primariesId)
 	{
-		CQt.QColorSpace_SetPrimaries(this.ptr, primariesId);
+		CQt.QColorSpace_SetPrimaries((.)this.ptr, primariesId);
 	}
 	public void SetPrimaries2(QPointF_Ptr* whitePoint, QPointF_Ptr* redPoint, QPointF_Ptr* greenPoint, QPointF_Ptr* bluePoint)
 	{
-		CQt.QColorSpace_SetPrimaries2(this.ptr, whitePoint, redPoint, greenPoint, bluePoint);
+		CQt.QColorSpace_SetPrimaries2((.)this.ptr, whitePoint, redPoint, greenPoint, bluePoint);
 	}
 	public void Detach()
 	{
-		CQt.QColorSpace_Detach(this.ptr);
+		CQt.QColorSpace_Detach((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QColorSpace_IsValid(this.ptr);
+		return CQt.QColorSpace_IsValid((.)this.ptr);
 	}
 	public QColorSpace_Ptr FromIccProfile(void** iccProfile)
 	{
@@ -204,19 +204,19 @@ class QColorSpace
 	}
 	public void* IccProfile()
 	{
-		return CQt.QColorSpace_IccProfile(this.ptr);
+		return CQt.QColorSpace_IccProfile((.)this.ptr);
 	}
 	public QColorTransform_Ptr TransformationToColorSpace(QColorSpace_Ptr* colorspace)
 	{
-		return CQt.QColorSpace_TransformationToColorSpace(this.ptr, colorspace);
+		return CQt.QColorSpace_TransformationToColorSpace((.)this.ptr, colorspace);
 	}
 	public void SetTransferFunction22(QColorSpace_TransferFunction transferFunction, float gamma)
 	{
-		CQt.QColorSpace_SetTransferFunction22(this.ptr, transferFunction, gamma);
+		CQt.QColorSpace_SetTransferFunction22((.)this.ptr, transferFunction, gamma);
 	}
 	public QColorSpace_Ptr WithTransferFunction22(QColorSpace_TransferFunction transferFunction, float gamma)
 	{
-		return CQt.QColorSpace_WithTransferFunction22(this.ptr, transferFunction, gamma);
+		return CQt.QColorSpace_WithTransferFunction22((.)this.ptr, transferFunction, gamma);
 	}
 }
 interface IQColorSpace

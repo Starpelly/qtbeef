@@ -78,35 +78,35 @@ class QStringMatcher
 	}
 	public void SetPattern(libqt_string* pattern)
 	{
-		CQt.QStringMatcher_SetPattern(this.ptr, pattern);
+		CQt.QStringMatcher_SetPattern((.)this.ptr, pattern);
 	}
 	public void SetCaseSensitivity(Qt_CaseSensitivity cs)
 	{
-		CQt.QStringMatcher_SetCaseSensitivity(this.ptr, cs);
+		CQt.QStringMatcher_SetCaseSensitivity((.)this.ptr, cs);
 	}
 	public void* IndexIn(libqt_string* str)
 	{
-		return CQt.QStringMatcher_IndexIn(this.ptr, str);
+		return CQt.QStringMatcher_IndexIn((.)this.ptr, str);
 	}
 	public void* IndexIn2(QChar_Ptr* str, void* length)
 	{
-		return CQt.QStringMatcher_IndexIn2(this.ptr, str, length);
+		return CQt.QStringMatcher_IndexIn2((.)this.ptr, str, length);
 	}
 	public libqt_string Pattern()
 	{
-		return CQt.QStringMatcher_Pattern(this.ptr);
+		return CQt.QStringMatcher_Pattern((.)this.ptr);
 	}
 	public Qt_CaseSensitivity CaseSensitivity()
 	{
-		return CQt.QStringMatcher_CaseSensitivity(this.ptr);
+		return CQt.QStringMatcher_CaseSensitivity((.)this.ptr);
 	}
 	public void* IndexIn22(libqt_string* str, void* from)
 	{
-		return CQt.QStringMatcher_IndexIn22(this.ptr, str, from);
+		return CQt.QStringMatcher_IndexIn22((.)this.ptr, str, from);
 	}
 	public void* IndexIn32(QChar_Ptr* str, void* length, void* from)
 	{
-		return CQt.QStringMatcher_IndexIn32(this.ptr, str, length, from);
+		return CQt.QStringMatcher_IndexIn32((.)this.ptr, str, length, from);
 	}
 }
 interface IQStringMatcher

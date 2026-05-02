@@ -76,67 +76,67 @@ class QTextOption
 	}
 	public void SetAlignment(void* alignment)
 	{
-		CQt.QTextOption_SetAlignment(this.ptr, alignment);
+		CQt.QTextOption_SetAlignment((.)this.ptr, alignment);
 	}
 	public void* Alignment()
 	{
-		return CQt.QTextOption_Alignment(this.ptr);
+		return CQt.QTextOption_Alignment((.)this.ptr);
 	}
 	public void SetTextDirection(Qt_LayoutDirection aDirection)
 	{
-		CQt.QTextOption_SetTextDirection(this.ptr, aDirection);
+		CQt.QTextOption_SetTextDirection((.)this.ptr, aDirection);
 	}
 	public Qt_LayoutDirection TextDirection()
 	{
-		return CQt.QTextOption_TextDirection(this.ptr);
+		return CQt.QTextOption_TextDirection((.)this.ptr);
 	}
 	public void SetWrapMode(QTextOption_WrapMode wrap)
 	{
-		CQt.QTextOption_SetWrapMode(this.ptr, wrap);
+		CQt.QTextOption_SetWrapMode((.)this.ptr, wrap);
 	}
 	public QTextOption_WrapMode WrapMode()
 	{
-		return CQt.QTextOption_WrapMode(this.ptr);
+		return CQt.QTextOption_WrapMode((.)this.ptr);
 	}
 	public void SetFlags(void* flags)
 	{
-		CQt.QTextOption_SetFlags(this.ptr, flags);
+		CQt.QTextOption_SetFlags((.)this.ptr, flags);
 	}
 	public void* Flags()
 	{
-		return CQt.QTextOption_Flags(this.ptr);
+		return CQt.QTextOption_Flags((.)this.ptr);
 	}
 	public void SetTabStopDistance(double tabStopDistance)
 	{
-		CQt.QTextOption_SetTabStopDistance(this.ptr, tabStopDistance);
+		CQt.QTextOption_SetTabStopDistance((.)this.ptr, tabStopDistance);
 	}
 	public double TabStopDistance()
 	{
-		return CQt.QTextOption_TabStopDistance(this.ptr);
+		return CQt.QTextOption_TabStopDistance((.)this.ptr);
 	}
 	public void SetTabArray(void** tabStops)
 	{
-		CQt.QTextOption_SetTabArray(this.ptr, tabStops);
+		CQt.QTextOption_SetTabArray((.)this.ptr, tabStops);
 	}
 	public void* TabArray()
 	{
-		return CQt.QTextOption_TabArray(this.ptr);
+		return CQt.QTextOption_TabArray((.)this.ptr);
 	}
 	public void SetTabs(void** tabStops)
 	{
-		CQt.QTextOption_SetTabs(this.ptr, tabStops);
+		CQt.QTextOption_SetTabs((.)this.ptr, tabStops);
 	}
 	public void* Tabs()
 	{
-		return CQt.QTextOption_Tabs(this.ptr);
+		return CQt.QTextOption_Tabs((.)this.ptr);
 	}
 	public void SetUseDesignMetrics(bool b)
 	{
-		CQt.QTextOption_SetUseDesignMetrics(this.ptr, b);
+		CQt.QTextOption_SetUseDesignMetrics((.)this.ptr, b);
 	}
 	public bool UseDesignMetrics()
 	{
-		return CQt.QTextOption_UseDesignMetrics(this.ptr);
+		return CQt.QTextOption_UseDesignMetrics((.)this.ptr);
 	}
 }
 interface IQTextOption
@@ -221,27 +221,27 @@ class QTextOption_Tab
 	}
 	public double Position()
 	{
-		return CQt.QTextOption_Tab_Position(this.ptr);
+		return CQt.QTextOption_Tab_Position((.)this.ptr);
 	}
 	public void SetPosition(double position)
 	{
-		CQt.QTextOption_Tab_SetPosition(this.ptr, position);
+		CQt.QTextOption_Tab_SetPosition((.)this.ptr, position);
 	}
 	public QTextOption_TabType Type()
 	{
-		return CQt.QTextOption_Tab_Type(this.ptr);
+		return CQt.QTextOption_Tab_Type((.)this.ptr);
 	}
 	public void SetType(QTextOption_TabType type)
 	{
-		CQt.QTextOption_Tab_SetType(this.ptr, type);
+		CQt.QTextOption_Tab_SetType((.)this.ptr, type);
 	}
 	public QChar_Ptr Delimiter()
 	{
-		return CQt.QTextOption_Tab_Delimiter(this.ptr);
+		return CQt.QTextOption_Tab_Delimiter((.)this.ptr);
 	}
 	public void SetDelimiter(QChar_Ptr delimiter)
 	{
-		CQt.QTextOption_Tab_SetDelimiter(this.ptr, delimiter);
+		CQt.QTextOption_Tab_SetDelimiter((.)this.ptr, delimiter);
 	}
 }
 interface IQTextOption_Tab

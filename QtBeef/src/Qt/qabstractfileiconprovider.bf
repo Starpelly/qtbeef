@@ -40,23 +40,23 @@ class QAbstractFileIconProvider
 	}
 	public QIcon_Ptr Icon(QAbstractFileIconProvider_IconType param1)
 	{
-		return CQt.QAbstractFileIconProvider_Icon(this.ptr, param1);
+		return CQt.QAbstractFileIconProvider_Icon((.)this.ptr, param1);
 	}
 	public QIcon_Ptr Icon2(QFileInfo_Ptr* param1)
 	{
-		return CQt.QAbstractFileIconProvider_Icon2(this.ptr, param1);
+		return CQt.QAbstractFileIconProvider_Icon2((.)this.ptr, param1);
 	}
 	public libqt_string Type(QFileInfo_Ptr* param1)
 	{
-		return CQt.QAbstractFileIconProvider_Type(this.ptr, param1);
+		return CQt.QAbstractFileIconProvider_Type((.)this.ptr, param1);
 	}
 	public void SetOptions(void* options)
 	{
-		CQt.QAbstractFileIconProvider_SetOptions(this.ptr, options);
+		CQt.QAbstractFileIconProvider_SetOptions((.)this.ptr, options);
 	}
 	public void* Options()
 	{
-		return CQt.QAbstractFileIconProvider_Options(this.ptr);
+		return CQt.QAbstractFileIconProvider_Options((.)this.ptr);
 	}
 }
 interface IQAbstractFileIconProvider

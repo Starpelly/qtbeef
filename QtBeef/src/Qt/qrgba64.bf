@@ -100,75 +100,75 @@ class QRgba64
 	}
 	public bool IsOpaque()
 	{
-		return CQt.QRgba64_IsOpaque(this.ptr);
+		return CQt.QRgba64_IsOpaque((.)this.ptr);
 	}
 	public bool IsTransparent()
 	{
-		return CQt.QRgba64_IsTransparent(this.ptr);
+		return CQt.QRgba64_IsTransparent((.)this.ptr);
 	}
 	public c_ushort Red()
 	{
-		return CQt.QRgba64_Red(this.ptr);
+		return CQt.QRgba64_Red((.)this.ptr);
 	}
 	public c_ushort Green()
 	{
-		return CQt.QRgba64_Green(this.ptr);
+		return CQt.QRgba64_Green((.)this.ptr);
 	}
 	public c_ushort Blue()
 	{
-		return CQt.QRgba64_Blue(this.ptr);
+		return CQt.QRgba64_Blue((.)this.ptr);
 	}
 	public c_ushort Alpha()
 	{
-		return CQt.QRgba64_Alpha(this.ptr);
+		return CQt.QRgba64_Alpha((.)this.ptr);
 	}
 	public void SetRed(c_ushort _red)
 	{
-		CQt.QRgba64_SetRed(this.ptr, _red);
+		CQt.QRgba64_SetRed((.)this.ptr, _red);
 	}
 	public void SetGreen(c_ushort _green)
 	{
-		CQt.QRgba64_SetGreen(this.ptr, _green);
+		CQt.QRgba64_SetGreen((.)this.ptr, _green);
 	}
 	public void SetBlue(c_ushort _blue)
 	{
-		CQt.QRgba64_SetBlue(this.ptr, _blue);
+		CQt.QRgba64_SetBlue((.)this.ptr, _blue);
 	}
 	public void SetAlpha(c_ushort _alpha)
 	{
-		CQt.QRgba64_SetAlpha(this.ptr, _alpha);
+		CQt.QRgba64_SetAlpha((.)this.ptr, _alpha);
 	}
 	public c_uchar Red8()
 	{
-		return CQt.QRgba64_Red8(this.ptr);
+		return CQt.QRgba64_Red8((.)this.ptr);
 	}
 	public c_uchar Green8()
 	{
-		return CQt.QRgba64_Green8(this.ptr);
+		return CQt.QRgba64_Green8((.)this.ptr);
 	}
 	public c_uchar Blue8()
 	{
-		return CQt.QRgba64_Blue8(this.ptr);
+		return CQt.QRgba64_Blue8((.)this.ptr);
 	}
 	public c_uchar Alpha8()
 	{
-		return CQt.QRgba64_Alpha8(this.ptr);
+		return CQt.QRgba64_Alpha8((.)this.ptr);
 	}
 	public c_uint ToArgb32()
 	{
-		return CQt.QRgba64_ToArgb32(this.ptr);
+		return CQt.QRgba64_ToArgb32((.)this.ptr);
 	}
 	public c_ushort ToRgb16()
 	{
-		return CQt.QRgba64_ToRgb16(this.ptr);
+		return CQt.QRgba64_ToRgb16((.)this.ptr);
 	}
 	public QRgba64_Ptr Premultiplied()
 	{
-		return CQt.QRgba64_Premultiplied(this.ptr);
+		return CQt.QRgba64_Premultiplied((.)this.ptr);
 	}
 	public QRgba64_Ptr Unpremultiplied()
 	{
-		return CQt.QRgba64_Unpremultiplied(this.ptr);
+		return CQt.QRgba64_Unpremultiplied((.)this.ptr);
 	}
 }
 interface IQRgba64

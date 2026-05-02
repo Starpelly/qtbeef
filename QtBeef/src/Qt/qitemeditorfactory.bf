@@ -30,11 +30,11 @@ class QItemEditorCreatorBase
 	}
 	public QWidget_Ptr* CreateWidget(QWidget_Ptr* parent)
 	{
-		return CQt.QItemEditorCreatorBase_CreateWidget(this.ptr, parent);
+		return CQt.QItemEditorCreatorBase_CreateWidget((.)this.ptr, parent);
 	}
 	public void* ValuePropertyName()
 	{
-		return CQt.QItemEditorCreatorBase_ValuePropertyName(this.ptr);
+		return CQt.QItemEditorCreatorBase_ValuePropertyName((.)this.ptr);
 	}
 }
 interface IQItemEditorCreatorBase
@@ -85,15 +85,15 @@ class QItemEditorFactory
 	}
 	public QWidget_Ptr* CreateEditor(c_int userType, QWidget_Ptr* parent)
 	{
-		return CQt.QItemEditorFactory_CreateEditor(this.ptr, userType, parent);
+		return CQt.QItemEditorFactory_CreateEditor((.)this.ptr, userType, parent);
 	}
 	public void* ValuePropertyName(c_int userType)
 	{
-		return CQt.QItemEditorFactory_ValuePropertyName(this.ptr, userType);
+		return CQt.QItemEditorFactory_ValuePropertyName((.)this.ptr, userType);
 	}
 	public void RegisterEditor(c_int userType, QItemEditorCreatorBase_Ptr* creator)
 	{
-		CQt.QItemEditorFactory_RegisterEditor(this.ptr, userType, creator);
+		CQt.QItemEditorFactory_RegisterEditor((.)this.ptr, userType, creator);
 	}
 	public QItemEditorFactory_Ptr* DefaultFactory()
 	{

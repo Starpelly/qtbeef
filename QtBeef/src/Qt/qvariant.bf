@@ -408,227 +408,227 @@ class QVariant
 	}
 	public void Swap(QVariant_Ptr* other)
 	{
-		CQt.QVariant_Swap(this.ptr, other);
+		CQt.QVariant_Swap((.)this.ptr, other);
 	}
 	public c_int UserType()
 	{
-		return CQt.QVariant_UserType(this.ptr);
+		return CQt.QVariant_UserType((.)this.ptr);
 	}
 	public c_int TypeId()
 	{
-		return CQt.QVariant_TypeId(this.ptr);
+		return CQt.QVariant_TypeId((.)this.ptr);
 	}
 	public c_char* TypeName()
 	{
-		return CQt.QVariant_TypeName(this.ptr);
+		return CQt.QVariant_TypeName((.)this.ptr);
 	}
 	public QMetaType_Ptr MetaType()
 	{
-		return CQt.QVariant_MetaType(this.ptr);
+		return CQt.QVariant_MetaType((.)this.ptr);
 	}
 	public bool CanConvert(QMetaType_Ptr targetType)
 	{
-		return CQt.QVariant_CanConvert(this.ptr, targetType);
+		return CQt.QVariant_CanConvert((.)this.ptr, targetType);
 	}
 	public bool Convert(QMetaType_Ptr type)
 	{
-		return CQt.QVariant_Convert(this.ptr, type);
+		return CQt.QVariant_Convert((.)this.ptr, type);
 	}
 	public bool CanView(QMetaType_Ptr targetType)
 	{
-		return CQt.QVariant_CanView(this.ptr, targetType);
+		return CQt.QVariant_CanView((.)this.ptr, targetType);
 	}
 	public bool CanConvert2(c_int targetTypeId)
 	{
-		return CQt.QVariant_CanConvert2(this.ptr, targetTypeId);
+		return CQt.QVariant_CanConvert2((.)this.ptr, targetTypeId);
 	}
 	public bool Convert2(c_int targetTypeId)
 	{
-		return CQt.QVariant_Convert2(this.ptr, targetTypeId);
+		return CQt.QVariant_Convert2((.)this.ptr, targetTypeId);
 	}
 	public bool IsValid()
 	{
-		return CQt.QVariant_IsValid(this.ptr);
+		return CQt.QVariant_IsValid((.)this.ptr);
 	}
 	public bool IsNull()
 	{
-		return CQt.QVariant_IsNull(this.ptr);
+		return CQt.QVariant_IsNull((.)this.ptr);
 	}
 	public void Clear()
 	{
-		CQt.QVariant_Clear(this.ptr);
+		CQt.QVariant_Clear((.)this.ptr);
 	}
 	public void Detach()
 	{
-		CQt.QVariant_Detach(this.ptr);
+		CQt.QVariant_Detach((.)this.ptr);
 	}
 	public bool IsDetached()
 	{
-		return CQt.QVariant_IsDetached(this.ptr);
+		return CQt.QVariant_IsDetached((.)this.ptr);
 	}
 	public c_int ToInt()
 	{
-		return CQt.QVariant_ToInt(this.ptr);
+		return CQt.QVariant_ToInt((.)this.ptr);
 	}
 	public c_uint ToUInt()
 	{
-		return CQt.QVariant_ToUInt(this.ptr);
+		return CQt.QVariant_ToUInt((.)this.ptr);
 	}
 	public c_longlong ToLongLong()
 	{
-		return CQt.QVariant_ToLongLong(this.ptr);
+		return CQt.QVariant_ToLongLong((.)this.ptr);
 	}
 	public c_ulonglong ToULongLong()
 	{
-		return CQt.QVariant_ToULongLong(this.ptr);
+		return CQt.QVariant_ToULongLong((.)this.ptr);
 	}
 	public bool ToBool()
 	{
-		return CQt.QVariant_ToBool(this.ptr);
+		return CQt.QVariant_ToBool((.)this.ptr);
 	}
 	public double ToDouble()
 	{
-		return CQt.QVariant_ToDouble(this.ptr);
+		return CQt.QVariant_ToDouble((.)this.ptr);
 	}
 	public float ToFloat()
 	{
-		return CQt.QVariant_ToFloat(this.ptr);
+		return CQt.QVariant_ToFloat((.)this.ptr);
 	}
 	public double ToReal()
 	{
-		return CQt.QVariant_ToReal(this.ptr);
+		return CQt.QVariant_ToReal((.)this.ptr);
 	}
 	public void* ToByteArray()
 	{
-		return CQt.QVariant_ToByteArray(this.ptr);
+		return CQt.QVariant_ToByteArray((.)this.ptr);
 	}
 	public QBitArray_Ptr ToBitArray()
 	{
-		return CQt.QVariant_ToBitArray(this.ptr);
+		return CQt.QVariant_ToBitArray((.)this.ptr);
 	}
 	public libqt_string ToString()
 	{
-		return CQt.QVariant_ToString(this.ptr);
+		return CQt.QVariant_ToString((.)this.ptr);
 	}
 	public void* ToStringList()
 	{
-		return CQt.QVariant_ToStringList(this.ptr);
+		return CQt.QVariant_ToStringList((.)this.ptr);
 	}
 	public QChar_Ptr ToChar()
 	{
-		return CQt.QVariant_ToChar(this.ptr);
+		return CQt.QVariant_ToChar((.)this.ptr);
 	}
 	public QDate_Ptr ToDate()
 	{
-		return CQt.QVariant_ToDate(this.ptr);
+		return CQt.QVariant_ToDate((.)this.ptr);
 	}
 	public QTime_Ptr ToTime()
 	{
-		return CQt.QVariant_ToTime(this.ptr);
+		return CQt.QVariant_ToTime((.)this.ptr);
 	}
 	public QDateTime_Ptr ToDateTime()
 	{
-		return CQt.QVariant_ToDateTime(this.ptr);
+		return CQt.QVariant_ToDateTime((.)this.ptr);
 	}
 	public void* ToList()
 	{
-		return CQt.QVariant_ToList(this.ptr);
+		return CQt.QVariant_ToList((.)this.ptr);
 	}
 	public void* ToMap()
 	{
-		return CQt.QVariant_ToMap(this.ptr);
+		return CQt.QVariant_ToMap((.)this.ptr);
 	}
 	public void* ToHash()
 	{
-		return CQt.QVariant_ToHash(this.ptr);
+		return CQt.QVariant_ToHash((.)this.ptr);
 	}
 	public QPoint_Ptr ToPoint()
 	{
-		return CQt.QVariant_ToPoint(this.ptr);
+		return CQt.QVariant_ToPoint((.)this.ptr);
 	}
 	public QPointF_Ptr ToPointF()
 	{
-		return CQt.QVariant_ToPointF(this.ptr);
+		return CQt.QVariant_ToPointF((.)this.ptr);
 	}
 	public QRect_Ptr ToRect()
 	{
-		return CQt.QVariant_ToRect(this.ptr);
+		return CQt.QVariant_ToRect((.)this.ptr);
 	}
 	public QSize_Ptr ToSize()
 	{
-		return CQt.QVariant_ToSize(this.ptr);
+		return CQt.QVariant_ToSize((.)this.ptr);
 	}
 	public QSizeF_Ptr ToSizeF()
 	{
-		return CQt.QVariant_ToSizeF(this.ptr);
+		return CQt.QVariant_ToSizeF((.)this.ptr);
 	}
 	public QLine_Ptr ToLine()
 	{
-		return CQt.QVariant_ToLine(this.ptr);
+		return CQt.QVariant_ToLine((.)this.ptr);
 	}
 	public QLineF_Ptr ToLineF()
 	{
-		return CQt.QVariant_ToLineF(this.ptr);
+		return CQt.QVariant_ToLineF((.)this.ptr);
 	}
 	public QRectF_Ptr ToRectF()
 	{
-		return CQt.QVariant_ToRectF(this.ptr);
+		return CQt.QVariant_ToRectF((.)this.ptr);
 	}
 	public QLocale_Ptr ToLocale()
 	{
-		return CQt.QVariant_ToLocale(this.ptr);
+		return CQt.QVariant_ToLocale((.)this.ptr);
 	}
 	public QRegularExpression_Ptr ToRegularExpression()
 	{
-		return CQt.QVariant_ToRegularExpression(this.ptr);
+		return CQt.QVariant_ToRegularExpression((.)this.ptr);
 	}
 	public QEasingCurve_Ptr ToEasingCurve()
 	{
-		return CQt.QVariant_ToEasingCurve(this.ptr);
+		return CQt.QVariant_ToEasingCurve((.)this.ptr);
 	}
 	public QUuid_Ptr ToUuid()
 	{
-		return CQt.QVariant_ToUuid(this.ptr);
+		return CQt.QVariant_ToUuid((.)this.ptr);
 	}
 	public QUrl_Ptr ToUrl()
 	{
-		return CQt.QVariant_ToUrl(this.ptr);
+		return CQt.QVariant_ToUrl((.)this.ptr);
 	}
 	public QJsonValue_Ptr ToJsonValue()
 	{
-		return CQt.QVariant_ToJsonValue(this.ptr);
+		return CQt.QVariant_ToJsonValue((.)this.ptr);
 	}
 	public QJsonObject_Ptr ToJsonObject()
 	{
-		return CQt.QVariant_ToJsonObject(this.ptr);
+		return CQt.QVariant_ToJsonObject((.)this.ptr);
 	}
 	public QJsonArray_Ptr ToJsonArray()
 	{
-		return CQt.QVariant_ToJsonArray(this.ptr);
+		return CQt.QVariant_ToJsonArray((.)this.ptr);
 	}
 	public QJsonDocument_Ptr ToJsonDocument()
 	{
-		return CQt.QVariant_ToJsonDocument(this.ptr);
+		return CQt.QVariant_ToJsonDocument((.)this.ptr);
 	}
 	public QModelIndex_Ptr ToModelIndex()
 	{
-		return CQt.QVariant_ToModelIndex(this.ptr);
+		return CQt.QVariant_ToModelIndex((.)this.ptr);
 	}
 	public QPersistentModelIndex_Ptr ToPersistentModelIndex()
 	{
-		return CQt.QVariant_ToPersistentModelIndex(this.ptr);
+		return CQt.QVariant_ToPersistentModelIndex((.)this.ptr);
 	}
 	public void Load(QDataStream_Ptr* ds)
 	{
-		CQt.QVariant_Load(this.ptr, ds);
+		CQt.QVariant_Load((.)this.ptr, ds);
 	}
 	public void Save(QDataStream_Ptr* ds)
 	{
-		CQt.QVariant_Save(this.ptr, ds);
+		CQt.QVariant_Save((.)this.ptr, ds);
 	}
 	public QVariant_Type Type()
 	{
-		return CQt.QVariant_Type(this.ptr);
+		return CQt.QVariant_Type((.)this.ptr);
 	}
 	public c_char* TypeToName(c_int typeId)
 	{
@@ -640,19 +640,19 @@ class QVariant
 	}
 	public void* Data()
 	{
-		return CQt.QVariant_Data(this.ptr);
+		return CQt.QVariant_Data((.)this.ptr);
 	}
 	public void* ConstData()
 	{
-		return CQt.QVariant_ConstData(this.ptr);
+		return CQt.QVariant_ConstData((.)this.ptr);
 	}
 	public void* Data2()
 	{
-		return CQt.QVariant_Data2(this.ptr);
+		return CQt.QVariant_Data2((.)this.ptr);
 	}
 	public void SetValue(QVariant_Ptr* avalue)
 	{
-		CQt.QVariant_SetValue(this.ptr, avalue);
+		CQt.QVariant_SetValue((.)this.ptr, avalue);
 	}
 	public QPartialOrdering_Ptr Compare(QVariant_Ptr* lhs, QVariant_Ptr* rhs)
 	{
@@ -660,31 +660,31 @@ class QVariant
 	}
 	public c_int ToInt1(bool* ok)
 	{
-		return CQt.QVariant_ToInt1(this.ptr, ok);
+		return CQt.QVariant_ToInt1((.)this.ptr, ok);
 	}
 	public c_uint ToUInt1(bool* ok)
 	{
-		return CQt.QVariant_ToUInt1(this.ptr, ok);
+		return CQt.QVariant_ToUInt1((.)this.ptr, ok);
 	}
 	public c_longlong ToLongLong1(bool* ok)
 	{
-		return CQt.QVariant_ToLongLong1(this.ptr, ok);
+		return CQt.QVariant_ToLongLong1((.)this.ptr, ok);
 	}
 	public c_ulonglong ToULongLong1(bool* ok)
 	{
-		return CQt.QVariant_ToULongLong1(this.ptr, ok);
+		return CQt.QVariant_ToULongLong1((.)this.ptr, ok);
 	}
 	public double ToDouble1(bool* ok)
 	{
-		return CQt.QVariant_ToDouble1(this.ptr, ok);
+		return CQt.QVariant_ToDouble1((.)this.ptr, ok);
 	}
 	public float ToFloat1(bool* ok)
 	{
-		return CQt.QVariant_ToFloat1(this.ptr, ok);
+		return CQt.QVariant_ToFloat1((.)this.ptr, ok);
 	}
 	public double ToReal1(bool* ok)
 	{
-		return CQt.QVariant_ToReal1(this.ptr, ok);
+		return CQt.QVariant_ToReal1((.)this.ptr, ok);
 	}
 }
 interface IQVariant

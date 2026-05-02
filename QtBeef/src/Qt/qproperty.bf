@@ -56,35 +56,35 @@ class QPropertyBindingSourceLocation
 	}
 	public c_char* FileName()
 	{
-		return CQt.QPropertyBindingSourceLocation_FileName(this.ptr);
+		return CQt.QPropertyBindingSourceLocation_FileName((.)this.ptr);
 	}
 	public void SetFileName(c_char* fileName)
 	{
-		CQt.QPropertyBindingSourceLocation_SetFileName(this.ptr, fileName);
+		CQt.QPropertyBindingSourceLocation_SetFileName((.)this.ptr, fileName);
 	}
 	public c_char* FunctionName()
 	{
-		return CQt.QPropertyBindingSourceLocation_FunctionName(this.ptr);
+		return CQt.QPropertyBindingSourceLocation_FunctionName((.)this.ptr);
 	}
 	public void SetFunctionName(c_char* functionName)
 	{
-		CQt.QPropertyBindingSourceLocation_SetFunctionName(this.ptr, functionName);
+		CQt.QPropertyBindingSourceLocation_SetFunctionName((.)this.ptr, functionName);
 	}
 	public c_uint Line()
 	{
-		return CQt.QPropertyBindingSourceLocation_Line(this.ptr);
+		return CQt.QPropertyBindingSourceLocation_Line((.)this.ptr);
 	}
 	public void SetLine(c_uint line)
 	{
-		CQt.QPropertyBindingSourceLocation_SetLine(this.ptr, line);
+		CQt.QPropertyBindingSourceLocation_SetLine((.)this.ptr, line);
 	}
 	public c_uint Column()
 	{
-		return CQt.QPropertyBindingSourceLocation_Column(this.ptr);
+		return CQt.QPropertyBindingSourceLocation_Column((.)this.ptr);
 	}
 	public void SetColumn(c_uint column)
 	{
-		CQt.QPropertyBindingSourceLocation_SetColumn(this.ptr, column);
+		CQt.QPropertyBindingSourceLocation_SetColumn((.)this.ptr, column);
 	}
 }
 interface IQPropertyBindingSourceLocation
@@ -151,15 +151,15 @@ class QPropertyBindingError
 	}
 	public bool HasError()
 	{
-		return CQt.QPropertyBindingError_HasError(this.ptr);
+		return CQt.QPropertyBindingError_HasError((.)this.ptr);
 	}
 	public QPropertyBindingError_Type Type()
 	{
-		return CQt.QPropertyBindingError_Type(this.ptr);
+		return CQt.QPropertyBindingError_Type((.)this.ptr);
 	}
 	public libqt_string Description()
 	{
-		return CQt.QPropertyBindingError_Description(this.ptr);
+		return CQt.QPropertyBindingError_Description((.)this.ptr);
 	}
 }
 interface IQPropertyBindingError
@@ -209,15 +209,15 @@ class QUntypedPropertyBinding
 	}
 	public bool IsNull()
 	{
-		return CQt.QUntypedPropertyBinding_IsNull(this.ptr);
+		return CQt.QUntypedPropertyBinding_IsNull((.)this.ptr);
 	}
 	public QPropertyBindingError_Ptr Error()
 	{
-		return CQt.QUntypedPropertyBinding_Error(this.ptr);
+		return CQt.QUntypedPropertyBinding_Error((.)this.ptr);
 	}
 	public QMetaType_Ptr ValueMetaType()
 	{
-		return CQt.QUntypedPropertyBinding_ValueMetaType(this.ptr);
+		return CQt.QUntypedPropertyBinding_ValueMetaType((.)this.ptr);
 	}
 }
 interface IQUntypedPropertyBinding
@@ -378,47 +378,47 @@ class QUntypedBindable
 	}
 	public bool IsValid()
 	{
-		return CQt.QUntypedBindable_IsValid(this.ptr);
+		return CQt.QUntypedBindable_IsValid((.)this.ptr);
 	}
 	public bool IsBindable()
 	{
-		return CQt.QUntypedBindable_IsBindable(this.ptr);
+		return CQt.QUntypedBindable_IsBindable((.)this.ptr);
 	}
 	public bool IsReadOnly()
 	{
-		return CQt.QUntypedBindable_IsReadOnly(this.ptr);
+		return CQt.QUntypedBindable_IsReadOnly((.)this.ptr);
 	}
 	public QUntypedPropertyBinding_Ptr MakeBinding()
 	{
-		return CQt.QUntypedBindable_MakeBinding(this.ptr);
+		return CQt.QUntypedBindable_MakeBinding((.)this.ptr);
 	}
 	public QUntypedPropertyBinding_Ptr TakeBinding()
 	{
-		return CQt.QUntypedBindable_TakeBinding(this.ptr);
+		return CQt.QUntypedBindable_TakeBinding((.)this.ptr);
 	}
 	public void Observe(QPropertyObserver_Ptr* observer)
 	{
-		CQt.QUntypedBindable_Observe(this.ptr, observer);
+		CQt.QUntypedBindable_Observe((.)this.ptr, observer);
 	}
 	public QUntypedPropertyBinding_Ptr Binding()
 	{
-		return CQt.QUntypedBindable_Binding(this.ptr);
+		return CQt.QUntypedBindable_Binding((.)this.ptr);
 	}
 	public bool SetBinding(QUntypedPropertyBinding_Ptr* binding)
 	{
-		return CQt.QUntypedBindable_SetBinding(this.ptr, binding);
+		return CQt.QUntypedBindable_SetBinding((.)this.ptr, binding);
 	}
 	public bool HasBinding()
 	{
-		return CQt.QUntypedBindable_HasBinding(this.ptr);
+		return CQt.QUntypedBindable_HasBinding((.)this.ptr);
 	}
 	public QMetaType_Ptr MetaType()
 	{
-		return CQt.QUntypedBindable_MetaType(this.ptr);
+		return CQt.QUntypedBindable_MetaType((.)this.ptr);
 	}
 	public QUntypedPropertyBinding_Ptr MakeBinding1(QPropertyBindingSourceLocation_Ptr* location)
 	{
-		return CQt.QUntypedBindable_MakeBinding1(this.ptr, location);
+		return CQt.QUntypedBindable_MakeBinding1((.)this.ptr, location);
 	}
 }
 interface IQUntypedBindable

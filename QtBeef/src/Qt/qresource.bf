@@ -82,51 +82,51 @@ class QResource
 	}
 	public void SetFileName(libqt_string* file)
 	{
-		CQt.QResource_SetFileName(this.ptr, file);
+		CQt.QResource_SetFileName((.)this.ptr, file);
 	}
 	public libqt_string FileName()
 	{
-		return CQt.QResource_FileName(this.ptr);
+		return CQt.QResource_FileName((.)this.ptr);
 	}
 	public libqt_string AbsoluteFilePath()
 	{
-		return CQt.QResource_AbsoluteFilePath(this.ptr);
+		return CQt.QResource_AbsoluteFilePath((.)this.ptr);
 	}
 	public void SetLocale(QLocale_Ptr* locale)
 	{
-		CQt.QResource_SetLocale(this.ptr, locale);
+		CQt.QResource_SetLocale((.)this.ptr, locale);
 	}
 	public QLocale_Ptr Locale()
 	{
-		return CQt.QResource_Locale(this.ptr);
+		return CQt.QResource_Locale((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QResource_IsValid(this.ptr);
+		return CQt.QResource_IsValid((.)this.ptr);
 	}
 	public QResource_Compression CompressionAlgorithm()
 	{
-		return CQt.QResource_CompressionAlgorithm(this.ptr);
+		return CQt.QResource_CompressionAlgorithm((.)this.ptr);
 	}
 	public c_longlong Size()
 	{
-		return CQt.QResource_Size(this.ptr);
+		return CQt.QResource_Size((.)this.ptr);
 	}
 	public c_uchar* Data()
 	{
-		return CQt.QResource_Data(this.ptr);
+		return CQt.QResource_Data((.)this.ptr);
 	}
 	public c_longlong UncompressedSize()
 	{
-		return CQt.QResource_UncompressedSize(this.ptr);
+		return CQt.QResource_UncompressedSize((.)this.ptr);
 	}
 	public void* UncompressedData()
 	{
-		return CQt.QResource_UncompressedData(this.ptr);
+		return CQt.QResource_UncompressedData((.)this.ptr);
 	}
 	public QDateTime_Ptr LastModified()
 	{
-		return CQt.QResource_LastModified(this.ptr);
+		return CQt.QResource_LastModified((.)this.ptr);
 	}
 	public bool RegisterResource(libqt_string* rccFilename)
 	{

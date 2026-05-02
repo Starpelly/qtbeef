@@ -70,43 +70,43 @@ class QElapsedTimer
 	}
 	public void Start()
 	{
-		CQt.QElapsedTimer_Start(this.ptr);
+		CQt.QElapsedTimer_Start((.)this.ptr);
 	}
 	public c_longlong Restart()
 	{
-		return CQt.QElapsedTimer_Restart(this.ptr);
+		return CQt.QElapsedTimer_Restart((.)this.ptr);
 	}
 	public void Invalidate()
 	{
-		CQt.QElapsedTimer_Invalidate(this.ptr);
+		CQt.QElapsedTimer_Invalidate((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QElapsedTimer_IsValid(this.ptr);
+		return CQt.QElapsedTimer_IsValid((.)this.ptr);
 	}
 	public c_longlong NsecsElapsed()
 	{
-		return CQt.QElapsedTimer_NsecsElapsed(this.ptr);
+		return CQt.QElapsedTimer_NsecsElapsed((.)this.ptr);
 	}
 	public c_longlong Elapsed()
 	{
-		return CQt.QElapsedTimer_Elapsed(this.ptr);
+		return CQt.QElapsedTimer_Elapsed((.)this.ptr);
 	}
 	public bool HasExpired(c_longlong timeout)
 	{
-		return CQt.QElapsedTimer_HasExpired(this.ptr, timeout);
+		return CQt.QElapsedTimer_HasExpired((.)this.ptr, timeout);
 	}
 	public c_longlong MsecsSinceReference()
 	{
-		return CQt.QElapsedTimer_MsecsSinceReference(this.ptr);
+		return CQt.QElapsedTimer_MsecsSinceReference((.)this.ptr);
 	}
 	public c_longlong MsecsTo(QElapsedTimer_Ptr* other)
 	{
-		return CQt.QElapsedTimer_MsecsTo(this.ptr, other);
+		return CQt.QElapsedTimer_MsecsTo((.)this.ptr, other);
 	}
 	public c_longlong SecsTo(QElapsedTimer_Ptr* other)
 	{
-		return CQt.QElapsedTimer_SecsTo(this.ptr, other);
+		return CQt.QElapsedTimer_SecsTo((.)this.ptr, other);
 	}
 }
 interface IQElapsedTimer

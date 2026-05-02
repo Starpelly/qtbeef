@@ -78,63 +78,63 @@ class QStaticText
 	}
 	public void Swap(QStaticText_Ptr* other)
 	{
-		CQt.QStaticText_Swap(this.ptr, other);
+		CQt.QStaticText_Swap((.)this.ptr, other);
 	}
 	public void SetText(libqt_string* text)
 	{
-		CQt.QStaticText_SetText(this.ptr, text);
+		CQt.QStaticText_SetText((.)this.ptr, text);
 	}
 	public libqt_string Text()
 	{
-		return CQt.QStaticText_Text(this.ptr);
+		return CQt.QStaticText_Text((.)this.ptr);
 	}
 	public void SetTextFormat(Qt_TextFormat textFormat)
 	{
-		CQt.QStaticText_SetTextFormat(this.ptr, textFormat);
+		CQt.QStaticText_SetTextFormat((.)this.ptr, textFormat);
 	}
 	public Qt_TextFormat TextFormat()
 	{
-		return CQt.QStaticText_TextFormat(this.ptr);
+		return CQt.QStaticText_TextFormat((.)this.ptr);
 	}
 	public void SetTextWidth(double textWidth)
 	{
-		CQt.QStaticText_SetTextWidth(this.ptr, textWidth);
+		CQt.QStaticText_SetTextWidth((.)this.ptr, textWidth);
 	}
 	public double TextWidth()
 	{
-		return CQt.QStaticText_TextWidth(this.ptr);
+		return CQt.QStaticText_TextWidth((.)this.ptr);
 	}
 	public void SetTextOption(QTextOption_Ptr* textOption)
 	{
-		CQt.QStaticText_SetTextOption(this.ptr, textOption);
+		CQt.QStaticText_SetTextOption((.)this.ptr, textOption);
 	}
 	public QTextOption_Ptr TextOption()
 	{
-		return CQt.QStaticText_TextOption(this.ptr);
+		return CQt.QStaticText_TextOption((.)this.ptr);
 	}
 	public QSizeF_Ptr Size()
 	{
-		return CQt.QStaticText_Size(this.ptr);
+		return CQt.QStaticText_Size((.)this.ptr);
 	}
 	public void Prepare()
 	{
-		CQt.QStaticText_Prepare(this.ptr);
+		CQt.QStaticText_Prepare((.)this.ptr);
 	}
 	public void SetPerformanceHint(QStaticText_PerformanceHint performanceHint)
 	{
-		CQt.QStaticText_SetPerformanceHint(this.ptr, performanceHint);
+		CQt.QStaticText_SetPerformanceHint((.)this.ptr, performanceHint);
 	}
 	public QStaticText_PerformanceHint PerformanceHint()
 	{
-		return CQt.QStaticText_PerformanceHint(this.ptr);
+		return CQt.QStaticText_PerformanceHint((.)this.ptr);
 	}
 	public void Prepare1(QTransform_Ptr* matrix)
 	{
-		CQt.QStaticText_Prepare1(this.ptr, matrix);
+		CQt.QStaticText_Prepare1((.)this.ptr, matrix);
 	}
 	public void Prepare2(QTransform_Ptr* matrix, QFont_Ptr* font)
 	{
-		CQt.QStaticText_Prepare2(this.ptr, matrix, font);
+		CQt.QStaticText_Prepare2((.)this.ptr, matrix, font);
 	}
 }
 interface IQStaticText

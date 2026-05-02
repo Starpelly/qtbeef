@@ -74,111 +74,111 @@ class QAccessibleInterface
 	private QAccessibleInterface_Ptr* ptr;
 	public bool IsValid()
 	{
-		return CQt.QAccessibleInterface_IsValid(this.ptr);
+		return CQt.QAccessibleInterface_IsValid((.)this.ptr);
 	}
 	public QObject_Ptr* Object()
 	{
-		return CQt.QAccessibleInterface_Object(this.ptr);
+		return CQt.QAccessibleInterface_Object((.)this.ptr);
 	}
 	public QWindow_Ptr* Window()
 	{
-		return CQt.QAccessibleInterface_Window(this.ptr);
+		return CQt.QAccessibleInterface_Window((.)this.ptr);
 	}
 	public void* Relations(void* match)
 	{
-		return CQt.QAccessibleInterface_Relations(this.ptr, match);
+		return CQt.QAccessibleInterface_Relations((.)this.ptr, match);
 	}
 	public QAccessibleInterface_Ptr* FocusChild()
 	{
-		return CQt.QAccessibleInterface_FocusChild(this.ptr);
+		return CQt.QAccessibleInterface_FocusChild((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* ChildAt(c_int x, c_int y)
 	{
-		return CQt.QAccessibleInterface_ChildAt(this.ptr, x, y);
+		return CQt.QAccessibleInterface_ChildAt((.)this.ptr, x, y);
 	}
 	public QAccessibleInterface_Ptr* Parent()
 	{
-		return CQt.QAccessibleInterface_Parent(this.ptr);
+		return CQt.QAccessibleInterface_Parent((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* Child(c_int index)
 	{
-		return CQt.QAccessibleInterface_Child(this.ptr, index);
+		return CQt.QAccessibleInterface_Child((.)this.ptr, index);
 	}
 	public c_int ChildCount()
 	{
-		return CQt.QAccessibleInterface_ChildCount(this.ptr);
+		return CQt.QAccessibleInterface_ChildCount((.)this.ptr);
 	}
 	public c_int IndexOfChild(QAccessibleInterface_Ptr* param1)
 	{
-		return CQt.QAccessibleInterface_IndexOfChild(this.ptr, param1);
+		return CQt.QAccessibleInterface_IndexOfChild((.)this.ptr, param1);
 	}
 	public libqt_string Text(QAccessible_Text t)
 	{
-		return CQt.QAccessibleInterface_Text(this.ptr, t);
+		return CQt.QAccessibleInterface_Text((.)this.ptr, t);
 	}
 	public void SetText(QAccessible_Text t, libqt_string* text)
 	{
-		CQt.QAccessibleInterface_SetText(this.ptr, t, text);
+		CQt.QAccessibleInterface_SetText((.)this.ptr, t, text);
 	}
 	public QRect_Ptr Rect()
 	{
-		return CQt.QAccessibleInterface_Rect(this.ptr);
+		return CQt.QAccessibleInterface_Rect((.)this.ptr);
 	}
 	public QAccessible_Role Role()
 	{
-		return CQt.QAccessibleInterface_Role(this.ptr);
+		return CQt.QAccessibleInterface_Role((.)this.ptr);
 	}
 	public QAccessible_State State()
 	{
-		return CQt.QAccessibleInterface_State(this.ptr);
+		return CQt.QAccessibleInterface_State((.)this.ptr);
 	}
 	public QColor_Ptr ForegroundColor()
 	{
-		return CQt.QAccessibleInterface_ForegroundColor(this.ptr);
+		return CQt.QAccessibleInterface_ForegroundColor((.)this.ptr);
 	}
 	public QColor_Ptr BackgroundColor()
 	{
-		return CQt.QAccessibleInterface_BackgroundColor(this.ptr);
+		return CQt.QAccessibleInterface_BackgroundColor((.)this.ptr);
 	}
 	public QAccessibleTextInterface_Ptr* TextInterface()
 	{
-		return CQt.QAccessibleInterface_TextInterface(this.ptr);
+		return CQt.QAccessibleInterface_TextInterface((.)this.ptr);
 	}
 	public QAccessibleEditableTextInterface_Ptr* EditableTextInterface()
 	{
-		return CQt.QAccessibleInterface_EditableTextInterface(this.ptr);
+		return CQt.QAccessibleInterface_EditableTextInterface((.)this.ptr);
 	}
 	public QAccessibleValueInterface_Ptr* ValueInterface()
 	{
-		return CQt.QAccessibleInterface_ValueInterface(this.ptr);
+		return CQt.QAccessibleInterface_ValueInterface((.)this.ptr);
 	}
 	public QAccessibleActionInterface_Ptr* ActionInterface()
 	{
-		return CQt.QAccessibleInterface_ActionInterface(this.ptr);
+		return CQt.QAccessibleInterface_ActionInterface((.)this.ptr);
 	}
 	public QAccessibleImageInterface_Ptr* ImageInterface()
 	{
-		return CQt.QAccessibleInterface_ImageInterface(this.ptr);
+		return CQt.QAccessibleInterface_ImageInterface((.)this.ptr);
 	}
 	public QAccessibleTableInterface_Ptr* TableInterface()
 	{
-		return CQt.QAccessibleInterface_TableInterface(this.ptr);
+		return CQt.QAccessibleInterface_TableInterface((.)this.ptr);
 	}
 	public QAccessibleTableCellInterface_Ptr* TableCellInterface()
 	{
-		return CQt.QAccessibleInterface_TableCellInterface(this.ptr);
+		return CQt.QAccessibleInterface_TableCellInterface((.)this.ptr);
 	}
 	public QAccessibleHyperlinkInterface_Ptr* HyperlinkInterface()
 	{
-		return CQt.QAccessibleInterface_HyperlinkInterface(this.ptr);
+		return CQt.QAccessibleInterface_HyperlinkInterface((.)this.ptr);
 	}
 	public void Virtual_hook(c_int id, void* data)
 	{
-		CQt.QAccessibleInterface_Virtual_Hook(this.ptr, id, data);
+		CQt.QAccessibleInterface_Virtual_Hook((.)this.ptr, id, data);
 	}
 	public void* Interface_cast(QAccessible_InterfaceType param1)
 	{
-		return CQt.QAccessibleInterface_Interface_Cast(this.ptr, param1);
+		return CQt.QAccessibleInterface_Interface_Cast((.)this.ptr, param1);
 	}
 }
 interface IQAccessibleInterface
@@ -266,67 +266,67 @@ class QAccessibleTextInterface
 	}
 	public void Selection(c_int selectionIndex, c_int* startOffset, c_int* endOffset)
 	{
-		CQt.QAccessibleTextInterface_Selection(this.ptr, selectionIndex, startOffset, endOffset);
+		CQt.QAccessibleTextInterface_Selection((.)this.ptr, selectionIndex, startOffset, endOffset);
 	}
 	public c_int SelectionCount()
 	{
-		return CQt.QAccessibleTextInterface_SelectionCount(this.ptr);
+		return CQt.QAccessibleTextInterface_SelectionCount((.)this.ptr);
 	}
 	public void AddSelection(c_int startOffset, c_int endOffset)
 	{
-		CQt.QAccessibleTextInterface_AddSelection(this.ptr, startOffset, endOffset);
+		CQt.QAccessibleTextInterface_AddSelection((.)this.ptr, startOffset, endOffset);
 	}
 	public void RemoveSelection(c_int selectionIndex)
 	{
-		CQt.QAccessibleTextInterface_RemoveSelection(this.ptr, selectionIndex);
+		CQt.QAccessibleTextInterface_RemoveSelection((.)this.ptr, selectionIndex);
 	}
 	public void SetSelection(c_int selectionIndex, c_int startOffset, c_int endOffset)
 	{
-		CQt.QAccessibleTextInterface_SetSelection(this.ptr, selectionIndex, startOffset, endOffset);
+		CQt.QAccessibleTextInterface_SetSelection((.)this.ptr, selectionIndex, startOffset, endOffset);
 	}
 	public c_int CursorPosition()
 	{
-		return CQt.QAccessibleTextInterface_CursorPosition(this.ptr);
+		return CQt.QAccessibleTextInterface_CursorPosition((.)this.ptr);
 	}
 	public void SetCursorPosition(c_int position)
 	{
-		CQt.QAccessibleTextInterface_SetCursorPosition(this.ptr, position);
+		CQt.QAccessibleTextInterface_SetCursorPosition((.)this.ptr, position);
 	}
 	public libqt_string Text(c_int startOffset, c_int endOffset)
 	{
-		return CQt.QAccessibleTextInterface_Text(this.ptr, startOffset, endOffset);
+		return CQt.QAccessibleTextInterface_Text((.)this.ptr, startOffset, endOffset);
 	}
 	public libqt_string TextBeforeOffset(c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset)
 	{
-		return CQt.QAccessibleTextInterface_TextBeforeOffset(this.ptr, offset, boundaryType, startOffset, endOffset);
+		return CQt.QAccessibleTextInterface_TextBeforeOffset((.)this.ptr, offset, boundaryType, startOffset, endOffset);
 	}
 	public libqt_string TextAfterOffset(c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset)
 	{
-		return CQt.QAccessibleTextInterface_TextAfterOffset(this.ptr, offset, boundaryType, startOffset, endOffset);
+		return CQt.QAccessibleTextInterface_TextAfterOffset((.)this.ptr, offset, boundaryType, startOffset, endOffset);
 	}
 	public libqt_string TextAtOffset(c_int offset, QAccessible_TextBoundaryType boundaryType, c_int* startOffset, c_int* endOffset)
 	{
-		return CQt.QAccessibleTextInterface_TextAtOffset(this.ptr, offset, boundaryType, startOffset, endOffset);
+		return CQt.QAccessibleTextInterface_TextAtOffset((.)this.ptr, offset, boundaryType, startOffset, endOffset);
 	}
 	public c_int CharacterCount()
 	{
-		return CQt.QAccessibleTextInterface_CharacterCount(this.ptr);
+		return CQt.QAccessibleTextInterface_CharacterCount((.)this.ptr);
 	}
 	public QRect_Ptr CharacterRect(c_int offset)
 	{
-		return CQt.QAccessibleTextInterface_CharacterRect(this.ptr, offset);
+		return CQt.QAccessibleTextInterface_CharacterRect((.)this.ptr, offset);
 	}
 	public c_int OffsetAtPoint(QPoint_Ptr* point)
 	{
-		return CQt.QAccessibleTextInterface_OffsetAtPoint(this.ptr, point);
+		return CQt.QAccessibleTextInterface_OffsetAtPoint((.)this.ptr, point);
 	}
 	public void ScrollToSubstring(c_int startIndex, c_int endIndex)
 	{
-		CQt.QAccessibleTextInterface_ScrollToSubstring(this.ptr, startIndex, endIndex);
+		CQt.QAccessibleTextInterface_ScrollToSubstring((.)this.ptr, startIndex, endIndex);
 	}
 	public libqt_string Attributes(c_int offset, c_int* startOffset, c_int* endOffset)
 	{
-		return CQt.QAccessibleTextInterface_Attributes(this.ptr, offset, startOffset, endOffset);
+		return CQt.QAccessibleTextInterface_Attributes((.)this.ptr, offset, startOffset, endOffset);
 	}
 }
 interface IQAccessibleTextInterface
@@ -377,15 +377,15 @@ class QAccessibleEditableTextInterface
 	}
 	public void DeleteText(c_int startOffset, c_int endOffset)
 	{
-		CQt.QAccessibleEditableTextInterface_DeleteText(this.ptr, startOffset, endOffset);
+		CQt.QAccessibleEditableTextInterface_DeleteText((.)this.ptr, startOffset, endOffset);
 	}
 	public void InsertText(c_int offset, libqt_string* text)
 	{
-		CQt.QAccessibleEditableTextInterface_InsertText(this.ptr, offset, text);
+		CQt.QAccessibleEditableTextInterface_InsertText((.)this.ptr, offset, text);
 	}
 	public void ReplaceText(c_int startOffset, c_int endOffset, libqt_string* text)
 	{
-		CQt.QAccessibleEditableTextInterface_ReplaceText(this.ptr, startOffset, endOffset, text);
+		CQt.QAccessibleEditableTextInterface_ReplaceText((.)this.ptr, startOffset, endOffset, text);
 	}
 }
 interface IQAccessibleEditableTextInterface
@@ -427,23 +427,23 @@ class QAccessibleValueInterface
 	}
 	public QVariant_Ptr CurrentValue()
 	{
-		return CQt.QAccessibleValueInterface_CurrentValue(this.ptr);
+		return CQt.QAccessibleValueInterface_CurrentValue((.)this.ptr);
 	}
 	public void SetCurrentValue(QVariant_Ptr* value)
 	{
-		CQt.QAccessibleValueInterface_SetCurrentValue(this.ptr, value);
+		CQt.QAccessibleValueInterface_SetCurrentValue((.)this.ptr, value);
 	}
 	public QVariant_Ptr MaximumValue()
 	{
-		return CQt.QAccessibleValueInterface_MaximumValue(this.ptr);
+		return CQt.QAccessibleValueInterface_MaximumValue((.)this.ptr);
 	}
 	public QVariant_Ptr MinimumValue()
 	{
-		return CQt.QAccessibleValueInterface_MinimumValue(this.ptr);
+		return CQt.QAccessibleValueInterface_MinimumValue((.)this.ptr);
 	}
 	public QVariant_Ptr MinimumStepSize()
 	{
-		return CQt.QAccessibleValueInterface_MinimumStepSize(this.ptr);
+		return CQt.QAccessibleValueInterface_MinimumStepSize((.)this.ptr);
 	}
 }
 interface IQAccessibleValueInterface
@@ -493,35 +493,35 @@ class QAccessibleTableCellInterface
 	}
 	public bool IsSelected()
 	{
-		return CQt.QAccessibleTableCellInterface_IsSelected(this.ptr);
+		return CQt.QAccessibleTableCellInterface_IsSelected((.)this.ptr);
 	}
 	public void* ColumnHeaderCells()
 	{
-		return CQt.QAccessibleTableCellInterface_ColumnHeaderCells(this.ptr);
+		return CQt.QAccessibleTableCellInterface_ColumnHeaderCells((.)this.ptr);
 	}
 	public void* RowHeaderCells()
 	{
-		return CQt.QAccessibleTableCellInterface_RowHeaderCells(this.ptr);
+		return CQt.QAccessibleTableCellInterface_RowHeaderCells((.)this.ptr);
 	}
 	public c_int ColumnIndex()
 	{
-		return CQt.QAccessibleTableCellInterface_ColumnIndex(this.ptr);
+		return CQt.QAccessibleTableCellInterface_ColumnIndex((.)this.ptr);
 	}
 	public c_int RowIndex()
 	{
-		return CQt.QAccessibleTableCellInterface_RowIndex(this.ptr);
+		return CQt.QAccessibleTableCellInterface_RowIndex((.)this.ptr);
 	}
 	public c_int ColumnExtent()
 	{
-		return CQt.QAccessibleTableCellInterface_ColumnExtent(this.ptr);
+		return CQt.QAccessibleTableCellInterface_ColumnExtent((.)this.ptr);
 	}
 	public c_int RowExtent()
 	{
-		return CQt.QAccessibleTableCellInterface_RowExtent(this.ptr);
+		return CQt.QAccessibleTableCellInterface_RowExtent((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* Table()
 	{
-		return CQt.QAccessibleTableCellInterface_Table(this.ptr);
+		return CQt.QAccessibleTableCellInterface_Table((.)this.ptr);
 	}
 }
 interface IQAccessibleTableCellInterface
@@ -598,83 +598,83 @@ class QAccessibleTableInterface
 	}
 	public QAccessibleInterface_Ptr* Caption()
 	{
-		return CQt.QAccessibleTableInterface_Caption(this.ptr);
+		return CQt.QAccessibleTableInterface_Caption((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* Summary()
 	{
-		return CQt.QAccessibleTableInterface_Summary(this.ptr);
+		return CQt.QAccessibleTableInterface_Summary((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* CellAt(c_int row, c_int column)
 	{
-		return CQt.QAccessibleTableInterface_CellAt(this.ptr, row, column);
+		return CQt.QAccessibleTableInterface_CellAt((.)this.ptr, row, column);
 	}
 	public c_int SelectedCellCount()
 	{
-		return CQt.QAccessibleTableInterface_SelectedCellCount(this.ptr);
+		return CQt.QAccessibleTableInterface_SelectedCellCount((.)this.ptr);
 	}
 	public void* SelectedCells()
 	{
-		return CQt.QAccessibleTableInterface_SelectedCells(this.ptr);
+		return CQt.QAccessibleTableInterface_SelectedCells((.)this.ptr);
 	}
 	public libqt_string ColumnDescription(c_int column)
 	{
-		return CQt.QAccessibleTableInterface_ColumnDescription(this.ptr, column);
+		return CQt.QAccessibleTableInterface_ColumnDescription((.)this.ptr, column);
 	}
 	public libqt_string RowDescription(c_int row)
 	{
-		return CQt.QAccessibleTableInterface_RowDescription(this.ptr, row);
+		return CQt.QAccessibleTableInterface_RowDescription((.)this.ptr, row);
 	}
 	public c_int SelectedColumnCount()
 	{
-		return CQt.QAccessibleTableInterface_SelectedColumnCount(this.ptr);
+		return CQt.QAccessibleTableInterface_SelectedColumnCount((.)this.ptr);
 	}
 	public c_int SelectedRowCount()
 	{
-		return CQt.QAccessibleTableInterface_SelectedRowCount(this.ptr);
+		return CQt.QAccessibleTableInterface_SelectedRowCount((.)this.ptr);
 	}
 	public c_int ColumnCount()
 	{
-		return CQt.QAccessibleTableInterface_ColumnCount(this.ptr);
+		return CQt.QAccessibleTableInterface_ColumnCount((.)this.ptr);
 	}
 	public c_int RowCount()
 	{
-		return CQt.QAccessibleTableInterface_RowCount(this.ptr);
+		return CQt.QAccessibleTableInterface_RowCount((.)this.ptr);
 	}
 	public void* SelectedColumns()
 	{
-		return CQt.QAccessibleTableInterface_SelectedColumns(this.ptr);
+		return CQt.QAccessibleTableInterface_SelectedColumns((.)this.ptr);
 	}
 	public void* SelectedRows()
 	{
-		return CQt.QAccessibleTableInterface_SelectedRows(this.ptr);
+		return CQt.QAccessibleTableInterface_SelectedRows((.)this.ptr);
 	}
 	public bool IsColumnSelected(c_int column)
 	{
-		return CQt.QAccessibleTableInterface_IsColumnSelected(this.ptr, column);
+		return CQt.QAccessibleTableInterface_IsColumnSelected((.)this.ptr, column);
 	}
 	public bool IsRowSelected(c_int row)
 	{
-		return CQt.QAccessibleTableInterface_IsRowSelected(this.ptr, row);
+		return CQt.QAccessibleTableInterface_IsRowSelected((.)this.ptr, row);
 	}
 	public bool SelectRow(c_int row)
 	{
-		return CQt.QAccessibleTableInterface_SelectRow(this.ptr, row);
+		return CQt.QAccessibleTableInterface_SelectRow((.)this.ptr, row);
 	}
 	public bool SelectColumn(c_int column)
 	{
-		return CQt.QAccessibleTableInterface_SelectColumn(this.ptr, column);
+		return CQt.QAccessibleTableInterface_SelectColumn((.)this.ptr, column);
 	}
 	public bool UnselectRow(c_int row)
 	{
-		return CQt.QAccessibleTableInterface_UnselectRow(this.ptr, row);
+		return CQt.QAccessibleTableInterface_UnselectRow((.)this.ptr, row);
 	}
 	public bool UnselectColumn(c_int column)
 	{
-		return CQt.QAccessibleTableInterface_UnselectColumn(this.ptr, column);
+		return CQt.QAccessibleTableInterface_UnselectColumn((.)this.ptr, column);
 	}
 	public void ModelChange(QAccessibleTableModelChangeEvent_Ptr* event)
 	{
-		CQt.QAccessibleTableInterface_ModelChange(this.ptr, event);
+		CQt.QAccessibleTableInterface_ModelChange((.)this.ptr, event);
 	}
 }
 interface IQAccessibleTableInterface
@@ -767,23 +767,23 @@ class QAccessibleActionInterface
 	}
 	public void* ActionNames()
 	{
-		return CQt.QAccessibleActionInterface_ActionNames(this.ptr);
+		return CQt.QAccessibleActionInterface_ActionNames((.)this.ptr);
 	}
 	public libqt_string LocalizedActionName(libqt_string* name)
 	{
-		return CQt.QAccessibleActionInterface_LocalizedActionName(this.ptr, name);
+		return CQt.QAccessibleActionInterface_LocalizedActionName((.)this.ptr, name);
 	}
 	public libqt_string LocalizedActionDescription(libqt_string* name)
 	{
-		return CQt.QAccessibleActionInterface_LocalizedActionDescription(this.ptr, name);
+		return CQt.QAccessibleActionInterface_LocalizedActionDescription((.)this.ptr, name);
 	}
 	public void DoAction(libqt_string* actionName)
 	{
-		CQt.QAccessibleActionInterface_DoAction(this.ptr, actionName);
+		CQt.QAccessibleActionInterface_DoAction((.)this.ptr, actionName);
 	}
 	public void* KeyBindingsForAction(libqt_string* actionName)
 	{
-		return CQt.QAccessibleActionInterface_KeyBindingsForAction(this.ptr, actionName);
+		return CQt.QAccessibleActionInterface_KeyBindingsForAction((.)this.ptr, actionName);
 	}
 	public libqt_string* PressAction()
 	{
@@ -894,15 +894,15 @@ class QAccessibleImageInterface
 	}
 	public libqt_string ImageDescription()
 	{
-		return CQt.QAccessibleImageInterface_ImageDescription(this.ptr);
+		return CQt.QAccessibleImageInterface_ImageDescription((.)this.ptr);
 	}
 	public QSize_Ptr ImageSize()
 	{
-		return CQt.QAccessibleImageInterface_ImageSize(this.ptr);
+		return CQt.QAccessibleImageInterface_ImageSize((.)this.ptr);
 	}
 	public QPoint_Ptr ImagePosition()
 	{
-		return CQt.QAccessibleImageInterface_ImagePosition(this.ptr);
+		return CQt.QAccessibleImageInterface_ImagePosition((.)this.ptr);
 	}
 }
 interface IQAccessibleImageInterface
@@ -944,23 +944,23 @@ class QAccessibleHyperlinkInterface
 	}
 	public libqt_string Anchor()
 	{
-		return CQt.QAccessibleHyperlinkInterface_Anchor(this.ptr);
+		return CQt.QAccessibleHyperlinkInterface_Anchor((.)this.ptr);
 	}
 	public libqt_string AnchorTarget()
 	{
-		return CQt.QAccessibleHyperlinkInterface_AnchorTarget(this.ptr);
+		return CQt.QAccessibleHyperlinkInterface_AnchorTarget((.)this.ptr);
 	}
 	public c_int StartIndex()
 	{
-		return CQt.QAccessibleHyperlinkInterface_StartIndex(this.ptr);
+		return CQt.QAccessibleHyperlinkInterface_StartIndex((.)this.ptr);
 	}
 	public c_int EndIndex()
 	{
-		return CQt.QAccessibleHyperlinkInterface_EndIndex(this.ptr);
+		return CQt.QAccessibleHyperlinkInterface_EndIndex((.)this.ptr);
 	}
 	public bool IsValid()
 	{
-		return CQt.QAccessibleHyperlinkInterface_IsValid(this.ptr);
+		return CQt.QAccessibleHyperlinkInterface_IsValid((.)this.ptr);
 	}
 }
 interface IQAccessibleHyperlinkInterface
@@ -1016,27 +1016,27 @@ class QAccessibleEvent
 	}
 	public QAccessible_Event Type()
 	{
-		return CQt.QAccessibleEvent_Type(this.ptr);
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
 	}
 	public QObject_Ptr* Object()
 	{
-		return CQt.QAccessibleEvent_Object(this.ptr);
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
 	}
 	public c_uint UniqueId()
 	{
-		return CQt.QAccessibleEvent_UniqueId(this.ptr);
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
 	}
 	public void SetChild(c_int chld)
 	{
-		CQt.QAccessibleEvent_SetChild(this.ptr, chld);
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
 	}
 	public c_int Child()
 	{
-		return CQt.QAccessibleEvent_Child(this.ptr);
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
 	}
 	public QAccessibleInterface_Ptr* AccessibleInterface()
 	{
-		return CQt.QAccessibleEvent_AccessibleInterface(this.ptr);
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleEvent
@@ -1083,7 +1083,31 @@ class QAccessibleStateChangeEvent
 	}
 	public QAccessible_State ChangedStates()
 	{
-		return CQt.QAccessibleStateChangeEvent_ChangedStates(this.ptr);
+		return CQt.QAccessibleStateChangeEvent_ChangedStates((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleStateChangeEvent
@@ -1127,11 +1151,35 @@ class QAccessibleTextCursorEvent
 	}
 	public void SetCursorPosition(c_int position)
 	{
-		CQt.QAccessibleTextCursorEvent_SetCursorPosition(this.ptr, position);
+		CQt.QAccessibleTextCursorEvent_SetCursorPosition((.)this.ptr, position);
 	}
 	public c_int CursorPosition()
 	{
-		return CQt.QAccessibleTextCursorEvent_CursorPosition(this.ptr);
+		return CQt.QAccessibleTextCursorEvent_CursorPosition((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleTextCursorEvent
@@ -1178,15 +1226,47 @@ class QAccessibleTextSelectionEvent
 	}
 	public void SetSelection(c_int start, c_int end)
 	{
-		CQt.QAccessibleTextSelectionEvent_SetSelection(this.ptr, start, end);
+		CQt.QAccessibleTextSelectionEvent_SetSelection((.)this.ptr, start, end);
 	}
 	public c_int SelectionStart()
 	{
-		return CQt.QAccessibleTextSelectionEvent_SelectionStart(this.ptr);
+		return CQt.QAccessibleTextSelectionEvent_SelectionStart((.)this.ptr);
 	}
 	public c_int SelectionEnd()
 	{
-		return CQt.QAccessibleTextSelectionEvent_SelectionEnd(this.ptr);
+		return CQt.QAccessibleTextSelectionEvent_SelectionEnd((.)this.ptr);
+	}
+	public void SetCursorPosition(c_int position)
+	{
+		CQt.QAccessibleTextCursorEvent_SetCursorPosition((.)this.ptr, position);
+	}
+	public c_int CursorPosition()
+	{
+		return CQt.QAccessibleTextCursorEvent_CursorPosition((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleTextSelectionEvent
@@ -1232,11 +1312,43 @@ class QAccessibleTextInsertEvent
 	}
 	public libqt_string TextInserted()
 	{
-		return CQt.QAccessibleTextInsertEvent_TextInserted(this.ptr);
+		return CQt.QAccessibleTextInsertEvent_TextInserted((.)this.ptr);
 	}
 	public c_int ChangePosition()
 	{
-		return CQt.QAccessibleTextInsertEvent_ChangePosition(this.ptr);
+		return CQt.QAccessibleTextInsertEvent_ChangePosition((.)this.ptr);
+	}
+	public void SetCursorPosition(c_int position)
+	{
+		CQt.QAccessibleTextCursorEvent_SetCursorPosition((.)this.ptr, position);
+	}
+	public c_int CursorPosition()
+	{
+		return CQt.QAccessibleTextCursorEvent_CursorPosition((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleTextInsertEvent
@@ -1281,11 +1393,43 @@ class QAccessibleTextRemoveEvent
 	}
 	public libqt_string TextRemoved()
 	{
-		return CQt.QAccessibleTextRemoveEvent_TextRemoved(this.ptr);
+		return CQt.QAccessibleTextRemoveEvent_TextRemoved((.)this.ptr);
 	}
 	public c_int ChangePosition()
 	{
-		return CQt.QAccessibleTextRemoveEvent_ChangePosition(this.ptr);
+		return CQt.QAccessibleTextRemoveEvent_ChangePosition((.)this.ptr);
+	}
+	public void SetCursorPosition(c_int position)
+	{
+		CQt.QAccessibleTextCursorEvent_SetCursorPosition((.)this.ptr, position);
+	}
+	public c_int CursorPosition()
+	{
+		return CQt.QAccessibleTextCursorEvent_CursorPosition((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleTextRemoveEvent
@@ -1332,15 +1476,47 @@ class QAccessibleTextUpdateEvent
 	}
 	public libqt_string TextRemoved()
 	{
-		return CQt.QAccessibleTextUpdateEvent_TextRemoved(this.ptr);
+		return CQt.QAccessibleTextUpdateEvent_TextRemoved((.)this.ptr);
 	}
 	public libqt_string TextInserted()
 	{
-		return CQt.QAccessibleTextUpdateEvent_TextInserted(this.ptr);
+		return CQt.QAccessibleTextUpdateEvent_TextInserted((.)this.ptr);
 	}
 	public c_int ChangePosition()
 	{
-		return CQt.QAccessibleTextUpdateEvent_ChangePosition(this.ptr);
+		return CQt.QAccessibleTextUpdateEvent_ChangePosition((.)this.ptr);
+	}
+	public void SetCursorPosition(c_int position)
+	{
+		CQt.QAccessibleTextCursorEvent_SetCursorPosition((.)this.ptr, position);
+	}
+	public c_int CursorPosition()
+	{
+		return CQt.QAccessibleTextCursorEvent_CursorPosition((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleTextUpdateEvent
@@ -1386,11 +1562,35 @@ class QAccessibleValueChangeEvent
 	}
 	public void SetValue(QVariant_Ptr* val)
 	{
-		CQt.QAccessibleValueChangeEvent_SetValue(this.ptr, val);
+		CQt.QAccessibleValueChangeEvent_SetValue((.)this.ptr, val);
 	}
 	public QVariant_Ptr Value()
 	{
-		return CQt.QAccessibleValueChangeEvent_Value(this.ptr);
+		return CQt.QAccessibleValueChangeEvent_Value((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleValueChangeEvent
@@ -1451,43 +1651,67 @@ class QAccessibleTableModelChangeEvent
 	}
 	public void SetModelChangeType(QAccessibleTableModelChangeEvent_ModelChangeType changeType)
 	{
-		CQt.QAccessibleTableModelChangeEvent_SetModelChangeType(this.ptr, changeType);
+		CQt.QAccessibleTableModelChangeEvent_SetModelChangeType((.)this.ptr, changeType);
 	}
 	public QAccessibleTableModelChangeEvent_ModelChangeType ModelChangeType()
 	{
-		return CQt.QAccessibleTableModelChangeEvent_ModelChangeType(this.ptr);
+		return CQt.QAccessibleTableModelChangeEvent_ModelChangeType((.)this.ptr);
 	}
 	public void SetFirstRow(c_int row)
 	{
-		CQt.QAccessibleTableModelChangeEvent_SetFirstRow(this.ptr, row);
+		CQt.QAccessibleTableModelChangeEvent_SetFirstRow((.)this.ptr, row);
 	}
 	public void SetFirstColumn(c_int col)
 	{
-		CQt.QAccessibleTableModelChangeEvent_SetFirstColumn(this.ptr, col);
+		CQt.QAccessibleTableModelChangeEvent_SetFirstColumn((.)this.ptr, col);
 	}
 	public void SetLastRow(c_int row)
 	{
-		CQt.QAccessibleTableModelChangeEvent_SetLastRow(this.ptr, row);
+		CQt.QAccessibleTableModelChangeEvent_SetLastRow((.)this.ptr, row);
 	}
 	public void SetLastColumn(c_int col)
 	{
-		CQt.QAccessibleTableModelChangeEvent_SetLastColumn(this.ptr, col);
+		CQt.QAccessibleTableModelChangeEvent_SetLastColumn((.)this.ptr, col);
 	}
 	public c_int FirstRow()
 	{
-		return CQt.QAccessibleTableModelChangeEvent_FirstRow(this.ptr);
+		return CQt.QAccessibleTableModelChangeEvent_FirstRow((.)this.ptr);
 	}
 	public c_int FirstColumn()
 	{
-		return CQt.QAccessibleTableModelChangeEvent_FirstColumn(this.ptr);
+		return CQt.QAccessibleTableModelChangeEvent_FirstColumn((.)this.ptr);
 	}
 	public c_int LastRow()
 	{
-		return CQt.QAccessibleTableModelChangeEvent_LastRow(this.ptr);
+		return CQt.QAccessibleTableModelChangeEvent_LastRow((.)this.ptr);
 	}
 	public c_int LastColumn()
 	{
-		return CQt.QAccessibleTableModelChangeEvent_LastColumn(this.ptr);
+		return CQt.QAccessibleTableModelChangeEvent_LastColumn((.)this.ptr);
+	}
+	public QAccessible_Event Type()
+	{
+		return CQt.QAccessibleEvent_Type((.)this.ptr);
+	}
+	public QObject_Ptr* Object()
+	{
+		return CQt.QAccessibleEvent_Object((.)this.ptr);
+	}
+	public c_uint UniqueId()
+	{
+		return CQt.QAccessibleEvent_UniqueId((.)this.ptr);
+	}
+	public void SetChild(c_int chld)
+	{
+		CQt.QAccessibleEvent_SetChild((.)this.ptr, chld);
+	}
+	public c_int Child()
+	{
+		return CQt.QAccessibleEvent_Child((.)this.ptr);
+	}
+	public QAccessibleInterface_Ptr* AccessibleInterface()
+	{
+		return CQt.QAccessibleEvent_AccessibleInterface((.)this.ptr);
 	}
 }
 interface IQAccessibleTableModelChangeEvent
