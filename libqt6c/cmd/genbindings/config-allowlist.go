@@ -86,6 +86,7 @@ func Widgets_AllowHeader(fullpath string) bool {
 		"qrhiwidget.h",                    // Qt 6 - broken QRhi* types, granular blocking might be fine
 		"qscreen_platform.h",              // Qt 6 - returns Wayland-specific wl_output type external to this library, a manual typedef does not work
 		"qopenglext.h",                    // Qt 6 - typedefs are not in the header
+		"qopengles2ext.h",				   // Qt 6 - @pelly - this wouldn't work!!!
 		"____last____":
 		return false
 	}

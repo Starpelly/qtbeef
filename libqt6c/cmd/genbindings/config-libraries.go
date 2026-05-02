@@ -12,20 +12,26 @@ import (
 	"time"
 )
 
+func baseSystemCflags() string {
+	return "-I/usr/include "
+}
+
 func ProcessLibraries(clangBin, outDir, extraLibsDir string) {
-	AllowAllHeaders := func(string) bool { return true }
+	// AllowAllHeaders := func(string) bool { return true }
 
-	ExceptHeaders := func(s ...string) func(fullpath string) bool {
-		return func(fullpath string) bool {
-			return !slices.Contains(s, filepath.Base(fullpath))
+	/*
+		ExceptHeaders := func(s ...string) func(fullpath string) bool {
+			return func(fullpath string) bool {
+				return !slices.Contains(s, filepath.Base(fullpath))
+			}
 		}
-	}
 
-	OnlyHeaders := func(s ...string) func(fullpath string) bool {
-		return func(fullpath string) bool {
-			return slices.Contains(s, filepath.Base(fullpath))
+		OnlyHeaders := func(s ...string) func(fullpath string) bool {
+			return func(fullpath string) bool {
+				return slices.Contains(s, filepath.Base(fullpath))
+			}
 		}
-	}
+	*/
 
 	InsertTypedefs()
 
@@ -62,831 +68,874 @@ func ProcessLibraries(clangBin, outDir, extraLibsDir string) {
 				}
 				return Widgets_AllowHeader(fullpath)
 			},
-			cflags: "--std=c++17 " + pkgConfigCflags("Qt6Widgets"),
+			cflags: "--std=c++17 -I/usr/include " + pkgConfigCflags("Qt6Widgets"),
 		},
 
 		// Qt 6 Bluetooth
 		// Depends on Qt Core
-		{
-			path: "bluetooth",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtBluetooth",
+		/*
+			{
+				path: "bluetooth",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtBluetooth",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Bluetooth"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Bluetooth"),
-		},
+		*/
 
 		// Qt 6 CBOR
 		// Depends on Qt Core
-		{
-			path: "cbor",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtCore",
+		/*
+			{
+				path: "cbor",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtCore",
+				},
+				allowHeader: func(fullpath string) bool {
+					// Only include the same json, xml, cbor files excluded above
+					fname := filepath.Base(fullpath)
+					return strings.HasPrefix(fname, "qcbor")
+				},
+				cflags: "--std=c++20 " + baseSystemCflags() + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: func(fullpath string) bool {
-				// Only include the same json, xml, cbor files excluded above
-				fname := filepath.Base(fullpath)
-				return strings.HasPrefix(fname, "qcbor")
-			},
-			cflags: "--std=c++20 " + pkgConfigCflags("Qt6Core"),
-		},
+		*/
 
 		// Qt 6 Designer
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "designer",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtDesigner",
+		/*
+			{
+				path: "designer",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtDesigner",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Designer"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Designer"),
-		},
+		*/
 
 		// Qt 6 Location
 		// Depends on Qt Core, Positioning
-		{
-			path: "location",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtLocation",
+		/*
+			{
+				path: "location",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtLocation",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Location"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Location"),
-		},
+		*/
 
 		// Qt 6 Multimedia
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "multimedia",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtMultimedia",
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtMultimediaWidgets",
+		/*
+			{
+				path: "multimedia",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtMultimedia",
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtMultimediaWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6MultimediaWidgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6MultimediaWidgets"),
-		},
+		*/
 
 		// Qt 6 Network
 		// Depends on Qt Core
-		{
-			path: "network",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtNetwork",
+		/*
+			{
+				path: "network",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtNetwork",
+				},
+				allowHeader: ExceptHeaders("qtnetwork-config.h"),
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Network"),
 			},
-			allowHeader: ExceptHeaders("qtnetwork-config.h"),
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Network"),
-		},
+		*/
 
 		// Qt 6 OpenGL
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "opengl",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtOpenGL",
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtOpenGLWidgets",
+		/*
+			{
+				path: "opengl",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtOpenGL",
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtOpenGLWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6OpenGLWidgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6OpenGLWidgets"),
-		},
+		*/
 
 		// Qt 6 PDF
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "pdf",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtPdf",
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtPdfWidgets",
+		/*
+			{
+				path: "pdf",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtPdf",
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtPdfWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6PdfWidgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6PdfWidgets"),
-		},
+		*/
 
 		// Qt 6 Positioning
 		// Depends on Qt Core
-		{
-			path: "positioning",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtPositioning",
+		/*
+			{
+				path: "positioning",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtPositioning",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Positioning"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Positioning"),
-		},
+		*/
 
 		// Qt 6 Print Support
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "printsupport",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtPrintSupport",
+		/*
+			{
+				path: "printsupport",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtPrintSupport",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6PrintSupport"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6PrintSupport"),
-		},
+		*/
 
 		// Qt 6 Spatial Audio
 		// Depends on Qt Core, Multimedia
-		{
-			path: "spatialaudio",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtSpatialAudio",
+		/*
+			{
+				path: "spatialaudio",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtSpatialAudio",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6SpatialAudio"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6SpatialAudio"),
-		},
+		*/
 
 		// Qt 6 SQL
 		// Depends on Qt Core
-		{
-			path: "sql",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtSql",
+		/*
+			{
+				path: "sql",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtSql",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Sql"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Sql"),
-		},
+		*/
 
 		// Qt 6 State Machine
 		// Depends on Qt Core
-		{
-			path: "statemachine",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtStateMachine",
+		/*
+			{
+				path: "statemachine",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtStateMachine",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6StateMachine"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6StateMachine"),
-		},
+		*/
 
 		// Qt 6 SVG
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "svg",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtSvg",
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtSvgWidgets",
+		/*
+			{
+				path: "svg",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtSvg",
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtSvgWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6SvgWidgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6SvgWidgets"),
-		},
+		*/
 
 		// Qt 6 TextToSpeech
 		// Depends on Qt Core
-		{
-			path: "texttospeech",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtTextToSpeech",
+		/*
+			{
+				path: "texttospeech",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtTextToSpeech",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6TextToSpeech"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6TextToSpeech"),
-		},
+		*/
 
 		// Qt 6 UI Plugin
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "uiplugin",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtUiPlugin",
+		/*
+			{
+				path: "uiplugin",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtUiPlugin",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6UiPlugin"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6UiPlugin"),
-		},
+		*/
 
 		// Qt 6 UI Tools
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "uitools",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtUiTools",
+		/*
+			{
+				path: "uitools",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtUiTools",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6UiTools"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6UiTools"),
-		},
+		*/
 
 		// Qt 6 XML
 		// Depends on Qt Core
-		{
-			path: "xml",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtXml",
+		/*
+			{
+				path: "xml",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtXml",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Xml"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Xml"),
-		},
+		*/
 
 		// Qt 6 WebChannel
 		// Depends on Qt Core
-		{
-			path: "webchannel",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtWebChannel",
+		/*
+			{
+				path: "webchannel",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtWebChannel",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6WebChannel"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6WebChannel"),
-		},
+		*/
 
 		// Qt 6 WebEngine
 		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "webengine",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtWebEngineCore",
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtWebEngineWidgets",
+		/*
+			{
+				path: "webengine",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtWebEngineCore",
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtWebEngineWidgets",
+				},
+				allowHeader: ExceptHeaders("qtwebenginewidgets-config.h"),
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6WebEngineWidgets"),
 			},
-			allowHeader: ExceptHeaders("qtwebenginewidgets-config.h"),
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6WebEngineWidgets"),
-		},
+		*/
 
 		// Qt 6 WebSockets
 		// Depends on Qt Core
-		{
-			path: "websockets",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtWebSockets",
+		/*
+			{
+				path: "websockets",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtWebSockets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6WebSockets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6WebSockets"),
-		},
-
+		*/
 		// extras
 
-		// KArchive
-		// Depends on Qt Core
-		{
-			path: "extras-karchive",
-			dirs: []string{
-				"/usr/include/KF6/KArchive",
+		/*
+			// KArchive
+			// Depends on Qt Core
+			{
+				path: "extras-karchive",
+				dirs: []string{
+					"/usr/include/KF6/KArchive",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KArchive " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KArchive " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// Attica
-		// Depends on Qt Core, Network
-		{
-			path: "extras-attica",
-			dirs: []string{
-				"/usr/include/KF6/Attica",
-				"/usr/include/KF6/Attica/attica",
+			// Attica
+			// Depends on Qt Core, Network
+			{
+				path: "extras-attica",
+				dirs: []string{
+					"/usr/include/KF6/Attica",
+					"/usr/include/KF6/Attica/attica",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/Attica -I/usr/include/KF6/Attica/Attica -I/usr/include/KF6/Attica/attica " + pkgConfigCflags("Qt6Network"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/Attica -I/usr/include/KF6/Attica/Attica -I/usr/include/KF6/Attica/attica " + pkgConfigCflags("Qt6Network"),
-		},
 
-		// KCodecs
-		// Depends on Qt Core
-		{
-			path: "extras-kcodecs",
-			dirs: []string{
-				"/usr/include/KF6/KCodecs",
+			// KCodecs
+			// Depends on Qt Core
+			{
+				path: "extras-kcodecs",
+				dirs: []string{
+					"/usr/include/KF6/KCodecs",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KCodecs " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KCodecs " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// kColorPicker
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-kcolorpicker",
-			dirs: []string{
-				"/usr/include/kColorPicker-Qt6/kColorPicker",
+			// kColorPicker
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-kcolorpicker",
+				dirs: []string{
+					"/usr/include/kColorPicker-Qt6/kColorPicker",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/kColorPicker-Qt6 -I/usr/include/kColorPicker-Qt6/kColorPicker " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/kColorPicker-Qt6 -I/usr/include/kColorPicker-Qt6/kColorPicker " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KCompletion
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-kcompletion",
-			dirs: []string{
-				"/usr/include/KF6/KCompletion",
+			// KCompletion
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-kcompletion",
+				dirs: []string{
+					"/usr/include/KF6/KCompletion",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KCompletion " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KCompletion " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KConfig
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-kconfig",
-			dirs: []string{
-				"/usr/include/KF6/KConfig",
-				"/usr/include/KF6/KConfigCore",
-				"/usr/include/KF6/KConfigGui",
+			// KConfig
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-kconfig",
+				dirs: []string{
+					"/usr/include/KF6/KConfig",
+					"/usr/include/KF6/KConfigCore",
+					"/usr/include/KF6/KConfigGui",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KConfigGui " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KConfigGui " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KCoreAddons
-		// Depends on Qt Core
-		{
-			path: "extras-kcoreaddons",
-			dirs: []string{
-				"/usr/include/KF6/KCoreAddons",
+			// KCoreAddons
+			// Depends on Qt Core
+			{
+				path: "extras-kcoreaddons",
+				dirs: []string{
+					"/usr/include/KF6/KCoreAddons",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// KCrash
-		// Depends on Qt Core
-		{
-			path: "extras-kcrash",
-			dirs: []string{
-				"/usr/include/KF6/KCrash",
+			// KCrash
+			// Depends on Qt Core
+			{
+				path: "extras-kcrash",
+				dirs: []string{
+					"/usr/include/KF6/KCrash",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KCrash -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KCrash -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// KFileMetaData
-		// Depends on Qt Core
-		{
-			path: "extras-kfilemetadata",
-			dirs: []string{
-				"/usr/include/KF6/KFileMetaData",
-				"/usr/include/KF6/KFileMetaData/kfilemetadata",
+			// KFileMetaData
+			// Depends on Qt Core
+			{
+				path: "extras-kfilemetadata",
+				dirs: []string{
+					"/usr/include/KF6/KFileMetaData",
+					"/usr/include/KF6/KFileMetaData/kfilemetadata",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KFileMetaData -I/usr/include/KF6/KFileMetaData/KFileMetaData -I/usr/include/KF6/KFileMetaData/kfilemetadata " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KFileMetaData -I/usr/include/KF6/KFileMetaData/KFileMetaData -I/usr/include/KF6/KFileMetaData/kfilemetadata " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// KGuiAddons
-		// Depends on Qt Core, GUI, KCoreAddons
-		{
-			path: "extras-kguiaddons",
-			dirs: []string{
-				"/usr/include/KF6/KGuiAddons",
+			// KGuiAddons
+			// Depends on Qt Core, GUI, KCoreAddons
+			{
+				path: "extras-kguiaddons",
+				dirs: []string{
+					"/usr/include/KF6/KGuiAddons",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KGuiAddons -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Gui"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KGuiAddons -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Gui"),
-		},
 
-		// KI18n
-		// Depends on Qt Core
-		{
-			path: "extras-ki18n",
-			dirs: []string{
-				"/usr/include/KF6/KI18n",
-				"/usr/include/KF6/KI18nLocaleData",
+			// KI18n
+			// Depends on Qt Core
+			{
+				path: "extras-ki18n",
+				dirs: []string{
+					"/usr/include/KF6/KI18n",
+					"/usr/include/KF6/KI18nLocaleData",
+				},
+				allowHeader: ExceptHeaders("klocalizedqmlcontext.h"),
+				cflags:      "--std=c++17 -I/usr/include/KF6/KI18n -I/usr/include/KF6/KI18nLocaleData " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: ExceptHeaders("klocalizedqmlcontext.h"),
-			cflags:      "--std=c++17 -I/usr/include/KF6/KI18n -I/usr/include/KF6/KI18nLocaleData " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// KIdleTime
-		// Depends on Qt Core
-		{
-			path: "extras-kidletime",
-			dirs: []string{
-				"/usr/include/KF6/KIdleTime",
+			// KIdleTime
+			// Depends on Qt Core
+			{
+				path: "extras-kidletime",
+				dirs: []string{
+					"/usr/include/KF6/KIdleTime",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KIdleTime " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KIdleTime " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// kImageAnnotator
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-kimageannotator",
-			dirs: []string{
-				"/usr/include/kImageAnnotator-Qt6/kImageAnnotator",
+			// kImageAnnotator
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-kimageannotator",
+				dirs: []string{
+					"/usr/include/kImageAnnotator-Qt6/kImageAnnotator",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/kImageAnnotator-Qt6 -I/usr/include/kImageAnnotator-Qt6/kImageAnnotator " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/kImageAnnotator-Qt6 -I/usr/include/kImageAnnotator-Qt6/kImageAnnotator " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KItemModels
-		// Depends on Qt Core
-		{
-			path: "extras-kitemmodels",
-			dirs: []string{
-				"/usr/include/KF6/KItemModels",
+			// KItemModels
+			// Depends on Qt Core
+			{
+				path: "extras-kitemmodels",
+				dirs: []string{
+					"/usr/include/KF6/KItemModels",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KItemModels " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KItemModels " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// KItemViews
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-kitemviews",
-			dirs: []string{
-				"/usr/include/KF6/KItemViews",
+			// KItemViews
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-kitemviews",
+				dirs: []string{
+					"/usr/include/KF6/KItemViews",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KItemViews " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KItemViews " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KJobWidgets
-		// Depends on Qt Core, KCoreAddons
-		{
-			path: "extras-kjobwidgets",
-			dirs: []string{
-				"/usr/include/KF6/KJobWidgets",
+			// KJobWidgets
+			// Depends on Qt Core, KCoreAddons
+			{
+				path: "extras-kjobwidgets",
+				dirs: []string{
+					"/usr/include/KF6/KJobWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KJobWidgets -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KJobWidgets -I/usr/include/KF6/KCoreAddons " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// KNewStuff
-		// Depends on Qt Core, GUI, Widgets, Attica
-		{
-			path: "extras-knewstuff",
-			dirs: []string{
-				"/usr/include/KF6/KNewStuff",
-				"/usr/include/KF6/KNewStuffCore/KNSCore",
-				"/usr/include/KF6/KNewStuffWidgets/KNSWidgets",
+			// KNewStuff
+			// Depends on Qt Core, GUI, Widgets, Attica
+			{
+				path: "extras-knewstuff",
+				dirs: []string{
+					"/usr/include/KF6/KNewStuff",
+					"/usr/include/KF6/KNewStuffCore/KNSCore",
+					"/usr/include/KF6/KNewStuffWidgets/KNSWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags: "--std=c++17 -I/usr/include/KF6/KNewStuff -I/usr/include/KF6/KNewStuffCore -I/usr/include/KF6/KNewStuffCore/KNSCore -I/usr/include/KF6/KNewStuffWidgets" +
+					" -I/usr/include/KF6/KNewStuffWidgets/KNSWidgets -I/usr/include/KF6/Attica -I/usr/include/KF6/Attica/Attica -I/usr/include/KF6/Attica/attica " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags: "--std=c++17 -I/usr/include/KF6/KNewStuff -I/usr/include/KF6/KNewStuffCore -I/usr/include/KF6/KNewStuffCore/KNSCore -I/usr/include/KF6/KNewStuffWidgets" +
-				" -I/usr/include/KF6/KNewStuffWidgets/KNSWidgets -I/usr/include/KF6/Attica -I/usr/include/KF6/Attica/Attica -I/usr/include/KF6/Attica/attica " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KPlotting
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-kplotting",
-			dirs: []string{
-				"/usr/include/KF6/KPlotting",
+			// KPlotting
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-kplotting",
+				dirs: []string{
+					"/usr/include/KF6/KPlotting",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KPlotting " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KPlotting " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KService
-		// Depends on Qt Core
-		{
-			path: "extras-kservice",
-			dirs: []string{
-				"/usr/include/KF6/KService",
+			// KService
+			// Depends on Qt Core
+			{
+				path: "extras-kservice",
+				dirs: []string{
+					"/usr/include/KF6/KService",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KService " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KService " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// Solid
-		// Depends on Qt Core
-		{
-			path: "extras-solid",
-			dirs: []string{
-				"/usr/include/KF6/Solid",
-				"/usr/include/KF6/Solid/solid",
+			// Solid
+			// Depends on Qt Core
+			{
+				path: "extras-solid",
+				dirs: []string{
+					"/usr/include/KF6/Solid",
+					"/usr/include/KF6/Solid/solid",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/Solid " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/Solid " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// Sonnet
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-sonnet",
-			dirs: []string{
-				"/usr/include/KF6/Sonnet",
-				"/usr/include/KF6/SonnetCore/sonnet",
-				"/usr/include/KF6/SonnetUi/sonnet",
+			// Sonnet
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-sonnet",
+				dirs: []string{
+					"/usr/include/KF6/Sonnet",
+					"/usr/include/KF6/SonnetCore/sonnet",
+					"/usr/include/KF6/SonnetUi/sonnet",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/Sonnet " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/Sonnet " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KStatusNotifierItem
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "extras-kstatusnotifieritem",
-			dirs: []string{
-				"/usr/include/KF6/KStatusNotifierItem",
+			// KStatusNotifierItem
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "extras-kstatusnotifieritem",
+				dirs: []string{
+					"/usr/include/KF6/KStatusNotifierItem",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KStatusNotifierItem " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KStatusNotifierItem " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KSvg
-		// Depends on Qt Core, GUI, KConfig
-		{
-			path: "extras-ksvg",
-			dirs: []string{
-				"/usr/include/KF6/KSvg",
-				"/usr/include/KF6/KSvg/ksvg",
+			// KSvg
+			// Depends on Qt Core, GUI, KConfig
+			{
+				path: "extras-ksvg",
+				dirs: []string{
+					"/usr/include/KF6/KSvg",
+					"/usr/include/KF6/KSvg/ksvg",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KSvg -I/usr/include/KF6/KSvg/ksvg -I/usr/include/KF6/KSvg/KSvg -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore " + pkgConfigCflags("Qt6Gui"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KSvg -I/usr/include/KF6/KSvg/ksvg -I/usr/include/KF6/KSvg/KSvg -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore " + pkgConfigCflags("Qt6Gui"),
-		},
 
-		// KSyntaxHighlighting
-		// Depends on Qt Core, GUI
-		{
-			path: "extras-ksyntaxhighlighting",
-			dirs: []string{
-				"/usr/include/KF6/KSyntaxHighlighting",
-				"/usr/include/KF6/KSyntaxHighlighting/KSyntaxHighlighting",
+			// KSyntaxHighlighting
+			// Depends on Qt Core, GUI
+			{
+				path: "extras-ksyntaxhighlighting",
+				dirs: []string{
+					"/usr/include/KF6/KSyntaxHighlighting",
+					"/usr/include/KF6/KSyntaxHighlighting/KSyntaxHighlighting",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KSyntaxHighlighting -I/usr/include/KF6/KSyntaxHighlighting/KSyntaxHighlighting " + pkgConfigCflags("Qt6Gui"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KSyntaxHighlighting -I/usr/include/KF6/KSyntaxHighlighting/KSyntaxHighlighting " + pkgConfigCflags("Qt6Gui"),
-		},
 
-		// KTextWidgets
-		// Depends on Qt Core, GUI, Widgets, KCompletion, KConfig, KI18n, Sonnet
-		{
-			path: "extras-ktextwidgets",
-			dirs: []string{
-				"/usr/include/KF6/KTextWidgets",
+			// KTextWidgets
+			// Depends on Qt Core, GUI, Widgets, KCompletion, KConfig, KI18n, Sonnet
+			{
+				path: "extras-ktextwidgets",
+				dirs: []string{
+					"/usr/include/KF6/KTextWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KTextWidgets -I/usr/include/KF6/KI18n -I/usr/include/KF6/Sonnet -I/usr/include/KF6/SonnetUi " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KTextWidgets -I/usr/include/KF6/KI18n -I/usr/include/KF6/Sonnet -I/usr/include/KF6/SonnetUi " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KUnitConversion
-		// Depends on Qt Core
-		{
-			path: "extras-kunitconversion",
-			dirs: []string{
-				"/usr/include/KF6/KUnitConversion",
-				"/usr/include/KF6/KUnitConversion/kunitconversion",
+			// KUnitConversion
+			// Depends on Qt Core
+			{
+				path: "extras-kunitconversion",
+				dirs: []string{
+					"/usr/include/KF6/KUnitConversion",
+					"/usr/include/KF6/KUnitConversion/kunitconversion",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KUnitConversion -I/usr/include/KF6/KUnitConversion/kunitconversion " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KUnitConversion -I/usr/include/KF6/KUnitConversion/kunitconversion " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// KWidgetsAddons
-		// Depends on Qt Core, GUI, Widgets, KConfig
-		{
-			path: "extras-kwidgetsaddons",
-			dirs: []string{
-				"/usr/include/KF6/KWidgetsAddons",
+			// KWidgetsAddons
+			// Depends on Qt Core, GUI, Widgets, KConfig
+			{
+				path: "extras-kwidgetsaddons",
+				dirs: []string{
+					"/usr/include/KF6/KWidgetsAddons",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KColorScheme
-		// Depends on Qt Core, KConfig, KWidgetsAddons
-		{
-			path: "extras-kcolorscheme",
-			dirs: []string{
-				"/usr/include/KF6/KColorScheme",
+			// KColorScheme
+			// Depends on Qt Core, KConfig, KWidgetsAddons
+			{
+				path: "extras-kcolorscheme",
+				dirs: []string{
+					"/usr/include/KF6/KColorScheme",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KColorScheme -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore " + pkgConfigCflags("Qt6Gui"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KColorScheme -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore " + pkgConfigCflags("Qt6Gui"),
-		},
 
-		// KConfigWidgets
-		// Depends on Qt Core, GUI, Widgets, KConfig, KGuiAddons, KWidgetsAddons
-		{
-			path: "extras-kconfigwidgets",
-			dirs: []string{
-				"/usr/include/KF6/KConfigWidgets",
+			// KConfigWidgets
+			// Depends on Qt Core, GUI, Widgets, KConfig, KGuiAddons, KWidgetsAddons
+			{
+				path: "extras-kconfigwidgets",
+				dirs: []string{
+					"/usr/include/KF6/KConfigWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags: "--std=c++17 -I/usr/include/KF6/KConfigWidgets -I/usr/include/KF6/KColorScheme -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore" +
+					" -I/usr/include/KF6/KConfigGui -I/usr/include/KF6/KGuiAddons -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags: "--std=c++17 -I/usr/include/KF6/KConfigWidgets -I/usr/include/KF6/KColorScheme -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore" +
-				" -I/usr/include/KF6/KConfigGui -I/usr/include/KF6/KGuiAddons -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KBookmarks
-		// Depends on Qt Core, GUI, Widgets, XML
-		{
-			path: "extras-kbookmarks",
-			dirs: []string{
-				"/usr/include/KF6/KBookmarks",
-				"/usr/include/KF6/KBookmarksWidgets",
+			// KBookmarks
+			// Depends on Qt Core, GUI, Widgets, XML
+			{
+				path: "extras-kbookmarks",
+				dirs: []string{
+					"/usr/include/KF6/KBookmarks",
+					"/usr/include/KF6/KBookmarksWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KBookmarks -I/usr/include/KF6/KBookmarksWidgets -I/usr/include/KF6/KConfigWidgets -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets") + pkgConfigCflags("Qt6Xml"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KBookmarks -I/usr/include/KF6/KBookmarksWidgets -I/usr/include/KF6/KConfigWidgets -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets") + pkgConfigCflags("Qt6Xml"),
-		},
 
-		// KNotifications
-		// Depends on Qt Core, GUI, KConfig
-		{
-			path: "extras-knotifications",
-			dirs: []string{
-				"/usr/include/KF6/KNotifications",
+			// KNotifications
+			// Depends on Qt Core, GUI, KConfig
+			{
+				path: "extras-knotifications",
+				dirs: []string{
+					"/usr/include/KF6/KNotifications",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KNotifications -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KConfigGui " + pkgConfigCflags("Qt6Gui"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KNotifications -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KConfigGui " + pkgConfigCflags("Qt6Gui"),
-		},
 
-		// KIconThemes
-		// Depends on Qt Core, GUI, Widgets, KWidgetsAddons
-		{
-			path: "extras-kiconthemes",
-			dirs: []string{
-				"/usr/include/KF6/KIconThemes",
-				"/usr/include/KF6/KIconWidgets",
+			// KIconThemes
+			// Depends on Qt Core, GUI, Widgets, KWidgetsAddons
+			{
+				path: "extras-kiconthemes",
+				dirs: []string{
+					"/usr/include/KF6/KIconThemes",
+					"/usr/include/KF6/KIconWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KIconThemes -I/usr/include/KF6/KIconWidgets -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets") + pkgConfigCflags("Qt6Quick"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KIconThemes -I/usr/include/KF6/KIconWidgets -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets") + pkgConfigCflags("Qt6Quick"),
-		},
 
-		// KXmlGui
-		// Depends on Qt Core, Gui, Widgets, XML, KConfig, KConfigWidgets, KGuiAddons, KWidgetsAddons
-		{
-			path: "extras-kxmlgui",
-			dirs: []string{
-				"/usr/include/KF6/KXmlGui",
+			// KXmlGui
+			// Depends on Qt Core, Gui, Widgets, XML, KConfig, KConfigWidgets, KGuiAddons, KWidgetsAddons
+			{
+				path: "extras-kxmlgui",
+				dirs: []string{
+					"/usr/include/KF6/KXmlGui",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags: "--std=c++17 -I/usr/include/KF6/KXmlGui -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KConfigGui" +
+					" -I/usr/include/KF6/KConfigWidgets -I/usr/include/KF6/KGuiAddons -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags: "--std=c++17 -I/usr/include/KF6/KXmlGui -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KConfigGui" +
-				" -I/usr/include/KF6/KConfigWidgets -I/usr/include/KF6/KGuiAddons -I/usr/include/KF6/KWidgetsAddons " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// Qt 6 QtKeychain
-		// Depends on Qt Core
-		{
-			path: "extras-qtkeychain",
-			dirs: []string{
-				"/usr/include/qt6keychain",
+			// Qt 6 QtKeychain
+			// Depends on Qt Core
+			{
+				path: "extras-qtkeychain",
+				dirs: []string{
+					"/usr/include/qt6keychain",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/qt6keychain " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/qt6keychain " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// foss-extras
+			// foss-extras
 
-		// LayerShellQt
-		// Depends on Qt Core, Gui
-		{
-			path: "foss-extras-layershellqt",
-			dirs: []string{
-				"/usr/include/LayerShellQt",
+			// LayerShellQt
+			// Depends on Qt Core, Gui
+			{
+				path: "foss-extras-layershellqt",
+				dirs: []string{
+					"/usr/include/LayerShellQt",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/LayerShellQt " + pkgConfigCflags("Qt6Gui"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/LayerShellQt " + pkgConfigCflags("Qt6Gui"),
-		},
 
-		// KGlobalAccel
-		// Depends on Qt Core, Gui, D-Bus
-		{
-			path: "foss-extras-kglobalaccel",
-			dirs: []string{
-				"/usr/include/KF6/KGlobalAccel",
+			// KGlobalAccel
+			// Depends on Qt Core, Gui, D-Bus
+			{
+				path: "foss-extras-kglobalaccel",
+				dirs: []string{
+					"/usr/include/KF6/KGlobalAccel",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KGlobalAccel " + pkgConfigCflags("Qt6Gui") + pkgConfigCflags("Qt6DBus"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KGlobalAccel " + pkgConfigCflags("Qt6Gui") + pkgConfigCflags("Qt6DBus"),
-		},
 
-		// KWindowSystem
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "foss-extras-kwindowsystem",
-			dirs: []string{
-				"/usr/include/KF6/KWindowSystem",
+			// KWindowSystem
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "foss-extras-kwindowsystem",
+				dirs: []string{
+					"/usr/include/KF6/KWindowSystem",
+				},
+				allowHeader: ExceptHeaders("kx11extras.h"),
+				cflags:      "--std=c++17 -I/usr/include/KF6/KWindowSystem " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: ExceptHeaders("kx11extras.h"),
-			cflags:      "--std=c++17 -I/usr/include/KF6/KWindowSystem " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// PackageKit-Qt
-		// Depends on Qt Core, D-Bus
-		{
-			path: "foss-extras-packagekitqt",
-			dirs: []string{
-				"/usr/include/packagekitqt6/PackageKit",
+			// PackageKit-Qt
+			// Depends on Qt Core, D-Bus
+			{
+				path: "foss-extras-packagekitqt",
+				dirs: []string{
+					"/usr/include/packagekitqt6/PackageKit",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/packagekitqt6/PackageKit " + pkgConfigCflags("Qt6DBus"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/packagekitqt6/PackageKit " + pkgConfigCflags("Qt6DBus"),
-		},
 
-		// posix-extras
+			// posix-extras
 
-		// Qt 6 Accounts
-		// Depends on Qt Core, XML
-		{
-			path: "posix-extras-accounts",
-			dirs: []string{
-				"/usr/include/accounts-qt6/Accounts",
+			// Qt 6 Accounts
+			// Depends on Qt Core, XML
+			{
+				path: "posix-extras-accounts",
+				dirs: []string{
+					"/usr/include/accounts-qt6/Accounts",
+				},
+				allowHeader: ExceptHeaders("manager_p.h", "utils.h"),
+				cflags:      "--std=c++17 -I/usr/include/accounts-qt6 -I/usr/include/accounts-qt6/Accounts " + pkgConfigCflags("Qt6Xml"),
 			},
-			allowHeader: ExceptHeaders("manager_p.h", "utils.h"),
-			cflags:      "--std=c++17 -I/usr/include/accounts-qt6 -I/usr/include/accounts-qt6/Accounts " + pkgConfigCflags("Qt6Xml"),
-		},
 
-		// Qt 6 D-Bus
-		// Depends on Qt Core
-		{
-			path: "posix-extras-dbus",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtDBus",
+			// Qt 6 D-Bus
+			// Depends on Qt Core
+			{
+				path: "posix-extras-dbus",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtDBus",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6DBus"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6DBus"),
-		},
 
-		// Qt 6 SignOn
-		// Depends on Qt Core
-		{
-			path: "posix-extras-signon",
-			dirs: []string{
-				"/usr/include/signon-qt6/SignOn",
+			// Qt 6 SignOn
+			// Depends on Qt Core
+			{
+				path: "posix-extras-signon",
+				dirs: []string{
+					"/usr/include/signon-qt6/SignOn",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/signon-qt6 -I/usr/include/signon-qt6/SignOn " + pkgConfigCflags("Qt6Core"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/signon-qt6 -I/usr/include/signon-qt6/SignOn " + pkgConfigCflags("Qt6Core"),
-		},
 
-		// extras (cont.)
+			// extras (cont.)
 
-		// KIO
-		// Depends on Qt Core, GUI, Widgets, D-Bus, Network, XML, KConfig, KCoreAddons, KWidgetsAddons, KBookmarks, KCompletion, KIconThemes, KItemViews, KJobWidgets, KService, Solid
-		{
-			path: "extras-kio",
-			dirs: []string{
-				"/usr/include/KF6/KIO",
-				"/usr/include/KF6/KIOCore",
-				"/usr/include/KF6/KIOCore/kio",
-				"/usr/include/KF6/KIOGui",
-				"/usr/include/KF6/KIOGui/kio",
-				"/usr/include/KF6/KIOWidgets",
-				"/usr/include/KF6/KIOWidgets/kio",
-				"/usr/include/KF6/KIOFileWidgets",
+			// KIO
+			// Depends on Qt Core, GUI, Widgets, D-Bus, Network, XML, KConfig, KCoreAddons, KWidgetsAddons, KBookmarks, KCompletion, KIconThemes, KItemViews, KJobWidgets, KService, Solid
+			{
+				path: "extras-kio",
+				dirs: []string{
+					"/usr/include/KF6/KIO",
+					"/usr/include/KF6/KIOCore",
+					"/usr/include/KF6/KIOCore/kio",
+					"/usr/include/KF6/KIOGui",
+					"/usr/include/KF6/KIOGui/kio",
+					"/usr/include/KF6/KIOWidgets",
+					"/usr/include/KF6/KIOWidgets/kio",
+					"/usr/include/KF6/KIOFileWidgets",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags: "--std=c++17 -I/usr/include/KF6/KIO -I/usr/include/KF6/KIOCore -I/usr/include/KF6/KIOCore/kio/KIO -I/usr/include/KF6/KIOGui -I/usr/include/KF6/KIOGui/KIO" +
+					" -I/usr/include/KF6/KIOWidgets -I/usr/include/KF6/KIOWidgets/KIO -I/usr/include/KF6/KIOFileWidgets -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KCoreAddons" +
+					" -I/usr/include/KF6/KWidgetsAddons -I/usr/include/KF6/KBookmarks -I/usr/include/KF6/KCompletion -I/usr/include/KF6/KIconThemes -I/usr/include/KF6/KItemViews -I/usr/include/KF6/KJobWidgets" +
+					" -I/usr/include/KF6/KService -I/usr/include/KF6/Solid " + pkgConfigCflags("Qt6Widgets") + pkgConfigCflags("Qt6Network") + pkgConfigCflags("Qt6DBus") + pkgConfigCflags("Qt6Xml"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags: "--std=c++17 -I/usr/include/KF6/KIO -I/usr/include/KF6/KIOCore -I/usr/include/KF6/KIOCore/kio/KIO -I/usr/include/KF6/KIOGui -I/usr/include/KF6/KIOGui/KIO" +
-				" -I/usr/include/KF6/KIOWidgets -I/usr/include/KF6/KIOWidgets/KIO -I/usr/include/KF6/KIOFileWidgets -I/usr/include/KF6/KConfig -I/usr/include/KF6/KConfigCore -I/usr/include/KF6/KCoreAddons" +
-				" -I/usr/include/KF6/KWidgetsAddons -I/usr/include/KF6/KBookmarks -I/usr/include/KF6/KCompletion -I/usr/include/KF6/KIconThemes -I/usr/include/KF6/KItemViews -I/usr/include/KF6/KJobWidgets" +
-				" -I/usr/include/KF6/KService -I/usr/include/KF6/Solid " + pkgConfigCflags("Qt6Widgets") + pkgConfigCflags("Qt6Network") + pkgConfigCflags("Qt6DBus") + pkgConfigCflags("Qt6Xml"),
-		},
 
-		// KParts
-		// Depends on Qt Core, GUI, Widgets, KCoreAddons, KIO, KXmlGui
-		{
-			path: "extras-kparts",
-			dirs: []string{
-				"/usr/include/KF6/KParts",
-				"/usr/include/KF6/KParts/kparts",
+			// KParts
+			// Depends on Qt Core, GUI, Widgets, KCoreAddons, KIO, KXmlGui
+			{
+				path: "extras-kparts",
+				dirs: []string{
+					"/usr/include/KF6/KParts",
+					"/usr/include/KF6/KParts/kparts",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 -I/usr/include/KF6/KParts -I/usr/include/KF6/KParts/KParts -I/usr/include/KF6/KParts/kparts -I/usr/include/KF6/KCoreAddons -I/usr/include/KF6/KIO -I/usr/include/KF6/KIOCore -I/usr/include/KF6/KXmlGui " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 -I/usr/include/KF6/KParts -I/usr/include/KF6/KParts/KParts -I/usr/include/KF6/KParts/kparts -I/usr/include/KF6/KCoreAddons -I/usr/include/KF6/KIO -I/usr/include/KF6/KIOCore -I/usr/include/KF6/KXmlGui " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// KTextEditor
-		// Depends on Qt Core, GUI, Widgets, KCompletion, KCoreAddons, KParts, KSyntaxHighlighting, KXmlGui
-		{
-			path: "extras-ktexteditor",
-			dirs: []string{
-				"/usr/include/KF6/KTextEditor",
-				"/usr/include/KF6/KTextEditor/ktexteditor",
+			// KTextEditor
+			// Depends on Qt Core, GUI, Widgets, KCompletion, KCoreAddons, KParts, KSyntaxHighlighting, KXmlGui
+			{
+				path: "extras-ktexteditor",
+				dirs: []string{
+					"/usr/include/KF6/KTextEditor",
+					"/usr/include/KF6/KTextEditor/ktexteditor",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags: "--std=c++17 -I/usr/include/KF6/KTextEditor -I/usr/include/KF6/KTextEditor/KTextEditor -I/usr/include/KF6/KTextEditor/ktexteditor -I/usr/include/KF6/KCompletion" +
+					" -I/usr/include/KF6/KCoreAddons -I/usr/include/KF6/KParts -I/usr/include/KF6/KParts/KParts -I/usr/include/KF6/KParts/kparts -I/usr/include/KF6/KSyntaxHighlighting" +
+					" -I/usr/include/KF6/KSyntaxHighlighting/KSyntaxHighlighting -I/usr/include/KF6/KXmlGui " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags: "--std=c++17 -I/usr/include/KF6/KTextEditor -I/usr/include/KF6/KTextEditor/KTextEditor -I/usr/include/KF6/KTextEditor/ktexteditor -I/usr/include/KF6/KCompletion" +
-				" -I/usr/include/KF6/KCoreAddons -I/usr/include/KF6/KParts -I/usr/include/KF6/KParts/KParts -I/usr/include/KF6/KParts/kparts -I/usr/include/KF6/KSyntaxHighlighting" +
-				" -I/usr/include/KF6/KSyntaxHighlighting/KSyntaxHighlighting -I/usr/include/KF6/KXmlGui " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// posix-restricted
+			// posix-restricted
 
-		// QTermWidget
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "posix-restricted-qtermwidget",
-			dirs: []string{
-				"/usr/include/qtermwidget6",
+			// QTermWidget
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "posix-restricted-qtermwidget",
+				dirs: []string{
+					"/usr/include/qtermwidget6",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      `--std=c++17 -DQ_DECLARE_INTERFACE(x,y)= -DQTermWidgetInterface_iid="lxqt.qtermwidget.QTermWidgetInterface/1.5 ` + pkgConfigCflags("qtermwidget6"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      `--std=c++17 -DQ_DECLARE_INTERFACE(x,y)= -DQTermWidgetInterface_iid="lxqt.qtermwidget.QTermWidgetInterface/1.5 ` + pkgConfigCflags("qtermwidget6"),
-		},
 
-		// restricted-extras
+			// restricted-extras
 
-		// Qt 6 Charts
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "restricted-extras-charts",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/QtCharts",
+			// Qt 6 Charts
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "restricted-extras-charts",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/QtCharts",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Charts"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Charts"),
-		},
 
-		// QCustomPlot
-		// Depends on Qt Core, GUI, Widgets
-		{
-			path: "restricted-extras-qcustomplot",
-			dirs: []string{
-				"/usr/include/",
+			// QCustomPlot
+			// Depends on Qt Core, GUI, Widgets
+			{
+				path: "restricted-extras-qcustomplot",
+				dirs: []string{
+					"/usr/include/",
+				},
+				allowHeader: OnlyHeaders("qcustomplot.h"),
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Widgets"),
 			},
-			allowHeader: OnlyHeaders("qcustomplot.h"),
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6Widgets"),
-		},
 
-		// Qt 6 Poppler
-		// Depends on Qt Core, GUI
-		{
-			path: "restricted-extras-poppler",
-			dirs: []string{
-				"/usr/include/poppler/qt6",
+			// Qt 6 Poppler
+			// Depends on Qt Core, GUI
+			{
+				path: "restricted-extras-poppler",
+				dirs: []string{
+					"/usr/include/poppler/qt6",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("poppler-qt6") + pkgConfigCflags("Qt6Gui"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("poppler-qt6") + pkgConfigCflags("Qt6Gui"),
-		},
 
-		// Qt 6 QScintilla
-		// Depends on Qt Core, GUI, Widgets, Print Support
-		{
-			path: "restricted-extras-qscintilla",
-			dirs: []string{
-				"/usr/include/" + arch + "-linux-gnu/qt6/Qsci",
+			// Qt 6 QScintilla
+			// Depends on Qt Core, GUI, Widgets, Print Support
+			{
+				path: "restricted-extras-qscintilla",
+				dirs: []string{
+					"/usr/include/" + arch + "-linux-gnu/qt6/Qsci",
+				},
+				allowHeader: AllowAllHeaders,
+				cflags:      "--std=c++17 " + pkgConfigCflags("Qt6PrintSupport"),
 			},
-			allowHeader: AllowAllHeaders,
-			cflags:      "--std=c++17 " + pkgConfigCflags("Qt6PrintSupport"),
-		},
+		*/
 	}
 
 	startTime := time.Now()

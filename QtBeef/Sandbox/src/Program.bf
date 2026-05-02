@@ -10,7 +10,7 @@ class Program
 		int32 argc = 0;
 		char8*[] argv = scope .();
 
-		q_application_new(&argc, argv);
+		QApplication_new(&argc, argv);
 		q_mainwindow_new(null);
 
 		let widget = q_widget_new2();

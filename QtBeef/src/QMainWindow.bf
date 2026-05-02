@@ -6,7 +6,7 @@ namespace Qt6;
 static
 {
 	[CLink]
-	public static extern void* q_application_new(int32* argc, char8*[] argv);
+	public static extern void* QApplication_new(int32* argc, char8*[] argv);
 
 	[CLink]
 	public static extern int32 q_application_exec();

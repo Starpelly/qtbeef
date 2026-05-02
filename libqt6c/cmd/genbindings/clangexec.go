@@ -32,6 +32,8 @@ func clangExec(ctx context.Context, clangBin, inputHeader string, cflags []strin
 
 	cmd.Stderr = os.Stderr
 
+	log.Printf("DEBUG clang command: %s %v", clangBin, clangArgs)
+
 	err = cmd.Start()
 	if err != nil {
 		return nil, fmt.Errorf("start: %w", err)
