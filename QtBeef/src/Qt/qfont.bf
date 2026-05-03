@@ -556,7 +556,7 @@ class QFont : IQFont
 	{
 		this.ptr.Key(outStr);
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}

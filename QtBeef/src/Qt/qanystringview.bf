@@ -114,7 +114,7 @@ class QAnyStringView : IQAnyStringView
 	{
 		CQt.QAnyStringView_Delete(this.ptr);
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}

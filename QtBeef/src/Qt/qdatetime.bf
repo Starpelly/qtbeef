@@ -333,7 +333,7 @@ class QDate : IQDate
 	{
 		return this.ptr.EndOfDay2(zone);
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}
@@ -733,7 +733,7 @@ class QTime : IQTime
 	{
 		return this.ptr.Msec();
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}
@@ -1222,7 +1222,7 @@ class QDateTime : IQDateTime
 	{
 		this.ptr.SetSecsSinceEpoch(secs);
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}

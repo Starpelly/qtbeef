@@ -256,7 +256,7 @@ class QJsonValue : IQJsonValue
 	{
 		return this.ptr.ToDouble();
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}
@@ -570,7 +570,7 @@ class QJsonValueConstRef : IQJsonValueConstRef
 	{
 		return this.ptr.ToDouble();
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}
@@ -866,7 +866,7 @@ class QJsonValueRef : IQJsonValueRef, IQJsonValueConstRef
 	{
 		return this.ptr.ToDouble();
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}

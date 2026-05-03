@@ -9,4 +9,5 @@ corlib = "*"
 Qt6 = "*"
 
 [Configs.Debug.Win64]
+LibPaths = ["D:/qtbeef/extensions/build/vendor/phantom/Release/phantom.lib", "D:\\qtbeef\\extensions\\build\\Release\\QtBeefExtensionsTest.lib", "msvcrt.lib"]
 LinkDependencies = ["\"C:\\Qt\\6.8.3\\msvc2022_64\\bin\\windeployqt.exe\" \"$(TargetDir)\""]

@@ -476,7 +476,7 @@ class WriteClass
 
                 gatherInherited(cppClass);
 
-                void genMethod(CppClass cppClass, CppMethod method, bool isHandle)
+                void genMethod(CppClass cppClass, CppMethod method, bool isHandle, Stage stage)
                 {
                     // @TODO - maybe(?)
                     if (method.MethodName.StartsWith("operator"))
@@ -526,7 +526,11 @@ class WriteClass
                         isQtObjectReturnType = true;
                     }
 
-                    code.AppendLine($"public {returnType} {bfMethodName}({bfParameters})");
+                    var newType = "";
+                    if (bfMethodName == "ToString" && stage == Stage.BfObject && method.Parameters.Length == 0)
+                        newType = "new ";
+
+                    code.AppendLine($"public {newType}{returnType} {bfMethodName}({bfParameters})");
                     code.AppendLine("{");
                     code.IncreaseTab();
                     {
@@ -591,7 +595,7 @@ class WriteClass
                     // Normal methods
                     foreach (var method in cppClass.Methods)
                     {
-                        genMethod(cppClass, method, true);
+                        genMethod(cppClass, method, true, Stage.PtrStruct);
                     }
                     toCheck.AddRange(cppClass.Methods);
 
@@ -602,7 +606,7 @@ class WriteClass
                             if (toCheck.Any(c => c.MethodName == method.MethodName))
                                 continue;
 
-                            genMethod(inheritedClass, method, true);
+                            genMethod(inheritedClass, method, true, Stage.PtrStruct);
                         }
 
                         toCheck.AddRange(inheritedClass.Methods);
@@ -813,7 +817,7 @@ class WriteClass
                     // Normal methods
                     foreach (var method in cppClass.Methods)
                     {
-                        genMethod(cppClass, method, false);
+                        genMethod(cppClass, method, false, Stage.BfObject);
                     }
                     toCheck.AddRange(cppClass.Methods);
 
@@ -824,7 +828,7 @@ class WriteClass
                             if (toCheck.Any(c => c.MethodName == method.MethodName))
                                 continue;
 
-                            genMethod(inheritedClass, method, false);
+                            genMethod(inheritedClass, method, false, Stage.BfObject);
                         }
 
                         toCheck.AddRange(inheritedClass.Methods);

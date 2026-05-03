@@ -175,7 +175,7 @@ class QVersionNumber : IQVersionNumber
 	{
 		return this.ptr.CommonPrefix(v1, v2);
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}

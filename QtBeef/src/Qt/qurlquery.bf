@@ -169,7 +169,7 @@ class QUrlQuery : IQUrlQuery
 	{
 		this.ptr.SetQuery(queryString);
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}

@@ -7,6 +7,7 @@ class Program
 {
 	class TestWindow : QMainWindow
 	{
+		QToolBar m_toolbar ~ delete _;
 		QMenuBar m_menubar ~ delete _;
 		QPushButton button ~ delete _;
 
@@ -35,9 +36,17 @@ class Program
 				m_menubar.AddMenu2("Build");
 				m_menubar.AddMenu2("Debug");
 				m_menubar.AddMenu2("Test");
+				m_menubar.AddMenu2("Search");
 				m_menubar.AddMenu2("Window");
 
-				m_menubar.AddMenu2("Help");
+				let help = m_menubar.AddMenu2("Help");
+				let a = new QAction("About Qt");
+				a.SetMenuRole(.AboutQtRole);
+				help.AddAction(a);
+
+				a.OnTriggered.Add(new () => {
+					CQt.QApplication_AboutQt();
+				});
 
 				SetMenuBar(m_menubar);
 			}
@@ -48,10 +57,21 @@ class Program
 
 			button.OnPressed.Add(new () => tt());
 
+			m_toolbar = new QToolBar(this);
+			m_toolbar.SetIconSize(scope QSize(32, 32));
+			let icon = new QIcon(@"D:\hyperspin\code\sdk\TSDK.Build\Resources\Icons\build.png");
+			m_toolbar.AddAction3(icon, "Test");
+			this.AddToolBar2(m_toolbar);
+
+			new QLineEdit("what", this);
+
 			// button.OnPressed.Add(new () => tt());
 			// CQt.QAbstractButton_Connect_Pressed(button.ObjectPtr, => t);
 		}
 	}
+
+	[LinkName("BFEXT_applyPhantomStyle")]
+	static extern void BFEXT_applyPhantomStyle();
 
 	public static int Main(String[] args)
 	{
@@ -60,7 +80,7 @@ class Program
 
 		CQt.QApplication_new(&argc, argv);
 
-		CQt.QApplication_SetStyle(CQt.QStyleFactory_Create("Fusion"));
+		BFEXT_applyPhantomStyle();
 
 		let mainwindow = scope TestWindow(null);
 		mainwindow.Show();

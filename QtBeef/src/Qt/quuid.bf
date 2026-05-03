@@ -145,7 +145,7 @@ class QUuid : IQUuid
 	{
 		return this.ptr.FromString(stringVal);
 	}
-	public void ToString(String outStr)
+	public new void ToString(String outStr)
 	{
 		this.ptr.ToString(outStr);
 	}
