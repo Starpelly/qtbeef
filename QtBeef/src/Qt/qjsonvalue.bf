@@ -123,53 +123,74 @@ class QJsonValue : IQJsonValue
 {
 	private QJsonValue_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonValue_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QJsonValue_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(bool b)
 	{
 		this.ptr = CQt.QJsonValue_new2(b);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double n)
 	{
 		this.ptr = CQt.QJsonValue_new3(n);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int n)
 	{
 		this.ptr = CQt.QJsonValue_new4(n);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_longlong v)
 	{
 		this.ptr = CQt.QJsonValue_new5(v);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String s)
 	{
 		this.ptr = CQt.QJsonValue_new6(libqt_string(s));
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* s)
 	{
 		this.ptr = CQt.QJsonValue_new7(s);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray a)
 	{
 		this.ptr = CQt.QJsonValue_new8((.)a?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonObject o)
 	{
 		this.ptr = CQt.QJsonValue_new9((.)o?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonValue other)
 	{
 		this.ptr = CQt.QJsonValue_new10((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QJsonValue_Type param1)
 	{
 		this.ptr = CQt.QJsonValue_new11(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -474,13 +495,24 @@ class QJsonValueConstRef : IQJsonValueConstRef
 {
 	private QJsonValueConstRef_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonValueConstRef_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonValueConstRef other)
 	{
 		this.ptr = CQt.QJsonValueConstRef_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -745,21 +777,34 @@ class QJsonValueRef : IQJsonValueRef, IQJsonValueConstRef
 {
 	private QJsonValueRef_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonValueRef_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonValueRef other)
 	{
 		this.ptr = CQt.QJsonValueRef_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray array, void* idx)
 	{
 		this.ptr = CQt.QJsonValueRef_new3((.)array?.ObjectPtr, idx);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonObject object, void* idx)
 	{
 		this.ptr = CQt.QJsonValueRef_new4((.)object?.ObjectPtr, idx);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

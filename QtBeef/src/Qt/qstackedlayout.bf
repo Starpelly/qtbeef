@@ -527,21 +527,66 @@ class QStackedLayout : IQStackedLayout, IQLayout, IQObject, IQLayoutItem
 {
 	private QStackedLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QStackedLayout_widgetRemoved,
+		QStackedLayout_currentChanged,
+		QStackedLayout_destroyed,
+		QStackedLayout_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QStackedLayout_Connect_WidgetRemoved(obj.ObjectPtr,  => QtBeef_QStackedLayout_widgetRemoved);
+		CQt.QStackedLayout_Connect_CurrentChanged(obj.ObjectPtr,  => QtBeef_QStackedLayout_currentChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int index)> OnWidgetRemoved = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnCurrentChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QStackedLayout_widgetRemoved(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidgetRemoved.Invoke(index);
+	}
+	static void QtBeef_QStackedLayout_currentChanged(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged.Invoke(index);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QStackedLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QStackedLayout_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStackedLayout_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLayout parentLayout)
 	{
 		this.ptr = CQt.QStackedLayout_new3((.)parentLayout?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1114,13 +1159,13 @@ extension CQt
 	
 	public function void QStackedLayout_widgetRemoved_action(void* self, c_int index);
 	[LinkName("QStackedLayout_Connect_WidgetRemoved")]
-	public static extern void QStackedLayout_Connect_WidgetRemoved(void* self, c_int index, QStackedLayout_widgetRemoved_action _action);
+	public static extern void QStackedLayout_Connect_WidgetRemoved(void* self, QStackedLayout_widgetRemoved_action _action);
 	[LinkName("QStackedLayout_CurrentChanged")]
 	public static extern void QStackedLayout_CurrentChanged(void* self, c_int index);
 	
 	public function void QStackedLayout_currentChanged_action(void* self, c_int index);
 	[LinkName("QStackedLayout_Connect_CurrentChanged")]
-	public static extern void QStackedLayout_Connect_CurrentChanged(void* self, c_int index, QStackedLayout_currentChanged_action _action);
+	public static extern void QStackedLayout_Connect_CurrentChanged(void* self, QStackedLayout_currentChanged_action _action);
 	[LinkName("QStackedLayout_SetCurrentIndex")]
 	public static extern void QStackedLayout_SetCurrentIndex(void* self, c_int index);
 	[LinkName("QStackedLayout_SetCurrentWidget")]

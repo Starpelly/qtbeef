@@ -27,9 +27,19 @@ class QItemEditorCreatorBase : IQItemEditorCreatorBase
 {
 	private QItemEditorCreatorBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QItemEditorCreatorBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -94,17 +104,29 @@ class QItemEditorFactory : IQItemEditorFactory
 {
 	private QItemEditorFactory_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QItemEditorFactory_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QItemEditorFactory_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQItemEditorFactory param1)
 	{
 		this.ptr = CQt.QItemEditorFactory_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -379,9 +379,99 @@ class QInputMethod : IQInputMethod, IQObject
 {
 	private QInputMethod_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QInputMethod_cursorRectangleChanged,
+		QInputMethod_anchorRectangleChanged,
+		QInputMethod_keyboardRectangleChanged,
+		QInputMethod_inputItemClipRectangleChanged,
+		QInputMethod_visibleChanged,
+		QInputMethod_animatingChanged,
+		QInputMethod_localeChanged,
+		QInputMethod_inputDirectionChanged,
+		QInputMethod_destroyed,
+		QInputMethod_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QInputMethod_Connect_CursorRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_cursorRectangleChanged);
+		CQt.QInputMethod_Connect_AnchorRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_anchorRectangleChanged);
+		CQt.QInputMethod_Connect_KeyboardRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_keyboardRectangleChanged);
+		CQt.QInputMethod_Connect_InputItemClipRectangleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_inputItemClipRectangleChanged);
+		CQt.QInputMethod_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_visibleChanged);
+		CQt.QInputMethod_Connect_AnimatingChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_animatingChanged);
+		CQt.QInputMethod_Connect_LocaleChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_localeChanged);
+		CQt.QInputMethod_Connect_InputDirectionChanged(obj.ObjectPtr,  => QtBeef_QInputMethod_inputDirectionChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnCursorRectangleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnAnchorRectangleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnKeyboardRectangleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnInputItemClipRectangleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnVisibleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnAnimatingChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLocaleChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_LayoutDirection newDirection)> OnInputDirectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QInputMethod_cursorRectangleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorRectangleChanged.Invoke();
+	}
+	static void QtBeef_QInputMethod_anchorRectangleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAnchorRectangleChanged.Invoke();
+	}
+	static void QtBeef_QInputMethod_keyboardRectangleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnKeyboardRectangleChanged.Invoke();
+	}
+	static void QtBeef_QInputMethod_inputItemClipRectangleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputItemClipRectangleChanged.Invoke();
+	}
+	static void QtBeef_QInputMethod_visibleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibleChanged.Invoke();
+	}
+	static void QtBeef_QInputMethod_animatingChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAnimatingChanged.Invoke();
+	}
+	static void QtBeef_QInputMethod_localeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLocaleChanged.Invoke();
+	}
+	static void QtBeef_QInputMethod_inputDirectionChanged(void* ptr, Qt_LayoutDirection newDirection)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputDirectionChanged.Invoke(newDirection);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QInputMethod_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public QMetaObject_Ptr MetaObject()
 	{
@@ -844,7 +934,7 @@ extension CQt
 	
 	public function void QInputMethod_inputDirectionChanged_action(void* self, Qt_LayoutDirection newDirection);
 	[LinkName("QInputMethod_Connect_InputDirectionChanged")]
-	public static extern void QInputMethod_Connect_InputDirectionChanged(void* self, Qt_LayoutDirection newDirection, QInputMethod_inputDirectionChanged_action _action);
+	public static extern void QInputMethod_Connect_InputDirectionChanged(void* self, QInputMethod_inputDirectionChanged_action _action);
 	[LinkName("QInputMethod_Tr2")]
 	public static extern libqt_string QInputMethod_Tr2(c_char* s, c_char* c);
 	[LinkName("QInputMethod_Tr3")]

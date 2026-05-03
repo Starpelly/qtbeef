@@ -159,37 +159,54 @@ class QTimeZone : IQTimeZone
 {
 	private QTimeZone_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTimeZone_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTimeZone_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** ianaId)
 	{
 		this.ptr = CQt.QTimeZone_new2(ianaId);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int offsetSeconds)
 	{
 		this.ptr = CQt.QTimeZone_new3(offsetSeconds);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** zoneId, c_int offsetSeconds, String name, String abbreviation)
 	{
 		this.ptr = CQt.QTimeZone_new4(zoneId, offsetSeconds, libqt_string(name), libqt_string(abbreviation));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTimeZone other)
 	{
 		this.ptr = CQt.QTimeZone_new5((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** zoneId, c_int offsetSeconds, String name, String abbreviation, QLocale_Country territory)
 	{
 		this.ptr = CQt.QTimeZone_new6(zoneId, offsetSeconds, libqt_string(name), libqt_string(abbreviation), territory);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** zoneId, c_int offsetSeconds, String name, String abbreviation, QLocale_Country territory, String comment)
 	{
 		this.ptr = CQt.QTimeZone_new7(zoneId, offsetSeconds, libqt_string(name), libqt_string(abbreviation), territory, libqt_string(comment));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -490,13 +507,24 @@ class QTimeZone_OffsetData : IQTimeZone_OffsetData
 {
 	private QTimeZone_OffsetData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTimeZone_OffsetData_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTimeZone_OffsetData param1)
 	{
 		this.ptr = CQt.QTimeZone_OffsetData_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

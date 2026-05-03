@@ -27,9 +27,19 @@ class QAbstractUndoItem : IQAbstractUndoItem
 {
 	private QAbstractUndoItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAbstractUndoItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -778,25 +788,135 @@ class QTextDocument : IQTextDocument, IQObject
 {
 	private QTextDocument_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QTextDocument_contentsChange,
+		QTextDocument_contentsChanged,
+		QTextDocument_undoAvailable,
+		QTextDocument_redoAvailable,
+		QTextDocument_undoCommandAdded,
+		QTextDocument_modificationChanged,
+		QTextDocument_cursorPositionChanged,
+		QTextDocument_blockCountChanged,
+		QTextDocument_baseUrlChanged,
+		QTextDocument_documentLayoutChanged,
+		QTextDocument_destroyed,
+		QTextDocument_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTextDocument_Connect_ContentsChange(obj.ObjectPtr,  => QtBeef_QTextDocument_contentsChange);
+		CQt.QTextDocument_Connect_ContentsChanged(obj.ObjectPtr,  => QtBeef_QTextDocument_contentsChanged);
+		CQt.QTextDocument_Connect_UndoAvailable(obj.ObjectPtr,  => QtBeef_QTextDocument_undoAvailable);
+		CQt.QTextDocument_Connect_RedoAvailable(obj.ObjectPtr,  => QtBeef_QTextDocument_redoAvailable);
+		CQt.QTextDocument_Connect_UndoCommandAdded(obj.ObjectPtr,  => QtBeef_QTextDocument_undoCommandAdded);
+		CQt.QTextDocument_Connect_ModificationChanged(obj.ObjectPtr,  => QtBeef_QTextDocument_modificationChanged);
+		CQt.QTextDocument_Connect_CursorPositionChanged(obj.ObjectPtr,  => QtBeef_QTextDocument_cursorPositionChanged);
+		CQt.QTextDocument_Connect_BlockCountChanged(obj.ObjectPtr,  => QtBeef_QTextDocument_blockCountChanged);
+		CQt.QTextDocument_Connect_BaseUrlChanged(obj.ObjectPtr,  => QtBeef_QTextDocument_baseUrlChanged);
+		CQt.QTextDocument_Connect_DocumentLayoutChanged(obj.ObjectPtr,  => QtBeef_QTextDocument_documentLayoutChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int from, c_int charsRemoved, c_int charsAdded)> OnContentsChange = .() ~ _.Dispose();
+	public Event<delegate void()> OnContentsChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool param1)> OnUndoAvailable = .() ~ _.Dispose();
+	public Event<delegate void(bool param1)> OnRedoAvailable = .() ~ _.Dispose();
+	public Event<delegate void()> OnUndoCommandAdded = .() ~ _.Dispose();
+	public Event<delegate void(bool m)> OnModificationChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** cursor)> OnCursorPositionChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int newBlockCount)> OnBlockCountChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** url)> OnBaseUrlChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDocumentLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QTextDocument_contentsChange(void* ptr, c_int from, c_int charsRemoved, c_int charsAdded)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContentsChange.Invoke(from, charsRemoved, charsAdded);
+	}
+	static void QtBeef_QTextDocument_contentsChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnContentsChanged.Invoke();
+	}
+	static void QtBeef_QTextDocument_undoAvailable(void* ptr, bool param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndoAvailable.Invoke(param1);
+	}
+	static void QtBeef_QTextDocument_redoAvailable(void* ptr, bool param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedoAvailable.Invoke(param1);
+	}
+	static void QtBeef_QTextDocument_undoCommandAdded(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndoCommandAdded.Invoke();
+	}
+	static void QtBeef_QTextDocument_modificationChanged(void* ptr, bool m)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnModificationChanged.Invoke(m);
+	}
+	static void QtBeef_QTextDocument_cursorPositionChanged(void* ptr, void** cursor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorPositionChanged.Invoke(cursor);
+	}
+	static void QtBeef_QTextDocument_blockCountChanged(void* ptr, c_int newBlockCount)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlockCountChanged.Invoke(newBlockCount);
+	}
+	static void QtBeef_QTextDocument_baseUrlChanged(void* ptr, void** url)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBaseUrlChanged.Invoke(url);
+	}
+	static void QtBeef_QTextDocument_documentLayoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDocumentLayoutChanged.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QTextDocument_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextDocument_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QTextDocument_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QTextDocument_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQObject parent)
 	{
 		this.ptr = CQt.QTextDocument_new4(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1707,7 +1827,7 @@ extension CQt
 	
 	public function void QTextDocument_contentsChange_action(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
 	[LinkName("QTextDocument_Connect_ContentsChange")]
-	public static extern void QTextDocument_Connect_ContentsChange(void* self, c_int from, c_int charsRemoved, c_int charsAdded, QTextDocument_contentsChange_action _action);
+	public static extern void QTextDocument_Connect_ContentsChange(void* self, QTextDocument_contentsChange_action _action);
 	[LinkName("QTextDocument_ContentsChanged")]
 	public static extern void QTextDocument_ContentsChanged(void* self);
 	
@@ -1719,13 +1839,13 @@ extension CQt
 	
 	public function void QTextDocument_undoAvailable_action(void* self, bool param1);
 	[LinkName("QTextDocument_Connect_UndoAvailable")]
-	public static extern void QTextDocument_Connect_UndoAvailable(void* self, bool param1, QTextDocument_undoAvailable_action _action);
+	public static extern void QTextDocument_Connect_UndoAvailable(void* self, QTextDocument_undoAvailable_action _action);
 	[LinkName("QTextDocument_RedoAvailable")]
 	public static extern void QTextDocument_RedoAvailable(void* self, bool param1);
 	
 	public function void QTextDocument_redoAvailable_action(void* self, bool param1);
 	[LinkName("QTextDocument_Connect_RedoAvailable")]
-	public static extern void QTextDocument_Connect_RedoAvailable(void* self, bool param1, QTextDocument_redoAvailable_action _action);
+	public static extern void QTextDocument_Connect_RedoAvailable(void* self, QTextDocument_redoAvailable_action _action);
 	[LinkName("QTextDocument_UndoCommandAdded")]
 	public static extern void QTextDocument_UndoCommandAdded(void* self);
 	
@@ -1737,25 +1857,25 @@ extension CQt
 	
 	public function void QTextDocument_modificationChanged_action(void* self, bool m);
 	[LinkName("QTextDocument_Connect_ModificationChanged")]
-	public static extern void QTextDocument_Connect_ModificationChanged(void* self, bool m, QTextDocument_modificationChanged_action _action);
+	public static extern void QTextDocument_Connect_ModificationChanged(void* self, QTextDocument_modificationChanged_action _action);
 	[LinkName("QTextDocument_CursorPositionChanged")]
 	public static extern void QTextDocument_CursorPositionChanged(void* self, void** cursor);
 	
 	public function void QTextDocument_cursorPositionChanged_action(void* self, void** cursor);
 	[LinkName("QTextDocument_Connect_CursorPositionChanged")]
-	public static extern void QTextDocument_Connect_CursorPositionChanged(void* self, void** cursor, QTextDocument_cursorPositionChanged_action _action);
+	public static extern void QTextDocument_Connect_CursorPositionChanged(void* self, QTextDocument_cursorPositionChanged_action _action);
 	[LinkName("QTextDocument_BlockCountChanged")]
 	public static extern void QTextDocument_BlockCountChanged(void* self, c_int newBlockCount);
 	
 	public function void QTextDocument_blockCountChanged_action(void* self, c_int newBlockCount);
 	[LinkName("QTextDocument_Connect_BlockCountChanged")]
-	public static extern void QTextDocument_Connect_BlockCountChanged(void* self, c_int newBlockCount, QTextDocument_blockCountChanged_action _action);
+	public static extern void QTextDocument_Connect_BlockCountChanged(void* self, QTextDocument_blockCountChanged_action _action);
 	[LinkName("QTextDocument_BaseUrlChanged")]
 	public static extern void QTextDocument_BaseUrlChanged(void* self, void** url);
 	
 	public function void QTextDocument_baseUrlChanged_action(void* self, void** url);
 	[LinkName("QTextDocument_Connect_BaseUrlChanged")]
-	public static extern void QTextDocument_Connect_BaseUrlChanged(void* self, void** url, QTextDocument_baseUrlChanged_action _action);
+	public static extern void QTextDocument_Connect_BaseUrlChanged(void* self, QTextDocument_baseUrlChanged_action _action);
 	[LinkName("QTextDocument_DocumentLayoutChanged")]
 	public static extern void QTextDocument_DocumentLayoutChanged(void* self);
 	

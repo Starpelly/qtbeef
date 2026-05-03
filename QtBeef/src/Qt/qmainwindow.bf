@@ -1815,21 +1815,106 @@ class QMainWindow : IQMainWindow, IQWidget, IQObject, IQPaintDevice
 {
 	private QMainWindow_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QMainWindow_iconSizeChanged,
+		QMainWindow_toolButtonStyleChanged,
+		QMainWindow_tabifiedDockWidgetActivated,
+		QMainWindow_windowTitleChanged,
+		QMainWindow_windowIconChanged,
+		QMainWindow_windowIconTextChanged,
+		QMainWindow_customContextMenuRequested,
+		QMainWindow_destroyed,
+		QMainWindow_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMainWindow_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QMainWindow_iconSizeChanged);
+		CQt.QMainWindow_Connect_ToolButtonStyleChanged(obj.ObjectPtr,  => QtBeef_QMainWindow_toolButtonStyleChanged);
+		CQt.QMainWindow_Connect_TabifiedDockWidgetActivated(obj.ObjectPtr,  => QtBeef_QMainWindow_tabifiedDockWidgetActivated);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** iconSize)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ToolButtonStyle toolButtonStyle)> OnToolButtonStyleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** dockWidget)> OnTabifiedDockWidgetActivated = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QMainWindow_iconSizeChanged(void* ptr, void** iconSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(iconSize);
+	}
+	static void QtBeef_QMainWindow_toolButtonStyleChanged(void* ptr, Qt_ToolButtonStyle toolButtonStyle)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnToolButtonStyleChanged.Invoke(toolButtonStyle);
+	}
+	static void QtBeef_QMainWindow_tabifiedDockWidgetActivated(void* ptr, void** dockWidget)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabifiedDockWidgetActivated.Invoke(dockWidget);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QMainWindow_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QMainWindow_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMainWindow_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QMainWindow_new3((.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3762,19 +3847,19 @@ extension CQt
 	
 	public function void QMainWindow_iconSizeChanged_action(void* self, void** iconSize);
 	[LinkName("QMainWindow_Connect_IconSizeChanged")]
-	public static extern void QMainWindow_Connect_IconSizeChanged(void* self, void** iconSize, QMainWindow_iconSizeChanged_action _action);
+	public static extern void QMainWindow_Connect_IconSizeChanged(void* self, QMainWindow_iconSizeChanged_action _action);
 	[LinkName("QMainWindow_ToolButtonStyleChanged")]
 	public static extern void QMainWindow_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle);
 	
 	public function void QMainWindow_toolButtonStyleChanged_action(void* self, Qt_ToolButtonStyle toolButtonStyle);
 	[LinkName("QMainWindow_Connect_ToolButtonStyleChanged")]
-	public static extern void QMainWindow_Connect_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle, QMainWindow_toolButtonStyleChanged_action _action);
+	public static extern void QMainWindow_Connect_ToolButtonStyleChanged(void* self, QMainWindow_toolButtonStyleChanged_action _action);
 	[LinkName("QMainWindow_TabifiedDockWidgetActivated")]
 	public static extern void QMainWindow_TabifiedDockWidgetActivated(void* self, void** dockWidget);
 	
 	public function void QMainWindow_tabifiedDockWidgetActivated_action(void* self, void** dockWidget);
 	[LinkName("QMainWindow_Connect_TabifiedDockWidgetActivated")]
-	public static extern void QMainWindow_Connect_TabifiedDockWidgetActivated(void* self, void** dockWidget, QMainWindow_tabifiedDockWidgetActivated_action _action);
+	public static extern void QMainWindow_Connect_TabifiedDockWidgetActivated(void* self, QMainWindow_tabifiedDockWidgetActivated_action _action);
 	[LinkName("QMainWindow_ContextMenuEvent")]
 	public static extern void QMainWindow_ContextMenuEvent(void* self, void** event);
 	[LinkName("QMainWindow_Event")]

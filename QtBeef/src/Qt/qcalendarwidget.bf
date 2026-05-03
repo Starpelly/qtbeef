@@ -1775,17 +1775,109 @@ class QCalendarWidget : IQCalendarWidget, IQWidget, IQObject, IQPaintDevice
 {
 	private QCalendarWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QCalendarWidget_selectionChanged,
+		QCalendarWidget_clicked,
+		QCalendarWidget_activated,
+		QCalendarWidget_currentPageChanged,
+		QCalendarWidget_windowTitleChanged,
+		QCalendarWidget_windowIconChanged,
+		QCalendarWidget_windowIconTextChanged,
+		QCalendarWidget_customContextMenuRequested,
+		QCalendarWidget_destroyed,
+		QCalendarWidget_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QCalendarWidget_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QCalendarWidget_selectionChanged);
+		CQt.QCalendarWidget_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QCalendarWidget_clicked);
+		CQt.QCalendarWidget_Connect_Activated(obj.ObjectPtr,  => QtBeef_QCalendarWidget_activated);
+		CQt.QCalendarWidget_Connect_CurrentPageChanged(obj.ObjectPtr,  => QtBeef_QCalendarWidget_currentPageChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* date)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void* date)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(c_int year, c_int month)> OnCurrentPageChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QCalendarWidget_selectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QCalendarWidget_clicked(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(date);
+	}
+	static void QtBeef_QCalendarWidget_activated(void* ptr, void* date)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(date);
+	}
+	static void QtBeef_QCalendarWidget_currentPageChanged(void* ptr, c_int year, c_int month)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentPageChanged.Invoke(year, month);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QCalendarWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QCalendarWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCalendarWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3680,19 +3772,19 @@ extension CQt
 	
 	public function void QCalendarWidget_clicked_action(void* self, void* date);
 	[LinkName("QCalendarWidget_Connect_Clicked")]
-	public static extern void QCalendarWidget_Connect_Clicked(void* self, void* date, QCalendarWidget_clicked_action _action);
+	public static extern void QCalendarWidget_Connect_Clicked(void* self, QCalendarWidget_clicked_action _action);
 	[LinkName("QCalendarWidget_Activated")]
 	public static extern void QCalendarWidget_Activated(void* self, void* date);
 	
 	public function void QCalendarWidget_activated_action(void* self, void* date);
 	[LinkName("QCalendarWidget_Connect_Activated")]
-	public static extern void QCalendarWidget_Connect_Activated(void* self, void* date, QCalendarWidget_activated_action _action);
+	public static extern void QCalendarWidget_Connect_Activated(void* self, QCalendarWidget_activated_action _action);
 	[LinkName("QCalendarWidget_CurrentPageChanged")]
 	public static extern void QCalendarWidget_CurrentPageChanged(void* self, c_int year, c_int month);
 	
 	public function void QCalendarWidget_currentPageChanged_action(void* self, c_int year, c_int month);
 	[LinkName("QCalendarWidget_Connect_CurrentPageChanged")]
-	public static extern void QCalendarWidget_Connect_CurrentPageChanged(void* self, c_int year, c_int month, QCalendarWidget_currentPageChanged_action _action);
+	public static extern void QCalendarWidget_Connect_CurrentPageChanged(void* self, QCalendarWidget_currentPageChanged_action _action);
 	[LinkName("QCalendarWidget_Tr2")]
 	public static extern libqt_string QCalendarWidget_Tr2(c_char* s, c_char* c);
 	[LinkName("QCalendarWidget_Tr3")]

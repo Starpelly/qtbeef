@@ -303,25 +303,39 @@ class QGraphicsLinearLayout : IQGraphicsLinearLayout, IQGraphicsLayout, IQGraphi
 {
 	private QGraphicsLinearLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsLinearLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation)
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new2(orientation);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsLayoutItem parent)
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation, IQGraphicsLayoutItem parent)
 	{
 		this.ptr = CQt.QGraphicsLinearLayout_new4(orientation, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

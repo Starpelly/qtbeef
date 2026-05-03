@@ -367,17 +367,77 @@ class QAbstractAnimation : IQAbstractAnimation, IQObject
 {
 	private QAbstractAnimation_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAbstractAnimation_finished,
+		QAbstractAnimation_stateChanged,
+		QAbstractAnimation_currentLoopChanged,
+		QAbstractAnimation_directionChanged,
+		QAbstractAnimation_destroyed,
+		QAbstractAnimation_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractAnimation_Connect_Finished(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_finished);
+		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_stateChanged);
+		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_currentLoopChanged);
+		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_directionChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)> OnStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int currentLoop)> OnCurrentLoopChanged = .() ~ _.Dispose();
+	public Event<delegate void(QAbstractAnimation_Direction param1)> OnDirectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractAnimation_finished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke();
+	}
+	static void QtBeef_QAbstractAnimation_stateChanged(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStateChanged.Invoke(newState, oldState);
+	}
+	static void QtBeef_QAbstractAnimation_currentLoopChanged(void* ptr, c_int currentLoop)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentLoopChanged.Invoke(currentLoop);
+	}
+	static void QtBeef_QAbstractAnimation_directionChanged(void* ptr, QAbstractAnimation_Direction param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDirectionChanged.Invoke(param1);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractAnimation_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractAnimation_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractAnimation_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -784,19 +844,19 @@ extension CQt
 	
 	public function void QAbstractAnimation_stateChanged_action(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState);
 	[LinkName("QAbstractAnimation_Connect_StateChanged")]
-	public static extern void QAbstractAnimation_Connect_StateChanged(void* self, QAbstractAnimation_State newState, QAbstractAnimation_State oldState, QAbstractAnimation_stateChanged_action _action);
+	public static extern void QAbstractAnimation_Connect_StateChanged(void* self, QAbstractAnimation_stateChanged_action _action);
 	[LinkName("QAbstractAnimation_CurrentLoopChanged")]
 	public static extern void QAbstractAnimation_CurrentLoopChanged(void* self, c_int currentLoop);
 	
 	public function void QAbstractAnimation_currentLoopChanged_action(void* self, c_int currentLoop);
 	[LinkName("QAbstractAnimation_Connect_CurrentLoopChanged")]
-	public static extern void QAbstractAnimation_Connect_CurrentLoopChanged(void* self, c_int currentLoop, QAbstractAnimation_currentLoopChanged_action _action);
+	public static extern void QAbstractAnimation_Connect_CurrentLoopChanged(void* self, QAbstractAnimation_currentLoopChanged_action _action);
 	[LinkName("QAbstractAnimation_DirectionChanged")]
 	public static extern void QAbstractAnimation_DirectionChanged(void* self, QAbstractAnimation_Direction param1);
 	
 	public function void QAbstractAnimation_directionChanged_action(void* self, QAbstractAnimation_Direction param1);
 	[LinkName("QAbstractAnimation_Connect_DirectionChanged")]
-	public static extern void QAbstractAnimation_Connect_DirectionChanged(void* self, QAbstractAnimation_Direction param1, QAbstractAnimation_directionChanged_action _action);
+	public static extern void QAbstractAnimation_Connect_DirectionChanged(void* self, QAbstractAnimation_directionChanged_action _action);
 	[LinkName("QAbstractAnimation_Start")]
 	public static extern void QAbstractAnimation_Start(void* self);
 	[LinkName("QAbstractAnimation_Pause")]
@@ -1128,17 +1188,61 @@ class QAnimationDriver : IQAnimationDriver, IQObject
 {
 	private QAnimationDriver_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAnimationDriver_started,
+		QAnimationDriver_stopped,
+		QAnimationDriver_destroyed,
+		QAnimationDriver_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAnimationDriver_Connect_Started(obj.ObjectPtr,  => QtBeef_QAnimationDriver_started);
+		CQt.QAnimationDriver_Connect_Stopped(obj.ObjectPtr,  => QtBeef_QAnimationDriver_stopped);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnStarted = .() ~ _.Dispose();
+	public Event<delegate void()> OnStopped = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAnimationDriver_started(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStarted.Invoke();
+	}
+	static void QtBeef_QAnimationDriver_stopped(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStopped.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAnimationDriver_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAnimationDriver_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAnimationDriver_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

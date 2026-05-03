@@ -1623,33 +1623,105 @@ class QSplashScreen : IQSplashScreen, IQWidget, IQObject, IQPaintDevice
 {
 	private QSplashScreen_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QSplashScreen_messageChanged,
+		QSplashScreen_windowTitleChanged,
+		QSplashScreen_windowIconChanged,
+		QSplashScreen_windowIconTextChanged,
+		QSplashScreen_customContextMenuRequested,
+		QSplashScreen_destroyed,
+		QSplashScreen_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSplashScreen_Connect_MessageChanged(obj.ObjectPtr,  => QtBeef_QSplashScreen_messageChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(libqt_string message)> OnMessageChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QSplashScreen_messageChanged(void* ptr, libqt_string message)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMessageChanged.Invoke(message);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSplashScreen_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSplashScreen_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen)
 	{
 		this.ptr = CQt.QSplashScreen_new2((.)screen?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap)
 	{
 		this.ptr = CQt.QSplashScreen_new3((.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap, void* f)
 	{
 		this.ptr = CQt.QSplashScreen_new4((.)pixmap?.ObjectPtr, f);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen, IQPixmap pixmap)
 	{
 		this.ptr = CQt.QSplashScreen_new5((.)screen?.ObjectPtr, (.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen, IQPixmap pixmap, void* f)
 	{
 		this.ptr = CQt.QSplashScreen_new6((.)screen?.ObjectPtr, (.)pixmap?.ObjectPtr, f);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3306,7 +3378,7 @@ extension CQt
 	
 	public function void QSplashScreen_messageChanged_action(void* self, libqt_string message);
 	[LinkName("QSplashScreen_Connect_MessageChanged")]
-	public static extern void QSplashScreen_Connect_MessageChanged(void* self, libqt_string message, QSplashScreen_messageChanged_action _action);
+	public static extern void QSplashScreen_Connect_MessageChanged(void* self, QSplashScreen_messageChanged_action _action);
 	[LinkName("QSplashScreen_Event")]
 	public static extern bool QSplashScreen_Event(void* self, void** e);
 	[LinkName("QSplashScreen_DrawContents")]

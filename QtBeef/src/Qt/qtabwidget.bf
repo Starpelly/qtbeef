@@ -1807,17 +1807,109 @@ class QTabWidget : IQTabWidget, IQWidget, IQObject, IQPaintDevice
 {
 	private QTabWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QTabWidget_currentChanged,
+		QTabWidget_tabCloseRequested,
+		QTabWidget_tabBarClicked,
+		QTabWidget_tabBarDoubleClicked,
+		QTabWidget_windowTitleChanged,
+		QTabWidget_windowIconChanged,
+		QTabWidget_windowIconTextChanged,
+		QTabWidget_customContextMenuRequested,
+		QTabWidget_destroyed,
+		QTabWidget_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTabWidget_Connect_CurrentChanged(obj.ObjectPtr,  => QtBeef_QTabWidget_currentChanged);
+		CQt.QTabWidget_Connect_TabCloseRequested(obj.ObjectPtr,  => QtBeef_QTabWidget_tabCloseRequested);
+		CQt.QTabWidget_Connect_TabBarClicked(obj.ObjectPtr,  => QtBeef_QTabWidget_tabBarClicked);
+		CQt.QTabWidget_Connect_TabBarDoubleClicked(obj.ObjectPtr,  => QtBeef_QTabWidget_tabBarDoubleClicked);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int index)> OnCurrentChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnTabCloseRequested = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnTabBarClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnTabBarDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QTabWidget_currentChanged(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentChanged.Invoke(index);
+	}
+	static void QtBeef_QTabWidget_tabCloseRequested(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabCloseRequested.Invoke(index);
+	}
+	static void QtBeef_QTabWidget_tabBarClicked(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabBarClicked.Invoke(index);
+	}
+	static void QtBeef_QTabWidget_tabBarDoubleClicked(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTabBarDoubleClicked.Invoke(index);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QTabWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTabWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTabWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3736,25 +3828,25 @@ extension CQt
 	
 	public function void QTabWidget_currentChanged_action(void* self, c_int index);
 	[LinkName("QTabWidget_Connect_CurrentChanged")]
-	public static extern void QTabWidget_Connect_CurrentChanged(void* self, c_int index, QTabWidget_currentChanged_action _action);
+	public static extern void QTabWidget_Connect_CurrentChanged(void* self, QTabWidget_currentChanged_action _action);
 	[LinkName("QTabWidget_TabCloseRequested")]
 	public static extern void QTabWidget_TabCloseRequested(void* self, c_int index);
 	
 	public function void QTabWidget_tabCloseRequested_action(void* self, c_int index);
 	[LinkName("QTabWidget_Connect_TabCloseRequested")]
-	public static extern void QTabWidget_Connect_TabCloseRequested(void* self, c_int index, QTabWidget_tabCloseRequested_action _action);
+	public static extern void QTabWidget_Connect_TabCloseRequested(void* self, QTabWidget_tabCloseRequested_action _action);
 	[LinkName("QTabWidget_TabBarClicked")]
 	public static extern void QTabWidget_TabBarClicked(void* self, c_int index);
 	
 	public function void QTabWidget_tabBarClicked_action(void* self, c_int index);
 	[LinkName("QTabWidget_Connect_TabBarClicked")]
-	public static extern void QTabWidget_Connect_TabBarClicked(void* self, c_int index, QTabWidget_tabBarClicked_action _action);
+	public static extern void QTabWidget_Connect_TabBarClicked(void* self, QTabWidget_tabBarClicked_action _action);
 	[LinkName("QTabWidget_TabBarDoubleClicked")]
 	public static extern void QTabWidget_TabBarDoubleClicked(void* self, c_int index);
 	
 	public function void QTabWidget_tabBarDoubleClicked_action(void* self, c_int index);
 	[LinkName("QTabWidget_Connect_TabBarDoubleClicked")]
-	public static extern void QTabWidget_Connect_TabBarDoubleClicked(void* self, c_int index, QTabWidget_tabBarDoubleClicked_action _action);
+	public static extern void QTabWidget_Connect_TabBarDoubleClicked(void* self, QTabWidget_tabBarDoubleClicked_action _action);
 	[LinkName("QTabWidget_TabInserted")]
 	public static extern void QTabWidget_TabInserted(void* self, c_int index);
 	[LinkName("QTabWidget_TabRemoved")]

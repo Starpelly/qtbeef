@@ -115,37 +115,54 @@ class QDeadlineTimer : IQDeadlineTimer
 {
 	private QDeadlineTimer_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDeadlineTimer_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDeadlineTimer other)
 	{
 		this.ptr = CQt.QDeadlineTimer_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDeadlineTimer_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QDeadlineTimer_ForeverConstant param1)
 	{
 		this.ptr = CQt.QDeadlineTimer_new4(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_longlong msecs)
 	{
 		this.ptr = CQt.QDeadlineTimer_new5(msecs);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_TimerType type_)
 	{
 		this.ptr = CQt.QDeadlineTimer_new7(type_);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QDeadlineTimer_ForeverConstant param1, Qt_TimerType type_)
 	{
 		this.ptr = CQt.QDeadlineTimer_new8(param1, type_);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_longlong msecs, Qt_TimerType type)
 	{
 		this.ptr = CQt.QDeadlineTimer_new9(msecs, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

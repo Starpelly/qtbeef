@@ -2275,17 +2275,181 @@ class QTextBrowser : IQTextBrowser, IQTextEdit, IQAbstractScrollArea, IQFrame, I
 {
 	private QTextBrowser_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QTextBrowser_backwardAvailable,
+		QTextBrowser_forwardAvailable,
+		QTextBrowser_historyChanged,
+		QTextBrowser_sourceChanged,
+		QTextBrowser_highlighted,
+		QTextBrowser_anchorClicked,
+		QTextBrowser_textChanged,
+		QTextBrowser_undoAvailable,
+		QTextBrowser_redoAvailable,
+		QTextBrowser_currentCharFormatChanged,
+		QTextBrowser_copyAvailable,
+		QTextBrowser_selectionChanged,
+		QTextBrowser_cursorPositionChanged,
+		QTextBrowser_windowTitleChanged,
+		QTextBrowser_windowIconChanged,
+		QTextBrowser_windowIconTextChanged,
+		QTextBrowser_customContextMenuRequested,
+		QTextBrowser_destroyed,
+		QTextBrowser_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTextBrowser_Connect_BackwardAvailable(obj.ObjectPtr,  => QtBeef_QTextBrowser_backwardAvailable);
+		CQt.QTextBrowser_Connect_ForwardAvailable(obj.ObjectPtr,  => QtBeef_QTextBrowser_forwardAvailable);
+		CQt.QTextBrowser_Connect_HistoryChanged(obj.ObjectPtr,  => QtBeef_QTextBrowser_historyChanged);
+		CQt.QTextBrowser_Connect_SourceChanged(obj.ObjectPtr,  => QtBeef_QTextBrowser_sourceChanged);
+		CQt.QTextBrowser_Connect_Highlighted(obj.ObjectPtr,  => QtBeef_QTextBrowser_highlighted);
+		CQt.QTextBrowser_Connect_AnchorClicked(obj.ObjectPtr,  => QtBeef_QTextBrowser_anchorClicked);
+		CQt.QTextEdit_Connect_TextChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_textChanged);
+		CQt.QTextEdit_Connect_UndoAvailable(obj.ObjectPtr,  => QtBeef_QTextEdit_undoAvailable);
+		CQt.QTextEdit_Connect_RedoAvailable(obj.ObjectPtr,  => QtBeef_QTextEdit_redoAvailable);
+		CQt.QTextEdit_Connect_CurrentCharFormatChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_currentCharFormatChanged);
+		CQt.QTextEdit_Connect_CopyAvailable(obj.ObjectPtr,  => QtBeef_QTextEdit_copyAvailable);
+		CQt.QTextEdit_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_selectionChanged);
+		CQt.QTextEdit_Connect_CursorPositionChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_cursorPositionChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(bool param1)> OnBackwardAvailable = .() ~ _.Dispose();
+	public Event<delegate void(bool param1)> OnForwardAvailable = .() ~ _.Dispose();
+	public Event<delegate void()> OnHistoryChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnSourceChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnHighlighted = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnAnchorClicked = .() ~ _.Dispose();
+	public Event<delegate void()> OnTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnUndoAvailable = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnRedoAvailable = .() ~ _.Dispose();
+	public Event<delegate void(void** format)> OnCurrentCharFormatChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnCopyAvailable = .() ~ _.Dispose();
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnCursorPositionChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QTextBrowser_backwardAvailable(void* ptr, bool param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBackwardAvailable.Invoke(param1);
+	}
+	static void QtBeef_QTextBrowser_forwardAvailable(void* ptr, bool param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnForwardAvailable.Invoke(param1);
+	}
+	static void QtBeef_QTextBrowser_historyChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHistoryChanged.Invoke();
+	}
+	static void QtBeef_QTextBrowser_sourceChanged(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSourceChanged.Invoke(param1);
+	}
+	static void QtBeef_QTextBrowser_highlighted(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlighted.Invoke(param1);
+	}
+	static void QtBeef_QTextBrowser_anchorClicked(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAnchorClicked.Invoke(param1);
+	}
+	static void QtBeef_QTextEdit_textChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextChanged.Invoke();
+	}
+	static void QtBeef_QTextEdit_undoAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndoAvailable.Invoke(b);
+	}
+	static void QtBeef_QTextEdit_redoAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedoAvailable.Invoke(b);
+	}
+	static void QtBeef_QTextEdit_currentCharFormatChanged(void* ptr, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentCharFormatChanged.Invoke(format);
+	}
+	static void QtBeef_QTextEdit_copyAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCopyAvailable.Invoke(b);
+	}
+	static void QtBeef_QTextEdit_selectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QTextEdit_cursorPositionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorPositionChanged.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QTextBrowser_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTextBrowser_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextBrowser_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4614,13 +4778,13 @@ extension CQt
 	
 	public function void QTextBrowser_backwardAvailable_action(void* self, bool param1);
 	[LinkName("QTextBrowser_Connect_BackwardAvailable")]
-	public static extern void QTextBrowser_Connect_BackwardAvailable(void* self, bool param1, QTextBrowser_backwardAvailable_action _action);
+	public static extern void QTextBrowser_Connect_BackwardAvailable(void* self, QTextBrowser_backwardAvailable_action _action);
 	[LinkName("QTextBrowser_ForwardAvailable")]
 	public static extern void QTextBrowser_ForwardAvailable(void* self, bool param1);
 	
 	public function void QTextBrowser_forwardAvailable_action(void* self, bool param1);
 	[LinkName("QTextBrowser_Connect_ForwardAvailable")]
-	public static extern void QTextBrowser_Connect_ForwardAvailable(void* self, bool param1, QTextBrowser_forwardAvailable_action _action);
+	public static extern void QTextBrowser_Connect_ForwardAvailable(void* self, QTextBrowser_forwardAvailable_action _action);
 	[LinkName("QTextBrowser_HistoryChanged")]
 	public static extern void QTextBrowser_HistoryChanged(void* self);
 	
@@ -4632,19 +4796,19 @@ extension CQt
 	
 	public function void QTextBrowser_sourceChanged_action(void* self, void** param1);
 	[LinkName("QTextBrowser_Connect_SourceChanged")]
-	public static extern void QTextBrowser_Connect_SourceChanged(void* self, void** param1, QTextBrowser_sourceChanged_action _action);
+	public static extern void QTextBrowser_Connect_SourceChanged(void* self, QTextBrowser_sourceChanged_action _action);
 	[LinkName("QTextBrowser_Highlighted")]
 	public static extern void QTextBrowser_Highlighted(void* self, void** param1);
 	
 	public function void QTextBrowser_highlighted_action(void* self, void** param1);
 	[LinkName("QTextBrowser_Connect_Highlighted")]
-	public static extern void QTextBrowser_Connect_Highlighted(void* self, void** param1, QTextBrowser_highlighted_action _action);
+	public static extern void QTextBrowser_Connect_Highlighted(void* self, QTextBrowser_highlighted_action _action);
 	[LinkName("QTextBrowser_AnchorClicked")]
 	public static extern void QTextBrowser_AnchorClicked(void* self, void** param1);
 	
 	public function void QTextBrowser_anchorClicked_action(void* self, void** param1);
 	[LinkName("QTextBrowser_Connect_AnchorClicked")]
-	public static extern void QTextBrowser_Connect_AnchorClicked(void* self, void** param1, QTextBrowser_anchorClicked_action _action);
+	public static extern void QTextBrowser_Connect_AnchorClicked(void* self, QTextBrowser_anchorClicked_action _action);
 	[LinkName("QTextBrowser_Event")]
 	public static extern bool QTextBrowser_Event(void* self, void** e);
 	[LinkName("QTextBrowser_KeyPressEvent")]

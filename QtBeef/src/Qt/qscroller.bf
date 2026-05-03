@@ -383,9 +383,51 @@ class QScroller : IQScroller, IQObject
 {
 	private QScroller_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QScroller_stateChanged,
+		QScroller_scrollerPropertiesChanged,
+		QScroller_destroyed,
+		QScroller_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QScroller_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QScroller_stateChanged);
+		CQt.QScroller_Connect_ScrollerPropertiesChanged(obj.ObjectPtr,  => QtBeef_QScroller_scrollerPropertiesChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(QScroller_State newstate)> OnStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnScrollerPropertiesChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QScroller_stateChanged(void* ptr, QScroller_State newstate)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStateChanged.Invoke(newstate);
+	}
+	static void QtBeef_QScroller_scrollerPropertiesChanged(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScrollerPropertiesChanged.Invoke(param1);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QScroller_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public QMetaObject_Ptr MetaObject()
 	{
@@ -820,13 +862,13 @@ extension CQt
 	
 	public function void QScroller_stateChanged_action(void* self, QScroller_State newstate);
 	[LinkName("QScroller_Connect_StateChanged")]
-	public static extern void QScroller_Connect_StateChanged(void* self, QScroller_State newstate, QScroller_stateChanged_action _action);
+	public static extern void QScroller_Connect_StateChanged(void* self, QScroller_stateChanged_action _action);
 	[LinkName("QScroller_ScrollerPropertiesChanged")]
 	public static extern void QScroller_ScrollerPropertiesChanged(void* self, void** param1);
 	
 	public function void QScroller_scrollerPropertiesChanged_action(void* self, void** param1);
 	[LinkName("QScroller_Connect_ScrollerPropertiesChanged")]
-	public static extern void QScroller_Connect_ScrollerPropertiesChanged(void* self, void** param1, QScroller_scrollerPropertiesChanged_action _action);
+	public static extern void QScroller_Connect_ScrollerPropertiesChanged(void* self, QScroller_scrollerPropertiesChanged_action _action);
 	[LinkName("QScroller_Tr2")]
 	public static extern libqt_string QScroller_Tr2(c_char* s, c_char* c);
 	[LinkName("QScroller_Tr3")]

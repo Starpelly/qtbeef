@@ -167,45 +167,64 @@ class QListWidgetItem : IQListWidgetItem
 {
 	private QListWidgetItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QListWidgetItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QListWidgetItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QListWidgetItem_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, String text)
 	{
 		this.ptr = CQt.QListWidgetItem_new3((.)icon?.ObjectPtr, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** other)
 	{
 		this.ptr = CQt.QListWidgetItem_new4(other);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** listview, c_int type)
 	{
 		this.ptr = CQt.QListWidgetItem_new6(listview, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, void** listview)
 	{
 		this.ptr = CQt.QListWidgetItem_new7(libqt_string(text), listview);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, void** listview, c_int type)
 	{
 		this.ptr = CQt.QListWidgetItem_new8(libqt_string(text), listview, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, String text, void** listview)
 	{
 		this.ptr = CQt.QListWidgetItem_new9((.)icon?.ObjectPtr, libqt_string(text), listview);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, String text, void** listview, c_int type)
 	{
 		this.ptr = CQt.QListWidgetItem_new10((.)icon?.ObjectPtr, libqt_string(text), listview, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -726,17 +745,109 @@ class QListWidget : IQListWidget
 {
 	private QListWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QListWidget_itemPressed,
+		QListWidget_itemClicked,
+		QListWidget_itemDoubleClicked,
+		QListWidget_itemActivated,
+		QListWidget_itemEntered,
+		QListWidget_itemChanged,
+		QListWidget_currentItemChanged,
+		QListWidget_currentTextChanged,
+		QListWidget_currentRowChanged,
+		QListWidget_itemSelectionChanged,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QListWidget_Connect_ItemPressed(obj.ObjectPtr,  => QtBeef_QListWidget_itemPressed);
+		CQt.QListWidget_Connect_ItemClicked(obj.ObjectPtr,  => QtBeef_QListWidget_itemClicked);
+		CQt.QListWidget_Connect_ItemDoubleClicked(obj.ObjectPtr,  => QtBeef_QListWidget_itemDoubleClicked);
+		CQt.QListWidget_Connect_ItemActivated(obj.ObjectPtr,  => QtBeef_QListWidget_itemActivated);
+		CQt.QListWidget_Connect_ItemEntered(obj.ObjectPtr,  => QtBeef_QListWidget_itemEntered);
+		CQt.QListWidget_Connect_ItemChanged(obj.ObjectPtr,  => QtBeef_QListWidget_itemChanged);
+		CQt.QListWidget_Connect_CurrentItemChanged(obj.ObjectPtr,  => QtBeef_QListWidget_currentItemChanged);
+		CQt.QListWidget_Connect_CurrentTextChanged(obj.ObjectPtr,  => QtBeef_QListWidget_currentTextChanged);
+		CQt.QListWidget_Connect_CurrentRowChanged(obj.ObjectPtr,  => QtBeef_QListWidget_currentRowChanged);
+		CQt.QListWidget_Connect_ItemSelectionChanged(obj.ObjectPtr,  => QtBeef_QListWidget_itemSelectionChanged);
+	}
+	public Event<delegate void(void** item)> OnItemPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** current, void** previous)> OnCurrentItemChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string currentText)> OnCurrentTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int currentRow)> OnCurrentRowChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnItemSelectionChanged = .() ~ _.Dispose();
+	static void QtBeef_QListWidget_itemPressed(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemPressed.Invoke(item);
+	}
+	static void QtBeef_QListWidget_itemClicked(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemClicked.Invoke(item);
+	}
+	static void QtBeef_QListWidget_itemDoubleClicked(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDoubleClicked.Invoke(item);
+	}
+	static void QtBeef_QListWidget_itemActivated(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemActivated.Invoke(item);
+	}
+	static void QtBeef_QListWidget_itemEntered(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemEntered.Invoke(item);
+	}
+	static void QtBeef_QListWidget_itemChanged(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemChanged.Invoke(item);
+	}
+	static void QtBeef_QListWidget_currentItemChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentItemChanged.Invoke(current, previous);
+	}
+	static void QtBeef_QListWidget_currentTextChanged(void* ptr, libqt_string currentText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentTextChanged.Invoke(currentText);
+	}
+	static void QtBeef_QListWidget_currentRowChanged(void* ptr, c_int currentRow)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentRowChanged.Invoke(currentRow);
+	}
+	static void QtBeef_QListWidget_itemSelectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemSelectionChanged.Invoke();
+	}
 	public this(QListWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QListWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QListWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1087,55 +1198,55 @@ extension CQt
 	
 	public function void QListWidget_itemPressed_action(void* self, void** item);
 	[LinkName("QListWidget_Connect_ItemPressed")]
-	public static extern void QListWidget_Connect_ItemPressed(void* self, void** item, QListWidget_itemPressed_action _action);
+	public static extern void QListWidget_Connect_ItemPressed(void* self, QListWidget_itemPressed_action _action);
 	[LinkName("QListWidget_ItemClicked")]
 	public static extern void QListWidget_ItemClicked(void* self, void** item);
 	
 	public function void QListWidget_itemClicked_action(void* self, void** item);
 	[LinkName("QListWidget_Connect_ItemClicked")]
-	public static extern void QListWidget_Connect_ItemClicked(void* self, void** item, QListWidget_itemClicked_action _action);
+	public static extern void QListWidget_Connect_ItemClicked(void* self, QListWidget_itemClicked_action _action);
 	[LinkName("QListWidget_ItemDoubleClicked")]
 	public static extern void QListWidget_ItemDoubleClicked(void* self, void** item);
 	
 	public function void QListWidget_itemDoubleClicked_action(void* self, void** item);
 	[LinkName("QListWidget_Connect_ItemDoubleClicked")]
-	public static extern void QListWidget_Connect_ItemDoubleClicked(void* self, void** item, QListWidget_itemDoubleClicked_action _action);
+	public static extern void QListWidget_Connect_ItemDoubleClicked(void* self, QListWidget_itemDoubleClicked_action _action);
 	[LinkName("QListWidget_ItemActivated")]
 	public static extern void QListWidget_ItemActivated(void* self, void** item);
 	
 	public function void QListWidget_itemActivated_action(void* self, void** item);
 	[LinkName("QListWidget_Connect_ItemActivated")]
-	public static extern void QListWidget_Connect_ItemActivated(void* self, void** item, QListWidget_itemActivated_action _action);
+	public static extern void QListWidget_Connect_ItemActivated(void* self, QListWidget_itemActivated_action _action);
 	[LinkName("QListWidget_ItemEntered")]
 	public static extern void QListWidget_ItemEntered(void* self, void** item);
 	
 	public function void QListWidget_itemEntered_action(void* self, void** item);
 	[LinkName("QListWidget_Connect_ItemEntered")]
-	public static extern void QListWidget_Connect_ItemEntered(void* self, void** item, QListWidget_itemEntered_action _action);
+	public static extern void QListWidget_Connect_ItemEntered(void* self, QListWidget_itemEntered_action _action);
 	[LinkName("QListWidget_ItemChanged")]
 	public static extern void QListWidget_ItemChanged(void* self, void** item);
 	
 	public function void QListWidget_itemChanged_action(void* self, void** item);
 	[LinkName("QListWidget_Connect_ItemChanged")]
-	public static extern void QListWidget_Connect_ItemChanged(void* self, void** item, QListWidget_itemChanged_action _action);
+	public static extern void QListWidget_Connect_ItemChanged(void* self, QListWidget_itemChanged_action _action);
 	[LinkName("QListWidget_CurrentItemChanged")]
 	public static extern void QListWidget_CurrentItemChanged(void* self, void** current, void** previous);
 	
 	public function void QListWidget_currentItemChanged_action(void* self, void** current, void** previous);
 	[LinkName("QListWidget_Connect_CurrentItemChanged")]
-	public static extern void QListWidget_Connect_CurrentItemChanged(void* self, void** current, void** previous, QListWidget_currentItemChanged_action _action);
+	public static extern void QListWidget_Connect_CurrentItemChanged(void* self, QListWidget_currentItemChanged_action _action);
 	[LinkName("QListWidget_CurrentTextChanged")]
 	public static extern void QListWidget_CurrentTextChanged(void* self, libqt_string currentText);
 	
 	public function void QListWidget_currentTextChanged_action(void* self, libqt_string currentText);
 	[LinkName("QListWidget_Connect_CurrentTextChanged")]
-	public static extern void QListWidget_Connect_CurrentTextChanged(void* self, libqt_string currentText, QListWidget_currentTextChanged_action _action);
+	public static extern void QListWidget_Connect_CurrentTextChanged(void* self, QListWidget_currentTextChanged_action _action);
 	[LinkName("QListWidget_CurrentRowChanged")]
 	public static extern void QListWidget_CurrentRowChanged(void* self, c_int currentRow);
 	
 	public function void QListWidget_currentRowChanged_action(void* self, c_int currentRow);
 	[LinkName("QListWidget_Connect_CurrentRowChanged")]
-	public static extern void QListWidget_Connect_CurrentRowChanged(void* self, c_int currentRow, QListWidget_currentRowChanged_action _action);
+	public static extern void QListWidget_Connect_CurrentRowChanged(void* self, QListWidget_currentRowChanged_action _action);
 	[LinkName("QListWidget_ItemSelectionChanged")]
 	public static extern void QListWidget_ItemSelectionChanged(void* self);
 	

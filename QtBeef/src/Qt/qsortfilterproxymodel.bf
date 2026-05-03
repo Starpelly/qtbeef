@@ -779,17 +779,181 @@ class QSortFilterProxyModel : IQSortFilterProxyModel, IQAbstractProxyModel, IQAb
 {
 	private QSortFilterProxyModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QSortFilterProxyModel_dynamicSortFilterChanged,
+		QSortFilterProxyModel_filterCaseSensitivityChanged,
+		QSortFilterProxyModel_sortCaseSensitivityChanged,
+		QSortFilterProxyModel_sortLocaleAwareChanged,
+		QSortFilterProxyModel_sortRoleChanged,
+		QSortFilterProxyModel_filterRoleChanged,
+		QSortFilterProxyModel_recursiveFilteringEnabledChanged,
+		QSortFilterProxyModel_autoAcceptChildRowsChanged,
+		QSortFilterProxyModel_dataChanged,
+		QSortFilterProxyModel_headerDataChanged,
+		QSortFilterProxyModel_layoutChanged,
+		QSortFilterProxyModel_layoutAboutToBeChanged,
+		QSortFilterProxyModel_dataChanged3,
+		QSortFilterProxyModel_layoutChanged1,
+		QSortFilterProxyModel_layoutChanged2,
+		QSortFilterProxyModel_layoutAboutToBeChanged1,
+		QSortFilterProxyModel_layoutAboutToBeChanged2,
+		QSortFilterProxyModel_destroyed,
+		QSortFilterProxyModel_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSortFilterProxyModel_Connect_DynamicSortFilterChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_dynamicSortFilterChanged);
+		CQt.QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_filterCaseSensitivityChanged);
+		CQt.QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_sortCaseSensitivityChanged);
+		CQt.QSortFilterProxyModel_Connect_SortLocaleAwareChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_sortLocaleAwareChanged);
+		CQt.QSortFilterProxyModel_Connect_SortRoleChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_sortRoleChanged);
+		CQt.QSortFilterProxyModel_Connect_FilterRoleChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_filterRoleChanged);
+		CQt.QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_recursiveFilteringEnabledChanged);
+		CQt.QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(obj.ObjectPtr,  => QtBeef_QSortFilterProxyModel_autoAcceptChildRowsChanged);
+		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
+		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
+		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
+		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
+		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(bool dynamicSortFilter)> OnDynamicSortFilterChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_CaseSensitivity filterCaseSensitivity)> OnFilterCaseSensitivityChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_CaseSensitivity sortCaseSensitivity)> OnSortCaseSensitivityChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool sortLocaleAware)> OnSortLocaleAwareChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int sortRole)> OnSortRoleChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int filterRole)> OnFilterRoleChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool recursiveFilteringEnabled)> OnRecursiveFilteringEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool autoAcceptChildRows)> OnAutoAcceptChildRowsChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QSortFilterProxyModel_dynamicSortFilterChanged(void* ptr, bool dynamicSortFilter)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDynamicSortFilterChanged.Invoke(dynamicSortFilter);
+	}
+	static void QtBeef_QSortFilterProxyModel_filterCaseSensitivityChanged(void* ptr, Qt_CaseSensitivity filterCaseSensitivity)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilterCaseSensitivityChanged.Invoke(filterCaseSensitivity);
+	}
+	static void QtBeef_QSortFilterProxyModel_sortCaseSensitivityChanged(void* ptr, Qt_CaseSensitivity sortCaseSensitivity)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortCaseSensitivityChanged.Invoke(sortCaseSensitivity);
+	}
+	static void QtBeef_QSortFilterProxyModel_sortLocaleAwareChanged(void* ptr, bool sortLocaleAware)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortLocaleAwareChanged.Invoke(sortLocaleAware);
+	}
+	static void QtBeef_QSortFilterProxyModel_sortRoleChanged(void* ptr, c_int sortRole)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortRoleChanged.Invoke(sortRole);
+	}
+	static void QtBeef_QSortFilterProxyModel_filterRoleChanged(void* ptr, c_int filterRole)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFilterRoleChanged.Invoke(filterRole);
+	}
+	static void QtBeef_QSortFilterProxyModel_recursiveFilteringEnabledChanged(void* ptr, bool recursiveFilteringEnabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRecursiveFilteringEnabledChanged.Invoke(recursiveFilteringEnabled);
+	}
+	static void QtBeef_QSortFilterProxyModel_autoAcceptChildRowsChanged(void* ptr, bool autoAcceptChildRows)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAutoAcceptChildRowsChanged.Invoke(autoAcceptChildRows);
+	}
+	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged.Invoke(topLeft, bottomRight);
+	}
+	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSortFilterProxyModel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSortFilterProxyModel_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSortFilterProxyModel_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1704,49 +1868,49 @@ extension CQt
 	
 	public function void QSortFilterProxyModel_dynamicSortFilterChanged_action(void* self, bool dynamicSortFilter);
 	[LinkName("QSortFilterProxyModel_Connect_DynamicSortFilterChanged")]
-	public static extern void QSortFilterProxyModel_Connect_DynamicSortFilterChanged(void* self, bool dynamicSortFilter, QSortFilterProxyModel_dynamicSortFilterChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_DynamicSortFilterChanged(void* self, QSortFilterProxyModel_dynamicSortFilterChanged_action _action);
 	[LinkName("QSortFilterProxyModel_FilterCaseSensitivityChanged")]
 	public static extern void QSortFilterProxyModel_FilterCaseSensitivityChanged(void* self, Qt_CaseSensitivity filterCaseSensitivity);
 	
 	public function void QSortFilterProxyModel_filterCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity filterCaseSensitivity);
 	[LinkName("QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged")]
-	public static extern void QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(void* self, Qt_CaseSensitivity filterCaseSensitivity, QSortFilterProxyModel_filterCaseSensitivityChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_FilterCaseSensitivityChanged(void* self, QSortFilterProxyModel_filterCaseSensitivityChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortCaseSensitivityChanged")]
 	public static extern void QSortFilterProxyModel_SortCaseSensitivityChanged(void* self, Qt_CaseSensitivity sortCaseSensitivity);
 	
 	public function void QSortFilterProxyModel_sortCaseSensitivityChanged_action(void* self, Qt_CaseSensitivity sortCaseSensitivity);
 	[LinkName("QSortFilterProxyModel_Connect_SortCaseSensitivityChanged")]
-	public static extern void QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(void* self, Qt_CaseSensitivity sortCaseSensitivity, QSortFilterProxyModel_sortCaseSensitivityChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_SortCaseSensitivityChanged(void* self, QSortFilterProxyModel_sortCaseSensitivityChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortLocaleAwareChanged")]
 	public static extern void QSortFilterProxyModel_SortLocaleAwareChanged(void* self, bool sortLocaleAware);
 	
 	public function void QSortFilterProxyModel_sortLocaleAwareChanged_action(void* self, bool sortLocaleAware);
 	[LinkName("QSortFilterProxyModel_Connect_SortLocaleAwareChanged")]
-	public static extern void QSortFilterProxyModel_Connect_SortLocaleAwareChanged(void* self, bool sortLocaleAware, QSortFilterProxyModel_sortLocaleAwareChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_SortLocaleAwareChanged(void* self, QSortFilterProxyModel_sortLocaleAwareChanged_action _action);
 	[LinkName("QSortFilterProxyModel_SortRoleChanged")]
 	public static extern void QSortFilterProxyModel_SortRoleChanged(void* self, c_int sortRole);
 	
 	public function void QSortFilterProxyModel_sortRoleChanged_action(void* self, c_int sortRole);
 	[LinkName("QSortFilterProxyModel_Connect_SortRoleChanged")]
-	public static extern void QSortFilterProxyModel_Connect_SortRoleChanged(void* self, c_int sortRole, QSortFilterProxyModel_sortRoleChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_SortRoleChanged(void* self, QSortFilterProxyModel_sortRoleChanged_action _action);
 	[LinkName("QSortFilterProxyModel_FilterRoleChanged")]
 	public static extern void QSortFilterProxyModel_FilterRoleChanged(void* self, c_int filterRole);
 	
 	public function void QSortFilterProxyModel_filterRoleChanged_action(void* self, c_int filterRole);
 	[LinkName("QSortFilterProxyModel_Connect_FilterRoleChanged")]
-	public static extern void QSortFilterProxyModel_Connect_FilterRoleChanged(void* self, c_int filterRole, QSortFilterProxyModel_filterRoleChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_FilterRoleChanged(void* self, QSortFilterProxyModel_filterRoleChanged_action _action);
 	[LinkName("QSortFilterProxyModel_RecursiveFilteringEnabledChanged")]
 	public static extern void QSortFilterProxyModel_RecursiveFilteringEnabledChanged(void* self, bool recursiveFilteringEnabled);
 	
 	public function void QSortFilterProxyModel_recursiveFilteringEnabledChanged_action(void* self, bool recursiveFilteringEnabled);
 	[LinkName("QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged")]
-	public static extern void QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(void* self, bool recursiveFilteringEnabled, QSortFilterProxyModel_recursiveFilteringEnabledChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_RecursiveFilteringEnabledChanged(void* self, QSortFilterProxyModel_recursiveFilteringEnabledChanged_action _action);
 	[LinkName("QSortFilterProxyModel_AutoAcceptChildRowsChanged")]
 	public static extern void QSortFilterProxyModel_AutoAcceptChildRowsChanged(void* self, bool autoAcceptChildRows);
 	
 	public function void QSortFilterProxyModel_autoAcceptChildRowsChanged_action(void* self, bool autoAcceptChildRows);
 	[LinkName("QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged")]
-	public static extern void QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(void* self, bool autoAcceptChildRows, QSortFilterProxyModel_autoAcceptChildRowsChanged_action _action);
+	public static extern void QSortFilterProxyModel_Connect_AutoAcceptChildRowsChanged(void* self, QSortFilterProxyModel_autoAcceptChildRowsChanged_action _action);
 	[LinkName("QSortFilterProxyModel_Tr2")]
 	public static extern libqt_string QSortFilterProxyModel_Tr2(c_char* s, c_char* c);
 	[LinkName("QSortFilterProxyModel_Tr3")]

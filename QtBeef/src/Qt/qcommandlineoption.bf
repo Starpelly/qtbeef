@@ -63,45 +63,64 @@ class QCommandLineOption : IQCommandLineOption
 {
 	private QCommandLineOption_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QCommandLineOption_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name)
 	{
 		this.ptr = CQt.QCommandLineOption_new(libqt_string(name));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** names)
 	{
 		this.ptr = CQt.QCommandLineOption_new2(names);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, String description)
 	{
 		this.ptr = CQt.QCommandLineOption_new3(libqt_string(name), libqt_string(description));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** names, String description)
 	{
 		this.ptr = CQt.QCommandLineOption_new4(names, libqt_string(description));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQCommandLineOption other)
 	{
 		this.ptr = CQt.QCommandLineOption_new5((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, String description, String valueName)
 	{
 		this.ptr = CQt.QCommandLineOption_new6(libqt_string(name), libqt_string(description), libqt_string(valueName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, String description, String valueName, String defaultValue)
 	{
 		this.ptr = CQt.QCommandLineOption_new7(libqt_string(name), libqt_string(description), libqt_string(valueName), libqt_string(defaultValue));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** names, String description, String valueName)
 	{
 		this.ptr = CQt.QCommandLineOption_new8(names, libqt_string(description), libqt_string(valueName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** names, String description, String valueName, String defaultValue)
 	{
 		this.ptr = CQt.QCommandLineOption_new9(names, libqt_string(description), libqt_string(valueName), libqt_string(defaultValue));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

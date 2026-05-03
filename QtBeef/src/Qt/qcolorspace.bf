@@ -103,53 +103,74 @@ class QColorSpace : IQColorSpace
 {
 	private QColorSpace_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QColorSpace_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QColorSpace_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColorSpace_NamedColorSpace namedColorSpace)
 	{
 		this.ptr = CQt.QColorSpace_new2(namedColorSpace);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColorSpace_Primaries primaries, QColorSpace_TransferFunction transferFunction)
 	{
 		this.ptr = CQt.QColorSpace_new3(primaries, transferFunction);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColorSpace_Primaries primaries, float gamma)
 	{
 		this.ptr = CQt.QColorSpace_new4(primaries, gamma);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColorSpace_Primaries primaries, void** transferFunctionTable)
 	{
 		this.ptr = CQt.QColorSpace_new5(primaries, transferFunctionTable);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF whitePoint, IQPointF redPoint, IQPointF greenPoint, IQPointF bluePoint, QColorSpace_TransferFunction transferFunction)
 	{
 		this.ptr = CQt.QColorSpace_new6((.)whitePoint?.ObjectPtr, (.)redPoint?.ObjectPtr, (.)greenPoint?.ObjectPtr, (.)bluePoint?.ObjectPtr, transferFunction);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF whitePoint, IQPointF redPoint, IQPointF greenPoint, IQPointF bluePoint, void** transferFunctionTable)
 	{
 		this.ptr = CQt.QColorSpace_new7((.)whitePoint?.ObjectPtr, (.)redPoint?.ObjectPtr, (.)greenPoint?.ObjectPtr, (.)bluePoint?.ObjectPtr, transferFunctionTable);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF whitePoint, IQPointF redPoint, IQPointF greenPoint, IQPointF bluePoint, void** redTransferFunctionTable, void** greenTransferFunctionTable, void** blueTransferFunctionTable)
 	{
 		this.ptr = CQt.QColorSpace_new8((.)whitePoint?.ObjectPtr, (.)redPoint?.ObjectPtr, (.)greenPoint?.ObjectPtr, (.)bluePoint?.ObjectPtr, redTransferFunctionTable, greenTransferFunctionTable, blueTransferFunctionTable);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColorSpace colorSpace)
 	{
 		this.ptr = CQt.QColorSpace_new9((.)colorSpace?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QColorSpace_Primaries primaries, QColorSpace_TransferFunction transferFunction, float gamma)
 	{
 		this.ptr = CQt.QColorSpace_new10(primaries, transferFunction, gamma);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF whitePoint, IQPointF redPoint, IQPointF greenPoint, IQPointF bluePoint, QColorSpace_TransferFunction transferFunction, float gamma)
 	{
 		this.ptr = CQt.QColorSpace_new11((.)whitePoint?.ObjectPtr, (.)redPoint?.ObjectPtr, (.)greenPoint?.ObjectPtr, (.)bluePoint?.ObjectPtr, transferFunction, gamma);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

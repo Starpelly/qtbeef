@@ -79,57 +79,79 @@ class QBrush : IQBrush
 {
 	private QBrush_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBrush_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBrush_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_BrushStyle bs)
 	{
 		this.ptr = CQt.QBrush_new2(bs);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor color)
 	{
 		this.ptr = CQt.QBrush_new3((.)color?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_GlobalColor color)
 	{
 		this.ptr = CQt.QBrush_new4(color);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor color, IQPixmap pixmap)
 	{
 		this.ptr = CQt.QBrush_new5((.)color?.ObjectPtr, (.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_GlobalColor color, IQPixmap pixmap)
 	{
 		this.ptr = CQt.QBrush_new6(color, (.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap pixmap)
 	{
 		this.ptr = CQt.QBrush_new7((.)pixmap?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQImage image)
 	{
 		this.ptr = CQt.QBrush_new8((.)image?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBrush brush)
 	{
 		this.ptr = CQt.QBrush_new9((.)brush?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGradient gradient)
 	{
 		this.ptr = CQt.QBrush_new10((.)gradient?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQColor color, Qt_BrushStyle bs)
 	{
 		this.ptr = CQt.QBrush_new11((.)color?.ObjectPtr, bs);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_GlobalColor color, Qt_BrushStyle bs)
 	{
 		this.ptr = CQt.QBrush_new12(color, bs);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -322,21 +344,34 @@ class QGradient : IQGradient
 {
 	private QGradient_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGradient_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGradient_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QGradient_Preset param1)
 	{
 		this.ptr = CQt.QGradient_new2(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGradient param1)
 	{
 		this.ptr = CQt.QGradient_new3((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -501,25 +536,39 @@ class QLinearGradient : IQLinearGradient, IQGradient
 {
 	private QLinearGradient_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QLinearGradient_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLinearGradient_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF start, IQPointF finalStop)
 	{
 		this.ptr = CQt.QLinearGradient_new2((.)start?.ObjectPtr, (.)finalStop?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double xStart, double yStart, double xFinalStop, double yFinalStop)
 	{
 		this.ptr = CQt.QLinearGradient_new3(xStart, yStart, xFinalStop, yFinalStop);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLinearGradient param1)
 	{
 		this.ptr = CQt.QLinearGradient_new4((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -722,41 +771,59 @@ class QRadialGradient : IQRadialGradient, IQGradient
 {
 	private QRadialGradient_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRadialGradient_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRadialGradient_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF center, double radius, IQPointF focalPoint)
 	{
 		this.ptr = CQt.QRadialGradient_new2((.)center?.ObjectPtr, radius, (.)focalPoint?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double cx, double cy, double radius, double fx, double fy)
 	{
 		this.ptr = CQt.QRadialGradient_new3(cx, cy, radius, fx, fy);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF center, double radius)
 	{
 		this.ptr = CQt.QRadialGradient_new4((.)center?.ObjectPtr, radius);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double cx, double cy, double radius)
 	{
 		this.ptr = CQt.QRadialGradient_new5(cx, cy, radius);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF center, double centerRadius, IQPointF focalPoint, double focalRadius)
 	{
 		this.ptr = CQt.QRadialGradient_new6((.)center?.ObjectPtr, centerRadius, (.)focalPoint?.ObjectPtr, focalRadius);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double cx, double cy, double centerRadius, double fx, double fy, double focalRadius)
 	{
 		this.ptr = CQt.QRadialGradient_new7(cx, cy, centerRadius, fx, fy, focalRadius);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRadialGradient param1)
 	{
 		this.ptr = CQt.QRadialGradient_new8((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -975,25 +1042,39 @@ class QConicalGradient : IQConicalGradient, IQGradient
 {
 	private QConicalGradient_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QConicalGradient_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QConicalGradient_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF center, double startAngle)
 	{
 		this.ptr = CQt.QConicalGradient_new2((.)center?.ObjectPtr, startAngle);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double cx, double cy, double startAngle)
 	{
 		this.ptr = CQt.QConicalGradient_new3(cx, cy, startAngle);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQConicalGradient param1)
 	{
 		this.ptr = CQt.QConicalGradient_new4((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1102,13 +1183,24 @@ class QGradient_QGradientData : IQGradient_QGradientData
 {
 	private QGradient_QGradientData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGradient_QGradientData_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGradient_QGradientData param1)
 	{
 		this.ptr = CQt.QGradient_QGradientData_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

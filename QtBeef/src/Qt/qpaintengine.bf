@@ -43,13 +43,24 @@ class QTextItem : IQTextItem
 {
 	private QTextItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextItem other)
 	{
 		this.ptr = CQt.QTextItem_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -272,17 +283,29 @@ class QPaintEngine : IQPaintEngine
 {
 	private QPaintEngine_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPaintEngine_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPaintEngine_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* features)
 	{
 		this.ptr = CQt.QPaintEngine_new2(features);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -617,13 +640,24 @@ class QPaintEngineState : IQPaintEngineState
 {
 	private QPaintEngineState_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPaintEngineState_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPaintEngineState other)
 	{
 		this.ptr = CQt.QPaintEngineState_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

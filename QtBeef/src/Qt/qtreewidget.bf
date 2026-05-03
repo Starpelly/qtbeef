@@ -255,73 +255,99 @@ class QTreeWidgetItem : IQTreeWidgetItem
 {
 	private QTreeWidgetItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTreeWidgetItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTreeWidgetItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** strings)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new2(strings);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget treeview)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new3((.)treeview?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget treeview, void** strings)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new4((.)treeview?.ObjectPtr, strings);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget treeview, IQTreeWidgetItem after)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new5((.)treeview?.ObjectPtr, (.)after?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem parent)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new6((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem parent, void** strings)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new7((.)parent?.ObjectPtr, strings);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem parent, IQTreeWidgetItem after)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new8((.)parent?.ObjectPtr, (.)after?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new10(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** strings, c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new11(strings, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget treeview, c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new12((.)treeview?.ObjectPtr, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget treeview, void** strings, c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new13((.)treeview?.ObjectPtr, strings, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidget treeview, IQTreeWidgetItem after, c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new14((.)treeview?.ObjectPtr, (.)after?.ObjectPtr, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem parent, c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new15((.)parent?.ObjectPtr, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem parent, void** strings, c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new16((.)parent?.ObjectPtr, strings, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTreeWidgetItem parent, IQTreeWidgetItem after, c_int type)
 	{
 		this.ptr = CQt.QTreeWidgetItem_new17((.)parent?.ObjectPtr, (.)after?.ObjectPtr, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3412,17 +3438,229 @@ class QTreeWidget : IQTreeWidget, IQTreeView, IQAbstractItemView, IQAbstractScro
 {
 	private QTreeWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QTreeWidget_itemPressed,
+		QTreeWidget_itemClicked,
+		QTreeWidget_itemDoubleClicked,
+		QTreeWidget_itemActivated,
+		QTreeWidget_itemEntered,
+		QTreeWidget_itemChanged,
+		QTreeWidget_itemExpanded,
+		QTreeWidget_itemCollapsed,
+		QTreeWidget_currentItemChanged,
+		QTreeWidget_itemSelectionChanged,
+		QTreeWidget_expanded,
+		QTreeWidget_collapsed,
+		QTreeWidget_pressed,
+		QTreeWidget_clicked,
+		QTreeWidget_doubleClicked,
+		QTreeWidget_activated,
+		QTreeWidget_entered,
+		QTreeWidget_viewportEntered,
+		QTreeWidget_iconSizeChanged,
+		QTreeWidget_windowTitleChanged,
+		QTreeWidget_windowIconChanged,
+		QTreeWidget_windowIconTextChanged,
+		QTreeWidget_customContextMenuRequested,
+		QTreeWidget_destroyed,
+		QTreeWidget_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTreeWidget_Connect_ItemPressed(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemPressed);
+		CQt.QTreeWidget_Connect_ItemClicked(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemClicked);
+		CQt.QTreeWidget_Connect_ItemDoubleClicked(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemDoubleClicked);
+		CQt.QTreeWidget_Connect_ItemActivated(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemActivated);
+		CQt.QTreeWidget_Connect_ItemEntered(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemEntered);
+		CQt.QTreeWidget_Connect_ItemChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemChanged);
+		CQt.QTreeWidget_Connect_ItemExpanded(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemExpanded);
+		CQt.QTreeWidget_Connect_ItemCollapsed(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemCollapsed);
+		CQt.QTreeWidget_Connect_CurrentItemChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_currentItemChanged);
+		CQt.QTreeWidget_Connect_ItemSelectionChanged(obj.ObjectPtr,  => QtBeef_QTreeWidget_itemSelectionChanged);
+		CQt.QTreeView_Connect_Expanded(obj.ObjectPtr,  => QtBeef_QTreeView_expanded);
+		CQt.QTreeView_Connect_Collapsed(obj.ObjectPtr,  => QtBeef_QTreeView_collapsed);
+		CQt.QAbstractItemView_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_pressed);
+		CQt.QAbstractItemView_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_clicked);
+		CQt.QAbstractItemView_Connect_DoubleClicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_doubleClicked);
+		CQt.QAbstractItemView_Connect_Activated(obj.ObjectPtr,  => QtBeef_QAbstractItemView_activated);
+		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_entered);
+		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_viewportEntered);
+		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_iconSizeChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** item, c_int column)> OnItemPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** item, c_int column)> OnItemClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item, c_int column)> OnItemDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item, c_int column)> OnItemActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** item, c_int column)> OnItemEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** item, c_int column)> OnItemChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemExpanded = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemCollapsed = .() ~ _.Dispose();
+	public Event<delegate void(void** current, void** previous)> OnCurrentItemChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnItemSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnExpanded = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnCollapsed = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnEntered = .() ~ _.Dispose();
+	public Event<delegate void()> OnViewportEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QTreeWidget_itemPressed(void* ptr, void** item, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemPressed.Invoke(item, column);
+	}
+	static void QtBeef_QTreeWidget_itemClicked(void* ptr, void** item, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemClicked.Invoke(item, column);
+	}
+	static void QtBeef_QTreeWidget_itemDoubleClicked(void* ptr, void** item, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDoubleClicked.Invoke(item, column);
+	}
+	static void QtBeef_QTreeWidget_itemActivated(void* ptr, void** item, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemActivated.Invoke(item, column);
+	}
+	static void QtBeef_QTreeWidget_itemEntered(void* ptr, void** item, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemEntered.Invoke(item, column);
+	}
+	static void QtBeef_QTreeWidget_itemChanged(void* ptr, void** item, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemChanged.Invoke(item, column);
+	}
+	static void QtBeef_QTreeWidget_itemExpanded(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemExpanded.Invoke(item);
+	}
+	static void QtBeef_QTreeWidget_itemCollapsed(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemCollapsed.Invoke(item);
+	}
+	static void QtBeef_QTreeWidget_currentItemChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentItemChanged.Invoke(current, previous);
+	}
+	static void QtBeef_QTreeWidget_itemSelectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemSelectionChanged.Invoke();
+	}
+	static void QtBeef_QTreeView_expanded(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnExpanded.Invoke(index);
+	}
+	static void QtBeef_QTreeView_collapsed(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCollapsed.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_pressed(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPressed.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_clicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_doubleClicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoubleClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_activated(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_entered(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEntered.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_viewportEntered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEntered.Invoke();
+	}
+	static void QtBeef_QAbstractItemView_iconSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QTreeWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTreeWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTreeWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6207,55 +6445,55 @@ extension CQt
 	
 	public function void QTreeWidget_itemPressed_action(void* self, void** item, c_int column);
 	[LinkName("QTreeWidget_Connect_ItemPressed")]
-	public static extern void QTreeWidget_Connect_ItemPressed(void* self, void** item, c_int column, QTreeWidget_itemPressed_action _action);
+	public static extern void QTreeWidget_Connect_ItemPressed(void* self, QTreeWidget_itemPressed_action _action);
 	[LinkName("QTreeWidget_ItemClicked")]
 	public static extern void QTreeWidget_ItemClicked(void* self, void** item, c_int column);
 	
 	public function void QTreeWidget_itemClicked_action(void* self, void** item, c_int column);
 	[LinkName("QTreeWidget_Connect_ItemClicked")]
-	public static extern void QTreeWidget_Connect_ItemClicked(void* self, void** item, c_int column, QTreeWidget_itemClicked_action _action);
+	public static extern void QTreeWidget_Connect_ItemClicked(void* self, QTreeWidget_itemClicked_action _action);
 	[LinkName("QTreeWidget_ItemDoubleClicked")]
 	public static extern void QTreeWidget_ItemDoubleClicked(void* self, void** item, c_int column);
 	
 	public function void QTreeWidget_itemDoubleClicked_action(void* self, void** item, c_int column);
 	[LinkName("QTreeWidget_Connect_ItemDoubleClicked")]
-	public static extern void QTreeWidget_Connect_ItemDoubleClicked(void* self, void** item, c_int column, QTreeWidget_itemDoubleClicked_action _action);
+	public static extern void QTreeWidget_Connect_ItemDoubleClicked(void* self, QTreeWidget_itemDoubleClicked_action _action);
 	[LinkName("QTreeWidget_ItemActivated")]
 	public static extern void QTreeWidget_ItemActivated(void* self, void** item, c_int column);
 	
 	public function void QTreeWidget_itemActivated_action(void* self, void** item, c_int column);
 	[LinkName("QTreeWidget_Connect_ItemActivated")]
-	public static extern void QTreeWidget_Connect_ItemActivated(void* self, void** item, c_int column, QTreeWidget_itemActivated_action _action);
+	public static extern void QTreeWidget_Connect_ItemActivated(void* self, QTreeWidget_itemActivated_action _action);
 	[LinkName("QTreeWidget_ItemEntered")]
 	public static extern void QTreeWidget_ItemEntered(void* self, void** item, c_int column);
 	
 	public function void QTreeWidget_itemEntered_action(void* self, void** item, c_int column);
 	[LinkName("QTreeWidget_Connect_ItemEntered")]
-	public static extern void QTreeWidget_Connect_ItemEntered(void* self, void** item, c_int column, QTreeWidget_itemEntered_action _action);
+	public static extern void QTreeWidget_Connect_ItemEntered(void* self, QTreeWidget_itemEntered_action _action);
 	[LinkName("QTreeWidget_ItemChanged")]
 	public static extern void QTreeWidget_ItemChanged(void* self, void** item, c_int column);
 	
 	public function void QTreeWidget_itemChanged_action(void* self, void** item, c_int column);
 	[LinkName("QTreeWidget_Connect_ItemChanged")]
-	public static extern void QTreeWidget_Connect_ItemChanged(void* self, void** item, c_int column, QTreeWidget_itemChanged_action _action);
+	public static extern void QTreeWidget_Connect_ItemChanged(void* self, QTreeWidget_itemChanged_action _action);
 	[LinkName("QTreeWidget_ItemExpanded")]
 	public static extern void QTreeWidget_ItemExpanded(void* self, void** item);
 	
 	public function void QTreeWidget_itemExpanded_action(void* self, void** item);
 	[LinkName("QTreeWidget_Connect_ItemExpanded")]
-	public static extern void QTreeWidget_Connect_ItemExpanded(void* self, void** item, QTreeWidget_itemExpanded_action _action);
+	public static extern void QTreeWidget_Connect_ItemExpanded(void* self, QTreeWidget_itemExpanded_action _action);
 	[LinkName("QTreeWidget_ItemCollapsed")]
 	public static extern void QTreeWidget_ItemCollapsed(void* self, void** item);
 	
 	public function void QTreeWidget_itemCollapsed_action(void* self, void** item);
 	[LinkName("QTreeWidget_Connect_ItemCollapsed")]
-	public static extern void QTreeWidget_Connect_ItemCollapsed(void* self, void** item, QTreeWidget_itemCollapsed_action _action);
+	public static extern void QTreeWidget_Connect_ItemCollapsed(void* self, QTreeWidget_itemCollapsed_action _action);
 	[LinkName("QTreeWidget_CurrentItemChanged")]
 	public static extern void QTreeWidget_CurrentItemChanged(void* self, void** current, void** previous);
 	
 	public function void QTreeWidget_currentItemChanged_action(void* self, void** current, void** previous);
 	[LinkName("QTreeWidget_Connect_CurrentItemChanged")]
-	public static extern void QTreeWidget_Connect_CurrentItemChanged(void* self, void** current, void** previous, QTreeWidget_currentItemChanged_action _action);
+	public static extern void QTreeWidget_Connect_CurrentItemChanged(void* self, QTreeWidget_currentItemChanged_action _action);
 	[LinkName("QTreeWidget_ItemSelectionChanged")]
 	public static extern void QTreeWidget_ItemSelectionChanged(void* self);
 	

@@ -323,17 +323,77 @@ class QAbstractItemDelegate : IQAbstractItemDelegate, IQObject
 {
 	private QAbstractItemDelegate_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAbstractItemDelegate_commitData,
+		QAbstractItemDelegate_closeEditor,
+		QAbstractItemDelegate_sizeHintChanged,
+		QAbstractItemDelegate_closeEditor2,
+		QAbstractItemDelegate_destroyed,
+		QAbstractItemDelegate_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractItemDelegate_Connect_CommitData(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_commitData);
+		CQt.QAbstractItemDelegate_Connect_CloseEditor(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_closeEditor);
+		CQt.QAbstractItemDelegate_Connect_SizeHintChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_sizeHintChanged);
+		CQt.QAbstractItemDelegate_Connect_CloseEditor2(obj.ObjectPtr,  => QtBeef_QAbstractItemDelegate_closeEditor2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** editor)> OnCommitData = .() ~ _.Dispose();
+	public Event<delegate void(void** editor)> OnCloseEditor = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnSizeHintChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** editor, QAbstractItemDelegate_EndEditHint hint)> OnCloseEditor2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractItemDelegate_commitData(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCommitData.Invoke(editor);
+	}
+	static void QtBeef_QAbstractItemDelegate_closeEditor(void* ptr, void** editor)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor.Invoke(editor);
+	}
+	static void QtBeef_QAbstractItemDelegate_sizeHintChanged(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSizeHintChanged.Invoke(param1);
+	}
+	static void QtBeef_QAbstractItemDelegate_closeEditor2(void* ptr, void** editor, QAbstractItemDelegate_EndEditHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCloseEditor2.Invoke(editor, hint);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractItemDelegate_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractItemDelegate_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractItemDelegate_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -688,19 +748,19 @@ extension CQt
 	
 	public function void QAbstractItemDelegate_commitData_action(void* self, void** editor);
 	[LinkName("QAbstractItemDelegate_Connect_CommitData")]
-	public static extern void QAbstractItemDelegate_Connect_CommitData(void* self, void** editor, QAbstractItemDelegate_commitData_action _action);
+	public static extern void QAbstractItemDelegate_Connect_CommitData(void* self, QAbstractItemDelegate_commitData_action _action);
 	[LinkName("QAbstractItemDelegate_CloseEditor")]
 	public static extern void QAbstractItemDelegate_CloseEditor(void* self, void** editor);
 	
 	public function void QAbstractItemDelegate_closeEditor_action(void* self, void** editor);
 	[LinkName("QAbstractItemDelegate_Connect_CloseEditor")]
-	public static extern void QAbstractItemDelegate_Connect_CloseEditor(void* self, void** editor, QAbstractItemDelegate_closeEditor_action _action);
+	public static extern void QAbstractItemDelegate_Connect_CloseEditor(void* self, QAbstractItemDelegate_closeEditor_action _action);
 	[LinkName("QAbstractItemDelegate_SizeHintChanged")]
 	public static extern void QAbstractItemDelegate_SizeHintChanged(void* self, void** param1);
 	
 	public function void QAbstractItemDelegate_sizeHintChanged_action(void* self, void** param1);
 	[LinkName("QAbstractItemDelegate_Connect_SizeHintChanged")]
-	public static extern void QAbstractItemDelegate_Connect_SizeHintChanged(void* self, void** param1, QAbstractItemDelegate_sizeHintChanged_action _action);
+	public static extern void QAbstractItemDelegate_Connect_SizeHintChanged(void* self, QAbstractItemDelegate_sizeHintChanged_action _action);
 	[LinkName("QAbstractItemDelegate_Tr2")]
 	public static extern libqt_string QAbstractItemDelegate_Tr2(c_char* s, c_char* c);
 	[LinkName("QAbstractItemDelegate_Tr3")]
@@ -710,7 +770,7 @@ extension CQt
 	
 	public function void QAbstractItemDelegate_closeEditor2_action(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint);
 	[LinkName("QAbstractItemDelegate_Connect_CloseEditor2")]
-	public static extern void QAbstractItemDelegate_Connect_CloseEditor2(void* self, void** editor, QAbstractItemDelegate_EndEditHint hint, QAbstractItemDelegate_closeEditor2_action _action);
+	public static extern void QAbstractItemDelegate_Connect_CloseEditor2(void* self, QAbstractItemDelegate_closeEditor2_action _action);
 }
 [AllowDuplicates]
 enum QAbstractItemDelegate_EndEditHint

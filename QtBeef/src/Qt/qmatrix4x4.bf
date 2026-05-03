@@ -227,37 +227,54 @@ class QMatrix4x4 : IQMatrix4x4
 {
 	private QMatrix4x4_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMatrix4x4_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMatrix4x4 other)
 	{
 		this.ptr = CQt.QMatrix4x4_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMatrix4x4_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Initialization param1)
 	{
 		this.ptr = CQt.QMatrix4x4_new4(param1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float* values)
 	{
 		this.ptr = CQt.QMatrix4x4_new5(values);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
 	{
 		this.ptr = CQt.QMatrix4x4_new6(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44);
+		QtBf_ConnectSignals(this);
 	}
 	public this(float* values, c_int cols, c_int rows)
 	{
 		this.ptr = CQt.QMatrix4x4_new7(values, cols, rows);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTransform transform)
 	{
 		this.ptr = CQt.QMatrix4x4_new8((.)transform?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -1583,21 +1583,82 @@ class QWidget : IQWidget, IQObject, IQPaintDevice
 {
 	private QWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QWidget_windowTitleChanged,
+		QWidget_windowIconChanged,
+		QWidget_windowIconTextChanged,
+		QWidget_customContextMenuRequested,
+		QWidget_destroyed,
+		QWidget_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* f)
 	{
 		this.ptr = CQt.QWidget_new3((.)parent?.ObjectPtr, f);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3700,25 +3761,25 @@ extension CQt
 	
 	public function void QWidget_windowTitleChanged_action(void* self, libqt_string title);
 	[LinkName("QWidget_Connect_WindowTitleChanged")]
-	public static extern void QWidget_Connect_WindowTitleChanged(void* self, libqt_string title, QWidget_windowTitleChanged_action _action);
+	public static extern void QWidget_Connect_WindowTitleChanged(void* self, QWidget_windowTitleChanged_action _action);
 	[LinkName("QWidget_WindowIconChanged")]
 	public static extern void QWidget_WindowIconChanged(void* self, void** icon);
 	
 	public function void QWidget_windowIconChanged_action(void* self, void** icon);
 	[LinkName("QWidget_Connect_WindowIconChanged")]
-	public static extern void QWidget_Connect_WindowIconChanged(void* self, void** icon, QWidget_windowIconChanged_action _action);
+	public static extern void QWidget_Connect_WindowIconChanged(void* self, QWidget_windowIconChanged_action _action);
 	[LinkName("QWidget_WindowIconTextChanged")]
 	public static extern void QWidget_WindowIconTextChanged(void* self, libqt_string iconText);
 	
 	public function void QWidget_windowIconTextChanged_action(void* self, libqt_string iconText);
 	[LinkName("QWidget_Connect_WindowIconTextChanged")]
-	public static extern void QWidget_Connect_WindowIconTextChanged(void* self, libqt_string iconText, QWidget_windowIconTextChanged_action _action);
+	public static extern void QWidget_Connect_WindowIconTextChanged(void* self, QWidget_windowIconTextChanged_action _action);
 	[LinkName("QWidget_CustomContextMenuRequested")]
 	public static extern void QWidget_CustomContextMenuRequested(void* self, void** pos);
 	
 	public function void QWidget_customContextMenuRequested_action(void* self, void** pos);
 	[LinkName("QWidget_Connect_CustomContextMenuRequested")]
-	public static extern void QWidget_Connect_CustomContextMenuRequested(void* self, void** pos, QWidget_customContextMenuRequested_action _action);
+	public static extern void QWidget_Connect_CustomContextMenuRequested(void* self, QWidget_customContextMenuRequested_action _action);
 	[LinkName("QWidget_Event")]
 	public static extern bool QWidget_Event(void* self, void** event);
 	[LinkName("QWidget_MousePressEvent")]

@@ -819,33 +819,97 @@ class QGraphicsScene : IQGraphicsScene, IQObject
 {
 	private QGraphicsScene_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QGraphicsScene_changed,
+		QGraphicsScene_sceneRectChanged,
+		QGraphicsScene_selectionChanged,
+		QGraphicsScene_focusItemChanged,
+		QGraphicsScene_destroyed,
+		QGraphicsScene_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsScene_Connect_Changed(obj.ObjectPtr,  => QtBeef_QGraphicsScene_changed);
+		CQt.QGraphicsScene_Connect_SceneRectChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScene_sceneRectChanged);
+		CQt.QGraphicsScene_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScene_selectionChanged);
+		CQt.QGraphicsScene_Connect_FocusItemChanged(obj.ObjectPtr,  => QtBeef_QGraphicsScene_focusItemChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** region)> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** rect)> OnSceneRectChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** newFocus, void** oldFocus, Qt_FocusReason reason)> OnFocusItemChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsScene_changed(void* ptr, void** region)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke(region);
+	}
+	static void QtBeef_QGraphicsScene_sceneRectChanged(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSceneRectChanged.Invoke(rect);
+	}
+	static void QtBeef_QGraphicsScene_selectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsScene_focusItemChanged(void* ptr, void** newFocus, void** oldFocus, Qt_FocusReason reason)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFocusItemChanged.Invoke(newFocus, oldFocus, reason);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsScene_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsScene_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF sceneRect)
 	{
 		this.ptr = CQt.QGraphicsScene_new2((.)sceneRect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double width, double height)
 	{
 		this.ptr = CQt.QGraphicsScene_new3(x, y, width, height);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsScene_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF sceneRect, IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsScene_new5((.)sceneRect?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double x, double y, double width, double height, IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsScene_new6(x, y, width, height, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1878,13 +1942,13 @@ extension CQt
 	
 	public function void QGraphicsScene_changed_action(void* self, void** region);
 	[LinkName("QGraphicsScene_Connect_Changed")]
-	public static extern void QGraphicsScene_Connect_Changed(void* self, void** region, QGraphicsScene_changed_action _action);
+	public static extern void QGraphicsScene_Connect_Changed(void* self, QGraphicsScene_changed_action _action);
 	[LinkName("QGraphicsScene_SceneRectChanged")]
 	public static extern void QGraphicsScene_SceneRectChanged(void* self, void** rect);
 	
 	public function void QGraphicsScene_sceneRectChanged_action(void* self, void** rect);
 	[LinkName("QGraphicsScene_Connect_SceneRectChanged")]
-	public static extern void QGraphicsScene_Connect_SceneRectChanged(void* self, void** rect, QGraphicsScene_sceneRectChanged_action _action);
+	public static extern void QGraphicsScene_Connect_SceneRectChanged(void* self, QGraphicsScene_sceneRectChanged_action _action);
 	[LinkName("QGraphicsScene_SelectionChanged")]
 	public static extern void QGraphicsScene_SelectionChanged(void* self);
 	
@@ -1896,7 +1960,7 @@ extension CQt
 	
 	public function void QGraphicsScene_focusItemChanged_action(void* self, void** newFocus, void** oldFocus, Qt_FocusReason reason);
 	[LinkName("QGraphicsScene_Connect_FocusItemChanged")]
-	public static extern void QGraphicsScene_Connect_FocusItemChanged(void* self, void** newFocus, void** oldFocus, Qt_FocusReason reason, QGraphicsScene_focusItemChanged_action _action);
+	public static extern void QGraphicsScene_Connect_FocusItemChanged(void* self, QGraphicsScene_focusItemChanged_action _action);
 	[LinkName("QGraphicsScene_Tr2")]
 	public static extern libqt_string QGraphicsScene_Tr2(c_char* s, c_char* c);
 	[LinkName("QGraphicsScene_Tr3")]

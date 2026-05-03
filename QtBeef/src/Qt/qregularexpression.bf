@@ -111,25 +111,39 @@ class QRegularExpression : IQRegularExpression
 {
 	private QRegularExpression_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRegularExpression_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRegularExpression_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String pattern)
 	{
 		this.ptr = CQt.QRegularExpression_new2(libqt_string(pattern));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re)
 	{
 		this.ptr = CQt.QRegularExpression_new3((.)re?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String pattern, void* options)
 	{
 		this.ptr = CQt.QRegularExpression_new4(libqt_string(pattern), options);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -404,17 +418,29 @@ class QRegularExpressionMatch : IQRegularExpressionMatch
 {
 	private QRegularExpressionMatch_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRegularExpressionMatch_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRegularExpressionMatch_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpressionMatch match)
 	{
 		this.ptr = CQt.QRegularExpressionMatch_new2((.)match?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -621,17 +647,29 @@ class QRegularExpressionMatchIterator : IQRegularExpressionMatchIterator
 {
 	private QRegularExpressionMatchIterator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRegularExpressionMatchIterator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRegularExpressionMatchIterator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpressionMatchIterator iterator)
 	{
 		this.ptr = CQt.QRegularExpressionMatchIterator_new2((.)iterator?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

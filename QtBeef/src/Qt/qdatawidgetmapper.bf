@@ -375,17 +375,53 @@ class QDataWidgetMapper : IQDataWidgetMapper, IQObject
 {
 	private QDataWidgetMapper_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QDataWidgetMapper_currentIndexChanged,
+		QDataWidgetMapper_destroyed,
+		QDataWidgetMapper_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDataWidgetMapper_Connect_CurrentIndexChanged(obj.ObjectPtr,  => QtBeef_QDataWidgetMapper_currentIndexChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int index)> OnCurrentIndexChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QDataWidgetMapper_currentIndexChanged(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentIndexChanged.Invoke(index);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QDataWidgetMapper_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDataWidgetMapper_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QDataWidgetMapper_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -824,7 +860,7 @@ extension CQt
 	
 	public function void QDataWidgetMapper_currentIndexChanged_action(void* self, c_int index);
 	[LinkName("QDataWidgetMapper_Connect_CurrentIndexChanged")]
-	public static extern void QDataWidgetMapper_Connect_CurrentIndexChanged(void* self, c_int index, QDataWidgetMapper_currentIndexChanged_action _action);
+	public static extern void QDataWidgetMapper_Connect_CurrentIndexChanged(void* self, QDataWidgetMapper_currentIndexChanged_action _action);
 	[LinkName("QDataWidgetMapper_Tr2")]
 	public static extern libqt_string QDataWidgetMapper_Tr2(c_char* s, c_char* c);
 	[LinkName("QDataWidgetMapper_Tr3")]

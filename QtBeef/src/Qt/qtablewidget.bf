@@ -43,21 +43,34 @@ class QTableWidgetSelectionRange : IQTableWidgetSelectionRange
 {
 	private QTableWidgetSelectionRange_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTableWidgetSelectionRange_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTableWidgetSelectionRange other)
 	{
 		this.ptr = CQt.QTableWidgetSelectionRange_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTableWidgetSelectionRange_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int top, c_int left, c_int bottom, c_int right)
 	{
 		this.ptr = CQt.QTableWidgetSelectionRange_new4(top, left, bottom, right);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -280,37 +293,54 @@ class QTableWidgetItem : IQTableWidgetItem
 {
 	private QTableWidgetItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTableWidgetItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTableWidgetItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QTableWidgetItem_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, String text)
 	{
 		this.ptr = CQt.QTableWidgetItem_new3((.)icon?.ObjectPtr, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTableWidgetItem other)
 	{
 		this.ptr = CQt.QTableWidgetItem_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type)
 	{
 		this.ptr = CQt.QTableWidgetItem_new5(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, c_int type)
 	{
 		this.ptr = CQt.QTableWidgetItem_new6(libqt_string(text), type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIcon icon, String text, c_int type)
 	{
 		this.ptr = CQt.QTableWidgetItem_new7((.)icon?.ObjectPtr, libqt_string(text), type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3225,25 +3255,263 @@ class QTableWidget : IQTableWidget, IQTableView, IQAbstractItemView, IQAbstractS
 {
 	private QTableWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QTableWidget_itemPressed,
+		QTableWidget_itemClicked,
+		QTableWidget_itemDoubleClicked,
+		QTableWidget_itemActivated,
+		QTableWidget_itemEntered,
+		QTableWidget_itemChanged,
+		QTableWidget_currentItemChanged,
+		QTableWidget_itemSelectionChanged,
+		QTableWidget_cellPressed,
+		QTableWidget_cellClicked,
+		QTableWidget_cellDoubleClicked,
+		QTableWidget_cellActivated,
+		QTableWidget_cellEntered,
+		QTableWidget_cellChanged,
+		QTableWidget_currentCellChanged,
+		QTableWidget_pressed,
+		QTableWidget_clicked,
+		QTableWidget_doubleClicked,
+		QTableWidget_activated,
+		QTableWidget_entered,
+		QTableWidget_viewportEntered,
+		QTableWidget_iconSizeChanged,
+		QTableWidget_windowTitleChanged,
+		QTableWidget_windowIconChanged,
+		QTableWidget_windowIconTextChanged,
+		QTableWidget_customContextMenuRequested,
+		QTableWidget_destroyed,
+		QTableWidget_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTableWidget_Connect_ItemPressed(obj.ObjectPtr,  => QtBeef_QTableWidget_itemPressed);
+		CQt.QTableWidget_Connect_ItemClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_itemClicked);
+		CQt.QTableWidget_Connect_ItemDoubleClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_itemDoubleClicked);
+		CQt.QTableWidget_Connect_ItemActivated(obj.ObjectPtr,  => QtBeef_QTableWidget_itemActivated);
+		CQt.QTableWidget_Connect_ItemEntered(obj.ObjectPtr,  => QtBeef_QTableWidget_itemEntered);
+		CQt.QTableWidget_Connect_ItemChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_itemChanged);
+		CQt.QTableWidget_Connect_CurrentItemChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_currentItemChanged);
+		CQt.QTableWidget_Connect_ItemSelectionChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_itemSelectionChanged);
+		CQt.QTableWidget_Connect_CellPressed(obj.ObjectPtr,  => QtBeef_QTableWidget_cellPressed);
+		CQt.QTableWidget_Connect_CellClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_cellClicked);
+		CQt.QTableWidget_Connect_CellDoubleClicked(obj.ObjectPtr,  => QtBeef_QTableWidget_cellDoubleClicked);
+		CQt.QTableWidget_Connect_CellActivated(obj.ObjectPtr,  => QtBeef_QTableWidget_cellActivated);
+		CQt.QTableWidget_Connect_CellEntered(obj.ObjectPtr,  => QtBeef_QTableWidget_cellEntered);
+		CQt.QTableWidget_Connect_CellChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_cellChanged);
+		CQt.QTableWidget_Connect_CurrentCellChanged(obj.ObjectPtr,  => QtBeef_QTableWidget_currentCellChanged);
+		CQt.QAbstractItemView_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_pressed);
+		CQt.QAbstractItemView_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_clicked);
+		CQt.QAbstractItemView_Connect_DoubleClicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_doubleClicked);
+		CQt.QAbstractItemView_Connect_Activated(obj.ObjectPtr,  => QtBeef_QAbstractItemView_activated);
+		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_entered);
+		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_viewportEntered);
+		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_iconSizeChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** item)> OnItemPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** item)> OnItemChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** current, void** previous)> OnCurrentItemChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnItemSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellPressed = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellActivated = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellEntered = .() ~ _.Dispose();
+	public Event<delegate void(c_int row, c_int column)> OnCellChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int currentRow, c_int currentColumn, c_int previousRow, c_int previousColumn)> OnCurrentCellChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnEntered = .() ~ _.Dispose();
+	public Event<delegate void()> OnViewportEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QTableWidget_itemPressed(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemPressed.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_itemClicked(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemClicked.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_itemDoubleClicked(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemDoubleClicked.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_itemActivated(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemActivated.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_itemEntered(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemEntered.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_itemChanged(void* ptr, void** item)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemChanged.Invoke(item);
+	}
+	static void QtBeef_QTableWidget_currentItemChanged(void* ptr, void** current, void** previous)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentItemChanged.Invoke(current, previous);
+	}
+	static void QtBeef_QTableWidget_itemSelectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnItemSelectionChanged.Invoke();
+	}
+	static void QtBeef_QTableWidget_cellPressed(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellPressed.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_cellClicked(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellClicked.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_cellDoubleClicked(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellDoubleClicked.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_cellActivated(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellActivated.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_cellEntered(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellEntered.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_cellChanged(void* ptr, c_int row, c_int column)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCellChanged.Invoke(row, column);
+	}
+	static void QtBeef_QTableWidget_currentCellChanged(void* ptr, c_int currentRow, c_int currentColumn, c_int previousRow, c_int previousColumn)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentCellChanged.Invoke(currentRow, currentColumn, previousRow, previousColumn);
+	}
+	static void QtBeef_QAbstractItemView_pressed(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPressed.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_clicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_doubleClicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoubleClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_activated(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_entered(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEntered.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_viewportEntered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEntered.Invoke();
+	}
+	static void QtBeef_QAbstractItemView_iconSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QTableWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTableWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTableWidget_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int rows, c_int columns)
 	{
 		this.ptr = CQt.QTableWidget_new3(rows, columns);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int rows, c_int columns, IQWidget parent)
 	{
 		this.ptr = CQt.QTableWidget_new4(rows, columns, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6032,43 +6300,43 @@ extension CQt
 	
 	public function void QTableWidget_itemPressed_action(void* self, void** item);
 	[LinkName("QTableWidget_Connect_ItemPressed")]
-	public static extern void QTableWidget_Connect_ItemPressed(void* self, void** item, QTableWidget_itemPressed_action _action);
+	public static extern void QTableWidget_Connect_ItemPressed(void* self, QTableWidget_itemPressed_action _action);
 	[LinkName("QTableWidget_ItemClicked")]
 	public static extern void QTableWidget_ItemClicked(void* self, void** item);
 	
 	public function void QTableWidget_itemClicked_action(void* self, void** item);
 	[LinkName("QTableWidget_Connect_ItemClicked")]
-	public static extern void QTableWidget_Connect_ItemClicked(void* self, void** item, QTableWidget_itemClicked_action _action);
+	public static extern void QTableWidget_Connect_ItemClicked(void* self, QTableWidget_itemClicked_action _action);
 	[LinkName("QTableWidget_ItemDoubleClicked")]
 	public static extern void QTableWidget_ItemDoubleClicked(void* self, void** item);
 	
 	public function void QTableWidget_itemDoubleClicked_action(void* self, void** item);
 	[LinkName("QTableWidget_Connect_ItemDoubleClicked")]
-	public static extern void QTableWidget_Connect_ItemDoubleClicked(void* self, void** item, QTableWidget_itemDoubleClicked_action _action);
+	public static extern void QTableWidget_Connect_ItemDoubleClicked(void* self, QTableWidget_itemDoubleClicked_action _action);
 	[LinkName("QTableWidget_ItemActivated")]
 	public static extern void QTableWidget_ItemActivated(void* self, void** item);
 	
 	public function void QTableWidget_itemActivated_action(void* self, void** item);
 	[LinkName("QTableWidget_Connect_ItemActivated")]
-	public static extern void QTableWidget_Connect_ItemActivated(void* self, void** item, QTableWidget_itemActivated_action _action);
+	public static extern void QTableWidget_Connect_ItemActivated(void* self, QTableWidget_itemActivated_action _action);
 	[LinkName("QTableWidget_ItemEntered")]
 	public static extern void QTableWidget_ItemEntered(void* self, void** item);
 	
 	public function void QTableWidget_itemEntered_action(void* self, void** item);
 	[LinkName("QTableWidget_Connect_ItemEntered")]
-	public static extern void QTableWidget_Connect_ItemEntered(void* self, void** item, QTableWidget_itemEntered_action _action);
+	public static extern void QTableWidget_Connect_ItemEntered(void* self, QTableWidget_itemEntered_action _action);
 	[LinkName("QTableWidget_ItemChanged")]
 	public static extern void QTableWidget_ItemChanged(void* self, void** item);
 	
 	public function void QTableWidget_itemChanged_action(void* self, void** item);
 	[LinkName("QTableWidget_Connect_ItemChanged")]
-	public static extern void QTableWidget_Connect_ItemChanged(void* self, void** item, QTableWidget_itemChanged_action _action);
+	public static extern void QTableWidget_Connect_ItemChanged(void* self, QTableWidget_itemChanged_action _action);
 	[LinkName("QTableWidget_CurrentItemChanged")]
 	public static extern void QTableWidget_CurrentItemChanged(void* self, void** current, void** previous);
 	
 	public function void QTableWidget_currentItemChanged_action(void* self, void** current, void** previous);
 	[LinkName("QTableWidget_Connect_CurrentItemChanged")]
-	public static extern void QTableWidget_Connect_CurrentItemChanged(void* self, void** current, void** previous, QTableWidget_currentItemChanged_action _action);
+	public static extern void QTableWidget_Connect_CurrentItemChanged(void* self, QTableWidget_currentItemChanged_action _action);
 	[LinkName("QTableWidget_ItemSelectionChanged")]
 	public static extern void QTableWidget_ItemSelectionChanged(void* self);
 	
@@ -6080,43 +6348,43 @@ extension CQt
 	
 	public function void QTableWidget_cellPressed_action(void* self, c_int row, c_int column);
 	[LinkName("QTableWidget_Connect_CellPressed")]
-	public static extern void QTableWidget_Connect_CellPressed(void* self, c_int row, c_int column, QTableWidget_cellPressed_action _action);
+	public static extern void QTableWidget_Connect_CellPressed(void* self, QTableWidget_cellPressed_action _action);
 	[LinkName("QTableWidget_CellClicked")]
 	public static extern void QTableWidget_CellClicked(void* self, c_int row, c_int column);
 	
 	public function void QTableWidget_cellClicked_action(void* self, c_int row, c_int column);
 	[LinkName("QTableWidget_Connect_CellClicked")]
-	public static extern void QTableWidget_Connect_CellClicked(void* self, c_int row, c_int column, QTableWidget_cellClicked_action _action);
+	public static extern void QTableWidget_Connect_CellClicked(void* self, QTableWidget_cellClicked_action _action);
 	[LinkName("QTableWidget_CellDoubleClicked")]
 	public static extern void QTableWidget_CellDoubleClicked(void* self, c_int row, c_int column);
 	
 	public function void QTableWidget_cellDoubleClicked_action(void* self, c_int row, c_int column);
 	[LinkName("QTableWidget_Connect_CellDoubleClicked")]
-	public static extern void QTableWidget_Connect_CellDoubleClicked(void* self, c_int row, c_int column, QTableWidget_cellDoubleClicked_action _action);
+	public static extern void QTableWidget_Connect_CellDoubleClicked(void* self, QTableWidget_cellDoubleClicked_action _action);
 	[LinkName("QTableWidget_CellActivated")]
 	public static extern void QTableWidget_CellActivated(void* self, c_int row, c_int column);
 	
 	public function void QTableWidget_cellActivated_action(void* self, c_int row, c_int column);
 	[LinkName("QTableWidget_Connect_CellActivated")]
-	public static extern void QTableWidget_Connect_CellActivated(void* self, c_int row, c_int column, QTableWidget_cellActivated_action _action);
+	public static extern void QTableWidget_Connect_CellActivated(void* self, QTableWidget_cellActivated_action _action);
 	[LinkName("QTableWidget_CellEntered")]
 	public static extern void QTableWidget_CellEntered(void* self, c_int row, c_int column);
 	
 	public function void QTableWidget_cellEntered_action(void* self, c_int row, c_int column);
 	[LinkName("QTableWidget_Connect_CellEntered")]
-	public static extern void QTableWidget_Connect_CellEntered(void* self, c_int row, c_int column, QTableWidget_cellEntered_action _action);
+	public static extern void QTableWidget_Connect_CellEntered(void* self, QTableWidget_cellEntered_action _action);
 	[LinkName("QTableWidget_CellChanged")]
 	public static extern void QTableWidget_CellChanged(void* self, c_int row, c_int column);
 	
 	public function void QTableWidget_cellChanged_action(void* self, c_int row, c_int column);
 	[LinkName("QTableWidget_Connect_CellChanged")]
-	public static extern void QTableWidget_Connect_CellChanged(void* self, c_int row, c_int column, QTableWidget_cellChanged_action _action);
+	public static extern void QTableWidget_Connect_CellChanged(void* self, QTableWidget_cellChanged_action _action);
 	[LinkName("QTableWidget_CurrentCellChanged")]
 	public static extern void QTableWidget_CurrentCellChanged(void* self, c_int currentRow, c_int currentColumn, c_int previousRow, c_int previousColumn);
 	
 	public function void QTableWidget_currentCellChanged_action(void* self, c_int currentRow, c_int currentColumn, c_int previousRow, c_int previousColumn);
 	[LinkName("QTableWidget_Connect_CurrentCellChanged")]
-	public static extern void QTableWidget_Connect_CurrentCellChanged(void* self, c_int currentRow, c_int currentColumn, c_int previousRow, c_int previousColumn, QTableWidget_currentCellChanged_action _action);
+	public static extern void QTableWidget_Connect_CurrentCellChanged(void* self, QTableWidget_currentCellChanged_action _action);
 	[LinkName("QTableWidget_Event")]
 	public static extern bool QTableWidget_Event(void* self, void** e);
 	[LinkName("QTableWidget_MimeTypes")]

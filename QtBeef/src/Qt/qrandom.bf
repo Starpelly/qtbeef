@@ -119,29 +119,44 @@ class QRandomGenerator : IQRandomGenerator
 {
 	private QRandomGenerator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRandomGenerator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRandomGenerator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint* seedBuffer, void* lenVal)
 	{
 		this.ptr = CQt.QRandomGenerator_new2(seedBuffer, lenVal);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint* begin, c_uint* end)
 	{
 		this.ptr = CQt.QRandomGenerator_new3(begin, end);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRandomGenerator other)
 	{
 		this.ptr = CQt.QRandomGenerator_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint seedValue)
 	{
 		this.ptr = CQt.QRandomGenerator_new5(seedValue);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -436,33 +451,49 @@ class QRandomGenerator64 : IQRandomGenerator64, IQRandomGenerator
 {
 	private QRandomGenerator64_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRandomGenerator64_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRandomGenerator64_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint* seedBuffer, void* lenVal)
 	{
 		this.ptr = CQt.QRandomGenerator64_new2(seedBuffer, lenVal);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint* begin, c_uint* end)
 	{
 		this.ptr = CQt.QRandomGenerator64_new3(begin, end);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRandomGenerator other)
 	{
 		this.ptr = CQt.QRandomGenerator64_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRandomGenerator64 param1)
 	{
 		this.ptr = CQt.QRandomGenerator64_new5((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint seedValue)
 	{
 		this.ptr = CQt.QRandomGenerator64_new6(seedValue);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

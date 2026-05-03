@@ -1659,41 +1659,139 @@ class QDialogButtonBox : IQDialogButtonBox, IQWidget, IQObject, IQPaintDevice
 {
 	private QDialogButtonBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QDialogButtonBox_clicked,
+		QDialogButtonBox_accepted,
+		QDialogButtonBox_helpRequested,
+		QDialogButtonBox_rejected,
+		QDialogButtonBox_windowTitleChanged,
+		QDialogButtonBox_windowIconChanged,
+		QDialogButtonBox_windowIconTextChanged,
+		QDialogButtonBox_customContextMenuRequested,
+		QDialogButtonBox_destroyed,
+		QDialogButtonBox_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDialogButtonBox_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QDialogButtonBox_clicked);
+		CQt.QDialogButtonBox_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialogButtonBox_accepted);
+		CQt.QDialogButtonBox_Connect_HelpRequested(obj.ObjectPtr,  => QtBeef_QDialogButtonBox_helpRequested);
+		CQt.QDialogButtonBox_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialogButtonBox_rejected);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** button)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void()> OnAccepted = .() ~ _.Dispose();
+	public Event<delegate void()> OnHelpRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnRejected = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QDialogButtonBox_clicked(void* ptr, void** button)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(button);
+	}
+	static void QtBeef_QDialogButtonBox_accepted(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccepted.Invoke();
+	}
+	static void QtBeef_QDialogButtonBox_helpRequested(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHelpRequested.Invoke();
+	}
+	static void QtBeef_QDialogButtonBox_rejected(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QDialogButtonBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDialogButtonBox_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDialogButtonBox_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation)
 	{
 		this.ptr = CQt.QDialogButtonBox_new3(orientation);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* buttons)
 	{
 		this.ptr = CQt.QDialogButtonBox_new4(buttons);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* buttons, Qt_Orientation orientation)
 	{
 		this.ptr = CQt.QDialogButtonBox_new5(buttons, orientation);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation, IQWidget parent)
 	{
 		this.ptr = CQt.QDialogButtonBox_new6(orientation, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* buttons, IQWidget parent)
 	{
 		this.ptr = CQt.QDialogButtonBox_new7(buttons, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* buttons, Qt_Orientation orientation, IQWidget parent)
 	{
 		this.ptr = CQt.QDialogButtonBox_new8(buttons, orientation, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3406,7 +3504,7 @@ extension CQt
 	
 	public function void QDialogButtonBox_clicked_action(void* self, void** button);
 	[LinkName("QDialogButtonBox_Connect_Clicked")]
-	public static extern void QDialogButtonBox_Connect_Clicked(void* self, void** button, QDialogButtonBox_clicked_action _action);
+	public static extern void QDialogButtonBox_Connect_Clicked(void* self, QDialogButtonBox_clicked_action _action);
 	[LinkName("QDialogButtonBox_Accepted")]
 	public static extern void QDialogButtonBox_Accepted(void* self);
 	

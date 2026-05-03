@@ -63,33 +63,49 @@ class QTextBoundaryFinder : IQTextBoundaryFinder
 {
 	private QTextBoundaryFinder_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextBoundaryFinder_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextBoundaryFinder_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextBoundaryFinder other)
 	{
 		this.ptr = CQt.QTextBoundaryFinder_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QTextBoundaryFinder_BoundaryType type, String stringVal)
 	{
 		this.ptr = CQt.QTextBoundaryFinder_new3(type, libqt_string(stringVal));
+		QtBf_ConnectSignals(this);
 	}
 	public this(QTextBoundaryFinder_BoundaryType type, IQChar chars, void* length)
 	{
 		this.ptr = CQt.QTextBoundaryFinder_new4(type, (.)chars?.ObjectPtr, length);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QTextBoundaryFinder_BoundaryType type, IQChar chars, void* length, c_uchar* buffer)
 	{
 		this.ptr = CQt.QTextBoundaryFinder_new5(type, (.)chars?.ObjectPtr, length, buffer);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QTextBoundaryFinder_BoundaryType type, IQChar chars, void* length, c_uchar* buffer, void* bufferSize)
 	{
 		this.ptr = CQt.QTextBoundaryFinder_new6(type, (.)chars?.ObjectPtr, length, buffer, bufferSize);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

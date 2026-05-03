@@ -1659,21 +1659,98 @@ class QMdiSubWindow : IQMdiSubWindow, IQWidget, IQObject, IQPaintDevice
 {
 	private QMdiSubWindow_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QMdiSubWindow_windowStateChanged,
+		QMdiSubWindow_aboutToActivate,
+		QMdiSubWindow_windowTitleChanged,
+		QMdiSubWindow_windowIconChanged,
+		QMdiSubWindow_windowIconTextChanged,
+		QMdiSubWindow_customContextMenuRequested,
+		QMdiSubWindow_destroyed,
+		QMdiSubWindow_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMdiSubWindow_Connect_WindowStateChanged(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_windowStateChanged);
+		CQt.QMdiSubWindow_Connect_AboutToActivate(obj.ObjectPtr,  => QtBeef_QMdiSubWindow_aboutToActivate);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void* oldState, void* newState)> OnWindowStateChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnAboutToActivate = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QMdiSubWindow_windowStateChanged(void* ptr, void* oldState, void* newState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowStateChanged.Invoke(oldState, newState);
+	}
+	static void QtBeef_QMdiSubWindow_aboutToActivate(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAboutToActivate.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QMdiSubWindow_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QMdiSubWindow_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMdiSubWindow_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QMdiSubWindow_new3((.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3378,7 +3455,7 @@ extension CQt
 	
 	public function void QMdiSubWindow_windowStateChanged_action(void* self, void* oldState, void* newState);
 	[LinkName("QMdiSubWindow_Connect_WindowStateChanged")]
-	public static extern void QMdiSubWindow_Connect_WindowStateChanged(void* self, void* oldState, void* newState, QMdiSubWindow_windowStateChanged_action _action);
+	public static extern void QMdiSubWindow_Connect_WindowStateChanged(void* self, QMdiSubWindow_windowStateChanged_action _action);
 	[LinkName("QMdiSubWindow_AboutToActivate")]
 	public static extern void QMdiSubWindow_AboutToActivate(void* self);
 	

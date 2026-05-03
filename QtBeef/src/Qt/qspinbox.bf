@@ -1811,17 +1811,101 @@ class QSpinBox : IQSpinBox, IQAbstractSpinBox, IQWidget, IQObject, IQPaintDevice
 {
 	private QSpinBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QSpinBox_valueChanged,
+		QSpinBox_textChanged,
+		QSpinBox_editingFinished,
+		QSpinBox_windowTitleChanged,
+		QSpinBox_windowIconChanged,
+		QSpinBox_windowIconTextChanged,
+		QSpinBox_customContextMenuRequested,
+		QSpinBox_destroyed,
+		QSpinBox_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSpinBox_Connect_ValueChanged(obj.ObjectPtr,  => QtBeef_QSpinBox_valueChanged);
+		CQt.QSpinBox_Connect_TextChanged(obj.ObjectPtr,  => QtBeef_QSpinBox_textChanged);
+		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_editingFinished);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int param1)> OnValueChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnTextChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QSpinBox_valueChanged(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValueChanged.Invoke(param1);
+	}
+	static void QtBeef_QSpinBox_textChanged(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QAbstractSpinBox_editingFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSpinBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QSpinBox_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSpinBox_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3690,13 +3774,13 @@ extension CQt
 	
 	public function void QSpinBox_valueChanged_action(void* self, c_int param1);
 	[LinkName("QSpinBox_Connect_ValueChanged")]
-	public static extern void QSpinBox_Connect_ValueChanged(void* self, c_int param1, QSpinBox_valueChanged_action _action);
+	public static extern void QSpinBox_Connect_ValueChanged(void* self, QSpinBox_valueChanged_action _action);
 	[LinkName("QSpinBox_TextChanged")]
 	public static extern void QSpinBox_TextChanged(void* self, libqt_string param1);
 	
 	public function void QSpinBox_textChanged_action(void* self, libqt_string param1);
 	[LinkName("QSpinBox_Connect_TextChanged")]
-	public static extern void QSpinBox_Connect_TextChanged(void* self, libqt_string param1, QSpinBox_textChanged_action _action);
+	public static extern void QSpinBox_Connect_TextChanged(void* self, QSpinBox_textChanged_action _action);
 	[LinkName("QSpinBox_Tr2")]
 	public static extern libqt_string QSpinBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QSpinBox_Tr3")]
@@ -5510,17 +5594,101 @@ class QDoubleSpinBox : IQDoubleSpinBox, IQAbstractSpinBox, IQWidget, IQObject, I
 {
 	private QDoubleSpinBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QDoubleSpinBox_valueChanged,
+		QDoubleSpinBox_textChanged,
+		QDoubleSpinBox_editingFinished,
+		QDoubleSpinBox_windowTitleChanged,
+		QDoubleSpinBox_windowIconChanged,
+		QDoubleSpinBox_windowIconTextChanged,
+		QDoubleSpinBox_customContextMenuRequested,
+		QDoubleSpinBox_destroyed,
+		QDoubleSpinBox_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDoubleSpinBox_Connect_ValueChanged(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_valueChanged);
+		CQt.QDoubleSpinBox_Connect_TextChanged(obj.ObjectPtr,  => QtBeef_QDoubleSpinBox_textChanged);
+		CQt.QAbstractSpinBox_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QAbstractSpinBox_editingFinished);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(double param1)> OnValueChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnTextChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QDoubleSpinBox_valueChanged(void* ptr, double param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnValueChanged.Invoke(param1);
+	}
+	static void QtBeef_QDoubleSpinBox_textChanged(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QAbstractSpinBox_editingFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QDoubleSpinBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDoubleSpinBox_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDoubleSpinBox_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7387,13 +7555,13 @@ extension CQt
 	
 	public function void QDoubleSpinBox_valueChanged_action(void* self, double param1);
 	[LinkName("QDoubleSpinBox_Connect_ValueChanged")]
-	public static extern void QDoubleSpinBox_Connect_ValueChanged(void* self, double param1, QDoubleSpinBox_valueChanged_action _action);
+	public static extern void QDoubleSpinBox_Connect_ValueChanged(void* self, QDoubleSpinBox_valueChanged_action _action);
 	[LinkName("QDoubleSpinBox_TextChanged")]
 	public static extern void QDoubleSpinBox_TextChanged(void* self, libqt_string param1);
 	
 	public function void QDoubleSpinBox_textChanged_action(void* self, libqt_string param1);
 	[LinkName("QDoubleSpinBox_Connect_TextChanged")]
-	public static extern void QDoubleSpinBox_Connect_TextChanged(void* self, libqt_string param1, QDoubleSpinBox_textChanged_action _action);
+	public static extern void QDoubleSpinBox_Connect_TextChanged(void* self, QDoubleSpinBox_textChanged_action _action);
 	[LinkName("QDoubleSpinBox_Tr2")]
 	public static extern libqt_string QDoubleSpinBox_Tr2(c_char* s, c_char* c);
 	[LinkName("QDoubleSpinBox_Tr3")]

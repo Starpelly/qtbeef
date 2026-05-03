@@ -2535,17 +2535,221 @@ class QHeaderView : IQHeaderView, IQAbstractItemView, IQAbstractScrollArea, IQFr
 {
 	private QHeaderView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QHeaderView_sectionMoved,
+		QHeaderView_sectionResized,
+		QHeaderView_sectionPressed,
+		QHeaderView_sectionClicked,
+		QHeaderView_sectionEntered,
+		QHeaderView_sectionDoubleClicked,
+		QHeaderView_sectionCountChanged,
+		QHeaderView_sectionHandleDoubleClicked,
+		QHeaderView_geometriesChanged,
+		QHeaderView_sortIndicatorChanged,
+		QHeaderView_sortIndicatorClearableChanged,
+		QHeaderView_pressed,
+		QHeaderView_clicked,
+		QHeaderView_doubleClicked,
+		QHeaderView_activated,
+		QHeaderView_entered,
+		QHeaderView_viewportEntered,
+		QHeaderView_iconSizeChanged,
+		QHeaderView_windowTitleChanged,
+		QHeaderView_windowIconChanged,
+		QHeaderView_windowIconTextChanged,
+		QHeaderView_customContextMenuRequested,
+		QHeaderView_destroyed,
+		QHeaderView_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QHeaderView_Connect_SectionMoved(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionMoved);
+		CQt.QHeaderView_Connect_SectionResized(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionResized);
+		CQt.QHeaderView_Connect_SectionPressed(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionPressed);
+		CQt.QHeaderView_Connect_SectionClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionClicked);
+		CQt.QHeaderView_Connect_SectionEntered(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionEntered);
+		CQt.QHeaderView_Connect_SectionDoubleClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionDoubleClicked);
+		CQt.QHeaderView_Connect_SectionCountChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionCountChanged);
+		CQt.QHeaderView_Connect_SectionHandleDoubleClicked(obj.ObjectPtr,  => QtBeef_QHeaderView_sectionHandleDoubleClicked);
+		CQt.QHeaderView_Connect_GeometriesChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_geometriesChanged);
+		CQt.QHeaderView_Connect_SortIndicatorChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_sortIndicatorChanged);
+		CQt.QHeaderView_Connect_SortIndicatorClearableChanged(obj.ObjectPtr,  => QtBeef_QHeaderView_sortIndicatorClearableChanged);
+		CQt.QAbstractItemView_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_pressed);
+		CQt.QAbstractItemView_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_clicked);
+		CQt.QAbstractItemView_Connect_DoubleClicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_doubleClicked);
+		CQt.QAbstractItemView_Connect_Activated(obj.ObjectPtr,  => QtBeef_QAbstractItemView_activated);
+		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_entered);
+		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_viewportEntered);
+		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_iconSizeChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex)> OnSectionMoved = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex, c_int oldSize, c_int newSize)> OnSectionResized = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionPressed = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionEntered = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int oldCount, c_int newCount)> OnSectionCountChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex)> OnSectionHandleDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void()> OnGeometriesChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int logicalIndex, Qt_SortOrder order)> OnSortIndicatorChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool clearable)> OnSortIndicatorClearableChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnEntered = .() ~ _.Dispose();
+	public Event<delegate void()> OnViewportEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QHeaderView_sectionMoved(void* ptr, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionMoved.Invoke(logicalIndex, oldVisualIndex, newVisualIndex);
+	}
+	static void QtBeef_QHeaderView_sectionResized(void* ptr, c_int logicalIndex, c_int oldSize, c_int newSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionResized.Invoke(logicalIndex, oldSize, newSize);
+	}
+	static void QtBeef_QHeaderView_sectionPressed(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionPressed.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_sectionClicked(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionClicked.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_sectionEntered(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionEntered.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_sectionDoubleClicked(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionDoubleClicked.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_sectionCountChanged(void* ptr, c_int oldCount, c_int newCount)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionCountChanged.Invoke(oldCount, newCount);
+	}
+	static void QtBeef_QHeaderView_sectionHandleDoubleClicked(void* ptr, c_int logicalIndex)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSectionHandleDoubleClicked.Invoke(logicalIndex);
+	}
+	static void QtBeef_QHeaderView_geometriesChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGeometriesChanged.Invoke();
+	}
+	static void QtBeef_QHeaderView_sortIndicatorChanged(void* ptr, c_int logicalIndex, Qt_SortOrder order)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortIndicatorChanged.Invoke(logicalIndex, order);
+	}
+	static void QtBeef_QHeaderView_sortIndicatorClearableChanged(void* ptr, bool clearable)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSortIndicatorClearableChanged.Invoke(clearable);
+	}
+	static void QtBeef_QAbstractItemView_pressed(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPressed.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_clicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_doubleClicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoubleClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_activated(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_entered(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEntered.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_viewportEntered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEntered.Invoke();
+	}
+	static void QtBeef_QAbstractItemView_iconSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QHeaderView_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation)
 	{
 		this.ptr = CQt.QHeaderView_new(orientation);
+		QtBf_ConnectSignals(this);
 	}
 	public this(Qt_Orientation orientation, IQWidget parent)
 	{
 		this.ptr = CQt.QHeaderView_new2(orientation, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5232,49 +5436,49 @@ extension CQt
 	
 	public function void QHeaderView_sectionMoved_action(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex);
 	[LinkName("QHeaderView_Connect_SectionMoved")]
-	public static extern void QHeaderView_Connect_SectionMoved(void* self, c_int logicalIndex, c_int oldVisualIndex, c_int newVisualIndex, QHeaderView_sectionMoved_action _action);
+	public static extern void QHeaderView_Connect_SectionMoved(void* self, QHeaderView_sectionMoved_action _action);
 	[LinkName("QHeaderView_SectionResized")]
 	public static extern void QHeaderView_SectionResized(void* self, c_int logicalIndex, c_int oldSize, c_int newSize);
 	
 	public function void QHeaderView_sectionResized_action(void* self, c_int logicalIndex, c_int oldSize, c_int newSize);
 	[LinkName("QHeaderView_Connect_SectionResized")]
-	public static extern void QHeaderView_Connect_SectionResized(void* self, c_int logicalIndex, c_int oldSize, c_int newSize, QHeaderView_sectionResized_action _action);
+	public static extern void QHeaderView_Connect_SectionResized(void* self, QHeaderView_sectionResized_action _action);
 	[LinkName("QHeaderView_SectionPressed")]
 	public static extern void QHeaderView_SectionPressed(void* self, c_int logicalIndex);
 	
 	public function void QHeaderView_sectionPressed_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionPressed")]
-	public static extern void QHeaderView_Connect_SectionPressed(void* self, c_int logicalIndex, QHeaderView_sectionPressed_action _action);
+	public static extern void QHeaderView_Connect_SectionPressed(void* self, QHeaderView_sectionPressed_action _action);
 	[LinkName("QHeaderView_SectionClicked")]
 	public static extern void QHeaderView_SectionClicked(void* self, c_int logicalIndex);
 	
 	public function void QHeaderView_sectionClicked_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionClicked")]
-	public static extern void QHeaderView_Connect_SectionClicked(void* self, c_int logicalIndex, QHeaderView_sectionClicked_action _action);
+	public static extern void QHeaderView_Connect_SectionClicked(void* self, QHeaderView_sectionClicked_action _action);
 	[LinkName("QHeaderView_SectionEntered")]
 	public static extern void QHeaderView_SectionEntered(void* self, c_int logicalIndex);
 	
 	public function void QHeaderView_sectionEntered_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionEntered")]
-	public static extern void QHeaderView_Connect_SectionEntered(void* self, c_int logicalIndex, QHeaderView_sectionEntered_action _action);
+	public static extern void QHeaderView_Connect_SectionEntered(void* self, QHeaderView_sectionEntered_action _action);
 	[LinkName("QHeaderView_SectionDoubleClicked")]
 	public static extern void QHeaderView_SectionDoubleClicked(void* self, c_int logicalIndex);
 	
 	public function void QHeaderView_sectionDoubleClicked_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionDoubleClicked")]
-	public static extern void QHeaderView_Connect_SectionDoubleClicked(void* self, c_int logicalIndex, QHeaderView_sectionDoubleClicked_action _action);
+	public static extern void QHeaderView_Connect_SectionDoubleClicked(void* self, QHeaderView_sectionDoubleClicked_action _action);
 	[LinkName("QHeaderView_SectionCountChanged")]
 	public static extern void QHeaderView_SectionCountChanged(void* self, c_int oldCount, c_int newCount);
 	
 	public function void QHeaderView_sectionCountChanged_action(void* self, c_int oldCount, c_int newCount);
 	[LinkName("QHeaderView_Connect_SectionCountChanged")]
-	public static extern void QHeaderView_Connect_SectionCountChanged(void* self, c_int oldCount, c_int newCount, QHeaderView_sectionCountChanged_action _action);
+	public static extern void QHeaderView_Connect_SectionCountChanged(void* self, QHeaderView_sectionCountChanged_action _action);
 	[LinkName("QHeaderView_SectionHandleDoubleClicked")]
 	public static extern void QHeaderView_SectionHandleDoubleClicked(void* self, c_int logicalIndex);
 	
 	public function void QHeaderView_sectionHandleDoubleClicked_action(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_Connect_SectionHandleDoubleClicked")]
-	public static extern void QHeaderView_Connect_SectionHandleDoubleClicked(void* self, c_int logicalIndex, QHeaderView_sectionHandleDoubleClicked_action _action);
+	public static extern void QHeaderView_Connect_SectionHandleDoubleClicked(void* self, QHeaderView_sectionHandleDoubleClicked_action _action);
 	[LinkName("QHeaderView_GeometriesChanged")]
 	public static extern void QHeaderView_GeometriesChanged(void* self);
 	
@@ -5286,13 +5490,13 @@ extension CQt
 	
 	public function void QHeaderView_sortIndicatorChanged_action(void* self, c_int logicalIndex, Qt_SortOrder order);
 	[LinkName("QHeaderView_Connect_SortIndicatorChanged")]
-	public static extern void QHeaderView_Connect_SortIndicatorChanged(void* self, c_int logicalIndex, Qt_SortOrder order, QHeaderView_sortIndicatorChanged_action _action);
+	public static extern void QHeaderView_Connect_SortIndicatorChanged(void* self, QHeaderView_sortIndicatorChanged_action _action);
 	[LinkName("QHeaderView_SortIndicatorClearableChanged")]
 	public static extern void QHeaderView_SortIndicatorClearableChanged(void* self, bool clearable);
 	
 	public function void QHeaderView_sortIndicatorClearableChanged_action(void* self, bool clearable);
 	[LinkName("QHeaderView_Connect_SortIndicatorClearableChanged")]
-	public static extern void QHeaderView_Connect_SortIndicatorClearableChanged(void* self, bool clearable, QHeaderView_sortIndicatorClearableChanged_action _action);
+	public static extern void QHeaderView_Connect_SortIndicatorClearableChanged(void* self, QHeaderView_sortIndicatorClearableChanged_action _action);
 	[LinkName("QHeaderView_UpdateSection")]
 	public static extern void QHeaderView_UpdateSection(void* self, c_int logicalIndex);
 	[LinkName("QHeaderView_ResizeSections2")]

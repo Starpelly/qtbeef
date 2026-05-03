@@ -103,25 +103,39 @@ class QUuid : IQUuid
 {
 	private QUuid_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUuid_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUuid other)
 	{
 		this.ptr = CQt.QUuid_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUuid_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uint l, c_ushort w1, c_ushort w2, c_uchar b1, c_uchar b2, c_uchar b3, c_uchar b4, c_uchar b5, c_uchar b6, c_uchar b7, c_uchar b8)
 	{
 		this.ptr = CQt.QUuid_new4(l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAnyStringView stringVal)
 	{
 		this.ptr = CQt.QUuid_new5((.)stringVal?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

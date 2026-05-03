@@ -415,17 +415,85 @@ class QSequentialAnimationGroup : IQSequentialAnimationGroup, IQAnimationGroup, 
 {
 	private QSequentialAnimationGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QSequentialAnimationGroup_currentAnimationChanged,
+		QSequentialAnimationGroup_finished,
+		QSequentialAnimationGroup_stateChanged,
+		QSequentialAnimationGroup_currentLoopChanged,
+		QSequentialAnimationGroup_directionChanged,
+		QSequentialAnimationGroup_destroyed,
+		QSequentialAnimationGroup_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSequentialAnimationGroup_Connect_CurrentAnimationChanged(obj.ObjectPtr,  => QtBeef_QSequentialAnimationGroup_currentAnimationChanged);
+		CQt.QAbstractAnimation_Connect_Finished(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_finished);
+		CQt.QAbstractAnimation_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_stateChanged);
+		CQt.QAbstractAnimation_Connect_CurrentLoopChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_currentLoopChanged);
+		CQt.QAbstractAnimation_Connect_DirectionChanged(obj.ObjectPtr,  => QtBeef_QAbstractAnimation_directionChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** current)> OnCurrentAnimationChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void(QAbstractAnimation_State newState, QAbstractAnimation_State oldState)> OnStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int currentLoop)> OnCurrentLoopChanged = .() ~ _.Dispose();
+	public Event<delegate void(QAbstractAnimation_Direction param1)> OnDirectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QSequentialAnimationGroup_currentAnimationChanged(void* ptr, void** current)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentAnimationChanged.Invoke(current);
+	}
+	static void QtBeef_QAbstractAnimation_finished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke();
+	}
+	static void QtBeef_QAbstractAnimation_stateChanged(void* ptr, QAbstractAnimation_State newState, QAbstractAnimation_State oldState)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStateChanged.Invoke(newState, oldState);
+	}
+	static void QtBeef_QAbstractAnimation_currentLoopChanged(void* ptr, c_int currentLoop)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentLoopChanged.Invoke(currentLoop);
+	}
+	static void QtBeef_QAbstractAnimation_directionChanged(void* ptr, QAbstractAnimation_Direction param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDirectionChanged.Invoke(param1);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSequentialAnimationGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSequentialAnimationGroup_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSequentialAnimationGroup_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -860,7 +928,7 @@ extension CQt
 	
 	public function void QSequentialAnimationGroup_currentAnimationChanged_action(void* self, void** current);
 	[LinkName("QSequentialAnimationGroup_Connect_CurrentAnimationChanged")]
-	public static extern void QSequentialAnimationGroup_Connect_CurrentAnimationChanged(void* self, void** current, QSequentialAnimationGroup_currentAnimationChanged_action _action);
+	public static extern void QSequentialAnimationGroup_Connect_CurrentAnimationChanged(void* self, QSequentialAnimationGroup_currentAnimationChanged_action _action);
 	[LinkName("QSequentialAnimationGroup_Event")]
 	public static extern bool QSequentialAnimationGroup_Event(void* self, void** event);
 	[LinkName("QSequentialAnimationGroup_UpdateCurrentTime")]

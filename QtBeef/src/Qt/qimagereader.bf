@@ -231,29 +231,44 @@ class QImageReader : IQImageReader
 {
 	private QImageReader_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QImageReader_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QImageReader_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device)
 	{
 		this.ptr = CQt.QImageReader_new2((.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QImageReader_new3(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device, void** format)
 	{
 		this.ptr = CQt.QImageReader_new4((.)device?.ObjectPtr, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void** format)
 	{
 		this.ptr = CQt.QImageReader_new5(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

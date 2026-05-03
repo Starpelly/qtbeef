@@ -183,21 +183,34 @@ class QGraphicsLayoutItem : IQGraphicsLayoutItem
 {
 	private QGraphicsLayoutItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGraphicsLayoutItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsLayoutItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsLayoutItem parent)
 	{
 		this.ptr = CQt.QGraphicsLayoutItem_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsLayoutItem parent, bool isLayout)
 	{
 		this.ptr = CQt.QGraphicsLayoutItem_new3((.)parent?.ObjectPtr, isLayout);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

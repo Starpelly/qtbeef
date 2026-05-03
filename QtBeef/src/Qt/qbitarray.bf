@@ -119,25 +119,39 @@ class QBitArray : IQBitArray
 {
 	private QBitArray_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBitArray_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBitArray_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* size)
 	{
 		this.ptr = CQt.QBitArray_new2(size);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitArray other)
 	{
 		this.ptr = CQt.QBitArray_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* size, bool val)
 	{
 		this.ptr = CQt.QBitArray_new4(size, val);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -346,13 +360,24 @@ class QBitRef : IQBitRef
 {
 	private QBitRef_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBitRef_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitRef other)
 	{
 		this.ptr = CQt.QBitRef_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

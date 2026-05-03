@@ -39,13 +39,24 @@ class QJsonParseError : IQJsonParseError
 {
 	private QJsonParseError_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonParseError_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonParseError other)
 	{
 		this.ptr = CQt.QJsonParseError_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -174,25 +185,39 @@ class QJsonDocument : IQJsonDocument
 {
 	private QJsonDocument_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QJsonDocument_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QJsonDocument_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonObject object)
 	{
 		this.ptr = CQt.QJsonDocument_new2((.)object?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonArray array)
 	{
 		this.ptr = CQt.QJsonDocument_new3((.)array?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQJsonDocument other)
 	{
 		this.ptr = CQt.QJsonDocument_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -1779,25 +1779,119 @@ class QMenu : IQMenu, IQWidget, IQObject, IQPaintDevice
 {
 	private QMenu_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QMenu_aboutToShow,
+		QMenu_aboutToHide,
+		QMenu_triggered,
+		QMenu_hovered,
+		QMenu_windowTitleChanged,
+		QMenu_windowIconChanged,
+		QMenu_windowIconTextChanged,
+		QMenu_customContextMenuRequested,
+		QMenu_destroyed,
+		QMenu_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMenu_Connect_AboutToShow(obj.ObjectPtr,  => QtBeef_QMenu_aboutToShow);
+		CQt.QMenu_Connect_AboutToHide(obj.ObjectPtr,  => QtBeef_QMenu_aboutToHide);
+		CQt.QMenu_Connect_Triggered(obj.ObjectPtr,  => QtBeef_QMenu_triggered);
+		CQt.QMenu_Connect_Hovered(obj.ObjectPtr,  => QtBeef_QMenu_hovered);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnAboutToShow = .() ~ _.Dispose();
+	public Event<delegate void()> OnAboutToHide = .() ~ _.Dispose();
+	public Event<delegate void(void** action)> OnTriggered = .() ~ _.Dispose();
+	public Event<delegate void(void** action)> OnHovered = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QMenu_aboutToShow(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAboutToShow.Invoke();
+	}
+	static void QtBeef_QMenu_aboutToHide(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAboutToHide.Invoke();
+	}
+	static void QtBeef_QMenu_triggered(void* ptr, void** action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTriggered.Invoke(action);
+	}
+	static void QtBeef_QMenu_hovered(void* ptr, void** action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHovered.Invoke(action);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QMenu_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QMenu_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMenu_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title)
 	{
 		this.ptr = CQt.QMenu_new3(libqt_string(title));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title, IQWidget parent)
 	{
 		this.ptr = CQt.QMenu_new4(libqt_string(title), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3684,13 +3778,13 @@ extension CQt
 	
 	public function void QMenu_triggered_action(void* self, void** action);
 	[LinkName("QMenu_Connect_Triggered")]
-	public static extern void QMenu_Connect_Triggered(void* self, void** action, QMenu_triggered_action _action);
+	public static extern void QMenu_Connect_Triggered(void* self, QMenu_triggered_action _action);
 	[LinkName("QMenu_Hovered")]
 	public static extern void QMenu_Hovered(void* self, void** action);
 	
 	public function void QMenu_hovered_action(void* self, void** action);
 	[LinkName("QMenu_Connect_Hovered")]
-	public static extern void QMenu_Connect_Hovered(void* self, void** action, QMenu_hovered_action _action);
+	public static extern void QMenu_Connect_Hovered(void* self, QMenu_hovered_action _action);
 	[LinkName("QMenu_ColumnCount")]
 	public static extern c_int QMenu_ColumnCount(void* self);
 	[LinkName("QMenu_ChangeEvent")]

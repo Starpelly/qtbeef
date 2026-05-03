@@ -371,37 +371,54 @@ class QBitmap : IQBitmap, IQPixmap, IQPaintDevice
 {
 	private QBitmap_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QBitmap_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QBitmap_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPixmap param1)
 	{
 		this.ptr = CQt.QBitmap_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int w, c_int h)
 	{
 		this.ptr = CQt.QBitmap_new3(w, h);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize param1)
 	{
 		this.ptr = CQt.QBitmap_new4((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QBitmap_new5(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQBitmap param1)
 	{
 		this.ptr = CQt.QBitmap_new6((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_char* format)
 	{
 		this.ptr = CQt.QBitmap_new7(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

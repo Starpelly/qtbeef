@@ -2191,17 +2191,133 @@ class QAbstractItemView : IQAbstractItemView, IQAbstractScrollArea, IQFrame, IQW
 {
 	private QAbstractItemView_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAbstractItemView_pressed,
+		QAbstractItemView_clicked,
+		QAbstractItemView_doubleClicked,
+		QAbstractItemView_activated,
+		QAbstractItemView_entered,
+		QAbstractItemView_viewportEntered,
+		QAbstractItemView_iconSizeChanged,
+		QAbstractItemView_windowTitleChanged,
+		QAbstractItemView_windowIconChanged,
+		QAbstractItemView_windowIconTextChanged,
+		QAbstractItemView_customContextMenuRequested,
+		QAbstractItemView_destroyed,
+		QAbstractItemView_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractItemView_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractItemView_pressed);
+		CQt.QAbstractItemView_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_clicked);
+		CQt.QAbstractItemView_Connect_DoubleClicked(obj.ObjectPtr,  => QtBeef_QAbstractItemView_doubleClicked);
+		CQt.QAbstractItemView_Connect_Activated(obj.ObjectPtr,  => QtBeef_QAbstractItemView_activated);
+		CQt.QAbstractItemView_Connect_Entered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_entered);
+		CQt.QAbstractItemView_Connect_ViewportEntered(obj.ObjectPtr,  => QtBeef_QAbstractItemView_viewportEntered);
+		CQt.QAbstractItemView_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemView_iconSizeChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** index)> OnPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnDoubleClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnEntered = .() ~ _.Dispose();
+	public Event<delegate void()> OnViewportEntered = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractItemView_pressed(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPressed.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_clicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_doubleClicked(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDoubleClicked.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_activated(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_entered(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEntered.Invoke(index);
+	}
+	static void QtBeef_QAbstractItemView_viewportEntered(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnViewportEntered.Invoke();
+	}
+	static void QtBeef_QAbstractItemView_iconSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractItemView_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QAbstractItemView_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractItemView_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4576,31 +4692,31 @@ extension CQt
 	
 	public function void QAbstractItemView_pressed_action(void* self, void** index);
 	[LinkName("QAbstractItemView_Connect_Pressed")]
-	public static extern void QAbstractItemView_Connect_Pressed(void* self, void** index, QAbstractItemView_pressed_action _action);
+	public static extern void QAbstractItemView_Connect_Pressed(void* self, QAbstractItemView_pressed_action _action);
 	[LinkName("QAbstractItemView_Clicked")]
 	public static extern void QAbstractItemView_Clicked(void* self, void** index);
 	
 	public function void QAbstractItemView_clicked_action(void* self, void** index);
 	[LinkName("QAbstractItemView_Connect_Clicked")]
-	public static extern void QAbstractItemView_Connect_Clicked(void* self, void** index, QAbstractItemView_clicked_action _action);
+	public static extern void QAbstractItemView_Connect_Clicked(void* self, QAbstractItemView_clicked_action _action);
 	[LinkName("QAbstractItemView_DoubleClicked")]
 	public static extern void QAbstractItemView_DoubleClicked(void* self, void** index);
 	
 	public function void QAbstractItemView_doubleClicked_action(void* self, void** index);
 	[LinkName("QAbstractItemView_Connect_DoubleClicked")]
-	public static extern void QAbstractItemView_Connect_DoubleClicked(void* self, void** index, QAbstractItemView_doubleClicked_action _action);
+	public static extern void QAbstractItemView_Connect_DoubleClicked(void* self, QAbstractItemView_doubleClicked_action _action);
 	[LinkName("QAbstractItemView_Activated")]
 	public static extern void QAbstractItemView_Activated(void* self, void** index);
 	
 	public function void QAbstractItemView_activated_action(void* self, void** index);
 	[LinkName("QAbstractItemView_Connect_Activated")]
-	public static extern void QAbstractItemView_Connect_Activated(void* self, void** index, QAbstractItemView_activated_action _action);
+	public static extern void QAbstractItemView_Connect_Activated(void* self, QAbstractItemView_activated_action _action);
 	[LinkName("QAbstractItemView_Entered")]
 	public static extern void QAbstractItemView_Entered(void* self, void** index);
 	
 	public function void QAbstractItemView_entered_action(void* self, void** index);
 	[LinkName("QAbstractItemView_Connect_Entered")]
-	public static extern void QAbstractItemView_Connect_Entered(void* self, void** index, QAbstractItemView_entered_action _action);
+	public static extern void QAbstractItemView_Connect_Entered(void* self, QAbstractItemView_entered_action _action);
 	[LinkName("QAbstractItemView_ViewportEntered")]
 	public static extern void QAbstractItemView_ViewportEntered(void* self);
 	
@@ -4612,7 +4728,7 @@ extension CQt
 	
 	public function void QAbstractItemView_iconSizeChanged_action(void* self, void** size);
 	[LinkName("QAbstractItemView_Connect_IconSizeChanged")]
-	public static extern void QAbstractItemView_Connect_IconSizeChanged(void* self, void** size, QAbstractItemView_iconSizeChanged_action _action);
+	public static extern void QAbstractItemView_Connect_IconSizeChanged(void* self, QAbstractItemView_iconSizeChanged_action _action);
 	[LinkName("QAbstractItemView_MoveCursor")]
 	public static extern void* QAbstractItemView_MoveCursor(void* self, QAbstractItemView_CursorAction cursorAction, void* modifiers);
 	[LinkName("QAbstractItemView_HorizontalOffset")]

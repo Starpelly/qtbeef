@@ -127,9 +127,19 @@ class QAccessibleInterface : IQAccessibleInterface
 {
 	private QAccessibleInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public bool IsValid()
 	{
@@ -382,9 +392,19 @@ class QAccessibleTextInterface : IQAccessibleTextInterface
 {
 	private QAccessibleTextInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTextInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -525,9 +545,19 @@ class QAccessibleEditableTextInterface : IQAccessibleEditableTextInterface
 {
 	private QAccessibleEditableTextInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleEditableTextInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -598,9 +628,19 @@ class QAccessibleValueInterface : IQAccessibleValueInterface
 {
 	private QAccessibleValueInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleValueInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -695,9 +735,19 @@ class QAccessibleTableCellInterface : IQAccessibleTableCellInterface
 {
 	private QAccessibleTableCellInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTableCellInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -858,9 +908,19 @@ class QAccessibleTableInterface : IQAccessibleTableInterface
 {
 	private QAccessibleTableInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTableInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1093,9 +1153,19 @@ class QAccessibleActionInterface : IQAccessibleActionInterface
 {
 	private QAccessibleActionInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleActionInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1260,9 +1330,19 @@ class QAccessibleImageInterface : IQAccessibleImageInterface
 {
 	private QAccessibleImageInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleImageInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1333,9 +1413,19 @@ class QAccessibleHyperlinkInterface : IQAccessibleHyperlinkInterface
 {
 	private QAccessibleHyperlinkInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleHyperlinkInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1422,17 +1512,29 @@ class QAccessibleEvent : IQAccessibleEvent
 {
 	private QAccessibleEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, QAccessible_Event typ)
 	{
 		this.ptr = CQt.QAccessibleEvent_new((.)obj?.ObjectPtr, typ);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, QAccessible_Event typ)
 	{
 		this.ptr = CQt.QAccessibleEvent_new2((.)iface?.ObjectPtr, typ);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1531,17 +1633,29 @@ class QAccessibleStateChangeEvent : IQAccessibleStateChangeEvent, IQAccessibleEv
 {
 	private QAccessibleStateChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleStateChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, IQAccessible_State state)
 	{
 		this.ptr = CQt.QAccessibleStateChangeEvent_new((.)obj?.ObjectPtr, (.)state?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, IQAccessible_State state)
 	{
 		this.ptr = CQt.QAccessibleStateChangeEvent_new2((.)iface?.ObjectPtr, (.)state?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1638,17 +1752,29 @@ class QAccessibleTextCursorEvent : IQAccessibleTextCursorEvent, IQAccessibleEven
 {
 	private QAccessibleTextCursorEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTextCursorEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, c_int cursorPos)
 	{
 		this.ptr = CQt.QAccessibleTextCursorEvent_new((.)obj?.ObjectPtr, cursorPos);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, c_int cursorPos)
 	{
 		this.ptr = CQt.QAccessibleTextCursorEvent_new2((.)iface?.ObjectPtr, cursorPos);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1763,17 +1889,29 @@ class QAccessibleTextSelectionEvent : IQAccessibleTextSelectionEvent, IQAccessib
 {
 	private QAccessibleTextSelectionEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTextSelectionEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, c_int start, c_int end)
 	{
 		this.ptr = CQt.QAccessibleTextSelectionEvent_new((.)obj?.ObjectPtr, start, end);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, c_int start, c_int end)
 	{
 		this.ptr = CQt.QAccessibleTextSelectionEvent_new2((.)iface?.ObjectPtr, start, end);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1898,17 +2036,29 @@ class QAccessibleTextInsertEvent : IQAccessibleTextInsertEvent, IQAccessibleText
 {
 	private QAccessibleTextInsertEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTextInsertEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, c_int position, String text)
 	{
 		this.ptr = CQt.QAccessibleTextInsertEvent_new((.)obj?.ObjectPtr, position, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, c_int position, String text)
 	{
 		this.ptr = CQt.QAccessibleTextInsertEvent_new2((.)iface?.ObjectPtr, position, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2027,17 +2177,29 @@ class QAccessibleTextRemoveEvent : IQAccessibleTextRemoveEvent, IQAccessibleText
 {
 	private QAccessibleTextRemoveEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTextRemoveEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, c_int position, String text)
 	{
 		this.ptr = CQt.QAccessibleTextRemoveEvent_new((.)obj?.ObjectPtr, position, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, c_int position, String text)
 	{
 		this.ptr = CQt.QAccessibleTextRemoveEvent_new2((.)iface?.ObjectPtr, position, libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2160,17 +2322,29 @@ class QAccessibleTextUpdateEvent : IQAccessibleTextUpdateEvent, IQAccessibleText
 {
 	private QAccessibleTextUpdateEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTextUpdateEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, c_int position, String oldText, String text)
 	{
 		this.ptr = CQt.QAccessibleTextUpdateEvent_new((.)obj?.ObjectPtr, position, libqt_string(oldText), libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, c_int position, String oldText, String text)
 	{
 		this.ptr = CQt.QAccessibleTextUpdateEvent_new2((.)iface?.ObjectPtr, position, libqt_string(oldText), libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2287,17 +2461,29 @@ class QAccessibleValueChangeEvent : IQAccessibleValueChangeEvent, IQAccessibleEv
 {
 	private QAccessibleValueChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleValueChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, IQVariant val)
 	{
 		this.ptr = CQt.QAccessibleValueChangeEvent_new((.)obj?.ObjectPtr, (.)val?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, IQVariant val)
 	{
 		this.ptr = CQt.QAccessibleValueChangeEvent_new2((.)iface?.ObjectPtr, (.)val?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2432,17 +2618,29 @@ class QAccessibleTableModelChangeEvent : IQAccessibleTableModelChangeEvent, IQAc
 {
 	private QAccessibleTableModelChangeEvent_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleTableModelChangeEvent_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject obj, QAccessibleTableModelChangeEvent_ModelChangeType changeType)
 	{
 		this.ptr = CQt.QAccessibleTableModelChangeEvent_new((.)obj?.ObjectPtr, changeType);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAccessibleInterface iface, QAccessibleTableModelChangeEvent_ModelChangeType changeType)
 	{
 		this.ptr = CQt.QAccessibleTableModelChangeEvent_new2((.)iface?.ObjectPtr, changeType);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

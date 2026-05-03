@@ -323,21 +323,58 @@ class QOffscreenSurface : IQOffscreenSurface, IQObject, IQSurface
 {
 	private QOffscreenSurface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QOffscreenSurface_screenChanged,
+		QOffscreenSurface_destroyed,
+		QOffscreenSurface_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QOffscreenSurface_Connect_ScreenChanged(obj.ObjectPtr,  => QtBeef_QOffscreenSurface_screenChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** screen)> OnScreenChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QOffscreenSurface_screenChanged(void* ptr, void** screen)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScreenChanged.Invoke(screen);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QOffscreenSurface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QOffscreenSurface_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen)
 	{
 		this.ptr = CQt.QOffscreenSurface_new2((.)screen?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQScreen screen, IQObject parent)
 	{
 		this.ptr = CQt.QOffscreenSurface_new3((.)screen?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -696,7 +733,7 @@ extension CQt
 	
 	public function void QOffscreenSurface_screenChanged_action(void* self, void** screen);
 	[LinkName("QOffscreenSurface_Connect_ScreenChanged")]
-	public static extern void QOffscreenSurface_Connect_ScreenChanged(void* self, void** screen, QOffscreenSurface_screenChanged_action _action);
+	public static extern void QOffscreenSurface_Connect_ScreenChanged(void* self, QOffscreenSurface_screenChanged_action _action);
 	[LinkName("QOffscreenSurface_Tr2")]
 	public static extern libqt_string QOffscreenSurface_Tr2(c_char* s, c_char* c);
 	[LinkName("QOffscreenSurface_Tr3")]

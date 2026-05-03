@@ -1715,25 +1715,151 @@ class QToolBar : IQToolBar, IQWidget, IQObject, IQPaintDevice
 {
 	private QToolBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QToolBar_actionTriggered,
+		QToolBar_movableChanged,
+		QToolBar_allowedAreasChanged,
+		QToolBar_orientationChanged,
+		QToolBar_iconSizeChanged,
+		QToolBar_toolButtonStyleChanged,
+		QToolBar_topLevelChanged,
+		QToolBar_visibilityChanged,
+		QToolBar_windowTitleChanged,
+		QToolBar_windowIconChanged,
+		QToolBar_windowIconTextChanged,
+		QToolBar_customContextMenuRequested,
+		QToolBar_destroyed,
+		QToolBar_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QToolBar_Connect_ActionTriggered(obj.ObjectPtr,  => QtBeef_QToolBar_actionTriggered);
+		CQt.QToolBar_Connect_MovableChanged(obj.ObjectPtr,  => QtBeef_QToolBar_movableChanged);
+		CQt.QToolBar_Connect_AllowedAreasChanged(obj.ObjectPtr,  => QtBeef_QToolBar_allowedAreasChanged);
+		CQt.QToolBar_Connect_OrientationChanged(obj.ObjectPtr,  => QtBeef_QToolBar_orientationChanged);
+		CQt.QToolBar_Connect_IconSizeChanged(obj.ObjectPtr,  => QtBeef_QToolBar_iconSizeChanged);
+		CQt.QToolBar_Connect_ToolButtonStyleChanged(obj.ObjectPtr,  => QtBeef_QToolBar_toolButtonStyleChanged);
+		CQt.QToolBar_Connect_TopLevelChanged(obj.ObjectPtr,  => QtBeef_QToolBar_topLevelChanged);
+		CQt.QToolBar_Connect_VisibilityChanged(obj.ObjectPtr,  => QtBeef_QToolBar_visibilityChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** action)> OnActionTriggered = .() ~ _.Dispose();
+	public Event<delegate void(bool movable)> OnMovableChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* allowedAreas)> OnAllowedAreasChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation)> OnOrientationChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** iconSize)> OnIconSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ToolButtonStyle toolButtonStyle)> OnToolButtonStyleChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool topLevel)> OnTopLevelChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool visible)> OnVisibilityChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QToolBar_actionTriggered(void* ptr, void** action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionTriggered.Invoke(action);
+	}
+	static void QtBeef_QToolBar_movableChanged(void* ptr, bool movable)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMovableChanged.Invoke(movable);
+	}
+	static void QtBeef_QToolBar_allowedAreasChanged(void* ptr, void* allowedAreas)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAllowedAreasChanged.Invoke(allowedAreas);
+	}
+	static void QtBeef_QToolBar_orientationChanged(void* ptr, Qt_Orientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrientationChanged.Invoke(orientation);
+	}
+	static void QtBeef_QToolBar_iconSizeChanged(void* ptr, void** iconSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIconSizeChanged.Invoke(iconSize);
+	}
+	static void QtBeef_QToolBar_toolButtonStyleChanged(void* ptr, Qt_ToolButtonStyle toolButtonStyle)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnToolButtonStyleChanged.Invoke(toolButtonStyle);
+	}
+	static void QtBeef_QToolBar_topLevelChanged(void* ptr, bool topLevel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopLevelChanged.Invoke(topLevel);
+	}
+	static void QtBeef_QToolBar_visibilityChanged(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibilityChanged.Invoke(visible);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QToolBar_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QToolBar_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title)
 	{
 		this.ptr = CQt.QToolBar_new2(libqt_string(title));
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QToolBar_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title, IQWidget parent)
 	{
 		this.ptr = CQt.QToolBar_new4(libqt_string(title), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3512,49 +3638,49 @@ extension CQt
 	
 	public function void QToolBar_actionTriggered_action(void* self, void** action);
 	[LinkName("QToolBar_Connect_ActionTriggered")]
-	public static extern void QToolBar_Connect_ActionTriggered(void* self, void** action, QToolBar_actionTriggered_action _action);
+	public static extern void QToolBar_Connect_ActionTriggered(void* self, QToolBar_actionTriggered_action _action);
 	[LinkName("QToolBar_MovableChanged")]
 	public static extern void QToolBar_MovableChanged(void* self, bool movable);
 	
 	public function void QToolBar_movableChanged_action(void* self, bool movable);
 	[LinkName("QToolBar_Connect_MovableChanged")]
-	public static extern void QToolBar_Connect_MovableChanged(void* self, bool movable, QToolBar_movableChanged_action _action);
+	public static extern void QToolBar_Connect_MovableChanged(void* self, QToolBar_movableChanged_action _action);
 	[LinkName("QToolBar_AllowedAreasChanged")]
 	public static extern void QToolBar_AllowedAreasChanged(void* self, void* allowedAreas);
 	
 	public function void QToolBar_allowedAreasChanged_action(void* self, void* allowedAreas);
 	[LinkName("QToolBar_Connect_AllowedAreasChanged")]
-	public static extern void QToolBar_Connect_AllowedAreasChanged(void* self, void* allowedAreas, QToolBar_allowedAreasChanged_action _action);
+	public static extern void QToolBar_Connect_AllowedAreasChanged(void* self, QToolBar_allowedAreasChanged_action _action);
 	[LinkName("QToolBar_OrientationChanged")]
 	public static extern void QToolBar_OrientationChanged(void* self, Qt_Orientation orientation);
 	
 	public function void QToolBar_orientationChanged_action(void* self, Qt_Orientation orientation);
 	[LinkName("QToolBar_Connect_OrientationChanged")]
-	public static extern void QToolBar_Connect_OrientationChanged(void* self, Qt_Orientation orientation, QToolBar_orientationChanged_action _action);
+	public static extern void QToolBar_Connect_OrientationChanged(void* self, QToolBar_orientationChanged_action _action);
 	[LinkName("QToolBar_IconSizeChanged")]
 	public static extern void QToolBar_IconSizeChanged(void* self, void** iconSize);
 	
 	public function void QToolBar_iconSizeChanged_action(void* self, void** iconSize);
 	[LinkName("QToolBar_Connect_IconSizeChanged")]
-	public static extern void QToolBar_Connect_IconSizeChanged(void* self, void** iconSize, QToolBar_iconSizeChanged_action _action);
+	public static extern void QToolBar_Connect_IconSizeChanged(void* self, QToolBar_iconSizeChanged_action _action);
 	[LinkName("QToolBar_ToolButtonStyleChanged")]
 	public static extern void QToolBar_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle);
 	
 	public function void QToolBar_toolButtonStyleChanged_action(void* self, Qt_ToolButtonStyle toolButtonStyle);
 	[LinkName("QToolBar_Connect_ToolButtonStyleChanged")]
-	public static extern void QToolBar_Connect_ToolButtonStyleChanged(void* self, Qt_ToolButtonStyle toolButtonStyle, QToolBar_toolButtonStyleChanged_action _action);
+	public static extern void QToolBar_Connect_ToolButtonStyleChanged(void* self, QToolBar_toolButtonStyleChanged_action _action);
 	[LinkName("QToolBar_TopLevelChanged")]
 	public static extern void QToolBar_TopLevelChanged(void* self, bool topLevel);
 	
 	public function void QToolBar_topLevelChanged_action(void* self, bool topLevel);
 	[LinkName("QToolBar_Connect_TopLevelChanged")]
-	public static extern void QToolBar_Connect_TopLevelChanged(void* self, bool topLevel, QToolBar_topLevelChanged_action _action);
+	public static extern void QToolBar_Connect_TopLevelChanged(void* self, QToolBar_topLevelChanged_action _action);
 	[LinkName("QToolBar_VisibilityChanged")]
 	public static extern void QToolBar_VisibilityChanged(void* self, bool visible);
 	
 	public function void QToolBar_visibilityChanged_action(void* self, bool visible);
 	[LinkName("QToolBar_Connect_VisibilityChanged")]
-	public static extern void QToolBar_Connect_VisibilityChanged(void* self, bool visible, QToolBar_visibilityChanged_action _action);
+	public static extern void QToolBar_Connect_VisibilityChanged(void* self, QToolBar_visibilityChanged_action _action);
 	[LinkName("QToolBar_ActionEvent")]
 	public static extern void QToolBar_ActionEvent(void* self, void** event);
 	[LinkName("QToolBar_ChangeEvent")]

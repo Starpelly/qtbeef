@@ -31,21 +31,34 @@ class QHashSeed : IQHashSeed
 {
 	private QHashSeed_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QHashSeed_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** other)
 	{
 		this.ptr = CQt.QHashSeed_new(other);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QHashSeed_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_size d)
 	{
 		this.ptr = CQt.QHashSeed_new4(d);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

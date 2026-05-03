@@ -287,17 +287,53 @@ class QValidator : IQValidator, IQObject
 {
 	private QValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QValidator_changed,
+		QValidator_destroyed,
+		QValidator_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QValidator_changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QValidator_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -922,25 +958,79 @@ class QIntValidator : IQIntValidator, IQValidator, IQObject
 {
 	private QIntValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QIntValidator_bottomChanged,
+		QIntValidator_topChanged,
+		QIntValidator_changed,
+		QIntValidator_destroyed,
+		QIntValidator_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QIntValidator_Connect_BottomChanged(obj.ObjectPtr,  => QtBeef_QIntValidator_bottomChanged);
+		CQt.QIntValidator_Connect_TopChanged(obj.ObjectPtr,  => QtBeef_QIntValidator_topChanged);
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int bottom)> OnBottomChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int top)> OnTopChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QIntValidator_bottomChanged(void* ptr, c_int bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBottomChanged.Invoke(bottom);
+	}
+	static void QtBeef_QIntValidator_topChanged(void* ptr, c_int top)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopChanged.Invoke(top);
+	}
+	static void QtBeef_QValidator_changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QIntValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIntValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int bottom, c_int top)
 	{
 		this.ptr = CQt.QIntValidator_new2(bottom, top);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QIntValidator_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int bottom, c_int top, IQObject parent)
 	{
 		this.ptr = CQt.QIntValidator_new4(bottom, top, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1285,13 +1375,13 @@ extension CQt
 	
 	public function void QIntValidator_bottomChanged_action(void* self, c_int bottom);
 	[LinkName("QIntValidator_Connect_BottomChanged")]
-	public static extern void QIntValidator_Connect_BottomChanged(void* self, c_int bottom, QIntValidator_bottomChanged_action _action);
+	public static extern void QIntValidator_Connect_BottomChanged(void* self, QIntValidator_bottomChanged_action _action);
 	[LinkName("QIntValidator_TopChanged")]
 	public static extern void QIntValidator_TopChanged(void* self, c_int top);
 	
 	public function void QIntValidator_topChanged_action(void* self, c_int top);
 	[LinkName("QIntValidator_Connect_TopChanged")]
-	public static extern void QIntValidator_Connect_TopChanged(void* self, c_int top, QIntValidator_topChanged_action _action);
+	public static extern void QIntValidator_Connect_TopChanged(void* self, QIntValidator_topChanged_action _action);
 	[LinkName("QIntValidator_Tr2")]
 	public static extern libqt_string QIntValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QIntValidator_Tr3")]
@@ -1637,25 +1727,95 @@ class QDoubleValidator : IQDoubleValidator, IQValidator, IQObject
 {
 	private QDoubleValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QDoubleValidator_bottomChanged,
+		QDoubleValidator_topChanged,
+		QDoubleValidator_decimalsChanged,
+		QDoubleValidator_notationChanged,
+		QDoubleValidator_changed,
+		QDoubleValidator_destroyed,
+		QDoubleValidator_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDoubleValidator_Connect_BottomChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_bottomChanged);
+		CQt.QDoubleValidator_Connect_TopChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_topChanged);
+		CQt.QDoubleValidator_Connect_DecimalsChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_decimalsChanged);
+		CQt.QDoubleValidator_Connect_NotationChanged(obj.ObjectPtr,  => QtBeef_QDoubleValidator_notationChanged);
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(double bottom)> OnBottomChanged = .() ~ _.Dispose();
+	public Event<delegate void(double top)> OnTopChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int decimals)> OnDecimalsChanged = .() ~ _.Dispose();
+	public Event<delegate void(QDoubleValidator_Notation notation)> OnNotationChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QDoubleValidator_bottomChanged(void* ptr, double bottom)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBottomChanged.Invoke(bottom);
+	}
+	static void QtBeef_QDoubleValidator_topChanged(void* ptr, double top)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopChanged.Invoke(top);
+	}
+	static void QtBeef_QDoubleValidator_decimalsChanged(void* ptr, c_int decimals)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDecimalsChanged.Invoke(decimals);
+	}
+	static void QtBeef_QDoubleValidator_notationChanged(void* ptr, QDoubleValidator_Notation notation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnNotationChanged.Invoke(notation);
+	}
+	static void QtBeef_QValidator_changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QDoubleValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDoubleValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(double bottom, double top, c_int decimals)
 	{
 		this.ptr = CQt.QDoubleValidator_new2(bottom, top, decimals);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QDoubleValidator_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double bottom, double top, c_int decimals, IQObject parent)
 	{
 		this.ptr = CQt.QDoubleValidator_new4(bottom, top, decimals, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2038,25 +2198,25 @@ extension CQt
 	
 	public function void QDoubleValidator_bottomChanged_action(void* self, double bottom);
 	[LinkName("QDoubleValidator_Connect_BottomChanged")]
-	public static extern void QDoubleValidator_Connect_BottomChanged(void* self, double bottom, QDoubleValidator_bottomChanged_action _action);
+	public static extern void QDoubleValidator_Connect_BottomChanged(void* self, QDoubleValidator_bottomChanged_action _action);
 	[LinkName("QDoubleValidator_TopChanged")]
 	public static extern void QDoubleValidator_TopChanged(void* self, double top);
 	
 	public function void QDoubleValidator_topChanged_action(void* self, double top);
 	[LinkName("QDoubleValidator_Connect_TopChanged")]
-	public static extern void QDoubleValidator_Connect_TopChanged(void* self, double top, QDoubleValidator_topChanged_action _action);
+	public static extern void QDoubleValidator_Connect_TopChanged(void* self, QDoubleValidator_topChanged_action _action);
 	[LinkName("QDoubleValidator_DecimalsChanged")]
 	public static extern void QDoubleValidator_DecimalsChanged(void* self, c_int decimals);
 	
 	public function void QDoubleValidator_decimalsChanged_action(void* self, c_int decimals);
 	[LinkName("QDoubleValidator_Connect_DecimalsChanged")]
-	public static extern void QDoubleValidator_Connect_DecimalsChanged(void* self, c_int decimals, QDoubleValidator_decimalsChanged_action _action);
+	public static extern void QDoubleValidator_Connect_DecimalsChanged(void* self, QDoubleValidator_decimalsChanged_action _action);
 	[LinkName("QDoubleValidator_NotationChanged")]
 	public static extern void QDoubleValidator_NotationChanged(void* self, QDoubleValidator_Notation notation);
 	
 	public function void QDoubleValidator_notationChanged_action(void* self, QDoubleValidator_Notation notation);
 	[LinkName("QDoubleValidator_Connect_NotationChanged")]
-	public static extern void QDoubleValidator_Connect_NotationChanged(void* self, QDoubleValidator_Notation notation, QDoubleValidator_notationChanged_action _action);
+	public static extern void QDoubleValidator_Connect_NotationChanged(void* self, QDoubleValidator_notationChanged_action _action);
 	[LinkName("QDoubleValidator_Tr2")]
 	public static extern libqt_string QDoubleValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QDoubleValidator_Tr3")]
@@ -2358,25 +2518,71 @@ class QRegularExpressionValidator : IQRegularExpressionValidator, IQValidator, I
 {
 	private QRegularExpressionValidator_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QRegularExpressionValidator_regularExpressionChanged,
+		QRegularExpressionValidator_changed,
+		QRegularExpressionValidator_destroyed,
+		QRegularExpressionValidator_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QRegularExpressionValidator_Connect_RegularExpressionChanged(obj.ObjectPtr,  => QtBeef_QRegularExpressionValidator_regularExpressionChanged);
+		CQt.QValidator_Connect_Changed(obj.ObjectPtr,  => QtBeef_QValidator_changed);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** re)> OnRegularExpressionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QRegularExpressionValidator_regularExpressionChanged(void* ptr, void** re)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRegularExpressionChanged.Invoke(re);
+	}
+	static void QtBeef_QValidator_changed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChanged.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QRegularExpressionValidator_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new2((.)re?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRegularExpression re, IQObject parent)
 	{
 		this.ptr = CQt.QRegularExpressionValidator_new4((.)re?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2697,7 +2903,7 @@ extension CQt
 	
 	public function void QRegularExpressionValidator_regularExpressionChanged_action(void* self, void** re);
 	[LinkName("QRegularExpressionValidator_Connect_RegularExpressionChanged")]
-	public static extern void QRegularExpressionValidator_Connect_RegularExpressionChanged(void* self, void** re, QRegularExpressionValidator_regularExpressionChanged_action _action);
+	public static extern void QRegularExpressionValidator_Connect_RegularExpressionChanged(void* self, QRegularExpressionValidator_regularExpressionChanged_action _action);
 	[LinkName("QRegularExpressionValidator_Tr2")]
 	public static extern libqt_string QRegularExpressionValidator_Tr2(c_char* s, c_char* c);
 	[LinkName("QRegularExpressionValidator_Tr3")]

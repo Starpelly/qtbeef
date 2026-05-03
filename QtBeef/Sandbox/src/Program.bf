@@ -10,9 +10,11 @@ class Program
 		QMenuBar m_menubar ~ delete _;
 		QPushButton button ~ delete _;
 
-		public static void t(void* self)
+		int i = 0 ;
+		public void tt()
 		{
 			Console.WriteLine("hum");
+			button.SetText(scope $"{i++}");
 		}
 
 		public this(IQWidget parent) : base(parent)
@@ -44,7 +46,10 @@ class Program
 			button.SetText("Hello");
 			button.Move(32, 32);
 
-			CQt.QAbstractButton_Connect_Clicked(button.ObjectPtr, => t);
+			button.OnPressed.Add(new () => tt());
+
+			// button.OnPressed.Add(new () => tt());
+			// CQt.QAbstractButton_Connect_Pressed(button.ObjectPtr, => t);
 		}
 	}
 

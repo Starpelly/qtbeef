@@ -1779,17 +1779,125 @@ class QToolButton : IQToolButton, IQAbstractButton, IQWidget, IQObject, IQPaintD
 {
 	private QToolButton_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QToolButton_triggered,
+		QToolButton_pressed,
+		QToolButton_released,
+		QToolButton_clicked,
+		QToolButton_toggled,
+		QToolButton_clicked1,
+		QToolButton_windowTitleChanged,
+		QToolButton_windowIconChanged,
+		QToolButton_windowIconTextChanged,
+		QToolButton_customContextMenuRequested,
+		QToolButton_destroyed,
+		QToolButton_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QToolButton_Connect_Triggered(obj.ObjectPtr,  => QtBeef_QToolButton_triggered);
+		CQt.QAbstractButton_Connect_Pressed(obj.ObjectPtr,  => QtBeef_QAbstractButton_pressed);
+		CQt.QAbstractButton_Connect_Released(obj.ObjectPtr,  => QtBeef_QAbstractButton_released);
+		CQt.QAbstractButton_Connect_Clicked(obj.ObjectPtr,  => QtBeef_QAbstractButton_clicked);
+		CQt.QAbstractButton_Connect_Toggled(obj.ObjectPtr,  => QtBeef_QAbstractButton_toggled);
+		CQt.QAbstractButton_Connect_Clicked1(obj.ObjectPtr,  => QtBeef_QAbstractButton_clicked1);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** param1)> OnTriggered = .() ~ _.Dispose();
+	public Event<delegate void()> OnPressed = .() ~ _.Dispose();
+	public Event<delegate void()> OnReleased = .() ~ _.Dispose();
+	public Event<delegate void()> OnClicked = .() ~ _.Dispose();
+	public Event<delegate void(bool _checked)> OnToggled = .() ~ _.Dispose();
+	public Event<delegate void(bool _checked)> OnClicked1 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QToolButton_triggered(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTriggered.Invoke(param1);
+	}
+	static void QtBeef_QAbstractButton_pressed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPressed.Invoke();
+	}
+	static void QtBeef_QAbstractButton_released(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReleased.Invoke();
+	}
+	static void QtBeef_QAbstractButton_clicked(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked.Invoke();
+	}
+	static void QtBeef_QAbstractButton_toggled(void* ptr, bool _checked)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnToggled.Invoke(_checked);
+	}
+	static void QtBeef_QAbstractButton_clicked1(void* ptr, bool _checked)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnClicked1.Invoke(_checked);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QToolButton_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QToolButton_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QToolButton_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3610,7 +3718,7 @@ extension CQt
 	
 	public function void QToolButton_triggered_action(void* self, void** param1);
 	[LinkName("QToolButton_Connect_Triggered")]
-	public static extern void QToolButton_Connect_Triggered(void* self, void** param1, QToolButton_triggered_action _action);
+	public static extern void QToolButton_Connect_Triggered(void* self, QToolButton_triggered_action _action);
 	[LinkName("QToolButton_Event")]
 	public static extern bool QToolButton_Event(void* self, void** e);
 	[LinkName("QToolButton_MousePressEvent")]

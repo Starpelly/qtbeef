@@ -35,17 +35,29 @@ class QModelRoleData : IQModelRoleData
 {
 	private QModelRoleData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QModelRoleData_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int role)
 	{
 		this.ptr = CQt.QModelRoleData_new(role);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleData param1)
 	{
 		this.ptr = CQt.QModelRoleData_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -130,25 +142,39 @@ class QModelRoleDataSpan : IQModelRoleDataSpan
 {
 	private QModelRoleDataSpan_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QModelRoleDataSpan_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleDataSpan other)
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleData modelRoleData)
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new4((.)modelRoleData?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelRoleData modelRoleData, void* lenVal)
 	{
 		this.ptr = CQt.QModelRoleDataSpan_new5((.)modelRoleData?.ObjectPtr, lenVal);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -289,17 +315,29 @@ class QModelIndex : IQModelIndex
 {
 	private QModelIndex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QModelIndex_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex other)
 	{
 		this.ptr = CQt.QModelIndex_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QModelIndex_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -502,21 +540,34 @@ class QPersistentModelIndex : IQPersistentModelIndex
 {
 	private QPersistentModelIndex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPersistentModelIndex_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPersistentModelIndex_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQModelIndex index)
 	{
 		this.ptr = CQt.QPersistentModelIndex_new2((.)index?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPersistentModelIndex other)
 	{
 		this.ptr = CQt.QPersistentModelIndex_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1237,17 +1288,117 @@ class QAbstractItemModel : IQAbstractItemModel, IQObject
 {
 	private QAbstractItemModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAbstractItemModel_dataChanged,
+		QAbstractItemModel_headerDataChanged,
+		QAbstractItemModel_layoutChanged,
+		QAbstractItemModel_layoutAboutToBeChanged,
+		QAbstractItemModel_dataChanged3,
+		QAbstractItemModel_layoutChanged1,
+		QAbstractItemModel_layoutChanged2,
+		QAbstractItemModel_layoutAboutToBeChanged1,
+		QAbstractItemModel_layoutAboutToBeChanged2,
+		QAbstractItemModel_destroyed,
+		QAbstractItemModel_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
+		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
+		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
+		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
+		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged.Invoke(topLeft, bottomRight);
+	}
+	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractItemModel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractItemModel_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractItemModel_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1934,13 +2085,13 @@ extension CQt
 	
 	public function void QAbstractItemModel_dataChanged_action(void* self, void** topLeft, void** bottomRight);
 	[LinkName("QAbstractItemModel_Connect_DataChanged")]
-	public static extern void QAbstractItemModel_Connect_DataChanged(void* self, void** topLeft, void** bottomRight, QAbstractItemModel_dataChanged_action _action);
+	public static extern void QAbstractItemModel_Connect_DataChanged(void* self, QAbstractItemModel_dataChanged_action _action);
 	[LinkName("QAbstractItemModel_HeaderDataChanged")]
 	public static extern void QAbstractItemModel_HeaderDataChanged(void* self, Qt_Orientation orientation, c_int first, c_int last);
 	
 	public function void QAbstractItemModel_headerDataChanged_action(void* self, Qt_Orientation orientation, c_int first, c_int last);
 	[LinkName("QAbstractItemModel_Connect_HeaderDataChanged")]
-	public static extern void QAbstractItemModel_Connect_HeaderDataChanged(void* self, Qt_Orientation orientation, c_int first, c_int last, QAbstractItemModel_headerDataChanged_action _action);
+	public static extern void QAbstractItemModel_Connect_HeaderDataChanged(void* self, QAbstractItemModel_headerDataChanged_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged")]
 	public static extern void QAbstractItemModel_LayoutChanged(void* self);
 	
@@ -2022,31 +2173,31 @@ extension CQt
 	
 	public function void QAbstractItemModel_dataChanged3_action(void* self, void** topLeft, void** bottomRight, void** roles);
 	[LinkName("QAbstractItemModel_Connect_DataChanged3")]
-	public static extern void QAbstractItemModel_Connect_DataChanged3(void* self, void** topLeft, void** bottomRight, void** roles, QAbstractItemModel_dataChanged3_action _action);
+	public static extern void QAbstractItemModel_Connect_DataChanged3(void* self, QAbstractItemModel_dataChanged3_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged1")]
 	public static extern void QAbstractItemModel_LayoutChanged1(void* self, void** parents);
 	
 	public function void QAbstractItemModel_layoutChanged1_action(void* self, void** parents);
 	[LinkName("QAbstractItemModel_Connect_LayoutChanged1")]
-	public static extern void QAbstractItemModel_Connect_LayoutChanged1(void* self, void** parents, QAbstractItemModel_layoutChanged1_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutChanged1(void* self, QAbstractItemModel_layoutChanged1_action _action);
 	[LinkName("QAbstractItemModel_LayoutChanged2")]
 	public static extern void QAbstractItemModel_LayoutChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	
 	public function void QAbstractItemModel_layoutChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	[LinkName("QAbstractItemModel_Connect_LayoutChanged2")]
-	public static extern void QAbstractItemModel_Connect_LayoutChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint, QAbstractItemModel_layoutChanged2_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutChanged2(void* self, QAbstractItemModel_layoutChanged2_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged1")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged1(void* self, void** parents);
 	
 	public function void QAbstractItemModel_layoutAboutToBeChanged1_action(void* self, void** parents);
 	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged1")]
-	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged1(void* self, void** parents, QAbstractItemModel_layoutAboutToBeChanged1_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged1(void* self, QAbstractItemModel_layoutAboutToBeChanged1_action _action);
 	[LinkName("QAbstractItemModel_LayoutAboutToBeChanged2")]
 	public static extern void QAbstractItemModel_LayoutAboutToBeChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	
 	public function void QAbstractItemModel_layoutAboutToBeChanged2_action(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint);
 	[LinkName("QAbstractItemModel_Connect_LayoutAboutToBeChanged2")]
-	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged2(void* self, void** parents, QAbstractItemModel_LayoutChangeHint hint, QAbstractItemModel_layoutAboutToBeChanged2_action _action);
+	public static extern void QAbstractItemModel_Connect_LayoutAboutToBeChanged2(void* self, QAbstractItemModel_layoutAboutToBeChanged2_action _action);
 	[LinkName("QAbstractItemModel_CreateIndex3")]
 	public static extern void* QAbstractItemModel_CreateIndex3(void* self, c_int row, c_int column, void* data);
 }
@@ -2638,17 +2789,117 @@ class QAbstractTableModel : IQAbstractTableModel, IQAbstractItemModel, IQObject
 {
 	private QAbstractTableModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAbstractTableModel_dataChanged,
+		QAbstractTableModel_headerDataChanged,
+		QAbstractTableModel_layoutChanged,
+		QAbstractTableModel_layoutAboutToBeChanged,
+		QAbstractTableModel_dataChanged3,
+		QAbstractTableModel_layoutChanged1,
+		QAbstractTableModel_layoutChanged2,
+		QAbstractTableModel_layoutAboutToBeChanged1,
+		QAbstractTableModel_layoutAboutToBeChanged2,
+		QAbstractTableModel_destroyed,
+		QAbstractTableModel_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
+		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
+		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
+		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
+		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged.Invoke(topLeft, bottomRight);
+	}
+	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractTableModel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractTableModel_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractTableModel_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3847,17 +4098,117 @@ class QAbstractListModel : IQAbstractListModel, IQAbstractItemModel, IQObject
 {
 	private QAbstractListModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAbstractListModel_dataChanged,
+		QAbstractListModel_headerDataChanged,
+		QAbstractListModel_layoutChanged,
+		QAbstractListModel_layoutAboutToBeChanged,
+		QAbstractListModel_dataChanged3,
+		QAbstractListModel_layoutChanged1,
+		QAbstractListModel_layoutChanged2,
+		QAbstractListModel_layoutAboutToBeChanged1,
+		QAbstractListModel_layoutAboutToBeChanged2,
+		QAbstractListModel_destroyed,
+		QAbstractListModel_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
+		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
+		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
+		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
+		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged.Invoke(topLeft, bottomRight);
+	}
+	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractListModel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractListModel_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QAbstractListModel_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

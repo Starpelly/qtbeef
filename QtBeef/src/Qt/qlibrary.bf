@@ -327,41 +327,75 @@ class QLibrary : IQLibrary, IQObject
 {
 	private QLibrary_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QLibrary_destroyed,
+		QLibrary_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QLibrary_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLibrary_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QLibrary_new2(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_int verNum)
 	{
 		this.ptr = CQt.QLibrary_new3(libqt_string(fileName), verNum);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, String version)
 	{
 		this.ptr = CQt.QLibrary_new4(libqt_string(fileName), libqt_string(version));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QLibrary_new5((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, IQObject parent)
 	{
 		this.ptr = CQt.QLibrary_new6(libqt_string(fileName), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_int verNum, IQObject parent)
 	{
 		this.ptr = CQt.QLibrary_new7(libqt_string(fileName), verNum, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, String version, IQObject parent)
 	{
 		this.ptr = CQt.QLibrary_new8(libqt_string(fileName), libqt_string(version), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

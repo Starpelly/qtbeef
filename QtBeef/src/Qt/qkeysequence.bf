@@ -79,61 +79,84 @@ class QKeySequence : IQKeySequence
 {
 	private QKeySequence_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QKeySequence_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QKeySequence_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String key)
 	{
 		this.ptr = CQt.QKeySequence_new2(libqt_string(key));
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int k1)
 	{
 		this.ptr = CQt.QKeySequence_new3(k1);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeyCombination k1)
 	{
 		this.ptr = CQt.QKeySequence_new4((.)k1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence ks)
 	{
 		this.ptr = CQt.QKeySequence_new5((.)ks?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key)
 	{
 		this.ptr = CQt.QKeySequence_new6(key);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String key, QKeySequence_SequenceFormat format)
 	{
 		this.ptr = CQt.QKeySequence_new7(libqt_string(key), format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int k1, c_int k2)
 	{
 		this.ptr = CQt.QKeySequence_new8(k1, k2);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int k1, c_int k2, c_int k3)
 	{
 		this.ptr = CQt.QKeySequence_new9(k1, k2, k3);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int k1, c_int k2, c_int k3, c_int k4)
 	{
 		this.ptr = CQt.QKeySequence_new10(k1, k2, k3, k4);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeyCombination k1, IQKeyCombination k2)
 	{
 		this.ptr = CQt.QKeySequence_new11((.)k1?.ObjectPtr, (.)k2?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeyCombination k1, IQKeyCombination k2, IQKeyCombination k3)
 	{
 		this.ptr = CQt.QKeySequence_new12((.)k1?.ObjectPtr, (.)k2?.ObjectPtr, (.)k3?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeyCombination k1, IQKeyCombination k2, IQKeyCombination k3, IQKeyCombination k4)
 	{
 		this.ptr = CQt.QKeySequence_new13((.)k1?.ObjectPtr, (.)k2?.ObjectPtr, (.)k3?.ObjectPtr, (.)k4?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

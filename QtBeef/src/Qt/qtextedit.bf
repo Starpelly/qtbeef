@@ -2163,25 +2163,143 @@ class QTextEdit : IQTextEdit, IQAbstractScrollArea, IQFrame, IQWidget, IQObject,
 {
 	private QTextEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QTextEdit_textChanged,
+		QTextEdit_undoAvailable,
+		QTextEdit_redoAvailable,
+		QTextEdit_currentCharFormatChanged,
+		QTextEdit_copyAvailable,
+		QTextEdit_selectionChanged,
+		QTextEdit_cursorPositionChanged,
+		QTextEdit_windowTitleChanged,
+		QTextEdit_windowIconChanged,
+		QTextEdit_windowIconTextChanged,
+		QTextEdit_customContextMenuRequested,
+		QTextEdit_destroyed,
+		QTextEdit_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QTextEdit_Connect_TextChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_textChanged);
+		CQt.QTextEdit_Connect_UndoAvailable(obj.ObjectPtr,  => QtBeef_QTextEdit_undoAvailable);
+		CQt.QTextEdit_Connect_RedoAvailable(obj.ObjectPtr,  => QtBeef_QTextEdit_redoAvailable);
+		CQt.QTextEdit_Connect_CurrentCharFormatChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_currentCharFormatChanged);
+		CQt.QTextEdit_Connect_CopyAvailable(obj.ObjectPtr,  => QtBeef_QTextEdit_copyAvailable);
+		CQt.QTextEdit_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_selectionChanged);
+		CQt.QTextEdit_Connect_CursorPositionChanged(obj.ObjectPtr,  => QtBeef_QTextEdit_cursorPositionChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnUndoAvailable = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnRedoAvailable = .() ~ _.Dispose();
+	public Event<delegate void(void** format)> OnCurrentCharFormatChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnCopyAvailable = .() ~ _.Dispose();
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnCursorPositionChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QTextEdit_textChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextChanged.Invoke();
+	}
+	static void QtBeef_QTextEdit_undoAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndoAvailable.Invoke(b);
+	}
+	static void QtBeef_QTextEdit_redoAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedoAvailable.Invoke(b);
+	}
+	static void QtBeef_QTextEdit_currentCharFormatChanged(void* ptr, void** format)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentCharFormatChanged.Invoke(format);
+	}
+	static void QtBeef_QTextEdit_copyAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCopyAvailable.Invoke(b);
+	}
+	static void QtBeef_QTextEdit_selectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QTextEdit_cursorPositionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorPositionChanged.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QTextEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QTextEdit_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextEdit_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QTextEdit_new3(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQWidget parent)
 	{
 		this.ptr = CQt.QTextEdit_new4(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4546,25 +4664,25 @@ extension CQt
 	
 	public function void QTextEdit_undoAvailable_action(void* self, bool b);
 	[LinkName("QTextEdit_Connect_UndoAvailable")]
-	public static extern void QTextEdit_Connect_UndoAvailable(void* self, bool b, QTextEdit_undoAvailable_action _action);
+	public static extern void QTextEdit_Connect_UndoAvailable(void* self, QTextEdit_undoAvailable_action _action);
 	[LinkName("QTextEdit_RedoAvailable")]
 	public static extern void QTextEdit_RedoAvailable(void* self, bool b);
 	
 	public function void QTextEdit_redoAvailable_action(void* self, bool b);
 	[LinkName("QTextEdit_Connect_RedoAvailable")]
-	public static extern void QTextEdit_Connect_RedoAvailable(void* self, bool b, QTextEdit_redoAvailable_action _action);
+	public static extern void QTextEdit_Connect_RedoAvailable(void* self, QTextEdit_redoAvailable_action _action);
 	[LinkName("QTextEdit_CurrentCharFormatChanged")]
 	public static extern void QTextEdit_CurrentCharFormatChanged(void* self, void** format);
 	
 	public function void QTextEdit_currentCharFormatChanged_action(void* self, void** format);
 	[LinkName("QTextEdit_Connect_CurrentCharFormatChanged")]
-	public static extern void QTextEdit_Connect_CurrentCharFormatChanged(void* self, void** format, QTextEdit_currentCharFormatChanged_action _action);
+	public static extern void QTextEdit_Connect_CurrentCharFormatChanged(void* self, QTextEdit_currentCharFormatChanged_action _action);
 	[LinkName("QTextEdit_CopyAvailable")]
 	public static extern void QTextEdit_CopyAvailable(void* self, bool b);
 	
 	public function void QTextEdit_copyAvailable_action(void* self, bool b);
 	[LinkName("QTextEdit_Connect_CopyAvailable")]
-	public static extern void QTextEdit_Connect_CopyAvailable(void* self, bool b, QTextEdit_copyAvailable_action _action);
+	public static extern void QTextEdit_Connect_CopyAvailable(void* self, QTextEdit_copyAvailable_action _action);
 	[LinkName("QTextEdit_SelectionChanged")]
 	public static extern void QTextEdit_SelectionChanged(void* self);
 	
@@ -4682,13 +4800,24 @@ class QTextEdit_ExtraSelection : IQTextEdit_ExtraSelection
 {
 	private QTextEdit_ExtraSelection_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextEdit_ExtraSelection_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextEdit_ExtraSelection param1)
 	{
 		this.ptr = CQt.QTextEdit_ExtraSelection_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

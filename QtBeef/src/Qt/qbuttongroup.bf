@@ -343,17 +343,109 @@ class QButtonGroup : IQButtonGroup, IQObject
 {
 	private QButtonGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QButtonGroup_buttonClicked,
+		QButtonGroup_buttonPressed,
+		QButtonGroup_buttonReleased,
+		QButtonGroup_buttonToggled,
+		QButtonGroup_idClicked,
+		QButtonGroup_idPressed,
+		QButtonGroup_idReleased,
+		QButtonGroup_idToggled,
+		QButtonGroup_destroyed,
+		QButtonGroup_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QButtonGroup_Connect_ButtonClicked(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonClicked);
+		CQt.QButtonGroup_Connect_ButtonPressed(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonPressed);
+		CQt.QButtonGroup_Connect_ButtonReleased(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonReleased);
+		CQt.QButtonGroup_Connect_ButtonToggled(obj.ObjectPtr,  => QtBeef_QButtonGroup_buttonToggled);
+		CQt.QButtonGroup_Connect_IdClicked(obj.ObjectPtr,  => QtBeef_QButtonGroup_idClicked);
+		CQt.QButtonGroup_Connect_IdPressed(obj.ObjectPtr,  => QtBeef_QButtonGroup_idPressed);
+		CQt.QButtonGroup_Connect_IdReleased(obj.ObjectPtr,  => QtBeef_QButtonGroup_idReleased);
+		CQt.QButtonGroup_Connect_IdToggled(obj.ObjectPtr,  => QtBeef_QButtonGroup_idToggled);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** param1)> OnButtonClicked = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnButtonPressed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnButtonReleased = .() ~ _.Dispose();
+	public Event<delegate void(void** param1, bool param2)> OnButtonToggled = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1)> OnIdClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1)> OnIdPressed = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1)> OnIdReleased = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1, bool param2)> OnIdToggled = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QButtonGroup_buttonClicked(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonClicked.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_buttonPressed(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonPressed.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_buttonReleased(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonReleased.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_buttonToggled(void* ptr, void** param1, bool param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnButtonToggled.Invoke(param1, param2);
+	}
+	static void QtBeef_QButtonGroup_idClicked(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdClicked.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_idPressed(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdPressed.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_idReleased(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdReleased.Invoke(param1);
+	}
+	static void QtBeef_QButtonGroup_idToggled(void* ptr, c_int param1, bool param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIdToggled.Invoke(param1, param2);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QButtonGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QButtonGroup_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QButtonGroup_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -728,49 +820,49 @@ extension CQt
 	
 	public function void QButtonGroup_buttonClicked_action(void* self, void** param1);
 	[LinkName("QButtonGroup_Connect_ButtonClicked")]
-	public static extern void QButtonGroup_Connect_ButtonClicked(void* self, void** param1, QButtonGroup_buttonClicked_action _action);
+	public static extern void QButtonGroup_Connect_ButtonClicked(void* self, QButtonGroup_buttonClicked_action _action);
 	[LinkName("QButtonGroup_ButtonPressed")]
 	public static extern void QButtonGroup_ButtonPressed(void* self, void** param1);
 	
 	public function void QButtonGroup_buttonPressed_action(void* self, void** param1);
 	[LinkName("QButtonGroup_Connect_ButtonPressed")]
-	public static extern void QButtonGroup_Connect_ButtonPressed(void* self, void** param1, QButtonGroup_buttonPressed_action _action);
+	public static extern void QButtonGroup_Connect_ButtonPressed(void* self, QButtonGroup_buttonPressed_action _action);
 	[LinkName("QButtonGroup_ButtonReleased")]
 	public static extern void QButtonGroup_ButtonReleased(void* self, void** param1);
 	
 	public function void QButtonGroup_buttonReleased_action(void* self, void** param1);
 	[LinkName("QButtonGroup_Connect_ButtonReleased")]
-	public static extern void QButtonGroup_Connect_ButtonReleased(void* self, void** param1, QButtonGroup_buttonReleased_action _action);
+	public static extern void QButtonGroup_Connect_ButtonReleased(void* self, QButtonGroup_buttonReleased_action _action);
 	[LinkName("QButtonGroup_ButtonToggled")]
 	public static extern void QButtonGroup_ButtonToggled(void* self, void** param1, bool param2);
 	
 	public function void QButtonGroup_buttonToggled_action(void* self, void** param1, bool param2);
 	[LinkName("QButtonGroup_Connect_ButtonToggled")]
-	public static extern void QButtonGroup_Connect_ButtonToggled(void* self, void** param1, bool param2, QButtonGroup_buttonToggled_action _action);
+	public static extern void QButtonGroup_Connect_ButtonToggled(void* self, QButtonGroup_buttonToggled_action _action);
 	[LinkName("QButtonGroup_IdClicked")]
 	public static extern void QButtonGroup_IdClicked(void* self, c_int param1);
 	
 	public function void QButtonGroup_idClicked_action(void* self, c_int param1);
 	[LinkName("QButtonGroup_Connect_IdClicked")]
-	public static extern void QButtonGroup_Connect_IdClicked(void* self, c_int param1, QButtonGroup_idClicked_action _action);
+	public static extern void QButtonGroup_Connect_IdClicked(void* self, QButtonGroup_idClicked_action _action);
 	[LinkName("QButtonGroup_IdPressed")]
 	public static extern void QButtonGroup_IdPressed(void* self, c_int param1);
 	
 	public function void QButtonGroup_idPressed_action(void* self, c_int param1);
 	[LinkName("QButtonGroup_Connect_IdPressed")]
-	public static extern void QButtonGroup_Connect_IdPressed(void* self, c_int param1, QButtonGroup_idPressed_action _action);
+	public static extern void QButtonGroup_Connect_IdPressed(void* self, QButtonGroup_idPressed_action _action);
 	[LinkName("QButtonGroup_IdReleased")]
 	public static extern void QButtonGroup_IdReleased(void* self, c_int param1);
 	
 	public function void QButtonGroup_idReleased_action(void* self, c_int param1);
 	[LinkName("QButtonGroup_Connect_IdReleased")]
-	public static extern void QButtonGroup_Connect_IdReleased(void* self, c_int param1, QButtonGroup_idReleased_action _action);
+	public static extern void QButtonGroup_Connect_IdReleased(void* self, QButtonGroup_idReleased_action _action);
 	[LinkName("QButtonGroup_IdToggled")]
 	public static extern void QButtonGroup_IdToggled(void* self, c_int param1, bool param2);
 	
 	public function void QButtonGroup_idToggled_action(void* self, c_int param1, bool param2);
 	[LinkName("QButtonGroup_Connect_IdToggled")]
-	public static extern void QButtonGroup_Connect_IdToggled(void* self, c_int param1, bool param2, QButtonGroup_idToggled_action _action);
+	public static extern void QButtonGroup_Connect_IdToggled(void* self, QButtonGroup_idToggled_action _action);
 	[LinkName("QButtonGroup_Tr2")]
 	public static extern libqt_string QButtonGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QButtonGroup_Tr3")]

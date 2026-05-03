@@ -51,17 +51,29 @@ class QPropertyBindingSourceLocation : IQPropertyBindingSourceLocation
 {
 	private QPropertyBindingSourceLocation_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPropertyBindingSourceLocation_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPropertyBindingSourceLocation other)
 	{
 		this.ptr = CQt.QPropertyBindingSourceLocation_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyBindingSourceLocation_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -160,25 +172,39 @@ class QPropertyBindingError : IQPropertyBindingError
 {
 	private QPropertyBindingError_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPropertyBindingError_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyBindingError_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QPropertyBindingError_Type type)
 	{
 		this.ptr = CQt.QPropertyBindingError_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPropertyBindingError other)
 	{
 		this.ptr = CQt.QPropertyBindingError_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QPropertyBindingError_Type type, String description)
 	{
 		this.ptr = CQt.QPropertyBindingError_new4(type, libqt_string(description));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -249,17 +275,29 @@ class QUntypedPropertyBinding : IQUntypedPropertyBinding
 {
 	private QUntypedPropertyBinding_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUntypedPropertyBinding_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUntypedPropertyBinding_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUntypedPropertyBinding other)
 	{
 		this.ptr = CQt.QUntypedPropertyBinding_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -314,17 +352,29 @@ class QPropertyObserverBase : IQPropertyObserverBase
 {
 	private QPropertyObserverBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPropertyObserverBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyObserverBase_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPropertyObserverBase param1)
 	{
 		this.ptr = CQt.QPropertyObserverBase_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -359,13 +409,24 @@ class QPropertyObserver : IQPropertyObserver, IQPropertyObserverBase
 {
 	private QPropertyObserver_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPropertyObserver_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyObserver_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -398,13 +459,24 @@ class QPropertyNotifier : IQPropertyNotifier, IQPropertyObserver, IQPropertyObse
 {
 	private QPropertyNotifier_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPropertyNotifier_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPropertyNotifier_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -481,17 +553,29 @@ class QUntypedBindable : IQUntypedBindable
 {
 	private QUntypedBindable_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUntypedBindable_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUntypedBindable other)
 	{
 		this.ptr = CQt.QUntypedBindable_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUntypedBindable_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

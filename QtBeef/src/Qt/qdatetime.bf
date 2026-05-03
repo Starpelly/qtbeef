@@ -211,25 +211,39 @@ class QDate : IQDate
 {
 	private QDate_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDate_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate other)
 	{
 		this.ptr = CQt.QDate_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDate_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int y, c_int m, c_int d)
 	{
 		this.ptr = CQt.QDate_new4(y, m, d);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int y, c_int m, c_int d, IQCalendar cal)
 	{
 		this.ptr = CQt.QDate_new5(y, m, d, (.)cal?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -652,29 +666,44 @@ class QTime : IQTime
 {
 	private QTime_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTime_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTime other)
 	{
 		this.ptr = CQt.QTime_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTime_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int h, c_int m)
 	{
 		this.ptr = CQt.QTime_new4(h, m);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int h, c_int m, c_int s)
 	{
 		this.ptr = CQt.QTime_new6(h, m, s);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int h, c_int m, c_int s, c_int ms)
 	{
 		this.ptr = CQt.QTime_new7(h, m, s, ms);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1069,33 +1098,49 @@ class QDateTime : IQDateTime
 {
 	private QDateTime_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QDateTime_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDateTime_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date, IQTime time)
 	{
 		this.ptr = CQt.QDateTime_new2((.)date?.ObjectPtr, (.)time?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date, IQTime time, IQTimeZone timeZone)
 	{
 		this.ptr = CQt.QDateTime_new3((.)date?.ObjectPtr, (.)time?.ObjectPtr, (.)timeZone?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDateTime other)
 	{
 		this.ptr = CQt.QDateTime_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date, IQTime time, Qt_TimeSpec spec)
 	{
 		this.ptr = CQt.QDateTime_new5((.)date?.ObjectPtr, (.)time?.ObjectPtr, spec);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDate date, IQTime time, Qt_TimeSpec spec, c_int offsetSeconds)
 	{
 		this.ptr = CQt.QDateTime_new6((.)date?.ObjectPtr, (.)time?.ObjectPtr, spec, offsetSeconds);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -2099,25 +2099,159 @@ class QPlainTextEdit : IQPlainTextEdit, IQAbstractScrollArea, IQFrame, IQWidget,
 {
 	private QPlainTextEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QPlainTextEdit_textChanged,
+		QPlainTextEdit_undoAvailable,
+		QPlainTextEdit_redoAvailable,
+		QPlainTextEdit_copyAvailable,
+		QPlainTextEdit_selectionChanged,
+		QPlainTextEdit_cursorPositionChanged,
+		QPlainTextEdit_updateRequest,
+		QPlainTextEdit_blockCountChanged,
+		QPlainTextEdit_modificationChanged,
+		QPlainTextEdit_windowTitleChanged,
+		QPlainTextEdit_windowIconChanged,
+		QPlainTextEdit_windowIconTextChanged,
+		QPlainTextEdit_customContextMenuRequested,
+		QPlainTextEdit_destroyed,
+		QPlainTextEdit_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QPlainTextEdit_Connect_TextChanged(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_textChanged);
+		CQt.QPlainTextEdit_Connect_UndoAvailable(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_undoAvailable);
+		CQt.QPlainTextEdit_Connect_RedoAvailable(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_redoAvailable);
+		CQt.QPlainTextEdit_Connect_CopyAvailable(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_copyAvailable);
+		CQt.QPlainTextEdit_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_selectionChanged);
+		CQt.QPlainTextEdit_Connect_CursorPositionChanged(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_cursorPositionChanged);
+		CQt.QPlainTextEdit_Connect_UpdateRequest(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_updateRequest);
+		CQt.QPlainTextEdit_Connect_BlockCountChanged(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_blockCountChanged);
+		CQt.QPlainTextEdit_Connect_ModificationChanged(obj.ObjectPtr,  => QtBeef_QPlainTextEdit_modificationChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnUndoAvailable = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnRedoAvailable = .() ~ _.Dispose();
+	public Event<delegate void(bool b)> OnCopyAvailable = .() ~ _.Dispose();
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnCursorPositionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** rect, c_int dy)> OnUpdateRequest = .() ~ _.Dispose();
+	public Event<delegate void(c_int newBlockCount)> OnBlockCountChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool param1)> OnModificationChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QPlainTextEdit_textChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextChanged.Invoke();
+	}
+	static void QtBeef_QPlainTextEdit_undoAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndoAvailable.Invoke(b);
+	}
+	static void QtBeef_QPlainTextEdit_redoAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedoAvailable.Invoke(b);
+	}
+	static void QtBeef_QPlainTextEdit_copyAvailable(void* ptr, bool b)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCopyAvailable.Invoke(b);
+	}
+	static void QtBeef_QPlainTextEdit_selectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QPlainTextEdit_cursorPositionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorPositionChanged.Invoke();
+	}
+	static void QtBeef_QPlainTextEdit_updateRequest(void* ptr, void** rect, c_int dy)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateRequest.Invoke(rect, dy);
+	}
+	static void QtBeef_QPlainTextEdit_blockCountChanged(void* ptr, c_int newBlockCount)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlockCountChanged.Invoke(newBlockCount);
+	}
+	static void QtBeef_QPlainTextEdit_modificationChanged(void* ptr, bool param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnModificationChanged.Invoke(param1);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QPlainTextEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QPlainTextEdit_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPlainTextEdit_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QPlainTextEdit_new3(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQWidget parent)
 	{
 		this.ptr = CQt.QPlainTextEdit_new4(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4374,19 +4508,19 @@ extension CQt
 	
 	public function void QPlainTextEdit_undoAvailable_action(void* self, bool b);
 	[LinkName("QPlainTextEdit_Connect_UndoAvailable")]
-	public static extern void QPlainTextEdit_Connect_UndoAvailable(void* self, bool b, QPlainTextEdit_undoAvailable_action _action);
+	public static extern void QPlainTextEdit_Connect_UndoAvailable(void* self, QPlainTextEdit_undoAvailable_action _action);
 	[LinkName("QPlainTextEdit_RedoAvailable")]
 	public static extern void QPlainTextEdit_RedoAvailable(void* self, bool b);
 	
 	public function void QPlainTextEdit_redoAvailable_action(void* self, bool b);
 	[LinkName("QPlainTextEdit_Connect_RedoAvailable")]
-	public static extern void QPlainTextEdit_Connect_RedoAvailable(void* self, bool b, QPlainTextEdit_redoAvailable_action _action);
+	public static extern void QPlainTextEdit_Connect_RedoAvailable(void* self, QPlainTextEdit_redoAvailable_action _action);
 	[LinkName("QPlainTextEdit_CopyAvailable")]
 	public static extern void QPlainTextEdit_CopyAvailable(void* self, bool b);
 	
 	public function void QPlainTextEdit_copyAvailable_action(void* self, bool b);
 	[LinkName("QPlainTextEdit_Connect_CopyAvailable")]
-	public static extern void QPlainTextEdit_Connect_CopyAvailable(void* self, bool b, QPlainTextEdit_copyAvailable_action _action);
+	public static extern void QPlainTextEdit_Connect_CopyAvailable(void* self, QPlainTextEdit_copyAvailable_action _action);
 	[LinkName("QPlainTextEdit_SelectionChanged")]
 	public static extern void QPlainTextEdit_SelectionChanged(void* self);
 	
@@ -4404,19 +4538,19 @@ extension CQt
 	
 	public function void QPlainTextEdit_updateRequest_action(void* self, void** rect, c_int dy);
 	[LinkName("QPlainTextEdit_Connect_UpdateRequest")]
-	public static extern void QPlainTextEdit_Connect_UpdateRequest(void* self, void** rect, c_int dy, QPlainTextEdit_updateRequest_action _action);
+	public static extern void QPlainTextEdit_Connect_UpdateRequest(void* self, QPlainTextEdit_updateRequest_action _action);
 	[LinkName("QPlainTextEdit_BlockCountChanged")]
 	public static extern void QPlainTextEdit_BlockCountChanged(void* self, c_int newBlockCount);
 	
 	public function void QPlainTextEdit_blockCountChanged_action(void* self, c_int newBlockCount);
 	[LinkName("QPlainTextEdit_Connect_BlockCountChanged")]
-	public static extern void QPlainTextEdit_Connect_BlockCountChanged(void* self, c_int newBlockCount, QPlainTextEdit_blockCountChanged_action _action);
+	public static extern void QPlainTextEdit_Connect_BlockCountChanged(void* self, QPlainTextEdit_blockCountChanged_action _action);
 	[LinkName("QPlainTextEdit_ModificationChanged")]
 	public static extern void QPlainTextEdit_ModificationChanged(void* self, bool param1);
 	
 	public function void QPlainTextEdit_modificationChanged_action(void* self, bool param1);
 	[LinkName("QPlainTextEdit_Connect_ModificationChanged")]
-	public static extern void QPlainTextEdit_Connect_ModificationChanged(void* self, bool param1, QPlainTextEdit_modificationChanged_action _action);
+	public static extern void QPlainTextEdit_Connect_ModificationChanged(void* self, QPlainTextEdit_modificationChanged_action _action);
 	[LinkName("QPlainTextEdit_Event")]
 	public static extern bool QPlainTextEdit_Event(void* self, void** e);
 	[LinkName("QPlainTextEdit_TimerEvent")]
@@ -4890,13 +5024,80 @@ class QPlainTextDocumentLayout : IQPlainTextDocumentLayout, IQAbstractTextDocume
 {
 	private QPlainTextDocumentLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QPlainTextDocumentLayout_update,
+		QPlainTextDocumentLayout_updateBlock,
+		QPlainTextDocumentLayout_documentSizeChanged,
+		QPlainTextDocumentLayout_pageCountChanged,
+		QPlainTextDocumentLayout_update1,
+		QPlainTextDocumentLayout_destroyed,
+		QPlainTextDocumentLayout_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractTextDocumentLayout_Connect_Update(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_update);
+		CQt.QAbstractTextDocumentLayout_Connect_UpdateBlock(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_updateBlock);
+		CQt.QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_documentSizeChanged);
+		CQt.QAbstractTextDocumentLayout_Connect_PageCountChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_pageCountChanged);
+		CQt.QAbstractTextDocumentLayout_Connect_Update1(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_update1);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnUpdate = .() ~ _.Dispose();
+	public Event<delegate void(void** block)> OnUpdateBlock = .() ~ _.Dispose();
+	public Event<delegate void(void** newSize)> OnDocumentSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int newPages)> OnPageCountChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnUpdate1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractTextDocumentLayout_update(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdate.Invoke();
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_updateBlock(void* ptr, void** block)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateBlock.Invoke(block);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_documentSizeChanged(void* ptr, void** newSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDocumentSizeChanged.Invoke(newSize);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_pageCountChanged(void* ptr, c_int newPages)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPageCountChanged.Invoke(newPages);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_update1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdate1.Invoke(param1);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QPlainTextDocumentLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocument document)
 	{
 		this.ptr = CQt.QPlainTextDocumentLayout_new((.)document?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

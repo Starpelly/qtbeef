@@ -19,9 +19,19 @@ class QMethodRawArguments : IQMethodRawArguments
 {
 	private QMethodRawArguments_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMethodRawArguments_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -60,25 +70,39 @@ class QGenericArgument : IQGenericArgument
 {
 	private QGenericArgument_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGenericArgument_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGenericArgument other)
 	{
 		this.ptr = CQt.QGenericArgument_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGenericArgument_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* aName)
 	{
 		this.ptr = CQt.QGenericArgument_new5(aName);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* aName, void* aData)
 	{
 		this.ptr = CQt.QGenericArgument_new6(aName, aData);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -141,25 +165,39 @@ class QGenericReturnArgument : IQGenericReturnArgument, IQGenericArgument
 {
 	private QGenericReturnArgument_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QGenericReturnArgument_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGenericReturnArgument other)
 	{
 		this.ptr = CQt.QGenericReturnArgument_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGenericReturnArgument_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* aName)
 	{
 		this.ptr = CQt.QGenericReturnArgument_new5(aName);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* aName, void* aData)
 	{
 		this.ptr = CQt.QGenericReturnArgument_new6(aName, aData);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -618,17 +656,29 @@ class QMetaObject : IQMetaObject
 {
 	private QMetaObject_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaObject_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaObject_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaObject param1)
 	{
 		this.ptr = CQt.QMetaObject_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1279,17 +1329,29 @@ class QMetaObject_Connection : IQMetaObject_Connection
 {
 	private QMetaObject_Connection_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaObject_Connection_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaObject_Connection_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaObject_Connection other)
 	{
 		this.ptr = CQt.QMetaObject_Connection_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1340,25 +1402,39 @@ class QMetaObject_SuperData : IQMetaObject_SuperData
 {
 	private QMetaObject_SuperData_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaObject_SuperData_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaObject_SuperData_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaObject mo)
 	{
 		this.ptr = CQt.QMetaObject_SuperData_new2((.)mo?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_intptr** g)
 	{
 		this.ptr = CQt.QMetaObject_SuperData_new3(g);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaObject_SuperData param1)
 	{
 		this.ptr = CQt.QMetaObject_SuperData_new4((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1447,17 +1523,29 @@ class QMetaObject_Data : IQMetaObject_Data
 {
 	private QMetaObject_Data_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaObject_Data_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaObject_Data_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaObject_Data param1)
 	{
 		this.ptr = CQt.QMetaObject_Data_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -747,17 +747,141 @@ class QFileSystemModel : IQFileSystemModel, IQAbstractItemModel, IQObject
 {
 	private QFileSystemModel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QFileSystemModel_rootPathChanged,
+		QFileSystemModel_fileRenamed,
+		QFileSystemModel_directoryLoaded,
+		QFileSystemModel_dataChanged,
+		QFileSystemModel_headerDataChanged,
+		QFileSystemModel_layoutChanged,
+		QFileSystemModel_layoutAboutToBeChanged,
+		QFileSystemModel_dataChanged3,
+		QFileSystemModel_layoutChanged1,
+		QFileSystemModel_layoutChanged2,
+		QFileSystemModel_layoutAboutToBeChanged1,
+		QFileSystemModel_layoutAboutToBeChanged2,
+		QFileSystemModel_destroyed,
+		QFileSystemModel_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QFileSystemModel_Connect_RootPathChanged(obj.ObjectPtr,  => QtBeef_QFileSystemModel_rootPathChanged);
+		CQt.QFileSystemModel_Connect_FileRenamed(obj.ObjectPtr,  => QtBeef_QFileSystemModel_fileRenamed);
+		CQt.QFileSystemModel_Connect_DirectoryLoaded(obj.ObjectPtr,  => QtBeef_QFileSystemModel_directoryLoaded);
+		CQt.QAbstractItemModel_Connect_DataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged);
+		CQt.QAbstractItemModel_Connect_HeaderDataChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_headerDataChanged);
+		CQt.QAbstractItemModel_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged);
+		CQt.QAbstractItemModel_Connect_DataChanged3(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_dataChanged3);
+		CQt.QAbstractItemModel_Connect_LayoutChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutChanged2);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged1(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged1);
+		CQt.QAbstractItemModel_Connect_LayoutAboutToBeChanged2(obj.ObjectPtr,  => QtBeef_QAbstractItemModel_layoutAboutToBeChanged2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(libqt_string newPath)> OnRootPathChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string path, libqt_string oldName, libqt_string newName)> OnFileRenamed = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string path)> OnDirectoryLoaded = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight)> OnDataChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_Orientation orientation, c_int first, c_int last)> OnHeaderDataChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutAboutToBeChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** topLeft, void** bottomRight, void** roles)> OnDataChanged3 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutChanged2 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents)> OnLayoutAboutToBeChanged1 = .() ~ _.Dispose();
+	public Event<delegate void(void** parents, QAbstractItemModel_LayoutChangeHint hint)> OnLayoutAboutToBeChanged2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QFileSystemModel_rootPathChanged(void* ptr, libqt_string newPath)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRootPathChanged.Invoke(newPath);
+	}
+	static void QtBeef_QFileSystemModel_fileRenamed(void* ptr, libqt_string path, libqt_string oldName, libqt_string newName)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFileRenamed.Invoke(path, oldName, newName);
+	}
+	static void QtBeef_QFileSystemModel_directoryLoaded(void* ptr, libqt_string path)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDirectoryLoaded.Invoke(path);
+	}
+	static void QtBeef_QAbstractItemModel_dataChanged(void* ptr, void** topLeft, void** bottomRight)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged.Invoke(topLeft, bottomRight);
+	}
+	static void QtBeef_QAbstractItemModel_headerDataChanged(void* ptr, Qt_Orientation orientation, c_int first, c_int last)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeaderDataChanged.Invoke(orientation, first, last);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged.Invoke();
+	}
+	static void QtBeef_QAbstractItemModel_dataChanged3(void* ptr, void** topLeft, void** bottomRight, void** roles)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDataChanged3.Invoke(topLeft, bottomRight, roles);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged1(void* ptr, void** parents)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged1.Invoke(parents);
+	}
+	static void QtBeef_QAbstractItemModel_layoutAboutToBeChanged2(void* ptr, void** parents, QAbstractItemModel_LayoutChangeHint hint)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutAboutToBeChanged2.Invoke(parents, hint);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QFileSystemModel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFileSystemModel_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QFileSystemModel_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1516,19 +1640,19 @@ extension CQt
 	
 	public function void QFileSystemModel_rootPathChanged_action(void* self, libqt_string newPath);
 	[LinkName("QFileSystemModel_Connect_RootPathChanged")]
-	public static extern void QFileSystemModel_Connect_RootPathChanged(void* self, libqt_string newPath, QFileSystemModel_rootPathChanged_action _action);
+	public static extern void QFileSystemModel_Connect_RootPathChanged(void* self, QFileSystemModel_rootPathChanged_action _action);
 	[LinkName("QFileSystemModel_FileRenamed")]
 	public static extern void QFileSystemModel_FileRenamed(void* self, libqt_string path, libqt_string oldName, libqt_string newName);
 	
 	public function void QFileSystemModel_fileRenamed_action(void* self, libqt_string path, libqt_string oldName, libqt_string newName);
 	[LinkName("QFileSystemModel_Connect_FileRenamed")]
-	public static extern void QFileSystemModel_Connect_FileRenamed(void* self, libqt_string path, libqt_string oldName, libqt_string newName, QFileSystemModel_fileRenamed_action _action);
+	public static extern void QFileSystemModel_Connect_FileRenamed(void* self, QFileSystemModel_fileRenamed_action _action);
 	[LinkName("QFileSystemModel_DirectoryLoaded")]
 	public static extern void QFileSystemModel_DirectoryLoaded(void* self, libqt_string path);
 	
 	public function void QFileSystemModel_directoryLoaded_action(void* self, libqt_string path);
 	[LinkName("QFileSystemModel_Connect_DirectoryLoaded")]
-	public static extern void QFileSystemModel_Connect_DirectoryLoaded(void* self, libqt_string path, QFileSystemModel_directoryLoaded_action _action);
+	public static extern void QFileSystemModel_Connect_DirectoryLoaded(void* self, QFileSystemModel_directoryLoaded_action _action);
 	[LinkName("QFileSystemModel_Index")]
 	public static extern void* QFileSystemModel_Index(void* self, c_int row, c_int column, void** parent);
 	[LinkName("QFileSystemModel_Index2")]

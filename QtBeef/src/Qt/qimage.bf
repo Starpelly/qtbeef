@@ -631,61 +631,84 @@ class QImage : IQImage, IQPaintDevice
 {
 	private QImage_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QImage_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QImage_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQSize size, QImage_Format format)
 	{
 		this.ptr = CQt.QImage_new2((.)size?.ObjectPtr, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int width, c_int height, QImage_Format format)
 	{
 		this.ptr = CQt.QImage_new3(width, height, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar* data, c_int width, c_int height, QImage_Format format)
 	{
 		this.ptr = CQt.QImage_new4(data, width, height, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar* data, c_int width, c_int height, void* bytesPerLine, QImage_Format format)
 	{
 		this.ptr = CQt.QImage_new6(data, width, height, bytesPerLine, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char** xpm)
 	{
 		this.ptr = CQt.QImage_new8(xpm);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QImage_new9(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQImage param1)
 	{
 		this.ptr = CQt.QImage_new10((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar* data, c_int width, c_int height, QImage_Format format, c_intptr cleanupFunction)
 	{
 		this.ptr = CQt.QImage_new11(data, width, height, format, cleanupFunction);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar* data, c_int width, c_int height, QImage_Format format, c_intptr cleanupFunction, void* cleanupInfo)
 	{
 		this.ptr = CQt.QImage_new12(data, width, height, format, cleanupFunction, cleanupInfo);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar* data, c_int width, c_int height, void* bytesPerLine, QImage_Format format, c_intptr cleanupFunction)
 	{
 		this.ptr = CQt.QImage_new15(data, width, height, bytesPerLine, format, cleanupFunction);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_uchar* data, c_int width, c_int height, void* bytesPerLine, QImage_Format format, c_intptr cleanupFunction, void* cleanupInfo)
 	{
 		this.ptr = CQt.QImage_new16(data, width, height, bytesPerLine, format, cleanupFunction, cleanupInfo);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, c_char* format)
 	{
 		this.ptr = CQt.QImage_new19(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

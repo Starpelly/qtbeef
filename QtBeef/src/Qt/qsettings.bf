@@ -395,69 +395,110 @@ class QSettings : IQSettings, IQObject
 {
 	private QSettings_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QSettings_destroyed,
+		QSettings_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSettings_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String organization)
 	{
 		this.ptr = CQt.QSettings_new(libqt_string(organization));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, String organization)
 	{
 		this.ptr = CQt.QSettings_new2(_scope, libqt_string(organization));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* format, void* _scope, String organization)
 	{
 		this.ptr = CQt.QSettings_new3(format, _scope, libqt_string(organization));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void* format)
 	{
 		this.ptr = CQt.QSettings_new4(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSettings_new5();
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope)
 	{
 		this.ptr = CQt.QSettings_new6(_scope);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String organization, String application)
 	{
 		this.ptr = CQt.QSettings_new7(libqt_string(organization), libqt_string(application));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String organization, String application, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new8(libqt_string(organization), libqt_string(application), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, String organization, String application)
 	{
 		this.ptr = CQt.QSettings_new9(_scope, libqt_string(organization), libqt_string(application));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, String organization, String application, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new10(_scope, libqt_string(organization), libqt_string(application), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* format, void* _scope, String organization, String application)
 	{
 		this.ptr = CQt.QSettings_new11(format, _scope, libqt_string(organization), libqt_string(application));
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* format, void* _scope, String organization, String application, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new12(format, _scope, libqt_string(organization), libqt_string(application), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void* format, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new13(libqt_string(fileName), format, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new14((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void* _scope, IQObject parent)
 	{
 		this.ptr = CQt.QSettings_new15(_scope, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

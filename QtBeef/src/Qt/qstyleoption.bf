@@ -87,25 +87,39 @@ class QStyleOption : IQStyleOption
 {
 	private QStyleOption_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOption_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOption_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOption other)
 	{
 		this.ptr = CQt.QStyleOption_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version)
 	{
 		this.ptr = CQt.QStyleOption_new3(version);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version, c_int type)
 	{
 		this.ptr = CQt.QStyleOption_new4(version, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -324,17 +338,29 @@ class QStyleOptionFocusRect : IQStyleOptionFocusRect, IQStyleOption
 {
 	private QStyleOptionFocusRect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionFocusRect_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionFocusRect_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionFocusRect other)
 	{
 		this.ptr = CQt.QStyleOptionFocusRect_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -551,17 +577,29 @@ class QStyleOptionFrame : IQStyleOptionFrame, IQStyleOption
 {
 	private QStyleOptionFrame_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionFrame_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionFrame_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionFrame other)
 	{
 		this.ptr = CQt.QStyleOptionFrame_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -846,17 +884,29 @@ class QStyleOptionTabWidgetFrame : IQStyleOptionTabWidgetFrame, IQStyleOption
 {
 	private QStyleOptionTabWidgetFrame_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionTabWidgetFrame_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTabWidgetFrame_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTabWidgetFrame other)
 	{
 		this.ptr = CQt.QStyleOptionTabWidgetFrame_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1157,17 +1207,29 @@ class QStyleOptionTabBarBase : IQStyleOptionTabBarBase, IQStyleOption
 {
 	private QStyleOptionTabBarBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionTabBarBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTabBarBase_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTabBarBase other)
 	{
 		this.ptr = CQt.QStyleOptionTabBarBase_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1460,17 +1522,29 @@ class QStyleOptionHeader : IQStyleOptionHeader, IQStyleOption
 {
 	private QStyleOptionHeader_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionHeader_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionHeader_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionHeader other)
 	{
 		this.ptr = CQt.QStyleOptionHeader_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1847,17 +1921,29 @@ class QStyleOptionHeaderV2 : IQStyleOptionHeaderV2, IQStyleOptionHeader, IQStyle
 {
 	private QStyleOptionHeaderV2_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionHeaderV2_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionHeaderV2_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionHeaderV2 other)
 	{
 		this.ptr = CQt.QStyleOptionHeaderV2_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2170,17 +2256,29 @@ class QStyleOptionButton : IQStyleOptionButton, IQStyleOption
 {
 	private QStyleOptionButton_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionButton_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionButton_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionButton other)
 	{
 		this.ptr = CQt.QStyleOptionButton_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2505,17 +2603,29 @@ class QStyleOptionTab : IQStyleOptionTab, IQStyleOption
 {
 	private QStyleOptionTab_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionTab_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTab_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTab other)
 	{
 		this.ptr = CQt.QStyleOptionTab_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2892,17 +3002,29 @@ class QStyleOptionToolBar : IQStyleOptionToolBar, IQStyleOption
 {
 	private QStyleOptionToolBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionToolBar_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolBar_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionToolBar other)
 	{
 		this.ptr = CQt.QStyleOptionToolBar_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3211,17 +3333,29 @@ class QStyleOptionProgressBar : IQStyleOptionProgressBar, IQStyleOption
 {
 	private QStyleOptionProgressBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionProgressBar_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionProgressBar_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionProgressBar other)
 	{
 		this.ptr = CQt.QStyleOptionProgressBar_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3570,17 +3704,29 @@ class QStyleOptionMenuItem : IQStyleOptionMenuItem, IQStyleOption
 {
 	private QStyleOptionMenuItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionMenuItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionMenuItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionMenuItem other)
 	{
 		this.ptr = CQt.QStyleOptionMenuItem_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3913,17 +4059,29 @@ class QStyleOptionDockWidget : IQStyleOptionDockWidget, IQStyleOption
 {
 	private QStyleOptionDockWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionDockWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionDockWidget_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionDockWidget other)
 	{
 		this.ptr = CQt.QStyleOptionDockWidget_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4284,17 +4442,29 @@ class QStyleOptionViewItem : IQStyleOptionViewItem, IQStyleOption
 {
 	private QStyleOptionViewItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionViewItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionViewItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionViewItem other)
 	{
 		this.ptr = CQt.QStyleOptionViewItem_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4691,17 +4861,29 @@ class QStyleOptionToolBox : IQStyleOptionToolBox, IQStyleOption
 {
 	private QStyleOptionToolBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionToolBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolBox_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionToolBox other)
 	{
 		this.ptr = CQt.QStyleOptionToolBox_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4938,17 +5120,29 @@ class QStyleOptionRubberBand : IQStyleOptionRubberBand, IQStyleOption
 {
 	private QStyleOptionRubberBand_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionRubberBand_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionRubberBand_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionRubberBand other)
 	{
 		this.ptr = CQt.QStyleOptionRubberBand_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5161,25 +5355,39 @@ class QStyleOptionComplex : IQStyleOptionComplex, IQStyleOption
 {
 	private QStyleOptionComplex_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionComplex_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionComplex_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionComplex other)
 	{
 		this.ptr = CQt.QStyleOptionComplex_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version)
 	{
 		this.ptr = CQt.QStyleOptionComplex_new3(version);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version, c_int type)
 	{
 		this.ptr = CQt.QStyleOptionComplex_new4(version, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5500,17 +5708,29 @@ class QStyleOptionSlider : IQStyleOptionSlider, IQStyleOptionComplex, IQStyleOpt
 {
 	private QStyleOptionSlider_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionSlider_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSlider_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionSlider other)
 	{
 		this.ptr = CQt.QStyleOptionSlider_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5895,17 +6115,29 @@ class QStyleOptionSpinBox : IQStyleOptionSpinBox, IQStyleOptionComplex, IQStyleO
 {
 	private QStyleOptionSpinBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionSpinBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSpinBox_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionSpinBox other)
 	{
 		this.ptr = CQt.QStyleOptionSpinBox_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6210,17 +6442,29 @@ class QStyleOptionToolButton : IQStyleOptionToolButton, IQStyleOptionComplex, IQ
 {
 	private QStyleOptionToolButton_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionToolButton_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionToolButton_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionToolButton other)
 	{
 		this.ptr = CQt.QStyleOptionToolButton_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6577,17 +6821,29 @@ class QStyleOptionComboBox : IQStyleOptionComboBox, IQStyleOptionComplex, IQStyl
 {
 	private QStyleOptionComboBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionComboBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionComboBox_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionComboBox other)
 	{
 		this.ptr = CQt.QStyleOptionComboBox_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6908,17 +7164,29 @@ class QStyleOptionTitleBar : IQStyleOptionTitleBar, IQStyleOptionComplex, IQStyl
 {
 	private QStyleOptionTitleBar_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionTitleBar_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionTitleBar_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionTitleBar other)
 	{
 		this.ptr = CQt.QStyleOptionTitleBar_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7219,17 +7487,29 @@ class QStyleOptionGroupBox : IQStyleOptionGroupBox, IQStyleOptionComplex, IQStyl
 {
 	private QStyleOptionGroupBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionGroupBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionGroupBox_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionGroupBox other)
 	{
 		this.ptr = CQt.QStyleOptionGroupBox_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7514,17 +7794,29 @@ class QStyleOptionSizeGrip : IQStyleOptionSizeGrip, IQStyleOptionComplex, IQStyl
 {
 	private QStyleOptionSizeGrip_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionSizeGrip_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionSizeGrip_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionSizeGrip other)
 	{
 		this.ptr = CQt.QStyleOptionSizeGrip_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7737,17 +8029,29 @@ class QStyleOptionGraphicsItem : IQStyleOptionGraphicsItem, IQStyleOption
 {
 	private QStyleOptionGraphicsItem_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleOptionGraphicsItem_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleOptionGraphicsItem_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleOptionGraphicsItem other)
 	{
 		this.ptr = CQt.QStyleOptionGraphicsItem_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7886,25 +8190,39 @@ class QStyleHintReturn : IQStyleHintReturn
 {
 	private QStyleHintReturn_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleHintReturn_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturn_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleHintReturn param1)
 	{
 		this.ptr = CQt.QStyleHintReturn_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version)
 	{
 		this.ptr = CQt.QStyleHintReturn_new3(version);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int version, c_int type)
 	{
 		this.ptr = CQt.QStyleHintReturn_new4(version, type);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -7993,17 +8311,29 @@ class QStyleHintReturnMask : IQStyleHintReturnMask, IQStyleHintReturn
 {
 	private QStyleHintReturnMask_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleHintReturnMask_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturnMask_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleHintReturnMask param1)
 	{
 		this.ptr = CQt.QStyleHintReturnMask_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -8092,17 +8422,29 @@ class QStyleHintReturnVariant : IQStyleHintReturnVariant, IQStyleHintReturn
 {
 	private QStyleHintReturnVariant_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QStyleHintReturnVariant_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QStyleHintReturnVariant_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQStyleHintReturnVariant param1)
 	{
 		this.ptr = CQt.QStyleHintReturnVariant_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

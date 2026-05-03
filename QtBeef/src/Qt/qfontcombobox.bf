@@ -1963,17 +1963,141 @@ class QFontComboBox : IQFontComboBox, IQComboBox, IQWidget, IQObject, IQPaintDev
 {
 	private QFontComboBox_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QFontComboBox_currentFontChanged,
+		QFontComboBox_editTextChanged,
+		QFontComboBox_activated,
+		QFontComboBox_textActivated,
+		QFontComboBox_highlighted,
+		QFontComboBox_textHighlighted,
+		QFontComboBox_currentIndexChanged,
+		QFontComboBox_currentTextChanged,
+		QFontComboBox_windowTitleChanged,
+		QFontComboBox_windowIconChanged,
+		QFontComboBox_windowIconTextChanged,
+		QFontComboBox_customContextMenuRequested,
+		QFontComboBox_destroyed,
+		QFontComboBox_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QFontComboBox_Connect_CurrentFontChanged(obj.ObjectPtr,  => QtBeef_QFontComboBox_currentFontChanged);
+		CQt.QComboBox_Connect_EditTextChanged(obj.ObjectPtr,  => QtBeef_QComboBox_editTextChanged);
+		CQt.QComboBox_Connect_Activated(obj.ObjectPtr,  => QtBeef_QComboBox_activated);
+		CQt.QComboBox_Connect_TextActivated(obj.ObjectPtr,  => QtBeef_QComboBox_textActivated);
+		CQt.QComboBox_Connect_Highlighted(obj.ObjectPtr,  => QtBeef_QComboBox_highlighted);
+		CQt.QComboBox_Connect_TextHighlighted(obj.ObjectPtr,  => QtBeef_QComboBox_textHighlighted);
+		CQt.QComboBox_Connect_CurrentIndexChanged(obj.ObjectPtr,  => QtBeef_QComboBox_currentIndexChanged);
+		CQt.QComboBox_Connect_CurrentTextChanged(obj.ObjectPtr,  => QtBeef_QComboBox_currentTextChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** f)> OnCurrentFontChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnEditTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnTextActivated = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnHighlighted = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnTextHighlighted = .() ~ _.Dispose();
+	public Event<delegate void(c_int index)> OnCurrentIndexChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnCurrentTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QFontComboBox_currentFontChanged(void* ptr, void** f)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentFontChanged.Invoke(f);
+	}
+	static void QtBeef_QComboBox_editTextChanged(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QComboBox_activated(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(index);
+	}
+	static void QtBeef_QComboBox_textActivated(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextActivated.Invoke(param1);
+	}
+	static void QtBeef_QComboBox_highlighted(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlighted.Invoke(index);
+	}
+	static void QtBeef_QComboBox_textHighlighted(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextHighlighted.Invoke(param1);
+	}
+	static void QtBeef_QComboBox_currentIndexChanged(void* ptr, c_int index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentIndexChanged.Invoke(index);
+	}
+	static void QtBeef_QComboBox_currentTextChanged(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QFontComboBox_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QFontComboBox_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFontComboBox_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3974,7 +4098,7 @@ extension CQt
 	
 	public function void QFontComboBox_currentFontChanged_action(void* self, void** f);
 	[LinkName("QFontComboBox_Connect_CurrentFontChanged")]
-	public static extern void QFontComboBox_Connect_CurrentFontChanged(void* self, void** f, QFontComboBox_currentFontChanged_action _action);
+	public static extern void QFontComboBox_Connect_CurrentFontChanged(void* self, QFontComboBox_currentFontChanged_action _action);
 	[LinkName("QFontComboBox_Event")]
 	public static extern bool QFontComboBox_Event(void* self, void** e);
 	[LinkName("QFontComboBox_Tr2")]

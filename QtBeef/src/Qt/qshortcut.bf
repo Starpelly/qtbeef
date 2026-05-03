@@ -331,45 +331,96 @@ class QShortcut : IQShortcut, IQObject
 {
 	private QShortcut_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QShortcut_activated,
+		QShortcut_activatedAmbiguously,
+		QShortcut_destroyed,
+		QShortcut_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QShortcut_Connect_Activated(obj.ObjectPtr,  => QtBeef_QShortcut_activated);
+		CQt.QShortcut_Connect_ActivatedAmbiguously(obj.ObjectPtr,  => QtBeef_QShortcut_activatedAmbiguously);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void()> OnActivatedAmbiguously = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QShortcut_activated(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke();
+	}
+	static void QtBeef_QShortcut_activatedAmbiguously(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivatedAmbiguously.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QShortcut_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QShortcut_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent)
 	{
 		this.ptr = CQt.QShortcut_new2((.)key?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent)
 	{
 		this.ptr = CQt.QShortcut_new3(key, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent, c_char* member)
 	{
 		this.ptr = CQt.QShortcut_new4((.)key?.ObjectPtr, (.)parent?.ObjectPtr, member);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent, c_char* member, c_char* ambiguousMember)
 	{
 		this.ptr = CQt.QShortcut_new5((.)key?.ObjectPtr, (.)parent?.ObjectPtr, member, ambiguousMember);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQKeySequence key, IQObject parent, c_char* member, c_char* ambiguousMember, Qt_ShortcutContext context)
 	{
 		this.ptr = CQt.QShortcut_new6((.)key?.ObjectPtr, (.)parent?.ObjectPtr, member, ambiguousMember, context);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent, c_char* member)
 	{
 		this.ptr = CQt.QShortcut_new7(key, (.)parent?.ObjectPtr, member);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent, c_char* member, c_char* ambiguousMember)
 	{
 		this.ptr = CQt.QShortcut_new8(key, (.)parent?.ObjectPtr, member, ambiguousMember);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QKeySequence_StandardKey key, IQObject parent, c_char* member, c_char* ambiguousMember, Qt_ShortcutContext context)
 	{
 		this.ptr = CQt.QShortcut_new9(key, (.)parent?.ObjectPtr, member, ambiguousMember, context);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

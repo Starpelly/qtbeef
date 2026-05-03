@@ -13,7 +13,8 @@ class WriteClass
     {
         PtrStruct,
         CApi,
-        BfObject
+        BfObject,
+        SignalEvent,
     }
 
     public WriteClass(CppParsedHeader Header, APIState apiState)
@@ -295,6 +296,24 @@ class WriteClass
 
                 parameters.Append($"{ptrType} self");
 
+                if (method.Parameters.Length > 0 || isSignal)
+                    parameters.Append(", ");
+            }
+        }
+
+        if (stage == Stage.CApi)
+        {
+            if (isSignal)
+            {
+                parameters.Append($"{getSignalFunctionTypedefName(_class, method)} _action");
+                return parameters.Code;
+            }
+        }
+        if (stage == Stage.BfObject)
+        {
+            if (isSignal)
+            {
+                parameters.Append("void* ptr");
                 if (method.Parameters.Length > 0)
                     parameters.Append(", ");
             }
@@ -302,7 +321,7 @@ class WriteClass
 
         foreach (var param in method.Parameters)
         {
-            var bfTypeName = getBfTypeName(param, stage);
+            var bfTypeName = getBfTypeName(param, isSignal ? Stage.CApi : stage);
 
             if (stage == Stage.BfObject)
             {
@@ -324,18 +343,12 @@ class WriteClass
                 parameters.Append(", ");
         }
 
-        if (stage == Stage.CApi)
-        {
-            if (isSignal)
-            {
-                if (parameters.Code != string.Empty)
-                    parameters.Append(", ");
-
-                parameters.Append($"{getSignalFunctionTypedefName(_class, method)} _action");
-            }
-        }
-
         return parameters.Code;
+    }
+
+    private string toPascalCase(string name)
+    {
+        return Regex.Replace(name, @"\b\p{Ll}", match => match.Value.ToUpper());
     }
 
     string getSignalFunctionTypedefName(CppClass _class, CppMethod method)
@@ -343,7 +356,7 @@ class WriteClass
         return $"{cppNameToBf(_class.ClassName)}_{method.MethodName}_action";
     }
 
-    private string buildBfArguments(CppClass _class, CppMethod method, Stage stage, bool isMethod)
+    private string buildBfArguments(CppClass _class, CppMethod method, Stage stage, bool isMethod, bool isSignal)
     {
         var parameters = new StringCodeBuilder();
 
@@ -353,13 +366,26 @@ class WriteClass
             // But NOT if it's static, since it doesn't have an object.
             if (isMethod && !method.IsStatic)
             {
-                var ptrType = $"{_class.ClassName}_Ptr";
-                ptrType = ptrType.Replace("::", "_");
+                if (isSignal)
+                {
+                    parameters.Append("obj.ObjectPtr");
+                }
+                else
+                {
+                    var ptrType = $"{_class.ClassName}_Ptr";
+                    ptrType = ptrType.Replace("::", "_");
 
-                parameters.Append($"{ptrType} self");
+                    parameters.Append($"{ptrType} self");
+                }
 
-                if (method.Parameters.Length > 0)
+                if (method.Parameters.Length > 0 || isSignal)
                     parameters.Append(", ");
+            }
+
+            if (isSignal)
+            {
+                parameters.Append($" => {getSignalCallFunctionName(_class, method)}");
+                return parameters.Code;
             }
         }
         if (stage == Stage.BfObject)
@@ -404,6 +430,11 @@ class WriteClass
         }
 
         return parameters.Code;
+    }
+
+    string getSignalCallFunctionName(CppClass cppClass, CppMethod method)
+    {
+        return $"QtBeef_{cppNameToBf(cppClass.ClassName)}_{method.MethodName}";
     }
 
     public string WriteBfFile()
@@ -457,7 +488,7 @@ class WriteClass
                     var bfArguments = string.Empty;
                     if (isHandle)
                     {
-                        bfArguments = buildBfArguments(cppClass, method, Stage.BfObject, true);
+                        bfArguments = buildBfArguments(cppClass, method, Stage.BfObject, true, false);
                     }
                     else
                     {
@@ -604,12 +635,116 @@ class WriteClass
                     code.AppendLine($"private {bfClassName}_Ptr ptr;");
                     code.AppendLine("public void* ObjectPtr => ptr.Ptr;");
 
+                    var allSignals = new List<(CppClass @class, CppMethod @method)>();
+
+                    {
+                        var created = new List<string>();
+
+                        void collectSignals(CppClass cppClass)
+                        {
+                            foreach (var method in cppClass.Methods)
+                            {
+                                if (method.IsSignal)
+                                {
+                                    if (created.Contains(method.MethodName))
+                                        continue;
+
+                                    allSignals.Add((cppClass, method));
+                                    created.Add(method.MethodName);
+                                }
+                            }
+                        }
+
+                        collectSignals(cppClass);
+                        foreach (var inherited in  inheritedClasses)
+                        {
+                            collectSignals(inherited);
+                        }
+                    }
+
+                    code.AppendEmptyLine();
+                    code.AppendLine("enum ObjectSignalType");
+                    code.AppendLine("{");
+                    code.IncreaseTab();
+                    {
+                        foreach (var signal in allSignals)
+                        {
+                            code.AppendLine($"{methodPrefix}_{signal.method.MethodName}");
+                            code.Append(",");
+                        }
+                    }
+                    code.DecreaseTab();
+                    code.AppendLine("}");
+                    code.AppendEmptyLine();
+
+
+                    code.AppendLine("static void QtBf_ConnectSignals(Self obj)");
+                    code.AppendLine("{");
+                    code.IncreaseTab();
+                    {
+                        code.AppendLine("CQt.ObjectHandleMap[obj.ObjectPtr] = obj;");
+
+                        foreach (var signal in allSignals)
+                        {
+                            var signalName = cppMethodNameToBfMethodName(signal.@class, signal.method, Stage.CApi, true);
+                            // var signalParameters = buildBfParameters(cppClass, signal, Stage.CApi, true, true);
+                            var signalArguments = buildBfArguments(signal.@class, signal.method, Stage.CApi, true, true);
+
+                            code.AppendLine($"CQt.{signalName}({signalArguments});");
+                        }
+
+                        /*
+                        code.AppendLine("switch (signalType)");
+                        code.AppendLine("{");
+                        code.IncreaseTab();
+                        {
+                            foreach (var signal in allSignals)
+                            {
+                                code.AppendLine($"case .{methodPrefix}_{signal.MethodName}:");
+                            }
+                        }
+                        code.DecreaseTab();
+                        code.AppendLine("}");
+                        */
+
+                        // emitConnectSignalCall();
+                    }
+                    code.DecreaseTab();
+                    code.AppendLine("}");
+
+                    foreach (var signal in allSignals)
+                    {
+                        var parameters = buildBfParameters(signal.@class, signal.method, Stage.SignalEvent, true, true);
+                        code.AppendLine($"public Event<delegate void({parameters})> On{toPascalCase(signal.method.MethodName)} = .() ~ _.Dispose();");
+                    }
+
+                    foreach (var signal in allSignals)
+                    {
+                        var parameters = buildBfParameters(signal.@class, signal.method, Stage.BfObject, true, true);
+                        var arguments = buildBfArguments(signal.@class, signal.method, Stage.SignalEvent, true, true);
+                        code.AppendLine($"static void {getSignalCallFunctionName(signal.@class, signal.method)}({parameters})");
+                        code.AppendLine("{");
+                        code.IncreaseTab();
+                        {
+                            code.AppendLine("let obj = CQt.ObjectHandleMap[ptr] as Self;");
+                            code.AppendLine($"obj.On{toPascalCase(signal.method.MethodName)}.Invoke({arguments});");
+                        }
+                        code.DecreaseTab();
+                        code.AppendLine("}");
+                    }
+
+                    void emitConnectSignalsCall()
+                    {
+                        code.AppendLine("QtBf_ConnectSignals(this);");
+                    }
+
                     // Default constructor Object(ObjectHandle ptr)
                     code.AppendLine($"public this({bfClassName}_Ptr ptr)");
                     code.AppendLine("{");
                     code.IncreaseTab();
                     {
                         code.AppendLine("this.ptr = ptr;");
+                        emitConnectSignalsCall();
                     }
                     code.DecreaseTab();
                     code.AppendLine("}");
@@ -625,7 +760,7 @@ class WriteClass
                                 continue;
 
                             var parameters = buildBfParameters(cppClass, cppClass.Ctors[i], Stage.BfObject, false, false);
-                            var arguments = buildBfArguments(cppClass, cppClass.Ctors[i], Stage.BfObject, false);
+                            var arguments = buildBfArguments(cppClass, cppClass.Ctors[i], Stage.BfObject, false, false);
 
                             // @HACK
                             // Some class have constructors that have identical types, for some reason?
@@ -651,6 +786,7 @@ class WriteClass
 
 
                                 code.AppendLine($"this.ptr = CQt.{methodPrefix}_new{maybeSuffix(i)}({arguments});");
+                                emitConnectSignalsCall();
                             }
                             code.DecreaseTab();
                             code.AppendLine("}");

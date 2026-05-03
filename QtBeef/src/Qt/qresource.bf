@@ -99,21 +99,34 @@ class QResource : IQResource
 {
 	private QResource_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QResource_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QResource_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String file)
 	{
 		this.ptr = CQt.QResource_new2(libqt_string(file));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String file, IQLocale locale)
 	{
 		this.ptr = CQt.QResource_new3(libqt_string(file), (.)locale?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

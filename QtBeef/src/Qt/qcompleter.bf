@@ -419,33 +419,97 @@ class QCompleter : IQCompleter, IQObject
 {
 	private QCompleter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QCompleter_activated,
+		QCompleter_Activated2,
+		QCompleter_highlighted,
+		QCompleter_Highlighted2,
+		QCompleter_destroyed,
+		QCompleter_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QCompleter_Connect_Activated(obj.ObjectPtr,  => QtBeef_QCompleter_activated);
+		CQt.QCompleter_Connect_Activated2(obj.ObjectPtr,  => QtBeef_QCompleter_Activated2);
+		CQt.QCompleter_Connect_Highlighted(obj.ObjectPtr,  => QtBeef_QCompleter_highlighted);
+		CQt.QCompleter_Connect_Highlighted2(obj.ObjectPtr,  => QtBeef_QCompleter_Highlighted2);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(libqt_string text)> OnActivated = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnActivated2 = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string text)> OnHighlighted = .() ~ _.Dispose();
+	public Event<delegate void(void** index)> OnHighlighted2 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QCompleter_activated(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated.Invoke(text);
+	}
+	static void QtBeef_QCompleter_Activated2(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActivated2.Invoke(index);
+	}
+	static void QtBeef_QCompleter_highlighted(void* ptr, libqt_string text)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlighted.Invoke(text);
+	}
+	static void QtBeef_QCompleter_Highlighted2(void* ptr, void** index)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHighlighted2.Invoke(index);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QCompleter_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QCompleter_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model)
 	{
 		this.ptr = CQt.QCompleter_new2((.)model?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** completions)
 	{
 		this.ptr = CQt.QCompleter_new3(completions);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QCompleter_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractItemModel model, IQObject parent)
 	{
 		this.ptr = CQt.QCompleter_new5((.)model?.ObjectPtr, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** completions, IQObject parent)
 	{
 		this.ptr = CQt.QCompleter_new6(completions, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -954,25 +1018,25 @@ extension CQt
 	
 	public function void QCompleter_activated_action(void* self, libqt_string text);
 	[LinkName("QCompleter_Connect_Activated")]
-	public static extern void QCompleter_Connect_Activated(void* self, libqt_string text, QCompleter_activated_action _action);
+	public static extern void QCompleter_Connect_Activated(void* self, QCompleter_activated_action _action);
 	[LinkName("QCompleter_Activated2")]
 	public static extern void QCompleter_Activated2(void* self, void** index);
 	
 	public function void QCompleter_Activated2_action(void* self, void** index);
 	[LinkName("QCompleter_Connect_Activated2")]
-	public static extern void QCompleter_Connect_Activated2(void* self, void** index, QCompleter_Activated2_action _action);
+	public static extern void QCompleter_Connect_Activated2(void* self, QCompleter_Activated2_action _action);
 	[LinkName("QCompleter_Highlighted")]
 	public static extern void QCompleter_Highlighted(void* self, libqt_string text);
 	
 	public function void QCompleter_highlighted_action(void* self, libqt_string text);
 	[LinkName("QCompleter_Connect_Highlighted")]
-	public static extern void QCompleter_Connect_Highlighted(void* self, libqt_string text, QCompleter_highlighted_action _action);
+	public static extern void QCompleter_Connect_Highlighted(void* self, QCompleter_highlighted_action _action);
 	[LinkName("QCompleter_Highlighted2")]
 	public static extern void QCompleter_Highlighted2(void* self, void** index);
 	
 	public function void QCompleter_Highlighted2_action(void* self, void** index);
 	[LinkName("QCompleter_Connect_Highlighted2")]
-	public static extern void QCompleter_Connect_Highlighted2(void* self, void** index, QCompleter_Highlighted2_action _action);
+	public static extern void QCompleter_Connect_Highlighted2(void* self, QCompleter_Highlighted2_action _action);
 	[LinkName("QCompleter_Tr2")]
 	public static extern libqt_string QCompleter_Tr2(c_char* s, c_char* c);
 	[LinkName("QCompleter_Tr3")]

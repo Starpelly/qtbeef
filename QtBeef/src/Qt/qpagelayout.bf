@@ -147,29 +147,44 @@ class QPageLayout : IQPageLayout
 {
 	private QPageLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPageLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPageLayout_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPageSize pageSize, QPageLayout_Orientation orientation, IQMarginsF margins)
 	{
 		this.ptr = CQt.QPageLayout_new2((.)pageSize?.ObjectPtr, orientation, (.)margins?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPageLayout other)
 	{
 		this.ptr = CQt.QPageLayout_new3((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPageSize pageSize, QPageLayout_Orientation orientation, IQMarginsF margins, QPageLayout_Unit units)
 	{
 		this.ptr = CQt.QPageLayout_new4((.)pageSize?.ObjectPtr, orientation, (.)margins?.ObjectPtr, units);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPageSize pageSize, QPageLayout_Orientation orientation, IQMarginsF margins, QPageLayout_Unit units, IQMarginsF minMargins)
 	{
 		this.ptr = CQt.QPageLayout_new5((.)pageSize?.ObjectPtr, orientation, (.)margins?.ObjectPtr, units, (.)minMargins?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

@@ -315,17 +315,69 @@ class QSignalMapper : IQSignalMapper, IQObject
 {
 	private QSignalMapper_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QSignalMapper_mappedInt,
+		QSignalMapper_mappedString,
+		QSignalMapper_mappedObject,
+		QSignalMapper_destroyed,
+		QSignalMapper_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QSignalMapper_Connect_MappedInt(obj.ObjectPtr,  => QtBeef_QSignalMapper_mappedInt);
+		CQt.QSignalMapper_Connect_MappedString(obj.ObjectPtr,  => QtBeef_QSignalMapper_mappedString);
+		CQt.QSignalMapper_Connect_MappedObject(obj.ObjectPtr,  => QtBeef_QSignalMapper_mappedObject);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int param1)> OnMappedInt = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnMappedString = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnMappedObject = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QSignalMapper_mappedInt(void* ptr, c_int param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMappedInt.Invoke(param1);
+	}
+	static void QtBeef_QSignalMapper_mappedString(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMappedString.Invoke(param1);
+	}
+	static void QtBeef_QSignalMapper_mappedObject(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnMappedObject.Invoke(param1);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSignalMapper_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSignalMapper_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSignalMapper_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -666,19 +718,19 @@ extension CQt
 	
 	public function void QSignalMapper_mappedInt_action(void* self, c_int param1);
 	[LinkName("QSignalMapper_Connect_MappedInt")]
-	public static extern void QSignalMapper_Connect_MappedInt(void* self, c_int param1, QSignalMapper_mappedInt_action _action);
+	public static extern void QSignalMapper_Connect_MappedInt(void* self, QSignalMapper_mappedInt_action _action);
 	[LinkName("QSignalMapper_MappedString")]
 	public static extern void QSignalMapper_MappedString(void* self, libqt_string param1);
 	
 	public function void QSignalMapper_mappedString_action(void* self, libqt_string param1);
 	[LinkName("QSignalMapper_Connect_MappedString")]
-	public static extern void QSignalMapper_Connect_MappedString(void* self, libqt_string param1, QSignalMapper_mappedString_action _action);
+	public static extern void QSignalMapper_Connect_MappedString(void* self, QSignalMapper_mappedString_action _action);
 	[LinkName("QSignalMapper_MappedObject")]
 	public static extern void QSignalMapper_MappedObject(void* self, void** param1);
 	
 	public function void QSignalMapper_mappedObject_action(void* self, void** param1);
 	[LinkName("QSignalMapper_Connect_MappedObject")]
-	public static extern void QSignalMapper_Connect_MappedObject(void* self, void** param1, QSignalMapper_mappedObject_action _action);
+	public static extern void QSignalMapper_Connect_MappedObject(void* self, QSignalMapper_mappedObject_action _action);
 	[LinkName("QSignalMapper_Map")]
 	public static extern void QSignalMapper_Map(void* self);
 	[LinkName("QSignalMapper_Map2")]

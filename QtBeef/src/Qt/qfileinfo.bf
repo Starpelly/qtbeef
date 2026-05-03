@@ -239,29 +239,44 @@ class QFileInfo : IQFileInfo
 {
 	private QFileInfo_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QFileInfo_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFileInfo_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String file)
 	{
 		this.ptr = CQt.QFileInfo_new2(libqt_string(file));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQFileDevice file)
 	{
 		this.ptr = CQt.QFileInfo_new3((.)file?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQDir dir, String file)
 	{
 		this.ptr = CQt.QFileInfo_new4((.)dir?.ObjectPtr, libqt_string(file));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQFileInfo fileinfo)
 	{
 		this.ptr = CQt.QFileInfo_new5((.)fileinfo?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

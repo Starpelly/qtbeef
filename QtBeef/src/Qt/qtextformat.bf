@@ -31,21 +31,34 @@ class QTextLength : IQTextLength
 {
 	private QTextLength_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextLength_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextLength other)
 	{
 		this.ptr = CQt.QTextLength_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextLength_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(QTextLength_Type type, double value)
 	{
 		this.ptr = CQt.QTextLength_new4(type, value);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -298,21 +311,34 @@ class QTextFormat : IQTextFormat
 {
 	private QTextFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int type)
 	{
 		this.ptr = CQt.QTextFormat_new2(type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextFormat rhs)
 	{
 		this.ptr = CQt.QTextFormat_new3((.)rhs?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1099,17 +1125,29 @@ class QTextCharFormat : IQTextCharFormat, IQTextFormat
 {
 	private QTextCharFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextCharFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextCharFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextCharFormat param1)
 	{
 		this.ptr = CQt.QTextCharFormat_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2042,17 +2080,29 @@ class QTextBlockFormat : IQTextBlockFormat, IQTextFormat
 {
 	private QTextBlockFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextBlockFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextBlockFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextBlockFormat param1)
 	{
 		this.ptr = CQt.QTextBlockFormat_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2665,17 +2715,29 @@ class QTextListFormat : IQTextListFormat, IQTextFormat
 {
 	private QTextListFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextListFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextListFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextListFormat param1)
 	{
 		this.ptr = CQt.QTextListFormat_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3444,13 +3506,24 @@ class QTextImageFormat : IQTextImageFormat, IQTextCharFormat, IQTextFormat
 {
 	private QTextImageFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextImageFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextImageFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -4299,17 +4372,29 @@ class QTextFrameFormat : IQTextFrameFormat, IQTextFormat
 {
 	private QTextFrameFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextFrameFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextFrameFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextFrameFormat param1)
 	{
 		this.ptr = CQt.QTextFrameFormat_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -5062,13 +5147,24 @@ class QTextTableFormat : IQTextTableFormat, IQTextFrameFormat, IQTextFormat
 {
 	private QTextTableFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextTableFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextTableFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -6097,13 +6193,24 @@ class QTextTableCellFormat : IQTextTableCellFormat, IQTextCharFormat, IQTextForm
 {
 	private QTextTableCellFormat_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextTableCellFormat_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QTextTableCellFormat_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

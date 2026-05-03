@@ -371,17 +371,29 @@ class QMetaMethod : IQMetaMethod
 {
 	private QMetaMethod_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaMethod_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaMethod other)
 	{
 		this.ptr = CQt.QMetaMethod_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaMethod_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1012,17 +1024,29 @@ class QMetaEnum : IQMetaEnum
 {
 	private QMetaEnum_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaEnum_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaEnum other)
 	{
 		this.ptr = CQt.QMetaEnum_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaEnum_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1305,17 +1329,29 @@ class QMetaProperty : IQMetaProperty
 {
 	private QMetaProperty_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaProperty_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaProperty other)
 	{
 		this.ptr = CQt.QMetaProperty_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaProperty_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1586,17 +1622,29 @@ class QMetaClassInfo : IQMetaClassInfo
 {
 	private QMetaClassInfo_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QMetaClassInfo_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQMetaClassInfo other)
 	{
 		this.ptr = CQt.QMetaClassInfo_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMetaClassInfo_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

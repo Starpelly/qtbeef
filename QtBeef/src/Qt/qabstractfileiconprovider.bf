@@ -39,13 +39,24 @@ class QAbstractFileIconProvider : IQAbstractFileIconProvider
 {
 	private QAbstractFileIconProvider_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAbstractFileIconProvider_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractFileIconProvider_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

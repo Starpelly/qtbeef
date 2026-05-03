@@ -583,37 +583,54 @@ class QLocale : IQLocale
 {
 	private QLocale_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QLocale_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLocale_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name)
 	{
 		this.ptr = CQt.QLocale_new2(libqt_string(name));
+		QtBf_ConnectSignals(this);
 	}
 	public this(QLocale_Language language, QLocale_Country territory)
 	{
 		this.ptr = CQt.QLocale_new3(language, territory);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QLocale_Language language)
 	{
 		this.ptr = CQt.QLocale_new4(language);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQLocale other)
 	{
 		this.ptr = CQt.QLocale_new5((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QLocale_Language language, QLocale_Script script)
 	{
 		this.ptr = CQt.QLocale_new6(language, script);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QLocale_Language language, QLocale_Script script, QLocale_Country territory)
 	{
 		this.ptr = CQt.QLocale_new7(language, script, territory);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

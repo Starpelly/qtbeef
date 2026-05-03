@@ -219,21 +219,34 @@ class QAccessibleWidget : IQAccessibleWidget, IQAccessibleObject, IQAccessibleIn
 {
 	private QAccessibleWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget o)
 	{
 		this.ptr = CQt.QAccessibleWidget_new((.)o?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget o, QAccessible_Role r)
 	{
 		this.ptr = CQt.QAccessibleWidget_new2((.)o?.ObjectPtr, r);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget o, QAccessible_Role r, String name)
 	{
 		this.ptr = CQt.QAccessibleWidget_new3((.)o?.ObjectPtr, r, libqt_string(name));
+		QtBf_ConnectSignals(this);
 	}
 	public bool IsValid()
 	{

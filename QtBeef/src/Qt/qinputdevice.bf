@@ -315,29 +315,68 @@ class QInputDevice : IQInputDevice, IQObject
 {
 	private QInputDevice_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QInputDevice_availableVirtualGeometryChanged,
+		QInputDevice_destroyed,
+		QInputDevice_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QInputDevice_Connect_AvailableVirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QInputDevice_availableVirtualGeometryChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void* area)> OnAvailableVirtualGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QInputDevice_availableVirtualGeometryChanged(void* ptr, void* area)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAvailableVirtualGeometryChanged.Invoke(area);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QInputDevice_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QInputDevice_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType type)
 	{
 		this.ptr = CQt.QInputDevice_new2(libqt_string(name), systemId, type);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QInputDevice_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType type, String seatName)
 	{
 		this.ptr = CQt.QInputDevice_new4(libqt_string(name), systemId, type, libqt_string(seatName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, c_longlong systemId, QInputDevice_DeviceType type, String seatName, IQObject parent)
 	{
 		this.ptr = CQt.QInputDevice_new5(libqt_string(name), systemId, type, libqt_string(seatName), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -692,7 +731,7 @@ extension CQt
 	
 	public function void QInputDevice_availableVirtualGeometryChanged_action(void* self, void* area);
 	[LinkName("QInputDevice_Connect_AvailableVirtualGeometryChanged")]
-	public static extern void QInputDevice_Connect_AvailableVirtualGeometryChanged(void* self, void* area, QInputDevice_availableVirtualGeometryChanged_action _action);
+	public static extern void QInputDevice_Connect_AvailableVirtualGeometryChanged(void* self, QInputDevice_availableVirtualGeometryChanged_action _action);
 	[LinkName("QInputDevice_Tr2")]
 	public static extern libqt_string QInputDevice_Tr2(c_char* s, c_char* c);
 	[LinkName("QInputDevice_Tr3")]

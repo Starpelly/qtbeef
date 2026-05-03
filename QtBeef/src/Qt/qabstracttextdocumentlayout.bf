@@ -379,13 +379,80 @@ class QAbstractTextDocumentLayout : IQAbstractTextDocumentLayout, IQObject
 {
 	private QAbstractTextDocumentLayout_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QAbstractTextDocumentLayout_update,
+		QAbstractTextDocumentLayout_updateBlock,
+		QAbstractTextDocumentLayout_documentSizeChanged,
+		QAbstractTextDocumentLayout_pageCountChanged,
+		QAbstractTextDocumentLayout_update1,
+		QAbstractTextDocumentLayout_destroyed,
+		QAbstractTextDocumentLayout_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QAbstractTextDocumentLayout_Connect_Update(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_update);
+		CQt.QAbstractTextDocumentLayout_Connect_UpdateBlock(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_updateBlock);
+		CQt.QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_documentSizeChanged);
+		CQt.QAbstractTextDocumentLayout_Connect_PageCountChanged(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_pageCountChanged);
+		CQt.QAbstractTextDocumentLayout_Connect_Update1(obj.ObjectPtr,  => QtBeef_QAbstractTextDocumentLayout_update1);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnUpdate = .() ~ _.Dispose();
+	public Event<delegate void(void** block)> OnUpdateBlock = .() ~ _.Dispose();
+	public Event<delegate void(void** newSize)> OnDocumentSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(c_int newPages)> OnPageCountChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnUpdate1 = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QAbstractTextDocumentLayout_update(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdate.Invoke();
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_updateBlock(void* ptr, void** block)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdateBlock.Invoke(block);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_documentSizeChanged(void* ptr, void** newSize)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDocumentSizeChanged.Invoke(newSize);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_pageCountChanged(void* ptr, c_int newPages)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPageCountChanged.Invoke(newPages);
+	}
+	static void QtBeef_QAbstractTextDocumentLayout_update1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdate1.Invoke(param1);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QAbstractTextDocumentLayout_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQTextDocument doc)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_new((.)doc?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -812,19 +879,19 @@ extension CQt
 	
 	public function void QAbstractTextDocumentLayout_updateBlock_action(void* self, void** block);
 	[LinkName("QAbstractTextDocumentLayout_Connect_UpdateBlock")]
-	public static extern void QAbstractTextDocumentLayout_Connect_UpdateBlock(void* self, void** block, QAbstractTextDocumentLayout_updateBlock_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_UpdateBlock(void* self, QAbstractTextDocumentLayout_updateBlock_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DocumentSizeChanged")]
 	public static extern void QAbstractTextDocumentLayout_DocumentSizeChanged(void* self, void** newSize);
 	
 	public function void QAbstractTextDocumentLayout_documentSizeChanged_action(void* self, void** newSize);
 	[LinkName("QAbstractTextDocumentLayout_Connect_DocumentSizeChanged")]
-	public static extern void QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(void* self, void** newSize, QAbstractTextDocumentLayout_documentSizeChanged_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_DocumentSizeChanged(void* self, QAbstractTextDocumentLayout_documentSizeChanged_action _action);
 	[LinkName("QAbstractTextDocumentLayout_PageCountChanged")]
 	public static extern void QAbstractTextDocumentLayout_PageCountChanged(void* self, c_int newPages);
 	
 	public function void QAbstractTextDocumentLayout_pageCountChanged_action(void* self, c_int newPages);
 	[LinkName("QAbstractTextDocumentLayout_Connect_PageCountChanged")]
-	public static extern void QAbstractTextDocumentLayout_Connect_PageCountChanged(void* self, c_int newPages, QAbstractTextDocumentLayout_pageCountChanged_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_PageCountChanged(void* self, QAbstractTextDocumentLayout_pageCountChanged_action _action);
 	[LinkName("QAbstractTextDocumentLayout_DocumentChanged")]
 	public static extern void QAbstractTextDocumentLayout_DocumentChanged(void* self, c_int from, c_int charsRemoved, c_int charsAdded);
 	[LinkName("QAbstractTextDocumentLayout_ResizeInlineObject")]
@@ -848,7 +915,7 @@ extension CQt
 	
 	public function void QAbstractTextDocumentLayout_update1_action(void* self, void** param1);
 	[LinkName("QAbstractTextDocumentLayout_Connect_Update1")]
-	public static extern void QAbstractTextDocumentLayout_Connect_Update1(void* self, void** param1, QAbstractTextDocumentLayout_update1_action _action);
+	public static extern void QAbstractTextDocumentLayout_Connect_Update1(void* self, QAbstractTextDocumentLayout_update1_action _action);
 }
 // --------------------------------------------------------------
 // QTextObjectInterface
@@ -874,9 +941,19 @@ class QTextObjectInterface : IQTextObjectInterface
 {
 	private QTextObjectInterface_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QTextObjectInterface_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -937,13 +1014,24 @@ class QAbstractTextDocumentLayout_Selection : IQAbstractTextDocumentLayout_Selec
 {
 	private QAbstractTextDocumentLayout_Selection_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAbstractTextDocumentLayout_Selection_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractTextDocumentLayout_Selection param1)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_Selection_new((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1034,17 +1122,29 @@ class QAbstractTextDocumentLayout_PaintContext : IQAbstractTextDocumentLayout_Pa
 {
 	private QAbstractTextDocumentLayout_PaintContext_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAbstractTextDocumentLayout_PaintContext_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_PaintContext_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQAbstractTextDocumentLayout_PaintContext param1)
 	{
 		this.ptr = CQt.QAbstractTextDocumentLayout_PaintContext_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

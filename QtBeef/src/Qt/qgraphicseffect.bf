@@ -335,17 +335,53 @@ class QGraphicsEffect : IQGraphicsEffect, IQObject
 {
 	private QGraphicsEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QGraphicsEffect_enabledChanged,
+		QGraphicsEffect_destroyed,
+		QGraphicsEffect_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsEffect_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsEffect_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -702,7 +738,7 @@ extension CQt
 	
 	public function void QGraphicsEffect_enabledChanged_action(void* self, bool enabled);
 	[LinkName("QGraphicsEffect_Connect_EnabledChanged")]
-	public static extern void QGraphicsEffect_Connect_EnabledChanged(void* self, bool enabled, QGraphicsEffect_enabledChanged_action _action);
+	public static extern void QGraphicsEffect_Connect_EnabledChanged(void* self, QGraphicsEffect_enabledChanged_action _action);
 	[LinkName("QGraphicsEffect_Draw")]
 	public static extern void QGraphicsEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsEffect_SourceChanged")]
@@ -1086,17 +1122,69 @@ class QGraphicsColorizeEffect : IQGraphicsColorizeEffect, IQGraphicsEffect, IQOb
 {
 	private QGraphicsColorizeEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QGraphicsColorizeEffect_colorChanged,
+		QGraphicsColorizeEffect_strengthChanged,
+		QGraphicsColorizeEffect_enabledChanged,
+		QGraphicsColorizeEffect_destroyed,
+		QGraphicsColorizeEffect_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsColorizeEffect_Connect_ColorChanged(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_colorChanged);
+		CQt.QGraphicsColorizeEffect_Connect_StrengthChanged(obj.ObjectPtr,  => QtBeef_QGraphicsColorizeEffect_strengthChanged);
+		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** color)> OnColorChanged = .() ~ _.Dispose();
+	public Event<delegate void(double strength)> OnStrengthChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsColorizeEffect_colorChanged(void* ptr, void** color)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColorChanged.Invoke(color);
+	}
+	static void QtBeef_QGraphicsColorizeEffect_strengthChanged(void* ptr, double strength)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStrengthChanged.Invoke(strength);
+	}
+	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsColorizeEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsColorizeEffect_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsColorizeEffect_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1475,13 +1563,13 @@ extension CQt
 	
 	public function void QGraphicsColorizeEffect_colorChanged_action(void* self, void** color);
 	[LinkName("QGraphicsColorizeEffect_Connect_ColorChanged")]
-	public static extern void QGraphicsColorizeEffect_Connect_ColorChanged(void* self, void** color, QGraphicsColorizeEffect_colorChanged_action _action);
+	public static extern void QGraphicsColorizeEffect_Connect_ColorChanged(void* self, QGraphicsColorizeEffect_colorChanged_action _action);
 	[LinkName("QGraphicsColorizeEffect_StrengthChanged")]
 	public static extern void QGraphicsColorizeEffect_StrengthChanged(void* self, double strength);
 	
 	public function void QGraphicsColorizeEffect_strengthChanged_action(void* self, double strength);
 	[LinkName("QGraphicsColorizeEffect_Connect_StrengthChanged")]
-	public static extern void QGraphicsColorizeEffect_Connect_StrengthChanged(void* self, double strength, QGraphicsColorizeEffect_strengthChanged_action _action);
+	public static extern void QGraphicsColorizeEffect_Connect_StrengthChanged(void* self, QGraphicsColorizeEffect_strengthChanged_action _action);
 	[LinkName("QGraphicsColorizeEffect_Draw")]
 	public static extern void QGraphicsColorizeEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsColorizeEffect_Tr2")]
@@ -1845,17 +1933,69 @@ class QGraphicsBlurEffect : IQGraphicsBlurEffect, IQGraphicsEffect, IQObject
 {
 	private QGraphicsBlurEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QGraphicsBlurEffect_blurRadiusChanged,
+		QGraphicsBlurEffect_blurHintsChanged,
+		QGraphicsBlurEffect_enabledChanged,
+		QGraphicsBlurEffect_destroyed,
+		QGraphicsBlurEffect_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsBlurEffect_Connect_BlurRadiusChanged(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_blurRadiusChanged);
+		CQt.QGraphicsBlurEffect_Connect_BlurHintsChanged(obj.ObjectPtr,  => QtBeef_QGraphicsBlurEffect_blurHintsChanged);
+		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(double blurRadius)> OnBlurRadiusChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* hints)> OnBlurHintsChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsBlurEffect_blurRadiusChanged(void* ptr, double blurRadius)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlurRadiusChanged.Invoke(blurRadius);
+	}
+	static void QtBeef_QGraphicsBlurEffect_blurHintsChanged(void* ptr, void* hints)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlurHintsChanged.Invoke(hints);
+	}
+	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsBlurEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsBlurEffect_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsBlurEffect_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -2236,13 +2376,13 @@ extension CQt
 	
 	public function void QGraphicsBlurEffect_blurRadiusChanged_action(void* self, double blurRadius);
 	[LinkName("QGraphicsBlurEffect_Connect_BlurRadiusChanged")]
-	public static extern void QGraphicsBlurEffect_Connect_BlurRadiusChanged(void* self, double blurRadius, QGraphicsBlurEffect_blurRadiusChanged_action _action);
+	public static extern void QGraphicsBlurEffect_Connect_BlurRadiusChanged(void* self, QGraphicsBlurEffect_blurRadiusChanged_action _action);
 	[LinkName("QGraphicsBlurEffect_BlurHintsChanged")]
 	public static extern void QGraphicsBlurEffect_BlurHintsChanged(void* self, void* hints);
 	
 	public function void QGraphicsBlurEffect_blurHintsChanged_action(void* self, void* hints);
 	[LinkName("QGraphicsBlurEffect_Connect_BlurHintsChanged")]
-	public static extern void QGraphicsBlurEffect_Connect_BlurHintsChanged(void* self, void* hints, QGraphicsBlurEffect_blurHintsChanged_action _action);
+	public static extern void QGraphicsBlurEffect_Connect_BlurHintsChanged(void* self, QGraphicsBlurEffect_blurHintsChanged_action _action);
 	[LinkName("QGraphicsBlurEffect_Draw")]
 	public static extern void QGraphicsBlurEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsBlurEffect_Tr2")]
@@ -2642,17 +2782,77 @@ class QGraphicsDropShadowEffect : IQGraphicsDropShadowEffect, IQGraphicsEffect, 
 {
 	private QGraphicsDropShadowEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QGraphicsDropShadowEffect_offsetChanged,
+		QGraphicsDropShadowEffect_blurRadiusChanged,
+		QGraphicsDropShadowEffect_colorChanged,
+		QGraphicsDropShadowEffect_enabledChanged,
+		QGraphicsDropShadowEffect_destroyed,
+		QGraphicsDropShadowEffect_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsDropShadowEffect_Connect_OffsetChanged(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_offsetChanged);
+		CQt.QGraphicsDropShadowEffect_Connect_BlurRadiusChanged(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_blurRadiusChanged);
+		CQt.QGraphicsDropShadowEffect_Connect_ColorChanged(obj.ObjectPtr,  => QtBeef_QGraphicsDropShadowEffect_colorChanged);
+		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** offset)> OnOffsetChanged = .() ~ _.Dispose();
+	public Event<delegate void(double blurRadius)> OnBlurRadiusChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** color)> OnColorChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsDropShadowEffect_offsetChanged(void* ptr, void** offset)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOffsetChanged.Invoke(offset);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_blurRadiusChanged(void* ptr, double blurRadius)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBlurRadiusChanged.Invoke(blurRadius);
+	}
+	static void QtBeef_QGraphicsDropShadowEffect_colorChanged(void* ptr, void** color)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnColorChanged.Invoke(color);
+	}
+	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsDropShadowEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsDropShadowEffect_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsDropShadowEffect_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3085,19 +3285,19 @@ extension CQt
 	
 	public function void QGraphicsDropShadowEffect_offsetChanged_action(void* self, void** offset);
 	[LinkName("QGraphicsDropShadowEffect_Connect_OffsetChanged")]
-	public static extern void QGraphicsDropShadowEffect_Connect_OffsetChanged(void* self, void** offset, QGraphicsDropShadowEffect_offsetChanged_action _action);
+	public static extern void QGraphicsDropShadowEffect_Connect_OffsetChanged(void* self, QGraphicsDropShadowEffect_offsetChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_BlurRadiusChanged")]
 	public static extern void QGraphicsDropShadowEffect_BlurRadiusChanged(void* self, double blurRadius);
 	
 	public function void QGraphicsDropShadowEffect_blurRadiusChanged_action(void* self, double blurRadius);
 	[LinkName("QGraphicsDropShadowEffect_Connect_BlurRadiusChanged")]
-	public static extern void QGraphicsDropShadowEffect_Connect_BlurRadiusChanged(void* self, double blurRadius, QGraphicsDropShadowEffect_blurRadiusChanged_action _action);
+	public static extern void QGraphicsDropShadowEffect_Connect_BlurRadiusChanged(void* self, QGraphicsDropShadowEffect_blurRadiusChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_ColorChanged")]
 	public static extern void QGraphicsDropShadowEffect_ColorChanged(void* self, void** color);
 	
 	public function void QGraphicsDropShadowEffect_colorChanged_action(void* self, void** color);
 	[LinkName("QGraphicsDropShadowEffect_Connect_ColorChanged")]
-	public static extern void QGraphicsDropShadowEffect_Connect_ColorChanged(void* self, void** color, QGraphicsDropShadowEffect_colorChanged_action _action);
+	public static extern void QGraphicsDropShadowEffect_Connect_ColorChanged(void* self, QGraphicsDropShadowEffect_colorChanged_action _action);
 	[LinkName("QGraphicsDropShadowEffect_Draw")]
 	public static extern void QGraphicsDropShadowEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsDropShadowEffect_Tr2")]
@@ -3461,17 +3661,69 @@ class QGraphicsOpacityEffect : IQGraphicsOpacityEffect, IQGraphicsEffect, IQObje
 {
 	private QGraphicsOpacityEffect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QGraphicsOpacityEffect_opacityChanged,
+		QGraphicsOpacityEffect_opacityMaskChanged,
+		QGraphicsOpacityEffect_enabledChanged,
+		QGraphicsOpacityEffect_destroyed,
+		QGraphicsOpacityEffect_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsOpacityEffect_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_opacityChanged);
+		CQt.QGraphicsOpacityEffect_Connect_OpacityMaskChanged(obj.ObjectPtr,  => QtBeef_QGraphicsOpacityEffect_opacityMaskChanged);
+		CQt.QGraphicsEffect_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsEffect_enabledChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(double opacity)> OnOpacityChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** mask)> OnOpacityMaskChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool enabled)> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsOpacityEffect_opacityChanged(void* ptr, double opacity)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpacityChanged.Invoke(opacity);
+	}
+	static void QtBeef_QGraphicsOpacityEffect_opacityMaskChanged(void* ptr, void** mask)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpacityMaskChanged.Invoke(mask);
+	}
+	static void QtBeef_QGraphicsEffect_enabledChanged(void* ptr, bool enabled)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke(enabled);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsOpacityEffect_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsOpacityEffect_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QGraphicsOpacityEffect_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3850,13 +4102,13 @@ extension CQt
 	
 	public function void QGraphicsOpacityEffect_opacityChanged_action(void* self, double opacity);
 	[LinkName("QGraphicsOpacityEffect_Connect_OpacityChanged")]
-	public static extern void QGraphicsOpacityEffect_Connect_OpacityChanged(void* self, double opacity, QGraphicsOpacityEffect_opacityChanged_action _action);
+	public static extern void QGraphicsOpacityEffect_Connect_OpacityChanged(void* self, QGraphicsOpacityEffect_opacityChanged_action _action);
 	[LinkName("QGraphicsOpacityEffect_OpacityMaskChanged")]
 	public static extern void QGraphicsOpacityEffect_OpacityMaskChanged(void* self, void** mask);
 	
 	public function void QGraphicsOpacityEffect_opacityMaskChanged_action(void* self, void** mask);
 	[LinkName("QGraphicsOpacityEffect_Connect_OpacityMaskChanged")]
-	public static extern void QGraphicsOpacityEffect_Connect_OpacityMaskChanged(void* self, void** mask, QGraphicsOpacityEffect_opacityMaskChanged_action _action);
+	public static extern void QGraphicsOpacityEffect_Connect_OpacityMaskChanged(void* self, QGraphicsOpacityEffect_opacityMaskChanged_action _action);
 	[LinkName("QGraphicsOpacityEffect_Draw")]
 	public static extern void QGraphicsOpacityEffect_Draw(void* self, void** painter);
 	[LinkName("QGraphicsOpacityEffect_Tr2")]

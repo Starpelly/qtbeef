@@ -1795,33 +1795,113 @@ class QLabel : IQLabel, IQFrame, IQWidget, IQObject, IQPaintDevice
 {
 	private QLabel_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QLabel_linkActivated,
+		QLabel_linkHovered,
+		QLabel_windowTitleChanged,
+		QLabel_windowIconChanged,
+		QLabel_windowIconTextChanged,
+		QLabel_customContextMenuRequested,
+		QLabel_destroyed,
+		QLabel_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QLabel_Connect_LinkActivated(obj.ObjectPtr,  => QtBeef_QLabel_linkActivated);
+		CQt.QLabel_Connect_LinkHovered(obj.ObjectPtr,  => QtBeef_QLabel_linkHovered);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(libqt_string link)> OnLinkActivated = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string link)> OnLinkHovered = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QLabel_linkActivated(void* ptr, libqt_string link)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLinkActivated.Invoke(link);
+	}
+	static void QtBeef_QLabel_linkHovered(void* ptr, libqt_string link)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLinkHovered.Invoke(link);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QLabel_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QLabel_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLabel_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QLabel_new3(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* f)
 	{
 		this.ptr = CQt.QLabel_new4((.)parent?.ObjectPtr, f);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQWidget parent)
 	{
 		this.ptr = CQt.QLabel_new5(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQWidget parent, void* f)
 	{
 		this.ptr = CQt.QLabel_new6(libqt_string(text), (.)parent?.ObjectPtr, f);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3714,13 +3794,13 @@ extension CQt
 	
 	public function void QLabel_linkActivated_action(void* self, libqt_string link);
 	[LinkName("QLabel_Connect_LinkActivated")]
-	public static extern void QLabel_Connect_LinkActivated(void* self, libqt_string link, QLabel_linkActivated_action _action);
+	public static extern void QLabel_Connect_LinkActivated(void* self, QLabel_linkActivated_action _action);
 	[LinkName("QLabel_LinkHovered")]
 	public static extern void QLabel_LinkHovered(void* self, libqt_string link);
 	
 	public function void QLabel_linkHovered_action(void* self, libqt_string link);
 	[LinkName("QLabel_Connect_LinkHovered")]
-	public static extern void QLabel_Connect_LinkHovered(void* self, libqt_string link, QLabel_linkHovered_action _action);
+	public static extern void QLabel_Connect_LinkHovered(void* self, QLabel_linkHovered_action _action);
 	[LinkName("QLabel_Event")]
 	public static extern bool QLabel_Event(void* self, void** e);
 	[LinkName("QLabel_KeyPressEvent")]

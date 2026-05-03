@@ -107,25 +107,39 @@ class QUrlQuery : IQUrlQuery
 {
 	private QUrlQuery_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUrlQuery_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUrlQuery_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUrl url)
 	{
 		this.ptr = CQt.QUrlQuery_new2((.)url?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String queryString)
 	{
 		this.ptr = CQt.QUrlQuery_new3(libqt_string(queryString));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUrlQuery other)
 	{
 		this.ptr = CQt.QUrlQuery_new4((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

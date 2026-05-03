@@ -459,9 +459,107 @@ class QScreen : IQScreen, IQObject
 {
 	private QScreen_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QScreen_geometryChanged,
+		QScreen_availableGeometryChanged,
+		QScreen_physicalSizeChanged,
+		QScreen_physicalDotsPerInchChanged,
+		QScreen_logicalDotsPerInchChanged,
+		QScreen_virtualGeometryChanged,
+		QScreen_primaryOrientationChanged,
+		QScreen_orientationChanged,
+		QScreen_refreshRateChanged,
+		QScreen_destroyed,
+		QScreen_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QScreen_Connect_GeometryChanged(obj.ObjectPtr,  => QtBeef_QScreen_geometryChanged);
+		CQt.QScreen_Connect_AvailableGeometryChanged(obj.ObjectPtr,  => QtBeef_QScreen_availableGeometryChanged);
+		CQt.QScreen_Connect_PhysicalSizeChanged(obj.ObjectPtr,  => QtBeef_QScreen_physicalSizeChanged);
+		CQt.QScreen_Connect_PhysicalDotsPerInchChanged(obj.ObjectPtr,  => QtBeef_QScreen_physicalDotsPerInchChanged);
+		CQt.QScreen_Connect_LogicalDotsPerInchChanged(obj.ObjectPtr,  => QtBeef_QScreen_logicalDotsPerInchChanged);
+		CQt.QScreen_Connect_VirtualGeometryChanged(obj.ObjectPtr,  => QtBeef_QScreen_virtualGeometryChanged);
+		CQt.QScreen_Connect_PrimaryOrientationChanged(obj.ObjectPtr,  => QtBeef_QScreen_primaryOrientationChanged);
+		CQt.QScreen_Connect_OrientationChanged(obj.ObjectPtr,  => QtBeef_QScreen_orientationChanged);
+		CQt.QScreen_Connect_RefreshRateChanged(obj.ObjectPtr,  => QtBeef_QScreen_refreshRateChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** geometry)> OnGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** geometry)> OnAvailableGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnPhysicalSizeChanged = .() ~ _.Dispose();
+	public Event<delegate void(double dpi)> OnPhysicalDotsPerInchChanged = .() ~ _.Dispose();
+	public Event<delegate void(double dpi)> OnLogicalDotsPerInchChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** rect)> OnVirtualGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ScreenOrientation orientation)> OnPrimaryOrientationChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_ScreenOrientation orientation)> OnOrientationChanged = .() ~ _.Dispose();
+	public Event<delegate void(double refreshRate)> OnRefreshRateChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QScreen_geometryChanged(void* ptr, void** geometry)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGeometryChanged.Invoke(geometry);
+	}
+	static void QtBeef_QScreen_availableGeometryChanged(void* ptr, void** geometry)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAvailableGeometryChanged.Invoke(geometry);
+	}
+	static void QtBeef_QScreen_physicalSizeChanged(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPhysicalSizeChanged.Invoke(size);
+	}
+	static void QtBeef_QScreen_physicalDotsPerInchChanged(void* ptr, double dpi)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPhysicalDotsPerInchChanged.Invoke(dpi);
+	}
+	static void QtBeef_QScreen_logicalDotsPerInchChanged(void* ptr, double dpi)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLogicalDotsPerInchChanged.Invoke(dpi);
+	}
+	static void QtBeef_QScreen_virtualGeometryChanged(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVirtualGeometryChanged.Invoke(rect);
+	}
+	static void QtBeef_QScreen_primaryOrientationChanged(void* ptr, Qt_ScreenOrientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPrimaryOrientationChanged.Invoke(orientation);
+	}
+	static void QtBeef_QScreen_orientationChanged(void* ptr, Qt_ScreenOrientation orientation)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOrientationChanged.Invoke(orientation);
+	}
+	static void QtBeef_QScreen_refreshRateChanged(void* ptr, double refreshRate)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRefreshRateChanged.Invoke(refreshRate);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QScreen_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -996,55 +1094,55 @@ extension CQt
 	
 	public function void QScreen_geometryChanged_action(void* self, void** geometry);
 	[LinkName("QScreen_Connect_GeometryChanged")]
-	public static extern void QScreen_Connect_GeometryChanged(void* self, void** geometry, QScreen_geometryChanged_action _action);
+	public static extern void QScreen_Connect_GeometryChanged(void* self, QScreen_geometryChanged_action _action);
 	[LinkName("QScreen_AvailableGeometryChanged")]
 	public static extern void QScreen_AvailableGeometryChanged(void* self, void** geometry);
 	
 	public function void QScreen_availableGeometryChanged_action(void* self, void** geometry);
 	[LinkName("QScreen_Connect_AvailableGeometryChanged")]
-	public static extern void QScreen_Connect_AvailableGeometryChanged(void* self, void** geometry, QScreen_availableGeometryChanged_action _action);
+	public static extern void QScreen_Connect_AvailableGeometryChanged(void* self, QScreen_availableGeometryChanged_action _action);
 	[LinkName("QScreen_PhysicalSizeChanged")]
 	public static extern void QScreen_PhysicalSizeChanged(void* self, void** size);
 	
 	public function void QScreen_physicalSizeChanged_action(void* self, void** size);
 	[LinkName("QScreen_Connect_PhysicalSizeChanged")]
-	public static extern void QScreen_Connect_PhysicalSizeChanged(void* self, void** size, QScreen_physicalSizeChanged_action _action);
+	public static extern void QScreen_Connect_PhysicalSizeChanged(void* self, QScreen_physicalSizeChanged_action _action);
 	[LinkName("QScreen_PhysicalDotsPerInchChanged")]
 	public static extern void QScreen_PhysicalDotsPerInchChanged(void* self, double dpi);
 	
 	public function void QScreen_physicalDotsPerInchChanged_action(void* self, double dpi);
 	[LinkName("QScreen_Connect_PhysicalDotsPerInchChanged")]
-	public static extern void QScreen_Connect_PhysicalDotsPerInchChanged(void* self, double dpi, QScreen_physicalDotsPerInchChanged_action _action);
+	public static extern void QScreen_Connect_PhysicalDotsPerInchChanged(void* self, QScreen_physicalDotsPerInchChanged_action _action);
 	[LinkName("QScreen_LogicalDotsPerInchChanged")]
 	public static extern void QScreen_LogicalDotsPerInchChanged(void* self, double dpi);
 	
 	public function void QScreen_logicalDotsPerInchChanged_action(void* self, double dpi);
 	[LinkName("QScreen_Connect_LogicalDotsPerInchChanged")]
-	public static extern void QScreen_Connect_LogicalDotsPerInchChanged(void* self, double dpi, QScreen_logicalDotsPerInchChanged_action _action);
+	public static extern void QScreen_Connect_LogicalDotsPerInchChanged(void* self, QScreen_logicalDotsPerInchChanged_action _action);
 	[LinkName("QScreen_VirtualGeometryChanged")]
 	public static extern void QScreen_VirtualGeometryChanged(void* self, void** rect);
 	
 	public function void QScreen_virtualGeometryChanged_action(void* self, void** rect);
 	[LinkName("QScreen_Connect_VirtualGeometryChanged")]
-	public static extern void QScreen_Connect_VirtualGeometryChanged(void* self, void** rect, QScreen_virtualGeometryChanged_action _action);
+	public static extern void QScreen_Connect_VirtualGeometryChanged(void* self, QScreen_virtualGeometryChanged_action _action);
 	[LinkName("QScreen_PrimaryOrientationChanged")]
 	public static extern void QScreen_PrimaryOrientationChanged(void* self, Qt_ScreenOrientation orientation);
 	
 	public function void QScreen_primaryOrientationChanged_action(void* self, Qt_ScreenOrientation orientation);
 	[LinkName("QScreen_Connect_PrimaryOrientationChanged")]
-	public static extern void QScreen_Connect_PrimaryOrientationChanged(void* self, Qt_ScreenOrientation orientation, QScreen_primaryOrientationChanged_action _action);
+	public static extern void QScreen_Connect_PrimaryOrientationChanged(void* self, QScreen_primaryOrientationChanged_action _action);
 	[LinkName("QScreen_OrientationChanged")]
 	public static extern void QScreen_OrientationChanged(void* self, Qt_ScreenOrientation orientation);
 	
 	public function void QScreen_orientationChanged_action(void* self, Qt_ScreenOrientation orientation);
 	[LinkName("QScreen_Connect_OrientationChanged")]
-	public static extern void QScreen_Connect_OrientationChanged(void* self, Qt_ScreenOrientation orientation, QScreen_orientationChanged_action _action);
+	public static extern void QScreen_Connect_OrientationChanged(void* self, QScreen_orientationChanged_action _action);
 	[LinkName("QScreen_RefreshRateChanged")]
 	public static extern void QScreen_RefreshRateChanged(void* self, double refreshRate);
 	
 	public function void QScreen_refreshRateChanged_action(void* self, double refreshRate);
 	[LinkName("QScreen_Connect_RefreshRateChanged")]
-	public static extern void QScreen_Connect_RefreshRateChanged(void* self, double refreshRate, QScreen_refreshRateChanged_action _action);
+	public static extern void QScreen_Connect_RefreshRateChanged(void* self, QScreen_refreshRateChanged_action _action);
 	[LinkName("QScreen_Tr2")]
 	public static extern libqt_string QScreen_Tr2(c_char* s, c_char* c);
 	[LinkName("QScreen_Tr3")]

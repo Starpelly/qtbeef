@@ -23,25 +23,39 @@ class QXmlStreamAttribute : IQXmlStreamAttribute
 {
 	private QXmlStreamAttribute_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamAttribute_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamAttribute_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String qualifiedName, String value)
 	{
 		this.ptr = CQt.QXmlStreamAttribute_new2(libqt_string(qualifiedName), libqt_string(value));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String namespaceUri, String name, String value)
 	{
 		this.ptr = CQt.QXmlStreamAttribute_new3(libqt_string(namespaceUri), libqt_string(name), libqt_string(value));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQXmlStreamAttribute param1)
 	{
 		this.ptr = CQt.QXmlStreamAttribute_new4((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -108,13 +122,24 @@ class QXmlStreamAttributes : IQXmlStreamAttributes
 {
 	private QXmlStreamAttributes_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamAttributes_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamAttributes_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -171,17 +196,29 @@ class QXmlStreamNamespaceDeclaration : IQXmlStreamNamespaceDeclaration
 {
 	private QXmlStreamNamespaceDeclaration_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamNamespaceDeclaration_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamNamespaceDeclaration_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String prefix, String namespaceUri)
 	{
 		this.ptr = CQt.QXmlStreamNamespaceDeclaration_new2(libqt_string(prefix), libqt_string(namespaceUri));
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -220,13 +257,24 @@ class QXmlStreamNotationDeclaration : IQXmlStreamNotationDeclaration
 {
 	private QXmlStreamNotationDeclaration_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamNotationDeclaration_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamNotationDeclaration_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -263,13 +311,24 @@ class QXmlStreamEntityDeclaration : IQXmlStreamEntityDeclaration
 {
 	private QXmlStreamEntityDeclaration_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamEntityDeclaration_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamEntityDeclaration_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -314,9 +373,19 @@ class QXmlStreamEntityResolver : IQXmlStreamEntityResolver
 {
 	private QXmlStreamEntityResolver_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamEntityResolver_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -545,29 +614,44 @@ class QXmlStreamReader : IQXmlStreamReader
 {
 	private QXmlStreamReader_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamReader_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamReader_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device)
 	{
 		this.ptr = CQt.QXmlStreamReader_new2((.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(void** data)
 	{
 		this.ptr = CQt.QXmlStreamReader_new3(data);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String data)
 	{
 		this.ptr = CQt.QXmlStreamReader_new4(libqt_string(data));
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_char* data)
 	{
 		this.ptr = CQt.QXmlStreamReader_new5(data);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1016,17 +1100,29 @@ class QXmlStreamWriter : IQXmlStreamWriter
 {
 	private QXmlStreamWriter_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QXmlStreamWriter_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QXmlStreamWriter_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device)
 	{
 		this.ptr = CQt.QXmlStreamWriter_new2((.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

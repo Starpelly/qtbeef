@@ -1387,21 +1387,34 @@ class QOpenGLExtraFunctions : IQOpenGLExtraFunctions, IQOpenGLFunctions
 {
 	private QOpenGLExtraFunctions_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QOpenGLExtraFunctions_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QOpenGLExtraFunctions_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQOpenGLContext context)
 	{
 		this.ptr = CQt.QOpenGLExtraFunctions_new2((.)context?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQOpenGLExtraFunctions param1)
 	{
 		this.ptr = CQt.QOpenGLExtraFunctions_new3((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

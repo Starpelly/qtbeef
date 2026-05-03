@@ -339,13 +339,56 @@ class QDrag : IQDrag, IQObject
 {
 	private QDrag_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QDrag_actionChanged,
+		QDrag_targetChanged,
+		QDrag_destroyed,
+		QDrag_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDrag_Connect_ActionChanged(obj.ObjectPtr,  => QtBeef_QDrag_actionChanged);
+		CQt.QDrag_Connect_TargetChanged(obj.ObjectPtr,  => QtBeef_QDrag_targetChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(Qt_DropAction action)> OnActionChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** newTarget)> OnTargetChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QDrag_actionChanged(void* ptr, Qt_DropAction action)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnActionChanged.Invoke(action);
+	}
+	static void QtBeef_QDrag_targetChanged(void* ptr, void** newTarget)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTargetChanged.Invoke(newTarget);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QDrag_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject dragSource)
 	{
 		this.ptr = CQt.QDrag_new((.)dragSource?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -724,13 +767,13 @@ extension CQt
 	
 	public function void QDrag_actionChanged_action(void* self, Qt_DropAction action);
 	[LinkName("QDrag_Connect_ActionChanged")]
-	public static extern void QDrag_Connect_ActionChanged(void* self, Qt_DropAction action, QDrag_actionChanged_action _action);
+	public static extern void QDrag_Connect_ActionChanged(void* self, QDrag_actionChanged_action _action);
 	[LinkName("QDrag_TargetChanged")]
 	public static extern void QDrag_TargetChanged(void* self, void** newTarget);
 	
 	public function void QDrag_targetChanged_action(void* self, void** newTarget);
 	[LinkName("QDrag_Connect_TargetChanged")]
-	public static extern void QDrag_Connect_TargetChanged(void* self, void** newTarget, QDrag_targetChanged_action _action);
+	public static extern void QDrag_Connect_TargetChanged(void* self, QDrag_targetChanged_action _action);
 	[LinkName("QDrag_Tr2")]
 	public static extern libqt_string QDrag_Tr2(c_char* s, c_char* c);
 	[LinkName("QDrag_Tr3")]

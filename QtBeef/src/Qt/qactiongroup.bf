@@ -335,13 +335,56 @@ class QActionGroup : IQActionGroup, IQObject
 {
 	private QActionGroup_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QActionGroup_triggered,
+		QActionGroup_hovered,
+		QActionGroup_destroyed,
+		QActionGroup_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QActionGroup_Connect_Triggered(obj.ObjectPtr,  => QtBeef_QActionGroup_triggered);
+		CQt.QActionGroup_Connect_Hovered(obj.ObjectPtr,  => QtBeef_QActionGroup_hovered);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void** param1)> OnTriggered = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnHovered = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QActionGroup_triggered(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTriggered.Invoke(param1);
+	}
+	static void QtBeef_QActionGroup_hovered(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHovered.Invoke(param1);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QActionGroup_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QActionGroup_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -716,13 +759,13 @@ extension CQt
 	
 	public function void QActionGroup_triggered_action(void* self, void** param1);
 	[LinkName("QActionGroup_Connect_Triggered")]
-	public static extern void QActionGroup_Connect_Triggered(void* self, void** param1, QActionGroup_triggered_action _action);
+	public static extern void QActionGroup_Connect_Triggered(void* self, QActionGroup_triggered_action _action);
 	[LinkName("QActionGroup_Hovered")]
 	public static extern void QActionGroup_Hovered(void* self, void** param1);
 	
 	public function void QActionGroup_hovered_action(void* self, void** param1);
 	[LinkName("QActionGroup_Connect_Hovered")]
-	public static extern void QActionGroup_Connect_Hovered(void* self, void** param1, QActionGroup_hovered_action _action);
+	public static extern void QActionGroup_Connect_Hovered(void* self, QActionGroup_hovered_action _action);
 	[LinkName("QActionGroup_Tr2")]
 	public static extern libqt_string QActionGroup_Tr2(c_char* s, c_char* c);
 	[LinkName("QActionGroup_Tr3")]

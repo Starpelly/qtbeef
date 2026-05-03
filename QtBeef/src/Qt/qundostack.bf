@@ -63,25 +63,39 @@ class QUndoCommand : IQUndoCommand
 {
 	private QUndoCommand_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QUndoCommand_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoCommand_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text)
 	{
 		this.ptr = CQt.QUndoCommand_new2(libqt_string(text));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQUndoCommand parent)
 	{
 		this.ptr = CQt.QUndoCommand_new3((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String text, IQUndoCommand parent)
 	{
 		this.ptr = CQt.QUndoCommand_new4(libqt_string(text), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -570,17 +584,93 @@ class QUndoStack : IQUndoStack, IQObject
 {
 	private QUndoStack_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QUndoStack_indexChanged,
+		QUndoStack_cleanChanged,
+		QUndoStack_canUndoChanged,
+		QUndoStack_canRedoChanged,
+		QUndoStack_undoTextChanged,
+		QUndoStack_redoTextChanged,
+		QUndoStack_destroyed,
+		QUndoStack_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QUndoStack_Connect_IndexChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_indexChanged);
+		CQt.QUndoStack_Connect_CleanChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_cleanChanged);
+		CQt.QUndoStack_Connect_CanUndoChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_canUndoChanged);
+		CQt.QUndoStack_Connect_CanRedoChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_canRedoChanged);
+		CQt.QUndoStack_Connect_UndoTextChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_undoTextChanged);
+		CQt.QUndoStack_Connect_RedoTextChanged(obj.ObjectPtr,  => QtBeef_QUndoStack_redoTextChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int idx)> OnIndexChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool clean)> OnCleanChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool canUndo)> OnCanUndoChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool canRedo)> OnCanRedoChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string undoText)> OnUndoTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string redoText)> OnRedoTextChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QUndoStack_indexChanged(void* ptr, c_int idx)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnIndexChanged.Invoke(idx);
+	}
+	static void QtBeef_QUndoStack_cleanChanged(void* ptr, bool clean)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCleanChanged.Invoke(clean);
+	}
+	static void QtBeef_QUndoStack_canUndoChanged(void* ptr, bool canUndo)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanUndoChanged.Invoke(canUndo);
+	}
+	static void QtBeef_QUndoStack_canRedoChanged(void* ptr, bool canRedo)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCanRedoChanged.Invoke(canRedo);
+	}
+	static void QtBeef_QUndoStack_undoTextChanged(void* ptr, libqt_string undoText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUndoTextChanged.Invoke(undoText);
+	}
+	static void QtBeef_QUndoStack_redoTextChanged(void* ptr, libqt_string redoText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRedoTextChanged.Invoke(redoText);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QUndoStack_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QUndoStack_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QUndoStack_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1045,37 +1135,37 @@ extension CQt
 	
 	public function void QUndoStack_indexChanged_action(void* self, c_int idx);
 	[LinkName("QUndoStack_Connect_IndexChanged")]
-	public static extern void QUndoStack_Connect_IndexChanged(void* self, c_int idx, QUndoStack_indexChanged_action _action);
+	public static extern void QUndoStack_Connect_IndexChanged(void* self, QUndoStack_indexChanged_action _action);
 	[LinkName("QUndoStack_CleanChanged")]
 	public static extern void QUndoStack_CleanChanged(void* self, bool clean);
 	
 	public function void QUndoStack_cleanChanged_action(void* self, bool clean);
 	[LinkName("QUndoStack_Connect_CleanChanged")]
-	public static extern void QUndoStack_Connect_CleanChanged(void* self, bool clean, QUndoStack_cleanChanged_action _action);
+	public static extern void QUndoStack_Connect_CleanChanged(void* self, QUndoStack_cleanChanged_action _action);
 	[LinkName("QUndoStack_CanUndoChanged")]
 	public static extern void QUndoStack_CanUndoChanged(void* self, bool canUndo);
 	
 	public function void QUndoStack_canUndoChanged_action(void* self, bool canUndo);
 	[LinkName("QUndoStack_Connect_CanUndoChanged")]
-	public static extern void QUndoStack_Connect_CanUndoChanged(void* self, bool canUndo, QUndoStack_canUndoChanged_action _action);
+	public static extern void QUndoStack_Connect_CanUndoChanged(void* self, QUndoStack_canUndoChanged_action _action);
 	[LinkName("QUndoStack_CanRedoChanged")]
 	public static extern void QUndoStack_CanRedoChanged(void* self, bool canRedo);
 	
 	public function void QUndoStack_canRedoChanged_action(void* self, bool canRedo);
 	[LinkName("QUndoStack_Connect_CanRedoChanged")]
-	public static extern void QUndoStack_Connect_CanRedoChanged(void* self, bool canRedo, QUndoStack_canRedoChanged_action _action);
+	public static extern void QUndoStack_Connect_CanRedoChanged(void* self, QUndoStack_canRedoChanged_action _action);
 	[LinkName("QUndoStack_UndoTextChanged")]
 	public static extern void QUndoStack_UndoTextChanged(void* self, libqt_string undoText);
 	
 	public function void QUndoStack_undoTextChanged_action(void* self, libqt_string undoText);
 	[LinkName("QUndoStack_Connect_UndoTextChanged")]
-	public static extern void QUndoStack_Connect_UndoTextChanged(void* self, libqt_string undoText, QUndoStack_undoTextChanged_action _action);
+	public static extern void QUndoStack_Connect_UndoTextChanged(void* self, QUndoStack_undoTextChanged_action _action);
 	[LinkName("QUndoStack_RedoTextChanged")]
 	public static extern void QUndoStack_RedoTextChanged(void* self, libqt_string redoText);
 	
 	public function void QUndoStack_redoTextChanged_action(void* self, libqt_string redoText);
 	[LinkName("QUndoStack_Connect_RedoTextChanged")]
-	public static extern void QUndoStack_Connect_RedoTextChanged(void* self, libqt_string redoText, QUndoStack_redoTextChanged_action _action);
+	public static extern void QUndoStack_Connect_RedoTextChanged(void* self, QUndoStack_redoTextChanged_action _action);
 	[LinkName("QUndoStack_Tr2")]
 	public static extern libqt_string QUndoStack_Tr2(c_char* s, c_char* c);
 	[LinkName("QUndoStack_Tr3")]

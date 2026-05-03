@@ -567,25 +567,103 @@ class QSaveFile : IQSaveFile, IQFileDevice, IQIODevice, IQObject, IQIODeviceBase
 {
 	private QSaveFile_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QSaveFile_readyRead,
+		QSaveFile_channelReadyRead,
+		QSaveFile_bytesWritten,
+		QSaveFile_channelBytesWritten,
+		QSaveFile_aboutToClose,
+		QSaveFile_readChannelFinished,
+		QSaveFile_destroyed,
+		QSaveFile_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QIODevice_Connect_ReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_readyRead);
+		CQt.QIODevice_Connect_ChannelReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_channelReadyRead);
+		CQt.QIODevice_Connect_BytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_bytesWritten);
+		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_channelBytesWritten);
+		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_aboutToClose);
+		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_readChannelFinished);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnReadyRead = .() ~ _.Dispose();
+	public Event<delegate void(c_int channel)> OnChannelReadyRead = .() ~ _.Dispose();
+	public Event<delegate void(c_longlong bytes)> OnBytesWritten = .() ~ _.Dispose();
+	public Event<delegate void(c_int channel, c_longlong bytes)> OnChannelBytesWritten = .() ~ _.Dispose();
+	public Event<delegate void()> OnAboutToClose = .() ~ _.Dispose();
+	public Event<delegate void()> OnReadChannelFinished = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QIODevice_readyRead(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadyRead.Invoke();
+	}
+	static void QtBeef_QIODevice_channelReadyRead(void* ptr, c_int channel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChannelReadyRead.Invoke(channel);
+	}
+	static void QtBeef_QIODevice_bytesWritten(void* ptr, c_longlong bytes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesWritten.Invoke(bytes);
+	}
+	static void QtBeef_QIODevice_channelBytesWritten(void* ptr, c_int channel, c_longlong bytes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChannelBytesWritten.Invoke(channel, bytes);
+	}
+	static void QtBeef_QIODevice_aboutToClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAboutToClose.Invoke();
+	}
+	static void QtBeef_QIODevice_readChannelFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadChannelFinished.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QSaveFile_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name)
 	{
 		this.ptr = CQt.QSaveFile_new(libqt_string(name));
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QSaveFile_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String name, IQObject parent)
 	{
 		this.ptr = CQt.QSaveFile_new3(libqt_string(name), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QSaveFile_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

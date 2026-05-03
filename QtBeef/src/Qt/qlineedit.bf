@@ -1879,25 +1879,143 @@ class QLineEdit : IQLineEdit, IQWidget, IQObject, IQPaintDevice
 {
 	private QLineEdit_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QLineEdit_textChanged,
+		QLineEdit_textEdited,
+		QLineEdit_cursorPositionChanged,
+		QLineEdit_returnPressed,
+		QLineEdit_editingFinished,
+		QLineEdit_selectionChanged,
+		QLineEdit_inputRejected,
+		QLineEdit_windowTitleChanged,
+		QLineEdit_windowIconChanged,
+		QLineEdit_windowIconTextChanged,
+		QLineEdit_customContextMenuRequested,
+		QLineEdit_destroyed,
+		QLineEdit_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QLineEdit_Connect_TextChanged(obj.ObjectPtr,  => QtBeef_QLineEdit_textChanged);
+		CQt.QLineEdit_Connect_TextEdited(obj.ObjectPtr,  => QtBeef_QLineEdit_textEdited);
+		CQt.QLineEdit_Connect_CursorPositionChanged(obj.ObjectPtr,  => QtBeef_QLineEdit_cursorPositionChanged);
+		CQt.QLineEdit_Connect_ReturnPressed(obj.ObjectPtr,  => QtBeef_QLineEdit_returnPressed);
+		CQt.QLineEdit_Connect_EditingFinished(obj.ObjectPtr,  => QtBeef_QLineEdit_editingFinished);
+		CQt.QLineEdit_Connect_SelectionChanged(obj.ObjectPtr,  => QtBeef_QLineEdit_selectionChanged);
+		CQt.QLineEdit_Connect_InputRejected(obj.ObjectPtr,  => QtBeef_QLineEdit_inputRejected);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(libqt_string param1)> OnTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string param1)> OnTextEdited = .() ~ _.Dispose();
+	public Event<delegate void(c_int param1, c_int param2)> OnCursorPositionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnReturnPressed = .() ~ _.Dispose();
+	public Event<delegate void()> OnEditingFinished = .() ~ _.Dispose();
+	public Event<delegate void()> OnSelectionChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnInputRejected = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QLineEdit_textChanged(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextChanged.Invoke(param1);
+	}
+	static void QtBeef_QLineEdit_textEdited(void* ptr, libqt_string param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTextEdited.Invoke(param1);
+	}
+	static void QtBeef_QLineEdit_cursorPositionChanged(void* ptr, c_int param1, c_int param2)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCursorPositionChanged.Invoke(param1, param2);
+	}
+	static void QtBeef_QLineEdit_returnPressed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReturnPressed.Invoke();
+	}
+	static void QtBeef_QLineEdit_editingFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEditingFinished.Invoke();
+	}
+	static void QtBeef_QLineEdit_selectionChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnSelectionChanged.Invoke();
+	}
+	static void QtBeef_QLineEdit_inputRejected(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnInputRejected.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QLineEdit_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QLineEdit_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QLineEdit_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String param1)
 	{
 		this.ptr = CQt.QLineEdit_new3(libqt_string(param1));
+		QtBf_ConnectSignals(this);
 	}
 	public this(String param1, IQWidget parent)
 	{
 		this.ptr = CQt.QLineEdit_new4(libqt_string(param1), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3924,19 +4042,19 @@ extension CQt
 	
 	public function void QLineEdit_textChanged_action(void* self, libqt_string param1);
 	[LinkName("QLineEdit_Connect_TextChanged")]
-	public static extern void QLineEdit_Connect_TextChanged(void* self, libqt_string param1, QLineEdit_textChanged_action _action);
+	public static extern void QLineEdit_Connect_TextChanged(void* self, QLineEdit_textChanged_action _action);
 	[LinkName("QLineEdit_TextEdited")]
 	public static extern void QLineEdit_TextEdited(void* self, libqt_string param1);
 	
 	public function void QLineEdit_textEdited_action(void* self, libqt_string param1);
 	[LinkName("QLineEdit_Connect_TextEdited")]
-	public static extern void QLineEdit_Connect_TextEdited(void* self, libqt_string param1, QLineEdit_textEdited_action _action);
+	public static extern void QLineEdit_Connect_TextEdited(void* self, QLineEdit_textEdited_action _action);
 	[LinkName("QLineEdit_CursorPositionChanged")]
 	public static extern void QLineEdit_CursorPositionChanged(void* self, c_int param1, c_int param2);
 	
 	public function void QLineEdit_cursorPositionChanged_action(void* self, c_int param1, c_int param2);
 	[LinkName("QLineEdit_Connect_CursorPositionChanged")]
-	public static extern void QLineEdit_Connect_CursorPositionChanged(void* self, c_int param1, c_int param2, QLineEdit_cursorPositionChanged_action _action);
+	public static extern void QLineEdit_Connect_CursorPositionChanged(void* self, QLineEdit_cursorPositionChanged_action _action);
 	[LinkName("QLineEdit_ReturnPressed")]
 	public static extern void QLineEdit_ReturnPressed(void* self);
 	

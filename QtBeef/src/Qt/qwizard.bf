@@ -1827,21 +1827,146 @@ class QWizard : IQWizard, IQDialog, IQWidget, IQObject, IQPaintDevice
 {
 	private QWizard_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QWizard_currentIdChanged,
+		QWizard_helpRequested,
+		QWizard_customButtonClicked,
+		QWizard_pageAdded,
+		QWizard_pageRemoved,
+		QWizard_finished,
+		QWizard_accepted,
+		QWizard_rejected,
+		QWizard_windowTitleChanged,
+		QWizard_windowIconChanged,
+		QWizard_windowIconTextChanged,
+		QWizard_customContextMenuRequested,
+		QWizard_destroyed,
+		QWizard_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QWizard_Connect_CurrentIdChanged(obj.ObjectPtr,  => QtBeef_QWizard_currentIdChanged);
+		CQt.QWizard_Connect_HelpRequested(obj.ObjectPtr,  => QtBeef_QWizard_helpRequested);
+		CQt.QWizard_Connect_CustomButtonClicked(obj.ObjectPtr,  => QtBeef_QWizard_customButtonClicked);
+		CQt.QWizard_Connect_PageAdded(obj.ObjectPtr,  => QtBeef_QWizard_pageAdded);
+		CQt.QWizard_Connect_PageRemoved(obj.ObjectPtr,  => QtBeef_QWizard_pageRemoved);
+		CQt.QDialog_Connect_Finished(obj.ObjectPtr,  => QtBeef_QDialog_finished);
+		CQt.QDialog_Connect_Accepted(obj.ObjectPtr,  => QtBeef_QDialog_accepted);
+		CQt.QDialog_Connect_Rejected(obj.ObjectPtr,  => QtBeef_QDialog_rejected);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(c_int id)> OnCurrentIdChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnHelpRequested = .() ~ _.Dispose();
+	public Event<delegate void(c_int which)> OnCustomButtonClicked = .() ~ _.Dispose();
+	public Event<delegate void(c_int id)> OnPageAdded = .() ~ _.Dispose();
+	public Event<delegate void(c_int id)> OnPageRemoved = .() ~ _.Dispose();
+	public Event<delegate void(c_int result)> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void()> OnAccepted = .() ~ _.Dispose();
+	public Event<delegate void()> OnRejected = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QWizard_currentIdChanged(void* ptr, c_int id)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCurrentIdChanged.Invoke(id);
+	}
+	static void QtBeef_QWizard_helpRequested(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHelpRequested.Invoke();
+	}
+	static void QtBeef_QWizard_customButtonClicked(void* ptr, c_int which)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomButtonClicked.Invoke(which);
+	}
+	static void QtBeef_QWizard_pageAdded(void* ptr, c_int id)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPageAdded.Invoke(id);
+	}
+	static void QtBeef_QWizard_pageRemoved(void* ptr, c_int id)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnPageRemoved.Invoke(id);
+	}
+	static void QtBeef_QDialog_finished(void* ptr, c_int result)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke(result);
+	}
+	static void QtBeef_QDialog_accepted(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAccepted.Invoke();
+	}
+	static void QtBeef_QDialog_rejected(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRejected.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QWizard_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QWizard_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QWizard_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QWizard_new3((.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3756,7 +3881,7 @@ extension CQt
 	
 	public function void QWizard_currentIdChanged_action(void* self, c_int id);
 	[LinkName("QWizard_Connect_CurrentIdChanged")]
-	public static extern void QWizard_Connect_CurrentIdChanged(void* self, c_int id, QWizard_currentIdChanged_action _action);
+	public static extern void QWizard_Connect_CurrentIdChanged(void* self, QWizard_currentIdChanged_action _action);
 	[LinkName("QWizard_HelpRequested")]
 	public static extern void QWizard_HelpRequested(void* self);
 	
@@ -3768,19 +3893,19 @@ extension CQt
 	
 	public function void QWizard_customButtonClicked_action(void* self, c_int which);
 	[LinkName("QWizard_Connect_CustomButtonClicked")]
-	public static extern void QWizard_Connect_CustomButtonClicked(void* self, c_int which, QWizard_customButtonClicked_action _action);
+	public static extern void QWizard_Connect_CustomButtonClicked(void* self, QWizard_customButtonClicked_action _action);
 	[LinkName("QWizard_PageAdded")]
 	public static extern void QWizard_PageAdded(void* self, c_int id);
 	
 	public function void QWizard_pageAdded_action(void* self, c_int id);
 	[LinkName("QWizard_Connect_PageAdded")]
-	public static extern void QWizard_Connect_PageAdded(void* self, c_int id, QWizard_pageAdded_action _action);
+	public static extern void QWizard_Connect_PageAdded(void* self, QWizard_pageAdded_action _action);
 	[LinkName("QWizard_PageRemoved")]
 	public static extern void QWizard_PageRemoved(void* self, c_int id);
 	
 	public function void QWizard_pageRemoved_action(void* self, c_int id);
 	[LinkName("QWizard_Connect_PageRemoved")]
-	public static extern void QWizard_Connect_PageRemoved(void* self, c_int id, QWizard_pageRemoved_action _action);
+	public static extern void QWizard_Connect_PageRemoved(void* self, QWizard_pageRemoved_action _action);
 	[LinkName("QWizard_Back")]
 	public static extern void QWizard_Back(void* self);
 	[LinkName("QWizard_Next")]
@@ -5484,17 +5609,85 @@ class QWizardPage : IQWizardPage, IQWidget, IQObject, IQPaintDevice
 {
 	private QWizardPage_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QWizardPage_completeChanged,
+		QWizardPage_windowTitleChanged,
+		QWizardPage_windowIconChanged,
+		QWizardPage_windowIconTextChanged,
+		QWizardPage_customContextMenuRequested,
+		QWizardPage_destroyed,
+		QWizardPage_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QWizardPage_Connect_CompleteChanged(obj.ObjectPtr,  => QtBeef_QWizardPage_completeChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnCompleteChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QWizardPage_completeChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCompleteChanged.Invoke();
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QWizardPage_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QWizardPage_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QWizardPage_new2();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

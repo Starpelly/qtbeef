@@ -419,41 +419,131 @@ class QMovie : IQMovie, IQObject
 {
 	private QMovie_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QMovie_started,
+		QMovie_resized,
+		QMovie_updated,
+		QMovie_stateChanged,
+		QMovie_error,
+		QMovie_finished,
+		QMovie_frameChanged,
+		QMovie_destroyed,
+		QMovie_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QMovie_Connect_Started(obj.ObjectPtr,  => QtBeef_QMovie_started);
+		CQt.QMovie_Connect_Resized(obj.ObjectPtr,  => QtBeef_QMovie_resized);
+		CQt.QMovie_Connect_Updated(obj.ObjectPtr,  => QtBeef_QMovie_updated);
+		CQt.QMovie_Connect_StateChanged(obj.ObjectPtr,  => QtBeef_QMovie_stateChanged);
+		CQt.QMovie_Connect_Error(obj.ObjectPtr,  => QtBeef_QMovie_error);
+		CQt.QMovie_Connect_Finished(obj.ObjectPtr,  => QtBeef_QMovie_finished);
+		CQt.QMovie_Connect_FrameChanged(obj.ObjectPtr,  => QtBeef_QMovie_frameChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnStarted = .() ~ _.Dispose();
+	public Event<delegate void(void** size)> OnResized = .() ~ _.Dispose();
+	public Event<delegate void(void** rect)> OnUpdated = .() ~ _.Dispose();
+	public Event<delegate void(QMovie_MovieState state)> OnStateChanged = .() ~ _.Dispose();
+	public Event<delegate void(QImageReader_ImageReaderError error)> OnError = .() ~ _.Dispose();
+	public Event<delegate void()> OnFinished = .() ~ _.Dispose();
+	public Event<delegate void(c_int frameNumber)> OnFrameChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QMovie_started(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStarted.Invoke();
+	}
+	static void QtBeef_QMovie_resized(void* ptr, void** size)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnResized.Invoke(size);
+	}
+	static void QtBeef_QMovie_updated(void* ptr, void** rect)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnUpdated.Invoke(rect);
+	}
+	static void QtBeef_QMovie_stateChanged(void* ptr, QMovie_MovieState state)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnStateChanged.Invoke(state);
+	}
+	static void QtBeef_QMovie_error(void* ptr, QImageReader_ImageReaderError error)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnError.Invoke(error);
+	}
+	static void QtBeef_QMovie_finished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFinished.Invoke();
+	}
+	static void QtBeef_QMovie_frameChanged(void* ptr, c_int frameNumber)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFrameChanged.Invoke(frameNumber);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QMovie_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QMovie_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device)
 	{
 		this.ptr = CQt.QMovie_new2((.)device?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName)
 	{
 		this.ptr = CQt.QMovie_new3(libqt_string(fileName));
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QMovie_new4((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device, void** format)
 	{
 		this.ptr = CQt.QMovie_new5((.)device?.ObjectPtr, format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQIODevice device, void** format, IQObject parent)
 	{
 		this.ptr = CQt.QMovie_new6((.)device?.ObjectPtr, format, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void** format)
 	{
 		this.ptr = CQt.QMovie_new7(libqt_string(fileName), format);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String fileName, void** format, IQObject parent)
 	{
 		this.ptr = CQt.QMovie_new8(libqt_string(fileName), format, (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -954,25 +1044,25 @@ extension CQt
 	
 	public function void QMovie_resized_action(void* self, void** size);
 	[LinkName("QMovie_Connect_Resized")]
-	public static extern void QMovie_Connect_Resized(void* self, void** size, QMovie_resized_action _action);
+	public static extern void QMovie_Connect_Resized(void* self, QMovie_resized_action _action);
 	[LinkName("QMovie_Updated")]
 	public static extern void QMovie_Updated(void* self, void** rect);
 	
 	public function void QMovie_updated_action(void* self, void** rect);
 	[LinkName("QMovie_Connect_Updated")]
-	public static extern void QMovie_Connect_Updated(void* self, void** rect, QMovie_updated_action _action);
+	public static extern void QMovie_Connect_Updated(void* self, QMovie_updated_action _action);
 	[LinkName("QMovie_StateChanged")]
 	public static extern void QMovie_StateChanged(void* self, QMovie_MovieState state);
 	
 	public function void QMovie_stateChanged_action(void* self, QMovie_MovieState state);
 	[LinkName("QMovie_Connect_StateChanged")]
-	public static extern void QMovie_Connect_StateChanged(void* self, QMovie_MovieState state, QMovie_stateChanged_action _action);
+	public static extern void QMovie_Connect_StateChanged(void* self, QMovie_stateChanged_action _action);
 	[LinkName("QMovie_Error")]
 	public static extern void QMovie_Error(void* self, QImageReader_ImageReaderError error);
 	
 	public function void QMovie_error_action(void* self, QImageReader_ImageReaderError error);
 	[LinkName("QMovie_Connect_Error")]
-	public static extern void QMovie_Connect_Error(void* self, QImageReader_ImageReaderError error, QMovie_error_action _action);
+	public static extern void QMovie_Connect_Error(void* self, QMovie_error_action _action);
 	[LinkName("QMovie_Finished")]
 	public static extern void QMovie_Finished(void* self);
 	
@@ -984,7 +1074,7 @@ extension CQt
 	
 	public function void QMovie_frameChanged_action(void* self, c_int frameNumber);
 	[LinkName("QMovie_Connect_FrameChanged")]
-	public static extern void QMovie_Connect_FrameChanged(void* self, c_int frameNumber, QMovie_frameChanged_action _action);
+	public static extern void QMovie_Connect_FrameChanged(void* self, QMovie_frameChanged_action _action);
 	[LinkName("QMovie_Start")]
 	public static extern void QMovie_Start(void* self);
 	[LinkName("QMovie_JumpToNextFrame")]

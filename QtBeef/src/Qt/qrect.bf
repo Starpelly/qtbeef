@@ -283,29 +283,44 @@ class QRect : IQRect
 {
 	private QRect_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRect_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRect other)
 	{
 		this.ptr = CQt.QRect_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRect_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint topleft, IQPoint bottomright)
 	{
 		this.ptr = CQt.QRect_new4((.)topleft?.ObjectPtr, (.)bottomright?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPoint topleft, IQSize size)
 	{
 		this.ptr = CQt.QRect_new5((.)topleft?.ObjectPtr, (.)size?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int left, c_int top, c_int width, c_int height)
 	{
 		this.ptr = CQt.QRect_new6(left, top, width, height);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1010,33 +1025,49 @@ class QRectF : IQRectF
 {
 	private QRectF_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QRectF_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRectF other)
 	{
 		this.ptr = CQt.QRectF_new((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QRectF_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF topleft, IQSizeF size)
 	{
 		this.ptr = CQt.QRectF_new4((.)topleft?.ObjectPtr, (.)size?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPointF topleft, IQPointF bottomRight)
 	{
 		this.ptr = CQt.QRectF_new5((.)topleft?.ObjectPtr, (.)bottomRight?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(double left, double top, double width, double height)
 	{
 		this.ptr = CQt.QRectF_new6(left, top, width, height);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQRect rect)
 	{
 		this.ptr = CQt.QRectF_new7((.)rect?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

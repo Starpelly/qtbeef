@@ -495,17 +495,93 @@ class QIODevice : IQIODevice, IQObject, IQIODeviceBase
 {
 	private QIODevice_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QIODevice_readyRead,
+		QIODevice_channelReadyRead,
+		QIODevice_bytesWritten,
+		QIODevice_channelBytesWritten,
+		QIODevice_aboutToClose,
+		QIODevice_readChannelFinished,
+		QIODevice_destroyed,
+		QIODevice_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QIODevice_Connect_ReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_readyRead);
+		CQt.QIODevice_Connect_ChannelReadyRead(obj.ObjectPtr,  => QtBeef_QIODevice_channelReadyRead);
+		CQt.QIODevice_Connect_BytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_bytesWritten);
+		CQt.QIODevice_Connect_ChannelBytesWritten(obj.ObjectPtr,  => QtBeef_QIODevice_channelBytesWritten);
+		CQt.QIODevice_Connect_AboutToClose(obj.ObjectPtr,  => QtBeef_QIODevice_aboutToClose);
+		CQt.QIODevice_Connect_ReadChannelFinished(obj.ObjectPtr,  => QtBeef_QIODevice_readChannelFinished);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnReadyRead = .() ~ _.Dispose();
+	public Event<delegate void(c_int channel)> OnChannelReadyRead = .() ~ _.Dispose();
+	public Event<delegate void(c_longlong bytes)> OnBytesWritten = .() ~ _.Dispose();
+	public Event<delegate void(c_int channel, c_longlong bytes)> OnChannelBytesWritten = .() ~ _.Dispose();
+	public Event<delegate void()> OnAboutToClose = .() ~ _.Dispose();
+	public Event<delegate void()> OnReadChannelFinished = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QIODevice_readyRead(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadyRead.Invoke();
+	}
+	static void QtBeef_QIODevice_channelReadyRead(void* ptr, c_int channel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChannelReadyRead.Invoke(channel);
+	}
+	static void QtBeef_QIODevice_bytesWritten(void* ptr, c_longlong bytes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnBytesWritten.Invoke(bytes);
+	}
+	static void QtBeef_QIODevice_channelBytesWritten(void* ptr, c_int channel, c_longlong bytes)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChannelBytesWritten.Invoke(channel, bytes);
+	}
+	static void QtBeef_QIODevice_aboutToClose(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAboutToClose.Invoke();
+	}
+	static void QtBeef_QIODevice_readChannelFinished(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnReadChannelFinished.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QIODevice_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QIODevice_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject parent)
 	{
 		this.ptr = CQt.QIODevice_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -1106,19 +1182,19 @@ extension CQt
 	
 	public function void QIODevice_channelReadyRead_action(void* self, c_int channel);
 	[LinkName("QIODevice_Connect_ChannelReadyRead")]
-	public static extern void QIODevice_Connect_ChannelReadyRead(void* self, c_int channel, QIODevice_channelReadyRead_action _action);
+	public static extern void QIODevice_Connect_ChannelReadyRead(void* self, QIODevice_channelReadyRead_action _action);
 	[LinkName("QIODevice_BytesWritten")]
 	public static extern void QIODevice_BytesWritten(void* self, c_longlong bytes);
 	
 	public function void QIODevice_bytesWritten_action(void* self, c_longlong bytes);
 	[LinkName("QIODevice_Connect_BytesWritten")]
-	public static extern void QIODevice_Connect_BytesWritten(void* self, c_longlong bytes, QIODevice_bytesWritten_action _action);
+	public static extern void QIODevice_Connect_BytesWritten(void* self, QIODevice_bytesWritten_action _action);
 	[LinkName("QIODevice_ChannelBytesWritten")]
 	public static extern void QIODevice_ChannelBytesWritten(void* self, c_int channel, c_longlong bytes);
 	
 	public function void QIODevice_channelBytesWritten_action(void* self, c_int channel, c_longlong bytes);
 	[LinkName("QIODevice_Connect_ChannelBytesWritten")]
-	public static extern void QIODevice_Connect_ChannelBytesWritten(void* self, c_int channel, c_longlong bytes, QIODevice_channelBytesWritten_action _action);
+	public static extern void QIODevice_Connect_ChannelBytesWritten(void* self, QIODevice_channelBytesWritten_action _action);
 	[LinkName("QIODevice_AboutToClose")]
 	public static extern void QIODevice_AboutToClose(void* self);
 	

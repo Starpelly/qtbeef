@@ -127,13 +127,24 @@ class QAccessibleObject : IQAccessibleObject, IQAccessibleInterface
 {
 	private QAccessibleObject_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleObject_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQObject object)
 	{
 		this.ptr = CQt.QAccessibleObject_new((.)object?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public bool IsValid()
 	{
@@ -386,13 +397,24 @@ class QAccessibleApplication : IQAccessibleApplication, IQAccessibleObject, IQAc
 {
 	private QAccessibleApplication_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QAccessibleApplication_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QAccessibleApplication_new();
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

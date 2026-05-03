@@ -155,21 +155,34 @@ class QPicture : IQPicture, IQPaintDevice
 {
 	private QPicture_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QPicture_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QPicture_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQPicture param1)
 	{
 		this.ptr = CQt.QPicture_new2((.)param1?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(c_int formatVersion)
 	{
 		this.ptr = CQt.QPicture_new3(formatVersion);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

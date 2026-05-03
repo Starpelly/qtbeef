@@ -1655,33 +1655,137 @@ class QDockWidget : IQDockWidget, IQWidget, IQObject, IQPaintDevice
 {
 	private QDockWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QDockWidget_featuresChanged,
+		QDockWidget_topLevelChanged,
+		QDockWidget_allowedAreasChanged,
+		QDockWidget_visibilityChanged,
+		QDockWidget_dockLocationChanged,
+		QDockWidget_windowTitleChanged,
+		QDockWidget_windowIconChanged,
+		QDockWidget_windowIconTextChanged,
+		QDockWidget_customContextMenuRequested,
+		QDockWidget_destroyed,
+		QDockWidget_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QDockWidget_Connect_FeaturesChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_featuresChanged);
+		CQt.QDockWidget_Connect_TopLevelChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_topLevelChanged);
+		CQt.QDockWidget_Connect_AllowedAreasChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_allowedAreasChanged);
+		CQt.QDockWidget_Connect_VisibilityChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_visibilityChanged);
+		CQt.QDockWidget_Connect_DockLocationChanged(obj.ObjectPtr,  => QtBeef_QDockWidget_dockLocationChanged);
+		CQt.QWidget_Connect_WindowTitleChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowTitleChanged);
+		CQt.QWidget_Connect_WindowIconChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconChanged);
+		CQt.QWidget_Connect_WindowIconTextChanged(obj.ObjectPtr,  => QtBeef_QWidget_windowIconTextChanged);
+		CQt.QWidget_Connect_CustomContextMenuRequested(obj.ObjectPtr,  => QtBeef_QWidget_customContextMenuRequested);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void(void* features)> OnFeaturesChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool topLevel)> OnTopLevelChanged = .() ~ _.Dispose();
+	public Event<delegate void(void* allowedAreas)> OnAllowedAreasChanged = .() ~ _.Dispose();
+	public Event<delegate void(bool visible)> OnVisibilityChanged = .() ~ _.Dispose();
+	public Event<delegate void(Qt_DockWidgetArea area)> OnDockLocationChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string title)> OnWindowTitleChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** icon)> OnWindowIconChanged = .() ~ _.Dispose();
+	public Event<delegate void(libqt_string iconText)> OnWindowIconTextChanged = .() ~ _.Dispose();
+	public Event<delegate void(void** pos)> OnCustomContextMenuRequested = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QDockWidget_featuresChanged(void* ptr, void* features)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnFeaturesChanged.Invoke(features);
+	}
+	static void QtBeef_QDockWidget_topLevelChanged(void* ptr, bool topLevel)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnTopLevelChanged.Invoke(topLevel);
+	}
+	static void QtBeef_QDockWidget_allowedAreasChanged(void* ptr, void* allowedAreas)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnAllowedAreasChanged.Invoke(allowedAreas);
+	}
+	static void QtBeef_QDockWidget_visibilityChanged(void* ptr, bool visible)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibilityChanged.Invoke(visible);
+	}
+	static void QtBeef_QDockWidget_dockLocationChanged(void* ptr, Qt_DockWidgetArea area)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDockLocationChanged.Invoke(area);
+	}
+	static void QtBeef_QWidget_windowTitleChanged(void* ptr, libqt_string title)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowTitleChanged.Invoke(title);
+	}
+	static void QtBeef_QWidget_windowIconChanged(void* ptr, void** icon)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconChanged.Invoke(icon);
+	}
+	static void QtBeef_QWidget_windowIconTextChanged(void* ptr, libqt_string iconText)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWindowIconTextChanged.Invoke(iconText);
+	}
+	static void QtBeef_QWidget_customContextMenuRequested(void* ptr, void** pos)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnCustomContextMenuRequested.Invoke(pos);
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QDockWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent)
 	{
 		this.ptr = CQt.QDockWidget_new((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title)
 	{
 		this.ptr = CQt.QDockWidget_new2(libqt_string(title));
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QDockWidget_new3();
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title, IQWidget parent)
 	{
 		this.ptr = CQt.QDockWidget_new4(libqt_string(title), (.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(String title, IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QDockWidget_new5(libqt_string(title), (.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQWidget parent, void* flags)
 	{
 		this.ptr = CQt.QDockWidget_new6((.)parent?.ObjectPtr, flags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
@@ -3380,31 +3484,31 @@ extension CQt
 	
 	public function void QDockWidget_featuresChanged_action(void* self, void* features);
 	[LinkName("QDockWidget_Connect_FeaturesChanged")]
-	public static extern void QDockWidget_Connect_FeaturesChanged(void* self, void* features, QDockWidget_featuresChanged_action _action);
+	public static extern void QDockWidget_Connect_FeaturesChanged(void* self, QDockWidget_featuresChanged_action _action);
 	[LinkName("QDockWidget_TopLevelChanged")]
 	public static extern void QDockWidget_TopLevelChanged(void* self, bool topLevel);
 	
 	public function void QDockWidget_topLevelChanged_action(void* self, bool topLevel);
 	[LinkName("QDockWidget_Connect_TopLevelChanged")]
-	public static extern void QDockWidget_Connect_TopLevelChanged(void* self, bool topLevel, QDockWidget_topLevelChanged_action _action);
+	public static extern void QDockWidget_Connect_TopLevelChanged(void* self, QDockWidget_topLevelChanged_action _action);
 	[LinkName("QDockWidget_AllowedAreasChanged")]
 	public static extern void QDockWidget_AllowedAreasChanged(void* self, void* allowedAreas);
 	
 	public function void QDockWidget_allowedAreasChanged_action(void* self, void* allowedAreas);
 	[LinkName("QDockWidget_Connect_AllowedAreasChanged")]
-	public static extern void QDockWidget_Connect_AllowedAreasChanged(void* self, void* allowedAreas, QDockWidget_allowedAreasChanged_action _action);
+	public static extern void QDockWidget_Connect_AllowedAreasChanged(void* self, QDockWidget_allowedAreasChanged_action _action);
 	[LinkName("QDockWidget_VisibilityChanged")]
 	public static extern void QDockWidget_VisibilityChanged(void* self, bool visible);
 	
 	public function void QDockWidget_visibilityChanged_action(void* self, bool visible);
 	[LinkName("QDockWidget_Connect_VisibilityChanged")]
-	public static extern void QDockWidget_Connect_VisibilityChanged(void* self, bool visible, QDockWidget_visibilityChanged_action _action);
+	public static extern void QDockWidget_Connect_VisibilityChanged(void* self, QDockWidget_visibilityChanged_action _action);
 	[LinkName("QDockWidget_DockLocationChanged")]
 	public static extern void QDockWidget_DockLocationChanged(void* self, Qt_DockWidgetArea area);
 	
 	public function void QDockWidget_dockLocationChanged_action(void* self, Qt_DockWidgetArea area);
 	[LinkName("QDockWidget_Connect_DockLocationChanged")]
-	public static extern void QDockWidget_Connect_DockLocationChanged(void* self, Qt_DockWidgetArea area, QDockWidget_dockLocationChanged_action _action);
+	public static extern void QDockWidget_Connect_DockLocationChanged(void* self, QDockWidget_dockLocationChanged_action _action);
 	[LinkName("QDockWidget_ChangeEvent")]
 	public static extern void QDockWidget_ChangeEvent(void* self, void** event);
 	[LinkName("QDockWidget_CloseEvent")]

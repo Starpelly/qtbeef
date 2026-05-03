@@ -211,21 +211,34 @@ class QFutureInterfaceBase : IQFutureInterfaceBase
 {
 	private QFutureInterfaceBase_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+	}
 	public this(QFutureInterfaceBase_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QFutureInterfaceBase_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQFutureInterfaceBase other)
 	{
 		this.ptr = CQt.QFutureInterfaceBase_new2((.)other?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(QFutureInterfaceBase_State initialState)
 	{
 		this.ptr = CQt.QFutureInterfaceBase_new3(initialState);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{

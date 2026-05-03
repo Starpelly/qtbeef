@@ -1623,21 +1623,162 @@ class QGraphicsProxyWidget : IQGraphicsProxyWidget, IQGraphicsWidget, IQGraphics
 {
 	private QGraphicsProxyWidget_Ptr ptr;
 	public void* ObjectPtr => ptr.Ptr;
+	
+	enum ObjectSignalType
+	{
+		QGraphicsProxyWidget_geometryChanged,
+		QGraphicsProxyWidget_layoutChanged,
+		QGraphicsProxyWidget_parentChanged,
+		QGraphicsProxyWidget_opacityChanged,
+		QGraphicsProxyWidget_visibleChanged,
+		QGraphicsProxyWidget_enabledChanged,
+		QGraphicsProxyWidget_xChanged,
+		QGraphicsProxyWidget_yChanged,
+		QGraphicsProxyWidget_zChanged,
+		QGraphicsProxyWidget_rotationChanged,
+		QGraphicsProxyWidget_scaleChanged,
+		QGraphicsProxyWidget_childrenChanged,
+		QGraphicsProxyWidget_widthChanged,
+		QGraphicsProxyWidget_heightChanged,
+		QGraphicsProxyWidget_destroyed,
+		QGraphicsProxyWidget_destroyed1,
+	}
+	
+	static void QtBf_ConnectSignals(Self obj)
+	{
+		CQt.ObjectHandleMap[obj.ObjectPtr] = obj;
+		CQt.QGraphicsWidget_Connect_GeometryChanged(obj.ObjectPtr,  => QtBeef_QGraphicsWidget_geometryChanged);
+		CQt.QGraphicsWidget_Connect_LayoutChanged(obj.ObjectPtr,  => QtBeef_QGraphicsWidget_layoutChanged);
+		CQt.QGraphicsObject_Connect_ParentChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_parentChanged);
+		CQt.QGraphicsObject_Connect_OpacityChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_opacityChanged);
+		CQt.QGraphicsObject_Connect_VisibleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_visibleChanged);
+		CQt.QGraphicsObject_Connect_EnabledChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_enabledChanged);
+		CQt.QGraphicsObject_Connect_XChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_xChanged);
+		CQt.QGraphicsObject_Connect_YChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_yChanged);
+		CQt.QGraphicsObject_Connect_ZChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_zChanged);
+		CQt.QGraphicsObject_Connect_RotationChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_rotationChanged);
+		CQt.QGraphicsObject_Connect_ScaleChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_scaleChanged);
+		CQt.QGraphicsObject_Connect_ChildrenChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_childrenChanged);
+		CQt.QGraphicsObject_Connect_WidthChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_widthChanged);
+		CQt.QGraphicsObject_Connect_HeightChanged(obj.ObjectPtr,  => QtBeef_QGraphicsObject_heightChanged);
+		CQt.QObject_Connect_Destroyed(obj.ObjectPtr,  => QtBeef_QObject_destroyed);
+		CQt.QObject_Connect_Destroyed1(obj.ObjectPtr,  => QtBeef_QObject_destroyed1);
+	}
+	public Event<delegate void()> OnGeometryChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnLayoutChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnParentChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnOpacityChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnVisibleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnEnabledChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnXChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnYChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnZChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnRotationChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnScaleChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnChildrenChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnWidthChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnHeightChanged = .() ~ _.Dispose();
+	public Event<delegate void()> OnDestroyed = .() ~ _.Dispose();
+	public Event<delegate void(void** param1)> OnDestroyed1 = .() ~ _.Dispose();
+	static void QtBeef_QGraphicsWidget_geometryChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnGeometryChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsWidget_layoutChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnLayoutChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_parentChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnParentChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_opacityChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnOpacityChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_visibleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnVisibleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_enabledChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnEnabledChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_xChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnXChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_yChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnYChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_zChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnZChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_rotationChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnRotationChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_scaleChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnScaleChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_childrenChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnChildrenChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_widthChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnWidthChanged.Invoke();
+	}
+	static void QtBeef_QGraphicsObject_heightChanged(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnHeightChanged.Invoke();
+	}
+	static void QtBeef_QObject_destroyed(void* ptr)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed.Invoke();
+	}
+	static void QtBeef_QObject_destroyed1(void* ptr, void** param1)
+	{
+		let obj = CQt.ObjectHandleMap[ptr] as Self;
+		obj.OnDestroyed1.Invoke(param1);
+	}
 	public this(QGraphicsProxyWidget_Ptr ptr)
 	{
 		this.ptr = ptr;
+		QtBf_ConnectSignals(this);
 	}
 	public this()
 	{
 		this.ptr = CQt.QGraphicsProxyWidget_new();
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent)
 	{
 		this.ptr = CQt.QGraphicsProxyWidget_new2((.)parent?.ObjectPtr);
+		QtBf_ConnectSignals(this);
 	}
 	public this(IQGraphicsItem parent, void* wFlags)
 	{
 		this.ptr = CQt.QGraphicsProxyWidget_new3((.)parent?.ObjectPtr, wFlags);
+		QtBf_ConnectSignals(this);
 	}
 	public ~this()
 	{
